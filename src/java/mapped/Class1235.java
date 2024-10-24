@@ -2,14 +2,15 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1235 extends Class1234 {
-   private final Class2266 field6583;
+   private final SoundCategory field6583;
 
-   public Class1235(Minecraft var1, int var2, int var3, Class2266 var4, int var5) {
+   public Class1235(Minecraft var1, int var2, int var3, SoundCategory var4, int var5) {
       super(var1.gameSettings, var2, var3, var5, 20, (double)var1.gameSettings.method37147(var4));
       this.field6583 = var4;
       this.method5813();

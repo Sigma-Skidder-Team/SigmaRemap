@@ -14,6 +14,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IWorld;
@@ -89,7 +90,7 @@ public class Class3426 extends Block {
    public boolean method11647(BlockState var1, World var2, BlockPos var3, int var4, int var5) {
       int var8 = var1.<Integer>get(field19177);
       float var9 = (float)Math.pow(2.0, (double)(var8 - 12) / 12.0);
-      var2.method6742((PlayerEntity)null, var3, var1.<NoteBlockInstrument>get(field19175).method299(), Class2266.field14730, 3.0F, var9);
+      var2.method6742((PlayerEntity)null, var3, var1.<NoteBlockInstrument>get(field19175).method299(), SoundCategory.field14730, 3.0F, var9);
       var2.addParticle(
          ParticleTypes.field34088, (double)var3.getX() + 0.5, (double)var3.getY() + 1.2, (double)var3.getZ() + 0.5, (double)var8 / 24.0, 0.0, 0.0
       );

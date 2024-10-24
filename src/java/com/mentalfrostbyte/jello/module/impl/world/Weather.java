@@ -70,13 +70,13 @@ public class Weather extends Module {
                         if (!this.getBooleanValueFromSettingName("Disable rain")) {
                             this.rainLevel = packet.method17398();
                         } else {
-                            event.method13899(new SChangeGameStatePacket(packet.method17397(), 0.0F));
+                            event.setPacket(new SChangeGameStatePacket(packet.method17397(), 0.0F));
                             this.rainLevel = 0.0F;
                         }
                     }
                 }
             } else if (this.getBooleanValueFromSettingName("Custom time")) {
-                event.method13899(new SUpdateTimePacket(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
+                event.setPacket(new SUpdateTimePacket(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
             }
         }
     }

@@ -7,7 +7,7 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
-import net.minecraft.util.Util;
+import net.minecraft.util.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -18,10 +18,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -267,8 +263,8 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return this.method5114() != 99 ? Class2266.field14734 : Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return this.method5114() != 99 ? SoundCategory.field14734 : SoundCategory.field14733;
    }
 
    @Override

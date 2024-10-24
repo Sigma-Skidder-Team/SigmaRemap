@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 
 public class Class4600 extends Class4599 {
@@ -23,7 +24,7 @@ public class Class4600 extends Class4599 {
                this.field22042,
                this.field22043 + 0.5,
                SoundEvents.field26395,
-               Class2266.field14732,
+               SoundCategory.field14732,
                0.3F + this.field22037.rand.nextFloat() * 2.0F / 3.0F,
                1.0F,
                false

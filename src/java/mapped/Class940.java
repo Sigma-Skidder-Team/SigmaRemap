@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
@@ -192,7 +193,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
          this.world.addBlockEvent(this.pos, this.getBlockState().getBlock(), 1, this.field5306);
          if (this.field5306 == 1) {
             this.world
-               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27045, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27045, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }
@@ -204,7 +205,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
          this.world.addBlockEvent(this.pos, this.getBlockState().getBlock(), 1, this.field5306);
          if (this.field5306 <= 0) {
             this.world
-               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27044, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27044, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }

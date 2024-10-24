@@ -21,8 +21,8 @@ public class Class375 extends Thread {
          Class1992 var4 = var3.method14554();
 
          if (var4 == Class1992.OTHER) {
-            RealmsMainScreen.field4268 = new Class809(RealmsMainScreen.method2079(this.field1629), false);
-            RealmsMainScreen.method2081(this.field1629).execute(() -> RealmsMainScreen.method2089(this.field1629).displayGuiScreen(RealmsMainScreen.field4268));
+            RealmsMainScreen.field_224000_H = new Class809(RealmsMainScreen.method2079(this.field1629), false);
+            RealmsMainScreen.method2081(this.field1629).execute(() -> RealmsMainScreen.method2089(this.field1629).displayGuiScreen(RealmsMainScreen.field_224000_H));
             return;
          }
 
@@ -31,12 +31,12 @@ public class Class375 extends Thread {
          RealmsMainScreen.method2083(false);
          RealmsMainScreen.method2084().error("Couldn't connect to realms", var5);
          if (var5.field16472 == 401) {
-            RealmsMainScreen.field4268 = new Class821(
+            RealmsMainScreen.field_224000_H = new Class821(
                new TranslationTextComponent("mco.error.invalid.session.title"),
                new TranslationTextComponent("mco.error.invalid.session.message"),
                RealmsMainScreen.method2079(this.field1629)
             );
-            RealmsMainScreen.method2085(this.field1629).execute(() -> RealmsMainScreen.method2088(this.field1629).displayGuiScreen(RealmsMainScreen.field4268));
+            RealmsMainScreen.method2085(this.field1629).execute(() -> RealmsMainScreen.method2088(this.field1629).displayGuiScreen(RealmsMainScreen.field_224000_H));
          } else {
             RealmsMainScreen.method2086(this.field1629)
                .execute(() -> RealmsMainScreen.method2087(this.field1629).displayGuiScreen(new Class821(var5, RealmsMainScreen.method2079(this.field1629))));

@@ -12,6 +12,7 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -191,7 +192,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
                this.field5387.getPosY(),
                this.field5387.getPosZ(),
                SoundEvents.field26470,
-               Class2266.field14732,
+               SoundCategory.field14732,
                1.0F,
                1.0F
             );
@@ -287,6 +288,6 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
    }
 
    public void method3908(SoundEvent var1) {
-      this.world.method6742((PlayerEntity)null, this.pos, var1, Class2266.field14732, 1.0F, 1.0F);
+      this.world.method6742((PlayerEntity)null, this.pos, var1, SoundCategory.field14732, 1.0F, 1.0F);
    }
 }

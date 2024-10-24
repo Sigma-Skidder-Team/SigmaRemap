@@ -20,6 +20,7 @@ import javax.annotation.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.NBTDynamicOps;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -456,7 +457,7 @@ public abstract class Class6395 {
          var12.connection
             .sendPacket(
                new SPlaySoundEffectPacket(
-                  SoundEvents.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
+                  SoundEvents.field27014, SoundCategory.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
                )
             );
       }

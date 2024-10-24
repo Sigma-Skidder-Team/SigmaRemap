@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -40,7 +41,7 @@ public class Class3353 extends Class3350 {
          double var9 = (double)var3.getY();
          double var11 = (double)var3.getZ() + 0.5;
          if (var4.nextDouble() < 0.1) {
-            var2.method6745(var7, var9, var11, SoundEvents.field26604, Class2266.field14732, 1.0F, 1.0F, false);
+            var2.method6745(var7, var9, var11, SoundEvents.field26604, SoundCategory.field14732, 1.0F, 1.0F, false);
          }
 
          Direction var13 = var1.<Direction>get(field18875);

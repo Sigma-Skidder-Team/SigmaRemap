@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import java.io.IOException;
 
-import mapped.Class2266;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -12,7 +12,7 @@ import org.apache.commons.lang3.Validate;
 
 public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
    private SoundEvent field24776;
-   private Class2266 field24777;
+   private SoundCategory field24777;
    private int field24778;
    private int field24779;
    private int field24780;
@@ -22,7 +22,7 @@ public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
    public SPlaySoundEffectPacket() {
    }
 
-   public SPlaySoundEffectPacket(SoundEvent var1, Class2266 var2, double var3, double var5, double var7, float var9, float var10) {
+   public SPlaySoundEffectPacket(SoundEvent var1, SoundCategory var2, double var3, double var5, double var7, float var9, float var10) {
       Validate.notNull(var1, "sound", new Object[0]);
       this.field24776 = var1;
       this.field24777 = var2;
@@ -36,7 +36,7 @@ public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24776 = Registry.field16069.getByValue(var1.readVarInt());
-      this.field24777 = var1.<Class2266>readEnumValue(Class2266.class);
+      this.field24777 = var1.<SoundCategory>readEnumValue(SoundCategory.class);
       this.field24778 = var1.readInt();
       this.field24779 = var1.readInt();
       this.field24780 = var1.readInt();
@@ -59,7 +59,7 @@ public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
       return this.field24776;
    }
 
-   public Class2266 method17550() {
+   public SoundCategory method17550() {
       return this.field24777;
    }
 

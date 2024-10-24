@@ -7,7 +7,6 @@ import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONArray;
-import totalcross.json.JSONException;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
 
@@ -82,7 +81,7 @@ public class AccountManager {
      */
     public boolean login(Account account) {
         try {
-            RealmsMainScreen.field4268 = null; // ?????
+            RealmsMainScreen.field_224000_H = null; // ?????
             Session session = Minecraft.getInstance().session;
             Session newSession = account.login();
             session.username = newSession.getUsername();

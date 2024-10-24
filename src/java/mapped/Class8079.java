@@ -49,7 +49,7 @@ public class Class8079 implements IAmbientSoundHandler {
             Class6337 var5 = (Class6337)this.field34724.compute(var3, (var2x, var3x) -> {
                if (var3x == null) {
                   var3x = new Class6337(var2);
-                  this.field34721.method1000(var3x);
+                  this.field34721.play(var3x);
                }
 
                var3x.method19278();
@@ -60,7 +60,7 @@ public class Class8079 implements IAmbientSoundHandler {
 
       this.field34726.ifPresent(var1 -> {
          if (this.field34723.nextDouble() < var1.method28563()) {
-            this.field34721.method1000(MinecraftSoundManager.method19297(var1.method28562()));
+            this.field34721.play(CustomSoundPlayer.method19297(var1.method28562()));
          }
       });
       this.field34725
@@ -91,13 +91,13 @@ public class Class8079 implements IAmbientSoundHandler {
                   double var18 = var12 - this.field34720.getPosZ();
                   double var20 = (double) MathHelper.sqrt(var14 * var14 + var16 * var16 + var18 * var18);
                   double var22 = var20 + var1.method27076();
-                  MinecraftSoundManager var24 = MinecraftSoundManager.method19298(
+                  CustomSoundPlayer var24 = CustomSoundPlayer.method19298(
                      var1.method27073(),
                      this.field34720.getPosX() + var14 / var20 * var22,
                      this.field34720.getPosYEye() + var16 / var20 * var22,
                      this.field34720.getPosZ() + var18 / var20 * var22
                   );
-                  this.field34721.method1000(var24);
+                  this.field34721.play(var24);
                   this.field34727 = 0.0F;
                }
             }

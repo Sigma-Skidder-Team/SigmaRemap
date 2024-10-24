@@ -18,6 +18,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -213,7 +214,7 @@ public class Explosion {
                this.field33375,
                this.field33376,
                SoundEvents.field26610,
-               Class2266.field14732,
+               SoundCategory.field14732,
                4.0F,
                (1.0F + (this.field33373.rand.nextFloat() - this.field33373.rand.nextFloat()) * 0.2F) * 0.7F,
                false

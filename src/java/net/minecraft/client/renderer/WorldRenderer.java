@@ -19,6 +19,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.ISound;
 import net.minecraft.client.multiplayer.ClientChunkProvider;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.settings.ParticleStatus;
@@ -26,7 +27,7 @@ import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.shader.ShaderGroup;
 import net.minecraft.crash.ReportedException;
 import net.minecraft.item.Item;
-import net.minecraft.util.Util;
+import net.minecraft.util.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.crash.CrashReport;
@@ -40,10 +41,6 @@ import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -104,7 +101,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private int field955;
    private final Int2ObjectMap<Class1995> field956 = new Int2ObjectOpenHashMap();
    private final Long2ObjectMap<SortedSet<Class1995>> field957 = new Long2ObjectOpenHashMap();
-   private final Map<BlockPos, Class6340> field958 = Maps.newHashMap();
+   private final Map<BlockPos, ISound> field958 = Maps.newHashMap();
    public Framebuffer entityOutlineFramebuffer;
    private ShaderGroup field960;
    private Framebuffer field961;
@@ -426,9 +423,9 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
                && var4.method7006(Heightmap.Type.MOTION_BLOCKING, var5).getY() > MathHelper.floor((float)var5.getY())) {
-               this.mc.world.method6858(var6, SoundEvents.field27227, Class2266.field14731, 0.1F, 0.5F, false);
+               this.mc.world.method6858(var6, SoundEvents.field27227, SoundCategory.field14731, 0.1F, 0.5F, false);
             } else {
-               this.mc.world.method6858(var6, SoundEvents.field27226, Class2266.field14731, 0.2F, 1.0F, false);
+               this.mc.world.method6858(var6, SoundEvents.field27226, SoundCategory.field14731, 0.2F, 1.0F, false);
             }
          }
       }
@@ -2920,7 +2917,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    public void method909(SoundEvent var1, BlockPos var2, Class3283 var3) {
-      Class6340 var4 = this.field958.get(var2);
+      ISound var4 = this.field958.get(var2);
       if (var4 != null) {
          this.mc.getSoundHandler().method1009(var4);
          this.field958.remove(var2);
@@ -2936,9 +2933,9 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             this.mc.ingameGUI.method5984(var5.method11813());
          }
 
-         MinecraftSoundManager var6 = MinecraftSoundManager.method19295(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+         CustomSoundPlayer var6 = CustomSoundPlayer.method19295(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
          this.field958.put(var2, var6);
-         this.mc.getSoundHandler().method1000(var6);
+         this.mc.getSoundHandler().play(var6);
       }
 
       this.method910(this.world, var2, var1 != null);
@@ -3102,11 +3099,11 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
 
                if (var1 == 1023) {
-                  this.world.method6745(var13, var15, var17, SoundEvents.field27248, Class2266.field14733, 1.0F, 1.0F, false);
+                  this.world.method6745(var13, var15, var17, SoundEvents.field27248, SoundCategory.field14733, 1.0F, 1.0F, false);
                } else if (var1 == 1038) {
-                  this.world.method6745(var13, var15, var17, SoundEvents.field26558, Class2266.field14733, 1.0F, 1.0F, false);
+                  this.world.method6745(var13, var15, var17, SoundEvents.field26558, SoundCategory.field14733, 1.0F, 1.0F, false);
                } else {
-                  this.world.method6745(var13, var15, var17, SoundEvents.field26537, Class2266.field14733, 5.0F, 1.0F, false);
+                  this.world.method6745(var13, var15, var17, SoundEvents.field26537, SoundCategory.field14733, 5.0F, 1.0F, false);
                }
             }
       }
@@ -3116,34 +3113,34 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       Random var5 = this.world.rand;
       switch (var2) {
          case 1000:
-            this.world.method6858(var3, SoundEvents.field26495, Class2266.field14732, 1.0F, 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26495, SoundCategory.field14732, 1.0F, 1.0F, false);
             break;
          case 1001:
-            this.world.method6858(var3, SoundEvents.field26496, Class2266.field14732, 1.0F, 1.2F, false);
+            this.world.method6858(var3, SoundEvents.field26496, SoundCategory.field14732, 1.0F, 1.2F, false);
             break;
          case 1002:
-            this.world.method6858(var3, SoundEvents.field26497, Class2266.field14732, 1.0F, 1.2F, false);
+            this.world.method6858(var3, SoundEvents.field26497, SoundCategory.field14732, 1.0F, 1.2F, false);
             break;
          case 1003:
-            this.world.method6858(var3, SoundEvents.field26544, Class2266.field14734, 1.0F, 1.2F, false);
+            this.world.method6858(var3, SoundEvents.field26544, SoundCategory.field14734, 1.0F, 1.2F, false);
             break;
          case 1004:
-            this.world.method6858(var3, SoundEvents.field26578, Class2266.field14734, 1.0F, 1.2F, false);
+            this.world.method6858(var3, SoundEvents.field26578, SoundCategory.field14734, 1.0F, 1.2F, false);
             break;
          case 1005:
-            this.world.method6858(var3, SoundEvents.field26699, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26699, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1006:
-            this.world.method6858(var3, SoundEvents.field27259, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field27259, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1007:
-            this.world.method6858(var3, SoundEvents.field27261, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field27261, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1008:
-            this.world.method6858(var3, SoundEvents.field26571, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26571, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1009:
-            this.world.method6858(var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.world.method6858(var3, SoundEvents.field26582, SoundCategory.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
             break;
          case 1010:
             if (Item.getItemById(var4) instanceof Class3283) {
@@ -3157,103 +3154,103 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
             break;
          case 1011:
-            this.world.method6858(var3, SoundEvents.field26698, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26698, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1012:
-            this.world.method6858(var3, SoundEvents.field27258, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field27258, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1013:
-            this.world.method6858(var3, SoundEvents.field27260, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field27260, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1014:
-            this.world.method6858(var3, SoundEvents.field26570, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26570, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1015:
-            this.world.method6858(var3, SoundEvents.field26621, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26621, SoundCategory.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1016:
-            this.world.method6858(var3, SoundEvents.field26620, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26620, SoundCategory.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1017:
-            this.world.method6858(var3, SoundEvents.field26542, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26542, SoundCategory.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1018:
-            this.world.method6858(var3, SoundEvents.field26406, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26406, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1019:
-            this.world.method6858(var3, SoundEvents.field27283, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27283, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1020:
-            this.world.method6858(var3, SoundEvents.field27284, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27284, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1021:
-            this.world.method6858(var3, SoundEvents.field27285, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27285, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1022:
-            this.world.method6858(var3, SoundEvents.field27240, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27240, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1024:
-            this.world.method6858(var3, SoundEvents.field27243, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27243, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1025:
-            this.world.method6858(var3, SoundEvents.field26384, Class2266.field14734, 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26384, SoundCategory.field14734, 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1026:
-            this.world.method6858(var3, SoundEvents.field27293, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27293, SoundCategory.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1027:
-            this.world.method6858(var3, SoundEvents.field27300, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27300, SoundCategory.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1029:
-            this.world.method6858(var3, SoundEvents.field26341, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26341, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1030:
-            this.world.method6858(var3, SoundEvents.field26347, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26347, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1031:
-            this.world.method6858(var3, SoundEvents.field26344, Class2266.field14732, 0.3F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26344, SoundCategory.field14732, 0.3F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
-            this.mc.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.mc.getSoundHandler().play(CustomSoundPlayer.method19296(SoundEvents.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
             break;
          case 1033:
-            this.world.method6858(var3, SoundEvents.field26456, Class2266.field14732, 1.0F, 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26456, SoundCategory.field14732, 1.0F, 1.0F, false);
             break;
          case 1034:
-            this.world.method6858(var3, SoundEvents.field26455, Class2266.field14732, 1.0F, 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26455, SoundCategory.field14732, 1.0F, 1.0F, false);
             break;
          case 1035:
-            this.world.method6858(var3, SoundEvents.field26420, Class2266.field14732, 1.0F, 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26420, SoundCategory.field14732, 1.0F, 1.0F, false);
             break;
          case 1036:
-            this.world.method6858(var3, SoundEvents.field26706, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26706, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1037:
-            this.world.method6858(var3, SoundEvents.field26707, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26707, SoundCategory.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1039:
-            this.world.method6858(var3, SoundEvents.field26919, Class2266.field14733, 0.3F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26919, SoundCategory.field14733, 0.3F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1040:
-            this.world.method6858(var3, SoundEvents.field27286, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field27286, SoundCategory.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1041:
-            this.world.method6858(var3, SoundEvents.field26687, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26687, SoundCategory.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1042:
-            this.world.method6858(var3, SoundEvents.field26642, Class2266.field14732, 1.0F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26642, SoundCategory.field14732, 1.0F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1043:
-            this.world.method6858(var3, SoundEvents.field26414, Class2266.field14732, 1.0F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field26414, SoundCategory.field14732, 1.0F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1044:
-            this.world.method6858(var3, SoundEvents.field27106, Class2266.field14732, 1.0F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field27106, SoundCategory.field14732, 1.0F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1500:
             Class3475.method12164(this.world, var3, var4 > 0);
             break;
          case 1501:
-            this.world.method6858(var3, SoundEvents.field26726, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.world.method6858(var3, SoundEvents.field26726, SoundCategory.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
 
             for (int var40 = 0; var40 < 8; var40++) {
                this.world
@@ -3269,7 +3266,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
             break;
          case 1502:
-            this.world.method6858(var3, SoundEvents.field27011, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.world.method6858(var3, SoundEvents.field27011, SoundCategory.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
 
             for (int var39 = 0; var39 < 5; var39++) {
                double var42 = (double)var3.getX() + var5.nextDouble() * 0.6 + 0.2;
@@ -3279,7 +3276,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
             break;
          case 1503:
-            this.world.method6858(var3, SoundEvents.field26557, Class2266.field14732, 1.0F, 1.0F, false);
+            this.world.method6858(var3, SoundEvents.field26557, SoundCategory.field14732, 1.0F, 1.0F, false);
 
             for (int var38 = 0; var38 < 16; var38++) {
                double var41 = (double)var3.getX() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
@@ -3317,7 +3314,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
 
                this.world
-                  .method6858(var3, var47.method29712(), Class2266.field14732, (var47.getVolume() + 1.0F) / 2.0F, var47.method29711() * 0.8F, false);
+                  .method6858(var3, var47.method29712(), SoundCategory.field14732, (var47.getVolume() + 1.0F) / 2.0F, var47.method29711() * 0.8F, false);
             }
 
             this.mc.particles.method1206(var3, var16);
@@ -3366,7 +3363,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
             }
 
-            this.world.method6858(var3, SoundEvents.field27123, Class2266.field14734, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.world.method6858(var3, SoundEvents.field27123, SoundCategory.field14734, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 2003:
             double var22 = (double)var3.getX() + 0.5;
@@ -3441,7 +3438,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
 
             if (var4 == 1) {
-               this.world.method6858(var3, SoundEvents.field26538, Class2266.field14733, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+               this.world.method6858(var3, SoundEvents.field26538, SoundCategory.field14733, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             }
             break;
          case 2008:
@@ -3473,14 +3470,14 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                .method6858(
                   var3,
                   SoundEvents.field26556,
-                  Class2266.field14732,
+                  SoundCategory.field14732,
                   10.0F,
                   (1.0F + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F) * 0.7F,
                   false
                );
             break;
          case 3001:
-            this.world.method6858(var3, SoundEvents.field26540, Class2266.field14733, 64.0F, 0.8F + this.world.rand.nextFloat() * 0.3F, false);
+            this.world.method6858(var3, SoundEvents.field26540, SoundCategory.field14733, 64.0F, 0.8F + this.world.rand.nextFloat() * 0.3F, false);
       }
    }
 

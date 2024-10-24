@@ -18,6 +18,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -83,7 +84,7 @@ public class Class3413 extends Block {
                            }
                         }
 
-                        var2.method6742((PlayerEntity)null, var3, SoundEvents.field26417, Class2266.field14732, 1.0F, 1.0F);
+                        var2.method6742((PlayerEntity)null, var3, SoundEvents.field26417, SoundCategory.field14732, 1.0F, 1.0F);
                         this.method12051(var2, var3, var1, var10 + 1);
                      }
 
@@ -162,7 +163,7 @@ public class Class3413 extends Block {
                         }
                      }
 
-                     var2.method6742((PlayerEntity)null, var3, SoundEvents.field26418, Class2266.field14732, 1.0F, 1.0F);
+                     var2.method6742((PlayerEntity)null, var3, SoundEvents.field26418, SoundCategory.field14732, 1.0F, 1.0F);
                      this.method12051(var2, var3, var1, var10 - 1);
                   }
 
@@ -183,7 +184,7 @@ public class Class3413 extends Block {
 
                   var4.method2911(Stats.field40143);
                   this.method12051(var2, var3, var1, 0);
-                  var2.method6742((PlayerEntity)null, var3, SoundEvents.field26429, Class2266.field14732, 1.0F, 1.0F);
+                  var2.method6742((PlayerEntity)null, var3, SoundEvents.field26429, SoundCategory.field14732, 1.0F, 1.0F);
                }
 
                return ActionResultType.method9002(var2.isRemote);
@@ -196,7 +197,7 @@ public class Class3413 extends Block {
 
                var4.method2911(Stats.field40142);
                this.method12051(var2, var3, var1, 3);
-               var2.method6742((PlayerEntity)null, var3, SoundEvents.field26426, Class2266.field14732, 1.0F, 1.0F);
+               var2.method6742((PlayerEntity)null, var3, SoundEvents.field26426, SoundCategory.field14732, 1.0F, 1.0F);
             }
 
             return ActionResultType.method9002(var2.isRemote);

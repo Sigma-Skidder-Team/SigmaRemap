@@ -60,7 +60,7 @@ public class Class6617 implements ISuggestionProvider {
 
    @Override
    public Collection<ResourceLocation> getSoundResourceLocations() {
-      return this.field29119.getSoundHandler().method998();
+      return this.field29119.getSoundHandler().getAvailableSounds();
    }
 
    @Override

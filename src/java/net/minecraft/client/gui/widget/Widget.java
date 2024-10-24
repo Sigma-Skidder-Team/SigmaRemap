@@ -211,7 +211,7 @@ public abstract class Widget extends AbstractGui implements Class1190, IGuiEvent
    }
 
    public void playDownSound(SoundHandler var1) {
-      var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+      var1.play(CustomSoundPlayer.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
    }
 
    public int method5740() {

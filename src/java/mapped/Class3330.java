@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 
 public class Class3330 extends Item {
    private static String[] field18838;
@@ -20,7 +21,7 @@ public class Class3330 extends Item {
          Class1069 var7 = (Class1069)var3;
          if (!var7.method4943() && var7.method4901()) {
             if (!var2.world.isRemote) {
-               var7.method4942(Class2266.field14734);
+               var7.method4942(SoundCategory.field14734);
                var1.shrink(1);
             }
 

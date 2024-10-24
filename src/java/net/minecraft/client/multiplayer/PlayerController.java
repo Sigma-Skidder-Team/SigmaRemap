@@ -19,6 +19,7 @@ import net.minecraft.network.play.client.*;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
@@ -175,7 +176,7 @@ public class PlayerController {
                   SoundType var6 = var5.getSoundType();
                   this.mc
                      .getSoundHandler()
-                     .method1000(new MinecraftSoundManager(var6.method29715(), Class2266.field14732, (var6.getVolume() + 1.0F) / 8.0F, var6.method29711() * 0.5F, var1));
+                     .play(new CustomSoundPlayer(var6.method29715(), SoundCategory.field14732, (var6.getVolume() + 1.0F) / 8.0F, var6.method29711() * 0.5F, var1));
                }
 
                this.field31363++;

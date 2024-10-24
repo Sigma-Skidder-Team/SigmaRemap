@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.audio.ISoundEventAccessor;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
@@ -21,7 +23,7 @@ public class Class8657 {
          this.field39026.put(var1, var6);
       }
 
-      for (Class6647 var9 : var2.method35113()) {
+      for (Sound var9 : var2.method35113()) {
          ResourceLocation var10 = var9.method20291();
          Object var11;
          switch (Class7682.field32910[var9.method20295().ordinal()]) {
@@ -39,7 +41,7 @@ public class Class8657 {
                throw new IllegalStateException("Unknown SoundEventRegistration type: " + var9.method20295());
          }
 
-         var6.method20299((Class6646<Class6647>)var11);
+         var6.method20299((ISoundEventAccessor<Sound>)var11);
       }
    }
 

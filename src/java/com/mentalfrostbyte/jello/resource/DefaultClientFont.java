@@ -52,7 +52,7 @@ public class DefaultClientFont extends ClientResource {
       GL11.glTranslatef(-var1 / (float)this.field31945, -var2 / (float)this.field31945 + 1.0F, 0.0F);
       this.field31946
          .fontRenderer
-         .method38807(
+         .renderString(
             var3,
             var1,
             var2,

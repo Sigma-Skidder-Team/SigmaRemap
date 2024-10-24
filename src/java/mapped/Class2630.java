@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
@@ -34,7 +35,7 @@ public class Class2630 extends Class2628 {
          if (Class1088.method5059(this.field16941) >= 1) {
             if (Class1088.method5059(this.field16941) > 200) {
                World var4 = this.field16941.world;
-               var4.method6742((PlayerEntity)null, var3, SoundEvents.field27172, Class2266.field14732, 0.3F, 0.9F + var4.rand.nextFloat() * 0.2F);
+               var4.method6742((PlayerEntity)null, var3, SoundEvents.field27172, SoundCategory.field14732, 0.3F, 0.9F + var4.rand.nextFloat() * 0.2F);
                var4.setBlockState(
                   this.field16933.up(),
                   Blocks.field36964.getDefaultState().with(Class3441.field19244, Integer.valueOf(Class1088.method5061(this.field16941).nextInt(4) + 1)),

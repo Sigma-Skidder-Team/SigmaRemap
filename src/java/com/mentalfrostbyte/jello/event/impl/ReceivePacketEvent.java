@@ -14,7 +14,7 @@ public class ReceivePacketEvent extends CancellableEvent {
         return this.packet;
     }
 
-    public void method13899(IPacket var1) {
+    public void setPacket(IPacket var1) {
         this.packet = var1;
     }
 }

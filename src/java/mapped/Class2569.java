@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.gson.*;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.util.JSONUtils;
 import org.apache.commons.lang3.Validate;
 
@@ -18,7 +19,7 @@ public class Class2569 implements JsonDeserializer<Class9304> {
       return new Class9304(var9, var7, var8);
    }
 
-   private List<Class6647> method10759(JsonObject var1) {
+   private List<Sound> method10759(JsonObject var1) {
       ArrayList var4 = Lists.newArrayList();
       if (var1.has("sounds")) {
          JsonArray var5 = JSONUtils.method32785(var1, "sounds");
@@ -29,7 +30,7 @@ public class Class2569 implements JsonDeserializer<Class9304> {
                var4.add(this.method10760(JSONUtils.getJSONObject(var7, "sound")));
             } else {
                String var8 = JSONUtils.method32762(var7, "sound");
-               var4.add(new Class6647(var8, 1.0F, 1.0F, 1, Class2221.field14506, false, false, 16));
+               var4.add(new Sound(var8, 1.0F, 1.0F, 1, Sound.Type.field14506, false, false, 16));
             }
          }
       }
@@ -37,9 +38,9 @@ public class Class2569 implements JsonDeserializer<Class9304> {
       return var4;
    }
 
-   private Class6647 method10760(JsonObject var1) {
+   private Sound method10760(JsonObject var1) {
       String var4 = JSONUtils.getString(var1, "name");
-      Class2221 var5 = this.method10761(var1, Class2221.field14506);
+      Sound.Type var5 = this.method10761(var1, Sound.Type.field14506);
       float var6 = JSONUtils.method32772(var1, "volume", 1.0F);
       Validate.isTrue(var6 > 0.0F, "Invalid volume", new Object[0]);
       float var7 = JSONUtils.method32772(var1, "pitch", 1.0F);
@@ -49,13 +50,13 @@ public class Class2569 implements JsonDeserializer<Class9304> {
       boolean var9 = JSONUtils.getBoolean(var1, "preload", false);
       boolean var10 = JSONUtils.getBoolean(var1, "stream", false);
       int var11 = JSONUtils.getInt(var1, "attenuation_distance", 16);
-      return new Class6647(var4, var6, var7, var8, var5, var10, var9, var11);
+      return new Sound(var4, var6, var7, var8, var5, var10, var9, var11);
    }
 
-   private Class2221 method10761(JsonObject var1, Class2221 var2) {
-      Class2221 var5 = var2;
+   private Sound.Type method10761(JsonObject var1, Sound.Type var2) {
+      Sound.Type var5 = var2;
       if (var1.has("type")) {
-         var5 = Class2221.method8948(JSONUtils.getString(var1, "type"));
+         var5 = Sound.Type.method8948(JSONUtils.getString(var1, "type"));
          Validate.notNull(var5, "Invalid type", new Object[0]);
       }
 

@@ -15,6 +15,6 @@ public enum Class2139 {
    }
 
    public void method8832(SoundHandler var1) {
-      var1.method1000(MinecraftSoundManager.method19293(this.field14005, 1.0F, 1.0F));
+      var1.play(CustomSoundPlayer.method19293(this.field14005, 1.0F, 1.0F));
    }
 }

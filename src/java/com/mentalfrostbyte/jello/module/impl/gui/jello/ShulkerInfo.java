@@ -293,7 +293,7 @@ public class ShulkerInfo extends Module {
                 for (int var21 = 0; var21 < var32.size(); var21++) {
                     String var22 = (String) var32.get(var21);
                     mc.fontRenderer
-                            .method38807(
+                            .renderString(
                                     var22,
                                     (float) (var27 + 5),
                                     5.3F + (float) var25 + (float) var10 + (float) (var21 * 10),

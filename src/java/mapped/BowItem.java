@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.UseAction;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
@@ -75,7 +76,7 @@ public class BowItem extends Class3262 implements IVanishable {
                   var7.getPosY(),
                   var7.getPosZ(),
                   SoundEvents.field26363,
-                  Class2266.field14735,
+                  SoundCategory.field14735,
                   1.0F,
                   1.0F / (field18735.nextFloat() * 0.4F + 1.2F) + var11 * 0.5F
                );

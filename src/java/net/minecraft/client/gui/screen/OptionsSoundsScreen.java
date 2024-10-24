@@ -2,7 +2,7 @@ package net.minecraft.client.gui.screen;
 
 import mapped.Class1135;
 import mapped.Class1235;
-import mapped.Class2266;
+import net.minecraft.util.SoundCategory;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.GameSettings;
@@ -20,12 +20,12 @@ public class OptionsSoundsScreen extends Class1135 {
    public void init() {
       int var3 = 0;
       this.<Class1235>addButton(
-         new Class1235(this.mc, this.width / 2 - 155 + var3 % 2 * 160, this.height / 6 - 12 + 24 * (var3 >> 1), Class2266.field14728, 310)
+         new Class1235(this.mc, this.width / 2 - 155 + var3 % 2 * 160, this.height / 6 - 12 + 24 * (var3 >> 1), SoundCategory.field14728, 310)
       );
       var3 += 2;
 
-      for (Class2266 var7 : Class2266.values()) {
-         if (var7 != Class2266.field14728) {
+      for (SoundCategory var7 : SoundCategory.values()) {
+         if (var7 != SoundCategory.field14728) {
             this.<Class1235>addButton(
                new Class1235(this.mc, this.width / 2 - 155 + var3 % 2 * 160, this.height / 6 - 12 + 24 * (var3 >> 1), var7, 150)
             );

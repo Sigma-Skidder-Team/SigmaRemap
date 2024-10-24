@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -23,8 +24,8 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14733;
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 
@@ -53,7 +54,7 @@ public class Class6672 {
       this.field29258.clear();
    }
 
-   public CompletableFuture<?> method20336(Collection<Class6647> var1) {
+   public CompletableFuture<?> method20336(Collection<Sound> var1) {
       return CompletableFuture.allOf(
          var1.stream()
             .<CompletableFuture<Class9216>>map(var1x -> this.method20333(var1x.method20292()))

@@ -9,6 +9,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -40,8 +41,8 @@ public class Class906 extends Entity {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14731;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14731;
    }
 
    public void method3550(ServerPlayerEntity var1) {
@@ -64,7 +65,7 @@ public class Class906 extends Entity {
                this.getPosY(),
                this.getPosZ(),
                SoundEvents.field26732,
-               Class2266.field14731,
+               SoundCategory.field14731,
                10000.0F,
                0.8F + this.rand.nextFloat() * 0.2F
             );
@@ -75,7 +76,7 @@ public class Class906 extends Entity {
                this.getPosY(),
                this.getPosZ(),
                SoundEvents.field26731,
-               Class2266.field14731,
+               SoundCategory.field14731,
                2.0F,
                0.5F + this.rand.nextFloat() * 0.2F
             );

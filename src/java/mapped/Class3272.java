@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.UseAction;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -69,7 +70,7 @@ public class Class3272 extends Item implements IVanishable {
                      }
 
                      var2.addEntity(var10);
-                     var2.method6744((PlayerEntity)null, var10, SoundEvents.field27154, Class2266.field14735, 1.0F, 1.0F);
+                     var2.method6744((PlayerEntity)null, var10, SoundEvents.field27154, SoundCategory.field14735, 1.0F, 1.0F);
                      if (!var7.abilities.isCreativeMode) {
                         var7.inventory.method4048(var1);
                      }
@@ -106,7 +107,7 @@ public class Class3272 extends Item implements IVanishable {
                      var22 = SoundEvents.field27153;
                   }
 
-                  var2.method6744((PlayerEntity)null, var7, var22, Class2266.field14735, 1.0F, 1.0F);
+                  var2.method6744((PlayerEntity)null, var7, var22, SoundCategory.field14735, 1.0F, 1.0F);
                }
             }
          }

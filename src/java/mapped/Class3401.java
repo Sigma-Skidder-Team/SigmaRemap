@@ -15,6 +15,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -89,7 +90,7 @@ public class Class3401 extends Block {
             (double)var3.getY() + 0.5,
             (double)var3.getZ() + 0.5,
             SoundEvents.field26976,
-            Class2266.field14732,
+            SoundCategory.field14732,
             0.5F,
             var4.nextFloat() * 0.4F + 0.8F,
             false

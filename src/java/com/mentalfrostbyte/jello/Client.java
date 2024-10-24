@@ -61,7 +61,6 @@ public class Client {
     private PlayerStateTracker playerStateTracker;
     private AccountManager accountManager;
     private BlurEngine field28981;
-    private CombatTracker field28982;
     private NetworkManager networkManager;
     private SoundManager soundManager;
     private NotificationManager notificationManager;
@@ -128,7 +127,6 @@ public class Client {
         this.field28989 = new Class8795();
         this.field28989.init();
         GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");
-        long var6 = System.currentTimeMillis();
         this.logger.info("Initialized.");
     }
 

@@ -2,8 +2,12 @@ package mapped;
 
 import com.google.common.collect.*;
 import net.minecraft.client.GameSettings;
+import net.minecraft.client.audio.ISound;
+import net.minecraft.client.audio.ITickableSound;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -34,14 +38,14 @@ public class Class4386 {
    private final Class319 field21409 = new Class319();
    private final Class9818 field21410 = new Class9818(this.field21406, this.field21409);
    private int field21411;
-   private final Map<Class6340, Class9617> field21412 = com.google.common.collect.Maps.newHashMap();
-   private final Multimap<Class2266, Class6340> field21413 = HashMultimap.create();
-   private final List<Class6341> field21414 = Lists.newArrayList();
-   private final Map<Class6340, Integer> field21415 = com.google.common.collect.Maps.newHashMap();
-   private final Map<Class6340, Integer> field21416 = com.google.common.collect.Maps.newHashMap();
+   private final Map<ISound, Class9617> field21412 = com.google.common.collect.Maps.newHashMap();
+   private final Multimap<SoundCategory, ISound> field21413 = HashMultimap.create();
+   private final List<ITickableSound> field21414 = Lists.newArrayList();
+   private final Map<ISound, Integer> field21415 = com.google.common.collect.Maps.newHashMap();
+   private final Map<ISound, Integer> field21416 = com.google.common.collect.Maps.newHashMap();
    private final List<Class1270> field21417 = Lists.newArrayList();
-   private final List<Class6341> field21418 = Lists.newArrayList();
-   private final List<Class6647> field21419 = Lists.newArrayList();
+   private final List<ITickableSound> field21418 = Lists.newArrayList();
+   private final List<Sound> field21419 = Lists.newArrayList();
 
    public Class4386(SoundHandler var1, GameSettings var2, IResourceManager var3) {
       this.field21403 = var1;
@@ -69,7 +73,7 @@ public class Class4386 {
          try {
             this.field21406.method27283();
             this.field21407.method37750();
-            this.field21407.method37748(this.field21404.method37147(Class2266.field14728));
+            this.field21407.method37748(this.field21404.method37147(SoundCategory.field14728));
             this.field21408.method20336(this.field21419).thenRun(this.field21419::clear);
             this.field21405 = true;
             field21401.info(field21400, "Sound engine started");
@@ -79,13 +83,13 @@ public class Class4386 {
       }
    }
 
-   private float method13757(Class2266 var1) {
-      return var1 != null && var1 != Class2266.field14728 ? this.field21404.method37147(var1) : 1.0F;
+   private float method13757(SoundCategory var1) {
+      return var1 != null && var1 != SoundCategory.field14728 ? this.field21404.method37147(var1) : 1.0F;
    }
 
-   public void method13758(Class2266 var1, float var2) {
+   public void method13758(SoundCategory var1, float var2) {
       if (this.field21405) {
-         if (var1 != Class2266.field14728) {
+         if (var1 != SoundCategory.field14728) {
             this.field21412.forEach((var1x, var2x) -> {
                float var5 = this.method13774(var1x);
                var2x.method37438(var1xx -> {
@@ -111,7 +115,7 @@ public class Class4386 {
       }
    }
 
-   public void method13760(Class6340 var1) {
+   public void method13760(ISound var1) {
       if (this.field21405) {
          Class9617 var4 = this.field21412.get(var1);
          if (var4 != null) {
@@ -152,10 +156,10 @@ public class Class4386 {
 
    private void method13765() {
       this.field21411++;
-      this.field21418.stream().filter(Class6340::method19268).forEach(this::method13770);
+      this.field21418.stream().filter(ISound::method19268).forEach(this::play);
       this.field21418.clear();
 
-      for (Class6341 var4 : this.field21414) {
+      for (ITickableSound var4 : this.field21414) {
          if (!var4.method19268()) {
             this.method13760(var4);
          }
@@ -183,7 +187,7 @@ public class Class4386 {
       while (var11.hasNext()) {
          Entry var12 = (Entry)var11.next();
          Class9617 var14 = (Class9617)var12.getValue();
-         Class6340 var16 = (Class6340)var12.getKey();
+         ISound var16 = (ISound)var12.getKey();
          float var18 = this.field21404.method37147(var16.method19282());
          if (var18 <= 0.0F) {
             var14.method37438(Class8506::method30118);
@@ -204,7 +208,7 @@ public class Class4386 {
                } catch (RuntimeException var10) {
                }
 
-               if (var16 instanceof Class6341) {
+               if (var16 instanceof ITickableSound) {
                   this.field21414.remove(var16);
                }
             }
@@ -216,30 +220,30 @@ public class Class4386 {
       while (var13.hasNext()) {
          Entry var15 = (Entry)var13.next();
          if (this.field21411 >= (Integer)var15.getValue()) {
-            Class6340 var17 = (Class6340)var15.getKey();
-            if (var17 instanceof Class6341) {
-               ((Class6341)var17).method19269();
+            ISound var17 = (ISound)var15.getKey();
+            if (var17 instanceof ITickableSound) {
+               ((ITickableSound)var17).method19269();
             }
 
-            this.method13770(var17);
+            this.play(var17);
             var13.remove();
          }
       }
    }
 
-   private static boolean method13766(Class6340 var0) {
+   private static boolean method13766(ISound var0) {
       return var0.method19284() > 0;
    }
 
-   private static boolean method13767(Class6340 var0) {
+   private static boolean method13767(ISound var0) {
       return var0.method19283() && method13766(var0);
    }
 
-   private static boolean method13768(Class6340 var0) {
+   private static boolean method13768(ISound var0) {
       return var0.method19283() && !method13766(var0);
    }
 
-   public boolean method13769(Class6340 var1) {
+   public boolean method13769(ISound var1) {
       if (!this.field21405) {
          return false;
       } else {
@@ -247,26 +251,26 @@ public class Class4386 {
       }
    }
 
-   public void method13770(Class6340 var1) {
+   public void play(ISound var1) {
       if (this.field21405 && var1.method19268()) {
          Class6648 var4 = var1.method19280(this.field21403);
          ResourceLocation var5 = var1.method19279();
          if (var4 != null) {
-            Class6647 var6 = var1.method19281();
+            Sound var6 = var1.method19281();
             if (var6 != SoundHandler.field1051) {
                float var7 = var1.method19285();
                float var8 = Math.max(var7, 1.0F) * (float)var6.method20298();
-               Class2266 var9 = var1.method19282();
+               SoundCategory var9 = var1.method19282();
                float var10 = this.method13774(var1);
                float var11 = this.method13773(var1);
-               Class2279 var12 = var1.method19290();
+               ISound.AttenuationType var12 = var1.method19290();
                boolean var13 = var1.method19291();
                if (var10 == 0.0F && !var1.method19274()) {
                   field21401.debug(field21400, "Skipped playing sound {}, volume was zero.", var6.method20291());
                } else {
                   Vector3d var14 = new Vector3d(var1.method19287(), var1.method19288(), var1.method19289());
                   if (!this.field21417.isEmpty()) {
-                     boolean var15 = var13 || var12 == Class2279.field14845 || this.field21407.method37746().squareDistanceTo(var14) < (double)(var8 * var8);
+                     boolean var15 = var13 || var12 == ISound.AttenuationType.field14845 || this.field21407.method37746().squareDistanceTo(var14) < (double)(var8 * var8);
                      if (!var15) {
                         field21401.debug(field21400, "Did not notify listeners of soundEvent: {}, it is too far away to hear", var5);
                      } else {
@@ -289,7 +293,7 @@ public class Class4386 {
                         var18.method37438(var8x -> {
                            var8x.method30121(var11);
                            var8x.method30123(var10);
-                           if (var12 != Class2279.field14846) {
+                           if (var12 != ISound.AttenuationType.LINEAR) {
                               var8x.method30124();
                            } else {
                               var8x.method30125(var8);
@@ -311,8 +315,8 @@ public class Class4386 {
                               }));
                         }
 
-                        if (var1 instanceof Class6341) {
-                           this.field21414.add((Class6341) var1);
+                        if (var1 instanceof ITickableSound) {
+                           this.field21414.add((ITickableSound) var1);
                         }
                      } else {
                         field21401.warn("Failed to create new sound handle");
@@ -330,19 +334,19 @@ public class Class4386 {
       }
    }
 
-   public void method13771(Class6341 var1) {
+   public void playOnNextTick(ITickableSound var1) {
       this.field21418.add(var1);
    }
 
-   public void method13772(Class6647 var1) {
+   public void method13772(Sound var1) {
       this.field21419.add(var1);
    }
 
-   private float method13773(Class6340 var1) {
+   private float method13773(ISound var1) {
       return MathHelper.clamp(var1.method19286(), 0.5F, 2.0F);
    }
 
-   private float method13774(Class6340 var1) {
+   private float method13774(ISound var1) {
       return MathHelper.clamp(var1.method19285() * this.method13757(var1.method19282()), 0.0F, 1.0F);
    }
 
@@ -358,7 +362,7 @@ public class Class4386 {
       }
    }
 
-   public void method13777(Class6340 var1, int var2) {
+   public void playDelayed(ISound var1, int var2) {
       this.field21415.put(var1, this.field21411 + var2);
    }
 
@@ -374,10 +378,10 @@ public class Class4386 {
       }
    }
 
-   public void method13779(ResourceLocation var1, Class2266 var2) {
+   public void method13779(ResourceLocation var1, SoundCategory var2) {
       if (var2 == null) {
          if (var1 != null) {
-            for (Class6340 var6 : this.field21412.keySet()) {
+            for (ISound var6 : this.field21412.keySet()) {
                if (var6.method19279().equals(var1)) {
                   this.method13760(var6);
                }
@@ -386,7 +390,7 @@ public class Class4386 {
             this.method13761();
          }
       } else {
-         for (Class6340 var8 : this.field21413.get(var2)) {
+         for (ISound var8 : this.field21413.get(var2)) {
             if (var1 == null || var8.method19279().equals(var1)) {
                this.method13760(var8);
             }

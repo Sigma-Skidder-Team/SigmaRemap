@@ -1,18 +1,19 @@
-package mapped;
+package net.minecraft.client.audio;
 
+import mapped.Class4386;
 import net.minecraft.util.ResourceLocation;
 
-public class Class6647 implements Class6646<Class6647> {
+public class Sound implements ISoundEventAccessor<Sound> {
    private final ResourceLocation field29211;
    private final float field29212;
    private final float field29213;
    private final int field29214;
-   private final Class2221 field29215;
+   private final Type field29215;
    private final boolean field29216;
    private final boolean field29217;
    private final int field29218;
 
-   public Class6647(String var1, float var2, float var3, int var4, Class2221 var5, boolean var6, boolean var7, int var8) {
+   public Sound(String var1, float var2, float var3, int var4, Type var5, boolean var6, boolean var7, int var8) {
       this.field29211 = new ResourceLocation(var1);
       this.field29212 = var2;
       this.field29213 = var3;
@@ -44,7 +45,7 @@ public class Class6647 implements Class6646<Class6647> {
       return this.field29214;
    }
 
-   public Class6647 method20290() {
+   public Sound method20290() {
       return this;
    }
 
@@ -55,7 +56,7 @@ public class Class6647 implements Class6646<Class6647> {
       }
    }
 
-   public Class2221 method20295() {
+   public Type method20295() {
       return this.field29215;
    }
 
@@ -74,5 +75,27 @@ public class Class6647 implements Class6646<Class6647> {
    @Override
    public String toString() {
       return "Sound[" + this.field29211 + "]";
+   }
+
+   public enum Type {
+      field14506("file"),
+      field14507("event");
+
+      private final String field14508;
+      private static final Type[] field14509 = new Type[]{field14506, field14507};
+
+      private Type(String var3) {
+         this.field14508 = var3;
+      }
+
+      public static Type method8948(String var0) {
+         for (Type var6 : values()) {
+            if (var6.field14508.equals(var0)) {
+               return var6;
+            }
+         }
+
+         return null;
+      }
    }
 }

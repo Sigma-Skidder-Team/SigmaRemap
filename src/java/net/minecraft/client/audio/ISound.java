@@ -1,18 +1,20 @@
-package mapped;
+package net.minecraft.client.audio;
 
+import mapped.*;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 
 import javax.annotation.Nullable;
 
-public interface Class6340 {
+public interface ISound {
    ResourceLocation method19279();
 
    @Nullable
    Class6648 method19280(SoundHandler var1);
 
-   Class6647 method19281();
+   Sound method19281();
 
-   Class2266 method19282();
+   SoundCategory method19282();
 
    boolean method19283();
 
@@ -30,7 +32,7 @@ public interface Class6340 {
 
    double method19289();
 
-   Class2279 method19290();
+   AttenuationType method19290();
 
    default boolean method19274() {
       return false;
@@ -38,5 +40,12 @@ public interface Class6340 {
 
    default boolean method19268() {
       return true;
+   }
+
+   enum AttenuationType {
+      field14845,
+      LINEAR;
+
+      private static final AttenuationType[] field14847 = new AttenuationType[]{field14845, LINEAR};
    }
 }

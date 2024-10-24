@@ -195,7 +195,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       if (var5.getItem() != Items.field37956) {
          return super.method4285(var1, var2);
       } else if (!this.world.isRemote && this.method4516()) {
-         this.method4515(Class2266.field14735);
+         this.method4515(SoundCategory.field14735);
          var5.damageItem(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          return ActionResultType.SUCCESS;
       } else {
@@ -204,7 +204,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public void method4515(Class2266 var1) {
+   public void method4515(SoundCategory var1) {
       this.world.method6744((PlayerEntity)null, this, SoundEvents.field27033, var1, 1.0F, 1.0F);
       this.method4520(true);
       int var4 = 1 + this.rand.nextInt(3);

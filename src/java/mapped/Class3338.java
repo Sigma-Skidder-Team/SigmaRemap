@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
@@ -34,7 +35,7 @@ public class Class3338 extends Item {
 
             if (var3.attemptTeleport(var14, var16, var18, true)) {
                SoundEvent var20 = !(var3 instanceof Class1095) ? SoundEvents.field26457 : SoundEvents.field26598;
-               var2.playSound((PlayerEntity)null, var7, var9, var11, var20, Class2266.field14735, 1.0F, 1.0F);
+               var2.playSound((PlayerEntity)null, var7, var9, var11, var20, SoundCategory.field14735, 1.0F, 1.0F);
                var3.playSound(var20, 1.0F, 1.0F);
                break;
             }

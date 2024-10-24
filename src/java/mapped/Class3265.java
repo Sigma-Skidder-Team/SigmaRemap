@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -77,7 +78,7 @@ public class Class3265 extends ToolItem {
          return ActionResultType.field14820;
       } else {
          PlayerEntity var8 = var1.method18358();
-         var4.method6742(var8, var5, SoundEvents.field26364, Class2266.field14732, 1.0F, 1.0F);
+         var4.method6742(var8, var5, SoundEvents.field26364, SoundCategory.field14732, 1.0F, 1.0F);
          if (!var4.isRemote) {
             var4.setBlockState(var5, var7.getDefaultState().with(Class3386.field18994, var6.<Direction.Axis>get(Class3386.field18994)), 11);
             if (var8 != null) {

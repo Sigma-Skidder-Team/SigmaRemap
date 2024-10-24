@@ -367,12 +367,12 @@ public abstract class PlayerEntity extends LivingEntity {
       this.world.playSound(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.getSoundCategory(), var2, var3);
    }
 
-   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, SoundCategory var2, float var3, float var4) {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14735;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14735;
    }
 
    @Override
@@ -2067,7 +2067,7 @@ public abstract class PlayerEntity extends LivingEntity {
          this.getPosY(),
          this.getPosZ(),
          SoundEvents.field26959,
-         Class2266.field14735,
+         SoundCategory.field14735,
          0.5F,
          var1.rand.nextFloat() * 0.1F + 0.9F
       );

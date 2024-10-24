@@ -20,6 +20,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Quaternion;
@@ -82,7 +83,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
       float var8 = method11769(var7, var1);
       if (var8 >= 1.0F && ! isCharged(var1) && method11753(var3, var1)) {
          method11756(var1, true);
-         Class2266 var9 = !(var3 instanceof PlayerEntity) ? Class2266.field14733 : Class2266.field14735;
+         SoundCategory var9 = !(var3 instanceof PlayerEntity) ? SoundCategory.field14733 : SoundCategory.field14735;
          var2.playSound(
             (PlayerEntity)null,
             var3.getPosX(),
@@ -224,7 +225,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
 
          var3.damageItem(!var12 ? 1 : 3, var1, var1x -> var1x.sendBreakAnimation(var2));
          var0.addEntity((Entity)var13);
-         var0.playSound((PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), SoundEvents.field26494, Class2266.field14735, 1.0F, var5);
+         var0.playSound((PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), SoundEvents.field26494, SoundCategory.field14735, 1.0F, var5);
       }
    }
 
@@ -307,12 +308,12 @@ public class CrossbowItem extends Class3262 implements IVanishable {
 
          if (var10 >= 0.2F && !this.field18746) {
             this.field18746 = true;
-            var1.playSound((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var8, Class2266.field14735, 0.5F, 1.0F);
+            var1.playSound((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var8, SoundCategory.field14735, 0.5F, 1.0F);
          }
 
          if (var10 >= 0.5F && var9 != null && !this.field18747) {
             this.field18747 = true;
-            var1.playSound((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var9, Class2266.field14735, 0.5F, 1.0F);
+            var1.playSound((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var9, SoundCategory.field14735, 0.5F, 1.0F);
          }
       }
    }

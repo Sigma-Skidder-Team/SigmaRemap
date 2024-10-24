@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
@@ -123,7 +124,7 @@ public class Class3749 extends Class3676<Class1042> {
                         (double)this.field19897.getY(),
                         (double)this.field19897.getZ(),
                         SoundEvents.field26486,
-                        Class2266.field14732,
+                        SoundCategory.field14732,
                         1.0F,
                         1.0F
                      );

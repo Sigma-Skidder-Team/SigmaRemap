@@ -18,10 +18,7 @@ import net.minecraft.state.properties.BellAttachment;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -129,7 +126,7 @@ public class Class3369 extends Class3241 {
          }
 
          ((Class966)var6).method3991(var3);
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field26400, Class2266.field14732, 2.0F, 1.0F);
+         var1.method6742((PlayerEntity)null, var2, SoundEvents.field26400, SoundCategory.field14732, 2.0F, 1.0F);
          return true;
       } else {
          return false;

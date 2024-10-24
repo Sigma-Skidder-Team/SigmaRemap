@@ -42,40 +42,40 @@ public class FontRenderer {
    }
 
    public int drawStringWithShadow(MatrixStack var1, String var2, float var3, float var4, int var5) {
-      return this.method38807(var2, var3, var4, var5, var1.getLast().getMatrix(), true, this.method38829());
+      return this.renderString(var2, var3, var4, var5, var1.getLast().getMatrix(), true, this.method38829());
    }
 
    public int method38800(MatrixStack var1, String var2, float var3, float var4, int var5, boolean var6) {
       RenderSystem.enableAlphaTest();
-      return this.method38807(var2, var3, var4, var5, var1.getLast().getMatrix(), true, var6);
+      return this.renderString(var2, var3, var4, var5, var1.getLast().getMatrix(), true, var6);
    }
 
    public int method38801(MatrixStack var1, String var2, float var3, float var4, int var5) {
       RenderSystem.enableAlphaTest();
-      return this.method38807(var2, var3, var4, var5, var1.getLast().getMatrix(), false, this.method38829());
+      return this.renderString(var2, var3, var4, var5, var1.getLast().getMatrix(), false, this.method38829());
    }
 
    public int method38802(MatrixStack var1, Class9125 var2, float var3, float var4, int var5) {
       RenderSystem.enableAlphaTest();
-      return this.method38809(var2, var3, var4, var5, var1.getLast().getMatrix(), true);
+      return this.func_238415_a_(var2, var3, var4, var5, var1.getLast().getMatrix(), true);
    }
 
    public int method38803(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
       RenderSystem.enableAlphaTest();
-      return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), true);
+      return this.func_238415_a_(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), true);
    }
 
    public int method38804(MatrixStack var1, Class9125 var2, float var3, float var4, int var5) {
       RenderSystem.enableAlphaTest();
-      return this.method38809(var2, var3, var4, var5, var1.getLast().getMatrix(), false);
+      return this.func_238415_a_(var2, var3, var4, var5, var1.getLast().getMatrix(), false);
    }
 
    public int func_243248_b(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
       RenderSystem.enableAlphaTest();
-      return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), false);
+      return this.func_238415_a_(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), false);
    }
 
-   public String method38806(String var1) {
+   public String bidiReorder(String var1) {
       try {
          Bidi var4 = new Bidi(new ArabicShaping(8).shape(var1), 127);
          var4.setReorderingMode(0);
@@ -85,7 +85,7 @@ public class FontRenderer {
       }
    }
 
-   public int method38807(String var1, float var2, float var3, int var4, Matrix4f var5, boolean var6, boolean var7) {
+   public int renderString(String var1, float var2, float var3, int var4, Matrix4f var5, boolean var6, boolean var7) {
       if (var1 != null) {
          Class7735 var10 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          int var11 = this.method38811(var1, var2, var3, var4, var6, var5, var10, false, 0, 15728880, var7);
@@ -114,7 +114,7 @@ public class FontRenderer {
       var9.finish();
    }
 
-   private int method38809(Class9125 var1, float var2, float var3, int var4, Matrix4f var5, boolean var6) {
+   private int func_238415_a_(Class9125 var1, float var2, float var3, int var4, Matrix4f var5, boolean var6) {
       Class7735 var9 = Class7733.method25595(Tessellator.getInstance().getBuffer());
       int var10 = this.method38813(var1, var2, var3, var4, var6, var5, var9, false, 0, 15728880);
       var9.finish();
@@ -149,7 +149,7 @@ public class FontRenderer {
            String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10, boolean var11
    ) {
       if (var11) {
-         var1 = this.method38806(var1);
+         var1 = this.bidiReorder(var1);
       }
 
       var4 = method38814(var4);
@@ -236,7 +236,7 @@ public class FontRenderer {
       Matrix4f var8 = Class6979.method21542().method21548();
 
       for (Class9125 var10 : this.trimStringToWidth(var1, var4)) {
-         this.method38809(var10, (float)var2, (float)var3, var5, var8, false);
+         this.func_238415_a_(var10, (float)var2, (float)var3, var5, var8, false);
          var3 += 9;
       }
    }

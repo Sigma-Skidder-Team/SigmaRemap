@@ -2604,8 +2604,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return PushReaction.field15862;
    }
 
-   public Class2266 getSoundCategory() {
-      return Class2266.field14734;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14734;
    }
 
    public int getFireImmuneTicks() {

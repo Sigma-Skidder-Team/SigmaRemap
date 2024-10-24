@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.ISound;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
@@ -106,7 +107,7 @@ public class Class1269 extends AbstractGui implements Class1270 {
    }
 
    @Override
-   public void method6000(Class6340 var1, Class6648 var2) {
+   public void method6000(ISound var1, Class6648 var2) {
       if (var2.method20300() != null) {
          ITextComponent var5 = var2.method20300();
          if (!this.field6745.isEmpty()) {
