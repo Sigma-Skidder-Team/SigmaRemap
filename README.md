@@ -31,6 +31,7 @@ We have fixed many features already,
 - [Richy](https://github.com/richylotl)
 - [lamzvam](https://github.com/lamzvam)
 - [StormingMoon](https://github.com/StormingMoon)
+- [Away](https://github.com/AwayXD)
 
 ### How to make a runnable jar for the minecraft launcher?
 1. Clone this repo and open it in intellij;
