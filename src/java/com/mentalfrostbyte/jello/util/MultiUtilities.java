@@ -574,8 +574,8 @@ public class MultiUtilities {
 
    public static void method17741(int var0) {
       if (mc.gameRenderer.shaderGroup != null) {
-         mc.gameRenderer.shaderGroup.elements.get(0).method7410().getFromName("Radius").setValue((float)var0);
-         mc.gameRenderer.shaderGroup.elements.get(1).method7410().getFromName("Radius").setValue((float)var0);
+         mc.gameRenderer.shaderGroup.elements.get(0).getShaderManager().getFromName("Radius").setValue((float)var0);
+         mc.gameRenderer.shaderGroup.elements.get(1).getShaderManager().getFromName("Radius").setValue((float)var0);
       }
    }
 

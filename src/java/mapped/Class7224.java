@@ -37,8 +37,8 @@ public class Class7224 implements Class7222 {
 
       if (!this.field31058.isEmpty()) {
          String var8 = this.field31058.get(new Random().nextInt(this.field31058.size())).method19966().getName();
-         this.field31057 = AbstractClientPlayerEntity.method5376(var8);
-         AbstractClientPlayerEntity.method5375(this.field31057, var8);
+         this.field31057 = AbstractClientPlayerEntity.getLocationSkin(var8);
+         AbstractClientPlayerEntity.getDownloadImageSkin(this.field31057, var8);
       } else {
          this.field31057 = DefaultPlayerSkin.getDefaultSkinLegacy();
       }

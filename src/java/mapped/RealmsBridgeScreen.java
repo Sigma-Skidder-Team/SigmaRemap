@@ -7,7 +7,7 @@ import net.minecraft.realms.RealmsScreen;
 
 import javax.annotation.Nullable;
 
-public class Class810 extends RealmsScreen {
+public class RealmsBridgeScreen extends RealmsScreen {
    private static String[] field4337;
    private Screen field4338;
 

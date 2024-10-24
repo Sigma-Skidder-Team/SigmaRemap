@@ -1,7 +1,5 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -9,7 +7,6 @@ import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 
 public class UIButton extends Class4247 {
-   private static String[] field20602;
    public Animation field20711 = new Animation(190, 190);
 
    public UIButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
@@ -22,9 +19,6 @@ public class UIButton extends Class4247 {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       this.field20711.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
-      if (this.method13298()) {
-         Client.getInstance().getGuiManager().method33459(GuiManager.field41345);
-      }
    }
 
    @Override

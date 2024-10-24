@@ -466,9 +466,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       double var8 = var1.method17596();
       float var10 = (float)(var1.method17597() * 360) / 256.0F;
       float var11 = (float)(var1.method17598() * 360) / 256.0F;
-      if (this.method15792(var1.method17593()) != null) {
+      if (this.getPlayerInfo(var1.method17593()) != null) {
          int var12 = var1.method17592();
-         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.method15792(var1.method17593()).method19966());
+         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.getPlayerInfo(var1.method17593()).method19966());
          var13.setEntityId(var12);
          var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
@@ -2232,7 +2232,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    }
 
    @Nullable
-   public NetworkPlayerInfo method15792(UUID var1) {
+   public NetworkPlayerInfo getPlayerInfo(UUID var1) {
       return this.field23276.get(var1);
    }
 

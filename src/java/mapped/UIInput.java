@@ -71,10 +71,6 @@ public class UIInput extends Class4278 {
          var5 = this.field20912.replaceAll(".", this.field20755);
       }
 
-      if (this.method13298() && this.field20905) {
-         Client.getInstance().getGuiManager().method33459(GuiManager.field41346);
-      }
-
       this.field20744 = this.field20744 + ((!this.field20905 ? 0.0F : 1.0F) - this.field20744) / 2.0F;
       if (this.field20905) {
          if (this.field20752) {

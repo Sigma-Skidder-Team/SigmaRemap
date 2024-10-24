@@ -26,7 +26,7 @@ public class ShaderGroup implements AutoCloseable {
    private final Framebuffer field8936;
    private final IResourceManager field8937;
    private final String field8938;
-   public final List<Class1706> elements = Lists.newArrayList();
+   public final List<Shader> elements = Lists.newArrayList();
    private final Map<String, Framebuffer> field8940 = Maps.newHashMap();
    private final List<Framebuffer> field8941 = Lists.newArrayList();
    private Matrix4f field8942;
@@ -130,7 +130,7 @@ public class ShaderGroup implements AutoCloseable {
       } else if (var10 == null) {
          throw new JSONException("Output target '" + var8 + "' does not exist");
       } else {
-         Class1706 var11 = this.method6523(var6, var9, var10);
+         Shader var11 = this.method6523(var6, var9, var10);
          JsonArray var12 = JSONUtils.method32786(var5, "auxtargets", (JsonArray)null);
          if (var12 != null) {
             int var13 = 0;
@@ -218,7 +218,7 @@ public class ShaderGroup implements AutoCloseable {
    private void method6520(JsonElement var1) throws JSONException {
       JsonObject var4 = JSONUtils.getJSONObject(var1, "uniform");
       String var5 = JSONUtils.getString(var4, "name");
-      Class1708 var6 = this.elements.get(this.elements.size() - 1).method7410().method7936(var5);
+      Class1708 var6 = this.elements.get(this.elements.size() - 1).getShaderManager().method7936(var5);
       if (var6 == null) {
          throw new JSONException("Uniform '" + var5 + "' does not exist");
       } else {
@@ -275,15 +275,15 @@ public class ShaderGroup implements AutoCloseable {
          var4.deleteFramebuffer();
       }
 
-      for (Class1706 var6 : this.elements) {
+      for (Shader var6 : this.elements) {
          var6.close();
       }
 
       this.elements.clear();
    }
 
-   public Class1706 method6523(String var1, Framebuffer var2, Framebuffer var3) throws IOException {
-      Class1706 var6 = new Class1706(this.field8937, var1, var2, var3);
+   public Shader method6523(String var1, Framebuffer var2, Framebuffer var3) throws IOException {
+      Shader var6 = new Shader(this.field8937, var1, var2, var3);
       this.elements.add(this.elements.size(), var6);
       return var6;
    }
@@ -297,7 +297,7 @@ public class ShaderGroup implements AutoCloseable {
       this.field8944 = this.field8936.framebufferTextureHeight;
       this.method6524();
 
-      for (Class1706 var6 : this.elements) {
+      for (Shader var6 : this.elements) {
          var6.method7408(this.field8942);
       }
 
@@ -320,7 +320,7 @@ public class ShaderGroup implements AutoCloseable {
          this.field8945 -= 20.0F;
       }
 
-      for (Class1706 var5 : this.elements) {
+      for (Shader var5 : this.elements) {
          var5.method7409(this.field8945 / 20.0F);
       }
    }

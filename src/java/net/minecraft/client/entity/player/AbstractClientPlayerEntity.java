@@ -17,6 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
 import net.minecraft.world.GameType;
 import net.optifine.Config;
+import net.optifine.player.PlayerConfigurations;
 
 import javax.annotation.Nullable;
 import java.io.File;
@@ -46,46 +47,46 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          this.nameClear = StringUtils.stripControlCodes(this.nameClear);
       }
 
-      Class7749.method25668(this);
+      PlayerConfigurations.getPlayerConfiguration(this);
    }
 
    @Override
    public boolean isSpectator() {
-      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
-      return var3 != null && var3.method19967() == GameType.SPECTATOR;
+      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().getPlayerInfo(this.getGameProfile().getId());
+      return var3 != null && var3.getGameType() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean isCreative() {
-      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
-      return var3 != null && var3.method19967() == GameType.CREATIVE;
+      NetworkPlayerInfo var3 = Minecraft.getInstance().getConnection().getPlayerInfo(this.getGameProfile().getId());
+      return var3 != null && var3.getGameType() == GameType.CREATIVE;
    }
 
-   public boolean method5368() {
-      return this.method5369() != null;
+   public boolean hasPlayerInfo() {
+      return this.getPlayerInfo() != null;
    }
 
    @Nullable
-   public NetworkPlayerInfo method5369() {
+   public NetworkPlayerInfo getPlayerInfo() {
       if (this.playerInfo == null) {
-         this.playerInfo = Minecraft.getInstance().getConnection().method15792(this.getUniqueID());
+         this.playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(this.getUniqueID());
       }
 
       return this.playerInfo;
    }
 
-   public boolean method5370() {
-      NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null && var3.method19971();
+   public boolean hasSkin() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
+      return var3 != null && var3.hasLocationSkin();
    }
 
-   public ResourceLocation method5371() {
-      NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19973() : DefaultPlayerSkin.getDefaultSkin(this.getUniqueID());
+   public ResourceLocation getLocationSkin() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
+      return var3 != null ? var3.getLocationSkin() : DefaultPlayerSkin.getDefaultSkin(this.getUniqueID());
    }
 
    @Nullable
-   public ResourceLocation method5372() {
+   public ResourceLocation getLocationCape() {
       if (Config.method26914()) {
          if (this.reloadCapeTimeMs != 0L && System.currentTimeMillis() > this.reloadCapeTimeMs) {
             Class8156.method28294(this);
@@ -93,8 +94,8 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          }
 
          if (this.locationOfCape == null) {
-            NetworkPlayerInfo var3 = this.method5369();
-            return var3 != null ? var3.method19974() : null;
+            NetworkPlayerInfo var3 = this.getPlayerInfo();
+            return var3 != null ? var3.getLocationCape() : null;
          } else {
             return this.locationOfCape;
          }
@@ -103,17 +104,17 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       }
    }
 
-   public boolean method5373() {
-      return this.method5369() != null;
+   public boolean isPlayerInfoSet() {
+      return this.getPlayerInfo() != null;
    }
 
    @Nullable
-   public ResourceLocation method5374() {
-      NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19975() : null;
+   public ResourceLocation getLocationElytra() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
+      return var3 != null ? var3.getLocationElytra() : null;
    }
 
-   public static DownloadingTexture method5375(ResourceLocation var0, String var1) {
+   public static DownloadingTexture getDownloadImageSkin(ResourceLocation var0, String var1) {
       TextureManager var4 = Minecraft.getInstance().getTextureManager();
       Object var5 = var4.getTexture(var0);
       if (var5 == null) {
@@ -130,12 +131,12 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       return (DownloadingTexture)var5;
    }
 
-   public static ResourceLocation method5376(String var0) {
+   public static ResourceLocation getLocationSkin(String var0) {
       return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars(StringUtils.stripControlCodes(var0)));
    }
 
-   public String method5377() {
-      NetworkPlayerInfo var3 = this.method5369();
+   public String getSkinType() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
       return var3 != null ? var3.method19972() : DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }
 
@@ -169,20 +170,20 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       return eventSomething.fovModifier;
    }
 
-   public String method5379() {
+   public String getNameClear() {
       return this.nameClear;
    }
 
-   public ResourceLocation method5380() {
+   public ResourceLocation getLocationOfCape() {
       return this.locationOfCape;
    }
 
-   public void method5381(ResourceLocation var1) {
+   public void setLocationOfCape(ResourceLocation var1) {
       this.locationOfCape = var1;
    }
 
-   public boolean method5382() {
-      ResourceLocation var3 = this.method5372();
+   public boolean hasElytraCape() {
+      ResourceLocation var3 = this.getLocationCape();
       if (var3 != null) {
          return var3 != this.locationOfCape ? true : this.elytraOfCape;
       } else {
@@ -190,19 +191,19 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       }
    }
 
-   public void method5383(boolean var1) {
+   public void setElytraOfCape(boolean var1) {
       this.elytraOfCape = var1;
    }
 
-   public boolean method5384() {
+   public boolean isElytraOfCape() {
       return this.elytraOfCape;
    }
 
-   public long method5385() {
+   public long getReloadCapeTimeMs() {
       return this.reloadCapeTimeMs;
    }
 
-   public void method5386(long var1) {
+   public void setReloadCapeTimeMs(long var1) {
       this.reloadCapeTimeMs = var1;
    }
 }

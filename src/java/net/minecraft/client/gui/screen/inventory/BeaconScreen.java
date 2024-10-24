@@ -101,7 +101,7 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
       drawCenteredString(var1, this.font, field4842, 62, 10, 14737632);
       drawCenteredString(var1, this.font, field4843, 169, 10, 14737632);
 
-      for (Widget var7 : this.field4566) {
+      for (Widget var7 : this.buttons) {
          if (var7.isHovered()) {
             var7.renderToolTip(var1, var2 - this.field4734, var3 - this.field4735);
             break;
@@ -199,7 +199,7 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
 
    // $VF: synthetic method
    public static List method2714(BeaconScreen var0) {
-      return var0.field4566;
+      return var0.buttons;
    }
 
    // $VF: synthetic method

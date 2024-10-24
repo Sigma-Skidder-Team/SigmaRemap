@@ -30,10 +30,10 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
             }
          } else {
             AbstractClientPlayerEntity var15 = (AbstractClientPlayerEntity)var4;
-            if (var15.method5373() && var15.method5374() != null) {
-               var14 = var15.method5374();
-            } else if (var15.method5382() && var15.method5368() && var15.method5372() != null && var15.method2962(Class2318.field15879)) {
-               var14 = var15.method5372();
+            if (var15.isPlayerInfoSet() && var15.getLocationElytra() != null) {
+               var14 = var15.getLocationElytra();
+            } else if (var15.hasElytraCape() && var15.hasPlayerInfo() && var15.getLocationCape() != null && var15.method2962(Class2318.field15879)) {
+               var14 = var15.getLocationCape();
             } else {
                var14 = this.method828(var13, (T)var4);
                if (Config.method26953()) {

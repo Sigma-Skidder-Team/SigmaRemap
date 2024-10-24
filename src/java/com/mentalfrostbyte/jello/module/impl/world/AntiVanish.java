@@ -40,7 +40,7 @@ public class AntiVanish extends Module {
                 if (this.vanishedPlayers != null) {
                     try {
                         for (UUID playerId : this.vanishedPlayers) {
-                            NetworkPlayerInfo playerInfo = mc.getConnection().method15792(playerId);
+                            NetworkPlayerInfo playerInfo = mc.getConnection().getPlayerInfo(playerId);
                             ITextComponent playerName = playerInfo == null ? null : playerInfo.method19979();
                             if (playerInfo != null && this.vanishedPlayers.contains(playerId)) {
                                 if (playerName == null) {
@@ -69,7 +69,7 @@ public class AntiVanish extends Module {
                 SPlayerListItemPacket packet = (SPlayerListItemPacket) event.getPacket();
                 if (packet.getAction() == SPlayerListItemPacket.Action.UPDATE_LATENCY) {
                     for (SPlayerListItemPacket.AddPlayerData playerData : packet.getEntries()) {
-                        NetworkPlayerInfo playerInfo = mc.getConnection().method15792(playerData.getProfile().getId());
+                        NetworkPlayerInfo playerInfo = mc.getConnection().getPlayerInfo(playerData.getProfile().getId());
                         if (playerInfo == null && !this.addVanishedPlayer(playerData.getProfile().getId())) {
                             System.out.println(playerData.getProfile().getId());
                             Client.getInstance().getNotificationManager().send(new Notification("Vanished Warning", "A player is vanished!", 5500));

@@ -59,7 +59,7 @@ public class FirstPersonRenderer {
    }
 
    private void method37582(MatrixStack var1, Class7733 var2, int var3, HandSide var4) {
-      this.mc.getTextureManager().bindTexture(this.mc.player.method5371());
+      this.mc.getTextureManager().bindTexture(this.mc.player.getLocationSkin());
       PlayerRenderer var7 = (PlayerRenderer)this.field45085.<AbstractClientPlayerEntity>getRenderer(this.mc.player);
       var1.push();
       float var8 = var4 != HandSide.RIGHT ? -1.0F : 1.0F;
@@ -154,7 +154,7 @@ public class FirstPersonRenderer {
       var1.rotate(Vector3f.YP.rotationDegrees(var10 * var16 * 70.0F));
       var1.rotate(Vector3f.ZP.rotationDegrees(var10 * var15 * -20.0F));
       ClientPlayerEntity var17 = this.mc.player;
-      this.mc.getTextureManager().bindTexture(var17.method5371());
+      this.mc.getTextureManager().bindTexture(var17.getLocationSkin());
       var1.translate((double)(var10 * -1.0F), 3.6F, 3.5);
       var1.rotate(Vector3f.ZP.rotationDegrees(var10 * 120.0F));
       var1.rotate(Vector3f.XP.rotationDegrees(200.0F));

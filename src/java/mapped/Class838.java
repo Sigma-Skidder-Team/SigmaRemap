@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Class838 extends Screen {
    private static String[] field4628;
-   public List<Widget> field4629 = this.field4566;
+   public List<Widget> field4629 = this.buttons;
    public FontRenderer field4630 = Minecraft.getInstance().fontRenderer;
    public boolean field4631 = false;
 

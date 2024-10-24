@@ -45,7 +45,7 @@ public class Class7078 {
             var9 = this.field30471;
          }
       } else {
-         var9 = var2.method5371();
+         var9 = var2.getLocationSkin();
       }
 
       for (int var10 = 0; var10 < this.field30470.length; var10++) {

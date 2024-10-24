@@ -18,7 +18,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if (var4.method5368() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
+      if (var4.hasPlayerInfo() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.getLocationCape() != null) {
          ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var13.getItem() != Items.field38120) {
             var1.push();
@@ -64,7 +64,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
             var1.rotate(Vector3f.XP.rotationDegrees(var4.capeRotateX));
             var1.rotate(Vector3f.ZP.rotationDegrees(var4.capeRotateZ));
             var1.rotate(Vector3f.YP.rotationDegrees(var4.capeRotateY));
-            IVertexBuilder var30 = var2.method25597(RenderType.getEntitySolid(var4.method5372()));
+            IVertexBuilder var30 = var2.method25597(RenderType.getEntitySolid(var4.getLocationCape()));
             this.method825().renderCape(var1, var30, var3, OverlayTexture.NO_OVERLAY);
             var1.pop();
          }

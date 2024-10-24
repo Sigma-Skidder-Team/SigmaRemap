@@ -13,7 +13,6 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import org.lwjgl.glfw.GLFW;
-import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
@@ -33,7 +32,7 @@ public class GuiManager {
     public static long field41344;
     public static long field41345;
     public static long field41346;
-    public static float portalScaleFactor = 1.0F;
+    public static float scaleFactor = 1.0F;
     private static boolean field41351 = true;
 
     static {
@@ -65,18 +64,13 @@ public class GuiManager {
     private boolean field41349 = true;
     private boolean field41350 = true;
     private Screen screen;
-    private GLFWKeyCallback field41353;
-    private long field41355;
-    private long field41356;
 
     public GuiManager() {
-        this.field41355 = field41344;
-        this.field41356 = field41344;
         field41344 = GLFW.glfwCreateStandardCursor(221185);
         field41345 = GLFW.glfwCreateStandardCursor(221188);
         field41346 = GLFW.glfwCreateStandardCursor(221186);
         GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), field41344);
-        portalScaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
+        scaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public static boolean method33457(net.minecraft.client.gui.screen.Screen var0) {
@@ -165,10 +159,6 @@ public class GuiManager {
         }
     }
 
-    public void method33459(long var1) {
-        this.field41355 = var1;
-    }
-
     public void endTick() {
         if (this.screen != null) {
             this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.method36738()));
@@ -208,7 +198,6 @@ public class GuiManager {
             }
 
             if (this.screen != null) {
-                this.field41355 = field41344;
                 this.screen.method13028(this.field41354[0], this.field41354[1]);
             }
         }
@@ -256,7 +245,7 @@ public class GuiManager {
                 RenderUtil.drawString(ResourceList.bold14, 72.0F, 1.0F, "5.0.0", MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(portalScaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG : ResourceList.jelloWatermark2xPNG);
+                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(scaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG : ResourceList.jelloWatermark2xPNG);
             }
 
             Client.getInstance().getEventManager().call(new EventRender());
@@ -383,7 +372,7 @@ public class GuiManager {
         }
 
         if (Minecraft.getInstance().mainWindow.getWidth() != 0 && Minecraft.getInstance().mainWindow.getHeight() != 0) {
-            portalScaleFactor = (float) Math.max(
+            scaleFactor = (float) Math.max(
                     Minecraft.getInstance().mainWindow.getFramebufferWidth() / Minecraft.getInstance().mainWindow.getWidth(),
                     Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight()
             );
@@ -404,7 +393,6 @@ public class GuiManager {
         }
 
         this.screen = var1;
-        this.field41356 = field41344;
         this.method33476(Client.getInstance().getConfig());
         if (this.screen != null) {
             this.screen.method13028(this.field41354[0], this.field41354[1]);

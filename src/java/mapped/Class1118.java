@@ -25,48 +25,48 @@ public class Class1118 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method5368() {
+   public boolean hasPlayerInfo() {
       return false;
    }
 
    @Nullable
    @Override
-   public NetworkPlayerInfo method5369() {
+   public NetworkPlayerInfo getPlayerInfo() {
       return this.playerInfo;
    }
 
    @Override
-   public boolean method5370() {
+   public boolean hasSkin() {
       return false;
    }
 
    @Override
-   public ResourceLocation method5371() {
-      NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19973() : DefaultPlayerSkin.getDefaultSkin(this.getUniqueID());
+   public ResourceLocation getLocationSkin() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
+      return var3 != null ? var3.getLocationSkin() : DefaultPlayerSkin.getDefaultSkin(this.getUniqueID());
    }
 
    @Nullable
    @Override
-   public ResourceLocation method5372() {
-      NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19974() : null;
+   public ResourceLocation getLocationCape() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
+      return var3 != null ? var3.getLocationCape() : null;
    }
 
    @Override
-   public boolean method5373() {
-      return this.method5369() != null;
+   public boolean isPlayerInfoSet() {
+      return this.getPlayerInfo() != null;
    }
 
    @Nullable
    @Override
-   public ResourceLocation method5374() {
-      NetworkPlayerInfo var3 = this.method5369();
-      return var3 != null ? var3.method19975() : null;
+   public ResourceLocation getLocationElytra() {
+      NetworkPlayerInfo var3 = this.getPlayerInfo();
+      return var3 != null ? var3.getLocationElytra() : null;
    }
 
    @Override
-   public String method5377() {
+   public String getSkinType() {
       return DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }
 

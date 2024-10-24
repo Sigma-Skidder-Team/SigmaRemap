@@ -41,7 +41,7 @@ public class NetworkPlayerInfo {
    }
 
    @Nullable
-   public GameType method19967() {
+   public GameType getGameType() {
       return this.field29005;
    }
 
@@ -57,27 +57,27 @@ public class NetworkPlayerInfo {
       this.field29006 = var1;
    }
 
-   public boolean method19971() {
-      return this.method19973() != null;
+   public boolean hasLocationSkin() {
+      return this.getLocationSkin() != null;
    }
 
    public String method19972() {
       return this.field29008 != null ? this.field29008 : DefaultPlayerSkin.getSkinType(this.field29003.getId());
    }
 
-   public ResourceLocation method19973() {
+   public ResourceLocation getLocationSkin() {
       this.method19977();
       return (ResourceLocation)MoreObjects.firstNonNull(this.field29004.get(Type.SKIN), DefaultPlayerSkin.getDefaultSkin(this.field29003.getId()));
    }
 
    @Nullable
-   public ResourceLocation method19974() {
+   public ResourceLocation getLocationCape() {
       this.method19977();
       return this.field29004.get(Type.CAPE);
    }
 
    @Nullable
-   public ResourceLocation method19975() {
+   public ResourceLocation getLocationElytra() {
       this.method19977();
       return this.field29004.get(Type.ELYTRA);
    }

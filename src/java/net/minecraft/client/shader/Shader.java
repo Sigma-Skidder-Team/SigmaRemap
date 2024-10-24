@@ -1,16 +1,16 @@
-package mapped;
+package net.minecraft.client.shader;
 
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.shader.Framebuffer;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.function.IntSupplier;
 
-public class Class1706 implements AutoCloseable {
+public class Shader implements AutoCloseable {
    private final Class1808 field9293;
    public final Framebuffer frameBuffer2;
    public final Framebuffer frameBuffer;
@@ -20,7 +20,7 @@ public class Class1706 implements AutoCloseable {
    private final List<Integer> field9299 = Lists.newArrayList();
    private Matrix4f field9300;
 
-   public Class1706(IResourceManager var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
+   public Shader(IResourceManager var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
       this.field9293 = new Class1808(var1, var2);
       this.frameBuffer2 = var3;
       this.frameBuffer = var4;
@@ -84,7 +84,7 @@ public class Class1706 implements AutoCloseable {
       }
    }
 
-   public Class1808 method7410() {
+   public Class1808 getShaderManager() {
       return this.field9293;
    }
 }

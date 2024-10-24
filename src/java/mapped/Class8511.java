@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import net.optifine.Config;
+import net.optifine.player.PlayerConfigurations;
 
 public class Class8511 implements Class8512 {
    private String field37210 = null;
@@ -22,7 +23,7 @@ public class Class8511 implements Class8512 {
             Class7773 var10 = var9.method20904(var8);
             if (var10 != null) {
                var10.method25751(true);
-               Class7749.method25669(this.field37210, var10);
+               PlayerConfigurations.method25669(this.field37210, var10);
             }
          } catch (Exception var11) {
             Config.method26810("Error parsing configuration: " + var1 + ", " + var11.getClass().getName() + ": " + var11.getMessage());

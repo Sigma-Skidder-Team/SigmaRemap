@@ -180,7 +180,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
    }
 
    public void method13443() {
-      Class810 var3 = new Class810();
+      RealmsBridgeScreen var3 = new RealmsBridgeScreen();
       var3.method2209(Minecraft.getInstance().currentScreen);
       this.playClickSound();
    }
@@ -191,7 +191,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
       Texture largeLogo = ResourceList.logoLargePNG;
       int imageWidth = largeLogo.getImageWidth();
       int imageHeight = largeLogo.getImageHeight();
-      if (GuiManager.portalScaleFactor > 1.0F) {
+      if (GuiManager.scaleFactor > 1.0F) {
          largeLogo = ResourceList.logoLarge2xPNG;
       }
 

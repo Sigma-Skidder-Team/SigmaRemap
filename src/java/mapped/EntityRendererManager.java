@@ -202,7 +202,7 @@ public class EntityRendererManager {
       if (!(var1 instanceof AbstractClientPlayerEntity)) {
          return (EntityRenderer<? super T>)this.field40011.get(var1.getType());
       } else {
-         String var4 = ((AbstractClientPlayerEntity)var1).method5377();
+         String var4 = ((AbstractClientPlayerEntity)var1).getSkinType();
          PlayerRenderer var5 = this.field40012.get(var4);
          return (EntityRenderer<? super T>) (var5 == null ? this.field40013 : var5);
       }

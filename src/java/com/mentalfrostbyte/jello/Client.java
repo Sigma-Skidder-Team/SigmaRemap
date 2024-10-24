@@ -12,7 +12,6 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleManager;
 import com.mentalfrostbyte.jello.music.MusicManager;
-import com.mentalfrostbyte.jello.util.tracker.CombatTracker;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.notification.NotificationManager;
 import com.mentalfrostbyte.jello.sound.SoundManager;
@@ -25,7 +24,6 @@ import com.mentalfrostbyte.jello.util.tracker.PlayerStateTracker;
 import com.mentalfrostbyte.jello.util.tracker.SlotChangeTracker;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import de.florianmichael.viamcp.ViaMCP;
 import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -82,9 +80,6 @@ public class Client {
     }
 
     public void start() {
-        long var3 = System.currentTimeMillis();
-        Class8379.override();
-
         this.logger = new ClientLogger(System.out, System.out, System.err);
         this.logger.info("Initializing...");
 
@@ -187,7 +182,7 @@ public class Client {
         GL11.glPushMatrix();
         double var3 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
         GL11.glScaled(var3, var3, var3);
-        GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, GuiManager.portalScaleFactor);
+        GL11.glScaled(GuiManager.scaleFactor, GuiManager.scaleFactor, GuiManager.scaleFactor);
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
         RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
@@ -224,7 +219,7 @@ public class Client {
         if (getInstance().getClientMode() != ClientMode.NOADDONS) {
             double var5 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
             GL11.glScaled(var5, var5, 1.0);
-            GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, 1.0);
+            GL11.glScaled(GuiManager.scaleFactor, GuiManager.scaleFactor, 1.0);
             RenderSystem.disableDepthTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, 0.0F, 1000.0F);

@@ -101,10 +101,10 @@ public class RenderUtil {
 
    public static void method11421(int var0, int var1, int var2, int var3, boolean var4) {
       if (!var4) {
-         var0 = (int)((float)var0 * GuiManager.portalScaleFactor);
-         var1 = (int)((float)var1 * GuiManager.portalScaleFactor);
-         var2 = (int)((float)var2 * GuiManager.portalScaleFactor);
-         var3 = (int)((float)var3 * GuiManager.portalScaleFactor);
+         var0 = (int)((float)var0 * GuiManager.scaleFactor);
+         var1 = (int)((float)var1 * GuiManager.scaleFactor);
+         var2 = (int)((float)var2 * GuiManager.scaleFactor);
+         var3 = (int)((float)var3 * GuiManager.scaleFactor);
       } else {
          float[] var7 = method11416(var0, var1);
          var0 = (int)var7[0];
@@ -421,7 +421,7 @@ public class RenderUtil {
       RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
-      GL11.glPointSize(var2 * GuiManager.portalScaleFactor);
+      GL11.glPointSize(var2 * GuiManager.scaleFactor);
       GL11.glBegin(0);
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
@@ -466,7 +466,7 @@ public class RenderUtil {
       float var15 = (float)(var4 & 0xFF) / 255.0F;
       GL11.glPushMatrix();
       boolean var16 = false;
-      if ((double) GuiManager.portalScaleFactor == 2.0) {
+      if ((double) GuiManager.scaleFactor == 2.0) {
          if (var0 == ResourceRegistry.JelloLightFont20) {
             var0 = ResourceRegistry.JelloLightFont40;
          } else if (var0 == ResourceRegistry.JelloLightFont25) {
@@ -492,10 +492,10 @@ public class RenderUtil {
             int var18 = (int)var17[0];
             int var19 = (int)var17[1];
             GL11.glTranslatef(var1, var2, 0.0F);
-            GL11.glScalef(1.0F / GuiManager.portalScaleFactor, 1.0F / GuiManager.portalScaleFactor, 1.0F / GuiManager.portalScaleFactor);
+            GL11.glScalef(1.0F / GuiManager.scaleFactor, 1.0F / GuiManager.scaleFactor, 1.0F / GuiManager.scaleFactor);
             GL11.glTranslatef(-var1, -var2, 0.0F);
-            var10 = (int)((float)var10 * GuiManager.portalScaleFactor);
-            var11 = (int)((float)var11 * GuiManager.portalScaleFactor);
+            var10 = (int)((float)var10 * GuiManager.scaleFactor);
+            var11 = (int)((float)var11 * GuiManager.scaleFactor);
          }
       }
 
@@ -828,7 +828,7 @@ public class RenderUtil {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * GuiManager.portalScaleFactor);
+         GL11.glLineWidth(1.8F * GuiManager.scaleFactor);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(7);
@@ -921,7 +921,7 @@ public class RenderUtil {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * GuiManager.portalScaleFactor);
+         GL11.glLineWidth(1.8F * GuiManager.scaleFactor);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(0);
@@ -1014,8 +1014,8 @@ public class RenderUtil {
    }
 
    public static void method11466(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-      byte var9 = 36;
-      byte var10 = 10;
+      int var9 = 36;
+      int var10 = 10;
       int var11 = var9 - var10;
       drawRect((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
       drawImage((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourceList.floatingCornerPNG, var4);
@@ -1083,8 +1083,8 @@ public class RenderUtil {
    }
 
    public static void method11467(int var0, int var1, int var2, int var3, int var4) {
-      byte var7 = 36;
-      byte var8 = 10;
+      int var7 = 36;
+      int var8 = 10;
       int var9 = var7 - var8;
       drawRect((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
       drawImage((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourceList.floatingCornerPNG, var4);
@@ -1291,8 +1291,8 @@ public class RenderUtil {
    }
 
    public static java.awt.Color getColorFromScreen(int mouseX, int mouseY, java.awt.Color var2) {
-      mouseX = (int)((float)mouseX * GuiManager.portalScaleFactor);
-      mouseY = (int)((float)mouseY * GuiManager.portalScaleFactor);
+      mouseX = (int)((float)mouseX * GuiManager.scaleFactor);
+      mouseY = (int)((float)mouseY * GuiManager.scaleFactor);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
       GL11.glReadPixels(mouseX, Minecraft.getInstance().mainWindow.getFramebufferHeight() - mouseY, 1, 1, 6407, 5120, var5);
@@ -1317,8 +1317,8 @@ public class RenderUtil {
       return !isSuccessful
               ? null
               : new double[] {
-              (double) (screenCoords.get(0) / GuiManager.portalScaleFactor),
-              (double) (((float) mc.framebuffer.framebufferHeight - screenCoords.get(1)) / GuiManager.portalScaleFactor),
+              (double) (screenCoords.get(0) / GuiManager.scaleFactor),
+              (double) (((float) mc.framebuffer.framebufferHeight - screenCoords.get(1)) / GuiManager.scaleFactor),
               (double) screenCoords.get(2)
       };
    }

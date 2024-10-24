@@ -70,7 +70,7 @@ public class Class4348 extends Class4278 {
       if (this.method13272() + this.method13282() < Minecraft.getInstance().mainWindow.getHeight() - 36 && this.method13272() + this.method13282() > 52) {
          if (this.field21244 != null && this.field21246 == null) {
             try {
-               BufferedImage var6 = method13578(this.field21244.method25580());
+               BufferedImage var6 = method13578(this.field21244.getBase64EncodedIconData());
                if (var6 != null) {
                   this.field21245 = TextureUtil.method32933("servericon", var6);
                   this.field21246 = TextureUtil.method32933(

@@ -27,8 +27,8 @@ public class Class1458 implements Runnable {
 
    public void method6461() {
       if (this.field7841 != null) {
-         this.field7841.method5381(this.field7842);
-         this.field7841.method5383(this.field7843);
+         this.field7841.setLocationOfCape(this.field7842);
+         this.field7841.setElytraOfCape(this.field7843);
       }
 
       this.method6462();

@@ -49,7 +49,7 @@ public class Class5743<T extends Entity> extends LivingRenderer<AbstractClientPl
       if (!var4 && field25166.containsKey(var1.getGameProfile().getId())) {
          return field25166.get(var1.getGameProfile().getId());
       } else {
-         if (!var1.method5368() && !var4) {
+         if (!var1.hasPlayerInfo() && !var4) {
             field25166.put(var1.getGameProfile().getId(), new ResourceLocation(""));
             Minecraft.getInstance().getSkinManager().method38loadProfileTextures346(var1.getGameProfile(), (var1x, var2, var3) -> {
                if (var1x == Type.SKIN) {
@@ -58,7 +58,7 @@ public class Class5743<T extends Entity> extends LivingRenderer<AbstractClientPl
             }, true);
          }
 
-         return var1.method5371();
+         return var1.getLocationSkin();
       }
    }
 }

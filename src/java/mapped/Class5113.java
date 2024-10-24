@@ -80,7 +80,7 @@ public class Class5113 implements Class5112 {
             }
          }
 
-         if (!Objects.equals(var10, this.field23260.method25580())) {
+         if (!Objects.equals(var10, this.field23260.getBase64EncodedIconData())) {
             this.field23260.method25581(var10);
             this.field23261.run();
          }
