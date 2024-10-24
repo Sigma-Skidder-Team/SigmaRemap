@@ -138,7 +138,7 @@ public class Item implements IItemProvider {
       return ActionResultType.field14820;
    }
 
-   public ITextComponent method11717() {
+   public ITextComponent getName() {
       return new TranslationTextComponent(this.getTranslationKey());
    }
 
@@ -280,7 +280,7 @@ public class Item implements IItemProvider {
       return var1.getItem() == Items.CROSSBOW;
    }
 
-   public ItemStack method11742() {
+   public ItemStack getDefaultInstance() {
       return new ItemStack(this);
    }
 

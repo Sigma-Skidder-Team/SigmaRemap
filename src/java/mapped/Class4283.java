@@ -38,10 +38,10 @@ public class Class4283 extends Class4278 {
 
    @Override
    public void draw(float var1) {
-      double var4 = Minecraft.getInstance().mouseHelper.method36738() - (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
+      double var4 = Minecraft.getInstance().mouseHelper.getMouseX() - (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
       var4 /= (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
       var4 = Math.max(-1.0, Math.min(1.0, var4));
-      double var6 = Minecraft.getInstance().mouseHelper.method36739() - (double)(Minecraft.getInstance().mainWindow.getHeight() / 2);
+      double var6 = Minecraft.getInstance().mouseHelper.getMouseY() - (double)(Minecraft.getInstance().mainWindow.getHeight() / 2);
       var6 /= (double)(Minecraft.getInstance().mainWindow.getHeight() / 2);
       var6 = Math.max(-1.0, Math.min(1.0, var6));
       GL11.glPushMatrix();

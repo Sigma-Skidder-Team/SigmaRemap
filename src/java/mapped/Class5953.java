@@ -66,7 +66,7 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
       World var9 = var1.method3734();
       boolean var10 = var9 != null;
       BlockState var11 = !var10 ? Blocks.CHEST.getDefaultState().with(ChestBlock.field18865, Direction.SOUTH) : var1.getBlockState();
-      ChestType var12 = !var11.method23462(ChestBlock.TYPE) ? ChestType.field379 : var11.<ChestType>get(ChestBlock.TYPE);
+      ChestType var12 = !var11.hasProperty(ChestBlock.TYPE) ? ChestType.field379 : var11.<ChestType>get(ChestBlock.TYPE);
       Block var13 = var11.getBlock();
       if (var13 instanceof Class3346) {
          Class3346 var14 = (Class3346)var13;

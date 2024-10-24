@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.potion;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
@@ -8,12 +8,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import mapped.Class7182;
+import mapped.Class8812;
+import mapped.Class9680;
+import mapped.Effect;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
-import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -23,7 +26,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.optifine.Config;
 
-public class Class9741 {
+public class PotionUtils {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
    public static List<EffectInstance> method38176(ItemStack var0) {
@@ -73,12 +76,12 @@ public class Class9741 {
       if (var3 != null && var3.contains("CustomPotionColor", 99)) {
          return var3.getInt("CustomPotionColor");
       } else {
-         return method38185(var0) != Class8137.field34976 ? method38184(method38176(var0)) : 16253176;
+         return method38185(var0) != Potions.field34976 ? method38184(method38176(var0)) : 16253176;
       }
    }
 
    public static int method38183(Class8812 var0) {
-      return var0 != Class8137.field34976 ? method38184(var0.method31816()) : 16253176;
+      return var0 != Potions.field34976 ? method38184(var0.method31816()) : 16253176;
    }
 
    public static int method38184(Collection<EffectInstance> var0) {
@@ -122,12 +125,12 @@ public class Class9741 {
    }
 
    public static Class8812 method38186(CompoundNBT var0) {
-      return var0 != null ? Class8812.method31814(var0.getString("Potion")) : Class8137.field34976;
+      return var0 != null ? Class8812.method31814(var0.getString("Potion")) : Potions.field34976;
    }
 
-   public static ItemStack method38187(ItemStack var0, Class8812 var1) {
+   public static ItemStack addPotionToItemStack(ItemStack var0, Class8812 var1) {
       ResourceLocation var4 = Registry.field16076.getKey(var1);
-      if (var1 != Class8137.field34976) {
+      if (var1 != Potions.field34976) {
          var0.getOrCreateTag().putString("Potion", var4.toString());
       } else {
          var0.method32146("Potion");

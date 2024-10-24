@@ -40,8 +40,8 @@ public class Jesus extends Module {
    @EventTarget
    public void method16945(EventBlockCollision var1) {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
-         if (mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.field38940
-            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.field38941
+         if (mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.SEA_GRASS
+            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.WATER
             || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.field38943) {
             if (!(
                (double)var1.getBlockPos().getY()
@@ -189,7 +189,7 @@ public class Jesus extends Module {
    }
 
    public boolean method16951(AxisAlignedBB var1) {
-      return this.method16952(var1, Material.field38941) || this.method16952(var1, Material.field38943);
+      return this.method16952(var1, Material.WATER) || this.method16952(var1, Material.field38943);
    }
 
    public boolean method16952(AxisAlignedBB var1, Material var2) {

@@ -1,11 +1,12 @@
-package mapped;
+package net.minecraft.potion;
 
-import net.minecraft.potion.EffectInstance;
+import mapped.Class8812;
+import mapped.Effects;
 import net.minecraft.util.registry.Registry;
 
-public class Class8137 {
+public class Potions {
    public static final Class8812 field34976 = method28212("empty", new Class8812());
-   public static final Class8812 field34977 = method28212("water", new Class8812());
+   public static final Class8812 WATER = method28212("water", new Class8812());
    public static final Class8812 field34978 = method28212("mundane", new Class8812());
    public static final Class8812 field34979 = method28212("thick", new Class8812());
    public static final Class8812 field34980 = method28212("awkward", new Class8812());

@@ -17,6 +17,8 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -103,22 +105,22 @@ public class Class1027 extends Class1026 implements Class1022 {
          if (!this.method4568()) {
             Class8812 var7 = null;
             if (this.rand.nextFloat() < 0.15F && this.areEyesInFluid(FluidTags.field40469) && !this.isPotionActive(Effects.WATER_BREATHING)) {
-               var7 = Class8137.field34999;
+               var7 = Potions.field34999;
             } else if (this.rand.nextFloat() < 0.15F
                && (this.isBurning() || this.getLastDamageSource() != null && this.getLastDamageSource().method31141())
                && !this.isPotionActive(Effects.FIRE_RESISTANCE)) {
-               var7 = Class8137.field34988;
+               var7 = Potions.field34988;
             } else if (this.rand.nextFloat() < 0.05F && this.getHealth() < this.method3075()) {
-               var7 = Class8137.field35001;
+               var7 = Potions.field35001;
             } else if (this.rand.nextFloat() < 0.5F
                && this.method4232() != null
                && !this.isPotionActive(Effects.SPEED)
                && this.method4232().getDistanceSq(this) > 121.0) {
-               var7 = Class8137.field34990;
+               var7 = Potions.field34990;
             }
 
             if (var7 != null) {
-               this.setItemStackToSlot(EquipmentSlotType.MAINHAND, Class9741.method38187(new ItemStack(Items.field37971), var7));
+               this.setItemStackToSlot(EquipmentSlotType.MAINHAND, PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), var7));
                this.field5721 = this.getHeldItemMainhand().getUseDuration();
                this.method4567(true);
                if (!this.isSilent()) {
@@ -144,7 +146,7 @@ public class Class1027 extends Class1026 implements Class1022 {
             ItemStack var3 = this.getHeldItemMainhand();
             this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
             if (var3.getItem() == Items.field37971) {
-               List<EffectInstance> var4 = Class9741.method38176(var3);
+               List<EffectInstance> var4 = PotionUtils.method38176(var3);
                if (var4 != null) {
                   for (EffectInstance var6 : var4) {
                      this.addPotionEffect(new EffectInstance(var6));
@@ -210,27 +212,27 @@ public class Class1027 extends Class1026 implements Class1022 {
          double var8 = var1.getPosYEye() - 1.1F - this.getPosY();
          double var10 = var1.getPosZ() + var5.z - this.getPosZ();
          float var12 = MathHelper.sqrt(var6 * var6 + var10 * var10);
-         Class8812 var13 = Class8137.field35003;
+         Class8812 var13 = Potions.field35003;
          if (!(var1 instanceof Class1026)) {
             if (var12 >= 8.0F && !var1.isPotionActive(Effects.SLOWNESS)) {
-               var13 = Class8137.field34993;
+               var13 = Potions.field34993;
             } else if (var1.getHealth() >= 8.0F && !var1.isPotionActive(Effects.POISON)) {
-               var13 = Class8137.field35005;
+               var13 = Potions.field35005;
             } else if (var12 <= 3.0F && !var1.isPotionActive(Effects.WEAKNESS) && this.rand.nextFloat() < 0.25F) {
-               var13 = Class8137.field35014;
+               var13 = Potions.field35014;
             }
          } else {
             if (!(var1.getHealth() <= 4.0F)) {
-               var13 = Class8137.field35008;
+               var13 = Potions.field35008;
             } else {
-               var13 = Class8137.field35001;
+               var13 = Potions.field35001;
             }
 
             this.method4233((LivingEntity)null);
          }
 
          Class896 var14 = new Class896(this.world, this);
-         var14.method3511(Class9741.method38187(new ItemStack(Items.field38115), var13));
+         var14.method3511(PotionUtils.addPotionToItemStack(new ItemStack(Items.field38115), var13));
          var14.rotationPitch -= -20.0F;
          var14.shoot(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.isSilent()) {

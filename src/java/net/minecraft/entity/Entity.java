@@ -2152,7 +2152,7 @@ public abstract class Entity implements INameable, ICommandSource {
                BlockState var5x = this.world.getBlockState(this.field_242271_ac);
                Direction.Axis var6x;
                Vector3d var7x;
-               if (!var5x.method23462(BlockStateProperties.field39712)) {
+               if (!var5x.hasProperty(BlockStateProperties.field39712)) {
                   var6x = Direction.Axis.X;
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {

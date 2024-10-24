@@ -216,7 +216,7 @@ public class ShadowESP extends Module {
         TextureImpl.method36180();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
-        var10000.bindTexture(TextureManager.field1094);
+        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         mc.gameRenderer.lightmapTexture.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
         field23794 = Class2191.field14327;

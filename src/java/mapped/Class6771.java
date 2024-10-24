@@ -86,7 +86,7 @@ public class Class6771 extends SurfaceBuilder<Class8278> {
          var21.setPos(var25, var37, var26);
          if (var2.getBlockState(var21).isAir() && var37 < (int)var17 && var1.nextDouble() > 0.01) {
             var2.setBlockState(var21, field29539, false);
-         } else if (var2.getBlockState(var21).getMaterial() == Material.field38941
+         } else if (var2.getBlockState(var21).getMaterial() == Material.WATER
             && var37 > (int)var19
             && var37 < var11
             && var19 != 0.0

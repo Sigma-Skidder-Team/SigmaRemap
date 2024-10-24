@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -19,7 +20,7 @@ public class Class3325 extends Class3324 {
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
-      Class9741.method38189(var1, var3, 0.25F);
+      PotionUtils.method38189(var1, var3, 0.25F);
    }
 
    @Override

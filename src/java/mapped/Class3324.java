@@ -2,11 +2,12 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.PotionItem;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class Class3324 extends Class3323 {
+public class Class3324 extends PotionItem {
    private static String[] field18833;
 
    public Class3324(Properties var1) {

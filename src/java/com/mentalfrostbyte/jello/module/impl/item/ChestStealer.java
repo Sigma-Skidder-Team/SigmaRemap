@@ -291,7 +291,7 @@ public class ChestStealer extends Module {
             } else if (!(var4 instanceof Class3265)) {
                 if (var4 instanceof HoeItem) {
                     return !InvManager.isHoe(var1);
-                } else if (!(var4 instanceof Class3323)) {
+                } else if (!(var4 instanceof PotionItem)) {
                     if (var4 instanceof BlockItem) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
@@ -328,7 +328,7 @@ public class ChestStealer extends Module {
                                             Items.field37906
                                     )
                             );
-                            return var1 == null || var5.contains(var4) || var4.method11717().getString().toLowerCase().contains("seed");
+                            return var1 == null || var5.contains(var4) || var4.getName().getString().toLowerCase().contains("seed");
                         }
                     } else {
                         return true;

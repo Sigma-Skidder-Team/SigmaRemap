@@ -2,7 +2,6 @@ package mapped;
 
 import java.util.Arrays;
 
-
 public class Class6537 implements Class6515 {
    private static final float[] field28838 = new float[]{0.570829F, 0.696616F, 0.813004F, 0.911304F, 0.9849F, 1.067894F, 1.194601F, 1.369533F};
    private final int field28839;

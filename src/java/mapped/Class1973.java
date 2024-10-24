@@ -1,13 +1,10 @@
 package mapped;
 
-
 public enum Class1973 {
    field12843,
    field12844,
    field12845,
    field12846;
-
-   private static final Class1973[] field12847 = new Class1973[]{field12843, field12844, field12845, field12846};
 
    public static Class1973 method8255(int var0) throws Class2460 {
       Class1973 var3;

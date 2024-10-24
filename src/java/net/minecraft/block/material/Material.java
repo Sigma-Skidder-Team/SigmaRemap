@@ -34,23 +34,23 @@ public final class Material {
       .method30890()
       .notOpaque()
       .build();
-   public static final Material field38939 = Builder.method30894(new Builder(MaterialColor.FOLIAGE).method30887())
+   public static final Material NETHER_PLANTS = Builder.method30894(new Builder(MaterialColor.FOLIAGE).method30887())
       .method30886()
       .pushDestroys()
       .method30890()
       .build();
-   public static final Material field38940 = Builder.method30894(new Builder(MaterialColor.field30959).method30887())
+   public static final Material SEA_GRASS = Builder.method30894(new Builder(MaterialColor.field30959).method30887())
       .method30886()
       .pushDestroys()
       .method30890()
       .build();
-   public static final Material field38941 = Builder.method30894(new Builder(MaterialColor.field30959).method30887())
+   public static final Material WATER = Builder.method30894(new Builder(MaterialColor.field30959).method30887())
       .method30886()
       .pushDestroys()
       .method30890()
       .method30885()
       .build();
-   public static final Material field38942 = Builder.method30894(new Builder(MaterialColor.field30959).method30887())
+   public static final Material BUBBLE_COLUMN = Builder.method30894(new Builder(MaterialColor.field30959).method30887())
       .method30886()
       .pushDestroys()
       .method30890()

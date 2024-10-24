@@ -111,6 +111,6 @@ public class Class9716 {
    }
 
    public static Collection<Property<?>> method38072(BlockState var0) {
-      return var0.method23461();
+      return var0.getProperties();
    }
 }

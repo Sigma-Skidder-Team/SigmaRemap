@@ -11,6 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.pathfinding.PathType;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -73,7 +75,7 @@ public class Class3413 extends Block {
          if (var11 != Items.WATER_BUCKET) {
             if (var11 != Items.BUCKET) {
                if (var11 != Items.field37972) {
-                  if (var11 == Items.field37971 && Class9741.method38185(var9) == Class8137.field34977) {
+                  if (var11 == Items.field37971 && PotionUtils.method38185(var9) == Potions.WATER) {
                      if (var10 < 3 && !var2.isRemote) {
                         if (!var4.abilities.isCreativeMode) {
                            ItemStack var17 = new ItemStack(Items.field37972);
@@ -147,7 +149,7 @@ public class Class3413 extends Block {
                } else {
                   if (var10 > 0 && !var2.isRemote) {
                      if (!var4.abilities.isCreativeMode) {
-                        ItemStack var12 = Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977);
+                        ItemStack var12 = PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.WATER);
                         var4.method2911(Stats.field40143);
                         var9.shrink(1);
                         if (!var9.isEmpty()) {

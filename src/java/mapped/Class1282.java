@@ -193,7 +193,7 @@ public class Class1282 extends Class1274<Class1171> {
    }
 
    public ITextComponent method6101(Item var1) {
-      return var1.method11717();
+      return var1.getName();
    }
 
    public void method6102(Class49<?> var1) {

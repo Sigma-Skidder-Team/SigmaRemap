@@ -385,7 +385,7 @@ public abstract class FlowingFluid extends Fluid {
             && var7 != Blocks.SUGAR_CANE
             && var7 != Blocks.field37013) {
             Material var8 = var3.getMaterial();
-            return var8 != Material.field38934 && var8 != Material.field38933 && var8 != Material.field38937 && var8 != Material.field38940
+            return var8 != Material.field38934 && var8 != Material.field38933 && var8 != Material.field38937 && var8 != Material.SEA_GRASS
                ? !var8.blocksMovement()
                : false;
          } else {

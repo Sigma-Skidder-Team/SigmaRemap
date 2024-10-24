@@ -17,6 +17,7 @@ import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.potion.Potions;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
@@ -89,7 +90,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Enchantment> ENCHANTMENT = method9175(field16040, () -> Enchantments.FORTUNE);
    public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.PIG);
    public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.AIR);
-   public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
+   public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Potions.field34976);
    public static final Registry<ParticleType<?>> PARTICLE_TYPE = method9175(field16044, () -> ParticleTypes.field34051);
    public static final Registry<TileEntityType<?>> field16078 = method9175(field16045, () -> TileEntityType.field21421);
    public static final Class2351<Class9078> field16079 = method9176(field16046, "kebab", () -> Class9078.field41530);

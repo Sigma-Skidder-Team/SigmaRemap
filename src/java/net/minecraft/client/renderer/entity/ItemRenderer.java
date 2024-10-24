@@ -293,7 +293,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public void method791(ItemStack var1, int var2, int var3) {
+   public void renderItemIntoGUI(ItemStack var1, int var2, int var3) {
       this.method792(var1, var2, var3, this.method788(var1, (World)null, (LivingEntity)null));
    }
 

@@ -89,7 +89,7 @@ public class BoxChestESP extends Module {
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
         TextureImpl.method36180();
         TextureManager textureManager = mc.getTextureManager();
-        textureManager.bindTexture(TextureManager.field1094);
+        textureManager.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         mc.gameRenderer.lightmapTexture.method7317();
     }
 }

@@ -412,18 +412,18 @@ public class WaypointsManager {
       }
 
       MaterialColor var5 = this.field36365.world.getBlockState(var1).getMaterial().getColor();
-      int var6 = var5.field31006;
+      int var6 = var5.colorValue;
       Material var7 = this.field36365.world.getBlockState(var1.up()).getMaterial();
       if (var7 != Material.field38944) {
          if (var7 == Material.field38943) {
-            var6 = var7.getColor().field31006;
+            var6 = var7.getColor().colorValue;
          }
       } else {
          var6 = -1;
       }
 
-      if (this.field36365.world.getBlockState(var1).method23462(BlockStateProperties.WATERLOGGED)) {
-         var6 = Material.field38941.getColor().field31006;
+      if (this.field36365.world.getBlockState(var1).hasProperty(BlockStateProperties.WATERLOGGED)) {
+         var6 = Material.WATER.getColor().colorValue;
       }
 
       int var8 = (var6 & 0xFF0000) >> 16;

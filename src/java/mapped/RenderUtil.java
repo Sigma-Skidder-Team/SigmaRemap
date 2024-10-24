@@ -1247,7 +1247,7 @@ public class RenderUtil {
 
    public static void method11479(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         mc.getTextureManager().bindTexture(TextureManager.field1094);
+         mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
@@ -1263,14 +1263,14 @@ public class RenderUtil {
          RenderSystem.enableBlend();
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glDepthFunc(519);
-         var7.method791(var0, 0, 0);
+         var7.renderItemIntoGUI(var0, 0, 0);
          GL11.glDepthFunc(515);
          RenderSystem.popMatrix();
          GL11.glAlphaFunc(519, 0.0F);
          RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
          TextureImpl.method36180();
-         mc.getTextureManager().bindTexture(TextureManager.field1094);
+         mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
          RenderHelper.setupGui3DDiffuseLighting();
       }
    }
@@ -1283,10 +1283,10 @@ public class RenderUtil {
       RenderSystem.scaled(1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
-      mc.getItemRenderer().method791(var0, 0, 0);
+      mc.getItemRenderer().renderItemIntoGUI(var0, 0, 0);
       mc.getItemRenderer().field847 += 1101.0F;
       TextureImpl.method36180();
-      mc.getTextureManager().bindTexture(TextureManager.field1094);
+      mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
       GL11.glPopMatrix();
    }
 

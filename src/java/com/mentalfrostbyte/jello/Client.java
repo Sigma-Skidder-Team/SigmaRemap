@@ -230,7 +230,7 @@ public class Client {
             GL11.glAlphaFunc(518, 0.1F);
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -243,7 +243,7 @@ public class Client {
             this.eventManager.call(new Render3DEvent());
             RenderSystem.enableDepthTest();
             RenderSystem.depthMask(true);
-            mc.getTextureManager().bindTexture(TextureManager.field1094);
+            mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -353,6 +353,5 @@ public class Client {
             this.moduleManager.method14659(this.config);
             this.moduleManager.saveCurrentConfigToJSON(this.config);
         }
-       // System.gc();
     }
 }

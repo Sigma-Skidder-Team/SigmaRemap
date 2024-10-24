@@ -285,7 +285,7 @@ public class Class9172 {
                }
 
                BlockState var15 = var14.getDefaultState();
-               Collection var16 = var15.method23461();
+               Collection var16 = var15.getProperties();
                LinkedHashMap var17 = new LinkedHashMap();
                JsonObject var18 = (JsonObject)var11.get("Properties");
                if (var18 != null) {
@@ -356,7 +356,7 @@ public class Class9172 {
          boolean var9 = true;
 
          for (Property var11 : var6) {
-            if (!var8.method23462(var11)) {
+            if (!var8.hasProperty(var11)) {
                var9 = false;
                break;
             }

@@ -59,7 +59,7 @@ public class Class4258 extends Class4247 {
                }
 
                Class4372 var10;
-               this.field20642.addToList(var10 = new Class4372(this, "btn" + var9, 0, 0, var4, var4, var13.method11742()));
+               this.field20642.addToList(var10 = new Class4372(this, "btn" + var9, 0, 0, var4, var4, var13.getDefaultInstance()));
                var10.method13702(this.field20641.contains(var9), false);
                var10.method13036(var3 -> {
                   int var6 = this.field20641.size();
@@ -87,7 +87,7 @@ public class Class4258 extends Class4247 {
 
          while (var5.hasNext()) {
             Item var6 = (Item)var5.next();
-            if (var6.method11717().getString().toLowerCase().startsWith(var1.toLowerCase())) {
+            if (var6.getName().getString().toLowerCase().startsWith(var1.toLowerCase())) {
                var4.add(var6);
                var5.remove();
             }
@@ -97,7 +97,7 @@ public class Class4258 extends Class4247 {
 
          while (var9.hasNext()) {
             Item var7 = (Item)var9.next();
-            if (var7.method11717().getString().toLowerCase().contains(var1.toLowerCase())) {
+            if (var7.getName().getString().toLowerCase().contains(var1.toLowerCase())) {
                var4.add(var7);
                var9.remove();
             }

@@ -293,11 +293,11 @@ public class MouseHelper {
       return this.field44288;
    }
 
-   public double method36738() {
+   public double getMouseX() {
       return this.field44289;
    }
 
-   public double method36739() {
+   public double getMouseY() {
       return this.field44290;
    }
 

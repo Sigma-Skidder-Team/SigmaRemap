@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
@@ -58,7 +59,7 @@ public class ItemColors {
             }
          }
       }, Items.field38069);
-      var3.method33259((var0x, var1) -> var1 <= 0 ? Class9741.method38182(var0x) : -1, Items.field37971, Items.field38115, Items.field38118);
+      var3.method33259((var0x, var1) -> var1 <= 0 ? PotionUtils.method38182(var0x) : -1, Items.field37971, Items.field38115, Items.field38118);
 
       for (SpawnEggItem var5 : SpawnEggItem.method11854()) {
          var3.method33259((var1, var2) -> var5.method11852(var2), var5);
@@ -81,7 +82,7 @@ public class ItemColors {
          Blocks.field36451,
          Blocks.LILY_PAD
       );
-      var3.method33259((var0x, var1) -> var1 != 0 ? -1 : Class9741.method38182(var0x), Items.field38117);
+      var3.method33259((var0x, var1) -> var1 != 0 ? -1 : PotionUtils.method38182(var0x), Items.field38117);
       var3.method33259((var0x, var1) -> var1 != 0 ? Class3316.method11871(var0x) : -1, Items.field37955);
       return var3;
    }

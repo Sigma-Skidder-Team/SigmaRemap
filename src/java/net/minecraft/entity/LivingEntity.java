@@ -42,6 +42,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
@@ -699,7 +700,7 @@ public abstract class LivingEntity extends Entity {
       if (!this.field4944.isEmpty()) {
          Collection var3 = this.field4944.values();
          this.dataManager.method35446(field4937, areAllPotionsAmbient(var3));
-         this.dataManager.method35446(field4936, Class9741.method38184(var3));
+         this.dataManager.method35446(field4936, PotionUtils.method38184(var3));
          this.setInvisible(this.isPotionActive(Effects.INVISIBILITY));
       } else {
          this.resetPotionEffectMetadata();

@@ -131,7 +131,7 @@ public class Class1305 extends Screen implements Class1306 {
    private void method6186(MatrixStack var1, int var2, int var3, Item var4) {
       this.method6187(var1, var2 + 1, var3 + 1, 0, 0);
       RenderSystem.enableRescaleNormal();
-      this.field4563.method791(var4.method11742(), var2 + 2, var3 + 2);
+      this.field4563.renderItemIntoGUI(var4.getDefaultInstance(), var2 + 2, var3 + 2);
       RenderSystem.disableRescaleNormal();
    }
 

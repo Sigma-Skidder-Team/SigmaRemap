@@ -149,12 +149,12 @@ public class Class8368 {
 
    public boolean method29310(double var1) {
       int var5 = (int)(
-         Class6850.method20852(this.field35928).mouseHelper.method36738()
+         Class6850.method20852(this.field35928).mouseHelper.getMouseX()
             * (double)Class6850.method20852(this.field35928).getMainWindow().getScaledWidth()
             / (double)Class6850.method20852(this.field35928).getMainWindow().getWidth()
       );
       int var6 = (int)(
-         Class6850.method20852(this.field35928).mouseHelper.method36739()
+         Class6850.method20852(this.field35928).mouseHelper.getMouseY()
             * (double)Class6850.method20852(this.field35928).getMainWindow().getScaledHeight()
             / (double)Class6850.method20852(this.field35928).getMainWindow().getHeight()
       );

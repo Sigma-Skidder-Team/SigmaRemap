@@ -9,6 +9,7 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -84,7 +85,7 @@ public class Class8634 {
                   }
                }
 
-               Class8812 var10 = Class9741.method38185(var1);
+               Class8812 var10 = PotionUtils.method38185(var1);
                return this.field38846 == null || this.field38846 == var10;
             }
          } else {

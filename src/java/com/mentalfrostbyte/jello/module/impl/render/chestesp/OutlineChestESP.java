@@ -103,7 +103,7 @@ public class OutlineChestESP extends Module {
       TextureImpl.method36180();
       TextureManager var10000 = mc.getTextureManager();
       mc.getTextureManager();
-      var10000.bindTexture(TextureManager.field1094);
+      var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
       mc.gameRenderer.lightmapTexture.method7317();
    }
 }

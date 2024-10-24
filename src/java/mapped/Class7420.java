@@ -1,7 +1,5 @@
 package mapped;
 
-
-
 public class Class7420 implements Class7422, Class7419, Class7421 {
    private static String[] field31825;
    public boolean field31826;

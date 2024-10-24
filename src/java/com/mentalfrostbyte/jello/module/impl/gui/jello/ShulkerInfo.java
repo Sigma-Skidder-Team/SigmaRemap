@@ -108,7 +108,7 @@ public class ShulkerInfo extends Module {
             TextureImpl.method36180();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -186,8 +186,8 @@ public class ShulkerInfo extends Module {
                     int var9 = Math.round(16.0F * RenderUtil.method11417());
                     int var10 = 1;
                     int var11 = 12;
-                    int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.scaleFactor - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
-                    int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.scaleFactor - 33.0);
+                    int var13 = (int) (mc.mouseHelper.getMouseX() * (double) GuiManager.scaleFactor - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
+                    int var14 = (int) (mc.mouseHelper.getMouseY() * (double) GuiManager.scaleFactor - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
                     GL11.glPopMatrix();
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);

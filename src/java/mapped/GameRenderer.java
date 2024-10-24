@@ -556,10 +556,10 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
       if (!this.mc.skipRenderWorld) {
          int var7 = (int)(
-            this.mc.mouseHelper.method36738() * (double)this.mc.getMainWindow().getScaledWidth() / (double)this.mc.getMainWindow().getWidth()
+            this.mc.mouseHelper.getMouseX() * (double)this.mc.getMainWindow().getScaledWidth() / (double)this.mc.getMainWindow().getWidth()
          );
          int var8 = (int)(
-            this.mc.mouseHelper.method36739() * (double)this.mc.getMainWindow().getScaledHeight() / (double)this.mc.getMainWindow().getHeight()
+            this.mc.mouseHelper.getMouseY() * (double)this.mc.getMainWindow().getScaledHeight() / (double)this.mc.getMainWindow().getHeight()
          );
          if (var4 && this.mc.world != null && !Config.method26988()) {
             this.mc.getProfiler().startSection("level");
@@ -675,8 +675,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                         "Scaled: (%d, %d). Absolute: (%f, %f)",
                         var7,
                         var8,
-                        this.mc.mouseHelper.method36738(),
-                        this.mc.mouseHelper.method36739()
+                        this.mc.mouseHelper.getMouseX(),
+                        this.mc.mouseHelper.getMouseY()
                      )
                );
                var18.addDetail(

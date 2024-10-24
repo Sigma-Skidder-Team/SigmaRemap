@@ -161,8 +161,8 @@ public class GuiManager {
 
     public void endTick() {
         if (this.screen != null) {
-            this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.method36738()));
-            this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(), (int) Minecraft.getInstance().mouseHelper.method36739()));
+            this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.getMouseX()));
+            this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(), (int) Minecraft.getInstance().mouseHelper.getMouseY()));
 
             for (Integer var4 : this.field41339) {
                 this.method33463(var4);
@@ -400,13 +400,6 @@ public class GuiManager {
 
         if (Client.getInstance().getModuleManager() != null) {
             Client.getInstance().getModuleManager().getMacOSTouchBar().method13734(null);
-        }
-    }
-
-    public void method33483(net.minecraft.client.gui.screen.Screen var1) {
-        if (var1 != null) {
-            Minecraft.getInstance().currentScreen = null;
-            Minecraft.getInstance().displayGuiScreen(var1);
         }
     }
 

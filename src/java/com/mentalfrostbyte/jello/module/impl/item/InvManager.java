@@ -159,7 +159,7 @@
         public static float method16445(ItemStack var0) {
             Item var3 = var0.getItem();
             if (var3 instanceof ToolItem) {
-                String var4 = var3.method11717().getString().toLowerCase();
+                String var4 = var3.getName().getString().toLowerCase();
                 ToolItem var5 = (ToolItem) var3;
                 float var6 = 1.0F;
                 if (!(var3 instanceof Class3268)) {
@@ -336,7 +336,7 @@
                     return method16437(Items.WATER_BUCKET) > 1;
                 } else if (var5 == Items.BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                     return method16437(Items.BUCKET) > 1;
-                } else if (var5 instanceof Class3323 && InvManagerUtils.method25874(var1)) {
+                } else if (var5 instanceof PotionItem && InvManagerUtils.method25874(var1)) {
                     return true;
                 } else if (var5 == Items.ENCHANTED_GOLDEN_APPLE) {
                     return false;
@@ -347,33 +347,33 @@
                 } else if ((var5 instanceof BowItem || var5 instanceof Class3308) && this.getBooleanValueFromSettingName("Archery")) {
                     return true;
                 } else {
-                    return var5 instanceof SkullItem && this.getBooleanValueFromSettingName("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
-                            || var5.method11717().getString().toLowerCase().contains("stick")
-                            || var5.method11717().getString().toLowerCase().contains("egg")
-                            || var5.method11717().getString().toLowerCase().contains("string")
-                            || var5.method11717().getString().toLowerCase().contains("cake")
-                            || var5.method11717().getString().toLowerCase().contains("mushroom")
-                            || var5.method11717().getString().toLowerCase().contains("flint")
-                            || var5.method11717().getString().toLowerCase().contains("dyePowder")
-                            || var5.method11717().getString().toLowerCase().contains("feather")
-                            || var5.method11717().getString().toLowerCase().contains("bucket")
-                            || var5.method11717().getString().toLowerCase().contains("chest") && !var1.method32149().getString().toLowerCase().contains("collect")
-                            || var5.method11717().getString().toLowerCase().contains("snow")
-                            || var5.method11717().getString().toLowerCase().contains("fish")
-                            || var5.method11717().getString().toLowerCase().contains("enchant")
-                            || var5.method11717().getString().toLowerCase().contains("exp")
-                            || var5.method11717().getString().toLowerCase().contains("shears")
-                            || var5.method11717().getString().toLowerCase().contains("anvil")
-                            || var5.method11717().getString().toLowerCase().contains("torch")
-                            || var5.method11717().getString().toLowerCase().contains("seeds")
-                            || var5.method11717().getString().toLowerCase().contains("leather")
-                            || var5.method11717().getString().toLowerCase().contains("reeds")
-                            || var5.method11717().getString().toLowerCase().contains("record")
-                            || var5.method11717().getString().toLowerCase().contains("snowball")
+                    return var5 instanceof SkullItem && this.getBooleanValueFromSettingName("Heads") || var5.getName().getString().toLowerCase().contains("tnt")
+                            || var5.getName().getString().toLowerCase().contains("stick")
+                            || var5.getName().getString().toLowerCase().contains("egg")
+                            || var5.getName().getString().toLowerCase().contains("string")
+                            || var5.getName().getString().toLowerCase().contains("cake")
+                            || var5.getName().getString().toLowerCase().contains("mushroom")
+                            || var5.getName().getString().toLowerCase().contains("flint")
+                            || var5.getName().getString().toLowerCase().contains("dyePowder")
+                            || var5.getName().getString().toLowerCase().contains("feather")
+                            || var5.getName().getString().toLowerCase().contains("bucket")
+                            || var5.getName().getString().toLowerCase().contains("chest") && !var1.method32149().getString().toLowerCase().contains("collect")
+                            || var5.getName().getString().toLowerCase().contains("snow")
+                            || var5.getName().getString().toLowerCase().contains("fish")
+                            || var5.getName().getString().toLowerCase().contains("enchant")
+                            || var5.getName().getString().toLowerCase().contains("exp")
+                            || var5.getName().getString().toLowerCase().contains("shears")
+                            || var5.getName().getString().toLowerCase().contains("anvil")
+                            || var5.getName().getString().toLowerCase().contains("torch")
+                            || var5.getName().getString().toLowerCase().contains("seeds")
+                            || var5.getName().getString().toLowerCase().contains("leather")
+                            || var5.getName().getString().toLowerCase().contains("reeds")
+                            || var5.getName().getString().toLowerCase().contains("record")
+                            || var5.getName().getString().toLowerCase().contains("snowball")
                             || var5 instanceof Class3328
                             || var5 == Items.field37901
                             || var5 == Items.field37840
-                            || var5.method11717().getString().toLowerCase().contains("piston");
+                            || var5.getName().getString().toLowerCase().contains("piston");
                 }
             } else {
                 return false;

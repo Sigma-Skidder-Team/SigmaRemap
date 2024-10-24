@@ -703,7 +703,7 @@ public class Class9680 {
    public static int method37854(IBlockDisplayReader var0, BlockState var1, BlockPos var2, Class8391 var3) {
       Block var6 = var1.getBlock();
       Object var7 = method37852(var1);
-      if (var7 == null && var1.getMaterial() == Material.field38941) {
+      if (var7 == null && var1.getMaterial() == Material.WATER) {
          var7 = field45273;
       }
 
@@ -1304,97 +1304,97 @@ public class Class9680 {
                                                                if (!var0.equals("podzol")) {
                                                                   if (!var0.equals("netherrack")) {
                                                                      if (var0.equals("snow") || var0.equals("white")) {
-                                                                        return MaterialColor.SNOW.field31007;
+                                                                        return MaterialColor.SNOW.colorIndex;
                                                                      } else if (var0.equals("adobe") || var0.equals("orange")) {
-                                                                        return MaterialColor.field30962.field31007;
+                                                                        return MaterialColor.field30962.colorIndex;
                                                                      } else if (var0.equals("magenta")) {
-                                                                        return MaterialColor.field30963.field31007;
+                                                                        return MaterialColor.field30963.colorIndex;
                                                                      } else if (var0.equals("light_blue") || var0.equals("lightBlue")) {
-                                                                        return MaterialColor.field30964.field31007;
+                                                                        return MaterialColor.field30964.colorIndex;
                                                                      } else if (var0.equals("yellow")) {
-                                                                        return MaterialColor.field30965.field31007;
+                                                                        return MaterialColor.field30965.colorIndex;
                                                                      } else if (var0.equals("lime")) {
-                                                                        return MaterialColor.field30966.field31007;
+                                                                        return MaterialColor.field30966.colorIndex;
                                                                      } else if (var0.equals("pink")) {
-                                                                        return MaterialColor.field30967.field31007;
+                                                                        return MaterialColor.field30967.colorIndex;
                                                                      } else if (var0.equals("gray")) {
-                                                                        return MaterialColor.field30968.field31007;
+                                                                        return MaterialColor.field30968.colorIndex;
                                                                      } else if (var0.equals("silver")) {
-                                                                        return MaterialColor.field30969.field31007;
+                                                                        return MaterialColor.field30969.colorIndex;
                                                                      } else if (var0.equals("cyan")) {
-                                                                        return MaterialColor.field30970.field31007;
+                                                                        return MaterialColor.field30970.colorIndex;
                                                                      } else if (var0.equals("purple")) {
-                                                                        return MaterialColor.field30971.field31007;
+                                                                        return MaterialColor.field30971.colorIndex;
                                                                      } else if (var0.equals("blue")) {
-                                                                        return MaterialColor.field30972.field31007;
+                                                                        return MaterialColor.field30972.colorIndex;
                                                                      } else if (var0.equals("brown")) {
-                                                                        return MaterialColor.field30973.field31007;
+                                                                        return MaterialColor.field30973.colorIndex;
                                                                      } else if (var0.equals("green")) {
-                                                                        return MaterialColor.field30974.field31007;
+                                                                        return MaterialColor.field30974.colorIndex;
                                                                      } else if (!var0.equals("red")) {
-                                                                        return !var0.equals("black") ? -1 : MaterialColor.field30976.field31007;
+                                                                        return !var0.equals("black") ? -1 : MaterialColor.field30976.colorIndex;
                                                                      } else {
-                                                                        return MaterialColor.field30975.field31007;
+                                                                        return MaterialColor.field30975.colorIndex;
                                                                      }
                                                                   } else {
-                                                                     return MaterialColor.field30982.field31007;
+                                                                     return MaterialColor.field30982.colorIndex;
                                                                   }
                                                                } else {
-                                                                  return MaterialColor.field30981.field31007;
+                                                                  return MaterialColor.field30981.colorIndex;
                                                                }
                                                             } else {
-                                                               return MaterialColor.field30980.field31007;
+                                                               return MaterialColor.field30980.colorIndex;
                                                             }
                                                          } else {
-                                                            return MaterialColor.field30979.field31007;
+                                                            return MaterialColor.field30979.colorIndex;
                                                          }
                                                       } else {
-                                                         return MaterialColor.field30978.field31007;
+                                                         return MaterialColor.field30978.colorIndex;
                                                       }
                                                    } else {
-                                                      return MaterialColor.field30977.field31007;
+                                                      return MaterialColor.field30977.colorIndex;
                                                    }
                                                 } else {
-                                                   return MaterialColor.field30961.field31007;
+                                                   return MaterialColor.field30961.colorIndex;
                                                 }
                                              } else {
-                                                return MaterialColor.field30960.field31007;
+                                                return MaterialColor.field30960.colorIndex;
                                              }
                                           } else {
-                                             return MaterialColor.field30959.field31007;
+                                             return MaterialColor.field30959.colorIndex;
                                           }
                                        } else {
-                                          return MaterialColor.STONE.field31007;
+                                          return MaterialColor.STONE.colorIndex;
                                        }
                                     } else {
-                                       return MaterialColor.field30957.field31007;
+                                       return MaterialColor.field30957.colorIndex;
                                     }
                                  } else {
-                                    return MaterialColor.field30956.field31007;
+                                    return MaterialColor.field30956.colorIndex;
                                  }
                               } else {
-                                 return MaterialColor.FOLIAGE.field31007;
+                                 return MaterialColor.FOLIAGE.colorIndex;
                               }
                            } else {
-                              return MaterialColor.IRON.field31007;
+                              return MaterialColor.IRON.colorIndex;
                            }
                         } else {
-                           return MaterialColor.field30952.field31007;
+                           return MaterialColor.field30952.colorIndex;
                         }
                      } else {
-                        return MaterialColor.field30951.field31007;
+                        return MaterialColor.field30951.colorIndex;
                      }
                   } else {
-                     return MaterialColor.field30950.field31007;
+                     return MaterialColor.field30950.colorIndex;
                   }
                } else {
-                  return MaterialColor.field30949.field31007;
+                  return MaterialColor.field30949.colorIndex;
                }
             } else {
-               return MaterialColor.field30948.field31007;
+               return MaterialColor.field30948.colorIndex;
             }
          } else {
-            return MaterialColor.AIR.field31007;
+            return MaterialColor.AIR.colorIndex;
          }
       } else {
          return -1;
@@ -1409,7 +1409,7 @@ public class Class9680 {
       for (int var4 = 0; var4 < var2.length && var4 < var3.length; var4++) {
          MaterialColor var5 = var2[var4];
          if (var5 != null) {
-            var3[var4] = var5.field31006;
+            var3[var4] = var5.colorValue;
          }
       }
 
@@ -1425,8 +1425,8 @@ public class Class9680 {
             MaterialColor var6 = var3[var5];
             if (var6 != null) {
                int var7 = var0[var5];
-               if (var7 >= 0 && var6.field31006 != var7) {
-                  var6.field31006 = var7;
+               if (var7 >= 0 && var6.colorValue != var7) {
+                  var6.colorValue = var7;
                   var4 = true;
                }
             }
