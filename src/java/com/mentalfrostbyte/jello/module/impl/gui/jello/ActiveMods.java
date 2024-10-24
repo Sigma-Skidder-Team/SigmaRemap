@@ -87,7 +87,7 @@ public class ActiveMods extends Module {
             } else {
                 Scoreboard var4 = mc.world.method6805();
                 Class8375 var5 = null;
-                ScorePlayerTeam var6 = var4.method20998(mc.player.method2956());
+                ScorePlayerTeam var6 = var4.getPlayersTeam(mc.player.method2956());
                 if (var6 != null) {
                     int var7 = var6.getColor().getColorIndex();
                     if (var7 >= 0) {
@@ -96,7 +96,7 @@ public class ActiveMods extends Module {
                 }
 
                 Class8375 var14 = var5 == null ? var4.method20989(1) : var5;
-                Collection var8 = var4.method20981(var14);
+                Collection var8 = var4.getSortedScores(var14);
                 int var9 = 0;
 
                 for (Module var11 : this.field23612) {

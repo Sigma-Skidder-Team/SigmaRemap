@@ -1,12 +1,10 @@
 package com.mentalfrostbyte.jello.module.impl.misc.gameplay;
 
-import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
-import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class7200;
@@ -82,7 +80,7 @@ public class HypixelGamePlay extends Module {
 
                         Scoreboard scoreboard = mc.world.method6805();
                         Class8375 teamClass = null;
-                        ScorePlayerTeam playerTeam = scoreboard.method20998(mc.player.method2956());
+                        ScorePlayerTeam playerTeam = scoreboard.getPlayersTeam(mc.player.method2956());
 
                         if (playerTeam != null) {
                             int colorIndex = playerTeam.getColor().getColorIndex();
@@ -92,11 +90,11 @@ public class HypixelGamePlay extends Module {
                         }
 
                         Class8375 effectiveClass = teamClass != null ? teamClass : scoreboard.method20989(1);
-                        Collection<Class9411> teamMembers = scoreboard.method20981(effectiveClass);
+                        Collection<Class9411> teamMembers = scoreboard.getSortedScores(effectiveClass);
                         int remainingPlayers = -1;
 
                         for (Class9411 member : teamMembers) {
-                            ScorePlayerTeam memberTeam = scoreboard.method20998(member.method36054());
+                            ScorePlayerTeam memberTeam = scoreboard.getPlayersTeam(member.method36054());
                             String formattedName = ScorePlayerTeam.method28577(memberTeam, new StringTextComponent(member.method36054()))
                                     .getString().replaceAll("§t", "");
 

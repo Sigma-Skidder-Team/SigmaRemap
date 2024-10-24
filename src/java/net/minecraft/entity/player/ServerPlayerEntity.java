@@ -495,7 +495,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private void method2740(String var1, String var2, Class9008[] var3) {
-      ScorePlayerTeam var6 = this.method2953().method20998(var2);
+      ScorePlayerTeam var6 = this.method2953().getPlayersTeam(var2);
       if (var6 != null) {
          int var7 = var6.getColor().getColorIndex();
          if (var7 >= 0 && var7 < var3.length) {

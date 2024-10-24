@@ -55,7 +55,7 @@ public class Class8375 {
    public void method29341(ITextComponent var1) {
       this.field35942 = var1;
       this.field35943 = this.method29339();
-      this.field35939.method21000(this);
+      this.field35939.onObjectiveChanged(this);
    }
 
    public Class2316 method29342() {
@@ -64,6 +64,6 @@ public class Class8375 {
 
    public void method29343(Class2316 var1) {
       this.field35944 = var1;
-      this.field35939.method21000(this);
+      this.field35939.onObjectiveChanged(this);
    }
 }

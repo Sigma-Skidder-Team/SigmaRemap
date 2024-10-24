@@ -1894,7 +1894,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public Team getTeam() {
-      return this.world.method6805().method20998(this.method2956());
+      return this.world.method6805().getPlayersTeam(this.method2956());
    }
 
    public boolean isOnSameTeam(Entity var1) {
