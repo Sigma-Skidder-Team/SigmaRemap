@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
-import de.florianmichael.viamcp.ViaMCP;
 import lol.ClientColors;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -87,7 +86,7 @@ public class GuiSwitch extends Screen {
 
     @Override
     public void draw(float var1) {
-        if (CustomResourceLoadProgressGui.field6779 != null) {
+        if (CustomResourceLoadProgressGui.back != null) {
             field21069.changeDirection(Direction.FORWARDS);
             int var4 = 40;
             float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
@@ -97,7 +96,7 @@ public class GuiSwitch extends Screen {
                     (float) var4 * var6,
                     (float) (Minecraft.getInstance().mainWindow.getWidth() + var4),
                     (float) (Minecraft.getInstance().mainWindow.getHeight() + var4),
-                    CustomResourceLoadProgressGui.field6779
+                    CustomResourceLoadProgressGui.back
             );
             float var7 = MathUtils.lerp(field21069.calcPercent(), 0.16, 0.71, 0.0, 0.99);
             int var8 = (Minecraft.getInstance().mainWindow.getWidth() - 455) / 2;
@@ -115,7 +114,7 @@ public class GuiSwitch extends Screen {
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
-                    CustomResourceLoadProgressGui.field6780,
+                    CustomResourceLoadProgressGui.background,
                     MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
             );
             RenderUtil.renderBackgroundBox(
@@ -125,7 +124,7 @@ public class GuiSwitch extends Screen {
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
                     MultiUtilities.applyAlpha(0, 0.75F * (1.0F - field21069.calcPercent()))
             );
-            RenderUtil.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
+            RenderUtil.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.sigmaLogo);
         }
     }
 

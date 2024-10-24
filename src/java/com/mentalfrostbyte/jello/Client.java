@@ -43,10 +43,7 @@ public class Client {
     public static int currentVersionIndex = 28;
 
     public static final String VERSION = "5.0.0b15";
-    public static final boolean field28963 = false;
     private static final Minecraft mc = Minecraft.getInstance();
-    public static String field28960 = "Jello";
-    public static String field28962 = "Sigma Production";
     public static List<Texture> textureList = new ArrayList<Texture>();
     public static boolean dontRenderHand = false;
     private static Client instance;

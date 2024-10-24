@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.IAsyncReloader;
 import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -19,7 +20,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    private static final int field6436 = Class9470.method36520(255, 239, 50, 61);
    private static final int field6437 = field6436 & 16777215;
    private final Minecraft field6438;
-   private final Class8335 field6439;
+   private final IAsyncReloader field6439;
    private final Consumer<Optional<Throwable>> field6440;
    private final boolean field6441;
    private float field6442;
@@ -32,7 +33,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    private GlBlendState field6449 = null;
    private boolean field6450 = false;
 
-   public ResourceLoadProgressGui(Minecraft var1, Class8335 var2, Consumer<Optional<Throwable>> var3, boolean var4) {
+   public ResourceLoadProgressGui(Minecraft var1, IAsyncReloader var2, Consumer<Optional<Throwable>> var3, boolean var4) {
       this.field6438 = var1;
       this.field6439 = var2;
       this.field6440 = var3;
@@ -48,7 +49,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       int var7 = this.field6438.getMainWindow().getScaledWidth();
       int var8 = this.field6438.getMainWindow().getScaledHeight();
       long var9 = Util.milliTime();
-      if (this.field6441 && (this.field6439.method29225() || this.field6438.currentScreen != null) && this.field6444 == -1L) {
+      if (this.field6441 && (this.field6439.asyncPartDone() || this.field6438.currentScreen != null) && this.field6444 == -1L) {
          this.field6444 = var9;
       }
 
@@ -106,7 +107,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       RenderSystem.method27939();
       RenderSystem.disableBlend();
       int var23 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.8325);
-      float var24 = this.field6439.method29224();
+      float var24 = this.field6439.estimateExecutionSpeed();
       this.field6442 = MathHelper.clamp(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       Reflector.field42771.call();
       if (var11 < 1.0F) {
@@ -117,11 +118,11 @@ public class ResourceLoadProgressGui extends LoadingGui {
          this.field6438.setLoadingGui((LoadingGui)null);
       }
 
-      if (this.field6443 == -1L && this.field6439.method29226() && (!this.field6441 || var12 >= 2.0F)) {
+      if (this.field6443 == -1L && this.field6439.fullyDone() && (!this.field6441 || var12 >= 2.0F)) {
          this.field6443 = Util.milliTime();
 
          try {
-            this.field6439.method29227();
+            this.field6439.join();
             this.field6440.accept(Optional.<Throwable>empty());
          } catch (Throwable var26) {
             this.field6440.accept(Optional.<Throwable>of(var26));

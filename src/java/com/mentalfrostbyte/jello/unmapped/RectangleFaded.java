@@ -44,7 +44,7 @@ public class RectangleFaded extends ButtonPanel {
                 (float) var5 * var7,
                 (float) (Minecraft.getInstance().mainWindow.getWidth() + var5),
                 (float) (Minecraft.getInstance().mainWindow.getHeight() + var5),
-                CustomResourceLoadProgressGui.field6780
+                CustomResourceLoadProgressGui.background
         );
         RenderUtil.endScissor();
         if (this.field20591) {
