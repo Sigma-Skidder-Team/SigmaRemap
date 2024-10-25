@@ -14,7 +14,7 @@ public final class Class495 implements Runnable {
 
    @Override
    public void run() {
-      int var3 = 0;
+      int var3;
       byte[] var4 = new byte[16384];
 
       try {

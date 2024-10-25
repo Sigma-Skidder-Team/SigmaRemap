@@ -25,6 +25,8 @@ import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;
+import net.sourceforge.jaad.mp4.api.Frame;
+import net.sourceforge.jaad.mp4.api.Movie;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
@@ -371,27 +373,27 @@ public class MusicManager {
                                     InputStream var8 = var7.getInputStream();
                                     Class1782 var9 = new Class1782(var8, new Class8808(this));
                                     Class8490 var10 = new Class8490(var9);
-                                    Class8583 var11 = var10.method30073();
-                                    List<Class7354> var12 = var11.method30672();
+                                    Movie var11 = var10.method30073();
+                                    List<Track> var12 = var11.method30672();
                                     if (var12.isEmpty()) {
                                         Client.getClientLogger().dummyMethod("No content");
                                     }
 
-                                    Class7356 var13 = (Class7356) var11.method30672().get(1);
-                                    AudioFormat var14 = new AudioFormat((float) var13.method23338(), var13.method23339(), var13.method23337(), true, true);
+                                    AudioTrack var13 = (AudioTrack) var11.method30672().get(1);
+                                    AudioFormat var14 = new AudioFormat((float) var13.getSampleRate(), var13.getSampleSize(), var13.getChannelCount(), true, true);
                                     this.field32166 = AudioSystem.getSourceDataLine(var14);
                                     this.field32166.open();
                                     this.field32166.start();
-                                    this.field32147 = (long) var11.method30680();
+                                    this.field32147 = (long) var11.getDuration();
                                     if (this.field32147 > 1300L) {
                                         var9.close();
                                         Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Music is too long."));
                                     }
 
-                                    Class6542 var15 = new Class6542(var13.method23320());
-                                    Class8210 var16 = new Class8210();
+                                    Decoder var15 = new Decoder(var13.getDecoderSpecificInfo());
+                                    SampleBuffer var16 = new SampleBuffer();
 
-                                    while (var13.method23323()) {
+                                    while (var13.hasMoreFrames()) {
                                         while (!this.field32144) {
                                             this.field32163.clear();
                                             if (Thread.interrupted()) {
@@ -400,12 +402,12 @@ public class MusicManager {
                                             }
                                         }
 
-                                        Class1994 var18 = var13.method23324();
-                                        var15.method19888(var18.method8282(), var16);
-                                        var3 = var16.method28523();
+                                        Frame var18 = var13.method23324();
+                                        var15.decodeFrame(var18.getData(), var16);
+                                        var3 = var16.getData();
                                         this.field32166.write((byte[]) var3, 0, ((byte[]) var3).length);
-                                        float[] var29 = method24305(var16.method28523(), var14);
-                                        Class7898 var19 = new Class7898(var29.length);
+                                        float[] var29 = method24305(var16.getData(), var14);
+                                        JavaFFT var19 = new JavaFFT(var29.length);
                                         float[][] var20 = var19.method26462(var29);
                                         float[] var21 = var20[0];
                                         float[] var22 = var20[1];
@@ -425,7 +427,7 @@ public class MusicManager {
                                             }
                                         }
 
-                                        if (!var13.method23323()
+                                        if (!var13.hasMoreFrames()
                                                 && (this.field32162 == Class189.field718 || this.field32162 == Class189.field717 && this.field32145.youtubeVideos.size() == 1)) {
                                             var13.method23325(0.0);
                                             this.field32158 = 0L;

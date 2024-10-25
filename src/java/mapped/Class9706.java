@@ -18,7 +18,7 @@ public class Class9706 {
       this.method38029();
    }
 
-   public void method38025(Class9189 var1, int var2, Class2288 var3) throws Class2460 {
+   public void method38025(Class9189 var1, int var2, Class2288 var3) throws AACException {
       int var6 = var3.method9035();
       if (this.field45368 = var1.method34399()) {
          this.field45369 = var1.method34397(5);

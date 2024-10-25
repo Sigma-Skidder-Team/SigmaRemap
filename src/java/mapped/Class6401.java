@@ -1,6 +1,9 @@
 package mapped;
 
-public class Class6401 extends Class6399 {
+import net.sourceforge.jaad.mp4.api.Protection;
+import net.sourceforge.jaad.mp4.boxes.Box;
+
+public class Class6401 extends Protection {
    private static String[] field28011;
    private final String field28012;
    private final String field28013;
@@ -8,11 +11,11 @@ public class Class6401 extends Class6399 {
    private final byte[] field28015;
    private final byte[] field28016;
 
-   public Class6401(Class5066 var1) {
+   public Class6401(Box var1) {
       super(var1);
-      Class5066 var4 = var1.method15438(1935894633L);
-      this.field28012 = new String(((Class5042)var4.method15438(1970496882L)).method15443());
-      byte[] var5 = ((Class5042)var4.method15438(1851878757L)).method15443();
+      Box var4 = var1.getChild(1935894633L);
+      this.field28012 = new String(((Class5042)var4.getChild(1970496882L)).method15443());
+      byte[] var5 = ((Class5042)var4.getChild(1851878757L)).method15443();
       int var6 = 0;
 
       while (var5[var6] != 0) {
@@ -20,9 +23,9 @@ public class Class6401 extends Class6399 {
       }
 
       this.field28013 = new String(var5, 0, var6 - 1);
-      this.field28014 = new String(((Class5042)var4.method15438(1801812256L)).method15443());
-      this.field28015 = ((Class5042)var4.method15438(1886546294L)).method15443();
-      this.field28016 = ((Class5042)var4.method15438(1769367926L)).method15443();
+      this.field28014 = new String(((Class5042)var4.getChild(1801812256L)).method15443());
+      this.field28015 = ((Class5042)var4.getChild(1886546294L)).method15443();
+      this.field28016 = ((Class5042)var4.getChild(1769367926L)).method15443();
    }
 
    @Override

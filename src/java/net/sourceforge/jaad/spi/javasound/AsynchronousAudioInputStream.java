@@ -1,15 +1,17 @@
-package mapped;
+package net.sourceforge.jaad.spi.javasound;
+
+import mapped.Trigger;
 
 import java.io.IOException;
 import java.io.InputStream;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 
-public abstract class Class1774 extends AudioInputStream implements Class1776 {
+public abstract class AsynchronousAudioInputStream extends AudioInputStream implements Trigger {
    private byte[] field9599;
-   public final Class6889 field9600 = new Class6889(this);
+   public final CircularBuffer field9600 = new CircularBuffer(this);
 
-   public Class1774(InputStream var1, AudioFormat var2, long var3) throws IOException {
+   public AsynchronousAudioInputStream(InputStream var1, AudioFormat var2, long var3) throws IOException {
       super(var1, var2, var3);
    }
 

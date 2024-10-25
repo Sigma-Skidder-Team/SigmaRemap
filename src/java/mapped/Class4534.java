@@ -1,5 +1,9 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.api.Movie;
+import net.sourceforge.jaad.mp4.api.Protection;
+import net.sourceforge.jaad.mp4.boxes.Box;
+
 import java.io.RandomAccessFile;
 import java.util.List;
 import java.util.Map;
@@ -27,15 +31,15 @@ public class Class4534 {
             }
 
             Class8490 var5 = new Class8490(new RandomAccessFile(var4, "r"));
-            Class8583 var6 = var5.method30073();
+            Movie var6 = var5.method30073();
             System.out.println("Movie:");
             List var7 = var6.method30672();
 
             for (int var8 = 0; var8 < var7.size(); var8++) {
-               Class7354 var9 = (Class7354)var7.get(var8);
+               Track var9 = (Track)var7.get(var8);
                System.out
                   .println("\tTrack " + var8 + ": " + var9.method23311() + " (language: " + var9.method23317() + ", created: " + var9.method23315() + ")");
-               Class6399 var10 = var9.method23322();
+               Protection var10 = var9.method23322();
                if (var10 != null) {
                   System.out.println("\t\tprotection: " + var10.method19500());
                }
@@ -55,11 +59,11 @@ public class Class4534 {
                }
             }
 
-            List<Class6399> var15 = var6.method30677();
+            List<Protection> var15 = var6.method30677();
             if (var15.size() > 0) {
                System.out.println("\tprotections:");
 
-               for (Class6399 var19 : var15) {
+               for (Protection var19 : var15) {
                   System.out.println("\t\t" + var19.method19500());
                }
             }
@@ -67,7 +71,7 @@ public class Class4534 {
             if (var3) {
                System.out.println("================================");
 
-               for (Class5066 var20 : var5.method30074()) {
+               for (Box var20 : var5.method30074()) {
                   method14461(var20, 0);
                }
             }
@@ -83,7 +87,7 @@ public class Class4534 {
       System.exit(1);
    }
 
-   private static void method14461(Class5066 var0, int var1) {
+   private static void method14461(Box var0, int var1) {
       StringBuilder var4 = new StringBuilder();
 
       for (int var5 = 0; var5 < var1; var5++) {
@@ -93,7 +97,7 @@ public class Class4534 {
       var4.append(var0.toString());
       System.out.println(var4.toString());
 
-      for (Class5066 var6 : var0.method15439()) {
+      for (Box var6 : var0.method15439()) {
          method14461(var6, var1 + 1);
       }
    }

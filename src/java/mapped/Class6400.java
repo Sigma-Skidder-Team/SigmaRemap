@@ -1,9 +1,12 @@
 package mapped;
 
-public class Class6400 extends Class6399 {
+import net.sourceforge.jaad.mp4.api.Protection;
+import net.sourceforge.jaad.mp4.boxes.Box;
+
+public class Class6400 extends Protection {
    private static String[] field28010;
 
-   public Class6400(Class5066 var1) {
+   public Class6400(Box var1) {
       super(var1);
    }
 

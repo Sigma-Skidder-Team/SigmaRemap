@@ -1,4 +1,7 @@
-package mapped;
+package net.sourceforge.jaad.mp4.api;
+
+import mapped.*;
+import net.sourceforge.jaad.mp4.boxes.Box;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -14,7 +17,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Class9011 {
+public class MetaData {
    private static final String[] field41217 = new String[]{
       "undefined",
       "blues",
@@ -168,9 +171,9 @@ public class Class9011 {
    };
    private Map<Class8076<?>, Object> field41219 = new HashMap<Class8076<?>, Object>();
 
-   public void method33301(Class5066 var1, Class5066 var2) {
+   public void method33301(Box var1, Box var2) {
       if (var2.method15437(1668313716L)) {
-         Class5017 var5 = (Class5017)var2.method15438(1668313716L);
+         Class5017 var5 = (Class5017)var2.getChild(1668313716L);
          this.method33306(Class8076.field34710, new Locale(var5.method15376()));
          this.method33306(Class8076.field34687, var5.method15377());
       }
@@ -180,43 +183,43 @@ public class Class9011 {
       }
 
       if (var2.method15437(1768174386L)) {
-         this.method33304((Class5079)var2.method15438(1768174386L));
+         this.method33304((Class5079)var2.getChild(1768174386L));
       }
 
       if (var2.method15437(1768715124L)) {
-         this.method33303(var2.method15438(1768715124L));
+         this.method33303(var2.getChild(1768715124L));
       }
 
       if (var2.method15437(1952540531L)) {
-         this.method33305((Class5044)var2.method15438(1952540531L));
+         this.method33305((Class5044)var2.getChild(1952540531L));
       }
    }
 
-   private void method33302(Class5066 var1) {
+   private void method33302(Box var1) {
       if (var1.method15437(1634493037L)) {
-         Class5025 var4 = (Class5025)var1.method15438(1634493037L);
+         Class5025 var4 = (Class5025)var1.getChild(1634493037L);
          this.method33306(Class8076.field34673, var4.method15386());
          this.method33306(Class8076.field34674, var4.method15389());
       }
 
       if (var1.method15437(1685283696L)) {
-         this.method33306(Class8076.field34700, ((Class5023)var1.method15438(1685283696L)).method15386());
+         this.method33306(Class8076.field34700, ((Class5023)var1.getChild(1685283696L)).method15386());
       }
 
       if (var1.method15437(1803122532L)) {
-         this.method33306(Class8076.field34698, ((Class5023)var1.method15438(1803122532L)).method15386());
+         this.method33306(Class8076.field34698, ((Class5023)var1.getChild(1803122532L)).method15386());
       }
 
       if (var1.method15437(1819239273L)) {
-         this.method33306(Class8076.field34692, ((Class5026)var1.method15438(1819239273L)).method15390());
+         this.method33306(Class8076.field34692, ((Class5026)var1.getChild(1819239273L)).method15390());
       }
 
       if (var1.method15437(1885696614L)) {
-         this.method33306(Class8076.field34670, ((Class5023)var1.method15438(1885696614L)).method15386());
+         this.method33306(Class8076.field34670, ((Class5023)var1.getChild(1885696614L)).method15386());
       }
 
       if (var1.method15437(2037543523L)) {
-         String var7 = ((Class5023)var1.method15438(2037543523L)).method15386();
+         String var7 = ((Class5023)var1.getChild(2037543523L)).method15386();
 
          try {
             this.method33306(Class8076.field34682, new Date((long)Integer.parseInt(var7)));
@@ -226,14 +229,14 @@ public class Class9011 {
       }
 
       if (var1.method15437(1953068140L)) {
-         this.method33306(Class8076.field34671, ((Class5023)var1.method15438(1953068140L)).method15386());
+         this.method33306(Class8076.field34671, ((Class5023)var1.getChild(1953068140L)).method15386());
       }
    }
 
-   private void method33303(Class5066 var1) {
-      for (Class5066 var6 : var1.method15439()) {
+   private void method33303(Box var1) {
+      for (Box var6 : var1.method15439()) {
          long var7 = var6.method15431();
-         Class4982 var9 = (Class4982)var6.method15438(1684108385L);
+         Class4982 var9 = (Class4982)var6.getChild(1684108385L);
          if (var7 != 2839630420L) {
             if (var7 != 2842583405L) {
                if (var7 != 1631670868L) {

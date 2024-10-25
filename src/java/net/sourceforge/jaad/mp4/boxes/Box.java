@@ -1,9 +1,9 @@
-package mapped;
+package net.sourceforge.jaad.mp4.boxes;
 
 import java.util.List;
 
-public interface Class5066 {
-   Class5066 method15434();
+public interface Box {
+   Box method15434();
 
    long method15432();
 
@@ -17,9 +17,9 @@ public interface Class5066 {
 
    boolean method15437(long var1);
 
-   List<Class5066> method15439();
+   List<Box> method15439();
 
-   List<Class5066> method15440(long var1);
+   List<Box> method15440(long var1);
 
-   Class5066 method15438(long var1);
+   Box getChild(long var1);
 }

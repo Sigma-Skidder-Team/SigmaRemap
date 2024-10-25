@@ -109,7 +109,7 @@ public class Class6516 implements Class6515 {
       return this.field28564;
    }
 
-   public static Class6516 method19755(byte[] var0) throws Class2460 {
+   public static Class6516 method19755(byte[] var0) throws AACException {
       Class9189 var3 = new Class9189(var0);
       Class6516 var4 = new Class6516();
 
@@ -142,7 +142,7 @@ public class Class6516 implements Class6515 {
             case 8:
                var4.field28555 = var3.method34399();
                if (var4.field28555) {
-                  throw new Class2460("config uses 960-sample frames, not yet supported");
+                  throw new AACException("config uses 960-sample frames, not yet supported");
                }
 
                var4.field28556 = var3.method34399();
@@ -177,7 +177,7 @@ public class Class6516 implements Class6515 {
                }
                break;
             default:
-               throw new Class2460("profile not supported: " + var4.field28551.method8215());
+               throw new AACException("profile not supported: " + var4.field28551.method8215());
          }
 
          var11 = var4;
@@ -188,7 +188,7 @@ public class Class6516 implements Class6515 {
       return var11;
    }
 
-   private static Class1955 method19756(Class9189 var0) throws Class2460 {
+   private static Class1955 method19756(Class9189 var0) throws AACException {
       int var3 = var0.method34397(5);
       if (var3 == 31) {
          var3 = 32 + var0.method34397(6);
@@ -197,7 +197,7 @@ public class Class6516 implements Class6515 {
       return Class1955.method8214(var3);
    }
 
-   private static void method19757(Class9189 var0, Class6516 var1) throws Class2460 {
+   private static void method19757(Class9189 var0, Class6516 var1) throws AACException {
       int var4 = var0.method34397(11);
       switch (var4) {
          case 695:
@@ -212,7 +212,7 @@ public class Class6516 implements Class6515 {
                   }
 
                   if (var6 == 15) {
-                     throw new Class2460("sample rate specified explicitly, not supported yet!");
+                     throw new AACException("sample rate specified explicitly, not supported yet!");
                   }
                }
             }

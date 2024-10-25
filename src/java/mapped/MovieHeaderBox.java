@@ -1,8 +1,10 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+
 import java.io.IOException;
 
-public class Class5078 extends Class4975 {
+public class MovieHeaderBox extends Class4975 {
    private long field23122;
    private long field23123;
    private long field23124;
@@ -12,12 +14,12 @@ public class Class5078 extends Class4975 {
    private double[] field23128 = new double[9];
    private long field23129;
 
-   public Class5078() {
+   public MovieHeaderBox() {
       super("Movie Header Box");
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       int var4 = this.field22850 != 1 ? 4 : 8;
       this.field23122 = var1.readBits(var4);

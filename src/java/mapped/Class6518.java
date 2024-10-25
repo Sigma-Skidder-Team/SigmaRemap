@@ -15,7 +15,7 @@ public class Class6518 implements Class6515, Class6519, Class6520 {
    private final float[] field28584;
    private final float[][] field28585;
 
-   public Class6518(boolean var1, int var2) throws Class2460 {
+   public Class6518(boolean var1, int var2) throws AACException {
       if (!var1) {
          this.field28578 = 1024;
          this.field28579 = 128;

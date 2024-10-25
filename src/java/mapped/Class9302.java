@@ -1,5 +1,7 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+
 import java.io.IOException;
 
 public class Class9302 extends Class9301 {
@@ -10,7 +12,7 @@ public class Class9302 extends Class9301 {
    private long[] field43181;
 
    @Override
-   public void method35101(DataStreamReader var1) throws IOException {
+   public void method35101(MP4InputStream var1) throws IOException {
       this.field43177 = var1.method31866(100, "UTF-8");
       this.field43178 = var1.method31866(100, "UTF-8");
       this.field43179 = var1.readBits(8);

@@ -34,7 +34,7 @@ public class Class8288 implements Class8289 {
       this.field35605 = new float[4][this.field35598 * 2];
    }
 
-   public void method28976(Class9189 var1, Class1973 var2) throws Class2460 {
+   public void method28976(Class9189 var1, Class1973 var2) throws AACException {
       this.field35606 = var1.method34397(2) + 1;
       int var5 = 0;
       int var6;
@@ -82,7 +82,7 @@ public class Class8288 implements Class8289 {
       }
    }
 
-   public void method28977(float[] var1, int var2, int var3, Class1973 var4) throws Class2460 {
+   public void method28977(float[] var1, int var2, int var3, Class1973 var4) throws AACException {
       this.field35600.method28983(var1, this.field35602, var2, var3, var4);
 
       for (int var7 = 0; var7 < 4; var7++) {

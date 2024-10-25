@@ -2,20 +2,20 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class2460 extends IOException {
+public class AACException extends IOException {
    private static String[] field16541;
    private final boolean field16542;
 
-   public Class2460(String var1) {
+   public AACException(String var1) {
       this(var1, false);
    }
 
-   public Class2460(String var1, boolean var2) {
+   public AACException(String var1, boolean var2) {
       super(var1);
       this.field16542 = var2;
    }
 
-   public Class2460(Throwable var1) {
+   public AACException(Throwable var1) {
       super(var1);
       this.field16542 = false;
    }

@@ -91,7 +91,7 @@ public class Class9523 {
       }
    }
 
-   public void method36798(int var1, Class9189 var2) throws Class2460 {
+   public void method36798(int var1, Class9189 var2) throws AACException {
       this.field44326 = var1;
       if (var1 <= 32) {
          this.field44324 = var2.method34397(var1);

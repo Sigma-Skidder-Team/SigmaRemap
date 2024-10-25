@@ -61,7 +61,7 @@ public class Class6517 implements Class6515 {
       return var4;
    }
 
-   public static void method19761(Class6512 var0, Class9189 var1, short[] var2, boolean var3) throws Class2460 {
+   public static void method19761(Class6512 var0, Class9189 var1, short[] var2, boolean var3) throws AACException {
       Class6538 var6 = var0.method19720();
       int var7 = var6.method19871();
       int var8 = var6.method19866();
@@ -159,7 +159,7 @@ public class Class6517 implements Class6515 {
             }
 
             if (var26 == 0) {
-               throw new Class2460("no segments in HCR");
+               throw new AACException("no segments in HCR");
             } else {
                int var43 = var27 / var26;
 
@@ -188,7 +188,7 @@ public class Class6517 implements Class6515 {
                }
             }
          } else {
-            throw new Class2460("length of longest HCR codeword out of range");
+            throw new AACException("length of longest HCR codeword out of range");
          }
       }
    }

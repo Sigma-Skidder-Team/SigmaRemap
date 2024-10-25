@@ -1,4 +1,4 @@
-package mapped;
+package net.sourceforge.jaad.mp4;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.io.RandomAccessFile;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
-public class DataStreamReader {
+public class MP4InputStream {
    public static final int field39792 = 255;
    public static final int field39793 = 65535;
    public static final String field39794 = "UTF-8";
@@ -18,14 +18,14 @@ public class DataStreamReader {
    private int field39799;
    private long field39800;
 
-   public DataStreamReader(InputStream var1) {
+   public MP4InputStream(InputStream var1) {
       this.field39797 = var1;
       this.field39798 = null;
       this.field39799 = -1;
       this.field39800 = 0L;
    }
 
-   public DataStreamReader(RandomAccessFile var1) {
+   public MP4InputStream(RandomAccessFile var1) {
       this.field39798 = var1;
       this.field39797 = null;
       this.field39799 = -1;
@@ -183,7 +183,7 @@ public class DataStreamReader {
       this.field39800 += var5;
    }
 
-   public long getPosition() throws IOException {
+   public long getOffset() throws IOException {
       long var3 = -1L;
       if (this.field39797 == null) {
          if (this.field39798 != null) {

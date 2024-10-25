@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class8210 {
+public class SampleBuffer {
    private static String[] field35252;
    private int field35253;
    private int field35254;
@@ -11,14 +11,14 @@ public class Class8210 {
    private byte[] field35259 = new byte[0];
    private boolean field35260;
 
-   public Class8210() {
+   public SampleBuffer() {
       this.field35253 = 0;
       this.field35254 = 0;
       this.field35255 = 0;
       this.field35260 = true;
    }
 
-   public byte[] method28523() {
+   public byte[] getData() {
       return this.field35259;
    }
 

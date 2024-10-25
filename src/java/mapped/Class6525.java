@@ -36,7 +36,7 @@ public class Class6525 extends Class6522 {
       this.field28620 = Class2288.field15218;
    }
 
-   public void method19782(Class9189 var1) throws Class2460 {
+   public void method19782(Class9189 var1) throws AACException {
       this.method19774(var1);
       this.field28619 = Class1955.method8214(var1.method34397(2));
       this.field28620 = Class2288.method9030(var1.method34397(4));
@@ -87,7 +87,7 @@ public class Class6525 extends Class6522 {
       }
    }
 
-   private void method19783(Class9043[] var1, Class9189 var2, int var3) throws Class2460 {
+   private void method19783(Class9043[] var1, Class9189 var2, int var3) throws AACException {
       for (int var6 = 0; var6 < var3; var6++) {
          var1[var6] = new Class9043(var2.method34399(), var2.method34397(4));
       }

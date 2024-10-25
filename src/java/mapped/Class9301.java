@@ -1,5 +1,7 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+
 import java.io.IOException;
 
 public abstract class Class9301 {
@@ -18,5 +20,5 @@ public abstract class Class9301 {
       return var3;
    }
 
-   public abstract void method35101(DataStreamReader var1) throws IOException;
+   public abstract void method35101(MP4InputStream var1) throws IOException;
 }

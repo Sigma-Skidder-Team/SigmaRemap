@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.music;
 
-import mapped.DataStreamReader;
+import net.sourceforge.jaad.mp4.MP4InputStream;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public abstract class AudioByteManager {
    public long descriptorOffset;
    private final List<AudioByteManager> childDescriptors = new ArrayList<>();
 
-   public static AudioByteManager readDescriptor(DataStreamReader reader) throws IOException {
+   public static AudioByteManager readDescriptor(MP4InputStream reader) throws IOException {
       int type = reader.readInt();
       long descriptorLength = 1;
       int size = 0;
@@ -31,13 +31,13 @@ public abstract class AudioByteManager {
       AudioByteManager descriptor = createDescriptor(type);
       descriptor.descriptorType = type;
       descriptor.descriptorSize = size;
-      descriptor.descriptorOffset = reader.getPosition();
+      descriptor.descriptorOffset = reader.getOffset();
       descriptor.readData(reader);
 
-      long remainingBytes = (long) size - (reader.getPosition() - descriptor.descriptorOffset);
+      long remainingBytes = (long) size - (reader.getOffset() - descriptor.descriptorOffset);
 
       if (remainingBytes > 0L) {
-         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{remainingBytes, reader.getPosition()});
+         Logger.getLogger("MP4 Boxes").log(Level.INFO, "Descriptor: bytes left: {0}, offset: {1}", new Object[]{remainingBytes, reader.getOffset()});
          reader.skipBytes(remainingBytes);  // Skip the remaining bytes in the stream
       }
 
@@ -72,10 +72,10 @@ public abstract class AudioByteManager {
       return descriptor;
    }
 
-   public abstract void readData(DataStreamReader reader) throws IOException;
+   public abstract void readData(MP4InputStream reader) throws IOException;
 
-   public void readChildDescriptors(DataStreamReader reader) throws IOException {
-      while ((long)this.descriptorSize - (reader.getPosition() - this.descriptorOffset) > 0L) {
+   public void readChildDescriptors(MP4InputStream reader) throws IOException {
+      while ((long)this.descriptorSize - (reader.getOffset() - this.descriptorOffset) > 0L) {
          AudioByteManager childDescriptor = readDescriptor(reader);
          this.childDescriptors.add(childDescriptor);
       }
@@ -95,7 +95,7 @@ public abstract class AudioByteManager {
       private String additionalData;
 
       @Override
-      public void readData(DataStreamReader reader) throws IOException {
+      public void readData(MP4InputStream reader) throws IOException {
          int header = (int) reader.readBits(2);
          this.audioFormat = header >> 6 & 1023;
          this.hasAdditionalData = (header >> 5 & 1) == 1;
@@ -119,7 +119,7 @@ public abstract class AudioByteManager {
       private int codec;
 
       @Override
-      public void readData(DataStreamReader reader) throws IOException {
+      public void readData(MP4InputStream reader) throws IOException {
          int header = (int) reader.readBits(2);
          this.videoFormat = header >> 6 & 1023;
          this.isProtected = (header >> 5 & 1) == 1;
@@ -144,7 +144,7 @@ public abstract class AudioByteManager {
       private String subtitleText;
 
       @Override
-      public void readData(DataStreamReader reader) throws IOException {
+      public void readData(MP4InputStream reader) throws IOException {
          this.languageCode = (int) reader.readBits(2);
          int header = reader.readInt();
          this.isDefault = (header >> 7 & 1) == 1;
@@ -165,7 +165,7 @@ public abstract class AudioByteManager {
       private long initializationVector;
 
       @Override
-      public void readData(DataStreamReader reader) throws IOException {
+      public void readData(MP4InputStream reader) throws IOException {
          this.metadataType = reader.readInt();
          int header = reader.readInt();
          this.metadataLength = header >> 2 & 63;
@@ -181,7 +181,7 @@ public abstract class AudioByteManager {
       private byte[] binaryData;
 
       @Override
-      public void readData(DataStreamReader reader) throws IOException {
+      public void readData(MP4InputStream reader) throws IOException {
          this.binaryData = new byte[this.descriptorSize];
          reader.readBytes(this.binaryData);
       }
@@ -194,7 +194,7 @@ public abstract class AudioByteManager {
    public static class UnknownDescriptor extends AudioByteManager {
 
       @Override
-      public void readData(DataStreamReader reader) {
+      public void readData(MP4InputStream reader) {
       }
    }
 }

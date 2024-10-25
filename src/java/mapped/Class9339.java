@@ -11,7 +11,7 @@ public class Class9339 implements Class9338 {
    private float[] field43361;
    private float[] field43362;
 
-   public Class9339(int var1) throws Class2460 {
+   public Class9339(int var1) throws AACException {
       this.field43354 = var1;
       switch (var1) {
          case 60:
@@ -27,7 +27,7 @@ public class Class9339 implements Class9338 {
             this.field43355 = field43350;
             break;
          default:
-            throw new Class2460("unexpected FFT length: " + var1);
+            throw new AACException("unexpected FFT length: " + var1);
       }
 
       this.field43356 = new float[var1][2];

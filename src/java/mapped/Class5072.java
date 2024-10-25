@@ -1,5 +1,7 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+
 import java.io.IOException;
 
 public abstract class Class5072 extends Class5041 {
@@ -8,5 +10,5 @@ public abstract class Class5072 extends Class5041 {
    }
 
    @Override
-   public abstract void method15262(DataStreamReader var1) throws IOException;
+   public abstract void method15262(MP4InputStream var1) throws IOException;
 }

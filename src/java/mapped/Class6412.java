@@ -1,5 +1,8 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+import net.sourceforge.jaad.mp4.boxes.Box;
+
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
@@ -15,8 +18,8 @@ public class Class6412 implements Class6413 {
    private static final Map<Long, Class<? extends Class5041>[]> field28041;
    private static final Map<Long, String[]> field28042;
 
-   public static Class5066 method19535(Class5066 var0, DataStreamReader var1) throws IOException {
-      long var4 = var1.getPosition();
+   public static Box method19535(Box var0, MP4InputStream var1) throws IOException {
+      long var4 = var1.getOffset();
       long var6 = var1.readBits(4);
       long var8 = var1.readBits(4);
       if (var6 == 1L) {
@@ -35,7 +38,7 @@ public class Class6412 implements Class6413 {
       }
 
       Logger.getLogger("MP4 Boxes").finest(method19538(var8));
-      Class5041 var10 = method19537(var8, var1.getPosition());
+      Class5041 var10 = method19537(var8, var1.getOffset());
       var10.method15429(var0, var6, var8, var4);
       var10.method15262(var1);
       Class var11 = var10.getClass();
@@ -43,11 +46,11 @@ public class Class6412 implements Class6413 {
          var10.method15441(var1);
       }
 
-      long var14 = var10.method15433() + var10.method15432() - var1.getPosition();
+      long var14 = var10.method15433() + var10.method15432() - var1.getOffset();
       if (var14 > 0L && !(var10 instanceof Class5068) && !(var10 instanceof Class5045) && !(var10 instanceof Class5069)) {
-         field28039.log(Level.INFO, "bytes left after reading box {0}: left: {1}, offset: {2}", new Object[]{method19538(var8), var14, var1.getPosition()});
+         field28039.log(Level.INFO, "bytes left after reading box {0}: left: {1}, offset: {2}", new Object[]{method19538(var8), var14, var1.getOffset()});
       } else if (var14 < 0L) {
-         field28039.log(Level.SEVERE, "box {0} overread: {1} bytes, offset: {2}", new Object[]{method19538(var8), -var14, var1.getPosition()});
+         field28039.log(Level.SEVERE, "box {0} overread: {1} bytes, offset: {2}", new Object[]{method19538(var8), -var14, var1.getOffset()});
       }
 
       if (var10.method15431() != 1835295092L || var1.method31874()) {
@@ -57,8 +60,8 @@ public class Class6412 implements Class6413 {
       return var10;
    }
 
-   public static Class5066 method19536(DataStreamReader var0, Class<? extends Class5041> var1) throws IOException {
-      long var4 = var0.getPosition();
+   public static Box method19536(MP4InputStream var0, Class<? extends Class5041> var1) throws IOException {
+      long var4 = var0.getOffset();
       long var6 = var0.readBits(4);
       long var8 = var0.readBits(4);
       if (var6 == 1L) {
@@ -80,7 +83,7 @@ public class Class6412 implements Class6413 {
       if (var10 != null) {
          var10.method15429(null, var6, var8, var4);
          var10.method15262(var0);
-         long var12 = var10.method15433() + var10.method15432() - var0.getPosition();
+         long var12 = var10.method15433() + var10.method15432() - var0.getOffset();
          var0.skipBytes(var12);
       }
 
@@ -183,7 +186,7 @@ public class Class6412 implements Class6413 {
       field28040.put(1835427940L, Class5000.class);
       field28040.put(1835430497L, Class5041.class);
       field28040.put(1835430511L, Class5021.class);
-      field28040.put(1836476516L, Class5078.class);
+      field28040.put(1836476516L, MovieHeaderBox.class);
       field28040.put(1952540531L, Class5044.class);
       field28040.put(1852663908L, Class4975.class);
       field28040.put(1718775137L, Class5067.class);
@@ -194,7 +197,7 @@ public class Class6412 implements Class6413 {
       field28040.put(1885628782L, Class5006.class);
       field28040.put(1936289382L, Class5041.class);
       field28040.put(1935963248L, Class4985.class);
-      field28040.put(1937011556L, Class5001.class);
+      field28040.put(1937011556L, SampleDescriptionBox.class);
       field28040.put(1936158820L, Class5015.class);
       field28040.put(1937011564L, Class5076.class);
       field28040.put(1937011578L, Class4996.class);
@@ -205,7 +208,7 @@ public class Class6412 implements Class6413 {
       field28040.put(1935894633L, Class5041.class);
       field28040.put(1937011560L, Class5080.class);
       field28040.put(1936419184L, Class5069.class);
-      field28040.put(1936549988L, Class5040.class);
+      field28040.put(1936549988L, SoundMediaHeaderBox.class);
       field28040.put(1937072755L, Class5034.class);
       field28040.put(1937011571L, Class4980.class);
       field28040.put(1953653099L, Class5041.class);
@@ -294,16 +297,16 @@ public class Class6412 implements Class6413 {
       field28040.put(1932670515L, Class5053.class);
       field28040.put(1701733238L, Class5053.class);
       field28040.put(1635148593L, Class5053.class);
-      field28040.put(1836069985L, Class5047.class);
-      field28040.put(1633889587L, Class5047.class);
-      field28040.put(1700998451L, Class5047.class);
-      field28040.put(1685220723L, Class5047.class);
-      field28040.put(1935764850L, Class5047.class);
-      field28040.put(1935767394L, Class5047.class);
-      field28040.put(1936029283L, Class5047.class);
-      field28040.put(1936810864L, Class5047.class);
-      field28040.put(1936944502L, Class5047.class);
-      field28040.put(1701733217L, Class5047.class);
+      field28040.put(1836069985L, AudioSampleEntry.class);
+      field28040.put(1633889587L, AudioSampleEntry.class);
+      field28040.put(1700998451L, AudioSampleEntry.class);
+      field28040.put(1685220723L, AudioSampleEntry.class);
+      field28040.put(1935764850L, AudioSampleEntry.class);
+      field28040.put(1935767394L, AudioSampleEntry.class);
+      field28040.put(1936029283L, AudioSampleEntry.class);
+      field28040.put(1936810864L, AudioSampleEntry.class);
+      field28040.put(1936944502L, AudioSampleEntry.class);
+      field28040.put(1701733217L, AudioSampleEntry.class);
       field28040.put(1836070003L, Class5048.class);
       field28040.put(1835365492L, Class5052.class);
       field28040.put(1835365496L, Class5051.class);

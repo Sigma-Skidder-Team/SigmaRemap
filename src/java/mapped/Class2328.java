@@ -8,7 +8,7 @@ public enum Class2328 {
 
    private int field15938;
 
-   public static Class2328 method9104(int var0) throws Class2460 {
+   public static Class2328 method9104(int var0) throws AACException {
       Class2328 var3;
       switch (var0) {
          case 0:
@@ -24,7 +24,7 @@ public enum Class2328 {
             var3 = field15937;
             break;
          default:
-            throw new Class2460("unknown MS mask type");
+            throw new AACException("unknown MS mask type");
       }
 
       return var3;

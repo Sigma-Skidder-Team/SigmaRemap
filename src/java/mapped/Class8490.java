@@ -1,5 +1,9 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+import net.sourceforge.jaad.mp4.api.Movie;
+import net.sourceforge.jaad.mp4.boxes.Box;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
@@ -12,30 +16,30 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Class8490 {
-   private final DataStreamReader field37152;
-   private final List<Class5066> field37153;
+   private final MP4InputStream field37152;
+   private final List<Box> field37153;
    private Class2036 field37154;
    private Class2036 field37155;
    private Class2036[] field37156;
    private Class5070 field37157;
    private Class5006 field37158;
-   private Class5066 field37159;
-   private Class8583 field37160;
+   private Box field37159;
+   private Movie field37160;
 
    public Class8490(InputStream var1) throws IOException {
-      this.field37152 = new DataStreamReader(var1);
-      this.field37153 = new ArrayList<Class5066>();
+      this.field37152 = new MP4InputStream(var1);
+      this.field37153 = new ArrayList<Box>();
       this.method30069();
    }
 
    public Class8490(RandomAccessFile var1) throws IOException {
-      this.field37152 = new DataStreamReader(var1);
-      this.field37153 = new ArrayList<Class5066>();
+      this.field37152 = new MP4InputStream(var1);
+      this.field37153 = new ArrayList<Box>();
       this.method30069();
    }
 
    private void method30069() throws IOException {
-      Class5066 var3 = null;
+      Box var3 = null;
       boolean var4 = false;
 
       while (this.field37152.method31875()) {
@@ -103,10 +107,10 @@ public class Class8490 {
       return this.field37156;
    }
 
-   public Class8583 method30073() {
+   public Movie method30073() {
       if (this.field37159 != null) {
          if (this.field37160 == null) {
-            this.field37160 = new Class8583(this.field37159, this.field37152);
+            this.field37160 = new Movie(this.field37159, this.field37152);
          }
 
          return this.field37160;
@@ -115,8 +119,8 @@ public class Class8490 {
       }
    }
 
-   public List<Class5066> method30074() {
-      return Collections.<Class5066>unmodifiableList(this.field37153);
+   public List<Box> method30074() {
+      return Collections.<Box>unmodifiableList(this.field37153);
    }
 
    static {

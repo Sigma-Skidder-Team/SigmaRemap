@@ -1,5 +1,7 @@
 package mapped;
 
+import net.sourceforge.jaad.mp4.MP4InputStream;
+
 import java.io.IOException;
 
 public class Class5081 extends Class4975 {
@@ -16,7 +18,7 @@ public class Class5081 extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       if (this.field22850 == 0 || this.field22850 == 1) {
          this.field23133 = (int)var1.readBits(2);

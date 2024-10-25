@@ -1,14 +1,14 @@
 package mapped;
 
-public class Class7898 implements Class7897 {
+public class JavaFFT implements Transform {
    private static final int field33849 = 16;
    private static final int[][] field33850 = new int[16][];
    private final int field33851;
    private final int[] field33852;
    private float[] field33853;
 
-   public Class7898(int var1) {
-      if (!method26469(var1)) {
+   public JavaFFT(int var1) {
+      if (!isPowerOfTwo(var1)) {
          throw new IllegalArgumentException("N is not a power of 2");
       } else if (var1 <= 0) {
          throw new IllegalArgumentException("N must be greater than 0");
@@ -35,16 +35,16 @@ public class Class7898 implements Class7897 {
    }
 
    @Override
-   public float[][] method26464(float[] var1, float[] var2) throws UnsupportedOperationException {
+   public float[][] getFactors(float[] var1, float[] var2) throws UnsupportedOperationException {
       float[][] var5 = new float[2][var1.length];
-      this.method26465(true, var1, var2, var5[0], var5[1]);
+      this.transform(true, var1, var2, var5[0], var5[1]);
       return var5;
    }
 
    @Override
    public float[][] method26462(float[] var1) throws UnsupportedOperationException {
       float[][] var4 = new float[3][var1.length];
-      this.method26465(false, var1, null, var4[0], var4[1]);
+      this.transform(false, var1, null, var4[0], var4[1]);
       var4[2] = this.field33853.clone();
       return var4;
    }
@@ -52,12 +52,12 @@ public class Class7898 implements Class7897 {
    @Override
    public float[][] method26463(float[] var1, float[] var2) throws UnsupportedOperationException {
       float[][] var5 = new float[3][var1.length];
-      this.method26465(false, var1, var2, var5[0], var5[1]);
+      this.transform(false, var1, var2, var5[0], var5[1]);
       var5[2] = (float[])this.field33853.clone();
       return var5;
    }
 
-   public void method26465(boolean var1, float[] var2, float[] var3, float[] var4, float[] var5) {
+   public void transform(boolean var1, float[] var2, float[] var3, float[] var4, float[] var5) {
       if (var2.length != this.field33851) {
          throw new IllegalArgumentException("Number of samples must be " + this.field33851 + " for this instance of JavaFFT");
       } else {
@@ -153,7 +153,7 @@ public class Class7898 implements Class7897 {
       return var1 > 16 ? method26467(var0, var1) : field33850[var1 - 1][var0];
    }
 
-   private static boolean method26469(int var0) {
+   private static boolean isPowerOfTwo(int var0) {
       return (var0 & var0 - 1) == 0;
    }
 
@@ -161,7 +161,7 @@ public class Class7898 implements Class7897 {
    public boolean equals(Object var1) {
       if (this != var1) {
          if (var1 != null && this.getClass() == var1.getClass()) {
-            Class7898 var4 = (Class7898)var1;
+            JavaFFT var4 = (JavaFFT)var1;
             return this.field33851 == var4.field33851;
          } else {
             return false;
@@ -182,7 +182,7 @@ public class Class7898 implements Class7897 {
    }
 
    // $VF: synthetic method
-   public static int method26470(Class7898 var0) {
+   public static int method26470(JavaFFT var0) {
       return var0.field33851;
    }
 

@@ -1,15 +1,17 @@
-package mapped;
+package net.sourceforge.jaad.spi.javasound;
 
-public class Class6889 {
+import mapped.Trigger;
+
+public class CircularBuffer {
    private static String[] field29854;
    private static final int field29855 = 327670;
    private final byte[] field29856;
-   private final Class1776 field29857;
+   private final Trigger field29857;
    private long field29858;
    private long field29859;
    private boolean field29860;
 
-   public Class6889(Class1776 var1) {
+   public CircularBuffer(Trigger var1) {
       this.field29857 = var1;
       this.field29856 = new byte[327670];
       this.field29858 = 0L;
@@ -56,7 +58,7 @@ public class Class6889 {
 
       synchronized (this) {
          if (this.field29857 != null && this.method21041() < var3) {
-            this.field29857.method7753();
+            this.field29857.execute();
          }
 
          var3 = Math.min(this.method21041(), var3);
