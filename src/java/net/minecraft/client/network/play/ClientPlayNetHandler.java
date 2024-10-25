@@ -41,6 +41,7 @@ import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.multiplayer.ClientChunkProvider;
+import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.util.ClientRecipeBook;
@@ -143,7 +144,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleJoinGame(SJoinGamePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      this.mc.playerController = new Class7314(this.mc, this);
+      this.mc.playerController = new PlayerController(this.mc, this);
       if (!this.field23269.isLocalChannel()) {
          Class8384.method29379();
       }

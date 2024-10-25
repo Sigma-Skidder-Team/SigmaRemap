@@ -205,11 +205,11 @@ public abstract class Track {
       Frame var3 = null;
       if (this.hasMoreFrames()) {
          var3 = this.field31477.get(this.field31479);
-         if (var3.method8278() < this.field31473.getOffset()) {
+         if (var3.getOffset() < this.field31473.getOffset()) {
             this.field31473.method31877();
          }
 
-         long var4 = var3.method8278() - this.field31473.getOffset();
+         long var4 = var3.getOffset() - this.field31473.getOffset();
          if (var4 > 0L) {
             this.field31473.skipBytes(var4);
          } else if (var4 < 0L) {
@@ -218,21 +218,21 @@ public abstract class Track {
                   .log(
                      Level.WARNING,
                      "readNextFrame failed: frame {0} already skipped, offset:{1}, stream:{2}",
-                     new Object[]{this.field31479, var3.method8278(), this.field31473.getOffset()}
+                     new Object[]{this.field31479, var3.getOffset(), this.field31473.getOffset()}
                   );
                throw new IOException("frame already skipped and no random access");
             }
 
-            this.field31473.method31873(var3.method8278());
+            this.field31473.method31873(var3.getOffset());
          }
 
-         byte[] var6 = new byte[(int)var3.method8279()];
+         byte[] var6 = new byte[(int)var3.getSize()];
 
          try {
             this.field31473.readBytes(var6);
          } catch (EOFException var8) {
             Logger.getLogger("MP4 API")
-               .log(Level.WARNING, "readNextFrame failed: tried to read {0} bytes at {1}", new Long[]{var3.method8279(), this.field31473.getOffset()});
+               .log(Level.WARNING, "readNextFrame failed: tried to read {0} bytes at {1}", new Long[]{var3.getSize(), this.field31473.getOffset()});
             throw var8;
          }
 
@@ -251,13 +251,13 @@ public abstract class Track {
 
          for (int var6 = 0; var6 < this.field31477.size(); var6++) {
             var5 = this.field31477.get(var6++);
-            if (var5.method8280() > var1) {
+            if (var5.getTime() > var1) {
                this.field31479 = var6;
                break;
             }
          }
 
-         return var5 != null ? var5.method8280() : -1.0;
+         return var5 != null ? var5.getTime() : -1.0;
       }
    }
 
@@ -269,8 +269,8 @@ public abstract class Track {
          var5 = this.field31477.get(var6++);
 
          try {
-            if (((Frame)var5).method8278() <= this.field31473.getOffset() + this.field31473.method31872()) {
-               var3 = Math.max(((Frame)var5).method8280(), var3);
+            if (((Frame)var5).getOffset() <= this.field31473.getOffset() + this.field31473.method31872()) {
+               var3 = Math.max(((Frame)var5).getTime(), var3);
             }
          } catch (IOException var8) {
             var8.printStackTrace();
@@ -281,6 +281,6 @@ public abstract class Track {
    }
 
    public double method23327() {
-      return this.field31477.get(Math.min(this.field31479, this.field31477.size() - 1)).method8280();
+      return this.field31477.get(Math.min(this.field31479, this.field31477.size() - 1)).getTime();
    }
 }

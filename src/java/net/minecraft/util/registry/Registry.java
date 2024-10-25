@@ -3,6 +3,7 @@ package net.minecraft.util.registry;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.*;
+import com.mojang.serialization.Codec;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
