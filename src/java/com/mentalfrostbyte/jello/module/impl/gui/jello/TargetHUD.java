@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
@@ -74,9 +74,9 @@ public class TargetHUD extends Module {
     @EventTarget
     @HigestPriority
     private void method16473(Render2DEvent var1) {
-        if (KillAura.target != null && !this.entity.equals(KillAura.target)) {
-            MultiUtilities.addChatMessage("Set target as " + KillAura.target.getName().getUnformattedComponentText());
-            this.entity = KillAura.target;
+        if (lastReportedPitch.target != null && !this.entity.equals(lastReportedPitch.target)) {
+            MultiUtilities.addChatMessage("Set target as " + lastReportedPitch.target.getName().getUnformattedComponentText());
+            this.entity = lastReportedPitch.target;
         }
         if (this.entity != null) {
             this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)

@@ -92,7 +92,7 @@ public class GameSettings {
    public double field44607 = 1.0;
    public boolean rawMouseInput = true;
    public int glDebugVerbosity = 1;
-   public boolean field44610 = true;
+   public boolean autoJump = true;
    public boolean field44611 = true;
    public boolean field44612 = true;
    public boolean field44613 = true;

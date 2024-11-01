@@ -49,7 +49,7 @@ public class InteractAutoBlock {
 
    public void block(Entity var1, float var2, float var3) {
       if (this.parent.getBooleanValueFromSettingName("Interact autoblock")) {
-         EntityRayTraceResult var6 = MultiUtilities.method17714(
+         EntityRayTraceResult var6 = MultiUtilities.raytrace(
             !this.parent.getBooleanValueFromSettingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {

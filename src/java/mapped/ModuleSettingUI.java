@@ -50,14 +50,6 @@ public class ModuleSettingUI extends Class4247 {
       super.method13028(var1, var2);
    }
 
-   private boolean method13084(String var1, String var2) {
-      return var1 != null && var1 != "" && var2 != null ? var2.toLowerCase().contains(var1.toLowerCase()) : true;
-   }
-
-   private boolean method13085(String var1, String var2) {
-      return var1 != null && var1 != "" && var2 != null ? var2.toLowerCase().startsWith(var1.toLowerCase()) : true;
-   }
-
    @Override
    public void draw(float var1) {
       var1 = this.animation1.calcPercent();

@@ -311,7 +311,7 @@ public class KeyboardListener {
                return;
             }
          } else if (action == 0) {
-            ModuleKeyPress.method29127(key);
+            ModuleKeyPress.listen(key);
          }
 
          if (this.field43918 <= 0L) {

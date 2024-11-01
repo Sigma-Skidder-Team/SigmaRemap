@@ -44,7 +44,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
-public class KillAura extends Module {
+public class lastReportedPitch extends Module {
     public static boolean field23937 = false;
     public static Entity target;
     public static TimedEntity timedEntityIdk;
@@ -70,7 +70,7 @@ public class KillAura extends Module {
     private boolean field23959;
     private double[] field23960;
 
-    public KillAura() {
+    public lastReportedPitch() {
         super(ModuleCategory.COMBAT, "KillAura", "Automatically attacks entities");
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
         this.registerSetting(new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
@@ -103,19 +103,19 @@ public class KillAura extends Module {
         this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
-    public static Rotations getRotations2(KillAura killaura) {
+    public static Rotations getRotations2(lastReportedPitch killaura) {
         return killaura.rotations2;
     }
 
-    public static Rotations getRotations(KillAura killaura) {
+    public static Rotations getRotations(lastReportedPitch killaura) {
         return killaura.rotations;
     }
 
-    public static int method16846(KillAura killaura) {
+    public static int method16846(lastReportedPitch killaura) {
         return killaura.field23942;
     }
 
-    public static int method16847(KillAura killaura, int var1) {
+    public static int method16847(lastReportedPitch killaura, int var1) {
         return killaura.field23942 = var1;
     }
 
@@ -135,7 +135,7 @@ public class KillAura extends Module {
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        this.rotations2 = new Rotations(mc.player.rotYaw, mc.player.rotPitch);
+        this.rotations2 = new Rotations(mc.player.lastReportedYaw, mc.player.lastReportedPitch);
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
@@ -744,7 +744,7 @@ public class KillAura extends Module {
             case "LockView":
                 this.rotations2.yaw = this.rotations.yaw;
                 this.rotations2.pitch = this.rotations.pitch;
-                EntityRayTraceResult ray = MultiUtilities.method17714(
+                EntityRayTraceResult ray = MultiUtilities.raytrace(
                         targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (ray == null || ray.getEntity() != targ) {
@@ -752,7 +752,7 @@ public class KillAura extends Module {
                 }
                 break;
             case "Test2":
-                EntityRayTraceResult var24 = MultiUtilities.method17714(
+                EntityRayTraceResult var24 = MultiUtilities.raytrace(
                         targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (var24 != null && var24.getEntity() == targ) {

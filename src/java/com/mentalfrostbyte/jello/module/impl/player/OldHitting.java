@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -47,7 +47,7 @@ public class OldHitting extends Module {
         if (this.isEnabled() || mc.gameSettings.keyBindUseItem.isKeyDown()) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
-                boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled();
+                boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(lastReportedPitch.class).isEnabled();
                 boolean var6 = true;
                 if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
@@ -87,8 +87,8 @@ public class OldHitting extends Module {
                 }
 
                 //MY DUMB "FIX" - MARK
-                boolean isAutoBlockNone = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).getStringSettingValueByName("Autoblock Mode").equals("None");
-                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || (auraEnabled && KillAura.target != null && !isAutoBlockNone);
+                boolean isAutoBlockNone = Client.getInstance().getModuleManager().getModuleByClass(lastReportedPitch.class).getStringSettingValueByName("Autoblock Mode").equals("None");
+                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || (auraEnabled && lastReportedPitch.target != null && !isAutoBlockNone);
                 /*
                 if (!field23408) {
                     if (ViaVersionLoader.entites.contains(mc.player)) {

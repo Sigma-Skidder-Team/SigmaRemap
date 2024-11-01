@@ -312,7 +312,7 @@ public abstract class AbstractOption {
          )
    );
    private static final ITextComponent field25350 = new TranslationTextComponent("options.hideMatchedNames.tooltip");
-   public static final Class5806 field25351 = new Class5806("options.autoJump", var0 -> var0.field44610, (var0, var1) -> var0.field44610 = var1);
+   public static final Class5806 field25351 = new Class5806("options.autoJump", var0 -> var0.autoJump, (var0, var1) -> var0.autoJump = var1);
    public static final Class5806 field25352 = new Class5806("options.autoSuggestCommands", var0 -> var0.field44611, (var0, var1) -> var0.field44611 = var1);
    public static final Class5806 field25353 = new Class5806(
       "options.hideMatchedNames", field25350, var0 -> var0.field44631, (var0, var1) -> var0.field44631 = var1

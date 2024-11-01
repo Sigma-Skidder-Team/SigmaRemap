@@ -35,10 +35,6 @@ public class MacOSTouchBar {
       }
    }
 
-   public Set<Class7957> method13724() {
-      return this.field21387;
-   }
-
    public void method13725(int var1, Module var2) {
       this.method13727(var2);
       Class7957 var5 = new Class7957(var1, var2);
@@ -81,20 +77,6 @@ public class MacOSTouchBar {
       }
 
       return -1;
-   }
-
-   public Class7957 method13730(int var1) {
-      if (var1 == -1) {
-         return null;
-      } else {
-         for (Class7957 var5 : this.field21387) {
-            if (var5.method27053() == var1) {
-               return var5;
-            }
-         }
-
-         return null;
-      }
    }
 
    public JSONObject method13731(JSONObject var1) throws JSONException {

@@ -2,6 +2,8 @@ package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -360,7 +362,7 @@ public class MultiUtilities {
       return false;
    }
 
-   public static EntityRayTraceResult method17714(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
+   public static EntityRayTraceResult raytrace(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
       double var8 = var4 * var4;
       Entity var10 = null;
       Vector3d var11 = null;
@@ -471,13 +473,11 @@ public class MultiUtilities {
          return;
       }
 
-      boolean isOnePointEight = false;
+      boolean isOnePointEight = ViaLoadingBase.getInstance().getTargetVersion().olderThanOrEqualTo(ProtocolVersion.v1_8);
 
       if (isOnePointEight && swing) {
          mc.player.swingArm(Hand.MAIN_HAND);
       }
-
-      mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(var0, mc.player.isSneaking()));
 
       boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
 
@@ -777,7 +777,6 @@ public class MultiUtilities {
       float var4 = var1 - var0;
       return !(var4 > 180.0F) ? (!(var4 < -180.0F) ? var4 : var4 + 360.0F) : var4 - 360.0F;
    }
-
 
    public static Class9629<Direction, Vector3d> method17760(double var0) {
       AxisAlignedBB var4 = mc.player.boundingBox;

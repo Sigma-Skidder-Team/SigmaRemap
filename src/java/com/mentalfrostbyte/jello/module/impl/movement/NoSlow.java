@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.item.SwordItem;
-import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 
 public class NoSlow extends Module {
@@ -30,7 +30,7 @@ public class NoSlow extends Module {
     private void onUpdate(EventUpdate event) {
         if (!this.isEnabled()) return;
 
-        boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).isEnabled2();
+        boolean auraEnabled = Client.getInstance().getModuleManager().getModuleByClass(lastReportedPitch.class).isEnabled2();
         boolean isSwordEquipped = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
 
         if (!event.isPre()) {
