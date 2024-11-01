@@ -85,7 +85,7 @@ public class Image implements Renderable {
          this.field31618 = var1;
          int[] var7 = null;
          if (var4 != null) {
-            var7 = new int[]{(int)(var4.field16455 * 255.0F), (int)(var4.field16456 * 255.0F), (int)(var4.field16457 * 255.0F)};
+            var7 = new int[]{(int)(var4.r * 255.0F), (int)(var4.g * 255.0F), (int)(var4.b * 255.0F)};
          }
 
          this.field31609 = InternalTextureLoader.get().getTexture(var1, var2, this.field31626, var7);
@@ -184,10 +184,10 @@ public class Image implements Renderable {
          };
       }
 
-      this.field31625[var1].field16455 = var2;
-      this.field31625[var1].field16456 = var3;
-      this.field31625[var1].field16457 = var4;
-      this.field31625[var1].field16458 = var5;
+      this.field31625[var1].r = var2;
+      this.field31625[var1].g = var3;
+      this.field31625[var1].b = var4;
+      this.field31625[var1].a = var5;
    }
 
    public void method23517(int var1, float var2, float var3, float var4) {
@@ -200,9 +200,9 @@ public class Image implements Renderable {
          };
       }
 
-      this.field31625[var1].field16455 = var2;
-      this.field31625[var1].field16456 = var3;
-      this.field31625[var1].field16457 = var4;
+      this.field31625[var1].r = var2;
+      this.field31625[var1].g = var3;
+      this.field31625[var1].b = var4;
    }
 
    public void method23518() {
@@ -230,7 +230,7 @@ public class Image implements Renderable {
          this.field31618 = var2;
          int[] var8 = null;
          if (var5 != null) {
-            var8 = new int[]{(int)(var5.field16455 * 255.0F), (int)(var5.field16456 * 255.0F), (int)(var5.field16457 * 255.0F)};
+            var8 = new int[]{(int)(var5.r * 255.0F), (int)(var5.g * 255.0F), (int)(var5.b * 255.0F)};
          }
 
          this.field31609 = InternalTextureLoader.get().method35795(var1, var2, var3, this.field31626, var8);
@@ -362,7 +362,7 @@ public class Image implements Renderable {
          }
 
          var5 = new Color(var5);
-         var5.field16458 = var5.field16458 * this.field31617;
+         var5.a = var5.a * this.field31617;
       }
 
       if (var5 != null) {
@@ -404,7 +404,7 @@ public class Image implements Renderable {
          }
 
          var5 = new Color(var5);
-         var5.field16458 = var5.field16458 * this.field31617;
+         var5.a = var5.a * this.field31617;
       }
 
       if (var5 != null) {
@@ -456,7 +456,7 @@ public class Image implements Renderable {
       this.field31609.bind();
       if (field31605.method18417()) {
          field31605.method18381(33880);
-         field31605.method18418((byte)((int)(var5.field16455 * 255.0F)), (byte)((int)(var5.field16456 * 255.0F)), (byte)((int)(var5.field16457 * 255.0F)));
+         field31605.method18418((byte)((int)(var5.r * 255.0F)), (byte)((int)(var5.g * 255.0F)), (byte)((int)(var5.b * 255.0F)));
       }
 
       field31605.method18399(8960, 8704, 8448);
@@ -544,7 +544,7 @@ public class Image implements Renderable {
          }
 
          var9 = new Color(var9);
-         var9.field16458 = var9.field16458 * this.field31617;
+         var9.a = var9.a * this.field31617;
       }
 
       var9.method10392();

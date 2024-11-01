@@ -28,11 +28,11 @@ public class Class8580 implements Class8579 {
       for (int var9 = 0; var9 < var1.method23559(); var9++) {
          for (int var11 = 0; var11 < var1.method23558(); var11++) {
             Color var13 = var1.method23567(var11, var9);
-            var8.put((byte)((int)(var13.field16455 * 255.0F)));
-            var8.put((byte)((int)(var13.field16456 * 255.0F)));
-            var8.put((byte)((int)(var13.field16457 * 255.0F)));
+            var8.put((byte)((int)(var13.r * 255.0F)));
+            var8.put((byte)((int)(var13.g * 255.0F)));
+            var8.put((byte)((int)(var13.b * 255.0F)));
             if (var4) {
-               var8.put((byte)((int)(var13.field16458 * 255.0F)));
+               var8.put((byte)((int)(var13.a * 255.0F)));
             }
          }
       }

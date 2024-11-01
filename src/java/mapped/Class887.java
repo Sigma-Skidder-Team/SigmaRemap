@@ -172,7 +172,7 @@ public class Class887 extends AbstractArrowEntity {
       super.method3478(var1);
 
       for (EffectInstance var5 : this.field5117.method31816()) {
-         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.method8628() / 8, 1), var5.method8629(), var5.isAmbient(), var5.method8631()));
+         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.method8628() / 8, 1), var5.getAmplifier(), var5.isAmbient(), var5.method8631()));
       }
 
       if (!this.field5118.isEmpty()) {

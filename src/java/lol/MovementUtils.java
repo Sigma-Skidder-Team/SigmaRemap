@@ -26,7 +26,7 @@ public class MovementUtils {
       }
 
       if (mc.player.isPotionActive(Effects.SPEED) && mc.player.isSprinting()) {
-         var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.getActivePotionEffect(Effects.SPEED).method8629() + 1));
+         var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.getActivePotionEffect(Effects.SPEED).getAmplifier() + 1));
       }
 
       if (mc.player.isSneaking()) {
@@ -63,11 +63,11 @@ public class MovementUtils {
    }
 
    public static int method37078() {
-      return ! mc.player.isPotionActive(Effects.SPEED) ? 0 : mc.player.getActivePotionEffect(Effects.SPEED).method8629() + 1;
+      return ! mc.player.isPotionActive(Effects.SPEED) ? 0 : mc.player.getActivePotionEffect(Effects.SPEED).getAmplifier() + 1;
    }
 
    public static int method37079() {
-      return ! mc.player.isPotionActive(Effects.JUMP_BOOST) ? 0 : mc.player.getActivePotionEffect(Effects.JUMP_BOOST).method8629() + 1;
+      return ! mc.player.isPotionActive(Effects.JUMP_BOOST) ? 0 : mc.player.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1;
    }
 
    public static double method37080() {

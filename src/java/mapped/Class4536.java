@@ -166,10 +166,10 @@ public class Class4536 {
 
    public void method14482(float var1, float var2, float var3, float var4) {
       if (this.field21864 != Color.field16442) {
-         this.field21864.field16455 = var1;
-         this.field21864.field16456 = var2;
-         this.field21864.field16457 = var3;
-         this.field21864.field16458 = var4;
+         this.field21864.r = var1;
+         this.field21864.g = var2;
+         this.field21864.b = var3;
+         this.field21864.a = var4;
       } else {
          this.field21864 = new Color(var1, var2, var3, var4);
       }
@@ -207,10 +207,10 @@ public class Class4536 {
          this.field21864 = new Color(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      this.field21864.field16455 += var1;
-      this.field21864.field16456 += var2;
-      this.field21864.field16457 += var3;
-      this.field21864.field16458 += var4;
+      this.field21864.r += var1;
+      this.field21864.g += var2;
+      this.field21864.b += var3;
+      this.field21864.a += var4;
    }
 
    public void method14489(int var1, int var2, int var3, int var4) {
@@ -218,10 +218,10 @@ public class Class4536 {
          this.field21864 = new Color(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      this.field21864.field16455 += (float)var1 / 255.0F;
-      this.field21864.field16456 += (float)var2 / 255.0F;
-      this.field21864.field16457 += (float)var3 / 255.0F;
-      this.field21864.field16458 += (float)var4 / 255.0F;
+      this.field21864.r += (float)var1 / 255.0F;
+      this.field21864.g += (float)var2 / 255.0F;
+      this.field21864.b += (float)var3 / 255.0F;
+      this.field21864.a += (float)var4 / 255.0F;
    }
 
    public void method14490(float var1, float var2) {

@@ -99,7 +99,7 @@ public class PotionUtils {
                   var10 = Class9680.method37891(var9.getPotion(), var10);
                }
 
-               int var11 = var9.method8629() + 1;
+               int var11 = var9.getAmplifier() + 1;
                var4 += (float)(var11 * (var10 >> 16 & 0xFF)) / 255.0F;
                var5 += (float)(var11 * (var10 >> 8 & 0xFF)) / 255.0F;
                var6 += (float)(var11 * (var10 >> 0 & 0xFF)) / 255.0F;
@@ -166,13 +166,13 @@ public class PotionUtils {
             if (!var11.isEmpty()) {
                for (Entry var13 : var11.entrySet()) {
                   AttributeModifier var14 = (AttributeModifier)var13.getValue();
-                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.getAttributeModifierAmount(var8.method8629(), var14), var14.getOperation());
+                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.getAttributeModifierAmount(var8.getAmplifier(), var14), var14.getOperation());
                   var6.add(new Pair(var13.getKey(), var15));
                }
             }
 
-            if (var8.method8629() > 0) {
-               var9 = new TranslationTextComponent("potion.withAmplifier", var9, new TranslationTextComponent("potion.potency." + var8.method8629()));
+            if (var8.getAmplifier() > 0) {
+               var9 = new TranslationTextComponent("potion.withAmplifier", var9, new TranslationTextComponent("potion.potency." + var8.getAmplifier()));
             }
 
             if (var8.method8628() > 20) {

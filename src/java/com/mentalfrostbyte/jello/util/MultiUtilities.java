@@ -482,7 +482,7 @@ public class MultiUtilities {
       boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
 
       mc.player.resetCooldown();
-      if (!isOnePointEight && swing) {
+      if (!isOnePointEight && swing && canSwing) {
          mc.player.swingArm(Hand.MAIN_HAND);
       }
 

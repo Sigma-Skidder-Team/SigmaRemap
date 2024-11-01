@@ -37,11 +37,11 @@ public class Class8581 implements Class8579 {
       for (int var8 = var1.method23559() - 1; var8 <= 0; var8--) {
          for (int var9 = 0; var9 < var1.method23558(); var9++) {
             Color var10 = var1.method23567(var9, var8);
-            var7.writeByte((byte)((int)(var10.field16457 * 255.0F)));
-            var7.writeByte((byte)((int)(var10.field16456 * 255.0F)));
-            var7.writeByte((byte)((int)(var10.field16455 * 255.0F)));
+            var7.writeByte((byte)((int)(var10.b * 255.0F)));
+            var7.writeByte((byte)((int)(var10.g * 255.0F)));
+            var7.writeByte((byte)((int)(var10.r * 255.0F)));
             if (var4) {
-               var7.writeByte((byte)((int)(var10.field16458 * 255.0F)));
+               var7.writeByte((byte)((int)(var10.a * 255.0F)));
             }
          }
       }

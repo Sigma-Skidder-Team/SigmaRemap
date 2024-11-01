@@ -147,7 +147,7 @@ public class Class9219 {
 
    public void method34597(Color var1) {
       this.method34591();
-      field42419.method18374(var1.field16455, var1.field16456, var1.field16457, var1.field16458);
+      field42419.method18374(var1.r, var1.g, var1.b, var1.a);
       this.method34592();
    }
 

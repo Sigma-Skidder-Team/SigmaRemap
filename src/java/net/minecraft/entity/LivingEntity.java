@@ -857,7 +857,7 @@ public abstract class LivingEntity extends Entity {
    public void onNewPotionEffect(EffectInstance var1) {
       this.potionsNeedUpdate = true;
       if (!this.world.isRemote) {
-         var1.getPotion().applyAttributesModifiersToEntity(this, this.getAttributeManager(), var1.method8629());
+         var1.getPotion().applyAttributesModifiersToEntity(this, this.getAttributeManager(), var1.getAmplifier());
       }
    }
 
@@ -865,15 +865,15 @@ public abstract class LivingEntity extends Entity {
       this.potionsNeedUpdate = true;
       if (var2 && !this.world.isRemote) {
          Effect var5 = var1.getPotion();
-         var5.removeAttributesModifiersFromEntity(this, this.getAttributeManager(), var1.method8629());
-         var5.applyAttributesModifiersToEntity(this, this.getAttributeManager(), var1.method8629());
+         var5.removeAttributesModifiersFromEntity(this, this.getAttributeManager(), var1.getAmplifier());
+         var5.applyAttributesModifiersToEntity(this, this.getAttributeManager(), var1.getAmplifier());
       }
    }
 
    public void onFinishedPotionEffect(EffectInstance var1) {
       this.potionsNeedUpdate = true;
       if (!this.world.isRemote) {
-         var1.getPotion().removeAttributesModifiersFromEntity(this, this.getAttributeManager(), var1.method8629());
+         var1.getPotion().removeAttributesModifiersFromEntity(this, this.getAttributeManager(), var1.getAmplifier());
       }
    }
 
@@ -1381,7 +1381,7 @@ public abstract class LivingEntity extends Entity {
 
    public int calculateFallDamage(float var1, float var2) {
       EffectInstance var5 = this.getActivePotionEffect(Effects.JUMP_BOOST);
-      float var6 = var5 != null ? (float)(var5.method8629() + 1) : 0.0F;
+      float var6 = var5 != null ? (float)(var5.getAmplifier() + 1) : 0.0F;
       return MathHelper.ceil((var1 - 3.0F - var6) * var2);
    }
 
@@ -1427,7 +1427,7 @@ public abstract class LivingEntity extends Entity {
    public float applyPotionDamageCalculations(DamageSource var1, float var2) {
       if (!var1.method31136()) {
          if (this.isPotionActive(Effects.RESISTANCE) && var1 != DamageSource.field39004) {
-            int var5 = (this.getActivePotionEffect(Effects.RESISTANCE).method8629() + 1) * 5;
+            int var5 = (this.getActivePotionEffect(Effects.RESISTANCE).getAmplifier() + 1) * 5;
             int var6 = 25 - var5;
             float var7 = var2 * (float)var6;
             float var8 = var2;
@@ -1518,7 +1518,7 @@ public abstract class LivingEntity extends Entity {
 
    private int getArmSwingAnimationEnd() {
       if (!Class7182.method22536(this)) {
-         return !this.isPotionActive(Effects.MINING_FATIGUE) ? 6 : 6 + (1 + this.getActivePotionEffect(Effects.MINING_FATIGUE).method8629()) * 2;
+         return !this.isPotionActive(Effects.MINING_FATIGUE) ? 6 : 6 + (1 + this.getActivePotionEffect(Effects.MINING_FATIGUE).getAmplifier()) * 2;
       } else {
          return 6 - (1 + Class7182.method22537(this));
       }
@@ -1854,7 +1854,7 @@ public abstract class LivingEntity extends Entity {
    public void jump() {
       float var3 = this.getJumpUpwardsMotion();
       if (this.isPotionActive(Effects.JUMP_BOOST)) {
-         var3 += 0.1F * (float)(this.getActivePotionEffect(Effects.JUMP_BOOST).method8629() + 1);
+         var3 += 0.1F * (float)(this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1);
       }
 
       Vector3d var4 = this.getMotion();
@@ -1972,7 +1972,7 @@ public abstract class LivingEntity extends Entity {
                   var29 -= var4;
                }
             } else {
-               var29 += (0.05 * (double)(this.getActivePotionEffect(Effects.LEVITATION).method8629() + 1) - var13.y) * 0.2;
+               var29 += (0.05 * (double)(this.getActivePotionEffect(Effects.LEVITATION).getAmplifier() + 1) - var13.y) * 0.2;
                this.fallDistance = 0.0F;
             }
 

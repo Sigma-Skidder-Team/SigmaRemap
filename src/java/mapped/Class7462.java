@@ -126,10 +126,10 @@ public class Class7462 {
                var1 -= var5.field36147;
                float var8 = var1 / var7;
                Color var9 = new Color(1, 1, 1, 1);
-               var9.field16458 = var5.field36148.field16458 * (1.0F - var8) + var6.field36148.field16458 * var8;
-               var9.field16455 = var5.field36148.field16455 * (1.0F - var8) + var6.field36148.field16455 * var8;
-               var9.field16456 = var5.field36148.field16456 * (1.0F - var8) + var6.field36148.field16456 * var8;
-               var9.field16457 = var5.field36148.field16457 * (1.0F - var8) + var6.field36148.field16457 * var8;
+               var9.a = var5.field36148.a * (1.0F - var8) + var6.field36148.a * var8;
+               var9.r = var5.field36148.r * (1.0F - var8) + var6.field36148.r * var8;
+               var9.g = var5.field36148.g * (1.0F - var8) + var6.field36148.g * var8;
+               var9.b = var5.field36148.b * (1.0F - var8) + var6.field36148.b * var8;
                return var9;
             }
          }

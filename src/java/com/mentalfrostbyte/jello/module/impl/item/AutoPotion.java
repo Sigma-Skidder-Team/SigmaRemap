@@ -132,7 +132,7 @@ public class AutoPotion extends Module {
                     if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSettingName("Custom potion") || var11 == 1)) {
                         for (EffectInstance var13 : var10) {
                             int var14 = Effect.getId(var13.getPotion());
-                            int var15 = var13.method8629();
+                            int var15 = var13.getAmplifier();
                             int var16 = var13.method8628();
                             if (var14 == var1 && InvManagerUtils.method25859(var9)) {
                                 if (var15 <= var4) {
@@ -153,7 +153,7 @@ public class AutoPotion extends Module {
             }
         }
 
-        return mc.player.isPotionActive(Effect.get(var1)) && mc.player.getActivePotionEffect(Effect.get(var1)).method8629() >= var4
+        return mc.player.isPotionActive(Effect.get(var1)) && mc.player.getActivePotionEffect(Effect.get(var1)).getAmplifier() >= var4
                 ? -1
                 : var6;
     }

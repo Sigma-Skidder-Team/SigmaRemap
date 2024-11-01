@@ -681,7 +681,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
       if (this.isPotionActive(Effects.MINING_FATIGUE)) {
          float var7;
-         switch (this.getActivePotionEffect(Effects.MINING_FATIGUE).method8629()) {
+         switch (this.getActivePotionEffect(Effects.MINING_FATIGUE).getAmplifier()) {
             case 0:
                var7 = 0.3F;
                break;

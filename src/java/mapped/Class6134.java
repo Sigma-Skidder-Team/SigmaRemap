@@ -205,7 +205,7 @@ public class Class6134 implements Class6135 {
 
                   Class9745 var17 = (Class9745)this.field27497.get(0);
                   var7.method14482(
-                     var17.field45495.field16455, var17.field45495.field16456, var17.field45495.field16457, this.field27498.method25298(0.0F) / 255.0F
+                     var17.field45495.r, var17.field45495.g, var17.field45495.b, this.field27498.method25298(0.0F) / 255.0F
                   );
                   var7.method14475(this.field27505);
                   var7.method14493(this.field27506);
@@ -249,9 +249,9 @@ public class Class6134 implements Class6135 {
       }
 
       if (var9 != null) {
-         float var17 = var9.field16455 * var7 + var10.field16455 * var8;
-         float var19 = var9.field16456 * var7 + var10.field16456 * var8;
-         float var20 = var9.field16457 * var7 + var10.field16457 * var8;
+         float var17 = var9.r * var7 + var10.r * var8;
+         float var19 = var9.g * var7 + var10.g * var8;
+         float var20 = var9.b * var7 + var10.b * var8;
          float var21;
          if (!this.field27500.method25299()) {
             var21 = this.field27498.method25298(0.0F) / 255.0F * var5 + this.field27499.method25298(0.0F) / 255.0F * var6;

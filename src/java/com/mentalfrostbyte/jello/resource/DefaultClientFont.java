@@ -56,7 +56,7 @@ public class DefaultClientFont extends ClientResource {
             var3,
             var1,
             var2,
-            new java.awt.Color(var4.field16455, var4.field16456, var4.field16457, var4.field16458).getRGB(),
+            new java.awt.Color(var4.r, var4.g, var4.b, var4.a).getRGB(),
             new MatrixStack().getLast().getMatrix(),
             false,
             false

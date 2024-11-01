@@ -128,10 +128,10 @@ public class Class896 extends Class890 implements Class889 {
                      if (!var15.isInstant()) {
                         int var16 = (int)(var11 * (double)var14.method8628() + 0.5);
                         if (var16 > 20) {
-                           var8.addPotionEffect(new EffectInstance(var15, var16, var14.method8629(), var14.isAmbient(), var14.method8631()));
+                           var8.addPotionEffect(new EffectInstance(var15, var16, var14.getAmplifier(), var14.isAmbient(), var14.method8631()));
                         }
                      } else {
-                        var15.affectEntity(this, this.method3460(), var8, var14.method8629(), var11);
+                        var15.affectEntity(this, this.method3460(), var8, var14.getAmplifier(), var11);
                      }
                   }
                }

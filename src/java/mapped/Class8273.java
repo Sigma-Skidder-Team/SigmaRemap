@@ -311,9 +311,9 @@ public class Class8273 {
          Class9745 var8 = (Class9745)var6.get(var7);
          Element var9 = var0.createElement("step");
          var9.setAttribute("offset", "" + var8.field45494);
-         var9.setAttribute("r", "" + var8.field45495.field16455);
-         var9.setAttribute("g", "" + var8.field45495.field16456);
-         var9.setAttribute("b", "" + var8.field45495.field16457);
+         var9.setAttribute("r", "" + var8.field45495.r);
+         var9.setAttribute("g", "" + var8.field45495.g);
+         var9.setAttribute("b", "" + var8.field45495.b);
          var5.appendChild(var9);
       }
 

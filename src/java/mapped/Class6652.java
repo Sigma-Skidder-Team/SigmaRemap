@@ -67,7 +67,7 @@ public class Class6652 implements Class6650 {
                String var20 = Class8885.method32334(var17.getAttribute("style"), "stop-opacity");
                int var21 = Integer.parseInt(var19.substring(1), 16);
                Color var22 = new Color(var21);
-               var22.field16458 = Float.parseFloat(var20);
+               var22.a = Float.parseFloat(var20);
                var33.method24150(var18, var22);
             }
 
@@ -115,7 +115,7 @@ public class Class6652 implements Class6650 {
                String var42 = Class8885.method32334(var39.getAttribute("style"), "stop-opacity");
                int var43 = Integer.parseInt(var41.substring(1), 16);
                Color var23 = new Color(var43);
-               var23.field16458 = Float.parseFloat(var42);
+               var23.a = Float.parseFloat(var42);
                var35.method24150(var40, var23);
             }
 
