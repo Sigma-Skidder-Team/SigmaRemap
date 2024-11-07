@@ -28,11 +28,11 @@ import java.util.List;
 import java.util.*;
 
 public class ActiveMods extends Module {
-    public int field23613 = 0;
-    public int field23614;
-    public HashMap<Module, Animation> field23615 = new HashMap<Module, Animation>();
-    public ClientResource field23616 = ResourceRegistry.JelloLightFont20;
-    private final List<Module> field23612 = new ArrayList<Module>();
+    public int animationOffset = 0;
+    public int translationOffset;
+    public HashMap<Module, Animation> animations = new HashMap<>();
+    public ClientResource fontResource = ResourceRegistry.JelloLightFont20;
+    private final List<Module> activeModules = new ArrayList<>();
 
     public ActiveMods() {
         super(ModuleCategory.GUI, "ActiveMods", "Renders active mods");
@@ -49,42 +49,43 @@ public class ActiveMods extends Module {
     }
 
     public void setFontSize() {
-        String var3 = this.getStringSettingValueByName("Size");
-        switch (var3) {
+        String sizeSetting = this.getStringSettingValueByName("Size");
+        switch (sizeSetting) {
             case "Normal":
-                this.field23616 = ResourceRegistry.JelloLightFont20;
+                this.fontResource = ResourceRegistry.JelloLightFont20;
                 break;
             case "Small":
-                this.field23616 = ResourceRegistry.JelloLightFont18;
+                this.fontResource = ResourceRegistry.JelloLightFont18;
                 break;
             default:
-                this.field23616 = ResourceRegistry.JelloLightFont14;
+                this.fontResource = ResourceRegistry.JelloLightFont14;
         }
     }
 
     @Override
     public void initialize() {
-        this.field23612.clear();
+        this.activeModules.clear();
 
-        for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-            if (var4.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
-                this.field23612.add(var4);
-                this.field23615.put(var4, new Animation(150, 150, Direction.BACKWARDS));
+        for (Module module : Client.getInstance().getModuleManager().getModuleMap().values()) {
+            if (module.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
+                this.activeModules.add(module);
+                this.animations.put(module, new Animation(150, 150, Direction.BACKWARDS));
                 if (this.getBooleanValueFromSettingName("Animations")) {
-                    this.field23615.get(var4).changeDirection(!var4.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
+                    this.animations.get(module).changeDirection(!module.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
         }
 
-        Collections.sort(this.field23612, new Class3602(this));
+        Collections.sort(this.activeModules, new Class3602(this));
     }
 
     @EventTarget
-    private void method16354(EventRenderGUI var1) {
+    private void renderGUI(EventRenderGUI event) {
         if (this.isEnabled() && mc.player != null) {
-            if (!var1.method13939()) {
-                GlStateManager.translatef(0.0F, (float) (-this.field23614), 0.0F);
+            if (!event.method13939()) {
+                GlStateManager.translatef(0.0F, (float) (-this.translationOffset), 0.0F);
             } else {
+
                 Scoreboard var4 = mc.world.method6805();
                 Class8375 var5 = null;
                 ScorePlayerTeam var6 = var4.getPlayersTeam(mc.player.method2956());
@@ -99,112 +100,109 @@ public class ActiveMods extends Module {
                 Collection var8 = var4.getSortedScores(var14);
                 int var9 = 0;
 
-                for (Module var11 : this.field23612) {
-                    if (var11.isEnabled()) {
-                        var9++;
+                for (Module module : this.activeModules) {
+                    if (module.isEnabled()) {
+                        enabledModulesCount++;
                     }
                 }
 
-                int var15 = 23 + var9 * (this.field23616.method23952() + 1);
-                int var16 = var8.size();
-                int var12 = Minecraft.getInstance().mainWindow.getHeight();
-                int var13 = var12 / 2 - (9 + 5) * (var16 - 3 + 2);
-                if (var15 <= var13) {
-                    this.field23614 = 0;
+                int requiredHeight = 23 + enabledModulesCount * (this.fontResource.method23952() + 1);
+                int screenHeight = Minecraft.getInstance().mainWindow.getHeight();
+                int availableHeight = screenHeight / 2 - (9 + 5) * (players.size() - 3 + 2);
+                if (requiredHeight <= availableHeight) {
+                    this.translationOffset = 0;
                 } else {
-                    this.field23614 = (var15 - var13) / 2;
-                    GlStateManager.translatef(0.0F, (float) this.field23614, 0.0F);
+                    this.translationOffset = (requiredHeight - availableHeight) / 2;
+                    GlStateManager.translatef(0.0F, (float) this.translationOffset, 0.0F);
                 }
             }
         }
     }
 
     @EventTarget
-    private void method16355(EventRender var1) {
+    private void render(EventRender event) {
         if (this.isEnabled() && mc.player != null) {
-            for (Module var5 : this.field23615.keySet()) {
+            for (Module module : this.animations.keySet()) {
                 if (this.getBooleanValueFromSettingName("Animations")) {
-                    this.field23615.get(var5).changeDirection(!var5.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
+                    this.animations.get(module).changeDirection(!module.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
 
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                int var20 = 10;
-                float var21 = 1;
-                int var6 = Minecraft.getInstance().mainWindow.getWidth();
-                ClientResource var8 = this.field23616;
-                int var7 = var20 - 4;
-                if (this.field23616 == ResourceRegistry.JelloLightFont14) {
-                    var20 -= 3;
+                int offset = 10;
+                float scaleFactor = 1;
+                int screenWidth = Minecraft.getInstance().mainWindow.getWidth();
+                ClientResource font = this.fontResource;
+                int baseOffset = offset - 4;
+                if (this.fontResource == ResourceRegistry.JelloLightFont14) {
+                    offset -= 3;
                 }
 
                 if (Minecraft.getInstance().gameSettings.showDebugInfo) {
-                    var7 = (int) ((double) (mc.ingameGUI.field6726.debugInfoRight.size() * 9) * mc.mainWindow.getGuiScaleFactor() + 7.0);
+                    baseOffset = (int) ((double) (mc.ingameGUI.field6726.debugInfoRight.size() * 9) * mc.mainWindow.getGuiScaleFactor() + 7.0);
                 }
 
-                int var10 = 0;
-                int var11 = MultiUtilities.applyAlpha(-1, 0.95F);
+                int colorAlpha = MultiUtilities.applyAlpha(-1, 0.95F);
 
-                for (Module var13 : this.field23612) {
-                    float var14 = 1.0F;
-                    float var15 = 1.0F;
+                for (Module module : this.activeModules) {
+                    float opacity = 1.0F;
+                    float scaledOpacity = 1.0F;
                     if (!this.getBooleanValueFromSettingName("Animations")) {
-                        if (!var13.isEnabled()) {
+                        if (!module.isEnabled()) {
                             continue;
                         }
                     } else {
-                        Animation var16 = this.field23615.get(var13);
-                        if (var16.calcPercent() == 0.0F) {
+                        Animation animation = this.animations.get(module);
+                        if (animation.calcPercent() == 0.0F) {
                             continue;
                         }
 
-                        var15 = var16.calcPercent();
-                        var14 = 0.86F + 0.14F * var15;
+                        scaledOpacity = animation.calcPercent();
+                        opacity = 0.86F + 0.14F * scaledOpacity;
                     }
 
-                    String var22 = var13.getSuffix();
+                    String moduleName = module.getSuffix();
                     GL11.glAlphaFunc(519, 0.0F);
                     GL11.glPushMatrix();
-                    int var17 = var6 - var20 - var8.getStringWidth(var22) / 2;
-                    int var18 = var7 + 12;
-                    GL11.glTranslatef((float) var17, (float) var18, 0.0F);
-                    GL11.glScalef(var14, var14, 1.0F);
-                    GL11.glTranslatef((float) (-var17), (float) (-var18), 0.0F);
-                    float var19 = (float) Math.sqrt(Math.min(1.2F, (float) var8.getStringWidth(var22) / 63.0F));
+                    int xPosition = screenWidth - offset - font.getStringWidth(moduleName) / 2;
+                    int yPosition = baseOffset + 12;
+                    GL11.glTranslatef((float) xPosition, (float) yPosition, 0.0F);
+                    GL11.glScalef(opacity, opacity, 1.0F);
+                    GL11.glTranslatef((float) (-xPosition), (float) (-yPosition), 0.0F);
+                    float imageScale = (float) Math.sqrt(Math.min(1.2F, (float) font.getStringWidth(moduleName) / 63.0F));
                     RenderUtil.drawImage(
-                            (float) var6 - (float) var8.getStringWidth(var22) * 1.5F - (float) var20 - 20.0F,
-                            (float) (var7 - 20),
-                            (float) var8.getStringWidth(var22) * 3.0F,
-                            var8.method23952() + var21 + 40,
+                            (float) screenWidth - (float) font.getStringWidth(moduleName) * 1.5F - (float) offset - 20.0F,
+                            (float) (baseOffset - 20),
+                            (float) font.getStringWidth(moduleName) * 3.0F,
+                            font.method23952() + scaleFactor + 40,
                             ResourceList.shadowPNG,
-                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
+                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * scaledOpacity * imageScale)
                     );
                     RenderUtil.drawString(
-                            var8, (float) (var6 - var20 - var8.getStringWidth(var22)), (float) var7, var22, var15 != 1.0F ? MultiUtilities.applyAlpha(-1, var15 * 0.95F) : var11
+                            font, (float) (screenWidth - offset - font.getStringWidth(moduleName)), (float) baseOffset, moduleName, scaledOpacity != 1.0F ? MultiUtilities.applyAlpha(-1, scaledOpacity * 0.95F) : colorAlpha
                     );
                     GL11.glPopMatrix();
-                    var10 -= 100;
-                    var7 = (int) ((float) var7 + (float) (var8.method23952() + var21) * QuadraticEasing.easeInOutQuad(var15, 0.0F, 1.0F, 1.0F));
+                    baseOffset = (int) ((float) baseOffset + (float) (font.method23952() + scaleFactor) * QuadraticEasing.easeInOutQuad(scaledOpacity, 0.0F, 1.0F, 1.0F));
                 }
 
-                this.field23613 = var7;
+                this.animationOffset = baseOffset;
             }
         }
     }
 
-    public int method16356() {
-        return this.field23613;
+    public int getAnimationOffset() {
+        return this.animationOffset;
     }
 
-    private Color method16357(int var1, int var2, Color var3) {
-        ByteBuffer var6 = ByteBuffer.allocateDirect(3);
+    private Color calculateColor(int x, int y, Color baseColor) {
+        ByteBuffer buffer = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
-        GL11.glReadPixels(var1, Minecraft.getInstance().mainWindow.getHeight() - var2, 1, 1, 6407, 5120, var6);
-        Color var7 = new Color(var6.get(0) * 2, var6.get(1) * 2, var6.get(2) * 2, 1);
-        if (var3 != null) {
-            var7 = MultiUtilities.method17681(var7, var3, 0.08F);
+        GL11.glReadPixels(x, Minecraft.getInstance().mainWindow.getHeight() - y, 1, 1, 6407, 5120, buffer);
+        Color color = new Color(buffer.get(0) * 2, buffer.get(1) * 2, buffer.get(2) * 2, 1);
+        if (baseColor != null) {
+            color = MultiUtilities.method17681(color, baseColor, 0.08F);
         }
 
-        return var7;
+        return color;
     }
 }
