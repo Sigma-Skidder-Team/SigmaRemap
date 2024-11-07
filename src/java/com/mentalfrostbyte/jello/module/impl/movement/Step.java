@@ -81,7 +81,7 @@ public class Step extends ModuleWithModuleSettings {
             if (var15 != null) {
                 if (!mc.player.onGround) {
                     if (var15.getBlock() instanceof SlabBlock) {
-                        VoxelShape var24 = var15.method23412(mc.world, var16);
+                        VoxelShape var24 = var15.getShape(mc.world, var16);
                         if (var24.getBoundingBox().maxY == 1.0) {
                             return Class2131.field13904;
                         }
@@ -100,7 +100,7 @@ public class Step extends ModuleWithModuleSettings {
                             return Class2131.field13905;
                         }
                     } else {
-                        VoxelShape var23 = var15.method23412(mc.world, var16);
+                        VoxelShape var23 = var15.getShape(mc.world, var16);
                         if (var23.getBoundingBox().maxY == 1.0) {
                             return Class2131.field13906;
                         }

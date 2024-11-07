@@ -30,7 +30,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private static final int[] field5244 = new int[]{0};
    private static final int[] field5245 = new int[]{2, 1};
    private static final int[] field5246 = new int[]{1};
-   public NonNullList<ItemStack> field5247 = NonNullList.<ItemStack>method68(3, ItemStack.EMPTY);
+   public NonNullList<ItemStack> field5247 = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
    private int field5248;
    private int field5249;
    private int field5250;
@@ -143,7 +143,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5247 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5247 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
       ItemStackHelper.loadAllItems(var2, this.field5247);
       this.field5248 = var2.getShort("BurnTime");
       this.field5250 = var2.getShort("CookTime");
@@ -364,7 +364,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.world.getTileEntity(this.pos) == this
-         ? var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
+         ? var1.getDistanceSq((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
             <= 64.0
          : false;
    }

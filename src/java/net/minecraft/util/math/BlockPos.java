@@ -97,7 +97,7 @@ public class BlockPos extends Vector3i {
       return var0 & -16L;
    }
 
-   public BlockPos method8335(double var1, double var3, double var5) {
+   public BlockPos method8335(double var1, double var3, double var5) { //add
       return var1 == 0.0 && var3 == 0.0 && var5 == 0.0
          ? this
          : new BlockPos((double)this.getX() + var1, (double)this.getY() + var3, (double)this.getZ() + var5);
@@ -275,7 +275,7 @@ public class BlockPos extends Vector3i {
    }
 
    public static Stream<BlockPos> method8363(int var0, int var1, int var2, int var3, int var4, int var5) {
-      return StreamSupport.<BlockPos>stream(method8364(var0, var1, var2, var3, var4, var5).spliterator(), false);
+      return StreamSupport.stream(method8364(var0, var1, var2, var3, var4, var5).spliterator(), false);
    }
 
    public static Iterable<BlockPos> method8364(int var0, int var1, int var2, int var3, int var4, int var5) {

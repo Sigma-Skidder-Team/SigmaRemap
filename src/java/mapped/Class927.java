@@ -13,14 +13,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Class927 implements IInventory, Class925 {
-   private static String[] field5260;
    private final int field5261;
    private final NonNullList<ItemStack> field5262;
    private List<Class1073> field5263;
 
    public Class927(int var1) {
       this.field5261 = var1;
-      this.field5262 = NonNullList.<ItemStack>method68(var1, ItemStack.EMPTY);
+      this.field5262 = NonNullList.<ItemStack>withSize(var1, ItemStack.EMPTY);
    }
 
    public Class927(ItemStack... var1) {

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
-import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.item.PotionItem;
@@ -49,7 +49,7 @@ public class AutoPotion extends Module {
     @LowestPriority
     private void method16629(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (this.getBooleanValueFromSettingName("In fight") || lastReportedPitch.timedEntityIdk == null && lastReportedPitch.target == null) {
+            if (this.getBooleanValueFromSettingName("In fight") || KillAura.timedEntityIdk == null && KillAura.target == null) {
                 int var4 = this.method16631();
                 this.field23808++;
                 int[] var5 = new int[]{6, -1, -1};
@@ -198,7 +198,7 @@ public class AutoPotion extends Module {
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
                     mc.player.inventory.currentItem = var7;
                     mc.playerController.syncCurrentPlayItem();
-                    lastReportedPitch.field23954 = 1;
+                    KillAura.field23954 = 1;
                 }
 
                 this.field23810 = var7;

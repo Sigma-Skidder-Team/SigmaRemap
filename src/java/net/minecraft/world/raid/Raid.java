@@ -477,7 +477,7 @@ public class Raid {
                if (var16 != null) {
                   this.method25414(var5, var16, var1, false);
                   var16.moveToBlockPosAndAngles(var1, 0.0F, 0.0F);
-                  var16.method3311(var15);
+                  var16.startRiding(var15);
                }
             }
          }

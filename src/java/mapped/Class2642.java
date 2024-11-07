@@ -53,7 +53,7 @@ public abstract class Class2642 extends Class2595 {
                   Class7176 var6 = var4.method28695(var5);
                   this.field16975 = new BlockPos(var6.field30847, var6.field30848 + 1, var6.field30849);
                   if (!(
-                     this.field16974.getDistanceNearest((double)this.field16975.getX(), this.field16974.getPosY(), (double)this.field16975.getZ())
+                     this.field16974.getDistanceSq((double)this.field16975.getX(), this.field16974.getPosY(), (double)this.field16975.getZ())
                         > 2.25
                   )) {
                      this.field16976 = DoorBlock.method12144(this.field16974.world, this.field16975);

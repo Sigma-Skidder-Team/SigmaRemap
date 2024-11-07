@@ -121,7 +121,7 @@ public class Class4852 implements ICraftingRecipe {
    }
 
    private static NonNullList<Class120> method14981(String[] var0, Map<String, Class120> var1, int var2, int var3) {
-      NonNullList var6 = NonNullList.<Class120>method68(var2 * var3, Class120.field427);
+      NonNullList var6 = NonNullList.<Class120>withSize(var2 * var3, Class120.field427);
       HashSet var7 = Sets.newHashSet(var1.keySet());
       var7.remove(" ");
 

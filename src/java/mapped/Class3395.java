@@ -70,7 +70,7 @@ public class Class3395 extends Block {
          var12 = Math.max(var5, var9);
       }
 
-      return Math.max(1, MathHelper.method37774(15.0 * MathHelper.clamp((0.5 - var12) / 0.5, 0.0, 1.0)));
+      return Math.max(1, MathHelper.ceil(15.0 * MathHelper.clamp((0.5 - var12) / 0.5, 0.0, 1.0)));
    }
 
    private static void method12008(IWorld var0, BlockState var1, int var2, BlockPos var3, int var4) {

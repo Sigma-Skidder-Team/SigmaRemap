@@ -71,7 +71,7 @@ public class ModuleManager {
         this.register(new HighJump());
         this.register(new ElytraFly());
         this.register(new Spider());
-        this.register(new lastReportedPitch());
+        this.register(new KillAura());
         this.register(new AntiKnockback());
         this.register(new Criticals());
         this.register(new InvMove());

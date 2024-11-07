@@ -141,7 +141,7 @@ public class CakeEater extends Module {
                     );
                     if (mc.world.getBlockState(var8).getBlock() instanceof Class3394
                             && Math.sqrt(
-                            mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
+                            mc.player.getDistanceSq((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
                     )
                             < (double) var1) {
                         var4.add(var8);

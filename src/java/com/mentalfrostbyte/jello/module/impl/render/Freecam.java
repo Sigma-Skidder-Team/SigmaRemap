@@ -65,15 +65,15 @@ public class Freecam extends Module {
             double var9 = this.field23820 + (this.field23817 - this.field23820) * (double) var1.partialTicks;
             mc.player.positionVec.x = var5;
             mc.player.lastTickPosX = var5;
-            mc.player.field4914 = var5;
+            mc.player.chasingPosX = var5;
             mc.player.prevPosX = var5;
             mc.player.positionVec.y = var7;
             mc.player.lastTickPosY = var7;
-            mc.player.field4915 = var7;
+            mc.player.chasingPosY = var7;
             mc.player.prevPosY = var7;
             mc.player.positionVec.z = var9;
             mc.player.lastTickPosZ = var9;
-            mc.player.field4916 = var9;
+            mc.player.chasingPosZ = var9;
             mc.player.prevPosZ = var9;
             if (MovementUtils.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;

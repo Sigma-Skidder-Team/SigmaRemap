@@ -77,7 +77,7 @@ public class Class8522 {
                      if (this.field38241 > 0.0) {
                         double var5 = !this.field38246 ? 1.0 : var2.getVisibilityMultiplier(var1);
                         double var7 = Math.max(this.field38241 * var5, 2.0);
-                        double var9 = var1.getDistanceNearest(var2.getPosX(), var2.getPosY(), var2.getPosZ());
+                        double var9 = var1.getDistanceSq(var2.getPosX(), var2.getPosY(), var2.getPosZ());
                         if (var9 > var7 * var7) {
                            return false;
                         }

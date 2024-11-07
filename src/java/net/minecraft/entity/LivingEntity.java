@@ -77,8 +77,8 @@ public abstract class LivingEntity extends Entity {
    private final AttributeModifierManager attributes;
    private final CombatTracker combatTracker = new CombatTracker(this);
    private final Map<Effect, EffectInstance> field4944 = Maps.newHashMap();
-   private final NonNullList<ItemStack> handInventory = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
-   private final NonNullList<ItemStack> armorArray = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> handInventory = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> armorArray = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
    public boolean isSwingInProgress;
    public Hand swingingHand;
    public int swingProgressInt;
@@ -2921,7 +2921,7 @@ public abstract class LivingEntity extends Entity {
 
          if (var21) {
             this.setPositionAndUpdate(var1, var16, var5);
-            if (var20.hasNoCollisions(this) && !var20.method7014(this.getBoundingBox())) {
+            if (var20.hasNoCollisions(this) && !var20.containsAnyLiquid(this.getBoundingBox())) {
                var18 = true;
             }
          }

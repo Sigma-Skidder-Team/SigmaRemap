@@ -31,19 +31,19 @@ public class Class8352 {
                if (var2 == 4) {
                   int var10 = var5 - var0.getStringWidth(var1);
                   if (var10 <= 0) {
-                     var0.method23937((float)var3, (float)var4, var1, var6);
+                     var0.drawString((float)var3, (float)var4, var1, var6);
                   }
 
                   return method29271(var0, var1, var3, var4, method29270(var0, var1, var10));
                }
             } else {
-               var0.method23937((float)(var3 + var5 - var0.getStringWidth(var1)), (float)var4, var1, var6);
+               var0.drawString((float)(var3 + var5 - var0.getStringWidth(var1)), (float)var4, var1, var6);
             }
          } else {
-            var0.method23937((float)(var3 + var5 / 2 - var0.getStringWidth(var1) / 2), (float)var4, var1, var6);
+            var0.drawString((float)(var3 + var5 / 2 - var0.getStringWidth(var1) / 2), (float)var4, var1, var6);
          }
       } else {
-         var0.method23937((float)var3, (float)var4, var1, var6);
+         var0.drawString((float)var3, (float)var4, var1, var6);
       }
 
       return var9;

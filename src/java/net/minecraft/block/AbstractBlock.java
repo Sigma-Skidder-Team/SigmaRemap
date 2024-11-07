@@ -201,7 +201,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public VoxelShape method11503(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23412(var2, var3);
+      return var1.getShape(var2, var3);
    }
 
    @Deprecated
@@ -251,7 +251,7 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return !this.canCollide ? VoxelShapes.empty() : var1.method23412(var2, var3);
+      return !this.canCollide ? VoxelShapes.empty() : var1.getShape(var2, var3);
    }
 
    @Deprecated
@@ -778,19 +778,19 @@ public abstract class AbstractBlock {
           return this.field31571;
        }
 
-       public boolean method23411(BlockState var1, Direction var2) {
+       public boolean isSideInvisible(BlockState var1, Direction var2) {
           return this.getBlock().method11634(this.method23457(), var1, var2);
        }
 
-       public VoxelShape method23412(IBlockReader var1, BlockPos var2) {
-          return this.method23413(var1, var2, ISelectionContext.method14947());
+       public VoxelShape getShape(IBlockReader var1, BlockPos var2) {
+          return this.getShape(var1, var2, ISelectionContext.method14947());
        }
 
-       public VoxelShape method23413(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
+       public VoxelShape getShape(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
           return this.getBlock().getShape(this.method23457(), var1, var2, var3);
        }
 
-       public VoxelShape method23414(IBlockReader var1, BlockPos var2) {
+       public VoxelShape method23414(IBlockReader var1, BlockPos var2) { //getCollisionShape
           return this.field31577 == null ? this.getCollisionShape(var1, var2, ISelectionContext.method14947()) : this.field31577.field28442;
        }
 

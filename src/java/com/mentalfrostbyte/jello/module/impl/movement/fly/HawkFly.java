@@ -99,15 +99,15 @@ public class HawkFly extends Module {
             double var8 = this.field23427;
             mc.player.positionVec.y = var4;
             mc.player.lastTickPosY = var4;
-            mc.player.field4915 = var4;
+            mc.player.chasingPosY = var4;
             mc.player.prevPosY = var4;
             mc.player.positionVec.x = var6;
             mc.player.lastTickPosX = var6;
-            mc.player.field4914 = var6;
+            mc.player.chasingPosX = var6;
             mc.player.prevPosX = var6;
             mc.player.positionVec.z = var8;
             mc.player.lastTickPosZ = var8;
-            mc.player.field4916 = var8;
+            mc.player.chasingPosZ = var8;
             mc.player.prevPosZ = var8;
         }
     }

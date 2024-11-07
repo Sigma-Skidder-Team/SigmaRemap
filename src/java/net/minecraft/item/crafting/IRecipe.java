@@ -19,7 +19,7 @@ public interface IRecipe<C extends IInventory> {
    ItemStack getRecipeOutput();
 
    default NonNullList<ItemStack> method14968(C var1) {
-      NonNullList var4 = NonNullList.<ItemStack>method68(var1.getSizeInventory(), ItemStack.EMPTY);
+      NonNullList var4 = NonNullList.<ItemStack>withSize(var1.getSizeInventory(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          Item var6 = var1.getStackInSlot(var5).getItem();

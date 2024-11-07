@@ -48,7 +48,7 @@ public class Class2695 extends Class2595 {
    public void method10805() {
       this.field17143.method4227().method28040(this.field17144, 30.0F, 30.0F);
       double var3 = (double)(this.field17143.getWidth() * 2.0F * this.field17143.getWidth() * 2.0F);
-      double var5 = this.field17143.getDistanceNearest(this.field17144.getPosX(), this.field17144.getPosY(), this.field17144.getPosZ());
+      double var5 = this.field17143.getDistanceSq(this.field17144.getPosX(), this.field17144.getPosY(), this.field17144.getPosZ());
       double var7 = 0.8;
       if (var5 > var3 && var5 < 16.0) {
          var7 = 1.33;

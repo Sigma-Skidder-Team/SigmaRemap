@@ -419,11 +419,11 @@ public class BlockFlyHypixelMode extends Module {
     public void method16115(Render2DEvent var1) {
         if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 >= 0) {
             if (!(mc.player.fallDistance > 1.2F)) {
-                if (!(mc.player.field4915 < this.field23476)) {
+                if (!(mc.player.chasingPosY < this.field23476)) {
                     if (!mc.player.isJumping) {
                         mc.player.positionVec.y = this.field23476;
                         mc.player.lastTickPosY = this.field23476;
-                        mc.player.field4915 = this.field23476;
+                        mc.player.chasingPosY = this.field23476;
                         mc.player.prevPosY = this.field23476;
                         if (MovementUtils.isMoving()) {
                             mc.player.cameraYaw = 0.099999994F;

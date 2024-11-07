@@ -133,8 +133,8 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    public static boolean method28478(WorldBorder var0, AxisAlignedBB var1) {
       double var4 = (double) MathHelper.floor(var0.method24530());
       double var6 = (double) MathHelper.floor(var0.method24531());
-      double var8 = (double) MathHelper.method37774(var0.method24532());
-      double var10 = (double) MathHelper.method37774(var0.method24533());
+      double var8 = (double) MathHelper.ceil(var0.method24532());
+      double var10 = (double) MathHelper.ceil(var0.method24533());
       return var1.minX > var4
          && var1.minX < var8
          && var1.minZ > var6

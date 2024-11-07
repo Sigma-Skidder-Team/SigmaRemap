@@ -41,7 +41,7 @@ public class Class6506 implements Class6504<Class4854> {
    public Class4854  method19699(ResourceLocation var1, PacketBuffer var2) {
       String var5 = var2.readString(32767);
       int var6 = var2.readVarInt();
-      NonNullList var7 = NonNullList.<Class120>method68(var6, Class120.field427);
+      NonNullList var7 = NonNullList.<Class120>withSize(var6, Class120.field427);
 
       for (int var8 = 0; var8 < var7.size(); var8++) {
          var7.set(var8, Class120.method343(var2));

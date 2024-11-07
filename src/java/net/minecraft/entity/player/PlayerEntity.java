@@ -92,11 +92,11 @@ public abstract class PlayerEntity extends LivingEntity {
    public double field4911;
    public double field4912;
    public double field4913;
-   public double field4914;
-   public double field4915;
-   public double field4916;
-   private int field4917;
-   public boolean field4918;
+   public double chasingPosX;
+   public double chasingPosY;
+   public double chasingPosZ;
+   private int sleepTimer;
+   public boolean eyesInWaterPlayer;
    public final PlayerAbilities abilities = new PlayerAbilities();
    public int field4920;
    public int field4921;
@@ -166,16 +166,16 @@ public abstract class PlayerEntity extends LivingEntity {
       }
 
       if (!this.isSleeping()) {
-         if (this.field4917 > 0) {
-            this.field4917++;
-            if (this.field4917 >= 110) {
-               this.field4917 = 0;
+         if (this.sleepTimer > 0) {
+            this.sleepTimer++;
+            if (this.sleepTimer >= 110) {
+               this.sleepTimer = 0;
             }
          }
       } else {
-         this.field4917++;
-         if (this.field4917 > 100) {
-            this.field4917 = 100;
+         this.sleepTimer++;
+         if (this.sleepTimer > 100) {
+            this.sleepTimer = 100;
          }
 
          if (!this.world.isRemote && this.world.method6740()) {
@@ -241,8 +241,8 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2854() {
-      this.field4918 = this.areEyesInFluid(FluidTags.field40469);
-      return this.field4918;
+      this.eyesInWaterPlayer = this.areEyesInFluid(FluidTags.field40469);
+      return this.eyesInWaterPlayer;
    }
 
    private void method2855() {
@@ -257,46 +257,46 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    private void method2856() {
-      this.field4911 = this.field4914;
-      this.field4912 = this.field4915;
-      this.field4913 = this.field4916;
-      double var3 = this.getPosX() - this.field4914;
-      double var5 = this.getPosY() - this.field4915;
-      double var7 = this.getPosZ() - this.field4916;
+      this.field4911 = this.chasingPosX;
+      this.field4912 = this.chasingPosY;
+      this.field4913 = this.chasingPosZ;
+      double var3 = this.getPosX() - this.chasingPosX;
+      double var5 = this.getPosY() - this.chasingPosY;
+      double var7 = this.getPosZ() - this.chasingPosZ;
       double var9 = 10.0;
       if (var3 > 10.0) {
-         this.field4914 = this.getPosX();
-         this.field4911 = this.field4914;
+         this.chasingPosX = this.getPosX();
+         this.field4911 = this.chasingPosX;
       }
 
       if (var7 > 10.0) {
-         this.field4916 = this.getPosZ();
-         this.field4913 = this.field4916;
+         this.chasingPosZ = this.getPosZ();
+         this.field4913 = this.chasingPosZ;
       }
 
       if (var5 > 10.0) {
-         this.field4915 = this.getPosY();
-         this.field4912 = this.field4915;
+         this.chasingPosY = this.getPosY();
+         this.field4912 = this.chasingPosY;
       }
 
       if (var3 < -10.0) {
-         this.field4914 = this.getPosX();
-         this.field4911 = this.field4914;
+         this.chasingPosX = this.getPosX();
+         this.field4911 = this.chasingPosX;
       }
 
       if (var7 < -10.0) {
-         this.field4916 = this.getPosZ();
-         this.field4913 = this.field4916;
+         this.chasingPosZ = this.getPosZ();
+         this.field4913 = this.chasingPosZ;
       }
 
       if (var5 < -10.0) {
-         this.field4915 = this.getPosY();
-         this.field4912 = this.field4915;
+         this.chasingPosY = this.getPosY();
+         this.field4912 = this.chasingPosY;
       }
 
-      this.field4914 += var3 * 0.25;
-      this.field4916 += var7 * 0.25;
-      this.field4915 += var5 * 0.25;
+      this.chasingPosX += var3 * 0.25;
+      this.chasingPosZ += var7 * 0.25;
+      this.chasingPosY += var5 * 0.25;
    }
 
    public void updatePose() {
@@ -721,7 +721,7 @@ public abstract class PlayerEntity extends LivingEntity {
       ListNBT var4 = var1.getList("Inventory", 10);
       this.inventory.method4051(var4);
       this.inventory.currentItem = var1.getInt("SelectedItemSlot");
-      this.field4917 = var1.getShort("SleepTimer");
+      this.sleepTimer = var1.getShort("SleepTimer");
       this.field4922 = var1.getFloat("XpP");
       this.field4920 = var1.getInt("XpLevel");
       this.field4921 = var1.getInt("XpTotal");
@@ -753,7 +753,7 @@ public abstract class PlayerEntity extends LivingEntity {
       var1.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       var1.put("Inventory", this.inventory.method4050(new ListNBT()));
       var1.putInt("SelectedItemSlot", this.inventory.currentItem);
-      var1.putShort("SleepTimer", (short)this.field4917);
+      var1.putShort("SleepTimer", (short)this.sleepTimer);
       var1.putFloat("XpP", this.field4922);
       var1.putInt("XpLevel", this.field4920);
       var1.putInt("XpTotal", this.field4921);
@@ -1301,7 +1301,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public Either<Class2104, Unit> method2752(BlockPos var1) {
       this.startSleeping(var1);
-      this.field4917 = 0;
+      this.sleepTimer = 0;
       return Either.right(Unit.INSTANCE);
    }
 
@@ -1311,7 +1311,7 @@ public abstract class PlayerEntity extends LivingEntity {
          ((ServerWorld)this.world).method6902();
       }
 
-      this.field4917 = !var1 ? 100 : 0;
+      this.sleepTimer = !var1 ? 100 : 0;
    }
 
    @Override
@@ -1343,11 +1343,11 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2909() {
-      return this.isSleeping() && this.field4917 >= 100;
+      return this.isSleeping() && this.sleepTimer >= 100;
    }
 
    public int method2910() {
-      return this.field4917;
+      return this.sleepTimer;
    }
 
    public void sendStatusMessage(ITextComponent var1, boolean var2) {

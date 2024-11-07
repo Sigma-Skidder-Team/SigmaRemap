@@ -70,7 +70,7 @@ public class Nuker extends Module {
     }
 
     private boolean playerTooFar(BlockPos blockPos) {
-        return Math.sqrt(mc.player.getDistanceNearest(blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5)) > 6.0;
+        return Math.sqrt(mc.player.getDistanceSq(blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5)) > 6.0;
     }
 
     private void setRotation(EventUpdate event, BlockPos blockPos) {
@@ -151,7 +151,7 @@ public class Nuker extends Module {
     private boolean isValidBlock(BlockPos blockPos, float range) {
         return !mc.world.getBlockState(blockPos).isAir() &&
                 mc.world.getBlockState(blockPos).getFluidState().isEmpty() &&
-                Math.sqrt(mc.player.getDistanceNearest(blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5)) < range;
+                Math.sqrt(mc.player.getDistanceSq(blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5)) < range;
     }
 
     private boolean isBlockTypeValid(String mode, BlockPos blockPos) {

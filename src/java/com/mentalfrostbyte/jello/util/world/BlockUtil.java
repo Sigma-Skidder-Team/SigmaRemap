@@ -603,7 +603,7 @@ public class BlockUtil {
          Block var3 = mc.world.getBlockState(var0).getBlock();
          return !var3.getDefaultState().isSolid() && var3.getDefaultState().getMaterial().isReplaceable()
             ? false
-            : !(var3 instanceof Class3410) || method34573(mc.world.getBlockState(var0)) != 0;
+            : !(var3 instanceof SnowBlock) || method34573(mc.world.getBlockState(var0)) != 0;
       } else {
          return false;
       }
@@ -685,7 +685,7 @@ public class BlockUtil {
       float var9 = var5 * 2.0F;
       Vector3d var10 = new Vector3d((double)var6, (double)var7, (double)var8);
       if (!var1.method3398()) {
-         double var11 = (double)(MathHelper.sqrt(var1.getDistanceNearest3(var10)) / var9);
+         double var11 = (double)(MathHelper.sqrt(var1.getDistanceSq(var10)) / var9);
          if (var11 <= 1.0) {
             double var13 = var1.getPosX() - (double)var6;
             double var15 = var1.getPosYEye() - (double)var7;

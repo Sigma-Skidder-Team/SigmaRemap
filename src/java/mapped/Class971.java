@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Class971 extends Class939 {
    private static final Random field5435 = new Random();
-   private NonNullList<ItemStack> field5436 = NonNullList.<ItemStack>method68(9, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5436 = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
 
    public Class971(TileEntityType<?> var1) {
       super(var1);
@@ -62,7 +62,7 @@ public class Class971 extends Class939 {
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5436 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5436 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var2)) {
          ItemStackHelper.loadAllItems(var2, this.field5436);
       }

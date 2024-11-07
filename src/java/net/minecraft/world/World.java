@@ -678,9 +678,9 @@ public abstract class World implements IWorld, AutoCloseable {
    public <T extends Entity> List<T> method6771(EntityType<T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
-      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
+      int var7 = MathHelper.ceil((var2.maxX + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
-      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
+      int var9 = MathHelper.ceil((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
 
       for (int var11 = var6; var11 < var7; var11++) {
@@ -699,9 +699,9 @@ public abstract class World implements IWorld, AutoCloseable {
    public <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
-      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
+      int var7 = MathHelper.ceil((var2.maxX + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
-      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
+      int var9 = MathHelper.ceil((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       AbstractChunkProvider var11 = this.getChunkProvider();
 
@@ -721,9 +721,9 @@ public abstract class World implements IWorld, AutoCloseable {
    public <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getLoadedEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
-      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
+      int var7 = MathHelper.ceil((var2.maxX + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
-      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
+      int var9 = MathHelper.ceil((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       AbstractChunkProvider var11 = this.getChunkProvider();
 

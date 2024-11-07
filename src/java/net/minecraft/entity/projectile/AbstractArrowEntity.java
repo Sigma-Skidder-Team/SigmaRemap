@@ -281,7 +281,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       super.method3465(var1);
       Entity var4 = var1.getEntity();
       float var5 = (float)this.getMotion().length();
-      int var6 = MathHelper.method37774(MathHelper.clamp((double)var5 * this.field5105, 0.0, 2.147483647E9));
+      int var6 = MathHelper.ceil(MathHelper.clamp((double)var5 * this.field5105, 0.0, 2.147483647E9));
       if (this.method3489() > 0) {
          if (this.field5108 == null) {
             this.field5108 = new IntOpenHashSet(5);

@@ -32,7 +32,7 @@ public class Vector3d {
       return this.z;
    }
 
-   public Vector3d method29879(double var1, double var3, double var5) {
+   public Vector3d add(double var1, double var3, double var5) {
       return new Vector3d(this.x + var1, this.y + var3, this.z + var5);
    }
 
@@ -47,7 +47,7 @@ public class Vector3d {
    }
 
    public Vector3d method29882(Vector3d var1) {
-      return this.method29879(var1.getX(), var1.getY(), var1.getZ());
+      return this.add(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public Vector3i method29883() {
@@ -60,7 +60,7 @@ public class Vector3d {
    }
 
    public Vector3d method29884(Vector3d var1) {
-      return this.method29879(-var1.getX(), -var1.getY(), -var1.getZ());
+      return this.add(-var1.getX(), -var1.getY(), -var1.getZ());
    }
 
    public Vector3d method29885(Vector3d var1) {

@@ -31,7 +31,7 @@ public class VClip extends Command {
                         mc.player.getPosZ(),
                         mc.player.rotationYaw,
                         mc.player.rotationPitch,
-                        Collections.<Flags>emptySet(),
+                        Collections.emptySet(),
                         (int)(2.147483647E9 * Math.random())
                      )
                   );

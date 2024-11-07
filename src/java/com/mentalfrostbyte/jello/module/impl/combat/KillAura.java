@@ -44,7 +44,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
-public class lastReportedPitch extends Module {
+public class KillAura extends Module {
     public static boolean field23937 = false;
     public static Entity target;
     public static TimedEntity timedEntityIdk;
@@ -70,7 +70,7 @@ public class lastReportedPitch extends Module {
     private boolean field23959;
     private double[] field23960;
 
-    public lastReportedPitch() {
+    public KillAura() {
         super(ModuleCategory.COMBAT, "KillAura", "Automatically attacks entities");
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
         this.registerSetting(new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
@@ -103,19 +103,19 @@ public class lastReportedPitch extends Module {
         this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
-    public static Rotations getRotations2(lastReportedPitch killaura) {
+    public static Rotations getRotations2(KillAura killaura) {
         return killaura.rotations2;
     }
 
-    public static Rotations getRotations(lastReportedPitch killaura) {
+    public static Rotations getRotations(KillAura killaura) {
         return killaura.rotations;
     }
 
-    public static int method16846(lastReportedPitch killaura) {
+    public static int method16846(KillAura killaura) {
         return killaura.field23942;
     }
 
-    public static int method16847(lastReportedPitch killaura, int var1) {
+    public static int method16847(KillAura killaura, int var1) {
         return killaura.field23942 = var1;
     }
 

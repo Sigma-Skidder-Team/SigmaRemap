@@ -14,7 +14,7 @@ public class Class926 implements IInventory, Class925 {
    private final Container field5259;
 
    public Class926(Container var1, int var2, int var3) {
-      this.field5256 = NonNullList.<ItemStack>method68(var2 * var3, ItemStack.EMPTY);
+      this.field5256 = NonNullList.<ItemStack>withSize(var2 * var3, ItemStack.EMPTY);
       this.field5259 = var1;
       this.field5257 = var2;
       this.field5258 = var3;

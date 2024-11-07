@@ -19,7 +19,7 @@ public class ClientResource implements Class7427 {
     private final Map field31935 = new HashMap();
     private final boolean field31936;
     private int field31937 = 0;
-    private int field31938 = 0;
+    private int fontHeight = 0;
     private int field31940 = 512;
     private int field31941 = 512;
     private final Font field31942;
@@ -142,8 +142,8 @@ public class ClientResource implements Class7427 {
 
                 var14.field35437 = var8;
                 var14.field35438 = var9;
-                if (var14.field35436 > this.field31938) {
-                    this.field31938 = var14.field35436;
+                if (var14.field35436 > this.fontHeight) {
+                    this.fontHeight = var14.field35436;
                 }
 
                 if (var14.field35436 > var7) {
@@ -212,27 +212,37 @@ public class ClientResource implements Class7427 {
         }
     }
 
-    public int method23952() {
-        return this.field31938;
+    /**
+     * Get the font's height
+     *
+     * @return The height of the font
+     */
+    public int method23952() { //getHeight
+        return this.fontHeight;
+    }
+
+    /**
+     * Get the height of a String
+     *
+     * @return The height of a given string
+     */
+    @Override
+    public int method23941(String var1) { //getHeight
+        return this.fontHeight;
     }
 
     @Override
-    public int method23941(String var1) {
-        return this.field31938;
+    public int getLineHeight() {
+        return this.fontHeight;
     }
 
     @Override
-    public int method23943() {
-        return this.field31938;
+    public void drawString(float var1, float var2, String var3, Color var4) {
+        this.drawString(var1, var2, var3, var4, 0, var3.length() - 1);
     }
 
     @Override
-    public void method23937(float var1, float var2, String var3, Color var4) {
-        this.method23938(var1, var2, var3, var4, 0, var3.length() - 1);
-    }
-
-    @Override
-    public void method23938(float var1, float var2, String var3, Color var4, int var5, int var6) {
+    public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
         var4.method10392();
         this.field31939.bind();
         Class8246 var9 = null;
@@ -275,6 +285,6 @@ public class ClientResource implements Class7427 {
 
     @Override
     public void method23936(float var1, float var2, String var3) {
-        this.method23937(var1, var2, var3, Color.field16442);
+        this.drawString(var1, var2, var3, Color.field16442);
     }
 }

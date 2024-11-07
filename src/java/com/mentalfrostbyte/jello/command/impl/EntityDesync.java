@@ -32,7 +32,7 @@ public class EntityDesync extends Command {
                      throw new CommandException("No entity to remount");
                   }
 
-                  mc.player.method3311(this.field25711);
+                  mc.player.startRiding(this.field25711);
                   this.field25711.addedToChunk = true;
                   var3.send("Remounted entity " + this.field25711.getType().getName().getUnformattedComponentText());
                   this.field25711 = null;

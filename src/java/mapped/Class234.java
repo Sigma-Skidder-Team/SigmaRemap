@@ -23,11 +23,11 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
          if (var13.getItem() != Items.field38120) {
             var1.push();
             var1.translate(0.0, 0.0, 0.125);
-            double var14 = MathHelper.lerp((double)var7, var4.field4911, var4.field4914)
+            double var14 = MathHelper.lerp((double)var7, var4.field4911, var4.chasingPosX)
                - MathHelper.lerp((double)var7, var4.prevPosX, var4.getPosX());
-            double var16 = MathHelper.lerp((double)var7, var4.field4912, var4.field4915)
+            double var16 = MathHelper.lerp((double)var7, var4.field4912, var4.chasingPosY)
                - MathHelper.lerp((double)var7, var4.prevPosY, var4.getPosY());
-            double var18 = MathHelper.lerp((double)var7, var4.field4913, var4.field4916)
+            double var18 = MathHelper.lerp((double)var7, var4.field4913, var4.chasingPosZ)
                - MathHelper.lerp((double)var7, var4.prevPosZ, var4.getPosZ());
             float var20 = var4.prevRenderYawOffset + (var4.renderYawOffset - var4.prevRenderYawOffset);
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));

@@ -109,7 +109,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
    public boolean method3768(PlayerEntity var1) {
       return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
+            var1.getDistanceSq((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;

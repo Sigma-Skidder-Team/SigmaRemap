@@ -698,7 +698,7 @@ public class IngameGui extends AbstractGui {
     }
 
     private int method5974(LivingEntity var1) {
-        if (var1 != null && var1.method3312()) {
+        if (var1 != null && var1.isLiving()) {
             float var4 = var1.method3075();
             int var5 = (int) (var4 + 0.5F) / 2;
             if (var5 > 30) {
@@ -874,8 +874,8 @@ public class IngameGui extends AbstractGui {
             if (var4.areEyesInFluid(FluidTags.field40469) || var40 < var38) {
                 int var42 = this.method5975(var36) - 1;
                 var20 -= var42 * 10;
-                int var44 = MathHelper.method37774((double) (var40 - 2) * 10.0 / (double) var38);
-                int var46 = MathHelper.method37774((double) var40 * 10.0 / (double) var38) - var44;
+                int var44 = MathHelper.ceil((double) (var40 - 2) * 10.0 / (double) var38);
+                int var46 = MathHelper.ceil((double) var40 * 10.0 / (double) var38) - var44;
 
                 for (int var31 = 0; var31 < var44 + var46; var31++) {
                     if (var31 >= var44) {

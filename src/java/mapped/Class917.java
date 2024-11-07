@@ -24,7 +24,7 @@ public class Class917 extends AbstractMinecartEntity {
             if (this.world.isRemote) {
                return ActionResultType.SUCCESS;
             } else {
-               return !var1.method3311(this) ? ActionResultType.field14820 : ActionResultType.field14819;
+               return !var1.startRiding(this) ? ActionResultType.field14820 : ActionResultType.field14819;
             }
          } else {
             return ActionResultType.field14820;

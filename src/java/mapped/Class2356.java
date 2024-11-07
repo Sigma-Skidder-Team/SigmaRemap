@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Class2356 extends ForwardingList<ItemStack> {
    private static String[] field16169;
-   private final NonNullList<ItemStack> field16170 = NonNullList.<ItemStack>method68(PlayerInventory.method4029(), ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field16170 = NonNullList.<ItemStack>withSize(PlayerInventory.method4029(), ItemStack.EMPTY);
 
    public List<ItemStack> delegate() {
       return this.field16170;

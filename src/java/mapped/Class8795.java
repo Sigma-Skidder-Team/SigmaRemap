@@ -270,7 +270,7 @@ public class Class8795 {
                   || Math.sqrt(
                         this.mc
                            .player
-                           .getDistanceNearest(
+                           .getDistanceSq(
                               (double)this.field39616.getX() + 0.5,
                               (double)this.field39616.getY() + 0.5,
                               (double)this.field39616.getZ() + 0.5

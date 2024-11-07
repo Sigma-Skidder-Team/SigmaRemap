@@ -20,7 +20,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3410 extends Block {
+public class SnowBlock extends Block {
    private static String[] field19091;
    public static final IntegerProperty field19092 = BlockStateProperties.field39750;
    public static final VoxelShape[] field19093 = new VoxelShape[]{
@@ -35,7 +35,7 @@ public class Class3410 extends Block {
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
    };
 
-   public Class3410(Properties var1) {
+   public SnowBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19092, Integer.valueOf(1)));
    }

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
-import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
@@ -62,7 +62,7 @@ public class HypixelSpeed extends Module {
     public void method16037(EventUpdate var1) {
         if (mc.player.onGround) {
             if (!Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled2()
-                    || lastReportedPitch.target == null && lastReportedPitch.timedEntityIdk == null
+                    || KillAura.target == null && KillAura.timedEntityIdk == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
             } else if (var1.isPre()) {
@@ -215,7 +215,7 @@ public class HypixelSpeed extends Module {
                 && !(mc.player.getPosY() < this.field23416)) {
             mc.player.positionVec.y = this.field23416;
             mc.player.lastTickPosY = this.field23416;
-            mc.player.field4915 = this.field23416;
+            mc.player.chasingPosY = this.field23416;
             mc.player.prevPosY = this.field23416;
             if (MovementUtils.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;

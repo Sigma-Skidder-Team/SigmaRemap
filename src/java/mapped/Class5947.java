@@ -96,7 +96,7 @@ public class Class5947 extends Class5942<Class954> {
          if (!Config.field34162) {
             BlockPos var3 = var0.getPos();
             Entity var4 = Minecraft.getInstance().getRenderViewEntity();
-            double var5 = var4.getDistanceNearest((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
+            double var5 = var4.getDistanceSq((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
             if (var5 > field25939) {
                return false;
             }

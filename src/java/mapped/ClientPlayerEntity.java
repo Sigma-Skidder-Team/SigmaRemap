@@ -1012,12 +1012,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public boolean canSwim() {
-      return this.field4918;
+      return this.eyesInWaterPlayer;
    }
 
    @Override
    public boolean method2854() {
-      boolean var3 = this.field4918;
+      boolean var3 = this.eyesInWaterPlayer;
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
@@ -1029,9 +1029,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, SoundCategory.field14736, 1.0F, 1.0F, false);
          }
 
-         return this.field4918;
+         return this.eyesInWaterPlayer;
       } else {
-         return this.field4918;
+         return this.eyesInWaterPlayer;
       }
    }
 

@@ -175,7 +175,7 @@ public class Explosion {
       for (int var14 = 0; var14 < var12.size(); var14++) {
          Entity var35 = (Entity)var12.get(var14);
          if (!var35.method3398()) {
-            double var36 = (double)(MathHelper.sqrt(var35.getDistanceNearest3(var13)) / var53);
+            double var36 = (double)(MathHelper.sqrt(var35.getDistanceSq(var13)) / var53);
             if (var36 <= 1.0) {
                double var38 = var35.getPosX() - this.field33374;
                double var40 = (!(var35 instanceof Class1004) ? var35.getPosYEye() : var35.getPosY()) - this.field33375;

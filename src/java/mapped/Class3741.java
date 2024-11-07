@@ -24,7 +24,7 @@ public class Class3741<E extends LivingEntity> extends Class3676<E> {
       if (!this.method12699((E)var2)) {
          Class6983.method21576(var2, this.method12700((E)var2), this.field19868, 1);
       } else {
-         var2.method3311(this.method12700((E)var2));
+         var2.startRiding(this.method12700((E)var2));
       }
    }
 

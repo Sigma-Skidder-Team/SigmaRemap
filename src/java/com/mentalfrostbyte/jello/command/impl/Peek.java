@@ -40,7 +40,7 @@ public class Peek extends Command {
          var3 = var0.getTag().copy();
       }
 
-      NonNullList<ItemStack> var4 = NonNullList.method68(27, new ItemStack(Items.AIR));
+      NonNullList<ItemStack> var4 = NonNullList.withSize(27, new ItemStack(Items.AIR));
       if (var3 != null && var3.contains("BlockEntityTag")) {
          CompoundNBT var5 = var3.getCompound("BlockEntityTag");
          method18338(var5);

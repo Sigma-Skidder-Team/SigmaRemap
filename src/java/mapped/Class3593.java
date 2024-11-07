@@ -18,12 +18,12 @@ public class Class3593 implements Comparator<BlockPos> {
             Math.sqrt(
                   CakeEater.method16322()
                      .player
-                     .getDistanceNearest((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5)
+                     .getDistanceSq((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5)
                )
                > Math.sqrt(
                   CakeEater.method16323()
                      .player
-                     .getDistanceNearest((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5)
+                     .getDistanceSq((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5)
                )
          )
          ? -1

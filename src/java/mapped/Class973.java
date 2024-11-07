@@ -14,7 +14,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class973 extends Class939 {
-   private NonNullList<ItemStack> field5437 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5437 = NonNullList.<ItemStack>withSize(27, ItemStack.EMPTY);
    private int field5438;
 
    private Class973(TileEntityType<?> var1) {
@@ -38,7 +38,7 @@ public class Class973 extends Class939 {
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5437 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5437 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var2)) {
          ItemStackHelper.loadAllItems(var2, this.field5437);
       }

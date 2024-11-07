@@ -15,7 +15,7 @@ public class Class7862 extends Class7859 {
    @Override
    public boolean method26354(Class9110 var1) {
       for (Entity var5 : this.field33674) {
-         if (var5.getDistanceNearest3(var1.method33972()) < 5.0) {
+         if (var5.getDistanceSq(var1.method33972()) < 5.0) {
             return true;
          }
       }
@@ -28,7 +28,7 @@ public class Class7862 extends Class7859 {
       double var4 = 0.0;
 
       for (Entity var7 : this.field33674) {
-         double var8 = var7.getDistanceNearest3(var1.method33972());
+         double var8 = var7.getDistanceSq(var1.method33972());
          if (var8 < var4) {
             var4 = var8;
          }

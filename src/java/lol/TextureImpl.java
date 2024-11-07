@@ -60,12 +60,12 @@ public class TextureImpl implements Texture {
       field43736.method18380(3553);
    }
 
-   public static void method36180() {
+   public static void method36180() { //unbind
       field43737 = null;
    }
 
    @Override
-   public void bind() {
+   public void bind() { //bind
       if (field43737 != this) {
          field43737 = this;
          field43736.method18381(3553);
@@ -73,12 +73,12 @@ public class TextureImpl implements Texture {
       }
    }
 
-   public void method36181(int var1) {
+   public void method36181(int var1) { //setHeight
       this.field43740 = var1;
       this.method36185();
    }
 
-   public void method36182(int var1) {
+   public void method36182(int var1) { //setWidth
       this.field43741 = var1;
       this.method36186();
    }

@@ -39,7 +39,7 @@ public class Class9716 {
             BlockPos var8 = var2.offset(var3);
             BlockState var9 = var1.getBlockState(var8);
             if (!var9.method23495()) {
-               if (!var0.method23411(var9, var3)) {
+               if (!var0.isSideInvisible(var9, var3)) {
                   return !var9.isSolid() ? true : method38064(var0, var1, var2, var3, var4, var9, var8);
                } else {
                   return false;

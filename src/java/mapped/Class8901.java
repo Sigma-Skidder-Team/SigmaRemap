@@ -22,8 +22,8 @@ public class Class8901 {
    };
 
    public Class8901(Vector3d var1, Vector3d var2) {
-      this.field40284 = var1.method29879(0.0, 0.0, 0.0).method29880();
-      this.field40285 = var2.method29879(0.0, 0.0, 0.0).method29880();
+      this.field40284 = var1.add(0.0, 0.0, 0.0).method29880();
+      this.field40285 = var2.add(0.0, 0.0, 0.0).method29880();
    }
 
    public ArrayList<Vector3d> method32444() {
@@ -61,12 +61,12 @@ public class Class8901 {
                   }
                }
 
-               Vector3d var15 = var9.method30354().method29879(0.0, 1.0, 0.0).method29880();
+               Vector3d var15 = var9.method30354().add(0.0, 1.0, 0.0).method29880();
                if (method32448(var15, false) && this.method32451(var9, var15, 0.0)) {
                   break label72;
                }
 
-               Vector3d var16 = var9.method30354().method29879(0.0, -1.0, 0.0).method29880();
+               Vector3d var16 = var9.method30354().add(0.0, -1.0, 0.0).method29880();
                if (method32448(var16, false) && this.method32451(var9, var16, 0.0)) {
                   break label72;
                }
@@ -118,15 +118,15 @@ public class Class8901 {
             }
 
             if (!var13) {
-               var9.add(var7.method29879(0.5, 0.0, 0.5));
+               var9.add(var7.add(0.5, 0.0, 0.5));
                var8 = var7;
             }
          } else {
             if (var7 != null) {
-               var9.add(var7.method29879(0.5, 0.0, 0.5));
+               var9.add(var7.add(0.5, 0.0, 0.5));
             }
 
-            var9.add(var12.method29879(0.5, 0.0, 0.5));
+            var9.add(var12.add(0.5, 0.0, 0.5));
             var8 = var12;
          }
 

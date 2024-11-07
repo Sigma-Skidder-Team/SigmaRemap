@@ -985,7 +985,7 @@ public class ServerWorld extends World implements ISeedReader {
       }
 
       for (ServerPlayerEntity var17 : this.field9042) {
-         if (var17.getDistanceNearest(var4, var6, var8) < 4096.0) {
+         if (var17.getDistanceSq(var4, var6, var8) < 4096.0) {
             var17.connection.sendPacket(new SExplosionPacket(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
          }
       }

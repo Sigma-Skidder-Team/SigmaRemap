@@ -154,7 +154,7 @@ public class YPortSpeed extends Module {
 
             mc.player.positionVec.y = this.field23542;
             mc.player.lastTickPosY = this.field23542;
-            mc.player.field4915 = this.field23542;
+            mc.player.chasingPosY = this.field23542;
             mc.player.prevPosY = this.field23542;
             if (MovementUtils.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;

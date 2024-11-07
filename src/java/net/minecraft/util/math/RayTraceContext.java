@@ -62,7 +62,7 @@ public class RayTraceContext {
 
    public enum BlockMode implements IVoxelProvider {
       COLLIDER(AbstractBlock.AbstractBlockState::getCollisionShape),
-      OUTLINE(AbstractBlock.AbstractBlockState::method23413),
+      OUTLINE(AbstractBlock.AbstractBlockState::getShape),
       VISUAL(AbstractBlock.AbstractBlockState::method23417);
 
       private final IVoxelProvider provider;

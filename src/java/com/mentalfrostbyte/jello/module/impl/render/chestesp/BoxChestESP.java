@@ -55,7 +55,7 @@ public class BoxChestESP extends Module {
                 }
 
                 Box3D boundingBox = new Box3D(
-                        tileEntity.getBlockState().method23412(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
+                        tileEntity.getBlockState().getShape(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
                 );
 
                 GL11.glAlphaFunc(519, 0.0F);

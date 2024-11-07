@@ -73,7 +73,7 @@ public class Class4857 extends Class4837 {
    }
 
    public NonNullList<ItemStack> method14968(Class926 var1) {
-      NonNullList var4 = NonNullList.<ItemStack>method68(var1.getSizeInventory(), ItemStack.EMPTY);
+      NonNullList var4 = NonNullList.<ItemStack>withSize(var1.getSizeInventory(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          ItemStack var6 = var1.getStackInSlot(var5);

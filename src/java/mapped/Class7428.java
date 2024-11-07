@@ -25,16 +25,16 @@ public class Class7428 implements Class7427 {
 
    @Override
    public void method23936(float var1, float var2, String var3) {
-      this.method23937(var1, var2, var3, Color.field16442);
+      this.drawString(var1, var2, var3, Color.field16442);
    }
 
    @Override
-   public void method23937(float var1, float var2, String var3, Color var4) {
-      this.method23938(var1, var2, var3, var4, 0, var3.length() - 1);
+   public void drawString(float var1, float var2, String var3, Color var4) {
+      this.drawString(var1, var2, var3, var4, 0, var3.length() - 1);
    }
 
    @Override
-   public void method23938(float var1, float var2, String var3, Color var4, int var5, int var6) {
+   public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
       try {
          byte[] var9 = var3.getBytes("US-ASCII");
 
@@ -64,7 +64,7 @@ public class Class7428 implements Class7427 {
    }
 
    @Override
-   public int method23943() {
+   public int getLineHeight() {
       return this.field31930;
    }
 }

@@ -472,7 +472,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (!this.world.isRemote) {
          var1.rotationYaw = this.rotationYaw;
          var1.rotationPitch = this.rotationPitch;
-         var1.method3311(this);
+         var1.startRiding(this);
       }
    }
 

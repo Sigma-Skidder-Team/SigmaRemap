@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Class936 extends Class939 implements Class937, ITickableTileEntity {
-   private NonNullList<ItemStack> field5293 = NonNullList.<ItemStack>method68(5, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5293 = NonNullList.<ItemStack>withSize(5, ItemStack.EMPTY);
    private int field5294 = -1;
    private long field5295;
 
@@ -36,7 +36,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5293 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5293 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var2)) {
          ItemStackHelper.loadAllItems(var2, this.field5293);
       }

@@ -106,8 +106,8 @@ public class Waypoints extends Module {
 
         var4.sort(
                 (var0, var1x) -> !(
-                        mc.player.getDistanceNearest((double) var0.field35890, (double) var0.field35893, (double) var0.field35891)
-                                < mc.player.getDistanceNearest((double) var1x.field35890, (double) var1x.field35893, (double) var1x.field35891)
+                        mc.player.getDistanceSq((double) var0.field35890, (double) var0.field35893, (double) var0.field35891)
+                                < mc.player.getDistanceSq((double) var1x.field35890, (double) var1x.field35893, (double) var1x.field35891)
                 )
                         ? -1
                         : 1

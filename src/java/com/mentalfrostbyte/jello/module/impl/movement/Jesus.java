@@ -194,11 +194,11 @@ public class Jesus extends Module {
 
    public boolean method16952(AxisAlignedBB var1, Material var2) {
       int var5 = MathHelper.floor(var1.minX);
-      int var6 = MathHelper.method37774(var1.maxX);
+      int var6 = MathHelper.ceil(var1.maxX);
       int var7 = MathHelper.floor(var1.minY);
-      int var8 = MathHelper.method37774(var1.maxY);
+      int var8 = MathHelper.ceil(var1.maxY);
       int var9 = MathHelper.floor(var1.minZ);
-      int var10 = MathHelper.method37774(var1.maxZ);
+      int var10 = MathHelper.ceil(var1.maxZ);
       Class116 var11 = Class116.method330(var2);
       return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(mc.world.getBlockState(var1x)));
    }

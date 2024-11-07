@@ -70,7 +70,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
             this.field6438.currentScreen.render(var1, var2, var3, var4);
          }
 
-         int var27 = MathHelper.method37774(MathHelper.clamp((double)var12, 0.15, 1.0) * 255.0);
+         int var27 = MathHelper.ceil(MathHelper.clamp((double)var12, 0.15, 1.0) * 255.0);
          fill(var1, 0, 0, var7, var8, this.field6445 | var27 << 24);
          var14 = MathHelper.clamp(var12, 0.0F, 1.0F);
       } else {

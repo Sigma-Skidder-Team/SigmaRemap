@@ -328,7 +328,7 @@ public class ShulkerInfo extends Module {
             CompoundNBT var6 = var5.getCompound("BlockEntityTag");
             Peek.method18338(var6);
             if (var6.contains("Items", 9)) {
-                NonNullList<ItemStack> var7 = NonNullList.method68(27, ItemStack.EMPTY);
+                NonNullList<ItemStack> var7 = NonNullList.withSize(27, ItemStack.EMPTY);
                 ItemStackHelper.loadAllItems(var6, var7);
 
                 for (ItemStack var9 : var7) {

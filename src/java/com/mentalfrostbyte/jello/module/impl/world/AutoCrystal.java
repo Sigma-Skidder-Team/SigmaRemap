@@ -58,7 +58,7 @@ public class AutoCrystal extends Module {
 
     public static float method16380(double var0, double var2, double var4, Entity var6) {
         float var9 = 12.0F;
-        double var10 = Math.sqrt(var6.getDistanceNearest(var0, var2, var4)) / (double) var9;
+        double var10 = Math.sqrt(var6.getDistanceSq(var0, var2, var4)) / (double) var9;
         Vector3d var12 = new Vector3d(var0, var2, var4);
         double var13 = Explosion.method25783(var12, var6);
         double var15 = (1.0 - var10) * var13;
@@ -216,7 +216,7 @@ public class AutoCrystal extends Module {
 
             this.field23637 = this.method16377();
             this.field23637
-                    .sort(Comparator.comparing(var1x -> this.field23633.getDistanceNearest(var1x.field13027, var1x.field13028, var1x.field13029)));
+                    .sort(Comparator.comparing(var1x -> this.field23633.getDistanceSq(var1x.field13027, var1x.field13028, var1x.field13029)));
             if (this.field23637 != null && !this.field23637.isEmpty()) {
                 BlockPos var6 = this.field23637
                         .stream()

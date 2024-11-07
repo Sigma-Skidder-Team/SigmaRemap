@@ -7,7 +7,6 @@ import de.florianmichael.vialoadingbase.ViaLoadingBase;
 import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
@@ -23,7 +22,6 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -34,7 +32,6 @@ import totalcross.json.JSONObject;
 
 import java.awt.Color;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.nio.FloatBuffer;
@@ -49,7 +46,6 @@ public class MultiUtilities {
    public static final float[] field24951 = new float[4];
    public static final float[] field24952 = new float[4];
    public static final ResourceLocation field24953 = new ResourceLocation("shaders/post/blur.json");
-   private static boolean field24954 = false;
 
    public static void addChatMessage(String text) {
       StringTextComponent textComp = new StringTextComponent(text);
@@ -110,7 +106,7 @@ public class MultiUtilities {
    public static boolean method17684(Entity var0) {
       ClientWorld var3 = mc.world;
       AxisAlignedBB var4 = var0.boundingBox;
-      return var3.method7014(var4);
+      return var3.containsAnyLiquid(var4);
    }
 
    public static boolean method17686() {
@@ -399,8 +395,7 @@ public class MultiUtilities {
    }
 
    public static boolean isHypixel() {
-      return !field24954
-         && mc.getIntegratedServer() == null
+      return mc.getIntegratedServer() == null
          && mc.getCurrentServerData() != null
          && mc.getCurrentServerData().serverIP.toLowerCase().contains("hypixel.net");
    }
@@ -658,53 +653,6 @@ public class MultiUtilities {
       }
 
       return var6.values().toArray(new String[var6.values().size()]);
-   }
-
-   public static void method17746(ServerData var0) {
-      field24954 = var0.serverIP.toLowerCase().contains("hypixel.net");
-      if (field24954) {
-         new Thread(() -> {
-            try {
-               InetAddress var2 = InetAddress.getByName("hypixel.net");
-               HttpGet var3 = new HttpGet("http://" + var2.getHostAddress());
-               CloseableHttpClient var4 = HttpClients.createDefault();
-
-               try {
-                  CloseableHttpResponse var5 = var4.execute(var3);
-                  Throwable var6 = null;
-
-                  try {
-                     if (var5.getStatusLine().getStatusCode() == 403) {
-                        HttpEntity var7 = var5.getEntity();
-                        if (var7 != null) {
-                           String var8 = EntityUtils.toString(var7);
-                           if (var8.contains("1003")) {
-                              field24954 = false;
-                           }
-                        }
-                     }
-                  } catch (Throwable var19) {
-                     var6 = var19;
-                     throw var19;
-                  } finally {
-                     if (var5 != null) {
-                        if (var6 != null) {
-                           try {
-                              var5.close();
-                           } catch (Throwable var18) {
-                              var6.addSuppressed(var18);
-                           }
-                        } else {
-                           var5.close();
-                        }
-                     }
-                  }
-               } catch (IOException ignored) {
-               }
-            } catch (UnknownHostException ignored) {
-            }
-         }).start();
-      }
    }
 
    public static double[] method17747() {

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
-import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
@@ -17,9 +17,9 @@ import net.minecraft.util.math.EntityRayTraceResult;
  */
 public class KillAuraAttackLambda implements Runnable {
    public final float field1477;
-   public final lastReportedPitch killauraModule;
+   public final KillAura killauraModule;
 
-   public KillAuraAttackLambda(lastReportedPitch var1, float var2) {
+   public KillAuraAttackLambda(KillAura var1, float var2) {
       this.killauraModule = var1;
       this.field1477 = var2;
    }
@@ -51,29 +51,29 @@ public class KillAuraAttackLambda implements Runnable {
       boolean var3 = (float) Math.round((float) Math.random() * 100.0F) <= this.killauraModule.getNumberValueBySettingName("Hit Chance");
 
       // Get range based on player distance or "Range" setting
-      float range = Math.max(lastReportedPitch.mc.player.getDistance(lastReportedPitch.timedEntityIdk.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
+      float range = Math.max(KillAura.mc.player.getDistance(KillAura.timedEntityIdk.getEntity()), this.killauraModule.getNumberValueBySettingName("Range"));
 
       EntityRayTraceResult rayTraceResult;
       if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
          rayTraceResult = MultiUtilities.rayTraceFromPlayer(
-                 lastReportedPitch.getRotations(this.killauraModule).yaw, lastReportedPitch.getRotations(this.killauraModule).pitch, range, (double) this.field1477
+                 KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch, range, (double) this.field1477
          );
       } else {
          double motionSpeed = Math.sqrt(
-                 lastReportedPitch.mc.player.getMotion().x * lastReportedPitch.mc.player.getMotion().x
-                         + lastReportedPitch.mc.player.getMotion().z * lastReportedPitch.mc.player.getMotion().z
+                 KillAura.mc.player.getMotion().x * KillAura.mc.player.getMotion().x
+                         + KillAura.mc.player.getMotion().z * KillAura.mc.player.getMotion().z
          );
-         rayTraceResult = MultiUtilities.rayTraceFromPlayer(lastReportedPitch.getRotations2(this.killauraModule).yaw, lastReportedPitch.getRotations2(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
+         rayTraceResult = MultiUtilities.rayTraceFromPlayer(KillAura.getRotations2(this.killauraModule).yaw, KillAura.getRotations2(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
       }
 
       // Handle autoblocking mode
-      if (lastReportedPitch.target != null && lastReportedPitch.interactAB.isBlocking() && !this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
-         lastReportedPitch.interactAB.method36816();
+      if (KillAura.target != null && KillAura.interactAB.isBlocking() && !this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
+         KillAura.interactAB.method36816();
       }
 
       String mode = this.killauraModule.getStringSettingValueByName("Mode");
       if (var3 && (rayTraceResult != null || !this.killauraModule.getBooleanValueFromSettingName("Raytrace") || mode.equals("Multi"))) {
-         for (TimedEntity timedEnt : lastReportedPitch.entities) {
+         for (TimedEntity timedEnt : KillAura.entities) {
             Entity entity = timedEnt.getEntity();
             if (rayTraceResult != null && this.killauraModule.getBooleanValueFromSettingName("Raytrace") && !mode.equals("Multi")) {
                entity = rayTraceResult.getEntity();
@@ -84,7 +84,7 @@ public class KillAuraAttackLambda implements Runnable {
             }
 
             boolean noSwing = this.killauraModule.getBooleanValueFromSettingName("No swing");
-            Minecraft mc = lastReportedPitch.mc;
+            Minecraft mc = KillAura.mc;
             boolean isOnePointEight = false; // Potential check for 1.8 version
 
             boolean raytrace = this.killauraModule.getBooleanValueFromSettingName("Raytrace");
@@ -102,9 +102,9 @@ public class KillAuraAttackLambda implements Runnable {
 
                   mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
                } else {
-                  lastReportedPitch.target = null;
-                  lastReportedPitch.entities = null;
-                  lastReportedPitch.timedEntityIdk = null;
+                  KillAura.target = null;
+                  KillAura.entities = null;
+                  KillAura.timedEntityIdk = null;
                }
             } else {
                // Non-raytrace handling
@@ -120,15 +120,15 @@ public class KillAuraAttackLambda implements Runnable {
          }
 
          if (mode.equals("Multi2")) {
-            lastReportedPitch.method16847(this.killauraModule, lastReportedPitch.method16846(this.killauraModule) + 1);
+            KillAura.method16847(this.killauraModule, KillAura.method16846(this.killauraModule) + 1);
          }
       } else if (!this.killauraModule.getBooleanValueFromSettingName("No swing")) {
-         lastReportedPitch.mc.player.swingArm(Hand.MAIN_HAND);
+         KillAura.mc.player.swingArm(Hand.MAIN_HAND);
       }
 
       // Handle autoblocking
-      if (lastReportedPitch.target != null && lastReportedPitch.interactAB.canBlock() && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
-         lastReportedPitch.interactAB.block(lastReportedPitch.target, lastReportedPitch.getRotations(this.killauraModule).yaw, lastReportedPitch.getRotations(this.killauraModule).pitch);
+      if (KillAura.target != null && KillAura.interactAB.canBlock() && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
+         KillAura.interactAB.block(KillAura.target, KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch);
       }
    }
 }

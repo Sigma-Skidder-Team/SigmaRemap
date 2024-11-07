@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
@@ -47,10 +47,10 @@ public class TargetStrafe extends Module {
         if (this.isEnabled()) {
             Entity var4 = null;
             if (Client.getInstance().getModuleManager().getModuleByClass(Speed.class).isEnabled2() || !this.getBooleanValueFromSettingName("Only speed")) {
-                if (lastReportedPitch.timedEntityIdk != null) {
-                    var4 = lastReportedPitch.timedEntityIdk.getEntity();
-                } else if (lastReportedPitch.target != null) {
-                    var4 = lastReportedPitch.target;
+                if (KillAura.timedEntityIdk != null) {
+                    var4 = KillAura.timedEntityIdk.getEntity();
+                } else if (KillAura.target != null) {
+                    var4 = KillAura.target;
                 }
             }
 

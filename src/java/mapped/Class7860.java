@@ -12,11 +12,11 @@ public class Class7860 extends Class7859 {
 
    @Override
    public boolean method26354(Class9110 var1) {
-      return this.field33669.getDistanceNearest3(var1.method33972()) < 9.0;
+      return this.field33669.getDistanceSq(var1.method33972()) < 9.0;
    }
 
    @Override
    public double method26355(Class9110 var1) {
-      return this.field33669.getDistanceNearest3(var1.method33972());
+      return this.field33669.getDistanceSq(var1.method33972());
    }
 }

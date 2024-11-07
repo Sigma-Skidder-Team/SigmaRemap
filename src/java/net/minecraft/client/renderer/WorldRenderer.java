@@ -2620,7 +2620,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          float var21 = 128.0F;
          var2.begin(7, DefaultVertexFormats.field43344);
          double var22 = Math.max((double) MathHelper.floor(var12 - var4), var3.method24531());
-         double var24 = Math.min((double) MathHelper.method37774(var12 + var4), var3.method24533());
+         double var24 = Math.min((double) MathHelper.ceil(var12 + var4), var3.method24533());
          if (var8 > var3.method24532() - var4) {
             float var26 = 0.0F;
 
@@ -2650,7 +2650,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          }
 
          var22 = Math.max((double) MathHelper.floor(var8 - var4), var3.method24530());
-         var24 = Math.min((double) MathHelper.method37774(var8 + var4), var3.method24532());
+         var24 = Math.min((double) MathHelper.ceil(var8 + var4), var3.method24532());
          if (var12 > var3.method24533() - var4) {
             float var36 = 0.0F;
 
@@ -2704,7 +2704,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       method896(
          var1,
          var2,
-         var11.method23413(this.world, var10, ISelectionContext.forEntity(var3)),
+         var11.getShape(this.world, var10, ISelectionContext.forEntity(var3)),
          (double)var10.getX() - var4,
          (double)var10.getY() - var6,
          (double)var10.getZ() - var8,
@@ -2719,7 +2719,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
            MatrixStack var0, IVertexBuilder var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       List var13 = var2.method19521();
-      int var14 = MathHelper.method37774((double)var13.size() / 3.0);
+      int var14 = MathHelper.ceil((double)var13.size() / 3.0);
 
       for (int var15 = 0; var15 < var13.size(); var15++) {
          AxisAlignedBB var16 = (AxisAlignedBB)var13.get(var15);

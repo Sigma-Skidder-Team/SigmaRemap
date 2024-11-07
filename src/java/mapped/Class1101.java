@@ -138,7 +138,7 @@ public class Class1101 extends MonsterEntity {
          Class1085 var8 = EntityType.SKELETON.create(this.world);
          var8.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
          var8.method4276(var1, var2, var3, (Class5093)null, (CompoundNBT)null);
-         var8.method3311(this);
+         var8.startRiding(this);
       }
 
       if (var4 == null) {

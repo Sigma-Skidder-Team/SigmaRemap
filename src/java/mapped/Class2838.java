@@ -1288,49 +1288,49 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                         Class4690.method14712(
                            Class4690.method14712(
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 1))),
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 1))),
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 2)))
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 2)))
                                     .method18296(Class140.method420(Class6871.method20919(2))),
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 3)))
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 3)))
                                     .method18296(Class140.method420(Class6871.method20919(3))),
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 4)))
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 4)))
                                     .method18296(Class140.method420(Class6871.method20919(4))),
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 5)))
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 5)))
                                     .method18296(Class140.method420(Class6871.method20919(5))),
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 6)))
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 6)))
                                     .method18296(Class140.method420(Class6871.method20919(6))),
                                  Class4695.method14724(Items.SNOWBALL)
-                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 7)))
+                                    .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 7)))
                                     .method18296(Class140.method420(Class6871.method20919(7))),
                                  Class4695.method14724(Items.SNOWBALL).method18296(Class140.method420(Class6871.method20919(8)))
                               )
                               .method18297(field17629),
                            Class4690.method14712(
                               Class4695.method14724(Blocks.SNOW)
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 1))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 1))),
                               Class4695.method14724(Blocks.SNOW)
                                  .method18296(Class140.method420(Class6871.method20919(2)))
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 2))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 2))),
                               Class4695.method14724(Blocks.SNOW)
                                  .method18296(Class140.method420(Class6871.method20919(3)))
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 3))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 3))),
                               Class4695.method14724(Blocks.SNOW)
                                  .method18296(Class140.method420(Class6871.method20919(4)))
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 4))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 4))),
                               Class4695.method14724(Blocks.SNOW)
                                  .method18296(Class140.method420(Class6871.method20919(5)))
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 5))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 5))),
                               Class4695.method14724(Blocks.SNOW)
                                  .method18296(Class140.method420(Class6871.method20919(6)))
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 6))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 6))),
                               Class4695.method14724(Blocks.SNOW)
                                  .method18296(Class140.method420(Class6871.method20919(7)))
-                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 7))),
+                                 .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(SnowBlock.field19092, 7))),
                               Class4695.method14724(Blocks.SNOW_BLOCK)
                            )
                         )

@@ -708,7 +708,7 @@ public class Blocks {
       "stone_button", new StoneButtonBlock(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26623(0.5F))
    );
    public static final Block SNOW = register(
-      "snow", new Class3410(AbstractBlock.Properties.method26609(Material.field38944).method26624().method26623(0.1F).method26635().method26619(SoundType.field36209))
+      "snow", new SnowBlock(AbstractBlock.Properties.method26609(Material.field38944).method26624().method26623(0.1F).method26635().method26619(SoundType.field36209))
    );
    public static final Block ICE = register(
       "ice",

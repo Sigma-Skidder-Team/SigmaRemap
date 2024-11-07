@@ -50,9 +50,9 @@ public abstract class MobEntity extends LivingEntity {
    public final Class6603 field5601;
    private LivingEntity field5602;
    private final Class9363 field5603;
-   private final NonNullList<ItemStack> field5604 = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5604 = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
    public final float[] field5605 = new float[2];
-   private final NonNullList<ItemStack> field5606 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5606 = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
    public final float[] field5607 = new float[4];
    private boolean field5608;
    private boolean field5609;
@@ -745,7 +745,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public boolean method4266(IWorldReader var1) {
-      return !var1.method7014(this.getBoundingBox()) && var1.checkNoEntityCollision(this);
+      return !var1.containsAnyLiquid(this.getBoundingBox()) && var1.checkNoEntityCollision(this);
    }
 
    public int method4267() {

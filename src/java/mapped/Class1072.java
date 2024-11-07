@@ -124,7 +124,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       boolean var5 = this.method4381(var1.getHeldItem(var2));
       if (!var5 && this.method4943() && !this.isBeingRidden() && !var1.method2851()) {
          if (!this.world.isRemote) {
-            var1.method3311(this);
+            var1.startRiding(this);
          }
 
          return ActionResultType.method9002(this.world.isRemote);

@@ -269,7 +269,7 @@ public class ZombieEntity extends MonsterEntity {
                   if (!this.world.method7187((double)var12, (double)var13, (double)var14, 7.0)
                      && this.world.checkNoEntityCollision(var10)
                      && this.world.hasNoCollisions(var10)
-                     && !this.world.method7014(var10.getBoundingBox())) {
+                     && !this.world.containsAnyLiquid(var10.getBoundingBox())) {
                      var10.method4233(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), Class2202.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
@@ -414,7 +414,7 @@ public class ZombieEntity extends MonsterEntity {
                      var10.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                      var10.method4276(var1, var2, Class2202.field14397, (Class5093)null, (CompoundNBT)null);
                      var10.method5071(true);
-                     this.method3311(var10);
+                     this.startRiding(var10);
                      var1.addEntity(var10);
                   }
                } else {
@@ -422,7 +422,7 @@ public class ZombieEntity extends MonsterEntity {
                   if (!var14.isEmpty()) {
                      Class1089 var11 = (Class1089)var14.get(0);
                      var11.method5071(true);
-                     this.method3311(var11);
+                     this.startRiding(var11);
                   }
                }
             }

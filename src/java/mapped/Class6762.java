@@ -191,7 +191,7 @@ public class Class6762 extends Class6764 {
          (double)var1.field30849 - this.field29476.getPosZ()
       );
       AxisAlignedBB var5 = this.field29476.getBoundingBox();
-      int var6 = MathHelper.method37774(var4.length() / var5.getAverageEdgeLength());
+      int var6 = MathHelper.ceil(var4.length() / var5.getAverageEdgeLength());
       var4 = var4.scale((double)(1.0F / (float)var6));
 
       for (int var7 = 1; var7 <= var6; var7++) {

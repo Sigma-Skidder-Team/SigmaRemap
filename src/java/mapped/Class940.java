@@ -25,7 +25,7 @@ import java.util.stream.IntStream;
 
 public class Class940 extends Class939 implements Class930, ITickableTileEntity {
    private static final int[] field5304 = IntStream.range(0, 27).toArray();
-   private NonNullList<ItemStack> field5305 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5305 = NonNullList.<ItemStack>withSize(27, ItemStack.EMPTY);
    private int field5306;
    private Class2126 field5307 = Class2126.field13872;
    private float field5308;
@@ -228,7 +228,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    public void method3753(CompoundNBT var1) {
-      this.field5305 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5305 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var1) && var1.contains("Items", 9)) {
          ItemStackHelper.loadAllItems(var1, this.field5305);
       }

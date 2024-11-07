@@ -127,7 +127,7 @@ public final class Class8170 {
                double var25 = (double)var16 + 0.5;
                PlayerEntity var27 = var1.method7186(var23, (double)var10, var25, -1.0, false);
                if (var27 != null) {
-                  double var28 = var27.getDistanceNearest(var23, (double)var10, var25);
+                  double var28 = var27.getDistanceSq(var23, (double)var10, var25);
                   if (method28420(var1, var2, var12, var28)) {
                      if (var18 == null) {
                         var18 = method28424(var1, var8, var9, var0, var1.rand, var12);

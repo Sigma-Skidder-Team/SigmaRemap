@@ -23,7 +23,7 @@ public class Class6837 extends Class6829 {
          );
          double var4 = var3.length();
          var3 = var3.method11333();
-         if (!this.method20820(var3, MathHelper.method37774(var4))) {
+         if (!this.method20820(var3, MathHelper.ceil(var4))) {
             this.field29714 = Class2335.field15966;
          } else {
             this.field29724.setMotion(this.field29724.getMotion().add(var3.scale(0.1)));

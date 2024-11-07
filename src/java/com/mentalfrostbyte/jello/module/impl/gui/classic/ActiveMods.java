@@ -120,9 +120,9 @@ public class ActiveMods extends Module {
                             (float) var7,
                             (float) (var6 + var20) - QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F)
                     );
-                    this.field23963.method23937((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
+                    this.field23963.drawString((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
-                            .method23937(
+                            .drawString(
                                     (float) (var7 - this.field23964.getStringWidth(this.method16856(var16))),
                                     (float) var6 + 1.6F,
                                     this.method16856(var16),

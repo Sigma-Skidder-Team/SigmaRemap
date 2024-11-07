@@ -343,7 +343,7 @@ public class Class7431 implements Class7427 {
                var14 = Math.max(var14, this.field31956 + var24.y + var24.height);
                if (var23 == 10) {
                   var18 = true;
-                  var17 += this.method23943();
+                  var17 += this.getLineHeight();
                   var15++;
                   var14 = 0;
                }
@@ -367,24 +367,24 @@ public class Class7431 implements Class7427 {
          }
 
          var10.field39416 = (short)var13;
-         var10.field39417 = (short)(var15 * this.method23943() + var14);
+         var10.field39417 = (short)(var15 * this.getLineHeight() + var14);
          return var10;
       }
    }
 
    @Override
-   public void method23938(float var1, float var2, String var3, Color var4, int var5, int var6) {
+   public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
       this.method23964(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
    public void method23936(float var1, float var2, String var3) {
-      this.method23937(var1, var2, var3, Color.field16442);
+      this.drawString(var1, var2, var3, Color.field16442);
    }
 
    @Override
-   public void method23937(float var1, float var2, String var3, Color var4) {
-      this.method23938(var1, var2, var3, var4, 0, var3.length());
+   public void drawString(float var1, float var2, String var3, Color var4) {
+      this.drawString(var1, var2, var3, var4, 0, var3.length());
    }
 
    private Class8140 method23965(int var1, int var2, Rectangle var3, GlyphVector var4, int var5) {
@@ -498,7 +498,7 @@ public class Class7431 implements Class7427 {
                }
             }
 
-            return var6 * this.method23943() + var7;
+            return var6 * this.getLineHeight() + var7;
          } else {
             return 0;
          }
@@ -588,7 +588,7 @@ public class Class7431 implements Class7427 {
    }
 
    @Override
-   public int method23943() {
+   public int getLineHeight() {
       return this.field31957 + this.field31956 + this.field31958 + this.field31964 + this.field31966 + this.field31969;
    }
 

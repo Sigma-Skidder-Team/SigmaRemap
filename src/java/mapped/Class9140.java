@@ -88,11 +88,11 @@ public class Class9140 {
 
    public static boolean method34125(AxisAlignedBB var0, Material var1) {
       int var4 = MathHelper.floor(var0.minX);
-      int var5 = MathHelper.method37774(var0.maxX);
+      int var5 = MathHelper.ceil(var0.maxX);
       int var6 = MathHelper.floor(var0.minY);
-      int var7 = MathHelper.method37774(var0.maxY);
+      int var7 = MathHelper.ceil(var0.maxY);
       int var8 = MathHelper.floor(var0.minZ);
-      int var9 = MathHelper.method37774(var0.maxZ);
+      int var9 = MathHelper.ceil(var0.maxZ);
       if (!field41996.world.method7019(var4, var6, var8, var5, var7, var9)) {
          return false;
       } else {

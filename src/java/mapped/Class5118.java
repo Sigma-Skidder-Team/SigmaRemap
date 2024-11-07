@@ -32,7 +32,7 @@ public class Class5118 implements Class5119 {
       for (BlockPos var14 : BlockPos.method8359(var12.add(-6, -6, -6), var12.add(6, 6, 6))) {
          BlockState var15 = var11.getBlockState(var14);
          if (!var15.isIn(Blocks.AIR)) {
-            VoxelShape var16 = var15.method23412(var11, var14);
+            VoxelShape var16 = var15.getShape(var11, var14);
 
             for (AxisAlignedBB var18 : var16.method19521()) {
                AxisAlignedBB var19 = var18.method19668(var14).grow(0.002).offset(-var3, -var5, -var7);

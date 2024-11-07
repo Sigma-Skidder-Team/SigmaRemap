@@ -28,17 +28,17 @@ public class Class6958 implements LoadableImageData {
    private boolean field30148 = true;
 
    @Override
-   public int method21455() {
+   public int method21455() { //getDepth
       return this.field30143;
    }
 
    @Override
-   public int method21457() {
+   public int method21457() { //getHeight
       return this.field30144;
    }
 
    @Override
-   public int method21459() {
+   public int method21459() { //getTexHeight
       return this.field30147;
    }
 

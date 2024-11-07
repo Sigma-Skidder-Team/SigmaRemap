@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.impl.combat.lastReportedPitch;
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 
@@ -55,7 +55,7 @@ public class AAC4Criticals extends Module {
                 field23862 = 0;
             }
 
-            boolean var4 = !this.getBooleanValueFromSettingName("KillAura") || lastReportedPitch.target != null || lastReportedPitch.timedEntityIdk != null;
+            boolean var4 = !this.getBooleanValueFromSettingName("KillAura") || KillAura.target != null || KillAura.timedEntityIdk != null;
             if (mc.player.onGround && mc.player.collidedVertically && var4) {
                 field23862++;
                 mc.player.lastReportedPosY = 0.0;
