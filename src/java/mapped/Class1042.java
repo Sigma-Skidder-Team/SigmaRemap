@@ -58,7 +58,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       Items.field38053,
       Items.field38052,
       Items.field37842,
-      Items.field37841,W
+      Items.field37841,
       Items.field38111,
       new Item[]{Items.field38112}
    );

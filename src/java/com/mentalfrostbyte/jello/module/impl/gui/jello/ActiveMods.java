@@ -85,20 +85,19 @@ public class ActiveMods extends Module {
             if (!event.method13939()) {
                 GlStateManager.translatef(0.0F, (float) (-this.translationOffset), 0.0F);
             } else {
-
-                Scoreboard var4 = mc.world.method6805();
-                Class8375 var5 = null;
-                ScorePlayerTeam var6 = var4.getPlayersTeam(mc.player.method2956());
-                if (var6 != null) {
-                    int var7 = var6.getColor().getColorIndex();
-                    if (var7 >= 0) {
-                        var5 = var4.method20989(3 + var7);
+                Scoreboard scoreboard = mc.world.method6805();
+                Class8375 teamEntry = null;
+                ScorePlayerTeam playerTeam = scoreboard.getPlayersTeam(mc.player.method2956());
+                if (playerTeam != null) {
+                    int colorIndex = playerTeam.getColor().getColorIndex();
+                    if (colorIndex >= 0) {
+                        teamEntry = scoreboard.method20989(3 + colorIndex);
                     }
                 }
 
-                Class8375 var14 = var5 == null ? var4.method20989(1) : var5;
-                Collection var8 = var4.getSortedScores(var14);
-                int var9 = 0;
+                Class8375 entry = teamEntry == null ? scoreboard.method20989(1) : teamEntry;
+                Collection<?> players = scoreboard.getSortedScores(entry);
+                int enabledModulesCount = 0;
 
                 for (Module module : this.activeModules) {
                     if (module.isEnabled()) {
