@@ -677,7 +677,7 @@ public class MusicManager {
 
                 File targetFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
 
-                String urlString = "https://github.com/yt-dlp/yt-dlp/releases/download/2024.10.07/" + fileName;
+                String urlString = "https://github.com/yt-dlp/yt-dlp/releases/download/2024.11.04/" + fileName;
                 try (BufferedInputStream in = new BufferedInputStream(new URL(urlString).openStream());
                      FileOutputStream fileOutputStream = new FileOutputStream(targetFile)) {
                     byte[] dataBuffer = new byte[1024];
