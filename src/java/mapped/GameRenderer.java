@@ -1131,12 +1131,12 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       RenderSystem.disableDepthTest();
       RenderSystem.depthMask(false);
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE, DestFactor.field12927, GlStateManager.SourceFactor.ONE, DestFactor.field12927);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE, DestFactor.ONE, GlStateManager.SourceFactor.ONE, DestFactor.ONE);
       RenderSystem.color4f(var8, var9, var10, 1.0F);
       this.mc.getTextureManager().bindTexture(field800);
       Tessellator tessellator = Tessellator.getInstance();
       BufferBuilder bufferbuilder = tessellator.getBuffer();
-      bufferbuilder.begin(7, DefaultVertexFormats.field43344);
+      bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX);
       bufferbuilder.pos(var15, var17 + var13, -90.0).tex(0.0F, 1.0F).endVertex();
       bufferbuilder.pos(var15 + var11, var17 + var13, -90.0).tex(1.0F, 1.0F).endVertex();
       bufferbuilder.pos(var15 + var11, var17, -90.0).tex(1.0F, 0.0F).endVertex();

@@ -155,11 +155,11 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    private void method2616(ItemStack var1, int var2, int var3, String var4) {
       RenderSystem.translatef(0.0F, 0.0F, 32.0F);
       this.method5703(200);
-      this.field4563.field847 = 200.0F;
+      this.field4563.zLevel = 200.0F;
       this.field4563.method793(var1, var2, var3);
       this.field4563.method798(this.font, var1, var2, var3 - (!this.field4737.isEmpty() ? 8 : 0), var4);
       this.method5703(0);
-      this.field4563.field847 = 0.0F;
+      this.field4563.zLevel = 0.0F;
    }
 
    public void method2617(MatrixStack var1, int var2, int var3) {
@@ -201,7 +201,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       }
 
       this.method5703(100);
-      this.field4563.field847 = 100.0F;
+      this.field4563.zLevel = 100.0F;
       if (var7.isEmpty() && var2.isEnabled()) {
          Pair var14 = var2.method18271();
          if (var14 != null) {
@@ -222,7 +222,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
          this.field4563.method798(this.font, var7, var5, var6, var11);
       }
 
-      this.field4563.field847 = 0.0F;
+      this.field4563.zLevel = 0.0F;
       this.method5703(0);
    }
 

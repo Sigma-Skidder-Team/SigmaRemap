@@ -26,7 +26,7 @@ public class WorldVertexBufferUploader {
       }
    }
 
-   private static void method13896(ByteBuffer var0, int var1, Class7831 var2, int var3) {
+   private static void method13896(ByteBuffer var0, int var1, VertexFormat var2, int var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       ((Buffer)var0).clear();
       if (var3 > 0) {

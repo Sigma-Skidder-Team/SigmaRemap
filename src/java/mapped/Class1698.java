@@ -9,13 +9,13 @@ import java.util.concurrent.CompletableFuture;
 public class Class1698 implements AutoCloseable {
    private static String[] field9241;
    private int field9242;
-   private final Class7831 field9243;
+   private final VertexFormat field9243;
    private int field9244;
    private Class8836 field9245;
    private Class8697 field9246;
    private int field9247;
 
-   public Class1698(Class7831 var1) {
+   public Class1698(VertexFormat var1) {
       this.field9243 = var1;
       RenderSystem.method27936(var1x -> this.field9242 = var1x);
    }
@@ -52,7 +52,7 @@ public class Class1698 implements AutoCloseable {
       if (this.field9245 == null) {
          if (this.field9242 != -1) {
             ByteBuffer var6 = (ByteBuffer)var4.getSecond();
-            this.field9244 = var6.remaining() / this.field9243.method26216();
+            this.field9244 = var6.remaining() / this.field9243.getSize();
             this.method7302();
             RenderSystem.method27910(34962, var6, 35044);
             method7308();

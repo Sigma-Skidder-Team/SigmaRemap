@@ -9,7 +9,7 @@ public final class Class6848 implements Class6843 {
       RenderSystem.disableBlend();
       RenderSystem.depthMask(true);
       var2.bindTexture(AtlasTexture.field1103);
-      var1.begin(7, DefaultVertexFormats.field43340);
+      var1.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
    }
 
    @Override

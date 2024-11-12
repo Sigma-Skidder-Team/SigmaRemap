@@ -10,9 +10,9 @@ public final class Class6844 implements Class6843 {
       RenderSystem.depthMask(true);
       var2.bindTexture(AtlasTexture.field1103);
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12932);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ONE_MINUS_SRC_ALPHA);
       RenderSystem.alphaFunc(516, 0.003921569F);
-      var1.begin(7, DefaultVertexFormats.field43340);
+      var1.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
    }
 
    @Override

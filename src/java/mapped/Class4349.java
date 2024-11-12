@@ -142,7 +142,7 @@ public class Class4349 extends Class4278 {
          var3 = this.field21249.getEmail();
       }
 
-      RenderUtil.method11440(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont,
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + 20),
@@ -151,7 +151,7 @@ public class Class4349 extends Class4278 {
          Class2218.field14492,
          Class2218.field14492
       );
-      RenderUtil.method11440(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont,
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + 18),
@@ -161,7 +161,7 @@ public class Class4349 extends Class4278 {
          Class2218.field14492
       );
       if (!this.field21249.isEmailAValidEmailFormat()) {
-         RenderUtil.method11441(
+         RenderUtil.drawString(
             ResourceRegistry.DefaultClientFont,
             (float)(this.xA + this.widthA / 2),
             (float)(this.yA + 32),
@@ -172,7 +172,7 @@ public class Class4349 extends Class4278 {
             true
          );
       } else {
-         RenderUtil.method11441(
+         RenderUtil.drawString(
             ResourceRegistry.DefaultClientFont,
             (float)(this.xA + this.widthA / 2),
             (float)(this.yA + 29),

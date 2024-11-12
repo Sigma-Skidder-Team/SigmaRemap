@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.util.Direction;
 
 public interface Class8462 {
-   Class7831 method29757();
+   VertexFormat method29757();
 
    void method29758(int var1);
 

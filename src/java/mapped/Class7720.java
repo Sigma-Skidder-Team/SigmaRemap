@@ -356,7 +356,7 @@ public class Class7720 {
       BufferBuilder var5 = var1.getBuffer();
       float var6 = (float)(var2 % 3) / 3.0F;
       float var7 = (float)(var2 / 3) / 2.0F;
-      var5.begin(7, DefaultVertexFormats.field43344);
+      var5.begin(7, DefaultVertexFormats.POSITION_TEX);
       var5.pos(-100.0, -100.0, -100.0).tex(var6, var7).endVertex();
       var5.pos(-100.0, -100.0, 100.0).tex(var6, var7 + 0.5F).endVertex();
       var5.pos(100.0, -100.0, 100.0).tex(var6 + 0.33333334F, var7 + 0.5F).endVertex();

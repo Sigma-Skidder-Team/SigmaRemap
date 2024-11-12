@@ -269,7 +269,7 @@ public class JelloMainMenuScreen extends Screen {
          }
 
          if (this.field20973.getDirection() == Direction.FORWARDS) {
-            RenderUtil.method11440(
+            RenderUtil.drawString(
                ResourceRegistry.JelloMediumFont50,
                (float)(this.widthA / 2),
                (float)(this.heightA / 2 - 30),
@@ -278,7 +278,7 @@ public class JelloMainMenuScreen extends Screen {
                Class2218.field14492,
                Class2218.field14492
             );
-            RenderUtil.method11440(
+            RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
                (float)(this.widthA / 2),
                (float)(this.heightA / 2 + 30),

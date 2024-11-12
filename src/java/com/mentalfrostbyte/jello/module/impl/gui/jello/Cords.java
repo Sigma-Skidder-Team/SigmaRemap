@@ -74,7 +74,7 @@ public class Cords extends Module {
                         GL11.glTranslatef(var6, (float) (var7 + 10), 0.0F);
                         GL11.glScalef(var10, var10, 1.0F);
                         GL11.glTranslatef(-var6, (float) (-var7 - 10), 0.0F);
-                        RenderUtil.method11440(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18_1,
                                 var6,
                                 (float) var7,
@@ -83,7 +83,7 @@ public class Cords extends Module {
                                 Class2218.field14492,
                                 Class2218.field14488
                         );
-                        RenderUtil.method11440(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 var6,
                                 (float) var7,

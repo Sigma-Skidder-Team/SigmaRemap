@@ -91,7 +91,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private ObjectList<Class7002> field945 = new ObjectArrayList(69696);
    private final Set<TileEntity> field946 = Sets.newHashSet();
    private Class9242 viewFrustum;
-   private final Class7831 field948 = DefaultVertexFormats.field43341;
+   private final VertexFormat field948 = DefaultVertexFormats.POSITION;
    private Class1698 field949;
    private Class1698 field950;
    private Class1698 field951;
@@ -127,7 +127,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private Vector3d field981 = Vector3d.ZERO;
    private CloudOption field982;
    private Class9016 field983;
-   private final Class7831 field984 = DefaultVertexFormats.field43334;
+   private final VertexFormat field984 = DefaultVertexFormats.BLOCK;
    private int field985 = -1;
    private int field986;
    private int field987;
@@ -281,7 +281,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
                            var17 = 0;
                            this.mc.getTextureManager().bindTexture(field936);
-                           var15.begin(7, DefaultVertexFormats.field43340);
+                           var15.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
                         }
 
                         int var34 = this.field955 + var21 * var21 * 3121 + var21 * 45238971 + var20 * var20 * 418711 + var20 * 13761 & 31;
@@ -320,7 +320,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
                            var17 = 1;
                            this.mc.getTextureManager().bindTexture(field937);
-                           var15.begin(7, DefaultVertexFormats.field43340);
+                           var15.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
                         }
 
                         float var49 = -((float)(this.field955 & 511) + var2) / 512.0F;
@@ -539,7 +539,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    public void method860() {
       if (this.isRenderEntityOutlines()) {
          RenderSystem.enableBlend();
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ZERO, DestFactor.field12927);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ZERO, DestFactor.ONE);
          this.entityOutlineFramebuffer.framebufferRenderExt(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight(), false);
          RenderSystem.disableBlend();
       }
@@ -578,7 +578,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private void method864(BufferBuilder var1, float var2, boolean var3) {
       int var4 = 64;
       int var5 = 6;
-      var1.begin(7, DefaultVertexFormats.field43341);
+      var1.begin(7, DefaultVertexFormats.POSITION);
       int var6 = (this.field1013 / 64 + 1) * 64 + 64;
 
       for (int var7 = -var6; var7 <= var6; var7 += 64) {
@@ -613,7 +613,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
    private void method866(BufferBuilder var1) {
       Random var2 = new Random(10842L);
-      var1.begin(7, DefaultVertexFormats.field43341);
+      var1.begin(7, DefaultVertexFormats.POSITION);
 
       for (int var3 = 0; var3 < 1500; var3++) {
          double var4 = (double)(var2.nextFloat() * 2.0F - 1.0F);
@@ -1699,7 +1699,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                BlockPos var35 = var32.method27718();
                GlStateManager.translated((double)var35.getX() - var3, (double)var35.getY() - var5, (double)var35.getZ() - var7);
                var15.method7302();
-               DefaultVertexFormats.field43334.method26218(0L);
+               DefaultVertexFormats.BLOCK.method26218(0L);
                GlStateManager.method23890();
                if (var9) {
                   ShadersRender.method17166();
@@ -1721,7 +1721,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       RenderSystem.popMatrix();
       Class1698.method7308();
       RenderSystem.clearCurrentColor();
-      DefaultVertexFormats.field43334.method26219();
+      DefaultVertexFormats.BLOCK.method26219();
       this.mc.getProfiler().endSection();
       if (var9) {
          ShadersRender.method17163(var1);
@@ -1859,7 +1859,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          this.method884(var3, 1, 5, 6, 2, 1, 0, 1);
          var2.draw();
          RenderSystem.depthMask(false);
-         var3.begin(1, DefaultVertexFormats.field43341);
+         var3.begin(1, DefaultVertexFormats.POSITION);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.method883(var3, 0);
          this.method883(var3, 1);
@@ -2106,7 +2106,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             Shaders.method33115();
          }
 
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12927, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
          var1.push();
          float var22 = 1.0F - this.world.method6792(var2);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, var22);
@@ -2125,7 +2125,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          float var24 = 30.0F;
          if (Config.method26881()) {
             this.field940.bindTexture(field932);
-            var8.begin(7, DefaultVertexFormats.field43344);
+            var8.begin(7, DefaultVertexFormats.POSITION_TEX);
             var8.pos(var23, -var24, 100.0F, -var24).tex(0.0F, 0.0F).endVertex();
             var8.pos(var23, var24, 100.0F, -var24).tex(1.0F, 0.0F).endVertex();
             var8.pos(var23, var24, 100.0F, var24).tex(1.0F, 1.0F).endVertex();
@@ -2144,7 +2144,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             float var34 = (float)(var30 + 0) / 2.0F;
             float var35 = (float)(var28 + 1) / 4.0F;
             float var36 = (float)(var30 + 1) / 2.0F;
-            var8.begin(7, DefaultVertexFormats.field43344);
+            var8.begin(7, DefaultVertexFormats.POSITION_TEX);
             var8.pos(var23, -var24, -100.0F, var24).tex(var35, var36).endVertex();
             var8.pos(var23, var24, -100.0F, var24).tex(var31, var36).endVertex();
             var8.pos(var23, var24, -100.0F, -var24).tex(var31, var34).endVertex();
@@ -2230,7 +2230,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             RenderSystem.enableAlphaTest();
             RenderSystem.enableDepthTest();
             RenderSystem.method27939();
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12932);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ONE_MINUS_SRC_ALPHA);
             RenderSystem.method27840();
             RenderSystem.depthMask(true);
             float var10 = 12.0F;
@@ -2270,7 +2270,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                   this.field953.close();
                }
 
-               this.field953 = new Class1698(DefaultVertexFormats.field43349);
+               this.field953 = new Class1698(DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL);
                this.method890(var29, var16, var18, var20, var25);
                var29.finishDrawing();
                this.field953.method7303(var29);
@@ -2282,7 +2282,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             var1.translate((double)(-var22), (double)var23, (double)(-var24));
             if (this.field953 != null) {
                this.field953.method7302();
-               DefaultVertexFormats.field43349.method26218(0L);
+               DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL.method26218(0L);
                int var35 = this.field982 == CloudOption.field11186 ? 0 : 1;
 
                for (int var30 = var35; var30 < 2; var30++) {
@@ -2296,7 +2296,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
 
                Class1698.method7308();
-               DefaultVertexFormats.field43349.method26219();
+               DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL.method26219();
             }
 
             var1.pop();
@@ -2332,7 +2332,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       float var25 = var16 * 0.8F;
       float var26 = var17 * 0.8F;
       float var27 = var18 * 0.8F;
-      var1.begin(7, DefaultVertexFormats.field43349);
+      var1.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL);
       float var28 = (float)Math.floor(var4 / 4.0) * 4.0F;
       if (Config.method26822()) {
          for (int var29 = -3; var29 <= 4; var29++) {
@@ -2600,7 +2600,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          double var12 = var1.getPos().z;
          RenderSystem.enableBlend();
          RenderSystem.enableDepthTest();
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12927, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
          this.field940.bindTexture(field935);
          RenderSystem.depthMask(Minecraft.isFabulousGraphicsEnabled());
          RenderSystem.pushMatrix();
@@ -2618,7 +2618,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          float var19 = 0.0F;
          float var20 = 0.0F;
          float var21 = 128.0F;
-         var2.begin(7, DefaultVertexFormats.field43344);
+         var2.begin(7, DefaultVertexFormats.POSITION_TEX);
          double var22 = Math.max((double) MathHelper.floor(var12 - var4), var3.method24531());
          double var24 = Math.min((double) MathHelper.ceil(var12 + var4), var3.method24533());
          if (var8 > var3.method24532() - var4) {
@@ -2686,7 +2686,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          RenderSystem.method27856(0.0F, 0.0F);
          RenderSystem.method27853();
          RenderSystem.enableAlphaTest();
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
          RenderSystem.disableBlend();
          RenderSystem.popMatrix();
          RenderSystem.depthMask(true);

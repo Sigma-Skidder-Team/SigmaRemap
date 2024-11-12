@@ -54,7 +54,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
          MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
       );
       if (this.getTypedText() != null) {
-         RenderUtil.method11440(
+         RenderUtil.drawString(
             this.getFont(),
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),

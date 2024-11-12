@@ -372,7 +372,7 @@ public class UIInput extends Class4278 {
       );
       Class2218 var12 = this.textColor.method19411();
       Class2218 var13 = this.textColor.method19413();
-      RenderUtil.method11440(
+      RenderUtil.drawString(
          this.font,
          (float)var7 + this.field20746,
          (float)(this.yA + this.heightA / 2),

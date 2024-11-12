@@ -32,7 +32,7 @@ public class Class5136 implements Class5119 {
    private void method15908(BlockPos var1, Class9180 var2) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.color4f(0.0F, 1.0F, 0.0F, 0.75F);
       RenderSystem.disableTexture();
       DebugRenderer.method27456(var1, 0.02F, var2.method34331(), var2.method34332(), var2.method34333(), var2.method34334());

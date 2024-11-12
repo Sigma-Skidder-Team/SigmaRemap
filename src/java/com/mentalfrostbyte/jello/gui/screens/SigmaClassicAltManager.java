@@ -141,7 +141,7 @@ public class SigmaClassicAltManager extends Screen {
       this.method13401();
       super.draw(var1);
       RenderUtil.drawString(ResourceRegistry.DefaultClientFont, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
-      RenderUtil.method11440(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          20.0F,
@@ -150,7 +150,7 @@ public class SigmaClassicAltManager extends Screen {
          Class2218.field14492,
          Class2218.field14488
       );
-      RenderUtil.method11441(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          40.0F,

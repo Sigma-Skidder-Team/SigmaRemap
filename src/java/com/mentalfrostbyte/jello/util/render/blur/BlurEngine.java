@@ -69,7 +69,7 @@ public class BlurEngine {
             blurShader.createBindFramebuffers(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
          }
 
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
          RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);

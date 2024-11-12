@@ -9,8 +9,8 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import java.util.stream.Collectors;
 
-public class Class7831 {
-   private final ImmutableList<Class8209> field33616;
+public class VertexFormat {
+   private final ImmutableList<VertexFormatElement> field33616;
    private final IntList field33617 = new IntArrayList();
    private final int field33618;
    private int field33619 = -1;
@@ -18,13 +18,13 @@ public class Class7831 {
    private int field33621 = -1;
    private final Int2IntMap field33622 = new Int2IntArrayMap();
 
-   public Class7831(ImmutableList<Class8209> var1) {
+   public VertexFormat(ImmutableList<VertexFormatElement> var1) {
       this.field33616 = var1;
       int var4 = 0;
       UnmodifiableIterator var5 = var1.iterator();
 
       while (var5.hasNext()) {
-         Class8209 var6 = (Class8209)var5.next();
+         VertexFormatElement var6 = (VertexFormatElement)var5.next();
          this.field33617.add(var4);
          Class2142 var7 = var6.method28517();
          if (var7 != Class2142.field14018) {
@@ -58,14 +58,14 @@ public class Class7831 {
    }
 
    public int method26215() {
-      return this.method26216() / 4;
+      return this.getSize() / 4;
    }
 
-   public int method26216() {
+   public int getSize() {
       return this.field33618;
    }
 
-   public ImmutableList<Class8209> method26217() {
+   public ImmutableList<VertexFormatElement> method26217() {
       return this.field33616;
    }
 
@@ -73,7 +73,7 @@ public class Class7831 {
    public boolean equals(Object var1) {
       if (this != var1) {
          if (var1 != null && this.getClass() == var1.getClass()) {
-            Class7831 var4 = (Class7831)var1;
+            VertexFormat var4 = (VertexFormat)var1;
             return this.field33618 == var4.field33618 ? this.field33616.equals(var4.field33616) : false;
          } else {
             return false;
@@ -90,11 +90,11 @@ public class Class7831 {
 
    public void method26218(long var1) {
       if (RenderSystem.isOnRenderThread()) {
-         int var5 = this.method26216();
+         int var5 = this.getSize();
          ImmutableList var6 = this.method26217();
 
          for (int var7 = 0; var7 < var6.size(); var7++) {
-            ((Class8209)var6.get(var7)).method28520(var1 + (long)this.field33617.getInt(var7), var5);
+            ((VertexFormatElement)var6.get(var7)).method28520(var1 + (long)this.field33617.getInt(var7), var5);
          }
       } else {
          RenderSystem.recordRenderCall(() -> this.method26218(var1));
@@ -106,7 +106,7 @@ public class Class7831 {
          UnmodifiableIterator var3 = this.method26217().iterator();
 
          while (var3.hasNext()) {
-            Class8209 var4 = (Class8209)var3.next();
+            VertexFormatElement var4 = (VertexFormatElement)var3.next();
             var4.method28521();
          }
       } else {

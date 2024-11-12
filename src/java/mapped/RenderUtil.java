@@ -201,9 +201,9 @@ public class RenderUtil {
       BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.color4f(var8, var9, var10, var14);
-      var12.begin(7, DefaultVertexFormats.field43341);
+      var12.begin(7, DefaultVertexFormats.POSITION);
       var12.pos((double)var0, (double)var3, 0.0).endVertex();
       var12.pos((double)var2, (double)var3, 0.0).endVertex();
       var12.pos((double)var2, (double)var1, 0.0).endVertex();
@@ -228,7 +228,7 @@ public class RenderUtil {
 
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       var4.bindFramebuffer(true);
       var4.framebufferRender((int)var0 - (int)var2, (int)var1 - (int)var3);
       RenderSystem.enableTexture();
@@ -266,7 +266,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.shadeModel(7425);
       Tessellator var16 = Tessellator.getInstance();
       BufferBuilder var17 = var16.getBuffer();
@@ -302,7 +302,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.shadeModel(7425);
       Tessellator var26 = Tessellator.getInstance();
       BufferBuilder var27 = var26.getBuffer();
@@ -432,14 +432,14 @@ public class RenderUtil {
    }
 
    public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4) {
-      method11441(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
+      drawString(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
    }
 
-   public static void method11440(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
-      method11441(var0, var1, var2, var3, var4, var5, var6, false);
+   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
+      drawString(var0, var1, var2, var3, var4, var5, var6, false);
    }
 
-   public static void method11441(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
+   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
       RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
@@ -1279,12 +1279,12 @@ public class RenderUtil {
       GL11.glPushMatrix();
       RenderSystem.matrixMode(5888);
       RenderSystem.loadIdentity();
-      mc.getItemRenderer().field847 -= 1101.0F;
+      mc.getItemRenderer().zLevel -= 1101.0F;
       RenderSystem.scaled(1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
       mc.getItemRenderer().renderItemIntoGUI(var0, 0, 0);
-      mc.getItemRenderer().field847 += 1101.0F;
+      mc.getItemRenderer().zLevel += 1101.0F;
       TextureImpl.unbind();
       mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
       GL11.glPopMatrix();

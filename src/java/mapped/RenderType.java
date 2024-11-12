@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 public abstract class RenderType extends Class4510 {
    private static final RenderType field21794 = method14347(
       "solid",
-      DefaultVertexFormats.field43334,
+      DefaultVertexFormats.BLOCK,
       7,
       2097152,
       true,
@@ -23,7 +23,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21795 = method14347(
       "cutout_mipped",
-      DefaultVertexFormats.field43334,
+      DefaultVertexFormats.BLOCK,
       7,
       131072,
       true,
@@ -32,25 +32,25 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21796 = method14347(
       "cutout",
-      DefaultVertexFormats.field43334,
+      DefaultVertexFormats.BLOCK,
       7,
       131072,
       true,
       false,
       Class9484.method36614().method31361(field21748).method31365(field21756).method31358(field21750).method31362(field21746).method31373(true)
    );
-   private static final RenderType field21797 = method14347("translucent", DefaultVertexFormats.field43334, 7, 262144, true, true, method14303());
-   private static final RenderType field21798 = method14347("translucent_moving_block", DefaultVertexFormats.field43334, 7, 262144, false, true, method14305());
-   private static final RenderType field21799 = method14347("translucent_no_crumbling", DefaultVertexFormats.field43334, 7, 262144, false, true, method14303());
+   private static final RenderType field21797 = method14347("translucent", DefaultVertexFormats.BLOCK, 7, 262144, true, true, method14303());
+   private static final RenderType field21798 = method14347("translucent_moving_block", DefaultVertexFormats.BLOCK, 7, 262144, false, true, method14305());
+   private static final RenderType field21799 = method14347("translucent_no_crumbling", DefaultVertexFormats.BLOCK, 7, 262144, false, true, method14303());
    private static final RenderType field21800 = method14346(
-      "leash", DefaultVertexFormats.field43343, 7, 256, Class9484.method36614().method31358(field21751).method31364(field21763).method31365(field21756).method31373(false)
+      "leash", DefaultVertexFormats.POSITION_COLOR_LIGHTMAP, 7, 256, Class9484.method36614().method31358(field21751).method31364(field21763).method31365(field21756).method31373(false)
    );
    private static final RenderType field21801 = method14346(
-      "water_mask", DefaultVertexFormats.field43341, 7, 256, Class9484.method36614().method31358(field21751).method31371(field21769).method31373(false)
+      "water_mask", DefaultVertexFormats.POSITION, 7, 256, Class9484.method36614().method31358(field21751).method31371(field21769).method31373(false)
    );
    private static final RenderType field21802 = method14346(
       "armor_glint",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -65,7 +65,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21803 = method14346(
       "armor_entity_glint",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -80,7 +80,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21804 = method14346(
       "glint_translucent",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -95,7 +95,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21805 = method14346(
       "glint",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -109,7 +109,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21806 = method14346(
       "glint_direct",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -123,7 +123,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21807 = method14346(
       "entity_glint",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -138,7 +138,7 @@ public abstract class RenderType extends Class4510 {
    );
    private static final RenderType field21808 = method14346(
       "entity_glint_direct",
-      DefaultVertexFormats.field43344,
+      DefaultVertexFormats.POSITION_TEX,
       7,
       256,
       Class9484.method36614()
@@ -159,7 +159,7 @@ public abstract class RenderType extends Class4510 {
       true,
       Class9484.method36614().method31371(field21767).method31359(field21739).method31369(field21780).method31361(field21748).method31373(false)
    );
-   private static final RenderType field21810 = method14347("tripwire", DefaultVertexFormats.field43334, 7, 262144, true, true, method14342());
+   private static final RenderType field21810 = method14347("tripwire", DefaultVertexFormats.BLOCK, 7, 262144, true, true, method14342());
    public static final Class4521 field21811 = method14346(
       "lines",
       DefaultVertexFormats.POSITION_COLOR,
@@ -173,7 +173,7 @@ public abstract class RenderType extends Class4510 {
          .method31371(field21767)
          .method31373(false)
    );
-   private final Class7831 field21812;
+   private final VertexFormat field21812;
    private final int field21813;
    private final int field21814;
    private final boolean field21815;
@@ -263,7 +263,7 @@ public abstract class RenderType extends Class4510 {
                .method31366(field21758)
                .method31368(field21772)
                .method31373(true);
-            return method14347("armor_cutout_no_cull", DefaultVertexFormats.field43335, 7, 256, true, false, var3x);
+            return method14347("armor_cutout_no_cull", DefaultVertexFormats.ENTITY, 7, 256, true, false, var3x);
          }
       );
    }
@@ -281,7 +281,7 @@ public abstract class RenderType extends Class4510 {
                .method31365(field21756)
                .method31366(field21758)
                .method31373(true);
-            return method14347("entity_solid", DefaultVertexFormats.field43335, 7, 256, true, false, var3x);
+            return method14347("entity_solid", DefaultVertexFormats.ENTITY, 7, 256, true, false, var3x);
          }
       );
    }
@@ -300,7 +300,7 @@ public abstract class RenderType extends Class4510 {
                .method31365(field21756)
                .method31366(field21758)
                .method31373(true);
-            return method14347("entity_cutout", DefaultVertexFormats.field43335, 7, 256, true, false, var3x);
+            return method14347("entity_cutout", DefaultVertexFormats.ENTITY, 7, 256, true, false, var3x);
          }
       );
    }
@@ -321,7 +321,7 @@ public abstract class RenderType extends Class4510 {
                .method31365(field21756)
                .method31366(field21758)
                .method31373(var1);
-            return method14347("entity_cutout_no_cull", DefaultVertexFormats.field43335, 7, 256, true, false, var4x);
+            return method14347("entity_cutout_no_cull", DefaultVertexFormats.ENTITY, 7, 256, true, false, var4x);
          }
       );
    }
@@ -347,7 +347,7 @@ public abstract class RenderType extends Class4510 {
                .method31366(field21758)
                .method31368(field21772)
                .method31373(var1);
-            return method14347("entity_cutout_no_cull_z_offset", DefaultVertexFormats.field43335, 7, 256, true, false, var4x);
+            return method14347("entity_cutout_no_cull_z_offset", DefaultVertexFormats.ENTITY, 7, 256, true, false, var4x);
          }
       );
    }
@@ -372,7 +372,7 @@ public abstract class RenderType extends Class4510 {
                .method31366(field21758)
                .method31371(Class4510.field21767)
                .method31373(true);
-            return method14347("item_entity_translucent_cull", DefaultVertexFormats.field43335, 7, 256, true, true, var3x);
+            return method14347("item_entity_translucent_cull", DefaultVertexFormats.ENTITY, 7, 256, true, true, var3x);
          }
       );
    }
@@ -391,7 +391,7 @@ public abstract class RenderType extends Class4510 {
                .method31365(field21756)
                .method31366(field21758)
                .method31373(true);
-            return method14347("entity_translucent_cull", DefaultVertexFormats.field43335, 7, 256, true, true, var3x);
+            return method14347("entity_translucent_cull", DefaultVertexFormats.ENTITY, 7, 256, true, true, var3x);
          }
       );
    }
@@ -412,7 +412,7 @@ public abstract class RenderType extends Class4510 {
                .method31365(field21756)
                .method31366(field21758)
                .method31373(var1);
-            return method14347("entity_translucent", DefaultVertexFormats.field43335, 7, 256, true, true, var4x);
+            return method14347("entity_translucent", DefaultVertexFormats.ENTITY, 7, 256, true, true, var4x);
          }
       );
    }
@@ -435,7 +435,7 @@ public abstract class RenderType extends Class4510 {
                .method31364(field21763)
                .method31365(field21756)
                .method31373(true);
-            return method14346("entity_smooth_cutout", DefaultVertexFormats.field43335, 7, 256, var3x);
+            return method14346("entity_smooth_cutout", DefaultVertexFormats.ENTITY, 7, 256, var3x);
          }
       );
    }
@@ -453,7 +453,7 @@ public abstract class RenderType extends Class4510 {
                .method31371(!var1 ? field21767 : field21768)
                .method31367(field21773)
                .method31373(false);
-            return method14347("beacon_beam", DefaultVertexFormats.field43334, 7, 256, false, true, var4x);
+            return method14347("beacon_beam", DefaultVertexFormats.BLOCK, 7, 256, false, true, var4x);
          }
       );
    }
@@ -473,7 +473,7 @@ public abstract class RenderType extends Class4510 {
                .method31365(field21756)
                .method31366(field21758)
                .method31373(false);
-            return method14346("entity_decal", DefaultVertexFormats.field43335, 7, 256, var3x);
+            return method14346("entity_decal", DefaultVertexFormats.ENTITY, 7, 256, var3x);
          }
       );
    }
@@ -494,7 +494,7 @@ public abstract class RenderType extends Class4510 {
                .method31366(field21758)
                .method31371(field21768)
                .method31373(false);
-            return method14347("entity_no_outline", DefaultVertexFormats.field43335, 7, 256, false, true, var3x);
+            return method14347("entity_no_outline", DefaultVertexFormats.ENTITY, 7, 256, false, true, var3x);
          }
       );
    }
@@ -517,7 +517,7 @@ public abstract class RenderType extends Class4510 {
                .method31363(field21766)
                .method31368(field21772)
                .method31373(false);
-            return method14347("entity_shadow", DefaultVertexFormats.field43335, 7, 256, false, false, var3x);
+            return method14347("entity_shadow", DefaultVertexFormats.ENTITY, 7, 256, false, false, var3x);
          }
       );
    }
@@ -534,7 +534,7 @@ public abstract class RenderType extends Class4510 {
                .method31362(new Class4511(var1))
                .method31364(field21763)
                .method31373(true);
-            return method14346("entity_alpha", DefaultVertexFormats.field43335, 7, 256, var4x);
+            return method14346("entity_alpha", DefaultVertexFormats.ENTITY, 7, 256, var4x);
          }
       );
    }
@@ -548,7 +548,7 @@ public abstract class RenderType extends Class4510 {
             Class4518 var3x = new Class4518(var3, false, false);
             return method14347(
                "eyes",
-               DefaultVertexFormats.field43335,
+               DefaultVertexFormats.ENTITY,
                7,
                256,
                false,
@@ -568,7 +568,7 @@ public abstract class RenderType extends Class4510 {
          var2,
          () -> method14347(
                "energy_swirl",
-               DefaultVertexFormats.field43335,
+               DefaultVertexFormats.ENTITY,
                7,
                256,
                false,
@@ -659,7 +659,7 @@ public abstract class RenderType extends Class4510 {
             Class4518 var3 = new Class4518(var0, false, false);
             return method14347(
                "crumbling",
-               DefaultVertexFormats.field43334,
+               DefaultVertexFormats.BLOCK,
                7,
                256,
                false,
@@ -682,7 +682,7 @@ public abstract class RenderType extends Class4510 {
          var0,
          () -> method14347(
                "text",
-               DefaultVertexFormats.field43347,
+               DefaultVertexFormats.POSITION_COLOR_TEX_LIGHTMAP,
                7,
                256,
                false,
@@ -703,7 +703,7 @@ public abstract class RenderType extends Class4510 {
          var0,
          () -> method14347(
                "text_see_through",
-               DefaultVertexFormats.field43347,
+               DefaultVertexFormats.POSITION_COLOR_TEX_LIGHTMAP,
                7,
                256,
                false,
@@ -770,7 +770,7 @@ public abstract class RenderType extends Class4510 {
       return field21811;
    }
 
-   public RenderType(String var1, Class7831 var2, int var3, int var4, boolean var5, boolean var6, Runnable var7, Runnable var8) {
+   public RenderType(String var1, VertexFormat var2, int var3, int var4, boolean var5, boolean var6, Runnable var7, Runnable var8) {
       super(var1, var7, var8);
       this.field21812 = var2;
       this.field21813 = var3;
@@ -780,11 +780,11 @@ public abstract class RenderType extends Class4510 {
       this.field21817 = Optional.<RenderType>of(this);
    }
 
-   public static Class4521 method14346(String var0, Class7831 var1, int var2, int var3, Class9484 var4) {
+   public static Class4521 method14346(String var0, VertexFormat var1, int var2, int var3, Class9484 var4) {
       return method14347(var0, var1, var2, var3, false, false, var4);
    }
 
-   public static Class4521 method14347(String var0, Class7831 var1, int var2, int var3, boolean var4, boolean var5, Class9484 var6) {
+   public static Class4521 method14347(String var0, VertexFormat var1, int var2, int var3, boolean var4, boolean var5, Class9484 var6) {
       return Class4521.method14394(var0, var1, var2, var3, var4, var5, var6);
    }
 
@@ -830,7 +830,7 @@ public abstract class RenderType extends Class4510 {
       return this.field21814;
    }
 
-   public Class7831 method14351() {
+   public VertexFormat method14351() {
       return this.field21812;
    }
 

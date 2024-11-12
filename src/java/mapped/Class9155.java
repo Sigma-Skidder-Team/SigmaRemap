@@ -90,7 +90,7 @@ public class Class9155 {
    }
 
    private int[] method34177(Class9840 var1, TextureAtlasSprite var2, Direction var3, float[] var4, Class6979 var5, Class7360 var6, boolean var7) {
-      int var10 = !Config.isShaders() ? DefaultVertexFormats.field43338 : DefaultVertexFormats.field43339;
+      int var10 = !Config.isShaders() ? DefaultVertexFormats.BLOCK_VANILLA_SIZE : DefaultVertexFormats.BLOCK_SHADERS_SIZE;
       int[] var11 = new int[var10];
 
       for (int var12 = 0; var12 < 4; var12++) {

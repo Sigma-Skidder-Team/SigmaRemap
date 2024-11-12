@@ -67,8 +67,8 @@ public class Class7698 {
 
    public static void method25379(BufferBuilder var0) {
       Class7698 var3 = var0.field24132;
-      Class7831 var4 = var0.method17089();
-      var3.field32958 = var4.method26216() / 4;
+      VertexFormat var4 = var0.method17089();
+      var3.field32958 = var4.getSize() / 4;
       var3.field32962 = var4.method26223();
       var3.field32963 = var3.field32962;
       var3.field32964 = var4.method26227(0);
@@ -252,9 +252,9 @@ public class Class7698 {
       }
    }
 
-   public static void method25387(int var0, int var1, int var2, Class7831 var3, ByteBuffer var4) {
+   public static void method25387(int var0, int var1, int var2, VertexFormat var3, ByteBuffer var4) {
       if (var2 != 0) {
-         int var7 = var3.method26216();
+         int var7 = var3.getSize();
          if (var7 != 64) {
             GlStateManager.drawArrays(var0, var1, var2);
          } else {

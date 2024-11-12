@@ -23,8 +23,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
 public class Class7431 implements Font {
    private static final int field31947 = 200;
    private static final int field31948 = 1114111;

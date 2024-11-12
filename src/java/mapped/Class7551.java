@@ -526,7 +526,7 @@ public class Class7551 {
                if (var20 != null) {
                   BufferBuilder var21 = var20.method26203(var18);
                   if (!var21.method17074()) {
-                     var21.begin(7, DefaultVertexFormats.field43334);
+                     var21.begin(7, DefaultVertexFormats.BLOCK);
                   }
 
                   for (int var22 = 0; var22 < var19.method37213(); var22++) {

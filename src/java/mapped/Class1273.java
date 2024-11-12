@@ -233,7 +233,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          RenderSystem.depthFunc(515);
          RenderSystem.disableDepthTest();
          RenderSystem.enableBlend();
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ZERO, DestFactor.field12927);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ZERO, DestFactor.ONE);
          RenderSystem.disableAlphaTest();
          RenderSystem.shadeModel(7425);
          RenderSystem.disableTexture();
@@ -468,14 +468,14 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
                RenderSystem.disableTexture();
                float var21 = !this.method6057() ? 0.5F : 1.0F;
                RenderSystem.color4f(var21, var21, var21, 1.0F);
-               var11.begin(7, DefaultVertexFormats.field43341);
+               var11.begin(7, DefaultVertexFormats.POSITION);
                var11.pos((double)var19, (double)(var15 + var16 + 2), 0.0).endVertex();
                var11.pos((double)var20, (double)(var15 + var16 + 2), 0.0).endVertex();
                var11.pos((double)var20, (double)(var15 - 2), 0.0).endVertex();
                var11.pos((double)var19, (double)(var15 - 2), 0.0).endVertex();
                var10.draw();
                RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
-               var11.begin(7, DefaultVertexFormats.field43341);
+               var11.begin(7, DefaultVertexFormats.POSITION);
                var11.pos((double)(var19 + 1), (double)(var15 + var16 + 1), 0.0).endVertex();
                var11.pos((double)(var20 - 1), (double)(var15 + var16 + 1), 0.0).endVertex();
                var11.pos((double)(var20 - 1), (double)(var15 - 1), 0.0).endVertex();

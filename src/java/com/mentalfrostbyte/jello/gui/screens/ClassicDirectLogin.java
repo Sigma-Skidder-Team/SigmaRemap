@@ -74,10 +74,10 @@ public class ClassicDirectLogin extends Screen {
       RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ResourceList.mainmenubackground);
       RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.PALE_RED.color, 0.1F));
       RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.95F));
-      RenderUtil.method11440(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont, (float)(this.getWidthA() / 2), 38.0F, "Add Login", ClientColors.LIGHT_GREYISH_BLUE.color, Class2218.field14492, Class2218.field14488
       );
-      RenderUtil.method11441(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          58.0F,

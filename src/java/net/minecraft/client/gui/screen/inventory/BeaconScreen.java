@@ -116,13 +116,13 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
       int var7 = (this.width - this.xSize) / 2;
       int var8 = (this.height - this.ySize) / 2;
       this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
-      this.field4563.field847 = 100.0F;
+      this.field4563.zLevel = 100.0F;
       this.field4563.method793(new ItemStack(Items.field37803), var7 + 20, var8 + 109);
       this.field4563.method793(new ItemStack(Items.EMERALD), var7 + 41, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field37800), var7 + 41 + 22, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field37802), var7 + 42 + 44, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field37801), var7 + 42 + 66, var8 + 109);
-      this.field4563.field847 = 0.0F;
+      this.field4563.zLevel = 0.0F;
    }
 
    @Override

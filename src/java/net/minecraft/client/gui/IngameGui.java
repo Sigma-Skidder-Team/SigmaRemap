@@ -339,7 +339,7 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.renderCrosshair(10);
                 RenderSystem.popMatrix();
             } else {
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.ONE_MINUS_SRC_COLOR, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.getCooledAttackStrength(0.0F);
@@ -934,7 +934,7 @@ public class IngameGui extends AbstractGui {
         this.field6716.getTextureManager().bindTexture(field6713);
         Tessellator var3 = Tessellator.getInstance();
         BufferBuilder var4 = var3.getBuffer();
-        var4.begin(7, DefaultVertexFormats.field43344);
+        var4.begin(7, DefaultVertexFormats.POSITION_TEX);
         var4.pos(0.0, (double) this.field6742, -90.0).tex(0.0F, 1.0F).endVertex();
         var4.pos((double) this.field6741, (double) this.field6742, -90.0).tex(1.0F, 1.0F).endVertex();
         var4.pos((double) this.field6741, 0.0, -90.0).tex(1.0F, 0.0F).endVertex();
@@ -967,7 +967,7 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.ONE_MINUS_SRC_COLOR, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
             if (!(var5 > 0.0F)) {
                 RenderSystem.color4f(this.field6723, this.field6723, this.field6723, 1.0F);
             } else {
@@ -977,7 +977,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getTextureManager().bindTexture(field6711);
             Tessellator var10 = Tessellator.getInstance();
             BufferBuilder var11 = var10.getBuffer();
-            var11.begin(7, DefaultVertexFormats.field43344);
+            var11.begin(7, DefaultVertexFormats.POSITION_TEX);
             var11.pos(0.0, (double) this.field6742, -90.0).tex(0.0F, 1.0F).endVertex();
             var11.pos((double) this.field6741, (double) this.field6742, -90.0).tex(1.0F, 1.0F).endVertex();
             var11.pos((double) this.field6741, 0.0, -90.0).tex(1.0F, 0.0F).endVertex();
@@ -989,7 +989,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
         }
     }
 
@@ -1013,7 +1013,7 @@ public class IngameGui extends AbstractGui {
         float var8 = var4.getMaxV();
         Tessellator var9 = Tessellator.getInstance();
         BufferBuilder var10 = var9.getBuffer();
-        var10.begin(7, DefaultVertexFormats.field43344);
+        var10.begin(7, DefaultVertexFormats.POSITION_TEX);
         var10.pos(0.0, (double) this.field6742, -90.0).tex(var5, var8).endVertex();
         var10.pos((double) this.field6741, (double) this.field6742, -90.0).tex(var7, var8).endVertex();
         var10.pos((double) this.field6741, 0.0, -90.0).tex(var7, var6).endVertex();

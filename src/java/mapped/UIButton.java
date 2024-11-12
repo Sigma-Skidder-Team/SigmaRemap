@@ -40,7 +40,7 @@ public class UIButton extends Class4247 {
          int var7 = this.getFont().getWidth(this.getTypedText());
          float var8 = 18;
          float var9 = (float)Math.pow((double)this.field20711.calcPercent(), 3.0);
-         RenderUtil.method11440(
+         RenderUtil.drawString(
             this.getFont(),
             (float)var5,
             (float)var6,

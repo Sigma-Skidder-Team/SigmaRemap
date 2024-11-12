@@ -10,7 +10,7 @@ public final class Class6847 implements Class6843 {
       RenderSystem.defaultBlendFunc();
       RenderSystem.depthMask(true);
       var2.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-      var1.begin(7, DefaultVertexFormats.field43340);
+      var1.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
    }
 
    @Override

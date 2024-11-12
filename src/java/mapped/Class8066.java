@@ -60,7 +60,7 @@ public class Class8066 {
       this.field34637 = var1;
       this.field34609 = new AtomicReference<Class7457>(Class7457.field32071);
       this.field34612 = Sets.newHashSet();
-      this.field34613 = RenderType.method14349().stream().collect(Collectors.toMap(var0 -> (RenderType)var0, var0 -> new Class1698(DefaultVertexFormats.field43334)));
+      this.field34613 = RenderType.method14349().stream().collect(Collectors.toMap(var0 -> (RenderType)var0, var0 -> new Class1698(DefaultVertexFormats.BLOCK)));
       this.field34615 = -1;
       this.field34616 = true;
       this.field34617 = new BlockPos.Mutable(-1, -1, -1);
@@ -155,7 +155,7 @@ public class Class8066 {
    }
 
    private void method27714(BufferBuilder var1) {
-      var1.begin(7, DefaultVertexFormats.field43334);
+      var1.begin(7, DefaultVertexFormats.BLOCK);
    }
 
    public Class7457 method27715() {

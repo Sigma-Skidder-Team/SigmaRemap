@@ -3,7 +3,7 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class8209 {
+public class VertexFormatElement {
    private static final Logger field35246 = LogManager.getLogger();
    private final Class2061 field35247;
    private final Class2142 field35248;
@@ -11,7 +11,7 @@ public class Class8209 {
    private final int field35250;
    private final int field35251;
 
-   public Class8209(int var1, Class2061 var2, Class2142 var3, int var4) {
+   public VertexFormatElement(int var1, Class2061 var2, Class2142 var3, int var4) {
       if (!this.method28515(var1, var3)) {
          field35246.warn("Multiple vertex elements of the same type other than UVs are not supported. Forcing type to UV.");
          this.field35248 = Class2142.field14021;
@@ -54,7 +54,7 @@ public class Class8209 {
    public boolean equals(Object var1) {
       if (this != var1) {
          if (var1 != null && this.getClass() == var1.getClass()) {
-            Class8209 var4 = (Class8209)var1;
+            VertexFormatElement var4 = (VertexFormatElement)var1;
             if (this.field35250 != var4.field35250) {
                return false;
             } else if (this.field35249 != var4.field35249) {

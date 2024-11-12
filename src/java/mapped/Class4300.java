@@ -36,7 +36,7 @@ public class Class4300 extends Class4278 {
          2,
          MultiUtilities.applyAlpha(this.field20839, 0.2F)
       );
-      RenderUtil.method11440(
+      RenderUtil.drawString(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getXA() + this.getWidthA() / 2),
          (float)(this.getYA() + this.getHeightA() / 2),
