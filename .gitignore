@@ -23,3 +23,4 @@ libraries/desktop.ini
 /.settings
 .project
 .classpath
+*.iml
