@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 
 public class Class7312 {
    private Texture field31339;
@@ -109,7 +109,7 @@ public class Class7312 {
          (float)var3,
          (float)var4,
          this.field31339,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5),
          (float)var8,
          (float)var9,
          (float)this.field31342,

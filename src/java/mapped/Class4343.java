@@ -312,21 +312,21 @@ public class Class4343 extends Class4339 implements Class4342 {
          (float)(this.getXA() + 10),
          (float)(this.getYA() + this.getHeightA() + 24),
          this.field21227,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F * this.field21225.calcPercent())
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
          (float)(this.getXA() + 11),
          (float)(this.getYA() + this.getHeightA() + 24),
          this.field21227,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F * this.field21225.calcPercent())
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.getXA() + 14 + ResourceRegistry.JelloLightFont14.getStringWidth(this.field21227) + 2),
+         (float)(this.getXA() + 14 + ResourceRegistry.JelloLightFont14.getWidth(this.field21227) + 2),
          (float)(this.getYA() + this.getHeightA() + 24),
          this.field21226,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F * this.field21225.calcPercent())
       );
    }
 

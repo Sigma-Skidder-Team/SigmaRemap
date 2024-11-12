@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 
@@ -15,7 +15,7 @@ public class Class4346 extends Class4339 {
    private float field21236 = 1.0F;
    private int field21237 = 0;
    private int field21238 = 14;
-   private static ClientResource field21239 = ResourceRegistry.JelloLightFont18;
+   private static TrueTypeFont field21239 = ResourceRegistry.JelloLightFont18;
    private static int field21240 = 14;
    private boolean field21241 = false;
    private static final String field21242 = "\n";
@@ -81,7 +81,7 @@ public class Class4346 extends Class4339 {
    }
 
    // $VF: synthetic method
-   public static ClientResource method13574() {
+   public static TrueTypeFont method13574() {
       return field21239;
    }
 

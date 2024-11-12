@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.EventRenderGUI;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
@@ -31,7 +31,7 @@ public class ActiveMods extends Module {
     public int animationOffset = 0;
     public int translationOffset;
     public HashMap<Module, Animation> animations = new HashMap<>();
-    public ClientResource fontResource = ResourceRegistry.JelloLightFont20;
+    public TrueTypeFont fontResource = ResourceRegistry.JelloLightFont20;
     private final List<Module> activeModules = new ArrayList<>();
 
     public ActiveMods() {
@@ -105,7 +105,7 @@ public class ActiveMods extends Module {
                     }
                 }
 
-                int requiredHeight = 23 + enabledModulesCount * (this.fontResource.method23952() + 1);
+                int requiredHeight = 23 + enabledModulesCount * (this.fontResource.getHeight() + 1);
                 int screenHeight = Minecraft.getInstance().mainWindow.getHeight();
                 int availableHeight = screenHeight / 2 - (9 + 5) * (players.size() - 3 + 2);
                 if (requiredHeight <= availableHeight) {
@@ -131,7 +131,7 @@ public class ActiveMods extends Module {
                 int offset = 10;
                 float scaleFactor = 1;
                 int screenWidth = Minecraft.getInstance().mainWindow.getWidth();
-                ClientResource font = this.fontResource;
+                TrueTypeFont font = this.fontResource;
                 int baseOffset = offset - 4;
                 if (this.fontResource == ResourceRegistry.JelloLightFont14) {
                     offset -= 3;
@@ -163,25 +163,25 @@ public class ActiveMods extends Module {
                     String moduleName = module.getSuffix();
                     GL11.glAlphaFunc(519, 0.0F);
                     GL11.glPushMatrix();
-                    int xPosition = screenWidth - offset - font.getStringWidth(moduleName) / 2;
+                    int xPosition = screenWidth - offset - font.getWidth(moduleName) / 2;
                     int yPosition = baseOffset + 12;
                     GL11.glTranslatef((float) xPosition, (float) yPosition, 0.0F);
                     GL11.glScalef(opacity, opacity, 1.0F);
                     GL11.glTranslatef((float) (-xPosition), (float) (-yPosition), 0.0F);
-                    float imageScale = (float) Math.sqrt(Math.min(1.2F, (float) font.getStringWidth(moduleName) / 63.0F));
+                    float imageScale = (float) Math.sqrt(Math.min(1.2F, (float) font.getWidth(moduleName) / 63.0F));
                     RenderUtil.drawImage(
-                            (float) screenWidth - (float) font.getStringWidth(moduleName) * 1.5F - (float) offset - 20.0F,
+                            (float) screenWidth - (float) font.getWidth(moduleName) * 1.5F - (float) offset - 20.0F,
                             (float) (baseOffset - 20),
-                            (float) font.getStringWidth(moduleName) * 3.0F,
-                            font.method23952() + scaleFactor + 40,
+                            (float) font.getWidth(moduleName) * 3.0F,
+                            font.getHeight() + scaleFactor + 40,
                             ResourceList.shadowPNG,
-                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * scaledOpacity * imageScale)
+                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.36F * scaledOpacity * imageScale)
                     );
                     RenderUtil.drawString(
-                            font, (float) (screenWidth - offset - font.getStringWidth(moduleName)), (float) baseOffset, moduleName, scaledOpacity != 1.0F ? MultiUtilities.applyAlpha(-1, scaledOpacity * 0.95F) : colorAlpha
+                            font, (float) (screenWidth - offset - font.getWidth(moduleName)), (float) baseOffset, moduleName, scaledOpacity != 1.0F ? MultiUtilities.applyAlpha(-1, scaledOpacity * 0.95F) : colorAlpha
                     );
                     GL11.glPopMatrix();
-                    baseOffset = (int) ((float) baseOffset + (float) (font.method23952() + scaleFactor) * QuadraticEasing.easeInOutQuad(scaledOpacity, 0.0F, 1.0F, 1.0F));
+                    baseOffset = (int) ((float) baseOffset + (float) (font.getHeight() + scaleFactor) * QuadraticEasing.easeInOutQuad(scaledOpacity, 0.0F, 1.0F, 1.0F));
                 }
 
                 this.animationOffset = baseOffset;

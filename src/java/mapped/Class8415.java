@@ -1,6 +1,6 @@
 package mapped;
 
-import lol.ResourceLoader;
+import org.newdawn.slick.util.ResourceLoader;
 
 import java.io.BufferedReader;
 import java.io.File;

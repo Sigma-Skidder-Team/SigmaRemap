@@ -37,7 +37,7 @@ public class Nuker extends Module {
         registerSetting(new ModeSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
         registerSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
         registerSetting(new BooleanListSetting("Blocks", "Blocks to destroy", true));
-        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));    }
+        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.color, true));    }
 
     public static void destroyBlock(BlockPos blockPos) {
         mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, blockPos, Direction.UP));

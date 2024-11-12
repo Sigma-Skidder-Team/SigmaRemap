@@ -32,7 +32,7 @@ public class RedeemKeyScreen extends CustomGuiScreen {
             290,
             80,
             30,
-            new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor),
+            new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.LIGHT_GREYISH_BLUE.color),
             "Redeem",
             ResourceRegistry.JelloLightFont20
          )
@@ -80,21 +80,21 @@ public class RedeemKeyScreen extends CustomGuiScreen {
                190.0F,
                190.0F,
                var5.method36701(),
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
             );
             RenderUtil.endScissor();
          }
       }
 
-      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Redeem Premium", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Redeem Premium", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1));
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
          100.0F,
          150.0F,
          "Visit http://sigmaclient.info for more info",
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6F * var1)
       );
-      RenderUtil.drawString(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6F * var1));
       super.draw(var1);
    }
 }

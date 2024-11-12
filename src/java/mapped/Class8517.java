@@ -1,5 +1,7 @@
 package mapped;
 
+import org.newdawn.slick.Color;
+
 public class Class8517 implements Class8518 {
    private static String[] field38218;
    private Class2532 field38219 = new Class2532(0.0F, 0.0F);
@@ -105,7 +107,7 @@ public class Class8517 implements Class8518 {
          var14.a = var12 * this.field38223.a + var13 * this.field38222.a;
          return var14;
       } else {
-         return Color.field16447;
+         return Color.black;
       }
    }
 

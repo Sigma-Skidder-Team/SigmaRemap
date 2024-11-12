@@ -29,7 +29,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       UIButton var7;
       this.addToList(
          var7 = new UIButton(
-            this, "addButton", this.widthA - 55, 0, ResourceRegistry.JelloLightFont25.getStringWidth("Add"), 69, ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25
+            this, "addButton", this.widthA - 55, 0, ResourceRegistry.JelloLightFont25.getWidth("Add"), 69, ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25
          )
       );
       var7.doThis((var1x, var2x) -> this.field21300.method13119(true));
@@ -164,7 +164,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
          (float)(this.yA + var5 / 2),
          (float)(this.xA - var5 / 2 + this.widthA),
          (float)(this.yA - var5 / 2 + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var1 * 0.25F)
       );
       RenderUtil.drawRect((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, (float)var5, var6);
       float var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
@@ -178,14 +178,14 @@ public class ConfigButtonOnClickGui extends Class4247 {
          (float)(this.xA + 25),
          (float)(this.yA + 20),
          "Profiles",
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8F * var1)
       );
       RenderUtil.drawRect(
          (float)(this.xA + 25),
          (float)(this.yA + 69),
          (float)(this.xA + this.widthA - 25),
          (float)(this.yA + 70),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05F * var1)
       );
       super.draw(var1);
    }

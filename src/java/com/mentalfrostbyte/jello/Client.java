@@ -24,7 +24,7 @@ import com.mentalfrostbyte.jello.util.tracker.PlayerStateTracker;
 import com.mentalfrostbyte.jello.util.tracker.SlotChangeTracker;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;

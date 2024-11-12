@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import org.lwjgl.opengl.GL11;
 
 public class Class4255 extends Class4247 {
@@ -25,12 +25,12 @@ public class Class4255 extends Class4247 {
          64.0F,
          64.0F,
          !this.method13298() ? this.field20633 : this.field20634,
-         ClientColors.LIGHT_GREYISH_BLUE.getColor
+         ClientColors.LIGHT_GREYISH_BLUE.color
       );
 
       RenderUtil.drawString(
               ResourceList.regular25,
-         (float)(this.xA + (this.getWidthA() - ResourceList.regular25.getStringWidth(this.field20912)) / 2),
+         (float)(this.xA + (this.getWidthA() - ResourceList.regular25.getWidth(this.field20912)) / 2),
          (float)(this.yA + this.getHeightA() - 50),
          this.field20912,
          !this.method13298() ? -14869219 : -319475

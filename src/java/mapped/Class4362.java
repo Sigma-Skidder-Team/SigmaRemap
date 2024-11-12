@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Class4362 extends Class4247 {
    private static String[] field20602;
-   public static final ColorHelper field21322 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
+   public static final ColorHelper field21322 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.color).method19414(Class2218.field14492);
    public List<String> field21323 = new ArrayList<String>();
    public int field21324 = 0;
 
@@ -37,7 +37,7 @@ public class Class4362 extends Class4247 {
                this.getWidthA(),
                this.getHeightA(),
                new ColorHelper(
-                  ClientColors.LIGHT_GREYISH_BLUE.getColor,
+                  ClientColors.LIGHT_GREYISH_BLUE.color,
                   -1381654,
                   this.textColor.method19405(),
                   this.textColor.method19405(),
@@ -74,7 +74,7 @@ public class Class4362 extends Class4247 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + this.getHeightA() + this.method13635()),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
       );
       RenderUtil.drawRoundedRect(
          (float)this.getXA(),

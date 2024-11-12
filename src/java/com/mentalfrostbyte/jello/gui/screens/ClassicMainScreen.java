@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.Screen;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -37,7 +37,7 @@ public class ClassicMainScreen extends Screen {
         this.field21100 = new Animation(175, 325);
         this.field21100.changeDirection(Direction.FORWARDS);
         this.field21101.changeDirection(Direction.BACKWARDS);
-        ClientResource var9 = ResourceList.regular20;
+        TrueTypeFont var9 = ResourceList.regular20;
         String var11 = "© Sigma Prod";
         StringBuilder var10000 = new StringBuilder().append("Sigma ");
         Client.getInstance();
@@ -48,34 +48,34 @@ public class ClassicMainScreen extends Screen {
         this.addToList(this.field21103 = new Class4337(this, "group", (this.getWidthA() - var13) / 2, this.getHeightA() / 2 - 230, var13, var14));
         this.addToList(
                 this.field21095 = new UITextDisplay(
-                        this, "Copyright", 10, 8, var9.getStringWidth(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
+                        this, "Copyright", 10, 8, var9.getWidth(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), var11, ResourceRegistry.JelloLightFont18
                 )
         );
-        ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
-        var15.method19410(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F));
+        var15.method19410(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F));
         ArrayList<String> var16 = new ArrayList<>();
         var16.add("LeakedPvP");
         var16.add("Omikron");
         Collections.shuffle(var16);
         String var17 = "by " + var16.get(0) + ", " + var16.get(1);
-        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.getStringWidth(var11), 140, var15, var17, ResourceList.regular17));
+        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.getWidth(var11), 140, var15, var17, ResourceList.regular17));
         this.addToList(
                 this.field21094 = new UITextDisplay(
                         this,
                         "Version",
-                        this.getWidthA() - var9.getStringWidth(var12) - 9,
+                        this.getWidthA() - var9.getWidth(var12) - 9,
                         this.getHeightA() - 31,
                         114,
                         140,
-                        new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor),
+                        new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color),
                         var12,
                         var9
                 )
         );
-        this.addToList(new UITextDisplay(this, "Hello", 10, this.getHeightA() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "Hello,", var9));
+        this.addToList(new UITextDisplay(this, "Hello", 10, this.getHeightA() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), "Hello,", var9));
         this.addToList(
                 new UITextDisplay(
-                        this, "Latest", 10, this.getHeightA() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "You are using the latest version", var9
+                        this, "Latest", 10, this.getHeightA() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), "You are using the latest version", var9
                 )
         );
         this.field21104 = (float) (this.getWidthA() / 2);

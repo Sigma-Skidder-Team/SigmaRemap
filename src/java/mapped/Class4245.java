@@ -31,19 +31,19 @@ public class Class4245 extends ButtonPanel {
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + this.heightA / 2),
          25.0F,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.025F * var1 * this.field20599.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.025F * var1 * this.field20599.calcPercent())
       );
       RenderUtil.method11438(
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + this.heightA / 2),
          23.0F,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1 * this.field20599.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05F * var1 * this.field20599.calcPercent())
       );
       RenderUtil.method11438(
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + this.heightA / 2),
          (float)(18 + var4),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field20599.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * this.field20599.calcPercent())
       );
       RenderUtil.method11438(
          (float)(this.xA + this.widthA / 2),

@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.TextureUtil;
+import org.newdawn.slick.util.BufferedImageUtil;
 import com.sapher.youtubedl.YoutubeDL;
 import com.sapher.youtubedl.YoutubeDLException;
 import com.sapher.youtubedl.YoutubeDLRequest;
@@ -21,7 +21,7 @@ import com.sapher.youtubedl.YoutubeDLResponse;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Util;
@@ -204,7 +204,7 @@ public class MusicManager {
                                 (float) field32143.mainWindow.getHeight() - var8,
                                 var4,
                                 var8,
-                                MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.2F * var6)
+                                MultiUtilities.applyAlpha(ClientColors.MID_GREY.color, 0.2F * var6)
                         );
                     }
 
@@ -213,7 +213,7 @@ public class MusicManager {
                     for (int var13 = 0; (float) var13 < var3; var13++) {
                         float var14 = (float) field32143.mainWindow.getHeight() / 1080.0F;
                         float var15 = ((float) (Math.sqrt(this.field32165.get(var13)) / 12.0) - 5.0F) * var14;
-                        RenderUtil.renderBackgroundBox((float) var13 * var4, (float) field32143.mainWindow.getHeight() - var15, var4, var15, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        RenderUtil.renderBackgroundBox((float) var13 * var4, (float) field32143.mainWindow.getHeight() - var15, var4, var15, ClientColors.LIGHT_GREYISH_BLUE.color);
                     }
 
                     RenderUtil.method11477(Class2329.field15940);
@@ -245,14 +245,14 @@ public class MusicManager {
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 70),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5F)
                         );
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 70),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7F)
                         );
                     } else {
                         RenderUtil.drawString(
@@ -260,28 +260,28 @@ public class MusicManager {
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 81),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4F)
                         );
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 56),
                                 var11[1],
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5F)
                         );
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 56),
                                 var11[1],
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7F)
                         );
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloMediumFont20,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 81),
                                 var11[0],
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6F)
                         );
                     }
                 }
@@ -306,8 +306,8 @@ public class MusicManager {
                     this.field32151.release();
                 }
 
-                this.field32153 = TextureUtil.method32933("picture", this.field32152);
-                this.field32151 = TextureUtil.method32933("picture", this.field32149);
+                this.field32153 = BufferedImageUtil.getTexture("picture", this.field32152);
+                this.field32151 = BufferedImageUtil.getTexture("picture", this.field32149);
                 Client.getInstance().getNotificationManager().send(new Notification("Now Playing", this.field32150, 7000, this.field32151));
                 this.field32154 = false;
             }

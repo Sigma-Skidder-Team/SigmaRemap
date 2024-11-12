@@ -105,14 +105,14 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + 60),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
       RenderUtil.renderBackgroundBox(
          (float)this.getXA(),
          (float)this.getYA() + 60.0F * this.field21195,
          (float)this.getWidthA(),
          (float)this.getHeightA() - 60.0F * this.field21195,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
       );
       if (!(this.field21195 > 0.8F)) {
          if (this.field21195 < 0.2F) {
@@ -128,7 +128,7 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
          (float)(this.getXA() + 20),
          (float)(this.getYA() + 30),
          categoryName,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var1 * 0.5F * this.field21195),
          Class2218.field14488,
          Class2218.field14492
       );
@@ -142,7 +142,7 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
             (float)this.getWidthA(),
             18.0F,
             ResourceList.shadowBottomPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * this.field21195 * 0.5F)
          );
       }
    }

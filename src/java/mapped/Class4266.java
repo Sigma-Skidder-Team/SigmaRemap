@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
-import com.mentalfrostbyte.jello.util.TextureUtil;
+import org.newdawn.slick.util.BufferedImageUtil;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -80,7 +80,7 @@ public class Class4266 extends Class4247 {
                this.field20688.release();
             }
 
-            this.field20688 = TextureUtil.method32933("blur", var6);
+            this.field20688 = BufferedImageUtil.getTexture("blur", var6);
             this.field20687 = false;
          }
 
@@ -104,7 +104,7 @@ public class Class4266 extends Class4247 {
             GL11.glPushMatrix();
             RenderUtil.method11476();
             RenderUtil.method11474(
-               (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, 8.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor
+               (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, 8.0F, ClientColors.LIGHT_GREYISH_BLUE.color
             );
             RenderUtil.method11477(Class2329.field15940);
             RenderUtil.method11448(
@@ -113,7 +113,7 @@ public class Class4266 extends Class4247 {
                (float)(this.widthA + 2),
                (float)(this.heightA + 2),
                this.field20688,
-               ClientColors.LIGHT_GREYISH_BLUE.getColor
+               ClientColors.LIGHT_GREYISH_BLUE.color
             );
 
             while (var4.hasNext()) {
@@ -126,7 +126,7 @@ public class Class4266 extends Class4247 {
                   (float)(this.xA + var9),
                   (float)(var8 + this.heightA / 4),
                   (float)(var9 * 2 - 4) * var11.field30490 + 4.0F,
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
                RenderUtil.endScissor();
                var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.getFps(), 1.0F);
@@ -142,7 +142,7 @@ public class Class4266 extends Class4247 {
                (float)this.widthA,
                (float)this.heightA,
                6.0F,
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3F)
             );
             GL11.glPopMatrix();
             RenderUtil.drawString(
@@ -150,10 +150,10 @@ public class Class4266 extends Class4247 {
                (float)(this.xA + 14),
                (float)(this.yA + 8),
                "+",
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F)
             );
             RenderUtil.renderBackgroundBox(
-               (float)(this.xA + 16), (float)(this.yA + 65), 8.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+               (float)(this.xA + 16), (float)(this.yA + 65), 8.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F)
             );
          }
       } catch (IOException var10) {

@@ -39,7 +39,7 @@ public class PathFinder extends Module {
     public void onRender3D(Render3DEvent event) {
         if (this.isEnabled()) {
             if (this.rayTraceResult != null) {
-                int color = MultiUtilities.applyAlpha(ClientColors.PALE_YELLOW.getColor, 0.14F);
+                int color = MultiUtilities.applyAlpha(ClientColors.PALE_YELLOW.color, 0.14F);
                 GL11.glPushMatrix();
                 GL11.glDisable(GL11.GL_DEPTH_TEST);
                 BlockPos pos = this.rayTraceResult.getPos();

@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.util.render.animation.Direction;
 public class UIButton extends Class4247 {
    public Animation field20711 = new Animation(190, 190);
 
-   public UIButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
+   public UIButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       int var12 = (int)(210.0 * Math.sqrt((double)((float)var5 / 242.0F)));
       this.field20711 = new Animation(var12, var12);
@@ -37,7 +37,7 @@ public class UIButton extends Class4247 {
                   ? 0
                   : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
-         int var7 = this.getFont().getStringWidth(this.getTypedText());
+         int var7 = this.getFont().getWidth(this.getTypedText());
          float var8 = 18;
          float var9 = (float)Math.pow((double)this.field20711.calcPercent(), 3.0);
          RenderUtil.method11440(

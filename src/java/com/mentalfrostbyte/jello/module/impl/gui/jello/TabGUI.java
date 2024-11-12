@@ -33,10 +33,10 @@ public class TabGUI extends Module {
     public HashMap<Module, Float> field23774 = new HashMap<Module, Float>();
     public boolean field23781 = false;
     public ArrayList<Class8224> field23789 = new ArrayList<Class8224>();
-    public int field23790 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.0625F);
-    public int field23791 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F);
+    public int field23790 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.0625F);
+    public int field23791 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3F);
     public List<ModuleCategory> field23792 = this.method16597();
-    public int field23793 = MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.05F);
+    public int field23793 = MultiUtilities.applyAlpha(ClientColors.MID_GREY.color, 0.05F);
     private final Color[] field23763 = new Color[3];
     private final Color[] field23764 = new Color[3];
     private final Color[] field23765 = new Color[3];
@@ -155,17 +155,17 @@ public class TabGUI extends Module {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3 + var7 * this.field23778),
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.getHeight() / 2 + 3 + var7 * this.field23778),
                         var9.getName(),
-                        ClientColors.LIGHT_GREYISH_BLUE.getColor
+                        ClientColors.LIGHT_GREYISH_BLUE.color
                 );
             } else {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var7 * this.field23778),
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2 + var7 * this.field23778),
                         var9.getName(),
-                        ClientColors.LIGHT_GREYISH_BLUE.getColor
+                        ClientColors.LIGHT_GREYISH_BLUE.color
                 );
             }
 
@@ -194,7 +194,7 @@ public class TabGUI extends Module {
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont20,
                     (float) (var1 + 11) + this.field23773.get(var8),
-                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var6 * this.field23778),
+                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2 + var6 * this.field23778),
                     var8.toString(),
                     -1
             );

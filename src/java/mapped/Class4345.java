@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.settings.SettingType;
@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class Class4345 extends Class4339 {
    private Module field21229;
-   public ClientResource field21230 = ResourceList.regular20;
+   public TrueTypeFont field21230 = ResourceList.regular20;
    public Animation field21231 = new Animation(150, 150);
    public HashMap<Module, CustomGuiScreen> field21232 = new HashMap<Module, CustomGuiScreen>();
 

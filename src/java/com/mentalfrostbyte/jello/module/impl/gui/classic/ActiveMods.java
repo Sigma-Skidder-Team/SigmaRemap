@@ -5,7 +5,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
@@ -22,8 +23,8 @@ import java.util.TreeMap;
 
 public class ActiveMods extends Module {
     private TreeMap<Module, Animation> field23962 = new TreeMap<Module, Animation>();
-    private ClientResource field23963;
-    private ClientResource field23964;
+    private TrueTypeFont field23963;
+    private TrueTypeFont field23964;
     private Animation field23965;
 
     public ActiveMods() {
@@ -79,7 +80,7 @@ public class ActiveMods extends Module {
                     var9 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     var10 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     int var19 = this.method16857(var16);
-                    int var20 = this.field23963.method23941(var16.getSuffix()) + var8;
+                    int var20 = this.field23963.getHeight(var16.getSuffix()) + var8;
                     float var21 = 1.0F - QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F);
                     if (var4.equalsIgnoreCase("Smooth") || var4.equalsIgnoreCase("Both")) {
                         var20 = (int) ((float) var20 * var21);
@@ -123,7 +124,7 @@ public class ActiveMods extends Module {
                     this.field23963.drawString((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
                             .drawString(
-                                    (float) (var7 - this.field23964.getStringWidth(this.method16856(var16))),
+                                    (float) (var7 - this.field23964.getWidth(this.method16856(var16))),
                                     (float) var6 + 1.6F,
                                     this.method16856(var16),
                                     new Color(160, 160, 160)
@@ -191,6 +192,6 @@ public class ActiveMods extends Module {
     private int method16857(Module var1) {
         String var4 = var1.getSuffix();
         String var5 = this.method16856(var1);
-        return this.field23963.getStringWidth(var4) + this.field23964.getStringWidth(var5);
+        return this.field23963.getWidth(var4) + this.field23964.getWidth(var5);
     }
 }

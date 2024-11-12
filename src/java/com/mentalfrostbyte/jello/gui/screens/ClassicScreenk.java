@@ -82,7 +82,7 @@ public class ClassicScreenk extends Screen {
                 (float) this.yA,
                 (float) (this.xA + this.widthA),
                 (float) (this.yA + this.heightA),
-                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var4 * 0.35F)
         );
         super.draw(var1);
     }

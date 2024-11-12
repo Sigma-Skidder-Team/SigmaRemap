@@ -56,39 +56,39 @@ public class Class4355 extends Class4247 {
          (float)this.yA,
          (float)this.widthA,
          (float)this.heightA,
-         MultiUtilities.applyAlpha(MultiUtilities.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.03F), this.field21289.calcPercent())
+         MultiUtilities.applyAlpha(MultiUtilities.method17691(ClientColors.LIGHT_GREYISH_BLUE.color, 0.03F), this.field21289.calcPercent())
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
          (float)(this.xA + 68),
          (float)(this.yA + 14),
          this.field21291,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8F)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
          (float)(this.xA + 68),
          (float)(this.yA + 38),
          "x:" + this.field21292.getX() + " z:" + this.field21292.getZ(),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5F)
       );
       byte var4 = 27;
       int var5 = this.widthA - 43;
       float var6 = !this.method13216() ? 0.2F : 0.4F;
       RenderUtil.renderBackgroundBox(
-         (float)(this.xA + var5), (float)(this.yA + var4), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
+         (float)(this.xA + var5), (float)(this.yA + var4), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var6)
       );
       RenderUtil.renderBackgroundBox(
-         (float)(this.xA + var5), (float)(this.yA + var4 + 5), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
+         (float)(this.xA + var5), (float)(this.yA + var4 + 5), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var6)
       );
       RenderUtil.renderBackgroundBox(
-         (float)(this.xA + var5), (float)(this.yA + var4 + 10), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
+         (float)(this.xA + var5), (float)(this.yA + var4 + 10), 20.0F, 2.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var6)
       );
       RenderUtil.method11438(
          (float)(this.xA + 35),
          (float)(this.yA + this.heightA / 2),
          20.0F,
-         MultiUtilities.method17690(this.field21293, ClientColors.DEEP_TEAL.getColor, 0.9F)
+         MultiUtilities.method17690(this.field21293, ClientColors.DEEP_TEAL.color, 0.9F)
       );
       RenderUtil.method11438((float)(this.xA + 35), (float)(this.yA + this.heightA / 2), 17.0F, this.field21293);
       RenderUtil.drawRoundedRect(

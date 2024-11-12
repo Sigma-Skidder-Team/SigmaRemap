@@ -62,7 +62,7 @@ public class Cords extends Module {
                         float var6 = 85;
                         int var7 = var1.method13960();
                         float var8 = 150;
-                        float var9 = (float) ResourceRegistry.JelloLightFont18.getStringWidth(var5);
+                        float var9 = (float) ResourceRegistry.JelloLightFont18.getWidth(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
                         if (this.field23756.getDirection() != Direction.FORWARDS) {
                             var10 *= 0.9F + QuadraticEasing.easeInQuad(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
@@ -88,7 +88,7 @@ public class Cords extends Module {
                                 var6,
                                 (float) var7,
                                 var5,
-                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F * var4),
                                 Class2218.field14492,
                                 Class2218.field14488
                         );

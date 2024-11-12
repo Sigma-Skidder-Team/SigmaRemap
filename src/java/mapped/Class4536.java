@@ -1,8 +1,9 @@
 package mapped;
 
-import lol.Renderer;
-import lol.SGL;
-import lol.TextureImpl;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.TextureImpl;
 
 public class Class4536 {
    public static SGL field21855 = Renderer.get();
@@ -14,7 +15,7 @@ public class Class4536 {
    public float field21861;
    public float field21862;
    public float field21863 = 10.0F;
-   public Color field21864 = Color.field16442;
+   public Color field21864 = Color.white;
    public float field21865;
    public float field21866;
    private Class9365 field21867;
@@ -69,7 +70,7 @@ public class Class4536 {
    public void method14471() {
       if ((!this.field21867.method35470() || this.field21871 != 1) && this.field21871 != 2) {
          if (!this.field21872 && this.field21873 == 1.0F) {
-            this.field21864.method10392();
+            this.field21864.bind();
             this.field21869
                .method23529(
                   (float)((int)(this.field21859 - this.field21863 / 2.0F)),
@@ -78,14 +79,14 @@ public class Class4536 {
                   (float)((int)this.field21863)
                );
          } else {
-            field21855.method18393();
-            field21855.method18400(this.field21859, this.field21860, 0.0F);
+            field21855.glPushMatrix();
+            field21855.glTranslatef(this.field21859, this.field21860, 0.0F);
             if (this.field21872) {
                float var3 = (float)(Math.atan2((double)this.field21860, (double)this.field21859) * 180.0 / Math.PI);
-               field21855.method18395(var3, 0.0F, 0.0F, 1.0F);
+               field21855.glRotatef(var3, 0.0F, 0.0F, 1.0F);
             }
 
-            field21855.method18396(1.0F, this.field21873, 1.0F);
+            field21855.glScalef(1.0F, this.field21873, 1.0F);
             this.field21869
                .method23539(
                   (float)((int)(-(this.field21863 / 2.0F))),
@@ -94,16 +95,16 @@ public class Class4536 {
                   (float)((int)this.field21863),
                   this.field21864
                );
-            field21855.method18392();
+            field21855.glPopMatrix();
          }
       } else {
          TextureImpl.bindNone();
-         field21855.method18381(2832);
-         field21855.method18391(this.field21863 / 2.0F);
-         this.field21864.method10392();
-         field21855.method18369(0);
-         field21855.method18401(this.field21859, this.field21860);
-         field21855.method18382();
+         field21855.glEnable(2832);
+         field21855.glPointSize(this.field21863 / 2.0F);
+         this.field21864.bind();
+         field21855.glBegin(0);
+         field21855.glVertex2f(this.field21859, this.field21860);
+         field21855.glEnd();
       }
    }
 
@@ -165,7 +166,7 @@ public class Class4536 {
    }
 
    public void method14482(float var1, float var2, float var3, float var4) {
-      if (this.field21864 != Color.field16442) {
+      if (this.field21864 != Color.white) {
          this.field21864.r = var1;
          this.field21864.g = var2;
          this.field21864.b = var3;
@@ -203,7 +204,7 @@ public class Class4536 {
    }
 
    public void method14488(float var1, float var2, float var3, float var4) {
-      if (this.field21864 == Color.field16442) {
+      if (this.field21864 == Color.white) {
          this.field21864 = new Color(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
@@ -214,7 +215,7 @@ public class Class4536 {
    }
 
    public void method14489(int var1, int var2, int var3, int var4) {
-      if (this.field21864 == Color.field16442) {
+      if (this.field21864 == Color.white) {
          this.field21864 = new Color(1.0F, 1.0F, 1.0F, 1.0F);
       }
 

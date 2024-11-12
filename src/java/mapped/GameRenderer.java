@@ -724,7 +724,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             }
 
             try (NativeImage var8 = new NativeImage(64, 64, false)) {
-               var3.method7907(var6, var7, var4, var5, var8);
+               var3.resizeSubRectTo(var6, var7, var4, var5, var8);
                var8.method7898(this.mc.getIntegratedServer().method1306());
             } catch (IOException var29) {
                LOGGER.warn("Couldn't save auto screenshot", var29);

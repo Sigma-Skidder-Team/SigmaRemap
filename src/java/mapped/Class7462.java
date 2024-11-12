@@ -1,5 +1,7 @@
 package mapped;
 
+import org.newdawn.slick.Color;
+
 import java.util.ArrayList;
 
 public class Class7462 {
@@ -55,7 +57,7 @@ public class Class7462 {
             Color var5 = this.method24151((float)var4 / 128.0F);
 
             for (int var6 = 0; var6 < 16; var6++) {
-               var3.method21462(var4, var6, var5.method10400(), var5.method10401(), var5.method10402(), var5.method10403());
+               var3.method21462(var4, var6, var5.getRedByte(), var5.getGreenByte(), var5.getBlueByte(), var5.getAlphaByte());
             }
          }
 
@@ -134,7 +136,7 @@ public class Class7462 {
             }
          }
 
-         return Color.field16447;
+         return Color.black;
       }
    }
 }

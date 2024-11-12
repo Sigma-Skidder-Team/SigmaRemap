@@ -30,21 +30,21 @@ public class Class4368 extends Class4247 {
          (float)(this.xA + 10),
          (float)(this.yA + 8),
          this.field21351.getSuffix(),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, !this.field21351.isEnabled() ? 0.5F : 0.9F)
       );
       RenderUtil.drawString(
               ResourceList.regular15,
          (float)(this.xA + 15),
          (float)(this.yA + 33),
          "Bind",
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 1.0F)
       );
       RenderUtil.drawString(
               ResourceList.regular15,
          (float)(this.xA + 15),
          (float)(this.yA + 52),
          MultiUtilities.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.7F)
       );
       if (this.field21351.getSettingMap().size() > 1) {
          RenderUtil.drawString(
@@ -52,7 +52,7 @@ public class Class4368 extends Class4247 {
             (float)(this.xA + 84),
             (float)(this.yA + 34),
             "Settings",
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 1.0F)
          );
       }
 

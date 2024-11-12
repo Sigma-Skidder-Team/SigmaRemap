@@ -41,7 +41,7 @@ public class Compass extends Module {
                         (float) (var4 * var5 * 2) * 1.5F,
                         (float) (220 + var6),
                         ResourceList.shadowPNG,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25F)
                 );
                 int var12 = 0;
 
@@ -94,18 +94,18 @@ public class Compass extends Module {
             if (var8.length() != 1) {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont25,
-                        (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.getStringWidth(var8)) / 2),
+                        (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.getWidth(var8)) / 2),
                         (float) (var2 + 20),
                         var8,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5)
                 );
             } else {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont40,
-                        (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.getStringWidth(var8)) / 2),
+                        (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.getWidth(var8)) / 2),
                         (float) (var2 + 10),
                         var8,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5)
                 );
             }
         } else {
@@ -114,14 +114,14 @@ public class Compass extends Module {
                     (float) (var2 + 28),
                     (float) (var1 + var3 / 2 + 1),
                     (float) (var2 + 38),
-                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * 0.5F)
+                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5 * 0.5F)
             );
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont18,
-                    (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.getStringWidth(var8)) / 2),
+                    (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.getWidth(var8)) / 2),
                     (float) (var2 + 40),
                     var8,
-                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
+                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5)
             );
         }
     }

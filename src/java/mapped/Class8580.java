@@ -1,5 +1,7 @@
 package mapped;
 
+import org.newdawn.slick.Color;
+
 import java.awt.Point;
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;

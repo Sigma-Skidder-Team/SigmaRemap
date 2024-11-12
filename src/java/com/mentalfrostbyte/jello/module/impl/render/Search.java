@@ -37,7 +37,7 @@ public class Search extends Module {
         this.registerSetting(var3 = new NumberSetting<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
         BooleanSetting var4;
         this.registerSetting(var4 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
-        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
+        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.color, true));
         BooleanListSetting var5;
         this.registerSetting(var5 = new BooleanListSetting("Blocks", "Blocks to render", true));
         var5.addObserver(var1 -> this.field23499.clear());

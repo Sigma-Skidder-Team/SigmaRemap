@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.gui.Screen;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -32,7 +32,7 @@ public class CreditsScreen extends Screen {
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
       RenderUtil.drawRect(
-         0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
+         0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9F * this.field21072)
       );
       float var6 = EasingFunctions.easeOutBack(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
       GL11.glPushMatrix();
@@ -41,9 +41,9 @@ public class CreditsScreen extends Screen {
       GL11.glTranslatef((float)(-this.getWidthA() / 2), (float)(-this.getHeightA() / 2), 0.0F);
       String var7 = "##Jello \n";
       String var8 = "Jello by MF";
-      ClientResource var9 = ResourceRegistry.JelloLightFont25;
+      TrueTypeFont var9 = ResourceRegistry.JelloLightFont25;
       RenderUtil.drawString(
-         var9, (float)((this.getWidthA() - var9.getStringWidth(var8)) / 2), (float)(this.getHeightA() - 110), var8, ClientColors.DEEP_TEAL.getColor
+         var9, (float)((this.getWidthA() - var9.getWidth(var8)) / 2), (float)(this.getHeightA() - 110), var8, ClientColors.DEEP_TEAL.color
       );
       GL11.glPopMatrix();
       RenderUtil.drawImage(
@@ -57,7 +57,7 @@ public class CreditsScreen extends Screen {
          (float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072,
          (float)var5 - (float)var5 * (this.field21072 - 1.0F) * this.field21072,
          ResourceList.mentalfrostbytePNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, this.field21072))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0F, this.field21072))
       );
       if (!((double)this.field21072 < 0.986)) {
          this.field21072 = 1.0F;

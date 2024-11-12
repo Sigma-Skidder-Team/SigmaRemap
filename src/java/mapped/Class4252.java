@@ -70,11 +70,11 @@ public class Class4252 extends Class4247 {
 
    public static void method13052(int var0, int var1, int var2, float var3) {
       byte var6 = 14;
-      RenderUtil.method11438((float)var0, (float)var1, (float)var6, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var3));
-      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 1), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F * var3));
-      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 2), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
+      RenderUtil.method11438((float)var0, (float)var1, (float)var6, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1F * var3));
+      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 1), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14F * var3));
+      RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 2), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var3));
       RenderUtil.method11438(
-         (float)var0, (float)var1, (float)(var6 - 6), MultiUtilities.applyAlpha(MultiUtilities.method17690(var2, ClientColors.DEEP_TEAL.getColor, 0.7F), var3)
+         (float)var0, (float)var1, (float)(var6 - 6), MultiUtilities.applyAlpha(MultiUtilities.method17690(var2, ClientColors.DEEP_TEAL.color, 0.7F), var3)
       );
       RenderUtil.method11438((float)var0, (float)var1, (float)(var6 - 7), MultiUtilities.applyAlpha(var2, var3));
    }

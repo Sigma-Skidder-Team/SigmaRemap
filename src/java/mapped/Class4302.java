@@ -21,7 +21,7 @@ public class Class4302 extends Class4278 {
             187.0F,
             36.0F,
             ResourceList.gemPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
          );
       }
    }

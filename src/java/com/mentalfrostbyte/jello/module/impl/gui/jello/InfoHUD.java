@@ -74,9 +74,9 @@ public class InfoHUD extends Module {
                 (float) var1,
                 (float) (mc.mainWindow.getHeight() - var2),
                 var6,
-                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F)
         );
-        return Math.max(ResourceRegistry.JelloLightFont20.getStringWidth(var5), ResourceRegistry.JelloMediumFont20.getStringWidth(var6));
+        return Math.max(ResourceRegistry.JelloLightFont20.getWidth(var5), ResourceRegistry.JelloMediumFont20.getWidth(var6));
     }
 
     public int method16695(int var1, int var2) {
@@ -91,13 +91,13 @@ public class InfoHUD extends Module {
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {
-                    RenderUtil.renderBackgroundBox((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.renderBackgroundBox((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5F));
                     RenderUtil.renderBackgroundBox(
                             (float) (var1 + 2),
                             (float) (var8 + 28),
                             28.0F * var9,
                             3.0F,
-                            MultiUtilities.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
+                            MultiUtilities.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.color : ClientColors.PALE_YELLOW.color, 0.9F)
                     );
                 }
             }

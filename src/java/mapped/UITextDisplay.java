@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -10,10 +10,10 @@ import org.lwjgl.opengl.GL11;
 public class UITextDisplay extends Class4278 {
    private static String[] field20736;
    public static ColorHelper field20778 = new ColorHelper(
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -23,7 +23,7 @@ public class UITextDisplay extends Class4278 {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public UITextDisplay(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
+   public UITextDisplay(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 
@@ -36,7 +36,7 @@ public class UITextDisplay extends Class4278 {
             (float)this.getXA(),
             (float)this.getYA(),
             this.getTypedText(),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var1)
          );
          GL11.glAlphaFunc(519, 0.0F);
       }

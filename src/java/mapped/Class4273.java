@@ -38,9 +38,9 @@ public class Class4273 extends Class4247 {
 
          int var11 = 16;
          int var12 = 8;
-         int var13 = ClientColors.DEEP_TEAL.getColor;
+         int var13 = ClientColors.DEEP_TEAL.color;
          if (var10) {
-            var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor;
+            var13 = ClientColors.LIGHT_GREYISH_BLUE.color;
          }
 
          RenderUtil.drawString(

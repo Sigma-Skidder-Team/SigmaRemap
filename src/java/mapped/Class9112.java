@@ -2,8 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.TextureUtil;
-import lol.Texture;
+import org.newdawn.slick.util.BufferedImageUtil;
+import org.newdawn.slick.opengl.Texture;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -25,7 +25,7 @@ public class Class9112 {
             }
          }
 
-         return TextureUtil.method32933("mask", var5);
+         return BufferedImageUtil.getTexture("mask", var5);
       } catch (IOException var10) {
          var10.printStackTrace();
          return null;

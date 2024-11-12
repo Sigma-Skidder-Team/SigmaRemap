@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -11,10 +11,10 @@ import java.util.List;
 
 public class Class4350 extends Class4278 {
    public static ColorHelper field21259 = new ColorHelper(
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -34,12 +34,12 @@ public class Class4350 extends Class4278 {
             (float)this.getXA(), (float)this.getYA(), (float)this.widthA, (float)(this.heightA - this.getYA()), 114.0F, var1
          );
          byte var4 = 30;
-         ClientResource var5 = ResourceRegistry.JelloLightFont18;
+         TrueTypeFont var5 = ResourceRegistry.JelloLightFont18;
          String var6 = System.getProperty("line.separator");
          String[] var7 = this.field20912.split("(?<=" + var6 + ")");
          int var8 = this.field21260;
          int var9 = -1;
-         float var10 = (float)var5.getStringWidth(this.field20912.substring(0, this.field21260));
+         float var10 = (float)var5.getWidth(this.field20912.substring(0, this.field21260));
 
          for (int var11 = 0; var11 < var7.length; var11++) {
             List<String> var12 = this.method13587(var7[var11]);
@@ -49,11 +49,11 @@ public class Class4350 extends Class4278 {
                RenderUtil.drawString(
                   var5,
                   (float)(this.getXA() + var13 + var4),
-                  (float)(this.getYA() + var4 + var11 * var5.method23952()),
+                  (float)(this.getYA() + var4 + var11 * var5.getHeight()),
                   var15,
                   MultiUtilities.applyAlpha(this.method13588(var15), var1)
                );
-               var13 += var5.getStringWidth(var15);
+               var13 += var5.getWidth(var15);
                var8 -= var15.length();
             }
 
@@ -72,10 +72,10 @@ public class Class4350 extends Class4278 {
 
          RenderUtil.drawRect(
             (float)var4 + var10,
-            (float)(this.getYA() + var4 + var9 * var5.method23952()),
+            (float)(this.getYA() + var4 + var9 * var5.getHeight()),
             (float)var4 + var10 + 1.0F,
-            (float)(this.getYA() + var4 + var5.method23941(this.field20912) + var9 * var5.method23952()),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            (float)(this.getYA() + var4 + var5.getHeight(this.field20912) + var9 * var5.getHeight()),
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
          );
          super.draw(var1);
       }
@@ -88,7 +88,7 @@ public class Class4350 extends Class4278 {
       StringBuilder var7 = new StringBuilder("");
 
       for (String var11 : var5) {
-         if (this.method13588(var11) == ClientColors.LIGHT_GREYISH_BLUE.getColor) {
+         if (this.method13588(var11) == ClientColors.LIGHT_GREYISH_BLUE.color) {
             var7.append(var11);
          } else {
             var6.add(var7.toString());
@@ -109,12 +109,12 @@ public class Class4350 extends Class4278 {
       } else if (!var1.endsWith(".")) {
          if (!var1.startsWith("if")) {
             if (!var1.endsWith("(")) {
-               return !var1.startsWith(")") ? ClientColors.LIGHT_GREYISH_BLUE.getColor : -2774170;
+               return !var1.startsWith(")") ? ClientColors.LIGHT_GREYISH_BLUE.color : -2774170;
             } else {
                return -2774170;
             }
          } else {
-            return ClientColors.LIGHT_GREYISH_BLUE.getColor;
+            return ClientColors.LIGHT_GREYISH_BLUE.color;
          }
       } else {
          return -10442018;
@@ -124,7 +124,7 @@ public class Class4350 extends Class4278 {
    @Override
    public void charTyped(char var1) {
       super.charTyped(var1);
-      if (this.method13297() && Class8906.method32486(var1) && ResourceRegistry.JelloLightFont18.getStringWidth(Character.toString(var1)) > 1) {
+      if (this.method13297() && Class8906.method32486(var1) && ResourceRegistry.JelloLightFont18.getWidth(Character.toString(var1)) > 1) {
          this.field20912 = Class8906.method32492(this.field20912, Character.toString(var1), this.field21260);
          this.field21260++;
       }
@@ -142,7 +142,7 @@ public class Class4350 extends Class4278 {
       if (this.field20909) {
          String var5 = System.getProperty("line.separator");
          String[] var6 = this.field20912.split("(?<=" + var5 + ")");
-         int var7 = (var2 - this.method13272() - ResourceRegistry.JelloLightFont18.method23952() / 2) / ResourceRegistry.JelloLightFont18.method23952() - 1;
+         int var7 = (var2 - this.method13272() - ResourceRegistry.JelloLightFont18.getHeight() / 2) / ResourceRegistry.JelloLightFont18.getHeight() - 1;
          if (var7 > var6.length - 1) {
             var7 = var6.length - 1;
          }

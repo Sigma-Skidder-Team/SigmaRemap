@@ -1,8 +1,9 @@
 package mapped;
 
-import lol.Renderer;
-import lol.SGL;
-import lol.TextureImpl;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.TextureImpl;
 
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
@@ -80,7 +81,7 @@ public class Class7301 {
          }
       }
 
-      Color.field16442.method10392();
+      Color.white.bind();
       this.field31293.method23522();
       int var12 = 0;
       Iterator var13 = this.method23075(var1);
@@ -146,7 +147,7 @@ public class Class7301 {
          field31286.put(var7);
       }
 
-      field31283.method18415(3553, 0, this.field31294, this.field31295, var2, var3, 32993, 5121, field31285);
+      field31283.glTexSubImage2D(3553, 0, this.field31294, this.field31295, var2, var3, 32993, 5121, field31285);
       ((Buffer)field31286).clear();
       var1.method28227(this.field31293.method23551(this.field31294, this.field31295, var2, var3));
    }

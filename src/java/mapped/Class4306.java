@@ -84,7 +84,7 @@ public class Class4306 extends CustomGuiScreen {
          (float)this.xA,
          (float)this.yA,
          (float)this.getWidthA(),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
       );
       float var6 = (float)(this.field20936 - this.method13271());
       float var7 = (float)(this.field20937 - this.method13272());

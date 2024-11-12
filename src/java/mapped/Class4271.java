@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4271 extends Class4247 {
-   public static final ColorHelper field20697 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
+   public static final ColorHelper field20697 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.color).method19414(Class2218.field14492);
    public List<Integer> field20698 = new ArrayList<Integer>();
    public List<Integer> field20699 = new ArrayList<Integer>();
    public boolean field20700;
@@ -84,7 +84,7 @@ public class Class4271 extends Class4247 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + this.getHeightA() + this.method13108()),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
       );
       RenderUtil.drawRoundedRect(
          (float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)(this.getHeightA() + this.method13108()), 6.0F, var1 * 0.21F
@@ -94,7 +94,7 @@ public class Class4271 extends Class4247 {
          RenderUtil.drawString(
             this.getFont(),
             (float)(this.getXA() + 10),
-            (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
+            (float)(this.getYA() + (this.getHeightA() - this.getFont().getHeight()) / 2 + 1),
             this.field20912,
             MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );

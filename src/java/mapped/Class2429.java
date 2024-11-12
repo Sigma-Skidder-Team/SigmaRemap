@@ -1,8 +1,6 @@
 package mapped;
 
 public class Class2429 extends Exception {
-   private static String[] field16464;
-   private static final long field16465 = 3731842424390998726L;
    private final int field16466;
 
    public Class2429(int var1) {

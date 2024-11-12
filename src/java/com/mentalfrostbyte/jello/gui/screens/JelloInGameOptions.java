@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.EasingFunctions;
 import mapped.JelloOptionsMainMenu;
 import mapped.QuadraticEasing;
@@ -55,8 +55,8 @@ public class JelloInGameOptions extends Screen {
          var5 = field21112.calcPercent();
       }
 
-      int var6 = MultiUtilities.method17690(-1072689136, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
-      int var7 = MultiUtilities.method17690(-804253680, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
+      int var6 = MultiUtilities.method17690(-1072689136, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1F), var5);
+      int var7 = MultiUtilities.method17690(-804253680, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1F), var5);
       RenderUtil.method11431(0, 0, this.getWidthA(), this.getHeightA(), var6, var7);
       this.method13279(var4, var4);
       this.method13224();
@@ -82,7 +82,7 @@ public class JelloInGameOptions extends Screen {
                  (float)(this.getWidthA() * 2),
                  (float)(this.getHeightA() + 114),
                  this.field21113,
-                 MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                 MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
          );
       }
 

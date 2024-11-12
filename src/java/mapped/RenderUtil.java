@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import lol.Texture;
-import lol.TextureImpl;
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureImpl;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -431,33 +431,33 @@ public class RenderUtil {
       RenderSystem.disableBlend();
    }
 
-   public static void drawString(ClientResource var0, float var1, float var2, String var3, int var4) {
+   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4) {
       method11441(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
    }
 
-   public static void method11440(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
+   public static void method11440(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
       method11441(var0, var1, var2, var3, var4, var5, var6, false);
    }
 
-   public static void method11441(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
+   public static void method11441(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
       RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.getStringWidth(var3) / 2;
+            var10 = -var0.getWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.getStringWidth(var3);
+            var10 = -var0.getWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {
          case 1:
-            var11 = -var0.method23941(var3) / 2;
+            var11 = -var0.getHeight(var3) / 2;
             break;
          case 3:
-            var11 = -var0.method23941(var3);
+            var11 = -var0.getHeight(var3);
       }
 
       float var12 = (float)(var4 >> 24 & 0xFF) / 255.0F;
@@ -502,11 +502,11 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       if (var7) {
-         var0.drawString((float)Math.round(var1 + (float)var10), (float)(Math.round(var2 + (float)var11) + 2), var3, new Color(0.0F, 0.0F, 0.0F, 0.35F));
+         var0.drawString((float)Math.round(var1 + (float)var10), (float)(Math.round(var2 + (float)var11) + 2), var3, new org.newdawn.slick.Color(0.0F, 0.0F, 0.0F, 0.35F));
       }
 
       if (var3 != null) {
-         var0.drawString((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new Color(var13, var14, var15, var12));
+         var0.drawString((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new org.newdawn.slick.Color(var13, var14, var15, var12));
       }
 
       RenderSystem.disableBlend();
@@ -528,18 +528,18 @@ public class RenderUtil {
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.getStringWidth(var3) / 2;
+            var10 = -var0.getWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.getStringWidth(var3);
+            var10 = -var0.getWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {
          case 1:
-            var11 = -var0.method23941(var3) / 2;
+            var11 = -var0.getHeight(var3) / 2;
             break;
          case 3:
-            var11 = -var0.method23941(var3);
+            var11 = -var0.getHeight(var3);
       }
 
       float var12 = (float)(var4 >> 24 & 0xFF) / 255.0F;
@@ -549,7 +549,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       TextureImpl.bindNone();
-      var0.drawString((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new Color(var13, var14, var15, var12));
+      var0.drawString((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new org.newdawn.slick.Color(var13, var14, var15, var12));
       RenderSystem.disableBlend();
    }
 
@@ -748,7 +748,7 @@ public class RenderUtil {
    }
 
    public static void drawImage(float x, float y, float var2, float var3, Texture tex, float alphaValue) {
-      drawImage(x, y, var2, var3, tex, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alphaValue));
+      drawImage(x, y, var2, var3, tex, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, alphaValue));
    }
 
    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {
@@ -990,7 +990,7 @@ public class RenderUtil {
 
    public static void drawRoundedRect(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
-      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
+      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5);
       drawImage(var0 - var4, var1 - var4, var4, var4, ResourceList.shadowCorner1PNG, var8);
       drawImage(var0 + var2, var1 - var4, var4, var4, ResourceList.shadowCorner2PNG, var8);
       drawImage(var0 - var4, var1 + var3, var4, var4, ResourceList.shadowCorner3PNG, var8);
@@ -1002,7 +1002,7 @@ public class RenderUtil {
    }
 
    public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
-      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
+      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5);
       method11450(var0, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
       method11450(var0 + var2 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
       method11450(var0, var1, var2, var4, ResourceList.shadowBottomPNG, var8, false);
@@ -1269,7 +1269,7 @@ public class RenderUtil {
          GL11.glAlphaFunc(519, 0.0F);
          RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
-         TextureImpl.method36180();
+         TextureImpl.unbind();
          mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
          RenderHelper.setupGui3DDiffuseLighting();
       }
@@ -1285,7 +1285,7 @@ public class RenderUtil {
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
       mc.getItemRenderer().renderItemIntoGUI(var0, 0, 0);
       mc.getItemRenderer().field847 += 1101.0F;
-      TextureImpl.method36180();
+      TextureImpl.unbind();
       mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
       GL11.glPopMatrix();
    }

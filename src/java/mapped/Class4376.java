@@ -1,13 +1,13 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -16,7 +16,7 @@ public class Class4376 extends PNGIconButton implements Class4238 {
    public boolean field21382 = false;
    public Animation field21383 = new Animation(90, 90, Direction.BACKWARDS);
 
-   public Class4376(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, ClientResource var10) {
+   public Class4376(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
@@ -29,7 +29,7 @@ public class Class4376 extends PNGIconButton implements Class4238 {
    }
 
    public Class4376(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
-      super(var1, var2, var3, var4, var5, var6, var7, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor));
+      super(var1, var2, var3, var4, var5, var6, var7, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.LIGHT_GREYISH_BLUE.color));
    }
 
    @Override
@@ -75,27 +75,27 @@ public class Class4376 extends PNGIconButton implements Class4238 {
       }
 
       RenderUtil.endScissor();
-      ClientResource var11 = this.getFont();
+      TrueTypeFont var11 = this.getFont();
       if (var4 > 1.0F) {
          float var12 = (var4 - 1.0F) / (this.method13032() - 1.0F);
          GL11.glPushMatrix();
          String var13 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getXA() + this.getWidthA() / 2 - var11.getStringWidth(var13) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
+            (float)(this.getXA() + this.getWidthA() / 2 - var11.getWidth(var13) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );
          GL11.glScalef(var4 / this.method13032(), var4 / this.method13032(), var4 / this.method13032());
          GL11.glAlphaFunc(519, 0.0F);
          RenderUtil.drawImage(
-            (1.0F - var4 / this.method13032()) * (float)var11.getStringWidth(var13) / 2.0F + 1.0F - (float)var11.getStringWidth(var13) / 2.0F,
-            (float)var11.method23941(var13) / 3.0F,
-            (float)(var11.getStringWidth(var13) * 2),
-            (float)var11.method23941(var13) * 3.0F,
+            (1.0F - var4 / this.method13032()) * (float)var11.getWidth(var13) / 2.0F + 1.0F - (float)var11.getWidth(var13) / 2.0F,
+            (float)var11.getHeight(var13) / 3.0F,
+            (float)(var11.getWidth(var13) * 2),
+            (float)var11.getHeight(var13) * 3.0F,
             ResourceList.shadowPNG,
             var12 * 0.6F
          );
          RenderUtil.drawString(
             var11,
-            (1.0F - var4 / this.method13032()) * (float)var11.getStringWidth(var13) / 2.0F + 1.0F,
+            (1.0F - var4 / this.method13032()) * (float)var11.getWidth(var13) / 2.0F + 1.0F,
             40.0F,
             var13,
             MultiUtilities.applyAlpha(this.method13307().method19405(), var12 * 0.6F)

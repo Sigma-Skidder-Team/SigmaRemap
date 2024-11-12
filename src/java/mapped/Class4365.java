@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 
 public class Class4365 extends Class4247 {
@@ -36,7 +36,7 @@ public class Class4365 extends Class4247 {
          var4 = this.account.username;
       }
 
-      this.setWidthA(this.font.getStringWidth(var4) + 50 + 60);
+      this.setWidthA(this.font.getWidth(var4) + 50 + 60);
       this.setXA(Minecraft.getInstance().mainWindow.getWidth() - this.widthA - 20);
       boolean var6 = this.field21337 >= this.xA && this.field21338 <= this.yA + this.getHeightA();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
@@ -48,7 +48,7 @@ public class Class4365 extends Class4247 {
          (float)this.yA,
          (float)(this.xA + this.getWidthA()),
          (float)(this.yA + this.getHeightA()),
-         MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
+         MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.color, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
       );
       RenderUtil.drawImage(
          (float)(this.xA + this.widthA - 60 - 10),
@@ -56,14 +56,14 @@ public class Class4365 extends Class4247 {
          60.0F,
          60.0F,
          var5,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (0.5F + 0.5F * this.field21334) * var1)
       );
       RenderUtil.drawString(
          this.font,
-         (float)(this.xA + this.widthA - 90 - this.font.getStringWidth(var4)),
+         (float)(this.xA + this.widthA - 90 - this.font.getWidth(var4)),
          (float)(this.yA + 27),
          var4,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (0.5F + 0.5F * this.field21334) * var1)
       );
       super.draw(var1);
    }

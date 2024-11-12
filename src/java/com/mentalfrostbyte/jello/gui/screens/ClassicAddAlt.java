@@ -33,11 +33,11 @@ public class ClassicAddAlt extends Screen {
       var4 += 80;
       this.addToList(this.field21117 = new SigmaClassicTextBox(this, "password", var5, var4, var3, 45, SigmaClassicTextBox.field20741, "", "Password", ResourceRegistry.DefaultClientFont));
       var4 += 190;
-      this.addToList(this.field21118 = new Class4300(this, "login", var5, var4, var3, 40, "Login", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21118 = new Class4300(this, "login", var5, var4, var3, 40, "Login", ClientColors.MID_GREY.color));
       var4 += 50;
-      this.addToList(this.field21119 = new Class4300(this, "back", var5, var4, var3, 40, "Back", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21119 = new Class4300(this, "back", var5, var4, var3, 40, "Back", ClientColors.MID_GREY.color));
       var4 += 50;
-      this.addToList(this.field21120 = new Class4300(this, "import", var5, var4, var3, 40, "Import user:pass", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21120 = new Class4300(this, "import", var5, var4, var3, 40, "Import user:pass", ClientColors.MID_GREY.color));
       this.field21117.method13155(true);
       this.field21117.method13147("*");
       this.field21118.doThis((var1, var2) -> {
@@ -74,17 +74,17 @@ public class ClassicAddAlt extends Screen {
    @Override
    public void draw(float var1) {
       RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ResourceList.mainmenubackground);
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.PALE_RED.getColor, 0.1F));
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.95F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.PALE_RED.color, 0.1F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.95F));
       RenderUtil.method11440(
-         ResourceRegistry.DefaultClientFont, (float)(this.getWidthA() / 2), 38.0F, "Add Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
+         ResourceRegistry.DefaultClientFont, (float)(this.getWidthA() / 2), 38.0F, "Add Alt", ClientColors.LIGHT_GREYISH_BLUE.color, Class2218.field14492, Class2218.field14488
       );
       RenderUtil.method11441(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          58.0F,
          this.field21122,
-         ClientColors.LIGHT_GREYISH_BLUE.getColor,
+         ClientColors.LIGHT_GREYISH_BLUE.color,
          Class2218.field14492,
          Class2218.field14488,
          true

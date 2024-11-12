@@ -1,11 +1,12 @@
 package mapped;
 
-import lol.Class7427;
-import lol.Log;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.util.Log;
 
 import java.io.UnsupportedEncodingException;
 
-public class Class7428 implements Class7427 {
+public class Class7428 implements Font {
    private Class7386 field31927;
    private char field31928;
    private int field31929;
@@ -24,8 +25,8 @@ public class Class7428 implements Class7427 {
    }
 
    @Override
-   public void method23936(float var1, float var2, String var3) {
-      this.drawString(var1, var2, var3, Color.field16442);
+   public void drawString(float var1, float var2, String var3) {
+      this.drawString(var1, var2, var3, Color.white);
    }
 
    @Override
@@ -49,17 +50,17 @@ public class Class7428 implements Class7427 {
             }
          }
       } catch (UnsupportedEncodingException var14) {
-         Log.method25661(var14);
+         Log.error(var14);
       }
    }
 
    @Override
-   public int method23941(String var1) {
+   public int getHeight(String var1) {
       return this.field31930;
    }
 
    @Override
-   public int getStringWidth(String var1) {
+   public int getWidth(String var1) {
       return this.field31929 * var1.length();
    }
 

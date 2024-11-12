@@ -42,7 +42,7 @@ public class TargetHUD extends Module {
     public int field23683;
     public int field23684;
     public int field23685 = 100;
-    public int field23694 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F);
+    public int field23694 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05F);
     private final float field23686 = 1.0F;
     private float field23687 = 0.0F;
     private float field23688 = 0.0F;
@@ -80,7 +80,7 @@ public class TargetHUD extends Module {
         }
         if (this.entity != null) {
             this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.JelloLightFont20.getStringWidth(this.entity.getName().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.getWidth(this.entity.getName().getString()))
                     + (this.getBooleanValueFromSettingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");
@@ -111,7 +111,7 @@ public class TargetHUD extends Module {
     public void method16474(EventRender var1) {
         if (this.entity != null) {
             this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.JelloLightFont20.getStringWidth(this.entity.getName().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.getWidth(this.entity.getName().getString()))
                     + (this.getBooleanValueFromSettingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");

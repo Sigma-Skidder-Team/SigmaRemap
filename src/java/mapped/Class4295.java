@@ -42,7 +42,7 @@ public class Class4295 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
          );
       } else {
          RenderUtil.drawRect(

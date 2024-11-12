@@ -18,7 +18,7 @@ import org.lwjgl.opengl.GL11;
 public class Tracers extends Module {
     public Tracers() {
         super(ModuleCategory.RENDER, "Tracers", "Shows players");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
 
     @EventTarget

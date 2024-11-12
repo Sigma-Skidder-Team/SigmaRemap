@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class4244 extends ButtonPanel {
    private static String[] field20594;
-   public static final ColorHelper field20595 = new ColorHelper(ClientColors.DARK_BLUE_GREY.getColor, MultiUtilities.method17691(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+   public static final ColorHelper field20595 = new ColorHelper(ClientColors.DARK_BLUE_GREY.color, MultiUtilities.method17691(ClientColors.DARK_BLUE_GREY.color, 0.1F));
 
    public Class4244(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20595);

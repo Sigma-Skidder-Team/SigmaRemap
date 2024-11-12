@@ -21,7 +21,7 @@ public class Class4272 extends Class4247 {
       super(var1, var2, var3, var4, var5, 0, ColorHelper.field27961, false);
       UIButton blankButton;
       this.addToList(
-         blankButton = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.getStringWidth("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
+         blankButton = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.getWidth("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
       blankButton.doThis((var1x, var2x) -> {
          ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
@@ -32,9 +32,9 @@ public class Class4272 extends Class4247 {
          var10 = new UIButton(
             this,
             "dupeButton",
-            var5 - 25 - ResourceRegistry.JelloLightFont20.getStringWidth("Duplicate"),
+            var5 - 25 - ResourceRegistry.JelloLightFont20.getWidth("Duplicate"),
             0,
-            ResourceRegistry.JelloLightFont20.getStringWidth("Duplicate"),
+            ResourceRegistry.JelloLightFont20.getWidth("Duplicate"),
             30,
             ColorHelper.field27961,
             "Duplicate",
@@ -112,7 +112,7 @@ public class Class4272 extends Class4247 {
             (float)this.widthA,
             50.0F,
             ResourceList.shadowBottomPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20703.calcPercent() * var1 * 0.3F)
          );
          RenderUtil.method11415(this);
          RenderUtil.renderBackgroundBox(
@@ -124,7 +124,7 @@ public class Class4272 extends Class4247 {
                (float)(this.xA + 40),
                (float)(this.yA + 110),
                "No Default Profiles Available",
-               ClientColors.MID_GREY.getColor
+               ClientColors.MID_GREY.color
             );
          }
 

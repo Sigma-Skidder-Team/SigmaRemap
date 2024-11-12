@@ -5,12 +5,12 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mojang.datafixers.util.Pair;
 import mapped.RenderUtil;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -69,7 +69,7 @@ public class Murderer extends Module {
     private void onRender(EventRender event) throws IOException {
         if (this.isEnabled() && this.isMurdererDetected) {
             if (this.getBooleanValueFromSettingName("GUI")) {
-                ClientResource fontResource = ResourceRegistry.JelloLightFont20;
+                TrueTypeFont fontResource = ResourceRegistry.JelloLightFont20;
                 int screenWidth = Minecraft.getInstance().mainWindow.getWidth();
                 int screenHeight = Minecraft.getInstance().mainWindow.getHeight();
 
@@ -79,14 +79,14 @@ public class Murderer extends Module {
 
                 if (this.texture != null) {
                     RenderUtil.drawRect(
-                            (float) (screenWidth - fontResource.getStringWidth(this.murdererName) - 90),
+                            (float) (screenWidth - fontResource.getWidth(this.murdererName) - 90),
                             (float) (screenHeight - 130),
                             (float) (screenWidth - 10),
                             (float) (screenHeight - 10),
                             1342177280
                     );
                     RenderUtil.method11455(
-                            (float) (screenWidth - fontResource.getStringWidth(this.murdererName) - 80),
+                            (float) (screenWidth - fontResource.getWidth(this.murdererName) - 80),
                             (float) (screenHeight - 120),
                             50.0F,
                             100.0F,
@@ -94,8 +94,8 @@ public class Murderer extends Module {
                     );
                     RenderUtil.drawString(
                             fontResource,
-                            (float) (screenWidth - fontResource.getStringWidth(this.murdererName) - 20),
-                            (float) (screenHeight - fontResource.method23941(this.murdererName) - 60),
+                            (float) (screenWidth - fontResource.getWidth(this.murdererName) - 20),
+                            (float) (screenHeight - fontResource.getHeight(this.murdererName) - 60),
                             this.murdererName,
                             -1
                     );

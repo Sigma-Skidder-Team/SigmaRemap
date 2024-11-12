@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
@@ -66,14 +66,14 @@ public class ChangelogScreen extends CustomGuiScreen {
 
       this.drawBackground((int)(150.0f * (1.0f - fadeFactor)));
       this.method13225();
-      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Changelog", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alpha));
-      ClientResource jelloLightFont25 = ResourceRegistry.JelloLightFont25;
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Changelog", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, alpha));
+      TrueTypeFont jelloLightFont25 = ResourceRegistry.JelloLightFont25;
       String versionText = "You're currently using Sigma " + Client.VERSION;
       RenderUtil.drawString(
               jelloLightFont25,
               100.0f, 150.0f,
               versionText,
-              MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6f * alpha)
+              MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * alpha)
       );
       super.draw(alpha);
    }

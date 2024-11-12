@@ -15,7 +15,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import lol.TextureImpl;
+import org.newdawn.slick.opengl.TextureImpl;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -30,7 +30,7 @@ public class ShadowESP extends Module {
 
     public ShadowESP() {
         super(ModuleCategory.RENDER, "Shadow", "Draws a line arround entities");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
 
     @EventTarget
@@ -59,7 +59,7 @@ public class ShadowESP extends Module {
     }
 
     private void method16606() {
-        int var3 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
+        int var3 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F);
         mc.world
                 .entitiesById
                 .forEach(
@@ -213,7 +213,7 @@ public class ShadowESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.method36180();
+        TextureImpl.unbind();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);

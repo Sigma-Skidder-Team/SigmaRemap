@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -16,7 +16,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
    public boolean field20577 = false;
    public Animation field20578 = new Animation(160, 140, Direction.BACKWARDS);
 
-   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, ClientResource var10) {
+   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
@@ -29,7 +29,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
    }
 
    public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
-      super(var1, var2, var3, var4, var5, var6, var7, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor));
+      super(var1, var2, var3, var4, var5, var6, var7, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.LIGHT_GREYISH_BLUE.color));
    }
 
    @Override
@@ -79,7 +79,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          var10[2] + (var11 * 2),
          var10[3] + (var11 * 2),
          ResourceList.shadowPNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20578.calcPercent() * 0.7F * var1)
       );
       RenderUtil.drawImage(
          (float)var8 + var10[0],
@@ -101,27 +101,27 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          );
       }
 
-      ClientResource font = this.getFont();
+      TrueTypeFont font = this.getFont();
       float var13 = 0.8F + var5 * 0.2F;
       if (var5 > 0.0F) {
          GL11.glPushMatrix();
          String var14 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getXA() + this.getWidthA() / 2 - font.getStringWidth(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
+            (float)(this.getXA() + this.getWidthA() / 2 - font.getWidth(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);
          RenderUtil.drawImage(
-            (1.0F - var13) * (float)font.getStringWidth(var14) / 2.0F + 1.0F - (float)font.getStringWidth(var14) / 2.0F,
-            (float)font.method23941(var14) / 3.0F,
-            (float)(font.getStringWidth(var14) * 2),
-            (float)font.method23941(var14) * 3.0F,
+            (1.0F - var13) * (float)font.getWidth(var14) / 2.0F + 1.0F - (float)font.getWidth(var14) / 2.0F,
+            (float)font.getHeight(var14) / 3.0F,
+            (float)(font.getWidth(var14) * 2),
+            (float)font.getHeight(var14) * 3.0F,
             ResourceList.shadowPNG,
             var5 * 0.6F * var1
          );
          RenderUtil.drawString(
             font,
-            (1.0F - var13) * (float)font.getStringWidth(var14) / 2.0F + 1.0F,
+            (1.0F - var13) * (float)font.getWidth(var14) / 2.0F + 1.0F,
             40.0F,
             var14,
             MultiUtilities.applyAlpha(this.method13307().method19405(), var5 * 0.6F * var1)

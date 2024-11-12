@@ -43,7 +43,7 @@ public class Class4279 extends Class4278 {
          (float)(this.xA + 5),
          (float)(this.yA + 5),
          10.0F,
-         MultiUtilities.applyAlpha(!this.method13216() ? ClientColors.DARK_GREEN.getColor : ClientColors.DARK_BLUE_GREY.getColor, var1)
+         MultiUtilities.applyAlpha(!this.method13216() ? ClientColors.DARK_GREEN.color : ClientColors.DARK_BLUE_GREY.color, var1)
       );
       super.draw(var1);
    }

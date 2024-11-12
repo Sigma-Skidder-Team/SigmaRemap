@@ -25,18 +25,18 @@ public class ClassicAltManager extends CustomGuiScreen {
 
    public ClassicAltManager(CustomGuiScreen var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 760, 87);
-      this.addToList(this.field21140 = new Class4300(this, "reload", 0, 0, 120, 40, "Reload", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21141 = new Class4300(this, "back", 0, 48, 120, 40, "Back", ClientColors.DEEP_TEAL.getColor));
+      this.addToList(this.field21140 = new Class4300(this, "reload", 0, 0, 120, 40, "Reload", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21141 = new Class4300(this, "back", 0, 48, 120, 40, "Back", ClientColors.DEEP_TEAL.color));
       int var7 = 200;
       int var8 = 146;
       int var9 = this.getWidthA() - 625;
-      this.addToList(this.field21142 = new Class4300(this, "login", var9, 0, var7, 40, "Login", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21145 = new Class4300(this, "direct", var9 + var7 + 16, 0, var7, 40, "Direct Login", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21147 = new Class4300(this, "add", var9 + var7 * 2 + 32, 0, var7, 40, "Add", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21143 = new Class4300(this, "random", var9, 48, var8, 40, "Random", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21144 = new Class4300(this, "remove", var9 + var8 + 16, 48, var8, 40, "Remove", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21146 = new Class4300(this, "edit", var9 + var8 * 2 + 32, 48, var8, 40, "Edit", ClientColors.DEEP_TEAL.getColor));
-      this.addToList(this.field21148 = new Class4300(this, "alpha", var9 + var8 * 3 + 48, 48, var8, 40, "Alphalts", ClientColors.DEEP_TEAL.getColor));
+      this.addToList(this.field21142 = new Class4300(this, "login", var9, 0, var7, 40, "Login", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21145 = new Class4300(this, "direct", var9 + var7 + 16, 0, var7, 40, "Direct Login", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21147 = new Class4300(this, "add", var9 + var7 * 2 + 32, 0, var7, 40, "Add", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21143 = new Class4300(this, "random", var9, 48, var8, 40, "Random", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21144 = new Class4300(this, "remove", var9 + var8 + 16, 48, var8, 40, "Remove", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21146 = new Class4300(this, "edit", var9 + var8 * 2 + 32, 48, var8, 40, "Edit", ClientColors.DEEP_TEAL.color));
+      this.addToList(this.field21148 = new Class4300(this, "alpha", var9 + var8 * 3 + 48, 48, var8, 40, "Alphalts", ClientColors.DEEP_TEAL.color));
       SigmaClassicAltManager var10 = (SigmaClassicAltManager)this.getIcoPanel();
       this.field21143
          .doThis(

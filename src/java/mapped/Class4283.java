@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -13,10 +13,10 @@ import java.net.URL;
 public class Class4283 extends Class4278 {
    private static String[] field20736;
    public static ColorHelper field20760 = new ColorHelper(
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -50,7 +50,7 @@ public class Class4283 extends Class4278 {
       GL11.glRotated(1.0 * Math.abs(var4 * var6), var6, var4, 0.0);
       GL11.glTranslatef((float)(-this.xA - this.widthA / 2), (float)(-this.yA - this.heightA / 2), 0.0F);
       GL11.glDisable(2929);
-      RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ClientColors.PALE_YELLOW.getColor);
+      RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ClientColors.PALE_YELLOW.color);
       GL11.glPopMatrix();
       super.draw(var1);
    }

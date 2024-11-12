@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.util.TextureUtil;
+import org.newdawn.slick.util.BufferedImageUtil;
 import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -26,10 +26,10 @@ import java.util.UUID;
 
 public class Class4298 extends Class4278 {
    public static ColorHelper field20821 = new ColorHelper(
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
-      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.color,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -116,7 +116,7 @@ public class Class4298 extends Class4278 {
             Object var17 = null;
 
             try {
-               var17 = TextureUtil.method32933("sf", this.account.method34228());
+               var17 = BufferedImageUtil.getTexture("sf", this.account.method34228());
             } catch (IOException var19) {
                var19.printStackTrace();
             }

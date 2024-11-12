@@ -7,11 +7,11 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
-import com.mentalfrostbyte.jello.util.TextureUtil;
+import org.newdawn.slick.util.BufferedImageUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.ResourceLocation;
@@ -72,8 +72,8 @@ public class Class4348 extends Class4278 {
             try {
                BufferedImage var6 = method13578(this.field21244.getBase64EncodedIconData());
                if (var6 != null) {
-                  this.field21245 = TextureUtil.method32933("servericon", var6);
-                  this.field21246 = TextureUtil.method32933(
+                  this.field21245 = BufferedImageUtil.getTexture("servericon", var6);
+                  this.field21246 = BufferedImageUtil.getTexture(
                      "servericon", ImageUtil.method35032(ImageUtil.method35042(method13579(var6, 2.5, 2.5), 0.0F, 1.1F, 0.0F), 25)
                   );
                }
@@ -88,7 +88,7 @@ public class Class4348 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            ClientColors.LIGHT_GREYISH_BLUE.getColor
+            ClientColors.LIGHT_GREYISH_BLUE.color
          );
          GL11.glTexParameteri(3553, 10241, 9728);
          GL11.glPushMatrix();
@@ -108,7 +108,7 @@ public class Class4348 extends Class4278 {
                (float)this.widthA,
                (float)this.widthA,
                this.field21246,
-               MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
+               MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 0.7F), 0.8F)
             );
          }
 
@@ -119,7 +119,7 @@ public class Class4348 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3F + 0.3F * this.field21248.calcPercent())
          );
       }
 
@@ -149,11 +149,11 @@ public class Class4348 extends Class4278 {
       if (this.field21245 == null) {
          Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("textures/misc/unknown_server.png"));
          RenderUtil.method11457(
-            (float)(this.xA + 12), (float)(this.yA + 12), 64.0F, 64.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.0F, 0.0F, 64.0F, 64.0F
+            (float)(this.xA + 12), (float)(this.yA + 12), 64.0F, 64.0F, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0F, 0.0F, 64.0F, 64.0F
          );
       } else {
          RenderUtil.method11450(
-            (float)(this.xA + 12), (float)(this.yA + 12), 64.0F, 64.0F, this.field21245, ClientColors.LIGHT_GREYISH_BLUE.getColor, true
+            (float)(this.xA + 12), (float)(this.yA + 12), 64.0F, 64.0F, this.field21245, ClientColors.LIGHT_GREYISH_BLUE.color, true
          );
       }
 
@@ -192,7 +192,7 @@ public class Class4348 extends Class4278 {
          !this.field21244.serverName.equals("Minecraft Server")
             ? this.field21244.serverName
             : this.field21244.serverIP.substring(0, 1).toUpperCase() + this.field21244.serverIP.substring(1, this.field21244.serverIP.length()),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9F)
       );
       byte var12 = 94;
       byte var13 = 46;
@@ -203,7 +203,7 @@ public class Class4348 extends Class4278 {
                (float)(this.xA + var12),
                (float)(this.yA + var13),
                "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
-               MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
+               MultiUtilities.method17690(ClientColors.DEEP_TEAL.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.2F)
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             RenderUtil.drawString(
@@ -211,7 +211,7 @@ public class Class4348 extends Class4278 {
                (float)(this.xA + var12),
                (float)(this.yA + var13),
                "Unbanned!",
-               MultiUtilities.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+               MultiUtilities.method17690(ClientColors.DARK_SLATE_GREY.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3F)
             );
          } else {
             RenderUtil.drawString(
@@ -219,7 +219,7 @@ public class Class4348 extends Class4278 {
                (float)(this.xA + var12),
                (float)(this.yA + var13),
                "Permanently banned!",
-               MultiUtilities.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+               MultiUtilities.method17690(ClientColors.PALE_YELLOW.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3F)
             );
          }
       } else {
@@ -228,7 +228,7 @@ public class Class4348 extends Class4278 {
             (float)(this.xA + var12),
             (float)(this.yA + var13),
             "Compromised ban (unbannable)!",
-            MultiUtilities.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+            MultiUtilities.method17690(ClientColors.DARK_OLIVE.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3F)
          );
       }
 

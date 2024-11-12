@@ -50,9 +50,9 @@ public class CreditsToCreators extends Screen {
          0.0F,
          (float)this.widthA,
          (float)this.heightA,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, this.field21076.calcPercent() * 0.95F)
       );
-      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.color);
       byte var4 = 40;
       super.draw(this.field21076.calcPercent());
    }

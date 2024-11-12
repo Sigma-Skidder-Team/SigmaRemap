@@ -106,7 +106,7 @@ public class GuiSwitch extends Screen {
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
-                    MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
+                    MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3F)
             );
             super.draw(var1);
             RenderUtil.drawImage(
@@ -115,7 +115,7 @@ public class GuiSwitch extends Screen {
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
                     CustomResourceLoadProgressGui.background,
-                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
+                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0F - field21069.calcPercent())
             );
             RenderUtil.renderBackgroundBox(
                     0.0F,

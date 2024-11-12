@@ -118,9 +118,9 @@ public class JelloEdit extends Module {
                     double y = block.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
                     double z = block.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                     Box3D box3D = new Box3D(x, y, z, x + 1.0, y + 1.0, z + 1.0);
-                    RenderUtil.render3DColoredBox(box3D, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F));
+                    RenderUtil.render3DColoredBox(box3D, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.color, 0.02F));
                     GL11.glEnable(GL11.GL_LINE_SMOOTH);
-                    RenderUtil.renderWireframeBox(box3D, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.03F));
+                    RenderUtil.renderWireframeBox(box3D, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.color, 0.03F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 }
             }

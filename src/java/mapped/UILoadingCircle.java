@@ -33,7 +33,7 @@ public class UILoadingCircle extends Class4278 {
             (float)this.widthA,
             (float)this.heightA,
             ResourceList.loadingIndicatorPNG,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, this.field20770 * var1)
          );
          GL11.glPopMatrix();
       }

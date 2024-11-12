@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import lol.Texture;
+import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -63,7 +63,7 @@ public class RectangleFaded extends ButtonPanel {
                 (float) this.getWidthA(),
                 (float) this.getHeightA(),
                 this.field20590,
-                ClientColors.LIGHT_GREYISH_BLUE.getColor
+                ClientColors.LIGHT_GREYISH_BLUE.color
         );
         GL11.glPushMatrix();
         super.method13226(var1);

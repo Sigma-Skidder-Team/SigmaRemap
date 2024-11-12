@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.gui;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.Class4347;
@@ -43,7 +43,7 @@ public class AnimatedIconPanel extends CustomGuiScreen implements Class4347 {
       this.field20876 = var9;
    }
 
-   public AnimatedIconPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
+   public AnimatedIconPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9, boolean var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
       this.field20876 = var10;
    }
