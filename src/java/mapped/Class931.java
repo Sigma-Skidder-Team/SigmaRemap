@@ -20,7 +20,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    private static final int[] field5270 = new int[]{3};
    private static final int[] field5271 = new int[]{0, 1, 2, 3};
    private static final int[] field5272 = new int[]{0, 1, 2, 4};
-   private NonNullList<ItemStack> field5273 = NonNullList.<ItemStack>withSize(5, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5273 = NonNullList.<ItemStack>method68(5, ItemStack.EMPTY);
    private int field5274;
    private boolean[] field5275;
    private Item field5276;
@@ -165,7 +165,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5273 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5273 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       ItemStackHelper.loadAllItems(var2, this.field5273);
       this.field5274 = var2.getShort("BrewTime");
       this.field5277 = var2.getByte("Fuel");
@@ -206,7 +206,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
    public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceSq((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;

@@ -12,7 +12,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -87,7 +90,7 @@ public class Class1086 extends Class1087 implements Class1020 {
          this.playSound(var9, 1.0F, 1.0F);
          return ActionResultType.method9002(this.world.isRemote);
       } else if (var5.getItem() == Items.field37956 && this.method4516()) {
-         this.method4515(SoundCategory.field14735);
+         this.method4515(Class2266.field14735);
          if (!this.world.isRemote) {
             var5.damageItem(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
@@ -143,7 +146,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    @Override
-   public void method4515(SoundCategory var1) {
+   public void method4515(Class2266 var1) {
       this.world.method6744((PlayerEntity)null, this, SoundEvents.field26769, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
          ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34070, this.getPosX(), this.getPosYHeight(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
@@ -46,7 +46,7 @@ public class CustomGuiScreen implements IGuiEventListener {
     public boolean field20910;
     public boolean field20911;
     public String field20912;
-    public TrueTypeFont font;
+    public ClientResource font;
     public ColorHelper textColor;
     private final ArrayList<Runnable> field20915 = new ArrayList<Runnable>();
     private boolean field20917;
@@ -70,7 +70,7 @@ public class CustomGuiScreen implements IGuiEventListener {
         this(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25);
     }
 
-    public CustomGuiScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
+    public CustomGuiScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
         this.field20891 = var2;
         this.icoPanel = var1;
         this.xA = var3;
@@ -599,6 +599,9 @@ public class CustomGuiScreen implements IGuiEventListener {
     }
 
     public void method13252(int var1) {
+        if (field20891.equals("Item3") && field20912.equals("Yes")) {
+            Client.getInstance().getNetworkManager().account = null; // This is so fucking bad code but who cares :trol:
+        }
         for (Class9781 var5 : this.field20922) {
             var5.method38555(this, var1);
         }
@@ -831,11 +834,11 @@ public class CustomGuiScreen implements IGuiEventListener {
         this.field20912 = var1;
     }
 
-    public TrueTypeFont getFont() {
+    public ClientResource getFont() {
         return this.font;
     }
 
-    public void setFont(TrueTypeFont var1) {
+    public void setFont(ClientResource var1) {
         this.font = var1;
     }
 

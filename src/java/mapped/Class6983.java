@@ -91,7 +91,7 @@ public class Class6983 {
    }
 
    public static boolean method21581(LivingEntity var0, LivingEntity var1) {
-      double var4 = var0.getDistanceSq(var1.getPosX(), var1.getPosY(), var1.getPosZ());
+      double var4 = var0.getDistanceNearest(var1.getPosX(), var1.getPosY(), var1.getPosZ());
       double var6 = (double)(var0.getWidth() * 2.0F * var0.getWidth() * 2.0F + var1.getWidth());
       return var4 <= var6;
    }
@@ -99,8 +99,8 @@ public class Class6983 {
    public static boolean method21582(LivingEntity var0, LivingEntity var1, double var2) {
       Optional var6 = var0.getBrain().<LivingEntity>method21410(Class8830.field39826);
       if (var6.isPresent()) {
-         double var7 = var0.getDistanceSq(((LivingEntity)var6.get()).getPositionVec());
-         double var9 = var0.getDistanceSq(var1.getPositionVec());
+         double var7 = var0.getDistanceNearest3(((LivingEntity)var6.get()).getPositionVec());
+         double var9 = var0.getDistanceNearest3(var1.getPositionVec());
          return var9 > var7 + var2 * var2;
       } else {
          return false;
@@ -119,7 +119,7 @@ public class Class6983 {
    public static LivingEntity method21585(LivingEntity var0, LivingEntity var1, LivingEntity var2) {
       Vector3d var5 = var1.getPositionVec();
       Vector3d var6 = var2.getPositionVec();
-      return !(var0.getDistanceSq(var5) < var0.getDistanceSq(var6)) ? var2 : var1;
+      return !(var0.getDistanceNearest3(var5) < var0.getDistanceNearest3(var6)) ? var2 : var1;
    }
 
    public static Optional<LivingEntity> method21586(LivingEntity var0, Class8830<UUID> var1) {

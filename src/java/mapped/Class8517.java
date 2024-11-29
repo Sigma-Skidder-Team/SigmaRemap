@@ -1,7 +1,5 @@
 package mapped;
 
-import org.newdawn.slick.Color;
-
 public class Class8517 implements Class8518 {
    private static String[] field38218;
    private Class2532 field38219 = new Class2532(0.0F, 0.0F);
@@ -101,13 +99,13 @@ public class Class8517 implements Class8518 {
 
          float var13 = 1.0F - var12;
          Color var14 = new Color(1, 1, 1, 1);
-         var14.r = var12 * this.field38223.r + var13 * this.field38222.r;
-         var14.b = var12 * this.field38223.b + var13 * this.field38222.b;
-         var14.g = var12 * this.field38223.g + var13 * this.field38222.g;
-         var14.a = var12 * this.field38223.a + var13 * this.field38222.a;
+         var14.field16455 = var12 * this.field38223.field16455 + var13 * this.field38222.field16455;
+         var14.field16457 = var12 * this.field38223.field16457 + var13 * this.field38222.field16457;
+         var14.field16456 = var12 * this.field38223.field16456 + var13 * this.field38222.field16456;
+         var14.field16458 = var12 * this.field38223.field16458 + var13 * this.field38222.field16458;
          return var14;
       } else {
-         return Color.black;
+         return Color.field16447;
       }
    }
 

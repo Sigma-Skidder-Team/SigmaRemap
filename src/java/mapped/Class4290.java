@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class Class4290 extends Class4278 {
             this.yA + var4,
             this.widthA - var4 * 2,
             this.heightA - var4 * 2,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9F * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
          );
          super.draw(var1);
       }

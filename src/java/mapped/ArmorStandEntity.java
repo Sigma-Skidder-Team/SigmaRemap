@@ -43,8 +43,8 @@ public class ArmorStandEntity extends LivingEntity {
    public static final DataParameter<Class7087> field5578 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
    public static final DataParameter<Class7087> field5579 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
    private static final Predicate<Entity> field5580 = var0 -> var0 instanceof AbstractMinecartEntity && ((AbstractMinecartEntity)var0).getMinecartType() == MinecartType.MINECART;
-   private final NonNullList<ItemStack> field5581 = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
-   private final NonNullList<ItemStack> field5582 = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5581 = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5582 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    private boolean field5583;
    public long field5584;
    private int field5585;

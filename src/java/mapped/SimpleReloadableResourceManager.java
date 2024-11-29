@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import net.minecraft.resources.IAsyncReloader;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Unit;
 import org.apache.logging.log4j.LogManager;
@@ -109,7 +108,7 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
       this.field726.add(var1);
    }
 
-   public IAsyncReloader method590(Executor var1, Executor var2, List<Class268> var3, CompletableFuture<Unit> var4) {
+   public Class8335 method590(Executor var1, Executor var2, List<Class268> var3, CompletableFuture<Unit> var4) {
       Object var7;
       if (!field723.isDebugEnabled()) {
          var7 = Class8337.method29228(this, Lists.newArrayList(var3), var1, var2, var4);
@@ -118,11 +117,11 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
       }
 
       this.field726.clear();
-      return (IAsyncReloader)var7;
+      return (Class8335)var7;
    }
 
    @Override
-   public IAsyncReloader reloadResources(Executor var1, Executor var2, CompletableFuture<Unit> var3, List<IResourcePack> var4) {
+   public Class8335 reloadResources(Executor var1, Executor var2, CompletableFuture<Unit> var3, List<IResourcePack> var4) {
       this.method589();
       field723.info(
          "Reloading ResourceManager: {}", new Supplier[]{() -> var4.stream().<CharSequence>map(IResourcePack::getName).collect(Collectors.joining(", "))}

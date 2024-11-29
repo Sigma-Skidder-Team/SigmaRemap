@@ -15,7 +15,7 @@ public class Class8558 extends Class8557 {
       int[] var5 = Arrays.copyOf(var0, var0.length);
 
       for (int var6 = 0; var6 < 4; var6++) {
-         VertexFormat var7 = DefaultVertexFormats.BLOCK;
+         Class7831 var7 = DefaultVertexFormats.field43334;
          int var8 = var7.method26215() * var6;
          int var9 = var7.method26220(2) / 4;
          var5[var8 + var9] = Float.floatToRawIntBits(var2.method7461((double)var1.method7492(Float.intBitsToFloat(var0[var8 + var9]))));

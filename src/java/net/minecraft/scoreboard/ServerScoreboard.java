@@ -105,8 +105,8 @@ public class ServerScoreboard extends Scoreboard {
    }
 
    @Override
-   public void onObjectiveChanged(Class8375 var1) {
-      super.onObjectiveChanged(var1);
+   public void method21000(Class8375 var1) {
+      super.method21000(var1);
       if (this.field29849.contains(var1)) {
          this.field29848.getPlayerList().method19456(new SScoreboardObjectivePacket(var1, 2));
       }
@@ -166,7 +166,7 @@ public class ServerScoreboard extends Scoreboard {
          }
       }
 
-      for (Class9411 var6 : this.getSortedScores(var1)) {
+      for (Class9411 var6 : this.method20981(var1)) {
          var4.add(new SUpdateScorePacket(Class2073.field13503, var6.method36053().method29336(), var6.method36054(), var6.method36050()));
       }
 

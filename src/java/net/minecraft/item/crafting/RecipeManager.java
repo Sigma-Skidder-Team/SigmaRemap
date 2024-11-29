@@ -80,7 +80,7 @@ public class RecipeManager extends Class281 {
       if (var6.isPresent()) {
          return ((IRecipe)var6.get()).method14968(var2);
       } else {
-         NonNullList var7 = NonNullList.<ItemStack>withSize(var2.getSizeInventory(), ItemStack.EMPTY);
+         NonNullList var7 = NonNullList.<ItemStack>method68(var2.getSizeInventory(), ItemStack.EMPTY);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             var7.set(var8, var2.getStackInSlot(var8));

@@ -61,7 +61,7 @@ public class Class2598 extends Class2595 {
 
    @Override
    public void method10805() {
-      double var3 = this.field16826.getDistanceSq(this.field16828.getPosX(), this.field16828.getPosY(), this.field16828.getPosZ());
+      double var3 = this.field16826.getDistanceNearest(this.field16828.getPosX(), this.field16828.getPosY(), this.field16828.getPosZ());
       boolean var5 = this.field16826.method4231().method35460(this.field16828);
       if (!var5) {
          this.field16831 = 0;

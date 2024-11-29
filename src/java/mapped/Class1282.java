@@ -132,7 +132,7 @@ public class Class1282 extends Class1274<Class1171> {
 
       if (this.field6841 >= 0) {
          this.method6102(this.method6098(this.field6841));
-         this.field6782.getSoundHandler().play(CustomSoundPlayer.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+         this.field6782.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
       }
    }
 
@@ -193,7 +193,7 @@ public class Class1282 extends Class1274<Class1171> {
    }
 
    public ITextComponent method6101(Item var1) {
-      return var1.getName();
+      return var1.method11717();
    }
 
    public void method6102(Class49<?> var1) {

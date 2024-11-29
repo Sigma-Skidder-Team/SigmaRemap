@@ -3972,7 +3972,7 @@ public class Shaders {
 
         GlStateManager.pushMatrix();
         GlStateManager.multMatrix(var0.getLast().getMatrix());
-        var1.begin(7, DefaultVertexFormats.POSITION);
+        var1.begin(7, DefaultVertexFormats.field43341);
         var1.pos(var7, var13, var9).endVertex();
         var1.pos(var7, var11, var9).endVertex();
         var1.pos(var9, var11, var7).endVertex();

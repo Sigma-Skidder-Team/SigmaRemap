@@ -21,7 +21,10 @@ import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -140,7 +143,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    public Chunk getChunk(int chunkX, int chunkZ) {
-    //  System.out.println("before getChunk");
+   //   System.out.println("before getChunk");
       return (Chunk)this.getChunk(chunkX, chunkZ, ChunkStatus.FULL);
    }
 
@@ -366,15 +369,15 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    @Override
-   public void method6742(PlayerEntity var1, BlockPos var2, SoundEvent var3, SoundCategory var4, float var5, float var6) {
+   public void method6742(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       this.playSound(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var3, var4, var5, var6);
    }
 
-   public abstract void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9, float var10, float var11);
+   public abstract void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11);
 
-   public abstract void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6);
+   public abstract void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6);
 
-   public void method6745(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
+   public void method6745(double var1, double var3, double var5, SoundEvent var7, Class2266 var8, float var9, float var10, boolean var11) {
    }
 
    @Override
@@ -678,9 +681,9 @@ public abstract class World implements IWorld, AutoCloseable {
    public <T extends Entity> List<T> method6771(EntityType<T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
-      int var7 = MathHelper.ceil((var2.maxX + 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
-      int var9 = MathHelper.ceil((var2.maxZ + 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
 
       for (int var11 = var6; var11 < var7; var11++) {
@@ -699,9 +702,9 @@ public abstract class World implements IWorld, AutoCloseable {
    public <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
-      int var7 = MathHelper.ceil((var2.maxX + 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
-      int var9 = MathHelper.ceil((var2.maxZ + 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       AbstractChunkProvider var11 = this.getChunkProvider();
 
@@ -721,9 +724,9 @@ public abstract class World implements IWorld, AutoCloseable {
    public <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getLoadedEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
-      int var7 = MathHelper.ceil((var2.maxX + 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
-      int var9 = MathHelper.ceil((var2.maxZ + 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       AbstractChunkProvider var11 = this.getChunkProvider();
 

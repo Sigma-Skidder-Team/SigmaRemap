@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -44,7 +44,7 @@ public class RectangleFaded extends ButtonPanel {
                 (float) var5 * var7,
                 (float) (Minecraft.getInstance().mainWindow.getWidth() + var5),
                 (float) (Minecraft.getInstance().mainWindow.getHeight() + var5),
-                CustomResourceLoadProgressGui.background
+                CustomResourceLoadProgressGui.field6780
         );
         RenderUtil.endScissor();
         if (this.field20591) {
@@ -63,7 +63,7 @@ public class RectangleFaded extends ButtonPanel {
                 (float) this.getWidthA(),
                 (float) this.getHeightA(),
                 this.field20590,
-                ClientColors.LIGHT_GREYISH_BLUE.color
+                ClientColors.LIGHT_GREYISH_BLUE.getColor
         );
         GL11.glPushMatrix();
         super.method13226(var1);

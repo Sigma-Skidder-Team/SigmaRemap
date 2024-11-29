@@ -42,8 +42,8 @@ public class NCPSpeed extends Module {
                 && !Jesus.isWalkingOnLiquid()
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (var1.isPre() && Speed.tickCounter > 1) {
-                double var4 = mc.player.getPosX() - mc.player.lastReportedPosX;
-                double var6 = mc.player.getPosZ() - mc.player.lastReportedPosZ;
+                double var4 = mc.player.getPosX() - mc.player.field6119;
+                double var6 = mc.player.getPosZ() - mc.player.field6121;
                 if (this.field23607 != 0) {
                     this.field23609 = Math.sqrt(var4 * var4 + var6 * var6);
                 } else {

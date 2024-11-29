@@ -119,7 +119,7 @@ public class EffectInstance implements Comparable<EffectInstance> {
       return this.field13135;
    }
 
-   public int getAmplifier() {
+   public int method8629() {
       return this.field13136;
    }
 
@@ -228,7 +228,7 @@ public class EffectInstance implements Comparable<EffectInstance> {
    }
 
    private void method8638(CompoundNBT var1) {
-      var1.putByte("Amplifier", (byte)this.getAmplifier());
+      var1.putByte("Amplifier", (byte)this.method8629());
       var1.putInt("Duration", this.method8628());
       var1.putBoolean("Ambient", this.isAmbient());
       var1.putBoolean("ShowParticles", this.method8631());

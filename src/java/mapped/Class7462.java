@@ -1,7 +1,5 @@
 package mapped;
 
-import org.newdawn.slick.Color;
-
 import java.util.ArrayList;
 
 public class Class7462 {
@@ -57,7 +55,7 @@ public class Class7462 {
             Color var5 = this.method24151((float)var4 / 128.0F);
 
             for (int var6 = 0; var6 < 16; var6++) {
-               var3.method21462(var4, var6, var5.getRedByte(), var5.getGreenByte(), var5.getBlueByte(), var5.getAlphaByte());
+               var3.method21462(var4, var6, var5.method10400(), var5.method10401(), var5.method10402(), var5.method10403());
             }
          }
 
@@ -128,15 +126,15 @@ public class Class7462 {
                var1 -= var5.field36147;
                float var8 = var1 / var7;
                Color var9 = new Color(1, 1, 1, 1);
-               var9.a = var5.field36148.a * (1.0F - var8) + var6.field36148.a * var8;
-               var9.r = var5.field36148.r * (1.0F - var8) + var6.field36148.r * var8;
-               var9.g = var5.field36148.g * (1.0F - var8) + var6.field36148.g * var8;
-               var9.b = var5.field36148.b * (1.0F - var8) + var6.field36148.b * var8;
+               var9.field16458 = var5.field36148.field16458 * (1.0F - var8) + var6.field36148.field16458 * var8;
+               var9.field16455 = var5.field36148.field16455 * (1.0F - var8) + var6.field36148.field16455 * var8;
+               var9.field16456 = var5.field36148.field16456 * (1.0F - var8) + var6.field36148.field16456 * var8;
+               var9.field16457 = var5.field36148.field16457 * (1.0F - var8) + var6.field36148.field16457 * var8;
                return var9;
             }
          }
 
-         return Color.black;
+         return Color.field16447;
       }
    }
 }

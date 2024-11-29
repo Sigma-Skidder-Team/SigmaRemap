@@ -12,7 +12,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.TextureImpl;
+import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -27,7 +27,7 @@ public class FillESP extends Module {
 
     public FillESP() {
         super(ModuleCategory.RENDER, "Fill", "Fill ESP");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget
@@ -73,7 +73,7 @@ public class FillESP extends Module {
                 boolean var18 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
                 RenderSystem.enableBlend();
                 mc.gameSettings.entityShadows = false;
                 this.method16136(var9, var11, var13, var15, mc.timer.renderPartialTicks, var17, this.field23482);
@@ -151,10 +151,10 @@ public class FillESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.unbind();
+        TextureImpl.method36180();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
-        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        var10000.bindTexture(TextureManager.field1094);
         mc.gameRenderer.lightmapTexture.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
     }

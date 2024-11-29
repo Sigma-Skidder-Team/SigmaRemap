@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
@@ -25,7 +24,7 @@ import java.util.stream.IntStream;
 
 public class Class940 extends Class939 implements Class930, ITickableTileEntity {
    private static final int[] field5304 = IntStream.range(0, 27).toArray();
-   private NonNullList<ItemStack> field5305 = NonNullList.<ItemStack>withSize(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5305 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5306;
    private Class2126 field5307 = Class2126.field13872;
    private float field5308;
@@ -193,7 +192,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
          this.world.addBlockEvent(this.pos, this.getBlockState().getBlock(), 1, this.field5306);
          if (this.field5306 == 1) {
             this.world
-               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27045, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27045, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }
@@ -205,7 +204,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
          this.world.addBlockEvent(this.pos, this.getBlockState().getBlock(), 1, this.field5306);
          if (this.field5306 <= 0) {
             this.world
-               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27044, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+               .method6742((PlayerEntity)null, this.pos, SoundEvents.field27044, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }
@@ -228,7 +227,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    }
 
    public void method3753(CompoundNBT var1) {
-      this.field5305 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5305 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var1) && var1.contains("Items", 9)) {
          ItemStackHelper.loadAllItems(var1, this.field5305);
       }

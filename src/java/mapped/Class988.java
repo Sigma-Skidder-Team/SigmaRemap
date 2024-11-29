@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class Class988 implements IInventory {
    private static String[] field5466;
    private final Class1060 field5467;
-   private final NonNullList<ItemStack> field5468 = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5468 = NonNullList.<ItemStack>method68(3, ItemStack.EMPTY);
    private Class9346 field5469;
    private int field5470;
    private int field5471;

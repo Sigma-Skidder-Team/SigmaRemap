@@ -69,7 +69,7 @@ public class JelloClickGUI extends Screen {
       this.musicPlayer.method13215(true);
       PNGIconButton var9;
       this.addToList(var9 = new PNGIconButton(this, "more", this.getWidthA() - 69, this.getHeightA() - 55, 55, 41, ResourceList.optionsPNG1));
-      var9.method13307().method19406(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3F));
+      var9.method13307().method19406(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       var9.method13300(false);
       this.musicPlayer.setEnabled(field20951);
       var9.doThis((var1, var2) -> this.method13222(() -> {
@@ -246,7 +246,7 @@ public class JelloClickGUI extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       Object var6 = null;
       float var7 = 1.0F;
@@ -264,10 +264,10 @@ public class JelloClickGUI extends Screen {
          String var12 = Client.getInstance().getModuleManager().getConfigurationManager().getCurrentConfig().getName;
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
-            (float)(this.widthA - ResourceRegistry.JelloLightFont20.getWidth(var12) - 80),
+            (float)(this.widthA - ResourceRegistry.JelloLightFont20.getStringWidth(var12) - 80),
             (float)(this.heightA - 47),
             var12,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
          );
       }
 

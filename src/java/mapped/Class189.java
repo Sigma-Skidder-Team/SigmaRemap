@@ -5,9 +5,10 @@ public enum Class189 {
    field717(1),
    field718(2);
 
-   public final int field719;
+   public int field719;
+   private static final Class189[] field720 = new Class189[]{field716, field717, field718};
 
-   Class189(int var3) {
+   private Class189(int var3) {
       this.field719 = var3;
    }
 

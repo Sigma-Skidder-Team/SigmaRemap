@@ -936,7 +936,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
          this.player.connection.sendPacket(new SChatPacket(var10, ChatType.GAME_INFO, Util.DUMMY_UUID));
       } else if (this.targetPos == null
-         && this.player.getDistanceSq((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
+         && this.player.getDistanceNearest((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
          ActionResultType var12 = this.player.interactionManager.method33860(this.player, var4, var6, var5, var7);
          if (var9 == Direction.UP && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {

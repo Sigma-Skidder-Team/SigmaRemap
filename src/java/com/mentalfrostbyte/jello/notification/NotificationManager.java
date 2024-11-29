@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.RenderUtil;
 import mapped.QuadraticEasing;
@@ -27,8 +27,8 @@ public class NotificationManager {
     private int field39925 = 10;
     private int field39926 = 10;
     private int field39927 = 10;
-    private TrueTypeFont field39928 = ResourceRegistry.JelloLightFont14;
-    private TrueTypeFont field39929 = ResourceRegistry.JelloLightFont20;
+    private ClientResource field39928 = ResourceRegistry.JelloLightFont14;
+    private ClientResource field39929 = ResourceRegistry.JelloLightFont20;
 
     public void send(Notification var1) {
         for (Notification var5 : this.field39919) {
@@ -97,7 +97,7 @@ public class NotificationManager {
                 RenderUtil.drawString(
                         this.field39928,
                         (float) (var7 + this.field39924 + this.field39927 - 2),
-                        (float) (var8 + this.field39927 + this.field39929.getHeight(var5.field43603)),
+                        (float) (var8 + this.field39927 + this.field39929.method23941(var5.field43603)),
                         var5.field43604,
                         var12
                 );

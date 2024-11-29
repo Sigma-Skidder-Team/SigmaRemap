@@ -91,7 +91,7 @@ public class Class845 extends Class838 {
                if (this.mc.player != null) {
                   long var16 = 15000L;
                   long var18 = System.currentTimeMillis() + var16;
-                  this.mc.player.setReloadCapeTimeMs(var18);
+                  this.mc.player.method5386(var18);
                }
             }
 

@@ -11,11 +11,11 @@ import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
-import org.newdawn.slick.util.BufferedImageUtil;
+import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 
 import java.io.IOException;
 import java.net.CookieManager;
@@ -97,7 +97,7 @@ public class MusicPlayer extends Class4278 {
       var5.method13300(false);
       this.pngButtons.method13300(false);
       this.field20865.method13300(false);
-      ColorHelper var6 = new ColorHelper(1250067, -15329770).method19410(ClientColors.LIGHT_GREYISH_BLUE.color).method19414(Class2218.field14492);
+      ColorHelper var6 = new ColorHelper(1250067, -15329770).method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor).method19414(Class2218.field14492);
       ArrayList var7 = new ArrayList();
       MusicPlayer player = this;
 
@@ -121,25 +121,25 @@ public class MusicPlayer extends Class4278 {
       this.pngButtons
          .addToList(
             this.play = new PNGIconButton(
-               this.pngButtons, "play", var15, 27, 38, 38, ResourceList.playPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null
+               this.pngButtons, "play", var15, 27, 38, 38, ResourceList.playPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons
          .addToList(
             this.pause = new PNGIconButton(
-               this.pngButtons, "pause", var15, 27, 38, 38, ResourceList.pausePNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null
+               this.pngButtons, "pause", var15, 27, 38, 38, ResourceList.pausePNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons
          .addToList(
             this.forwards = new PNGIconButton(
-               this.pngButtons, "forwards", var15 + 114, 23, 46, 46, ResourceList.forwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null
+               this.pngButtons, "forwards", var15 + 114, 23, 46, 46, ResourceList.forwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons
          .addToList(
             this.backwards = new PNGIconButton(
-               this.pngButtons, "backwards", var15 - 114, 23, 46, 46, ResourceList.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), null
+               this.pngButtons, "backwards", var15 - 114, 23, 46, 46, ResourceList.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.pngButtons.addToList(this.volumeSlider = new VolumeSlider(this.pngButtons, "volume", this.getWidthA() - this.field20845 - 19, 14, 4, 40));
@@ -309,14 +309,14 @@ public class MusicPlayer extends Class4278 {
               var4 + this.getXA(),
          (float)(this.getYA() + 20),
          "Jello",
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
               var4 + this.getXA() + 80,
          (float)(this.getYA() + 40),
          "music",
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.drawRoundedRect((float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)this.getHeightA(), 14.0F, var1);
       super.draw(var1);
@@ -333,14 +333,14 @@ public class MusicPlayer extends Class4278 {
          (float)(this.getXA() + this.field20845 + 14),
          (float)(this.getYA() + this.getHeightA() - 10) - 22.0F * var1,
          Class9275.method34955(var4),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.getXA() + this.getWidthA() - 14 - ResourceRegistry.JelloLightFont14.getWidth(Class9275.method34955(var5))),
+         (float)(this.getXA() + this.getWidthA() - 14 - ResourceRegistry.JelloLightFont14.getStringWidth(Class9275.method34955(var5))),
          (float)(this.getYA() + this.getHeightA() - 10) - 22.0F * var1,
          Class9275.method34955(var5),
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
       );
    }
 
@@ -354,21 +354,21 @@ public class MusicPlayer extends Class4278 {
             (float)this.getWidthA(),
             (float)this.field20848,
             var5,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          RenderUtil.drawRect(
             (float)this.getXA(),
             (float)(this.getYA() + this.getHeightA() - this.field20848),
             (float)(this.getXA() + this.getWidthA()),
             (float)(this.getYA() + this.getHeightA() - 5),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.drawRect(
             (float)this.getXA(),
             (float)(this.getYA() + this.getHeightA() - 5),
             (float)(this.getXA() + this.field20845),
             (float)(this.getYA() + this.getHeightA()),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.drawImage(
             (float)(this.getXA() + (this.field20845 - 114) / 2),
@@ -376,7 +376,7 @@ public class MusicPlayer extends Class4278 {
             114.0F,
             114.0F,
             var4,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          RenderUtil.drawRoundedRect(
             (float)(this.getXA() + (this.field20845 - 114) / 2), (float)(this.getYA() + this.getHeightA() - 170), 114.0F, 114.0F, 14.0F, var1
@@ -388,21 +388,21 @@ public class MusicPlayer extends Class4278 {
             (float)this.getWidthA(),
             (float)this.field20848,
             ResourceList.bgPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          RenderUtil.drawRect(
             (float)this.getXA(),
             (float)(this.getYA() + this.getHeightA() - this.field20848),
             (float)(this.getXA() + this.getWidthA()),
             (float)(this.getYA() + this.getHeightA() - 5),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.drawRect(
             (float)this.getXA(),
             (float)(this.getYA() + this.getHeightA() - 5),
             (float)(this.getXA() + this.field20845),
             (float)(this.getYA() + this.getHeightA()),
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.drawImage(
             (float)(this.getXA() + (this.field20845 - 114) / 2),
@@ -410,7 +410,7 @@ public class MusicPlayer extends Class4278 {
             114.0F,
             114.0F,
             ResourceList.artworkPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          RenderUtil.drawRoundedRect(
             (float)(this.getXA() + (this.field20845 - 114) / 2), (float)(this.getYA() + this.getHeightA() - 170), 114.0F, 114.0F, 14.0F, var1
@@ -442,9 +442,9 @@ public class MusicPlayer extends Class4278 {
       }
 
       var9 = QuadraticEasing.easeInOutQuad(var9, 0.0F, 1.0F, 1.0F);
-      int var10 = ResourceRegistry.JelloLightFont14.getWidth(var2);
+      int var10 = ResourceRegistry.JelloLightFont14.getStringWidth(var2);
       int var11 = Math.min(var3, var10);
-      int var12 = ResourceRegistry.JelloLightFont14.getHeight();
+      int var12 = ResourceRegistry.JelloLightFont14.method23952();
       int var13 = this.getXA() + (this.field20845 - var11) / 2;
       int var14 = this.getYA() + this.getHeightA() - 50 + var4;
       int var15 = Math.max(0, var10 - var11) * 2;
@@ -458,7 +458,7 @@ public class MusicPlayer extends Class4278 {
          (float)var13 - (float)var10 * var9 - 50.0F * var9,
          (float)var14,
          var2,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * var1 * Math.min(1.0F, Math.max(0.0F, 1.0F - var9 * 0.75F)))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1 * Math.min(1.0F, Math.max(0.0F, 1.0F - var9 * 0.75F)))
       );
       if (var9 > 0.0F) {
          RenderUtil.drawString(
@@ -466,7 +466,7 @@ public class MusicPlayer extends Class4278 {
             (float)var13 - (float)var10 * var9 + (float)var10,
             (float)var14,
             var2,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
       }
 
@@ -481,7 +481,7 @@ public class MusicPlayer extends Class4278 {
                this.field20864.release();
             }
 
-            this.field20864 = BufferedImageUtil.getTexture(
+            this.field20864 = TextureUtil.method32933(
                "blur",
                ImageUtil.method35037(this.getXA() + this.field20845, this.getYA(), this.getWidthA() - this.field20845, this.field20847, 10, 10)
             );
@@ -498,7 +498,7 @@ public class MusicPlayer extends Class4278 {
             (float)(this.getWidthA() - this.field20845),
             (float)this.field20847,
             this.field20864,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4 * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
       }
 
@@ -507,21 +507,21 @@ public class MusicPlayer extends Class4278 {
          0.0F,
          (float)this.getWidthA(),
          (float)this.field20847,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4 * var1 * 0.2F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.2F)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
-         (float)((this.getWidthA() - ResourceRegistry.JelloLightFont25.getWidth(this.field20849) + this.field20845) / 2),
+         (float)((this.getWidthA() - ResourceRegistry.JelloLightFont25.getStringWidth(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont25,
-         (float)((this.getWidthA() - ResourceRegistry.JelloMediumFont25.getWidth(this.field20849) + this.field20845) / 2),
+         (float)((this.getWidthA() - ResourceRegistry.JelloMediumFont25.getStringWidth(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0F - var4)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - var4)
       );
       RenderUtil.drawImage(
          (float)this.field20845,
@@ -529,7 +529,7 @@ public class MusicPlayer extends Class4278 {
          (float)(this.getWidthA() - this.field20845),
          20.0F,
          ResourceList.shadowBottomPNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4 * var1 * 0.5F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.5F)
       );
       this.field20863 = this.field20852.method13513();
    }

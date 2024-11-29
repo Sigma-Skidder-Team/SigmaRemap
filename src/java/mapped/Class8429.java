@@ -205,7 +205,7 @@ public class Class8429 {
       }
 
       if (!this.field36113.method32004()) {
-         var4 = var4.and(var2 -> this.field36113.method32024(var2.getDistanceSq(var1)));
+         var4 = var4.and(var2 -> this.field36113.method32024(var2.getDistanceNearest3(var1)));
       }
 
       return var4;

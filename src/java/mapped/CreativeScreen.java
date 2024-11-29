@@ -731,14 +731,14 @@ public class CreativeScreen extends Class860<Class5820> {
       }
 
       this.blit(var1, var10, var11, var8, var9, 28, 32);
-      this.field4563.zLevel = 100.0F;
+      this.field4563.field847 = 100.0F;
       var10 += 6;
       var11 = var11 + 8 + (!var6 ? -1 : 1);
       RenderSystem.enableRescaleNormal();
       ItemStack var13 = var2.method23644();
       this.field4563.method793(var13, var10, var11);
       this.field4563.method797(this.font, var13, var10, var11);
-      this.field4563.zLevel = 0.0F;
+      this.field4563.field847 = 0.0F;
    }
 
    public int method2654() {

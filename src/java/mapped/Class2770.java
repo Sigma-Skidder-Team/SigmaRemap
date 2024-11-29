@@ -57,7 +57,7 @@ public class Class2770<T extends LivingEntity> extends Class2595 {
       if (this.field17352 != null) {
          Vector3d var3 = Class8037.method27590(this.field17349, 16, 7, this.field17352.getPositionVec());
          if (var3 != null) {
-            if (!(this.field17352.getDistanceSq(var3.x, var3.y, var3.z) < this.field17352.getDistanceSq(this.field17349))) {
+            if (!(this.field17352.getDistanceNearest(var3.x, var3.y, var3.z) < this.field17352.getDistanceSq(this.field17349))) {
                this.field17354 = this.field17355.method21648(var3.x, var3.y, var3.z, 0);
                return this.field17354 != null;
             } else {

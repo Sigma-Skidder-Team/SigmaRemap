@@ -64,7 +64,7 @@ public class Class2758<T extends MonsterEntity & Class1022> extends Class2595 {
    public void method10805() {
       LivingEntity var3 = this.field17304.method4232();
       if (var3 != null) {
-         double var4 = this.field17304.getDistanceSq(var3.getPosX(), var3.getPosY(), var3.getPosZ());
+         double var4 = this.field17304.getDistanceNearest(var3.getPosX(), var3.getPosY(), var3.getPosZ());
          boolean var6 = this.field17304.method4231().method35460(var3);
          boolean var7 = this.field17309 > 0;
          if (var6 != var7) {

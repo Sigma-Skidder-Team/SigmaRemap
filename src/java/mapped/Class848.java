@@ -45,7 +45,7 @@ public class Class848 extends Class838 {
       int var9 = Shaders.method32969(this.field4697, 2);
       Class6679[] var10 = Shaders.method32968(this.field4697);
       if (var10 != null) {
-         int var11 = MathHelper.ceil((double)var10.length / 9.0);
+         int var11 = MathHelper.method37774((double)var10.length / 9.0);
          if (var9 < var11) {
             var9 = var11;
          }

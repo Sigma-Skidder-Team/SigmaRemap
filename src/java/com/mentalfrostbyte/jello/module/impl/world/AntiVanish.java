@@ -16,45 +16,49 @@ import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class AntiVanish extends Module {
-    private final List<UUID> vanishedPlayers = new CopyOnWriteArrayList<>();
-    private int tickCounter = -3200;
+    private final List<UUID> field23967 = new CopyOnWriteArrayList<UUID>();
+    private int field23968 = -3200;
 
     public AntiVanish() {
         super(ModuleCategory.WORLD, "AntiVanish", "Detects if there are vanished players");
     }
 
     @EventTarget
-    private void onUpdate(EventUpdate event) {
+    private void method16862(EventUpdate var1) {
         if (this.isEnabled()) {
-            if (event.isPre() && mc.getCurrentServerData() != null) {
-                if (!this.vanishedPlayers.isEmpty()) {
-                    if (this.tickCounter > 3200) {
-                        this.vanishedPlayers.clear();
+            if (var1.isPre() && mc.getCurrentServerData() != null) {
+                if (!this.field23967.isEmpty()) {
+                    if (this.field23968 > 3200) {
+                        this.field23967.clear();
                         Client.getInstance().getNotificationManager().send(new Notification("Vanished Cleared", "Vanish List has been Cleared.", 5500));
-                        this.tickCounter = -3200;
+                        this.field23968 = -3200;
                     } else {
-                        this.tickCounter++;
+                        this.field23968++;
                     }
                 }
 
-                if (this.vanishedPlayers != null) {
+                if (this.field23967 != null) {
                     try {
-                        for (UUID playerId : this.vanishedPlayers) {
-                            NetworkPlayerInfo playerInfo = mc.getConnection().getPlayerInfo(playerId);
-                            ITextComponent playerName = playerInfo == null ? null : playerInfo.method19979();
-                            if (playerInfo != null && this.vanishedPlayers.contains(playerId)) {
-                                if (playerName == null) {
-                                    Client.getInstance().getNotificationManager()
-                                            .send(new Notification("Vanished Warning", "A player is vanished !!" + playerInfo.method19979().getUnformattedComponentText(), 5500));
+                        for (UUID var5 : this.field23967) {
+                            NetworkPlayerInfo var6 = mc.getConnection().method15792(var5);
+                            ITextComponent var7 = var6 == null ? null : var6.method19979();
+                            if (var6 != null && this.field23967.contains(var5)) {
+                                if (var7 == null) {
+                                    Client.getInstance()
+                                            .getNotificationManager()
+                                            .send(
+                                                    new Notification("Vanished Warning", "A player is vanished !!" + var6.method19979().getUnformattedComponentText(), 5500)
+                                            );
                                 } else {
-                                    Client.getInstance().getNotificationManager()
-                                            .send(new Notification("Vanish Warning", playerInfo.method19979().getString() + " is no longer Vanished.", 5500));
+                                    Client.getInstance()
+                                            .getNotificationManager()
+                                            .send(new Notification("Vanish Warning", var6.method19979().getString() + " is no longer Vanished.", 5500));
                                 }
                             }
 
-                            this.vanishedPlayers.remove(playerId);
+                            this.field23967.remove(var5);
                         }
-                    } catch (Exception e) {
+                    } catch (Exception var8) {
                         Client.getInstance().getNotificationManager().send(new Notification("Vanished Error", "Something bad happened.", 5500));
                     }
                 }
@@ -63,17 +67,17 @@ public class AntiVanish extends Module {
     }
 
     @EventTarget
-    private void onReceivePacket(ReceivePacketEvent event) {
+    private void method16863(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.getConnection() != null && event.getPacket() instanceof SPlayerListItemPacket) {
-                SPlayerListItemPacket packet = (SPlayerListItemPacket) event.getPacket();
-                if (packet.getAction() == SPlayerListItemPacket.Action.UPDATE_LATENCY) {
-                    for (SPlayerListItemPacket.AddPlayerData playerData : packet.getEntries()) {
-                        NetworkPlayerInfo playerInfo = mc.getConnection().getPlayerInfo(playerData.getProfile().getId());
-                        if (playerInfo == null && !this.addVanishedPlayer(playerData.getProfile().getId())) {
-                            System.out.println(playerData.getProfile().getId());
-                            Client.getInstance().getNotificationManager().send(new Notification("Vanished Warning", "A player is vanished!", 5500));
-                            this.tickCounter = -3200;
+            if (mc.getConnection() != null && var1.getPacket() instanceof SPlayerListItemPacket) {
+                SPlayerListItemPacket var4 = (SPlayerListItemPacket) var1.getPacket();
+                if (var4.getAction() == SPlayerListItemPacket.Action.UPDATE_LATENCY) {
+                    for (SPlayerListItemPacket.AddPlayerData var6 : var4.getEntries()) {
+                        NetworkPlayerInfo var7 = mc.getConnection().method15792(var6.getProfile().getId());
+                        if (var7 == null && !this.method16864(var6.getProfile().getId())) {
+                            System.out.println(var6.getProfile().getId());
+                            Client.getInstance().getNotificationManager().send(new Notification("Vanished Warning", "A player is vanished ! ", 5500));
+                            this.field23968 = -3200;
                         }
                     }
                 }
@@ -81,9 +85,9 @@ public class AntiVanish extends Module {
         }
     }
 
-    private boolean addVanishedPlayer(UUID playerId) {
-        if (!this.vanishedPlayers.contains(playerId)) {
-            this.vanishedPlayers.add(playerId);
+    private boolean method16864(UUID var1) {
+        if (!this.field23967.contains(var1)) {
+            this.field23967.add(var1);
             return false;
         } else {
             return true;

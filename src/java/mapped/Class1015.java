@@ -358,8 +358,8 @@ public class Class1015 extends ShoulderRidingEntity implements Class1016 {
    }
 
    @Override
-   public SoundCategory getSoundCategory() {
-      return SoundCategory.field14734;
+   public Class2266 getSoundCategory() {
+      return Class2266.field14734;
    }
 
    @Override

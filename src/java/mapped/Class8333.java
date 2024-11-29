@@ -6,7 +6,7 @@ public class Class8333 implements Class8334 {
    private static String[] field35836;
    private static final int field35837 = 7;
 
-   public void method29219(Class9189 var1, Class6512 var2, int[][] var3) throws AACException {
+   public void method29219(Class9189 var1, Class6512 var2, int[][] var3) throws Class2460 {
       int var6 = var2.method19720().method19874() ? 11 : 9;
       boolean var7 = var1.method34399();
       int var8 = var1.method34397(8);
@@ -63,7 +63,7 @@ public class Class8333 implements Class8334 {
       }
    }
 
-   private void method29220(Class9189 var1, Class6512 var2, int[][] var3) throws AACException {
+   private void method29220(Class9189 var1, Class6512 var2, int[][] var3) throws Class2460 {
       Class6538 var6 = var2.method19720();
       int var7 = var6.method19871();
       int var8 = var6.method19866();
@@ -87,7 +87,7 @@ public class Class8333 implements Class8334 {
       }
    }
 
-   private int method29221(Class9189 var1) throws AACException {
+   private int method29221(Class9189 var1) throws Class2460 {
       int var4 = 0;
       int var5 = field35838[var4][1];
       int var6 = var1.method34397(var5);
@@ -103,7 +103,7 @@ public class Class8333 implements Class8334 {
       return field35838[var4][0];
    }
 
-   private int method29222(Class9189 var1) throws AACException {
+   private int method29222(Class9189 var1) throws Class2460 {
       int var4 = 0;
       int var5 = field35839[var4][1];
       int var6 = var1.method34397(var5);

@@ -1,14 +1,13 @@
 package mapped;
 
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 
 public class Class6335 extends Class6334 {
    private static String[] field27848;
 
    public Class6335(Class1017 var1) {
-      super(var1, SoundEvents.field26391, SoundCategory.field14734);
-      this.repeatDelay = 0;
+      super(var1, SoundEvents.field26391, Class2266.field14734);
+      this.field27862 = 0;
    }
 
    @Override

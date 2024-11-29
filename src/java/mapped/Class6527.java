@@ -15,11 +15,11 @@ public class Class6527 extends Class6522 implements Class6515 {
       this.field28653 = new Class6512(var1);
    }
 
-   public void method19791(Class9189 var1, Class6516 var2) throws AACException {
+   public void method19791(Class9189 var1, Class6516 var2) throws Class2460 {
       Class1955 var5 = var2.method19744();
       Class2288 var6 = var2.method19746();
       if (var6.equals(Class2288.field15218)) {
-         throw new AACException("invalid sample frequency");
+         throw new Class2460("invalid sample frequency");
       } else {
          this.method19774(var1);
          this.field28651 = var1.method34399();
@@ -34,7 +34,7 @@ public class Class6527 extends Class6522 implements Class6515 {
             if (!this.field28649.equals(Class2328.field15935)) {
                if (!this.field28649.equals(Class2328.field15936)) {
                   if (!this.field28649.equals(Class2328.field15934)) {
-                     throw new AACException("reserved MS mask type used");
+                     throw new Class2460("reserved MS mask type used");
                   }
 
                   Arrays.fill(this.field28650, false);

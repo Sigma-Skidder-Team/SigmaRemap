@@ -1,16 +1,14 @@
 package mapped;
 
-import net.minecraft.client.audio.ISoundEventAccessor;
-import net.minecraft.client.audio.Sound;
 import net.minecraft.util.ResourceLocation;
 
-public class Class6645 implements ISoundEventAccessor<Sound> {
+public class Class6645 implements Class6646<Class6647> {
    private static String[] field29207;
    public final ResourceLocation field29208;
-   public final Sound field29209;
+   public final Class6647 field29209;
    public final Class8657 field29210;
 
-   public Class6645(Class8657 var1, ResourceLocation var2, Sound var3) {
+   public Class6645(Class8657 var1, ResourceLocation var2, Class6647 var3) {
       this.field29210 = var1;
       this.field29208 = var2;
       this.field29209 = var3;
@@ -22,18 +20,18 @@ public class Class6645 implements ISoundEventAccessor<Sound> {
       return var3 != null ? var3.method20287() : 0;
    }
 
-   public Sound method20290() {
+   public Class6647 method20290() {
       Class6648 var3 = (Class6648)Class8657.method31158(this.field29210).get(this.field29208);
       if (var3 == null) {
          return SoundHandler.field1051;
       } else {
-         Sound var4 = var3.method20290();
-         return new Sound(
+         Class6647 var4 = var3.method20290();
+         return new Class6647(
             var4.method20291().toString(),
             var4.method20293() * this.field29209.method20293(),
             var4.method20294() * this.field29209.method20294(),
             this.field29209.method20287(),
-            Sound.Type.field14506,
+            Class2221.field14506,
             var4.method20296() || this.field29209.method20296(),
             var4.method20297(),
             var4.method20298()

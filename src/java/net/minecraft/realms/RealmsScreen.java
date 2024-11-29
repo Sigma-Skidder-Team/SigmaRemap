@@ -18,7 +18,7 @@ public abstract class RealmsScreen extends Screen {
 
    @Override
    public void tick() {
-      for (Widget var4 : this.buttons) {
+      for (Widget var4 : this.field4566) {
          if (var4 instanceof IScreen) {
             ((IScreen)var4).tick();
          }

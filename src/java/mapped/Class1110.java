@@ -10,7 +10,6 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -165,8 +164,8 @@ public class Class1110 extends Class1111 implements IMob {
    }
 
    @Override
-   public SoundCategory getSoundCategory() {
-      return SoundCategory.field14733;
+   public Class2266 getSoundCategory() {
+      return Class2266.field14733;
    }
 
    @Override

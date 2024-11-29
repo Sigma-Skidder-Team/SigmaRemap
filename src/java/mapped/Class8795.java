@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -270,7 +270,7 @@ public class Class8795 {
                   || Math.sqrt(
                         this.mc
                            .player
-                           .getDistanceSq(
+                           .getDistanceNearest(
                               (double)this.field39616.getX() + 0.5,
                               (double)this.field39616.getY() + 0.5,
                               (double)this.field39616.getZ() + 0.5
@@ -350,8 +350,8 @@ public class Class8795 {
          BlockPos var17 = BlockUtil.method34564(this.mc.player.rotationYaw, this.mc.player.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
-               int var18 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.color, 0.02F);
-               int var6 = MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.color, 0.02F);
+               int var18 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F);
+               int var6 = MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
                GL11.glPushMatrix();
                GL11.glDisable(2929);
 
@@ -402,18 +402,18 @@ public class Class8795 {
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glRotatef(this.mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
       GL11.glRotatef(this.mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
-      TrueTypeFont var10 = ResourceRegistry.JelloLightFont25;
+      ClientResource var10 = ResourceRegistry.JelloLightFont25;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
       RenderUtil.drawRect(
-         (float)(-var10.getWidth(var7) / 2 - 10),
+         (float)(-var10.getStringWidth(var7) / 2 - 10),
          0.0F,
-         (float)(var10.getWidth(var7) / 2 + 10),
-         (float)(var10.getHeight() + 2),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1F)
+         (float)(var10.getStringWidth(var7) / 2 + 10),
+         (float)(var10.method23952() + 2),
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
       );
-      GL11.glTranslated((double)(-var10.getWidth(var7) / 2), 0.0, 0.0);
-      RenderUtil.drawString(var10, 0.0F, 0.0F, var7, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3F));
+      GL11.glTranslated((double)(-var10.getStringWidth(var7) / 2), 0.0, 0.0);
+      RenderUtil.drawString(var10, 0.0F, 0.0F, var7, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

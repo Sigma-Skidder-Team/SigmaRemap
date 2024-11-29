@@ -184,7 +184,7 @@ public class Class3316 extends Class3314 {
                         var15 = var29;
                         if (var17 >= 0 && var18 * var18 + var19 * var19 < var11 * var11 && (!var20 || (var14 + var17 & 1) != 0)) {
                            byte var47 = var3.colors[var14 + var17 * 128];
-                           byte var48 = (byte)(var46.colorIndex * 4 + var44);
+                           byte var48 = (byte)(var46.field31007 * 4 + var44);
                            if (var47 != var48) {
                               var3.colors[var14 + var17 * 128] = var48;
                               var3.method24598(var14, var17);
@@ -299,7 +299,7 @@ public class Class3316 extends Class3314 {
                   }
 
                   if (var14 != MaterialColor.AIR) {
-                     var4.colors[var15 + var16 * 128] = (byte)(var14.colorIndex * 4 + var13);
+                     var4.colors[var15 + var16 * 128] = (byte)(var14.field31007 * 4 + var13);
                      var4.method24598(var15, var16);
                   }
                }

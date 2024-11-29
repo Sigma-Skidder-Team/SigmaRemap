@@ -52,7 +52,7 @@ public class Class1266 extends AbstractGui {
             }
 
             double var9 = this.method5944();
-            int var11 = MathHelper.ceil((double)this.method5942() / var9);
+            int var11 = MathHelper.method37774((double)this.method5942() / var9);
             RenderSystem.pushMatrix();
             RenderSystem.translatef(2.0F, 8.0F, 0.0F);
             RenderSystem.scaled(var9, var9, 1.0);

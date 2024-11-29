@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.CancellableEvent;
+import com.mentalfrostbyte.jello.event.Event;
 import totalcross.json.JSONObject;
 
-public class EventWritter extends CancellableEvent {
+public class EventWritter implements Event {
     private final JSONObject file;
 
     public EventWritter(JSONObject var1) {

@@ -32,13 +32,13 @@ public class Class2669 extends Class2595 {
       var5.method3549(true);
       var3.addEntity(var5);
       Class1085 var6 = this.method10887(var4, this.field17046);
-      var6.startRiding(this.field17046);
+      var6.method3311(this.field17046);
       var3.method6995(var6);
 
       for (int var7 = 0; var7 < 3; var7++) {
          AbstractHorseEntity var8 = this.method10886(var4);
          Class1085 var9 = this.method10887(var4, var8);
-         var9.startRiding(var8);
+         var9.method3311(var8);
          var8.addVelocity(this.field17046.getRNG().nextGaussian() * 0.5, 0.0, this.field17046.getRNG().nextGaussian() * 0.5);
          var3.method6995(var8);
       }

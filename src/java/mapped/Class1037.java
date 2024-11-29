@@ -199,7 +199,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       if (var3 != null) {
          BlockPos var4 = var3.method28712();
          if (var4 != null) {
-            double var5 = this.getDistanceSq((double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
+            double var5 = this.getDistanceNearest((double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
             if (var5 < 4.0) {
                return true;
             }

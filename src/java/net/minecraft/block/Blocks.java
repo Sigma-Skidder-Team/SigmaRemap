@@ -107,7 +107,7 @@ public class Blocks {
       "bedrock", new Block(AbstractBlock.Properties.method26609(Material.field38966).method26621(-1.0F, 3600000.0F).method26626().method26629(Blocks::method30012))
    );
    public static final Block WATER = register(
-      "water", new FlowingFluidBlock(Fluids.WATER, AbstractBlock.Properties.method26609(Material.WATER).method26614().method26623(100.0F).method26626())
+      "water", new FlowingFluidBlock(Fluids.WATER, AbstractBlock.Properties.method26609(Material.field38941).method26614().method26623(100.0F).method26626())
    );
    public static final Block LAVA = register(
       "lava",
@@ -275,10 +275,10 @@ public class Blocks {
       new Class3492(AbstractBlock.Properties.method26611(Material.TALL_PLANTS, MaterialColor.field30960).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block SEAGRASS = register(
-      "seagrass", new Class3450(AbstractBlock.Properties.method26609(Material.SEA_GRASS).method26614().method26622().method26619(SoundType.field36214))
+      "seagrass", new Class3450(AbstractBlock.Properties.method26609(Material.field38940).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block TALL_SEAGRASS = register(
-      "tall_seagrass", new Class3455(AbstractBlock.Properties.method26609(Material.SEA_GRASS).method26614().method26622().method26619(SoundType.field36214))
+      "tall_seagrass", new Class3455(AbstractBlock.Properties.method26609(Material.field38940).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block PISTON = register("piston", method30023(false));
    public static final Block PISTON_HEAD = register(
@@ -708,7 +708,7 @@ public class Blocks {
       "stone_button", new StoneButtonBlock(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26623(0.5F))
    );
    public static final Block SNOW = register(
-      "snow", new SnowBlock(AbstractBlock.Properties.method26609(Material.field38944).method26624().method26623(0.1F).method26635().method26619(SoundType.field36209))
+      "snow", new Class3410(AbstractBlock.Properties.method26609(Material.field38944).method26624().method26623(0.1F).method26635().method26619(SoundType.field36209))
    );
    public static final Block ICE = register(
       "ice",
@@ -2425,7 +2425,7 @@ public class Blocks {
       "cave_air", new AirBlock(AbstractBlock.Properties.method26609(Material.field38932).method26614().method26626().method26628())
    );
    public static final Block field37013 = register(
-      "bubble_column", new Class3406(AbstractBlock.Properties.method26609(Material.BUBBLE_COLUMN).method26614().method26626())
+      "bubble_column", new Class3406(AbstractBlock.Properties.method26609(Material.field38942).method26614().method26626())
    );
    public static final Block field37014 = register("polished_granite_stairs", new StairsBlock(POLISHED_GRANITE.getDefaultState(), AbstractBlock.Properties.method26613(POLISHED_GRANITE)));
    public static final Block field37015 = register(
@@ -2579,11 +2579,11 @@ public class Blocks {
    );
    public static final Block field37077 = register(
       "warped_roots",
-      new Class3495(AbstractBlock.Properties.method26611(Material.NETHER_PLANTS, MaterialColor.field30970).method26614().method26622().method26619(SoundType.field36228))
+      new Class3495(AbstractBlock.Properties.method26611(Material.field38939, MaterialColor.field30970).method26614().method26622().method26619(SoundType.field36228))
    );
    public static final Block field37078 = register(
       "nether_sprouts",
-      new Class3488(AbstractBlock.Properties.method26611(Material.NETHER_PLANTS, MaterialColor.field30970).method26614().method26622().method26619(SoundType.field36238))
+      new Class3488(AbstractBlock.Properties.method26611(Material.field38939, MaterialColor.field30970).method26614().method26622().method26619(SoundType.field36238))
    );
    public static final Block field37079 = register("crimson_stem", method30017(MaterialColor.field31000));
    public static final Block field37080 = register("stripped_crimson_stem", method30017(MaterialColor.field31000));
@@ -2635,7 +2635,7 @@ public class Blocks {
    );
    public static final Block field37090 = register(
       "crimson_roots",
-      new Class3495(AbstractBlock.Properties.method26611(Material.NETHER_PLANTS, MaterialColor.field30982).method26614().method26622().method26619(SoundType.field36228))
+      new Class3495(AbstractBlock.Properties.method26611(Material.field38939, MaterialColor.field30982).method26614().method26622().method26619(SoundType.field36228))
    );
    public static final Block field37091 = register(
       "crimson_planks",

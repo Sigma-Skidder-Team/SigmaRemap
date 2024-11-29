@@ -56,8 +56,8 @@ public class BlurEngine {
             try {
                blurShader = new ShaderGroup(mc.getTextureManager(), new SigmaBlurShader(), mc.getFramebuffer(), new ResourceLocation("jelloblur"));
                blurShader.createBindFramebuffers(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
-               blurShader.elements.get(0).getShaderManager().getFromName("Radius").setValue(35.0F);
-               blurShader.elements.get(1).getShaderManager().getFromName("Radius").setValue(35.0F);
+               blurShader.elements.get(0).method7410().getFromName("Radius").setValue(35.0F);
+               blurShader.elements.get(1).method7410().getFromName("Radius").setValue(35.0F);
                frameBuff = blurShader.method6528("jello");
                frameBuff2 = blurShader.method6528("jelloswap");
             } catch (IOException | JsonSyntaxException var5) {
@@ -69,7 +69,7 @@ public class BlurEngine {
             blurShader.createBindFramebuffers(mc.framebuffer.framebufferWidth, mc.framebuffer.framebufferHeight);
          }
 
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
          RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);
@@ -91,7 +91,7 @@ public class BlurEngine {
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0
+            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0
          );
          int var4 = 35;
          RenderUtil.drawPortalBackground(frameBuffWidth, frameBuffHeight - var4, screenWidth, screenHeight + var4);
@@ -129,7 +129,7 @@ public class BlurEngine {
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0
+            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0
          );
          mc.framebuffer.bindFramebuffer(true);
       }

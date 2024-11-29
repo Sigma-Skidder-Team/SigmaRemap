@@ -1,5 +1,7 @@
 package mapped;
 
+
+
 public class Class7420 implements Class7422, Class7419, Class7421 {
    private static String[] field31825;
    public boolean field31826;
@@ -114,7 +116,7 @@ public class Class7420 implements Class7422, Class7419, Class7421 {
       }
    }
 
-   public int method23918(Class9189 var1) throws AACException {
+   public int method23918(Class9189 var1) throws Class2460 {
       long var4 = (long)var1.method34394();
       if (var1.method34399()) {
          this.field31856 = true;
@@ -197,7 +199,7 @@ public class Class7420 implements Class7422, Class7419, Class7421 {
       }
    }
 
-   private int method23919(Class9189 var1, int var2, int var3) throws AACException {
+   private int method23919(Class9189 var1, int var2, int var3) throws Class2460 {
       long var6 = (long)var1.method34394();
       if (var2 == 0) {
          this.field31839 = var1.method34399();
@@ -216,7 +218,7 @@ public class Class7420 implements Class7422, Class7419, Class7421 {
       return (int)((long)var1.method34394() - var6);
    }
 
-   private void method23920(Class9189 var1, boolean var2, int var3, int[][] var4, int[][] var5, int[] var6) throws AACException {
+   private void method23920(Class9189 var1, boolean var2, int var3, int[][] var4, int[][] var5, int[] var6) throws Class2460 {
       if (!var2) {
          var6[0] = this.method23921(var1, var5);
 
@@ -230,7 +232,7 @@ public class Class7420 implements Class7422, Class7419, Class7421 {
       }
    }
 
-   private int method23921(Class9189 var1, int[][] var2) throws AACException {
+   private int method23921(Class9189 var1, int[][] var2) throws Class2460 {
       int var5 = 0;
 
       while (var5 >= 0) {

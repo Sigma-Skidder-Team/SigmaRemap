@@ -15,35 +15,35 @@ public abstract class Class4510 {
    });
    public static final Class4525 field21738 = new Class4525("additive_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, DestFactor.ONE);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21739 = new Class4525("lightning_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21740 = new Class4525("glint_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_COLOR, DestFactor.ONE, GlStateManager.SourceFactor.ZERO, DestFactor.ONE);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_COLOR, DestFactor.field12927, GlStateManager.SourceFactor.ZERO, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21741 = new Class4525("crumbling_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.DST_COLOR, DestFactor.SRC_COLOR, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.DST_COLOR, DestFactor.field12935, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21742 = new Class4525("translucent_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ONE_MINUS_SRC_ALPHA);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12932);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();

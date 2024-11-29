@@ -1,8 +1,5 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.music.AudioByteManager;
-import net.sourceforge.jaad.mp4.MP4InputStream;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +13,7 @@ public class IPMPControlInfo extends Class4975 {
    }
 
    @Override
-   public void method15262(MP4InputStream var1) throws IOException {
+   public void method15262(DataStreamReader var1) throws IOException {
       super.method15262(var1);
       this.field22938 = new ArrayList<>();
 

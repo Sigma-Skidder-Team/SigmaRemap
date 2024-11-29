@@ -23,11 +23,11 @@ public final class Class7182 {
       int var3 = 0;
       int var4 = 0;
       if (var0.isPotionActive(Effects.HASTE)) {
-         var3 = var0.getActivePotionEffect(Effects.HASTE).getAmplifier();
+         var3 = var0.getActivePotionEffect(Effects.HASTE).method8629();
       }
 
       if (var0.isPotionActive(Effects.CONDUIT_POWER)) {
-         var4 = var0.getActivePotionEffect(Effects.CONDUIT_POWER).getAmplifier();
+         var4 = var0.getActivePotionEffect(Effects.CONDUIT_POWER).method8629();
       }
 
       return Math.max(var3, var4);

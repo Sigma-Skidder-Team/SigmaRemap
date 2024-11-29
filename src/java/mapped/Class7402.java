@@ -3,8 +3,6 @@ package mapped;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 
 public final class Class7402 extends ItemGroup {
    public Class7402(int var1, String var2) {
@@ -13,6 +11,6 @@ public final class Class7402 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.WATER);
+      return Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977);
    }
 }

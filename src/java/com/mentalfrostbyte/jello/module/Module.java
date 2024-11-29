@@ -4,7 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.ActiveMods;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
+import com.mentalfrostbyte.jello.settings.SpeedRampSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.settings.SubOptionSetting2;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.SoundEvents;
@@ -52,6 +54,11 @@ public abstract class Module {
         }
     }
 
+    public float[] method15975(String settingName) {
+        Setting settingNameValue = (Setting) this.getSettingValueBySettingName(settingName);
+        return !(settingNameValue instanceof SpeedRampSetting) ? null : ((SpeedRampSetting) settingNameValue).getValues();
+    }
+
     public int parseSettingValueToIntBySettingName(String settingName) {
         try {
             return Integer.parseInt(this.getSettingValueBySettingName(settingName).toString());
@@ -74,6 +81,30 @@ public abstract class Module {
         } catch (Exception var5) {
             return null;
         }
+    }
+
+    public List<Setting> method15979(String var1) {
+        try {
+            return ((SubOptionSetting2.CustomSubOptionSetting) this.settingMap.get(var1)).getSubSettings();
+        } catch (Exception var5) {
+            return null;
+        }
+    }
+
+    public void method15980(String var1, Object var2) {
+        this.settingMap.get(var1).setCurrentValue(var2);
+    }
+
+    public void method15981(String var1, boolean var2) {
+        this.settingMap.get(var1).setCurrentValue(var2);
+    }
+
+    public void method15982(String var1, int var2) {
+        this.settingMap.get(var1).setCurrentValue(var2);
+    }
+
+    public void method15983(String var1, boolean var2) {
+        this.settingMap.get(var1).setCurrentValue(var2);
     }
 
     public void method15984(String var1, String var2) {
@@ -236,7 +267,7 @@ public abstract class Module {
 
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                             && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
-                        Minecraft.getInstance().getSoundHandler().play(CustomSoundPlayer.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
+                        Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
                     }
                 }
 
@@ -250,7 +281,7 @@ public abstract class Module {
 
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                         && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
-                    Minecraft.getInstance().getSoundHandler().play(CustomSoundPlayer.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
+                    Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 
                 this.onEnable();

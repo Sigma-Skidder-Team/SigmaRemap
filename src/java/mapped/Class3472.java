@@ -18,7 +18,7 @@ public abstract class Class3472 extends Class3471 {
    private static boolean method12160(BlockState var0, IWorldReader var1, BlockPos var2) {
       BlockPos var5 = var2.up();
       BlockState var6 = var1.getBlockState(var5);
-      if (var6.isIn(Blocks.SNOW) && var6.<Integer>get(SnowBlock.field19092) == 1) {
+      if (var6.isIn(Blocks.SNOW) && var6.<Integer>get(Class3410.field19092) == 1) {
          return true;
       } else if (var6.getFluidState().method23477() != 8) {
          int var7 = LightEngine.func_215613_a(var1, var0, var2, var6, var5, Direction.UP, var6.getOpacity(var1, var5));

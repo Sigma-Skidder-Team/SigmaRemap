@@ -400,16 +400,16 @@ public class BlockUtil {
    }
 
    public static BlockRayTraceResult method34566(float var0) {
-      Vector3d var3 = new Vector3d(mc.player.lastReportedPosX, mc.player.lastReportedPosY - 0.8F, mc.player.lastReportedPosZ);
+      Vector3d var3 = new Vector3d(mc.player.field6119, mc.player.field6120 - 0.8F, mc.player.field6121);
       var0 = (float)Math.toRadians((double)var0);
       float var4 = 0.0F;
       float var5 = -MathHelper.sin(var0) * MathHelper.cos(var4);
       float var6 = MathHelper.cos(var0) * MathHelper.cos(var4);
       float var7 = 2.3F;
       Vector3d var8 = new Vector3d(
-         mc.player.lastReportedPosX + (double)(var5 * var7),
-         mc.player.lastReportedPosY - 0.8F - (double)(!mc.player.isJumping ? 0.0F : 0.6F),
-         mc.player.lastReportedPosZ + (double)(var6 * var7)
+         mc.player.field6119 + (double)(var5 * var7),
+         mc.player.field6120 - 0.8F - (double)(!mc.player.isJumping ? 0.0F : 0.6F),
+         mc.player.field6121 + (double)(var6 * var7)
       );
       Entity var9 = mc.getRenderViewEntity();
       return mc.world.rayTraceBlocks(new RayTraceContext(var3, var8, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var9));
@@ -417,7 +417,7 @@ public class BlockUtil {
 
    public static BlockRayTraceResult rayTrace(float var0, float var1, float var2) {
       Vector3d var5 = new Vector3d(
-         mc.player.lastReportedPosX, mc.player.lastReportedPosY + (double) mc.player.getEyeHeight(), mc.player.lastReportedPosZ
+         mc.player.field6119, mc.player.field6120 + (double) mc.player.getEyeHeight(), mc.player.field6121
       );
       var0 = (float)Math.toRadians((double)var0);
       var1 = (float)Math.toRadians((double)var1);
@@ -429,9 +429,9 @@ public class BlockUtil {
       }
 
       Vector3d var9 = new Vector3d(
-         mc.player.lastReportedPosX + (double)(var6 * var2),
-         mc.player.lastReportedPosY + (double)(var7 * var2) + (double) mc.player.getEyeHeight(),
-         mc.player.lastReportedPosZ + (double)(var8 * var2)
+         mc.player.field6119 + (double)(var6 * var2),
+         mc.player.field6120 + (double)(var7 * var2) + (double) mc.player.getEyeHeight(),
+         mc.player.field6121 + (double)(var8 * var2)
       );
       Entity var10 = mc.getRenderViewEntity();
       return mc.world.rayTraceBlocks(new RayTraceContext(var5, var9, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var10));
@@ -449,9 +449,9 @@ public class BlockUtil {
       }
 
       Vector3d var10 = new Vector3d(
-         mc.player.lastReportedPosX + (double)(var7 * var2),
-         mc.player.lastReportedPosY + (double)(var8 * var2) + (double) mc.player.getEyeHeight(),
-         mc.player.lastReportedPosZ + (double)(var9 * var2)
+         mc.player.field6119 + (double)(var7 * var2),
+         mc.player.field6120 + (double)(var8 * var2) + (double) mc.player.getEyeHeight(),
+         mc.player.field6121 + (double)(var9 * var2)
       );
       Entity var11 = mc.getRenderViewEntity();
       return mc.world.rayTraceBlocks(new RayTraceContext(var6, var10, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var11));
@@ -475,9 +475,9 @@ public class BlockUtil {
       }
 
       Vector3d var14 = new Vector3d(
-         mc.player.lastReportedPosX + (double)(var11 * var2),
-         mc.player.lastReportedPosY + (double)(var12 * var2) + (double) mc.player.getEyeHeight(),
-         mc.player.lastReportedPosZ + (double)(var13 * var2)
+         mc.player.field6119 + (double)(var11 * var2),
+         mc.player.field6120 + (double)(var12 * var2) + (double) mc.player.getEyeHeight(),
+         mc.player.field6121 + (double)(var13 * var2)
       );
       Entity var15 = mc.getRenderViewEntity();
       return mc.world.rayTraceBlocks(new RayTraceContext(var10, var14, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, var15));
@@ -603,7 +603,7 @@ public class BlockUtil {
          Block var3 = mc.world.getBlockState(var0).getBlock();
          return !var3.getDefaultState().isSolid() && var3.getDefaultState().getMaterial().isReplaceable()
             ? false
-            : !(var3 instanceof SnowBlock) || method34573(mc.world.getBlockState(var0)) != 0;
+            : !(var3 instanceof Class3410) || method34573(mc.world.getBlockState(var0)) != 0;
       } else {
          return false;
       }
@@ -685,7 +685,7 @@ public class BlockUtil {
       float var9 = var5 * 2.0F;
       Vector3d var10 = new Vector3d((double)var6, (double)var7, (double)var8);
       if (!var1.method3398()) {
-         double var11 = (double)(MathHelper.sqrt(var1.getDistanceSq(var10)) / var9);
+         double var11 = (double)(MathHelper.sqrt(var1.getDistanceNearest3(var10)) / var9);
          if (var11 <= 1.0) {
             double var13 = var1.getPosX() - (double)var6;
             double var15 = var1.getPosYEye() - (double)var7;

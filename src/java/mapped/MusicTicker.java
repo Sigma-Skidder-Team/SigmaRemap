@@ -2,7 +2,6 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.BackgroundMusicSelector;
-import net.minecraft.client.audio.ISound;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
@@ -11,7 +10,7 @@ public class MusicTicker {
    private static String[] field41438;
    private final Random field41439 = new Random();
    private final Minecraft field41440;
-   private ISound field41441;
+   private Class6340 field41441;
    private int field41442 = 100;
 
    public MusicTicker(Minecraft var1) {
@@ -39,9 +38,9 @@ public class MusicTicker {
    }
 
    public void method33667(BackgroundMusicSelector var1) {
-      this.field41441 = CustomSoundPlayer.method19294(var1.method12189());
+      this.field41441 = MinecraftSoundManager.method19294(var1.method12189());
       if (this.field41441.method19281() != SoundHandler.field1051) {
-         this.field41440.getSoundHandler().play(this.field41441);
+         this.field41440.getSoundHandler().method1000(this.field41441);
       }
 
       this.field41442 = Integer.MAX_VALUE;

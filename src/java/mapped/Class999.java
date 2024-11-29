@@ -15,8 +15,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
@@ -34,7 +32,7 @@ public class Class999 extends Entity {
    private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(Class999.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(Class999.class, DataSerializers.field33398);
    private static final DataParameter<IParticleData> field5501 = EntityDataManager.<IParticleData>createKey(Class999.class, DataSerializers.field33399);
-   private Class8812 field5502 = Potions.field34976;
+   private Class8812 field5502 = Class8137.field34976;
    private final List<EffectInstance> field5503 = Lists.newArrayList();
    private final Map<Entity, Integer> field5504 = Maps.newHashMap();
    private int field5505 = 600;
@@ -93,10 +91,10 @@ public class Class999 extends Entity {
    }
 
    private void method4100() {
-      if (this.field5502 == Potions.field34976 && this.field5503.isEmpty()) {
+      if (this.field5502 == Class8137.field34976 && this.field5503.isEmpty()) {
          this.getDataManager().method35446(field5499, 0);
       } else {
-         this.getDataManager().method35446(field5499, PotionUtils.method38184(PotionUtils.method38177(this.field5502, this.field5503)));
+         this.getDataManager().method35446(field5499, Class9741.method38184(Class9741.method38177(this.field5502, this.field5503)));
       }
    }
 
@@ -183,7 +181,7 @@ public class Class999 extends Entity {
            List<EffectInstance> var27 = Lists.newArrayList();
 
             for (EffectInstance var9 : this.field5502.method31816()) {
-               var27.add(new EffectInstance(var9.getPotion(), var9.method8628() / 4, var9.getAmplifier(), var9.isAmbient(), var9.method8631()));
+               var27.add(new EffectInstance(var9.getPotion(), var9.method8628() / 4, var9.method8629(), var9.isAmbient(), var9.method8631()));
             }
 
             var27.addAll(this.field5503);
@@ -202,7 +200,7 @@ public class Class999 extends Entity {
                               if (!var23.getPotion().isInstant()) {
                                  var10.addPotionEffect(new EffectInstance(var23));
                               } else {
-                                 var23.getPotion().affectEntity(this, this.method4114(), var10, var23.getAmplifier(), 0.5);
+                                 var23.getPotion().affectEntity(this, this.method4114(), var10, var23.method8629(), 0.5);
                               }
                            }
 
@@ -354,7 +352,7 @@ public class Class999 extends Entity {
       }
 
       if (var1.contains("Potion", 8)) {
-         this.method4099(PotionUtils.method38186(var1));
+         this.method4099(Class9741.method38186(var1));
       }
 
       if (var1.contains("Effects", 9)) {
@@ -389,7 +387,7 @@ public class Class999 extends Entity {
          var1.putInt("Color", this.method4102());
       }
 
-      if (this.field5502 != Potions.field34976 && this.field5502 != null) {
+      if (this.field5502 != Class8137.field34976 && this.field5502 != null) {
          var1.putString("Potion", Registry.field16076.getKey(this.field5502).toString());
       }
 

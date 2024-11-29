@@ -181,7 +181,7 @@ public class Class2903 extends Class2898<Class4733> {
             var23.method8377(var26, var16);
             if (!var3.contains(var23)) {
                BlockState var17 = var1.getBlockState(var23);
-               if (var17.hasProperty(BlockStateProperties.field39747)) {
+               if (var17.method23462(BlockStateProperties.field39747)) {
                   ((Set)var7.get(0)).add(var23.toImmutable());
                   method11232(var1, var23, var17.with(BlockStateProperties.field39747, Integer.valueOf(1)));
                   if (var2.method38396(var23)) {
@@ -207,7 +207,7 @@ public class Class2903 extends Class2898<Class4733> {
                var23.method8377(var30, var19);
                if (!var27.contains(var23) && !var28.contains(var23)) {
                   BlockState var20 = var1.getBlockState(var23);
-                  if (var20.hasProperty(BlockStateProperties.field39747)) {
+                  if (var20.method23462(BlockStateProperties.field39747)) {
                      int var21 = var20.<Integer>get(BlockStateProperties.field39747);
                      if (var21 > var25 + 1) {
                         BlockState var22 = var20.with(BlockStateProperties.field39747, Integer.valueOf(var25 + 1));

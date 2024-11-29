@@ -7,6 +7,8 @@ import net.minecraft.client.util.ClientRecipeBook;
 import net.minecraft.client.world.ClientWorld;
 
 public class Class7314 extends PlayerController {
+   private static String[] field31356;
+
    public Class7314(Minecraft var1, ClientPlayNetHandler var2) {
       super(var1, var2);
    }

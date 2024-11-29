@@ -1,7 +1,5 @@
 package mapped;
 
-import org.newdawn.slick.Color;
-
 import java.util.Properties;
 
 public class Class6615 {

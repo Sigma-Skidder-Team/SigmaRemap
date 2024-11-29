@@ -18,11 +18,11 @@ public class Class9214 implements GameSession {
       this.field42400 = var3.method15790().size();
       this.field42401 = !var3.getNetworkManager().isLocalChannel();
       this.field42402 = var1.method6997().getTranslationKey();
-      NetworkPlayerInfo var6 = var3.getPlayerInfo(var2.getUniqueID());
+      NetworkPlayerInfo var6 = var3.method15792(var2.getUniqueID());
       if (var6 == null) {
          this.field42403 = "unknown";
       } else {
-         this.field42403 = var6.getGameType().method8153();
+         this.field42403 = var6.method19967().method8153();
       }
 
       this.field42404 = var3.method15800();

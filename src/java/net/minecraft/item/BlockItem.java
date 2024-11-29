@@ -16,7 +16,6 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -64,7 +63,7 @@ public class BlockItem extends Item {
                }
 
                SoundType var12 = var10.getSoundType();
-               var7.method6742(var8, var6, this.method11835(var10), SoundCategory.field14732, (var12.getVolume() + 1.0F) / 2.0F, var12.method29711() * 0.8F);
+               var7.method6742(var8, var6, this.method11835(var10), Class2266.field14732, (var12.getVolume() + 1.0F) / 2.0F, var12.method29711() * 0.8F);
                if (var8 == null || !var8.abilities.isCreativeMode) {
                   var9.shrink(1);
                }

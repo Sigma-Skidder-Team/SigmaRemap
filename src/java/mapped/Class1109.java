@@ -36,7 +36,7 @@ public class Class1109 extends Class1108 {
 
    @Override
    public boolean method4266(IWorldReader var1) {
-      return var1.checkNoEntityCollision(this) && !var1.containsAnyLiquid(this.getBoundingBox());
+      return var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox());
    }
 
    @Override

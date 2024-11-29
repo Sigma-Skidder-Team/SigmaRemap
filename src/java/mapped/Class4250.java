@@ -69,7 +69,7 @@ public class Class4250 extends Class4247 {
          (float)(this.widthA - var5 * 2),
          (float)(this.heightA - var5 * 2),
          3.0F,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       ArrayList var11 = new ArrayList();
       var11.add(new Class9778(0.0, 0.0));
@@ -82,7 +82,7 @@ public class Class4250 extends Class4247 {
          (float)((double)this.xA + (double)var6 * var13 + (double)var5),
          (float)(this.yA - var5 / 2 + this.heightA),
          14.0F,
-         MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.color, var1)
+         MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
       List<Class9778> var15 = var12.method30790(var11);
       GL11.glPushMatrix();
@@ -92,7 +92,7 @@ public class Class4250 extends Class4247 {
       GL11.glAlphaFunc(519, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       GL11.glEnable(2848);
       GL11.glBegin(3);
       GL11.glVertex2f(0.0F, var6);

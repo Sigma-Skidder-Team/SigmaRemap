@@ -10,7 +10,7 @@ public class Class6523 extends Class6522 {
       this.field28610 = new Class6512(var1);
    }
 
-   public void method19779(Class9189 var1, Class6516 var2) throws AACException {
+   public void method19779(Class9189 var1, Class6516 var2) throws Class2460 {
       this.method19774(var1);
       this.field28610.method19714(var1, false, var2);
    }

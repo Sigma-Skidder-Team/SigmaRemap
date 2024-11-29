@@ -402,16 +402,16 @@ public class ParticleManager implements Class268 {
       }
 
       if (var6) {
-         VoxelShape var9 = var2.getShape(this.world, var1);
+         VoxelShape var9 = var2.method23412(this.world, var1);
          double var7 = 0.25;
          var9.method19520(
             (var3, var5x, var7x, var9x, var11, var13) -> {
                double var17 = Math.min(1.0, var9x - var3);
                double var19 = Math.min(1.0, var11 - var5x);
                double var21 = Math.min(1.0, var13 - var7x);
-               int var23 = Math.max(2, MathHelper.ceil(var17 / 0.25));
-               int var24 = Math.max(2, MathHelper.ceil(var19 / 0.25));
-               int var25 = Math.max(2, MathHelper.ceil(var21 / 0.25));
+               int var23 = Math.max(2, MathHelper.method37774(var17 / 0.25));
+               int var24 = Math.max(2, MathHelper.method37774(var19 / 0.25));
+               int var25 = Math.max(2, MathHelper.method37774(var21 / 0.25));
 
                for (int var26 = 0; var26 < var23; var26++) {
                   for (int var27 = 0; var27 < var24; var27++) {
@@ -450,7 +450,7 @@ public class ParticleManager implements Class268 {
          int var7 = var1.getY();
          int var8 = var1.getZ();
          float var9 = 0.1F;
-         AxisAlignedBB var10 = var5.getShape(this.world, var1).getBoundingBox();
+         AxisAlignedBB var10 = var5.method23412(this.world, var1).getBoundingBox();
          double var11 = (double)var6 + this.field1172.nextDouble() * (var10.maxX - var10.minX - 0.2F) + 0.1F + var10.minX;
          double var13 = (double)var7 + this.field1172.nextDouble() * (var10.maxY - var10.minY - 0.2F) + 0.1F + var10.minY;
          double var15 = (double)var8 + this.field1172.nextDouble() * (var10.maxZ - var10.minZ - 0.2F) + 0.1F + var10.minZ;

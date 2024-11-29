@@ -29,21 +29,21 @@ public class LoginScreen extends Class4247 {
                   "Login",
                   228,
                   43,
-                  ResourceRegistry.JelloMediumFont40.getWidth("Login"),
+                  ResourceRegistry.JelloMediumFont40.getStringWidth("Login"),
                   50,
-                  new ColorHelper(ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, ClientColors.DEEP_TEAL.color, -7631989),
+                  new ColorHelper(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
                   "Login",
                   ResourceRegistry.JelloMediumFont40
                )
       );
       this.addToList(
          this.loginButton = new UIButton(
-            this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.getWidth("Login"), 70, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25
+            this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.getStringWidth("Login"), 70, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25
          )
       );
       this.addToList(
          this.registerButton = new UIButton(
-            this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.getWidth("Register"), 14, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14
+            this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.getStringWidth("Register"), 14, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14
          )
       );
       this.addToList(
@@ -52,7 +52,7 @@ public class LoginScreen extends Class4247 {
             "ForgotButton",
             60,
             275,
-            ResourceRegistry.JelloLightFont14.getWidth("Forgot password?"),
+            ResourceRegistry.JelloLightFont14.getStringWidth("Forgot password?"),
             14,
             ColorHelper.field27961,
             "Forgot password?",
@@ -65,7 +65,7 @@ public class LoginScreen extends Class4247 {
       int var9 = 50;
       int var10 = 300;
       int var11 = 106;
-      ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.color, Class2218.field14488, Class2218.field14492);
+      ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
       this.addToList(this.inputUsername = new UIInput(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
       this.addToList(this.inputPassword = new UIInput(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
       this.inputUsername.setFont(ResourceRegistry.JelloLightFont20);
@@ -93,7 +93,7 @@ public class LoginScreen extends Class4247 {
          this.field21355.setEnabled(var5.method36702());
          if (var5.method36702()) {
             RenderUtil.renderBackgroundBox(
-               (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04F)
+               (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 

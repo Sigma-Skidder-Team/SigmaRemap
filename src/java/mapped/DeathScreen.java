@@ -67,7 +67,7 @@ public class DeathScreen extends Screen {
          var3.active = false;
       }
 
-      for (Widget var5 : this.buttons) {
+      for (Widget var5 : this.field4566) {
          var5.active = false;
       }
 
@@ -154,7 +154,7 @@ public class DeathScreen extends Screen {
       super.tick();
       this.field4570++;
       if (this.field4570 == 20) {
-         for (Widget var4 : this.buttons) {
+         for (Widget var4 : this.field4566) {
             var4.active = true;
          }
       }

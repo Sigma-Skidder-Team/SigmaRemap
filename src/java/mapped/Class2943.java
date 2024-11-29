@@ -134,7 +134,7 @@ public class Class2943 extends Class2898<Class4705> {
                }
             }
 
-            if (var5.field22322.getMaterial() == Material.WATER) {
+            if (var5.field22322.getMaterial() == Material.field38941) {
                for (int var43 = 0; var43 < 16; var43++) {
                   for (int var47 = 0; var47 < 16; var47++) {
                      byte var51 = 4;

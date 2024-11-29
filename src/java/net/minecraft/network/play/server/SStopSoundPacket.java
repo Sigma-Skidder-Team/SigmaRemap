@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import net.minecraft.util.SoundCategory;
+import mapped.Class2266;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 public class SStopSoundPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24372;
    private ResourceLocation field24373;
-   private SoundCategory field24374;
+   private Class2266 field24374;
 
    public SStopSoundPacket() {
    }
 
-   public SStopSoundPacket(ResourceLocation var1, SoundCategory var2) {
+   public SStopSoundPacket(ResourceLocation var1, Class2266 var2) {
       this.field24373 = var1;
       this.field24374 = var2;
    }
@@ -52,7 +52,7 @@ public class SStopSoundPacket implements IPacket<IClientPlayNetHandler> {
    }
 
    @Nullable
-   public SoundCategory method17269() {
+   public Class2266 method17269() {
       return this.field24374;
    }
 

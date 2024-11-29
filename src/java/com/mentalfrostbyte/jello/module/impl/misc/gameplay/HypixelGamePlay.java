@@ -1,10 +1,12 @@
 package com.mentalfrostbyte.jello.module.impl.misc.gameplay;
 
+import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
+import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class7200;
@@ -27,130 +29,127 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class HypixelGamePlay extends Module {
-    private GamePlay gameplayModule;
+    private GamePlay field23626;
 
     public HypixelGamePlay() {
         super(ModuleCategory.MISC, "Hypixel", "Gameplay for Hypixel");
         this.registerSetting(new BooleanSetting("FriendAccept", "Automatically accept friend requests", false));
-        this.registerSetting(new BooleanSetting("Hide infos", "Hide scoreboard server informations & date when in-game", false));
+        this.registerSetting(new BooleanSetting("Hide infos", "Hide scoreboard server informations & date when ingame", false));
     }
 
     @Override
     public void initialize() {
-        this.gameplayModule = (GamePlay) this.access();
+        this.field23626 = (GamePlay) this.access();
     }
 
     @EventTarget
-    private void onReceivePacket(ReceivePacketEvent event) {
+    private void method16372(ReceivePacketEvent var1) {
         if (mc.player != null) {
-            IPacket packet = event.getPacket();
-            if (packet instanceof SChatPacket) {
-                SChatPacket chatPacket = (SChatPacket) packet;
-                String chatMessage = chatPacket.getChatComponent().getString().replaceAll("§.", "");
-
-                if (chatPacket.getType() != ChatType.SYSTEM && chatPacket.getType() != ChatType.CHAT) {
+            IPacket var4 = var1.getPacket();
+            if (var4 instanceof SChatPacket) {
+                SChatPacket var5 = (SChatPacket) var4;
+                String var6 = var5.getChatComponent().getString().replaceAll("§.", "");
+                if (var5.getType() != ChatType.SYSTEM && var5.getType() != ChatType.CHAT) {
                     return;
                 }
 
-                String playerName = mc.player.getName().getString().toLowerCase();
+                String var7 = mc.player.getName().getString().toLowerCase();
+                if (Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).isEnabled()) {
+                }
 
-                if (this.gameplayModule.getBooleanValueFromSettingName("AutoL")) {
-                    String[] killPrefixes = {"MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", ""};
-                    boolean isKillMessage = false;
+                if (this.field23626.getBooleanValueFromSettingName("AutoL")) {
+                    String[] var8 = new String[]{"MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", ""};
+                    boolean var9 = false;
 
-                    for (String prefix : killPrefixes) {
-                        if (chatMessage.startsWith(prefix + "KILL! ")) {
-                            isKillMessage = true;
+                    for (int var10 = 0; var10 < 6; var10++) {
+                        if (var6.startsWith(var8[var10] + "KILL! ")) {
+                            var9 = true;
                             break;
                         }
                     }
 
-                    if (isKillMessage) {
-                        String[] messageParts = chatMessage.split(" ");
-                        if (messageParts.length > 3) {
-                            this.gameplayModule.method16761(messageParts[3]);
+                    if (var9) {
+                        String[] var33 = var6.split(" ");
+                        if (var33.length > 3) {
+                            this.field23626.method16761(var33[3]);
                         }
                     }
 
-                    if (chatMessage.toLowerCase().contains("was killed by " + playerName) ||
-                            chatMessage.toLowerCase().contains("was thrown into the void by " + playerName + ".") ||
-                            chatMessage.toLowerCase().contains("was thrown off a cliff by " + playerName + ".") ||
-                            chatMessage.toLowerCase().contains("was struck down by " + playerName + ".") ||
-                            chatMessage.toLowerCase().contains("be sent to davy jones' locker by " + playerName + ".")) {
-
-                        Scoreboard scoreboard = mc.world.method6805();
-                        Class8375 teamClass = null;
-                        ScorePlayerTeam playerTeam = scoreboard.getPlayersTeam(mc.player.method2956());
-
-                        if (playerTeam != null) {
-                            int colorIndex = playerTeam.getColor().getColorIndex();
-                            if (colorIndex >= 0) {
-                                teamClass = scoreboard.method20989(3 + colorIndex);
+                    if (var6.toLowerCase().contains("was killed by " + var7)
+                            || var6.toLowerCase().contains("was thrown into the void by " + var7 + ".")
+                            || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
+                            || var6.toLowerCase().contains("was struck down by " + var7 + ".")
+                            || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
+                        Scoreboard var34 = mc.world.method6805();
+                        Class8375 var11 = null;
+                        ScorePlayerTeam var12 = var34.method20998(mc.player.method2956());
+                        if (var12 != null) {
+                            int var13 = var12.getColor().getColorIndex();
+                            if (var13 >= 0) {
+                                var11 = var34.method20989(3 + var13);
                             }
                         }
 
-                        Class8375 effectiveClass = teamClass != null ? teamClass : scoreboard.method20989(1);
-                        Collection<Class9411> teamMembers = scoreboard.getSortedScores(effectiveClass);
-                        int remainingPlayers = -1;
+                        Class8375 var38 = var11 != null ? var11 : var34.method20989(1);
+                        Collection<Class9411> var14 = var34.method20981(var38);
+                        int var15 = -1;
 
-                        for (Class9411 member : teamMembers) {
-                            ScorePlayerTeam memberTeam = scoreboard.getPlayersTeam(member.method36054());
-                            String formattedName = ScorePlayerTeam.method28577(memberTeam, new StringTextComponent(member.method36054()))
-                                    .getString().replaceAll("§t", "");
+                        label155:
+                        for (Class9411 var17 : var14) {
+                            ScorePlayerTeam var18 = var34.method20998(var17.method36054());
+                            String var19 = ScorePlayerTeam.method28577(var18, new StringTextComponent(var17.method36054())).getString().replaceAll("§t", "");
 
-                            for (String keyword : new ArrayList<>(Arrays.asList("players left", "joueurs restants", "spieler verbleibend"))) {
-                                if (formattedName.toLowerCase().contains(keyword + ":")) {
-                                    String[] parts = formattedName.split(" ");
-                                    if (parts.length > 2) {
+                            for (String var22 : new ArrayList<String>(Arrays.asList("players left", "joueurs restants", "spieler verbleibend"))) {
+                                if (var19.toLowerCase().contains(var22 + ":")) {
+                                    String[] var23 = var19.split(" ");
+                                    if (var23.length > 2) {
                                         try {
-                                            remainingPlayers = Integer.parseInt(parts[2]);
-                                        } catch (NumberFormatException e) {
-                                            // Handle parse exception
+                                            var15 = Integer.parseInt(var23[2]);
+                                        } catch (NumberFormatException var25) {
                                         }
-                                        break;
+                                        break label155;
                                     }
                                 }
                             }
                         }
 
-                        if (remainingPlayers > 2) {
-                            this.gameplayModule.method16761(chatMessage);
+                        if (var15 > 2) {
+                            this.field23626.method16761(var6);
                         }
                     }
                 }
 
-                if (this.getBooleanValueFromSettingName("FriendAccept") && chatMessage.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
-                    for (ITextComponent sibling : chatPacket.getChatComponent().getSiblings()) {
-                        ClickEvent clickEvent = sibling.getStyle().getClickEvent();
-                        if (clickEvent != null && clickEvent.getAction() == ClickEvent$Action.RUN_COMMAND && clickEvent.getValue().contains("/f accept")) {
-                            MultiUtilities.sendChatMessage(clickEvent.getValue());
+                if (this.getBooleanValueFromSettingName("FriendAccept") && var6.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
+                    for (ITextComponent var31 : var5.getChatComponent().getSiblings()) {
+                        ClickEvent var35 = var31.getStyle().getClickEvent();
+                        if (var35 != null && var35.getAction() == ClickEvent$Action.RUN_COMMAND && var35.getValue().contains("/f accept")) {
+                            MultiUtilities.sendChatMessage(var35.getValue());
                         }
                     }
                 }
 
-                if (chatMessage.contains("Want to play again? Click here!") || chatMessage.contains("coins! (Win)")) {
-                    if (this.gameplayModule.getBooleanValueFromSettingName("Auto Join")) {
-                        for (ITextComponent sibling : chatPacket.getChatComponent().getSiblings()) {
-                            ClickEvent clickEvent = sibling.getStyle().getClickEvent();
-                            if (clickEvent != null && clickEvent.getAction() == ClickEvent$Action.RUN_COMMAND) {
-                                Class7200 joinClass = new Class7200(clickEvent.getValue(),
-                                        (long) this.gameplayModule.getNumberValueBySettingName("Auto Join delay") * 1000L);
-                                this.gameplayModule.method16759(joinClass);
+                if (var6.contains("Want to play again? Click here! ") || var6.contains("coins! (Win)")) {
+                    if (this.field23626.getBooleanValueFromSettingName("Auto Join")) {
+                        for (ITextComponent var32 : var5.getChatComponent().getSiblings()) {
+                            ClickEvent var36 = var32.getStyle().getClickEvent();
+                            if (var36 != null && var36.getAction() == ClickEvent$Action.RUN_COMMAND) {
+                                Class7200 var37 = new Class7200(var36.getValue(), (long) this.field23626.getNumberValueBySettingName("Auto Join delay") * 1000L);
+                                this.field23626.method16759(var37);
                             }
                         }
                     }
 
-                    if (this.gameplayModule.getBooleanValueFromSettingName("AutoGG")) {
-                        this.gameplayModule.method16760();
+                    if (this.field23626.getBooleanValueFromSettingName("AutoGG")) {
+                        this.field23626.method16760();
                     }
                 }
-            } else if (packet instanceof STeamsPacket && this.getBooleanValueFromSettingName("Hide infos")) {
-                STeamsPacket teamsPacket = (STeamsPacket) packet;
-                if (teamsPacket.getAction() == 2 && teamsPacket.getName().startsWith("team_")) {
-                    String prefixSuffix = teamsPacket.getPrefix().getString() + teamsPacket.getSuffix().getString();
-                    String[] parts = prefixSuffix.split(" ");
-                    if (parts != null && parts.length > 1 && StringUtils.countMatches(parts[0], "/") == 2) {
-                        event.setCancelled(true);
+            } else if (var4 instanceof STeamsPacket && this.getBooleanValueFromSettingName("Hide infos")) {
+                STeamsPacket var26 = (STeamsPacket) var4;
+                if (var26.getAction() == 2 && var26.getName().startsWith("team_")) {
+                    String var27 = var26.getPrefix().getString() + var26.getSuffix().getString();
+                    String[] var28 = var27.split(" ");
+                    if (var28 != null && var28.length > 1 && StringUtils.countMatches(var28[0], "/") == 2) {
+                        var1.setCancelled(true);
                     }
                 }
             }

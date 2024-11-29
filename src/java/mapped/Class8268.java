@@ -129,7 +129,7 @@ public class Class8268 {
    private CompletableFuture<Suggestions> method28843(SuggestionsBuilder var1, Class7984<Block> var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
 
-      for (Property var7 : this.field35549.getProperties()) {
+      for (Property var7 : this.field35549.method23461()) {
          if (!this.field35545.containsKey(var7) && var7.getName().startsWith(var5)) {
             var1.suggest(var7.getName() + '=');
          }
@@ -196,7 +196,7 @@ public class Class8268 {
          var1.suggest(String.valueOf(']'));
       }
 
-      if (var1.getRemaining().isEmpty() && this.field35545.size() < this.field35549.getProperties().size()) {
+      if (var1.getRemaining().isEmpty() && this.field35545.size() < this.field35549.method23461().size()) {
          var1.suggest(String.valueOf(','));
       }
 
@@ -446,7 +446,7 @@ public class Class8268 {
 
    public static String toString(BlockState var0) {
       StringBuilder var3 = new StringBuilder(Registry.BLOCK.getKey(var0.getBlock()).toString());
-      if (!var0.getProperties().isEmpty()) {
+      if (!var0.method23461().isEmpty()) {
          var3.append('[');
          boolean var4 = false;
 

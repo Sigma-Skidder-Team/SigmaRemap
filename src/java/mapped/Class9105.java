@@ -2,17 +2,17 @@ package mapped;
 
 public final class Class9105 {
    private static String[] field41825;
-   private final VertexFormat field41826;
+   private final Class7831 field41826;
    private final int field41827;
    private final int field41828;
 
-   public Class9105(VertexFormat var1, int var2, int var3) {
+   public Class9105(Class7831 var1, int var2, int var3) {
       this.field41826 = var1;
       this.field41827 = var2;
       this.field41828 = var3;
    }
 
-   public VertexFormat method33951() {
+   public Class7831 method33951() {
       return this.field41826;
    }
 

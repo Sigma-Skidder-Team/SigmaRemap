@@ -61,13 +61,13 @@ public class MaterialColor {
    public static final MaterialColor field31003 = new MaterialColor(56, 3837580);
    public static final MaterialColor field31004 = new MaterialColor(57, 5647422);
    public static final MaterialColor field31005 = new MaterialColor(58, 1356933);
-   public int colorValue;
-   public final int colorIndex;
+   public int field31006;
+   public final int field31007;
 
    private MaterialColor(int var1, int var2) {
       if (var1 >= 0 && var1 <= 63) {
-         this.colorIndex = var1;
-         this.colorValue = var2;
+         this.field31007 = var1;
+         this.field31006 = var2;
          field30946[var1] = this;
       } else {
          throw new IndexOutOfBoundsException("Map colour ID must be between 0 and 63 (inclusive)");
@@ -92,9 +92,9 @@ public class MaterialColor {
          var4 = 180;
       }
 
-      int var5 = (this.colorValue >> 16 & 0xFF) * var4 / 255;
-      int var6 = (this.colorValue >> 8 & 0xFF) * var4 / 255;
-      int var7 = (this.colorValue & 0xFF) * var4 / 255;
+      int var5 = (this.field31006 >> 16 & 0xFF) * var4 / 255;
+      int var6 = (this.field31006 >> 8 & 0xFF) * var4 / 255;
+      int var7 = (this.field31006 & 0xFF) * var4 / 255;
       return 0xFF000000 | var7 << 16 | var6 << 8 | var5;
    }
 }

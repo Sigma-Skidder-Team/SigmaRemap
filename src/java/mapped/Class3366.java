@@ -6,7 +6,7 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.*;
+import net.minecraft.util.Util;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -21,6 +21,10 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -96,7 +100,7 @@ public class Class3366 extends Class3241 {
          if (var9.getItem() != Items.field37956) {
             if (var9.getItem() == Items.field37972) {
                var9.shrink(1);
-               var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26418, SoundCategory.field14734, 1.0F, 1.0F);
+               var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26418, Class2266.field14734, 1.0F, 1.0F);
                if (!var9.isEmpty()) {
                   if (!var4.inventory.method4045(new ItemStack(Items.field38177))) {
                      var4.dropItem(new ItemStack(Items.field38177), false);
@@ -108,7 +112,7 @@ public class Class3366 extends Class3241 {
                var11 = true;
             }
          } else {
-            var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, SoundCategory.field14734, 1.0F, 1.0F);
+            var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, Class2266.field14734, 1.0F, 1.0F);
             method11944(var2, var3);
             var9.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var5));
             var11 = true;

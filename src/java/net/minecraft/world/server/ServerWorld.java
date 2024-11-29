@@ -901,7 +901,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9, float var10, float var11) {
+   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       this.field9045
          .getPlayerList()
          .method19466(
@@ -916,7 +916,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6) {
+   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       this.field9045
          .getPlayerList()
          .method19466(
@@ -985,7 +985,7 @@ public class ServerWorld extends World implements ISeedReader {
       }
 
       for (ServerPlayerEntity var17 : this.field9042) {
-         if (var17.getDistanceSq(var4, var6, var8) < 4096.0) {
+         if (var17.getDistanceNearest(var4, var6, var8) < 4096.0) {
             var17.connection.sendPacket(new SExplosionPacket(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
          }
       }

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -63,7 +63,7 @@ public class LoginAndOutScreen extends Screen {
             this.heightA / 2 + 120,
             240,
             60,
-            new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F)),
+            new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)),
             "Continue",
             ResourceRegistry.JelloLightFont25
          )
@@ -138,7 +138,7 @@ public class LoginAndOutScreen extends Screen {
             (int)((double)this.heightA - var5.getHeight()) / 2,
             (int)var5.getWidth(),
             (int)var5.getHeight(),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0F - this.field21093.calcPercent())
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - this.field21093.calcPercent())
          );
       }
 
@@ -151,7 +151,7 @@ public class LoginAndOutScreen extends Screen {
          String welcomeBackSign = "Welcome back";
          byte var8 = 100;
          byte var9 = 10;
-         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.getWidth(welcomeBackSign), ResourceRegistry.JelloLightFont36.getWidth(username)) + var9 * 10;
+         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.getStringWidth(welcomeBackSign), ResourceRegistry.JelloLightFont36.getStringWidth(username)) + var9 * 10;
          int var11 = (this.widthA - var10) / 2;
          int var12 = (this.heightA - var8 * 2) / 2;
          RenderUtil.drawRect(
@@ -159,15 +159,15 @@ public class LoginAndOutScreen extends Screen {
             0.0F,
             (float)this.widthA,
             (float)this.heightA,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45F * this.field21093.calcPercent())
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent())
          );
          RenderUtil.drawImage(
             (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), ResourceList.sigmaPNG, this.field21093.calcPercent()
          );
          int var13 = 165;
          int var14 = 54;
-         RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.color);
-         RenderUtil.drawString(ResourceRegistry.JelloLightFont36, (float)(var11 + var13), (float)(var12 + var14 + 45), username, ClientColors.LIGHT_GREYISH_BLUE.color);
+         RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+         RenderUtil.drawString(ResourceRegistry.JelloLightFont36, (float)(var11 + var13), (float)(var12 + var14 + 45), username, ClientColors.LIGHT_GREYISH_BLUE.getColor);
       }
 
       GL11.glPushMatrix();
@@ -199,7 +199,7 @@ public class LoginAndOutScreen extends Screen {
          (float)(this.getWidthA() * 2),
          (float)(this.getHeightA() + 114),
          this.field21087,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field21085)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field21085)
       );
       GL11.glPopMatrix();
       float var8 = 0.5F;

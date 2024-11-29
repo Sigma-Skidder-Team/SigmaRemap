@@ -1,6 +1,5 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.gui.AnimatedIconPanel;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
@@ -25,14 +24,14 @@ public class VolumeSlider extends Class4247 {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)this.yA + (float)this.heightA * this.field21372,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F)
       );
       RenderUtil.drawRect(
          (float)this.xA,
          (float)(this.yA + this.heightA),
          (float)(this.xA + this.widthA),
          (float)this.yA + (float)this.heightA * this.field21372,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.2F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
       );
       super.draw(var1);
    }

@@ -32,8 +32,6 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.block.Block;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.ISound;
-import net.minecraft.client.audio.ITickableSound;
 import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.recipebook.RecipeList;
@@ -41,7 +39,6 @@ import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.multiplayer.ClientChunkProvider;
-import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.util.ClientRecipeBook;
@@ -78,7 +75,10 @@ import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.tileentity.*;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.*;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -144,7 +144,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleJoinGame(SJoinGamePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      this.mc.playerController = new PlayerController(this.mc, this);
+      this.mc.playerController = new Class7314(this.mc, this);
       if (!this.field23269.isLocalChannel()) {
          Class8384.method29379();
       }
@@ -413,7 +413,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          ((Entity)var11).setUniqueId(var1.method17257());
          this.field23273.addEntity(var16, (Entity)var11);
          if (var11 instanceof AbstractMinecartEntity) {
-            this.mc.getSoundHandler().play(new Class6345((AbstractMinecartEntity)var11));
+            this.mc.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
          }
       }
    }
@@ -467,9 +467,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       double var8 = var1.method17596();
       float var10 = (float)(var1.method17597() * 360) / 256.0F;
       float var11 = (float)(var1.method17598() * 360) / 256.0F;
-      if (this.getPlayerInfo(var1.method17593()) != null) {
+      if (this.method15792(var1.method17593()) != null) {
          int var12 = var1.method17592();
-         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.getPlayerInfo(var1.method17593()).method19966());
+         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.method15792(var1.method17593()).method19966());
          var13.setEntityId(var12);
          var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
@@ -713,7 +713,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   var4.getPosY(),
                   var4.getPosZ(),
                   SoundEvents.field26714,
-                  SoundCategory.field14735,
+                  Class2266.field14735,
                   0.2F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 1.4F + 2.0F,
                   false
@@ -725,7 +725,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   var4.getPosY(),
                   var4.getPosZ(),
                   SoundEvents.field26569,
-                  SoundCategory.field14735,
+                  Class2266.field14735,
                   0.1F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 0.35F + 0.9F,
                   false
@@ -825,7 +825,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var16 = new Class6335((Class1017)var12);
             }
 
-            this.mc.getSoundHandler().playOnNextTick((ITickableSound)var16);
+            this.mc.getSoundHandler().method999((Class6341)var16);
          }
       }
    }
@@ -902,7 +902,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                }
             }
          } else {
-            this.mc.getSoundHandler().play(new Class6347((Class1105)var4));
+            this.mc.getSoundHandler().method1000(new Class6347((Class1105)var4));
          }
       }
    }
@@ -1184,7 +1184,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                 var4.getPosY(),
                                                 var4.getPosZ(),
                                                 SoundEvents.field26526,
-                                                SoundCategory.field14733,
+                                                Class2266.field14733,
                                                 1.0F,
                                                 1.0F
                                              );
@@ -1193,7 +1193,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                  } else {
                                     this.field23273
                                        .playSound(
-                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26985, SoundCategory.field14734, 1.0F, 1.0F
+                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26985, Class2266.field14734, 1.0F, 1.0F
                                        );
                                  }
                               } else {
@@ -1205,7 +1205,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         } else {
                            this.field23273
                               .playSound(
-                                 var4, var4.getPosX(), var4.getPosYEye(), var4.getPosZ(), SoundEvents.field26362, SoundCategory.field14735, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.getPosYEye(), var4.getPosZ(), SoundEvents.field26362, Class2266.field14735, 0.18F, 0.45F
                               );
                         }
                      } else {
@@ -1619,15 +1619,15 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.mc
          .getSoundHandler()
-         .play(
-            new CustomSoundPlayer(
+         .method1000(
+            new MinecraftSoundManager(
                var1.method17222(),
                var1.method17223(),
                var1.method17227(),
                var1.method17228(),
                false,
                0,
-               ISound.AttenuationType.LINEAR,
+               Class2279.field14846,
                var1.method17224(),
                var1.method17225(),
                var1.method17226(),
@@ -2233,7 +2233,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    }
 
    @Nullable
-   public NetworkPlayerInfo getPlayerInfo(UUID var1) {
+   public NetworkPlayerInfo method15792(UUID var1) {
       return this.field23276.get(var1);
    }
 

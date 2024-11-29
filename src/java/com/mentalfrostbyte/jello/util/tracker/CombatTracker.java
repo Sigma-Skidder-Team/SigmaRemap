@@ -25,12 +25,15 @@ import java.util.*;
 
 public class CombatTracker {
     public HashMap<UUID, Class8433> field36054 = new HashMap<>();
+    public HttpClient field36055;
+    public Socket field36057;
     public Class8930 field36058;
     private final Minecraft field36050 = Minecraft.getInstance();
     private final List<UUID> field36053 = new ArrayList<>();
 
     public CombatTracker() {
         Client.getInstance().getEventManager().register(this);
+        this.field36055 = HttpClients.createDefault();
         this.field36058 = new Class8930(this);
         RandomModuleThread.field8342 = RandomModuleThread.field8342 | Client.getInstance().getNetworkManager().field38425 != null;
     }
@@ -72,6 +75,10 @@ public class CombatTracker {
                     var8.add(var9.getName().getUnformattedComponentText());
                     this.field36053.add(var9.getUniqueID());
                 }
+
+                if (this.field36057 != null && this.field36057.connected()) {
+                    this.field36057.emit("fetch", var8);
+                }
             }
         }
     }
@@ -91,6 +98,15 @@ public class CombatTracker {
             if (this.field36050.world.method7196(var4.next()) == null) {
                 var4.remove();
             }
+        }
+    }
+
+    public void method29515(String var1, String var2) {
+        JSONObject var5 = new JSONObject();
+        var5.put("target", var1);
+        var5.put("message", var2);
+        if (this.field36057 != null) {
+            this.field36057.emit("message", var5);
         }
     }
 

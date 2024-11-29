@@ -18,7 +18,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public abstract class Class919 extends AbstractMinecartEntity implements IInventory, Class949 {
-   private NonNullList<ItemStack> field5236 = NonNullList.<ItemStack>withSize(36, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5236 = NonNullList.<ItemStack>method68(36, ItemStack.EMPTY);
    private boolean field5237 = true;
    private ResourceLocation field5238;
    private long field5239;
@@ -140,7 +140,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
    @Override
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
-      this.field5236 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5236 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!var1.contains("LootTable", 8)) {
          ItemStackHelper.loadAllItems(var1, this.field5236);
       } else {

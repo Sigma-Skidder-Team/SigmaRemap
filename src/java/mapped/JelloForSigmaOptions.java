@@ -46,7 +46,7 @@ public class JelloForSigmaOptions extends IngameMenuScreen {
       }
 
       super.init();
-      Iterator var3 = this.buttons.iterator();
+      Iterator var3 = this.field4566.iterator();
 
       while (var3.hasNext()) {
          Widget var4 = (Widget)var3.next();

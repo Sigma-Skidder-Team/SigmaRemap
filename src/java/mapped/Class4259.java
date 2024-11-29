@@ -126,7 +126,7 @@ public class Class4259 extends Class4247 {
       double var13 = ((double)this.field20651 - Math.floor((double)this.field20651)) * (double)var10;
       TextureManager var10000 = var4.getTextureManager();
       var4.getTextureManager();
-      var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+      var10000.bindTexture(TextureManager.field1094);
       RenderUtil.method11421(this.xA, this.yA, this.xA + this.widthA, this.yA + this.heightA, true);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.xA + this.widthA / 2), (float)(this.yA + this.heightA / 2), 0.0F);
@@ -140,7 +140,7 @@ public class Class4259 extends Class4247 {
          (float)var6,
          (float)var6,
          this.field20654.field30546,
-         ClientColors.LIGHT_GREYISH_BLUE.color,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          0.0F,
          0.0F,
          (float)this.field20654.field30544,
@@ -172,10 +172,10 @@ public class Class4259 extends Class4247 {
       String var24 = var22 + "  " + var23;
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.xA - ResourceRegistry.JelloLightFont14.getWidth(var24) - 23),
+         (float)(this.xA - ResourceRegistry.JelloLightFont14.getStringWidth(var24) - 23),
          (float)(this.yA + 35),
          var24,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
       );
       this.field20656 = this.field20650;
       this.field20657 = this.field20651;

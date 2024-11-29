@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
@@ -158,7 +158,7 @@ public class MiniMap extends Module {
                         this.field23712 = var1.method13960();
                         if (var4 != null) {
                             String var5 = "^";
-                            TrueTypeFont var6 = ResourceRegistry.JelloMediumFont20;
+                            ClientResource var6 = ResourceRegistry.JelloMediumFont20;
                             float var7 = 1.5F;
                             RenderUtil.renderBackgroundBox((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
                             GL11.glPushMatrix();
@@ -181,7 +181,7 @@ public class MiniMap extends Module {
                                     var11,
                                     var12,
                                     var4,
-                                    ClientColors.LIGHT_GREYISH_BLUE.color,
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor,
                                     0.0F,
                                     0.0F,
                                     (float) (this.field23715 * 16),
@@ -209,7 +209,7 @@ public class MiniMap extends Module {
                                     (float) (this.field23711 + this.field23710 / 2 - 4),
                                     (float) (this.field23712 + this.field23709 / 2 - 8),
                                     var5,
-                                    ClientColors.LIGHT_GREYISH_BLUE.color
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor
                             );
                             GL11.glPopMatrix();
                             RenderUtil.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);

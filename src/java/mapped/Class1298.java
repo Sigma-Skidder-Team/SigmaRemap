@@ -186,7 +186,7 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
          this.method6171(0, this.field6873, 255, 255);
          this.method6171(this.field6874, this.field6872, 255, 255);
          RenderSystem.enableBlend();
-         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ZERO, DestFactor.ONE);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ZERO, DestFactor.field12927);
          RenderSystem.disableAlphaTest();
          RenderSystem.shadeModel(7425);
          RenderSystem.disableTexture();
@@ -382,14 +382,14 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
             RenderSystem.disableTexture();
             float var17 = !this.method6169() ? 0.5F : 1.0F;
             RenderSystem.color4f(var17, var17, var17, 1.0F);
-            var11.begin(7, DefaultVertexFormats.POSITION);
+            var11.begin(7, DefaultVertexFormats.field43341);
             var11.pos((double)var15, (double)(var13 + var14 + 2), 0.0).endVertex();
             var11.pos((double)var16, (double)(var13 + var14 + 2), 0.0).endVertex();
             var11.pos((double)var16, (double)(var13 - 2), 0.0).endVertex();
             var11.pos((double)var15, (double)(var13 - 2), 0.0).endVertex();
             var10.draw();
             RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
-            var11.begin(7, DefaultVertexFormats.POSITION);
+            var11.begin(7, DefaultVertexFormats.field43341);
             var11.pos((double)(var15 + 1), (double)(var13 + var14 + 1), 0.0).endVertex();
             var11.pos((double)(var16 - 1), (double)(var13 + var14 + 1), 0.0).endVertex();
             var11.pos((double)(var16 - 1), (double)(var13 - 1), 0.0).endVertex();

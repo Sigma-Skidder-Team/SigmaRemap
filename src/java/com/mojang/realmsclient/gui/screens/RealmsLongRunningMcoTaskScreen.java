@@ -113,9 +113,9 @@ public class RealmsLongRunningMcoTaskScreen extends RealmsScreen implements Clas
    }
 
    private void method1924() {
-      HashSet var3 = Sets.newHashSet(this.buttons);
+      HashSet var3 = Sets.newHashSet(this.field4566);
       this.children.removeIf(var3::contains);
-      this.buttons.clear();
+      this.field4566.clear();
    }
 
    public void method1925(ITextComponent var1) {

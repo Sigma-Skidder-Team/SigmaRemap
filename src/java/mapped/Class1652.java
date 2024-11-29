@@ -32,12 +32,12 @@ public class Class1652<R> implements AutoCloseable {
    private final Class1707 field8980;
    private final Long2ObjectMap<Optional<R>> field8981 = new Long2ObjectOpenHashMap();
    private final LongLinkedOpenHashSet field8982 = new LongLinkedOpenHashSet();
-   private final Function<Runnable, com.mojang.serialization.Codec<R>> field8983;
+   private final Function<Runnable, Codec<R>> field8983;
    private final Function<Runnable, R> field8984;
    private final DataFixer field8985;
    private final DefaultTypeReferences field8986;
 
-   public Class1652(File var1, Function<Runnable, com.mojang.serialization.Codec<R>> var2, Function<Runnable, R> var3, DataFixer var4, DefaultTypeReferences var5, boolean var6) {
+   public Class1652(File var1, Function<Runnable, Codec<R>> var2, Function<Runnable, R> var3, DataFixer var4, DefaultTypeReferences var5, boolean var6) {
       this.field8983 = var2;
       this.field8984 = var3;
       this.field8985 = var4;

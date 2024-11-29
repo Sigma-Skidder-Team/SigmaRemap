@@ -12,10 +12,10 @@ public class PortalGodMode extends Module {
    }
 
    @EventTarget
-   private void onReceivePacket(ReceivePacketEvent event) {
+   private void method16069(ReceivePacketEvent var1) {
       if (this.isEnabled()) {
-         if (event.getPacket() instanceof CConfirmTeleportPacket) {
-            event.setCancelled(true);
+         if (var1.getPacket() instanceof CConfirmTeleportPacket) {
+            var1.setCancelled(true);
          }
       }
    }

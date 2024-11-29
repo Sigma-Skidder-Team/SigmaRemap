@@ -8,7 +8,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import org.newdawn.slick.opengl.LoadableImageData;
+import lol.LoadableImageData;
 import org.lwjgl.BufferUtils;
 
 public class Class6960 implements LoadableImageData {
@@ -24,42 +24,42 @@ public class Class6960 implements LoadableImageData {
    }
 
    @Override
-   public int getDepth() {
+   public int method21455() {
       return this.field30155;
    }
 
    @Override
-   public int getWidth() {
+   public int method21456() {
       return this.field30153;
    }
 
    @Override
-   public int getHeight() {
+   public int method21457() {
       return this.field30154;
    }
 
    @Override
-   public int getTexWidth() {
+   public int method21458() {
       return this.field30151;
    }
 
    @Override
-   public int getTexHeight() {
+   public int method21459() {
       return this.field30152;
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream var1) throws IOException {
-      return this.loadImage(var1, true, null);
+   public ByteBuffer method21467(InputStream var1) throws IOException {
+      return this.method21468(var1, true, null);
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream var1, boolean var2, int[] var3) throws IOException {
-      return this.loadImage(var1, var2, false, var3);
+   public ByteBuffer method21468(InputStream var1, boolean var2, int[] var3) throws IOException {
+      return this.method21469(var1, var2, false, var3);
    }
 
    @Override
-   public ByteBuffer loadImage(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
+   public ByteBuffer method21469(InputStream var1, boolean var2, boolean var3, int[] var4) throws IOException {
       if (var4 != null) {
          var3 = true;
       }
@@ -255,11 +255,11 @@ public class Class6960 implements LoadableImageData {
    }
 
    @Override
-   public ByteBuffer getImageBufferData() {
+   public ByteBuffer method21460() {
       throw new RuntimeException("TGAImageData doesn't store it's image.");
    }
 
    @Override
-   public void configureEdging(boolean var1) {
+   public void method21466(boolean var1) {
    }
 }

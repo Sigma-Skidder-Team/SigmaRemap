@@ -45,10 +45,10 @@ public class Class8533 {
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38334 = (var0, var1) -> {
    };
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38335 = (var0, var1) -> var1.sort(
-         (var1x, var2) -> Doubles.compare(var1x.getDistanceSq(var0), var2.getDistanceSq(var0))
+         (var1x, var2) -> Doubles.compare(var1x.getDistanceNearest3(var0), var2.getDistanceNearest3(var0))
       );
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38336 = (var0, var1) -> var1.sort(
-         (var1x, var2) -> Doubles.compare(var2.getDistanceSq(var0), var1x.getDistanceSq(var0))
+         (var1x, var2) -> Doubles.compare(var2.getDistanceNearest3(var0), var1x.getDistanceNearest3(var0))
       );
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38337 = (var0, var1) -> Collections.shuffle(var1);
    public static final BiFunction<SuggestionsBuilder, Consumer<SuggestionsBuilder>, CompletableFuture<Suggestions>> field38338 = (var0, var1) -> var0.buildFuture();

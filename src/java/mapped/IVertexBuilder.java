@@ -106,7 +106,7 @@ public interface IVertexBuilder extends Class5421 {
       float var22 = var20.method32833(var16, var17, var18);
       float var23 = var20.method32834(var16, var17, var18);
       byte var24 = 8;
-      int var25 = DefaultVertexFormats.BLOCK.method26215();
+      int var25 = DefaultVertexFormats.field43334.method26215();
       int var26 = var13.length / var25;
 
       for (int var27 = 0; var27 < var26; var27++) {

@@ -6,7 +6,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -35,7 +34,7 @@ public class Class3288 extends Class3287 {
 
    @Override
    public void method11826(PlayerEntity var1, IWorld var2, BlockPos var3) {
-      var2.method6742(var1, var3, SoundEvents.field26427, SoundCategory.field14734, 1.0F, 1.0F);
+      var2.method6742(var1, var3, SoundEvents.field26427, Class2266.field14734, 1.0F, 1.0F);
    }
 
    private void method11827(ServerWorld var1, ItemStack var2, BlockPos var3) {

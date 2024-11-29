@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 
 public class ImageQ extends Class4278 {
    private static String[] field20736;
@@ -23,7 +23,7 @@ public class ImageQ extends Class4278 {
          (float)this.heightA,
          this.field20792,
          MultiUtilities.method17690(
-            ClientColors.DEEP_TEAL.color, ClientColors.LIGHT_GREYISH_BLUE.color, !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)
+            ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)
          )
       );
       super.draw(var1);

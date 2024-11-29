@@ -1,6 +1,6 @@
 package mapped;
 
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -12,7 +12,7 @@ public class Class4246 extends ButtonPanel {
    private Animation field20601 = new Animation(125, 125);
 
    public Class4246(Class4277 var1, int var2) {
-      super(var1, "sliderButton", 0, 0, var2, var2, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color));
+      super(var1, "sliderButton", 0, 0, var2, var2, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor));
       this.field20601.changeDirection(Direction.BACKWARDS);
       this.method13215(true);
       this.field20886 = true;
@@ -61,12 +61,12 @@ public class Class4246 extends ButtonPanel {
          (float)(this.getXA() + this.getWidthA() / 2),
          (float)(this.getYA() + this.getWidthA() / 2),
          var6,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (this.getTypedText() == null) {
       }
 
-      TrueTypeFont var7 = ResourceRegistry.JelloLightFont12;
+      ClientResource var7 = ResourceRegistry.JelloLightFont12;
       super.method13226(var1);
    }
 }

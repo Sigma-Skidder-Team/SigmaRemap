@@ -16,20 +16,20 @@ public final class Class9340 {
    private int[] field43373;
    private Class6525[] field43374;
 
-   public static boolean method35345(Class9189 var0) throws AACException {
+   public static boolean method35345(Class9189 var0) throws Class2460 {
       return (long)var0.method34400(32) == 1094994246L;
    }
 
    private Class9340() {
    }
 
-   public static Class9340 method35346(Class9189 var0) throws AACException {
+   public static Class9340 method35346(Class9189 var0) throws Class2460 {
       Class9340 var3 = new Class9340();
       var3.method35347(var0);
       return var3;
    }
 
-   private void method35347(Class9189 var1) throws AACException {
+   private void method35347(Class9189 var1) throws Class2460 {
       this.field43365 = (long)var1.method34397(32);
       this.field43366 = var1.method34399();
       if (this.field43366) {

@@ -1,12 +1,11 @@
 package mapped;
 
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Font;
-import org.newdawn.slick.util.Log;
+import lol.Class7427;
+import lol.Log;
 
 import java.io.UnsupportedEncodingException;
 
-public class Class7428 implements Font {
+public class Class7428 implements Class7427 {
    private Class7386 field31927;
    private char field31928;
    private int field31929;
@@ -25,17 +24,17 @@ public class Class7428 implements Font {
    }
 
    @Override
-   public void drawString(float var1, float var2, String var3) {
-      this.drawString(var1, var2, var3, Color.white);
+   public void method23936(float var1, float var2, String var3) {
+      this.method23937(var1, var2, var3, Color.field16442);
    }
 
    @Override
-   public void drawString(float var1, float var2, String var3, Color var4) {
-      this.drawString(var1, var2, var3, var4, 0, var3.length() - 1);
+   public void method23937(float var1, float var2, String var3, Color var4) {
+      this.method23938(var1, var2, var3, var4, 0, var3.length() - 1);
    }
 
    @Override
-   public void drawString(float var1, float var2, String var3, Color var4, int var5, int var6) {
+   public void method23938(float var1, float var2, String var3, Color var4, int var5, int var6) {
       try {
          byte[] var9 = var3.getBytes("US-ASCII");
 
@@ -50,22 +49,22 @@ public class Class7428 implements Font {
             }
          }
       } catch (UnsupportedEncodingException var14) {
-         Log.error(var14);
+         Log.method25661(var14);
       }
    }
 
    @Override
-   public int getHeight(String var1) {
+   public int method23941(String var1) {
       return this.field31930;
    }
 
    @Override
-   public int getWidth(String var1) {
+   public int getStringWidth(String var1) {
       return this.field31929 * var1.length();
    }
 
    @Override
-   public int getLineHeight() {
+   public int method23943() {
       return this.field31930;
    }
 }

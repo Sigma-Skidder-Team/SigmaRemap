@@ -54,7 +54,7 @@ public class ConfirmScreen extends Screen {
    public void method2536(int var1) {
       this.field4604 = var1;
 
-      for (Widget var5 : this.buttons) {
+      for (Widget var5 : this.field4566) {
          var5.active = false;
       }
    }
@@ -63,7 +63,7 @@ public class ConfirmScreen extends Screen {
    public void tick() {
       super.tick();
       if (--this.field4604 == 0) {
-         for (Widget var4 : this.buttons) {
+         for (Widget var4 : this.field4566) {
             var4.active = true;
          }
       }

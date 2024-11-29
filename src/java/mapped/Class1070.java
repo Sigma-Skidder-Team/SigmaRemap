@@ -108,7 +108,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method4942(SoundCategory var1) {
+   public void method4942(Class2266 var1) {
       this.field5908.method19693(true);
       if (var1 != null) {
          this.world.method6744((PlayerEntity)null, this, SoundEvents.field27101, var1, 0.5F, 1.0F);
@@ -374,7 +374,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       boolean var5 = this.method4381(var1.getHeldItem(var2));
       if (!var5 && this.method4943() && !this.isBeingRidden() && !var1.method2851()) {
          if (!this.world.isRemote) {
-            var1.startRiding(this);
+            var1.method3311(this);
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -425,7 +425,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
             MobEntity var10 = EntityType.ZOMBIFIED_PIGLIN.create(var1.method6970());
             var8 = this.method4987(var1, var2, var10, new Class5096(ZombieEntity.method4661(this.rand), false));
             var10.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38065));
-            this.method4942((SoundCategory)null);
+            this.method4942((Class2266)null);
          }
 
          return super.method4276(var1, var2, var3, (Class5093)var8, var5);

@@ -45,7 +45,7 @@ public abstract class Container {
    public static boolean isWithinUsableDistance(IWorldPosCallable var0, PlayerEntity var1, Block var2) {
       return var0.<Boolean>applyOrElse(
          (var2x, var3) -> var2x.getBlockState(var3).isIn(var2)
-               ? var1.getDistanceSq((double)var3.getX() + 0.5D, (double)var3.getY() + 0.5D, (double)var3.getZ() + 0.5D) <= 64.0D
+               ? var1.getDistanceNearest((double)var3.getX() + 0.5D, (double)var3.getY() + 0.5D, (double)var3.getZ() + 0.5D) <= 64.0D
                : false,
          true
       );

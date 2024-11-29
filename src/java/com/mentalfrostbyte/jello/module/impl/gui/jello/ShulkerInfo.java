@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -17,7 +17,7 @@ import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.TextureImpl;
+import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
@@ -84,14 +84,14 @@ public class ShulkerInfo extends Module {
                                 new Box3D(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1F)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
                         );
                         RenderUtil.renderWireframeBox(
                                 new Box3D(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
                                 3.0F,
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3F)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
                         );
                         GL11.glDisable(3042);
                         if (mc.gameSettings.keyBindUseItem.isKeyDown()) {
@@ -105,10 +105,10 @@ public class ShulkerInfo extends Module {
             }
 
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-            TextureImpl.unbind();
+            TextureImpl.method36180();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+            var10000.bindTexture(TextureManager.field1094);
         }
     }
 
@@ -134,7 +134,7 @@ public class ShulkerInfo extends Module {
     }
 
     public void method16674(double var1, double var3, double var5, Entity var7, float var8) {
-        TrueTypeFont var11 = ResourceRegistry.JelloLightFont25;
+        ClientResource var11 = ResourceRegistry.JelloLightFont25;
         String var12 = var7.getName().getUnformattedComponentText();
         float var13 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX());
         float var14 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY());
@@ -152,7 +152,7 @@ public class ShulkerInfo extends Module {
         GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
         GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
-        GL11.glTranslated(-var11.getWidth(var12) / 2, 0.0, 0.0);
+        GL11.glTranslated(-var11.getStringWidth(var12) / 2, 0.0, 0.0);
         List var16 = this.method16678(((ItemEntity) var7).method4124());
         this.method16676(-87, -70, var16, ((ItemEntity) var7).method4124().method32149().getString(), false);
         GL11.glPopMatrix();
@@ -186,8 +186,8 @@ public class ShulkerInfo extends Module {
                     int var9 = Math.round(16.0F * RenderUtil.method11417());
                     int var10 = 1;
                     int var11 = 12;
-                    int var13 = (int) (mc.mouseHelper.getMouseX() * (double) GuiManager.scaleFactor - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
-                    int var14 = (int) (mc.mouseHelper.getMouseY() * (double) GuiManager.scaleFactor - 33.0);
+                    int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.portalScaleFactor - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
+                    int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.portalScaleFactor - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
                     GL11.glPopMatrix();
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -205,7 +205,7 @@ public class ShulkerInfo extends Module {
 
     private void method16676(int var1, int var2, List<ItemStack> var3, String var4, boolean var5) {
         int var8 = 12;
-        int var9 = ResourceRegistry.JelloLightFont25.getHeight();
+        int var9 = ResourceRegistry.JelloLightFont25.method23952();
         int var10 = Math.round(16.0F * RenderUtil.method11417());
         int var11 = 1;
         int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;
@@ -218,15 +218,15 @@ public class ShulkerInfo extends Module {
                     (float) var2,
                     (float) var13,
                     (float) var12,
-                    MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0F), 0.7F)
+                    MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.7F)
             );
             RenderUtil.drawRoundedRect((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
         } else {
-            RenderUtil.method11467(var1, var2, var13, var12, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.94F));
+            RenderUtil.method11467(var1, var2, var13, var12, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.94F));
         }
 
         RenderUtil.drawString(
-                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F)
+                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         RenderSystem.enableLighting();
 
@@ -236,13 +236,13 @@ public class ShulkerInfo extends Module {
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
             RenderSystem.disableLighting();
             if (var14 == this.field23841 && var5) {
-                RenderUtil.renderBackgroundBox((float) var17, (float) var16, (float) var10, (float) var10, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.15F));
+                RenderUtil.renderBackgroundBox((float) var17, (float) var16, (float) var10, (float) var10, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
             }
 
             RenderUtil.method11479(var15, var17, var16, var10, var10);
             if (var15.count > 1) {
-                int var18 = var10 - ResourceRegistry.JelloLightFont20.getWidth("" + var15.count);
-                int var19 = ResourceRegistry.JelloLightFont20.getWidth("" + var15.count);
+                int var18 = var10 - ResourceRegistry.JelloLightFont20.getStringWidth("" + var15.count);
+                int var19 = ResourceRegistry.JelloLightFont20.getStringWidth("" + var15.count);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.disableLighting();
                 RenderUtil.method11450(
@@ -251,10 +251,10 @@ public class ShulkerInfo extends Module {
                         (float) (40 + var19),
                         40.0F,
                         ResourceList.shadowPNG,
-                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7F),
+                        MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
                         false
                 );
-                RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.count, ClientColors.LIGHT_GREYISH_BLUE.color);
+                RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.count, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                 RenderSystem.enableLighting();
             }
 
@@ -281,7 +281,7 @@ public class ShulkerInfo extends Module {
                         (float) (var25 + var10),
                         (float) var29 + 9.0F * RenderUtil.method11417(),
                         10.0F * RenderUtil.method11417() * (float) var33 + 7.0F * RenderUtil.method11417(),
-                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8F)
+                        MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F)
                 );
                 GL11.glPushMatrix();
                 GL11.glScalef(RenderUtil.method11417(), RenderUtil.method11417(), 0.0F);
@@ -293,11 +293,11 @@ public class ShulkerInfo extends Module {
                 for (int var21 = 0; var21 < var32.size(); var21++) {
                     String var22 = (String) var32.get(var21);
                     mc.fontRenderer
-                            .renderString(
+                            .method38807(
                                     var22,
                                     (float) (var27 + 5),
                                     5.3F + (float) var25 + (float) var10 + (float) (var21 * 10),
-                                    ClientColors.LIGHT_GREYISH_BLUE.color,
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor,
                                     new MatrixStack().getLast().getMatrix(),
                                     false,
                                     false
@@ -328,7 +328,7 @@ public class ShulkerInfo extends Module {
             CompoundNBT var6 = var5.getCompound("BlockEntityTag");
             Peek.method18338(var6);
             if (var6.contains("Items", 9)) {
-                NonNullList<ItemStack> var7 = NonNullList.withSize(27, ItemStack.EMPTY);
+                NonNullList<ItemStack> var7 = NonNullList.method68(27, ItemStack.EMPTY);
                 ItemStackHelper.loadAllItems(var6, var7);
 
                 for (ItemStack var9 : var7) {

@@ -16,7 +16,7 @@ public class Class6526 extends Class6522 implements Class6515 {
       this.field28647 = var1;
    }
 
-   public void method19787(Class9189 var1, Class6522 var2, Class2288 var3, boolean var4, boolean var5) throws AACException {
+   public void method19787(Class9189 var1, Class6522 var2, Class2288 var3, boolean var4, boolean var5) throws Class2460 {
       int var8 = var1.method34397(4);
       if (var8 == 15) {
          var8 += var1.method34397(8) - 1;
@@ -34,14 +34,14 @@ public class Class6526 extends Class6522 implements Class6515 {
       int var12 = var9 - var11;
       if (var12 <= 0) {
          if (var12 < 0) {
-            throw new AACException("FIL element overread: " + var12);
+            throw new Class2460("FIL element overread: " + var12);
          }
       } else {
          var1.method34402(var11);
       }
    }
 
-   private int method19788(Class9189 var1, int var2, Class6522 var3, Class2288 var4, boolean var5, boolean var6) throws AACException {
+   private int method19788(Class9189 var1, int var2, Class6522 var3, Class2288 var4, boolean var5, boolean var6) throws Class2460 {
       int var9 = var1.method34397(4);
       int var10 = var2 - 4;
       switch (var9) {
@@ -52,7 +52,7 @@ public class Class6526 extends Class6522 implements Class6515 {
          case 14:
             if (var5) {
                if (!(var3 instanceof Class6523) && !(var3 instanceof Class6527) && !(var3 instanceof Class6521)) {
-                  throw new AACException("SBR applied on unexpected element: " + var3);
+                  throw new Class2460("SBR applied on unexpected element: " + var3);
                }
 
                var3.method19776(var1, var4, var10, var3 instanceof Class6527, var9 == 14, this.field28647, var6);
@@ -82,7 +82,7 @@ public class Class6526 extends Class6522 implements Class6515 {
       return var10;
    }
 
-   private int method19789(Class9189 var1, int var2) throws AACException {
+   private int method19789(Class9189 var1, int var2) throws Class2460 {
       if (this.field28648 == null) {
          this.field28648 = new Class9794();
       }
@@ -129,7 +129,7 @@ public class Class6526 extends Class6522 implements Class6515 {
       return var5;
    }
 
-   private int method19790(Class9189 var1) throws AACException {
+   private int method19790(Class9189 var1) throws Class2460 {
       int var4 = 0;
 
       do {

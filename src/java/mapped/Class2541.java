@@ -1,6 +1,6 @@
 package mapped;
 
-import org.newdawn.slick.util.Log;
+import lol.Log;
 
 import java.security.PrivilegedAction;
 
@@ -21,7 +21,7 @@ public class Class2541 implements PrivilegedAction {
             Class9365.method35494(this.field16764, new Image(Class9365.method35495(this.field16764)));
          }
       } catch (Class2451 var4) {
-         Log.error(var4);
+         Log.method25661(var4);
          Class9365.method35496(this.field16764, null);
       }
 

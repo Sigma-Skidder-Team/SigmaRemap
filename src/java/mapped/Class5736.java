@@ -122,7 +122,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       if (! Shaders.isShadowPass) {
          if (!Config.field34162) {
             Entity var4 = this.field25155.getRenderViewEntity();
-            double var5 = var1.getDistanceSq(var4.getPosX(), var4.getPosY(), var4.getPosZ());
+            double var5 = var1.getDistanceNearest(var4.getPosX(), var4.getPosY(), var4.getPosZ());
             if (var5 > field25157) {
                return false;
             }

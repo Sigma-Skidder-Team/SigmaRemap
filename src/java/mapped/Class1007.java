@@ -19,7 +19,6 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -780,8 +779,8 @@ public class Class1007 extends MobEntity implements IMob {
    }
 
    @Override
-   public SoundCategory getSoundCategory() {
-      return SoundCategory.field14733;
+   public Class2266 getSoundCategory() {
+      return Class2266.field14733;
    }
 
    @Override

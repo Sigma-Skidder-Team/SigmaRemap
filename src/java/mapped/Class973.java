@@ -8,13 +8,16 @@ import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class973 extends Class939 {
-   private NonNullList<ItemStack> field5437 = NonNullList.<ItemStack>withSize(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5437 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5438;
 
    private Class973(TileEntityType<?> var1) {
@@ -38,7 +41,7 @@ public class Class973 extends Class939 {
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.field5437 = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
+      this.field5437 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var2)) {
          ItemStackHelper.loadAllItems(var2, this.field5437);
       }
@@ -130,7 +133,7 @@ public class Class973 extends Class939 {
       double var6 = (double)this.pos.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.pos.getY() + 0.5 + (double)var5.getY() / 2.0;
       double var10 = (double)this.pos.getZ() + 0.5 + (double)var5.getZ() / 2.0;
-      this.world.playSound((PlayerEntity)null, var6, var8, var10, var2, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+      this.world.playSound((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
    }
 
    @Override

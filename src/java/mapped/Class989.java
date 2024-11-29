@@ -71,7 +71,7 @@ public class Class989 implements IInventory {
    public boolean isUsableByPlayer(PlayerEntity var1) {
       if (this.field5473.world.getTileEntity(this.field5473.pos) == this.field5473) {
          return !(
-               var1.getDistanceSq(
+               var1.getDistanceNearest(
                      (double)this.field5473.pos.getX() + 0.5,
                      (double)this.field5473.pos.getY() + 0.5,
                      (double)this.field5473.pos.getZ() + 0.5

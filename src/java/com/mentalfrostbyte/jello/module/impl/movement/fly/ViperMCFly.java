@@ -175,7 +175,7 @@ public class ViperMCFly extends Module {
             double var6 = this.field23596;
             mc.player.positionVec.y = var6;
             mc.player.lastTickPosY = var6;
-            mc.player.chasingPosY = var6;
+            mc.player.field4915 = var6;
             mc.player.prevPosY = var6;
         }
     }

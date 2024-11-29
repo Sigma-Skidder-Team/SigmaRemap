@@ -465,7 +465,7 @@ public final class NativeImage implements AutoCloseable {
       }
    }
 
-   public void resizeSubRectTo(int var1, int var2, int var3, int var4, NativeImage var5) {
+   public void method7907(int var1, int var2, int var3, int var4, NativeImage var5) {
       this.checkImage();
       if (var5.method7888() == this.pixelFormat) {
          int var8 = this.pixelFormat.getPixelSize();

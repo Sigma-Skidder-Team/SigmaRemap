@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.TextureImpl;
+import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.tileentity.TileEntity;
 import org.lwjgl.opengl.GL11;
@@ -66,12 +66,12 @@ public class OutlineChestESP extends Module {
             }
 
             Box3D var19 = new Box3D(
-               var8.getBlockState().getShape(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14, var16)
+               var8.getBlockState().method23412(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14, var16)
             );
             if (var1) {
                RenderUtil.renderWireframeBox(var19, 3.0F, var18);
             } else {
-               RenderUtil.render3DColoredBox(var19, ClientColors.LIGHT_GREYISH_BLUE.color);
+               RenderUtil.render3DColoredBox(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glDisable(3042);
@@ -100,10 +100,10 @@ public class OutlineChestESP extends Module {
       GL11.glEnable(3553);
       GL11.glEnable(2903);
       RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-      TextureImpl.unbind();
+      TextureImpl.method36180();
       TextureManager var10000 = mc.getTextureManager();
       mc.getTextureManager();
-      var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+      var10000.bindTexture(TextureManager.field1094);
       mc.gameRenderer.lightmapTexture.method7317();
    }
 }

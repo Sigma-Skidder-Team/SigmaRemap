@@ -83,7 +83,7 @@ public class Scoreboard {
       }
    }
 
-   public Collection<Class9411> getSortedScores(Class8375 var1) {
+   public Collection<Class9411> method20981(Class8375 var1) {
       ArrayList var4 = Lists.newArrayList();
 
       for (Map var6 : this.field29842.values()) {
@@ -204,7 +204,7 @@ public class Scoreboard {
 
    public boolean method20993(String var1, ScorePlayerTeam var2) {
       if (var1.length() <= 40) {
-         if (this.getPlayersTeam(var1) != null) {
+         if (this.method20998(var1) != null) {
             this.method20994(var1);
          }
 
@@ -216,7 +216,7 @@ public class Scoreboard {
    }
 
    public boolean method20994(String var1) {
-      ScorePlayerTeam var4 = this.getPlayersTeam(var1);
+      ScorePlayerTeam var4 = this.method20998(var1);
       if (var4 == null) {
          return false;
       } else {
@@ -226,7 +226,7 @@ public class Scoreboard {
    }
 
    public void method20995(String var1, ScorePlayerTeam var2) {
-      if (this.getPlayersTeam(var1) == var2) {
+      if (this.method20998(var1) == var2) {
          this.field29845.remove(var1);
          var2.method28575().remove(var1);
       } else {
@@ -243,14 +243,14 @@ public class Scoreboard {
    }
 
    @Nullable
-   public ScorePlayerTeam getPlayersTeam(String var1) {
+   public ScorePlayerTeam method20998(String var1) {
       return this.field29845.get(var1);
    }
 
    public void method20999(Class8375 var1) {
    }
 
-   public void onObjectiveChanged(Class8375 var1) {
+   public void method21000(Class8375 var1) {
    }
 
    public void method21001(Class8375 var1) {

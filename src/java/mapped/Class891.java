@@ -4,8 +4,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 import net.minecraft.world.World;
 
 public class Class891 extends Class890 {
@@ -37,7 +35,7 @@ public class Class891 extends Class890 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         this.world.playEvent(2002, this.getPosition(), PotionUtils.method38183(Potions.WATER));
+         this.world.playEvent(2002, this.getPosition(), Class9741.method38183(Class8137.field34977));
          int var4 = 3 + this.world.rand.nextInt(5) + this.world.rand.nextInt(5);
 
          while (var4 > 0) {

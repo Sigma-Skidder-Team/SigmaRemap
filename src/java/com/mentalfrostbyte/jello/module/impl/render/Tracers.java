@@ -18,7 +18,7 @@ import org.lwjgl.opengl.GL11;
 public class Tracers extends Module {
     public Tracers() {
         super(ModuleCategory.RENDER, "Tracers", "Shows players");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget
@@ -30,7 +30,7 @@ public class Tracers extends Module {
             GL11.glEnable(2848);
             GL11.glDisable(3553);
             GL11.glDisable(2929);
-            GL11.glLineWidth(2.0F * GuiManager.scaleFactor);
+            GL11.glLineWidth(2.0F * GuiManager.portalScaleFactor);
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
 

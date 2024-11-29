@@ -77,7 +77,7 @@ public class BlockColors {
       Class8040 var6 = this.field36032.getByValue(Registry.BLOCK.getId(var1.getBlock()));
       if (var6 == null) {
          MaterialColor var7 = var1.method23394(var2, var3);
-         return var7 == null ? -1 : var7.colorValue;
+         return var7 == null ? -1 : var7.field31006;
       } else {
          return var6.method27608(var1, (IBlockDisplayReader)null, (BlockPos)null, 0);
       }

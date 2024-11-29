@@ -1,7 +1,5 @@
 package mapped;
 
-import org.newdawn.slick.Color;
-
 public class Class9745 {
    private static String[] field45493;
    public float field45494;

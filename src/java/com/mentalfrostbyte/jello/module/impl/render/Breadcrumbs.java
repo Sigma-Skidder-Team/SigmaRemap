@@ -23,7 +23,7 @@ public class Breadcrumbs extends Module {
     public Breadcrumbs() {
         super(ModuleCategory.RENDER, "Breadcrumbs", "Shows your taken path");
         this.registerSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
-        this.registerSetting(new ColorSetting("Color", "The crumbs color", ClientColors.LIGHT_GREYISH_BLUE.color));
+        this.registerSetting(new ColorSetting("Color", "The crumbs color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget

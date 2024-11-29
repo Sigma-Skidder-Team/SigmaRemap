@@ -41,7 +41,7 @@ public class CategoryDrawPart extends CategoryDrawPartBackground {
       this.field32401 = 0;
 
       for (String category : this.categoryList) {
-         this.field32401 = Math.max(this.field32401, this.fontRenderer.getWidth(category));
+         this.field32401 = Math.max(this.field32401, this.fontRenderer.getStringWidth(category));
       }
    }
 
@@ -52,7 +52,7 @@ public class CategoryDrawPart extends CategoryDrawPartBackground {
          (float)this.getStartY(),
          (float)this.getWidth(),
          (float)this.method24725(),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks * 0.6F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, partialTicks * 0.6F)
       );
       this.field32403 = this.field32403 + this.method24733();
       int var4 = this.getStartX() + 4;
@@ -65,10 +65,10 @@ public class CategoryDrawPart extends CategoryDrawPartBackground {
       float var10 = 6;
 
       for (String categoryName : this.categoryList) {
-         int color = ClientColors.LIGHT_GREYISH_BLUE.color;
+         int color = ClientColors.LIGHT_GREYISH_BLUE.getColor;
          if (categoryName.startsWith("§7")) {
             categoryName = categoryName.substring("§7".length());
-            color = ClientColors.MID_GREY.color;
+            color = ClientColors.MID_GREY.getColor;
          }
 
          RenderUtil.drawString(

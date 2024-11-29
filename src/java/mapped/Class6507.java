@@ -25,7 +25,7 @@ public class Class6507 implements Class6504<Class4852> {
       int var5 = var2.readVarInt();
       int var6 = var2.readVarInt();
       String var7 = var2.readString(32767);
-      NonNullList var8 = NonNullList.<Class120>withSize(var5 * var6, Class120.field427);
+      NonNullList var8 = NonNullList.<Class120>method68(var5 * var6, Class120.field427);
 
       for (int var9 = 0; var9 < var8.size(); var9++) {
          var8.set(var9, Class120.method343(var2));

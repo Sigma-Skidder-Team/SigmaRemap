@@ -148,7 +148,7 @@ public class VanillaMainMenuScreen extends Screen {
       );
       this.mc.setConnectedToRealms(false);
       if (this.mc.gameSettings.field44620 && !this.field4712) {
-         RealmsBridgeScreen var6 = new RealmsBridgeScreen();
+         Class810 var6 = new Class810();
          this.field4713 = var6.method2210(this);
          this.field4712 = true;
       }
@@ -189,8 +189,8 @@ public class VanillaMainMenuScreen extends Screen {
             new Button(this.width / 2 - 100, var1 + var2 * 2, 200, 20, new TranslationTextComponent("menu.online"), var1x -> this.method2599(), var6)
          )
          .active = var5;
-      if (Reflector.field42976.exists() && this.buttons.size() > 0) {
-         Widget var7 = this.buttons.get(this.buttons.size() - 1);
+      if (Reflector.field42976.exists() && this.field4566.size() > 0) {
+         Widget var7 = this.field4566.get(this.field4566.size() - 1);
          var7.x = this.width / 2 + 2;
          var7.method5741(98);
       }
@@ -251,7 +251,7 @@ public class VanillaMainMenuScreen extends Screen {
    }
 
    private void method2599() {
-      RealmsBridgeScreen var3 = new RealmsBridgeScreen();
+      Class810 var3 = new Class810();
       var3.method2209(this);
    }
 
@@ -270,7 +270,7 @@ public class VanillaMainMenuScreen extends Screen {
       byte var10 = 30;
       this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.ceil(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.width, this.height, 0.0F, 0.0F, 16, 128, 16, 128);
       float var11 = !this.field4717 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);
@@ -348,7 +348,7 @@ public class VanillaMainMenuScreen extends Screen {
             fill(var1, this.field4715, this.height - 1, this.field4715 + this.field4714, this.height, 16777215 | var12);
          }
 
-         for (Widget var15 : this.buttons) {
+         for (Widget var15 : this.field4566) {
             var15.method5742(var11);
          }
 

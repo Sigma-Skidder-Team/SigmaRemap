@@ -294,7 +294,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       return var9 <= 0 ? 0 : 1;
    }
 
-   public int method19801(Class9189 var1, int var2) throws AACException {
+   public int method19801(Class9189 var1, int var2) throws Class2460 {
       int var5 = 0;
       int var6 = 0;
       long var7 = (long)var1.method34394();
@@ -335,7 +335,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
 
       int var17 = (int)((long)var1.method34394() - var7);
       if (8 * var2 < var17) {
-         throw new AACException("frame overread");
+         throw new Class2460("frame overread");
       } else {
          for (var6 = 8 * var2 - var17; var6 > 7; var6 -= 8) {
             var1.method34397(8);
@@ -346,7 +346,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       }
    }
 
-   private void method19802(Class9189 var1) throws AACException {
+   private void method19802(Class9189 var1) throws Class2460 {
       this.field28723++;
       this.field28739 = var1.method34399();
       this.field28740 = var1.method34397(4);
@@ -378,7 +378,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       }
    }
 
-   private int method19803(Class9189 var1) throws AACException {
+   private int method19803(Class9189 var1) throws Class2460 {
       this.field28657 = this.field28750 == 0 ? 1 : 2;
       if (!this.field28724) {
          int var4;
@@ -395,7 +395,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       return 0;
    }
 
-   private int method19804(Class9189 var1) throws AACException {
+   private int method19804(Class9189 var1) throws Class2460 {
       if (var1.method34399()) {
          var1.method34397(4);
       }
@@ -455,7 +455,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       }
    }
 
-   private int method19805(Class9189 var1) throws AACException {
+   private int method19805(Class9189 var1) throws Class2460 {
       if (var1.method34399()) {
          var1.method34397(4);
          var1.method34397(4);
@@ -602,7 +602,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       return var1 < 10 && var1 >= 0 ? var4[var1] : 0;
    }
 
-   private int method19807(Class9189 var1, int var2) throws AACException {
+   private int method19807(Class9189 var1, int var2) throws Class2460 {
       int var5 = 0;
       int var6 = this.field28679[var2];
       int var7 = this.field28681[var2];
@@ -719,7 +719,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       }
    }
 
-   private void method19808(Class9189 var1, int var2) throws AACException {
+   private void method19808(Class9189 var1, int var2) throws Class2460 {
       for (int var5 = 0; var5 < this.field28679[var2]; var5++) {
          this.field28766[var2][var5] = var1.method34398();
       }
@@ -729,13 +729,13 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       }
    }
 
-   private void method19809(Class9189 var1, int var2) throws AACException {
+   private void method19809(Class9189 var1, int var2) throws Class2460 {
       for (int var5 = 0; var5 < this.field28667; var5++) {
          this.field28699[var2][var5] = var1.method34397(2);
       }
    }
 
-   private int method19810(Class9189 var1, int var2, int var3) throws AACException {
+   private int method19810(Class9189 var1, int var2, int var3) throws Class2460 {
       switch (var2) {
          case 2:
             if (this.field28732 == null) {
@@ -762,13 +762,13 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       }
    }
 
-   private void method19811(Class9189 var1, int var2) throws AACException {
+   private void method19811(Class9189 var1, int var2) throws Class2460 {
       for (int var5 = 0; var5 < this.field28665; var5++) {
          this.field28706[var2][var5] = var1.method34398();
       }
    }
 
-   private void method19812(Class9189 var1, int var2) throws AACException {
+   private void method19812(Class9189 var1, int var2) throws Class2460 {
       byte var5 = 0;
       if (this.field28679[var2] == 1 && this.field28757[var2] == 0) {
          this.field28660[var2] = false;
@@ -825,7 +825,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       Class6530.method19822(this, var2);
    }
 
-   private void method19813(Class9189 var1, int var2) throws AACException {
+   private void method19813(Class9189 var1, int var2) throws Class2460 {
       byte var5 = 0;
       int[][] var6;
       int[][] var7;
@@ -860,7 +860,7 @@ public class Class6528 implements Class6529, Class6515, Class6535 {
       Class6530.method19823(this, var2);
    }
 
-   private int method19814(Class9189 var1, int[][] var2) throws AACException {
+   private int method19814(Class9189 var1, int[][] var2) throws Class2460 {
       int var5 = 0;
 
       while (var5 >= 0) {

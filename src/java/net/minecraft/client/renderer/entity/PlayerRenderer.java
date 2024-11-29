@@ -123,7 +123,7 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
    }
 
    public ResourceLocation method17843(AbstractClientPlayerEntity var1) {
-      return var1.getLocationSkin();
+      return var1.method5371();
    }
 
    public void method17857(AbstractClientPlayerEntity var1, MatrixStack var2, float var3) {
@@ -166,9 +166,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var9.swimAnimation = 0.0F;
       var9.setRotationAngles(var4, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       var5.rotateAngleX = 0.0F;
-      var5.render(var1, var2.method25597(RenderType.getEntitySolid(var4.getLocationSkin())), var3, OverlayTexture.NO_OVERLAY);
+      var5.render(var1, var2.method25597(RenderType.getEntitySolid(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
       var6.rotateAngleX = 0.0F;
-      var6.render(var1, var2.method25597(RenderType.getEntityTranslucent(var4.getLocationSkin())), var3, OverlayTexture.NO_OVERLAY);
+      var6.render(var1, var2.method25597(RenderType.getEntityTranslucent(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
    }
 
    public void method17842(AbstractClientPlayerEntity var1, MatrixStack var2, float var3, float var4, float var5) {

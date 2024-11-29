@@ -16,7 +16,7 @@ public final class Class4521 extends RenderType {
    private final boolean field21825;
    private Map<ResourceLocation, Class4521> field21826 = new HashMap<ResourceLocation, Class4521>();
 
-   private Class4521(String var1, VertexFormat var2, int var3, int var4, boolean var5, boolean var6, Class9484 var7) {
+   private Class4521(String var1, Class7831 var2, int var3, int var4, boolean var5, boolean var6, Class9484 var7) {
       super(
          var1, var2, var3, var4, var5, var6, () -> RenderStateManager.method32252(Class9484.method36616(var7)), () -> RenderStateManager.method32253(Class9484.method36616(var7))
       );
@@ -28,7 +28,7 @@ public final class Class4521 extends RenderType {
       this.field21823 = Class8589.method30729(super.hashCode(), var7);
    }
 
-   private static Class4521 method14389(String var0, VertexFormat var1, int var2, int var3, boolean var4, boolean var5, Class9484 var6) {
+   private static Class4521 method14389(String var0, Class7831 var1, int var2, int var3, boolean var4, boolean var5, Class9484 var6) {
       return (Class4521)field21821.addOrGet(new Class4521(var0, var1, var2, var3, var4, var5, var6));
    }
 
@@ -99,7 +99,7 @@ public final class Class4521 extends RenderType {
    }
 
    // $VF: synthetic method
-   public static Class4521 method14394(String var0, VertexFormat var1, int var2, int var3, boolean var4, boolean var5, Class9484 var6) {
+   public static Class4521 method14394(String var0, Class7831 var1, int var2, int var3, boolean var4, boolean var5, Class9484 var6) {
       return method14389(var0, var1, var2, var3, var4, var5, var6);
    }
 

@@ -44,7 +44,7 @@ public class VideoSettingsScreen extends Class838 {
    private static final ITextComponent field4669 = new TranslationTextComponent("options.graphics.warning.cancel");
    private static final ITextComponent field4670 = new StringTextComponent("\n");
    private Class9046 field4671 = new Class9046(this, new Class7548());
-   private List<Widget> field4672 = this.buttons;
+   private List<Widget> field4672 = this.field4566;
    private Widget field4673;
    private GameSettings field4674 = Minecraft.getInstance().gameSettings;
 

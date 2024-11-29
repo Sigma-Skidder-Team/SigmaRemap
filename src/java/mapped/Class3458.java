@@ -15,7 +15,6 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -72,7 +71,7 @@ public class Class3458 extends Block {
       if (!var0.isRemote) {
          Class1004 var5 = new Class1004(var0, (double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2);
          var0.addEntity(var5);
-         var0.playSound((PlayerEntity)null, var5.getPosX(), var5.getPosY(), var5.getPosZ(), SoundEvents.field27146, SoundCategory.field14732, 1.0F, 1.0F);
+         var0.playSound((PlayerEntity)null, var5.getPosX(), var5.getPosY(), var5.getPosZ(), SoundEvents.field27146, Class2266.field14732, 1.0F, 1.0F);
       }
    }
 

@@ -15,7 +15,7 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 
 public class CubecraftGamePlay extends Module {
-    private GamePlay gameplayModule;
+    private GamePlay field23580;
 
     public CubecraftGamePlay() {
         super(ModuleCategory.MISC, "Cubecraft", "Gameplay for Cubecraft");
@@ -23,51 +23,49 @@ public class CubecraftGamePlay extends Module {
 
     @Override
     public void initialize() {
-        this.gameplayModule = (GamePlay) this.access();
+        this.field23580 = (GamePlay) this.access();
     }
 
     @EventTarget
-    private void onReceivePacket(ReceivePacketEvent event) {
+    private void method16296(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            IPacket packet = event.getPacket();
-            if (packet instanceof SChatPacket) {
-                SChatPacket chatPacket = (SChatPacket) packet;
-                String chatMessage = chatPacket.getChatComponent().getString();
-                String chatContent = chatPacket.getChatComponent().getString();
-                String playerName = mc.player.getName().getString().toLowerCase();
-
-                if (this.gameplayModule.getBooleanValueFromSettingName("AutoL") &&
-                        (chatMessage.toLowerCase().contains("was slain by " + playerName) ||
-                                chatMessage.toLowerCase().contains("burned to death while fighting " + playerName) ||
-                                chatMessage.toLowerCase().contains("was shot by " + playerName) ||
-                                chatMessage.toLowerCase().contains("burnt to a crisp while fighting " + playerName) ||
-                                chatMessage.toLowerCase().contains("couldn't fly while escaping " + playerName) ||
-                                chatMessage.toLowerCase().contains("thought they could survive in the void while escaping " + playerName) ||
-                                chatMessage.toLowerCase().contains("fell to their death while escaping " + playerName) ||
-                                chatMessage.toLowerCase().contains("died in the void while escaping " + playerName))) {
-                    this.gameplayModule.method16761(chatMessage);
+            IPacket var4 = var1.getPacket();
+            if (var4 instanceof SChatPacket) {
+                SChatPacket var5 = (SChatPacket) var4;
+                String var6 = var5.getChatComponent().getString();
+                String var7 = var5.getChatComponent().getString();
+                String var8 = mc.player.getName().getString().toLowerCase();
+                if (this.field23580.getBooleanValueFromSettingName("AutoL")
+                        && (
+                        var6.toLowerCase().contains("was slain by " + var8)
+                                || var6.toLowerCase().contains("burned to death while fighting " + var8)
+                                || var6.toLowerCase().contains("was shot by " + var8)
+                                || var6.toLowerCase().contains("burnt to a crisp while fighting " + var8)
+                                || var6.toLowerCase().contains("couldn't fly while escaping " + var8)
+                                || var6.toLowerCase().contains("thought they could survive in the void while escaping " + var8)
+                                || var6.toLowerCase().contains("fell to their death while escaping " + var8)
+                                || var6.toLowerCase().contains("died in the void while escaping " + var8)
+                )) {
+                    this.field23580.method16761(var6);
                 }
 
-                if (chatContent.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave") &&
-                        this.gameplayModule.getBooleanValueFromSettingName("Auto Join")) {
-                    for (ITextComponent sibling : chatPacket.getChatComponent().getSiblings()) {
-                        ClickEvent clickEvent = sibling.getStyle().getClickEvent();
-                        if (clickEvent != null && clickEvent.getAction() == ClickEvent$Action.RUN_COMMAND && clickEvent.getValue().contains("playagain")) {
-                            this.gameplayModule.method16759(new Class7200(clickEvent.getValue(),
-                                    (long) this.gameplayModule.getNumberValueBySettingName("Auto Join delay") * 1000L));
+                if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave") && this.field23580.getBooleanValueFromSettingName("Auto Join")) {
+                    for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
+                        ClickEvent var11 = var10.getStyle().getClickEvent();
+                        if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND && var11.getValue().contains("playagain")) {
+                            this.field23580.method16759(new Class7200(var11.getValue(), (long) this.field23580.getNumberValueBySettingName("Auto Join delay") * 1000L));
                             Client.getInstance()
                                     .getNotificationManager()
-                                    .send(new Notification("Auto Join", "Joining a new game in " +
-                                            this.gameplayModule.getNumberValueBySettingName("Auto Join delay") + " seconds.",
-                                            (int) (this.gameplayModule.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000));
+                                    .send(
+                                            new Notification("Auto Join", "Joining a new game in 3 seconds.", (int) (this.field23580.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000)
+                                    );
                             break;
                         }
                     }
                 }
 
-                if (this.gameplayModule.getBooleanValueFromSettingName("AutoGG") &&
-                        chatContent.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
-                    this.gameplayModule.method16760();
+                if (this.field23580.getBooleanValueFromSettingName("AutoGG") && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
+                    this.field23580.method16760();
                 }
             }
         }

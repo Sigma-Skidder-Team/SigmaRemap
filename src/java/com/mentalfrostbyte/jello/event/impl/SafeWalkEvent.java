@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.CancellableEvent;
+import com.mentalfrostbyte.jello.event.Class4416;
 import mapped.Situation;
 
-public class SafeWalkEvent extends CancellableEvent {
+public class SafeWalkEvent extends Class4416 {
     public boolean onEdge;
     public Situation situation;
 

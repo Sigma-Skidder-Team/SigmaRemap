@@ -84,7 +84,7 @@ public class Class1271 extends AbstractGui {
       RenderSystem.depthFunc(515);
       ResourceLocation var4 = this.field6753.method34937();
       if (var4 == null) {
-         this.field6748.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+         this.field6748.getTextureManager().bindTexture(TextureManager.field1094);
       } else {
          this.field6748.getTextureManager().bindTexture(var4);
       }

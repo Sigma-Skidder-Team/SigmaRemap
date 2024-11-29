@@ -39,7 +39,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    public ItemRenderer field4563;
    public int width;
    public int height;
-   public final List<Widget> buttons = Lists.newArrayList();
+   public final List<Widget> field4566 = Lists.newArrayList();
    public boolean passEvents;
    public FontRenderer font;
    private URI field4569;
@@ -48,18 +48,18 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
       this.title = var1;
    }
 
-   public ITextComponent getTitle() {
+   public ITextComponent getTextComponent() {
       return this.title;
    }
 
    public String getNarrationMessage() {
-      return this.getTitle().getString();
+      return this.getTextComponent().getString();
    }
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
-      for (int var7 = 0; var7 < this.buttons.size(); var7++) {
-         this.buttons.get(var7).render(var1, var2, var3, var4);
+      for (int var7 = 0; var7 < this.field4566.size(); var7++) {
+         this.field4566.get(var7).render(var1, var2, var3, var4);
       }
    }
 
@@ -89,7 +89,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    }
 
    public <T extends Widget> T addButton(T var1) {
-      this.buttons.add(var1);
+      this.field4566.add(var1);
       return this.<T>addListener((T)var1);
    }
 
@@ -281,7 +281,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
       this.font = var1.fontRenderer;
       this.width = var2;
       this.height = var3;
-      this.buttons.clear();
+      this.field4566.clear();
       this.children.clear();
       this.setListener((IGuiEventListener2)null);
       this.init();

@@ -1,7 +1,5 @@
 package mapped;
 
-import net.sourceforge.jaad.mp4.MP4InputStream;
-
 import java.io.IOException;
 
 public abstract class Class5056 extends Class5041 {
@@ -12,7 +10,7 @@ public abstract class Class5056 extends Class5041 {
       super(var1);
    }
 
-   public void method15468(MP4InputStream var1) throws IOException {
+   public void method15468(DataStreamReader var1) throws IOException {
       this.field23059 = var1.readBits(4);
       this.field23060 = var1.readInt();
    }

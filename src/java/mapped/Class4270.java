@@ -94,7 +94,7 @@ public class Class4270 extends Class4247 {
       int var8 = this.widthA + var4 * 2;
       int var9 = this.heightA + 5 + var4 * 2;
       RenderUtil.drawRoundedRect((float)(var6 + var5 / 2), (float)(var7 + var5 / 2), (float)(var8 - var5), (float)(var9 - var5), 20.0F, var1 * 0.5F);
-      RenderUtil.method11474((float)var6, (float)var7, (float)var8, (float)var9, 14.0F, ClientColors.LIGHT_GREYISH_BLUE.color);
+      RenderUtil.method11474((float)var6, (float)var7, (float)var8, (float)var9, 14.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
       super.draw(var1);
    }
 }

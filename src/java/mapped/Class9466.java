@@ -6,8 +6,8 @@ import java.util.Properties;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.newdawn.slick.util.Log;
-import org.newdawn.slick.util.ResourceLoader;
+import lol.Log;
+import lol.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -306,7 +306,7 @@ public class Class9466 {
             this.field43988.add(var29);
          }
       } catch (Exception var15) {
-         Log.error(var15);
+         Log.method25661(var15);
          throw new Class2451("Failed to parse tilemap", var15);
       }
    }

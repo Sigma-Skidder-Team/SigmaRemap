@@ -83,7 +83,7 @@ public class MathHelper {
       return !(var0 > (float)var3) ? var3 : var3 + 1;
    }
 
-   public static int ceil(double var0) {
+   public static int method37774(double var0) {
       int var4 = (int)var0;
       return !(var0 > (double)var4) ? var4 : var4 + 1;
    }

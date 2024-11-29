@@ -23,12 +23,12 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 public class AutoSoup extends Module {
-    private int refillDelay;
-    private int refillCounter;
-    private int soupSlot;
-    private int currentItem;
-    private boolean isRefilling;
-    private boolean isInventoryOpen;
+    private int field23428;
+    private int field23429;
+    private int field23430;
+    private int field23431;
+    private boolean field23432;
+    private boolean field23433;
 
     public AutoSoup() {
         super(ModuleCategory.ITEM, "AutoSoup", "Automatically eats soup when low life");
@@ -42,189 +42,240 @@ public class AutoSoup extends Module {
 
     @Override
     public void onEnable() {
-        this.refillDelay = (int) this.getNumberValueBySettingName("Refill delay");
-        this.refillCounter = (int) this.getNumberValueBySettingName("Refill delay");
-        this.isRefilling = false;
-        this.isInventoryOpen = false;
-        this.currentItem = -1;
+        this.field23428 = (int) this.getNumberValueBySettingName("Refill delay");
+        this.field23431 = (int) this.getNumberValueBySettingName("Refill delay");
+        this.field23432 = false;
+        this.field23433 = false;
+        this.field23430 = -1;
     }
 
     @EventTarget
-    private void onUpdate(EventUpdate event) {
-        if (this.isEnabled() && event.isPre()) {
-            this.refillDelay++;
-            this.refillCounter++;
-            String refillMode = this.getStringSettingValueByName("Refill mode");
-            if (!this.isRefilling) {
-                if (this.getItemCount(Items.field37837) == 0) { // field37837 is Mushroom Soup -Away
-                    if (refillMode.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
+    private void method16057(EventUpdate var1) {
+        if (this.isEnabled() && var1.isPre()) {
+            this.field23428++;
+            this.field23431++;
+            String var4 = this.getStringSettingValueByName("Refill mode");
+            if (!this.field23432) {
+                if (this.method16063(Items.field37837) == 0) {
+                    if (var4.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
                         return;
                     }
-                    if (this.getItemCount(Items.field37837) > 0 && this.refillDelay > 3) { // field37837 is Mushroom Soup -Away
-                        this.refillItems();
+
+                    if (this.method16064(Items.field37837) > 0 && this.field23428 > 3) {
+                        this.method16059();
                     }
+
                     return;
                 }
-            } else if (refillMode.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
-                this.isRefilling = false;
-            } else if (this.getItemCount(Items.AIR) != 0) {
-                this.useSoup();
+            } else if (var4.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
+                this.field23432 = false;
+            } else if (this.method16063(Items.AIR) != 0) {
+                this.method16060();
             } else {
-                this.isRefilling = false;
-                this.isInventoryOpen = false;
+                this.field23432 = false;
+                this.field23433 = false;
             }
 
-            this.eatSoup();
+            this.method16061();
         }
     }
 
     @EventTarget
-    private void onSendPacket(SendPacketEvent event) {
+    private void method16058(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (this.isInventoryOpen && event.getPacket() instanceof CClientStatusPacket) {
-                CClientStatusPacket packet = (CClientStatusPacket) event.getPacket();
-                if (packet.getStatus() == CClientStatusPacket.State.OPEN_INVENTORY) {
-                    event.setCancelled(true);
+            if (this.field23433 && var1.getPacket() instanceof CClientStatusPacket) {
+                CClientStatusPacket var4 = (CClientStatusPacket) var1.getPacket();
+                if (var4.getStatus() == CClientStatusPacket.State.OPEN_INVENTORY) {
+                    var1.setCancelled(true);
                 }
             }
         }
     }
 
-    private void refillItems() {
-        this.isRefilling = true;
-        if (this.getStringSettingValueByName("Refill mode").equals("FakeInv") && !(mc.currentScreen instanceof InventoryScreen)) {
+    private void method16059() {
+        this.field23432 = true;
+        if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
+                && !(mc.currentScreen instanceof InventoryScreen)
+                /*&& JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()*/) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
-            this.isInventoryOpen = true;
+            this.field23433 = true;
         }
 
         if (this.getStringSettingValueByName("Bowls").equals("Stack")) {
-            int count = this.getItemCount(Items.field37836); // field37836 is "Bowl" -Away
-            if (count > 0) {
-                int slot = this.findEmptySlot(count);
-                if (slot > 0) {
-                    InvManagerUtils.fixedClick(mc.player.container.windowId, slot, 0, ClickType.PICKUP, mc.player, true);
-                    InvManagerUtils.fixedClick(mc.player.container.windowId, slot, 0, ClickType.QUICK_MOVE_ALL, mc.player, true);
-                    InvManagerUtils.fixedClick(mc.player.container.windowId, slot, 0, ClickType.PICKUP, mc.player, true);
-                    this.refillCounter = -5;
+            int var3 = this.method16063(Items.field37836);
+            if (var3 > 0) {
+                int var4 = this.method16062(var3);
+                if (var4 > 0) {
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, var4, 0, ClickType.PICKUP, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, var4, 0, ClickType.QUICK_MOVE_ALL, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, var4, 0, ClickType.PICKUP, mc.player, true);
+                    this.field23431 = -5;
                 }
             }
         }
 
-        this.refillDelay = 9;
+        this.field23429 = 9;
     }
 
-    private void useSoup() {
-        int refillDelaySetting = (int) this.getNumberValueBySettingName("Refill delay");
-        if (this.refillCounter >= refillDelaySetting && Client.getInstance().getPlayerTracker().getMode() >= refillDelaySetting) {
-            while (this.refillDelay < 36) {
-                boolean wasRefilled = false;
-                if (InvManagerUtils.method25866(this.refillDelay).getItem() == Items.field37837 // field37837 is Mushroom Soup -Away
+    private void method16060() {
+        int var3 = (int) this.getNumberValueBySettingName("Refill delay");
+        if (this.field23431 >= var3 && Client.getInstance().getPlayerTracker().getMode() >= var3) {
+            while (this.field23429 < 36) {
+                boolean var4 = false;
+                if (InvManagerUtils.method25866(this.field23429).getItem() == Items.field37837
                         && Math.random() * 100.0 > (double) this.getNumberValueBySettingName("Refill accuracy")) {
-                    InvManagerUtils.fixedClick(mc.player.container.windowId, this.refillDelay, 0, ClickType.QUICK_MOVE, mc.player, true);
-                    this.refillCounter = 0;
-                    wasRefilled = true;
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, this.field23429, 0, ClickType.QUICK_MOVE, mc.player, true);
+                    this.field23431 = 0;
+                    var4 = true;
                 }
 
-                this.refillDelay++;
-                if (this.getItemCount(Items.AIR) != 0) {
-                    if (!wasRefilled || refillDelaySetting <= 0) {
+                this.field23429++;
+                if (this.method16063(Items.AIR) != 0) {
+                    if (!var4 || var3 <= 0) {
                         continue;
                     }
                     break;
                 }
 
-                this.isRefilling = false;
-                this.isInventoryOpen = false;
+                this.field23432 = false;
+                this.field23433 = false;
                 break;
             }
 
-            if (this.refillDelay > 35) {
-                this.isRefilling = false;
+            if (this.field23429 > 35) {
+                this.field23432 = false;
             }
         }
     }
 
-    private void eatSoup() {
-        int soupSlotIndex = -1;
+    private void method16061() {
+        int var3 = -1;
 
-        for (int i = 36; i < 45; i++) {
-            if (mc.player.container.getSlot(i).getStack().getItem() == Items.field37837 // field37837 is Mushroom Soup -Away
-                    && Client.getInstance().getSlotChangeTracker().method33238(i) > 100L) {
-                soupSlotIndex = i - 36;
+        for (int var4 = 36; var4 < 45; var4++) {
+            if (mc.player.container.getSlot(var4).getStack().getItem() == Items.field37837
+                    && Client.getInstance().getSlotChangeTracker().method33238(var4) > 100L) {
+                var3 = var4 - 36;
                 break;
             }
         }
 
-        boolean dropBowls = this.getStringSettingValueByName("Bowls").equals("Drop");
+        boolean var5 = this.getStringSettingValueByName("Bowls").equals("Drop");
         if (!this.getStringSettingValueByName("Soup mode").equals("Instant")) {
-            if (this.currentItem >= 0) {
-                if (dropBowls) {
+            if (this.field23430 >= 0) {
+                if (var5) {
                     mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.DROP_ITEM, BlockPos.ZERO, Direction.DOWN));
                 }
 
-                mc.player.inventory.currentItem = this.currentItem;
+                mc.player.inventory.currentItem = this.field23430;
                 mc.playerController.syncCurrentPlayItem();
-                this.refillDelay = 0;
-                this.currentItem = -1;
+                this.field23428 = 0;
+                this.field23430 = -1;
             } else {
-                if (soupSlotIndex < 0 || this.refillDelay <= 3 || mc.player.getHealth() > this.getNumberValueBySettingName("Health")) {
+                if (var3 < 0 || this.field23428 <= 3 || mc.player.getHealth() > this.getNumberValueBySettingName("Health")) {
                     return;
                 }
 
-                this.currentItem = mc.player.inventory.currentItem;
-                mc.player.inventory.currentItem = soupSlotIndex;
+                this.field23430 = mc.player.inventory.currentItem;
+                mc.player.inventory.currentItem = var3;
                 mc.playerController.syncCurrentPlayItem();
                 mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
                 mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
             }
         } else {
-            if (soupSlotIndex < 0 || this.refillDelay <= 3 || mc.player.getHealth() > this.getNumberValueBySettingName("Health")) {
+            if (var3 < 0 || this.field23428 <= 3 || mc.player.getHealth() > this.getNumberValueBySettingName("Health")) {
                 return;
             }
 
-            mc.getConnection().sendPacket(new CHeldItemChangePacket(soupSlotIndex));
+            mc.getConnection().sendPacket(new CHeldItemChangePacket(var3));
             mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
             mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-            if (dropBowls) {
+            if (var5) {
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.DROP_ITEM, BlockPos.ZERO, Direction.DOWN));
             }
 
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
-            this.refillDelay = 0;
+            this.field23428 = 0;
         }
     }
 
-    private int findEmptySlot(int itemCount) {
-        ItemStack stack = InvManagerUtils.method25866(13);
-        if (stack.getItem() == Items.field37836 && stack.getCount() <= 64 - itemCount) { // field37836 is "Bowl" -Away
+    private int method16062(int var1) {
+        ItemStack var4 = InvManagerUtils.method25866(13);
+        if (var4.getItem() == Items.field37836 && var4.getCount() <= 64 - var1) {
             return 13;
         } else {
-            for (int i = 0; i < 36; i++) {
-                if (InvManagerUtils.method25866(i).getItem() == Items.field37836) { // field37836 is "Bowl" -Away
-                    return i;
+            for (int var5 = 9; var5 < 36; var5++) {
+                var4 = InvManagerUtils.method25866(var5);
+                if (var4.getItem() == Items.field37836 && var4.getCount() <= 64 - var1) {
+                    return var5;
                 }
             }
-            return -1;
+
+            var4 = InvManagerUtils.method25866(13);
+            if (var4.getItem() == Items.field37836 && var4.getCount() < 64) {
+                return 13;
+            } else {
+                for (int var12 = 9; var12 < 36; var12++) {
+                    var4 = InvManagerUtils.method25866(var12);
+                    if (var4.getItem() == Items.field37836 && var4.getCount() < 64) {
+                        return var12;
+                    }
+                }
+
+                var4 = InvManagerUtils.method25866(13);
+                if (var4.getItem() == Items.AIR) {
+                    for (int var13 = 36; var13 < 45; var13++) {
+                        if (mc.player.container.getSlot(var13).getStack().getItem() == Items.field37836) {
+                            InvManagerUtils.moveItemToHotbar(13, var13 - 36);
+                            return 13;
+                        }
+                    }
+                }
+
+                for (int var14 = 9; var14 < 36; var14++) {
+                    var4 = InvManagerUtils.method25866(var14);
+                    if (var4.getItem() == Items.AIR) {
+                        for (int var6 = 36; var6 < 45; var6++) {
+                            if (mc.player.container.getSlot(var6).getStack().getItem() == Items.field37836) {
+                                InvManagerUtils.moveItemToHotbar(var14, var6 - 36);
+                                return -1;
+                            }
+                        }
+                    }
+                }
+
+                for (int var15 = 36; var15 < 45; var15++) {
+                    if (mc.player.container.getSlot(var15).getStack().getItem() == Items.field37836) {
+                        InvManagerUtils.moveItemToHotbar(13, var15 - 36);
+                        return -1;
+                    }
+                }
+
+                return -1;
+            }
         }
     }
 
-    private int getItemCount(Item item) {
-        int count = 0;
-        for (int i = 0; i < 36; i++) {
-            if (InvManagerUtils.method25866(i).getItem() == item) {
-                count += InvManagerUtils.method25866(i).getCount();
+    private int method16063(Item var1) {
+        int var4 = 0;
+
+        for (int var5 = 36; var5 < 45; var5++) {
+            if (mc.player.container.getSlot(var5).getStack().getItem() == var1) {
+                var4++;
             }
         }
-        return count;
+
+        return var4;
     }
 
-    private int getItemCountInHotbar(Item item) {
-        int count = 0;
-        for (int i = 36; i < 45; i++) {
-            if (mc.player.container.getSlot(i).getStack().getItem() == item) {
-                count += mc.player.container.getSlot(i).getStack().getCount();
+    private int method16064(Item var1) {
+        int var4 = 0;
+
+        for (int var5 = 9; var5 < 36; var5++) {
+            if (mc.player.container.getSlot(var5).getStack().getItem() == var1) {
+                var4++;
             }
         }
-        return count;
+
+        return var4;
     }
 }

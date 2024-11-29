@@ -197,7 +197,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          while (var29.hasNext()) {
             Pose var30 = (Pose)var29.next();
             double var25 = (double)var1.getSize(var30).field39969;
-            int var31 = MathHelper.ceil(var10 - (double)var7.getY() + var25);
+            int var31 = MathHelper.method37774(var10 - (double)var7.getY() + var25);
             double var27 = Class4527.method14427(var7, var31, var1x -> this.world.getBlockState(var1x).method23414(this.world, var1x));
             if (var10 + var25 <= var27) {
                var1.setPose(var30);
@@ -339,7 +339,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                      && !(var24 instanceof AbstractMinecartEntity)
                      && !this.isBeingRidden()
                      && !var24.isPassenger()) {
-                     var24.startRiding(this);
+                     var24.method3311(this);
                   } else {
                      var24.applyEntityCollision(this);
                   }

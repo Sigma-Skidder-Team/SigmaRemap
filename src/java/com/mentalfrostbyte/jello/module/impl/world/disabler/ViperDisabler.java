@@ -55,7 +55,7 @@ public class ViperDisabler extends Module {
                     mc.getConnection().sendPacket(positionPacket);
                 }
 
-                mc.player.lastReportedPosY = 0.0;
+                mc.player.field6120 = 0.0;
                 if (mc.player.ticksExisted <= 1) {
                     this.pendingEvents.clear();
                 }

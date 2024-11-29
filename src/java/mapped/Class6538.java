@@ -33,10 +33,10 @@ public class Class6538 implements Class6515, Class6539 {
       this.field28860 = false;
    }
 
-   public void method19864(Class9189 var1, Class6516 var2, boolean var3) throws AACException {
+   public void method19864(Class9189 var1, Class6516 var2, boolean var3) throws Class2460 {
       Class2288 var6 = var2.method19746();
       if (var6.equals(Class2288.field15218)) {
-         throw new AACException("invalid sample frequency");
+         throw new Class2460("invalid sample frequency");
       } else {
          var1.method34403();
          this.field28854 = Class1973.method8255(var1.method34397(2));
@@ -73,7 +73,7 @@ public class Class6538 implements Class6515, Class6539 {
       }
    }
 
-   private void method19865(Class9189 var1, Class1955 var2, Class2288 var3, boolean var4) throws AACException {
+   private void method19865(Class9189 var1, Class1955 var2, Class2288 var3, boolean var4) throws Class2460 {
       switch (Class9286.field42710[var2.ordinal()]) {
          case 1:
             if (this.field28858 == null) {
@@ -109,7 +109,7 @@ public class Class6538 implements Class6515, Class6539 {
             }
             break;
          default:
-            throw new AACException("unexpected profile for LTP: " + var2);
+            throw new Class2460("unexpected profile for LTP: " + var2);
       }
    }
 

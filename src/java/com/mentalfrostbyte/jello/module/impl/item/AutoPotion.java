@@ -8,9 +8,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import net.minecraft.item.PotionItem;
+import mapped.Class3323;
 import mapped.Effect;
 import mapped.InvManagerUtils;
 import mapped.RotationHelper;
@@ -126,13 +127,13 @@ public class AutoPotion extends Module {
         for (int var8 = 9; var8 < 45; var8++) {
             if (mc.player.container.getSlot(var8).getHasStack()) {
                 ItemStack var9 = mc.player.container.getSlot(var8).getStack();
-                if (var9.getItem() instanceof PotionItem) {
+                if (var9.getItem() instanceof Class3323) {
                     List<EffectInstance> var10 = InvManagerUtils.getPotionEffects(var9);
                     int var11 = this.method16633(var10);
                     if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSettingName("Custom potion") || var11 == 1)) {
                         for (EffectInstance var13 : var10) {
                             int var14 = Effect.getId(var13.getPotion());
-                            int var15 = var13.getAmplifier();
+                            int var15 = var13.method8629();
                             int var16 = var13.method8628();
                             if (var14 == var1 && InvManagerUtils.method25859(var9)) {
                                 if (var15 <= var4) {
@@ -153,7 +154,7 @@ public class AutoPotion extends Module {
             }
         }
 
-        return mc.player.isPotionActive(Effect.get(var1)) && mc.player.getActivePotionEffect(Effect.get(var1)).getAmplifier() >= var4
+        return mc.player.isPotionActive(Effect.get(var1)) && mc.player.getActivePotionEffect(Effect.get(var1)).method8629() >= var4
                 ? -1
                 : var6;
     }

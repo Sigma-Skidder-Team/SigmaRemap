@@ -2,7 +2,6 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import net.minecraft.resources.IAsyncReloader;
 import net.minecraft.util.Util;
 import net.minecraft.util.Unit;
 
@@ -13,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Class8337<S> implements IAsyncReloader {
+public class Class8337<S> implements Class8335 {
    private static String[] field35843;
    public final IResourceManager field35844;
    public final CompletableFuture<Unit> field35845 = new CompletableFuture<Unit>();
@@ -67,12 +66,12 @@ public class Class8337<S> implements IAsyncReloader {
    }
 
    @Override
-   public CompletableFuture<Unit> onceDone() {
+   public CompletableFuture<Unit> method29223() {
       return this.field35846.<Unit>thenApply(var0 -> Unit.INSTANCE);
    }
 
    @Override
-   public float estimateExecutionSpeed() {
+   public float method29224() {
       int var3 = this.field35848 - this.field35847.size();
       float var4 = (float)(this.field35852.get() * 2 + this.field35850 * 2 + var3 * 1);
       float var5 = (float)(this.field35851.get() * 2 + this.field35849 * 2 + this.field35848 * 1);
@@ -80,17 +79,17 @@ public class Class8337<S> implements IAsyncReloader {
    }
 
    @Override
-   public boolean asyncPartDone() {
+   public boolean method29225() {
       return this.field35845.isDone();
    }
 
    @Override
-   public boolean fullyDone() {
+   public boolean method29226() {
       return this.field35846.isDone();
    }
 
    @Override
-   public void join() {
+   public void method29227() {
       if (this.field35846.isCompletedExceptionally()) {
          this.field35846.join();
       }

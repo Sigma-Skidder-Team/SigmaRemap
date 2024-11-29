@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
-import org.newdawn.slick.opengl.TextureImpl;
+import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.tileentity.TileEntity;
 import org.lwjgl.opengl.GL11;
@@ -55,7 +55,7 @@ public class BoxChestESP extends Module {
                 }
 
                 Box3D boundingBox = new Box3D(
-                        tileEntity.getBlockState().getShape(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
+                        tileEntity.getBlockState().method23412(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
                 );
 
                 GL11.glAlphaFunc(519, 0.0F);
@@ -87,9 +87,9 @@ public class BoxChestESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.unbind();
+        TextureImpl.method36180();
         TextureManager textureManager = mc.getTextureManager();
-        textureManager.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        textureManager.bindTexture(TextureManager.field1094);
         mc.gameRenderer.lightmapTexture.method7317();
     }
 }

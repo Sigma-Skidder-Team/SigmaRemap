@@ -191,7 +191,7 @@ public class Projectiles extends Module {
                     }
 
                     GL11.glEnd();
-                    GL11.glLineWidth(2.0F * GuiManager.scaleFactor);
+                    GL11.glLineWidth(2.0F * GuiManager.portalScaleFactor);
                     GL11.glColor4d(1.0, 1.0, 1.0, 0.75);
                     GL11.glBegin(3);
 
@@ -225,8 +225,8 @@ public class Projectiles extends Module {
                             double var47 = var4.field15832.getWidth() / 2.0F + 0.2F;
                             double var35 = var4.field15832.getHeight() + 0.1F;
                             Box3D var37 = new Box3D(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
-                            RenderUtil.render3DColoredBox(var37, MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.color, 0.1F));
-                            RenderUtil.renderWireframeBox(var37, MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.color, 0.1F));
+                            RenderUtil.render3DColoredBox(var37, MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+                            RenderUtil.renderWireframeBox(var37, MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                         }
                     } else {
                         double var49 = var4.field15825 - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
@@ -249,8 +249,8 @@ public class Projectiles extends Module {
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                         Box3D var34 = new Box3D(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                        RenderUtil.render3DColoredBox(var34, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.color, 0.1F));
-                        RenderUtil.renderWireframeBox(var34, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.color, 0.1F));
+                        RenderUtil.render3DColoredBox(var34, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        RenderUtil.renderWireframeBox(var34, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                         GL11.glPopMatrix();
                     }
 

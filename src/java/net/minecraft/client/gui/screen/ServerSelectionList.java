@@ -279,7 +279,7 @@ public class ServerSelectionList extends Class1274<ServerSelectionList.Entry> {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.mc.getTextureManager().bindTexture(field6453);
          method5699(var1, var4 + var5 - 15, var3, (float)(var17 * 10), (float)(176 + var18 * 8), 10, 8, 256, 256);
-         String var21 = this.server.getBase64EncodedIconData();
+         String var21 = this.server.method25580();
          if (!Objects.equals(var21, this.lastIconB64)) {
             if (!this.method5549(var21)) {
                this.server.method25581((String)null);

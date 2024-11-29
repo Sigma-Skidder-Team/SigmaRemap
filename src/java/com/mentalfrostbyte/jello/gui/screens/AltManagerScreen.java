@@ -10,11 +10,11 @@ import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
-import org.newdawn.slick.util.BufferedImageUtil;
+import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
@@ -307,7 +307,7 @@ public class AltManagerScreen extends Screen {
          114,
          (int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21015) - this.field21016,
          Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016,
-         ClientColors.LIGHT_GREYISH_BLUE.color
+         ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       this.emptyMethod();
       this.method13367();
@@ -318,7 +318,7 @@ public class AltManagerScreen extends Screen {
    private void method13364() {
       if (this.field21021 != (float)this.field21010.method13513()) {
          try {
-            this.field21020 = BufferedImageUtil.getTexture(
+            this.field21020 = TextureUtil.method32933(
                "blur", ImageUtil.method35038(0, 0, (int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 15, 114, 4, 40, -921102)
             );
          } catch (IOException var4) {
@@ -335,7 +335,7 @@ public class AltManagerScreen extends Screen {
             (float)((int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 15),
             114.0F,
             this.field21020,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var3)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
          );
       }
 
@@ -351,7 +351,7 @@ public class AltManagerScreen extends Screen {
    private void drawTitle() {
       int var3 = this.xA + this.field21016;
       int var4 = this.yA + this.field21016;
-      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8F);
+      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
@@ -446,7 +446,7 @@ public class AltManagerScreen extends Screen {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.95F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override

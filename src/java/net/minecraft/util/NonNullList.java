@@ -17,7 +17,7 @@ public class NonNullList<E> extends AbstractList<E> {
       return new NonNullList<E>();
    }
 
-   public static <E> NonNullList<E> withSize(int var0, E var1) {
+   public static <E> NonNullList<E> method68(int var0, E var1) {
       Validate.notNull(var1);
       Object[] var4 = new Object[var0];
       Arrays.fill(var4, var1);

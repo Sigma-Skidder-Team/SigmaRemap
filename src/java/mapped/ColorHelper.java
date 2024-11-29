@@ -18,11 +18,11 @@ public class ColorHelper {
    }
 
    public ColorHelper(int var1, int var2) {
-      this(var1, var2, ClientColors.DEEP_TEAL.color);
+      this(var1, var2, ClientColors.DEEP_TEAL.getColor);
    }
 
    public ColorHelper(int var1, int var2, int var3) {
-      this(var1, var2, var3, ClientColors.LIGHT_GREYISH_BLUE.color);
+      this(var1, var2, var3, ClientColors.LIGHT_GREYISH_BLUE.getColor);
    }
 
    public ColorHelper(int var1, int var2, int var3, int var4) {

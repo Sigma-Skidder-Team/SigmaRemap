@@ -29,8 +29,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class TextureManager implements Class268, Class288, AutoCloseable {
-   private static final Logger LOGGER = LogManager.getLogger();
-   public static final ResourceLocation RESOURCE_LOCATION_EMPTY = new ResourceLocation("");
+   private static final Logger field1093 = LogManager.getLogger();
+   public static final ResourceLocation field1094 = new ResourceLocation("");
    private final Map<ResourceLocation, Texture> field1095 = Maps.newHashMap();
    private final Set<Class288> field1096 = Sets.newHashSet();
    private final Map<String, Integer> field1097 = Maps.newHashMap();
@@ -91,7 +91,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          try {
             var2.close();
          } catch (Exception var6) {
-            LOGGER.warn("Failed to close texture {}", var1, var6);
+            field1093.warn("Failed to close texture {}", var1, var6);
          }
       }
 
@@ -103,8 +103,8 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          var2.method1090(this.field1098);
          return var2;
       } catch (IOException var8) {
-         if (var1 != RESOURCE_LOCATION_EMPTY) {
-            LOGGER.warn("Failed to load texture: {}", var1, var8);
+         if (var1 != field1094) {
+            field1093.warn("Failed to load texture: {}", var1, var8);
          }
 
          return Class1714.method7515();

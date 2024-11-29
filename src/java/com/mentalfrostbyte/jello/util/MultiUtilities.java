@@ -1,12 +1,11 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.Client;
-import org.newdawn.slick.TrueTypeFont;
-import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
-import de.florianmichael.vialoadingbase.ViaLoadingBase;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
@@ -22,6 +21,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -32,6 +32,7 @@ import totalcross.json.JSONObject;
 
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.nio.FloatBuffer;
@@ -46,6 +47,7 @@ public class MultiUtilities {
    public static final float[] field24951 = new float[4];
    public static final float[] field24952 = new float[4];
    public static final ResourceLocation field24953 = new ResourceLocation("shaders/post/blur.json");
+   private static boolean field24954 = false;
 
    public static void addChatMessage(String text) {
       StringTextComponent textComp = new StringTextComponent(text);
@@ -106,7 +108,7 @@ public class MultiUtilities {
    public static boolean method17684(Entity var0) {
       ClientWorld var3 = mc.world;
       AxisAlignedBB var4 = var0.boundingBox;
-      return var3.containsAnyLiquid(var4);
+      return var3.method7014(var4);
    }
 
    public static boolean method17686() {
@@ -358,7 +360,7 @@ public class MultiUtilities {
       return false;
    }
 
-   public static EntityRayTraceResult raytrace(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
+   public static EntityRayTraceResult method17714(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
       double var8 = var4 * var4;
       Entity var10 = null;
       Vector3d var11 = null;
@@ -395,7 +397,8 @@ public class MultiUtilities {
    }
 
    public static boolean isHypixel() {
-      return mc.getIntegratedServer() == null
+      return !field24954
+         && mc.getIntegratedServer() == null
          && mc.getCurrentServerData() != null
          && mc.getCurrentServerData().serverIP.toLowerCase().contains("hypixel.net");
    }
@@ -468,16 +471,18 @@ public class MultiUtilities {
          return;
       }
 
-      boolean isOnePointEight = ViaLoadingBase.getInstance().getTargetVersion().olderThanOrEqualTo(ProtocolVersion.v1_8);
+      boolean isOnePointEight = false;
 
       if (isOnePointEight && swing) {
          mc.player.swingArm(Hand.MAIN_HAND);
       }
 
+      mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(var0, mc.player.isSneaking()));
+
       boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
 
       mc.player.resetCooldown();
-      if (!isOnePointEight && swing && canSwing) {
+      if (!isOnePointEight && swing) {
          mc.player.swingArm(Hand.MAIN_HAND);
       }
 
@@ -569,8 +574,8 @@ public class MultiUtilities {
 
    public static void method17741(int var0) {
       if (mc.gameRenderer.shaderGroup != null) {
-         mc.gameRenderer.shaderGroup.elements.get(0).getShaderManager().getFromName("Radius").setValue((float)var0);
-         mc.gameRenderer.shaderGroup.elements.get(1).getShaderManager().getFromName("Radius").setValue((float)var0);
+         mc.gameRenderer.shaderGroup.elements.get(0).method7410().getFromName("Radius").setValue((float)var0);
+         mc.gameRenderer.shaderGroup.elements.get(1).method7410().getFromName("Radius").setValue((float)var0);
       }
    }
 
@@ -596,7 +601,7 @@ public class MultiUtilities {
       }
    }
 
-   public static String[] method17745(String var0, int var1, TrueTypeFont var2) {
+   public static String[] method17745(String var0, int var1, ClientResource var2) {
       String[] var5 = var0.split(" ");
       HashMap<Integer, String> var6 = new HashMap();
       int var7 = 0;
@@ -604,14 +609,14 @@ public class MultiUtilities {
       for (String var11 : var5) {
          String var12 = var6.get(var7) != null ? (String)var6.get(var7) : "";
          boolean var13 = var6.get(var7) == null;
-         boolean var14 = var2.getWidth(var12) + var2.getWidth(var11) <= var1;
-         boolean var15 = var2.getWidth(var11) >= var1;
+         boolean var14 = var2.getStringWidth(var12) + var2.getStringWidth(var11) <= var1;
+         boolean var15 = var2.getStringWidth(var11) >= var1;
          if (!var14 && !var15) {
             var7++;
             var12 = var6.get(var7) != null ? (String)var6.get(var7) : "";
             var13 = var6.get(var7) == null;
-            var14 = var2.getWidth(var12) + var2.getWidth(var11) <= var1;
-            var15 = var2.getWidth(var11) >= var1;
+            var14 = var2.getStringWidth(var12) + var2.getStringWidth(var11) <= var1;
+            var15 = var2.getStringWidth(var11) >= var1;
          }
 
          if (var14) {
@@ -627,7 +632,7 @@ public class MultiUtilities {
                while (true) {
                   if (var16 <= var11.length()) {
                      String var17 = var11.substring(0, var11.length() - var16);
-                     if (var2.getWidth(var17) > var1) {
+                     if (var2.getStringWidth(var17) > var1) {
                         var16++;
                         continue;
                      }
@@ -637,8 +642,8 @@ public class MultiUtilities {
                   }
 
                   var12 = var6.get(var7) != null ? (String)var6.get(var7) : "";
-                  var14 = var2.getWidth(var12) + var2.getWidth(var11) <= var1;
-                  var15 = var2.getWidth(var11) >= var1;
+                  var14 = var2.getStringWidth(var12) + var2.getStringWidth(var11) <= var1;
+                  var15 = var2.getStringWidth(var11) >= var1;
                   var13 = var6.get(var7) == null;
                   break;
                }
@@ -653,6 +658,53 @@ public class MultiUtilities {
       }
 
       return var6.values().toArray(new String[var6.values().size()]);
+   }
+
+   public static void method17746(ServerData var0) {
+      field24954 = var0.serverIP.toLowerCase().contains("hypixel.net");
+      if (field24954) {
+         new Thread(() -> {
+            try {
+               InetAddress var2 = InetAddress.getByName("hypixel.net");
+               HttpGet var3 = new HttpGet("http://" + var2.getHostAddress());
+               CloseableHttpClient var4 = HttpClients.createDefault();
+
+               try {
+                  CloseableHttpResponse var5 = var4.execute(var3);
+                  Throwable var6 = null;
+
+                  try {
+                     if (var5.getStatusLine().getStatusCode() == 403) {
+                        HttpEntity var7 = var5.getEntity();
+                        if (var7 != null) {
+                           String var8 = EntityUtils.toString(var7);
+                           if (var8.contains("1003")) {
+                              field24954 = false;
+                           }
+                        }
+                     }
+                  } catch (Throwable var19) {
+                     var6 = var19;
+                     throw var19;
+                  } finally {
+                     if (var5 != null) {
+                        if (var6 != null) {
+                           try {
+                              var5.close();
+                           } catch (Throwable var18) {
+                              var6.addSuppressed(var18);
+                           }
+                        } else {
+                           var5.close();
+                        }
+                     }
+                  }
+               } catch (IOException ignored) {
+               }
+            } catch (UnknownHostException ignored) {
+            }
+         }).start();
+      }
    }
 
    public static double[] method17747() {
@@ -725,6 +777,7 @@ public class MultiUtilities {
       float var4 = var1 - var0;
       return !(var4 > 180.0F) ? (!(var4 < -180.0F) ? var4 : var4 + 360.0F) : var4 - 360.0F;
    }
+
 
    public static Class9629<Direction, Vector3d> method17760(double var0) {
       AxisAlignedBB var4 = mc.player.boundingBox;

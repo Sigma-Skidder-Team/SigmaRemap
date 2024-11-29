@@ -52,18 +52,18 @@ public class Class4351 extends Class4278 {
       ColorHelper var11 = ColorHelper.field27961.method19415();
       var11.method19406(-11371052);
       var11.method19404(-12096331);
-      var11.method19410(ClientColors.LIGHT_GREYISH_BLUE.color);
+      var11.method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor);
       ColorHelper var12 = ColorHelper.field27961.method19415();
       var12.method19406(-3254955);
       var12.method19404(-4700859);
-      var12.method19410(ClientColors.LIGHT_GREYISH_BLUE.color);
+      var12.method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor);
       this.addToList(this.buttonList = new Class4284(this, "edit", var5 - this.field21270, 0, this.field21270, var6));
       ConfigScreenButton var13;
       this.buttonList.addToList(var13 = new ConfigScreenButton(this.buttonList, "rename", 0, 0, this.field21270 / 2, var6, var11, "Rename"));
       ConfigScreenButton deleteButton;
       this.buttonList.addToList(deleteButton = new ConfigScreenButton(this.buttonList, "remove", this.field21270 / 2, 0, this.field21270 / 2, var6, var12, "Delete"));
       this.buttonList.method13296(false);
-      ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.color, Class2218.field14488, Class2218.field14492);
+      ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
       this.addToList(this.profileName = new UIInput(this, "profileName", 16, 8, this.getWidthA() - 60, 50, var15, config.getName));
       this.profileName.method13156(false);
       this.profileName.setFont(ResourceRegistry.JelloLightFont24);
@@ -191,7 +191,7 @@ public class Class4351 extends Class4278 {
          (float)this.yA,
          (float)this.widthA,
          (float)this.heightA,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04F * this.field21264.calcPercent() + var6)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
       );
       if (!this.profileName.method13297()) {
          RenderUtil.drawString(
@@ -199,7 +199,7 @@ public class Class4351 extends Class4278 {
             (float)(this.xA + 20) - var5 * (float)this.widthA,
             (float)(this.yA + 18),
             this.currentConfig.getName,
-            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.9F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
          );
       }
 
@@ -211,7 +211,7 @@ public class Class4351 extends Class4278 {
             17.0F,
             13.0F,
             ResourceList.activePNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0F - this.field21265.calcPercent()) * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - this.field21265.calcPercent()) * var1)
          );
       }
 

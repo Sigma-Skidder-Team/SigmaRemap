@@ -15,7 +15,6 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -197,7 +196,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    }
 
    public void method3822(SoundEvent var1) {
-      this.world.method6742((PlayerEntity)null, this.pos, var1, SoundCategory.field14732, 1.0F, 1.0F);
+      this.world.method6742((PlayerEntity)null, this.pos, var1, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public List<Class7934> method3823() {

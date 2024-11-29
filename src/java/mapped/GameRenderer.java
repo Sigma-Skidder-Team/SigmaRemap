@@ -556,10 +556,10 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
       if (!this.mc.skipRenderWorld) {
          int var7 = (int)(
-            this.mc.mouseHelper.getMouseX() * (double)this.mc.getMainWindow().getScaledWidth() / (double)this.mc.getMainWindow().getWidth()
+            this.mc.mouseHelper.method36738() * (double)this.mc.getMainWindow().getScaledWidth() / (double)this.mc.getMainWindow().getWidth()
          );
          int var8 = (int)(
-            this.mc.mouseHelper.getMouseY() * (double)this.mc.getMainWindow().getScaledHeight() / (double)this.mc.getMainWindow().getHeight()
+            this.mc.mouseHelper.method36739() * (double)this.mc.getMainWindow().getScaledHeight() / (double)this.mc.getMainWindow().getHeight()
          );
          if (var4 && this.mc.world != null && !Config.method26988()) {
             this.mc.getProfiler().startSection("level");
@@ -675,8 +675,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                         "Scaled: (%d, %d). Absolute: (%f, %f)",
                         var7,
                         var8,
-                        this.mc.mouseHelper.getMouseX(),
-                        this.mc.mouseHelper.getMouseY()
+                        this.mc.mouseHelper.method36738(),
+                        this.mc.mouseHelper.method36739()
                      )
                );
                var18.addDetail(
@@ -724,7 +724,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             }
 
             try (NativeImage var8 = new NativeImage(64, 64, false)) {
-               var3.resizeSubRectTo(var6, var7, var4, var5, var8);
+               var3.method7907(var6, var7, var4, var5, var8);
                var8.method7898(this.mc.getIntegratedServer().method1306());
             } catch (IOException var29) {
                LOGGER.warn("Couldn't save auto screenshot", var29);
@@ -1131,12 +1131,12 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       RenderSystem.disableDepthTest();
       RenderSystem.depthMask(false);
       RenderSystem.enableBlend();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE, DestFactor.ONE, GlStateManager.SourceFactor.ONE, DestFactor.ONE);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE, DestFactor.field12927, GlStateManager.SourceFactor.ONE, DestFactor.field12927);
       RenderSystem.color4f(var8, var9, var10, 1.0F);
       this.mc.getTextureManager().bindTexture(field800);
       Tessellator tessellator = Tessellator.getInstance();
       BufferBuilder bufferbuilder = tessellator.getBuffer();
-      bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX);
+      bufferbuilder.begin(7, DefaultVertexFormats.field43344);
       bufferbuilder.pos(var15, var17 + var13, -90.0).tex(0.0F, 1.0F).endVertex();
       bufferbuilder.pos(var15 + var11, var17 + var13, -90.0).tex(1.0F, 1.0F).endVertex();
       bufferbuilder.pos(var15 + var11, var17, -90.0).tex(1.0F, 0.0F).endVertex();

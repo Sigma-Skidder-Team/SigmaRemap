@@ -7,6 +7,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 
 public class AirBlock extends Block {
+   private static String[] field19128;
 
    public AirBlock(Properties var1) {
       super(var1);

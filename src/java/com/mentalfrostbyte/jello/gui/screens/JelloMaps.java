@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -85,7 +85,7 @@ public class JelloMaps extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       super.draw(var1);

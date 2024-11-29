@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -13,10 +13,10 @@ import java.net.URL;
 public class Class4283 extends Class4278 {
    private static String[] field20736;
    public static ColorHelper field20760 = new ColorHelper(
-      ClientColors.DEEP_TEAL.color,
-      ClientColors.DEEP_TEAL.color,
-      ClientColors.DEEP_TEAL.color,
-      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -38,10 +38,10 @@ public class Class4283 extends Class4278 {
 
    @Override
    public void draw(float var1) {
-      double var4 = Minecraft.getInstance().mouseHelper.getMouseX() - (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
+      double var4 = Minecraft.getInstance().mouseHelper.method36738() - (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
       var4 /= (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
       var4 = Math.max(-1.0, Math.min(1.0, var4));
-      double var6 = Minecraft.getInstance().mouseHelper.getMouseY() - (double)(Minecraft.getInstance().mainWindow.getHeight() / 2);
+      double var6 = Minecraft.getInstance().mouseHelper.method36739() - (double)(Minecraft.getInstance().mainWindow.getHeight() / 2);
       var6 /= (double)(Minecraft.getInstance().mainWindow.getHeight() / 2);
       var6 = Math.max(-1.0, Math.min(1.0, var6));
       GL11.glPushMatrix();
@@ -50,7 +50,7 @@ public class Class4283 extends Class4278 {
       GL11.glRotated(1.0 * Math.abs(var4 * var6), var6, var4, 0.0);
       GL11.glTranslatef((float)(-this.xA - this.widthA / 2), (float)(-this.yA - this.heightA / 2), 0.0F);
       GL11.glDisable(2929);
-      RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ClientColors.PALE_YELLOW.color);
+      RenderUtil.renderBackgroundBox((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ClientColors.PALE_YELLOW.getColor);
       GL11.glPopMatrix();
       super.draw(var1);
    }

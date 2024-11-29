@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -52,7 +51,7 @@ public class Class3289 extends Item {
                this.method11828(var12, var5.rand);
                var5.addEntity(var12);
                var5.playSound(
-                  (PlayerEntity)null, var12.getPosX(), var12.getPosY(), var12.getPosZ(), SoundEvents.field26360, SoundCategory.field14732, 0.75F, 0.8F
+                  (PlayerEntity)null, var12.getPosX(), var12.getPosY(), var12.getPosZ(), SoundEvents.field26360, Class2266.field14732, 0.75F, 0.8F
                );
             }
 

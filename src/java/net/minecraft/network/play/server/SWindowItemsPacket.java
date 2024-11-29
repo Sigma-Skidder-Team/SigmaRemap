@@ -19,7 +19,7 @@ public class SWindowItemsPacket implements IPacket<IClientPlayNetHandler> {
 
    public SWindowItemsPacket(int var1, NonNullList<ItemStack> var2) {
       this.field24914 = var1;
-      this.field24915 = NonNullList.<ItemStack>withSize(var2.size(), ItemStack.EMPTY);
+      this.field24915 = NonNullList.<ItemStack>method68(var2.size(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < this.field24915.size(); var5++) {
          this.field24915.set(var5, ((ItemStack)var2.get(var5)).copy());
@@ -30,7 +30,7 @@ public class SWindowItemsPacket implements IPacket<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24914 = var1.readUnsignedByte();
       short var4 = var1.readShort();
-      this.field24915 = NonNullList.<ItemStack>withSize(var4, ItemStack.EMPTY);
+      this.field24915 = NonNullList.<ItemStack>method68(var4, ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4; var5++) {
          this.field24915.set(var5, var1.readItemStack());

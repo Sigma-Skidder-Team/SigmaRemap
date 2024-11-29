@@ -19,7 +19,7 @@ public class Class8290 implements Class8289, Class8291, Class8292 {
       this.field35623 = (this.field35621 - this.field35622) / 2;
    }
 
-   public void method28983(float[] var1, float[] var2, int var3, int var4, Class1973 var5) throws AACException {
+   public void method28983(float[] var1, float[] var2, int var3, int var4, Class1973 var5) throws Class2460 {
       float[] var8 = new float[this.field35619];
       if (!var5.equals(Class1973.field12845)) {
          for (int var9 = 0; var9 < 4; var9++) {
@@ -54,7 +54,7 @@ public class Class8290 implements Class8289, Class8291, Class8292 {
       }
    }
 
-   private void method28984(float[] var1, float[] var2, Class1973 var3, int var4, int var5, int var6) throws AACException {
+   private void method28984(float[] var1, float[] var2, Class1973 var3, int var4, int var5, int var6) throws Class2460 {
       float[] var9 = new float[this.field35621];
       float[] var10 = new float[this.field35621 * 2];
       float[] var11 = new float[this.field35621 * 2];
@@ -141,13 +141,13 @@ public class Class8290 implements Class8289, Class8291, Class8292 {
       }
    }
 
-   private void method28985(float[] var1, float[] var2, float[] var3, int var4) throws AACException {
+   private void method28985(float[] var1, float[] var2, float[] var3, int var4) throws Class2460 {
       int var7 = var4 / 2;
       float[][] var8;
       float[][] var9;
       if (var4 != 256) {
          if (var4 != 32) {
-            throw new AACException("gain control: unexpected IMDCT length");
+            throw new Class2460("gain control: unexpected IMDCT length");
          }
 
          var8 = field35625;

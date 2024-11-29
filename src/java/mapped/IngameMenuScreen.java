@@ -123,7 +123,7 @@ public class IngameMenuScreen extends Screen {
                if (!var5x) {
                   this.mc.displayGuiScreen(new MultiplayerScreen(new VanillaMainMenuScreen()));
                } else {
-                  RealmsBridgeScreen var6x = new RealmsBridgeScreen();
+                  Class810 var6x = new Class810();
                   var6x.method2209(new VanillaMainMenuScreen());
                }
             } else {

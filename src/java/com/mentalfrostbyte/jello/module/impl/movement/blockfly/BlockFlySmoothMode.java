@@ -384,11 +384,11 @@ public class BlockFlySmoothMode extends Module {
     public void method16890(Render2DEvent var1) {
         if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23974 >= 0) {
             if (!(mc.player.fallDistance > 1.2F)) {
-                if (!(mc.player.chasingPosY < this.field23979)) {
+                if (!(mc.player.field4915 < this.field23979)) {
                     if (!mc.player.isJumping) {
                         mc.player.positionVec.y = this.field23979;
                         mc.player.lastTickPosY = this.field23979;
-                        mc.player.chasingPosY = this.field23979;
+                        mc.player.field4915 = this.field23979;
                         mc.player.prevPosY = this.field23979;
                         if (MovementUtils.isMoving()) {
                             mc.player.cameraYaw = 0.099999994F;

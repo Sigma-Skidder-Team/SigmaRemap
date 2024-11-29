@@ -14,7 +14,6 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.IntReferenceHolder;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.registry.Registry;
 
@@ -187,7 +186,7 @@ public class Class5822 extends Container {
                this.field25505.markDirty();
                this.field25508.method15235(var1.method2929());
                this.onCraftMatrixChanged(this.field25505);
-               var6x.method6742((PlayerEntity)null, var7x, SoundEvents.field26533, SoundCategory.field14732, 1.0F, var6x.rand.nextFloat() * 0.1F + 0.9F);
+               var6x.method6742((PlayerEntity)null, var7x, SoundEvents.field26533, Class2266.field14732, 1.0F, var6x.rand.nextFloat() * 0.1F + 0.9F);
             }
          });
          return true;

@@ -23,9 +23,9 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class PlayerInventory implements IInventory, INameable {
-   public final NonNullList<ItemStack> field5439 = NonNullList.<ItemStack>withSize(36, ItemStack.EMPTY);
-   public final NonNullList<ItemStack> field5440 = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
-   public final NonNullList<ItemStack> field5441 = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+   public final NonNullList<ItemStack> field5439 = NonNullList.<ItemStack>method68(36, ItemStack.EMPTY);
+   public final NonNullList<ItemStack> field5440 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
+   public final NonNullList<ItemStack> field5441 = NonNullList.<ItemStack>method68(1, ItemStack.EMPTY);
    private final List<NonNullList<ItemStack>> field5442 = ImmutableList.of(this.field5439, this.field5440, this.field5441);
    public int currentItem;
    public final PlayerEntity field5444;

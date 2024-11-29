@@ -202,7 +202,7 @@ public class EntityRendererManager {
       if (!(var1 instanceof AbstractClientPlayerEntity)) {
          return (EntityRenderer<? super T>)this.field40011.get(var1.getType());
       } else {
-         String var4 = ((AbstractClientPlayerEntity)var1).getSkinType();
+         String var4 = ((AbstractClientPlayerEntity)var1).method5377();
          PlayerRenderer var5 = this.field40012.get(var4);
          return (EntityRenderer<? super T>) (var5 == null ? this.field40013 : var5);
       }
@@ -449,7 +449,7 @@ public class EntityRendererManager {
       BlockPos var14 = var3.down();
       BlockState var15 = var2.getBlockState(var14);
       if (var15.getRenderType() != BlockRenderType.field9885 && var2.method7015(var3) > 3 && var15.method23456(var2, var14)) {
-         VoxelShape var16 = var15.getShape(var2, var3.down());
+         VoxelShape var16 = var15.method23412(var2, var3.down());
          if (!var16.isEmpty()) {
             float var17 = (float)(((double)var11 - (var6 - (double)var3.getY()) / 2.0) * 0.5 * (double)var2.method7009(var3));
             if (var17 >= 0.0F) {

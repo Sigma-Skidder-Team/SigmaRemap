@@ -1,7 +1,6 @@
 package mapped;
 
-import org.newdawn.slick.util.Log;
-import org.newdawn.slick.Color;
+import lol.Log;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -65,8 +64,8 @@ public class Class6134 implements Class6135 {
       this.field27508 = var1;
       this.field27519 = (int)this.field27504.method22061();
       this.field27516 = (int)this.field27496.method22061();
-      this.field27497.add(new Class9745(this, 0.0F, Color.white));
-      this.field27497.add(new Class9745(this, 1.0F, Color.red));
+      this.field27497.add(new Class9745(this, 0.0F, Color.field16442));
+      this.field27497.add(new Class9745(this, 1.0F, Color.field16444));
       ArrayList var4 = new ArrayList();
       var4.add(new Class2532(0.0F, 0.0F));
       var4.add(new Class2532(1.0F, 255.0F));
@@ -157,7 +156,7 @@ public class Class6134 implements Class6135 {
             this.field27510 = new Image(field27482 + this.field27509);
          } catch (Class2451 var16) {
             this.field27510 = null;
-            Log.error(var16);
+            Log.method25661(var16);
          }
       }
 
@@ -206,7 +205,7 @@ public class Class6134 implements Class6135 {
 
                   Class9745 var17 = (Class9745)this.field27497.get(0);
                   var7.method14482(
-                     var17.field45495.r, var17.field45495.g, var17.field45495.b, this.field27498.method25298(0.0F) / 255.0F
+                     var17.field45495.field16455, var17.field45495.field16456, var17.field45495.field16457, this.field27498.method25298(0.0F) / 255.0F
                   );
                   var7.method14475(this.field27505);
                   var7.method14493(this.field27506);
@@ -250,9 +249,9 @@ public class Class6134 implements Class6135 {
       }
 
       if (var9 != null) {
-         float var17 = var9.r * var7 + var10.r * var8;
-         float var19 = var9.g * var7 + var10.g * var8;
-         float var20 = var9.b * var7 + var10.b * var8;
+         float var17 = var9.field16455 * var7 + var10.field16455 * var8;
+         float var19 = var9.field16456 * var7 + var10.field16456 * var8;
+         float var20 = var9.field16457 * var7 + var10.field16457 * var8;
          float var21;
          if (!this.field27500.method25299()) {
             var21 = this.field27498.method25298(0.0F) / 255.0F * var5 + this.field27499.method25298(0.0F) / 255.0F * var6;
@@ -325,7 +324,7 @@ public class Class6134 implements Class6135 {
          ByteArrayInputStream var5 = new ByteArrayInputStream(var4.toByteArray());
          return Class8273.method28895(var5);
       } catch (IOException var6) {
-         Log.error("Slick: ConfigurableEmitter.duplicate(): caught exception " + var6.toString());
+         Log.method25662("Slick: ConfigurableEmitter.duplicate(): caught exception " + var6.toString());
          return null;
       }
    }

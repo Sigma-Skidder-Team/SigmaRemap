@@ -1,12 +1,12 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.ImageUtil;
-import org.newdawn.slick.util.BufferedImageUtil;
-import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureLoader;
+import com.mentalfrostbyte.jello.util.TextureUtil;
+import lol.Texture;
+import mapped.TextureLoader;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -95,17 +95,17 @@ public class ResourceList {
     public static Texture big = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/big.png");
     public static Texture agora = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/agora.png");
     public static Texture checkbox = loadTexture("com/mentalfrostbyte/gui/resources/sigma/uglygui/checkbox.png");
-    public static TrueTypeFont regular28 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 28.0F);
-    public static TrueTypeFont regular25 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 25.0F);
-    public static TrueTypeFont regular20 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 20.0F);
-    public static TrueTypeFont regular17 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 17.0F);
-    public static TrueTypeFont regular15 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 15.0F);
-    public static TrueTypeFont regular12 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 12.0F);
-    public static TrueTypeFont bold22 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 22.0F);
-    public static TrueTypeFont bold18 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 18.0F);
-    public static TrueTypeFont bold16 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 16.0F);
-    public static TrueTypeFont bold14 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 14.0F);
-    public static TrueTypeFont medium17 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Medium.ttf", 0, 17.0F);
+    public static ClientResource regular28 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 28.0F);
+    public static ClientResource regular25 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 25.0F);
+    public static ClientResource regular20 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 20.0F);
+    public static ClientResource regular17 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 17.0F);
+    public static ClientResource regular15 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 15.0F);
+    public static ClientResource regular12 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 12.0F);
+    public static ClientResource bold22 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 22.0F);
+    public static ClientResource bold18 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 18.0F);
+    public static ClientResource bold16 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 16.0F);
+    public static ClientResource bold14 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Bold.ttf", 0, 14.0F);
+    public static ClientResource medium17 = ResourceRegistry.getFont("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Medium.ttf", 0, 17.0F);
 
     public static Texture loadTexture(String filePath) {
         try {
@@ -168,7 +168,7 @@ public class ResourceList {
             var7.dispose();
             var5 = ImageUtil.method35032(var6, var2);
             var5 = ImageUtil.method35042(var5, 0.0F, 1.3F, -0.35F);
-            return BufferedImageUtil.getTexture(var0, var5);
+            return TextureUtil.method32933(var0, var5);
         } catch (IOException var8) {
             throw new IllegalStateException(
                     "Unable to find " + var0 + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names."
@@ -186,7 +186,7 @@ public class ResourceList {
             var7.dispose();
             var5 = ImageUtil.method35032(ImageUtil.method35041(var6, var2), var2);
             var5 = ImageUtil.method35042(var5, 0.0F, 1.1F, 0.0F);
-            return BufferedImageUtil.getTexture(var0, var5);
+            return TextureUtil.method32933(var0, var5);
         } catch (IOException var8) {
             throw new IllegalStateException(
                     "Unable to find " + var0 + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names."

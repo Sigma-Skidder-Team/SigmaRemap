@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.zip.GZIPInputStream;
 
-import org.newdawn.slick.util.Log;
+import lol.Log;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -74,7 +74,7 @@ public class Class8818 {
                }
             }
          } catch (IOException var17) {
-            Log.error(var17);
+            Log.method25661(var17);
             throw new Class2451("Unable to decode base 64 block");
          }
       } else {

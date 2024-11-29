@@ -147,7 +147,7 @@ public class AGCFly extends Module {
 
                 if (var7 != null) {
                     Block var9 = mc.world.getBlockState(var7).getBlock();
-                    if (var9 instanceof SnowBlock) {
+                    if (var9 instanceof Class3410) {
                         var5 = (double) ((int) var5) - 1.0E-4;
                     }
                 }

@@ -5,7 +5,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -71,7 +70,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
    }
 
    private void method3990() {
-      this.world.method6742((PlayerEntity)null, this.getPos(), SoundEvents.field26401, SoundCategory.field14732, 1.0F, 1.0F);
+      this.world.method6742((PlayerEntity)null, this.getPos(), SoundEvents.field26401, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public void method3991(Direction var1) {

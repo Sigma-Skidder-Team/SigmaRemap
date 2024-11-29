@@ -5,6 +5,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 
 public class Class8781 {
+   private static String[] field39490;
+
    public static boolean method31662(PlayerEntity var0) {
       return method31663(Minecraft.getInstance().player) == method31663(var0);
    }

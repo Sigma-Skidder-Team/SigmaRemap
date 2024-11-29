@@ -23,7 +23,7 @@ public final class EntityPredicates {
 
    public static Predicate<Entity> withinRange(double var0, double var2, double var4, double var6) {
       double var10 = var6 * var6;
-      return var8 -> var8 != null && var8.getDistanceSq(var0, var2, var4) <= var10;
+      return var8 -> var8 != null && var8.getDistanceNearest(var0, var2, var4) <= var10;
    }
 
    public static Predicate<Entity> method27981(Entity var0) {

@@ -274,7 +274,7 @@ public class IngameGui extends AbstractGui {
             this.field6727.method5999(var1);
             Scoreboard var17 = this.field6716.world.method6805();
             Class8375 var21 = null;
-            ScorePlayerTeam var25 = var17.getPlayersTeam(this.field6716.player.method2956());
+            ScorePlayerTeam var25 = var17.method20998(this.field6716.player.method2956());
             if (var25 != null) {
                 int var27 = var25.getColor().getColorIndex();
                 if (var27 >= 0) {
@@ -339,7 +339,7 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.renderCrosshair(10);
                 RenderSystem.popMatrix();
             } else {
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.ONE_MINUS_SRC_COLOR, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.getCooledAttackStrength(0.0F);
@@ -631,7 +631,7 @@ public class IngameGui extends AbstractGui {
 
     private void method5971(MatrixStack var1, Class8375 var2) {
         Scoreboard var5 = var2.method29335();
-        Collection<Class9411> var6 = var5.getSortedScores(var2);
+        Collection<Class9411> var6 = var5.method20981(var2);
         List var7 = var6.stream().filter(var0 -> var0.method36054() != null && !var0.method36054().startsWith("#")).collect(Collectors.toList());
         if (var7.size() <= 15) {
             var6 = var7;
@@ -646,7 +646,7 @@ public class IngameGui extends AbstractGui {
         int var12 = this.method5991().getStringWidth(": ");
 
         for (Class9411 var14 : var6) {
-            ScorePlayerTeam var15 = var5.getPlayersTeam(var14.method36054());
+            ScorePlayerTeam var15 = var5.method20998(var14.method36054());
             IFormattableTextComponent var16 = ScorePlayerTeam.method28577(var15, new StringTextComponent(var14.method36054()));
             var8.add(Pair.of(var14, var16));
             var11 = Math.max(var11, this.method5991().method38821(var16) + var12 + this.method5991().getStringWidth(Integer.toString(var14.method36050())));
@@ -698,7 +698,7 @@ public class IngameGui extends AbstractGui {
     }
 
     private int method5974(LivingEntity var1) {
-        if (var1 != null && var1.isLiving()) {
+        if (var1 != null && var1.method3312()) {
             float var4 = var1.method3075();
             int var5 = (int) (var4 + 0.5F) / 2;
             if (var5 > 30) {
@@ -874,8 +874,8 @@ public class IngameGui extends AbstractGui {
             if (var4.areEyesInFluid(FluidTags.field40469) || var40 < var38) {
                 int var42 = this.method5975(var36) - 1;
                 var20 -= var42 * 10;
-                int var44 = MathHelper.ceil((double) (var40 - 2) * 10.0 / (double) var38);
-                int var46 = MathHelper.ceil((double) var40 * 10.0 / (double) var38) - var44;
+                int var44 = MathHelper.method37774((double) (var40 - 2) * 10.0 / (double) var38);
+                int var46 = MathHelper.method37774((double) var40 * 10.0 / (double) var38) - var44;
 
                 for (int var31 = 0; var31 < var44 + var46; var31++) {
                     if (var31 >= var44) {
@@ -934,7 +934,7 @@ public class IngameGui extends AbstractGui {
         this.field6716.getTextureManager().bindTexture(field6713);
         Tessellator var3 = Tessellator.getInstance();
         BufferBuilder var4 = var3.getBuffer();
-        var4.begin(7, DefaultVertexFormats.POSITION_TEX);
+        var4.begin(7, DefaultVertexFormats.field43344);
         var4.pos(0.0, (double) this.field6742, -90.0).tex(0.0F, 1.0F).endVertex();
         var4.pos((double) this.field6741, (double) this.field6742, -90.0).tex(1.0F, 1.0F).endVertex();
         var4.pos((double) this.field6741, 0.0, -90.0).tex(1.0F, 0.0F).endVertex();
@@ -967,7 +967,7 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.ONE_MINUS_SRC_COLOR, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.field12933, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
             if (!(var5 > 0.0F)) {
                 RenderSystem.color4f(this.field6723, this.field6723, this.field6723, 1.0F);
             } else {
@@ -977,7 +977,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getTextureManager().bindTexture(field6711);
             Tessellator var10 = Tessellator.getInstance();
             BufferBuilder var11 = var10.getBuffer();
-            var11.begin(7, DefaultVertexFormats.POSITION_TEX);
+            var11.begin(7, DefaultVertexFormats.field43344);
             var11.pos(0.0, (double) this.field6742, -90.0).tex(0.0F, 1.0F).endVertex();
             var11.pos((double) this.field6741, (double) this.field6742, -90.0).tex(1.0F, 1.0F).endVertex();
             var11.pos((double) this.field6741, 0.0, -90.0).tex(1.0F, 0.0F).endVertex();
@@ -989,7 +989,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
         }
     }
 
@@ -1013,7 +1013,7 @@ public class IngameGui extends AbstractGui {
         float var8 = var4.getMaxV();
         Tessellator var9 = Tessellator.getInstance();
         BufferBuilder var10 = var9.getBuffer();
-        var10.begin(7, DefaultVertexFormats.POSITION_TEX);
+        var10.begin(7, DefaultVertexFormats.field43344);
         var10.pos(0.0, (double) this.field6742, -90.0).tex(var5, var8).endVertex();
         var10.pos((double) this.field6741, (double) this.field6742, -90.0).tex(var7, var8).endVertex();
         var10.pos((double) this.field6741, 0.0, -90.0).tex(var7, var6).endVertex();

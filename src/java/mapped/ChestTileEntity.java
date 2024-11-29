@@ -11,7 +11,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -21,7 +24,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class ChestTileEntity extends Class939 implements Class942, ITickableTileEntity {
-   private NonNullList<ItemStack> chestContents = NonNullList.<ItemStack>withSize(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> chestContents = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    public float lidAngle;
    public float prevLidAngle;
    public int numPlayersUsing;
@@ -48,7 +51,7 @@ public class ChestTileEntity extends Class939 implements Class942, ITickableTile
    @Override
    public void read(BlockState var1, CompoundNBT var2) {
       super.read(var1, var2);
-      this.chestContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
+      this.chestContents = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.checkLootAndRead(var2)) {
          ItemStackHelper.loadAllItems(var2, this.chestContents);
       }
@@ -146,7 +149,7 @@ public class ChestTileEntity extends Class939 implements Class942, ITickableTile
             var9 += (double)var11.getZOffset() * 0.5;
          }
 
-         this.world.playSound((PlayerEntity)null, var5, var7, var9, var1, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+         this.world.playSound((PlayerEntity)null, var5, var7, var9, var1, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
       }
    }
 

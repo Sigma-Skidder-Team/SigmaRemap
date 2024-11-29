@@ -1,8 +1,7 @@
 package mapped;
 
-import org.newdawn.slick.util.Log;
-import org.newdawn.slick.util.ResourceLoader;
-import org.newdawn.slick.Color;
+import lol.Log;
+import lol.ResourceLoader;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -69,7 +68,7 @@ public class Class9566 {
             }
          }
       } catch (Exception var7) {
-         Log.error(var7);
+         Log.method25661(var7);
          throw new Class2451("Failed to process definitions file - invalid format?", var7);
       }
    }

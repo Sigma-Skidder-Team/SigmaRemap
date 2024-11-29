@@ -18,16 +18,16 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if (var4.hasPlayerInfo() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.getLocationCape() != null) {
+      if (var4.method5368() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
          ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var13.getItem() != Items.field38120) {
             var1.push();
             var1.translate(0.0, 0.0, 0.125);
-            double var14 = MathHelper.lerp((double)var7, var4.field4911, var4.chasingPosX)
+            double var14 = MathHelper.lerp((double)var7, var4.field4911, var4.field4914)
                - MathHelper.lerp((double)var7, var4.prevPosX, var4.getPosX());
-            double var16 = MathHelper.lerp((double)var7, var4.field4912, var4.chasingPosY)
+            double var16 = MathHelper.lerp((double)var7, var4.field4912, var4.field4915)
                - MathHelper.lerp((double)var7, var4.prevPosY, var4.getPosY());
-            double var18 = MathHelper.lerp((double)var7, var4.field4913, var4.chasingPosZ)
+            double var18 = MathHelper.lerp((double)var7, var4.field4913, var4.field4916)
                - MathHelper.lerp((double)var7, var4.prevPosZ, var4.getPosZ());
             float var20 = var4.prevRenderYawOffset + (var4.renderYawOffset - var4.prevRenderYawOffset);
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));
@@ -64,7 +64,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
             var1.rotate(Vector3f.XP.rotationDegrees(var4.capeRotateX));
             var1.rotate(Vector3f.ZP.rotationDegrees(var4.capeRotateZ));
             var1.rotate(Vector3f.YP.rotationDegrees(var4.capeRotateY));
-            IVertexBuilder var30 = var2.method25597(RenderType.getEntitySolid(var4.getLocationCape()));
+            IVertexBuilder var30 = var2.method25597(RenderType.getEntitySolid(var4.method5372()));
             this.method825().renderCape(var1, var30, var3, OverlayTexture.NO_OVERLAY);
             var1.pop();
          }

@@ -114,10 +114,10 @@ public class Class8557 {
 
    public void method30522() {
       if (!Config.isShaders()) {
-         if (this.field38456.length == DefaultVertexFormats.BLOCK_SHADERS_SIZE) {
+         if (this.field38456.length == DefaultVertexFormats.field43339) {
             this.field38456 = method30524(this.field38456);
          }
-      } else if (this.field38456.length == DefaultVertexFormats.BLOCK_VANILLA_SIZE) {
+      } else if (this.field38456.length == DefaultVertexFormats.field43338) {
          this.field38456 = method30523(this.field38456);
       }
    }

@@ -22,15 +22,15 @@ public class Class8077 implements IAmbientSoundHandler {
             if (!(var3 < 0.001F)) {
                if (var3 < 0.01F) {
                   this.field34718 = 0;
-                  this.field34717.play(new Class6346(this.field34716, SoundEvents.field26332));
+                  this.field34717.method1000(new Class6346(this.field34716, SoundEvents.field26332));
                }
             } else {
                this.field34718 = 0;
-               this.field34717.play(new Class6346(this.field34716, SoundEvents.field26333));
+               this.field34717.method1000(new Class6346(this.field34716, SoundEvents.field26333));
             }
          } else {
             this.field34718 = 0;
-            this.field34717.play(new Class6346(this.field34716, SoundEvents.field26334));
+            this.field34717.method1000(new Class6346(this.field34716, SoundEvents.field26334));
          }
       }
    }

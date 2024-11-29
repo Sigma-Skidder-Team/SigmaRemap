@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.CancellableEvent;
+import com.mentalfrostbyte.jello.event.Event;
 
-public class EventFOV extends CancellableEvent {
+public class EventFOV implements Event {
     public float fovModifier;
 
     public EventFOV(float fovModifier) {

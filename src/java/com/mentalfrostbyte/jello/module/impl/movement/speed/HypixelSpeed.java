@@ -215,7 +215,7 @@ public class HypixelSpeed extends Module {
                 && !(mc.player.getPosY() < this.field23416)) {
             mc.player.positionVec.y = this.field23416;
             mc.player.lastTickPosY = this.field23416;
-            mc.player.chasingPosY = this.field23416;
+            mc.player.field4915 = this.field23416;
             mc.player.prevPosY = this.field23416;
             if (MovementUtils.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;

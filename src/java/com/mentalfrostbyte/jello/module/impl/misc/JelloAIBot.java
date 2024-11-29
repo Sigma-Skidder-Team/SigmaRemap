@@ -20,10 +20,10 @@ import java.util.List;
 
 public class JelloAIBot extends Module {
     public static Entity targetEntity;
-    public Vector3d targetPosition;
-    public Thread calculationThread;
-    public boolean isCalculating = false;
-    private List<Class9510> pathToTarget;
+    public Vector3d field23514;
+    public Thread field23515;
+    public boolean field23516 = false;
+    private List<Class9510> field23512;
 
     public JelloAIBot() {
         super(ModuleCategory.MISC, "JelloAIBot", "Experimental");
@@ -39,64 +39,61 @@ public class JelloAIBot extends Module {
     public void onDisable() {
         Client.getInstance().getModuleManager().getModuleByClass(FightBot.class).setEnabled(false);
         Client.getInstance().method19950().method31738();
-        this.calculationThread = null;
+        this.field23515 = null;
     }
 
-    public Entity findTarget() {
-        ArrayList<Entity> entities = Lists.newArrayList(mc.world.getAllEntities());
-        entities.remove(mc.player);
-        Iterator<Entity> iterator = entities.iterator();
+    public Entity method16193() {
+        ArrayList var3 = Lists.newArrayList(mc.world.getAllEntities());
+        var3.remove(mc.player);
+        Iterator var4 = var3.iterator();
 
-        while (iterator.hasNext()) {
-            Entity entity = iterator.next();
-            if (!(entity instanceof PlayerEntity) ||
-                    Client.getInstance().getCombatManager().isTargetABot(entity) ||
-                    !MultiUtilities.isAboveBounds(entity, 2.0F)) {
-                iterator.remove();
+        while (var4.hasNext()) {
+            Entity var5 = (Entity) var4.next();
+            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isTargetABot(var5) || !MultiUtilities.isAboveBounds(var5, 2.0F)) {
+                var4.remove();
             }
         }
 
-        List<Entity> visibleEntities = BlockUtil.getVisibleEntities(entities);
-        return visibleEntities.size() != 0 ? visibleEntities.get(0) : null;
+        List var6 = BlockUtil.getVisibleEntities(var3);
+        return var6.size() != 0 ? (Entity) var6.get(0) : null;
     }
 
-    public boolean isTargetFarEnough() {
-        return this.targetEntity == null || this.targetEntity.positionVec.method11341(this.targetPosition) > 6.0;
+    public boolean method16194() {
+        return this.targetEntity == null || this.targetEntity.positionVec.method11341(this.field23514) > 6.0;
     }
 
     @EventTarget
-    public void onTick(TickEvent event) {
+    public void method16195(TickEvent var1) {
         if (mc.player != null) {
             if (mc.player.ticksExisted % 14 == 0) {
-                Entity newTarget = this.findTarget();
-                if (this.calculationThread == null &&
-                        (this.pathToTarget == null || this.pathToTarget.isEmpty() ||
-                                (newTarget != this.targetEntity || this.isTargetFarEnough()) && newTarget != null)) {
-                    this.calculationThread = new Thread(() -> {
+                Entity var4 = this.method16193();
+                if (this.field23515 == null
+                        && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.targetEntity || this.method16194()) && var4 != null)) {
+                    this.field23515 = new Thread(() -> {
                         MultiUtilities.addChatMessage("calc");
-                        this.isCalculating = true;
+                        this.field23516 = true;
 
                         try {
-                            Class9823 pathCalculator = new Class9823();
-                            Class9510 playerPosition = new Class9510(new Class9110(mc.player.getPosition()));
-                            Class7860 targetPosition = new Class7860(this.targetEntity = newTarget);
-                            this.targetPosition = this.targetEntity.positionVec;
-                            Class7267 pathRequest = new Class7267(playerPosition, targetPosition);
-                            pathRequest.field31173 = true;
-                            pathRequest.field31176 = 310;
-                            pathRequest.field31170 = 20000;
-                            pathRequest.field31174 = true;
-                            pathRequest.field31175 = true;
-                            this.pathToTarget = pathCalculator.method38776(pathRequest);
-                            Client.getInstance().method19950().method31739(this.pathToTarget);
-                            this.calculationThread = null;
-                            MultiUtilities.addChatMessage("calc" + this.pathToTarget.size());
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            this.calculationThread = null;
+                            Class9823 var4x = new Class9823();
+                            Class9510 var5 = new Class9510(new Class9110(mc.player.getPosition()));
+                            Class7860 var6 = new Class7860(this.targetEntity = var4);
+                            this.field23514 = this.targetEntity.positionVec;
+                            Class7267 var7 = new Class7267(var5, var6);
+                            var7.field31173 = true;
+                            var7.field31176 = 310;
+                            var7.field31170 = 20000;
+                            var7.field31174 = true;
+                            var7.field31175 = true;
+                            this.field23512 = var4x.method38776(var7);
+                            Client.getInstance().method19950().method31739(this.field23512);
+                            this.field23515 = null;
+                            MultiUtilities.addChatMessage("calc" + this.field23512.size());
+                        } catch (Exception var8) {
+                            var8.printStackTrace();
+                            this.field23515 = null;
                         }
                     });
-                    this.calculationThread.start();
+                    this.field23515.start();
                 }
             }
         }

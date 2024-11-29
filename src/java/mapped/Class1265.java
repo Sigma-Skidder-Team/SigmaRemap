@@ -43,7 +43,7 @@ public class Class1265 extends AbstractGui {
    }
 
    private ITextComponent method5918(NetworkPlayerInfo var1, IFormattableTextComponent var2) {
-      return var1.getGameType() != GameType.SPECTATOR ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
+      return var1.method19967() != GameType.SPECTATOR ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
    }
 
    public void method5919(boolean var1) {
@@ -143,7 +143,7 @@ public class Class1265 extends AbstractGui {
                boolean var31 = var30 != null
                   && var30.method2962(Class2318.field15879)
                   && ("Dinnerbone".equals(var29.getName()) || "Grumm".equals(var29.getName()));
-               this.field6692.getTextureManager().bindTexture(var28.getLocationSkin());
+               this.field6692.getTextureManager().bindTexture(var28.method19973());
                int var32 = 8 + (!var31 ? 0 : 8);
                int var33 = 8 * (!var31 ? 1 : -1);
                AbstractGui.method5698(var1, var26, var27, 8, 8, 8.0F, (float)var32, 8, var33, 64, 64);
@@ -158,8 +158,8 @@ public class Class1265 extends AbstractGui {
 
             this.field6692
                .fontRenderer
-               .method38803(var1, this.method5917(var28), (float)var26, (float)var27, var28.getGameType() != GameType.SPECTATOR ? -1 : -1862270977);
-            if (var4 != null && var28.getGameType() != GameType.SPECTATOR) {
+               .method38803(var1, this.method5917(var28), (float)var26, (float)var27, var28.method19967() != GameType.SPECTATOR ? -1 : -1862270977);
+            if (var4 != null && var28.method19967() != GameType.SPECTATOR) {
                int var52 = var26 + var9 + 1;
                int var53 = var52 + var15;
                if (var53 - var52 > 5) {

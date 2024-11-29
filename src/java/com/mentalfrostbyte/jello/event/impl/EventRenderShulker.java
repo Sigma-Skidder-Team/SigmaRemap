@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.CancellableEvent;
+import com.mentalfrostbyte.jello.event.Event;
 
-public class EventRenderShulker extends CancellableEvent {
+public class EventRenderShulker implements Event {
 }

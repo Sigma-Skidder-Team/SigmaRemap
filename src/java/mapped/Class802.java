@@ -39,7 +39,7 @@ public class Class802 extends RealmsScreen {
    public void tick() {
       super.tick();
       if (--this.field4190 == 0) {
-         for (Widget var4 : this.buttons) {
+         for (Widget var4 : this.field4566) {
             var4.active = true;
          }
       }

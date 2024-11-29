@@ -39,7 +39,7 @@ public class Class6536 implements Class6515 {
       this.field28827 = 0;
    }
 
-   public void method19845(Class9189 var1) throws AACException {
+   public void method19845(Class9189 var1) throws Class2460 {
       int var4 = var1.method34394();
       Class6522 var5 = null;
       boolean var6 = true;
@@ -79,7 +79,7 @@ public class Class6536 implements Class6515 {
                this.method19846(var1);
                break;
             default:
-               throw new AACException("unsupported channel configuration for error resilience: " + this.field28824.method19733());
+               throw new Class2460("unsupported channel configuration for error resilience: " + this.field28824.method19733());
          }
       } else {
          int var7;
@@ -125,7 +125,7 @@ public class Class6536 implements Class6515 {
       this.field28827 = var1.method34394() - var4;
    }
 
-   private Class6522 method19846(Class9189 var1) throws AACException {
+   private Class6522 method19846(Class9189 var1) throws Class2460 {
       if (this.field28829[this.field28833] == null) {
          this.field28829[this.field28833] = new Class6523(this.field28824.method19741());
       }
@@ -135,7 +135,7 @@ public class Class6536 implements Class6515 {
       return this.field28829[this.field28833 - 1];
    }
 
-   private Class6522 method19847(Class9189 var1) throws AACException {
+   private Class6522 method19847(Class9189 var1) throws Class2460 {
       if (this.field28829[this.field28833] == null) {
          this.field28829[this.field28833] = new Class6527(this.field28824.method19741());
       }
@@ -145,7 +145,7 @@ public class Class6536 implements Class6515 {
       return this.field28829[this.field28833 - 1];
    }
 
-   private void method19848(Class9189 var1) throws AACException {
+   private void method19848(Class9189 var1) throws Class2460 {
       if (this.field28834 != 16) {
          if (this.field28830[this.field28834] == null) {
             this.field28830[this.field28834] = new Class6521(this.field28824.method19741());
@@ -154,11 +154,11 @@ public class Class6536 implements Class6515 {
          this.field28830[this.field28834].method19770(var1, this.field28824);
          this.field28834++;
       } else {
-         throw new AACException("too much CCE elements");
+         throw new Class2460("too much CCE elements");
       }
    }
 
-   private void method19849(Class9189 var1) throws AACException {
+   private void method19849(Class9189 var1) throws Class2460 {
       if (this.field28835 != 16) {
          if (this.field28831[this.field28835] == null) {
             this.field28831[this.field28835] = new Class6524();
@@ -167,18 +167,18 @@ public class Class6536 implements Class6515 {
          this.field28831[this.field28835].method19781(var1);
          this.field28835++;
       } else {
-         throw new AACException("too much CCE elements");
+         throw new Class2460("too much CCE elements");
       }
    }
 
-   private void method19850(Class9189 var1) throws AACException {
+   private void method19850(Class9189 var1) throws Class2460 {
       this.field28828.method19782(var1);
       this.field28824.method19745(this.field28828.method19784());
       this.field28824.method19747(this.field28828.method19785());
       this.field28824.method19734(Class188.method574(this.field28828.method19786()));
    }
 
-   private void method19851(Class9189 var1, Class6522 var2) throws AACException {
+   private void method19851(Class9189 var1, Class6522 var2) throws Class2460 {
       if (this.field28836 != 16) {
          if (this.field28832[this.field28836] == null) {
             this.field28832[this.field28836] = new Class6526(this.field28824.method19749());
@@ -193,11 +193,11 @@ public class Class6536 implements Class6515 {
             }
          }
       } else {
-         throw new AACException("too much FIL elements");
+         throw new Class2460("too much FIL elements");
       }
    }
 
-   public void method19852(Class6518 var1) throws AACException {
+   public void method19852(Class6518 var1) throws Class2460 {
       Class1955 var4 = this.field28824.method19744();
       Class2288 var5 = this.field28824.method19746();
       int var6 = this.field28824.method19733().method575();
@@ -234,7 +234,7 @@ public class Class6536 implements Class6515 {
       }
    }
 
-   private int method19853(Class6523 var1, Class6518 var2, int var3, Class1955 var4, Class2288 var5) throws AACException {
+   private int method19853(Class6523 var1, Class6518 var2, int var3, Class1955 var4, Class2288 var5) throws Class2460 {
       Class6512 var8 = var1.method19780();
       Class6538 var9 = var8.method19720();
       Class6537 var10 = var9.method19879();
@@ -282,7 +282,7 @@ public class Class6536 implements Class6515 {
       return var13;
    }
 
-   private void method19854(Class6527 var1, Class6518 var2, int var3, Class1955 var4, Class2288 var5) throws AACException {
+   private void method19854(Class6527 var1, Class6518 var2, int var3, Class1955 var4, Class2288 var5) throws Class2460 {
       Class6512 var8 = var1.method19792();
       Class6512 var9 = var1.method19793();
       Class6538 var10 = var8.method19720();
@@ -408,13 +408,13 @@ public class Class6536 implements Class6515 {
       }
    }
 
-   public void method19857(SampleBuffer var1) {
+   public void method19857(Class8210 var1) {
       boolean var4 = var1.method28530();
       int var5 = this.field28837.length;
       int var6 = this.field28825 && this.field28824.method19750() ? 2 : 1;
       int var7 = var6 * this.field28824.method19741();
       int var8 = var6 * this.field28824.method19746().method9033();
-      byte[] var9 = var1.getData();
+      byte[] var9 = var1.method28523();
       if (var9.length != var5 * var7 * 2) {
          var9 = new byte[var5 * var7 * 2];
       }

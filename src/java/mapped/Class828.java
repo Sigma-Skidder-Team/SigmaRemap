@@ -419,7 +419,7 @@ public class Class828 extends Screen {
       RenderSystem.disableTexture();
       RenderSystem.method27857();
       RenderSystem.logicOp(Class2270.field14769);
-      var5.begin(7, DefaultVertexFormats.POSITION);
+      var5.begin(7, DefaultVertexFormats.field43341);
 
       for (Class9518 var9 : var1) {
          int var10 = var9.method36780();

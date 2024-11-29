@@ -63,14 +63,14 @@ public class Class4253 extends Class4247 {
          (float)(this.xA + 25),
          (float)this.yA + (float)this.heightA / 2.0F - 17.5F,
          this.field20624.method21596(),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont12,
          (float)(this.xA + 25),
          (float)this.yA + (float)this.heightA / 2.0F + 7.5F,
          this.field20624.method21597(),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       this.field20628.setYA((int)((float)this.heightA / 2.0F - 7.5F));
       super.draw(var1);

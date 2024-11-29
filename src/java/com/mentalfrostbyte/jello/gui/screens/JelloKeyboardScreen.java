@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -145,7 +145,7 @@ public class JelloKeyboardScreen extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       RenderUtil.drawString(
@@ -153,7 +153,7 @@ public class JelloKeyboardScreen extends Screen {
          (float)((this.widthA - 1060) / 2),
          (float)((this.heightA - 357) / 2 - 90),
          "Keybind Manager",
-         ClientColors.LIGHT_GREYISH_BLUE.color
+         ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       super.draw(var1);
    }

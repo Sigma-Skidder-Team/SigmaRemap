@@ -8,7 +8,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.SoundCategory;
 
 public class Class5826 extends Container {
    private static String[] field25525;
@@ -142,7 +141,7 @@ public class Class5826 extends Container {
          Entity var3 = (Entity)this.field25526;
          this.field25526
             .method4753()
-            .method6745(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field25526.method4748(), SoundCategory.field14734, 1.0F, 1.0F, false);
+            .method6745(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field25526.method4748(), Class2266.field14734, 1.0F, 1.0F, false);
       }
    }
 

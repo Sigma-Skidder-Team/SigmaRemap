@@ -41,7 +41,7 @@ public class NetworkPlayerInfo {
    }
 
    @Nullable
-   public GameType getGameType() {
+   public GameType method19967() {
       return this.field29005;
    }
 
@@ -57,34 +57,34 @@ public class NetworkPlayerInfo {
       this.field29006 = var1;
    }
 
-   public boolean hasLocationSkin() {
-      return this.getLocationSkin() != null;
+   public boolean method19971() {
+      return this.method19973() != null;
    }
 
    public String method19972() {
       return this.field29008 != null ? this.field29008 : DefaultPlayerSkin.getSkinType(this.field29003.getId());
    }
 
-   public ResourceLocation getLocationSkin() {
+   public ResourceLocation method19973() {
       this.method19977();
       return (ResourceLocation)MoreObjects.firstNonNull(this.field29004.get(Type.SKIN), DefaultPlayerSkin.getDefaultSkin(this.field29003.getId()));
    }
 
    @Nullable
-   public ResourceLocation getLocationCape() {
+   public ResourceLocation method19974() {
       this.method19977();
       return this.field29004.get(Type.CAPE);
    }
 
    @Nullable
-   public ResourceLocation getLocationElytra() {
+   public ResourceLocation method19975() {
       this.method19977();
       return this.field29004.get(Type.ELYTRA);
    }
 
    @Nullable
    public ScorePlayerTeam method19976() {
-      return Minecraft.getInstance().world.method6805().getPlayersTeam(this.method19966().getName());
+      return Minecraft.getInstance().world.method6805().method20998(this.method19966().getName());
    }
 
    public void method19977() {

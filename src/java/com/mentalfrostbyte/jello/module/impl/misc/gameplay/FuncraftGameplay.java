@@ -9,7 +9,7 @@ import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChatPacket;
 
 public class FuncraftGameplay extends Module {
-    private GamePlay gameplayModule;
+    private GamePlay field23579;
 
     public FuncraftGameplay() {
         super(ModuleCategory.MISC, "Funcraft", "Gameplay for Funcraft");
@@ -17,22 +17,20 @@ public class FuncraftGameplay extends Module {
 
     @Override
     public void initialize() {
-        this.gameplayModule = (GamePlay) this.access();
+        this.field23579 = (GamePlay) this.access();
     }
 
     @EventTarget
-    private void onReceivePacket(ReceivePacketEvent event) {
+    private void method16295(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            IPacket packet = event.getPacket();
-            if (packet instanceof SChatPacket) {
-                SChatPacket chatPacket = (SChatPacket) packet;
-                String chatMessage = chatPacket.getChatComponent().getString();
-                String playerName = mc.player.getName().getString().toLowerCase();
-
-                if (this.gameplayModule.getBooleanValueFromSettingName("AutoL") &&
-                        (chatMessage.toLowerCase().contains("a été tué par " + playerName) ||
-                                chatMessage.toLowerCase().contains("a été tué par le vide et " + playerName))) {
-                    this.gameplayModule.method16761(chatMessage);
+            IPacket var4 = var1.getPacket();
+            if (var4 instanceof SChatPacket) {
+                SChatPacket var5 = (SChatPacket) var4;
+                String var6 = var5.getChatComponent().getString();
+                String var7 = mc.player.getName().getString().toLowerCase();
+                if (this.field23579.getBooleanValueFromSettingName("AutoL")
+                        && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {
+                    this.field23579.method16761(var6);
                 }
             }
         }

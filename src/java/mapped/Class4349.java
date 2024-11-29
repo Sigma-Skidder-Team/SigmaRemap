@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 
 import java.awt.image.BufferedImage;
 
@@ -20,7 +20,7 @@ public class Class4349 extends Class4278 {
    private float field21255 = 0.0F;
    private int field21256 = 0;
    private int field21257 = 0;
-   private int field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0F);
+   private int field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
    public Class4349(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -49,14 +49,14 @@ public class Class4349 extends Class4278 {
       this.method13225();
       this.field21252 = (float)((double)this.field21252 + (this.field21254 ? 0.2 : -0.2));
       this.field21252 = Math.min(1.0F, Math.max(0.0F, this.field21252));
-      this.field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 2.0F);
+      this.field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       if (this.field21254 || this.method13212() || this.method13298()) {
          RenderUtil.drawRect(
             (float)this.xA,
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.05F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.05F)
          );
       }
 
@@ -68,7 +68,7 @@ public class Class4349 extends Class4278 {
                (float)(this.xA + this.widthA),
                (float)(this.yA + this.heightA),
                2,
-               MultiUtilities.applyAlpha(ClientColors.MID_GREY.color, 0.5F)
+               MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F)
             );
          } else if (!this.method13298()) {
             if (this.field21254) {
@@ -78,7 +78,7 @@ public class Class4349 extends Class4278 {
                   (float)(this.xA + this.widthA),
                   (float)(this.yA + this.heightA),
                   2,
-                  MultiUtilities.applyAlpha(ClientColors.MID_GREY.color, 0.3F)
+                  MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.3F)
                );
             }
          } else {
@@ -88,7 +88,7 @@ public class Class4349 extends Class4278 {
                (float)(this.xA + this.widthA),
                (float)(this.yA + this.heightA),
                2,
-               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3F)
+               MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
          }
       } else {
@@ -98,7 +98,7 @@ public class Class4349 extends Class4278 {
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
             2,
-            MultiUtilities.applyAlpha(ClientColors.MID_GREY.color, 0.65F)
+            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.65F)
          );
       }
 
@@ -113,7 +113,7 @@ public class Class4349 extends Class4278 {
                18.0F * this.field21252 * (float)this.heightA / 100.0F,
                (float)(47 * this.heightA) / 100.0F,
                ResourceList.selectPNG,
-               !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.color : this.field21258
+               !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field21258
             );
          }
 
@@ -123,7 +123,7 @@ public class Class4349 extends Class4278 {
 
    public void method13583() {
       RenderUtil.method11450(
-         (float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.color, true
+         (float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
       );
       RenderUtil.method11464((float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       RenderUtil.drawImage(
@@ -132,7 +132,7 @@ public class Class4349 extends Class4278 {
          100.0F,
          100.0F,
          ResourceList.cerclePNG,
-         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.color : this.field21258
+         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field21258
       );
    }
 
@@ -142,26 +142,26 @@ public class Class4349 extends Class4278 {
          var3 = this.field21249.getEmail();
       }
 
-      RenderUtil.drawString(
+      RenderUtil.method11440(
          ResourceRegistry.DefaultClientFont,
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + 20),
          var3,
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4F),
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F),
          Class2218.field14492,
          Class2218.field14492
       );
-      RenderUtil.drawString(
+      RenderUtil.method11440(
          ResourceRegistry.DefaultClientFont,
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + 18),
          var3,
-         ClientColors.LIGHT_GREYISH_BLUE.color,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14492
       );
       if (!this.field21249.isEmailAValidEmailFormat()) {
-         RenderUtil.drawString(
+         RenderUtil.method11441(
             ResourceRegistry.DefaultClientFont,
             (float)(this.xA + this.widthA / 2),
             (float)(this.yA + 32),
@@ -172,12 +172,12 @@ public class Class4349 extends Class4278 {
             true
          );
       } else {
-         RenderUtil.drawString(
+         RenderUtil.method11441(
             ResourceRegistry.DefaultClientFont,
             (float)(this.xA + this.widthA / 2),
             (float)(this.yA + 29),
             "Cracked",
-            ClientColors.PALE_YELLOW.color,
+            ClientColors.PALE_YELLOW.getColor,
             Class2218.field14492,
             Class2218.field14489,
             true

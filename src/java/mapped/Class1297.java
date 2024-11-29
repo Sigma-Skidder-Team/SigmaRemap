@@ -44,9 +44,9 @@ public class Class1297 extends Class1293<Class1185> {
       this.field6866.clear();
 
       for (UUID var7 : var1) {
-         NetworkPlayerInfo var8 = this.field6865.player.connection.getPlayerInfo(var7);
+         NetworkPlayerInfo var8 = this.field6865.player.connection.method15792(var7);
          if (var8 != null) {
-            this.field6866.add(new Class1185(this.field6865, this.field6864, var8.method19966().getId(), var8.method19966().getName(), var8::getLocationSkin));
+            this.field6866.add(new Class1185(this.field6865, this.field6864, var8.method19966().getId(), var8.method19966().getName(), var8::method19973));
          }
       }
 
@@ -83,7 +83,7 @@ public class Class1297 extends Class1293<Class1185> {
 
       if ((var2 == Class2332.field15951 || this.field6865.func_244599_aA().func_244756_c(var5))
          && (Strings.isNullOrEmpty(this.field6867) || var1.method19966().getName().toLowerCase(Locale.ROOT).contains(this.field6867))) {
-         Class1185 var8 = new Class1185(this.field6865, this.field6864, var1.method19966().getId(), var1.method19966().getName(), var1::getLocationSkin);
+         Class1185 var8 = new Class1185(this.field6865, this.field6864, var1.method19966().getId(), var1.method19966().getName(), var1::method19973);
          this.method6030(var8);
          this.field6866.add(var8);
       }

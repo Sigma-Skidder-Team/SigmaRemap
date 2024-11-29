@@ -12,17 +12,17 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.TextureImpl;
+import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class BoxOutlineESP extends Module {
-    public int field23719 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8F);
+    public int field23719 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
 
     public BoxOutlineESP() {
         super(ModuleCategory.RENDER, "Box Outline", "Draws a line arround players");
-        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget
@@ -109,7 +109,7 @@ public class BoxOutlineESP extends Module {
                     if (var1) {
                         RenderUtil.renderWireframeBox(var17, 3.0F, MultiUtilities.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
-                        RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.color);
+                        RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }
 
                     GL11.glDisable(3042);
@@ -140,10 +140,10 @@ public class BoxOutlineESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.unbind();
+        TextureImpl.method36180();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
-        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        var10000.bindTexture(TextureManager.field1094);
         mc.gameRenderer.lightmapTexture.method7317();
     }
 }

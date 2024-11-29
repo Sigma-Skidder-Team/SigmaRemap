@@ -32,10 +32,10 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    private int field24117 = 0;
    private int field24118 = 0;
    private int field24119;
-   private VertexFormatElement field24120;
+   private Class8209 field24120;
    private int field24121;
    private int field24122;
-   private VertexFormat field24123;
+   private Class7831 field24123;
    private boolean field24124;
    private boolean field24125;
    private boolean field24126;
@@ -64,7 +64,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    public void method17055() {
-      this.method17056(this.field24123.getSize());
+      this.method17056(this.field24123.method26216());
    }
 
    private void method17056(int var1) {
@@ -111,7 +111,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       float[] var9 = new float[var8];
 
       for (int var10 = 0; var10 < var8; var10++) {
-         var9[var10] = method17061(var6, var1, var2, var3, this.field24123.method26215(), this.field24116 / 4 + var10 * this.field24123.getSize());
+         var9[var10] = method17061(var6, var1, var2, var3, this.field24123.method26215(), this.field24116 / 4 + var10 * this.field24123.method26216());
       }
 
       int[] var17 = new int[var8];
@@ -154,7 +154,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
 
       if (this.field24129 != null) {
          TextureAtlasSprite[] var19 = new TextureAtlasSprite[this.field24119 / 4];
-         int var20 = this.field24123.getSize() / 4 * 4;
+         int var20 = this.field24123.method26216() / 4 * 4;
 
          for (int var21 = 0; var21 < var17.length; var21++) {
             int var22 = var17[var21];
@@ -174,7 +174,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    public Class9244 method17060() {
       ((Buffer)this.field24113).limit(this.field24117);
       ((Buffer)this.field24113).position(this.field24116);
-      ByteBuffer var3 = ByteBuffer.allocate(this.field24119 * this.field24123.getSize());
+      ByteBuffer var3 = ByteBuffer.allocate(this.field24119 * this.field24123.method26216());
       var3.put(this.field24113);
       ((Buffer)this.field24113).clear();
       Object var4 = null;
@@ -214,10 +214,10 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       ((Buffer)this.field24113).position(this.field24116);
       this.field24113.put(Class9244.method34764(var1));
       ((Buffer)this.field24113).clear();
-      VertexFormat var5 = Class9244.method34765(var1);
+      Class7831 var5 = Class9244.method34765(var1);
       this.method17064(var5);
-      this.field24119 = var4 / var5.getSize();
-      this.field24117 = this.field24116 + this.field24119 * var5.getSize();
+      this.field24119 = var4 / var5.method26216();
+      this.field24117 = this.field24116 + this.field24119 * var5.method26216();
       if (Class9244.method34766(var1) == null) {
          if (this.field24129 != null) {
             this.field24130 = this.field24129;
@@ -238,12 +238,12 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       }
    }
 
-   public void begin(int var1, VertexFormat var2) {
+   public void begin(int var1, Class7831 var2) {
       if (!this.field24126) {
          this.field24126 = true;
          this.field24122 = var1;
          this.method17064(var2);
-         this.field24120 = (VertexFormatElement)var2.method26217().get(0);
+         this.field24120 = (Class8209)var2.method26217().get(0);
          this.field24121 = 0;
          ((Buffer)this.field24113).clear();
          if (Config.isShaders()) {
@@ -293,11 +293,11 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       return Class5426.super.tex(var1, var2);
    }
 
-   private void method17064(VertexFormat var1) {
+   private void method17064(Class7831 var1) {
       if (this.field24123 != var1) {
          this.field24123 = var1;
-         boolean var4 = var1 == DefaultVertexFormats.ENTITY;
-         boolean var5 = var1 == DefaultVertexFormats.BLOCK;
+         boolean var4 = var1 == DefaultVertexFormats.field43335;
+         boolean var5 = var1 == DefaultVertexFormats.field43334;
          this.field24124 = var4 || var5;
          this.field24125 = var4;
       }
@@ -307,7 +307,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       if (this.field24126) {
          this.field24126 = false;
          this.field24114.add(new Class9105(this.field24123, this.field24119, this.field24122));
-         this.field24116 = this.field24116 + this.field24119 * this.field24123.getSize();
+         this.field24116 = this.field24116 + this.field24119 * this.field24123.method26216();
          this.field24119 = 0;
          this.field24120 = null;
          this.field24121 = 0;
@@ -349,7 +349,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       ImmutableList var3 = this.field24123.method26217();
       this.field24121 = (this.field24121 + 1) % var3.size();
       this.field24117 = this.field24117 + this.field24120.method28519();
-      VertexFormatElement var4 = (VertexFormatElement)var3.get(this.field24121);
+      Class8209 var4 = (Class8209)var3.get(this.field24121);
       this.field24120 = var4;
       if (var4.method28517() == Class2142.field14022) {
          this.method17069();
@@ -413,7 +413,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
             this.method17066(var17 + 4, Class5426.method17094(var12));
             this.method17066(var17 + 5, Class5426.method17094(var13));
             this.method17066(var17 + 6, Class5426.method17094(var14));
-            this.field24117 = this.field24117 + this.field24123.getSize();
+            this.field24117 = this.field24117 + this.field24123.method26216();
             this.endVertex();
          }
       } else {
@@ -424,7 +424,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    public Pair<Class9105, ByteBuffer> method17070() {
       Class9105 var3 = this.field24114.get(this.field24115++);
       ((Buffer)this.field24113).position(this.field24118);
-      this.field24118 = this.field24118 + var3.method33952() * var3.method33951().getSize();
+      this.field24118 = this.field24118 + var3.method33952() * var3.method33951().method26216();
       ((Buffer)this.field24113).limit(this.field24118);
       if (this.field24115 == this.field24114.size() && this.field24119 == 0) {
          this.reset();
@@ -442,7 +442,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
             this.field24136 = GLAllocation.method22266(this.field24113.capacity() * 2);
          }
 
-         VertexFormat var5 = var3.method33951();
+         Class7831 var5 = var3.method33951();
          int var6 = var3.method33952();
          method17079(var4, var5, var6, this.field24136);
          int var7 = var6 * 6 / 4;
@@ -471,7 +471,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    @Override
-   public VertexFormatElement method17073() {
+   public Class8209 method17073() {
       if (this.field24120 != null) {
          return this.field24120;
       } else {
@@ -610,7 +610,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    private int method17078() {
-      return this.field24113.capacity() / this.field24123.getSize();
+      return this.field24113.capacity() / this.field24123.method26216();
    }
 
    @Override
@@ -629,8 +629,8 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       return this.field24127;
    }
 
-   private static void method17079(ByteBuffer var0, VertexFormat var1, int var2, ByteBuffer var3) {
-      int var6 = var1.getSize();
+   private static void method17079(ByteBuffer var0, Class7831 var1, int var2, ByteBuffer var3) {
+      int var6 = var1.method26216();
       int var7 = var0.limit();
       ((Buffer)var0).rewind();
       ((Buffer)var3).clear();
@@ -716,7 +716,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    public void method17087(float var1, float var2, float var3, int var4, int var5, int var6, int var7, float var8, float var9, int var10, int var11) {
-      if (this.field24123.getSize() == DefaultVertexFormats.POSITION_COLOR_TEX_LIGHTMAP.getSize()) {
+      if (this.field24123.method26216() == DefaultVertexFormats.field43347.method26216()) {
          this.method17068(0, var1);
          this.method17068(4, var2);
          this.method17068(8, var3);
@@ -728,7 +728,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
          this.method17068(20, var9);
          this.method17067(24, (short)var10);
          this.method17067(26, (short)var11);
-         this.field24117 = this.field24117 + this.field24123.getSize();
+         this.field24117 = this.field24117 + this.field24123.method26216();
          this.endVertex();
       } else {
          throw new IllegalStateException("Invalid text vertex format: " + this.field24123);
@@ -740,17 +740,17 @@ public class BufferBuilder extends Class5424 implements Class5426 {
          Class7698.method25383(this, var1);
       }
 
-      this.method17056(var1.limit() + this.field24123.getSize());
-      ((Buffer)this.field24113).position(this.field24119 * this.field24123.getSize());
+      this.method17056(var1.limit() + this.field24123.method26216());
+      ((Buffer)this.field24113).position(this.field24119 * this.field24123.method26216());
       this.field24113.put(var1);
-      this.field24119 = this.field24119 + var1.limit() / this.field24123.getSize();
+      this.field24119 = this.field24119 + var1.limit() / this.field24123.method26216();
       this.field24117 = this.field24117 + var1.limit();
       if (Config.isShaders()) {
          Class7698.method25384(this);
       }
    }
 
-   public VertexFormat method17089() {
+   public Class7831 method17089() {
       return this.field24123;
    }
 

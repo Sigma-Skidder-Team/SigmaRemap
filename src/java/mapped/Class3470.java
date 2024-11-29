@@ -7,7 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -38,12 +37,12 @@ public class Class3470 extends Class3468 {
 
    @Override
    public void method12154(IWorld var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26761, SoundCategory.field14732, 0.3F, 0.90000004F);
+      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26761, Class2266.field14732, 0.3F, 0.90000004F);
    }
 
    @Override
    public void method12155(IWorld var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26760, SoundCategory.field14732, 0.3F, 0.75F);
+      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26760, Class2266.field14732, 0.3F, 0.75F);
    }
 
    @Override

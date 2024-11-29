@@ -6,8 +6,6 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
-import com.mentalfrostbyte.jello.target.sorters.AngleSorter;
-import com.mentalfrostbyte.jello.target.sorters.ArmorSorter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
@@ -49,7 +47,7 @@ public class InteractAutoBlock {
 
    public void block(Entity var1, float var2, float var3) {
       if (this.parent.getBooleanValueFromSettingName("Interact autoblock")) {
-         EntityRayTraceResult var6 = MultiUtilities.raytrace(
+         EntityRayTraceResult var6 = MultiUtilities.method17714(
             !this.parent.getBooleanValueFromSettingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {

@@ -4,6 +4,10 @@ package mapped;
 public abstract class Class7620 {
    public String field32682;
 
+   public Class7620(String var1) {
+      this.field32682 = var1;
+   }
+
    public Class7620() {
    }
 

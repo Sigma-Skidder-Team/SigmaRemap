@@ -1,7 +1,7 @@
 package mapped;
 
 public class ExpirationTimer {
-   private long expirationTime;
+    private long expirationTime;
 
    public ExpirationTimer(long duration) {
       this.expirationTime = System.currentTimeMillis() + duration;

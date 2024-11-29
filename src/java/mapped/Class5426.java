@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.util.math.MathHelper;
 
 public interface Class5426 extends IVertexBuilder {
-   VertexFormatElement method17073();
+   Class8209 method17073();
 
    void method17069();
 
@@ -28,7 +28,7 @@ public interface Class5426 extends IVertexBuilder {
 
    @Override
    default IVertexBuilder color(int var1, int var2, int var3, int var4) {
-      VertexFormatElement var7 = this.method17073();
+      Class8209 var7 = this.method17073();
       if (var7.method28517() == Class2142.field14020) {
          if (var7.method28516() == Class2061.field13431) {
             this.method17066(0, (byte)var1);
@@ -47,7 +47,7 @@ public interface Class5426 extends IVertexBuilder {
 
    @Override
    default IVertexBuilder tex(float var1, float var2) {
-      VertexFormatElement var5 = this.method17073();
+      Class8209 var5 = this.method17073();
       if (var5.method28517() == Class2142.field14021 && var5.method28518() == 0) {
          if (var5.method28516() == Class2061.field13430) {
             this.method17068(0, var1);
@@ -73,7 +73,7 @@ public interface Class5426 extends IVertexBuilder {
    }
 
    default IVertexBuilder method17093(short var1, short var2, int var3) {
-      VertexFormatElement var6 = this.method17073();
+      Class8209 var6 = this.method17073();
       if (var6.method28517() != Class2142.field14021 || var6.method28518() != var3) {
          return this;
       } else if (var6.method28516() == Class2061.field13434) {
@@ -88,7 +88,7 @@ public interface Class5426 extends IVertexBuilder {
 
    @Override
    default IVertexBuilder method17030(float var1, float var2, float var3) {
-      VertexFormatElement var6 = this.method17073();
+      Class8209 var6 = this.method17073();
       if (var6.method28517() == Class2142.field14019) {
          if (var6.method28516() == Class2061.field13432) {
             this.method17066(0, method17094(var1));

@@ -143,7 +143,7 @@ public class CubecraftSpeed extends Module {
 
             mc.player.positionVec.y = this.field23620;
             mc.player.lastTickPosY = this.field23620;
-            mc.player.chasingPosY = this.field23620;
+            mc.player.field4915 = this.field23620;
             mc.player.prevPosY = this.field23620;
             if (MovementUtils.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;

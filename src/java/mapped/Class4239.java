@@ -1,6 +1,6 @@
 package mapped;
 
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
@@ -9,7 +9,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
    public float field20581;
    public boolean field20582 = false;
 
-   public Class4239(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
+   public Class4239(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
    }
 
@@ -54,7 +54,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
          MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
       );
       if (this.getTypedText() != null) {
-         RenderUtil.drawString(
+         RenderUtil.method11440(
             this.getFont(),
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),

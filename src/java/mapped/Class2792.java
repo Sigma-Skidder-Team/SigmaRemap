@@ -30,7 +30,7 @@ public class Class2792 {
    }
 
    private static void method10990(String var0) throws Exception {
-      SampleBuffer var3 = new SampleBuffer();
+      Class8210 var3 = new Class8210();
       SourceDataLine var4 = null;
 
       try {
@@ -58,11 +58,11 @@ public class Class2792 {
 
          Class9120 var11 = new Class9120(var9);
          AudioFormat var12 = new AudioFormat((float)var11.method34015(), 16, var11.method34016(), true, true);
-         Decoder var13 = new Decoder(var11.method34012());
+         Class6542 var13 = new Class6542(var11.method34012());
 
          while (true) {
             byte[] var14 = var11.method34013();
-            var13.decodeFrame(var14, var3);
+            var13.method19888(var14, var3);
             if (var4 != null && method10991(var4.getFormat(), var3)) {
                var4.stop();
                var4.close();
@@ -76,7 +76,7 @@ public class Class2792 {
                var4.start();
             }
 
-            var14 = var3.getData();
+            var14 = var3.method28523();
             var4.write(var14, 0, var14.length);
          }
       } finally {
@@ -87,7 +87,7 @@ public class Class2792 {
       }
    }
 
-   private static boolean method10991(AudioFormat var0, SampleBuffer var1) {
+   private static boolean method10991(AudioFormat var0, Class8210 var1) {
       return var0.getSampleRate() != (float)var1.method28524()
          || var0.getChannels() != var1.method28525()
          || var0.getSampleSizeInBits() != var1.method28526()

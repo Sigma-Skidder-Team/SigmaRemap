@@ -176,7 +176,7 @@ public class MultiplayerScreen extends Screen {
       if (!var1) {
          this.mc.displayGuiScreen(this);
       } else {
-         this.connectToServer(this.selectedServer);
+         this.method6237(this.selectedServer);
       }
    }
 
@@ -218,15 +218,20 @@ public class MultiplayerScreen extends Screen {
       if (!(var3 instanceof ServerSelectionList.NormalEntry)) {
          if (var3 instanceof Class1158) {
             Class9162 var4 = ((Class1158)var3).method5555();
-            this.connectToServer(new ServerData(var4.method34207(), var4.method34208(), true));
+            this.method6237(new ServerData(var4.method34207(), var4.method34208(), true));
          }
       } else {
-         this.connectToServer(((ServerSelectionList.NormalEntry)var3).getServerData());
+         this.method6237(((ServerSelectionList.NormalEntry)var3).getServerData());
       }
    }
 
-   private void connectToServer(ServerData server) {
-      this.mc.displayGuiScreen(new ConnectingScreen(this, this.mc, server));
+   private void method6237(ServerData var1) {
+    /*  if (var1.field33189 != null && var1.field33189.contains("hypixel.net") && Class8005.method27372().method18582() < Class5989.field26155.method18582()) {
+         Class8005.field34417 = Class5989.field26155;
+      }*/
+
+      MultiUtilities.method17746(var1);
+      this.mc.displayGuiScreen(new ConnectingScreen(this, this.mc, var1));
    }
 
    public void method6238(ServerSelectionList.Entry var1) {

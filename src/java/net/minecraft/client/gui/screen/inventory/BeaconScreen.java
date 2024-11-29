@@ -101,7 +101,7 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
       drawCenteredString(var1, this.font, field4842, 62, 10, 14737632);
       drawCenteredString(var1, this.font, field4843, 169, 10, 14737632);
 
-      for (Widget var7 : this.buttons) {
+      for (Widget var7 : this.field4566) {
          if (var7.isHovered()) {
             var7.renderToolTip(var1, var2 - this.field4734, var3 - this.field4735);
             break;
@@ -116,13 +116,13 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
       int var7 = (this.width - this.xSize) / 2;
       int var8 = (this.height - this.ySize) / 2;
       this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
-      this.field4563.zLevel = 100.0F;
+      this.field4563.field847 = 100.0F;
       this.field4563.method793(new ItemStack(Items.field37803), var7 + 20, var8 + 109);
       this.field4563.method793(new ItemStack(Items.EMERALD), var7 + 41, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field37800), var7 + 41 + 22, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field37802), var7 + 42 + 44, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field37801), var7 + 42 + 66, var8 + 109);
-      this.field4563.zLevel = 0.0F;
+      this.field4563.field847 = 0.0F;
    }
 
    @Override
@@ -199,7 +199,7 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
 
    // $VF: synthetic method
    public static List method2714(BeaconScreen var0) {
-      return var0.buttons;
+      return var0.field4566;
    }
 
    // $VF: synthetic method

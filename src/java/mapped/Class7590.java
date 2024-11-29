@@ -6,9 +6,8 @@ import java.util.Properties;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.newdawn.slick.util.Log;
-import org.newdawn.slick.util.ResourceLoader;
-import org.newdawn.slick.Color;
+import lol.Log;
+import lol.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -41,7 +40,7 @@ public class Class7590 {
             Element var10 = var9.getDocumentElement();
             var2 = var10;
          } catch (Exception var27) {
-            Log.error(var27);
+            Log.method25661(var27);
             throw new Class2451("Unable to load or parse sourced tileset: " + this.field32577.field43984 + "/" + var6);
          }
       }

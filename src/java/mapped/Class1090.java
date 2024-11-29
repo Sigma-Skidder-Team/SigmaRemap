@@ -224,7 +224,7 @@ public class Class1090 extends Class1018 {
 
    @Override
    public boolean method4266(IWorldReader var1) {
-      if (var1.checkNoEntityCollision(this) && !var1.containsAnyLiquid(this.getBoundingBox())) {
+      if (var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox())) {
          BlockPos var4 = this.getPosition();
          if (var4.getY() < var1.getSeaLevel()) {
             return false;

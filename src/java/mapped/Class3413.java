@@ -11,8 +11,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.pathfinding.PathType;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -20,7 +18,6 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.BannerTileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -75,7 +72,7 @@ public class Class3413 extends Block {
          if (var11 != Items.WATER_BUCKET) {
             if (var11 != Items.BUCKET) {
                if (var11 != Items.field37972) {
-                  if (var11 == Items.field37971 && PotionUtils.method38185(var9) == Potions.WATER) {
+                  if (var11 == Items.field37971 && Class9741.method38185(var9) == Class8137.field34977) {
                      if (var10 < 3 && !var2.isRemote) {
                         if (!var4.abilities.isCreativeMode) {
                            ItemStack var17 = new ItemStack(Items.field37972);
@@ -86,7 +83,7 @@ public class Class3413 extends Block {
                            }
                         }
 
-                        var2.method6742((PlayerEntity)null, var3, SoundEvents.field26417, SoundCategory.field14732, 1.0F, 1.0F);
+                        var2.method6742((PlayerEntity)null, var3, SoundEvents.field26417, Class2266.field14732, 1.0F, 1.0F);
                         this.method12051(var2, var3, var1, var10 + 1);
                      }
 
@@ -149,7 +146,7 @@ public class Class3413 extends Block {
                } else {
                   if (var10 > 0 && !var2.isRemote) {
                      if (!var4.abilities.isCreativeMode) {
-                        ItemStack var12 = PotionUtils.addPotionToItemStack(new ItemStack(Items.field37971), Potions.WATER);
+                        ItemStack var12 = Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977);
                         var4.method2911(Stats.field40143);
                         var9.shrink(1);
                         if (!var9.isEmpty()) {
@@ -165,7 +162,7 @@ public class Class3413 extends Block {
                         }
                      }
 
-                     var2.method6742((PlayerEntity)null, var3, SoundEvents.field26418, SoundCategory.field14732, 1.0F, 1.0F);
+                     var2.method6742((PlayerEntity)null, var3, SoundEvents.field26418, Class2266.field14732, 1.0F, 1.0F);
                      this.method12051(var2, var3, var1, var10 - 1);
                   }
 
@@ -186,7 +183,7 @@ public class Class3413 extends Block {
 
                   var4.method2911(Stats.field40143);
                   this.method12051(var2, var3, var1, 0);
-                  var2.method6742((PlayerEntity)null, var3, SoundEvents.field26429, SoundCategory.field14732, 1.0F, 1.0F);
+                  var2.method6742((PlayerEntity)null, var3, SoundEvents.field26429, Class2266.field14732, 1.0F, 1.0F);
                }
 
                return ActionResultType.method9002(var2.isRemote);
@@ -199,7 +196,7 @@ public class Class3413 extends Block {
 
                var4.method2911(Stats.field40142);
                this.method12051(var2, var3, var1, 3);
-               var2.method6742((PlayerEntity)null, var3, SoundEvents.field26426, SoundCategory.field14732, 1.0F, 1.0F);
+               var2.method6742((PlayerEntity)null, var3, SoundEvents.field26426, Class2266.field14732, 1.0F, 1.0F);
             }
 
             return ActionResultType.method9002(var2.isRemote);

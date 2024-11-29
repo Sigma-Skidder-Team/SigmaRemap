@@ -42,7 +42,7 @@ public class Class129 extends Class128 {
             var7 = var6.getCompound("BlockStateTag");
          }
 
-         this.field444.stream().filter(var5::hasProperty).forEach(var2x -> var7.putString(var2x.getName(), method374(var5, (Property<?>)var2x)));
+         this.field444.stream().filter(var5::method23462).forEach(var2x -> var7.putString(var2x.getName(), method374(var5, (Property<?>)var2x)));
       }
 
       return var1;

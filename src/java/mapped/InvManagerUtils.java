@@ -11,7 +11,6 @@ import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.*;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.PotionUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -215,7 +214,7 @@ public class InvManagerUtils {
                if (!(var3 instanceof Class3271)) {
                   if (!(var3 instanceof ToolItem)) {
                      if (!(var3 instanceof BowItem)) {
-                        if (!(var3 instanceof PotionItem)) {
+                        if (!(var3 instanceof Class3323)) {
                            if (!(var3 instanceof BlockItem)) {
                               if (var0.method32184() && var0.getItem().method11745() == Class8672.field39078) {
                                  return 1.0F;
@@ -292,7 +291,7 @@ public class InvManagerUtils {
 
    public static List<EffectInstance> getPotionEffects(ItemStack var0) {
       if (var0 != null) {
-         return var0.getItem() instanceof PotionItem ? PotionUtils.method38176(var0) : null;
+         return var0.getItem() instanceof Class3323 ? Class9741.method38176(var0) : null;
       } else {
          return null;
       }
@@ -362,7 +361,7 @@ public class InvManagerUtils {
    }
 
    public static boolean method25874(ItemStack var0) {
-      if (var0 != null && var0.getItem() instanceof PotionItem) {
+      if (var0 != null && var0.getItem() instanceof Class3323) {
          for (EffectInstance var4 : getPotionEffects(var0)) {
             if (var4.getPotion() == Effects.POISON
                || var4.getPotion() == Effects.INSTANT_DAMAGE

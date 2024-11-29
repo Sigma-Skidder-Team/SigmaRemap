@@ -40,7 +40,7 @@ public class Class3365 extends Class3241 {
          && var4.method3367()
          && VoxelShapes.compare(
             VoxelShapes.create(var4.getBoundingBox().offset((double)(-var3.getX()), (double)(-var3.getY()), (double)(-var3.getZ()))),
-            var1.getShape(var2, var3),
+            var1.method23412(var2, var3),
             IBooleanFunction.AND
          )) {
          RegistryKey var7 = var2.getDimensionKey() != World.THE_END ? World.THE_END : World.OVERWORLD;

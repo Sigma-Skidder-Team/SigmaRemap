@@ -43,7 +43,7 @@ public class Class4296 extends Class4278 {
          int var7 = 14;
 
          for (Ban var9 : var11) {
-            if (var9.method31736() != null && var9.method31736().getBase64EncodedIconData() != null) {
+            if (var9.method31736() != null && var9.method31736().method25580() != null) {
                Class4348 var10 = new Class4348(
                   this, ((Ban)var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.widthA - 90, var14, var9
                );
@@ -75,11 +75,11 @@ public class Class4296 extends Class4278 {
       }
 
       if (this.field20813 != null) {
-         int var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2F);
-         int var7 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.7F);
+         int var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F);
+         int var7 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F);
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont36,
-            (float)(this.xA + (this.widthA - ResourceRegistry.JelloLightFont36.getWidth(this.field20813.getKnownName())) / 2),
+            (float)(this.xA + (this.widthA - ResourceRegistry.JelloLightFont36.getStringWidth(this.field20813.getKnownName())) / 2),
             (float)this.yA,
             this.field20813.getKnownName(),
             var7

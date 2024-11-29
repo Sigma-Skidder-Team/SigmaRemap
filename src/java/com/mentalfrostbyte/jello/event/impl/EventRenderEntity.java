@@ -1,10 +1,9 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.CancellableEvent;
 import mapped.RenderState;
 import net.minecraft.entity.LivingEntity;
 
-public class EventRenderEntity extends CancellableEvent {
+public class EventRenderEntity extends Class4406 {
     private float field21527;
     private float field21528;
     private float field21529;

@@ -132,7 +132,7 @@ public class EventManager {
         this.eventHandlers.values().removeIf(handlers -> handlers.length == 0);
     }
 
-    public void call(CancellableEvent event) {
+    public void call(Event event) {
         if (event != null) {
             MethodWrapper[] handlers = this.eventHandlers.get(event.getClass());
             if (handlers != null) {

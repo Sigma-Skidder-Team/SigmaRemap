@@ -8,7 +8,10 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -107,7 +110,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
    }
 
    public void method11520(PlayerEntity var1, IWorld var2, BlockPos var3, boolean var4) {
-      var2.method6742(!var4 ? null : var1, var3, this.getSoundEvent(var4), SoundCategory.field14732, 0.3F, !var4 ? 0.5F : 0.6F);
+      var2.method6742(!var4 ? null : var1, var3, this.getSoundEvent(var4), Class2266.field14732, 0.3F, !var4 ? 0.5F : 0.6F);
    }
 
    public abstract SoundEvent getSoundEvent(boolean var1);
@@ -159,7 +162,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
    }
 
    private void method11524(BlockState var1, World var2, BlockPos var3) {
-      List var6 = var2.<AbstractArrowEntity>getEntitiesWithinAABB(AbstractArrowEntity.class, var1.getShape(var2, var3).getBoundingBox().method19668(var3));
+      List var6 = var2.<AbstractArrowEntity>getEntitiesWithinAABB(AbstractArrowEntity.class, var1.method23412(var2, var3).getBoundingBox().method19668(var3));
       boolean var7 = !var6.isEmpty();
       boolean var8 = var1.<Boolean>get(field18510);
       if (var7 != var8) {

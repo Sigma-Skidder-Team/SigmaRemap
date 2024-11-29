@@ -1,7 +1,6 @@
 package mapped;
 
-import org.newdawn.slick.util.Log;
-import org.newdawn.slick.Color;
+import lol.Log;
 
 import java.util.ArrayList;
 
@@ -102,7 +101,7 @@ public class Class7389 implements Renderable {
          this.field31629.add(new Class8385(this, var1, var2, var3));
          this.field31630 = 0;
       } else {
-         Log.error("Invalid duration: " + var1);
+         Log.method25662("Invalid duration: " + var1);
          throw new RuntimeException("Invalid duration: " + var1);
       }
    }
@@ -165,7 +164,7 @@ public class Class7389 implements Renderable {
          this.field31629.add(new Class8385(this, var1, var2));
          this.field31630 = 0;
       } else {
-         Log.error("Invalid duration: " + var2);
+         Log.method25662("Invalid duration: " + var2);
          throw new RuntimeException("Invalid duration: " + var2);
       }
    }
@@ -184,7 +183,7 @@ public class Class7389 implements Renderable {
    }
 
    public void method23536(float var1, float var2, float var3, float var4) {
-      this.method23539(var1, var2, var3, var4, Color.white);
+      this.method23539(var1, var2, var3, var4, Color.field16442);
    }
 
    public void method23539(float var1, float var2, float var3, float var4, Color var5) {
@@ -234,7 +233,7 @@ public class Class7389 implements Renderable {
    }
 
    public void method23584(float var1, float var2, float var3, float var4) {
-      this.method23585(var1, var2, var3, var4, Color.white);
+      this.method23585(var1, var2, var3, var4, Color.field16442);
    }
 
    public void method23585(float var1, float var2, float var3, float var4, Color var5) {

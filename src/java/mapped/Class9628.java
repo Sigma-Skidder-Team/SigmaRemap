@@ -1,13 +1,11 @@
 package mapped;
 
-import org.newdawn.slick.Color;
-
 public class Class9628 {
    private static String[] field45037;
    private Image field45038;
    private int field45039;
    private int field45040;
-   private Color field45041 = Color.white;
+   private Color field45041 = Color.field16442;
    private float field45042;
    private float field45043;
 

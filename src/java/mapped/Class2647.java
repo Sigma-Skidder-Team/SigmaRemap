@@ -37,7 +37,7 @@ public class Class2647 extends Class2595 {
             if (var5.isAlive()) {
                this.field16993 = this.field16990.method4230().method21652(var5, 0);
                return this.field16993 == null
-                  ? this.method10859(var5) >= this.field16990.getDistanceSq(var5.getPosX(), var5.getPosY(), var5.getPosZ())
+                  ? this.method10859(var5) >= this.field16990.getDistanceNearest(var5.getPosX(), var5.getPosY(), var5.getPosZ())
                   : true;
             } else {
                return false;
@@ -89,13 +89,13 @@ public class Class2647 extends Class2595 {
    public void method10805() {
       LivingEntity var3 = this.field16990.method4232();
       this.field16990.method4227().method28040(var3, 30.0F, 30.0F);
-      double var4 = this.field16990.getDistanceSq(var3.getPosX(), var3.getPosY(), var3.getPosZ());
+      double var4 = this.field16990.getDistanceNearest(var3.getPosX(), var3.getPosY(), var3.getPosZ());
       this.field16997 = Math.max(this.field16997 - 1, 0);
       if ((this.field16992 || this.field16990.method4231().method35460(var3))
          && this.field16997 <= 0
          && (
             this.field16994 == 0.0 && this.field16995 == 0.0 && this.field16996 == 0.0
-               || var3.getDistanceSq(this.field16994, this.field16995, this.field16996) >= 1.0
+               || var3.getDistanceNearest(this.field16994, this.field16995, this.field16996) >= 1.0
                || this.field16990.getRNG().nextFloat() < 0.05F
          )) {
          this.field16994 = var3.getPosX();

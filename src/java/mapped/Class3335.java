@@ -5,7 +5,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
@@ -25,7 +24,7 @@ public class Class3335 extends Item {
          var2.getPosY(),
          var2.getPosZ(),
          SoundEvents.field26555,
-         SoundCategory.field14734,
+         Class2266.field14734,
          0.5F,
          0.4F / (field18735.nextFloat() * 0.4F + 0.8F)
       );

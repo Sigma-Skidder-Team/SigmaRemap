@@ -14,7 +14,7 @@ public class Class8156 {
    private static final Pattern field35100 = Pattern.compile("[a-zA-Z0-9_]+");
 
    public static void method28291(AbstractClientPlayerEntity var0) {
-      String var3 = var0.getNameClear();
+      String var3 = var0.method5379();
       if (var3 != null && !var3.isEmpty() && !var3.contains("\u0000") && field35100.matcher(var3).matches()) {
          String var4 = "http://s.optifine.net/capes/" + var3 + ".png";
          ResourceLocation var5 = new ResourceLocation("capeof/" + var3);
@@ -24,10 +24,10 @@ public class Class8156 {
             DownloadingTexture var8 = (DownloadingTexture)var7;
             if (var8.field1147 != null) {
                if (var8.field1147) {
-                  var0.setLocationOfCape(var5);
+                  var0.method5381(var5);
                   if (var8.method1156() instanceof Class1458) {
                      Class1458 var12 = (Class1458)var8.method1156();
-                     var0.setElytraOfCape(var12.method6463());
+                     var0.method5383(var12.method6463());
                   }
                }
 
@@ -63,7 +63,7 @@ public class Class8156 {
    }
 
    public static void method28294(AbstractClientPlayerEntity var0) {
-      String var3 = var0.getNameClear();
+      String var3 = var0.method5379();
       ResourceLocation var4 = new ResourceLocation("capeof/" + var3);
       TextureManager var5 = Config.method26861();
       Texture var6 = var5.getTexture(var4);
@@ -73,8 +73,8 @@ public class Class8156 {
          var5.method1081(var4);
       }
 
-      var0.setLocationOfCape((ResourceLocation)null);
-      var0.setElytraOfCape(false);
+      var0.method5381((ResourceLocation)null);
+      var0.method5383(false);
       method28291(var0);
    }
 }

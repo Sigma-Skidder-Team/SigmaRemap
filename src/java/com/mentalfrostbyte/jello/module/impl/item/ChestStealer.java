@@ -93,11 +93,11 @@ public class ChestStealer extends Module {
                     if (!this.field23621
                             && (
                             this.field23625 == null
-                                    || mc.player.getDistanceSq(var9, var10, var11)
-                                    > mc.player.getDistanceSq(var9, var10, var11)
+                                    || mc.player.getDistanceNearest(var9, var10, var11)
+                                    > mc.player.getDistanceNearest(var9, var10, var11)
                     )
                             && !var8
-                            && Math.sqrt(mc.player.getDistanceSq(var9, var10, var11)) < 5.0
+                            && Math.sqrt(mc.player.getDistanceNearest(var9, var10, var11)) < 5.0
                             && this.field23624.getElapsedTime() > 1000L
                             && mc.currentScreen == null) {
                         BlockRayTraceResult var12 = (BlockRayTraceResult) BlockUtil.method34570(var7.getPos());
@@ -291,7 +291,7 @@ public class ChestStealer extends Module {
             } else if (!(var4 instanceof Class3265)) {
                 if (var4 instanceof HoeItem) {
                     return !InvManager.isHoe(var1);
-                } else if (!(var4 instanceof PotionItem)) {
+                } else if (!(var4 instanceof Class3323)) {
                     if (var4 instanceof BlockItem) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
@@ -328,7 +328,7 @@ public class ChestStealer extends Module {
                                             Items.field37906
                                     )
                             );
-                            return var1 == null || var5.contains(var4) || var4.getName().getString().toLowerCase().contains("seed");
+                            return var1 == null || var5.contains(var4) || var4.method11717().getString().toLowerCase().contains("seed");
                         }
                     } else {
                         return true;

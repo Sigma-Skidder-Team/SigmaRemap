@@ -171,7 +171,7 @@ public class VeltPvPFly extends Module {
             double var4 = this.field23421;
             mc.player.positionVec.y = var4;
             mc.player.lastTickPosY = var4;
-            mc.player.chasingPosY = var4;
+            mc.player.field4915 = var4;
             mc.player.prevPosY = var4;
         }
     }

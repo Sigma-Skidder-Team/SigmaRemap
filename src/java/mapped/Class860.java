@@ -89,8 +89,8 @@ public abstract class Class860<T extends Container> extends ContainerScreen<T> {
 
       for (EffectInstance var9 : var4) {
          String var10 = I18n.format(var9.getPotion().getName());
-         if (var9.getAmplifier() >= 1 && var9.getAmplifier() <= 9) {
-            var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.getAmplifier() + 1));
+         if (var9.method8629() >= 1 && var9.method8629() <= 9) {
+            var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.method8629() + 1));
          }
 
          this.font.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);

@@ -19,7 +19,7 @@ public class Class8836 {
    private Class8697 field39911 = null;
    private IntBuffer field39912 = Config.method26984(this.field39907);
    private IntBuffer field39913 = Config.method26984(this.field39907);
-   private final int field39914 = DefaultVertexFormats.BLOCK.getSize();
+   private final int field39914 = DefaultVertexFormats.field43334.method26216();
    private int field39915 = 7;
    private boolean field39916 = Config.isShaders();
 
@@ -210,7 +210,7 @@ public class Class8836 {
 
    public void method31986() {
       this.method31984();
-      DefaultVertexFormats.BLOCK.method26218(0L);
+      DefaultVertexFormats.field43334.method26218(0L);
       if (this.field39916) {
          ShadersRender.method17166();
       }

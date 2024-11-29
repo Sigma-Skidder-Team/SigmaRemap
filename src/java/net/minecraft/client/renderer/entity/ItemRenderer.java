@@ -40,7 +40,7 @@ import java.util.Set;
 public class ItemRenderer implements IResourceManagerReloadListener {
    public static final ResourceLocation field845 = new ResourceLocation("textures/misc/enchanted_item_glint.png");
    private static final Set<Item> field846 = Sets.newHashSet(new Item[]{Items.AIR});
-   public float zLevel;
+   public float field847;
    private final Class8400 field848;
    private final TextureManager field849;
    private final ItemColors field850;
@@ -293,7 +293,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public void renderItemIntoGUI(ItemStack var1, int var2, int var3) {
+   public void method791(ItemStack var1, int var2, int var3) {
       this.method792(var1, var2, var3, this.method788(var1, (World)null, (LivingEntity)null));
    }
 
@@ -306,9 +306,9 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       RenderSystem.enableAlphaTest();
       RenderSystem.method27939();
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.zLevel);
+      RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.field847);
       RenderSystem.translatef(8.0F, 8.0F, 0.0F);
       RenderSystem.scalef(1.0F, -1.0F, 1.0F);
       RenderSystem.scalef(16.0F, 16.0F, 16.0F);
@@ -346,7 +346,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
 
    private void method796(LivingEntity var1, ItemStack var2, int var3, int var4) {
       if (!var2.isEmpty()) {
-         this.zLevel += 50.0F;
+         this.field847 += 50.0F;
 
          try {
             this.method792(var2, var3, var4, this.method788(var2, (World)null, var1));
@@ -361,7 +361,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             throw new ReportedException(var8);
          }
 
-         this.zLevel -= 50.0F;
+         this.field847 -= 50.0F;
       }
    }
 
@@ -374,7 +374,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          MatrixStack var8 = new MatrixStack();
          if (var2.getCount() != 1 || var5 != null) {
             String var9 = var5 != null ? var5 : String.valueOf(var2.getCount());
-            var8.translate(0.0, 0.0, (double)(this.zLevel + 200.0F));
+            var8.translate(0.0, 0.0, (double)(this.field847 + 200.0F));
             Class7735 var10 = Class7733.method25595(Tessellator.getInstance().getBuffer());
             var1.method38810(
                var9,

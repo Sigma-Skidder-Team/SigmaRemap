@@ -79,7 +79,7 @@ public class RealmsMainScreen extends RealmsScreen {
    private static volatile boolean field4265;
    private static volatile boolean field4266;
    private static volatile boolean field4267;
-   public static Screen field_224000_H;
+   public static Screen field4268;
    private static boolean field4269;
    private final RateLimiter field4270;
    private boolean field4271;
@@ -170,7 +170,7 @@ public class RealmsMainScreen extends RealmsScreen {
             })
          }
       );
-      if (field_224000_H == null) {
+      if (field4268 == null) {
          this.field4297 = new ReentrantLock();
          if (field4267 && !method2013()) {
             this.method2026();
@@ -201,7 +201,7 @@ public class RealmsMainScreen extends RealmsScreen {
          this.setListenerDefault(this.field4273);
          this.field4298 = Class5991.method18584(this.font, field4251, 100);
       } else {
-         this.mc.displayGuiScreen(field_224000_H);
+         this.mc.displayGuiScreen(field4268);
       }
    }
 

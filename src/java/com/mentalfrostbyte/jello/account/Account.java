@@ -3,11 +3,11 @@ package com.mentalfrostbyte.jello.account;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import org.newdawn.slick.util.BufferedImageUtil;
+import com.mentalfrostbyte.jello.util.TextureUtil;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Base64OutputStream;
@@ -212,7 +212,7 @@ public class Account {
     public Texture setSkinTexture() {
         if (this.skinTexture == null && this.skin != null) {
             try {
-                this.skinTexture = BufferedImageUtil.getTexture("skin", this.skin.getSubimage(8, 8, 8, 8));
+                this.skinTexture = TextureUtil.method32933("skin", this.skin.getSubimage(8, 8, 8, 8));
             } catch (IOException var4) {
                 var4.printStackTrace();
             }

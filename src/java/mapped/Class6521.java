@@ -45,7 +45,7 @@ public class Class6521 extends Class6522 implements Class6515 {
       return this.field28605[var1];
    }
 
-   public void method19770(Class9189 var1, Class6516 var2) throws AACException {
+   public void method19770(Class9189 var1, Class6516 var2) throws Class2460 {
       this.field28601 = 2 * var1.method34398();
       this.field28602 = var1.method34397(3);
       int var5 = 0;
@@ -115,7 +115,7 @@ public class Class6521 extends Class6522 implements Class6515 {
       }
    }
 
-   public void method19771() throws AACException {
+   public void method19771() throws Class2460 {
       this.field28600 = this.field28599.method19719();
    }
 

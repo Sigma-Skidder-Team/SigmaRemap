@@ -495,7 +495,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    private void method2740(String var1, String var2, Class9008[] var3) {
-      ScorePlayerTeam var6 = this.method2953().getPlayersTeam(var2);
+      ScorePlayerTeam var6 = this.method2953().method20998(var2);
       if (var6 != null) {
          int var7 = var6.getColor().getColorIndex();
          if (var7 >= 0 && var7 < var3.length) {
@@ -1387,7 +1387,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public void method2834(SoundEvent var1, SoundCategory var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
       this.connection.sendPacket(new SPlaySoundEffectPacket(var1, var2, this.getPosX(), this.getPosY(), this.getPosZ(), var3, var4));
    }
 

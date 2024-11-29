@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
@@ -141,21 +141,21 @@ public class SigmaClassicAltManager extends Screen {
       this.method13401();
       super.draw(var1);
       RenderUtil.drawString(ResourceRegistry.DefaultClientFont, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
-      RenderUtil.drawString(
+      RenderUtil.method11440(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          20.0F,
          "Account Manager - " + this.method13400() + " alts",
-         ClientColors.LIGHT_GREYISH_BLUE.color,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14488
       );
-      RenderUtil.drawString(
+      RenderUtil.method11441(
          ResourceRegistry.DefaultClientFont,
          (float)(this.getWidthA() / 2),
          40.0F,
          this.status,
-         ClientColors.LIGHT_GREYISH_BLUE.color,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14488,
          false
@@ -178,7 +178,7 @@ public class SigmaClassicAltManager extends Screen {
 
    private void method13401() {
       RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ResourceList.mainmenubackground);
-      RenderUtil.renderBackgroundBox(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.23F));
+      RenderUtil.renderBackgroundBox(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
    }
 
    @Override

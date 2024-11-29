@@ -985,7 +985,7 @@ public class Items {
    public static final Item field37968 = method30157("ghast_tear", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37969 = method30157("gold_nugget", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37970 = method30157("nether_wart", new Class3296(Blocks.NETHER_WART, new Item.Properties().method17779(ItemGroup.field31675)));
-   public static final Item field37971 = method30157("potion", new PotionItem(new Item.Properties().method17775(1).method17779(ItemGroup.field31674)));
+   public static final Item field37971 = method30157("potion", new Class3323(new Item.Properties().method17775(1).method17779(ItemGroup.field31674)));
    public static final Item field37972 = method30157("glass_bottle", new Class3328(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37973 = method30157(
       "spider_eye", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39093))

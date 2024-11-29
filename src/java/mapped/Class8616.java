@@ -107,7 +107,7 @@ public class Class8616 extends AudioFileReader {
          var1.mark(1000);
          AudioFileFormat var4 = this.getAudioFileFormat((InputStream)var1, -1);
          var1.reset();
-         return new MP4AudioInputStream((InputStream)var1, var4.getFormat(), (long)var4.getFrameLength());
+         return new Class1777((InputStream)var1, var4.getFormat(), (long)var4.getFrameLength());
       } catch (UnsupportedAudioFileException var5) {
          var1.reset();
          throw var5;

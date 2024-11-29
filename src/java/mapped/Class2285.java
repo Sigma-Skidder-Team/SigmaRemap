@@ -15,6 +15,9 @@ public enum Class2285 {
    field15128(new Vector3i(0, -1, 0));
 
    public Vector3i field15129;
+   private static final Class2285[] field15130 = new Class2285[]{
+      field15121, field15122, field15123, field15124, field15125, field15126, field15127, field15128
+   };
 
    private Class2285(Vector3i var3) {
       this.field15129 = var3;

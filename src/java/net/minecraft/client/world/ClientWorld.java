@@ -18,7 +18,6 @@ import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.crash.ReportedException;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -514,7 +513,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9, float var10, float var11) {
+   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       if (Reflector.field42848.exists()) {
          Object var14 = Reflector.field42848.call(var1, var8, var9, var10, var11);
          if (Reflector.method35064(var14, Reflector.field42809) || Reflector.call(var14, Reflector.field42980) == null) {
@@ -522,7 +521,7 @@ public class ClientWorld extends World {
          }
 
          var8 = (SoundEvent) Reflector.call(var14, Reflector.field42980);
-         var9 = (SoundCategory) Reflector.call(var14, Reflector.field42981);
+         var9 = (Class2266) Reflector.call(var14, Reflector.field42981);
          var10 = Reflector.callFloat(var14, Reflector.field42982);
       }
 
@@ -532,7 +531,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6) {
+   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       if (Reflector.field42848.exists()) {
          Object var9 = Reflector.field42848.call(var1, var3, var4, var5, var6);
          if (Reflector.method35064(var9, Reflector.field42809) || Reflector.call(var9, Reflector.field42980) == null) {
@@ -540,28 +539,28 @@ public class ClientWorld extends World {
          }
 
          var3 = (SoundEvent) Reflector.call(var9, Reflector.field42980);
-         var4 = (SoundCategory) Reflector.call(var9, Reflector.field42981);
+         var4 = (Class2266) Reflector.call(var9, Reflector.field42981);
          var5 = Reflector.callFloat(var9, Reflector.field42982);
       }
 
       if (var1 == this.mc.player) {
-         this.mc.getSoundHandler().play(new Class6332(var3, var4, var2));
+         this.mc.getSoundHandler().method1000(new Class6332(var3, var4, var2));
       }
    }
 
-   public void method6858(BlockPos var1, SoundEvent var2, SoundCategory var3, float var4, float var5, boolean var6) {
+   public void method6858(BlockPos var1, SoundEvent var2, Class2266 var3, float var4, float var5, boolean var6) {
       this.method6745((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public void method6745(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
+   public void method6745(double var1, double var3, double var5, SoundEvent var7, Class2266 var8, float var9, float var10, boolean var11) {
       double var14 = this.mc.gameRenderer.getActiveRenderInfo().getPos().method11343(var1, var3, var5);
-      CustomSoundPlayer var16 = new CustomSoundPlayer(var7, var8, var9, var10, var1, var3, var5);
+      MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
-         this.mc.getSoundHandler().playDelayed(var16, (int)(var17 * 20.0));
+         this.mc.getSoundHandler().method1001(var16, (int)(var17 * 20.0));
       } else {
-         this.mc.getSoundHandler().play(var16);
+         this.mc.getSoundHandler().method1000(var16);
       }
    }
 

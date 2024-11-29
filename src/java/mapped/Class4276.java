@@ -45,7 +45,7 @@ public class Class4276 extends Class4247 {
             "addButton",
             this.widthA - 66,
             this.heightA - 60,
-            ResourceRegistry.JelloLightFont25.getWidth("Add"),
+            ResourceRegistry.JelloLightFont25.getStringWidth("Add"),
             50,
             ColorHelper.field27961,
             "Add",
@@ -109,7 +109,7 @@ public class Class4276 extends Class4247 {
          (float)(this.yA + var5 / 2),
          (float)(this.xA - var5 / 2 + this.widthA),
          (float)(this.yA - var5 / 2 + this.heightA),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var1 * 0.25F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       RenderUtil.drawRect((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, (float)var5, var6);
       GL11.glPushMatrix();
@@ -130,7 +130,7 @@ public class Class4276 extends Class4247 {
          (float)(this.yA + 68),
          (float)(this.xA + this.widthA - 25),
          (float)(this.yA + 69),
-         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.draw(var1);
    }

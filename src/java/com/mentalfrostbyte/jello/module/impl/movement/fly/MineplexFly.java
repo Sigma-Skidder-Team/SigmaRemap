@@ -241,7 +241,7 @@ public class MineplexFly extends Module {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
             mc.player.positionVec.y = this.field23673;
             mc.player.lastTickPosY = this.field23673;
-            mc.player.chasingPosY = this.field23673;
+            mc.player.field4915 = this.field23673;
             mc.player.prevPosY = this.field23673;
             if (MovementUtils.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;

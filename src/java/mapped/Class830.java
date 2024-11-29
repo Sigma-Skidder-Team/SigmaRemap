@@ -28,7 +28,7 @@ public class Class830 extends ConfirmScreen {
    @Override
    public void init() {
       super.init();
-      this.buttons.clear();
+      this.field4566.clear();
       this.children.clear();
       this.<Button>addButton(
          new Button(this.width / 2 - 50 - 105, this.height / 6 + 96, 100, 20, this.field4602, var1 -> this.field4605.accept(true))

@@ -67,6 +67,6 @@ public class Class3217 extends Class3213 {
 
    @Override
    public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23394(var2, var3).colorValue;
+      return var1.method23394(var2, var3).field31006;
    }
 }

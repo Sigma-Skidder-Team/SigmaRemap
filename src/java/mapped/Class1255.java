@@ -74,7 +74,7 @@ public abstract class Class1255 extends Class1254 {
          int var8 = this.field6652.field25580 + var2;
          int var9 = this.field6652.field25581 + var3;
          AbstractGui.fill(var1, var8, var9, var8 + 16, var9 + 16, 822018048);
-         this.field6642.getItemRenderer().method795(this.field6642.player, this.method5867().getDefaultInstance(), var8, var9);
+         this.field6642.getItemRenderer().method795(this.field6642.player, this.method5867().method11742(), var8, var9);
          RenderSystem.depthFunc(516);
          AbstractGui.fill(var1, var8, var9, var8 + 16, var9 + 16, 822083583);
          RenderSystem.depthFunc(515);

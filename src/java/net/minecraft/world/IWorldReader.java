@@ -124,13 +124,13 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
       return this.getFluidState(var1).method23486(FluidTags.field40469);
    }
 
-   default boolean containsAnyLiquid(AxisAlignedBB var1) {
+   default boolean method7014(AxisAlignedBB var1) {
       int var4 = MathHelper.floor(var1.minX);
-      int var5 = MathHelper.ceil(var1.maxX);
+      int var5 = MathHelper.method37774(var1.maxX);
       int var6 = MathHelper.floor(var1.minY);
-      int var7 = MathHelper.ceil(var1.maxY);
+      int var7 = MathHelper.method37774(var1.maxY);
       int var8 = MathHelper.floor(var1.minZ);
-      int var9 = MathHelper.ceil(var1.maxZ);
+      int var9 = MathHelper.method37774(var1.maxZ);
       BlockPos.Mutable var10 = new BlockPos.Mutable();
 
       for (int var11 = var4; var11 < var5; var11++) {

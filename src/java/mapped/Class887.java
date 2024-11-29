@@ -12,8 +12,6 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
@@ -22,7 +20,7 @@ import java.util.Set;
 
 public class Class887 extends AbstractArrowEntity {
    private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>createKey(Class887.class, DataSerializers.VARINT);
-   private Class8812 field5117 = Potions.field34976;
+   private Class8812 field5117 = Class8137.field34976;
    private final Set<EffectInstance> field5118 = Sets.newHashSet();
    private boolean field5119;
 
@@ -41,13 +39,13 @@ public class Class887 extends AbstractArrowEntity {
    public void method3497(ItemStack var1) {
       if (var1.getItem() != Items.field38117) {
          if (var1.getItem() == Items.field37797) {
-            this.field5117 = Potions.field34976;
+            this.field5117 = Class8137.field34976;
             this.field5118.clear();
             this.dataManager.method35446(field5116, -1);
          }
       } else {
-         this.field5117 = PotionUtils.method38185(var1);
-         List<EffectInstance> var4 = PotionUtils.method38179(var1);
+         this.field5117 = Class9741.method38185(var1);
+         List<EffectInstance> var4 = Class9741.method38179(var1);
          if (!var4.isEmpty()) {
             for (EffectInstance var6 : var4) {
                this.field5118.add(new EffectInstance(var6));
@@ -70,16 +68,16 @@ public class Class887 extends AbstractArrowEntity {
 
    private void method3499() {
       this.field5119 = false;
-      if (this.field5117 == Potions.field34976 && this.field5118.isEmpty()) {
+      if (this.field5117 == Class8137.field34976 && this.field5118.isEmpty()) {
          this.dataManager.method35446(field5116, -1);
       } else {
-         this.dataManager.method35446(field5116, PotionUtils.method38184(PotionUtils.method38177(this.field5117, this.field5118)));
+         this.dataManager.method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
       }
    }
 
    public void method3500(EffectInstance var1) {
       this.field5118.add(var1);
-      this.getDataManager().method35446(field5116, PotionUtils.method38184(PotionUtils.method38177(this.field5117, this.field5118)));
+      this.getDataManager().method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
    }
 
    @Override
@@ -94,7 +92,7 @@ public class Class887 extends AbstractArrowEntity {
       if (!this.world.isRemote) {
          if (this.field5100 && this.field5101 != 0 && !this.field5118.isEmpty() && this.field5101 >= 600) {
             this.world.setEntityState(this, (byte)0);
-            this.field5117 = Potions.field34976;
+            this.field5117 = Class8137.field34976;
             this.field5118.clear();
             this.dataManager.method35446(field5116, -1);
          }
@@ -130,7 +128,7 @@ public class Class887 extends AbstractArrowEntity {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      if (this.field5117 != Potions.field34976 && this.field5117 != null) {
+      if (this.field5117 != Class8137.field34976 && this.field5117 != null) {
          var1.putString("Potion", Registry.field16076.getKey(this.field5117).toString());
       }
 
@@ -153,10 +151,10 @@ public class Class887 extends AbstractArrowEntity {
    public void readAdditional(CompoundNBT var1) {
       super.readAdditional(var1);
       if (var1.contains("Potion", 8)) {
-         this.field5117 = PotionUtils.method38186(var1);
+         this.field5117 = Class9741.method38186(var1);
       }
 
-      for (EffectInstance var5 : PotionUtils.method38180(var1)) {
+      for (EffectInstance var5 : Class9741.method38180(var1)) {
          this.method3500(var5);
       }
 
@@ -172,7 +170,7 @@ public class Class887 extends AbstractArrowEntity {
       super.method3478(var1);
 
       for (EffectInstance var5 : this.field5117.method31816()) {
-         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.method8628() / 8, 1), var5.getAmplifier(), var5.isAmbient(), var5.method8631()));
+         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.method8628() / 8, 1), var5.method8629(), var5.isAmbient(), var5.method8631()));
       }
 
       if (!this.field5118.isEmpty()) {
@@ -184,12 +182,12 @@ public class Class887 extends AbstractArrowEntity {
 
    @Override
    public ItemStack method3480() {
-      if (this.field5118.isEmpty() && this.field5117 == Potions.field34976) {
+      if (this.field5118.isEmpty() && this.field5117 == Class8137.field34976) {
          return new ItemStack(Items.field37797);
       } else {
          ItemStack var3 = new ItemStack(Items.field38117);
-         PotionUtils.addPotionToItemStack(var3, this.field5117);
-         PotionUtils.method38188(var3, this.field5118);
+         Class9741.method38187(var3, this.field5117);
+         Class9741.method38188(var3, this.field5118);
          if (this.field5119) {
             var3.getOrCreateTag().putInt("CustomPotionColor", this.method3502());
          }

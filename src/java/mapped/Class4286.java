@@ -1,18 +1,19 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
-import org.newdawn.slick.util.BufferedImageUtil;
+import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -22,10 +23,10 @@ import java.net.URL;
 
 public class Class4286 extends Class4278 {
    public static ColorHelper field20771 = new ColorHelper(
-      ClientColors.DEEP_TEAL.color,
-      ClientColors.DEEP_TEAL.color,
-      ClientColors.DEEP_TEAL.color,
-      ClientColors.DEEP_TEAL.color,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -69,6 +70,9 @@ public class Class4286 extends Class4278 {
    public void method13028(int var1, int var2) {
       boolean var5 = this.method13298() && this.getIcoPanel().getIcoPanel().method13114(var1, var2);
       this.field20777.changeDirection(!var5 ? Direction.BACKWARDS : Direction.FORWARDS);
+      if (var5) {
+         Client.getInstance().getGuiManager().method33459(GuiManager.field41345);
+      }
 
       super.method13028(var1, var2);
    }
@@ -134,9 +138,9 @@ public class Class4286 extends Class4278 {
             var1
          );
          if (this.field20775 == null && this.field20773 == null) {
-            RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, ResourceList.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          } else {
             if (this.field20775 == null) {
@@ -145,7 +149,7 @@ public class Class4286 extends Class4278 {
                      this.field20775.release();
                   }
 
-                  this.field20775 = BufferedImageUtil.getTexture("picture", this.field20773);
+                  this.field20775 = TextureUtil.method32933("picture", this.field20773);
                } catch (IOException var14) {
                   var14.printStackTrace();
                }
@@ -157,7 +161,7 @@ public class Class4286 extends Class4278 {
                      this.field20776.release();
                   }
 
-                  this.field20776 = BufferedImageUtil.getTexture("picture", ImageUtil.method35032(this.field20773, 14));
+                  this.field20776 = TextureUtil.method32933("picture", ImageUtil.method35032(this.field20773, 14));
                } catch (IOException var13) {
                   var13.printStackTrace();
                }
@@ -165,9 +169,9 @@ public class Class4286 extends Class4278 {
                this.field20776 = null;
             }
 
-            RenderUtil.drawImage(var5, var6, var7, var8, this.field20775, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, this.field20775, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, this.field20776, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, this.field20776, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          }
 
@@ -183,34 +187,34 @@ public class Class4286 extends Class4278 {
             (float)var9 * var10,
             (float)var9 * var10,
             ResourceList.playIconPNG,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4 * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
-         TrueTypeFont var11 = ResourceRegistry.JelloLightFont12;
+         ClientResource var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
             RenderUtil.method11415(this);
             String[] var12 = this.getTypedText().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (var12.length > 1) {
                RenderUtil.drawString(
                   var11,
-                  (float)(this.getXA() + (this.getWidthA() - var11.getWidth(var12[1])) / 2),
+                  (float)(this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[1])) / 2),
                   (float)(this.getYA() + this.getWidthA() - 2),
                   var12[1],
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
                RenderUtil.drawString(
                   var11,
-                  (float)(this.getXA() + (this.getWidthA() - var11.getWidth(var12[0])) / 2),
+                  (float)(this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
                   (float)(this.getYA() + this.getWidthA() - 2 + 13),
                   var12[0],
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             } else {
                RenderUtil.drawString(
                   var11,
-                  (float)(this.getXA() + (this.getWidthA() - var11.getWidth(var12[0])) / 2),
+                  (float)(this.getXA() + (this.getWidthA() - var11.getStringWidth(var12[0])) / 2),
                   (float)(this.getYA() + this.getWidthA() - 2 + 6),
                   var12[0],
-                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             }
 

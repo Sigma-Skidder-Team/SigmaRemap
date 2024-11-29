@@ -32,7 +32,6 @@ import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -180,7 +179,7 @@ public class Raid {
 
    public void method25401(PlayerEntity var1) {
       if (var1.isPotionActive(Effects.BAD_OMEN)) {
-         this.field32982 = this.field32982 + var1.getActivePotionEffect(Effects.BAD_OMEN).getAmplifier() + 1;
+         this.field32982 = this.field32982 + var1.getActivePotionEffect(Effects.BAD_OMEN).method8629() + 1;
          this.field32982 = MathHelper.clamp(this.field32982, 0, this.method25399());
       }
 
@@ -434,7 +433,7 @@ public class Raid {
          double var12 = var9.x + (double)(13.0F / var11) * (var10.x - var9.x);
          double var14 = var9.z + (double)(13.0F / var11) * (var10.z - var9.z);
          if (var11 <= 64.0F || var6.contains(var8)) {
-            var8.connection.sendPacket(new SPlaySoundEffectPacket(SoundEvents.field26992, SoundCategory.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
+            var8.connection.sendPacket(new SPlaySoundEffectPacket(SoundEvents.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
          }
       }
    }
@@ -477,7 +476,7 @@ public class Raid {
                if (var16 != null) {
                   this.method25414(var5, var16, var1, false);
                   var16.moveToBlockPosAndAngles(var1, 0.0F, 0.0F);
-                  var16.startRiding(var15);
+                  var16.method3311(var15);
                }
             }
          }

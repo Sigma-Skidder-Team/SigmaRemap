@@ -300,7 +300,7 @@ public class Class1029 extends Class1026 {
 
    @Override
    public boolean method4266(IWorldReader var1) {
-      return !var1.containsAnyLiquid(this.getBoundingBox());
+      return !var1.method7014(this.getBoundingBox());
    }
 
    @Override

@@ -38,7 +38,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       this.field28507 = new float[120];
    }
 
-   public void method19714(Class9189 var1, boolean var2, Class6516 var3) throws AACException {
+   public void method19714(Class9189 var1, boolean var2, Class6516 var3) throws Class2460 {
       if (var3.method19752() && this.field28521 == null) {
          this.field28521 = new Class8333();
       }
@@ -54,7 +54,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       this.field28509 = var1.method34399();
       if (this.field28509) {
          if (this.field28503.method19874()) {
-            throw new AACException("pulse data not allowed for short frames");
+            throw new Class2460("pulse data not allowed for short frames");
          }
 
          field28529.log(Level.FINE, "PULSE");
@@ -89,7 +89,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       }
    }
 
-   public void method19715(Class9189 var1, boolean var2) throws AACException {
+   public void method19715(Class9189 var1, boolean var2) throws Class2460 {
       Arrays.fill(this.field28504, 0);
       Arrays.fill(this.field28505, 0);
       int var5 = !this.field28503.method19874() ? 5 : 3;
@@ -105,7 +105,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
             int var12 = var11;
             int var13 = var1.method34397(4);
             if (var13 == 12) {
-               throw new AACException("invalid huffman codebook: 12");
+               throw new Class2460("invalid huffman codebook: 12");
             }
 
             int var14;
@@ -115,7 +115,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
 
             var12 += var14;
             if (var12 > var8) {
-               throw new AACException("too many bands: " + var12 + ", allowed: " + var8);
+               throw new Class2460("too many bands: " + var12 + ", allowed: " + var8);
             }
 
             while (var11 < var12) {
@@ -127,11 +127,11 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       }
    }
 
-   private void method19716(Class9189 var1) throws AACException {
+   private void method19716(Class9189 var1) throws Class2460 {
       this.field28516 = var1.method34397(2) + 1;
       this.field28517 = var1.method34397(6);
       if (this.field28517 >= this.field28503.method19867()) {
-         throw new AACException("pulse SWB out of range: " + this.field28517 + " > " + this.field28503.method19867());
+         throw new Class2460("pulse SWB out of range: " + this.field28517 + " > " + this.field28503.method19867());
       } else {
          if (this.field28514 == null || this.field28516 != this.field28514.length) {
             this.field28514 = new int[this.field28516];
@@ -145,7 +145,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
          for (int var4 = 1; var4 < this.field28516; var4++) {
             this.field28514[var4] = var1.method34397(5) + this.field28514[var4 - 1];
             if (this.field28514[var4] > 1023) {
-               throw new AACException("pulse offset out of range: " + this.field28514[0]);
+               throw new Class2460("pulse offset out of range: " + this.field28514[0]);
             }
 
             this.field28515[var4] = var1.method34397(4);
@@ -153,7 +153,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       }
    }
 
-   public void method19717(Class9189 var1) throws AACException {
+   public void method19717(Class9189 var1) throws Class2460 {
       int var4 = this.field28503.method19871();
       int var5 = this.field28503.method19866();
       int[] var6 = new int[]{this.field28508, this.field28508 - 90, 0};
@@ -202,7 +202,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
                   while (var10 < var11) {
                      var6[0] += Class8253.method28777(var1) - 60;
                      if (var6[0] > 255) {
-                        throw new AACException("scalefactor out of range: " + var6[0]);
+                        throw new Class2460("scalefactor out of range: " + var6[0]);
                      }
 
                      this.field28507[var8] = field28905[var6[0] - 100 + 200];
@@ -214,7 +214,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       }
    }
 
-   private void method19718(Class9189 var1) throws AACException {
+   private void method19718(Class9189 var1) throws Class2460 {
       Arrays.fill(this.field28506, 0.0F);
       int var4 = this.field28503.method19866();
       int var5 = this.field28503.method19871();
@@ -279,7 +279,7 @@ public class Class6512 implements Class6515, Class6513, Class6545, Class6511 {
       }
    }
 
-   public float[] method19719() throws AACException {
+   public float[] method19719() throws Class2460 {
       return this.field28506;
    }
 

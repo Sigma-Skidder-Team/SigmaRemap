@@ -25,14 +25,14 @@ public class Class4263 extends Class4247 {
          (float)(this.xA + this.widthA / 2),
          (float)(this.yA + this.heightA / 2),
          (float)this.widthA,
-         MultiUtilities.applyAlpha(ClientColors.PALE_YELLOW.color, (0.5F + this.field20678 * 0.3F + (!this.field20909 ? 0.0F : 0.2F)) * var1)
+         MultiUtilities.applyAlpha(ClientColors.PALE_YELLOW.getColor, (0.5F + this.field20678 * 0.3F + (!this.field20909 ? 0.0F : 0.2F)) * var1)
       );
       RenderUtil.renderBackgroundBox(
          (float)(this.xA + (this.widthA - 10) / 2),
          (float)(this.yA + this.heightA / 2 - 1),
          10.0F,
          2.0F,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F * var1)
       );
       super.draw(var1);
    }

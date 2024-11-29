@@ -45,7 +45,7 @@ public class Class1311 extends Screen {
    public void tick() {
       super.tick();
       if (--this.field6922 == 0) {
-         for (Widget var4 : this.buttons) {
+         for (Widget var4 : this.field4566) {
             var4.active = true;
          }
       }

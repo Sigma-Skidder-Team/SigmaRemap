@@ -11,7 +11,7 @@ public class Class8242 implements Class8241 {
    private final float[][] field35413;
    private final float[] field35414;
 
-   public Class8242(int var1) throws AACException {
+   public Class8242(int var1) throws Class2460{
       this.field35407 = var1;
       this.field35408 = var1 >> 1;
       this.field35409 = var1 >> 2;
@@ -20,7 +20,7 @@ public class Class8242 implements Class8241 {
          case 240:
             this.field35411 = field35406;
          default:
-            throw new AACException("unsupported MDCT length: " + var1);
+            throw new Class2460("unsupported MDCT length: " + var1);
          case 256:
             this.field35411 = field35404;
             break;

@@ -42,7 +42,7 @@ public class Class4295 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       } else {
          RenderUtil.drawRect(
@@ -76,7 +76,7 @@ public class Class4295 extends Class4278 {
       GL11.glTranslatef((float)(-this.xA), (float)(-this.yA), 0.0F);
       GL11.glEnable(2929);
       RenderHelper.enableStandardItemLighting();
-      this.field20811.getItemRenderer().renderItemIntoGUI(this.field20810, this.xA + 1, this.yA + 1);
+      this.field20811.getItemRenderer().method791(this.field20810, this.xA + 1, this.yA + 1);
       RenderHelper.disableStandardItemLighting();
       GL11.glDisable(2929);
       GL11.glPopMatrix();

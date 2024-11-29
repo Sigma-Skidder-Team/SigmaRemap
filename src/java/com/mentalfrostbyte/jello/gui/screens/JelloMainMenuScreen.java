@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.ArrayUtils;
@@ -219,7 +219,7 @@ public class JelloMainMenuScreen extends Screen {
          Texture var26 = ResourceList.logoLargePNG;
          int var28 = var26.getImageWidth();
          int var22 = var26.getImageHeight();
-         if (GuiManager.scaleFactor > 1.0F) {
+         if (GuiManager.portalScaleFactor > 1.0F) {
             var26 = ResourceList.logoLarge2xPNG;
          }
 
@@ -229,11 +229,11 @@ public class JelloMainMenuScreen extends Screen {
             (float)(this.getWidthA() * 2),
             (float)(this.getHeightA() + 200),
             field20976,
-            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var4),
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
          RenderUtil.renderBackgroundBox(
-            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, var4 * 0.3F)
+            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
          for (CustomGuiScreen var24 : this.method13241()) {
@@ -269,21 +269,21 @@ public class JelloMainMenuScreen extends Screen {
          }
 
          if (this.field20973.getDirection() == Direction.FORWARDS) {
-            RenderUtil.drawString(
+            RenderUtil.method11440(
                ResourceRegistry.JelloMediumFont50,
                (float)(this.widthA / 2),
                (float)(this.heightA / 2 - 30),
                field20980,
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20973.calcPercent()),
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
                Class2218.field14492,
                Class2218.field14492
             );
-            RenderUtil.drawString(
+            RenderUtil.method11440(
                ResourceRegistry.JelloLightFont18,
                (float)(this.widthA / 2),
                (float)(this.heightA / 2 + 30),
                "\"" + field20981 + "\"",
-               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20973.calcPercent() * 0.5F),
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
                Class2218.field14492,
                Class2218.field14492
             );

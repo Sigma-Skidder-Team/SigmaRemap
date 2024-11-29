@@ -3,7 +3,6 @@ package mapped;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 
@@ -39,7 +38,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
                (double)var4 + 0.5,
                var9,
                SoundEvents.field26535,
-               SoundCategory.field14732,
+               Class2266.field14732,
                0.5F,
                this.world.rand.nextFloat() * 0.1F + 0.9F
             );
@@ -68,7 +67,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
                   (double)var4 + 0.5,
                   var13,
                   SoundEvents.field26534,
-                  SoundCategory.field14732,
+                  Class2266.field14732,
                   0.5F,
                   this.world.rand.nextFloat() * 0.1F + 0.9F
                );
@@ -109,7 +108,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
    public boolean method3768(PlayerEntity var1) {
       return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceSq((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;

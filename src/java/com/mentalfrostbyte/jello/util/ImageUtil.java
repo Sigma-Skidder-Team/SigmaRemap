@@ -105,11 +105,11 @@ public class ImageUtil {
 
     public static BufferedImage method35036(int var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
         int var10 = 4;
-        var1 = (int) ((float) var1 * GuiManager.scaleFactor);
-        var0 = (int) ((float) var0 * GuiManager.scaleFactor);
-        var2 = (int) ((float) var2 * GuiManager.scaleFactor);
-        var3 = (int) ((float) var3 * GuiManager.scaleFactor);
-        var4 = (int) ((float) var4 * GuiManager.scaleFactor);
+        var1 = (int) ((float) var1 * GuiManager.portalScaleFactor);
+        var0 = (int) ((float) var0 * GuiManager.portalScaleFactor);
+        var2 = (int) ((float) var2 * GuiManager.portalScaleFactor);
+        var3 = (int) ((float) var3 * GuiManager.portalScaleFactor);
+        var4 = (int) ((float) var4 * GuiManager.portalScaleFactor);
         var1 = Minecraft.getInstance().mainWindow.getFramebufferHeight() - var1 - var3;
         if (var4 <= 0) {
             var4 = 1;
@@ -139,7 +139,7 @@ public class ImageUtil {
     }
 
     public static BufferedImage method35037(int var0, int var1, int var2, int var3, int var4, int var5) {
-        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.color, false);
+        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor, false);
     }
 
     public static BufferedImage method35038(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
@@ -147,14 +147,14 @@ public class ImageUtil {
     }
 
     public static BufferedImage method35039(int var0, int var1, int var2, int var3, int var4, int var5, boolean var6) {
-        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.color, var6);
+        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor, var6);
     }
 
     public static BufferedImage method35040(BufferedImage var0, int var1, int var2) {
         int var5 = var0.getWidth() + var1 * 2;
         int var6 = var0.getHeight() + var1 * 2;
         BufferedImage var7 = new BufferedImage(var5, var6, var0.getType());
-        if (var2 != ClientColors.DEEP_TEAL.color) {
+        if (var2 != ClientColors.DEEP_TEAL.getColor) {
             for (int var8 = 0; var8 < var5; var8++) {
                 for (int var9 = 0; var9 < var6; var9++) {
                     var7.setRGB(var8, var9, var2);

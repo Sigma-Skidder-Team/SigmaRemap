@@ -1,7 +1,6 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import org.newdawn.slick.Color;
 
 public class Class8353 {
    private static String[] field35895;
@@ -61,10 +60,10 @@ public class Class8353 {
 
    public static void method29277(Color var0) {
       GL11.glColor4d(
-         (double)((float)var0.getRed() / 255.0F),
-         (double)((float)var0.getGreen() / 255.0F),
-         (double)((float)var0.getBlue() / 255.0F),
-         (double)((float)var0.getAlpha() / 255.0F)
+         (double)((float)var0.method10396() / 255.0F),
+         (double)((float)var0.method10397() / 255.0F),
+         (double)((float)var0.method10398() / 255.0F),
+         (double)((float)var0.method10399() / 255.0F)
       );
    }
 }

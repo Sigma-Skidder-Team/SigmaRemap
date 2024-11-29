@@ -9,7 +9,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -53,7 +52,7 @@ public class Class3210 extends Block {
       BlockPos var7 = var3.up();
       if (var2.getFluidState(var3).method23486(FluidTags.field40469)) {
          var2.method6742(
-            (PlayerEntity)null, var3, SoundEvents.field26582, SoundCategory.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
+            (PlayerEntity)null, var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
          );
          var2.spawnParticle(
             ParticleTypes.field34085, (double)var7.getX() + 0.5, (double)var7.getY() + 0.25, (double)var7.getZ() + 0.5, 8, 0.5, 0.25, 0.5, 0.0

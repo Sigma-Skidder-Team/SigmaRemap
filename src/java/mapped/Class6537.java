@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.Arrays;
 
+
 public class Class6537 implements Class6515 {
    private static final float[] field28838 = new float[]{0.570829F, 0.696616F, 0.813004F, 0.911304F, 0.9849F, 1.067894F, 1.194601F, 1.369533F};
    private final int field28839;
@@ -20,7 +21,7 @@ public class Class6537 implements Class6515 {
       this.field28840 = new int[4 * var1];
    }
 
-   public void method19858(Class9189 var1, Class6538 var2, Class1955 var3) throws AACException {
+   public void method19858(Class9189 var1, Class6538 var2, Class1955 var3) throws Class2460 {
       this.field28842 = 0;
       if (!var3.equals(Class1955.field12736)) {
          this.field28842 = var1.method34397(11);
@@ -32,7 +33,7 @@ public class Class6537 implements Class6515 {
       }
 
       if (this.field28842 > this.field28839 << 1) {
-         throw new AACException("LTP lag too large: " + this.field28842);
+         throw new Class2460("LTP lag too large: " + this.field28842);
       } else {
          this.field28841 = var1.method34397(3);
          int var6 = var2.method19870();

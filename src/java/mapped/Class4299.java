@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 import net.minecraft.client.Minecraft;
 
 import java.util.Iterator;
@@ -89,7 +89,7 @@ public class Class4299 extends Class4278 {
             52.0F,
             320.0F,
             this.field20831,
-            ClientColors.LIGHT_GREYISH_BLUE.color
+            ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          RenderUtil.drawImage(
             (float)this.xA + var13 + var12,
@@ -97,7 +97,7 @@ public class Class4299 extends Class4278 {
             52.0F,
             320.0F,
             this.field20832,
-            ClientColors.LIGHT_GREYISH_BLUE.color
+            ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          if (var12 > -52.0F && var12 < 0.0F) {
             float var14 = (float)(var6 - 24) / (float)var8;
@@ -113,7 +113,7 @@ public class Class4299 extends Class4278 {
       }
 
       RenderUtil.method11436(
-         (float)this.xA + (float)var7 / 12.0F, (float)this.yA + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.color
+         (float)this.xA + (float)var7 / 12.0F, (float)this.yA + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.getColor
       );
       RenderUtil.endScissor();
       this.field20837 = System.currentTimeMillis();

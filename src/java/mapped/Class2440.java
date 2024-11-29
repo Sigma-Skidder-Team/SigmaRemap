@@ -1,5 +1,7 @@
 package mapped;
 
+
+
 public class Class2440 implements Class2439 {
    private static String[] field16483;
    private static final Class2386 field16484 = new Class2386();

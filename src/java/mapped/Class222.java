@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.entity.Entity;
 import net.optifine.Config;
-import net.optifine.player.PlayerConfigurations;
 
 import java.util.Map;
 import java.util.Set;
@@ -28,7 +27,7 @@ public class Class222 extends Class219 {
       if (Config.method26914() && var1 instanceof AbstractClientPlayerEntity) {
          AbstractClientPlayerEntity var8 = (AbstractClientPlayerEntity)var1;
          BipedModel var9 = this.field867.getEntityModel();
-         PlayerConfigurations.method25667(var9, var8, var2, var3, var4, var5);
+         Class7749.method25667(var9, var8, var2, var3, var4, var5);
       }
    }
 

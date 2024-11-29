@@ -412,11 +412,11 @@ public class BlockFlyNCPMode extends Module {
     public void method16812(Render2DEvent var1) {
         if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 >= 0) {
             if (!(mc.player.fallDistance > 1.2F)) {
-                if (!(mc.player.chasingPosY < this.field23931)) {
+                if (!(mc.player.field4915 < this.field23931)) {
                     if (!mc.player.isJumping) {
                         mc.player.positionVec.y = this.field23931;
                         mc.player.lastTickPosY = this.field23931;
-                        mc.player.chasingPosY = this.field23931;
+                        mc.player.field4915 = this.field23931;
                         mc.player.prevPosY = this.field23931;
                         if (MovementUtils.isMoving()) {
                             mc.player.cameraYaw = 0.099999994F;

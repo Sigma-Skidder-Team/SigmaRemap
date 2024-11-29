@@ -10,7 +10,6 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
@@ -132,7 +131,7 @@ public class Class993 extends AbstractMinecartEntity {
          this.world.setEntityState(this, (byte)10);
          if (!this.isSilent()) {
             this.world
-               .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field27146, SoundCategory.field14732, 1.0F, 1.0F);
+               .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field27146, Class2266.field14732, 1.0F, 1.0F);
          }
       }
    }

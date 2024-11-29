@@ -1,6 +1,5 @@
 package mapped;
 
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 
@@ -10,11 +9,11 @@ public class Class6337 extends Class6333 {
    private int field27852;
 
    public Class6337(SoundEvent var1) {
-      super(var1, SoundCategory.field14736);
-      this.repeat = true;
-      this.repeatDelay = 0;
-      this.volume = 1.0F;
-      this.global = true;
+      super(var1, Class2266.field14736);
+      this.field27861 = true;
+      this.field27862 = 0;
+      this.field27856 = 1.0F;
+      this.field27865 = true;
    }
 
    @Override
@@ -24,7 +23,7 @@ public class Class6337 extends Class6333 {
       }
 
       this.field27852 = this.field27852 + this.field27851;
-      this.volume = MathHelper.clamp((float)this.field27852 / 40.0F, 0.0F, 1.0F);
+      this.field27856 = MathHelper.clamp((float)this.field27852 / 40.0F, 0.0F, 1.0F);
    }
 
    public void method19277() {

@@ -1,8 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-import com.mentalfrostbyte.jello.event.CancellableEvent;
-
-public class EventSlowDown extends CancellableEvent {
+public class EventSlowDown extends Class4406 {
     public float slowDown;
 
     public EventSlowDown(float var1) {

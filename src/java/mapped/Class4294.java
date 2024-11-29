@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.Direction;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
+import lol.Texture;
 
 import java.awt.image.BufferedImage;
 
@@ -23,7 +23,7 @@ public class Class4294 extends Class4278 {
    public Animation field20805 = new Animation(300, 300, Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
-   private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0F);
+   private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
    public Class4294(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -50,7 +50,7 @@ public class Class4294 extends Class4278 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 2.0F);
+      this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       int var4 = ((Class4339)this.icoPanel.getIcoPanel()).method13513();
       int var5 = Math.max(0, this.yA - var4);
       int var6 = Math.max(0, this.heightA + Math.min(100, this.yA - var4 - var5));
@@ -65,7 +65,7 @@ public class Class4294 extends Class4278 {
                var5,
                this.widthA,
                Math.max(20, var6),
-               MultiUtilities.applyAlpha(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.color : this.field20808, var7)
+               MultiUtilities.applyAlpha(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
             );
             RenderUtil.method11421(this.xA, var5, this.xA + this.widthA + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
@@ -79,7 +79,7 @@ public class Class4294 extends Class4278 {
                      18.0F * this.field20803.calcPercent() * (float)var6 / 100.0F,
                      (float)(47 * var6) / 100.0F,
                      ResourceList.selectPNG,
-                     !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.color : this.field20808
+                     !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
                   );
                }
 
@@ -94,7 +94,7 @@ public class Class4294 extends Class4278 {
 
    public void method13169() {
       RenderUtil.method11450(
-         (float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.color, true
+         (float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
       );
       RenderUtil.method11464((float)(this.xA + 13), (float)(this.yA + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       RenderUtil.drawImage(
@@ -103,42 +103,42 @@ public class Class4294 extends Class4278 {
          100.0F,
          100.0F,
          ResourceList.cerclePNG,
-         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.color : this.field20808
+         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
       );
    }
 
    public void method13170() {
       if (this.selectedAccount.isEmailAValidEmailFormat()) {
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont25, (float)(this.xA + 110), (float)(this.yA + 18), this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.color
+            ResourceRegistry.JelloLightFont25, (float)(this.xA + 110), (float)(this.yA + 18), this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.getColor
          );
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.xA + 110),
             (float)(this.yA + 50),
             "Username: " + this.selectedAccount.getEmail(),
-            ClientColors.MID_GREY.color
+            ClientColors.MID_GREY.getColor
          );
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont14, (float)(this.xA + 110), (float)(this.yA + 65), "Offline account", ClientColors.MID_GREY.color
+            ResourceRegistry.JelloLightFont14, (float)(this.xA + 110), (float)(this.yA + 65), "Offline account", ClientColors.MID_GREY.getColor
          );
       } else {
          RenderUtil.drawString(
-            ResourceRegistry.JelloLightFont25, (float)(this.xA + 110), (float)(this.yA + 18), this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.color
+            ResourceRegistry.JelloLightFont25, (float)(this.xA + 110), (float)(this.yA + 18), this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.getColor
          );
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.xA + 110),
             (float)(this.yA + 50),
             "Email: " + this.selectedAccount.getEmail(),
-            ClientColors.MID_GREY.color
+            ClientColors.MID_GREY.getColor
          );
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.xA + 110),
             (float)(this.yA + 65),
             "Password: " + this.selectedAccount.getPassword().replaceAll(".", Character.toString('·')),
-            ClientColors.MID_GREY.color
+            ClientColors.MID_GREY.getColor
          );
       }
    }
@@ -155,7 +155,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          17.0F,
          ResourceList.errorsPNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5 * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
       );
       RenderUtil.drawImage(
          (float)(this.xA + this.widthA - 45),
@@ -163,7 +163,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          13.0F,
          ResourceList.activePNG,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20804 * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
       );
    }
 

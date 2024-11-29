@@ -151,7 +151,7 @@ public class MerchantScreen extends ContainerScreen<Class5826> {
                ItemStack var16 = var14.method35366();
                ItemStack var17 = var14.method35367();
                ItemStack var18 = var14.method35368();
-               this.field4563.zLevel = 100.0F;
+               this.field4563.field847 = 100.0F;
                int var19 = var10 + 2;
                this.method2665(var1, var16, var15, var11, var19);
                if (!var17.isEmpty()) {
@@ -162,7 +162,7 @@ public class MerchantScreen extends ContainerScreen<Class5826> {
                this.method2664(var1, var14, var8, var19);
                this.field4563.method794(var18, var8 + 5 + 68, var19);
                this.field4563.method797(this.font, var18, var8 + 5 + 68, var19);
-               this.field4563.zLevel = 0.0F;
+               this.field4563.field847 = 0.0F;
                var10 += 20;
                var12++;
             } else {

@@ -99,7 +99,7 @@ public class KeyStrokes extends Module {
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
-                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5F * var10)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
                         );
                         RenderUtil.drawRoundedRect(
                                 (float) (this.field23585 + var21.field42635),
@@ -111,10 +111,10 @@ public class KeyStrokes extends Module {
                         );
                         RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
-                                (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.JelloLightFont18.getWidth(var12)) / 2),
+                                (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.JelloLightFont18.getStringWidth(var12)) / 2),
                                 (float) (this.field23586 + var21.field42636 + 12),
                                 var12,
-                                ClientColors.LIGHT_GREYISH_BLUE.color
+                                ClientColors.LIGHT_GREYISH_BLUE.getColor
                         );
                     }
 

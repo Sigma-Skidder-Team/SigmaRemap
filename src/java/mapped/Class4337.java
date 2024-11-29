@@ -56,7 +56,7 @@ public class Class4337 extends CustomGuiScreen {
    }
 
    public void method13495() {
-      Minecraft.getInstance().getSoundHandler().play(CustomSoundPlayer.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+      Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
    }
 
    private int method13496() {

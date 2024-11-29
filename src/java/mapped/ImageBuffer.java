@@ -3,7 +3,7 @@ package mapped;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import org.newdawn.slick.opengl.ImageData;
+import lol.ImageData;
 import org.lwjgl.BufferUtils;
 
 public class ImageBuffer implements ImageData {
@@ -26,32 +26,32 @@ public class ImageBuffer implements ImageData {
    }
 
    @Override
-   public int getDepth() {
+   public int method21455() {
       return 32;
    }
 
    @Override
-   public int getHeight() {
+   public int method21457() {
       return this.field30129;
    }
 
    @Override
-   public int getTexHeight() {
+   public int method21459() {
       return this.field30131;
    }
 
    @Override
-   public int getTexWidth() {
+   public int method21458() {
       return this.field30130;
    }
 
    @Override
-   public int getWidth() {
+   public int method21456() {
       return this.field30128;
    }
 
    @Override
-   public ByteBuffer getImageBufferData() {
+   public ByteBuffer method21460() {
       ByteBuffer var3 = BufferUtils.createByteBuffer(this.field30132.length);
       var3.put(this.field30132);
       var3.flip();

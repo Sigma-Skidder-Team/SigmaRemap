@@ -5,13 +5,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.client.GameSettings;
-import net.minecraft.client.audio.ISound;
-import net.minecraft.client.audio.ITickableSound;
-import net.minecraft.client.audio.Sound;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -28,18 +24,18 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class SoundHandler extends Class269<Class8657> {
-   public static final Sound field1051 = new Sound("meta:missing_sound", 1.0F, 1.0F, 1, Sound.Type.field14506, false, false, 16);
+   public static final Class6647 field1051 = new Class6647("meta:missing_sound", 1.0F, 1.0F, 1, Class2221.field14506, false, false, 16);
    private static final Logger field1052 = LogManager.getLogger();
    private static final Gson field1053 = new GsonBuilder()
       .registerTypeHierarchyAdapter(ITextComponent.class, new ITextComponent.Serializer())
       .registerTypeAdapter(Class9304.class, new Class2569())
       .create();
    private static final TypeToken<Map<String, Class9304>> field1054 = new Class5799();
-   private final Map<ResourceLocation, Class6648> soundRegistry = Maps.newHashMap();
-   private final Class4386 sndManager;
+   private final Map<ResourceLocation, Class6648> field1055 = Maps.newHashMap();
+   private final Class4386 field1056;
 
    public SoundHandler(IResourceManager var1, GameSettings var2) {
-      this.sndManager = new Class4386(this, var2, var1);
+      this.field1056 = new Class4386(this, var2, var1);
    }
 
    public Class8657 method970(IResourceManager var1, IProfiler var2) {
@@ -83,10 +79,10 @@ public class SoundHandler extends Class269<Class8657> {
    }
 
    public void method971(Class8657 var1, IResourceManager var2, IProfiler var3) {
-      var1.method31156(this.soundRegistry, this.sndManager);
+      var1.method31156(this.field1055, this.field1056);
 
-      for (ResourceLocation var7 : this.soundRegistry.keySet()) {
-         Class6648 var8 = this.soundRegistry.get(var7);
+      for (ResourceLocation var7 : this.field1055.keySet()) {
+         Class6648 var8 = this.field1055.get(var7);
          if (var8.method20300() instanceof TranslationTextComponent) {
             String var9 = ((TranslationTextComponent)var8.method20300()).getKey();
             if (! I18n.method33884(var9)) {
@@ -96,17 +92,17 @@ public class SoundHandler extends Class269<Class8657> {
       }
 
       if (field1052.isDebugEnabled()) {
-         for (ResourceLocation var11 : this.soundRegistry.keySet()) {
+         for (ResourceLocation var11 : this.field1055.keySet()) {
             if (!Registry.field16069.method9193(var11)) {
                field1052.debug("Not having sound event for: {}", var11);
             }
          }
       }
 
-      this.sndManager.method13755();
+      this.field1056.method13755();
    }
 
-   private static boolean method996(Sound var0, ResourceLocation var1, IResourceManager var2) {
+   private static boolean method996(Class6647 var0, ResourceLocation var1, IResourceManager var2) {
       ResourceLocation var5 = var0.method20292();
       if (var2.method581(var5)) {
          return true;
@@ -118,79 +114,79 @@ public class SoundHandler extends Class269<Class8657> {
 
    @Nullable
    public Class6648 method997(ResourceLocation var1) {
-      return this.soundRegistry.get(var1);
+      return this.field1055.get(var1);
    }
 
-   public Collection<ResourceLocation> getAvailableSounds() {
-      return this.soundRegistry.keySet();
+   public Collection<ResourceLocation> method998() {
+      return this.field1055.keySet();
    }
 
-   public void playOnNextTick(ITickableSound var1) {
-      this.sndManager.playOnNextTick(var1);
+   public void method999(Class6341 var1) {
+      this.field1056.method13771(var1);
    }
 
-   public void play(ISound var1) {
-      this.sndManager.play(var1);
+   public void method1000(Class6340 var1) {
+      this.field1056.method13770(var1);
    }
 
-   public void playDelayed(ISound var1, int var2) {
-      this.sndManager.playDelayed(var1, var2);
+   public void method1001(Class6340 var1, int var2) {
+      this.field1056.method13777(var1, var2);
    }
 
    public void updateListener(ActiveRenderInfo var1) {
-      this.sndManager.method13778(var1);
+      this.field1056.method13778(var1);
    }
 
    public void pause() {
-      this.sndManager.method13775();
+      this.field1056.method13775();
    }
 
    public void stop() {
-      this.sndManager.method13761();
+      this.field1056.method13761();
    }
 
    public void unloadSounds() {
-      this.sndManager.method13759();
+      this.field1056.method13759();
    }
 
    public void tick(boolean var1) {
-      this.sndManager.method13764(var1);
+      this.field1056.method13764(var1);
    }
 
    public void resume() {
-      this.sndManager.method13776();
+      this.field1056.method13776();
    }
 
-   public void method1008(SoundCategory var1, float var2) {
-      if (var1 == SoundCategory.field14728 && var2 <= 0.0F) {
+   public void method1008(Class2266 var1, float var2) {
+      if (var1 == Class2266.field14728 && var2 <= 0.0F) {
          this.stop();
       }
 
-      this.sndManager.method13758(var1, var2);
+      this.field1056.method13758(var1, var2);
    }
 
-   public void method1009(ISound var1) {
-      this.sndManager.method13760(var1);
+   public void method1009(Class6340 var1) {
+      this.field1056.method13760(var1);
    }
 
-   public boolean method1010(ISound var1) {
-      return this.sndManager.method13769(var1);
+   public boolean method1010(Class6340 var1) {
+      return this.field1056.method13769(var1);
    }
 
    public void method1011(Class1270 var1) {
-      this.sndManager.method13762(var1);
+      this.field1056.method13762(var1);
    }
 
    public void method1012(Class1270 var1) {
-      this.sndManager.method13763(var1);
+      this.field1056.method13763(var1);
    }
 
-   public void method1013(ResourceLocation var1, SoundCategory var2) {
-      this.sndManager.method13779(var1, var2);
+   public void method1013(ResourceLocation var1, Class2266 var2) {
+      this.field1056.method13779(var1, var2);
    }
 
    public String method1014() {
-      return this.sndManager.method13780();
+      return this.field1056.method13780();
    }
 
    // $VF: synthetic method
@@ -199,7 +195,7 @@ public class SoundHandler extends Class269<Class8657> {
    }
 
    // $VF: synthetic method
-   public static boolean method1016(Sound var0, ResourceLocation var1, IResourceManager var2) {
+   public static boolean method1016(Class6647 var0, ResourceLocation var1, IResourceManager var2) {
       return method996(var0, var1, var2);
    }
 }

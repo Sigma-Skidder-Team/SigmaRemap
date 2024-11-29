@@ -81,7 +81,7 @@ public interface Class1682 {
 
       for (PlayerEntity var16 : this.method6870()) {
          if (var9 == null || var9.test(var16)) {
-            double var17 = var16.getDistanceSq(var1, var3, var5);
+            double var17 = var16.getDistanceNearest(var1, var3, var5);
             if ((var7 < 0.0 || var17 < var7 * var7) && (var12 == -1.0 || var17 < var12)) {
                var12 = var17;
                var14 = var16;
@@ -106,7 +106,7 @@ public interface Class1682 {
    default boolean method7187(double var1, double var3, double var5, double var7) {
       for (PlayerEntity var12 : this.method6870()) {
          if (EntityPredicates.field34763.test(var12) && EntityPredicates.field34758.test(var12)) {
-            double var13 = var12.getDistanceSq(var1, var3, var5);
+            double var13 = var12.getDistanceNearest(var1, var3, var5);
             if (var7 < 0.0 || var13 < var7 * var7) {
                return true;
             }
@@ -148,7 +148,7 @@ public interface Class1682 {
 
       for (LivingEntity var16 : var1) {
          if (var2.canTarget(var3, var16)) {
-            double var17 = var16.getDistanceSq(var4, var6, var8);
+            double var17 = var16.getDistanceNearest(var4, var6, var8);
             if (var12 == -1.0 || var17 < var12) {
                var12 = var17;
                var14 = var16;

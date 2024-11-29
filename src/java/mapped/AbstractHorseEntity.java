@@ -162,7 +162,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method4942(SoundCategory var1) {
+   public void method4942(Class2266 var1) {
       this.field5890.setInventorySlotContents(0, new ItemStack(Items.field37886));
       if (var1 != null) {
          this.world.method6744((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
@@ -472,7 +472,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (!this.world.isRemote) {
          var1.rotationYaw = this.rotationYaw;
          var1.rotationPitch = this.rotationPitch;
-         var1.startRiding(this);
+         var1.method3311(this);
       }
    }
 
@@ -692,7 +692,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                if (!this.isPotionActive(Effects.JUMP_BOOST)) {
                   var9 = var7;
                } else {
-                  var9 = var7 + (double)((float)(this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1) * 0.1F);
+                  var9 = var7 + (double)((float)(this.getActivePotionEffect(Effects.JUMP_BOOST).method8629() + 1) * 0.1F);
                }
 
                Vector3d var11 = this.getMotion();

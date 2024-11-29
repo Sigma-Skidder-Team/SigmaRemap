@@ -75,7 +75,7 @@ public class ServerData {
    }
 
    @Nullable
-   public String getBase64EncodedIconData() {
+   public String method25580() {
       return this.field33198;
    }
 

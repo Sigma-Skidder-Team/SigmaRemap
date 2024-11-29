@@ -31,5 +31,5 @@ public abstract class Class8280 {
       return field35577;
    }
 
-   public abstract Transform method28941(int var1);
+   public abstract Class7897 method28941(int var1);
 }

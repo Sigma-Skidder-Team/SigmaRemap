@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import org.newdawn.slick.TrueTypeFont;
+import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import lol.ClientColors;
-import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureImpl;
+import lol.Texture;
+import lol.TextureImpl;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -101,10 +101,10 @@ public class RenderUtil {
 
    public static void method11421(int var0, int var1, int var2, int var3, boolean var4) {
       if (!var4) {
-         var0 = (int)((float)var0 * GuiManager.scaleFactor);
-         var1 = (int)((float)var1 * GuiManager.scaleFactor);
-         var2 = (int)((float)var2 * GuiManager.scaleFactor);
-         var3 = (int)((float)var3 * GuiManager.scaleFactor);
+         var0 = (int)((float)var0 * GuiManager.portalScaleFactor);
+         var1 = (int)((float)var1 * GuiManager.portalScaleFactor);
+         var2 = (int)((float)var2 * GuiManager.portalScaleFactor);
+         var3 = (int)((float)var3 * GuiManager.portalScaleFactor);
       } else {
          float[] var7 = method11416(var0, var1);
          var0 = (int)var7[0];
@@ -201,9 +201,9 @@ public class RenderUtil {
       BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       RenderSystem.color4f(var8, var9, var10, var14);
-      var12.begin(7, DefaultVertexFormats.POSITION);
+      var12.begin(7, DefaultVertexFormats.field43341);
       var12.pos((double)var0, (double)var3, 0.0).endVertex();
       var12.pos((double)var2, (double)var3, 0.0).endVertex();
       var12.pos((double)var2, (double)var1, 0.0).endVertex();
@@ -228,7 +228,7 @@ public class RenderUtil {
 
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       var4.bindFramebuffer(true);
       var4.framebufferRender((int)var0 - (int)var2, (int)var1 - (int)var3);
       RenderSystem.enableTexture();
@@ -266,7 +266,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       RenderSystem.shadeModel(7425);
       Tessellator var16 = Tessellator.getInstance();
       BufferBuilder var17 = var16.getBuffer();
@@ -302,7 +302,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
       RenderSystem.shadeModel(7425);
       Tessellator var26 = Tessellator.getInstance();
       BufferBuilder var27 = var26.getBuffer();
@@ -421,7 +421,7 @@ public class RenderUtil {
       RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
-      GL11.glPointSize(var2 * GuiManager.scaleFactor);
+      GL11.glPointSize(var2 * GuiManager.portalScaleFactor);
       GL11.glBegin(0);
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
@@ -431,33 +431,33 @@ public class RenderUtil {
       RenderSystem.disableBlend();
    }
 
-   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4) {
-      drawString(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
+   public static void drawString(ClientResource var0, float var1, float var2, String var3, int var4) {
+      method11441(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
    }
 
-   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
-      drawString(var0, var1, var2, var3, var4, var5, var6, false);
+   public static void method11440(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
+      method11441(var0, var1, var2, var3, var4, var5, var6, false);
    }
 
-   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
+   public static void method11441(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
       RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.getWidth(var3) / 2;
+            var10 = -var0.getStringWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.getWidth(var3);
+            var10 = -var0.getStringWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {
          case 1:
-            var11 = -var0.getHeight(var3) / 2;
+            var11 = -var0.method23941(var3) / 2;
             break;
          case 3:
-            var11 = -var0.getHeight(var3);
+            var11 = -var0.method23941(var3);
       }
 
       float var12 = (float)(var4 >> 24 & 0xFF) / 255.0F;
@@ -466,7 +466,7 @@ public class RenderUtil {
       float var15 = (float)(var4 & 0xFF) / 255.0F;
       GL11.glPushMatrix();
       boolean var16 = false;
-      if ((double) GuiManager.scaleFactor == 2.0) {
+      if ((double) GuiManager.portalScaleFactor == 2.0) {
          if (var0 == ResourceRegistry.JelloLightFont20) {
             var0 = ResourceRegistry.JelloLightFont40;
          } else if (var0 == ResourceRegistry.JelloLightFont25) {
@@ -492,21 +492,21 @@ public class RenderUtil {
             int var18 = (int)var17[0];
             int var19 = (int)var17[1];
             GL11.glTranslatef(var1, var2, 0.0F);
-            GL11.glScalef(1.0F / GuiManager.scaleFactor, 1.0F / GuiManager.scaleFactor, 1.0F / GuiManager.scaleFactor);
+            GL11.glScalef(1.0F / GuiManager.portalScaleFactor, 1.0F / GuiManager.portalScaleFactor, 1.0F / GuiManager.portalScaleFactor);
             GL11.glTranslatef(-var1, -var2, 0.0F);
-            var10 = (int)((float)var10 * GuiManager.scaleFactor);
-            var11 = (int)((float)var11 * GuiManager.scaleFactor);
+            var10 = (int)((float)var10 * GuiManager.portalScaleFactor);
+            var11 = (int)((float)var11 * GuiManager.portalScaleFactor);
          }
       }
 
       RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       if (var7) {
-         var0.drawString((float)Math.round(var1 + (float)var10), (float)(Math.round(var2 + (float)var11) + 2), var3, new org.newdawn.slick.Color(0.0F, 0.0F, 0.0F, 0.35F));
+         var0.method23937((float)Math.round(var1 + (float)var10), (float)(Math.round(var2 + (float)var11) + 2), var3, new Color(0.0F, 0.0F, 0.0F, 0.35F));
       }
 
       if (var3 != null) {
-         var0.drawString((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new org.newdawn.slick.Color(var13, var14, var15, var12));
+         var0.method23937((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new Color(var13, var14, var15, var12));
       }
 
       RenderSystem.disableBlend();
@@ -528,18 +528,18 @@ public class RenderUtil {
       int var11 = 0;
       switch (Class7820.field33554[var5.ordinal()]) {
          case 1:
-            var10 = -var0.getWidth(var3) / 2;
+            var10 = -var0.getStringWidth(var3) / 2;
             break;
          case 2:
-            var10 = -var0.getWidth(var3);
+            var10 = -var0.getStringWidth(var3);
       }
 
       switch (Class7820.field33554[var6.ordinal()]) {
          case 1:
-            var11 = -var0.getHeight(var3) / 2;
+            var11 = -var0.method23941(var3) / 2;
             break;
          case 3:
-            var11 = -var0.getHeight(var3);
+            var11 = -var0.method23941(var3);
       }
 
       float var12 = (float)(var4 >> 24 & 0xFF) / 255.0F;
@@ -549,7 +549,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       TextureImpl.bindNone();
-      var0.drawString((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new org.newdawn.slick.Color(var13, var14, var15, var12));
+      var0.method23937((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new Color(var13, var14, var15, var12));
       RenderSystem.disableBlend();
    }
 
@@ -748,7 +748,7 @@ public class RenderUtil {
    }
 
    public static void drawImage(float x, float y, float var2, float var3, Texture tex, float alphaValue) {
-      drawImage(x, y, var2, var3, tex, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, alphaValue));
+      drawImage(x, y, var2, var3, tex, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alphaValue));
    }
 
    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {
@@ -828,7 +828,7 @@ public class RenderUtil {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * GuiManager.scaleFactor);
+         GL11.glLineWidth(1.8F * GuiManager.portalScaleFactor);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(7);
@@ -921,7 +921,7 @@ public class RenderUtil {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * GuiManager.scaleFactor);
+         GL11.glLineWidth(1.8F * GuiManager.portalScaleFactor);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(0);
@@ -990,7 +990,7 @@ public class RenderUtil {
 
    public static void drawRoundedRect(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
-      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5);
+      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       drawImage(var0 - var4, var1 - var4, var4, var4, ResourceList.shadowCorner1PNG, var8);
       drawImage(var0 + var2, var1 - var4, var4, var4, ResourceList.shadowCorner2PNG, var8);
       drawImage(var0 - var4, var1 + var3, var4, var4, ResourceList.shadowCorner3PNG, var8);
@@ -1002,7 +1002,7 @@ public class RenderUtil {
    }
 
    public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
-      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var5);
+      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11450(var0, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
       method11450(var0 + var2 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
       method11450(var0, var1, var2, var4, ResourceList.shadowBottomPNG, var8, false);
@@ -1014,8 +1014,8 @@ public class RenderUtil {
    }
 
    public static void method11466(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-      int var9 = 36;
-      int var10 = 10;
+      byte var9 = 36;
+      byte var10 = 10;
       int var11 = var9 - var10;
       drawRect((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
       drawImage((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourceList.floatingCornerPNG, var4);
@@ -1083,8 +1083,8 @@ public class RenderUtil {
    }
 
    public static void method11467(int var0, int var1, int var2, int var3, int var4) {
-      int var7 = 36;
-      int var8 = 10;
+      byte var7 = 36;
+      byte var8 = 10;
       int var9 = var7 - var8;
       drawRect((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
       drawImage((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourceList.floatingCornerPNG, var4);
@@ -1247,7 +1247,7 @@ public class RenderUtil {
 
    public static void method11479(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+         mc.getTextureManager().bindTexture(TextureManager.field1094);
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
@@ -1263,14 +1263,14 @@ public class RenderUtil {
          RenderSystem.enableBlend();
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glDepthFunc(519);
-         var7.renderItemIntoGUI(var0, 0, 0);
+         var7.method791(var0, 0, 0);
          GL11.glDepthFunc(515);
          RenderSystem.popMatrix();
          GL11.glAlphaFunc(519, 0.0F);
          RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
-         TextureImpl.unbind();
-         mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+         TextureImpl.method36180();
+         mc.getTextureManager().bindTexture(TextureManager.field1094);
          RenderHelper.setupGui3DDiffuseLighting();
       }
    }
@@ -1279,20 +1279,20 @@ public class RenderUtil {
       GL11.glPushMatrix();
       RenderSystem.matrixMode(5888);
       RenderSystem.loadIdentity();
-      mc.getItemRenderer().zLevel -= 1101.0F;
+      mc.getItemRenderer().field847 -= 1101.0F;
       RenderSystem.scaled(1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
-      mc.getItemRenderer().renderItemIntoGUI(var0, 0, 0);
-      mc.getItemRenderer().zLevel += 1101.0F;
-      TextureImpl.unbind();
-      mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+      mc.getItemRenderer().method791(var0, 0, 0);
+      mc.getItemRenderer().field847 += 1101.0F;
+      TextureImpl.method36180();
+      mc.getTextureManager().bindTexture(TextureManager.field1094);
       GL11.glPopMatrix();
    }
 
    public static java.awt.Color getColorFromScreen(int mouseX, int mouseY, java.awt.Color var2) {
-      mouseX = (int)((float)mouseX * GuiManager.scaleFactor);
-      mouseY = (int)((float)mouseY * GuiManager.scaleFactor);
+      mouseX = (int)((float)mouseX * GuiManager.portalScaleFactor);
+      mouseY = (int)((float)mouseY * GuiManager.portalScaleFactor);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
       GL11.glReadPixels(mouseX, Minecraft.getInstance().mainWindow.getFramebufferHeight() - mouseY, 1, 1, 6407, 5120, var5);
@@ -1317,8 +1317,8 @@ public class RenderUtil {
       return !isSuccessful
               ? null
               : new double[] {
-              (double) (screenCoords.get(0) / GuiManager.scaleFactor),
-              (double) (((float) mc.framebuffer.framebufferHeight - screenCoords.get(1)) / GuiManager.scaleFactor),
+              (double) (screenCoords.get(0) / GuiManager.portalScaleFactor),
+              (double) (((float) mc.framebuffer.framebufferHeight - screenCoords.get(1)) / GuiManager.portalScaleFactor),
               (double) screenCoords.get(2)
       };
    }

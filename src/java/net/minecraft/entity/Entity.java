@@ -429,7 +429,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    private boolean isLiquidPresentInAABB(AxisAlignedBB var1) {
-      return this.world.hasNoCollisions(this, var1) && !this.world.containsAnyLiquid(var1);
+      return this.world.hasNoCollisions(this, var1) && !this.world.method7014(var1);
    }
 
    public void setOnGround(boolean var1) {
@@ -1162,7 +1162,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return MathHelper.sqrt(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
-   public double getDistanceSq(double var1, double var3, double var5) {
+   public double getDistanceNearest(double var1, double var3, double var5) {
       double var9 = this.getPosX() - var1;
       double var11 = this.getPosY() - var3;
       double var13 = this.getPosZ() - var5;
@@ -1170,10 +1170,10 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double getDistanceSq(Entity var1) {
-      return this.getDistanceSq(var1.getPositionVec());
+      return this.getDistanceNearest3(var1.getPositionVec());
    }
 
-   public double getDistanceSq(Vector3d var1) {
+   public double getDistanceNearest3(Vector3d var1) {
       double var4 = this.getPosX() - var1.x;
       double var6 = this.getPosY() - var1.y;
       double var8 = this.getPosZ() - var1.z;
@@ -1618,11 +1618,11 @@ public abstract class Entity implements INameable, ICommandSource {
       return (double)this.size.field39969 * 0.75;
    }
 
-   public boolean startRiding(Entity var1) {
+   public boolean method3311(Entity var1) {
       return this.startRiding(var1, false);
    }
 
-   public boolean isLiving() {
+   public boolean method3312() {
       return this instanceof LivingEntity;
    }
 
@@ -1894,7 +1894,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public Team getTeam() {
-      return this.world.method6805().getPlayersTeam(this.method2956());
+      return this.world.method6805().method20998(this.method2956());
    }
 
    public boolean isOnSameTeam(Entity var1) {
@@ -2152,7 +2152,7 @@ public abstract class Entity implements INameable, ICommandSource {
                BlockState var5x = this.world.getBlockState(this.field_242271_ac);
                Direction.Axis var6x;
                Vector3d var7x;
-               if (!var5x.hasProperty(BlockStateProperties.field39712)) {
+               if (!var5x.method23462(BlockStateProperties.field39712)) {
                   var6x = Direction.Axis.X;
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {
@@ -2604,8 +2604,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return PushReaction.field15862;
    }
 
-   public SoundCategory getSoundCategory() {
-      return SoundCategory.field14734;
+   public Class2266 getSoundCategory() {
+      return Class2266.field14734;
    }
 
    public int getFireImmuneTicks() {
@@ -2665,11 +2665,11 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean handleFluidAcceleration(ITag<Fluid> var1, double var2) {
       AxisAlignedBB var6 = this.getBoundingBox().shrink(0.001);
       int var7 = MathHelper.floor(var6.minX);
-      int var8 = MathHelper.ceil(var6.maxX);
+      int var8 = MathHelper.method37774(var6.maxX);
       int var9 = MathHelper.floor(var6.minY);
-      int var10 = MathHelper.ceil(var6.maxY);
+      int var10 = MathHelper.method37774(var6.maxY);
       int var11 = MathHelper.floor(var6.minZ);
-      int var12 = MathHelper.ceil(var6.maxZ);
+      int var12 = MathHelper.method37774(var6.maxZ);
       if (!this.world.method7019(var7, var9, var11, var8, var10, var12)) {
          return false;
       } else {

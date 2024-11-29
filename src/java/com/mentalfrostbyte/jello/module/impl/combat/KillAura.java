@@ -100,7 +100,7 @@ public class KillAura extends Module {
         this.registerSetting(new BooleanSetting("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
         this.registerSetting(new BooleanSetting("Silent", "Silent rotations", true));
         this.registerSetting(new BooleanSetting("ESP", "ESP on targets", true));
-        this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.color));
+        this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     public static Rotations getRotations2(KillAura killaura) {
@@ -135,7 +135,7 @@ public class KillAura extends Module {
         this.field23940 = 0;
         this.field23942 = 0;
         field23954 = 0;
-        this.rotations2 = new Rotations(mc.player.lastReportedYaw, mc.player.lastReportedPitch);
+        this.rotations2 = new Rotations(mc.player.rotYaw, mc.player.rotPitch);
         this.rotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         previousRotations = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
@@ -744,7 +744,7 @@ public class KillAura extends Module {
             case "LockView":
                 this.rotations2.yaw = this.rotations.yaw;
                 this.rotations2.pitch = this.rotations.pitch;
-                EntityRayTraceResult ray = MultiUtilities.raytrace(
+                EntityRayTraceResult ray = MultiUtilities.method17714(
                         targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (ray == null || ray.getEntity() != targ) {
@@ -752,7 +752,7 @@ public class KillAura extends Module {
                 }
                 break;
             case "Test2":
-                EntityRayTraceResult var24 = MultiUtilities.raytrace(
+                EntityRayTraceResult var24 = MultiUtilities.method17714(
                         targ, this.rotations.yaw, this.rotations.pitch, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (var24 != null && var24.getEntity() == targ) {

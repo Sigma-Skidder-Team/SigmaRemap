@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Spammer extends Module {
-    private int tickCount;
+    private int field23438;
 
     public Spammer() {
         super(ModuleCategory.MISC, "Spammer", "Spam a message");
@@ -18,13 +18,13 @@ public class Spammer extends Module {
     }
 
     @EventTarget
-    public void onTick(TickEvent event) {
+    public void method16066(TickEvent var1) {
         if (this.isEnabled()) {
-            this.tickCount++;
-            if ((float) this.tickCount > this.getNumberValueBySettingName("Messages delay") * 20.0F) {
-                this.tickCount = 0;
-                String message = this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float) Math.random() * 89.0F)));
-                MultiUtilities.sendChatMessage(message);
+            this.field23438++;
+            if ((float) this.field23438 > this.getNumberValueBySettingName("Messages delay") * 20.0F) {
+                this.field23438 = 0;
+                String var4 = this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float) Math.random() * 89.0F)));
+                MultiUtilities.sendChatMessage(var4);
             }
         }
     }

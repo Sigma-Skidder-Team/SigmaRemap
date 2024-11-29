@@ -16,7 +16,7 @@ public class Class9189 {
    }
 
    public Class9189(byte[] var1) {
-      this.setData(var1);
+      this.method34391(var1);
    }
 
    public void method34390() {
@@ -24,7 +24,7 @@ public class Class9189 {
       this.field42201 = null;
    }
 
-   public final void setData(byte[] var1) {
+   public final void method34391(byte[] var1) {
       int var4 = 4 * ((var1.length + 4 - 1) / 4);
       if (this.field42201 == null || this.field42201.length != var4) {
          this.field42201 = new byte[var4];
@@ -34,7 +34,7 @@ public class Class9189 {
       this.method34393();
    }
 
-   public void method34392() throws AACException {
+   public void method34392() throws Class2460 {
       int var3 = this.field42204 & 7;
       if (var3 > 0) {
          this.method34402(var3);
@@ -56,7 +56,7 @@ public class Class9189 {
       return 8 * (this.field42201.length - this.field42202) + this.field42204;
    }
 
-   public int method34396(boolean var1) throws AACException {
+   public int method34396(boolean var1) throws Class2460 {
       if (this.field42202 <= this.field42201.length - 4) {
          int var4 = (this.field42201[this.field42202] & 255) << 24
             | (this.field42201[this.field42202 + 1] & 255) << 16
@@ -68,11 +68,11 @@ public class Class9189 {
 
          return var4;
       } else {
-         throw new AACException("end of stream", true);
+         throw new Class2460("end of stream", true);
       }
    }
 
-   public int method34397(int var1) throws AACException {
+   public int method34397(int var1) throws Class2460 {
       int var6;
       if (this.field42204 < var1) {
          this.field42205 += var1;
@@ -90,7 +90,7 @@ public class Class9189 {
       return var6;
    }
 
-   public int method34398() throws AACException {
+   public int method34398() throws Class2460 {
       int var3;
       if (this.field42204 <= 0) {
          this.field42203 = this.method34396(false);
@@ -106,11 +106,11 @@ public class Class9189 {
       return var3;
    }
 
-   public boolean method34399() throws AACException {
+   public boolean method34399() throws Class2460 {
       return (this.method34398() & 1) != 0;
    }
 
-   public int method34400(int var1) throws AACException {
+   public int method34400(int var1) throws Class2460 {
       int var5;
       if (this.field42204 < var1) {
          int var4 = this.field42203 & this.method34404(this.field42204);
@@ -123,7 +123,7 @@ public class Class9189 {
       return var5;
    }
 
-   public int method34401() throws AACException {
+   public int method34401() throws Class2460 {
       int var4;
       if (this.field42204 <= 0) {
          int var3 = this.method34396(true);
@@ -135,7 +135,7 @@ public class Class9189 {
       return var4;
    }
 
-   public void method34402(int var1) throws AACException {
+   public void method34402(int var1) throws Class2460 {
       this.field42205 += var1;
       if (var1 > this.field42204) {
          var1 -= this.field42204;
@@ -157,7 +157,7 @@ public class Class9189 {
       }
    }
 
-   public void method34403() throws AACException {
+   public void method34403() throws Class2460 {
       this.field42205++;
       if (this.field42204 <= 0) {
          this.field42203 = this.method34396(false);

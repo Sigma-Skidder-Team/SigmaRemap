@@ -13,7 +13,6 @@ import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -61,8 +60,8 @@ public class Class905 extends ProjectileEntity {
    }
 
    @Override
-   public SoundCategory getSoundCategory() {
-      return SoundCategory.field14733;
+   public Class2266 getSoundCategory() {
+      return Class2266.field14733;
    }
 
    @Override

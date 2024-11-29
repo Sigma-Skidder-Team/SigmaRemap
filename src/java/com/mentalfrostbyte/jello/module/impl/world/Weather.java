@@ -11,13 +11,13 @@ import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.network.play.server.SUpdateTimePacket;
 
 public class Weather extends Module {
-    private float rainLevel;
-    private boolean isRaining;
+    private float field23538;
+    private boolean field23539;
 
     public Weather() {
         super(ModuleCategory.WORLD, "Weather", "Removes rain and changes the world's time");
         this.registerSetting(new BooleanSetting("Custom time", "Set the world time", true));
-        this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).addObserver(setting -> {
+        this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).addObserver(var1 -> {
             if (this.getBooleanValueFromSettingName("Custom time") && this.isEnabled()) {
                 mc.world.setDayTime(-((long) this.getNumberValueBySettingName("Time")));
             }
@@ -27,56 +27,69 @@ public class Weather extends Module {
 
     @Override
     public void onEnable() {
-        this.rainLevel = mc.world.method6792(1.0F);
-        this.isRaining = this.rainLevel == 1.0F;
+        this.field23538 = mc.world.method6792(1.0F);
+        if (mc.world.method6792(1.0F) != 1.0F) {
+            if (mc.world.method6792(1.0F) == 0.0F) {
+                this.field23539 = false;
+            }
+        } else {
+            this.field23539 = true;
+        }
 
         mc.world.setDayTime((long) this.getNumberValueBySettingName("Time"));
     }
 
     @EventTarget
-    private void onTick(TickEvent event) {
+    private void method16230(TickEvent var1) {
         if (this.isEnabled()) {
             if (!this.getBooleanValueFromSettingName("Disable rain")) {
-                if (this.isRaining) {
-                    if (this.rainLevel < 1.0F) {
-                        this.rainLevel += 0.05F;
-                        if (this.rainLevel > 1.0F) {
-                            this.rainLevel = 1.0F;
+                if (this.field23539) {
+                    if (!(this.field23538 < 1.0F)) {
+                        if (this.field23538 > 1.0F) {
+                            this.field23538 = 1.0F;
                         }
+                    } else {
+                        this.field23538 = (float) ((double) this.field23538 + 0.05);
                     }
+                }
+            } else if (!(this.field23538 > 0.0F)) {
+                if (this.field23538 < 0.0F) {
+                    this.field23538 = 0.0F;
                 }
             } else {
-                if (this.rainLevel > 0.0F) {
-                    this.rainLevel -= 0.05F;
-                    if (this.rainLevel < 0.0F) {
-                        this.rainLevel = 0.0F;
-                    }
-                }
+                this.field23538 = (float) ((double) this.field23538 - 0.05);
             }
 
-            mc.world.method6793(this.rainLevel);
-            mc.world.method6791(this.rainLevel);
+            mc.world.method6793(this.field23538);
+            mc.world.method6791(this.field23538);
         }
     }
 
     @EventTarget
-    private void onReceivePacket(ReceivePacketEvent event) {
+    private void method16231(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
-            if (!(event.getPacket() instanceof SUpdateTimePacket)) {
-                if (event.getPacket() instanceof SChangeGameStatePacket) {
-                    SChangeGameStatePacket packet = (SChangeGameStatePacket) event.getPacket();
-                    if (packet.method17397().field43543 == 7) {
-                        this.isRaining = packet.method17398() != 0.0F;
-                        if (!this.getBooleanValueFromSettingName("Disable rain")) {
-                            this.rainLevel = packet.method17398();
+            if (!(var1.getPacket() instanceof SUpdateTimePacket)) {
+                if (var1.getPacket() instanceof SChangeGameStatePacket) {
+                    SChangeGameStatePacket var4 = (SChangeGameStatePacket) var1.getPacket();
+                    if (var4.method17397().field43543 == 7) {
+                        if (var4.method17398() != 1.0F) {
+                            if (var4.method17398() == 0.0F) {
+                                this.field23539 = false;
+                            }
                         } else {
-                            event.setPacket(new SChangeGameStatePacket(packet.method17397(), 0.0F));
-                            this.rainLevel = 0.0F;
+                            this.field23539 = true;
+                        }
+
+                        if (!this.getBooleanValueFromSettingName("Disable rain")) {
+                            this.field23538 = var4.method17398();
+                        } else {
+                            var1.method13899(new SChangeGameStatePacket(var4.method17397(), 0.0F));
+                            this.field23538 = 0.0F;
                         }
                     }
                 }
             } else if (this.getBooleanValueFromSettingName("Custom time")) {
-                event.setPacket(new SUpdateTimePacket(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
+                var1.method13899(new SUpdateTimePacket(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
             }
         }
     }

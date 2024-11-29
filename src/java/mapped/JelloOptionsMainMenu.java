@@ -13,7 +13,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       ColorHelper var9 = ColorHelper.field27961.method19415();
-      var9.method19406(ClientColors.LIGHT_GREYISH_BLUE.color);
+      var9.method19406(ClientColors.LIGHT_GREYISH_BLUE.getColor);
       UIButton var10;
       this.addToList(var10 = new UIButton(this, "openKeybinds", var5 / 2 - 300, var6 - 80, 300, 38, var9, "Open Keybind Manager", ResourceRegistry.JelloLightFont24));
       UIButton var11;
@@ -41,52 +41,52 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
       String var4 = var10000.append(Client.VERSION).toString();
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(this.xA + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var4)) / 2),
+         (float)(this.xA + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var4)) / 2),
          (float)(this.yA + 70),
          var4,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
       );
       String var5 = "Click GUI is currently bound to: "
          + MultiUtilities.method17736(Client.getInstance().getModuleManager().getMacOSTouchBar().method13728(ClickGui.class))
          + " Key";
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var5)) / 2),
+         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var5)) / 2),
          (float)(this.getYA() + this.getHeightA() - 180),
          var5,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
       String var6 = "Configure all your keybinds in the keybind manager!";
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont14.getWidth(var6)) / 2),
+         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont14.getStringWidth(var6)) / 2),
          (float)(this.getYA() + this.getHeightA() - 150),
          var6,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
       );
       String var7 = "GUI Blur: ";
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var7)) / 2 - 114),
+         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var7)) / 2 - 114),
          (float)(this.getYA() + this.getHeightA() - 221),
          var7,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
       );
       String var8 = "GPU Accelerated: ";
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getWidth(var8)) / 2 + 52),
+         (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.getStringWidth(var8)) / 2 + 52),
          (float)(this.getYA() + this.getHeightA() - 221),
          var8,
-         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
       );
       super.draw(var1);
    }
 
    private void method13463(int var1, int var2, float var3) {
-      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, var3));
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont25, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.86F * var3)
+         ResourceRegistry.JelloLightFont25, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.86F * var3)
       );
    }
 }

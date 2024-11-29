@@ -145,12 +145,12 @@ public class Class3475 extends Block implements Class3476 {
          (double)var1.getY(),
          (double)var1.getZ(),
          !var2 ? SoundEvents.field26464 : SoundEvents.field26465,
-         SoundCategory.field14732,
+         Class2266.field14732,
          1.0F,
          1.0F,
          false
       );
-      double var6 = var5.getShape(var0, var1).method19522(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
+      double var6 = var5.method23412(var0, var1).method19522(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
       double var8 = 0.13125F;
       double var10 = 0.7375F;
       Random var12 = var0.method6814();
@@ -240,7 +240,7 @@ public class Class3475 extends Block implements Class3476 {
       }
 
       BlockState var13 = method12167(var0, var1, var2);
-      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26463, SoundCategory.field14732, 1.0F, 1.0F);
+      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26463, Class2266.field14732, 1.0F, 1.0F);
       return var13;
    }
 
@@ -271,7 +271,7 @@ public class Class3475 extends Block implements Class3476 {
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>get(field19326) == 7) {
          var2.setBlockState(var3, var1.method23459(field19326), 3);
-         var2.method6742((PlayerEntity)null, var3, SoundEvents.field26466, SoundCategory.field14732, 1.0F, 1.0F);
+         var2.method6742((PlayerEntity)null, var3, SoundEvents.field26466, Class2266.field14732, 1.0F, 1.0F);
       }
    }
 

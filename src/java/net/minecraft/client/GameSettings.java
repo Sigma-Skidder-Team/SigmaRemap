@@ -30,13 +30,16 @@ import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.settings.SliderPercentageOption;
 import net.minecraft.client.shader.Framebuffer;
-import net.minecraft.util.*;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.Util;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.util.HandSide;
+import net.minecraft.util.SharedConstants;
 import net.minecraft.util.datafix.DefaultTypeReferences;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -83,7 +86,7 @@ public class GameSettings {
    public double field44598 = 1.0;
    public double field44599 = 0.0;
    public int field44600 = 4;
-   private final Map<SoundCategory, Float> field44601 = Maps.newEnumMap(SoundCategory.class);
+   private final Map<Class2266, Float> field44601 = Maps.newEnumMap(Class2266.class);
    public boolean field44602 = true;
    public Class2207 field44603 = Class2207.field14426;
    public Class2200 field44604 = Class2200.field14376;
@@ -92,7 +95,7 @@ public class GameSettings {
    public double field44607 = 1.0;
    public boolean rawMouseInput = true;
    public int glDebugVerbosity = 1;
-   public boolean autoJump = true;
+   public boolean field44610 = true;
    public boolean field44611 = true;
    public boolean field44612 = true;
    public boolean field44613 = true;
@@ -690,7 +693,7 @@ public class GameSettings {
                   }
                }
 
-               for (SoundCategory var31 : SoundCategory.values()) {
+               for (Class2266 var31 : Class2266.values()) {
                   if (var4.equals("soundCategory_" + var31.method8995())) {
                      this.field44601.put(var31, method37145(var5));
                   }
@@ -831,7 +834,7 @@ public class GameSettings {
                }
             }
 
-            for (SoundCategory var27 : SoundCategory.values()) {
+            for (Class2266 var27 : Class2266.values()) {
                var1.println("soundCategory_" + var27.method8995() + ":" + this.method37147(var27));
             }
 
@@ -847,11 +850,11 @@ public class GameSettings {
       }
    }
 
-   public float method37147(SoundCategory var1) {
+   public float method37147(Class2266 var1) {
       return this.field44601.containsKey(var1) ? this.field44601.get(var1) : 1.0F;
    }
 
-   public void method37148(SoundCategory var1, float var2) {
+   public void method37148(Class2266 var1, float var2) {
       this.field44601.put(var1, var2);
       this.field44659.getSoundHandler().method1008(var1, var2);
    }

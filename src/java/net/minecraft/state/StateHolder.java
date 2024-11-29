@@ -66,11 +66,11 @@ public abstract class StateHolder<O, S> {
       return var3.toString();
    }
 
-   public Collection<Property<?>> getProperties() {
-      return Collections.unmodifiableCollection(this.field31580.keySet());
+   public Collection<Property<?>> method23461() {
+      return Collections.<Property<?>>unmodifiableCollection(this.field31580.keySet());
    }
 
-   public <T extends Comparable<T>> boolean hasProperty(Property<T> var1) {
+   public <T extends Comparable<T>> boolean method23462(Property<T> var1) {
       return this.field31580.containsKey(var1);
    }
 

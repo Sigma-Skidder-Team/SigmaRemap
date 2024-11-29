@@ -125,7 +125,7 @@ public class MineplexHighJump extends Module {
       if (this.isEnabled() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.getBooleanValueFromSettingName("Fake fly")) {
          mc.player.positionVec.y = this.field24026;
          mc.player.lastTickPosY = this.field24026;
-         mc.player.chasingPosY = this.field24026;
+         mc.player.field4915 = this.field24026;
          mc.player.prevPosY = this.field24026;
          if (MovementUtils.isMoving()) {
             mc.player.cameraYaw = 0.099999994F;

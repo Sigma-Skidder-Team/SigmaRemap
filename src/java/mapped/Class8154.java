@@ -39,12 +39,12 @@ public class Class8154 {
    private static String method28290(int var0, BufferBuilder var1) {
       StringBuffer var4 = new StringBuffer();
       ByteBuffer var5 = var1.method17082();
-      VertexFormat var6 = var1.method17089();
-      int var7 = var1.method17090() + var0 * var6.getSize();
+      Class7831 var6 = var1.method17089();
+      int var7 = var1.method17090() + var0 * var6.method26216();
       UnmodifiableIterator var8 = var6.method26217().iterator();
 
       while (var8.hasNext()) {
-         VertexFormatElement var9 = (VertexFormatElement)var8.next();
+         Class8209 var9 = (Class8209)var8.next();
          if (var9.method28522() > 0) {
             var4.append("(");
          }

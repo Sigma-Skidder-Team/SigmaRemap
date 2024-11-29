@@ -170,7 +170,7 @@ public class Class8896 {
          return null;
       } else {
          BlockState var5 = var1.getDefaultState();
-         Collection var6 = var5.getProperties();
+         Collection var6 = var5.method23461();
          HashMap var7 = new HashMap();
 
          for (int var8 = 0; var8 < var2.length; var8++) {
