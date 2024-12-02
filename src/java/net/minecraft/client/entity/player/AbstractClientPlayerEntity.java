@@ -48,6 +48,15 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
       Class7749.method25668(this);
    }
+   public ResourceLocation getLocationOfCape()
+   {
+      return this.locationOfCape;
+   }
+
+   public void setLocationOfCape(ResourceLocation p_setLocationOfCape_1_)
+   {
+      this.locationOfCape = p_setLocationOfCape_1_;
+   }
 
    @Override
    public boolean isSpectator() {

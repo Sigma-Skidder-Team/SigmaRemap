@@ -109,10 +109,7 @@ public class NoSlow extends Module {
         startPitch = mc.player.rotationPitch;
 
         // Create a fake client player entity
-        clientPlayerEntity = new RemoteClientPlayerEntity(mc.world, mc.player.getGameProfile());
-        clientPlayerEntity.inventory = mc.player.inventory;
-        clientPlayerEntity.setPositionAndRotation(startPosition.x, startPosition.y, startPosition.z, startYaw, startPitch);
-        clientPlayerEntity.rotationYawHead = mc.player.rotationYawHead;
+
 
         // Add fake entity to the world
         mc.world.addEntity(-1, clientPlayerEntity);

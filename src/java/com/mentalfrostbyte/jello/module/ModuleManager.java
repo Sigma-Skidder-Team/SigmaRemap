@@ -199,6 +199,7 @@ public class ModuleManager {
         this.register(new PacketDumper());
         this.register(new DebugSpeed());
         this.register(new AutoMiner());
+        this.register(new Cape());
 
         this.sortBySuffixAndRegisterEvents();
     }

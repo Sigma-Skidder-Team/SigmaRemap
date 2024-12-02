@@ -69,7 +69,8 @@ public class MusicPlayer extends Class4278 {
                  new MusicPlayerVideo("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
                  new MusicPlayerVideo("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
                  new MusicPlayerVideo("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
-                 new MusicPlayerVideo("NCS", "PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD", YoutubeType.PLAYLIST)
+                 new MusicPlayerVideo("NCS", "PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD", YoutubeType.PLAYLIST),
+                 new MusicPlayerVideo("Christmas", "PL7Sv7aQs2p0Wvg_jpveszJTNL6zYoxJiB", YoutubeType.PLAYLIST)
          };
          videos = var4;
       }
