@@ -592,20 +592,44 @@ public class MusicManager {
             String var8 = var7.getOut();
             return new URL(var8);
         } catch (YoutubeDLException var9) {
-            if (var9.getMessage() != null
-                    && var9.getMessage().contains("ERROR: This video contains content from")
-                    && var9.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Not available in your region."));
-            } else {
-                var9.printStackTrace();
-                this.download();
-            }
+            Client.getInstance().getNotificationManager().send(
+                    new Notification("Failed to Play Song", "Check the logs for more details.")
+            );
+
+            this.stopYtDlp();
+
+            return null;
         } catch (MalformedURLException var10) {
-            MultiUtilities.addChatMessage("URL E " + var10.toString());
+            MultiUtilities.addChatMessage("URL Error: " + var10.toString());
             var10.printStackTrace();
+
+            Client.getInstance().getNotificationManager().send(
+                    new Notification("Failed to Play Song", "Invalid URL encountered.")
+            );
+
+            this.stopYtDlp();
+
+            return null;
+        }
+    }
+
+    private void stopYtDlp() {
+        try {
+            String fileName = Util.getOSType() == Util.OS.WINDOWS ? "yt-dlp.exe"
+                    : Util.getOSType() == Util.OS.LINUX ? "yt-dlp_linux"
+                    : "yt-dlp_macos";
+
+            File ytDlpFile = new File(Client.getInstance().getFile() + "/music/" + fileName);
+
+            if (ytDlpFile.exists()) {
+                ProcessBuilder pb = new ProcessBuilder("taskkill", "/F", "/IM", ytDlpFile.getName());
+                pb.start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        return null;
+
     }
 
     public String method24324() {
