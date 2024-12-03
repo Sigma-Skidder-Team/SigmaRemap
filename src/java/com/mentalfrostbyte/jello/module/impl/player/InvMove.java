@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
@@ -22,6 +23,7 @@ public class InvMove extends Module {
     public InvMove() {
         super(ModuleCategory.PLAYER, "InvMove", "Move freely in the inventory");
         this.registerSetting(new BooleanSetting("AACP", "Bypass for AACP", true));
+        this.registerSetting(new BooleanSetting("Hypixel", "Bypass for Hypixel", false));
         this.field23757 = false;
     }
 
@@ -100,6 +102,19 @@ public class InvMove extends Module {
                         var7.pressed = var8 == 1;
                     }
                 }
+            }
+        }
+    }
+
+    @EventTarget
+    private void onMove(EventMove event) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Hypixel")) {
+            if (mc.currentScreen instanceof ContainerScreen ||
+                    mc.currentScreen instanceof AnvilScreen ||
+                    mc.currentScreen instanceof ChestScreen) {
+                double baseSpeed = 0.7;
+                event.setX(event.getX() * baseSpeed);
+                event.setZ(event.getZ() * baseSpeed);
             }
         }
     }
