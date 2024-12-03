@@ -5,10 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventStep;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
-import com.mentalfrostbyte.jello.module.impl.movement.step.AACStep;
-import com.mentalfrostbyte.jello.module.impl.movement.step.NCPStep;
-import com.mentalfrostbyte.jello.module.impl.movement.step.SpiderStep;
-import com.mentalfrostbyte.jello.module.impl.movement.step.VanillaStep;
+import com.mentalfrostbyte.jello.module.impl.movement.step.*;
+
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SlabBlock;
@@ -25,9 +23,11 @@ public class Step extends ModuleWithModuleSettings {
                 "Step",
                 "Allows you to step up more than 0.5 block",
                 new VanillaStep(),
+                new HypixelStep(),
                 new NCPStep(),
                 new AACStep(),
                 new SpiderStep());
+
     }
 
     @Override
