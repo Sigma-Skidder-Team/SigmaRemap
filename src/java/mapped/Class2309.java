@@ -61,13 +61,13 @@ public enum Class2309 {
       return this.field15824;
    }
 
-   public Item method9084() {
+   public Item getItem() {
       return this.item;
    }
 
    public static Class2309 method9085(Item var0) {
       for (Class2309 var6 : values()) {
-         if (var6.method9084().equals(var0)) {
+         if (var6.getItem().equals(var0)) {
             return var6;
          }
       }
