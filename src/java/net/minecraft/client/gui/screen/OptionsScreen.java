@@ -183,7 +183,7 @@ public class OptionsScreen extends Screen {
          )
       );
       this.<Button>addButton(
-         new Button(this.width / 2 - 100, this.height / 6 + 168, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.lastScreen))
+         new Button(this.width / 2 - 100, this.height / 6 + 168, 200, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen(this.lastScreen))
       );
    }
 

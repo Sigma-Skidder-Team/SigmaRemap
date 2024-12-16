@@ -50,7 +50,7 @@ public class LecternScreen extends Class870 implements IHasContainer<Class5818> 
          super.method2679();
       } else {
          this.<Button>addButton(
-            new Button(this.width / 2 - 100, 196, 98, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null))
+            new Button(this.width / 2 - 100, 196, 98, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen((Screen)null))
          );
          this.<Button>addButton(
             new Button(this.width / 2 + 2, 196, 98, 20, new TranslationTextComponent("lectern.take_book"), var1 -> this.method2683(3))

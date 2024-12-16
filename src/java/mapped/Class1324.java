@@ -64,7 +64,7 @@ public class Class1324 extends Screen {
             this.method6296();
          })
       );
-      this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.field30658, var1 -> {
+      this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.DONE, var1 -> {
          this.field7001.accept(this.field7002);
          this.mc.displayGuiScreen(this.field7000);
          this.field7002.method38131();

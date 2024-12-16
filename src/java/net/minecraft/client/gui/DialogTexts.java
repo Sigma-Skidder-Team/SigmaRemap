@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class DialogTexts {
    public static final ITextComponent field30656 = new TranslationTextComponent("options.on");
    public static final ITextComponent field30657 = new TranslationTextComponent("options.off");
-   public static final ITextComponent field30658 = new TranslationTextComponent("gui.done");
+   public static final ITextComponent DONE = new TranslationTextComponent("gui.done");
    public static final ITextComponent GUI_CANCEL = new TranslationTextComponent("gui.cancel");
    public static final ITextComponent field30660 = new TranslationTextComponent("gui.yes");
    public static final ITextComponent field30661 = new TranslationTextComponent("gui.no");

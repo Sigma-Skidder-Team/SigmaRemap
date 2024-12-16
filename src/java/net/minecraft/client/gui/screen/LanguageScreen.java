@@ -41,13 +41,13 @@ public class LanguageScreen extends Class1135 {
             }
          )
       );
-      this.field6198 = this.<Button>addButton(new Button(this.width / 2 - 155 + 160, this.height - 38, 150, 20, DialogTexts.field30658, var1 -> {
+      this.field6198 = this.<Button>addButton(new Button(this.width / 2 - 155 + 160, this.height - 38, 150, 20, DialogTexts.DONE, var1 -> {
          Class1164 var4 = this.field6195.getSelected();
          if (var4 != null && !Class1164.method5565(var4).getCode().equals(this.field6196.getCurrentLanguage().getCode())) {
             this.field6196.method964(Class1164.method5565(var4));
             this.field6193.language = Class1164.method5565(var4).getCode();
             this.mc.reloadResources();
-            this.field6198.setMessage(DialogTexts.field30658);
+            this.field6198.setMessage(DialogTexts.DONE);
             this.field6197.setMessage(AbstractOption.field25360.func_238152_c_(this.field6193));
             this.field6193.saveOptions();
          }

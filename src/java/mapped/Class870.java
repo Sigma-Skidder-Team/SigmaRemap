@@ -75,7 +75,7 @@ public class Class870 extends Screen {
    }
 
    public void method2679() {
-      this.<Button>addButton(new Button(this.width / 2 - 100, 196, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null)));
+      this.<Button>addButton(new Button(this.width / 2 - 100, 196, 200, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen((Screen)null)));
    }
 
    public void method2692() {

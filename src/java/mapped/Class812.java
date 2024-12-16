@@ -228,7 +228,7 @@ public class Class812 extends RealmsScreen {
                   if (var3.method36590()) {
                      var3.method36588();
                      this.field4365 = new TranslationTextComponent("mco.download.failed");
-                     this.field4362.setMessage(DialogTexts.field30658);
+                     this.field4362.setMessage(DialogTexts.DONE);
                      return;
                   }
 
@@ -249,7 +249,7 @@ public class Class812 extends RealmsScreen {
 
                this.field4370 = true;
                this.field4366 = new TranslationTextComponent("mco.download.done");
-               this.field4362.setMessage(DialogTexts.field30658);
+               this.field4362.setMessage(DialogTexts.DONE);
             }
          } catch (InterruptedException var11) {
             field4356.error("Could not acquire upload lock");

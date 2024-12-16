@@ -27,6 +27,6 @@ public class Class1203 extends Class1202 {
 
    @Override
    public void renderToolTip(MatrixStack var1, int var2, int var3) {
-      this.field6503.method2459(var1, DialogTexts.field30658, var2, var3);
+      this.field6503.method2459(var1, DialogTexts.DONE, var2, var3);
    }
 }

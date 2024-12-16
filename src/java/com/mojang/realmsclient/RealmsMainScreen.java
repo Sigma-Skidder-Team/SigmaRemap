@@ -984,7 +984,7 @@ public class RealmsMainScreen extends RealmsScreen {
    }
 
    private void method2063(Button var1) {
-      this.mc.displayGuiScreen(new Class823(this.field4272));
+      this.mc.displayGuiScreen(new RealmsScreenReal(this.field4272));
    }
 
    // $VF: synthetic method

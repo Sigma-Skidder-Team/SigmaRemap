@@ -59,7 +59,7 @@ public class Class1305 extends Screen implements Class1306 {
          )
       );
       this.<Button>addButton(
-         new Button(this.width / 2 - 100, this.height - 28, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6900))
+         new Button(this.width / 2 - 100, this.height - 28, 200, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen(this.field6900))
       );
       if (this.field6902.getEventListeners().isEmpty()) {
          var3.active = false;

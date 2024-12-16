@@ -48,7 +48,7 @@ public class AccessibilityScreen extends Class1140 {
          )
       );
       this.<Button>addButton(
-         new Button(this.width / 2 + 5, this.height - 27, 150, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192))
+         new Button(this.width / 2 + 5, this.height - 27, 150, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen(this.field6192))
       );
    }
 }
