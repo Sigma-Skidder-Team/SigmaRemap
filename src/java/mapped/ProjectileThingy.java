@@ -13,14 +13,14 @@ import net.minecraft.util.math.vector.Vector3d;
 import java.util.ArrayList;
 import java.util.List;
 
-public enum Class2309 {
-   addItem(Items.BOW, 0.0F, 3.0F, 0.0F),
-   addItem2(Items.SNOWBALL, 0.0F, 1.875F, 0.0F),
-   addItem3(Items.ENDER_PEARL, 0.0F, 1.875F, 0.0F),
-   addItem4(Items.EGG, 0.0F, 1.875F, 0.0F),
-   addItem5(Items.SPLASH_POTION, 0.0F, 0.5F, 0.0F),
-   addItem6(Items.EXPERIENCE_BOTTLE, 0.0F, 0.6F, 0.0F),
-   addItem7(Items.TRIDENT, 0.0F, 2.5F, 0.0F);
+public enum ProjectileThingy {
+   BOW(Items.BOW, 0.0F, 3.0F, 0.0F),
+   SNOWBALL(Items.SNOWBALL, 0.0F, 1.875F, 0.0F),
+   ENDER_PEARL(Items.ENDER_PEARL, 0.0F, 1.875F, 0.0F),
+   EGG(Items.EGG, 0.0F, 1.875F, 0.0F),
+   SPLASH_POTION(Items.SPLASH_POTION, 0.0F, 0.5F, 0.0F),
+   EXPERIENCE_BOTTLE(Items.EXPERIENCE_BOTTLE, 0.0F, 0.6F, 0.0F),
+   TRIDENT(Items.TRIDENT, 0.0F, 2.5F, 0.0F);
 
    private final Item item;
    private final float field15822;
@@ -35,7 +35,7 @@ public enum Class2309 {
    public RayTraceResult rayTraceResult;
    public Entity field15832;
 
-   private Class2309(Item var3, float var4, float var5, float var6) {
+   private ProjectileThingy(Item var3, float var4, float var5, float var6) {
       this.item = var3;
       this.field15822 = var4;
       this.field15823 = var5;
@@ -64,8 +64,8 @@ public enum Class2309 {
       return this.item;
    }
 
-   public static Class2309 method9085(Item var0) {
-      for (Class2309 var6 : values()) {
+   public static ProjectileThingy method9085(Item var0) {
+      for (ProjectileThingy var6 : values()) {
          if (var6.getItem().equals(var0)) {
             return var6;
          }
