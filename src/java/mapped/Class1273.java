@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public abstract class Class1273<E extends Class1154<E>> extends FocusableGui implements Class1190 {
-   public final Minecraft field6782;
+   public final Minecraft mc;
    public final int field6783;
    private final List<E> field6784 = new Class26(this);
    public int field6785;
@@ -34,8 +34,8 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    private boolean field6798 = true;
    private boolean field6799 = true;
 
-   public Class1273(Minecraft var1, int var2, int var3, int var4, int var5, int var6) {
-      this.field6782 = var1;
+   public Class1273(Minecraft mc, int var2, int var3, int var4, int var5, int var6) {
+      this.mc = mc;
       this.field6785 = var2;
       this.field6786 = var3;
       this.field6787 = var4;
@@ -165,7 +165,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
       Tessellator var9 = Tessellator.getInstance();
       BufferBuilder var10 = var9.getBuffer();
       if (this.field6798) {
-         this.field6782.getTextureManager().bindTexture(AbstractGui.field6451);
+         this.mc.getTextureManager().bindTexture(AbstractGui.field6451);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
@@ -196,7 +196,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
 
       this.method6052(var1, var16, var12, var2, var3, var4);
       if (this.field6799) {
-         this.field6782.getTextureManager().bindTexture(AbstractGui.field6451);
+         this.mc.getTextureManager().bindTexture(AbstractGui.field6451);
          RenderSystem.enableDepthTest();
          RenderSystem.depthFunc(519);
          var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);

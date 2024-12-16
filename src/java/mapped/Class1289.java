@@ -73,7 +73,7 @@ public class Class1289 extends Class1286<Class1168> {
          if (!((Class6122)Class807.method2189(this.field6853).get(var2)).field27415.isEmpty()) {
             Class807.method2192(this.field6853, -1);
             Class807.method2193((int)this.method6044());
-            this.field6782.displayGuiScreen(new Class803(this.field6853, (Class6122)Class807.method2189(this.field6853).get(var2)));
+            this.mc.displayGuiScreen(new Class803(this.field6853, (Class6122)Class807.method2189(this.field6853).get(var2)));
          }
       } else if (var3 >= (double)var12 && var3 < (double)(var12 + 13) && var5 >= (double)var13 && var5 < (double)(var13 + 15)) {
          Class807.method2193((int)this.method6044());
