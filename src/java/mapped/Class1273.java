@@ -30,7 +30,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    private boolean field6794;
    public int field6795;
    private boolean field6796;
-   private E field6797;
+   private E selected;
    private boolean field6798 = true;
    private boolean field6799 = true;
 
@@ -63,11 +63,11 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
 
    @Nullable
    public E getSelected() {
-      return this.field6797;
+      return this.selected;
    }
 
    public void method6024(E var1) {
-      this.field6797 = (E)var1;
+      this.selected = (E)var1;
    }
 
    public void method6025(boolean var1) {
