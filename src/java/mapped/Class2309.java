@@ -113,16 +113,16 @@ public enum Class2309 {
             this.traceY + (double)var15,
             this.traceZ + (double)var15
          );
-         List<Entity> var17 = Projectiles.getMinecraft()
+         List<Entity> entities = Projectiles.getMinecraft()
             .world
             .getEntitiesInAABBexcluding(
                Projectiles.getMinecraft().player,
                var16.offset((double)this.traceXOffset, (double)this.traceYOffset, (double)this.traceZOffset).grow(1.0, 1.0, 1.0),
                EntityPredicates.field34763.and(new Class167(this, var15, var13, var14))
             );
-         if (var17.size() > 0) {
-            for (Entity var22 : var17) {
-               this.field15832 = var22;
+         if (entities.size() > 0) {
+            for (Entity entity : entities) {
+               this.field15832 = entity;
             }
             break;
          }
