@@ -12,7 +12,7 @@ import java.util.Locale;
 public class Class2548 {
    public void deserialize(JsonObject var1, Class7626 var2, JsonDeserializationContext var3) {
       if (var1.has("color")) {
-         var2.method25017(Class2307.valueOf(var1.get("color").getAsString().toUpperCase(Locale.ROOT)));
+         var2.method25017(ChatFormatting.valueOf(var1.get("color").getAsString().toUpperCase(Locale.ROOT)));
       }
 
       if (var1.has("bold")) {

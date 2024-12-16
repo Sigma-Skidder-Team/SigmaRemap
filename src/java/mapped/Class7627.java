@@ -27,23 +27,23 @@ public final class Class7627 extends Class7626 {
    public void method24983(StringBuilder var1) {
       var1.append(this.method24998());
       if (this.method25000()) {
-         var1.append(Class2307.field15784);
+         var1.append(ChatFormatting.BOLD);
       }
 
       if (this.method25002()) {
-         var1.append(Class2307.field15787);
+         var1.append(ChatFormatting.ITALIC);
       }
 
       if (this.method25004()) {
-         var1.append(Class2307.field15786);
+         var1.append(ChatFormatting.UNDERLINE);
       }
 
       if (this.method25006()) {
-         var1.append(Class2307.field15785);
+         var1.append(ChatFormatting.STRIKETHROUGH);
       }
 
       if (this.method25008()) {
-         var1.append(Class2307.field15783);
+         var1.append(ChatFormatting.OBFUSCATED);
       }
 
       var1.append(this.method25030());
