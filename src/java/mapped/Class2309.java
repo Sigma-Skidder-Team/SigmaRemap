@@ -34,7 +34,7 @@ public enum Class2309 {
    public float traceZOffset;
    public RayTraceResult rayTraceResult;
    public Entity field15832;
-   private static final Class2309[] field15833 = new Class2309[]{addItem, addItem2, addItem3, addItem4, addItem5, addItem6, addItem7};
+   private static final Class2309[] unusedArray = new Class2309[]{addItem, addItem2, addItem3, addItem4, addItem5, addItem6, addItem7};
 
    private Class2309(Item var3, float var4, float var5, float var6) {
       this.item = var3;
