@@ -47,9 +47,9 @@ public enum Class2309 {
       if (!this.field15821.equals(Items.BOW)) {
          return this.field15823;
       } else {
-         return !(this.field15823 * BowItem.method11777(Projectiles.method16524().player.getItemInUseCount()) > 0.0F)
+         return !(this.field15823 * BowItem.method11777(Projectiles.getMinecraft().player.getItemInUseCount()) > 0.0F)
             ? BowItem.method11777(20)
-            : BowItem.method11777(Projectiles.method16525().player.getItemInUseCount());
+            : BowItem.method11777(Projectiles.getMinecraft().player.getItemInUseCount());
       }
    }
 
@@ -77,21 +77,21 @@ public enum Class2309 {
 
    public List<Class9110> method9086() {
       ArrayList var3 = new ArrayList();
-      float var4 = (float)Math.toRadians((double) Projectiles.method16526().player.rotationYaw);
-      float var5 = (float)Math.toRadians((double) Projectiles.method16527().player.rotationPitch);
-      double var6 = Projectiles.method16528().player.lastTickPosX
-         + (Projectiles.method16529().player.getPosX() - Projectiles.method16530().player.lastTickPosX)
-            * (double) Projectiles.method16531().timer.renderPartialTicks;
-      double var8 = Projectiles.method16532().player.lastTickPosY
-         + (Projectiles.method16533().player.getPosY() - Projectiles.method16534().player.lastTickPosY)
-            * (double) Projectiles.method16535().timer.renderPartialTicks;
-      double var10 = Projectiles.method16536().player.lastTickPosZ
-         + (Projectiles.method16537().player.getPosZ() - Projectiles.method16538().player.lastTickPosZ)
-            * (double) Projectiles.method16539().timer.renderPartialTicks;
+      float var4 = (float)Math.toRadians((double) Projectiles.getMinecraft().player.rotationYaw);
+      float var5 = (float)Math.toRadians((double) Projectiles.getMinecraft().player.rotationPitch);
+      double var6 = Projectiles.getMinecraft().player.lastTickPosX
+         + (Projectiles.getMinecraft().player.getPosX() - Projectiles.getMinecraft().player.lastTickPosX)
+            * (double) Projectiles.getMinecraft().timer.renderPartialTicks;
+      double var8 = Projectiles.getMinecraft().player.lastTickPosY
+         + (Projectiles.getMinecraft().player.getPosY() - Projectiles.getMinecraft().player.lastTickPosY)
+            * (double) Projectiles.getMinecraft().timer.renderPartialTicks;
+      double var10 = Projectiles.getMinecraft().player.lastTickPosZ
+         + (Projectiles.getMinecraft().player.getPosZ() - Projectiles.getMinecraft().player.lastTickPosZ)
+            * (double) Projectiles.getMinecraft().timer.renderPartialTicks;
       this.field15825 = var6;
-      this.field15826 = var8 + (double) Projectiles.method16540().player.getEyeHeight() - 0.1F;
+      this.field15826 = var8 + (double) Projectiles.getMinecraft().player.getEyeHeight() - 0.1F;
       this.field15827 = var10;
-      float var12 = Math.min(20.0F, (float)(72000 - Projectiles.method16541().player.getItemInUseCount()) + Projectiles.method16542().getRenderPartialTicks()) / 20.0F;
+      float var12 = Math.min(20.0F, (float)(72000 - Projectiles.getMinecraft().player.getItemInUseCount()) + Projectiles.getMinecraft().getRenderPartialTicks()) / 20.0F;
       this.field15828 = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field15823 * var12;
       this.field15829 = -MathHelper.sin(var5) * this.field15823 * var12;
       this.field15830 = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field15823 * var12;
@@ -113,10 +113,10 @@ public enum Class2309 {
             this.field15826 + (double)var15,
             this.field15827 + (double)var15
          );
-         List<Entity> var17 = Projectiles.method16544()
+         List<Entity> var17 = Projectiles.getMinecraft()
             .world
             .getEntitiesInAABBexcluding(
-               Projectiles.method16543().player,
+               Projectiles.getMinecraft().player,
                var16.offset((double)this.field15828, (double)this.field15829, (double)this.field15830).grow(1.0, 1.0, 1.0),
                EntityPredicates.field34763.and(new Class167(this, var15, var13, var14))
             );
@@ -127,9 +127,9 @@ public enum Class2309 {
             break;
          }
 
-         BlockRayTraceResult var18 = Projectiles.method16546()
+         BlockRayTraceResult var18 = Projectiles.getMinecraft()
             .world
-            .rayTraceBlocks(new RayTraceContext(var13, var14, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Projectiles.method16545().player));
+            .rayTraceBlocks(new RayTraceContext(var13, var14, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Projectiles.getMinecraft().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
             this.field15831 = var18;
             this.field15825 = this.field15831.getHitVec().x;
