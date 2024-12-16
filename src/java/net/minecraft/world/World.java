@@ -260,58 +260,58 @@ public abstract class World implements IWorld, AutoCloseable {
    public void markBlockRangeForRenderUpdate(BlockPos var1, BlockState var2, BlockState var3) {
    }
 
-   public void notifyNeighborsOfStateChange(BlockPos var1, Block var2) {
-      this.neighborChanged(var1.west(), var2, var1);
-      this.neighborChanged(var1.east(), var2, var1);
-      this.neighborChanged(var1.down(), var2, var1);
-      this.neighborChanged(var1.up(), var2, var1);
-      this.neighborChanged(var1.north(), var2, var1);
-      this.neighborChanged(var1.south(), var2, var1);
+   public void notifyNeighborsOfStateChange(BlockPos at, Block here) {
+      this.neighborChanged(at.west(), here, at);
+      this.neighborChanged(at.east(), here, at);
+      this.neighborChanged(at.down(), here, at);
+      this.neighborChanged(at.up(), here, at);
+      this.neighborChanged(at.north(), here, at);
+      this.neighborChanged(at.south(), here, at);
    }
 
-   public void notifyNeighborsOfStateExcept(BlockPos var1, Block var2, Direction skipSide) {
+   public void notifyNeighborsOfStateExcept(BlockPos neighborsAt, Block here, Direction skipSide) {
       if (skipSide != Direction.WEST) {
-         this.neighborChanged(var1.west(), var2, var1);
+         this.neighborChanged(neighborsAt.west(), here, neighborsAt);
       }
 
       if (skipSide != Direction.EAST) {
-         this.neighborChanged(var1.east(), var2, var1);
+         this.neighborChanged(neighborsAt.east(), here, neighborsAt);
       }
 
       if (skipSide != Direction.DOWN) {
-         this.neighborChanged(var1.down(), var2, var1);
+         this.neighborChanged(neighborsAt.down(), here, neighborsAt);
       }
 
       if (skipSide != Direction.UP) {
-         this.neighborChanged(var1.up(), var2, var1);
+         this.neighborChanged(neighborsAt.up(), here, neighborsAt);
       }
 
       if (skipSide != Direction.NORTH) {
-         this.neighborChanged(var1.north(), var2, var1);
+         this.neighborChanged(neighborsAt.north(), here, neighborsAt);
       }
 
       if (skipSide != Direction.SOUTH) {
-         this.neighborChanged(var1.south(), var2, var1);
+         this.neighborChanged(neighborsAt.south(), here, neighborsAt);
       }
    }
 
-   public void neighborChanged(BlockPos var1, Block var2, BlockPos var3) {
+   public void neighborChanged(BlockPos at, Block block, BlockPos pos) {
       if (!this.isRemote) {
-         BlockState var6 = this.getBlockState(var1);
+         BlockState state = this.getBlockState(at);
 
          try {
-            var6.neighborChanged(this, var1, var2, var3, false);
+            state.neighborChanged(this, at, block, pos, false);
          } catch (Throwable var10) {
             CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception while updating neighbours");
             CrashReportCategory var9 = var8.makeCategory("Block being updated");
             var9.addDetail("Source block type", () -> {
                try {
-                  return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(var2), var2.getTranslationKey(), var2.getClass().getCanonicalName());
+                  return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(block), block.getTranslationKey(), block.getClass().getCanonicalName());
                } catch (Throwable var4) {
-                  return "ID #" + Registry.BLOCK.getKey(var2);
+                  return "ID #" + Registry.BLOCK.getKey(block);
                }
             });
-            CrashReportCategory.addBlockInfo(var9, var1, var6);
+            CrashReportCategory.addBlockInfo(var9, at, state);
             throw new ReportedException(var8);
          }
       }
