@@ -369,8 +369,8 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    @Override
-   public void playSound(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
-      this.playSound(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var3, var4, var5, var6);
+   public void playSound(PlayerEntity player, BlockPos at, SoundEvent sound, Class2266 category, float volume, float pitch) {
+      this.playSound(player, (double)at.getX() + 0.5, (double)at.getY() + 0.5, (double)at.getZ() + 0.5, sound, category, volume, pitch);
    }
 
    public abstract void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11);
