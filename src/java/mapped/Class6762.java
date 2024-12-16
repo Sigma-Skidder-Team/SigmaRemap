@@ -482,7 +482,7 @@ public class Class6762 extends Class6764 {
                      return PathNodeType.DANGER_CACTUS;
                   }
 
-                  if (var11.isIn(Blocks.field37069)) {
+                  if (var11.isIn(Blocks.SWEET_BERRY_BUSH)) {
                      return PathNodeType.DANGER_OTHER;
                   }
 
@@ -511,7 +511,7 @@ public class Class6762 extends Class6764 {
          return PathNodeType.TRAPDOOR;
       } else if (var4.isIn(Blocks.CACTUS)) {
          return PathNodeType.DAMAGE_CACTUS;
-      } else if (var4.isIn(Blocks.field37069)) {
+      } else if (var4.isIn(Blocks.SWEET_BERRY_BUSH)) {
          return PathNodeType.DAMAGE_OTHER;
       } else if (var4.isIn(Blocks.field37119)) {
          return PathNodeType.STICKY_HONEY;

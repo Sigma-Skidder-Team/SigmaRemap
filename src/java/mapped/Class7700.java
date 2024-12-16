@@ -43,7 +43,7 @@ public final class Class7700 {
    public static final BlockState field33027 = Blocks.DEAD_BUSH.getDefaultState();
    public static final BlockState field33028 = Blocks.MELON.getDefaultState();
    public static final BlockState field33029 = Blocks.PUMPKIN.getDefaultState();
-   public static final BlockState field33030 = Blocks.field37069.getDefaultState().with(Class3484.field19342, Integer.valueOf(3));
+   public static final BlockState field33030 = Blocks.SWEET_BERRY_BUSH.getDefaultState().with(Class3484.field19342, Integer.valueOf(3));
    public static final BlockState field33031 = Blocks.FIRE.getDefaultState();
    public static final BlockState field33032 = Blocks.field36531.getDefaultState();
    public static final BlockState field33033 = Blocks.NETHERRACK.getDefaultState();

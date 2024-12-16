@@ -2525,7 +2525,7 @@ public class Blocks {
          AbstractBlock.Properties.method26609(Material.field38967).method26635().method26623(3.5F).method26619(SoundType.field36224).method26620(var0 -> 10).method26615()
       )
    );
-   public static final Block field37067 = register(
+   public static final Block CAMPFIRE = register(
       "campfire",
       new Class3244(
          true,
@@ -2537,7 +2537,7 @@ public class Blocks {
             .method26615()
       )
    );
-   public static final Block field37068 = register(
+   public static final Block SOUL_CAMPFIRE = register(
       "soul_campfire",
       new Class3244(
          false,
@@ -2549,15 +2549,15 @@ public class Blocks {
             .method26615()
       )
    );
-   public static final Block field37069 = register(
+   public static final Block SWEET_BERRY_BUSH = register(
       "sweet_berry_bush", new Class3484(AbstractBlock.Properties.method26609(Material.PLANTS).method26624().method26614().method26619(SoundType.field36219))
    );
-   public static final Block field37070 = register("warped_stem", method30017(MaterialColor.field31003));
-   public static final Block field37071 = register("stripped_warped_stem", method30017(MaterialColor.field31003));
-   public static final Block field37072 = register(
+   public static final Block WARPED_STEM = register("warped_stem", method30017(MaterialColor.field31003));
+   public static final Block STRIPPED_WARPED_STEM = register("stripped_warped_stem", method30017(MaterialColor.field31003));
+   public static final Block WARPED_HYPHAE = register(
       "warped_hyphae", new Class3386(AbstractBlock.Properties.method26611(Material.field38957, MaterialColor.field31004).method26623(2.0F).method26619(SoundType.field36225))
    );
-   public static final Block field37073 = register(
+   public static final Block STRIPPED_WARPED_HYPHAE = register(
       "stripped_warped_hyphae",
       new Class3386(AbstractBlock.Properties.method26611(Material.field38957, MaterialColor.field31004).method26623(2.0F).method26619(SoundType.field36225))
    );

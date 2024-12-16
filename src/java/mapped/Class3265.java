@@ -51,8 +51,8 @@ public class Class3265 extends ToolItem {
       .put(Blocks.field36425, Blocks.field36430)
       .put(Blocks.field36435, Blocks.field36441)
       .put(Blocks.field36423, Blocks.field36428)
-      .put(Blocks.field37070, Blocks.field37071)
-      .put(Blocks.field37072, Blocks.field37073)
+      .put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM)
+      .put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE)
       .put(Blocks.field37079, Blocks.field37080)
       .put(Blocks.field37081, Blocks.field37082)
       .build();

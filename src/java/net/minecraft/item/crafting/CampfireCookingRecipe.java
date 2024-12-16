@@ -16,7 +16,7 @@ public class CampfireCookingRecipe extends Class4847 {
 
    @Override
    public ItemStack method14971() {
-      return new ItemStack(Blocks.field37067);
+      return new ItemStack(Blocks.CAMPFIRE);
    }
 
    @Override

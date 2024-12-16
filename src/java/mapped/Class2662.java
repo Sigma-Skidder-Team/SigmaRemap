@@ -42,7 +42,7 @@ public class Class2662 extends Class2661 {
             if (var6.isIn(BlockTags.field32796)) {
                if (!(var6 instanceof Class3480)) {
                   if (!(var6 instanceof Class3486)) {
-                     if (var6 == Blocks.field37069) {
+                     if (var6 == Blocks.SWEET_BERRY_BUSH) {
                         int var9 = var5.<Integer>get(Class3484.field19342);
                         if (var9 < 3) {
                            var7 = true;

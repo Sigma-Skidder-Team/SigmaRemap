@@ -171,7 +171,7 @@ public class TileEntityType<T extends TileEntity> {
    public static final TileEntityType<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Blocks.BELL));
    public static final TileEntityType<JigsawTileEntity> field21451 = method13794("jigsaw", Class9785.<JigsawTileEntity>method38569(JigsawTileEntity::new, Blocks.field37114));
    public static final TileEntityType<Class945> field21452 = method13794(
-      "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.field37067, Blocks.field37068)
+      "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE)
    );
    public static final TileEntityType<BeehiveTileEntity> field21453 = method13794(
       "beehive", Class9785.<BeehiveTileEntity>method38569(BeehiveTileEntity::new, Blocks.field37117, Blocks.field37118)

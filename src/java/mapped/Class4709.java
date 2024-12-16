@@ -21,7 +21,7 @@ public class Class4709 implements Class4698 {
    );
    public static final Class4709 field22334;
    public static final Class4709 field22335 = new Class4709(
-      Blocks.field37074.getDefaultState(), Blocks.field37070.getDefaultState(), Blocks.field37076.getDefaultState(), Blocks.field37085.getDefaultState(), true
+      Blocks.field37074.getDefaultState(), Blocks.WARPED_STEM.getDefaultState(), Blocks.field37076.getDefaultState(), Blocks.field37085.getDefaultState(), true
    );
    public static final Class4709 field22336;
    public final BlockState field22337;
