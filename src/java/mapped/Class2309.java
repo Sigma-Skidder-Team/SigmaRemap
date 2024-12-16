@@ -22,7 +22,7 @@ public enum Class2309 {
    field15819(Items.EXPERIENCE_BOTTLE, 0.0F, 0.6F, 0.0F),
    field15820(Items.TRIDENT, 0.0F, 2.5F, 0.0F);
 
-   private Item field15821;
+   private Item item;
    private float field15822;
    private float field15823;
    private float field15824;
@@ -37,14 +37,14 @@ public enum Class2309 {
    private static final Class2309[] field15833 = new Class2309[]{addItem, field15815, field15816, field15817, field15818, field15819, field15820};
 
    private Class2309(Item var3, float var4, float var5, float var6) {
-      this.field15821 = var3;
+      this.item = var3;
       this.field15822 = var4;
       this.field15823 = var5;
       this.field15824 = var6;
    }
 
    public float method9081() {
-      if (!this.field15821.equals(Items.BOW)) {
+      if (!this.item.equals(Items.BOW)) {
          return this.field15823;
       } else {
          return !(this.field15823 * BowItem.method11777(Projectiles.getMinecraft().player.getItemInUseCount()) > 0.0F)
@@ -62,7 +62,7 @@ public enum Class2309 {
    }
 
    public Item method9084() {
-      return this.field15821;
+      return this.item;
    }
 
    public static Class2309 method9085(Item var0) {
@@ -104,7 +104,7 @@ public enum Class2309 {
          Vector3d var14 = new Vector3d(
             this.field15825 + (double)this.field15828, this.field15826 + (double)this.field15829, this.field15827 + (double)this.field15830
          );
-         float var15 = (float)(!(this.field15821 instanceof BowItem) ? 0.25 : 0.3);
+         float var15 = (float)(!(this.item instanceof BowItem) ? 0.25 : 0.3);
          AxisAlignedBB var16 = new AxisAlignedBB(
             this.field15825 - (double)var15,
             this.field15826 - (double)var15,
