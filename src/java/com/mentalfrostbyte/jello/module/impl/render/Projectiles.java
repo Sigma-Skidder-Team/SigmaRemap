@@ -102,7 +102,7 @@ public class Projectiles extends Module {
 
                     GL11.glEnd();
                     GL11.glDisable(2929);
-                    if (var4.field15831 == null) {
+                    if (var4.rayTraceResult == null) {
                         if (var4.field15832 != null) {
                             double var31 = var4.field15832.lastTickPosX
                                     + (var4.field15832.getPosX() - var4.field15832.lastTickPosX) * (double) mc.timer.renderPartialTicks
@@ -120,12 +120,12 @@ public class Projectiles extends Module {
                             RenderUtil.renderWireframeBox(var37, MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                         }
                     } else {
-                        double var49 = var4.field15825 - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
-                        double var42 = var4.field15826 - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
-                        double var45 = var4.field15827 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                        double var49 = var4.traceX - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                        double var42 = var4.traceY - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                        double var45 = var4.traceZ - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                         GL11.glPushMatrix();
                         GL11.glTranslated(var49, var42, var45);
-                        BlockPos blockPos = new BlockPos(0, 0, 0).offset(((BlockRayTraceResult) var4.field15831).getFace());
+                        BlockPos blockPos = new BlockPos(0, 0, 0).offset(((BlockRayTraceResult) var4.rayTraceResult).getFace());
                         GL11.glRotatef(
                                 45.0F,
                                 this.rotationX.interpolateX((float) blockPos.getX()),

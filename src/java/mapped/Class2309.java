@@ -26,13 +26,13 @@ public enum Class2309 {
    private float field15822;
    private float field15823;
    private float field15824;
-   public double field15825;
-   public double field15826;
-   public double field15827;
-   public float field15828;
-   public float field15829;
-   public float field15830;
-   public RayTraceResult field15831;
+   public double traceX;
+   public double traceY;
+   public double traceZ;
+   public float traceXOffset;
+   public float traceYOffset;
+   public float traceZOffset;
+   public RayTraceResult rayTraceResult;
    public Entity field15832;
    private static final Class2309[] field15833 = new Class2309[]{addItem, field15815, field15816, field15817, field15818, field15819, field15820};
 
@@ -88,36 +88,36 @@ public enum Class2309 {
       double var10 = Projectiles.getMinecraft().player.lastTickPosZ
          + (Projectiles.getMinecraft().player.getPosZ() - Projectiles.getMinecraft().player.lastTickPosZ)
             * (double) Projectiles.getMinecraft().timer.renderPartialTicks;
-      this.field15825 = var6;
-      this.field15826 = var8 + (double) Projectiles.getMinecraft().player.getEyeHeight() - 0.1F;
-      this.field15827 = var10;
+      this.traceX = var6;
+      this.traceY = var8 + (double) Projectiles.getMinecraft().player.getEyeHeight() - 0.1F;
+      this.traceZ = var10;
       float var12 = Math.min(20.0F, (float)(72000 - Projectiles.getMinecraft().player.getItemInUseCount()) + Projectiles.getMinecraft().getRenderPartialTicks()) / 20.0F;
-      this.field15828 = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field15823 * var12;
-      this.field15829 = -MathHelper.sin(var5) * this.field15823 * var12;
-      this.field15830 = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field15823 * var12;
-      this.field15831 = null;
+      this.traceXOffset = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field15823 * var12;
+      this.traceYOffset = -MathHelper.sin(var5) * this.field15823 * var12;
+      this.traceZOffset = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field15823 * var12;
+      this.rayTraceResult = null;
       this.field15832 = null;
-      var3.add(new Class9110(this.field15825, this.field15826, this.field15827));
+      var3.add(new Class9110(this.traceX, this.traceY, this.traceZ));
 
-      while (this.field15831 == null && this.field15832 == null && this.field15826 > 0.0) {
-         Vector3d var13 = new Vector3d(this.field15825, this.field15826, this.field15827);
+      while (this.rayTraceResult == null && this.field15832 == null && this.traceY > 0.0) {
+         Vector3d var13 = new Vector3d(this.traceX, this.traceY, this.traceZ);
          Vector3d var14 = new Vector3d(
-            this.field15825 + (double)this.field15828, this.field15826 + (double)this.field15829, this.field15827 + (double)this.field15830
+            this.traceX + (double)this.traceXOffset, this.traceY + (double)this.traceYOffset, this.traceZ + (double)this.traceZOffset
          );
          float var15 = (float)(!(this.item instanceof BowItem) ? 0.25 : 0.3);
          AxisAlignedBB var16 = new AxisAlignedBB(
-            this.field15825 - (double)var15,
-            this.field15826 - (double)var15,
-            this.field15827 - (double)var15,
-            this.field15825 + (double)var15,
-            this.field15826 + (double)var15,
-            this.field15827 + (double)var15
+            this.traceX - (double)var15,
+            this.traceY - (double)var15,
+            this.traceZ - (double)var15,
+            this.traceX + (double)var15,
+            this.traceY + (double)var15,
+            this.traceZ + (double)var15
          );
          List<Entity> var17 = Projectiles.getMinecraft()
             .world
             .getEntitiesInAABBexcluding(
                Projectiles.getMinecraft().player,
-               var16.offset((double)this.field15828, (double)this.field15829, (double)this.field15830).grow(1.0, 1.0, 1.0),
+               var16.offset((double)this.traceXOffset, (double)this.traceYOffset, (double)this.traceZOffset).grow(1.0, 1.0, 1.0),
                EntityPredicates.field34763.and(new Class167(this, var15, var13, var14))
             );
          if (var17.size() > 0) {
@@ -131,24 +131,24 @@ public enum Class2309 {
             .world
             .rayTraceBlocks(new RayTraceContext(var13, var14, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Projectiles.getMinecraft().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
-            this.field15831 = var18;
-            this.field15825 = this.field15831.getHitVec().x;
-            this.field15826 = this.field15831.getHitVec().y;
-            this.field15827 = this.field15831.getHitVec().z;
-            var3.add(new Class9110(this.field15825, this.field15826, this.field15827));
+            this.rayTraceResult = var18;
+            this.traceX = this.rayTraceResult.getHitVec().x;
+            this.traceY = this.rayTraceResult.getHitVec().y;
+            this.traceZ = this.rayTraceResult.getHitVec().z;
+            var3.add(new Class9110(this.traceX, this.traceY, this.traceZ));
             break;
          }
 
          float var19 = 0.99F;
          float var20 = 0.05F;
-         this.field15825 = this.field15825 + (double)this.field15828;
-         this.field15826 = this.field15826 + (double)this.field15829;
-         this.field15827 = this.field15827 + (double)this.field15830;
-         var3.add(new Class9110(this.field15825, this.field15826, this.field15827));
-         this.field15828 *= var19;
-         this.field15829 *= var19;
-         this.field15830 *= var19;
-         this.field15829 -= var20;
+         this.traceX = this.traceX + (double)this.traceXOffset;
+         this.traceY = this.traceY + (double)this.traceYOffset;
+         this.traceZ = this.traceZ + (double)this.traceZOffset;
+         var3.add(new Class9110(this.traceX, this.traceY, this.traceZ));
+         this.traceXOffset *= var19;
+         this.traceYOffset *= var19;
+         this.traceZOffset *= var19;
+         this.traceYOffset -= var20;
       }
 
       return var3;
