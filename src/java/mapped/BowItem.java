@@ -92,14 +92,18 @@ public class BowItem extends Class3262 implements IVanishable {
       }
    }
 
-   public static float calculateBowPower(int var0) {
-      float var3 = (float)var0 / 20.0F;
-      var3 = (var3 * var3 + var3 * 2.0F) / 3.0F;
-      if (var3 > 1.0F) {
-         var3 = 1.0F;
+   /**
+    * @param charge The charge level of the bow, between 0 and 20.
+    * @return The power multiplier of the bow based on the charge level.
+    */
+   public static float calculateBowPower(int charge) {
+      float power = (float)charge / 20.0F;
+      power = (power * power + power * 2.0F) / 3.0F;
+      if (power > 1.0F) {
+         power = 1.0F;
       }
 
-      return var3;
+      return power;
    }
 
    @Override
