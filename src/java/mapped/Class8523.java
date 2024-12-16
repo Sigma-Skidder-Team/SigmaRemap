@@ -172,9 +172,9 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(
-                  new Class6438(Blocks.field37067),
+                  new Class6438(Blocks.CAMPFIRE),
                   Class6435.field28275,
-                  Blocks.field37067.getDefaultState().with(Class3244.field18698, Boolean.valueOf(false))
+                  Blocks.CAMPFIRE.getDefaultState().with(Class3244.field18698, Boolean.valueOf(false))
                ),
                new Class7872(new Class6439(Blocks.field36399, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36423, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),

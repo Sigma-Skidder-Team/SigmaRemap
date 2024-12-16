@@ -187,7 +187,7 @@ public class Class1095 extends Class1018 {
                   var5 = !this.rand.nextBoolean() ? new ItemStack(Items.field38081) : new ItemStack(Items.field38080);
                }
             } else {
-               var5 = new ItemStack(Items.field37904);
+               var5 = new ItemStack(Items.EGG);
             }
          } else {
             var5 = new ItemStack(Items.EMERALD);

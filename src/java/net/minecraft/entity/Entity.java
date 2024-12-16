@@ -827,7 +827,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (!var2.getMaterial().isLiquid()) {
          BlockState var5 = this.world.getBlockState(var1.up());
          SoundType var6 = !var5.isIn(Blocks.SNOW) ? var2.getSoundType() : var5.getSoundType();
-         this.playSound(var6.method29713(), var6.getVolume() * 0.15F, var6.method29711());
+         this.playSound(var6.getStepSound(), var6.getVolume() * 0.15F, var6.getPitch());
       }
    }
 
@@ -2604,8 +2604,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return PushReaction.field15862;
    }
 
-   public Class2266 getSoundCategory() {
-      return Class2266.field14734;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14734;
    }
 
    public int getFireImmuneTicks() {

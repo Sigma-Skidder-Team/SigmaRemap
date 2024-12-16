@@ -97,7 +97,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          if (!var1.isEmpty()) {
          var4.push();
          boolean var11 = var2 == ItemCameraTransformsTransformType.GUI || var2 == ItemCameraTransformsTransformType.GROUND || var2 == ItemCameraTransformsTransformType.FIXED;
-         if (var1.getItem() == Items.field38144 && var11) {
+         if (var1.getItem() == Items.TRIDENT && var11) {
             var8 = this.field848.method29496().method1023(new Class1997("minecraft:trident#inventory"));
          }
 
@@ -108,7 +108,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          }
 
          var4.translate(-0.5, -0.5, -0.5);
-         if (!var8.method22623() && (var1.getItem() != Items.field38144 || var11)) {
+         if (!var8.method22623() && (var1.getItem() != Items.TRIDENT || var11)) {
             boolean var16;
             if (var2 != ItemCameraTransformsTransformType.GUI && !var2.isFirstPerson() && var1.getItem() instanceof BlockItem) {
                Block var13 = ((BlockItem)var1.getItem()).method11845();
@@ -266,7 +266,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    public IBakedModel method788(ItemStack var1, World var2, LivingEntity var3) {
       Item var6 = var1.getItem();
       IBakedModel var7;
-      if (var6 != Items.field38144) {
+      if (var6 != Items.TRIDENT) {
          var7 = this.field848.method29492(var1);
       } else {
          var7 = this.field848.method29496().method1023(new Class1997("minecraft:trident_in_hand#inventory"));

@@ -11,10 +11,10 @@ public final class Class7630 extends Class7626 {
    private String field32707;
 
    public static Class7626[] method25042(String var0) {
-      return method25043(var0, Class2307.field15782);
+      return method25043(var0, ChatFormatting.WHITE);
    }
 
-   public static Class7626[] method25043(String var0, Class2307 var1) {
+   public static Class7626[] method25043(String var0, ChatFormatting var1) {
       List<Class7626> var4 = new ArrayList();
       StringBuilder var5 = new StringBuilder();
       Class7630 var6 = new Class7630();
@@ -32,7 +32,7 @@ public final class Class7630 extends Class7626 {
                var9 = (char)(var9 + ' ');
             }
 
-            Class2307 var10 = Class2307.method9079(var9);
+            ChatFormatting var10 = ChatFormatting.getChatFormatting(var9);
             if (var10 != null) {
                if (var5.length() > 0) {
                   Class7630 var11 = var6;
@@ -127,23 +127,23 @@ public final class Class7630 extends Class7626 {
    public void method24983(StringBuilder var1) {
       var1.append(this.method24998());
       if (this.method25000()) {
-         var1.append(Class2307.field15784);
+         var1.append(ChatFormatting.BOLD);
       }
 
       if (this.method25002()) {
-         var1.append(Class2307.field15787);
+         var1.append(ChatFormatting.ITALIC);
       }
 
       if (this.method25004()) {
-         var1.append(Class2307.field15786);
+         var1.append(ChatFormatting.UNDERLINE);
       }
 
       if (this.method25006()) {
-         var1.append(Class2307.field15785);
+         var1.append(ChatFormatting.STRIKETHROUGH);
       }
 
       if (this.method25008()) {
-         var1.append(Class2307.field15783);
+         var1.append(ChatFormatting.OBFUSCATED);
       }
 
       var1.append(this.field32707);

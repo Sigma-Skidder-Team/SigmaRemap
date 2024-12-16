@@ -2782,13 +2782,13 @@ public class Class9407 {
       this.method35807(Items.field38170);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field37069)
+            Class5148.method15941(Blocks.SWEET_BERRY_BUSH)
                .method15939(
                   Class3629.<Integer>method12310(BlockStateProperties.field39740)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(
-                                 Class6891.field29864, this.method35837(Blocks.field37069, "_stage" + var1, Class9756.field45579, Class7287::method23001)
+                                 Class6891.field29864, this.method35837(Blocks.SWEET_BERRY_BUSH, "_stage" + var1, Class9756.field45579, Class7287::method23001)
                               )
                      )
                )
@@ -3672,7 +3672,7 @@ public class Class9407 {
       this.method35888();
       this.method35892();
       this.method35894();
-      this.method35887(Blocks.field37067, Blocks.field37068);
+      this.method35887(Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE);
       this.method35895();
       this.method35900();
       this.method35902();
@@ -4153,8 +4153,8 @@ public class Class9407 {
          .method31174(Blocks.field37104);
       this.method35847(Blocks.field37108);
       this.method35848(Blocks.field37100);
-      this.method35850(Blocks.field37070).method36612(Blocks.field37070).method36611(Blocks.field37072);
-      this.method35850(Blocks.field37071).method36612(Blocks.field37071).method36611(Blocks.field37073);
+      this.method35850(Blocks.WARPED_STEM).method36612(Blocks.WARPED_STEM).method36611(Blocks.WARPED_HYPHAE);
+      this.method35850(Blocks.STRIPPED_WARPED_STEM).method36612(Blocks.STRIPPED_WARPED_STEM).method36611(Blocks.STRIPPED_WARPED_HYPHAE);
       this.method35857(Blocks.field37075, Blocks.field37126, Class1958.field12763);
       this.method35957(Blocks.field37077, Blocks.field37128);
       this.method35855(Blocks.field37078, Class1958.field12763);

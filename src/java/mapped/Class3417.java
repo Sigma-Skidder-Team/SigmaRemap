@@ -23,7 +23,7 @@ public class Class3417 extends Block {
       if (var2.getDimensionType().isUltrawarm()) {
          var2.setBlockState(var3, Blocks.field36452.getDefaultState(), 3);
          var2.playEvent(2009, var3, 0);
-         var2.method6742((PlayerEntity)null, var3, SoundEvents.field26582, Class2266.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
+         var2.playSound((PlayerEntity)null, var3, SoundEvents.field26582, SoundCategory.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
       }
    }
 

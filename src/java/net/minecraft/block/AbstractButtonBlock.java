@@ -110,7 +110,7 @@ public abstract class AbstractButtonBlock extends Class3200 {
    }
 
    public void method11520(PlayerEntity var1, IWorld var2, BlockPos var3, boolean var4) {
-      var2.method6742(!var4 ? null : var1, var3, this.getSoundEvent(var4), Class2266.field14732, 0.3F, !var4 ? 0.5F : 0.6F);
+      var2.playSound(!var4 ? null : var1, var3, this.getSoundEvent(var4), SoundCategory.field14732, 0.3F, !var4 ? 0.5F : 0.6F);
    }
 
    public abstract SoundEvent getSoundEvent(boolean var1);

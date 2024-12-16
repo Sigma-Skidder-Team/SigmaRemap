@@ -26,7 +26,7 @@ public final class Class6237 extends Class6230 {
       if (var6.isEmpty()) {
          return super.dispenseStack(var1, var2);
       } else {
-         ((Class1069)var6.get(0)).method4942(Class2266.field14732);
+         ((Class1069)var6.get(0)).method4942(SoundCategory.field14732);
          var2.shrink(1);
          this.method19204(true);
          return var2;

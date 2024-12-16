@@ -40,7 +40,7 @@ public class Class3351 extends Class3350 {
          double var9 = (double)var3.getY();
          double var11 = (double)var3.getZ() + 0.5;
          if (var4.nextDouble() < 0.1) {
-            var2.method6745(var7, var9, var11, SoundEvents.field26416, Class2266.field14732, 1.0F, 1.0F, false);
+            var2.method6745(var7, var9, var11, SoundEvents.field26416, SoundCategory.field14732, 1.0F, 1.0F, false);
          }
 
          Direction var13 = var1.<Direction>get(field18875);

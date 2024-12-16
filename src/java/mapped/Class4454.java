@@ -131,7 +131,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32756).method31560(Blocks.field36425, Blocks.field36437, Blocks.field36430, Blocks.field36443);
       this.method14014(BlockTags.field32757).method31560(Blocks.field36423, Blocks.field36435, Blocks.field36428, Blocks.field36441);
       this.method14014(BlockTags.field32758).method31560(Blocks.field37079, Blocks.field37080, Blocks.field37081, Blocks.field37082);
-      this.method14014(BlockTags.field32759).method31560(Blocks.field37070, Blocks.field37071, Blocks.field37072, Blocks.field37073);
+      this.method14014(BlockTags.field32759).method31560(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE);
       this.method14014(BlockTags.field32750)
          .method31559(BlockTags.field32752)
          .method31559(BlockTags.field32753)
@@ -497,7 +497,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32794).method31560(Blocks.field37117, Blocks.field37118);
       this.method14014(BlockTags.field32795)
          .method31560(Blocks.field36884, Blocks.field36693, Blocks.field36694, Blocks.field36539, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
-      this.method14014(BlockTags.field32796).method31559(BlockTags.field32795).method31558(Blocks.field37069);
+      this.method14014(BlockTags.field32796).method31559(BlockTags.field32795).method31558(Blocks.SWEET_BERRY_BUSH);
       this.method14014(BlockTags.field32805)
          .method31560(
             Blocks.field36896,
@@ -545,7 +545,7 @@ public class Class4454 extends Class4441<Block> {
          .method31558(Blocks.field36585)
          .method31558(Blocks.SOUL_LANTERN)
          .method31558(Blocks.field36586)
-         .method31558(Blocks.field37068);
+         .method31558(Blocks.SOUL_CAMPFIRE);
       this.method14014(BlockTags.field32806)
          .method31558(Blocks.field37075)
          .method31558(Blocks.field37126)
@@ -555,10 +555,10 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(BlockTags.field32807).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
       this.method14014(BlockTags.field32776)
          .method31560(
-            Blocks.field37070,
-            Blocks.field37071,
-            Blocks.field37072,
-            Blocks.field37073,
+            Blocks.WARPED_STEM,
+            Blocks.STRIPPED_WARPED_STEM,
+            Blocks.WARPED_HYPHAE,
+            Blocks.STRIPPED_WARPED_HYPHAE,
             Blocks.field37079,
             Blocks.field37080,
             Blocks.field37081,
@@ -587,7 +587,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field37112
          );
       this.method14014(BlockTags.field32808).method31558(Blocks.LAVA);
-      this.method14014(BlockTags.field32809).method31560(Blocks.field37067, Blocks.field37068);
+      this.method14014(BlockTags.field32809).method31560(Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE);
       this.method14014(BlockTags.field32810)
          .method31560(Blocks.field36521, Blocks.BARREL, Blocks.CHEST, Blocks.ENDER_CHEST, Blocks.field37141, Blocks.TRAPPED_CHEST)
          .method31559(BlockTags.field32805)

@@ -1387,7 +1387,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
    }
 
    @Override
-   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, SoundCategory var2, float var3, float var4) {
       this.connection.sendPacket(new SPlaySoundEffectPacket(var1, var2, this.getPosX(), this.getPosY(), this.getPosZ(), var3, var4));
    }
 

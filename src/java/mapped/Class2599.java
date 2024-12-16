@@ -14,7 +14,7 @@ public class Class2599 extends Class2598 {
 
    @Override
    public boolean method10803() {
-      return super.method10803() && this.field16837.getHeldItemMainhand().getItem() == Items.field38144;
+      return super.method10803() && this.field16837.getHeldItemMainhand().getItem() == Items.TRIDENT;
    }
 
    @Override

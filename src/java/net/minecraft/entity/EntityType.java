@@ -128,7 +128,7 @@ public class EntityType<T extends Entity> {
       "firework_rocket", Builder.<Class888>create(Class888::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
    );
    public static final EntityType<Class1095> FOX = register(
-      "fox", Builder.<Class1095>create(Class1095::new, EntityClassification.CREATURE).size(0.6F, 0.7F).trackingRange(8).method32305(Blocks.field37069)
+      "fox", Builder.<Class1095>create(Class1095::new, EntityClassification.CREATURE).size(0.6F, 0.7F).trackingRange(8).method32305(Blocks.SWEET_BERRY_BUSH)
    );
    public static final EntityType<Class1112> GHAST = register(
       "ghast", Builder.<Class1112>create(Class1112::new, EntityClassification.MONSTER).immuneToFire().size(4.0F, 4.0F).trackingRange(10)
@@ -602,7 +602,7 @@ public class EntityType<T extends Entity> {
                   && !var1.isIn(Blocks.field36890)
                   && !Class3244.method11655(var1)
                   && !var1.isIn(Blocks.LAVA)
-            ? var1.isIn(Blocks.WITHER_ROSE) || var1.isIn(Blocks.field37069) || var1.isIn(Blocks.CACTUS)
+            ? var1.isIn(Blocks.WITHER_ROSE) || var1.isIn(Blocks.SWEET_BERRY_BUSH) || var1.isIn(Blocks.CACTUS)
             : true;
       }
    }

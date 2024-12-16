@@ -20,7 +20,7 @@ public class KillPotion extends Command {
    public void run(String var1, ChatCommandArguments[] args, ChatCommandExecutor class6669) throws CommandException {
       if (args.length <= 0) {
          if (!mc.playerController.isNotCreative()) {
-            ItemStack itemStack = new ItemStack(Items.field38115);
+            ItemStack itemStack = new ItemStack(Items.SPLASH_POTION);
             CompoundNBT nbt = new CompoundNBT();
             nbt.putInt("Amplifier", 125);
             nbt.putInt("Duration", 2000);

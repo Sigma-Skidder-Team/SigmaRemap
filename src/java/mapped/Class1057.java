@@ -63,8 +63,8 @@ public class Class1057 extends Class1056 implements IMob {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14733;
    }
 
    @Override

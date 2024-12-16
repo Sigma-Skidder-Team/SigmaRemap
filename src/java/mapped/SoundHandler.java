@@ -157,8 +157,8 @@ public class SoundHandler extends Class269<Class8657> {
       this.field1056.method13776();
    }
 
-   public void method1008(Class2266 var1, float var2) {
-      if (var1 == Class2266.field14728 && var2 <= 0.0F) {
+   public void method1008(SoundCategory var1, float var2) {
+      if (var1 == SoundCategory.field14728 && var2 <= 0.0F) {
          this.stop();
       }
 
@@ -181,7 +181,7 @@ public class SoundHandler extends Class269<Class8657> {
       this.field1056.method13763(var1);
    }
 
-   public void method1013(ResourceLocation var1, Class2266 var2) {
+   public void method1013(ResourceLocation var1, SoundCategory var2) {
       this.field1056.method13779(var1, var2);
    }
 

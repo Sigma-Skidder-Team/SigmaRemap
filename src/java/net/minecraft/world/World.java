@@ -260,58 +260,58 @@ public abstract class World implements IWorld, AutoCloseable {
    public void markBlockRangeForRenderUpdate(BlockPos var1, BlockState var2, BlockState var3) {
    }
 
-   public void notifyNeighborsOfStateChange(BlockPos var1, Block var2) {
-      this.neighborChanged(var1.west(), var2, var1);
-      this.neighborChanged(var1.east(), var2, var1);
-      this.neighborChanged(var1.down(), var2, var1);
-      this.neighborChanged(var1.up(), var2, var1);
-      this.neighborChanged(var1.north(), var2, var1);
-      this.neighborChanged(var1.south(), var2, var1);
+   public void notifyNeighborsOfStateChange(BlockPos at, Block here) {
+      this.neighborChanged(at.west(), here, at);
+      this.neighborChanged(at.east(), here, at);
+      this.neighborChanged(at.down(), here, at);
+      this.neighborChanged(at.up(), here, at);
+      this.neighborChanged(at.north(), here, at);
+      this.neighborChanged(at.south(), here, at);
    }
 
-   public void notifyNeighborsOfStateExcept(BlockPos var1, Block var2, Direction skipSide) {
+   public void notifyNeighborsOfStateExcept(BlockPos neighborsAt, Block here, Direction skipSide) {
       if (skipSide != Direction.WEST) {
-         this.neighborChanged(var1.west(), var2, var1);
+         this.neighborChanged(neighborsAt.west(), here, neighborsAt);
       }
 
       if (skipSide != Direction.EAST) {
-         this.neighborChanged(var1.east(), var2, var1);
+         this.neighborChanged(neighborsAt.east(), here, neighborsAt);
       }
 
       if (skipSide != Direction.DOWN) {
-         this.neighborChanged(var1.down(), var2, var1);
+         this.neighborChanged(neighborsAt.down(), here, neighborsAt);
       }
 
       if (skipSide != Direction.UP) {
-         this.neighborChanged(var1.up(), var2, var1);
+         this.neighborChanged(neighborsAt.up(), here, neighborsAt);
       }
 
       if (skipSide != Direction.NORTH) {
-         this.neighborChanged(var1.north(), var2, var1);
+         this.neighborChanged(neighborsAt.north(), here, neighborsAt);
       }
 
       if (skipSide != Direction.SOUTH) {
-         this.neighborChanged(var1.south(), var2, var1);
+         this.neighborChanged(neighborsAt.south(), here, neighborsAt);
       }
    }
 
-   public void neighborChanged(BlockPos var1, Block var2, BlockPos var3) {
+   public void neighborChanged(BlockPos at, Block block, BlockPos pos) {
       if (!this.isRemote) {
-         BlockState var6 = this.getBlockState(var1);
+         BlockState state = this.getBlockState(at);
 
          try {
-            var6.neighborChanged(this, var1, var2, var3, false);
+            state.neighborChanged(this, at, block, pos, false);
          } catch (Throwable var10) {
             CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception while updating neighbours");
             CrashReportCategory var9 = var8.makeCategory("Block being updated");
             var9.addDetail("Source block type", () -> {
                try {
-                  return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(var2), var2.getTranslationKey(), var2.getClass().getCanonicalName());
+                  return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(block), block.getTranslationKey(), block.getClass().getCanonicalName());
                } catch (Throwable var4) {
-                  return "ID #" + Registry.BLOCK.getKey(var2);
+                  return "ID #" + Registry.BLOCK.getKey(block);
                }
             });
-            CrashReportCategory.addBlockInfo(var9, var1, var6);
+            CrashReportCategory.addBlockInfo(var9, at, state);
             throw new ReportedException(var8);
          }
       }
@@ -334,7 +334,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    @Override
-   public WorldLightManager method6737() {
+   public WorldLightManager getLightManager() {
       return this.getChunkProvider().getLightManager();
    }
 
@@ -369,15 +369,15 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    @Override
-   public void method6742(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
-      this.playSound(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var3, var4, var5, var6);
+   public void playSound(PlayerEntity player, BlockPos at, SoundEvent sound, SoundCategory category, float volume, float pitch) {
+      this.playSound(player, (double)at.getX() + 0.5, (double)at.getY() + 0.5, (double)at.getZ() + 0.5, sound, category, volume, pitch);
    }
 
-   public abstract void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11);
+   public abstract void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9, float var10, float var11);
 
-   public abstract void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6);
+   public abstract void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6);
 
-   public void method6745(double var1, double var3, double var5, SoundEvent var7, Class2266 var8, float var9, float var10, boolean var11) {
+   public void method6745(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9, float var10, boolean var11) {
    }
 
    @Override

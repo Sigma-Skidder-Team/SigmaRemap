@@ -1392,7 +1392,7 @@ public abstract class LivingEntity extends Entity {
          BlockState var6 = this.world.getBlockState(new BlockPos(var3, var4, var5));
          if (!var6.isAir()) {
             SoundType var7 = var6.getSoundType();
-            this.playSound(var7.getFallSound(), var7.getVolume() * 0.5F, var7.method29711() * 0.75F);
+            this.playSound(var7.getFallSound(), var7.getVolume() * 0.5F, var7.getPitch() * 0.75F);
          }
       }
    }
@@ -3078,7 +3078,7 @@ public abstract class LivingEntity extends Entity {
             this.getPosY(),
             this.getPosZ(),
             this.getEatSound(var2),
-            Class2266.field14734,
+            SoundCategory.field14734,
             1.0F,
             1.0F + (var1.rand.nextFloat() - var1.rand.nextFloat()) * 0.4F
          );

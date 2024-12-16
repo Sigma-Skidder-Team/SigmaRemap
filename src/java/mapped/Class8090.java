@@ -691,7 +691,7 @@ public class Class8090 {
    private String[] method28025() {
       if (this.field34770 == 1 && this.field34771.length == 1) {
          Item var3 = Item.getItemById(this.field34771[0]);
-         boolean var4 = var3 == Items.field37971 || var3 == Items.field38115 || var3 == Items.field38118;
+         boolean var4 = var3 == Items.field37971 || var3 == Items.SPLASH_POTION || var3 == Items.field38118;
          if (var4 && this.field34776 != null && this.field34776.method36839() > 0) {
             Class7589 var12 = this.field34776.method36840(0);
             int var13 = var12.method24846();

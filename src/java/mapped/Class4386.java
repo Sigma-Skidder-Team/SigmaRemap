@@ -35,7 +35,7 @@ public class Class4386 {
    private final Class9818 field21410 = new Class9818(this.field21406, this.field21409);
    private int field21411;
    private final Map<Class6340, Class9617> field21412 = com.google.common.collect.Maps.newHashMap();
-   private final Multimap<Class2266, Class6340> field21413 = HashMultimap.create();
+   private final Multimap<SoundCategory, Class6340> field21413 = HashMultimap.create();
    private final List<Class6341> field21414 = Lists.newArrayList();
    private final Map<Class6340, Integer> field21415 = com.google.common.collect.Maps.newHashMap();
    private final Map<Class6340, Integer> field21416 = com.google.common.collect.Maps.newHashMap();
@@ -69,7 +69,7 @@ public class Class4386 {
          try {
             this.field21406.method27283();
             this.field21407.method37750();
-            this.field21407.method37748(this.field21404.method37147(Class2266.field14728));
+            this.field21407.method37748(this.field21404.method37147(SoundCategory.field14728));
             this.field21408.method20336(this.field21419).thenRun(this.field21419::clear);
             this.field21405 = true;
             field21401.info(field21400, "Sound engine started");
@@ -79,13 +79,13 @@ public class Class4386 {
       }
    }
 
-   private float method13757(Class2266 var1) {
-      return var1 != null && var1 != Class2266.field14728 ? this.field21404.method37147(var1) : 1.0F;
+   private float method13757(SoundCategory var1) {
+      return var1 != null && var1 != SoundCategory.field14728 ? this.field21404.method37147(var1) : 1.0F;
    }
 
-   public void method13758(Class2266 var1, float var2) {
+   public void method13758(SoundCategory var1, float var2) {
       if (this.field21405) {
-         if (var1 != Class2266.field14728) {
+         if (var1 != SoundCategory.field14728) {
             this.field21412.forEach((var1x, var2x) -> {
                float var5 = this.method13774(var1x);
                var2x.method37438(var1xx -> {
@@ -256,7 +256,7 @@ public class Class4386 {
             if (var6 != SoundHandler.field1051) {
                float var7 = var1.method19285();
                float var8 = Math.max(var7, 1.0F) * (float)var6.method20298();
-               Class2266 var9 = var1.method19282();
+               SoundCategory var9 = var1.method19282();
                float var10 = this.method13774(var1);
                float var11 = this.method13773(var1);
                Class2279 var12 = var1.method19290();
@@ -374,7 +374,7 @@ public class Class4386 {
       }
    }
 
-   public void method13779(ResourceLocation var1, Class2266 var2) {
+   public void method13779(ResourceLocation var1, SoundCategory var2) {
       if (var2 == null) {
          if (var1 != null) {
             for (Class6340 var6 : this.field21412.keySet()) {

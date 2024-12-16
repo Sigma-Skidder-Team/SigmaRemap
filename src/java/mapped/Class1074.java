@@ -129,7 +129,7 @@ public class Class1074 extends AbstractHorseEntity {
    public void method4950(SoundType var1) {
       super.method4950(var1);
       if (this.rand.nextInt(10) == 0) {
-         this.playSound(SoundEvents.field26670, var1.getVolume() * 0.6F, var1.method29711());
+         this.playSound(SoundEvents.field26670, var1.getVolume() * 0.6F, var1.getPitch());
       }
    }
 

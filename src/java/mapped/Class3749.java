@@ -122,8 +122,8 @@ public class Class3749 extends Class3676<Class1042> {
                         (double)this.field19897.getX(),
                         (double)this.field19897.getY(),
                         (double)this.field19897.getZ(),
-                        SoundEvents.field26486,
-                        Class2266.field14732,
+                        SoundEvents.ITEM_CROP_PLANT,
+                        SoundCategory.field14732,
                         1.0F,
                         1.0F
                      );

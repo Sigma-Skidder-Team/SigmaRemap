@@ -218,7 +218,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
          Item var5 = var2.getItem();
          return var1 == 4
             ? var5 == Items.field37975
-            : (var5 == Items.field37971 || var5 == Items.field38115 || var5 == Items.field38118 || var5 == Items.field37972)
+            : (var5 == Items.field37971 || var5 == Items.SPLASH_POTION || var5 == Items.field38118 || var5 == Items.field37972)
                && this.getStackInSlot(var1).isEmpty();
       } else {
          return Class7105.method22132(var2);

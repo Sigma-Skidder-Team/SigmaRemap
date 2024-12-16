@@ -162,10 +162,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method4942(Class2266 var1) {
+   public void method4942(SoundCategory var1) {
       this.field5890.setInventorySlotContents(0, new ItemStack(Items.field37886));
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
+         this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
       }
    }
 
@@ -333,18 +333,18 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (this.field5901 > 5 && this.field5901 % 3 == 0) {
                this.method4950(var6);
             } else if (this.field5901 <= 5) {
-               this.playSound(SoundEvents.field26679, var6.getVolume() * 0.15F, var6.method29711());
+               this.playSound(SoundEvents.field26679, var6.getVolume() * 0.15F, var6.getPitch());
             }
-         } else if (var6 != SoundType.field36200) {
-            this.playSound(SoundEvents.field26678, var6.getVolume() * 0.15F, var6.method29711());
+         } else if (var6 != SoundType.WOOD) {
+            this.playSound(SoundEvents.field26678, var6.getVolume() * 0.15F, var6.getPitch());
          } else {
-            this.playSound(SoundEvents.field26679, var6.getVolume() * 0.15F, var6.method29711());
+            this.playSound(SoundEvents.field26679, var6.getVolume() * 0.15F, var6.getPitch());
          }
       }
    }
 
    public void method4950(SoundType var1) {
-      this.playSound(SoundEvents.field26673, var1.getVolume() * 0.15F, var1.method29711());
+      this.playSound(SoundEvents.field26673, var1.getVolume() * 0.15F, var1.getPitch());
    }
 
    public static MutableAttribute method4951() {

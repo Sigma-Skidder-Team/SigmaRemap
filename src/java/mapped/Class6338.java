@@ -5,7 +5,7 @@ import net.minecraft.util.SoundEvent;
 
 public abstract class Class6338 implements Class6340 {
    public Class6647 field27853;
-   public final Class2266 field27854;
+   public final SoundCategory field27854;
    public final ResourceLocation field27855;
    public float field27856 = 1.0F;
    public float field27857 = 1.0F;
@@ -18,11 +18,11 @@ public abstract class Class6338 implements Class6340 {
    public boolean field27864;
    public boolean field27865;
 
-   public Class6338(SoundEvent var1, Class2266 var2) {
+   public Class6338(SoundEvent var1, SoundCategory var2) {
       this(var1.method36383(), var2);
    }
 
-   public Class6338(ResourceLocation var1, Class2266 var2) {
+   public Class6338(ResourceLocation var1, SoundCategory var2) {
       this.field27855 = var1;
       this.field27854 = var2;
    }
@@ -50,7 +50,7 @@ public abstract class Class6338 implements Class6340 {
    }
 
    @Override
-   public Class2266 method19282() {
+   public SoundCategory method19282() {
       return this.field27854;
    }
 

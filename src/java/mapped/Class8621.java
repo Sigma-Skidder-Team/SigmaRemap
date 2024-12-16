@@ -24,14 +24,14 @@ public class Class8621 {
    public static void method30876(CommandDispatcher<CommandSource> var0) {
       RequiredArgumentBuilder var3 = Commands.method18840("sound", ResourceLocationArgument.method29031()).suggests(Class9222.field42455);
 
-      for (Class2266 var7 : Class2266.values()) {
+      for (SoundCategory var7 : SoundCategory.values()) {
          var3.then(method30877(var7));
       }
 
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder) Commands.method18839("playsound").requires(var0x -> var0x.method20129(2))).then(var3));
    }
 
-   private static LiteralArgumentBuilder<CommandSource> method30877(Class2266 var0) {
+   private static LiteralArgumentBuilder<CommandSource> method30877(SoundCategory var0) {
       return (LiteralArgumentBuilder<CommandSource>) Commands.method18839(var0.method8995())
          .then(
             ((RequiredArgumentBuilder) Commands.method18840("targets", Class8700.method31353())
@@ -110,7 +110,7 @@ public class Class8621 {
          );
    }
 
-   private static int method30878(CommandSource var0, Collection<ServerPlayerEntity> var1, ResourceLocation var2, Class2266 var3, Vector3d var4, float var5, float var6, float var7) throws CommandSyntaxException {
+   private static int method30878(CommandSource var0, Collection<ServerPlayerEntity> var1, ResourceLocation var2, SoundCategory var3, Vector3d var4, float var5, float var6, float var7) throws CommandSyntaxException {
       double var10 = Math.pow(!(var5 > 1.0F) ? 16.0 : (double)(var5 * 16.0F), 2.0);
       int var12 = 0;
 

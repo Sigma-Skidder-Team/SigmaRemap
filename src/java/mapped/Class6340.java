@@ -12,7 +12,7 @@ public interface Class6340 {
 
    Class6647 method19281();
 
-   Class2266 method19282();
+   SoundCategory method19282();
 
    boolean method19283();
 

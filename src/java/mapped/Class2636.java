@@ -34,7 +34,7 @@ public class Class2636 extends Class2628 {
    @Override
    public boolean method10840(IWorldReader var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      return var5.isIn(Blocks.field37069) && var5.<Integer>get(Class3484.field19342) >= 2;
+      return var5.isIn(Blocks.SWEET_BERRY_BUSH) && var5.<Integer>get(Class3484.field19342) >= 2;
    }
 
    @Override
@@ -55,7 +55,7 @@ public class Class2636 extends Class2628 {
    public void method10845() {
       if (this.field16957.world.getGameRules().getBoolean(GameRules.field24224)) {
          BlockState var3 = this.field16957.world.getBlockState(this.field16933);
-         if (var3.isIn(Blocks.field37069)) {
+         if (var3.isIn(Blocks.SWEET_BERRY_BUSH)) {
             int var4 = var3.<Integer>get(Class3484.field19342);
             var3.with(Class3484.field19342, Integer.valueOf(1));
             int var5 = 1 + this.field16957.world.rand.nextInt(2) + (var4 != 3 ? 0 : 1);

@@ -14,34 +14,34 @@ import java.util.function.Predicate;
 
 public class RayTraceContext {
    private static String[] field29635;
-   private final Vector3d field29636;
-   private final Vector3d field29637;
-   private final BlockMode field29638;
-   private final FluidMode field29639;
-   private final ISelectionContext field29640;
+   private final Vector3d start;
+   private final Vector3d end;
+   private final BlockMode shapeType;
+   private final FluidMode fluidHandling;
+   private final ISelectionContext selectionContext;
 
-   public RayTraceContext(Vector3d var1, Vector3d var2, BlockMode var3, FluidMode var4, Entity var5) {
-      this.field29636 = var1;
-      this.field29637 = var2;
-      this.field29638 = var3;
-      this.field29639 = var4;
-      this.field29640 = ISelectionContext.forEntity(var5);
+   public RayTraceContext(Vector3d start, Vector3d end, BlockMode shapeType, FluidMode fluidHandling, Entity entity) {
+      this.start = start;
+      this.end = end;
+      this.shapeType = shapeType;
+      this.fluidHandling = fluidHandling;
+      this.selectionContext = ISelectionContext.forEntity(entity);
    }
 
    public Vector3d getEndVec() {
-      return this.field29637;
+      return this.end;
    }
 
    public Vector3d getStartVec() {
-      return this.field29636;
+      return this.start;
    }
 
    public VoxelShape getBlockShape(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return this.field29638.method8998(var1, var2, var3, this.field29640);
+      return this.shapeType.method8998(var1, var2, var3, this.selectionContext);
    }
 
    public VoxelShape getFluidShape(FluidState var1, IBlockReader var2, BlockPos var3) {
-      return !this.field29639.test(var1) ? VoxelShapes.empty() : var1.method23489(var2, var3);
+      return !this.fluidHandling.test(var1) ? VoxelShapes.empty() : var1.method23489(var2, var3);
    }
 
    public enum FluidMode {

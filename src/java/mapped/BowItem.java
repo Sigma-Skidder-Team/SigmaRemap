@@ -36,7 +36,7 @@ public class BowItem extends Class3262 implements IVanishable {
             }
 
             int var10 = this.method11728(var1) - var4;
-            float var11 = method11777(var10);
+            float var11 = calculateBowPower(var10);
             if (!((double)var11 < 0.1)) {
                boolean var12 = var8 && var9.getItem() == Items.field37797;
                if (!var2.isRemote) {
@@ -75,7 +75,7 @@ public class BowItem extends Class3262 implements IVanishable {
                   var7.getPosY(),
                   var7.getPosZ(),
                   SoundEvents.field26363,
-                  Class2266.field14735,
+                  SoundCategory.field14735,
                   1.0F,
                   1.0F / (field18735.nextFloat() * 0.4F + 1.2F) + var11 * 0.5F
                );
@@ -92,14 +92,18 @@ public class BowItem extends Class3262 implements IVanishable {
       }
    }
 
-   public static float method11777(int var0) {
-      float var3 = (float)var0 / 20.0F;
-      var3 = (var3 * var3 + var3 * 2.0F) / 3.0F;
-      if (var3 > 1.0F) {
-         var3 = 1.0F;
+   /**
+    * @param charge The charge level of the bow, between 0 and 20.
+    * @return The power multiplier of the bow based on the charge level.
+    */
+   public static float calculateBowPower(int charge) {
+      float power = (float)charge / 20.0F;
+      power = (power * power + power * 2.0F) / 3.0F;
+      if (power > 1.0F) {
+         power = 1.0F;
       }
 
-      return var3;
+      return power;
    }
 
    @Override

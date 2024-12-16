@@ -105,8 +105,8 @@ public class Class3287 extends Item {
                int var12 = var3.getX();
                int var13 = var3.getY();
                int var14 = var3.getZ();
-               var2.method6742(
-                  var1, var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
+               var2.playSound(
+                  var1, var3, SoundEvents.field26582, SoundCategory.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
                );
 
                for (int var15 = 0; var15 < 8; var15++) {
@@ -140,6 +140,6 @@ public class Class3287 extends Item {
 
    public void method11826(PlayerEntity var1, IWorld var2, BlockPos var3) {
       SoundEvent var6 = !this.field18798.method25067(FluidTags.field40470) ? SoundEvents.field26426 : SoundEvents.field26428;
-      var2.method6742(var1, var3, var6, Class2266.field14732, 1.0F, 1.0F);
+      var2.playSound(var1, var3, var6, SoundCategory.field14732, 1.0F, 1.0F);
    }
 }

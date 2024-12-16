@@ -8,16 +8,16 @@ import net.minecraft.util.math.BlockPos;
 public interface IBlockDisplayReader extends IBlockReader {
    float method6877(Direction var1, boolean var2);
 
-   WorldLightManager method6737();
+   WorldLightManager getLightManager();
 
    int getBlockColor(BlockPos var1, ColorResolver var2);
 
    default int getLightFor(LightType var1, BlockPos var2) {
-      return this.method6737().getLightEngine(var1).method643(var2);
+      return this.getLightManager().getLightEngine(var1).method643(var2);
    }
 
    default int method7021(BlockPos var1, int var2) {
-      return this.method6737().method640(var1, var2);
+      return this.getLightManager().method640(var1, var2);
    }
 
    default boolean method7022(BlockPos var1) {

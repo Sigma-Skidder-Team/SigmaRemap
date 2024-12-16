@@ -463,7 +463,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36431);
       this.method11096(Blocks.field36432);
       this.method11096(Blocks.field36433);
-      this.method11096(Blocks.field37071);
+      this.method11096(Blocks.STRIPPED_WARPED_STEM);
       this.method11096(Blocks.field37080);
       this.method11096(Blocks.field36434);
       this.method11096(Blocks.field36435);
@@ -478,7 +478,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36444);
       this.method11096(Blocks.field36445);
       this.method11096(Blocks.field37082);
-      this.method11096(Blocks.field37073);
+      this.method11096(Blocks.STRIPPED_WARPED_HYPHAE);
       this.method11096(Blocks.field36452);
       this.method11096(Blocks.field36453);
       this.method11096(Blocks.field36456);
@@ -783,8 +783,8 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field37120);
       this.method11096(Blocks.field37124);
       this.method11096(Blocks.field37129);
-      this.method11096(Blocks.field37070);
-      this.method11096(Blocks.field37072);
+      this.method11096(Blocks.WARPED_STEM);
+      this.method11096(Blocks.WARPED_HYPHAE);
       this.method11096(Blocks.field37075);
       this.method11096(Blocks.field37076);
       this.method11096(Blocks.field37079);
@@ -1126,20 +1126,20 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          )
       );
       this.method11097(
-         Blocks.field37069,
+         Blocks.SWEET_BERRY_BUSH,
          var0 -> method11059(
                var0,
                Class7318.method23188()
                   .method18320(
                      Class8894.method32373()
-                        .method18297(Class161.method486(Blocks.field37069).method24519(Class9178.method34325().method34327(Class3484.field19342, 3)))
+                        .method18297(Class161.method486(Blocks.SWEET_BERRY_BUSH).method24519(Class9178.method34325().method34327(Class3484.field19342, 3)))
                         .method18291(Class4695.method14724(Items.field38170))
                         .method18296(Class140.method420(Class6872.method20921(2.0F, 3.0F)))
                         .method18296(Class138.method408(Enchantments.FORTUNE))
                   )
                   .method18320(
                      Class8894.method32373()
-                        .method18297(Class161.method486(Blocks.field37069).method24519(Class9178.method34325().method34327(Class3484.field19342, 2)))
+                        .method18297(Class161.method486(Blocks.SWEET_BERRY_BUSH).method24519(Class9178.method34325().method34327(Class3484.field19342, 2)))
                         .method18291(Class4695.method14724(Items.field38170))
                         .method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F)))
                         .method18296(Class138.method408(Enchantments.FORTUNE))
@@ -1350,7 +1350,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11097(
-         Blocks.field37067,
+         Blocks.CAMPFIRE,
          var0 -> method11063(
                var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37799).method18296(Class140.method420(Class6871.method20919(2))))
             )
@@ -1369,7 +1369,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11097(
-         Blocks.field37068,
+         Blocks.SOUL_CAMPFIRE,
          var0 -> method11063(
                var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37442).method18296(Class140.method420(Class6871.method20919(1))))
             )

@@ -267,8 +267,8 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return this.method5114() != 99 ? Class2266.field14734 : Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return this.method5114() != 99 ? SoundCategory.field14734 : SoundCategory.field14733;
    }
 
    @Override

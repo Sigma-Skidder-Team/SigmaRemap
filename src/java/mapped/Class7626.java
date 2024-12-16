@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class Class7626 {
    public Class7626 field32690;
-   private Class2307 field32691;
+   private ChatFormatting field32691;
    private Boolean field32692;
    private Boolean field32693;
    private Boolean field32694;
@@ -121,15 +121,15 @@ public abstract class Class7626 {
       return var3.toString();
    }
 
-   public Class2307 method24998() {
+   public ChatFormatting method24998() {
       if (this.field32691 != null) {
          return this.field32691;
       } else {
-         return this.field32690 != null ? this.field32690.method24998() : Class2307.field15782;
+         return this.field32690 != null ? this.field32690.method24998() : ChatFormatting.WHITE;
       }
    }
 
-   public Class2307 method24999() {
+   public ChatFormatting method24999() {
       return this.field32691;
    }
 
@@ -234,7 +234,7 @@ public abstract class Class7626 {
       }
    }
 
-   public void method25017(Class2307 var1) {
+   public void method25017(ChatFormatting var1) {
       this.field32691 = var1;
    }
 

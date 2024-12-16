@@ -38,7 +38,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
                (double)var4 + 0.5,
                var9,
                SoundEvents.field26535,
-               Class2266.field14732,
+               SoundCategory.field14732,
                0.5F,
                this.world.rand.nextFloat() * 0.1F + 0.9F
             );
@@ -67,7 +67,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
                   (double)var4 + 0.5,
                   var13,
                   SoundEvents.field26534,
-                  Class2266.field14732,
+                  SoundCategory.field14732,
                   0.5F,
                   this.world.rand.nextFloat() * 0.1F + 0.9F
                );

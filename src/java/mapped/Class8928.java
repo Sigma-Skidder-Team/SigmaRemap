@@ -203,9 +203,9 @@ public class Class8928 {
       var0.put(Blocks.STONECUTTER, var5);
       var0.put(Blocks.LANTERN, var5);
       var0.put(Blocks.SOUL_LANTERN, var5);
-      var0.put(Blocks.field37067, var5);
-      var0.put(Blocks.field37068, var5);
-      var0.put(Blocks.field37069, var5);
+      var0.put(Blocks.CAMPFIRE, var5);
+      var0.put(Blocks.SOUL_CAMPFIRE, var5);
+      var0.put(Blocks.SWEET_BERRY_BUSH, var5);
       var0.put(Blocks.field37086, var5);
       var0.put(Blocks.field37087, var5);
       var0.put(Blocks.field37088, var5);

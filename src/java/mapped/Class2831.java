@@ -208,7 +208,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Advancement var9 = Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Items.field38144,
+            Items.TRIDENT,
             new TranslationTextComponent("advancements.adventure.throw_trident.title"),
             new TranslationTextComponent("advancements.adventure.throw_trident.description"),
             (ResourceLocation)null,
@@ -228,7 +228,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var9)
          .method27308(
-            Items.field38144,
+            Items.TRIDENT,
             new TranslationTextComponent("advancements.adventure.very_very_frightening.title"),
             new TranslationTextComponent("advancements.adventure.very_very_frightening.description"),
             (ResourceLocation)null,

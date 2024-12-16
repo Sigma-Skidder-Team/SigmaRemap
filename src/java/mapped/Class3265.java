@@ -51,8 +51,8 @@ public class Class3265 extends ToolItem {
       .put(Blocks.field36425, Blocks.field36430)
       .put(Blocks.field36435, Blocks.field36441)
       .put(Blocks.field36423, Blocks.field36428)
-      .put(Blocks.field37070, Blocks.field37071)
-      .put(Blocks.field37072, Blocks.field37073)
+      .put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM)
+      .put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE)
       .put(Blocks.field37079, Blocks.field37080)
       .put(Blocks.field37081, Blocks.field37082)
       .build();
@@ -77,7 +77,7 @@ public class Class3265 extends ToolItem {
          return ActionResultType.field14820;
       } else {
          PlayerEntity var8 = var1.method18358();
-         var4.method6742(var8, var5, SoundEvents.field26364, Class2266.field14732, 1.0F, 1.0F);
+         var4.playSound(var8, var5, SoundEvents.field26364, SoundCategory.field14732, 1.0F, 1.0F);
          if (!var4.isRemote) {
             var4.setBlockState(var5, var7.getDefaultState().with(Class3386.field18994, var6.<Direction.Axis>get(Class3386.field18994)), 11);
             if (var8 != null) {

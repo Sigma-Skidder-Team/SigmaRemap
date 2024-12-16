@@ -108,7 +108,7 @@ public class Class4447 implements Class4442 {
       method14051(var0, Blocks.field36434, Blocks.field36422);
       method14051(var0, Blocks.field36435, Blocks.field36423);
       method14051(var0, Blocks.field37081, Blocks.field37079);
-      method14051(var0, Blocks.field37072, Blocks.field37070);
+      method14051(var0, Blocks.WARPED_HYPHAE, Blocks.WARPED_STEM);
       method14051(var0, Blocks.field36444, Blocks.field36431);
       method14051(var0, Blocks.field36442, Blocks.field36429);
       method14051(var0, Blocks.field36445, Blocks.field36432);
@@ -116,7 +116,7 @@ public class Class4447 implements Class4442 {
       method14051(var0, Blocks.field36440, Blocks.field36433);
       method14051(var0, Blocks.field36441, Blocks.field36428);
       method14051(var0, Blocks.field37082, Blocks.field37080);
-      method14051(var0, Blocks.field37073, Blocks.field37071);
+      method14051(var0, Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_WARPED_STEM);
       method14052(var0, Items.field38124, Blocks.field36404);
       method14052(var0, Items.field38122, Blocks.field36402);
       method14052(var0, Items.field38125, Blocks.field36405);
@@ -561,13 +561,13 @@ public class Class4447 implements Class4442 {
          .method30250('A', Items.MILK_BUCKET)
          .method30250('B', Items.field37936)
          .method30250('C', Items.field37842)
-         .method30250('E', Items.field37904)
+         .method30250('E', Items.EGG)
          .method30252("AAA")
          .method30252("BEB")
          .method30252("CCC")
-         .method30253("has_egg", method14075(Items.field37904))
+         .method30253("has_egg", method14075(Items.EGG))
          .method30255(var0);
-      Class8528.method30247(Blocks.field37067)
+      Class8528.method30247(Blocks.CAMPFIRE)
          .method30249('L', Class5985.field26085)
          .method30250('S', Items.field37835)
          .method30249('C', Class5985.field26118)
@@ -930,7 +930,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_ender_eye", method14075(Items.field37979))
          .method30255(var0);
       Class8888.method32341(Items.field37979)
-         .method32344(Items.field37966)
+         .method32344(Items.ENDER_PEARL)
          .method32344(Items.field37975)
          .method32348("has_blaze_powder", method14075(Items.field37975))
          .method32350(var0);
@@ -1718,7 +1718,7 @@ public class Class4447 implements Class4442 {
       Class8888.method32341(Items.field38067)
          .method32344(Blocks.PUMPKIN)
          .method32344(Items.field37936)
-         .method32344(Items.field37904)
+         .method32344(Items.EGG)
          .method32348("has_carved_pumpkin", method14075(Blocks.field36589))
          .method32348("has_pumpkin", method14075(Blocks.PUMPKIN))
          .method32350(var0);
@@ -1987,7 +1987,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_snowball", method14075(Items.SNOWBALL))
          .method30255(var0);
-      Class8528.method30247(Blocks.field37068)
+      Class8528.method30247(Blocks.SOUL_CAMPFIRE)
          .method30249('L', Class5985.field26085)
          .method30250('S', Items.field37835)
          .method30249('#', Class5985.field26112)

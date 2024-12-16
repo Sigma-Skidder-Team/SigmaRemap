@@ -23,7 +23,7 @@ public class Class891 extends Class890 {
 
    @Override
    public Item method3512() {
-      return Items.field38045;
+      return Items.EXPERIENCE_BOTTLE;
    }
 
    @Override

@@ -58,7 +58,7 @@ public class Class9809 {
       Item var8 = var1.getItem();
       if (!(var8 instanceof BlockItem)) {
          if (var8 != Items.field38119) {
-            if (var8 == Items.field38144) {
+            if (var8 == Items.TRIDENT) {
                var2.push();
                var2.scale(1.0F, -1.0F, -1.0F);
                IVertexBuilder var9 = ItemRenderer.getEntityGlintVertexBuilder(var3, this.field45852.method11028(Class2842.field17638), false, var1.method32159());

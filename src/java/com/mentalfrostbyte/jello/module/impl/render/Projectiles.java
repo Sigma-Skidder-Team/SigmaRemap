@@ -18,9 +18,9 @@ import java.util.List;
 
 public class Projectiles extends Module {
     public EntityRendererManager renderManager = mc.getRenderManager();
-    public Class7423 rotationX = new Class7423(0.0F, 0.0F, 0.0F);
-    public Class7423 rotationY = new Class7423(0.0F, 0.0F, 0.0F);
-    public Class7423 rotationZ = new Class7423(0.0F, 0.0F, 0.0F);
+    public FloatVector4 rotationX = new FloatVector4(0.0F, 0.0F, 0.0F);
+    public FloatVector4 rotationY = new FloatVector4(0.0F, 0.0F, 0.0F);
+    public FloatVector4 rotationZ = new FloatVector4(0.0F, 0.0F, 0.0F);
 
     public Projectiles() {
         super(ModuleCategory.RENDER, "Projectiles", "Predict the path of a projectile");
@@ -28,132 +28,23 @@ public class Projectiles extends Module {
     }
 
     // $VF: synthetic method
-    public static Minecraft method16524() {
+    public static Minecraft getMinecraft() {
         return mc;
     }
 
-    // $VF: synthetic method
-    public static Minecraft method16525() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16526() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16527() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16528() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16529() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16530() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16531() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16532() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16533() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16534() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16535() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16536() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16537() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16538() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16539() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16540() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16541() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16542() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16543() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16544() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16545() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16546() {
-        return mc;
-    }
 
     @EventTarget
     public void method16523(Render3DEvent var1) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null) {
-                Class2309 var4 = Class2309.method9085(mc.player.getHeldItemMainhand().getItem());
+                ProjectileThingy var4 = ProjectileThingy.method9085(mc.player.getHeldItemMainhand().getItem());
                 if (var4 != null) {
-                    float var5 = (float) Math.toRadians(mc.player.rotationYaw - 25.0F);
-                    float var6 = (float) Math.toRadians(mc.player.rotationPitch);
+                    float rotYawRadians = (float) Math.toRadians(mc.player.rotationYaw - 25.0F);
+                    float rotPitchRadians = (float) Math.toRadians(mc.player.rotationPitch);
                     double var7 = 0.2F;
-                    double var9 = mc.player.boundingBox.getAverageEdgeLength() / 2.0;
-                    double var11 = (double) MathHelper.cos(var5) * var9;
-                    double var13 = (double) MathHelper.sin(var5) * var9;
+                    double averageEdgeLengthDiv2 = mc.player.boundingBox.getAverageEdgeLength() / 2.0;
+                    double var11 = (double) MathHelper.cos(rotYawRadians) * averageEdgeLengthDiv2;
+                    double var13 = (double) MathHelper.sin(rotYawRadians) * averageEdgeLengthDiv2;
                     double var15 = mc.player.lastTickPosX
                             + (mc.player.getPosX() - mc.player.lastTickPosX) * (double) mc.timer.renderPartialTicks;
                     double var17 = mc.player.lastTickPosY
@@ -211,7 +102,7 @@ public class Projectiles extends Module {
 
                     GL11.glEnd();
                     GL11.glDisable(2929);
-                    if (var4.field15831 == null) {
+                    if (var4.rayTraceResult == null) {
                         if (var4.field15832 != null) {
                             double var31 = var4.field15832.lastTickPosX
                                     + (var4.field15832.getPosX() - var4.field15832.lastTickPosX) * (double) mc.timer.renderPartialTicks
@@ -229,28 +120,28 @@ public class Projectiles extends Module {
                             RenderUtil.renderWireframeBox(var37, MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                         }
                     } else {
-                        double var49 = var4.field15825 - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
-                        double var42 = var4.field15826 - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
-                        double var45 = var4.field15827 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                        double var49 = var4.traceX - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                        double var42 = var4.traceY - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                        double var45 = var4.traceZ - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                         GL11.glPushMatrix();
                         GL11.glTranslated(var49, var42, var45);
-                        BlockPos var33 = new BlockPos(0, 0, 0).offset(((BlockRayTraceResult) var4.field15831).getFace());
+                        BlockPos blockPos = new BlockPos(0, 0, 0).offset(((BlockRayTraceResult) var4.rayTraceResult).getFace());
                         GL11.glRotatef(
                                 45.0F,
-                                this.rotationX.method23931((float) var33.getX()),
-                                this.rotationX.method23932((float) (-var33.getY())),
-                                this.rotationX.method23933((float) var33.getZ())
+                                this.rotationX.interpolateX((float) blockPos.getX()),
+                                this.rotationX.interpolateY((float) (-blockPos.getY())),
+                                this.rotationX.interpolateZ((float) blockPos.getZ())
                         );
                         GL11.glRotatef(
                                 90.0F,
-                                this.rotationY.method23931((float) var33.getZ()),
-                                this.rotationY.method23932((float) var33.getY()),
-                                this.rotationY.method23933((float) (-var33.getX()))
+                                this.rotationY.interpolateX((float) blockPos.getZ()),
+                                this.rotationY.interpolateY((float) blockPos.getY()),
+                                this.rotationY.interpolateZ((float) (-blockPos.getX()))
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
-                        Box3D var34 = new Box3D(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                        RenderUtil.render3DColoredBox(var34, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
-                        RenderUtil.renderWireframeBox(var34, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        Box3D box = new Box3D(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
+                        RenderUtil.render3DColoredBox(box, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        RenderUtil.renderWireframeBox(box, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                         GL11.glPopMatrix();
                     }
 

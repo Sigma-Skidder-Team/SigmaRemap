@@ -27,7 +27,7 @@ public class Class2836 implements Consumer<BiConsumer<ResourceLocation, Class588
                         )
                   )
                   .method18291(
-                     Class4695.method14724(Items.field38115)
+                     Class4695.method14724(Items.SPLASH_POTION)
                         .method18299(8)
                         .method18296(
                            Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:fire_resistance")))
@@ -39,7 +39,7 @@ public class Class2836 implements Consumer<BiConsumer<ResourceLocation, Class588
                         .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.putString("Potion", "minecraft:water"))))
                   )
                   .method18291(Class4695.method14724(Items.field38128).method18299(10).method18296(Class140.method420(Class6872.method20921(10.0F, 36.0F))))
-                  .method18291(Class4695.method14724(Items.field37966).method18299(10).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
+                  .method18291(Class4695.method14724(Items.ENDER_PEARL).method18299(10).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37838).method18299(20).method18296(Class140.method420(Class6872.method20921(3.0F, 9.0F))))
                   .method18291(Class4695.method14724(Items.field38072).method18299(20).method18296(Class140.method420(Class6872.method20921(5.0F, 12.0F))))
                   .method18291(Class4695.method14724(Items.field37392).method18299(40))

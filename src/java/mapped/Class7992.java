@@ -222,7 +222,7 @@ public class Class7992 {
    private static Map<String, Class8090> method27255(IResourcePack var0) {
       HashMap var3 = new HashMap();
       var3.putAll(method27256(var0, "normal", Registry.ITEM.getKey(Items.field37971)));
-      var3.putAll(method27256(var0, "splash", Registry.ITEM.getKey(Items.field38115)));
+      var3.putAll(method27256(var0, "splash", Registry.ITEM.getKey(Items.SPLASH_POTION)));
       var3.putAll(method27256(var0, "linger", Registry.ITEM.getKey(Items.field38118)));
       return var3;
    }
@@ -650,7 +650,7 @@ public class Class7992 {
             Integer var5 = field34366.get(var4);
             if (var5 != null) {
                int var6 = var5;
-               if (var0.getItem() == Items.field38115) {
+               if (var0.getItem() == Items.SPLASH_POTION) {
                   var6 |= 16384;
                }
 

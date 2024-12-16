@@ -485,7 +485,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, SoundCategory var2, float var3, float var4) {
       this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, var2, var3, var4, false);
    }
 
@@ -1021,12 +1021,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, Class2266.field14736, 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, SoundCategory.field14736, 1.0F, 1.0F, false);
             this.field6132.getSoundHandler().method1000(new Class6342(this));
          }
 
          if (var3 && !var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, Class2266.field14736, 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, SoundCategory.field14736, 1.0F, 1.0F, false);
          }
 
          return this.field4918;
