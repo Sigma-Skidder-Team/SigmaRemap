@@ -41,18 +41,18 @@ public class Class3469 extends Class3468 {
    @Override
    public void method12154(IWorld var1, BlockPos var2) {
       if (this.field19004 != Material.field38956 && this.field19004 != Material.field38957) {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27136, Class2266.field14732, 0.3F, 0.6F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27136, Class2266.field14732, 0.3F, 0.6F);
       } else {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27269, Class2266.field14732, 0.3F, 0.8F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27269, Class2266.field14732, 0.3F, 0.8F);
       }
    }
 
    @Override
    public void method12155(IWorld var1, BlockPos var2) {
       if (this.field19004 != Material.field38956 && this.field19004 != Material.field38957) {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27135, Class2266.field14732, 0.3F, 0.5F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27135, Class2266.field14732, 0.3F, 0.5F);
       } else {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27268, Class2266.field14732, 0.3F, 0.7F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27268, Class2266.field14732, 0.3F, 0.7F);
       }
    }
 

@@ -531,7 +531,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
+   public void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       if (Reflector.field42848.exists()) {
          Object var9 = Reflector.field42848.call(var1, var3, var4, var5, var6);
          if (Reflector.method35064(var9, Reflector.field42809) || Reflector.call(var9, Reflector.field42980) == null) {

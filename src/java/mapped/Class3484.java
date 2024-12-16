@@ -89,7 +89,7 @@ public class Class3484 extends BushBlock implements Class3196 {
       } else {
          int var11 = 1 + var2.rand.nextInt(2);
          method11557(var2, var3, new ItemStack(Items.field38170, var11 + (!var10 ? 0 : 1)));
-         var2.method6742((PlayerEntity)null, var3, SoundEvents.field27144, Class2266.field14732, 1.0F, 0.8F + var2.rand.nextFloat() * 0.4F);
+         var2.playSound((PlayerEntity)null, var3, SoundEvents.field27144, Class2266.field14732, 1.0F, 0.8F + var2.rand.nextFloat() * 0.4F);
          var2.setBlockState(var3, var1.with(field19342, Integer.valueOf(1)), 2);
          return ActionResultType.method9002(var2.isRemote);
       }

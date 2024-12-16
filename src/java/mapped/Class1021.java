@@ -136,7 +136,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, SoundEvents.field27115, var1, 1.0F, 1.0F);
+      this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field27115, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
          this.method4532(false);
          this.method3303(new ItemStack(Items.field37439), 1.7F);

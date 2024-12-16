@@ -203,7 +203,7 @@ public class Class3435 extends Class3433 {
                }
             }
 
-            var2.method6742((PlayerEntity)null, var3, SoundEvents.field26949, Class2266.field14732, 0.5F, var2.rand.nextFloat() * 0.15F + 0.6F);
+            var2.playSound((PlayerEntity)null, var3, SoundEvents.field26949, Class2266.field14732, 0.5F, var2.rand.nextFloat() * 0.15F + 0.6F);
          }
       } else {
          if (!this.method12105(var2, var3, var8, true)) {
@@ -211,7 +211,7 @@ public class Class3435 extends Class3433 {
          }
 
          var2.setBlockState(var3, var1.with(field19202, Boolean.valueOf(true)), 67);
-         var2.method6742((PlayerEntity)null, var3, SoundEvents.field26950, Class2266.field14732, 0.5F, var2.rand.nextFloat() * 0.25F + 0.6F);
+         var2.playSound((PlayerEntity)null, var3, SoundEvents.field26950, Class2266.field14732, 0.5F, var2.rand.nextFloat() * 0.25F + 0.6F);
       }
 
       return true;

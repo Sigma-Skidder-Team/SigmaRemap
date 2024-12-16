@@ -66,7 +66,7 @@ public class Class3271 extends Item implements IVanishable {
       if (!var5.getBlockState(var4).isIn(Blocks.field37129)) {
          return super.onItemUse(var1);
       } else {
-         var5.method6742((PlayerEntity)null, var4, SoundEvents.field26749, Class2266.field14735, 1.0F, 1.0F);
+         var5.playSound((PlayerEntity)null, var4, SoundEvents.field26749, Class2266.field14735, 1.0F, 1.0F);
          PlayerEntity var6 = var1.method18358();
          ItemStack var7 = var1.method18357();
          boolean var8 = !var6.abilities.isCreativeMode && var7.getCount() == 1;

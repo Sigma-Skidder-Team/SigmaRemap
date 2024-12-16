@@ -1610,7 +1610,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Entity var4 = this.field23273.getEntityByID(var1.method17443());
       if (var4 != null) {
-         this.mc.world.method6744(this.mc.player, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
+         this.mc.world.playSoundFromEntity(this.mc.player, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
       }
    }
 

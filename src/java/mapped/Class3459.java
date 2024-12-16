@@ -182,13 +182,13 @@ public class Class3459 extends Block {
 
    private void method12135(World var1, BlockPos var2, boolean var3, boolean var4, boolean var5, boolean var6) {
       if (var4 && !var6) {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27158, Class2266.field14732, 0.4F, 0.6F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27158, Class2266.field14732, 0.4F, 0.6F);
       } else if (!var4 && var6) {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27157, Class2266.field14732, 0.4F, 0.5F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27157, Class2266.field14732, 0.4F, 0.5F);
       } else if (var3 && !var5) {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27156, Class2266.field14732, 0.4F, 0.7F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27156, Class2266.field14732, 0.4F, 0.7F);
       } else if (!var3 && var5) {
-         var1.method6742((PlayerEntity)null, var2, SoundEvents.field27159, Class2266.field14732, 0.4F, 1.2F / (var1.rand.nextFloat() * 0.2F + 0.9F));
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field27159, Class2266.field14732, 0.4F, 1.2F / (var1.rand.nextFloat() * 0.2F + 0.9F));
       }
    }
 

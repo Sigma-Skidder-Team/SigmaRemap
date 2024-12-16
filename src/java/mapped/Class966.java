@@ -70,7 +70,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
    }
 
    private void method3990() {
-      this.world.method6742((PlayerEntity)null, this.getPos(), SoundEvents.field26401, Class2266.field14732, 1.0F, 1.0F);
+      this.world.playSound((PlayerEntity)null, this.getPos(), SoundEvents.field26401, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public void method3991(Direction var1) {

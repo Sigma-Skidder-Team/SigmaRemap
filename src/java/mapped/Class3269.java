@@ -63,7 +63,7 @@ public class Class3269 extends ToolItem {
          BlockState var6 = field18767.get(var4.getBlockState(var5).getBlock());
          if (var6 != null) {
             PlayerEntity var7 = var1.method18358();
-            var4.method6742(var7, var5, SoundEvents.field26651, Class2266.field14732, 1.0F, 1.0F);
+            var4.playSound(var7, var5, SoundEvents.field26651, Class2266.field14732, 1.0F, 1.0F);
             if (!var4.isRemote) {
                var4.setBlockState(var5, var6, 11);
                if (var7 != null) {

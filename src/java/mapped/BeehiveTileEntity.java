@@ -188,7 +188,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                   var12.setLocationAndAngles(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
-               this.world.method6742((PlayerEntity)null, var7, SoundEvents.field26397, Class2266.field14732, 1.0F, 1.0F);
+               this.world.playSound((PlayerEntity)null, var7, SoundEvents.field26397, Class2266.field14732, 1.0F, 1.0F);
                return this.world.addEntity(var12);
             } else {
                return false;

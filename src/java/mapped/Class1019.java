@@ -205,7 +205,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, SoundEvents.field27033, var1, 1.0F, 1.0F);
+      this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field27033, var1, 1.0F, 1.0F);
       this.method4520(true);
       int var4 = 1 + this.rand.nextInt(3);
 

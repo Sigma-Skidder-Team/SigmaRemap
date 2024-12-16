@@ -29,7 +29,7 @@ public class Class3464 extends Class3462 {
          if (!var2.isRemote) {
             Direction var10 = var6.getFace();
             Direction var11 = var10.getAxis() != Direction.Axis.Y ? var10 : var4.getHorizontalFacing().getOpposite();
-            var2.method6742((PlayerEntity)null, var3, SoundEvents.field26986, Class2266.field14732, 1.0F, 1.0F);
+            var2.playSound((PlayerEntity)null, var3, SoundEvents.field26986, Class2266.field14732, 1.0F, 1.0F);
             var2.setBlockState(var3, Blocks.field36589.getDefaultState().with(Class3342.field18848, var11), 11);
             ItemEntity var12 = new ItemEntity(
                var2,

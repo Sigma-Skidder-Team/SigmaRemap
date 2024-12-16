@@ -191,7 +191,7 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
          boolean var7 = var3.<Boolean>get(field18698);
          if (var7) {
             if (!var1.isRemote()) {
-               var1.method6742((PlayerEntity)null, var2, SoundEvents.field26611, Class2266.field14732, 1.0F, 1.0F);
+               var1.playSound((PlayerEntity)null, var2, SoundEvents.field26611, Class2266.field14732, 1.0F, 1.0F);
             }
 
             method11652(var1, var2, var3);

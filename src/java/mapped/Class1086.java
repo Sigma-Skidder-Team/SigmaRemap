@@ -147,7 +147,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, SoundEvents.field26769, var1, 1.0F, 1.0F);
+      this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field26769, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
          ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34070, this.getPosX(), this.getPosYHeight(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.remove();

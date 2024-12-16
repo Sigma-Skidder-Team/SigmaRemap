@@ -111,7 +111,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    public void method4942(Class2266 var1) {
       this.field5908.method19693(true);
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, SoundEvents.field27101, var1, 0.5F, 1.0F);
+         this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field27101, var1, 0.5F, 1.0F);
       }
    }
 

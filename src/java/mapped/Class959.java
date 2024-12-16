@@ -287,6 +287,6 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
    }
 
    public void method3908(SoundEvent var1) {
-      this.world.method6742((PlayerEntity)null, this.pos, var1, Class2266.field14732, 1.0F, 1.0F);
+      this.world.playSound((PlayerEntity)null, this.pos, var1, Class2266.field14732, 1.0F, 1.0F);
    }
 }

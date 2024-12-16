@@ -165,7 +165,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4942(Class2266 var1) {
       this.field5890.setInventorySlotContents(0, new ItemStack(Items.field37886));
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
+         this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
       }
    }
 

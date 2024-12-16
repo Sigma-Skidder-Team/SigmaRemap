@@ -43,6 +43,6 @@ public class Class3273 extends Item {
    }
 
    private void method11796(World var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, SoundEvents.field26572, Class2266.field14732, 1.0F, (field18735.nextFloat() - field18735.nextFloat()) * 0.2F + 1.0F);
+      var1.playSound((PlayerEntity)null, var2, SoundEvents.field26572, Class2266.field14732, 1.0F, (field18735.nextFloat() - field18735.nextFloat()) * 0.2F + 1.0F);
    }
 }
