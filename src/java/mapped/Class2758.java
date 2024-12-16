@@ -122,7 +122,7 @@ public class Class2758<T extends MonsterEntity & Class1022> extends Class2595 {
             int var8 = this.field17304.getItemInUseMaxCount();
             if (var8 >= 20) {
                this.field17304.resetActiveHand();
-               this.field17304.method4530(var3, BowItem.method11777(var8));
+               this.field17304.method4530(var3, BowItem.calculateBowPower(var8));
                this.field17308 = this.field17306;
             }
          }

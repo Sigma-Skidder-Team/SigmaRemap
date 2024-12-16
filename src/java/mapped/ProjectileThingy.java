@@ -23,9 +23,9 @@ public enum ProjectileThingy {
    TRIDENT(Items.TRIDENT, 0.0F, 2.5F, 0.0F);
 
    private final Item item;
-   private final float field15822;
-   private final float field15823;
-   private final float field15824;
+   private final float posX;
+   private final float posY;
+   private final float posZ;
    public double traceX;
    public double traceY;
    public double traceZ;
@@ -37,27 +37,27 @@ public enum ProjectileThingy {
 
    private ProjectileThingy(Item var3, float var4, float var5, float var6) {
       this.item = var3;
-      this.field15822 = var4;
-      this.field15823 = var5;
-      this.field15824 = var6;
+      this.posX = var4;
+      this.posY = var5;
+      this.posZ = var6;
    }
 
    public float method9081() {
       if (!this.item.equals(Items.BOW)) {
-         return this.field15823;
+         return this.posY;
       } else {
-         return !(this.field15823 * BowItem.method11777(Projectiles.getMinecraft().player.getItemInUseCount()) > 0.0F)
-            ? BowItem.method11777(20)
-            : BowItem.method11777(Projectiles.getMinecraft().player.getItemInUseCount());
+         return !(this.posY * BowItem.calculateBowPower(Projectiles.getMinecraft().player.getItemInUseCount()) > 0.0F)
+            ? BowItem.calculateBowPower(20)
+            : BowItem.calculateBowPower(Projectiles.getMinecraft().player.getItemInUseCount());
       }
    }
 
    public float method9082() {
-      return this.field15822;
+      return this.posX;
    }
 
    public float method9083() {
-      return this.field15824;
+      return this.posZ;
    }
 
    public Item getItem() {
@@ -91,9 +91,9 @@ public enum ProjectileThingy {
       this.traceY = var8 + (double) Projectiles.getMinecraft().player.getEyeHeight() - 0.1F;
       this.traceZ = var10;
       float var12 = Math.min(20.0F, (float)(72000 - Projectiles.getMinecraft().player.getItemInUseCount()) + Projectiles.getMinecraft().getRenderPartialTicks()) / 20.0F;
-      this.traceXOffset = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field15823 * var12;
-      this.traceYOffset = -MathHelper.sin(var5) * this.field15823 * var12;
-      this.traceZOffset = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field15823 * var12;
+      this.traceXOffset = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.posY * var12;
+      this.traceYOffset = -MathHelper.sin(var5) * this.posY * var12;
+      this.traceZOffset = MathHelper.cos(var4) * MathHelper.cos(var5) * this.posY * var12;
       this.rayTraceResult = null;
       this.field15832 = null;
       var3.add(new Class9110(this.traceX, this.traceY, this.traceZ));

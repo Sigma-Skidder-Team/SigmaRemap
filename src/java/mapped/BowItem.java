@@ -36,7 +36,7 @@ public class BowItem extends Class3262 implements IVanishable {
             }
 
             int var10 = this.method11728(var1) - var4;
-            float var11 = method11777(var10);
+            float var11 = calculateBowPower(var10);
             if (!((double)var11 < 0.1)) {
                boolean var12 = var8 && var9.getItem() == Items.field37797;
                if (!var2.isRemote) {
@@ -92,7 +92,7 @@ public class BowItem extends Class3262 implements IVanishable {
       }
    }
 
-   public static float method11777(int var0) {
+   public static float calculateBowPower(int var0) {
       float var3 = (float)var0 / 20.0F;
       var3 = (var3 * var3 + var3 * 2.0F) / 3.0F;
       if (var3 > 1.0F) {
