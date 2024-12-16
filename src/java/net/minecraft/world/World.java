@@ -334,7 +334,7 @@ public abstract class World implements IWorld, AutoCloseable {
    }
 
    @Override
-   public WorldLightManager method6737() {
+   public WorldLightManager getLightManager() {
       return this.getChunkProvider().getLightManager();
    }
 

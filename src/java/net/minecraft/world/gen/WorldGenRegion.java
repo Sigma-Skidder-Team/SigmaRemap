@@ -166,8 +166,8 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public WorldLightManager method6737() {
-      return this.field9205.method6737();
+   public WorldLightManager getLightManager() {
+      return this.field9205.getLightManager();
    }
 
    @Override
