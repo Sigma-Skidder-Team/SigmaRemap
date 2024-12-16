@@ -888,7 +888,7 @@ public class Items {
    public static final Item FURNACE_MINECART = method30157(
       "furnace_minecart", new Class3282(MinecartType.FURNACE, new Item.Properties().method17775(1).method17779(ItemGroup.field31668))
    );
-   public static final Item field37904 = method30157("egg", new Class3319(new Item.Properties().method17775(16).method17779(ItemGroup.field31675)));
+   public static final Item EGG = method30157("egg", new Class3319(new Item.Properties().method17775(16).method17779(ItemGroup.field31675)));
    public static final Item COMPASS = method30157("compass", new Class3271(new Item.Properties().method17779(ItemGroup.TOOLS)));
    public static final Item field37906 = method30157("fishing_rod", new Class3259(new Item.Properties().method17777(64).method17779(ItemGroup.TOOLS)));
    public static final Item field37907 = method30157("clock", new Item(new Item.Properties().method17779(ItemGroup.TOOLS)));
@@ -980,7 +980,7 @@ public class Items {
    public static final Item field37965 = method30157(
       "rotten_flesh", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39091))
    );
-   public static final Item field37966 = method30157("ender_pearl", new Class3335(new Item.Properties().method17775(16).method17779(ItemGroup.field31669)));
+   public static final Item ENDER_PEARL = method30157("ender_pearl", new Class3335(new Item.Properties().method17775(16).method17779(ItemGroup.field31669)));
    public static final Item field37967 = method30157("blaze_rod", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37968 = method30157("ghast_tear", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37969 = method30157("gold_nugget", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
@@ -1189,7 +1189,7 @@ public class Items {
    public static final Item field38044 = method30157(
       "zombified_piglin_spawn_egg", new SpawnEggItem(EntityType.ZOMBIFIED_PIGLIN, 15373203, 5009705, new Item.Properties().method17779(ItemGroup.field31669))
    );
-   public static final Item field38045 = method30157(
+   public static final Item EXPERIENCE_BOTTLE = method30157(
       "experience_bottle", new Class3304(new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12886))
    );
    public static final Item field38046 = method30157("fire_charge", new Class3273(new Item.Properties().method17779(ItemGroup.field31669)));
@@ -1357,7 +1357,7 @@ public class Items {
    public static final Item field38114 = method30157(
       "dragon_breath", new Item(new Item.Properties().method17778(field37972).method17779(ItemGroup.field31674).method17780(Class1978.field12886))
    );
-   public static final Item field38115 = method30157("splash_potion", new Class3326(new Item.Properties().method17775(1).method17779(ItemGroup.field31674)));
+   public static final Item SPLASH_POTION = method30157("splash_potion", new Class3326(new Item.Properties().method17775(1).method17779(ItemGroup.field31674)));
    public static final Item field38116 = method30157("spectral_arrow", new Class3310(new Item.Properties().method17779(ItemGroup.COMBAT)));
    public static final Item field38117 = method30157("tipped_arrow", new Class3309(new Item.Properties().method17779(ItemGroup.COMBAT)));
    public static final Item field38118 = method30157("lingering_potion", new Class3325(new Item.Properties().method17775(1).method17779(ItemGroup.field31674)));
@@ -1439,7 +1439,7 @@ public class Items {
       "music_disc_pigstep",
       new Class3283(13, SoundEvents.field26786, new Item.Properties().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
-   public static final Item field38144 = method30157("trident", new Class3272(new Item.Properties().method17777(250).method17779(ItemGroup.COMBAT)));
+   public static final Item TRIDENT = method30157("trident", new Class3272(new Item.Properties().method17777(250).method17779(ItemGroup.COMBAT)));
    public static final Item field38145 = method30157("phantom_membrane", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field38146 = method30157("nautilus_shell", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field38147 = method30157(

@@ -256,7 +256,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37966)
+                     Class4695.method14724(Items.ENDER_PEARL)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )

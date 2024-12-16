@@ -39,7 +39,7 @@ public class Class896 extends Class890 implements Class889 {
 
    @Override
    public Item method3512() {
-      return Items.field38115;
+      return Items.SPLASH_POTION;
    }
 
    @Override

@@ -42,7 +42,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
       Advancement var6 = Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Items.field37966,
+            Items.ENDER_PEARL,
             new TranslationTextComponent("advancements.end.enter_end_gateway.title"),
             new TranslationTextComponent("advancements.end.enter_end_gateway.description"),
             (ResourceLocation)null,

@@ -104,7 +104,7 @@ public class Class9065 {
          Items.field38119, new ResourceLocation("blocking"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
       );
       method33751(
-         Items.field38144, new ResourceLocation("throwing"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
+         Items.TRIDENT, new ResourceLocation("throwing"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
       );
    }
 }

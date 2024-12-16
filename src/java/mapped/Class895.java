@@ -32,7 +32,7 @@ public class Class895 extends Class890 {
 
    @Override
    public Item method3512() {
-      return Items.field37966;
+      return Items.ENDER_PEARL;
    }
 
    @Override

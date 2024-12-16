@@ -3328,7 +3328,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
             for (int var18 = 0; var18 < 8; var18++) {
                this.method913(
-                  new Class7438(ParticleTypes.field34082, new ItemStack(Items.field38115)),
+                  new Class7438(ParticleTypes.field34082, new ItemStack(Items.SPLASH_POTION)),
                   var17.x,
                   var17.y,
                   var17.z,

@@ -124,10 +124,10 @@ public class Class7105 {
 
    public static void method22140() {
       method22142(Items.field37971);
-      method22142(Items.field38115);
+      method22142(Items.SPLASH_POTION);
       method22142(Items.field38118);
-      method22141(Items.field37971, Items.field37840, Items.field38115);
-      method22141(Items.field38115, Items.field38114, Items.field38118);
+      method22141(Items.field37971, Items.field37840, Items.SPLASH_POTION);
+      method22141(Items.SPLASH_POTION, Items.field38114, Items.field38118);
       method22143(Class8137.field34977, Items.field37980, Class8137.field34978);
       method22143(Class8137.field34977, Items.field37968, Class8137.field34978);
       method22143(Class8137.field34977, Items.field38080, Class8137.field34978);

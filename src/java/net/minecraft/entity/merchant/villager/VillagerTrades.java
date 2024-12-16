@@ -295,10 +295,10 @@ public class VillagerTrades {
                   new Class5391[]{
                      new Class5396(Items.field37793, 4, 12, 30),
                      new Class5396(Items.field37972, 9, 12, 30),
-                     new Class5395(Items.field37966, 5, 1, 15)
+                     new Class5395(Items.ENDER_PEARL, 5, 1, 15)
                   },
                   5,
-                  new Class5391[]{new Class5396(Items.field37970, 22, 12, 30), new Class5395(Items.field38045, 3, 1, 30)}
+                  new Class5391[]{new Class5396(Items.field37970, 22, 12, 30), new Class5395(Items.EXPERIENCE_BOTTLE, 3, 1, 30)}
                )
             )
          );

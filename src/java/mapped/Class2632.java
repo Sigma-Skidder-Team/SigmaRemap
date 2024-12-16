@@ -82,7 +82,7 @@ public class Class2632 extends Class2628 {
                double var8 = 0.08;
                ((ServerWorld)var3)
                   .spawnParticle(
-                     new Class7438(ParticleTypes.field34082, new ItemStack(Items.field37904)),
+                     new Class7438(ParticleTypes.field34082, new ItemStack(Items.EGG)),
                      (double)var5.getX() + 0.5,
                      (double)var5.getY() + 0.7,
                      (double)var5.getZ() + 0.5,

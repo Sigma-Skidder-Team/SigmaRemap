@@ -58,7 +58,7 @@ public class ItemColors {
             }
          }
       }, Items.field38069);
-      var3.method33259((var0x, var1) -> var1 <= 0 ? Class9741.method38182(var0x) : -1, Items.field37971, Items.field38115, Items.field38118);
+      var3.method33259((var0x, var1) -> var1 <= 0 ? Class9741.method38182(var0x) : -1, Items.field37971, Items.SPLASH_POTION, Items.field38118);
 
       for (SpawnEggItem var5 : SpawnEggItem.method11854()) {
          var3.method33259((var1, var2) -> var5.method11852(var2), var5);

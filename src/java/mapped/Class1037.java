@@ -124,7 +124,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
          if (var4 >= 10) {
             this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37906));
          } else {
-            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38144));
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.TRIDENT));
          }
       }
    }
@@ -132,10 +132,10 @@ public class Class1037 extends ZombieEntity implements Class1022 {
    @Override
    public boolean method4250(ItemStack var1, ItemStack var2) {
       if (var2.getItem() != Items.field38146) {
-         if (var2.getItem() != Items.field38144) {
-            return var1.getItem() != Items.field38144 ? super.method4250(var1, var2) : true;
+         if (var2.getItem() != Items.TRIDENT) {
+            return var1.getItem() != Items.TRIDENT ? super.method4250(var1, var2) : true;
          } else {
-            return var1.getItem() != Items.field38144 ? false : var1.method32117() < var2.method32117();
+            return var1.getItem() != Items.TRIDENT ? false : var1.method32117() < var2.method32117();
          }
       } else {
          return false;
@@ -211,7 +211,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
 
    @Override
    public void method4530(LivingEntity var1, float var2) {
-      Class886 var5 = new Class886(this.world, this, new ItemStack(Items.field38144));
+      Class886 var5 = new Class886(this.world, this, new ItemStack(Items.TRIDENT));
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.getPosYHeight(0.3333333333333333) - var5.getPosY();
       double var10 = var1.getPosZ() - this.getPosZ();

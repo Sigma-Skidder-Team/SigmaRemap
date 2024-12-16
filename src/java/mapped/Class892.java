@@ -74,6 +74,6 @@ public class Class892 extends Class890 {
 
    @Override
    public Item method3512() {
-      return Items.field37904;
+      return Items.EGG;
    }
 }

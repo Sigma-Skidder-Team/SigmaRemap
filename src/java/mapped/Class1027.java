@@ -230,7 +230,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          }
 
          Class896 var14 = new Class896(this.world, this);
-         var14.method3511(Class9741.method38187(new ItemStack(Items.field38115), var13));
+         var14.method3511(Class9741.method38187(new ItemStack(Items.SPLASH_POTION), var13));
          var14.rotationPitch -= -20.0F;
          var14.shoot(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.isSilent()) {

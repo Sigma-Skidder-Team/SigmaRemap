@@ -28,7 +28,7 @@ public class Class2793<T extends ZombieEntity> extends Class2794<T> {
       this.rightArmPose = ArmPose.EMPTY;
       this.leftArmPose = ArmPose.EMPTY;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
-      if (var7.getItem() == Items.field38144 && var1.method4307()) {
+      if (var7.getItem() == Items.TRIDENT && var1.method4307()) {
          if (var1.getPrimaryHand() != HandSide.RIGHT) {
             this.leftArmPose = ArmPose.THROW_SPEAR;
          } else {

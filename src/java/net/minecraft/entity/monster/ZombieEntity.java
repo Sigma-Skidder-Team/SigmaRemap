@@ -390,7 +390,7 @@ public class ZombieEntity extends MonsterEntity {
 
    @Override
    public boolean method4252(ItemStack var1) {
-      return var1.getItem() == Items.field37904 && this.isChild() && this.isPassenger() ? false : super.method4252(var1);
+      return var1.getItem() == Items.EGG && this.isChild() && this.isPassenger() ? false : super.method4252(var1);
    }
 
    @Nullable

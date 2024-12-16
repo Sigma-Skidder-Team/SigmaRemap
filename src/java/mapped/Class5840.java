@@ -38,6 +38,6 @@ public class Class5840 extends Slot {
 
    public static boolean method18275(ItemStack var0) {
       Item var3 = var0.getItem();
-      return var3 == Items.field37971 || var3 == Items.field38115 || var3 == Items.field38118 || var3 == Items.field37972;
+      return var3 == Items.field37971 || var3 == Items.SPLASH_POTION || var3 == Items.field38118 || var3 == Items.field37972;
    }
 }

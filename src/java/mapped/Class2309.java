@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum Class2309 {
-   field15814(Items.BOW, 0.0F, 3.0F, 0.0F),
+   addItem(Items.BOW, 0.0F, 3.0F, 0.0F),
    field15815(Items.SNOWBALL, 0.0F, 1.875F, 0.0F),
-   field15816(Items.field37966, 0.0F, 1.875F, 0.0F),
-   field15817(Items.field37904, 0.0F, 1.875F, 0.0F),
-   field15818(Items.field38115, 0.0F, 0.5F, 0.0F),
-   field15819(Items.field38045, 0.0F, 0.6F, 0.0F),
-   field15820(Items.field38144, 0.0F, 2.5F, 0.0F);
+   field15816(Items.ENDER_PEARL, 0.0F, 1.875F, 0.0F),
+   field15817(Items.EGG, 0.0F, 1.875F, 0.0F),
+   field15818(Items.SPLASH_POTION, 0.0F, 0.5F, 0.0F),
+   field15819(Items.EXPERIENCE_BOTTLE, 0.0F, 0.6F, 0.0F),
+   field15820(Items.TRIDENT, 0.0F, 2.5F, 0.0F);
 
    private Item field15821;
    private float field15822;
@@ -34,7 +34,7 @@ public enum Class2309 {
    public float field15830;
    public RayTraceResult field15831;
    public Entity field15832;
-   private static final Class2309[] field15833 = new Class2309[]{field15814, field15815, field15816, field15817, field15818, field15819, field15820};
+   private static final Class2309[] field15833 = new Class2309[]{addItem, field15815, field15816, field15817, field15818, field15819, field15820};
 
    private Class2309(Item var3, float var4, float var5, float var6) {
       this.field15821 = var3;

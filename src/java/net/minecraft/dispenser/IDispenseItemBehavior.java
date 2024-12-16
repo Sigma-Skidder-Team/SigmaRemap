@@ -16,10 +16,10 @@ public interface IDispenseItemBehavior {
       Class3357.method11931(Items.field37797, new Class6246());
       Class3357.method11931(Items.field38117, new Class6248());
       Class3357.method11931(Items.field38116, new Class6216());
-      Class3357.method11931(Items.field37904, new Class6250());
+      Class3357.method11931(Items.EGG, new Class6250());
       Class3357.method11931(Items.SNOWBALL, new Class6249());
-      Class3357.method11931(Items.field38045, new Class6247());
-      Class3357.method11931(Items.field38115, new Class6227());
+      Class3357.method11931(Items.EXPERIENCE_BOTTLE, new Class6247());
+      Class3357.method11931(Items.SPLASH_POTION, new Class6227());
       Class3357.method11931(Items.field38118, new Class6228());
       Class6220 var2 = new Class6220();
 

@@ -561,11 +561,11 @@ public class Class4447 implements Class4442 {
          .method30250('A', Items.MILK_BUCKET)
          .method30250('B', Items.field37936)
          .method30250('C', Items.field37842)
-         .method30250('E', Items.field37904)
+         .method30250('E', Items.EGG)
          .method30252("AAA")
          .method30252("BEB")
          .method30252("CCC")
-         .method30253("has_egg", method14075(Items.field37904))
+         .method30253("has_egg", method14075(Items.EGG))
          .method30255(var0);
       Class8528.method30247(Blocks.field37067)
          .method30249('L', Class5985.field26085)
@@ -930,7 +930,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_ender_eye", method14075(Items.field37979))
          .method30255(var0);
       Class8888.method32341(Items.field37979)
-         .method32344(Items.field37966)
+         .method32344(Items.ENDER_PEARL)
          .method32344(Items.field37975)
          .method32348("has_blaze_powder", method14075(Items.field37975))
          .method32350(var0);
@@ -1718,7 +1718,7 @@ public class Class4447 implements Class4442 {
       Class8888.method32341(Items.field38067)
          .method32344(Blocks.PUMPKIN)
          .method32344(Items.field37936)
-         .method32344(Items.field37904)
+         .method32344(Items.EGG)
          .method32348("has_carved_pumpkin", method14075(Blocks.field36589))
          .method32348("has_pumpkin", method14075(Blocks.PUMPKIN))
          .method32350(var0);

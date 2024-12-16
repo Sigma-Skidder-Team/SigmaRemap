@@ -99,13 +99,13 @@ public class Class7810 {
       this.method26074(Items.field37825, Class9756.field45624);
       this.method26074(Items.field38114, Class9756.field45623);
       this.method26074(Items.field37958, Class9756.field45623);
-      this.method26074(Items.field37904, Class9756.field45623);
+      this.method26074(Items.EGG, Class9756.field45623);
       this.method26074(Items.EMERALD, Class9756.field45623);
       this.method26074(Items.field38070, Class9756.field45623);
       this.method26074(Items.field37979, Class9756.field45623);
-      this.method26074(Items.field37966, Class9756.field45623);
+      this.method26074(Items.ENDER_PEARL, Class9756.field45623);
       this.method26074(Items.END_CRYSTAL, Class9756.field45623);
-      this.method26074(Items.field38045, Class9756.field45623);
+      this.method26074(Items.EXPERIENCE_BOTTLE, Class9756.field45623);
       this.method26074(Items.field37974, Class9756.field45623);
       this.method26074(Items.field38068, Class9756.field45623);
       this.method26074(Items.field38046, Class9756.field45623);
@@ -244,7 +244,7 @@ public class Class7810 {
       this.method26074(Items.field38149, Class9756.field45623);
       this.method26074(Items.TNT_MINECART, Class9756.field45623);
       this.method26074(Items.TOTEM_OF_UNDYING, Class9756.field45623);
-      this.method26074(Items.field38144, Class9756.field45623);
+      this.method26074(Items.TRIDENT, Class9756.field45623);
       this.method26074(Items.field37911, Class9756.field45623);
       this.method26074(Items.field37895, Class9756.field45623);
       this.method26074(Items.field37792, Class9756.field45623);
