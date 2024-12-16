@@ -30,13 +30,13 @@ public class SoundType {
       1.0F, 1.0F, SoundEvents.WOOL_BREAK, SoundEvents.WOOL_STEP, SoundEvents.WOOL_PLACE, SoundEvents.WOOL_HIT, SoundEvents.WOOL_FALL
    );
    public static final SoundType SAND = new SoundType(
-      1.0F, 1.0F, SoundEvents.field27020, SoundEvents.field27024, SoundEvents.field27023, SoundEvents.field27022, SoundEvents.field27021
+      1.0F, 1.0F, SoundEvents.SAND_BREAK, SoundEvents.SAND_STEP, SoundEvents.SAND_PLACE, SoundEvents.SAND_HIT, SoundEvents.SAND_FALL
    );
    public static final SoundType SNOW = new SoundType(
-      1.0F, 1.0F, SoundEvents.field27109, SoundEvents.field27118, SoundEvents.field27117, SoundEvents.field27116, SoundEvents.field27110
+      1.0F, 1.0F, SoundEvents.SNOW_BREAK, SoundEvents.SNOW_STEP, SoundEvents.SNOW_PLACE, SoundEvents.SNOW_HIT, SoundEvents.SNOW_FALL
    );
    public static final SoundType LADDER = new SoundType(
-      1.0F, 1.0F, SoundEvents.field26715, SoundEvents.field26719, SoundEvents.field26718, SoundEvents.field26717, SoundEvents.field26716
+      1.0F, 1.0F, SoundEvents.LADDER_BREAK, SoundEvents.LADDER_STEP, SoundEvents.LADDER_PLACE, SoundEvents.LADDER_HIT, SoundEvents.LADDER_FALL
    );
    public static final SoundType ANVIL = new SoundType(
       0.3F, 1.0F, SoundEvents.field26340, SoundEvents.field26346, SoundEvents.field26345, SoundEvents.field26343, SoundEvents.field26342
