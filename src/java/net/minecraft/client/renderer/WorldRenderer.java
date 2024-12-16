@@ -3317,7 +3317,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                }
 
                this.world
-                  .method6858(var3, var47.method29712(), Class2266.field14732, (var47.getVolume() + 1.0F) / 2.0F, var47.method29711() * 0.8F, false);
+                  .method6858(var3, var47.getBreakSound(), Class2266.field14732, (var47.getVolume() + 1.0F) / 2.0F, var47.getPitch() * 0.8F, false);
             }
 
             this.mc.particles.method1206(var3, var16);

@@ -5,71 +5,71 @@ import net.minecraft.util.SoundEvents;
 
 public class SoundType {
    private static String[] field36199;
-   public static final SoundType field36200 = new SoundType(
-      1.0F, 1.0F, SoundEvents.field27262, SoundEvents.field27270, SoundEvents.field27267, SoundEvents.field27266, SoundEvents.field27265
+   public static final SoundType WOOD = new SoundType(
+      1.0F, 1.0F, SoundEvents.BLOCK_WOOD_BREAK, SoundEvents.field27270, SoundEvents.field27267, SoundEvents.field27266, SoundEvents.field27265
    );
-   public static final SoundType field36201 = new SoundType(
+   public static final SoundType GRAVEL = new SoundType(
       1.0F, 1.0F, SoundEvents.field26637, SoundEvents.field26641, SoundEvents.field26640, SoundEvents.field26639, SoundEvents.field26638
    );
-   public static final SoundType field36202 = new SoundType(
+   public static final SoundType GRASS = new SoundType(
       1.0F, 1.0F, SoundEvents.field26632, SoundEvents.field26636, SoundEvents.field26635, SoundEvents.field26634, SoundEvents.field26633
    );
-   public static final SoundType field36203 = new SoundType(
+   public static final SoundType LILY_PAD = new SoundType(
       1.0F, 1.0F, SoundEvents.field26632, SoundEvents.field26636, SoundEvents.field27214, SoundEvents.field26634, SoundEvents.field26633
    );
-   public static final SoundType field36204 = new SoundType(
+   public static final SoundType STONE = new SoundType(
       1.0F, 1.0F, SoundEvents.field27129, SoundEvents.field27137, SoundEvents.field27134, SoundEvents.field27133, SoundEvents.field27132
    );
-   public static final SoundType field36205 = new SoundType(
+   public static final SoundType METAL = new SoundType(
       1.0F, 1.5F, SoundEvents.field26756, SoundEvents.field26762, SoundEvents.field26759, SoundEvents.field26758, SoundEvents.field26757
    );
-   public static final SoundType field36206 = new SoundType(
+   public static final SoundType GLASS = new SoundType(
       1.0F, 1.0F, SoundEvents.field26627, SoundEvents.field26631, SoundEvents.field26630, SoundEvents.field26629, SoundEvents.field26628
    );
-   public static final SoundType field36207 = new SoundType(
+   public static final SoundType WOOL = new SoundType(
       1.0F, 1.0F, SoundEvents.field27271, SoundEvents.field27275, SoundEvents.field27274, SoundEvents.field27273, SoundEvents.field27272
    );
-   public static final SoundType field36208 = new SoundType(
+   public static final SoundType SAND = new SoundType(
       1.0F, 1.0F, SoundEvents.field27020, SoundEvents.field27024, SoundEvents.field27023, SoundEvents.field27022, SoundEvents.field27021
    );
-   public static final SoundType field36209 = new SoundType(
+   public static final SoundType SNOW = new SoundType(
       1.0F, 1.0F, SoundEvents.field27109, SoundEvents.field27118, SoundEvents.field27117, SoundEvents.field27116, SoundEvents.field27110
    );
-   public static final SoundType field36210 = new SoundType(
+   public static final SoundType LADDER = new SoundType(
       1.0F, 1.0F, SoundEvents.field26715, SoundEvents.field26719, SoundEvents.field26718, SoundEvents.field26717, SoundEvents.field26716
    );
-   public static final SoundType field36211 = new SoundType(
+   public static final SoundType ANVIL = new SoundType(
       0.3F, 1.0F, SoundEvents.field26340, SoundEvents.field26346, SoundEvents.field26345, SoundEvents.field26343, SoundEvents.field26342
    );
-   public static final SoundType field36212 = new SoundType(
+   public static final SoundType SLIME = new SoundType(
       1.0F, 1.0F, SoundEvents.field27077, SoundEvents.field27081, SoundEvents.field27080, SoundEvents.field27079, SoundEvents.field27078
    );
-   public static final SoundType field36213 = new SoundType(
+   public static final SoundType HONEY = new SoundType(
       1.0F, 1.0F, SoundEvents.field26660, SoundEvents.field26665, SoundEvents.field26663, SoundEvents.field26662, SoundEvents.field26661
    );
-   public static final SoundType field36214 = new SoundType(
+   public static final SoundType WET_GRASS = new SoundType(
       1.0F, 1.0F, SoundEvents.field27228, SoundEvents.field27232, SoundEvents.field27231, SoundEvents.field27230, SoundEvents.field27229
    );
-   public static final SoundType field36215 = new SoundType(
+   public static final SoundType CORAL = new SoundType(
       1.0F, 1.0F, SoundEvents.field26472, SoundEvents.field26476, SoundEvents.field26475, SoundEvents.field26474, SoundEvents.field26473
    );
-   public static final SoundType field36216 = new SoundType(
+   public static final SoundType BAMBOO = new SoundType(
       1.0F, 1.0F, SoundEvents.field26365, SoundEvents.field26369, SoundEvents.field26368, SoundEvents.field26367, SoundEvents.field26366
    );
-   public static final SoundType field36217 = new SoundType(
+   public static final SoundType BAMBOO_SAPLING = new SoundType(
       1.0F, 1.0F, SoundEvents.field26370, SoundEvents.field26369, SoundEvents.field26372, SoundEvents.field26371, SoundEvents.field26366
    );
-   public static final SoundType field36218 = new SoundType(
+   public static final SoundType SCAFFOLDING = new SoundType(
       1.0F, 1.0F, SoundEvents.field27025, SoundEvents.field27029, SoundEvents.field27028, SoundEvents.field27027, SoundEvents.field27026
    );
-   public static final SoundType field36219 = new SoundType(
+   public static final SoundType SWEET_BERRY_BUSH = new SoundType(
       1.0F, 1.0F, SoundEvents.field27142, SoundEvents.field26636, SoundEvents.field27143, SoundEvents.field26634, SoundEvents.field26633
    );
    public static final SoundType field36220 = new SoundType(
       1.0F, 1.0F, SoundEvents.field26485, SoundEvents.field26636, SoundEvents.field26486, SoundEvents.field26634, SoundEvents.field26633
    );
    public static final SoundType field36221 = new SoundType(
-      1.0F, 1.0F, SoundEvents.field27262, SoundEvents.field27270, SoundEvents.field26486, SoundEvents.field27266, SoundEvents.field27265
+      1.0F, 1.0F, SoundEvents.BLOCK_WOOD_BREAK, SoundEvents.field27270, SoundEvents.field26486, SoundEvents.field27266, SoundEvents.field27265
    );
    public static final SoundType field36222 = new SoundType(
       1.0F, 1.0F, SoundEvents.field26632, SoundEvents.field27213, SoundEvents.field26635, SoundEvents.field26634, SoundEvents.field26633
@@ -146,49 +146,52 @@ public class SoundType {
    public static final SoundType field36246 = new SoundType(
       1.0F, 1.0F, SoundEvents.field26622, SoundEvents.field26626, SoundEvents.field26625, SoundEvents.field26624, SoundEvents.field26623
    );
-   public final float field36247;
-   public final float field36248;
-   private final SoundEvent field36249;
-   private final SoundEvent field36250;
-   private final SoundEvent field36251;
-   private final SoundEvent field36252;
-   private final SoundEvent field36253;
+   public final float volume;
+   public final float pitch;
+   private final SoundEvent breakSound;
+   private final SoundEvent stepSound;
+   private final SoundEvent placeSound;
+   private final SoundEvent hitSound;
+   private final SoundEvent fallSound;
 
-   public SoundType(float var1, float var2, SoundEvent var3, SoundEvent var4, SoundEvent var5, SoundEvent var6, SoundEvent var7) {
-      this.field36247 = var1;
-      this.field36248 = var2;
-      this.field36249 = var3;
-      this.field36250 = var4;
-      this.field36251 = var5;
-      this.field36252 = var6;
-      this.field36253 = var7;
+   public SoundType(
+           float volume, float pitch, SoundEvent breakSound,
+           SoundEvent stepSound, SoundEvent placeSound, SoundEvent hitSound,
+           SoundEvent fallSound) {
+      this.volume = volume;
+      this.pitch = pitch;
+      this.breakSound = breakSound;
+      this.stepSound = stepSound;
+      this.placeSound = placeSound;
+      this.hitSound = hitSound;
+      this.fallSound = fallSound;
    }
 
    public float getVolume() {
-      return this.field36247;
+      return this.volume;
    }
 
-   public float method29711() {
-      return this.field36248;
+   public float getPitch() {
+      return this.pitch;
    }
 
-   public SoundEvent method29712() {
-      return this.field36249;
+   public SoundEvent getBreakSound() {
+      return this.breakSound;
    }
 
-   public SoundEvent method29713() {
-      return this.field36250;
+   public SoundEvent getStepSound() {
+      return this.stepSound;
    }
 
-   public SoundEvent method29714() {
-      return this.field36251;
+   public SoundEvent getPlaceSound() {
+      return this.placeSound;
    }
 
-   public SoundEvent method29715() {
-      return this.field36252;
+   public SoundEvent getHitSound() {
+      return this.hitSound;
    }
 
    public SoundEvent getFallSound() {
-      return this.field36253;
+      return this.fallSound;
    }
 }

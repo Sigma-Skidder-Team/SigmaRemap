@@ -331,7 +331,7 @@ public abstract class AbstractBlock {
       private Material field33964;
       private Function<BlockState, MaterialColor> field33965;
       private boolean field33966 = true;
-      private SoundType field33967 = SoundType.field36204;
+      private SoundType field33967 = SoundType.STONE;
       private ToIntFunction<BlockState> field33968 = var0 -> 0;
       private float field33969;
       private float field33970;

@@ -40,7 +40,7 @@ public class HoneyBlock extends Class3231 {
       }
 
       if (var3.onLivingFall(var4, 0.2F)) {
-         var3.playSound(this.field19008.getFallSound(), this.field19008.getVolume() * 0.5F, this.field19008.method29711() * 0.75F);
+         var3.playSound(this.field19008.getFallSound(), this.field19008.getVolume() * 0.5F, this.field19008.getPitch() * 0.75F);
       }
    }
 

@@ -952,7 +952,7 @@ public class SoundEvents {
    public static final SoundEvent field27259 = register("block.wooden_door.open");
    public static final SoundEvent field27260 = register("block.wooden_trapdoor.close");
    public static final SoundEvent field27261 = register("block.wooden_trapdoor.open");
-   public static final SoundEvent field27262 = register("block.wood.break");
+   public static final SoundEvent BLOCK_WOOD_BREAK = register("block.wood.break");
    public static final SoundEvent BLOCK_WOODEN_BUTTON_CLICK_OFF = register("block.wooden_button.click_off");
    public static final SoundEvent BLOCK_WOODEN_BUTTON_CLICK_ON = register("block.wooden_button.click_on");
    public static final SoundEvent field27265 = register("block.wood.fall");
