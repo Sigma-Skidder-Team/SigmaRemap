@@ -5,7 +5,7 @@ import net.minecraft.util.SoundEvent;
 public abstract class Class6333 extends Class6338 implements Class6341 {
    private boolean field27845;
 
-   public Class6333(SoundEvent var1, Class2266 var2) {
+   public Class6333(SoundEvent var1, SoundCategory var2) {
       super(var1, var2);
    }
 

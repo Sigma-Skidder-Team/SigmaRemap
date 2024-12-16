@@ -29,7 +29,7 @@ public class Class3325 extends Class3324 {
          var2.getPosY(),
          var2.getPosZ(),
          SoundEvents.field26733,
-         Class2266.field14734,
+         SoundCategory.field14734,
          0.5F,
          0.4F / (field18735.nextFloat() * 0.4F + 0.8F)
       );

@@ -41,7 +41,7 @@ public interface IWorld extends Class1678, Class1661 {
    default void func_230547_a_(BlockPos var1, Block var2) {
    }
 
-   void playSound(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6);
+   void playSound(PlayerEntity var1, BlockPos var2, SoundEvent var3, SoundCategory var4, float var5, float var6);
 
    void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12);
 

@@ -149,7 +149,7 @@ public class ChestTileEntity extends Class939 implements Class942, ITickableTile
             var9 += (double)var11.getZOffset() * 0.5;
          }
 
-         this.world.playSound((PlayerEntity)null, var5, var7, var9, var1, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+         this.world.playSound((PlayerEntity)null, var5, var7, var9, var1, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
       }
    }
 

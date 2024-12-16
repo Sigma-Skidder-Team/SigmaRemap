@@ -63,7 +63,7 @@ public class Class3441 extends Block {
    }
 
    private void method12113(World var1, BlockPos var2, BlockState var3) {
-      var1.playSound((PlayerEntity)null, var2, SoundEvents.field27167, Class2266.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
+      var1.playSound((PlayerEntity)null, var2, SoundEvents.field27167, SoundCategory.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
       int var6 = var3.<Integer>get(field19244);
       if (var6 > 1) {
          var1.setBlockState(var2, var3.with(field19244, Integer.valueOf(var6 - 1)), 2);
@@ -78,7 +78,7 @@ public class Class3441 extends Block {
       if (this.method12116(var2) && method12114(var2, var3)) {
          int var7 = var1.<Integer>get(field19243);
          if (var7 >= 2) {
-            var2.playSound((PlayerEntity)null, var3, SoundEvents.field27169, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
+            var2.playSound((PlayerEntity)null, var3, SoundEvents.field27169, SoundCategory.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.removeBlock(var3, false);
 
             for (int var8 = 0; var8 < var1.<Integer>get(field19244); var8++) {
@@ -90,7 +90,7 @@ public class Class3441 extends Block {
                var2.addEntity(var9);
             }
          } else {
-            var2.playSound((PlayerEntity)null, var3, SoundEvents.field27168, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
+            var2.playSound((PlayerEntity)null, var3, SoundEvents.field27168, SoundCategory.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.setBlockState(var3, var1.with(field19243, Integer.valueOf(var7 + 1)), 2);
          }
       }

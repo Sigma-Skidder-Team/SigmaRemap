@@ -191,7 +191,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
                this.field5387.getPosY(),
                this.field5387.getPosZ(),
                SoundEvents.field26470,
-               Class2266.field14732,
+               SoundCategory.field14732,
                1.0F,
                1.0F
             );
@@ -287,6 +287,6 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
    }
 
    public void method3908(SoundEvent var1) {
-      this.world.playSound((PlayerEntity)null, this.pos, var1, Class2266.field14732, 1.0F, 1.0F);
+      this.world.playSound((PlayerEntity)null, this.pos, var1, SoundCategory.field14732, 1.0F, 1.0F);
    }
 }

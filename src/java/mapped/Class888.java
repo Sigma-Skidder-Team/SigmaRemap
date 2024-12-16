@@ -142,7 +142,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       this.method3468();
       if (this.field5123 == 0 && !this.isSilent()) {
          this.world
-            .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26577, Class2266.field14736, 3.0F, 1.0F);
+            .playSound((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26577, SoundCategory.field14736, 3.0F, 1.0F);
       }
 
       this.field5123++;

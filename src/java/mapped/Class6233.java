@@ -35,7 +35,7 @@ public class Class6233 extends Class6230 {
       if (var4.isIn(BlockTags.field32794)) {
          int var5 = var4.<Integer>get(Class3366.field18936);
          if (var5 >= 5) {
-            var0.playSound((PlayerEntity)null, var1, SoundEvents.field26398, Class2266.field14732, 1.0F, 1.0F);
+            var0.playSound((PlayerEntity)null, var1, SoundEvents.field26398, SoundCategory.field14732, 1.0F, 1.0F);
             Class3366.method11944(var0, var1);
             ((Class3366)var4.getBlock()).method11946(var0, var4, var1, (PlayerEntity)null, Class2084.field13572);
             return true;
@@ -50,7 +50,7 @@ public class Class6233 extends Class6230 {
          if (var5 instanceof Class1020) {
             Class1020 var6 = (Class1020)var5;
             if (var6.method4516()) {
-               var6.method4515(Class2266.field14732);
+               var6.method4515(SoundCategory.field14732);
                return true;
             }
          }

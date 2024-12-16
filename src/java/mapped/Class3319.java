@@ -24,7 +24,7 @@ public class Class3319 extends Item {
          var2.getPosY(),
          var2.getPosZ(),
          SoundEvents.field26523,
-         Class2266.field14735,
+         SoundCategory.field14735,
          0.5F,
          0.4F / (field18735.nextFloat() * 0.4F + 0.8F)
       );

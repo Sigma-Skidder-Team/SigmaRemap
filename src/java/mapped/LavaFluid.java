@@ -45,7 +45,7 @@ public abstract class LavaFluid extends FlowingFluid {
             double var12 = (double)var2.getZ() + var4.nextDouble();
             var1.addParticle(ParticleTypes.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
             var1.method6745(
-               var8, var10, var12, SoundEvents.field26727, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
+               var8, var10, var12, SoundEvents.field26727, SoundCategory.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }
 
@@ -55,7 +55,7 @@ public abstract class LavaFluid extends FlowingFluid {
                (double)var2.getY(),
                (double)var2.getZ(),
                SoundEvents.field26725,
-               Class2266.field14732,
+               SoundCategory.field14732,
                0.2F + var4.nextFloat() * 0.2F,
                0.9F + var4.nextFloat() * 0.15F,
                false

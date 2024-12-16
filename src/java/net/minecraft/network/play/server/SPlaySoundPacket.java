@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class2266;
+import mapped.SoundCategory;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
@@ -12,7 +12,7 @@ import java.io.IOException;
 public class SPlaySoundPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24314;
    public ResourceLocation field24315;
-   private Class2266 field24316;
+   private SoundCategory field24316;
    private int field24317;
    private int field24318 = Integer.MAX_VALUE;
    private int field24319;
@@ -22,7 +22,7 @@ public class SPlaySoundPacket implements IPacket<IClientPlayNetHandler> {
    public SPlaySoundPacket() {
    }
 
-   public SPlaySoundPacket(ResourceLocation var1, Class2266 var2, Vector3d var3, float var4, float var5) {
+   public SPlaySoundPacket(ResourceLocation var1, SoundCategory var2, Vector3d var3, float var4, float var5) {
       this.field24315 = var1;
       this.field24316 = var2;
       this.field24317 = (int)(var3.x * 8.0);
@@ -35,7 +35,7 @@ public class SPlaySoundPacket implements IPacket<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24315 = var1.readResourceLocation();
-      this.field24316 = var1.<Class2266>readEnumValue(Class2266.class);
+      this.field24316 = var1.<SoundCategory>readEnumValue(SoundCategory.class);
       this.field24317 = var1.readInt();
       this.field24318 = var1.readInt();
       this.field24319 = var1.readInt();
@@ -58,7 +58,7 @@ public class SPlaySoundPacket implements IPacket<IClientPlayNetHandler> {
       return this.field24315;
    }
 
-   public Class2266 method17223() {
+   public SoundCategory method17223() {
       return this.field24316;
    }
 

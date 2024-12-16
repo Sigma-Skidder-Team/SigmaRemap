@@ -100,7 +100,7 @@ public class Class3366 extends Class3241 {
          if (var9.getItem() != Items.field37956) {
             if (var9.getItem() == Items.field37972) {
                var9.shrink(1);
-               var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26418, Class2266.field14734, 1.0F, 1.0F);
+               var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26418, SoundCategory.field14734, 1.0F, 1.0F);
                if (!var9.isEmpty()) {
                   if (!var4.inventory.method4045(new ItemStack(Items.field38177))) {
                      var4.dropItem(new ItemStack(Items.field38177), false);
@@ -112,7 +112,7 @@ public class Class3366 extends Class3241 {
                var11 = true;
             }
          } else {
-            var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, Class2266.field14734, 1.0F, 1.0F);
+            var2.playSound(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, SoundCategory.field14734, 1.0F, 1.0F);
             method11944(var2, var3);
             var9.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var5));
             var11 = true;

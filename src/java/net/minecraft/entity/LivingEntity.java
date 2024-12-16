@@ -3078,7 +3078,7 @@ public abstract class LivingEntity extends Entity {
             this.getPosY(),
             this.getPosZ(),
             this.getEatSound(var2),
-            Class2266.field14734,
+            SoundCategory.field14734,
             1.0F,
             1.0F + (var1.rand.nextFloat() - var1.rand.nextFloat()) * 0.4F
          );

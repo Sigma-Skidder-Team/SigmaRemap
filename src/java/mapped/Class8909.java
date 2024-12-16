@@ -66,7 +66,7 @@ public class Class8909 {
                      var7.getPosY(),
                      var7.getPosZ(),
                      SoundEvents.field26714,
-                     Class2266.field14735,
+                     SoundCategory.field14735,
                      0.2F,
                      ((var7.getRNG().nextFloat() - var7.getRNG().nextFloat()) * 0.7F + 1.0F) * 2.0F
                   );

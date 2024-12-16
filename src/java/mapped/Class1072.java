@@ -158,7 +158,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method4942(Class2266 var1) {
+   public void method4942(SoundCategory var1) {
       this.field5915.method19693(true);
       if (var1 != null) {
          this.world.playSoundFromEntity((PlayerEntity)null, this, SoundEvents.field26927, var1, 0.5F, 1.0F);

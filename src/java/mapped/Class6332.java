@@ -7,11 +7,11 @@ public class Class6332 extends Class6333 {
    private static String[] field27843;
    private final Entity field27844;
 
-   public Class6332(SoundEvent var1, Class2266 var2, Entity var3) {
+   public Class6332(SoundEvent var1, SoundCategory var2, Entity var3) {
       this(var1, var2, 1.0F, 1.0F, var3);
    }
 
-   public Class6332(SoundEvent var1, Class2266 var2, float var3, float var4, Entity var5) {
+   public Class6332(SoundEvent var1, SoundCategory var2, float var3, float var4, Entity var5) {
       super(var1, var2);
       this.field27856 = var3;
       this.field27857 = var4;

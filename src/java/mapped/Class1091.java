@@ -306,8 +306,8 @@ public class Class1091 extends Class1018 implements IMob, Class1092 {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14733;
    }
 
    @Override

@@ -78,7 +78,7 @@ public class HoeItem extends ToolItem {
          BlockState var8 = field18770.get(var6.getBlock());
          BlockState var9 = null;
          if (var8 != null && var4.getBlockState(var5.up()).isAir()) {
-            var4.playSound(var7, var5, SoundEvents.field27042, Class2266.field14732, 1.0F, 1.0F);
+            var4.playSound(var7, var5, SoundEvents.field27042, SoundCategory.field14732, 1.0F, 1.0F);
             var9 = var8;
          } else if (var6.getBlock() instanceof Class3244 && var6.<Boolean>get(Class3244.field18698)) {
             if (!var4.isRemote()) {

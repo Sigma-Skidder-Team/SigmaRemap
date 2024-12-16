@@ -60,8 +60,8 @@ public class Class905 extends ProjectileEntity {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14733;
    }
 
    @Override

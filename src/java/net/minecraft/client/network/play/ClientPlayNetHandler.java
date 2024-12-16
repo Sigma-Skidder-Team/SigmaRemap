@@ -713,7 +713,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   var4.getPosY(),
                   var4.getPosZ(),
                   SoundEvents.field26714,
-                  Class2266.field14735,
+                  SoundCategory.field14735,
                   0.2F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 1.4F + 2.0F,
                   false
@@ -725,7 +725,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   var4.getPosY(),
                   var4.getPosZ(),
                   SoundEvents.field26569,
-                  Class2266.field14735,
+                  SoundCategory.field14735,
                   0.1F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 0.35F + 0.9F,
                   false
@@ -1184,7 +1184,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                 var4.getPosY(),
                                                 var4.getPosZ(),
                                                 SoundEvents.field26526,
-                                                Class2266.field14733,
+                                                SoundCategory.field14733,
                                                 1.0F,
                                                 1.0F
                                              );
@@ -1193,7 +1193,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                  } else {
                                     this.field23273
                                        .playSound(
-                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26985, Class2266.field14734, 1.0F, 1.0F
+                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26985, SoundCategory.field14734, 1.0F, 1.0F
                                        );
                                  }
                               } else {
@@ -1205,7 +1205,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         } else {
                            this.field23273
                               .playSound(
-                                 var4, var4.getPosX(), var4.getPosYEye(), var4.getPosZ(), SoundEvents.field26362, Class2266.field14735, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.getPosYEye(), var4.getPosZ(), SoundEvents.field26362, SoundCategory.field14735, 0.18F, 0.45F
                               );
                         }
                      } else {

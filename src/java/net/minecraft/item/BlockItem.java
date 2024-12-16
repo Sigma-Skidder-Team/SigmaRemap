@@ -63,7 +63,7 @@ public class BlockItem extends Item {
                }
 
                SoundType var12 = var10.getSoundType();
-               var7.playSound(var8, var6, this.method11835(var10), Class2266.field14732, (var12.getVolume() + 1.0F) / 2.0F, var12.getPitch() * 0.8F);
+               var7.playSound(var8, var6, this.method11835(var10), SoundCategory.field14732, (var12.getVolume() + 1.0F) / 2.0F, var12.getPitch() * 0.8F);
                if (var8 == null || !var8.abilities.isCreativeMode) {
                   var9.shrink(1);
                }

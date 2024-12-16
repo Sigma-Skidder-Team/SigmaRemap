@@ -46,7 +46,7 @@ public abstract class WaterFluid extends FlowingFluid {
                (double)var2.getY() + 0.5,
                (double)var2.getZ() + 0.5,
                SoundEvents.field27225,
-               Class2266.field14732,
+               SoundCategory.field14732,
                var4.nextFloat() * 0.25F + 0.75F,
                var4.nextFloat() + 0.5F,
                false

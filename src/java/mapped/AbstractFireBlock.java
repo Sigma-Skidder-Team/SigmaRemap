@@ -50,7 +50,7 @@ public abstract class AbstractFireBlock extends Block {
             (double)var3.getY() + 0.5,
             (double)var3.getZ() + 0.5,
             SoundEvents.field26581,
-            Class2266.field14732,
+            SoundCategory.field14732,
             1.0F + var4.nextFloat(),
             var4.nextFloat() * 0.7F + 0.3F,
             false

@@ -901,7 +901,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
+   public void playSound(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, SoundCategory var9, float var10, float var11) {
       this.field9045
          .getPlayerList()
          .method19466(
@@ -916,7 +916,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
+   public void playSoundFromEntity(PlayerEntity var1, Entity var2, SoundEvent var3, SoundCategory var4, float var5, float var6) {
       this.field9045
          .getPlayerList()
          .method19466(

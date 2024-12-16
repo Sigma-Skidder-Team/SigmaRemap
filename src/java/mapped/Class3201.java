@@ -84,7 +84,7 @@ public class Class3201 extends Class3200 {
       if (!var2.isRemote) {
          BlockState var11 = this.method11510(var1, var2, var3);
          float var10 = !var11.<Boolean>get(field18501) ? 0.5F : 0.6F;
-         var2.playSound((PlayerEntity)null, var3, SoundEvents.field26730, Class2266.field14732, 0.3F, var10);
+         var2.playSound((PlayerEntity)null, var3, SoundEvents.field26730, SoundCategory.field14732, 0.3F, var10);
          return ActionResultType.field14819;
       } else {
          BlockState var9 = var1.method23459(field18501);

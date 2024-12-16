@@ -133,7 +133,7 @@ public class Class973 extends Class939 {
       double var6 = (double)this.pos.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.pos.getY() + 0.5 + (double)var5.getY() / 2.0;
       double var10 = (double)this.pos.getZ() + 0.5 + (double)var5.getZ() / 2.0;
-      this.world.playSound((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+      this.world.playSound((PlayerEntity)null, var6, var8, var10, var2, SoundCategory.field14732, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
    }
 
    @Override

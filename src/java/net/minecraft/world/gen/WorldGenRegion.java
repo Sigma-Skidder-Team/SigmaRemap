@@ -340,7 +340,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public void playSound(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
+   public void playSound(PlayerEntity var1, BlockPos var2, SoundEvent var3, SoundCategory var4, float var5, float var6) {
    }
 
    @Override

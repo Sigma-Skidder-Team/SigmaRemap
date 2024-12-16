@@ -112,7 +112,7 @@ public class Class3246 extends Class3247 implements Class3245 {
       if (var4.abilities.allowEdit) {
          var1 = var1.method23459(field18706);
          float var9 = var1.get(field18706) != ComparatorMode.field326 ? 0.5F : 0.55F;
-         var2.playSound(var4, var3, SoundEvents.field26462, Class2266.field14732, 0.3F, var9);
+         var2.playSound(var4, var3, SoundEvents.field26462, SoundCategory.field14732, 0.3F, var9);
          var2.setBlockState(var3, var1, 2);
          this.method11665(var2, var3, var1);
          return ActionResultType.method9002(var2.isRemote);

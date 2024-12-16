@@ -129,7 +129,7 @@ public class Class3369 extends Class3241 {
          }
 
          ((Class966)var6).method3991(var3);
-         var1.playSound((PlayerEntity)null, var2, SoundEvents.field26400, Class2266.field14732, 2.0F, 1.0F);
+         var1.playSound((PlayerEntity)null, var2, SoundEvents.field26400, SoundCategory.field14732, 2.0F, 1.0F);
          return true;
       } else {
          return false;

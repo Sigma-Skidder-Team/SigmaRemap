@@ -779,8 +779,8 @@ public class Class1007 extends MobEntity implements IMob {
    }
 
    @Override
-   public Class2266 getSoundCategory() {
-      return Class2266.field14733;
+   public SoundCategory getSoundCategory() {
+      return SoundCategory.field14733;
    }
 
    @Override
