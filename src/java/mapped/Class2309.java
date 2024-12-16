@@ -22,10 +22,10 @@ public enum Class2309 {
    addItem6(Items.EXPERIENCE_BOTTLE, 0.0F, 0.6F, 0.0F),
    addItem7(Items.TRIDENT, 0.0F, 2.5F, 0.0F);
 
-   private Item item;
-   private float field15822;
-   private float field15823;
-   private float field15824;
+   private final Item item;
+   private final float field15822;
+   private final float field15823;
+   private final float field15824;
    public double traceX;
    public double traceY;
    public double traceZ;
