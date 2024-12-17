@@ -129,7 +129,7 @@ public abstract class Class1026 extends Class1028 {
                if (var11 == null) {
                   var12--;
                } else {
-                  var12 += var11.method8629();
+                  var12 += var11.getAmplifier();
                   var7.removeActivePotionEffect(Effects.BAD_OMEN);
                }
 

@@ -540,7 +540,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public static float method750(LivingEntity var0, float var1) {
-      int var4 = var0.getActivePotionEffect(Effects.NIGHT_VISION).method8628();
+      int var4 = var0.getActivePotionEffect(Effects.NIGHT_VISION).getDuration();
       return var4 <= 200 ? 0.7F + MathHelper.sin(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
 

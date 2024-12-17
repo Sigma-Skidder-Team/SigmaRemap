@@ -3268,7 +3268,7 @@ public class Shaders {
 
                     field40666 = 0.0F;
                     if (var12.isPotionActive(Effects.BLINDNESS)) {
-                        int var18 = var12.getActivePotionEffect(Effects.BLINDNESS).method8628();
+                        int var18 = var12.getActivePotionEffect(Effects.BLINDNESS).getDuration();
                         field40666 = Config.method26832((float) var18 / 20.0F, 0.0F, 1.0F);
                     }
                 }

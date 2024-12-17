@@ -179,7 +179,7 @@ public class Raid {
 
    public void method25401(PlayerEntity var1) {
       if (var1.isPotionActive(Effects.BAD_OMEN)) {
-         this.field32982 = this.field32982 + var1.getActivePotionEffect(Effects.BAD_OMEN).method8629() + 1;
+         this.field32982 = this.field32982 + var1.getActivePotionEffect(Effects.BAD_OMEN).getAmplifier() + 1;
          this.field32982 = MathHelper.clamp(this.field32982, 0, this.method25399());
       }
 

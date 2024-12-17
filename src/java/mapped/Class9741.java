@@ -60,7 +60,7 @@ public class Class9741 {
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             CompoundNBT var6 = var4.getCompound(var5);
-            EffectInstance var7 = EffectInstance.method8639(var6);
+            EffectInstance var7 = EffectInstance.read(var6);
             if (var7 != null) {
                var1.add(var7);
             }
@@ -90,13 +90,13 @@ public class Class9741 {
          int var7 = 0;
 
          for (EffectInstance var9 : var0) {
-            if (var9.method8631()) {
+            if (var9.doesShowParticles()) {
                int var10 = var9.getPotion().getLiquidColor();
                if (Config.method26911()) {
                   var10 = Class9680.method37891(var9.getPotion(), var10);
                }
 
-               int var11 = var9.method8629() + 1;
+               int var11 = var9.getAmplifier() + 1;
                var4 += (float)(var11 * (var10 >> 16 & 0xFF)) / 255.0F;
                var5 += (float)(var11 * (var10 >> 8 & 0xFF)) / 255.0F;
                var6 += (float)(var11 * (var10 >> 0 & 0xFF)) / 255.0F;
@@ -144,7 +144,7 @@ public class Class9741 {
          ListNBT var5 = var4.getList("CustomPotionEffects", 9);
 
          for (EffectInstance var7 : var1) {
-            var5.add(var7.method8637(new CompoundNBT()));
+            var5.add(var7.write(new CompoundNBT()));
          }
 
          var4.put("CustomPotionEffects", var5);
@@ -157,22 +157,22 @@ public class Class9741 {
       ArrayList<Pair> var6 = Lists.newArrayList();
       if (!var5.isEmpty()) {
          for (EffectInstance var8 : var5) {
-            TranslationTextComponent var9 = new TranslationTextComponent(var8.method8636());
+            TranslationTextComponent var9 = new TranslationTextComponent(var8.getPotionName());
             Effect var10 = var8.getPotion();
             Map<Attribute, AttributeModifier> var11 = var10.method22299();
             if (!var11.isEmpty()) {
                for (Entry var13 : var11.entrySet()) {
                   AttributeModifier var14 = (AttributeModifier)var13.getValue();
-                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.getAttributeModifierAmount(var8.method8629(), var14), var14.getOperation());
+                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.getAttributeModifierAmount(var8.getAmplifier(), var14), var14.getOperation());
                   var6.add(new Pair(var13.getKey(), var15));
                }
             }
 
-            if (var8.method8629() > 0) {
-               var9 = new TranslationTextComponent("potion.withAmplifier", var9, new TranslationTextComponent("potion.potency." + var8.method8629()));
+            if (var8.getAmplifier() > 0) {
+               var9 = new TranslationTextComponent("potion.withAmplifier", var9, new TranslationTextComponent("potion.potency." + var8.getAmplifier()));
             }
 
-            if (var8.method8628() > 20) {
+            if (var8.getDuration() > 20) {
                var9 = new TranslationTextComponent("potion.withDuration", var9, Class7182.method22535(var8, var2));
             }
 

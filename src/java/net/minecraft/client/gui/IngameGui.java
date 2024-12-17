@@ -403,7 +403,7 @@ public class IngameGui extends AbstractGui {
                     this.field6716.getTextureManager().bindTexture(ContainerScreen.INVENTORY_BACKGROUND);
                 }
 
-                if (var10.method8632()) {
+                if (var10.doesShowIcon()) {
                     int var12 = this.field6741;
                     int var13 = 1;
                     if (this.field6716.isDemo()) {
@@ -423,10 +423,10 @@ public class IngameGui extends AbstractGui {
                     float var14 = 1.0F;
                     if (!var10.isAmbient()) {
                         this.blit(var1, var12, var13, 141, 166, 24, 24);
-                        if (var10.method8628() <= 200) {
-                            int var15 = 10 - var10.method8628() / 20;
-                            var14 = MathHelper.clamp((float) var10.method8628() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
-                                    + MathHelper.cos((float) var10.method8628() * (float) Math.PI / 5.0F)
+                        if (var10.getDuration() <= 200) {
+                            int var15 = 10 - var10.getDuration() / 20;
+                            var14 = MathHelper.clamp((float) var10.getDuration() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
+                                    + MathHelper.cos((float) var10.getDuration() * (float) Math.PI / 5.0F)
                                     * MathHelper.clamp((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
                         }
                     } else {

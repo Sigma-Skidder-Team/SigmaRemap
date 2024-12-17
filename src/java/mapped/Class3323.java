@@ -37,7 +37,7 @@ public class Class3323 extends Item {
             if (!var8.getPotion().isInstant()) {
                var3.addPotionEffect(new EffectInstance(var8));
             } else {
-               var8.getPotion().affectEntity(var6, var6, var3, var8.method8629(), 1.0);
+               var8.getPotion().affectEntity(var6, var6, var3, var8.getAmplifier(), 1.0);
             }
          }
       }

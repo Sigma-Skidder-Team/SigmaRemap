@@ -8,204 +8,204 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class EffectInstance implements Comparable<EffectInstance> {
-   private static final Logger field13133 = LogManager.getLogger();
-   private final Effect field13134;
-   private int field13135;
-   private int field13136;
-   private boolean field13137;
-   private boolean field13138;
-   private boolean field13139;
-   private boolean field13140;
-   private boolean field13141;
-   private EffectInstance field13142;
+   private static final Logger LOGGER = LogManager.getLogger();
+   private final Effect potion;
+   private int duration;
+   private int amplifier;
+   private boolean isSplashPotion;
+   private boolean ambient;
+   private boolean isPotionDurationMax;
+   private boolean showParticles;
+   private boolean showIcon;
+   private EffectInstance hiddenEffects;
 
-   public EffectInstance(Effect var1) {
-      this(var1, 0, 0);
+   public EffectInstance(Effect potionIn) {
+      this(potionIn, 0, 0);
    }
 
-   public EffectInstance(Effect var1, int var2) {
-      this(var1, var2, 0);
+   public EffectInstance(Effect potionIn, int durationIn) {
+      this(potionIn, durationIn, 0);
    }
 
-   public EffectInstance(Effect var1, int var2, int var3) {
-      this(var1, var2, var3, false, true);
+   public EffectInstance(Effect potionIn, int durationIn, int amplifierIn) {
+      this(potionIn, durationIn, amplifierIn, false, true);
    }
 
-   public EffectInstance(Effect var1, int var2, int var3, boolean var4, boolean var5) {
-      this(var1, var2, var3, var4, var5, var5);
+   public EffectInstance(Effect potionIn, int durationIn, int amplifierIn, boolean ambientIn, boolean showParticles) {
+      this(potionIn, durationIn, amplifierIn, ambientIn, showParticles, showParticles);
    }
 
-   public EffectInstance(Effect var1, int var2, int var3, boolean var4, boolean var5, boolean var6) {
-      this(var1, var2, var3, var4, var5, var6, (EffectInstance)null);
+   public EffectInstance(Effect potionIn, int durationIn, int amplifierIn, boolean ambientIn, boolean showParticles, boolean showIcon) {
+      this(potionIn, durationIn, amplifierIn, ambientIn, showParticles, showIcon, (EffectInstance)null);
    }
 
-   public EffectInstance(Effect var1, int var2, int var3, boolean var4, boolean var5, boolean var6, EffectInstance var7) {
-      this.field13134 = var1;
-      this.field13135 = var2;
-      this.field13136 = var3;
-      this.field13138 = var4;
-      this.field13140 = var5;
-      this.field13141 = var6;
-      this.field13142 = var7;
+   public EffectInstance(Effect potionIn, int durationIn, int amplifier, boolean ambient, boolean showParticles, boolean showIcon, EffectInstance hiddenEffects) {
+      this.potion = potionIn;
+      this.duration = durationIn;
+      this.amplifier = amplifier;
+      this.ambient = ambient;
+      this.showParticles = showParticles;
+      this.showIcon = showIcon;
+      this.hiddenEffects = hiddenEffects;
    }
 
-   public EffectInstance(EffectInstance var1) {
-      this.field13134 = var1.field13134;
-      this.method8625(var1);
+   public EffectInstance(EffectInstance other) {
+      this.potion = other.potion;
+      this.copy(other);
    }
 
-   public void method8625(EffectInstance var1) {
-      this.field13135 = var1.field13135;
-      this.field13136 = var1.field13136;
-      this.field13138 = var1.field13138;
-      this.field13140 = var1.field13140;
-      this.field13141 = var1.field13141;
+   public void copy(EffectInstance var1) {
+      this.duration = var1.duration;
+      this.amplifier = var1.amplifier;
+      this.ambient = var1.ambient;
+      this.showParticles = var1.showParticles;
+      this.showIcon = var1.showIcon;
    }
 
-   public boolean method8626(EffectInstance var1) {
-      if (this.field13134 != var1.field13134) {
-         field13133.warn("This method should only be called for matching effects!");
+   public boolean combine(EffectInstance other) {
+      if (this.potion != other.potion) {
+         LOGGER.warn("This method should only be called for matching effects!");
       }
 
-      boolean var4 = false;
-      if (var1.field13136 <= this.field13136) {
-         if (var1.field13135 > this.field13135) {
-            if (var1.field13136 != this.field13136) {
-               if (this.field13142 != null) {
-                  this.field13142.method8626(var1);
+      boolean notEqual = false;
+      if (other.amplifier <= this.amplifier) {
+         if (other.duration > this.duration) {
+            if (other.amplifier != this.amplifier) {
+               if (this.hiddenEffects != null) {
+                  this.hiddenEffects.combine(other);
                } else {
-                  this.field13142 = new EffectInstance(var1);
+                  this.hiddenEffects = new EffectInstance(other);
                }
             } else {
-               this.field13135 = var1.field13135;
-               var4 = true;
+               this.duration = other.duration;
+               notEqual = true;
             }
          }
       } else {
-         if (var1.field13135 < this.field13135) {
-            EffectInstance var5 = this.field13142;
-            this.field13142 = new EffectInstance(this);
-            this.field13142.field13142 = var5;
+         if (other.duration < this.duration) {
+            EffectInstance var5 = this.hiddenEffects;
+            this.hiddenEffects = new EffectInstance(this);
+            this.hiddenEffects.hiddenEffects = var5;
          }
 
-         this.field13136 = var1.field13136;
-         this.field13135 = var1.field13135;
-         var4 = true;
+         this.amplifier = other.amplifier;
+         this.duration = other.duration;
+         notEqual = true;
       }
 
-      if (!var1.field13138 && this.field13138 || var4) {
-         this.field13138 = var1.field13138;
-         var4 = true;
+      if (!other.ambient && this.ambient || notEqual) {
+         this.ambient = other.ambient;
+         notEqual = true;
       }
 
-      if (var1.field13140 != this.field13140) {
-         this.field13140 = var1.field13140;
-         var4 = true;
+      if (other.showParticles != this.showParticles) {
+         this.showParticles = other.showParticles;
+         notEqual = true;
       }
 
-      if (var1.field13141 != this.field13141) {
-         this.field13141 = var1.field13141;
-         var4 = true;
+      if (other.showIcon != this.showIcon) {
+         this.showIcon = other.showIcon;
+         notEqual = true;
       }
 
-      return var4;
+      return notEqual;
    }
 
    public Effect getPotion() {
-      return this.field13134;
+      return this.potion;
    }
 
-   public int method8628() {
-      return this.field13135;
+   public int getDuration() {
+      return this.duration;
    }
 
-   public int method8629() {
-      return this.field13136;
+   public int getAmplifier() {
+      return this.amplifier;
    }
 
    public boolean isAmbient() {
-      return this.field13138;
+      return this.ambient;
    }
 
-   public boolean method8631() {
-      return this.field13140;
+   public boolean doesShowParticles() {
+      return this.showParticles;
    }
 
-   public boolean method8632() {
-      return this.field13141;
+   public boolean doesShowIcon() {
+      return this.showIcon;
    }
 
-   public boolean method8633(LivingEntity var1, Runnable var2) {
-      if (this.field13135 > 0) {
-         if (this.field13134.isReady(this.field13135, this.field13136)) {
-            this.method8635(var1);
+   public boolean tick(LivingEntity entityIn, Runnable onDurationDone) {
+      if (this.duration > 0) {
+         if (this.potion.isReady(this.duration, this.amplifier)) {
+            this.performEffect(entityIn);
          }
 
-         this.method8634();
-         if (this.field13135 == 0 && this.field13142 != null) {
-            this.method8625(this.field13142);
-            this.field13142 = this.field13142.field13142;
-            var2.run();
+         this.decrementDuration();
+         if (this.duration == 0 && this.hiddenEffects != null) {
+            this.copy(this.hiddenEffects);
+            this.hiddenEffects = this.hiddenEffects.hiddenEffects;
+            onDurationDone.run();
          }
       }
 
-      return this.field13135 > 0;
+      return this.duration > 0;
    }
 
-   private int method8634() {
-      if (this.field13142 != null) {
-         this.field13142.method8634();
+   private int decrementDuration() {
+      if (this.hiddenEffects != null) {
+         this.hiddenEffects.decrementDuration();
       }
 
-      return --this.field13135;
+      return --this.duration;
    }
 
-   public void method8635(LivingEntity var1) {
-      if (this.field13135 > 0) {
-         this.field13134.performEffect(var1, this.field13136);
+   public void performEffect(LivingEntity to) {
+      if (this.duration > 0) {
+         this.potion.performEffect(to, this.amplifier);
       }
    }
 
-   public String method8636() {
-      return this.field13134.getName();
+   public String getPotionName() {
+      return this.potion.getName();
    }
 
    @Override
    public String toString() {
-      String var3;
-      if (this.field13136 <= 0) {
-         var3 = this.method8636() + ", Duration: " + this.field13135;
+      String result;
+      if (this.amplifier <= 0) {
+         result = this.getPotionName() + ", Duration: " + this.duration;
       } else {
-         var3 = this.method8636() + " x " + (this.field13136 + 1) + ", Duration: " + this.field13135;
+         result = this.getPotionName() + " x " + (this.amplifier + 1) + ", Duration: " + this.duration;
       }
 
-      if (this.field13137) {
-         var3 = var3 + ", Splash: true";
+      if (this.isSplashPotion) {
+         result = result + ", Splash: true";
       }
 
-      if (!this.field13140) {
-         var3 = var3 + ", Particles: false";
+      if (!this.showParticles) {
+         result = result + ", Particles: false";
       }
 
-      if (!this.field13141) {
-         var3 = var3 + ", Show Icon: false";
+      if (!this.showIcon) {
+         result = result + ", Show Icon: false";
       }
 
-      return var3;
+      return result;
    }
 
    @Override
-   public boolean equals(Object var1) {
-      if (this != var1) {
-         if (!(var1 instanceof EffectInstance)) {
+   public boolean equals(Object other) {
+      if (this != other) {
+         if (!(other instanceof EffectInstance)) {
             return false;
          } else {
-            EffectInstance var4 = (EffectInstance)var1;
-            return this.field13135 == var4.field13135
-               && this.field13136 == var4.field13136
-               && this.field13137 == var4.field13137
-               && this.field13138 == var4.field13138
-               && this.field13134.equals(var4.field13134);
+            EffectInstance otherInstance = (EffectInstance)other;
+            return this.duration == otherInstance.duration
+               && this.amplifier == otherInstance.amplifier
+               && this.isSplashPotion == otherInstance.isSplashPotion
+               && this.ambient == otherInstance.ambient
+               && this.potion.equals(otherInstance.potion);
          }
       } else {
          return true;
@@ -214,78 +214,78 @@ public class EffectInstance implements Comparable<EffectInstance> {
 
    @Override
    public int hashCode() {
-      int var3 = this.field13134.hashCode();
-      var3 = 31 * var3 + this.field13135;
-      var3 = 31 * var3 + this.field13136;
-      var3 = 31 * var3 + (!this.field13137 ? 0 : 1);
-      return 31 * var3 + (!this.field13138 ? 0 : 1);
+      int hash = this.potion.hashCode();
+      hash = 31 * hash + this.duration;
+      hash = 31 * hash + this.amplifier;
+      hash = 31 * hash + (!this.isSplashPotion ? 0 : 1);
+      return 31 * hash + (!this.ambient ? 0 : 1);
    }
 
-   public CompoundNBT method8637(CompoundNBT var1) {
-      var1.putByte("Id", (byte) Effect.getId(this.getPotion()));
-      this.method8638(var1);
-      return var1;
+   public CompoundNBT write(CompoundNBT nbt) {
+      nbt.putByte("Id", (byte) Effect.getId(this.getPotion()));
+      this.writeInternal(nbt);
+      return nbt;
    }
 
-   private void method8638(CompoundNBT var1) {
-      var1.putByte("Amplifier", (byte)this.method8629());
-      var1.putInt("Duration", this.method8628());
-      var1.putBoolean("Ambient", this.isAmbient());
-      var1.putBoolean("ShowParticles", this.method8631());
-      var1.putBoolean("ShowIcon", this.method8632());
-      if (this.field13142 != null) {
-         CompoundNBT var4 = new CompoundNBT();
-         this.field13142.method8637(var4);
-         var1.put("HiddenEffect", var4);
+   private void writeInternal(CompoundNBT nbt) {
+      nbt.putByte("Amplifier", (byte)this.getAmplifier());
+      nbt.putInt("Duration", this.getDuration());
+      nbt.putBoolean("Ambient", this.isAmbient());
+      nbt.putBoolean("ShowParticles", this.doesShowParticles());
+      nbt.putBoolean("ShowIcon", this.doesShowIcon());
+      if (this.hiddenEffects != null) {
+         CompoundNBT nbt2 = new CompoundNBT();
+         this.hiddenEffects.write(nbt2);
+         nbt.put("HiddenEffect", nbt2);
       }
    }
 
-   public static EffectInstance method8639(CompoundNBT var0) {
-      byte var3 = var0.getByte("Id");
-      Effect var4 = Effect.get(var3);
-      return var4 != null ? method8640(var4, var0) : null;
+   public static EffectInstance read(CompoundNBT nbt) {
+      byte id = nbt.getByte("Id");
+      Effect effect = Effect.get(id);
+      return effect != null ? readInternal(effect, nbt) : null;
    }
 
-   private static EffectInstance method8640(Effect var0, CompoundNBT var1) {
-      byte var4 = var1.getByte("Amplifier");
-      int var5 = var1.getInt("Duration");
-      boolean var6 = var1.getBoolean("Ambient");
-      boolean var7 = true;
-      if (var1.contains("ShowParticles", 1)) {
-         var7 = var1.getBoolean("ShowParticles");
+   private static EffectInstance readInternal(Effect effect, CompoundNBT nbt) {
+      byte amplifier = nbt.getByte("Amplifier");
+      int duration = nbt.getInt("Duration");
+      boolean ambient = nbt.getBoolean("Ambient");
+      boolean showParticles = true;
+      if (nbt.contains("ShowParticles", 1)) {
+         showParticles = nbt.getBoolean("ShowParticles");
       }
 
-      boolean var8 = var7;
-      if (var1.contains("ShowIcon", 1)) {
-         var8 = var1.getBoolean("ShowIcon");
+      boolean var8 = showParticles;
+      if (nbt.contains("ShowIcon", 1)) {
+         var8 = nbt.getBoolean("ShowIcon");
       }
 
       EffectInstance var9 = null;
-      if (var1.contains("HiddenEffect", 10)) {
-         var9 = method8640(var0, var1.getCompound("HiddenEffect"));
+      if (nbt.contains("HiddenEffect", 10)) {
+         var9 = readInternal(effect, nbt.getCompound("HiddenEffect"));
       }
 
-      return new EffectInstance(var0, var5, var4 >= 0 ? var4 : 0, var6, var7, var8, var9);
+      return new EffectInstance(effect, duration, amplifier >= 0 ? amplifier : 0, ambient, showParticles, var8, var9);
    }
 
-   public void method8641(boolean var1) {
-      this.field13139 = var1;
+   public void setIsPotionDurationMax(boolean var1) {
+      this.isPotionDurationMax = var1;
    }
 
-   public boolean method8642() {
-      return this.field13139;
+   public boolean isPotionDurationMax() {
+      return this.isPotionDurationMax;
    }
 
-   public int compareTo(EffectInstance var1) {
-      return this.method8628() > 32147 && var1.method8628() > 32147 || this.isAmbient() && var1.isAmbient()
+   public int compareTo(EffectInstance that) {
+      return this.getDuration() > 32147 && that.getDuration() > 32147 || this.isAmbient() && that.isAmbient()
          ? ComparisonChain.start()
-            .compare(this.isAmbient(), var1.isAmbient())
-            .compare(this.getPotion().getLiquidColor(), var1.getPotion().getLiquidColor())
+            .compare(this.isAmbient(), that.isAmbient())
+            .compare(this.getPotion().getLiquidColor(), that.getPotion().getLiquidColor())
             .result()
          : ComparisonChain.start()
-            .compare(this.isAmbient(), var1.isAmbient())
-            .compare(this.method8628(), var1.method8628())
-            .compare(this.getPotion().getLiquidColor(), var1.getPotion().getLiquidColor())
+            .compare(this.isAmbient(), that.isAmbient())
+            .compare(this.getDuration(), that.getDuration())
+            .compare(this.getPotion().getLiquidColor(), that.getPotion().getLiquidColor())
             .result();
    }
 }

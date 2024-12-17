@@ -399,7 +399,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
       if (var1.isPotionActive(Effects.HERO_OF_THE_VILLAGE)) {
          EffectInstance var12 = var1.getActivePotionEffect(Effects.HERO_OF_THE_VILLAGE);
-         int var13 = var12.method8629();
+         int var13 = var12.getAmplifier();
 
          for (Class9346 var8 : this.method4742()) {
             double var9 = 0.3 + 0.0625 * (double)var13;
