@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MathUtils;
@@ -43,21 +43,21 @@ public class Class4333 extends CustomGuiScreen {
          );
       }
 
-      ClientResource var7 = !this.field20891.equals("Sigma") ? ResourceList.regular25 : ResourceList.regular28;
-      if (!this.field20891.equals("Sigma")) {
+      TrueTypeFont var7 = !this.name.equals("Sigma") ? ResourceList.regular25 : ResourceList.regular28;
+      if (!this.name.equals("Sigma")) {
          RenderUtil.drawString(
             var7,
-            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.field20891)) / 2.0F,
+            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.name)) / 2.0F,
             (float)(this.yA + 18),
-            this.field20891,
+            this.name,
             -16777216
          );
       } else {
          RenderUtil.drawString(
             var7,
-            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.field20891)) / 2.0F,
+            (float)this.xA + (float)(this.getWidthA() - var7.getStringWidth(this.name)) / 2.0F,
             (float)(this.yA + 10),
-            this.field20891,
+            this.name,
             -13619152
          );
       }

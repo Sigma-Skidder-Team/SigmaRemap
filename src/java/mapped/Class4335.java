@@ -28,7 +28,7 @@ public class Class4335 extends Class4333 {
       this.addToList(var14 = new Class4361(this, "exit", this.getWidthA() - 47, 18));
       var14.doThis((var1x, var2x) -> {
          if (this.field21181 == null) {
-            ((ClassicScreenk)this.getIcoPanel()).method13417();
+            ((ClassicScreenk)this.getScreen()).method13417();
          } else {
             this.field21181.method13556();
          }

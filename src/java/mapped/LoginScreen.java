@@ -76,7 +76,7 @@ public class LoginScreen extends Class4247 {
       this.field21355.setEnabled(false);
       this.loginButton.doThis((var1x, var2x) -> this.method13688());
       this.registerButton.doThis((var1x, var2x) -> {
-         LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
+         LoginAndOutScreen var5x = (LoginAndOutScreen)this.getScreen();
          var5x.method13422();
       });
       this.forgotButton.doThis((var0, var1x) -> Util.getOSType().openLink("https://sigma-web-alpha.vercel.app/"));
@@ -118,7 +118,7 @@ public class LoginScreen extends Class4247 {
 
          String var4 = Client.getInstance().getNetworkManager().newAccount(this.inputUsername.getTypedText(), this.inputPassword.getTypedText(), var3);
          if (var4 != null) {
-            LoginAndOutScreen var5 = (LoginAndOutScreen)this.getIcoPanel();
+            LoginAndOutScreen var5 = (LoginAndOutScreen)this.getScreen();
             var5.method13424("Error", var4);
             this.field21355.method13304("");
          } else {

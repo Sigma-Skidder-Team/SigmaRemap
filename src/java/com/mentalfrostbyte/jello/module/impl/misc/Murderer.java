@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mojang.datafixers.util.Pair;
@@ -70,7 +70,7 @@ public class Murderer extends Module {
         if (this.isEnabled()) {
             if (this.field23836) {
                 if (this.getBooleanValueFromSettingName("GUI")) {
-                    ClientResource var4 = ResourceRegistry.JelloLightFont20;
+                    TrueTypeFont var4 = ResourceRegistry.JelloLightFont20;
                     int var6 = Minecraft.getInstance().mainWindow.getWidth();
                     int var7 = Minecraft.getInstance().mainWindow.getHeight();
                     if (this.field23835 && this.field23834 != null) {

@@ -56,7 +56,7 @@ public class Class4341 extends Class4339 implements Class4342 {
                ButtonPanel var7 = (ButtonPanel)var3x;
                if (var4 != 0) {
                   if (var4 == 1) {
-                     JelloClickGUIPanels var8 = (JelloClickGUIPanels)this.getIcoPanel();
+                     JelloClickGUIPanels var8 = (JelloClickGUIPanels)this.getScreen();
                      var8.method13508(var5);
                   }
                } else {
@@ -98,7 +98,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      JelloClickGUIPanels var5 = (JelloClickGUIPanels)this.icoPanel;
+      JelloClickGUIPanels var5 = (JelloClickGUIPanels)this.screen;
       float var6 = (float)(0.07F * (60.0 / (double) Minecraft.getFps()));
       this.field21218 = this.field21218 + (!this.method13525() ? 0.0F : (!this.field21217 ? var6 : -var6));
       this.field21218 = Math.max(0.0F, Math.min(1.0F, this.field21218));
@@ -128,7 +128,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      super.draw(var1 * ((JelloClickGUIPanels)this.icoPanel).field21195);
+      super.draw(var1 * ((JelloClickGUIPanels)this.screen).field21195);
    }
 
    @Override

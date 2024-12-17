@@ -35,10 +35,10 @@ public class Class4266 extends Class4247 {
       super.method13028(var1, var2);
       if (this.field20909 && this.field20686 <= 0) {
          if (var2 >= this.method13272() + this.getHeightA() / 2) {
-            ((Class4259)this.icoPanel).method13076(false);
+            ((Class4259)this.screen).method13076(false);
             this.field20685.add(new Class7086(this, false));
          } else {
-            ((Class4259)this.icoPanel).method13076(true);
+            ((Class4259)this.screen).method13076(true);
             this.field20685.add(new Class7086(this, true));
          }
 

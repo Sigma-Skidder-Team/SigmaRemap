@@ -51,11 +51,11 @@ public class Class4294 extends Class4278 {
    public void draw(float var1) {
       this.method13225();
       this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
-      int var4 = ((Class4339)this.icoPanel.getIcoPanel()).method13513();
+      int var4 = ((Class4339)this.screen.getScreen()).method13513();
       int var5 = Math.max(0, this.yA - var4);
       int var6 = Math.max(0, this.heightA + Math.min(100, this.yA - var4 - var5));
       float var7 = (float)Math.min(50, var6) / 50.0F;
-      int var8 = this.getIcoPanel().getIcoPanel().getHeightA() + this.getIcoPanel().getIcoPanel().method13272();
+      int var8 = this.getScreen().getScreen().getHeightA() + this.getScreen().getScreen().method13272();
       int var9 = 0;
       var5 += var4;
       if (var5 - var4 <= var8) {

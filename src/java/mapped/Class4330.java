@@ -17,7 +17,7 @@ public class Class4330 extends CustomGuiScreen {
 
    public Class4330(CustomGuiScreen var1, String var2, JSONObject var3) throws JSONException {
       super(var1, var2);
-      this.setWidthA(this.getIcoPanel().getWidthA());
+      this.setWidthA(this.getScreen().getWidthA());
       int var6 = 0;
       if (var3.has("deprecated")) {
          GL11.glTexEnvi(8960, 8704, 260);

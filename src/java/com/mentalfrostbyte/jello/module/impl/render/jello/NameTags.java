@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.render.Freecam;
 import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
@@ -290,7 +290,7 @@ public class NameTags extends Module {
     }
 
     public void method16932(BlockPos var1, Class7070 var2, float var3) {
-        ClientResource var6 = ResourceRegistry.JelloLightFont25;
+        TrueTypeFont var6 = ResourceRegistry.JelloLightFont25;
         String var7 = "None";
         if (var2.field30453 != null) {
             var7 = var2.field30453.count + " " + var2.field30453.method32149();
@@ -359,7 +359,7 @@ public class NameTags extends Module {
     }
 
     public void drawNametag(double x, double y, double z, Entity var7, float var8, String var9) {
-        ClientResource var12 = ResourceRegistry.JelloLightFont25;
+        TrueTypeFont var12 = ResourceRegistry.JelloLightFont25;
         String var13 = var9 == null ? var7.getName().getString().replaceAll("§.", "") : var9;
         if (Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).isEnabled() && var13.equals(mc.getSession().getUsername())) {
             var13 = Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).getStringSettingValueByName("Username");

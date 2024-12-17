@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.gui.screens;
 
 import com.mentalfrostbyte.jello.gui.Screen;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -41,7 +41,7 @@ public class CreditsScreen extends Screen {
       GL11.glTranslatef((float)(-this.getWidthA() / 2), (float)(-this.getHeightA() / 2), 0.0F);
       String var7 = "##Jello \n";
       String var8 = "Jello by MF";
-      ClientResource var9 = ResourceRegistry.JelloLightFont25;
+      TrueTypeFont var9 = ResourceRegistry.JelloLightFont25;
       RenderUtil.drawString(
          var9, (float)((this.getWidthA() - var9.getStringWidth(var8)) / 2), (float)(this.getHeightA() - 110), var8, ClientColors.DEEP_TEAL.getColor
       );

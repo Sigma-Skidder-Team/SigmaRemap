@@ -1,11 +1,11 @@
 package mapped;
 
-import lol.Class7427;
+import lol.Font;
 import lol.Log;
 
 import java.io.UnsupportedEncodingException;
 
-public class Class7428 implements Class7427 {
+public class Class7428 implements Font {
    private Class7386 field31927;
    private char field31928;
    private int field31929;

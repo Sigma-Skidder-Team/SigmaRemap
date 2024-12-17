@@ -2,7 +2,6 @@ package mapped;
 
 import lol.*;
 
-import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.FontMetrics;
 import java.awt.Rectangle;
@@ -20,7 +19,7 @@ import java.util.Map;
 
 
 
-public class Class7431 implements Class7427 {
+public class Class7431 implements Font {
    private static final int field31947 = 200;
    private static final int field31948 = 1114111;
    private static final int field31949 = 512;
@@ -28,7 +27,7 @@ public class Class7431 implements Class7427 {
    private static final SGL field31951 = Renderer.get();
    private static final Class8741 field31952 = new Class8741();
    private static final Comparator field31953 = new Class3582();
-   private Font field31954;
+   private java.awt.Font field31954;
    private String field31955;
    private int field31956;
    private int field31957;
@@ -53,9 +52,9 @@ public class Class7431 implements Class7427 {
    private Class8741 field31976;
    private final LinkedHashMap field31977 = new Class18(this, 200, 1.0F, true);
 
-   private static Font method23953(String var0) throws Class2451 {
+   private static java.awt.Font method23953(String var0) throws Class2451 {
       try {
-         return Font.createFont(0, ResourceLoader.getResourceAsStream(var0));
+         return java.awt.Font.createFont(0, ResourceLoader.getResourceAsStream(var0));
       } catch (FontFormatException var4) {
          throw new Class2451("Invalid font: " + var0, var4);
       } catch (IOException var5) {
@@ -69,7 +68,7 @@ public class Class7431 implements Class7427 {
 
    public Class7431(String var1, Class8415 var2) throws Class2451 {
       this.field31955 = var1;
-      Font var5 = method23953(var1);
+      java.awt.Font var5 = method23953(var1);
       this.method23954(var5, var2.method29563(), var2.method29565(), var2.method29567());
       this.method23955(var2);
    }
@@ -79,24 +78,24 @@ public class Class7431 implements Class7427 {
       this.method23954(method23953(var1), var2, var3, var4);
    }
 
-   public Class7431(Font var1, String var2) throws Class2451 {
+   public Class7431(java.awt.Font var1, String var2) throws Class2451 {
       this(var1, new Class8415(var2));
    }
 
-   public Class7431(Font var1, Class8415 var2) {
+   public Class7431(java.awt.Font var1, Class8415 var2) {
       this.method23954(var1, var2.method29563(), var2.method29565(), var2.method29567());
       this.method23955(var2);
    }
 
-   public Class7431(Font var1) {
+   public Class7431(java.awt.Font var1) {
       this.method23954(var1, var1.getSize(), var1.isBold(), var1.isItalic());
    }
 
-   public Class7431(Font var1, int var2, boolean var3, boolean var4) {
+   public Class7431(java.awt.Font var1, int var2, boolean var3, boolean var4) {
       this.method23954(var1, var2, var3, var4);
    }
 
-   private void method23954(Font var1, int var2, boolean var3, boolean var4) {
+   private void method23954(java.awt.Font var1, int var2, boolean var3, boolean var4) {
       Map var7 = var1.getAttributes();
       var7.put(TextAttribute.SIZE, new Float((float)var2));
       var7.put(TextAttribute.WEIGHT, var3 ? TextAttribute.WEIGHT_BOLD : TextAttribute.WEIGHT_REGULAR);
@@ -535,7 +534,7 @@ public class Class7431 implements Class7427 {
       }
    }
 
-   public Font method23969() {
+   public java.awt.Font method23969() {
       return this.field31954;
    }
 
@@ -639,7 +638,7 @@ public class Class7431 implements Class7427 {
    public String method23993() {
       if (this.field31955 == null) {
          try {
-            Object var3 = Class.forName("sun.font.FontManager").getDeclaredMethod("getFont2D", Font.class).invoke(null, this.field31954);
+            Object var3 = Class.forName("sun.font.FontManager").getDeclaredMethod("getFont2D", java.awt.Font.class).invoke(null, this.field31954);
             Field var4 = Class.forName("sun.font.PhysicalFont").getDeclaredField("platName");
             var4.setAccessible(true);
             this.field31955 = (String)var4.get(var3);
