@@ -275,7 +275,7 @@ public class Class822 extends RealmsScreen {
                                     if (var3x.field38749 >= 200 && var3x.field38749 < 300) {
                                        this.field4493 = true;
                                        this.field4490 = new TranslationTextComponent("mco.upload.done");
-                                       this.field4496.setMessage(DialogTexts.field30658);
+                                       this.field4496.setMessage(DialogTexts.DONE);
                                        Class8510.method30150(var5);
                                     } else if (var3x.field38749 == 400 && var3x.field38750 != null) {
                                        this.method2368(new TranslationTextComponent("mco.upload.failed", var3x.field38750));

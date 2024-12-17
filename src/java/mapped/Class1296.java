@@ -17,11 +17,11 @@ public class Class1296 extends Class1293<Class1179> {
    }
 
    public int method6129(AbstractOption var1) {
-      return this.method6030(Class1179.method5607(this.field6782.gameSettings, this.field6785, var1));
+      return this.method6030(Class1179.method5607(this.mc.gameSettings, this.field6785, var1));
    }
 
    public void method6130(AbstractOption var1, AbstractOption var2) {
-      this.method6030(Class1179.method5608(this.field6782.gameSettings, this.field6785, var1, var2));
+      this.method6030(Class1179.method5608(this.mc.gameSettings, this.field6785, var1, var2));
    }
 
    public void method6131(AbstractOption[] var1) {

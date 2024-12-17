@@ -1432,7 +1432,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          Effect var5 = Effect.get(var1.method17408());
          if (var5 != null) {
             EffectInstance var6 = new EffectInstance(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
-            var6.method8641(var1.method17406());
+            var6.setIsPotionDurationMax(var1.method17406());
             ((LivingEntity)var4).method3037(var6);
          }
       }

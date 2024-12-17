@@ -110,7 +110,7 @@ public class SquidEntity extends WaterMobEntity {
                   var5 -= 0.08;
                }
             } else {
-               var5 = 0.05 * (double)(this.getActivePotionEffect(Effects.LEVITATION).method8629() + 1);
+               var5 = 0.05 * (double)(this.getActivePotionEffect(Effects.LEVITATION).getAmplifier() + 1);
             }
 
             this.setMotion(0.0, var5 * 0.98F, 0.0);

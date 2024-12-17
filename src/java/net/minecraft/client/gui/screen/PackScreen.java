@@ -76,7 +76,7 @@ public class PackScreen extends Screen {
    @Override
    public void init() {
       this.field7104 = this.<Button>addButton(
-         new Button(this.width / 2 + 4, this.height - 48, 150, 20, DialogTexts.field30658, var1 -> this.method1945())
+         new Button(this.width / 2 + 4, this.height - 48, 150, 20, DialogTexts.DONE, var1 -> this.method1945())
       );
       this.<Button>addButton(
          new Button(

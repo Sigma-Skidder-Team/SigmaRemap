@@ -24,10 +24,10 @@ public class Class8053 {
 
    public boolean method27657(EffectInstance var1) {
       if (var1 != null) {
-         if (!this.field34583.method32015(var1.method8629())) {
+         if (!this.field34583.method32015(var1.getAmplifier())) {
             return false;
-         } else if (this.field34584.method32015(var1.method8628())) {
-            return this.field34585 != null && this.field34585 != var1.isAmbient() ? false : this.field34586 == null || this.field34586 == var1.method8631();
+         } else if (this.field34584.method32015(var1.getDuration())) {
+            return this.field34585 != null && this.field34585 != var1.isAmbient() ? false : this.field34586 == null || this.field34586 == var1.doesShowParticles();
          } else {
             return false;
          }

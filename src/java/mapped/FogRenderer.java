@@ -125,7 +125,7 @@ public class FogRenderer {
 
       double var49 = var0.getPos().y * var2.getWorldInfo().method20053();
       if (var0.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var0.getRenderViewEntity()).isPotionActive(Effects.BLINDNESS)) {
-         int var26 = ((LivingEntity)var0.getRenderViewEntity()).getActivePotionEffect(Effects.BLINDNESS).method8628();
+         int var26 = ((LivingEntity)var0.getRenderViewEntity()).getActivePotionEffect(Effects.BLINDNESS).getDuration();
          if (var26 >= 20) {
             var49 = 0.0;
          } else {
@@ -235,7 +235,7 @@ public class FogRenderer {
             float var11;
             if (!var7.method23486(FluidTags.field40470)) {
                if (var8 instanceof LivingEntity && ((LivingEntity)var8).isPotionActive(Effects.BLINDNESS)) {
-                  int var12 = ((LivingEntity)var8).getActivePotionEffect(Effects.BLINDNESS).method8628();
+                  int var12 = ((LivingEntity)var8).getActivePotionEffect(Effects.BLINDNESS).getDuration();
                   float var13 = MathHelper.lerp(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != Class2040.field13337) {
                      var10 = var13 * 0.25F;

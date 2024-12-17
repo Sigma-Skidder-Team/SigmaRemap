@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Class1292 extends Class1286<Class1160> {
-   public final Class823 field6856;
+   public final RealmsScreenReal field6856;
 
-   public Class1292(Class823 var1) {
+   public Class1292(RealmsScreenReal var1) {
       super(var1.width, var1.height, 32, var1.height - 40, 36);
       this.field6856 = var1;
    }
@@ -41,7 +41,7 @@ public class Class1292 extends Class1286<Class1160> {
    public void method6109(int var1) {
       this.method6108(var1);
       if (var1 != -1) {
-         List var4 = Class823.method2390(this.field6856).getEventListeners();
+         List var4 = RealmsScreenReal.method2390(this.field6856).getEventListeners();
          Class6110 var5 = Class1160.method5558((Class1160)var4.get(var1));
          String var6 = I18n.format("narrator.select.list.position", var1 + 1, var4.size());
          String var7 = Class9229.method34715(Arrays.<String>asList(var5.field27371, var5.field27372, Class9740.method38174(var5.field27374), var6));
@@ -52,13 +52,13 @@ public class Class1292 extends Class1286<Class1160> {
    }
 
    public void method6124(int var1) {
-      Class823.method2406(this.field6856, var1);
-      Class823.method2407(this.field6856);
+      RealmsScreenReal.method2406(this.field6856, var1);
+      RealmsScreenReal.method2407(this.field6856);
    }
 
    public void method6024(Class1160 var1) {
       super.method6024(var1);
-      Class823.method2406(this.field6856, this.getEventListeners().indexOf(var1));
-      Class823.method2407(this.field6856);
+      RealmsScreenReal.method2406(this.field6856, this.getEventListeners().indexOf(var1));
+      RealmsScreenReal.method2407(this.field6856);
    }
 }

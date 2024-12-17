@@ -692,7 +692,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                if (!this.isPotionActive(Effects.JUMP_BOOST)) {
                   var9 = var7;
                } else {
-                  var9 = var7 + (double)((float)(this.getActivePotionEffect(Effects.JUMP_BOOST).method8629() + 1) * 0.1F);
+                  var9 = var7 + (double)((float)(this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1) * 0.1F);
                }
 
                Vector3d var11 = this.getMotion();

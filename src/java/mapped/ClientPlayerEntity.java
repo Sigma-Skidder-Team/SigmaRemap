@@ -802,7 +802,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private void method5409() {
       this.prevTimeInPortal = this.timeInPortal;
       if (!this.inPortal) {
-         if (this.isPotionActive(Effects.NAUSEA) && this.getActivePotionEffect(Effects.NAUSEA).method8628() > 60) {
+         if (this.isPotionActive(Effects.NAUSEA) && this.getActivePotionEffect(Effects.NAUSEA).getDuration() > 60) {
             this.timeInPortal += 0.006666667F;
             if (this.timeInPortal > 1.0F) {
                this.timeInPortal = 1.0F;
@@ -913,7 +913,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   float var18 = 7.0F;
                   float var19 = 1.2F;
                   if (this.isPotionActive(Effects.JUMP_BOOST)) {
-                     var19 += (float)(this.getActivePotionEffect(Effects.JUMP_BOOST).method8629() + 1) * 0.75F;
+                     var19 += (float)(this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1) * 0.75F;
                   }
 
                   float var20 = Math.max(var8 * 7.0F, 1.0F / var42);

@@ -43,7 +43,7 @@ public class OptionsSoundsScreen extends Class1135 {
          })
       );
       this.<Button>addButton(
-         new Button(this.width / 2 - 100, this.height / 6 + 168, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192))
+         new Button(this.width / 2 - 100, this.height / 6 + 168, 200, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen(this.field6192))
       );
    }
 

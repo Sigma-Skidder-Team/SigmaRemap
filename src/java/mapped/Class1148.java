@@ -102,7 +102,7 @@ public class Class1148 extends Screen {
    @Override
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
-      this.field6265 = this.<Button>addButton(new Button(this.width / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method5500()));
+      this.field6265 = this.<Button>addButton(new Button(this.width / 2 - 4 - 150, 210, 150, 20, DialogTexts.DONE, var1 -> this.method5500()));
       this.field6266 = this.<Button>addButton(new Button(this.width / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method5501()));
       this.field6267 = this.<Button>addButton(
          new Button(this.width / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.save"), var1 -> {

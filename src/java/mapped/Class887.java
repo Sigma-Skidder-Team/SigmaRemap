@@ -140,7 +140,7 @@ public class Class887 extends AbstractArrowEntity {
          ListNBT var4 = new ListNBT();
 
          for (EffectInstance var6 : this.field5118) {
-            var4.add(var6.method8637(new CompoundNBT()));
+            var4.add(var6.write(new CompoundNBT()));
          }
 
          var1.put("CustomPotionEffects", var4);
@@ -170,7 +170,7 @@ public class Class887 extends AbstractArrowEntity {
       super.method3478(var1);
 
       for (EffectInstance var5 : this.field5117.method31816()) {
-         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.method8628() / 8, 1), var5.method8629(), var5.isAmbient(), var5.method8631()));
+         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.getDuration() / 8, 1), var5.getAmplifier(), var5.isAmbient(), var5.doesShowParticles()));
       }
 
       if (!this.field5118.isEmpty()) {

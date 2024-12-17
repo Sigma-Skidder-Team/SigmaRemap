@@ -306,7 +306,7 @@ public class CreateWorldScreen extends Screen {
       if (!this.field7080) {
          this.field7084.setMessage(new TranslationTextComponent("selectWorld.moreWorldOptions"));
       } else {
-         this.field7084.setMessage(DialogTexts.field30658);
+         this.field7084.setMessage(DialogTexts.DONE);
       }
 
       this.field7085.visible = !this.field7080;

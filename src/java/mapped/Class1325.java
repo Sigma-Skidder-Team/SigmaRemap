@@ -39,7 +39,7 @@ public abstract class Class1325 extends Screen {
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
       this.field7012 = this.<Button>addButton(
-         new Button(this.width / 2 - 4 - 150, this.height / 4 + 120 + 12, 150, 20, DialogTexts.field30658, var1 -> this.method6307())
+         new Button(this.width / 2 - 4 - 150, this.height / 4 + 120 + 12, 150, 20, DialogTexts.DONE, var1 -> this.method6307())
       );
       this.field7013 = this.<Button>addButton(
          new Button(this.width / 2 + 4, this.height / 4 + 120 + 12, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method1945())

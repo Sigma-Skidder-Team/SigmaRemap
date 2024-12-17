@@ -45,7 +45,7 @@ public class ControlsScreen extends Class1135 {
          })
       );
       this.<Button>addButton(
-         new Button(this.width / 2 - 155 + 160, this.height - 29, 150, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192))
+         new Button(this.width / 2 - 155 + 160, this.height - 29, 150, 20, DialogTexts.DONE, var1 -> this.mc.displayGuiScreen(this.field6192))
       );
    }
 

@@ -111,7 +111,7 @@ public class Class828 extends Screen {
             this.method2498();
          })
       );
-      this.field4592 = this.<Button>addButton(new Button(this.width / 2 + 2, 196, 98, 20, DialogTexts.field30658, var1 -> {
+      this.field4592 = this.<Button>addButton(new Button(this.width / 2 + 2, 196, 98, 20, DialogTexts.DONE, var1 -> {
          this.mc.displayGuiScreen((Screen)null);
          this.method2500(false);
       }));

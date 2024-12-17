@@ -181,7 +181,7 @@ public class Class999 extends Entity {
            List<EffectInstance> var27 = Lists.newArrayList();
 
             for (EffectInstance var9 : this.field5502.method31816()) {
-               var27.add(new EffectInstance(var9.getPotion(), var9.method8628() / 4, var9.method8629(), var9.isAmbient(), var9.method8631()));
+               var27.add(new EffectInstance(var9.getPotion(), var9.getDuration() / 4, var9.getAmplifier(), var9.isAmbient(), var9.doesShowParticles()));
             }
 
             var27.addAll(this.field5503);
@@ -200,7 +200,7 @@ public class Class999 extends Entity {
                               if (!var23.getPotion().isInstant()) {
                                  var10.addPotionEffect(new EffectInstance(var23));
                               } else {
-                                 var23.getPotion().affectEntity(this, this.method4114(), var10, var23.method8629(), 0.5);
+                                 var23.getPotion().affectEntity(this, this.method4114(), var10, var23.getAmplifier(), 0.5);
                               }
                            }
 
@@ -360,7 +360,7 @@ public class Class999 extends Entity {
          this.field5503.clear();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            EffectInstance var6 = EffectInstance.method8639(var4.getCompound(var5));
+            EffectInstance var6 = EffectInstance.read(var4.getCompound(var5));
             if (var6 != null) {
                this.method4101(var6);
             }
@@ -395,7 +395,7 @@ public class Class999 extends Entity {
          ListNBT var4 = new ListNBT();
 
          for (EffectInstance var6 : this.field5503) {
-            var4.add(var6.method8637(new CompoundNBT()));
+            var4.add(var6.write(new CompoundNBT()));
          }
 
          var1.put("Effects", var4);

@@ -34,7 +34,7 @@ public class Class831 extends Screen {
    @Override
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
-      this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 4 + 120, 200, 20, DialogTexts.field30658, var1 -> this.method2541()));
+      this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 4 + 120, 200, 20, DialogTexts.DONE, var1 -> this.method2541()));
       this.field4611.method3839(false);
       this.field4614 = new Class9079(() -> this.field4615[this.field4613], var1 -> {
          this.field4615[this.field4613] = var1;

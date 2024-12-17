@@ -39,7 +39,7 @@ public class Class1323 extends Screen {
       this.mc.keyboardListener.enableRepeatEvents(true);
       this.field6997 = new Class1283(this);
       this.children.add(this.field6997);
-      this.field6999 = this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.field30658, var1 -> {
+      this.field6999 = this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.DONE, var1 -> {
          this.field6995.accept(this.field6998);
          this.mc.displayGuiScreen(this.field6994);
       }));

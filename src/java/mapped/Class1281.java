@@ -48,6 +48,6 @@ public class Class1281 extends Class1274<Class1167> {
 
    // $VF: synthetic method
    public static Minecraft method6097(Class1281 var0) {
-      return var0.field6782;
+      return var0.mc;
    }
 }

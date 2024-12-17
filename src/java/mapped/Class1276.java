@@ -42,13 +42,13 @@ public class Class1276 extends Class1274<Class1173> {
 
    public void method6066(Supplier<String> var1, boolean var2) {
       this.method6027();
-      SaveFormat var5 = this.field6782.getSaveLoader();
+      SaveFormat var5 = this.mc.getSaveLoader();
       if (this.field6815 == null || var2) {
          try {
             this.field6815 = var5.method38458();
          } catch (Class2428 var9) {
             field6805.error("Couldn't load level list", var9);
-            this.field6782.displayGuiScreen(new Class1134(new TranslationTextComponent("selectWorld.unable_to_load"), new StringTextComponent(var9.getMessage())));
+            this.mc.displayGuiScreen(new Class1134(new TranslationTextComponent("selectWorld.unable_to_load"), new StringTextComponent(var9.getMessage())));
             return;
          }
 
@@ -56,7 +56,7 @@ public class Class1276 extends Class1274<Class1173> {
       }
 
       if (this.field6815.isEmpty()) {
-         this.field6782.displayGuiScreen(CreateWorldScreen.func_243425_a((Screen)null));
+         this.mc.displayGuiScreen(CreateWorldScreen.func_243425_a((Screen)null));
       } else {
          String var6 = ((String)var1.get()).toLowerCase(Locale.ROOT);
 

@@ -40,7 +40,7 @@ public class Class1127 extends Screen {
       );
       this.field6169 = this.<Button>addButton(
          new Button(
-            this.width / 2 - 155, this.height - 29, 150, 20, DialogTexts.field30658, var1 -> this.field6166.accept(Optional.<GameRules>of(this.field6171))
+            this.width / 2 - 155, this.height - 29, 150, 20, DialogTexts.DONE, var1 -> this.field6166.accept(Optional.<GameRules>of(this.field6171))
          )
       );
    }

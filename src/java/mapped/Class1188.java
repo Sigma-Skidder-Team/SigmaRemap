@@ -23,7 +23,7 @@ public class Class1188 extends Class1186 {
       this.field6414 = var3;
       this.field6415 = new Class1216(this, 0, 0, 75, 20, var3, var2x -> Class1295.method6127(this.field6417).field6199 = var2, var1, var2, var3);
       this.field6416 = new Class1246(this, 0, 0, 50, 20, new TranslationTextComponent("controls.reset"), var2x -> {
-         this.field6417.field6782.gameSettings.method37142(var2, var2.getDefault());
+         this.field6417.mc.gameSettings.method37142(var2, var2.getDefault());
          KeyBinding.resetKeyBindingArrayAndHash();
       }, var1, var3);
    }
@@ -32,7 +32,7 @@ public class Class1188 extends Class1186 {
    public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       boolean var13 = Class1295.method6127(this.field6417).field6199 == this.field6413;
       this.field6417
-         .field6782
+         .mc
          .fontRenderer
          .func_243248_b(var1, this.field6414, (float)(var4 + 90 - Class1295.method6128(this.field6417)), (float)(var3 + var6 / 2 - 4), 16777215);
       this.field6416.x = var4 + 190;
@@ -44,7 +44,7 @@ public class Class1188 extends Class1186 {
       this.field6415.setMessage(this.field6413.func_238171_j_());
       boolean var14 = false;
       if (!this.field6413.isInvalid()) {
-         for (KeyBinding var18 : this.field6417.field6782.gameSettings.field44658) {
+         for (KeyBinding var18 : this.field6417.mc.gameSettings.field44658) {
             if (var18 != this.field6413 && this.field6413.conflicts(var18)) {
                var14 = true;
                break;

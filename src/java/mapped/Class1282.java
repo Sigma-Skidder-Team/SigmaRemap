@@ -81,7 +81,7 @@ public class Class1282 extends Class1274<Class1171> {
 
    @Override
    public void method6038(MatrixStack var1, int var2, int var3, Tessellator var4) {
-      if (!this.field6782.mouseHelper.method36736()) {
+      if (!this.mc.mouseHelper.method36736()) {
          this.field6841 = -1;
       }
 
@@ -132,7 +132,7 @@ public class Class1282 extends Class1274<Class1171> {
 
       if (this.field6841 >= 0) {
          this.method6102(this.method6098(this.field6841));
-         this.field6782.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+         this.mc.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
       }
    }
 
