@@ -12,7 +12,7 @@ public class Class8470 {
       }
 
       try {
-         field36295[EntitySpawnPlacementRegistry$PlacementType.field13475.ordinal()] = 2;
+         field36295[EntitySpawnPlacementRegistry$PlacementType.IN_LAVA.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 

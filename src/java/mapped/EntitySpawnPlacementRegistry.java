@@ -80,7 +80,7 @@ public class EntitySpawnPlacementRegistry {
       register(EntityType.SNOW_GOLEM, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
       register(EntityType.SPIDER, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
       register(EntityType.STRAY, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class1083::method5033);
-      register(EntityType.STRIDER, EntitySpawnPlacementRegistry$PlacementType.field13475, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class1070::method4976);
+      register(EntityType.STRIDER, EntitySpawnPlacementRegistry$PlacementType.IN_LAVA, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class1070::method4976);
       register(EntityType.TURTLE, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class1088::method5053);
       register(EntityType.VILLAGER, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
       register(EntityType.WITCH, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
