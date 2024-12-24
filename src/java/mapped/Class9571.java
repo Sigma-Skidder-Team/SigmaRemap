@@ -77,7 +77,7 @@ public final class Class9571 {
       return var1.method23078(this, var2);
    }
 
-   public Class9571 method37123(ChatFormatting var1) {
+   public Class9571 method37123(TextFormatting var1) {
       this.field44566.method25017(var1);
       return this;
    }

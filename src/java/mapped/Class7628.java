@@ -139,23 +139,23 @@ public final class Class7628 extends Class7626 {
    private void method25035(StringBuilder var1) {
       var1.append(this.method24998());
       if (this.method25000()) {
-         var1.append(ChatFormatting.BOLD);
+         var1.append(TextFormatting.BOLD);
       }
 
       if (this.method25002()) {
-         var1.append(ChatFormatting.ITALIC);
+         var1.append(TextFormatting.ITALIC);
       }
 
       if (this.method25004()) {
-         var1.append(ChatFormatting.UNDERLINE);
+         var1.append(TextFormatting.UNDERLINE);
       }
 
       if (this.method25006()) {
-         var1.append(ChatFormatting.STRIKETHROUGH);
+         var1.append(TextFormatting.STRIKETHROUGH);
       }
 
       if (this.method25008()) {
-         var1.append(ChatFormatting.OBFUSCATED);
+         var1.append(TextFormatting.OBFUSCATED);
       }
    }
 

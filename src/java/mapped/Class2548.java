@@ -12,7 +12,7 @@ import java.util.Locale;
 public class Class2548 {
    public void deserialize(JsonObject var1, Class7626 var2, JsonDeserializationContext var3) {
       if (var1.has("color")) {
-         var2.method25017(ChatFormatting.valueOf(var1.get("color").getAsString().toUpperCase(Locale.ROOT)));
+         var2.method25017(TextFormatting.valueOf(var1.get("color").getAsString().toUpperCase(Locale.ROOT)));
       }
 
       if (var1.has("bold")) {
@@ -72,7 +72,7 @@ public class Class2548 {
          Preconditions.checkArgument(!Class2577.field16799.get().contains(var2), "Component loop");
          Class2577.field16799.get().add(var2);
          if (var2.method24999() != null) {
-            var1.addProperty("color", var2.method24999().method9080());
+            var1.addProperty("color", var2.method24999().getControlCode());
          }
 
          if (var2.method25001() != null) {
