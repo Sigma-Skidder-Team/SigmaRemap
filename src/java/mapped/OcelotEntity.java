@@ -26,13 +26,13 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1090 extends Class1018 {
+public class OcelotEntity extends AnimalEntity {
    private static final Class120 field5972 = Class120.method339(Items.field37909, Items.field37910);
-   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>createKey(Class1090.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>createKey(OcelotEntity.class, DataSerializers.field33398);
    private Class2775<PlayerEntity> field5974;
    private Class2681 field5975;
 
-   public Class1090(EntityType<? extends Class1090> var1, World var2) {
+   public OcelotEntity(EntityType<? extends OcelotEntity> var1, World var2) {
       super(var1, var2);
       this.method5077();
    }
@@ -75,7 +75,7 @@ public class Class1090 extends Class1018 {
       this.field5600.addGoal(10, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.field5600.addGoal(11, new Class2612(this, PlayerEntity.class, 10.0F));
       this.field5601.addGoal(1, new NearestAttackableTargetGoal<Class1089>(this, Class1089.class, false));
-      this.field5601.addGoal(1, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, false, false, TurtleEntity.field5963));
    }
 
    @Override
@@ -209,7 +209,7 @@ public class Class1090 extends Class1018 {
       }
    }
 
-   public Class1090 method4389(ServerWorld var1, Class1045 var2) {
+   public OcelotEntity method4389(ServerWorld var1, Class1045 var2) {
       return EntityType.OCELOT.create(var1);
    }
 
@@ -218,7 +218,7 @@ public class Class1090 extends Class1018 {
       return field5972.test(var1);
    }
 
-   public static boolean method5078(EntityType<Class1090> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<OcelotEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var4.nextInt(3) != 0;
    }
 
@@ -241,7 +241,7 @@ public class Class1090 extends Class1018 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(1.0F);
       }
@@ -255,7 +255,7 @@ public class Class1090 extends Class1018 {
    }
 
    // $VF: synthetic method
-   public static boolean method5079(Class1090 var0) {
+   public static boolean method5079(OcelotEntity var0) {
       return var0.method5072();
    }
 }

@@ -181,7 +181,7 @@ public class SquidEntity extends WaterMobEntity {
       this.move(MoverType.SELF, this.getMotion());
    }
 
-   public static boolean method4839(EntityType<SquidEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<SquidEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var3.getY() > 45 && var3.getY() < var1.getSeaLevel();
    }
 

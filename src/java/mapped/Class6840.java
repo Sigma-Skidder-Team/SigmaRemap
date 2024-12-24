@@ -2,17 +2,17 @@ package mapped;
 
 public class Class6840 extends Class6829 {
    private static String[] field29706;
-   private final Class1094 field29728;
+   private final RabbitEntity field29728;
    private double field29729;
 
-   public Class6840(Class1094 var1) {
+   public Class6840(RabbitEntity var1) {
       super(var1);
       this.field29728 = var1;
    }
 
    @Override
    public void method20810() {
-      if (this.field29728.onGround && !this.field29728.isJumping && !((Class7955)Class1094.method5119(this.field29728)).method27045()) {
+      if (this.field29728.onGround && !this.field29728.isJumping && !((Class7955) RabbitEntity.method5119(this.field29728)).method27045()) {
          this.field29728.method5104(0.0);
       } else if (this.method20811()) {
          this.field29728.method5104(this.field29729);

@@ -26,12 +26,12 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.Random;
 
-public class Class1114 extends Class1113 {
-   private static final DataParameter<Byte> field6093 = EntityDataManager.<Byte>createKey(Class1114.class, DataSerializers.field33390);
+public class BatEntity extends Class1113 {
+   private static final DataParameter<Byte> field6093 = EntityDataManager.<Byte>createKey(BatEntity.class, DataSerializers.field33390);
    private static final Class8522 field6094 = new Class8522().method30203(4.0).method30205();
    private BlockPos field6095;
 
-   public Class1114(EntityType<? extends Class1114> var1, World var2) {
+   public BatEntity(EntityType<? extends BatEntity> var1, World var2) {
       super(var1, var2);
       this.method5365(true);
    }
@@ -210,7 +210,7 @@ public class Class1114 extends Class1113 {
       var1.putByte("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
-   public static boolean method5366(EntityType<Class1114> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<BatEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var3.getY() < var1.getSeaLevel()) {
          int var7 = var1.method7015(var3);
          int var8 = 4;
@@ -222,7 +222,7 @@ public class Class1114 extends Class1113 {
             var8 = 7;
          }
 
-         return var7 <= var4.nextInt(var8) ? method4264(var0, var1, var2, var3, var4) : false;
+         return var7 <= var4.nextInt(var8) ? canSpawnOn(var0, var1, var2, var3, var4) : false;
       } else {
          return false;
       }

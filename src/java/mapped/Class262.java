@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 import net.optifine.Config;
 
-public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
+public class Class262<T extends MooshroomEntity> extends Class219<T, Class2870<T>> {
    private ModelRenderer field923;
    private static final ResourceLocation field924 = new ResourceLocation("textures/entity/cow/red_mushroom.png");
    private static final ResourceLocation field925 = new ResourceLocation("textures/entity/cow/brown_mushroom.png");

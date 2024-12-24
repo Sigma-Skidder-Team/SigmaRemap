@@ -74,8 +74,8 @@ public class Class1098 extends TameableEntity {
       this.field5600.addGoal(10, new Class2785(this, 0.8));
       this.field5600.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.field5600.addGoal(12, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.addGoal(1, new Class2716<Class1094>(this, Class1094.class, false, (Predicate<LivingEntity>)null));
-      this.field5601.addGoal(1, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
+      this.field5601.addGoal(1, new Class2716<RabbitEntity>(this, RabbitEntity.class, false, (Predicate<LivingEntity>)null));
+      this.field5601.addGoal(1, new Class2716<TurtleEntity>(this, TurtleEntity.class, false, TurtleEntity.field5963));
    }
 
    public int method5250() {
@@ -295,7 +295,7 @@ public class Class1098 extends TameableEntity {
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       if (this.method4393()) {
          if (!(var1 instanceof Class1098)) {
             return false;
@@ -310,7 +310,7 @@ public class Class1098 extends TameableEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (!(var1.method7000() > 0.9F)) {
          this.method5251(this.rand.nextInt(10));

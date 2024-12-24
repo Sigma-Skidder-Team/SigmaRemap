@@ -20,10 +20,10 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1109 extends Class1108 {
+public class MagmaCubeEntity extends SlimeEntity {
    private static String[] field6086;
 
-   public Class1109(EntityType<? extends Class1109> var1, World var2) {
+   public MagmaCubeEntity(EntityType<? extends MagmaCubeEntity> var1, World var2) {
       super(var1, var2);
    }
 
@@ -31,7 +31,7 @@ public class Class1109 extends Class1108 {
       return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
-   public static boolean method5335(EntityType<Class1109> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<MagmaCubeEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL;
    }
 

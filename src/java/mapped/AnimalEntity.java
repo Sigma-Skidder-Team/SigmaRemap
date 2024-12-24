@@ -24,11 +24,11 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.UUID;
 
-public abstract class Class1018 extends Class1045 {
+public abstract class AnimalEntity extends Class1045 {
    private int field5702;
    private UUID field5703;
 
-   public Class1018(EntityType<? extends Class1018> var1, World var2) {
+   public AnimalEntity(EntityType<? extends AnimalEntity> var1, World var2) {
       super(var1, var2);
       this.method4224(PathNodeType.DANGER_FIRE, 16.0F);
       this.method4224(PathNodeType.DAMAGE_FIRE, -1.0F);
@@ -97,7 +97,7 @@ public abstract class Class1018 extends Class1045 {
       this.field5703 = !var1.hasUniqueID("LoveCause") ? null : var1.getUniqueID("LoveCause");
    }
 
-   public static boolean method4500(EntityType<? extends Class1018> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canAnimalSpawn(EntityType<? extends AnimalEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3.down()).isIn(Blocks.GRASS_BLOCK) && var1.method7021(var3, 0) > 8;
    }
 
@@ -190,7 +190,7 @@ public abstract class Class1018 extends Class1045 {
       this.field5702 = 0;
    }
 
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       if (var1 != this) {
          return var1.getClass() != this.getClass() ? false : this.method4507() && var1.method4507();
       } else {
@@ -198,7 +198,7 @@ public abstract class Class1018 extends Class1045 {
       }
    }
 
-   public void method4509(ServerWorld var1, Class1018 var2) {
+   public void method4509(ServerWorld var1, AnimalEntity var2) {
       Class1045 var5 = this.method4389(var1, var2);
       if (var5 != null) {
          ServerPlayerEntity var6 = this.method4506();

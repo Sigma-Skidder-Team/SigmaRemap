@@ -27,14 +27,14 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class1108 extends MobEntity implements IMob {
-   private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>createKey(Class1108.class, DataSerializers.VARINT);
+public class SlimeEntity extends MobEntity implements IMob {
+   private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>createKey(SlimeEntity.class, DataSerializers.VARINT);
    public float field6082;
    public float field6083;
    public float field6084;
    private boolean field6085;
 
-   public Class1108(EntityType<? extends Class1108> var1, World var2) {
+   public SlimeEntity(EntityType<? extends SlimeEntity> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6841(this);
    }
@@ -164,8 +164,8 @@ public class Class1108 extends MobEntity implements IMob {
    }
 
    @Override
-   public EntityType<? extends Class1108> getType() {
-      return (EntityType<? extends Class1108>)super.getType();
+   public EntityType<? extends SlimeEntity> getType() {
+      return (EntityType<? extends SlimeEntity>)super.getType();
    }
 
    @Override
@@ -181,7 +181,7 @@ public class Class1108 extends MobEntity implements IMob {
          for (int var9 = 0; var9 < var8; var9++) {
             float var10 = ((float)(var9 % 2) - 0.5F) * var6;
             float var11 = ((float)(var9 / 2) - 0.5F) * var6;
-            Class1108 var12 = this.getType().create(this.world);
+            SlimeEntity var12 = this.getType().create(this.world);
             if (this.method4282()) {
                var12.method4278();
             }
@@ -259,7 +259,7 @@ public class Class1108 extends MobEntity implements IMob {
       return this.method5319() != 1 ? Class8793.field39533 : this.getType().method33212();
    }
 
-   public static boolean method5328(EntityType<Class1108> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5328(EntityType<SlimeEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Difficulty.PEACEFUL) {
          if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Biomes.SWAMP))
             && var3.getY() > 50
@@ -267,7 +267,7 @@ public class Class1108 extends MobEntity implements IMob {
             && var4.nextFloat() < 0.5F
             && var4.nextFloat() < var1.method7000()
             && var1.method7015(var3) <= var4.nextInt(8)) {
-            return method4264(var0, var1, var2, var3, var4);
+            return canSpawnOn(var0, var1, var2, var3, var4);
          }
 
          if (!(var1 instanceof ISeedReader)) {
@@ -277,7 +277,7 @@ public class Class1108 extends MobEntity implements IMob {
          ChunkPos var7 = new ChunkPos(var3);
          boolean var8 = SharedSeedRandom.method10375(var7.x, var7.z, ((ISeedReader)var1).getSeed(), 987234911L).nextInt(10) == 0;
          if (var4.nextInt(10) == 0 && var8 && var3.getY() < 40) {
-            return method4264(var0, var1, var2, var3, var4);
+            return canSpawnOn(var0, var1, var2, var3, var4);
          }
       }
 
@@ -307,7 +307,7 @@ public class Class1108 extends MobEntity implements IMob {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       int var8 = this.rand.nextInt(3);
       if (var8 < 2 && this.rand.nextFloat() < 0.5F * var2.method38330()) {
          var8++;
@@ -333,7 +333,7 @@ public class Class1108 extends MobEntity implements IMob {
    }
 
    // $VF: synthetic method
-   public static float method5333(Class1108 var0) {
+   public static float method5333(SlimeEntity var0) {
       return var0.method5330();
    }
 }

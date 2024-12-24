@@ -31,14 +31,14 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Class1048 extends WaterMobEntity {
-   private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>createKey(Class1048.class, DataSerializers.field33401);
-   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(Class1048.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(Class1048.class, DataSerializers.VARINT);
+public class DolphinEntity extends WaterMobEntity {
+   private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>createKey(DolphinEntity.class, DataSerializers.field33401);
+   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(DolphinEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(DolphinEntity.class, DataSerializers.VARINT);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.isInWater();
 
-   public Class1048(EntityType<? extends Class1048> var1, World var2) {
+   public DolphinEntity(EntityType<? extends DolphinEntity> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6836(this);
       this.field5595 = new Class8093(this, 10);
@@ -47,7 +47,7 @@ public class Class1048 extends WaterMobEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.setAir(this.getMaxAir());
       this.rotationPitch = 0.0F;
       return super.method4276(var1, var2, var3, var4, var5);
@@ -128,8 +128,8 @@ public class Class1048 extends WaterMobEntity {
       this.field5600.addGoal(6, new Class2647(this, 1.2F, true));
       this.field5600.addGoal(8, new Class2688(this));
       this.field5600.addGoal(8, new Class2602(this));
-      this.field5600.addGoal(9, new Class2770<Class1105>(this, Class1105.class, 8.0F, 1.0, 1.0));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1105.class).method10918());
+      this.field5600.addGoal(9, new Class2770<GuardianEntity>(this, GuardianEntity.class, 8.0F, 1.0, 1.0));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, GuardianEntity.class).method10918());
    }
 
    public static MutableAttribute method4782() {
@@ -296,7 +296,7 @@ public class Class1048 extends WaterMobEntity {
       }
    }
 
-   public static boolean method4784(EntityType<Class1048> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<DolphinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var3.getY() > 45 && var3.getY() < var1.getSeaLevel()) {
          Optional var7 = var1.method7178(var3);
          return (
@@ -361,17 +361,17 @@ public class Class1048 extends WaterMobEntity {
    }
 
    // $VF: synthetic method
-   public static Random method4787(Class1048 var0) {
+   public static Random method4787(DolphinEntity var0) {
       return var0.rand;
    }
 
    // $VF: synthetic method
-   public static Random method4788(Class1048 var0) {
+   public static Random method4788(DolphinEntity var0) {
       return var0.rand;
    }
 
    // $VF: synthetic method
-   public static Random method4789(Class1048 var0) {
+   public static Random method4789(DolphinEntity var0) {
       return var0.rand;
    }
 

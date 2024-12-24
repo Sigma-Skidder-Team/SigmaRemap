@@ -66,13 +66,13 @@ public class Class4183 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
+   public void method12944(String var1, BlockPos var2, ServerWorldAccess var3, Random var4, MutableBoundingBox var5) {
       if (!"chest".equals(var1)) {
          if ("drowned".equals(var1)) {
-            Class1037 var8 = EntityType.DROWNED.create(var3.method6970());
+            DrownedEntity var8 = EntityType.DROWNED.create(var3.method6970());
             var8.method4278();
             var8.moveToBlockPosAndAngles(var2, 0.0F, 0.0F);
-            var8.method4276(var3, var3.method6807(var2), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
+            var8.method4276(var3, var3.method6807(var2), SpawnReason.field14394, (Class5093)null, (CompoundNBT)null);
             var3.method6995(var8);
             if (var2.getY() <= var3.getSeaLevel()) {
                var3.setBlockState(var2, Blocks.WATER.getDefaultState(), 2);

@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.stream.Stream;
 
-public abstract class AbstractGroupFishEntity extends Class1049 {
+public abstract class AbstractGroupFishEntity extends AbstractFishEntity {
    private AbstractGroupFishEntity field5810;
    private int field5811 = 1;
 
@@ -95,7 +95,7 @@ public abstract class AbstractGroupFishEntity extends Class1049 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       super.method4276(var1, var2, var3, (Class5093)var4, var5);
       if (var4 != null) {
          this.method4801(((Class5094)var4).field23182);

@@ -10,7 +10,7 @@ import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5658 extends Class5651<Class1105, Class2820> {
+public class Class5658 extends Class5651<GuardianEntity, Class2820> {
    private static final ResourceLocation field25020 = new ResourceLocation("textures/entity/guardian.png");
    private static final ResourceLocation field25021 = new ResourceLocation("textures/entity/guardian_beam.png");
    private static final RenderType field25022 = RenderType.getEntityCutoutNoCull(field25021);
@@ -23,7 +23,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       super(var1, new Class2820(), var2);
    }
 
-   public boolean method17854(Class1105 var1, Class7647 var2, double var3, double var5, double var7) {
+   public boolean method17854(GuardianEntity var1, Class7647 var2, double var3, double var5, double var7) {
       if (!super.method17854(var1, var2, var3, var5, var7)) {
          if (var1.method5305()) {
             LivingEntity var11 = var1.method5306();
@@ -49,7 +49,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       return new Vector3d(var7, var9, var11);
    }
 
-   public void render(Class1105 entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(GuardianEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
       super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
       LivingEntity var9 = entityIn.method5306();
       if (var9 != null) {
@@ -133,7 +133,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          .endVertex();
    }
 
-   public ResourceLocation method17843(Class1105 var1) {
+   public ResourceLocation method17843(GuardianEntity var1) {
       return field25020;
    }
 }

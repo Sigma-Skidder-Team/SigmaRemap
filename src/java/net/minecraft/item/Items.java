@@ -1037,13 +1037,13 @@ public class Items {
       "elder_guardian_spawn_egg", new SpawnEggItem(EntityType.ELDER_GUARDIAN, 13552826, 7632531, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37994 = method30157(
-      "enderman_spawn_egg", new SpawnEggItem(EntityType.field41025, 1447446, 0, new Item.Properties().method17779(ItemGroup.field31669))
+      "enderman_spawn_egg", new SpawnEggItem(EntityType.ENDERMAN, 1447446, 0, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37995 = method30157(
-      "endermite_spawn_egg", new SpawnEggItem(EntityType.field41026, 1447446, 7237230, new Item.Properties().method17779(ItemGroup.field31669))
+      "endermite_spawn_egg", new SpawnEggItem(EntityType.ENDERMITE, 1447446, 7237230, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37996 = method30157(
-      "evoker_spawn_egg", new SpawnEggItem(EntityType.field41027, 9804699, 1973274, new Item.Properties().method17779(ItemGroup.field31669))
+      "evoker_spawn_egg", new SpawnEggItem(EntityType.EVOKER, 9804699, 1973274, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37997 = method30157(
       "fox_spawn_egg", new SpawnEggItem(EntityType.FOX, 14005919, 13396256, new Item.Properties().method17779(ItemGroup.field31669))
@@ -1236,7 +1236,7 @@ public class Items {
       "carrot_on_a_stick", new Class3317<Class1072>(new Item.Properties().method17777(25).method17779(ItemGroup.field31668), EntityType.PIG, 7)
    );
    public static final Item field38065 = method30157(
-      "warped_fungus_on_a_stick", new Class3317<Class1070>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.STRIDER, 1)
+      "warped_fungus_on_a_stick", new Class3317<StriderEntity>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.STRIDER, 1)
    );
    public static final Item field38066 = method30157(
       "nether_star", new Class3332(new Item.Properties().method17779(ItemGroup.field31675).method17780(Class1978.field12886))

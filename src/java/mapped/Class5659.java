@@ -10,12 +10,12 @@ public class Class5659 extends Class5658 {
       super(var1, 1.2F);
    }
 
-   public void method17857(Class1105 var1, MatrixStack var2, float var3) {
+   public void method17857(GuardianEntity var1, MatrixStack var2, float var3) {
       var2.scale(Class1106.field6078, Class1106.field6078, Class1106.field6078);
    }
 
    @Override
-   public ResourceLocation method17843(Class1105 var1) {
+   public ResourceLocation method17843(GuardianEntity var1) {
       return field25023;
    }
 }

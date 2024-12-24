@@ -24,10 +24,10 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.Random;
 
-public class Class1105 extends MonsterEntity {
+public class GuardianEntity extends MonsterEntity {
    private static String[] field6065;
-   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(Class1105.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(Class1105.class, DataSerializers.VARINT);
+   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(GuardianEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(GuardianEntity.class, DataSerializers.VARINT);
    private float field6068;
    private float field6069;
    private float field6070;
@@ -38,7 +38,7 @@ public class Class1105 extends MonsterEntity {
    private boolean field6075;
    public Class2736 field6076;
 
-   public Class1105(EntityType<? extends Class1105> var1, World var2) {
+   public GuardianEntity(EntityType<? extends GuardianEntity> var1, World var2) {
       super(var1, var2);
       this.field5594 = 10;
       this.method4224(PathNodeType.WATER, 0.0F);
@@ -55,7 +55,7 @@ public class Class1105 extends MonsterEntity {
       this.field5600.addGoal(5, var3);
       this.field5600.addGoal(7, this.field6076);
       this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(8, new Class2612(this, Class1105.class, 12.0F, 0.01F));
+      this.field5600.addGoal(8, new Class2612(this, GuardianEntity.class, 12.0F, 0.01F));
       this.field5600.addGoal(9, new Class2668(this));
       this.field6076.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
       var3.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
@@ -308,10 +308,10 @@ public class Class1105 extends MonsterEntity {
       return var1.checkNoEntityCollision(this);
    }
 
-   public static boolean method5311(EntityType<? extends Class1105> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<? extends GuardianEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Difficulty.PEACEFUL
-         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
+         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
    }
 
    @Override
@@ -350,12 +350,12 @@ public class Class1105 extends MonsterEntity {
    }
 
    // $VF: synthetic method
-   public static void method5312(Class1105 var0, int var1) {
+   public static void method5312(GuardianEntity var0, int var1) {
       var0.method5304(var1);
    }
 
    // $VF: synthetic method
-   public static void method5313(Class1105 var0, boolean var1) {
+   public static void method5313(GuardianEntity var0, boolean var1) {
       var0.method5302(var1);
    }
 }

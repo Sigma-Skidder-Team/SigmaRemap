@@ -28,13 +28,13 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1086 extends Class1087 implements Class1020 {
-   private static final DataParameter<String> field5951 = EntityDataManager.<String>createKey(Class1086.class, DataSerializers.field33393);
+public class MooshroomEntity extends Class1087 implements Class1020 {
+   private static final DataParameter<String> field5951 = EntityDataManager.<String>createKey(MooshroomEntity.class, DataSerializers.field33393);
    private Effect field5952;
    private int field5953;
    private UUID field5954;
 
-   public Class1086(EntityType<? extends Class1086> var1, World var2) {
+   public MooshroomEntity(EntityType<? extends MooshroomEntity> var1, World var2) {
       super(var1, var2);
    }
 
@@ -43,7 +43,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       return !var2.getBlockState(var1.down()).isIn(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
-   public static boolean method5034(EntityType<Class1086> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<MooshroomEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3.down()).isIn(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
    }
 
@@ -232,13 +232,13 @@ public class Class1086 extends Class1087 implements Class1020 {
       return Class2210.method8938(this.dataManager.<String>method35445(field5951));
    }
 
-   public Class1086 method4389(ServerWorld var1, Class1045 var2) {
-      Class1086 var5 = EntityType.MOOSHROOM.create(var1);
-      var5.method5036(this.method5038((Class1086)var2));
+   public MooshroomEntity method4389(ServerWorld var1, Class1045 var2) {
+      MooshroomEntity var5 = EntityType.MOOSHROOM.create(var1);
+      var5.method5036(this.method5038((MooshroomEntity)var2));
       return var5;
    }
 
-   private Class2210 method5038(Class1086 var1) {
+   private Class2210 method5038(MooshroomEntity var1) {
       Class2210 var4 = this.method5037();
       Class2210 var5 = var1.method5037();
       Class2210 var6;

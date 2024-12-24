@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
-public class Class5656 extends Class5651<Class1094, Class2876<Class1094>> {
+public class Class5656 extends Class5651<RabbitEntity, Class2876<RabbitEntity>> {
    private static final ResourceLocation field25010 = new ResourceLocation("textures/entity/rabbit/brown.png");
    private static final ResourceLocation field25011 = new ResourceLocation("textures/entity/rabbit/white.png");
    private static final ResourceLocation field25012 = new ResourceLocation("textures/entity/rabbit/black.png");
@@ -14,10 +14,10 @@ public class Class5656 extends Class5651<Class1094, Class2876<Class1094>> {
    private static final ResourceLocation field25017 = new ResourceLocation("textures/entity/rabbit/caerbannog.png");
 
    public Class5656(EntityRendererManager var1) {
-      super(var1, new Class2876<Class1094>(), 0.3F);
+      super(var1, new Class2876<RabbitEntity>(), 0.3F);
    }
 
-   public ResourceLocation method17843(Class1094 var1) {
+   public ResourceLocation method17843(RabbitEntity var1) {
       String var4 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
       if (var4 != null && "Toast".equals(var4)) {
          return field25016;

@@ -18,11 +18,11 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1104 extends MonsterEntity {
+public class EndermiteEntity extends MonsterEntity {
    private int field6063;
    private boolean field6064;
 
-   public Class1104(EntityType<? extends Class1104> var1, World var2) {
+   public EndermiteEntity(EntityType<? extends EndermiteEntity> var1, World var2) {
       super(var1, var2);
       this.field5594 = 3;
    }
@@ -138,8 +138,8 @@ public class Class1104 extends MonsterEntity {
       }
    }
 
-   public static boolean method5299(EntityType<Class1104> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      if (!method4342(var0, var1, var2, var3, var4)) {
+   public static boolean canSpawn(EntityType<EndermiteEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
+      if (!canMonsterSpawn(var0, var1, var2, var3, var4)) {
          return false;
       } else {
          PlayerEntity var7 = var1.method7186((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 5.0, true);

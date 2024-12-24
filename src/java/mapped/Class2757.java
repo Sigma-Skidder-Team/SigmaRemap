@@ -8,9 +8,9 @@ import java.util.EnumSet;
 
 public class Class2757 extends Class2595 {
    private static String[] field17301;
-   private final Class1112 field17302;
+   private final GhastEntity field17302;
 
-   public Class2757(Class1112 var1) {
+   public Class2757(GhastEntity var1) {
       this.field17302 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658));
    }

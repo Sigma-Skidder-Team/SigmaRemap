@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class2820 extends Class2803<Class1105> {
+public class Class2820 extends Class2803<GuardianEntity> {
    private static String[] field17565;
    private static final float[] field17566 = new float[]{1.75F, 0.25F, 0.0F, 0.0F, 0.5F, 0.5F, 0.5F, 0.5F, 1.25F, 0.75F, 0.0F, 0.0F};
    private static final float[] field17567 = new float[]{0.0F, 0.0F, 0.0F, 0.0F, 0.25F, 1.75F, 1.25F, 0.75F, 0.0F, 0.0F, 0.0F, 0.0F};
@@ -58,7 +58,7 @@ public class Class2820 extends Class2803<Class1105> {
       return ImmutableList.of(this.field17572);
    }
 
-   public void setRotationAngles(Class1105 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(GuardianEntity var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = var4 - (float)var1.ticksExisted;
       this.field17572.rotateAngleY = var5 * (float) (Math.PI / 180.0);
       this.field17572.rotateAngleX = var6 * (float) (Math.PI / 180.0);

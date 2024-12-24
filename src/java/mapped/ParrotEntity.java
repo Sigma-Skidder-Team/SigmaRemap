@@ -37,8 +37,8 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class Class1015 extends ShoulderRidingEntity implements Class1016 {
-   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(Class1015.class, DataSerializers.VARINT);
+public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
+   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(ParrotEntity.class, DataSerializers.VARINT);
    private static final Predicate<MobEntity> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;
    private static final Set<Item> field5675 = Sets.newHashSet(
@@ -50,9 +50,9 @@ public class Class1015 extends ShoulderRidingEntity implements Class1016 {
       var0.put(EntityType.CREEPER, SoundEvents.field26886);
       var0.put(EntityType.DROWNED, SoundEvents.field26887);
       var0.put(EntityType.ELDER_GUARDIAN, SoundEvents.field26888);
-      var0.put(EntityType.field41024, SoundEvents.field26889);
-      var0.put(EntityType.field41026, SoundEvents.field26890);
-      var0.put(EntityType.field41027, SoundEvents.field26891);
+      var0.put(EntityType.ENDER_DRAGON, SoundEvents.field26889);
+      var0.put(EntityType.ENDERMITE, SoundEvents.field26890);
+      var0.put(EntityType.EVOKER, SoundEvents.field26891);
       var0.put(EntityType.GHAST, SoundEvents.field26892);
       var0.put(EntityType.GUARDIAN, SoundEvents.field26893);
       var0.put(EntityType.HOGLIN, SoundEvents.field26894);
@@ -87,7 +87,7 @@ public class Class1015 extends ShoulderRidingEntity implements Class1016 {
    private boolean field5682;
    private BlockPos field5683;
 
-   public Class1015(EntityType<? extends Class1015> var1, World var2) {
+   public ParrotEntity(EntityType<? extends ParrotEntity> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6832(this, 10, false);
       this.method4224(PathNodeType.DANGER_FIRE, -1.0F);
@@ -97,7 +97,7 @@ public class Class1015 extends ShoulderRidingEntity implements Class1016 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method4415(this.rand.nextInt(5));
       if (var4 == null) {
          var4 = new Class5097(false);
@@ -267,7 +267,7 @@ public class Class1015 extends ShoulderRidingEntity implements Class1016 {
       return false;
    }
 
-   public static boolean method4410(EntityType<Class1015> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<ParrotEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (
             var7.isIn(BlockTags.LEAVES)
@@ -288,7 +288,7 @@ public class Class1015 extends ShoulderRidingEntity implements Class1016 {
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       return false;
    }
 

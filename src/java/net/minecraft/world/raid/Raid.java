@@ -465,7 +465,7 @@ public class Raid {
                      if (var13 != 0) {
                         var16 = EntityType.VINDICATOR.create(this.field32978);
                      } else {
-                        var16 = EntityType.field41027.create(this.field32978);
+                        var16 = EntityType.EVOKER.create(this.field32978);
                      }
                   }
                } else {
@@ -497,7 +497,7 @@ public class Raid {
          var2.method4558(0);
          if (!var4 && var3 != null) {
             var2.setPosition((double)var3.getX() + 0.5, (double)var3.getY() + 1.0, (double)var3.getZ() + 0.5);
-            var2.method4276(this.field32978, this.field32978.method6807(var3), Class2202.field14398, (Class5093)null, (CompoundNBT)null);
+            var2.method4276(this.field32978, this.field32978.method6807(var3), SpawnReason.field14398, (Class5093)null, (CompoundNBT)null);
             var2.method4545(var1, false);
             var2.setOnGround(true);
             this.field32978.method6995(var2);
@@ -600,7 +600,7 @@ public class Raid {
                )
             && this.field32978.getChunkProvider().isChunkLoaded(new ChunkPos(var6))
             && (
-               Class8170.method28429(Class2068.field13472, this.field32978, var6, EntityType.RAVAGER)
+               Class8170.method28429(EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, this.field32978, var6, EntityType.RAVAGER)
                   || this.field32978.getBlockState(var6.down()).isIn(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()
             )) {
             return var6;

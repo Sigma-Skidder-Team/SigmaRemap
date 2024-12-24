@@ -5,9 +5,9 @@ import java.util.Random;
 
 public class Class2684 extends Class2595 {
    private static String[] field17099;
-   private final Class1112 field17100;
+   private final GhastEntity field17100;
 
-   public Class2684(Class1112 var1) {
+   public Class2684(GhastEntity var1) {
       this.field17100 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }

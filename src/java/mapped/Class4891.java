@@ -19,7 +19,7 @@ public class Class4891 extends Class4874<Class4462> {
       return new Class4462(var2, var6, var7, var8);
    }
 
-   public void method15112(ServerPlayerEntity var1, Class1018 var2, Class1018 var3, Class1045 var4) {
+   public void method15112(ServerPlayerEntity var1, AnimalEntity var2, AnimalEntity var3, Class1045 var4) {
       LootContext var7 = Class6671.method20332(var1, var2);
       LootContext var8 = Class6671.method20332(var1, var3);
       LootContext var9 = var4 == null ? null : Class6671.method20332(var1, var4);

@@ -23,7 +23,7 @@ public abstract class CreatureEntity extends MobEntity {
    }
 
    @Override
-   public boolean method4265(IWorld var1, Class2202 var2) {
+   public boolean method4265(IWorld var1, SpawnReason var2) {
       return this.getBlockPathWeight(this.getPosition(), var1) >= 0.0F;
    }
 

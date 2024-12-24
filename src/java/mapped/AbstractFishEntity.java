@@ -28,10 +28,10 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public abstract class Class1049 extends WaterMobEntity {
-   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>createKey(Class1049.class, DataSerializers.field33398);
+public abstract class AbstractFishEntity extends WaterMobEntity {
+   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>createKey(AbstractFishEntity.class, DataSerializers.field33398);
 
-   public Class1049(EntityType<? extends Class1049> var1, World var2) {
+   public AbstractFishEntity(EntityType<? extends AbstractFishEntity> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6830(this);
    }
@@ -50,7 +50,7 @@ public abstract class Class1049 extends WaterMobEntity {
       return super.method4255() || this.method4793();
    }
 
-   public static boolean method4792(EntityType<? extends Class1049> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<? extends AbstractFishEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3).isIn(Blocks.WATER) && var1.getBlockState(var3.up()).isIn(Blocks.WATER);
    }
 

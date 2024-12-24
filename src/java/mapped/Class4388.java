@@ -30,7 +30,7 @@ public class Class4388 {
    private static final RangedInteger field21464 = TickRangeConverter.convertRange(5, 7);
    private static final Set<Item> field21465 = ImmutableSet.of(Items.PORKCHOP, Items.field37870);
 
-   public static Brain<?> method13798(Class1034 var0, Brain<Class1034> var1) {
+   public static Brain<?> method13798(PiglinEntity var0, Brain<PiglinEntity> var1) {
       method13800(var1);
       method13801(var1);
       method13804(var1);
@@ -44,16 +44,16 @@ public class Class4388 {
       return var1;
    }
 
-   public static void method13799(Class1034 var0) {
+   public static void method13799(PiglinEntity var0) {
       int var3 = field21459.method29319(var0.world.rand);
       var0.getBrain().method21407(Class8830.field39855, true, (long)var3);
    }
 
-   private static void method13800(Brain<Class1034> var0) {
+   private static void method13800(Brain<PiglinEntity> var0) {
       var0.method21425(
          Activity.field40219,
          0,
-         ImmutableList.<Class3676<? super Class1034>>of(
+         ImmutableList.<Class3676<? super PiglinEntity>>of(
             new Class3681(45, 90),
             new Class3735(),
             new Class3697(),
@@ -67,14 +67,14 @@ public class Class4388 {
       );
    }
 
-   private static void method13801(Brain<Class1034> var0) {
+   private static void method13801(Brain<PiglinEntity> var0) {
       var0.method21425(
          Activity.field40220,
          10,
          ImmutableList.of(
             new Class3738(Class4388::method13875, 14.0F),
-            new Class3733<Class1034>(Class1035::method4635, Class4388::method13831),
-            new Class3740<Class1034>(Class1034::method4618, new Class3721()),
+            new Class3733<PiglinEntity>(Class1035::method4635, Class4388::method13831),
+            new Class3740<PiglinEntity>(PiglinEntity::method4618, new Class3721()),
             method13809(),
             method13845(),
             method13807(),
@@ -84,33 +84,33 @@ public class Class4388 {
       );
    }
 
-   private static void method13802(Class1034 var0, Brain<Class1034> var1) {
+   private static void method13802(PiglinEntity var0, Brain<PiglinEntity> var1) {
       var1.method21426(
          Activity.field40229,
          10,
-         ImmutableList.<Class3676<? super Class1034>>of(
+         ImmutableList.<Class3676<? super PiglinEntity>>of(
             new Class3685<>(var1x -> !method13829(var0, var1x)),
-            new Class3740<Class1034>(Class4388::method13866, new Class3704(5, 0.75F)),
+            new Class3740<PiglinEntity>(Class4388::method13866, new Class3704(5, 0.75F)),
             new Class3720(1.0F),
             new Class3684(20),
             new Class3731<>(),
             new Class3680<>(),
-            new Class3714<Class1034>(Class4388::method13830, Class8830.field39826)
+            new Class3714<PiglinEntity>(Class4388::method13830, Class8830.field39826)
          ),
          Class8830.field39826
       );
    }
 
-   private static void method13803(Brain<Class1034> var0) {
+   private static void method13803(Brain<PiglinEntity> var0) {
       var0.method21426(
          Activity.field40230,
          10,
-         ImmutableList.<Class3676<? super Class1034>>of(
+         ImmutableList.<Class3676<? super PiglinEntity>>of(
             method13809(),
                  new Class3738(Class4388::method13875, 14.0F),
                  new Class3733<>(Class1035::method4635, Class4388::method13831),
                  new Class3740<>(var0x -> !var0x.method4623(), new Class3748<>(2, 1.0F)),
-                 new Class3740<>(Class1034::method4623, new Class3748<>(4, 0.6F)),
+                 new Class3740<>(PiglinEntity::method4623, new Class3748<>(4, 0.6F)),
                  new Class3693<>(
                ImmutableList.of(Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
             )
@@ -119,16 +119,16 @@ public class Class4388 {
       );
    }
 
-   private static void method13804(Brain<Class1034> var0) {
+   private static void method13804(Brain<PiglinEntity> var0) {
       var0.method21426(
          Activity.field40231,
          10,
-         ImmutableList.<Class3676<? super Class1034>>of(new Class3724<>(Class4388::method13879, 1.0F, true, 9), new Class3743<>(9), new Class3732(200, 200)),
+         ImmutableList.<Class3676<? super PiglinEntity>>of(new Class3724<>(Class4388::method13879, 1.0F, true, 9), new Class3743<>(9), new Class3732(200, 200)),
          Class8830.field39851
       );
    }
 
-   private static void method13805(Brain<Class1034> var0) {
+   private static void method13805(Brain<PiglinEntity> var0) {
       var0.method21426(
          Activity.field40232,
          10,
@@ -136,17 +136,17 @@ public class Class4388 {
             Class3690.method12539(Class8830.field39837, 1.0F, 12, true),
             method13807(),
             method13808(),
-            new Class3714<Class1034>(Class4388::method13857, Class8830.field39837)
+            new Class3714<PiglinEntity>(Class4388::method13857, Class8830.field39837)
          ),
          Class8830.field39837
       );
    }
 
-   private static void method13806(Brain<Class1034> var0) {
+   private static void method13806(Brain<PiglinEntity> var0) {
       var0.method21426(
          Activity.field40233,
          10,
-         ImmutableList.<Class3676<? super Class1034>>of(
+         ImmutableList.<Class3676<? super PiglinEntity>>of(
             new Class3741<>(0.8F),
             new Class3738(Class4388::method13875, 8.0F),
             new Class3740<>(Entity::isPassenger, method13807()),
@@ -156,8 +156,8 @@ public class Class4388 {
       );
    }
 
-   private static Class3693<Class1034> method13807() {
-      return new Class3693<Class1034>(
+   private static Class3693<PiglinEntity> method13807() {
+      return new Class3693<PiglinEntity>(
          ImmutableList.of(
             Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
             Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1),
@@ -167,8 +167,8 @@ public class Class4388 {
       );
    }
 
-   private static Class3693<Class1034> method13808() {
-      return new Class3693<Class1034>(
+   private static Class3693<PiglinEntity> method13808() {
+      return new Class3693<PiglinEntity>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
             Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, Class8830.field39828, 0.6F, 2), 2),
@@ -182,16 +182,16 @@ public class Class4388 {
       return Class3690.method12538(Class8830.field39870, 1.0F, 8, false);
    }
 
-   private static Class3744<Class1034, LivingEntity> method13810() {
-      return new Class3744<Class1034, LivingEntity>(Class1034::isChild, Class8830.field39848, Class8830.field39837, field21464);
+   private static Class3744<PiglinEntity, LivingEntity> method13810() {
+      return new Class3744<PiglinEntity, LivingEntity>(PiglinEntity::isChild, Class8830.field39848, Class8830.field39837, field21464);
    }
 
-   private static Class3744<Class1034, LivingEntity> method13811() {
-      return new Class3744<Class1034, LivingEntity>(Class4388::method13830, Class8830.field39865, Class8830.field39837, field21463);
+   private static Class3744<PiglinEntity, LivingEntity> method13811() {
+      return new Class3744<PiglinEntity, LivingEntity>(Class4388::method13830, Class8830.field39865, Class8830.field39837, field21463);
    }
 
-   public static void method13812(Class1034 var0) {
-      Brain<Class1034> var3 = var0.getBrain();
+   public static void method13812(PiglinEntity var0) {
+      Brain<PiglinEntity> var3 = var0.getBrain();
       Activity var4 = var3.method21418().orElse(null);
       var3.method21423(
          ImmutableList.of(Activity.field40231, Activity.field40229, Activity.field40232, Activity.field40230, Activity.field40233, Activity.field40220)
@@ -213,16 +213,16 @@ public class Class4388 {
       var0.method4624(var3.method21404(Class8830.field39857));
    }
 
-   private static boolean method13813(Class1034 var0) {
+   private static boolean method13813(PiglinEntity var0) {
       if (!var0.isChild()) {
          return false;
       } else {
          Entity var3 = var0.getRidingEntity();
-         return var3 instanceof Class1034 && ((Class1034)var3).isChild() || var3 instanceof Class1091 && ((Class1091)var3).isChild();
+         return var3 instanceof PiglinEntity && ((PiglinEntity)var3).isChild() || var3 instanceof HoglinEntity && ((HoglinEntity)var3).isChild();
       }
    }
 
-   public static void method13814(Class1034 var0, ItemEntity var1) {
+   public static void method13814(PiglinEntity var0, ItemEntity var1) {
       method13844(var0);
       ItemStack var4;
       if (var1.method4124().getItem() != Items.field37969) {
@@ -251,7 +251,7 @@ public class Class4388 {
       }
    }
 
-   private static void method13815(Class1034 var0, ItemStack var1) {
+   private static void method13815(PiglinEntity var0, ItemStack var1) {
       if (method13878(var0)) {
          var0.method3302(var0.getHeldItem(Hand.OFF_HAND));
       }
@@ -271,7 +271,7 @@ public class Class4388 {
       return var4;
    }
 
-   public static void method13817(Class1034 var0, boolean var1) {
+   public static void method13817(PiglinEntity var0, boolean var1) {
       ItemStack var4 = var0.getHeldItem(Hand.OFF_HAND);
       var0.setHeldItem(Hand.OFF_HAND, ItemStack.EMPTY);
       if (!var0.method4635()) {
@@ -299,19 +299,19 @@ public class Class4388 {
       }
    }
 
-   public static void method13818(Class1034 var0) {
+   public static void method13818(PiglinEntity var0) {
       if (method13868(var0) && !var0.getHeldItemOffhand().isEmpty()) {
          var0.method3302(var0.getHeldItemOffhand());
          var0.setHeldItem(Hand.OFF_HAND, ItemStack.EMPTY);
       }
    }
 
-   private static void method13819(Class1034 var0, ItemStack var1) {
+   private static void method13819(PiglinEntity var0, ItemStack var1) {
       ItemStack var4 = var0.method4612(var1);
       method13821(var0, Collections.<ItemStack>singletonList(var4));
    }
 
-   private static void method13820(Class1034 var0, List<ItemStack> var1) {
+   private static void method13820(PiglinEntity var0, List<ItemStack> var1) {
       Optional var4 = var0.getBrain().<PlayerEntity>method21410(Class8830.field39822);
       if (!var4.isPresent()) {
          method13821(var0, var1);
@@ -320,15 +320,15 @@ public class Class4388 {
       }
    }
 
-   private static void method13821(Class1034 var0, List<ItemStack> var1) {
+   private static void method13821(PiglinEntity var0, List<ItemStack> var1) {
       method13823(var0, var1, method13863(var0));
    }
 
-   private static void method13822(Class1034 var0, PlayerEntity var1, List<ItemStack> var2) {
+   private static void method13822(PiglinEntity var0, PlayerEntity var1, List<ItemStack> var2) {
       method13823(var0, var2, var1.getPositionVec());
    }
 
-   private static void method13823(Class1034 var0, List<ItemStack> var1, Vector3d var2) {
+   private static void method13823(PiglinEntity var0, List<ItemStack> var1, Vector3d var2) {
       if (!var1.isEmpty()) {
          var0.swingArm(Hand.OFF_HAND);
 
@@ -338,7 +338,7 @@ public class Class4388 {
       }
    }
 
-   private static List<ItemStack> method13824(Class1034 var0) {
+   private static List<ItemStack> method13824(PiglinEntity var0) {
       Class7318 var3 = var0.world.getServer().method1411().method1058(Class8793.field39609);
       return var3.method23182(
          new Class9464((ServerWorld)var0.world)
@@ -352,7 +352,7 @@ public class Class4388 {
       return var1.getType() == EntityType.HOGLIN ? new Random(var0.world.getGameTime()).nextFloat() < 0.1F : false;
    }
 
-   public static boolean method13826(Class1034 var0, ItemStack var1) {
+   public static boolean method13826(PiglinEntity var0, ItemStack var1) {
       Item var4 = var1.getItem();
       if (!var4.method11743(ItemTags.field26108)) {
          if (method13876(var0) && var0.getBrain().method21404(Class8830.field39826)) {
@@ -378,21 +378,21 @@ public class Class4388 {
       return var0.method11743(ItemTags.field26109);
    }
 
-   private static boolean method13828(Class1034 var0, Entity var1) {
+   private static boolean method13828(PiglinEntity var0, Entity var1) {
       if (!(var1 instanceof MobEntity)) {
          return false;
       } else {
          MobEntity var4 = (MobEntity)var1;
-         return !var4.isChild() || !var4.isAlive() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
+         return !var4.isChild() || !var4.isAlive() || method13877(var0) || method13877(var4) || var4 instanceof PiglinEntity && var4.getRidingEntity() == null;
       }
    }
 
-   private static boolean method13829(Class1034 var0, LivingEntity var1) {
+   private static boolean method13829(PiglinEntity var0, LivingEntity var1) {
       return method13831(var0).filter(var1x -> var1x == var1).isPresent();
    }
 
-   private static boolean method13830(Class1034 var0) {
-      Brain<Class1034> var3 = var0.getBrain();
+   private static boolean method13830(PiglinEntity var0) {
+      Brain<PiglinEntity> var3 = var0.getBrain();
       if (!var3.method21404(Class8830.field39865)) {
          return false;
       } else {
@@ -401,7 +401,7 @@ public class Class4388 {
       }
    }
 
-   private static Optional<? extends LivingEntity> method13831(Class1034 var0) {
+   private static Optional<? extends LivingEntity> method13831(PiglinEntity var0) {
       Brain var3 = var0.getBrain();
       if (!method13830(var0)) {
          Optional var4 = Class6983.method21586(var0, Class8830.field39849);
@@ -429,7 +429,7 @@ public class Class4388 {
    }
 
    public static void method13832(PlayerEntity var0, boolean var1) {
-      List<Class1034> var4 = var0.world.getEntitiesWithinAABB(Class1034.class, var0.getBoundingBox().grow(16.0));
+      List<PiglinEntity> var4 = var0.world.getEntitiesWithinAABB(PiglinEntity.class, var0.getBoundingBox().grow(16.0));
       var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
          if (!var1x.world.getGameRules().getBoolean(GameRules.field24255)) {
             method13849(var1x, var0);
@@ -439,7 +439,7 @@ public class Class4388 {
       });
    }
 
-   public static ActionResultType method13833(Class1034 var0, PlayerEntity var1, Hand var2) {
+   public static ActionResultType method13833(PiglinEntity var0, PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!method13834(var0, var5)) {
          return ActionResultType.field14820;
@@ -452,12 +452,12 @@ public class Class4388 {
       }
    }
 
-   public static boolean method13834(Class1034 var0, ItemStack var1) {
+   public static boolean method13834(PiglinEntity var0, ItemStack var1) {
       return !method13876(var0) && !method13868(var0) && var0.method4635() && method13869(var1.getItem());
    }
 
-   public static void method13835(Class1034 var0, LivingEntity var1) {
-      if (!(var1 instanceof Class1034)) {
+   public static void method13835(PiglinEntity var0, LivingEntity var1) {
+      if (!(var1 instanceof PiglinEntity)) {
          if (method13878(var0)) {
             method13817(var0, false);
          }
@@ -503,11 +503,11 @@ public class Class4388 {
       }
    }
 
-   public static Optional<SoundEvent> method13837(Class1034 var0) {
+   public static Optional<SoundEvent> method13837(PiglinEntity var0) {
       return var0.getBrain().method21418().<SoundEvent>map(var1 -> method13838(var0, var1));
    }
 
-   private static SoundEvent method13838(Class1034 var0, Activity var1) {
+   private static SoundEvent method13838(PiglinEntity var0, Activity var1) {
       if (var1 != Activity.field40229) {
          if (!var0.method4634()) {
             if (var1 == Activity.field40232 && method13839(var0)) {
@@ -533,17 +533,17 @@ public class Class4388 {
       }
    }
 
-   private static boolean method13839(Class1034 var0) {
-      Brain<Class1034> var3 = var0.getBrain();
+   private static boolean method13839(PiglinEntity var0) {
+      Brain<PiglinEntity> var3 = var0.getBrain();
       return var3.method21404(Class8830.field39837) ? var3.method21410(Class8830.field39837).get().isEntityInRange(var0, 12.0) : false;
    }
 
-   public static boolean method13840(Class1034 var0) {
+   public static boolean method13840(PiglinEntity var0) {
       return var0.getBrain().method21404(Class8830.field39855)
          || method13841(var0).stream().anyMatch(var0x -> var0x.getBrain().method21404(Class8830.field39855));
    }
 
-   private static List<Class1035> method13841(Class1034 var0) {
+   private static List<Class1035> method13841(PiglinEntity var0) {
       return var0.getBrain().<List<Class1035>>method21410(Class8830.field39862).orElse(ImmutableList.of());
    }
 
@@ -562,18 +562,18 @@ public class Class4388 {
       return false;
    }
 
-   private static void method13844(Class1034 var0) {
+   private static void method13844(PiglinEntity var0) {
       var0.getBrain().method21405(Class8830.field39824);
       var0.method4230().method21666();
    }
 
-   private static Class3702<Class1034> method13845() {
-      return new Class3702<Class1034>(new Class3744<>(Class1034::isChild, Class8830.field39859, Class8830.field39830, field21461), field21460);
+   private static Class3702<PiglinEntity> method13845() {
+      return new Class3702<PiglinEntity>(new Class3744<>(PiglinEntity::isChild, Class8830.field39859, Class8830.field39830, field21461), field21460);
    }
 
    public static void method13846(Class1035 var0, LivingEntity var1) {
       method13842(var0).forEach(var1x -> {
-         if (var1.getType() != EntityType.HOGLIN || var1x.method4618() && ((Class1091)var1).method5089()) {
+         if (var1.getType() != EntityType.HOGLIN || var1x.method4618() && ((HoglinEntity)var1).method5089()) {
             method13851(var1x, var1);
          }
       });
@@ -583,7 +583,7 @@ public class Class4388 {
       method13842(var0).forEach(var0x -> method13854(var0x).ifPresent(var1 -> method13849(var0x, var1)));
    }
 
-   public static void method13848(Class1034 var0) {
+   public static void method13848(PiglinEntity var0) {
       method13841(var0).forEach(Class4388::method13861);
    }
 
@@ -622,7 +622,7 @@ public class Class4388 {
       return Class6983.method21586(var0, Class8830.field39849);
    }
 
-   public static Optional<LivingEntity> method13853(Class1034 var0) {
+   public static Optional<LivingEntity> method13853(PiglinEntity var0) {
       return !var0.getBrain().method21404(Class8830.field39837) ? Optional.<LivingEntity>empty() : var0.getBrain().<LivingEntity>method21410(Class8830.field39837);
    }
 
@@ -630,19 +630,19 @@ public class Class4388 {
       return !var0.getBrain().method21404(Class8830.field39823) ? Optional.<PlayerEntity>empty() : var0.getBrain().<PlayerEntity>method21410(Class8830.field39823);
    }
 
-   private static void method13855(Class1034 var0, LivingEntity var1) {
-      method13841(var0).stream().filter(var0x -> var0x instanceof Class1034).forEach(var1x -> method13856((Class1034)var1x, var1));
+   private static void method13855(PiglinEntity var0, LivingEntity var1) {
+      method13841(var0).stream().filter(var0x -> var0x instanceof PiglinEntity).forEach(var1x -> method13856((PiglinEntity)var1x, var1));
    }
 
-   private static void method13856(Class1034 var0, LivingEntity var1) {
+   private static void method13856(PiglinEntity var0, LivingEntity var1) {
       Brain var4 = var0.getBrain();
       LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39837), var1);
       var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39826), var5);
       method13860(var0, var5);
    }
 
-   private static boolean method13857(Class1034 var0) {
-      Brain<Class1034> var3 = var0.getBrain();
+   private static boolean method13857(PiglinEntity var0) {
+      Brain<PiglinEntity> var3 = var0.getBrain();
       if (var3.method21404(Class8830.field39837)) {
          LivingEntity var4 = var3.method21410(Class8830.field39837).get();
          EntityType<?> var5 = var4.getType();
@@ -656,17 +656,17 @@ public class Class4388 {
       }
    }
 
-   private static boolean method13858(Class1034 var0) {
+   private static boolean method13858(PiglinEntity var0) {
       return !method13859(var0);
    }
 
-   private static boolean method13859(Class1034 var0) {
+   private static boolean method13859(PiglinEntity var0) {
       int var3 = var0.getBrain().<Integer>method21410(Class8830.field39866).orElse(0) + 1;
       int var4 = var0.getBrain().<Integer>method21410(Class8830.field39867).orElse(0);
       return var4 > var3;
    }
 
-   private static void method13860(Class1034 var0, LivingEntity var1) {
+   private static void method13860(PiglinEntity var0, LivingEntity var1) {
       var0.getBrain().method21405(Class8830.field39849);
       var0.getBrain().method21405(Class8830.field39826);
       var0.getBrain().method21405(Class8830.field39824);
@@ -678,16 +678,16 @@ public class Class4388 {
       var0.getBrain().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.rand));
    }
 
-   private static void method13862(Class1034 var0) {
+   private static void method13862(PiglinEntity var0) {
       var0.getBrain().method21407(Class8830.field39869, true, 200L);
    }
 
-   private static Vector3d method13863(Class1034 var0) {
+   private static Vector3d method13863(PiglinEntity var0) {
       Vector3d var3 = Class8037.method27583(var0, 4, 2);
       return var3 != null ? var3 : var0.getPositionVec();
    }
 
-   private static boolean method13864(Class1034 var0) {
+   private static boolean method13864(PiglinEntity var0) {
       return var0.getBrain().method21404(Class8830.field39869);
    }
 
@@ -703,7 +703,7 @@ public class Class4388 {
       var0.getBrain().method21407(Class8830.field39851, true, 120L);
    }
 
-   private static boolean method13868(Class1034 var0) {
+   private static boolean method13868(PiglinEntity var0) {
       return var0.getBrain().method21404(Class8830.field39851);
    }
 
@@ -719,7 +719,7 @@ public class Class4388 {
       return EntityPredicates.field34762.test(var0);
    }
 
-   private static boolean method13872(Class1034 var0) {
+   private static boolean method13872(PiglinEntity var0) {
       return var0.getBrain().method21404(Class8830.field39870);
    }
 
@@ -735,7 +735,7 @@ public class Class4388 {
       return var0.getType() == EntityType.PLAYER && var0.method3093(Class4388::method13827);
    }
 
-   private static boolean method13876(Class1034 var0) {
+   private static boolean method13876(PiglinEntity var0) {
       return var0.getBrain().method21404(Class8830.field39854);
    }
 
@@ -743,11 +743,11 @@ public class Class4388 {
       return var0.getBrain().method21404(Class8830.field39835);
    }
 
-   private static boolean method13878(Class1034 var0) {
+   private static boolean method13878(PiglinEntity var0) {
       return !var0.getHeldItemOffhand().isEmpty();
    }
 
-   private static boolean method13879(Class1034 var0) {
+   private static boolean method13879(PiglinEntity var0) {
       return var0.getHeldItemOffhand().isEmpty() || !method13827(var0.getHeldItemOffhand().getItem());
    }
 

@@ -14,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 
-public class Class1106 extends Class1105 {
+public class Class1106 extends GuardianEntity {
    private static String[] field6077;
    public static final float field6078 = EntityType.ELDER_GUARDIAN.method33213() / EntityType.GUARDIAN.method33213();
 
@@ -27,7 +27,7 @@ public class Class1106 extends Class1105 {
    }
 
    public static MutableAttribute method5314() {
-      return Class1105.method5300().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 8.0).method21849(Attributes.MAX_HEALTH, 80.0);
+      return GuardianEntity.method5300().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 8.0).method21849(Attributes.MAX_HEALTH, 80.0);
    }
 
    @Override

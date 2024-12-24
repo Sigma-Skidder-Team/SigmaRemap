@@ -4,7 +4,7 @@ import net.minecraft.entity.EntityType;
 
 public enum Class2127 {
    field13877(EntityType.VINDICATOR, new int[]{0, 0, 2, 0, 1, 4, 2, 5}),
-   field13878(EntityType.field41027, new int[]{0, 0, 0, 0, 0, 1, 1, 2}),
+   field13878(EntityType.EVOKER, new int[]{0, 0, 0, 0, 0, 1, 1, 2}),
    field13879(EntityType.PILLAGER, new int[]{0, 4, 3, 3, 4, 4, 4, 2}),
    field13880(EntityType.WITCH, new int[]{0, 0, 0, 0, 3, 0, 0, 1}),
    field13881(EntityType.RAVAGER, new int[]{0, 0, 0, 1, 0, 1, 0, 2});

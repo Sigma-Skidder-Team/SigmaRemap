@@ -83,7 +83,7 @@ public class Class3441 extends Block {
 
             for (int var8 = 0; var8 < var1.<Integer>get(field19244); var8++) {
                var2.playEvent(2001, var3, Block.getStateId(var1));
-               Class1088 var9 = EntityType.TURTLE.create(var2);
+               TurtleEntity var9 = EntityType.TURTLE.create(var2);
                var9.method4770(-24000);
                var9.method5041(var3);
                var9.setLocationAndAngles((double)var3.getX() + 0.3 + (double)var8 * 0.2, (double)var3.getY(), (double)var3.getZ() + 0.3, 0.0F, 0.0F);
@@ -147,7 +147,7 @@ public class Class3441 extends Block {
    }
 
    private boolean method12117(World var1, Entity var2) {
-      if (var2 instanceof Class1088 || var2 instanceof Class1114) {
+      if (var2 instanceof TurtleEntity || var2 instanceof BatEntity) {
          return false;
       } else {
          return !(var2 instanceof LivingEntity) ? false : var2 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field24224);

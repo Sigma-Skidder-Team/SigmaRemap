@@ -9,9 +9,9 @@ import java.util.Random;
 
 public class Class2787 extends Class2785 {
    private static String[] field17405;
-   private final Class1088 field17414;
+   private final TurtleEntity field17414;
 
-   public Class2787(Class1088 var1, double var2) {
+   public Class2787(TurtleEntity var1, double var2) {
       super(var1, var2);
       this.field17414 = var1;
    }
@@ -33,7 +33,7 @@ public class Class2787 extends Class2785 {
          CriteriaTriggers.field44479.method15112(var3, this.field17407, this.field17410, (Class1045)null);
       }
 
-      Class1088.method5062(this.field17414, true);
+      TurtleEntity.method5062(this.field17414, true);
       this.field17407.method4508();
       this.field17410.method4508();
       Random var4 = this.field17407.getRNG();

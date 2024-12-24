@@ -18,11 +18,11 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1107 extends MonsterEntity {
+public class SilverfishEntity extends MonsterEntity {
    private static String[] field6079;
    private Class2753 field6080;
 
-   public Class1107(EntityType<? extends Class1107> var1, World var2) {
+   public SilverfishEntity(EntityType<? extends SilverfishEntity> var1, World var2) {
       super(var1, var2);
    }
 
@@ -106,8 +106,8 @@ public class Class1107 extends MonsterEntity {
       return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.getBlockPathWeight(var1, var2) : 10.0F;
    }
 
-   public static boolean method5317(EntityType<Class1107> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      if (!method4342(var0, var1, var2, var3, var4)) {
+   public static boolean method5317(EntityType<SilverfishEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
+      if (!canMonsterSpawn(var0, var1, var2, var3, var4)) {
          return false;
       } else {
          PlayerEntity var7 = var1.method7186((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 5.0, true);

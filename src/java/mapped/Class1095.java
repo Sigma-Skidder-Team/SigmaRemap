@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class Class1095 extends Class1018 {
+public class Class1095 extends AnimalEntity {
    private static final DataParameter<Integer> field5993 = EntityDataManager.<Integer>createKey(Class1095.class, DataSerializers.VARINT);
    private static final DataParameter<Byte> field5994 = EntityDataManager.<Byte>createKey(Class1095.class, DataSerializers.field33390);
    private static final DataParameter<Optional<UUID>> field5995 = EntityDataManager.<Optional<UUID>>createKey(Class1095.class, DataSerializers.field33404);
@@ -47,7 +47,7 @@ public class Class1095 extends Class1018 {
          return var3.getLastAttackedEntity() != null && var3.getLastAttackedEntityTime() < var3.ticksExisted + 600;
       }
    };
-   private static final Predicate<Entity> field5999 = var0 -> var0 instanceof Class1089 || var0 instanceof Class1094;
+   private static final Predicate<Entity> field5999 = var0 -> var0 instanceof Class1089 || var0 instanceof RabbitEntity;
    private static final Predicate<Entity> field6000 = var0 -> !var0.isDiscrete() && EntityPredicates.field34761.test(var0);
    private Class2595 field6001;
    private Class2595 field6002;
@@ -78,9 +78,9 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field6001 = new NearestAttackableTargetGoal<Class1018>(this, Class1018.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
-      this.field6002 = new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963);
-      this.field6003 = new NearestAttackableTargetGoal<Class1049>(this, Class1049.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
+      this.field6001 = new NearestAttackableTargetGoal<AnimalEntity>(this, AnimalEntity.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof RabbitEntity);
+      this.field6002 = new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, false, false, TurtleEntity.field5963);
+      this.field6003 = new NearestAttackableTargetGoal<AbstractFishEntity>(this, AbstractFishEntity.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
       this.field5600.addGoal(0, new Class2604(this));
       this.field5600.addGoal(1, new Class2698(this));
       this.field5600.addGoal(2, new Class2750(this, 2.2));
@@ -94,7 +94,7 @@ public class Class1095 extends Class1018 {
          );
       this.field5600
          .addGoal(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.method5133()));
-      this.field5600.addGoal(4, new Class2770<Class1096>(this, Class1096.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
+      this.field5600.addGoal(4, new Class2770<PolarBearEntity>(this, PolarBearEntity.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
       this.field5600.addGoal(5, new Class2729(this));
       this.field5600.addGoal(6, new Class2755(this));
       this.field5600.addGoal(6, new Class2641(this, 1.25));
@@ -239,7 +239,7 @@ public class Class1095 extends Class1018 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       Optional var8 = var1.method7178(this.getPosition());
       Class186 var9 = Class186.method571(var8);
       boolean var10 = false;

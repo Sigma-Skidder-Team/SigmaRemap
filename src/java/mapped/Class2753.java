@@ -10,10 +10,10 @@ import java.util.Random;
 
 public class Class2753 extends Class2595 {
    private static String[] field17291;
-   private final Class1107 field17292;
+   private final SilverfishEntity field17292;
    private int field17293;
 
-   public Class2753(Class1107 var1) {
+   public Class2753(SilverfishEntity var1) {
       this.field17292 = var1;
    }
 

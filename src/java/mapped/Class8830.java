@@ -62,12 +62,12 @@ public class Class8830<U> {
    public static final Class8830<Boolean> field39855 = method31927("hunted_recently", Codec.BOOL);
    public static final Class8830<BlockPos> field39856 = method31928("celebrate_location");
    public static final Class8830<Boolean> field39857 = method31928("dancing");
-   public static final Class8830<Class1091> field39858 = method31928("nearest_visible_huntable_hoglin");
-   public static final Class8830<Class1091> field39859 = method31928("nearest_visible_baby_hoglin");
+   public static final Class8830<HoglinEntity> field39858 = method31928("nearest_visible_huntable_hoglin");
+   public static final Class8830<HoglinEntity> field39859 = method31928("nearest_visible_baby_hoglin");
    public static final Class8830<PlayerEntity> field39860 = method31928("nearest_targetable_player_not_wearing_gold");
    public static final Class8830<List<Class1035>> field39861 = method31928("nearby_adult_piglins");
    public static final Class8830<List<Class1035>> field39862 = method31928("nearest_visible_adult_piglins");
-   public static final Class8830<List<Class1091>> field39863 = method31928("nearest_visible_adult_hoglins");
+   public static final Class8830<List<HoglinEntity>> field39863 = method31928("nearest_visible_adult_hoglins");
    public static final Class8830<Class1035> field39864 = method31928("nearest_visible_adult_piglin");
    public static final Class8830<LivingEntity> field39865 = method31928("nearest_visible_zombified");
    public static final Class8830<Integer> field39866 = method31928("visible_adult_piglin_count");

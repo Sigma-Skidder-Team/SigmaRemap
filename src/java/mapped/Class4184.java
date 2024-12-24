@@ -132,7 +132,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
+   public void method12944(String var1, BlockPos var2, ServerWorldAccess var3, Random var4, MutableBoundingBox var5) {
    }
 
    private void method12951(Random var1, IWorld var2, BlockPos var3) {

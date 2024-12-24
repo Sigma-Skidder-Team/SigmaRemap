@@ -5,9 +5,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class6838 extends Class6829 {
    private static String[] field29706;
-   private final Class1088 field29726;
+   private final TurtleEntity field29726;
 
-   public Class6838(Class1088 var1) {
+   public Class6838(TurtleEntity var1) {
       super(var1);
       this.field29726 = var1;
    }
@@ -19,7 +19,7 @@ public class Class6838 extends Class6829 {
          }
       } else {
          this.field29726.setMotion(this.field29726.getMotion().add(0.0, 0.005, 0.0));
-         if (!Class1088.method5056(this.field29726).method8317(this.field29726.getPositionVec(), 16.0)) {
+         if (!TurtleEntity.method5056(this.field29726).method8317(this.field29726.getPositionVec(), 16.0)) {
             this.field29726.setAIMoveSpeed(Math.max(this.field29726.getAIMoveSpeed() / 2.0F, 0.08F));
          }
 

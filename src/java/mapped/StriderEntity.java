@@ -38,18 +38,18 @@ import javax.annotation.Nullable;
 import java.util.LinkedHashSet;
 import java.util.Random;
 
-public class Class1070 extends Class1018 implements Class1071, Class1069 {
+public class StriderEntity extends AnimalEntity implements Class1071, Class1069 {
    private static String[] field5902;
    private static final Class120 field5903 = Class120.method339(Items.field37349);
    private static final Class120 field5904 = Class120.method339(Items.field37349, Items.field38065);
-   private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>createKey(Class1070.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(Class1070.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(Class1070.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>createKey(StriderEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.field33398);
    private final Class6500 field5908 = new Class6500(this.dataManager, field5905, field5907);
    private Class2680 field5909;
    private Class2747 field5910;
 
-   public Class1070(EntityType<? extends Class1070> var1, World var2) {
+   public StriderEntity(EntityType<? extends StriderEntity> var1, World var2) {
       super(var1, var2);
       this.preventEntitySpawning = true;
       this.method4224(PathNodeType.WATER, -1.0F);
@@ -58,7 +58,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       this.method4224(PathNodeType.DAMAGE_FIRE, 0.0F);
    }
 
-   public static boolean method4976(EntityType<Class1070> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4976(EntityType<StriderEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       BlockPos.Mutable var7 = var3.method8354();
 
       do {
@@ -127,7 +127,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       this.field5600.addGoal(7, new Class2736(this, 1.0, 60));
       this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
       this.field5600.addGoal(8, new Class2668(this));
-      this.field5600.addGoal(9, new Class2612(this, Class1070.class, 8.0F));
+      this.field5600.addGoal(9, new Class2612(this, StriderEntity.class, 8.0F));
    }
 
    public void method4977(boolean var1) {
@@ -135,7 +135,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public boolean method4978() {
-      return !(this.getRidingEntity() instanceof Class1070) ? this.dataManager.<Boolean>method35445(field5906) : ((Class1070)this.getRidingEntity()).method4978();
+      return !(this.getRidingEntity() instanceof StriderEntity) ? this.dataManager.<Boolean>method35445(field5906) : ((StriderEntity)this.getRidingEntity()).method4978();
    }
 
    @Override
@@ -352,7 +352,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       }
    }
 
-   public Class1070 method4389(ServerWorld var1, Class1045 var2) {
+   public StriderEntity method4389(ServerWorld var1, Class1045 var2) {
       return EntityType.STRIDER.create(var1);
    }
 
@@ -410,7 +410,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (!this.isChild()) {
          Object var8;
          if (this.rand.nextInt(30) != 0) {
@@ -434,9 +434,9 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       }
    }
 
-   private Class5093 method4987(Class1659 var1, Class9755 var2, MobEntity var3, Class5093 var4) {
+   private Class5093 method4987(ServerWorldAccess var1, Class9755 var2, MobEntity var3, Class5093 var4) {
       var3.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
-      var3.method4276(var1, var2, Class2202.field14397, var4, (CompoundNBT)null);
+      var3.method4276(var1, var2, SpawnReason.field14397, var4, (CompoundNBT)null);
       var3.startRiding(this, true);
       return new Class5097(0.0F);
    }

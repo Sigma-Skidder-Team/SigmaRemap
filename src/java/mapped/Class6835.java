@@ -6,9 +6,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class6835 extends Class6829 {
    private static String[] field29706;
-   private final Class1037 field29722;
+   private final DrownedEntity field29722;
 
-   public Class6835(Class1037 var1) {
+   public Class6835(DrownedEntity var1) {
       super(var1);
       this.field29722 = var1;
    }
@@ -16,8 +16,8 @@ public class Class6835 extends Class6829 {
    @Override
    public void method20810() {
       LivingEntity var3 = this.field29722.method4232();
-      if (Class1037.method4651(this.field29722) && this.field29722.isInWater()) {
-         if (var3 != null && var3.getPosY() > this.field29722.getPosY() || Class1037.method4652(this.field29722)) {
+      if (DrownedEntity.method4651(this.field29722) && this.field29722.isInWater()) {
+         if (var3 != null && var3.getPosY() > this.field29722.getPosY() || DrownedEntity.method4652(this.field29722)) {
             this.field29722.setMotion(this.field29722.getMotion().add(0.0, 0.002, 0.0));
          }
 

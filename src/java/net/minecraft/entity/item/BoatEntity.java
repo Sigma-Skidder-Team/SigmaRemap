@@ -670,7 +670,7 @@ public class BoatEntity extends Entity {
                var4 = 0.2F;
             }
 
-            if (var1 instanceof Class1018) {
+            if (var1 instanceof AnimalEntity) {
                var4 = (float)((double)var4 + 0.2);
             }
          }
@@ -680,9 +680,9 @@ public class BoatEntity extends Entity {
          var1.rotationYaw = var1.rotationYaw + this.field5534;
          var1.setRotationYawHead(var1.getRotationYawHead() + this.field5534);
          this.method4160(var1);
-         if (var1 instanceof Class1018 && this.getPassengers().size() > 1) {
+         if (var1 instanceof AnimalEntity && this.getPassengers().size() > 1) {
             int var7 = var1.getEntityId() % 2 != 0 ? 270 : 90;
-            var1.setRenderYawOffset(((Class1018)var1).renderYawOffset + (float)var7);
+            var1.setRenderYawOffset(((AnimalEntity)var1).renderYawOffset + (float)var7);
             var1.setRotationYawHead(var1.getRotationYawHead() + (float)var7);
          }
       }

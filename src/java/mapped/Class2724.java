@@ -9,11 +9,11 @@ import java.util.EnumSet;
 
 public class Class2724 extends Class2595 {
    private static String[] field17216;
-   private final Class1105 field17217;
+   private final GuardianEntity field17217;
    private int field17218;
    private final boolean field17219;
 
-   public Class2724(Class1105 var1) {
+   public Class2724(GuardianEntity var1) {
       this.field17217 = var1;
       this.field17219 = var1 instanceof Class1106;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
@@ -40,7 +40,7 @@ public class Class2724 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class1105.method5312(this.field17217, 0);
+      GuardianEntity.method5312(this.field17217, 0);
       this.field17217.method4233((LivingEntity)null);
       this.field17217.field6076.method10944();
    }
@@ -68,7 +68,7 @@ public class Class2724 extends Class2595 {
                this.field17217.method4233((LivingEntity)null);
             }
          } else {
-            Class1105.method5312(this.field17217, this.field17217.method4232().getEntityId());
+            GuardianEntity.method5312(this.field17217, this.field17217.method4232().getEntityId());
             if (!this.field17217.isSilent()) {
                this.field17217.world.setEntityState(this.field17217, (byte)21);
             }

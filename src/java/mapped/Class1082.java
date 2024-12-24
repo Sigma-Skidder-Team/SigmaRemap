@@ -48,7 +48,7 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
       this.field5601.addGoal(1, new HurtByTargetGoal(this));
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    public static MutableAttribute method5029() {
@@ -109,7 +109,7 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       this.method4270(var2);
       this.method4273(var2);

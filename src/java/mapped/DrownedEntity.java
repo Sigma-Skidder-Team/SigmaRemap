@@ -26,13 +26,13 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class1037 extends ZombieEntity implements Class1022 {
+public class DrownedEntity extends ZombieEntity implements Class1022 {
    private static String[] field5754;
    private boolean field5755;
    public final Class6997 field5756;
    public final Class6991 field5757;
 
-   public Class1037(EntityType<? extends Class1037> var1, World var2) {
+   public DrownedEntity(EntityType<? extends DrownedEntity> var1, World var2) {
       super(var1, var2);
       this.stepHeight = 1.0F;
       this.field5596 = new Class6835(this);
@@ -49,15 +49,15 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       this.field5600.addGoal(5, new Class2629(this, 1.0));
       this.field5600.addGoal(6, new Class2659(this, 1.0, this.world.getSeaLevel()));
       this.field5600.addGoal(7, new Class2736(this, 1.0));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1037.class).method10918(ZombifiedPiglinEntity.class));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, DrownedEntity.class).method10918(ZombifiedPiglinEntity.class));
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
-      this.field5601.addGoal(5, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+      this.field5601.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (this.getItemStackFromSlot(EquipmentSlotType.OFFHAND).isEmpty() && this.rand.nextFloat() < 0.03F) {
          this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(Items.field38146));
@@ -67,11 +67,11 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       return var4;
    }
 
-   public static boolean method4640(EntityType<Class1037> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<DrownedEntity> var0, ServerWorldAccess var1, SpawnReason var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
       boolean var8 = var1.method6997() != Difficulty.PEACEFUL
          && method4340(var1, var3, var4)
-         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
+         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.RIVER))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_RIVER))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8
@@ -226,17 +226,17 @@ public class Class1037 extends ZombieEntity implements Class1022 {
    }
 
    // $VF: synthetic method
-   public static Class6990 method4650(Class1037 var0, Class6990 var1) {
+   public static Class6990 method4650(DrownedEntity var0, Class6990 var1) {
       return var0.field5599 = var1;
    }
 
    // $VF: synthetic method
-   public static boolean method4651(Class1037 var0) {
+   public static boolean method4651(DrownedEntity var0) {
       return var0.method4647();
    }
 
    // $VF: synthetic method
-   public static boolean method4652(Class1037 var0) {
+   public static boolean method4652(DrownedEntity var0) {
       return var0.field5755;
    }
 }

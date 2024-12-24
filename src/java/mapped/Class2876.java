@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2876<T extends Class1094> extends Class2827<T> {
+public class Class2876<T extends RabbitEntity> extends Class2827<T> {
    private static String[] field17819;
    private final ModelRenderer field17820 = new ModelRenderer(this, 26, 24);
    private final ModelRenderer field17821;

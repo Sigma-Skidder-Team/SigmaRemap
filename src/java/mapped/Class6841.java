@@ -6,10 +6,10 @@ public class Class6841 extends Class6829 {
    private static String[] field29706;
    private float field29730;
    private int field29731;
-   private final Class1108 field29732;
+   private final SlimeEntity field29732;
    private boolean field29733;
 
-   public Class6841(Class1108 var1) {
+   public Class6841(SlimeEntity var1) {
       super(var1);
       this.field29732 = var1;
       this.field29730 = 180.0F * var1.rotationYaw / (float) Math.PI;
@@ -48,7 +48,7 @@ public class Class6841 extends Class6829 {
 
                this.field29732.method4229().method27049();
                if (this.field29732.method5329()) {
-                  this.field29732.playSound(this.field29732.method5331(), this.field29732.getSoundVolume(), Class1108.method5333(this.field29732));
+                  this.field29732.playSound(this.field29732.method5331(), this.field29732.getSoundVolume(), SlimeEntity.method5333(this.field29732));
                }
             }
          }

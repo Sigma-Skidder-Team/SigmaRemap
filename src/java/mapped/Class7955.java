@@ -2,11 +2,11 @@ package mapped;
 
 public class Class7955 extends Class7956 {
    private static String[] field34197;
-   private final Class1094 field34198;
+   private final RabbitEntity field34198;
    private boolean field34199;
-   public final Class1094 field34200;
+   public final RabbitEntity field34200;
 
-   public Class7955(Class1094 var1, Class1094 var2) {
+   public Class7955(RabbitEntity var1, RabbitEntity var2) {
       super(var2);
       this.field34200 = var1;
       this.field34198 = var2;

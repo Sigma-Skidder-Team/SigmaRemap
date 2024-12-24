@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class1087 extends Class1018 {
+public class Class1087 extends AnimalEntity {
    private static String[] field5955;
 
    public Class1087(EntityType<? extends Class1087> var1, World var2) {

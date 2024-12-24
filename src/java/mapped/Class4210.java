@@ -92,7 +92,7 @@ public class Class4210 extends Class4209 {
                Class1027 var17 = EntityType.WITCH.create(var1.method6970());
                var17.method4278();
                var17.setLocationAndAngles((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
-               var17.method4276(var1, var1.method6807(new BlockPos(var18, var19, var16)), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
+               var17.method4276(var1, var1.method6807(new BlockPos(var18, var19, var16)), SpawnReason.field14394, (Class5093)null, (CompoundNBT)null);
                var1.method6995(var17);
             }
          }
@@ -102,7 +102,7 @@ public class Class4210 extends Class4209 {
       }
    }
 
-   private void method13003(Class1659 var1, MutableBoundingBox var2) {
+   private void method13003(ServerWorldAccess var1, MutableBoundingBox var2) {
       if (!this.field20521) {
          int var5 = this.method12920(2, 5);
          int var6 = this.method12921(2);
@@ -112,7 +112,7 @@ public class Class4210 extends Class4209 {
             Class1098 var8 = EntityType.CAT.create(var1.method6970());
             var8.method4278();
             var8.setLocationAndAngles((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
-            var8.method4276(var1, var1.method6807(new BlockPos(var5, var6, var7)), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
+            var8.method4276(var1, var1.method6807(new BlockPos(var5, var6, var7)), SpawnReason.field14394, (Class5093)null, (CompoundNBT)null);
             var1.method6995(var8);
          }
       }

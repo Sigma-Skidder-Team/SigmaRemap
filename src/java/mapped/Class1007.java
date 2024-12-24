@@ -66,7 +66,7 @@ public class Class1007 extends MobEntity implements IMob {
    private final Class8662 field5644 = new Class8662();
 
    public Class1007(EntityType<? extends Class1007> var1, World var2) {
-      super(EntityType.field41024, var2);
+      super(EntityType.ENDER_DRAGON, var2);
       this.field5624 = new EnderDragonPartEntity(this, "head", 1.0F, 1.0F);
       this.field5625 = new EnderDragonPartEntity(this, "neck", 3.0F, 3.0F);
       this.field5626 = new EnderDragonPartEntity(this, "body", 5.0F, 3.0F);

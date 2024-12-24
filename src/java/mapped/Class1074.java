@@ -208,7 +208,7 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       if (var1 != this) {
          return !(var1 instanceof Class1067) && !(var1 instanceof Class1074) ? false : this.method4961() && ((AbstractHorseEntity)var1).method4961();
       } else {
@@ -267,7 +267,7 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       Class2190 var8;
       if (!(var4 instanceof Class5098)) {
          var8 = Util.<Class2190>getRandomObject(Class2190.values(), this.rand);

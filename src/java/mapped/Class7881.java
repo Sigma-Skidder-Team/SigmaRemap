@@ -48,9 +48,9 @@ public class Class7881 extends Class7882<LivingEntity> {
       ArrayList var15 = Lists.newArrayList();
 
       for (LivingEntity var17 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
-         if (!(var17 instanceof Class1091)) {
+         if (!(var17 instanceof HoglinEntity)) {
             if (!(var17 instanceof Class1036)) {
-               if (!(var17 instanceof Class1034)) {
+               if (!(var17 instanceof PiglinEntity)) {
                   if (!(var17 instanceof PlayerEntity)) {
                      if (var6.isPresent() || !(var17 instanceof Class1084) && !(var17 instanceof WitherEntity)) {
                         if (!var10.isPresent() && Class4388.method13880(var17.getType())) {
@@ -70,9 +70,9 @@ public class Class7881 extends Class7882<LivingEntity> {
                      }
                   }
                } else {
-                  Class1034 var21 = (Class1034)var17;
+                  PiglinEntity var21 = (PiglinEntity)var17;
                   if (var21.isChild() && !var9.isPresent()) {
-                     var9 = Optional.<Class1034>of(var21);
+                     var9 = Optional.<PiglinEntity>of(var21);
                   } else if (var21.method4635()) {
                      var14.add(var21);
                   }
@@ -81,13 +81,13 @@ public class Class7881 extends Class7882<LivingEntity> {
                var14.add((Class1036)var17);
             }
          } else {
-            Class1091 var18 = (Class1091)var17;
+            HoglinEntity var18 = (HoglinEntity)var17;
             if (var18.isChild() && !var8.isPresent()) {
-               var8 = Optional.<Class1091>of(var18);
+               var8 = Optional.<HoglinEntity>of(var18);
             } else if (var18.method5084()) {
                var13++;
                if (!var7.isPresent() && var18.method5089()) {
-                  var7 = Optional.<Class1091>of(var18);
+                  var7 = Optional.<HoglinEntity>of(var18);
                }
             }
          }

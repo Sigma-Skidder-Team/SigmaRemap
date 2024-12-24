@@ -11,13 +11,13 @@ import java.util.Set;
 public class Class2731 extends Class2595 {
    private static String[] field17242;
    private static final Class8522 field17243 = new Class8522().method30203(10.0).method30205().method30204();
-   private final Class1088 field17244;
+   private final TurtleEntity field17244;
    private final double field17245;
    private PlayerEntity field17246;
    private int field17247;
    private final Set<Item> field17248;
 
-   public Class2731(Class1088 var1, double var2, Item var4) {
+   public Class2731(TurtleEntity var1, double var2, Item var4) {
       this.field17244 = var1;
       this.field17245 = var2;
       this.field17248 = Sets.newHashSet(new Item[]{var4});

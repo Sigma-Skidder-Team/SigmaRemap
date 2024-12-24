@@ -736,12 +736,12 @@ public abstract class MobEntity extends LivingEntity {
       return var1 + var6;
    }
 
-   public static boolean method4264(EntityType<? extends MobEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawnOn(EntityType<? extends MobEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.down();
-      return var2 == Class2202.field14393 || var1.getBlockState(var7).method23385(var1, var7, var0);
+      return var2 == SpawnReason.field14393 || var1.getBlockState(var7).method23385(var1, var7, var0);
    }
 
-   public boolean method4265(IWorld var1, Class2202 var2) {
+   public boolean method4265(IWorld var1, SpawnReason var2) {
       return true;
    }
 
@@ -985,7 +985,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Nullable
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.getAttribute(Attributes.FOLLOW_RANGE).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextGaussian() * 0.05, AttributeModifier.Operation.field13353));
       if (!(this.rand.nextFloat() < 0.05F)) {
          this.method4303(false);

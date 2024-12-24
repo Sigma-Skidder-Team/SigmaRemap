@@ -37,7 +37,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("killed_dragon", Class4476.method14134(Class7552.method24700().method24701(EntityType.field41024)))
+         .method27312("killed_dragon", Class4476.method14134(Class7552.method24700().method24701(EntityType.ENDER_DRAGON)))
          .method27317(var1, "end/kill_dragon");
       Advancement var6 = Class7999.method27304()
          .method27305(var5)
@@ -65,7 +65,7 @@ public class Class2841 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("summoned_dragon", Class4456.method14090(Class7552.method24700().method24701(EntityType.field41024)))
+         .method27312("summoned_dragon", Class4456.method14090(Class7552.method24700().method24701(EntityType.ENDER_DRAGON)))
          .method27317(var1, "end/respawn_dragon");
       Advancement var7 = Class7999.method27304()
          .method27305(var6)

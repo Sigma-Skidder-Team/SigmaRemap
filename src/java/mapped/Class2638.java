@@ -7,9 +7,9 @@ import net.minecraft.world.IWorldReader;
 
 public class Class2638 extends Class2628 {
    private static String[] field16960;
-   private final Class1070 field16961;
+   private final StriderEntity field16961;
 
-   public Class2638(Class1070 var1, double var2) {
+   public Class2638(StriderEntity var1, double var2) {
       super(var1, var2, 8, 2);
       this.field16961 = var1;
    }

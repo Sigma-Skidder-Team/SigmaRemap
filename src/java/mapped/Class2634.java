@@ -10,11 +10,11 @@ import net.minecraft.world.World;
 
 public class Class2634 extends Class2628 {
    private static String[] field16949;
-   private final Class1094 field16950;
+   private final RabbitEntity field16950;
    private boolean field16951;
    private boolean field16952;
 
-   public Class2634(Class1094 var1) {
+   public Class2634(RabbitEntity var1) {
       super(var1, 0.7F, 16);
       this.field16950 = var1;
    }
@@ -27,7 +27,7 @@ public class Class2634 extends Class2628 {
          }
 
          this.field16952 = false;
-         this.field16951 = Class1094.method5120(this.field16950);
+         this.field16951 = RabbitEntity.method5120(this.field16950);
          this.field16951 = true;
       }
 
@@ -66,7 +66,7 @@ public class Class2634 extends Class2628 {
                var3.destroyBlock(var4, true, this.field16950);
             }
 
-            Class1094.method5121(this.field16950, 40);
+            RabbitEntity.method5121(this.field16950, 40);
          }
 
          this.field16952 = false;

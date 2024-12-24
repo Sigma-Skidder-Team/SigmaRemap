@@ -6,9 +6,9 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class6828 extends Class6829 {
    private static String[] field29704;
-   private final Class1105 field29705;
+   private final GuardianEntity field29705;
 
-   public Class6828(Class1105 var1) {
+   public Class6828(GuardianEntity var1) {
       super(var1);
       this.field29705 = var1;
    }
@@ -53,10 +53,10 @@ public class Class6828 extends Class6829 {
             .method28042(
                MathHelper.lerp(0.125, var30, var24), MathHelper.lerp(0.125, var32, var26), MathHelper.lerp(0.125, var34, var28), 10.0F, 40.0F
             );
-         Class1105.method5313(this.field29705, true);
+         GuardianEntity.method5313(this.field29705, true);
       } else {
          this.field29705.setAIMoveSpeed(0.0F);
-         Class1105.method5313(this.field29705, false);
+         GuardianEntity.method5313(this.field29705, false);
       }
    }
 }

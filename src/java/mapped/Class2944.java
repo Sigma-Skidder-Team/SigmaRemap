@@ -45,7 +45,7 @@ public class Class2944 extends Class2898<Class4707> {
       return true;
    }
 
-   private void method11287(Class1659 var1, Random var2, Class4707 var3, Class9648 var4) {
+   private void method11287(ServerWorldAccess var1, Random var2, Class4707 var3, Class9648 var4) {
       int var7 = var4.method37628();
 
       for (BlockPos var9 : BlockPos.method8359(

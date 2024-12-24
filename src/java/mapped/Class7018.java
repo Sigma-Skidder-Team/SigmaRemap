@@ -91,8 +91,8 @@ public class Class7018 implements Class7016 {
    private boolean method21749(ServerWorld var1, BlockPos var2, Random var3, boolean var4) {
       BlockState var7 = var1.getBlockState(var2);
       if (Class8170.method28428(var1, var2, var7, var7.getFluidState(), EntityType.PILLAGER)) {
-         if (Class1028.method4572(EntityType.PILLAGER, var1, Class2202.field14406, var2, var3)) {
-            Class1028 var8 = EntityType.PILLAGER.create(var1);
+         if (PillagerEntity.method4572(EntityType.PILLAGER, var1, SpawnReason.field14406, var2, var3)) {
+            PillagerEntity var8 = EntityType.PILLAGER.create(var1);
             if (var8 == null) {
                return false;
             } else {
@@ -102,7 +102,7 @@ public class Class7018 implements Class7016 {
                }
 
                var8.setPosition((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
-               var8.method4276(var1, var1.method6807(var2), Class2202.field14406, (Class5093)null, (CompoundNBT)null);
+               var8.method4276(var1, var1.method6807(var2), SpawnReason.field14406, (Class5093)null, (CompoundNBT)null);
                var1.method6995(var8);
                return true;
             }

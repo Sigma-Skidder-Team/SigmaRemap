@@ -52,7 +52,7 @@ public class Class4186 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
+   public void method12944(String var1, BlockPos var2, ServerWorldAccess var3, Random var4, MutableBoundingBox var5) {
       if (!var1.startsWith("Chest")) {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {

@@ -5,9 +5,9 @@ import net.minecraft.world.IWorldReader;
 
 public class Class2629 extends Class2628 {
    private static String[] field16938;
-   private final Class1037 field16939;
+   private final DrownedEntity field16939;
 
-   public Class2629(Class1037 var1, double var2) {
+   public Class2629(DrownedEntity var1, double var2) {
       super(var1, var2, 8, 2);
       this.field16939 = var1;
    }
@@ -34,7 +34,7 @@ public class Class2629 extends Class2628 {
    @Override
    public void method10804() {
       this.field16939.method4649(false);
-      Class1037.method4650(this.field16939, this.field16939.field5757);
+      DrownedEntity.method4650(this.field16939, this.field16939.field5757);
       super.method10804();
    }
 

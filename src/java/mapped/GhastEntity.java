@@ -21,11 +21,11 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1112 extends Class1111 implements IMob {
-   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>createKey(Class1112.class, DataSerializers.field33398);
+public class GhastEntity extends Class1111 implements IMob {
+   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>createKey(GhastEntity.class, DataSerializers.field33398);
    private int field6092 = 1;
 
-   public Class1112(EntityType<? extends Class1112> var1, World var2) {
+   public GhastEntity(EntityType<? extends GhastEntity> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
       this.field5596 = new Class6837(this);
@@ -106,8 +106,8 @@ public class Class1112 extends Class1111 implements IMob {
       return 5.0F;
    }
 
-   public static boolean method5361(EntityType<Class1112> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Difficulty.PEACEFUL && var4.nextInt(20) == 0 && method4264(var0, var1, var2, var3, var4);
+   public static boolean canSpawn(EntityType<GhastEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
+      return var1.method6997() != Difficulty.PEACEFUL && var4.nextInt(20) == 0 && canSpawnOn(var0, var1, var2, var3, var4);
    }
 
    @Override

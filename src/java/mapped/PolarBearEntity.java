@@ -26,9 +26,9 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1096 extends Class1018 implements IAngerable {
+public class PolarBearEntity extends AnimalEntity implements IAngerable {
    private static String[] field6009;
-   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(Class1096.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(PolarBearEntity.class, DataSerializers.field33398);
    private float field6011;
    private float field6012;
    private int field6013;
@@ -36,7 +36,7 @@ public class Class1096 extends Class1018 implements IAngerable {
    private int field6015;
    private UUID field6016;
 
-   public Class1096(EntityType<? extends Class1096> var1, World var2) {
+   public PolarBearEntity(EntityType<? extends PolarBearEntity> var1, World var2) {
       super(var1, var2);
    }
 
@@ -64,7 +64,7 @@ public class Class1096 extends Class1018 implements IAngerable {
       this.field5601.addGoal(2, new Class2720(this));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
       this.field5601.addGoal(4, new NearestAttackableTargetGoal<Class1095>(this, Class1095.class, 10, true, true, (Predicate<LivingEntity>)null));
-      this.field5601.addGoal(5, new ResetAngerGoal<Class1096>(this, false));
+      this.field5601.addGoal(5, new ResetAngerGoal<PolarBearEntity>(this, false));
    }
 
    public static MutableAttribute method5180() {
@@ -75,11 +75,11 @@ public class Class1096 extends Class1018 implements IAngerable {
          .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
-   public static boolean method5181(EntityType<Class1096> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5181(EntityType<PolarBearEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_OCEAN))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_FROZEN_OCEAN))
-         ? method4500(var0, var1, var2, var3, var4)
+         ? canAnimalSpawn(var0, var1, var2, var3, var4)
          : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.down()).isIn(Blocks.ICE);
    }
 
@@ -217,7 +217,7 @@ public class Class1096 extends Class1018 implements IAngerable {
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(1.0F);
       }

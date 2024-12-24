@@ -10,18 +10,18 @@ import java.util.List;
 public class Class2785 extends Class2595 {
    private static String[] field17405;
    private static final Class8522 field17406 = new Class8522().method30203(8.0).method30204().method30205().method30206();
-   public final Class1018 field17407;
-   private final Class<? extends Class1018> field17408;
+   public final AnimalEntity field17407;
+   private final Class<? extends AnimalEntity> field17408;
    public final World field17409;
-   public Class1018 field17410;
+   public AnimalEntity field17410;
    private int field17411;
    private final double field17412;
 
-   public Class2785(Class1018 var1, double var2) {
-      this(var1, var2, (Class<? extends Class1018>)var1.getClass());
+   public Class2785(AnimalEntity var1, double var2) {
+      this(var1, var2, (Class<? extends AnimalEntity>)var1.getClass());
    }
 
-   public Class2785(Class1018 var1, double var2, Class<? extends Class1018> var4) {
+   public Class2785(AnimalEntity var1, double var2, Class<? extends AnimalEntity> var4) {
       this.field17407 = var1;
       this.field17409 = var1.world;
       this.field17408 = var4;
@@ -61,12 +61,12 @@ public class Class2785 extends Class2595 {
    }
 
    @Nullable
-   private Class1018 method10978() {
-      List<Class1018> var3 = this.field17409.method7195(this.field17408, field17406, this.field17407, this.field17407.getBoundingBox().grow(8.0));
+   private AnimalEntity method10978() {
+      List<AnimalEntity> var3 = this.field17409.method7195(this.field17408, field17406, this.field17407, this.field17407.getBoundingBox().grow(8.0));
       double var4 = Double.MAX_VALUE;
-      Class1018 var6 = null;
+      AnimalEntity var6 = null;
 
-      for (Class1018 var8 : var3) {
+      for (AnimalEntity var8 : var3) {
          if (this.field17407.method4386(var8) && this.field17407.getDistanceSq(var8) < var4) {
             var6 = var8;
             var4 = this.field17407.getDistanceSq(var8);

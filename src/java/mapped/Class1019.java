@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class Class1019 extends Class1018 implements Class1020 {
+public class Class1019 extends AnimalEntity implements Class1020 {
    private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>createKey(Class1019.class, DataSerializers.field33390);
    private static final Map<Class112, IItemProvider> field5705 = Util.<Map<Class112, IItemProvider>>make(Maps.newEnumMap(Class112.class), var0 -> {
       var0.put(Class112.field386, Blocks.WHITE_WOOL);
@@ -323,12 +323,12 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method4518(method4521(var1.method6814()));
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   private Class112 method4522(Class1018 var1, Class1018 var2) {
+   private Class112 method4522(AnimalEntity var1, AnimalEntity var2) {
       Class112 var5 = ((Class1019)var1).method4517();
       Class112 var6 = ((Class1019)var2).method4517();
       Class926 var7 = method4523(var5, var6);

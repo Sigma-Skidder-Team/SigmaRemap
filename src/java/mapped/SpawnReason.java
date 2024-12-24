@@ -1,6 +1,6 @@
 package mapped;
 
-public enum Class2202 {
+public enum SpawnReason {
    field14391,
    field14392,
    field14393,
@@ -18,7 +18,7 @@ public enum Class2202 {
    field14405,
    field14406;
 
-   private static final Class2202[] field14407 = new Class2202[]{
+   private static final SpawnReason[] field14407 = new SpawnReason[]{
       field14391,
       field14392,
       field14393,

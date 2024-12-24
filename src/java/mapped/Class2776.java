@@ -7,11 +7,11 @@ import java.util.EnumSet;
 
 public class Class2776 extends Class2595 {
    private static String[] field17366;
-   private final Class1048 field17367;
+   private final DolphinEntity field17367;
    private final double field17368;
    private PlayerEntity field17369;
 
-   public Class2776(Class1048 var1, double var2) {
+   public Class2776(DolphinEntity var1, double var2) {
       this.field17367 = var1;
       this.field17368 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
@@ -19,7 +19,7 @@ public class Class2776 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      this.field17369 = this.field17367.world.method7188(Class1048.method4790(), this.field17367);
+      this.field17369 = this.field17367.world.method7188(DolphinEntity.method4790(), this.field17367);
       return this.field17369 == null ? false : this.field17369.isSwimming() && this.field17367.method4232() != this.field17369;
    }
 

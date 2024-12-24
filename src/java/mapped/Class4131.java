@@ -6,7 +6,7 @@ import net.minecraft.entity.monster.EndermanEntity;
 
 public class Class4131 extends Class4117 {
    public Class4131() {
-      super(EntityType.field41025, "enderman", 0.5F);
+      super(EntityType.ENDERMAN, "enderman", 0.5F);
    }
 
    @Override

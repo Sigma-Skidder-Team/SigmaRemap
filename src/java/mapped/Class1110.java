@@ -133,7 +133,7 @@ public class Class1110 extends Class1111 implements IMob {
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.field6089 = this.getPosition().up(5);
       this.method5336(0);
       return super.method4276(var1, var2, var3, var4, var5);

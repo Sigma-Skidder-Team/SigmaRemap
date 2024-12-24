@@ -6,10 +6,10 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class6837 extends Class6829 {
    private static String[] field29706;
-   private final Class1112 field29724;
+   private final GhastEntity field29724;
    private int field29725;
 
-   public Class6837(Class1112 var1) {
+   public Class6837(GhastEntity var1) {
       super(var1);
       this.field29724 = var1;
    }

@@ -170,7 +170,7 @@ public class Class1100 extends MonsterEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method4270(var2);
       this.method4273(var2);
       return super.method4276(var1, var2, var3, var4, var5);

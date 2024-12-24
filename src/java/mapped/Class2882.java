@@ -6,7 +6,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Arrays;
 
-public class Class2882<T extends Class1108> extends Class2803<T> {
+public class Class2882<T extends SlimeEntity> extends Class2803<T> {
    private static String[] field17866;
    private final ModelRenderer[] field17867 = new ModelRenderer[8];
    private final ModelRenderer field17868;

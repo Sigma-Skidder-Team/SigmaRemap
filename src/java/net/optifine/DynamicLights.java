@@ -293,7 +293,7 @@ public class DynamicLights {
             if (!(var0 instanceof Class901)) {
                if (!(var0 instanceof Class1004)) {
                   if (!(var0 instanceof Class1103)) {
-                     if (!(var0 instanceof Class1109)) {
+                     if (!(var0 instanceof MagmaCubeEntity)) {
                         if (var0 instanceof Class1081) {
                            Class1081 var14 = (Class1081)var0;
                            if ((double)var14.method5019(0.0F) > 0.001) {
@@ -321,7 +321,7 @@ public class DynamicLights {
                            return Math.max(var10, var9);
                         }
                      } else {
-                        Class1109 var13 = (Class1109)var0;
+                        MagmaCubeEntity var13 = (MagmaCubeEntity)var0;
                         return !((double)var13.field6083 > 0.6) ? 8 : 13;
                      }
                   } else {

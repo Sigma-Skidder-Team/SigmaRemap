@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4069 extends Class4057 {
    public Class4069() {
-      super(EntityType.field41026, "endermite", 0.3F);
+      super(EntityType.ENDERMITE, "endermite", 0.3F);
    }
 
    @Override
@@ -46,7 +46,7 @@ public class Class4069 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5673 var6 = new Class5673(var5);
-      var6.entityModel = (Class2807<Class1104>)var1;
+      var6.entityModel = (Class2807<EndermiteEntity>)var1;
       var6.shadowSize = var2;
       return (Class9492)var6;
    }

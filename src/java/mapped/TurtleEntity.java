@@ -30,17 +30,17 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Class1088 extends Class1018 {
-   private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>createKey(Class1088.class, DataSerializers.field33401);
-   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
-   private static final DataParameter<BlockPos> field5959 = EntityDataManager.<BlockPos>createKey(Class1088.class, DataSerializers.field33401);
-   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
+public class TurtleEntity extends AnimalEntity {
+   private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>createKey(TurtleEntity.class, DataSerializers.field33401);
+   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
+   private static final DataParameter<BlockPos> field5959 = EntityDataManager.<BlockPos>createKey(TurtleEntity.class, DataSerializers.field33401);
+   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>createKey(TurtleEntity.class, DataSerializers.field33398);
    private int field5962;
    public static final Predicate<LivingEntity> field5963 = var0 -> var0.isChild() && !var0.isInWater();
 
-   public Class1088(EntityType<? extends Class1088> var1, World var2) {
+   public TurtleEntity(EntityType<? extends TurtleEntity> var1, World var2) {
       super(var1, var2);
       this.method4224(PathNodeType.WATER, 0.0F);
       this.field5596 = new Class6838(this);
@@ -135,13 +135,13 @@ public class Class1088 extends Class1018 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method5041(this.getPosition());
       this.method5043(BlockPos.ZERO);
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method5053(EntityType<Class1088> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5053(EntityType<TurtleEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var3.getY() < var1.getSeaLevel() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
    }
 
@@ -300,67 +300,67 @@ public class Class1088 extends Class1018 {
    }
 
    // $VF: synthetic method
-   public static BlockPos method5056(Class1088 var0) {
+   public static BlockPos method5056(TurtleEntity var0) {
       return var0.method5042();
    }
 
    // $VF: synthetic method
-   public static void method5057(Class1088 var0, boolean var1) {
+   public static void method5057(TurtleEntity var0, boolean var1) {
       var0.method5050(var1);
    }
 
    // $VF: synthetic method
-   public static boolean method5058(Class1088 var0) {
+   public static boolean method5058(TurtleEntity var0) {
       return var0.method5049();
    }
 
    // $VF: synthetic method
-   public static int method5059(Class1088 var0) {
+   public static int method5059(TurtleEntity var0) {
       return var0.field5962;
    }
 
    // $VF: synthetic method
-   public static void method5060(Class1088 var0, boolean var1) {
+   public static void method5060(TurtleEntity var0, boolean var1) {
       var0.method5048(var1);
    }
 
    // $VF: synthetic method
-   public static Random method5061(Class1088 var0) {
+   public static Random method5061(TurtleEntity var0) {
       return var0.rand;
    }
 
    // $VF: synthetic method
-   public static void method5062(Class1088 var0, boolean var1) {
+   public static void method5062(TurtleEntity var0, boolean var1) {
       var0.method5046(var1);
    }
 
    // $VF: synthetic method
-   public static int method5063(Class1088 var0) {
+   public static int method5063(TurtleEntity var0) {
       return var0.field5962++;
    }
 
    // $VF: synthetic method
-   public static boolean method5064(Class1088 var0) {
+   public static boolean method5064(TurtleEntity var0) {
       return var0.method5051();
    }
 
    // $VF: synthetic method
-   public static Random method5065(Class1088 var0) {
+   public static Random method5065(TurtleEntity var0) {
       return var0.rand;
    }
 
    // $VF: synthetic method
-   public static void method5066(Class1088 var0, BlockPos var1) {
+   public static void method5066(TurtleEntity var0, BlockPos var1) {
       var0.method5043(var1);
    }
 
    // $VF: synthetic method
-   public static void method5067(Class1088 var0, boolean var1) {
+   public static void method5067(TurtleEntity var0, boolean var1) {
       var0.method5052(var1);
    }
 
    // $VF: synthetic method
-   public static BlockPos method5068(Class1088 var0) {
+   public static BlockPos method5068(TurtleEntity var0) {
       return var0.method5044();
    }
 }
