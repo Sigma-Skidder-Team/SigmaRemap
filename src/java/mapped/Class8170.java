@@ -186,11 +186,11 @@ public final class Class8170 {
          if (!var10.method33208() && var6 > (double)(var10.method33209().method522() * var10.method33209().method522())) {
             return false;
          } else if (var10.method33206() && method28425(var0, var2, var3, var1, var4, var5)) {
-            Class2068 var11 = Class6914.method21120(var10);
+            EntitySpawnPlacementRegistry$PlacementType var11 = EntitySpawnPlacementRegistry.getPlacementType(var10);
             if (!method28429(var11, var0, var5, var10)) {
                return false;
             } else {
-               return Class6914.method21122(var10, var0, Class2202.field14391, var5, var0.rand)
+               return EntitySpawnPlacementRegistry.method21122(var10, var0, Class2202.field14391, var5, var0.rand)
                   ? var0.hasNoCollisions(var10.method33219((double)var5.getX() + 0.5, (double)var5.getY(), (double)var5.getZ() + 0.5))
                   : false;
             }
@@ -271,8 +271,8 @@ public final class Class8170 {
       }
    }
 
-   public static boolean method28429(Class2068 var0, IWorldReader var1, BlockPos var2, EntityType<?> var3) {
-      if (var0 == Class2068.field13474) {
+   public static boolean method28429(EntitySpawnPlacementRegistry$PlacementType var0, IWorldReader var1, BlockPos var2, EntityType<?> var3) {
+      if (var0 == EntitySpawnPlacementRegistry$PlacementType.field13474) {
          return true;
       } else if (var3 != null && var1.getWorldBorder().contains(var2)) {
          BlockState var6 = var1.getBlockState(var2);
@@ -319,12 +319,12 @@ public final class Class8170 {
 
                for (int var20 = 0; !var19 && var20 < 4; var20++) {
                   BlockPos var21 = method28431(var0, var11.field29311, var14, var15);
-                  if (var11.field29311.method33206() && method28429(Class6914.method21120(var11.field29311), var0, var21, var11.field29311)) {
+                  if (var11.field29311.method33206() && method28429(EntitySpawnPlacementRegistry.getPlacementType(var11.field29311), var0, var21, var11.field29311)) {
                      float var22 = var11.field29311.method33213();
                      double var23 = MathHelper.clamp((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
                      double var25 = MathHelper.clamp((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
                      if (!var0.hasNoCollisions(var11.field29311.method33219(var23, (double)var21.getY(), var25))
-                        || !Class6914.method21122(
+                        || !EntitySpawnPlacementRegistry.method21122(
                            var11.field29311, var0, Class2202.field14392, new BlockPos(var23, (double)var21.getY(), var25), var0.method6814()
                         )) {
                         continue;
@@ -364,7 +364,7 @@ public final class Class8170 {
    }
 
    private static BlockPos method28431(IWorldReader var0, EntityType<?> var1, int var2, int var3) {
-      int var6 = var0.method6736(Class6914.method21121(var1), var2, var3);
+      int var6 = var0.method6736(EntitySpawnPlacementRegistry.method21121(var1), var2, var3);
       BlockPos.Mutable var7 = new BlockPos.Mutable(var2, var6, var3);
       if (var0.getDimensionType().getHasCeiling()) {
          do {
@@ -376,7 +376,7 @@ public final class Class8170 {
          } while (var0.getBlockState(var7).isAir() && var7.getY() > 0);
       }
 
-      if (Class6914.method21120(var1) == Class2068.field13472) {
+      if (EntitySpawnPlacementRegistry.getPlacementType(var1) == EntitySpawnPlacementRegistry$PlacementType.field13472) {
          BlockPos var8 = var7.down();
          if (var0.getBlockState(var8).method23440(var0, var8, PathType.field12614)) {
             return var8;

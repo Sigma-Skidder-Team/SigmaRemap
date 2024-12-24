@@ -135,7 +135,7 @@ public class Class7019 implements Class7016 {
          int var9 = var2.getZ() + this.field30322.nextInt(var3 * 2) - var3;
          int var10 = var1.method6736(Heightmap.Type.WORLD_SURFACE, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);
-         if (Class8170.method28429(Class2068.field13472, var1, var11, EntityType.WANDERING_TRADER)) {
+         if (Class8170.method28429(EntitySpawnPlacementRegistry$PlacementType.field13472, var1, var11, EntityType.WANDERING_TRADER)) {
             var6 = var11;
             break;
          }

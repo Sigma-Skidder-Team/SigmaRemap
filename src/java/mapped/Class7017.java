@@ -35,7 +35,7 @@ public class Class7017 implements Class7016 {
                   var10.getY() + 10,
                   var10.getZ() + 10
                )) {
-                  if (Class8170.method28429(Class2068.field13472, var1, var10, EntityType.CAT)) {
+                  if (Class8170.method28429(EntitySpawnPlacementRegistry$PlacementType.field13472, var1, var10, EntityType.CAT)) {
                      if (var1.method6954(var10, 2)) {
                         return this.method21746(var1, var10);
                      }

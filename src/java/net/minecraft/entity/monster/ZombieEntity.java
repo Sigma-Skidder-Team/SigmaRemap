@@ -262,9 +262,9 @@ public class ZombieEntity extends MonsterEntity {
                int var14 = var9 + MathHelper.method37782(this.rand, 7, 40) * MathHelper.method37782(this.rand, -1, 1);
                BlockPos var15 = new BlockPos(var12, var13, var14);
                EntityType var16 = var10.getType();
-               Class2068 var17 = Class6914.method21120(var16);
+               EntitySpawnPlacementRegistry$PlacementType var17 = EntitySpawnPlacementRegistry.getPlacementType(var16);
                if (Class8170.method28429(var17, this.world, var15, var16)
-                  && Class6914.method21122(var16, var5, Class2202.field14400, var15, this.world.rand)) {
+                  && EntitySpawnPlacementRegistry.method21122(var16, var5, Class2202.field14400, var15, this.world.rand)) {
                   var10.setPosition((double)var12, (double)var13, (double)var14);
                   if (!this.world.method7187((double)var12, (double)var13, (double)var14, 7.0)
                      && this.world.checkNoEntityCollision(var10)
