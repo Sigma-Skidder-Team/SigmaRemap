@@ -13,6 +13,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
@@ -266,7 +267,7 @@ public class Class3354 extends Class3241 {
          return ActionResultType.method9002(var2.isRemote);
       } else {
          ItemStack var9 = var4.getHeldItem(var5);
-         return !var9.isEmpty() && !var9.getItem().method11743(Class5985.field26120) ? ActionResultType.field14819 : ActionResultType.field14820;
+         return !var9.isEmpty() && !var9.getItem().method11743(ItemTags.field26120) ? ActionResultType.field14819 : ActionResultType.field14820;
       }
    }
 

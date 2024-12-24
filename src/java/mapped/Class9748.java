@@ -254,10 +254,10 @@ public class Class9748 {
          method38218("type", var0 -> {
             var0.method30313((var1, var2) -> {
                ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.method9190(), var1, String.valueOf('!'));
-               ISuggestionProvider.suggestIterable(Class8613.method30861().method27137(), var1, "!#");
+               ISuggestionProvider.suggestIterable(EntityTypeTags.method30861().getRegisteredTags(), var1, "!#");
                if (!var0.method30333()) {
                   ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.method9190(), var1);
-                  ISuggestionProvider.suggestIterable(Class8613.method30861().method27137(), var1, String.valueOf('#'));
+                  ISuggestionProvider.suggestIterable(EntityTypeTags.method30861().getRegisteredTags(), var1, String.valueOf('#'));
                }
 
                return var1.buildFuture();
@@ -288,7 +288,7 @@ public class Class9748 {
                   }
                } else {
                   ResourceLocation var7 = ResourceLocation.method8294(var0.method30277());
-                  var0.method30278(var2 -> var2.method3396().method1408().method32660().method27132(var7).method24917(var2.getType()) != var4);
+                  var0.method30278(var2 -> var2.method3396().method1408().method32660().method27132(var7).contains(var2.getType()) != var4);
                }
             }
          }, var0 -> !var0.method30332(), new TranslationTextComponent("argument.entity.options.type.description"));

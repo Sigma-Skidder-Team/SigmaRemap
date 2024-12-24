@@ -1,19 +1,22 @@
 package mapped;
 
 import com.google.common.collect.BiMap;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITagCollection;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public final class Class7983<T> implements Class7984<T> {
+public final class Class7983<T> implements ITagCollection<T> {
    private static String[] field34308;
    private final ITag<T> field34309;
    public final BiMap field34310;
 
    public Class7983(BiMap var1) {
       this.field34310 = var1;
-      this.field34309 = Class7609.method24925();
+      this.field34309 = Tag.getEmptyTag();
    }
 
    @Override
@@ -24,7 +27,7 @@ public final class Class7983<T> implements Class7984<T> {
    @Nullable
    @Override
    public ResourceLocation method27133(ITag<T> var1) {
-      return !(var1 instanceof Class7610) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((Class7610)var1).getName();
+      return !(var1 instanceof ITag.INamedTag) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((ITag.INamedTag)var1).getName();
    }
 
    @Override

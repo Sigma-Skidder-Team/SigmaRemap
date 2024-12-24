@@ -18,7 +18,7 @@ public abstract class Class2914 extends Class2898<Class4712> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
-      BlockState var8 = BlockTags.field32783.method24919(var3).getDefaultState();
+      BlockState var8 = BlockTags.field32783.getRandomElement(var3).getDefaultState();
       return this.method11249(var1, var3, var4, var8);
    }
 
@@ -34,14 +34,14 @@ public abstract class Class2914 extends Class2898<Class4712> {
                var1.setBlockState(var7, Blocks.field37005.getDefaultState().with(Class3195.field18472, Integer.valueOf(var2.nextInt(4) + 1)), 2);
             }
          } else {
-            var1.setBlockState(var7, BlockTags.field32786.method24919(var2).getDefaultState(), 2);
+            var1.setBlockState(var7, BlockTags.field32786.getRandomElement(var2).getDefaultState(), 2);
          }
 
          for (Direction var10 : Direction.Plane.HORIZONTAL) {
             if (var2.nextFloat() < 0.2F) {
                BlockPos var11 = var3.offset(var10);
                if (var1.getBlockState(var11).isIn(Blocks.WATER)) {
-                  BlockState var12 = BlockTags.field32784.method24919(var2).getDefaultState().with(Class3229.field18669, var10);
+                  BlockState var12 = BlockTags.field32784.getRandomElement(var2).getDefaultState().with(Class3229.field18669, var10);
                   var1.setBlockState(var11, var12, 2);
                }
             }

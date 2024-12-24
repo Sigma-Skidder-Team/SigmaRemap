@@ -16,6 +16,8 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -78,7 +80,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
       this.field5600.addGoal(0, new Class2651(this, this, 1.4F, true));
       this.field5600.addGoal(1, new Class2666(this, null));
       this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5600.addGoal(3, new Class2680(this, 1.25, Class120.method342(Class5985.field26107), false));
+      this.field5600.addGoal(3, new Class2680(this, 1.25, Class120.method342(ItemTags.field26107), false));
       this.field5698 = new Class2663(this);
       this.field5600.addGoal(4, this.field5698);
       this.field5600.addGoal(5, new Class2764(this, 1.25));
@@ -463,7 +465,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.getItem().method11743(Class5985.field26107);
+      return var1.getItem().method11743(ItemTags.field26107);
    }
 
    private boolean method4448(BlockPos var1) {

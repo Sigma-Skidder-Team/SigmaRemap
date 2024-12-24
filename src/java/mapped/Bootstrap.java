@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.Item;
+import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.LanguageMap;
@@ -41,7 +42,7 @@ public class Bootstrap {
          Class9748.method38219();
          IDispenseItemBehavior.method19200();
          Class8651.method31096();
-         Class8384.method29381();
+         TagRegistryManager.checkHelperRegistrations();
          method25571();
       }
    }

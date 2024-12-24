@@ -442,7 +442,7 @@ public class Class1007 extends MobEntity implements IMob {
                BlockState var16 = this.world.getBlockState(var15);
                Block var17 = var16.getBlock();
                if (!var16.isAir() && var16.getMaterial() != Material.field38945) {
-                  if (this.world.getGameRules().getBoolean(GameRules.field24224) && !BlockTags.field32791.method24917(var17)) {
+                  if (this.world.getGameRules().getBoolean(GameRules.field24224) && !BlockTags.field32791.contains(var17)) {
                      var11 = this.world.removeBlock(var15, false) || var11;
                   } else {
                      var10 = true;

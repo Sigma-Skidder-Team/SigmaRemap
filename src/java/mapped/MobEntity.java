@@ -26,6 +26,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SMountEntityPacket;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;

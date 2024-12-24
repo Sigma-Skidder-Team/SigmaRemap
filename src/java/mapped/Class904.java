@@ -19,6 +19,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -463,7 +464,7 @@ public class Class904 extends ProjectileEntity {
                      .addEntity(
                         new ExperienceOrbEntity(var4.world, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.rand.nextInt(6) + 1)
                      );
-                  if (var10.getItem().method11743(Class5985.field26114)) {
+                  if (var10.getItem().method11743(ItemTags.field26114)) {
                      var4.addStat(Stats.field40138, 1);
                   }
                }

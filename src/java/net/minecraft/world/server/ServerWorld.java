@@ -14,6 +14,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.EntityClassification;
@@ -1109,7 +1110,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public Class8933 method6817() {
+   public ITagCollectionSupplier method6817() {
       return this.field9045.method1408();
    }
 

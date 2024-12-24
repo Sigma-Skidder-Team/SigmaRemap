@@ -6,6 +6,7 @@ import com.google.common.collect.Multimap;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -285,7 +286,7 @@ public class Item implements IItemProvider {
    }
 
    public boolean method11743(ITag<Item> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public boolean isFood() {

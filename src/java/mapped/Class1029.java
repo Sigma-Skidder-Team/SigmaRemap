@@ -53,7 +53,7 @@ public class Class1029 extends Class1026 {
 
    @Override
    public void method4240() {
-      boolean var3 = !(this.method3407() instanceof MobEntity) || this.method3407().getType().method33228(Class8613.field38735);
+      boolean var3 = !(this.method3407() instanceof MobEntity) || this.method3407().getType().method33228(EntityTypeTags.field38735);
       boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
       this.field5600.method20010(Class2240.field14657, var3);
       this.field5600.method20010(Class2240.field14659, var3 && var4);

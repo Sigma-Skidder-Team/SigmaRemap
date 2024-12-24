@@ -8,6 +8,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -467,7 +468,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
             "distract_piglin",
             Class4492.method14167(
                field17627,
-               Class9735.method38146().method38148(Class5985.field26109),
+               Class9735.method38146().method38148(ItemTags.field26109),
                Class9587.method37226(
                   Class7552.method24700().method24701(EntityType.PIGLIN).method24709(Class8265.method28830().method28832(false).method28833()).method24717()
                )

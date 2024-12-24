@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 
 public class Class4489 extends Class4457 {

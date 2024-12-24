@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 
 import java.util.List;

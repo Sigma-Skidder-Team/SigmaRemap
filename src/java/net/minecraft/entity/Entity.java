@@ -38,6 +38,7 @@ import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.*;

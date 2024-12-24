@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;

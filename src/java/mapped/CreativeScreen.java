@@ -17,6 +17,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITagCollection;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
@@ -355,8 +358,8 @@ public class CreativeScreen extends Class860<Class5820> {
          var7 = var1x -> var1x.getPath().contains(var1);
       }
 
-      Class7984<Item> var8 = Class5985.method18561();
-      var8.method27137().stream().filter(var7).forEach(var2 -> {
+      ITagCollection<Item> var8 = ItemTags.method18561();
+      var8.getRegisteredTags().stream().filter(var7).forEach(var2 -> {
          ITag var5x = this.field4785.put(var2, var8.get(var2));
       });
    }
@@ -606,7 +609,7 @@ public class CreativeScreen extends Class860<Class5820> {
          }
 
          this.field4785.forEach((var2x, var3x) -> {
-            if (var3x.method24917(var9)) {
+            if (var3x.contains(var9)) {
                var8.add(1, new StringTextComponent("#" + var2x).mergeStyle(TextFormatting.DARK_PURPLE));
             }
          });

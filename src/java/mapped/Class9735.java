@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 
 import java.util.List;

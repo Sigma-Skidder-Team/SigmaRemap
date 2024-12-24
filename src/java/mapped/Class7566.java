@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import net.minecraft.command.CommandSource;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 

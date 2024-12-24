@@ -6,6 +6,8 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.minecraft.tags.ItemTags;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
@@ -36,7 +38,7 @@ public class Class8722 implements ArgumentType<Class176> {
       } catch (CommandSyntaxException var8) {
       }
 
-      return var6.method38363(var2, Class5985.method18561());
+      return var6.method38363(var2, ItemTags.method18561());
    }
 
    public Collection<String> getExamples() {

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandSource;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameRules;
 
@@ -131,6 +132,6 @@ public class FunctionManager {
    }
 
    public Iterable<ResourceLocation> method22832() {
-      return this.field31187.method1179().method27137();
+      return this.field31187.method1179().getRegisteredTags();
    }
 }

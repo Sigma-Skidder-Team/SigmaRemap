@@ -5,6 +5,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.command.CommandSource;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Collection;
