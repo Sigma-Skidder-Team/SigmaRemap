@@ -23,7 +23,7 @@ public class EntitySpawnPlacementRegistry {
 
    public static EntitySpawnPlacementRegistry$PlacementType getPlacementType(EntityType<?> entityType) {
       EntitySpawnPlacementRegistry$Entry var3 = REGISTRY.get(entityType);
-      return var3 != null ? EntitySpawnPlacementRegistry$Entry.getPlacementType(var3) : EntitySpawnPlacementRegistry$PlacementType.field13474;
+      return var3 != null ? EntitySpawnPlacementRegistry$Entry.getPlacementType(var3) : EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS;
    }
 
    public static Heightmap.Type method21121(EntityType<?> var0) {
@@ -93,16 +93,16 @@ public class EntitySpawnPlacementRegistry {
       register(EntityType.ZOMBIE_VILLAGER, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
       register(EntityType.CAT, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
       register(EntityType.ELDER_GUARDIAN, EntitySpawnPlacementRegistry$PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, GuardianEntity::canSpawn);
-      register(EntityType.EVOKER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
-      register(EntityType.FOX, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
-      register(EntityType.ILLUSIONER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
-      register(EntityType.PANDA, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
-      register(EntityType.PHANTOM, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
-      register(EntityType.RAVAGER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
-      register(EntityType.SHULKER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
-      register(EntityType.TRADER_LLAMA, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
-      register(EntityType.VEX, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
-      register(EntityType.VINDICATOR, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
-      register(EntityType.WANDERING_TRADER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
+      register(EntityType.EVOKER, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
+      register(EntityType.FOX, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
+      register(EntityType.ILLUSIONER, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
+      register(EntityType.PANDA, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
+      register(EntityType.PHANTOM, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
+      register(EntityType.RAVAGER, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
+      register(EntityType.SHULKER, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
+      register(EntityType.TRADER_LLAMA, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
+      register(EntityType.VEX, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
+      register(EntityType.VINDICATOR, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
+      register(EntityType.WANDERING_TRADER, EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
    }
 }

@@ -272,7 +272,7 @@ public final class Class8170 {
    }
 
    public static boolean method28429(EntitySpawnPlacementRegistry$PlacementType var0, IWorldReader var1, BlockPos var2, EntityType<?> var3) {
-      if (var0 == EntitySpawnPlacementRegistry$PlacementType.field13474) {
+      if (var0 == EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS) {
          return true;
       } else if (var3 != null && var1.getWorldBorder().contains(var2)) {
          BlockState var6 = var1.getBlockState(var2);
