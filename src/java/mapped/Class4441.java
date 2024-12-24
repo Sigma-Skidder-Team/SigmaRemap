@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import net.minecraft.tags.ITag;
-import net.minecraft.tags.ITag$INamedTag;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -82,12 +81,12 @@ public abstract class Class4441<T> implements Class4442 {
 
    public abstract Path method14011(ResourceLocation var1);
 
-   public Class8747<T> method14014(ITag$INamedTag<T> var1) {
+   public Class8747<T> method14014(ITag.INamedTag<T> var1) {
       Class6879 var4 = this.method14015(var1);
       return new Class8747<T>(var4, this.field21600, "vanilla");
    }
 
-   public Class6879 method14015(ITag$INamedTag<T> var1) {
+   public Class6879 method14015(ITag.INamedTag<T> var1) {
       return this.field21601.computeIfAbsent(var1.getName(), var0 -> new Class6879());
    }
 }

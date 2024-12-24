@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ITag$INamedTag;
+import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.util.function.Function;
 
 public class Class4455 extends Class4441<Item> {
-   private final Function<ITag$INamedTag<Block>, Class6879> field21632;
+   private final Function<ITag.INamedTag<Block>, Class6879> field21632;
 
    public Class4455(Class9068 var1, Class4454 var2) {
       super(var1, Registry.ITEM);
@@ -166,7 +166,7 @@ public class Class4455 extends Class4441<Item> {
       this.method14014(ItemTags.field26123).method31560(Items.field37236, Items.field38185);
    }
 
-   public void method14089(ITag$INamedTag<Block> var1, ITag$INamedTag<Item> var2) {
+   public void method14089(ITag.INamedTag<Block> var1, ITag.INamedTag<Item> var2) {
       Class6879 var5 = this.method14015(var2);
       Class6879 var6 = this.field21632.apply(var1);
       var6.method20948().forEach(var5::method20943);

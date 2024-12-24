@@ -22,7 +22,7 @@ public class TagRegistry<T>
       this.supplierToCollectionFunction = supplierToCollectionFunction;
    }
 
-   public ITag$INamedTag<T> createTag(String id)
+   public ITag.INamedTag<T> createTag(String id)
    {
       TagRegistry.NamedTag<T> namedtag = new TagRegistry.NamedTag<>(new ResourceLocation(id));
       this.tags.add(namedtag);
@@ -56,7 +56,7 @@ public class TagRegistry<T>
       return this.collection;
    }
 
-   public List <? extends ITag$INamedTag<T >> getTags()
+   public List <? extends ITag.INamedTag<T>> getTags()
    {
       return this.tags;
    }

@@ -35,4 +35,7 @@ public interface ITag<T> {
    static <T> ITag<T> getTagOf(Set<T> elements) {
       return Tag.<T>getTagFromContents(elements);
    }
+   public interface INamedTag<T> extends ITag<T> {
+      ResourceLocation getName();
+   }
 }

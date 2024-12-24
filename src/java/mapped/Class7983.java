@@ -2,7 +2,6 @@ package mapped;
 
 import com.google.common.collect.BiMap;
 import net.minecraft.tags.ITag;
-import net.minecraft.tags.ITag$INamedTag;
 import net.minecraft.tags.ITagCollection;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
@@ -28,7 +27,7 @@ public final class Class7983<T> implements ITagCollection<T> {
    @Nullable
    @Override
    public ResourceLocation method27133(ITag<T> var1) {
-      return !(var1 instanceof ITag$INamedTag) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((ITag$INamedTag)var1).getName();
+      return !(var1 instanceof ITag.INamedTag) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((ITag.INamedTag)var1).getName();
    }
 
    @Override

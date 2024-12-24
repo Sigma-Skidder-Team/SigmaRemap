@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.tags.ITag$INamedTag;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.registry.Registry;
 
 import java.util.stream.Stream;
@@ -22,7 +22,7 @@ public class Class8747<T> {
       return this;
    }
 
-   public Class8747<T> method31559(ITag$INamedTag<T> var1) {
+   public Class8747<T> method31559(ITag.INamedTag<T> var1) {
       this.field39426.method20946(var1.getName(), this.field39428);
       return this;
    }
