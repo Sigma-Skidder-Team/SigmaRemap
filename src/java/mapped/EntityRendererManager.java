@@ -97,7 +97,7 @@ public class EntityRendererManager {
       this.method32209(EntityType.ENDERMITE, new Class5673(this));
       this.method32209(EntityType.ENDER_PEARL, new Class5735(this, var1));
       this.method32209(EntityType.field41028, new Class5722(this));
-      this.method32209(EntityType.field41027, new Class5677(this));
+      this.method32209(EntityType.EVOKER, new Class5677(this));
       this.method32209(EntityType.EXPERIENCE_BOTTLE, new Class5735(this, var1));
       this.method32209(EntityType.field41029, new Class5731(this));
       this.method32209(EntityType.field41030, new Class5735(this, var1, 1.0F, true));

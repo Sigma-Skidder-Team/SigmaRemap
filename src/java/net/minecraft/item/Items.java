@@ -1043,7 +1043,7 @@ public class Items {
       "endermite_spawn_egg", new SpawnEggItem(EntityType.ENDERMITE, 1447446, 7237230, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37996 = method30157(
-      "evoker_spawn_egg", new SpawnEggItem(EntityType.field41027, 9804699, 1973274, new Item.Properties().method17779(ItemGroup.field31669))
+      "evoker_spawn_egg", new SpawnEggItem(EntityType.EVOKER, 9804699, 1973274, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37997 = method30157(
       "fox_spawn_egg", new SpawnEggItem(EntityType.FOX, 14005919, 13396256, new Item.Properties().method17779(ItemGroup.field31669))

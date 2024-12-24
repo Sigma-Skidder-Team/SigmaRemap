@@ -93,7 +93,7 @@ public class EntitySpawnPlacementRegistry {
       register(EntityType.ZOMBIE_VILLAGER, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
       register(EntityType.CAT, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
       register(EntityType.ELDER_GUARDIAN, EntitySpawnPlacementRegistry$PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, GuardianEntity::canSpawn);
-      register(EntityType.field41027, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
+      register(EntityType.EVOKER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
       register(EntityType.FOX, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
       register(EntityType.ILLUSIONER, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawnInLight);
       register(EntityType.PANDA, EntitySpawnPlacementRegistry$PlacementType.field13474, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);

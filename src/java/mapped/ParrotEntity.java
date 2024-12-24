@@ -52,7 +52,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
       var0.put(EntityType.ELDER_GUARDIAN, SoundEvents.field26888);
       var0.put(EntityType.ENDER_DRAGON, SoundEvents.field26889);
       var0.put(EntityType.ENDERMITE, SoundEvents.field26890);
-      var0.put(EntityType.field41027, SoundEvents.field26891);
+      var0.put(EntityType.EVOKER, SoundEvents.field26891);
       var0.put(EntityType.GHAST, SoundEvents.field26892);
       var0.put(EntityType.GUARDIAN, SoundEvents.field26893);
       var0.put(EntityType.HOGLIN, SoundEvents.field26894);

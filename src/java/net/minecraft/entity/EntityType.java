@@ -109,7 +109,7 @@ public class EntityType<T extends Entity> {
    public static final EntityType<EndermiteEntity> ENDERMITE = register(
       "endermite", Builder.<EndermiteEntity>create(EndermiteEntity::new, EntityClassification.MONSTER).size(0.4F, 0.3F).trackingRange(8)
    );
-   public static final EntityType<Class1032> field41027 = register(
+   public static final EntityType<Class1032> EVOKER = register(
       "evoker", Builder.<Class1032>create(Class1032::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
    public static final EntityType<Class915> field41028 = register(

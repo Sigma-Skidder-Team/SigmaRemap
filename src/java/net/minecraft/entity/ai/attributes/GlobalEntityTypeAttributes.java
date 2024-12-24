@@ -39,7 +39,7 @@ public class GlobalEntityTypeAttributes {
       .put(EntityType.ENDERMAN, EndermanEntity.method4345().method21850())
       .put(EntityType.ENDERMITE, EndermiteEntity.method5296().method21850())
       .put(EntityType.ENDER_DRAGON, Class1007.method2997().method21850())
-      .put(EntityType.field41027, Class1032.method4600().method21850())
+      .put(EntityType.EVOKER, Class1032.method4600().method21850())
       .put(EntityType.FOX, Class1095.method5123().method21850())
       .put(EntityType.GHAST, GhastEntity.method5360().method21850())
       .put(EntityType.GIANT, Class1099.method5268().method21850())

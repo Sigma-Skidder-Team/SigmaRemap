@@ -15,7 +15,7 @@ public class Class4453 extends Class4441<EntityType<?>> {
    public void method14010() {
       this.method14014(Class8613.field38734).method31560(EntityType.SKELETON, EntityType.STRAY, EntityType.WITHER_SKELETON);
       this.method14014(Class8613.field38735)
-         .method31560(EntityType.field41027, EntityType.PILLAGER, EntityType.RAVAGER, EntityType.VINDICATOR, EntityType.ILLUSIONER, EntityType.WITCH);
+         .method31560(EntityType.EVOKER, EntityType.PILLAGER, EntityType.RAVAGER, EntityType.VINDICATOR, EntityType.ILLUSIONER, EntityType.WITCH);
       this.method14014(Class8613.field38736).method31558(EntityType.BEE);
       this.method14014(Class8613.field38737).method31560(EntityType.ARROW, EntityType.SPECTRAL_ARROW);
       this.method14014(Class8613.field38738)

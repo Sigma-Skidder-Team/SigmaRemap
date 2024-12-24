@@ -465,7 +465,7 @@ public class Raid {
                      if (var13 != 0) {
                         var16 = EntityType.VINDICATOR.create(this.field32978);
                      } else {
-                        var16 = EntityType.field41027.create(this.field32978);
+                        var16 = EntityType.EVOKER.create(this.field32978);
                      }
                   }
                } else {

@@ -74,7 +74,7 @@ public class Class4187 extends Class4180 {
          Class1025 var11;
          switch (var1) {
             case "Mage":
-               var11 = EntityType.field41027.create(var3.method6970());
+               var11 = EntityType.EVOKER.create(var3.method6970());
                break;
             case "Warrior":
                var11 = EntityType.VINDICATOR.create(var3.method6970());

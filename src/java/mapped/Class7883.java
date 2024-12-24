@@ -15,7 +15,7 @@ public class Class7883 extends Class7882<LivingEntity> {
    private static String[] field33830;
    private static final ImmutableMap<EntityType<?>, Float> field33831 = ImmutableMap.<EntityType<?>, Float> builder()
       .put(EntityType.DROWNED, 8.0F)
-      .put(EntityType.field41027, 12.0F)
+      .put(EntityType.EVOKER, 12.0F)
       .put(EntityType.HUSK, 8.0F)
       .put(EntityType.ILLUSIONER, 12.0F)
       .put(EntityType.PILLAGER, 15.0F)

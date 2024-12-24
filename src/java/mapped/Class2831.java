@@ -71,7 +71,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       EntityType.ENDER_DRAGON,
       EntityType.ENDERMAN,
       EntityType.ENDERMITE,
-      EntityType.field41027,
+      EntityType.EVOKER,
       EntityType.GHAST,
       EntityType.GUARDIAN,
       EntityType.HOGLIN,
