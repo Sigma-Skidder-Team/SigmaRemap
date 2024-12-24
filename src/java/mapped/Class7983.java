@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public final class Class7983<T> implements Class7984<T> {
+public final class Class7983<T> implements ITagCollection<T> {
    private static String[] field34308;
    private final ITag<T> field34309;
    public final BiMap field34310;

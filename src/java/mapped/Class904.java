@@ -463,7 +463,7 @@ public class Class904 extends ProjectileEntity {
                      .addEntity(
                         new ExperienceOrbEntity(var4.world, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.rand.nextInt(6) + 1)
                      );
-                  if (var10.getItem().method11743(Class5985.field26114)) {
+                  if (var10.getItem().method11743(ItemTags.field26114)) {
                      var4.addStat(Stats.field40138, 1);
                   }
                }

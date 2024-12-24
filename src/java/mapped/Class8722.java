@@ -36,7 +36,7 @@ public class Class8722 implements ArgumentType<Class176> {
       } catch (CommandSyntaxException var8) {
       }
 
-      return var6.method38363(var2, Class5985.method18561());
+      return var6.method38363(var2, ItemTags.method18561());
    }
 
    public Collection<String> getExamples() {

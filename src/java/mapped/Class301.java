@@ -27,7 +27,7 @@ public class Class301 implements Class268 {
    private static final int field1161 = ".mcfunction".length();
    private volatile Map<ResourceLocation, Class7744> field1162 = ImmutableMap.of();
    private final Class9768<Class7744> field1163 = new Class9768<Class7744>(this::method1177, "tags/functions", "function");
-   private volatile Class7984<Class7744> field1164 = Class7984.<Class7744>method27141();
+   private volatile ITagCollection<Class7744> field1164 = ITagCollection.<Class7744>method27141();
    private final int field1165;
    private final CommandDispatcher<CommandSource> field1166;
 
@@ -39,7 +39,7 @@ public class Class301 implements Class268 {
       return this.field1162;
    }
 
-   public Class7984<Class7744> method1179() {
+   public ITagCollection<Class7744> method1179() {
       return this.field1164;
    }
 

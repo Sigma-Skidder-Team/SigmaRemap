@@ -110,7 +110,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    private final Map<UUID, NetworkPlayerInfo> field23276 = Maps.newHashMap();
    private final Class8730 field23277;
    private final Class6617 field23278;
-   private Class8933 field23279 = Class8933.field40418;
+   private ITagCollectionSupplier field23279 = ITagCollectionSupplier.field40418;
    private final Class4496 field23280 = new Class4496(this);
    private int field23281 = 3;
    private final Random field23282 = new Random();
@@ -146,7 +146,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.mc.playerController = new Class7314(this.mc, this);
       if (!this.field23269.isLocalChannel()) {
-         TagRegistryManager.method29379();
+         TagRegistryManager.fetchTags();
       }
 
       ArrayList var4 = Lists.newArrayList(var1.method17292());
@@ -1441,8 +1441,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleTags(STagsListPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      Class8933 var4 = var1.method17639();
-      Multimap var5 = TagRegistryManager.method29380(var4);
+      ITagCollectionSupplier var4 = var1.method17639();
+      Multimap var5 = TagRegistryManager.validateTags(var4);
       if (var5.isEmpty()) {
          this.field23279 = var4;
          if (!this.field23269.isLocalChannel()) {
@@ -2264,7 +2264,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       return this.field23273;
    }
 
-   public Class8933 method15798() {
+   public ITagCollectionSupplier method15798() {
       return this.field23279;
    }
 

@@ -59,7 +59,7 @@ public class Class7584 implements ArgumentType<Class9041> {
       } catch (CommandSyntaxException var8) {
       }
 
-      return var6.method38363(var2, Class5985.method18561());
+      return var6.method38363(var2, ItemTags.method18561());
    }
 
    public Collection<String> getExamples() {

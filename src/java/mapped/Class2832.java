@@ -159,8 +159,8 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
             .method18320(
                Class8894.method32373()
-                  .method18291(Class4685.method14698(Class5985.field26117))
-                  .method18297(Class123.method357(Class2063.field13448, Class7552.method24700().method24702(Class8613.field38734)))
+                  .method18291(Class4685.method14698(ItemTags.field26117))
+                  .method18297(Class123.method357(Class2063.field13448, Class7552.method24700().method24702(EntityTypeTags.field38734)))
             )
       );
       this.method11033(

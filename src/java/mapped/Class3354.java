@@ -266,7 +266,7 @@ public class Class3354 extends Class3241 {
          return ActionResultType.method9002(var2.isRemote);
       } else {
          ItemStack var9 = var4.getHeldItem(var5);
-         return !var9.isEmpty() && !var9.getItem().method11743(Class5985.field26120) ? ActionResultType.field14819 : ActionResultType.field14820;
+         return !var9.isEmpty() && !var9.getItem().method11743(ItemTags.field26120) ? ActionResultType.field14819 : ActionResultType.field14820;
       }
    }
 

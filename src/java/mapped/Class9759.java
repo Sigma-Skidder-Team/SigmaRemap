@@ -26,7 +26,7 @@ public class Class9759 {
    public static final DynamicCommandExceptionType field45653 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("argument.item.id.invalid", var0)
    );
-   private static final BiFunction<SuggestionsBuilder, Class7984<Item>, CompletableFuture<Suggestions>> field45654 = (var0, var1) -> var0.buildFuture();
+   private static final BiFunction<SuggestionsBuilder, ITagCollection<Item>, CompletableFuture<Suggestions>> field45654 = (var0, var1) -> var0.buildFuture();
    private final StringReader field45655;
    private final boolean field45656;
    private final Map<Property<?>, Comparable<?>> field45657 = Maps.newHashMap();
@@ -34,7 +34,7 @@ public class Class9759 {
    private CompoundNBT field45659;
    private ResourceLocation field45660 = new ResourceLocation("");
    private int field45661;
-   private BiFunction<SuggestionsBuilder, Class7984<Item>, CompletableFuture<Suggestions>> field45662 = field45654;
+   private BiFunction<SuggestionsBuilder, ITagCollection<Item>, CompletableFuture<Suggestions>> field45662 = field45654;
 
    public Class9759(StringReader var1, boolean var2) {
       this.field45655 = var1;
@@ -95,7 +95,7 @@ public class Class9759 {
       return this;
    }
 
-   private CompletableFuture<Suggestions> method38360(SuggestionsBuilder var1, Class7984<Item> var2) {
+   private CompletableFuture<Suggestions> method38360(SuggestionsBuilder var1, ITagCollection<Item> var2) {
       if (var1.getRemaining().isEmpty()) {
          var1.suggest(String.valueOf('{'));
       }
@@ -103,11 +103,11 @@ public class Class9759 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method38361(SuggestionsBuilder var1, Class7984<Item> var2) {
+   private CompletableFuture<Suggestions> method38361(SuggestionsBuilder var1, ITagCollection<Item> var2) {
       return ISuggestionProvider.suggestIterable(var2.method27137(), var1.createOffset(this.field45661));
    }
 
-   private CompletableFuture<Suggestions> method38362(SuggestionsBuilder var1, Class7984<Item> var2) {
+   private CompletableFuture<Suggestions> method38362(SuggestionsBuilder var1, ITagCollection<Item> var2) {
       if (this.field45656) {
          ISuggestionProvider.suggestIterable(var2.method27137(), var1, String.valueOf('#'));
       }
@@ -115,7 +115,7 @@ public class Class9759 {
       return ISuggestionProvider.suggestIterable(Registry.ITEM.method9190(), var1);
    }
 
-   public CompletableFuture<Suggestions> method38363(SuggestionsBuilder var1, Class7984<Item> var2) {
+   public CompletableFuture<Suggestions> method38363(SuggestionsBuilder var1, ITagCollection<Item> var2) {
       return this.field45662.apply(var1.createOffset(this.field45655.getCursor()), var2);
    }
 }

@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
-public interface Class7984<T> {
+public interface ITagCollection<T> {
    Map<ResourceLocation, ITag<T>> method27134();
 
    @Nullable
@@ -68,7 +68,7 @@ public interface Class7984<T> {
       }
    }
 
-   static <T> Class7984<T> method27140(PacketBuffer var0, Registry<T> var1) {
+   static <T> ITagCollection<T> method27140(PacketBuffer var0, Registry<T> var1) {
       HashMap var4 = Maps.newHashMap();
       int var5 = var0.readVarInt();
 
@@ -87,11 +87,11 @@ public interface Class7984<T> {
       return method27142(var4);
    }
 
-   static <T> Class7984<T> method27141() {
+   static <T> ITagCollection<T> method27141() {
       return method27142(ImmutableBiMap.of());
    }
 
-   static <T> Class7984<T> method27142(Map<ResourceLocation, ITag<T>> var0) {
+   static <T> ITagCollection<T> method27142(Map<ResourceLocation, ITag<T>> var0) {
       ImmutableBiMap var3 = ImmutableBiMap.copyOf(var0);
       return new Class7983(var3);
    }

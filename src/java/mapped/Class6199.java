@@ -28,7 +28,7 @@ public class Class6199 implements Class6196 {
          if (this.field27669 == 1) {
             ClientPlayerEntity var3 = this.field27667.method37035().player;
             if (var3 != null) {
-               if (var3.inventory.method4059(Class5985.field26085)) {
+               if (var3.inventory.method4059(ItemTags.field26085)) {
                   this.field27667.method37034(Class2200.field14380);
                   return;
                }
@@ -79,7 +79,7 @@ public class Class6199 implements Class6196 {
 
    @Override
    public void method19104(ItemStack var1) {
-      if (Class5985.field26085.method24917(var1.getItem())) {
+      if (ItemTags.field26085.method24917(var1.getItem())) {
          this.field27667.method37034(Class2200.field14380);
       }
    }

@@ -1109,7 +1109,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public Class8933 method6817() {
+   public ITagCollectionSupplier method6817() {
       return this.field9045.method1408();
    }
 

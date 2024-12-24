@@ -648,7 +648,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public Class8933 method6817() {
+   public ITagCollectionSupplier method6817() {
       return this.connection.method15798();
    }
 

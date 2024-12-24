@@ -43,7 +43,7 @@ public class ShieldItem extends Item {
 
    @Override
    public boolean method11699(ItemStack var1, ItemStack var2) {
-      return Class5985.field26071.method24917(var2.getItem()) || super.method11699(var1, var2);
+      return ItemTags.field26071.method24917(var2.getItem()) || super.method11699(var1, var2);
    }
 
    public static Class112 getColor(ItemStack var0) {

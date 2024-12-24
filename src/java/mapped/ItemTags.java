@@ -5,8 +5,8 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
-public final class Class5985 {
-   public static final Class7656<Item> field26069 = TagRegistryManager.<Item>method29377(new ResourceLocation("item"), Class8933::method32658);
+public final class ItemTags {
+   public static final TagRegistry<Item> collections = TagRegistryManager.<Item>create(new ResourceLocation("item"), ITagCollectionSupplier::method32658);
    public static final Class7610<Item> field26070 = method18560("wool");
    public static final Class7610<Item> field26071 = method18560("planks");
    public static final Class7610<Item> field26072 = method18560("stone_bricks");
@@ -63,14 +63,14 @@ public final class Class5985 {
    public static final Class7610<Item> field26123 = method18560("stone_crafting_materials");
 
    private static Class7610<Item> method18560(String var0) {
-      return field26069.method25167(var0);
+      return collections.method25167(var0);
    }
 
-   public static Class7984<Item> method18561() {
-      return field26069.method25170();
+   public static ITagCollection<Item> method18561() {
+      return collections.method25170();
    }
 
    public static List<? extends Class7610<Item>> method18562() {
-      return field26069.method25171();
+      return collections.method25171();
    }
 }

@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class8933;
+import mapped.ITagCollectionSupplier;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;
@@ -9,18 +9,18 @@ import java.io.IOException;
 
 public class STagsListPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24905;
-   private Class8933 field24906;
+   private ITagCollectionSupplier field24906;
 
    public STagsListPacket() {
    }
 
-   public STagsListPacket(Class8933 var1) {
+   public STagsListPacket(ITagCollectionSupplier var1) {
       this.field24906 = var1;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24906 = Class8933.method32663(var1);
+      this.field24906 = ITagCollectionSupplier.method32663(var1);
    }
 
    @Override
@@ -32,7 +32,7 @@ public class STagsListPacket implements IPacket<IClientPlayNetHandler> {
       var1.handleTags(this);
    }
 
-   public Class8933 method17639() {
+   public ITagCollectionSupplier method17639() {
       return this.field24906;
    }
 }

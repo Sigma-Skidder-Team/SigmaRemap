@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 public interface ITag<T> {
-   static <T> Codec<ITag<T>> method24916(Supplier<Class7984<T>> var0) {
+   static <T> Codec<ITag<T>> method24916(Supplier<ITagCollection<T>> var0) {
       return ResourceLocation.CODEC
          .flatXmap(
             var1 -> Optional.ofNullable(var0.get().get(var1))

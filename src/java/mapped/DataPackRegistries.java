@@ -42,7 +42,7 @@ public class DataPackRegistries implements AutoCloseable {
       return this.field9269;
    }
 
-   public Class8933 method7333() {
+   public ITagCollectionSupplier method7333() {
       return this.field9267.method1068();
    }
 

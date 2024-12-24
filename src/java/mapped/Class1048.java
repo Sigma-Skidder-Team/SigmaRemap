@@ -279,7 +279,7 @@ public class Class1048 extends WaterMobEntity {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (!var5.isEmpty() && var5.getItem().method11743(Class5985.field26114)) {
+      if (!var5.isEmpty() && var5.getItem().method11743(ItemTags.field26114)) {
          if (!this.world.isRemote) {
             this.playSound(SoundEvents.field26502, 1.0F, 1.0F);
          }

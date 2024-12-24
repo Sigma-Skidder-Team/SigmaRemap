@@ -41,7 +41,7 @@ public class Bootstrap {
          Class9748.method38219();
          IDispenseItemBehavior.method19200();
          Class8651.method31096();
-         TagRegistryManager.method29381();
+         TagRegistryManager.checkHelperRegistrations();
          method25571();
       }
    }

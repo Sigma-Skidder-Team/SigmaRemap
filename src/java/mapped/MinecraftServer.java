@@ -1322,7 +1322,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.resourceManager.method7334();
    }
 
-   public Class8933 method1408() {
+   public ITagCollectionSupplier method1408() {
       return this.resourceManager.method7333();
    }
 

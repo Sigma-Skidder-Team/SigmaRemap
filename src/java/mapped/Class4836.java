@@ -27,7 +27,7 @@ public class Class4836 extends Class4837 {
                var7 = true;
             } else if (var10.getItem() == Blocks.RED_MUSHROOM.asItem() && !var6) {
                var6 = true;
-            } else if (var10.getItem().method11743(Class5985.field26103) && !var5) {
+            } else if (var10.getItem().method11743(ItemTags.field26103) && !var5) {
                var5 = true;
             } else {
                if (var10.getItem() != Items.field37836 || var8) {
@@ -47,7 +47,7 @@ public class Class4836 extends Class4837 {
 
       for (int var5 = 0; var5 < var1.getSizeInventory(); var5++) {
          ItemStack var6 = var1.getStackInSlot(var5);
-         if (!var6.isEmpty() && var6.getItem().method11743(Class5985.field26103)) {
+         if (!var6.isEmpty() && var6.getItem().method11743(ItemTags.field26103)) {
             var4 = var6;
             break;
          }

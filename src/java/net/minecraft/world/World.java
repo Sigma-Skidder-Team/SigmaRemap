@@ -1013,7 +1013,7 @@ public abstract class World implements IWorld, AutoCloseable {
 
    public abstract RecipeManager getRecipeManager();
 
-   public abstract Class8933 method6817();
+   public abstract ITagCollectionSupplier method6817();
 
    public BlockPos method6818(int var1, int var2, int var3, int var4) {
       this.updateLCG = this.updateLCG * 3 + 1013904223;

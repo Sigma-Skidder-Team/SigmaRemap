@@ -201,7 +201,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             "shot_arrow",
             Class4469.method14120(
                Class9024.method33410()
-                  .method33412(Class9714.method38056().method38057(true).method38059(Class7552.method24700().method24702(Class8613.field38737)))
+                  .method33412(Class9714.method38056().method38057(true).method38059(Class7552.method24700().method24702(EntityTypeTags.field38737)))
             )
          )
          .method27317(var1, "adventure/shoot_arrow");
@@ -361,7 +361,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             true
          )
-         .method27312("voluntary_exile", Class4476.method14134(Class7552.method24700().method24702(Class8613.field38735).method24710(Class6597.field29028)))
+         .method27312("voluntary_exile", Class4476.method14134(Class7552.method24700().method24702(EntityTypeTags.field38735).method24710(Class6597.field29028)))
          .method27317(var1, "adventure/voluntary_exile");
       Class7999.method27304()
          .method27305(var11)

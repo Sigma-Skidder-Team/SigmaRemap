@@ -503,7 +503,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                .filter(var0x -> !var0x.isEmpty()),
          var0 -> Stream.<ResourceLocation>of(Registry.ITEM.getKey(var0.getItem()))
       );
-      SearchTreeReloadable<ItemStack> var2 = new SearchTreeReloadable<ItemStack>(var0 -> Class5985.method18561().method27138(var0.getItem()).stream());
+      SearchTreeReloadable<ItemStack> var2 = new SearchTreeReloadable<ItemStack>(var0 -> ItemTags.method18561().method27138(var0.getItem()).stream());
       NonNullList<ItemStack> var3 = NonNullList.create();
 
       for (Item var5 : Registry.ITEM) {

@@ -96,7 +96,7 @@ public class Class1086 extends Class1087 implements Class1020 {
          }
 
          return ActionResultType.method9002(this.world.isRemote);
-      } else if (this.method5037() == Class2210.field14453 && var5.getItem().method11743(Class5985.field26103)) {
+      } else if (this.method5037() == Class2210.field14453 && var5.getItem().method11743(ItemTags.field26103)) {
          if (this.field5952 == null) {
             Optional var6 = this.method5035(var5);
             if (!var6.isPresent()) {

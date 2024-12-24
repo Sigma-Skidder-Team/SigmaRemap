@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.List;
 
 public final class BlockTags {
-   public static final Class7656<Block> field32733 = TagRegistryManager.<Block>method29377(new ResourceLocation("block"), Class8933::method32657);
+   public static final TagRegistry<Block> collection = TagRegistryManager.<Block>create(new ResourceLocation("block"), ITagCollectionSupplier::method32657);
    public static final Class7610<Block> field32734 = method25114("wool");
    public static final Class7610<Block> field32735 = method25114("planks");
    public static final Class7610<Block> field32736 = method25114("stone_bricks");
@@ -96,14 +96,14 @@ public final class BlockTags {
    public static final Class7610<Block> field32819 = method25114("base_stone_nether");
 
    private static Class7610<Block> method25114(String var0) {
-      return field32733.method25167(var0);
+      return collection.method25167(var0);
    }
 
-   public static Class7984<Block> getCollection() {
-      return field32733.method25170();
+   public static ITagCollection<Block> getCollection() {
+      return collection.method25170();
    }
 
    public static List<? extends Class7610<Block>> method25116() {
-      return field32733.method25171();
+      return collection.method25171();
    }
 }

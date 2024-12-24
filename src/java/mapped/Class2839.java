@@ -36,7 +36,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("get_stone", Class4491.method14163(Class9735.method38146().method38148(Class5985.field26122).method38151()))
+         .method27312("get_stone", Class4491.method14163(Class9735.method38146().method38148(ItemTags.field26122).method38151()))
          .method27317(var1, "story/mine_stone");
       Advancement var6 = Class7999.method27304()
          .method27305(var5)

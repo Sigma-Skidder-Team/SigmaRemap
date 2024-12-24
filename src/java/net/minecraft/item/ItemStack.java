@@ -828,7 +828,7 @@ public final class ItemStack {
       }
    }
 
-   public boolean method32175(Class8933 var1, CachedBlockInfo var2) {
+   public boolean method32175(ITagCollectionSupplier var1, CachedBlockInfo var2) {
       if (method32174(var2, this.canDestroyCacheBlock)) {
          return this.canDestroyCacheResult;
       } else {
@@ -855,7 +855,7 @@ public final class ItemStack {
       }
    }
 
-   public boolean method32176(Class8933 var1, CachedBlockInfo var2) {
+   public boolean method32176(ITagCollectionSupplier var1, CachedBlockInfo var2) {
       if (method32174(var2, this.canPlaceOnCacheBlock)) {
          return this.canPlaceOnCacheResult;
       } else {

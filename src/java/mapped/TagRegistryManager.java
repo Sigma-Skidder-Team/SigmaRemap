@@ -11,36 +11,36 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class TagRegistryManager {
-   private static final Map<ResourceLocation, Class7656<?>> field35957 = Maps.newHashMap();
+   private static final Map<ResourceLocation, TagRegistry<?>> idToRegistryMap = Maps.newHashMap();
 
-   public static <T> Class7656<T> method29377(ResourceLocation var0, Function<Class8933, Class7984<T>> var1) {
-      Class7656 var4 = new Class7656(var1);
-      Class7656 var5 = field35957.putIfAbsent(var0, var4);
+   public static <T> TagRegistry<T> create(ResourceLocation id, Function<ITagCollectionSupplier, ITagCollection<T>> supplierToCollectionFunction) {
+      TagRegistry var4 = new TagRegistry(supplierToCollectionFunction);
+      TagRegistry var5 = idToRegistryMap.putIfAbsent(id, var4);
       if (var5 == null) {
          return var4;
       } else {
-         throw new IllegalStateException("Duplicate entry for static tag collection: " + var0);
+         throw new IllegalStateException("Duplicate entry for static tag collection: " + id);
       }
    }
 
-   public static void method29378(Class8933 var0) {
-      field35957.values().forEach(var1 -> var1.method25169(var0));
+   public static void fetchTags(ITagCollectionSupplier supplier) {
+      idToRegistryMap.values().forEach(registry -> registry.fetchTags(supplier));
    }
 
-   public static void method29379() {
-      field35957.values().forEach(Class7656::method25168);
+   public static void fetchTags() {
+      idToRegistryMap.values().forEach(TagRegistry::fetchTags);
    }
 
-   public static Multimap<ResourceLocation, ResourceLocation> method29380(Class8933 var0) {
-      HashMultimap var3 = HashMultimap.create();
-      field35957.forEach((var2, var3x) -> var3.putAll(var2, var3x.method25172(var0)));
-      return var3;
+   public static Multimap<ResourceLocation, ResourceLocation> validateTags(ITagCollectionSupplier supplier) {
+      HashMultimap multimap = HashMultimap.create();
+      idToRegistryMap.forEach((id, registry) -> multimap.putAll(id, registry.getTagIdsFromSupplier(supplier)));
+      return multimap;
    }
 
-   public static void method29381() {
-      Class7656[] var2 = new Class7656[]{BlockTags.field32733, Class5985.field26069, FluidTags.field40468, Class8613.field38733};
-      boolean var3 = Stream.<Class7656>of(var2).anyMatch(var0 -> !field35957.containsValue(var0));
-      if (var3) {
+   public static void checkHelperRegistrations() {
+      TagRegistry[] registries = new TagRegistry[]{BlockTags.collection, ItemTags.collections, FluidTags.collections, EntityTypeTags.tagCollection};
+      boolean includesReg = Stream.of(registries).anyMatch(reg -> !idToRegistryMap.containsValue(reg));
+      if (includesReg) {
          throw new IllegalStateException("Missing helper registrations");
       }
    }

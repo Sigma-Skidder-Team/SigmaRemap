@@ -14,7 +14,7 @@ public class Class5845 extends Slot {
 
    @Override
    public boolean isItemValid(ItemStack var1) {
-      return var1.getItem().method11743(Class5985.field26121);
+      return var1.getItem().method11743(ItemTags.field26121);
    }
 
    @Override
