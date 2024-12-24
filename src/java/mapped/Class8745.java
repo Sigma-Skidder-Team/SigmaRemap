@@ -9,9 +9,9 @@ public interface Class8745 {
 
    Class1737 method31547(File var1) throws FileNotFoundException;
 
-   Class1716 method31548(File var1) throws FileNotFoundException;
+   Sink method31548(File var1) throws FileNotFoundException;
 
-   Class1716 method31549(File var1) throws FileNotFoundException;
+   Sink method31549(File var1) throws FileNotFoundException;
 
    void method31550(File var1) throws IOException;
 

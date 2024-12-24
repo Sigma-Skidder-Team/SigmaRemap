@@ -6,11 +6,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public final class Class8237 {
-   private final List<Class8350> field35360 = new ArrayList<Class8350>();
+   private final List<Header> field35360 = new ArrayList<Header>();
    private final Class1735 field35361;
    private final int field35362;
    private int field35363;
-   public Class8350[] field35364 = new Class8350[8];
+   public Header[] field35364 = new Header[8];
    public int field35365 = this.field35364.length - 1;
    public int field35366 = 0;
    public int field35367 = 0;
@@ -102,8 +102,8 @@ public final class Class8237 {
       }
    }
 
-   public List<Class8350> method28678() {
-      ArrayList var3 = new ArrayList<Class8350>(this.field35360);
+   public List<Header> method28678() {
+      ArrayList var3 = new ArrayList<Header>(this.field35360);
       this.field35360.clear();
       return var3;
    }
@@ -117,7 +117,7 @@ public final class Class8237 {
 
          this.field35360.add(this.field35364[var4]);
       } else {
-         Class8350 var5 = Class9739.field45480[var1];
+         Header var5 = Class9739.field45480[var1];
          this.field35360.add(var5);
       }
    }
@@ -129,25 +129,25 @@ public final class Class8237 {
    private void method28681(int var1) throws IOException {
       Class2003 var4 = this.method28685(var1);
       Class2003 var5 = this.method28690();
-      this.field35360.add(new Class8350(var4, var5));
+      this.field35360.add(new Header(var4, var5));
    }
 
    private void method28682() throws IOException {
       Class2003 var3 = Class9739.method38170(this.method28690());
       Class2003 var4 = this.method28690();
-      this.field35360.add(new Class8350(var3, var4));
+      this.field35360.add(new Header(var3, var4));
    }
 
    private void method28683(int var1) throws IOException {
       Class2003 var4 = this.method28685(var1);
       Class2003 var5 = this.method28690();
-      this.method28687(-1, new Class8350(var4, var5));
+      this.method28687(-1, new Header(var4, var5));
    }
 
    private void method28684() throws IOException {
       Class2003 var3 = Class9739.method38170(this.method28690());
       Class2003 var4 = this.method28690();
-      this.method28687(-1, new Class8350(var3, var4));
+      this.method28687(-1, new Header(var3, var4));
    }
 
    private Class2003 method28685(int var1) {
@@ -158,7 +158,7 @@ public final class Class8237 {
       return var1 >= 0 && var1 <= Class9739.field45480.length - 1;
    }
 
-   private void method28687(int var1, Class8350 var2) {
+   private void method28687(int var1, Header var2) {
       this.field35360.add(var2);
       int var5 = var2.field35888;
       if (var1 != -1) {
@@ -173,7 +173,7 @@ public final class Class8237 {
             this.field35364[var1] = var2;
          } else {
             if (this.field35366 + 1 > this.field35364.length) {
-               Class8350[] var8 = new Class8350[this.field35364.length * 2];
+               Header[] var8 = new Header[this.field35364.length * 2];
                System.arraycopy(this.field35364, 0, var8, this.field35364.length, this.field35364.length);
                this.field35365 = this.field35364.length - 1;
                this.field35364 = var8;

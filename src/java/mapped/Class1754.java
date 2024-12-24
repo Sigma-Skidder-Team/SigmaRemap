@@ -9,10 +9,10 @@ public final class Class1754 implements Class1737 {
    private final long field9488;
    public boolean field9489;
    public boolean field9490;
-   public static final boolean field9491 = !Class9698.class.desiredAssertionStatus();
-   public final Class9698 field9492;
+   public static final boolean field9491 = !FramedStream.class.desiredAssertionStatus();
+   public final FramedStream field9492;
 
-   public Class1754(Class9698 var1, long var2) {
+   public Class1754(FramedStream var1, long var2) {
       this.field9492 = var1;
       this.field9486 = new Class1734();
       this.field9487 = new Class1734();
@@ -33,18 +33,18 @@ public final class Class1754 implements Class1737 {
             }
 
             var7 = this.field9487.method7633(var1, Math.min(var2, this.field9487.method7582()));
-            this.field9492.field45329 += var7;
-            if (this.field9492.field45329 >= (long)(this.field9492.field45332.field9568.method31385() / 2)) {
-               this.field9492.field45332.method7718(this.field9492.field45331, this.field9492.field45329);
-               this.field9492.field45329 = 0L;
+            this.field9492.unacknowledgedBytesRead += var7;
+            if (this.field9492.unacknowledgedBytesRead >= (long)(this.field9492.connection.field9568.method31385() / 2)) {
+               this.field9492.connection.method7718(this.field9492.id, this.field9492.unacknowledgedBytesRead);
+               this.field9492.unacknowledgedBytesRead = 0L;
             }
          }
 
-         synchronized (this.field9492.field45332) {
-            this.field9492.field45332.field9566 += var7;
-            if (this.field9492.field45332.field9566 >= (long)(this.field9492.field45332.field9568.method31385() / 2)) {
-               this.field9492.field45332.method7718(0, this.field9492.field45332.field9566);
-               this.field9492.field45332.field9566 = 0L;
+         synchronized (this.field9492.connection) {
+            this.field9492.connection.field9566 += var7;
+            if (this.field9492.connection.field9566 >= (long)(this.field9492.connection.field9568.method31385() / 2)) {
+               this.field9492.connection.method7718(0, this.field9492.connection.field9566);
+               this.field9492.connection.field9566 = 0L;
             }
 
             return var7;

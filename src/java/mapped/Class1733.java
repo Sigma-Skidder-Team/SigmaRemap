@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 
-public interface Class1733 extends Class1716 {
+public interface Class1733 extends Sink {
    Class1734 method7559();
 
    Class1733 method7560(Class2003 var1) throws IOException;

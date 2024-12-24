@@ -4,9 +4,9 @@ public class Class1559 extends Class1555 {
    private static String[] field8444;
    public final int field8445;
    public final Class2077 field8446;
-   public final Class1767 field8447;
+   public final FramedConnection field8447;
 
-   public Class1559(Class1767 var1, String var2, Object[] var3, int var4, Class2077 var5) {
+   public Class1559(FramedConnection var1, String var2, Object[] var3, int var4, Class2077 var5) {
       super(var2, var3);
       this.field8447 = var1;
       this.field8445 = var4;

@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.util.zip.CRC32;
 import java.util.zip.Deflater;
 
-public final class Class1722 implements Class1716 {
+public final class Class1722 implements Sink {
    private final Class1733 field9391;
    private final Deflater field9392;
    private final Class1720 field9393;
    private boolean field9394;
    private final CRC32 field9395 = new CRC32();
 
-   public Class1722(Class1716 var1) {
+   public Class1722(Sink var1) {
       if (var1 != null) {
          this.field9392 = new Deflater(-1, true);
          this.field9391 = Class7001.method21697(var1);

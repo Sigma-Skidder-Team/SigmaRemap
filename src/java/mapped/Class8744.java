@@ -11,7 +11,7 @@ public final class Class8744 implements Class8745 {
    }
 
    @Override
-   public Class1716 method31548(File var1) throws FileNotFoundException {
+   public Sink method31548(File var1) throws FileNotFoundException {
       try {
          return Class7001.method21705(var1);
       } catch (FileNotFoundException var5) {
@@ -21,7 +21,7 @@ public final class Class8744 implements Class8745 {
    }
 
    @Override
-   public Class1716 method31549(File var1) throws FileNotFoundException {
+   public Sink method31549(File var1) throws FileNotFoundException {
       try {
          return Class7001.method21706(var1);
       } catch (FileNotFoundException var5) {

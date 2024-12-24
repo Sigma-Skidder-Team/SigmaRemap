@@ -5,7 +5,7 @@ public final class Class4926 {
    public final Class1734 field22834 = new Class1734();
    public boolean field22835;
    public boolean field22836;
-   private final Class1716 field22837 = new Class1724(this);
+   private final Sink field22837 = new Class1724(this);
    private final Class1737 field22838 = new Class1753(this);
 
    public Class4926(long var1) {
@@ -20,7 +20,7 @@ public final class Class4926 {
       return this.field22838;
    }
 
-   public Class1716 method15241() {
+   public Sink method15241() {
       return this.field22837;
    }
 }

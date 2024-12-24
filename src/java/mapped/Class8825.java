@@ -7,12 +7,12 @@ public final class Class8825 implements Class8824 {
    private static String[] field39788;
 
    @Override
-   public boolean method31857(int var1, List<Class8350> var2) {
+   public boolean method31857(int var1, List<Header> var2) {
       return true;
    }
 
    @Override
-   public boolean method31858(int var1, List<Class8350> var2, boolean var3) {
+   public boolean method31858(int var1, List<Header> var2, boolean var3) {
       return true;
    }
 

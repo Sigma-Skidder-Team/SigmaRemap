@@ -6,7 +6,7 @@ public class Class1726 extends Class1725 {
    private static String[] field9406;
    private boolean field9407;
 
-   public Class1726(Class1716 var1) {
+   public Class1726(Sink var1) {
       super(var1);
    }
 

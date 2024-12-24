@@ -5,8 +5,8 @@ import java.io.IOException;
 public final class Class6440 implements Class6441 {
    private static String[] field28286;
    private final Class7163 field28287;
-   private Class1716 field28288;
-   private Class1716 field28289;
+   private Sink field28288;
+   private Sink field28289;
    public boolean field28290;
    public final Class1715 field28291;
 
@@ -37,7 +37,7 @@ public final class Class6440 implements Class6441 {
    }
 
    @Override
-   public Class1716 method19554() {
+   public Sink method19554() {
       return this.field28289;
    }
 }

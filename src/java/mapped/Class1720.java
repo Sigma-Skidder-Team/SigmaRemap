@@ -3,12 +3,12 @@ package mapped;
 import java.io.IOException;
 import java.util.zip.Deflater;
 
-public final class Class1720 implements Class1716 {
+public final class Class1720 implements Sink {
    private final Class1733 field9383;
    private final Deflater field9384;
    private boolean field9385;
 
-   public Class1720(Class1716 var1, Deflater var2) {
+   public Class1720(Sink var1, Deflater var2) {
       this(Class7001.method21697(var1), var2);
    }
 

@@ -49,7 +49,7 @@ public final class Class7163 {
       }
    }
 
-   public Class1716 method22497(int var1) {
+   public Sink method22497(int var1) {
       synchronized (this.field30814) {
          if (this.field30813) {
             throw new IllegalStateException();
@@ -62,7 +62,7 @@ public final class Class7163 {
 
             File var5 = this.field30811.field35724[var1];
 
-            Class1716 var6;
+            Sink var6;
             try {
                var6 = this.field30814.field9507.method31548(var5);
             } catch (FileNotFoundException var9) {

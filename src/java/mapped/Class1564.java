@@ -8,9 +8,9 @@ public class Class1564 extends Class1555 {
    public final int field8467;
    public final List field8468;
    public final boolean field8469;
-   public final Class1767 field8470;
+   public final FramedConnection field8470;
 
-   public Class1564(Class1767 var1, String var2, Object[] var3, int var4, List var5, boolean var6) {
+   public Class1564(FramedConnection var1, String var2, Object[] var3, int var4, List var5, boolean var6) {
       super(var2, var3);
       this.field8470 = var1;
       this.field8467 = var4;

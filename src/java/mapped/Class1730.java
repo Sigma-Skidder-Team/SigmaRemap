@@ -11,35 +11,35 @@ public final class Class1730 extends Class1725 {
    private final MessageDigest field9415;
    private final Mac field9416;
 
-   public static Class1730 method7551(Class1716 var0) {
+   public static Class1730 method7551(Sink var0) {
       return new Class1730(var0, "MD5");
    }
 
-   public static Class1730 method7552(Class1716 var0) {
+   public static Class1730 method7552(Sink var0) {
       return new Class1730(var0, "SHA-1");
    }
 
-   public static Class1730 method7553(Class1716 var0) {
+   public static Class1730 method7553(Sink var0) {
       return new Class1730(var0, "SHA-256");
    }
 
-   public static Class1730 method7554(Class1716 var0) {
+   public static Class1730 method7554(Sink var0) {
       return new Class1730(var0, "SHA-512");
    }
 
-   public static Class1730 method7555(Class1716 var0, Class2003 var1) {
+   public static Class1730 method7555(Sink var0, Class2003 var1) {
       return new Class1730(var0, var1, "HmacSHA1");
    }
 
-   public static Class1730 method7556(Class1716 var0, Class2003 var1) {
+   public static Class1730 method7556(Sink var0, Class2003 var1) {
       return new Class1730(var0, var1, "HmacSHA256");
    }
 
-   public static Class1730 method7557(Class1716 var0, Class2003 var1) {
+   public static Class1730 method7557(Sink var0, Class2003 var1) {
       return new Class1730(var0, var1, "HmacSHA512");
    }
 
-   private Class1730(Class1716 var1, String var2) {
+   private Class1730(Sink var1, String var2) {
       super(var1);
 
       try {
@@ -50,7 +50,7 @@ public final class Class1730 extends Class1725 {
       }
    }
 
-   private Class1730(Class1716 var1, Class2003 var2, String var3) {
+   private Class1730(Sink var1, Class2003 var2, String var3) {
       super(var1);
 
       try {

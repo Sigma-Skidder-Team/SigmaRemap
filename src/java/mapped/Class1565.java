@@ -3,10 +3,10 @@ package mapped;
 import java.io.IOException;
 
 public class Class1565 extends Class1555 {
-   public final Class9698 field8471;
+   public final FramedStream field8471;
    public final Class1556 field8472;
 
-   public Class1565(Class1556 var1, String var2, Object[] var3, Class9698 var4) {
+   public Class1565(Class1556 var1, String var2, Object[] var3, FramedStream var4) {
       super(var2, var3);
       this.field8472 = var1;
       this.field8471 = var4;

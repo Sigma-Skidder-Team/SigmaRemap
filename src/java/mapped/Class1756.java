@@ -148,7 +148,7 @@ public final class Class1756 implements Closeable, Flushable {
    }
 
    private Class1733 method7678() throws FileNotFoundException {
-      Class1716 var3 = this.field9507.method31549(this.field9509);
+      Sink var3 = this.field9507.method31549(this.field9509);
       Class1728 var4 = new Class1728(this, var3);
       return Class7001.method21697(var4);
    }

@@ -1,6 +1,6 @@
 package mapped;
 
-public final class Class8350 {
+public final class Header {
    public static final Class2003 field35880 = Class2003.method8433(":");
    public static final Class2003 field35881 = Class2003.method8433(":status");
    public static final Class2003 field35882 = Class2003.method8433(":method");
@@ -11,15 +11,15 @@ public final class Class8350 {
    public final Class2003 field35887;
    public final int field35888;
 
-   public Class8350(String var1, String var2) {
+   public Header(String var1, String var2) {
       this(Class2003.method8433(var1), Class2003.method8433(var2));
    }
 
-   public Class8350(Class2003 var1, String var2) {
+   public Header(Class2003 var1, String var2) {
       this(var1, Class2003.method8433(var2));
    }
 
-   public Class8350(Class2003 var1, Class2003 var2) {
+   public Header(Class2003 var1, Class2003 var2) {
       this.field35886 = var1;
       this.field35887 = var2;
       this.field35888 = 32 + var1.method8458() + var2.method8458();
@@ -27,10 +27,10 @@ public final class Class8350 {
 
    @Override
    public boolean equals(Object var1) {
-      if (!(var1 instanceof Class8350)) {
+      if (!(var1 instanceof Header)) {
          return false;
       } else {
-         Class8350 var4 = (Class8350)var1;
+         Header var4 = (Header)var1;
          return this.field35886.equals(var4.field35886) && this.field35887.equals(var4.field35887);
       }
    }

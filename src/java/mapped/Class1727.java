@@ -6,7 +6,7 @@ public class Class1727 extends Class1726 {
    private static String[] field9406;
    public final Class7163 field9408;
 
-   public Class1727(Class7163 var1, Class1716 var2) {
+   public Class1727(Class7163 var1, Sink var2) {
       super(var2);
       this.field9408 = var1;
    }

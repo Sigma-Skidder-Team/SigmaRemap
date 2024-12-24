@@ -17,12 +17,12 @@ public final class Class7263 extends Class7264 implements Class7266 {
 
 
    @Override
-   public void method22816(Class9698 var1) throws IOException {
+   public void method22816(FramedStream var1) throws IOException {
       var1.method37988(Class2077.field13531);
    }
 
    @Override
-   public void method22817(Class1767 var1) {
+   public void method22817(FramedConnection var1) {
       this.field31165 = var1.method7709();
    }
 

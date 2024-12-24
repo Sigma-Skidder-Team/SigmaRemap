@@ -110,7 +110,7 @@ public final class Class1791 implements Closeable {
       }
    }
 
-   private List<Class8350> method7816(int var1, short var2, byte var3, int var4) throws IOException {
+   private List<Header> method7816(int var1, short var2, byte var3, int var4) throws IOException {
       this.field9661.field9459 = this.field9661.field9462 = var1;
       this.field9661.field9463 = var2;
       this.field9661.field9460 = var3;
