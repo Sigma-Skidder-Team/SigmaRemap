@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import lol.ClientColors;
@@ -158,7 +158,7 @@ public class MiniMap extends Module {
                         this.field23712 = var1.method13960();
                         if (var4 != null) {
                             String var5 = "^";
-                            ClientResource var6 = ResourceRegistry.JelloMediumFont20;
+                            TrueTypeFont var6 = ResourceRegistry.JelloMediumFont20;
                             float var7 = 1.5F;
                             RenderUtil.renderBackgroundBox((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
                             GL11.glPushMatrix();

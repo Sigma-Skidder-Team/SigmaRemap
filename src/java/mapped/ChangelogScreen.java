@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
@@ -28,7 +28,7 @@ public class ChangelogScreen extends CustomGuiScreen {
 
    public void method13490(JSONArray var1) {
       if (var1 != null) {
-         this.getIcoPanel().method13222(new Class576(this, var1));
+         this.getScreen().method13222(new Class576(this, var1));
       }
    }
 
@@ -67,7 +67,7 @@ public class ChangelogScreen extends CustomGuiScreen {
       this.drawBackground((int)(150.0f * (1.0f - fadeFactor)));
       this.method13225();
       RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Changelog", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alpha));
-      ClientResource jelloLightFont25 = ResourceRegistry.JelloLightFont25;
+      TrueTypeFont jelloLightFont25 = ResourceRegistry.JelloLightFont25;
       String versionText = "You're currently using Sigma " + Client.VERSION;
       RenderUtil.drawString(
               jelloLightFont25,

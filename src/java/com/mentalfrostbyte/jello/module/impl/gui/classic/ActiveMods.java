@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
@@ -22,8 +22,8 @@ import java.util.TreeMap;
 
 public class ActiveMods extends Module {
     private TreeMap<Module, Animation> field23962 = new TreeMap<Module, Animation>();
-    private ClientResource field23963;
-    private ClientResource field23964;
+    private TrueTypeFont field23963;
+    private TrueTypeFont field23964;
     private Animation field23965;
 
     public ActiveMods() {

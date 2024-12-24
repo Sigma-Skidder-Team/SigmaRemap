@@ -122,7 +122,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
          var4++;
       }
 
-      JelloClickGUI var9 = (JelloClickGUI)this.getIcoPanel();
+      JelloClickGUI var9 = (JelloClickGUI)this.getScreen();
       var9.method13315();
    }
 

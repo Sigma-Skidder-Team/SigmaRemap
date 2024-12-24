@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -23,7 +23,7 @@ public class Class4246 extends ButtonPanel {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       float var5 = this.field20600.method13138();
-      float var6 = (float)this.getXA() / (float)(this.icoPanel.getWidthA() - this.getWidthA());
+      float var6 = (float)this.getXA() / (float)(this.screen.getWidthA() - this.getWidthA());
       if (!this.method13212() && !this.method13298() && !this.method13216()) {
          this.field20601.changeDirection(Direction.BACKWARDS);
       } else {
@@ -66,7 +66,7 @@ public class Class4246 extends ButtonPanel {
       if (this.getTypedText() == null) {
       }
 
-      ClientResource var7 = ResourceRegistry.JelloLightFont12;
+      TrueTypeFont var7 = ResourceRegistry.JelloLightFont12;
       super.method13226(var1);
    }
 }

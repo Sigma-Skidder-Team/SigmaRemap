@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloKeyboardScreen;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -50,7 +50,7 @@ public class Class4268 extends Class4247 {
       RenderUtil.method11474(
          (float)this.xA, (float)this.yA + 3.0F * this.field20691, (float)this.widthA, (float)this.heightA, 8.0F, -986896
       );
-      ClientResource var4 = ResourceRegistry.JelloLightFont20;
+      TrueTypeFont var4 = ResourceRegistry.JelloLightFont20;
       if (this.field20912.contains("Lock")) {
          RenderUtil.method11438(
             (float)(this.xA + 14),

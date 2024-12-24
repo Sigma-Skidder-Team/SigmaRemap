@@ -7,7 +7,7 @@ import mapped.Color;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class DefaultClientFont extends ClientResource {
+public class DefaultClientFont extends TrueTypeFont {
    public final int field31945;
    public Minecraft field31946 = Minecraft.getInstance();
 

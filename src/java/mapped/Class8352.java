@@ -1,29 +1,29 @@
 package mapped;
 
-import lol.Class7427;
+import lol.Font;
 
 public class Class8352 {
-   public static void method29264(Class7427 var0, String var1, int var2, int var3) {
+   public static void method29264(Font var0, String var1, int var2, int var3) {
       method29269(var0, var1, 1, var2, var3, 0, Color.field16442);
    }
 
-   public static void method29265(Class7427 var0, String var1, int var2, int var3, int var4) {
+   public static void method29265(Font var0, String var1, int var2, int var3, int var4) {
       method29269(var0, var1, 2, var2, var3, var4, Color.field16442);
    }
 
-   public static void method29266(Class7427 var0, String var1, int var2, int var3, int var4, Color var5) {
+   public static void method29266(Font var0, String var1, int var2, int var3, int var4, Color var5) {
       method29269(var0, var1, 2, var2, var3, var4, var5);
    }
 
-   public static void method29267(Class7427 var0, String var1, int var2, int var3, int var4) {
+   public static void method29267(Font var0, String var1, int var2, int var3, int var4) {
       method29269(var0, var1, 3, var2, var3, var4, Color.field16442);
    }
 
-   public static void method29268(Class7427 var0, String var1, int var2, int var3, int var4, Color var5) {
+   public static void method29268(Font var0, String var1, int var2, int var3, int var4, Color var5) {
       method29269(var0, var1, 3, var2, var3, var4, var5);
    }
 
-   public static final int method29269(Class7427 var0, String var1, int var2, int var3, int var4, int var5, Color var6) {
+   public static final int method29269(Font var0, String var1, int var2, int var3, int var4, int var5, Color var6) {
       byte var9 = 0;
       if (var2 != 1) {
          if (var2 != 2) {
@@ -49,7 +49,7 @@ public class Class8352 {
       return var9;
    }
 
-   private static int method29270(Class7427 var0, String var1, int var2) {
+   private static int method29270(Font var0, String var1, int var2) {
       int var5 = 0;
       int var6 = 0;
 
@@ -66,7 +66,7 @@ public class Class8352 {
       return var5;
    }
 
-   private static int method29271(Class7427 var0, String var1, int var2, int var3, int var4) {
+   private static int method29271(Font var0, String var1, int var2, int var3, int var4) {
       int var7 = 0;
       int var8 = 0;
       int var9 = var2;

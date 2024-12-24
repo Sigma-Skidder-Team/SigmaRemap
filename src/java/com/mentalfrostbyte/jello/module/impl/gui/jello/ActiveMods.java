@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.EventRenderGUI;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
@@ -31,7 +31,7 @@ public class ActiveMods extends Module {
     public int field23613 = 0;
     public int field23614;
     public HashMap<Module, Animation> field23615 = new HashMap<Module, Animation>();
-    public ClientResource field23616 = ResourceRegistry.JelloLightFont20;
+    public TrueTypeFont field23616 = ResourceRegistry.JelloLightFont20;
     private final List<Module> field23612 = new ArrayList<Module>();
 
     public ActiveMods() {
@@ -132,7 +132,7 @@ public class ActiveMods extends Module {
                 int var20 = 10;
                 float var21 = 1;
                 int var6 = Minecraft.getInstance().mainWindow.getWidth();
-                ClientResource var8 = this.field23616;
+                TrueTypeFont var8 = this.field23616;
                 int var7 = var20 - 4;
                 if (this.field23616 == ResourceRegistry.JelloLightFont14) {
                     var20 -= 3;

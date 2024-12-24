@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -34,7 +34,7 @@ public class Class4350 extends Class4278 {
             (float)this.getXA(), (float)this.getYA(), (float)this.widthA, (float)(this.heightA - this.getYA()), 114.0F, var1
          );
          byte var4 = 30;
-         ClientResource var5 = ResourceRegistry.JelloLightFont18;
+         TrueTypeFont var5 = ResourceRegistry.JelloLightFont18;
          String var6 = System.getProperty("line.separator");
          String[] var7 = this.field20912.split("(?<=" + var6 + ")");
          int var8 = this.field21260;

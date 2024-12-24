@@ -21,10 +21,10 @@ public class Class9219 {
    public static int field42426 = 6;
    private static final int field42427 = 50;
    public static Class9219 field42428 = null;
-   public static Class7427 field42429;
+   public static Font field42429;
    private float field42430 = 1.0F;
    private float field42431 = 1.0F;
-   private Class7427 field42432;
+   private Font field42432;
    private Color field42433 = Color.field16442;
    public int field42434;
    public int field42435;
@@ -141,7 +141,7 @@ public class Class9219 {
    public void method34595() {
    }
 
-   public Class7427 method34596() {
+   public Font method34596() {
       return this.field42432;
    }
 
@@ -210,7 +210,7 @@ public class Class9219 {
       this.method34592();
    }
 
-   public void method34605(Class7427 var1) {
+   public void method34605(Font var1) {
       this.field42432 = var1;
    }
 

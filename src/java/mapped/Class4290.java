@@ -34,7 +34,7 @@ public class Class4290 extends Class4278 {
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
          && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
-         && !this.icoPanel.method13239(((JelloClickGUI)this.icoPanel).blurOverlay)) {
+         && !this.screen.method13239(((JelloClickGUI)this.screen).blurOverlay)) {
          this.field20788 = Class2059.field13416;
       }
 

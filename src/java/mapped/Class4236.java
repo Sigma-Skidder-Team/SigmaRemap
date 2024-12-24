@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
@@ -16,7 +16,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
    public boolean field20577 = false;
    public Animation field20578 = new Animation(160, 140, Direction.BACKWARDS);
 
-   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, ClientResource var10) {
+   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
@@ -101,11 +101,11 @@ public class Class4236 extends PNGIconButton implements Class4238 {
          );
       }
 
-      ClientResource font = this.getFont();
+      TrueTypeFont font = this.getFont();
       float var13 = 0.8F + var5 * 0.2F;
       if (var5 > 0.0F) {
          GL11.glPushMatrix();
-         String var14 = this.getTypedText() != null ? this.getTypedText() : this.field20891;
+         String var14 = this.getTypedText() != null ? this.getTypedText() : this.name;
          GL11.glTranslatef(
             (float)(this.getXA() + this.getWidthA() / 2 - font.getStringWidth(var14) / 2), (float)(this.getYA() + this.getHeightA() - 40), 0.0F
          );
@@ -124,7 +124,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
             (1.0F - var13) * (float)font.getStringWidth(var14) / 2.0F + 1.0F,
             40.0F,
             var14,
-            MultiUtilities.applyAlpha(this.method13307().method19405(), var5 * 0.6F * var1)
+            MultiUtilities.applyAlpha(this.getTextColor().method19405(), var5 * 0.6F * var1)
          );
          GL11.glPopMatrix();
       }

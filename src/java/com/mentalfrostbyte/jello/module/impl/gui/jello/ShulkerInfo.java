@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -134,7 +134,7 @@ public class ShulkerInfo extends Module {
     }
 
     public void method16674(double var1, double var3, double var5, Entity var7, float var8) {
-        ClientResource var11 = ResourceRegistry.JelloLightFont25;
+        TrueTypeFont var11 = ResourceRegistry.JelloLightFont25;
         String var12 = var7.getName().getUnformattedComponentText();
         float var13 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX());
         float var14 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY());

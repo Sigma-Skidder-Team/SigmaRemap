@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
@@ -431,15 +431,15 @@ public class RenderUtil {
       RenderSystem.disableBlend();
    }
 
-   public static void drawString(ClientResource var0, float var1, float var2, String var3, int var4) {
+   public static void drawString(TrueTypeFont var0, float var1, float var2, String var3, int var4) {
       method11441(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
    }
 
-   public static void method11440(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
+   public static void method11440(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6) {
       method11441(var0, var1, var2, var3, var4, var5, var6, false);
    }
 
-   public static void method11441(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
+   public static void method11441(TrueTypeFont var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
       RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;

@@ -127,7 +127,7 @@ public class Class4351 extends Class4278 {
             if (this.field21265.calcPercent() == 0.0F) {
                Client.getInstance().getModuleManager().getConfigurationManager().loadConfig(this.currentConfig);
                Client.getInstance().getSoundManager().play("switch");
-               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel().getIcoPanel().getIcoPanel();
+               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getScreen().getScreen().getScreen();
                var5x.method13222(() -> var5x.method13615());
 
                for (Module module : Client.getInstance().getModuleManager().getModuleMap().values()) {
@@ -168,7 +168,7 @@ public class Class4351 extends Class4278 {
    public void draw(float var1) {
       if (this.animation.calcPercent() == 1.0F && !this.field21272) {
          this.field21272 = true;
-         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui)this.getIcoPanel().getIcoPanel().getIcoPanel();
+         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui)this.getScreen().getScreen().getScreen();
          Client.getInstance().getModuleManager().getConfigurationManager().checkConfig(this.currentConfig);
          var4.method13222(() -> var4.method13615());
       }

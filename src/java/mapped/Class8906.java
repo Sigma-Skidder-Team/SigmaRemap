@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -74,7 +74,7 @@ public class Class8906 {
       return var6 + var1 + var7;
    }
 
-   public static int method32494(String var0, ClientResource var1, float var2, int var3, float var4) {
+   public static int method32494(String var0, TrueTypeFont var1, float var2, int var3, float var4) {
       int var7 = -1;
       int var8 = -1;
 
