@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
+import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 

@@ -33,6 +33,6 @@ public interface ITag<T> {
    }
 
    static <T> ITag<T> method24920(Set<T> var0) {
-      return Class7609.<T>method24926(var0);
+      return Tag.<T>method24926(var0);
    }
 }

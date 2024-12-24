@@ -356,7 +356,7 @@ public class CreativeScreen extends Class860<Class5820> {
       }
 
       ITagCollection<Item> var8 = ItemTags.method18561();
-      var8.method27137().stream().filter(var7).forEach(var2 -> {
+      var8.getRegisteredTags().stream().filter(var7).forEach(var2 -> {
          ITag var5x = this.field4785.put(var2, var8.get(var2));
       });
    }

@@ -289,12 +289,12 @@ public class Class8268 {
    }
 
    private CompletableFuture<Suggestions> method28853(SuggestionsBuilder var1, ITagCollection<Block> var2) {
-      return ISuggestionProvider.suggestIterable(var2.method27137(), var1.createOffset(this.field35552).add(var1));
+      return ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1.createOffset(this.field35552).add(var1));
    }
 
    private CompletableFuture<Suggestions> method28854(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (this.field35544) {
-         ISuggestionProvider.suggestIterable(var2.method27137(), var1, String.valueOf('#'));
+         ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1, String.valueOf('#'));
       }
 
       ISuggestionProvider.suggestIterable(Registry.BLOCK.method9190(), var1);

@@ -13,7 +13,7 @@ public final class Class7983<T> implements ITagCollection<T> {
 
    public Class7983(BiMap var1) {
       this.field34310 = var1;
-      this.field34309 = Class7609.method24925();
+      this.field34309 = Tag.getEmptyTag();
    }
 
    @Override
@@ -24,7 +24,7 @@ public final class Class7983<T> implements ITagCollection<T> {
    @Nullable
    @Override
    public ResourceLocation method27133(ITag<T> var1) {
-      return !(var1 instanceof Class7610) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((Class7610)var1).getName();
+      return !(var1 instanceof ITag$NamedTag) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((ITag$NamedTag)var1).getName();
    }
 
    @Override

@@ -12,6 +12,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.Item;
+import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.util.SharedConstants;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.LanguageMap;

@@ -131,6 +131,6 @@ public class FunctionManager {
    }
 
    public Iterable<ResourceLocation> method22832() {
-      return this.field31187.method1179().method27137();
+      return this.field31187.method1179().getRegisteredTags();
    }
 }

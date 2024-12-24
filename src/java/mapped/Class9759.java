@@ -104,12 +104,12 @@ public class Class9759 {
    }
 
    private CompletableFuture<Suggestions> method38361(SuggestionsBuilder var1, ITagCollection<Item> var2) {
-      return ISuggestionProvider.suggestIterable(var2.method27137(), var1.createOffset(this.field45661));
+      return ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1.createOffset(this.field45661));
    }
 
    private CompletableFuture<Suggestions> method38362(SuggestionsBuilder var1, ITagCollection<Item> var2) {
       if (this.field45656) {
-         ISuggestionProvider.suggestIterable(var2.method27137(), var1, String.valueOf('#'));
+         ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1, String.valueOf('#'));
       }
 
       return ISuggestionProvider.suggestIterable(Registry.ITEM.method9190(), var1);

@@ -5,11 +5,11 @@ import net.minecraft.util.ResourceLocation;
 import java.util.List;
 import java.util.function.Function;
 
-public class Class7611<T> implements Class7610<T> {
+public class TagRegistry$NamedTag<T> implements ITag$NamedTag<T> {
    private ITag<T> field32656;
    public final ResourceLocation field32657;
 
-   public Class7611(ResourceLocation var1) {
+   public TagRegistry$NamedTag(ResourceLocation var1) {
       this.field32657 = var1;
    }
 
@@ -26,7 +26,7 @@ public class Class7611<T> implements Class7610<T> {
       }
    }
 
-   public void method24931(Function<ResourceLocation, ITag<T>> var1) {
+   public void fetchTag(Function<ResourceLocation, ITag<T>> var1) {
       this.field32656 = (ITag<T>)var1.apply(this.field32657);
    }
 

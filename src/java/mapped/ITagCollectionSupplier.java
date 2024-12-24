@@ -6,11 +6,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.util.registry.Registry;
 
 public interface ITagCollectionSupplier {
    ITagCollectionSupplier field40418 = method32664(
-      ITagCollection.<Block>method27141(), ITagCollection.<Item>method27141(), ITagCollection.<Fluid>method27141(), ITagCollection.<EntityType<?>>method27141()
+      ITagCollection.<Block>getEmptyTagCollection(), ITagCollection.<Item>getEmptyTagCollection(), ITagCollection.<Fluid>getEmptyTagCollection(), ITagCollection.<EntityType<?>>getEmptyTagCollection()
    );
 
    ITagCollection<Block> method32657();

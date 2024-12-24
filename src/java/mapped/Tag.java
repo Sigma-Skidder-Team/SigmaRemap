@@ -5,24 +5,24 @@ import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Set;
 
-public class Class7609<T> implements ITag<T> {
+public class Tag<T> implements ITag<T> {
    private static String[] field32652;
    private final ImmutableList<T> field32653;
    private final Set<T> field32654;
    public final Class<?> field32655;
 
-   public Class7609(Set<T> var1, Class<?> var2) {
+   public Tag(Set<T> var1, Class<?> var2) {
       this.field32655 = var2;
       this.field32654 = var1;
       this.field32653 = ImmutableList.copyOf(var1);
    }
 
-   public static <T> Class7609<T> method24925() {
-      return new Class7609<T>(ImmutableSet.of(), Void.class);
+   public static <T> Tag<T> getEmptyTag() {
+      return new Tag<T>(ImmutableSet.of(), Void.class);
    }
 
-   public static <T> Class7609<T> method24926(Set<T> var0) {
-      return new Class7609<T>(var0, method24927(var0));
+   public static <T> Tag<T> method24926(Set<T> var0) {
+      return new Tag<T>(var0, method24927(var0));
    }
 
    @Override

@@ -38,7 +38,7 @@ public interface ITagCollection<T> {
       }
    }
 
-   default Collection<ResourceLocation> method27137() {
+   default Collection<ResourceLocation> getRegisteredTags() {
       return this.method27134().keySet();
    }
 
@@ -87,7 +87,7 @@ public interface ITagCollection<T> {
       return method27142(var4);
    }
 
-   static <T> ITagCollection<T> method27141() {
+   static <T> ITagCollection<T> getEmptyTagCollection() {
       return method27142(ImmutableBiMap.of());
    }
 

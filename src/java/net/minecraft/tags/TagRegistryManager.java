@@ -1,9 +1,9 @@
-package mapped;
+package net.minecraft.tags;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
-import net.minecraft.tags.BlockTags;
+import mapped.*;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
