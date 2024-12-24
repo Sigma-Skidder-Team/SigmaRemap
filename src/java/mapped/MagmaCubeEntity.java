@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class MagmaCubeEntity extends Class1108 {
+public class MagmaCubeEntity extends SlimeEntity {
    private static String[] field6086;
 
    public MagmaCubeEntity(EntityType<? extends MagmaCubeEntity> var1, World var2) {

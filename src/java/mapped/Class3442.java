@@ -34,7 +34,7 @@ public class Class3442 extends Block {
    }
 
    private void method12120(ServerWorld var1, BlockPos var2) {
-      Class1107 var5 = EntityType.SILVERFISH.create(var1);
+      SilverfishEntity var5 = EntityType.SILVERFISH.create(var1);
       var5.setLocationAndAngles((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5, 0.0F, 0.0F);
       var1.addEntity(var5);
       var5.method4239();

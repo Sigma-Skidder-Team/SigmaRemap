@@ -4,20 +4,20 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
-public class Class5675 extends Class5651<Class1108, Class2826<Class1108>> {
+public class Class5675 extends Class5651<SlimeEntity, Class2826<SlimeEntity>> {
    private static final ResourceLocation field25041 = new ResourceLocation("textures/entity/slime/slime.png");
 
    public Class5675(EntityRendererManager var1) {
-      super(var1, new Class2826<Class1108>(16), 0.25F);
-      this.addLayer(new Class247<Class1108>(this));
+      super(var1, new Class2826<SlimeEntity>(16), 0.25F);
+      this.addLayer(new Class247<SlimeEntity>(this));
    }
 
-   public void render(Class1108 entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(SlimeEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
       this.shadowSize = 0.25F * (float) entityIn.method5319();
       super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
    }
 
-   public void method17857(Class1108 var1, MatrixStack var2, float var3) {
+   public void method17857(SlimeEntity var1, MatrixStack var2, float var3) {
       float var6 = 0.999F;
       var2.scale(0.999F, 0.999F, 0.999F);
       var2.translate(0.0, 0.001F, 0.0);
@@ -27,7 +27,7 @@ public class Class5675 extends Class5651<Class1108, Class2826<Class1108>> {
       var2.scale(var9 * var7, 1.0F / var9 * var7, var9 * var7);
    }
 
-   public ResourceLocation method17843(Class1108 var1) {
+   public ResourceLocation method17843(SlimeEntity var1) {
       return field25041;
    }
 }

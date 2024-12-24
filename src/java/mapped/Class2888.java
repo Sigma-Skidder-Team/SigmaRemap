@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2888<T extends Class1070> extends Class2803<T> {
+public class Class2888<T extends StriderEntity> extends Class2803<T> {
    private static String[] field17891;
    private final ModelRenderer field17892;
    private final ModelRenderer field17893;
@@ -59,7 +59,7 @@ public class Class2888<T extends Class1070> extends Class2803<T> {
       this.field17894.method22670(this.field17900);
    }
 
-   public void setRotationAngles(Class1070 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(StriderEntity var1, float var2, float var3, float var4, float var5, float var6) {
       var3 = Math.min(0.25F, var3);
       if (var1.getPassengers().size() > 0) {
          this.field17894.rotateAngleX = 0.0F;

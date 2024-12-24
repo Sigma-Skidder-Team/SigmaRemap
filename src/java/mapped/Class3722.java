@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.item.Items;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3722<E extends Class1034> extends Class3676<E> {
+public class Class3722<E extends PiglinEntity> extends Class3676<E> {
    private static String[] field19807;
 
    public Class3722() {

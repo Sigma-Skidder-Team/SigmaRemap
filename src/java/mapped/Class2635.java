@@ -6,9 +6,9 @@ import net.minecraft.world.IWorldReader;
 
 public class Class2635 extends Class2628 {
    private static String[] field16953;
-   private final Class1088 field16954;
+   private final TurtleEntity field16954;
 
-   public Class2635(Class1088 var1, double var2) {
+   public Class2635(TurtleEntity var1, double var2) {
       super(var1, !var1.isChild() ? var2 : 2.0, 24);
       this.field16954 = var1;
       this.field16937 = -1;
@@ -24,7 +24,7 @@ public class Class2635 extends Class2628 {
       if (this.field16954.isChild() && !this.field16954.isInWater()) {
          return super.method10803();
       } else {
-         return !Class1088.method5058(this.field16954) && !this.field16954.isInWater() && !this.field16954.method5045() ? super.method10803() : false;
+         return !TurtleEntity.method5058(this.field16954) && !this.field16954.isInWater() && !this.field16954.method5045() ? super.method10803() : false;
       }
    }
 

@@ -139,8 +139,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<GuardianEntity> GUARDIAN = register(
       "guardian", Builder.<GuardianEntity>create(GuardianEntity::new, EntityClassification.MONSTER).size(0.85F, 0.85F).trackingRange(8)
    );
-   public static final EntityType<Class1091> HOGLIN = register(
-      "hoglin", Builder.<Class1091>create(Class1091::new, EntityClassification.MONSTER).size(1.3964844F, 1.4F).trackingRange(8)
+   public static final EntityType<HoglinEntity> HOGLIN = register(
+      "hoglin", Builder.<HoglinEntity>create(HoglinEntity::new, EntityClassification.MONSTER).size(1.3964844F, 1.4F).trackingRange(8)
    );
    public static final EntityType<Class1074> HORSE = register(
       "horse", Builder.<Class1074>create(Class1074::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F).trackingRange(10)
@@ -225,8 +225,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1072> PIG = register(
       "pig", Builder.<Class1072>create(Class1072::new, EntityClassification.CREATURE).size(0.9F, 0.9F).trackingRange(10)
    );
-   public static final EntityType<Class1034> PIGLIN = register(
-      "piglin", Builder.<Class1034>create(Class1034::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
+   public static final EntityType<PiglinEntity> PIGLIN = register(
+      "piglin", Builder.<PiglinEntity>create(PiglinEntity::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
    );
    public static final EntityType<Class1036> PIGLIN_BRUTE = register(
       "piglin_brute", Builder.<Class1036>create(Class1036::new, EntityClassification.MONSTER).size(0.6F, 1.95F).trackingRange(8)
@@ -234,8 +234,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1024> PILLAGER = register(
       "pillager", Builder.<Class1024>create(Class1024::new, EntityClassification.MONSTER).method32306().size(0.6F, 1.95F).trackingRange(8)
    );
-   public static final EntityType<Class1096> POLAR_BEAR = register(
-      "polar_bear", Builder.<Class1096>create(Class1096::new, EntityClassification.CREATURE).size(1.4F, 1.4F).trackingRange(10)
+   public static final EntityType<PolarBearEntity> POLAR_BEAR = register(
+      "polar_bear", Builder.<PolarBearEntity>create(PolarBearEntity::new, EntityClassification.CREATURE).size(1.4F, 1.4F).trackingRange(10)
    );
    public static final EntityType<Class1004> TNT = register(
       "tnt", Builder.<Class1004>create(Class1004::new, EntityClassification.MISC).immuneToFire().size(0.98F, 0.98F).trackingRange(10).method32308(10)
@@ -243,8 +243,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1054> PUFFERFISH = register(
       "pufferfish", Builder.<Class1054>create(Class1054::new, EntityClassification.WATER_AMBIENT).size(0.7F, 0.7F).trackingRange(4)
    );
-   public static final EntityType<Class1094> RABBIT = register(
-      "rabbit", Builder.<Class1094>create(Class1094::new, EntityClassification.CREATURE).size(0.4F, 0.5F).trackingRange(8)
+   public static final EntityType<RabbitEntity> RABBIT = register(
+      "rabbit", Builder.<RabbitEntity>create(RabbitEntity::new, EntityClassification.CREATURE).size(0.4F, 0.5F).trackingRange(8)
    );
    public static final EntityType<Class1029> RAVAGER = register(
       "ravager", Builder.<Class1029>create(Class1029::new, EntityClassification.MONSTER).size(1.95F, 2.2F).trackingRange(10)
@@ -261,8 +261,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class905> SHULKER_BULLET = register(
       "shulker_bullet", Builder.<Class905>create(Class905::new, EntityClassification.MISC).size(0.3125F, 0.3125F).trackingRange(8)
    );
-   public static final EntityType<Class1107> SILVERFISH = register(
-      "silverfish", Builder.<Class1107>create(Class1107::new, EntityClassification.MONSTER).size(0.4F, 0.3F).trackingRange(8)
+   public static final EntityType<SilverfishEntity> SILVERFISH = register(
+      "silverfish", Builder.<SilverfishEntity>create(SilverfishEntity::new, EntityClassification.MONSTER).size(0.4F, 0.3F).trackingRange(8)
    );
    public static final EntityType<Class1085> SKELETON = register(
       "skeleton", Builder.<Class1085>create(Class1085::new, EntityClassification.MONSTER).size(0.6F, 1.99F).trackingRange(8)
@@ -270,8 +270,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1076> SKELETON_HORSE = register(
       "skeleton_horse", Builder.<Class1076>create(Class1076::new, EntityClassification.CREATURE).size(1.3964844F, 1.6F).trackingRange(10)
    );
-   public static final EntityType<Class1108> SLIME = register(
-      "slime", Builder.<Class1108>create(Class1108::new, EntityClassification.MONSTER).size(2.04F, 2.04F).trackingRange(10)
+   public static final EntityType<SlimeEntity> SLIME = register(
+      "slime", Builder.<SlimeEntity>create(SlimeEntity::new, EntityClassification.MONSTER).size(2.04F, 2.04F).trackingRange(10)
    );
    public static final EntityType<Class900> SMALL_FIREBALL = register(
       "small_fireball", Builder.<Class900>create(Class900::new, EntityClassification.MISC).size(0.3125F, 0.3125F).trackingRange(4).method32308(10)
@@ -291,11 +291,11 @@ public class EntityType<T extends Entity> {
    public static final EntityType<SquidEntity> SQUID = register(
       "squid", Builder.<SquidEntity>create(SquidEntity::new, EntityClassification.WATER_CREATURE).size(0.8F, 0.8F).trackingRange(8)
    );
-   public static final EntityType<Class1083> STRAY = register(
-      "stray", Builder.<Class1083>create(Class1083::new, EntityClassification.MONSTER).size(0.6F, 1.99F).trackingRange(8)
+   public static final EntityType<StrayEntity> STRAY = register(
+      "stray", Builder.<StrayEntity>create(StrayEntity::new, EntityClassification.MONSTER).size(0.6F, 1.99F).trackingRange(8)
    );
-   public static final EntityType<Class1070> STRIDER = register(
-      "strider", Builder.<Class1070>create(Class1070::new, EntityClassification.CREATURE).immuneToFire().size(0.9F, 1.7F).trackingRange(10)
+   public static final EntityType<StriderEntity> STRIDER = register(
+      "strider", Builder.<StriderEntity>create(StriderEntity::new, EntityClassification.CREATURE).immuneToFire().size(0.9F, 1.7F).trackingRange(10)
    );
    public static final EntityType<Class892> EGG = register(
       "egg", Builder.<Class892>create(Class892::new, EntityClassification.MISC).size(0.25F, 0.25F).trackingRange(4).method32308(10)
@@ -318,8 +318,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1052> TROPICAL_FISH = register(
       "tropical_fish", Builder.<Class1052>create(Class1052::new, EntityClassification.WATER_AMBIENT).size(0.5F, 0.4F).trackingRange(4)
    );
-   public static final EntityType<Class1088> TURTLE = register(
-      "turtle", Builder.<Class1088>create(Class1088::new, EntityClassification.CREATURE).size(1.2F, 0.4F).trackingRange(10)
+   public static final EntityType<TurtleEntity> TURTLE = register(
+      "turtle", Builder.<TurtleEntity>create(TurtleEntity::new, EntityClassification.CREATURE).size(1.2F, 0.4F).trackingRange(10)
    );
    public static final EntityType<Class1100> VEX = register(
       "vex", Builder.<Class1100>create(Class1100::new, EntityClassification.MONSTER).immuneToFire().size(0.4F, 0.8F).trackingRange(8)

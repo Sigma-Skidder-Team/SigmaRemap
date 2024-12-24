@@ -5,7 +5,7 @@ import com.google.common.collect.Iterables;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2873<T extends Class1088> extends Class2866<T> {
+public class Class2873<T extends TurtleEntity> extends Class2866<T> {
    private static String[] field17771;
    private final ModelRenderer field17787;
 

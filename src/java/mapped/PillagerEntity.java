@@ -14,19 +14,19 @@ import net.minecraft.world.raid.Raid;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public abstract class Class1028 extends MonsterEntity {
+public abstract class PillagerEntity extends MonsterEntity {
    private BlockPos field5724;
    private boolean field5725;
    private boolean field5726;
 
-   public Class1028(EntityType<? extends Class1028> var1, World var2) {
+   public PillagerEntity(EntityType<? extends PillagerEntity> var1, World var2) {
       super(var1, var2);
    }
 
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(4, new Class2723<Class1028>(this, 0.7, 0.595));
+      this.field5600.addGoal(4, new Class2723<PillagerEntity>(this, 0.7, 0.595));
    }
 
    @Override
@@ -83,7 +83,7 @@ public abstract class Class1028 extends MonsterEntity {
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method4572(EntityType<? extends Class1028> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4572(EntityType<? extends PillagerEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.getLightFor(LightType.BLOCK, var3) <= 8 ? canMonsterSpawn(var0, var1, var2, var3, var4) : false;
    }
 

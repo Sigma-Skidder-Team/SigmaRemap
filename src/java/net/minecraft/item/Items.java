@@ -1236,7 +1236,7 @@ public class Items {
       "carrot_on_a_stick", new Class3317<Class1072>(new Item.Properties().method17777(25).method17779(ItemGroup.field31668), EntityType.PIG, 7)
    );
    public static final Item field38065 = method30157(
-      "warped_fungus_on_a_stick", new Class3317<Class1070>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.STRIDER, 1)
+      "warped_fungus_on_a_stick", new Class3317<StriderEntity>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.STRIDER, 1)
    );
    public static final Item field38066 = method30157(
       "nether_star", new Class3332(new Item.Properties().method17779(ItemGroup.field31675).method17780(Class1978.field12886))

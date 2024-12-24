@@ -47,7 +47,7 @@ public class Class1095 extends AnimalEntity {
          return var3.getLastAttackedEntity() != null && var3.getLastAttackedEntityTime() < var3.ticksExisted + 600;
       }
    };
-   private static final Predicate<Entity> field5999 = var0 -> var0 instanceof Class1089 || var0 instanceof Class1094;
+   private static final Predicate<Entity> field5999 = var0 -> var0 instanceof Class1089 || var0 instanceof RabbitEntity;
    private static final Predicate<Entity> field6000 = var0 -> !var0.isDiscrete() && EntityPredicates.field34761.test(var0);
    private Class2595 field6001;
    private Class2595 field6002;
@@ -78,8 +78,8 @@ public class Class1095 extends AnimalEntity {
 
    @Override
    public void method4219() {
-      this.field6001 = new NearestAttackableTargetGoal<AnimalEntity>(this, AnimalEntity.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
-      this.field6002 = new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963);
+      this.field6001 = new NearestAttackableTargetGoal<AnimalEntity>(this, AnimalEntity.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof RabbitEntity);
+      this.field6002 = new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, false, false, TurtleEntity.field5963);
       this.field6003 = new NearestAttackableTargetGoal<AbstractFishEntity>(this, AbstractFishEntity.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
       this.field5600.addGoal(0, new Class2604(this));
       this.field5600.addGoal(1, new Class2698(this));
@@ -94,7 +94,7 @@ public class Class1095 extends AnimalEntity {
          );
       this.field5600
          .addGoal(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.method5133()));
-      this.field5600.addGoal(4, new Class2770<Class1096>(this, Class1096.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
+      this.field5600.addGoal(4, new Class2770<PolarBearEntity>(this, PolarBearEntity.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
       this.field5600.addGoal(5, new Class2729(this));
       this.field5600.addGoal(6, new Class2755(this));
       this.field5600.addGoal(6, new Class2641(this, 1.25));

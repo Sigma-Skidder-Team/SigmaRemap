@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 public class Class6998 extends Class6997 {
    private static String[] field30273;
 
-   public Class6998(Class1088 var1, World var2) {
+   public Class6998(TurtleEntity var1, World var2) {
       super(var1, var2);
    }
 
@@ -24,9 +24,9 @@ public class Class6998 extends Class6997 {
 
    @Override
    public boolean method21672(BlockPos var1) {
-      if (this.field30243 instanceof Class1088) {
-         Class1088 var4 = (Class1088)this.field30243;
-         if (Class1088.method5064(var4)) {
+      if (this.field30243 instanceof TurtleEntity) {
+         TurtleEntity var4 = (TurtleEntity)this.field30243;
+         if (TurtleEntity.method5064(var4)) {
             return this.field30244.getBlockState(var1).isIn(Blocks.WATER);
          }
       }

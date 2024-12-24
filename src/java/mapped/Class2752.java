@@ -2,9 +2,9 @@ package mapped;
 
 public class Class2752 extends Class2747 {
    private static String[] field17280;
-   public final Class1096 field17290;
+   public final PolarBearEntity field17290;
 
-   public Class2752(Class1096 var1) {
+   public Class2752(PolarBearEntity var1) {
       super(var1, 2.0);
       this.field17290 = var1;
    }

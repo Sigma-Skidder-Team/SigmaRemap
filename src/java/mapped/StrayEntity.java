@@ -12,14 +12,14 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1083 extends Class1082 {
+public class StrayEntity extends Class1082 {
    private static String[] field5948;
 
-   public Class1083(EntityType<? extends Class1083> var1, World var2) {
+   public StrayEntity(EntityType<? extends StrayEntity> var1, World var2) {
       super(var1, var2);
    }
 
-   public static boolean method5033(EntityType<Class1083> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5033(EntityType<StrayEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
       return canMonsterSpawnInLight(var0, var1, var2, var3, var4) && (var2 == Class2202.field14393 || var1.method7022(var3));
    }
 

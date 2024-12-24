@@ -48,7 +48,7 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
       this.field5601.addGoal(1, new HurtByTargetGoal(this));
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    public static MutableAttribute method5029() {

@@ -4,11 +4,11 @@ import java.util.EnumSet;
 
 public class Class2621 extends Class2595 {
    private static String[] field16907;
-   private final Class1108 field16908;
+   private final SlimeEntity field16908;
    private float field16909;
    private int field16910;
 
-   public Class2621(Class1108 var1) {
+   public Class2621(SlimeEntity var1) {
       this.field16908 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658));
    }

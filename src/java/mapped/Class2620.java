@@ -7,10 +7,10 @@ import java.util.EnumSet;
 
 public class Class2620 extends Class2595 {
    private static String[] field16904;
-   private final Class1108 field16905;
+   private final SlimeEntity field16905;
    private int field16906;
 
-   public Class2620(Class1108 var1) {
+   public Class2620(SlimeEntity var1) {
       this.field16905 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658));
    }

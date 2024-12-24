@@ -72,7 +72,7 @@ public class ZombieEntity extends MonsterEntity {
       this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
       this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
-      this.field5601.addGoal(5, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+      this.field5601.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    public static MutableAttribute method4653() {

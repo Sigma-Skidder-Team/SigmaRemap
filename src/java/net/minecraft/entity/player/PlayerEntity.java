@@ -1513,7 +1513,7 @@ public abstract class PlayerEntity extends LivingEntity {
                if (!(var10 instanceof BoatEntity)) {
                   if (!(var10 instanceof Class1072)) {
                      if (!(var10 instanceof AbstractHorseEntity)) {
-                        if (var10 instanceof Class1070) {
+                        if (var10 instanceof StriderEntity) {
                            this.addStat(Stats.field40124, var9);
                         }
                      } else {

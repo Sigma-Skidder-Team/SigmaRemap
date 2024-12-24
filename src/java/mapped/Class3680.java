@@ -5,7 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3680<E extends Class1034> extends Class3676<E> {
+public class Class3680<E extends PiglinEntity> extends Class3676<E> {
    private static String[] field19692;
 
    public Class3680() {

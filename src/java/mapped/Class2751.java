@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 public class Class2751 extends Class2747 {
    private static String[] field17280;
 
-   public Class2751(Class1088 var1, double var2) {
+   public Class2751(TurtleEntity var1, double var2) {
       super(var1, var2);
    }
 

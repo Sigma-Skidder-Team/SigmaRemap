@@ -30,12 +30,12 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1091 extends AnimalEntity implements IMob, Class1092 {
-   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(Class1091.class, DataSerializers.field33398);
+public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
+   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(HoglinEntity.class, DataSerializers.field33398);
    private int field5977;
    private int field5978 = 0;
    private boolean field5979 = false;
-   public static final ImmutableList<? extends Class7963<? extends Class7882<? super Class1091>>> field5980 = ImmutableList.of(
+   public static final ImmutableList<? extends Class7963<? extends Class7882<? super HoglinEntity>>> field5980 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240, Class7963.field34250, Class7963.field34249
    );
    public static final ImmutableList<? extends Class8830<?>> field5981 = ImmutableList.of(
@@ -53,7 +53,7 @@ public class Class1091 extends AnimalEntity implements IMob, Class1092 {
       Class8830.field39864
    );
 
-   public Class1091(EntityType<? extends Class1091> var1, World var2) {
+   public HoglinEntity(EntityType<? extends HoglinEntity> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -107,8 +107,8 @@ public class Class1091 extends AnimalEntity implements IMob, Class1092 {
    }
 
    @Override
-   public Class6971<Class1091> getBrainCodec() {
-      return Brain.<Class1091>method21400(field5981, field5980);
+   public Class6971<HoglinEntity> getBrainCodec() {
+      return Brain.<HoglinEntity>method21400(field5981, field5980);
    }
 
    @Override
@@ -117,8 +117,8 @@ public class Class1091 extends AnimalEntity implements IMob, Class1092 {
    }
 
    @Override
-   public Brain<Class1091> getBrain() {
-      return (Brain<Class1091>)super.getBrain();
+   public Brain<HoglinEntity> getBrain() {
+      return (Brain<HoglinEntity>)super.getBrain();
    }
 
    @Override
@@ -158,7 +158,7 @@ public class Class1091 extends AnimalEntity implements IMob, Class1092 {
       }
    }
 
-   public static boolean method5081(EntityType<Class1091> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5081(EntityType<HoglinEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
    }
 
@@ -292,7 +292,7 @@ public class Class1091 extends AnimalEntity implements IMob, Class1092 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      Class1091 var5 = EntityType.HOGLIN.create(var1);
+      HoglinEntity var5 = EntityType.HOGLIN.create(var1);
       if (var5 != null) {
          var5.method4278();
       }

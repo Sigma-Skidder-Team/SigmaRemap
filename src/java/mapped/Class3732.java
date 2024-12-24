@@ -5,7 +5,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
-public class Class3732<E extends Class1034> extends Class3676<E> {
+public class Class3732<E extends PiglinEntity> extends Class3676<E> {
    private static String[] field19842;
    private final int field19843;
    private final int field19844;

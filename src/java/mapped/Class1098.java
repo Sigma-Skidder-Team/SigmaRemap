@@ -74,8 +74,8 @@ public class Class1098 extends TameableEntity {
       this.field5600.addGoal(10, new Class2785(this, 0.8));
       this.field5600.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.field5600.addGoal(12, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.addGoal(1, new Class2716<Class1094>(this, Class1094.class, false, (Predicate<LivingEntity>)null));
-      this.field5601.addGoal(1, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
+      this.field5601.addGoal(1, new Class2716<RabbitEntity>(this, RabbitEntity.class, false, (Predicate<LivingEntity>)null));
+      this.field5601.addGoal(1, new Class2716<TurtleEntity>(this, TurtleEntity.class, false, TurtleEntity.field5963));
    }
 
    public int method5250() {

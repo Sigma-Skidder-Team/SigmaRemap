@@ -4,9 +4,9 @@ import net.minecraft.entity.LivingEntity;
 
 public class Class2658 extends Class2647 {
    private static String[] field16989;
-   public final Class1096 field17010;
+   public final PolarBearEntity field17010;
 
-   public Class2658(Class1096 var1) {
+   public Class2658(PolarBearEntity var1) {
       super(var1, 1.25, true);
       this.field17010 = var1;
    }

@@ -101,7 +101,7 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
    }
 
    public void func_230486_a_(T var1, float var2) {
-      if (this.swingProgress > 0.0F && var1 instanceof Class1034 && ((Class1034)var1).method4622() == Class2172.field14259) {
+      if (this.swingProgress > 0.0F && var1 instanceof PiglinEntity && ((PiglinEntity)var1).method4622() == Class2172.field14259) {
          ModelHelper.method27107(this.bipedRightArm, this.bipedLeftArm, var1, this.swingProgress, var2);
       } else {
          super.func_230486_a_((T)var1, var2);

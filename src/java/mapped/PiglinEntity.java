@@ -32,15 +32,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1034 extends Class1035 implements Class1023 {
-   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
-   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
+public class PiglinEntity extends Class1035 implements Class1023 {
+   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(PiglinEntity.class, DataSerializers.field33398);
    private static final UUID field5744 = UUID.fromString("766bfa64-11f3-11ea-8d71-362b9e155667");
    private static final AttributeModifier field5745 = new AttributeModifier(field5744, "Baby speed boost", 0.2F, AttributeModifier.Operation.field13353);
    private final Class927 field5746 = new Class927(8);
    private boolean field5747 = false;
-   public static final ImmutableList<Class7963<? extends Class7882<? super Class1034>>> field5748 = ImmutableList.of(
+   public static final ImmutableList<Class7963<? extends Class7882<? super PiglinEntity>>> field5748 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240, Class7963.field34238, Class7963.field34242, Class7963.field34247
    );
    public static final ImmutableList<Class8830<?>> field5749 = ImmutableList.of(
@@ -86,7 +86,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       }
    );
 
-   public Class1034(EntityType<? extends Class1035> var1, World var2) {
+   public PiglinEntity(EntityType<? extends Class1035> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -147,7 +147,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
-   public static boolean method4615(EntityType<Class1034> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4615(EntityType<PiglinEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
    }
 
@@ -197,8 +197,8 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public Class6971<Class1034> getBrainCodec() {
-      return Brain.<Class1034>method21400(field5749, field5748);
+   public Class6971<PiglinEntity> getBrainCodec() {
+      return Brain.<PiglinEntity>method21400(field5749, field5748);
    }
 
    @Override
@@ -207,8 +207,8 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public Brain<Class1034> getBrain() {
-      return (Brain<Class1034>)super.getBrain();
+   public Brain<PiglinEntity> getBrain() {
+      return (Brain<PiglinEntity>)super.getBrain();
    }
 
    @Override

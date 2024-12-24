@@ -34,8 +34,8 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1094 extends AnimalEntity {
-   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>createKey(Class1094.class, DataSerializers.VARINT);
+public class RabbitEntity extends AnimalEntity {
+   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>createKey(RabbitEntity.class, DataSerializers.VARINT);
    private static final ResourceLocation field5987 = new ResourceLocation("killer_bunny");
    private int field5988;
    private int field5989;
@@ -43,7 +43,7 @@ public class Class1094 extends AnimalEntity {
    private int field5991;
    private int field5992;
 
-   public Class1094(EntityType<? extends Class1094> var1, World var2) {
+   public RabbitEntity(EntityType<? extends RabbitEntity> var1, World var2) {
       super(var1, var2);
       this.field5597 = new Class7955(this, this);
       this.field5596 = new Class6840(this);
@@ -280,12 +280,12 @@ public class Class1094 extends AnimalEntity {
       return var1 == Items.field38052 || var1 == Items.field38057 || var1 == Blocks.DANDELION.asItem();
    }
 
-   public Class1094 method4389(ServerWorld var1, Class1045 var2) {
-      Class1094 var5 = EntityType.RABBIT.create(var1);
+   public RabbitEntity method4389(ServerWorld var1, Class1045 var2) {
+      RabbitEntity var5 = EntityType.RABBIT.create(var1);
       int var6 = this.method5116(var1);
       if (this.rand.nextInt(20) != 0) {
-         if (var2 instanceof Class1094 && this.rand.nextBoolean()) {
-            var6 = ((Class1094)var2).method5114();
+         if (var2 instanceof RabbitEntity && this.rand.nextBoolean()) {
+            var6 = ((RabbitEntity)var2).method5114();
          } else {
             var6 = this.method5114();
          }
@@ -347,7 +347,7 @@ public class Class1094 extends AnimalEntity {
       }
    }
 
-   public static boolean method5117(EntityType<Class1094> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5117(EntityType<RabbitEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (var7.isIn(Blocks.GRASS_BLOCK) || var7.isIn(Blocks.SNOW) || var7.isIn(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;
@@ -374,17 +374,17 @@ public class Class1094 extends AnimalEntity {
    }
 
    // $VF: synthetic method
-   public static Class7956 method5119(Class1094 var0) {
+   public static Class7956 method5119(RabbitEntity var0) {
       return var0.field5597;
    }
 
    // $VF: synthetic method
-   public static boolean method5120(Class1094 var0) {
+   public static boolean method5120(RabbitEntity var0) {
       return var0.method5118();
    }
 
    // $VF: synthetic method
-   public static int method5121(Class1094 var0, int var1) {
+   public static int method5121(RabbitEntity var0, int var1) {
       return var0.field5992 = var1;
    }
 }

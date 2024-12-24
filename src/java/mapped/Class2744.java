@@ -14,7 +14,7 @@ public class Class2744 extends Class2736 {
    private Direction field17271;
    private boolean field17272;
 
-   public Class2744(Class1107 var1) {
+   public Class2744(SilverfishEntity var1) {
       super(var1, 1.0, 10);
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }

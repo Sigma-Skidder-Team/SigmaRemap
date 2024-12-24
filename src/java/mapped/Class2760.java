@@ -6,12 +6,12 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2760 extends Class2595 {
    private static String[] field17318;
-   private final Class1088 field17319;
+   private final TurtleEntity field17319;
    private final double field17320;
    private boolean field17321;
    private int field17322;
 
-   public Class2760(Class1088 var1, double var2) {
+   public Class2760(TurtleEntity var1, double var2) {
       this.field17319 = var1;
       this.field17320 = var2;
    }
@@ -21,7 +21,7 @@ public class Class2760 extends Class2595 {
       if (!this.field17319.isChild()) {
          if (!this.field17319.method5045()) {
             return this.field17319.getRNG().nextInt(700) == 0
-               ? !Class1088.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 64.0)
+               ? !TurtleEntity.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 64.0)
                : false;
          } else {
             return true;
@@ -33,24 +33,24 @@ public class Class2760 extends Class2595 {
 
    @Override
    public void method10804() {
-      Class1088.method5057(this.field17319, true);
+      TurtleEntity.method5057(this.field17319, true);
       this.field17321 = false;
       this.field17322 = 0;
    }
 
    @Override
    public void method10807() {
-      Class1088.method5057(this.field17319, false);
+      TurtleEntity.method5057(this.field17319, false);
    }
 
    @Override
    public boolean method10806() {
-      return !Class1088.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 7.0) && !this.field17321 && this.field17322 <= 600;
+      return !TurtleEntity.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 7.0) && !this.field17321 && this.field17322 <= 600;
    }
 
    @Override
    public void method10805() {
-      BlockPos var3 = Class1088.method5056(this.field17319);
+      BlockPos var3 = TurtleEntity.method5056(this.field17319);
       boolean var4 = var3.method8317(this.field17319.getPositionVec(), 16.0);
       if (var4) {
          this.field17322++;
