@@ -2,16 +2,16 @@ package mapped;
 
 import java.io.IOException;
 
-public final class Class1723 implements Class1716 {
+public final class Class1723 implements Sink {
    private static String[] field9396;
    private static final long field9397 = 16384L;
    private final Class1734 field9398;
    public boolean field9399;
    public boolean field9400;
-   public static final boolean field9401 = !Class9698.class.desiredAssertionStatus();
-   public final Class9698 field9402;
+   public static final boolean field9401 = !FramedStream.class.desiredAssertionStatus();
+   public final FramedStream field9402;
 
-   public Class1723(Class9698 var1) {
+   public Class1723(FramedStream var1) {
       this.field9402 = var1;
       this.field9398 = new Class1734();
    }
@@ -35,7 +35,7 @@ public final class Class1723 implements Class1716 {
          this.field9402.field45339.method15219();
 
          try {
-            while (this.field9402.field45330 <= 0L && !this.field9400 && !this.field9399 && this.field9402.field45340 == null) {
+            while (this.field9402.bytesLeftInWriteWindow <= 0L && !this.field9400 && !this.field9399 && this.field9402.field45340 == null) {
                this.field9402.method37998();
             }
          } finally {
@@ -43,14 +43,14 @@ public final class Class1723 implements Class1716 {
          }
 
          this.field9402.method37997();
-         var6 = Math.min(this.field9402.field45330, this.field9398.method7582());
-         this.field9402.field45330 -= var6;
+         var6 = Math.min(this.field9402.bytesLeftInWriteWindow, this.field9398.method7582());
+         this.field9402.bytesLeftInWriteWindow -= var6;
       }
 
       this.field9402.field45339.method15219();
 
       try {
-         this.field9402.field45332.method7714(this.field9402.field45331, var1 && var6 == this.field9398.method7582(), this.field9398, var6);
+         this.field9402.connection.method7714(this.field9402.id, var1 && var6 == this.field9398.method7582(), this.field9398, var6);
       } finally {
          this.field9402.field45339.method15231();
       }
@@ -67,7 +67,7 @@ public final class Class1723 implements Class1716 {
 
          while (this.field9398.method7582() > 0L) {
             this.method7548(false);
-            this.field9402.field45332.method7723();
+            this.field9402.connection.method7723();
          }
       }
    }
@@ -94,7 +94,7 @@ public final class Class1723 implements Class1716 {
                   this.method7548(true);
                }
             } else {
-               this.field9402.field45332.method7714(this.field9402.field45331, true, null, 0L);
+               this.field9402.connection.method7714(this.field9402.id, true, null, 0L);
             }
          }
 
@@ -102,7 +102,7 @@ public final class Class1723 implements Class1716 {
             this.field9399 = true;
          }
 
-         this.field9402.field45332.method7723();
+         this.field9402.connection.method7723();
          this.field9402.method37995();
       }
    }

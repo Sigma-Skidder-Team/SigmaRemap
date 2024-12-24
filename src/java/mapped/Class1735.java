@@ -52,7 +52,7 @@ public interface Class1735 extends Class1737 {
 
    void method7610(Class1734 var1, long var2) throws IOException;
 
-   long method7611(Class1716 var1) throws IOException;
+   long method7611(Sink var1) throws IOException;
 
    String method7612() throws IOException;
 

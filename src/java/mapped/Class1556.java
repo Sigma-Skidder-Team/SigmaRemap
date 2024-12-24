@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Class1556 extends Class1555 implements Class1557 {
    public final Class1791 field8439;
-   public final Class1767 field8440;
+   public final FramedConnection field8440;
 
-   public Class1556(Class1767 var1, Class1791 var2) {
+   public Class1556(FramedConnection var1, Class1791 var2) {
       super("OkHttp %s", var1.field9558);
       this.field8440 = var1;
       this.field8439 = var2;
@@ -42,7 +42,7 @@ public class Class1556 extends Class1555 implements Class1557 {
    @Override
    public void method6473(boolean var1, int var2, Class1735 var3, int var4) throws IOException {
       if (!this.field8440.method7729(var2)) {
-         Class9698 var7 = this.field8440.method7707(var2);
+         FramedStream var7 = this.field8440.method7707(var2);
          if (var7 != null) {
             var7.method37992(var3, var4);
             if (var1) {
@@ -58,11 +58,11 @@ public class Class1556 extends Class1555 implements Class1557 {
    }
 
    @Override
-   public void method6474(boolean var1, int var2, int var3, List<Class8350> var4) {
+   public void method6474(boolean var1, int var2, int var3, List<Header> var4) {
       if (this.field8440.method7729(var2)) {
          this.field8440.method7731(var2, var4, var1);
       } else {
-         Class9698 var8;
+         FramedStream var8;
          synchronized (this.field8440) {
             if (this.field8440.field9561) {
                return;
@@ -78,10 +78,10 @@ public class Class1556 extends Class1555 implements Class1557 {
                   return;
                }
 
-               Class9698 var9 = new Class9698(var2, this.field8440, false, var1, var4);
+               FramedStream var9 = new FramedStream(var2, this.field8440, false, var1, var4);
                this.field8440.field9559 = var2;
                this.field8440.field9557.put(var2, var9);
-               Class1767.field9554.execute(new Class1565(this, "OkHttp %s stream %d", new Object[]{this.field8440.field9558, var2}, var9));
+               FramedConnection.field9554.execute(new Class1565(this, "OkHttp %s stream %d", new Object[]{this.field8440.field9558, var2}, var9));
                return;
             }
          }
@@ -96,7 +96,7 @@ public class Class1556 extends Class1555 implements Class1557 {
    @Override
    public void method6475(int var1, Class2077 var2) {
       if (!this.field8440.method7729(var1)) {
-         Class9698 var5 = this.field8440.method7708(var1);
+         FramedStream var5 = this.field8440.method7708(var1);
          if (var5 != null) {
             var5.method37994(var2);
          }
@@ -108,7 +108,7 @@ public class Class1556 extends Class1555 implements Class1557 {
    @Override
    public void method6476(boolean var1, Class8702 var2) {
       long var5 = 0L;
-      Class9698[] var7 = null;
+      FramedStream[] var7 = null;
       synchronized (this.field8440) {
          int var9 = this.field8440.field9570.method31385();
          if (var1) {
@@ -126,15 +126,15 @@ public class Class1556 extends Class1555 implements Class1557 {
             }
 
             if (!this.field8440.field9557.isEmpty()) {
-               var7 = this.field8440.field9557.values().<Class9698>toArray(new Class9698[this.field8440.field9557.size()]);
+               var7 = this.field8440.field9557.values().<FramedStream>toArray(new FramedStream[this.field8440.field9557.size()]);
             }
          }
 
-         Class1767.field9554.execute(new Class1567(this, "OkHttp %s settings", this.field8440.field9558));
+         FramedConnection.field9554.execute(new Class1567(this, "OkHttp %s settings", this.field8440.field9558));
       }
 
       if (var7 != null && var5 != 0L) {
-         for (Class9698 var11 : var7) {
+         for (FramedStream var11 : var7) {
             synchronized (var11) {
                var11.method37996(var5);
             }
@@ -143,7 +143,7 @@ public class Class1556 extends Class1555 implements Class1557 {
    }
 
    private void method6477(Class8702 var1) {
-      Class1767.field9554.execute(new Class1558(this, "OkHttp %s ACK Settings", new Object[]{this.field8440.field9558}, var1));
+      FramedConnection.field9554.execute(new Class1558(this, "OkHttp %s ACK Settings", new Object[]{this.field8440.field9558}, var1));
    }
 
    @Override
@@ -167,13 +167,13 @@ public class Class1556 extends Class1555 implements Class1557 {
       if (var3.method8458() > 0) {
       }
 
-      Class9698[] var7;
+      FramedStream[] var7;
       synchronized (this.field8440) {
-         var7 = this.field8440.field9557.values().<Class9698>toArray(new Class9698[this.field8440.field9557.size()]);
+         var7 = this.field8440.field9557.values().<FramedStream>toArray(new FramedStream[this.field8440.field9557.size()]);
          this.field8440.field9561 = true;
       }
 
-      for (Class9698 var10 : var7) {
+      for (FramedStream var10 : var7) {
          if (var10.method37976() > var1 && var10.method37978()) {
             var10.method37994(Class2077.field13531);
             this.field8440.method7708(var10.method37976());
@@ -189,7 +189,7 @@ public class Class1556 extends Class1555 implements Class1557 {
             this.field8440.notifyAll();
          }
       } else {
-         Class9698 var11 = this.field8440.method7707(var1);
+         FramedStream var11 = this.field8440.method7707(var1);
          if (var11 != null) {
             synchronized (var11) {
                var11.method37996(var2);
@@ -203,7 +203,7 @@ public class Class1556 extends Class1555 implements Class1557 {
    }
 
    @Override
-   public void method6483(int var1, int var2, List<Class8350> var3) {
+   public void method6483(int var1, int var2, List<Header> var3) {
       this.field8440.method7730(var2, var3);
    }
 

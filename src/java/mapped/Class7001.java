@@ -23,15 +23,15 @@ public final class Class7001 {
       return new Class1736(var0);
    }
 
-   public static Class1733 method21697(Class1716 var0) {
+   public static Class1733 method21697(Sink var0) {
       return new Class1755(var0);
    }
 
-   public static Class1716 method21698(OutputStream var0) {
+   public static Sink method21698(OutputStream var0) {
       return method21699(var0, new Class4916());
    }
 
-   private static Class1716 method21699(OutputStream var0, Class4916 var1) {
+   private static Sink method21699(OutputStream var0, Class4916 var1) {
       if (var0 != null) {
          if (var1 != null) {
             return new Class1732(var1, var0);
@@ -43,10 +43,10 @@ public final class Class7001 {
       }
    }
 
-   public static Class1716 method21700(Socket var0) throws IOException {
+   public static Sink method21700(Socket var0) throws IOException {
       if (var0 != null) {
          Class4918 var3 = method21710(var0);
-         Class1716 var4 = method21699(var0.getOutputStream(), var3);
+         Sink var4 = method21699(var0.getOutputStream(), var3);
          return var3.method15225(var4);
       } else {
          throw new IllegalArgumentException("socket == null");
@@ -86,7 +86,7 @@ public final class Class7001 {
       }
    }
 
-   public static Class1716 method21705(File var0) throws FileNotFoundException {
+   public static Sink method21705(File var0) throws FileNotFoundException {
       if (var0 != null) {
          return method21698(new FileOutputStream(var0));
       } else {
@@ -94,7 +94,7 @@ public final class Class7001 {
       }
    }
 
-   public static Class1716 method21706(File var0) throws FileNotFoundException {
+   public static Sink method21706(File var0) throws FileNotFoundException {
       if (var0 != null) {
          return method21698(new FileOutputStream(var0, true));
       } else {
@@ -103,7 +103,7 @@ public final class Class7001 {
    }
 
   // @IgnoreJRERequirement
-   public static Class1716 method21707(Path var0, OpenOption... var1) throws IOException {
+   public static Sink method21707(Path var0, OpenOption... var1) throws IOException {
       if (var0 != null) {
          return method21698(Files.newOutputStream(var0, var1));
       } else {
@@ -111,7 +111,7 @@ public final class Class7001 {
       }
    }
 
-   public static Class1716 method21708() {
+   public static Sink method21708() {
       return new Class1731();
    }
 

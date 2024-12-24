@@ -90,7 +90,7 @@ public final class Class6174 implements Class6172 {
 
    private Class1797 method19081(Class6441 var1, Class1797 var2) throws IOException {
       if (var1 != null) {
-         Class1716 var5 = var1.method19554();
+         Sink var5 = var1.method19554();
          if (var5 != null) {
             Class1735 var6 = var2.method7855().method7836();
             Class1733 var7 = Class7001.method21697(var5);

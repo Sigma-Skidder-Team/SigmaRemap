@@ -2,11 +2,11 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class1717 implements Class1716 {
-   public final Class1716 field9374;
+public class Class1717 implements Sink {
+   public final Sink field9374;
    public final Class4918 field9375;
 
-   public Class1717(Class4918 var1, Class1716 var2) {
+   public Class1717(Class4918 var1, Sink var2) {
       this.field9375 = var1;
       this.field9374 = var2;
    }

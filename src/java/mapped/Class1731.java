@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public final class Class1731 implements Class1716 {
+public final class Class1731 implements Sink {
 
    @Override
    public void method7540(Class1734 var1, long var2) throws IOException {

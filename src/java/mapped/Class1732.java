@@ -3,7 +3,7 @@ package mapped;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public final class Class1732 implements Class1716 {
+public final class Class1732 implements Sink {
    public final Class4916 field9418;
    public final OutputStream field9419;
 

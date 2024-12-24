@@ -98,7 +98,7 @@ public final class Class7034 {
       }
    }
 
-   public Class1716 method21833(int var1, long var2) {
+   public Sink method21833(int var1, long var2) {
       if (!this.field30353) {
          this.field30353 = true;
          this.field30352.field9386 = var1;

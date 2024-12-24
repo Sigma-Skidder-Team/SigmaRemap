@@ -7,10 +7,10 @@ import java.nio.charset.Charset;
 
 public final class Class1755 implements Class1733 {
    public final Class1734 field9493 = new Class1734();
-   public final Class1716 field9494;
+   public final Sink field9494;
    public boolean field9495;
 
-   public Class1755(Class1716 var1) {
+   public Class1755(Sink var1) {
       if (var1 != null) {
          this.field9494 = var1;
       } else {

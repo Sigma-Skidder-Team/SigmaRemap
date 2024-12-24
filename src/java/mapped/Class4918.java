@@ -88,7 +88,7 @@ public class Class4918 extends Class4916 {
    public void method15224() {
    }
 
-   public final Class1716 method15225(Class1716 var1) {
+   public final Sink method15225(Sink var1) {
       return new Class1717(this, var1);
    }
 

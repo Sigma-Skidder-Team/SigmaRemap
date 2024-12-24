@@ -188,7 +188,7 @@ public final class Class1736 implements Class1735 {
    }
 
    @Override
-   public long method7611(Class1716 var1) throws IOException {
+   public long method7611(Sink var1) throws IOException {
       if (var1 != null) {
          long var4 = 0L;
 

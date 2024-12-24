@@ -7,7 +7,7 @@ public class Class1728 extends Class1726 {
    public static final boolean field9409 = !Class1756.class.desiredAssertionStatus();
    public final Class1756 field9410;
 
-   public Class1728(Class1756 var1, Class1716 var2) {
+   public Class1728(Class1756 var1, Sink var2) {
       super(var2);
       this.field9410 = var1;
    }

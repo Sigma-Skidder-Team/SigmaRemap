@@ -14,7 +14,7 @@ public final class Class9298 {
    private boolean field42752;
    public int field42753;
    public int field42754;
-   public Class8350[] field42755 = new Class8350[8];
+   public Header[] field42755 = new Header[8];
    public int field42756 = this.field42755.length - 1;
    public int field42757 = 0;
    public int field42758 = 0;
@@ -55,13 +55,13 @@ public final class Class9298 {
       return var4;
    }
 
-   private void method35049(Class8350 var1) {
+   private void method35049(Header var1) {
       int var4 = var1.field35888;
       if (var4 <= this.field42754) {
          int var5 = this.field42758 + var4 - this.field42754;
          this.method35048(var5);
          if (this.field42757 + 1 > this.field42755.length) {
-            Class8350[] var6 = new Class8350[this.field42755.length * 2];
+            Header[] var6 = new Header[this.field42755.length * 2];
             System.arraycopy(this.field42755, 0, var6, this.field42755.length, this.field42755.length);
             this.field42756 = this.field42755.length - 1;
             this.field42755 = var6;
@@ -76,7 +76,7 @@ public final class Class9298 {
       }
    }
 
-   public void method35050(List<Class8350> var1) throws IOException {
+   public void method35050(List<Header> var1) throws IOException {
       if (this.field42752) {
          if (this.field42751 < this.field42754) {
             this.method35051(this.field42751, 31, 32);
@@ -90,7 +90,7 @@ public final class Class9298 {
       int var4 = 0;
 
       for (int var5 = var1.size(); var4 < var5; var4++) {
-         Class8350 var6 = (Class8350)var1.get(var4);
+         Header var6 = (Header)var1.get(var4);
          Class2003 var7 = var6.field35886.method8453();
          Class2003 var8 = var6.field35887;
          int var9 = -1;
@@ -104,7 +104,7 @@ public final class Class9298 {
          }
          if (var9 == -1) {
             if (var10 != -1) {
-               if (var7.method8466(Class8350.field35880) && !Class8350.field35885.equals(var7)) {
+               if (var7.method8466(Header.field35880) && !Header.field35885.equals(var7)) {
                   this.method35051(var10, 15, 0);
                   this.method35052(var8);
                } else {

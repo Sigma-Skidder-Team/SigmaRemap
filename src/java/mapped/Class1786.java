@@ -54,7 +54,7 @@ public final class Class1786 implements Closeable {
       }
    }
 
-   public synchronized void method7769(int var1, int var2, List<Class8350> var3) throws IOException {
+   public synchronized void method7769(int var1, int var2, List<Header> var3) throws IOException {
       if (!this.field9635) {
          this.field9636.method35050(var3);
          long var6 = this.field9633.method7582();
@@ -80,7 +80,7 @@ public final class Class1786 implements Closeable {
       }
    }
 
-   public synchronized void method7771(boolean var1, int var2, int var3, List<Class8350> var4) throws IOException {
+   public synchronized void method7771(boolean var1, int var2, int var3, List<Header> var4) throws IOException {
       if (!this.field9635) {
          this.method7785(var1, var2, var4);
       } else {
@@ -88,7 +88,7 @@ public final class Class1786 implements Closeable {
       }
    }
 
-   public synchronized void method7772(boolean var1, int var2, List<Class8350> var3) throws IOException {
+   public synchronized void method7772(boolean var1, int var2, List<Header> var3) throws IOException {
       if (!this.field9635) {
          this.method7785(var1, var2, var3);
       } else {
@@ -96,7 +96,7 @@ public final class Class1786 implements Closeable {
       }
    }
 
-   public synchronized void method7773(int var1, List<Class8350> var2) throws IOException {
+   public synchronized void method7773(int var1, List<Header> var2) throws IOException {
       if (!this.field9635) {
          this.method7785(false, var1, var2);
       } else {
@@ -270,7 +270,7 @@ public final class Class1786 implements Closeable {
       }
    }
 
-   public void method7785(boolean var1, int var2, List<Class8350> var3) throws IOException {
+   public void method7785(boolean var1, int var2, List<Header> var3) throws IOException {
       if (!this.field9635) {
          this.field9636.method35050(var3);
          long var6 = this.field9633.method7582();

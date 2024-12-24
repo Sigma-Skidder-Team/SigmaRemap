@@ -535,7 +535,7 @@ public final class Class1734 implements Class1735, Class1733, Cloneable {
    }
 
    @Override
-   public long method7611(Class1716 var1) throws IOException {
+   public long method7611(Sink var1) throws IOException {
       long var4 = this.field9423;
       if (var4 > 0L) {
          var1.method7540(this, var4);

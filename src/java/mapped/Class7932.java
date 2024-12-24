@@ -5,7 +5,7 @@ import java.io.IOException;
 public interface Class7932 {
    int field34004 = 100;
 
-   Class1716 method26665(Class8223 var1, long var2);
+   Sink method26665(Class8223 var1, long var2);
 
    void method26666(Class8223 var1) throws IOException;
 

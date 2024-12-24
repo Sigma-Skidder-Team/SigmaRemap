@@ -15,13 +15,13 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public final class Class1767 implements Closeable {
+public final class FramedConnection implements Closeable {
    public static final ExecutorService field9554 = new ThreadPoolExecutor(
-      0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), Class9474.method36542("OkHttp Http2Connection", true)
+      0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), Class9474.method36542("OkHttp FramedConnection", true)
    );
    public final boolean field9555;
    public final Class7264 field9556;
-   public final Map<Integer, Class9698> field9557 = new LinkedHashMap<Integer, Class9698>();
+   public final Map<Integer, FramedStream> field9557 = new LinkedHashMap<Integer, FramedStream>();
    public final String field9558;
    public int field9559;
    public int field9560;
@@ -40,9 +40,9 @@ public final class Class1767 implements Closeable {
    public final Class1786 field9573;
    public final Class1556 field9574;
    public final Set<Integer> field9575 = new LinkedHashSet<Integer>();
-   public static final boolean field9576 = !Class1767.class.desiredAssertionStatus();
+   public static final boolean field9576 = !FramedConnection.class.desiredAssertionStatus();
 
-   public Class1767(Class9227 var1) {
+   public FramedConnection(Class9227 var1) {
       this.field9564 = var1.field42474;
       this.field9555 = var1.field42475;
       this.field9556 = var1.field42473;
@@ -81,12 +81,12 @@ public final class Class1767 implements Closeable {
       return this.field9557.size();
    }
 
-   public synchronized Class9698 method7707(int var1) {
+   public synchronized FramedStream method7707(int var1) {
       return this.field9557.get(var1);
    }
 
-   public synchronized Class9698 method7708(int var1) {
-      Class9698 var4 = this.field9557.remove(var1);
+   public synchronized FramedStream method7708(int var1) {
+      FramedStream var4 = this.field9557.remove(var1);
       this.notifyAll();
       return var4;
    }
@@ -95,7 +95,7 @@ public final class Class1767 implements Closeable {
       return this.field9570.method31382(Integer.MAX_VALUE);
    }
 
-   public Class9698 method7710(int var1, List<Class8350> var2, boolean var3) throws IOException {
+   public FramedStream method7710(int var1, List<Header> var2, boolean var3) throws IOException {
       if (!this.field9555) {
          return this.method7712(var1, var2, var3);
       } else {
@@ -103,14 +103,14 @@ public final class Class1767 implements Closeable {
       }
    }
 
-   public Class9698 method7711(List<Class8350> var1, boolean var2) throws IOException {
+   public FramedStream method7711(List<Header> var1, boolean var2) throws IOException {
       return this.method7712(0, var1, var2);
    }
 
-   private Class9698 method7712(int var1, List<Class8350> var2, boolean var3) throws IOException {
+   private FramedStream method7712(int var1, List<Header> var2, boolean var3) throws IOException {
       boolean var6 = !var3;
       boolean var7 = false;
-      Class9698 var11;
+      FramedStream var11;
       boolean var12;
       synchronized (this.field9573) {
          int var10;
@@ -121,8 +121,8 @@ public final class Class1767 implements Closeable {
 
             var10 = this.field9560;
             this.field9560 += 2;
-            var11 = new Class9698(var10, this, var6, var7, var2);
-            var12 = !var3 || this.field9567 == 0L || var11.field45330 == 0L;
+            var11 = new FramedStream(var10, this, var6, var7, var2);
+            var12 = !var3 || this.field9567 == 0L || var11.bytesLeftInWriteWindow == 0L;
             if (var11.method37977()) {
                this.field9557.put(var10, var11);
             }
@@ -146,7 +146,7 @@ public final class Class1767 implements Closeable {
       return var11;
    }
 
-   public void method7713(int var1, boolean var2, List<Class8350> var3) throws IOException {
+   public void method7713(int var1, boolean var2, List<Header> var3) throws IOException {
       this.field9573.method7772(var2, var1, var3);
    }
 
@@ -275,11 +275,11 @@ public final class Class1767 implements Closeable {
             var5 = var14;
          }
 
-         Class9698[] var6 = null;
+         FramedStream[] var6 = null;
          Class9224[] var7 = null;
          synchronized (this) {
             if (!this.field9557.isEmpty()) {
-               var6 = this.field9557.values().<Class9698>toArray(new Class9698[this.field9557.size()]);
+               var6 = this.field9557.values().<FramedStream>toArray(new FramedStream[this.field9557.size()]);
                this.field9557.clear();
             }
 
@@ -290,7 +290,7 @@ public final class Class1767 implements Closeable {
          }
 
          if (var6 != null) {
-            for (Class9698 var11 : var6) {
+            for (FramedStream var11 : var6) {
                try {
                   var11.method37988(var2);
                } catch (IOException var16) {
@@ -365,7 +365,7 @@ public final class Class1767 implements Closeable {
       return var1 != 0;
    }
 
-   public void method7730(int var1, List<Class8350> var2) {
+   public void method7730(int var1, List<Header> var2) {
       synchronized (this) {
          if (this.field9575.contains(var1)) {
             this.method7716(var1, Class2077.field13528);
@@ -378,7 +378,7 @@ public final class Class1767 implements Closeable {
       this.field9562.execute(new Class1562(this, "OkHttp %s Push Request[%s]", new Object[]{this.field9558, var1}, var1, var2));
    }
 
-   public void method7731(int var1, List<Class8350> var2, boolean var3) {
+   public void method7731(int var1, List<Header> var2, boolean var3) {
       this.field9562.execute(new Class1564(this, "OkHttp %s Push Headers[%s]", new Object[]{this.field9558, var1}, var1, var2, var3));
    }
 

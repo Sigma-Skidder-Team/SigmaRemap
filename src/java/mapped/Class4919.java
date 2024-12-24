@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.net.SocketTimeoutException;
 
 public class Class4919 extends Class4918 {
-   public final Class9698 field22821;
+   public final FramedStream field22821;
 
-   public Class4919(Class9698 var1) {
+   public Class4919(FramedStream var1) {
       this.field22821 = var1;
    }
 

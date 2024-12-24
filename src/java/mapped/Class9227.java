@@ -45,7 +45,7 @@ public class Class9227 {
       return this;
    }
 
-   public Class1767 method34710() throws IOException {
-      return new Class1767(this);
+   public FramedConnection method34710() throws IOException {
+      return new FramedConnection(this);
    }
 }

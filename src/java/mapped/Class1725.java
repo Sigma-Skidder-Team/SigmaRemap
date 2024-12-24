@@ -2,10 +2,10 @@ package mapped;
 
 import java.io.IOException;
 
-public abstract class Class1725 implements Class1716 {
-   private final Class1716 field9405;
+public abstract class Class1725 implements Sink {
+   private final Sink field9405;
 
-   public Class1725(Class1716 var1) {
+   public Class1725(Sink var1) {
       if (var1 != null) {
          this.field9405 = var1;
       } else {
@@ -13,7 +13,7 @@ public abstract class Class1725 implements Class1716 {
       }
    }
 
-   public final Class1716 method7549() {
+   public final Sink method7549() {
       return this.field9405;
    }
 
