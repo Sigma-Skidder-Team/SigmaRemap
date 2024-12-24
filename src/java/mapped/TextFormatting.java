@@ -1,5 +1,6 @@
 package mapped;
 
+import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -28,13 +29,12 @@ public enum TextFormatting {
    ITALIC('o', "italic"),
    RESET('r', "reset");
 
-   public static final char beginSymbol = '§';
    public static final String ASCII_ALL_CASE_LETTERS_AND_NUMBERS = "0123456789AaBbCcDdEeFfKkLlMmNnOoRr";
-   public static final Pattern field15791 = Pattern.compile("(?i)" + String.valueOf('§') + "[0-9A-FK-OR]");
-   private static final Map<Character, TextFormatting> field15792 = new HashMap<Character, TextFormatting>();
-   private final char field15793;
-   private final String field15794;
-   private final String field15795;
+   public static final Pattern FORMATTING_CODE_PATTERN = Pattern.compile("(?i)" + String.valueOf('§') + "[0-9A-FK-OR]");
+   private static final Map<Character, TextFormatting> formats = new HashMap<Character, TextFormatting>();
+   private final char formattingCode;
+   private final String name;
+   private final String controlCode;
    private static final TextFormatting[] FORMATTING_BY_NAME = new TextFormatting[]{
            BLACK,
            DARK_BLUE,
@@ -61,18 +61,18 @@ public enum TextFormatting {
    };
 
    private TextFormatting(char var3, String var4) {
-      this.field15793 = var3;
-      this.field15795 = var4;
-      this.field15794 = new String(new char[]{'§', var3});
+      this.formattingCode = var3;
+      this.controlCode = var4;
+      this.name = new String(new char[]{'§', var3});
    }
 
    @Override
    public String toString() {
-      return this.field15794;
+      return this.name;
    }
 
-   public static String method9077(String var0) {
-      return var0 != null ? field15791.matcher(var0).replaceAll("") : null;
+   public static String getTextWithoutFormattingCodes(@Nullable String text) {
+      return text != null ? FORMATTING_CODE_PATTERN.matcher(text).replaceAll("") : null;
    }
 
    public static String method9078(char var0, String var1) {
@@ -88,17 +88,17 @@ public enum TextFormatting {
       return new String(var4);
    }
 
-   public static TextFormatting getChatFormatting(char var0) {
-      return field15792.get(var0);
+   public static TextFormatting getChatFormatting(char formattingCode) {
+      return formats.get(formattingCode);
    }
 
-   public String method9080() {
-      return this.field15795;
+   public String getControlCode() {
+      return this.controlCode;
    }
 
    static {
-      for (TextFormatting var9 : values()) {
-         field15792.put(var9.field15793, var9);
+      for (TextFormatting formatting : values()) {
+         formats.put(formatting.formattingCode, formatting);
       }
    }
 }
