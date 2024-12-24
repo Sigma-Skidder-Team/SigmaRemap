@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -402,7 +402,7 @@ public class Class8795 {
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glRotatef(this.mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
       GL11.glRotatef(this.mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
-      ClientResource var10 = ResourceRegistry.JelloLightFont25;
+      TrueTypeFont var10 = ResourceRegistry.JelloLightFont25;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
       RenderUtil.drawRect(

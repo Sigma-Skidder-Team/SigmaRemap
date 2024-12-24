@@ -2,7 +2,7 @@ package lol;
 
 import mapped.Color;
 
-public interface Class7427 {
+public interface Font {
    int getStringWidth(String var1);
 
    int method23941(String var1);

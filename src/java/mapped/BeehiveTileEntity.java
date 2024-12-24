@@ -153,7 +153,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
             Entity var12 = EntityType.method33223(var8, this.world, var0 -> var0);
             if (var12 == null) {
                return false;
-            } else if (var12.getType().method33228(Class8613.field38736)) {
+            } else if (var12.getType().method33228(EntityTypeTags.field38736)) {
                if (var12 instanceof Class1017) {
                   Class1017 var13 = (Class1017)var12;
                   if (this.method3925() && !var13.method4422() && this.world.rand.nextFloat() < 0.9F) {

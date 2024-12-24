@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.state.StateContainer;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
@@ -90,7 +91,7 @@ public abstract class Fluid {
    }
 
    public boolean method25067(ITag<Fluid> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public abstract VoxelShape method25068(FluidState var1, IBlockReader var2, BlockPos var3);

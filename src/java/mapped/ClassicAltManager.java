@@ -37,7 +37,7 @@ public class ClassicAltManager extends CustomGuiScreen {
       this.addToList(this.field21144 = new Class4300(this, "remove", var9 + var8 + 16, 48, var8, 40, "Remove", ClientColors.DEEP_TEAL.getColor));
       this.addToList(this.field21146 = new Class4300(this, "edit", var9 + var8 * 2 + 32, 48, var8, 40, "Edit", ClientColors.DEEP_TEAL.getColor));
       this.addToList(this.field21148 = new Class4300(this, "alpha", var9 + var8 * 3 + 48, 48, var8, 40, "Alphalts", ClientColors.DEEP_TEAL.getColor));
-      SigmaClassicAltManager var10 = (SigmaClassicAltManager)this.getIcoPanel();
+      SigmaClassicAltManager var10 = (SigmaClassicAltManager)this.getScreen();
       this.field21143
          .doThis(
             (var1x, var2x) -> {

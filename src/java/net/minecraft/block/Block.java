@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import mapped.*;
 import net.minecraft.item.*;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -86,7 +87,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public boolean isIn(ITag<Block> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public boolean method11541(Block var1) {

@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableSet.Builder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 
@@ -47,7 +48,7 @@ public class Class6879 {
          }
       }
 
-      return Optional.<ITag<T>>of(ITag.<T>method24920(var5.build()));
+      return Optional.<ITag<T>>of(ITag.<T>getTagOf(var5.build()));
    }
 
    public Stream<Class7794> method20948() {

@@ -21,6 +21,7 @@ import net.minecraft.network.DebugPacketSender;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.Property;
 import net.minecraft.state.StateHolder;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

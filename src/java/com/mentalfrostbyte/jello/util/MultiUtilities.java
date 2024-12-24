@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import lol.MovementUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -601,7 +601,7 @@ public class MultiUtilities {
       }
    }
 
-   public static String[] method17745(String var0, int var1, ClientResource var2) {
+   public static String[] method17745(String var0, int var1, TrueTypeFont var2) {
       String[] var5 = var0.split(" ");
       HashMap<Integer, String> var6 = new HashMap();
       int var7 = 0;

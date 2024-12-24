@@ -225,7 +225,7 @@ public class Class3211 extends Block {
 
    @Override
    public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
-      if (var4.getType().method33228(Class8613.field38738)) {
+      if (var4.getType().method33228(EntityTypeTags.field38738)) {
          BlockPos var7 = var3.getPos();
          var1.destroyBlock(var7, true, var4);
       }

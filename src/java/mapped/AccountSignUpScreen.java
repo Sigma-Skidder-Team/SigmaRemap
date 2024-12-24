@@ -65,7 +65,7 @@ public class AccountSignUpScreen extends Class4247 {
       this.captchaBox.setEnabled(false);
       this.registerButton.doThis((var1x, var2x) -> this.method13126());
       this.loginButton.doThis((var1x, var2x) -> {
-         LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
+         LoginAndOutScreen var5x = (LoginAndOutScreen)this.getScreen();
          var5x.method13423();
       });
    }
@@ -110,7 +110,7 @@ public class AccountSignUpScreen extends Class4247 {
                String var4 = Client.getInstance()
                   .getNetworkManager()
                   .method30448(this.usernameInputBox.getTypedText(), this.passwordInputBox.getTypedText(), this.emailInputBox.getTypedText(), var3);
-               LoginAndOutScreen var5 = (LoginAndOutScreen)this.getIcoPanel();
+               LoginAndOutScreen var5 = (LoginAndOutScreen)this.getScreen();
                var5.method13424("Success", "You can now login.");
                var5.method13423();
 

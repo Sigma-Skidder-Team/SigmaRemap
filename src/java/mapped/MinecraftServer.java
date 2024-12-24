@@ -17,6 +17,7 @@ import it.unimi.dsi.fastutil.longs.LongIterator;
 import net.minecraft.block.Block;
 import net.minecraft.crash.ReportedException;
 import net.minecraft.server.CustomServerBossInfoManager;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.Util;
 import net.minecraft.command.CommandSource;
 import net.minecraft.crash.CrashReport;
@@ -1322,7 +1323,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.resourceManager.method7334();
    }
 
-   public Class8933 method1408() {
+   public ITagCollectionSupplier method1408() {
       return this.resourceManager.method7333();
    }
 

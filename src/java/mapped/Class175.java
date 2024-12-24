@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.tags.ITag;
 
 import java.util.function.Predicate;
 
@@ -18,6 +19,6 @@ public class Class175 implements Predicate<ItemStack> {
    }
 
    public boolean test(ItemStack var1) {
-      return this.field560.method24917(var1.getItem()) && NBTUtil.areNBTEquals(this.field561, var1.getTag(), true);
+      return this.field560.contains(var1.getItem()) && NBTUtil.areNBTEquals(this.field561, var1.getTag(), true);
    }
 }

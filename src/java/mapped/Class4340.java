@@ -44,7 +44,7 @@ public class Class4340 extends Class4339 {
          this.field21209.add(var7);
          this.addToList(var7);
          var7.doThis((var2x, var3x) -> {
-            Class4251 var6x = (Class4251)this.getIcoPanel();
+            Class4251 var6x = (Class4251)this.getScreen();
             var6x.field20614.method13077(var7.field21292.getX(), var7.field21292.getZ());
          });
          var7.method13036(

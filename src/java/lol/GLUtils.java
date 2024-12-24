@@ -1,7 +1,7 @@
 package lol;
 
-public final class Class8748 {
-   public static void method31562() {
+public final class GLUtils {
+   public static void checkGLContext() {
       try {
          Renderer.get().method18413();
       } catch (NullPointerException var3) {

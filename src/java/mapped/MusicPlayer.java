@@ -185,7 +185,7 @@ public class MusicPlayer extends Class4278 {
    }
 
    private void method13190(MusicPlayerVideo var1, YoutubeVideoData var2) {
-      if (!((JelloClickGUI)this.getIcoPanel()).method13314()) {
+      if (!((JelloClickGUI)this.getScreen()).method13314()) {
          this.field20854.method24317(var1, var2);
          field20857 = var1;
       }
@@ -197,12 +197,12 @@ public class MusicPlayer extends Class4278 {
       float var7 = Math.min(10.0F, Math.max(0.0F, (float)var5 / 1.810361E7F));
       field20870 = System.nanoTime();
       super.method13028(var1, var2);
-      if (this.icoPanel instanceof JelloClickGUI) {
+      if (this.screen instanceof JelloClickGUI) {
          if (!this.method13216()) {
             if ((this.field20909 || this.field20874) && !this.method13214() && !this.method13216()) {
                this.field20874 = true;
-               int var11 = this.icoPanel.getWidthA() - 20 - this.getWidthA();
-               int var13 = (this.icoPanel.getHeightA() - this.getHeightA()) / 2;
+               int var11 = this.screen.getWidthA() - 20 - this.getWidthA();
+               int var13 = (this.screen.getHeightA() - this.getHeightA()) / 2;
                this.field20871 = Math.max(this.field20871 - (this.field20871 - (float)var11) * 0.25F * var7, (float)var11);
                if (!(this.field20872 - (float)var13 > 0.0F)) {
                   Math.min(this.field20872 = this.field20872 - (this.field20872 - (float)var13) * 0.2F * var7, (float)var13);
@@ -224,14 +224,14 @@ public class MusicPlayer extends Class4278 {
                   this.method13215(true);
                   this.field20874 = false;
                }
-            } else if (this.getXA() + this.getWidthA() > this.icoPanel.getWidthA() || this.getXA() < 0 || this.getYA() < 0) {
+            } else if (this.getXA() + this.getWidthA() > this.screen.getWidthA() || this.getXA() < 0 || this.getYA() < 0) {
                if (this.field20871 == 0.0F || this.field20872 == 0.0F) {
                   this.field20871 = (float)this.getXA();
                   this.field20872 = (float)this.getYA();
                }
 
-               int var8 = this.icoPanel.getWidthA() - 40;
-               int var9 = (this.icoPanel.getHeightA() - this.getHeightA()) / 2;
+               int var8 = this.screen.getWidthA() - 40;
+               int var9 = (this.screen.getHeightA() - this.getHeightA()) / 2;
                this.field20871 = Math.min(this.field20871 - (this.field20871 - (float)var8) * 0.25F * var7, (float)var8);
                if (!(this.field20872 - (float)var9 > 0.0F)) {
                   Math.min(this.field20872 = this.field20872 - (this.field20872 - (float)var9) * 0.2F * var7, (float)var9);
@@ -258,9 +258,9 @@ public class MusicPlayer extends Class4278 {
                this.method13217(false);
             }
          } else {
-            int var12 = var1 - this.field20880 - (this.icoPanel == null ? 0 : this.icoPanel.method13271());
+            int var12 = var1 - this.field20880 - (this.screen == null ? 0 : this.screen.method13271());
             int var14 = 200;
-            if (var12 + this.getWidthA() > this.icoPanel.getWidthA() + var14 && var1 - this.field20878 > 70) {
+            if (var12 + this.getWidthA() > this.screen.getWidthA() + var14 && var1 - this.field20878 > 70) {
                int var15 = var12 - this.getXA() - var14;
                this.setXA((int)((float)this.getXA() + (float)var15 * 0.5F));
                this.field20871 = (float)this.getXA();
@@ -274,9 +274,9 @@ public class MusicPlayer extends Class4278 {
    public void draw(float var1) {
       super.method13224();
       super.method13225();
-      this.field20865.setWidthA(this.getXA() + this.getWidthA() <= this.icoPanel.getWidthA() ? 0 : 41);
+      this.field20865.setWidthA(this.getXA() + this.getWidthA() <= this.screen.getWidthA() ? 0 : 41);
       this.field20873
-              .changeDirection(this.getXA() + this.getWidthA() > this.icoPanel.getWidthA() && !this.field20874 ? Direction.FORWARDS : Direction.BACKWARDS);
+              .changeDirection(this.getXA() + this.getWidthA() > this.screen.getWidthA() && !this.field20874 ? Direction.FORWARDS : Direction.BACKWARDS);
       var1 *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
       if (this.field20854.method24319()) {
          this.play.setEnabled(false);

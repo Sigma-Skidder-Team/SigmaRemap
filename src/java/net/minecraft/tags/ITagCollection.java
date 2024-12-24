@@ -1,10 +1,12 @@
-package mapped;
+package net.minecraft.tags;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableSet.Builder;
+import mapped.Class2351;
+import mapped.Class7983;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -16,7 +18,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
-public interface Class7984<T> {
+public interface ITagCollection<T> {
    Map<ResourceLocation, ITag<T>> method27134();
 
    @Nullable
@@ -38,7 +40,7 @@ public interface Class7984<T> {
       }
    }
 
-   default Collection<ResourceLocation> method27137() {
+   default Collection<ResourceLocation> getRegisteredTags() {
       return this.method27134().keySet();
    }
 
@@ -46,7 +48,7 @@ public interface Class7984<T> {
       ArrayList var4 = Lists.newArrayList();
 
       for (Entry var6 : this.method27134().entrySet()) {
-         if (((ITag)var6.getValue()).method24917(var1)) {
+         if (((ITag)var6.getValue()).contains(var1)) {
             var4.add(var6.getKey());
          }
       }
@@ -68,7 +70,7 @@ public interface Class7984<T> {
       }
    }
 
-   static <T> Class7984<T> method27140(PacketBuffer var0, Registry<T> var1) {
+   static <T> ITagCollection<T> method27140(PacketBuffer var0, Registry<T> var1) {
       HashMap var4 = Maps.newHashMap();
       int var5 = var0.readVarInt();
 
@@ -81,17 +83,17 @@ public interface Class7984<T> {
             var9.add(var1.getByValue(var0.readVarInt()));
          }
 
-         var4.put(var7, ITag.method24920(var9.build()));
+         var4.put(var7, ITag.getTagOf(var9.build()));
       }
 
       return method27142(var4);
    }
 
-   static <T> Class7984<T> method27141() {
+   static <T> ITagCollection<T> getEmptyTagCollection() {
       return method27142(ImmutableBiMap.of());
    }
 
-   static <T> Class7984<T> method27142(Map<ResourceLocation, ITag<T>> var0) {
+   static <T> ITagCollection<T> method27142(Map<ResourceLocation, ITag<T>> var0) {
       ImmutableBiMap var3 = ImmutableBiMap.copyOf(var0);
       return new Class7983(var3);
    }

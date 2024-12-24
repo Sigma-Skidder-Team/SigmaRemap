@@ -9,6 +9,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -51,12 +53,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Items.field37967, 2400);
       method3643(var2, Items.field37798, 1600);
       method3643(var2, Items.field37799, 1600);
-      method3642(var2, Class5985.field26085, 300);
-      method3642(var2, Class5985.field26071, 300);
-      method3642(var2, Class5985.field26077, 300);
-      method3642(var2, Class5985.field26078, 150);
-      method3642(var2, Class5985.field26081, 300);
-      method3642(var2, Class5985.field26080, 300);
+      method3642(var2, ItemTags.field26085, 300);
+      method3642(var2, ItemTags.field26071, 300);
+      method3642(var2, ItemTags.field26077, 300);
+      method3642(var2, ItemTags.field26078, 150);
+      method3642(var2, ItemTags.field26081, 300);
+      method3642(var2, ItemTags.field26080, 300);
       method3643(var2, Blocks.OAK_FENCE, 300);
       method3643(var2, Blocks.field36868, 300);
       method3643(var2, Blocks.field36867, 300);
@@ -77,24 +79,24 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.TRAPPED_CHEST, 300);
       method3643(var2, Blocks.CRAFTING_TABLE, 300);
       method3643(var2, Blocks.field36720, 300);
-      method3642(var2, Class5985.field26094, 300);
+      method3642(var2, ItemTags.field26094, 300);
       method3643(var2, Items.BOW, 300);
       method3643(var2, Items.field37906, 300);
       method3643(var2, Blocks.LADDER, 300);
-      method3642(var2, Class5985.field26115, 200);
+      method3642(var2, ItemTags.field26115, 200);
       method3643(var2, Items.field37806, 200);
       method3643(var2, Items.field37805, 200);
       method3643(var2, Items.field37809, 200);
       method3643(var2, Items.field37808, 200);
       method3643(var2, Items.field37807, 200);
-      method3642(var2, Class5985.field26076, 200);
-      method3642(var2, Class5985.field26113, 1200);
-      method3642(var2, Class5985.field26070, 100);
-      method3642(var2, Class5985.field26073, 100);
+      method3642(var2, ItemTags.field26076, 200);
+      method3642(var2, ItemTags.field26113, 1200);
+      method3642(var2, ItemTags.field26070, 100);
+      method3642(var2, ItemTags.field26073, 100);
       method3643(var2, Items.field37835, 100);
-      method3642(var2, Class5985.field26083, 100);
+      method3642(var2, ItemTags.field26083, 100);
       method3643(var2, Items.field37836, 100);
-      method3642(var2, Class5985.field26075, 67);
+      method3642(var2, ItemTags.field26075, 67);
       method3643(var2, Blocks.field36963, 4001);
       method3643(var2, Items.CROSSBOW, 300);
       method3643(var2, Blocks.field37009, 50);
@@ -110,7 +112,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    private static boolean method3641(Item var0) {
-      return Class5985.field26111.method24917(var0);
+      return ItemTags.field26111.contains(var0);
    }
 
    private static void method3642(Map<Item, Integer> var0, ITag<Item> var1, int var2) {

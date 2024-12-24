@@ -19,7 +19,7 @@ public class Class4368 extends Class4247 {
       if (var7.getSettingMap().size() > 0) {
          Class4364 var11;
          this.addToList(var11 = new Class4364(this, "gear", 132, 32));
-         var11.doThis((var2x, var3x) -> ((Class4335)this.getIcoPanel()).method13486(var7));
+         var11.doThis((var2x, var3x) -> ((Class4335)this.getScreen()).method13486(var7));
       }
    }
 

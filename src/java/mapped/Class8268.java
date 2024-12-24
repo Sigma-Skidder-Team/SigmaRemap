@@ -25,6 +25,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.JSONToNBT;
 import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITagCollection;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -47,7 +49,7 @@ public class Class8268 {
       (var0, var1) -> new TranslationTextComponent("argument.block.property.novalue", var0, var1)
    );
    public static final SimpleCommandExceptionType field35541 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.block.property.unclosed"));
-   private static final BiFunction<SuggestionsBuilder, Class7984<Block>, CompletableFuture<Suggestions>> field35542 = (var0, var1) -> var0.buildFuture();
+   private static final BiFunction<SuggestionsBuilder, ITagCollection<Block>, CompletableFuture<Suggestions>> field35542 = (var0, var1) -> var0.buildFuture();
    private final StringReader field35543;
    private final boolean field35544;
    private final Map<Property<?>, Comparable<?>> field35545 = Maps.newHashMap();
@@ -58,7 +60,7 @@ public class Class8268 {
    private CompoundNBT field35550;
    private ResourceLocation field35551 = new ResourceLocation("");
    private int field35552;
-   private BiFunction<SuggestionsBuilder, Class7984<Block>, CompletableFuture<Suggestions>> field35553 = field35542;
+   private BiFunction<SuggestionsBuilder, ITagCollection<Block>, CompletableFuture<Suggestions>> field35553 = field35542;
 
    public Class8268(StringReader var1, boolean var2) {
       this.field35543 = var1;
@@ -110,7 +112,7 @@ public class Class8268 {
       return this;
    }
 
-   private CompletableFuture<Suggestions> method28841(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28841(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
          var1.suggest(String.valueOf(']'));
       }
@@ -118,7 +120,7 @@ public class Class8268 {
       return this.method28843(var1, var2);
    }
 
-   private CompletableFuture<Suggestions> method28842(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28842(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
          var1.suggest(String.valueOf(']'));
       }
@@ -126,7 +128,7 @@ public class Class8268 {
       return this.method28844(var1, var2);
    }
 
-   private CompletableFuture<Suggestions> method28843(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28843(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
 
       for (Property var7 : this.field35549.method23461()) {
@@ -138,7 +140,7 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method28844(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28844(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
       if (this.field35551 != null && !this.field35551.getPath().isEmpty()) {
          ITag<Block> var6 = var2.get(this.field35551);
@@ -156,7 +158,7 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method28845(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28845(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty() && this.method28846(var2)) {
          var1.suggest(String.valueOf('{'));
       }
@@ -164,7 +166,7 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private boolean method28846(Class7984<Block> var1) {
+   private boolean method28846(ITagCollection<Block> var1) {
       if (this.field35549 != null) {
          return this.field35549.getBlock().isTileEntityProvider();
       } else {
@@ -183,7 +185,7 @@ public class Class8268 {
       }
    }
 
-   private CompletableFuture<Suggestions> method28847(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28847(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
          var1.suggest(String.valueOf('='));
       }
@@ -191,7 +193,7 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method28848(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28848(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
          var1.suggest(String.valueOf(']'));
       }
@@ -215,7 +217,7 @@ public class Class8268 {
       return var0;
    }
 
-   private CompletableFuture<Suggestions> method28850(SuggestionsBuilder var1, Class7984<Block> var2, String var3) {
+   private CompletableFuture<Suggestions> method28850(SuggestionsBuilder var1, ITagCollection<Block> var2, String var3) {
       boolean var6 = false;
       if (this.field35551 != null && !this.field35551.getPath().isEmpty()) {
          ITag<Block> var7 = var2.get(this.field35551);
@@ -246,7 +248,7 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method28851(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28851(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
          ITag<Block> var5 = var2.get(this.field35551);
          if (var5 != null) {
@@ -274,7 +276,7 @@ public class Class8268 {
       return this.method28853(var1, var2);
    }
 
-   private CompletableFuture<Suggestions> method28852(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28852(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
          if (!this.field35549.getBlock().getStateContainer().method35395().isEmpty()) {
             var1.suggest(String.valueOf('['));
@@ -288,13 +290,13 @@ public class Class8268 {
       return var1.buildFuture();
    }
 
-   private CompletableFuture<Suggestions> method28853(SuggestionsBuilder var1, Class7984<Block> var2) {
-      return ISuggestionProvider.suggestIterable(var2.method27137(), var1.createOffset(this.field35552).add(var1));
+   private CompletableFuture<Suggestions> method28853(SuggestionsBuilder var1, ITagCollection<Block> var2) {
+      return ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1.createOffset(this.field35552).add(var1));
    }
 
-   private CompletableFuture<Suggestions> method28854(SuggestionsBuilder var1, Class7984<Block> var2) {
+   private CompletableFuture<Suggestions> method28854(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       if (this.field35544) {
-         ISuggestionProvider.suggestIterable(var2.method27137(), var1, String.valueOf('#'));
+         ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1, String.valueOf('#'));
       }
 
       ISuggestionProvider.suggestIterable(Registry.BLOCK.method9190(), var1);
@@ -471,7 +473,7 @@ public class Class8268 {
       var0.append(var1.getName((T)var2));
    }
 
-   public CompletableFuture<Suggestions> method28862(SuggestionsBuilder var1, Class7984<Block> var2) {
+   public CompletableFuture<Suggestions> method28862(SuggestionsBuilder var1, ITagCollection<Block> var2) {
       return this.field35553.apply(var1.createOffset(this.field35543.getCursor()), var2);
    }
 

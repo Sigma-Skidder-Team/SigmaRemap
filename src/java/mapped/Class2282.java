@@ -2,12 +2,13 @@ package mapped;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ItemTags;
 
 import java.util.function.Supplier;
 
 public enum Class2282 implements IItemTier {
-   field15104(0, 59, 2.0F, 0.0F, 15, () -> Class120.method342(Class5985.field26071)),
-   field15105(1, 131, 4.0F, 1.0F, 5, () -> Class120.method342(Class5985.field26122)),
+   field15104(0, 59, 2.0F, 0.0F, 15, () -> Class120.method342(ItemTags.field26071)),
+   field15105(1, 131, 4.0F, 1.0F, 5, () -> Class120.method342(ItemTags.field26122)),
    field15106(2, 250, 6.0F, 2.0F, 14, () -> Class120.method339(Items.field37801)),
    field15107(3, 1561, 8.0F, 3.0F, 10, () -> Class120.method339(Items.field37800)),
    field15108(0, 32, 12.0F, 0.0F, 22, () -> Class120.method339(Items.field37802)),

@@ -24,7 +24,7 @@ public class Class4272 extends Class4247 {
          blankButton = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.getStringWidth("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
       blankButton.doThis((var1x, var2x) -> {
-         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
+         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getScreen();
          var5x.method13612();
       });
       UIButton var10;
@@ -42,7 +42,7 @@ public class Class4272 extends Class4247 {
          )
       );
       var10.doThis((var1x, var2x) -> {
-         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
+         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getScreen();
          var5x.method13610();
       });
       this.addToList(this.field20707 = new UILoadingCircle(this, "loading", (var5 - 30) / 2, 100, 30, 30));
@@ -50,7 +50,7 @@ public class Class4272 extends Class4247 {
       field20706 = new Class8233(
          var2x -> {
             this.field20707.setEnabled(false);
-            ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
+            ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getScreen();
 
             for (String var7 : var2x) {
                ButtonPanel var8;

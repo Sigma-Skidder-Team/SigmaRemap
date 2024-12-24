@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.RenderUtil;
 import mapped.QuadraticEasing;
@@ -27,8 +27,8 @@ public class NotificationManager {
     private int field39925 = 10;
     private int field39926 = 10;
     private int field39927 = 10;
-    private ClientResource field39928 = ResourceRegistry.JelloLightFont14;
-    private ClientResource field39929 = ResourceRegistry.JelloLightFont20;
+    private TrueTypeFont field39928 = ResourceRegistry.JelloLightFont14;
+    private TrueTypeFont field39929 = ResourceRegistry.JelloLightFont20;
 
     public void send(Notification var1) {
         for (Notification var5 : this.field39919) {

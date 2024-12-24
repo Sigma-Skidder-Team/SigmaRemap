@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -353,7 +354,7 @@ public class Class4388 {
 
    public static boolean method13826(PiglinEntity var0, ItemStack var1) {
       Item var4 = var1.getItem();
-      if (!var4.method11743(Class5985.field26108)) {
+      if (!var4.method11743(ItemTags.field26108)) {
          if (method13876(var0) && var0.getBrain().method21404(Class8830.field39826)) {
             return false;
          } else if (!method13869(var4)) {
@@ -374,7 +375,7 @@ public class Class4388 {
    }
 
    public static boolean method13827(Item var0) {
-      return var0.method11743(Class5985.field26109);
+      return var0.method11743(ItemTags.field26109);
    }
 
    private static boolean method13828(PiglinEntity var0, Entity var1) {

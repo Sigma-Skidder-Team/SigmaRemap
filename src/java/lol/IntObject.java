@@ -1,17 +1,17 @@
 package lol;
 
-import com.mentalfrostbyte.jello.resource.ClientResource;
+import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 
-public class Class8246 {
+public class IntObject {
    private static String[] field35433;
    public int field35434;
    public int field35435;
    public int field35436;
    public int field35437;
    public int field35438;
-   public final ClientResource field35439;
+   public final TrueTypeFont field35439;
 
-   public Class8246(ClientResource var1) {
+   public IntObject(TrueTypeFont var1) {
       this.field35439 = var1;
    }
 }

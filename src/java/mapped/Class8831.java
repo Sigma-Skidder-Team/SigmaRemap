@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.tags.ITag;
 
 public class Class8831 {
    private static String[] field39873;

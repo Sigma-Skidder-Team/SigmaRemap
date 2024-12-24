@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -37,7 +39,7 @@ public abstract class Class4441<T> implements Class4442 {
    public void method14013(Class8297 var1) {
       this.field21601.clear();
       this.method14010();
-      ITag<T> var4 = Class7609.method24925();
+      ITag<T> var4 = Tag.getEmptyTag();
 
       Function<ResourceLocation, ITag<T>> var5 = var2 -> !this.field21601.containsKey(var2) ? null : var4;
       Function<ResourceLocation, T> var6 = var1x -> this.field21600.method9187(var1x).orElse(null);
@@ -79,12 +81,12 @@ public abstract class Class4441<T> implements Class4442 {
 
    public abstract Path method14011(ResourceLocation var1);
 
-   public Class8747<T> method14014(Class7610<T> var1) {
+   public Class8747<T> method14014(ITag.INamedTag<T> var1) {
       Class6879 var4 = this.method14015(var1);
       return new Class8747<T>(var4, this.field21600, "vanilla");
    }
 
-   public Class6879 method14015(Class7610<T> var1) {
+   public Class6879 method14015(ITag.INamedTag<T> var1) {
       return this.field21601.computeIfAbsent(var1.getName(), var0 -> new Class6879());
    }
 }

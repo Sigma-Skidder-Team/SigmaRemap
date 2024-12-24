@@ -14,7 +14,7 @@ public class Class4288 extends Class4278 {
       super(var2, "verticalScrollBarButton", 0, 0, var3, 10, true);
       this.field20781 = var1;
       this.field20886 = true;
-      this.field20780 = (Class4339)var2.getIcoPanel();
+      this.field20780 = (Class4339)var2.getScreen();
       this.method13300(false);
    }
 
@@ -22,8 +22,8 @@ public class Class4288 extends Class4278 {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       float var5 = (float)this.field20780.getButton().getHeightA();
-      float var6 = (float)this.icoPanel.getIcoPanel().getHeightA();
-      float var7 = (float)this.icoPanel.getHeightA();
+      float var6 = (float)this.screen.getScreen().getHeightA();
+      float var7 = (float)this.screen.getHeightA();
       float var8 = var6 / var5;
       float var9 = var7 * var8;
       float var10 = 20.0F;
@@ -36,10 +36,10 @@ public class Class4288 extends Class4278 {
       }
 
       this.setHeightA((int)var9);
-      if (!this.field20877 && this.getHeightA() != this.icoPanel.getHeightA()) {
+      if (!this.field20877 && this.getHeightA() != this.screen.getHeightA()) {
          if (this.field20781.field20793 >= 0) {
-            if (this.field20781.field20793 + this.icoPanel.getIcoPanel().getHeightA() > this.field20780.getButton().getHeightA()) {
-               this.field20781.field20793 = this.field20780.getButton().getHeightA() - this.icoPanel.getIcoPanel().getHeightA();
+            if (this.field20781.field20793 + this.screen.getScreen().getHeightA() > this.field20780.getButton().getHeightA()) {
+               this.field20781.field20793 = this.field20780.getButton().getHeightA() - this.screen.getScreen().getHeightA();
             }
          } else {
             this.field20781.field20793 = 0;
@@ -47,15 +47,15 @@ public class Class4288 extends Class4278 {
 
          float var16 = var5 - var6;
          float var13 = (float)this.field20781.field20793 / var16;
-         float var14 = (float)(this.icoPanel.getHeightA() - this.getHeightA());
+         float var14 = (float)(this.screen.getHeightA() - this.getHeightA());
          float var15 = var14 * var13 + 0.5F;
          this.setYA((int)var15);
       } else if (this.method13216()) {
-         float var12 = (float)this.getYA() / (float)this.icoPanel.getHeightA();
+         float var12 = (float)this.getYA() / (float)this.screen.getHeightA();
          this.field20781.field20793 = (int)(var12 * (float)this.field20780.getButton().getHeightA());
          if (this.field20781.field20793 >= 0) {
-            if (this.field20781.field20793 + this.icoPanel.getIcoPanel().getHeightA() > this.field20780.getButton().getHeightA()) {
-               this.field20781.field20793 = this.field20780.getButton().getHeightA() - this.icoPanel.getIcoPanel().getHeightA();
+            if (this.field20781.field20793 + this.screen.getScreen().getHeightA() > this.field20780.getButton().getHeightA()) {
+               this.field20781.field20793 = this.field20780.getButton().getHeightA() - this.screen.getScreen().getHeightA();
             }
          } else {
             this.field20781.field20793 = 0;

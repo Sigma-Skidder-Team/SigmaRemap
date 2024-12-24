@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 
 public class Class6862 implements Class6861<MinecraftServer> {

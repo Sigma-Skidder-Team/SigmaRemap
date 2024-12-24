@@ -4,15 +4,17 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
+import net.minecraft.tags.ITagCollection;
+import net.minecraft.tags.ITagCollectionSupplier;
 
-public final class Class8934 implements Class8933 {
+public final class Class8934 implements ITagCollectionSupplier {
    private static String[] field40419;
-   public final Class7984 field40420;
-   public final Class7984 field40421;
-   public final Class7984 field40422;
-   public final Class7984 field40423;
+   public final ITagCollection field40420;
+   public final ITagCollection field40421;
+   public final ITagCollection field40422;
+   public final ITagCollection field40423;
 
-   public Class8934(Class7984 var1, Class7984 var2, Class7984 var3, Class7984 var4) {
+   public Class8934(ITagCollection var1, ITagCollection var2, ITagCollection var3, ITagCollection var4) {
       this.field40420 = var1;
       this.field40421 = var2;
       this.field40422 = var3;
@@ -20,22 +22,22 @@ public final class Class8934 implements Class8933 {
    }
 
    @Override
-   public Class7984<Block> method32657() {
+   public ITagCollection<Block> method32657() {
       return this.field40420;
    }
 
    @Override
-   public Class7984<Item> method32658() {
+   public ITagCollection<Item> method32658() {
       return this.field40421;
    }
 
    @Override
-   public Class7984<Fluid> method32659() {
+   public ITagCollection<Fluid> method32659() {
       return this.field40422;
    }
 
    @Override
-   public Class7984<EntityType<?>> method32660() {
+   public ITagCollection<EntityType<?>> method32660() {
       return this.field40423;
    }
 }

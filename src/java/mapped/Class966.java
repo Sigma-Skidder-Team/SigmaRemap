@@ -106,7 +106,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
       BlockPos var3 = this.getPos();
 
       for (LivingEntity var5 : this.field5419) {
-         if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(Class8613.field38735)) {
+         if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(EntityTypeTags.field38735)) {
             return true;
          }
       }
@@ -155,7 +155,7 @@ public class Class966 extends TileEntity implements ITickableTileEntity {
       return var1.isAlive()
          && !var1.removed
          && this.getPos().method8317(var1.getPositionVec(), 48.0)
-         && var1.getType().method33228(Class8613.field38735);
+         && var1.getType().method33228(EntityTypeTags.field38735);
    }
 
    private void method3997(LivingEntity var1) {

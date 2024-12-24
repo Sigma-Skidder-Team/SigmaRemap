@@ -4,12 +4,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Hand;
 
 import java.util.function.Predicate;
 
 public abstract class Class3262 extends Item {
-   public static final Predicate<ItemStack> field18748 = var0 -> var0.getItem().method11743(Class5985.field26119);
+   public static final Predicate<ItemStack> field18748 = var0 -> var0.getItem().method11743(ItemTags.field26119);
    public static final Predicate<ItemStack> field18749 = field18748.or(var0 -> var0.getItem() == Items.field38068);
 
    public Class3262(Properties var1) {

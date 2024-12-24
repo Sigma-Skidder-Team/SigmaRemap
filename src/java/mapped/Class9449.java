@@ -7,6 +7,7 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.ITag;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
@@ -34,7 +35,7 @@ public class Class9449 {
       } else if (var1.method6763(var2)) {
          BlockState var5 = var1.getBlockState(var2);
          Block var6 = var5.getBlock();
-         if (this.field43900 != null && !this.field43900.method24917(var6)) {
+         if (this.field43900 != null && !this.field43900.contains(var6)) {
             return false;
          } else if (this.field43901 != null && var6 != this.field43901) {
             return false;

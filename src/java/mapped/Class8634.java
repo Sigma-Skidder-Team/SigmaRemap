@@ -9,6 +9,7 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -53,7 +54,7 @@ public class Class8634 {
    public boolean method31016(ItemStack var1) {
       if (this == field38839) {
          return true;
-      } else if (this.field38840 != null && !this.field38840.method24917(var1.getItem())) {
+      } else if (this.field38840 != null && !this.field38840.contains(var1.getItem())) {
          return false;
       } else if (this.field38841 != null && var1.getItem() != this.field38841) {
          return false;

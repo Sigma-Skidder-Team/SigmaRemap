@@ -26,7 +26,7 @@ public class Class4356 extends Class4247 {
          }
 
          var12.doThis((var1x, var2x) -> {
-            for (CustomGuiScreen var6 : var1x.getIcoPanel().method13241()) {
+            for (CustomGuiScreen var6 : var1x.getScreen().method13241()) {
                if (var6 instanceof Class4245) {
                   ((Class4245)var6).field20598 = false;
                   ((Class4245)var6).field20599.changeDirection(Direction.BACKWARDS);

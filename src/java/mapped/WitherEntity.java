@@ -330,7 +330,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
    }
 
    public static boolean method5002(BlockState var0) {
-      return !var0.isAir() && !BlockTags.field32792.method24917(var0.getBlock());
+      return !var0.isAir() && !BlockTags.field32792.contains(var0.getBlock());
    }
 
    public void method5003() {

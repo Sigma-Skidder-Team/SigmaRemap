@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 
-public class Class7426 implements Class7427 {
+public class Class7426 implements Font {
    private static SGL field31916 = Renderer.get();
    private static final int field31917 = 200;
    private static final int field31918 = 255;

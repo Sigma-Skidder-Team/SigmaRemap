@@ -18,6 +18,7 @@ import net.minecraft.client.multiplayer.PlayerController;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.crash.ReportedException;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -648,7 +649,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public Class8933 method6817() {
+   public ITagCollectionSupplier method6817() {
       return this.connection.method15798();
    }
 

@@ -91,9 +91,9 @@ public class Class3336 extends Item {
                if (Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Biomes.WARM_OCEAN))
                   || Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_WARM_OCEAN))) {
                   if (var6 == 0 && var3 != null && var3.getAxis().isHorizontal()) {
-                     var8 = BlockTags.field32784.method24919(var1.rand).getDefaultState().with(Class3229.field18669, var3);
+                     var8 = BlockTags.field32784.getRandomElement(var1.rand).getDefaultState().with(Class3229.field18669, var3);
                   } else if (field18735.nextInt(4) == 0) {
-                     var8 = BlockTags.field32782.method24919(field18735).getDefaultState();
+                     var8 = BlockTags.field32782.getRandomElement(field18735).getDefaultState();
                   }
                }
 
