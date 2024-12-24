@@ -60,10 +60,10 @@ public enum TextFormatting {
            RESET
    };
 
-   private TextFormatting(char var3, String var4) {
-      this.formattingCode = var3;
-      this.controlCode = var4;
-      this.name = new String(new char[]{'§', var3});
+   private TextFormatting(char formattingCode, String controlCode) {
+      this.formattingCode = formattingCode;
+      this.controlCode = controlCode;
+      this.name = new String(new char[]{'§', formattingCode});
    }
 
    @Override
