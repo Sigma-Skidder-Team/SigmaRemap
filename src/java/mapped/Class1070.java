@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
 import java.util.LinkedHashSet;
 import java.util.Random;
 
-public class Class1070 extends Class1018 implements Class1071, Class1069 {
+public class Class1070 extends AnimalEntity implements Class1071, Class1069 {
    private static String[] field5902;
    private static final Class120 field5903 = Class120.method339(Items.field37349);
    private static final Class120 field5904 = Class120.method339(Items.field37349, Items.field38065);

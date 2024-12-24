@@ -267,7 +267,7 @@ public class Class1108 extends MobEntity implements IMob {
             && var4.nextFloat() < 0.5F
             && var4.nextFloat() < var1.method7000()
             && var1.method7015(var3) <= var4.nextInt(8)) {
-            return method4264(var0, var1, var2, var3, var4);
+            return canSpawnOn(var0, var1, var2, var3, var4);
          }
 
          if (!(var1 instanceof ISeedReader)) {
@@ -277,7 +277,7 @@ public class Class1108 extends MobEntity implements IMob {
          ChunkPos var7 = new ChunkPos(var3);
          boolean var8 = SharedSeedRandom.method10375(var7.x, var7.z, ((ISeedReader)var1).getSeed(), 987234911L).nextInt(10) == 0;
          if (var4.nextInt(10) == 0 && var8 && var3.getY() < 40) {
-            return method4264(var0, var1, var2, var3, var4);
+            return canSpawnOn(var0, var1, var2, var3, var4);
          }
       }
 

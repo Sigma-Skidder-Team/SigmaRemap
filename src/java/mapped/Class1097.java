@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Class1097 extends Class1018 {
+public class Class1097 extends AnimalEntity {
    private static final DataParameter<Integer> field6017 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field6018 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field6019 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.VARINT);

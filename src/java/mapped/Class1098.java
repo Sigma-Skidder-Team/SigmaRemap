@@ -295,7 +295,7 @@ public class Class1098 extends TameableEntity {
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       if (this.method4393()) {
          if (!(var1 instanceof Class1098)) {
             return false;

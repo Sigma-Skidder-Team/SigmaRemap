@@ -2,9 +2,9 @@ package mapped;
 
 public class Class2655 extends ZombieAttackGoal {
    private static String[] field16989;
-   private final Class1037 field17008;
+   private final DrownedEntity field17008;
 
-   public Class2655(Class1037 var1, double var2, boolean var4) {
+   public Class2655(DrownedEntity var1, double var2, boolean var4) {
       super(var1, var2, var4);
       this.field17008 = var1;
    }

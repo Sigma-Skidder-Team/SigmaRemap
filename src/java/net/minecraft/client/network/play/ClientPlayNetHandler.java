@@ -902,7 +902,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                }
             }
          } else {
-            this.mc.getSoundHandler().method1000(new Class6347((Class1105)var4));
+            this.mc.getSoundHandler().method1000(new Class6347((GuardianEntity)var4));
          }
       }
    }

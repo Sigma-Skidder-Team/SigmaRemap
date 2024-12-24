@@ -147,7 +147,7 @@ public class Class3441 extends Block {
    }
 
    private boolean method12117(World var1, Entity var2) {
-      if (var2 instanceof Class1088 || var2 instanceof Class1114) {
+      if (var2 instanceof Class1088 || var2 instanceof BatEntity) {
          return false;
       } else {
          return !(var2 instanceof LivingEntity) ? false : var2 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field24224);

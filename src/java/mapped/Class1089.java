@@ -18,7 +18,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class1089 extends Class1018 {
+public class Class1089 extends AnimalEntity {
    private static final Class120 field5964 = Class120.method339(Items.field37841, Items.field37960, Items.field37959, Items.field38112);
    public float field5965;
    public float field5966;

@@ -69,7 +69,7 @@ public class Class4183 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
       if (!"chest".equals(var1)) {
          if ("drowned".equals(var1)) {
-            Class1037 var8 = EntityType.DROWNED.create(var3.method6970());
+            DrownedEntity var8 = EntityType.DROWNED.create(var3.method6970());
             var8.method4278();
             var8.moveToBlockPosAndAngles(var2, 0.0F, 0.0F);
             var8.method4276(var3, var3.method6807(var2), Class2202.field14394, (Class5093)null, (CompoundNBT)null);

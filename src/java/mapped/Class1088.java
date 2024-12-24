@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Class1088 extends Class1018 {
+public class Class1088 extends AnimalEntity {
    private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>createKey(Class1088.class, DataSerializers.field33401);
    private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);

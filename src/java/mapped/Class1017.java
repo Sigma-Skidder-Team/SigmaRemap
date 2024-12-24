@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1017 extends Class1018 implements IAngerable, Class1016 {
+public class Class1017 extends AnimalEntity implements IAngerable, Class1016 {
    private static final DataParameter<Byte> field5684 = EntityDataManager.<Byte>createKey(Class1017.class, DataSerializers.field33390);
    private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>createKey(Class1017.class, DataSerializers.VARINT);
    private static final RangedInteger field5686 = TickRangeConverter.convertRange(20, 39);

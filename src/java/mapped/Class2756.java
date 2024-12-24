@@ -11,11 +11,11 @@ import net.minecraft.util.math.vector.Vector3d;
 public class Class2756 extends Class2754 {
    private static String[] field17296;
    private static final int[] field17297 = new int[]{0, 1, 4, 5, 6, 7};
-   private final Class1048 field17298;
+   private final DolphinEntity field17298;
    private final int field17299;
    private boolean field17300;
 
-   public Class2756(Class1048 var1, int var2) {
+   public Class2756(DolphinEntity var1, int var2) {
       this.field17298 = var1;
       this.field17299 = var2;
    }

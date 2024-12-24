@@ -343,7 +343,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       return var1 != this && var1 instanceof Class1064 && this.method4961() && ((Class1064)var1).method4961();
    }
 

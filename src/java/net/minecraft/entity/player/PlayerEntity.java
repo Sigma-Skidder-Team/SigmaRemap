@@ -510,17 +510,17 @@ public abstract class PlayerEntity extends LivingEntity {
             .filter(var0 -> var0 == EntityType.PARROT)
             .ifPresent(
                var1x -> {
-                  if (!Class1015.method4409(this.world, this)) {
+                  if (!ParrotEntity.method4409(this.world, this)) {
                      this.world
                         .playSound(
                            (PlayerEntity)null,
                            this.getPosX(),
                            this.getPosY(),
                            this.getPosZ(),
-                           Class1015.method4411(this.world, this.world.rand),
+                           ParrotEntity.method4411(this.world, this.world.rand),
                            this.getSoundCategory(),
                            1.0F,
-                           Class1015.method4413(this.world.rand)
+                           ParrotEntity.method4413(this.world.rand)
                         );
                   }
                }

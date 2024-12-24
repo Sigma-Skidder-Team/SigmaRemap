@@ -248,9 +248,9 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18297(Class124.method363(0.025F, 0.01F))
             )
       );
-      this.method11033(EntityType.field41024, Class7318.method23188());
+      this.method11033(EntityType.ENDER_DRAGON, Class7318.method23188());
       this.method11033(
-         EntityType.field41025,
+         EntityType.ENDERMAN,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -262,7 +262,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11033(EntityType.field41026, Class7318.method23188());
+      this.method11033(EntityType.ENDERMITE, Class7318.method23188());
       this.method11033(
          EntityType.field41027,
          Class7318.method23188()

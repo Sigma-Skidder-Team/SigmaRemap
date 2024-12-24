@@ -4,12 +4,12 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2659 extends Class2595 {
    private static String[] field17011;
-   private final Class1037 field17012;
+   private final DrownedEntity field17012;
    private final double field17013;
    private final int field17014;
    private boolean field17015;
 
-   public Class2659(Class1037 var1, double var2, int var4) {
+   public Class2659(DrownedEntity var1, double var2, int var4) {
       this.field17012 = var1;
       this.field17013 = var2;
       this.field17014 = var4;

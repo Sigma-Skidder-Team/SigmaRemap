@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.stream.Stream;
 
-public abstract class AbstractGroupFishEntity extends Class1049 {
+public abstract class AbstractGroupFishEntity extends AbstractFishEntity {
    private AbstractGroupFishEntity field5810;
    private int field5811 = 1;
 

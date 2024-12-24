@@ -26,7 +26,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1096 extends Class1018 implements IAngerable {
+public class Class1096 extends AnimalEntity implements IAngerable {
    private static String[] field6009;
    private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(Class1096.class, DataSerializers.field33398);
    private float field6011;
@@ -79,7 +79,7 @@ public class Class1096 extends Class1018 implements IAngerable {
       Optional var7 = var1.method7178(var3);
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_OCEAN))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_FROZEN_OCEAN))
-         ? method4500(var0, var1, var2, var3, var4)
+         ? canAnimalSpawn(var0, var1, var2, var3, var4)
          : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.down()).isIn(Blocks.ICE);
    }
 

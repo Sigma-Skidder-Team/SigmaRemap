@@ -376,7 +376,7 @@ public final class Class8170 {
          } while (var0.getBlockState(var7).isAir() && var7.getY() > 0);
       }
 
-      if (EntitySpawnPlacementRegistry.getPlacementType(var1) == EntitySpawnPlacementRegistry$PlacementType.field13472) {
+      if (EntitySpawnPlacementRegistry.getPlacementType(var1) == EntitySpawnPlacementRegistry$PlacementType.ON_GROUND) {
          BlockPos var8 = var7.down();
          if (var0.getBlockState(var8).method23440(var0, var8, PathType.field12614)) {
             return var8;

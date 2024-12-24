@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2811 extends Class2803<Class1114> {
+public class Class2811 extends Class2803<BatEntity> {
    private static String[] field17493;
    private final ModelRenderer field17494;
    private final ModelRenderer field17495;
@@ -50,7 +50,7 @@ public class Class2811 extends Class2803<Class1114> {
       return ImmutableList.of(this.field17494, this.field17495);
    }
 
-   public void setRotationAngles(Class1114 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(BatEntity var1, float var2, float var3, float var4, float var5, float var6) {
       if (!var1.method5364()) {
          this.field17494.rotateAngleX = var6 * (float) (Math.PI / 180.0);
          this.field17494.rotateAngleY = var5 * (float) (Math.PI / 180.0);

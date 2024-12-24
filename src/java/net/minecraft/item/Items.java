@@ -1037,10 +1037,10 @@ public class Items {
       "elder_guardian_spawn_egg", new SpawnEggItem(EntityType.ELDER_GUARDIAN, 13552826, 7632531, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37994 = method30157(
-      "enderman_spawn_egg", new SpawnEggItem(EntityType.field41025, 1447446, 0, new Item.Properties().method17779(ItemGroup.field31669))
+      "enderman_spawn_egg", new SpawnEggItem(EntityType.ENDERMAN, 1447446, 0, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37995 = method30157(
-      "endermite_spawn_egg", new SpawnEggItem(EntityType.field41026, 1447446, 7237230, new Item.Properties().method17779(ItemGroup.field31669))
+      "endermite_spawn_egg", new SpawnEggItem(EntityType.ENDERMITE, 1447446, 7237230, new Item.Properties().method17779(ItemGroup.field31669))
    );
    public static final Item field37996 = method30157(
       "evoker_spawn_egg", new SpawnEggItem(EntityType.field41027, 9804699, 1973274, new Item.Properties().method17779(ItemGroup.field31669))

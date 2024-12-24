@@ -19,7 +19,7 @@ public class Class6997 extends Class6990 {
 
    @Override
    public Class9597 method21644(int var1) {
-      this.field30272 = this.field30243 instanceof Class1048;
+      this.field30272 = this.field30243 instanceof DolphinEntity;
       this.field30257 = new Class6765(this.field30272);
       return new Class9597(this.field30257, var1);
    }

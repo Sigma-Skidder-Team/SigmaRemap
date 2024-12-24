@@ -34,7 +34,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1094 extends Class1018 {
+public class Class1094 extends AnimalEntity {
    private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>createKey(Class1094.class, DataSerializers.VARINT);
    private static final ResourceLocation field5987 = new ResourceLocation("killer_bunny");
    private int field5988;

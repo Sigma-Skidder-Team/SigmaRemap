@@ -5,11 +5,11 @@ import net.minecraft.util.Hand;
 
 public class Class2599 extends Class2598 {
    private static String[] field16836;
-   private final Class1037 field16837;
+   private final DrownedEntity field16837;
 
    public Class2599(Class1022 var1, double var2, int var4, float var5) {
       super(var1, var2, var4, var5);
-      this.field16837 = (Class1037)var1;
+      this.field16837 = (DrownedEntity)var1;
    }
 
    @Override

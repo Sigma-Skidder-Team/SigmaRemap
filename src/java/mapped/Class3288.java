@@ -40,7 +40,7 @@ public class Class3288 extends Class3287 {
    private void method11827(ServerWorld var1, ItemStack var2, BlockPos var3) {
       Entity var6 = this.field18799.method33200(var1, var2, (PlayerEntity)null, var3, Class2202.field14402, true, false);
       if (var6 != null) {
-         ((Class1049)var6).method4794(true);
+         ((AbstractFishEntity)var6).method4794(true);
       }
    }
 

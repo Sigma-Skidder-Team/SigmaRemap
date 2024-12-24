@@ -5,9 +5,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class6836 extends Class6829 {
    private static String[] field29706;
-   private final Class1048 field29723;
+   private final DolphinEntity field29723;
 
-   public Class6836(Class1048 var1) {
+   public Class6836(DolphinEntity var1) {
       super(var1);
       this.field29723 = var1;
    }

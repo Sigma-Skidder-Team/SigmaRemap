@@ -26,7 +26,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public class Class1072 extends Class1018 implements Class1071, Class1069 {
+public class Class1072 extends AnimalEntity implements Class1071, Class1069 {
    private static String[] field5911;
    private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>createKey(Class1072.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>createKey(Class1072.class, DataSerializers.VARINT);

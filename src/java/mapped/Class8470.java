@@ -7,7 +7,7 @@ public class Class8470 {
 
    static {
       try {
-         field36295[EntitySpawnPlacementRegistry$PlacementType.field13473.ordinal()] = 1;
+         field36295[EntitySpawnPlacementRegistry$PlacementType.IN_WATER.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
@@ -17,7 +17,7 @@ public class Class8470 {
       }
 
       try {
-         field36295[EntitySpawnPlacementRegistry$PlacementType.field13472.ordinal()] = 3;
+         field36295[EntitySpawnPlacementRegistry$PlacementType.ON_GROUND.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

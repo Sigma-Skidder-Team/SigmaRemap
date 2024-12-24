@@ -10,10 +10,10 @@ import java.util.EnumSet;
 
 public class Class2683 extends Class2595 {
    private static String[] field17096;
-   private final Class1048 field17097;
+   private final DolphinEntity field17097;
    private boolean field17098;
 
-   public Class2683(Class1048 var1) {
+   public Class2683(DolphinEntity var1) {
       this.field17097 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
    }

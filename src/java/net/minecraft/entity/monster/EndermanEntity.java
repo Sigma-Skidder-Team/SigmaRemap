@@ -34,7 +34,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(EndermanEntity.class, DataSerializers.field33397);
    private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(EndermanEntity.class, DataSerializers.field33398);
-   private static final Predicate<LivingEntity> field5650 = var0 -> var0 instanceof Class1104 && ((Class1104)var0).method5297();
+   private static final Predicate<LivingEntity> field5650 = var0 -> var0 instanceof EndermiteEntity && ((EndermiteEntity)var0).method5297();
    private int field5651 = Integer.MIN_VALUE;
    private int field5652;
    private static final RangedInteger field5653 = TickRangeConverter.convertRange(20, 39);
@@ -59,7 +59,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
       this.field5600.addGoal(11, new Class2734(this));
       this.field5601.addGoal(1, new Class2710(this, this::method4367));
       this.field5601.addGoal(2, new HurtByTargetGoal(this));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1104>(this, Class1104.class, 10, true, false, field5650));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<EndermiteEntity>(this, EndermiteEntity.class, 10, true, false, field5650));
       this.field5601.addGoal(4, new ResetAngerGoal<EndermanEntity>(this, false));
    }
 

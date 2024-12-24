@@ -303,7 +303,7 @@ public class ServerWorld extends World implements ISeedReader {
             Entry var18 = (Entry)var15.next();
             Entity var17 = (Entity)var18.getValue();
             Entity var20 = var17.getRidingEntity();
-            if (!this.field9045.method1354() && (var17 instanceof Class1018 || var17 instanceof WaterMobEntity)) {
+            if (!this.field9045.method1354() && (var17 instanceof AnimalEntity || var17 instanceof WaterMobEntity)) {
                var17.remove();
             }
 

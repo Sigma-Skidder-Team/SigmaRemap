@@ -84,7 +84,7 @@ public abstract class Class1028 extends MonsterEntity {
    }
 
    public static boolean method4572(EntityType<? extends Class1028> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getLightFor(LightType.BLOCK, var3) <= 8 ? method4342(var0, var1, var2, var3, var4) : false;
+      return var1.getLightFor(LightType.BLOCK, var3) <= 8 ? canMonsterSpawn(var0, var1, var2, var3, var4) : false;
    }
 
    @Override

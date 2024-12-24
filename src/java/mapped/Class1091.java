@@ -30,7 +30,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class1091 extends Class1018 implements IMob, Class1092 {
+public class Class1091 extends AnimalEntity implements IMob, Class1092 {
    private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(Class1091.class, DataSerializers.field33398);
    private int field5977;
    private int field5978 = 0;

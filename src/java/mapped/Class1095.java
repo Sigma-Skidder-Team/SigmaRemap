@@ -33,7 +33,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class Class1095 extends Class1018 {
+public class Class1095 extends AnimalEntity {
    private static final DataParameter<Integer> field5993 = EntityDataManager.<Integer>createKey(Class1095.class, DataSerializers.VARINT);
    private static final DataParameter<Byte> field5994 = EntityDataManager.<Byte>createKey(Class1095.class, DataSerializers.field33390);
    private static final DataParameter<Optional<UUID>> field5995 = EntityDataManager.<Optional<UUID>>createKey(Class1095.class, DataSerializers.field33404);
@@ -78,9 +78,9 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field6001 = new NearestAttackableTargetGoal<Class1018>(this, Class1018.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
+      this.field6001 = new NearestAttackableTargetGoal<AnimalEntity>(this, AnimalEntity.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
       this.field6002 = new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963);
-      this.field6003 = new NearestAttackableTargetGoal<Class1049>(this, Class1049.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
+      this.field6003 = new NearestAttackableTargetGoal<AbstractFishEntity>(this, AbstractFishEntity.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
       this.field5600.addGoal(0, new Class2604(this));
       this.field5600.addGoal(1, new Class2698(this));
       this.field5600.addGoal(2, new Class2750(this, 2.2));

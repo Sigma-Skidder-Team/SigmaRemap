@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public abstract class TameableEntity extends Class1018 {
+public abstract class TameableEntity extends AnimalEntity {
    public static final DataParameter<Byte> field5668 = EntityDataManager.<Byte>createKey(TameableEntity.class, DataSerializers.field33390);
    public static final DataParameter<Optional<UUID>> field5669 = EntityDataManager.<Optional<UUID>>createKey(TameableEntity.class, DataSerializers.field33404);
    private boolean field5670;

@@ -39,7 +39,7 @@ public class Class1081 extends MonsterEntity implements Class1080 {
    public void method4219() {
       this.field5600.addGoal(1, new Class2603(this));
       this.field5600.addGoal(2, new Class2627(this));
-      this.field5600.addGoal(3, new Class2770<Class1090>(this, Class1090.class, 6.0F, 1.0, 1.2));
+      this.field5600.addGoal(3, new Class2770<OcelotEntity>(this, OcelotEntity.class, 6.0F, 1.0, 1.2));
       this.field5600.addGoal(3, new Class2770<Class1098>(this, Class1098.class, 6.0F, 1.0, 1.2));
       this.field5600.addGoal(4, new Class2647(this, 1.0, false));
       this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));

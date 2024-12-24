@@ -735,7 +735,7 @@ public abstract class MobEntity extends LivingEntity {
       return var1 + var6;
    }
 
-   public static boolean method4264(EntityType<? extends MobEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawnOn(EntityType<? extends MobEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.down();
       return var2 == Class2202.field14393 || var1.getBlockState(var7).method23385(var1, var7, var0);
    }

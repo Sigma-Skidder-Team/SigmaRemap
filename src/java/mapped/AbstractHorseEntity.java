@@ -33,7 +33,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public abstract class AbstractHorseEntity extends Class1018 implements Class1073, IJumpingMount, Class1069 {
+public abstract class AbstractHorseEntity extends AnimalEntity implements Class1073, IJumpingMount, Class1069 {
    private static final Predicate<LivingEntity> field5879 = var0 -> var0 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var0).method4940();
    private static final Class8522 field5880 = new Class8522().method30203(16.0).method30204().method30205().method30206().method30209(field5879);
    private static final Class120 field5881 = Class120.method339(
@@ -781,7 +781,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       return false;
    }
 

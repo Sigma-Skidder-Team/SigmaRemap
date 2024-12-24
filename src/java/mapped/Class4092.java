@@ -6,7 +6,7 @@ import net.optifine.Config;
 
 public class Class4092 extends Class4057 {
    public Class4092() {
-      super(EntityType.field41024, "dragon", 0.5F);
+      super(EntityType.ENDER_DRAGON, "dragon", 0.5F);
    }
 
    @Override

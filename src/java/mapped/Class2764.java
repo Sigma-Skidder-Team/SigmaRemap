@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Class2764 extends Class2595 {
    private static String[] field17332;
-   private final Class1018 field17333;
-   private Class1018 field17334;
+   private final AnimalEntity field17333;
+   private AnimalEntity field17334;
    private final double field17335;
    private int field17336;
 
-   public Class2764(Class1018 var1, double var2) {
+   public Class2764(AnimalEntity var1, double var2) {
       this.field17333 = var1;
       this.field17335 = var2;
    }
@@ -17,11 +17,11 @@ public class Class2764 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17333.method4767() < 0) {
-         List<? extends Class1018> var3 = this.field17333.world.getEntitiesWithinAABB(this.field17333.getClass(), this.field17333.getBoundingBox().grow(8.0, 4.0, 8.0));
-         Class1018 var4 = null;
+         List<? extends AnimalEntity> var3 = this.field17333.world.getEntitiesWithinAABB(this.field17333.getClass(), this.field17333.getBoundingBox().grow(8.0, 4.0, 8.0));
+         AnimalEntity var4 = null;
          double var5 = Double.MAX_VALUE;
 
-         for (Class1018 var8 : var3) {
+         for (AnimalEntity var8 : var3) {
             if (var8.method4767() >= 0) {
                double var9 = this.field17333.getDistanceSq(var8);
                if (!(var9 > var5)) {

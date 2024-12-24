@@ -391,7 +391,7 @@ public class Class8468 {
       var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.SKELETON, var3, 4, 4));
       var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.CREEPER, 100, 4, 4));
       var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.SLIME, 100, 4, 4));
-      var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field41025, 10, 1, 4));
+      var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.ENDERMAN, 10, 1, 4));
       var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.WITCH, 5, 1, 1));
    }
 
@@ -407,6 +407,6 @@ public class Class8468 {
    }
 
    public static void method29849(Class9328 var0) {
-      var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field41025, 10, 4, 4));
+      var0.method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.ENDERMAN, 10, 4, 4));
    }
 }

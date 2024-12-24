@@ -92,9 +92,9 @@ public class EntityRendererManager {
       this.method32209(EntityType.EGG, new Class5735(this, var1));
       this.method32209(EntityType.ELDER_GUARDIAN, new Class5659(this));
       this.method32209(EntityType.field41023, new Class5723(this));
-      this.method32209(EntityType.field41024, new Class5718(this));
-      this.method32209(EntityType.field41025, new Class5674(this));
-      this.method32209(EntityType.field41026, new Class5673(this));
+      this.method32209(EntityType.ENDER_DRAGON, new Class5718(this));
+      this.method32209(EntityType.ENDERMAN, new Class5674(this));
+      this.method32209(EntityType.ENDERMITE, new Class5673(this));
       this.method32209(EntityType.ENDER_PEARL, new Class5735(this, var1));
       this.method32209(EntityType.field41028, new Class5722(this));
       this.method32209(EntityType.field41027, new Class5677(this));

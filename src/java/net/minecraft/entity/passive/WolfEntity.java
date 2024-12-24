@@ -65,7 +65,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
       this.field5601.addGoal(2, new Class2703(this));
       this.field5601.addGoal(3, new HurtByTargetGoal(this).method10918());
       this.field5601.addGoal(4, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.addGoal(5, new Class2716<Class1018>(this, Class1018.class, false, field5659));
+      this.field5601.addGoal(5, new Class2716<AnimalEntity>(this, AnimalEntity.class, false, field5659));
       this.field5601.addGoal(6, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
       this.field5601.addGoal(7, new NearestAttackableTargetGoal<Class1082>(this, Class1082.class, false));
       this.field5601.addGoal(8, new ResetAngerGoal<WolfEntity>(this, true));
@@ -441,7 +441,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public boolean method4386(Class1018 var1) {
+   public boolean method4386(AnimalEntity var1) {
       if (var1 == this) {
          return false;
       } else if (this.method4393()) {
@@ -466,7 +466,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    @Override
    public boolean method4388(LivingEntity var1, LivingEntity var2) {
-      if (var1 instanceof Class1081 || var1 instanceof Class1112) {
+      if (var1 instanceof Class1081 || var1 instanceof GhastEntity) {
          return false;
       } else if (!(var1 instanceof WolfEntity)) {
          if (var1 instanceof PlayerEntity && var2 instanceof PlayerEntity && !((PlayerEntity)var2).method2742((PlayerEntity)var1)) {

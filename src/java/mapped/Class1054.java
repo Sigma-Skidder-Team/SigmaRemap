@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-public class Class1054 extends Class1049 {
+public class Class1054 extends AbstractFishEntity {
    private static final DataParameter<Integer> field5820 = EntityDataManager.<Integer>createKey(Class1054.class, DataSerializers.VARINT);
    private int field5821;
    private int field5822;

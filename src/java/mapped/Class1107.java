@@ -107,7 +107,7 @@ public class Class1107 extends MonsterEntity {
    }
 
    public static boolean method5317(EntityType<Class1107> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      if (!method4342(var0, var1, var2, var3, var4)) {
+      if (!canMonsterSpawn(var0, var1, var2, var3, var4)) {
          return false;
       } else {
          PlayerEntity var7 = var1.method7186((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 5.0, true);

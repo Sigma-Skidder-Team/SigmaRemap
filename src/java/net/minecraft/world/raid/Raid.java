@@ -600,7 +600,7 @@ public class Raid {
                )
             && this.field32978.getChunkProvider().isChunkLoaded(new ChunkPos(var6))
             && (
-               Class8170.method28429(EntitySpawnPlacementRegistry$PlacementType.field13472, this.field32978, var6, EntityType.RAVAGER)
+               Class8170.method28429(EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, this.field32978, var6, EntityType.RAVAGER)
                   || this.field32978.getBlockState(var6.down()).isIn(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()
             )) {
             return var6;

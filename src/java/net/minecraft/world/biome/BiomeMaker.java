@@ -1196,7 +1196,7 @@ public class BiomeMaker {
          .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.GHAST, 50, 4, 4))
          .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.ZOMBIFIED_PIGLIN, 100, 4, 4))
          .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.MAGMA_CUBE, 2, 4, 4))
-         .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.ENDERMAN, 1, 4, 4))
          .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.PIGLIN, 15, 4, 4))
          .method35249(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.STRIDER, 60, 1, 2))
          .method35253();
@@ -1248,11 +1248,11 @@ public class BiomeMaker {
       MobSpawnInfo var6 = new Class9328()
          .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.SKELETON, 20, 5, 5))
          .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.GHAST, 50, 4, 4))
-         .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.ENDERMAN, 1, 4, 4))
          .method35249(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.STRIDER, 60, 1, 2))
          .method35250(EntityType.SKELETON, 0.7, 0.15)
          .method35250(EntityType.GHAST, 0.7, 0.15)
-         .method35250(EntityType.field41025, 0.7, 0.15)
+         .method35250(EntityType.ENDERMAN, 0.7, 0.15)
          .method35250(EntityType.STRIDER, 0.7, 0.15)
          .method35253();
       Class7935 var7 = new Class7935()
@@ -1405,9 +1405,9 @@ public class BiomeMaker {
 
    public static Biome method36115() {
       MobSpawnInfo var2 = new Class9328()
-         .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field41025, 1, 4, 4))
+         .method35249(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.ENDERMAN, 1, 4, 4))
          .method35249(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.STRIDER, 60, 1, 2))
-         .method35250(EntityType.field41025, 1.0, 0.12)
+         .method35250(EntityType.ENDERMAN, 1.0, 0.12)
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41862)

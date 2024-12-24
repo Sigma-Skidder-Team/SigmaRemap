@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2814 extends Class2803<Class1015> {
+public class Class2814 extends Class2803<ParrotEntity> {
    private static String[] field17526;
    private final ModelRenderer field17527;
    private final ModelRenderer field17528;
@@ -65,11 +65,11 @@ public class Class2814 extends Class2803<Class1015> {
       return ImmutableList.of(this.field17527, this.field17529, this.field17530, this.field17528, this.field17531, this.field17536, this.field17537);
    }
 
-   public void setRotationAngles(Class1015 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(ParrotEntity var1, float var2, float var3, float var4, float var5, float var6) {
       this.method11020(method11022(var1), var1.ticksExisted, var2, var3, var4, var5, var6);
    }
 
-   public void setLivingAnimations(Class1015 var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(ParrotEntity var1, float var2, float var3, float var4) {
       this.method11021(method11022(var1));
    }
 
@@ -172,7 +172,7 @@ public class Class2814 extends Class2803<Class1015> {
       }
    }
 
-   private static Class2075 method11022(Class1015 var0) {
+   private static Class2075 method11022(ParrotEntity var0) {
       if (!var0.method4407()) {
          if (!var0.method4395()) {
             return !var0.method4416() ? Class2075.field13519 : Class2075.field13518;

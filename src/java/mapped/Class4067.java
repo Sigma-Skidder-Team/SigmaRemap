@@ -64,7 +64,7 @@ public class Class4067 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5654 var6 = new Class5654(var5);
-      var6.entityModel = (Class2805<Class1048>)var1;
+      var6.entityModel = (Class2805<DolphinEntity>)var1;
       var6.shadowSize = var2;
       return (Class9492)var6;
    }

@@ -4,9 +4,9 @@ import net.minecraft.util.SoundEvents;
 
 public class Class6347 extends Class6333 {
    private static String[] field27881;
-   private final Class1105 field27882;
+   private final GuardianEntity field27882;
 
-   public Class6347(Class1105 var1) {
+   public Class6347(GuardianEntity var1) {
       super(SoundEvents.field26645, SoundCategory.field14733);
       this.field27882 = var1;
       this.field27863 = Class2279.field14845;

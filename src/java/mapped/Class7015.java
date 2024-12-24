@@ -115,7 +115,7 @@ public class Class7015 implements Class7016 {
          int var7 = var2.getZ() + var1.rand.nextInt(16) - 8;
          int var8 = var1.method6736(Heightmap.Type.WORLD_SURFACE, var6, var7);
          BlockPos var9 = new BlockPos(var6, var8, var7);
-         if (var1.method6952(var9) && MonsterEntity.method4341(EntityType.ZOMBIE, var1, Class2202.field14398, var9, var1.rand)) {
+         if (var1.method6952(var9) && MonsterEntity.canMonsterSpawnInLight(EntityType.ZOMBIE, var1, Class2202.field14398, var9, var1.rand)) {
             return Vector3d.method11330(var9);
          }
       }

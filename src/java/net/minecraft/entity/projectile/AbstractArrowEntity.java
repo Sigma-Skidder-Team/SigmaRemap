@@ -315,7 +315,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          var8 = DamageSource.method31118(this, this);
       }
 
-      boolean var11 = var4.getType() == EntityType.field41025;
+      boolean var11 = var4.getType() == EntityType.ENDERMAN;
       int var12 = var4.getFireTimer();
       if (this.isBurning() && !var11) {
          var4.setFire(5);

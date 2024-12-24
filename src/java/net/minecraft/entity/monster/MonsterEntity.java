@@ -90,12 +90,12 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
       }
    }
 
-   public static boolean method4341(EntityType<? extends MonsterEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Difficulty.PEACEFUL && method4340(var1, var3, var4) && method4264(var0, var1, var2, var3, var4);
+   public static boolean canMonsterSpawnInLight(EntityType<? extends MonsterEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+      return var1.method6997() != Difficulty.PEACEFUL && method4340(var1, var3, var4) && canSpawnOn(var0, var1, var2, var3, var4);
    }
 
-   public static boolean method4342(EntityType<? extends MonsterEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Difficulty.PEACEFUL && method4264(var0, var1, var2, var3, var4);
+   public static boolean canMonsterSpawn(EntityType<? extends MonsterEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+      return var1.method6997() != Difficulty.PEACEFUL && canSpawnOn(var0, var1, var2, var3, var4);
    }
 
    public static MutableAttribute method4343() {

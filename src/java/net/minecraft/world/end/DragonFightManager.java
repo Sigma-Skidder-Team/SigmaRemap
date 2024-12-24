@@ -376,7 +376,7 @@ public class DragonFightManager {
 
    private Class1007 method26123() {
       this.field33538.getChunkAt(new BlockPos(0, 128, 0));
-      Class1007 var3 = EntityType.field41024.create(this.field33538);
+      Class1007 var3 = EntityType.ENDER_DRAGON.create(this.field33538);
       var3.method4336().method32671(Class9598.field44896);
       var3.setLocationAndAngles(0.0, 128.0, 0.0, this.field33538.rand.nextFloat() * 360.0F, 0.0F);
       this.field33538.addEntity(var3);

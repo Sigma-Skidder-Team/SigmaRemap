@@ -124,7 +124,7 @@ public class Class886 extends AbstractArrowEntity {
       this.field5114 = true;
       SoundEvent var8 = SoundEvents.field27148;
       if (var4.attackEntityFrom(var7, var5)) {
-         if (var4.getType() == EntityType.field41025) {
+         if (var4.getType() == EntityType.ENDERMAN) {
             return;
          }
 

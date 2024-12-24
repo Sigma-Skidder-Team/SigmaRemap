@@ -8,9 +8,9 @@ import java.util.function.Predicate;
 
 public class Class121 implements Predicate<LivingEntity> {
    private static String[] field431;
-   private final Class1105 field432;
+   private final GuardianEntity field432;
 
-   public Class121(Class1105 var1) {
+   public Class121(GuardianEntity var1) {
       this.field432 = var1;
    }
 
