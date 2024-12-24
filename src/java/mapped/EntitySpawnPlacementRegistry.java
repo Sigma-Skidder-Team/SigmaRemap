@@ -22,8 +22,8 @@ public class EntitySpawnPlacementRegistry {
    }
 
    public static EntitySpawnPlacementRegistry$PlacementType getPlacementType(EntityType<?> entityType) {
-      EntitySpawnPlacementRegistry$Entry var3 = REGISTRY.get(entityType);
-      return var3 != null ? EntitySpawnPlacementRegistry$Entry.getPlacementType(var3) : EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS;
+      EntitySpawnPlacementRegistry$Entry entry = REGISTRY.get(entityType);
+      return entry != null ? EntitySpawnPlacementRegistry$Entry.getPlacementType(entry) : EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS;
    }
 
    // func_209342_b (Searge sucks, use Yarn or Mojang mappings instead)
