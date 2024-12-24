@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class Class8384 {
+public class TagRegistryManager {
    private static final Map<ResourceLocation, Class7656<?>> field35957 = Maps.newHashMap();
 
    public static <T> Class7656<T> method29377(ResourceLocation var0, Function<Class8933, Class7984<T>> var1) {

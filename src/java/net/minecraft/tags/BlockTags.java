@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.List;
 
 public final class BlockTags {
-   public static final Class7656<Block> field32733 = Class8384.<Block>method29377(new ResourceLocation("block"), Class8933::method32657);
+   public static final Class7656<Block> field32733 = TagRegistryManager.<Block>method29377(new ResourceLocation("block"), Class8933::method32657);
    public static final Class7610<Block> field32734 = method25114("wool");
    public static final Class7610<Block> field32735 = method25114("planks");
    public static final Class7610<Block> field32736 = method25114("stone_bricks");

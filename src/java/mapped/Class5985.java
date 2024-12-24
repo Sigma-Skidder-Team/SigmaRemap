@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.List;
 
 public final class Class5985 {
-   public static final Class7656<Item> field26069 = Class8384.<Item>method29377(new ResourceLocation("item"), Class8933::method32658);
+   public static final Class7656<Item> field26069 = TagRegistryManager.<Item>method29377(new ResourceLocation("item"), Class8933::method32658);
    public static final Class7610<Item> field26070 = method18560("wool");
    public static final Class7610<Item> field26071 = method18560("planks");
    public static final Class7610<Item> field26072 = method18560("stone_bricks");

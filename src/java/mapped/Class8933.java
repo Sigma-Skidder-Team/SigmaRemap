@@ -22,7 +22,7 @@ public interface Class8933 {
    Class7984<EntityType<?>> method32660();
 
    default void method32661() {
-      Class8384.method29378(this);
+      TagRegistryManager.method29378(this);
       Blocks.method30025();
    }
 

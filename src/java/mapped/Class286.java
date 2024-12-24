@@ -39,7 +39,7 @@ public class Class286 implements Class268 {
                Class7984 var10x = this.field1090.method38420(var11.join());
                Class7984 var11x = this.field1091.method38420(var12.join());
                Class8933 var12x = Class8933.method32664(var8, var9x, var10x, var11x);
-               Multimap<ResourceLocation, ResourceLocation> var13 = Class8384.method29380(var12x);
+               Multimap<ResourceLocation, ResourceLocation> var13 = TagRegistryManager.method29380(var12x);
                if (var13.isEmpty()) {
                   Class9443.method36297(var12x);
                   this.field1092 = var12x;

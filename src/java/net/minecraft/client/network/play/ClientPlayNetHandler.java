@@ -146,7 +146,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.mc.playerController = new Class7314(this.mc, this);
       if (!this.field23269.isLocalChannel()) {
-         Class8384.method29379();
+         TagRegistryManager.method29379();
       }
 
       ArrayList var4 = Lists.newArrayList(var1.method17292());
@@ -1442,7 +1442,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleTags(STagsListPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       Class8933 var4 = var1.method17639();
-      Multimap var5 = Class8384.method29380(var4);
+      Multimap var5 = TagRegistryManager.method29380(var4);
       if (var5.isEmpty()) {
          this.field23279 = var4;
          if (!this.field23269.isLocalChannel()) {

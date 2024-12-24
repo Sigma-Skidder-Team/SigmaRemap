@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.List;
 
 public final class Class8613 {
-   public static final Class7656<EntityType<?>> field38733 = Class8384.<EntityType<?>>method29377(new ResourceLocation("entity_type"), Class8933::method32660);
+   public static final Class7656<EntityType<?>> field38733 = TagRegistryManager.<EntityType<?>>method29377(new ResourceLocation("entity_type"), Class8933::method32660);
    public static final Class7610<EntityType<?>> field38734 = method30860("skeletons");
    public static final Class7610<EntityType<?>> field38735 = method30860("raiders");
    public static final Class7610<EntityType<?>> field38736 = method30860("beehive_inhabitors");
