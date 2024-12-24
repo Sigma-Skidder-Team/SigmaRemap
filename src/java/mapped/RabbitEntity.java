@@ -321,7 +321,7 @@ public class RabbitEntity extends AnimalEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       int var8 = this.method5116(var1);
       if (!(var4 instanceof Class5099)) {
          var4 = new Class5099(var8);
@@ -347,7 +347,7 @@ public class RabbitEntity extends AnimalEntity {
       }
    }
 
-   public static boolean method5117(EntityType<RabbitEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5117(EntityType<RabbitEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (var7.isIn(Blocks.GRASS_BLOCK) || var7.isIn(Blocks.SNOW) || var7.isIn(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;

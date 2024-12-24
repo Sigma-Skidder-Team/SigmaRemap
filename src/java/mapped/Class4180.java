@@ -89,7 +89,7 @@ public abstract class Class4180 extends Class4178 {
       return true;
    }
 
-   public abstract void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5);
+   public abstract void method12944(String var1, BlockPos var2, ServerWorldAccess var3, Random var4, MutableBoundingBox var5);
 
    @Override
    public void method12937(int var1, int var2, int var3) {

@@ -40,7 +40,7 @@ public class Class3289 extends Item {
             if (var5 instanceof ServerWorld) {
                ServerWorld var11 = (ServerWorld)var5;
                ArmorStandEntity var12 = EntityType.ARMOR_STAND
-                  .method33202(var11, var8.getTag(), (ITextComponent)null, var1.method18358(), var7, Class2202.field14403, true, true);
+                  .method33202(var11, var8.getTag(), (ITextComponent)null, var1.method18358(), var7, SpawnReason.field14403, true, true);
                if (var12 == null) {
                   return ActionResultType.FAIL;
                }

@@ -132,7 +132,7 @@ public class Class1101 extends MonsterEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var1.method6814().nextInt(100) == 0) {
          Class1085 var8 = EntityType.SKELETON.create(this.world);

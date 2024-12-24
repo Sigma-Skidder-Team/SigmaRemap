@@ -50,7 +50,7 @@ public abstract class AbstractFishEntity extends WaterMobEntity {
       return super.method4255() || this.method4793();
    }
 
-   public static boolean canSpawn(EntityType<? extends AbstractFishEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<? extends AbstractFishEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3).isIn(Blocks.WATER) && var1.getBlockState(var3.up()).isIn(Blocks.WATER);
    }
 

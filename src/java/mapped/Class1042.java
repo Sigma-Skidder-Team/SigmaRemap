@@ -675,16 +675,16 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      if (var3 == Class2202.field14395) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
+      if (var3 == SpawnReason.field14395) {
          this.method4695(this.method4674().method26574(Class8395.field36011));
       }
 
-      if (var3 == Class2202.field14404 || var3 == Class2202.field14403 || var3 == Class2202.field14393 || var3 == Class2202.field14405) {
+      if (var3 == SpawnReason.field14404 || var3 == SpawnReason.field14403 || var3 == SpawnReason.field14393 || var3 == SpawnReason.field14405) {
          this.method4695(this.method4674().method26573(Class9564.method37068(var1.method7178(this.getPosition()))));
       }
 
-      if (var3 == Class2202.field14394) {
+      if (var3 == SpawnReason.field14394) {
          this.field5790 = true;
       }
 
@@ -705,7 +705,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       }
 
       Class1042 var8 = new Class1042(EntityType.VILLAGER, var1, var7);
-      var8.method4276(var1, var1.method6807(var8.getPosition()), Class2202.field14395, (Class5093)null, (CompoundNBT)null);
+      var8.method4276(var1, var1.method6807(var8.getPosition()), SpawnReason.field14395, (Class5093)null, (CompoundNBT)null);
       return var8;
    }
 
@@ -717,7 +717,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          LOGGER.info("Villager {} was struck by lightning {}.", this, var2);
          Class1027 var5 = EntityType.WITCH.create(var1);
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
-         var5.method4276(var1, var1.method6807(var5.getPosition()), Class2202.field14399, (Class5093)null, (CompoundNBT)null);
+         var5.method4276(var1, var1.method6807(var5.getPosition()), SpawnReason.field14399, (Class5093)null, (CompoundNBT)null);
          var5.method4302(this.method4305());
          if (this.method3381()) {
             var5.method3379(this.method3380());
@@ -837,9 +837,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          BlockPos var10 = this.method4719(var4, var6, var8);
          if (var10 != null) {
             Class1058 var11 = EntityType.IRON_GOLEM
-               .method33202(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14396, false, false);
+               .method33202(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, SpawnReason.field14396, false, false);
             if (var11 != null) {
-               if (var11.method4265(var1, Class2202.field14396) && var11.method4266(var1)) {
+               if (var11.method4265(var1, SpawnReason.field14396) && var11.method4266(var1)) {
                   var1.method6995(var11);
                   return var11;
                }

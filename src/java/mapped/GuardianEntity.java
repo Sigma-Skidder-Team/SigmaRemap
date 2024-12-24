@@ -308,10 +308,10 @@ public class GuardianEntity extends MonsterEntity {
       return var1.checkNoEntityCollision(this);
    }
 
-   public static boolean canSpawn(EntityType<? extends GuardianEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<? extends GuardianEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Difficulty.PEACEFUL
-         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
+         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
    }
 
    @Override

@@ -106,7 +106,7 @@ public class GhastEntity extends Class1111 implements IMob {
       return 5.0F;
    }
 
-   public static boolean canSpawn(EntityType<GhastEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<GhastEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL && var4.nextInt(20) == 0 && canSpawnOn(var0, var1, var2, var3, var4);
    }
 

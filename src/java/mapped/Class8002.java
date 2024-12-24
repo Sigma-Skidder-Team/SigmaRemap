@@ -78,7 +78,7 @@ public class Class8002 {
          if (var10 != null) {
             if (var4 && var10 instanceof MobEntity) {
                ((MobEntity)var10)
-                  .method4276(var0.method20172(), var0.method20172().method6807(var10.getPosition()), Class2202.field14404, (Class5093)null, (CompoundNBT)null);
+                  .method4276(var0.method20172(), var0.method20172().method6807(var10.getPosition()), SpawnReason.field14404, (Class5093)null, (CompoundNBT)null);
             }
 
             if (var9.method6928(var10)) {

@@ -31,7 +31,7 @@ public class MagmaCubeEntity extends SlimeEntity {
       return MonsterEntity.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
-   public static boolean canSpawn(EntityType<MagmaCubeEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<MagmaCubeEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL;
    }
 

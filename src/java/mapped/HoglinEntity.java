@@ -158,13 +158,13 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
       }
    }
 
-   public static boolean method5081(EntityType<HoglinEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5081(EntityType<HoglinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
    }
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (var1.method6814().nextFloat() < 0.2F) {
          this.method4308(true);
       }

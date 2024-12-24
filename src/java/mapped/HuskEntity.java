@@ -22,8 +22,8 @@ public class HuskEntity extends ZombieEntity {
       super(var1, var2);
    }
 
-   public static boolean canSpawn(EntityType<HuskEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return canMonsterSpawnInLight(var0, var1, var2, var3, var4) && (var2 == Class2202.field14393 || var1.method7022(var3));
+   public static boolean canSpawn(EntityType<HuskEntity> var0, ServerWorldAccess var1, SpawnReason var2, BlockPos var3, Random var4) {
+      return canMonsterSpawnInLight(var0, var1, var2, var3, var4) && (var2 == SpawnReason.field14393 || var1.method7022(var3));
    }
 
    @Override

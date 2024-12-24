@@ -81,7 +81,7 @@ public class Class7017 implements Class7016 {
    private int method21748(BlockPos var1, ServerWorld var2) {
       Class1098 var5 = EntityType.CAT.create(var2);
       if (var5 != null) {
-         var5.method4276(var2, var2.method6807(var1), Class2202.field14391, (Class5093)null, (CompoundNBT)null);
+         var5.method4276(var2, var2.method6807(var1), SpawnReason.field14391, (Class5093)null, (CompoundNBT)null);
          var5.moveToBlockPosAndAngles(var1, 0.0F, 0.0F);
          var2.method6995(var5);
          return 1;

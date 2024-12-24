@@ -264,14 +264,14 @@ public class ZombieEntity extends MonsterEntity {
                EntityType var16 = var10.getType();
                EntitySpawnPlacementRegistry$PlacementType var17 = EntitySpawnPlacementRegistry.getPlacementType(var16);
                if (Class8170.method28429(var17, this.world, var15, var16)
-                  && EntitySpawnPlacementRegistry.method21122(var16, var5, Class2202.field14400, var15, this.world.rand)) {
+                  && EntitySpawnPlacementRegistry.canSpawn(var16, var5, SpawnReason.field14400, var15, this.world.rand)) {
                   var10.setPosition((double)var12, (double)var13, (double)var14);
                   if (!this.world.method7187((double)var12, (double)var13, (double)var14, 7.0)
                      && this.world.checkNoEntityCollision(var10)
                      && this.world.hasNoCollisions(var10)
                      && !this.world.method7014(var10.getBoundingBox())) {
                      var10.method4233(var6);
-                     var10.method4276(var5, this.world.method6807(var10.getPosition()), Class2202.field14400, (Class5093)null, (CompoundNBT)null);
+                     var10.method4276(var5, this.world.method6807(var10.getPosition()), SpawnReason.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
                      this.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifier.Operation.ADDITION));
                      var10.getAttribute(Attributes.ZOMBIE_SPAWN_REINFORCEMENTS).method38668(new AttributeModifier("Zombie reinforcement callee charge", -0.05F, AttributeModifier.Operation.ADDITION));
@@ -372,7 +372,7 @@ public class ZombieEntity extends MonsterEntity {
 
          Class1042 var5 = (Class1042)var2;
          Class1040 var6 = var5.<Class1040>method4292(EntityType.ZOMBIE_VILLAGER, false);
-         var6.method4276(var1, var1.method6807(var6.getPosition()), Class2202.field14399, new Class5096(false, true), (CompoundNBT)null);
+         var6.method4276(var1, var1.method6807(var6.getPosition()), SpawnReason.field14399, new Class5096(false, true), (CompoundNBT)null);
          var6.method4673(var5.method4674());
          var6.method4672((INBT)var5.method4724().method25528(NBTDynamicOps.INSTANCE).getValue());
          var6.method4671(var5.method4742().method166());
@@ -395,7 +395,7 @@ public class ZombieEntity extends MonsterEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       float var8 = var2.method38330();
       this.method4281(this.rand.nextFloat() < 0.55F * var8);
@@ -412,7 +412,7 @@ public class ZombieEntity extends MonsterEntity {
                   if ((double)var1.method6814().nextFloat() < 0.05) {
                      Class1089 var10 = EntityType.CHICKEN.create(this.world);
                      var10.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
-                     var10.method4276(var1, var2, Class2202.field14397, (Class5093)null, (CompoundNBT)null);
+                     var10.method4276(var1, var2, SpawnReason.field14397, (Class5093)null, (CompoundNBT)null);
                      var10.method5071(true);
                      this.method3311(var10);
                      var1.addEntity(var10);

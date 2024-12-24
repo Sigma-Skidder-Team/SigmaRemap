@@ -218,7 +218,7 @@ public class OcelotEntity extends AnimalEntity {
       return field5972.test(var1);
    }
 
-   public static boolean canSpawn(EntityType<OcelotEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<OcelotEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var4.nextInt(3) != 0;
    }
 
@@ -241,7 +241,7 @@ public class OcelotEntity extends AnimalEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(1.0F);
       }

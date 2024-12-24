@@ -46,7 +46,7 @@ public class Class2669 extends Class2595 {
 
    private AbstractHorseEntity method10886(Class9755 var1) {
       Class1076 var4 = EntityType.SKELETON_HORSE.create(this.field17046.world);
-      var4.method4276((ServerWorld)this.field17046.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
+      var4.method4276((ServerWorld)this.field17046.world, var1, SpawnReason.field14401, (Class5093)null, (CompoundNBT)null);
       var4.setPosition(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
       var4.hurtResistantTime = 60;
       var4.method4278();
@@ -57,7 +57,7 @@ public class Class2669 extends Class2595 {
 
    private Class1085 method10887(Class9755 var1, AbstractHorseEntity var2) {
       Class1085 var5 = EntityType.SKELETON.create(var2.world);
-      var5.method4276((ServerWorld)var2.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
+      var5.method4276((ServerWorld)var2.world, var1, SpawnReason.field14401, (Class5093)null, (CompoundNBT)null);
       var5.setPosition(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       var5.hurtResistantTime = 60;
       var5.method4278();

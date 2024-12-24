@@ -408,7 +408,7 @@ public abstract class Class4178 {
       }
    }
 
-   public boolean method12935(Class1659 var1, MutableBoundingBox var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
+   public boolean method12935(ServerWorldAccess var1, MutableBoundingBox var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
       if (var2.method38396(var4) && !var1.getBlockState(var4).isIn(Blocks.CHEST)) {
          if (var6 == null) {
             var6 = method12934(var1, var4, Blocks.CHEST.getDefaultState());

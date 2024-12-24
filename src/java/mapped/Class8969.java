@@ -171,16 +171,16 @@ public class Class8969 {
       return method32905(var1, var0.method36436(), var0.method36437(), var0.method36438());
    }
 
-   public void method32897(Class1659 var1, BlockPos var2, Class9463 var3, Random var4) {
+   public void method32897(ServerWorldAccess var1, BlockPos var2, Class9463 var3, Random var4) {
       var3.method36444();
       this.method32898(var1, var2, var3, var4);
    }
 
-   public void method32898(Class1659 var1, BlockPos var2, Class9463 var3, Random var4) {
+   public void method32898(ServerWorldAccess var1, BlockPos var2, Class9463 var3, Random var4) {
       this.method32899(var1, var2, var2, var3, var4, 2);
    }
 
-   public boolean method32899(Class1659 var1, BlockPos var2, BlockPos var3, Class9463 var4, Random var5, int var6) {
+   public boolean method32899(ServerWorldAccess var1, BlockPos var2, BlockPos var3, Class9463 var4, Random var5, int var6) {
       if (this.field40545.isEmpty()) {
          return false;
       } else {
@@ -362,7 +362,7 @@ public class Class8969 {
       return var7;
    }
 
-   private void method32902(Class1659 var1, BlockPos var2, Mirror var3, Rotation var4, BlockPos var5, MutableBoundingBox var6, boolean var7) {
+   private void method32902(ServerWorldAccess var1, BlockPos var2, Mirror var3, Rotation var4, BlockPos var5, MutableBoundingBox var6, boolean var7) {
       for (Class9559 var11 : this.field40546) {
          BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
          if (var6 == null || var6.method38396(var12)) {
@@ -380,7 +380,7 @@ public class Class8969 {
                var9 += var6x.rotationYaw - var6x.getRotatedYaw(var4);
                var6x.setLocationAndAngles(var15.x, var15.y, var15.z, var9, var6x.rotationPitch);
                if (var7 && var6x instanceof MobEntity) {
-                  ((MobEntity)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), Class2202.field14394, (Class5093)null, var13);
+                  ((MobEntity)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), SpawnReason.field14394, (Class5093)null, var13);
                }
 
                var1.method6995(var6x);
@@ -389,7 +389,7 @@ public class Class8969 {
       }
    }
 
-   private static Optional<Entity> method32903(Class1659 var0, CompoundNBT var1) {
+   private static Optional<Entity> method32903(ServerWorldAccess var0, CompoundNBT var1) {
       try {
          return EntityType.method33217(var1, var0.method6970());
       } catch (Exception var5) {

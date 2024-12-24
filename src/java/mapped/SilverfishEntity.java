@@ -106,7 +106,7 @@ public class SilverfishEntity extends MonsterEntity {
       return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.getBlockPathWeight(var1, var2) : 10.0F;
    }
 
-   public static boolean method5317(EntityType<SilverfishEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5317(EntityType<SilverfishEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (!canMonsterSpawn(var0, var1, var2, var3, var4)) {
          return false;
       } else {

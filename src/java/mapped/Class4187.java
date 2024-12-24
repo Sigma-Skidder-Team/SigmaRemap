@@ -55,7 +55,7 @@ public class Class4187 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
+   public void method12944(String var1, BlockPos var2, ServerWorldAccess var3, Random var4, MutableBoundingBox var5) {
       if (var1.startsWith("Chest")) {
          Rotation var8 = this.field20454.method36437();
          BlockState var9 = Blocks.CHEST.getDefaultState();
@@ -85,7 +85,7 @@ public class Class4187 extends Class4180 {
 
          var11.method4278();
          var11.moveToBlockPosAndAngles(var2, 0.0F, 0.0F);
-         var11.method4276(var3, var3.method6807(var11.getPosition()), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
+         var11.method4276(var3, var3.method6807(var11.getPosition()), SpawnReason.field14394, (Class5093)null, (CompoundNBT)null);
          var3.method6995(var11);
          var3.setBlockState(var2, Blocks.AIR.getDefaultState(), 2);
       }

@@ -26,14 +26,15 @@ public class EntitySpawnPlacementRegistry {
       return var3 != null ? EntitySpawnPlacementRegistry$Entry.getPlacementType(var3) : EntitySpawnPlacementRegistry$PlacementType.NO_RESTRICTIONS;
    }
 
-   public static Heightmap.Type method21121(EntityType<?> var0) {
-      EntitySpawnPlacementRegistry$Entry var3 = REGISTRY.get(var0);
-      return var3 != null ? EntitySpawnPlacementRegistry$Entry.getType(var3) : Heightmap.Type.MOTION_BLOCKING_NO_LEAVES;
+   // func_209342_b (Searge sucks, use Yarn or Mojang mappings instead)
+   public static Heightmap.Type getHeightmapType(EntityType<?> entityType) {
+      EntitySpawnPlacementRegistry$Entry entry = REGISTRY.get(entityType);
+      return entry != null ? EntitySpawnPlacementRegistry$Entry.getType(entry) : Heightmap.Type.MOTION_BLOCKING_NO_LEAVES;
    }
 
-   public static <T extends Entity> boolean method21122(EntityType<T> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
-      EntitySpawnPlacementRegistry$Entry var7 = REGISTRY.get(var0);
-      return var7 == null || EntitySpawnPlacementRegistry$Entry.getPlacementPredicate(var7).method32251(var0, var1, var2, var3, var4);
+   public static <T extends Entity> boolean canSpawn(EntityType<T> type, ServerWorldAccess access, SpawnReason spawnReason, BlockPos pos, Random rand) {
+      EntitySpawnPlacementRegistry$Entry var7 = REGISTRY.get(type);
+      return var7 == null || EntitySpawnPlacementRegistry$Entry.getPlacementPredicate(var7).method32251(type, access, spawnReason, pos, rand);
    }
 
    static {

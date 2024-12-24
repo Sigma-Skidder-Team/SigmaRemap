@@ -146,7 +146,7 @@ public final class Class8170 {
 
                         var30.setLocationAndAngles(var23, (double)var10, var25, var1.rand.nextFloat() * 360.0F, 0.0F);
                         if (method28423(var1, var30, var28)) {
-                           var19 = var30.method4276(var1, var1.method6807(var30.getPosition()), Class2202.field14391, var19, (CompoundNBT)null);
+                           var19 = var30.method4276(var1, var1.method6807(var30.getPosition()), SpawnReason.field14391, var19, (CompoundNBT)null);
                            var13++;
                            var21++;
                            var1.method6995(var30);
@@ -190,7 +190,7 @@ public final class Class8170 {
             if (!method28429(var11, var0, var5, var10)) {
                return false;
             } else {
-               return EntitySpawnPlacementRegistry.method21122(var10, var0, Class2202.field14391, var5, var0.rand)
+               return EntitySpawnPlacementRegistry.canSpawn(var10, var0, SpawnReason.field14391, var5, var0.rand)
                   ? var0.hasNoCollisions(var10.method33219((double)var5.getX() + 0.5, (double)var5.getY(), (double)var5.getZ() + 0.5))
                   : false;
             }
@@ -220,7 +220,7 @@ public final class Class8170 {
    private static boolean method28423(ServerWorld var0, MobEntity var1, double var2) {
       return var2 > (double)(var1.getType().method33209().method522() * var1.getType().method33209().method522()) && var1.method4254(var2)
          ? false
-         : var1.method4265(var0, Class2202.field14391) && var1.method4266(var0);
+         : var1.method4265(var0, SpawnReason.field14391) && var1.method4266(var0);
    }
 
    @Nullable
@@ -298,7 +298,7 @@ public final class Class8170 {
       }
    }
 
-   public static void method28430(Class1659 var0, Biome var1, int var2, int var3, Random var4) {
+   public static void method28430(ServerWorldAccess var0, Biome var1, int var2, int var3, Random var4) {
       MobSpawnInfo var7 = var1.getMobSpawnInfo();
       List var8 = var7.getSpawners(EntityClassification.CREATURE);
       if (!var8.isEmpty()) {
@@ -324,8 +324,8 @@ public final class Class8170 {
                      double var23 = MathHelper.clamp((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
                      double var25 = MathHelper.clamp((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
                      if (!var0.hasNoCollisions(var11.field29311.method33219(var23, (double)var21.getY(), var25))
-                        || !EntitySpawnPlacementRegistry.method21122(
-                           var11.field29311, var0, Class2202.field14392, new BlockPos(var23, (double)var21.getY(), var25), var0.method6814()
+                        || !EntitySpawnPlacementRegistry.canSpawn(
+                           var11.field29311, var0, SpawnReason.field14392, new BlockPos(var23, (double)var21.getY(), var25), var0.method6814()
                         )) {
                         continue;
                      }
@@ -341,8 +341,8 @@ public final class Class8170 {
                      var27.setLocationAndAngles(var23, (double)var21.getY(), var25, var4.nextFloat() * 360.0F, 0.0F);
                      if (var27 instanceof MobEntity) {
                         MobEntity var28 = (MobEntity)var27;
-                        if (var28.method4265(var0, Class2202.field14392) && var28.method4266(var0)) {
-                           var13 = var28.method4276(var0, var0.method6807(var28.getPosition()), Class2202.field14392, var13, (CompoundNBT)null);
+                        if (var28.method4265(var0, SpawnReason.field14392) && var28.method4266(var0)) {
+                           var13 = var28.method4276(var0, var0.method6807(var28.getPosition()), SpawnReason.field14392, var13, (CompoundNBT)null);
                            var0.method6995(var28);
                            var19 = true;
                         }
@@ -364,7 +364,7 @@ public final class Class8170 {
    }
 
    private static BlockPos method28431(IWorldReader var0, EntityType<?> var1, int var2, int var3) {
-      int var6 = var0.method6736(EntitySpawnPlacementRegistry.method21121(var1), var2, var3);
+      int var6 = var0.method6736(EntitySpawnPlacementRegistry.getHeightmapType(var1), var2, var3);
       BlockPos.Mutable var7 = new BlockPos.Mutable(var2, var6, var3);
       if (var0.getDimensionType().getHasCeiling()) {
          do {

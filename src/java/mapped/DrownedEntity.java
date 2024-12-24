@@ -57,7 +57,7 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (this.getItemStackFromSlot(EquipmentSlotType.OFFHAND).isEmpty() && this.rand.nextFloat() < 0.03F) {
          this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(Items.field38146));
@@ -67,11 +67,11 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
       return var4;
    }
 
-   public static boolean canSpawn(EntityType<DrownedEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<DrownedEntity> var0, ServerWorldAccess var1, SpawnReason var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
       boolean var8 = var1.method6997() != Difficulty.PEACEFUL
          && method4340(var1, var3, var4)
-         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
+         && (var2 == SpawnReason.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.RIVER))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_RIVER))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8

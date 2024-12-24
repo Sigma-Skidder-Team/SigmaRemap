@@ -55,7 +55,7 @@ public class Class7020 implements Class7016 {
                                  for (int var20 = 0; var20 < var19; var20++) {
                                     Class1110 var21 = EntityType.PHANTOM.create(var1);
                                     var21.moveToBlockPosAndAngles(var15, 0.0F, 0.0F);
-                                    var18 = var21.method4276(var1, var11, Class2202.field14391, var18, (CompoundNBT)null);
+                                    var18 = var21.method4276(var1, var11, SpawnReason.field14391, var18, (CompoundNBT)null);
                                     var1.method6995(var21);
                                  }
 

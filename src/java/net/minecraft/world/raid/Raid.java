@@ -497,7 +497,7 @@ public class Raid {
          var2.method4558(0);
          if (!var4 && var3 != null) {
             var2.setPosition((double)var3.getX() + 0.5, (double)var3.getY() + 1.0, (double)var3.getZ() + 0.5);
-            var2.method4276(this.field32978, this.field32978.method6807(var3), Class2202.field14398, (Class5093)null, (CompoundNBT)null);
+            var2.method4276(this.field32978, this.field32978.method6807(var3), SpawnReason.field14398, (Class5093)null, (CompoundNBT)null);
             var2.method4545(var1, false);
             var2.setOnGround(true);
             this.field32978.method6995(var2);

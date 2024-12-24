@@ -55,7 +55,7 @@ public class Class4185 extends Class4180 {
    }
 
    @Override
-   public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, MutableBoundingBox var5) {
+   public void method12944(String var1, BlockPos var2, ServerWorldAccess var3, Random var4, MutableBoundingBox var5) {
       if ("chest".equals(var1)) {
          var3.setBlockState(var2, Blocks.AIR.getDefaultState(), 3);
          TileEntity var8 = var3.getTileEntity(var2.down());

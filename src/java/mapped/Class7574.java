@@ -100,7 +100,7 @@ public abstract class Class7574 {
                   : var15.getDouble(2);
                if (var3.hasNoCollisions(((EntityType)var14.get()).method33219(var17, var19, var21))) {
                   ServerWorld var23 = (ServerWorld)var3;
-                  if (EntitySpawnPlacementRegistry.method21122((EntityType)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
+                  if (EntitySpawnPlacementRegistry.canSpawn((EntityType)var14.get(), var23, SpawnReason.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
                      Entity var24 = EntityType.method33223(var13, var3, var6x -> {
                         var6x.setLocationAndAngles(var17, var19, var21, var6x.rotationYaw, var6x.rotationPitch);
                         return var6x;
@@ -131,12 +131,12 @@ public abstract class Class7574 {
                      var24.setLocationAndAngles(var24.getPosX(), var24.getPosY(), var24.getPosZ(), var3.rand.nextFloat() * 360.0F, 0.0F);
                      if (var24 instanceof MobEntity) {
                         MobEntity var26 = (MobEntity)var24;
-                        if (!var26.method4265(var3, Class2202.field14393) || !var26.method4266(var3)) {
+                        if (!var26.method4265(var3, SpawnReason.field14393) || !var26.method4266(var3)) {
                            continue;
                         }
 
                         if (this.field32518.method20414().size() == 1 && this.field32518.method20414().contains("id", 8)) {
-                           ((MobEntity)var24).method4276(var23, var3.method6807(var24.getPosition()), Class2202.field14393, (Class5093)null, (CompoundNBT)null);
+                           ((MobEntity)var24).method4276(var23, var3.method6807(var24.getPosition()), SpawnReason.field14393, (Class5093)null, (CompoundNBT)null);
                         }
                      }
 

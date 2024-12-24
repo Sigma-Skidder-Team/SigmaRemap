@@ -58,7 +58,7 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
       this.method4224(PathNodeType.DAMAGE_FIRE, 0.0F);
    }
 
-   public static boolean method4976(EntityType<StriderEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4976(EntityType<StriderEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       BlockPos.Mutable var7 = var3.method8354();
 
       do {
@@ -410,7 +410,7 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       if (!this.isChild()) {
          Object var8;
          if (this.rand.nextInt(30) != 0) {
@@ -434,9 +434,9 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
       }
    }
 
-   private Class5093 method4987(Class1659 var1, Class9755 var2, MobEntity var3, Class5093 var4) {
+   private Class5093 method4987(ServerWorldAccess var1, Class9755 var2, MobEntity var3, Class5093 var4) {
       var3.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
-      var3.method4276(var1, var2, Class2202.field14397, var4, (CompoundNBT)null);
+      var3.method4276(var1, var2, SpawnReason.field14397, var4, (CompoundNBT)null);
       var3.startRiding(this, true);
       return new Class5097(0.0F);
    }

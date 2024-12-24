@@ -62,10 +62,10 @@ public abstract class PillagerEntity extends MonsterEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      if (var3 != Class2202.field14406
-         && var3 != Class2202.field14398
-         && var3 != Class2202.field14394
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
+      if (var3 != SpawnReason.field14406
+         && var3 != SpawnReason.field14398
+         && var3 != SpawnReason.field14394
          && this.rand.nextFloat() < 0.06F
          && this.method4570()) {
          this.field5725 = true;
@@ -76,14 +76,14 @@ public abstract class PillagerEntity extends MonsterEntity {
          this.method4279(EquipmentSlotType.HEAD, 2.0F);
       }
 
-      if (var3 == Class2202.field14406) {
+      if (var3 == SpawnReason.field14406) {
          this.field5726 = true;
       }
 
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method4572(EntityType<? extends PillagerEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4572(EntityType<? extends PillagerEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getLightFor(LightType.BLOCK, var3) <= 8 ? canMonsterSpawn(var0, var1, var2, var3, var4) : false;
    }
 

@@ -97,7 +97,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method4415(this.rand.nextInt(5));
       if (var4 == null) {
          var4 = new Class5097(false);
@@ -267,7 +267,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements Class1016 {
       return false;
    }
 
-   public static boolean canSpawn(EntityType<ParrotEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<ParrotEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (
             var7.isIn(BlockTags.LEAVES)

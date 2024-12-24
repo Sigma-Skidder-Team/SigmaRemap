@@ -239,7 +239,7 @@ public class Class1095 extends AnimalEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       Optional var8 = var1.method7178(this.getPosition());
       Class186 var9 = Class186.method571(var8);
       boolean var10 = false;

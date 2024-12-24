@@ -97,7 +97,7 @@ public abstract class AnimalEntity extends Class1045 {
       this.field5703 = !var1.hasUniqueID("LoveCause") ? null : var1.getUniqueID("LoveCause");
    }
 
-   public static boolean canAnimalSpawn(EntityType<? extends AnimalEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canAnimalSpawn(EntityType<? extends AnimalEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3.down()).isIn(Blocks.GRASS_BLOCK) && var1.method7021(var3, 0) > 8;
    }
 

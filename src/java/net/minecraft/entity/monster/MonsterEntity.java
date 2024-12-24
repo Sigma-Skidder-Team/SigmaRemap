@@ -81,7 +81,7 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
       return 0.5F - var2.method7009(var1);
    }
 
-   public static boolean method4340(Class1659 var0, BlockPos var1, Random var2) {
+   public static boolean method4340(ServerWorldAccess var0, BlockPos var1, Random var2) {
       if (var0.getLightFor(LightType.SKY, var1) <= var2.nextInt(32)) {
          int var5 = !var0.method6970().method6794() ? var0.method7015(var1) : var0.method7016(var1, 10);
          return var5 <= var2.nextInt(8);
@@ -90,11 +90,11 @@ public abstract class MonsterEntity extends CreatureEntity implements IMob {
       }
    }
 
-   public static boolean canMonsterSpawnInLight(EntityType<? extends MonsterEntity> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canMonsterSpawnInLight(EntityType<? extends MonsterEntity> var0, ServerWorldAccess var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL && method4340(var1, var3, var4) && canSpawnOn(var0, var1, var2, var3, var4);
    }
 
-   public static boolean canMonsterSpawn(EntityType<? extends MonsterEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canMonsterSpawn(EntityType<? extends MonsterEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.PEACEFUL && canSpawnOn(var0, var1, var2, var3, var4);
    }
 

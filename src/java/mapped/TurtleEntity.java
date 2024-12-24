@@ -135,13 +135,13 @@ public class TurtleEntity extends AnimalEntity {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method5041(this.getPosition());
       this.method5043(BlockPos.ZERO);
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method5053(EntityType<TurtleEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5053(EntityType<TurtleEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var3.getY() < var1.getSeaLevel() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
    }
 

@@ -430,14 +430,14 @@ public class EntityType<T extends Entity> {
    }
 
    @Nullable
-   public Entity method33200(ServerWorld var1, ItemStack var2, PlayerEntity var3, BlockPos var4, Class2202 var5, boolean var6, boolean var7) {
+   public Entity method33200(ServerWorld var1, ItemStack var2, PlayerEntity var3, BlockPos var4, SpawnReason var5, boolean var6, boolean var7) {
       return this.method33201(
          var1, var2 != null ? var2.getTag() : null, var2 != null && var2.method32152() ? var2.method32149() : null, var3, var4, var5, var6, var7
       );
    }
 
    @Nullable
-   public T method33201(ServerWorld var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
+   public T method33201(ServerWorld var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, SpawnReason var6, boolean var7, boolean var8) {
       Entity var11 = this.method33202(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11 != null) {
          var1.method6995(var11);
@@ -447,7 +447,7 @@ public class EntityType<T extends Entity> {
    }
 
    @Nullable
-   public T method33202(ServerWorld var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
+   public T method33202(ServerWorld var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, SpawnReason var6, boolean var7, boolean var8) {
       Entity var11 = this.create(var1);
       if (var11 != null) {
          double var12;

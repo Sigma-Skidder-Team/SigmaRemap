@@ -259,7 +259,7 @@ public class SlimeEntity extends MobEntity implements IMob {
       return this.method5319() != 1 ? Class8793.field39533 : this.getType().method33212();
    }
 
-   public static boolean method5328(EntityType<SlimeEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5328(EntityType<SlimeEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Difficulty.PEACEFUL) {
          if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Biomes.SWAMP))
             && var3.getY() > 50
@@ -307,7 +307,7 @@ public class SlimeEntity extends MobEntity implements IMob {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       int var8 = this.rand.nextInt(3);
       if (var8 < 2 && this.rand.nextFloat() < 0.5F * var2.method38330()) {
          var8++;

@@ -43,7 +43,7 @@ public class MooshroomEntity extends Class1087 implements Class1020 {
       return !var2.getBlockState(var1.down()).isIn(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
-   public static boolean canSpawn(EntityType<MooshroomEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<MooshroomEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return var1.getBlockState(var3.down()).isIn(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
    }
 

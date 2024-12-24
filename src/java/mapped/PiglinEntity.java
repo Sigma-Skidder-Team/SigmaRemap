@@ -147,14 +147,14 @@ public class PiglinEntity extends Class1035 implements Class1023 {
       return MonsterEntity.method4343().method21849(Attributes.MAX_HEALTH, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
-   public static boolean method4615(EntityType<PiglinEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4615(EntityType<PiglinEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
    }
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      if (var3 != Class2202.field14394) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
+      if (var3 != SpawnReason.field14394) {
          if (!(var1.method6814().nextFloat() < 0.2F)) {
             if (this.method4635()) {
                this.setItemStackToSlot(EquipmentSlotType.MAINHAND, this.method4620());

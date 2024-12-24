@@ -200,7 +200,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
       }
 
       var4.method4722(this.field5775);
-      var4.method4276(var1, var1.method6807(var4.getPosition()), Class2202.field14399, (Class5093)null, (CompoundNBT)null);
+      var4.method4276(var1, var1.method6807(var4.getPosition()), SpawnReason.field14399, (Class5093)null, (CompoundNBT)null);
       if (this.field5772 != null) {
          PlayerEntity var12 = var1.method7196(this.field5772);
          if (var12 instanceof ServerPlayerEntity) {
@@ -282,7 +282,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+   public Class5093 method4276(ServerWorldAccess var1, Class9755 var2, SpawnReason var3, Class5093 var4, CompoundNBT var5) {
       this.method4673(this.method4674().method26573(Class9564.method37068(var1.method7178(this.getPosition()))));
       return super.method4276(var1, var2, var3, var4, var5);
    }

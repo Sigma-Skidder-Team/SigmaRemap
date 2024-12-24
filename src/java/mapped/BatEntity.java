@@ -210,7 +210,7 @@ public class BatEntity extends Class1113 {
       var1.putByte("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
-   public static boolean canSpawn(EntityType<BatEntity> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean canSpawn(EntityType<BatEntity> var0, IWorld var1, SpawnReason var2, BlockPos var3, Random var4) {
       if (var3.getY() < var1.getSeaLevel()) {
          int var7 = var1.method7015(var3);
          int var8 = 4;

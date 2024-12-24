@@ -74,7 +74,7 @@ public class SpawnEggItem extends Item {
 
          EntityType var10 = this.method11855(var5.getTag());
          if (var10.method33200(
-               (ServerWorld)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.UP
+               (ServerWorld)var4, var5, var1.method18358(), var12, SpawnReason.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.UP
             )
             != null) {
             var5.shrink(1);
@@ -95,7 +95,7 @@ public class SpawnEggItem extends Item {
             if (var1.getBlockState(var9).getBlock() instanceof FlowingFluidBlock) {
                if (var1.method6785(var2, var9) && var2.method2936(var9, var8.getFace(), var6)) {
                   EntityType var10 = this.method11855(var6.getTag());
-                  if (var10.method33200((ServerWorld)var1, var6, var2, var9, Class2202.field14403, false, false) != null) {
+                  if (var10.method33200((ServerWorld)var1, var6, var2, var9, SpawnReason.field14403, false, false) != null) {
                      if (!var2.abilities.isCreativeMode) {
                         var6.shrink(1);
                      }
