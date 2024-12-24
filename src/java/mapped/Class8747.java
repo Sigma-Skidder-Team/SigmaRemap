@@ -21,7 +21,7 @@ public class Class8747<T> {
       return this;
    }
 
-   public Class8747<T> method31559(ITag$NamedTag<T> var1) {
+   public Class8747<T> method31559(ITag$INamedTag<T> var1) {
       this.field39426.method20946(var1.getName(), this.field39428);
       return this;
    }

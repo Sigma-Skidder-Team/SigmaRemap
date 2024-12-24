@@ -558,7 +558,7 @@ public class PlayerInventory implements IInventory, INameable {
    public boolean method4059(ITag<Item> var1) {
       for (NonNullList<ItemStack> var5 : this.field5442) {
          for (ItemStack var7 : var5) {
-            if (!var7.isEmpty() && var1.method24917(var7.getItem())) {
+            if (!var7.isEmpty() && var1.contains(var7.getItem())) {
                return true;
             }
          }

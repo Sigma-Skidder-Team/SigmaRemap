@@ -11,28 +11,28 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 public interface ITag<T> {
-   static <T> Codec<ITag<T>> method24916(Supplier<ITagCollection<T>> var0) {
+   static <T> Codec<ITag<T>> getTagCodec(Supplier<ITagCollection<T>> collectionSupplier) {
       return ResourceLocation.CODEC
          .flatXmap(
-            var1 -> Optional.ofNullable(var0.get().get(var1))
+            tagId -> Optional.ofNullable(collectionSupplier.get().get(tagId))
                   .map(DataResult::success)
-                  .orElseGet(() -> DataResult.error("Unknown tag: " + var1)),
-            var1 -> Optional.ofNullable(var0.get().method27133(var1))
+                  .orElseGet(() -> DataResult.error("Unknown tag: " + tagId)),
+            tag -> Optional.ofNullable(collectionSupplier.get().method27133(tag))
                   .map(DataResult::success)
-                  .orElseGet(() -> DataResult.error("Unknown tag: " + var1))
+                  .orElseGet(() -> DataResult.error("Unknown tag: " + tag))
          );
    }
 
-   boolean method24917(T var1);
+   boolean contains(T var1);
 
    List<T> getAllElements();
 
-   default T method24919(Random var1) {
-      List var4 = this.getAllElements();
-      return (T)var4.get(var1.nextInt(var4.size()));
+   default T getRandomElement(Random random) {
+      List elements = this.getAllElements();
+      return (T)elements.get(random.nextInt(elements.size()));
    }
 
-   static <T> ITag<T> method24920(Set<T> var0) {
-      return Tag.<T>method24926(var0);
+   static <T> ITag<T> getTagOf(Set<T> elements) {
+      return Tag.<T>getTagFromContents(elements);
    }
 }

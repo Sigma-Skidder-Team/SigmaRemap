@@ -663,7 +663,7 @@ public class EntityType<T extends Entity> {
    }
 
    public boolean method33228(ITag<EntityType<?>> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public static class Builder<T extends Entity> {

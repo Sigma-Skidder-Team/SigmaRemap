@@ -81,7 +81,7 @@ public class Class3465 extends Block {
    }
 
    private static int method12150(BlockState var0) {
-      if (!BlockTags.field32751.method24917(var0.getBlock())) {
+      if (!BlockTags.field32751.contains(var0.getBlock())) {
          return !(var0.getBlock() instanceof Class3465) ? 7 : var0.<Integer>get(field19305);
       } else {
          return 0;

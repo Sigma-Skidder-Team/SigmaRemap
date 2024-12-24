@@ -90,7 +90,7 @@ public abstract class Fluid {
    }
 
    public boolean method25067(ITag<Fluid> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public abstract VoxelShape method25068(FluidState var1, IBlockReader var2, BlockPos var3);

@@ -46,7 +46,7 @@ public interface ITagCollection<T> {
       ArrayList var4 = Lists.newArrayList();
 
       for (Entry var6 : this.method27134().entrySet()) {
-         if (((ITag)var6.getValue()).method24917(var1)) {
+         if (((ITag)var6.getValue()).contains(var1)) {
             var4.add(var6.getKey());
          }
       }
@@ -81,7 +81,7 @@ public interface ITagCollection<T> {
             var9.add(var1.getByValue(var0.readVarInt()));
          }
 
-         var4.put(var7, ITag.method24920(var9.build()));
+         var4.put(var7, ITag.getTagOf(var9.build()));
       }
 
       return method27142(var4);

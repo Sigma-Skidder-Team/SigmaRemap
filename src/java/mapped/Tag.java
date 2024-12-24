@@ -21,12 +21,12 @@ public class Tag<T> implements ITag<T> {
       return new Tag<T>(ImmutableSet.of(), Void.class);
    }
 
-   public static <T> Tag<T> method24926(Set<T> var0) {
+   public static <T> Tag<T> getTagFromContents(Set<T> var0) {
       return new Tag<T>(var0, method24927(var0));
    }
 
    @Override
-   public boolean method24917(T var1) {
+   public boolean contains(T var1) {
       return this.field32655.isInstance(var1) && this.field32654.contains(var1);
    }
 

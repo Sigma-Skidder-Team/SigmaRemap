@@ -47,7 +47,7 @@ public class Class6879 {
          }
       }
 
-      return Optional.<ITag<T>>of(ITag.<T>method24920(var5.build()));
+      return Optional.<ITag<T>>of(ITag.<T>getTagOf(var5.build()));
    }
 
    public Stream<Class7794> method20948() {

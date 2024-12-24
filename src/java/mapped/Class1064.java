@@ -295,7 +295,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    @Override
    public boolean method4900(ItemStack var1) {
       Item var4 = var1.getItem();
-      return ItemTags.field26075.method24917(var4);
+      return ItemTags.field26075.contains(var4);
    }
 
    @Override

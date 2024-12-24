@@ -13,7 +13,7 @@ public class Class8926 extends Class8924 {
 
    @Override
    public boolean method32624(EntityType<?> var1) {
-      return this.field40403.method24917(var1);
+      return this.field40403.contains(var1);
    }
 
    @Override

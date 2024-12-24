@@ -285,7 +285,7 @@ public class Item implements IItemProvider {
    }
 
    public boolean method11743(ITag<Item> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public boolean isFood() {

@@ -86,7 +86,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public boolean isIn(ITag<Block> var1) {
-      return var1.method24917(this);
+      return var1.contains(this);
    }
 
    public boolean method11541(Block var1) {

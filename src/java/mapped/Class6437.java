@@ -7,7 +7,7 @@ import net.minecraft.block.BlockState;
 import java.util.Random;
 
 public class Class6437 extends Class6434 {
-   public static final Codec<Class6437> field28279 = ITag.<Block>method24916(() -> Class9443.method36296().method32657())
+   public static final Codec<Class6437> field28279 = ITag.<Block>getTagCodec(() -> Class9443.method36296().method32657())
       .fieldOf("tag")
       .xmap(Class6437::new, var0 -> var0.field28280)
       .codec();

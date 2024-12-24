@@ -29,7 +29,7 @@ public class Class8463 {
          if (var1.method6763(var2)) {
             FluidState var5 = var1.getFluidState(var2);
             Fluid var6 = var5.getFluid();
-            if (this.field36279 != null && !this.field36279.method24917(var6)) {
+            if (this.field36279 != null && !this.field36279.contains(var6)) {
                return false;
             } else {
                return this.field36280 != null && var6 != this.field36280 ? false : this.field36281.method23259(var5);

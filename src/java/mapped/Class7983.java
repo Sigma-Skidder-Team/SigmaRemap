@@ -24,7 +24,7 @@ public final class Class7983<T> implements ITagCollection<T> {
    @Nullable
    @Override
    public ResourceLocation method27133(ITag<T> var1) {
-      return !(var1 instanceof ITag$NamedTag) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((ITag$NamedTag)var1).getName();
+      return !(var1 instanceof ITag$INamedTag) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((ITag$INamedTag)var1).getName();
    }
 
    @Override

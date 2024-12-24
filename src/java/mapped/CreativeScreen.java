@@ -606,7 +606,7 @@ public class CreativeScreen extends Class860<Class5820> {
          }
 
          this.field4785.forEach((var2x, var3x) -> {
-            if (var3x.method24917(var9)) {
+            if (var3x.contains(var9)) {
                var8.add(1, new StringTextComponent("#" + var2x).mergeStyle(TextFormatting.DARK_PURPLE));
             }
          });

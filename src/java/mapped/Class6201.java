@@ -57,7 +57,7 @@ public class Class6201 implements Class6196 {
    @Override
    public void method19104(ItemStack var1) {
       Item var4 = var1.getItem();
-      if (ItemTags.field26071.method24917(var4)) {
+      if (ItemTags.field26071.contains(var4)) {
          this.field27675.method37034(Class2200.field14381);
       }
    }

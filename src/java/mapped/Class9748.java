@@ -288,7 +288,7 @@ public class Class9748 {
                   }
                } else {
                   ResourceLocation var7 = ResourceLocation.method8294(var0.method30277());
-                  var0.method30278(var2 -> var2.method3396().method1408().method32660().method27132(var7).method24917(var2.getType()) != var4);
+                  var0.method30278(var2 -> var2.method3396().method1408().method32660().method27132(var7).contains(var2.getType()) != var4);
                }
             }
          }, var0 -> !var0.method30332(), new TranslationTextComponent("argument.entity.options.type.description"));

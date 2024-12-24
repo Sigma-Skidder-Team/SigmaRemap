@@ -110,7 +110,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    private static boolean method3641(Item var0) {
-      return ItemTags.field26111.method24917(var0);
+      return ItemTags.field26111.contains(var0);
    }
 
    private static void method3642(Map<Item, Integer> var0, ITag<Item> var1, int var2) {
