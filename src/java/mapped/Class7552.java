@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 
 public class Class7552 {

@@ -1,6 +1,5 @@
 package net.minecraft.tags;
 
-import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 

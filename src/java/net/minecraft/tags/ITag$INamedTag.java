@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.tags;
 
 import net.minecraft.util.ResourceLocation;
 

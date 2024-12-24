@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.ItemTags;
 
 public class Class5845 extends Slot {
    private static String[] field25592;

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
+import net.minecraft.tags.ItemTags;
 
 import java.util.function.Supplier;
 

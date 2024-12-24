@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 import net.minecraft.entity.EntityType;
+import net.minecraft.tags.ITag;
 
 public class Class8926 extends Class8924 {
    private final ITag<EntityType<?>> field40403;

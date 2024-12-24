@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.ItemTags;
 
 public class Class984 extends Class927 {
    private static String[] field5464;

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.ITag;
 
 import java.util.function.Consumer;
 

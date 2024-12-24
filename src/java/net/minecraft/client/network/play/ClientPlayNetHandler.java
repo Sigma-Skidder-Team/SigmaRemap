@@ -74,6 +74,7 @@ import net.minecraft.realms.RealmsScreen;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.tileentity.*;
 import net.minecraft.util.Direction;

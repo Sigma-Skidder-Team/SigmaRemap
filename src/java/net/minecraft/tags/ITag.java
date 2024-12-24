@@ -1,8 +1,7 @@
-package mapped;
+package net.minecraft.tags;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.List;

@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.fluid.Fluid;
+import net.minecraft.tags.ITag$INamedTag;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.tags.TagRegistry;
 import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.util.ResourceLocation;

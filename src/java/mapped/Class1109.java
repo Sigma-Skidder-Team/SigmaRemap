@@ -6,6 +6,7 @@ import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;

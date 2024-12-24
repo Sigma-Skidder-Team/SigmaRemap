@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.tags;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;

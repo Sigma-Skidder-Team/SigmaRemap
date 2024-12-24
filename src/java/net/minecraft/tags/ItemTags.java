@@ -1,8 +1,6 @@
-package mapped;
+package net.minecraft.tags;
 
 import net.minecraft.item.Item;
-import net.minecraft.tags.TagRegistry;
-import net.minecraft.tags.TagRegistryManager;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.List;

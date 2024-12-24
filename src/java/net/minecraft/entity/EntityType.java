@@ -16,6 +16,7 @@ import javax.annotation.Nullable;
 
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.Util;
 import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.passive.fish.SalmonEntity;

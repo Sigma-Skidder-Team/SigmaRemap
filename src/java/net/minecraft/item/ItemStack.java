@@ -21,6 +21,8 @@ import mapped.*;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.Util;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;

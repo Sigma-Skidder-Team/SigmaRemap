@@ -4,6 +4,7 @@ import java.util.List;
 
 import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;

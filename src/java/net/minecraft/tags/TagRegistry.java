@@ -9,10 +9,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-import mapped.ITag;
-import mapped.ITag$INamedTag;
-import mapped.ITagCollection;
-import mapped.ITagCollectionSupplier;
 import net.minecraft.util.ResourceLocation;
 
 public class TagRegistry<T>

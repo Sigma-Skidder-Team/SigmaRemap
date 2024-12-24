@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tags.ITag$INamedTag;
 import net.minecraft.util.registry.Registry;
 
 import java.util.stream.Stream;

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.CachedBlockInfo;
 
 import java.util.function.Predicate;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.crafting.RecipeManager;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.Unit;
 
 import java.util.List;

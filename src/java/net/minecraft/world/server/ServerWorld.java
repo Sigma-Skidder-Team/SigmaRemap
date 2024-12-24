@@ -14,6 +14,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.EntityClassification;

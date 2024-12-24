@@ -1,6 +1,10 @@
 package mapped;
 
 import com.google.common.collect.BiMap;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITag$INamedTag;
+import net.minecraft.tags.ITagCollection;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;

@@ -49,6 +49,7 @@ import net.minecraft.crash.ReportedException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.nbt.NBTDynamicOps;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Util;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.crash.CrashReport;

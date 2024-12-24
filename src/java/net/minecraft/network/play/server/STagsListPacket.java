@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.ITagCollectionSupplier;
+import net.minecraft.tags.ITagCollectionSupplier;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;

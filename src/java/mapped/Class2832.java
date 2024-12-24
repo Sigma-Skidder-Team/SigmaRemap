@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.block.Blocks;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Util;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
