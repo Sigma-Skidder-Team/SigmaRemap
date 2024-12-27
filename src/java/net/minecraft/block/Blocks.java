@@ -81,27 +81,27 @@ public class Blocks {
    );
    public static final Block OAK_SAPLING = register(
       "oak_sapling",
-      new SaplingBlock(new Class7667(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
+      new SaplingBlock(new OakTree(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
    );
    public static final Block SPRUCE_SAPLING = register(
       "spruce_sapling",
-      new SaplingBlock(new Class7662(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
+      new SaplingBlock(new SpruceTree(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
    );
    public static final Block BIRCH_SAPLING = register(
       "birch_sapling",
-      new SaplingBlock(new Class7666(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
+      new SaplingBlock(new BirchTree(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
    );
    public static final Block JUNGLE_SAPLING = register(
       "jungle_sapling",
-      new SaplingBlock(new Class7664(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
+      new SaplingBlock(new JungleTree(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
    );
    public static final Block ACACIA_SAPLING = register(
       "acacia_sapling",
-      new SaplingBlock(new Class7668(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
+      new SaplingBlock(new AcaciaTree(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
    );
    public static final Block DARK_OAK_SAPLING = register(
       "dark_oak_sapling",
-      new SaplingBlock(new Class7663(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
+      new SaplingBlock(new DarkOakTree(), AbstractBlock.Properties.method26609(Material.PLANTS).method26614().method26624().method26622().method26619(SoundType.GRASS))
    );
    public static final Block BEDROCK = register(
       "bedrock", new Block(AbstractBlock.Properties.method26609(Material.field38966).method26621(-1.0F, 3600000.0F).method26626().method26629(Blocks::method30012))
@@ -117,11 +117,11 @@ public class Blocks {
       )
    );
    public static final Block SAND = register(
-      "sand", new Class3216(14406560, AbstractBlock.Properties.method26611(Material.field38953, MaterialColor.field30949).method26623(0.5F).method26619(SoundType.SAND))
+      "sand", new SandBlock(14406560, AbstractBlock.Properties.method26611(Material.field38953, MaterialColor.field30949).method26623(0.5F).method26619(SoundType.SAND))
    );
    public static final Block RED_SAND = register(
       "red_sand",
-      new Class3216(11098145, AbstractBlock.Properties.method26611(Material.field38953, MaterialColor.field30962).method26623(0.5F).method26619(SoundType.SAND))
+      new SandBlock(11098145, AbstractBlock.Properties.method26611(Material.field38953, MaterialColor.field30962).method26623(0.5F).method26619(SoundType.SAND))
    );
    public static final Block GRAVEL = register(
       "gravel", new Class3215(AbstractBlock.Properties.method26611(Material.field38953, MaterialColor.STONE).method26623(0.6F).method26619(SoundType.GRAVEL))
@@ -139,18 +139,18 @@ public class Blocks {
       "nether_gold_ore",
       new DiamondOreBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.GILDED_BLACKSTONE))
    );
-   public static final Block OAK_LOG = register("oak_log", makeLogBlock(MaterialColor.field30960, MaterialColor.field30981));
-   public static final Block SPRUCE_LOG = register("spruce_log", makeLogBlock(MaterialColor.field30981, MaterialColor.field30973));
-   public static final Block BIRCH_LOG = register("birch_log", makeLogBlock(MaterialColor.field30949, MaterialColor.field30961));
-   public static final Block JUNGLE_LOG = register("jungle_log", makeLogBlock(MaterialColor.field30957, MaterialColor.field30981));
-   public static final Block ACACIA_LOG = register("acacia_log", makeLogBlock(MaterialColor.field30962, MaterialColor.STONE));
-   public static final Block DARK_OAK_LOG = register("dark_oak_log", makeLogBlock(MaterialColor.field30973, MaterialColor.field30973));
-   public static final Block STRIPPED_SPRUCE_LOG = register("stripped_spruce_log", makeLogBlock(MaterialColor.field30981, MaterialColor.field30981));
-   public static final Block STRIPPED_BIRCH_LOG = register("stripped_birch_log", makeLogBlock(MaterialColor.field30949, MaterialColor.field30949));
-   public static final Block STRIPPED_JUNGLE_LOG = register("stripped_jungle_log", makeLogBlock(MaterialColor.field30957, MaterialColor.field30957));
-   public static final Block STRIPPED_ACACIA_LOG = register("stripped_acacia_log", makeLogBlock(MaterialColor.field30962, MaterialColor.field30962));
-   public static final Block STRIPPED_DARK_OAK_LOG = register("stripped_dark_oak_log", makeLogBlock(MaterialColor.field30973, MaterialColor.field30973));
-   public static final Block STRIPPED_OAK_LOG = register("stripped_oak_log", makeLogBlock(MaterialColor.field30960, MaterialColor.field30960));
+   public static final Block OAK_LOG = register("oak_log", createLogBlock(MaterialColor.field30960, MaterialColor.field30981));
+   public static final Block SPRUCE_LOG = register("spruce_log", createLogBlock(MaterialColor.field30981, MaterialColor.field30973));
+   public static final Block BIRCH_LOG = register("birch_log", createLogBlock(MaterialColor.field30949, MaterialColor.field30961));
+   public static final Block JUNGLE_LOG = register("jungle_log", createLogBlock(MaterialColor.field30957, MaterialColor.field30981));
+   public static final Block ACACIA_LOG = register("acacia_log", createLogBlock(MaterialColor.field30962, MaterialColor.STONE));
+   public static final Block DARK_OAK_LOG = register("dark_oak_log", createLogBlock(MaterialColor.field30973, MaterialColor.field30973));
+   public static final Block STRIPPED_SPRUCE_LOG = register("stripped_spruce_log", createLogBlock(MaterialColor.field30981, MaterialColor.field30981));
+   public static final Block STRIPPED_BIRCH_LOG = register("stripped_birch_log", createLogBlock(MaterialColor.field30949, MaterialColor.field30949));
+   public static final Block STRIPPED_JUNGLE_LOG = register("stripped_jungle_log", createLogBlock(MaterialColor.field30957, MaterialColor.field30957));
+   public static final Block STRIPPED_ACACIA_LOG = register("stripped_acacia_log", createLogBlock(MaterialColor.field30962, MaterialColor.field30962));
+   public static final Block STRIPPED_DARK_OAK_LOG = register("stripped_dark_oak_log", createLogBlock(MaterialColor.field30973, MaterialColor.field30973));
+   public static final Block STRIPPED_OAK_LOG = register("stripped_oak_log", createLogBlock(MaterialColor.field30960, MaterialColor.field30960));
    public static final Block OAK_WOOD = register(
       "oak_wood", new StrippedCrimsonHyphaeBlock(AbstractBlock.Properties.method26611(Material.field38956, MaterialColor.field30960).method26623(2.0F).method26619(SoundType.WOOD))
    );
@@ -2897,7 +2897,7 @@ public class Blocks {
       );
    }
 
-   private static StrippedCrimsonHyphaeBlock makeLogBlock(MaterialColor var0, MaterialColor var1) {
+   private static StrippedCrimsonHyphaeBlock createLogBlock(MaterialColor var0, MaterialColor var1) {
       return new StrippedCrimsonHyphaeBlock(
          AbstractBlock.Properties.method26612(Material.field38956, var2 -> var2.get(StrippedCrimsonHyphaeBlock.field18994) != Direction.Axis.Y ? var1 : var0)
             .method26623(2.0F)

@@ -6,7 +6,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class7662 extends Class7661 {
+public class SpruceTree extends Class7661 {
    private static String[] field32856;
 
    @Nullable

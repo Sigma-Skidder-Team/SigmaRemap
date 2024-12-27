@@ -4,11 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
-public class Class3216 extends Class3213 {
+public class SandBlock extends Class3213 {
    private static String[] field18622;
    private final int field18625;
 
-   public Class3216(int var1, Properties var2) {
+   public SandBlock(int var1, Properties var2) {
       super(var2);
       this.field18625 = var1;
    }
