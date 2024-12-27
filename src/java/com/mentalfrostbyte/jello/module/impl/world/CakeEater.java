@@ -12,9 +12,9 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.fly.MineplexFly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.Rots;
-import mapped.Class3394;
 import mapped.Class3593;
 import mapped.RotationHelper;
+import net.minecraft.block.CakeBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
@@ -139,7 +139,7 @@ public class CakeEater extends Module {
                             mc.player.getPosY() + (double) var5,
                             mc.player.getPosZ() + (double) var7
                     );
-                    if (mc.world.getBlockState(var8).getBlock() instanceof Class3394
+                    if (mc.world.getBlockState(var8).getBlock() instanceof CakeBlock
                             && Math.sqrt(
                             mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
                     )
