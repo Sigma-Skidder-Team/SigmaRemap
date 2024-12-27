@@ -90,7 +90,7 @@ public class DoorBlock extends Block {
    @Override
    public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && var4.isCreative()) {
-         Class3456.method12130(var1, var2, var3, var4);
+         LargeFernBlock.method12130(var1, var2, var3, var4);
       }
 
       super.onBlockHarvested(var1, var2, var3, var4);

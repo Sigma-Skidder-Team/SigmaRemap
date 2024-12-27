@@ -15,7 +15,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public abstract class Class3452 extends Class3444 implements Class3196 {
+public abstract class Class3452 extends Class3444 implements IGrowable {
    public static final IntegerProperty field19267 = BlockStateProperties.field39744;
    private final double field19268;
 

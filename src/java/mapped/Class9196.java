@@ -63,14 +63,14 @@ public class Class9196 {
    }
 
    private static boolean method34465(Block var0) {
-      return var0 == Blocks.field36764 || var0 == Blocks.field37119;
+      return var0 == Blocks.SLIME_BLOCK || var0 == Blocks.field37119;
    }
 
    private static boolean method34466(Block var0, Block var1) {
-      if (var0 == Blocks.field37119 && var1 == Blocks.field36764) {
+      if (var0 == Blocks.field37119 && var1 == Blocks.SLIME_BLOCK) {
          return false;
       } else {
-         return var0 == Blocks.field36764 && var1 == Blocks.field37119 ? false : method34465(var0) || method34465(var1);
+         return var0 == Blocks.SLIME_BLOCK && var1 == Blocks.field37119 ? false : method34465(var0) || method34465(var1);
       }
    }
 

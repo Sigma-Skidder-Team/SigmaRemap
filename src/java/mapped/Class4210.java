@@ -50,18 +50,18 @@ public class Class4210 extends Class4209 {
          this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
          this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
          this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
-         this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
-         this.method12927(var1, var5, 5, 0, 7, 5, 3, 7, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
+         this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
+         this.method12927(var1, var5, 5, 0, 7, 5, 3, 7, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LOG.getDefaultState(), false);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 2, 3, 2, var5);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 3, 3, 7, var5);
          this.method12923(var1, Blocks.AIR.getDefaultState(), 1, 3, 4, var5);
          this.method12923(var1, Blocks.AIR.getDefaultState(), 5, 3, 4, var5);
          this.method12923(var1, Blocks.AIR.getDefaultState(), 5, 3, 5, var5);
-         this.method12923(var1, Blocks.field36689.getDefaultState(), 1, 3, 5, var5);
+         this.method12923(var1, Blocks.POTTED_RED_MUSHROOM.getDefaultState(), 1, 3, 5, var5);
          this.method12923(var1, Blocks.CRAFTING_TABLE.getDefaultState(), 3, 2, 6, var5);
-         this.method12923(var1, Blocks.field36648.getDefaultState(), 4, 2, 6, var5);
+         this.method12923(var1, Blocks.CAULDRON.getDefaultState(), 4, 2, 6, var5);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 1, 2, 1, var5);
          this.method12923(var1, Blocks.OAK_FENCE.getDefaultState(), 5, 2, 1, var5);
          BlockState var10 = Blocks.SPRUCE_STAIRS.getDefaultState().with(StairsBlock.FACING, Direction.NORTH);
@@ -79,7 +79,7 @@ public class Class4210 extends Class4209 {
 
          for (int var14 = 2; var14 <= 7; var14 += 5) {
             for (int var15 = 1; var15 <= 5; var15 += 4) {
-               this.method12932(var1, Blocks.field36422.getDefaultState(), var15, -1, var14, var5);
+               this.method12932(var1, Blocks.OAK_LOG.getDefaultState(), var15, -1, var14, var5);
             }
          }
 

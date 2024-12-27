@@ -77,7 +77,7 @@ public interface IDispenseItemBehavior {
       Class3357.method11931(Items.field38058, var5);
       Class3357.method11931(Items.field38060, var5);
       Class3357.method11931(Items.field38059, new Class6238());
-      Class3357.method11931(Blocks.field36589, new Class6235());
+      Class3357.method11931(Blocks.CARVED_PUMPKIN, new Class6235());
       Class3357.method11931(Blocks.field36896.asItem(), new Class6240());
 
       for (Class112 var9 : Class112.values()) {

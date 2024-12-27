@@ -15,7 +15,7 @@ public class Class7573 extends Class7574 {
 
    @Override
    public void method24785(int var1) {
-      this.field32514.world.addBlockEvent(this.field32514.pos, Blocks.field36532, var1, 0);
+      this.field32514.world.addBlockEvent(this.field32514.pos, Blocks.SPAWNER, var1, 0);
    }
 
    @Override

@@ -22,7 +22,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3197 extends HorizontalBlock implements Class3196 {
+public class Class3197 extends HorizontalBlock implements IGrowable {
    private static String[] field18478;
    public static final IntegerProperty field18479 = BlockStateProperties.field39739;
    public static final VoxelShape[] field18480 = new VoxelShape[]{

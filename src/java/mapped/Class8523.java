@@ -27,10 +27,10 @@ public class Class8523 {
                new Class7872(new Class6439(Blocks.field36399, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36526, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36730, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36422, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.OAK_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36400, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36533, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36433, 0.02F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.STRIPPED_OAK_LOG, 0.02F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872[]{
                   new Class7872(
@@ -41,7 +41,7 @@ public class Class8523 {
                            .with(Class3237.field18682, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Blocks.field36758
+                     Blocks.BROWN_STAINED_GLASS_PANE
                         .getDefaultState()
                         .with(Class3237.field18680, Boolean.valueOf(true))
                         .with(Class3237.field18682, Boolean.valueOf(true))
@@ -54,14 +54,14 @@ public class Class8523 {
                            .with(Class3237.field18683, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Blocks.field36758
+                     Blocks.BROWN_STAINED_GLASS_PANE
                         .getDefaultState()
                         .with(Class3237.field18681, Boolean.valueOf(true))
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
-                  new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-                  new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState()),
-                  new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36884.getDefaultState())
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState())
                }
             )
          )
@@ -77,8 +77,8 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36404, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36762, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36426, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36438, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.ACACIA_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.ACACIA_WOOD, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36731, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36734, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36744, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
@@ -91,7 +91,7 @@ public class Class8523 {
                         .with(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18680, Boolean.valueOf(true))
                      .with(Class3237.field18682, Boolean.valueOf(true))
@@ -105,12 +105,12 @@ public class Class8523 {
                            .with(Class3237.field18683, Boolean.valueOf(true))
                      ),
                      Class6435.field28275,
-                     Blocks.field36758
+                     Blocks.BROWN_STAINED_GLASS_PANE
                         .getDefaultState()
                         .with(Class3237.field18681, Boolean.valueOf(true))
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
-                  new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
+                  new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
                }
             )
          )
@@ -127,8 +127,8 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.LANTERN), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36401, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36840, 0.4F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36428, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36441, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.STRIPPED_SPRUCE_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.STRIPPED_SPRUCE_WOOD, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(
                   new Class6433(
@@ -138,7 +138,7 @@ public class Class8523 {
                         .with(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18680, Boolean.valueOf(true))
                      .with(Class3237.field18682, Boolean.valueOf(true))
@@ -151,13 +151,13 @@ public class Class8523 {
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18681, Boolean.valueOf(true))
                      .with(Class3237.field18683, Boolean.valueOf(true))
                ),
-               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-               new Class7872[]{new Class7872(new Class6439(Blocks.field36539, 0.8F), Class6435.field28275, Blocks.field36694.getDefaultState())}
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+               new Class7872[]{new Class7872(new Class6439(Blocks.WHEAT, 0.8F), Class6435.field28275, Blocks.POTATOES.getDefaultState())}
             )
          )
       )
@@ -177,7 +177,7 @@ public class Class8523 {
                   Blocks.CAMPFIRE.getDefaultState().with(Class3244.field18698, Boolean.valueOf(false))
                ),
                new Class7872(new Class6439(Blocks.field36399, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36423, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.SPRUCE_LOG, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(
                   new Class6433(
@@ -187,7 +187,7 @@ public class Class8523 {
                         .with(Class3237.field18682, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18680, Boolean.valueOf(true))
                      .with(Class3237.field18682, Boolean.valueOf(true))
@@ -200,13 +200,13 @@ public class Class8523 {
                         .with(Class3237.field18683, Boolean.valueOf(true))
                   ),
                   Class6435.field28275,
-                  Blocks.field36758
+                  Blocks.BROWN_STAINED_GLASS_PANE
                      .getDefaultState()
                      .with(Class3237.field18681, Boolean.valueOf(true))
                      .with(Class3237.field18683, Boolean.valueOf(true))
                ),
-               new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.PUMPKIN_STEM.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.PUMPKIN_STEM.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
                new Class7872[0]
             )
          )
@@ -225,8 +225,8 @@ public class Class8523 {
                new Class7872(new Class6439(Blocks.field36794, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37021, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37034, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36884.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
             )
          )
       )
@@ -254,8 +254,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36400.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.1F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.field36400.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GRASS_PATH, 0.1F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
@@ -267,8 +267,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36404.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.field36404.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GRASS_PATH, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
@@ -280,8 +280,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.field36885), new Class6438(Blocks.WATER), Blocks.field36401.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36885, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.field36401.getDefaultState()),
+               new Class7872(new Class6439(Blocks.GRASS_PATH, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
             )
@@ -293,9 +293,9 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36884.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState())
             )
          )
       )
@@ -303,7 +303,7 @@ public class Class8523 {
    public static final Class3622 field38263 = method30211(
       "farm_savanna",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())))
       )
    );
    public static final Class3622 field38264 = method30211(
@@ -311,8 +311,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.field36693.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.8F), Class6435.field28275, Blocks.field36694.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.CARROTS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.8F), Class6435.field28275, Blocks.POTATOES.getDefaultState())
             )
          )
       )
@@ -322,8 +322,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36539, 0.3F), Class6435.field28275, Blocks.PUMPKIN_STEM.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36694.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.3F), Class6435.field28275, Blocks.PUMPKIN_STEM.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.POTATOES.getDefaultState())
             )
          )
       )
@@ -333,8 +333,8 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36539, 0.2F), Class6435.field28275, Blocks.field36884.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36539, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
+               new Class7872(new Class6439(Blocks.WHEAT, 0.2F), Class6435.field28275, Blocks.BEETROOTS.getDefaultState()),
+               new Class7872(new Class6439(Blocks.WHEAT, 0.1F), Class6435.field28275, Blocks.MELON_STEM.getDefaultState())
             )
          )
       )
@@ -345,7 +345,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36890, 0.75F), Class6435.field28275, Blocks.field37136.getDefaultState()),
+               new Class7872(new Class6439(Blocks.MAGMA_BLOCK, 0.75F), Class6435.field28275, Blocks.field37136.getDefaultState()),
                new Class7872(new Class6439(Blocks.field37136, 0.15F), Class6435.field28275, Blocks.field37135.getDefaultState()),
                field38249,
                field38248

@@ -104,7 +104,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          List var9 = this.world.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
          if (!var9.isEmpty()) {
             List<AxisAlignedBB> var10 = var7.method19521();
-            boolean var11 = this.field5361.isIn(Blocks.field36764);
+            boolean var11 = this.field5361.isIn(Blocks.SLIME_BLOCK);
             Iterator var12 = var9.iterator();
 
             while (true) {

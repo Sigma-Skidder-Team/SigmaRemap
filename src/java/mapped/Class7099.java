@@ -32,7 +32,7 @@ public class Class7099 extends Class7092 {
             throw new RuntimeException(var13);
          }
 
-         return var11.method28837().isIn(Blocks.field36894) ? null : new Class8266(var5.field35530, var11.method28837(), (CompoundNBT)null);
+         return var11.method28837().isIn(Blocks.STRUCTURE_VOID) ? null : new Class8266(var5.field35530, var11.method28837(), (CompoundNBT)null);
       } else {
          return var5;
       }

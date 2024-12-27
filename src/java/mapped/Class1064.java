@@ -30,7 +30,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public class Class1064 extends Class1066 implements Class1022 {
-   private static final Class120 field5869 = Class120.method339(Items.field37842, Blocks.field36777.asItem());
+   private static final Class120 field5869 = Class120.method339(Items.field37842, Blocks.HAY_BLOCK.asItem());
    private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.VARINT);
    private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.VARINT);
@@ -157,7 +157,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       boolean var8 = false;
       Item var9 = var2.getItem();
       if (var9 != Items.field37842) {
-         if (var9 == Blocks.field36777.asItem()) {
+         if (var9 == Blocks.HAY_BLOCK.asItem()) {
             var5 = 90;
             var6 = 6;
             var7 = 10.0F;

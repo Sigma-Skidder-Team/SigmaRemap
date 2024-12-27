@@ -168,7 +168,7 @@ public class InvManager extends PremiumModule {
                         return 1.0F;
                     }
 
-                    var6 = var5.getDestroySpeed(var0, Blocks.field36422.getDefaultState());
+                    var6 = var5.getDestroySpeed(var0, Blocks.OAK_LOG.getDefaultState());
                     if (var4.toLowerCase().contains("gold")) {
                         var6 -= 5.0F;
                     }

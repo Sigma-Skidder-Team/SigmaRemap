@@ -383,7 +383,7 @@ public abstract class FlowingFluid extends Fluid {
             && !var7.isIn(BlockTags.field32790)
             && var7 != Blocks.LADDER
             && var7 != Blocks.SUGAR_CANE
-            && var7 != Blocks.field37013) {
+            && var7 != Blocks.BUBBLE_COLUMN) {
             Material var8 = var3.getMaterial();
             return var8 != Material.field38934 && var8 != Material.field38933 && var8 != Material.field38937 && var8 != Material.field38940
                ? !var8.blocksMovement()

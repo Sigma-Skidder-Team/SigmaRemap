@@ -12,7 +12,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class Class7661 extends Class7665 {
+public abstract class Class7661 extends AbstractTreeGrower {
    @Override
    public boolean method25182(ServerWorld var1, ChunkGenerator var2, BlockPos var3, BlockState var4, Random var5) {
       for (int var8 = 0; var8 >= -1; var8--) {

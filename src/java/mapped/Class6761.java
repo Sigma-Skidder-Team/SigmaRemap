@@ -248,7 +248,7 @@ public class Class6761 extends Class6762 {
                var8 = PathNodeType.OPEN;
             }
 
-            if (var15 == PathNodeType.DAMAGE_FIRE || var14.isIn(Blocks.field36890) || var14.isIn(BlockTags.field32809)) {
+            if (var15 == PathNodeType.DAMAGE_FIRE || var14.isIn(Blocks.MAGMA_BLOCK) || var14.isIn(BlockTags.field32809)) {
                var8 = PathNodeType.DAMAGE_FIRE;
             }
 

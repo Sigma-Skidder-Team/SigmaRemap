@@ -30,16 +30,16 @@ public class BlockColors {
          (var0, var1, var2x, var3) -> var1 != null && var2x != null
                ? BiomeColors.getGrassColor(var1, var0.get(Class3456.field19276) != DoubleBlockHalf.field209 ? var2x : var2x.down())
                : -1,
-         Blocks.field36802,
+         Blocks.LARGE_FERN,
          Blocks.TALL_GRASS
       );
-      var2.method29468(Class3456.field19276, Blocks.field36802, Blocks.TALL_GRASS);
+      var2.method29468(Class3456.field19276, Blocks.LARGE_FERN, Blocks.TALL_GRASS);
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getGrassColor(var1, var2x) : GrassColors.get(0.5, 1.0),
          Blocks.GRASS_BLOCK,
          Blocks.FERN,
          Blocks.GRASS,
-         Blocks.field36675
+         Blocks.POTTED_FERN
       );
       var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36293(), Blocks.field36447);
       var2.method29466((var0, var1, var2x, var3) -> FoliageColors.method36294(), Blocks.field36448);
@@ -54,8 +54,8 @@ public class BlockColors {
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? BiomeColors.getWaterColor(var1, var2x) : -1,
          Blocks.WATER,
-         Blocks.field37013,
-         Blocks.field36648
+         Blocks.BUBBLE_COLUMN,
+         Blocks.CAULDRON
       );
       var2.method29466((var0, var1, var2x, var3) -> Class3222.method11629(var0.<Integer>get(Class3222.field18651)), Blocks.REDSTONE_WIRE);
       var2.method29468(Class3222.field18651, Blocks.REDSTONE_WIRE);

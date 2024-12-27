@@ -16,7 +16,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3479 extends BushBlock implements Class3196 {
+public class Class3479 extends BushBlock implements IGrowable {
    private static String[] field18470;
    public static final VoxelShape field19332 = Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
 

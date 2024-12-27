@@ -30,7 +30,7 @@ public class Class3341 extends Item {
       World var4 = var1.getWorld();
       BlockPos var5 = var1.getPos();
       BlockState var6 = var4.getBlockState(var5);
-      if (!var6.isIn(Blocks.field36650) || var6.<Boolean>get(Class3400.field19054)) {
+      if (!var6.isIn(Blocks.END_PORTAL_FRAME) || var6.<Boolean>get(Class3400.field19054)) {
          return ActionResultType.field14820;
       } else if (var4.isRemote) {
          return ActionResultType.SUCCESS;
@@ -38,7 +38,7 @@ public class Class3341 extends Item {
          BlockState var7 = var6.with(Class3400.field19054, Boolean.valueOf(true));
          Block.method11538(var6, var7, var4, var5);
          var4.setBlockState(var5, var7, 2);
-         var4.updateComparatorOutputLevel(var5, Blocks.field36650);
+         var4.updateComparatorOutputLevel(var5, Blocks.END_PORTAL_FRAME);
          var1.method18357().shrink(1);
          var4.playEvent(1503, var5, 0);
          Class9086 var8 = Class3400.method12029().method38656(var4, var5);
@@ -47,7 +47,7 @@ public class Class3341 extends Item {
 
             for (int var10 = 0; var10 < 3; var10++) {
                for (int var11 = 0; var11 < 3; var11++) {
-                  var4.setBlockState(var9.add(var10, 0, var11), Blocks.field36649.getDefaultState(), 2);
+                  var4.setBlockState(var9.add(var10, 0, var11), Blocks.END_PORTAL.getDefaultState(), 2);
                }
             }
 
@@ -62,7 +62,7 @@ public class Class3341 extends Item {
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       BlockRayTraceResult var7 = method11735(var1, var2, RayTraceContext.FluidMode.NONE);
-      if (var7.getType() == RayTraceResult.Type.BLOCK && var1.getBlockState(var7.getPos()).isIn(Blocks.field36650)) {
+      if (var7.getType() == RayTraceResult.Type.BLOCK && var1.getBlockState(var7.getPos()).isIn(Blocks.END_PORTAL_FRAME)) {
          return Class6794.<ItemStack>method20698(var6);
       } else {
          var2.setActiveHand(var3);

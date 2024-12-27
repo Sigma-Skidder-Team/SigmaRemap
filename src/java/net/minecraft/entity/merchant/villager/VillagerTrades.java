@@ -40,7 +40,7 @@ public class VillagerTrades {
                   new Class5391[]{new Class5395(Items.field37954, 3, 18, 10), new Class5396(Blocks.MELON, 4, 12, 20)},
                   4,
                   new Class5391[]{
-                     new Class5395(Blocks.field36591, 1, 1, 12, 15),
+                     new Class5395(Blocks.CAKE, 1, 1, 12, 15),
                      new Class5393(Effects.NIGHT_VISION, 100, 15),
                      new Class5393(Effects.JUMP_BOOST, 160, 15),
                      new Class5393(Effects.WEAKNESS, 140, 15),
@@ -475,25 +475,25 @@ public class VillagerTrades {
                      new Class5395(Blocks.field36740, 1, 1, 12, 15),
                      new Class5395(Blocks.field36734, 1, 1, 12, 15),
                      new Class5395(Blocks.field36742, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36914, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36913, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36924, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36916, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36920, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36921, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36928, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36927, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36919, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36915, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36918, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36926, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36922, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36923, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36917, 1, 1, 12, 15),
-                     new Class5395(Blocks.field36925, 1, 1, 12, 15)
+                     new Class5395(Blocks.ORANGE_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.WHITE_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.BLUE_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.GRAY_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.BLACK_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.RED_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.PINK_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.MAGENTA_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.LIME_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.GREEN_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.CYAN_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.PURPLE_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.YELLOW_GLAZED_TERRACOTTA, 1, 1, 12, 15),
+                     new Class5395(Blocks.BROWN_GLAZED_TERRACOTTA, 1, 1, 12, 15)
                   },
                   5,
-                  new Class5391[]{new Class5395(Blocks.field36726, 1, 1, 12, 30), new Class5395(Blocks.field36724, 1, 1, 12, 30)}
+                  new Class5391[]{new Class5395(Blocks.QUARTZ_PILLAR, 1, 1, 12, 30), new Class5395(Blocks.field36724, 1, 1, 12, 30)}
                )
             )
          );

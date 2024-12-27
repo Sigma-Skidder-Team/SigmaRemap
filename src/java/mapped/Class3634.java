@@ -122,7 +122,7 @@ public class Class3634 {
          }
       }
 
-      BlockState var26 = Blocks.field36588.getDefaultState().with(Class3401.field19060, var2);
+      BlockState var26 = Blocks.NETHER_PORTAL.getDefaultState().with(Class3401.field19060, var2);
 
       for (int var29 = 0; var29 < 2; var29++) {
          for (int var31 = 0; var31 < 3; var31++) {

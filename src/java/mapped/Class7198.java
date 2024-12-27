@@ -120,8 +120,8 @@ public class Class7198 extends Class7194 {
                if (!((double)var22 < 0.25)) {
                   var1.setBlockState(var4, Blocks.field36527.getDefaultState(), false);
                } else {
-                  var1.setBlockState(var4, Blocks.field36890.getDefaultState(), false);
-                  var1.getBlocksToBeTicked().scheduleTick(var4, Blocks.field36890, 0);
+                  var1.setBlockState(var4, Blocks.MAGMA_BLOCK.getDefaultState(), false);
+                  var1.getBlocksToBeTicked().scheduleTick(var4, Blocks.MAGMA_BLOCK, 0);
                }
 
                return true;

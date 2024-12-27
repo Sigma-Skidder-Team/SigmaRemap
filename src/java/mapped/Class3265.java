@@ -27,7 +27,7 @@ public class Class3265 extends ToolItem {
    private static final Set<Block> field18757 = Sets.newHashSet(
       new Block[]{
          Blocks.LADDER,
-         Blocks.field37053,
+         Blocks.SCAFFOLDING,
          Blocks.field36695,
          Blocks.field36696,
          Blocks.field36697,
@@ -39,22 +39,22 @@ public class Class3265 extends ToolItem {
       }
    );
    public static final Map<Block, Block> field18758 = new Builder()
-      .put(Blocks.field36434, Blocks.field36440)
-      .put(Blocks.field36422, Blocks.field36433)
-      .put(Blocks.field36439, Blocks.field36445)
-      .put(Blocks.field36427, Blocks.field36432)
-      .put(Blocks.field36438, Blocks.field36444)
-      .put(Blocks.field36426, Blocks.field36431)
-      .put(Blocks.field36436, Blocks.field36442)
-      .put(Blocks.field36424, Blocks.field36429)
-      .put(Blocks.field36437, Blocks.field36443)
-      .put(Blocks.field36425, Blocks.field36430)
-      .put(Blocks.field36435, Blocks.field36441)
-      .put(Blocks.field36423, Blocks.field36428)
+      .put(Blocks.OAK_WOOD, Blocks.STRIPPED_OAK_WOOD)
+      .put(Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG)
+      .put(Blocks.DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD)
+      .put(Blocks.DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG)
+      .put(Blocks.ACACIA_WOOD, Blocks.STRIPPED_ACACIA_WOOD)
+      .put(Blocks.ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG)
+      .put(Blocks.BIRCH_WOOD, Blocks.STRIPPED_BIRCH_WOOD)
+      .put(Blocks.BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG)
+      .put(Blocks.JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_WOOD)
+      .put(Blocks.JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG)
+      .put(Blocks.SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_WOOD)
+      .put(Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG)
       .put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM)
       .put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE)
       .put(Blocks.field37079, Blocks.field37080)
-      .put(Blocks.field37081, Blocks.field37082)
+      .put(Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE)
       .build();
 
    public Class3265(IItemTier var1, float var2, float var3, Properties var4) {

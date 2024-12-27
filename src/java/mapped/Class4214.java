@@ -39,7 +39,7 @@ public class Class4214 extends Class4213 {
          for (int var11 = 1; var11 <= 6; var11++) {
             if (var4.nextInt(3) != 0) {
                int var12 = 2 + (var4.nextInt(4) != 0 ? 1 : 0);
-               BlockState var13 = Blocks.field36453.getDefaultState();
+               BlockState var13 = Blocks.WET_SPONGE.getDefaultState();
                this.method12927(var1, var5, var10, var12, var11, var10, 3, var11, var13, var13, false);
             }
          }

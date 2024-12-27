@@ -60,11 +60,11 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3642(var2, ItemTags.field26081, 300);
       method3642(var2, ItemTags.field26080, 300);
       method3643(var2, Blocks.OAK_FENCE, 300);
-      method3643(var2, Blocks.field36868, 300);
-      method3643(var2, Blocks.field36867, 300);
-      method3643(var2, Blocks.field36869, 300);
-      method3643(var2, Blocks.field36871, 300);
-      method3643(var2, Blocks.field36870, 300);
+      method3643(var2, Blocks.BIRCH_FENCE, 300);
+      method3643(var2, Blocks.SPRUCE_FENCE, 300);
+      method3643(var2, Blocks.JUNGLE_FENCE, 300);
+      method3643(var2, Blocks.DARK_OAK_FENCE, 300);
+      method3643(var2, Blocks.ACACIA_FENCE, 300);
       method3643(var2, Blocks.OAK_FENCE_GATE, 300);
       method3643(var2, Blocks.field36863, 300);
       method3643(var2, Blocks.field36862, 300);
@@ -78,7 +78,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.CHEST, 300);
       method3643(var2, Blocks.TRAPPED_CHEST, 300);
       method3643(var2, Blocks.CRAFTING_TABLE, 300);
-      method3643(var2, Blocks.field36720, 300);
+      method3643(var2, Blocks.DAYLIGHT_DETECTOR, 300);
       method3642(var2, ItemTags.field26094, 300);
       method3643(var2, Items.BOW, 300);
       method3643(var2, Items.field37906, 300);
@@ -99,15 +99,15 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3642(var2, ItemTags.field26075, 67);
       method3643(var2, Blocks.field36963, 4001);
       method3643(var2, Items.CROSSBOW, 300);
-      method3643(var2, Blocks.field37009, 50);
+      method3643(var2, Blocks.BAMBOO, 50);
       method3643(var2, Blocks.DEAD_BUSH, 100);
-      method3643(var2, Blocks.field37053, 400);
+      method3643(var2, Blocks.SCAFFOLDING, 400);
       method3643(var2, Blocks.LOOM, 300);
       method3643(var2, Blocks.BARREL, 300);
       method3643(var2, Blocks.CARTOGRAPHY_TABLE, 300);
       method3643(var2, Blocks.FLETCHING_TABLE, 300);
       method3643(var2, Blocks.SMITHING_TABLE, 300);
-      method3643(var2, Blocks.field37115, 300);
+      method3643(var2, Blocks.COMPOSTER, 300);
       return var2;
    }
 
@@ -263,7 +263,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.method3636(var1);
          }
 
-         if (var4.getItem() == Blocks.field36453.asItem()
+         if (var4.getItem() == Blocks.WET_SPONGE.asItem()
             && !this.field5247.get(1).isEmpty()
             && this.field5247.get(1).getItem() == Items.BUCKET) {
             this.field5247.set(1, new ItemStack(Items.WATER_BUCKET));

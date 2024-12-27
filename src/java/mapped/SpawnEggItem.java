@@ -52,7 +52,7 @@ public class SpawnEggItem extends Item {
          BlockPos var6 = var1.getPos();
          Direction var7 = var1.getFace();
          BlockState var8 = var4.getBlockState(var6);
-         if (var8.isIn(Blocks.field36532)) {
+         if (var8.isIn(Blocks.SPAWNER)) {
             TileEntity var9 = var4.getTileEntity(var6);
             if (var9 instanceof Class960) {
                Class7574 var13 = ((Class960)var9).method3911();

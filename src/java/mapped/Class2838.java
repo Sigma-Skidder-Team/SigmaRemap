@@ -37,14 +37,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    private static final Class7519 field17631 = field17630.method24516(field17628);
    private static final Class7519 field17632 = field17631.method24518();
    private static final Set<Item> field17633 = Stream.<Block>of(
-         Blocks.field36652,
+         Blocks.DRAGON_EGG,
          Blocks.BEACON,
-         Blocks.field37007,
-         Blocks.field36701,
-         Blocks.field36703,
-         Blocks.field36707,
-         Blocks.field36705,
-         Blocks.field36709,
+         Blocks.CONDUIT,
+         Blocks.SKELETON_SKULL,
+         Blocks.WITHER_SKELETON_SKULL,
+         Blocks.PLAYER_HEAD,
+         Blocks.ZOMBIE_HEAD,
+         Blocks.CREEPER_HEAD,
          Blocks.DRAGON_HEAD,
          Blocks.field36896,
          Blocks.field36912,
@@ -441,7 +441,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36403);
       this.method11096(Blocks.field36404);
       this.method11096(Blocks.field36405);
-      this.method11096(Blocks.field36406);
+      this.method11096(Blocks.OAK_SAPLING);
       this.method11096(Blocks.SPRUCE_SAPLING);
       this.method11096(Blocks.BIRCH_SAPLING);
       this.method11096(Blocks.JUNGLE_SAPLING);
@@ -449,38 +449,38 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.DARK_OAK_SAPLING);
       this.method11096(Blocks.SAND);
       this.method11096(Blocks.RED_SAND);
-      this.method11096(Blocks.field36418);
-      this.method11096(Blocks.field36419);
-      this.method11096(Blocks.field36422);
-      this.method11096(Blocks.field36423);
-      this.method11096(Blocks.field36424);
-      this.method11096(Blocks.field36425);
-      this.method11096(Blocks.field36426);
-      this.method11096(Blocks.field36427);
-      this.method11096(Blocks.field36428);
-      this.method11096(Blocks.field36429);
-      this.method11096(Blocks.field36430);
-      this.method11096(Blocks.field36431);
-      this.method11096(Blocks.field36432);
-      this.method11096(Blocks.field36433);
+      this.method11096(Blocks.GOLD_ORE);
+      this.method11096(Blocks.IRON_ORE);
+      this.method11096(Blocks.OAK_LOG);
+      this.method11096(Blocks.SPRUCE_LOG);
+      this.method11096(Blocks.BIRCH_LOG);
+      this.method11096(Blocks.JUNGLE_LOG);
+      this.method11096(Blocks.ACACIA_LOG);
+      this.method11096(Blocks.DARK_OAK_LOG);
+      this.method11096(Blocks.STRIPPED_SPRUCE_LOG);
+      this.method11096(Blocks.STRIPPED_BIRCH_LOG);
+      this.method11096(Blocks.STRIPPED_JUNGLE_LOG);
+      this.method11096(Blocks.STRIPPED_ACACIA_LOG);
+      this.method11096(Blocks.STRIPPED_DARK_OAK_LOG);
+      this.method11096(Blocks.STRIPPED_OAK_LOG);
       this.method11096(Blocks.STRIPPED_WARPED_STEM);
       this.method11096(Blocks.field37080);
-      this.method11096(Blocks.field36434);
-      this.method11096(Blocks.field36435);
-      this.method11096(Blocks.field36436);
-      this.method11096(Blocks.field36437);
-      this.method11096(Blocks.field36438);
-      this.method11096(Blocks.field36439);
-      this.method11096(Blocks.field36440);
-      this.method11096(Blocks.field36441);
-      this.method11096(Blocks.field36442);
-      this.method11096(Blocks.field36443);
-      this.method11096(Blocks.field36444);
-      this.method11096(Blocks.field36445);
-      this.method11096(Blocks.field37082);
+      this.method11096(Blocks.OAK_WOOD);
+      this.method11096(Blocks.SPRUCE_WOOD);
+      this.method11096(Blocks.BIRCH_WOOD);
+      this.method11096(Blocks.JUNGLE_WOOD);
+      this.method11096(Blocks.ACACIA_WOOD);
+      this.method11096(Blocks.DARK_OAK_WOOD);
+      this.method11096(Blocks.STRIPPED_OAK_WOOD);
+      this.method11096(Blocks.STRIPPED_SPRUCE_WOOD);
+      this.method11096(Blocks.STRIPPED_BIRCH_WOOD);
+      this.method11096(Blocks.STRIPPED_JUNGLE_WOOD);
+      this.method11096(Blocks.STRIPPED_ACACIA_WOOD);
+      this.method11096(Blocks.STRIPPED_DARK_OAK_WOOD);
+      this.method11096(Blocks.STRIPPED_CRIMSON_HYPHAE);
       this.method11096(Blocks.STRIPPED_WARPED_HYPHAE);
-      this.method11096(Blocks.field36452);
-      this.method11096(Blocks.field36453);
+      this.method11096(Blocks.SPONGE);
+      this.method11096(Blocks.WET_SPONGE);
       this.method11096(Blocks.field36456);
       this.method11096(Blocks.SANDSTONE);
       this.method11096(Blocks.CHISELED_SANDSTONE);
@@ -526,7 +526,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.BRICKS);
       this.method11096(Blocks.field36526);
       this.method11096(Blocks.field36527);
-      this.method11096(Blocks.field37123);
+      this.method11096(Blocks.CRYING_OBSIDIAN);
       this.method11096(Blocks.TORCH);
       this.method11096(Blocks.field36533);
       this.method11096(Blocks.REDSTONE_WIRE);
@@ -542,14 +542,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.RAIL);
       this.method11096(Blocks.COBBLESTONE_STAIRS);
       this.method11096(Blocks.LEVER);
-      this.method11096(Blocks.field36559);
-      this.method11096(Blocks.field36561);
-      this.method11096(Blocks.field36562);
-      this.method11096(Blocks.field36563);
-      this.method11096(Blocks.field36564);
-      this.method11096(Blocks.field36565);
-      this.method11096(Blocks.field36566);
-      this.method11096(Blocks.field36568);
+      this.method11096(Blocks.STONE_PRESSURE_PLATE);
+      this.method11096(Blocks.OAK_PRESSURE_PLATE);
+      this.method11096(Blocks.SPRUCE_PRESSURE_PLATE);
+      this.method11096(Blocks.BIRCH_PRESSURE_PLATE);
+      this.method11096(Blocks.JUNGLE_PRESSURE_PLATE);
+      this.method11096(Blocks.ACACIA_PRESSURE_PLATE);
+      this.method11096(Blocks.DARK_OAK_PRESSURE_PLATE);
+      this.method11096(Blocks.REDSTONE_TORCH);
       this.method11096(Blocks.STONE_BUTTON);
       this.method11096(Blocks.CACTUS);
       this.method11096(Blocks.SUGAR_CANE);
@@ -561,16 +561,16 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.SOUL_SOIL);
       this.method11096(Blocks.BASALT);
       this.method11096(Blocks.POLISHED_BASALT);
-      this.method11096(Blocks.field36585);
-      this.method11096(Blocks.field36589);
-      this.method11096(Blocks.field36590);
+      this.method11096(Blocks.SOUL_TORCH);
+      this.method11096(Blocks.CARVED_PUMPKIN);
+      this.method11096(Blocks.JACK_O_LANTERN);
       this.method11096(Blocks.REPEATER);
-      this.method11096(Blocks.field36609);
-      this.method11096(Blocks.field36610);
-      this.method11096(Blocks.field36611);
-      this.method11096(Blocks.field36612);
+      this.method11096(Blocks.OAK_TRAPDOOR);
+      this.method11096(Blocks.SPRUCE_TRAPDOOR);
+      this.method11096(Blocks.BIRCH_TRAPDOOR);
+      this.method11096(Blocks.JUNGLE_TRAPDOOR);
       this.method11096(Blocks.ACACIA_TRAPDOOR);
-      this.method11096(Blocks.field36614);
+      this.method11096(Blocks.DARK_OAK_TRAPDOOR);
       this.method11096(Blocks.field36615);
       this.method11096(Blocks.field36616);
       this.method11096(Blocks.field36617);
@@ -583,9 +583,9 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.NETHER_BRICKS);
       this.method11096(Blocks.NETHER_BRICK_FENCE);
       this.method11096(Blocks.NETHER_BRICK_STAIRS);
-      this.method11096(Blocks.field36648);
+      this.method11096(Blocks.CAULDRON);
       this.method11096(Blocks.field36651);
-      this.method11096(Blocks.field36653);
+      this.method11096(Blocks.REDSTONE_LAMP);
       this.method11096(Blocks.SANDSTONE_STAIRS);
       this.method11096(Blocks.TRIPWIRE_HOOK);
       this.method11096(Blocks.EMERALD_BLOCK);
@@ -601,10 +601,10 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36698);
       this.method11096(Blocks.field36699);
       this.method11096(Blocks.field36700);
-      this.method11096(Blocks.field36701);
-      this.method11096(Blocks.field36703);
-      this.method11096(Blocks.field36705);
-      this.method11096(Blocks.field36709);
+      this.method11096(Blocks.SKELETON_SKULL);
+      this.method11096(Blocks.WITHER_SKELETON_SKULL);
+      this.method11096(Blocks.ZOMBIE_HEAD);
+      this.method11096(Blocks.CREEPER_HEAD);
       this.method11096(Blocks.DRAGON_HEAD);
       this.method11096(Blocks.ANVIL);
       this.method11096(Blocks.CHIPPED_ANVIL);
@@ -612,13 +612,13 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
       this.method11096(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
       this.method11096(Blocks.COMPARATOR);
-      this.method11096(Blocks.field36720);
-      this.method11096(Blocks.field36721);
+      this.method11096(Blocks.DAYLIGHT_DETECTOR);
+      this.method11096(Blocks.REDSTONE_BLOCK);
       this.method11096(Blocks.field36724);
       this.method11096(Blocks.field36725);
-      this.method11096(Blocks.field36726);
+      this.method11096(Blocks.QUARTZ_PILLAR);
       this.method11096(Blocks.field36727);
-      this.method11096(Blocks.field36728);
+      this.method11096(Blocks.ACTIVATOR_RAIL);
       this.method11096(Blocks.field36730);
       this.method11096(Blocks.field36731);
       this.method11096(Blocks.field36732);
@@ -637,15 +637,15 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36745);
       this.method11096(Blocks.field36762);
       this.method11096(Blocks.field36763);
-      this.method11096(Blocks.field36764);
-      this.method11096(Blocks.field36766);
+      this.method11096(Blocks.SLIME_BLOCK);
+      this.method11096(Blocks.IRON_TRAPDOOR);
       this.method11096(Blocks.field36767);
       this.method11096(Blocks.field36768);
       this.method11096(Blocks.field36769);
       this.method11096(Blocks.field36770);
       this.method11096(Blocks.field36771);
       this.method11096(Blocks.field36772);
-      this.method11096(Blocks.field36777);
+      this.method11096(Blocks.HAY_BLOCK);
       this.method11096(Blocks.WHITE_CARPET);
       this.method11096(Blocks.ORANGE_CARPET);
       this.method11096(Blocks.MAGENTA_CARPET);
@@ -677,38 +677,38 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36864);
       this.method11096(Blocks.field36865);
       this.method11096(Blocks.field36866);
-      this.method11096(Blocks.field36867);
-      this.method11096(Blocks.field36868);
-      this.method11096(Blocks.field36869);
-      this.method11096(Blocks.field36870);
-      this.method11096(Blocks.field36871);
-      this.method11096(Blocks.field36877);
+      this.method11096(Blocks.SPRUCE_FENCE);
+      this.method11096(Blocks.BIRCH_FENCE);
+      this.method11096(Blocks.JUNGLE_FENCE);
+      this.method11096(Blocks.ACACIA_FENCE);
+      this.method11096(Blocks.DARK_OAK_FENCE);
+      this.method11096(Blocks.END_ROD);
       this.method11096(Blocks.field36880);
-      this.method11096(Blocks.field36881);
+      this.method11096(Blocks.PURPUR_PILLAR);
       this.method11096(Blocks.field36882);
       this.method11096(Blocks.field36883);
-      this.method11096(Blocks.field36890);
+      this.method11096(Blocks.MAGMA_BLOCK);
       this.method11096(Blocks.field36891);
       this.method11096(Blocks.field36892);
-      this.method11096(Blocks.field36893);
-      this.method11096(Blocks.field36895);
-      this.method11096(Blocks.field37116);
-      this.method11096(Blocks.field36913);
-      this.method11096(Blocks.field36914);
-      this.method11096(Blocks.field36915);
-      this.method11096(Blocks.field36916);
-      this.method11096(Blocks.field36917);
-      this.method11096(Blocks.field36918);
-      this.method11096(Blocks.field36919);
-      this.method11096(Blocks.field36920);
-      this.method11096(Blocks.field36921);
-      this.method11096(Blocks.field36922);
-      this.method11096(Blocks.field36923);
-      this.method11096(Blocks.field36924);
-      this.method11096(Blocks.field36925);
-      this.method11096(Blocks.field36926);
-      this.method11096(Blocks.field36927);
-      this.method11096(Blocks.field36928);
+      this.method11096(Blocks.BONE_BLOCK);
+      this.method11096(Blocks.OBSERVER);
+      this.method11096(Blocks.TARGET);
+      this.method11096(Blocks.WHITE_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.ORANGE_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.MAGENTA_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.YELLOW_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.LIME_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.PINK_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.GRAY_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.CYAN_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.PURPLE_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.BLUE_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.BROWN_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.GREEN_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.RED_GLAZED_TERRACOTTA);
+      this.method11096(Blocks.BLACK_GLAZED_TERRACOTTA);
       this.method11096(Blocks.field36929);
       this.method11096(Blocks.field36930);
       this.method11096(Blocks.field36931);
@@ -725,32 +725,32 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field36942);
       this.method11096(Blocks.field36943);
       this.method11096(Blocks.field36944);
-      this.method11096(Blocks.field36945);
-      this.method11096(Blocks.field36946);
-      this.method11096(Blocks.field36947);
-      this.method11096(Blocks.field36948);
-      this.method11096(Blocks.field36949);
-      this.method11096(Blocks.field36950);
-      this.method11096(Blocks.field36951);
-      this.method11096(Blocks.field36952);
-      this.method11096(Blocks.field36953);
-      this.method11096(Blocks.field36954);
-      this.method11096(Blocks.field36955);
-      this.method11096(Blocks.field36956);
-      this.method11096(Blocks.field36957);
-      this.method11096(Blocks.field36958);
-      this.method11096(Blocks.field36959);
-      this.method11096(Blocks.field36960);
-      this.method11096(Blocks.field36961);
+      this.method11096(Blocks.WHITE_CONCRETE_POWDER);
+      this.method11096(Blocks.ORANGE_CONCRETE_POWDER);
+      this.method11096(Blocks.MAGENTA_CONCRETE_POWDER);
+      this.method11096(Blocks.LIGHT_BLUE_CONCRETE_POWDER);
+      this.method11096(Blocks.YELLOW_CONCRETE_POWDER);
+      this.method11096(Blocks.LIME_CONCRETE_POWDER);
+      this.method11096(Blocks.PINK_CONCRETE_POWDER);
+      this.method11096(Blocks.GRAY_CONCRETE_POWDER);
+      this.method11096(Blocks.LIGHT_GRAY_CONCRETE_POWDER);
+      this.method11096(Blocks.CYAN_CONCRETE_POWDER);
+      this.method11096(Blocks.PURPLE_CONCRETE_POWDER);
+      this.method11096(Blocks.BLUE_CONCRETE_POWDER);
+      this.method11096(Blocks.BROWN_CONCRETE_POWDER);
+      this.method11096(Blocks.GREEN_CONCRETE_POWDER);
+      this.method11096(Blocks.RED_CONCRETE_POWDER);
+      this.method11096(Blocks.BLACK_CONCRETE_POWDER);
+      this.method11096(Blocks.KELP);
       this.method11096(Blocks.field36963);
       this.method11096(Blocks.field36965);
       this.method11096(Blocks.field36966);
       this.method11096(Blocks.field36967);
       this.method11096(Blocks.field36968);
       this.method11096(Blocks.field36969);
-      this.method11096(Blocks.field37007);
-      this.method11096(Blocks.field36652);
-      this.method11096(Blocks.field37009);
+      this.method11096(Blocks.CONDUIT);
+      this.method11096(Blocks.DRAGON_EGG);
+      this.method11096(Blocks.BAMBOO);
       this.method11096(Blocks.field37014);
       this.method11096(Blocks.field37015);
       this.method11096(Blocks.field37016);
@@ -765,119 +765,119 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field37025);
       this.method11096(Blocks.field37026);
       this.method11096(Blocks.field37027);
-      this.method11096(Blocks.field37041);
-      this.method11096(Blocks.field37042);
-      this.method11096(Blocks.field37043);
-      this.method11096(Blocks.field37044);
-      this.method11096(Blocks.field37045);
-      this.method11096(Blocks.field37046);
-      this.method11096(Blocks.field37047);
-      this.method11096(Blocks.field37048);
-      this.method11096(Blocks.field37049);
-      this.method11096(Blocks.field37050);
-      this.method11096(Blocks.field37051);
-      this.method11096(Blocks.field37052);
+      this.method11096(Blocks.BRICK_WALL);
+      this.method11096(Blocks.PRISMARINE_WALL);
+      this.method11096(Blocks.RED_SANDSTONE_WALL);
+      this.method11096(Blocks.MOSSY_STONE_BRICK_WALL);
+      this.method11096(Blocks.GRANITE_WALL);
+      this.method11096(Blocks.STONE_BRICK_WALL);
+      this.method11096(Blocks.NETHER_BRICK_WALL);
+      this.method11096(Blocks.ANDESITE_WALL);
+      this.method11096(Blocks.RED_NETHER_BRICK_WALL);
+      this.method11096(Blocks.SANDSTONE_WALL);
+      this.method11096(Blocks.END_STONE_BRICK_WALL);
+      this.method11096(Blocks.DIORITE_WALL);
       this.method11096(Blocks.LOOM);
-      this.method11096(Blocks.field37053);
+      this.method11096(Blocks.SCAFFOLDING);
       this.method11096(Blocks.field37119);
       this.method11096(Blocks.field37120);
-      this.method11096(Blocks.field37124);
+      this.method11096(Blocks.RESPAWN_ANCHOR);
       this.method11096(Blocks.field37129);
       this.method11096(Blocks.WARPED_STEM);
       this.method11096(Blocks.WARPED_HYPHAE);
-      this.method11096(Blocks.field37075);
+      this.method11096(Blocks.WARPED_FUNGUS);
       this.method11096(Blocks.field37076);
       this.method11096(Blocks.field37079);
-      this.method11096(Blocks.field37081);
-      this.method11096(Blocks.field37084);
+      this.method11096(Blocks.CRIMSON_HYPHAE);
+      this.method11096(Blocks.CRIMSON_FUNGUS);
       this.method11096(Blocks.field37085);
       this.method11096(Blocks.field37091);
       this.method11096(Blocks.field37092);
-      this.method11096(Blocks.field37096);
-      this.method11096(Blocks.field37098);
-      this.method11096(Blocks.field37100);
+      this.method11096(Blocks.WARPED_PRESSURE_PLATE);
+      this.method11096(Blocks.WARPED_FENCE);
+      this.method11096(Blocks.WARPED_TRAPDOOR);
       this.method11096(Blocks.field37102);
       this.method11096(Blocks.field37104);
       this.method11096(Blocks.field37106);
-      this.method11096(Blocks.field37110);
-      this.method11096(Blocks.field37095);
-      this.method11096(Blocks.field37097);
-      this.method11096(Blocks.field37099);
+      this.method11096(Blocks.WARPED_SIGN);
+      this.method11096(Blocks.CRIMSON_PRESSURE_PLATE);
+      this.method11096(Blocks.CRIMSON_FENCE);
+      this.method11096(Blocks.CRIMSON_TRAPDOOR);
       this.method11096(Blocks.field37101);
       this.method11096(Blocks.field37103);
       this.method11096(Blocks.field37105);
-      this.method11096(Blocks.field37109);
+      this.method11096(Blocks.CRIMSON_SIGN);
       this.method11096(Blocks.field37121);
       this.method11096(Blocks.field37122);
       this.method11096(Blocks.field37130);
       this.method11096(Blocks.field37135);
       this.method11096(Blocks.field37139);
       this.method11096(Blocks.field37131);
-      this.method11096(Blocks.field37132);
-      this.method11096(Blocks.field37140);
+      this.method11096(Blocks.BLACKSTONE_WALL);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
       this.method11096(Blocks.field37137);
       this.method11096(Blocks.field37136);
       this.method11096(Blocks.field37134);
       this.method11096(Blocks.field37142);
-      this.method11096(Blocks.field37144);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE);
       this.method11096(Blocks.field37145);
-      this.method11096(Blocks.field37146);
+      this.method11096(Blocks.POLISHED_BLACKSTONE_WALL);
       this.method11096(Blocks.field37147);
       this.method11096(Blocks.field37148);
       this.method11096(Blocks.field37149);
       this.method11096(Blocks.CHAIN);
-      this.method11096(Blocks.field37077);
-      this.method11096(Blocks.field37090);
+      this.method11096(Blocks.WARPED_ROOTS);
+      this.method11096(Blocks.CRIMSON_ROOTS);
       this.method11094(Blocks.FARMLAND, Blocks.DIRT);
       this.method11094(Blocks.TRIPWIRE, Items.field37838);
-      this.method11094(Blocks.field36885, Blocks.DIRT);
-      this.method11094(Blocks.field36962, Blocks.field36961);
-      this.method11094(Blocks.field37008, Blocks.field37009);
+      this.method11094(Blocks.GRASS_PATH, Blocks.DIRT);
+      this.method11094(Blocks.KELP_PLANT, Blocks.KELP);
+      this.method11094(Blocks.BAMBOO_SAPLING, Blocks.BAMBOO);
       this.method11097(Blocks.STONE, var0 -> method11066(var0, Blocks.field36399));
       this.method11097(Blocks.GRASS_BLOCK, var0 -> method11066(var0, Blocks.DIRT));
       this.method11097(Blocks.PODZOL, var0 -> method11066(var0, Blocks.DIRT));
       this.method11097(Blocks.MYCELIUM, var0 -> method11066(var0, Blocks.DIRT));
-      this.method11097(Blocks.field36970, var0 -> method11066(var0, Blocks.field36965));
-      this.method11097(Blocks.field36971, var0 -> method11066(var0, Blocks.field36966));
-      this.method11097(Blocks.field36972, var0 -> method11066(var0, Blocks.field36967));
-      this.method11097(Blocks.field36973, var0 -> method11066(var0, Blocks.field36968));
-      this.method11097(Blocks.field36974, var0 -> method11066(var0, Blocks.field36969));
-      this.method11097(Blocks.field37083, var0 -> method11066(var0, Blocks.NETHERRACK));
-      this.method11097(Blocks.field37074, var0 -> method11066(var0, Blocks.NETHERRACK));
+      this.method11097(Blocks.TUBE_CORAL_BLOCK, var0 -> method11066(var0, Blocks.field36965));
+      this.method11097(Blocks.BRAIN_CORAL_BLOCK, var0 -> method11066(var0, Blocks.field36966));
+      this.method11097(Blocks.BUBBLE_CORAL_BLOCK, var0 -> method11066(var0, Blocks.field36967));
+      this.method11097(Blocks.FIRE_CORAL_BLOCK, var0 -> method11066(var0, Blocks.field36968));
+      this.method11097(Blocks.HORN_CORAL_BLOCK, var0 -> method11066(var0, Blocks.field36969));
+      this.method11097(Blocks.CRIMSON_NYLIUM, var0 -> method11066(var0, Blocks.NETHERRACK));
+      this.method11097(Blocks.WARPED_NYLIUM, var0 -> method11066(var0, Blocks.NETHERRACK));
       this.method11097(Blocks.field36525, var0 -> method11068(var0, Items.field37900, Class6871.method20919(3)));
       this.method11097(Blocks.CLAY, var0 -> method11068(var0, Items.field37897, Class6871.method20919(4)));
       this.method11097(Blocks.ENDER_CHEST, var0 -> method11068(var0, Blocks.field36527, Class6871.method20919(8)));
       this.method11097(Blocks.SNOW_BLOCK, var0 -> method11068(var0, Items.SNOWBALL, Class6871.method20919(4)));
-      this.method11098(Blocks.field36878, method11067(Items.field38109, Class6872.method20921(0.0F, 1.0F)));
+      this.method11098(Blocks.CHORUS_PLANT, method11067(Items.field38109, Class6872.method20921(0.0F, 1.0F)));
       this.method11092(Blocks.POTTED_OAK_SAPLING);
       this.method11092(Blocks.POTTED_SPRUCE_SAPLING);
       this.method11092(Blocks.POTTED_BIRCH_SAPLING);
       this.method11092(Blocks.POTTED_JUNGLE_SAPLING);
-      this.method11092(Blocks.field36673);
+      this.method11092(Blocks.POTTED_ACACIA_SAPLING);
       this.method11092(Blocks.POTTED_DARK_OAK_SAPLING);
-      this.method11092(Blocks.field36675);
-      this.method11092(Blocks.field36676);
-      this.method11092(Blocks.field36677);
-      this.method11092(Blocks.field36678);
-      this.method11092(Blocks.field36679);
-      this.method11092(Blocks.field36680);
-      this.method11092(Blocks.field36681);
-      this.method11092(Blocks.field36682);
-      this.method11092(Blocks.field36683);
-      this.method11092(Blocks.field36684);
-      this.method11092(Blocks.field36685);
-      this.method11092(Blocks.field36686);
-      this.method11092(Blocks.field36687);
-      this.method11092(Blocks.field36688);
-      this.method11092(Blocks.field36689);
-      this.method11092(Blocks.field36690);
-      this.method11092(Blocks.field36691);
-      this.method11092(Blocks.field36692);
-      this.method11092(Blocks.field37010);
-      this.method11092(Blocks.field37125);
-      this.method11092(Blocks.field37126);
-      this.method11092(Blocks.field37127);
-      this.method11092(Blocks.field37128);
+      this.method11092(Blocks.POTTED_FERN);
+      this.method11092(Blocks.POTTED_DANDELION);
+      this.method11092(Blocks.POTTED_POPPY);
+      this.method11092(Blocks.POTTED_BLUE_ORCHID);
+      this.method11092(Blocks.POTTED_ALLIUM);
+      this.method11092(Blocks.POTTED_AZURE_BLUET);
+      this.method11092(Blocks.POTTED_RED_TULIP);
+      this.method11092(Blocks.POTTED_ORANGE_TULIP);
+      this.method11092(Blocks.POTTED_WHITE_TULIP);
+      this.method11092(Blocks.POTTED_PINK_TULIP);
+      this.method11092(Blocks.POTTED_OXEYE_DAISY);
+      this.method11092(Blocks.POTTED_CORNFLOWER);
+      this.method11092(Blocks.POTTED_LILY_OF_THE_VALLEY);
+      this.method11092(Blocks.POTTED_WITHER_ROSE);
+      this.method11092(Blocks.POTTED_RED_MUSHROOM);
+      this.method11092(Blocks.POTTED_BROWN_MUSHROOM);
+      this.method11092(Blocks.POTTED_DEAD_BUSH);
+      this.method11092(Blocks.POTTED_CACTUS);
+      this.method11092(Blocks.POTTED_BAMBOO);
+      this.method11092(Blocks.POTTED_CRIMSON_FUNGUS);
+      this.method11092(Blocks.POTTED_WARPED_FUNGUS);
+      this.method11092(Blocks.POTTED_CRIMSON_ROOTS);
+      this.method11092(Blocks.POTTED_WARPED_ROOTS);
       this.method11097(Blocks.field36843, Class2838::method11071);
       this.method11097(Blocks.field36841, Class2838::method11071);
       this.method11097(Blocks.field36851, Class2838::method11071);
@@ -945,7 +945,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.YELLOW_BED, var0 -> method11072(var0, Class3250.field18713, BedPart.HEAD));
       this.method11097(Blocks.LILAC, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
       this.method11097(Blocks.SUNFLOWER, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
-      this.method11097(Blocks.field36800, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
+      this.method11097(Blocks.PEONY, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
       this.method11097(Blocks.ROSE_BUSH, var0 -> method11072(var0, Class3456.field19276, DoubleBlockHalf.field210));
       this.method11098(
          Blocks.TNT,
@@ -981,14 +981,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                )
       );
       this.method11097(
-         Blocks.field37005,
+         Blocks.SEA_PICKLE,
          var0 -> Class7318.method23188()
                .method18320(
                   Class8894.method32373()
                      .method18289(Class6871.method20919(1))
                      .method18291(
                         (Class5873<?>)method11059(
-                           Blocks.field37005,
+                           Blocks.SEA_PICKLE,
                            Class4695.method14724(var0)
                               .method18296(
                                  Class140.method420(Class6871.method20919(2))
@@ -1007,7 +1007,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                )
       );
       this.method11097(
-         Blocks.field37115,
+         Blocks.COMPOSTER,
          var0 -> Class7318.method23188()
                .method18320(Class8894.method32373().method18291((Class5873<?>)method11059(var0, Class4695.method14724(Items.field38157))))
                .method18320(
@@ -1017,7 +1017,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                )
       );
       this.method11097(Blocks.BEACON, Class2838::method11073);
-      this.method11097(Blocks.field36647, Class2838::method11073);
+      this.method11097(Blocks.BREWING_STAND, Class2838::method11073);
       this.method11097(Blocks.CHEST, Class2838::method11073);
       this.method11097(Blocks.DISPENSER, Class2838::method11073);
       this.method11097(Blocks.DROPPER, Class2838::method11073);
@@ -1054,24 +1054,24 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.field36911, Class2838::method11074);
       this.method11097(Blocks.field36897, Class2838::method11074);
       this.method11097(Blocks.field36901, Class2838::method11074);
-      this.method11097(Blocks.field36818, Class2838::method11075);
-      this.method11097(Blocks.field36814, Class2838::method11075);
-      this.method11097(Blocks.field36815, Class2838::method11075);
-      this.method11097(Blocks.field36812, Class2838::method11075);
-      this.method11097(Blocks.field36810, Class2838::method11075);
-      this.method11097(Blocks.field36816, Class2838::method11075);
-      this.method11097(Blocks.field36806, Class2838::method11075);
-      this.method11097(Blocks.field36811, Class2838::method11075);
-      this.method11097(Blocks.field36808, Class2838::method11075);
-      this.method11097(Blocks.field36805, Class2838::method11075);
-      this.method11097(Blocks.field36804, Class2838::method11075);
-      this.method11097(Blocks.field36809, Class2838::method11075);
-      this.method11097(Blocks.field36813, Class2838::method11075);
-      this.method11097(Blocks.field36817, Class2838::method11075);
-      this.method11097(Blocks.field36803, Class2838::method11075);
-      this.method11097(Blocks.field36807, Class2838::method11075);
+      this.method11097(Blocks.BLACK_BANNER, Class2838::method11075);
+      this.method11097(Blocks.BLUE_BANNER, Class2838::method11075);
+      this.method11097(Blocks.BROWN_BANNER, Class2838::method11075);
+      this.method11097(Blocks.CYAN_BANNER, Class2838::method11075);
+      this.method11097(Blocks.GRAY_BANNER, Class2838::method11075);
+      this.method11097(Blocks.GREEN_BANNER, Class2838::method11075);
+      this.method11097(Blocks.LIGHT_BLUE_BANNER, Class2838::method11075);
+      this.method11097(Blocks.LIGHT_GRAY_BANNER, Class2838::method11075);
+      this.method11097(Blocks.LIME_BANNER, Class2838::method11075);
+      this.method11097(Blocks.MAGENTA_BANNER, Class2838::method11075);
+      this.method11097(Blocks.ORANGE_BANNER, Class2838::method11075);
+      this.method11097(Blocks.PINK_BANNER, Class2838::method11075);
+      this.method11097(Blocks.PURPLE_BANNER, Class2838::method11075);
+      this.method11097(Blocks.RED_BANNER, Class2838::method11075);
+      this.method11097(Blocks.WHITE_BANNER, Class2838::method11075);
+      this.method11097(Blocks.YELLOW_BANNER, Class2838::method11075);
       this.method11097(
-         Blocks.field36707,
+         Blocks.PLAYER_HEAD,
          var0 -> Class7318.method23188()
                .method18320(
                   method11060(
@@ -1082,23 +1082,23 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
                )
       );
-      this.method11097(Blocks.field37117, Class2838::method11076);
-      this.method11097(Blocks.field37118, Class2838::method11077);
+      this.method11097(Blocks.BEE_NEST, Class2838::method11076);
+      this.method11097(Blocks.BEEHIVE, Class2838::method11077);
       this.method11097(Blocks.field36448, var0 -> method11084(var0, Blocks.BIRCH_SAPLING, field17634));
       this.method11097(Blocks.field36450, var0 -> method11084(var0, Blocks.ACACIA_SAPLING, field17634));
       this.method11097(Blocks.field36449, var0 -> method11084(var0, Blocks.JUNGLE_SAPLING, field17635));
       this.method11097(Blocks.field36447, var0 -> method11084(var0, Blocks.SPRUCE_SAPLING, field17634));
-      this.method11097(Blocks.field36446, var0 -> method11085(var0, Blocks.field36406, field17634));
+      this.method11097(Blocks.field36446, var0 -> method11085(var0, Blocks.OAK_SAPLING, field17634));
       this.method11097(Blocks.field36451, var0 -> method11085(var0, Blocks.DARK_OAK_SAPLING, field17634));
-      Class7520 var4 = Class161.method486(Blocks.field36884).method24519(Class9178.method34325().method34327(Class3482.field19337, 3));
-      this.method11098(Blocks.field36884, method11086(Blocks.field36884, Items.field38111, Items.field38112, var4));
-      Class7520 var5 = Class161.method486(Blocks.field36539).method24519(Class9178.method34325().method34327(Class3480.field19334, 7));
-      this.method11098(Blocks.field36539, method11086(Blocks.field36539, Items.field37842, Items.field37841, var5));
-      Class7520 var6 = Class161.method486(Blocks.field36693).method24519(Class9178.method34325().method34327(Class3483.field19334, 7));
+      Class7520 var4 = Class161.method486(Blocks.BEETROOTS).method24519(Class9178.method34325().method34327(Class3482.field19337, 3));
+      this.method11098(Blocks.BEETROOTS, method11086(Blocks.BEETROOTS, Items.field38111, Items.field38112, var4));
+      Class7520 var5 = Class161.method486(Blocks.WHEAT).method24519(Class9178.method34325().method34327(Class3480.field19334, 7));
+      this.method11098(Blocks.WHEAT, method11086(Blocks.WHEAT, Items.field37842, Items.field37841, var5));
+      Class7520 var6 = Class161.method486(Blocks.CARROTS).method24519(Class9178.method34325().method34327(Class3483.field19334, 7));
       this.method11098(
-         Blocks.field36693,
+         Blocks.CARROTS,
          method11059(
-            Blocks.field36693,
+            Blocks.CARROTS,
             Class7318.method23188()
                .method18320(Class8894.method32373().method18291(Class4695.method14724(Items.field38052)))
                .method18320(
@@ -1108,11 +1108,11 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                )
          )
       );
-      Class7520 var7 = Class161.method486(Blocks.field36694).method24519(Class9178.method34325().method34327(Class3481.field19334, 7));
+      Class7520 var7 = Class161.method486(Blocks.POTATOES).method24519(Class9178.method34325().method34327(Class3481.field19334, 7));
       this.method11098(
-         Blocks.field36694,
+         Blocks.POTATOES,
          method11059(
-            Blocks.field36694,
+            Blocks.POTATOES,
             Class7318.method23188()
                .method18320(Class8894.method32373().method18291(Class4695.method14724(Items.field38053)))
                .method18320(
@@ -1148,12 +1148,12 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       );
       this.method11097(Blocks.BROWN_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.BROWN_MUSHROOM));
       this.method11097(Blocks.RED_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.RED_MUSHROOM));
-      this.method11097(Blocks.field36420, var0 -> method11078(var0, Items.field37798));
+      this.method11097(Blocks.COAL_ORE, var0 -> method11078(var0, Items.field37798));
       this.method11097(Blocks.EMERALD_ORE, var0 -> method11078(var0, Items.EMERALD));
-      this.method11097(Blocks.field36722, var0 -> method11078(var0, Items.field38072));
-      this.method11097(Blocks.field36536, var0 -> method11078(var0, Items.field37800));
+      this.method11097(Blocks.NETHER_QUARTZ_ORE, var0 -> method11078(var0, Items.field38072));
+      this.method11097(Blocks.DIAMOND_ORE, var0 -> method11078(var0, Items.field37800));
       this.method11097(
-         Blocks.field36421,
+         Blocks.NETHER_GOLD_ORE,
          var0 -> method11063(
                var0,
                (Class5873<?>)method11059(
@@ -1165,7 +1165,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11097(
-         Blocks.field36455,
+         Blocks.LAPIS_ORE,
          var0 -> method11063(
                var0,
                (Class5873<?>)method11059(
@@ -1184,18 +1184,18 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                (Class5873<?>)method11059(var0, Class4695.method14724(Items.field37835).method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F))))
             )
       );
-      this.method11097(Blocks.field37078, Class2838::method11083);
+      this.method11097(Blocks.NETHER_SPROUTS, Class2838::method11083);
       this.method11097(Blocks.SEAGRASS, Class2838::method11083);
       this.method11097(Blocks.VINE, Class2838::method11083);
       this.method11098(Blocks.TALL_SEAGRASS, method11087(Blocks.SEAGRASS));
-      this.method11097(Blocks.field36802, var0 -> method11088(var0, Blocks.FERN));
+      this.method11097(Blocks.LARGE_FERN, var0 -> method11088(var0, Blocks.FERN));
       this.method11097(Blocks.TALL_GRASS, var0 -> method11088(var0, Blocks.GRASS));
       this.method11097(Blocks.MELON_STEM, var0 -> method11081(var0, Items.field37960));
       this.method11097(Blocks.ATTACHED_MELON_STEM, var0 -> method11082(var0, Items.field37960));
       this.method11097(Blocks.PUMPKIN_STEM, var0 -> method11081(var0, Items.field37959));
       this.method11097(Blocks.ATTACHED_PUMPKIN_STEM, var0 -> method11082(var0, Items.field37959));
       this.method11097(
-         Blocks.field36879,
+         Blocks.CHORUS_FLOWER,
          var0 -> Class7318.method23188()
                .method18320(
                   Class8894.method32373()
@@ -1374,7 +1374,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37442).method18296(Class140.method420(Class6871.method20919(1))))
             )
       );
-      this.method11095(Blocks.field36454);
+      this.method11095(Blocks.GLASS);
       this.method11095(Blocks.field36593);
       this.method11095(Blocks.field36594);
       this.method11095(Blocks.field36595);
@@ -1392,61 +1392,61 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11095(Blocks.field36607);
       this.method11095(Blocks.field36608);
       this.method11095(Blocks.GLASS_PANE);
-      this.method11095(Blocks.field36746);
-      this.method11095(Blocks.field36747);
-      this.method11095(Blocks.field36748);
-      this.method11095(Blocks.field36749);
-      this.method11095(Blocks.field36750);
-      this.method11095(Blocks.field36751);
-      this.method11095(Blocks.field36752);
-      this.method11095(Blocks.field36753);
-      this.method11095(Blocks.field36754);
-      this.method11095(Blocks.field36755);
-      this.method11095(Blocks.field36756);
-      this.method11095(Blocks.field36757);
-      this.method11095(Blocks.field36758);
-      this.method11095(Blocks.field36759);
-      this.method11095(Blocks.field36760);
-      this.method11095(Blocks.field36761);
+      this.method11095(Blocks.WHITE_STAINED_GLASS_PANE);
+      this.method11095(Blocks.ORANGE_STAINED_GLASS_PANE);
+      this.method11095(Blocks.MAGENTA_STAINED_GLASS_PANE);
+      this.method11095(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE);
+      this.method11095(Blocks.YELLOW_STAINED_GLASS_PANE);
+      this.method11095(Blocks.LIME_STAINED_GLASS_PANE);
+      this.method11095(Blocks.PINK_STAINED_GLASS_PANE);
+      this.method11095(Blocks.GRAY_STAINED_GLASS_PANE);
+      this.method11095(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE);
+      this.method11095(Blocks.CYAN_STAINED_GLASS_PANE);
+      this.method11095(Blocks.PURPLE_STAINED_GLASS_PANE);
+      this.method11095(Blocks.BLUE_STAINED_GLASS_PANE);
+      this.method11095(Blocks.BROWN_STAINED_GLASS_PANE);
+      this.method11095(Blocks.GREEN_STAINED_GLASS_PANE);
+      this.method11095(Blocks.RED_STAINED_GLASS_PANE);
+      this.method11095(Blocks.BLACK_STAINED_GLASS_PANE);
       this.method11095(Blocks.ICE);
       this.method11095(Blocks.PACKED_ICE);
-      this.method11095(Blocks.field37006);
-      this.method11095(Blocks.field36964);
+      this.method11095(Blocks.BLUE_ICE);
+      this.method11095(Blocks.TURTLE_EGG);
       this.method11095(Blocks.MUSHROOM_STEM);
-      this.method11095(Blocks.field36975);
-      this.method11095(Blocks.field36976);
-      this.method11095(Blocks.field36977);
-      this.method11095(Blocks.field36978);
-      this.method11095(Blocks.field36979);
-      this.method11095(Blocks.field36980);
-      this.method11095(Blocks.field36981);
-      this.method11095(Blocks.field36982);
-      this.method11095(Blocks.field36983);
-      this.method11095(Blocks.field36984);
-      this.method11095(Blocks.field36985);
-      this.method11095(Blocks.field36986);
-      this.method11095(Blocks.field36987);
-      this.method11095(Blocks.field36988);
-      this.method11095(Blocks.field36989);
-      this.method11095(Blocks.field36990);
-      this.method11095(Blocks.field36991);
-      this.method11095(Blocks.field36992);
-      this.method11095(Blocks.field36993);
-      this.method11095(Blocks.field36994);
-      this.method11093(Blocks.field36619, Blocks.STONE);
-      this.method11093(Blocks.field36620, Blocks.field36399);
-      this.method11093(Blocks.field36621, Blocks.field36615);
-      this.method11093(Blocks.field36622, Blocks.field36616);
-      this.method11093(Blocks.field36623, Blocks.field36617);
-      this.method11093(Blocks.field36624, Blocks.field36618);
-      this.method11090(Blocks.field37086, Blocks.field37087);
-      this.method11090(Blocks.field37088, Blocks.field37089);
-      this.method11098(Blocks.field36591, method11089());
-      this.method11098(Blocks.field36889, method11089());
-      this.method11098(Blocks.field36532, method11089());
+      this.method11095(Blocks.DEAD_TUBE_CORAL);
+      this.method11095(Blocks.DEAD_BRAIN_CORAL);
+      this.method11095(Blocks.DEAD_BUBBLE_CORAL);
+      this.method11095(Blocks.DEAD_FIRE_CORAL);
+      this.method11095(Blocks.DEAD_HORN_CORAL);
+      this.method11095(Blocks.TUBE_CORAL);
+      this.method11095(Blocks.BRAIN_CORAL);
+      this.method11095(Blocks.BUBBLE_CORAL);
+      this.method11095(Blocks.FIRE_CORAL);
+      this.method11095(Blocks.HORN_CORAL);
+      this.method11095(Blocks.DEAD_TUBE_CORAL_FAN);
+      this.method11095(Blocks.DEAD_BRAIN_CORAL_FAN);
+      this.method11095(Blocks.DEAD_BUBBLE_CORAL_FAN);
+      this.method11095(Blocks.DEAD_FIRE_CORAL_FAN);
+      this.method11095(Blocks.DEAD_HORN_CORAL_FAN);
+      this.method11095(Blocks.TUBE_CORAL_FAN);
+      this.method11095(Blocks.BRAIN_CORAL_FAN);
+      this.method11095(Blocks.BUBBLE_CORAL_FAN);
+      this.method11095(Blocks.FIRE_CORAL_FAN);
+      this.method11095(Blocks.HORN_CORAL_FAN);
+      this.method11093(Blocks.INFESTED_STONE, Blocks.STONE);
+      this.method11093(Blocks.INFESTED_COBBLESTONE, Blocks.field36399);
+      this.method11093(Blocks.INFESTED_STONE_BRICKS, Blocks.field36615);
+      this.method11093(Blocks.INFESTED_MOSSY_STONE_BRICKS, Blocks.field36616);
+      this.method11093(Blocks.INFESTED_CRACKED_STONE_BRICKS, Blocks.field36617);
+      this.method11093(Blocks.INFESTED_CHISELED_STONE_BRICKS, Blocks.field36618);
+      this.method11090(Blocks.WEEPING_VINES, Blocks.WEEPING_VINES_PLANT);
+      this.method11090(Blocks.TWISTING_VINES, Blocks.TWISTING_VINES_PLANT);
+      this.method11098(Blocks.CAKE, method11089());
+      this.method11098(Blocks.FROSTED_ICE, method11089());
+      this.method11098(Blocks.SPAWNER, method11089());
       this.method11098(Blocks.FIRE, method11089());
-      this.method11098(Blocks.field36531, method11089());
-      this.method11098(Blocks.field36588, method11089());
+      this.method11098(Blocks.SOUL_FIRE, method11089());
+      this.method11098(Blocks.NETHER_PORTAL, method11089());
       HashSet var8 = Sets.newHashSet();
 
       for (Block var10 : Registry.BLOCK) {

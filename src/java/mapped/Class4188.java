@@ -40,7 +40,7 @@ public abstract class Class4188 extends Class4178 {
          default:
             return Blocks.OAK_FENCE.getDefaultState();
          case 2:
-            return Blocks.field36871.getDefaultState();
+            return Blocks.DARK_OAK_FENCE.getDefaultState();
       }
    }
 

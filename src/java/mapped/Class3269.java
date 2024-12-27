@@ -23,13 +23,13 @@ public class Class3269 extends ToolItem {
    private static final Set<Block> field18766 = ImmutableSet.of(
       Blocks.field36891,
       Blocks.field37076,
-      Blocks.field36777,
+      Blocks.HAY_BLOCK,
       Blocks.field36963,
-      Blocks.field37116,
+      Blocks.TARGET,
       Blocks.field37085,
       new Block[]{
-         Blocks.field36452,
-         Blocks.field36453,
+         Blocks.SPONGE,
+         Blocks.WET_SPONGE,
          Blocks.field36449,
          Blocks.field36446,
          Blocks.field36447,
@@ -42,7 +42,7 @@ public class Class3269 extends ToolItem {
       ImmutableMap.of(
          Blocks.GRASS_BLOCK,
          Blocks.FARMLAND.getDefaultState(),
-         Blocks.field36885,
+         Blocks.GRASS_PATH,
          Blocks.FARMLAND.getDefaultState(),
          Blocks.DIRT,
          Blocks.FARMLAND.getDefaultState(),

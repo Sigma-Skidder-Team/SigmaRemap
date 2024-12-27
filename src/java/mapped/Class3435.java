@@ -222,7 +222,7 @@ public class Class3435 extends Class3433 {
          return false;
       } else if (var0.isAir()) {
          return true;
-      } else if (var0.isIn(Blocks.field36527) || var0.isIn(Blocks.field37123) || var0.isIn(Blocks.field37124)) {
+      } else if (var0.isIn(Blocks.field36527) || var0.isIn(Blocks.CRYING_OBSIDIAN) || var0.isIn(Blocks.RESPAWN_ANCHOR)) {
          return false;
       } else if (var3 == Direction.DOWN && var2.getY() == 0) {
          return false;

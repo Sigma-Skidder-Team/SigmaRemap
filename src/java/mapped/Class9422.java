@@ -213,7 +213,7 @@ public class Class9422 {
          if (!Config.method26877()) {
             return field43702.method22619(var1, var3, field43715);
          } else {
-            return method36154(var2.down(), var3, var0) != Blocks.field36885 ? var4 : field43702.method22619(var1, var3, field43715);
+            return method36154(var2.down(), var3, var0) != Blocks.GRASS_PATH ? var4 : field43702.method22619(var1, var3, field43715);
          }
       } else {
          return var4;
@@ -248,7 +248,7 @@ public class Class9422 {
 
    private static List method36152(IBlockReader var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
       Block var7 = method36154(var2, Direction.UP, var0);
-      return var7 == Blocks.field36885 && field43686 && method36154(var2, var3, var0) == Blocks.field36885
+      return var7 == Blocks.GRASS_PATH && field43686 && method36154(var2, var3, var0) == Blocks.GRASS_PATH
          ? field43703.method22619(var1, var3, field43715)
          : var4;
    }

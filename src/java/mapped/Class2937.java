@@ -73,12 +73,12 @@ public class Class2937 extends Class2898<Class4712> {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.up())) {
                var0.setBlockState(
-                  var2, Blocks.field37088.getDefaultState().with(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
+                  var2, Blocks.TWISTING_VINES.getDefaultState().with(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
                );
                break;
             }
 
-            var0.setBlockState(var2, Blocks.field37089.getDefaultState(), 2);
+            var0.setBlockState(var2, Blocks.TWISTING_VINES_PLANT.getDefaultState(), 2);
          }
 
          var2.method8379(Direction.UP);
@@ -90,7 +90,7 @@ public class Class2937 extends Class2898<Class4712> {
          return true;
       } else {
          BlockState var4 = var0.getBlockState(var1.down());
-         return !var4.isIn(Blocks.NETHERRACK) && !var4.isIn(Blocks.field37074) && !var4.isIn(Blocks.field37076);
+         return !var4.isIn(Blocks.NETHERRACK) && !var4.isIn(Blocks.WARPED_NYLIUM) && !var4.isIn(Blocks.field37076);
       }
    }
 }

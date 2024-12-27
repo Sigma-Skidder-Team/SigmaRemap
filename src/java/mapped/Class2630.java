@@ -37,7 +37,7 @@ public class Class2630 extends Class2628 {
                var4.playSound((PlayerEntity)null, var3, SoundEvents.field27172, SoundCategory.field14732, 0.3F, 0.9F + var4.rand.nextFloat() * 0.2F);
                var4.setBlockState(
                   this.field16933.up(),
-                  Blocks.field36964.getDefaultState().with(Class3441.field19244, Integer.valueOf(TurtleEntity.method5061(this.field16941).nextInt(4) + 1)),
+                  Blocks.TURTLE_EGG.getDefaultState().with(Class3441.field19244, Integer.valueOf(TurtleEntity.method5061(this.field16941).nextInt(4) + 1)),
                   3
                );
                TurtleEntity.method5062(this.field16941, false);

@@ -12,7 +12,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3487 extends BushBlock implements Class3196 {
+public class Class3487 extends BushBlock implements IGrowable {
    private static String[] field19350;
    public static final VoxelShape field19351 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
 
@@ -37,7 +37,7 @@ public class Class3487 extends BushBlock implements Class3196 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      Class3456 var7 = (Class3456)(this != Blocks.FERN ? Blocks.TALL_GRASS : Blocks.field36802);
+      Class3456 var7 = (Class3456)(this != Blocks.FERN ? Blocks.TALL_GRASS : Blocks.LARGE_FERN);
       if (var7.getDefaultState().isValidPosition(var1, var3) && var1.method7007(var3.up())) {
          var7.method12129(var1, var3, 2);
       }

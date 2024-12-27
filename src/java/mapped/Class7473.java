@@ -134,7 +134,7 @@ public class Class7473 {
                return var4;
             }
 
-            if (var6.isIn(Blocks.field36588)) {
+            if (var6.isIn(Blocks.NETHER_PORTAL)) {
                this.field32115++;
             }
          }
@@ -144,7 +144,7 @@ public class Class7473 {
    }
 
    private static boolean method24202(BlockState var0) {
-      return var0.isAir() || var0.isIn(BlockTags.field32798) || var0.isIn(Blocks.field36588);
+      return var0.isAir() || var0.isIn(BlockTags.field32798) || var0.isIn(Blocks.NETHER_PORTAL);
    }
 
    public boolean method24203() {
@@ -152,7 +152,7 @@ public class Class7473 {
    }
 
    public void method24204() {
-      BlockState var3 = Blocks.field36588.getDefaultState().with(Class3401.field19060, this.field32113);
+      BlockState var3 = Blocks.NETHER_PORTAL.getDefaultState().with(Class3401.field19060, this.field32113);
       BlockPos.method8359(this.field32116, this.field32116.method8350(Direction.UP, this.field32117 - 1).method8350(this.field32114, this.field32118 - 1))
          .forEach(var2 -> this.field32112.setBlockState(var2, var3, 18));
    }

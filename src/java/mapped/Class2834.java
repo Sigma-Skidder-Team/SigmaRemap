@@ -69,7 +69,7 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.TRIPWIRE_HOOK).method18299(10))
                   .method18291(Class4695.method14724(Items.field37965).method18299(10))
                   .method18291(
-                     Class4695.method14724(Blocks.field37009)
+                     Class4695.method14724(Blocks.BAMBOO)
                         .method18297(
                            field17619.method24516(field17620)
                               .method24516(field17621)

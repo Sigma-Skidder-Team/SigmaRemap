@@ -34,7 +34,7 @@ public abstract class AbstractFireBlock extends Block {
    public static BlockState method12009(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       BlockState var5 = var0.getBlockState(var4);
-      return !Class3398.method12014(var5.getBlock()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.field36531.getDefaultState();
+      return !Class3398.method12014(var5.getBlock()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.SOUL_FIRE.getDefaultState();
    }
 
    @Override

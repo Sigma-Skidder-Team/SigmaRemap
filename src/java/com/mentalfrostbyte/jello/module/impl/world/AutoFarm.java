@@ -98,7 +98,7 @@ public class AutoFarm extends Module {
                                 var1.setPitch(var20[1]);
                                 var1.attackPost(new Class649(this, var16, var20));
                                 mc.rightClickDelayTimer = 2;
-                                BlockState var11 = Blocks.field36539.getDefaultState();
+                                BlockState var11 = Blocks.WHEAT.getDefaultState();
                                 mc.world.setBlockState(var5.up(), var11);
                                 return;
                             }

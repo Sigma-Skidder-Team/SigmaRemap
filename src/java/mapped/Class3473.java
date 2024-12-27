@@ -11,7 +11,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.List;
 import java.util.Random;
 
-public class Class3473 extends Class3472 implements Class3196 {
+public class Class3473 extends Class3472 implements IGrowable {
    private static String[] field19322;
 
    public Class3473(Properties var1) {
@@ -46,7 +46,7 @@ public class Class3473 extends Class3472 implements Class3196 {
 
          BlockState var16 = var1.getBlockState(var10);
          if (var16.isIn(var8.getBlock()) && var2.nextInt(10) == 0) {
-            ((Class3196)var8.getBlock()).method11488(var1, var2, var10, var16);
+            ((IGrowable)var8.getBlock()).method11488(var1, var2, var10, var16);
          }
 
          if (var16.isAir()) {
