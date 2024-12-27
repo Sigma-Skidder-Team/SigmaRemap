@@ -2,10 +2,10 @@ package net.minecraft.block;
 
 import net.minecraft.util.Direction;
 
-public class BlueIceBlock extends Block {
+public class HalfTransparentBlock extends Block {
    private static String[] field18672;
 
-   public BlueIceBlock(Properties var1) {
+   public HalfTransparentBlock(Properties var1) {
       super(var1);
    }
 

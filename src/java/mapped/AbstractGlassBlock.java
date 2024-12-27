@@ -2,11 +2,12 @@ package mapped;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.HalfTransparentBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 
-public abstract class AbstractGlassBlock extends Class3231 {
+public abstract class AbstractGlassBlock extends HalfTransparentBlock {
    public AbstractGlassBlock(AbstractBlock.Properties var1) {
       super(var1);
    }

@@ -2395,7 +2395,7 @@ public class Blocks {
       )
    );
    public static final Block BLUE_ICE = register(
-      "blue_ice", new BlueIceBlock(AbstractBlock.Properties.method26609(Material.field38952).method26623(2.8F).method26616(0.989F).method26619(SoundType.GLASS))
+      "blue_ice", new HalfTransparentBlock(AbstractBlock.Properties.method26609(Material.field38952).method26623(2.8F).method26616(0.989F).method26619(SoundType.GLASS))
    );
    public static final Block CONDUIT = register(
       "conduit", new ConduitBlock(AbstractBlock.Properties.method26611(Material.field38963, MaterialColor.field30978).method26623(3.0F).method26620(var0 -> 15).method26615())

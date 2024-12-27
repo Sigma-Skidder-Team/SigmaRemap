@@ -7,7 +7,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class SlimeBlock extends BlueIceBlock {
+public class SlimeBlock extends HalfTransparentBlock {
    private static String[] field18981;
 
    public SlimeBlock(Properties var1) {
