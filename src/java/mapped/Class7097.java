@@ -84,12 +84,12 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    private BlockState method22079(Random var1) {
-      return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37044.getDefaultState();
+      return !(var1.nextFloat() < this.field30534) ? null : Blocks.MOSSY_STONE_BRICK_WALL.getDefaultState();
    }
 
    @Nullable
    private BlockState method22080(Random var1) {
-      return !(var1.nextFloat() < 0.15F) ? null : Blocks.field37123.getDefaultState();
+      return !(var1.nextFloat() < 0.15F) ? null : Blocks.CRYING_OBSIDIAN.getDefaultState();
    }
 
    private static BlockState method22081(Random var0, Block var1) {

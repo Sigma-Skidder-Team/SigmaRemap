@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.shapes.VoxelShape;
+
 public interface WorldBorderIBorderInfo {
    double getMinX();
 

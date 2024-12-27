@@ -7,6 +7,7 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -15,7 +16,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Optional;
 import java.util.Random;
 
-public abstract class Class3445 extends Class3444 implements Class3196 {
+public abstract class Class3445 extends Class3444 implements IGrowable {
    public Class3445(Properties var1, Direction var2, VoxelShape var3, boolean var4) {
       super(var1, var2, var3, var4);
    }

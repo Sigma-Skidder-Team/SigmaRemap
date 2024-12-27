@@ -23,8 +23,8 @@ public class Items {
    public static final Item field37231 = method30154(Blocks.DIRT, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37232 = method30154(Blocks.COARSE_DIRT, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37233 = method30154(Blocks.PODZOL, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37234 = method30154(Blocks.field37083, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37235 = method30154(Blocks.field37074, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37234 = method30154(Blocks.CRIMSON_NYLIUM, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37235 = method30154(Blocks.WARPED_NYLIUM, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37236 = method30154(Blocks.field36399, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37237 = method30154(Blocks.field36400, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37238 = method30154(Blocks.field36401, ItemGroup.BUILDING_BLOCKS);
@@ -34,7 +34,7 @@ public class Items {
    public static final Item field37242 = method30154(Blocks.field36405, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37243 = method30154(Blocks.field37091, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37244 = method30154(Blocks.field37092, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37245 = method30154(Blocks.field36406, ItemGroup.field31666);
+   public static final Item field37245 = method30154(Blocks.OAK_SAPLING, ItemGroup.field31666);
    public static final Item field37246 = method30154(Blocks.SPRUCE_SAPLING, ItemGroup.field31666);
    public static final Item field37247 = method30154(Blocks.BIRCH_SAPLING, ItemGroup.field31666);
    public static final Item field37248 = method30154(Blocks.JUNGLE_SAPLING, ItemGroup.field31666);
@@ -44,41 +44,41 @@ public class Items {
    public static final Item field37252 = method30154(Blocks.SAND, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37253 = method30154(Blocks.RED_SAND, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37254 = method30154(Blocks.GRAVEL, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37255 = method30154(Blocks.field36418, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37256 = method30154(Blocks.field36419, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37257 = method30154(Blocks.field36420, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37258 = method30154(Blocks.field36421, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37259 = method30154(Blocks.field36422, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37260 = method30154(Blocks.field36423, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37261 = method30154(Blocks.field36424, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37262 = method30154(Blocks.field36425, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37263 = method30154(Blocks.field36426, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37264 = method30154(Blocks.field36427, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37255 = method30154(Blocks.GOLD_ORE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37256 = method30154(Blocks.IRON_ORE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37257 = method30154(Blocks.COAL_ORE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37258 = method30154(Blocks.NETHER_GOLD_ORE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37259 = method30154(Blocks.OAK_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37260 = method30154(Blocks.SPRUCE_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37261 = method30154(Blocks.BIRCH_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37262 = method30154(Blocks.JUNGLE_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37263 = method30154(Blocks.ACACIA_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37264 = method30154(Blocks.DARK_OAK_LOG, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37265 = method30154(Blocks.field37079, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37266 = method30154(Blocks.WARPED_STEM, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37267 = method30154(Blocks.field36433, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37268 = method30154(Blocks.field36428, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37269 = method30154(Blocks.field36429, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37270 = method30154(Blocks.field36430, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37271 = method30154(Blocks.field36431, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37272 = method30154(Blocks.field36432, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37267 = method30154(Blocks.STRIPPED_OAK_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37268 = method30154(Blocks.STRIPPED_SPRUCE_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37269 = method30154(Blocks.STRIPPED_BIRCH_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37270 = method30154(Blocks.STRIPPED_JUNGLE_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37271 = method30154(Blocks.STRIPPED_ACACIA_LOG, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37272 = method30154(Blocks.STRIPPED_DARK_OAK_LOG, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37273 = method30154(Blocks.field37080, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37274 = method30154(Blocks.STRIPPED_WARPED_STEM, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37275 = method30154(Blocks.field36440, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37276 = method30154(Blocks.field36441, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37277 = method30154(Blocks.field36442, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37278 = method30154(Blocks.field36443, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37279 = method30154(Blocks.field36444, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37280 = method30154(Blocks.field36445, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37281 = method30154(Blocks.field37082, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37275 = method30154(Blocks.STRIPPED_OAK_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37276 = method30154(Blocks.STRIPPED_SPRUCE_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37277 = method30154(Blocks.STRIPPED_BIRCH_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37278 = method30154(Blocks.STRIPPED_JUNGLE_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37279 = method30154(Blocks.STRIPPED_ACACIA_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37280 = method30154(Blocks.STRIPPED_DARK_OAK_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37281 = method30154(Blocks.STRIPPED_CRIMSON_HYPHAE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37282 = method30154(Blocks.STRIPPED_WARPED_HYPHAE, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37283 = method30154(Blocks.field36434, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37284 = method30154(Blocks.field36435, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37285 = method30154(Blocks.field36436, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37286 = method30154(Blocks.field36437, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37287 = method30154(Blocks.field36438, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37288 = method30154(Blocks.field36439, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37289 = method30154(Blocks.field37081, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37283 = method30154(Blocks.OAK_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37284 = method30154(Blocks.SPRUCE_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37285 = method30154(Blocks.BIRCH_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37286 = method30154(Blocks.JUNGLE_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37287 = method30154(Blocks.ACACIA_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37288 = method30154(Blocks.DARK_OAK_WOOD, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37289 = method30154(Blocks.CRIMSON_HYPHAE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37290 = method30154(Blocks.WARPED_HYPHAE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37291 = method30154(Blocks.field36446, ItemGroup.field31666);
    public static final Item field37292 = method30154(Blocks.field36447, ItemGroup.field31666);
@@ -86,10 +86,10 @@ public class Items {
    public static final Item field37294 = method30154(Blocks.field36449, ItemGroup.field31666);
    public static final Item field37295 = method30154(Blocks.field36450, ItemGroup.field31666);
    public static final Item field37296 = method30154(Blocks.field36451, ItemGroup.field31666);
-   public static final Item field37297 = method30154(Blocks.field36452, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37298 = method30154(Blocks.field36453, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37299 = method30154(Blocks.field36454, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37300 = method30154(Blocks.field36455, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37297 = method30154(Blocks.SPONGE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37298 = method30154(Blocks.WET_SPONGE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37299 = method30154(Blocks.GLASS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37300 = method30154(Blocks.LAPIS_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37301 = method30154(Blocks.field36456, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37302 = method30154(Blocks.DISPENSER, ItemGroup.REDSTONE);
    public static final Item field37303 = method30154(Blocks.SANDSTONE, ItemGroup.BUILDING_BLOCKS);
@@ -104,7 +104,7 @@ public class Items {
    public static final Item field37312 = method30154(Blocks.FERN, ItemGroup.field31666);
    public static final Item field37313 = method30154(Blocks.DEAD_BUSH, ItemGroup.field31666);
    public static final Item field37314 = method30154(Blocks.SEAGRASS, ItemGroup.field31666);
-   public static final Item field37315 = method30154(Blocks.field37005, ItemGroup.field31666);
+   public static final Item field37315 = method30154(Blocks.SEA_PICKLE, ItemGroup.field31666);
    public static final Item field37316 = method30154(Blocks.PISTON, ItemGroup.REDSTONE);
    public static final Item field37317 = method30154(Blocks.WHITE_WOOL, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37318 = method30154(Blocks.ORANGE_WOOL, ItemGroup.BUILDING_BLOCKS);
@@ -137,16 +137,16 @@ public class Items {
    public static final Item field37345 = method30154(Blocks.WITHER_ROSE, ItemGroup.field31666);
    public static final Item field37346 = method30154(Blocks.BROWN_MUSHROOM, ItemGroup.field31666);
    public static final Item field37347 = method30154(Blocks.RED_MUSHROOM, ItemGroup.field31666);
-   public static final Item field37348 = method30154(Blocks.field37084, ItemGroup.field31666);
-   public static final Item field37349 = method30154(Blocks.field37075, ItemGroup.field31666);
-   public static final Item field37350 = method30154(Blocks.field37090, ItemGroup.field31666);
-   public static final Item field37351 = method30154(Blocks.field37077, ItemGroup.field31666);
-   public static final Item field37352 = method30154(Blocks.field37078, ItemGroup.field31666);
-   public static final Item field37353 = method30154(Blocks.field37086, ItemGroup.field31666);
-   public static final Item field37354 = method30154(Blocks.field37088, ItemGroup.field31666);
+   public static final Item field37348 = method30154(Blocks.CRIMSON_FUNGUS, ItemGroup.field31666);
+   public static final Item field37349 = method30154(Blocks.WARPED_FUNGUS, ItemGroup.field31666);
+   public static final Item field37350 = method30154(Blocks.CRIMSON_ROOTS, ItemGroup.field31666);
+   public static final Item field37351 = method30154(Blocks.WARPED_ROOTS, ItemGroup.field31666);
+   public static final Item field37352 = method30154(Blocks.NETHER_SPROUTS, ItemGroup.field31666);
+   public static final Item field37353 = method30154(Blocks.WEEPING_VINES, ItemGroup.field31666);
+   public static final Item field37354 = method30154(Blocks.TWISTING_VINES, ItemGroup.field31666);
    public static final Item field37355 = method30154(Blocks.SUGAR_CANE, ItemGroup.field31666);
-   public static final Item field37356 = method30154(Blocks.field36961, ItemGroup.field31666);
-   public static final Item field37357 = method30154(Blocks.field37009, ItemGroup.field31666);
+   public static final Item field37356 = method30154(Blocks.KELP, ItemGroup.field31666);
+   public static final Item field37357 = method30154(Blocks.BAMBOO, ItemGroup.field31666);
    public static final Item field37358 = method30154(Blocks.field36521, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37359 = method30154(Blocks.field36522, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37360 = method30154(Blocks.field36839, ItemGroup.BUILDING_BLOCKS);
@@ -185,16 +185,16 @@ public class Items {
    public static final Item field37393 = method30155(
       new Class3298(Blocks.TORCH, Blocks.WALL_TORCH, new Item.Properties().method17779(ItemGroup.field31666))
    );
-   public static final Item field37394 = method30154(Blocks.field36877, ItemGroup.field31666);
-   public static final Item field37395 = method30154(Blocks.field36878, ItemGroup.field31666);
-   public static final Item field37396 = method30154(Blocks.field36879, ItemGroup.field31666);
+   public static final Item field37394 = method30154(Blocks.END_ROD, ItemGroup.field31666);
+   public static final Item field37395 = method30154(Blocks.CHORUS_PLANT, ItemGroup.field31666);
+   public static final Item field37396 = method30154(Blocks.CHORUS_FLOWER, ItemGroup.field31666);
    public static final Item field37397 = method30154(Blocks.field36880, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37398 = method30154(Blocks.field36881, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37398 = method30154(Blocks.PURPUR_PILLAR, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37399 = method30154(Blocks.field36882, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37400 = method30153(Blocks.field36532);
+   public static final Item field37400 = method30153(Blocks.SPAWNER);
    public static final Item field37401 = method30154(Blocks.field36533, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37402 = method30154(Blocks.CHEST, ItemGroup.field31666);
-   public static final Item field37403 = method30154(Blocks.field36536, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37403 = method30154(Blocks.DIAMOND_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37404 = method30154(Blocks.field36537, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37405 = method30154(Blocks.CRAFTING_TABLE, ItemGroup.field31666);
    public static final Item field37406 = method30154(Blocks.FARMLAND, ItemGroup.field31666);
@@ -203,19 +203,19 @@ public class Items {
    public static final Item field37409 = method30154(Blocks.RAIL, ItemGroup.field31668);
    public static final Item field37410 = method30154(Blocks.COBBLESTONE_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37411 = method30154(Blocks.LEVER, ItemGroup.REDSTONE);
-   public static final Item field37412 = method30154(Blocks.field36559, ItemGroup.REDSTONE);
-   public static final Item field37413 = method30154(Blocks.field36561, ItemGroup.REDSTONE);
-   public static final Item field37414 = method30154(Blocks.field36562, ItemGroup.REDSTONE);
-   public static final Item field37415 = method30154(Blocks.field36563, ItemGroup.REDSTONE);
-   public static final Item field37416 = method30154(Blocks.field36564, ItemGroup.REDSTONE);
-   public static final Item field37417 = method30154(Blocks.field36565, ItemGroup.REDSTONE);
-   public static final Item field37418 = method30154(Blocks.field36566, ItemGroup.REDSTONE);
-   public static final Item field37419 = method30154(Blocks.field37095, ItemGroup.REDSTONE);
-   public static final Item field37420 = method30154(Blocks.field37096, ItemGroup.REDSTONE);
-   public static final Item field37421 = method30154(Blocks.field37144, ItemGroup.REDSTONE);
+   public static final Item field37412 = method30154(Blocks.STONE_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37413 = method30154(Blocks.OAK_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37414 = method30154(Blocks.SPRUCE_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37415 = method30154(Blocks.BIRCH_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37416 = method30154(Blocks.JUNGLE_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37417 = method30154(Blocks.ACACIA_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37418 = method30154(Blocks.DARK_OAK_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37419 = method30154(Blocks.CRIMSON_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37420 = method30154(Blocks.WARPED_PRESSURE_PLATE, ItemGroup.REDSTONE);
+   public static final Item field37421 = method30154(Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE, ItemGroup.REDSTONE);
    public static final Item field37422 = method30154(Blocks.REDSTONE_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37423 = method30155(
-      new Class3298(Blocks.field36568, Blocks.field36569, new Item.Properties().method17779(ItemGroup.REDSTONE))
+      new Class3298(Blocks.REDSTONE_TORCH, Blocks.REDSTONE_WALL_TORCH, new Item.Properties().method17779(ItemGroup.REDSTONE))
    );
    public static final Item field37424 = method30154(Blocks.SNOW, ItemGroup.field31666);
    public static final Item field37425 = method30154(Blocks.ICE, ItemGroup.BUILDING_BLOCKS);
@@ -224,39 +224,39 @@ public class Items {
    public static final Item field37428 = method30154(Blocks.CLAY, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37429 = method30154(Blocks.JUKEBOX, ItemGroup.field31666);
    public static final Item field37430 = method30154(Blocks.OAK_FENCE, ItemGroup.field31666);
-   public static final Item field37431 = method30154(Blocks.field36867, ItemGroup.field31666);
-   public static final Item field37432 = method30154(Blocks.field36868, ItemGroup.field31666);
-   public static final Item field37433 = method30154(Blocks.field36869, ItemGroup.field31666);
-   public static final Item field37434 = method30154(Blocks.field36870, ItemGroup.field31666);
-   public static final Item field37435 = method30154(Blocks.field36871, ItemGroup.field31666);
-   public static final Item field37436 = method30154(Blocks.field37097, ItemGroup.field31666);
-   public static final Item field37437 = method30154(Blocks.field37098, ItemGroup.field31666);
+   public static final Item field37431 = method30154(Blocks.SPRUCE_FENCE, ItemGroup.field31666);
+   public static final Item field37432 = method30154(Blocks.BIRCH_FENCE, ItemGroup.field31666);
+   public static final Item field37433 = method30154(Blocks.JUNGLE_FENCE, ItemGroup.field31666);
+   public static final Item field37434 = method30154(Blocks.ACACIA_FENCE, ItemGroup.field31666);
+   public static final Item field37435 = method30154(Blocks.DARK_OAK_FENCE, ItemGroup.field31666);
+   public static final Item field37436 = method30154(Blocks.CRIMSON_FENCE, ItemGroup.field31666);
+   public static final Item field37437 = method30154(Blocks.WARPED_FENCE, ItemGroup.field31666);
    public static final Item field37438 = method30154(Blocks.PUMPKIN, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37439 = method30154(Blocks.field36589, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37439 = method30154(Blocks.CARVED_PUMPKIN, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37440 = method30154(Blocks.NETHERRACK, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37441 = method30154(Blocks.SOUL_SAND, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37442 = method30154(Blocks.SOUL_SOIL, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37443 = method30154(Blocks.BASALT, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37444 = method30154(Blocks.POLISHED_BASALT, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37445 = method30155(
-      new Class3298(Blocks.field36585, Blocks.field36586, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.SOUL_TORCH, Blocks.SOUL_WALL_TORCH, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37446 = method30154(Blocks.field36587, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37447 = method30154(Blocks.field36590, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37448 = method30154(Blocks.field36609, ItemGroup.REDSTONE);
-   public static final Item field37449 = method30154(Blocks.field36610, ItemGroup.REDSTONE);
-   public static final Item field37450 = method30154(Blocks.field36611, ItemGroup.REDSTONE);
-   public static final Item field37451 = method30154(Blocks.field36612, ItemGroup.REDSTONE);
+   public static final Item field37447 = method30154(Blocks.JACK_O_LANTERN, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37448 = method30154(Blocks.OAK_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37449 = method30154(Blocks.SPRUCE_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37450 = method30154(Blocks.BIRCH_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37451 = method30154(Blocks.JUNGLE_TRAPDOOR, ItemGroup.REDSTONE);
    public static final Item field37452 = method30154(Blocks.ACACIA_TRAPDOOR, ItemGroup.REDSTONE);
-   public static final Item field37453 = method30154(Blocks.field36614, ItemGroup.REDSTONE);
-   public static final Item field37454 = method30154(Blocks.field37099, ItemGroup.REDSTONE);
-   public static final Item field37455 = method30154(Blocks.field37100, ItemGroup.REDSTONE);
-   public static final Item field37456 = method30154(Blocks.field36619, ItemGroup.field31666);
-   public static final Item field37457 = method30154(Blocks.field36620, ItemGroup.field31666);
-   public static final Item field37458 = method30154(Blocks.field36621, ItemGroup.field31666);
-   public static final Item field37459 = method30154(Blocks.field36622, ItemGroup.field31666);
-   public static final Item field37460 = method30154(Blocks.field36623, ItemGroup.field31666);
-   public static final Item field37461 = method30154(Blocks.field36624, ItemGroup.field31666);
+   public static final Item field37453 = method30154(Blocks.DARK_OAK_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37454 = method30154(Blocks.CRIMSON_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37455 = method30154(Blocks.WARPED_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37456 = method30154(Blocks.INFESTED_STONE, ItemGroup.field31666);
+   public static final Item field37457 = method30154(Blocks.INFESTED_COBBLESTONE, ItemGroup.field31666);
+   public static final Item field37458 = method30154(Blocks.INFESTED_STONE_BRICKS, ItemGroup.field31666);
+   public static final Item field37459 = method30154(Blocks.INFESTED_MOSSY_STONE_BRICKS, ItemGroup.field31666);
+   public static final Item field37460 = method30154(Blocks.INFESTED_CRACKED_STONE_BRICKS, ItemGroup.field31666);
+   public static final Item field37461 = method30154(Blocks.INFESTED_CHISELED_STONE_BRICKS, ItemGroup.field31666);
    public static final Item field37462 = method30154(Blocks.field36615, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37463 = method30154(Blocks.field36616, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37464 = method30154(Blocks.field36617, ItemGroup.BUILDING_BLOCKS);
@@ -287,11 +287,11 @@ public class Items {
    public static final Item field37489 = method30154(Blocks.NETHER_BRICK_FENCE, ItemGroup.field31666);
    public static final Item field37490 = method30154(Blocks.NETHER_BRICK_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37491 = method30154(Blocks.ENCHANTING_TABLE, ItemGroup.field31666);
-   public static final Item field37492 = method30154(Blocks.field36650, ItemGroup.field31666);
+   public static final Item field37492 = method30154(Blocks.END_PORTAL_FRAME, ItemGroup.field31666);
    public static final Item field37493 = method30154(Blocks.field36651, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37494 = method30154(Blocks.field36883, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37495 = method30155(new BlockItem(Blocks.field36652, new Item.Properties().method17780(Class1978.field12888)));
-   public static final Item field37496 = method30154(Blocks.field36653, ItemGroup.REDSTONE);
+   public static final Item field37495 = method30155(new BlockItem(Blocks.DRAGON_EGG, new Item.Properties().method17780(Class1978.field12888)));
+   public static final Item field37496 = method30154(Blocks.REDSTONE_LAMP, ItemGroup.REDSTONE);
    public static final Item field37497 = method30154(Blocks.SANDSTONE_STAIRS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37498 = method30154(Blocks.EMERALD_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37499 = method30154(Blocks.ENDER_CHEST, ItemGroup.field31666);
@@ -308,21 +308,21 @@ public class Items {
    );
    public static final Item field37509 = method30154(Blocks.COBBLESTONE_WALL, ItemGroup.field31666);
    public static final Item field37510 = method30154(Blocks.MOSSY_COBBLESTONE_WALL, ItemGroup.field31666);
-   public static final Item field37511 = method30154(Blocks.field37041, ItemGroup.field31666);
-   public static final Item field37512 = method30154(Blocks.field37042, ItemGroup.field31666);
-   public static final Item field37513 = method30154(Blocks.field37043, ItemGroup.field31666);
-   public static final Item field37514 = method30154(Blocks.field37044, ItemGroup.field31666);
-   public static final Item field37515 = method30154(Blocks.field37045, ItemGroup.field31666);
-   public static final Item field37516 = method30154(Blocks.field37046, ItemGroup.field31666);
-   public static final Item field37517 = method30154(Blocks.field37047, ItemGroup.field31666);
-   public static final Item field37518 = method30154(Blocks.field37048, ItemGroup.field31666);
-   public static final Item field37519 = method30154(Blocks.field37049, ItemGroup.field31666);
-   public static final Item field37520 = method30154(Blocks.field37050, ItemGroup.field31666);
-   public static final Item field37521 = method30154(Blocks.field37051, ItemGroup.field31666);
-   public static final Item field37522 = method30154(Blocks.field37052, ItemGroup.field31666);
-   public static final Item field37523 = method30154(Blocks.field37132, ItemGroup.field31666);
-   public static final Item field37524 = method30154(Blocks.field37146, ItemGroup.field31666);
-   public static final Item field37525 = method30154(Blocks.field37140, ItemGroup.field31666);
+   public static final Item field37511 = method30154(Blocks.BRICK_WALL, ItemGroup.field31666);
+   public static final Item field37512 = method30154(Blocks.PRISMARINE_WALL, ItemGroup.field31666);
+   public static final Item field37513 = method30154(Blocks.RED_SANDSTONE_WALL, ItemGroup.field31666);
+   public static final Item field37514 = method30154(Blocks.MOSSY_STONE_BRICK_WALL, ItemGroup.field31666);
+   public static final Item field37515 = method30154(Blocks.GRANITE_WALL, ItemGroup.field31666);
+   public static final Item field37516 = method30154(Blocks.STONE_BRICK_WALL, ItemGroup.field31666);
+   public static final Item field37517 = method30154(Blocks.NETHER_BRICK_WALL, ItemGroup.field31666);
+   public static final Item field37518 = method30154(Blocks.ANDESITE_WALL, ItemGroup.field31666);
+   public static final Item field37519 = method30154(Blocks.RED_NETHER_BRICK_WALL, ItemGroup.field31666);
+   public static final Item field37520 = method30154(Blocks.SANDSTONE_WALL, ItemGroup.field31666);
+   public static final Item field37521 = method30154(Blocks.END_STONE_BRICK_WALL, ItemGroup.field31666);
+   public static final Item field37522 = method30154(Blocks.DIORITE_WALL, ItemGroup.field31666);
+   public static final Item field37523 = method30154(Blocks.BLACKSTONE_WALL, ItemGroup.field31666);
+   public static final Item field37524 = method30154(Blocks.POLISHED_BLACKSTONE_WALL, ItemGroup.field31666);
+   public static final Item field37525 = method30154(Blocks.POLISHED_BLACKSTONE_BRICK_WALL, ItemGroup.field31666);
    public static final Item field37526 = method30154(Blocks.STONE_BUTTON, ItemGroup.REDSTONE);
    public static final Item field37527 = method30154(Blocks.field36695, ItemGroup.REDSTONE);
    public static final Item field37528 = method30154(Blocks.field36696, ItemGroup.REDSTONE);
@@ -339,16 +339,16 @@ public class Items {
    public static final Item field37539 = method30154(Blocks.TRAPPED_CHEST, ItemGroup.REDSTONE);
    public static final Item field37540 = method30154(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE, ItemGroup.REDSTONE);
    public static final Item field37541 = method30154(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE, ItemGroup.REDSTONE);
-   public static final Item field37542 = method30154(Blocks.field36720, ItemGroup.REDSTONE);
-   public static final Item field37543 = method30154(Blocks.field36721, ItemGroup.REDSTONE);
-   public static final Item field37544 = method30154(Blocks.field36722, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37542 = method30154(Blocks.DAYLIGHT_DETECTOR, ItemGroup.REDSTONE);
+   public static final Item field37543 = method30154(Blocks.REDSTONE_BLOCK, ItemGroup.REDSTONE);
+   public static final Item field37544 = method30154(Blocks.NETHER_QUARTZ_ORE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37545 = method30154(Blocks.HOPPER, ItemGroup.REDSTONE);
    public static final Item field37546 = method30154(Blocks.field36725, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37547 = method30154(Blocks.field36724, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37548 = method30154(Blocks.field37149, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37549 = method30154(Blocks.field36726, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37549 = method30154(Blocks.QUARTZ_PILLAR, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37550 = method30154(Blocks.field36727, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37551 = method30154(Blocks.field36728, ItemGroup.field31668);
+   public static final Item field37551 = method30154(Blocks.ACTIVATOR_RAIL, ItemGroup.field31668);
    public static final Item field37552 = method30154(Blocks.DROPPER, ItemGroup.REDSTONE);
    public static final Item field37553 = method30154(Blocks.field36730, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37554 = method30154(Blocks.field36731, ItemGroup.BUILDING_BLOCKS);
@@ -367,8 +367,8 @@ public class Items {
    public static final Item field37567 = method30154(Blocks.field36744, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37568 = method30154(Blocks.field36745, ItemGroup.BUILDING_BLOCKS);
    public static final Item BARRIER = method30153(Blocks.BARRIER);
-   public static final Item field37570 = method30154(Blocks.field36766, ItemGroup.REDSTONE);
-   public static final Item field37571 = method30154(Blocks.field36777, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37570 = method30154(Blocks.IRON_TRAPDOOR, ItemGroup.REDSTONE);
+   public static final Item field37571 = method30154(Blocks.HAY_BLOCK, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37572 = method30154(Blocks.WHITE_CARPET, ItemGroup.field31666);
    public static final Item field37573 = method30154(Blocks.ORANGE_CARPET, ItemGroup.field31666);
    public static final Item field37574 = method30154(Blocks.MAGENTA_CARPET, ItemGroup.field31666);
@@ -390,14 +390,14 @@ public class Items {
    public static final Item field37590 = method30154(Blocks.PACKED_ICE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37591 = method30154(Blocks.field36762, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37592 = method30154(Blocks.field36763, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37593 = method30154(Blocks.field36764, ItemGroup.field31666);
-   public static final Item field37594 = method30154(Blocks.field36885, ItemGroup.field31666);
+   public static final Item field37593 = method30154(Blocks.SLIME_BLOCK, ItemGroup.field31666);
+   public static final Item field37594 = method30154(Blocks.GRASS_PATH, ItemGroup.field31666);
    public static final Item field37595 = method30155(new Class3295(Blocks.SUNFLOWER, new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item field37596 = method30155(new Class3295(Blocks.LILAC, new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item field37597 = method30155(new Class3295(Blocks.ROSE_BUSH, new Item.Properties().method17779(ItemGroup.field31666)));
-   public static final Item field37598 = method30155(new Class3295(Blocks.field36800, new Item.Properties().method17779(ItemGroup.field31666)));
+   public static final Item field37598 = method30155(new Class3295(Blocks.PEONY, new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item field37599 = method30155(new Class3295(Blocks.TALL_GRASS, new Item.Properties().method17779(ItemGroup.field31666)));
-   public static final Item field37600 = method30155(new Class3295(Blocks.field36802, new Item.Properties().method17779(ItemGroup.field31666)));
+   public static final Item field37600 = method30155(new Class3295(Blocks.LARGE_FERN, new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item field37601 = method30154(Blocks.field36593, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37602 = method30154(Blocks.field36594, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37603 = method30154(Blocks.field36595, ItemGroup.BUILDING_BLOCKS);
@@ -414,22 +414,22 @@ public class Items {
    public static final Item field37614 = method30154(Blocks.field36606, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37615 = method30154(Blocks.field36607, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37616 = method30154(Blocks.field36608, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37617 = method30154(Blocks.field36746, ItemGroup.field31666);
-   public static final Item field37618 = method30154(Blocks.field36747, ItemGroup.field31666);
-   public static final Item field37619 = method30154(Blocks.field36748, ItemGroup.field31666);
-   public static final Item field37620 = method30154(Blocks.field36749, ItemGroup.field31666);
-   public static final Item field37621 = method30154(Blocks.field36750, ItemGroup.field31666);
-   public static final Item field37622 = method30154(Blocks.field36751, ItemGroup.field31666);
-   public static final Item field37623 = method30154(Blocks.field36752, ItemGroup.field31666);
-   public static final Item field37624 = method30154(Blocks.field36753, ItemGroup.field31666);
-   public static final Item field37625 = method30154(Blocks.field36754, ItemGroup.field31666);
-   public static final Item field37626 = method30154(Blocks.field36755, ItemGroup.field31666);
-   public static final Item field37627 = method30154(Blocks.field36756, ItemGroup.field31666);
-   public static final Item field37628 = method30154(Blocks.field36757, ItemGroup.field31666);
-   public static final Item field37629 = method30154(Blocks.field36758, ItemGroup.field31666);
-   public static final Item field37630 = method30154(Blocks.field36759, ItemGroup.field31666);
-   public static final Item field37631 = method30154(Blocks.field36760, ItemGroup.field31666);
-   public static final Item field37632 = method30154(Blocks.field36761, ItemGroup.field31666);
+   public static final Item field37617 = method30154(Blocks.WHITE_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37618 = method30154(Blocks.ORANGE_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37619 = method30154(Blocks.MAGENTA_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37620 = method30154(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37621 = method30154(Blocks.YELLOW_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37622 = method30154(Blocks.LIME_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37623 = method30154(Blocks.PINK_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37624 = method30154(Blocks.GRAY_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37625 = method30154(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37626 = method30154(Blocks.CYAN_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37627 = method30154(Blocks.PURPLE_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37628 = method30154(Blocks.BLUE_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37629 = method30154(Blocks.BROWN_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37630 = method30154(Blocks.GREEN_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37631 = method30154(Blocks.RED_STAINED_GLASS_PANE, ItemGroup.field31666);
+   public static final Item field37632 = method30154(Blocks.BLACK_STAINED_GLASS_PANE, ItemGroup.field31666);
    public static final Item field37633 = method30154(Blocks.field36767, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37634 = method30154(Blocks.field36768, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37635 = method30154(Blocks.field36769, ItemGroup.BUILDING_BLOCKS);
@@ -443,13 +443,13 @@ public class Items {
    public static final Item field37643 = method30154(Blocks.field36838, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37644 = method30155(new Class3293(Blocks.field36887, new Item.Properties().method17780(Class1978.field12888)));
    public static final Item field37645 = method30155(new Class3293(Blocks.field36888, new Item.Properties().method17780(Class1978.field12888)));
-   public static final Item field37646 = method30154(Blocks.field36890, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37646 = method30154(Blocks.MAGMA_BLOCK, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37647 = method30154(Blocks.field36891, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37648 = method30154(Blocks.field37076, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37649 = method30154(Blocks.field36892, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37650 = method30154(Blocks.field36893, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37651 = method30153(Blocks.field36894);
-   public static final Item field37652 = method30154(Blocks.field36895, ItemGroup.REDSTONE);
+   public static final Item field37650 = method30154(Blocks.BONE_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37651 = method30153(Blocks.STRUCTURE_VOID);
+   public static final Item field37652 = method30154(Blocks.OBSERVER, ItemGroup.REDSTONE);
    public static final Item field37653 = method30155(new BlockItem(Blocks.field36896, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37654 = method30155(new BlockItem(Blocks.field36897, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37655 = method30155(new BlockItem(Blocks.field36898, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
@@ -467,22 +467,22 @@ public class Items {
    public static final Item field37667 = method30155(new BlockItem(Blocks.field36910, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37668 = method30155(new BlockItem(Blocks.field36911, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37669 = method30155(new BlockItem(Blocks.field36912, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
-   public static final Item field37670 = method30154(Blocks.field36913, ItemGroup.field31666);
-   public static final Item field37671 = method30154(Blocks.field36914, ItemGroup.field31666);
-   public static final Item field37672 = method30154(Blocks.field36915, ItemGroup.field31666);
-   public static final Item field37673 = method30154(Blocks.field36916, ItemGroup.field31666);
-   public static final Item field37674 = method30154(Blocks.field36917, ItemGroup.field31666);
-   public static final Item field37675 = method30154(Blocks.field36918, ItemGroup.field31666);
-   public static final Item field37676 = method30154(Blocks.field36919, ItemGroup.field31666);
-   public static final Item field37677 = method30154(Blocks.field36920, ItemGroup.field31666);
-   public static final Item field37678 = method30154(Blocks.field36921, ItemGroup.field31666);
-   public static final Item field37679 = method30154(Blocks.field36922, ItemGroup.field31666);
-   public static final Item field37680 = method30154(Blocks.field36923, ItemGroup.field31666);
-   public static final Item field37681 = method30154(Blocks.field36924, ItemGroup.field31666);
-   public static final Item field37682 = method30154(Blocks.field36925, ItemGroup.field31666);
-   public static final Item field37683 = method30154(Blocks.field36926, ItemGroup.field31666);
-   public static final Item field37684 = method30154(Blocks.field36927, ItemGroup.field31666);
-   public static final Item field37685 = method30154(Blocks.field36928, ItemGroup.field31666);
+   public static final Item field37670 = method30154(Blocks.WHITE_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37671 = method30154(Blocks.ORANGE_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37672 = method30154(Blocks.MAGENTA_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37673 = method30154(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37674 = method30154(Blocks.YELLOW_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37675 = method30154(Blocks.LIME_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37676 = method30154(Blocks.PINK_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37677 = method30154(Blocks.GRAY_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37678 = method30154(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37679 = method30154(Blocks.CYAN_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37680 = method30154(Blocks.PURPLE_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37681 = method30154(Blocks.BLUE_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37682 = method30154(Blocks.BROWN_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37683 = method30154(Blocks.GREEN_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37684 = method30154(Blocks.RED_GLAZED_TERRACOTTA, ItemGroup.field31666);
+   public static final Item field37685 = method30154(Blocks.BLACK_GLAZED_TERRACOTTA, ItemGroup.field31666);
    public static final Item field37686 = method30154(Blocks.field36929, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37687 = method30154(Blocks.field36930, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37688 = method30154(Blocks.field36931, ItemGroup.BUILDING_BLOCKS);
@@ -499,76 +499,76 @@ public class Items {
    public static final Item field37699 = method30154(Blocks.field36942, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37700 = method30154(Blocks.field36943, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37701 = method30154(Blocks.field36944, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37702 = method30154(Blocks.field36945, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37703 = method30154(Blocks.field36946, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37704 = method30154(Blocks.field36947, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37705 = method30154(Blocks.field36948, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37706 = method30154(Blocks.field36949, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37707 = method30154(Blocks.field36950, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37708 = method30154(Blocks.field36951, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37709 = method30154(Blocks.field36952, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37710 = method30154(Blocks.field36953, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37711 = method30154(Blocks.field36954, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37712 = method30154(Blocks.field36955, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37713 = method30154(Blocks.field36956, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37714 = method30154(Blocks.field36957, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37715 = method30154(Blocks.field36958, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37716 = method30154(Blocks.field36959, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37717 = method30154(Blocks.field36960, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37718 = method30154(Blocks.field36964, ItemGroup.field31669);
+   public static final Item field37702 = method30154(Blocks.WHITE_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37703 = method30154(Blocks.ORANGE_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37704 = method30154(Blocks.MAGENTA_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37705 = method30154(Blocks.LIGHT_BLUE_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37706 = method30154(Blocks.YELLOW_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37707 = method30154(Blocks.LIME_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37708 = method30154(Blocks.PINK_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37709 = method30154(Blocks.GRAY_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37710 = method30154(Blocks.LIGHT_GRAY_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37711 = method30154(Blocks.CYAN_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37712 = method30154(Blocks.PURPLE_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37713 = method30154(Blocks.BLUE_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37714 = method30154(Blocks.BROWN_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37715 = method30154(Blocks.GREEN_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37716 = method30154(Blocks.RED_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37717 = method30154(Blocks.BLACK_CONCRETE_POWDER, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37718 = method30154(Blocks.TURTLE_EGG, ItemGroup.field31669);
    public static final Item field37719 = method30154(Blocks.field36965, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37720 = method30154(Blocks.field36966, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37721 = method30154(Blocks.field36967, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37722 = method30154(Blocks.field36968, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37723 = method30154(Blocks.field36969, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37724 = method30154(Blocks.field36970, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37725 = method30154(Blocks.field36971, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37726 = method30154(Blocks.field36972, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37727 = method30154(Blocks.field36973, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37728 = method30154(Blocks.field36974, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37729 = method30154(Blocks.field36980, ItemGroup.field31666);
-   public static final Item field37730 = method30154(Blocks.field36981, ItemGroup.field31666);
-   public static final Item field37731 = method30154(Blocks.field36982, ItemGroup.field31666);
-   public static final Item field37732 = method30154(Blocks.field36983, ItemGroup.field31666);
-   public static final Item field37733 = method30154(Blocks.field36984, ItemGroup.field31666);
-   public static final Item field37734 = method30154(Blocks.field36976, ItemGroup.field31666);
-   public static final Item field37735 = method30154(Blocks.field36977, ItemGroup.field31666);
-   public static final Item field37736 = method30154(Blocks.field36978, ItemGroup.field31666);
-   public static final Item field37737 = method30154(Blocks.field36979, ItemGroup.field31666);
-   public static final Item field37738 = method30154(Blocks.field36975, ItemGroup.field31666);
+   public static final Item field37724 = method30154(Blocks.TUBE_CORAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37725 = method30154(Blocks.BRAIN_CORAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37726 = method30154(Blocks.BUBBLE_CORAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37727 = method30154(Blocks.FIRE_CORAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37728 = method30154(Blocks.HORN_CORAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37729 = method30154(Blocks.TUBE_CORAL, ItemGroup.field31666);
+   public static final Item field37730 = method30154(Blocks.BRAIN_CORAL, ItemGroup.field31666);
+   public static final Item field37731 = method30154(Blocks.BUBBLE_CORAL, ItemGroup.field31666);
+   public static final Item field37732 = method30154(Blocks.FIRE_CORAL, ItemGroup.field31666);
+   public static final Item field37733 = method30154(Blocks.HORN_CORAL, ItemGroup.field31666);
+   public static final Item field37734 = method30154(Blocks.DEAD_BRAIN_CORAL, ItemGroup.field31666);
+   public static final Item field37735 = method30154(Blocks.DEAD_BUBBLE_CORAL, ItemGroup.field31666);
+   public static final Item field37736 = method30154(Blocks.DEAD_FIRE_CORAL, ItemGroup.field31666);
+   public static final Item field37737 = method30154(Blocks.DEAD_HORN_CORAL, ItemGroup.field31666);
+   public static final Item field37738 = method30154(Blocks.DEAD_TUBE_CORAL, ItemGroup.field31666);
    public static final Item field37739 = method30155(
-      new Class3298(Blocks.field36990, Blocks.field37000, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.TUBE_CORAL_FAN, Blocks.TUBE_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37740 = method30155(
-      new Class3298(Blocks.field36991, Blocks.field37001, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.BRAIN_CORAL_FAN, Blocks.BRAIN_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37741 = method30155(
-      new Class3298(Blocks.field36992, Blocks.field37002, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.BUBBLE_CORAL_FAN, Blocks.BUBBLE_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37742 = method30155(
-      new Class3298(Blocks.field36993, Blocks.field37003, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.FIRE_CORAL_FAN, Blocks.FIRE_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37743 = method30155(
-      new Class3298(Blocks.field36994, Blocks.field37004, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.HORN_CORAL_FAN, Blocks.HORN_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37744 = method30155(
-      new Class3298(Blocks.field36985, Blocks.field36995, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.DEAD_TUBE_CORAL_FAN, Blocks.DEAD_TUBE_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37745 = method30155(
-      new Class3298(Blocks.field36986, Blocks.field36996, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.DEAD_BRAIN_CORAL_FAN, Blocks.DEAD_BRAIN_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37746 = method30155(
-      new Class3298(Blocks.field36987, Blocks.field36997, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.DEAD_BUBBLE_CORAL_FAN, Blocks.DEAD_BUBBLE_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37747 = method30155(
-      new Class3298(Blocks.field36988, Blocks.field36998, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.DEAD_FIRE_CORAL_FAN, Blocks.DEAD_FIRE_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
    public static final Item field37748 = method30155(
-      new Class3298(Blocks.field36989, Blocks.field36999, new Item.Properties().method17779(ItemGroup.field31666))
+      new Class3298(Blocks.DEAD_HORN_CORAL_FAN, Blocks.DEAD_HORN_CORAL_WALL_FAN, new Item.Properties().method17779(ItemGroup.field31666))
    );
-   public static final Item field37749 = method30154(Blocks.field37006, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37749 = method30154(Blocks.BLUE_ICE, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37750 = method30155(
-      new BlockItem(Blocks.field37007, new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new BlockItem(Blocks.CONDUIT, new Item.Properties().method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field37751 = method30154(Blocks.field37014, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37752 = method30154(Blocks.field37015, ItemGroup.BUILDING_BLOCKS);
@@ -597,7 +597,7 @@ public class Items {
    public static final Item field37775 = method30154(Blocks.field37038, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37776 = method30154(Blocks.field37039, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37777 = method30154(Blocks.field37040, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37778 = method30155(new Class3294(Blocks.field37053, new Item.Properties().method17779(ItemGroup.field31666)));
+   public static final Item field37778 = method30155(new Class3294(Blocks.SCAFFOLDING, new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item field37779 = method30155(new Class3295(Blocks.IRON_DOOR, new Item.Properties().method17779(ItemGroup.REDSTONE)));
    public static final Item field37780 = method30155(new Class3295(Blocks.OAK_DOOR, new Item.Properties().method17779(ItemGroup.REDSTONE)));
    public static final Item field37781 = method30155(new Class3295(Blocks.field36872, new Item.Properties().method17779(ItemGroup.REDSTONE)));
@@ -726,7 +726,7 @@ public class Items {
    public static final Item field37838 = method30157("string", new Class3296(Blocks.TRIPWIRE, new Item.Properties().method17779(ItemGroup.field31669)));
    public static final Item field37839 = method30157("feather", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37840 = method30157("gunpowder", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
-   public static final Item field37841 = method30157("wheat_seeds", new Class3296(Blocks.field36539, new Item.Properties().method17779(ItemGroup.field31675)));
+   public static final Item field37841 = method30157("wheat_seeds", new Class3296(Blocks.WHEAT, new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37842 = method30157("wheat", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37843 = method30157(
       "bread", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39063))
@@ -837,10 +837,10 @@ public class Items {
       "dark_oak_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.field31666), Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_WALL_SIGN)
    );
    public static final Item field37880 = method30157(
-      "crimson_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.field31666), Blocks.field37109, Blocks.field37111)
+      "crimson_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.field31666), Blocks.CRIMSON_SIGN, Blocks.CRIMSON_WALL_SIGN)
    );
    public static final Item field37881 = method30157(
-      "warped_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.field31666), Blocks.field37110, Blocks.field37112)
+      "warped_sign", new Class3300(new Item.Properties().method17775(16).method17779(ItemGroup.field31666), Blocks.WARPED_SIGN, Blocks.WARPED_WALL_SIGN)
    );
    public static final Item BUCKET = method30157(
       "bucket", new Class3287(Fluids.EMPTY, new Item.Properties().method17775(16).method17779(ItemGroup.field31669))
@@ -933,7 +933,7 @@ public class Items {
    public static final Item field37934 = method30157("bone_meal", new Class3336(new Item.Properties().method17779(ItemGroup.field31675)));
    public static final Item field37935 = method30157("bone", new Item(new Item.Properties().method17779(ItemGroup.field31669)));
    public static final Item field37936 = method30157("sugar", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
-   public static final Item field37937 = method30155(new BlockItem(Blocks.field36591, new Item.Properties().method17775(1).method17779(ItemGroup.field31671)));
+   public static final Item field37937 = method30155(new BlockItem(Blocks.CAKE, new Item.Properties().method17775(1).method17779(ItemGroup.field31671)));
    public static final Item field37938 = method30155(new Class3297(Blocks.WHITE_BED, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37939 = method30155(new Class3297(Blocks.ORANGE_BED, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
    public static final Item field37940 = method30155(new Class3297(Blocks.MAGENTA_BED, new Item.Properties().method17775(1).method17779(ItemGroup.field31666)));
@@ -993,8 +993,8 @@ public class Items {
    public static final Item field37974 = method30157("fermented_spider_eye", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37975 = method30157("blaze_powder", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37976 = method30157("magma_cream", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
-   public static final Item field37977 = method30154(Blocks.field36647, ItemGroup.field31674);
-   public static final Item field37978 = method30154(Blocks.field36648, ItemGroup.field31674);
+   public static final Item field37977 = method30154(Blocks.BREWING_STAND, ItemGroup.field31674);
+   public static final Item field37978 = method30154(Blocks.CAULDRON, ItemGroup.field31674);
    public static final Item field37979 = method30157("ender_eye", new Class3341(new Item.Properties().method17779(ItemGroup.field31669)));
    public static final Item field37980 = method30157("glistering_melon_slice", new Item(new Item.Properties().method17779(ItemGroup.field31674)));
    public static final Item field37981 = method30157(
@@ -1199,10 +1199,10 @@ public class Items {
    public static final Item ITEM_FRAME = method30157("item_frame", new Class3313(new Item.Properties().method17779(ItemGroup.field31666)));
    public static final Item field38051 = method30154(Blocks.FLOWER_POT, ItemGroup.field31666);
    public static final Item field38052 = method30157(
-      "carrot", new Class3296(Blocks.field36693, new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39064))
+      "carrot", new Class3296(Blocks.CARROTS, new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39064))
    );
    public static final Item field38053 = method30157(
-      "potato", new Class3296(Blocks.field36694, new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39086))
+      "potato", new Class3296(Blocks.POTATOES, new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39086))
    );
    public static final Item field38054 = method30157(
       "baked_potato", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39059))
@@ -1215,19 +1215,19 @@ public class Items {
       "golden_carrot", new Item(new Item.Properties().method17779(ItemGroup.field31674).method17774(Class8672.field39079))
    );
    public static final Item field38058 = method30155(
-      new Class3298(Blocks.field36701, Blocks.field36702, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
+      new Class3298(Blocks.SKELETON_SKULL, Blocks.SKELETON_WALL_SKULL, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38059 = method30155(
-      new Class3298(Blocks.field36703, Blocks.field36704, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
+      new Class3298(Blocks.WITHER_SKELETON_SKULL, Blocks.WITHER_SKELETON_WALL_SKULL, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38060 = method30155(
-      new SkullItem(Blocks.field36707, Blocks.field36708, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
+      new SkullItem(Blocks.PLAYER_HEAD, Blocks.PLAYER_WALL_HEAD, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38061 = method30155(
-      new Class3298(Blocks.field36705, Blocks.field36706, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
+      new Class3298(Blocks.ZOMBIE_HEAD, Blocks.ZOMBIE_WALL_HEAD, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38062 = method30155(
-      new Class3298(Blocks.field36709, Blocks.field36710, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
+      new Class3298(Blocks.CREEPER_HEAD, Blocks.CREEPER_WALL_HEAD, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38063 = method30155(
       new Class3298(Blocks.DRAGON_HEAD, Blocks.DRAGON_WALL_HEAD, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
@@ -1291,52 +1291,52 @@ public class Items {
       "cooked_mutton", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39071))
    );
    public static final Item field38092 = method30157(
-      "white_banner", new Class3301(Blocks.field36803, Blocks.field36819, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "white_banner", new Class3301(Blocks.WHITE_BANNER, Blocks.WHITE_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38093 = method30157(
-      "orange_banner", new Class3301(Blocks.field36804, Blocks.field36820, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "orange_banner", new Class3301(Blocks.ORANGE_BANNER, Blocks.ORANGE_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38094 = method30157(
-      "magenta_banner", new Class3301(Blocks.field36805, Blocks.field36821, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "magenta_banner", new Class3301(Blocks.MAGENTA_BANNER, Blocks.MAGENTA_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38095 = method30157(
-      "light_blue_banner", new Class3301(Blocks.field36806, Blocks.field36822, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "light_blue_banner", new Class3301(Blocks.LIGHT_BLUE_BANNER, Blocks.LIGHT_BLUE_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38096 = method30157(
-      "yellow_banner", new Class3301(Blocks.field36807, Blocks.field36823, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "yellow_banner", new Class3301(Blocks.YELLOW_BANNER, Blocks.YELLOW_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38097 = method30157(
-      "lime_banner", new Class3301(Blocks.field36808, Blocks.field36824, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "lime_banner", new Class3301(Blocks.LIME_BANNER, Blocks.LIME_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38098 = method30157(
-      "pink_banner", new Class3301(Blocks.field36809, Blocks.field36825, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "pink_banner", new Class3301(Blocks.PINK_BANNER, Blocks.PINK_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38099 = method30157(
-      "gray_banner", new Class3301(Blocks.field36810, Blocks.field36826, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "gray_banner", new Class3301(Blocks.GRAY_BANNER, Blocks.GRAY_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38100 = method30157(
-      "light_gray_banner", new Class3301(Blocks.field36811, Blocks.field36827, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "light_gray_banner", new Class3301(Blocks.LIGHT_GRAY_BANNER, Blocks.LIGHT_GRAY_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38101 = method30157(
-      "cyan_banner", new Class3301(Blocks.field36812, Blocks.field36828, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "cyan_banner", new Class3301(Blocks.CYAN_BANNER, Blocks.CYAN_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38102 = method30157(
-      "purple_banner", new Class3301(Blocks.field36813, Blocks.field36829, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "purple_banner", new Class3301(Blocks.PURPLE_BANNER, Blocks.PURPLE_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38103 = method30157(
-      "blue_banner", new Class3301(Blocks.field36814, Blocks.field36830, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "blue_banner", new Class3301(Blocks.BLUE_BANNER, Blocks.BLUE_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38104 = method30157(
-      "brown_banner", new Class3301(Blocks.field36815, Blocks.field36831, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "brown_banner", new Class3301(Blocks.BROWN_BANNER, Blocks.BROWN_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38105 = method30157(
-      "green_banner", new Class3301(Blocks.field36816, Blocks.field36832, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "green_banner", new Class3301(Blocks.GREEN_BANNER, Blocks.GREEN_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38106 = method30157(
-      "red_banner", new Class3301(Blocks.field36817, Blocks.field36833, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "red_banner", new Class3301(Blocks.RED_BANNER, Blocks.RED_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item field38107 = method30157(
-      "black_banner", new Class3301(Blocks.field36818, Blocks.field36834, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
+      "black_banner", new Class3301(Blocks.BLACK_BANNER, Blocks.BLACK_WALL_BANNER, new Item.Properties().method17775(16).method17779(ItemGroup.field31666))
    );
    public static final Item END_CRYSTAL = method30157(
       "end_crystal", new Class3340(new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12887))
@@ -1349,7 +1349,7 @@ public class Items {
       "beetroot", new Item(new Item.Properties().method17779(ItemGroup.field31671).method17774(Class8672.field39061))
    );
    public static final Item field38112 = method30157(
-      "beetroot_seeds", new Class3296(Blocks.field36884, new Item.Properties().method17779(ItemGroup.field31675))
+      "beetroot_seeds", new Class3296(Blocks.BEETROOTS, new Item.Properties().method17779(ItemGroup.field31675))
    );
    public static final Item field38113 = method30157(
       "beetroot_soup", new Class3306(new Item.Properties().method17775(1).method17779(ItemGroup.field31671).method17774(Class8672.field39062))
@@ -1471,7 +1471,7 @@ public class Items {
    public static final Item field38156 = method30157(
       "piglin_banner_pattern", new Class3286(Class2154.field14122, new Item.Properties().method17775(1).method17779(ItemGroup.field31669))
    );
-   public static final Item field38157 = method30154(Blocks.field37115, ItemGroup.field31666);
+   public static final Item field38157 = method30154(Blocks.COMPOSTER, ItemGroup.field31666);
    public static final Item field38158 = method30154(Blocks.BARREL, ItemGroup.field31666);
    public static final Item field38159 = method30154(Blocks.SMOKER, ItemGroup.field31666);
    public static final Item field38160 = method30154(Blocks.BLAST_FURNACE, ItemGroup.field31666);
@@ -1491,8 +1491,8 @@ public class Items {
    public static final Item field38172 = method30154(Blocks.SOUL_CAMPFIRE, ItemGroup.field31666);
    public static final Item field38173 = method30154(Blocks.field37085, ItemGroup.field31666);
    public static final Item field38174 = method30157("honeycomb", new Item(new Item.Properties().method17779(ItemGroup.field31675)));
-   public static final Item field38175 = method30154(Blocks.field37117, ItemGroup.field31666);
-   public static final Item field38176 = method30154(Blocks.field37118, ItemGroup.field31666);
+   public static final Item field38175 = method30154(Blocks.BEE_NEST, ItemGroup.field31666);
+   public static final Item field38176 = method30154(Blocks.BEEHIVE, ItemGroup.field31666);
    public static final Item field38177 = method30157(
       "honey_bottle",
       new Class3307(new Item.Properties().method17778(field37972).method17774(Class8672.field39080).method17779(ItemGroup.field31671).method17775(16))
@@ -1502,8 +1502,8 @@ public class Items {
    public static final Item field38180 = method30154(Blocks.field37129, ItemGroup.field31666);
    public static final Item field38181 = method30155(new BlockItem(Blocks.field37121, new Item.Properties().method17779(ItemGroup.BUILDING_BLOCKS).method17781()));
    public static final Item field38182 = method30155(new BlockItem(Blocks.field37122, new Item.Properties().method17779(ItemGroup.BUILDING_BLOCKS).method17781()));
-   public static final Item field38183 = method30154(Blocks.field37116, ItemGroup.REDSTONE);
-   public static final Item field38184 = method30154(Blocks.field37123, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field38183 = method30154(Blocks.TARGET, ItemGroup.REDSTONE);
+   public static final Item field38184 = method30154(Blocks.CRYING_OBSIDIAN, ItemGroup.BUILDING_BLOCKS);
    public static final Item field38185 = method30154(Blocks.field37130, ItemGroup.BUILDING_BLOCKS);
    public static final Item field38186 = method30154(Blocks.field37133, ItemGroup.BUILDING_BLOCKS);
    public static final Item field38187 = method30154(Blocks.field37131, ItemGroup.BUILDING_BLOCKS);
@@ -1516,7 +1516,7 @@ public class Items {
    public static final Item field38194 = method30154(Blocks.field37138, ItemGroup.BUILDING_BLOCKS);
    public static final Item field38195 = method30154(Blocks.field37139, ItemGroup.BUILDING_BLOCKS);
    public static final Item field38196 = method30154(Blocks.field37136, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field38197 = method30154(Blocks.field37124, ItemGroup.field31666);
+   public static final Item field38197 = method30154(Blocks.RESPAWN_ANCHOR, ItemGroup.field31666);
 
    private static Item method30153(Block var0) {
       return method30155(new BlockItem(var0, new Item.Properties()));

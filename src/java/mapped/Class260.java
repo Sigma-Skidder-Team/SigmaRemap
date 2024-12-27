@@ -21,7 +21,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
          var1.translate(0.0, -0.34375, 0.0);
          var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
          var1.scale(0.625F, -0.625F, -0.625F);
-         ItemStack var14 = new ItemStack(Blocks.field36589);
+         ItemStack var14 = new ItemStack(Blocks.CARVED_PUMPKIN);
          Minecraft.getInstance()
             .getItemRenderer()
             .method790(var4, var14, ItemCameraTransformsTransformType.HEAD, false, var1, var2, var4.world, var3, LivingRenderer.method17883(var4, 0.0F));

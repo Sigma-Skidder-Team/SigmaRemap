@@ -4,6 +4,8 @@ import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapePart;
 
 import java.util.Arrays;
 
@@ -12,7 +14,7 @@ public final class Class6409 extends VoxelShape {
    private final DoubleList field28036;
    private final DoubleList field28037;
 
-   public Class6409(Class7938 var1, double[] var2, double[] var3, double[] var4) {
+   public Class6409(VoxelShapePart var1, double[] var2, double[] var3, double[] var4) {
       this(
          var1,
          DoubleArrayList.wrap(Arrays.copyOf(var2, var1.method26733() + 1)),
@@ -21,7 +23,7 @@ public final class Class6409 extends VoxelShape {
       );
    }
 
-   public Class6409(Class7938 var1, DoubleList var2, DoubleList var3, DoubleList var4) {
+   public Class6409(VoxelShapePart var1, DoubleList var2, DoubleList var3, DoubleList var4) {
       super(var1);
       int var7 = var1.method26733() + 1;
       int var8 = var1.method26734() + 1;

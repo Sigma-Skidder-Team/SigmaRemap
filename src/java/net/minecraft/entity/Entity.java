@@ -43,6 +43,8 @@ import net.minecraft.util.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.*;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -591,7 +593,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public float getSpeedFactor() {
       Block var3 = this.world.getBlockState(this.getPosition()).getBlock();
       float var4 = var3.method11572();
-      if (var3 != Blocks.WATER && var3 != Blocks.field37013) {
+      if (var3 != Blocks.WATER && var3 != Blocks.BUBBLE_COLUMN) {
          return (double)var4 != 1.0 ? var4 : this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11572();
       } else {
          return var4;
@@ -909,7 +911,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    private boolean isInBubbleColumn() {
-      return this.world.getBlockState(this.getPosition()).isIn(Blocks.field37013);
+      return this.world.getBlockState(this.getPosition()).isIn(Blocks.BUBBLE_COLUMN);
    }
 
    public boolean method3253() {

@@ -11,6 +11,6 @@ public final class Class7408 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return new ItemStack(Blocks.field36800);
+      return new ItemStack(Blocks.PEONY);
    }
 }

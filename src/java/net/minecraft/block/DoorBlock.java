@@ -20,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -90,7 +91,7 @@ public class DoorBlock extends Block {
    @Override
    public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && var4.isCreative()) {
-         Class3456.method12130(var1, var2, var3, var4);
+         LargeFernBlock.method12130(var1, var2, var3, var4);
       }
 
       super.onBlockHarvested(var1, var2, var3, var4);

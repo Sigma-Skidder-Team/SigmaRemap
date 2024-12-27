@@ -15,6 +15,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 
@@ -548,7 +549,7 @@ public class Class6762 extends Class6764 {
    private static boolean method20636(BlockState var0) {
       return var0.isIn(BlockTags.field32798)
          || var0.isIn(Blocks.LAVA)
-         || var0.isIn(Blocks.field36890)
+         || var0.isIn(Blocks.MAGMA_BLOCK)
          || Class3244.method11655(var0);
    }
 }

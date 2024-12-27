@@ -14,6 +14,7 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Step extends ModuleWithModuleSettings {
     public static int field23887;

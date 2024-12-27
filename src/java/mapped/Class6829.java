@@ -8,6 +8,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class6829 {
    private static String[] field29706;

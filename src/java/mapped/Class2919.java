@@ -34,7 +34,7 @@ public class Class2919 extends Class2898<Class4712> {
          if (!var8) {
             return false;
          } else {
-            var1.setBlockState(var4, Blocks.field37006.getDefaultState(), 2);
+            var1.setBlockState(var4, Blocks.BLUE_ICE.getDefaultState(), 2);
 
             for (int var19 = 0; var19 < 200; var19++) {
                int var20 = var3.nextInt(5) - var3.nextInt(6);
@@ -52,8 +52,8 @@ public class Class2919 extends Class2898<Class4712> {
                      || var13.isIn(Blocks.ICE)) {
                      for (Direction var17 : Direction.values()) {
                         BlockState var18 = var1.getBlockState(var22.offset(var17));
-                        if (var18.isIn(Blocks.field37006)) {
-                           var1.setBlockState(var22, Blocks.field37006.getDefaultState(), 2);
+                        if (var18.isIn(Blocks.BLUE_ICE)) {
+                           var1.setBlockState(var22, Blocks.BLUE_ICE.getDefaultState(), 2);
                            break;
                         }
                      }

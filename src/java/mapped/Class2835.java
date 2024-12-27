@@ -135,7 +135,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
       Advancement var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Blocks.field36703,
+            Blocks.WITHER_SKELETON_SKULL,
             new TranslationTextComponent("advancements.nether.get_wither_skull.title"),
             new TranslationTextComponent("advancements.nether.get_wither_skull.description"),
             (ResourceLocation)null,
@@ -144,7 +144,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("wither_skull", Class4491.method14164(Blocks.field36703))
+         .method27312("wither_skull", Class4491.method14164(Blocks.WITHER_SKELETON_SKULL))
          .method27317(var1, "nether/get_wither_skull");
       Advancement var8 = Class7999.method27304()
          .method27305(var7)
@@ -376,7 +376,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
                Class8912.method32576()
                   .method32578(
                      Class8831.method31929()
-                        .method31930(Blocks.field37124)
+                        .method31930(Blocks.RESPAWN_ANCHOR)
                         .method31932(Class9178.method34325().method34327(Class3389.field19000, 4).method34330())
                         .method31933()
                   ),

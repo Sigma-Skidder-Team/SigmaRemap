@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public class Class8118 implements WorldBorderIBorderInfo {
    private static String[] field34886;

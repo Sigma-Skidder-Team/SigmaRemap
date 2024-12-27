@@ -81,7 +81,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
    public void accept(Consumer<Advancement> var1) {
       Advancement var4 = Class7999.method27304()
          .method27308(
-            Blocks.field36777,
+            Blocks.HAY_BLOCK,
             new TranslationTextComponent("advancements.husbandry.root.title"),
             new TranslationTextComponent("advancements.husbandry.root.description"),
             new ResourceLocation("textures/gui/advancements/backgrounds/husbandry.png"),
@@ -105,10 +105,10 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
             false
          )
          .method27314(Class9014.field41221)
-         .method27312("wheat", Class4486.method14152(Blocks.field36539))
+         .method27312("wheat", Class4486.method14152(Blocks.WHEAT))
          .method27312("pumpkin_stem", Class4486.method14152(Blocks.PUMPKIN_STEM))
          .method27312("melon_stem", Class4486.method14152(Blocks.MELON_STEM))
-         .method27312("beetroots", Class4486.method14152(Blocks.field36884))
+         .method27312("beetroots", Class4486.method14152(Blocks.BEETROOTS))
          .method27312("nether_wart", Class4486.method14152(Blocks.NETHER_WART))
          .method27317(var1, "husbandry/plant_seed");
       Advancement var6 = Class7999.method27304()
@@ -250,13 +250,13 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
          .method27312(
             "silk_touch_nest",
             Class4479.method14139(
-               Blocks.field37117,
+               Blocks.BEE_NEST,
                Class9735.method38146().method38150(new Class8605(Enchantments.SILK_TOUCH, Class8840.method32014(1))),
                Class8840.method32013(3)
             )
          )
          .method27308(
-            Blocks.field37117,
+            Blocks.BEE_NEST,
             new TranslationTextComponent("advancements.husbandry.silk_touch_nest.title"),
             new TranslationTextComponent("advancements.husbandry.silk_touch_nest.description"),
             (ResourceLocation)null,

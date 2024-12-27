@@ -40,7 +40,7 @@ public class FrostWalkerEnchantment extends Enchantment {
 
    public static void method18829(LivingEntity var0, World var1, BlockPos var2, int var3) {
       if (var0.isOnGround()) {
-         BlockState var6 = Blocks.field36889.getDefaultState();
+         BlockState var6 = Blocks.FROSTED_ICE.getDefaultState();
          float var7 = (float)Math.min(16, 2 + var3);
          BlockPos.Mutable var8 = new BlockPos.Mutable();
 
@@ -55,7 +55,7 @@ public class FrostWalkerEnchantment extends Enchantment {
                      && var6.isValidPosition(var1, var10)
                      && var1.placedBlockCollides(var6, var10, ISelectionContext.method14947())) {
                      var1.setBlockState(var10, var6);
-                     var1.method6860().scheduleTick(var10, Blocks.field36889, MathHelper.method37782(var0.getRNG(), 60, 120));
+                     var1.method6860().scheduleTick(var10, Blocks.FROSTED_ICE, MathHelper.method37782(var0.getRNG(), 60, 120));
                   }
                }
             }

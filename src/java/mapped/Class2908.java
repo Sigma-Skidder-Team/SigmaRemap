@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class Class2908 extends Class2898<Class4738> {
    private static final ImmutableList<Block> field17991 = ImmutableList.of(
-      Blocks.BEDROCK, Blocks.NETHER_BRICKS, Blocks.NETHER_BRICK_FENCE, Blocks.NETHER_BRICK_STAIRS, Blocks.NETHER_WART, Blocks.CHEST, Blocks.field36532
+      Blocks.BEDROCK, Blocks.NETHER_BRICKS, Blocks.NETHER_BRICK_FENCE, Blocks.NETHER_BRICK_STAIRS, Blocks.NETHER_WART, Blocks.CHEST, Blocks.SPAWNER
    );
    private static final Direction[] field17992 = Direction.values();
 

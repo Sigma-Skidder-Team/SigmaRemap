@@ -42,79 +42,79 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.ACACIA_WALL_SIGN,
          Blocks.JUNGLE_WALL_SIGN,
          Blocks.DARK_OAK_WALL_SIGN,
-         Blocks.field37109,
-         Blocks.field37111,
-         Blocks.field37110,
-         Blocks.field37112
+         Blocks.CRIMSON_SIGN,
+         Blocks.CRIMSON_WALL_SIGN,
+         Blocks.WARPED_SIGN,
+         Blocks.WARPED_WALL_SIGN
       )
    );
-   public static final TileEntityType<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.field36532));
+   public static final TileEntityType<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.SPAWNER));
    public static final TileEntityType<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Blocks.MOVING_PISTON));
-   public static final TileEntityType<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.field36647));
+   public static final TileEntityType<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.BREWING_STAND));
    public static final TileEntityType<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.ENCHANTING_TABLE));
-   public static final TileEntityType<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.field36649));
+   public static final TileEntityType<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.END_PORTAL));
    public static final TileEntityType<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Blocks.BEACON));
    public static final TileEntityType<SkullTileEntity> field21435 = method13794(
       "skull",
       Class9785.<SkullTileEntity>method38569(
          SkullTileEntity::new,
-         Blocks.field36701,
-         Blocks.field36702,
-         Blocks.field36709,
-         Blocks.field36710,
+         Blocks.SKELETON_SKULL,
+         Blocks.SKELETON_WALL_SKULL,
+         Blocks.CREEPER_HEAD,
+         Blocks.CREEPER_WALL_HEAD,
          Blocks.DRAGON_HEAD,
          Blocks.DRAGON_WALL_HEAD,
-         Blocks.field36705,
-         Blocks.field36706,
-         Blocks.field36703,
-         Blocks.field36704,
-         Blocks.field36707,
-         Blocks.field36708
+         Blocks.ZOMBIE_HEAD,
+         Blocks.ZOMBIE_WALL_HEAD,
+         Blocks.WITHER_SKELETON_SKULL,
+         Blocks.WITHER_SKELETON_WALL_SKULL,
+         Blocks.PLAYER_HEAD,
+         Blocks.PLAYER_WALL_HEAD
       )
    );
-   public static final TileEntityType<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.field36720));
+   public static final TileEntityType<Class961> field21436 = method13794("daylight_detector", Class9785.<Class961>method38569(Class961::new, Blocks.DAYLIGHT_DETECTOR));
    public static final TileEntityType<Class936> field21437 = method13794("hopper", Class9785.<Class936>method38569(Class936::new, Blocks.HOPPER));
    public static final TileEntityType<Class963> field21438 = method13794("comparator", Class9785.<Class963>method38569(Class963::new, Blocks.COMPARATOR));
    public static final TileEntityType<BannerTileEntity> field21439 = method13794(
       "banner",
       Class9785.<BannerTileEntity>method38569(
          BannerTileEntity::new,
-         Blocks.field36803,
-         Blocks.field36804,
-         Blocks.field36805,
-         Blocks.field36806,
-         Blocks.field36807,
-         Blocks.field36808,
-         Blocks.field36809,
-         Blocks.field36810,
-         Blocks.field36811,
-         Blocks.field36812,
-         Blocks.field36813,
-         Blocks.field36814,
-         Blocks.field36815,
-         Blocks.field36816,
-         Blocks.field36817,
-         Blocks.field36818,
-         Blocks.field36819,
-         Blocks.field36820,
-         Blocks.field36821,
-         Blocks.field36822,
-         Blocks.field36823,
-         Blocks.field36824,
-         Blocks.field36825,
-         Blocks.field36826,
-         Blocks.field36827,
-         Blocks.field36828,
-         Blocks.field36829,
-         Blocks.field36830,
-         Blocks.field36831,
-         Blocks.field36832,
-         Blocks.field36833,
-         Blocks.field36834
+         Blocks.WHITE_BANNER,
+         Blocks.ORANGE_BANNER,
+         Blocks.MAGENTA_BANNER,
+         Blocks.LIGHT_BLUE_BANNER,
+         Blocks.YELLOW_BANNER,
+         Blocks.LIME_BANNER,
+         Blocks.PINK_BANNER,
+         Blocks.GRAY_BANNER,
+         Blocks.LIGHT_GRAY_BANNER,
+         Blocks.CYAN_BANNER,
+         Blocks.PURPLE_BANNER,
+         Blocks.BLUE_BANNER,
+         Blocks.BROWN_BANNER,
+         Blocks.GREEN_BANNER,
+         Blocks.RED_BANNER,
+         Blocks.BLACK_BANNER,
+         Blocks.WHITE_WALL_BANNER,
+         Blocks.ORANGE_WALL_BANNER,
+         Blocks.MAGENTA_WALL_BANNER,
+         Blocks.LIGHT_BLUE_WALL_BANNER,
+         Blocks.YELLOW_WALL_BANNER,
+         Blocks.LIME_WALL_BANNER,
+         Blocks.PINK_WALL_BANNER,
+         Blocks.GRAY_WALL_BANNER,
+         Blocks.LIGHT_GRAY_WALL_BANNER,
+         Blocks.CYAN_WALL_BANNER,
+         Blocks.PURPLE_WALL_BANNER,
+         Blocks.BLUE_WALL_BANNER,
+         Blocks.BROWN_WALL_BANNER,
+         Blocks.GREEN_WALL_BANNER,
+         Blocks.RED_WALL_BANNER,
+         Blocks.BLACK_WALL_BANNER
       )
    );
    public static final TileEntityType<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.field37113));
-   public static final TileEntityType<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.field36886));
+   public static final TileEntityType<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.END_GATEWAY));
    public static final TileEntityType<CommandBlockTileEntity> COMMAND_BLOCK = method13794(
       "command_block", Class9785.<CommandBlockTileEntity>method38569(CommandBlockTileEntity::new, Blocks.COMMAND_BLOCK, Blocks.field36888, Blocks.field36887)
    );
@@ -163,7 +163,7 @@ public class TileEntityType<T extends TileEntity> {
          Blocks.YELLOW_BED
       )
    );
-   public static final TileEntityType<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.field37007));
+   public static final TileEntityType<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.CONDUIT));
    public static final TileEntityType<Class973> field21446 = method13794("barrel", Class9785.<Class973>method38569(Class973::new, Blocks.BARREL));
    public static final TileEntityType<Class985> field21447 = method13794("smoker", Class9785.<Class985>method38569(Class985::new, Blocks.SMOKER));
    public static final TileEntityType<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Blocks.BLAST_FURNACE));
@@ -174,7 +174,7 @@ public class TileEntityType<T extends TileEntity> {
       "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE)
    );
    public static final TileEntityType<BeehiveTileEntity> field21453 = method13794(
-      "beehive", Class9785.<BeehiveTileEntity>method38569(BeehiveTileEntity::new, Blocks.field37117, Blocks.field37118)
+      "beehive", Class9785.<BeehiveTileEntity>method38569(BeehiveTileEntity::new, Blocks.BEE_NEST, Blocks.BEEHIVE)
    );
    private final Supplier<? extends T> field21454;
    private final Set<Block> field21455;

@@ -11,7 +11,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3385 extends Block implements Class3196 {
+public class Class3385 extends Block implements IGrowable {
    private static String[] field18992;
 
    public Class3385(Properties var1) {
@@ -45,11 +45,11 @@ public class Class3385 extends Block implements Class3196 {
 
       for (BlockPos var10 : BlockPos.method8359(var3.add(-1, -1, -1), var3.add(1, 1, 1))) {
          BlockState var11 = var1.getBlockState(var10);
-         if (var11.isIn(Blocks.field37074)) {
+         if (var11.isIn(Blocks.WARPED_NYLIUM)) {
             var8 = true;
          }
 
-         if (var11.isIn(Blocks.field37083)) {
+         if (var11.isIn(Blocks.CRIMSON_NYLIUM)) {
             var7 = true;
          }
 
@@ -59,13 +59,13 @@ public class Class3385 extends Block implements Class3196 {
       }
 
       if (var8 && var7) {
-         var1.setBlockState(var3, !var2.nextBoolean() ? Blocks.field37083.getDefaultState() : Blocks.field37074.getDefaultState(), 3);
+         var1.setBlockState(var3, !var2.nextBoolean() ? Blocks.CRIMSON_NYLIUM.getDefaultState() : Blocks.WARPED_NYLIUM.getDefaultState(), 3);
       } else if (!var8) {
          if (var7) {
-            var1.setBlockState(var3, Blocks.field37083.getDefaultState(), 3);
+            var1.setBlockState(var3, Blocks.CRIMSON_NYLIUM.getDefaultState(), 3);
          }
       } else {
-         var1.setBlockState(var3, Blocks.field37074.getDefaultState(), 3);
+         var1.setBlockState(var3, Blocks.WARPED_NYLIUM.getDefaultState(), 3);
       }
    }
 }

@@ -11,9 +11,9 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import lol.MovementUtils;
-import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.ArrayList;
 import java.util.Collections;

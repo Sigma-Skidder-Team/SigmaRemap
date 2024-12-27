@@ -63,19 +63,19 @@ public class Class7880 {
          if (var5 == Blocks.SNOW_BLOCK) {
             return false;
          } else if (!(var5 instanceof BushBlock)
-            || !(var5 instanceof Class3456)
+            || !(var5 instanceof LargeFernBlock)
                && !(var5 instanceof Class3490)
                && !(var5 instanceof Class3479)
-               && !(var5 instanceof Class3193)
+               && !(var5 instanceof SaplingBlock)
                && !(var5 instanceof Class3487)) {
-            if (var5 instanceof Class3239
+            if (var5 instanceof WarpedFenceBlock
                || var5 instanceof FenceGateBlock
-               || var5 instanceof Class3460
+               || var5 instanceof PottedWarpedRootsBlock
                || var5 instanceof Class3238
                || var5 instanceof Class3408
-               || var5 instanceof Class3415) {
+               || var5 instanceof PolishedBlackstoneWallBlock) {
                return true;
-            } else if (var5 instanceof Class3383) {
+            } else if (var5 instanceof RedstoneTorchBlock) {
                return true;
             } else if (var5 instanceof StairsBlock) {
                return var1.<Half>get(StairsBlock.HALF) == Half.TOP;
@@ -90,7 +90,7 @@ public class Class7880 {
             } else if (var5 instanceof Class3201) {
                return true;
             } else {
-               return !(var5 instanceof Class3441) ? var5 instanceof Class3402 : true;
+               return !(var5 instanceof TurtleEggBlock) ? var5 instanceof Class3402 : true;
             }
          } else {
             return true;

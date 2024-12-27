@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
@@ -248,7 +249,7 @@ public class Class6761 extends Class6762 {
                var8 = PathNodeType.OPEN;
             }
 
-            if (var15 == PathNodeType.DAMAGE_FIRE || var14.isIn(Blocks.field36890) || var14.isIn(BlockTags.field32809)) {
+            if (var15 == PathNodeType.DAMAGE_FIRE || var14.isIn(Blocks.MAGMA_BLOCK) || var14.isIn(BlockTags.field32809)) {
                var8 = PathNodeType.DAMAGE_FIRE;
             }
 

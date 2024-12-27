@@ -10,6 +10,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -86,7 +87,7 @@ public class Class3408 extends Block {
             for (Direction var9 : Direction.Plane.HORIZONTAL) {
                BlockState var10 = var2.getBlockState(var7.offset(var9));
                FluidState var11 = var2.getFluidState(var7.offset(var9));
-               if (var11.method23486(FluidTags.field40469) || var10.isIn(Blocks.field36889)) {
+               if (var11.method23486(FluidTags.field40469) || var10.isIn(Blocks.FROSTED_ICE)) {
                   return true;
                }
             }

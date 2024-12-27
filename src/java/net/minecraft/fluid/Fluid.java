@@ -1,6 +1,5 @@
 package net.minecraft.fluid;
 
-import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.particles.IParticleData;
@@ -9,6 +8,7 @@ import net.minecraft.tags.ITag;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ObjectIntIdentityMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;

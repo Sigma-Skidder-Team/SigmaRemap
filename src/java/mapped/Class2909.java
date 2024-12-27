@@ -31,7 +31,7 @@ public class Class2909 extends Class2898<Class4712> {
                      if (!this.field17995) {
                         this.method11217(var1, new BlockPos(var9), Blocks.AIR.getDefaultState());
                      } else {
-                        this.method11217(var1, new BlockPos(var9), Blocks.field36649.getDefaultState());
+                        this.method11217(var1, new BlockPos(var9), Blocks.END_PORTAL.getDefaultState());
                      }
                   } else {
                      this.method11217(var1, var9, Blocks.BEDROCK.getDefaultState());

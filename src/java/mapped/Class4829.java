@@ -12,6 +12,8 @@ import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
@@ -293,7 +295,7 @@ public class Class4829 {
                         var122 = this.field22604;
                      }
 
-                     if (var67 == Blocks.FARMLAND || var67 == Blocks.field36885) {
+                     if (var67 == Blocks.FARMLAND || var67 == Blocks.GRASS_PATH) {
                         var123 = 0.9375F;
                         var125 = 0.9375F;
                      }

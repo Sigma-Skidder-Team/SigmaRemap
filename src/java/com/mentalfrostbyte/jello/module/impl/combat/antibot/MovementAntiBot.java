@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class2124;
 import mapped.Class7249;
-import mapped.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.server.SEntityPacket;

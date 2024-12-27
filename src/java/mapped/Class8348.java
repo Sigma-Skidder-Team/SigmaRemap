@@ -21,7 +21,7 @@ public class Class8348 extends Class8347 {
                if (!(var8 < 0.55F)) {
                   this.field35874 = Blocks.field36615.getDefaultState();
                } else {
-                  this.field35874 = Blocks.field36621.getDefaultState();
+                  this.field35874 = Blocks.INFESTED_STONE_BRICKS.getDefaultState();
                }
             } else {
                this.field35874 = Blocks.field36616.getDefaultState();

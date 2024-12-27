@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Collections;
 import java.util.List;

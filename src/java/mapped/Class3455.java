@@ -13,6 +13,7 @@ import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -35,7 +36,7 @@ public class Class3455 extends Class3456 implements Class3449 {
 
    @Override
    public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
-      return state.method23454(var2, var3, Direction.UP) && !state.isIn(Blocks.field36890);
+      return state.method23454(var2, var3, Direction.UP) && !state.isIn(Blocks.MAGMA_BLOCK);
    }
 
    @Override

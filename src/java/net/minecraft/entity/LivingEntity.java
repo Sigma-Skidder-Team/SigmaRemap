@@ -270,7 +270,7 @@ public abstract class LivingEntity extends Entity {
       boolean var8 = var3 && ((PlayerEntity)this).abilities.disableDamage;
       if (this.isAlive()) {
          if (this.areEyesInFluid(FluidTags.field40469)
-            && !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosYEye(), this.getPosZ())).isIn(Blocks.field37013)) {
+            && !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosYEye(), this.getPosZ())).isIn(Blocks.BUBBLE_COLUMN)) {
             if (!this.canBreatheUnderwater() && !Class7182.method22538(this) && !var8) {
                this.setAir(this.decreaseAirSupply(this.getAir()));
                if (this.getAir() == -20) {
@@ -2076,7 +2076,7 @@ public abstract class LivingEntity extends Entity {
          double var5 = MathHelper.clamp(var1.x, -0.15F, 0.15F);
          double var7 = MathHelper.clamp(var1.z, -0.15F, 0.15F);
          double var9 = Math.max(var1.y, -0.15F);
-         if (var9 < 0.0 && !this.getBlockState().isIn(Blocks.field37053) && this.hasStoppedClimbing() && this instanceof PlayerEntity) {
+         if (var9 < 0.0 && !this.getBlockState().isIn(Blocks.SCAFFOLDING) && this.hasStoppedClimbing() && this instanceof PlayerEntity) {
             var9 = 0.0;
          }
 

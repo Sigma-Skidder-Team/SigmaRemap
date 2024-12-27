@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.function.Predicate;
 

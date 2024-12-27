@@ -12,6 +12,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.util.math.shapes.VoxelShapePart;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
@@ -147,7 +148,7 @@ public class Class2903 extends Class2898<Class4733> {
             var5.field22413.forEach(var6 -> var6.method22269(var1, var3, var13, var14, var10, var11));
          }
 
-         Class7938 var15 = this.method11236(var1, var11, var8, var10);
+         VoxelShapePart var15 = this.method11236(var1, var11, var8, var10);
          Class8969.method32900(var1, 3, var15, var11.field45678, var11.field45679, var11.field45680);
          return true;
       } else {
@@ -155,7 +156,7 @@ public class Class2903 extends Class2898<Class4733> {
       }
    }
 
-   private Class7938 method11236(IWorld var1, MutableBoundingBox var2, Set<BlockPos> var3, Set<BlockPos> var4) {
+   private VoxelShapePart method11236(IWorld var1, MutableBoundingBox var2, Set<BlockPos> var3, Set<BlockPos> var4) {
       ArrayList var7 = Lists.newArrayList();
       Class7937 var8 = new Class7937(var2.method38398(), var2.method38399(), var2.method38400());
       byte var9 = 6;

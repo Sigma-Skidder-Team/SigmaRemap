@@ -1317,24 +1317,24 @@ public class Class9407 {
    private List<Class5138> method35877(int var1) {
       String var4 = "_age" + var1;
       return IntStream.range(1, 5)
-         .<Class5138>mapToObj(var1x -> Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field37009, var1x + var4)))
+         .<Class5138>mapToObj(var1x -> Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.BAMBOO, var1x + var4)))
          .collect(Collectors.<Class5138>toList());
    }
 
    private void method35878() {
-      this.method35804(Blocks.field37009);
+      this.method35804(Blocks.BAMBOO);
       this.field43642
          .accept(
-            Class5147.method15932(Blocks.field37009)
+            Class5147.method15932(Blocks.BAMBOO)
                .method15935(Class5141.method15919().method15924(BlockStateProperties.field39738, 0), this.method35877(0))
                .method15935(Class5141.method15919().method15924(BlockStateProperties.field39738, 1), this.method35877(1))
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39773, BambooLeaves.field643),
-                  Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field37009, "_small_leaves"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.BAMBOO, "_small_leaves"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39773, BambooLeaves.field644),
-                  Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field37009, "_large_leaves"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.BAMBOO, "_large_leaves"))
                )
          );
    }
@@ -1684,31 +1684,31 @@ public class Class9407 {
       this.method35807(Items.field37977);
       this.field43642
          .accept(
-            Class5147.method15932(Blocks.field36647)
-               .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.field36647)))
+            Class5147.method15932(Blocks.BREWING_STAND)
+               .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.BREWING_STAND)))
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39692, true),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle0"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle0"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39693, true),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle1"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle1"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39694, true),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_bottle2"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle2"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39692, false),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty0"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty0"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39693, false),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty1"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty1"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39694, false),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field36647, "_empty2"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty2"))
                )
          );
    }
@@ -1799,16 +1799,16 @@ public class Class9407 {
       this.method35807(Items.field37937);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36591)
+            Class5148.method15941(Blocks.CAKE)
                .method15939(
                   Class3629.<Integer>method12310(BlockStateProperties.field39745)
-                     .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field36591)))
-                     .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice1")))
-                     .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice2")))
-                     .method12320(3, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice3")))
-                     .method12320(4, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice4")))
-                     .method12320(5, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice5")))
-                     .method12320(6, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36591, "_slice6")))
+                     .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.CAKE)))
+                     .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice1")))
+                     .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice2")))
+                     .method12320(3, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice3")))
+                     .method12320(4, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice4")))
+                     .method12320(5, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice5")))
+                     .method12320(6, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice6")))
                )
          );
    }
@@ -1845,8 +1845,8 @@ public class Class9407 {
    private void method35898() {
       Class7287 var3 = Class7287.method23014(Blocks.PUMPKIN);
       this.field43642.accept(method35829(Blocks.PUMPKIN, Class9060.method33723(Blocks.PUMPKIN)));
-      this.method35899(Blocks.field36589, var3);
-      this.method35899(Blocks.field36590, var3);
+      this.method35899(Blocks.CARVED_PUMPKIN, var3);
+      this.method35899(Blocks.JACK_O_LANTERN, var3);
    }
 
    private void method35899(Block var1, Class7287 var2) {
@@ -1858,13 +1858,13 @@ public class Class9407 {
       this.method35807(Items.field37978);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36648)
+            Class5148.method15941(Blocks.CAULDRON)
                .method15939(
                   Class3629.<Integer>method12310(BlockStateProperties.field39751)
-                     .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field36648)))
-                     .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level1")))
-                     .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level2")))
-                     .method12320(3, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36648, "_level3")))
+                     .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.CAULDRON)))
+                     .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level1")))
+                     .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level2")))
+                     .method12320(3, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level3")))
                )
          );
    }
@@ -1877,10 +1877,10 @@ public class Class9407 {
    }
 
    private void method35902() {
-      Class7287 var3 = Class7287.method22997(Blocks.field36879);
-      ResourceLocation var4 = Class9756.field45591.method34805(Blocks.field36879, var3, this.field43643);
-      ResourceLocation var5 = this.method35837(Blocks.field36879, "_dead", Class9756.field45591, var1 -> var3.method22995(Class9588.field44826, var1));
-      this.field43642.accept(Class5148.method15941(Blocks.field36879).method15939(method35881(BlockStateProperties.field39741, 5, var5, var4)));
+      Class7287 var3 = Class7287.method22997(Blocks.CHORUS_FLOWER);
+      ResourceLocation var4 = Class9756.field45591.method34805(Blocks.CHORUS_FLOWER, var3, this.field43643);
+      ResourceLocation var5 = this.method35837(Blocks.CHORUS_FLOWER, "_dead", Class9756.field45591, var1 -> var3.method22995(Class9588.field44826, var1));
+      this.field43642.accept(Class5148.method15941(Blocks.CHORUS_FLOWER).method15939(method35881(BlockStateProperties.field39741, 5, var5, var4)));
    }
 
    private void method35903(Block var1) {
@@ -1921,11 +1921,11 @@ public class Class9407 {
    }
 
    private void method35904() {
-      ResourceLocation var3 = Class9060.method33723(Blocks.field36650);
-      ResourceLocation var4 = Class9060.method33722(Blocks.field36650, "_filled");
+      ResourceLocation var3 = Class9060.method33723(Blocks.END_PORTAL_FRAME);
+      ResourceLocation var4 = Class9060.method33722(Blocks.END_PORTAL_FRAME, "_filled");
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36650)
+            Class5148.method15941(Blocks.END_PORTAL_FRAME)
                .method15939(
                   Class3629.<Boolean>method12310(BlockStateProperties.field39689)
                      .method12320(false, Class5138.method15912().method15911(Class6891.field29864, var3))
@@ -1936,14 +1936,14 @@ public class Class9407 {
    }
 
    private void method35905() {
-      ResourceLocation var3 = Class9060.method33722(Blocks.field36878, "_side");
-      ResourceLocation var4 = Class9060.method33722(Blocks.field36878, "_noside");
-      ResourceLocation var5 = Class9060.method33722(Blocks.field36878, "_noside1");
-      ResourceLocation var6 = Class9060.method33722(Blocks.field36878, "_noside2");
-      ResourceLocation var7 = Class9060.method33722(Blocks.field36878, "_noside3");
+      ResourceLocation var3 = Class9060.method33722(Blocks.CHORUS_PLANT, "_side");
+      ResourceLocation var4 = Class9060.method33722(Blocks.CHORUS_PLANT, "_noside");
+      ResourceLocation var5 = Class9060.method33722(Blocks.CHORUS_PLANT, "_noside1");
+      ResourceLocation var6 = Class9060.method33722(Blocks.CHORUS_PLANT, "_noside2");
+      ResourceLocation var7 = Class9060.method33722(Blocks.CHORUS_PLANT, "_noside3");
       this.field43642
          .accept(
-            Class5147.method15932(Blocks.field36878)
+            Class5147.method15932(Blocks.CHORUS_PLANT)
                .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var3))
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39717, true),
@@ -2093,39 +2093,39 @@ public class Class9407 {
    private void method35906() {
       this.field43642
          .accept(
-            Class5147.method15932(Blocks.field37115)
-               .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.field37115)))
+            Class5147.method15932(Blocks.COMPOSTER)
+               .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.COMPOSTER)))
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 1),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents1"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents1"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 2),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents2"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents2"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 3),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents3"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents3"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 4),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents4"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents4"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 5),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents5"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents5"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 6),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents6"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents6"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 7),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents7"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents7"))
                )
                .method15937(
                   Class5141.method15919().method15924(BlockStateProperties.field39752, 8),
-                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.field37115, "_contents_ready"))
+                  Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents_ready"))
                )
          );
    }
@@ -2139,29 +2139,29 @@ public class Class9407 {
    }
 
    private void method35908() {
-      ResourceLocation var3 = Class7287.method23042(Blocks.field36720, "_side");
+      ResourceLocation var3 = Class7287.method23042(Blocks.DAYLIGHT_DETECTOR, "_side");
       Class7287 var4 = new Class7287()
-         .method22991(Class9588.field44830, Class7287.method23042(Blocks.field36720, "_top"))
+         .method22991(Class9588.field44830, Class7287.method23042(Blocks.DAYLIGHT_DETECTOR, "_top"))
          .method22991(Class9588.field44833, var3);
       Class7287 var5 = new Class7287()
-         .method22991(Class9588.field44830, Class7287.method23042(Blocks.field36720, "_inverted_top"))
+         .method22991(Class9588.field44830, Class7287.method23042(Blocks.DAYLIGHT_DETECTOR, "_inverted_top"))
          .method22991(Class9588.field44833, var3);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36720)
+            Class5148.method15941(Blocks.DAYLIGHT_DETECTOR)
                .method15939(
                   Class3629.<Boolean>method12310(BlockStateProperties.field39697)
                      .method12320(
                         false,
                         Class5138.method15912()
-                           .method15911(Class6891.field29864, Class9756.field45592.method34805(Blocks.field36720, var4, this.field43643))
+                           .method15911(Class6891.field29864, Class9756.field45592.method34805(Blocks.DAYLIGHT_DETECTOR, var4, this.field43643))
                      )
                      .method12320(
                         true,
                         Class5138.method15912()
                            .method15911(
                               Class6891.field29864,
-                              Class9756.field45592.method34808(Class9060.method33722(Blocks.field36720, "_inverted"), var5, this.field43643)
+                              Class9756.field45592.method34808(Class9060.method33722(Blocks.DAYLIGHT_DETECTOR, "_inverted"), var5, this.field43643)
                            )
                      )
                )
@@ -2248,11 +2248,11 @@ public class Class9407 {
    }
 
    private void method35916() {
-      List var3 = this.method35911(Blocks.field36531);
-      List var4 = this.method35912(Blocks.field36531);
+      List var3 = this.method35911(Blocks.SOUL_FIRE);
+      List var4 = this.method35912(Blocks.SOUL_FIRE);
       this.field43642
          .accept(
-            Class5147.method15932(Blocks.field36531)
+            Class5147.method15932(Blocks.SOUL_FIRE)
                .method15933(method35914(var3, var0 -> var0))
                .method15933(method35914(var4, var0 -> var0))
                .method15933(method35914(var4, var0 -> var0.method15911(Class6891.field29863, Class2120.field13817)))
@@ -2271,28 +2271,28 @@ public class Class9407 {
    private void method35918() {
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36889)
+            Class5148.method15941(Blocks.FROSTED_ICE)
                .method15939(
                   Class3629.<Integer>method12310(BlockStateProperties.field39740)
                      .method12320(
                         0,
                         Class5138.method15912()
-                           .method15911(Class6891.field29864, this.method35837(Blocks.field36889, "_0", Class9756.field45537, Class7287::method22999))
+                           .method15911(Class6891.field29864, this.method35837(Blocks.FROSTED_ICE, "_0", Class9756.field45537, Class7287::method22999))
                      )
                      .method12320(
                         1,
                         Class5138.method15912()
-                           .method15911(Class6891.field29864, this.method35837(Blocks.field36889, "_1", Class9756.field45537, Class7287::method22999))
+                           .method15911(Class6891.field29864, this.method35837(Blocks.FROSTED_ICE, "_1", Class9756.field45537, Class7287::method22999))
                      )
                      .method12320(
                         2,
                         Class5138.method15912()
-                           .method15911(Class6891.field29864, this.method35837(Blocks.field36889, "_2", Class9756.field45537, Class7287::method22999))
+                           .method15911(Class6891.field29864, this.method35837(Blocks.FROSTED_ICE, "_2", Class9756.field45537, Class7287::method22999))
                      )
                      .method12320(
                         3,
                         Class5138.method15912()
-                           .method15911(Class6891.field29864, this.method35837(Blocks.field36889, "_3", Class9756.field45537, Class7287::method22999))
+                           .method15911(Class6891.field29864, this.method35837(Blocks.FROSTED_ICE, "_3", Class9756.field45537, Class7287::method22999))
                      )
                )
          );
@@ -2342,7 +2342,7 @@ public class Class9407 {
    }
 
    private void method35922() {
-      this.field43642.accept(method35814(Blocks.field36885, Class9060.method33723(Blocks.field36885)));
+      this.field43642.accept(method35814(Blocks.GRASS_PATH, Class9060.method33723(Blocks.GRASS_PATH)));
    }
 
    private void method35923(Block var1, Block var2) {
@@ -2513,14 +2513,14 @@ public class Class9407 {
    private void method35930() {
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36588)
+            Class5148.method15941(Blocks.NETHER_PORTAL)
                .method15939(
                   Class3629.<Direction.Axis>method12310(BlockStateProperties.field39712)
                      .method12320(
-                        Direction.Axis.X, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
+                        Direction.Axis.X, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.NETHER_PORTAL, "_ns"))
                      )
                      .method12320(
-                        Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
+                        Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.NETHER_PORTAL, "_ew"))
                      )
                )
          );
@@ -2580,9 +2580,9 @@ public class Class9407 {
    }
 
    private void method35932() {
-      ResourceLocation var3 = Class9060.method33723(Blocks.field36895);
-      ResourceLocation var4 = Class9060.method33722(Blocks.field36895, "_on");
-      this.field43642.accept(Class5148.method15941(Blocks.field36895).method15939(method35817(BlockStateProperties.POWERED, var4, var3)).method15939(method35813()));
+      ResourceLocation var3 = Class9060.method33723(Blocks.OBSERVER);
+      ResourceLocation var4 = Class9060.method33722(Blocks.OBSERVER, "_on");
+      this.field43642.accept(Class5148.method15941(Blocks.OBSERVER).method15939(method35817(BlockStateProperties.POWERED, var4, var3)).method15939(method35813()));
    }
 
    private void method35933() {
@@ -2650,16 +2650,16 @@ public class Class9407 {
    }
 
    private void method35936() {
-      ResourceLocation var3 = Class9060.method33722(Blocks.field37053, "_stable");
-      ResourceLocation var4 = Class9060.method33722(Blocks.field37053, "_unstable");
-      this.method35805(Blocks.field37053, var3);
-      this.field43642.accept(Class5148.method15941(Blocks.field37053).method15939(method35817(BlockStateProperties.field39683, var4, var3)));
+      ResourceLocation var3 = Class9060.method33722(Blocks.SCAFFOLDING, "_stable");
+      ResourceLocation var4 = Class9060.method33722(Blocks.SCAFFOLDING, "_unstable");
+      this.method35805(Blocks.SCAFFOLDING, var3);
+      this.field43642.accept(Class5148.method15941(Blocks.SCAFFOLDING).method15939(method35817(BlockStateProperties.field39683, var4, var3)));
    }
 
    private void method35937() {
-      ResourceLocation var3 = Class7524.field32271.method25591(Blocks.field36653, this.field43643);
-      ResourceLocation var4 = this.method35837(Blocks.field36653, "_on", Class9756.field45537, Class7287::method22999);
-      this.field43642.accept(Class5148.method15941(Blocks.field36653).method15939(method35817(BlockStateProperties.field39699, var4, var3)));
+      ResourceLocation var3 = Class7524.field32271.method25591(Blocks.REDSTONE_LAMP, this.field43643);
+      ResourceLocation var4 = this.method35837(Blocks.REDSTONE_LAMP, "_on", Class9756.field45537, Class7287::method22999);
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_LAMP).method15939(method35817(BlockStateProperties.field39699, var4, var3)));
    }
 
    private void method35938(Block var1, Block var2) {
@@ -2677,16 +2677,16 @@ public class Class9407 {
    }
 
    private void method35939() {
-      Class7287 var3 = Class7287.method23027(Blocks.field36568);
-      Class7287 var4 = Class7287.method23028(Class7287.method23042(Blocks.field36568, "_off"));
-      ResourceLocation var5 = Class9756.field45612.method34805(Blocks.field36568, var3, this.field43643);
-      ResourceLocation var6 = Class9756.field45612.method34806(Blocks.field36568, "_off", var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.field36568).method15939(method35817(BlockStateProperties.field39699, var5, var6)));
-      ResourceLocation var7 = Class9756.field45613.method34805(Blocks.field36569, var3, this.field43643);
-      ResourceLocation var8 = Class9756.field45613.method34806(Blocks.field36569, "_off", var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.field36569).method15939(method35817(BlockStateProperties.field39699, var7, var8)).method15939(method35812()));
-      this.method35808(Blocks.field36568);
-      this.method35804(Blocks.field36569);
+      Class7287 var3 = Class7287.method23027(Blocks.REDSTONE_TORCH);
+      Class7287 var4 = Class7287.method23028(Class7287.method23042(Blocks.REDSTONE_TORCH, "_off"));
+      ResourceLocation var5 = Class9756.field45612.method34805(Blocks.REDSTONE_TORCH, var3, this.field43643);
+      ResourceLocation var6 = Class9756.field45612.method34806(Blocks.REDSTONE_TORCH, "_off", var4, this.field43643);
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_TORCH).method15939(method35817(BlockStateProperties.field39699, var5, var6)));
+      ResourceLocation var7 = Class9756.field45613.method34805(Blocks.REDSTONE_WALL_TORCH, var3, this.field43643);
+      ResourceLocation var8 = Class9756.field45613.method34806(Blocks.REDSTONE_WALL_TORCH, "_off", var4, this.field43643);
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_WALL_TORCH).method15939(method35817(BlockStateProperties.field39699, var7, var8)).method15939(method35812()));
+      this.method35808(Blocks.REDSTONE_TORCH);
+      this.method35804(Blocks.REDSTONE_WALL_TORCH);
    }
 
    private void method35940() {
@@ -2718,7 +2718,7 @@ public class Class9407 {
       this.method35807(Items.field37315);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field37005)
+            Class5148.method15941(Blocks.SEA_PICKLE)
                .method15939(
                   Class3629.<Integer, Boolean>method12311(BlockStateProperties.field39758, BlockStateProperties.WATERLOGGED)
                      .method12299(1, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("dead_sea_pickle"))))
@@ -3138,11 +3138,11 @@ public class Class9407 {
    private ResourceLocation method35949(Integer var1, Integer var2) {
       switch (var2) {
          case 0:
-            return this.method35948(var1, "", Class7287.method22999(Class7287.method23041(Blocks.field36964)));
+            return this.method35948(var1, "", Class7287.method22999(Class7287.method23041(Blocks.TURTLE_EGG)));
          case 1:
-            return this.method35948(var1, "slightly_cracked_", Class7287.method22999(Class7287.method23042(Blocks.field36964, "_slightly_cracked")));
+            return this.method35948(var1, "slightly_cracked_", Class7287.method22999(Class7287.method23042(Blocks.TURTLE_EGG, "_slightly_cracked")));
          case 2:
-            return this.method35948(var1, "very_cracked_", Class7287.method22999(Class7287.method23042(Blocks.field36964, "_very_cracked")));
+            return this.method35948(var1, "very_cracked_", Class7287.method22999(Class7287.method23042(Blocks.TURTLE_EGG, "_very_cracked")));
          default:
             throw new UnsupportedOperationException();
       }
@@ -3152,7 +3152,7 @@ public class Class9407 {
       this.method35807(Items.field37718);
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field36964)
+            Class5148.method15941(Blocks.TURTLE_EGG)
                .method15939(
                   Class3629.<Integer, Integer>method12311(BlockStateProperties.field39748, BlockStateProperties.field39749)
                      .method12302((var1, var2) -> Arrays.<Class5138>asList(method35815(this.method35949(var1, var2))))
@@ -3473,8 +3473,8 @@ public class Class9407 {
       this.field43642
          .accept(
             method35829(
-               Blocks.field36890,
-               Class9756.field45537.method34805(Blocks.field36890, Class7287.method22999(Class9060.method33720("magma")), this.field43643)
+               Blocks.MAGMA_BLOCK,
+               Class9756.field45537.method34805(Blocks.MAGMA_BLOCK, Class7287.method22999(Class9060.method33720("magma")), this.field43643)
             )
          );
    }
@@ -3496,8 +3496,8 @@ public class Class9407 {
    private void method35956() {
       ResourceLocation var3 = Class9060.method33723(Blocks.STONE);
       ResourceLocation var4 = Class9060.method33722(Blocks.STONE, "_mirrored");
-      this.field43642.accept(method35816(Blocks.field36619, var3, var4));
-      this.method35805(Blocks.field36619, var3);
+      this.field43642.accept(method35816(Blocks.INFESTED_STONE, var3, var4));
+      this.method35805(Blocks.INFESTED_STONE, var3);
    }
 
    private void method35957(Block var1, Block var2) {
@@ -3508,22 +3508,22 @@ public class Class9407 {
    }
 
    private void method35958() {
-      ResourceLocation var3 = Class7287.method23042(Blocks.field37124, "_bottom");
-      ResourceLocation var4 = Class7287.method23042(Blocks.field37124, "_top_off");
-      ResourceLocation var5 = Class7287.method23042(Blocks.field37124, "_top");
+      ResourceLocation var3 = Class7287.method23042(Blocks.RESPAWN_ANCHOR, "_bottom");
+      ResourceLocation var4 = Class7287.method23042(Blocks.RESPAWN_ANCHOR, "_top_off");
+      ResourceLocation var5 = Class7287.method23042(Blocks.RESPAWN_ANCHOR, "_top");
       ResourceLocation[] var6 = new ResourceLocation[5];
 
       for (int var7 = 0; var7 < 5; var7++) {
          Class7287 var8 = new Class7287()
             .method22991(Class9588.field44829, var3)
             .method22991(Class9588.field44830, var7 != 0 ? var5 : var4)
-            .method22991(Class9588.field44833, Class7287.method23042(Blocks.field37124, "_side" + var7));
-         var6[var7] = Class9756.field45542.method34806(Blocks.field37124, "_" + var7, var8, this.field43643);
+            .method22991(Class9588.field44833, Class7287.method23042(Blocks.RESPAWN_ANCHOR, "_side" + var7));
+         var6[var7] = Class9756.field45542.method34806(Blocks.RESPAWN_ANCHOR, "_" + var7, var8, this.field43643);
       }
 
       this.field43642
          .accept(
-            Class5148.method15941(Blocks.field37124)
+            Class5148.method15941(Blocks.RESPAWN_ANCHOR)
                .method15939(
                   Class3629.<Integer>method12310(BlockStateProperties.field39762)
                      .method12321(var1 -> Class5138.method15912().method15911(Class6891.field29864, var6[var1]))
@@ -3590,8 +3590,8 @@ public class Class9407 {
       this.method35852(Blocks.VOID_AIR, Blocks.AIR);
       this.method35851(Blocks.BEACON);
       this.method35851(Blocks.CACTUS);
-      this.method35852(Blocks.field37013, Blocks.WATER);
-      this.method35851(Blocks.field36652);
+      this.method35852(Blocks.BUBBLE_COLUMN, Blocks.WATER);
+      this.method35851(Blocks.DRAGON_EGG);
       this.method35851(Blocks.field36963);
       this.method35851(Blocks.ENCHANTING_TABLE);
       this.method35851(Blocks.FLOWER_POT);
@@ -3599,41 +3599,41 @@ public class Class9407 {
       this.method35851(Blocks.field37119);
       this.method35851(Blocks.WATER);
       this.method35851(Blocks.LAVA);
-      this.method35851(Blocks.field36764);
+      this.method35851(Blocks.SLIME_BLOCK);
       this.method35807(Items.field37470);
-      this.method35851(Blocks.field37010);
-      this.method35851(Blocks.field36692);
+      this.method35851(Blocks.POTTED_BAMBOO);
+      this.method35851(Blocks.POTTED_CACTUS);
       this.method35869(Blocks.BARRIER, Items.BARRIER);
       this.method35807(Items.BARRIER);
-      this.method35869(Blocks.field36894, Items.field37651);
+      this.method35869(Blocks.STRUCTURE_VOID, Items.field37651);
       this.method35807(Items.field37651);
       this.method35870(Blocks.MOVING_PISTON, Class7287.method23042(Blocks.PISTON, "_side"));
-      this.method35841(Blocks.field36420, Class7524.field32271);
+      this.method35841(Blocks.COAL_ORE, Class7524.field32271);
       this.method35841(Blocks.field36795, Class7524.field32271);
-      this.method35841(Blocks.field36536, Class7524.field32271);
+      this.method35841(Blocks.DIAMOND_ORE, Class7524.field32271);
       this.method35841(Blocks.field36537, Class7524.field32271);
       this.method35841(Blocks.EMERALD_ORE, Class7524.field32271);
       this.method35841(Blocks.EMERALD_BLOCK, Class7524.field32271);
-      this.method35841(Blocks.field36418, Class7524.field32271);
-      this.method35841(Blocks.field36421, Class7524.field32271);
+      this.method35841(Blocks.GOLD_ORE, Class7524.field32271);
+      this.method35841(Blocks.NETHER_GOLD_ORE, Class7524.field32271);
       this.method35841(Blocks.field36521, Class7524.field32271);
-      this.method35841(Blocks.field36419, Class7524.field32271);
+      this.method35841(Blocks.IRON_ORE, Class7524.field32271);
       this.method35841(Blocks.field36522, Class7524.field32271);
       this.method35841(Blocks.field37122, Class7524.field32273);
       this.method35841(Blocks.field37121, Class7524.field32271);
-      this.method35841(Blocks.field36455, Class7524.field32271);
+      this.method35841(Blocks.LAPIS_ORE, Class7524.field32271);
       this.method35841(Blocks.field36456, Class7524.field32271);
-      this.method35841(Blocks.field36722, Class7524.field32271);
+      this.method35841(Blocks.NETHER_QUARTZ_ORE, Class7524.field32271);
       this.method35841(Blocks.REDSTONE_ORE, Class7524.field32271);
-      this.method35841(Blocks.field36721, Class7524.field32271);
+      this.method35841(Blocks.REDSTONE_BLOCK, Class7524.field32271);
       this.method35841(Blocks.field37141, Class7524.field32271);
-      this.method35841(Blocks.field37006, Class7524.field32271);
+      this.method35841(Blocks.BLUE_ICE, Class7524.field32271);
       this.method35841(Blocks.field37147, Class7524.field32271);
       this.method35841(Blocks.CLAY, Class7524.field32271);
       this.method35841(Blocks.COARSE_DIRT, Class7524.field32271);
       this.method35841(Blocks.field37148, Class7524.field32271);
       this.method35841(Blocks.field36617, Class7524.field32271);
-      this.method35841(Blocks.field37123, Class7524.field32271);
+      this.method35841(Blocks.CRYING_OBSIDIAN, Class7524.field32271);
       this.method35841(Blocks.field36651, Class7524.field32271);
       this.method35841(Blocks.field36587, Class7524.field32271);
       this.method35841(Blocks.GRAVEL, Class7524.field32271);
@@ -3651,14 +3651,14 @@ public class Class9407 {
       this.method35841(Blocks.field37085, Class7524.field32271);
       this.method35841(Blocks.SOUL_SAND, Class7524.field32271);
       this.method35841(Blocks.SOUL_SOIL, Class7524.field32271);
-      this.method35841(Blocks.field36532, Class7524.field32271);
-      this.method35841(Blocks.field36452, Class7524.field32271);
+      this.method35841(Blocks.SPAWNER, Class7524.field32271);
+      this.method35841(Blocks.SPONGE, Class7524.field32271);
       this.method35841(Blocks.SEAGRASS, Class7524.field32287);
       this.method35807(Items.field37314);
       this.method35841(Blocks.TNT, Class7524.field32275);
-      this.method35841(Blocks.field37116, Class7524.field32273);
+      this.method35841(Blocks.TARGET, Class7524.field32273);
       this.method35841(Blocks.field37076, Class7524.field32271);
-      this.method35841(Blocks.field36453, Class7524.field32271);
+      this.method35841(Blocks.WET_SPONGE, Class7524.field32271);
       this.method35841(Blocks.field37136, Class7524.field32271);
       this.method35841(
          Blocks.field36725, Class7524.field32273.method25593(var0 -> var0.method22991(Class9588.field44833, Class7287.method23041(Blocks.field36725)))
@@ -3680,7 +3680,7 @@ public class Class9407 {
       this.method35906();
       this.method35908();
       this.method35904();
-      this.method35909(Blocks.field36877);
+      this.method35909(Blocks.END_ROD);
       this.method35910();
       this.method35915();
       this.method35916();
@@ -3718,11 +3718,11 @@ public class Class9407 {
       this.method35808(Blocks.LADDER);
       this.method35927(Blocks.LECTERN);
       this.method35938(Blocks.TORCH, Blocks.WALL_TORCH);
-      this.method35938(Blocks.field36585, Blocks.field36586);
+      this.method35938(Blocks.SOUL_TORCH, Blocks.SOUL_WALL_TORCH);
       this.method35897(Blocks.CRAFTING_TABLE, Blocks.field36400, Class7287::method23035);
       this.method35897(Blocks.FLETCHING_TABLE, Blocks.field36402, Class7287::method23036);
-      this.method35907(Blocks.field37083);
-      this.method35907(Blocks.field37074);
+      this.method35907(Blocks.CRIMSON_NYLIUM);
+      this.method35907(Blocks.WARPED_NYLIUM);
       this.method35903(Blocks.DISPENSER);
       this.method35903(Blocks.DROPPER);
       this.method35917(Blocks.LANTERN);
@@ -3730,60 +3730,60 @@ public class Class9407 {
       this.method35832(Blocks.CHAIN, Class9060.method33723(Blocks.CHAIN));
       this.method35833(Blocks.BASALT, Class7524.field32273);
       this.method35833(Blocks.POLISHED_BASALT, Class7524.field32273);
-      this.method35833(Blocks.field36893, Class7524.field32273);
+      this.method35833(Blocks.BONE_BLOCK, Class7524.field32273);
       this.method35819(Blocks.DIRT);
       this.method35819(Blocks.SAND);
       this.method35819(Blocks.RED_SAND);
       this.method35818(Blocks.BEDROCK);
-      this.method35836(Blocks.field36777, Class7524.field32273, Class7524.field32274);
-      this.method35836(Blocks.field36881, Class7524.field32288, Class7524.field32289);
-      this.method35836(Blocks.field36726, Class7524.field32288, Class7524.field32289);
+      this.method35836(Blocks.HAY_BLOCK, Class7524.field32273, Class7524.field32274);
+      this.method35836(Blocks.PURPUR_PILLAR, Class7524.field32288, Class7524.field32289);
+      this.method35836(Blocks.QUARTZ_PILLAR, Class7524.field32288, Class7524.field32289);
       this.method35834(Blocks.LOOM, Class7524.field32278);
       this.method35898();
-      this.method35882(Blocks.field37117, Class7287::method23031);
-      this.method35882(Blocks.field37118, Class7287::method23033);
-      this.method35883(Blocks.field36884, BlockStateProperties.field39740, 0, 1, 2, 3);
-      this.method35883(Blocks.field36693, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35882(Blocks.BEE_NEST, Class7287::method23031);
+      this.method35882(Blocks.BEEHIVE, Class7287::method23033);
+      this.method35883(Blocks.BEETROOTS, BlockStateProperties.field39740, 0, 1, 2, 3);
+      this.method35883(Blocks.CARROTS, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
       this.method35883(Blocks.NETHER_WART, BlockStateProperties.field39740, 0, 1, 1, 2);
-      this.method35883(Blocks.field36694, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
-      this.method35883(Blocks.field36539, BlockStateProperties.field39742, 0, 1, 2, 3, 4, 5, 6, 7);
+      this.method35883(Blocks.POTATOES, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.WHEAT, BlockStateProperties.field39742, 0, 1, 2, 3, 4, 5, 6, 7);
       this.method35867(Class9060.method33720("banner"), Blocks.field36400)
          .method26608(
             Class9756.field45628,
-            Blocks.field36803,
-            Blocks.field36804,
-            Blocks.field36805,
-            Blocks.field36806,
-            Blocks.field36807,
-            Blocks.field36808,
-            Blocks.field36809,
-            Blocks.field36810,
-            Blocks.field36811,
-            Blocks.field36812,
-            Blocks.field36813,
-            Blocks.field36814,
-            Blocks.field36815,
-            Blocks.field36816,
-            Blocks.field36817,
-            Blocks.field36818
+            Blocks.WHITE_BANNER,
+            Blocks.ORANGE_BANNER,
+            Blocks.MAGENTA_BANNER,
+            Blocks.LIGHT_BLUE_BANNER,
+            Blocks.YELLOW_BANNER,
+            Blocks.LIME_BANNER,
+            Blocks.PINK_BANNER,
+            Blocks.GRAY_BANNER,
+            Blocks.LIGHT_GRAY_BANNER,
+            Blocks.CYAN_BANNER,
+            Blocks.PURPLE_BANNER,
+            Blocks.BLUE_BANNER,
+            Blocks.BROWN_BANNER,
+            Blocks.GREEN_BANNER,
+            Blocks.RED_BANNER,
+            Blocks.BLACK_BANNER
          )
          .method26607(
-            Blocks.field36819,
-            Blocks.field36820,
-            Blocks.field36821,
-            Blocks.field36822,
-            Blocks.field36823,
-            Blocks.field36824,
-            Blocks.field36825,
-            Blocks.field36826,
-            Blocks.field36827,
-            Blocks.field36828,
-            Blocks.field36829,
-            Blocks.field36830,
-            Blocks.field36831,
-            Blocks.field36832,
-            Blocks.field36833,
-            Blocks.field36834
+            Blocks.WHITE_WALL_BANNER,
+            Blocks.ORANGE_WALL_BANNER,
+            Blocks.MAGENTA_WALL_BANNER,
+            Blocks.LIGHT_BLUE_WALL_BANNER,
+            Blocks.YELLOW_WALL_BANNER,
+            Blocks.LIME_WALL_BANNER,
+            Blocks.PINK_WALL_BANNER,
+            Blocks.GRAY_WALL_BANNER,
+            Blocks.LIGHT_GRAY_WALL_BANNER,
+            Blocks.CYAN_WALL_BANNER,
+            Blocks.PURPLE_WALL_BANNER,
+            Blocks.BLUE_WALL_BANNER,
+            Blocks.BROWN_WALL_BANNER,
+            Blocks.GREEN_WALL_BANNER,
+            Blocks.RED_WALL_BANNER,
+            Blocks.BLACK_WALL_BANNER
          );
       this.method35867(Class9060.method33720("bed"), Blocks.field36400)
          .method26607(
@@ -3821,9 +3821,9 @@ public class Class9407 {
       this.method35955(Blocks.RED_BED, Blocks.RED_WOOL);
       this.method35955(Blocks.BLACK_BED, Blocks.BLACK_WOOL);
       this.method35867(Class9060.method33720("skull"), Blocks.SOUL_SAND)
-         .method26608(Class9756.field45629, Blocks.field36709, Blocks.field36707, Blocks.field36705, Blocks.field36701, Blocks.field36703)
+         .method26608(Class9756.field45629, Blocks.CREEPER_HEAD, Blocks.PLAYER_HEAD, Blocks.ZOMBIE_HEAD, Blocks.SKELETON_SKULL, Blocks.WITHER_SKELETON_SKULL)
          .method26606(Blocks.DRAGON_HEAD)
-         .method26607(Blocks.field36710, Blocks.DRAGON_WALL_HEAD, Blocks.field36708, Blocks.field36706, Blocks.field36702, Blocks.field36704);
+         .method26607(Blocks.CREEPER_WALL_HEAD, Blocks.DRAGON_WALL_HEAD, Blocks.PLAYER_WALL_HEAD, Blocks.ZOMBIE_WALL_HEAD, Blocks.SKELETON_WALL_SKULL, Blocks.WITHER_SKELETON_WALL_SKULL);
       this.method35953(Blocks.field36896);
       this.method35953(Blocks.field36897);
       this.method35953(Blocks.field36898);
@@ -3841,11 +3841,11 @@ public class Class9407 {
       this.method35953(Blocks.field36910);
       this.method35953(Blocks.field36911);
       this.method35953(Blocks.field36912);
-      this.method35841(Blocks.field37007, Class7524.field32282);
-      this.method35804(Blocks.field37007);
+      this.method35841(Blocks.CONDUIT, Class7524.field32282);
+      this.method35804(Blocks.CONDUIT);
       this.method35867(Class9060.method33720("chest"), Blocks.field36400).method26607(Blocks.CHEST, Blocks.TRAPPED_CHEST);
       this.method35867(Class9060.method33720("ender_chest"), Blocks.field36527).method26607(Blocks.ENDER_CHEST);
-      this.method35868(Blocks.field36649, Blocks.field36527).method26606(Blocks.field36649, Blocks.field36886);
+      this.method35868(Blocks.END_PORTAL, Blocks.field36527).method26606(Blocks.END_PORTAL, Blocks.END_GATEWAY);
       this.method35840(Blocks.field36929);
       this.method35840(Blocks.field36930);
       this.method35840(Blocks.field36931);
@@ -3864,22 +3864,22 @@ public class Class9407 {
       this.method35840(Blocks.field36944);
       this.method35872(
          Class7524.field32271,
-         Blocks.field36945,
-         Blocks.field36946,
-         Blocks.field36947,
-         Blocks.field36948,
-         Blocks.field36949,
-         Blocks.field36950,
-         Blocks.field36951,
-         Blocks.field36952,
-         Blocks.field36953,
-         Blocks.field36954,
-         Blocks.field36955,
-         Blocks.field36956,
-         Blocks.field36957,
-         Blocks.field36958,
-         Blocks.field36959,
-         Blocks.field36960
+         Blocks.WHITE_CONCRETE_POWDER,
+         Blocks.ORANGE_CONCRETE_POWDER,
+         Blocks.MAGENTA_CONCRETE_POWDER,
+         Blocks.LIGHT_BLUE_CONCRETE_POWDER,
+         Blocks.YELLOW_CONCRETE_POWDER,
+         Blocks.LIME_CONCRETE_POWDER,
+         Blocks.PINK_CONCRETE_POWDER,
+         Blocks.GRAY_CONCRETE_POWDER,
+         Blocks.LIGHT_GRAY_CONCRETE_POWDER,
+         Blocks.CYAN_CONCRETE_POWDER,
+         Blocks.PURPLE_CONCRETE_POWDER,
+         Blocks.BLUE_CONCRETE_POWDER,
+         Blocks.BROWN_CONCRETE_POWDER,
+         Blocks.GREEN_CONCRETE_POWDER,
+         Blocks.RED_CONCRETE_POWDER,
+         Blocks.BLACK_CONCRETE_POWDER
       );
       this.method35840(Blocks.field36794);
       this.method35840(Blocks.field36730);
@@ -3898,41 +3898,41 @@ public class Class9407 {
       this.method35840(Blocks.field36743);
       this.method35840(Blocks.field36744);
       this.method35840(Blocks.field36745);
-      this.method35874(Blocks.field36454, Blocks.GLASS_PANE);
-      this.method35874(Blocks.field36593, Blocks.field36746);
-      this.method35874(Blocks.field36594, Blocks.field36747);
-      this.method35874(Blocks.field36595, Blocks.field36748);
-      this.method35874(Blocks.field36596, Blocks.field36749);
-      this.method35874(Blocks.field36597, Blocks.field36750);
-      this.method35874(Blocks.field36598, Blocks.field36751);
-      this.method35874(Blocks.field36599, Blocks.field36752);
-      this.method35874(Blocks.field36600, Blocks.field36753);
-      this.method35874(Blocks.field36601, Blocks.field36754);
-      this.method35874(Blocks.field36602, Blocks.field36755);
-      this.method35874(Blocks.field36603, Blocks.field36756);
-      this.method35874(Blocks.field36604, Blocks.field36757);
-      this.method35874(Blocks.field36605, Blocks.field36758);
-      this.method35874(Blocks.field36606, Blocks.field36759);
-      this.method35874(Blocks.field36607, Blocks.field36760);
-      this.method35874(Blocks.field36608, Blocks.field36761);
+      this.method35874(Blocks.GLASS, Blocks.GLASS_PANE);
+      this.method35874(Blocks.field36593, Blocks.WHITE_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36594, Blocks.ORANGE_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36595, Blocks.MAGENTA_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36596, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36597, Blocks.YELLOW_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36598, Blocks.LIME_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36599, Blocks.PINK_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36600, Blocks.GRAY_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36601, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36602, Blocks.CYAN_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36603, Blocks.PURPLE_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36604, Blocks.BLUE_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36605, Blocks.BROWN_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36606, Blocks.GREEN_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36607, Blocks.RED_STAINED_GLASS_PANE);
+      this.method35874(Blocks.field36608, Blocks.BLACK_STAINED_GLASS_PANE);
       this.method35873(
          Class7524.field32280,
-         Blocks.field36913,
-         Blocks.field36914,
-         Blocks.field36915,
-         Blocks.field36916,
-         Blocks.field36917,
-         Blocks.field36918,
-         Blocks.field36919,
-         Blocks.field36920,
-         Blocks.field36921,
-         Blocks.field36922,
-         Blocks.field36923,
-         Blocks.field36924,
-         Blocks.field36925,
-         Blocks.field36926,
-         Blocks.field36927,
-         Blocks.field36928
+         Blocks.WHITE_GLAZED_TERRACOTTA,
+         Blocks.ORANGE_GLAZED_TERRACOTTA,
+         Blocks.MAGENTA_GLAZED_TERRACOTTA,
+         Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA,
+         Blocks.YELLOW_GLAZED_TERRACOTTA,
+         Blocks.LIME_GLAZED_TERRACOTTA,
+         Blocks.PINK_GLAZED_TERRACOTTA,
+         Blocks.GRAY_GLAZED_TERRACOTTA,
+         Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA,
+         Blocks.CYAN_GLAZED_TERRACOTTA,
+         Blocks.PURPLE_GLAZED_TERRACOTTA,
+         Blocks.BLUE_GLAZED_TERRACOTTA,
+         Blocks.BROWN_GLAZED_TERRACOTTA,
+         Blocks.GREEN_GLAZED_TERRACOTTA,
+         Blocks.RED_GLAZED_TERRACOTTA,
+         Blocks.BLACK_GLAZED_TERRACOTTA
       );
       this.method35871(Blocks.WHITE_WOOL, Blocks.WHITE_CARPET);
       this.method35871(Blocks.ORANGE_WOOL, Blocks.ORANGE_CARPET);
@@ -3950,232 +3950,232 @@ public class Class9407 {
       this.method35871(Blocks.GREEN_WOOL, Blocks.GREEN_CARPET);
       this.method35871(Blocks.RED_WOOL, Blocks.RED_CARPET);
       this.method35871(Blocks.BLACK_WOOL, Blocks.BLACK_CARPET);
-      this.method35857(Blocks.FERN, Blocks.field36675, Class1958.field12762);
-      this.method35857(Blocks.DANDELION, Blocks.field36676, Class1958.field12763);
-      this.method35857(Blocks.POPPY, Blocks.field36677, Class1958.field12763);
-      this.method35857(Blocks.BLUE_ORCHID, Blocks.field36678, Class1958.field12763);
-      this.method35857(Blocks.ALLIUM, Blocks.field36679, Class1958.field12763);
-      this.method35857(Blocks.AZURE_BLUET, Blocks.field36680, Class1958.field12763);
-      this.method35857(Blocks.RED_TULIP, Blocks.field36681, Class1958.field12763);
-      this.method35857(Blocks.ORANGE_TULIP, Blocks.field36682, Class1958.field12763);
-      this.method35857(Blocks.WHITE_TULIP, Blocks.field36683, Class1958.field12763);
-      this.method35857(Blocks.PINK_TULIP, Blocks.field36684, Class1958.field12763);
-      this.method35857(Blocks.OXEYE_DAISY, Blocks.field36685, Class1958.field12763);
-      this.method35857(Blocks.CORNFLOWER, Blocks.field36686, Class1958.field12763);
-      this.method35857(Blocks.LILY_OF_THE_VALLEY, Blocks.field36687, Class1958.field12763);
-      this.method35857(Blocks.WITHER_ROSE, Blocks.field36688, Class1958.field12763);
-      this.method35857(Blocks.RED_MUSHROOM, Blocks.field36689, Class1958.field12763);
-      this.method35857(Blocks.BROWN_MUSHROOM, Blocks.field36690, Class1958.field12763);
-      this.method35857(Blocks.DEAD_BUSH, Blocks.field36691, Class1958.field12763);
+      this.method35857(Blocks.FERN, Blocks.POTTED_FERN, Class1958.field12762);
+      this.method35857(Blocks.DANDELION, Blocks.POTTED_DANDELION, Class1958.field12763);
+      this.method35857(Blocks.POPPY, Blocks.POTTED_POPPY, Class1958.field12763);
+      this.method35857(Blocks.BLUE_ORCHID, Blocks.POTTED_BLUE_ORCHID, Class1958.field12763);
+      this.method35857(Blocks.ALLIUM, Blocks.POTTED_ALLIUM, Class1958.field12763);
+      this.method35857(Blocks.AZURE_BLUET, Blocks.POTTED_AZURE_BLUET, Class1958.field12763);
+      this.method35857(Blocks.RED_TULIP, Blocks.POTTED_RED_TULIP, Class1958.field12763);
+      this.method35857(Blocks.ORANGE_TULIP, Blocks.POTTED_ORANGE_TULIP, Class1958.field12763);
+      this.method35857(Blocks.WHITE_TULIP, Blocks.POTTED_WHITE_TULIP, Class1958.field12763);
+      this.method35857(Blocks.PINK_TULIP, Blocks.POTTED_PINK_TULIP, Class1958.field12763);
+      this.method35857(Blocks.OXEYE_DAISY, Blocks.POTTED_OXEYE_DAISY, Class1958.field12763);
+      this.method35857(Blocks.CORNFLOWER, Blocks.POTTED_CORNFLOWER, Class1958.field12763);
+      this.method35857(Blocks.LILY_OF_THE_VALLEY, Blocks.POTTED_LILY_OF_THE_VALLEY, Class1958.field12763);
+      this.method35857(Blocks.WITHER_ROSE, Blocks.POTTED_WITHER_ROSE, Class1958.field12763);
+      this.method35857(Blocks.RED_MUSHROOM, Blocks.POTTED_RED_MUSHROOM, Class1958.field12763);
+      this.method35857(Blocks.BROWN_MUSHROOM, Blocks.POTTED_BROWN_MUSHROOM, Class1958.field12763);
+      this.method35857(Blocks.DEAD_BUSH, Blocks.POTTED_DEAD_BUSH, Class1958.field12763);
       this.method35893(Blocks.BROWN_MUSHROOM_BLOCK);
       this.method35893(Blocks.RED_MUSHROOM_BLOCK);
       this.method35893(Blocks.MUSHROOM_STEM);
       this.method35853(Blocks.GRASS, Class1958.field12762);
       this.method35855(Blocks.SUGAR_CANE, Class1958.field12762);
       this.method35807(Items.field37355);
-      this.method35954(Blocks.field36961, Blocks.field36962, Class1958.field12762);
+      this.method35954(Blocks.KELP, Blocks.KELP_PLANT, Class1958.field12762);
       this.method35807(Items.field37356);
-      this.method35804(Blocks.field36962);
-      this.method35954(Blocks.field37086, Blocks.field37087, Class1958.field12763);
-      this.method35954(Blocks.field37088, Blocks.field37089, Class1958.field12763);
-      this.method35809(Blocks.field37086, "_plant");
-      this.method35804(Blocks.field37087);
-      this.method35809(Blocks.field37088, "_plant");
-      this.method35804(Blocks.field37089);
-      this.method35854(Blocks.field37008, Class1958.field12762, Class7287.method23001(Class7287.method23042(Blocks.field37009, "_stage0")));
+      this.method35804(Blocks.KELP_PLANT);
+      this.method35954(Blocks.WEEPING_VINES, Blocks.WEEPING_VINES_PLANT, Class1958.field12763);
+      this.method35954(Blocks.TWISTING_VINES, Blocks.TWISTING_VINES_PLANT, Class1958.field12763);
+      this.method35809(Blocks.WEEPING_VINES, "_plant");
+      this.method35804(Blocks.WEEPING_VINES_PLANT);
+      this.method35809(Blocks.TWISTING_VINES, "_plant");
+      this.method35804(Blocks.TWISTING_VINES_PLANT);
+      this.method35854(Blocks.BAMBOO_SAPLING, Class1958.field12762, Class7287.method23001(Class7287.method23042(Blocks.BAMBOO, "_stage0")));
       this.method35878();
       this.method35853(Blocks.COBWEB, Class1958.field12763);
       this.method35861(Blocks.LILAC, Class1958.field12763);
       this.method35861(Blocks.ROSE_BUSH, Class1958.field12763);
-      this.method35861(Blocks.field36800, Class1958.field12763);
+      this.method35861(Blocks.PEONY, Class1958.field12763);
       this.method35861(Blocks.TALL_GRASS, Class1958.field12762);
-      this.method35861(Blocks.field36802, Class1958.field12762);
+      this.method35861(Blocks.LARGE_FERN, Class1958.field12762);
       this.method35862();
       this.method35863();
       this.method35860(
-         Blocks.field36980,
-         Blocks.field36975,
-         Blocks.field36970,
+         Blocks.TUBE_CORAL,
+         Blocks.DEAD_TUBE_CORAL,
+         Blocks.TUBE_CORAL_BLOCK,
          Blocks.field36965,
-         Blocks.field36990,
-         Blocks.field36985,
-         Blocks.field37000,
-         Blocks.field36995
+         Blocks.TUBE_CORAL_FAN,
+         Blocks.DEAD_TUBE_CORAL_FAN,
+         Blocks.TUBE_CORAL_WALL_FAN,
+         Blocks.DEAD_TUBE_CORAL_WALL_FAN
       );
       this.method35860(
-         Blocks.field36981,
-         Blocks.field36976,
-         Blocks.field36971,
+         Blocks.BRAIN_CORAL,
+         Blocks.DEAD_BRAIN_CORAL,
+         Blocks.BRAIN_CORAL_BLOCK,
          Blocks.field36966,
-         Blocks.field36991,
-         Blocks.field36986,
-         Blocks.field37001,
-         Blocks.field36996
+         Blocks.BRAIN_CORAL_FAN,
+         Blocks.DEAD_BRAIN_CORAL_FAN,
+         Blocks.BRAIN_CORAL_WALL_FAN,
+         Blocks.DEAD_BRAIN_CORAL_WALL_FAN
       );
       this.method35860(
-         Blocks.field36982,
-         Blocks.field36977,
-         Blocks.field36972,
+         Blocks.BUBBLE_CORAL,
+         Blocks.DEAD_BUBBLE_CORAL,
+         Blocks.BUBBLE_CORAL_BLOCK,
          Blocks.field36967,
-         Blocks.field36992,
-         Blocks.field36987,
-         Blocks.field37002,
-         Blocks.field36997
+         Blocks.BUBBLE_CORAL_FAN,
+         Blocks.DEAD_BUBBLE_CORAL_FAN,
+         Blocks.BUBBLE_CORAL_WALL_FAN,
+         Blocks.DEAD_BUBBLE_CORAL_WALL_FAN
       );
       this.method35860(
-         Blocks.field36983,
-         Blocks.field36978,
-         Blocks.field36973,
+         Blocks.FIRE_CORAL,
+         Blocks.DEAD_FIRE_CORAL,
+         Blocks.FIRE_CORAL_BLOCK,
          Blocks.field36968,
-         Blocks.field36993,
-         Blocks.field36988,
-         Blocks.field37003,
-         Blocks.field36998
+         Blocks.FIRE_CORAL_FAN,
+         Blocks.DEAD_FIRE_CORAL_FAN,
+         Blocks.FIRE_CORAL_WALL_FAN,
+         Blocks.DEAD_FIRE_CORAL_WALL_FAN
       );
       this.method35860(
-         Blocks.field36984,
-         Blocks.field36979,
-         Blocks.field36974,
+         Blocks.HORN_CORAL,
+         Blocks.DEAD_HORN_CORAL,
+         Blocks.HORN_CORAL_BLOCK,
          Blocks.field36969,
-         Blocks.field36994,
-         Blocks.field36989,
-         Blocks.field37004,
-         Blocks.field36999
+         Blocks.HORN_CORAL_FAN,
+         Blocks.DEAD_HORN_CORAL_FAN,
+         Blocks.HORN_CORAL_WALL_FAN,
+         Blocks.DEAD_HORN_CORAL_WALL_FAN
       );
       this.method35859(Blocks.MELON_STEM, Blocks.ATTACHED_MELON_STEM);
       this.method35859(Blocks.PUMPKIN_STEM, Blocks.ATTACHED_PUMPKIN_STEM);
       this.method35845(Blocks.field36404)
          .method31167(Blocks.field36699)
-         .method31169(Blocks.field36870)
+         .method31169(Blocks.ACACIA_FENCE)
          .method31170(Blocks.field36865)
-         .method31171(Blocks.field36565)
+         .method31171(Blocks.ACACIA_PRESSURE_PLATE)
          .method31172(Blocks.ACACIA_SIGN, Blocks.ACACIA_WALL_SIGN)
          .method31173(Blocks.field36843)
          .method31174(Blocks.field36762);
       this.method35847(Blocks.field36875);
       this.method35848(Blocks.ACACIA_TRAPDOOR);
-      this.method35850(Blocks.field36426).method36613(Blocks.field36426).method36611(Blocks.field36438);
-      this.method35850(Blocks.field36431).method36613(Blocks.field36431).method36611(Blocks.field36444);
-      this.method35857(Blocks.ACACIA_SAPLING, Blocks.field36673, Class1958.field12763);
+      this.method35850(Blocks.ACACIA_LOG).method36613(Blocks.ACACIA_LOG).method36611(Blocks.ACACIA_WOOD);
+      this.method35850(Blocks.STRIPPED_ACACIA_LOG).method36613(Blocks.STRIPPED_ACACIA_LOG).method36611(Blocks.STRIPPED_ACACIA_WOOD);
+      this.method35857(Blocks.ACACIA_SAPLING, Blocks.POTTED_ACACIA_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36450, Class7524.field32284);
       this.method35845(Blocks.field36402)
          .method31167(Blocks.field36697)
-         .method31169(Blocks.field36868)
+         .method31169(Blocks.BIRCH_FENCE)
          .method31170(Blocks.field36863)
-         .method31171(Blocks.field36563)
+         .method31171(Blocks.BIRCH_PRESSURE_PLATE)
          .method31172(Blocks.BIRCH_SIGN, Blocks.BIRCH_WALL_SIGN)
          .method31173(Blocks.field36841)
          .method31174(Blocks.field36662);
       this.method35847(Blocks.field36873);
-      this.method35848(Blocks.field36611);
-      this.method35850(Blocks.field36424).method36613(Blocks.field36424).method36611(Blocks.field36436);
-      this.method35850(Blocks.field36429).method36613(Blocks.field36429).method36611(Blocks.field36442);
+      this.method35848(Blocks.BIRCH_TRAPDOOR);
+      this.method35850(Blocks.BIRCH_LOG).method36613(Blocks.BIRCH_LOG).method36611(Blocks.BIRCH_WOOD);
+      this.method35850(Blocks.STRIPPED_BIRCH_LOG).method36613(Blocks.STRIPPED_BIRCH_LOG).method36611(Blocks.STRIPPED_BIRCH_WOOD);
       this.method35857(Blocks.BIRCH_SAPLING, Blocks.POTTED_BIRCH_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36448, Class7524.field32284);
       this.method35845(Blocks.field36400)
          .method31167(Blocks.field36695)
          .method31169(Blocks.OAK_FENCE)
          .method31170(Blocks.OAK_FENCE_GATE)
-         .method31171(Blocks.field36561)
+         .method31171(Blocks.OAK_PRESSURE_PLATE)
          .method31172(Blocks.OAK_SIGN, Blocks.OAK_WALL_SIGN)
          .method31173(Blocks.field36839)
          .method31173(Blocks.field36849)
          .method31174(Blocks.field36533);
       this.method35847(Blocks.OAK_DOOR);
-      this.method35849(Blocks.field36609);
-      this.method35850(Blocks.field36422).method36613(Blocks.field36422).method36611(Blocks.field36434);
-      this.method35850(Blocks.field36433).method36613(Blocks.field36433).method36611(Blocks.field36440);
-      this.method35857(Blocks.field36406, Blocks.POTTED_OAK_SAPLING, Class1958.field12763);
+      this.method35849(Blocks.OAK_TRAPDOOR);
+      this.method35850(Blocks.OAK_LOG).method36613(Blocks.OAK_LOG).method36611(Blocks.OAK_WOOD);
+      this.method35850(Blocks.STRIPPED_OAK_LOG).method36613(Blocks.STRIPPED_OAK_LOG).method36611(Blocks.STRIPPED_OAK_WOOD);
+      this.method35857(Blocks.OAK_SAPLING, Blocks.POTTED_OAK_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36446, Class7524.field32284);
       this.method35845(Blocks.field36401)
          .method31167(Blocks.field36696)
-         .method31169(Blocks.field36867)
+         .method31169(Blocks.SPRUCE_FENCE)
          .method31170(Blocks.field36862)
-         .method31171(Blocks.field36562)
+         .method31171(Blocks.SPRUCE_PRESSURE_PLATE)
          .method31172(Blocks.SPRUCE_SIGN, Blocks.SPRUCE_WALL_SIGN)
          .method31173(Blocks.field36840)
          .method31174(Blocks.SPRUCE_STAIRS);
       this.method35847(Blocks.field36872);
-      this.method35848(Blocks.field36610);
-      this.method35850(Blocks.field36423).method36613(Blocks.field36423).method36611(Blocks.field36435);
-      this.method35850(Blocks.field36428).method36613(Blocks.field36428).method36611(Blocks.field36441);
+      this.method35848(Blocks.SPRUCE_TRAPDOOR);
+      this.method35850(Blocks.SPRUCE_LOG).method36613(Blocks.SPRUCE_LOG).method36611(Blocks.SPRUCE_WOOD);
+      this.method35850(Blocks.STRIPPED_SPRUCE_LOG).method36613(Blocks.STRIPPED_SPRUCE_LOG).method36611(Blocks.STRIPPED_SPRUCE_WOOD);
       this.method35857(Blocks.SPRUCE_SAPLING, Blocks.POTTED_SPRUCE_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36447, Class7524.field32284);
       this.method35845(Blocks.field36405)
          .method31167(Blocks.field36700)
-         .method31169(Blocks.field36871)
+         .method31169(Blocks.DARK_OAK_FENCE)
          .method31170(Blocks.field36866)
-         .method31171(Blocks.field36566)
+         .method31171(Blocks.DARK_OAK_PRESSURE_PLATE)
          .method31172(Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_WALL_SIGN)
          .method31173(Blocks.field36844)
          .method31174(Blocks.field36763);
       this.method35847(Blocks.field36876);
-      this.method35849(Blocks.field36614);
-      this.method35850(Blocks.field36427).method36613(Blocks.field36427).method36611(Blocks.field36439);
-      this.method35850(Blocks.field36432).method36613(Blocks.field36432).method36611(Blocks.field36445);
+      this.method35849(Blocks.DARK_OAK_TRAPDOOR);
+      this.method35850(Blocks.DARK_OAK_LOG).method36613(Blocks.DARK_OAK_LOG).method36611(Blocks.DARK_OAK_WOOD);
+      this.method35850(Blocks.STRIPPED_DARK_OAK_LOG).method36613(Blocks.STRIPPED_DARK_OAK_LOG).method36611(Blocks.STRIPPED_DARK_OAK_WOOD);
       this.method35857(Blocks.DARK_OAK_SAPLING, Blocks.POTTED_DARK_OAK_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36451, Class7524.field32284);
       this.method35845(Blocks.field36403)
          .method31167(Blocks.field36698)
-         .method31169(Blocks.field36869)
+         .method31169(Blocks.JUNGLE_FENCE)
          .method31170(Blocks.field36864)
-         .method31171(Blocks.field36564)
+         .method31171(Blocks.JUNGLE_PRESSURE_PLATE)
          .method31172(Blocks.JUNGLE_SIGN, Blocks.JUNGLE_WALL_SIGN)
          .method31173(Blocks.field36842)
          .method31174(Blocks.field36663);
       this.method35847(Blocks.field36874);
-      this.method35848(Blocks.field36612);
-      this.method35850(Blocks.field36425).method36613(Blocks.field36425).method36611(Blocks.field36437);
-      this.method35850(Blocks.field36430).method36613(Blocks.field36430).method36611(Blocks.field36443);
+      this.method35848(Blocks.JUNGLE_TRAPDOOR);
+      this.method35850(Blocks.JUNGLE_LOG).method36613(Blocks.JUNGLE_LOG).method36611(Blocks.JUNGLE_WOOD);
+      this.method35850(Blocks.STRIPPED_JUNGLE_LOG).method36613(Blocks.STRIPPED_JUNGLE_LOG).method36611(Blocks.STRIPPED_JUNGLE_WOOD);
       this.method35857(Blocks.JUNGLE_SAPLING, Blocks.POTTED_JUNGLE_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36449, Class7524.field32284);
       this.method35845(Blocks.field37091)
          .method31167(Blocks.field37105)
-         .method31169(Blocks.field37097)
+         .method31169(Blocks.CRIMSON_FENCE)
          .method31170(Blocks.field37101)
-         .method31171(Blocks.field37095)
-         .method31172(Blocks.field37109, Blocks.field37111)
+         .method31171(Blocks.CRIMSON_PRESSURE_PLATE)
+         .method31172(Blocks.CRIMSON_SIGN, Blocks.CRIMSON_WALL_SIGN)
          .method31173(Blocks.field37093)
          .method31174(Blocks.field37103);
       this.method35847(Blocks.field37107);
-      this.method35848(Blocks.field37099);
-      this.method35850(Blocks.field37079).method36612(Blocks.field37079).method36611(Blocks.field37081);
-      this.method35850(Blocks.field37080).method36612(Blocks.field37080).method36611(Blocks.field37082);
-      this.method35857(Blocks.field37084, Blocks.field37125, Class1958.field12763);
-      this.method35957(Blocks.field37090, Blocks.field37127);
+      this.method35848(Blocks.CRIMSON_TRAPDOOR);
+      this.method35850(Blocks.field37079).method36612(Blocks.field37079).method36611(Blocks.CRIMSON_HYPHAE);
+      this.method35850(Blocks.field37080).method36612(Blocks.field37080).method36611(Blocks.STRIPPED_CRIMSON_HYPHAE);
+      this.method35857(Blocks.CRIMSON_FUNGUS, Blocks.POTTED_CRIMSON_FUNGUS, Class1958.field12763);
+      this.method35957(Blocks.CRIMSON_ROOTS, Blocks.POTTED_CRIMSON_ROOTS);
       this.method35845(Blocks.field37092)
          .method31167(Blocks.field37106)
-         .method31169(Blocks.field37098)
+         .method31169(Blocks.WARPED_FENCE)
          .method31170(Blocks.field37102)
-         .method31171(Blocks.field37096)
-         .method31172(Blocks.field37110, Blocks.field37112)
+         .method31171(Blocks.WARPED_PRESSURE_PLATE)
+         .method31172(Blocks.WARPED_SIGN, Blocks.WARPED_WALL_SIGN)
          .method31173(Blocks.field37094)
          .method31174(Blocks.field37104);
       this.method35847(Blocks.field37108);
-      this.method35848(Blocks.field37100);
+      this.method35848(Blocks.WARPED_TRAPDOOR);
       this.method35850(Blocks.WARPED_STEM).method36612(Blocks.WARPED_STEM).method36611(Blocks.WARPED_HYPHAE);
       this.method35850(Blocks.STRIPPED_WARPED_STEM).method36612(Blocks.STRIPPED_WARPED_STEM).method36611(Blocks.STRIPPED_WARPED_HYPHAE);
-      this.method35857(Blocks.field37075, Blocks.field37126, Class1958.field12763);
-      this.method35957(Blocks.field37077, Blocks.field37128);
-      this.method35855(Blocks.field37078, Class1958.field12763);
+      this.method35857(Blocks.WARPED_FUNGUS, Blocks.POTTED_WARPED_FUNGUS, Class1958.field12763);
+      this.method35957(Blocks.WARPED_ROOTS, Blocks.POTTED_WARPED_ROOTS);
+      this.method35855(Blocks.NETHER_SPROUTS, Class1958.field12763);
       this.method35807(Items.field37352);
       this.method35846(Class7287.method22996(Blocks.STONE)).method31166(var1 -> {
          ResourceLocation var4 = Class9756.field45537.method34805(Blocks.STONE, var1, this.field43643);
          ResourceLocation var5 = Class9756.field45538.method34805(Blocks.STONE, var1, this.field43643);
          this.field43642.accept(method35816(Blocks.STONE, var4, var5));
          return var4;
-      }).method31173(Blocks.field36845).method31171(Blocks.field36559).method31167(Blocks.STONE_BUTTON).method31174(Blocks.field37020);
+      }).method31173(Blocks.field36845).method31171(Blocks.STONE_PRESSURE_PLATE).method31167(Blocks.STONE_BUTTON).method31174(Blocks.field37020);
       this.method35847(Blocks.IRON_DOOR);
-      this.method35849(Blocks.field36766);
-      this.method35845(Blocks.field36615).method31168(Blocks.field37046).method31174(Blocks.STONE_BRICK_STAIRS).method31173(Blocks.field36852);
-      this.method35845(Blocks.field36616).method31168(Blocks.field37044).method31174(Blocks.field37016).method31173(Blocks.field37030);
+      this.method35849(Blocks.IRON_TRAPDOOR);
+      this.method35845(Blocks.field36615).method31168(Blocks.STONE_BRICK_WALL).method31174(Blocks.STONE_BRICK_STAIRS).method31173(Blocks.field36852);
+      this.method35845(Blocks.field36616).method31168(Blocks.MOSSY_STONE_BRICK_WALL).method31174(Blocks.field37016).method31173(Blocks.field37030);
       this.method35845(Blocks.field36399).method31168(Blocks.COBBLESTONE_WALL).method31174(Blocks.COBBLESTONE_STAIRS).method31173(Blocks.field36850);
       this.method35845(Blocks.field36526).method31168(Blocks.MOSSY_COBBLESTONE_WALL).method31174(Blocks.field37018).method31173(Blocks.field37032);
-      this.method35845(Blocks.field36767).method31168(Blocks.field37042).method31174(Blocks.field36770).method31173(Blocks.field36773);
+      this.method35845(Blocks.field36767).method31168(Blocks.PRISMARINE_WALL).method31174(Blocks.field36770).method31173(Blocks.field36773);
       this.method35845(Blocks.field36768).method31174(Blocks.field36771).method31173(Blocks.field36774);
       this.method35845(Blocks.field36769).method31174(Blocks.field36772).method31173(Blocks.field36775);
       this.method35844(Blocks.SANDSTONE, Class7524.field32290)
-         .method31168(Blocks.field37050)
+         .method31168(Blocks.SANDSTONE_WALL)
          .method31174(Blocks.SANDSTONE_STAIRS)
          .method31173(Blocks.field36847);
       this.method35843(Blocks.field36859, Class7524.method24565(Class7287.method23042(Blocks.SANDSTONE, "_top")))
@@ -4189,7 +4189,7 @@ public class Class9407 {
          )
          .method31173(Blocks.field36848);
       this.method35844(Blocks.field36835, Class7524.field32290)
-         .method31168(Blocks.field37043)
+         .method31168(Blocks.RED_SANDSTONE_WALL)
          .method31174(Blocks.field36838)
          .method31173(Blocks.field36855);
       this.method35843(Blocks.field36861, Class7524.method24565(Class7287.method23042(Blocks.field36835, "_top")))
@@ -4202,33 +4202,33 @@ public class Class9407 {
                .method24561(var0 -> var0.method22991(Class9588.field44833, Class7287.method23041(Blocks.field36837)))
          )
          .method31173(Blocks.field36856);
-      this.method35845(Blocks.BRICKS).method31168(Blocks.field37041).method31174(Blocks.BRICK_STAIRS).method31173(Blocks.field36851);
+      this.method35845(Blocks.BRICKS).method31168(Blocks.BRICK_WALL).method31174(Blocks.BRICK_STAIRS).method31173(Blocks.field36851);
       this.method35845(Blocks.NETHER_BRICKS)
          .method31169(Blocks.NETHER_BRICK_FENCE)
-         .method31168(Blocks.field37047)
+         .method31168(Blocks.NETHER_BRICK_WALL)
          .method31174(Blocks.NETHER_BRICK_STAIRS)
          .method31173(Blocks.field36853);
       this.method35845(Blocks.field36880).method31174(Blocks.field36882).method31173(Blocks.field36857);
-      this.method35845(Blocks.DIORITE).method31168(Blocks.field37052).method31174(Blocks.field37027).method31173(Blocks.field37040);
+      this.method35845(Blocks.DIORITE).method31168(Blocks.DIORITE_WALL).method31174(Blocks.field37027).method31173(Blocks.field37040);
       this.method35845(Blocks.POLISHED_DIORITE).method31174(Blocks.field37017).method31173(Blocks.field37031);
-      this.method35845(Blocks.GRANITE).method31168(Blocks.field37045).method31174(Blocks.field37023).method31173(Blocks.field37036);
+      this.method35845(Blocks.GRANITE).method31168(Blocks.GRANITE_WALL).method31174(Blocks.field37023).method31173(Blocks.field37036);
       this.method35845(Blocks.POLISHED_GRANITE).method31174(Blocks.field37014).method31173(Blocks.field37028);
-      this.method35845(Blocks.ANDESITE).method31168(Blocks.field37048).method31174(Blocks.field37024).method31173(Blocks.field37037);
+      this.method35845(Blocks.ANDESITE).method31168(Blocks.ANDESITE_WALL).method31174(Blocks.field37024).method31173(Blocks.field37037);
       this.method35845(Blocks.POLISHED_ANDESITE).method31174(Blocks.field37026).method31173(Blocks.field37039);
-      this.method35845(Blocks.field36883).method31168(Blocks.field37051).method31174(Blocks.field37019).method31173(Blocks.field37033);
+      this.method35845(Blocks.field36883).method31168(Blocks.END_STONE_BRICK_WALL).method31174(Blocks.field37019).method31173(Blocks.field37033);
       this.method35844(Blocks.field36724, Class7524.field32273).method31174(Blocks.field36727).method31173(Blocks.field36854);
       this.method35843(Blocks.field36860, Class7524.method24565(Class7287.method23042(Blocks.field36724, "_bottom")))
          .method31174(Blocks.field37022)
          .method31173(Blocks.field37035);
-      this.method35845(Blocks.field36892).method31173(Blocks.field37038).method31174(Blocks.field37025).method31168(Blocks.field37049);
+      this.method35845(Blocks.field36892).method31173(Blocks.field37038).method31174(Blocks.field37025).method31168(Blocks.RED_NETHER_BRICK_WALL);
       this.method35844(Blocks.field37130, Class7524.field32291)
-         .method31168(Blocks.field37132)
+         .method31168(Blocks.BLACKSTONE_WALL)
          .method31174(Blocks.field37131)
          .method31173(Blocks.field37133);
-      this.method35845(Blocks.field37135).method31168(Blocks.field37140).method31174(Blocks.field37139).method31173(Blocks.field37138);
+      this.method35845(Blocks.field37135).method31168(Blocks.POLISHED_BLACKSTONE_BRICK_WALL).method31174(Blocks.field37139).method31173(Blocks.field37138);
       this.method35845(Blocks.field37134)
-         .method31168(Blocks.field37146)
-         .method31171(Blocks.field37144)
+         .method31168(Blocks.POLISHED_BLACKSTONE_WALL)
+         .method31171(Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE)
          .method31167(Blocks.field37145)
          .method31174(Blocks.field37142)
          .method31173(Blocks.field37143);
@@ -4236,7 +4236,7 @@ public class Class9407 {
       this.method35865(Blocks.RAIL);
       this.method35866(Blocks.POWERED_RAIL);
       this.method35866(Blocks.DETECTOR_RAIL);
-      this.method35866(Blocks.field36728);
+      this.method35866(Blocks.ACTIVATOR_RAIL);
       this.method35890();
       this.method35875(Blocks.COMMAND_BLOCK);
       this.method35875(Blocks.field36887);
@@ -4251,12 +4251,12 @@ public class Class9407 {
       this.method35886(Blocks.SMOKER, Class7524.field32278);
       this.method35889();
       this.method35958();
-      this.method35925(Blocks.field36618, Blocks.field36624);
-      this.method35925(Blocks.field36399, Blocks.field36620);
-      this.method35925(Blocks.field36617, Blocks.field36623);
-      this.method35925(Blocks.field36616, Blocks.field36622);
+      this.method35925(Blocks.field36618, Blocks.INFESTED_CHISELED_STONE_BRICKS);
+      this.method35925(Blocks.field36399, Blocks.INFESTED_COBBLESTONE);
+      this.method35925(Blocks.field36617, Blocks.INFESTED_CRACKED_STONE_BRICKS);
+      this.method35925(Blocks.field36616, Blocks.INFESTED_MOSSY_STONE_BRICKS);
       this.method35956();
-      this.method35925(Blocks.field36615, Blocks.field36621);
+      this.method35925(Blocks.field36615, Blocks.INFESTED_STONE_BRICKS);
       SpawnEggItem.method11854().forEach(var1 -> this.method35806(var1, Class9060.method33721("template_spawn_egg")));
    }
 

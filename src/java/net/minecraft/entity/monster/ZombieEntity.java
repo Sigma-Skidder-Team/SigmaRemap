@@ -438,7 +438,7 @@ public class ZombieEntity extends MonsterEntity {
          int var15 = var13.get(ChronoField.DAY_OF_MONTH);
          int var16 = var13.get(ChronoField.MONTH_OF_YEAR);
          if (var16 == 10 && var15 == 31 && this.rand.nextFloat() < 0.25F) {
-            this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+            this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.CARVED_PUMPKIN : Blocks.JACK_O_LANTERN));
             this.field5607[EquipmentSlotType.HEAD.getIndex()] = 0.0F;
          }
       }

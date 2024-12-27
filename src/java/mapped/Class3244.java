@@ -27,6 +27,8 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -127,7 +129,7 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
    }
 
    private boolean method11651(BlockState var1) {
-      return var1.isIn(Blocks.field36777);
+      return var1.isIn(Blocks.HAY_BLOCK);
    }
 
    @Override
