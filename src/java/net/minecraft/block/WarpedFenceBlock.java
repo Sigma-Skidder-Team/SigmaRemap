@@ -68,7 +68,7 @@ public class WarpedFenceBlock extends Class3238 {
    @Override
    public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.isRemote) {
-         return Class3329.method11880(var4, var2, var3);
+         return Items.LEAD.method11880(var4, var2, var3);
       } else {
          ItemStack var9 = var4.getHeldItem(var5);
          return var9.getItem() != Items.LEAD ? ActionResultType.field14820 : ActionResultType.SUCCESS;

@@ -9,7 +9,6 @@ import net.minecraft.world.IBlockReader;
 import java.util.Optional;
 
 public class Class5925 extends Class5924 {
-   private static String[] field25809;
    public final boolean field25810;
    public final Class3389 field25811;
 
