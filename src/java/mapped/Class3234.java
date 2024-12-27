@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3234 extends Class3232 implements Class3235 {
+public class Class3234 extends AbstractGlassBlock implements Class3235 {
    private static String[] field18674;
    private final Class112 field18675;
 

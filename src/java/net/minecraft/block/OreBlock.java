@@ -9,9 +9,9 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class DiamondOreBlock extends Block {
+public class OreBlock extends Block {
 
-   public DiamondOreBlock(Properties var1) {
+   public OreBlock(Properties var1) {
       super(var1);
    }
 

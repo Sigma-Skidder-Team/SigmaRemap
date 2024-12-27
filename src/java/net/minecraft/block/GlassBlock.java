@@ -1,9 +1,11 @@
 package net.minecraft.block;
 
-public class GlassBlock extends Class3232 {
+import mapped.AbstractGlassBlock;
+
+public class GlassBlock extends AbstractGlassBlock {
    private static String[] field18673;
 
-   public GlassBlock(Properties var1) {
+   public GlassBlock(AbstractBlock.Properties var1) {
       super(var1);
    }
 }

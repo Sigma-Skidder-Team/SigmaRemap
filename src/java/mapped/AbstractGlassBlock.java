@@ -1,12 +1,13 @@
 package mapped;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IBlockReader;
 
-public abstract class Class3232 extends Class3231 {
-   public Class3232(Properties var1) {
+public abstract class AbstractGlassBlock extends Class3231 {
+   public AbstractGlassBlock(AbstractBlock.Properties var1) {
       super(var1);
    }
 

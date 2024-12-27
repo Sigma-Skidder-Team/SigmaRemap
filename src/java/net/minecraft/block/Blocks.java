@@ -127,17 +127,17 @@ public class Blocks {
       "gravel", new Class3215(AbstractBlock.Properties.method26611(Material.field38953, MaterialColor.STONE).method26623(0.6F).method26619(SoundType.GRAVEL))
    );
    public static final Block GOLD_ORE = register(
-      "gold_ore", new DiamondOreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
+      "gold_ore", new OreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block IRON_ORE = register(
-      "iron_ore", new DiamondOreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
+      "iron_ore", new OreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block COAL_ORE = register(
-      "coal_ore", new DiamondOreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
+      "coal_ore", new OreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block NETHER_GOLD_ORE = register(
       "nether_gold_ore",
-      new DiamondOreBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.GILDED_BLACKSTONE))
+      new OreBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.GILDED_BLACKSTONE))
    );
    public static final Block OAK_LOG = register("oak_log", createLogBlock(MaterialColor.field30960, MaterialColor.field30981));
    public static final Block SPRUCE_LOG = register("spruce_log", createLogBlock(MaterialColor.field30981, MaterialColor.field30973));
@@ -218,7 +218,7 @@ public class Blocks {
       )
    );
    public static final Block LAPIS_ORE = register(
-      "lapis_ore", new DiamondOreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
+      "lapis_ore", new OreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36456 = register(
       "lapis_block", new Block(AbstractBlock.Properties.method26611(Material.field38967, MaterialColor.field30979).method26635().method26621(3.0F, 3.0F))
@@ -493,7 +493,7 @@ public class Blocks {
       "redstone_wire", new Class3222(AbstractBlock.Properties.method26609(Material.field38946).method26614().method26622())
    );
    public static final Block DIAMOND_ORE = register(
-      "diamond_ore", new DiamondOreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
+      "diamond_ore", new OreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block field36537 = register(
       "diamond_block",
@@ -1067,7 +1067,7 @@ public class Blocks {
    );
    public static final Block SANDSTONE_STAIRS = register("sandstone_stairs", new StairsBlock(SANDSTONE.getDefaultState(), AbstractBlock.Properties.method26613(SANDSTONE)));
    public static final Block EMERALD_ORE = register(
-      "emerald_ore", new DiamondOreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
+      "emerald_ore", new OreBlock(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(3.0F, 3.0F))
    );
    public static final Block ENDER_CHEST = register(
       "ender_chest", new Class3347(AbstractBlock.Properties.method26609(Material.field38966).method26635().method26621(22.5F, 600.0F).method26620(var0 -> 7))
@@ -1279,7 +1279,7 @@ public class Blocks {
    );
    public static final Block NETHER_QUARTZ_ORE = register(
       "nether_quartz_ore",
-      new DiamondOreBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.BONE))
+      new OreBlock(AbstractBlock.Properties.method26611(Material.field38966, MaterialColor.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.BONE))
    );
    public static final Block HOPPER = register(
       "hopper",
