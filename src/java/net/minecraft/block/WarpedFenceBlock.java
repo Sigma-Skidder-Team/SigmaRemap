@@ -1,5 +1,7 @@
 package net.minecraft.block;
 
+import mapped.Class3238;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

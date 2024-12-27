@@ -2,7 +2,7 @@ package net.minecraft.block;
 
 import mapped.IGrowable;
 import mapped.AbstractTreeGrower;
-import mapped.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;

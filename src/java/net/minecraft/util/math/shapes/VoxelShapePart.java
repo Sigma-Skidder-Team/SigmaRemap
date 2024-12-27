@@ -1,14 +1,18 @@
-package mapped;
+package net.minecraft.util.math.shapes;
 
+import mapped.Class2321;
+import mapped.Class7937;
+import mapped.Class8859;
+import mapped.Class9841;
 import net.minecraft.util.Direction;
 
-public abstract class Class7938 {
+public abstract class VoxelShapePart {
    private static final Direction.Axis[] field34036 = Direction.Axis.values();
    public final int field34037;
    public final int field34038;
    public final int field34039;
 
-   public Class7938(int var1, int var2, int var3) {
+   public VoxelShapePart(int var1, int var2, int var3) {
       this.field34037 = var1;
       this.field34038 = var2;
       this.field34039 = var3;

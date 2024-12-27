@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public class Class8919 {
    private static String[] field40379;

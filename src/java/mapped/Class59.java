@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.math.IntMath;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public final class Class59 implements Class56 {
    private static String[] field127;

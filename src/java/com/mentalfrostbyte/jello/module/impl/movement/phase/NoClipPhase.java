@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.VoxelShapes;
+import net.minecraft.util.math.shapes.VoxelShapes;
 
 public class NoClipPhase extends Module {
     public NoClipPhase() {

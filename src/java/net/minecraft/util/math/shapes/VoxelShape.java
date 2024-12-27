@@ -1,8 +1,9 @@
-package mapped;
+package net.minecraft.util.math.shapes;
 
 import com.google.common.collect.Lists;
 import com.google.common.math.DoubleMath;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import mapped.*;
 import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -16,20 +17,20 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 public abstract class VoxelShape {
-   public final Class7938 field28033;
-   private VoxelShape[] field28034;
+   public final VoxelShapePart voxels; // welcome to Searge, again (field_197768_g)
+   private VoxelShape[] shapeCache; // welcome to Searge (field_222864_b)
 
-   public VoxelShape(Class7938 var1) {
-      this.field28033 = var1;
+   public VoxelShape(VoxelShapePart voxels) {
+      this.voxels = voxels;
    }
 
    public double getStart(Direction.Axis var1) {
-      int var4 = this.field28033.method26720(var1);
-      return var4 < this.field28033.method26732(var1) ? this.getValueUnchecked(var1, var4) : Double.POSITIVE_INFINITY;
+      int var4 = this.voxels.method26720(var1);
+      return var4 < this.voxels.method26732(var1) ? this.getValueUnchecked(var1, var4) : Double.POSITIVE_INFINITY;
    }
 
    public double getEnd(Direction.Axis var1) {
-      int var4 = this.field28033.method26721(var1);
+      int var4 = this.voxels.method26721(var1);
       return var4 > 0 ? this.getValueUnchecked(var1, var4) : Double.NEGATIVE_INFINITY;
    }
 
@@ -55,13 +56,13 @@ public abstract class VoxelShape {
    public abstract DoubleList method19511(Direction.Axis var1);
 
    public boolean isEmpty() {
-      return this.field28033.method26719();
+      return this.voxels.method26719();
    }
 
    public VoxelShape withOffset(double var1, double var3, double var5) {
       return (VoxelShape)(!this.isEmpty()
          ? new Class6409(
-            this.field28033,
+            this.voxels,
             new Class54(this.method19511(Direction.Axis.X), var1),
             new Class54(this.method19511(Direction.Axis.Y), var3),
             new Class54(this.method19511(Direction.Axis.Z), var5)
@@ -80,7 +81,7 @@ public abstract class VoxelShape {
    }
 
    public void method19519(Class6807 var1) {
-      this.field28033
+      this.voxels
          .method26736(
             (var2, var3, var4, var5, var6, var7) -> var1.method20739(
                   this.getValueUnchecked(Direction.Axis.X, var2),
@@ -98,7 +99,7 @@ public abstract class VoxelShape {
       DoubleList var4 = this.method19511(Direction.Axis.X);
       DoubleList var5 = this.method19511(Direction.Axis.Y);
       DoubleList var6 = this.method19511(Direction.Axis.Z);
-      this.field28033
+      this.voxels
          .method26739(
             (var4x, var5x, var6x, var7, var8, var9) -> var1.method20739(
                   var4.getDouble(var4x), var5.getDouble(var5x), var6.getDouble(var6x), var4.getDouble(var7), var5.getDouble(var8), var6.getDouble(var9)
@@ -118,14 +119,14 @@ public abstract class VoxelShape {
       Direction.Axis var9 = Class2321.field15906.method9099(var1);
       int var10 = this.method19523(var8, var2);
       int var11 = this.method19523(var9, var4);
-      int var12 = this.field28033.method26731(var1, var10, var11);
+      int var12 = this.voxels.method26731(var1, var10, var11);
       return var12 > 0 ? this.getValueUnchecked(var1, var12) : Double.NEGATIVE_INFINITY;
    }
 
    public int method19523(Direction.Axis var1, double var2) {
-      return MathHelper.method37820(0, this.field28033.method26732(var1) + 1, var4 -> {
+      return MathHelper.method37820(0, this.voxels.method26732(var1) + 1, var4 -> {
          if (var4 >= 0) {
-            return var4 <= this.field28033.method26732(var1) ? var2 < this.getValueUnchecked(var1, var4) : true;
+            return var4 <= this.voxels.method26732(var1) ? var2 < this.getValueUnchecked(var1, var4) : true;
          } else {
             return false;
          }
@@ -133,7 +134,7 @@ public abstract class VoxelShape {
    }
 
    public boolean method19524(double var1, double var3, double var5) {
-      return this.field28033
+      return this.voxels
          .method26729(this.method19523(Direction.Axis.X, var1), this.method19523(Direction.Axis.Y, var3), this.method19523(Direction.Axis.Z, var5));
    }
 
@@ -158,17 +159,17 @@ public abstract class VoxelShape {
 
    public VoxelShape method19526(Direction var1) {
       if (!this.isEmpty() && this != VoxelShapes.method27426()) {
-         if (this.field28034 == null) {
-            this.field28034 = new VoxelShape[6];
+         if (this.shapeCache == null) {
+            this.shapeCache = new VoxelShape[6];
          } else {
-            VoxelShape var4 = this.field28034[var1.ordinal()];
+            VoxelShape var4 = this.shapeCache[var1.ordinal()];
             if (var4 != null) {
                return var4;
             }
          }
 
          VoxelShape var5 = this.method19527(var1);
-         this.field28034[var1.ordinal()] = var5;
+         this.shapeCache[var1.ordinal()] = var5;
          return var5;
       } else {
          return this;
@@ -205,16 +206,16 @@ public abstract class VoxelShape {
             int var15 = this.method19523(var8, var13 + 1.0E-7);
             int var16 = this.method19523(var8, var11 - 1.0E-7);
             int var17 = Math.max(0, this.method19523(var9, var2.method19658(var9) + 1.0E-7));
-            int var18 = Math.min(this.field28033.method26732(var9), this.method19523(var9, var2.method19659(var9) - 1.0E-7) + 1);
+            int var18 = Math.min(this.voxels.method26732(var9), this.method19523(var9, var2.method19659(var9) - 1.0E-7) + 1);
             int var19 = Math.max(0, this.method19523(var10, var2.method19658(var10) + 1.0E-7));
-            int var20 = Math.min(this.field28033.method26732(var10), this.method19523(var10, var2.method19659(var10) - 1.0E-7) + 1);
-            int var21 = this.field28033.method26732(var8);
+            int var20 = Math.min(this.voxels.method26732(var10), this.method19523(var10, var2.method19659(var10) - 1.0E-7) + 1);
+            int var21 = this.voxels.method26732(var8);
             if (!(var3 > 0.0)) {
                if (var3 < 0.0) {
                   for (int var22 = var15 - 1; var22 >= 0; var22--) {
                      for (int var23 = var17; var23 < var18; var23++) {
                         for (int var24 = var19; var24 < var20; var24++) {
-                           if (this.field28033.method26728(var7, var22, var23, var24)) {
+                           if (this.voxels.method26728(var7, var22, var23, var24)) {
                               double var25 = this.getValueUnchecked(var8, var22 + 1) - var13;
                               if (var25 <= 1.0E-7) {
                                  var3 = Math.max(var3, var25);
@@ -230,7 +231,7 @@ public abstract class VoxelShape {
                for (int var27 = var16 + 1; var27 < var21; var27++) {
                   for (int var28 = var17; var28 < var18; var28++) {
                      for (int var29 = var19; var29 < var20; var29++) {
-                        if (this.field28033.method26728(var7, var27, var28, var29)) {
+                        if (this.voxels.method26728(var7, var27, var28, var29)) {
                            double var30 = this.getValueUnchecked(var8, var27) - var11;
                            if (var30 >= -1.0E-7) {
                               var3 = Math.min(var3, var30);

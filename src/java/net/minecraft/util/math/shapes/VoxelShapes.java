@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util.math.shapes;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.math.DoubleMath;
@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventBlockCollision;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Util;
@@ -14,7 +15,6 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.IWorldReader;
 
 import java.util.Arrays;
@@ -84,7 +84,7 @@ public final class VoxelShapes {
          }
       } else {
          return new Class6409(
-            field34462.field28033,
+            field34462.voxels,
             new double[]{var0.minX, var0.maxX},
             new double[]{var0.minY, var0.maxY},
             new double[]{var0.minZ, var0.maxZ}
@@ -146,7 +146,7 @@ public final class VoxelShapes {
                      var5,
                      var6
                   );
-                  Class7937 var10 = Class7937.method26724(var0.field28033, var1.field28033, var7, var8, var9, var2);
+                  Class7937 var10 = Class7937.method26724(var0.voxels, var1.voxels, var7, var8, var9, var2);
                   return (VoxelShape)(var7 instanceof Class59 && var8 instanceof Class59 && var9 instanceof Class59
                      ? new Class6410(var10)
                      : new Class6409(var10, var7.method194(), var8.method194(), var9.method194()));
@@ -192,11 +192,11 @@ public final class VoxelShapes {
             var5,
             var6
          );
-         return method27436(var11, var12, var13, var0.field28033, var1.field28033, var2);
+         return method27436(var11, var12, var13, var0.voxels, var1.voxels, var2);
       }
    }
 
-   private static boolean method27436(Class56 var0, Class56 var1, Class56 var2, Class7938 var3, Class7938 var4, IBooleanFunction var5) {
+   private static boolean method27436(Class56 var0, Class56 var1, Class56 var2, VoxelShapePart var3, VoxelShapePart var4, IBooleanFunction var5) {
       return !var0.method192(
          (var5x, var6, var7) -> var1.method192(
                (var6x, var7x, var8) -> var2.method192(
@@ -308,7 +308,7 @@ public final class VoxelShapes {
          IBooleanFunction var9 = var6 != Direction.AxisDirection.POSITIVE ? IBooleanFunction.field44039 : IBooleanFunction.ONLY_FIRST;
          return DoubleMath.fuzzyEquals(var7.getEnd(var5), 1.0, 1.0E-7)
             && DoubleMath.fuzzyEquals(var8.getStart(var5), 0.0, 1.0E-7)
-            && ! compare(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
+            && ! compare(new Class6407(var7, var5, var7.voxels.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
       } else {
          return false;
       }
@@ -324,7 +324,7 @@ public final class VoxelShapes {
             var6 = 0;
          } else {
             var5 = DoubleMath.fuzzyEquals(var0.getEnd(var4), 1.0, 1.0E-7);
-            var6 = var0.field28033.method26732(var4) - 1;
+            var6 = var0.voxels.method26732(var4) - 1;
          }
 
          return (VoxelShape)(var5 ? new Class6407(var0, var4, var6) : empty());
@@ -349,7 +349,7 @@ public final class VoxelShapes {
 
          return ! compare(
             method27426(),
-            method27434(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), IBooleanFunction.field44051),
+            method27434(new Class6407(var7, var5, var7.voxels.method26732(var5) - 1), new Class6407(var8, var5, 0), IBooleanFunction.field44051),
             IBooleanFunction.ONLY_FIRST
          );
       } else {
