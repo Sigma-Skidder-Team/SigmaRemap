@@ -130,7 +130,7 @@ public class Vector2m {
       return new Vector2m(x, y);
    }
 
-   public Vector2m method31898(double var1) {
+   public Vector2m scale(double var1) {
       return new Vector2m(this.x * var1, this.y * var1);
    }
 
@@ -190,65 +190,65 @@ public class Vector2m {
       return this.x * vectorIn.x + this.y * vectorIn.y;
    }
 
-   public boolean method31913(Vector2m var1, Vector2m var2) {
-      return this.x >= var1.x
-         && this.x <= var2.x
-         && this.y >= var1.y
-         && this.y <= var2.y;
+   public boolean isWithinBounds(Vector2m vector1In, Vector2m vector2In) {
+      return this.x >= vector1In.x
+         && this.x <= vector2In.x
+         && this.y >= vector1In.y
+         && this.y <= vector2In.y;
    }
 
-   public boolean method31914(Vector2m var1, Vector2m var2) {
-      return this.roundX() >= var1.roundX()
-         && this.roundX() <= var2.roundX()
-         && this.roundY() >= var1.roundY()
-         && this.roundY() <= var2.roundY();
+   public boolean isWithinRoundedBounds(Vector2m vector1In, Vector2m vector2In) {
+      return this.roundX() >= vector1In.roundX()
+         && this.roundX() <= vector2In.roundX()
+         && this.roundY() >= vector1In.roundY()
+         && this.roundY() <= vector2In.roundY();
    }
 
-   public Vector2m method31915() {
+   public Vector2m floor() {
       return new Vector2m(Math.floor(this.x), Math.floor(this.y));
    }
 
-   public Vector2m method31916() {
+   public Vector2m ceil() {
       return new Vector2m(Math.ceil(this.x), Math.ceil(this.y));
    }
 
-   public Vector2m method31917() {
+   public Vector2m round() {
       return new Vector2m(Math.floor(this.x + 0.5), Math.floor(this.y + 0.5));
    }
 
-   public Vector2m method31918() {
+   public Vector2m abs() {
       return new Vector2m(Math.abs(this.x), Math.abs(this.y));
    }
 
-   public Vector2m method31919(double var1, double var3, double var5, double var7, double var9) {
-      var1 = Math.toRadians(var1);
-      double var13 = this.x - var3;
-      double var15 = this.y - var5;
-      double var17 = var13 * Math.cos(var1) - var15 * Math.sin(var1);
-      double var19 = var13 * Math.sin(var1) + var15 * Math.cos(var1);
-      return new Vector2m(var17 + var3 + var7, var19 + var5 + var9);
+   public Vector2m rotateAroundPoint(double angleDegrees, double centerX, double centerZ, double offsetX, double offsetZ) {
+      angleDegrees = Math.toRadians(angleDegrees);
+      double var13 = this.x - centerX;
+      double var15 = this.y - centerZ;
+      double var17 = var13 * Math.cos(angleDegrees) - var15 * Math.sin(angleDegrees);
+      double var19 = var13 * Math.sin(angleDegrees) + var15 * Math.cos(angleDegrees);
+      return new Vector2m(var17 + centerX + offsetX, var19 + centerZ + offsetZ);
    }
 
-   public boolean method31920(Vector2m var1) {
+   public boolean isProportionalTo(Vector2m vectorIn) {
       if (this.x == 0.0 && this.y == 0.0) {
          return true;
       } else {
-         double var4 = var1.x;
-         double var6 = var1.y;
-         if (var4 == 0.0 && var6 == 0.0) {
+         double x = vectorIn.x;
+         double y = vectorIn.y;
+         if (x == 0.0 && y == 0.0) {
             return true;
-         } else if (this.x == 0.0 == (var4 == 0.0)) {
-            if (this.y == 0.0 == (var6 == 0.0)) {
-               double var8 = var4 / this.x;
+         } else if (this.x == 0.0 == (x == 0.0)) {
+            if (this.y == 0.0 == (y == 0.0)) {
+               double var8 = x / this.x;
                if (Double.isNaN(var8)) {
-                  double var10 = var6 / this.y;
+                  double var10 = y / this.y;
                   if (Double.isNaN(var10)) {
                      throw new RuntimeException("This should not happen");
                   } else {
-                     return var1.equals(this.method31898(var10));
+                     return vectorIn.equals(this.scale(var10));
                   }
                } else {
-                  return var1.equals(this.method31898(var8));
+                  return vectorIn.equals(this.scale(var8));
                }
             } else {
                return false;
