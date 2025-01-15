@@ -26,7 +26,7 @@ public class Class141 extends Class126
     }
     
     @Override
-    public Class8321 method639(Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(ItemStack class8321, final Class7529 class8322) {
         final Random method23586 = class8322.method23586();
         Class6257 class8323;
         if (!this.field421.isEmpty()) {
@@ -51,7 +51,7 @@ public class Class141 extends Class126
             class8321.method27674(class8323, method23587);
         }
         else {
-            class8321 = new Class8321(Class7739.field31534);
+            class8321 = new ItemStack(Class7739.field31534);
             Class4034.method12226(class8321, new Class6827(class8323, method23587));
         }
         return class8321;

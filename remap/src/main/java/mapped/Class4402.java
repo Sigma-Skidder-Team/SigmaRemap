@@ -11,14 +11,14 @@ public class Class4402 implements Class4252<Class5800>
     private static String[] field19721;
     private int field19722;
     private Class2215 field19723;
-    private Class8321 field19724;
+    private ItemStack field19724;
     
     public Class4402() {
-        this.field19724 = Class8321.field34174;
+        this.field19724 = ItemStack.field34174;
     }
     
-    public Class4402(final int field19722, final Class2215 field19723, final Class8321 class8321) {
-        this.field19724 = Class8321.field34174;
+    public Class4402(final int field19722, final Class2215 field19723, final ItemStack class8321) {
+        this.field19724 = ItemStack.field34174;
         this.field19722 = field19722;
         this.field19723 = field19723;
         this.field19724 = class8321.method27641();
@@ -42,7 +42,7 @@ public class Class4402 implements Class4252<Class5800>
         class5800.method17315(this);
     }
     
-    public Class8321 method13247() {
+    public ItemStack method13247() {
         return this.field19724;
     }
     

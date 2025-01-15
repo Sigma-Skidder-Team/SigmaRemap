@@ -96,7 +96,7 @@ public class Class4637 extends Class4611<Class4235>
         });
     }
     
-    public void method13836(final Class513 class517, final BlockPos class514, final Class8321 class515) {
+    public void method13836(final Class513 class517, final BlockPos class514, final ItemStack class515) {
         this.method13726(class517.method2957(), class522 -> {
             class517.method2940().method6701(class519);
             return class522.method12736(class516, class518, class520.method2940(), class521);

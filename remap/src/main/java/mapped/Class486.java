@@ -15,7 +15,7 @@ public class Class486 extends Class443
     }
     
     @Override
-    public boolean method2264(final int n, final Class8321 class8321) {
+    public boolean method2264(final int n, final ItemStack class8321) {
         if (class8321.method27622() != Class7739.field31514) {
             if (class8321.method27622() != Class7739.field31283) {
                 if (class8321.method27622() != Class7739.field31285) {

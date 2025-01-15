@@ -34,7 +34,7 @@ public class Class588 extends Class573 implements Class587<Class120>
     
     @Override
     public void method3440(final Iterator<Class120> iterator, final int n, final int n2, final int n3, final int n4) {
-        final Class8321[] method611 = iterator.next().method611();
+        final ItemStack[] method611 = iterator.next().method611();
         if (method611.length != 0) {
             this.field3486.add(new Class8370(this, 3 + n4 * 7, 3 + n3 * 7, method611));
         }

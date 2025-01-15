@@ -34,7 +34,7 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final Class8321 class1852) {
+    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         if (!class1847.field10067) {
             if (class1851 instanceof Class438) {
@@ -64,13 +64,13 @@ public class Class3961 extends Class3841
     }
     
     public static void method12083(final Class1847 class1847, final BlockPos class1848) {
-        Class3833.method11839(class1847, class1848, new Class8321(Class7739.field31632, 3));
+        Class3833.method11839(class1847, class1848, new ItemStack(Class7739.field31632, 3));
     }
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        final Class8321 method2715 = class7099.method2715(class7100);
-        final Class8321 method2716 = method2715.method27641();
+        final ItemStack method2715 = class7099.method2715(class7100);
+        final ItemStack method2716 = method2715.method27641();
         final int intValue = class7096.method21772((Class7111<Integer>)Class3961.field17902);
         int n = 0;
         if (intValue >= 5) {
@@ -79,12 +79,12 @@ public class Class3961 extends Class3841
                     method2715.method27693(1);
                     class7097.method6706(class7099, class7099.getPosX(), class7099.getPosY(), class7099.getPosZ(), Class8520.field35041, Class286.field1584, 1.0f, 1.0f);
                     if (!method2715.method27620()) {
-                        if (!class7099.field3006.method2362(new Class8321(Class7739.field31635))) {
-                            class7099.method2822(new Class8321(Class7739.field31635), false);
+                        if (!class7099.field3006.method2362(new ItemStack(Class7739.field31635))) {
+                            class7099.method2822(new ItemStack(Class7739.field31635), false);
                         }
                     }
                     else {
-                        class7099.method2716(class7100, new Class8321(Class7739.field31635));
+                        class7099.method2716(class7100, new ItemStack(Class7739.field31635));
                     }
                     n = 1;
                 }
@@ -202,7 +202,7 @@ public class Class3961 extends Class3841
                     final Class436 method6727 = class1847.method6727(class1848);
                     if (method6727 instanceof Class438) {
                         final Class438 class1851 = (Class438)method6727;
-                        final Class8321 class1852 = new Class8321(this);
+                        final ItemStack class1852 = new ItemStack(this);
                         final int intValue = class1849.method21772((Class7111<Integer>)Class3961.field17902);
                         final boolean b = !class1851.method2216();
                         if (!b && intValue == 0) {
@@ -227,7 +227,7 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public List<Class8321> method11833(final Class7096 class7096, final Class9098 class7097) {
+    public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
         final Entity class7098 = class7097.method32882(Class6683.field26362);
         if (!(class7098 instanceof Class510)) {
             if (!(class7098 instanceof Class765)) {

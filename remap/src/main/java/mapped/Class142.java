@@ -15,7 +15,7 @@ public class Class142 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         class8321.method27658().method338(this.field423);
         return class8321;
     }

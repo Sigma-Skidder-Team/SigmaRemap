@@ -20,7 +20,7 @@ public class Class8966 implements Class8967
     }
     
     @Override
-    public float method31812(final Class8321 class8321, Class1847 field2391, final Class511 class8322) {
+    public float method31812(final ItemStack class8321, Class1847 field2391, final Class511 class8322) {
         final Entity class8323 = (class8322 != null) ? class8322 : class8321.method27679();
         if (field2391 == null) {
             if (class8323 != null) {

@@ -16,7 +16,7 @@ public class Class8521
         Arrays.sort(this.field35775 = array.clone());
     }
     
-    public Integer method28533(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
+    public Integer method28533(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
         final Class8967 method11700 = class8321.method27622().method11700(this.field35774);
         if (method11700 != null) {
             return Arrays.binarySearch(this.field35775, method11700.method31812(class8321, class8322, class8323));

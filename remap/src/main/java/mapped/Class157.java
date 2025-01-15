@@ -25,7 +25,7 @@ public class Class157 implements Class122
     
     @Override
     public boolean test(final Class7529 class7529) {
-        final Class8321 class7530 = class7529.method23579(Class6683.field26370);
+        final ItemStack class7530 = class7529.method23579(Class6683.field26370);
         return class7529.method23586().nextFloat() < this.field460[Math.min((class7530 == null) ? 0 : Class8742.method30195(this.field459, class7530), this.field460.length - 1)];
     }
     

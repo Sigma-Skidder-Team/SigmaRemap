@@ -55,7 +55,7 @@ public class Class3955 extends Class3841
         final Class458 class1850 = class1849.method16766();
         final int method2333 = class1850.method2333();
         if (method2333 >= 0) {
-            final Class8321 method2334 = class1850.method2157(method2333);
+            final ItemStack method2334 = class1850.method2157(method2333);
             final Class6423 method2335 = this.method12071(method2334);
             if (method2335 != Class6423.field25532) {
                 class1850.method2160(method2333, method2335.method19090(class1849, method2334));
@@ -66,7 +66,7 @@ public class Class3955 extends Class3841
         }
     }
     
-    public Class6423 method12071(final Class8321 class8321) {
+    public Class6423 method12071(final ItemStack class8321) {
         return Class3955.field17861.get(class8321.method27622());
     }
     
@@ -101,7 +101,7 @@ public class Class3955 extends Class3841
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class458) {

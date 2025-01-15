@@ -71,7 +71,7 @@ public class Class646 extends Class645
     }
     
     private void method3695(final Class1796 class1796) {
-        final List<Class8321> method7942 = this.field3664.method7942();
+        final List<ItemStack> method7942 = this.field3664.method7942();
         final int n = this.field3658 ? -2 : 0;
         if (method7942.size() != 1) {
             if (method7942.size() == 2) {

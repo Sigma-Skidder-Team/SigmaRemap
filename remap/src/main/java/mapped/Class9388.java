@@ -36,7 +36,7 @@ public class Class9388
         this.field40290 = new Class5905();
     }
     
-    public void method34897(final Class8321 class8321, final Class7351 class8322, final Class7807 class8323, final int n, final int n2) {
+    public void method34897(final ItemStack class8321, final Class7351 class8322, final Class7807 class8323, final int n, final int n2) {
         final Class3820 method27622 = class8321.method27622();
         if (!(method27622 instanceof Class4036)) {
             if (method27622 != Class7739.field31583) {

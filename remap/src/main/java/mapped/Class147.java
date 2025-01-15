@@ -44,7 +44,7 @@ public class Class147 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (this.field432.field11718.apply(class8322) != null) {
             this.field433.forEach(class8325 -> class8325.method34144((Supplier<Class41>)class8323::method27658, class8324));
         }

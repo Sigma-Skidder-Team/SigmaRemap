@@ -34,7 +34,7 @@ public class Class4088 extends Class3820
         return Class2201.field13402;
     }
     
-    public static boolean method12322(final Class8321 class8321, final Class1847 class8322, final BlockPos class8323) {
+    public static boolean method12322(final ItemStack class8321, final Class1847 class8322, final BlockPos class8323) {
         final Class7096 method6701 = class8322.method6701(class8323);
         if (method6701.method21696() instanceof Class3872) {
             final Class3872 class8324 = (Class3872)method6701.method21696();
@@ -51,7 +51,7 @@ public class Class4088 extends Class3820
         return false;
     }
     
-    public static boolean method12323(final Class8321 class8321, final Class1847 class8322, final BlockPos class8323, final Direction class8324) {
+    public static boolean method12323(final ItemStack class8321, final Class1847 class8322, final BlockPos class8323, final Direction class8324) {
         if (class8322.method6701(class8323).method21696() != Class7521.field29173 || class8322.method6702(class8323).method21784() != 8) {
             return false;
         }

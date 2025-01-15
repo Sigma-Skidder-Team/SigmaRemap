@@ -10,14 +10,14 @@ public class Class4287 implements Class4252<Class5813>
 {
     private static String[] field19226;
     private int field19227;
-    private Class8321 field19228;
+    private ItemStack field19228;
     
     public Class4287() {
-        this.field19228 = Class8321.field34174;
+        this.field19228 = ItemStack.field34174;
     }
     
-    public Class4287(final int field19227, final Class8321 class8321) {
-        this.field19228 = Class8321.field34174;
+    public Class4287(final int field19227, final ItemStack class8321) {
+        this.field19228 = ItemStack.field34174;
         this.field19227 = field19227;
         this.field19228 = class8321.method27641();
     }
@@ -42,7 +42,7 @@ public class Class4287 implements Class4252<Class5813>
         return this.field19227;
     }
     
-    public Class8321 method12875() {
+    public ItemStack method12875() {
         return this.field19228;
     }
 }

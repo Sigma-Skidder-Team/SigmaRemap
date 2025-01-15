@@ -17,10 +17,10 @@ public class Class4163 extends Class4158<Class448>
     
     public void method12469(final Class448 class448, final float n, final Class7351 class449, final Class7807 class450, final int n2, final int n3) {
         final Direction class451 = class448.method2194().method21772((Class7111<Direction>)Class3918.field17763);
-        final Class2265<Class8321> method2270 = class448.method2270();
+        final Class2265<ItemStack> method2270 = class448.method2270();
         for (int i = 0; i < method2270.size(); ++i) {
-            final Class8321 class452 = method2270.get(i);
-            if (class452 != Class8321.field34174) {
+            final ItemStack class452 = method2270.get(i);
+            if (class452 != ItemStack.field34174) {
                 class449.method22567();
                 class449.method22564(0.5, 0.44921875, 0.5);
                 class449.method22566(Vector3f.YP.rotationDegrees(-Direction.byHorizontalIndex((i + class451.getHorizontalIndex()) % 4).getHorizontalAngle()));

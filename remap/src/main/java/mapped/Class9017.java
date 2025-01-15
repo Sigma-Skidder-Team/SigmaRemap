@@ -8,9 +8,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class9017
 {
-    private final Class8321 field38047;
-    private final Class8321 field38048;
-    private final Class8321 field38049;
+    private final ItemStack field38047;
+    private final ItemStack field38048;
+    private final ItemStack field38049;
     private int field38050;
     private final int field38051;
     private boolean field38052;
@@ -22,9 +22,9 @@ public class Class9017
     public Class9017(final Class51 class51) {
         this.field38052 = true;
         this.field38056 = 1;
-        this.field38047 = Class8321.method27619(class51.method327("buy"));
-        this.field38048 = Class8321.method27619(class51.method327("buyB"));
-        this.field38049 = Class8321.method27619(class51.method327("sell"));
+        this.field38047 = ItemStack.method27619(class51.method327("buy"));
+        this.field38048 = ItemStack.method27619(class51.method327("buyB"));
+        this.field38049 = ItemStack.method27619(class51.method327("sell"));
         this.field38050 = class51.method319("uses");
         if (!class51.method316("maxUses", 99)) {
             this.field38051 = 4;
@@ -45,19 +45,19 @@ public class Class9017
         this.field38054 = class51.method319("demand");
     }
     
-    public Class9017(final Class8321 class8321, final Class8321 class8322, final int n, final int n2, final float n3) {
-        this(class8321, Class8321.field34174, class8322, n, n2, n3);
+    public Class9017(final ItemStack class8321, final ItemStack class8322, final int n, final int n2, final float n3) {
+        this(class8321, ItemStack.field34174, class8322, n, n2, n3);
     }
     
-    public Class9017(final Class8321 class8321, final Class8321 class8322, final Class8321 class8323, final int n, final int n2, final float n3) {
+    public Class9017(final ItemStack class8321, final ItemStack class8322, final ItemStack class8323, final int n, final int n2, final float n3) {
         this(class8321, class8322, class8323, 0, n, n2, n3);
     }
     
-    public Class9017(final Class8321 class8321, final Class8321 class8322, final Class8321 class8323, final int n, final int n2, final int n3, final float n4) {
+    public Class9017(final ItemStack class8321, final ItemStack class8322, final ItemStack class8323, final int n, final int n2, final int n3, final float n4) {
         this(class8321, class8322, class8323, n, n2, n3, n4, 0);
     }
     
-    public Class9017(final Class8321 field38047, final Class8321 field38048, final Class8321 field38049, final int field38050, final int field38051, final int field38052, final float field38053, final int field38054) {
+    public Class9017(final ItemStack field38047, final ItemStack field38048, final ItemStack field38049, final int field38050, final int field38051, final int field38052, final float field38053, final int field38054) {
         this.field38052 = true;
         this.field38056 = 1;
         this.field38047 = field38047;
@@ -70,22 +70,22 @@ public class Class9017
         this.field38054 = field38054;
     }
     
-    public Class8321 method32280() {
+    public ItemStack method32280() {
         return this.field38047;
     }
     
-    public Class8321 method32281() {
+    public ItemStack method32281() {
         final int method27690 = this.field38047.method27690();
-        final Class8321 method27691 = this.field38047.method27641();
+        final ItemStack method27691 = this.field38047.method27641();
         method27691.method27691(MathHelper.method35651(method27690 + Math.max(0, MathHelper.method35642(method27690 * this.field38054 * this.field38055)) + this.field38053, 1, this.field38047.method27622().method11708()));
         return method27691;
     }
     
-    public Class8321 method32282() {
+    public ItemStack method32282() {
         return this.field38048;
     }
     
-    public Class8321 method32283() {
+    public ItemStack method32283() {
         return this.field38049;
     }
     
@@ -93,7 +93,7 @@ public class Class9017
         this.field38054 = this.field38054 + this.field38050 - (this.field38051 - this.field38050);
     }
     
-    public Class8321 method32285() {
+    public ItemStack method32285() {
         return this.field38049.method27641();
     }
     
@@ -172,7 +172,7 @@ public class Class9017
         return class51;
     }
     
-    public boolean method32302(final Class8321 class8321, final Class8321 class8322) {
+    public boolean method32302(final ItemStack class8321, final ItemStack class8322) {
         if (this.method32303(class8321, this.method32281())) {
             if (class8321.method27690() >= this.method32281().method27690()) {
                 if (this.method32303(class8322, this.field38048)) {
@@ -185,15 +185,15 @@ public class Class9017
         return false;
     }
     
-    private boolean method32303(final Class8321 class8321, final Class8321 class8322) {
+    private boolean method32303(final ItemStack class8321, final ItemStack class8322) {
         if (class8322.method27620() && class8321.method27620()) {
             return true;
         }
-        final Class8321 method27641 = class8321.method27641();
+        final ItemStack method27641 = class8321.method27641();
         if (method27641.method27622().method11710()) {
             method27641.method27633(method27641.method27632());
         }
-        if (Class8321.method27645(method27641, class8322)) {
+        if (ItemStack.method27645(method27641, class8322)) {
             if (class8322.method27656()) {
                 if (!method27641.method27656()) {
                     return false;
@@ -207,7 +207,7 @@ public class Class9017
         return false;
     }
     
-    public boolean method32304(final Class8321 class8321, final Class8321 class8322) {
+    public boolean method32304(final ItemStack class8321, final ItemStack class8322) {
         if (this.method32302(class8321, class8322)) {
             class8321.method27693(this.method32281().method27690());
             if (!this.method32282().method27620()) {

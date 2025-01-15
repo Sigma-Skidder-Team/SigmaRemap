@@ -132,7 +132,7 @@ public class Class3965 extends Class3833 implements Class3966
     @Override
     public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
-        final Class8321 method2715 = class7099.method2715(class7100);
+        final ItemStack method2715 = class7099.method2715(class7100);
         if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.method27622())) {
             if (intValue < 7) {
                 if (!class7097.field10067) {
@@ -148,7 +148,7 @@ public class Class3965 extends Class3833 implements Class3966
             return Class2201.field13402;
         }
         if (!class7097.field10067) {
-            final Class427 class7102 = new Class427(class7097, class7098.getX() + (class7097.field10062.nextFloat() * 0.7f + 0.15000000596046448), class7098.getY() + (class7097.field10062.nextFloat() * 0.7f + 0.06000000238418579 + 0.6), class7098.getZ() + (class7097.field10062.nextFloat() * 0.7f + 0.15000000596046448), new Class8321(Class7739.field31400));
+            final Class427 class7102 = new Class427(class7097, class7098.getX() + (class7097.field10062.nextFloat() * 0.7f + 0.15000000596046448), class7098.getY() + (class7097.field10062.nextFloat() * 0.7f + 0.06000000238418579 + 0.6), class7098.getZ() + (class7097.field10062.nextFloat() * 0.7f + 0.15000000596046448), new ItemStack(Class7739.field31400));
             class7102.method2114();
             class7097.method6886(class7102);
         }
@@ -161,7 +161,7 @@ public class Class3965 extends Class3833 implements Class3966
         class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3965.field17915, 0), 3);
     }
     
-    private static boolean method12098(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098, final Class8321 class7099) {
+    private static boolean method12098(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098, final ItemStack class7099) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
         final float float1 = Class3965.field17916.getFloat((Object)class7099.method27622());
         if (intValue != 0 || float1 <= 0.0f) {
@@ -212,7 +212,7 @@ public class Class3965 extends Class3833 implements Class3966
         if (intValue != 8) {
             return (intValue >= 7) ? new Class480() : new Class487(class7096, class7097, class7098);
         }
-        return new Class442(class7096, class7097, class7098, new Class8321(Class7739.field31400));
+        return new Class442(class7096, class7097, class7098, new ItemStack(Class7739.field31400));
     }
     
     static {

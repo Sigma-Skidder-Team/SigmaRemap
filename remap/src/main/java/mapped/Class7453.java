@@ -10,14 +10,14 @@ import java.util.Collection;
 
 public class Class7453 implements Class7452
 {
-    private final Class8321 field28755;
+    private final ItemStack field28755;
     
-    private Class7453(final Class8321 field28755) {
+    private Class7453(final ItemStack field28755) {
         this.field28755 = field28755;
     }
     
     @Override
-    public Collection<Class8321> method22938() {
+    public Collection<ItemStack> method22938() {
         return Collections.singleton(this.field28755);
     }
     

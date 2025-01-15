@@ -20,7 +20,7 @@ public class Class7103
         this.field27708 = field27708;
     }
     
-    public boolean method21803(final Class8321 class8321) {
+    public boolean method21803(final ItemStack class8321) {
         return this == Class7103.field27707 || this.method21805(class8321.method27657());
     }
     
@@ -56,7 +56,7 @@ public class Class7103
     public static Class51 method21808(final Entity class399) {
         final Class51 method1756 = class399.method1756(new Class51());
         if (class399 instanceof Class512) {
-            final Class8321 method1757 = ((Class512)class399).field3006.method2345();
+            final ItemStack method1757 = ((Class512)class399).field3006.method2345();
             if (!method1757.method27620()) {
                 method1756.method295("SelectedItem", method1757.method27627(new Class51()));
             }

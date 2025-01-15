@@ -65,19 +65,19 @@ public abstract class Class456 extends Class460
     @Override
     public boolean method2156() {
         this.method2326(null);
-        return this.method2246().stream().allMatch(Class8321::method27620);
+        return this.method2246().stream().allMatch(ItemStack::method27620);
     }
     
     @Override
-    public Class8321 method2157(final int n) {
+    public ItemStack method2157(final int n) {
         this.method2326(null);
         return this.method2246().get(n);
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         this.method2326(null);
-        final Class8321 method28422 = Class8508.method28422(this.method2246(), n, n2);
+        final ItemStack method28422 = Class8508.method28422(this.method2246(), n, n2);
         if (!method28422.method27620()) {
             this.method2161();
         }
@@ -85,13 +85,13 @@ public abstract class Class456 extends Class460
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         this.method2326(null);
         return Class8508.method28423(this.method2246(), n);
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
         this.method2326(null);
         this.method2246().set(n, class8321);
         if (class8321.method27690() > this.method2254()) {
@@ -110,9 +110,9 @@ public abstract class Class456 extends Class460
         this.method2246().clear();
     }
     
-    public abstract Class2265<Class8321> method2246();
+    public abstract Class2265<ItemStack> method2246();
     
-    public abstract void method2247(final Class2265<Class8321> p0);
+    public abstract void method2247(final Class2265<ItemStack> p0);
     
     @Override
     public boolean method2328(final Class512 class512) {

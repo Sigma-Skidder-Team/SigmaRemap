@@ -30,17 +30,17 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public Class1992 method11725(final Class8321 class8321) {
+    public Class1992 method11725(final ItemStack class8321) {
         return Class1992.field11159;
     }
     
     @Override
-    public int method11726(final Class8321 class8321) {
+    public int method11726(final ItemStack class8321) {
         return 72000;
     }
     
     @Override
-    public void method11727(final Class8321 class8321, final Class1847 class8322, final Class511 class8323, final int n) {
+    public void method11727(final ItemStack class8321, final Class1847 class8322, final Class511 class8323, final int n) {
         if (class8323 instanceof Class512) {
             final Class512 class8324 = (Class512)class8323;
             if (this.method11726(class8321) - n >= 10) {
@@ -95,8 +95,8 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         if (method2715.method27632() >= method2715.method27634() - 1) {
             return Class9355.method34677(method2715);
         }
@@ -108,13 +108,13 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public boolean method11711(final Class8321 class8321, final Class511 class8322, final Class511 class8323) {
+    public boolean method11711(final ItemStack class8321, final Class511 class8322, final Class511 class8323) {
         class8321.method27636(1, class8323, class8324 -> class8324.method2794(Class2215.field13600));
         return true;
     }
     
     @Override
-    public boolean method11712(final Class8321 class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
+    public boolean method11712(final ItemStack class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
         if (class8323.method21718(class8322, class8324) != 0.0) {
             class8321.method27636(2, class8325, class8326 -> class8326.method2794(Class2215.field13600));
         }

@@ -46,7 +46,7 @@ public class Class9342
         this.field40115 = field40115;
     }
     
-    public boolean method34627(final Class8321 class8321) {
+    public boolean method34627(final ItemStack class8321) {
         if (this == Class9342.field40107) {
             return true;
         }

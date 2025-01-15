@@ -152,7 +152,7 @@ public class Class1878 implements Class1851
         final Class7096 method6701 = this.method6701(class354);
         if (!method6701.method21706()) {
             if (b) {
-                Class3833.method11838(method6701, this.field10219, class354, method6701.method21696().method11802() ? this.method6727(class354) : null, class355, Class8321.field34174);
+                Class3833.method11838(method6701, this.field10219, class354, method6701.method21696().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
             }
             return this.method6688(class354, Class7521.field29147.method11878(), 3);
         }

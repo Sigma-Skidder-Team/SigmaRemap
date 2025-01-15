@@ -94,7 +94,7 @@ public class Class3260 extends Class3247
         int n = 0;
         for (int i = 0; i < 45; ++i) {
             if (Class3260.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3260.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3260.field15514.field4684.field3008.method10878(i).method20053();
                 if (method10279(method20053.method27622())) {
                     n += method20053.field34176;
                 }
@@ -189,7 +189,7 @@ public class Class3260 extends Class3247
             for (int i = 9; i < 45; ++i) {
                 if (Class3260.field15514.field4684.field3008.method10878(i).method20054()) {
                     final Class3820 method27622 = Class3260.field15514.field4684.field3008.method10878(i).method20053().method27622();
-                    final Class8321 method27623 = Class3260.field15514.field4684.field3008.method10878(i).method20053();
+                    final ItemStack method27623 = Class3260.field15514.field4684.field3008.method10878(i).method20053();
                     if (method10279(method27622)) {
                         if (method27623.field34176 > field34176) {
                             field34176 = method27623.field34176;

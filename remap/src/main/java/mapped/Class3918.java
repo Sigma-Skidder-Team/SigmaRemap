@@ -32,7 +32,7 @@ public class Class3918 extends Class3841 implements Class3856
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class448) {
                 final Class448 class7102 = (Class448)method6727;
-                final Class8321 method6728 = class7099.method2715(class7100);
+                final ItemStack method6728 = class7099.method2715(class7100);
                 final Optional<Class3682> method6729 = class7102.method2272(method6728);
                 if (method6729.isPresent()) {
                     if (!class7097.field10067 && class7102.method2273(class7099.field3025.field27304 ? method6728.method27641() : method6728, method6729.get().method11329())) {

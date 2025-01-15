@@ -1190,7 +1190,7 @@ public class Class8154
         Class8154.field33583 = false;
     }
     
-    public static void method26929(Class8321 class8321, final int n, final int n2, final int n3, final int n4) {
+    public static void method26929(ItemStack class8321, final int n, final int n2, final int n3, final int n4) {
         if (class8321 != null) {
             final Class1663 method5290 = Class8154.field33582.method5290();
             Class8154.field33582.method5290();
@@ -1200,7 +1200,7 @@ public class Class8154
             GL11.glScalef(n3 / 16.0f, n4 / 16.0f, 0.0f);
             final Class1796 method5291 = Class8154.field33582.method5307();
             if (class8321.field34176 == 0) {
-                class8321 = new Class8321(class8321.method27622());
+                class8321 = new ItemStack(class8321.method27622());
             }
             Class3833.method11776(class8321.method27622());
             Class8726.method30108();

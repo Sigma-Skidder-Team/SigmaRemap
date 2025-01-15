@@ -17,17 +17,17 @@ public class Class6628 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return false;
     }
     
     @Override
-    public Class8321 method20060(final int n) {
-        final Class8321 class8321 = this.field26212.method22435((class8325, p2) -> {
+    public ItemStack method20060(final int n) {
+        final ItemStack class8321 = this.field26212.method22435((class8325, p2) -> {
             if (!Class3417.method10865(this.field26213)) {
                 if (this.field26213.field16148.method2157(1).method27622() == Class7739.field30967) {
                     Class4094.method12337(class8325, this.field26213.field16148.method2157(0));
-                    final Class8321 class8326;
+                    final ItemStack class8326;
                     if (class8326 != null) {
                         class8326.method27691(1);
                         return class8326;
@@ -42,13 +42,13 @@ public class Class6628 extends Class6601
     }
     
     @Override
-    public void method20050(final Class8321 class8321, final int n) {
+    public void method20050(final ItemStack class8321, final int n) {
         this.method20060(n);
         super.method20050(class8321, n);
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         class513.method27622().method11723(class513, class512.field2391, class512);
         this.field26212.method22437((class514, class515) -> {
             class514.method6754();

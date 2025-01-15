@@ -32,8 +32,8 @@ public class Class7956 implements Class7954
     
     @Override
     public Class9017 method25804(final Entity class399, final Random random) {
-        final Class8321 class400 = new Class8321(Class7739.field31514, this.field32688);
-        Class8321 method12255 = new Class8321(this.field32687);
+        final ItemStack class400 = new ItemStack(Class7739.field31514, this.field32688);
+        ItemStack method12255 = new ItemStack(this.field32687);
         if (this.field32687 instanceof Class4054) {
             final ArrayList arrayList = Lists.newArrayList();
             arrayList.add(method25806(random));

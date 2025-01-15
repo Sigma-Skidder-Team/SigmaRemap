@@ -56,7 +56,7 @@ public class Class3572 extends Class3446
     private boolean method11112(final Class512 class512) {
         final Class316[] values = Class316.values();
         for (int length = values.length, i = 0; i < length; ++i) {
-            final Class8321 method2715 = class512.method2715(values[i]);
+            final ItemStack method2715 = class512.method2715(values[i]);
             if (this.field16670.method4480() && method2715.method27622() == Class7739.field31405) {
                 return true;
             }

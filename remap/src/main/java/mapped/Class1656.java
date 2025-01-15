@@ -2610,7 +2610,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 final double n8 = class513.getY();
                 final double n9 = class513.getZ();
                 for (int n10 = 0; n10 < 8; ++n10) {
-                    this.method5746(new Class6910(Class8432.field34629, new Class8321(Class7739.field31579)), n7, n8, n9, field10062.nextGaussian() * 0.15, field10062.nextDouble() * 0.2, field10062.nextGaussian() * 0.15);
+                    this.method5746(new Class6910(Class8432.field34629, new ItemStack(Class7739.field31579)), n7, n8, n9, field10062.nextGaussian() * 0.15, field10062.nextDouble() * 0.2, field10062.nextGaussian() * 0.15);
                 }
                 final float n11 = (n2 >> 16 & 0xFF) / 255.0f;
                 final float n12 = (n2 >> 8 & 0xFF) / 255.0f;
@@ -2637,7 +2637,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 final double n22 = class513.getY();
                 final double n23 = class513.getZ() + 0.5;
                 for (int n24 = 0; n24 < 8; ++n24) {
-                    this.method5746(new Class6910(Class8432.field34629, new Class8321(Class7739.field31449)), n21, n22, n23, field10062.nextGaussian() * 0.15, field10062.nextDouble() * 0.2, field10062.nextGaussian() * 0.15);
+                    this.method5746(new Class6910(Class8432.field34629, new ItemStack(Class7739.field31449)), n21, n22, n23, field10062.nextGaussian() * 0.15, field10062.nextDouble() * 0.2, field10062.nextGaussian() * 0.15);
                 }
                 for (double n25 = 0.0; n25 < 6.283185307179586; n25 += 0.15707963267948966) {
                     this.method5746(Class8432.field34637, n21 + Math.cos(n25) * 5.0, n22 - 0.4, n23 + Math.sin(n25) * 5.0, Math.cos(n25) * -5.0, 0.0, Math.sin(n25) * -5.0);

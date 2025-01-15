@@ -5,9 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public class Class3678 extends Class3666
         int n3 = 0;
         int n4 = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (!Class3678.field16964.test(method2157)) {
                     if (!Class3678.field16966.test(method2157)) {
@@ -73,13 +73,13 @@ public class Class3678 extends Class3666
         return n != 0 && b;
     }
     
-    public Class8321 method11303(final Class473 class473) {
-        final Class8321 class474 = new Class8321(Class7739.field31533);
+    public ItemStack method11303(final Class473 class473) {
+        final ItemStack class474 = new ItemStack(Class7739.field31533);
         final Class51 method27659 = class474.method27659("Explosion");
         Class2141 field12605 = Class2141.field12605;
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method27660 = class473.method2157(i);
+            final ItemStack method27660 = class473.method2157(i);
             if (!method27660.method27620()) {
                 if (!Class3678.field16964.test(method27660)) {
                     if (!Class3678.field16966.test(method27660)) {
@@ -112,8 +112,8 @@ public class Class3678 extends Class3666
     }
     
     @Override
-    public Class8321 method11292() {
-        return new Class8321(Class7739.field31533);
+    public ItemStack method11292() {
+        return new ItemStack(Class7739.field31533);
     }
     
     @Override

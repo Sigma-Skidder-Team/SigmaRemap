@@ -16,7 +16,7 @@ public class Class6683
     public static final Class7915<BlockPos> field26367;
     public static final Class7915<Class7096> field26368;
     public static final Class7915<Class436> field26369;
-    public static final Class7915<Class8321> field26370;
+    public static final Class7915<ItemStack> field26370;
     public static final Class7915<Float> field26371;
     
     private static <T> Class7915<T> method20325(final String s) {

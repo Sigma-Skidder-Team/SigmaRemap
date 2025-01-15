@@ -18,13 +18,13 @@ public class Class135 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27620()) {
-            final Optional<Class3684> method6378 = class8322.method23588().method6792().method6378(Class8976.field37844, new Class443(new Class8321[] { class8321 }), class8322.method23588());
+            final Optional<Class3684> method6378 = class8322.method23588().method6792().method6378(Class8976.field37844, new Class443(new ItemStack[] { class8321 }), class8322.method23588());
             if (method6378.isPresent()) {
-                final Class8321 method6379 = method6378.get().method11292();
+                final ItemStack method6379 = method6378.get().method11292();
                 if (!method6379.method27620()) {
-                    final Class8321 method6380 = method6379.method27641();
+                    final ItemStack method6380 = method6379.method27641();
                     method6380.method27691(class8321.method27690());
                     return method6380;
                 }

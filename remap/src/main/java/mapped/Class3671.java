@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 
 public class Class3671 extends Class3666
@@ -20,7 +20,7 @@ public class Class3671 extends Class3666
         boolean b = false;
         int n = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (!(method2157.method27622() instanceof Class3829)) {
                     if (!Class3671.field16956.test(method2157)) {
@@ -39,11 +39,11 @@ public class Class3671 extends Class3666
         return n != 0 && b;
     }
     
-    public Class8321 method11303(final Class473 class473) {
+    public ItemStack method11303(final Class473 class473) {
         final ArrayList arrayList = Lists.newArrayList();
-        Class8321 method27641 = null;
+        ItemStack method27641 = null;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method27642 = class473.method2157(i);
+            final ItemStack method27642 = class473.method2157(i);
             final Class3820 method27643 = method27642.method27622();
             if (!(method27643 instanceof Class3829)) {
                 if (Class3671.field16956.test(method27642)) {
@@ -59,7 +59,7 @@ public class Class3671 extends Class3666
             method27641.method27659("Explosion").method309("FadeColors", arrayList);
             return method27641;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override

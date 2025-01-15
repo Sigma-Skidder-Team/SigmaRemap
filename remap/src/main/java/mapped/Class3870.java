@@ -47,7 +47,7 @@ public class Class3870 extends Class3874
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         class1847.method6688(class1848.method1137(), ((Class7097<O, Class7096>)this.method11878()).method21773(Class3870.field17513, Class182.field564), 3);
     }
     
@@ -66,7 +66,7 @@ public class Class3870 extends Class3874
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final Class8321 class1852) {
+    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, Class7521.field29147.method11878(), class1851, class1852);
     }
     

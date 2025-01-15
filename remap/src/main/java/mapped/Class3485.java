@@ -73,7 +73,7 @@ public class Class3485 extends Class3479
                     final Vec3d method11057 = this.field16415.method1935();
                     this.field16415.method1937(method11057.x, 0.3, method11057.z);
                     if (!field2391.field10067) {
-                        ((Class1849)field2391).method6911(new Class6910(Class8432.field34629, new Class8321(Class7739.field31374)), method11055.getX() + 0.5, method11055.getY() + 0.7, method11055.getZ() + 0.5, 3, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, 0.15000000596046448);
+                        ((Class1849)field2391).method6911(new Class6910(Class8432.field34629, new ItemStack(Class7739.field31374)), method11055.getX() + 0.5, method11055.getY() + 0.7, method11055.getZ() + 0.5, 3, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, 0.15000000596046448);
                     }
                 }
                 if (this.field16416 % 2 == 0) {

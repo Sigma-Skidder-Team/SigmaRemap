@@ -9,17 +9,17 @@ import java.util.List;
 
 public interface Class4053
 {
-    default boolean method12251(final Class8321 class8321) {
+    default boolean method12251(final ItemStack class8321) {
         final Class51 method27660 = class8321.method27660("display");
         return method27660 != null && method27660.method316("color", 99);
     }
     
-    default int method12252(final Class8321 class8321) {
+    default int method12252(final ItemStack class8321) {
         final Class51 method27660 = class8321.method27660("display");
         return (method27660 != null && method27660.method316("color", 99)) ? method27660.method319("color") : 10511680;
     }
     
-    default void method12253(final Class8321 class8321) {
+    default void method12253(final ItemStack class8321) {
         final Class51 method27660 = class8321.method27660("display");
         if (method27660 != null) {
             if (method27660.method315("color")) {
@@ -28,12 +28,12 @@ public interface Class4053
         }
     }
     
-    default void method12254(final Class8321 class8321, final int n) {
+    default void method12254(final ItemStack class8321, final int n) {
         class8321.method27659("display").method298("color", n);
     }
     
-    default Class8321 method12255(final Class8321 class8321, final List<Class3829> list) {
-        Class8321 class8322 = Class8321.field34174;
+    default ItemStack method12255(final ItemStack class8321, final List<Class3829> list) {
+        ItemStack class8322 = ItemStack.field34174;
         final int[] array = new int[3];
         int n = 0;
         int n2 = 0;
@@ -82,6 +82,6 @@ public interface Class4053
             class8323.method12254(class8322, (((int)(a5 * n6 / n7) << 8) + (int)(a6 * n6 / n7) << 8) + (int)(b3 * n6 / n7));
             return class8322;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
 }

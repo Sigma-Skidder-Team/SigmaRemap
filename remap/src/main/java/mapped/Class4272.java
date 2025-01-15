@@ -11,14 +11,14 @@ public class Class4272 implements Class4252<Class5800>
     private static String[] field19159;
     private int field19160;
     private int field19161;
-    private Class8321 field19162;
+    private ItemStack field19162;
     
     public Class4272() {
-        this.field19162 = Class8321.field34174;
+        this.field19162 = ItemStack.field34174;
     }
     
-    public Class4272(final int field19160, final int field19161, final Class8321 class8321) {
-        this.field19162 = Class8321.field34174;
+    public Class4272(final int field19160, final int field19161, final ItemStack class8321) {
+        this.field19162 = ItemStack.field34174;
         this.field19160 = field19160;
         this.field19161 = field19161;
         this.field19162 = class8321.method27641();
@@ -50,7 +50,7 @@ public class Class4272 implements Class4252<Class5800>
         return this.field19161;
     }
     
-    public Class8321 method12821() {
+    public ItemStack method12821() {
         return this.field19162;
     }
 }

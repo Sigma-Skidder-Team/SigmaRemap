@@ -11,5 +11,5 @@ import com.mojang.brigadier.context.CommandContext;
 @FunctionalInterface
 public interface Class8917
 {
-    int method31443(final CommandContext<Class7492> p0, final List<Class8321> p1, final Class7945 p2) throws CommandSyntaxException;
+    int method31443(final CommandContext<Class7492> p0, final List<ItemStack> p1, final Class7945 p2) throws CommandSyntaxException;
 }

@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class8503
 {
-    int method28417(final Class8321 p0, final int p1);
+    int method28417(final ItemStack p0, final int p1);
 }

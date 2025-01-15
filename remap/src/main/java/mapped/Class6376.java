@@ -20,8 +20,8 @@ public class Class6376 extends Class6367
     }
     
     @Override
-    public void method19013(final Consumer<Class8321> consumer, final Class7529 class7529) {
-        this.field25485.method25616().forEach(class7530 -> consumer2.accept(new Class8321(class7530)));
+    public void method19013(final Consumer<ItemStack> consumer, final Class7529 class7529) {
+        this.field25485.method25616().forEach(class7530 -> consumer2.accept(new ItemStack(class7530)));
     }
     
     private boolean method19039(final Class7529 class7529, final Consumer<Class7182> consumer) {

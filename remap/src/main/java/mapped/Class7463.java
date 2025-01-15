@@ -12,7 +12,7 @@ public class Class7463
 {
     private static final Map<Class1932, Class6230<?>> field28817;
     private static final Map<Class<? extends Class125>, Class6230<?>> field28818;
-    public static final BiFunction<Class8321, Class7529, Class8321> field28819;
+    public static final BiFunction<ItemStack, Class7529, ItemStack> field28819;
     
     public static <T extends Class125> void method22988(final Class6230<? extends T> class6230) {
         final Class1932 method18545 = class6230.method18545();
@@ -44,7 +44,7 @@ public class Class7463
         throw new IllegalArgumentException("Unknown loot item function " + obj);
     }
     
-    public static BiFunction<Class8321, Class7529, Class8321> method22991(final BiFunction<Class8321, Class7529, Class8321>[] array2) {
+    public static BiFunction<ItemStack, Class7529, ItemStack> method22991(final BiFunction<ItemStack, Class7529, ItemStack>[] array2) {
         switch (array2.length) {
             case 0: {
                 return Class7463.field28819;
@@ -53,17 +53,17 @@ public class Class7463
                 return array2[0];
             }
             case 2: {
-                return (BiFunction<Class8321, Class7529, Class8321>)((class8323, class8324) -> {
+                return (BiFunction<ItemStack, Class7529, ItemStack>)((class8323, class8324) -> {
                     final Object o = array2[1];
                     final Object o2 = array2[0];
-                    return (Class8321)biFunction.apply(biFunction2.apply(class8323, class8324), class8324);
+                    return (ItemStack)biFunction.apply(biFunction2.apply(class8323, class8324), class8324);
                 });
             }
             default: {
-                return (BiFunction<Class8321, Class7529, Class8321>)((class8326, class8328) -> {
+                return (BiFunction<ItemStack, Class7529, ItemStack>)((class8326, class8328) -> {
                     int i = 0;
                     for (int length = array3.length; i < length; ++i) {
-                        class8326 = (Class8321)array3[i].apply(class8326, class8328);
+                        class8326 = (ItemStack)array3[i].apply(class8326, class8328);
                     }
                     return class8326;
                 });

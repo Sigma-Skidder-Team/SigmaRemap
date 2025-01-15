@@ -11,9 +11,9 @@ import java.util.function.Predicate;
 public class Class168 implements Predicate<Entity>
 {
     private static String[] field488;
-    private final Class8321 field489;
+    private final ItemStack field489;
     
-    public Class168(final Class8321 field489) {
+    public Class168(final ItemStack field489) {
         this.field489 = field489;
     }
     

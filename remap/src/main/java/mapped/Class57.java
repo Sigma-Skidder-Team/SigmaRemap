@@ -21,7 +21,7 @@ public class Class57 extends ArrayList<Class9017>
     }
     
     @Nullable
-    public Class9017 method359(final Class8321 class8321, final Class8321 class8322, final int index) {
+    public Class9017 method359(final ItemStack class8321, final ItemStack class8322, final int index) {
         if (index > 0 && index < this.size()) {
             final Class9017 class8323 = this.get(index);
             return class8323.method32302(class8321, class8322) ? class8323 : null;
@@ -41,7 +41,7 @@ public class Class57 extends ArrayList<Class9017>
             final Class9017 class8655 = this.get(i);
             class8654.method29509(class8655.method32280());
             class8654.method29509(class8655.method32283());
-            final Class8321 method32282 = class8655.method32282();
+            final ItemStack method32282 = class8655.method32282();
             class8654.writeBoolean(!method32282.method27620());
             if (!method32282.method27620()) {
                 class8654.method29509(method32282);
@@ -59,9 +59,9 @@ public class Class57 extends ArrayList<Class9017>
     public static Class57 method361(final Class8654 class8654) {
         final Class57 class8655 = new Class57();
         for (int n = class8654.readByte() & 0xFF, i = 0; i < n; ++i) {
-            final Class8321 method29511 = class8654.method29511();
-            final Class8321 method29512 = class8654.method29511();
-            Class8321 class8656 = Class8321.field34174;
+            final ItemStack method29511 = class8654.method29511();
+            final ItemStack method29512 = class8654.method29511();
+            ItemStack class8656 = ItemStack.field34174;
             if (class8654.readBoolean()) {
                 class8656 = class8654.method29511();
             }

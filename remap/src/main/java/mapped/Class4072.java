@@ -23,18 +23,18 @@ public class Class4072 extends Class4071
     }
     
     @Override
-    public float method11706(final Class8321 class8321, final Class7096 class8322) {
+    public float method11706(final ItemStack class8321, final Class7096 class8322) {
         return this.field18167.contains(class8322.method21696()) ? this.field18168 : 1.0f;
     }
     
     @Override
-    public boolean method11711(final Class8321 class8321, final Class511 class8322, final Class511 class8323) {
+    public boolean method11711(final ItemStack class8321, final Class511 class8322, final Class511 class8323) {
         class8321.method27636(2, class8323, class8324 -> class8324.method2794(Class2215.field13600));
         return true;
     }
     
     @Override
-    public boolean method11712(final Class8321 class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
+    public boolean method11712(final ItemStack class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
         if (!class8322.field10067) {
             if (class8323.method21718(class8322, class8324) != 0.0f) {
                 class8321.method27636(1, class8325, class8326 -> class8326.method2794(Class2215.field13600));

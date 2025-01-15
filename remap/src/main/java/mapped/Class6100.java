@@ -24,7 +24,7 @@ public class Class6100<T extends Class3685> implements Class6096<T>
         else {
             class1933 = Class120.method622((JsonElement)Class9583.method35917(jsonObject, "ingredient"));
         }
-        return this.field24755.method34696(class1932, method35896, class1933, new Class8321(Class90.field211.method505(new Class1932(Class9583.method35895(jsonObject, "result"))), Class9583.method35909(jsonObject, "count")));
+        return this.field24755.method34696(class1932, method35896, class1933, new ItemStack(Class90.field211.method505(new Class1932(Class9583.method35895(jsonObject, "result"))), Class9583.method35909(jsonObject, "count")));
     }
     
     public T method18195(final Class1932 class1932, final Class8654 class1933) {

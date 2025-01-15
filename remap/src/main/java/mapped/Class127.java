@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Random;
 import java.util.UUID;
 import java.util.Collection;
@@ -22,7 +21,7 @@ public class Class127 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         final Random method23586 = class8322.method23586();
         for (final Class7376 class8323 : this.field386) {
             UUID uuid = Class7376.method22646(class8323);

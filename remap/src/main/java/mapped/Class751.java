@@ -16,11 +16,11 @@ public class Class751 implements Class514
     }
     
     @Override
-    public void method2930(final Class3418 class3418, final Class2265<Class8321> class3419) {
+    public void method2930(final Class3418 class3418, final Class2265<ItemStack> class3419) {
     }
     
     @Override
-    public void method2928(final Class3418 class3418, final int n, final Class8321 class3419) {
+    public void method2928(final Class3418 class3418, final int n, final ItemStack class3419) {
     }
     
     @Override

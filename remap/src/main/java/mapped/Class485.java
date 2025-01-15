@@ -20,14 +20,14 @@ public class Class485 extends Class443
     
     public void method2430(final Class52 class52) {
         for (int i = 0; i < this.method2239(); ++i) {
-            this.method2160(i, Class8321.field34174);
+            this.method2160(i, ItemStack.field34174);
         }
         for (int j = 0; j < class52.size(); ++j) {
             final Class51 method346 = class52.method346(j);
             final int n = method346.method317("Slot") & 0xFF;
             if (n >= 0) {
                 if (n < this.method2239()) {
-                    this.method2160(n, Class8321.method27619(method346));
+                    this.method2160(n, ItemStack.method27619(method346));
                 }
             }
         }
@@ -36,7 +36,7 @@ public class Class485 extends Class443
     public Class52 method2431() {
         final Class52 class52 = new Class52();
         for (int i = 0; i < this.method2239(); ++i) {
-            final Class8321 method2157 = this.method2157(i);
+            final ItemStack method2157 = this.method2157(i);
             if (!method2157.method27620()) {
                 final Class51 e = new Class51();
                 e.method296("Slot", (byte)i);

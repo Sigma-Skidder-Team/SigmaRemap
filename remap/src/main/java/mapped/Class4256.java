@@ -13,15 +13,15 @@ public class Class4256 implements Class4252<Class5813>
     private int field19095;
     private int field19096;
     private short field19097;
-    private Class8321 field19098;
+    private ItemStack field19098;
     private Class2133 field19099;
     
     public Class4256() {
-        this.field19098 = Class8321.field34174;
+        this.field19098 = ItemStack.field34174;
     }
     
-    public Class4256(final int field19094, final int field19095, final int field19096, final Class2133 field19097, final Class8321 class8321, final short field19098) {
-        this.field19098 = Class8321.field34174;
+    public Class4256(final int field19094, final int field19095, final int field19096, final Class2133 field19097, final ItemStack class8321, final short field19098) {
+        this.field19098 = ItemStack.field34174;
         this.field19094 = field19094;
         this.field19095 = field19095;
         this.field19096 = field19096;
@@ -70,7 +70,7 @@ public class Class4256 implements Class4252<Class5813>
         return this.field19097;
     }
     
-    public Class8321 method12777() {
+    public ItemStack method12777() {
         return this.field19098;
     }
     

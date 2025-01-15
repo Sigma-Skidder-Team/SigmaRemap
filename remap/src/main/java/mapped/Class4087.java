@@ -29,14 +29,14 @@ public class Class4087 extends Class4085
     }
     
     @Override
-    public void method11727(final Class8321 class8321, final Class1847 class8322, final Class511 class8323, final int n) {
+    public void method11727(final ItemStack class8321, final Class1847 class8322, final Class511 class8323, final int n) {
         if (class8323 instanceof Class512) {
             final Class512 class8324 = (Class512)class8323;
             final boolean b = class8324.field3025.field27304 || Class8742.method30195(Class7882.field32372, class8321) > 0;
-            Class8321 method2790 = class8324.method2790(class8321);
+            ItemStack method2790 = class8324.method2790(class8321);
             if (!method2790.method27620() || b) {
                 if (method2790.method27620()) {
-                    method2790 = new Class8321(Class7739.field31280);
+                    method2790 = new ItemStack(Class7739.field31280);
                 }
                 final float method2791 = method12318(this.method11726(class8321) - n);
                 if (method2791 >= 0.1) {
@@ -99,18 +99,18 @@ public class Class4087 extends Class4085
     }
     
     @Override
-    public int method11726(final Class8321 class8321) {
+    public int method11726(final ItemStack class8321) {
         return 72000;
     }
     
     @Override
-    public Class1992 method11725(final Class8321 class8321) {
+    public Class1992 method11725(final ItemStack class8321) {
         return Class1992.field11158;
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         final boolean b = !class1848.method2790(method2715).method27620();
         if (!class1848.field3025.field27304 && !b) {
             return Class9355.method34677(method2715);
@@ -120,7 +120,7 @@ public class Class4087 extends Class4085
     }
     
     @Override
-    public Predicate<Class8321> method12290() {
+    public Predicate<ItemStack> method12290() {
         return Class4087.field18189;
     }
 }

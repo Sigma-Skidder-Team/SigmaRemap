@@ -18,12 +18,12 @@ public class Class145 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27620()) {
             final Class2265<Object> method8506 = (Class2265<Object>)Class2265.method8506();
             this.field428.forEach(class8325 -> class8325.method19016(class8324, class8328 -> class8328.method21974(Class9317.method34482(class8326::add), class8327)));
             final Class51 class8323 = new Class51();
-            Class8508.method28424(class8323, (Class2265<Class8321>)method8506);
+            Class8508.method28424(class8323, (Class2265<ItemStack>)method8506);
             final Class51 method8507 = class8321.method27658();
             method8507.method295("BlockEntityTag", class8323.method338(method8507.method327("BlockEntityTag")));
             return class8321;

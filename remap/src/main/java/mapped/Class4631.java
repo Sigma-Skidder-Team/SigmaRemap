@@ -21,7 +21,7 @@ public class Class4631 extends Class4611<Class4231>
         return new Class4231(Class9342.method34628(jsonObject.get("rod")), Class8172.method27017(jsonObject.get("entity")), Class9342.method34628(jsonObject.get("item")));
     }
     
-    public void method13808(final Class513 class513, final Class8321 class514, final Class425 class515, final Collection<Class8321> collection) {
+    public void method13808(final Class513 class513, final ItemStack class514, final Class425 class515, final Collection<ItemStack> collection) {
         this.method13726(class513.method2957(), class519 -> class519.method12725(class516, class517, class518, collection2));
     }
     

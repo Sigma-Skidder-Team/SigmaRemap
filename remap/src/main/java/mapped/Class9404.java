@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.HashSet;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -401,7 +400,7 @@ public class Class9404
         list2.add(class8988);
     }
     
-    public static Class6313 method34966(final Class8321 class8321, final Class6313 class8322, final Class1932 class8323, final boolean b) {
+    public static Class6313 method34966(final ItemStack class8321, final Class6313 class8322, final Class1932 class8323, final boolean b) {
         if (!b && class8322.method18693()) {
             return class8322;
         }
@@ -416,7 +415,7 @@ public class Class9404
         return class8322;
     }
     
-    public static boolean method34967(final Class8321 class8321, final Class2215 class8322, final String s) {
+    public static boolean method34967(final ItemStack class8321, final Class2215 class8322, final String s) {
         if (Class9404.field40346 == null) {
             return false;
         }
@@ -428,7 +427,7 @@ public class Class9404
         return false;
     }
     
-    private static Class1932 method34968(final Class8321 class8321, final Class2215 class8322, final String str) {
+    private static Class1932 method34968(final ItemStack class8321, final Class2215 class8322, final String str) {
         final Class8988 method34970 = method34970(class8321, 3);
         if (method34970 == null) {
             return null;
@@ -455,7 +454,7 @@ public class Class9404
         return null;
     }
     
-    public static Class1932 method34969(final Class8321 class8321, final Class1932 class8322) {
+    public static Class1932 method34969(final ItemStack class8321, final Class1932 class8322) {
         if (Class9404.field40346 == null) {
             return class8322;
         }
@@ -466,7 +465,7 @@ public class Class9404
         return class8322;
     }
     
-    private static Class8988 method34970(final Class8321 class8321, final int n) {
+    private static Class8988 method34970(final ItemStack class8321, final int n) {
         if (Class9404.field40346 == null) {
             return null;
         }
@@ -490,7 +489,7 @@ public class Class9404
         return null;
     }
     
-    private static boolean method34971(final Class8988 class8988, final Class8321 class8989, final int[][] array) {
+    private static boolean method34971(final Class8988 class8988, final ItemStack class8989, final int[][] array) {
         final Class3820 method27622 = class8989.method27622();
         if (class8988.field37889 != null) {
             int method27623 = method34972(class8989);
@@ -562,11 +561,11 @@ public class Class9404
         return true;
     }
     
-    private static int method34972(final Class8321 class8321) {
+    private static int method34972(final ItemStack class8321) {
         return (class8321.method27622() instanceof Class4089) ? method34973(class8321) : class8321.method27632();
     }
     
-    private static int method34973(final Class8321 class8321) {
+    private static int method34973(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 == null) {
             return 0;
@@ -619,7 +618,7 @@ public class Class9404
         }
     }
     
-    private static int[][] method34976(final Class8321 class8321) {
+    private static int[][] method34976(final ItemStack class8321) {
         Class52 class8322;
         if (class8321.method27622() != Class7739.field31534) {
             class8322 = class8321.method27662();
@@ -646,7 +645,7 @@ public class Class9404
         return Class9404.field40361;
     }
     
-    public static boolean method34977(final Class1796 class1796, final Class8321 class1797, final Class6313 class1798) {
+    public static boolean method34977(final Class1796 class1796, final ItemStack class1797, final Class6313 class1798) {
         if (Class9404.field40347 == null) {
             return false;
         }
@@ -711,7 +710,7 @@ public class Class9404
         return false;
     }
     
-    public static boolean method34978(final Class511 class511, final Class8321 class512, final Class5845 class513, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public static boolean method34978(final Class511 class511, final ItemStack class512, final Class5845 class513, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (Class9404.field40347 == null) {
             return false;
         }

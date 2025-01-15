@@ -19,37 +19,37 @@ import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.ints.IntList;
 import java.util.function.Predicate;
 
-public final class Class120 implements Predicate<Class8321>
+public final class Class120 implements Predicate<ItemStack>
 {
     private static final Predicate<? super Class7452> field373;
     public static final Class120 field374;
     private final Class7452[] field375;
-    private Class8321[] field376;
+    private ItemStack[] field376;
     private IntList field377;
     
     private Class120(final Stream<? extends Class7452> stream) {
         this.field375 = stream.filter(Class120.field373).toArray(Class7452[]::new);
     }
     
-    public Class8321[] method611() {
+    public ItemStack[] method611() {
         this.method612();
         return this.field376;
     }
     
     private void method612() {
         if (this.field376 == null) {
-            this.field376 = Arrays.stream(this.field375).flatMap(class7452 -> class7452.method22938().stream()).distinct().toArray(Class8321[]::new);
+            this.field376 = Arrays.stream(this.field375).flatMap(class7452 -> class7452.method22938().stream()).distinct().toArray(ItemStack[]::new);
         }
     }
     
     @Override
-    public boolean test(final Class8321 class8321) {
+    public boolean test(final ItemStack class8321) {
         if (class8321 == null) {
             return false;
         }
         if (this.field375.length != 0) {
             this.method612();
-            final Class8321[] field376 = this.field376;
+            final ItemStack[] field376 = this.field376;
             for (int length = field376.length, i = 0; i < length; ++i) {
                 if (field376[i].method27622() == class8321.method27622()) {
                     return true;
@@ -64,7 +64,7 @@ public final class Class120 implements Predicate<Class8321>
         if (this.field377 == null) {
             this.method612();
             this.field377 = (IntList)new IntArrayList(this.field376.length);
-            final Class8321[] field376 = this.field376;
+            final ItemStack[] field376 = this.field376;
             for (int length = field376.length, i = 0; i < length; ++i) {
                 this.field377.add(Class5024.method15245(field376[i]));
             }
@@ -111,12 +111,12 @@ public final class Class120 implements Predicate<Class8321>
     
     public static Class120 method618(final Class3832... array) {
         return method617(Arrays.stream(array).map(class3832 -> {
-            new Class7453(new Class8321(class3832), null);
+            new Class7453(new ItemStack(class3832), null);
             return;
         }));
     }
     
-    public static Class120 method619(final Class8321... array) {
+    public static Class120 method619(final ItemStack... array) {
         return method617(Arrays.stream(array).map(class8321 -> new Class7453(class8321, null)));
     }
     
@@ -150,7 +150,7 @@ public final class Class120 implements Predicate<Class8321>
             throw new JsonParseException("An ingredient entry is either a tag or an item, not both");
         }
         if (jsonObject.has("item")) {
-            return new Class7453(new Class8321(Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
+            return new Class7453(new ItemStack(Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
                 new JsonSyntaxException("Unknown item '" + obj2 + "'");
                 return;
             })), null);
@@ -167,7 +167,7 @@ public final class Class120 implements Predicate<Class8321>
     }
     
     static {
-        field373 = (class7452 -> !class7452.method22938().stream().allMatch(Class8321::method27620));
+        field373 = (class7452 -> !class7452.method22938().stream().allMatch(ItemStack::method27620));
         field374 = new Class120(Stream.empty());
     }
 }

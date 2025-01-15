@@ -61,7 +61,7 @@ public class Class3921 extends Class3833 implements Class3856
     
     @Override
     public boolean method11798(final Class7096 class7096, final Class7074 class7097) {
-        final Class8321 method21651 = class7097.method21651();
+        final ItemStack method21651 = class7097.method21651();
         final Class186 class7098 = class7096.method21772(Class3921.field17777);
         if (class7098 == Class186.field600 || method21651.method27622() != this.method11704()) {
             return false;

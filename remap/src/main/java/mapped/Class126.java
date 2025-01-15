@@ -18,11 +18,11 @@ public abstract class Class126 implements Class125
     }
     
     @Override
-    public final Class8321 apply(final Class8321 class8321, final Class7529 class8322) {
+    public final ItemStack apply(final ItemStack class8321, final Class7529 class8322) {
         return this.field384.test(class8322) ? this.method639(class8321, class8322) : class8321;
     }
     
-    public abstract Class8321 method639(final Class8321 p0, final Class7529 p1);
+    public abstract ItemStack method639(final ItemStack p0, final Class7529 p1);
     
     @Override
     public void method636(final Class7790 class7790) {

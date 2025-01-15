@@ -37,10 +37,10 @@ public class Class7962 implements Class7954
         if (method6915 == null) {
             return null;
         }
-        final Class8321 method6916 = Class4094.method12326(class400, method6915.getX(), method6915.getZ(), (byte)2, true, true);
+        final ItemStack method6916 = Class4094.method12326(class400, method6915.getX(), method6915.getZ(), (byte)2, true, true);
         Class4094.method12335(class400, method6916);
         Class6356.method18917(method6916, method6915, "+", this.field32720);
         method6916.method27665(new Class2259("filled_map." + this.field32719.toLowerCase(Locale.ROOT), new Object[0]));
-        return new Class9017(new Class8321(Class7739.field31514, this.field32718), new Class8321(Class7739.field31375), method6916, this.field32721, this.field32722, 0.2f);
+        return new Class9017(new ItemStack(Class7739.field31514, this.field32718), new ItemStack(Class7739.field31375), method6916, this.field32721, this.field32722, 0.2f);
     }
 }

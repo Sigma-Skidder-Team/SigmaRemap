@@ -22,7 +22,7 @@ public class Class4068 extends Class3820
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21755(Class7188.field27906)) {
-            final Class8321 method21657 = class7075.method21651();
+            final ItemStack method21657 = class7075.method21651();
             if (!method21654.field10067) {
                 final Class104 class7076 = (method21656.method21696() instanceof Class4017) ? method21656.method21772(((Class4017)method21656.method21696()).method12205()) : Class104.field311;
                 double n = 0.0;

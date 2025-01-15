@@ -15,7 +15,7 @@ public class Class6629 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         if (method27622 != Class7739.field31514) {
             if (method27622 != Class7739.field31283) {

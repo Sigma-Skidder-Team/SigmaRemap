@@ -36,22 +36,22 @@ public class Class451 implements Class446
     }
     
     @Override
-    public Class8321 method2157(final int n) {
+    public ItemStack method2157(final int n) {
         return (n < this.field2697.method2239()) ? this.field2697.method2157(n) : this.field2698.method2157(n - this.field2697.method2239());
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         return (n < this.field2697.method2239()) ? this.field2697.method2158(n, n2) : this.field2698.method2158(n - this.field2697.method2239(), n2);
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         return (n < this.field2697.method2239()) ? this.field2697.method2159(n) : this.field2698.method2159(n - this.field2697.method2239());
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
         if (n < this.field2697.method2239()) {
             this.field2697.method2160(n, class8321);
         }
@@ -89,7 +89,7 @@ public class Class451 implements Class446
     }
     
     @Override
-    public boolean method2264(final int n, final Class8321 class8321) {
+    public boolean method2264(final int n, final ItemStack class8321) {
         return (n < this.field2697.method2239()) ? this.field2697.method2264(n, class8321) : this.field2698.method2264(n - this.field2697.method2239(), class8321);
     }
     

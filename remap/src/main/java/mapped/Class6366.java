@@ -15,7 +15,7 @@ public class Class6366 extends Class6367
     }
     
     @Override
-    public void method19013(final Consumer<Class8321> consumer, final Class7529 class7529) {
+    public void method19013(final Consumer<ItemStack> consumer, final Class7529 class7529) {
     }
     
     public static Class4948<?> method19014() {

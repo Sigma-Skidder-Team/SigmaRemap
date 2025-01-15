@@ -19,7 +19,7 @@ public class Class134 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27630()) {
             Class134.field406.warn("Couldn't set damage of loot item {}", (Object)class8321);
         }

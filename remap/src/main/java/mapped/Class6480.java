@@ -18,7 +18,7 @@ public class Class6480 implements Class6477
     
     public Class7562 method19507(final Class6108 class6108) {
         final Class869 method5277 = Class869.method5277();
-        final Class8321 class6109 = Class464.method2352(Class8491.field34859) ? method5277.field4684.field3006.field2739.get(Class8491.field34859) : Class8321.field34174;
+        final ItemStack class6109 = Class464.method2352(Class8491.field34859) ? method5277.field4684.field3006.field2739.get(Class8491.field34859) : ItemStack.field34174;
         final Class3820 method5278 = class6109.method27622();
         if (method5278 != null) {
             final Class7562 class6110 = new Class7562((short)Class3820.method11696(method5278), (byte)class6109.field34176, (short)class6109.method27632(), this.method19508(class6109.method27657()));

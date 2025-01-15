@@ -23,7 +23,7 @@ public class Class153 implements Class122
     
     @Override
     public boolean test(final Class7529 class7529) {
-        final Class8321 class7530 = class7529.method23579(Class6683.field26370);
+        final ItemStack class7530 = class7529.method23579(Class6683.field26370);
         return class7530 != null && this.field450.method34627(class7530);
     }
     

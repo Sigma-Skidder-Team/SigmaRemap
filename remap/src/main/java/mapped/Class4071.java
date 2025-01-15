@@ -24,7 +24,7 @@ public class Class4071 extends Class3820
     }
     
     @Override
-    public boolean method11738(final Class8321 class8321, final Class8321 class8322) {
+    public boolean method11738(final ItemStack class8321, final ItemStack class8322) {
         return this.field18166.method8114().test(class8322) || super.method11738(class8321, class8322);
     }
 }

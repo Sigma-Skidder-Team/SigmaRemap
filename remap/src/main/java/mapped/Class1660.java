@@ -45,7 +45,7 @@ public class Class1660 implements AutoCloseable, Class1657
     private float field9399;
     private float field9400;
     private float field9401;
-    private Class8321 field9402;
+    private ItemStack field9402;
     private int field9403;
     private float field9404;
     private float field9405;
@@ -628,7 +628,7 @@ public class Class1660 implements AutoCloseable, Class1657
             boolean b = method5303 instanceof Class512 && !this.field9380.field4648.field23464;
             if (b) {
                 if (!((Class512)method5303).field3025.field27305) {
-                    final Class8321 method5304 = ((Class511)method5303).method2713();
+                    final ItemStack method5304 = ((Class511)method5303).method2713();
                     final Class7006 field4691 = this.field9380.field4691;
                     if (field4691 != null) {
                         if (field4691.method21449() == Class2165.field12881) {
@@ -934,7 +934,7 @@ public class Class1660 implements AutoCloseable, Class1657
         return Class2013.field11452;
     }
     
-    public void method5829(final Class8321 field9402) {
+    public void method5829(final ItemStack field9402) {
         this.field9402 = field9402;
         this.field9403 = 40;
         this.field9404 = this.field9382.nextFloat() * 2.0f - 1.0f;

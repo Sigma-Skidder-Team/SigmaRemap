@@ -11,8 +11,8 @@ import java.util.Map;
 public class Class1659 implements Class1657
 {
     private static String[] field9374;
-    public static final Class9201<Class8321> field9375;
-    public static final Class9201<Class8321> field9376;
+    public static final Class9201<ItemStack> field9375;
+    public static final Class9201<ItemStack> field9376;
     public static final Class9201<Class9586> field9377;
     private final Map<Class9201<?>, Class8924<?>> field9378;
     
@@ -37,8 +37,8 @@ public class Class1659 implements Class1657
     }
     
     static {
-        field9375 = new Class9201<Class8321>();
-        field9376 = new Class9201<Class8321>();
+        field9375 = new Class9201<ItemStack>();
+        field9376 = new Class9201<ItemStack>();
         field9377 = new Class9201<Class9586>();
     }
 }

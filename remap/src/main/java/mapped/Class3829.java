@@ -20,7 +20,7 @@ public class Class3829 extends Class3820
     }
     
     @Override
-    public boolean method11714(final Class8321 class8321, final Class512 class8322, final Class511 class8323, final Class316 class8324) {
+    public boolean method11714(final ItemStack class8321, final Class512 class8322, final Class511 class8323, final Class316 class8324) {
         if (!(class8323 instanceof Class802)) {
             return false;
         }

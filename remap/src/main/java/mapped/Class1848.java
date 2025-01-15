@@ -338,7 +338,7 @@ public class Class1848 extends Class1847
         final Random random = new Random();
         boolean b = false;
         if (this.field10075.field4682.method27336() == Class101.field299) {
-            final Iterator<Class8321> iterator = this.field10075.field4684.method1800().iterator();
+            final Iterator<ItemStack> iterator = this.field10075.field4684.method1800().iterator();
             while (iterator.hasNext()) {
                 if (iterator.next().method27622() != Class7521.field29517.method11704()) {
                     continue;

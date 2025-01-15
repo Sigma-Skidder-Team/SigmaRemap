@@ -29,8 +29,8 @@ public class Class7997
         return this.field32940;
     }
     
-    public Class8321 method26164() {
-        final Class8321[] method611 = this.field32938.method611();
+    public ItemStack method26164() {
+        final ItemStack[] method611 = this.field32938.method611();
         return method611[MathHelper.method35642(Class7877.method25527(this.field32941) / 30.0f) % method611.length];
     }
 }

@@ -24,7 +24,7 @@ public class Class128 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (class8321.method27622() == Class7739.field31525) {
             final Entity class8323 = class8322.method23579(this.field387.method8153());
             if (class8323 instanceof Class512) {

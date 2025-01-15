@@ -38,7 +38,7 @@ public class Class637 extends Class623<Class637>
     private void method3663(final int n, final int n2, final Class3820 class3820) {
         this.method3664(n + 1, n2 + 1);
         Class8726.method30046();
-        this.field3636.field3565.field3151.method6538(new Class8321(class3820), n + 2, n2 + 2);
+        this.field3636.field3565.field3151.method6538(new ItemStack(class3820), n + 2, n2 + 2);
         Class8726.method30047();
     }
     

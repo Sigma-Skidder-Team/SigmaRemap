@@ -34,6 +34,6 @@ public class Class7959 implements Class7954
         if (!(class399 instanceof Class825)) {
             return null;
         }
-        return new Class9017(new Class8321(this.field32698.get(((Class825)class399).method4870().method28780()), this.field32699), new Class8321(Class7739.field31514), this.field32700, this.field32701, 0.05f);
+        return new Class9017(new ItemStack(this.field32698.get(((Class825)class399).method4870().method28780()), this.field32699), new ItemStack(Class7739.field31514), this.field32700, this.field32701, 0.05f);
     }
 }

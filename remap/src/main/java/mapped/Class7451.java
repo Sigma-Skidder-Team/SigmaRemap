@@ -19,11 +19,11 @@ public class Class7451 implements Class7452
     }
     
     @Override
-    public Collection<Class8321> method22938() {
+    public Collection<ItemStack> method22938() {
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Class3820> iterator = this.field28754.method25616().iterator();
         while (iterator.hasNext()) {
-            arrayList.add(new Class8321(iterator.next()));
+            arrayList.add(new ItemStack(iterator.next()));
         }
         return arrayList;
     }

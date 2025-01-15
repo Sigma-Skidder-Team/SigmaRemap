@@ -60,7 +60,7 @@ public class Class7877
             else {
                 Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822018048);
             }
-            final Class8321 method26164 = class870.method26164();
+            final ItemStack method26164 = class870.method26164();
             final Class1796 method26165 = class869.method5307();
             method26165.method6541(class869.field4684, method26164, n4, n5);
             Class8726.method30009(516);

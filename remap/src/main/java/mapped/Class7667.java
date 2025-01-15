@@ -48,7 +48,7 @@ public class Class7667
         return Class7667.field30455 ? Class9570.method35820(class7096, Class9570.field41246, new Object[0]) : class7096.method21696().method11802();
     }
     
-    public static boolean method24305(final Class8321 class8321) {
+    public static boolean method24305(final ItemStack class8321) {
         return Class9570.field41332.method22605() ? Class9570.method35820(class8321.method27622(), Class9570.field41332, class8321) : class8321.method27631();
     }
     
@@ -56,7 +56,7 @@ public class Class7667
         return Class9570.field41243.method22605() ? Class9570.method35821(class7096, Class9570.field41243, class7097, class7098) : class7096.method21704();
     }
     
-    public static Class6356 method24307(final Class8321 class8321, final Class1847 class8322) {
+    public static Class6356 method24307(final ItemStack class8321, final Class1847 class8322) {
         if (!Class9570.field41282.method22623()) {
             return Class4094.method12328(class8321, class8322);
         }
@@ -90,11 +90,11 @@ public class Class7667
         return Class9570.field41247.method22605() ? Class9570.method35820(class7096, Class9570.field41247, class7097, class7098) : class7096.method21706();
     }
     
-    public static boolean method24310(final Class8321 class8321, final Class8321 class8322, final Class512 class8323, final Class759 class8324) {
+    public static boolean method24310(final ItemStack class8321, final ItemStack class8322, final Class512 class8323, final Class759 class8324) {
         return Class9570.field41334.method22605() ? Class9570.method35820(class8321, Class9570.field41334, class8322, class8323, class8324) : (class8321.method27622() instanceof Class4075);
     }
     
-    public static boolean method24311(final Class8321 class8321, final Class512 class8322) {
+    public static boolean method24311(final ItemStack class8321, final Class512 class8322) {
         if (!Class9570.field41337.method22605()) {
             return class8321.method27622() == Class7739.field31583;
         }

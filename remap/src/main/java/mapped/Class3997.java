@@ -61,7 +61,7 @@ public class Class3997 extends Class3833
     }
     
     @Override
-    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class8321 class7099) {
+    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final ItemStack class7099) {
         super.method11831(class7096, class7097, class7098, class7099);
         if (Class8742.method30195(Class7882.field32366, class7099) == 0) {
             this.method11840(class7097, class7098, 1 + class7097.field10062.nextInt(5));

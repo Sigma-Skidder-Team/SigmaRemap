@@ -40,7 +40,7 @@ public enum Class239
         class565.method3186(n + this.method885(n3), n2 + this.method886(n3), field1171, b ? (this.field1172 + this.field1174) : this.field1172, this.field1173, this.field1174);
     }
     
-    public void method884(final int n, final int n2, final int n3, final Class1796 class1796, final Class8321 class1797) {
+    public void method884(final int n, final int n2, final int n3, final Class1796 class1796, final ItemStack class1797) {
         int n4 = n + this.method885(n3);
         int n5 = n2 + this.method886(n3);
         switch (Class6030.field24524[this.ordinal()]) {

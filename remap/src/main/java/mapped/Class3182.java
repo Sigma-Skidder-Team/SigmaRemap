@@ -231,7 +231,7 @@ public class Class3182 extends Class3167
             if (class5723.method16998() instanceof Class4272) {
                 final Class4272 class5724 = (Class4272)class5723.method16998();
                 final int method12820 = class5724.method12820();
-                final Class8321 method12821 = class5724.method12821();
+                final ItemStack method12821 = class5724.method12821();
                 final int method12822 = class5724.method12819();
                 if (this.field15572 == method12822) {
                     if (method12820 == 0) {
@@ -243,7 +243,7 @@ public class Class3182 extends Class3167
                                 final int n2 = method12820;
                                 final int n3 = 1;
                                 final Class2133 field12438 = Class2133.field12438;
-                                final Class8321 class5725 = method12821;
+                                final ItemStack class5725 = method12821;
                                 final short field12439 = this.field15573;
                                 this.field15573 = (short)(field12439 + 1);
                                 method12823.method17292(new Class4256(n, n2, n3, field12438, class5725, field12439));

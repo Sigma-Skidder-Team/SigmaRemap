@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.Map;
 
 public class Class7969
@@ -28,7 +28,7 @@ public class Class7969
         return (method25824(class7096) != Class6332.method18765()) ? Class8752.method30264() : Class8752.method30265();
     }
     
-    public static Class6332 method25826(final Class8321 class8321) {
+    public static Class6332 method25826(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         if (!(method27622 instanceof Class4036)) {
             return Class8752.method30265();

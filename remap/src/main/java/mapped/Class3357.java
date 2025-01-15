@@ -60,7 +60,7 @@ public class Class3357 extends Class3355
                 break;
             }
             case "Book": {
-                final Class8321 class5744 = new Class8321(Class7739.field31512);
+                final ItemStack class5744 = new ItemStack(Class7739.field31512);
                 final Class52 class5745 = new Class52();
                 final Class51 class5746 = new Class51();
                 String string = "";

@@ -16,7 +16,7 @@ public class Class139 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         final Float n = class8322.method23579(Class6683.field26371);
         if (n != null) {
             final Random method23586 = class8322.method23586();

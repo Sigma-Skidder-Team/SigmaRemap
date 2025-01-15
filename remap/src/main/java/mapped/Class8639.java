@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Collections;
@@ -20,7 +19,7 @@ public class Class8639
     private static final Class869 field36240;
     
     public static boolean method29316(final int n) {
-        final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(n).method20053();
+        final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(n).method20053();
         return method20053 == null || method20053.method27622() instanceof Class4099;
     }
     
@@ -28,7 +27,7 @@ public class Class8639
         float n = 0.0f;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27695()) {
                     final float n3 = method20053.method27622().method11744().method32745() * method20053.field34176;
@@ -46,7 +45,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.method27622())) {
                     final int field34176 = method20053.field34176;
@@ -64,7 +63,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27622() == class3820) {
                     final int field34176 = method20053.field34176;
@@ -82,7 +81,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 for (int length = array.length, j = 0; j < length; ++j) {
                     if (method20053.method27622() == array[j]) {
@@ -103,7 +102,7 @@ public class Class8639
         int n2 = -1;
         final List<int[]> list = Arrays.asList(new int[][] { array });
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.method27622())) {
                     if (!list.contains(Class3820.method11696(method20053.method27622()))) {
@@ -123,7 +122,7 @@ public class Class8639
         int n2 = 0;
         int n3 = -1;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (Class3820.method11696(method20053.method27622()) == n) {
                     final int field34176 = method20053.field34176;
@@ -178,7 +177,7 @@ public class Class8639
         int n = -1;
         float n2 = -1.0f;
         for (int i = 9; i <= 44; ++i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27622() instanceof Class4077) {
                     final float n3 = ((Class4077)method20053.method27622()).method12281() + Class8742.method30195(Class7882.field32358, method20053) + Class8742.method30195(Class7882.field32362, method20053);
@@ -214,7 +213,7 @@ public class Class8639
         int n = -1;
         float n2 = 1.0f;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (method20053 != null) {
                 float n3;
                 if (class7096 == null) {
@@ -238,7 +237,7 @@ public class Class8639
     public static int method29335(final Class<? extends Class3820> clazz) {
         int n = 0;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.method27622())) {
                     n += method20053.field34176;
@@ -251,7 +250,7 @@ public class Class8639
     public static int method29336(final Class<? extends Class3820> clazz) {
         int field34176 = 64;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.method27622())) {
                     if (method20053.field34176 < field34176) {
@@ -266,7 +265,7 @@ public class Class8639
     public static int method29337(final Class<? extends Class3820> clazz) {
         final HashSet set = new HashSet();
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (clazz.isInstance(method20053.method27622())) {
                     set.add(i);
@@ -280,7 +279,7 @@ public class Class8639
         int n = -1;
         float n2 = -1.0f;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27622() instanceof Class4087) {
                     final float n3 = (float)Class8742.method30195(Class7882.field32369, method20053);
@@ -298,7 +297,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 0; i < 9; ++i) {
-            final Class8321 method2157 = Class8639.field36240.field4684.field3006.method2157(i);
+            final ItemStack method2157 = Class8639.field36240.field4684.field3006.method2157(i);
             if (method2157 != null) {
                 if (clazz.isInstance(method2157.method27622())) {
                     final int field34176 = method2157.field34176;
@@ -316,7 +315,7 @@ public class Class8639
         int n = 0;
         int n2 = -1;
         for (int i = 0; i < 9; ++i) {
-            final Class8321 method2157 = Class8639.field36240.field4684.field3006.method2157(i);
+            final ItemStack method2157 = Class8639.field36240.field4684.field3006.method2157(i);
             if (method2157 != null) {
                 for (int length = array.length, j = 0; j < length; ++j) {
                     if (method2157.method27622() == array[j]) {
@@ -337,7 +336,7 @@ public class Class8639
         int n2 = -1;
         final List<int[]> list = Arrays.asList(new int[][] { array });
         for (int i = 0; i < 9; ++i) {
-            final Class8321 method2157 = Class8639.field36240.field4684.field3006.method2157(i);
+            final ItemStack method2157 = Class8639.field36240.field4684.field3006.method2157(i);
             if (method2157 != null) {
                 if (clazz.isInstance(method2157.method27622())) {
                     if (!list.contains(Class3820.method11696(method2157.method27622()))) {
@@ -357,7 +356,7 @@ public class Class8639
         int n2 = 0;
         int n3 = -1;
         for (int i = 0; i < 9; ++i) {
-            final Class8321 method2157 = Class8639.field36240.field4684.field3006.method2157(i);
+            final ItemStack method2157 = Class8639.field36240.field4684.field3006.method2157(i);
             if (method2157 != null) {
                 if (Class3820.method11696(method2157.method27622()) == n) {
                     final int field34176 = method2157.field34176;
@@ -384,7 +383,7 @@ public class Class8639
         return method29345(Class8639.field36240.field4684.field3008.method10878(n).method20053());
     }
     
-    public static boolean method29345(final Class8321 class8321) {
+    public static boolean method29345(final ItemStack class8321) {
         if (!(class8321.method27622() instanceof Class4055)) {
             return false;
         }
@@ -412,7 +411,7 @@ public class Class8639
         return 0;
     }
     
-    public static int method29347(final Class8321 class8321) {
+    public static int method29347(final ItemStack class8321) {
         if (class8321 == null) {
             return 0;
         }
@@ -437,14 +436,14 @@ public class Class8639
         return method29350 * (1.0f - Math.min(20.0f, Math.max(n / 5.0f, n - method29350 / (n2 / 4.0f + 2.0f))) / 25.0f);
     }
     
-    public static float method29350(final Class8321 class8321) {
+    public static float method29350(final ItemStack class8321) {
         if (class8321 != null && class8321.method27622() instanceof Class4077) {
             return ((Class4077)class8321.method27622()).method12281() + Class8742.method30195(Class7882.field32358, class8321) + Class8742.method30195(Class7882.field32362, class8321);
         }
         return 1.0f;
     }
     
-    public static float method29351(final Class8321 class8321) {
+    public static float method29351(final ItemStack class8321) {
         if (class8321 == null) {
             return -1.0f;
         }
@@ -516,7 +515,7 @@ public class Class8639
         return method29353;
     }
     
-    public static List<Class1948> method29355(final Class8321 class8321) {
+    public static List<Class1948> method29355(final ItemStack class8321) {
         if (class8321 == null) {
             return null;
         }
@@ -526,11 +525,11 @@ public class Class8639
         return null;
     }
     
-    public static boolean method29356(final Class8321 class8321) {
+    public static boolean method29356(final ItemStack class8321) {
         return class8321 != null && class8321.method27622() instanceof Class4091;
     }
     
-    public static float method29357(final Class8321 class8321) {
+    public static float method29357(final ItemStack class8321) {
         final List<Class1948> method29355 = method29355(class8321);
         if (method29355 != null) {
             float n = 0.0f;
@@ -553,7 +552,7 @@ public class Class8639
         return 0.0f;
     }
     
-    public static float method29358(final Class8321 class8321) {
+    public static float method29358(final ItemStack class8321) {
         final List<Class1948> method29355 = method29355(class8321);
         if (method29355 != null) {
             float n = 0.0f;
@@ -573,10 +572,10 @@ public class Class8639
         return 0.0f;
     }
     
-    public static HashMap<Integer, Class8321> method29359() {
+    public static HashMap<Integer, ItemStack> method29359() {
         final HashMap hashMap = new HashMap();
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27622() instanceof Class4089) {
                     hashMap.put(i, method20053);
@@ -586,7 +585,7 @@ public class Class8639
         return hashMap;
     }
     
-    public static HashMap<Integer, Class8321> method29360() {
+    public static HashMap<Integer, ItemStack> method29360() {
         final HashMap hashMap = new HashMap();
         for (int i = 44; i >= 9; --i) {
             hashMap.put(i, Class8639.field36240.field4684.field3008.method10878(i).method20053());
@@ -610,11 +609,11 @@ public class Class8639
         return n > 35;
     }
     
-    public static Class8321 method29363(final int n) {
+    public static ItemStack method29363(final int n) {
         return Class8639.field36240.field4684.field3008.method10878(n).method20053();
     }
     
-    public static boolean method29364(final Class8321 class8321) {
+    public static boolean method29364(final ItemStack class8321) {
         if (class8321 == null) {
             return false;
         }
@@ -624,13 +623,13 @@ public class Class8639
         final float n = class8321.method27622().method11744().method32745() * class8321.field34176;
         final int method29317 = method29317();
         if (method29317 != -1) {
-            final Class8321 method29318 = method29363(method29317);
+            final ItemStack method29318 = method29363(method29317);
             return n > method29318.method27622().method11744().method32745() * method29318.field34176;
         }
         return true;
     }
     
-    public static boolean method29365(final Class8321 class8321) {
+    public static boolean method29365(final ItemStack class8321) {
         if (class8321 == null) {
             return false;
         }
@@ -641,17 +640,17 @@ public class Class8639
         return false;
     }
     
-    public static Class8321 method29366(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134) {
+    public static ItemStack method29366(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134) {
         return method29367(n, n2, n3, class2133, class2134, false);
     }
     
-    public static Class8321 method29367(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134, final boolean b) {
-        Class8321 method27641 = null;
+    public static ItemStack method29367(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134, final boolean b) {
+        ItemStack method27641 = null;
         if (n2 >= 0) {
             method27641 = class2134.field3009.method10878(n2).method20053().method27641();
         }
         final short method27642 = class2134.field3009.method10885(Class8639.field36240.field4684.field3006);
-        final Class8321 method27643 = class2134.field3009.method10879(n2, n3, class2133, class2134);
+        final ItemStack method27643 = class2134.field3009.method10879(n2, n3, class2133, class2134);
         Label_0097: {
             if (method27641 != null) {
                 if (Class9367.field40167.method25613() <= Class7906.field32460.method25613() || b) {
@@ -670,12 +669,12 @@ public class Class8639
         Class8639.field36240.field4682.method27324(Class8639.field36240.field4684.field3008.field16154, n, 1, Class2133.field12441, Class8639.field36240.field4684);
     }
     
-    public static boolean method29369(final Class8321 class8321) {
+    public static boolean method29369(final ItemStack class8321) {
         if (class8321 != null && class8321.method27622() instanceof Class4055) {
             final float n = (float)method29347(class8321);
             for (int i = 5; i < 45; ++i) {
                 if (Class8639.field36240.field4684.field3008.method10878(i).method20054()) {
-                    final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+                    final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
                     final Class3820 method20054 = method20053.method27622();
                     if (method20054 instanceof Class4055) {
                         final Class4055 class8322 = (Class4055)method20054;
@@ -696,7 +695,7 @@ public class Class8639
         Class8639.field36240.field4682.method27324(Class8639.field36240.field4684.field3008.field16154, n, n2, Class2133.field12439, Class8639.field36240.field4684);
     }
     
-    public static boolean method29371(final Class8321 class8321) {
+    public static boolean method29371(final ItemStack class8321) {
         if (class8321 != null) {
             if (class8321.method27622() instanceof Class4089) {
                 for (final Class1948 class8322 : method29355(class8321)) {
@@ -732,11 +731,11 @@ public class Class8639
         return true;
     }
     
-    public static boolean method29373(final Class8321 class8321) {
+    public static boolean method29373(final ItemStack class8321) {
         return class8321 != null && !class8321.method27622().equals(Class7739.field30754);
     }
     
-    public static List<Class8321> method29374(final Class512 class512) {
+    public static List<ItemStack> method29374(final Class512 class512) {
         final ArrayList list = new ArrayList();
         for (final Class6601 class513 : class512.field3008.field16151) {
             if (!method29373(class513.method20053())) {
@@ -750,7 +749,7 @@ public class Class8639
     public static int method29375(final Class3820 class3820) {
         int n = 0;
         for (int i = 44; i >= 9; --i) {
-            final Class8321 method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
+            final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(i).method20053();
             if (!method29316(i)) {
                 if (method20053.method27622() == class3820) {
                     n += method20053.field34176;

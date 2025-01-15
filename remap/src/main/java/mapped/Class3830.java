@@ -13,13 +13,13 @@ public class Class3830 extends Class3820
     }
     
     @Override
-    public boolean method11730(final Class8321 class8321) {
+    public boolean method11730(final ItemStack class8321) {
         return true;
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35185, Class286.field1584, 0.5f, 0.4f / (Class3830.field17363.nextFloat() * 0.4f + 0.8f));
         if (!class1847.field10067) {
             final Class413 class1850 = new Class413(class1847, class1848);

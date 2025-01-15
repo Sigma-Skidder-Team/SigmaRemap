@@ -181,22 +181,22 @@ public class Class3238 extends Class3167
     }
     
     private int method10224(final int n) {
-        final Class8321 method29363 = Class8639.method29363(13);
+        final ItemStack method29363 = Class8639.method29363(13);
         if (method29363.method27622() == Class7739.field31300 && method29363.method27690() <= 64 - n) {
             return 13;
         }
         for (int i = 9; i < 36; ++i) {
-            final Class8321 method29364 = Class8639.method29363(i);
+            final ItemStack method29364 = Class8639.method29363(i);
             if (method29364.method27622() == Class7739.field31300 && method29364.method27690() <= 64 - n) {
                 return i;
             }
         }
-        final Class8321 method29365 = Class8639.method29363(13);
+        final ItemStack method29365 = Class8639.method29363(13);
         if (method29365.method27622() == Class7739.field31300 && method29365.method27690() < 64) {
             return 13;
         }
         for (int j = 9; j < 36; ++j) {
-            final Class8321 method29366 = Class8639.method29363(j);
+            final ItemStack method29366 = Class8639.method29363(j);
             if (method29366.method27622() == Class7739.field31300 && method29366.method27690() < 64) {
                 return j;
             }

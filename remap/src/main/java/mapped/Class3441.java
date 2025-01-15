@@ -56,18 +56,18 @@ public class Class3441 extends Class3418
     }
     
     public void method10995() {
-        final Class8321 method2157 = this.field16254.method2157(0);
+        final ItemStack method2157 = this.field16254.method2157(0);
         this.field16255.method19833(1);
         int n = 0;
         final int n2 = 0;
         int n3 = 0;
         if (method2157.method27620()) {
-            this.field16253.method2160(0, Class8321.field34174);
+            this.field16253.method2160(0, ItemStack.field34174);
             this.field16255.method19833(0);
         }
         else {
-            Class8321 class8321 = method2157.method27641();
-            final Class8321 method2158 = this.field16254.method2157(1);
+            ItemStack class8321 = method2157.method27641();
+            final ItemStack method2158 = this.field16254.method2157(1);
             final Map<Class6257, Integer> method2159 = Class8742.method30196(class8321);
             final int n4 = n2 + method2157.method27680() + (method2158.method27620() ? 0 : method2158.method27680());
             this.field16257 = 0;
@@ -76,7 +76,7 @@ public class Class3441 extends Class3418
                 if (class8321.method27630() && class8321.method27622().method11738(method2157, method2158)) {
                     int n5 = Math.min(class8321.method27632(), class8321.method27634() / 4);
                     if (n5 <= 0) {
-                        this.field16253.method2160(0, Class8321.field34174);
+                        this.field16253.method2160(0, ItemStack.field34174);
                         this.field16255.method19833(0);
                         return;
                     }
@@ -89,7 +89,7 @@ public class Class3441 extends Class3418
                 }
                 else {
                     if (!b && (class8321.method27622() != method2158.method27622() || !class8321.method27630())) {
-                        this.field16253.method2160(0, Class8321.field34174);
+                        this.field16253.method2160(0, ItemStack.field34174);
                         this.field16255.method19833(0);
                         return;
                     }
@@ -161,7 +161,7 @@ public class Class3441 extends Class3418
                         }
                     }
                     if (b3 && !b2) {
-                        this.field16253.method2160(0, Class8321.field34174);
+                        this.field16253.method2160(0, ItemStack.field34174);
                         this.field16255.method19833(0);
                         return;
                     }
@@ -181,13 +181,13 @@ public class Class3441 extends Class3418
             }
             this.field16255.method19833(n4 + n);
             if (n <= 0) {
-                class8321 = Class8321.field34174;
+                class8321 = ItemStack.field34174;
             }
             if (n3 == n && n3 > 0 && this.field16255.method19832() >= 40) {
                 this.field16255.method19833(39);
             }
             if (this.field16255.method19832() >= 40 && !this.field16259.field3025.field27304) {
-                class8321 = Class8321.field34174;
+                class8321 = ItemStack.field34174;
             }
             if (!class8321.method27620()) {
                 int n7 = class8321.method27680();
@@ -221,30 +221,30 @@ public class Class3441 extends Class3418
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
-        Class8321 class513 = Class8321.field34174;
+    public ItemStack method10858(final Class512 class512, final int n) {
+        ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
-                final Class8321 method20053 = class514.method20053();
+                final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
                 if (n != 2) {
                     if (n != 0 && n != 1) {
                         if (n >= 3) {
                             if (n < 39) {
                                 if (!this.method10888(method20053, 0, 2, false)) {
-                                    return Class8321.field34174;
+                                    return ItemStack.field34174;
                                 }
                             }
                         }
                     }
                     else if (!this.method10888(method20053, 3, 39, false)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                 }
                 else {
                     if (!this.method10888(method20053, 3, 39, true)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     class514.method20049(method20053, class513);
                 }
@@ -252,10 +252,10 @@ public class Class3441 extends Class3418
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(Class8321.field34174);
+                    class514.method20055(ItemStack.field34174);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
                 class514.method20047(class512, method20053);
             }
@@ -266,7 +266,7 @@ public class Class3441 extends Class3418
     public void method10997(final String field16258) {
         this.field16258 = field16258;
         if (this.method10878(2).method20054()) {
-            final Class8321 method20053 = this.method10878(2).method20053();
+            final ItemStack method20053 = this.method10878(2).method20053();
             if (!StringUtils.isBlank((CharSequence)field16258)) {
                 method20053.method27665(new Class2260(this.field16258));
             }

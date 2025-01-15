@@ -15,7 +15,7 @@ public class Class1801<T extends Class511, M extends Class5845<T>> extends Class
     }
     
     public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
-        final Class8321 method2718 = t.method2718(Class2215.field13604);
+        final ItemStack method2718 = t.method2718(Class2215.field13604);
         if (method2718.method27622() == Class7739.field31584) {
             Class1932 class7353 = null;
             if (!(t instanceof Class754)) {

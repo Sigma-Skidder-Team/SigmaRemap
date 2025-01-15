@@ -9,14 +9,14 @@ import java.io.IOException;
 public class Class4314 implements Class4252<Class5813>
 {
     private static String[] field19336;
-    private Class8321 field19337;
+    private ItemStack field19337;
     private boolean field19338;
     private Class316 field19339;
     
     public Class4314() {
     }
     
-    public Class4314(final Class8321 class8321, final boolean field19338, final Class316 field19339) {
+    public Class4314(final ItemStack class8321, final boolean field19338, final Class316 field19339) {
         this.field19337 = class8321.method27641();
         this.field19338 = field19338;
         this.field19339 = field19339;
@@ -40,7 +40,7 @@ public class Class4314 implements Class4252<Class5813>
         class5813.method17454(this);
     }
     
-    public Class8321 method12967() {
+    public ItemStack method12967() {
         return this.field19337;
     }
     

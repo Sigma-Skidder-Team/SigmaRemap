@@ -8,9 +8,9 @@ public class Class6910 implements Class6909
 {
     public static final Class6382<Class6910> field27095;
     private final Class6907<Class6910> field27096;
-    private final Class8321 field27097;
+    private final ItemStack field27097;
     
-    public Class6910(final Class6907<Class6910> field27096, final Class8321 field27097) {
+    public Class6910(final Class6907<Class6910> field27096, final ItemStack field27097) {
         this.field27096 = field27096;
         this.field27097 = field27097;
     }
@@ -30,7 +30,7 @@ public class Class6910 implements Class6909
         return this.field27096;
     }
     
-    public Class8321 method21275() {
+    public ItemStack method21275() {
         return this.field27097;
     }
     

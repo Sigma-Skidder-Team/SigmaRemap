@@ -20,7 +20,7 @@ public class Class4215 extends Class4211
         return new Class4215(Class9425.method35024().method35025(class3832).method35029());
     }
     
-    public boolean method12692(final Class8321 class8321) {
+    public boolean method12692(final ItemStack class8321) {
         return this.field19009.method34627(class8321);
     }
     

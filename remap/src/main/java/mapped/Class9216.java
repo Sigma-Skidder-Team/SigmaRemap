@@ -2537,7 +2537,7 @@ public class Class9216
                         break;
                     }
                 }
-                final Class8321 class8321 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2713() : null;
+                final ItemStack class8321 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2713() : null;
                 final Class3820 class8322 = (class8321 != null) ? class8321.method27622() : null;
                 int method32333 = -1;
                 Class3833 method32334 = null;
@@ -2549,7 +2549,7 @@ public class Class9216
                     method32333 = Class6444.method19214(method32335);
                 }
                 int n2 = (method32334 != null) ? method32334.method11781(method32334.method11878()) : 0;
-                final Class8321 class8323 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2714() : null;
+                final ItemStack class8323 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2714() : null;
                 final Class3820 class8324 = (class8323 != null) ? class8323.method27622() : null;
                 int method32336 = -1;
                 Class3833 method32337 = null;
@@ -4306,11 +4306,11 @@ public class Class9216
         return Class9216.field39251.method34737(s);
     }
     
-    public static void method33901(final Class8321 class8321) {
+    public static void method33901(final ItemStack class8321) {
         Class9216.field39058 = method33906(class8321);
     }
     
-    public static void method33902(final Class8321 class8321) {
+    public static void method33902(final ItemStack class8321) {
         Class9216.field39059 = method33906(class8321);
     }
     
@@ -4326,7 +4326,7 @@ public class Class9216
         return Class9216.field39053 && Class9216.field39054;
     }
     
-    private static boolean method33906(final Class8321 class8321) {
+    private static boolean method33906(final ItemStack class8321) {
         if (class8321 == null) {
             return false;
         }

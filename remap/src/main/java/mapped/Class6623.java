@@ -18,12 +18,12 @@ public class Class6623 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return false;
     }
     
     @Override
-    public Class8321 method20060(final int a) {
+    public ItemStack method20060(final int a) {
         if (this.method20054()) {
             this.field26206 += Math.min(a, this.method20053().method27690());
         }
@@ -31,7 +31,7 @@ public class Class6623 extends Class6601
     }
     
     @Override
-    public void method20050(final Class8321 class8321, final int n) {
+    public void method20050(final ItemStack class8321, final int n) {
         this.field26206 += n;
         this.method20052(class8321);
     }
@@ -42,7 +42,7 @@ public class Class6623 extends Class6601
     }
     
     @Override
-    public void method20052(final Class8321 class8321) {
+    public void method20052(final ItemStack class8321) {
         if (this.field26206 > 0) {
             class8321.method27651(this.field26205.field2391, this.field26205, this.field26206);
         }
@@ -53,19 +53,19 @@ public class Class6623 extends Class6601
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         this.method20052(class513);
-        final Class2265<Class8321> method6381 = class512.field2391.method6792().method6381(Class8976.field37843, this.field26204, class512.field2391);
+        final Class2265<ItemStack> method6381 = class512.field2391.method6792().method6381(Class8976.field37843, this.field26204, class512.field2391);
         for (int i = 0; i < method6381.size(); ++i) {
-            Class8321 class514 = this.field26204.method2157(i);
-            final Class8321 class515 = method6381.get(i);
+            ItemStack class514 = this.field26204.method2157(i);
+            final ItemStack class515 = method6381.get(i);
             if (!class514.method27620()) {
                 this.field26204.method2158(i, 1);
                 class514 = this.field26204.method2157(i);
             }
             if (!class515.method27620()) {
                 if (!class514.method27620()) {
-                    if (Class8321.method27645(class514, class515) && Class8321.method27642(class514, class515)) {
+                    if (ItemStack.method27645(class514, class515) && ItemStack.method27642(class514, class515)) {
                         class515.method27692(class514.method27690());
                         this.field26204.method2160(i, class515);
                     }

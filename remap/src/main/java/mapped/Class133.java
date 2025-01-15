@@ -19,7 +19,7 @@ public class Class133 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         final Random method23586 = class8322.method23586();
         return Class8742.method30224(method23586, class8321, this.field404.method17159(method23586), this.field405);
     }

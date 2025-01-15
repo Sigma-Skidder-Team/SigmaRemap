@@ -74,26 +74,26 @@ public class Class3438 extends Class3418
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
-        Class8321 class513 = Class8321.field34174;
+    public ItemStack method10858(final Class512 class512, final int n) {
+        ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
-                final Class8321 method20053 = class514.method20053();
+                final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
                 if (n >= this.field16237 * 9) {
                     if (!this.method10888(method20053, 0, this.field16237 * 9, false)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                 }
                 else if (!this.method10888(method20053, this.field16237 * 9, this.field16151.size(), true)) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
                 if (!method20053.method27620()) {
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(Class8321.field34174);
+                    class514.method20055(ItemStack.field34174);
                 }
             }
         }

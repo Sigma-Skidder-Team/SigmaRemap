@@ -13,7 +13,7 @@ public class Class6614 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return method20066(class8321);
     }
     
@@ -23,7 +23,7 @@ public class Class6614 extends Class6601
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         final Class8061 method16474 = Class5333.method16474(class513);
         if (class512 instanceof Class513) {
             Class7770.field31785.method13750((Class513)class512, method16474);
@@ -32,7 +32,7 @@ public class Class6614 extends Class6601
         return class513;
     }
     
-    public static boolean method20066(final Class8321 class8321) {
+    public static boolean method20066(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         if (method27622 != Class7739.field31441) {
             if (method27622 != Class7739.field31579) {

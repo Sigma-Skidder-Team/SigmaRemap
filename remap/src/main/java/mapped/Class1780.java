@@ -9,7 +9,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import java.util.stream.Stream;
 import java.util.Collection;
-import java.util.function.Predicate;
 import java.util.Objects;
 import java.util.Collections;
 import java.util.stream.Collector;
@@ -17,7 +16,6 @@ import java.util.stream.Collectors;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Iterator;
 import java.util.HashMap;
 import java.util.function.Function;
 import com.google.gson.JsonParseException;
@@ -70,10 +68,10 @@ public class Class1780 extends Class1779
         return (Map)this.field9884.getOrDefault(key, Collections.emptyMap());
     }
     
-    public <C extends Class446, T extends Class3662<C>> Class2265<Class8321> method6381(final Class8976<T> class8976, final C c, final Class1847 class8977) {
+    public <C extends Class446, T extends Class3662<C>> Class2265<ItemStack> method6381(final Class8976<T> class8976, final C c, final Class1847 class8977) {
         final Optional<T> method6378 = this.method6378(class8976, c, class8977);
         if (!method6378.isPresent()) {
-            final Class2265<Class8321> method6379 = Class2265.method8507(c.method2239(), Class8321.field34174);
+            final Class2265<ItemStack> method6379 = Class2265.method8507(c.method2239(), ItemStack.field34174);
             for (int i = 0; i < method6379.size(); ++i) {
                 method6379.set(i, c.method2157(i));
             }

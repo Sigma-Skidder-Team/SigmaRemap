@@ -10,5 +10,5 @@ import com.mojang.brigadier.context.CommandContext;
 
 public interface Class6311
 {
-    Predicate<Class8321> method18686(final CommandContext<Class7492> p0) throws CommandSyntaxException;
+    Predicate<ItemStack> method18686(final CommandContext<Class7492> p0) throws CommandSyntaxException;
 }

@@ -57,11 +57,11 @@ public class Class3484 extends Class3479
                 ((Class7097<Object, Object>)method6701).method21773((Class7111<Comparable>)Class3884.field17541, 1);
                 int n = 1 + this.field16412.field2391.field10062.nextInt(2) + ((intValue == 3) ? 1 : 0);
                 if (this.field16412.method2718(Class2215.field13600).method27620()) {
-                    this.field16412.method1803(Class2215.field13600, new Class8321(Class7739.field31630));
+                    this.field16412.method1803(Class2215.field13600, new ItemStack(Class7739.field31630));
                     --n;
                 }
                 if (n > 0) {
-                    Class3833.method11839(this.field16412.field2391, this.field16395, new Class8321(Class7739.field31630, n));
+                    Class3833.method11839(this.field16412.field2391, this.field16395, new ItemStack(Class7739.field31630, n));
                 }
                 this.field16412.method1695(Class8520.field35630, 1.0f, 1.0f);
                 this.field16412.field2391.method6688(this.field16395, ((Class7097<Object, Class7096>)method6701).method21773((Class7111<Comparable>)Class3884.field17541, 1), 2);

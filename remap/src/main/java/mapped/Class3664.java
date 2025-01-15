@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.gson.JsonParseException;
-import java.util.Iterator;
+
 import java.util.HashMap;
 import com.google.gson.JsonElement;
 import com.google.common.collect.Maps;
@@ -22,11 +22,11 @@ public class Class3664 implements Class3663
     private final int field16946;
     private final int field16947;
     private final Class2265<Class120> field16948;
-    private final Class8321 field16949;
+    private final ItemStack field16949;
     private final Class1932 field16950;
     private final String field16951;
     
-    public Class3664(final Class1932 field16950, final String field16951, final int field16952, final int field16953, final Class2265<Class120> field16954, final Class8321 field16955) {
+    public Class3664(final Class1932 field16950, final String field16951, final int field16952, final int field16953, final Class2265<Class120> field16954, final ItemStack field16955) {
         this.field16950 = field16950;
         this.field16951 = field16951;
         this.field16946 = field16952;
@@ -51,7 +51,7 @@ public class Class3664 implements Class3663
     }
     
     @Override
-    public Class8321 method11292() {
+    public ItemStack method11292() {
         return this.field16949;
     }
     
@@ -107,7 +107,7 @@ public class Class3664 implements Class3663
         return true;
     }
     
-    public Class8321 method11303(final Class473 class473) {
+    public ItemStack method11303(final Class473 class473) {
         return this.method11292().method27641();
     }
     
@@ -219,13 +219,13 @@ public class Class3664 implements Class3663
         return hashMap;
     }
     
-    public static Class8321 method11312(final JsonObject jsonObject) {
+    public static ItemStack method11312(final JsonObject jsonObject) {
         final Class3820 class3820 = Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
             new JsonSyntaxException("Unknown item '" + str + "'");
             return;
         });
         if (!jsonObject.has("data")) {
-            return new Class8321(class3820, Class9583.method35910(jsonObject, "count", 1));
+            return new ItemStack(class3820, Class9583.method35910(jsonObject, "count", 1));
         }
         throw new JsonParseException("Disallowed data tag found");
     }

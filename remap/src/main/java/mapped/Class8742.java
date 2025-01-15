@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class Class8742
 {
-    public static int method30195(final Class6257 class6257, final Class8321 class6258) {
+    public static int method30195(final Class6257 class6257, final ItemStack class6258) {
         if (!class6258.method27620()) {
             final Class1932 method503 = Class90.field209.method503(class6257);
             final Class52 method504 = class6258.method27662();
@@ -39,7 +39,7 @@ public class Class8742
         return 0;
     }
     
-    public static Map<Class6257, Integer> method30196(final Class8321 class8321) {
+    public static Map<Class6257, Integer> method30196(final ItemStack class8321) {
         return method30197((class8321.method27622() != Class7739.field31534) ? class8321.method27662() : Class4034.method12225(class8321));
     }
     
@@ -54,7 +54,7 @@ public class Class8742
         return linkedHashMap;
     }
     
-    public static void method30198(final Map<Class6257, Integer> map, final Class8321 class8321) {
+    public static void method30198(final Map<Class6257, Integer> map, final ItemStack class8321) {
         final Class52 class8322 = new Class52();
         for (final Map.Entry<Class6257, V> entry : map.entrySet()) {
             final Class6257 class8323 = entry.getKey();
@@ -81,7 +81,7 @@ public class Class8742
         }
     }
     
-    private static void method30199(final Class7311 class7311, final Class8321 class7312) {
+    private static void method30199(final Class7311 class7311, final ItemStack class7312) {
         if (!class7312.method27620()) {
             final Class52 class7315 = class7312.method27662();
             for (int n2 = 0; n2 < class7315.size(); ++n2) {
@@ -96,20 +96,20 @@ public class Class8742
         }
     }
     
-    private static void method30200(final Class7311 class7311, final Iterable<Class8321> iterable) {
-        final Iterator<Class8321> iterator = iterable.iterator();
+    private static void method30200(final Class7311 class7311, final Iterable<ItemStack> iterable) {
+        final Iterator<ItemStack> iterator = iterable.iterator();
         while (iterator.hasNext()) {
             method30199(class7311, iterator.next());
         }
     }
     
-    public static int method30201(final Iterable<Class8321> iterable, final Class7929 class7929) {
+    public static int method30201(final Iterable<ItemStack> iterable, final Class7929 class7929) {
         final MutableInt mutableInt = new MutableInt();
         method30200((class7930, n) -> mutableInt.add(class7930.method18594(n, class7929)), iterable);
         return mutableInt.intValue();
     }
     
-    public static float method30202(final Class8321 class8321, final Class6363 class8322) {
+    public static float method30202(final ItemStack class8321, final Class6363 class8322) {
         final MutableFloat mutableFloat = new MutableFloat();
         method30199((class6364, n) -> mutableFloat.add(class6364.method18595(n, class8322)), class8321);
         return mutableFloat.floatValue();
@@ -141,7 +141,7 @@ public class Class8742
     }
     
     public static int method30206(final Class6257 class6257, final Class511 class6258) {
-        final Collection<Class8321> values = class6257.method18591(class6258).values();
+        final Collection<ItemStack> values = class6257.method18591(class6258).values();
         if (values != null) {
             int n = 0;
             final Iterator<Object> iterator = values.iterator();
@@ -177,11 +177,11 @@ public class Class8742
         return method30206(Class7882.field32365, class511);
     }
     
-    public static int method30212(final Class8321 class8321) {
+    public static int method30212(final ItemStack class8321) {
         return method30195(Class7882.field32373, class8321);
     }
     
-    public static int method30213(final Class8321 class8321) {
+    public static int method30213(final ItemStack class8321) {
         return method30195(Class7882.field32374, class8321);
     }
     
@@ -197,33 +197,33 @@ public class Class8742
         return method30206(Class7882.field32356, class511) > 0;
     }
     
-    public static boolean method30217(final Class8321 class8321) {
+    public static boolean method30217(final ItemStack class8321) {
         return method30195(Class7882.field32357, class8321) > 0;
     }
     
-    public static boolean method30218(final Class8321 class8321) {
+    public static boolean method30218(final ItemStack class8321) {
         return method30195(Class7882.field32383, class8321) > 0;
     }
     
-    public static int method30219(final Class8321 class8321) {
+    public static int method30219(final ItemStack class8321) {
         return method30195(Class7882.field32375, class8321);
     }
     
-    public static int method30220(final Class8321 class8321) {
+    public static int method30220(final ItemStack class8321) {
         return method30195(Class7882.field32377, class8321);
     }
     
-    public static boolean method30221(final Class8321 class8321) {
+    public static boolean method30221(final ItemStack class8321) {
         return method30195(Class7882.field32378, class8321) > 0;
     }
     
     @Nullable
-    public static Map.Entry<Class2215, Class8321> method30222(final Class6257 class6257, final Class511 class6258) {
-        final Map<Class2215, Class8321> method18591 = class6257.method18591(class6258);
+    public static Map.Entry<Class2215, ItemStack> method30222(final Class6257 class6257, final Class511 class6258) {
+        final Map<Class2215, ItemStack> method18591 = class6257.method18591(class6258);
         if (!method18591.isEmpty()) {
             final ArrayList arrayList = Lists.newArrayList();
-            for (final Map.Entry<K, Class8321> entry : method18591.entrySet()) {
-                final Class8321 class6259 = entry.getValue();
+            for (final Map.Entry<K, ItemStack> entry : method18591.entrySet()) {
+                final ItemStack class6259 = entry.getValue();
                 if (class6259.method27620()) {
                     continue;
                 }
@@ -237,7 +237,7 @@ public class Class8742
         return null;
     }
     
-    public static int method30223(final Random random, final int n, int n2, final Class8321 class8321) {
+    public static int method30223(final Random random, final int n, int n2, final ItemStack class8321) {
         if (class8321.method27622().method11734() <= 0) {
             return 0;
         }
@@ -251,11 +251,11 @@ public class Class8742
         return Math.max(a / 3, 1);
     }
     
-    public static Class8321 method30224(final Random random, Class8321 class8321, final int n, final boolean b) {
+    public static ItemStack method30224(final Random random, ItemStack class8321, final int n, final boolean b) {
         final List<Class6827> method30225 = method30225(random, class8321, n, b);
         final boolean b2 = class8321.method27622() == Class7739.field31370;
         if (b2) {
-            class8321 = new Class8321(Class7739.field31534);
+            class8321 = new ItemStack(Class7739.field31534);
         }
         for (final Class6827 class8322 : method30225) {
             if (!b2) {
@@ -268,7 +268,7 @@ public class Class8742
         return class8321;
     }
     
-    public static List<Class6827> method30225(final Random random, final Class8321 class8321, int method35651, final boolean b) {
+    public static List<Class6827> method30225(final Random random, final ItemStack class8321, int method35651, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
         final int method35652 = class8321.method27622().method11734();
         if (method35652 > 0) {
@@ -312,7 +312,7 @@ public class Class8742
         return true;
     }
     
-    public static List<Class6827> method30228(final int n, final Class8321 class8321, final boolean b) {
+    public static List<Class6827> method30228(final int n, final ItemStack class8321, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
         final Class3820 method27622 = class8321.method27622();
         final boolean b2 = class8321.method27622() == Class7739.field31370;

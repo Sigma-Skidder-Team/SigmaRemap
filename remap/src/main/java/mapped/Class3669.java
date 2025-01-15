@@ -14,9 +14,9 @@ public class Class3669 extends Class3666
     
     public boolean method11301(final Class473 class473, final Class1847 class474) {
         int n = 0;
-        Class8321 field34174 = Class8321.field34174;
+        ItemStack field34174 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (method2157.method27622() != Class7739.field31425) {
                     if (method2157.method27622() != Class7739.field31521) {
@@ -35,32 +35,32 @@ public class Class3669 extends Class3666
         return !field34174.method27620() && n > 0;
     }
     
-    public Class8321 method11303(final Class473 class473) {
+    public ItemStack method11303(final Class473 class473) {
         int n = 0;
-        Class8321 field34174 = Class8321.field34174;
+        ItemStack field34174 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (method2157.method27622() != Class7739.field31425) {
                     if (method2157.method27622() != Class7739.field31521) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     ++n;
                 }
                 else {
                     if (!field34174.method27620()) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     field34174 = method2157;
                 }
             }
         }
         if (!field34174.method27620() && n >= 1) {
-            final Class8321 method2158 = field34174.method27641();
+            final ItemStack method2158 = field34174.method27641();
             method2158.method27691(n + 1);
             return method2158;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override

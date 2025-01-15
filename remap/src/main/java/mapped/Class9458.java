@@ -15,8 +15,8 @@ public class Class9458
     private static final Class6332 field40656;
     private static final Class6332 field40657;
     private final Class869 field40658;
-    private Class8321 field40659;
-    private Class8321 field40660;
+    private ItemStack field40659;
+    private ItemStack field40660;
     private float field40661;
     private float field40662;
     private float field40663;
@@ -25,14 +25,14 @@ public class Class9458
     private final Class1796 field40666;
     
     public Class9458(final Class869 field40658) {
-        this.field40659 = Class8321.field34174;
-        this.field40660 = Class8321.field34174;
+        this.field40659 = ItemStack.field34174;
+        this.field40660 = ItemStack.field34174;
         this.field40658 = field40658;
         this.field40665 = field40658.method5306();
         this.field40666 = field40658.method5307();
     }
     
-    public void method35143(final Class511 class511, final Class8321 class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final int n) {
+    public void method35143(final Class511 class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final int n) {
         if (!class512.method27620()) {
             this.field40666.method6537(class511, class512, class513, b, class514, class515, class511.field2391, n, Class1904.field10335);
         }
@@ -60,7 +60,7 @@ public class Class9458
         class7351.method22568();
     }
     
-    private void method35146(final Class7351 class7351, final Class7807 class7352, final int n, final float n2, final Class2226 class7353, final float n3, final Class8321 class7354) {
+    private void method35146(final Class7351 class7351, final Class7807 class7352, final int n, final float n2, final Class2226 class7353, final float n3, final ItemStack class7354) {
         final float n4 = (class7353 != Class2226.field13698) ? -1.0f : 1.0f;
         class7351.method22564(n4 * 0.125f, -0.125, 0.0);
         if (!this.field40658.field4684.method1823()) {
@@ -98,7 +98,7 @@ public class Class9458
         this.method35148(class7351, class7352, n, this.field40659);
     }
     
-    private void method35148(final Class7351 class7351, final Class7807 class7352, final int n, final Class8321 class7353) {
+    private void method35148(final Class7351 class7351, final Class7807 class7352, final int n, final ItemStack class7353) {
         class7351.method22566(Vector3f.YP.rotationDegrees(180.0f));
         class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
         class7351.method22565(0.38f, 0.38f, 0.38f);
@@ -141,7 +141,7 @@ public class Class9458
         }
     }
     
-    private void method35150(final Class7351 class7351, final float n, final Class2226 class7352, final Class8321 class7353) {
+    private void method35150(final Class7351 class7351, final float n, final Class2226 class7352, final ItemStack class7353) {
         final float n2 = this.field40658.field4684.method2767() - n + 1.0f;
         final float n3 = n2 / class7353.method27652();
         if (n3 < 0.8f) {
@@ -175,8 +175,8 @@ public class Class9458
         boolean b = true;
         int n3 = 1;
         if (!class7353.method2756()) {
-            final Class8321 method2750 = class7353.method2713();
-            final Class8321 method2751 = class7353.method2714();
+            final ItemStack method2750 = class7353.method2713();
+            final ItemStack method2751 = class7353.method2714();
             if (method2750.method27622() instanceof Class4086) {
                 if (Class4086.method12296(method2750)) {
                     n3 = (b ? 0 : 1);
@@ -195,7 +195,7 @@ public class Class9458
                 n3 = (b ? 0 : 1);
             }
             if (class7353.method2757() == Class316.field1877) {
-                final Class8321 method2752 = class7353.method2714();
+                final ItemStack method2752 = class7353.method2714();
                 if (method2752.method27622() instanceof Class4086) {
                     if (Class4086.method12296(method2752)) {
                         n3 = 0;
@@ -224,7 +224,7 @@ public class Class9458
         class7352.method25216();
     }
     
-    private void method35154(final Class754 class754, final float n, final float n2, final Class316 class755, final float n3, final Class8321 class756, final float n4, final Class7351 class757, final Class7807 class758, final int n5) {
+    private void method35154(final Class754 class754, final float n, final float n2, final Class316 class755, final float n3, final ItemStack class756, final float n4, final Class7351 class757, final Class7807 class758, final int n5) {
         if (!Class8571.method28955() || !Class9216.method33907(class755)) {
             final boolean b = class755 == Class316.field1877;
             final Class2226 class759 = b ? class754.method2755() : class754.method2755().method8419();
@@ -365,8 +365,8 @@ public class Class9458
         this.field40662 = this.field40661;
         this.field40664 = this.field40663;
         final Class756 field4684 = this.field40658.field4684;
-        final Class8321 method2713 = field4684.method2713();
-        final Class8321 method2714 = field4684.method2714();
+        final ItemStack method2713 = field4684.method2713();
+        final ItemStack method2714 = field4684.method2714();
         if (!field4684.method4134()) {
             final float method2715 = field4684.method2904(1.0f);
             if (Class9570.field41312.method22605()) {

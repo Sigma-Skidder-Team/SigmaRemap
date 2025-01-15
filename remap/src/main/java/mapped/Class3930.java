@@ -97,7 +97,7 @@ public class Class3930 extends Class3841
         return new Class435();
     }
     
-    public static boolean method12040(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class8321 class1850) {
+    public static boolean method12040(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final ItemStack class1850) {
         if (class1849.method21772((Class7111<Boolean>)Class3930.field17800)) {
             return false;
         }
@@ -107,7 +107,7 @@ public class Class3930 extends Class3841
         return true;
     }
     
-    private static void method12041(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class8321 class1850) {
+    private static void method12041(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final ItemStack class1850) {
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class435) {
             ((Class435)method6727).method2170(class1850.method27621(1));
@@ -200,7 +200,7 @@ public class Class3930 extends Class3841
     @Override
     public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.method21772((Class7111<Boolean>)Class3930.field17800)) {
-            final Class8321 method2715 = class7099.method2715(class7100);
+            final ItemStack method2715 = class7099.method2715(class7100);
             return (!method2715.method27620() && !method2715.method27622().method11742(Class7855.field32277)) ? Class2201.field13401 : Class2201.field13402;
         }
         if (!class7097.field10067) {

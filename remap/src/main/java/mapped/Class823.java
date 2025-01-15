@@ -46,7 +46,7 @@ public class Class823 implements Class822
     }
     
     @Override
-    public void method4831(final Class8321 class8321) {
+    public void method4831(final ItemStack class8321) {
     }
     
     @Override

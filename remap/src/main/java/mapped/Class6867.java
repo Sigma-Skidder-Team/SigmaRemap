@@ -30,7 +30,7 @@ public class Class6867 implements Class6866
             class690.method3853().field4643.method6610(Class8822.method30773("recipe.toast.title", new Object[0]), 30.0f, 7.0f, -11534256);
             class690.method3853().field4643.method6610(Class8822.method30773("recipe.toast.description", new Object[0]), 30.0f, 18.0f, -16777216);
             final Class3662 class691 = this.field26903.get((int)(field26904 / (5000L / this.field26903.size()) % this.field26903.size()));
-            final Class8321 method11297 = class691.method11297();
+            final ItemStack method11297 = class691.method11297();
             Class8726.method30059();
             Class8726.method30063(0.6f, 0.6f, 1.0f);
             class690.method3853().method5307().method6541(null, method11297, 3, 3);

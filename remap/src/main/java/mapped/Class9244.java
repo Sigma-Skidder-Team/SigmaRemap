@@ -28,7 +28,7 @@ public class Class9244
     }
     
     @Nullable
-    public Class4252<?> method34084(final Class8321 class8321) {
+    public Class4252<?> method34084(final ItemStack class8321) {
         if (!this.field39644) {
             return (this.field39649++ % 5 != 0) ? null : new Class4333(Class4094.method12329(class8321), this.field39651.field25425, this.field39651.field25423, this.field39651.field25427, this.field39651.field25431.values(), this.field39651.field25426, 0, 0, 0, 0);
         }

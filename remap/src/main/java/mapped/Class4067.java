@@ -13,7 +13,7 @@ public class Class4067 extends Class3820
     }
     
     @Override
-    public boolean method11730(final Class8321 class8321) {
+    public boolean method11730(final ItemStack class8321) {
         return true;
     }
 }

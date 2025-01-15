@@ -22,8 +22,8 @@ public class Class4049 extends Class3820
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2835(method2715, class1849);
         class1848.method2859(Class8276.field33981.method8449(this));
         return Class9355.method34674(method2715);

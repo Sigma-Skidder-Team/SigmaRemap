@@ -24,13 +24,13 @@ public class Class6617 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return this.field26193 == Class759.method4185(class8321);
     }
     
     @Override
     public boolean method20061(final Class512 class512) {
-        final Class8321 method20053 = this.method20053();
+        final ItemStack method20053 = this.method20053();
         if (!method20053.method27620()) {
             if (!class512.method2889()) {
                 if (Class8742.method30217(method20053)) {

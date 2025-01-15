@@ -43,7 +43,7 @@ public class Class3420 extends Class3418
                 if (!class512.method2880()) {
                     return false;
                 }
-                final Class8321 method2159 = this.field16163.method2159(0);
+                final ItemStack method2159 = this.field16163.method2159(0);
                 this.field16163.method2161();
                 if (!class512.field3006.method2362(method2159)) {
                     class512.method2822(method2159, false);
@@ -67,7 +67,7 @@ public class Class3420 extends Class3418
         return this.field16163.method2162(class512);
     }
     
-    public Class8321 method10900() {
+    public ItemStack method10900() {
         return this.field16163.method2157(0);
     }
     

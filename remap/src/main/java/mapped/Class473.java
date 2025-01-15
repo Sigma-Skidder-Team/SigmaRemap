@@ -4,19 +4,18 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.Iterator;
 
 public class Class473 implements Class446, Class472
 {
     private static String[] field2768;
-    private final Class2265<Class8321> field2769;
+    private final Class2265<ItemStack> field2769;
     private final int field2770;
     private final int field2771;
     private final Class3418 field2772;
     
     public Class473(final Class3418 field2772, final int field2773, final int field2774) {
-        this.field2769 = Class2265.method8507(field2773 * field2774, Class8321.field34174);
+        this.field2769 = Class2265.method8507(field2773 * field2774, ItemStack.field34174);
         this.field2772 = field2772;
         this.field2770 = field2773;
         this.field2771 = field2774;
@@ -40,18 +39,18 @@ public class Class473 implements Class446, Class472
     }
     
     @Override
-    public Class8321 method2157(final int n) {
-        return (n < this.method2239()) ? this.field2769.get(n) : Class8321.field34174;
+    public ItemStack method2157(final int n) {
+        return (n < this.method2239()) ? this.field2769.get(n) : ItemStack.field34174;
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         return Class8508.method28423(this.field2769, n);
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
-        final Class8321 method28422 = Class8508.method28422(this.field2769, n, n2);
+    public ItemStack method2158(final int n, final int n2) {
+        final ItemStack method28422 = Class8508.method28422(this.field2769, n, n2);
         if (!method28422.method27620()) {
             this.field2772.method10855(this);
         }
@@ -59,7 +58,7 @@ public class Class473 implements Class446, Class472
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
         this.field2769.set(n, class8321);
         this.field2772.method10855(this);
     }

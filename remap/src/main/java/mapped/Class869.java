@@ -395,7 +395,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         final Class2265<Object> method8506 = Class2265.method8506();
         final Iterator<Object> iterator = Class90.field211.iterator();
         while (iterator.hasNext()) {
-            iterator.next().method11735(Class7207.field27998, (Class2265<Class8321>)method8506);
+            iterator.next().method11735(Class7207.field27998, (Class2265<ItemStack>)method8506);
         }
         method8506.forEach(class8931 -> {
             class8929.method31458(class8931);
@@ -512,8 +512,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         final Class2265<Object> method5791 = Class2265.method8506();
         for (final Class3820 class7098 : Class90.field211) {
             method5791.clear();
-            class7098.method11735(Class7207.field27998, (Class2265<Class8321>)method5791);
-            for (final Class8321 class7099 : method5791) {
+            class7098.method11735(Class7207.field27998, (Class2265<ItemStack>)method5791);
+            for (final ItemStack class7099 : method5791) {
                 final String method5792 = class7099.method27649();
                 if (new Class2259(method5792, new Object[0]).getString().toLowerCase(Locale.ROOT).equals(class7098.method11717())) {
                     Class869.field4622.debug("Missing translation for: {} {} {}", (Object)class7099, (Object)method5792, (Object)class7099.method27622());
@@ -978,7 +978,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     Class869.field4622.warn("Null returned as 'hitResult', this shouldn't happen!");
                 }
                 for (final Class316 class5749 : Class316.values()) {
-                    final Class8321 method2715 = this.field4684.method2715(class5749);
+                    final ItemStack method2715 = this.field4684.method2715(class5749);
                     if (this.field4691 != null) {
                         switch (Class8853.field37235[this.field4691.method21449().ordinal()]) {
                             case 1: {
@@ -1388,7 +1388,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             final boolean field27304 = this.field4684.field3025.field27304;
             Class436 method6727 = null;
             final Class2165 method6728 = this.field4691.method21449();
-            Class8321 class5749;
+            ItemStack class5749;
             if (method6728 == Class2165.field12881) {
                 final BlockPos method6729 = ((Class7005)this.field4691).method21447();
                 final Class7096 method6730 = this.field4683.method6701(method6729);
@@ -1410,15 +1410,15 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 }
                 final Entity method6732 = ((Class7007)this.field4691).method21452();
                 if (method6732 instanceof Class861) {
-                    class5749 = new Class8321(Class7739.field31340);
+                    class5749 = new ItemStack(Class7739.field31340);
                 }
                 else if (method6732 instanceof Class863) {
-                    class5749 = new Class8321(Class7739.field31551);
+                    class5749 = new ItemStack(Class7739.field31551);
                 }
                 else if (method6732 instanceof Class862) {
-                    final Class8321 method6733 = ((Class862)method6732).method5198();
+                    final ItemStack method6733 = ((Class862)method6732).method5198();
                     if (method6733.method27620()) {
-                        class5749 = new Class8321(Class7739.field31515);
+                        class5749 = new ItemStack(Class7739.field31515);
                     }
                     else {
                         class5749 = method6733.method27641();
@@ -1452,23 +1452,23 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                             break;
                         }
                     }
-                    class5749 = new Class8321(class5750);
+                    class5749 = new ItemStack(class5750);
                 }
                 else if (method6732 instanceof Class423) {
-                    class5749 = new Class8321(((Class423)method6732).method2040());
+                    class5749 = new ItemStack(((Class423)method6732).method2040());
                 }
                 else if (method6732 instanceof Class857) {
-                    class5749 = new Class8321(Class7739.field31546);
+                    class5749 = new ItemStack(Class7739.field31546);
                 }
                 else if (method6732 instanceof Class858) {
-                    class5749 = new Class8321(Class7739.field31572);
+                    class5749 = new ItemStack(Class7739.field31572);
                 }
                 else {
                     final Class3831 method6734 = Class3831.method11771(method6732.method1642());
                     if (method6734 == null) {
                         return;
                     }
-                    class5749 = new Class8321(method6734);
+                    class5749 = new ItemStack(method6734);
                 }
             }
             if (class5749.method27620()) {
@@ -1503,7 +1503,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
     }
     
-    private Class8321 method5274(final Class8321 class8321, final Class436 class8322) {
+    private ItemStack method5274(final ItemStack class8321, final Class436 class8322) {
         final Class51 method2180 = class8322.method2180(new Class51());
         if (class8321.method27622() instanceof Class4046 && method2180.method315("Owner")) {
             class8321.method27658().method295("SkullOwner", method2180.method327("Owner"));

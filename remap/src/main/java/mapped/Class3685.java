@@ -7,13 +7,13 @@ package mapped;
 public abstract class Class3685 implements Class3662<Class446>
 {
     public final Class120 field16985;
-    public final Class8321 field16986;
+    public final ItemStack field16986;
     private final Class8976<?> field16987;
     private final Class6096<?> field16988;
     public final Class1932 field16989;
     public final String field16990;
     
-    public Class3685(final Class8976<?> field16987, final Class6096<?> field16988, final Class1932 field16989, final String field16990, final Class120 field16991, final Class8321 field16992) {
+    public Class3685(final Class8976<?> field16987, final Class6096<?> field16988, final Class1932 field16989, final String field16990, final Class120 field16991, final ItemStack field16992) {
         this.field16987 = field16987;
         this.field16988 = field16988;
         this.field16989 = field16989;
@@ -43,7 +43,7 @@ public abstract class Class3685 implements Class3662<Class446>
     }
     
     @Override
-    public Class8321 method11292() {
+    public ItemStack method11292() {
         return this.field16986;
     }
     
@@ -60,7 +60,7 @@ public abstract class Class3685 implements Class3662<Class446>
     }
     
     @Override
-    public Class8321 method11290(final Class446 class446) {
+    public ItemStack method11290(final Class446 class446) {
         return this.field16986.method27641();
     }
 }

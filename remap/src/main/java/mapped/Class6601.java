@@ -23,32 +23,32 @@ public class Class6601
         this.field26176 = field26176;
     }
     
-    public void method20049(final Class8321 class8321, final Class8321 class8322) {
+    public void method20049(final ItemStack class8321, final ItemStack class8322) {
         final int n = class8322.method27690() - class8321.method27690();
         if (n > 0) {
             this.method20050(class8322, n);
         }
     }
     
-    public void method20050(final Class8321 class8321, final int n) {
+    public void method20050(final ItemStack class8321, final int n) {
     }
     
     public void method20051(final int n) {
     }
     
-    public void method20052(final Class8321 class8321) {
+    public void method20052(final ItemStack class8321) {
     }
     
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         this.method20056();
         return class513;
     }
     
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return true;
     }
     
-    public Class8321 method20053() {
+    public ItemStack method20053() {
         return this.field26173.method2157(this.field26172);
     }
     
@@ -56,7 +56,7 @@ public class Class6601
         return !this.method20053().method27620();
     }
     
-    public void method20055(final Class8321 class8321) {
+    public void method20055(final ItemStack class8321) {
         this.field26173.method2160(this.field26172, class8321);
         this.method20056();
     }
@@ -69,7 +69,7 @@ public class Class6601
         return this.field26173.method2254();
     }
     
-    public int method20058(final Class8321 class8321) {
+    public int method20058(final ItemStack class8321) {
         return this.method20057();
     }
     
@@ -78,7 +78,7 @@ public class Class6601
         return null;
     }
     
-    public Class8321 method20060(final int n) {
+    public ItemStack method20060(final int n) {
         return this.field26173.method2158(this.field26172, n);
     }
     

@@ -16,13 +16,13 @@ public class Class7075
     public final Class316 field27552;
     public final Class7005 field27553;
     public final Class1847 field27554;
-    public final Class8321 field27555;
+    public final ItemStack field27555;
     
     public Class7075(final Class512 class512, final Class316 class513, final Class7005 class514) {
         this(class512.field2391, class512, class513, class512.method2715(class513), class514);
     }
     
-    public Class7075(final Class1847 field27554, final Class512 field27555, final Class316 field27556, final Class8321 field27557, final Class7005 field27558) {
+    public Class7075(final Class1847 field27554, final Class512 field27555, final Class316 field27556, final ItemStack field27557, final Class7005 field27558) {
         this.field27551 = field27555;
         this.field27552 = field27556;
         this.field27553 = field27558;
@@ -46,7 +46,7 @@ public class Class7075
         return this.field27553.method21450();
     }
     
-    public Class8321 method21651() {
+    public ItemStack method21651() {
         return this.field27555;
     }
     

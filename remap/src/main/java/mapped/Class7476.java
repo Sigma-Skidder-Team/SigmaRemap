@@ -157,7 +157,7 @@ public final class Class7476
         return (class511.method2713().method27622() != class512) ? Class316.field1878 : Class316.field1877;
     }
     
-    public static Class402 method23101(final Class511 class511, final Class8321 class512, final float n) {
+    public static Class402 method23101(final Class511 class511, final ItemStack class512, final float n) {
         final Class402 method11758 = ((Class3824)((class512.method27622() instanceof Class3824) ? class512.method27622() : Class7739.field31280)).method11758(class511.field2391, class512, class511);
         method11758.method1984(class511, n);
         if (class512.method27622() == Class7739.field31581) {

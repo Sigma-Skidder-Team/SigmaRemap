@@ -24,7 +24,7 @@ public class Class4621 extends Class4611<Class4227>
         return new Class4227(this.field20087, Class7854.method25399(jsonObject.get("block")), Class9357.method34692(jsonObject.get("state")), Class9342.method34628(jsonObject.get("item")));
     }
     
-    public void method13765(final Class513 class517, final BlockPos class514, final Class8321 class515) {
+    public void method13765(final Class513 class517, final BlockPos class514, final ItemStack class515) {
         this.method13726(class517.method2957(), class522 -> {
             class517.method2940().method6701(class519);
             return class522.method12716(class516, class518.method2940(), class520, class521);

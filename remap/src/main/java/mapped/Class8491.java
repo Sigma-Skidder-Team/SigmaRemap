@@ -120,7 +120,7 @@ public class Class8491
                 --i;
             }
             else {
-                final Iterator<Class8321> iterator = class5744.method1800().iterator();
+                final Iterator<ItemStack> iterator = class5744.method1800().iterator();
                 boolean b = false;
                 while (iterator.hasNext()) {
                     if (iterator.next().method27622() instanceof Class4077) {

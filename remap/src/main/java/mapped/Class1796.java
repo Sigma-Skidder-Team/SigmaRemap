@@ -51,7 +51,7 @@ public class Class1796 implements Class1657
         return this.field9953;
     }
     
-    public void method6530(final Class6313 class6313, final Class8321 class6314, final int n, final int n2, final Class7351 class6315, final Class4150 class6316) {
+    public void method6530(final Class6313 class6313, final ItemStack class6314, final int n, final int n2, final Class7351 class6315, final Class4150 class6316) {
         final boolean method6354 = Class8571.method29001().method6354();
         final boolean b = Class8571.method28928() && method6354;
         if (b) {
@@ -70,7 +70,7 @@ public class Class1796 implements Class1657
         }
     }
     
-    public void method6531(final Class8321 class8321, final Class2016 class8322, final boolean b, final Class7351 class8323, final Class7807 class8324, final int n, final int n2, Class6313 class8325) {
+    public void method6531(final ItemStack class8321, final Class2016 class8322, final boolean b, final Class7351 class8323, final Class7807 class8324, final int n, final int n2, Class6313 class8325) {
         if (!class8321.method27620()) {
             class8323.method22567();
             final boolean b2 = class8322 == Class2016.field11492;
@@ -139,7 +139,7 @@ public class Class1796 implements Class1657
         return b2 ? Class9343.method34633(class7807.method25214(b ? Class6332.method18784() : Class6332.method18785()), class7807.method25214(class7808)) : class7807.method25214(class7808);
     }
     
-    private void method6533(final Class7351 class7351, final Class4150 class7352, final List<Class8754> list, final Class8321 class7353, final int n, final int n2) {
+    private void method6533(final Class7351 class7351, final Class4150 class7352, final List<Class8754> list, final ItemStack class7353, final int n, final int n2) {
         final boolean b = !class7353.method27620();
         final Class8996 method22569 = class7351.method22569();
         for (int size = list.size(), i = 0; i < size; ++i) {
@@ -162,7 +162,7 @@ public class Class1796 implements Class1657
         }
     }
     
-    public Class6313 method6534(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
+    public Class6313 method6534(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
         final Class3820 method27622 = class8321.method27622();
         Class6313 class8324;
         if (method27622 != Class7739.field31607) {
@@ -174,7 +174,7 @@ public class Class1796 implements Class1657
         return method27622.method11701() ? this.method6535(class8324, class8321, class8322, class8323) : class8324;
     }
     
-    private Class6313 method6535(final Class6313 class6313, final Class8321 class6314, final Class1847 class6315, final Class511 class6316) {
+    private Class6313 method6535(final Class6313 class6313, final ItemStack class6314, final Class1847 class6315, final Class511 class6316) {
         Class6313 method33469 = null;
         if (class6313 != null) {
             final Class9168 method33470 = class6313.method18698();
@@ -185,21 +185,21 @@ public class Class1796 implements Class1657
         return (method33469 != null) ? method33469 : this.field9953.method22210().method6452();
     }
     
-    public void method6536(final Class8321 class8321, final Class2016 class8322, final int n, final int n2, final Class7351 class8323, final Class7807 class8324) {
+    public void method6536(final ItemStack class8321, final Class2016 class8322, final int n, final int n2, final Class7351 class8323, final Class7807 class8324) {
         this.method6537(null, class8321, class8322, false, class8323, class8324, null, n, n2);
     }
     
-    public void method6537(final Class511 class511, final Class8321 class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final Class1847 class516, final int n, final int n2) {
+    public void method6537(final Class511 class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final Class1847 class516, final int n, final int n2) {
         if (!class512.method27620()) {
             this.method6531(class512, class513, b, class514, class515, n, n2, this.method6534(class512, class516, class511));
         }
     }
     
-    public void method6538(final Class8321 class8321, final int n, final int n2) {
+    public void method6538(final ItemStack class8321, final int n, final int n2) {
         this.method6539(class8321, n, n2, this.method6534(class8321, null, null));
     }
     
-    public void method6539(final Class8321 class8321, final int n, final int n2, Class6313 method34966) {
+    public void method6539(final ItemStack class8321, final int n, final int n2, Class6313 method34966) {
         Class1796.field9959 = true;
         Class8726.method30059();
         this.field9954.method5849(Class1774.field9853);
@@ -235,11 +235,11 @@ public class Class1796 implements Class1657
         Class1796.field9959 = false;
     }
     
-    public void method6540(final Class8321 class8321, final int n, final int n2) {
+    public void method6540(final ItemStack class8321, final int n, final int n2) {
         this.method6541(Class869.method5277().field4684, class8321, n, n2);
     }
     
-    public void method6541(final Class511 class511, final Class8321 class512, final int n, final int n2) {
+    public void method6541(final Class511 class511, final ItemStack class512, final int n, final int n2) {
         if (!class512.method27620()) {
             this.field9952 += 50.0f;
             try {
@@ -259,11 +259,11 @@ public class Class1796 implements Class1657
         }
     }
     
-    public void method6542(final Class1844 class1844, final Class8321 class1845, final int n, final int n2) {
+    public void method6542(final Class1844 class1844, final ItemStack class1845, final int n, final int n2) {
         this.method6543(class1844, class1845, n, n2, null);
     }
     
-    public void method6543(final Class1844 class1844, final Class8321 class1845, final int n, final int n2, final String s) {
+    public void method6543(final Class1844 class1844, final ItemStack class1845, final int n, final int n2, final String s) {
         if (!class1845.method27620()) {
             final Class7351 class1846 = new Class7351();
             if (class1845.method27690() != 1 || s != null) {

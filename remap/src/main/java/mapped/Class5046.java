@@ -89,7 +89,7 @@ public abstract class Class5046 extends Class5053 implements Class5081
         }
     }
     
-    public void method15416(final Class8321 class8321, final int n, final int n2) {
+    public void method15416(final ItemStack class8321, final int n, final int n2) {
         this.field21637.method3014(class8321, n, n2);
     }
     

@@ -20,7 +20,7 @@ public class Class4075 extends Class4072
     }
     
     @Override
-    public float method11706(final Class8321 class8321, final Class7096 class8322) {
+    public float method11706(final ItemStack class8321, final Class7096 class8322) {
         final Class8059 method21697 = class8322.method21697();
         if (method21697 != Class8059.field33176) {
             if (method21697 != Class8059.field33157) {

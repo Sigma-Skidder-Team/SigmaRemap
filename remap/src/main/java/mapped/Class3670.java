@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 
@@ -17,10 +16,10 @@ public class Class3670 extends Class3666
     }
     
     public boolean method11301(final Class473 class473, final Class1847 class474) {
-        Class8321 field34174 = Class8321.field34174;
+        ItemStack field34174 = ItemStack.field34174;
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (!(method2157.method27622() instanceof Class4053)) {
                     if (!(method2157.method27622() instanceof Class3829)) {
@@ -39,28 +38,28 @@ public class Class3670 extends Class3666
         return !field34174.method27620() && !arrayList.isEmpty();
     }
     
-    public Class8321 method11303(final Class473 class473) {
+    public ItemStack method11303(final Class473 class473) {
         final ArrayList arrayList = Lists.newArrayList();
-        Class8321 class474 = Class8321.field34174;
+        ItemStack class474 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 final Class3820 method2158 = method2157.method27622();
                 if (!(method2158 instanceof Class4053)) {
                     if (!(method2158 instanceof Class3829)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     arrayList.add(method2158);
                 }
                 else {
                     if (!class474.method27620()) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     class474 = method2157.method27641();
                 }
             }
         }
-        return (!class474.method27620() && !arrayList.isEmpty()) ? Class4053.method12255(class474, arrayList) : Class8321.field34174;
+        return (!class474.method27620() && !arrayList.isEmpty()) ? Class4053.method12255(class474, arrayList) : ItemStack.field34174;
     }
     
     @Override

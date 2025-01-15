@@ -16,7 +16,7 @@ public class Class6375 extends Class6367
     }
     
     @Override
-    public void method19013(final Consumer<Class8321> consumer, final Class7529 class7529) {
+    public void method19013(final Consumer<ItemStack> consumer, final Class7529 class7529) {
         class7529.method23584(this.field25483).method34483(class7529, consumer);
     }
     

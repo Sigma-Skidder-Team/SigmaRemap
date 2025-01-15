@@ -41,8 +41,8 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
     private void method13995(final Class754 class754) {
         final Class5860 class755 = ((Class4710<T, Class5860>)this).method13979();
         if (!class754.method1639()) {
-            final Class8321 method2713 = class754.method2713();
-            final Class8321 method2714 = class754.method2714();
+            final ItemStack method2713 = class754.method2713();
+            final ItemStack method2714 = class754.method2714();
             class755.method17584(true);
             class755.field23994.field25187 = class754.method2895(Class189.field616);
             class755.field24026.field25187 = class754.method2895(Class189.field611);
@@ -69,9 +69,9 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         }
     }
     
-    private Class2036 method13996(final Class754 class754, final Class8321 class755, final Class8321 class756, final Class316 class757) {
+    private Class2036 method13996(final Class754 class754, final ItemStack class755, final ItemStack class756, final Class316 class757) {
         Class2036 class758 = Class2036.field11607;
-        final Class8321 class759 = (class757 != Class316.field1877) ? class756 : class755;
+        final ItemStack class759 = (class757 != Class316.field1877) ? class756 : class755;
         if (!class759.method27620()) {
             class758 = Class2036.field11608;
             if (class754.method2767() <= 0) {

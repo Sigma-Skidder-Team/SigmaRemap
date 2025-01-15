@@ -34,7 +34,7 @@ public class Class5445 extends Class5419<Class824>
             this.field22669 = false;
             final Class443 method4837 = class1850.method4837();
             for (int method4838 = method4837.method2239(), i = 0; i < method4838; ++i) {
-                final Class8321 method4839 = method4837.method2157(i);
+                final ItemStack method4839 = method4837.method2157(i);
                 if (method4839.method27620()) {
                     this.field22669 = true;
                     break;
@@ -130,7 +130,7 @@ public class Class5445 extends Class5419<Class824>
                             final Class443 method6704 = class1850.method4837();
                             int i = 0;
                             while (i < method6704.method2239()) {
-                                final Class8321 method6705 = method6704.method2157(i);
+                                final ItemStack method6705 = method6704.method2157(i);
                                 int n2 = 0;
                                 if (!method6705.method27620()) {
                                     if (method6705.method27622() != Class7739.field31314) {
@@ -165,7 +165,7 @@ public class Class5445 extends Class5419<Class824>
                                     if (!method6705.method27620()) {
                                         break;
                                     }
-                                    method6704.method2160(i, Class8321.field34174);
+                                    method6704.method2160(i, ItemStack.field34174);
                                     break;
                                 }
                             }

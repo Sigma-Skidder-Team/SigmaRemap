@@ -82,7 +82,7 @@ public class Class3983 extends Class3833
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         this.method12126(class1847, class1848, class1849, false, false, -1, null);
     }
     

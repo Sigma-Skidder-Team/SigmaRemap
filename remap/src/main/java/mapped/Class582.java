@@ -69,7 +69,7 @@ public abstract class Class582 extends Class581
     
     @Override
     public void method3439(final Class3662<?> class3662, final List<Class6601> list) {
-        final Class8321 method11292 = class3662.method11292();
+        final ItemStack method11292 = class3662.method11292();
         this.field3466.method25525(class3662);
         this.field3466.method25521(Class120.method619(method11292), list.get(2).field26175, list.get(2).field26176);
         final Class2265 method11293 = class3662.method11294();

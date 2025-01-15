@@ -9,7 +9,7 @@ import java.util.Collection;
 
 public interface Class7452
 {
-    Collection<Class8321> method22938();
+    Collection<ItemStack> method22938();
     
     JsonObject method22939();
 }

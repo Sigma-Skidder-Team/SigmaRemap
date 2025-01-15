@@ -17,12 +17,12 @@ public class Class6600 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return false;
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         if (!this.field26170.field16176.method20060(1).method27620()) {
             Class3422.method10914(this.field26170);
         }
