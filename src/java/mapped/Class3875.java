@@ -1,0 +1,70 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import com.google.common.collect.Maps;
+import com.google.common.collect.ImmutableMap;
+import java.util.Map;
+
+public class Class3875 extends Class3874
+{
+    private static String[] field17520;
+    public static final Class7115 field17521;
+    private final Class3993 field17522;
+    private static final Map<Class179, Class7702> field17523;
+    
+    public Class3875(final Class3993 field17522, final Class9288 class9288) {
+        super(class9288);
+        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3875.field17521, Class179.field513));
+        this.field17522 = field17522;
+    }
+    
+    @Override
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+        return Class3875.field17523.get(class7096.method21772((Class7111<Object>)Class3875.field17521));
+    }
+    
+    @Override
+    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        return (class7098.method21696() != this.field17522 && class7097 == class7096.method21772((Class7111<Class179>)Class3875.field17521)) ? ((Class7097<O, Class7096>)this.field17522.method12142().method11878()).method21773((Class7111<Comparable>)Class3873.field17516, 7) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+    }
+    
+    @Override
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+        return class7096.method21696() == Class7521.field29298;
+    }
+    
+    public Class3820 method11950() {
+        if (this.field17522 != Class7521.field29337) {
+            return (this.field17522 != Class7521.field29383) ? Class7739.field30754 : Class7739.field31430;
+        }
+        return Class7739.field31429;
+    }
+    
+    @Override
+    public Class8321 method11862(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
+        return new Class8321(this.method11950());
+    }
+    
+    @Override
+    public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
+        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3875.field17521, class7097.method8142(class7096.method21772((Class7111<Class179>)Class3875.field17521)));
+    }
+    
+    @Override
+    public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
+        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Class179>)Class3875.field17521)));
+    }
+    
+    @Override
+    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+        class9500.method35378(Class3875.field17521);
+    }
+    
+    static {
+        field17521 = Class3892.field17564;
+        field17523 = Maps.newEnumMap((Map)ImmutableMap.of((Object)Class179.field514, (Object)Class3833.method11778(6.0, 0.0, 6.0, 10.0, 10.0, 16.0), (Object)Class179.field515, (Object)Class3833.method11778(0.0, 0.0, 6.0, 10.0, 10.0, 10.0), (Object)Class179.field513, (Object)Class3833.method11778(6.0, 0.0, 0.0, 10.0, 10.0, 10.0), (Object)Class179.field516, (Object)Class3833.method11778(6.0, 0.0, 6.0, 16.0, 10.0, 10.0)));
+    }
+}

@@ -1,0 +1,102 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import javax.annotation.Nullable;
+import java.util.Random;
+
+public class Class3943 extends Class3841
+{
+    private static String[] field17835;
+    public static final Class7702 field17836;
+    
+    public Class3943(final Class9288 class9288) {
+        super(class9288);
+    }
+    
+    @Override
+    public boolean method11820(final Class7096 class7096) {
+        return true;
+    }
+    
+    @Override
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+        return Class3943.field17836;
+    }
+    
+    @Override
+    public void method11823(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Random random) {
+        super.method11823(class7096, class7097, class7098, random);
+        for (int i = -2; i <= 2; ++i) {
+            for (int j = -2; j <= 2; ++j) {
+                if (i > -2) {
+                    if (i < 2) {
+                        if (j == -1) {
+                            j = 2;
+                        }
+                    }
+                }
+                if (random.nextInt(16) == 0) {
+                    for (int k = 0; k <= 1; ++k) {
+                        if (class7097.method6701(class7098.method1134(i, k, j)).method21696() == Class7521.field29284) {
+                            if (!class7097.method6961(class7098.method1134(i / 2, 0, j / 2))) {
+                                break;
+                            }
+                            class7097.method6709(Class8432.field34615, class7098.method1074() + 0.5, class7098.method1075() + 2.0, class7098.method1076() + 0.5, i + random.nextFloat() - 0.5, k - random.nextFloat() - 1.0f, j + random.nextFloat() - 0.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @Override
+    public Class2115 method11797(final Class7096 class7096) {
+        return Class2115.field12307;
+    }
+    
+    @Override
+    public Class436 method11898(final Class1855 class1855) {
+        return new Class463();
+    }
+    
+    @Override
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+        if (!class7097.field10067) {
+            class7099.method2833(class7096.method21754(class7097, class7098));
+            return Class2201.field13400;
+        }
+        return Class2201.field13400;
+    }
+    
+    @Nullable
+    @Override
+    public Class434 method11827(final Class7096 class7096, final Class1847 class7097, final Class354 class7098) {
+        final Class436 method6727 = class7097.method6727(class7098);
+        if (!(method6727 instanceof Class463)) {
+            return null;
+        }
+        return new Class504((n, class1849, class1850) -> new Class3433(n, class1849, Class7318.method22434(class7097, class7098)), ((Class462)method6727).method1871());
+    }
+    
+    @Override
+    public void method11853(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+        if (class1851.method27667()) {
+            final Class436 method6727 = class1847.method6727(class1848);
+            if (method6727 instanceof Class463) {
+                ((Class463)method6727).method2344(class1851.method27664());
+            }
+        }
+    }
+    
+    @Override
+    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class2084 class7099) {
+        return false;
+    }
+    
+    static {
+        field17836 = Class3833.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+    }
+}

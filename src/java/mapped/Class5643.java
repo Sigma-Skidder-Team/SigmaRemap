@@ -1,0 +1,21 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class5643 extends Class5611
+{
+    private static String[] field23036;
+    public final /* synthetic */ Class5069 field23037;
+    
+    public Class5643(final Class5069 field23037, final int n, final int n2, final int n3, final int n4, final int n5, final String s) {
+        this.field23037 = field23037;
+        super(n, n2, n3, n4, n5, s);
+    }
+    
+    @Override
+    public void method16932() {
+        Class5069.method15614(this.field23037);
+    }
+}

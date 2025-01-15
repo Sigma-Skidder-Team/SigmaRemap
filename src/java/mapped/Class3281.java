@@ -1,0 +1,124 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.Iterator;
+
+public class Class3281 extends Class3167
+{
+    public Class3281() {
+        super(Class8013.field32987, "AutoFarm", "Automatically breaks and replants crops");
+    }
+    
+    @Class6753
+    public void method10345(final Class5744 class5744) {
+        if (!this.method9906()) {
+            return;
+        }
+        if (Class3281.field15514.field4684 != null && Class3281.field15514.field4683 != null) {
+            for (final Class354 class5745 : Class4609.method13675(Class4609.method13691(Class3281.field15514.field4682.method27315()))) {
+                if (Class4609.method13665(Class3281.field15514.field4684, class5745)) {
+                    final Class7096 method6701 = Class3281.field15514.field4683.method6701(class5745);
+                    if (!(method6701.method21696() instanceof Class3878)) {
+                        if (!(method6701.method21696() instanceof Class3880)) {
+                            if (!(method6701.method21696() instanceof Class3881)) {
+                                if (!(method6701.method21696() instanceof Class4021)) {
+                                    if (!(method6701.method21696() instanceof Class3981)) {
+                                        if (!(method6701.method21696() instanceof Class3914)) {
+                                            continue;
+                                        }
+                                        final Class7096 method6702 = Class3281.field15514.field4683.method6701(class5745.method1139());
+                                        final Class7096 method6703 = Class3281.field15514.field4683.method6701(class5745.method1137());
+                                        if (method6702.method21696() instanceof Class3914) {
+                                            continue;
+                                        }
+                                        if (!(method6703.method21696() instanceof Class3914)) {
+                                            continue;
+                                        }
+                                        final float[] method6704 = Class4609.method13671(class5745.method1137());
+                                        class5744.method17043(method6704[0]);
+                                        class5744.method17041(method6704[1]);
+                                        class5744.method17047(new Class1164(this, class5745));
+                                        Class3281.field15514.field4683.method7149(class5745.method1137(), false);
+                                    }
+                                    else {
+                                        final Class7096 method6705 = Class3281.field15514.field4683.method6701(class5745.method1139());
+                                        final Class7096 method6706 = Class3281.field15514.field4683.method6701(class5745.method1137());
+                                        if (method6705.method21696() instanceof Class3981) {
+                                            continue;
+                                        }
+                                        if (!(method6706.method21696() instanceof Class3981)) {
+                                            continue;
+                                        }
+                                        final float[] method6707 = Class4609.method13671(class5745.method1137());
+                                        class5744.method17043(method6707[0]);
+                                        class5744.method17041(method6707[1]);
+                                        class5744.method17047(new Class1233(this, class5745));
+                                        Class3281.field15514.field4683.method7149(class5745.method1137(), false);
+                                    }
+                                    continue;
+                                }
+                                if (Class3281.field15514.field4692 != 0) {
+                                    continue;
+                                }
+                                final Class7096 method6708 = Class3281.field15514.field4683.method6701(class5745.method1137());
+                                int n = Class8639.method29340(Class7739.field31314);
+                                if (n == -1) {
+                                    n = Class8639.method29340(Class7739.field31517);
+                                }
+                                if (n == -1) {
+                                    n = Class8639.method29340(Class7739.field31518);
+                                }
+                                if (n == -1) {
+                                    n = Class8639.method29340(Class7739.field31576);
+                                }
+                                if (n == -1) {
+                                    n = Class8639.method29340(Class7739.field31430);
+                                }
+                                if (n == -1) {
+                                    n = Class8639.method29340(Class7739.field31429);
+                                }
+                                if (n == -1) {
+                                    continue;
+                                }
+                                if (method6708.method21696() instanceof Class3996) {
+                                    final float[] method6709 = Class4609.method13672(class5745, Class179.field512);
+                                    class5744.method17043(method6709[0]);
+                                    class5744.method17041(method6709[1]);
+                                    class5744.method17047(new Class1281(this, n, method6709));
+                                    Class3281.field15514.field4692 = 2;
+                                    Class3281.field15514.field4683.method6692(class5745.method1137(), Class7521.field29297.method11878());
+                                    return;
+                                }
+                                continue;
+                            }
+                        }
+                    }
+                    final Class8321 method6710 = Class3281.field15514.field4684.method2715(Class316.field1877);
+                    if (method6710 != null && method6710.method27622() instanceof Class3829) {
+                        if (method6701.method21772((Class7111<Integer>)Class8970.field37773) == 7) {
+                            continue;
+                        }
+                        final float[] method6711 = Class4609.method13672(class5745, Class179.field511);
+                        class5744.method17043(method6711[0]);
+                        class5744.method17041(method6711[1]);
+                        class5744.method17047(new Class1242(this, method6711));
+                    }
+                    else {
+                        if (method6701.method21772((Class7111<Integer>)Class8970.field37773) == 7) {
+                            final float[] method6712 = Class4609.method13672(class5745, Class179.field511);
+                            class5744.method17043(method6712[0]);
+                            class5744.method17041(method6712[1]);
+                            class5744.method17047(new Class1172(this, class5745));
+                            Class3281.field15514.field4683.method7149(class5745, false);
+                            return;
+                        }
+                        continue;
+                    }
+                }
+            }
+        }
+    }
+}

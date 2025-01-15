@@ -1,0 +1,36 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class6683
+{
+    public static final Class7915<Class399> field26362;
+    public static final Class7915<Class512> field26363;
+    public static final Class7915<Class7929> field26364;
+    public static final Class7915<Class399> field26365;
+    public static final Class7915<Class399> field26366;
+    public static final Class7915<Class354> field26367;
+    public static final Class7915<Class7096> field26368;
+    public static final Class7915<Class436> field26369;
+    public static final Class7915<Class8321> field26370;
+    public static final Class7915<Float> field26371;
+    
+    private static <T> Class7915<T> method20325(final String s) {
+        return new Class7915<T>(new Class1932(s));
+    }
+    
+    static {
+        field26362 = method20325("this_entity");
+        field26363 = method20325("last_damage_player");
+        field26364 = method20325("damage_source");
+        field26365 = method20325("killer_entity");
+        field26366 = method20325("direct_killer_entity");
+        field26367 = method20325("position");
+        field26368 = method20325("block_state");
+        field26369 = method20325("block_entity");
+        field26370 = method20325("tool");
+        field26371 = method20325("explosion_radius");
+    }
+}

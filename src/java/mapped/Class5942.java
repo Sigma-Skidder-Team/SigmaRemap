@@ -1,0 +1,85 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Collection;
+import java.util.Random;
+import java.util.List;
+import com.google.common.collect.Lists;
+
+public class Class5942 extends Class5936
+{
+    private static String[] field24441;
+    
+    public Class5942(final Class4574<?> class4574, final int n, final int n2, final Class6997 class4575, final int n3, final long n4) {
+        super(class4574, n, n2, class4575, n3, n4);
+    }
+    
+    @Override
+    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Class3090 class6348) {
+        final Class2052 class6349 = Class2052.values()[this.field24436.nextInt(Class2052.values().length)];
+        int n3 = 5;
+        int n4 = 5;
+        if (class6349 != Class2052.field11708) {
+            if (class6349 != Class2052.field11709) {
+                if (class6349 == Class2052.field11710) {
+                    n4 = -5;
+                }
+            }
+            else {
+                n3 = -5;
+                n4 = -5;
+            }
+        }
+        else {
+            n3 = -5;
+        }
+        final int n5 = (n << 4) + 7;
+        final int n6 = (n2 << 4) + 7;
+        final int min = Math.min(Math.min(class6346.method18884(n5, n6, Class2020.field11521), class6346.method18884(n5, n6 + n4, Class2020.field11521)), Math.min(class6346.method18884(n5 + n3, n6, Class2020.field11521), class6346.method18884(n5 + n3, n6 + n4, Class2020.field11521)));
+        if (min >= 60) {
+            final Class354 class6350 = new Class354(n * 16 + 8, min + 1, n2 * 16 + 8);
+            final LinkedList linkedList = Lists.newLinkedList();
+            Class6913.method21281(class6347, class6350, class6349, linkedList, this.field24436);
+            this.field24431.addAll(linkedList);
+            this.method17854();
+        }
+    }
+    
+    @Override
+    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+        super.method17853(class1851, class1852, random, class1853, class1854);
+        final int field27294 = this.field24432.field27294;
+        for (int i = class1853.field27293; i <= class1853.field27296; ++i) {
+            for (int j = class1853.field27295; j <= class1853.field27298; ++j) {
+                final Class354 class1855 = new Class354(i, field27294, j);
+                if (!class1851.method6961(class1855)) {
+                    if (this.field24432.method21415(class1855)) {
+                        int n = 0;
+                        final Iterator<Class4473> iterator = this.field24431.iterator();
+                        while (iterator.hasNext()) {
+                            if (!iterator.next().method13432().method21415(class1855)) {
+                                continue;
+                            }
+                            n = 1;
+                            break;
+                        }
+                        if (n != 0) {
+                            for (int k = field27294 - 1; k > 1; --k) {
+                                final Class354 class1856 = new Class354(i, k, j);
+                                if (!class1851.method6961(class1856) && !class1851.method6701(class1856).method21697().method26438()) {
+                                    break;
+                                }
+                                class1851.method6688(class1856, Class7521.field29159.method11878(), 2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

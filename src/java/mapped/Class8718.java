@@ -1,0 +1,69 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import org.json.JSONException;
+import java.io.IOException;
+import java.net.URL;
+
+public class Class8718
+{
+    public static URL method29939(final String s, final String s2) {
+        System.out.println("Name: " + Class5031.method15321(s));
+        System.out.println("Artist: " + Class5031.method15322(s));
+        return method29940(Class5031.method15321(s), Class5031.method15322(s), s2);
+    }
+    
+    public static URL method29940(final String s, final String s2, final String spec) {
+        try {
+            final URL url = new URL(spec);
+            final Class4405 method29941 = method29941(s, s2);
+            if (!method29941.method13269("releases")) {
+                return url;
+            }
+            final Class88 method29942 = method29941.method13263("releases");
+            if (method29942.method460(0)) {
+                return url;
+            }
+            final Class4405 method29943 = method29942.method457(0).method13264("release-group");
+            if (!method29943.method13269("id")) {
+                return url;
+            }
+            final Class4405 method29944 = Class5031.method15315(Class5031.method15316("http://coverartarchive.org/release-group/" + method29943.method13268("id"), true));
+            System.out.println(method29944);
+            if (!method29944.method13269("images")) {
+                return url;
+            }
+            return new URL(method29944.method13263("images").method457(0).method13264("thumbnails").method13268("small"));
+        }
+        catch (final IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+    
+    public static Class4405 method29941(final String s, final String s2) throws JSONException, IOException {
+        final StringBuffer sb = new StringBuffer();
+        sb.append("http://musicbrainz.org/ws/2/");
+        sb.append("release/?query=");
+        sb.append(method29942(Class5031.method15320(s)));
+        sb.append("%20AND%20artist:%20");
+        sb.append(method29942(Class5031.method15320(s2)));
+        sb.append("&fmt=json");
+        return Class5031.method15314(sb.toString());
+    }
+    
+    public static String method29942(final String s) {
+        try {
+            return URLEncoder.encode(s.replace("\"", "'"), "UTF-8");
+        }
+        catch (final UnsupportedEncodingException ex) {
+            ex.printStackTrace();
+            return s;
+        }
+    }
+}

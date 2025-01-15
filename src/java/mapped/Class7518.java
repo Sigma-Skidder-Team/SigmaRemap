@@ -1,0 +1,10 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public interface Class7518
+{
+    String method23447(final String p0);
+}

@@ -1,0 +1,36 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class8159
+{
+    private static String[] field33603;
+    
+    public static Class6221 method26948(final Class6221 class6221, final Class179 class6222, final double n) {
+        final double n2 = n * class6222.method781().method936();
+        final double min = Math.min(n2, 0.0);
+        final double max = Math.max(n2, 0.0);
+        switch (Class8635.field36230[class6222.ordinal()]) {
+            case 1: {
+                return new Class6221(class6221.field25073 + min, class6221.field25074, class6221.field25075, class6221.field25073 + max, class6221.field25077, class6221.field25078);
+            }
+            case 2: {
+                return new Class6221(class6221.field25076 + min, class6221.field25074, class6221.field25075, class6221.field25076 + max, class6221.field25077, class6221.field25078);
+            }
+            case 3: {
+                return new Class6221(class6221.field25073, class6221.field25074 + min, class6221.field25075, class6221.field25076, class6221.field25074 + max, class6221.field25078);
+            }
+            default: {
+                return new Class6221(class6221.field25073, class6221.field25077 + min, class6221.field25075, class6221.field25076, class6221.field25077 + max, class6221.field25078);
+            }
+            case 5: {
+                return new Class6221(class6221.field25073, class6221.field25074, class6221.field25075 + min, class6221.field25076, class6221.field25077, class6221.field25075 + max);
+            }
+            case 6: {
+                return new Class6221(class6221.field25073, class6221.field25074, class6221.field25078 + min, class6221.field25076, class6221.field25077, class6221.field25078 + max);
+            }
+        }
+    }
+}

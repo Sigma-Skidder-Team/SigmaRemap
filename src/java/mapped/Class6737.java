@@ -1,0 +1,116 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import javax.annotation.Nullable;
+
+public abstract class Class6737
+{
+    public static final float[] field26491;
+    public final Class1847 field26492;
+    private final Class383 field26493;
+    public boolean field26494;
+    public boolean field26495;
+    public final float[] field26496;
+    private final float[] field26497;
+    
+    public Class6737(final Class1847 field26492, final Class383 field26493, final float n) {
+        this.field26496 = new float[16];
+        this.field26497 = new float[4];
+        this.field26492 = field26492;
+        this.field26493 = field26493;
+        for (int i = 0; i <= 15; ++i) {
+            final float n2 = i / 15.0f;
+            this.field26496[i] = Class9546.method35700(n, n2 / (4.0f - 3.0f * n2), 1.0f);
+        }
+    }
+    
+    public int method20496(final long n) {
+        return (int)(n / 24000L % 8L + 8L) % 8;
+    }
+    
+    @Nullable
+    public float[] method20497(final float n, final float n2) {
+        final float n3 = Class9546.method35639(n * 6.2831855f) - 0.0f;
+        if (n3 >= -0.4f && n3 <= 0.4f) {
+            final float n4 = (n3 + 0.0f) / 0.4f * 0.5f + 0.5f;
+            final float n5 = 1.0f - (1.0f - Class9546.method35638(n4 * 3.1415927f)) * 0.99f;
+            final float n6 = n5 * n5;
+            this.field26497[0] = n4 * 0.3f + 0.7f;
+            this.field26497[1] = n4 * n4 * 0.7f + 0.2f;
+            this.field26497[2] = n4 * n4 * 0.0f + 0.2f;
+            this.field26497[3] = n6;
+            return this.field26497;
+        }
+        return null;
+    }
+    
+    public float method20498() {
+        return 128.0f;
+    }
+    
+    public boolean method20499() {
+        return true;
+    }
+    
+    @Nullable
+    public Class354 method20500() {
+        return null;
+    }
+    
+    public double method20501() {
+        return (this.field26492.method6764().method29570() != Class9505.field40893) ? 0.03125 : 1.0;
+    }
+    
+    public boolean method20502() {
+        return this.field26494;
+    }
+    
+    public boolean method20503() {
+        return this.field26493.method1277();
+    }
+    
+    public boolean method20504() {
+        return this.field26495;
+    }
+    
+    public float method20505(final int n) {
+        return this.field26496[n];
+    }
+    
+    public Class9375 method20506() {
+        return new Class9375();
+    }
+    
+    public void method20507() {
+    }
+    
+    public void method20508() {
+    }
+    
+    public abstract Class6346<?> method20488();
+    
+    @Nullable
+    public abstract Class354 method20489(final Class7859 p0, final boolean p1);
+    
+    @Nullable
+    public abstract Class354 method20490(final int p0, final int p1, final boolean p2);
+    
+    public abstract float method20491(final long p0, final float p1);
+    
+    public abstract boolean method20492();
+    
+    public abstract Class5487 method20493(final float p0, final float p1);
+    
+    public abstract boolean method20494();
+    
+    public abstract boolean method20495(final int p0, final int p1);
+    
+    public abstract Class383 method20487();
+    
+    static {
+        field26491 = new float[] { 1.0f, 0.75f, 0.5f, 0.25f, 0.0f, 0.25f, 0.5f, 0.75f };
+    }
+}

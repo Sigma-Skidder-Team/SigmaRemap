@@ -1,0 +1,41 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class5753 extends Class5714
+{
+    private static String[] field23349;
+    private Class354 field23350;
+    private Class7702 field23351;
+    public static boolean field23352;
+    
+    public Class5753(final Class354 field23350, final Class7702 field23351) {
+        this.field23350 = field23350;
+        this.field23351 = field23351;
+    }
+    
+    public Class354 method17064() {
+        return this.field23350;
+    }
+    
+    public Class7702 method17065() {
+        return this.field23351;
+    }
+    
+    public void method17066(final Class354 field23350) {
+        this.field23350 = field23350;
+    }
+    
+    public void method17067(Class7702 method24488) {
+        if (method24488 == null) {
+            method24488 = Class7698.method24488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        }
+        this.field23351 = method24488;
+    }
+    
+    static {
+        Class5753.field23352 = false;
+    }
+}

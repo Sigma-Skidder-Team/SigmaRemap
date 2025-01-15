@@ -1,0 +1,29 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class1833 extends Class1799<Class850, Class5868<Class850>>
+{
+    private static String[] field10013;
+    
+    public Class1833(final Class4778<Class850, Class5868<Class850>> class4778) {
+        super(class4778);
+    }
+    
+    public void method6594(final Class7351 class7351, final Class7807 class7352, final int n, final Class850 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+        final Class7096 method5080 = class7353.method5080();
+        if (method5080 != null) {
+            class7351.method22567();
+            class7351.method22564(0.0, 0.6875, -0.75);
+            class7351.method22566(Class9138.field38716.method33328(20.0f));
+            class7351.method22566(Class9138.field38718.method33328(45.0f));
+            class7351.method22564(0.25, 0.1875, 0.25);
+            class7351.method22565(-0.5f, -0.5f, 0.5f);
+            class7351.method22566(Class9138.field38718.method33328(90.0f));
+            Class869.method5277().method5305().method5795(method5080, class7351, class7352, n, Class1904.field10335);
+            class7351.method22568();
+        }
+    }
+}

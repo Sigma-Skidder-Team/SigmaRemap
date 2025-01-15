@@ -1,0 +1,51 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class5571 extends Class5509
+{
+    public Class5571() {
+        super(Class7499.field28998, "magma_cube", 0.5f);
+    }
+    
+    @Override
+    public Class5901 method16811() {
+        return new Class5875<Object>();
+    }
+    
+    @Override
+    public Class6300 method16812(final Class5901 class5901, final String s) {
+        if (!(class5901 instanceof Class5875)) {
+            return null;
+        }
+        final Class5875 class5902 = (Class5875)class5901;
+        if (s.equals("core")) {
+            return (Class6300)Class9570.method35828(class5902, Class9570.field41505);
+        }
+        final String prefix = "segment";
+        if (!s.startsWith(prefix)) {
+            return null;
+        }
+        final Class6300[] array = (Class6300[])Class9570.method35828(class5902, Class9570.field41506);
+        if (array != null) {
+            int method28933 = Class8571.method28933(s.substring(prefix.length()), -1);
+            return (--method28933 >= 0 && method28933 < array.length) ? array[method28933] : null;
+        }
+        return null;
+    }
+    
+    @Override
+    public String[] method16813() {
+        return new String[] { "core", "segment1", "segment2", "segment3", "segment4", "segment5", "segment6", "segment7", "segment8" };
+    }
+    
+    @Override
+    public Class9559 method16814(final Class5901 class5901, final float field20284) {
+        final Class4738 class5902 = new Class4738(Class869.method5277().method5306());
+        class5902.field20301 = (M)class5901;
+        class5902.field20284 = field20284;
+        return (Class9559)class5902;
+    }
+}

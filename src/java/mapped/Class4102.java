@@ -1,0 +1,136 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import com.google.common.collect.Multimap;
+
+public class Class4102 extends Class3820
+{
+    public Class4102(final Class8959 class8959) {
+        super(class8959);
+        this.method11705(new Class1932("throwing"), (class8321, class8322, class8323) -> {
+            if (class8323 != null) {
+                if (class8323.method2756()) {
+                    if (class8323.method2766() == class8321) {
+                        return 1.0f;
+                    }
+                }
+            }
+            return 0.0f;
+        });
+    }
+    
+    @Override
+    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099) {
+        return !class7099.method2889();
+    }
+    
+    @Override
+    public Class1992 method11725(final Class8321 class8321) {
+        return Class1992.field11159;
+    }
+    
+    @Override
+    public int method11726(final Class8321 class8321) {
+        return 72000;
+    }
+    
+    @Override
+    public void method11727(final Class8321 class8321, final Class1847 class8322, final Class511 class8323, final int n) {
+        if (class8323 instanceof Class512) {
+            final Class512 class8324 = (Class512)class8323;
+            if (this.method11726(class8321) - n >= 10) {
+                final int method30220 = Class8742.method30220(class8321);
+                if (method30220 <= 0 || class8324.method1709()) {
+                    if (!class8322.field10067) {
+                        class8321.method27636(1, class8324, class8328 -> class8328.method2795(class8327.method2757()));
+                        if (method30220 == 0) {
+                            final Class403 class8325 = new Class403(class8322, class8324, class8321);
+                            class8325.method1963(class8324, class8324.field2400, class8324.field2399, 0.0f, 2.5f + method30220 * 0.5f, 1.0f);
+                            if (class8324.field3025.field27304) {
+                                class8325.field2474 = Class2151.field12784;
+                            }
+                            class8322.method6886(class8325);
+                            class8322.method6707(null, class8325, Class8520.field35640, Class286.field1585, 1.0f, 1.0f);
+                            if (!class8324.field3025.field27304) {
+                                class8324.field3006.method2365(class8321);
+                            }
+                        }
+                    }
+                    class8324.method2859(Class8276.field33981.method8449(this));
+                    if (method30220 > 0) {
+                        final float field2399 = class8324.field2399;
+                        final float field2400 = class8324.field2400;
+                        final float n2 = -Class9546.method35638(field2399 * 0.017453292f) * Class9546.method35639(field2400 * 0.017453292f);
+                        final float n3 = -Class9546.method35638(field2400 * 0.017453292f);
+                        final float n4 = Class9546.method35639(field2399 * 0.017453292f) * Class9546.method35639(field2400 * 0.017453292f);
+                        final float method30221 = Class9546.method35640(n2 * n2 + n3 * n3 + n4 * n4);
+                        final float n5 = 3.0f * ((1.0f + method30220) / 4.0f);
+                        class8324.method1738(n2 * (n5 / method30221), n3 * (n5 / method30221), n4 * (n5 / method30221));
+                        class8324.method2743(20);
+                        if (class8324.field2404) {
+                            class8324.method1671(Class2160.field12826, new Class5487(0.0, 1.1999999284744263, 0.0));
+                        }
+                        Class7795 class8326;
+                        if (method30220 < 3) {
+                            if (method30220 != 2) {
+                                class8326 = Class8520.field35637;
+                            }
+                            else {
+                                class8326 = Class8520.field35638;
+                            }
+                        }
+                        else {
+                            class8326 = Class8520.field35639;
+                        }
+                        class8322.method6707(null, class8324, class8326, Class286.field1585, 1.0f, 1.0f);
+                    }
+                }
+            }
+        }
+    }
+    
+    @Override
+    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final Class8321 method2715 = class1848.method2715(class1849);
+        if (method2715.method27632() >= method2715.method27634() - 1) {
+            return Class9355.method34677(method2715);
+        }
+        if (Class8742.method30220(method2715) > 0 && !class1848.method1709()) {
+            return Class9355.method34677(method2715);
+        }
+        class1848.method2762(class1849);
+        return Class9355.method34675(method2715);
+    }
+    
+    @Override
+    public boolean method11711(final Class8321 class8321, final Class511 class8322, final Class511 class8323) {
+        class8321.method27636(1, class8323, class8324 -> class8324.method2794(Class2215.field13600));
+        return true;
+    }
+    
+    @Override
+    public boolean method11712(final Class8321 class8321, final Class1847 class8322, final Class7096 class8323, final Class354 class8324, final Class511 class8325) {
+        if (class8323.method21718(class8322, class8324) != 0.0) {
+            class8321.method27636(2, class8325, class8326 -> class8326.method2794(Class2215.field13600));
+        }
+        return true;
+    }
+    
+    @Override
+    public Multimap<String, Class7919> method11739(final Class2215 class2215) {
+        final Multimap<String, Class7919> method11739 = super.method11739(class2215);
+        if (class2215 == Class2215.field13600) {
+            method11739.put((Object)Class8107.field33410.method29978(), (Object)new Class7919(Class4102.field17361, "Tool modifier", 8.0, Class2157.field12809));
+            method11739.put((Object)Class8107.field33412.method29978(), (Object)new Class7919(Class4102.field17362, "Tool modifier", -2.9000000953674316, Class2157.field12809));
+        }
+        return method11739;
+    }
+    
+    @Override
+    public int method11734() {
+        return 1;
+    }
+}

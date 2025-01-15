@@ -1,0 +1,20 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class2535 extends Class2466
+{
+    private static String[] field14550;
+    public final /* synthetic */ Class2969 field14551;
+    
+    public Class2535(final Class2969 field14551) {
+        this.field14551 = field14551;
+    }
+    
+    @Override
+    public void method9802(final Class8699 class8699) throws Exception {
+        class8699.method29841().method18207(Class6637.class).method20124(class8699.method29818(Class5260.field22296, 0));
+    }
+}

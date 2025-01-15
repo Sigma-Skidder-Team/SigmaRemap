@@ -1,0 +1,164 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class818 extends Class789
+{
+    private static final Class120 field4380;
+    public float field4381;
+    public float field4382;
+    public float field4383;
+    public float field4384;
+    public float field4385;
+    public int field4386;
+    public boolean field4387;
+    
+    public Class818(final Class7499<? extends Class818> class7499, final Class1847 class7500) {
+        super(class7499, class7500);
+        this.field4385 = 1.0f;
+        this.field4386 = this.field2423.nextInt(6000) + 6000;
+        this.method4145(Class257.field1211, 0.0f);
+    }
+    
+    @Override
+    public void method4142() {
+        this.field4114.method22062(0, new Class3490(this));
+        this.field4114.method22062(1, new Class3607(this, 1.4));
+        this.field4114.method22062(2, new Class3587(this, 1.0));
+        this.field4114.method22062(3, new Class3472(this, 1.0, false, Class818.field4380));
+        this.field4114.method22062(4, new Class3456(this, 1.1));
+        this.field4114.method22062(5, new Class3517(this, 1.0));
+        this.field4114.method22062(6, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(7, new Class3503(this));
+    }
+    
+    @Override
+    public float method2789(final Class290 class290, final Class8295 class291) {
+        return this.method2625() ? (class291.field34098 * 0.85f) : (class291.field34098 * 0.92f);
+    }
+    
+    @Override
+    public void method2621() {
+        super.method2621();
+        this.method2710(Class8107.field33405).method23941(4.0);
+        this.method2710(Class8107.field33408).method23941(0.25);
+    }
+    
+    @Override
+    public void method2736() {
+        super.method2736();
+        this.field4384 = this.field4381;
+        this.field4383 = this.field4382;
+        this.field4382 += (float)((this.field2404 ? -1 : 4) * 0.3);
+        this.field4382 = Class9546.method35653(this.field4382, 0.0f, 1.0f);
+        if (!this.field2404) {
+            if (this.field4385 < 1.0f) {
+                this.field4385 = 1.0f;
+            }
+        }
+        this.field4385 *= (float)0.9;
+        final Class5487 method1935 = this.method1935();
+        if (!this.field2404) {
+            if (method1935.field22771 < 0.0) {
+                this.method1936(method1935.method16751(1.0, 0.6, 1.0));
+            }
+        }
+        this.field4381 += this.field4385 * 2.0f;
+        if (!this.field2391.field10067) {
+            if (this.method1768()) {
+                if (!this.method2625()) {
+                    if (!this.method4817()) {
+                        if (--this.field4386 <= 0) {
+                            this.method1695(Class8520.field35070, 1.0f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
+                            this.method1764(Class7739.field31374);
+                            this.field4386 = this.field2423.nextInt(6000) + 6000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @Override
+    public boolean method1705(final float n, final float n2) {
+        return false;
+    }
+    
+    @Override
+    public Class7795 method4160() {
+        return Class8520.field35068;
+    }
+    
+    @Override
+    public Class7795 method2683(final Class7929 class7929) {
+        return Class8520.field35071;
+    }
+    
+    @Override
+    public Class7795 method2684() {
+        return Class8520.field35069;
+    }
+    
+    @Override
+    public void method1691(final Class354 class354, final Class7096 class355) {
+        this.method1695(Class8520.field35072, 0.15f, 1.0f);
+    }
+    
+    public Class818 method4816(final Class788 class788) {
+        return Class7499.field28966.method23371(this.field2391);
+    }
+    
+    @Override
+    public boolean method4357(final Class8321 class8321) {
+        return Class818.field4380.test(class8321);
+    }
+    
+    @Override
+    public int method2631(final Class512 class512) {
+        return this.method4817() ? 10 : super.method2631(class512);
+    }
+    
+    @Override
+    public void method1760(final Class51 class51) {
+        super.method1760(class51);
+        this.field4387 = class51.method329("IsChickenJockey");
+        if (class51.method315("EggLayTime")) {
+            this.field4386 = class51.method319("EggLayTime");
+        }
+    }
+    
+    @Override
+    public void method1761(final Class51 class51) {
+        super.method1761(class51);
+        class51.method312("IsChickenJockey", this.field4387);
+        class51.method298("EggLayTime", this.field4386);
+    }
+    
+    @Override
+    public boolean method4168(final double n) {
+        return this.method4817() && !this.method1806();
+    }
+    
+    @Override
+    public void method1773(final Class399 class399) {
+        super.method1773(class399);
+        class399.method1656(this.method1938() + 0.1f * Class9546.method35638(this.field2951 * 0.017453292f), this.method1942(0.5) + class399.method1776() + 0.0, this.method1945() - 0.1f * Class9546.method35639(this.field2951 * 0.017453292f));
+        if (class399 instanceof Class511) {
+            ((Class511)class399).field2951 = this.field2951;
+        }
+    }
+    
+    public boolean method4817() {
+        return this.field4387;
+    }
+    
+    public void method4818(final boolean field4387) {
+        this.field4387 = field4387;
+    }
+    
+    static {
+        field4380 = Class120.method618(Class7739.field31314, Class7739.field31430, Class7739.field31429, Class7739.field31576);
+    }
+}

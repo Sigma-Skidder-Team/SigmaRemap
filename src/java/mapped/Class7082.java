@@ -1,0 +1,89 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class7082 implements Class7079
+{
+    private static final Class2250 field27585;
+    private static final Class2250 field27586;
+    private final Class9106 field27587;
+    private Class6869 field27588;
+    private int field27589;
+    private int field27590;
+    
+    public Class7082(final Class9106 field27587) {
+        this.field27587 = field27587;
+    }
+    
+    @Override
+    public void method21655() {
+        ++this.field27589;
+        if (this.field27587.method32928() == Class101.field298) {
+            if (this.field27589 == 1) {
+                final Class756 field4684 = this.field27587.method32927().field4684;
+                if (field4684 != null) {
+                    if (field4684.field3006.method2377(Class7855.field32250)) {
+                        this.field27587.method32926(Class2012.field11443);
+                        return;
+                    }
+                    if (Class7080.method21663(field4684)) {
+                        this.field27587.method32926(Class2012.field11443);
+                        return;
+                    }
+                }
+            }
+            if (this.field27589 >= 600 || this.field27590 > 3) {
+                if (this.field27588 == null) {
+                    this.field27588 = new Class6869(Class2240.field13769, Class7082.field27585, Class7082.field27586, true);
+                    this.field27587.method32927().method5318().method3852(this.field27588);
+                }
+            }
+        }
+        else {
+            this.field27587.method32926(Class2012.field11444);
+        }
+    }
+    
+    @Override
+    public void method21656() {
+        if (this.field27588 != null) {
+            this.field27588.method20985();
+            this.field27588 = null;
+        }
+    }
+    
+    @Override
+    public void method21660(final Class1848 class1848, final Class354 class1849, final Class7096 class1850, final float n) {
+        final boolean method21755 = class1850.method21755(Class7188.field27893);
+        if (method21755 && n > 0.0f) {
+            if (this.field27588 != null) {
+                this.field27588.method20986(n);
+            }
+            if (n >= 1.0f) {
+                this.field27587.method32926(Class2012.field11442);
+            }
+        }
+        else if (this.field27588 == null) {
+            if (method21755) {
+                ++this.field27590;
+            }
+        }
+        else {
+            this.field27588.method20986(0.0f);
+        }
+    }
+    
+    @Override
+    public void method21662(final Class8321 class8321) {
+        if (Class7855.field32250.method25618(class8321.method27622())) {
+            this.field27587.method32926(Class2012.field11443);
+        }
+    }
+    
+    static {
+        field27585 = new Class2259("tutorial.punch_tree.title", new Object[0]);
+        field27586 = new Class2259("tutorial.punch_tree.description", new Object[] { Class9106.method32929("attack") });
+    }
+}

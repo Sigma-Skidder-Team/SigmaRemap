@@ -1,0 +1,214 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import javax.annotation.Nullable;
+import java.util.UUID;
+import java.util.Optional;
+
+public abstract class Class794 extends Class789
+{
+    public static final Class8810<Byte> field4243;
+    public static final Class8810<Optional<UUID>> field4244;
+    public Class3495 field4245;
+    
+    public Class794(final Class7499<? extends Class794> class7499, final Class1847 class7500) {
+        super(class7499, class7500);
+        this.method4482();
+    }
+    
+    @Override
+    public void method1649() {
+        super.method1649();
+        this.field2432.method33565(Class794.field4243, (Byte)0);
+        this.field2432.method33565(Class794.field4244, Optional.empty());
+    }
+    
+    @Override
+    public void method1761(final Class51 class51) {
+        super.method1761(class51);
+        if (this.method4485() != null) {
+            class51.method306("OwnerUUID", this.method4485().toString());
+        }
+        else {
+            class51.method306("OwnerUUID", "");
+        }
+        class51.method312("Sitting", this.method4483());
+    }
+    
+    @Override
+    public void method1760(final Class51 class51) {
+        super.method1760(class51);
+        String name;
+        if (class51.method316("OwnerUUID", 8)) {
+            name = class51.method323("OwnerUUID");
+        }
+        else {
+            name = Class7450.method22924(this.method1897(), class51.method323("Owner"));
+        }
+        if (!name.isEmpty()) {
+            try {
+                this.method4486(UUID.fromString(name));
+                this.method4481(true);
+            }
+            catch (final Throwable t) {
+                this.method4481(false);
+            }
+        }
+        if (this.field4245 != null) {
+            this.field4245.method11058(class51.method329("Sitting"));
+        }
+        this.method4484(class51.method329("Sitting"));
+    }
+    
+    @Override
+    public boolean method4204(final Class512 class512) {
+        return !this.method4205();
+    }
+    
+    public void method4479(final boolean b) {
+        Class6908 class6908 = Class8432.field34627;
+        if (!b) {
+            class6908 = Class8432.field34639;
+        }
+        for (int i = 0; i < 7; ++i) {
+            this.field2391.method6709(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02);
+        }
+    }
+    
+    @Override
+    public void method1798(final byte b) {
+        if (b != 7) {
+            if (b != 6) {
+                super.method1798(b);
+            }
+            else {
+                this.method4479(false);
+            }
+        }
+        else {
+            this.method4479(true);
+        }
+    }
+    
+    public boolean method4480() {
+        return (this.field2432.method33568(Class794.field4243) & 0x4) != 0x0;
+    }
+    
+    public void method4481(final boolean b) {
+        final byte byteValue = this.field2432.method33568(Class794.field4243);
+        if (!b) {
+            this.field2432.method33569(Class794.field4243, (byte)(byteValue & 0xFFFFFFFB));
+        }
+        else {
+            this.field2432.method33569(Class794.field4243, (byte)(byteValue | 0x4));
+        }
+        this.method4482();
+    }
+    
+    public void method4482() {
+    }
+    
+    public boolean method4483() {
+        return (this.field2432.method33568(Class794.field4243) & 0x1) != 0x0;
+    }
+    
+    public void method4484(final boolean b) {
+        final byte byteValue = this.field2432.method33568(Class794.field4243);
+        if (!b) {
+            this.field2432.method33569(Class794.field4243, (byte)(byteValue & 0xFFFFFFFE));
+        }
+        else {
+            this.field2432.method33569(Class794.field4243, (byte)(byteValue | 0x1));
+        }
+    }
+    
+    @Nullable
+    public UUID method4485() {
+        return this.field2432.method33568(Class794.field4244).orElse(null);
+    }
+    
+    public void method4486(final UUID value) {
+        this.field2432.method33569(Class794.field4244, Optional.ofNullable(value));
+    }
+    
+    public void method4487(final Class512 class512) {
+        this.method4481(true);
+        this.method4486(class512.method1865());
+        if (class512 instanceof Class513) {
+            Class7770.field31798.method13773((Class513)class512, this);
+        }
+    }
+    
+    @Nullable
+    public Class511 method4488() {
+        try {
+            final UUID method4485 = this.method4485();
+            return (method4485 == null) ? null : this.field2391.method7143(method4485);
+        }
+        catch (final IllegalArgumentException ex) {
+            return null;
+        }
+    }
+    
+    @Override
+    public boolean method2646(final Class511 class511) {
+        return !this.method4489(class511) && super.method2646(class511);
+    }
+    
+    public boolean method4489(final Class511 class511) {
+        return class511 == this.method4488();
+    }
+    
+    public Class3495 method4490() {
+        return this.field4245;
+    }
+    
+    public boolean method4491(final Class511 class511, final Class511 class512) {
+        return true;
+    }
+    
+    @Override
+    public Class6750 method1825() {
+        if (this.method4480()) {
+            final Class511 method4488 = this.method4488();
+            if (method4488 != null) {
+                return method4488.method1825();
+            }
+        }
+        return super.method1825();
+    }
+    
+    @Override
+    public boolean method1826(final Class399 class399) {
+        if (this.method4480()) {
+            final Class511 method4488 = this.method4488();
+            if (class399 == method4488) {
+                return true;
+            }
+            if (method4488 != null) {
+                return method4488.method1826(class399);
+            }
+        }
+        return super.method1826(class399);
+    }
+    
+    @Override
+    public void method2673(final Class7929 class7929) {
+        if (!this.field2391.field10067) {
+            if (this.field2391.method6765().method31216(Class8878.field37326)) {
+                if (this.method4488() instanceof Class513) {
+                    this.method4488().method1494(this.method2699().method35595());
+                }
+            }
+        }
+        super.method2673(class7929);
+    }
+    
+    static {
+        field4243 = Class9184.method33564(Class794.class, Class7709.field30653);
+        field4244 = Class9184.method33564(Class794.class, Class7709.field30667);
+    }
+}

@@ -1,0 +1,276 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.Iterator;
+import java.util.List;
+import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import java.util.function.BiPredicate;
+import javax.annotation.Nullable;
+import java.util.function.Supplier;
+import java.util.Optional;
+
+public class Class3865 extends Class3864<Class475> implements Class3856
+{
+    private static String[] field17496;
+    public static final Class7115 field17497;
+    public static final Class7114<Class180> field17498;
+    public static final Class7113 field17499;
+    public static final Class7702 field17500;
+    public static final Class7702 field17501;
+    public static final Class7702 field17502;
+    public static final Class7702 field17503;
+    public static final Class7702 field17504;
+    private static final Class6389<Class475, Optional<Class446>> field17505;
+    private static final Class6389<Class475, Optional<Class434>> field17506;
+    
+    public Class3865(final Class9288 class9288, final Supplier<Class5412<? extends Class475>> supplier) {
+        super(class9288, supplier);
+        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3865.field17497, Class179.field513)).method21773(Class3865.field17498, Class180.field530)).method21773((Class7111<Comparable>)Class3865.field17499, false));
+    }
+    
+    public static Class2083 method11932(final Class7096 class7096) {
+        final Class180 class7097 = class7096.method21772(Class3865.field17498);
+        if (class7097 != Class180.field530) {
+            return (class7097 != Class180.field532) ? Class2083.field12049 : Class2083.field12048;
+        }
+        return Class2083.field12047;
+    }
+    
+    @Override
+    public Class2115 method11797(final Class7096 class7096) {
+        return Class2115.field12306;
+    }
+    
+    @Override
+    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        if (class7096.method21772((Class7111<Boolean>)Class3865.field17499)) {
+            class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
+        }
+        if (class7098.method21696() == this && class7097.method790().method601()) {
+            final Class180 class7102 = class7098.method21772(Class3865.field17498);
+            if (class7096.method21772(Class3865.field17498) == Class180.field530) {
+                if (class7102 != Class180.field530) {
+                    if (class7096.method21772((Class7111<Comparable>)Class3865.field17497) == class7098.method21772((Class7111<Comparable>)Class3865.field17497)) {
+                        if (method11933(class7098) == class7097.method782()) {
+                            return (Class7096)((Class7097<Object, Object>)class7096).method21773(Class3865.field17498, class7102.method812());
+                        }
+                    }
+                }
+            }
+        }
+        else if (method11933(class7096) == class7097) {
+            return ((Class7097<O, Class7096>)class7096).method21773(Class3865.field17498, Class180.field530);
+        }
+        return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+    }
+    
+    @Override
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+        if (class7096.method21772(Class3865.field17498) == Class180.field530) {
+            return Class3865.field17504;
+        }
+        switch (Class7851.field32153[method11933(class7096).ordinal()]) {
+            default: {
+                return Class3865.field17500;
+            }
+            case 2: {
+                return Class3865.field17501;
+            }
+            case 3: {
+                return Class3865.field17502;
+            }
+            case 4: {
+                return Class3865.field17503;
+            }
+        }
+    }
+    
+    public static Class179 method11933(final Class7096 class7096) {
+        final Class179 class7097 = class7096.method21772((Class7111<Class179>)Class3865.field17497);
+        return (class7096.method21772(Class3865.field17498) != Class180.field531) ? class7097.method784() : class7097.method783();
+    }
+    
+    @Override
+    public Class7096 method11846(final Class7074 class7074) {
+        Class180 class7075 = Class180.field530;
+        Class179 method782 = class7074.method21644().method782();
+        final Class7099 method783 = class7074.method21654().method6702(class7074.method21639());
+        final boolean method784 = class7074.method21645();
+        final Class179 method785 = class7074.method21648();
+        if (method785.method790().method601()) {
+            if (method784) {
+                final Class179 method786 = this.method11934(class7074, method785.method782());
+                if (method786 != null) {
+                    if (method786.method790() != method785.method790()) {
+                        method782 = method786;
+                        class7075 = ((method786.method784() != method785.method782()) ? Class180.field531 : Class180.field532);
+                    }
+                }
+            }
+        }
+        if (class7075 == Class180.field530) {
+            if (!method784) {
+                if (method782 != this.method11934(class7074, method782.method783())) {
+                    if (method782 == this.method11934(class7074, method782.method784())) {
+                        class7075 = Class180.field532;
+                    }
+                }
+                else {
+                    class7075 = Class180.field531;
+                }
+            }
+        }
+        return (Class7096)((Class7097<Object, Object>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, method782)).method21773(Class3865.field17498, class7075)).method21773((Class7111<Comparable>)Class3865.field17499, method783.method21779() == Class7558.field29976);
+    }
+    
+    @Override
+    public Class7099 method11864(final Class7096 class7096) {
+        return class7096.method21772((Class7111<Boolean>)Class3865.field17499) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+    }
+    
+    @Nullable
+    private Class179 method11934(final Class7074 class7074, final Class179 class7075) {
+        final Class7096 method6701 = class7074.method21654().method6701(class7074.method21639().method1149(class7075));
+        return (method6701.method21696() == this && method6701.method21772(Class3865.field17498) == Class180.field530) ? method6701.method21772((Class7111<Class179>)Class3865.field17497) : null;
+    }
+    
+    @Override
+    public void method11853(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+        if (class1851.method27667()) {
+            final Class436 method6727 = class1847.method6727(class1848);
+            if (method6727 instanceof Class475) {
+                ((Class475)method6727).method2335(class1851.method27664());
+            }
+        }
+    }
+    
+    @Override
+    public void method11829(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class7096 class7099, final boolean b) {
+        if (class7096.method21696() != class7099.method21696()) {
+            final Class436 method6727 = class7097.method6727(class7098);
+            if (method6727 instanceof Class446) {
+                Class9193.method33638(class7097, class7098, (Class446)method6727);
+                class7097.method6783(class7098, this);
+            }
+            super.method11829(class7096, class7097, class7098, class7099, b);
+        }
+    }
+    
+    @Override
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+        if (!class7097.field10067) {
+            final Class434 method11827 = this.method11827(class7096, class7097, class7098);
+            if (method11827 != null) {
+                class7099.method2833(method11827);
+                class7099.method2859(this.method11935());
+            }
+            return Class2201.field13400;
+        }
+        return Class2201.field13400;
+    }
+    
+    public Class9455<Class1932> method11935() {
+        return Class8276.field33987.method8449(Class8276.field34043);
+    }
+    
+    @Nullable
+    public static Class446 method11936(final Class3865 class3865, final Class7096 class3866, final Class1847 class3867, final Class354 class3868, final boolean b) {
+        return class3865.method11929(class3866, class3867, class3868, b).method22074(Class3865.field17505).orElse(null);
+    }
+    
+    @Override
+    public Class7191<? extends Class475> method11929(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final boolean b) {
+        BiPredicate<Class1851, Class354> biPredicate;
+        if (!b) {
+            biPredicate = Class3865::method11938;
+        }
+        else {
+            biPredicate = ((p0, p1) -> false);
+        }
+        return Class8565.method28798((Class5412<? extends Class475>)this.field17495.get(), Class3865::method11932, Class3865::method11933, Class3865.field17497, class7096, class7097, class7098, biPredicate);
+    }
+    
+    @Nullable
+    @Override
+    public Class434 method11827(final Class7096 class7096, final Class1847 class7097, final Class354 class7098) {
+        return this.method11929(class7096, class7097, class7098, false).method22074(Class3865.field17506).orElse(null);
+    }
+    
+    public static Class6389<Class475, Float2FloatFunction> method11937(final Class476 class476) {
+        return new Class6391(class476);
+    }
+    
+    @Override
+    public Class436 method11898(final Class1855 class1855) {
+        return new Class475();
+    }
+    
+    public static boolean method11938(final Class1851 class1851, final Class354 class1852) {
+        return method11939(class1851, class1852) || method11940(class1851, class1852);
+    }
+    
+    private static boolean method11939(final Class1855 class1855, final Class354 class1856) {
+        final Class354 method1137 = class1856.method1137();
+        return class1855.method6701(method1137).method21713(class1855, method1137);
+    }
+    
+    private static boolean method11940(final Class1851 class1851, final Class354 class1852) {
+        final List<Class399> method7128 = class1851.method7128((Class<? extends Class399>)Class800.class, new Class6221(class1852.method1074(), class1852.method1075() + 1, class1852.method1076(), class1852.method1074() + 1, class1852.method1075() + 2, class1852.method1076() + 1));
+        if (!method7128.isEmpty()) {
+            final Iterator iterator = method7128.iterator();
+            while (iterator.hasNext()) {
+                if (!((Class800)iterator.next()).method4483()) {
+                    continue;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    @Override
+    public boolean method11873(final Class7096 class7096) {
+        return true;
+    }
+    
+    @Override
+    public int method11874(final Class7096 class7096, final Class1847 class7097, final Class354 class7098) {
+        return Class3418.method10898(method11936(this, class7096, class7097, class7098, false));
+    }
+    
+    @Override
+    public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
+        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3865.field17497, class7097.method8142(class7096.method21772((Class7111<Class179>)Class3865.field17497)));
+    }
+    
+    @Override
+    public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
+        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Class179>)Class3865.field17497)));
+    }
+    
+    @Override
+    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+        class9500.method35378(Class3865.field17497, Class3865.field17498, Class3865.field17499);
+    }
+    
+    @Override
+    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class2084 class7099) {
+        return false;
+    }
+    
+    static {
+        field17497 = Class3892.field17564;
+        field17498 = Class8970.field37795;
+        field17499 = Class8970.field37747;
+        field17500 = Class3833.method11778(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
+        field17501 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);
+        field17502 = Class3833.method11778(0.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+        field17503 = Class3833.method11778(1.0, 0.0, 1.0, 16.0, 14.0, 15.0);
+        field17504 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+        field17505 = new Class6390();
+        field17506 = new Class6392();
+    }
+}

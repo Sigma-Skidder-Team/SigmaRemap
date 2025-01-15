@@ -1,0 +1,57 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.List;
+import java.util.Random;
+
+public class Class4485 extends Class4484
+{
+    private final int field19878;
+    
+    public Class4485(final int n, final Random random, final Class6997 field19849, final Class179 class179) {
+        super(Class9520.field40950, n);
+        this.method13456(class179);
+        this.field19849 = field19849;
+        this.field19878 = random.nextInt();
+    }
+    
+    public Class4485(final Class1795 class1795, final Class51 class1796) {
+        super(Class9520.field40950, class1796);
+        this.field19878 = class1796.method319("Seed");
+    }
+    
+    public static Class4485 method13478(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -1, -3, 0, 5, 10, 8, class179);
+        return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4485(n4, random, method21408, class179) : null;
+    }
+    
+    @Override
+    public void method13415(final Class51 class51) {
+        super.method13415(class51);
+        class51.method298("Seed", this.field19878);
+    }
+    
+    @Override
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+        final Random random2 = new Random(this.field19878);
+        for (int i = 0; i <= 4; ++i) {
+            for (int j = 3; j <= 4; ++j) {
+                this.method13444(class1851, class1853, i, j, 0, i, j, random2.nextInt(8), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+            }
+        }
+        this.method13444(class1851, class1853, 0, 5, 0, 0, 5, random2.nextInt(8), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+        this.method13444(class1851, class1853, 4, 5, 0, 4, 5, random2.nextInt(8), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+        for (int k = 0; k <= 4; ++k) {
+            this.method13444(class1851, class1853, k, 2, 0, k, 2, random2.nextInt(5), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+        }
+        for (int l = 0; l <= 4; ++l) {
+            for (int n = 0; n <= 1; ++n) {
+                this.method13444(class1851, class1853, l, n, 0, l, n, random2.nextInt(3), Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
+            }
+        }
+        return true;
+    }
+}

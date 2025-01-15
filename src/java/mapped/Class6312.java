@@ -1,0 +1,151 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.Optional;
+import java.util.Iterator;
+import java.util.concurrent.Executor;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.function.Function;
+import java.util.List;
+
+public class Class6312
+{
+    private static String[] field25234;
+    public int field25235;
+    public float field25236;
+    public float field25237;
+    public int field25238;
+    public int field25239;
+    public Class8321 field25240;
+    public Class8321 field25241;
+    public Class8321 field25242;
+    
+    public Class6312(final int field25235) {
+        this.field25235 = field25235;
+    }
+    
+    public void method18687() {
+        this.method18690();
+        final boolean b = this.field25241 != null && this.field25241.field34176 > 0;
+        final boolean b2 = this.field25240 != null && this.field25240.field34176 > 0;
+        boolean b3 = false;
+        Label_0123: {
+            if (this.method18689() != null) {
+                if (this.method18689().equals(this.field25242.method27622())) {
+                    if (this.field25242 != null) {
+                        if (this.field25242.field34176 < 64) {
+                            b3 = true;
+                            break Label_0123;
+                        }
+                    }
+                }
+            }
+            b3 = false;
+        }
+        final boolean b4 = b3;
+        if (this.field25237 < this.field25236) {
+            if (b2) {
+                if (b4) {
+                    if (this.field25239 > 0) {
+                        this.field25237 += Class9463.method35173().method35194().method29226();
+                    }
+                }
+            }
+        }
+        if (this.field25239 > 0) {
+            --this.field25239;
+        }
+        if (this.field25239 == 0) {
+            if (b && b2) {
+                final Class8321 field25241 = this.field25241;
+                --field25241.field34176;
+                this.field25239 = this.field25238;
+            }
+            else {
+                this.field25237 = 0.0f;
+            }
+        }
+        if (this.field25237 >= this.field25236) {
+            if (this.field25236 != 0.0f) {
+                if (b2) {
+                    final Class8321 field25242 = this.field25240;
+                    --field25242.field34176;
+                }
+                this.field25237 = 0.0f;
+                if (this.field25242 != null) {
+                    final Class8321 method18688 = this.method18688();
+                    final Class8321 field25243 = this.field25242;
+                    field25243.field34176 += method18688.field34176;
+                }
+            }
+        }
+        if (this.field25240 != null) {
+            if (this.field25240.field34176 == 0) {
+                this.field25240 = null;
+            }
+        }
+    }
+    
+    public Class8321 method18688() {
+        if (this.field25240 != null) {
+            if (!Class3279.method10340().method6378(Class8976.field37844, new Class443(new Class8321[] { new Class8321(Class7739.field30766) }), Class3279.method10339().field4683).isPresent()) {
+                final Class6581 class6581 = new Class6581(Class346.field2138, new Thread());
+                final Iterator<? super Object> iterator = Class3279.method10341().field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).iterator();
+                while (iterator.hasNext()) {
+                    class6581.method19931(iterator.next());
+                }
+                Class3279.method10340().method5785(new Class7884(this), class6581, Class5026.field21549, Class5026.field21549, Class8349.method27841(), Class3279.method10342());
+            }
+            final Optional<Class3684> method6378 = Class3279.method10340().method6378(Class8976.field37844, new Class443(new Class8321[] { this.field25240 }), Class3279.method10343().field4683);
+            if (method6378.isPresent()) {
+                final Class8321 method6379 = method6378.get().method11292();
+                if (!method6379.method27620()) {
+                    return method6379.method27641();
+                }
+            }
+            return null;
+        }
+        return null;
+    }
+    
+    public Class3820 method18689() {
+        final Class8321 method18688 = this.method18688();
+        if (method18688 == null) {
+            return null;
+        }
+        return method18688.method27622();
+    }
+    
+    public Class8321 method18690() {
+        if (this.field25242 != null) {
+            if (this.field25242.method27622() instanceof Class4099) {
+                this.field25242 = null;
+            }
+        }
+        if (this.field25240 != null) {
+            if (this.field25240.method27622() instanceof Class4099) {
+                this.field25240 = null;
+            }
+        }
+        if (this.field25241 != null) {
+            if (this.field25241.method27622() instanceof Class4099) {
+                this.field25241 = null;
+            }
+        }
+        if (this.field25242 != null) {
+            return this.field25242;
+        }
+        if (this.field25240 != null) {
+            final Class8321 method18688 = this.method18688();
+            if (method18688 != null) {
+                method18688.field34176 = 0;
+            }
+            return this.field25242 = method18688;
+        }
+        return null;
+    }
+}

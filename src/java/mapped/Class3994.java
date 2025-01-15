@@ -1,0 +1,43 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class3994 extends Class3993
+{
+    private static String[] field18012;
+    
+    public Class3994(final Class9288 class9288) {
+        super(class9288);
+    }
+    
+    @Override
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+        final Class8321 method2715 = class7099.method2715(class7100);
+        if (method2715.method27622() != Class7739.field31426) {
+            return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
+        }
+        if (!class7097.field10067) {
+            final Class179 method2716 = class7101.method21448();
+            final Class179 class7102 = (method2716.method790() != Class111.field352) ? method2716 : class7099.method1882().method782();
+            class7097.method6705(null, class7098, Class8520.field35506, Class286.field1582, 1.0f, 1.0f);
+            class7097.method6688(class7098, (Class7096)((Class7097<Object, Object>)Class7521.field29342.method11878()).method21773((Class7111<Comparable>)Class3901.field17611, class7102), 11);
+            final Class427 class7103 = new Class427(class7097, class7098.method1074() + 0.5 + class7102.method785() * 0.65, class7098.method1075() + 0.1, class7098.method1076() + 0.5 + class7102.method787() * 0.65, new Class8321(Class7739.field31429, 4));
+            class7103.method1937(0.05 * class7102.method785() + class7097.field10062.nextDouble() * 0.02, 0.05, 0.05 * class7102.method787() + class7097.field10062.nextDouble() * 0.02);
+            class7097.method6886(class7103);
+            method2715.method27636(1, class7099, class7105 -> class7105.method2795(class7104));
+        }
+        return Class2201.field13400;
+    }
+    
+    @Override
+    public Class3873 method12142() {
+        return (Class3873)Class7521.field29386;
+    }
+    
+    @Override
+    public Class3875 method12143() {
+        return (Class3875)Class7521.field29384;
+    }
+}

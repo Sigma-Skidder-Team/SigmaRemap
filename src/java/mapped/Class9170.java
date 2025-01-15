@@ -1,0 +1,85 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import com.google.common.base.Predicates;
+import java.util.function.Predicate;
+
+public final class Class9170
+{
+    private static String[] field38844;
+    public static final Predicate<Class399> field38845;
+    public static final Predicate<Class511> field38846;
+    public static final Predicate<Class399> field38847;
+    public static final Predicate<Class399> field38848;
+    public static final Predicate<Class399> field38849;
+    public static final Predicate<Class399> field38850;
+    
+    public static Predicate<Class399> method33473(final double n, final double n2, final double n3, final double n4) {
+        return class399 -> class399 != null && class399.method1733(n5, n6, n7) <= n8;
+    }
+    
+    public static Predicate<Class399> method33474(final Class399 class399) {
+        final Class6750 method1825 = class399.method1825();
+        return (Predicate<Class399>)((((method1825 != null) ? method1825.method20558() : Class343.field2112) != Class343.field2113) ? Class9170.field38850.and(class403 -> {
+            if (class403.method1750()) {
+                if (class400.field2391.field10067 && (class403 instanceof Class512 && ((Class512)class403).method2843())) {
+                    return false;
+                }
+                else {
+                    class403.method1825();
+                    final Class6750 class405;
+                    final Class343 class404 = (class405 != null) ? class405.method20558() : Class343.field2112;
+                    if (class404 != Class343.field2113) {
+                        final boolean b = class401 != null && class401.method20565(class405);
+                        if (class402 == Class343.field2115 || class404 == Class343.field2115) {
+                            if (!(!b)) {
+                                return false;
+                            }
+                        }
+                        return (class402 != Class343.field2114 && class404 != Class343.field2114) || b;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+            else {
+                return false;
+            }
+        }) : Predicates.alwaysFalse());
+    }
+    
+    public static Predicate<Class399> method33475(final Class399 class399) {
+        return method1920 -> {
+            while (method1920.method1805()) {
+                method1920 = method1920.method1920();
+                if (method1920 == class400) {
+                    return false;
+                }
+            }
+            return true;
+        };
+    }
+    
+    static {
+        field38845 = Class399::method1768;
+        field38846 = Class511::method1768;
+        field38847 = (class399 -> {
+            final boolean b;
+            if (!(!class399.method1768())) {
+                if (!class399.method1806()) {
+                    if (!class399.method1805()) {
+                        return b;
+                    }
+                }
+            }
+            return b;
+        });
+        field38848 = (class400 -> class400 instanceof Class446 && class400.method1768());
+        field38849 = (class401 -> !(class401 instanceof Class512) || (!class401.method1639() && !((Class512)class401).method2889()));
+        field38850 = (class402 -> !class402.method1639());
+    }
+}

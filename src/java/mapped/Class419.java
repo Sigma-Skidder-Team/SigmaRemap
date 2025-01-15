@@ -1,0 +1,185 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public abstract class Class419 extends Class399
+{
+    public Class511 field2527;
+    private int field2528;
+    private int field2529;
+    public double field2530;
+    public double field2531;
+    public double field2532;
+    
+    public Class419(final Class7499<? extends Class419> class7499, final Class1847 class7500) {
+        super(class7499, class7500);
+    }
+    
+    public Class419(final Class7499<? extends Class419> class7499, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class1847 class7500) {
+        this(class7499, class7500);
+        this.method1730(n, n2, n3, this.field2399, this.field2400);
+        this.method1656(n, n2, n3);
+        final double n7 = Class9546.method35641(n4 * n4 + n5 * n5 + n6 * n6);
+        this.field2530 = n4 / n7 * 0.1;
+        this.field2531 = n5 / n7 * 0.1;
+        this.field2532 = n6 / n7 * 0.1;
+    }
+    
+    public Class419(final Class7499<? extends Class419> class7499, final Class511 field2527, double n, double n2, double n3, final Class1847 class7500) {
+        this(class7499, class7500);
+        this.field2527 = field2527;
+        this.method1730(field2527.method1938(), field2527.method1941(), field2527.method1945(), field2527.field2399, field2527.field2400);
+        this.method1657();
+        this.method1936(Class5487.field22769);
+        n += this.field2423.nextGaussian() * 0.4;
+        n2 += this.field2423.nextGaussian() * 0.4;
+        n3 += this.field2423.nextGaussian() * 0.4;
+        final double n4 = Class9546.method35641(n * n + n2 * n2 + n3 * n3);
+        this.field2530 = n / n4 * 0.1;
+        this.field2531 = n2 / n4 * 0.1;
+        this.field2532 = n3 / n4 * 0.1;
+    }
+    
+    @Override
+    public void method1649() {
+    }
+    
+    @Override
+    public boolean method1753(final double n) {
+        double v = this.method1886().method18507() * 4.0;
+        if (Double.isNaN(v)) {
+            v = 4.0;
+        }
+        final double n2 = v * 64.0;
+        return n < n2 * n2;
+    }
+    
+    @Override
+    public void method1659() {
+        Label_0010: {
+            if (!this.field2391.field10067) {
+                if (this.field2527 == null || !this.field2527.field2410) {
+                    if (this.field2391.method6971(new Class354(this))) {
+                        break Label_0010;
+                    }
+                }
+                this.method1652();
+                return;
+            }
+        }
+        super.method1659();
+        if (this.method2033()) {
+            this.method1664(1);
+        }
+        ++this.field2529;
+        final Class7006 method23092 = Class7476.method23092(this, true, this.field2529 >= 25, this.field2527, Class2040.field11632);
+        if (method23092.method21449() != Class2165.field12880) {
+            this.method2032(method23092);
+        }
+        final Class5487 method23093 = this.method1935();
+        final double n = this.method1938() + method23093.field22770;
+        final double n2 = this.method1941() + method23093.field22771;
+        final double n3 = this.method1945() + method23093.field22772;
+        Class7476.method23099(this, 0.2f);
+        float method23094 = this.method2035();
+        if (this.method1706()) {
+            for (int i = 0; i < 4; ++i) {
+                this.field2391.method6709(Class8432.field34601, n - method23093.field22770 * 0.25, n2 - method23093.field22771 * 0.25, n3 - method23093.field22772 * 0.25, method23093.field22770, method23093.field22771, method23093.field22772);
+            }
+            method23094 = 0.8f;
+        }
+        this.method1936(method23093.method16744(this.field2530, this.field2531, this.field2532).method16748(method23094));
+        this.field2391.method6709(this.method2034(), n, n2 + 0.5, n3, 0.0, 0.0, 0.0);
+        this.method1656(n, n2, n3);
+    }
+    
+    public boolean method2033() {
+        return true;
+    }
+    
+    public Class6909 method2034() {
+        return Class8432.field34639;
+    }
+    
+    public float method2035() {
+        return 0.95f;
+    }
+    
+    public void method2032(final Class7006 class7006) {
+        if (class7006.method21449() == Class2165.field12881) {
+            final Class7005 class7007 = (Class7005)class7006;
+            final Class7096 method6701 = this.field2391.method6701(class7007.method21447());
+            method6701.method21760(this.field2391, method6701, class7007, this);
+        }
+    }
+    
+    @Override
+    public void method1761(final Class51 class51) {
+        final Class5487 method1935 = this.method1935();
+        class51.method295("direction", this.method1762(method1935.field22770, method1935.field22771, method1935.field22772));
+        class51.method295("power", this.method1762(this.field2530, this.field2531, this.field2532));
+        class51.method298("life", this.field2528);
+    }
+    
+    @Override
+    public void method1760(final Class51 class51) {
+        if (class51.method316("power", 9)) {
+            final Class52 method328 = class51.method328("power", 6);
+            if (method328.size() == 3) {
+                this.field2530 = method328.method351(0);
+                this.field2531 = method328.method351(1);
+                this.field2532 = method328.method351(2);
+            }
+        }
+        this.field2528 = class51.method319("life");
+        if (class51.method316("direction", 9) && class51.method328("direction", 6).size() == 3) {
+            final Class52 method329 = class51.method328("direction", 6);
+            this.method1937(method329.method351(0), method329.method351(1), method329.method351(2));
+        }
+        else {
+            this.method1652();
+        }
+    }
+    
+    @Override
+    public boolean method1749() {
+        return true;
+    }
+    
+    @Override
+    public float method1790() {
+        return 1.0f;
+    }
+    
+    @Override
+    public boolean method1740(final Class7929 class7929, final float n) {
+        if (this.method1849(class7929)) {
+            return false;
+        }
+        this.method1739();
+        if (class7929.method25714() == null) {
+            return false;
+        }
+        final Class5487 method1791 = class7929.method25714().method1791();
+        this.method1936(method1791);
+        this.field2530 = method1791.field22770 * 0.1;
+        this.field2531 = method1791.field22771 * 0.1;
+        this.field2532 = method1791.field22772 * 0.1;
+        if (class7929.method25714() instanceof Class511) {
+            this.field2527 = (Class511)class7929.method25714();
+        }
+        return true;
+    }
+    
+    @Override
+    public float method1726() {
+        return 1.0f;
+    }
+    
+    @Override
+    public Class4252<?> method1932() {
+        return new Class4339(this.method1643(), this.method1865(), this.method1938(), this.method1941(), this.method1945(), this.field2400, this.field2399, this.method1642(), (this.field2527 != null) ? this.field2527.method1643() : 0, new Class5487(this.field2530, this.field2531, this.field2532));
+    }
+}

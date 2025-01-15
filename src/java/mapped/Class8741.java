@@ -1,0 +1,27 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class8741
+{
+    private static String[] field36719;
+    public final Class9138 field36720;
+    public final float field36721;
+    public final float field36722;
+    
+    public Class8741(final float n, final float n2, final float n3, final float n4, final float n5) {
+        this(new Class9138(n, n2, n3), n4, n5);
+    }
+    
+    public Class8741 method30194(final float n, final float n2) {
+        return new Class8741(this.field36720, n, n2);
+    }
+    
+    public Class8741(final Class9138 field36720, final float field36721, final float field36722) {
+        this.field36720 = field36720;
+        this.field36721 = field36721;
+        this.field36722 = field36722;
+    }
+}

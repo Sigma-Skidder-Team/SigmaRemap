@@ -1,0 +1,39 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class836 extends Class834
+{
+    private static String[] field4453;
+    
+    public Class836(final Class7499<? extends Class836> class7499, final Class1847 class7500) {
+        super(class7499, class7500);
+    }
+    
+    @Override
+    public Class8321 method4956() {
+        return new Class8321(Class7739.field31361);
+    }
+    
+    @Override
+    public Class7795 method4160() {
+        return Class8520.field35081;
+    }
+    
+    @Override
+    public Class7795 method2684() {
+        return Class8520.field35082;
+    }
+    
+    @Override
+    public Class7795 method2683(final Class7929 class7929) {
+        return Class8520.field35084;
+    }
+    
+    @Override
+    public Class7795 method4958() {
+        return Class8520.field35083;
+    }
+}

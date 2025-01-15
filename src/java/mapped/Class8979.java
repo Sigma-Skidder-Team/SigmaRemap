@@ -1,0 +1,111 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class8979
+{
+    private static String[] field37855;
+    private static Class6313 field37856;
+    
+    public static void method31922() {
+        Class8979.field37856 = Class8571.method28894().method5305().method5787().method35428(Class7521.field29329.method11878());
+    }
+    
+    public static Class6313 method31923() {
+        return Class8979.field37856;
+    }
+    
+    public static Class7096 method31924() {
+        return Class7521.field29329.method11878();
+    }
+    
+    public static boolean method31925(final Class1856 class1856, final Class7096 class1857, final Class354 class1858) {
+        return class1856 instanceof Class1855 && method31927(class1856, class1857, class1858) && method31926(class1856, class1858);
+    }
+    
+    private static boolean method31926(final Class1855 class1855, final Class354 class1856) {
+        final Class3833 field29329 = Class7521.field29329;
+        if (class1855.method6701(class1856.method1141()).method21696() != field29329) {
+            if (class1855.method6701(class1856.method1143()).method21696() != field29329) {
+                if (class1855.method6701(class1856.method1145()).method21696() != field29329) {
+                    if (class1855.method6701(class1856.method1147()).method21696() != field29329) {
+                        return false;
+                    }
+                }
+            }
+        }
+        final Class7096 method6701 = class1855.method6701(class1856.method1139());
+        if (method6701.method21722(class1855, class1856)) {
+            return true;
+        }
+        final Class3833 method6702 = method6701.method21696();
+        if (method6702 instanceof Class3916) {
+            return method6701.method21772(Class3916.field17733) == Class109.field343;
+        }
+        if (method6702 instanceof Class3921) {
+            return method6701.method21772(Class3921.field17777) == Class186.field598;
+        }
+        return false;
+    }
+    
+    private static boolean method31927(final Class1855 class1855, final Class7096 class1856, final Class354 class1857) {
+        if (Class6770.method20655(class1856, class1855, class1857)) {
+            return false;
+        }
+        if (class1856.method21722(class1855, class1857)) {
+            return false;
+        }
+        final Class3833 method21696 = class1856.method21696();
+        if (method21696 != Class7521.field29331) {
+            Label_0040: {
+                if (method21696 instanceof Class3874) {
+                    if (!(method21696 instanceof Class3870)) {
+                        if (!(method21696 instanceof Class3882)) {
+                            if (!(method21696 instanceof Class3888)) {
+                                if (!(method21696 instanceof Class3876)) {
+                                    if (!(method21696 instanceof Class3890)) {
+                                        break Label_0040;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    return true;
+                }
+            }
+            if (!(method21696 instanceof Class3929)) {
+                if (!(method21696 instanceof Class3898)) {
+                    if (!(method21696 instanceof Class3974)) {
+                        if (!(method21696 instanceof Class3854)) {
+                            if (!(method21696 instanceof Class3981)) {
+                                if (!(method21696 instanceof Class3855)) {
+                                    if (method21696 instanceof Class4024) {
+                                        return true;
+                                    }
+                                    if (method21696 instanceof Class3916) {
+                                        return class1856.method21772(Class3916.field17733) == Class109.field343;
+                                    }
+                                    if (method21696 instanceof Class3921) {
+                                        return class1856.method21772(Class3921.field17777) == Class186.field598;
+                                    }
+                                    if (!(method21696 instanceof Class3905)) {
+                                        return method21696 instanceof Class3959 || method21696 instanceof Class3917 || method21696 instanceof Class3904 || method21696 instanceof Class4005 || method21696 instanceof Class4006;
+                                    }
+                                    return class1856.method21772(Class3905.field17618) != Class107.field332;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+    
+    static {
+        Class8979.field37856 = null;
+    }
+}

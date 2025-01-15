@@ -1,0 +1,49 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.Random;
+
+public class Class9193
+{
+    private static String[] field38965;
+    private static final Random field38966;
+    
+    public static void method33638(final Class1847 class1847, final Class354 class1848, final Class446 class1849) {
+        method33640(class1847, class1848.method1074(), class1848.method1075(), class1848.method1076(), class1849);
+    }
+    
+    public static void method33639(final Class1847 class1847, final Class399 class1848, final Class446 class1849) {
+        method33640(class1847, class1848.method1938(), class1848.method1941(), class1848.method1945(), class1849);
+    }
+    
+    private static void method33640(final Class1847 class1847, final double n, final double n2, final double n3, final Class446 class1848) {
+        for (int i = 0; i < class1848.method2239(); ++i) {
+            method33642(class1847, n, n2, n3, class1848.method2157(i));
+        }
+    }
+    
+    public static void method33641(final Class1847 class1847, final Class354 class1848, final Class2265<Class8321> class1849) {
+        class1849.forEach(class1852 -> method33642(class1850, class1851.method1074(), class1851.method1075(), class1851.method1076(), class1852));
+    }
+    
+    public static void method33642(final Class1847 class1847, final double a, final double a2, final double a3, final Class8321 class1848) {
+        final double n = Class7499.field28992.method23369();
+        final double n2 = 1.0 - n;
+        final double n3 = n / 2.0;
+        final double n4 = Math.floor(a) + Class9193.field38966.nextDouble() * n2 + n3;
+        final double n5 = Math.floor(a2) + Class9193.field38966.nextDouble() * n2;
+        final double n6 = Math.floor(a3) + Class9193.field38966.nextDouble() * n2 + n3;
+        while (!class1848.method27620()) {
+            final Class427 class1849 = new Class427(class1847, n4, n5, n6, class1848.method27621(Class9193.field38966.nextInt(21) + 10));
+            class1849.method1937(Class9193.field38966.nextGaussian() * 0.05000000074505806, Class9193.field38966.nextGaussian() * 0.05000000074505806 + 0.20000000298023224, Class9193.field38966.nextGaussian() * 0.05000000074505806);
+            class1847.method6886(class1849);
+        }
+    }
+    
+    static {
+        field38966 = new Random();
+    }
+}

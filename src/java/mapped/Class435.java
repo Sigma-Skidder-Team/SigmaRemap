@@ -1,0 +1,130 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+public class Class435 extends Class436 implements Class447, Class434
+{
+    private final Class446 field2649;
+    private final Class7604 field2650;
+    private Class8321 field2651;
+    private int field2652;
+    private int field2653;
+    
+    public Class435() {
+        super(Class5412.field22569);
+        this.field2649 = new Class452(this);
+        this.field2650 = new Class7603(this);
+        this.field2651 = Class8321.field34174;
+    }
+    
+    public Class8321 method2168() {
+        return this.field2651;
+    }
+    
+    public boolean method2169() {
+        final Class3820 method27622 = this.field2651.method27622();
+        return method27622 == Class7739.field31512 || method27622 == Class7739.field31513;
+    }
+    
+    public void method2170(final Class8321 class8321) {
+        this.method2172(class8321, null);
+    }
+    
+    private void method2171() {
+        this.field2652 = 0;
+        this.field2653 = 0;
+        Class3930.method12042(this.method2186(), this.method2193(), this.method2194(), false);
+    }
+    
+    public void method2172(final Class8321 class8321, final Class512 class8322) {
+        this.field2651 = this.method2176(class8321, class8322);
+        this.field2652 = 0;
+        this.field2653 = Class4096.method12341(this.field2651);
+        this.method2161();
+    }
+    
+    private void method2173(final int n) {
+        final int method35651 = Class9546.method35651(n, 0, this.field2653 - 1);
+        if (method35651 != this.field2652) {
+            this.field2652 = method35651;
+            this.method2161();
+            Class3930.method12043(this.method2186(), this.method2193(), this.method2194());
+        }
+    }
+    
+    public int method2174() {
+        return this.field2652;
+    }
+    
+    public int method2175() {
+        return Class9546.method35642(((this.field2653 <= 1) ? 1.0f : (this.method2174() / (this.field2653 - 1.0f))) * 14.0f) + (this.method2169() ? 1 : 0);
+    }
+    
+    private Class8321 method2176(final Class8321 class8321, final Class512 class8322) {
+        if (this.field2656 instanceof Class1849) {
+            if (class8321.method27622() == Class7739.field31513) {
+                Class4096.method12342(class8321, this.method2177(class8322), class8322);
+            }
+        }
+        return class8321;
+    }
+    
+    private Class7492 method2177(final Class512 class512) {
+        String string;
+        Class2250 method1871;
+        if (class512 != null) {
+            string = class512.method1841().getString();
+            method1871 = class512.method1871();
+        }
+        else {
+            string = "Lectern";
+            method1871 = new Class2260("Lectern");
+        }
+        return new Class7492(Class397.field2376, new Class5487(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5), Class9544.field41083, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
+    }
+    
+    @Override
+    public boolean method2178() {
+        return true;
+    }
+    
+    @Override
+    public void method2179(final Class51 class51) {
+        super.method2179(class51);
+        if (!class51.method316("Book", 10)) {
+            this.field2651 = Class8321.field34174;
+        }
+        else {
+            this.field2651 = this.method2176(Class8321.method27619(class51.method327("Book")), null);
+        }
+        this.field2653 = Class4096.method12341(this.field2651);
+        this.field2652 = Class9546.method35651(class51.method319("Page"), 0, this.field2653 - 1);
+    }
+    
+    @Override
+    public Class51 method2180(final Class51 class51) {
+        super.method2180(class51);
+        if (!this.method2168().method27620()) {
+            class51.method295("Book", this.method2168().method27627(new Class51()));
+            class51.method298("Page", this.field2652);
+        }
+        return class51;
+    }
+    
+    @Override
+    public void method2164() {
+        this.method2170(Class8321.field34174);
+    }
+    
+    @Override
+    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+        return new Class3420(n, this.field2649, this.field2650);
+    }
+    
+    @Override
+    public Class2250 method1871() {
+        return new Class2259("container.lectern", new Object[0]);
+    }
+}

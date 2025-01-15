@@ -1,0 +1,121 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import com.google.common.collect.Maps;
+import com.google.common.collect.Iterables;
+import javax.annotation.Nullable;
+import java.util.Objects;
+import java.util.Map;
+
+public class Class3831 extends Class3820
+{
+    private static final Map<Class7499<?>, Class3831> field17386;
+    private final int field17387;
+    private final int field17388;
+    private final Class7499<?> field17389;
+    
+    public Class3831(final Class7499<?> field17389, final int field17390, final int field17391, final Class8959 class8959) {
+        super(class8959);
+        this.field17389 = field17389;
+        this.field17387 = field17390;
+        this.field17388 = field17391;
+        Class3831.field17386.put(field17389, this);
+    }
+    
+    @Override
+    public Class2201 method11694(final Class7075 class7075) {
+        final Class1847 method21654 = class7075.method21654();
+        if (!method21654.field10067) {
+            final Class8321 method21655 = class7075.method21651();
+            final Class354 method21656 = class7075.method21639();
+            final Class179 method21657 = class7075.method21648();
+            final Class7096 method21658 = method21654.method6701(method21656);
+            if (method21658.method21696() == Class7521.field29290) {
+                final Class436 method21659 = method21654.method6727(method21656);
+                if (method21659 instanceof Class494) {
+                    ((Class494)method21659).method2509().method13884(this.method11773(method21655.method27657()));
+                    method21659.method2161();
+                    method21654.method6693(method21656, method21658, method21658, 3);
+                    method21655.method27693(1);
+                    return Class2201.field13400;
+                }
+            }
+            Class354 method21660;
+            if (!method21658.method21727(method21654, method21656).method24540()) {
+                method21660 = method21656.method1149(method21657);
+            }
+            else {
+                method21660 = method21656;
+            }
+            if (this.method11773(method21655.method27657()).method23356(method21654, method21655, class7075.method21652(), method21660, Class2101.field12186, true, !Objects.equals(method21656, method21660) && method21657 == Class179.field512) != null) {
+                method21655.method27693(1);
+            }
+            return Class2201.field13400;
+        }
+        return Class2201.field13400;
+    }
+    
+    @Override
+    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final Class8321 method2715 = class1848.method2715(class1849);
+        final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13326);
+        if (method2716.method21449() != Class2165.field12881) {
+            return Class9355.method34676(method2715);
+        }
+        if (class1847.field10067) {
+            return Class9355.method34674(method2715);
+        }
+        final Class7005 class1850 = (Class7005)method2716;
+        final Class354 method2717 = class1850.method21447();
+        if (!(class1847.method6701(method2717).method21696() instanceof Class3859)) {
+            return Class9355.method34676(method2715);
+        }
+        if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2717, class1850.method21448(), method2715)) {
+            return Class9355.method34677(method2715);
+        }
+        if (this.method11773(method2715.method27657()).method23356(class1847, method2715, class1848, method2717, Class2101.field12186, false, false) != null) {
+            if (!class1848.field3025.field27304) {
+                method2715.method27693(1);
+            }
+            class1848.method2859(Class8276.field33981.method8449(this));
+            return Class9355.method34674(method2715);
+        }
+        return Class9355.method34676(method2715);
+    }
+    
+    public boolean method11769(final Class51 class51, final Class7499<?> b) {
+        return Objects.equals(this.method11773(class51), b);
+    }
+    
+    public int method11770(final int n) {
+        return (n != 0) ? this.field17388 : this.field17387;
+    }
+    
+    @Nullable
+    public static Class3831 method11771(final Class7499<?> class7499) {
+        return Class3831.field17386.get(class7499);
+    }
+    
+    public static Iterable<Class3831> method11772() {
+        return Iterables.unmodifiableIterable((Iterable)Class3831.field17386.values());
+    }
+    
+    public Class7499<?> method11773(final Class51 class51) {
+        if (class51 != null) {
+            if (class51.method316("EntityTag", 10)) {
+                final Class51 method327 = class51.method327("EntityTag");
+                if (method327.method316("id", 8)) {
+                    return Class7499.method23355(method327.method323("id")).orElse(this.field17389);
+                }
+            }
+        }
+        return this.field17389;
+    }
+    
+    static {
+        field17386 = Maps.newIdentityHashMap();
+    }
+}

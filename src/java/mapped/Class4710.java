@@ -1,0 +1,366 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import org.apache.logging.log4j.LogManager;
+import javax.annotation.Nullable;
+import java.util.Iterator;
+import com.mojang.authlib.GameProfile;
+import com.google.common.collect.Lists;
+import java.util.UUID;
+import java.util.List;
+import org.apache.logging.log4j.Logger;
+
+public abstract class Class4710<T extends Class511, M extends Class5845<T>> extends Class4703<T> implements Class4778<T, M>
+{
+    private static final Logger field20300;
+    public M field20301;
+    public final List<Class1799<T, M>> field20302;
+    public Class511 field20303;
+    public float field20304;
+    public float field20305;
+    public float field20306;
+    public float field20307;
+    public float field20308;
+    public float field20309;
+    private boolean field20310;
+    private boolean field20311;
+    public static final boolean field20312;
+    public UUID field20313;
+    
+    public Class4710(final Class8551 class8551, final M field20301, final float field20302) {
+        super(class8551);
+        this.field20302 = Lists.newArrayList();
+        this.field20313 = UUID.randomUUID();
+        this.field20301 = field20301;
+        this.field20284 = field20302;
+        this.field20310 = (this.field20301 instanceof Class5880);
+    }
+    
+    public final boolean method13978(final Class1799<T, M> class1799) {
+        return this.field20302.add(class1799);
+    }
+    
+    @Override
+    public M method13979() {
+        return this.field20301;
+    }
+    
+    public void method13980(final T field20303, final float n, final float f, final Class7351 class7351, final Class7807 class7352, final int n2) {
+        if (!Class9570.field41413.method22619() || !Class9570.method35840(Class9570.field41413, field20303, this, f, class7351, class7352, n2)) {
+            if (Class4710.field20312) {
+                field20303.field2946 = 1.0f;
+            }
+            class7351.method22567();
+            this.field20301.field23955 = this.method13986(field20303, f);
+            this.field20301.field23956 = field20303.method1805();
+            if (Class9570.field41255.method22605()) {
+                final Class5845<T> field20304 = this.field20301;
+                boolean field20305 = false;
+                Label_0425: {
+                    if (field20303.method1805()) {
+                        if (field20303.method1920() != null) {
+                            if (Class9570.method35820(field20303.method1920(), Class9570.field41255, new Object[0])) {
+                                field20305 = true;
+                                break Label_0425;
+                            }
+                        }
+                    }
+                    field20305 = false;
+                }
+                field20304.field23956 = field20305;
+            }
+            this.field20301.field23957 = field20303.method2625();
+            float method35706 = Class9546.method35706(f, field20303.field2952, field20303.field2951);
+            final float method35707 = Class9546.method35706(f, field20303.field2954, field20303.field2953);
+            float n3 = method35707 - method35706;
+            if (this.field20301.field23956) {
+                if (field20303.method1920() instanceof Class511) {
+                    final Class511 class7353 = (Class511)field20303.method1920();
+                    float method35708 = Class9546.method35668(method35707 - Class9546.method35706(f, class7353.field2952, class7353.field2951));
+                    if (method35708 < -85.0f) {
+                        method35708 = -85.0f;
+                    }
+                    if (method35708 >= 85.0f) {
+                        method35708 = 85.0f;
+                    }
+                    method35706 = method35707 - method35708;
+                    if (method35708 * method35708 > 2500.0f) {
+                        method35706 += method35708 * 0.2f;
+                    }
+                    n3 = method35707 - method35706;
+                }
+            }
+            final Class5729 class7354 = new Class5729(method35706, method35707, n3, Class9546.method35700(f, field20303.field2402, field20303.field2400), f, field20303);
+            Class9463.method35173().method35188().method21097(class7354);
+            if (class7354.method16962()) {
+                class7351.method22568();
+                return;
+            }
+            final float method35709 = class7354.method17007();
+            class7354.method17008();
+            final float method35710 = class7354.method17009();
+            final float method35711 = class7354.method17010();
+            if (field20303.method1654() == Class290.field1665) {
+                final Class179 method35712 = field20303.method2788();
+                if (method35712 != null) {
+                    final float n4 = field20303.method1891(Class290.field1663) - 0.1f;
+                    class7351.method22564(-method35712.method785() * n4, 0.0, -method35712.method787() * n4);
+                }
+            }
+            final float method35713 = this.method13987(field20303, f);
+            this.method13985(field20303, class7351, method35713, method35709, f);
+            class7351.method22565(-1.0f, -1.0f, 1.0f);
+            this.method13990(field20303, class7351, f);
+            class7351.method22564(0.0, -1.5010000467300415, 0.0);
+            float method35714 = 0.0f;
+            float field20306 = 0.0f;
+            if (!field20303.method1805()) {
+                if (field20303.method1768()) {
+                    method35714 = Class9546.method35700(f, field20303.field2945, field20303.field2946);
+                    field20306 = field20303.field2947 - field20303.field2946 * (1.0f - f);
+                    if (field20303.method2625()) {
+                        field20306 *= 3.0f;
+                    }
+                    if (method35714 > 1.0f) {
+                        method35714 = 1.0f;
+                    }
+                }
+            }
+            this.field20301.method17558(field20303, field20306, method35714, f);
+            this.field20301.method17557(field20303, field20306, method35714, method35713, method35710, method35711);
+            if (Class8906.method31391()) {
+                this.field20303 = field20303;
+                this.field20304 = field20306;
+                this.field20305 = method35714;
+                this.field20306 = method35713;
+                this.field20307 = method35710;
+                this.field20308 = method35711;
+                this.field20309 = f;
+            }
+            final boolean method35715 = this.method13983(field20303);
+            final boolean b = !method35715 && !field20303.method1824(Class869.method5277().field4684);
+            class7354.method17005(Class1953.field10633);
+            Class9463.method35173().method35188().method21097(class7354);
+            Class6332 class7355;
+            if (!class7354.method17019() && field20303 instanceof Class755) {
+                class7355 = this.method13981((T)new Class755(Class869.method5277().field4683, new GameProfile(this.field20313, "Steve")), method35715, b);
+            }
+            else {
+                class7355 = this.method13981(field20303, method35715, b);
+            }
+            if (class7355 != null) {
+                final Class4150 method35716 = class7352.method25214(class7355);
+                final int method35717 = method13982(field20303, this.method13989(field20303, f));
+                if (Class8880.method31235()) {
+                    Class8880.method31237();
+                }
+                if (this.field20310) {
+                    Class8726.method30059();
+                }
+                this.field20301.method17564(class7351, method35716, n2, method35717, 1.0f, 1.0f, 1.0f, b ? 0.15f : 1.0f);
+                if (this.field20310) {
+                    Class8726.method30060();
+                }
+                if (Class8880.method31235()) {
+                    if (Class8880.method31239()) {
+                        this.field20310 = true;
+                        Class8880.method31240();
+                        Class8726.method30059();
+                        this.field20301.method17564(class7351, method35716, n2, method35717, 1.0f, 1.0f, 1.0f, b ? 0.15f : 1.0f);
+                        Class8726.method30060();
+                        Class8880.method31241();
+                    }
+                    Class8880.method31242();
+                }
+            }
+            if (!field20303.method1639()) {
+                if (class7354.method17017()) {
+                    for (final Class1799 class7356 : this.field20302) {
+                        if (Class8880.method31235()) {
+                            Class8880.method31237();
+                        }
+                        if (this.field20311) {
+                            Class8726.method30059();
+                        }
+                        class7356.method6554(class7351, class7352, n2, field20303, field20306, method35714, f, method35713, method35710, method35711);
+                        if (this.field20311) {
+                            Class8726.method30060();
+                        }
+                        if (!Class8880.method31235()) {
+                            continue;
+                        }
+                        if (Class8880.method31239()) {
+                            this.field20311 = true;
+                            Class8880.method31240();
+                            Class8726.method30059();
+                            class7356.method6554(class7351, class7352, n2, field20303, field20306, method35714, f, method35713, method35710, method35711);
+                            Class8726.method30060();
+                            Class8880.method31241();
+                        }
+                        Class8880.method31242();
+                    }
+                }
+            }
+            if (Class8906.method31391()) {
+                this.field20303 = null;
+            }
+            class7354.method17005(Class1953.field10634);
+            Class9463.method35173().method35188().method21097(class7354);
+            class7351.method22568();
+            super.method13951(field20303, n, f, class7351, class7352, n2);
+            if (Class9570.field41415.method22619()) {
+                Class9570.method35840(Class9570.field41415, field20303, this, f, class7351, class7352, n2);
+            }
+        }
+    }
+    
+    @Nullable
+    public Class6332 method13981(final T t, final boolean b, final boolean b2) {
+        final Class1932 method13950 = this.method13950(t);
+        if (b2) {
+            return Class6332.method18773(method13950);
+        }
+        if (!b) {
+            return t.method1821() ? Class6332.method18783(method13950) : null;
+        }
+        return this.field20301.method17647(method13950);
+    }
+    
+    public static int method13982(final Class511 class511, final float n) {
+        return Class1904.method7387(Class1904.method7385(n), Class1904.method7386(class511.field2938 > 0 || class511.field2941 > 0));
+    }
+    
+    public boolean method13983(final T t) {
+        return !t.method1823();
+    }
+    
+    private static float method13984(final Class179 class179) {
+        switch (Class9538.field41054[class179.ordinal()]) {
+            case 1: {
+                return 90.0f;
+            }
+            case 2: {
+                return 0.0f;
+            }
+            case 3: {
+                return 270.0f;
+            }
+            case 4: {
+                return 180.0f;
+            }
+            default: {
+                return 0.0f;
+            }
+        }
+    }
+    
+    public void method13985(final T t, final Class7351 class7351, final float n, final float n2, final float n3) {
+        final Class290 method1654 = t.method1654();
+        if (method1654 != Class290.field1665) {
+            class7351.method22566(Class9138.field38718.method33328(180.0f - n2));
+        }
+        if (t.field2941 <= 0) {
+            if (!t.method2744()) {
+                if (method1654 != Class290.field1665) {
+                    if (t.method1874() || t instanceof Class512) {
+                        final String method1655 = Class2116.method8259(t.method1841().getString());
+                        if ("Dinnerbone".equals(method1655) || "Grumm".equals(method1655)) {
+                            if (!(t instanceof Class512) || ((Class512)t).method2895(Class189.field610)) {
+                                class7351.method22564(0.0, t.method1931() + 0.1f, 0.0);
+                                class7351.method22566(Class9138.field38720.method33328(180.0f));
+                            }
+                        }
+                    }
+                }
+                else {
+                    final Class179 method1656 = t.method2788();
+                    class7351.method22566(Class9138.field38718.method33328((method1656 == null) ? n2 : method13984(method1656)));
+                    class7351.method22566(Class9138.field38720.method33328(this.method13988(t)));
+                    class7351.method22566(Class9138.field38718.method33328(270.0f));
+                }
+            }
+            else {
+                class7351.method22566(Class9138.field38716.method33328(-90.0f - t.field2400));
+                class7351.method22566(Class9138.field38718.method33328((t.field2424 + n3) * -75.0f));
+            }
+        }
+        else {
+            float method1657 = Class9546.method35640((t.field2941 + n3 - 1.0f) / 20.0f * 1.6f);
+            if (method1657 > 1.0f) {
+                method1657 = 1.0f;
+            }
+            class7351.method22566(Class9138.field38720.method33328(method1657 * this.method13988(t)));
+        }
+    }
+    
+    public float method13986(final T t, final float n) {
+        return t.method2748(n);
+    }
+    
+    public float method13987(final T t, final float n) {
+        return t.field2424 + n;
+    }
+    
+    public float method13988(final T t) {
+        return 90.0f;
+    }
+    
+    public float method13989(final T t, final float n) {
+        return 0.0f;
+    }
+    
+    public void method13990(final T t, final Class7351 class7351, final float n) {
+    }
+    
+    public boolean method13991(final T t) {
+        final Class5749 class5749 = new Class5749(t);
+        Class9463.method35173().method35188().method21097(class5749);
+        if (class5749.method16962()) {
+            return false;
+        }
+        final double method28715 = this.field20283.method28715(t);
+        final float n = t.method1812() ? 32.0f : 64.0f;
+        if (method28715 >= n * n) {
+            return false;
+        }
+        final Class869 method28716 = Class869.method5277();
+        final Class756 field4684 = method28716.field4684;
+        final boolean b = !t.method1824(field4684);
+        if (t != field4684) {
+            final Class6750 method28717 = t.method1825();
+            final Class6750 method28718 = field4684.method1825();
+            if (method28717 != null) {
+                switch (Class9538.field41055[method28717.method20554().ordinal()]) {
+                    case 1: {
+                        return b;
+                    }
+                    case 2: {
+                        return false;
+                    }
+                    case 3: {
+                        return (method28718 == null) ? b : (method28717.method20565(method28718) && (method28717.method20552() || b));
+                    }
+                    case 4: {
+                        return (method28718 == null) ? b : (!method28717.method20565(method28718) && b);
+                    }
+                    default: {
+                        return true;
+                    }
+                }
+            }
+        }
+        return Class869.method5270() && t != method28716.method5303() && b && !t.method1806();
+    }
+    
+    public List<Class1799<T, M>> method13992() {
+        return this.field20302;
+    }
+    
+    static {
+        field20300 = LogManager.getLogger();
+        field20312 = Boolean.getBoolean("animate.model.living");
+    }
+}

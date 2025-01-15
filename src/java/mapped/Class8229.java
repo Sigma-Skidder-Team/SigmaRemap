@@ -1,0 +1,82 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.Map;
+import com.google.common.collect.ImmutableMap;
+import com.mojang.datafixers.types.DynamicOps;
+import java.util.ArrayList;
+import com.google.common.collect.Lists;
+import java.util.List;
+import java.util.Random;
+import com.mojang.datafixers.Dynamic;
+
+public class Class8229 extends Class8228
+{
+    private final Class8530<?, ?> field33792;
+    private final Class51 field33793;
+    
+    @Deprecated
+    public Class8229(final Class8530<?, ?> class8530) {
+        this(class8530, Class261.field1247);
+    }
+    
+    public Class8229(final Class8530<?, ?> field33792, final Class261 class261) {
+        super(class261);
+        this.field33792 = field33792;
+        this.field33793 = this.method27266();
+    }
+    
+    public <T> Class8229(final Dynamic<T> dynamic) {
+        super(dynamic);
+        this.field33792 = Class8530.method28614((com.mojang.datafixers.Dynamic<Object>)dynamic.get("feature").orElseEmptyMap());
+        this.field33793 = this.method27266();
+    }
+    
+    public Class51 method27266() {
+        final Class51 class51 = new Class51();
+        class51.method306("target_pool", "minecraft:empty");
+        class51.method306("attachement_type", "minecraft:bottom");
+        class51.method306("final_state", "minecraft:air");
+        return class51;
+    }
+    
+    public Class354 method27267(final Class1795 class1795, final Class2052 class1796) {
+        return Class354.field2173;
+    }
+    
+    @Override
+    public List<Class9038> method27253(final Class1795 class1795, final Class354 class1796, final Class2052 class1797, final Random random) {
+        final ArrayList arrayList = Lists.newArrayList();
+        arrayList.add(new Class9038(class1796, ((Class7097<O, Class7096>)Class7521.field29821.method11878()).method21773((Class7111<Comparable>)Class3839.field17415, Class179.field511), this.field33793));
+        return arrayList;
+    }
+    
+    @Override
+    public Class6997 method27254(final Class1795 class1795, final Class354 class1796, final Class2052 class1797) {
+        final Class354 method27267 = this.method27267(class1795, class1797);
+        return new Class6997(class1796.method1074(), class1796.method1075(), class1796.method1076(), class1796.method1074() + method27267.method1074(), class1796.method1075() + method27267.method1075(), class1796.method1076() + method27267.method1076());
+    }
+    
+    @Override
+    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final Class354 class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
+        return this.field33792.method28613(class1796, (Class6346<? extends Class7065>)class1797, random, class1798);
+    }
+    
+    @Override
+    public <T> Dynamic<T> method27258(final DynamicOps<T> dynamicOps) {
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("feature"), this.field33792.method28612((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
+    }
+    
+    @Override
+    public Class7755 method27257() {
+        return Class7755.field31690;
+    }
+    
+    @Override
+    public String toString() {
+        return "Feature[" + Class90.field215.method503((Class4535<?>)this.field33792.field35804) + "]";
+    }
+}

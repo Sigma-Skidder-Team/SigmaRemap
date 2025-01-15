@@ -1,0 +1,159 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package mapped;
+
+import java.util.function.Predicate;
+import java.util.Random;
+import java.util.function.ToDoubleFunction;
+import javax.annotation.Nullable;
+
+public class Class7775
+{
+    @Nullable
+    public static Class5487 method24900(final Class787 class787, final int n, final int n2) {
+        return method24910(class787, n, n2, 0, null, true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
+    }
+    
+    @Nullable
+    public static Class5487 method24901(final Class787 class787, final int n, final int n2, final int n3, final Class5487 class788, final double n4) {
+        return method24910(class787, n, n2, n3, class788, true, n4, class787::method4345, true, 0, 0, false);
+    }
+    
+    @Nullable
+    public static Class5487 method24902(final Class787 class787, final int n, final int n2) {
+        return method24903(class787, n, n2, class787::method4345);
+    }
+    
+    @Nullable
+    public static Class5487 method24903(final Class787 class787, final int n, final int n2, final ToDoubleFunction<Class354> toDoubleFunction) {
+        return method24910(class787, n, n2, 0, null, false, 0.0, toDoubleFunction, true, 0, 0, true);
+    }
+    
+    @Nullable
+    public static Class5487 method24904(final Class787 class787, final int n, final int n2, final Class5487 class788, final float n3, final int n4, final int n5) {
+        return method24910(class787, n, n2, 0, class788, false, n3, class787::method4345, true, n4, n5, true);
+    }
+    
+    @Nullable
+    public static Class5487 method24905(final Class787 class787, final int n, final int n2, final Class5487 class788) {
+        return method24910(class787, n, n2, 0, class788.method16742(class787.method1938(), class787.method1941(), class787.method1945()), true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
+    }
+    
+    @Nullable
+    public static Class5487 method24906(final Class787 class787, final int n, final int n2, final Class5487 class788, final double n3) {
+        return method24910(class787, n, n2, 0, class788.method16742(class787.method1938(), class787.method1941(), class787.method1945()), true, n3, class787::method4345, false, 0, 0, true);
+    }
+    
+    @Nullable
+    public static Class5487 method24907(final Class787 class787, final int n, final int n2, final int n3, final Class5487 class788, final double n4) {
+        return method24910(class787, n, n2, n3, class788.method16742(class787.method1938(), class787.method1941(), class787.method1945()), false, n4, class787::method4345, true, 0, 0, false);
+    }
+    
+    @Nullable
+    public static Class5487 method24908(final Class787 class787, final int n, final int n2, final Class5487 class788) {
+        return method24910(class787, n, n2, 0, class787.method1934().method16741(class788), true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
+    }
+    
+    @Nullable
+    public static Class5487 method24909(final Class787 class787, final int n, final int n2, final Class5487 class788) {
+        return method24910(class787, n, n2, 0, class787.method1934().method16741(class788), false, 1.5707963705062866, class787::method4345, true, 0, 0, true);
+    }
+    
+    @Nullable
+    private static Class5487 method24910(final Class787 class787, final int n, final int n2, final int n3, final Class5487 class788, final boolean b, final double n4, final ToDoubleFunction<Class354> toDoubleFunction, final boolean b2, final int n5, final int n6, final boolean b3) {
+        final Class7746 method4150 = class787.method4150();
+        final Random method4151 = class787.method2633();
+        final boolean b4 = class787.method4201() && class787.method4199().method1082(class787.method1934(), class787.method4200() + n + 1.0);
+        boolean b5 = false;
+        double n7 = Double.NEGATIVE_INFINITY;
+        Class354 class789 = new Class354(class787);
+        for (int i = 0; i < 10; ++i) {
+            final Class354 method4152 = method24911(method4151, n, n2, n3, class788, n4);
+            if (method4152 != null) {
+                int method4153 = method4152.method1074();
+                final int method4154 = method4152.method1075();
+                int method4155 = method4152.method1076();
+                if (class787.method4201()) {
+                    if (n > 1) {
+                        final Class354 method4156 = class787.method4199();
+                        if (class787.method1938() <= method4156.method1074()) {
+                            method4153 += method4151.nextInt(n / 2);
+                        }
+                        else {
+                            method4153 -= method4151.nextInt(n / 2);
+                        }
+                        if (class787.method1945() <= method4156.method1076()) {
+                            method4155 += method4151.nextInt(n / 2);
+                        }
+                        else {
+                            method4155 -= method4151.nextInt(n / 2);
+                        }
+                    }
+                }
+                Class354 method4157 = new Class354(method4153 + class787.method1938(), method4154 + class787.method1941(), method4155 + class787.method1945());
+                if (method4157.method1075() >= 0) {
+                    if (method4157.method1075() <= class787.field2391.method6986()) {
+                        if (!b4 || class787.method4197(method4157)) {
+                            if (!b3 || method4150.method24739(method4157)) {
+                                if (b2) {
+                                    method4157 = method24912(method4157, method4151.nextInt(n5 + 1) + n6, class787.field2391.method6986(), class791 -> class790.field2391.method6701(class791).method21697().method26439());
+                                }
+                                if (b || !class787.field2391.method6702(method4157).method21793(Class7324.field28319)) {
+                                    if (class787.method4144(Class4651.method13914(class787.field2391, method4157.method1074(), method4157.method1075(), method4157.method1076())) == 0.0f) {
+                                        final double applyAsDouble = toDoubleFunction.applyAsDouble(method4157);
+                                        if (applyAsDouble > n7) {
+                                            n7 = applyAsDouble;
+                                            class789 = method4157;
+                                            b5 = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return (!b5) ? null : new Class5487(class789);
+    }
+    
+    @Nullable
+    private static Class354 method24911(final Random random, final int n, final int n2, final int n3, final Class5487 class5487, final double n4) {
+        if (class5487 == null || n4 >= 3.141592653589793) {
+            return new Class354(random.nextInt(2 * n + 1) - n, random.nextInt(2 * n2 + 1) - n2 + n3, random.nextInt(2 * n + 1) - n);
+        }
+        final double n5 = Class9546.method35693(class5487.field22772, class5487.field22770) - 1.5707963705062866 + (2.0f * random.nextFloat() - 1.0f) * n4;
+        final double n6 = Math.sqrt(random.nextDouble()) * Class9546.field41094 * n;
+        final double a = -n6 * Math.sin(n5);
+        final double a2 = n6 * Math.cos(n5);
+        if (Math.abs(a) <= n && Math.abs(a2) <= n) {
+            return new Class354(a, random.nextInt(2 * n2 + 1) - n2 + n3, a2);
+        }
+        return null;
+    }
+    
+    public static Class354 method24912(final Class354 class354, final int i, final int n, final Predicate<Class354> predicate) {
+        if (i < 0) {
+            throw new IllegalArgumentException("aboveSolidAmount was " + i + ", expected >= 0");
+        }
+        if (predicate.test(class354)) {
+            Class354 class355;
+            for (class355 = class354.method1137(); class355.method1075() < n && predicate.test(class355); class355 = class355.method1137()) {}
+            Class354 class356;
+            Class354 method1137;
+            for (class356 = class355; class356.method1075() < n; class356 = method1137) {
+                if (class356.method1075() - class355.method1075() >= i) {
+                    break;
+                }
+                method1137 = class356.method1137();
+                if (predicate.test(method1137)) {
+                    break;
+                }
+            }
+            return class356;
+        }
+        return class354;
+    }
+}
