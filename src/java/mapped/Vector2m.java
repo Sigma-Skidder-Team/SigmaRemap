@@ -38,8 +38,8 @@ public class Vector2m {
       return new Vector2m(x, this.y);
    }
 
-   public Vector2m withX(int y) {
-      return new Vector2m((double)y, this.y);
+   public Vector2m withX(int x) {
+      return new Vector2m(x, this.y);
    }
 
    public double getY() {
@@ -55,7 +55,7 @@ public class Vector2m {
    }
 
    public Vector2m withY(int y) {
-      return new Vector2m(this.x, (double)y);
+      return new Vector2m(this.x, y);
    }
 
    public Vector2m add(Vector2m of) {
@@ -74,9 +74,9 @@ public class Vector2m {
       double x = this.x;
       double y = this.y;
 
-      for (Vector2m var11 : vectorsIn) {
-         x += var11.x;
-         y += var11.y;
+      for (Vector2m vec : vectorsIn) {
+         x += vec.x;
+         y += vec.y;
       }
 
       return new Vector2m(x, y);
