@@ -258,9 +258,9 @@ public class Class3279 extends Class3167
         if (class355.field25240 != null) {
             new StringBuilder().append(class355.field25240.field34176).append(" ").append(class355.field25240.method27664()).toString();
         }
-        final float n2 = (float)(class354.getX() - Class3279.field15514.field4644.method5833().method18161().method16760() + 0.5);
-        final float n3 = (float)(class354.getY() - Class3279.field15514.field4644.method5833().method18161().method16761() + 1.0);
-        final float n4 = (float)(class354.getZ() - Class3279.field15514.field4644.method5833().method18161().method16762() + 0.5);
+        final float n2 = (float)(class354.getX() - Class3279.field15514.field4644.method5833().method18161().getX() + 0.5);
+        final float n3 = (float)(class354.getY() - Class3279.field15514.field4644.method5833().method18161().getY() + 1.0);
+        final float n4 = (float)(class354.getZ() - Class3279.field15514.field4644.method5833().method18161().getZ() + 0.5);
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -323,9 +323,9 @@ public class Class3279 extends Class3167
             }
         }
         if (method9887.length() != 0) {
-            final float n5 = (float)(n - Class3279.field15514.field4644.method5833().method18161().method16760());
-            final float n6 = (float)(n2 - Class3279.field15514.field4644.method5833().method18161().method16761());
-            final float n7 = (float)(n3 - Class3279.field15514.field4644.method5833().method18161().method16762());
+            final float n5 = (float)(n - Class3279.field15514.field4644.method5833().method18161().getX());
+            final float n6 = (float)(n2 - Class3279.field15514.field4644.method5833().method18161().getY());
+            final float n7 = (float)(n3 - Class3279.field15514.field4644.method5833().method18161().getZ());
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);
             GL11.glEnable(2848);

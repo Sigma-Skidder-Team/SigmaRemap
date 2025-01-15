@@ -111,8 +111,8 @@ public class Class388 extends Class387 implements Class389
     private static double method1312(final Class7859 class7859, final Entity class7860) {
         final double n = class7859.field32290 * 16 + 8;
         final double n2 = class7859.field32291 * 16 + 8;
-        final double n3 = n - class7860.method1938();
-        final double n4 = n2 - class7860.method1945();
+        final double n3 = n - class7860.getPosX();
+        final double n4 = n2 - class7860.getPosZ();
         return n3 * n3 + n4 * n4;
     }
     
@@ -120,8 +120,8 @@ public class Class388 extends Class387 implements Class389
         int n;
         int n2;
         if (!b) {
-            n = MathHelper.floor(class7860.method1938() / 16.0);
-            n2 = MathHelper.floor(class7860.method1945() / 16.0);
+            n = MathHelper.floor(class7860.getPosX() / 16.0);
+            n2 = MathHelper.floor(class7860.getPosZ() / 16.0);
         }
         else {
             final Class353 method2961 = class7860.method2961();
@@ -716,8 +716,8 @@ public class Class388 extends Class387 implements Class389
     public void method1348(final Class513 class513, final boolean b) {
         final boolean method1347 = this.method1347(class513);
         final boolean method1348 = this.field2270.method27356(class513);
-        final int n = MathHelper.floor(class513.method1938()) >> 4;
-        final int n2 = MathHelper.floor(class513.method1945()) >> 4;
+        final int n = MathHelper.floor(class513.getPosX()) >> 4;
+        final int n2 = MathHelper.floor(class513.getPosZ()) >> 4;
         if (!b) {
             final Class353 method1349 = class513.method2961();
             this.field2270.method27353(method1349.method1115().method25422(), class513);
@@ -755,8 +755,8 @@ public class Class388 extends Class387 implements Class389
                 class514.method34988(this.field2254.method6840());
             }
         }
-        final int n = MathHelper.floor(class513.method1938()) >> 4;
-        final int n2 = MathHelper.floor(class513.method1945()) >> 4;
+        final int n = MathHelper.floor(class513.getPosX()) >> 4;
+        final int n2 = MathHelper.floor(class513.getPosZ()) >> 4;
         final Class353 method2961 = class513.method2961();
         final Class353 method2962 = Class353.method1091(class513);
         final long method2963 = method2961.method1115().method25422();

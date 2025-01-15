@@ -48,11 +48,11 @@ public class Class3590 extends Class3587
             this.field16719.method4364();
             this.field16722.method4364();
             class803.method4354(-24000);
-            class803.method1730(this.field16719.method1938(), this.field16719.method1941(), this.field16719.method1945(), 0.0f, 0.0f);
+            class803.method1730(this.field16719.getPosX(), this.field16719.getPosY(), this.field16719.getPosZ(), 0.0f, 0.0f);
             this.field16721.method6886(class803);
             this.field16721.method6761(this.field16719, (byte)18);
             if (this.field16721.method6765().method31216(Class8878.field37319)) {
-                this.field16721.method6886(new Class508(this.field16721, this.field16719.method1938(), this.field16719.method1941(), this.field16719.method1945(), this.field16719.method2633().nextInt(7) + 1));
+                this.field16721.method6886(new Class508(this.field16721, this.field16719.getPosX(), this.field16719.getPosY(), this.field16719.getPosZ(), this.field16719.method2633().nextInt(7) + 1));
             }
         }
     }

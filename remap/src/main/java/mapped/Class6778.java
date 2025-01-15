@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 import java.util.List;
@@ -92,7 +93,7 @@ public class Class6778
     }
     
     public static void method20692(final Vector3f class9138) {
-        class9138.method33317(method20693(class9138.method33311()), method20693(class9138.method33312()), method20693(class9138.method33313()));
+        class9138.set(method20693(class9138.getX()), method20693(class9138.getY()), method20693(class9138.getZ()));
     }
     
     private static float method20693(final float n) {
@@ -102,7 +103,7 @@ public class Class6778
         return (n > 0.999999f && n < 1.000001f) ? 1.0f : n;
     }
     
-    public static Class6221 method20694(final Class6221 class6221, final Class2180 class6222, final BlockPos class6223) {
+    public static AxisAlignedBB method20694(final AxisAlignedBB class6221, final Class2180 class6222, final BlockPos class6223) {
         final long n = (long)(class6223.getX() * 3129871) ^ class6223.getZ() * 116129781L;
         final long n2 = n * n * 42317861L + n * 11L;
         final double n3 = ((n2 >> 16 & 0xFL) / 15.0f - 0.5) * 0.5;

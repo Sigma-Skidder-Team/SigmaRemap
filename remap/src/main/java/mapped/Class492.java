@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.UUID;
 import java.util.List;
@@ -168,10 +169,10 @@ public class Class492 extends Class436 implements Class439
         final int method1074 = this.field2657.getX();
         final int method1075 = this.field2657.getY();
         final int method1076 = this.field2657.getZ();
-        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>)Class512.class, new Class6221(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>)Class512.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
         if (!method1077.isEmpty()) {
             for (final Class512 class512 : method1077) {
-                if (!this.field2657.method1081(new BlockPos(class512), n)) {
+                if (!this.field2657.withinDistance(new BlockPos(class512), n)) {
                     continue;
                 }
                 if (!class512.method1709()) {
@@ -190,7 +191,7 @@ public class Class492 extends Class436 implements Class439
                 this.field2833 = null;
             }
             else if (this.field2832 != null) {
-                if (!this.field2832.method1768() || !this.field2657.method1081(new BlockPos(this.field2832), 8.0)) {
+                if (!this.field2832.method1768() || !this.field2657.withinDistance(new BlockPos(this.field2832), 8.0)) {
                     this.field2832 = null;
                 }
             }
@@ -205,7 +206,7 @@ public class Class492 extends Class436 implements Class439
             this.field2832 = null;
         }
         if (this.field2832 != null) {
-            this.field2656.method6706(null, this.field2832.method1938(), this.field2832.method1941(), this.field2832.method1945(), Class8520.field35093, Class286.field1582, 1.0f, 1.0f);
+            this.field2656.method6706(null, this.field2832.getPosX(), this.field2832.getPosY(), this.field2832.getPosZ(), Class8520.field35093, Class286.field1582, 1.0f, 1.0f);
             this.field2832.method1740(Class7929.field32576, 4.0f);
         }
         if (field2832 != this.field2832) {
@@ -228,11 +229,11 @@ public class Class492 extends Class436 implements Class439
         }
     }
     
-    private Class6221 method2491() {
+    private AxisAlignedBB method2491() {
         final int method1074 = this.field2657.getX();
         final int method1075 = this.field2657.getY();
         final int method1076 = this.field2657.getZ();
-        return new Class6221(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(8.0);
+        return new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(8.0);
     }
     
     @Nullable
@@ -253,13 +254,13 @@ public class Class492 extends Class436 implements Class439
             final float n3 = -2.0f + field10062.nextFloat();
             final float n4 = -0.5f + field10062.nextFloat();
             final BlockPos method1136 = class5488.method1136(this.field2657);
-            final Vec3d method1137 = new Vec3d(n2, n3, n4).method16744(method1136.getX(), method1136.getY(), method1136.getZ());
-            this.field2656.method6709(Class8432.field34651, class5487.field22770, class5487.field22771, class5487.field22772, method1137.field22770, method1137.field22771, method1137.field22772);
+            final Vec3d method1137 = new Vec3d(n2, n3, n4).add(method1136.getX(), method1136.getY(), method1136.getZ());
+            this.field2656.method6709(Class8432.field34651, class5487.x, class5487.y, class5487.z, method1137.x, method1137.y, method1137.z);
         }
         if (this.field2832 != null) {
-            final Vec3d class5489 = new Vec3d(this.field2832.method1938(), this.field2832.method1944(), this.field2832.method1945());
+            final Vec3d class5489 = new Vec3d(this.field2832.getPosX(), this.field2832.method1944(), this.field2832.getPosZ());
             final Vec3d class5490 = new Vec3d((-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()), -1.0f + field10062.nextFloat() * this.field2832.method1931(), (-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()));
-            this.field2656.method6709(Class8432.field34651, class5489.field22770, class5489.field22771, class5489.field22772, class5490.field22770, class5490.field22771, class5490.field22772);
+            this.field2656.method6709(Class8432.field34651, class5489.x, class5489.y, class5489.z, class5490.x, class5490.y, class5490.z);
         }
     }
     

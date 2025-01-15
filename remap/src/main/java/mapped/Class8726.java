@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Queues;
+import net.minecraft.client.renderer.Matrix4f;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.IntSupplier;
 import java.nio.FloatBuffer;
@@ -467,7 +468,7 @@ public class Class8726
         Class8933.method31643(n, n2, n3);
     }
     
-    public static void method30067(final Class6789 class6789) {
+    public static void method30067(final Matrix4f class6789) {
         method29989(Class8726::method29987);
         Class8933.method31645(class6789);
     }
@@ -686,7 +687,7 @@ public class Class8726
         Class8933.method31573();
     }
     
-    public static void method30107(final Class6789 class6789) {
+    public static void method30107(final Matrix4f class6789) {
         method29989(Class8726::method29987);
         Class8933.method31577(class6789);
     }

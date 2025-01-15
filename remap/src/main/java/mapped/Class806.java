@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import javax.annotation.Nullable;
@@ -177,7 +178,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     private void method4729() {
         this.method4746();
         if (!this.method1696()) {
-            this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35277, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
+            this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35277, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
         }
     }
     
@@ -538,7 +539,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (this.method4723()) {
             if (this.method2625()) {
                 if (!this.method4721()) {
-                    final Class511 method7138 = this.field2391.method7138((Class<? extends Class511>)Class806.class, Class806.field4332, (Class511)this, this.method1938(), this.method1941(), this.method1945(), this.method1886().method18496(16.0));
+                    final Class511 method7138 = this.field2391.method7138((Class<? extends Class511>)Class806.class, Class806.field4332, (Class511)this, this.getPosX(), this.getPosY(), this.getPosZ(), this.method1886().method18496(16.0));
                     if (method7138 != null) {
                         if (this.method1734(method7138) > 4.0) {
                             this.field4113.method24722(method7138, 0);
@@ -709,11 +710,11 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                                         n3 = n2 + (this.method2654(Class9439.field40481).method7908() + 1) * 0.1f;
                                     }
                                     final Vec3d method1935 = this.method1935();
-                                    this.method1937(method1935.field22770, n3, method1935.field22772);
+                                    this.method1937(method1935.x, n3, method1935.z);
                                     this.method4720(true);
                                     this.field2448 = true;
                                     if (field2970 > 0.0f) {
-                                        this.method1936(this.method1935().method16744(-0.4f * MathHelper.sin(this.field2399 * 0.017453292f) * this.field4344, 0.0, 0.4f * MathHelper.cos(this.field2399 * 0.017453292f) * this.field4344));
+                                        this.method1936(this.method1935().add(-0.4f * MathHelper.sin(this.field2399 * 0.017453292f) * this.field4344, 0.0, 0.4f * MathHelper.cos(this.field2399 * 0.017453292f) * this.field4344));
                                         this.method4752();
                                     }
                                     this.field4344 = 0.0f;
@@ -723,21 +724,21 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                         this.field2955 = this.method2732() * 0.1f;
                         if (!this.method1919()) {
                             if (class5488 instanceof Class512) {
-                                this.method1936(Vec3d.field22769);
+                                this.method1936(Vec3d.ZERO);
                             }
                         }
                         else {
                             this.method2733((float)this.method2710(Class8107.field33408).method23950());
-                            super.method2729(new Vec3d(n, class5487.field22771, field2970));
+                            super.method2729(new Vec3d(n, class5487.y, field2970));
                         }
                         if (this.field2404) {
                             this.field4344 = 0.0f;
                             this.method4720(false);
                         }
                         this.field2945 = this.field2946;
-                        final double n4 = this.method1938() - this.field2392;
-                        final double n5 = this.method1945() - this.field2394;
-                        float n6 = MathHelper.method35641(n4 * n4 + n5 * n5) * 4.0f;
+                        final double n4 = this.getPosX() - this.field2392;
+                        final double n5 = this.getPosZ() - this.field2394;
+                        float n6 = MathHelper.sqrt(n4 * n4 + n5 * n5) * 4.0f;
                         if (n6 > 1.0f) {
                             n6 = 1.0f;
                         }
@@ -918,7 +919,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
             final float method35638 = MathHelper.sin(this.field2951 * 0.017453292f);
             final float method35639 = MathHelper.cos(this.field2951 * 0.017453292f);
             final float n = 0.7f * this.field4349;
-            class399.method1656(this.method1938() + n * method35638, this.method1941() + this.method1777() + class399.method1776() + 0.15f * this.field4349, this.method1945() - n * method35639);
+            class399.method1656(this.getPosX() + n * method35638, this.getPosY() + this.method1777() + class399.method1776() + 0.15f * this.field4349, this.getPosZ() - n * method35639);
             if (class399 instanceof Class511) {
                 ((Class511)class399).field2951 = this.field2951;
             }

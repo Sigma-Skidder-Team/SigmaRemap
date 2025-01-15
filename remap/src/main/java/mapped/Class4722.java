@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 
 public class Class4722 extends Class4712<Class851, Class5891<Class851>>

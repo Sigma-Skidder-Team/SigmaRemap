@@ -10,6 +10,7 @@ import java.util.HashMap;
 import com.mojang.datafixers.util.Either;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 import java.util.function.Function;

@@ -112,7 +112,7 @@ public class Class490 extends Class436 implements Class434, Class439
                 final boolean b2 = this.field2811 > 0;
                 if (!b && b2) {
                     this.method2449(Class8520.field35010);
-                    final Iterator<Class513> iterator = this.field2656.method7128((Class<? extends Class513>)Class513.class, new Class6221(method1074, method1075, method1076, method1074, method1075 - 4, method1076).method18495(10.0, 5.0, 10.0)).iterator();
+                    final Iterator<Class513> iterator = this.field2656.method7128((Class<? extends Class513>)Class513.class, new AxisAlignedBB(method1074, method1075, method1076, method1074, method1075 - 4, method1076).method18495(10.0, 5.0, 10.0)).iterator();
                     while (iterator.hasNext()) {
                         Class7770.field31786.method13852(iterator.next(), this);
                     }
@@ -172,7 +172,7 @@ public class Class490 extends Class436 implements Class434, Class439
                     }
                 }
                 final int n2 = (9 + this.field2811 * 2) * 20;
-                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends Class512>)Class512.class, new Class6221(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends Class512>)Class512.class, new AxisAlignedBB(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
                 final Iterator<Entity> iterator = (Iterator<Entity>)method7128.iterator();
                 while (iterator.hasNext()) {
                     iterator.next().method2655(new Class1948(this.field2813, n2, (int)(b ? 1 : 0), true, true));

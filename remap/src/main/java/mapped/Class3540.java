@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public class Class3540 extends Class3446
 {
     private static String[] field16584;
@@ -49,13 +51,13 @@ public class Class3540 extends Class3446
     @Override
     public void method11016() {
         final BlockPos method4466 = Class793.method4466(this.field16585);
-        final boolean method4467 = method4466.method1082(this.field16585.method1934(), 16.0);
+        final boolean method4467 = method4466.withinDistance(this.field16585.method1934(), 16.0);
         if (method4467) {
             ++this.field16588;
         }
         if (this.field16585.method4150().method24731()) {
-            final Class5487 class5487 = new Class5487(method4466);
-            Class5487 class5488 = Class7775.method24906(this.field16585, 16, 3, class5487, 0.3141592741012573);
+            final Vec3d class5487 = new Vec3d(method4466);
+            Vec3d class5488 = Class7775.method24906(this.field16585, 16, 3, class5487, 0.3141592741012573);
             if (class5488 == null) {
                 class5488 = Class7775.method24905(this.field16585, 8, 7, class5487);
             }
@@ -70,7 +72,7 @@ public class Class3540 extends Class3446
                 this.field16587 = true;
                 return;
             }
-            this.field16585.method4150().method24724(class5488.field22770, class5488.field22771, class5488.field22772, this.field16586);
+            this.field16585.method4150().method24724(class5488.x, class5488.y, class5488.z, this.field16586);
         }
     }
 }

@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.client.renderer;
 
 import net.minecraft.util.math.MathHelper;
 
@@ -26,9 +26,9 @@ public final class Quaternion
             n *= 0.017453292f;
         }
         final float method34908 = method34908(n / 2.0f);
-        this.field40292 = class9138.method33311() * method34908;
-        this.field40293 = class9138.method33312() * method34908;
-        this.field40294 = class9138.method33313() * method34908;
+        this.field40292 = class9138.getX() * method34908;
+        this.field40293 = class9138.getY() * method34908;
+        this.field40294 = class9138.getZ() * method34908;
         this.field40295 = method34907(n / 2.0f);
     }
     
@@ -77,52 +77,52 @@ public final class Quaternion
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append("Quaternion[").append(this.method34902()).append(" + ");
-        sb.append(this.method34899()).append("i + ");
-        sb.append(this.method34900()).append("j + ");
-        sb.append(this.method34901()).append("k]");
+        sb.append("Quaternion[").append(this.getW()).append(" + ");
+        sb.append(this.getX()).append("i + ");
+        sb.append(this.getY()).append("j + ");
+        sb.append(this.getZ()).append("k]");
         return sb.toString();
     }
     
-    public float method34899() {
+    public float getX() {
         return this.field40292;
     }
     
-    public float method34900() {
+    public float getY() {
         return this.field40293;
     }
     
-    public float method34901() {
+    public float getZ() {
         return this.field40294;
     }
     
-    public float method34902() {
+    public float getW() {
         return this.field40295;
     }
     
     public void multiply(final Quaternion class9389) {
-        final float method34899 = this.method34899();
-        final float method34900 = this.method34900();
-        final float method34901 = this.method34901();
-        final float method34902 = this.method34902();
-        final float method34903 = class9389.method34899();
-        final float method34904 = class9389.method34900();
-        final float method34905 = class9389.method34901();
-        final float method34906 = class9389.method34902();
+        final float method34899 = this.getX();
+        final float method34900 = this.getY();
+        final float method34901 = this.getZ();
+        final float method34902 = this.getW();
+        final float method34903 = class9389.getX();
+        final float method34904 = class9389.getY();
+        final float method34905 = class9389.getZ();
+        final float method34906 = class9389.getW();
         this.field40292 = method34902 * method34903 + method34899 * method34906 + method34900 * method34905 - method34901 * method34904;
         this.field40293 = method34902 * method34904 - method34899 * method34905 + method34900 * method34906 + method34901 * method34903;
         this.field40294 = method34902 * method34905 + method34899 * method34904 - method34900 * method34903 + method34901 * method34906;
         this.field40295 = method34902 * method34906 - method34899 * method34903 - method34900 * method34904 - method34901 * method34905;
     }
     
-    public void method34904(final float n) {
+    public void multiply(final float n) {
         this.field40292 *= n;
         this.field40293 *= n;
         this.field40294 *= n;
         this.field40295 *= n;
     }
     
-    public void method34905() {
+    public void conjugate() {
         this.field40292 = -this.field40292;
         this.field40293 = -this.field40293;
         this.field40294 = -this.field40294;
@@ -143,8 +143,8 @@ public final class Quaternion
         return (float)Math.sin(n);
     }
     
-    public void method34909() {
-        final float n = this.method34899() * this.method34899() + this.method34900() * this.method34900() + this.method34901() * this.method34901() + this.method34902() * this.method34902();
+    public void normalize() {
+        final float n = this.getX() * this.getX() + this.getY() * this.getY() + this.getZ() * this.getZ() + this.getW() * this.getW();
         if (n <= 1.0E-6f) {
             this.field40292 = 0.0f;
             this.field40293 = 0.0f;
@@ -152,7 +152,7 @@ public final class Quaternion
             this.field40295 = 0.0f;
         }
         else {
-            final float method35694 = MathHelper.method35694(n);
+            final float method35694 = MathHelper.fastInvSqrt(n);
             this.field40292 *= method35694;
             this.field40293 *= method35694;
             this.field40294 *= method35694;

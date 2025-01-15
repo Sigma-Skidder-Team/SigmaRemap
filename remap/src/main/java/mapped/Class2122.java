@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.stream.Collectors;

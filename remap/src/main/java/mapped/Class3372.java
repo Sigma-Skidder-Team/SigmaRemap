@@ -105,7 +105,7 @@ public class Class3372 extends Class3167
                 if (Class6430.method19114()) {
                     if ((this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718)) || this.method9914().method9883("Auto Jump")) {
                         Class3372.field15514.field4684.method2725();
-                        class5717.method16975(Class3372.field15514.field4684.method1935().field22771);
+                        class5717.method16975(Class3372.field15514.field4684.method1935().y);
                         Class7482.method23149(class5717, 0.0);
                     }
                 }

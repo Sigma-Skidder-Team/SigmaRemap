@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public class Class6439 implements Class6438
 {
     private final BlockPos field25566;

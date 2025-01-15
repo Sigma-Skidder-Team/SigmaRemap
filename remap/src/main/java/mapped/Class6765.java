@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public abstract class Class6765
         if (class3641.method11180() != null) {
             string = class3641.method11180().toString();
         }
-        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.method1841().getString(), (Object)string, (Object)class3642.method1643(), (Object)class3642.method1938(), (Object)class3642.method1941(), (Object)class3642.method1945());
+        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.method1841().getString(), (Object)string, (Object)class3642.method1643(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
         final Class8660 method2849 = method2848.method6764();
         this.method20615(class3642, null, method2848);
         final Class5814 class3643 = new Class5814(this.field26562, class3641, class3642);
@@ -103,7 +104,7 @@ public abstract class Class6765
             class3644 = new Class2259("multiplayer.player.joined", new Object[] { class3642.method1871() });
         }
         this.method20619(class3644.method8469(Class2116.field12323));
-        class3643.method17467(class3642.method1938(), class3642.method1941(), class3642.method1945(), class3642.field2399, class3642.field2400);
+        class3643.method17467(class3642.getPosX(), class3642.getPosY(), class3642.getPosZ(), class3642.field2399, class3642.field2400);
         this.field26563.add(class3642);
         this.field26564.put(class3642.method1865(), class3642);
         this.method20586(new Class4330(Class2156.field12803, new Class513[] { class3642 }));
@@ -319,17 +320,17 @@ public abstract class Class6765
             }
             else {
                 final Vec3d class516 = method2857.get();
-                class515.method1730(class516.field22770, class516.field22771, class516.field22772, 0.0f, 0.0f);
+                class515.method1730(class516.x, class516.y, class516.z, 0.0f, 0.0f);
                 class515.method2856(method2854, method2855, false);
             }
         }
-        while (!method2856.method6977(class515) && class515.method1941() < 256.0) {
-            class515.method1656(class515.method1938(), class515.method1941() + 1.0, class515.method1945());
+        while (!method2856.method6977(class515) && class515.getPosY() < 256.0) {
+            class515.method1656(class515.getPosX(), class515.getPosY() + 1.0, class515.getPosZ());
         }
         final Class8660 method2858 = class515.field2391.method6764();
         class515.field3039.method17469(new Class4359(class515.field2452, Class8660.method29535(method2858.method29534()), method2858.method29570(), class515.field3041.method26482()));
         final BlockPos method2859 = method2856.method6758();
-        class515.field3039.method17467(class515.method1938(), class515.method1941(), class515.method1945(), class515.field2399, class515.field2400);
+        class515.field3039.method17467(class515.getPosX(), class515.getPosY(), class515.getPosZ(), class515.field2399, class515.field2400);
         class515.field3039.method17469(new Class4335(method2859));
         class515.field3039.method17469(new Class4315(method2858.method29597(), method2858.method29599()));
         class515.field3039.method17469(new Class4313(class515.field3028, class515.field3027, class515.field3026));
@@ -490,9 +491,9 @@ public abstract class Class6765
             final Class513 class515 = this.field26563.get(i);
             if (class515 != class512) {
                 if (class515.field2452 == class513) {
-                    final double n5 = n - class515.method1938();
-                    final double n6 = n2 - class515.method1941();
-                    final double n7 = n3 - class515.method1945();
+                    final double n5 = n - class515.getPosX();
+                    final double n6 = n2 - class515.getPosY();
+                    final double n7 = n3 - class515.getPosZ();
                     if (n5 * n5 + n6 * n6 + n7 * n7 < n4 * n4) {
                         class515.field3039.method17469(class514);
                     }

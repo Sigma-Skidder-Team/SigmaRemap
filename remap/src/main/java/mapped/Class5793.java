@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5793 extends Class5791
 {
@@ -22,19 +23,19 @@ public class Class5793 extends Class5791
         ++this.field23791;
         if (this.field23791 % 2 == 0) {
             if (this.field23791 < 10) {
-                final Vec3d method16738 = this.field23764.method5125(1.0f).method16738();
-                method16738.method16755(-0.7853982f);
-                final double method16739 = this.field23764.field4535.method1938();
+                final Vec3d method16738 = this.field23764.method5125(1.0f).normalize();
+                method16738.rotateYaw(-0.7853982f);
+                final double method16739 = this.field23764.field4535.getPosX();
                 final double method16740 = this.field23764.field4535.method1942(0.5);
-                final double method16741 = this.field23764.field4535.method1945();
+                final double method16741 = this.field23764.field4535.getPosZ();
                 for (int i = 0; i < 8; ++i) {
                     final double n = method16739 + this.field23764.method2633().nextGaussian() / 2.0;
                     final double n2 = method16740 + this.field23764.method2633().nextGaussian() / 2.0;
                     final double n3 = method16741 + this.field23764.method2633().nextGaussian() / 2.0;
                     for (int j = 0; j < 6; ++j) {
-                        this.field23764.field2391.method6709(Class8432.field34605, n, n2, n3, -method16738.field22770 * 0.07999999821186066 * j, -method16738.field22771 * 0.6000000238418579, -method16738.field22772 * 0.07999999821186066 * j);
+                        this.field23764.field2391.method6709(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 * j, -method16738.y * 0.6000000238418579, -method16738.z * 0.07999999821186066 * j);
                     }
-                    method16738.method16755(0.19634955f);
+                    method16738.rotateYaw(0.19634955f);
                 }
             }
         }
@@ -45,9 +46,9 @@ public class Class5793 extends Class5791
         ++this.field23791;
         if (this.field23791 < 200) {
             if (this.field23791 == 10) {
-                final Vec3d method16738 = new Vec3d(this.field23764.field4535.method1938() - this.field23764.method1938(), 0.0, this.field23764.field4535.method1945() - this.field23764.method1945()).method16738();
-                final double n = this.field23764.field4535.method1938() + method16738.field22770 * 5.0 / 2.0;
-                final double n2 = this.field23764.field4535.method1945() + method16738.field22772 * 5.0 / 2.0;
+                final Vec3d method16738 = new Vec3d(this.field23764.field4535.getPosX() - this.field23764.getPosX(), 0.0, this.field23764.field4535.getPosZ() - this.field23764.getPosZ()).normalize();
+                final double n = this.field23764.field4535.getPosX() + method16738.x * 5.0 / 2.0;
+                final double n2 = this.field23764.field4535.getPosZ() + method16738.z * 5.0 / 2.0;
                 double method16739;
                 final double n3 = method16739 = this.field23764.field4535.method1942(0.5);
                 final Class385 class385 = new Class385(n, n3, n2);

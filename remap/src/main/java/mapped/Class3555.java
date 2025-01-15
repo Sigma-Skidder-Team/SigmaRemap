@@ -40,16 +40,16 @@ public class Class3555<T extends Class511> extends Class3545
         return this.field16636 != null;
     }
     
-    public Class6221 method11103(final double n) {
+    public AxisAlignedBB method11103(final double n) {
         return this.field16602.method1886().method18495(n, 4.0, n);
     }
     
     public void method11104() {
         if (this.field16634 != Class512.class && this.field16634 != Class513.class) {
-            this.field16636 = this.field16602.field2391.method7139((Class<? extends Class511>)this.field16634, this.field16637, (Class511)this.field16602, this.field16602.method1938(), this.field16602.method1944(), this.field16602.method1945(), this.method11103(this.method11096()));
+            this.field16636 = this.field16602.field2391.method7139((Class<? extends Class511>)this.field16634, this.field16637, (Class511)this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ(), this.method11103(this.method11096()));
         }
         else {
-            this.field16636 = this.field16602.field2391.method7136(this.field16637, this.field16602, this.field16602.method1938(), this.field16602.method1944(), this.field16602.method1945());
+            this.field16636 = this.field16602.field2391.method7136(this.field16637, this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ());
         }
     }
     

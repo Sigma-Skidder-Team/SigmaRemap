@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 public class Class4160 extends Class4158<Class440>
@@ -41,7 +42,7 @@ public class Class4160 extends Class4158<Class440>
         final Class4150 method6703 = field513.method11334(class442, Class6332::method18770);
         this.field18545.method17622().method18643(class441, method6703, n2, n3);
         class441.method22564(0.0, -class440.method2251(n) * 0.5f, 0.0);
-        class441.method22566(Vector3f.field38718.rotationDegrees(270.0f * class440.method2251(n)));
+        class441.method22566(Vector3f.YP.rotationDegrees(270.0f * class440.method2251(n)));
         this.field18545.method17623().method18643(class441, method6703, n2, n3);
         class441.method22568();
     }

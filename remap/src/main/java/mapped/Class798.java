@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -162,7 +163,7 @@ public class Class798 extends Class789 implements Class797
             if (this.method4525() < 10) {
                 if (this.field2423.nextFloat() < 0.05f) {
                     for (int i = 0; i < this.field2423.nextInt(2) + 1; ++i) {
-                        this.method4507(this.field2391, this.method1938() - 0.30000001192092896, this.method1938() + 0.30000001192092896, this.method1945() - 0.30000001192092896, this.method1945() + 0.30000001192092896, this.method1942(0.5), Class8432.field34658);
+                        this.method4507(this.field2391, this.getPosX() - 0.30000001192092896, this.getPosX() + 0.30000001192092896, this.getPosZ() - 0.30000001192092896, this.getPosZ() + 0.30000001192092896, this.method1942(0.5), Class8432.field34658);
                     }
                 }
             }
@@ -178,7 +179,7 @@ public class Class798 extends Class789 implements Class797
         final Vec3d class355 = new Vec3d(class354);
         int n = 0;
         final BlockPos class356 = new BlockPos(this);
-        final int n2 = (int)class355.field22771 - class356.getY();
+        final int n2 = (int)class355.y - class356.getY();
         if (n2 <= 2) {
             if (n2 < -2) {
                 n = -4;
@@ -189,7 +190,7 @@ public class Class798 extends Class789 implements Class797
         }
         int n3 = 6;
         int n4 = 8;
-        final int method1086 = class356.method1086(class354);
+        final int method1086 = class356.manhattanDistance(class354);
         if (method1086 < 15) {
             n3 = method1086 / 2;
             n4 = method1086 / 2;
@@ -197,7 +198,7 @@ public class Class798 extends Class789 implements Class797
         final Vec3d method1087 = Class7775.method24907(this, n3, n4, n, class355, 0.3141592741012573);
         if (method1087 != null) {
             this.field4113.method24713(0.5f);
-            this.field4113.method24724(method1087.field22770, method1087.field22771, method1087.field22772, 1.0);
+            this.field4113.method24724(method1087.x, method1087.y, method1087.z, 1.0);
         }
     }
     
@@ -562,11 +563,11 @@ public class Class798 extends Class789 implements Class797
     
     @Override
     public void method2727(final Class7909<Class7255> class7909) {
-        this.method1936(this.method1935().method16744(0.0, 0.01, 0.0));
+        this.method1936(this.method1935().add(0.0, 0.01, 0.0));
     }
     
     private boolean method4542(final BlockPos class354, final int n) {
-        return class354.method1081(new BlockPos(this), n);
+        return class354.withinDistance(new BlockPos(this), n);
     }
     
     static {

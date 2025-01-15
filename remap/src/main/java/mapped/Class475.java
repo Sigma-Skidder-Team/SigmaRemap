@@ -110,7 +110,7 @@ public class Class475 extends Class456 implements Class476, Class439
     
     public static int method2420(final Class1847 class1847, final Class460 class1848, final int n, final int n2, final int n3) {
         int n4 = 0;
-        for (final Class512 class1849 : class1847.method7128((Class<? extends Class512>)Class512.class, new Class6221(n - 5.0f, n2 - 5.0f, n3 - 5.0f, n + 1 + 5.0f, n2 + 1 + 5.0f, n3 + 1 + 5.0f))) {
+        for (final Class512 class1849 : class1847.method7128((Class<? extends Class512>)Class512.class, new AxisAlignedBB(n - 5.0f, n2 - 5.0f, n3 - 5.0f, n + 1 + 5.0f, n2 + 1 + 5.0f, n3 + 1 + 5.0f))) {
             if (!(class1849.field3009 instanceof Class3438)) {
                 continue;
             }

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.ARBShaderObjects;
@@ -53,7 +52,7 @@ public class Class9034
         return e;
     }
     
-    public Class8472<Class9544> method32461(final String s, final Class9544 class9544) {
+    public Class8472<Vec2f> method32461(final String s, final Vec2f class9544) {
         final Class8472 e = new Class8472(this, (T)class9544, s, (n, class9545) -> GL20.glUniform2f((int)n, class9545.field41091, class9545.field41092));
         this.field38207.add(e);
         return e;

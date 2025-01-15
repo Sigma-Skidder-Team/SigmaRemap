@@ -18,7 +18,7 @@ public class Class4774 extends Class4712<Class765, Class5881<Class765>>
     public void method14129(final Class765 class765, final Class7351 class766, final float n) {
         final float method4234 = class765.method4234(n);
         final float n2 = 1.0f + MathHelper.sin(method4234 * 100.0f) * method4234 * 0.01f;
-        final float method4235 = MathHelper.method35653(method4234, 0.0f, 1.0f);
+        final float method4235 = MathHelper.clamp(method4234, 0.0f, 1.0f);
         final float n3 = method4235 * method4235;
         final float n4 = n3 * n3;
         final float n5 = (1.0f + n4 * 0.4f) * n2;
@@ -27,7 +27,7 @@ public class Class4774 extends Class4712<Class765, Class5881<Class765>>
     
     public float method14130(final Class765 class765, final float n) {
         final float method4234 = class765.method4234(n);
-        return ((int)(method4234 * 10.0f) % 2 != 0) ? MathHelper.method35653(method4234, 0.5f, 1.0f) : 0.0f;
+        return ((int)(method4234 * 10.0f) % 2 != 0) ? MathHelper.clamp(method4234, 0.5f, 1.0f) : 0.0f;
     }
     
     public Class1932 method14131(final Class765 class765) {

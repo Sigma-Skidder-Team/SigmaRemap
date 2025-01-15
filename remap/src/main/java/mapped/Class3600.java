@@ -24,7 +24,7 @@ public class Class3600 extends Class3446
     @Override
     public void method11015() {
         Vec3i class352 = null;
-        for (final BlockPos class353 : BlockPos.method1158(MathHelper.floor(this.field16768.method1938() - 2.0), MathHelper.floor(this.field16768.method1941() - 2.0), MathHelper.floor(this.field16768.method1945() - 2.0), MathHelper.floor(this.field16768.method1938() + 2.0), MathHelper.floor(this.field16768.method1941()), MathHelper.floor(this.field16768.method1945() + 2.0))) {
+        for (final BlockPos class353 : BlockPos.method1158(MathHelper.floor(this.field16768.getPosX() - 2.0), MathHelper.floor(this.field16768.getPosY() - 2.0), MathHelper.floor(this.field16768.getPosZ() - 2.0), MathHelper.floor(this.field16768.getPosX() + 2.0), MathHelper.floor(this.field16768.getPosY()), MathHelper.floor(this.field16768.getPosZ() + 2.0))) {
             if (!this.field16768.field2391.method6702(class353).method21793(Class7324.field28319)) {
                 continue;
             }

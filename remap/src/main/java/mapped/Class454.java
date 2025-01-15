@@ -72,17 +72,17 @@ public class Class454 extends Class433 implements Class453
     
     @Override
     public double method2286() {
-        return this.method1938();
+        return this.getPosX();
     }
     
     @Override
     public double method2287() {
-        return this.method1941() + 0.5;
+        return this.getPosY() + 0.5;
     }
     
     @Override
     public double method2288() {
-        return this.method1945();
+        return this.getPosZ();
     }
     
     @Override

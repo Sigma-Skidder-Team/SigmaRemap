@@ -15,6 +15,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public abstract class Class7257 extends Class7255
 {
@@ -70,12 +71,12 @@ public abstract class Class7257 extends Class7255
                 for (final Direction class1859 : Plane.HORIZONTAL) {
                     method1296.method1303(class1856).method1304(class1859);
                     if (this.method22169(class1855, method1296, class1859) || this.method22169(class1855, method1296.method1137(), class1859)) {
-                        method1301 = method1301.method16738().method16744(0.0, -6.0, 0.0);
+                        method1301 = method1301.normalize().add(0.0, -6.0, 0.0);
                         break;
                     }
                 }
             }
-            method1302 = method1301.method16738();
+            method1302 = method1301.normalize();
         }
         return method1302;
     }

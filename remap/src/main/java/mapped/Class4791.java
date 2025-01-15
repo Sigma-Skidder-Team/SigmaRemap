@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4791 extends Class4703<Class862>
 {
@@ -26,10 +28,10 @@ public class Class4791 extends Class4703<Class862>
         class863.method22567();
         final Direction method1882 = class862.method1882();
         final Vec3d method1883 = this.method14169(class862, n2);
-        class863.method22564(-method1883.method16760(), -method1883.method16761(), -method1883.method16762());
+        class863.method22564(-method1883.getX(), -method1883.getY(), -method1883.getZ());
         class863.method22564(method1882.getXOffset() * 0.46875, method1882.getYOffset() * 0.46875, method1882.getZOffset() * 0.46875);
         class863.method22566(Vector3f.XP.rotationDegrees(class862.field2400));
-        class863.method22566(Vector3f.field38718.rotationDegrees(180.0f - class862.field2399));
+        class863.method22566(Vector3f.YP.rotationDegrees(180.0f - class862.field2399));
         final Class1658 method1884 = this.field20429.method5305();
         final Class1790 method1885 = method1884.method5787().method35429();
         final Class1933 class865 = (class862.method5198().method27622() instanceof Class4094) ? Class4791.field20428 : Class4791.field20427;
@@ -95,7 +97,7 @@ public class Class4791 extends Class4703<Class862>
         if (!Class9216.field39049) {
             if (!Class8571.field36033) {
                 final Entity method5303 = this.field20429.method5303();
-                if (class862.method1733(method5303.method1938(), method5303.method1941(), method5303.method1945()) > Class4791.field20431) {
+                if (class862.method1733(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4791.field20431) {
                     return false;
                 }
             }

@@ -80,7 +80,7 @@ public class Class9379
         }
     }
     
-    public static boolean method34824(final Class6221 class6221, final Class8059 class6222) {
+    public static boolean method34824(final AxisAlignedBB class6221, final Class8059 class6222) {
         final int method35644 = MathHelper.floor(class6221.field25073);
         final int method35645 = MathHelper.method35650(class6221.field25076);
         final int method35646 = MathHelper.floor(class6221.field25074);
@@ -123,7 +123,7 @@ public class Class9379
     
     static {
         Class9379.field40212 = Class869.method5277();
-        field40213 = 1 + MathHelper.method35682(MathHelper.method35679(30000000));
+        field40213 = 1 + MathHelper.log2(MathHelper.smallestEncompassingPowerOfTwo(30000000));
         field40214 = Class9379.field40213;
         field40215 = 64 - Class9379.field40213 - Class9379.field40214;
         field40216 = 0 + Class9379.field40214;

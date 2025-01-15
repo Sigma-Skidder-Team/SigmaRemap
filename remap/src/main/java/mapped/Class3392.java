@@ -225,7 +225,7 @@ public class Class3392 extends Class3167
             final ArrayList list2 = new ArrayList();
             list2.add(list.get(0));
             for (final BlockPos class354 : list) {
-                if (Math.sqrt(class354.method1083((Vec3i)list2.get(list2.size() - 1))) <= 4.0) {
+                if (Math.sqrt(class354.distanceSq((Vec3i)list2.get(list2.size() - 1))) <= 4.0) {
                     continue;
                 }
                 if (Class8797.method30695(class354)) {
@@ -333,11 +333,11 @@ public class Class3392 extends Class3167
                         else {
                             class8798 = class8797;
                         }
-                        GL11.glVertex3d(class8798.method30683() + (class8797.method30683() - class8798.method30683()) - Class3392.field15514.field4644.method5833().method18161().method16760() + 0.5, class8798.method30684() + (class8797.method30684() - class8798.method30684()) - Class3392.field15514.field4644.method5833().method18161().method16761(), class8798.method30685() + (class8797.method30685() - class8798.method30685()) - Class3392.field15514.field4644.method5833().method18161().method16762() + 0.5);
+                        GL11.glVertex3d(class8798.method30683() + (class8797.method30683() - class8798.method30683()) - Class3392.field15514.field4644.method5833().method18161().getX() + 0.5, class8798.method30684() + (class8797.method30684() - class8798.method30684()) - Class3392.field15514.field4644.method5833().method18161().getY(), class8798.method30685() + (class8797.method30685() - class8798.method30685()) - Class3392.field15514.field4644.method5833().method18161().getZ() + 0.5);
                     }
                     GL11.glEnd();
                     GL11.glPushMatrix();
-                    GL11.glTranslated(Class3392.field15514.field4644.method5833().method18161().method16760(), Class3392.field15514.field4644.method5833().method18161().method16761(), Class3392.field15514.field4644.method5833().method18161().method16762());
+                    GL11.glTranslated(Class3392.field15514.field4644.method5833().method18161().getX(), Class3392.field15514.field4644.method5833().method18161().getY(), Class3392.field15514.field4644.method5833().method18161().getZ());
                     GL11.glPopMatrix();
                     GL11.glDisable(3042);
                     GL11.glEnable(3553);

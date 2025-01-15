@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
@@ -17,7 +20,7 @@ public class Class4780 extends Class4703<Class861>
     
     public void method14140(final Class861 class861, final float n, final float n2, final Class7351 class862, final Class7807 class863, final int n3) {
         class862.method22567();
-        class862.method22566(Vector3f.field38718.rotationDegrees(180.0f - n));
+        class862.method22566(Vector3f.YP.rotationDegrees(180.0f - n));
         final Class8539 field4601 = class861.field4601;
         class862.method22565(0.0625f, 0.0625f, 0.0625f);
         final Class4150 method25214 = class863.method25214(Class6332.method18767(this.method14141(class861)));
@@ -33,8 +36,8 @@ public class Class4780 extends Class4703<Class861>
     
     private void method14142(final Class7351 class7351, final Class4150 class7352, final Class861 class7353, final int n, final int n2, final Class1912 class7354, final Class1912 class7355) {
         final Class8996 method22569 = class7351.method22569();
-        final Class6789 method22570 = method22569.method32111();
-        final Class9429 method22571 = method22569.method32112();
+        final Matrix4f method22570 = method22569.method32111();
+        final Matrix3f method22571 = method22569.method32112();
         final float n3 = -n / 2.0f;
         final float n4 = -n2 / 2.0f;
         final float method22572 = class7355.method7497();
@@ -59,21 +62,21 @@ public class Class4780 extends Class4703<Class861>
                 final float n10 = n3 + i * 16;
                 final float n11 = n4 + (j + 1) * 16;
                 final float n12 = n4 + j * 16;
-                int n13 = MathHelper.floor(class7353.method1938());
-                final int method22584 = MathHelper.floor(class7353.method1941() + (n11 + n12) / 2.0f / 16.0f);
-                int n14 = MathHelper.floor(class7353.method1945());
+                int n13 = MathHelper.floor(class7353.getPosX());
+                final int method22584 = MathHelper.floor(class7353.getPosY() + (n11 + n12) / 2.0f / 16.0f);
+                int n14 = MathHelper.floor(class7353.getPosZ());
                 final Direction method22585 = class7353.method1882();
                 if (method22585 == Direction.NORTH) {
-                    n13 = MathHelper.floor(class7353.method1938() + (n9 + n10) / 2.0f / 16.0f);
+                    n13 = MathHelper.floor(class7353.getPosX() + (n9 + n10) / 2.0f / 16.0f);
                 }
                 if (method22585 == Direction.WEST) {
-                    n14 = MathHelper.floor(class7353.method1945() - (n9 + n10) / 2.0f / 16.0f);
+                    n14 = MathHelper.floor(class7353.getPosZ() - (n9 + n10) / 2.0f / 16.0f);
                 }
                 if (method22585 == Direction.SOUTH) {
-                    n13 = MathHelper.floor(class7353.method1938() - (n9 + n10) / 2.0f / 16.0f);
+                    n13 = MathHelper.floor(class7353.getPosX() - (n9 + n10) / 2.0f / 16.0f);
                 }
                 if (method22585 == Direction.EAST) {
-                    n14 = MathHelper.floor(class7353.method1945() + (n9 + n10) / 2.0f / 16.0f);
+                    n14 = MathHelper.floor(class7353.getPosZ() + (n9 + n10) / 2.0f / 16.0f);
                 }
                 final int method22586 = Class1656.method5776(class7353.field2391, new BlockPos(n13, method22584, n14));
                 final float method22587 = class7354.method7499(n7 * (n5 - i));
@@ -108,7 +111,7 @@ public class Class4780 extends Class4703<Class861>
         }
     }
     
-    private void method14143(final Class6789 class6789, final Class9429 class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final float n5, final int n6, final int n7, final int n8, final int n9) {
+    private void method14143(final Matrix4f class6789, final Matrix3f class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final float n5, final int n6, final int n7, final int n8, final int n9) {
         class6791.method12444(class6789, n, n2, n5).method12399(255, 255, 255, 255).method12391(n3, n4).method12441(Class1904.field10335).method12440(n9).method12445(class6790, (float)n6, (float)n7, (float)n8).method12397();
     }
 }

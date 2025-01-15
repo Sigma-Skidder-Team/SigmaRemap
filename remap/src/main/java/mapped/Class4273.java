@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
 
@@ -24,11 +25,11 @@ public class Class4273 implements Class4252<Class5800>
         this(class399.method1643(), class399.method1935());
     }
     
-    public Class4273(final int field19164, final Class5487 class5487) {
+    public Class4273(final int field19164, final Vec3d class5487) {
         this.field19164 = field19164;
-        final double method35654 = MathHelper.method35654(class5487.field22770, -3.9, 3.9);
-        final double method35655 = MathHelper.method35654(class5487.field22771, -3.9, 3.9);
-        final double method35656 = MathHelper.method35654(class5487.field22772, -3.9, 3.9);
+        final double method35654 = MathHelper.method35654(class5487.x, -3.9, 3.9);
+        final double method35655 = MathHelper.method35654(class5487.y, -3.9, 3.9);
+        final double method35656 = MathHelper.method35654(class5487.z, -3.9, 3.9);
         this.field19165 = (int)(method35654 * 8000.0);
         this.field19166 = (int)(method35655 * 8000.0);
         this.field19167 = (int)(method35656 * 8000.0);

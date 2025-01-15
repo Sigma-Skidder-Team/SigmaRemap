@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.io.IOException;
 
 public class Class4342 implements Class4252<Class5800>
@@ -21,13 +23,13 @@ public class Class4342 implements Class4252<Class5800>
         this.field19453 = Integer.MAX_VALUE;
     }
     
-    public Class4342(final Class1932 field19450, final Class286 field19451, final Class5487 class5487, final float field19452, final float field19453) {
+    public Class4342(final Class1932 field19450, final Class286 field19451, final Vec3d class5487, final float field19452, final float field19453) {
         this.field19453 = Integer.MAX_VALUE;
         this.field19450 = field19450;
         this.field19451 = field19451;
-        this.field19452 = (int)(class5487.field22770 * 8.0);
-        this.field19453 = (int)(class5487.field22771 * 8.0);
-        this.field19454 = (int)(class5487.field22772 * 8.0);
+        this.field19452 = (int)(class5487.x * 8.0);
+        this.field19453 = (int)(class5487.y * 8.0);
+        this.field19454 = (int)(class5487.z * 8.0);
         this.field19455 = field19452;
         this.field19456 = field19453;
     }

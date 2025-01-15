@@ -35,7 +35,7 @@ public interface Class1853 extends Class1855
         return this.method6957(class399, Class7698.method24489(class399.method1886()));
     }
     
-    default boolean method6976(final Class6221 class6221) {
+    default boolean method6976(final AxisAlignedBB class6221) {
         return this.method6979(null, class6221, Collections.emptySet());
     }
     
@@ -43,23 +43,23 @@ public interface Class1853 extends Class1855
         return this.method6979(class399, class399.method1886(), Collections.emptySet());
     }
     
-    default boolean method6978(final Entity class399, final Class6221 class400) {
+    default boolean method6978(final Entity class399, final AxisAlignedBB class400) {
         return this.method6979(class399, class400, Collections.emptySet());
     }
     
-    default boolean method6979(final Entity class399, final Class6221 class400, final Set<Entity> set) {
+    default boolean method6979(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return this.method6980(class399, class400, set).allMatch(Class7702::method24540);
     }
     
-    default Stream<Class7702> method6956(final Entity class399, final Class6221 class400, final Set<Entity> set) {
+    default Stream<Class7702> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return Stream.empty();
     }
     
-    default Stream<Class7702> method6980(final Entity class399, final Class6221 class400, final Set<Entity> set) {
+    default Stream<Class7702> method6980(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return Streams.concat(new Stream[] { this.method6981(class399, class400), this.method6956(class399, class400, set) });
     }
     
-    default Stream<Class7702> method6981(final Entity class399, final Class6221 class400) {
+    default Stream<Class7702> method6981(final Entity class399, final AxisAlignedBB class400) {
         return StreamSupport.stream((Spliterator<Class7702>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new Class8243(MathHelper.floor(class400.field25073 - 1.0E-7) - 1, MathHelper.floor(class400.field25074 - 1.0E-7) - 1, MathHelper.floor(class400.field25075 - 1.0E-7) - 1, MathHelper.floor(class400.field25076 + 1.0E-7) + 1, MathHelper.floor(class400.field25077 + 1.0E-7) + 1, MathHelper.floor(class400.field25078 + 1.0E-7) + 1), new Class385(), (class399 != null) ? Class7543.method23630(class399) : Class7543.method23629(), Class7698.method24489(class400)), false);
     }
 }

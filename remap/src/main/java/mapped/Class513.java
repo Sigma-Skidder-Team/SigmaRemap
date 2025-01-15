@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -117,10 +118,10 @@ public class Class513 extends Class512 implements Class514
         else {
             this.method1729(method6758, 0.0f, 0.0f);
             while (!class1849.method6977(this)) {
-                if (this.method1941() >= 255.0) {
+                if (this.getPosY() >= 255.0) {
                     break;
                 }
-                this.method1656(this.method1938(), this.method1941() + 1.0, this.method1945());
+                this.method1656(this.getPosX(), this.getPosY() + 1.0, this.getPosZ());
             }
         }
     }
@@ -160,9 +161,9 @@ public class Class513 extends Class512 implements Class514
         class51.method312("seenCredits", this.field3061);
         if (this.field3066 != null) {
             final Class51 class52 = new Class51();
-            class52.method305("x", this.field3066.field22770);
-            class52.method305("y", this.field3066.field22771);
-            class52.method305("z", this.field3066.field22772);
+            class52.method305("x", this.field3066.x);
+            class52.method305("y", this.field3066.y);
+            class52.method305("z", this.field3066.z);
             class51.method295("enteredNetherPosition", class52);
         }
         final Entity method1915 = this.method1915();
@@ -184,7 +185,7 @@ public class Class513 extends Class512 implements Class514
     
     public void method2917(final int n) {
         final float n2 = (float)this.method2875();
-        this.field3028 = MathHelper.method35653(n / n2, 0.0f, (n2 - 1.0f) / n2);
+        this.field3028 = MathHelper.clamp(n / n2, 0.0f, (n2 - 1.0f) / n2);
         this.field3054 = -1;
     }
     
@@ -262,7 +263,7 @@ public class Class513 extends Class512 implements Class514
                 this.method2952(this);
             }
             else {
-                this.method1728(method2951.method1938(), method2951.method1941(), method2951.method1945(), method2951.field2399, method2951.field2400);
+                this.method1728(method2951.getPosX(), method2951.getPosY(), method2951.getPosZ(), method2951.field2399, method2951.field2400);
                 this.method2940().method6904().method7443(this);
                 if (this.method2805()) {
                     this.method2952(this);
@@ -495,9 +496,9 @@ public class Class513 extends Class512 implements Class514
         method1484.method20584(this);
         method1481.method6902(this);
         this.field2410 = false;
-        double method1485 = this.method1938();
-        double method1486 = this.method1941();
-        double method1487 = this.method1945();
+        double method1485 = this.getPosX();
+        double method1486 = this.getPosY();
+        double method1487 = this.getPosZ();
         float field2454 = this.field2400;
         final float field2455;
         float n = field2455 = this.field2399;
@@ -532,9 +533,9 @@ public class Class513 extends Class512 implements Class514
             }
         }
         else {
-            final int method1489 = MathHelper.floor(this.method1938());
-            final int n2 = MathHelper.floor(this.method1941()) - 1;
-            final int method1490 = MathHelper.floor(this.method1945());
+            final int method1489 = MathHelper.floor(this.getPosX());
+            final int n2 = MathHelper.floor(this.getPosY()) - 1;
+            final int method1490 = MathHelper.floor(this.getPosZ());
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
                     for (int k = -1; k < 3; ++k) {
@@ -543,13 +544,13 @@ public class Class513 extends Class512 implements Class514
                 }
             }
             this.method1730(method1489, n2, method1490, n, 0.0f);
-            this.method1936(Vec3d.field22769);
+            this.method1936(Vec3d.ZERO);
         }
         method1481.method6796().method15299();
         this.method1727(method1482);
         method1482.method6890(this);
         this.method2924(method1481);
-        this.field3039.method17467(this.method1938(), this.method1941(), this.method1945(), n, field2454);
+        this.field3039.method17467(this.getPosX(), this.getPosY(), this.getPosZ(), n, field2454);
         this.field3041.method26489(method1482);
         this.field3039.method17469(new Class4300(this.field3025));
         method1484.method20606(this, method1482);
@@ -619,7 +620,7 @@ public class Class513 extends Class512 implements Class514
         }
         super.method2849(b, b2);
         if (this.field3039 != null) {
-            this.field3039.method17467(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+            this.field3039.method17467(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
         }
     }
     
@@ -629,7 +630,7 @@ public class Class513 extends Class512 implements Class514
         if (super.method1780(class399, b)) {
             if (this.method1920() != method1920) {
                 if (this.field3039 != null) {
-                    this.field3039.method17467(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+                    this.field3039.method17467(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
                 }
             }
             return true;
@@ -643,7 +644,7 @@ public class Class513 extends Class512 implements Class514
         super.method1784();
         if (this.method1920() != method1920) {
             if (this.field3039 != null) {
-                this.field3039.method17467(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+                this.field3039.method17467(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
             }
         }
     }
@@ -873,7 +874,7 @@ public class Class513 extends Class512 implements Class514
     @Override
     public void method1927(final Class2042 class2042, final Vec3d class2043) {
         super.method1927(class2042, class2043);
-        this.field3039.method17469(new Class4280(class2042, class2043.field22770, class2043.field22771, class2043.field22772));
+        this.field3039.method17469(new Class4280(class2042, class2043.x, class2043.y, class2043.z));
     }
     
     public void method2938(final Class2042 class2042, final Entity class2043, final Class2042 class2044) {
@@ -1090,7 +1091,7 @@ public class Class513 extends Class512 implements Class514
         this.field3059 = ((class399 != null) ? class399 : this);
         if (method2951 != this.field3059) {
             this.field3039.method17469(new Class4343(this.field3059));
-            this.method1878(this.field3059.method1938(), this.field3059.method1941(), this.field3059.method1945());
+            this.method1878(this.field3059.getPosX(), this.field3059.getPosY(), this.field3059.getPosZ());
         }
     }
     
@@ -1187,7 +1188,7 @@ public class Class513 extends Class512 implements Class514
     
     @Override
     public void method2812(final Class7795 class7795, final Class286 class7796, final float n, final float n2) {
-        this.field3039.method17469(new Class4282(class7795, class7796, this.method1938(), this.method1941(), this.method1945(), n, n2));
+        this.field3039.method17469(new Class4282(class7795, class7796, this.getPosX(), this.getPosY(), this.getPosZ(), n, n2));
     }
     
     @Override

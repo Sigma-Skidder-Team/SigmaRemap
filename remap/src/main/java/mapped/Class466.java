@@ -423,7 +423,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         while (i > 0) {
             final int method35643 = Class508.method2609(i);
             i -= method35643;
-            class512.field2391.method6886(new Class508(class512.field2391, class512.method1938(), class512.method1941() + 0.5, class512.method1945() + 0.5, method35643));
+            class512.field2391.method6886(new Class508(class512.field2391, class512.getPosX(), class512.getPosY() + 0.5, class512.getPosZ() + 0.5, method35643));
         }
     }
     

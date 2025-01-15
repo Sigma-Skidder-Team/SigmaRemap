@@ -63,9 +63,9 @@ public class Class6564
             }
             else {
                 this.field26073 = Class2198.field13375;
-                final double n = this.field26067 - this.field26066.method1938();
-                final double n2 = this.field26069 - this.field26066.method1945();
-                final double n3 = this.field26068 - this.field26066.method1941();
+                final double n = this.field26067 - this.field26066.getPosX();
+                final double n2 = this.field26069 - this.field26066.getPosZ();
+                final double n3 = this.field26068 - this.field26066.getPosY();
                 if (n * n + n3 * n3 + n2 * n2 >= 2.500000277905201E-7) {
                     this.field26066.field2399 = this.method19909(this.field26066.field2399, (float)(MathHelper.method35693(n2, n) * 57.2957763671875) - 90.0f, 90.0f);
                     this.field26066.method2733((float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950()));
@@ -78,7 +78,7 @@ public class Class6564
                             break Label_0593;
                         }
                         if (!method6703.method24540()) {
-                            if (this.field26066.method1941() < method6703.method24536(Axis.Y) + class354.getY()) {
+                            if (this.field26066.getPosY() < method6703.method24536(Axis.Y) + class354.getY()) {
                                 if (!method6702.method11785(Class7188.field27891)) {
                                     if (!method6702.method11785(Class7188.field27911)) {
                                         break Label_0593;
@@ -115,7 +115,7 @@ public class Class6564
             if (method6707 != null) {
                 final Class4654 method6708 = method6707.method24740();
                 if (method6708 != null) {
-                    if (method6708.method13913(this.field26066.field2391, MathHelper.floor(this.field26066.method1938() + n9), MathHelper.floor(this.field26066.method1941()), MathHelper.floor(this.field26066.method1945() + n10)) != Class257.field1207) {
+                    if (method6708.method13913(this.field26066.field2391, MathHelper.floor(this.field26066.getPosX() + n9), MathHelper.floor(this.field26066.getPosY()), MathHelper.floor(this.field26066.getPosZ() + n10)) != Class257.field1207) {
                         this.field26071 = 1.0f;
                         this.field26072 = 0.0f;
                         n5 = n4;

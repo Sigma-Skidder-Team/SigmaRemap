@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class9111
 {
@@ -24,15 +26,15 @@ public class Class9111
             if (!method18169.method21793(Class7324.field28320)) {
                 final float n3 = 1.0f - (float)Math.pow(0.25f + 0.75f * n / 32.0f, 0.25);
                 final Vec3d method18170 = Class8763.method30363(class6093.method6843(class6092.method18162(), f), class6093, class6092.method18166(), f);
-                final float n4 = (float)method18170.field22770;
-                final float n5 = (float)method18170.field22771;
-                final float n6 = (float)method18170.field22772;
+                final float n4 = (float)method18170.x;
+                final float n5 = (float)method18170.y;
+                final float n6 = (float)method18170.z;
                 final Vec3d method18171 = Class8763.method30362(class6093.method6845(f), class6093, class6092.method18166(), f);
-                Class9111.field38597 = (float)method18171.field22770;
-                Class9111.field38598 = (float)method18171.field22771;
-                Class9111.field38599 = (float)method18171.field22772;
+                Class9111.field38597 = (float)method18171.x;
+                Class9111.field38598 = (float)method18171.y;
+                Class9111.field38599 = (float)method18171.z;
                 if (n >= 4) {
-                    float method18172 = class6092.method18173().method33321(new Vector3f((MathHelper.sin(class6093.method6713(f)) <= 0.0f) ? 1.0f : -1.0f, 0.0f, 0.0f));
+                    float method18172 = class6092.method18173().dot(new Vector3f((MathHelper.sin(class6093.method6713(f)) <= 0.0f) ? 1.0f : -1.0f, 0.0f, 0.0f));
                     if (method18172 < 0.0f) {
                         method18172 = 0.0f;
                     }
@@ -87,7 +89,7 @@ public class Class9111
             final int n14 = Class9111.field38601 >> 16 & 0xFF;
             final int n15 = Class9111.field38601 >> 8 & 0xFF;
             final int n16 = Class9111.field38601 & 0xFF;
-            final float method18178 = MathHelper.method35653((method18176 - Class9111.field38602) / 5000.0f, 0.0f, 1.0f);
+            final float method18178 = MathHelper.clamp((method18176 - Class9111.field38602) / 5000.0f, 0.0f, 1.0f);
             final float method18179 = MathHelper.method35700(method18178, (float)n14, (float)n11);
             final float method18180 = MathHelper.method35700(method18178, (float)n15, (float)n12);
             final float method18181 = MathHelper.method35700(method18178, (float)n16, (float)n13);
@@ -100,7 +102,7 @@ public class Class9111
                 Class9111.field38602 = method18176;
             }
         }
-        double n17 = class6092.method18161().field22771 * class6093.field10063.method20501();
+        double n17 = class6092.method18161().y * class6093.field10063.method20501();
         if (class6092.method18166() instanceof Class511) {
             if (((Class511)class6092.method18166()).method2653(Class9439.field40488)) {
                 final int method18182 = ((Class511)class6092.method18166()).method2654(Class9439.field40488).method7907();
@@ -156,21 +158,21 @@ public class Class9111
         if (!method18169.method21793(Class7324.field28319)) {
             if (method18169.method21793(Class7324.field28320)) {
                 final Entity method18185 = class6092.method18166();
-                final Vec3d method18186 = Class8763.method30358(class6093, method18185.method1938(), method18185.method1941() + 1.0, method18185.method1945());
+                final Vec3d method18186 = Class8763.method30358(class6093, method18185.getPosX(), method18185.getPosY() + 1.0, method18185.getPosZ());
                 if (method18186 != null) {
-                    Class9111.field38597 = (float)method18186.field22770;
-                    Class9111.field38598 = (float)method18186.field22771;
-                    Class9111.field38599 = (float)method18186.field22772;
+                    Class9111.field38597 = (float)method18186.x;
+                    Class9111.field38598 = (float)method18186.y;
+                    Class9111.field38599 = (float)method18186.z;
                 }
             }
         }
         else {
             final Entity method18187 = class6092.method18166();
-            final Vec3d method18188 = Class8763.method30357(class6093, method18187.method1938(), method18187.method1941() + 1.0, method18187.method1945());
+            final Vec3d method18188 = Class8763.method30357(class6093, method18187.getPosX(), method18187.getPosY() + 1.0, method18187.getPosZ());
             if (method18188 != null) {
-                Class9111.field38597 = (float)method18188.field22770;
-                Class9111.field38598 = (float)method18188.field22771;
-                Class9111.field38599 = (float)method18188.field22772;
+                Class9111.field38597 = (float)method18188.x;
+                Class9111.field38598 = (float)method18188.y;
+                Class9111.field38599 = (float)method18188.z;
             }
         }
         if (Class9570.field41216.method22619()) {

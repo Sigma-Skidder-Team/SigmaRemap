@@ -64,7 +64,7 @@ public class Class9550
     }
     
     public <E extends Class436> void method35726(final E e, final float n, final Class7351 class7351, final Class7807 class7352) {
-        if (e.method2191(this.field41131.method18161().field22770, this.field41131.method18161().field22771, this.field41131.method18161().field22772) < e.method2192()) {
+        if (e.method2191(this.field41131.method18161().x, this.field41131.method18161().y, this.field41131.method18161().z) < e.method2192()) {
             if (this.method35724(e) != null) {
                 if (e.method2188()) {
                     if (e.method2206().method16523(e.method2194().method21696())) {

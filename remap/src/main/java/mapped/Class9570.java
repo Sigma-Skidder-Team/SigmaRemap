@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.List;
 
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.lang.reflect.InvocationTargetException;
@@ -1039,7 +1040,7 @@ public class Class9570
         Class9570.field41280 = new Class7361(Class9570.field41273, "onLivingSetAttackTarget");
         Class9570.field41281 = new Class7361(Class9570.field41273, "onLivingUpdate");
         Class9570.field41282 = new Class7363("net.minecraftforge.client.ForgeHooksClient");
-        Class9570.field41283 = new Class7361(Class9570.field41282, "dispatchRenderLast", new Class[] { Class1656.class, Class7351.class, Float.TYPE, Class6789.class, Long.TYPE });
+        Class9570.field41283 = new Class7361(Class9570.field41282, "dispatchRenderLast", new Class[] { Class1656.class, Class7351.class, Float.TYPE, Matrix4f.class, Long.TYPE });
         Class9570.field41284 = new Class7361(Class9570.field41282, "drawScreen");
         Class9570.field41285 = new Class7361(Class9570.field41282, "fillNormal");
         Class9570.field41286 = new Class7361(Class9570.field41282, "fireKeyInput");

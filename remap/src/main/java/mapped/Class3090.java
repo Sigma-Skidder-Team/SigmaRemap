@@ -110,7 +110,7 @@ public abstract class Class3090
     }
     
     private int method9837() {
-        final float method35653 = MathHelper.method35653(this.field15446 / 3.0f, -1.0f, 1.0f);
+        final float method35653 = MathHelper.clamp(this.field15446 / 3.0f, -1.0f, 1.0f);
         return MathHelper.method35697(0.62222224f - method35653 * 0.05f, 0.5f + method35653 * 0.1f, 1.0f);
     }
     
@@ -273,11 +273,11 @@ public abstract class Class3090
     }
     
     public int method9858(final double n, final double n2) {
-        return Class9010.method32261(MathHelper.method35653(this.method9867(), 0.0f, 1.0f), MathHelper.method35653(this.method9863(), 0.0f, 1.0f));
+        return Class9010.method32261(MathHelper.clamp(this.method9867(), 0.0f, 1.0f), MathHelper.clamp(this.method9863(), 0.0f, 1.0f));
     }
     
     public int method9859() {
-        return Class8861.method31025(MathHelper.method35653(this.method9867(), 0.0f, 1.0f), MathHelper.method35653(this.method9863(), 0.0f, 1.0f));
+        return Class8861.method31025(MathHelper.clamp(this.method9867(), 0.0f, 1.0f), MathHelper.clamp(this.method9863(), 0.0f, 1.0f));
     }
     
     public void method9860(final Random random, final Class1860 class1860, final int n, final int n2, final int n3, final double n4, final Class7096 class1861, final Class7096 class1862, final int n5, final long n6) {

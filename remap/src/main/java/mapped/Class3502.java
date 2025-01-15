@@ -83,25 +83,25 @@ public class Class3502 extends Class3446
                 this.field16464.method4147().method24667(this.field16466, 10.0f, (float)this.field16464.method4173());
                 if (--this.field16469 <= 0) {
                     this.field16469 = 10;
-                    final double n = this.field16464.method1938() - this.field16466.method1938();
-                    final double n2 = this.field16464.method1941() - this.field16466.method1941();
-                    final double n3 = this.field16464.method1945() - this.field16466.method1945();
+                    final double n = this.field16464.getPosX() - this.field16466.getPosX();
+                    final double n2 = this.field16464.getPosY() - this.field16466.getPosY();
+                    final double n3 = this.field16464.getPosZ() - this.field16466.getPosZ();
                     final double n4 = n * n + n2 * n2 + n3 * n3;
                     if (n4 <= this.field16470 * this.field16470) {
                         this.field16468.method24733();
                         final Class7727 method4147 = this.field16466.method4147();
                         if (n4 > this.field16470) {
-                            if (method4147.method24672() != this.field16464.method1938()) {
+                            if (method4147.method24672() != this.field16464.getPosX()) {
                                 return;
                             }
-                            if (method4147.method24673() != this.field16464.method1941()) {
+                            if (method4147.method24673() != this.field16464.getPosY()) {
                                 return;
                             }
-                            if (method4147.method24674() != this.field16464.method1945()) {
+                            if (method4147.method24674() != this.field16464.getPosZ()) {
                                 return;
                             }
                         }
-                        this.field16468.method24724(this.field16464.method1938() - (this.field16466.method1938() - this.field16464.method1938()), this.field16464.method1941(), this.field16464.method1945() - (this.field16466.method1945() - this.field16464.method1945()), this.field16467);
+                        this.field16468.method24724(this.field16464.getPosX() - (this.field16466.getPosX() - this.field16464.getPosX()), this.field16464.getPosY(), this.field16464.getPosZ() - (this.field16466.getPosZ() - this.field16464.getPosZ()), this.field16467);
                     }
                     else {
                         this.field16468.method24725(this.field16466, this.field16467);

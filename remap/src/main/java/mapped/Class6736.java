@@ -12,6 +12,7 @@ import com.google.gson.JsonElement;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class6736 extends Class6737
 {
@@ -171,7 +172,7 @@ public class Class6736 extends Class6737
     
     @Override
     public Vec3d method20493(final float n, final float n2) {
-        final float method35653 = MathHelper.method35653(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
+        final float method35653 = MathHelper.clamp(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
         return new Vec3d(0.7529412f * (method35653 * 0.94f + 0.06f), 0.84705883f * (method35653 * 0.94f + 0.06f), 1.0f * (method35653 * 0.91f + 0.09f));
     }
     

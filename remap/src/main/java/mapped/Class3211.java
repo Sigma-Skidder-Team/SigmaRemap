@@ -132,11 +132,11 @@ public class Class3211 extends Class3167
                         GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
                         GL11.glBegin(3);
                         for (final Class9407 class5740 : list) {
-                            GL11.glVertex3d(class5740.method34993() - Class3211.field15514.field4644.method5833().method18161().method16760(), class5740.method34994() - Class3211.field15514.field4644.method5833().method18161().method16761(), class5740.method34995() - Class3211.field15514.field4644.method5833().method18161().method16762());
+                            GL11.glVertex3d(class5740.method34993() - Class3211.field15514.field4644.method5833().method18161().getX(), class5740.method34994() - Class3211.field15514.field4644.method5833().method18161().getY(), class5740.method34995() - Class3211.field15514.field4644.method5833().method18161().getZ());
                         }
                         GL11.glEnd();
                         GL11.glPushMatrix();
-                        GL11.glTranslated(Class3211.field15514.field4644.method5833().method18161().method16760(), Class3211.field15514.field4644.method5833().method18161().method16761(), Class3211.field15514.field4644.method5833().method18161().method16762());
+                        GL11.glTranslated(Class3211.field15514.field4644.method5833().method18161().getX(), Class3211.field15514.field4644.method5833().method18161().getY(), Class3211.field15514.field4644.method5833().method18161().getZ());
                         GL11.glPopMatrix();
                         GL11.glDisable(3042);
                         GL11.glEnable(3553);

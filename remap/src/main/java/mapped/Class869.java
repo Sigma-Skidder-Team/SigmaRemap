@@ -1125,7 +1125,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
             this.field4660.method15300("animateTick");
             if (!this.field4694 && this.field4683 != null) {
-                this.field4683.method6825(MathHelper.floor(this.field4684.method1938()), MathHelper.floor(this.field4684.method1941()), MathHelper.floor(this.field4684.method1945()));
+                this.field4683.method6825(MathHelper.floor(this.field4684.getPosX()), MathHelper.floor(this.field4684.getPosY()), MathHelper.floor(this.field4684.getPosZ()));
             }
             this.field4660.method15300("particles");
             if (!this.field4694) {

@@ -57,7 +57,7 @@ public class Class4360 implements Class4252<Class5813>
         this.field19532 = class8654.method29499(Class2181.class);
         this.field19533 = class8654.method29499(Class2052.class);
         this.field19534 = class8654.method29513(12);
-        this.field19538 = MathHelper.method35653(class8654.readFloat(), 0.0f, 1.0f);
+        this.field19538 = MathHelper.clamp(class8654.readFloat(), 0.0f, 1.0f);
         this.field19539 = class8654.method29502();
         class8654.readByte();
         Class4360 class8655 = this;

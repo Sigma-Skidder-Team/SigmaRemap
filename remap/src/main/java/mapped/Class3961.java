@@ -50,9 +50,9 @@ public class Class3961 extends Class3841
     }
     
     private void method12082(final Class1847 class1847, final BlockPos class1848) {
-        final List<Entity> method7128 = class1847.method7128((Class<? extends Entity>)Class798.class, new Class6221(class1848).method18495(8.0, 6.0, 8.0));
+        final List<Entity> method7128 = class1847.method7128((Class<? extends Entity>)Class798.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
         if (!method7128.isEmpty()) {
-            final List<Entity> method7129 = class1847.method7128((Class<? extends Entity>)Class512.class, new Class6221(class1848).method18495(8.0, 6.0, 8.0));
+            final List<Entity> method7129 = class1847.method7128((Class<? extends Entity>)Class512.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
             final int size = method7129.size();
             for (final Class798 class1849 : method7128) {
                 if (class1849.method4152() != null) {
@@ -77,7 +77,7 @@ public class Class3961 extends Class3841
             if (method2715.method27622() != Class7739.field31426) {
                 if (method2715.method27622() == Class7739.field31442) {
                     method2715.method27693(1);
-                    class7097.method6706(class7099, class7099.method1938(), class7099.method1941(), class7099.method1945(), Class8520.field35041, Class286.field1584, 1.0f, 1.0f);
+                    class7097.method6706(class7099, class7099.getPosX(), class7099.getPosY(), class7099.getPosZ(), Class8520.field35041, Class286.field1584, 1.0f, 1.0f);
                     if (!method2715.method27620()) {
                         if (!class7099.field3006.method2362(new Class8321(Class7739.field31635))) {
                             class7099.method2822(new Class8321(Class7739.field31635), false);
@@ -90,7 +90,7 @@ public class Class3961 extends Class3841
                 }
             }
             else {
-                class7097.method6706(class7099, class7099.method1938(), class7099.method1941(), class7099.method1945(), Class8520.field35023, Class286.field1584, 1.0f, 1.0f);
+                class7097.method6706(class7099, class7099.getPosX(), class7099.getPosY(), class7099.getPosZ(), Class8520.field35023, Class286.field1584, 1.0f, 1.0f);
                 method12083(class7097, class7098);
                 method2715.method27636(1, class7099, class7103 -> class7103.method2795(class7102));
                 n = 1;

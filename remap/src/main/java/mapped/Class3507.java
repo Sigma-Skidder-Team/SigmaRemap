@@ -65,7 +65,7 @@ public class Class3507 extends Class3446
     
     @Override
     public void method11016() {
-        final double method1733 = this.field16488.method1733(this.field16490.method1938(), this.field16490.method1941(), this.field16490.method1945());
+        final double method1733 = this.field16488.method1733(this.field16490.getPosX(), this.field16490.getPosY(), this.field16490.getPosZ());
         final boolean method1734 = this.field16488.method4151().method34143(this.field16490);
         if (!method1734) {
             this.field16493 = 0;
@@ -84,15 +84,15 @@ public class Class3507 extends Class3446
         this.field16491 = field16491;
         if (field16491 != 0) {
             if (this.field16491 < 0) {
-                this.field16491 = MathHelper.method35642(MathHelper.method35641(method1733) / this.field16496 * (this.field16495 - this.field16494) + this.field16494);
+                this.field16491 = MathHelper.method35642(MathHelper.sqrt(method1733) / this.field16496 * (this.field16495 - this.field16494) + this.field16494);
             }
         }
         else {
             if (!method1734) {
                 return;
             }
-            final float n = MathHelper.method35641(method1733) / this.field16496;
-            this.field16489.method4252(this.field16490, MathHelper.method35653(n, 0.1f, 1.0f));
+            final float n = MathHelper.sqrt(method1733) / this.field16496;
+            this.field16489.method4252(this.field16490, MathHelper.clamp(n, 0.1f, 1.0f));
             this.field16491 = MathHelper.method35642(n * (this.field16495 - this.field16494) + this.field16494);
         }
     }

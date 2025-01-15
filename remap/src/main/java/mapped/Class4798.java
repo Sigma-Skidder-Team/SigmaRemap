@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4798 extends Class4703<Class509>
@@ -27,7 +28,7 @@ public class Class4798 extends Class4703<Class509>
         final float method35708 = MathHelper.method35700(n2, class509.field2402, class509.field2400);
         final float n4 = class509.field2424 + n2;
         class510.method22564(0.0, 0.15000000596046448, 0.0);
-        class510.method22566(Vector3f.field38718.rotationDegrees(MathHelper.sin(n4 * 0.1f) * 180.0f));
+        class510.method22566(Vector3f.YP.rotationDegrees(MathHelper.sin(n4 * 0.1f) * 180.0f));
         class510.method22566(Vector3f.XP.rotationDegrees(MathHelper.cos(n4 * 0.1f) * 180.0f));
         class510.method22566(Vector3f.ZP.rotationDegrees(MathHelper.sin(n4 * 0.15f) * 360.0f));
         class510.method22565(-0.5f, -0.5f, 0.5f);

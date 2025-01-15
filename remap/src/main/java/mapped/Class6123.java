@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.dispenser.IPosition;
 import org.apache.logging.log4j.LogManager;
 import java.util.HashMap;
 import java.util.Collection;
@@ -105,7 +106,7 @@ public class Class6123 implements Class6113
             return;
         });
         for (final BlockPos class355 : this.field24856.keySet()) {
-            if (!class354.method1081(class355, 30.0)) {
+            if (!class354.withinDistance(class355, 30.0)) {
                 continue;
             }
             method18325(class355);
@@ -226,9 +227,9 @@ public class Class6123 implements Class6113
         Class7282.method22341(s, class354.getX() + 0.5, class354.getY() + 1.3 + n * 0.2, class354.getZ() + 0.5, n2, 0.02f, true, 0.0f, true);
     }
     
-    private static void method18332(final Class5488 class5488, final int n, final String s, final int n2, final float n3) {
+    private static void method18332(final IPosition class5488, final int n, final String s, final int n2, final float n3) {
         final BlockPos class5489 = new BlockPos(class5488);
-        Class7282.method22341(s, class5489.getX() + 0.5, class5488.method16761() + 2.4 + n * 0.25, class5489.getZ() + 0.5, n2, n3, false, 0.5f, true);
+        Class7282.method22341(s, class5489.getX() + 0.5, class5488.getY() + 2.4 + n * 0.25, class5489.getZ() + 0.5, n2, n3, false, 0.5f, true);
     }
     
     private Set<String> method18333(final Class7018 class7018) {
@@ -241,7 +242,7 @@ public class Class6123 implements Class6113
     
     private boolean method18335(final Class9307 class9307) {
         final Class756 field4684 = this.field24855.field4684;
-        return new BlockPos(field4684.method1938(), class9307.field39938.method16761(), field4684.method1945()).method1081(new BlockPos(class9307.field39938), 30.0);
+        return new BlockPos(field4684.getPosX(), class9307.field39938.getY(), field4684.getPosZ()).withinDistance(new BlockPos(class9307.field39938), 30.0);
     }
     
     private Collection<UUID> method18336(final BlockPos class354) {

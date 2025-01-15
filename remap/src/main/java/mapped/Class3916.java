@@ -150,7 +150,7 @@ public class Class3916 extends Class3833 implements Class3856
     public Class7096 method11846(final Class7074 class7074) {
         final Direction method21648 = class7074.method21648();
         final BlockPos method21649 = class7074.method21639();
-        final Class7096 class7075 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, class7074.method21644())).method21773(Class3916.field17733, (method21648 != Direction.DOWN && (method21648 == Direction.UP || class7074.method21649().field22771 - method21649.getY() <= 0.5)) ? Class109.field344 : Class109.field343)).method21773((Class7111<Comparable>)Class3916.field17735, class7074.method21654().method6702(method21649).method21779() == Class7558.field29976);
+        final Class7096 class7075 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, class7074.method21644())).method21773(Class3916.field17733, (method21648 != Direction.DOWN && (method21648 == Direction.UP || class7074.method21649().y - method21649.getY() <= 0.5)) ? Class109.field344 : Class109.field343)).method21773((Class7111<Comparable>)Class3916.field17735, class7074.method21654().method6702(method21649).method21779() == Class7558.field29976);
         return ((Class7097<O, Class7096>)class7075).method21773(Class3916.field17734, method12024(class7075, class7074.method21654(), method21649));
     }
     

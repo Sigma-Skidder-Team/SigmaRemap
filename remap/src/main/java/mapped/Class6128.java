@@ -31,9 +31,9 @@ public class Class6128 implements Class6113
             if (method6701.method21696() == Class7521.field29147) {
                 continue;
             }
-            final Iterator<Class6221> iterator2 = method6701.method21725(field2391, class7354).method24545().iterator();
+            final Iterator<AxisAlignedBB> iterator2 = method6701.method21725(field2391, class7354).method24545().iterator();
             while (iterator2.hasNext()) {
-                final Class6221 method6702 = iterator2.next().method18500(class7354).method18496(0.002).method18499(-n, -n2, -n3);
+                final AxisAlignedBB method6702 = iterator2.next().method18500(class7354).method18496(0.002).method18499(-n, -n2, -n3);
                 final double field2392 = method6702.field25073;
                 final double field2393 = method6702.field25074;
                 final double field2394 = method6702.field25075;

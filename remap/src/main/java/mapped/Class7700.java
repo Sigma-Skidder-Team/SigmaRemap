@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import java.nio.FloatBuffer;
@@ -37,7 +38,7 @@ public class Class7700
         return array2;
     }
     
-    public static String method24530(final Class6789 class6789) {
+    public static String method24530(final Matrix4f class6789) {
         class6789.method20768(Class7700.field30610);
         return method24531(Class7700.field30610);
     }

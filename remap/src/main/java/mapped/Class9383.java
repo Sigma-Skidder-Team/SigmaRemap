@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.nio.ByteBuffer;
 import javax.sound.sampled.AudioFormat;
@@ -84,8 +85,8 @@ public class Class9383
         return this.method34870() == 4116;
     }
     
-    public void method34875(final Class5487 class5487) {
-        AL10.alSourcefv(this.field40263, 4100, new float[] { (float)class5487.field22770, (float)class5487.field22771, (float)class5487.field22772 });
+    public void method34875(final Vec3d class5487) {
+        AL10.alSourcefv(this.field40263, 4100, new float[] { (float)class5487.x, (float)class5487.y, (float)class5487.z});
     }
     
     public void method34876(final float n) {

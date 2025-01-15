@@ -6,16 +6,17 @@ package mapped;
 
 import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class166 implements Predicate<Entity>
 {
     private static String[] field481;
     public final /* synthetic */ float field482;
-    public final /* synthetic */ Class5487 field483;
-    public final /* synthetic */ Class5487 field484;
+    public final /* synthetic */ Vec3d field483;
+    public final /* synthetic */ Vec3d field484;
     public final /* synthetic */ Class234 field485;
     
-    public Class166(final Class234 field485, final float field486, final Class5487 field487, final Class5487 field488) {
+    public Class166(final Class234 field485, final float field486, final Vec3d field487, final Vec3d field488) {
         this.field485 = field485;
         this.field482 = field486;
         this.field483 = field487;

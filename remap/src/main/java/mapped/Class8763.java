@@ -14,6 +14,7 @@ import java.util.Set;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import java.util.HashMap;
 import java.io.InputStream;
@@ -771,7 +772,7 @@ public class Class8763
     public static Vec3d method30355(final Vec3d class5487, final Class1856 class5488, final double n, final double n2, final double n3) {
         if (Class8763.field36800 != null) {
             final int method24634 = Class8763.field36800.method24634(class5488, n, n2, n3, 3);
-            return Class8763.field36801.method34320((method24634 >> 16 & 0xFF) / 255.0f * ((float)class5487.field22770 / 0.5f), (method24634 >> 8 & 0xFF) / 255.0f * ((float)class5487.field22771 / 0.66275f), (method24634 & 0xFF) / 255.0f * (float)class5487.field22772);
+            return Class8763.field36801.method34320((method24634 >> 16 & 0xFF) / 255.0f * ((float)class5487.x / 0.5f), (method24634 >> 8 & 0xFF) / 255.0f * ((float)class5487.y / 0.66275f), (method24634 & 0xFF) / 255.0f * (float)class5487.z);
         }
         return class5487;
     }
@@ -779,7 +780,7 @@ public class Class8763
     private static Vec3d method30356(final Vec3d class5487, final Class1856 class5488, final double n, final double n2, final double n3) {
         if (Class8763.field36802 != null) {
             final int method24634 = Class8763.field36802.method24634(class5488, n, n2, n3, 3);
-            return Class8763.field36803.method34320((method24634 >> 16 & 0xFF) / 255.0f * ((float)class5487.field22770 / 0.753f), (method24634 >> 8 & 0xFF) / 255.0f * ((float)class5487.field22771 / 0.8471f), (method24634 & 0xFF) / 255.0f * (float)class5487.field22772);
+            return Class8763.field36803.method34320((method24634 >> 16 & 0xFF) / 255.0f * ((float)class5487.x / 0.753f), (method24634 >> 8 & 0xFF) / 255.0f * ((float)class5487.y / 0.8471f), (method24634 & 0xFF) / 255.0f * (float)class5487.z);
         }
         return class5487;
     }
@@ -846,7 +847,7 @@ public class Class8763
         if (method20487 != Class383.field2223) {
             return (method20487 != Class383.field2225) ? class5487 : method30353(class5487);
         }
-        return method30356(class5487, method20488.field4683, class5489.method1938(), class5489.method1941() + 1.0, class5489.method1945());
+        return method30356(class5487, method20488.field4683, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
     }
     
     public static Vec3d method30363(final Vec3d class5487, final Class1847 class5488, final Entity class5489, final float n) {
@@ -855,7 +856,7 @@ public class Class8763
         if (method20487 != Class383.field2223) {
             return (method20487 != Class383.field2225) ? class5487 : method30354(class5487);
         }
-        return method30355(class5487, method20488.field4683, class5489.method1938(), class5489.method1941() + 1.0, class5489.method1945());
+        return method30355(class5487, method20488.field4683, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
     }
     
     private static int[] method30364(final Properties properties, final String s, final String prefix, final String str) {

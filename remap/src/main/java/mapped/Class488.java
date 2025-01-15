@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Random;
@@ -61,7 +62,7 @@ public class Class488 extends Class489 implements Class439
         ++this.field2802;
         if (!method2433) {
             if (!this.field2656.field10067) {
-                final List<Entity> method2434 = this.field2656.method7128((Class<? extends Entity>) Entity.class, new Class6221(this.method2193()));
+                final List<Entity> method2434 = this.field2656.method7128((Class<? extends Entity>) Entity.class, new AxisAlignedBB(this.method2193()));
                 if (!method2434.isEmpty()) {
                     this.method2437(((Entity)method2434.get(0)).method1915());
                 }
@@ -87,11 +88,11 @@ public class Class488 extends Class489 implements Class439
     }
     
     public float method2434(final float n) {
-        return MathHelper.method35653((this.field2802 + n) / 200.0f, 0.0f, 1.0f);
+        return MathHelper.clamp((this.field2802 + n) / 200.0f, 0.0f, 1.0f);
     }
     
     public float method2435(final float n) {
-        return 1.0f - MathHelper.method35653((this.field2803 - n) / 40.0f, 0.0f, 1.0f);
+        return 1.0f - MathHelper.clamp((this.field2803 - n) / 40.0f, 0.0f, 1.0f);
     }
     
     @Nullable
@@ -147,12 +148,12 @@ public class Class488 extends Class489 implements Class439
     }
     
     private void method2439(final Class1849 class1849) {
-        final Vec3d method16738 = new Vec3d(this.method2193().getX(), 0.0, this.method2193().getZ()).method16738();
-        Vec3d class1850 = method16738.method16748(1024.0);
-        for (int n = 16; method2441(class1849, class1850).method7012() > 0 && n-- > 0; class1850 = class1850.method16743(method16738.method16748(-16.0))) {
+        final Vec3d method16738 = new Vec3d(this.method2193().getX(), 0.0, this.method2193().getZ()).normalize();
+        Vec3d class1850 = method16738.scale(1024.0);
+        for (int n = 16; method2441(class1849, class1850).method7012() > 0 && n-- > 0; class1850 = class1850.add(method16738.scale(-16.0))) {
             Class488.field2801.debug("Skipping backwards past nonempty chunk at {}", (Object)class1850);
         }
-        for (int n2 = 16; method2441(class1849, class1850).method7012() == 0 && n2-- > 0; class1850 = class1850.method16743(method16738.method16748(16.0))) {
+        for (int n2 = 16; method2441(class1849, class1850).method7012() == 0 && n2-- > 0; class1850 = class1850.add(method16738.scale(16.0))) {
             Class488.field2801.debug("Skipping forward past empty chunk at {}", (Object)class1850);
         }
         Class488.field2801.debug("Found chunk at {}", (Object)class1850);
@@ -161,7 +162,7 @@ public class Class488 extends Class489 implements Class439
             Class488.field2801.debug("Found block at {}", (Object)this.field2804);
         }
         else {
-            this.field2804 = new BlockPos(class1850.field22770 + 0.5, 75.0, class1850.field22772 + 0.5);
+            this.field2804 = new BlockPos(class1850.x + 0.5, 75.0, class1850.z + 0.5);
             Class488.field2801.debug("Failed to find suitable block, settling on {}", (Object)this.field2804);
             Class4535.field20005.method13527(Class5113.field22059).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(this.field2804.method1132()), this.field2804);
         }
@@ -196,7 +197,7 @@ public class Class488 extends Class489 implements Class439
     }
     
     private static Class1862 method2441(final Class1847 class1847, final Vec3d class1848) {
-        return class1847.method6686(MathHelper.floor(class1848.field22770 / 16.0), MathHelper.floor(class1848.field22772 / 16.0));
+        return class1847.method6686(MathHelper.floor(class1848.x / 16.0), MathHelper.floor(class1848.z / 16.0));
     }
     
     @Nullable
@@ -219,7 +220,7 @@ public class Class488 extends Class489 implements Class439
             if (class1862.method6701(method7022).method21762(class1862, method7022)) {
                 continue;
             }
-            final double method7023 = class1866.method1085(0.0, 0.0, 0.0, true);
+            final double method7023 = class1866.distanceSq(0.0, 0.0, 0.0, true);
             if (class1865 != null && method7023 >= n) {
                 continue;
             }

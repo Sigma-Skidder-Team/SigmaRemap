@@ -101,7 +101,7 @@ public class Class3528 extends Class3446
     }
     
     private boolean method11078(final int n, final int n2, final int n3) {
-        if (Math.abs(n - this.field16546.method1938()) < 2.0 && Math.abs(n3 - this.field16546.method1945()) < 2.0) {
+        if (Math.abs(n - this.field16546.getPosX()) < 2.0 && Math.abs(n3 - this.field16546.getPosZ()) < 2.0) {
             return false;
         }
         if (this.method11079(new BlockPos(n, n2, n3))) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 
 public class Class6739 extends Class6737

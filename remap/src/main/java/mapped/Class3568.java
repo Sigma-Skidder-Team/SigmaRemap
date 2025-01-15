@@ -22,7 +22,7 @@ public class Class3568 extends Class3555<Class512>
     }
     
     @Override
-    public Class6221 method11103(final double n) {
+    public AxisAlignedBB method11103(final double n) {
         final Direction method5018 = ((Class841)this.field16602).method5018();
         if (method5018.getAxis() != Axis.X) {
             return (method5018.getAxis() != Axis.Z) ? this.field16602.method1886().method18495(n, 4.0, n) : this.field16602.method1886().method18495(n, n, 4.0);

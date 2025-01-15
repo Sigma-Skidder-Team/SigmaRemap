@@ -49,7 +49,7 @@ public class Class3572 extends Class3446
     
     @Override
     public void method11016() {
-        this.field16670.method4147().method24669(this.field16671.method1938(), this.field16671.method1944(), this.field16671.method1945(), 10.0f, (float)this.field16670.method4173());
+        this.field16670.method4147().method24669(this.field16671.getPosX(), this.field16671.method1944(), this.field16671.getPosZ(), 10.0f, (float)this.field16670.method4173());
         --this.field16674;
     }
     

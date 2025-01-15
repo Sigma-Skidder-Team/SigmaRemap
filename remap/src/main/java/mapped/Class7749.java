@@ -42,7 +42,7 @@ public class Class7749 extends Class7747
     public void method24728() {
         if (this.method24731()) {
             if (this.field31680 != null) {
-                if (!this.field31680.method1082(this.field31657.method1934(), this.field31657.method1930()) && (this.field31657.method1941() <= this.field31680.getY() || !new BlockPos(this.field31680.getX(), this.field31657.method1941(), this.field31680.getZ()).method1082(this.field31657.method1934(), this.field31657.method1930()))) {
+                if (!this.field31680.withinDistance(this.field31657.method1934(), this.field31657.method1930()) && (this.field31657.getPosY() <= this.field31680.getY() || !new BlockPos(this.field31680.getX(), this.field31657.getPosY(), this.field31680.getZ()).withinDistance(this.field31657.method1934(), this.field31657.method1930()))) {
                     this.field31657.method4148().method19907(this.field31680.getX(), this.field31680.getY(), this.field31680.getZ(), this.field31660);
                 }
                 else {

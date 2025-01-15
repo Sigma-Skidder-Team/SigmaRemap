@@ -244,7 +244,7 @@ public class Class827 extends Class763
                 final Class827 class514 = (Class827)this.method1642().method23371(this.field2391);
                 if (class514 != null) {
                     class514.method4927(true);
-                    class514.method1730(this.method1938(), this.method1941(), this.method1945(), 0.0f, 0.0f);
+                    class514.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), 0.0f, 0.0f);
                     this.field2391.method6886(class514);
                     if (method2715.method27667()) {
                         class514.method1872(method2715.method27664());
@@ -278,9 +278,9 @@ public class Class827 extends Class763
             if (this.field2391.method6954() == Class2113.field12293) {
                 if (this.field2423.nextFloat() < this.method2710(Class827.field4423).method23950()) {
                     if (this.field2391.method6765().method31216(Class8878.field37318)) {
-                        final int method4153 = MathHelper.floor(this.method1938());
-                        final int method4154 = MathHelper.floor(this.method1941());
-                        final int method4155 = MathHelper.floor(this.method1945());
+                        final int method4153 = MathHelper.floor(this.getPosX());
+                        final int method4154 = MathHelper.floor(this.getPosY());
+                        final int method4155 = MathHelper.floor(this.getPosZ());
                         final Class827 class7930 = new Class827(this.field2391);
                         for (int i = 0; i < 50; ++i) {
                             final int n2 = method4153 + MathHelper.method35658(this.field2423, 7, 40) * MathHelper.method35658(this.field2423, -1, 1);
@@ -463,7 +463,7 @@ public class Class827 extends Class763
                 if (class1851.method6790().nextFloat() >= 0.05) {
                     if (class1851.method6790().nextFloat() < 0.05) {
                         final Class818 class1855 = Class7499.field28966.method23371(this.field2391);
-                        class1855.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, 0.0f);
+                        class1855.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, 0.0f);
                         class1855.method4188(class1851, class1852, Class2101.field12180, null, null);
                         class1855.method4818(true);
                         class1851.method6886(class1855);

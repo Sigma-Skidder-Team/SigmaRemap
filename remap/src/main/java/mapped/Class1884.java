@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.FileNotFoundException;
+
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.util.JSONException;
 import java.util.Iterator;
 import com.google.gson.JsonArray;
@@ -12,7 +14,7 @@ import com.google.gson.JsonObject;
 import java.io.Closeable;
 import org.apache.commons.io.IOUtils;
 import com.google.gson.JsonElement;
-import java.io.Reader;
+
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import com.google.gson.JsonSyntaxException;
@@ -30,7 +32,7 @@ public class Class1884 implements AutoCloseable
     public final List<Class1919> field10255;
     private final Map<String, Class6153> field10256;
     private final List<Class6153> field10257;
-    private Class6789 field10258;
+    private Matrix4f field10258;
     private int field10259;
     private int field10260;
     private float field10261;
@@ -266,7 +268,7 @@ public class Class1884 implements AutoCloseable
     }
     
     private void method7245() {
-        this.field10258 = Class6789.method20756((float)this.field10252.field24884, (float)this.field10252.field24885, 0.1f, 1000.0f);
+        this.field10258 = Matrix4f.method20756((float)this.field10252.field24884, (float)this.field10252.field24885, 0.1f, 1000.0f);
     }
     
     public void method7246(final int n, final int n2) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class3276 extends Class3167
 {
     public static Class755 field15771;
     private List<Class4252<?>> field15772;
-    private Class5487 field15773;
+    private Vec3d field15773;
     public float field15774;
     public float field15775;
     
@@ -22,12 +24,12 @@ public class Class3276 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15773 = new Class5487(Class3276.field15514.field4684.field2395, Class3276.field15514.field4684.field2396, Class3276.field15514.field4684.field2397);
+        this.field15773 = new Vec3d(Class3276.field15514.field4684.field2395, Class3276.field15514.field4684.field2396, Class3276.field15514.field4684.field2397);
         this.field15774 = Class3276.field15514.field4684.field2399;
         this.field15775 = Class3276.field15514.field4684.field2400;
         Class3276.field15771 = new Class755(Class3276.field15514.field4683, Class3276.field15514.field4684.method2844());
         Class3276.field15771.field3006 = Class3276.field15514.field4684.field3006;
-        Class3276.field15771.method1728(this.field15773.field22770, this.field15773.field22771, this.field15773.field22772, this.field15774, this.field15775);
+        Class3276.field15771.method1728(this.field15773.x, this.field15773.y, this.field15773.z, this.field15774, this.field15775);
         Class3276.field15771.field2953 = Class3276.field15514.field4684.field2953;
         Class3276.field15514.field4683.method6819(-1, Class3276.field15771);
     }

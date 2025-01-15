@@ -180,7 +180,7 @@ public class Class765 extends Class763 implements Class766
         if (method2715.method27622() != Class7739.field31277) {
             return super.method4195(class512, class513);
         }
-        this.field2391.method6706(class512, this.method1938(), this.method1941(), this.method1945(), Class8520.field35201, this.method1922(), 1.0f, this.field2423.nextFloat() * 0.4f + 0.8f);
+        this.field2391.method6706(class512, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35201, this.method1922(), 1.0f, this.field2423.nextFloat() * 0.4f + 0.8f);
         if (!this.field2391.field10067) {
             this.method4240();
             method2715.method27636(1, class512, class515 -> class515.method2795(class514));
@@ -193,7 +193,7 @@ public class Class765 extends Class763 implements Class766
             final Class2196 class2196 = this.field2391.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365;
             final float n = this.method4233() ? 2.0f : 1.0f;
             this.field2958 = true;
-            this.field2391.method6722(this, this.method1938(), this.method1941(), this.method1945(), this.field4141 * n, class2196);
+            this.field2391.method6722(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, class2196);
             this.method1652();
             this.method4238();
         }
@@ -202,7 +202,7 @@ public class Class765 extends Class763 implements Class766
     private void method4238() {
         final Collection<Class1948> method2651 = this.method2651();
         if (!method2651.isEmpty()) {
-            final Class426 class426 = new Class426(this.field2391, this.method1938(), this.method1941(), this.method1945());
+            final Class426 class426 = new Class426(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ());
             class426.method2081(2.5f);
             class426.method2094(-0.5f);
             class426.method2096(10);

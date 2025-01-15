@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Random;
 
 public abstract class Class833 extends Class832
@@ -89,9 +91,9 @@ public abstract class Class833 extends Class832
         if (this.method2749() && this.method1706()) {
             this.method1724(0.01f, class5487);
             this.method1671(Class2160.field12826, this.method1935());
-            this.method1936(this.method1935().method16748(0.9));
+            this.method1936(this.method1935().scale(0.9));
             if (this.method4152() == null) {
-                this.method1936(this.method1935().method16744(0.0, -0.005, 0.0));
+                this.method1936(this.method1935().add(0.0, -0.005, 0.0));
             }
         }
         else {
@@ -104,7 +106,7 @@ public abstract class Class833 extends Class832
         if (!this.method1706()) {
             if (this.field2404) {
                 if (this.field2406) {
-                    this.method1936(this.method1935().method16744((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.05f, 0.4000000059604645, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.05f));
+                    this.method1936(this.method1935().add((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.05f, 0.4000000059604645, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.05f));
                     this.field2404 = false;
                     this.field2448 = true;
                     this.method1695(this.method4958(), this.method2720(), this.method2721());

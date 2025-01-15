@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.base.MoreObjects;
 import com.google.common.cache.LoadingCache;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7820
 {
@@ -88,23 +89,23 @@ public class Class7820
         if (method25266.getOpposite() != class179) {
             if (method25266.getOpposite() != class179.getOpposite()) {
                 if (method25266.getOpposite() != class179.rotateY()) {
-                    n6 = class181.field22772;
-                    n7 = -class181.field22770;
+                    n6 = class181.z;
+                    n7 = -class181.x;
                 }
                 else {
-                    n6 = -class181.field22772;
-                    n7 = class181.field22770;
+                    n6 = -class181.z;
+                    n7 = class181.x;
                 }
             }
             else {
-                n6 = -class181.field22770;
-                n7 = -class181.field22772;
+                n6 = -class181.x;
+                n7 = -class181.z;
             }
         }
         else {
-            n6 = class181.field22770;
-            n7 = class181.field22772;
+            n6 = class181.x;
+            n7 = class181.z;
         }
-        return new Class9402(new Vec3d(n4, n3, n5), new Vec3d(n6, class181.field22771, n7), (method25266.getHorizontalIndex() - class179.getOpposite().getHorizontalIndex()) * 90);
+        return new Class9402(new Vec3d(n4, n3, n5), new Vec3d(n6, class181.y, n7), (method25266.getHorizontalIndex() - class179.getOpposite().getHorizontalIndex()) * 90);
     }
 }

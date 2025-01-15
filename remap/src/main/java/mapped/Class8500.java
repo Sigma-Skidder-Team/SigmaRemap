@@ -41,7 +41,7 @@ public class Class8500
     }
     
     public static int method28405(final int n) {
-        final int method35679 = MathHelper.method35679(n);
+        final int method35679 = MathHelper.smallestEncompassingPowerOfTwo(n);
         return (n != method35679) ? (method35679 / 2) : method35679;
     }
     

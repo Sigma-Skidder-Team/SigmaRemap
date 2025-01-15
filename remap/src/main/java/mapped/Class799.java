@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.UUID;
 import java.util.function.Predicate;
@@ -181,11 +182,11 @@ public class Class799 extends Class794
                             this.field4283 = 0.0f;
                         }
                         if (this.field4283 > 0.4f) {
-                            final float n = (float)this.method1941();
+                            final float n = (float)this.getPosY();
                             final int n2 = (int)(MathHelper.sin((this.field4283 - 0.4f) * 3.1415927f) * 7.0f);
                             final Vec3d method1935 = this.method1935();
                             for (int i = 0; i < n2; ++i) {
-                                this.field2391.method6709(Class8432.field34646, this.method1938() + (this.field2423.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, n + 0.8f, this.method1945() + (this.field2423.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, method1935.field22770, method1935.field22771, method1935.field22772);
+                                this.field2391.method6709(Class8432.field34646, this.getPosX() + (this.field2423.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, n + 0.8f, this.getPosZ() + (this.field2423.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, method1935.x, method1935.y, method1935.z);
                             }
                         }
                     }

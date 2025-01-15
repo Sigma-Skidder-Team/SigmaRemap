@@ -27,7 +27,7 @@ public class Class8296
     }
     
     public float method27567() {
-        return MathHelper.method35641(this.field34101 * this.field34101 + this.field34102 * this.field34102);
+        return MathHelper.sqrt(this.field34101 * this.field34101 + this.field34102 * this.field34102);
     }
     
     public void method27568(final Class8296 class8296) {

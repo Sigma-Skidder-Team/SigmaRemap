@@ -45,8 +45,8 @@ public class Class422 extends Entity
     public void method1659() {
         super.method1659();
         if (this.field2537 == 2) {
-            this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35345, Class286.field1581, 10000.0f, 0.8f + this.field2423.nextFloat() * 0.2f);
-            this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35344, Class286.field1581, 2.0f, 0.5f + this.field2423.nextFloat() * 0.2f);
+            this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35345, Class286.field1581, 10000.0f, 0.8f + this.field2423.nextFloat() * 0.2f);
+            this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35344, Class286.field1581, 2.0f, 0.5f + this.field2423.nextFloat() * 0.2f);
         }
         --this.field2537;
         if (this.field2537 < 0) {
@@ -65,7 +65,7 @@ public class Class422 extends Entity
         if (this.field2537 >= 0) {
             if (!this.field2391.field10067) {
                 if (!this.field2540) {
-                    final List<Entity> method6737 = this.field2391.method6737(this, new Class6221(this.method1938() - 3.0, this.method1941() - 3.0, this.method1945() - 3.0, this.method1938() + 3.0, this.method1941() + 6.0 + 3.0, this.method1945() + 3.0), Entity::method1768);
+                    final List<Entity> method6737 = this.field2391.method6737(this, new AxisAlignedBB(this.getPosX() - 3.0, this.getPosY() - 3.0, this.getPosZ() - 3.0, this.getPosX() + 3.0, this.getPosY() + 6.0 + 3.0, this.getPosZ() + 3.0), Entity::method1768);
                     final Iterator<Entity> iterator = method6737.iterator();
                     while (iterator.hasNext()) {
                         iterator.next().method1834(this);

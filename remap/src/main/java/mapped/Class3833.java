@@ -9,6 +9,7 @@ import com.google.common.cache.CacheBuilder;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
 import java.util.List;
@@ -67,7 +68,7 @@ public class Class3833 implements Class3832
     public static Class7096 method11777(final Class7096 class7096, final Class7096 class7097, final Class1847 class7098, final BlockPos class7099) {
         final Class7702 method24541 = Class7698.method24495(class7096.method21727(class7098, class7099), class7097.method21727(class7098, class7099), Class9306.field39918).method24541(class7099.getX(), class7099.getY(), class7099.getZ());
         for (final Entity class7100 : class7098.method7127(null, method24541.method24537())) {
-            class7100.method1878(class7100.method1938(), class7100.method1941() + 1.0 + Class7698.method24498(Axis.Y, class7100.method1886().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.method1945());
+            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + Class7698.method24498(Axis.Y, class7100.method1886().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
         }
         return class7097;
     }
@@ -590,7 +591,7 @@ public class Class3833 implements Class3832
     }
     
     public void method11861(final Class1855 class1855, final Entity class1856) {
-        class1856.method1936(class1856.method1935().method16751(1.0, 0.0, 1.0));
+        class1856.method1936(class1856.method1935().mul(1.0, 0.0, 1.0));
     }
     
     public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
@@ -667,13 +668,13 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public Class5487 method11880(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public Vec3d method11880(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         final Class2180 method11879 = this.method11879();
         if (method11879 != Class2180.field12913) {
             final long method11880 = MathHelper.method35689(class7098.getX(), 0, class7098.getZ());
-            return new Class5487(((method11880 & 0xFL) / 15.0f - 0.5) * 0.5, (method11879 != Class2180.field12915) ? 0.0 : (((method11880 >> 4 & 0xFL) / 15.0f - 1.0) * 0.2), ((method11880 >> 8 & 0xFL) / 15.0f - 0.5) * 0.5);
+            return new Vec3d(((method11880 & 0xFL) / 15.0f - 0.5) * 0.5, (method11879 != Class2180.field12915) ? 0.0 : (((method11880 >> 4 & 0xFL) / 15.0f - 1.0) * 0.2), ((method11880 >> 8 & 0xFL) / 15.0f - 0.5) * 0.5);
         }
-        return Class5487.field22769;
+        return Vec3d.ZERO;
     }
     
     public Class7696 method11881(final Class7096 class7096) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
@@ -42,11 +44,11 @@ public class Class3514 extends Class3446
                 return false;
             }
         }
-        final Class5487 method11071 = this.method11071();
+        final Vec3d method11071 = this.method11071();
         if (method11071 != null) {
-            this.field16511 = method11071.field22770;
-            this.field16512 = method11071.field22771;
-            this.field16513 = method11071.field22772;
+            this.field16511 = method11071.x;
+            this.field16512 = method11071.y;
+            this.field16513 = method11071.z;
             this.field16516 = false;
             return true;
         }
@@ -54,7 +56,7 @@ public class Class3514 extends Class3446
     }
     
     @Nullable
-    public Class5487 method11071() {
+    public Vec3d method11071() {
         return Class7775.method24900(this.field16510, 10, 7);
     }
     

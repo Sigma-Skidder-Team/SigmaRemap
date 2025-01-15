@@ -31,7 +31,7 @@ public class Class6868 implements Class6866
         final int n2 = (method31036.method22531() != Class1993.field11163) ? 16776960 : 16746751;
         if (method31037.size() != 1) {
             if (n >= 1500L) {
-                final int n3 = MathHelper.method35642(MathHelper.method35653((n - 1500L) / 300.0f, 0.0f, 1.0f) * 252.0f) << 24 | 0x4000000;
+                final int n3 = MathHelper.method35642(MathHelper.clamp((n - 1500L) / 300.0f, 0.0f, 1.0f) * 252.0f) << 24 | 0x4000000;
                 int n4 = 16 - method31037.size() * 9 / 2;
                 final Iterator iterator = method31037.iterator();
                 while (iterator.hasNext()) {
@@ -40,7 +40,7 @@ public class Class6868 implements Class6866
                 }
             }
             else {
-                class690.method3853().field4643.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 11.0f, n2 | (MathHelper.method35642(MathHelper.method35653((1500L - n) / 300.0f, 0.0f, 1.0f) * 255.0f) << 24 | 0x4000000));
+                class690.method3853().field4643.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 11.0f, n2 | (MathHelper.method35642(MathHelper.clamp((1500L - n) / 300.0f, 0.0f, 1.0f) * 255.0f) << 24 | 0x4000000));
             }
         }
         else {

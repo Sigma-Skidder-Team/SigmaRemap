@@ -28,7 +28,7 @@ public class Class404 extends Class402
         super.method1659();
         if (this.field2391.field10067) {
             if (!this.field2472) {
-                this.field2391.method6709(Class8432.field34628, this.method1938(), this.method1941(), this.method1945(), 0.0, 0.0, 0.0);
+                this.field2391.method6709(Class8432.field34628, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

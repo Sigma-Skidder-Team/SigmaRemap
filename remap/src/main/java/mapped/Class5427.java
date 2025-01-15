@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.List;
 
 public class Class5427 extends Class5419<Class824>
@@ -27,7 +29,7 @@ public class Class5427 extends Class5419<Class824>
     public void method16561(final Class1849 class1849, final Class824 class1850, final long n) {
         final Class427 class1851 = this.field22615.get(class1849.field10062.nextInt(this.field22615.size()));
         if (class1850.method4883(class1851.method2107().method27622())) {
-            final Class5487 method1934 = class1851.method1934();
+            final Vec3d method1934 = class1851.method1934();
             class1850.method2618().method1196((Class8233<Class6439>)Class8233.field33810, new Class6439(new BlockPos(method1934)));
             class1850.method2618().method1196(Class8233.field33809, new Class6949(method1934, 0.5f, 0));
         }

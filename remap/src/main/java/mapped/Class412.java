@@ -59,12 +59,12 @@ public class Class412 extends Class409
             }
         }
         for (int i = 0; i < 32; ++i) {
-            this.field2391.method6709(Class8432.field34637, this.method1938(), this.method1941() + this.field2423.nextDouble() * 2.0, this.method1945(), this.field2423.nextGaussian(), 0.0, this.field2423.nextGaussian());
+            this.field2391.method6709(Class8432.field34637, this.getPosX(), this.getPosY() + this.field2423.nextDouble() * 2.0, this.getPosZ(), this.field2423.nextGaussian(), 0.0, this.field2423.nextGaussian());
         }
         if (!this.field2391.field10067) {
             if (!(method2019 instanceof Class513)) {
                 if (method2019 != null) {
-                    method2019.method1878(this.method1938(), this.method1941(), this.method1945());
+                    method2019.method1878(this.getPosX(), this.getPosY(), this.getPosZ());
                     method2019.field2414 = 0.0f;
                 }
             }
@@ -77,14 +77,14 @@ public class Class412 extends Class409
                                 if (this.field2391.method6765().method31216(Class8878.field37318)) {
                                     final Class842 class7009 = Class7499.field28978.method23371(this.field2391);
                                     class7009.method5034(true);
-                                    class7009.method1730(method2019.method1938(), method2019.method1941(), method2019.method1945(), method2019.field2399, method2019.field2400);
+                                    class7009.method1730(method2019.getPosX(), method2019.getPosY(), method2019.getPosZ(), method2019.field2399, method2019.field2400);
                                     this.field2391.method6886(class7009);
                                 }
                             }
                             if (method2019.method1805()) {
                                 method2019.method1784();
                             }
-                            method2019.method1878(this.method1938(), this.method1941(), this.method1945());
+                            method2019.method1878(this.getPosX(), this.getPosY(), this.getPosZ());
                             method2019.field2414 = 0.0f;
                             method2019.method1740(Class7929.field32572, 5.0f);
                         }

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class818 extends Class789
 {
@@ -55,7 +56,7 @@ public class Class818 extends Class789
         this.field4384 = this.field4381;
         this.field4383 = this.field4382;
         this.field4382 += (float)((this.field2404 ? -1 : 4) * 0.3);
-        this.field4382 = MathHelper.method35653(this.field4382, 0.0f, 1.0f);
+        this.field4382 = MathHelper.clamp(this.field4382, 0.0f, 1.0f);
         if (!this.field2404) {
             if (this.field4385 < 1.0f) {
                 this.field4385 = 1.0f;
@@ -64,8 +65,8 @@ public class Class818 extends Class789
         this.field4385 *= (float)0.9;
         final Vec3d method1935 = this.method1935();
         if (!this.field2404) {
-            if (method1935.field22771 < 0.0) {
-                this.method1936(method1935.method16751(1.0, 0.6, 1.0));
+            if (method1935.y < 0.0) {
+                this.method1936(method1935.mul(1.0, 0.6, 1.0));
             }
         }
         this.field4381 += this.field4385 * 2.0f;
@@ -147,7 +148,7 @@ public class Class818 extends Class789
     @Override
     public void method1773(final Entity class399) {
         super.method1773(class399);
-        class399.method1656(this.method1938() + 0.1f * MathHelper.sin(this.field2951 * 0.017453292f), this.method1942(0.5) + class399.method1776() + 0.0, this.method1945() - 0.1f * MathHelper.cos(this.field2951 * 0.017453292f));
+        class399.method1656(this.getPosX() + 0.1f * MathHelper.sin(this.field2951 * 0.017453292f), this.method1942(0.5) + class399.method1776() + 0.0, this.getPosZ() - 0.1f * MathHelper.cos(this.field2951 * 0.017453292f));
         if (class399 instanceof Class511) {
             ((Class511)class399).field2951 = this.field2951;
         }

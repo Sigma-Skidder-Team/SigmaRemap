@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
@@ -262,7 +263,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
     public void method13985(final T t, final Class7351 class7351, final float n, final float n2, final float n3) {
         final Class290 method1654 = t.method1654();
         if (method1654 != Class290.field1665) {
-            class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f - n2));
+            class7351.method22566(Vector3f.YP.rotationDegrees(180.0f - n2));
         }
         if (t.field2941 <= 0) {
             if (!t.method2744()) {
@@ -279,14 +280,14 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                 }
                 else {
                     final Direction method1656 = t.method2788();
-                    class7351.method22566(Vector3f.field38718.rotationDegrees((method1656 == null) ? n2 : method13984(method1656)));
+                    class7351.method22566(Vector3f.YP.rotationDegrees((method1656 == null) ? n2 : method13984(method1656)));
                     class7351.method22566(Vector3f.ZP.rotationDegrees(this.method13988(t)));
-                    class7351.method22566(Vector3f.field38718.rotationDegrees(270.0f));
+                    class7351.method22566(Vector3f.YP.rotationDegrees(270.0f));
                 }
             }
             else {
                 class7351.method22566(Vector3f.XP.rotationDegrees(-90.0f - t.field2400));
-                class7351.method22566(Vector3f.field38718.rotationDegrees((t.field2424 + n3) * -75.0f));
+                class7351.method22566(Vector3f.YP.rotationDegrees((t.field2424 + n3) * -75.0f));
             }
         }
         else {

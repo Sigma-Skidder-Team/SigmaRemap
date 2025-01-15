@@ -5,6 +5,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.minecraft.dispenser.IPosition;
 import net.minecraft.util.Direction;
 
 import java.util.Random;
@@ -121,9 +122,9 @@ public class Class3955 extends Class3841
         }
     }
     
-    public static Class5488 method12072(final Class5491 class5491) {
+    public static IPosition method12072(final Class5491 class5491) {
         final Direction class5492 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
-        return new Class5493(class5491.method16760() + 0.7 * class5492.getXOffset(), class5491.method16761() + 0.7 * class5492.getYOffset(), class5491.method16762() + 0.7 * class5492.getZOffset());
+        return new Class5493(class5491.getX() + 0.7 * class5492.getXOffset(), class5491.getY() + 0.7 * class5492.getYOffset(), class5491.getZ() + 0.7 * class5492.getZOffset());
     }
     
     @Override

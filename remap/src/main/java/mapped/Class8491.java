@@ -309,14 +309,14 @@ public class Class8491
                 class5717.method16977(Class9379.field40223);
             }
             else {
-                Class9379.field40222 = this.field34856.field4684.method1935().field22771;
+                Class9379.field40222 = this.field34856.field4684.method1935().y;
                 if (this.field34863) {
                     if (Class9379.method34828()) {
                         Class6430.method19155(Class9379.field40222 = 0.20000000298023224);
                     }
                 }
-                Class9379.field40221 = this.field34856.field4684.method1935().field22770;
-                Class9379.field40223 = this.field34856.field4684.method1935().field22772;
+                Class9379.field40221 = this.field34856.field4684.method1935().x;
+                Class9379.field40223 = this.field34856.field4684.method1935().z;
                 this.field34863 = false;
             }
         }

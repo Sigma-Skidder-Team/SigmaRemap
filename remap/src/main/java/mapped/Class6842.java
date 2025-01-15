@@ -15,9 +15,9 @@ public abstract class Class6842 extends Class6831
     public Class6842(final Class798 field26858, final Class7795 class7795, final Class286 class7796) {
         super(class7795, class7796);
         this.field26858 = field26858;
-        this.field26837 = (float)field26858.method1938();
-        this.field26838 = (float)field26858.method1941();
-        this.field26839 = (float)field26858.method1945();
+        this.field26837 = (float)field26858.getPosX();
+        this.field26838 = (float)field26858.getPosY();
+        this.field26839 = (float)field26858.getPosZ();
         this.field26840 = true;
         this.field26841 = 0;
         this.field26835 = 0.0f;
@@ -32,17 +32,17 @@ public abstract class Class6842 extends Class6831
             }
         }
         if (!this.field26858.field2410 && !this.field26859) {
-            this.field26837 = (float)this.field26858.method1938();
-            this.field26838 = (float)this.field26858.method1941();
-            this.field26839 = (float)this.field26858.method1945();
-            final float method35641 = MathHelper.method35641(Entity.method1680(this.field26858.method1935()));
+            this.field26837 = (float)this.field26858.getPosX();
+            this.field26838 = (float)this.field26858.getPosY();
+            this.field26839 = (float)this.field26858.getPosZ();
+            final float method35641 = MathHelper.sqrt(Entity.method1680(this.field26858.method1935()));
             if (method35641 < 0.01) {
                 this.field26836 = 0.0f;
                 this.field26835 = 0.0f;
             }
             else {
-                this.field26836 = MathHelper.method35700(MathHelper.method35653(method35641, this.method20937(), this.method20938()), this.method20937(), this.method20938());
-                this.field26835 = MathHelper.method35700(MathHelper.method35653(method35641, 0.0f, 0.5f), 0.0f, 1.2f);
+                this.field26836 = MathHelper.method35700(MathHelper.clamp(method35641, this.method20937(), this.method20938()), this.method20937(), this.method20938());
+                this.field26835 = MathHelper.method35700(MathHelper.clamp(method35641, 0.0f, 0.5f), 0.0f, 1.2f);
             }
         }
         else {

@@ -17,7 +17,7 @@ public class Class9341
     private final int field40103;
     private final int field40104;
     private final boolean field40105;
-    private final Class6221 field40106;
+    private final AxisAlignedBB field40106;
     
     public Class9341(final int field40101, final int field40102, final int field40103, final int field40104, final boolean field40105) {
         this.field40101 = field40101;
@@ -25,7 +25,7 @@ public class Class9341
         this.field40103 = field40103;
         this.field40104 = field40104;
         this.field40105 = field40105;
-        this.field40106 = new Class6221(field40101 - field40103, 0.0, field40102 - field40103, field40101 + field40103, 256.0, field40102 + field40103);
+        this.field40106 = new AxisAlignedBB(field40101 - field40103, 0.0, field40102 - field40103, field40101 + field40103, 256.0, field40102 + field40103);
     }
     
     public boolean method34618(final BlockPos class354) {
@@ -52,7 +52,7 @@ public class Class9341
         return this.field40105;
     }
     
-    public Class6221 method34624() {
+    public AxisAlignedBB method34624() {
         return this.field40106;
     }
     

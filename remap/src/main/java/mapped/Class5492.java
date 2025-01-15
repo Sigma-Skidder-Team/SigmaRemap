@@ -21,17 +21,17 @@ public class Class5492 implements Class5491
     }
     
     @Override
-    public double method16760() {
+    public double getX() {
         return this.field22775.getX() + 0.5;
     }
     
     @Override
-    public double method16761() {
+    public double getY() {
         return this.field22775.getY() + 0.5;
     }
     
     @Override
-    public double method16762() {
+    public double getZ() {
         return this.field22775.getZ() + 0.5;
     }
     

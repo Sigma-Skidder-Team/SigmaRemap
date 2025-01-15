@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class435 extends Class436 implements Class447, Class434
 {
@@ -84,7 +85,7 @@ public class Class435 extends Class436 implements Class447, Class434
             string = "Lectern";
             method1871 = new Class2260("Lectern");
         }
-        return new Class7492(Class397.field2376, new Class5487(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Class9544.field41083, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
+        return new Class7492(Class397.field2376, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
     }
     
     @Override

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -42,7 +43,7 @@ public class Class6738 extends Class6737
     
     @Override
     public Vec3d method20493(final float n, final float n2) {
-        final float method35653 = MathHelper.method35653(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
+        final float method35653 = MathHelper.clamp(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
         return new Vec3d(0.627451f * (method35653 * 0.0f + 0.15f), 0.5019608f * (method35653 * 0.0f + 0.15f), 0.627451f * (method35653 * 0.0f + 0.15f));
     }
     

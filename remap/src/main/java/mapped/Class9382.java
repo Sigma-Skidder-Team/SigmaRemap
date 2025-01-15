@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.MarkerManager;
 
@@ -324,11 +325,11 @@ public class Class9382
     }
     
     private float method34847(final Class6834 class6834) {
-        return MathHelper.method35653(class6834.method20928(), 0.5f, 2.0f);
+        return MathHelper.clamp(class6834.method20928(), 0.5f, 2.0f);
     }
     
     private float method34848(final Class6834 class6834) {
-        return MathHelper.method35653(class6834.method20927() * this.method34834(class6834.method20923()), 0.0f, 1.0f);
+        return MathHelper.clamp(class6834.method20927() * this.method34834(class6834.method20923()), 0.0f, 1.0f);
     }
     
     public void method34849() {

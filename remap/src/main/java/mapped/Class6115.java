@@ -16,6 +16,7 @@ import java.util.Collection;
 import com.google.common.collect.Sets;
 import java.util.Set;
 import com.google.common.collect.Maps;
+import net.minecraft.dispenser.IPosition;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.UUID;
@@ -87,7 +88,7 @@ public class Class6115 implements Class6113
         });
         this.method18282();
         for (final BlockPos class354 : this.field24825.keySet()) {
-            if (!method18162.method1081(class354, 30.0)) {
+            if (!method18162.withinDistance(class354, 30.0)) {
                 continue;
             }
             method18285(class354);
@@ -198,7 +199,7 @@ public class Class6115 implements Class6113
     
     private void method18289(final Class8665 class8665) {
         if (class8665.field36435 != null) {
-            Class6114.method18272(class8665.field36435, 0.5f, false, false, this.method18294().method18161().method16760(), this.method18294().method18161().method16761(), this.method18294().method18161().method16762());
+            Class6114.method18272(class8665.field36435, 0.5f, false, false, this.method18294().method18161().getX(), this.method18294().method18161().getY(), this.method18294().method18161().getZ());
         }
     }
     
@@ -238,9 +239,9 @@ public class Class6115 implements Class6113
         Class7282.method22341(s, class354.getX() + 0.5, class354.getY() + 1.3 + n * 0.2, class354.getZ() + 0.5, n2, 0.02f, true, 0.0f, true);
     }
     
-    private static void method18293(final Class5488 class5488, final int n, final String s, final int n2, final float n3) {
+    private static void method18293(final IPosition class5488, final int n, final String s, final int n2, final float n3) {
         final BlockPos class5489 = new BlockPos(class5488);
-        Class7282.method22341(s, class5489.getX() + 0.5, class5488.method16761() + 2.4 + n * 0.25, class5489.getZ() + 0.5, n2, n3, false, 0.5f, true);
+        Class7282.method22341(s, class5489.getX() + 0.5, class5488.getY() + 2.4 + n * 0.25, class5489.getZ() + 0.5, n2, n3, false, 0.5f, true);
     }
     
     private Class6092 method18294() {
@@ -248,7 +249,7 @@ public class Class6115 implements Class6113
     }
     
     private String method18295(final Class8665 class8665, final BlockPos class8666) {
-        return class8666.method1087() + " (dist " + Math.round(MathHelper.method35641(class8666.method1085(class8665.field36434.method16760(), class8665.field36434.method16761(), class8665.field36434.method16762(), true)) * 10.0f) / 10.0 + ")";
+        return class8666.func_229422_x_() + " (dist " + Math.round(MathHelper.sqrt(class8666.distanceSq(class8665.field36434.getX(), class8665.field36434.getY(), class8665.field36434.getZ(), true)) * 10.0f) / 10.0 + ")";
     }
     
     private boolean method18296(final Class8665 class8665) {
@@ -257,7 +258,7 @@ public class Class6115 implements Class6113
     
     private boolean method18297(final Class8665 class8665) {
         final Class756 field4684 = this.field24824.field4684;
-        return new BlockPos(field4684.method1938(), class8665.field36434.method16761(), field4684.method1945()).method1081(new BlockPos(class8665.field36434), 30.0);
+        return new BlockPos(field4684.getPosX(), class8665.field36434.getY(), field4684.getPosZ()).withinDistance(new BlockPos(class8665.field36434), 30.0);
     }
     
     private Collection<UUID> method18298(final BlockPos class354) {

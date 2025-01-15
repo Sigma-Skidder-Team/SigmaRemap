@@ -92,8 +92,8 @@ public class Class3393 extends Class3167
                     this.field16113 = 0.0;
                     return;
                 }
-                if (Class3393.field15514.field4684.method1935().field22771 < -0.1) {
-                    this.field16113 -= Class3393.field15514.field4684.method1935().field22771;
+                if (Class3393.field15514.field4684.method1935().y < -0.1) {
+                    this.field16113 -= Class3393.field15514.field4684.method1935().y;
                 }
                 if (this.field16113 > 2.8 && (Class3393.field15514.field4684.field2396 % 0.0625 != 0.0 || Class3393.field15514.field4684.field2396 % 0.015256 != 0.0)) {
                     this.field16113 = 1.0E-14;
@@ -110,11 +110,11 @@ public class Class3393 extends Class3167
                     this.field16113 = 0.0;
                     return;
                 }
-                if (Class3393.field15514.field4684.method1935().field22771 < -0.1) {
+                if (Class3393.field15514.field4684.method1935().y < -0.1) {
                     if (this.field16113 == 0.0) {
                         class5744.method17045(true);
                     }
-                    this.field16113 -= Class3393.field15514.field4684.method1935().field22771;
+                    this.field16113 -= Class3393.field15514.field4684.method1935().y;
                 }
                 if (this.field16113 > 3.0) {
                     this.field16113 = 1.0E-14;
@@ -127,7 +127,7 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class3393.field15514.field4684.method1935().field22771 < 0.0 && !Class3393.field15514.field4684.field2404 && Class6430.method19146()) {
+                if (Class3393.field15514.field4684.method1935().y < 0.0 && !Class3393.field15514.field4684.field2404 && Class6430.method19146()) {
                     final double[] method9888 = Class6430.method19177();
                     for (int length = method9888.length, i = 0; i < length; ++i) {
                         if ((int)class5744.method17036() - class5744.method17036() + method9888[i] == 0.0) {
@@ -157,14 +157,14 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class3393.field15514.field4684.method1935().field22771 < -0.1) {
+                if (Class3393.field15514.field4684.method1935().y < -0.1) {
                     class5744.method17045(true);
                     break;
                 }
                 break;
             }
             case "Vanilla Legit": {
-                if (Class3393.field15514.field4684.method1935().field22771 < -0.1) {
+                if (Class3393.field15514.field4684.method1935().y < -0.1) {
                     class5744.method17045(true);
                 }
                 if (Class3393.field15514.field4684.field2414 > 3.0f) {

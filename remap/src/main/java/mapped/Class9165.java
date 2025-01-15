@@ -17,6 +17,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class9165
 {
@@ -39,9 +40,9 @@ public class Class9165
         final double pow = Math.pow((n <= 1.0f) ? 16.0 : ((double)(n * 16.0f)), 2.0);
         int n4 = 0;
         for (final Class513 class7496 : collection) {
-            final double n5 = class7495.field22770 - class7496.method1938();
-            final double n6 = class7495.field22771 - class7496.method1941();
-            final double n7 = class7495.field22772 - class7496.method1945();
+            final double n5 = class7495.x - class7496.getPosX();
+            final double n6 = class7495.y - class7496.getPosY();
+            final double n7 = class7495.z - class7496.getPosZ();
             final double n8 = n5 * n5 + n6 * n6 + n7 * n7;
             Vec3d class7497 = class7495;
             float n9 = n;
@@ -49,8 +50,8 @@ public class Class9165
                 if (n3 <= 0.0f) {
                     continue;
                 }
-                final double n10 = MathHelper.method35641(n8);
-                class7497 = new Vec3d(class7496.method1938() + n5 / n10 * 2.0, class7496.method1941() + n6 / n10 * 2.0, class7496.method1945() + n7 / n10 * 2.0);
+                final double n10 = MathHelper.sqrt(n8);
+                class7497 = new Vec3d(class7496.getPosX() + n5 / n10 * 2.0, class7496.getPosY() + n6 / n10 * 2.0, class7496.getPosZ() + n7 / n10 * 2.0);
                 n9 = n3;
             }
             class7496.field3039.method17469(new Class4342(class7493, class7494, class7497, n9, n2));

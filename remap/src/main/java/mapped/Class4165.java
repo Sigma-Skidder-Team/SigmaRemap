@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
@@ -41,13 +42,13 @@ public class Class4165 extends Class4158<Class465>
                 final Class7096 method2388 = class465.method2194();
                 if (!(method2388.method21696() instanceof Class3946)) {
                     class466.method22564(0.5, -0.1666666716337204, 0.5);
-                    class466.method22566(Vector3f.field38718.rotationDegrees(-method2388.method21772((Class7111<Direction>)Class3945.field17839).getHorizontalAngle()));
+                    class466.method22566(Vector3f.YP.rotationDegrees(-method2388.method21772((Class7111<Direction>)Class3945.field17839).getHorizontalAngle()));
                     class466.method22564(0.0, -0.3125, -0.4375);
                     this.field18563.field25187 = false;
                 }
                 else {
                     class466.method22564(0.5, 0.5, 0.5);
-                    class466.method22566(Vector3f.field38718.rotationDegrees(-method2388.method21772((Class7111<Integer>)Class3946.field17842) * 360 / 16.0f));
+                    class466.method22566(Vector3f.YP.rotationDegrees(-method2388.method21772((Class7111<Integer>)Class3946.field17842) * 360 / 16.0f));
                     this.field18563.field25187 = true;
                 }
             }

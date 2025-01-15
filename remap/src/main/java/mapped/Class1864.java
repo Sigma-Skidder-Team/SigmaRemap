@@ -82,11 +82,11 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public void method7059(final Entity class399, final Class6221 class400, final List<Entity> list, final Predicate<? super Entity> predicate) {
+    public void method7059(final Entity class399, final AxisAlignedBB class400, final List<Entity> list, final Predicate<? super Entity> predicate) {
     }
     
     @Override
-    public <T extends Entity> void method7061(final Class<? extends T> clazz, final Class6221 class6221, final List<T> list, final Predicate<? super T> predicate) {
+    public <T extends Entity> void method7061(final Class<? extends T> clazz, final AxisAlignedBB class6221, final List<T> list, final Predicate<? super T> predicate) {
     }
     
     @Override

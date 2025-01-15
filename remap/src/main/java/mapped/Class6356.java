@@ -141,7 +141,7 @@ public class Class6356 extends Class6354
                 if (!class513.method27677()) {
                     if (class515.field39643.field2452 == this.field25422) {
                         if (this.field25423) {
-                            this.method18918(Class2095.field12111, class515.field39643.field2391, string, class515.field39643.method1938(), class515.field39643.method1945(), class515.field39643.field2399, null);
+                            this.method18918(Class2095.field12111, class515.field39643.field2391, string, class515.field39643.getPosX(), class515.field39643.getPosZ(), class515.field39643.field2399, null);
                         }
                     }
                 }

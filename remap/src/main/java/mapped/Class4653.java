@@ -211,7 +211,7 @@ public class Class4653 extends Class4651
                 }
             }
             if (class6773 == Class257.field1206) {
-                if (!this.field20141.field2391.method6978(this.field20141, new Class6221(n - n5 + 0.5, i + 0.001, n2 - n5 + 0.5, n + n5 + 0.5, i + this.field20141.method1931(), n2 + n5 + 0.5))) {
+                if (!this.field20141.field2391.method6978(this.field20141, new AxisAlignedBB(n - n5 + 0.5, i + 0.001, n2 - n5 + 0.5, n + n5 + 0.5, i + this.field20141.method1931(), n2 + n5 + 0.5))) {
                     return null;
                 }
                 final Class257 method4145 = this.method13908(this.field20140, n, i - 1, n2, this.field20141, this.field20143, this.field20144, this.field20145, false, false);

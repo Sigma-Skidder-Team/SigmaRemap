@@ -50,7 +50,7 @@ public class Class3317 extends Class3167
                 this.method9879();
             }
             Class3317.field15514.field4684.field4078 = Class3317.field15514.field4684.field2400;
-            final Class6221 field2403 = Class3317.field15514.field4684.field2403;
+            final AxisAlignedBB field2403 = Class3317.field15514.field4684.field2403;
             Class3317.field15901.method1656((field2403.field25073 + field2403.field25076) / 2.0, field2403.field25074, (field2403.field25075 + field2403.field25078) / 2.0);
             final double n = this.field15905 + (this.field15902 - this.field15905) * class5741.field23312;
             final double n2 = this.field15906 + (this.field15903 - this.field15906) * class5741.field23312;
@@ -77,7 +77,7 @@ public class Class3317 extends Class3167
     public void method10499(final Class5739 class5739) {
         if (this.method9906()) {
             Class3317.field15901.method1685();
-            Class3317.field15901.field2403 = new Class6221(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            Class3317.field15901.field2403 = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }
     }
     
@@ -272,7 +272,7 @@ public class Class3317 extends Class3167
                 final double field19378 = class5724.field19378;
                 final double field19379 = class5724.field19379;
                 final float field19380 = Class512.field2997.field34097;
-                Class3317.field15514.field4684.method1889(new Class6221(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + Class512.field2997.field34098, field19379 + field19380));
+                Class3317.field15514.field4684.method1889(new AxisAlignedBB(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + Class512.field2997.field34098, field19379 + field19380));
                 class5723.method16961(true);
                 Class3317.field15901.method1937(0.0, 0.0, 0.0);
             }

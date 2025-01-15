@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -60,12 +61,12 @@ public class Class403 extends Class402
                 }
                 else if (byteValue > 0) {
                     this.method1986(true);
-                    final Class5487 class5487 = new Class5487(method1973.method1938() - this.method1938(), method1973.method1944() - this.method1941(), method1973.method1945() - this.method1945());
-                    this.method1948(this.method1938(), this.method1941() + class5487.field22771 * 0.015 * byteValue, this.method1945());
+                    final Vec3d class5487 = new Vec3d(method1973.getPosX() - this.getPosX(), method1973.method1944() - this.getPosY(), method1973.getPosZ() - this.getPosZ());
+                    this.method1948(this.getPosX(), this.getPosY() + class5487.y * 0.015 * byteValue, this.getPosZ());
                     if (this.field2391.field10067) {
-                        this.field2418 = this.method1941();
+                        this.field2418 = this.getPosY();
                     }
-                    this.method1936(this.method1935().method16748(0.95).method16743(class5487.method16738().method16748(0.05 * byteValue)));
+                    this.method1936(this.method1935().scale(0.95).add(class5487.normalize().scale(0.05 * byteValue)));
                     if (this.field2488 == 0) {
                         this.method1695(Class8520.field35636, 10.0f, 1.0f);
                     }
@@ -92,7 +93,7 @@ public class Class403 extends Class402
     
     @Nullable
     @Override
-    public Class7007 method1971(final Class5487 class5487, final Class5487 class5488) {
+    public Class7007 method1971(final Vec3d class5487, final Vec3d class5488) {
         return this.field2487 ? null : super.method1971(class5487, class5488);
     }
     
@@ -120,7 +121,7 @@ public class Class403 extends Class402
                 this.method1970(class7009);
             }
         }
-        this.method1936(this.method1935().method16751(-0.01, -0.1, -0.01));
+        this.method1936(this.method1935().mul(-0.01, -0.1, -0.01));
         float n2 = 1.0f;
         if (this.field2391 instanceof Class1849) {
             if (this.field2391.method6770()) {

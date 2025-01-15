@@ -43,7 +43,7 @@ public class Class3187 extends Class3167
             else {
                 this.field15588 = 0;
                 Class3187.field15514.field4684.method2725();
-                class5717.method16975(Class3187.field15514.field4684.method1935().field22771);
+                class5717.method16975(Class3187.field15514.field4684.method1935().y);
             }
         }
     }

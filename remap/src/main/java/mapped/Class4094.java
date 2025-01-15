@@ -67,8 +67,8 @@ public class Class4094 extends Class4093
                 final int n = 1 << class1849.field25425;
                 final int field25420 = class1849.field25420;
                 final int field25421 = class1849.field25421;
-                final int n2 = MathHelper.floor(class1848.method1938() - field25420) / n + 64;
-                final int n3 = MathHelper.floor(class1848.method1945() - field25421) / n + 64;
+                final int n2 = MathHelper.floor(class1848.getPosX() - field25420) / n + 64;
+                final int n3 = MathHelper.floor(class1848.getPosZ() - field25421) / n + 64;
                 int n4 = 128 / n;
                 if (class1847.field10063.method20504()) {
                     n4 /= 2;

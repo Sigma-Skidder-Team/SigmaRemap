@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4720 extends Class4712<Class837, Class5877<Class837>>
@@ -26,7 +27,7 @@ public class Class4720 extends Class4712<Class837, Class5877<Class837>>
             n4 = 1.3f;
             n5 = 1.7f;
         }
-        class838.method22566(Vector3f.field38718.rotationDegrees(n4 * 4.3f * MathHelper.sin(n5 * 0.6f * n)));
+        class838.method22566(Vector3f.YP.rotationDegrees(n4 * 4.3f * MathHelper.sin(n5 * 0.6f * n)));
         class838.method22564(0.0, 0.0, -0.4000000059604645);
         if (!class837.method1706()) {
             class838.method22564(0.20000000298023224, 0.10000000149011612, 0.0);

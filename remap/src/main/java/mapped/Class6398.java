@@ -16,7 +16,7 @@ public final class Class6398 extends Class6397
         if (!method16763.method6678()) {
             this.field25515 = false;
             final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859));
-            for (final Class802 class5493 : method16763.method7128((Class<? extends Class802>)Class802.class, new Class6221(method16764))) {
+            for (final Class802 class5493 : method16763.method7128((Class<? extends Class802>)Class802.class, new AxisAlignedBB(method16764))) {
                 if (!class5493.method1768()) {
                     continue;
                 }

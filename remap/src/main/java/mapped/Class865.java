@@ -4,9 +4,10 @@
 
 package mapped;
 
-import com.mojang.brigadier.context.CommandContext;
 import java.util.Date;
 import com.mojang.brigadier.ResultConsumer;
+import net.minecraft.util.math.Vec3d;
+
 import java.text.SimpleDateFormat;
 
 public abstract class Class865 implements Class397
@@ -184,7 +185,7 @@ public abstract class Class865 implements Class397
         return false;
     }
     
-    public abstract Class5487 method5222();
+    public abstract Vec3d method5222();
     
     public abstract Class7492 method5223();
     

@@ -41,7 +41,7 @@ public class Class3574 extends Class3446
         }
         if (method6755.method1768()) {
             this.field16689 = this.field16685.method4150().method24722(method6755, 0);
-            return this.field16689 != null || this.method11117(method6755) >= this.field16685.method1733(method6755.method1938(), method6755.method1941(), method6755.method1945());
+            return this.field16689 != null || this.method11117(method6755) >= this.field16685.method1733(method6755.getPosX(), method6755.getPosY(), method6755.getPosZ());
         }
         return false;
     }
@@ -81,7 +81,7 @@ public class Class3574 extends Class3446
     public void method11016() {
         final Class511 method4152 = this.field16685.method4152();
         this.field16685.method4147().method24667(method4152, 30.0f, 30.0f);
-        final double method4153 = this.field16685.method1733(method4152.method1938(), method4152.method1941(), method4152.method1945());
+        final double method4153 = this.field16685.method1733(method4152.getPosX(), method4152.getPosY(), method4152.getPosZ());
         --this.field16690;
         Label_0068: {
             if (this.field16688 || this.field16685.method4151().method34143(method4152)) {
@@ -100,9 +100,9 @@ public class Class3574 extends Class3446
                             }
                         }
                     }
-                    this.field16691 = method4152.method1938();
-                    this.field16692 = method4152.method1941();
-                    this.field16693 = method4152.method1945();
+                    this.field16691 = method4152.getPosX();
+                    this.field16692 = method4152.getPosY();
+                    this.field16693 = method4152.getPosZ();
                     this.field16690 = 4 + this.field16685.method2633().nextInt(7);
                     if (method4153 <= 1024.0) {
                         if (method4153 > 256.0) {

@@ -93,7 +93,7 @@ public class Class3171 extends Class3167
                     continue;
                 }
                 GL11.glPushMatrix();
-                GL11.glTranslated(-Class3171.field15514.field4644.method5833().method18161().method16760(), -Class3171.field15514.field4644.method5833().method18161().method16761(), -Class3171.field15514.field4644.method5833().method18161().method16762());
+                GL11.glTranslated(-Class3171.field15514.field4644.method5833().method18161().getX(), -Class3171.field15514.field4644.method5833().method18161().getY(), -Class3171.field15514.field4644.method5833().method18161().getZ());
                 GL11.glDisable(2929);
                 GL11.glEnable(3042);
                 final int method9885 = this.method9885("Color");

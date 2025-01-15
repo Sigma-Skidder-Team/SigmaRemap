@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import org.apache.commons.lang3.RandomUtils;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class Class4609
         final double x = class354.getX() + 0.5 - Class869.method5277().field4684.field2395;
         final double y = class354.getY() + 0.5 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892());
         final double y2 = class354.getZ() + 0.5 - Class869.method5277().field4684.field2397;
-        final double x2 = MathHelper.method35641(x * x + y2 * y2);
+        final double x2 = MathHelper.sqrt(x * x + y2 * y2);
         final float n = (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f;
         final float n2 = (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793));
         Class869.method5277().field4684.field2399 += MathHelper.method35668(n - Class869.method5277().field4684.field2399);
@@ -58,14 +59,14 @@ public class Class4609
         final double x = class354.getX() + 0.5 - Class869.method5277().field4684.field2395;
         final double y = class354.getY() + 0.5 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892());
         final double y2 = class354.getZ() + 0.5 - Class869.method5277().field4684.field2397;
-        Class869.method5277().method5269().method17292(new Class4356(Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400), Class869.method5277().field4684.field2404));
+        Class869.method5277().method5269().method17292(new Class4356(Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400), Class869.method5277().field4684.field2404));
     }
     
     public static float[] method13671(final BlockPos class354) {
         final double x = class354.getX() + 0.5 - Class869.method5277().field4684.field2395;
         final double y = class354.getY() - 0.25 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892());
         final double y2 = class354.getZ() + 0.5 - Class869.method5277().field4684.field2397;
-        return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
+        return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
     }
     
     public static float[] method13672(final BlockPos class354, final Direction class355) {
@@ -100,7 +101,7 @@ public class Class4609
         final double x = class354.getX() + 0.5 - Class869.method5277().field4684.field2395 + n;
         final double y = class354.getY() - 0.02 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892()) + n3;
         final double y2 = class354.getZ() + 0.5 - Class869.method5277().field4684.field2397 + n2;
-        return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
+        return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
     }
     
     public static float[] method13673(final BlockPos class354, final Direction class355) {
@@ -147,7 +148,7 @@ public class Class4609
         final double x = class354.getX() + 0.5 - Class869.method5277().field4684.field2395 + n;
         final double y = class354.getY() - 0.02 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892()) + n3;
         final double y2 = class354.getZ() + 0.5 - Class869.method5277().field4684.field2397 + n2;
-        return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
+        return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
     }
     
     public static float method13674(final BlockPos class354, final Direction class355) {
@@ -175,7 +176,7 @@ public class Class4609
         final double n4 = class354.getZ() + 0.5 - Class869.method5277().field4684.field2397 + n2;
         final double y = class354.getY() - 0.02 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892()) + 1.0;
         final double y2 = class354.getY() - 0.02 - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892());
-        final double n5 = MathHelper.method35641(n3 * n3 + n4 * n4);
+        final double n5 = MathHelper.sqrt(n3 * n3 + n4 * n4);
         return (float)(-(Math.atan2(y2, n5) * 180.0 / 3.141592653589793)) - (float)(-(Math.atan2(y, n5) * 180.0 / 3.141592653589793));
     }
     
@@ -200,7 +201,7 @@ public class Class4609
         return list;
     }
     
-    public static List<BlockPos> method13676(final List<BlockPos> list, final Class5487 class5487) {
+    public static List<BlockPos> method13676(final List<BlockPos> list, final Vec3d class5487) {
         list.sort((class5489, class5490) -> {
             method13681(class5488, class5489);
             method13681(class5488, class5490);
@@ -221,7 +222,7 @@ public class Class4609
         return list;
     }
     
-    public static List<BlockPos> method13677(final List<BlockPos> list, final Class5487 class5487, final boolean b) {
+    public static List<BlockPos> method13677(final List<BlockPos> list, final Vec3d class5487, final boolean b) {
         if (!b) {
             method13676(list, class5487);
         }
@@ -245,11 +246,11 @@ public class Class4609
         return method13683(class399, class400.getX(), class400.getY(), class400.getZ());
     }
     
-    public static float method13681(final Class5487 class5487, final BlockPos class5488) {
+    public static float method13681(final Vec3d class5487, final BlockPos class5488) {
         return method13684(class5487, class5488.getX(), class5488.getY(), class5488.getZ());
     }
     
-    public static float method13682(final Class5487 class5487, final BlockPos class5488) {
+    public static float method13682(final Vec3d class5487, final BlockPos class5488) {
         return method13685(class5487, class5488.getX(), class5488.getZ());
     }
     
@@ -257,12 +258,12 @@ public class Class4609
         return method13688((float)(class399.field2395 - n), (float)(class399.field2396 - n2), (float)(class399.field2397 - n3));
     }
     
-    public static float method13684(final Class5487 class5487, final double n, final double n2, final double n3) {
-        return method13688((float)(class5487.method16760() - n), (float)(class5487.method16761() - n2), (float)(class5487.method16762() - n3));
+    public static float method13684(final Vec3d class5487, final double n, final double n2, final double n3) {
+        return method13688((float)(class5487.getX() - n), (float)(class5487.getY() - n2), (float)(class5487.getZ() - n3));
     }
     
-    public static float method13685(final Class5487 class5487, final double n, final double n2) {
-        return method13687((float)(class5487.method16760() - n), (float)(class5487.method16762() - n2));
+    public static float method13685(final Vec3d class5487, final double n, final double n2) {
+        return method13687((float)(class5487.getX() - n), (float)(class5487.getZ() - n2));
     }
     
     public static float method13686(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
@@ -337,29 +338,29 @@ public class Class4609
     public static float[] method13695() {
         final Class7005 method13696 = method13696(Class7482.method23147() - 270.0f);
         if (method13696.method21449() != Class2165.field12880) {
-            final double n = method13696.method21451().field22770 - method13696.method21447().getX();
-            final double n2 = method13696.method21451().field22772 - method13696.method21447().getZ();
-            final double n3 = method13696.method21451().field22771 - method13696.method21447().getY();
+            final double n = method13696.method21451().x - method13696.method21447().getX();
+            final double n2 = method13696.method21451().z - method13696.method21447().getZ();
+            final double n3 = method13696.method21451().y - method13696.method21447().getY();
             final double x = method13696.method21447().getX() - Class869.method5277().field4684.field2395 + n;
             final double y = method13696.method21447().getY() - (Class869.method5277().field4684.field2396 + Class869.method5277().field4684.method1892()) + n3;
             final double y2 = method13696.method21447().getZ() - Class869.method5277().field4684.field2397 + n2;
-            return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
+            return new float[] { Class869.method5277().field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.field2399), Class869.method5277().field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.field2400) };
         }
         return null;
     }
     
     public static Class7005 method13696(float n) {
-        final Class5487 class5487 = new Class5487(Class4609.field20075.field4684.field4074, Class4609.field20075.field4684.field4075 - 0.800000011920929, Class4609.field20075.field4684.field4076);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.field4074, Class4609.field20075.field4684.field4075 - 0.800000011920929, Class4609.field20075.field4684.field4076);
         n = (float)Math.toRadians(n);
         final float n2 = 0.0f;
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
         final float n4 = MathHelper.cos(n) * MathHelper.cos(n2);
         final float n5 = 2.3f;
-        return Class4609.field20075.field4683.method6987(new Class8478(class5487, new Class5487(Class4609.field20075.field4684.field4074 + n3 * n5, Class4609.field20075.field4684.field4075 - 0.800000011920929 - (Class4609.field20075.field4684.field2967 ? 0.6f : 0.0f), Class4609.field20075.field4684.field4076 + n4 * n5), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
+        return Class4609.field20075.field4683.method6987(new Class8478(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * n5, Class4609.field20075.field4684.field4075 - 0.800000011920929 - (Class4609.field20075.field4684.field2967 ? 0.6f : 0.0f), Class4609.field20075.field4684.field4076 + n4 * n5), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
     }
     
     public static Class7005 method13697(float n, float n2, float method27315) {
-        final Class5487 class5487 = new Class5487(Class4609.field20075.field4684.field4074, Class4609.field20075.field4684.field4075 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.field4074, Class4609.field20075.field4684.field4075 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
@@ -368,11 +369,11 @@ public class Class4609
         if (method27315 == 0.0f) {
             method27315 = Class4609.field20075.field4682.method27315();
         }
-        return Class4609.field20075.field4683.method6987(new Class8478(class5487, new Class5487(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
+        return Class4609.field20075.field4683.method6987(new Class8478(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
     }
     
     public static Class7005 method13698(float n, float n2, float method27315, final Class5744 class5744) {
-        final Class5487 class5745 = new Class5487(class5744.method17034(), Class4609.field20075.field4684.method1892() + class5744.method17036(), class5744.method17038());
+        final Vec3d class5745 = new Vec3d(class5744.method17034(), Class4609.field20075.field4684.method1892() + class5744.method17036(), class5744.method17038());
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
@@ -381,11 +382,11 @@ public class Class4609
         if (method27315 == 0.0f) {
             method27315 = Class4609.field20075.field4682.method27315();
         }
-        return Class4609.field20075.field4683.method6987(new Class8478(class5745, new Class5487(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
+        return Class4609.field20075.field4683.method6987(new Class8478(class5745, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
     }
     
     public static Class7006 method13699(float n, float n2, float method27315, final float n3) {
-        final Class5487 class5487 = new Class5487(Class4609.field20075.field4684.field2395 + Math.cos(Class7482.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397 + Math.sin(Class7482.method23147() * 3.141592653589793 / 180.0) * n3);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.field2395 + Math.cos(Class7482.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397 + Math.sin(Class7482.method23147() * 3.141592653589793 / 180.0) * n3);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n4 = -MathHelper.sin(n) * MathHelper.cos(n2);
@@ -394,27 +395,27 @@ public class Class4609
         if (method27315 == 0.0f) {
             method27315 = Class4609.field20075.field4682.method27315();
         }
-        return Class4609.field20075.field4683.method6987(new Class8478(class5487, new Class5487(Class4609.field20075.field4684.field4074 + n4 * method27315, Class4609.field20075.field4684.field4075 + n5 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n6 * method27315), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
+        return Class4609.field20075.field4683.method6987(new Class8478(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n4 * method27315, Class4609.field20075.field4684.field4075 + n5 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n6 * method27315), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
     }
     
     public static Class7006 method13700(final BlockPos class354) {
-        return Class4609.field20075.field4683.method6987(new Class8478(new Class5487(Class4609.field20075.field4684.field2395, Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397), new Class5487(class354.getX() + 0.5 + RandomUtils.nextDouble(0.01, 0.04), class354.getY(), class354.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
+        return Class4609.field20075.field4683.method6987(new Class8478(new Vec3d(Class4609.field20075.field4684.field2395, Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397), new Vec3d(class354.getX() + 0.5 + RandomUtils.nextDouble(0.01, 0.04), class354.getY(), class354.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)), Class2040.field11633, Class2191.field13325, Class4609.field20075.method5303()));
     }
     
     private boolean method13701(final Class9052 class9052, float n, float n2) {
-        final Class5487 class9053 = new Class5487(Class4609.field20075.field4684.field2395, Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397);
+        final Vec3d class9053 = new Vec3d(Class4609.field20075.field4684.field2395, Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
         final float n4 = -MathHelper.sin(n2);
         final float n5 = MathHelper.cos(n) * MathHelper.cos(n2);
         final float method27315 = Class4609.field20075.field4682.method27315();
-        final Class7005 method27316 = Class4609.field20075.field4683.method6987(new Class8478(class9053, new Class5487(Class4609.field20075.field4684.field2395 + n3 * method27315, Class4609.field20075.field4684.field2396 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397 + n5 * method27315), Class2040.field11633, Class2191.field13327, Class4609.field20075.method5303()));
+        final Class7005 method27316 = Class4609.field20075.field4683.method6987(new Class8478(class9053, new Vec3d(Class4609.field20075.field4684.field2395 + n3 * method27315, Class4609.field20075.field4684.field2396 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field2397 + n5 * method27315), Class2040.field11633, Class2191.field13327, Class4609.field20075.method5303()));
         return method27316 != null && method27316.method21447().equals(class9052.field38320) && method27316.method21448() == class9052.field38321;
     }
     
-    public static Class5487 method13702(final Direction class179, final BlockPos class180) {
-        return new Class5487(class180.getX() + (float)Math.max(0, class179.getXOffset()) + ((class179.getXOffset() != 0) ? 0.0f : ((float)Math.random())), class180.getY() + ((class179.getYOffset() != 0) ? 0.0f : ((class179.getYOffset() != 1) ? ((float)Math.random()) : 1.0f)), class180.getZ() + (float)Math.max(0, class179.getZOffset()) + ((class179.getZOffset() != 0) ? 0.0f : ((float)Math.random())));
+    public static Vec3d method13702(final Direction class179, final BlockPos class180) {
+        return new Vec3d(class180.getX() + (float)Math.max(0, class179.getXOffset()) + ((class179.getXOffset() != 0) ? 0.0f : ((float)Math.random())), class180.getY() + ((class179.getYOffset() != 0) ? 0.0f : ((class179.getYOffset() != 1) ? ((float)Math.random()) : 1.0f)), class180.getZ() + (float)Math.max(0, class179.getZOffset()) + ((class179.getZOffset() != 0) ? 0.0f : ((float)Math.random())));
     }
     
     public static int method13703(final Class7096 class7096) {
@@ -449,7 +450,7 @@ public class Class4609
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
                     final BlockPos method1133 = class354.method1133(n3, n2, n4);
-                    if (Class4609.field20075.field4684.method1941() >= method1133.getY()) {
+                    if (Class4609.field20075.field4684.getPosY() >= method1133.getY()) {
                         list.add(method1133);
                     }
                 }
@@ -460,7 +461,7 @@ public class Class4609
     
     public static Class9301 method13707(final BlockPos class354, final boolean b, final boolean b2) {
         method13690();
-        for (final BlockPos class355 : method13677(method13706(class354), new Class5487(Class4609.field20075.field4684.field2395, Class4609.field20075.field4684.field2396, Class4609.field20075.field4684.field2397), b2)) {
+        for (final BlockPos class355 : method13677(method13706(class354), new Vec3d(Class4609.field20075.field4684.field2395, Class4609.field20075.field4684.field2396, Class4609.field20075.field4684.field2397), b2)) {
             for (final Direction class356 : Direction.values()) {
                 if (class356 != Direction.DOWN || !b) {
                     if (!method13708(class355)) {
@@ -488,15 +489,15 @@ public class Class4609
             return new float[] { n, n2 };
         }
         final float n3 = method13671(class9301.field39906)[0];
-        final Class5487 class9302 = new Class5487(class9301.field39906.getX() + 0.5, class9301.field39906.getY() + 0.5, class9301.field39906.getZ() + 0.5);
+        final Vec3d class9302 = new Vec3d(class9301.field39906.getX() + 0.5, class9301.field39906.getY() + 0.5, class9301.field39906.getZ() + 0.5);
         final float n4 = (n3 + 90.0f) * 0.017453292f;
-        final Class5487 method13698 = class9302.method16744(-MathHelper.sin(n4) / 2.1, 0.0, MathHelper.cos(n4) / 2.1);
-        final float[] method13699 = Class8845.method30919(method13698.field22770, method13698.field22772, method13698.field22771);
+        final Vec3d method13698 = class9302.add(-MathHelper.sin(n4) / 2.1, 0.0, MathHelper.cos(n4) / 2.1);
+        final float[] method13699 = Class8845.method30919(method13698.x, method13698.z, method13698.y);
         final float n5 = method13699[0];
         final float n6 = method13699[1];
         final float n7 = (n3 - 90.0f) * 0.017453292f;
-        final Class5487 method13700 = new Class5487(class9301.field39906.getX() + 0.5, class9301.field39906.getY() + 0.5, class9301.field39906.getZ() + 0.5).method16744(-MathHelper.sin(n7) / 2.1, 0.0, MathHelper.cos(n7) / 2.1);
-        final float[] method13701 = Class8845.method30919(method13700.field22770, method13700.field22772, method13700.field22771);
+        final Vec3d method13700 = new Vec3d(class9301.field39906.getX() + 0.5, class9301.field39906.getY() + 0.5, class9301.field39906.getZ() + 0.5).add(-MathHelper.sin(n7) / 2.1, 0.0, MathHelper.cos(n7) / 2.1);
+        final float[] method13701 = Class8845.method30919(method13700.x, method13700.z, method13700.y);
         final float n8 = method13701[0];
         final float n9 = method13701[1];
         if (Math.abs(Class8845.method30917(MathHelper.method35668(n), MathHelper.method35668(n5))) >= Math.abs(Class8845.method30917(MathHelper.method35668(n), MathHelper.method35668(n8)))) {
@@ -542,7 +543,7 @@ public class Class4609
         final double x = class354.getX() + 0.5 - Class4609.field20075.field4684.field2395 + class355.getXOffset() / 2.0;
         final double y = class354.getZ() + 0.5 - Class4609.field20075.field4684.field2397 + class355.getZOffset() / 2.0;
         final double y2 = Class4609.field20075.field4684.field2396 + Class4609.field20075.field4684.method1892() - (class354.getY() + 0.5);
-        final double x2 = MathHelper.method35641(x * x + y * y);
+        final double x2 = MathHelper.sqrt(x * x + y * y);
         float n = (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f;
         final float n2 = (float)(Math.atan2(y2, x2) * 180.0 / 3.141592653589793);
         if (n < 0.0f) {
@@ -557,14 +558,14 @@ public class Class4609
         final float n3 = class400.getY() + 1.0f;
         final float n4 = class400.getZ() + 0.5f;
         final float n5 = n * 2.0f;
-        final Class5487 class401 = new Class5487(n2, n3, n4);
+        final Vec3d class401 = new Vec3d(n2, n3, n4);
         if (!class399.method1899()) {
-            final double n6 = MathHelper.method35641(class399.method1735(class401)) / n5;
+            final double n6 = MathHelper.sqrt(class399.method1735(class401)) / n5;
             if (n6 <= 1.0) {
-                final double n7 = class399.method1938() - n2;
+                final double n7 = class399.getPosX() - n2;
                 final double n8 = class399.method1944() - n3;
-                final double n9 = class399.method1945() - n4;
-                if (MathHelper.method35641(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
+                final double n9 = class399.getPosZ() - n4;
+                if (MathHelper.sqrt(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
                     final double n10 = (1.0 - n6) * Class6154.method18407(class401, class399);
                     return (float)(int)((n10 * n10 + n10) / 2.0 * 7.0 * n5 + 1.0);
                 }

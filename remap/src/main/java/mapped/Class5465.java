@@ -108,7 +108,7 @@ public class Class5465 extends Class5419<Class824>
             class824.method4354(6000);
             class825.method4354(6000);
             method4882.method4354(-24000);
-            method4882.method1730(class824.method1938(), class824.method1941(), class824.method1945(), 0.0f, 0.0f);
+            method4882.method1730(class824.getPosX(), class824.getPosY(), class824.getPosZ(), 0.0f, 0.0f);
             class824.field2391.method6886(method4882);
             class824.field2391.method6761(method4882, (byte)12);
             return Optional.of(method4882);

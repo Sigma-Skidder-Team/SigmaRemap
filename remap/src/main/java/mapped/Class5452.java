@@ -30,7 +30,7 @@ public class Class5452 extends Class5419<Class511>
         if (class1849.method6754() - this.field22688 >= 20L) {
             final Class787 class1851 = (Class787)class1850;
             final Optional<BlockPos> method7205 = class1849.method6921().method7205(Class8912.field37476.method31396(), p0 -> true, new BlockPos(class1850), 48, Class2045.field11652);
-            return method7205.isPresent() && method7205.get().method1083(new BlockPos(class1851)) > 4.0;
+            return method7205.isPresent() && method7205.get().distanceSq(new BlockPos(class1851)) > 4.0;
         }
         return false;
     }

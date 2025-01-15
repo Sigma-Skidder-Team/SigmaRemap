@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class6565 extends Class6564
 {
@@ -19,23 +20,23 @@ public class Class6565 extends Class6564
     @Override
     public void method19904() {
         if (this.field26073 == Class2198.field13376) {
-            final Vec3d class5487 = new Vec3d(this.field26067 - this.field26075.method1938(), this.field26068 - this.field26075.method1941(), this.field26069 - this.field26075.method1945());
-            final double method16752 = class5487.method16752();
+            final Vec3d class5487 = new Vec3d(this.field26067 - this.field26075.getPosX(), this.field26068 - this.field26075.getPosY(), this.field26069 - this.field26075.getPosZ());
+            final double method16752 = class5487.length();
             if (method16752 >= this.field26075.method1886().method18507()) {
-                this.field26075.method1936(this.field26075.method1935().method16743(class5487.method16748(this.field26070 * 0.05 / method16752)));
+                this.field26075.method1936(this.field26075.method1935().add(class5487.scale(this.field26070 * 0.05 / method16752)));
                 if (this.field26075.method4152() != null) {
-                    this.field26075.field2399 = -(float) MathHelper.method35693(this.field26075.method4152().method1938() - this.field26075.method1938(), this.field26075.method4152().method1945() - this.field26075.method1945()) * 57.295776f;
+                    this.field26075.field2399 = -(float) MathHelper.method35693(this.field26075.method4152().getPosX() - this.field26075.getPosX(), this.field26075.method4152().getPosZ() - this.field26075.getPosZ()) * 57.295776f;
                     this.field26075.field2951 = this.field26075.field2399;
                 }
                 else {
                     final Vec3d method16753 = this.field26075.method1935();
-                    this.field26075.field2399 = -(float) MathHelper.method35693(method16753.field22770, method16753.field22772) * 57.295776f;
+                    this.field26075.field2399 = -(float) MathHelper.method35693(method16753.x, method16753.z) * 57.295776f;
                     this.field26075.field2951 = this.field26075.field2399;
                 }
             }
             else {
                 this.field26073 = Class2198.field13375;
-                this.field26075.method1936(this.field26075.method1935().method16748(0.5));
+                this.field26075.method1936(this.field26075.method1935().scale(0.5));
             }
         }
     }

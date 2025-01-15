@@ -57,7 +57,7 @@ public class Class3348 extends Class3167
                 if (Class3348.field15514.field4684.field2938 > 0) {
                     if (Class3348.field15514.field4684.field2414 < 2.0f) {
                         Class3348.field15514.field4684.method1738(0.0, -1.0, 0.0);
-                        Class6430.method19155(Class3348.field15514.field4684.method1935().method16761());
+                        Class6430.method19155(Class3348.field15514.field4684.method1935().getY());
                         Class3348.field15514.field4684.field2404 = true;
                         Class3348.field15956 = 20;
                     }

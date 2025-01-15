@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Map;
 
 public class Class6122 implements Class6113
@@ -39,7 +38,7 @@ public class Class6122 implements Class6113
             Class8726.method30041();
             Class8726.method30010(false);
             final Map<?, ?> map = Class8112.method26664(this.field24853).getNow(null);
-            final double n4 = this.field24850.field4644.method5833().method18161().field22771 * 0.85;
+            final double n4 = this.field24850.field4644.method5833().method18161().y * 0.85;
             for (final Map.Entry<Class7859, V> entry : Class8112.method26665(this.field24853).entrySet()) {
                 final Class7859 class7353 = entry.getKey();
                 String string = (String)entry.getValue();

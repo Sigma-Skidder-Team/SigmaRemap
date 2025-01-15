@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 
@@ -95,10 +96,10 @@ public class Class6585
     }
     
     private void method19949(final Class1847 class1847, final BlockPos class1848, final BlockPos class1849) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>) Entity.class, new Class6221(class1848, class1849), class1853 -> !(class1853 instanceof Class512));
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class1848, class1849), class1853 -> !(class1853 instanceof Class512));
         this.field26125.clear();
         for (final Entity class1850 : method6739) {
-            final Vec3d class1851 = new Vec3d(class1850.method1938() - class1848.getX(), class1850.method1941() - class1848.getY(), class1850.method1945() - class1848.getZ());
+            final Vec3d class1851 = new Vec3d(class1850.getPosX() - class1848.getX(), class1850.getPosY() - class1848.getY(), class1850.getPosZ() - class1848.getZ());
             final Class51 class1852 = new Class51();
             class1850.method1755(class1852);
             BlockPos method6740;
@@ -335,11 +336,11 @@ public class Class6585
                 continue;
             }
             final Class51 field30512 = class1857.field30512;
-            final Vec3d method1136 = method19963(class1857.field30510, class1853, class1854, class1855).method16744(class1852.getX(), class1852.getY(), class1852.getZ());
+            final Vec3d method1136 = method19963(class1857.field30510, class1853, class1854, class1855).add(class1852.getX(), class1852.getY(), class1852.getZ());
             final Class52 class1858 = new Class52();
-            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.field22770));
-            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.field22771));
-            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.field22772));
+            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.x));
+            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.y));
+            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.z));
             field30512.method295("Pos", class1858);
             field30512.method330("UUIDMost");
             field30512.method330("UUIDLeast");
@@ -409,9 +410,9 @@ public class Class6585
     }
     
     private static Vec3d method19963(final Vec3d class5487, final Class2181 class5488, final Class2052 class5489, final BlockPos class5490) {
-        double field22770 = class5487.field22770;
-        final double field22771 = class5487.field22771;
-        double field22772 = class5487.field22772;
+        double field22770 = class5487.x;
+        final double field22771 = class5487.y;
+        double field22772 = class5487.z;
         boolean b = true;
         switch (Class9249.field39663[class5488.ordinal()]) {
             case 1: {
@@ -589,7 +590,7 @@ public class Class6585
         final Class52 class58 = new Class52();
         for (final Class7682 class59 : this.field26125) {
             final Class51 e3 = new Class51();
-            e3.method295("pos", this.method19972(class59.field30510.field22770, class59.field30510.field22771, class59.field30510.field22772));
+            e3.method295("pos", this.method19972(class59.field30510.x, class59.field30510.y, class59.field30510.z));
             e3.method295("blockPos", this.method19971(class59.field30511.getX(), class59.field30511.getY(), class59.field30511.getZ()));
             if (class59.field30512 != null) {
                 e3.method295("nbt", class59.field30512);

@@ -341,7 +341,7 @@ public class Class1909 extends Class1906
     
     @Override
     public boolean method7408(final Entity class399) {
-        return this.method7434(Class7859.method25423(MathHelper.floor(class399.method1938()) >> 4, MathHelper.floor(class399.method1945()) >> 4), Class9298::method34343);
+        return this.method7434(Class7859.method25423(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4), Class9298::method34343);
     }
     
     @Override
@@ -355,7 +355,7 @@ public class Class1909 extends Class1906
     }
     
     public boolean method7433(final Entity class399) {
-        return this.method7434(Class7859.method25423(MathHelper.floor(class399.method1938()) >> 4, MathHelper.floor(class399.method1945()) >> 4), Class9298::method34344);
+        return this.method7434(Class7859.method25423(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4), Class9298::method34344);
     }
     
     private boolean method7434(final long n, final Function<Class9298, CompletableFuture<Either<Class1862, Class6797>>> function) {

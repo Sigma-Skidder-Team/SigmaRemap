@@ -196,8 +196,8 @@ public class Class7499<T extends Entity>
         return null;
     }
     
-    public static double method23359(final Class1852 class1852, final BlockPos class1853, final boolean b, final Class6221 class1854) {
-        Class6221 method18494 = new Class6221(class1853);
+    public static double method23359(final Class1852 class1852, final BlockPos class1853, final boolean b, final AxisAlignedBB class1854) {
+        AxisAlignedBB method18494 = new AxisAlignedBB(class1853);
         if (b) {
             method18494 = method18494.method18494(0.0, -1.0, 0.0);
         }
@@ -300,9 +300,9 @@ public class Class7499<T extends Entity>
         return (Entity)((class1848 != null) ? class1848.method23371(class1847) : null);
     }
     
-    public Class6221 method23375(final double n, final double n2, final double n3) {
+    public AxisAlignedBB method23375(final double n, final double n2, final double n3) {
         final float n4 = this.method23369() / 2.0f;
-        return new Class6221(n - n4, n2, n3 - n4, n + n4, n2 + this.method23370(), n3 + n4);
+        return new AxisAlignedBB(n - n4, n2, n3 - n4, n + n4, n2 + this.method23370(), n3 + n4);
     }
     
     public Class8295 method23376() {

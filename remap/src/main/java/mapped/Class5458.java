@@ -24,7 +24,7 @@ public class Class5458 extends Class5419<Class511>
     @Override
     public boolean method16538(final Class1849 class1849, final Class511 class1850) {
         final Class363 class1851 = class1850.method2618().method1198(this.field22702).get();
-        return Objects.equals(class1849.method6789().method20487(), class1851.method1169()) && class1851.method1170().method1082(class1850.method1934(), 5.0);
+        return Objects.equals(class1849.method6789().method20487(), class1851.method1169()) && class1851.method1170().withinDistance(class1850.method1934(), 5.0);
     }
     
     @Override

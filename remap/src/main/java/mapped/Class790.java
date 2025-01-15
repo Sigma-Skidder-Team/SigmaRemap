@@ -106,10 +106,10 @@ public class Class790 extends Class789
             }
             this.field4206 = this.field4207;
             if (!this.method4368()) {
-                this.field4207 = MathHelper.method35653(this.field4207 - 1.0f, 0.0f, 6.0f);
+                this.field4207 = MathHelper.clamp(this.field4207 - 1.0f, 0.0f, 6.0f);
             }
             else {
-                this.field4207 = MathHelper.method35653(this.field4207 + 1.0f, 0.0f, 6.0f);
+                this.field4207 = MathHelper.clamp(this.field4207 + 1.0f, 0.0f, 6.0f);
             }
         }
         if (this.field4208 > 0) {

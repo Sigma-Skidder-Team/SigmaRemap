@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
 
@@ -25,8 +26,8 @@ public class Class4370 implements Class4252<Class5800>
         return MathHelper.method35645(n * 4096.0);
     }
     
-    public static Class5487 method13141(final long n, final long n2, final long n3) {
-        return new Class5487((double)n, (double)n2, (double)n3).method16748(2.44140625E-4);
+    public static Vec3d method13141(final long n, final long n2, final long n3) {
+        return new Vec3d((double)n, (double)n2, (double)n3).scale(2.44140625E-4);
     }
     
     public Class4370() {

@@ -25,7 +25,7 @@ public class Class3639 extends Class3446
             return false;
         }
         if (this.field16885.method2633().nextInt(8000) == 0) {
-            this.field16886 = this.field16885.field2391.method7138((Class<? extends Class824>)Class824.class, Class3639.field16884, (Class511)this.field16885, this.field16885.method1938(), this.field16885.method1941(), this.field16885.method1945(), this.field16885.method1886().method18495(6.0, 2.0, 6.0));
+            this.field16886 = this.field16885.field2391.method7138((Class<? extends Class824>)Class824.class, Class3639.field16884, (Class511)this.field16885, this.field16885.getPosX(), this.field16885.getPosY(), this.field16885.getPosZ(), this.field16885.method1886().method18495(6.0, 2.0, 6.0));
             return this.field16886 != null;
         }
         return false;

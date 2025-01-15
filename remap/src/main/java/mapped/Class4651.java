@@ -33,11 +33,11 @@ public class Class4651 extends Class4654
         int n = 0;
         Label_0263: {
             if (this.method13927() && this.field20141.method1706()) {
-                n = MathHelper.floor(this.field20141.method1941());
-                final Class385 class385 = new Class385(this.field20141.method1938(), n, this.field20141.method1945());
+                n = MathHelper.floor(this.field20141.getPosY());
+                final Class385 class385 = new Class385(this.field20141.getPosX(), n, this.field20141.getPosZ());
                 for (Class7096 class386 = this.field20140.method6701(class385); class386.method21696() == Class7521.field29173 || class386.method21756() == Class7558.field29976.method22177(false); class386 = this.field20140.method6701(class385)) {
                     ++n;
-                    class385.method1286(this.field20141.method1938(), n, this.field20141.method1945());
+                    class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
                 }
                 --n;
             }
@@ -53,7 +53,7 @@ public class Class4651 extends Class4654
                         continue;
                     }
                 }
-                n = MathHelper.floor(this.field20141.method1941() + 0.5);
+                n = MathHelper.floor(this.field20141.getPosY() + 0.5);
             }
         }
         final BlockPos class387 = new BlockPos(this.field20141);
@@ -197,7 +197,7 @@ public class Class4651 extends Class4654
                                     if (this.field20141.method1930() < 1.0f) {
                                         final double n6 = n - class179.getXOffset() + 0.5;
                                         final double n7 = n2 - class179.getZOffset() + 0.5;
-                                        if (!this.field20140.method6978(this.field20141, new Class6221(n6 - n5, method13906(this.field20140, new BlockPos(n6, i + 1, n7)) + 0.001, n7 - n5, n6 + n5, this.field20141.method1931() + method13906(this.field20140, new BlockPos(class180.field26589, class180.field26590, class180.field26591)) - 0.002, n7 + n5))) {
+                                        if (!this.field20140.method6978(this.field20141, new AxisAlignedBB(n6 - n5, method13906(this.field20140, new BlockPos(n6, i + 1, n7)) + 0.001, n7 - n5, n6 + n5, this.field20141.method1931() + method13906(this.field20140, new BlockPos(class180.field26589, class180.field26590, class180.field26591)) - 0.002, n7 + n5))) {
                                             class180 = null;
                                         }
                                     }
@@ -225,7 +225,7 @@ public class Class4651 extends Class4654
                 }
             }
             if (field26601 == Class257.field1206) {
-                if (!this.field20140.method6978(this.field20141, new Class6221(n - n5 + 0.5, i + 0.001, n2 - n5 + 0.5, n + n5 + 0.5, i + this.field20141.method1931(), n2 + n5 + 0.5))) {
+                if (!this.field20140.method6978(this.field20141, new AxisAlignedBB(n - n5 + 0.5, i + 0.001, n2 - n5 + 0.5, n + n5 + 0.5, i + this.field20141.method1931(), n2 + n5 + 0.5))) {
                     return null;
                 }
                 if (this.field20141.method1930() >= 1.0f && this.method13912(this.field20141, n, i - 1, n2) == Class257.field1205) {

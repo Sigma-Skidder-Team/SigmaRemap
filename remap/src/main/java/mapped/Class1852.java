@@ -99,7 +99,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
         return this.method6702(class354).method21793(Class7324.field28319);
     }
     
-    default boolean method6968(final Class6221 class6221) {
+    default boolean method6968(final AxisAlignedBB class6221) {
         final int method35644 = MathHelper.floor(class6221.field25073);
         final int method35645 = MathHelper.method35650(class6221.field25076);
         final int method35646 = MathHelper.floor(class6221.field25074);

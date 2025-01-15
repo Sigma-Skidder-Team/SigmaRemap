@@ -30,6 +30,6 @@ public class Class3447 extends Class3446
     
     @Override
     public void method11016() {
-        this.field16273.method4147().method24668(this.field16274.method1938(), this.field16274.method1944(), this.field16274.method1945());
+        this.field16273.method4147().method24668(this.field16274.getPosX(), this.field16274.method1944(), this.field16274.getPosZ());
     }
 }

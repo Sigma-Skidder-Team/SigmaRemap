@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.util.Set;
 import java.util.Collection;
@@ -37,7 +38,7 @@ public class Class9049
     private boolean field38316;
     
     public Class9049(final Class1849 field38300, final Entity field38301, final int field38302, final boolean field38303, final Consumer<Class4252<?>> field38304) {
-        this.field38311 = Vec3d.field22769;
+        this.field38311 = Vec3d.ZERO;
         this.field38314 = Collections.emptyList();
         this.field38300 = field38300;
         this.field38304 = field38304;
@@ -86,16 +87,16 @@ public class Class9049
                 ++this.field38313;
                 final int method1912 = MathHelper.method35642(this.field38301.field2399 * 256.0f / 360.0f);
                 final int method1913 = MathHelper.method35642(this.field38301.field2400 * 256.0f / 360.0f);
-                final Vec3d method1914 = this.field38301.method1934().method16741(Class4370.method13141(this.field38305, this.field38306, this.field38307));
-                final boolean b = method1914.method16753() >= 7.62939453125E-6;
+                final Vec3d method1914 = this.field38301.method1934().subtract(Class4370.method13141(this.field38305, this.field38306, this.field38307));
+                final boolean b = method1914.lengthSquared() >= 7.62939453125E-6;
                 Class4252<?> class514 = null;
                 final boolean b2 = b || this.field38312 % 60 == 0;
                 final boolean b3 = Math.abs(method1912 - this.field38308) >= 1 || Math.abs(method1913 - this.field38309) >= 1;
                 Label_0674: {
                     if (this.field38312 > 0 || this.field38301 instanceof Class402) {
-                        final long method1915 = Class4370.method13140(method1914.field22770);
-                        final long method1916 = Class4370.method13140(method1914.field22771);
-                        final long method1917 = Class4370.method13140(method1914.field22772);
+                        final long method1915 = Class4370.method13140(method1914.x);
+                        final long method1916 = Class4370.method13140(method1914.y);
+                        final long method1917 = Class4370.method13140(method1914.z);
                         boolean b4 = false;
                         Label_0790: {
                             if (method1915 >= -32768L) {
@@ -155,12 +156,12 @@ public class Class9049
                     }
                     if (this.field38312 > 0) {
                         final Vec3d method1918 = this.field38301.method1935();
-                        final double method1919 = method1918.method16746(this.field38311);
+                        final double method1919 = method1918.squareDistanceTo(this.field38311);
                         if (method1919 <= 1.0E-7) {
                             if (method1919 <= 0.0) {
                                 break Label_0688;
                             }
-                            if (method1918.method16753() != 0.0) {
+                            if (method1918.lengthSquared() != 0.0) {
                                 break Label_0688;
                             }
                         }
@@ -287,9 +288,9 @@ public class Class9049
     }
     
     private void method32543() {
-        this.field38305 = Class4370.method13140(this.field38301.method1938());
-        this.field38306 = Class4370.method13140(this.field38301.method1941());
-        this.field38307 = Class4370.method13140(this.field38301.method1945());
+        this.field38305 = Class4370.method13140(this.field38301.getPosX());
+        this.field38306 = Class4370.method13140(this.field38301.getPosY());
+        this.field38307 = Class4370.method13140(this.field38301.getPosZ());
     }
     
     public Vec3d method32544() {

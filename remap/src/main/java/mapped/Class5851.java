@@ -116,7 +116,7 @@ public class Class5851<T extends Class772> extends Class5846<T> implements Class
                             this.field23989.field25184 = -0.8f;
                             this.field23989.field25183 = -0.97079635f;
                             this.field23990.field25183 = -0.97079635f;
-                            final float method4265 = MathHelper.method35653(this.field23991, 0.0f, 25.0f);
+                            final float method4265 = MathHelper.clamp(this.field23991, 0.0f, 25.0f);
                             this.field23990.field25184 = MathHelper.method35700(method4265 / 25.0f, 0.4f, 0.85f);
                             this.field23990.field25183 = MathHelper.method35700(method4265 / 25.0f, this.field23990.field25183, -1.5707964f);
                         }

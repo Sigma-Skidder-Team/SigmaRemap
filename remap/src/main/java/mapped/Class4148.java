@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.primitives.Floats;
 import org.lwjgl.opengl.GL11;
@@ -618,13 +619,13 @@ public class Class4148 extends Class4154 implements Class4149
     
     @Override
     public Vector3f method12419(final Vector3f class9138) {
-        this.field18501.method33317(class9138.method33311(), class9138.method33312(), class9138.method33313());
+        this.field18501.set(class9138.getX(), class9138.getY(), class9138.getZ());
         return this.field18501;
     }
     
     @Override
     public Vector3f method12420(final float n, final float n2, final float n3) {
-        this.field18501.method33317(n, n2, n3);
+        this.field18501.set(n, n2, n3);
         return this.field18501;
     }
     

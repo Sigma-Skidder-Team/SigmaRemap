@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.Comparator;
@@ -28,12 +29,12 @@ public class Class8955
     
     public boolean method31767(final Entity class399, final float n) {
         final Vec3d method1859 = class399.method1859();
-        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.method1935(), class399.method1860(), method1859.field22770, method1859.field22771, class399 instanceof Class512);
+        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.method1935(), class399.method1860(), method1859.x, method1859.y, class399 instanceof Class512);
         if (method1860 != null) {
             final Vec3d field40340 = method1860.field40340;
             class399.method1936(method1860.field40341);
             class399.field2399 = n + method1860.field40342;
-            class399.method1950(field40340.field22770, field40340.field22771, field40340.field22772);
+            class399.method1950(field40340.x, field40340.y, field40340.z);
             return true;
         }
         return false;
@@ -53,9 +54,9 @@ public class Class8955
     
     public boolean method31769(final Entity class399) {
         double n = -1.0;
-        final int method35644 = MathHelper.floor(class399.method1938());
-        final int method35645 = MathHelper.floor(class399.method1941());
-        final int method35646 = MathHelper.floor(class399.method1945());
+        final int method35644 = MathHelper.floor(class399.getPosX());
+        final int method35645 = MathHelper.floor(class399.getPosY());
+        final int method35646 = MathHelper.floor(class399.getPosZ());
         int n2 = method35644;
         int n3 = method35645;
         int n4 = method35646;
@@ -63,9 +64,9 @@ public class Class8955
         final int nextInt = this.field37653.nextInt(4);
         final Class385 class400 = new Class385();
         for (int i = method35644 - 16; i <= method35644 + 16; ++i) {
-            final double n6 = i + 0.5 - class399.method1938();
+            final double n6 = i + 0.5 - class399.getPosX();
             for (int j = method35646 - 16; j <= method35646 + 16; ++j) {
-                final double n7 = j + 0.5 - class399.method1945();
+                final double n7 = j + 0.5 - class399.getPosZ();
             Label_0236:
                 for (int k = this.field37652.method6778() - 1; k >= 0; --k) {
                     if (this.field37652.method6961(class400.method1284(i, k, j))) {
@@ -92,7 +93,7 @@ public class Class8955
                                     }
                                 }
                             }
-                            final double n13 = k + 0.5 - class399.method1941();
+                            final double n13 = k + 0.5 - class399.getPosY();
                             final double n14 = n6 * n6 + n13 * n13 + n7 * n7;
                             if (n < 0.0 || n14 < n) {
                                 n = n14;
@@ -108,9 +109,9 @@ public class Class8955
         }
         if (n < 0.0) {
             for (int n15 = method35644 - 16; n15 <= method35644 + 16; ++n15) {
-                final double n16 = n15 + 0.5 - class399.method1938();
+                final double n16 = n15 + 0.5 - class399.getPosX();
                 for (int n17 = method35646 - 16; n17 <= method35646 + 16; ++n17) {
-                    final double n18 = n17 + 0.5 - class399.method1945();
+                    final double n18 = n17 + 0.5 - class399.getPosZ();
                 Label_0702:
                     for (int n19 = this.field37652.method6778() - 1; n19 >= 0; --n19) {
                         if (this.field37652.method6961(class400.method1284(n15, n19, n17))) {
@@ -131,7 +132,7 @@ public class Class8955
                                         }
                                     }
                                 }
-                                final double n25 = n19 + 0.5 - class399.method1941();
+                                final double n25 = n19 + 0.5 - class399.getPosY();
                                 final double n26 = n16 * n16 + n25 * n25 + n18 * n18;
                                 if (n < 0.0 || n26 < n) {
                                     n = n26;

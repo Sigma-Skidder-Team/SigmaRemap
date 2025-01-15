@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -25,10 +26,10 @@ public class Class4779 extends Class4710<Class857, Class5866>
     }
     
     public void method14137(final Class857 class857, final Class7351 class858, final float n, final float n2, final float n3) {
-        class858.method22566(Vector3f.field38718.rotationDegrees(180.0f - n2));
+        class858.method22566(Vector3f.YP.rotationDegrees(180.0f - n2));
         final float n4 = class857.field2391.method6754() - class857.field4582 + n3;
         if (n4 < 5.0f) {
-            class858.method22566(Vector3f.field38718.rotationDegrees(MathHelper.sin(n4 / 1.5f * 3.1415927f) * 3.0f));
+            class858.method22566(Vector3f.YP.rotationDegrees(MathHelper.sin(n4 / 1.5f * 3.1415927f) * 3.0f));
         }
     }
     

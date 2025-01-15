@@ -50,18 +50,18 @@ public class Class510 extends Entity
     @Override
     public void method1659() {
         if (!this.method1698()) {
-            this.method1936(this.method1935().method16744(0.0, -0.04, 0.0));
+            this.method1936(this.method1935().add(0.0, -0.04, 0.0));
         }
         this.method1671(Class2160.field12826, this.method1935());
-        this.method1936(this.method1935().method16748(0.98));
+        this.method1936(this.method1935().scale(0.98));
         if (this.field2404) {
-            this.method1936(this.method1935().method16751(0.7, -0.5, 0.7));
+            this.method1936(this.method1935().mul(0.7, -0.5, 0.7));
         }
         --this.field2917;
         if (this.field2917 > 0) {
             this.method1715();
             if (this.field2391.field10067) {
-                this.field2391.method6709(Class8432.field34639, this.method1938(), this.method1941() + 0.5, this.method1945(), 0.0, 0.0, 0.0);
+                this.field2391.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
         else {
@@ -73,7 +73,7 @@ public class Class510 extends Entity
     }
     
     private void method2613() {
-        this.field2391.method6722(this, this.method1938(), this.method1942(0.0625), this.method1945(), 4.0f, Class2196.field13366);
+        this.field2391.method6722(this, this.getPosX(), this.method1942(0.0625), this.getPosZ(), 4.0f, Class2196.field13366);
     }
     
     @Override

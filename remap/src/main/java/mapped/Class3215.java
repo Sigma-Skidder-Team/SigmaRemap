@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.util.InDevelopment;
+import net.minecraft.util.math.Vec3d;
 
 @InDevelopment
 public class Class3215 extends Class3167
@@ -12,7 +13,7 @@ public class Class3215 extends Class3167
     private double field15662;
     private int field15663;
     private int field15664;
-    private Class5487 field15665;
+    private Vec3d field15665;
     
     public Class3215() {
         super(Class8013.field32985, "AntiVoid", "Avoids you from falling in the void");
@@ -28,7 +29,7 @@ public class Class3215 extends Class3167
         this.field15664 = 0;
         this.field15663 = 0;
         if (Class3215.field15514.field4684.field2404 || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
-            this.field15665 = new Class5487(Class3215.field15514.field4684.field2395, Class3215.field15514.field4684.field2396, Class3215.field15514.field4684.field2397);
+            this.field15665 = new Vec3d(Class3215.field15514.field4684.field2395, Class3215.field15514.field4684.field2396, Class3215.field15514.field4684.field2397);
         }
     }
     
@@ -36,7 +37,7 @@ public class Class3215 extends Class3167
     private void method10134(final Class5717 class5717) {
         if (this.method9906()) {
             if (Class3215.field15514.field4684.field2404 || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
-                this.field15665 = new Class5487(Class3215.field15514.field4684.field2395, Class3215.field15514.field4684.field2396, Class3215.field15514.field4684.field2397);
+                this.field15665 = new Vec3d(Class3215.field15514.field4684.field2395, Class3215.field15514.field4684.field2396, Class3215.field15514.field4684.field2397);
             }
             if (this.field15664 <= 0) {
                 final Class3167 method21551 = Class9463.method35173().method35189().method21551(Class3259.class);
@@ -54,8 +55,8 @@ public class Class3215 extends Class3167
                         method21555 = true;
                     }
                 }
-                if (Class3215.field15514.field4684.method1935().field22771 < -0.08 && !method21555) {
-                    this.field15662 -= Class3215.field15514.field4684.method1935().field22771;
+                if (Class3215.field15514.field4684.method1935().y < -0.08 && !method21555) {
+                    this.field15662 -= Class3215.field15514.field4684.method1935().y;
                 }
                 else if (Class3215.field15514.field4684.field2404) {
                     this.field15662 = 0.0;
@@ -101,13 +102,13 @@ public class Class3215 extends Class3167
     }
     
     private boolean method10137() {
-        return Class3215.field15514.field4684.method1895().field22771 < 1.0 || (!Class3215.field15514.field4684.field2404 && Class3215.field15514.field4683.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.field2403.method18494(0.0, -Class3215.field15514.field4684.method1934().field22771, 0.0)).count() == 0L);
+        return Class3215.field15514.field4684.method1895().y < 1.0 || (!Class3215.field15514.field4684.field2404 && Class3215.field15514.field4683.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.field2403.method18494(0.0, -Class3215.field15514.field4684.method1934().y, 0.0)).count() == 0L);
     }
     
     private void method10138(String s, final Class5717 class5717) {
-        final double method16760 = Class3215.field15514.field4684.method1895().method16760();
-        Class3215.field15514.field4684.method1895().method16761();
-        final double method16761 = Class3215.field15514.field4684.method1895().method16762();
+        final double method16760 = Class3215.field15514.field4684.method1895().getX();
+        Class3215.field15514.field4684.method1895().getY();
+        final double method16761 = Class3215.field15514.field4684.method1895().getZ();
         if (s.equals("Cubecraft") && !Class6430.method19148()) {
             s = "Motion";
         }

@@ -30,7 +30,7 @@ public class Class420 extends Class419
         if (class7006.method21449() != Class2165.field12882 || !((Class7007)class7006).method21452().method1843(this.field2527)) {
             if (!this.field2391.field10067) {
                 final List<Entity> method7128 = this.field2391.method7128((Class<? extends Entity>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0));
-                final Class426 class7007 = new Class426(this.field2391, this.method1938(), this.method1941(), this.method1945());
+                final Class426 class7007 = new Class426(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ());
                 class7007.method2097(this.field2527);
                 class7007.method2089(Class8432.field34605);
                 class7007.method2081(3.0f);
@@ -42,7 +42,7 @@ public class Class420 extends Class419
                         if (this.method1734(class7008) >= 16.0) {
                             continue;
                         }
-                        class7007.method1656(class7008.method1938(), class7008.method1941(), class7008.method1945());
+                        class7007.method1656(class7008.getPosX(), class7008.getPosY(), class7008.getPosZ());
                         break;
                     }
                 }

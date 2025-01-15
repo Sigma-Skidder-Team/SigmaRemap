@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public class Class866 extends Class865
 {
     private static String[] field4617;
@@ -25,7 +27,7 @@ public class Class866 extends Class865
     }
     
     @Override
-    public Class5487 method5222() {
+    public Vec3d method5222() {
         return this.field4618.method1934();
     }
     

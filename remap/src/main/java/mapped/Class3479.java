@@ -76,7 +76,7 @@ public abstract class Class3479 extends Class3446
     
     @Override
     public void method11016() {
-        if (this.field16395.method1137().method1082(this.field16390.method1934(), this.method11046())) {
+        if (this.field16395.method1137().withinDistance(this.field16390.method1934(), this.method11046())) {
             this.field16396 = true;
             --this.field16393;
         }

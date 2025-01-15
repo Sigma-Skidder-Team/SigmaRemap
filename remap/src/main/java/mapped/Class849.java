@@ -69,14 +69,14 @@ public class Class849 extends Class763
     @Override
     public void method2736() {
         if (!this.field2404) {
-            if (this.method1935().field22771 < 0.0) {
-                this.method1936(this.method1935().method16751(1.0, 0.6, 1.0));
+            if (this.method1935().y < 0.0) {
+                this.method1936(this.method1935().mul(1.0, 0.6, 1.0));
             }
         }
         if (this.field2391.field10067) {
             if (this.field2423.nextInt(24) == 0) {
                 if (!this.method1696()) {
-                    this.field2391.method6708(this.method1938() + 0.5, this.method1941() + 0.5, this.method1945() + 0.5, Class8520.field35028, this.method1922(), 1.0f + this.field2423.nextFloat(), this.field2423.nextFloat() * 0.7f + 0.3f, false);
+                    this.field2391.method6708(this.getPosX() + 0.5, this.getPosY() + 0.5, this.getPosZ() + 0.5, Class8520.field35028, this.method1922(), 1.0f + this.field2423.nextFloat(), this.field2423.nextFloat() * 0.7f + 0.3f, false);
                 }
             }
             for (int i = 0; i < 2; ++i) {
@@ -100,7 +100,7 @@ public class Class849 extends Class763
         if (method4152 != null) {
             if (method4152.method1944() > this.method1944() + this.field4515) {
                 if (this.method2646(method4152)) {
-                    this.method1936(this.method1935().method16744(0.0, (0.30000001192092896 - this.method1935().field22771) * 0.30000001192092896, 0.0));
+                    this.method1936(this.method1935().add(0.0, (0.30000001192092896 - this.method1935().y) * 0.30000001192092896, 0.0));
                     this.field2448 = true;
                 }
             }

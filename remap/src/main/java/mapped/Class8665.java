@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.dispenser.IPosition;
+
 import java.util.Set;
 import java.util.List;
 import java.util.UUID;
@@ -15,7 +17,7 @@ public class Class8665
     private static String[] field36431;
     public final UUID field36432;
     public final int field36433;
-    public final Class5488 field36434;
+    public final IPosition field36434;
     public final Class9468 field36435;
     public final BlockPos field36436;
     public final BlockPos field36437;
@@ -23,7 +25,7 @@ public class Class8665
     public final List<String> field36439;
     public final Set<BlockPos> field36440;
     
-    public Class8665(final UUID field36432, final int field36433, final Class5488 field36434, final Class9468 field36435, final BlockPos field36436, final BlockPos field36437, final int field36438) {
+    public Class8665(final UUID field36432, final int field36433, final IPosition field36434, final Class9468 field36435, final BlockPos field36436, final BlockPos field36437, final int field36438) {
         this.field36439 = Lists.newArrayList();
         this.field36440 = Sets.newHashSet();
         this.field36432 = field36432;

@@ -54,7 +54,7 @@ public class Class3921 extends Class3833 implements Class3856
         if (method21640.method21696() != this) {
             final Class7096 class7075 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773(Class3921.field17777, Class186.field599)).method21773((Class7111<Comparable>)Class3921.field17778, class7074.method21654().method6702(method21639).method21779() == Class7558.field29976);
             final Direction method21641 = class7074.method21648();
-            return (method21641 != Direction.DOWN && (method21641 == Direction.UP || class7074.method21649().field22771 - method21639.getY() <= 0.5)) ? class7075 : ((Class7097<O, Class7096>)class7075).method21773(Class3921.field17777, Class186.field598);
+            return (method21641 != Direction.DOWN && (method21641 == Direction.UP || class7074.method21649().y - method21639.getY() <= 0.5)) ? class7075 : ((Class7097<O, Class7096>)class7075).method21773(Class3921.field17777, Class186.field598);
         }
         return (Class7096)((Class7097<Object, Object>)((Class7097<O, Class7096>)method21640).method21773(Class3921.field17777, Class186.field600)).method21773((Class7111<Comparable>)Class3921.field17778, false);
     }
@@ -69,7 +69,7 @@ public class Class3921 extends Class3833 implements Class3856
         if (!class7097.method21641()) {
             return true;
         }
-        final boolean b = class7097.method21649().field22771 - class7097.method21639().getY() > 0.5;
+        final boolean b = class7097.method21649().y - class7097.method21639().getY() > 0.5;
         final Direction method21652 = class7097.method21648();
         if (class7098 != Class186.field599) {
             return method21652 == Direction.DOWN || (!b && method21652.getAxis().isHorizontal());

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Optional;
 import java.util.EnumSet;
 import java.util.function.Predicate;
@@ -15,7 +17,7 @@ public class Class3622 extends Class3617
     private int field16826;
     private int field16827;
     private boolean field16828;
-    private Class5487 field16829;
+    private Vec3d field16829;
     private int field16830;
     public final /* synthetic */ Class798 field16831;
     
@@ -118,12 +120,12 @@ public class Class3622 extends Class3617
     public void method11016() {
         ++this.field16830;
         if (this.field16830 <= 600) {
-            final Class5487 method16744 = new Class5487(Class798.method4561(this.field16831)).method16744(0.5, 0.6000000238418579, 0.5);
-            if (method16744.method16745(this.field16831.method1934()) <= 1.0) {
+            final Vec3d method16744 = new Vec3d(Class798.method4561(this.field16831)).add(0.5, 0.6000000238418579, 0.5);
+            if (method16744.distanceTo(this.field16831.method1934()) <= 1.0) {
                 if (this.field16829 == null) {
                     this.field16829 = method16744;
                 }
-                final boolean b = this.field16831.method1934().method16745(this.field16829) <= 0.1;
+                final boolean b = this.field16831.method1934().distanceTo(this.field16829) <= 0.1;
                 int n = 1;
                 if (!b && this.field16830 > 600) {
                     Class798.method4565(this.field16831, null);
@@ -134,10 +136,10 @@ public class Class3622 extends Class3617
                             n = 0;
                         }
                         else {
-                            this.field16829 = new Class5487(method16744.method16760() + this.method11156(), method16744.method16761(), method16744.method16762() + this.method11156());
+                            this.field16829 = new Vec3d(method16744.getX() + this.method11156(), method16744.getY(), method16744.getZ() + this.method11156());
                             Class798.method4581(this.field16831).method24733();
                         }
-                        this.field16831.method4147().method24668(method16744.method16760(), method16744.method16761(), method16744.method16762());
+                        this.field16831.method4147().method24668(method16744.getX(), method16744.getY(), method16744.getZ());
                     }
                     if (n != 0) {
                         this.method11155();
@@ -162,7 +164,7 @@ public class Class3622 extends Class3617
     }
     
     private void method11155() {
-        this.field16831.method4148().method19907(this.field16829.method16760(), this.field16829.method16761(), this.field16829.method16762(), 0.3499999940395355);
+        this.field16831.method4148().method19907(this.field16829.getX(), this.field16829.getY(), this.field16829.getZ(), 0.3499999940395355);
     }
     
     private float method11156() {
@@ -181,7 +183,7 @@ public class Class3622 extends Class3617
                 for (int i = 0; i <= (b ? 1 : 0); i = ((i <= 0) ? (1 - i) : (-i))) {
                     for (int j = (i < (b ? 1 : 0) && i > ((-b) ? 1 : 0)) ? b : 0; j <= (b ? 1 : 0); j = ((j <= 0) ? (1 - j) : (-j))) {
                         value.method1287(class354).method1292(i, n2 - 1, j);
-                        if (class354.method1081(value, n) && predicate.test(this.field16831.field2391.method6701(value))) {
+                        if (class354.withinDistance(value, n) && predicate.test(this.field16831.field2391.method6701(value))) {
                             return (Optional<BlockPos>)Optional.of(value);
                         }
                     }

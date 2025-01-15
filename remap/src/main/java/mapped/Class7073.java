@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7073 extends Class7074
 {

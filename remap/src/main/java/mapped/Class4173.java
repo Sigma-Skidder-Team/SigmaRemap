@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4173 extends Class4158<Class463>
@@ -26,10 +27,10 @@ public class Class4173 extends Class4158<Class463>
         while (n5 < -3.1415927f) {
             n5 += 6.2831855f;
         }
-        class464.method22566(Vector3f.field38718.method33327(-(class463.field2735 + n5 * n)));
+        class464.method22566(Vector3f.YP.rotation(-(class463.field2735 + n5 * n)));
         class464.method22566(Vector3f.ZP.rotationDegrees(80.0f));
         final float method35700 = MathHelper.method35700(n, class463.field2729, class463.field2728);
-        this.field18590.method17788(n4, MathHelper.method35653(MathHelper.method35686(method35700 + 0.25f) * 1.6f - 0.3f, 0.0f, 1.0f), MathHelper.method35653(MathHelper.method35686(method35700 + 0.75f) * 1.6f - 0.3f, 0.0f, 1.0f), MathHelper.method35700(n, class463.field2733, class463.field2732));
+        this.field18590.method17788(n4, MathHelper.clamp(MathHelper.method35686(method35700 + 0.25f) * 1.6f - 0.3f, 0.0f, 1.0f), MathHelper.clamp(MathHelper.method35686(method35700 + 0.75f) * 1.6f - 0.3f, 0.0f, 1.0f), MathHelper.method35700(n, class463.field2733, class463.field2732));
         this.field18590.method17787(class464, Class4173.field18589.method11334(class465, Class6332::method18767), n2, n3, 1.0f, 1.0f, 1.0f, 1.0f);
         class464.method22568();
     }

@@ -6,12 +6,13 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import java.util.Optional;
 
-public class Class6221
+public class AxisAlignedBB
 {
     public final double field25073;
     public final double field25074;
@@ -20,7 +21,7 @@ public class Class6221
     public final double field25077;
     public final double field25078;
     
-    public Class6221(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public AxisAlignedBB(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         this.field25073 = Math.min(n, n4);
         this.field25074 = Math.min(n2, n5);
         this.field25075 = Math.min(n3, n6);
@@ -29,20 +30,20 @@ public class Class6221
         this.field25078 = Math.max(n3, n6);
     }
     
-    public Class6221(final BlockPos class354) {
+    public AxisAlignedBB(final BlockPos class354) {
         this(class354.getX(), class354.getY(), class354.getZ(), class354.getX() + 1, class354.getY() + 1, class354.getZ() + 1);
     }
     
-    public Class6221(final BlockPos class354, final BlockPos class355) {
+    public AxisAlignedBB(final BlockPos class354, final BlockPos class355) {
         this(class354.getX(), class354.getY(), class354.getZ(), class355.getX(), class355.getY(), class355.getZ());
     }
     
-    public Class6221(final Vec3d class5487, final Vec3d class5488) {
-        this(class5487.field22770, class5487.field22771, class5487.field22772, class5488.field22770, class5488.field22771, class5488.field22772);
+    public AxisAlignedBB(final Vec3d class5487, final Vec3d class5488) {
+        this(class5487.x, class5487.y, class5487.z, class5488.x, class5488.y, class5488.z);
     }
     
-    public static Class6221 method18489(final Class6997 class6997) {
-        return new Class6221(class6997.field27293, class6997.field27294, class6997.field27295, class6997.field27296 + 1, class6997.field27297 + 1, class6997.field27298 + 1);
+    public static AxisAlignedBB method18489(final Class6997 class6997) {
+        return new AxisAlignedBB(class6997.field27293, class6997.field27294, class6997.field27295, class6997.field27296 + 1, class6997.field27297 + 1, class6997.field27298 + 1);
     }
     
     public double method18490(final Axis class111) {
@@ -58,8 +59,8 @@ public class Class6221
         if (this == o) {
             return true;
         }
-        if (o instanceof Class6221) {
-            final Class6221 class6221 = (Class6221)o;
+        if (o instanceof AxisAlignedBB) {
+            final AxisAlignedBB class6221 = (AxisAlignedBB)o;
             return Double.compare(class6221.field25073, this.field25073) == 0 && Double.compare(class6221.field25074, this.field25074) == 0 && Double.compare(class6221.field25075, this.field25075) == 0 && Double.compare(class6221.field25076, this.field25076) == 0 && Double.compare(class6221.field25077, this.field25077) == 0 && Double.compare(class6221.field25078, this.field25078) == 0;
         }
         return false;
@@ -81,7 +82,7 @@ public class Class6221
         return 31 * n5 + (int)(doubleToLongBits6 ^ doubleToLongBits6 >>> 32);
     }
     
-    public Class6221 method18492(final double n, final double n2, final double n3) {
+    public AxisAlignedBB method18492(final double n, final double n2, final double n3) {
         double field25073 = this.field25073;
         double field25074 = this.field25074;
         double field25075 = this.field25075;
@@ -112,14 +113,14 @@ public class Class6221
         else {
             field25075 -= n3;
         }
-        return new Class6221(field25073, field25074, field25075, field25076, field25077, field25078);
+        return new AxisAlignedBB(field25073, field25074, field25075, field25076, field25077, field25078);
     }
     
-    public Class6221 method18493(final Vec3d class5487) {
-        return this.method18494(class5487.field22770, class5487.field22771, class5487.field22772);
+    public AxisAlignedBB method18493(final Vec3d class5487) {
+        return this.method18494(class5487.x, class5487.y, class5487.z);
     }
     
-    public Class6221 method18494(final double n, final double n2, final double n3) {
+    public AxisAlignedBB method18494(final double n, final double n2, final double n3) {
         double field25073 = this.field25073;
         double field25074 = this.field25074;
         double field25075 = this.field25075;
@@ -150,38 +151,38 @@ public class Class6221
         else {
             field25075 += n3;
         }
-        return new Class6221(field25073, field25074, field25075, field25076, field25077, field25078);
+        return new AxisAlignedBB(field25073, field25074, field25075, field25076, field25077, field25078);
     }
     
-    public Class6221 method18495(final double n, final double n2, final double n3) {
-        return new Class6221(this.field25073 - n, this.field25074 - n2, this.field25075 - n3, this.field25076 + n, this.field25077 + n2, this.field25078 + n3);
+    public AxisAlignedBB method18495(final double n, final double n2, final double n3) {
+        return new AxisAlignedBB(this.field25073 - n, this.field25074 - n2, this.field25075 - n3, this.field25076 + n, this.field25077 + n2, this.field25078 + n3);
     }
     
-    public Class6221 method18496(final double n) {
+    public AxisAlignedBB method18496(final double n) {
         return this.method18495(n, n, n);
     }
     
-    public Class6221 method18497(final Class6221 class6221) {
-        return new Class6221(Math.max(this.field25073, class6221.field25073), Math.max(this.field25074, class6221.field25074), Math.max(this.field25075, class6221.field25075), Math.min(this.field25076, class6221.field25076), Math.min(this.field25077, class6221.field25077), Math.min(this.field25078, class6221.field25078));
+    public AxisAlignedBB method18497(final AxisAlignedBB class6221) {
+        return new AxisAlignedBB(Math.max(this.field25073, class6221.field25073), Math.max(this.field25074, class6221.field25074), Math.max(this.field25075, class6221.field25075), Math.min(this.field25076, class6221.field25076), Math.min(this.field25077, class6221.field25077), Math.min(this.field25078, class6221.field25078));
     }
     
-    public Class6221 method18498(final Class6221 class6221) {
-        return new Class6221(Math.min(this.field25073, class6221.field25073), Math.min(this.field25074, class6221.field25074), Math.min(this.field25075, class6221.field25075), Math.max(this.field25076, class6221.field25076), Math.max(this.field25077, class6221.field25077), Math.max(this.field25078, class6221.field25078));
+    public AxisAlignedBB method18498(final AxisAlignedBB class6221) {
+        return new AxisAlignedBB(Math.min(this.field25073, class6221.field25073), Math.min(this.field25074, class6221.field25074), Math.min(this.field25075, class6221.field25075), Math.max(this.field25076, class6221.field25076), Math.max(this.field25077, class6221.field25077), Math.max(this.field25078, class6221.field25078));
     }
     
-    public Class6221 method18499(final double n, final double n2, final double n3) {
-        return new Class6221(this.field25073 + n, this.field25074 + n2, this.field25075 + n3, this.field25076 + n, this.field25077 + n2, this.field25078 + n3);
+    public AxisAlignedBB method18499(final double n, final double n2, final double n3) {
+        return new AxisAlignedBB(this.field25073 + n, this.field25074 + n2, this.field25075 + n3, this.field25076 + n, this.field25077 + n2, this.field25078 + n3);
     }
     
-    public Class6221 method18500(final BlockPos class354) {
-        return new Class6221(this.field25073 + class354.getX(), this.field25074 + class354.getY(), this.field25075 + class354.getZ(), this.field25076 + class354.getX(), this.field25077 + class354.getY(), this.field25078 + class354.getZ());
+    public AxisAlignedBB method18500(final BlockPos class354) {
+        return new AxisAlignedBB(this.field25073 + class354.getX(), this.field25074 + class354.getY(), this.field25075 + class354.getZ(), this.field25076 + class354.getX(), this.field25077 + class354.getY(), this.field25078 + class354.getZ());
     }
     
-    public Class6221 method18501(final Vec3d class5487) {
-        return this.method18499(class5487.field22770, class5487.field22771, class5487.field22772);
+    public AxisAlignedBB method18501(final Vec3d class5487) {
+        return this.method18499(class5487.x, class5487.y, class5487.z);
     }
     
-    public boolean method18502(final Class6221 class6221) {
+    public boolean method18502(final AxisAlignedBB class6221) {
         return this.method18503(class6221.field25073, class6221.field25074, class6221.field25075, class6221.field25076, class6221.field25077, class6221.field25078);
     }
     
@@ -203,11 +204,11 @@ public class Class6221
     }
     
     public boolean method18504(final Vec3d class5487, final Vec3d class5488) {
-        return this.method18503(Math.min(class5487.field22770, class5488.field22770), Math.min(class5487.field22771, class5488.field22771), Math.min(class5487.field22772, class5488.field22772), Math.max(class5487.field22770, class5488.field22770), Math.max(class5487.field22771, class5488.field22771), Math.max(class5487.field22772, class5488.field22772));
+        return this.method18503(Math.min(class5487.x, class5488.x), Math.min(class5487.y, class5488.y), Math.min(class5487.z, class5488.z), Math.max(class5487.x, class5488.x), Math.max(class5487.y, class5488.y), Math.max(class5487.z, class5488.z));
     }
     
     public boolean method18505(final Vec3d class5487) {
-        return this.method18506(class5487.field22770, class5487.field22771, class5487.field22772);
+        return this.method18506(class5487.x, class5487.y, class5487.z);
     }
     
     public boolean method18506(final double n, final double n2, final double n3) {
@@ -243,65 +244,65 @@ public class Class6221
         return this.field25078 - this.field25075;
     }
     
-    public Class6221 method18511(final double n) {
+    public AxisAlignedBB method18511(final double n) {
         return this.method18496(-n);
     }
     
     public Optional<Vec3d> method18512(final Vec3d class5487, final Vec3d class5488) {
         final double[] array = { 1.0 };
-        final double n = class5488.field22770 - class5487.field22770;
-        final double n2 = class5488.field22771 - class5487.field22771;
-        final double n3 = class5488.field22772 - class5487.field22772;
+        final double n = class5488.x - class5487.x;
+        final double n2 = class5488.y - class5487.y;
+        final double n3 = class5488.z - class5487.z;
         if (method18514(this, class5487, array, null, n, n2, n3) != null) {
             final double n4 = array[0];
-            return Optional.of(class5487.method16744(n4 * n, n4 * n2, n4 * n3));
+            return Optional.of(class5487.add(n4 * n, n4 * n2, n4 * n3));
         }
         return Optional.empty();
     }
     
     @Nullable
-    public static Class7005 method18513(final Iterable<Class6221> iterable, final Vec3d class5487, final Vec3d class5488, final BlockPos class5489) {
+    public static Class7005 method18513(final Iterable<AxisAlignedBB> iterable, final Vec3d class5487, final Vec3d class5488, final BlockPos class5489) {
         final double[] array = { 1.0 };
         Direction method18514 = null;
-        final double n = class5488.field22770 - class5487.field22770;
-        final double n2 = class5488.field22771 - class5487.field22771;
-        final double n3 = class5488.field22772 - class5487.field22772;
-        final Iterator<Class6221> iterator = iterable.iterator();
+        final double n = class5488.x - class5487.x;
+        final double n2 = class5488.y - class5487.y;
+        final double n3 = class5488.z - class5487.z;
+        final Iterator<AxisAlignedBB> iterator = iterable.iterator();
         while (iterator.hasNext()) {
             method18514 = method18514(iterator.next().method18500(class5489), class5487, array, method18514, n, n2, n3);
         }
         if (method18514 != null) {
             final double n4 = array[0];
-            return new Class7005(class5487.method16744(n4 * n, n4 * n2, n4 * n3), method18514, class5489, false);
+            return new Class7005(class5487.add(n4 * n, n4 * n2, n4 * n3), method18514, class5489, false);
         }
         return null;
     }
     
     @Nullable
-    private static Direction method18514(final Class6221 class6221, final Vec3d class6222, final double[] array, Direction class6223, final double n, final double n2, final double n3) {
+    private static Direction method18514(final AxisAlignedBB class6221, final Vec3d class6222, final double[] array, Direction class6223, final double n, final double n2, final double n3) {
         if (n <= 1.0E-7) {
             if (n < -1.0E-7) {
-                class6223 = method18515(array, class6223, n, n2, n3, class6221.field25076, class6221.field25074, class6221.field25077, class6221.field25075, class6221.field25078, Direction.EAST, class6222.field22770, class6222.field22771, class6222.field22772);
+                class6223 = method18515(array, class6223, n, n2, n3, class6221.field25076, class6221.field25074, class6221.field25077, class6221.field25075, class6221.field25078, Direction.EAST, class6222.x, class6222.y, class6222.z);
             }
         }
         else {
-            class6223 = method18515(array, class6223, n, n2, n3, class6221.field25073, class6221.field25074, class6221.field25077, class6221.field25075, class6221.field25078, Direction.WEST, class6222.field22770, class6222.field22771, class6222.field22772);
+            class6223 = method18515(array, class6223, n, n2, n3, class6221.field25073, class6221.field25074, class6221.field25077, class6221.field25075, class6221.field25078, Direction.WEST, class6222.x, class6222.y, class6222.z);
         }
         if (n2 <= 1.0E-7) {
             if (n2 < -1.0E-7) {
-                class6223 = method18515(array, class6223, n2, n3, n, class6221.field25077, class6221.field25075, class6221.field25078, class6221.field25073, class6221.field25076, Direction.UP, class6222.field22771, class6222.field22772, class6222.field22770);
+                class6223 = method18515(array, class6223, n2, n3, n, class6221.field25077, class6221.field25075, class6221.field25078, class6221.field25073, class6221.field25076, Direction.UP, class6222.y, class6222.z, class6222.x);
             }
         }
         else {
-            class6223 = method18515(array, class6223, n2, n3, n, class6221.field25074, class6221.field25075, class6221.field25078, class6221.field25073, class6221.field25076, Direction.DOWN, class6222.field22771, class6222.field22772, class6222.field22770);
+            class6223 = method18515(array, class6223, n2, n3, n, class6221.field25074, class6221.field25075, class6221.field25078, class6221.field25073, class6221.field25076, Direction.DOWN, class6222.y, class6222.z, class6222.x);
         }
         if (n3 <= 1.0E-7) {
             if (n3 < -1.0E-7) {
-                class6223 = method18515(array, class6223, n3, n, n2, class6221.field25078, class6221.field25073, class6221.field25076, class6221.field25074, class6221.field25077, Direction.SOUTH, class6222.field22772, class6222.field22770, class6222.field22771);
+                class6223 = method18515(array, class6223, n3, n, n2, class6221.field25078, class6221.field25073, class6221.field25076, class6221.field25074, class6221.field25077, Direction.SOUTH, class6222.z, class6222.x, class6222.y);
             }
         }
         else {
-            class6223 = method18515(array, class6223, n3, n, n2, class6221.field25075, class6221.field25073, class6221.field25076, class6221.field25074, class6221.field25077, Direction.NORTH, class6222.field22772, class6222.field22770, class6222.field22771);
+            class6223 = method18515(array, class6223, n3, n, n2, class6221.field25075, class6221.field25073, class6221.field25076, class6221.field25074, class6221.field25077, Direction.NORTH, class6222.z, class6222.x, class6222.y);
         }
         return class6223;
     }

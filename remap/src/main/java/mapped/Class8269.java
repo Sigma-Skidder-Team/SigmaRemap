@@ -57,7 +57,7 @@ public class Class8269
     }
     
     public static float method27470(final double n) {
-        return MathHelper.method35641(n);
+        return MathHelper.sqrt(n);
     }
     
     public static double method27471(final double n, final double n2, final double n3) {
@@ -73,7 +73,7 @@ public class Class8269
     }
     
     public static int method27474(final int n) {
-        return MathHelper.method35682(n);
+        return MathHelper.log2(n);
     }
     
     public static int method27475(final double n) {
@@ -81,7 +81,7 @@ public class Class8269
     }
     
     public static int method27476(final int n) {
-        return MathHelper.method35679(n);
+        return MathHelper.smallestEncompassingPowerOfTwo(n);
     }
     
     public static float method27477(final float n) {
@@ -117,7 +117,7 @@ public class Class8269
     }
     
     public static float method27485(final float n, final float n2, final float n3) {
-        return MathHelper.method35653(n, n2, n3);
+        return MathHelper.clamp(n, n2, n3);
     }
     
     public static double method27486(final String s, final double n, final double n2) {

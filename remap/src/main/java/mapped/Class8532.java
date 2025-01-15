@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.List;
@@ -43,7 +44,7 @@ public final class Class8532
                     if (method7446 != null) {
                         final double method7447 = method7446.method1733(n5, method7441, n6);
                         if (method7447 > 576.0) {
-                            if (!class1979.method1082(new Vec3d(n5, method7441, n6), 24.0)) {
+                            if (!class1979.withinDistance(new Vec3d(n5, method7441, n6), 24.0)) {
                                 final Class7859 a = new Class7859(class1980);
                                 if (Objects.equals(a, class1978.method7019()) || class1977.method6904().method7409(a)) {
                                     if (method7443 == null) {

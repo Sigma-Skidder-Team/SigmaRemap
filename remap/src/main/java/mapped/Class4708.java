@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4708<T extends Class428> extends Class4703<T>
 {
@@ -23,9 +25,9 @@ public class Class4708<T extends Class428> extends Class4703<T>
         final long n4 = t.method1643() * 493286711L;
         final long n5 = n4 * n4 * 4392167121L + n4 * 98761L;
         class7351.method22564((((n5 >> 16 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 20 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 24 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f);
-        final double method35701 = MathHelper.method35701(n2, t.field2417, t.method1938());
-        final double method35702 = MathHelper.method35701(n2, t.field2418, t.method1941());
-        final double method35703 = MathHelper.method35701(n2, t.field2419, t.method1945());
+        final double method35701 = MathHelper.method35701(n2, t.field2417, t.getPosX());
+        final double method35702 = MathHelper.method35701(n2, t.field2418, t.getPosY());
+        final double method35703 = MathHelper.method35701(n2, t.field2419, t.getPosZ());
         final Vec3d method35704 = t.method2132(method35701, method35702, method35703);
         float method35705 = MathHelper.method35700(n2, t.field2402, t.field2400);
         if (method35704 != null) {
@@ -37,16 +39,16 @@ public class Class4708<T extends Class428> extends Class4703<T>
             if (method35707 == null) {
                 method35707 = method35704;
             }
-            class7351.method22564(method35704.field22770 - method35701, (method35706.field22771 + method35707.field22771) / 2.0 - method35702, method35704.field22772 - method35703);
-            final Vec3d method35708 = method35707.method16744(-method35706.field22770, -method35706.field22771, -method35706.field22772);
-            if (method35708.method16752() != 0.0) {
-                final Vec3d method35709 = method35708.method16738();
-                n = (float)(Math.atan2(method35709.field22772, method35709.field22770) * 180.0 / 3.141592653589793);
-                method35705 = (float)(Math.atan(method35709.field22771) * 73.0);
+            class7351.method22564(method35704.x - method35701, (method35706.y + method35707.y) / 2.0 - method35702, method35704.z - method35703);
+            final Vec3d method35708 = method35707.add(-method35706.x, -method35706.y, -method35706.z);
+            if (method35708.length() != 0.0) {
+                final Vec3d method35709 = method35708.normalize();
+                n = (float)(Math.atan2(method35709.z, method35709.x) * 180.0 / 3.141592653589793);
+                method35705 = (float)(Math.atan(method35709.y) * 73.0);
             }
         }
         class7351.method22564(0.0, 0.375, 0.0);
-        class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f - n));
+        class7351.method22566(Vector3f.YP.rotationDegrees(180.0f - n));
         class7351.method22566(Vector3f.ZP.rotationDegrees(-method35705));
         final float n6 = t.method2136() - n2;
         float n7 = t.method2134() - n2;
@@ -62,7 +64,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
             class7351.method22567();
             class7351.method22565(0.75f, 0.75f, 0.75f);
             class7351.method22564(-0.5, (method35710 - 8) / 16.0f, 0.5);
-            class7351.method22566(Vector3f.field38718.rotationDegrees(90.0f));
+            class7351.method22566(Vector3f.YP.rotationDegrees(90.0f));
             this.method13975(t, n2, method35711, class7351, class7352, n3);
             class7351.method22568();
         }

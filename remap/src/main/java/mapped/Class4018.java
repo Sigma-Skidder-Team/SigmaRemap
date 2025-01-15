@@ -137,8 +137,8 @@ public class Class4018 extends Class4017
         return class1847.method6739((Class<? extends T>)clazz, this.method12209(class1848), (Predicate<? super T>)predicate);
     }
     
-    private Class6221 method12209(final BlockPos class354) {
-        return new Class6221(class354.getX() + 0.2f, class354.getY(), class354.getZ() + 0.2f, class354.getX() + 1 - 0.2f, class354.getY() + 1 - 0.2f, class354.getZ() + 1 - 0.2f);
+    private AxisAlignedBB method12209(final BlockPos class354) {
+        return new AxisAlignedBB(class354.getX() + 0.2f, class354.getY(), class354.getZ() + 0.2f, class354.getX() + 1 - 0.2f, class354.getY() + 1 - 0.2f, class354.getZ() + 1 - 0.2f);
     }
     
     @Override

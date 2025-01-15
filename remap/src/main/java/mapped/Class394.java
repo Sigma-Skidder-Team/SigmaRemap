@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Comparator;
@@ -1345,7 +1346,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     public Class7492 method1574() {
-        return new Class7492(this, (this.method1481(Class383.field2223) != null) ? new Class5487(this.method1481(Class383.field2223).method6758()) : Class5487.field22769, Class9544.field41083, this.method1481(Class383.field2223), 4, "Server", new Class2260("Server"), this, null);
+        return new Class7492(this, (this.method1481(Class383.field2223) != null) ? new Vec3d(this.method1481(Class383.field2223).method6758()) : Vec3d.ZERO, Vec2f.ZERO, this.method1481(Class383.field2223), 4, "Server", new Class2260("Server"), this, null);
     }
     
     @Override

@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5923<T extends Class511> extends Class5844<T>
 {
@@ -44,9 +45,9 @@ public class Class5923<T extends Class511> extends Class5844<T>
         }
         else {
             float n6 = 1.0f;
-            final Class5487 method1935 = t.method1935();
-            if (method1935.field22771 < 0.0) {
-                n6 = 1.0f - (float)Math.pow(-method1935.method16738().field22771, 1.5);
+            final Vec3d method1935 = t.method1935();
+            if (method1935.y < 0.0) {
+                n6 = 1.0f - (float)Math.pow(-method1935.normalize().y, 1.5);
             }
             field25183 = n6 * 0.34906584f + (1.0f - n6) * field25183;
             field25184 = n6 * -1.5707964f + (1.0f - n6) * field25184;

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public abstract class Class4703<T extends Entity>
 {
@@ -34,9 +36,9 @@ public abstract class Class4703<T extends Entity>
             return false;
         }
         if (!t.field2447) {
-            Class6221 method18496 = t.method1887().method18496(0.5);
+            AxisAlignedBB method18496 = t.method1887().method18496(0.5);
             if (method18496.method18516() || method18496.method18507() == 0.0) {
-                method18496 = new Class6221(t.method1938() - 2.0, t.method1941() - 2.0, t.method1945() - 2.0, t.method1938() + 2.0, t.method1941() + 2.0, t.method1945() + 2.0);
+                method18496 = new AxisAlignedBB(t.getPosX() - 2.0, t.getPosY() - 2.0, t.getPosZ() - 2.0, t.getPosX() + 2.0, t.getPosY() + 2.0, t.getPosZ() + 2.0);
             }
             return class6664.method20261(method18496);
         }
@@ -44,7 +46,7 @@ public abstract class Class4703<T extends Entity>
     }
     
     public Vec3d method13955(final T t, final float n) {
-        return Vec3d.field22769;
+        return Vec3d.ZERO;
     }
     
     public void method13951(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int i) {
@@ -82,7 +84,7 @@ public abstract class Class4703<T extends Entity>
             class7351.method22564(0.0, n2, 0.0);
             class7351.method22566(this.field20283.method28717());
             class7351.method22565(-0.025f, -0.025f, 0.025f);
-            final Class6789 method32111 = class7351.method22569().method32111();
+            final Matrix4f method32111 = class7351.method22569().method32111();
             final int n4 = (int)(Class869.method5277().field4648.method17114(0.25f) * 255.0f) << 24;
             final Class1844 method32112 = this.method13957();
             final float n5 = (float)(-method32112.method6617(anObject) / 2);

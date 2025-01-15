@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
@@ -24,8 +25,8 @@ public class Class3908 extends Class3833 implements Class3872
     
     @Override
     public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
-        final Class5487 method21732 = class7096.method21732(class7097, class7098);
-        return Class3908.field17714.method24541(method21732.field22770, method21732.field22771, method21732.field22772);
+        final Vec3d method21732 = class7096.method21732(class7097, class7098);
+        return Class3908.field17714.method24541(method21732.x, method21732.y, method21732.z);
     }
     
     @Override

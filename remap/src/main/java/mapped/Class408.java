@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class408 extends Entity implements Class407
 {
@@ -61,18 +62,18 @@ public class Class408 extends Entity implements Class407
         final double field2501 = class354.getX();
         final int method1075 = class354.getY();
         final double field2502 = class354.getZ();
-        final double n = field2501 - this.method1938();
-        final double n2 = field2502 - this.method1945();
-        final float method1076 = MathHelper.method35641(n * n + n2 * n2);
+        final double n = field2501 - this.getPosX();
+        final double n2 = field2502 - this.getPosZ();
+        final float method1076 = MathHelper.sqrt(n * n + n2 * n2);
         if (method1076 <= 12.0f) {
             this.field2501 = field2501;
             this.field2502 = method1075;
             this.field2503 = field2502;
         }
         else {
-            this.field2501 = this.method1938() + n / method1076 * 12.0;
-            this.field2503 = this.method1945() + n2 / method1076 * 12.0;
-            this.field2502 = this.method1941() + 8.0;
+            this.field2501 = this.getPosX() + n / method1076 * 12.0;
+            this.field2503 = this.getPosZ() + n2 / method1076 * 12.0;
+            this.field2502 = this.getPosY() + 8.0;
         }
         this.field2504 = 0;
         this.field2505 = (this.field2423.nextInt(5) > 0);
@@ -83,7 +84,7 @@ public class Class408 extends Entity implements Class407
         this.method1937(n, n2, n3);
         if (this.field2402 == 0.0f) {
             if (this.field2401 == 0.0f) {
-                final float method35641 = MathHelper.method35641(n * n + n3 * n3);
+                final float method35641 = MathHelper.sqrt(n * n + n3 * n3);
                 this.field2399 = (float)(MathHelper.method35693(n, n3) * 57.2957763671875);
                 this.field2400 = (float)(MathHelper.method35693(n2, method35641) * 57.2957763671875);
                 this.field2401 = this.field2399;
@@ -95,13 +96,13 @@ public class Class408 extends Entity implements Class407
     @Override
     public void method1659() {
         super.method1659();
-        Class5487 method1935 = this.method1935();
-        final double n = this.method1938() + method1935.field22770;
-        final double n2 = this.method1941() + method1935.field22771;
-        final double n3 = this.method1945() + method1935.field22772;
-        final float method1936 = MathHelper.method35641(Entity.method1680(method1935));
-        this.field2399 = (float)(MathHelper.method35693(method1935.field22770, method1935.field22772) * 57.2957763671875);
-        this.field2400 = (float)(MathHelper.method35693(method1935.field22771, method1936) * 57.2957763671875);
+        Vec3d method1935 = this.method1935();
+        final double n = this.getPosX() + method1935.x;
+        final double n2 = this.getPosY() + method1935.y;
+        final double n3 = this.getPosZ() + method1935.z;
+        final float method1936 = MathHelper.sqrt(Entity.method1680(method1935));
+        this.field2399 = (float)(MathHelper.method35693(method1935.x, method1935.z) * 57.2957763671875);
+        this.field2400 = (float)(MathHelper.method35693(method1935.y, method1936) * 57.2957763671875);
         while (this.field2400 - this.field2402 < -180.0f) {
             this.field2402 -= 360.0f;
         }
@@ -122,20 +123,20 @@ public class Class408 extends Entity implements Class407
             final float n6 = (float)Math.sqrt(n4 * n4 + n5 * n5);
             final float n7 = (float) MathHelper.method35693(n5, n4);
             double method1937 = MathHelper.method35701(0.0025, method1936, n6);
-            double field22771 = method1935.field22771;
+            double field22771 = method1935.y;
             if (n6 < 1.0f) {
                 method1937 *= 0.8;
                 field22771 *= 0.8;
             }
-            method1935 = new Class5487(Math.cos(n7) * method1937, field22771 + (((this.method1941() >= this.field2502) ? -1 : 1) - field22771) * 0.014999999664723873, Math.sin(n7) * method1937);
+            method1935 = new Vec3d(Math.cos(n7) * method1937, field22771 + (((this.getPosY() >= this.field2502) ? -1 : 1) - field22771) * 0.014999999664723873, Math.sin(n7) * method1937);
             this.method1936(method1935);
         }
         if (!this.method1706()) {
-            this.field2391.method6709(Class8432.field34637, n - method1935.field22770 * 0.25 + this.field2423.nextDouble() * 0.6 - 0.3, n2 - method1935.field22771 * 0.25 - 0.5, n3 - method1935.field22772 * 0.25 + this.field2423.nextDouble() * 0.6 - 0.3, method1935.field22770, method1935.field22771, method1935.field22772);
+            this.field2391.method6709(Class8432.field34637, n - method1935.x * 0.25 + this.field2423.nextDouble() * 0.6 - 0.3, n2 - method1935.y * 0.25 - 0.5, n3 - method1935.z * 0.25 + this.field2423.nextDouble() * 0.6 - 0.3, method1935.x, method1935.y, method1935.z);
         }
         else {
             for (int i = 0; i < 4; ++i) {
-                this.field2391.method6709(Class8432.field34601, n - method1935.field22770 * 0.25, n2 - method1935.field22771 * 0.25, n3 - method1935.field22772 * 0.25, method1935.field22770, method1935.field22771, method1935.field22772);
+                this.field2391.method6709(Class8432.field34601, n - method1935.x * 0.25, n2 - method1935.y * 0.25, n3 - method1935.z * 0.25, method1935.x, method1935.y, method1935.z);
             }
         }
         if (this.field2391.field10067) {
@@ -152,7 +153,7 @@ public class Class408 extends Entity implements Class407
                         this.field2391.method6955(2003, new BlockPos(this), 0);
                     }
                     else {
-                        this.field2391.method6886(new Class427(this.field2391, this.method1938(), this.method1941(), this.method1945(), this.method2005()));
+                        this.field2391.method6886(new Class427(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ(), this.method2005()));
                     }
                 }
             }

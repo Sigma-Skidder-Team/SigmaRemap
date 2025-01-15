@@ -27,7 +27,7 @@ public class Class3197 extends Class3167
     public void method10030(final Class5743 class5743) {
         if (this.method9906()) {
             Class3197.field15514.field4648.field23440.field2162 = false;
-            if (Class3197.field15514.field4684.method1935().field22771 < 0.08 && !Class3197.field15514.field4684.field2404) {
+            if (Class3197.field15514.field4684.method1935().y < 0.08 && !Class3197.field15514.field4684.field2404) {
                 if (!Class3197.field15514.field4684.method2773()) {
                     Class3197.field15514.method5269().method17292(new Class4336(Class3197.field15514.field4684, Class287.field1599));
                     Class3197.field15514.field4684.method1830(7, true);

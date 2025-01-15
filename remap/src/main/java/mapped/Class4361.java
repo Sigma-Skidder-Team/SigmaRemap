@@ -24,9 +24,9 @@ public class Class4361 implements Class4252<Class5800>
     public Class4361(final Class512 class512) {
         this.field19541 = class512.method1643();
         this.field19542 = class512.method2844().getId();
-        this.field19543 = class512.method1938();
-        this.field19544 = class512.method1941();
-        this.field19545 = class512.method1945();
+        this.field19543 = class512.getPosX();
+        this.field19544 = class512.getPosY();
+        this.field19545 = class512.getPosZ();
         this.field19546 = (byte)(class512.field2399 * 256.0f / 360.0f);
         this.field19547 = (byte)(class512.field2400 * 256.0f / 360.0f);
     }

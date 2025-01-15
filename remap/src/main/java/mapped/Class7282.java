@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Optional;
 
@@ -88,13 +90,13 @@ public class Class7282
             return Optional.empty();
         }
         final Vec3d method1747 = class399.method1747(1.0f);
-        final Vec3d method1748 = class399.method1741(1.0f).method16748(n);
-        final Vec3d method1749 = method1747.method16743(method1748);
-        final Class6221 method1750 = class399.method1886().method18493(method1748).method18496(1.0);
+        final Vec3d method1748 = class399.method1741(1.0f).scale(n);
+        final Vec3d method1749 = method1747.add(method1748);
+        final AxisAlignedBB method1750 = class399.method1886().method18493(method1748).method18496(1.0);
         final int n2 = n * n;
         final Class7007 method1751 = Class7476.method23096(class399, method1747, method1749, method1750, class400 -> !class400.method1639() && class400.method1749(), n2);
         if (method1751 != null) {
-            return (method1747.method16746(method1751.method21451()) <= n2) ? Optional.of(method1751.method21452()) : Optional.empty();
+            return (method1747.squareDistanceTo(method1751.method21451()) <= n2) ? Optional.of(method1751.method21452()) : Optional.empty();
         }
         return Optional.empty();
     }
@@ -102,18 +104,18 @@ public class Class7282
     public static void method22334(final BlockPos class354, final BlockPos class355, final float n, final float n2, final float n3, final float n4) {
         final Class6092 method5833 = Class869.method5277().field4644.method5833();
         if (method5833.method18167()) {
-            method22336(new Class6221(class354, class355).method18501(method5833.method18161().method16749()), n, n2, n3, n4);
+            method22336(new AxisAlignedBB(class354, class355).method18501(method5833.method18161().inverse()), n, n2, n3, n4);
         }
     }
     
     public static void method22335(final BlockPos class354, final float n, final float n2, final float n3, final float n4, final float n5) {
         final Class6092 method5833 = Class869.method5277().field4644.method5833();
         if (method5833.method18167()) {
-            method22336(new Class6221(class354).method18501(method5833.method18161().method16749()).method18496(n), n2, n3, n4, n5);
+            method22336(new AxisAlignedBB(class354).method18501(method5833.method18161().inverse()).method18496(n), n2, n3, n4, n5);
         }
     }
     
-    public static void method22336(final Class6221 class6221, final float n, final float n2, final float n3, final float n4) {
+    public static void method22336(final AxisAlignedBB class6221, final float n, final float n2, final float n3, final float n4) {
         method22337(class6221.field25073, class6221.field25074, class6221.field25075, class6221.field25076, class6221.field25077, class6221.field25078, n, n2, n3, n4);
     }
     
@@ -143,13 +145,13 @@ public class Class7282
         if (method5278.method18167()) {
             if (method5277.method5306().field35909 != null) {
                 final Class1844 field4643 = method5277.field4643;
-                final double field4644 = method5278.method18161().field22770;
-                final double field4645 = method5278.method18161().field22771;
-                final double field4646 = method5278.method18161().field22772;
+                final double field4644 = method5278.method18161().x;
+                final double field4645 = method5278.method18161().y;
+                final double field4646 = method5278.method18161().z;
                 Class8726.method30059();
                 Class8726.method30065((float)(n - field4644), (float)(n2 - field4645) + 0.07f, (float)(n3 - field4646));
                 Class8726.method30006(0.0f, 1.0f, 0.0f);
-                Class8726.method30067(new Class6789(method5278.method18165()));
+                Class8726.method30067(new Matrix4f(method5278.method18165()));
                 Class8726.method30063(n5, -n5, n5);
                 Class8726.method30040();
                 if (!b2) {

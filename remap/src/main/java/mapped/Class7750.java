@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7750 extends Class7746
 {
@@ -47,9 +48,9 @@ public class Class7750 extends Class7746
                 if (this.field31659 != null) {
                     if (this.field31659.method35222() < this.field31659.method35221()) {
                         final Vec3d method35224 = this.field31659.method35224(this.field31657, this.field31659.method35222());
-                        if (MathHelper.floor(this.field31657.method1938()) == MathHelper.floor(method35224.field22770)) {
-                            if (MathHelper.floor(this.field31657.method1941()) == MathHelper.floor(method35224.field22771)) {
-                                if (MathHelper.floor(this.field31657.method1945()) == MathHelper.floor(method35224.field22772)) {
+                        if (MathHelper.floor(this.field31657.getPosX()) == MathHelper.floor(method35224.x)) {
+                            if (MathHelper.floor(this.field31657.getPosY()) == MathHelper.floor(method35224.y)) {
+                                if (MathHelper.floor(this.field31657.getPosZ()) == MathHelper.floor(method35224.z)) {
                                     this.field31659.method35223(this.field31659.method35222() + 1);
                                 }
                             }
@@ -63,19 +64,19 @@ public class Class7750 extends Class7746
             Class9324.method34535(this.field31658, this.field31657, this.field31659, this.field31669);
             if (!this.method24731()) {
                 final Vec3d method35225 = this.field31659.method35225(this.field31657);
-                this.field31657.method4148().method19907(method35225.field22770, method35225.field22771, method35225.field22772, this.field31660);
+                this.field31657.method4148().method19907(method35225.x, method35225.y, method35225.z, this.field31660);
             }
         }
     }
     
     @Override
     public boolean method24738(final Vec3d class5487, final Vec3d class5488, final int n, final int n2, final int n3) {
-        int method35644 = MathHelper.floor(class5487.field22770);
-        int method35645 = MathHelper.floor(class5487.field22771);
-        int method35646 = MathHelper.floor(class5487.field22772);
-        final double n4 = class5488.field22770 - class5487.field22770;
-        final double n5 = class5488.field22771 - class5487.field22771;
-        final double n6 = class5488.field22772 - class5487.field22772;
+        int method35644 = MathHelper.floor(class5487.x);
+        int method35645 = MathHelper.floor(class5487.y);
+        int method35646 = MathHelper.floor(class5487.z);
+        final double n4 = class5488.x - class5487.x;
+        final double n5 = class5488.y - class5487.y;
+        final double n6 = class5488.z - class5487.z;
         final double a = n4 * n4 + n5 * n5 + n6 * n6;
         if (a >= 1.0E-8) {
             final double n7 = 1.0 / Math.sqrt(a);
@@ -85,9 +86,9 @@ public class Class7750 extends Class7746
             final double n8 = 1.0 / Math.abs(a2);
             final double n9 = 1.0 / Math.abs(a3);
             final double n10 = 1.0 / Math.abs(a4);
-            double n11 = method35644 - class5487.field22770;
-            double n12 = method35645 - class5487.field22771;
-            double n13 = method35646 - class5487.field22772;
+            double n11 = method35644 - class5487.x;
+            double n12 = method35645 - class5487.y;
+            double n13 = method35646 - class5487.z;
             if (a2 >= 0.0) {
                 ++n11;
             }
@@ -103,9 +104,9 @@ public class Class7750 extends Class7746
             final int n17 = (a2 >= 0.0) ? 1 : -1;
             final int n18 = (a3 >= 0.0) ? 1 : -1;
             final int n19 = (a4 >= 0.0) ? 1 : -1;
-            final int method35647 = MathHelper.floor(class5488.field22770);
-            final int method35648 = MathHelper.floor(class5488.field22771);
-            final int method35649 = MathHelper.floor(class5488.field22772);
+            final int method35647 = MathHelper.floor(class5488.x);
+            final int method35648 = MathHelper.floor(class5488.y);
+            final int method35649 = MathHelper.floor(class5488.z);
             int n20 = method35647 - method35644;
             int n21 = method35648 - method35645;
             int n22 = method35649 - method35646;

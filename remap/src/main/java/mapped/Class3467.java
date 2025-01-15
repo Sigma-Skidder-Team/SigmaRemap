@@ -53,7 +53,7 @@ public abstract class Class3467 extends Class3446
                         for (int i = 0; i < Math.min(method24727.method35222() + 2, method24727.method35221()); ++i) {
                             final Class6772 method24728 = method24727.method35217(i);
                             this.field16341 = new BlockPos(method24728.field26589, method24728.field26590 + 1, method24728.field26591);
-                            if (this.field16340.method1733(this.field16341.getX(), this.field16340.method1941(), this.field16341.getZ()) <= 2.25 && (this.field16342 = method11035(this.field16340.field2391, this.field16341))) {
+                            if (this.field16340.method1733(this.field16341.getX(), this.field16340.getPosY(), this.field16341.getZ()) <= 2.25 && (this.field16342 = method11035(this.field16340.field2391, this.field16341))) {
                                 return true;
                             }
                         }
@@ -75,13 +75,13 @@ public abstract class Class3467 extends Class3446
     @Override
     public void method11015() {
         this.field16343 = false;
-        this.field16344 = (float)(this.field16341.getX() + 0.5f - this.field16340.method1938());
-        this.field16345 = (float)(this.field16341.getZ() + 0.5f - this.field16340.method1945());
+        this.field16344 = (float)(this.field16341.getX() + 0.5f - this.field16340.getPosX());
+        this.field16345 = (float)(this.field16341.getZ() + 0.5f - this.field16340.getPosZ());
     }
     
     @Override
     public void method11016() {
-        if (this.field16344 * (float)(this.field16341.getX() + 0.5f - this.field16340.method1938()) + this.field16345 * (float)(this.field16341.getZ() + 0.5f - this.field16340.method1945()) < 0.0f) {
+        if (this.field16344 * (float)(this.field16341.getX() + 0.5f - this.field16340.getPosX()) + this.field16345 * (float)(this.field16341.getZ() + 0.5f - this.field16340.getPosZ()) < 0.0f) {
             this.field16343 = true;
         }
     }

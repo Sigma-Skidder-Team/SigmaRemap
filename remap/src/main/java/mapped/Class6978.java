@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -4,7 +4,11 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4764 extends Class4712<Class844, Class5879>
 {
@@ -25,9 +29,9 @@ public class Class4764 extends Class4712<Class844, Class5879>
             if (class844.method5058()) {
                 final Class511 method5059 = class844.method5059();
                 if (method5059 != null) {
-                    final Class5487 method5060 = this.method14104(method5059, method5059.method1931() * 0.5, 1.0f);
-                    final Class5487 method5061 = this.method14104(class844, class844.method1892(), 1.0f);
-                    return class845.method20261(new Class6221(method5061.field22770, method5061.field22771, method5061.field22772, method5060.field22770, method5060.field22771, method5060.field22772));
+                    final Vec3d method5060 = this.method14104(method5059, method5059.method1931() * 0.5, 1.0f);
+                    final Vec3d method5061 = this.method14104(class844, class844.method1892(), 1.0f);
+                    return class845.method20261(new AxisAlignedBB(method5061.x, method5061.y, method5061.z, method5060.x, method5060.y, method5060.z));
                 }
             }
             return false;
@@ -35,8 +39,8 @@ public class Class4764 extends Class4712<Class844, Class5879>
         return true;
     }
     
-    private Class5487 method14104(final Class511 class511, final double n, final float n2) {
-        return new Class5487(MathHelper.method35701(n2, class511.field2417, class511.method1938()), MathHelper.method35701(n2, class511.field2418, class511.method1941()) + n, MathHelper.method35701(n2, class511.field2419, class511.method1945()));
+    private Vec3d method14104(final Class511 class511, final double n, final float n2) {
+        return new Vec3d(MathHelper.method35701(n2, class511.field2417, class511.getPosX()), MathHelper.method35701(n2, class511.field2418, class511.getPosY()) + n, MathHelper.method35701(n2, class511.field2419, class511.getPosZ()));
     }
     
     public void method14105(final Class844 class844, final float n, final float n2, final Class7351 class845, final Class7807 class846, final int n3) {
@@ -49,11 +53,11 @@ public class Class4764 extends Class4712<Class844, Class5879>
             final float method5061 = class844.method1892();
             class845.method22567();
             class845.method22564(0.0, method5061, 0.0);
-            final Class5487 method5062 = this.method14104(method5059, method5059.method1931() * 0.5, n2).method16741(this.method14104(class844, method5061, n2));
-            final float n6 = (float)(method5062.method16752() + 1.0);
-            final Class5487 method5063 = method5062.method16738();
-            final float n7 = (float)Math.acos(method5063.field22771);
-            class845.method22566(Vector3f.field38718.rotationDegrees((1.5707964f - (float)Math.atan2(method5063.field22772, method5063.field22770)) * 57.295776f));
+            final Vec3d method5062 = this.method14104(method5059, method5059.method1931() * 0.5, n2).subtract(this.method14104(class844, method5061, n2));
+            final float n6 = (float)(method5062.length() + 1.0);
+            final Vec3d method5063 = method5062.normalize();
+            final float n7 = (float)Math.acos(method5063.y);
+            class845.method22566(Vector3f.YP.rotationDegrees((1.5707964f - (float)Math.atan2(method5063.z, method5063.x)) * 57.295776f));
             class845.method22566(Vector3f.XP.rotationDegrees(n7 * 57.295776f));
             final float n8 = n4 * 0.05f * -1.5f;
             final float n9 = method5060 * method5060;
@@ -80,8 +84,8 @@ public class Class4764 extends Class4712<Class844, Class5879>
             final float n30 = n6 * 2.5f + n29;
             final Class4150 method5064 = class846.method25214(Class4764.field20391);
             final Class8996 method5065 = class845.method22569();
-            final Class6789 method5066 = method5065.method32111();
-            final Class9429 method5067 = method5065.method32112();
+            final Matrix4f method5066 = method5065.method32111();
+            final Matrix3f method5067 = method5065.method32112();
             method14106(method5064, method5066, method5067, n21, n6, n22, n10, n11, n12, 0.4999f, n30);
             method14106(method5064, method5066, method5067, n21, 0.0f, n22, n10, n11, n12, 0.4999f, n29);
             method14106(method5064, method5066, method5067, n23, 0.0f, n24, n10, n11, n12, 0.0f, n29);
@@ -102,7 +106,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
         }
     }
     
-    private static void method14106(final Class4150 class4150, final Class6789 class4151, final Class9429 class4152, final float n, final float n2, final float n3, final int n4, final int n5, final int n6, final float n7, final float n8) {
+    private static void method14106(final Class4150 class4150, final Matrix4f class4151, final Matrix3f class4152, final float n, final float n2, final float n3, final int n4, final int n5, final int n6, final float n7, final float n8) {
         class4150.method12444(class4151, n, n2, n3).method12399(n4, n5, n6, 255).method12391(n7, n8).method12441(Class1904.field10335).method12440(15728880).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
     }
     

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
@@ -37,7 +38,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
                 final int method5309 = Class4710.method13982(t, 0.0f);
                 class7351.method22567();
                 class7351.method22564(0.20000000298023224, -0.3499999940395355, 0.5);
-                class7351.method22566(Vector3f.field38718.rotationDegrees(-48.0f));
+                class7351.method22566(Vector3f.YP.rotationDegrees(-48.0f));
                 class7351.method22565(-1.0f, -1.0f, 1.0f);
                 class7351.method22564(-0.5, -0.5, -0.5);
                 if (method5307 == null) {
@@ -49,9 +50,9 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
                 class7351.method22568();
                 class7351.method22567();
                 class7351.method22564(0.20000000298023224, -0.3499999940395355, 0.5);
-                class7351.method22566(Vector3f.field38718.rotationDegrees(42.0f));
+                class7351.method22566(Vector3f.YP.rotationDegrees(42.0f));
                 class7351.method22564(0.10000000149011612, 0.0, -0.6000000238418579);
-                class7351.method22566(Vector3f.field38718.rotationDegrees(-48.0f));
+                class7351.method22566(Vector3f.YP.rotationDegrees(-48.0f));
                 class7351.method22565(-1.0f, -1.0f, 1.0f);
                 class7351.method22564(-0.5, -0.5, -0.5);
                 if (method5307 == null) {
@@ -64,7 +65,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
                 class7351.method22567();
                 this.method6559().method17803().method18645(class7351);
                 class7351.method22564(0.0, -0.699999988079071, -0.20000000298023224);
-                class7351.method22566(Vector3f.field38718.rotationDegrees(-78.0f));
+                class7351.method22566(Vector3f.YP.rotationDegrees(-78.0f));
                 class7351.method22565(-1.0f, -1.0f, 1.0f);
                 class7351.method22564(-0.5, -0.5, -0.5);
                 if (method5307 == null) {

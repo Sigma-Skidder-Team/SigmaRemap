@@ -116,8 +116,8 @@ public abstract class Class3545 extends Class3446
         }
         final Class6772 method24723 = method24722.method35216();
         if (method24723 != null) {
-            final int n = method24723.field26589 - MathHelper.floor(class511.method1938());
-            final int n2 = method24723.field26591 - MathHelper.floor(class511.method1945());
+            final int n = method24723.field26589 - MathHelper.floor(class511.getPosX());
+            final int n2 = method24723.field26591 - MathHelper.floor(class511.getPosZ());
             return n * n + n2 * n2 <= 2.25;
         }
         return false;

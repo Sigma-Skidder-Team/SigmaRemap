@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.EnumSet;
 
 public class Class3616 extends Class3446
@@ -29,7 +31,7 @@ public class Class3616 extends Class3446
     @Override
     public boolean method11017() {
         final BlockPos method5003 = this.field16812.method5003();
-        if (!new BlockPos(method5003.getX(), this.field16812.method1941(), method5003.getZ()).method1082(this.field16812.method1934(), 4.0)) {
+        if (!new BlockPos(method5003.getX(), this.field16812.getPosY(), method5003.getZ()).withinDistance(this.field16812.method1934(), 4.0)) {
             if (!this.field16813) {
                 if (this.field16812.method1832() >= 100) {
                     return true;
@@ -66,7 +68,7 @@ public class Class3616 extends Class3446
     @Override
     public void method11018() {
         final BlockPos method5003 = this.field16812.method5003();
-        if (new BlockPos(method5003.getX(), this.field16812.method1941(), method5003.getZ()).method1082(this.field16812.method1934(), 4.0) || this.field16813) {
+        if (new BlockPos(method5003.getX(), this.field16812.getPosY(), method5003.getZ()).withinDistance(this.field16812.method1934(), 4.0) || this.field16813) {
             this.field16812.method5005(false);
         }
     }
@@ -75,8 +77,8 @@ public class Class3616 extends Class3446
     public void method11016() {
         final Class1847 field2391 = this.field16812.field2391;
         if (this.field16812.method5010() || this.field16812.method4150().method24731()) {
-            final Class5487 class5487 = new Class5487(this.field16812.method5003());
-            Class5487 class5488 = Class7775.method24906(this.field16812, 16, 1, class5487, 0.39269909262657166);
+            final Vec3d class5487 = new Vec3d(this.field16812.method5003());
+            Vec3d class5488 = Class7775.method24906(this.field16812, 16, 1, class5487, 0.39269909262657166);
             if (class5488 == null) {
                 class5488 = Class7775.method24905(this.field16812, 8, 4, class5487);
             }
@@ -90,8 +92,8 @@ public class Class3616 extends Class3446
                 this.field16813 = true;
                 return;
             }
-            this.field16812.method4147().method24669(class5488.field22770, class5488.field22771, class5488.field22772, (float)(this.field16812.method4174() + 20), (float)this.field16812.method4173());
-            this.field16812.method4150().method24724(class5488.field22770, class5488.field22771, class5488.field22772, 1.3);
+            this.field16812.method4147().method24669(class5488.x, class5488.y, class5488.z, (float)(this.field16812.method4174() + 20), (float)this.field16812.method4173());
+            this.field16812.method4150().method24724(class5488.x, class5488.y, class5488.z, 1.3);
             if (field2391.field10062.nextInt(80) == 0) {
                 field2391.method6761(this.field16812, (byte)38);
             }

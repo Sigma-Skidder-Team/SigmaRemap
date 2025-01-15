@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Iterator;
 
 public class Class7244 implements Iterator<BlockPos>
@@ -29,10 +31,10 @@ public class Class7244 implements Iterator<BlockPos>
         this.field28072 = (b ? -1 : 1);
         this.field28073 = (b2 ? -1 : 1);
         this.field28074 = (b3 ? -1 : 1);
-        final Vec3d method22144 = new Vec3d(method22143.getX() - method22142.getX(), method22143.getY() - method22142.getY(), method22143.getZ() - method22142.getZ()).method16738();
-        final double abs = Math.abs(method22144.method16739(new Vec3d(1.0, 0.0, 0.0)));
-        final double abs2 = Math.abs(method22144.method16739(new Vec3d(0.0, 1.0, 0.0)));
-        final double abs3 = Math.abs(method22144.method16739(new Vec3d(0.0, 0.0, 1.0)));
+        final Vec3d method22144 = new Vec3d(method22143.getX() - method22142.getX(), method22143.getY() - method22142.getY(), method22143.getZ() - method22142.getZ()).normalize();
+        final double abs = Math.abs(method22144.dotProduct(new Vec3d(1.0, 0.0, 0.0)));
+        final double abs2 = Math.abs(method22144.dotProduct(new Vec3d(0.0, 1.0, 0.0)));
+        final double abs3 = Math.abs(method22144.dotProduct(new Vec3d(0.0, 0.0, 1.0)));
         if (abs3 >= abs2 && abs3 >= abs) {
             this.field28071 = 2;
             final BlockPos class354 = new BlockPos(method22142.getZ(), method22142.getY() - n, method22142.getX() - n2);

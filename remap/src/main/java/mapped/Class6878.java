@@ -65,12 +65,12 @@ public class Class6878 extends Class6879
     
     public void method21055(final int field26949) {
         this.field26949 = field26949;
-        this.method21064(MathHelper.method35653(field26949 / (float)this.field26950, 0.0f, 1.0f));
+        this.method21064(MathHelper.clamp(field26949 / (float)this.field26950, 0.0f, 1.0f));
     }
     
     public void method21056(final int field26950) {
         this.field26950 = field26950;
-        this.method21064(MathHelper.method35653(this.field26949 / (float)field26950, 0.0f, 1.0f));
+        this.method21064(MathHelper.clamp(this.field26949 / (float)field26950, 0.0f, 1.0f));
     }
     
     public final Class2250 method21057() {

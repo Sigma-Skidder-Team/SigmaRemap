@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.function.Predicate;
 import java.util.Random;
@@ -40,34 +41,34 @@ public class Class7775
     
     @Nullable
     public static Vec3d method24905(final Class787 class787, final int n, final int n2, final Vec3d class788) {
-        return method24910(class787, n, n2, 0, class788.method16742(class787.method1938(), class787.method1941(), class787.method1945()), true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
+        return method24910(class787, n, n2, 0, class788.subtract(class787.getPosX(), class787.getPosY(), class787.getPosZ()), true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
     }
     
     @Nullable
     public static Vec3d method24906(final Class787 class787, final int n, final int n2, final Vec3d class788, final double n3) {
-        return method24910(class787, n, n2, 0, class788.method16742(class787.method1938(), class787.method1941(), class787.method1945()), true, n3, class787::method4345, false, 0, 0, true);
+        return method24910(class787, n, n2, 0, class788.subtract(class787.getPosX(), class787.getPosY(), class787.getPosZ()), true, n3, class787::method4345, false, 0, 0, true);
     }
     
     @Nullable
     public static Vec3d method24907(final Class787 class787, final int n, final int n2, final int n3, final Vec3d class788, final double n4) {
-        return method24910(class787, n, n2, n3, class788.method16742(class787.method1938(), class787.method1941(), class787.method1945()), false, n4, class787::method4345, true, 0, 0, false);
+        return method24910(class787, n, n2, n3, class788.subtract(class787.getPosX(), class787.getPosY(), class787.getPosZ()), false, n4, class787::method4345, true, 0, 0, false);
     }
     
     @Nullable
     public static Vec3d method24908(final Class787 class787, final int n, final int n2, final Vec3d class788) {
-        return method24910(class787, n, n2, 0, class787.method1934().method16741(class788), true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
+        return method24910(class787, n, n2, 0, class787.method1934().subtract(class788), true, 1.5707963705062866, class787::method4345, false, 0, 0, true);
     }
     
     @Nullable
     public static Vec3d method24909(final Class787 class787, final int n, final int n2, final Vec3d class788) {
-        return method24910(class787, n, n2, 0, class787.method1934().method16741(class788), false, 1.5707963705062866, class787::method4345, true, 0, 0, true);
+        return method24910(class787, n, n2, 0, class787.method1934().subtract(class788), false, 1.5707963705062866, class787::method4345, true, 0, 0, true);
     }
     
     @Nullable
     private static Vec3d method24910(final Class787 class787, final int n, final int n2, final int n3, final Vec3d class788, final boolean b, final double n4, final ToDoubleFunction<BlockPos> toDoubleFunction, final boolean b2, final int n5, final int n6, final boolean b3) {
         final Class7746 method4150 = class787.method4150();
         final Random method4151 = class787.method2633();
-        final boolean b4 = class787.method4201() && class787.method4199().method1082(class787.method1934(), class787.method4200() + n + 1.0);
+        final boolean b4 = class787.method4201() && class787.method4199().withinDistance(class787.method1934(), class787.method4200() + n + 1.0);
         boolean b5 = false;
         double n7 = Double.NEGATIVE_INFINITY;
         BlockPos class789 = new BlockPos(class787);
@@ -80,13 +81,13 @@ public class Class7775
                 if (class787.method4201()) {
                     if (n > 1) {
                         final BlockPos method4156 = class787.method4199();
-                        if (class787.method1938() <= method4156.getX()) {
+                        if (class787.getPosX() <= method4156.getX()) {
                             method4153 += method4151.nextInt(n / 2);
                         }
                         else {
                             method4153 -= method4151.nextInt(n / 2);
                         }
-                        if (class787.method1945() <= method4156.getZ()) {
+                        if (class787.getPosZ() <= method4156.getZ()) {
                             method4155 += method4151.nextInt(n / 2);
                         }
                         else {
@@ -94,7 +95,7 @@ public class Class7775
                         }
                     }
                 }
-                BlockPos method4157 = new BlockPos(method4153 + class787.method1938(), method4154 + class787.method1941(), method4155 + class787.method1945());
+                BlockPos method4157 = new BlockPos(method4153 + class787.getPosX(), method4154 + class787.getPosY(), method4155 + class787.getPosZ());
                 if (method4157.getY() >= 0) {
                     if (method4157.getY() <= class787.field2391.method6986()) {
                         if (!b4 || class787.method4197(method4157)) {
@@ -126,7 +127,7 @@ public class Class7775
         if (class5487 == null || n4 >= 3.141592653589793) {
             return new BlockPos(random.nextInt(2 * n + 1) - n, random.nextInt(2 * n2 + 1) - n2 + n3, random.nextInt(2 * n + 1) - n);
         }
-        final double n5 = MathHelper.method35693(class5487.field22772, class5487.field22770) - 1.5707963705062866 + (2.0f * random.nextFloat() - 1.0f) * n4;
+        final double n5 = MathHelper.method35693(class5487.z, class5487.x) - 1.5707963705062866 + (2.0f * random.nextFloat() - 1.0f) * n4;
         final double n6 = Math.sqrt(random.nextDouble()) * MathHelper.field41094 * n;
         final double a = -n6 * Math.sin(n5);
         final double a2 = n6 * Math.cos(n5);

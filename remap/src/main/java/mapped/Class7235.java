@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Supplier;
@@ -19,9 +22,9 @@ public class Class7235
     public static final EnumMap<Direction, Class9294> field28048;
     
     public static Class9294 method22137(final Class9294 class9294) {
-        final Class6789 method20760 = Class6789.method20760(0.5f, 0.5f, 0.5f);
+        final Matrix4f method20760 = Matrix4f.method20760(0.5f, 0.5f, 0.5f);
         method20760.method20752(class9294.method34328());
-        method20760.method20752(Class6789.method20760(-0.5f, -0.5f, -0.5f));
+        method20760.method20752(Matrix4f.method20760(-0.5f, -0.5f, -0.5f));
         return new Class9294(method20760);
     }
     

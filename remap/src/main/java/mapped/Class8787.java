@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.Reader;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 import org.apache.commons.io.IOUtils;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,9 +26,9 @@ public class Class8787
 {
     public static String field36936;
     
-    public static Class6221 method30573(final Class501 class501) {
+    public static AxisAlignedBB method30573(final Class501 class501) {
         final BlockPos method1135 = class501.method2193().method1135(class501.method2560());
-        return new Class6221(method1135, method1135.method1135(class501.method2562()));
+        return new AxisAlignedBB(method1135, method1135.method1135(class501.method2562()));
     }
     
     public static void method30574(final BlockPos class354, final Class1849 class355) {
@@ -70,7 +71,7 @@ public class Class8787
         BlockPos.method1156(class6997).forEach(class7000 -> method30586(n2, class7000, class6999));
         class6998.method6907().method21348(class6997, true, false);
         class6998.method6933(class6997);
-        class6998.method6739((Class<? extends Entity>) Entity.class, new Class6221(class6997.field27293, class6997.field27294, class6997.field27295, class6997.field27296, class6997.field27297, class6997.field27298), class7001 -> !(class7001 instanceof Class512)).forEach(Entity::method1652);
+        class6998.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class6997.field27293, class6997.field27294, class6997.field27295, class6997.field27296, class6997.field27297, class6997.field27298), class7001 -> !(class7001 instanceof Class512)).forEach(Entity::method1652);
     }
     
     public static Class6997 method30579(final BlockPos class354, final BlockPos class355, final int n) {
@@ -85,12 +86,12 @@ public class Class8787
     
     @Nullable
     public static BlockPos method30581(final BlockPos class354, final int n, final Class1849 class355) {
-        return method30582(class354, n, class355).stream().min(Comparator.comparingInt(class357 -> class357.method1086(class356))).orElse(null);
+        return method30582(class354, n, class355).stream().min(Comparator.comparingInt(class357 -> class357.manhattanDistance(class356))).orElse(null);
     }
     
     public static Collection<BlockPos> method30582(final BlockPos class354, final int n, final Class1849 class355) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class6221 method18496 = new Class6221(class354).method18496(n);
+        final AxisAlignedBB method18496 = new AxisAlignedBB(class354).method18496(n);
         for (int i = (int)method18496.field25073; i <= (int)method18496.field25076; ++i) {
             for (int j = (int)method18496.field25074; j <= (int)method18496.field25077; ++j) {
                 for (int k = (int)method18496.field25075; k <= (int)method18496.field25078; ++k) {

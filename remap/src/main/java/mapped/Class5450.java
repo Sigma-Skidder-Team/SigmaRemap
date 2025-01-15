@@ -26,7 +26,7 @@ public class Class5450 extends Class5419<Class511>
         final Class365<?> method2618 = class1850.method2618();
         final boolean b = method2618.method1198(Class8233.field33821).get() + 300L <= n;
         if (this.field22682 <= this.field22681 && !b) {
-            if (method2618.method1198(Class8233.field33820).get().method1170().method1081(new BlockPos(class1850), this.field22680 + 1)) {
+            if (method2618.method1198(Class8233.field33820).get().method1170().withinDistance(new BlockPos(class1850), this.field22680 + 1)) {
                 ++this.field22682;
             }
         }

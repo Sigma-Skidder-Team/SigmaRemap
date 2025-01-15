@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class Class150 implements Class122
     public boolean test(final Class7529 class7529) {
         final Entity class7530 = class7529.method23579(this.field442.method8153());
         final BlockPos class7531 = class7529.method23579(Class6683.field26367);
-        return this.field441.method27016(class7529.method23588(), (class7531 == null) ? null : new Class5487(class7531), class7530);
+        return this.field441.method27016(class7529.method23588(), (class7531 == null) ? null : new Vec3d(class7531), class7530);
     }
     
     public static Class8775 method726(final Class2065 class2065) {

@@ -27,7 +27,7 @@ public final class Class386 extends Class385 implements AutoCloseable
     }
     
     public static Class386 method1297(final Entity class399) {
-        return method1298(class399.method1938(), class399.method1941(), class399.method1945());
+        return method1298(class399.getPosX(), class399.getPosY(), class399.getPosZ());
     }
     
     public static Class386 method1298(final double n, final double n2, final double n3) {

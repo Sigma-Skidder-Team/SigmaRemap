@@ -16,7 +16,7 @@ public class Class4095 extends Class4093
     
     @Override
     public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method12326 = Class4094.method12326(class1847, MathHelper.floor(class1848.method1938()), MathHelper.floor(class1848.method1945()), (byte)0, true, false);
+        final Class8321 method12326 = Class4094.method12326(class1847, MathHelper.floor(class1848.getPosX()), MathHelper.floor(class1848.getPosZ()), (byte)0, true, false);
         final Class8321 method12327 = class1848.method2715(class1849);
         if (!class1848.field3025.field27304) {
             method12327.method27693(1);

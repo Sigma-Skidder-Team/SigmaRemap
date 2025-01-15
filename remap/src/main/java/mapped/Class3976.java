@@ -63,7 +63,7 @@ public class Class3976 extends Class3833
         if (!class1847.field10067) {
             final Class510 class1850 = new Class510(class1847, class1848.getX() + 0.5, class1848.getY(), class1848.getZ() + 0.5, class1849);
             class1847.method6886(class1850);
-            class1847.method6706(null, class1850.method1938(), class1850.method1941(), class1850.method1945(), Class8520.field35632, Class286.field1582, 1.0f, 1.0f);
+            class1847.method6706(null, class1850.getPosX(), class1850.getPosY(), class1850.getPosZ(), Class8520.field35632, Class286.field1582, 1.0f, 1.0f);
         }
     }
     

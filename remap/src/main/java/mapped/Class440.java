@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.stream.IntStream;
 import javax.annotation.Nullable;
@@ -82,16 +83,16 @@ public class Class440 extends Class456 implements Class441, Class439
         return this.field2668;
     }
     
-    public Class6221 method2235(final Class7096 class7096) {
+    public AxisAlignedBB method2235(final Class7096 class7096) {
         return this.method2236(class7096.method21772(Class3942.field17832));
     }
     
-    public Class6221 method2236(final Direction class179) {
+    public AxisAlignedBB method2236(final Direction class179) {
         final float method2251 = this.method2251(1.0f);
         return Class7698.method24487().method24537().method18494(0.5f * method2251 * class179.getXOffset(), 0.5f * method2251 * class179.getYOffset(), 0.5f * method2251 * class179.getZOffset());
     }
     
-    private Class6221 method2237(final Direction class179) {
+    private AxisAlignedBB method2237(final Direction class179) {
         final Direction method782 = class179.getOpposite();
         return this.method2236(class179).method18492(method782.getXOffset(), method782.getYOffset(), method782.getZOffset());
     }
@@ -100,7 +101,7 @@ public class Class440 extends Class456 implements Class441, Class439
         final Class7096 method6701 = this.field2656.method6701(this.method2193());
         if (method6701.method21696() instanceof Class3942) {
             final Direction class179 = method6701.method21772(Class3942.field17832);
-            final Class6221 method6702 = this.method2237(class179).method18500(this.field2657);
+            final AxisAlignedBB method6702 = this.method2237(class179).method18500(this.field2657);
             final List<Entity> method6703 = this.field2656.method7127(null, method6702);
             if (!method6703.isEmpty()) {
                 for (int i = 0; i < method6703.size(); ++i) {
@@ -109,7 +110,7 @@ public class Class440 extends Class456 implements Class441, Class439
                         double n = 0.0;
                         double n2 = 0.0;
                         double n3 = 0.0;
-                        final Class6221 method6704 = class180.method1886();
+                        final AxisAlignedBB method6704 = class180.method1886();
                         switch (Class9309.field39950[class179.getAxis().ordinal()]) {
                             case 1: {
                                 double n4;

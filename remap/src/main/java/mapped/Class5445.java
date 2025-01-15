@@ -49,7 +49,7 @@ public class Class5445 extends Class5419<Class824>
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
                     for (int l = -1; l <= 1; ++l) {
-                        class1851.method1286(class1850.method1938() + j, class1850.method1941() + k, class1850.method1945() + l);
+                        class1851.method1286(class1850.getPosX() + j, class1850.getPosY() + k, class1850.getPosZ() + l);
                         if (this.method16632(class1851, class1849)) {
                             this.field22672.add(new BlockPos(class1851));
                         }

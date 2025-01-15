@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.commons.lang3.Validate;
 import java.util.function.Predicate;
 
@@ -66,7 +67,7 @@ public abstract class Class860 extends Entity
             final double n12 = n9 / 32.0;
             final double n13 = n10 / 32.0;
             final double n14 = n11 / 32.0;
-            this.method1889(new Class6221(n7 - n12, n6 - n13, n8 - n14, n7 + n12, n6 + n13, n8 + n14));
+            this.method1889(new AxisAlignedBB(n7 - n12, n6 - n13, n8 - n14, n7 + n12, n6 + n13, n8 + n14));
         }
     }
     
@@ -148,7 +149,7 @@ public abstract class Class860 extends Entity
     public void method1671(final Class2160 class2160, final Vec3d class2161) {
         if (!this.field2391.field10067) {
             if (!this.field2410) {
-                if (class2161.method16753() > 0.0) {
+                if (class2161.lengthSquared() > 0.0) {
                     this.method1652();
                     this.method5192(null);
                 }
@@ -193,7 +194,7 @@ public abstract class Class860 extends Entity
     
     @Override
     public Class427 method1767(final Class8321 class8321, final float n) {
-        final Class427 class8322 = new Class427(this.field2391, this.method1938() + this.field4600.getXOffset() * 0.15f, this.method1941() + n, this.method1945() + this.field4600.getZOffset() * 0.15f, class8321);
+        final Class427 class8322 = new Class427(this.field2391, this.getPosX() + this.field4600.getXOffset() * 0.15f, this.getPosY() + n, this.getPosZ() + this.field4600.getZOffset() * 0.15f, class8321);
         class8322.method2114();
         this.field2391.method6886(class8322);
         return class8322;

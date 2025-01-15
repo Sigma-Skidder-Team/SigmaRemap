@@ -36,7 +36,7 @@ public class Class4079 extends Class3820
         final int method5206 = class514.getX();
         final int method5207 = class514.getY();
         final int method5208 = class514.getZ();
-        for (final Class759 class515 : class513.method7128((Class<? extends Class759>)Class759.class, new Class6221(method5206 - 7.0, method5207 - 7.0, method5208 - 7.0, method5206 + 7.0, method5207 + 7.0, method5208 + 7.0))) {
+        for (final Class759 class515 : class513.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(method5206 - 7.0, method5207 - 7.0, method5208 - 7.0, method5206 + 7.0, method5207 + 7.0, method5208 + 7.0))) {
             if (class515.method4206() != class512) {
                 continue;
             }

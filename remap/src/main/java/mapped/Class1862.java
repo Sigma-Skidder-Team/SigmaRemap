@@ -265,13 +265,13 @@ public class Class1862 implements Class1860
     @Override
     public void method7010(final Entity class399) {
         this.field10156 = true;
-        final int method35644 = MathHelper.floor(class399.method1938() / 16.0);
-        final int method35645 = MathHelper.floor(class399.method1945() / 16.0);
+        final int method35644 = MathHelper.floor(class399.getPosX() / 16.0);
+        final int method35645 = MathHelper.floor(class399.getPosZ() / 16.0);
         if (method35644 != this.field10162.field32290 || method35645 != this.field10162.field32291) {
             Class1862.field10140.warn("Wrong location! ({}, {}) should be ({}, {}), {}", (Object)method35644, (Object)method35645, (Object)this.field10162.field32290, (Object)this.field10162.field32291, (Object)class399);
             class399.field2410 = true;
         }
-        int method35646 = MathHelper.floor(class399.method1941() / 16.0);
+        int method35646 = MathHelper.floor(class399.getPosY() / 16.0);
         if (method35646 < 0) {
             method35646 = 0;
         }
@@ -410,7 +410,7 @@ public class Class1862 implements Class1860
         this.field10158 = true;
     }
     
-    public void method7059(final Entity class399, final Class6221 class400, final List<Entity> list, final Predicate<? super Entity> predicate) {
+    public void method7059(final Entity class399, final AxisAlignedBB class400, final List<Entity> list, final Predicate<? super Entity> predicate) {
         final int method35644 = MathHelper.floor((class400.field25074 - 2.0) / 16.0);
         final int method35645 = MathHelper.floor((class400.field25077 + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
@@ -443,7 +443,7 @@ public class Class1862 implements Class1860
         }
     }
     
-    public <T extends Entity> void method7060(final Class7499<?> class7499, final Class6221 class7500, final List<? super T> list, final Predicate<? super T> predicate) {
+    public <T extends Entity> void method7060(final Class7499<?> class7499, final AxisAlignedBB class7500, final List<? super T> list, final Predicate<? super T> predicate) {
         final int method35644 = MathHelper.floor((class7500.field25074 - 2.0) / 16.0);
         final int method35645 = MathHelper.floor((class7500.field25077 + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
@@ -463,7 +463,7 @@ public class Class1862 implements Class1860
         }
     }
     
-    public <T extends Entity> void method7061(final Class<? extends T> clazz, final Class6221 class6221, final List<T> list, final Predicate<? super T> predicate) {
+    public <T extends Entity> void method7061(final Class<? extends T> clazz, final AxisAlignedBB class6221, final List<T> list, final Predicate<? super T> predicate) {
         final int method35644 = MathHelper.floor((class6221.field25074 - 2.0) / 16.0);
         final int method35645 = MathHelper.floor((class6221.field25077 + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);

@@ -69,7 +69,7 @@ public class Class3395 extends Class3167
         final double x = class399.field2395 - Class3395.field15514.field4684.field2395 + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
         final double y = class399.field2396 - 1.6 - this.field16116 + class399.method1892() - Class3395.field15514.field4684.field2396;
         final double y2 = class399.field2397 - Class3395.field15514.field4684.field2397 + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        return new float[] { this.method10837(Class3395.field15514.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), this.method10837(Class3395.field15514.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
+        return new float[] { this.method10837(Class3395.field15514.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), this.method10837(Class3395.field15514.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     private float method10837(final float n, final float n2, final float n3) {

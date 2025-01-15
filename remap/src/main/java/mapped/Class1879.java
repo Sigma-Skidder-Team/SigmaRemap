@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import org.apache.logging.log4j.LogManager;
 import java.nio.Buffer;
 import org.lwjgl.system.MemoryUtil;
@@ -192,7 +193,7 @@ public class Class1879 extends Class1880 implements AutoCloseable
     }
     
     @Override
-    public void method7170(final Class6789 class6789) {
+    public void method7170(final Matrix4f class6789) {
         this.field10234.position();
         class6789.method20747(this.field10234);
         this.method7159();

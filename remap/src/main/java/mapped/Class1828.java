@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class1828<T extends Class511> extends Class1827<T, Class5857<T>>
 {
     private static String[] field10008;

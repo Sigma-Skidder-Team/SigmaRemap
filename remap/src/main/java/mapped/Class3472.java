@@ -55,9 +55,9 @@ public class Class3472 extends Class3446
     public boolean method11017() {
         if (this.method11039()) {
             if (this.field16358.method1734(this.field16365) >= 36.0) {
-                this.field16360 = this.field16365.method1938();
-                this.field16361 = this.field16365.method1941();
-                this.field16362 = this.field16365.method1945();
+                this.field16360 = this.field16365.getPosX();
+                this.field16361 = this.field16365.getPosY();
+                this.field16362 = this.field16365.getPosZ();
             }
             else {
                 if (this.field16365.method1733(this.field16360, this.field16361, this.field16362) > 0.010000000000000002) {
@@ -79,9 +79,9 @@ public class Class3472 extends Class3446
     
     @Override
     public void method11015() {
-        this.field16360 = this.field16365.method1938();
-        this.field16361 = this.field16365.method1941();
-        this.field16362 = this.field16365.method1945();
+        this.field16360 = this.field16365.getPosX();
+        this.field16361 = this.field16365.getPosY();
+        this.field16362 = this.field16365.getPosZ();
         this.field16367 = true;
     }
     

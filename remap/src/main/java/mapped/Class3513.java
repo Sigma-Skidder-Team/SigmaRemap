@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
@@ -29,22 +31,22 @@ public class Class3513 extends Class3446
     
     @Override
     public void method11015() {
-        final Class5487 method11070 = this.method11070();
+        final Vec3d method11070 = this.method11070();
         if (method11070 != null) {
             Class798.method4591(this.field16508).method24726(Class798.method4590(this.field16508).method24721(new BlockPos(method11070), 1), 1.0);
         }
     }
     
     @Nullable
-    private Class5487 method11070() {
-        Class5487 class5487;
+    private Vec3d method11070() {
+        Vec3d class5487;
         if (Class798.method4570(this.field16508) && !Class798.method4550(this.field16508, Class798.method4545(this.field16508), 40)) {
-            class5487 = new Class5487(Class798.method4545(this.field16508)).method16741(this.field16508.method1934()).method16738();
+            class5487 = new Vec3d(Class798.method4545(this.field16508)).subtract(this.field16508.method1934()).normalize();
         }
         else {
             class5487 = this.field16508.method1741(0.0f);
         }
-        final Class5487 method24904 = Class7775.method24904(this.field16508, 8, 7, class5487, 1.5707964f, 2, 1);
+        final Vec3d method24904 = Class7775.method24904(this.field16508, 8, 7, class5487, 1.5707964f, 2, 1);
         return (method24904 == null) ? Class7775.method24901(this.field16508, 8, 4, -2, class5487, 1.5707963705062866) : method24904;
     }
 }

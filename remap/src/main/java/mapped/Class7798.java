@@ -20,6 +20,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7798
 {

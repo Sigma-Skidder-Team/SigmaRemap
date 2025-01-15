@@ -9,6 +9,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.ImmutableStringReader;
 import com.mojang.brigadier.StringReader;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5348 implements Class5346
 {
@@ -24,24 +25,24 @@ public class Class5348 implements Class5346
     }
     
     @Override
-    public Class5487 method16504(final Class7492 class7492) {
-        final Class9544 method23254 = class7492.method23254();
-        final Class5487 method23255 = class7492.method23256().method8123(class7492);
-        final float method23256 = MathHelper.cos((method23254.field41092 + 90.0f) * 0.017453292f);
-        final float method23257 = MathHelper.sin((method23254.field41092 + 90.0f) * 0.017453292f);
-        final float method23258 = MathHelper.cos(-method23254.field41091 * 0.017453292f);
-        final float method23259 = MathHelper.sin(-method23254.field41091 * 0.017453292f);
-        final float method23260 = MathHelper.cos((-method23254.field41091 + 90.0f) * 0.017453292f);
-        final float method23261 = MathHelper.sin((-method23254.field41091 + 90.0f) * 0.017453292f);
-        final Class5487 class7493 = new Class5487(method23256 * method23258, method23259, method23257 * method23258);
-        final Class5487 class7494 = new Class5487(method23256 * method23260, method23261, method23257 * method23260);
-        final Class5487 method23262 = class7493.method16740(class7494).method16748(-1.0);
-        return new Class5487(method23255.field22770 + (class7493.field22770 * this.field22422 + class7494.field22770 * this.field22421 + method23262.field22770 * this.field22420), method23255.field22771 + (class7493.field22771 * this.field22422 + class7494.field22771 * this.field22421 + method23262.field22771 * this.field22420), method23255.field22772 + (class7493.field22772 * this.field22422 + class7494.field22772 * this.field22421 + method23262.field22772 * this.field22420));
+    public Vec3d method16504(final Class7492 class7492) {
+        final Vec2f method23254 = class7492.method23254();
+        final Vec3d method23255 = class7492.method23256().method8123(class7492);
+        final float method23256 = MathHelper.cos((method23254.y + 90.0f) * 0.017453292f);
+        final float method23257 = MathHelper.sin((method23254.y + 90.0f) * 0.017453292f);
+        final float method23258 = MathHelper.cos(-method23254.x * 0.017453292f);
+        final float method23259 = MathHelper.sin(-method23254.x * 0.017453292f);
+        final float method23260 = MathHelper.cos((-method23254.x + 90.0f) * 0.017453292f);
+        final float method23261 = MathHelper.sin((-method23254.x + 90.0f) * 0.017453292f);
+        final Vec3d class7493 = new Vec3d(method23256 * method23258, method23259, method23257 * method23258);
+        final Vec3d class7494 = new Vec3d(method23256 * method23260, method23261, method23257 * method23260);
+        final Vec3d method23262 = class7493.crossProduct(class7494).scale(-1.0);
+        return new Vec3d(method23255.x + (class7493.x * this.field22422 + class7494.x * this.field22421 + method23262.x * this.field22420), method23255.y + (class7493.y * this.field22422 + class7494.y * this.field22421 + method23262.y * this.field22420), method23255.z + (class7493.z * this.field22422 + class7494.z * this.field22421 + method23262.z * this.field22420));
     }
     
     @Override
-    public Class9544 method16505(final Class7492 class7492) {
-        return Class9544.field41083;
+    public Vec2f method16505(final Class7492 class7492) {
+        return Vec2f.ZERO;
     }
     
     @Override

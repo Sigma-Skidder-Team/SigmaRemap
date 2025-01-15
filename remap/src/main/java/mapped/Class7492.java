@@ -20,6 +20,7 @@ import com.mojang.brigadier.ResultConsumer;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7492 implements Class7491
 {
@@ -36,13 +37,13 @@ public class Class7492 implements Class7491
     private final Entity field28936;
     private final ResultConsumer<Class7492> field28937;
     private final Class2042 field28938;
-    private final Class9544 field28939;
+    private final Vec2f field28939;
     
-    public Class7492(final Class397 class397, final Vec3d class398, final Class9544 class399, final Class1849 class400, final int n, final String s, final Class2250 class401, final Class394 class402, final Entity class403) {
+    public Class7492(final Class397 class397, final Vec3d class398, final Vec2f class399, final Class1849 class400, final int n, final String s, final Class2250 class401, final Class394 class402, final Entity class403) {
         this(class397, class398, class399, class400, n, s, class401, class402, class403, false, (ResultConsumer<Class7492>)((commandContext, b, n) -> {}), Class2042.field11636);
     }
     
-    public Class7492(final Class397 field28928, final Vec3d field28929, final Class9544 field28930, final Class1849 field28931, final int field28932, final String field28933, final Class2250 field28934, final Class394 field28935, final Entity field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
+    public Class7492(final Class397 field28928, final Vec3d field28929, final Vec2f field28930, final Class1849 field28931, final int field28932, final String field28933, final Class2250 field28934, final Class394 field28935, final Entity field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
         this.field28928 = field28928;
         this.field28929 = field28929;
         this.field28930 = field28931;
@@ -65,7 +66,7 @@ public class Class7492 implements Class7491
         return this.field28929.equals(class5487) ? this : new Class7492(this.field28928, class5487, this.field28939, this.field28930, this.field28931, this.field28932, this.field28933, this.field28934, this.field28936, this.field28935, this.field28937, this.field28938);
     }
     
-    public Class7492 method23237(final Class9544 class9544) {
+    public Class7492 method23237(final Vec2f class9544) {
         return this.field28939.equals(class9544) ? this : new Class7492(this.field28928, this.field28929, class9544, this.field28930, this.field28931, this.field28932, this.field28933, this.field28934, this.field28936, this.field28935, this.field28937, this.field28938);
     }
     
@@ -103,10 +104,10 @@ public class Class7492 implements Class7491
     
     public Class7492 method23246(final Vec3d class5487) throws CommandSyntaxException {
         final Vec3d method8123 = this.field28938.method8123(this);
-        final double n = class5487.field22770 - method8123.field22770;
-        final double n2 = class5487.field22771 - method8123.field22771;
-        final double n3 = class5487.field22772 - method8123.field22772;
-        return this.method23237(new Class9544(MathHelper.method35668((float)(-(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875))), MathHelper.method35668((float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f)));
+        final double n = class5487.x - method8123.x;
+        final double n2 = class5487.y - method8123.y;
+        final double n3 = class5487.z - method8123.z;
+        return this.method23237(new Vec2f(MathHelper.method35668((float)(-(MathHelper.method35693(n2, MathHelper.sqrt(n * n + n3 * n3)) * 57.2957763671875))), MathHelper.method35668((float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f)));
     }
     
     public Class2250 method23247() {
@@ -149,7 +150,7 @@ public class Class7492 implements Class7491
         throw Class7492.field28926.create();
     }
     
-    public Class9544 method23254() {
+    public Vec2f method23254() {
         return this.field28939;
     }
     

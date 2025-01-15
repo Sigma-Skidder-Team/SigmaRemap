@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public class Class3586 extends Class3446
 {
     private static String[] field16712;
@@ -22,7 +24,7 @@ public class Class3586 extends Class3446
     public boolean method11013() {
         if (!this.field16713.field2391.method6703()) {
             if (this.field16713.method1706()) {
-                if (this.field16713.method1941() < this.field16715 - 2) {
+                if (this.field16713.getPosY() < this.field16715 - 2) {
                     return true;
                 }
             }
@@ -37,14 +39,14 @@ public class Class3586 extends Class3446
     
     @Override
     public void method11016() {
-        if (this.field16713.method1941() < this.field16715 - 1) {
+        if (this.field16713.getPosY() < this.field16715 - 1) {
             if (this.field16713.method4150().method24731() || this.field16713.method4946()) {
-                final Class5487 method24905 = Class7775.method24905(this.field16713, 4, 8, new Class5487(this.field16713.method1938(), this.field16715 - 1, this.field16713.method1945()));
+                final Vec3d method24905 = Class7775.method24905(this.field16713, 4, 8, new Vec3d(this.field16713.getPosX(), this.field16715 - 1, this.field16713.getPosZ()));
                 if (method24905 == null) {
                     this.field16716 = true;
                     return;
                 }
-                this.field16713.method4150().method24724(method24905.field22770, method24905.field22771, method24905.field22772, this.field16714);
+                this.field16713.method4150().method24724(method24905.x, method24905.y, method24905.z, this.field16714);
             }
         }
     }

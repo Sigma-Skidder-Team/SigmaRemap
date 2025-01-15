@@ -51,14 +51,14 @@ public class Class3819 extends Class3820
         if (class1847 instanceof Class1849) {
             final BlockPos method2717 = ((Class1849)class1847).method6904().method7438().method18874(class1847, "Stronghold", new BlockPos(class1848), 100, false);
             if (method2717 != null) {
-                final Class408 class1850 = new Class408(class1847, class1848.method1938(), class1848.method1942(0.5), class1848.method1945());
+                final Class408 class1850 = new Class408(class1847, class1848.getPosX(), class1848.method1942(0.5), class1848.getPosZ());
                 class1850.method2008(method2715);
                 class1850.method2010(method2717);
                 class1847.method6886(class1850);
                 if (class1848 instanceof Class513) {
                     Class7770.field31787.method13742((Class513)class1848, method2717);
                 }
-                class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), Class8520.field35161, Class286.field1584, 0.5f, 0.4f / (Class3819.field17363.nextFloat() * 0.4f + 0.8f));
+                class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35161, Class286.field1584, 0.5f, 0.4f / (Class3819.field17363.nextFloat() * 0.4f + 0.8f));
                 class1847.method6839(null, 1003, new BlockPos(class1848), 0);
                 if (!class1848.field3025.field27304) {
                     method2715.method27693(1);

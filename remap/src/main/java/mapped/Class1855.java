@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.function.Function;
 import java.util.function.BiFunction;
@@ -38,29 +39,29 @@ public interface Class1855
             this.method6702(class8482);
             class8480.method28308();
             class8480.method28307();
-            final Class5487 class8483;
-            final Class5487 class8484;
+            final Vec3d class8483;
+            final Vec3d class8484;
             final Class7096 class8485;
             this.method6988(class8483, class8484, class8482, class8480.method28309(class8485, this, class8482), class8485);
             final Class7099 class8486;
             class8480.method28310(class8486, this, class8482).method24550(class8483, class8484, class8482);
             final Class7005 class8487;
             final Class7005 class8488;
-            return (((class8487 != null) ? class8480.method28308().method16746(class8487.method21451()) : Double.MAX_VALUE) > ((class8488 != null) ? class8480.method28308().method16746(class8488.method21451()) : Double.MAX_VALUE)) ? class8488 : class8487;
+            return (((class8487 != null) ? class8480.method28308().squareDistanceTo(class8487.method21451()) : Double.MAX_VALUE) > ((class8488 != null) ? class8480.method28308().squareDistanceTo(class8488.method21451()) : Double.MAX_VALUE)) ? class8488 : class8487;
         }, class8489 -> {
-            class8489.method28308().method16741(class8489.method28307());
-            final Class5487 class8491;
-            return Class7005.method21445(class8489.method28307(), Direction.getFacingFromVector(class8491.field22770, class8491.field22771, class8491.field22772), new BlockPos(class8489.method28307()));
+            class8489.method28308().subtract(class8489.method28307());
+            final Vec3d class8491;
+            return Class7005.method21445(class8489.method28307(), Direction.getFacingFromVector(class8491.x, class8491.y, class8491.z), new BlockPos(class8489.method28307()));
         });
     }
     
     @Nullable
-    default Class7005 method6988(final Class5487 class5487, final Class5487 class5488, final BlockPos class5489, final Class7702 class5490, final Class7096 class5491) {
+    default Class7005 method6988(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final Class7702 class5490, final Class7096 class5491) {
         final Class7005 method24550 = class5490.method24550(class5487, class5488, class5489);
         if (method24550 != null) {
             final Class7005 method24551 = class5491.method21730(this, class5489).method24550(class5487, class5488, class5489);
             if (method24551 != null) {
-                if (method24551.method21451().method16741(class5487).method16753() < method24550.method21451().method16741(class5487).method16753()) {
+                if (method24551.method21451().subtract(class5487).lengthSquared() < method24550.method21451().subtract(class5487).lengthSquared()) {
                     return method24550.method21446(method24551.method21448());
                 }
             }
@@ -69,17 +70,17 @@ public interface Class1855
     }
     
     default <T> T method6989(final Class8478 class8478, final BiFunction<Class8478, BlockPos, T> biFunction, final Function<Class8478, T> function) {
-        final Class5487 method28308 = class8478.method28308();
-        final Class5487 method28309 = class8478.method28307();
+        final Vec3d method28308 = class8478.method28308();
+        final Vec3d method28309 = class8478.method28307();
         if (method28308.equals(method28309)) {
             return function.apply(class8478);
         }
-        final double method28310 = MathHelper.method35701(-1.0E-7, method28309.field22770, method28308.field22770);
-        final double method28311 = MathHelper.method35701(-1.0E-7, method28309.field22771, method28308.field22771);
-        final double method28312 = MathHelper.method35701(-1.0E-7, method28309.field22772, method28308.field22772);
-        final double method28313 = MathHelper.method35701(-1.0E-7, method28308.field22770, method28309.field22770);
-        final double method28314 = MathHelper.method35701(-1.0E-7, method28308.field22771, method28309.field22771);
-        final double method28315 = MathHelper.method35701(-1.0E-7, method28308.field22772, method28309.field22772);
+        final double method28310 = MathHelper.method35701(-1.0E-7, method28309.x, method28308.x);
+        final double method28311 = MathHelper.method35701(-1.0E-7, method28309.y, method28308.y);
+        final double method28312 = MathHelper.method35701(-1.0E-7, method28309.z, method28308.z);
+        final double method28313 = MathHelper.method35701(-1.0E-7, method28308.x, method28309.x);
+        final double method28314 = MathHelper.method35701(-1.0E-7, method28308.y, method28309.y);
+        final double method28315 = MathHelper.method35701(-1.0E-7, method28308.z, method28309.z);
         int method28316 = MathHelper.floor(method28313);
         int method28317 = MathHelper.floor(method28314);
         int method28318 = MathHelper.floor(method28315);

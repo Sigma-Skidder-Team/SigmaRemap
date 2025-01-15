@@ -4,11 +4,12 @@
 
 package mapped;
 
+import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
-import org.apache.logging.log4j.LogManager;
 
 import java.util.stream.StreamSupport;
 import java.util.stream.Stream;
@@ -16,15 +17,14 @@ import java.util.stream.IntStream;
 import com.mojang.datafixers.types.DynamicOps;
 import java.util.Spliterator;
 import com.mojang.datafixers.Dynamic;
-import org.apache.logging.log4j.Logger;
+
 import javax.annotation.concurrent.Immutable;
 
 @Immutable
 public class BlockPos extends Vec3i implements IDynamicSerializable
 {
-    private static final Logger LOGGER;
     public static final BlockPos ZERO = new BlockPos(0, 0, 0);
-    private static final int NUM_X_BITS;
+    private static final int NUM_X_BITS = 1 + MathHelper.log2(MathHelper.smallestEncompassingPowerOfTwo(30000000));
     private static final int NUM_Z_BITS = NUM_X_BITS;
     private static final int NUM_Y_BITS = 64 - NUM_X_BITS - NUM_Z_BITS;
     private static final long X_MASK = (1L << NUM_X_BITS) - 1L;
@@ -33,25 +33,29 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
     private static final int field_218292_j = NUM_Y_BITS;
     private static final int field_218293_k = NUM_Y_BITS + NUM_Z_BITS;
 
-    
-    public BlockPos(final int n, final int n2, final int n3) {
-        super(n, n2, n3);
+
+    public BlockPos(int x, int y, int z)
+    {
+        super(x, y, z);
     }
-    
-    public BlockPos(final double n, final double n2, final double n3) {
-        super(n, n2, n3);
+
+    public BlockPos(double x, double y, double z)
+    {
+        super(x, y, z);
     }
-    
-    public BlockPos(final Entity class399) {
-        this(class399.method1938(), class399.method1941(), class399.method1945());
+
+    public BlockPos(final Entity entity) {
+        this(entity.getPosX(), entity.getPosY(), entity.getPosZ());
     }
-    
-    public BlockPos(final Class5487 class5487) {
-        this(class5487.field22770, class5487.field22771, class5487.field22772);
+
+    public BlockPos(Vec3d vec3d)
+    {
+        this(vec3d.x, vec3d.y, vec3d.z);
     }
-    
-    public BlockPos(final Class5488 class5488) {
-        this(class5488.method16760(), class5488.method16761(), class5488.method16762());
+
+    public BlockPos(IPosition iPos)
+    {
+        this(iPos.getX(), iPos.getY(), iPos.getZ());
     }
     
     public BlockPos(final Vec3i class352) {
@@ -239,18 +243,5 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
     
     public static Iterable<BlockPos> method1158(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
         return () -> new Class7248(n7, n8, n9, n10, n11, n12);
-    }
-    
-    static {
-        LOGGER = LogManager.getLogger();
-        ZERO = new BlockPos(0, 0, 0);
-        NUM_X_BITS = 1 + MathHelper.method35682(MathHelper.method35679(30000000));
-        NUM_Z_BITS = BlockPos.NUM_X_BITS;
-        NUM_Y_BITS = 64 - BlockPos.NUM_X_BITS - BlockPos.NUM_Z_BITS;
-        X_MASK = (1L << BlockPos.NUM_X_BITS) - 1L;
-        Y_MASK = (1L << BlockPos.NUM_Y_BITS) - 1L;
-        Z_MASK = (1L << BlockPos.NUM_Z_BITS) - 1L;
-        field_218292_j = BlockPos.NUM_Y_BITS;
-        field_218293_k = BlockPos.NUM_Y_BITS + BlockPos.NUM_Z_BITS;
     }
 }

@@ -21,6 +21,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 
@@ -128,7 +129,7 @@ public class Class1848 extends Class1847
     
     public void method6808(final Entity class399) {
         if (class399 instanceof Class512 || this.method6835().method7408(class399)) {
-            class399.method1731(class399.method1938(), class399.method1941(), class399.method1945());
+            class399.method1731(class399.getPosX(), class399.getPosY(), class399.getPosZ());
             class399.field2401 = class399.field2399;
             class399.field2402 = class399.field2400;
             if (class399.field2440 || class399.method1639()) {
@@ -152,7 +153,7 @@ public class Class1848 extends Class1847
     public void method6809(final Entity class399, final Entity class400) {
         if (!class400.field2410 && class400.method1920() == class399) {
             if (class400 instanceof Class512 || this.method6835().method7408(class400)) {
-                class400.method1731(class400.method1938(), class400.method1941(), class400.method1945());
+                class400.method1731(class400.getPosX(), class400.getPosY(), class400.getPosZ());
                 class400.field2401 = class400.field2399;
                 class400.field2402 = class400.field2400;
                 if (class400.field2440) {
@@ -175,9 +176,9 @@ public class Class1848 extends Class1847
     
     public void method6810(final Entity class399) {
         this.method6796().method15297("chunkCheck");
-        final int method35644 = MathHelper.floor(class399.method1938() / 16.0);
-        final int method35645 = MathHelper.floor(class399.method1941() / 16.0);
-        final int method35646 = MathHelper.floor(class399.method1945() / 16.0);
+        final int method35644 = MathHelper.floor(class399.getPosX() / 16.0);
+        final int method35645 = MathHelper.floor(class399.getPosY() / 16.0);
+        final int method35646 = MathHelper.floor(class399.getPosZ() / 16.0);
         Label_0123: {
             if (class399.field2440) {
                 if (class399.field2441 == method35644) {
@@ -233,7 +234,7 @@ public class Class1848 extends Class1847
             if (this.field10077 <= 0) {
                 final BlockPos class354 = new BlockPos(this.field10075.field4684);
                 final BlockPos method1134 = class354.method1134(4 * (this.field10062.nextInt(3) - 1), 4 * (this.field10062.nextInt(3) - 1), 4 * (this.field10062.nextInt(3) - 1));
-                final double method1135 = class354.method1083(method1134);
+                final double method1135 = class354.distanceSq(method1134);
                 if (method1135 >= 4.0) {
                     if (method1135 <= 256.0) {
                         if (this.method6701(method1134).method21706()) {
@@ -274,7 +275,7 @@ public class Class1848 extends Class1847
         if (!Class9570.field41223.method22619() || !Class9570.method35840(Class9570.field41223, class399, this)) {
             this.method6821(n);
             this.field10072.put(n, (Object)class399);
-            this.method6835().method7413(MathHelper.floor(class399.method1938() / 16.0), MathHelper.floor(class399.method1945() / 16.0), Class9312.field39989, true).method7010(class399);
+            this.method6835().method7413(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), Class9312.field39989, true).method7010(class399);
             if (Class9570.field41253.method22605()) {
                 Class9570.method35826(class399, Class9570.field41253, new Object[0]);
             }
@@ -306,8 +307,8 @@ public class Class1848 extends Class1847
         final ObjectIterator iterator = this.field10072.int2ObjectEntrySet().iterator();
         while (((Iterator)iterator).hasNext()) {
             final Entity class1863 = (Entity)((Int2ObjectMap$Entry)((Iterator)iterator).next()).getValue();
-            final int method35644 = MathHelper.floor(class1863.method1938() / 16.0);
-            final int method35645 = MathHelper.floor(class1863.method1945() / 16.0);
+            final int method35644 = MathHelper.floor(class1863.getPosX() / 16.0);
+            final int method35645 = MathHelper.floor(class1863.getPosZ() / 16.0);
             if (method35644 != class1862.method7019().field32290) {
                 continue;
             }
@@ -471,7 +472,7 @@ public class Class1848 extends Class1847
     
     @Override
     public void method6708(final double n, final double n2, final double n3, final Class7795 class7795, final Class286 class7796, final float n4, final float n5, final boolean b) {
-        final double method16747 = this.field10075.field4644.method5833().method18161().method16747(n, n2, n3);
+        final double method16747 = this.field10075.field4644.method5833().method18161().squareDistanceTo(n, n2, n3);
         final Class6836 class7797 = new Class6836(class7795, class7796, n4, n5, (float)n, (float)n2, (float)n3);
         if (b && method16747 > 100.0) {
             this.field10075.method5299().method6423(class7797, (int)(Math.sqrt(method16747) / 40.0 * 20.0));
@@ -639,11 +640,11 @@ public class Class1848 extends Class1847
     }
     
     public float method6842(final float n) {
-        return (float)((float)((1.0f - MathHelper.method35653(1.0f - (MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.2f), 0.0f, 1.0f)) * (1.0 - this.method6768(n) * 5.0f / 16.0)) * (1.0 - this.method6766(n) * 5.0f / 16.0)) * 0.8f + 0.2f;
+        return (float)((float)((1.0f - MathHelper.clamp(1.0f - (MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.2f), 0.0f, 1.0f)) * (1.0 - this.method6768(n) * 5.0f / 16.0)) * (1.0 - this.method6766(n) * 5.0f / 16.0)) * 0.8f + 0.2f;
     }
     
-    public Class5487 method6843(final BlockPos class354, final float n) {
-        final float method35653 = MathHelper.method35653(MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
+    public Vec3d method6843(final BlockPos class354, final float n) {
+        final float method35653 = MathHelper.clamp(MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
         final int method35654 = this.method6959(class354).method9838();
         final float n2 = (method35654 >> 16 & 0xFF) / 255.0f;
         final float n3 = (method35654 >> 8 & 0xFF) / 255.0f;
@@ -677,11 +678,11 @@ public class Class1848 extends Class1847
             n6 = n6 * (1.0f - n13) + 0.8f * n13;
             n7 = n7 * (1.0f - n13) + 1.0f * n13;
         }
-        return new Class5487(n5, n6, n7);
+        return new Vec3d(n5, n6, n7);
     }
     
-    public Class5487 method6844(final float n) {
-        final float method35653 = MathHelper.method35653(MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
+    public Vec3d method6844(final float n) {
+        final float method35653 = MathHelper.clamp(MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
         float n2 = 1.0f;
         float n3 = 1.0f;
         float n4 = 1.0f;
@@ -704,15 +705,15 @@ public class Class1848 extends Class1847
             n8 = n8 * n11 + n10 * (1.0f - n11);
             n9 = n9 * n11 + n10 * (1.0f - n11);
         }
-        return new Class5487(n7, n8, n9);
+        return new Vec3d(n7, n8, n9);
     }
     
-    public Class5487 method6845(final float n) {
+    public Vec3d method6845(final float n) {
         return this.field10063.method20493(this.method6952(n), n);
     }
     
     public float method6846(final float n) {
-        final float method35653 = MathHelper.method35653(1.0f - (MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.25f), 0.0f, 1.0f);
+        final float method35653 = MathHelper.clamp(1.0f - (MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.25f), 0.0f, 1.0f);
         return method35653 * method35653 * 0.5f;
     }
     

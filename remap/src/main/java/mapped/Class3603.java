@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.List;
@@ -85,7 +86,7 @@ public class Class3603 extends Class3446
     @Override
     public void method11016() {
         final boolean b = MathHelper.method35647(this.field16782.field2968) > 0.0f || MathHelper.method35647(this.field16782.field2970) > 0.0f;
-        this.field16781.method1724((this.field16783 != Class2155.field12801) ? 0.135f : (b ? 0.17999999f : 0.0f), new Class5487(this.field16781.field2968, this.field16781.field2969, this.field16781.field2970));
+        this.field16781.method1724((this.field16783 != Class2155.field12801) ? 0.135f : (b ? 0.17999999f : 0.0f), new Vec3d(this.field16781.field2968, this.field16781.field2969, this.field16781.field2970));
         this.field16781.method1671(Class2160.field12826, this.field16781.method1935());
         final int field16780 = this.field16780 - 1;
         this.field16780 = field16780;

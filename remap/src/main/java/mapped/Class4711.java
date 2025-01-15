@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4711 extends Class4710<Class754, Class5860<Class754>>
 {
@@ -32,8 +34,8 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         super.method13980(class754, n, n2, class755, class756, n3);
     }
     
-    public Class5487 method13994(final Class754 class754, final float n) {
-        return class754.method1814() ? new Class5487(0.0, -0.125, 0.0) : super.method13955((T)class754, n);
+    public Vec3d method13994(final Class754 class754, final float n) {
+        return class754.method1814() ? new Vec3d(0.0, -0.125, 0.0) : super.method13955((T)class754, n);
     }
     
     private void method13995(final Class754 class754) {
@@ -177,17 +179,17 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         else {
             super.method13985(class754, class755, n, n2, n3);
             final float n4 = class754.method2774() + n3;
-            final float method2624 = MathHelper.method35653(n4 * n4 / 100.0f, 0.0f, 1.0f);
+            final float method2624 = MathHelper.clamp(n4 * n4 / 100.0f, 0.0f, 1.0f);
             if (!class754.method2744()) {
                 class755.method22566(Vector3f.XP.rotationDegrees(method2624 * (-90.0f - class754.field2400)));
             }
-            final Class5487 method2625 = class754.method1741(n3);
-            final Class5487 method2626 = class754.method1935();
+            final Vec3d method2625 = class754.method1741(n3);
+            final Vec3d method2626 = class754.method1935();
             final double method2627 = Entity.method1680(method2626);
             final double method2628 = Entity.method1680(method2625);
             if (method2627 > 0.0) {
                 if (method2628 > 0.0) {
-                    class755.method22566(Vector3f.field38718.method33327((float)(Math.signum(method2626.field22770 * method2625.field22772 - method2626.field22772 * method2625.field22770) * Math.acos((method2626.field22770 * method2625.field22770 + method2626.field22772 * method2625.field22772) / (Math.sqrt(method2627) * Math.sqrt(method2628))))));
+                    class755.method22566(Vector3f.YP.rotation((float)(Math.signum(method2626.x * method2625.z - method2626.z * method2625.x) * Math.acos((method2626.x * method2625.x + method2626.z * method2625.z) / (Math.sqrt(method2627) * Math.sqrt(method2628))))));
                 }
             }
         }

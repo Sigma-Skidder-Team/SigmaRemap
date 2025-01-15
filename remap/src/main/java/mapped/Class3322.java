@@ -21,7 +21,7 @@ public class Class3322 extends Class3167
             final double field2396 = Class3322.field15514.field4684.field2396;
             final double field2397 = Class3322.field15514.field4684.field2397;
             double n = 1.19209289E-8;
-            if (Class3322.field15514.field4684.method1935().field22771 <= -0.22768848754498797 || Class3322.field15514.field4684.field2404) {
+            if (Class3322.field15514.field4684.method1935().y <= -0.22768848754498797 || Class3322.field15514.field4684.field2404) {
                 if (!Class3322.field15514.field4684.field2404) {
                     Class3322.field15514.field4684.method1656(field2395, field2396 - (field2396 - (int)field2396), field2397);
                     class5744.method17037(field2396 - (field2396 - (int)field2396));

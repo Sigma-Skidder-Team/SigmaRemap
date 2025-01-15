@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -352,9 +353,9 @@ public class Class791 extends Class789
         if (this.method4380() % 5 == 0) {
             this.method1695(Class8520.field35413, 0.5f + 0.5f * this.field2423.nextInt(2), (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
             for (int i = 0; i < 6; ++i) {
-                final Vec3d method16755 = new Vec3d((this.field2423.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, (this.field2423.nextFloat() - 0.5) * 0.1).method16754(-this.field2400 * 0.017453292f).method16755(-this.field2399 * 0.017453292f);
-                final Vec3d method16756 = new Vec3d((this.field2423.nextFloat() - 0.5) * 0.8, -this.field2423.nextFloat() * 0.6 - 0.3, 1.0 + (this.field2423.nextFloat() - 0.5) * 0.4).method16755(-this.field2951 * 0.017453292f).method16744(this.method1938(), this.method1944() + 1.0, this.method1945());
-                this.field2391.method6709(new Class6910(Class8432.field34629, this.method2718(Class2215.field13600)), method16756.field22770, method16756.field22771, method16756.field22772, method16755.field22770, method16755.field22771 + 0.05, method16755.field22772);
+                final Vec3d method16755 = new Vec3d((this.field2423.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, (this.field2423.nextFloat() - 0.5) * 0.1).rotatePitch(-this.field2400 * 0.017453292f).rotateYaw(-this.field2399 * 0.017453292f);
+                final Vec3d method16756 = new Vec3d((this.field2423.nextFloat() - 0.5) * 0.8, -this.field2423.nextFloat() * 0.6 - 0.3, 1.0 + (this.field2423.nextFloat() - 0.5) * 0.4).rotateYaw(-this.field2951 * 0.017453292f).add(this.getPosX(), this.method1944() + 1.0, this.getPosZ());
+                this.field2391.method6709(new Class6910(Class8432.field34629, this.method2718(Class2215.field13600)), method16756.x, method16756.y, method16756.z, method16755.x, method16755.y + 0.05, method16755.z);
             }
         }
     }
@@ -410,18 +411,18 @@ public class Class791 extends Class789
                     if (this.field4218 != 7.0f) {
                         if (this.field4218 != 15.0f) {
                             if (this.field4218 != 23.0f) {
-                                this.method1937(this.field4219.field22770, method1935.field22771, this.field4219.field22772);
+                                this.method1937(this.field4219.x, method1935.y, this.field4219.z);
                                 return;
                             }
                         }
                     }
-                    this.method1937(0.0, this.field2404 ? 0.27 : method1935.field22771, 0.0);
+                    this.method1937(0.0, this.field2404 ? 0.27 : method1935.y, 0.0);
                 }
                 else {
                     final float n = this.field2399 * 0.017453292f;
                     final float n2 = this.method2625() ? 0.1f : 0.2f;
-                    this.field4219 = new Vec3d(method1935.field22770 + -MathHelper.sin(n) * n2, 0.0, method1935.field22772 + MathHelper.cos(n) * n2);
-                    this.method1936(this.field4219.method16744(0.0, 0.27, 0.0));
+                    this.field4219 = new Vec3d(method1935.x + -MathHelper.sin(n) * n2, 0.0, method1935.z + MathHelper.cos(n) * n2);
+                    this.method1936(this.field4219.add(0.0, 0.27, 0.0));
                 }
             }
         }
@@ -432,7 +433,7 @@ public class Class791 extends Class789
     
     private void method4408() {
         final Vec3d method1935 = this.method1935();
-        this.field2391.method6709(Class8432.field34640, this.method1938() - (this.method1930() + 1.0f) * 0.5 * MathHelper.sin(this.field2951 * 0.017453292f), this.method1944() - 0.10000000149011612, this.method1945() + (this.method1930() + 1.0f) * 0.5 * MathHelper.cos(this.field2951 * 0.017453292f), method1935.field22770, 0.0, method1935.field22772);
+        this.field2391.method6709(Class8432.field34640, this.getPosX() - (this.method1930() + 1.0f) * 0.5 * MathHelper.sin(this.field2951 * 0.017453292f), this.method1944() - 0.10000000149011612, this.getPosZ() + (this.method1930() + 1.0f) * 0.5 * MathHelper.cos(this.field2951 * 0.017453292f), method1935.x, 0.0, method1935.z);
         this.method1695(Class8520.field35410, 1.0f, 1.0f);
         for (final Class791 class791 : this.field2391.method7128((Class<? extends Class791>)Class791.class, this.method1886().method18496(10.0))) {
             if (class791.method2625()) {

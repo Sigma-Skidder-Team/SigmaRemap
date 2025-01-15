@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public interface Class5346
 {
     Vec3d method16504(final Class7492 p0);
     
-    Class9544 method16505(final Class7492 p0);
+    Vec2f method16505(final Class7492 p0);
     
     default BlockPos method16506(final Class7492 class7492) {
         return new BlockPos(this.method16504(class7492));

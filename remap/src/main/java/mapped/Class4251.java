@@ -21,9 +21,9 @@ public class Class4251 implements Class4252<Class5813>
     }
     
     public Class4251(final Entity class399) {
-        this.field19077 = class399.method1938();
-        this.field19078 = class399.method1941();
-        this.field19079 = class399.method1945();
+        this.field19077 = class399.getPosX();
+        this.field19078 = class399.getPosY();
+        this.field19079 = class399.getPosZ();
         this.field19080 = class399.field2399;
         this.field19081 = class399.field2400;
     }

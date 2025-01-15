@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -182,14 +183,14 @@ public class Class844 extends Class763
                 else {
                     this.field4501 = 2.0f;
                     final Vec3d method1935 = this.method1935();
-                    if (method1935.field22771 > 0.0) {
+                    if (method1935.y > 0.0) {
                         if (this.field4506) {
                             if (!this.method1696()) {
-                                this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), this.method5060(), this.method1922(), 1.0f, 1.0f, false);
+                                this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5060(), this.method1922(), 1.0f, 1.0f, false);
                             }
                         }
                     }
-                    this.field4506 = (method1935.field22771 < 0.0 && this.field2391.method6732(new BlockPos(this).method1139(), this));
+                    this.field4506 = (method1935.y < 0.0 && this.field2391.method6732(new BlockPos(this).method1139(), this));
                 }
                 this.field4499 += this.field4501;
                 this.field4503 = this.field4502;
@@ -208,7 +209,7 @@ public class Class844 extends Class763
                     if (this.method1706()) {
                         final Vec3d method1936 = this.method1741(0.0f);
                         for (int i = 0; i < 2; ++i) {
-                            this.field2391.method6709(Class8432.field34601, this.method1940(0.5) - method1936.field22770 * 1.5, this.method1943() - method1936.field22771 * 1.5, this.method1947(0.5) - method1936.field22772 * 1.5, 0.0, 0.0, 0.0);
+                            this.field2391.method6709(Class8432.field34601, this.method1940(0.5) - method1936.x * 1.5, this.method1943() - method1936.y * 1.5, this.method1947(0.5) - method1936.z * 1.5, 0.0, 0.0, 0.0);
                         }
                     }
                 }
@@ -221,9 +222,9 @@ public class Class844 extends Class763
                         this.method4147().method24667(method1937, 90.0f, 90.0f);
                         this.method4147().method24665();
                         final double n = this.method5063(0.0f);
-                        final double n2 = method1937.method1938() - this.method1938();
+                        final double n2 = method1937.getPosX() - this.getPosX();
                         final double n3 = method1937.method1942(0.5) - this.method1944();
-                        final double n4 = method1937.method1945() - this.method1945();
+                        final double n4 = method1937.getPosZ() - this.getPosZ();
                         final double sqrt = Math.sqrt(n2 * n2 + n3 * n3 + n4 * n4);
                         final double n5 = n2 / sqrt;
                         final double n6 = n3 / sqrt;
@@ -231,14 +232,14 @@ public class Class844 extends Class763
                         double nextDouble = this.field2423.nextDouble();
                         while (nextDouble < sqrt) {
                             nextDouble += 1.8 - n + this.field2423.nextDouble() * (1.7 - n);
-                            this.field2391.method6709(Class8432.field34601, this.method1938() + n5 * nextDouble, this.method1944() + n6 * nextDouble, this.method1945() + n7 * nextDouble, 0.0, 0.0, 0.0);
+                            this.field2391.method6709(Class8432.field34601, this.getPosX() + n5 * nextDouble, this.method1944() + n6 * nextDouble, this.getPosZ() + n7 * nextDouble, 0.0, 0.0, 0.0);
                         }
                     }
                 }
             }
             if (!this.method1711()) {
                 if (this.field2404) {
-                    this.method1936(this.method1935().method16744((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.4f, 0.5, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.4f));
+                    this.method1936(this.method1935().add((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.4f, 0.5, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.4f));
                     this.field2399 = this.field2423.nextFloat() * 360.0f;
                     this.field2404 = false;
                     this.field2448 = true;
@@ -314,10 +315,10 @@ public class Class844 extends Class763
         if (this.method2749() && this.method1706()) {
             this.method1724(0.1f, class5487);
             this.method1671(Class2160.field12826, this.method1935());
-            this.method1936(this.method1935().method16748(0.9));
+            this.method1936(this.method1935().scale(0.9));
             if (!this.method5054()) {
                 if (this.method4152() == null) {
-                    this.method1936(this.method1935().method16744(0.0, -0.005, 0.0));
+                    this.method1936(this.method1935().add(0.0, -0.005, 0.0));
                 }
             }
         }

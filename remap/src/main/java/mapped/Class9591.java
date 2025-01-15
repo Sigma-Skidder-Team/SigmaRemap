@@ -46,9 +46,9 @@ public class Class9591
             }
             this.field41810 = currentTimeMillis;
         }
-        final double field41806 = this.field41804.method1938() - 0.5;
-        final double field41807 = this.field41804.method1941() - 0.5 + this.field41805;
-        final double field41808 = this.field41804.method1945() - 0.5;
+        final double field41806 = this.field41804.getPosX() - 0.5;
+        final double field41807 = this.field41804.getPosY() - 0.5 + this.field41805;
+        final double field41808 = this.field41804.getPosZ() - 0.5;
         final int method30995 = Class8850.method30995(this.field41804);
         final double a = field41806 - this.field41806;
         final double a2 = field41807 - this.field41807;

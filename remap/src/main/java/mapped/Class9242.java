@@ -27,9 +27,9 @@ public class Class9242
     private static int field39639;
     
     public static int method34073(final Class1847 field39637, final Entity class399, final int n) {
-        final int field39638 = MathHelper.floor(class399.method1938()) >> 4;
-        final int n2 = MathHelper.floor(class399.method1941()) >> 4;
-        final int field39639 = MathHelper.floor(class399.method1945()) >> 4;
+        final int field39638 = MathHelper.floor(class399.getPosX()) >> 4;
+        final int n2 = MathHelper.floor(class399.getPosY()) >> 4;
+        final int field39639 = MathHelper.floor(class399.getPosZ()) >> 4;
         final Class1862 method6686 = field39637.method6686(field39638, field39639);
         int n3 = field39638 - n;
         int n4 = field39638 + n;

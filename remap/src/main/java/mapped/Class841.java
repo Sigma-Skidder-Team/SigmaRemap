@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 import javax.annotation.Nullable;
@@ -207,11 +208,11 @@ public class Class841 extends Class785 implements Class762
         this.field4485 = this.field4486;
         if (this.field4486 <= n2) {
             if (this.field4486 < n2) {
-                this.field4486 = MathHelper.method35653(this.field4486 + 0.05f, 0.0f, n2);
+                this.field4486 = MathHelper.clamp(this.field4486 + 0.05f, 0.0f, n2);
             }
         }
         else {
-            this.field4486 = MathHelper.method35653(this.field4486 - 0.05f, n2, 1.0f);
+            this.field4486 = MathHelper.clamp(this.field4486 - 0.05f, n2, 1.0f);
         }
         if (class354 != null) {
             if (this.field2391.field10067) {
@@ -226,7 +227,7 @@ public class Class841 extends Class785 implements Class762
             final double n3 = 0.5 - MathHelper.sin((0.5f + this.field4486) * 3.1415927f) * 0.5;
             final double n4 = 0.5 - MathHelper.sin((0.5f + this.field4485) * 3.1415927f) * 0.5;
             final Direction method6702 = this.method5018().getOpposite();
-            this.method1889(new Class6221(this.method1938() - 0.5, this.method1941(), this.method1945() - 0.5, this.method1938() + 0.5, this.method1941() + 1.0, this.method1945() + 0.5).method18494(method6702.getXOffset() * n3, method6702.getYOffset() * n3, method6702.getZOffset() * n3));
+            this.method1889(new AxisAlignedBB(this.getPosX() - 0.5, this.getPosY(), this.getPosZ() - 0.5, this.getPosX() + 0.5, this.getPosY() + 1.0, this.getPosZ() + 0.5).method18494(method6702.getXOffset() * n3, method6702.getYOffset() * n3, method6702.getZOffset() * n3));
             final double n5 = n3 - n4;
             if (n5 > 0.0) {
                 final List<Entity> method6703 = this.field2391.method7127(this, this.method1886());
@@ -279,7 +280,7 @@ public class Class841 extends Class785 implements Class762
                 if (method1134.getY() > 0) {
                     if (this.field2391.method6961(method1134)) {
                         if (this.field2391.method6787().method34779(method1134)) {
-                            if (this.field2391.method6978(this, new Class6221(method1134))) {
+                            if (this.field2391.method6978(this, new AxisAlignedBB(method1134))) {
                                 int n = 0;
                                 for (final Direction class355 : Direction.values()) {
                                     if (this.field2391.method6732(method1134.method1149(class355), this)) {
@@ -308,7 +309,7 @@ public class Class841 extends Class785 implements Class762
     @Override
     public void method2736() {
         super.method2736();
-        this.method1936(Vec3d.field22769);
+        this.method1936(Vec3d.ZERO);
         this.field2952 = 180.0f;
         this.field2951 = 180.0f;
         this.field2399 = 180.0f;
@@ -362,7 +363,7 @@ public class Class841 extends Class785 implements Class762
     
     @Nullable
     @Override
-    public Class6221 method1702() {
+    public AxisAlignedBB method1702() {
         return this.method1768() ? this.method1886() : null;
     }
     

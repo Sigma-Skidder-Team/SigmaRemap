@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Multimap;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4102 extends Class3820
 {
@@ -72,7 +73,7 @@ public class Class4102 extends Class3820
                         class8324.method1738(n2 * (n5 / method30221), n3 * (n5 / method30221), n4 * (n5 / method30221));
                         class8324.method2743(20);
                         if (class8324.field2404) {
-                            class8324.method1671(Class2160.field12826, new Class5487(0.0, 1.1999999284744263, 0.0));
+                            class8324.method1671(Class2160.field12826, new Vec3d(0.0, 1.1999999284744263, 0.0));
                         }
                         Class7795 class8326;
                         if (method30220 < 3) {

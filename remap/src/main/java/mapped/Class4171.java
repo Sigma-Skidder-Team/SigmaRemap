@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.stream.Collector;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.util.Direction;
 
 import java.util.stream.IntStream;
@@ -26,9 +27,9 @@ public class Class4171<T extends Class489> extends Class4158<T>
     public void method12489(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
         if (!Class8571.method28955() || !Class7778.method24970(t, n, this.method12493(), class7351, class7352, n2, n3)) {
             Class4171.field18586.setSeed(31100L);
-            final int method12492 = this.method12492(t.method2193().method1084(this.field18539.field41131.method18161(), true));
+            final int method12492 = this.method12492(t.method2193().distanceSq(this.field18539.field41131.method18161(), true));
             final float method12493 = this.method12493();
-            final Class6789 method12494 = class7351.method22569().method32111();
+            final Matrix4f method12494 = class7351.method22569().method32111();
             this.method12490(t, method12493, 0.15f, method12494, class7352.method25214(Class4171.field18587.get(0)));
             for (int i = 1; i < method12492; ++i) {
                 this.method12490(t, method12493, 2.0f / (18 - i), method12494, class7352.method25214(Class4171.field18587.get(i)));
@@ -36,7 +37,7 @@ public class Class4171<T extends Class489> extends Class4158<T>
         }
     }
     
-    private void method12490(final T t, final float n, final float n2, final Class6789 class6789, final Class4150 class6790) {
+    private void method12490(final T t, final float n, final float n2, final Matrix4f class6789, final Class4150 class6790) {
         final float n3 = (Class4171.field18586.nextFloat() * 0.5f + 0.1f) * n2;
         final float n4 = (Class4171.field18586.nextFloat() * 0.5f + 0.4f) * n2;
         final float n5 = (Class4171.field18586.nextFloat() * 0.5f + 0.5f) * n2;
@@ -48,7 +49,7 @@ public class Class4171<T extends Class489> extends Class4158<T>
         this.method12491(t, class6789, class6790, 0.0f, 1.0f, n, n, 1.0f, 1.0f, 0.0f, 0.0f, n3, n4, n5, Direction.UP);
     }
     
-    private void method12491(final T t, final Class6789 class6789, final Class4150 class6790, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final Direction class6791) {
+    private void method12491(final T t, final Matrix4f class6789, final Class4150 class6790, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final Direction class6791) {
         if (t.method2444(class6791)) {
             class6790.method12444(class6789, n, n3, n5).method12439(n9, n10, n11, 1.0f).method12397();
             class6790.method12444(class6789, n2, n3, n6).method12439(n9, n10, n11, 1.0f).method12397();

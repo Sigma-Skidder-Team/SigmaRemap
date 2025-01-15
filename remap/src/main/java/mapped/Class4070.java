@@ -18,13 +18,13 @@ public class Class4070 extends Class3820
     public Class8321 method11707(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
         final Class8321 method11707 = super.method11707(class8321, class8322, class8323);
         if (!class8322.field10067) {
-            final double method11708 = class8323.method1938();
-            final double method11709 = class8323.method1941();
-            final double method11710 = class8323.method1945();
+            final double method11708 = class8323.getPosX();
+            final double method11709 = class8323.getPosY();
+            final double method11710 = class8323.getPosZ();
             for (int i = 0; i < 16; ++i) {
-                final double n = class8323.method1938() + (class8323.method2633().nextDouble() - 0.5) * 16.0;
-                final double method11711 = MathHelper.method35654(class8323.method1941() + (class8323.method2633().nextInt(16) - 8), 0.0, class8322.method6778() - 1);
-                final double n2 = class8323.method1945() + (class8323.method2633().nextDouble() - 0.5) * 16.0;
+                final double n = class8323.getPosX() + (class8323.method2633().nextDouble() - 0.5) * 16.0;
+                final double method11711 = MathHelper.method35654(class8323.getPosY() + (class8323.method2633().nextInt(16) - 8), 0.0, class8322.method6778() - 1);
+                final double n2 = class8323.getPosZ() + (class8323.method2633().nextDouble() - 0.5) * 16.0;
                 if (class8323.method1805()) {
                     class8323.method1784();
                 }

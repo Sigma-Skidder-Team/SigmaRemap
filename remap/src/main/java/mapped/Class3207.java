@@ -52,7 +52,7 @@ public class Class3207 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3207.field15514.field4684.method1935().field22771 > 0.0) {
+        if (Class3207.field15514.field4684.method1935().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -118,11 +118,11 @@ public class Class3207 extends Class3167
     }
     
     private double method10084() {
-        if (Class3207.field15514.field4684.method1895().field22771 < 1.0) {
+        if (Class3207.field15514.field4684.method1895().y < 1.0) {
             return -1.0;
         }
         if (!Class3207.field15514.field4684.field2404) {
-            final Iterator<Object> iterator = Class3207.field15514.field4683.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.field2403.method18494(0.0, -Class3207.field15514.field4684.method1934().field22771, 0.0)).iterator();
+            final Iterator<Object> iterator = Class3207.field15514.field4683.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.field2403.method18494(0.0, -Class3207.field15514.field4684.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             BlockPos class354 = null;
             while (iterator.hasNext()) {

@@ -15,6 +15,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Map;
 import java.util.List;
@@ -60,7 +61,7 @@ public class Class6154
     }
     
     public static float method18407(final Vec3d class5487, final Entity class5488) {
-        final Class6221 method1886 = class5488.method1886();
+        final AxisAlignedBB method1886 = class5488.method1886();
         final double n = 1.0 / ((method1886.field25076 - method1886.field25073) * 2.0 + 1.0);
         final double n2 = 1.0 / ((method1886.field25077 - method1886.field25074) * 2.0 + 1.0);
         final double n3 = 1.0 / ((method1886.field25078 - method1886.field25075) * 2.0 + 1.0);
@@ -143,17 +144,17 @@ public class Class6154
         }
         this.field24904.addAll(hashSet);
         final float n9 = this.field24902 * 2.0f;
-        final List<Entity> method6703 = this.field24897.method7127(this.field24901, new Class6221(MathHelper.floor(this.field24898 - n9 - 1.0), MathHelper.floor(this.field24899 - n9 - 1.0), MathHelper.floor(this.field24900 - n9 - 1.0), MathHelper.floor(this.field24898 + n9 + 1.0), MathHelper.floor(this.field24899 + n9 + 1.0), MathHelper.floor(this.field24900 + n9 + 1.0)));
+        final List<Entity> method6703 = this.field24897.method7127(this.field24901, new AxisAlignedBB(MathHelper.floor(this.field24898 - n9 - 1.0), MathHelper.floor(this.field24899 - n9 - 1.0), MathHelper.floor(this.field24900 - n9 - 1.0), MathHelper.floor(this.field24898 + n9 + 1.0), MathHelper.floor(this.field24899 + n9 + 1.0), MathHelper.floor(this.field24900 + n9 + 1.0)));
         final Vec3d class355 = new Vec3d(this.field24898, this.field24899, this.field24900);
         for (int l = 0; l < method6703.size(); ++l) {
             final Entity class356 = method6703.get(l);
             if (!class356.method1899()) {
-                final double n10 = MathHelper.method35641(class356.method1735(class355)) / n9;
+                final double n10 = MathHelper.sqrt(class356.method1735(class355)) / n9;
                 if (n10 <= 1.0) {
-                    final double n11 = class356.method1938() - this.field24898;
+                    final double n11 = class356.getPosX() - this.field24898;
                     final double n12 = class356.method1944() - this.field24899;
-                    final double n13 = class356.method1945() - this.field24900;
-                    final double n14 = MathHelper.method35641(n11 * n11 + n12 * n12 + n13 * n13);
+                    final double n13 = class356.getPosZ() - this.field24900;
+                    final double n14 = MathHelper.sqrt(n11 * n11 + n12 * n12 + n13 * n13);
                     if (n14 != 0.0) {
                         final double n15 = n11 / n14;
                         final double n16 = n12 / n14;
@@ -164,7 +165,7 @@ public class Class6154
                         if (class356 instanceof Class511) {
                             method6704 = Class6269.method18608((Class511)class356, n18);
                         }
-                        class356.method1936(class356.method1935().method16744(n15 * method6704, n16 * method6704, n17 * method6704));
+                        class356.method1936(class356.method1935().add(n15 * method6704, n16 * method6704, n17 * method6704));
                         if (class356 instanceof Class512) {
                             final Class512 class357 = (Class512)class356;
                             if (!class357.method1639()) {

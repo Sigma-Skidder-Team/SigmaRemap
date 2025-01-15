@@ -55,10 +55,10 @@ public class Class3275 extends Class3167
         if (this.method9906() && this.method9883("Keep Sprint")) {
             if (!class5750.method17059()) {
                 if (this.field15769.length == 2) {
-                    final double n = this.field15769[0] - Class3275.field15514.field4684.method1935().field22770;
-                    final double n2 = this.field15769[1] - Class3275.field15514.field4684.method1935().field22772;
+                    final double n = this.field15769[0] - Class3275.field15514.field4684.method1935().x;
+                    final double n2 = this.field15769[1] - Class3275.field15514.field4684.method1935().z;
                     if (n != 0.0 || n2 != 0.0) {
-                        Class3275.field15514.field4684.method1937(this.field15769[0], Class3275.field15514.field4684.method1935().field22771, this.field15769[1]);
+                        Class3275.field15514.field4684.method1937(this.field15769[0], Class3275.field15514.field4684.method1935().y, this.field15769[1]);
                     }
                     if (this.field15770) {
                         if (!Class3275.field15514.field4684.method1815()) {
@@ -68,8 +68,8 @@ public class Class3275 extends Class3167
                 }
             }
             else {
-                this.field15769[0] = Class3275.field15514.field4684.method1935().field22770;
-                this.field15769[1] = Class3275.field15514.field4684.method1935().field22772;
+                this.field15769[0] = Class3275.field15514.field4684.method1935().x;
+                this.field15769[1] = Class3275.field15514.field4684.method1935().z;
                 this.field15770 = Class3275.field15514.field4684.method1815();
             }
         }

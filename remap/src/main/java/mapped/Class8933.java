@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.stream.IntStream;
 
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.opengl.GL31;
@@ -784,7 +786,7 @@ public class Class8933
         method31611(8960, 34200, 770);
     }
     
-    public static void method31577(final Class6789 class6789) {
+    public static void method31577(final Matrix4f class6789) {
         Class8726.method29989(Class8726::method29984);
         method31635();
         method31634();
@@ -809,22 +811,22 @@ public class Class8933
     
     public static void method31578() {
         Class8726.method29989(Class8726::method29984);
-        final Class6789 class6789 = new Class6789();
+        final Matrix4f class6789 = new Matrix4f();
         class6789.method20748();
-        class6789.method20752(Class6789.method20759(1.0f, -1.0f, 1.0f));
-        class6789.method20753(Vector3f.field38718.rotationDegrees(-22.5f));
+        class6789.method20752(Matrix4f.method20759(1.0f, -1.0f, 1.0f));
+        class6789.method20753(Vector3f.YP.rotationDegrees(-22.5f));
         class6789.method20753(Vector3f.XP.rotationDegrees(135.0f));
         method31577(class6789);
     }
     
     public static void method31579() {
         Class8726.method29989(Class8726::method29984);
-        final Class6789 class6789 = new Class6789();
+        final Matrix4f class6789 = new Matrix4f();
         class6789.method20748();
-        class6789.method20753(Vector3f.field38718.rotationDegrees(62.0f));
+        class6789.method20753(Vector3f.YP.rotationDegrees(62.0f));
         class6789.method20753(Vector3f.XP.rotationDegrees(185.5f));
-        class6789.method20752(Class6789.method20759(1.0f, -1.0f, 1.0f));
-        class6789.method20753(Vector3f.field38718.rotationDegrees(-22.5f));
+        class6789.method20752(Matrix4f.method20759(1.0f, -1.0f, 1.0f));
+        class6789.method20753(Vector3f.YP.rotationDegrees(-22.5f));
         class6789.method20753(Vector3f.XP.rotationDegrees(135.0f));
         method31577(class6789);
     }
@@ -1299,7 +1301,7 @@ public class Class8933
     }
     
     @Deprecated
-    public static void method31645(final Class6789 class6789) {
+    public static void method31645(final Matrix4f class6789) {
         Class8726.method29989(Class8726::method29984);
         class6789.method20747(Class8933.field37544);
         Class8933.field37544.rewind();
@@ -1623,8 +1625,8 @@ public class Class8933
         field37556 = new Class8766(null);
         field37557 = new Class7656(null);
         field37558 = Class9078.method32716(4);
-        field37559 = Class8349.method27851(new Vector3f(0.2f, 1.0f, -0.7f), Vector3f::method33322);
-        field37560 = Class8349.method27851(new Vector3f(-0.2f, 1.0f, 0.7f), Vector3f::method33322);
+        field37559 = Class8349.method27851(new Vector3f(0.2f, 1.0f, -0.7f), Vector3f::normalize);
+        field37560 = Class8349.method27851(new Vector3f(-0.2f, 1.0f, 0.7f), Vector3f::normalize);
         field37562 = IntStream.range(0, 32).mapToObj(p0 -> new Class8887(null)).toArray(Class8887[]::new);
         Class8933.field37563 = 7425;
         field37564 = new Class8824(32826);

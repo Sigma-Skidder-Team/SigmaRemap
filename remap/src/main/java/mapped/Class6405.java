@@ -21,9 +21,9 @@ public class Class6405 extends Class6404
     public Class8321 method19087(final Class5491 class5491, final Class8321 class5492) {
         final Direction class5493 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
         final Class1847 method16763 = class5491.method16763();
-        final double n = class5491.method16760() + class5493.getXOffset() * 1.125f;
-        final double n2 = class5491.method16761() + class5493.getYOffset() * 1.125f;
-        final double n3 = class5491.method16762() + class5493.getZOffset() * 1.125f;
+        final double n = class5491.getX() + class5493.getXOffset() * 1.125f;
+        final double n2 = class5491.getY() + class5493.getYOffset() * 1.125f;
+        final double n3 = class5491.getZ() + class5493.getZOffset() * 1.125f;
         final BlockPos method16764 = class5491.method16764().method1149(class5493);
         double n4;
         if (!method16763.method6702(method16764).method21793(Class7324.field28319)) {

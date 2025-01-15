@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.Vec3i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -83,11 +86,11 @@ public interface Class4150 extends Class4152
         final float n5 = (float)method12439.getX();
         final float n6 = (float)method12439.getY();
         final float n7 = (float)method12439.getZ();
-        final Class6789 method12440 = class8996.method32111();
-        final Class9429 method12441 = class8996.method32112();
-        float n8 = method12441.method35046(n5, n6, n7);
-        float n9 = method12441.method35047(n5, n6, n7);
-        float n10 = method12441.method35048(n5, n6, n7);
+        final Matrix4f method12440 = class8996.method32111();
+        final Matrix3f method12441 = class8996.method32112();
+        float n8 = method12441.getTransformX(n5, n6, n7);
+        float n9 = method12441.getTransformY(n5, n6, n7);
+        float n10 = method12441.getTransformZ(n5, n6, n7);
         final int method12442 = Class9237.field39607.method34193();
         for (int n11 = array3.length / method12442, i = 0; i < n11; ++i) {
             final int n12 = i * method12442;
@@ -124,9 +127,9 @@ public interface Class4150 extends Class4152
             if (Class4150.field18507) {
                 final Vector3f method12447 = this.method12448(array3, n12, class8996.method32112());
                 if (method12447 != null) {
-                    n8 = method12447.method33311();
-                    n9 = method12447.method33312();
-                    n10 = method12447.method33313();
+                    n8 = method12447.getX();
+                    n9 = method12447.getY();
+                    n10 = method12447.getZ();
                 }
             }
             if (!method12438) {
@@ -138,12 +141,12 @@ public interface Class4150 extends Class4152
         }
     }
     
-    default Class4150 method12444(final Class6789 class6789, final float n, final float n2, final float n3) {
+    default Class4150 method12444(final Matrix4f class6789, final float n, final float n2, final float n3) {
         return this.method12432(class6789.method20761(n, n2, n3, 1.0f), class6789.method20762(n, n2, n3, 1.0f), class6789.method20763(n, n2, n3, 1.0f));
     }
     
-    default Class4150 method12445(final Class9429 class9429, final float n, final float n2, final float n3) {
-        return this.method12436(class9429.method35046(n, n2, n3), class9429.method35047(n, n2, n3), class9429.method35048(n, n2, n3));
+    default Class4150 method12445(final Matrix3f class9429, final float n, final float n2, final float n3) {
+        return this.method12436(class9429.getTransformX(n, n2, n3), class9429.getTransformY(n, n2, n3), class9429.getTransformZ(n, n2, n3));
     }
     
     default void method12406(final Class1912 class1912) {
@@ -156,7 +159,7 @@ public interface Class4150 extends Class4152
     }
     
     default Vector3f method12419(final Vector3f class9138) {
-        return class9138.method33329();
+        return class9138.copy();
     }
     
     default Vector3f method12420(final float n, final float n2, final float n3) {
@@ -185,7 +188,7 @@ public interface Class4150 extends Class4152
         return n * 8 + 6;
     }
     
-    default Vector3f method12448(final int[] array, final int n, final Class9429 class9429) {
+    default Vector3f method12448(final int[] array, final int n, final Matrix3f class9429) {
         final int n2 = array[n + 7];
         final byte b = (byte)(n2 >> 0 & 0xFF);
         final byte b2 = (byte)(n2 >> 8 & 0xFF);
@@ -198,7 +201,7 @@ public interface Class4150 extends Class4152
             }
         }
         final Vector3f method12420 = this.method12420(b / 127.0f, b2 / 127.0f, b3 / 127.0f);
-        method12420.method33324(class9429);
+        method12420.transform(class9429);
         return method12420;
     }
 }

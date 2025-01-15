@@ -35,11 +35,11 @@ public class Class3265 extends Class3247
     }
     
     public Class2166 method10299(final Class5745 class5745) {
-        final double n = Class3265.field15514.field4684.field2395 + class5745.method17052().field22770;
-        final double n2 = Class3265.field15514.field4684.field2397 + class5745.method17052().field22772;
+        final double n = Class3265.field15514.field4684.field2395 + class5745.method17052().x;
+        final double n2 = Class3265.field15514.field4684.field2397 + class5745.method17052().z;
         final double n3 = 0.41;
         final double n4 = class5745.method17049() - class5745.method17051();
-        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new Class6221(n - n3, Class3265.field15514.field4684.field2403.field25074, n2 - n3, n + n3, Class3265.field15514.field4684.field2403.field25074 + n4, n2 + n3)).toArray();
+        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.field2403.field25074, n2 - n3, n + n3, Class3265.field15514.field4684.field2403.field25074 + n4, n2 + n3)).toArray();
         final int length = array.length;
         Class7096 class5746 = null;
         BlockPos class5747 = null;

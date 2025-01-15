@@ -16,6 +16,6 @@ public abstract class Class3634 extends Class3446
     }
     
     public boolean method11167() {
-        return Class851.method5090(this.field16871).method16747(this.field16871.method1938(), this.field16871.method1941(), this.field16871.method1945()) < 4.0;
+        return Class851.method5090(this.field16871).method16747(this.field16871.getPosX(), this.field16871.getPosY(), this.field16871.getPosZ()) < 4.0;
     }
 }

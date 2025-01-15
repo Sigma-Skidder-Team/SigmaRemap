@@ -26,7 +26,7 @@ public class Class3494 extends Class3446
     public void method11016() {
         final Random method2633 = this.field16440.method2633();
         final Class1847 field2391 = this.field16440.field2391;
-        final BlockPos class354 = new BlockPos(MathHelper.floor(this.field16440.method1938() - 1.0 + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.method1941() + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.method1945() - 1.0 + method2633.nextDouble() * 2.0));
+        final BlockPos class354 = new BlockPos(MathHelper.floor(this.field16440.getPosX() - 1.0 + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.getPosY() + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.getPosZ() - 1.0 + method2633.nextDouble() * 2.0));
         final Class7096 method2634 = field2391.method6701(class354);
         final BlockPos method2635 = class354.method1139();
         final Class7096 method2636 = field2391.method6701(method2635);

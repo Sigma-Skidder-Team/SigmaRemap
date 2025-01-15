@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class518 extends Class517<Class3427> implements Class519
 {
     private static final Class1932 field3104;
@@ -112,7 +115,7 @@ public class Class518 extends Class517<Class3427> implements Class519
         class511.field2953 = class511.field2399;
         class511.field2954 = class511.field2399;
         final Class8551 method33330 = Class869.method5277().method5306();
-        method33329.method34905();
+        method33329.conjugate();
         method33330.method28701(method33329);
         method33330.method28702(false);
         final Class7808 method33331 = Class869.method5277().method5333().method11006();

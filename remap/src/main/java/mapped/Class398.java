@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public class Class398 implements Class397
 {
     private final StringBuffer field2377;
@@ -24,7 +26,7 @@ public class Class398 implements Class397
     
     public Class7492 method1637() {
         final Class1849 method1481 = this.field2378.method1481(Class383.field2223);
-        return new Class7492(this, new Class5487(method1481.method6758()), Class9544.field41083, method1481, 4, "Recon", new Class2260("Rcon"), this.field2378, null);
+        return new Class7492(this, new Vec3d(method1481.method6758()), Vec2f.ZERO, method1481, 4, "Recon", new Class2260("Rcon"), this.field2378, null);
     }
     
     @Override

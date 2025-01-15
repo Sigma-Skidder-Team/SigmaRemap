@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.client.renderer.*;
 
 import java.util.Random;
 
@@ -26,13 +26,13 @@ public class Class9107
     }
     
     private static void method32930() {
-        final Class6789 class6789 = new Class6789();
+        final Matrix4f class6789 = new Matrix4f();
         class6789.method20767(Class9107.field38575);
-        final Class6789 method20758 = class6789.method20758();
+        final Matrix4f method20758 = class6789.method20758();
         final float nextFloat = Class9107.field38575.nextFloat();
         final float nextFloat2 = Class9107.field38575.nextFloat();
         final float nextFloat3 = Class9107.field38575.nextFloat();
-        class6789.method20752(Class6789.method20760(nextFloat, nextFloat2, nextFloat3));
+        class6789.method20752(Matrix4f.method20760(nextFloat, nextFloat2, nextFloat3));
         method20758.method20765(nextFloat, nextFloat2, nextFloat3);
         if (!method20758.equals(class6789)) {
             method32936("*** DIFFERENT ***");
@@ -42,13 +42,13 @@ public class Class9107
     }
     
     private static void method32931() {
-        final Class6789 class6789 = new Class6789();
+        final Matrix4f class6789 = new Matrix4f();
         class6789.method20767(Class9107.field38575);
-        final Class6789 method20758 = class6789.method20758();
+        final Matrix4f method20758 = class6789.method20758();
         final float nextFloat = Class9107.field38575.nextFloat();
         final float nextFloat2 = Class9107.field38575.nextFloat();
         final float nextFloat3 = Class9107.field38575.nextFloat();
-        class6789.method20752(Class6789.method20759(nextFloat, nextFloat2, nextFloat3));
+        class6789.method20752(Matrix4f.method20759(nextFloat, nextFloat2, nextFloat3));
         method20758.method20766(nextFloat, nextFloat2, nextFloat3);
         if (!method20758.equals(class6789)) {
             method32936("*** DIFFERENT ***");
@@ -58,11 +58,11 @@ public class Class9107
     }
     
     private static void method32932() {
-        final Class6789 class6789 = new Class6789();
+        final Matrix4f class6789 = new Matrix4f();
         class6789.method20767(Class9107.field38575);
-        final Class6789 method20758 = class6789.method20758();
+        final Matrix4f method20758 = class6789.method20758();
         final Quaternion class6790 = new Quaternion(Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat());
-        class6789.method20752(new Class6789(class6790));
+        class6789.method20752(new Matrix4f(class6790));
         method20758.method20753(class6790);
         if (!method20758.equals(class6789)) {
             method32936("*** DIFFERENT ***");
@@ -72,12 +72,12 @@ public class Class9107
     }
     
     private static void method32933() {
-        final Class9429 class9429 = new Class9429();
-        class9429.method35049(Class9107.field38575);
-        final Class9429 method35045 = class9429.method35045();
+        final Matrix3f class9429 = new Matrix3f();
+        class9429.setRandom(Class9107.field38575);
+        final Matrix3f method35045 = class9429.copy();
         final Quaternion class9430 = new Quaternion(Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat());
-        class9429.method35042(new Class9429(class9430));
-        method35045.method35043(class9430);
+        class9429.mul(new Matrix3f(class9430));
+        method35045.mul(class9430);
         if (!method35045.equals(class9429)) {
             method32936("*** DIFFERENT ***");
             method32936(class9429.toString());
@@ -87,11 +87,11 @@ public class Class9107
     
     private static void method32934() {
         final Vector3f class9138 = new Vector3f(Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat());
-        final Vector3f method33329 = class9138.method33329();
-        final Class9429 class9139 = new Class9429();
-        class9139.method35049(Class9107.field38575);
-        class9138.method33324(class9139);
-        final Vector3f class9140 = new Vector3f(class9139.method35046(method33329.method33311(), method33329.method33312(), method33329.method33313()), class9139.method35047(method33329.method33311(), method33329.method33312(), method33329.method33313()), class9139.method35048(method33329.method33311(), method33329.method33312(), method33329.method33313()));
+        final Vector3f method33329 = class9138.copy();
+        final Matrix3f class9139 = new Matrix3f();
+        class9139.setRandom(Class9107.field38575);
+        class9138.transform(class9139);
+        final Vector3f class9140 = new Vector3f(class9139.getTransformX(method33329.getX(), method33329.getY(), method33329.getZ()), class9139.getTransformY(method33329.getX(), method33329.getY(), method33329.getZ()), class9139.getTransformZ(method33329.getX(), method33329.getY(), method33329.getZ()));
         if (!class9140.equals(class9138)) {
             method32936("*** DIFFERENT ***");
             method32936(class9138.toString());
@@ -102,7 +102,7 @@ public class Class9107
     private static void method32935() {
         final Vector4f class8526 = new Vector4f(Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat(), Class9107.field38575.nextFloat());
         final Vector4f class8527 = new Vector4f(class8526.method28595(), class8526.method28596(), class8526.method28597(), class8526.method28598());
-        final Class6789 class8528 = new Class6789();
+        final Matrix4f class8528 = new Matrix4f();
         class8528.method20767(Class9107.field38575);
         class8526.method28603(class8528);
         final Vector4f class8529 = new Vector4f(class8528.method20761(class8527.method28595(), class8527.method28596(), class8527.method28597(), class8527.method28598()), class8528.method20762(class8527.method28595(), class8527.method28596(), class8527.method28597(), class8527.method28598()), class8528.method20763(class8527.method28595(), class8527.method28596(), class8527.method28597(), class8527.method28598()), class8528.method20764(class8527.method28595(), class8527.method28596(), class8527.method28597(), class8527.method28598()));

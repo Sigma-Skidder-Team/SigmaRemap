@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
@@ -59,11 +60,11 @@ public class Class4790 extends Class4703<Class427>
         if (!this.method14167()) {
             n4 = 0.0f;
         }
-        class428.method22564(0.0, n4 + 0.25f * class430.method18697().method23402(Class2016.field11493).field25540.method33312(), 0.0);
-        class428.method22566(Vector3f.field38718.method33327((class427.method2113() + n2) / 20.0f + class427.field2619));
-        final float method2110 = class430.method18697().field29086.field25540.method33311();
-        final float method2111 = class430.method18697().field29086.field25540.method33312();
-        final float method2112 = class430.method18697().field29086.field25540.method33313();
+        class428.method22564(0.0, n4 + 0.25f * class430.method18697().method23402(Class2016.field11493).field25540.getY(), 0.0);
+        class428.method22566(Vector3f.YP.rotation((class427.method2113() + n2) / 20.0f + class427.field2619));
+        final float method2110 = class430.method18697().field29086.field25540.getX();
+        final float method2111 = class430.method18697().field29086.field25540.getY();
+        final float method2112 = class430.method18697().field29086.field25540.getZ();
         if (!method2108) {
             class428.method22564(-0.0f * (method2109 - 1) * 0.5f * method2110, -0.0f * (method2109 - 1) * 0.5f * method2111, -0.09375f * (method2109 - 1) * 0.5f * method2112);
         }

@@ -99,7 +99,7 @@ public class Class5457 extends Class5419<Class824>
     }
     
     private boolean method16673(final Class824 class824, final Class512 class825) {
-        return new BlockPos(class824).method1081(new BlockPos(class825), 5.0);
+        return new BlockPos(class824).withinDistance(new BlockPos(class825), 5.0);
     }
     
     private static int method16674(final Class1849 class1849) {

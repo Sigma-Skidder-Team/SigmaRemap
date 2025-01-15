@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+
 public class Class1880
 {
     private static String[] field10238;
@@ -29,6 +31,6 @@ public class Class1880
     public void method7169(final float[] array) {
     }
     
-    public void method7170(final Class6789 class6789) {
+    public void method7170(final Matrix4f class6789) {
     }
 }

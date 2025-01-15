@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class506 extends Class428
 {
@@ -50,7 +51,7 @@ public class Class506 extends Class428
         }
         if (this.method2598()) {
             if (this.field2423.nextInt(4) == 0) {
-                this.field2391.method6709(Class8432.field34632, this.method1938(), this.method1941() + 0.8, this.method1945(), 0.0, 0.0, 0.0);
+                this.field2391.method6709(Class8432.field34632, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }
@@ -78,10 +79,10 @@ public class Class506 extends Class428
         final double n = this.field2888 * this.field2888 + this.field2889 * this.field2889;
         if (n > 1.0E-4) {
             if (method1936 > 0.001) {
-                final double n2 = MathHelper.method35641(method1936);
-                final double n3 = MathHelper.method35641(n);
-                this.field2888 = method1935.field22770 / n2 * n3;
-                this.field2889 = method1935.field22772 / n2 * n3;
+                final double n2 = MathHelper.sqrt(method1936);
+                final double n3 = MathHelper.sqrt(n);
+                this.field2888 = method1935.x / n2 * n3;
+                this.field2889 = method1935.z / n2 * n3;
             }
         }
     }
@@ -90,13 +91,13 @@ public class Class506 extends Class428
     public void method2130() {
         final double n = this.field2888 * this.field2888 + this.field2889 * this.field2889;
         if (n <= 1.0E-7) {
-            this.method1936(this.method1935().method16751(0.98, 0.0, 0.98));
+            this.method1936(this.method1935().mul(0.98, 0.0, 0.98));
         }
         else {
-            final double n2 = MathHelper.method35641(n);
+            final double n2 = MathHelper.sqrt(n);
             this.field2888 /= n2;
             this.field2889 /= n2;
-            this.method1936(this.method1935().method16751(0.8, 0.0, 0.8).method16744(this.field2888, 0.0, this.field2889));
+            this.method1936(this.method1935().mul(0.8, 0.0, 0.8).add(this.field2888, 0.0, this.field2889));
         }
         super.method2130();
     }
@@ -113,8 +114,8 @@ public class Class506 extends Class428
             }
         }
         if (this.field2887 > 0) {
-            this.field2888 = this.method1938() - class512.method1938();
-            this.field2889 = this.method1945() - class512.method1945();
+            this.field2888 = this.getPosX() - class512.getPosX();
+            this.field2889 = this.getPosZ() - class512.getPosZ();
         }
         return true;
     }

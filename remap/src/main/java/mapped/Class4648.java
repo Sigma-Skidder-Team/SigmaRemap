@@ -101,11 +101,11 @@ public abstract class Class4648
                                 this.method13888();
                                 return;
                             }
-                            if (method13895.method7128((Class<? extends Entity>)((Class759)method13900).getClass(), new Class6221(method13896.getX(), method13896.getY(), method13896.getZ(), method13896.getX() + 1, method13896.getY() + 1, method13896.getZ() + 1).method18496(this.field20131)).size() >= this.field20129) {
+                            if (method13895.method7128((Class<? extends Entity>)((Class759)method13900).getClass(), new AxisAlignedBB(method13896.getX(), method13896.getY(), method13896.getZ(), method13896.getX() + 1, method13896.getY() + 1, method13896.getZ() + 1).method18496(this.field20131)).size() >= this.field20129) {
                                 this.method13888();
                                 return;
                             }
-                            method13900.method1730(method13900.method1938(), method13900.method1941(), method13900.method1945(), method13895.field10062.nextFloat() * 360.0f, 0.0f);
+                            method13900.method1730(method13900.getPosX(), method13900.getPosY(), method13900.getPosZ(), method13895.field10062.nextFloat() * 360.0f, 0.0f);
                             if (method13900 instanceof Class759) {
                                 final Class759 class759 = (Class759)method13900;
                                 if (!class759.method4179(method13895, Class2101.field12176)) {

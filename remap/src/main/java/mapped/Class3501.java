@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 import java.util.EnumSet;
@@ -112,8 +113,8 @@ public class Class3501 extends Class3446
     public void method11016() {
         if (this.field16461.method4800()) {
             final Class815 method4801 = this.field16461.method4801();
-            final Class5487 method4802 = new Class5487(method4801.method1938() - this.field16461.method1938(), method4801.method1941() - this.field16461.method1941(), method4801.method1945() - this.field16461.method1945()).method16738().method16748(Math.max(this.field16461.method1732(method4801) - 2.0, 0.0));
-            this.field16461.method4150().method24724(this.field16461.method1938() + method4802.field22770, this.field16461.method1941() + method4802.field22771, this.field16461.method1945() + method4802.field22772, this.field16462);
+            final Vec3d method4802 = new Vec3d(method4801.getPosX() - this.field16461.getPosX(), method4801.getPosY() - this.field16461.getPosY(), method4801.getPosZ() - this.field16461.getPosZ()).normalize().scale(Math.max(this.field16461.method1732(method4801) - 2.0, 0.0));
+            this.field16461.method4150().method24724(this.field16461.getPosX() + method4802.x, this.field16461.getPosY() + method4802.y, this.field16461.getPosZ() + method4802.z, this.field16462);
         }
     }
     

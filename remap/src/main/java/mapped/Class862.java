@@ -83,7 +83,7 @@ public class Class862 extends Class860
             final double n7 = n4 / 32.0;
             final double n8 = n5 / 32.0;
             final double n9 = n6 / 32.0;
-            this.method1889(new Class6221(n - n7, n2 - n8, n3 - n9, n + n7, n2 + n8, n3 + n9));
+            this.method1889(new AxisAlignedBB(n - n7, n2 - n8, n3 - n9, n + n7, n2 + n8, n3 + n9));
         }
     }
     

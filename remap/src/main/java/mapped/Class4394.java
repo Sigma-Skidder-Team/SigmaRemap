@@ -7,6 +7,7 @@ package mapped;
 import java.io.IOException;
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 
@@ -25,16 +26,16 @@ public class Class4394 implements Class4252<Class5800>
     public Class4394() {
     }
     
-    public Class4394(final double field19677, final double field19678, final double field19679, final float field19680, final List<BlockPos> list, final Class5487 class5487) {
+    public Class4394(final double field19677, final double field19678, final double field19679, final float field19680, final List<BlockPos> list, final Vec3d class5487) {
         this.field19677 = field19677;
         this.field19678 = field19678;
         this.field19679 = field19679;
         this.field19680 = field19680;
         this.field19681 = Lists.newArrayList((Iterable)list);
         if (class5487 != null) {
-            this.field19682 = (float)class5487.field22770;
-            this.field19683 = (float)class5487.field22771;
-            this.field19684 = (float)class5487.field22772;
+            this.field19682 = (float)class5487.x;
+            this.field19683 = (float)class5487.y;
+            this.field19684 = (float)class5487.z;
         }
     }
     

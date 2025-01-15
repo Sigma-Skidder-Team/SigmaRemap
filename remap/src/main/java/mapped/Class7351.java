@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Queues;
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.ArrayDeque;
@@ -19,10 +22,10 @@ public class Class7351
     public Class7351() {
         this.field28370 = new ArrayDeque<Class8996>();
         this.field28371 = Class8349.method27851(Queues.newArrayDeque(), arrayDeque -> {
-            final Class6789 class6789 = new Class6789();
+            final Matrix4f class6789 = new Matrix4f();
             class6789.method20748();
-            final Class9429 class6790 = new Class9429();
-            class6790.method35039();
+            final Matrix3f class6790 = new Matrix3f();
+            class6790.setIdentity();
             arrayDeque.add(new Class8996(class6789, class6790, null));
         });
     }
@@ -46,7 +49,7 @@ public class Class7351
         final float n5 = 1.0f / n2;
         final float n6 = 1.0f / n3;
         final float method35696 = MathHelper.method35696(n4 * n5 * n6);
-        Class8996.method32114(class8996).method35042(Class9429.method35032(method35696 * n4, method35696 * n5, method35696 * n6));
+        Class8996.method32114(class8996).method35042(Matrix3f.makeScaleMatrix(method35696 * n4, method35696 * n5, method35696 * n6));
     }
     
     public void method22566(final Quaternion class9389) {

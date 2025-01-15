@@ -122,7 +122,7 @@ public class Class821 extends Class819
     @Override
     public void method4829(final Class9017 class9017) {
         if (class9017.method32300()) {
-            this.field2391.method6886(new Class508(this.field2391, this.method1938(), this.method1941() + 0.5, this.method1945(), 3 + this.field2423.nextInt(4)));
+            this.field2391.method6886(new Class508(this.field2391, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 3 + this.field2423.nextInt(4)));
         }
     }
     

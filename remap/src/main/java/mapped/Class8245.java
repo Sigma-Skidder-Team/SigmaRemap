@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
@@ -165,7 +166,7 @@ public class Class8245
                 this.field33863.method5299().method6422(new Class6836(method6702.method24482(), Class286.field1582, (method6702.method24477() + 1.0f) / 8.0f, method6702.method24478() * 0.5f, class354));
             }
             ++this.field33868;
-            this.field33863.method5319().method32920(this.field33863.field4683, class354, method6701, MathHelper.method35653(this.field33867, 0.0f, 1.0f));
+            this.field33863.method5319().method32920(this.field33863.field4683, class354, method6701, MathHelper.clamp(this.field33867, 0.0f, 1.0f));
             if (this.field33867 >= 1.0f) {
                 this.field33870 = false;
                 this.method27339(Class2003.field11242, class354, class355);
@@ -301,7 +302,7 @@ public class Class8245
     
     public Class2201 method27323(final Class512 class512, final Entity class513, final Class7007 class514, final Class316 class515) {
         this.method27318();
-        final Vec3d method16742 = class514.method21451().method16742(class513.method1938(), class513.method1941(), class513.method1945());
+        final Vec3d method16742 = class514.method21451().subtract(class513.getPosX(), class513.getPosY(), class513.getPosZ());
         this.field33864.method17292(new Class4381(class513, class515, method16742));
         return (this.field33871 != Class101.field301) ? class513.method1898(class512, method16742, class515) : Class2201.field13402;
     }
@@ -407,7 +408,7 @@ public class Class8245
                 continue;
             }
             final Vec3d method26627 = class1852.method26627();
-            this.field33863.field4684.method1728(method26627.field22770, method26627.field22771, method26627.field22772, class1852.method26629(), class1852.method26628());
+            this.field33863.field4684.method1728(method26627.x, method26627.y, method26627.z, class1852.method26629(), class1852.method26628());
             continue;
         }
     }

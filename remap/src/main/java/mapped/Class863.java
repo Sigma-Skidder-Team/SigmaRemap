@@ -21,7 +21,7 @@ public class Class863 extends Class860
     public Class863(final Class1847 class1847, final BlockPos class1848) {
         super(Class7499.field28995, class1847, class1848);
         this.method1656(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
-        this.method1889(new Class6221(this.method1938() - 0.1875, this.method1941() - 0.25 + 0.125, this.method1945() - 0.1875, this.method1938() + 0.1875, this.method1941() + 0.25 + 0.125, this.method1945() + 0.1875));
+        this.method1889(new AxisAlignedBB(this.getPosX() - 0.1875, this.getPosY() - 0.25 + 0.125, this.getPosZ() - 0.1875, this.getPosX() + 0.1875, this.getPosY() + 0.25 + 0.125, this.getPosZ() + 0.1875));
         this.field2390 = true;
     }
     
@@ -76,7 +76,7 @@ public class Class863 extends Class860
     public boolean method1770(final Class512 class512, final Class316 class513) {
         if (!this.field2391.field10067) {
             int n = 0;
-            final List<Class759> method7128 = this.field2391.method7128((Class<? extends Class759>)Class759.class, new Class6221(this.method1938() - 7.0, this.method1941() - 7.0, this.method1945() - 7.0, this.method1938() + 7.0, this.method1941() + 7.0, this.method1945() + 7.0));
+            final List<Class759> method7128 = this.field2391.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(this.getPosX() - 7.0, this.getPosY() - 7.0, this.getPosZ() - 7.0, this.getPosX() + 7.0, this.getPosY() + 7.0, this.getPosZ() + 7.0));
             for (final Class759 class514 : method7128) {
                 if (class514.method4206() != class512) {
                     continue;
@@ -112,7 +112,7 @@ public class Class863 extends Class860
         final int method1074 = class1848.getX();
         final int method1075 = class1848.getY();
         final int method1076 = class1848.getZ();
-        for (final Class863 class1849 : class1847.method7128((Class<? extends Class863>)Class863.class, new Class6221(method1074 - 1.0, method1075 - 1.0, method1076 - 1.0, method1074 + 1.0, method1075 + 1.0, method1076 + 1.0))) {
+        for (final Class863 class1849 : class1847.method7128((Class<? extends Class863>)Class863.class, new AxisAlignedBB(method1074 - 1.0, method1075 - 1.0, method1076 - 1.0, method1074 + 1.0, method1075 + 1.0, method1076 + 1.0))) {
             if (!class1849.method5194().equals(class1848)) {
                 continue;
             }

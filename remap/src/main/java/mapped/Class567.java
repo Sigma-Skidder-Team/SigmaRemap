@@ -61,15 +61,15 @@ public class Class567 extends Class566
             if (this.field3366.field4700 != null) {
                 this.field3366.field4700.method2975(0, 0, n3);
             }
-            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35649((1.0f - MathHelper.method35653(n4 - 1.0f, 0.0f, 1.0f)) * 255.0f) << 24);
-            method7699 = 1.0f - MathHelper.method35653(n4 - 1.0f, 0.0f, 1.0f);
+            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35649((1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f)) * 255.0f) << 24);
+            method7699 = 1.0f - MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f);
         }
         else if (this.field3369) {
             if (this.field3366.field4700 != null && n5 < 1.0f) {
                 this.field3366.field4700.method2975(n, n2, n3);
             }
             Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35650(MathHelper.method35654(n5, 0.15, 1.0) * 255.0) << 24);
-            method7699 = MathHelper.method35653(n5, 0.0f, 1.0f);
+            method7699 = MathHelper.clamp(n5, 0.0f, 1.0f);
         }
         else {
             Class565.method3293(0, 0, method7696, method7697, this.field3373 | 0xFF000000);
@@ -81,10 +81,10 @@ public class Class567 extends Class566
         Class8726.method30011();
         Class8726.method30068(1.0f, 1.0f, 1.0f, method7699);
         this.method3186(n6, n7, 0, 0, 256, 256);
-        this.field3370 = MathHelper.method35653(this.field3370 * 0.95f + this.field3367.method27189() * 0.050000012f, 0.0f, 1.0f);
+        this.field3370 = MathHelper.clamp(this.field3370 * 0.95f + this.field3367.method27189() * 0.050000012f, 0.0f, 1.0f);
         Class9570.field41188.method22608(new Object[0]);
         if (n4 < 1.0f) {
-            this.method3307(method7696 / 2 - 150, method7697 / 4 * 3, method7696 / 2 + 150, method7697 / 4 * 3 + 10, 1.0f - MathHelper.method35653(n4, 0.0f, 1.0f));
+            this.method3307(method7696 / 2 - 150, method7697 / 4 * 3, method7696 / 2 + 150, method7697 / 4 * 3 + 10, 1.0f - MathHelper.clamp(n4, 0.0f, 1.0f));
         }
         if (n4 >= 2.0f) {
             this.field3366.method5245(null);

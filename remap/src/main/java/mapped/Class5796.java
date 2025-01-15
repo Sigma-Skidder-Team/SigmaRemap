@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 
 public class Class5796 extends Class5784
@@ -11,7 +13,7 @@ public class Class5796 extends Class5784
     private static String[] field23800;
     private boolean field23801;
     private Class9468 field23802;
-    private Class5487 field23803;
+    private Vec3d field23803;
     
     public Class5796(final Class852 class852) {
         super(class852);
@@ -20,7 +22,7 @@ public class Class5796 extends Class5784
     @Override
     public void method17247() {
         if (!this.field23801 && this.field23802 != null) {
-            if (!this.field23764.field2391.method6958(Class2020.field11526, Class4551.field20031).method1082(this.field23764.method1934(), 10.0)) {
+            if (!this.field23764.field2391.method6958(Class2020.field11526, Class4551.field20031).withinDistance(this.field23764.method1934(), 10.0)) {
                 this.field23764.method5127().method33696(Class7193.field27948);
             }
         }
@@ -39,8 +41,8 @@ public class Class5796 extends Class5784
     
     private void method17267() {
         final int method5119 = this.field23764.method5119();
-        final Class5487 method5120 = this.field23764.method5125(1.0f);
-        final int method5121 = this.field23764.method5120(-method5120.field22770 * 40.0, 105.0, -method5120.field22772 * 40.0);
+        final Vec3d method5120 = this.field23764.method5125(1.0f);
+        final int method5121 = this.field23764.method5120(-method5120.x * 40.0, 105.0, -method5120.z * 40.0);
         int n;
         if (this.field23764.method5128() != null && this.field23764.method5128().method29250() > 0) {
             n = method5121 % 12;
@@ -59,20 +61,20 @@ public class Class5796 extends Class5784
         if (this.field23802 != null) {
             this.field23802.method35214();
             if (!this.field23802.method35215()) {
-                final Class5487 method35226 = this.field23802.method35226();
+                final Vec3d method35226 = this.field23802.method35226();
                 this.field23802.method35214();
                 double n;
                 do {
-                    n = method35226.field22771 + this.field23764.method2633().nextFloat() * 20.0f;
-                } while (n < method35226.field22771);
-                this.field23803 = new Class5487(method35226.field22770, n, method35226.field22772);
+                    n = method35226.y + this.field23764.method2633().nextFloat() * 20.0f;
+                } while (n < method35226.y);
+                this.field23803 = new Vec3d(method35226.x, n, method35226.z);
             }
         }
     }
     
     @Nullable
     @Override
-    public Class5487 method17254() {
+    public Vec3d method17254() {
         return this.field23803;
     }
     

@@ -229,7 +229,7 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6886(final Entity class399) {
-        this.method6798(MathHelper.floor(class399.method1938() / 16.0), MathHelper.floor(class399.method1945() / 16.0)).method7010(class399);
+        this.method6798(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0)).method7010(class399);
         return true;
     }
     
@@ -333,12 +333,12 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public <T extends Entity> List<T> method6739(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6739(final Class<? extends T> clazz, final AxisAlignedBB class6221, final Predicate<? super T> predicate) {
         return Collections.emptyList();
     }
     
     @Override
-    public List<Entity> method6737(final Entity class399, final Class6221 class400, final Predicate<? super Entity> predicate) {
+    public List<Entity> method6737(final Entity class399, final AxisAlignedBB class400, final Predicate<? super Entity> predicate) {
         return Collections.emptyList();
     }
     

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3236 extends Class3167
 {
@@ -158,10 +159,10 @@ public class Class3236 extends Class3167
                     }
                 }
                 Label_0176: {
-                    if (Class3236.field15514.field4684.method1935().field22771 < 0.0) {
+                    if (Class3236.field15514.field4684.method1935().y < 0.0) {
                         if (Class3236.field15514.field4684.field2414 > 1.0f) {
                             if (Class4609.method13697(0.0f, 90.0f, 3.0f).method21449() == Class2165.field12880) {
-                                n3 += Math.min(Class3236.field15514.field4684.method1935().field22771 * 2.0, 4.0);
+                                n3 += Math.min(Class3236.field15514.field4684.method1935().y * 2.0, 4.0);
                                 break Label_0176;
                             }
                         }
@@ -172,9 +173,9 @@ public class Class3236 extends Class3167
                         }
                     }
                 }
-                if (!Class4609.method13708(new BlockPos(Class3236.field15514.field4684.method1934().method16760(), Class3236.field15514.field4684.method1934().method16761() - 1.0, Class3236.field15514.field4684.method1934().method16762()))) {
-                    n = Class3236.field15514.field4684.method1934().method16760();
-                    n2 = Class3236.field15514.field4684.method1934().method16762();
+                if (!Class4609.method13708(new BlockPos(Class3236.field15514.field4684.method1934().getX(), Class3236.field15514.field4684.method1934().getY() - 1.0, Class3236.field15514.field4684.method1934().getZ()))) {
+                    n = Class3236.field15514.field4684.method1934().getX();
+                    n2 = Class3236.field15514.field4684.method1934().getZ();
                 }
                 final BlockPos class5746 = new BlockPos(n, n3 - 1.0, n2);
                 Label_0589: {
@@ -238,9 +239,9 @@ public class Class3236 extends Class3167
                     Class3236.field15514.field4684.method2725();
                     ((Class3256)Class9463.method35173().method35189().method21551(Class3256.class)).method10269();
                     this.field15717 = true;
-                    class5717.method16975(Class3236.field15514.field4684.method1935().field22771);
-                    class5717.method16973(Class3236.field15514.field4684.method1935().field22770);
-                    class5717.method16977(Class3236.field15514.field4684.method1935().field22772);
+                    class5717.method16975(Class3236.field15514.field4684.method1935().y);
+                    class5717.method16973(Class3236.field15514.field4684.method1935().x);
+                    class5717.method16977(Class3236.field15514.field4684.method1935().z);
                     break;
                 }
                 break;
@@ -402,7 +403,7 @@ public class Class3236 extends Class3167
         return new double[] { n3, n4 };
     }
     
-    public static Class5487 method10215(final BlockPos class354, final Direction class355) {
+    public static Vec3d method10215(final BlockPos class354, final Direction class355) {
         final double n = class354.getX() + 0.5;
         final double n2 = class354.getY() + 0.5;
         final double n3 = class354.getZ() + 0.5;
@@ -423,7 +424,7 @@ public class Class3236 extends Class3167
         if (class355 == Direction.SOUTH || class355 == Direction.NORTH) {
             n4 += method10216(n7, -n7);
         }
-        return new Class5487(n4, n6, n5);
+        return new Vec3d(n4, n6, n5);
     }
     
     public static double method10216(final double n, final double n2) {

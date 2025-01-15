@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4702 extends Class4703<Class858>
@@ -35,17 +37,17 @@ public class Class4702 extends Class4703<Class858>
         if (class858.method5185()) {
             this.field20282.method18643(class859, method13948, n3, field10335);
         }
-        class859.method22566(Vector3f.field38718.rotationDegrees(n4));
+        class859.method22566(Vector3f.YP.rotationDegrees(n4));
         class859.method22564(0.0, 1.5f + method13947 / 2.0f, 0.0);
         class859.method22566(new Quaternion(new Vector3f(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
         this.field20281.method18643(class859, method13948, n3, field10335);
         class859.method22565(0.875f, 0.875f, 0.875f);
         class859.method22566(new Quaternion(new Vector3f(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
-        class859.method22566(Vector3f.field38718.rotationDegrees(n4));
+        class859.method22566(Vector3f.YP.rotationDegrees(n4));
         this.field20281.method18643(class859, method13948, n3, field10335);
         class859.method22565(0.875f, 0.875f, 0.875f);
         class859.method22566(new Quaternion(new Vector3f(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
-        class859.method22566(Vector3f.field38718.rotationDegrees(n4));
+        class859.method22566(Vector3f.YP.rotationDegrees(n4));
         this.field20280.method18643(class859, method13948, n3, field10335);
         class859.method22568();
         class859.method22568();
@@ -54,9 +56,9 @@ public class Class4702 extends Class4703<Class858>
             final float n5 = method13949.getX() + 0.5f;
             final float n6 = method13949.getY() + 0.5f;
             final float n7 = method13949.getZ() + 0.5f;
-            final float n8 = (float)(n5 - class858.method1938());
-            final float n9 = (float)(n6 - class858.method1941());
-            final float n10 = (float)(n7 - class858.method1945());
+            final float n8 = (float)(n5 - class858.getPosX());
+            final float n9 = (float)(n6 - class858.getPosY());
+            final float n10 = (float)(n7 - class858.getPosZ());
             class859.method22564(n8, n9, n10);
             Class4794.method14184(-n8, -n9 + method13947, -n10, n2, class858.field4592, class859, class860, n3);
         }

@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.dispenser.IPosition;
+
 import java.util.Set;
 import java.util.List;
 import java.util.UUID;
@@ -18,7 +20,7 @@ public class Class9307
     public final String field39935;
     public final String field39936;
     public final int field39937;
-    public final Class5488 field39938;
+    public final IPosition field39938;
     public final String field39939;
     public final Class9468 field39940;
     public final boolean field39941;
@@ -28,7 +30,7 @@ public class Class9307
     public final List<String> field39945;
     public final Set<BlockPos> field39946;
     
-    public Class9307(final UUID field39933, final int field39934, final String field39935, final String field39936, final int field39937, final Class5488 field39938, final String field39939, final Class9468 field39940, final boolean field39941) {
+    public Class9307(final UUID field39933, final int field39934, final String field39935, final String field39936, final int field39937, final IPosition field39938, final String field39939, final Class9468 field39940, final boolean field39941) {
         this.field39942 = Lists.newArrayList();
         this.field39943 = Lists.newArrayList();
         this.field39944 = Lists.newArrayList();

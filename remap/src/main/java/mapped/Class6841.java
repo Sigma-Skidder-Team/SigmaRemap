@@ -20,9 +20,9 @@ public class Class6841 extends Class6831
     @Override
     public void method20918() {
         if (!this.field26857.field2410 && this.field26857.method4152() == null) {
-            this.field26837 = (float)this.field26857.method1938();
-            this.field26838 = (float)this.field26857.method1941();
-            this.field26839 = (float)this.field26857.method1945();
+            this.field26837 = (float)this.field26857.getPosX();
+            this.field26838 = (float)this.field26857.getPosY();
+            this.field26839 = (float)this.field26857.getPosZ();
             final float method5063 = this.field26857.method5063(0.0f);
             this.field26835 = 0.0f + 1.0f * method5063 * method5063;
             this.field26836 = 0.7f + 0.5f * method5063;

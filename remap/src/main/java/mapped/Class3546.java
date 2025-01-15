@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.EnumSet;
 
@@ -24,7 +23,7 @@ public class Class3546 extends Class3545
     
     @Override
     public boolean method11013() {
-        final Class6221 method18495 = this.field16611.method1886().method18495(10.0, 8.0, 10.0);
+        final AxisAlignedBB method18495 = this.field16611.method1886().method18495(10.0, 8.0, 10.0);
         final List<Class511> method18496 = this.field16611.field2391.method7142((Class<? extends Class511>)Class824.class, this.field16613, (Class511)this.field16611, method18495);
         final List<Class512> method18497 = this.field16611.field2391.method7141(this.field16613, this.field16611, method18495);
         for (final Class824 class824 : method18496) {

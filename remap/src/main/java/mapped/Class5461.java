@@ -35,7 +35,7 @@ public class Class5461 extends Class5419<Class511>
             return false;
         }
         final Class7096 method2620 = class1849.method6701(class1851.method1170());
-        if (class1851.method1170().method1082(class1850.method1934(), 2.0)) {
+        if (class1851.method1170().withinDistance(class1850.method1934(), 2.0)) {
             if (method2620.method21696().method11785(Class7188.field27910)) {
                 if (!method2620.method21772((Class7111<Boolean>)Class3900.field17600)) {
                     return true;
@@ -51,8 +51,8 @@ public class Class5461 extends Class5419<Class511>
         if (method1198.isPresent()) {
             final BlockPos method1199 = method1198.get().method1170();
             if (class1850.method2618().method1209(Class7635.field30230)) {
-                if (class1850.method1941() > method1199.getY() + 0.4) {
-                    if (method1199.method1082(class1850.method1934(), 1.14)) {
+                if (class1850.getPosY() > method1199.getY() + 0.4) {
+                    if (method1199.withinDistance(class1850.method1934(), 1.14)) {
                         return true;
                     }
                 }

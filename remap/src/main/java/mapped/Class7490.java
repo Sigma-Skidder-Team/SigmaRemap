@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.Collection;
 import com.mojang.brigadier.suggestion.Suggestions;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.concurrent.CompletableFuture;
 
 public class Class7490 implements Class7491
@@ -98,7 +100,7 @@ public class Class7490 implements Class7491
         final Class7006 field4691 = this.field28923.field4691;
         if (field4691 != null && field4691.method21449() == Class2165.field12881) {
             final Vec3d method21451 = field4691.method21451();
-            return Collections.singleton(new Class8762(method23212(method21451.field22770), method23212(method21451.field22771), method23212(method21451.field22772)));
+            return Collections.singleton(new Class8762(method23212(method21451.x), method23212(method21451.y), method23212(method21451.z)));
         }
         return super.method23215();
     }

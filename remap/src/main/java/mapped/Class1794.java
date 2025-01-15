@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.io.IOException;
 import java.util.concurrent.CompletionException;
@@ -12,7 +13,6 @@ import java.nio.charset.StandardCharsets;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 import java.util.Collection;
 import java.util.Iterator;
 import com.mojang.brigadier.CommandDispatcher;
@@ -180,7 +180,7 @@ public class Class1794 implements Class1657
     }
     
     public Class7492 method6512() {
-        return new Class7492(Class397.field2376, Class5487.field22769, Class9544.field41083, null, this.field9937.method1449(), "", new Class2260(""), this.field9937, null);
+        return new Class7492(Class397.field2376, Vec3d.ZERO, Vec2f.ZERO, null, this.field9937.method1449(), "", new Class2260(""), this.field9937, null);
     }
     
     public Class6208<Class8263> method6513() {

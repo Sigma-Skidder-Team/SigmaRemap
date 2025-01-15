@@ -111,7 +111,7 @@ public class Class3308 extends Class3167
         }
         else {
             this.field15884 = ((this.method9883("Avoid Fall Damage") && !this.field15885) ? 3 : 0);
-            if (this.method9883("Avoid Fall Damage") && this.field15885 && !this.field15887 && Class3308.field15514.field4684.method1935().field22771 < -0.1) {
+            if (this.method9883("Avoid Fall Damage") && this.field15885 && !this.field15887 && Class3308.field15514.field4684.method1935().y < -0.1) {
                 this.field15887 = !this.field15887;
                 class5744.method17045(true);
             }

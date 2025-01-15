@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -35,9 +36,9 @@ public class Class4280 implements Class4252<Class5800>
         this.field19205 = class399.method1643();
         this.field19207 = field19207;
         final Vec3d method8122 = field19207.method8122(class399);
-        this.field19202 = method8122.field22770;
-        this.field19203 = method8122.field22771;
-        this.field19204 = method8122.field22772;
+        this.field19202 = method8122.x;
+        this.field19203 = method8122.y;
+        this.field19204 = method8122.z;
         this.field19208 = true;
     }
     

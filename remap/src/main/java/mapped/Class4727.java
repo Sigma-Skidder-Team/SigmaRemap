@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4727 extends Class4723<Class769>
 {
@@ -29,7 +30,7 @@ public class Class4727 extends Class4723<Class769>
             final float method4262 = ((Class4710<T, M>)this).method13987((T)class769, n2);
             for (int i = 0; i < method4261.length; ++i) {
                 class770.method22567();
-                class770.method22564(method4261[i].field22770 + MathHelper.cos(i + method4262 * 0.5f) * 0.025, method4261[i].field22771 + MathHelper.cos(i + method4262 * 0.75f) * 0.0125, method4261[i].field22772 + MathHelper.cos(i + method4262 * 0.7f) * 0.025);
+                class770.method22564(method4261[i].x + MathHelper.cos(i + method4262 * 0.5f) * 0.025, method4261[i].y + MathHelper.cos(i + method4262 * 0.75f) * 0.0125, method4261[i].z + MathHelper.cos(i + method4262 * 0.7f) * 0.025);
                 super.method14006((T)class769, n, n2, class770, class771, n3);
                 class770.method22568();
             }

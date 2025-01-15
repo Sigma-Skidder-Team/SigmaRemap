@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4221 extends Class4211
 {
@@ -22,8 +23,8 @@ public class Class4221 extends Class4211
         return new Class4221(class8817, Class8685.field36500);
     }
     
-    public boolean method12704(final Class513 class513, final Class5487 class514, final int n) {
-        return this.field19017.method30757(class514.field22770, class514.field22771, class514.field22772, class513.method1938(), class513.method1941(), class513.method1945()) && this.field19018.method29755(n);
+    public boolean method12704(final Class513 class513, final Vec3d class514, final int n) {
+        return this.field19017.method30757(class514.x, class514.y, class514.z, class513.getPosX(), class513.getPosY(), class513.getPosZ()) && this.field19018.method29755(n);
     }
     
     @Override

@@ -9,6 +9,7 @@ import java.util.HashSet;
 
 import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.EnumSet;
 
@@ -60,9 +61,9 @@ public class Class3640<T extends Class776> extends Class3446
                 this.method11169(method4292);
             }
             if (!this.field16889.method4346()) {
-                final Class5487 method4293 = Class7775.method24905(this.field16889, 15, 4, new Class5487(method4292.method30658()));
+                final Vec3d method4293 = Class7775.method24905(this.field16889, 15, 4, new Vec3d(method4292.method30658()));
                 if (method4293 != null) {
-                    this.field16889.method4150().method24724(method4293.field22770, method4293.field22771, method4293.field22772, 1.0);
+                    this.field16889.method4150().method24724(method4293.x, method4293.y, method4293.z, 1.0);
                 }
             }
         }

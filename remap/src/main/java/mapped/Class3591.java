@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.EnumSet;
@@ -33,11 +35,11 @@ public class Class3591 extends Class3446
         if (this.field16731.method1706()) {
             return false;
         }
-        final Class5487 method11121 = this.method11121();
+        final Vec3d method11121 = this.method11121();
         if (method11121 != null) {
-            this.field16732 = method11121.field22770;
-            this.field16733 = method11121.field22771;
-            this.field16734 = method11121.field22772;
+            this.field16732 = method11121.x;
+            this.field16733 = method11121.y;
+            this.field16734 = method11121.z;
             return true;
         }
         return false;
@@ -54,13 +56,13 @@ public class Class3591 extends Class3446
     }
     
     @Nullable
-    private Class5487 method11121() {
+    private Vec3d method11121() {
         final Random method2633 = this.field16731.method2633();
         final BlockPos class354 = new BlockPos(this.field16731);
         for (int i = 0; i < 10; ++i) {
             final BlockPos method2634 = class354.method1134(method2633.nextInt(20) - 10, 2 - method2633.nextInt(8), method2633.nextInt(20) - 10);
             if (this.field16736.method6701(method2634).method21696() == Class7521.field29173) {
-                return new Class5487(method2634);
+                return new Vec3d(method2634);
             }
         }
         return null;

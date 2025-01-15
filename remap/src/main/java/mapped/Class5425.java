@@ -92,7 +92,7 @@ public class Class5425 extends Class5419<Class511>
                         if (n3 >= n2) {
                             continue;
                         }
-                        else if (!class1855.method1082(class1853.method1934(), 4.0)) {
+                        else if (!class1855.withinDistance(class1853.method1934(), 4.0)) {
                             continue;
                         }
                         else {

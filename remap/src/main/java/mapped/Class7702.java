@@ -12,6 +12,7 @@ import java.util.List;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public abstract class Class7702
 {
@@ -32,9 +33,9 @@ public abstract class Class7702
         return (method27418 > 0) ? this.method24538(class111, method27418) : Double.NEGATIVE_INFINITY;
     }
     
-    public Class6221 method24537() {
+    public AxisAlignedBB method24537() {
         if (!this.method24540()) {
-            return new Class6221(this.method24535(Axis.X), this.method24535(Axis.Y), this.method24535(Axis.Z), this.method24536(Axis.X), this.method24536(Axis.Y), this.method24536(Axis.Z));
+            return new AxisAlignedBB(this.method24535(Axis.X), this.method24535(Axis.Y), this.method24535(Axis.Z), this.method24536(Axis.X), this.method24536(Axis.Y), this.method24536(Axis.Z));
         }
         throw Class8349.method27859(new UnsupportedOperationException("No bounds for empty shape."));
     }
@@ -67,9 +68,9 @@ public abstract class Class7702
         this.field30615.method27437((n, n2, n3, n4, n5, n6) -> class9252.method34141(list.getDouble(n), list2.getDouble(n2), list3.getDouble(n3), list.getDouble(n4), list2.getDouble(n5), list3.getDouble(n6)), true);
     }
     
-    public List<Class6221> method24545() {
+    public List<AxisAlignedBB> method24545() {
         final ArrayList arrayList = Lists.newArrayList();
-        this.method24544((n, n2, n3, n4, n5, n6) -> arrayList.add(new Class6221(n, n2, n3, n4, n5, n6)));
+        this.method24544((n, n2, n3, n4, n5, n6) -> arrayList.add(new AxisAlignedBB(n, n2, n3, n4, n5, n6)));
         return arrayList;
     }
     
@@ -108,10 +109,10 @@ public abstract class Class7702
         if (this.method24540()) {
             return null;
         }
-        final Vec3d method16741 = class5488.method16741(class5487);
-        if (method16741.method16753() >= 1.0E-7) {
-            final Vec3d method16742 = class5487.method16743(method16741.method16748(0.001));
-            return this.method24549(method16742.field22770 - class5489.getX(), method16742.field22771 - class5489.getY(), method16742.field22772 - class5489.getZ()) ? new Class7005(method16742, Direction.getFacingFromVector(method16741.field22770, method16741.field22771, method16741.field22772).getOpposite(), class5489, true) : Class6221.method18513(this.method24545(), class5487, class5488, class5489);
+        final Vec3d method16741 = class5488.subtract(class5487);
+        if (method16741.lengthSquared() >= 1.0E-7) {
+            final Vec3d method16742 = class5487.add(method16741.scale(0.001));
+            return this.method24549(method16742.x - class5489.getX(), method16742.y - class5489.getY(), method16742.z - class5489.getZ()) ? new Class7005(method16742, Direction.getFacingFromVector(method16741.x, method16741.y, method16741.z).getOpposite(), class5489, true) : AxisAlignedBB.method18513(this.method24545(), class5487, class5488, class5489);
         }
         return null;
     }
@@ -146,11 +147,11 @@ public abstract class Class7702
         return new Class7703(this, method790, this.method24548(method790, (method791 != AxisDirection.POSITIVE) ? 1.0E-7 : 0.9999999));
     }
     
-    public double method24553(final Axis class111, final Class6221 class112, final double n) {
+    public double method24553(final Axis class111, final AxisAlignedBB class112, final double n) {
         return this.method24554(Class309.method985(class111, Axis.X), class112, n);
     }
     
-    public double method24554(final Class309 class309, final Class6221 class310, double a) {
+    public double method24554(final Class309 class309, final AxisAlignedBB class310, double a) {
         if (this.method24540()) {
             return a;
         }

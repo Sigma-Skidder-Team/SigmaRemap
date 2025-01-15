@@ -89,7 +89,7 @@ public class Class495 extends Class436 implements Class439
         final BlockPos method2193 = this.method2193();
         if (this.field2656.method6754() > this.field2842 + 60L || this.field2846 == null) {
             this.field2842 = this.field2656.method6754();
-            this.field2846 = (List<Class511>)this.field2656.method7128((Class<? extends Entity>)Class511.class, new Class6221(method2193).method18496(48.0));
+            this.field2846 = (List<Class511>)this.field2656.method7128((Class<? extends Entity>)Class511.class, new AxisAlignedBB(method2193).method18496(48.0));
         }
         if (!this.field2656.field10067) {
             for (final Class511 class511 : this.field2846) {
@@ -99,7 +99,7 @@ public class Class495 extends Class436 implements Class439
                 if (class511.field2410) {
                     continue;
                 }
-                if (!method2193.method1082(class511.method1934(), 32.0)) {
+                if (!method2193.withinDistance(class511.method1934(), 32.0)) {
                     continue;
                 }
                 class511.method2618().method1196(Class8233.field33821, this.field2656.method6754());
@@ -116,7 +116,7 @@ public class Class495 extends Class436 implements Class439
             if (class511.field2410) {
                 continue;
             }
-            if (!method2193.method1082(class511.method1934(), 32.0)) {
+            if (!method2193.withinDistance(class511.method1934(), 32.0)) {
                 continue;
             }
             if (!class511.method1642().method23383(Class8039.field33100)) {
@@ -139,10 +139,10 @@ public class Class495 extends Class436 implements Class439
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach(class1850 -> {
                 final Object o = (int)this.field2846.stream().filter(p1 -> {}).count();
                 final Object o2 = new AtomicInteger(16700985);
-                MathHelper.method35641((class1850.method1938() - class1848.method1074()) * (class1850.method1938() - class1848.method1074()) + (class1850.method1945() - class1848.method1076()) * (class1850.method1945() - class1848.method1076()));
+                MathHelper.sqrt((class1850.getPosX() - class1848.method1074()) * (class1850.getPosX() - class1848.method1074()) + (class1850.getPosZ() - class1848.method1076()) * (class1850.getPosZ() - class1848.method1076()));
                 final float n3;
-                final double n2 = class1848.method1074() + 0.5f + 1.0f / n3 * (class1850.method1938() - class1848.method1074());
-                final double n4 = class1848.method1076() + 0.5f + 1.0f / n3 * (class1850.method1945() - class1848.method1076());
+                final double n2 = class1848.method1074() + 0.5f + 1.0f / n3 * (class1850.getPosX() - class1848.method1074());
+                final double n4 = class1848.method1076() + 0.5f + 1.0f / n3 * (class1850.getPosZ() - class1848.method1076());
                 MathHelper.method35651((n - 21) / -2, 3, 15);
                 int i = 0;
                 final int n5;
@@ -158,7 +158,7 @@ public class Class495 extends Class436 implements Class439
     private boolean method2516(final Class511 class511) {
         if (class511.method1768()) {
             if (!class511.field2410) {
-                if (this.method2193().method1082(class511.method1934(), 48.0)) {
+                if (this.method2193().withinDistance(class511.method1934(), 48.0)) {
                     if (class511.method1642().method23383(Class8039.field33100)) {
                         return true;
                     }

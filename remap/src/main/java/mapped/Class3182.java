@@ -102,9 +102,9 @@ public class Class3182 extends Class3167
         if (this.field15568 != null) {
             GL11.glAlphaFunc(516, 0.0f);
             final BlockPos field15568 = this.field15568;
-            final double n = field15568.getX() - Class3182.field15514.field4644.method5833().method18161().method16760();
-            final double n2 = field15568.getY() - Class3182.field15514.field4644.method5833().method18161().method16761();
-            final double n3 = field15568.getZ() - Class3182.field15514.field4644.method5833().method18161().method16762();
+            final double n = field15568.getX() - Class3182.field15514.field4644.method5833().method18161().getX();
+            final double n2 = field15568.getY() - Class3182.field15514.field4644.method5833().method18161().getY();
+            final double n3 = field15568.getZ() - Class3182.field15514.field4644.method5833().method18161().getZ();
             Class8154.method26909(new Class7644(n, n2 + 1.625, n3, n + 1.0, n2 + 3.0, n3 + 1.0), Class6430.method19118(Class265.field1285.field1292, 0.3f));
             GL11.glColor3f(1.0f, 1.0f, 1.0f);
             GL11.glBlendFunc(770, 771);

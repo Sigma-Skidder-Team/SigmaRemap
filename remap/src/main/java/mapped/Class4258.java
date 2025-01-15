@@ -24,9 +24,9 @@ public class Class4258 implements Class4252<Class5800>
     
     public Class4258(final Entity class399) {
         this.field19104 = class399.method1643();
-        this.field19105 = class399.method1938();
-        this.field19106 = class399.method1941();
-        this.field19107 = class399.method1945();
+        this.field19105 = class399.getPosX();
+        this.field19106 = class399.getPosY();
+        this.field19107 = class399.getPosZ();
         this.field19108 = (byte)(class399.field2399 * 256.0f / 360.0f);
         this.field19109 = (byte)(class399.field2400 * 256.0f / 360.0f);
         this.field19110 = class399.field2404;

@@ -38,7 +38,7 @@ public class Class3588 extends Class3587
         this.field16722.method4364();
         final Random method2633 = this.field16719.method2633();
         if (this.field16721.method6765().method31216(Class8878.field37319)) {
-            this.field16721.method6886(new Class508(this.field16721, this.field16719.method1938(), this.field16719.method1941(), this.field16719.method1945(), method2633.nextInt(7) + 1));
+            this.field16721.method6886(new Class508(this.field16721, this.field16719.getPosX(), this.field16719.getPosY(), this.field16719.getPosZ(), method2633.nextInt(7) + 1));
         }
     }
 }

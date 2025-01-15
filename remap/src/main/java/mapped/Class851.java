@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class851 extends Class760 implements Class762
 {
@@ -15,7 +16,7 @@ public class Class851 extends Class760 implements Class762
     
     public Class851(final Class7499<? extends Class851> class7499, final Class1847 class7500) {
         super(class7499, class7500);
-        this.field4527 = Vec3d.field22769;
+        this.field4527 = Vec3d.ZERO;
         this.field4528 = BlockPos.ZERO;
         this.field4529 = Class2129.field12430;
         this.field4108 = 5;
@@ -87,15 +88,15 @@ public class Class851 extends Class760 implements Class762
             final float method35640 = MathHelper.cos((this.method1643() * 3 + this.field2424 + 1) * 0.13f + 3.1415927f);
             if (method35639 > 0.0f) {
                 if (method35640 <= 0.0f) {
-                    this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), Class8520.field35457, this.method1922(), 0.95f + this.field2423.nextFloat() * 0.05f, 0.95f + this.field2423.nextFloat() * 0.05f, false);
+                    this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35457, this.method1922(), 0.95f + this.field2423.nextFloat() * 0.05f, 0.95f + this.field2423.nextFloat() * 0.05f, false);
                 }
             }
             final int method35641 = this.method5089();
             final float n = MathHelper.cos(this.field2399 * 0.017453292f) * (1.3f + 0.21f * method35641);
             final float n2 = MathHelper.sin(this.field2399 * 0.017453292f) * (1.3f + 0.21f * method35641);
             final float n3 = (0.3f + method35639 * 0.45f) * (method35641 * 0.2f + 1.0f);
-            this.field2391.method6709(Class8432.field34634, this.method1938() + n, this.method1941() + n3, this.method1945() + n2, 0.0, 0.0, 0.0);
-            this.field2391.method6709(Class8432.field34634, this.method1938() - n, this.method1941() + n3, this.method1945() - n2, 0.0, 0.0, 0.0);
+            this.field2391.method6709(Class8432.field34634, this.getPosX() + n, this.getPosY() + n3, this.getPosZ() + n2, 0.0, 0.0, 0.0);
+            this.field2391.method6709(Class8432.field34634, this.getPosX() - n, this.getPosY() + n3, this.getPosZ() - n2, 0.0, 0.0, 0.0);
         }
     }
     

@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.Vec3d;
 
 public class Class4634 extends Class4611<Class4221>
 {
@@ -20,7 +21,7 @@ public class Class4634 extends Class4611<Class4221>
         return new Class4221(Class8817.method30758(jsonObject.get("distance")), Class8685.method29756(jsonObject.get("duration")));
     }
     
-    public void method13823(final Class513 class513, final Class5487 class514, final int n) {
+    public void method13823(final Class513 class513, final Vec3d class514, final int n) {
         this.method13726(class513.method2957(), class517 -> class517.method12704(class515, class516, n2));
     }
     

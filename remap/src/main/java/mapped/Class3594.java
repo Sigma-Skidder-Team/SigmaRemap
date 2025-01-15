@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3594 extends Class3592
 {
@@ -49,7 +50,7 @@ public class Class3594 extends Class3592
     
     @Override
     public boolean method11017() {
-        final double field22771 = this.field16741.method1935().field22771;
+        final double field22771 = this.field16741.method1935().y;
         if (field22771 * field22771 < 0.029999999329447746) {
             if (this.field16741.field2400 != 0.0f) {
                 if (Math.abs(this.field16741.field2400) < 10.0f) {
@@ -73,7 +74,7 @@ public class Class3594 extends Class3592
     @Override
     public void method11015() {
         final Direction method1883 = this.field16741.method1883();
-        this.field16741.method1936(this.field16741.method1935().method16744(method1883.getXOffset() * 0.6, 0.7, method1883.getZOffset() * 0.6));
+        this.field16741.method1936(this.field16741.method1935().add(method1883.getXOffset() * 0.6, 0.7, method1883.getZOffset() * 0.6));
         this.field16741.method4150().method24733();
     }
     
@@ -93,12 +94,12 @@ public class Class3594 extends Class3592
                 this.field16741.method1695(Class8520.field35122, 1.0f, 1.0f);
             }
         }
-        final Class5487 method1935 = this.field16741.method1935();
-        if (method1935.field22771 * method1935.field22771 < 0.029999999329447746 && this.field16741.field2400 != 0.0f) {
+        final Vec3d method1935 = this.field16741.method1935();
+        if (method1935.y * method1935.y < 0.029999999329447746 && this.field16741.field2400 != 0.0f) {
             this.field16741.field2400 = MathHelper.method35707(this.field16741.field2400, 0.0f, 0.2f);
         }
         else {
-            this.field16741.field2400 = (float)(Math.signum(-method1935.field22771) * Math.acos(Math.sqrt(Entity.method1680(method1935)) / method1935.method16752()) * 57.2957763671875);
+            this.field16741.field2400 = (float)(Math.signum(-method1935.y) * Math.acos(Math.sqrt(Entity.method1680(method1935)) / method1935.length()) * 57.2957763671875);
         }
     }
     

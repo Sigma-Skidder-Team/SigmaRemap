@@ -49,15 +49,15 @@ public class Class3169 extends Class3167
             if (Class3265.field15758 > 1) {
                 if (this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718) && this.field15526 > 0 && Class6430.method19114()) {
                     Class3169.field15514.field4684.method2725();
-                    class5717.method16973(Class3169.field15514.field4684.method1935().field22770);
-                    class5717.method16975(Class3169.field15514.field4684.method1935().field22771);
-                    class5717.method16977(Class3169.field15514.field4684.method1935().field22772);
+                    class5717.method16973(Class3169.field15514.field4684.method1935().x);
+                    class5717.method16975(Class3169.field15514.field4684.method1935().y);
+                    class5717.method16977(Class3169.field15514.field4684.method1935().z);
                 }
                 else if (this.method9914().method9883("Auto Jump") && this.field15526 > (this.field15528 ? 1 : 0) && Class6430.method19114()) {
                     Class3169.field15514.field4684.method2725();
-                    class5717.method16973(Class3169.field15514.field4684.method1935().field22770);
-                    class5717.method16975(Class3169.field15514.field4684.method1935().field22771);
-                    class5717.method16977(Class3169.field15514.field4684.method1935().field22772);
+                    class5717.method16973(Class3169.field15514.field4684.method1935().x);
+                    class5717.method16975(Class3169.field15514.field4684.method1935().y);
+                    class5717.method16977(Class3169.field15514.field4684.method1935().z);
                 }
             }
         }
@@ -124,7 +124,7 @@ public class Class3169 extends Class3167
                     }
                 }
             }
-            if (this.field15526 == 1 && Class3169.field15514.field4684.method1935().field22771 < 0.0 && this.method9914().method9883("Auto Jump")) {
+            if (this.field15526 == 1 && Class3169.field15514.field4684.method1935().y < 0.0 && this.method9914().method9883("Auto Jump")) {
                 Class7482.method23149(class5717, Class7482.method23137() * 0.2);
             }
         }

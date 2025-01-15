@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.dispenser.IPosition;
+
 public class Class6416 extends Class6409
 {
     private static String[] field25523;
@@ -14,8 +16,8 @@ public class Class6416 extends Class6409
     }
     
     @Override
-    public Class401 method19093(final Class1847 class1847, final Class5488 class1848, final Class8321 class1849) {
-        return Class8349.method27851(new Class415(class1847, class1848.method16760(), class1848.method16761(), class1848.method16762()), class1851 -> class1851.method2022(class1850));
+    public Class401 method19093(final Class1847 class1847, final IPosition class1848, final Class8321 class1849) {
+        return Class8349.method27851(new Class415(class1847, class1848.getX(), class1848.getY(), class1848.getZ()), class1851 -> class1851.method2022(class1850));
     }
     
     @Override

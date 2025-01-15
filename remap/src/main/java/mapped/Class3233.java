@@ -79,7 +79,7 @@ public class Class3233 extends Class3167
                 final double n3 = 0.1;
                 final double n4 = field2395 + (n * 0.45 * Math.cos(Math.toRadians(field2398 + 90.0f)) + n2 * 0.45 * Math.sin(Math.toRadians(field2398 + 90.0f))) * n3;
                 final double n5 = field2396 + (n * 0.45 * Math.sin(Math.toRadians(field2398 + 90.0f)) - n2 * 0.45 * Math.cos(Math.toRadians(field2398 + 90.0f))) * n3;
-                final Class6221 class5748 = new Class6221(n4 - 0.3, field2397 - 1.0, n5 - 0.3, n4 + 0.3, field2397 + 2.0, n5 + 0.3);
+                final AxisAlignedBB class5748 = new AxisAlignedBB(n4 - 0.3, field2397 - 1.0, n5 - 0.3, n4 + 0.3, field2397 + 2.0, n5 + 0.3);
                 if (Class3233.field15514.field4683.method6981(Class3233.field15514.field4684, class5748).count() == 0L) {
                     final double method10205 = this.method10205(class5748);
                     if (method10205 != 11.0) {
@@ -126,11 +126,11 @@ public class Class3233 extends Class3167
         }
     }
     
-    public double method10205(final Class6221 class6221) {
+    public double method10205(final AxisAlignedBB class6221) {
         double n = 6.0;
         class6221.method18499(0.0, -n, 0.0);
         while (true) {
-            final Class6221 method18499 = class6221.method18499(0.0, -n, 0.0);
+            final AxisAlignedBB method18499 = class6221.method18499(0.0, -n, 0.0);
             if (Class3233.field15514.field4683.method6981(Class3233.field15514.field4684, method18499).count() == 0L) {
                 return n;
             }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 
 public class Class3520 extends Class3514
@@ -21,10 +23,10 @@ public class Class3520 extends Class3514
     
     @Nullable
     @Override
-    public Class5487 method11071() {
+    public Vec3d method11071() {
         final Class1849 class1849 = (Class1849)this.field16510.field2391;
         final Class353 method1089 = Class353.method1089(new BlockPos(this.field16510));
         final Class353 method1090 = Class6793.method20792(class1849, method1089, 2);
-        return (method1090 == method1089) ? null : Class7775.method24905(this.field16510, 10, 7, new Class5487(method1090.method1114()));
+        return (method1090 == method1089) ? null : Class7775.method24905(this.field16510, 10, 7, new Vec3d(method1090.method1114()));
     }
 }

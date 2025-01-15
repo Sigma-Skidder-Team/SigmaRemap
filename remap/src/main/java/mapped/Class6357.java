@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Map;
 
 public class Class6357 extends Class6354
@@ -86,11 +88,11 @@ public class Class6357 extends Class6354
             final BlockPos class514 = new BlockPos(class513);
             final List<? super Class377> list = this.field25434.method6921().method7200(Class8912.field37458, class514, 64, Class2045.field11651).collect((Collector<? super Class377, ?, List<? super Class377>>)Collectors.toList());
             int n = 0;
-            Vec3d class515 = Vec3d.field22769;
+            Vec3d class515 = Vec3d.ZERO;
             final Iterator<? super Class377> iterator = list.iterator();
             while (iterator.hasNext()) {
                 final BlockPos method1259 = iterator.next().method1259();
-                class515 = class515.method16744(method1259.getX(), method1259.getY(), method1259.getZ());
+                class515 = class515.add(method1259.getX(), method1259.getY(), method1259.getZ());
                 ++n;
             }
             BlockPos class516;
@@ -98,7 +100,7 @@ public class Class6357 extends Class6354
                 class516 = class514;
             }
             else {
-                class516 = new BlockPos(class515.method16748(1.0 / n));
+                class516 = new BlockPos(class515.scale(1.0 / n));
             }
             final Class8792 method1260 = this.method18929(class513.method2940(), class516);
             boolean b = false;
@@ -174,7 +176,7 @@ public class Class6357 extends Class6354
         Class8792 class355 = null;
         double n2 = n;
         for (final Class8792 class356 : this.field25433.values()) {
-            final double method1083 = class356.method30658().method1083(class354);
+            final double method1083 = class356.method30658().distanceSq(class354);
             if (!class356.method30663()) {
                 continue;
             }

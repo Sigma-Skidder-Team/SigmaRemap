@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
 
@@ -291,43 +292,43 @@ public class Class3378 extends Class3167
             class5717.method16975(0.25);
             this.field16075 += 0.25;
         }
-        final Class5487 method19180 = Class3378.field15514.field4684.method1679(class5717.method16978().method16744(0.0, -class5717.method16978().method16761(), 0.0));
-        final boolean b = Math.abs(Math.sqrt(method19180.method16753()) - this.field16074) < 1.0E-4;
+        final Vec3d method19180 = Class3378.field15514.field4684.method1679(class5717.method16978().add(0.0, -class5717.method16978().getY(), 0.0));
+        final boolean b = Math.abs(Math.sqrt(method19180.lengthSquared()) - this.field16074) < 1.0E-4;
         if (this.method9883("No Collision") && this.field16074 > n7) {
             final ArrayList list = new ArrayList();
             final float method19181 = MathHelper.method35668(Class7482.method23147());
             if (method19181 > 0.0f && method19181 < 90.0f) {
-                list.add(new Class5487(1.0, 0.0, 0.0));
-                list.add(new Class5487(0.0, 0.0, 1.0));
-                list.add(new Class5487(0.0, 0.0, -1.0));
-                list.add(new Class5487(-1.0, 0.0, 0.0));
+                list.add(new Vec3d(1.0, 0.0, 0.0));
+                list.add(new Vec3d(0.0, 0.0, 1.0));
+                list.add(new Vec3d(0.0, 0.0, -1.0));
+                list.add(new Vec3d(-1.0, 0.0, 0.0));
             }
             else if (method19181 > 90.0f && method19181 < 180.0f) {
-                list.add(new Class5487(0.0, 0.0, 1.0));
-                list.add(new Class5487(-1.0, 0.0, 0.0));
-                list.add(new Class5487(0.0, 0.0, -1.0));
-                list.add(new Class5487(1.0, 0.0, 0.0));
+                list.add(new Vec3d(0.0, 0.0, 1.0));
+                list.add(new Vec3d(-1.0, 0.0, 0.0));
+                list.add(new Vec3d(0.0, 0.0, -1.0));
+                list.add(new Vec3d(1.0, 0.0, 0.0));
             }
             else if (method19181 > -180.0f && method19181 < -90.0f) {
-                list.add(new Class5487(0.0, 0.0, -1.0));
-                list.add(new Class5487(-1.0, 0.0, 0.0));
-                list.add(new Class5487(1.0, 0.0, 0.0));
-                list.add(new Class5487(0.0, 0.0, 1.0));
+                list.add(new Vec3d(0.0, 0.0, -1.0));
+                list.add(new Vec3d(-1.0, 0.0, 0.0));
+                list.add(new Vec3d(1.0, 0.0, 0.0));
+                list.add(new Vec3d(0.0, 0.0, 1.0));
             }
             else {
-                list.add(new Class5487(0.0, 0.0, -1.0));
-                list.add(new Class5487(1.0, 0.0, 0.0));
-                list.add(new Class5487(0.0, 0.0, 1.0));
-                list.add(new Class5487(-1.0, 0.0, 0.0));
+                list.add(new Vec3d(0.0, 0.0, -1.0));
+                list.add(new Vec3d(1.0, 0.0, 0.0));
+                list.add(new Vec3d(0.0, 0.0, 1.0));
+                list.add(new Vec3d(-1.0, 0.0, 0.0));
             }
             class5717.method16979(method19180);
             if (!b && Class3378.field15514.field4684.field2396 % 1.0 > 0.10000000149011612 && Class7482.method23148()) {
-                for (final Class5487 class5719 : list) {
-                    final Class5487 class5718 = class5719;
-                    class5719.field22770 *= this.field16074;
-                    final Class5487 class5720 = class5718;
-                    class5720.field22772 *= this.field16074;
-                    if (Math.abs(Math.sqrt(Class3378.field15514.field4684.method1679(class5718).method16753()) - this.field16074) < 1.0E-4) {
+                for (final Vec3d class5719 : list) {
+                    final Vec3d class5718 = class5719;
+                    class5719.x *= this.field16074;
+                    final Vec3d class5720 = class5718;
+                    class5720.z *= this.field16074;
+                    if (Math.abs(Math.sqrt(Class3378.field15514.field4684.method1679(class5718).lengthSquared()) - this.field16074) < 1.0E-4) {
                         class5717.method16979(class5718);
                         break;
                     }

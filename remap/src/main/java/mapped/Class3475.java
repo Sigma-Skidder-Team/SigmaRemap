@@ -45,7 +45,7 @@ public class Class3475 extends Class3446
     public void method11016() {
         this.field16377.method4147().method24667(this.field16378, 30.0f, 30.0f);
         final double n = this.field16377.method1930() * 2.0f * this.field16377.method1930() * 2.0f;
-        final double method1733 = this.field16377.method1733(this.field16378.method1938(), this.field16378.method1941(), this.field16378.method1945());
+        final double method1733 = this.field16377.method1733(this.field16378.getPosX(), this.field16378.getPosY(), this.field16378.getPosZ());
         double n2 = 0.8;
         if (method1733 > n && method1733 < 16.0) {
             n2 = 1.33;

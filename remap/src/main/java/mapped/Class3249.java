@@ -11,7 +11,7 @@ public class Class3249 extends Class3247
     }
     
     public int method10264() {
-        final Class6221 class6221 = new Class6221(Class3249.field15514.field4684.field2395 - 0.29, Class3249.field15514.field4684.field2396 + 1.9, Class3249.field15514.field4684.field2397 + 0.29, Class3249.field15514.field4684.field2395 + 0.29, Class3249.field15514.field4684.field2396, Class3249.field15514.field4684.field2397 - 0.29);
+        final AxisAlignedBB class6221 = new AxisAlignedBB(Class3249.field15514.field4684.field2395 - 0.29, Class3249.field15514.field4684.field2396 + 1.9, Class3249.field15514.field4684.field2397 + 0.29, Class3249.field15514.field4684.field2395 + 0.29, Class3249.field15514.field4684.field2396, Class3249.field15514.field4684.field2397 - 0.29);
         if (Class3249.field15514.field4683.method6981(Class3249.field15514.field4684, class6221.method18499(0.3000001, 0.0, 0.0)).count() != 0L) {
             return 1;
         }

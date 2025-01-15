@@ -40,7 +40,7 @@ public class Class6194 extends Class6159
     
     @Override
     public int method18419(final float n) {
-        final float method35653 = MathHelper.method35653((this.field24950 + n) / this.field24951, 0.0f, 1.0f);
+        final float method35653 = MathHelper.clamp((this.field24950 + n) / this.field24951, 0.0f, 1.0f);
         final int method35654 = super.method18419(n);
         final int n2 = method35654 & 0xFF;
         final int n3 = method35654 >> 16 & 0xFF;

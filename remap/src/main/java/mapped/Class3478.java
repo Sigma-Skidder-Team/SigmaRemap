@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class Class3478 extends Class3446
@@ -26,7 +25,7 @@ public class Class3478 extends Class3446
             this.field16388 = 60;
             final List<Class512> method7141 = this.field16389.field2391.method7141(this.field16387, this.field16389, this.field16389.method1886().method18495(16.0, 64.0, 16.0));
             if (!method7141.isEmpty()) {
-                method7141.sort((class513, class514) -> (class513.method1941() <= class514.method1941()) ? 1 : -1);
+                method7141.sort((class513, class514) -> (class513.getPosY() <= class514.getPosY()) ? 1 : -1);
                 for (final Class512 class512 : method7141) {
                     if (!this.field16389.method2647(class512, Class7843.field32117)) {
                         continue;

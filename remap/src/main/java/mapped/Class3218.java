@@ -45,17 +45,17 @@ public class Class3218 extends Class3167
                     if (Class3218.field15514.field4684.field2970 != 0.0f || Class3218.field15514.field4684.field2968 != 0.0f) {
                         if (this.method9883("AutoJump")) {
                             Class3218.field15514.field4684.method2725();
-                            class5717.method16973(Class3218.field15514.field4684.method1935().field22770);
-                            class5717.method16975(Class3218.field15514.field4684.method1935().field22771);
-                            class5717.method16977(Class3218.field15514.field4684.method1935().field22772);
+                            class5717.method16973(Class3218.field15514.field4684.method1935().x);
+                            class5717.method16975(Class3218.field15514.field4684.method1935().y);
+                            class5717.method16977(Class3218.field15514.field4684.method1935().z);
                         }
                     }
                 }
             }
-            final double field22771 = class5717.method16978().field22771;
-            class5717.method16978().field22771 = 0.0;
-            final double method16752 = class5717.method16978().method16752();
-            class5717.method16978().field22771 = field22771;
+            final double field22771 = class5717.method16978().y;
+            class5717.method16978().y = 0.0;
+            final double method16752 = class5717.method16978().length();
+            class5717.method16978().y = field22771;
             this.field15671 = Class7482.method23153(class5717, method16752, Class7482.method23144()[0], this.field15671, 45.0f);
             if (this.field15668 != 0.0f || this.field15669 != 0.0f) {
                 this.field15668 *= (float)0.85;
@@ -85,7 +85,7 @@ public class Class3218 extends Class3167
                     }
                     this.field15671 = Class7482.method23144()[0];
                     this.field15673 = 0;
-                    class5722.method16996(class5722.method16994().method16752() * 1.0499999523162842);
+                    class5722.method16996(class5722.method16994().length() * 1.0499999523162842);
                 }
             }
         }

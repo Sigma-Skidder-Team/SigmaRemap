@@ -628,8 +628,8 @@ public abstract class Class759 extends Class511
     }
     
     public void method4176(final Entity class399, final float n, final float n2) {
-        final double n3 = class399.method1938() - this.method1938();
-        final double n4 = class399.method1945() - this.method1945();
+        final double n3 = class399.getPosX() - this.getPosX();
+        final double n4 = class399.getPosZ() - this.getPosZ();
         double n5;
         if (!(class399 instanceof Class511)) {
             n5 = (class399.method1886().field25074 + class399.method1886().field25077) / 2.0 - this.method1944();
@@ -637,7 +637,7 @@ public abstract class Class759 extends Class511
         else {
             n5 = class399.method1944() - this.method1944();
         }
-        final double n6 = MathHelper.method35641(n3 * n3 + n4 * n4);
+        final double n6 = MathHelper.sqrt(n3 * n3 + n4 * n4);
         final float n7 = (float)(MathHelper.method35693(n4, n3) * 57.2957763671875) - 90.0f;
         this.field2400 = this.method4177(this.field2400, (float)(-(MathHelper.method35693(n5, n6) * 57.2957763671875)), n2);
         this.field2399 = this.method4177(this.field2399, n7, n);
@@ -997,7 +997,7 @@ public abstract class Class759 extends Class511
     }
     
     public boolean method4197(final BlockPos class354) {
-        return this.field4131 == -1.0f || this.field4130.method1083(class354) < this.field4131 * this.field4131;
+        return this.field4131 == -1.0f || this.field4130.distanceSq(class354) < this.field4131 * this.field4131;
     }
     
     public void method4198(final BlockPos field4130, final int n) {
@@ -1250,7 +1250,7 @@ public abstract class Class759 extends Class511
             if (n2 > 0.0f) {
                 if (class399 instanceof Class511) {
                     ((Class511)class399).method2682(this, n2 * 0.5f, MathHelper.sin(this.field2399 * 0.017453292f), -MathHelper.cos(this.field2399 * 0.017453292f));
-                    this.method1936(this.method1935().method16751(0.6, 1.0, 0.6));
+                    this.method1936(this.method1935().mul(0.6, 1.0, 0.6));
                 }
             }
             if (class399 instanceof Class512) {
@@ -1282,7 +1282,7 @@ public abstract class Class759 extends Class511
         if (this.field2391.method6703()) {
             if (!this.field2391.field10067) {
                 final float method1726 = this.method1726();
-                final BlockPos class354 = (this.method1920() instanceof Class423) ? new BlockPos(this.method1938(), (double)Math.round(this.method1941()), this.method1945()).method1137() : new BlockPos(this.method1938(), (double)Math.round(this.method1941()), this.method1945());
+                final BlockPos class354 = (this.method1920() instanceof Class423) ? new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ()).method1137() : new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ());
                 if (method1726 > 0.5f) {
                     if (this.field2423.nextFloat() * 30.0f < (method1726 - 0.4f) * 2.0f) {
                         if (this.field2391.method6994(class354)) {
@@ -1298,7 +1298,7 @@ public abstract class Class759 extends Class511
     @Override
     public void method2727(final Class7909<Class7255> class7909) {
         if (!this.method4150().method24742()) {
-            this.method1936(this.method1935().method16744(0.0, 0.3, 0.0));
+            this.method1936(this.method1935().add(0.0, 0.3, 0.0));
         }
         else {
             super.method2727(class7909);
@@ -1325,8 +1325,8 @@ public abstract class Class759 extends Class511
         }
         if (method4220.size() == 1) {
             final Entity class399 = method4220.get(0);
-            final double max = Math.max(Math.abs(this.method1938() - class399.method1938()) - 16.0, 0.0);
-            final double max2 = Math.max(Math.abs(this.method1945() - class399.method1945()) - 16.0, 0.0);
+            final double max = Math.max(Math.abs(this.getPosX() - class399.getPosX()) - 16.0, 0.0);
+            final double max2 = Math.max(Math.abs(this.getPosZ() - class399.getPosZ()) - 16.0, 0.0);
             return !this.method1753(max * max + max2 * max2);
         }
         return false;

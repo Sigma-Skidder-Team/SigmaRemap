@@ -100,7 +100,7 @@ public class Class861 extends Class860
     
     @Override
     public void method1788(final double n, final double n2, final double n3, final float n4, final float n5, final int n6, final boolean b) {
-        final BlockPos method1133 = this.field4599.method1133(n - this.method1938(), n2 - this.method1941(), n3 - this.method1945());
+        final BlockPos method1133 = this.field4599.method1133(n - this.getPosX(), n2 - this.getPosY(), n3 - this.getPosZ());
         this.method1656(method1133.getX(), method1133.getY(), method1133.getZ());
     }
     

@@ -24,7 +24,7 @@ public class Class410 extends Class409
     public void method1798(final byte b) {
         if (b == 3) {
             for (int i = 0; i < 8; ++i) {
-                this.field2391.method6709(new Class6910(Class8432.field34629, this.method2005()), this.method1938(), this.method1941(), this.method1945(), (this.field2423.nextFloat() - 0.5) * 0.08, (this.field2423.nextFloat() - 0.5) * 0.08, (this.field2423.nextFloat() - 0.5) * 0.08);
+                this.field2391.method6709(new Class6910(Class8432.field34629, this.method2005()), this.getPosX(), this.getPosY(), this.getPosZ(), (this.field2423.nextFloat() - 0.5) * 0.08, (this.field2423.nextFloat() - 0.5) * 0.08, (this.field2423.nextFloat() - 0.5) * 0.08);
             }
         }
     }
@@ -43,7 +43,7 @@ public class Class410 extends Class409
                 for (int i = 0; i < n; ++i) {
                     final Class818 class7007 = Class7499.field28966.method23371(this.field2391);
                     class7007.method4354(-24000);
-                    class7007.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, 0.0f);
+                    class7007.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, 0.0f);
                     this.field2391.method6886(class7007);
                 }
             }

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class1842 extends Class1799<Class754, Class5860<Class754>>
@@ -22,12 +23,12 @@ public class Class1842 extends Class1799<Class754, Class5860<Class754>>
                         final float n8 = MathHelper.method35700(n4, class7353.field2401, class7353.field2399) - MathHelper.method35700(n4, class7353.field2952, class7353.field2951);
                         final float method25216 = MathHelper.method35700(n4, class7353.field2402, class7353.field2400);
                         class7351.method22567();
-                        class7351.method22566(Vector3f.field38718.rotationDegrees(n8));
+                        class7351.method22566(Vector3f.YP.rotationDegrees(n8));
                         class7351.method22566(Vector3f.XP.rotationDegrees(method25216));
                         class7351.method22564(0.375f * (i * 2 - 1), 0.0, 0.0);
                         class7351.method22564(0.0, -0.375, 0.0);
                         class7351.method22566(Vector3f.XP.rotationDegrees(-method25216));
-                        class7351.method22566(Vector3f.field38718.rotationDegrees(-n8));
+                        class7351.method22566(Vector3f.YP.rotationDegrees(-n8));
                         class7351.method22565(1.3333334f, 1.3333334f, 1.3333334f);
                         ((Class1799<T, Class5860>)this).method6559().method17593(class7351, method25214, n, method25215);
                         class7351.method22568();

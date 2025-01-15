@@ -37,7 +37,7 @@ public class Class6184 extends Class6159
     
     @Override
     public float method18430(final float n) {
-        return this.field24930 * MathHelper.method35653((this.field24950 + n) / this.field24951 * 32.0f, 0.0f, 1.0f);
+        return this.field24930 * MathHelper.clamp((this.field24950 + n) / this.field24951 * 32.0f, 0.0f, 1.0f);
     }
     
     @Override
@@ -53,10 +53,10 @@ public class Class6184 extends Class6159
             this.field24941 *= 0.9599999785423279;
             final Class512 method7132 = this.field24932.method7132(this.field24936, this.field24937, this.field24938, 2.0, false);
             if (method7132 != null) {
-                final double method7133 = method7132.method1941();
+                final double method7133 = method7132.getPosY();
                 if (this.field24937 > method7133) {
                     this.field24937 += (method7133 - this.field24937) * 0.2;
-                    this.field24940 += (method7132.method1935().field22771 - this.field24940) * 0.2;
+                    this.field24940 += (method7132.method1935().y - this.field24940) * 0.2;
                     this.method18441(this.field24936, this.field24937, this.field24938);
                 }
             }

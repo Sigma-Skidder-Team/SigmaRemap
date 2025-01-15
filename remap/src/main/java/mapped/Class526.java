@@ -7,6 +7,8 @@ package mapped;
 import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
@@ -81,20 +83,20 @@ public class Class526 extends Class516<Class3433>
         final int n6 = (int)this.field3150.method5332().method7700();
         Class8726.method30048((this.field3152 - 320) / 2 * n6, (this.field3153 - 240) / 2 * n6, 320 * n6, 240 * n6);
         Class8726.method30065(-0.34f, 0.23f, 0.0f);
-        Class8726.method30067(Class6789.method20755(90.0, 1.3333334f, 9.0f, 80.0f));
+        Class8726.method30067(Matrix4f.method20755(90.0, 1.3333334f, 9.0f, 80.0f));
         Class8726.method30057(5888);
         final Class7351 class7351 = new Class7351();
         class7351.method22567();
         final Class8996 method22569 = class7351.method22569();
         method22569.method32111().method20748();
-        method22569.method32112().method35039();
+        method22569.method32112().setIdentity();
         class7351.method22564(0.0, 3.299999952316284, 1984.0);
         class7351.method22565(5.0f, 5.0f, 5.0f);
         class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
         class7351.method22566(Vector3f.XP.rotationDegrees(20.0f));
         final float method22570 = MathHelper.method35700(n, this.field3144, this.field3143);
         class7351.method22564((1.0f - method22570) * 0.2f, (1.0f - method22570) * 0.1f, (1.0f - method22570) * 0.25f);
-        class7351.method22566(Vector3f.field38718.rotationDegrees(-(1.0f - method22570) * 90.0f - 90.0f));
+        class7351.method22566(Vector3f.YP.rotationDegrees(-(1.0f - method22570) * 90.0f - 90.0f));
         class7351.method22566(Vector3f.XP.rotationDegrees(180.0f));
         final float n7 = MathHelper.method35700(n, this.field3140, this.field3139) + 0.25f;
         final float n8 = MathHelper.method35700(n, this.field3140, this.field3139) + 0.75f;
@@ -257,8 +259,8 @@ public class Class526 extends Class516<Class3433>
         else {
             this.field3143 += 0.2f;
         }
-        this.field3143 = MathHelper.method35653(this.field3143, 0.0f, 1.0f);
-        this.field3142 += (MathHelper.method35653((this.field3141 - this.field3139) * 0.4f, -0.2f, 0.2f) - this.field3142) * 0.9f;
+        this.field3143 = MathHelper.clamp(this.field3143, 0.0f, 1.0f);
+        this.field3142 += (MathHelper.clamp((this.field3141 - this.field3139) * 0.4f, -0.2f, 0.2f) - this.field3142) * 0.9f;
         this.field3139 += this.field3142;
     }
     

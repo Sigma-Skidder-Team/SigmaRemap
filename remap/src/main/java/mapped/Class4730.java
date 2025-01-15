@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Random;
 
 public class Class4730 extends Class4712<Class850, Class5868<Class850>>
@@ -26,11 +28,11 @@ public class Class4730 extends Class4712<Class850, Class5868<Class850>>
         super.method14006(class850, n, n2, class851, class852, n3);
     }
     
-    public Class5487 method14044(final Class850 class850, final float n) {
+    public Vec3d method14044(final Class850 class850, final float n) {
         if (!class850.method5081()) {
             return super.method13955((T)class850, n);
         }
-        return new Class5487(this.field20333.nextGaussian() * 0.02, 0.0, this.field20333.nextGaussian() * 0.02);
+        return new Vec3d(this.field20333.nextGaussian() * 0.02, 0.0, this.field20333.nextGaussian() * 0.02);
     }
     
     public Class1932 method14045(final Class850 class850) {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
@@ -175,7 +176,7 @@ public class Class830 extends Class827 implements Class768
                 if (this.method4945()) {
                     this.method1724(0.01f, class5487);
                     this.method1671(Class2160.field12826, this.method1935());
-                    this.method1936(this.method1935().method16748(0.9));
+                    this.method1936(this.method1935().scale(0.9));
                     return;
                 }
             }
@@ -216,10 +217,10 @@ public class Class830 extends Class827 implements Class768
     @Override
     public void method4252(final Class511 class511, final float n) {
         final Class403 class512 = new Class403(this.field2391, this, new Class8321(Class7739.field31607));
-        final double n2 = class511.method1938() - this.method1938();
-        final double n3 = class511.method1942(0.3333333333333333) - class512.method1941();
-        final double n4 = class511.method1945() - this.method1945();
-        class512.method1958(n2, n3 + MathHelper.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        final double n2 = class511.getPosX() - this.getPosX();
+        final double n3 = class511.method1942(0.3333333333333333) - class512.getPosY();
+        final double n4 = class511.getPosZ() - this.getPosZ();
+        class512.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35137, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(class512);
     }

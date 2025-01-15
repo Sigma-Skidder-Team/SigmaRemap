@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import org.apache.commons.lang3.StringUtils;
 
@@ -66,9 +67,9 @@ public class Class5814 implements Class5813
     
     public void method17460() {
         this.method17461();
-        this.field23857.field2392 = this.field23857.method1938();
-        this.field23857.field2393 = this.field23857.method1941();
-        this.field23857.field2394 = this.field23857.method1945();
+        this.field23857.field2392 = this.field23857.getPosX();
+        this.field23857.field2393 = this.field23857.getPosY();
+        this.field23857.field2394 = this.field23857.getPosZ();
         this.field23857.method2920();
         this.field23857.method1728(this.field23865, this.field23866, this.field23867, this.field23857.field2399, this.field23857.field2400);
         ++this.field23858;
@@ -84,12 +85,12 @@ public class Class5814 implements Class5813
         }
         this.field23871 = this.field23857.method1915();
         if (this.field23871 != this.field23857 && this.field23871.method1907() == this.field23857) {
-            this.field23872 = this.field23871.method1938();
-            this.field23873 = this.field23871.method1941();
-            this.field23874 = this.field23871.method1945();
-            this.field23875 = this.field23871.method1938();
-            this.field23876 = this.field23871.method1941();
-            this.field23877 = this.field23871.method1945();
+            this.field23872 = this.field23871.getPosX();
+            this.field23873 = this.field23871.getPosY();
+            this.field23874 = this.field23871.getPosZ();
+            this.field23875 = this.field23871.getPosX();
+            this.field23876 = this.field23871.getPosY();
+            this.field23877 = this.field23871.getPosZ();
             if (this.field23883 && this.field23857.method1915().method1907() == this.field23857) {
                 if (++this.field23884 > 80) {
                     Class5814.field23854.warn("{} was kicked for floating a vehicle too long!", (Object)this.field23857.method1841().getString());
@@ -137,12 +138,12 @@ public class Class5814 implements Class5813
     }
     
     public void method17461() {
-        this.field23865 = this.field23857.method1938();
-        this.field23866 = this.field23857.method1941();
-        this.field23867 = this.field23857.method1945();
-        this.field23868 = this.field23857.method1938();
-        this.field23869 = this.field23857.method1941();
-        this.field23870 = this.field23857.method1945();
+        this.field23865 = this.field23857.getPosX();
+        this.field23866 = this.field23857.getPosY();
+        this.field23867 = this.field23857.getPosZ();
+        this.field23868 = this.field23857.getPosX();
+        this.field23869 = this.field23857.getPosY();
+        this.field23870 = this.field23857.getPosZ();
     }
     
     @Override
@@ -212,9 +213,9 @@ public class Class5814 implements Class5813
                 if (method1915.method1907() == this.field23857) {
                     if (method1915 == this.field23871) {
                         final Class1849 method1916 = this.field23857.method2940();
-                        final double method1917 = method1915.method1938();
-                        final double method1918 = method1915.method1941();
-                        final double method1919 = method1915.method1945();
+                        final double method1917 = method1915.getPosX();
+                        final double method1918 = method1915.getPosY();
+                        final double method1919 = method1915.getPosZ();
                         final double method1920 = class4251.method12757();
                         final double method1921 = class4251.method12758();
                         final double method1922 = class4251.method12759();
@@ -223,19 +224,19 @@ public class Class5814 implements Class5813
                         final double d = method1920 - this.field23872;
                         final double d2 = method1921 - this.field23873;
                         final double d3 = method1922 - this.field23874;
-                        if (d * d + d2 * d2 + d3 * d3 - method1915.method1935().method16753() > 100.0 && !this.method17462()) {
+                        if (d * d + d2 * d2 + d3 * d3 - method1915.method1935().lengthSquared() > 100.0 && !this.method17462()) {
                             Class5814.field23854.warn("{} (vehicle of {}) moved too quickly! {},{},{}", (Object)method1915.method1841().getString(), (Object)this.field23857.method1841().getString(), (Object)d, (Object)d2, (Object)d3);
                             this.field23855.method11174(new Class4263(method1915));
                             return;
                         }
                         final boolean method1925 = method1916.method6978(method1915, method1915.method1886().method18511(0.0625));
                         method1915.method1671(Class2160.field12827, new Vec3d(method1920 - this.field23875, method1921 - this.field23876 - 1.0E-6, method1922 - this.field23877));
-                        final double n = method1920 - method1915.method1938();
-                        double n2 = method1921 - method1915.method1941();
+                        final double n = method1920 - method1915.getPosX();
+                        double n2 = method1921 - method1915.getPosY();
                         if (n2 > -0.5 || n2 < 0.5) {
                             n2 = 0.0;
                         }
-                        final double n3 = method1922 - method1915.method1945();
+                        final double n3 = method1922 - method1915.getPosZ();
                         final double n4 = n * n + n2 * n2 + n3 * n3;
                         boolean b = false;
                         if (n4 > 0.0625) {
@@ -250,7 +251,7 @@ public class Class5814 implements Class5813
                             return;
                         }
                         this.field23857.method2940().method6904().method7443(this.field23857);
-                        this.field23857.method2866(this.field23857.method1938() - method1917, this.field23857.method1941() - method1918, this.field23857.method1945() - method1919);
+                        this.field23857.method2866(this.field23857.getPosX() - method1917, this.field23857.getPosY() - method1918, this.field23857.getPosZ() - method1919);
                         boolean field23883 = false;
                         Label_0691: {
                             if (n2 >= -0.03125) {
@@ -264,9 +265,9 @@ public class Class5814 implements Class5813
                             field23883 = false;
                         }
                         this.field23883 = field23883;
-                        this.field23875 = method1915.method1938();
-                        this.field23876 = method1915.method1941();
-                        this.field23877 = method1915.method1945();
+                        this.field23875 = method1915.getPosX();
+                        this.field23876 = method1915.getPosY();
+                        this.field23877 = method1915.getPosZ();
                     }
                 }
             }
@@ -280,10 +281,10 @@ public class Class5814 implements Class5813
     public void method17443(final Class4348 class4348) {
         Class8663.method29631((Class4252<Class5814>)class4348, this, this.field23857.method2940());
         if (class4348.method13058() == this.field23879) {
-            this.field23857.method1728(this.field23878.field22770, this.field23878.field22771, this.field23878.field22772, this.field23857.field2399, this.field23857.field2400);
-            this.field23868 = this.field23878.field22770;
-            this.field23869 = this.field23878.field22771;
-            this.field23870 = this.field23878.field22772;
+            this.field23857.method1728(this.field23878.x, this.field23878.y, this.field23878.z, this.field23857.field2399, this.field23857.field2400);
+            this.field23868 = this.field23878.x;
+            this.field23869 = this.field23878.y;
+            this.field23870 = this.field23878.z;
             if (this.field23857.method2955()) {
                 this.field23857.method2956();
             }
@@ -601,19 +602,19 @@ public class Class5814 implements Class5813
                 if (this.field23878 == null) {
                     this.field23880 = this.field23858;
                     if (!this.field23857.method1805()) {
-                        final double method1482 = this.field23857.method1938();
-                        final double method1483 = this.field23857.method1941();
-                        final double method1484 = this.field23857.method1945();
-                        final double method1485 = this.field23857.method1941();
-                        final double method1486 = class4353.method13078(this.field23857.method1938());
-                        final double method1487 = class4353.method13079(this.field23857.method1941());
-                        final double method1488 = class4353.method13080(this.field23857.method1945());
+                        final double method1482 = this.field23857.getPosX();
+                        final double method1483 = this.field23857.getPosY();
+                        final double method1484 = this.field23857.getPosZ();
+                        final double method1485 = this.field23857.getPosY();
+                        final double method1486 = class4353.method13078(this.field23857.getPosX());
+                        final double method1487 = class4353.method13079(this.field23857.getPosY());
+                        final double method1488 = class4353.method13080(this.field23857.getPosZ());
                         final float method1489 = class4353.method13081(this.field23857.field2399);
                         final float method1490 = class4353.method13082(this.field23857.field2400);
                         final double d = method1486 - this.field23865;
                         final double d2 = method1487 - this.field23866;
                         final double d3 = method1488 - this.field23867;
-                        final double method1491 = this.field23857.method1935().method16753();
+                        final double method1491 = this.field23857.method1935().lengthSquared();
                         final double n = d * d + d2 * d2 + d3 * d3;
                         if (!this.field23857.method2783()) {
                             ++this.field23885;
@@ -627,7 +628,7 @@ public class Class5814 implements Class5813
                                     if (n - method1491 > (this.field23857.method2773() ? 300.0f : 100.0f) * i) {
                                         if (!this.method17462()) {
                                             Class5814.field23854.warn("{} moved too quickly! {},{},{}", (Object)this.field23857.method1841().getString(), (Object)d, (Object)d2, (Object)d3);
-                                            this.method17467(this.field23857.method1938(), this.field23857.method1941(), this.field23857.method1945(), this.field23857.field2399, this.field23857.field2400);
+                                            this.method17467(this.field23857.getPosX(), this.field23857.getPosY(), this.field23857.getPosZ(), this.field23857.field2399, this.field23857.field2400);
                                             return;
                                         }
                                     }
@@ -649,12 +650,12 @@ public class Class5814 implements Class5813
                             }
                             this.field23857.method1671(Class2160.field12827, new Vec3d(n2, n3, n4));
                             this.field23857.field2404 = class4353.method13083();
-                            final double n5 = method1486 - this.field23857.method1938();
-                            double n6 = method1487 - this.field23857.method1941();
+                            final double n5 = method1486 - this.field23857.getPosX();
+                            double n6 = method1487 - this.field23857.getPosY();
                             if (n6 > -0.5 || n6 < 0.5) {
                                 n6 = 0.0;
                             }
-                            final double n7 = method1488 - this.field23857.method1945();
+                            final double n7 = method1488 - this.field23857.getPosZ();
                             final double n8 = n5 * n5 + n6 * n6 + n7 * n7;
                             boolean b = false;
                             if (!this.field23857.method2955()) {
@@ -670,7 +671,7 @@ public class Class5814 implements Class5813
                                 }
                             }
                             this.field23857.method1728(method1486, method1487, method1488, method1489, method1490);
-                            this.field23857.method2866(this.field23857.method1938() - method1482, this.field23857.method1941() - method1483, this.field23857.method1945() - method1484);
+                            this.field23857.method2866(this.field23857.getPosX() - method1482, this.field23857.getPosY() - method1483, this.field23857.getPosZ() - method1484);
                             if (!this.field23857.field2421) {
                                 if (!this.field23857.method2783()) {
                                     final boolean method1493 = this.method17466(method1481);
@@ -705,23 +706,23 @@ public class Class5814 implements Class5813
                             this.field23881 = field23881;
                             this.field23857.field2404 = class4353.method13083();
                             this.field23857.method2940().method6904().method7443(this.field23857);
-                            this.field23857.method2926(this.field23857.method1941() - method1485, class4353.method13083());
-                            this.field23868 = this.field23857.method1938();
-                            this.field23869 = this.field23857.method1941();
-                            this.field23870 = this.field23857.method1945();
+                            this.field23857.method2926(this.field23857.getPosY() - method1485, class4353.method13083());
+                            this.field23868 = this.field23857.getPosX();
+                            this.field23869 = this.field23857.getPosY();
+                            this.field23870 = this.field23857.getPosZ();
                         }
                         else if (n > 1.0) {
-                            this.method17467(this.field23857.method1938(), this.field23857.method1941(), this.field23857.method1945(), class4353.method13081(this.field23857.field2399), class4353.method13082(this.field23857.field2400));
+                            this.method17467(this.field23857.getPosX(), this.field23857.getPosY(), this.field23857.getPosZ(), class4353.method13081(this.field23857.field2399), class4353.method13082(this.field23857.field2400));
                         }
                     }
                     else {
-                        this.field23857.method1728(this.field23857.method1938(), this.field23857.method1941(), this.field23857.method1945(), class4353.method13081(this.field23857.field2399), class4353.method13082(this.field23857.field2400));
+                        this.field23857.method1728(this.field23857.getPosX(), this.field23857.getPosY(), this.field23857.getPosZ(), class4353.method13081(this.field23857.field2399), class4353.method13082(this.field23857.field2400));
                         this.field23857.method2940().method6904().method7443(this.field23857);
                     }
                 }
                 else if (this.field23858 - this.field23880 > 20) {
                     this.field23880 = this.field23858;
-                    this.method17467(this.field23878.field22770, this.field23878.field22771, this.field23878.field22772, this.field23857.field2399, this.field23857.field2400);
+                    this.method17467(this.field23878.x, this.field23878.y, this.field23878.z, this.field23857.field2399, this.field23857.field2400);
                 }
             }
         }
@@ -739,9 +740,9 @@ public class Class5814 implements Class5813
     }
     
     public void method17468(final double n, final double n2, final double n3, final float n4, final float n5, final Set<Class2143> set) {
-        final double n6 = set.contains(Class2143.field12617) ? this.field23857.method1938() : 0.0;
-        final double n7 = set.contains(Class2143.field12618) ? this.field23857.method1941() : 0.0;
-        final double n8 = set.contains(Class2143.field12619) ? this.field23857.method1945() : 0.0;
+        final double n6 = set.contains(Class2143.field12617) ? this.field23857.getPosX() : 0.0;
+        final double n7 = set.contains(Class2143.field12618) ? this.field23857.getPosY() : 0.0;
+        final double n8 = set.contains(Class2143.field12619) ? this.field23857.getPosZ() : 0.0;
         final float n9 = set.contains(Class2143.field12620) ? this.field23857.field2399 : 0.0f;
         final float n10 = set.contains(Class2143.field12621) ? this.field23857.field2400 : 0.0f;
         this.field23878 = new Vec3d(n, n2, n3);
@@ -843,7 +844,7 @@ public class Class5814 implements Class5813
                 if (method12899 == null) {
                     continue;
                 }
-                this.field23857.method2958(class4295, method12899.method1938(), method12899.method1941(), method12899.method1945(), method12899.field2399, method12899.field2400);
+                this.field23857.method2958(class4295, method12899.getPosX(), method12899.getPosY(), method12899.getPosZ(), method12899.field2399, method12899.field2400);
             }
         }
     }

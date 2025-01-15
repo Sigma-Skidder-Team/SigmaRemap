@@ -78,7 +78,7 @@ public class Class4575 extends Class4574<Class5122>
             double n2 = Double.MAX_VALUE;
             for (final Class7859 class1852 : this.field20066) {
                 class1851.method1284((class1852.field32290 << 4) + 8, 32, (class1852.field32291 << 4) + 8);
-                final double method1083 = class1851.method1083(class1849);
+                final double method1083 = class1851.distanceSq(class1849);
                 if (class1850 != null) {
                     if (method1083 < n2) {
                         class1850 = new BlockPos(class1851);

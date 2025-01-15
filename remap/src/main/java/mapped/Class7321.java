@@ -132,7 +132,7 @@ public class Class7321
     private static int method22446(final Class7492 class7492, final int n) {
         final Class1849 method23250 = class7492.method23250();
         Class6445.method19231(method23250);
-        Class6445.method19233(method23250, new BlockPos(class7492.method23249().field22770, class7492.method23250().method6958(Class2020.field11522, new BlockPos(class7492.method23249())).getY(), class7492.method23249().field22772), Class8564.field35990, MathHelper.method35651(n, 0, 1024));
+        Class6445.method19233(method23250, new BlockPos(class7492.method23249().x, class7492.method23250().method6958(Class2020.field11522, new BlockPos(class7492.method23249())).getY(), class7492.method23249().z), Class8564.field35990, MathHelper.method35651(n, 0, 1024));
         return 1;
     }
     

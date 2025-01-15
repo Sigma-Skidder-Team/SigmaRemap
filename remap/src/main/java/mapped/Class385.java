@@ -36,7 +36,7 @@ public class Class385 extends BlockPos
     }
     
     public Class385(final Entity class399) {
-        this(class399.method1938(), class399.method1941(), class399.method1945());
+        this(class399.getPosX(), class399.getPosY(), class399.getPosZ());
     }
     
     @Override
@@ -82,7 +82,7 @@ public class Class385 extends BlockPos
     }
     
     public Class385 method1285(final Entity class399) {
-        return this.method1286(class399.method1938(), class399.method1941(), class399.method1945());
+        return this.method1286(class399.getPosX(), class399.getPosY(), class399.getPosZ());
     }
     
     public Class385 method1286(final double n, final double n2, final double n3) {

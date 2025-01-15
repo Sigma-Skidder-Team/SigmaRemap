@@ -13,6 +13,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class8524
 {
@@ -26,7 +27,7 @@ public class Class8524
         final Class51 method333 = class7495.method333();
         method333.method306("id", class7493.toString());
         if (Class7499.method23354(Class7499.field29057).equals(class7493)) {
-            final Class422 class7496 = new Class422(class7492.method23250(), class7494.field22770, class7494.field22771, class7494.field22772, false);
+            final Class422 class7496 = new Class422(class7492.method23250(), class7494.x, class7494.y, class7494.z, false);
             class7492.method23250().method6903(class7496);
             class7492.method23257(new Class2259("commands.summon.success", new Object[] { class7496.method1871() }), true);
             return 1;

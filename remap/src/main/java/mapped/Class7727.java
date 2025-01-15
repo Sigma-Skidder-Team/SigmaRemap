@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7727
 {
@@ -23,11 +24,11 @@ public class Class7727
     }
     
     public void method24666(final Vec3d class5487) {
-        this.method24668(class5487.field22770, class5487.field22771, class5487.field22772);
+        this.method24668(class5487.x, class5487.y, class5487.z);
     }
     
     public void method24667(final Entity class399, final float n, final float n2) {
-        this.method24669(class399.method1938(), method24678(class399), class399.method1945(), n, n2);
+        this.method24669(class399.getPosX(), method24678(class399), class399.getPosZ(), n, n2);
     }
     
     public void method24668(final double n, final double n2, final double n3) {
@@ -81,18 +82,18 @@ public class Class7727
     }
     
     public float method24675() {
-        final double n = this.field30736 - this.field30732.method1938();
+        final double n = this.field30736 - this.field30732.getPosX();
         final double n2 = this.field30737 - this.field30732.method1944();
-        final double n3 = this.field30738 - this.field30732.method1945();
-        return (float)(-(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875));
+        final double n3 = this.field30738 - this.field30732.getPosZ();
+        return (float)(-(MathHelper.method35693(n2, MathHelper.sqrt(n * n + n3 * n3)) * 57.2957763671875));
     }
     
     public float method24676() {
-        return (float)(MathHelper.method35693(this.field30738 - this.field30732.method1945(), this.field30736 - this.field30732.method1938()) * 57.2957763671875) - 90.0f;
+        return (float)(MathHelper.method35693(this.field30738 - this.field30732.getPosZ(), this.field30736 - this.field30732.getPosX()) * 57.2957763671875) - 90.0f;
     }
     
     public float method24677(final float n, final float n2, final float n3) {
-        return n + MathHelper.method35653(MathHelper.method35670(n, n2), -n3, n3);
+        return n + MathHelper.clamp(MathHelper.method35670(n, n2), -n3, n3);
     }
     
     private static double method24678(final Entity class399) {

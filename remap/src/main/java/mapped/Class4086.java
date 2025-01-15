@@ -8,6 +8,8 @@ import java.util.AbstractList;
 import java.util.Random;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 
 import java.util.List;
@@ -88,7 +90,7 @@ public class Class4086 extends Class4085
             if (!method12296(class8321)) {
                 if (method12294(class8323, class8321)) {
                     method12297(class8321, true);
-                    class8322.method6706(null, class8323.method1938(), class8323.method1941(), class8323.method1945(), Class8520.field35106, (class8323 instanceof Class512) ? Class286.field1585 : Class286.field1583, 1.0f, 1.0f / (Class4086.field17363.nextFloat() * 0.5f + 1.0f) + 0.2f);
+                    class8322.method6706(null, class8323.getPosX(), class8323.getPosY(), class8323.getPosZ(), Class8520.field35106, (class8323 instanceof Class512) ? Class286.field1585 : Class286.field1583, 1.0f, 1.0f / (Class4086.field17363.nextFloat() * 0.5f + 1.0f) + 0.2f);
                 }
             }
         }
@@ -207,13 +209,13 @@ public class Class4086 extends Class4085
                 }
             }
             else {
-                method12303 = new Class406(class1847, class1851, class1848.method1938(), class1848.method1944() - 0.15000000596046448, class1848.method1945(), true);
+                method12303 = new Class406(class1847, class1851, class1848.getPosX(), class1848.method1944() - 0.15000000596046448, class1848.getPosZ(), true);
             }
             if (!(class1848 instanceof Class774)) {
                 final Quaternion class1852 = new Quaternion(new Vector3f(class1848.method1745(1.0f)), n4, true);
                 final Vector3f class1853 = new Vector3f(class1848.method1741(1.0f));
-                class1853.method33325(class1852);
-                method12303.method1958(class1853.method33311(), class1853.method33312(), class1853.method33313(), n2, n3);
+                class1853.transform(class1852);
+                method12303.method1958(class1853.getX(), class1853.getY(), class1853.getZ(), n2, n3);
             }
             else {
                 final Class774 class1854 = (Class774)class1848;
@@ -221,7 +223,7 @@ public class Class4086 extends Class4085
             }
             class1850.method27636(b2 ? 3 : 1, class1848, class1856 -> class1856.method2795(class1855));
             class1847.method6886((Entity)method12303);
-            class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), Class8520.field35112, Class286.field1585, 1.0f, n);
+            class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35112, Class286.field1585, 1.0f, n);
         }
     }
     
@@ -298,14 +300,14 @@ public class Class4086 extends Class4085
             if (n2 >= 0.2f) {
                 if (!this.field18191) {
                     this.field18191 = true;
-                    class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), method30196, Class286.field1585, 0.5f, 1.0f);
+                    class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method30196, Class286.field1585, 0.5f, 1.0f);
                 }
             }
             if (n2 >= 0.5f) {
                 if (class1850 != null) {
                     if (!this.field18192) {
                         this.field18192 = true;
-                        class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), class1850, Class286.field1585, 0.5f, 1.0f);
+                        class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), class1850, Class286.field1585, 0.5f, 1.0f);
                     }
                 }
             }

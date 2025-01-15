@@ -4,9 +4,10 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.io.IOException;
 import com.google.common.collect.Lists;
+import net.minecraft.client.renderer.Matrix4f;
+
 import java.util.List;
 
 public class Class1919 implements AutoCloseable
@@ -18,7 +19,7 @@ public class Class1919 implements AutoCloseable
     private final List<String> field10433;
     private final List<Integer> field10434;
     private final List<Integer> field10435;
-    private Class6789 field10436;
+    private Matrix4f field10436;
     
     public Class1919(final Class6582 class6582, final String s, final Class6153 field10430, final Class6153 field10431) throws IOException {
         this.field10432 = Lists.newArrayList();
@@ -42,7 +43,7 @@ public class Class1919 implements AutoCloseable
         this.field10435.add(this.field10435.size(), j);
     }
     
-    public void method7603(final Class6789 field10436) {
+    public void method7603(final Matrix4f field10436) {
         this.field10436 = field10436;
     }
     

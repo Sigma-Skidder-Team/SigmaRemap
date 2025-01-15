@@ -7,6 +7,7 @@ package mapped;
 import java.util.Optional;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5436 extends Class5419<Class824>
 {
@@ -43,14 +44,14 @@ public class Class5436 extends Class5419<Class824>
                 }
                 else {
                     int i = 0;
-                    final Class5487 class1855;
+                    final Vec3d class1855;
                     while (i < 1000) {
                         if (class1855 != null) {
                             if (!this.method16603(class1851, class1852, Class363.method1167(class1852.field2452, new BlockPos(class1855)))) {
                                 break;
                             }
                         }
-                        Class7775.method24905(class1852, 15, 7, new Class5487(class1854.method1170()));
+                        Class7775.method24905(class1852, 15, 7, new Vec3d(class1854.method1170()));
                         ++i;
                     }
                     if (i != 1000) {
@@ -73,10 +74,10 @@ public class Class5436 extends Class5419<Class824>
     }
     
     private boolean method16603(final Class1849 class1849, final Class824 class1850, final Class363 class1851) {
-        return class1851.method1169() != class1849.method6789().method20487() || class1851.method1170().method1086(new BlockPos(class1850)) > this.field22642;
+        return class1851.method1169() != class1849.method6789().method20487() || class1851.method1170().manhattanDistance(new BlockPos(class1850)) > this.field22642;
     }
     
     private boolean method16604(final Class1849 class1849, final Class824 class1850, final Class363 class1851) {
-        return class1851.method1169() == class1849.method6789().method20487() && class1851.method1170().method1086(new BlockPos(class1850)) <= this.field22641;
+        return class1851.method1169() == class1849.method6789().method20487() && class1851.method1170().manhattanDistance(new BlockPos(class1850)) <= this.field22641;
     }
 }

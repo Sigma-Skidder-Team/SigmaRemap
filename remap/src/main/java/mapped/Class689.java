@@ -19,6 +19,7 @@ import it.unimi.dsi.fastutil.longs.LongSets;
 import java.util.Objects;
 import com.google.common.collect.Lists;
 import com.google.common.base.Strings;
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -228,7 +229,7 @@ public class Class689 extends Class565
         }
         arrayList.add(Class383.method1276(this.field3792.field4683.field10063.method20487()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
         arrayList.add("");
-        arrayList.add(String.format(Locale.ROOT, "XYZ: %.3f / %.5f / %.3f", this.field3792.method5303().method1938(), this.field3792.method5303().method1941(), this.field3792.method5303().method1945()));
+        arrayList.add(String.format(Locale.ROOT, "XYZ: %.3f / %.5f / %.3f", this.field3792.method5303().getPosX(), this.field3792.method5303().getPosY(), this.field3792.method5303().getPosZ()));
         arrayList.add(String.format("Block: %d %d %d", class354.getX(), class354.getY(), class354.getZ()));
         arrayList.add(String.format("Chunk: %d %d %d in %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF, class354.getX() >> 4, class354.getY() >> 4, class354.getZ() >> 4));
         arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, MathHelper.method35668(method5289.field2399), MathHelper.method35668(method5289.field2400)));
@@ -461,7 +462,7 @@ public class Class689 extends Class565
             Class8726.method30041();
             Class8726.method30117();
             method35173.method12390(7, Class9237.field39615);
-            final Class6789 method35174 = Class9294.method34322().method34328();
+            final Matrix4f method35174 = Class9294.method34322().method34328();
             while (i != method35170) {
                 final int method35175 = class9462.method35168(method35171[i], b ? 30 : 60, b ? 60 : 20);
                 final int n6 = b ? 100 : 60;

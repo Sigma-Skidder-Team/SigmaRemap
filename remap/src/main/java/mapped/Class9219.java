@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 import java.util.Map;
@@ -35,22 +36,22 @@ public class Class9219
     private float[] method34002(final Direction class179) {
         switch (Class7789.field31877[class179.ordinal()]) {
             case 1: {
-                return new float[] { this.field39554.method33311(), 16.0f - this.field39555.method33313(), this.field39555.method33311(), 16.0f - this.field39554.method33313() };
+                return new float[] { this.field39554.getX(), 16.0f - this.field39555.getZ(), this.field39555.getX(), 16.0f - this.field39554.getZ() };
             }
             case 2: {
-                return new float[] { this.field39554.method33311(), this.field39554.method33313(), this.field39555.method33311(), this.field39555.method33313() };
+                return new float[] { this.field39554.getX(), this.field39554.getZ(), this.field39555.getX(), this.field39555.getZ() };
             }
             default: {
-                return new float[] { 16.0f - this.field39555.method33311(), 16.0f - this.field39555.method33312(), 16.0f - this.field39554.method33311(), 16.0f - this.field39554.method33312() };
+                return new float[] { 16.0f - this.field39555.getX(), 16.0f - this.field39555.getY(), 16.0f - this.field39554.getX(), 16.0f - this.field39554.getY() };
             }
             case 4: {
-                return new float[] { this.field39554.method33311(), 16.0f - this.field39555.method33312(), this.field39555.method33311(), 16.0f - this.field39554.method33312() };
+                return new float[] { this.field39554.getX(), 16.0f - this.field39555.getY(), this.field39555.getX(), 16.0f - this.field39554.getY() };
             }
             case 5: {
-                return new float[] { this.field39554.method33313(), 16.0f - this.field39555.method33312(), this.field39555.method33313(), 16.0f - this.field39554.method33312() };
+                return new float[] { this.field39554.getZ(), 16.0f - this.field39555.getY(), this.field39555.getZ(), 16.0f - this.field39554.getY() };
             }
             case 6: {
-                return new float[] { 16.0f - this.field39555.method33313(), 16.0f - this.field39555.method33312(), 16.0f - this.field39554.method33313(), 16.0f - this.field39554.method33312() };
+                return new float[] { 16.0f - this.field39555.getZ(), 16.0f - this.field39555.getY(), 16.0f - this.field39554.getZ(), 16.0f - this.field39554.getY() };
             }
         }
     }

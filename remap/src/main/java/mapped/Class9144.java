@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import java.util.BitSet;
@@ -72,7 +73,7 @@ public class Class9144
             method32833 = method32832.method18703(class1856, class1858, class1857, method32833);
         }
         final Vec3d method32834 = class1857.method21732(class1856, class1858);
-        class1859.method22564(method32834.field22770, method32834.field22771, method32834.field22772);
+        class1859.method22564(method32834.x, method32834.y, method32834.z);
         try {
             if (Class8571.method28955()) {
                 Class8900.method31337(class1857, class1860);
@@ -306,9 +307,9 @@ public class Class9144
                 method35655 = 1.0f;
             }
             else {
-                method35653 = MathHelper.method35653(n, 0.0f, 1.0f);
-                method35654 = MathHelper.method35653(n2, 0.0f, 1.0f);
-                method35655 = MathHelper.method35653(n3, 0.0f, 1.0f);
+                method35653 = MathHelper.clamp(n, 0.0f, 1.0f);
+                method35654 = MathHelper.clamp(n2, 0.0f, 1.0f);
+                method35655 = MathHelper.clamp(n3, 0.0f, 1.0f);
             }
             class8997.method12442(class8996, class8998, method35653, method35654, method35655, n4, n5);
         }
@@ -368,7 +369,7 @@ public class Class9144
                 if (Class8979.method31925(class1856, class1858, class1859)) {
                     final Class6313 method33404 = Class8979.method31923();
                     final Class7096 method33405 = Class8979.method31924();
-                    class1860.method22564(-class1863.field22770, -class1863.field22771, -class1863.field22772);
+                    class1860.method22564(-class1863.x, -class1863.y, -class1863.z);
                     this.method33353(class1856, method33404, method33405, class1859, class1860, class1861, b, random, n2, n);
                 }
             }

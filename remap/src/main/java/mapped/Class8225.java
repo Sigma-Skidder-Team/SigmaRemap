@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class8225
 {
     private static String[] field33782;

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class9356
 {
@@ -100,7 +101,7 @@ public class Class9356
                     float method21801;
                     float method21802;
                     float method21803;
-                    if (method21799.field22770 == 0.0 && method21799.field22772 == 0.0) {
+                    if (method21799.x == 0.0 && method21799.z == 0.0) {
                         final Class1912 class1860 = array[0];
                         class1858.method12407(class1860);
                         n11 = class1860.method7499(0.0);
@@ -115,7 +116,7 @@ public class Class9356
                     else {
                         final Class1912 class1861 = array[1];
                         class1858.method12407(class1861);
-                        final float n15 = (float) MathHelper.method35693(method21799.field22772, method21799.field22770) - 1.5707964f;
+                        final float n15 = (float) MathHelper.method35693(method21799.z, method21799.x) - 1.5707964f;
                         final float n16 = MathHelper.sin(n15) * 0.25f;
                         final float n17 = MathHelper.cos(n15) * 0.25f;
                         n11 = class1861.method7499(8.0f + (-n17 - n16) * 16.0f);

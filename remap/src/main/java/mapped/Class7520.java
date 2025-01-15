@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
-import java.util.concurrent.CompletionStage;
+
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 import com.google.common.collect.Lists;
@@ -30,7 +31,7 @@ public class Class7520
     private final Executor field29135;
     private Class1847 field29136;
     private final Class1656 field29137;
-    private Class5487 field29138;
+    private Vec3d field29138;
     private int field29139;
     private List<Class9226> field29140;
     public static final Class6332[] field29141;
@@ -47,7 +48,7 @@ public class Class7520
     public Class7520(final Class1847 field29136, final Class1656 field29137, final Executor field29138, final boolean b, final Class9226 field29139, final int n) {
         this.field29128 = Queues.newPriorityQueue();
         this.field29130 = Queues.newConcurrentLinkedQueue();
-        this.field29138 = Class5487.field22769;
+        this.field29138 = Vec3d.ZERO;
         this.field29140 = new ArrayList<Class9226>();
         this.field29136 = field29136;
         this.field29137 = field29137;
@@ -117,11 +118,11 @@ public class Class7520
         return String.format("pC: %03d, pU: %02d, aB: %02d", this.field29131, this.field29130.size(), this.field29132);
     }
     
-    public void method23455(final Class5487 field29138) {
+    public void method23455(final Vec3d field29138) {
         this.field29138 = field29138;
     }
     
-    public Class5487 method23456() {
+    public Vec3d method23456() {
         return this.field29138;
     }
     

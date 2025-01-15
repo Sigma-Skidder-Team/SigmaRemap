@@ -168,9 +168,9 @@ public class Class3335 extends Class3167
     }
     
     private void method10556() {
-        final double method16760 = Class3335.field15514.field4644.method5833().method18161().method16760();
-        final double method16761 = Class3335.field15514.field4644.method5833().method18161().method16761();
-        final double method16762 = Class3335.field15514.field4644.method5833().method18161().method16762();
+        final double method16760 = Class3335.field15514.field4644.method5833().method18161().getX();
+        final double method16761 = Class3335.field15514.field4644.method5833().method18161().getY();
+        final double method16762 = Class3335.field15514.field4644.method5833().method18161().getZ();
         Class3335.field15934.clear();
         Class3335.field15935.clear();
         final float field26528 = Class3335.field15514.field4633.field26528;

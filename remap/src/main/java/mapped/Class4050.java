@@ -32,7 +32,7 @@ public class Class4050 extends Class3820
         final double n = method21655.getX();
         final double n2 = method21655.getY();
         final double n3 = method21655.getZ();
-        if (method21654.method7127(null, new Class6221(n, n2, n3, n + 1.0, n2 + 2.0, n3 + 1.0)).isEmpty()) {
+        if (method21654.method7127(null, new AxisAlignedBB(n, n2, n3, n + 1.0, n2 + 2.0, n3 + 1.0)).isEmpty()) {
             final Class8321 method21657 = class7075.method21651();
             if (!method21654.field10067) {
                 method21654.method6690(method21655, false);
@@ -42,7 +42,7 @@ public class Class4050 extends Class3820
                 this.method12248(class7077, method21654.field10062);
                 Class7499.method23360(method21654, class7075.method21652(), class7077, method21657.method27657());
                 method21654.method6886(class7077);
-                method21654.method6706(null, class7077.method1938(), class7077.method1941(), class7077.method1945(), Class8520.field34990, Class286.field1582, 0.75f, 0.8f);
+                method21654.method6706(null, class7077.getPosX(), class7077.getPosY(), class7077.getPosZ(), Class8520.field34990, Class286.field1582, 0.75f, 0.8f);
             }
             method21657.method27693(1);
             return Class2201.field13400;

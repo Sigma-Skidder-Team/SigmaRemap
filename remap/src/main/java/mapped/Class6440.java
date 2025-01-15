@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Optional;
 import java.util.List;
@@ -24,7 +25,7 @@ public class Class6440 implements Class6438
     
     @Override
     public Vec3d method19205() {
-        return new Vec3d(this.field25568.method1938(), this.field25568.method1944(), this.field25568.method1945());
+        return new Vec3d(this.field25568.getPosX(), this.field25568.method1944(), this.field25568.getPosZ());
     }
     
     @Override

@@ -6,11 +6,11 @@ package mapped;
 
 public interface Class5491 extends Class5490
 {
-    double method16760();
+    double getX();
     
-    double method16761();
+    double getY();
     
-    double method16762();
+    double getZ();
     
     BlockPos method16764();
     

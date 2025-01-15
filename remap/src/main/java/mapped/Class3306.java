@@ -35,9 +35,9 @@ public class Class3306 extends Class3167
             final Iterator<Long> iterator2 = iterator.next().field36693.iterator();
             while (iterator2.hasNext()) {
                 final BlockPos method19119 = BlockPos.method1129(iterator2.next());
-                final double n = method19119.getX() - Class3306.field15514.field4644.method5833().method18161().method16760();
-                final double n2 = method19119.getY() - Class3306.field15514.field4644.method5833().method18161().method16761();
-                final double n3 = method19119.getZ() - Class3306.field15514.field4644.method5833().method18161().method16762();
+                final double n = method19119.getX() - Class3306.field15514.field4644.method5833().method18161().getX();
+                final double n2 = method19119.getY() - Class3306.field15514.field4644.method5833().method18161().getY();
+                final double n3 = method19119.getZ() - Class3306.field15514.field4644.method5833().method18161().getZ();
                 Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
             }
         }

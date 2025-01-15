@@ -19,17 +19,17 @@ import java.util.function.Predicate;
 
 public interface Class1874
 {
-    List<Entity> method6737(final Entity p0, final Class6221 p1, final Predicate<? super Entity> p2);
+    List<Entity> method6737(final Entity p0, final AxisAlignedBB p1, final Predicate<? super Entity> p2);
     
-     <T extends Entity> List<T> method6739(final Class<? extends T> p0, final Class6221 p1, final Predicate<? super T> p2);
+     <T extends Entity> List<T> method6739(final Class<? extends T> p0, final AxisAlignedBB p1, final Predicate<? super T> p2);
     
-    default <T extends Entity> List<T> method6740(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    default <T extends Entity> List<T> method6740(final Class<? extends T> clazz, final AxisAlignedBB class6221, final Predicate<? super T> predicate) {
         return (List<T>)this.method6739((Class<? extends Entity>)clazz, class6221, (Predicate<? super Entity>)predicate);
     }
     
     List<? extends Class512> method6840();
     
-    default List<Entity> method7127(final Entity class399, final Class6221 class400) {
+    default List<Entity> method7127(final Entity class399, final AxisAlignedBB class400) {
         return this.method6737(class399, class400, Class9170.field38850);
     }
     
@@ -47,18 +47,18 @@ public interface Class1874
         }).noneMatch(class404 -> Class7698.method24496(class403, Class7698.method24489(class404.method1886()), Class9306.field39924));
     }
     
-    default <T extends Entity> List<T> method7128(final Class<? extends T> clazz, final Class6221 class6221) {
+    default <T extends Entity> List<T> method7128(final Class<? extends T> clazz, final AxisAlignedBB class6221) {
         return this.method6739(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
     }
     
-    default <T extends Entity> List<T> method7129(final Class<? extends T> clazz, final Class6221 class6221) {
+    default <T extends Entity> List<T> method7129(final Class<? extends T> clazz, final AxisAlignedBB class6221) {
         return this.method6740(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
     }
     
-    default Stream<Class7702> method6956(final Entity class399, final Class6221 class400, final Set<Entity> set) {
+    default Stream<Class7702> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         if (class400.method18507() >= 1.0E-7) {
-            final Class6221 method18496 = class400.method18496(1.0E-7);
-            return (Stream<Class7702>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new Class6221[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::method18502).map((Function<? super Object, ?>)Class7698::method24489);
+            final AxisAlignedBB method18496 = class400.method18496(1.0E-7);
+            return (Stream<Class7702>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new AxisAlignedBB[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::method18502).map((Function<? super Object, ?>)Class7698::method24489);
         }
         return Stream.empty();
     }
@@ -86,7 +86,7 @@ public interface Class1874
     
     @Nullable
     default Class512 method7131(final Entity class399, final double n) {
-        return this.method7132(class399.method1938(), class399.method1941(), class399.method1945(), n, false);
+        return this.method7132(class399.getPosX(), class399.getPosY(), class399.getPosZ(), n, false);
     }
     
     @Nullable
@@ -102,7 +102,7 @@ public interface Class1874
             if (!Class9170.field38850.test(class513)) {
                 continue;
             }
-            final double method1733 = class513.method1733(n, class513.method1941(), n2);
+            final double method1733 = class513.method1733(n, class513.getPosY(), n2);
             if (n3 >= 0.0 && method1733 >= n3 * n3) {
                 continue;
             }
@@ -134,7 +134,7 @@ public interface Class1874
     
     @Nullable
     default Class512 method7135(final Class7843 class7843, final Class511 class7844) {
-        return this.method7140(this.method6840(), class7843, class7844, class7844.method1938(), class7844.method1941(), class7844.method1945());
+        return this.method7140(this.method6840(), class7843, class7844, class7844.getPosX(), class7844.getPosY(), class7844.getPosZ());
     }
     
     @Nullable
@@ -148,12 +148,12 @@ public interface Class1874
     }
     
     @Nullable
-    default <T extends Class511> T method7138(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3, final Class6221 class7845) {
+    default <T extends Class511> T method7138(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
         return this.method7140(this.method6739(clazz, class7845, (Predicate<? super T>)null), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
-    default <T extends Class511> T method7139(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3, final Class6221 class7845) {
+    default <T extends Class511> T method7139(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
         return this.method7140(this.method6740(clazz, class7845, (Predicate<? super T>)null), class7843, class7844, n, n2, n3);
     }
     
@@ -175,10 +175,10 @@ public interface Class1874
         return (T)class7845;
     }
     
-    default List<Class512> method7141(final Class7843 class7843, final Class511 class7844, final Class6221 class7845) {
+    default List<Class512> method7141(final Class7843 class7843, final Class511 class7844, final AxisAlignedBB class7845) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class512 class7846 : this.method6840()) {
-            if (!class7845.method18506(class7846.method1938(), class7846.method1941(), class7846.method1945())) {
+            if (!class7845.method18506(class7846.getPosX(), class7846.getPosY(), class7846.getPosZ())) {
                 continue;
             }
             if (!class7843.method25344(class7844, class7846)) {
@@ -189,7 +189,7 @@ public interface Class1874
         return arrayList;
     }
     
-    default <T extends Class511> List<T> method7142(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final Class6221 class7845) {
+    default <T extends Class511> List<T> method7142(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final AxisAlignedBB class7845) {
         final List<Entity> method6739 = (List<Entity>)this.method6739((Class<? extends Class511>)clazz, class7845, (Predicate<? super Class511>)null);
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class511 class7846 : method6739) {

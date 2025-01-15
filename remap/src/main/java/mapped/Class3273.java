@@ -54,9 +54,9 @@ public class Class3273 extends Class3167
             else if (this.method9883("Auto Jump") && Class6430.method19114()) {
                 this.field15767 = 0;
                 Class3273.field15514.field4684.method2725();
-                class5717.method16973(Class3273.field15514.field4684.method1935().field22770);
-                class5717.method16975(Class3273.field15514.field4684.method1935().field22771);
-                class5717.method16977(Class3273.field15514.field4684.method1935().field22772);
+                class5717.method16973(Class3273.field15514.field4684.method1935().x);
+                class5717.method16975(Class3273.field15514.field4684.method1935().y);
+                class5717.method16977(Class3273.field15514.field4684.method1935().z);
             }
             else if (class5717.method16974() != 0.4 + Class7482.method23140() * 0.1) {
                 this.field15768 = 0;

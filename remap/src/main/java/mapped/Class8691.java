@@ -94,7 +94,7 @@ public class Class8691
         if (class355 != class356 && class355 != class356.getOpposite()) {
             final Vec3i class357 = new Vec3i(class355.getXOffset(), class355.getYOffset(), class355.getZOffset());
             final Vec3i class358 = new Vec3i(class356.getXOffset(), class356.getYOffset(), class356.getZOffset());
-            final Vec3i method1080 = class357.method1080(class358);
+            final Vec3i method1080 = class357.crossProduct(class358);
             return class354.method1134(class358.getX() * -n2 + method1080.getX() * n + class357.getX() * n3, class358.getY() * -n2 + method1080.getY() * n + class357.getY() * n3, class358.getZ() * -n2 + method1080.getZ() * n + class357.getZ() * n3);
         }
         throw new IllegalArgumentException("Invalid forwards & up combination");

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Class3178 extends Class3167
 {
-    public Class9544 field15556;
+    public Vec2f field15556;
     public float field15557;
     public float field15558;
     public float field15559;
@@ -19,7 +19,7 @@ public class Class3178 extends Class3167
     
     public Class3178() {
         super(Class8013.field32984, "DVD Simulator", "wtf");
-        this.field15556 = new Class9544(1.0f, 1.0f);
+        this.field15556 = new Vec2f(1.0f, 1.0f);
         this.field15558 = 0.0f;
         this.field15559 = 1.0f;
         this.field15560 = 1.0f;

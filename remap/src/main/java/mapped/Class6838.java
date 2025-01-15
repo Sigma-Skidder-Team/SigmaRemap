@@ -20,17 +20,17 @@ public class Class6838 extends Class6831
         this.field26835 = field26835;
         this.field26836 = field26836;
         this.field26850 = field26837;
-        this.field26837 = (float)this.field26850.method1938();
-        this.field26838 = (float)this.field26850.method1941();
-        this.field26839 = (float)this.field26850.method1945();
+        this.field26837 = (float)this.field26850.getPosX();
+        this.field26838 = (float)this.field26850.getPosY();
+        this.field26839 = (float)this.field26850.getPosZ();
     }
     
     @Override
     public void method20918() {
         if (!this.field26850.field2410) {
-            this.field26837 = (float)this.field26850.method1938();
-            this.field26838 = (float)this.field26850.method1941();
-            this.field26839 = (float)this.field26850.method1945();
+            this.field26837 = (float)this.field26850.getPosX();
+            this.field26838 = (float)this.field26850.getPosY();
+            this.field26839 = (float)this.field26850.getPosZ();
         }
         else {
             this.field26827 = true;

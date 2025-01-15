@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class6569 extends Class6564
 {
@@ -25,9 +26,9 @@ public class Class6569 extends Class6564
             field26087.field2399 += 180.0f;
             this.field26086 = 0.1f;
         }
-        final float n = (float)(Class851.method5090(this.field26087).field22770 - this.field26087.method1938());
-        final float n2 = (float)(Class851.method5090(this.field26087).field22771 - this.field26087.method1941());
-        final float n3 = (float)(Class851.method5090(this.field26087).field22772 - this.field26087.method1945());
+        final float n = (float)(Class851.method5090(this.field26087).field22770 - this.field26087.getPosX());
+        final float n2 = (float)(Class851.method5090(this.field26087).field22771 - this.field26087.getPosY());
+        final float n3 = (float)(Class851.method5090(this.field26087).field22772 - this.field26087.getPosZ());
         final double n4 = 1.0 - MathHelper.method35647(n2 * 0.7f) / (double) MathHelper.method35640(n * n + n3 * n3);
         final float n5 = (float)(n * n4);
         final float n6 = (float)(n3 * n4);
@@ -49,6 +50,6 @@ public class Class6569 extends Class6564
         final double n11 = this.field26086 * MathHelper.sin(n9 * 0.017453292f) * Math.abs(n6 / n8);
         final double n12 = this.field26086 * MathHelper.sin(field26089 * 0.017453292f) * Math.abs(n2 / n8);
         final Vec3d method1935 = this.field26087.method1935();
-        this.field26087.method1936(method1935.method16743(new Vec3d(n10, n12, n11).method16741(method1935).method16748(0.2)));
+        this.field26087.method1936(method1935.add(new Vec3d(n10, n12, n11).subtract(method1935).scale(0.2)));
     }
 }

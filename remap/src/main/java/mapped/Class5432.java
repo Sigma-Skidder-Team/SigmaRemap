@@ -28,7 +28,7 @@ public class Class5432 extends Class5419<Class787>
         final Optional<Class363> method1198 = class1850.method2618().method1198(this.field22626);
         if (method1198.isPresent()) {
             if (Objects.equals(class1849.method6789().method20487(), method1198.get().method1169())) {
-                if (method1198.get().method1170().method1082(class1850.method1934(), this.field22628)) {
+                if (method1198.get().method1170().withinDistance(class1850.method1934(), this.field22628)) {
                     return true;
                 }
             }

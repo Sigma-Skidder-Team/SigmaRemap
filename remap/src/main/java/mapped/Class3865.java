@@ -221,7 +221,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     private static boolean method11940(final Class1851 class1851, final BlockPos class1852) {
-        final List<Entity> method7128 = class1851.method7128((Class<? extends Entity>)Class800.class, new Class6221(class1852.getX(), class1852.getY() + 1, class1852.getZ(), class1852.getX() + 1, class1852.getY() + 2, class1852.getZ() + 1));
+        final List<Entity> method7128 = class1851.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1852.getX(), class1852.getY() + 1, class1852.getZ(), class1852.getX() + 1, class1852.getY() + 2, class1852.getZ() + 1));
         if (!method7128.isEmpty()) {
             final Iterator iterator = method7128.iterator();
             while (iterator.hasNext()) {

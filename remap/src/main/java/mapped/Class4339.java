@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -39,9 +40,9 @@ public class Class4339 implements Class4252<Class5800>
         this.field19433 = MathHelper.method35642(n2 * 256.0f / 360.0f);
         this.field19434 = field19429;
         this.field19435 = field19430;
-        this.field19429 = (int)(MathHelper.method35654(class5487.field22770, -3.9, 3.9) * 8000.0);
-        this.field19430 = (int)(MathHelper.method35654(class5487.field22771, -3.9, 3.9) * 8000.0);
-        this.field19431 = (int)(MathHelper.method35654(class5487.field22772, -3.9, 3.9) * 8000.0);
+        this.field19429 = (int)(MathHelper.method35654(class5487.x, -3.9, 3.9) * 8000.0);
+        this.field19430 = (int)(MathHelper.method35654(class5487.y, -3.9, 3.9) * 8000.0);
+        this.field19431 = (int)(MathHelper.method35654(class5487.z, -3.9, 3.9) * 8000.0);
     }
     
     public Class4339(final Entity class399) {
@@ -49,7 +50,7 @@ public class Class4339 implements Class4252<Class5800>
     }
     
     public Class4339(final Entity class399, final int n) {
-        this(class399.method1643(), class399.method1865(), class399.method1938(), class399.method1941(), class399.method1945(), class399.field2400, class399.field2399, class399.method1642(), n, class399.method1935());
+        this(class399.method1643(), class399.method1865(), class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.field2400, class399.field2399, class399.method1642(), n, class399.method1935());
     }
     
     public Class4339(final Entity class399, final Class7499<?> class400, final int n, final BlockPos class401) {

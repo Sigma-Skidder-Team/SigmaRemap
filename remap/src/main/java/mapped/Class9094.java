@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 public class Class9094
@@ -29,7 +30,7 @@ public class Class9094
         }
         this.field38514 = class179.toVector3f();
         if (b) {
-            this.field38514.method33315(-1.0f, 1.0f, 1.0f);
+            this.field38514.mul(-1.0f, 1.0f, 1.0f);
         }
     }
 }

@@ -58,6 +58,6 @@ public class Class8968 implements Class8967
     
     private double method31816(final Class1851 class1851, final Entity class1852) {
         final BlockPos method6758 = class1851.method6758();
-        return Math.atan2(method6758.getZ() - class1852.method1945(), method6758.getX() - class1852.method1938());
+        return Math.atan2(method6758.getZ() - class1852.getPosZ(), method6758.getX() - class1852.getPosX());
     }
 }

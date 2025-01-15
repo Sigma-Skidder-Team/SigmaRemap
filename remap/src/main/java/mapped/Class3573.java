@@ -9,6 +9,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.function.BooleanSupplier;
 import java.util.List;
 
@@ -47,7 +49,7 @@ public class Class3573 extends Class3446
         if (!class1849.method6924(new BlockPos(this.field16676), 6)) {
             return false;
         }
-        final Class5487 method24903 = Class7775.method24903(this.field16676, 15, 7, class1853 -> {
+        final Vec3d method24903 = Class7775.method24903(this.field16676, 15, 7, class1853 -> {
             if (class1851.method6922(class1853)) {
                 class1851.method6921().method7204(Class8912.field37458, this::method11113, class1853, 10, Class2045.field11651);
                 final Optional optional;
@@ -69,12 +71,12 @@ public class Class3573 extends Class3446
             this.field16678 = class1850.method24721(this.field16679, 0);
             class1850.method24747(method24905);
             if (this.field16678 == null) {
-                final Class5487 method24906 = Class7775.method24905(this.field16676, 10, 7, new Class5487(this.field16679));
+                final Vec3d method24906 = Class7775.method24905(this.field16676, 10, 7, new Vec3d(this.field16679));
                 if (method24906 == null) {
                     return false;
                 }
                 class1850.method24747(this.field16683.getAsBoolean());
-                this.field16678 = this.field16676.method4150().method24719(method24906.field22770, method24906.field22771, method24906.field22772, 0);
+                this.field16678 = this.field16676.method4150().method24719(method24906.x, method24906.y, method24906.z, 0);
                 class1850.method24747(method24905);
                 if (this.field16678 == null) {
                     return false;
@@ -94,7 +96,7 @@ public class Class3573 extends Class3446
     
     @Override
     public boolean method11017() {
-        return !this.field16676.method4150().method24731() && !this.field16679.method1082(this.field16676.method1934(), this.field16676.method1930() + this.field16682);
+        return !this.field16676.method4150().method24731() && !this.field16679.withinDistance(this.field16676.method1934(), this.field16676.method1930() + this.field16682);
     }
     
     @Override
@@ -104,7 +106,7 @@ public class Class3573 extends Class3446
     
     @Override
     public void method11018() {
-        if (this.field16676.method4150().method24731() || this.field16679.method1082(this.field16676.method1934(), this.field16682)) {
+        if (this.field16676.method4150().method24731() || this.field16679.withinDistance(this.field16676.method1934(), this.field16682)) {
             this.field16681.add(this.field16679);
         }
     }

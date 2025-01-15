@@ -464,7 +464,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         }
     }
     
-    public boolean method6718(final Class6221 class6221) {
+    public boolean method6718(final AxisAlignedBB class6221) {
         final int method35644 = MathHelper.floor(class6221.field25073);
         final int method35645 = MathHelper.method35650(class6221.field25076);
         final int method35646 = MathHelper.floor(class6221.field25074);
@@ -485,7 +485,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         }
     }
     
-    public boolean method6719(final Class6221 class6221) {
+    public boolean method6719(final AxisAlignedBB class6221) {
         final int method35644 = MathHelper.floor(class6221.field25073);
         final int method35645 = MathHelper.method35650(class6221.field25076);
         final int method35646 = MathHelper.floor(class6221.field25074);
@@ -511,7 +511,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Nullable
-    public Class7096 method6720(final Class6221 class6221, final Class3833 class6222) {
+    public Class7096 method6720(final AxisAlignedBB class6221, final Class3833 class6222) {
         final int method35644 = MathHelper.floor(class6221.field25073);
         final int method35645 = MathHelper.method35650(class6221.field25076);
         final int method35646 = MathHelper.floor(class6221.field25074);
@@ -536,7 +536,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return null;
     }
     
-    public boolean method6721(final Class6221 class6221, final Class8059 class6222) {
+    public boolean method6721(final AxisAlignedBB class6221, final Class8059 class6222) {
         return BlockPos.method1157(MathHelper.floor(class6221.field25073), MathHelper.floor(class6221.field25074), MathHelper.floor(class6221.field25075), MathHelper.method35650(class6221.field25076) - 1, MathHelper.method35650(class6221.field25077) - 1, MathHelper.method35650(class6221.field25078) - 1).anyMatch(class6225 -> {
             Class114.method607(class6224);
             return class6223.test(this.method6701(class6225));
@@ -691,7 +691,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public List<Entity> method6737(final Entity class399, final Class6221 class400, final Predicate<? super Entity> predicate) {
+    public List<Entity> method6737(final Entity class399, final AxisAlignedBB class400, final Predicate<? super Entity> predicate) {
         this.method6796().method15302("getEntities");
         final ArrayList arrayList = Lists.newArrayList();
         final int method35644 = MathHelper.floor((class400.field25073 - 2.0) / 16.0);
@@ -709,7 +709,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return arrayList;
     }
     
-    public <T extends Entity> List<T> method6738(final Class7499<T> class7499, final Class6221 class7500, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6738(final Class7499<T> class7499, final AxisAlignedBB class7500, final Predicate<? super T> predicate) {
         this.method6796().method15302("getEntities");
         final int method35644 = MathHelper.floor((class7500.field25073 - 2.0) / 16.0);
         final int method35645 = MathHelper.method35650((class7500.field25076 + 2.0) / 16.0);
@@ -728,7 +728,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public <T extends Entity> List<T> method6739(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6739(final Class<? extends T> clazz, final AxisAlignedBB class6221, final Predicate<? super T> predicate) {
         this.method6796().method15302("getEntities");
         final int method35644 = MathHelper.floor((class6221.field25073 - 2.0) / 16.0);
         final int method35645 = MathHelper.method35650((class6221.field25076 + 2.0) / 16.0);
@@ -748,7 +748,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public <T extends Entity> List<T> method6740(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6740(final Class<? extends T> clazz, final AxisAlignedBB class6221, final Predicate<? super T> predicate) {
         this.method6796().method15302("getLoadedEntities");
         final int method35644 = MathHelper.floor((class6221.field25073 - 2.0) / 16.0);
         final int method35645 = MathHelper.method35650((class6221.field25076 + 2.0) / 16.0);

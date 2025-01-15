@@ -152,14 +152,14 @@ public class Class548 extends Class527
         final float n4 = this.field3313 ? ((Class8349.method27837() - this.field3314) / 1000.0f) : 1.0f;
         Class8933.method31514();
         Class565.method3293(0, 0, this.field3152, this.field3153, -1);
-        this.field3312.method35257(n3, MathHelper.method35653(n4, 0.0f, 1.0f));
+        this.field3312.method35257(n3, MathHelper.clamp(n4, 0.0f, 1.0f));
         final int n5 = this.field3152 / 2 - 137;
         this.field3150.method5290().method5849(Class548.field3301);
         Class8726.method30011();
         Class8726.method30013(Class2050.field11693, Class2135.field12460);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3313 ? ((float) MathHelper.method35649(MathHelper.method35653(n4, 0.0f, 1.0f))) : 1.0f);
+        Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3313 ? ((float) MathHelper.method35649(MathHelper.clamp(n4, 0.0f, 1.0f))) : 1.0f);
         Class565.method3300(0, 0, this.field3152, this.field3153, 0.0f, 0.0f, 16, 128, 16, 128);
-        final float n6 = this.field3313 ? MathHelper.method35653(n4 - 1.0f, 0.0f, 1.0f) : 1.0f;
+        final float n6 = this.field3313 ? MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f) : 1.0f;
         final int n7 = MathHelper.method35649(n6 * 255.0f) << 24;
         if ((n7 & 0xFC000000) != 0x0) {
             this.field3150.method5290().method5849(Class548.field3306);

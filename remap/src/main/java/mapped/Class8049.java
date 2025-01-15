@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+
 public class Class8049 extends Class8048
 {
     public Class8049() {
@@ -11,6 +13,6 @@ public class Class8049 extends Class8048
     }
     
     @Override
-    public void method26393(final boolean b, final float n, final float n2, final Class6789 class6789, final Class4150 class6790, final float n3, final float n4, final float n5, final float n6, final int n7) {
+    public void method26393(final boolean b, final float n, final float n2, final Matrix4f class6789, final Class4150 class6790, final float n3, final float n4, final float n5, final float n6, final int n7) {
     }
 }

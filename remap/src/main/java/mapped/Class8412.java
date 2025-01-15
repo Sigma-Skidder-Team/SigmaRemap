@@ -77,13 +77,13 @@ public class Class8412
         return MathHelper.floor(method34791 + 0.5);
     }
     
-    private static int method28091(final Class7492 class7492, final Class9544 class7493) throws CommandSyntaxException {
+    private static int method28091(final Class7492 class7492, final Vec2f class7493) throws CommandSyntaxException {
         final Class9375 method6787 = class7492.method23250().method6787();
-        if (method6787.method34777() == class7493.field41091 && method6787.method34778() == class7493.field41092) {
+        if (method6787.method34777() == class7493.x && method6787.method34778() == class7493.y) {
             throw Class8412.field34540.create();
         }
-        method6787.method34790(class7493.field41091, class7493.field41092);
-        class7492.method23257(new Class2259("commands.worldborder.center.success", new Object[] { String.format(Locale.ROOT, "%.2f", class7493.field41091), String.format("%.2f", class7493.field41092) }), true);
+        method6787.method34790(class7493.x, class7493.y);
+        class7492.method23257(new Class2259("commands.worldborder.center.success", new Object[] { String.format(Locale.ROOT, "%.2f", class7493.x), String.format("%.2f", class7493.y) }), true);
         return 0;
     }
     

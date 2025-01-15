@@ -35,9 +35,9 @@ public class Class755 extends Class754
     public void method1659() {
         super.method1659();
         this.field2945 = this.field2946;
-        final double n = this.method1938() - this.field2392;
-        final double n2 = this.method1945() - this.field2394;
-        float n3 = MathHelper.method35641(n * n + n2 * n2) * 4.0f;
+        final double n = this.getPosX() - this.field2392;
+        final double n2 = this.getPosZ() - this.field2394;
+        float n3 = MathHelper.sqrt(n * n + n2 * n2) * 4.0f;
         if (n3 > 1.0f) {
             n3 = 1.0f;
         }
@@ -48,9 +48,9 @@ public class Class755 extends Class754
     @Override
     public void method2736() {
         if (this.field2971 > 0) {
-            final double n = this.method1938() + (this.field2972 - this.method1938()) / this.field2971;
-            final double n2 = this.method1941() + (this.field2973 - this.method1941()) / this.field2971;
-            final double n3 = this.method1945() + (this.field2974 - this.method1945()) / this.field2971;
+            final double n = this.getPosX() + (this.field2972 - this.getPosX()) / this.field2971;
+            final double n2 = this.getPosY() + (this.field2973 - this.getPosY()) / this.field2971;
+            final double n3 = this.getPosZ() + (this.field2974 - this.getPosZ()) / this.field2971;
             this.field2399 += (float)(MathHelper.method35669(this.field2975 - this.field2399) / this.field2971);
             this.field2400 += (float)((this.field2976 - this.field2400) / this.field2971);
             --this.field2971;
@@ -65,13 +65,13 @@ public class Class755 extends Class754
         this.method2709();
         float min;
         if (this.field2404 && this.method2664() > 0.0f) {
-            min = Math.min(0.1f, MathHelper.method35641(Entity.method1680(this.method1935())));
+            min = Math.min(0.1f, MathHelper.sqrt(Entity.method1680(this.method1935())));
         }
         else {
             min = 0.0f;
         }
         if (!this.field2404 && this.method2664() > 0.0f) {
-            final float n4 = (float)Math.atan(-this.method1935().field22771 * 0.20000000298023224) * 15.0f;
+            final float n4 = (float)Math.atan(-this.method1935().y * 0.20000000298023224) * 15.0f;
         }
         this.field3013 += (min - this.field3013) * 0.4f;
         this.field2391.method6796().method15297("push");

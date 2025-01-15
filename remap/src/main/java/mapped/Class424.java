@@ -9,6 +9,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 
@@ -37,7 +38,7 @@ public class Class424 extends Entity
         this.field2573 = field2395;
         this.field2386 = true;
         this.method1656(field2392, field2393 + (1.0f - this.method1931()) / 2.0f, field2394);
-        this.method1936(Vec3d.field22769);
+        this.method1936(Vec3d.ZERO);
         this.field2392 = field2392;
         this.field2393 = field2393;
         this.field2394 = field2394;
@@ -89,7 +90,7 @@ public class Class424 extends Entity
                 }
             }
             if (!this.method1698()) {
-                this.method1936(this.method1935().method16744(0.0, -0.04, 0.0));
+                this.method1936(this.method1935().add(0.0, -0.04, 0.0));
             }
             this.method1671(Class2160.field12826, this.method1935());
             Label_0060: {
@@ -97,7 +98,7 @@ public class Class424 extends Entity
                     BlockPos method21697 = new BlockPos(this);
                     final boolean b = this.field2573.method21696() instanceof Class3988;
                     boolean b2 = b && this.field2391.method6702(method21697).method21793(Class7324.field28319);
-                    final double method21698 = this.method1935().method16753();
+                    final double method21698 = this.method1935().lengthSquared();
                     if (b) {
                         if (method21698 > 1.0) {
                             final Class7005 method21699 = this.field2391.method6987(new Class8478(new Vec3d(this.field2392, this.field2393, this.field2394), this.method1934(), Class2040.field11632, Class2191.field13326, this));
@@ -134,7 +135,7 @@ public class Class424 extends Entity
                     }
                     else {
                         final Class7096 method21700 = this.field2391.method6701(method21697);
-                        this.method1936(this.method1935().method16751(0.7, -0.5, 0.7));
+                        this.method1936(this.method1935().mul(0.7, -0.5, 0.7));
                         if (method21700.method21696() != Class7521.field29264) {
                             this.method1652();
                             if (this.field2576) {
@@ -198,7 +199,7 @@ public class Class424 extends Entity
                     }
                 }
             }
-            this.method1936(this.method1935().method16748(0.98));
+            this.method1936(this.method1935().scale(0.98));
         }
         else {
             this.method1652();

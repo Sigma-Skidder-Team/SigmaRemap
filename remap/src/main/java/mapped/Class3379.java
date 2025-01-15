@@ -356,7 +356,7 @@ public class Class3379 extends Class3167
     public static float[] method10787(final Entity class399) {
         final double x = class399.field2395 - Class3379.field15514.field4684.field2395;
         final double y = class399.field2397 - Class3379.field15514.field4684.field2397;
-        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -(float)(-(Math.atan2(Class3379.field15514.field4684.field2396 + Class3379.field15514.field4684.method1892() - (class399.field2396 + class399.method1892()), MathHelper.method35641(x * x + y * y)) * 180.0 / 3.141592653589793)) };
+        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -(float)(-(Math.atan2(Class3379.field15514.field4684.field2396 + Class3379.field15514.field4684.method1892() - (class399.field2396 + class399.method1892()), MathHelper.sqrt(x * x + y * y)) * 180.0 / 3.141592653589793)) };
     }
     
     public static float method10788(final float n, final double n2, final double n3) {
@@ -386,6 +386,6 @@ public class Class3379 extends Class3167
     public static float method10790(final float n, final Entity class399, final double n2) {
         final double n3 = class399.field2395 - Class3379.field15514.field4684.field2395;
         final double n4 = class399.field2397 - Class3379.field15514.field4684.field2397;
-        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class3379.field15514.field4684.field2396) / MathHelper.method35641(n3 * n3 + n4 * n4))))) - 2.5f;
+        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class3379.field15514.field4684.field2396) / MathHelper.sqrt(n3 * n3 + n4 * n4))))) - 2.5f;
     }
 }

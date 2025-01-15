@@ -35,7 +35,7 @@ public class Class417 extends Class416
                 this.method1900(this.field2527, method21452);
             }
             final boolean method21453 = this.field2391.method6765().method31216(Class8878.field37316);
-            this.field2391.method6723(null, this.method1938(), this.method1941(), this.method1945(), (float)this.field2525, method21453, method21453 ? Class2196.field13367 : Class2196.field13365);
+            this.field2391.method6723(null, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field2525, method21453, method21453 ? Class2196.field13367 : Class2196.field13365);
             this.method1652();
         }
     }

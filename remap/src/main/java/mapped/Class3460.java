@@ -46,7 +46,7 @@ public class Class3460<T extends Class776> extends Class3446
     
     @Override
     public void method11016() {
-        if (this.field16314.method4150().method24714().method1082(this.field16314.method1934(), 1.414)) {
+        if (this.field16314.method4150().method24714().withinDistance(this.field16314.method1934(), 1.414)) {
             final List<Entity> method6739 = this.field16314.field2391.method6739((Class<? extends Entity>)Class427.class, this.field16314.method1886().method18495(4.0, 4.0, 4.0), (Predicate<? super Entity>)Class776.method4307());
             if (!method6739.isEmpty()) {
                 this.field16314.method4165((Class427)method6739.get(0));

@@ -52,7 +52,7 @@ public class Class1883 extends Class1882<Class364>
     }
     
     public Stream<Class377> method7200(final Predicate<Class8912> predicate, final BlockPos class354, final int n, final Class2045 class355) {
-        return this.method7199(predicate, class354, n, class355).filter(class357 -> class357.method1259().method1083(class356) <= n2);
+        return this.method7199(predicate, class354, n, class355).filter(class357 -> class357.method1259().distanceSq(class356) <= n2);
     }
     
     public Stream<Class377> method7201(final Predicate<Class8912> predicate, final Class7859 class7859, final Class2045 class7860) {
@@ -72,7 +72,7 @@ public class Class1883 extends Class1882<Class364>
     }
     
     public Optional<BlockPos> method7205(final Predicate<Class8912> predicate, final Predicate<BlockPos> predicate2, final BlockPos class354, final int n, final Class2045 class355) {
-        return this.method7200(predicate, class354, n, class355).map((Function<? super Class377, ? extends BlockPos>)Class377::method1259).sorted(Comparator.comparingDouble(class357 -> class357.method1083(class356))).filter(predicate2).findFirst();
+        return this.method7200(predicate, class354, n, class355).map((Function<? super Class377, ? extends BlockPos>)Class377::method1259).sorted(Comparator.comparingDouble(class357 -> class357.distanceSq(class356))).filter(predicate2).findFirst();
     }
     
     public Optional<BlockPos> method7206(final Predicate<Class8912> predicate, final Predicate<BlockPos> predicate2, final BlockPos class354, final int n) {

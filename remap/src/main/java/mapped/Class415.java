@@ -139,7 +139,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2025(final Class8321 class8321, final Class8061 class8322) {
-        final Class426 class8323 = new Class426(this.field2391, this.method1938(), this.method1941(), this.method1945());
+        final Class426 class8323 = new Class426(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ());
         class8323.method2097(this.method2019());
         class8323.method2081(3.0f);
         class8323.method2094(-0.5f);

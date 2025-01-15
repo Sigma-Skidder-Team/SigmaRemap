@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
@@ -58,22 +59,22 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
                 sin2 = -1.0;
             }
             final double cos2 = Math.cos(n3);
-            final double n4 = MathHelper.method35701(n, e.field2392, e.method1938()) - cos * 0.7 - sin * 0.5 * cos2;
-            final double n5 = MathHelper.method35701(n, e.field2393 + e.method1892() * 0.7, e.method1941() + e.method1892() * 0.7) - sin2 * 0.5 - 0.25;
-            final double n6 = MathHelper.method35701(n, e.field2394, e.method1945()) - sin * 0.7 + cos * 0.5 * cos2;
+            final double n4 = MathHelper.method35701(n, e.field2392, e.getPosX()) - cos * 0.7 - sin * 0.5 * cos2;
+            final double n5 = MathHelper.method35701(n, e.field2393 + e.method1892() * 0.7, e.getPosY() + e.method1892() * 0.7) - sin2 * 0.5 - 0.25;
+            final double n6 = MathHelper.method35701(n, e.field2394, e.getPosZ()) - sin * 0.7 + cos * 0.5 * cos2;
             final double n7 = MathHelper.method35700(n, t.field2951, t.field2952) * 0.017453292f + 1.5707963267948966;
             final double n8 = Math.cos(n7) * t.method1930() * 0.4;
             final double n9 = Math.sin(n7) * t.method1930() * 0.4;
-            final double n10 = MathHelper.method35701(n, t.field2392, t.method1938()) + n8;
-            final double method35701 = MathHelper.method35701(n, t.field2393, t.method1941());
-            final double n11 = MathHelper.method35701(n, t.field2394, t.method1945()) + n9;
+            final double n10 = MathHelper.method35701(n, t.field2392, t.getPosX()) + n8;
+            final double method35701 = MathHelper.method35701(n, t.field2393, t.getPosY());
+            final double n11 = MathHelper.method35701(n, t.field2394, t.getPosZ()) + n9;
             class7351.method22564(n8, -(1.6 - t.method1931()) * 0.5, n9);
             final float n12 = (float)(n4 - n10);
             final float n13 = (float)(n5 - method35701);
             final float n14 = (float)(n6 - n11);
             final Class4150 method35702 = class7352.method25214(Class6332.method18781());
-            final Class6789 method35703 = class7351.method22569().method32111();
-            final float n15 = MathHelper.method35694(n12 * n12 + n14 * n14) * 0.025f / 2.0f;
+            final Matrix4f method35703 = class7351.method22569().method32111();
+            final float n15 = MathHelper.fastInvSqrt(n12 * n12 + n14 * n14) * 0.025f / 2.0f;
             final float n16 = n14 * n15;
             final float n17 = n12 * n15;
             final int method35704 = this.method13954((T)t, n);
@@ -92,7 +93,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
         }
     }
     
-    public static void method14008(final Class4150 class4150, final Class6789 class4151, final float n, final float n2, final float n3, final int n4, final int n5, final int n6, final int n7, final float n8, final float n9, final float n10, final float n11) {
+    public static void method14008(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2, final float n3, final int n4, final int n5, final int n6, final int n7, final float n8, final float n9, final float n10, final float n11) {
         for (int i = 0; i < 24; ++i) {
             final float n12 = i / 23.0f;
             final int method1422 = Class392.method1422((int) MathHelper.method35700(n12, (float)n4, (float)n5), (int) MathHelper.method35700(n12, (float)n6, (float)n7));
@@ -101,7 +102,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
         }
     }
     
-    public static void method14009(final Class4150 class4150, final Class6789 class4151, final int n, final float n2, final float n3, final float n4, final float n5, final float n6, final int n7, final int n8, final boolean b, final float n9, final float n10) {
+    public static void method14009(final Class4150 class4150, final Matrix4f class4151, final int n, final float n2, final float n3, final float n4, final float n5, final float n6, final int n7, final int n8, final boolean b, final float n9, final float n10) {
         float n11 = 0.5f;
         float n12 = 0.4f;
         float n13 = 0.3f;

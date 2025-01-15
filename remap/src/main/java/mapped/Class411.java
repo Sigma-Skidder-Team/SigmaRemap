@@ -37,7 +37,7 @@ public class Class411 extends Class409
         if (b == 3) {
             final Class6909 method2017 = this.method2017();
             for (int i = 0; i < 8; ++i) {
-                this.field2391.method6709(method2017, this.method1938(), this.method1941(), this.method1945(), 0.0, 0.0, 0.0);
+                this.field2391.method6709(method2017, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

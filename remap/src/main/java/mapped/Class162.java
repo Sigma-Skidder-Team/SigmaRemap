@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Set;
 
 public class Class162 implements Class122
@@ -27,7 +29,7 @@ public class Class162 implements Class122
         final BlockPos class7531 = class7529.method23579(Class6683.field26367);
         if (class7531 != null) {
             if (class7530 != null) {
-                if (this.field472.method32837(class7529.method23588(), new Class5487(class7531), class7530)) {
+                if (this.field472.method32837(class7529.method23588(), new Vec3d(class7531), class7530)) {
                     return true;
                 }
             }

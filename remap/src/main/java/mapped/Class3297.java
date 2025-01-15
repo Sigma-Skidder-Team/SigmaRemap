@@ -27,15 +27,15 @@ public class Class3297 extends Class3167
                     if (Class3297.field15514.field4684.field2970 != 0.0f || Class3297.field15514.field4684.field2968 != 0.0f) {
                         if (this.method9883("AutoJump")) {
                             Class3297.field15514.field4684.method2725();
-                            class5717.method16975(Class3297.field15514.field4684.method1935().field22771);
+                            class5717.method16975(Class3297.field15514.field4684.method1935().y);
                         }
                     }
                 }
             }
-            final double field22771 = class5717.method16978().field22771;
-            class5717.method16978().field22771 = 0.0;
-            final double method16752 = class5717.method16978().method16752();
-            class5717.method16978().field22771 = field22771;
+            final double field22771 = class5717.method16978().y;
+            class5717.method16978().y = 0.0;
+            final double method16752 = class5717.method16978().length();
+            class5717.method16978().y = field22771;
             this.field15859 = method16752;
             final float n = Class7482.method23143()[1];
             final float n2 = Class7482.method23143()[2];
@@ -51,8 +51,8 @@ public class Class3297 extends Class3167
             this.field15859 *= this.field15863;
             class5717.method16973(n * this.field15859 * cos + n2 * this.field15859 * sin + this.field15860);
             class5717.method16977(n * this.field15859 * sin - n2 * this.field15859 * cos + this.field15861);
-            Class3297.field15514.field4684.method1935().field22770 = class5717.method16972();
-            Class3297.field15514.field4684.method1935().field22771 = class5717.method16974();
+            Class3297.field15514.field4684.method1935().x = class5717.method16972();
+            Class3297.field15514.field4684.method1935().y = class5717.method16974();
             if (this.field15860 != 0.0f || this.field15861 != 0.0f) {
                 this.field15860 *= (float)0.85;
                 this.field15861 *= (float)0.85;

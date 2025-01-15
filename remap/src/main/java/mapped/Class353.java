@@ -34,7 +34,7 @@ public class Class353 extends Vec3i
     }
     
     public static Class353 method1091(final Entity class399) {
-        return new Class353(method1095(MathHelper.floor(class399.method1938())), method1095(MathHelper.floor(class399.method1941())), method1095(MathHelper.floor(class399.method1945())));
+        return new Class353(method1095(MathHelper.floor(class399.getPosX())), method1095(MathHelper.floor(class399.getPosY())), method1095(MathHelper.floor(class399.getPosZ())));
     }
     
     public static Class353 method1092(final long n) {

@@ -46,7 +46,7 @@ public class Class3349 extends Class3167
     @Override
     public void method9897() {
         this.field15959 = false;
-        if (Class3349.field15514.field4684.method1935().field22771 > 0.33) {
+        if (Class3349.field15514.field4684.method1935().y > 0.33) {
             Class6430.method19155(-0.43 + Class7482.method23140() * 0.1);
             Class7482.method23151(Class7482.method23136());
         }
@@ -65,7 +65,7 @@ public class Class3349 extends Class3167
             case "NCP": {
                 if (Class7482.method23148() && Class3349.field15514.field4684.field2404) {
                     Class3349.field15514.field4684.method2725();
-                    class5717.method16975(Class3349.field15514.field4684.method1935().field22771);
+                    class5717.method16975(Class3349.field15514.field4684.method1935().y);
                     Class7482.method23149(class5717, 0.461);
                     this.field15959 = true;
                     Class3349.field15514.field4684.field2420 = 0.5f;
@@ -104,7 +104,7 @@ public class Class3349 extends Class3167
                     this.field15961 = this.field15962 - 0.66 * (this.field15962 - Class7482.method23136());
                 }
                 else {
-                    if (Class3349.field15514.field4683.method6981(Class3349.field15514.field4684, Class3349.field15514.field4684.field2403.method18499(0.0, Class3349.field15514.field4684.method1935().field22771, 0.0)).count() > 0L || Class3349.field15514.field4684.field2406) {
+                    if (Class3349.field15514.field4683.method6981(Class3349.field15514.field4684, Class3349.field15514.field4684.field2403.method18499(0.0, Class3349.field15514.field4684.method1935().y, 0.0)).count() > 0L || Class3349.field15514.field4684.field2406) {
                         this.field15963 = 1;
                     }
                     this.field15961 = this.field15962 - this.field15962 / 159.0;

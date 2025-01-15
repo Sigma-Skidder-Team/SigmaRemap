@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Date;
 
@@ -33,7 +34,7 @@ public class Class8845
         final double x = method33307[0] - n;
         final double y = class511.field2396 - Class8845.field37174.field4684.method1892() - 0.019999999552965164 + class511.method1892() - n2;
         final double y2 = method33307[2] - n3;
-        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
+        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     public static float[] method30912(final Entity class399) {
@@ -47,14 +48,14 @@ public class Class8845
         final double x = n4 - n;
         final double y = n6 - Class8845.field37174.field4684.method1892() - 0.019999999552965164 + class399.method1892() - n2;
         final double y2 = n5 - n3;
-        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
+        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     public static float[] method30914(final Class511 class511, final double n, final double n2, final double n3) {
         final double x = class511.field2395 - n + 0.25 - Math.random() * 0.5;
         final double y = class511.field2396 - Class8845.field37174.field4684.method1892() - 0.019999999552965164 + class511.method1892() - n2 - Math.random();
         final double y2 = class511.field2397 - n3 + 0.25 - Math.random() * 0.5;
-        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
+        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     public static float[] method30915(final Class511 class511, final double n, final double n2, final double n3) {
@@ -64,7 +65,7 @@ public class Class8845
         final double x = class511.field2395 - n + n4;
         final double y = class511.field2396 - n2 - Class8845.field37174.field4684.method1892() + class511.method1892() - 0.019999999552965164 - 0.6000000238418579 - n5;
         final double y2 = class511.field2397 - n3 + n6;
-        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
+        return new float[] { method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     public static float[] method30916(final Class511 class511, final double n, final double n2, final double n3, final float n4) {
@@ -79,7 +80,7 @@ public class Class8845
             final double x = class511.field2395 - n + n5;
             final double y = class511.field2396 - n2 - Class8845.field37174.field4684.method1892() + class511.method1892() - 0.019999999552965164 - 0.6000000238418579 - n6;
             final double y2 = class511.field2397 - n3 + n7;
-            final double x2 = MathHelper.method35641(x * x + y2 * y2);
+            final double x2 = MathHelper.sqrt(x * x + y2 * y2);
             Class8845.field37175 = method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
             Class8845.field37176 = method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
             return new float[] { Class8845.field37175, Class8845.field37176 };
@@ -103,13 +104,13 @@ public class Class8845
     public static float[] method30919(final double n, final double n2, final double n3) {
         final double x = n - Class8845.field37174.field4684.field2395;
         final double y = n2 - Class8845.field37174.field4684.field2397;
-        return new float[] { (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f, (float)(-(Math.atan2(n3 - Class8845.field37174.field4684.field2396 - 1.2, MathHelper.method35641(x * x + y * y)) * 180.0 / 3.141592653589793)) };
+        return new float[] { (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f, (float)(-(Math.atan2(n3 - Class8845.field37174.field4684.field2396 - 1.2, MathHelper.sqrt(x * x + y * y)) * 180.0 / 3.141592653589793)) };
     }
     
     public static float[] method30920(final Vec3d class5487, final Vec3d class5488) {
-        final double x = class5488.field22770 - class5487.field22770;
-        final double y = class5488.field22772 - class5487.field22772;
-        return new float[] { method30910(0.0f, (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(class5488.field22771 - class5487.field22771, MathHelper.method35641(x * x + y * y)) * 180.0 / 3.141592653589793)), 360.0f) };
+        final double x = class5488.x - class5487.x;
+        final double y = class5488.z - class5487.z;
+        return new float[] { method30910(0.0f, (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(class5488.y - class5487.y, MathHelper.sqrt(x * x + y * y)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     public static float[] method30921(final Class511 class511) {
@@ -128,7 +129,7 @@ public class Class8845
         final double n12 = n10 / 0.8 * n8 * (method1815 ? 1.25 : 1.0);
         final double x = n4 + n11 - n;
         final double y = n5 + n12 - n2;
-        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -((float)(-(Math.atan2(n3 + Class8845.field37174.field4684.method1892() - (n6 + class511.method1931()), MathHelper.method35641(x * x + y * y)) * 180.0 / 3.141592653589793)) + Class8845.field37174.field4684.method1732(class511) * 0.14f) };
+        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -((float)(-(Math.atan2(n3 + Class8845.field37174.field4684.method1892() - (n6 + class511.method1931()), MathHelper.sqrt(x * x + y * y)) * 180.0 / 3.141592653589793)) + Class8845.field37174.field4684.method1732(class511) * 0.14f) };
     }
     
     public static Class7988 method30922(final Entity class399) {
@@ -159,7 +160,7 @@ public class Class8845
             final double x = field2395 - Class8845.field37174.field4684.field2395;
             final double y = n3 - Class8845.field37174.field4684.method1892() - 0.019999999552965164 - Class8845.field37174.field4684.field2396;
             final double y2 = field2396 - Class8845.field37174.field4684.field2397;
-            final double x2 = MathHelper.method35641(x * x + y2 * y2);
+            final double x2 = MathHelper.sqrt(x * x + y2 * y2);
             final float method30910 = method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
             final float method30911 = method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
             if (method30923(new Vec3d(field2395, n3, field2396))) {
@@ -204,7 +205,7 @@ public class Class8845
                 final double x3 = n4 - Class8845.field37174.field4684.field2395;
                 final double y3 = n6 - Class8845.field37174.field4684.method1892() - 0.02 - Class8845.field37174.field4684.field2396;
                 final double y4 = n5 - Class8845.field37174.field4684.field2397;
-                final double x4 = MathHelper.method35641(x3 * x3 + y4 * y4);
+                final double x4 = MathHelper.sqrt(x3 * x3 + y4 * y4);
                 final float method30912 = method30910(Class8845.field37174.field4684.field2399, (float)(Math.atan2(y4, x3) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
                 final float method30913 = method30910(Class8845.field37174.field4684.field2400, (float)(-(Math.atan2(y3, x4) * 180.0 / 3.141592653589793)), 360.0f);
                 if (method30923(new Vec3d(n4, n6, n5))) {
@@ -242,7 +243,7 @@ public class Class8845
     public static float method30927(final float n, final Entity class399, final double n2) {
         final double n3 = class399.field2395 - Class8845.field37174.field4684.field2395;
         final double n4 = class399.field2397 - Class8845.field37174.field4684.field2397;
-        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class8845.field37174.field4684.field2396) / MathHelper.method35641(n3 * n3 + n4 * n4))))) - 2.5f;
+        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class8845.field37174.field4684.field2396) / MathHelper.sqrt(n3 * n3 + n4 * n4))))) - 2.5f;
     }
     
     static {

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.dispenser.IPosition;
 import net.minecraft.util.Direction;
 
 public class Class6404 implements Class6423
@@ -23,10 +24,10 @@ public class Class6404 implements Class6423
         return class5492;
     }
     
-    public static void method19091(final Class1847 class1847, final Class8321 class1848, final int n, final Direction class1849, final Class5488 class1850) {
-        final double method16760 = class1850.method16760();
-        final double method16761 = class1850.method16761();
-        final double method16762 = class1850.method16762();
+    public static void method19091(final Class1847 class1847, final Class8321 class1848, final int n, final Direction class1849, final IPosition class1850) {
+        final double method16760 = class1850.getX();
+        final double method16761 = class1850.getY();
+        final double method16762 = class1850.getZ();
         double n2;
         if (class1849.getAxis() != Axis.Y) {
             n2 = method16761 - 0.15625;

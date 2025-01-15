@@ -47,9 +47,9 @@ public class Class3304 extends Class3167
             while (iterator2.hasNext()) {
                 final Class7859 class5741 = iterator2.next();
                 if (class5741 != null) {
-                    final double n = class5741.method25426() - Class3304.field15514.field4644.method5833().method18161().method16760();
-                    final double n2 = class5741.method25427() - Class3304.field15514.field4644.method5833().method18161().method16762();
-                    final double n3 = -Class3304.field15514.field4644.method5833().method18161().method16761();
+                    final double n = class5741.method25426() - Class3304.field15514.field4644.method5833().method18161().getX();
+                    final double n2 = class5741.method25427() - Class3304.field15514.field4644.method5833().method18161().getZ();
+                    final double n3 = -Class3304.field15514.field4644.method5833().method18161().getY();
                     GL11.glDisable(2929);
                     final Class7644 class5742 = new Class7644(n, n3, n2, n + 16.0, n3, n2 + 16.0);
                     Class8154.method26909(class5742, Class6430.method19118(Class265.field1285.field1292, 0.1f));

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 
 public interface Class5783
@@ -27,7 +29,7 @@ public interface Class5783
     Class7193<? extends Class5783> method17253();
     
     @Nullable
-    Class5487 method17254();
+    Vec3d method17254();
     
     float method17255(final Class7929 p0, final float p1);
 }

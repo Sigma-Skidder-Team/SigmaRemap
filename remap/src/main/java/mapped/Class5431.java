@@ -7,6 +7,7 @@ package mapped;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5431 extends Class5419<Class787>
 {

@@ -38,7 +38,7 @@ public class Class3337 extends Class3167
                             GL11.glLineWidth(2.0f);
                             GL11.glColor4f((float)(color.getRed() / 255), (float)(color.getGreen() / 255), (float)(color.getBlue() / 255), 1.0f);
                             final Class9407 method10562 = this.method10562(class5739, class5740);
-                            GL11.glTranslated(method10562.method34993() - Class3337.field15514.method5306().field35906.method18161().field22770, method10562.method34994() - Class3337.field15514.method5306().field35906.method18161().field22771, method10562.method34995() - Class3337.field15514.method5306().field35906.method18161().field22772);
+                            GL11.glTranslated(method10562.method34993() - Class3337.field15514.method5306().field35906.method18161().x, method10562.method34994() - Class3337.field15514.method5306().field35906.method18161().y, method10562.method34995() - Class3337.field15514.method5306().field35906.method18161().z);
                             final float n = class5740.field2952 + (class5740.field2951 - class5740.field2952) * Class3337.field15514.method5314();
                             GL11.glRotatef(-n, 0.0f, 1.0f, 0.0f);
                             GL11.glTranslated(0.0, 0.0, class5740.method1809() ? -0.235 : 0.0);

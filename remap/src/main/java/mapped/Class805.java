@@ -84,11 +84,11 @@ public class Class805 extends Class804
             }
         }
         if (method2715.method27622() == Class7739.field31426 && !this.method2625()) {
-            this.field2391.method6709(Class8432.field34619, this.method1938(), this.method1942(0.5), this.method1945(), 0.0, 0.0, 0.0);
+            this.field2391.method6709(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
             if (!this.field2391.field10067) {
                 this.method1652();
                 final Class804 class516 = Class7499.field28968.method23371(this.field2391);
-                class516.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+                class516.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
                 class516.method2665(this.method2664());
                 class516.field2951 = this.field2951;
                 if (this.method1874()) {
@@ -101,7 +101,7 @@ public class Class805 extends Class804
                 class516.method1851(this.method1850());
                 this.field2391.method6886(class516);
                 for (int i = 0; i < 5; ++i) {
-                    this.field2391.method6886(new Class427(this.field2391, this.method1938(), this.method1942(1.0), this.method1945(), new Class8321(Class1983.method7995(this.method4708()).method21696())));
+                    this.field2391.method6886(new Class427(this.field2391, this.getPosX(), this.method1942(1.0), this.getPosZ(), new Class8321(Class1983.method7995(this.method4708()).method21696())));
                 }
                 method2715.method27636(1, class512, class518 -> class518.method2795(class517));
                 this.method1695(Class8520.field35373, 1.0f, 1.0f);
@@ -116,7 +116,7 @@ public class Class805 extends Class804
                         method2715.method27693(1);
                     }
                     for (int j = 0; j < 4; ++j) {
-                        this.field2391.method6709(Class8432.field34612, this.method1938() + this.field2423.nextFloat() / 2.0f, this.method1942(0.5), this.method1945() + this.field2423.nextFloat() / 2.0f, 0.0, this.field2423.nextFloat() / 5.0f, 0.0);
+                        this.field2391.method6709(Class8432.field34612, this.getPosX() + this.field2423.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.field2423.nextFloat() / 2.0f, 0.0, this.field2423.nextFloat() / 5.0f, 0.0);
                     }
                     this.field4328 = (Class5328)method2716.getLeft();
                     this.field4329 = (int)method2716.getRight();
@@ -124,7 +124,7 @@ public class Class805 extends Class804
                 }
                 else {
                     for (int k = 0; k < 2; ++k) {
-                        this.field2391.method6709(Class8432.field34639, this.method1938() + this.field2423.nextFloat() / 2.0f, this.method1942(0.5), this.method1945() + this.field2423.nextFloat() / 2.0f, 0.0, this.field2423.nextFloat() / 5.0f, 0.0);
+                        this.field2391.method6709(Class8432.field34639, this.getPosX() + this.field2423.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.field2423.nextFloat() / 2.0f, 0.0, this.field2423.nextFloat() / 5.0f, 0.0);
                     }
                 }
             }

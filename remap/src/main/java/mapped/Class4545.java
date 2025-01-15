@@ -162,7 +162,7 @@ public class Class4545 extends Class4535<Class5141>
     }
     
     private double method13549(final int n, final int n2, final BlockPos class354, final int n3, final Random random) {
-        return 10.0f * MathHelper.method35653(random.nextFloat(), 0.2f, 0.8f) / n3 + Math.pow(n - class354.getX(), 2.0) + Math.pow(n2 - class354.getZ(), 2.0) - Math.pow(n3, 2.0);
+        return 10.0f * MathHelper.clamp(random.nextFloat(), 0.2f, 0.8f) / n3 + Math.pow(n - class354.getX(), 2.0) + Math.pow(n2 - class354.getZ(), 2.0) - Math.pow(n3, 2.0);
     }
     
     private double method13550(final int n, final int n2, final BlockPos class354, final int n3, final int n4, final double n5) {

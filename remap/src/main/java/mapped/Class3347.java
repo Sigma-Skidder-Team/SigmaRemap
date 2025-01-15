@@ -21,8 +21,8 @@ public class Class3347 extends Class3167
     @Override
     public void method9879() {
         this.field15952 = 7;
-        final double field22770 = Class3347.field15514.field4684.method1935().field22770;
-        final double field22771 = Class3347.field15514.field4684.method1935().field22772;
+        final double field22770 = Class3347.field15514.field4684.method1935().x;
+        final double field22771 = Class3347.field15514.field4684.method1935().z;
         this.field15954 = Math.sqrt(field22770 * field22770 + field22771 * field22771);
         this.field15953 = 0;
     }
@@ -145,9 +145,9 @@ public class Class3347 extends Class3167
                             if (((this.method9883("Auto Jump") || Class3347.field15514.field4684.field2967) && Class6430.method19114()) || Class3347.field15514.field4648.field23439.method1056()) {
                                 this.field15951 = 0;
                                 Class3347.field15514.field4684.method2725();
-                                class5717.method16973(Class3347.field15514.field4684.method1935().field22770);
-                                class5717.method16975(Class3347.field15514.field4684.method1935().field22771);
-                                class5717.method16977(Class3347.field15514.field4684.method1935().field22772);
+                                class5717.method16973(Class3347.field15514.field4684.method1935().x);
+                                class5717.method16975(Class3347.field15514.field4684.method1935().y);
+                                class5717.method16977(Class3347.field15514.field4684.method1935().z);
                             }
                         }
                         else {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3220 extends Class3167
 {
@@ -68,7 +69,7 @@ public class Class3220 extends Class3167
                         if (this.method9883("AutoJump")) {
                             if (Class6430.method19114()) {
                                 Class3220.field15514.field4684.method2725();
-                                class5717.method16975(Class3220.field15514.field4684.method1935().field22771);
+                                class5717.method16975(Class3220.field15514.field4684.method1935().y);
                             }
                         }
                         if (class5717.method16974() == 0.4199998) {
@@ -82,7 +83,7 @@ public class Class3220 extends Class3167
                             Class7482.method23149(class5717, 0.2);
                             return;
                         }
-                        Class3220.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Class5487(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3220.field15514.field4684).method1134(0, -1, 0), false)));
+                        Class3220.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3220.field15514.field4684).method1134(0, -1, 0), false)));
                         this.field15678 += field15678 / 4.0;
                         if (Class3220.field15514.field4684.field2405) {
                             this.field15678 /= 2.0;

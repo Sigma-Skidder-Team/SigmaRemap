@@ -16,6 +16,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7555 implements ArgumentType<Class5346>
 {
@@ -36,7 +37,7 @@ public class Class7555 implements ArgumentType<Class5346>
         return new Class7555(b);
     }
     
-    public static Class5487 method23721(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+    public static Vec3d method23721(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         return ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16504((Class7492)commandContext.getSource());
     }
     

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 
 public class Class3242 extends Class3167
@@ -57,10 +58,10 @@ public class Class3242 extends Class3167
                 continue;
             }
             GL11.glPushMatrix();
-            final Class5487 method9886 = Class3242.field15514.field4644.method5833().method18161();
-            final double method9887 = method9886.method16760();
-            final double method9888 = method9886.method16761();
-            final double method9889 = method9886.method16762();
+            final Vec3d method9886 = Class3242.field15514.field4644.method5833().method18161();
+            final double method9887 = method9886.getX();
+            final double method9888 = method9886.getY();
+            final double method9889 = method9886.getZ();
             final Class7351 class400 = new Class7351();
             final boolean field23420 = Class3242.field15514.field4648.field23420;
             Class8726.method30002();
@@ -96,7 +97,7 @@ public class Class3242 extends Class3167
     }
     
     public void method10242(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
-        Class3242.field15514.field4636.field9290.method28706(class399, MathHelper.method35701(n4, class399.field2417, class399.method1938()) - n, MathHelper.method35701(n4, class399.field2418, class399.method1941()) - n2, MathHelper.method35701(n4, class399.field2419, class399.method1945()) - n3, MathHelper.method35700(n4, class399.field2401, class399.field2399), n4, class400, class401, 255);
+        Class3242.field15514.field4636.field9290.method28706(class399, MathHelper.method35701(n4, class399.field2417, class399.getPosX()) - n, MathHelper.method35701(n4, class399.field2418, class399.getPosY()) - n2, MathHelper.method35701(n4, class399.field2419, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.field2401, class399.field2399), n4, class400, class401, 255);
     }
     
     @Class6753

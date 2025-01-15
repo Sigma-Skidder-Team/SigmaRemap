@@ -17,6 +17,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class9051
 {
@@ -27,7 +28,7 @@ public class Class9051
     private static int method32547(final Class7492 class7492, final Collection<? extends Entity> collection, final Entity class7493) {
         final Iterator<? extends Entity> iterator = collection.iterator();
         while (iterator.hasNext()) {
-            method32549(class7492, (Entity)iterator.next(), (Class1849)class7493.field2391, class7493.method1938(), class7493.method1941(), class7493.method1945(), EnumSet.noneOf(Class2143.class), class7493.field2399, class7493.field2400, null);
+            method32549(class7492, (Entity)iterator.next(), (Class1849)class7493.field2391, class7493.getPosX(), class7493.getPosY(), class7493.getPosZ(), EnumSet.noneOf(Class2143.class), class7493.field2399, class7493.field2400, null);
         }
         if (collection.size() != 1) {
             class7492.method23257(new Class2259("commands.teleport.success.entity.multiple", new Object[] { collection.size(), class7493.method1871() }), true);
@@ -40,7 +41,7 @@ public class Class9051
     
     private static int method32548(final Class7492 class7492, final Collection<? extends Entity> collection, final Class1849 class7493, final Class5346 class7494, final Class5346 class7495, final Class8140 class7496) throws CommandSyntaxException {
         final Vec3d method16504 = class7494.method16504(class7492);
-        final Class9544 class7497 = (class7495 != null) ? class7495.method16505(class7492) : null;
+        final Vec2f class7497 = (class7495 != null) ? class7495.method16505(class7492) : null;
         final EnumSet<Class2143> none = EnumSet.noneOf(Class2143.class);
         if (class7494.method16507()) {
             none.add(Class2143.field12617);
@@ -65,17 +66,17 @@ public class Class9051
         }
         for (final Entity class7498 : collection) {
             if (class7495 != null) {
-                method32549(class7492, class7498, class7493, method16504.field22770, method16504.field22771, method16504.field22772, none, class7497.field41092, class7497.field41091, class7496);
+                method32549(class7492, class7498, class7493, method16504.x, method16504.y, method16504.z, none, class7497.y, class7497.x, class7496);
             }
             else {
-                method32549(class7492, class7498, class7493, method16504.field22770, method16504.field22771, method16504.field22772, none, class7498.field2399, class7498.field2400, class7496);
+                method32549(class7492, class7498, class7493, method16504.x, method16504.y, method16504.z, none, class7498.field2399, class7498.field2400, class7496);
             }
         }
         if (collection.size() != 1) {
-            class7492.method23257(new Class2259("commands.teleport.success.location.multiple", new Object[] { collection.size(), method16504.field22770, method16504.field22771, method16504.field22772 }), true);
+            class7492.method23257(new Class2259("commands.teleport.success.location.multiple", new Object[] { collection.size(), method16504.x, method16504.y, method16504.z}), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.teleport.success.location.single", new Object[] { ((Entity)collection.iterator().next()).method1871(), method16504.field22770, method16504.field22771, method16504.field22772 }), true);
+            class7492.method23257(new Class2259("commands.teleport.success.location.single", new Object[] { ((Entity)collection.iterator().next()).method1871(), method16504.x, method16504.y, method16504.z}), true);
         }
         return collection.size();
     }
@@ -83,7 +84,7 @@ public class Class9051
     private static void method32549(final Class7492 class7492, Entity method23371, final Class1849 class7493, final double n, final double n2, final double n3, final Set<Class2143> set, final float n4, final float n5, final Class8140 class7494) {
         if (!(method23371 instanceof Class513)) {
             final float method23372 = MathHelper.method35668(n4);
-            final float method23373 = MathHelper.method35653(MathHelper.method35668(n5), -90.0f, 90.0f);
+            final float method23373 = MathHelper.clamp(MathHelper.method35668(n5), -90.0f, 90.0f);
             if (class7493 != method23371.field2391) {
                 method23371.method1640();
                 method23371.field2452 = class7493.field10063.method20487();
@@ -121,7 +122,7 @@ public class Class9051
             class7494.method26828(class7492, method23371);
         }
         if (!(method23371 instanceof Class511) || !((Class511)method23371).method2773()) {
-            method23371.method1936(method23371.method1935().method16751(1.0, 0.0, 1.0));
+            method23371.method1936(method23371.method1935().mul(1.0, 0.0, 1.0));
             method23371.field2404 = true;
         }
     }

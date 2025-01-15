@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.AbstractList;
 import javax.annotation.Nullable;
@@ -59,9 +60,9 @@ public class Class857 extends Class511
     
     @Override
     public void method1881() {
-        final double method1938 = this.method1938();
-        final double method1939 = this.method1941();
-        final double method1940 = this.method1945();
+        final double method1938 = this.getPosX();
+        final double method1939 = this.getPosY();
+        final double method1940 = this.getPosZ();
         super.method1881();
         this.method1656(method1938, method1939, method1940);
     }
@@ -329,7 +330,7 @@ public class Class857 extends Class511
     private Class2215 method5151(final Vec3d class5487) {
         Class2215 class5488 = Class2215.field13600;
         final boolean method5160 = this.method5160();
-        final double n = method5160 ? (class5487.field22771 * 2.0) : class5487.field22771;
+        final double n = method5160 ? (class5487.y * 2.0) : class5487.y;
         final Class2215 field13602 = Class2215.field13602;
         if (n >= 0.1) {
             if (n < 0.1 + (method5160 ? 0.8 : 0.45)) {
@@ -470,7 +471,7 @@ public class Class857 extends Class511
             super.method1798(b);
         }
         else if (this.field2391.field10067) {
-            this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), Class8520.field34989, this.method1922(), 0.3f, 1.0f, false);
+            this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34989, this.method1922(), 0.3f, 1.0f, false);
             this.field4582 = this.field2391.method6754();
         }
     }
@@ -487,7 +488,7 @@ public class Class857 extends Class511
     
     private void method5154() {
         if (this.field2391 instanceof Class1849) {
-            ((Class1849)this.field2391).method6911(new Class6911(Class8432.field34600, Class7521.field29160.method11878()), this.method1938(), this.method1942(0.6666666666666666), this.method1945(), 10, this.method1930() / 4.0f, this.method1931() / 4.0f, this.method1930() / 4.0f, 0.05);
+            ((Class1849)this.field2391).method6911(new Class6911(Class8432.field34600, Class7521.field29160.method11878()), this.getPosX(), this.method1942(0.6666666666666666), this.getPosZ(), 10, this.method1930() / 4.0f, this.method1931() / 4.0f, this.method1930() / 4.0f, 0.05);
         }
     }
     
@@ -527,7 +528,7 @@ public class Class857 extends Class511
     }
     
     private void method5158() {
-        this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field34987, this.method1922(), 1.0f, 1.0f);
+        this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34987, this.method1922(), 1.0f, 1.0f);
     }
     
     @Override

@@ -10,8 +10,11 @@ import java.util.regex.Matcher;
 import java.util.IdentityHashMap;
 import java.nio.charset.StandardCharsets;
 
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.BufferUtils;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
@@ -1749,7 +1752,7 @@ public class Class9216
                 Class9216.field39295 = Class8990.method32053();
             }
             final Class7351 class9025 = new Class7351();
-            class9025.method22566(Vector3f.field38718.rotationDegrees(-90.0f));
+            class9025.method22566(Vector3f.YP.rotationDegrees(-90.0f));
             method33810(class9025);
             method33811(class9025);
             Class9216.field39034 = true;
@@ -3038,7 +3041,7 @@ public class Class9216
             final Entity method18166 = class6092.method18166();
             if (method18166 != null) {
                 Class9216.field39051 = (method18166 instanceof Class511 && ((Class511)method18166).method2783());
-                Class9216.field39099 = (float)class6092.method18161().method16761();
+                Class9216.field39099 = (float)class6092.method18161().getY();
                 Class9216.field39096 = Class9216.field39031.method5306().method28695(method18166, n);
                 final float n4 = (float)Math.exp(Math.log(0.5) * (Class9216.field39084 * 0.01f) / Class9216.field39093);
                 Class9216.field39097 = Class9216.field39097 * n4 + (Class9216.field39096 & 0xFFFF) * (1.0f - n4);
@@ -3066,9 +3069,9 @@ public class Class9216
                     }
                 }
                 final Vec3d method18168 = Class8763.method30363(field39032.method6843(method18166.method1894(), n), field39032, method18166, n);
-                Class9216.field39072 = (float)method18168.field22770;
-                Class9216.field39073 = (float)method18168.field22771;
-                Class9216.field39074 = (float)method18168.field22772;
+                Class9216.field39072 = (float)method18168.x;
+                Class9216.field39073 = (float)method18168.y;
+                Class9216.field39074 = (float)method18168.z;
             }
         }
         Class9216.field39045 = true;
@@ -3285,9 +3288,9 @@ public class Class9216
     public static void method33806(final Class7351 class7351, final Class6092 class7352, final float n) {
         final Entity method18166 = class7352.method18166();
         final Vec3d method18167 = class7352.method18161();
-        final double field22770 = method18167.field22770;
-        final double field22771 = method18167.field22771;
-        final double field22772 = method18167.field22772;
+        final double field22770 = method18167.x;
+        final double field22771 = method18167.y;
+        final double field22772 = method18167.z;
         method33807(method18166);
         Class9216.field39217 = field22770 - Class9216.field39220;
         Class9216.field39218 = field22771;
@@ -3296,7 +3299,7 @@ public class Class9216
         Class8425.method28142((FloatBuffer)Class9216.field39400.position(), (FloatBuffer)Class9216.field39399.position(), Class9216.field39392, Class9216.field39391);
         Class9216.field39399.position();
         Class9216.field39400.position();
-        final Class6789 class7353 = new Class6789(class7351.method22569().method32111());
+        final Matrix4f class7353 = new Matrix4f(class7351.method22569().method32111());
         class7353.method20750();
         class7353.method20768(Class9216.field39068);
         Class9216.field39401.position();
@@ -3323,17 +3326,17 @@ public class Class9216
             Class9216.field39221 = 0;
         }
         else {
-            Class9216.field39220 = (int)class399.method1938() / 1000 * 1000;
-            Class9216.field39221 = (int)class399.method1945() / 1000 * 1000;
+            Class9216.field39220 = (int)class399.getPosX() / 1000 * 1000;
+            Class9216.field39221 = (int)class399.getPosZ() / 1000 * 1000;
         }
     }
     
     public static void method33809(final Class7351 class7351, final Class6092 class7352, final float n) {
         final Entity method18166 = class7352.method18166();
         final Vec3d method18167 = class7352.method18161();
-        final double field22770 = method18167.field22770;
-        final double field22771 = method18167.field22771;
-        final double field22772 = method18167.field22772;
+        final double field22770 = method18167.x;
+        final double field22771 = method18167.y;
+        final double field22772 = method18167.z;
         method33807(method18166);
         Class9216.field39217 = field22770 - Class9216.field39220;
         Class9216.field39218 = field22771;
@@ -3345,7 +3348,7 @@ public class Class9216
             GL32.glOrtho((double)(-Class9216.field39229), (double)Class9216.field39229, (double)(-Class9216.field39229), (double)Class9216.field39229, 0.05000000074505806, 256.0);
         }
         else {
-            Class8933.method31645(Class6789.method20755(Class9216.field39228, Class9216.field39224 / (float)Class9216.field39225, 0.05f, 256.0f));
+            Class8933.method31645(Matrix4f.method20755(Class9216.field39228, Class9216.field39224 / (float)Class9216.field39225, 0.05f, 256.0f));
         }
         class7351.method22564(0.0, 0.0, -100.0);
         class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
@@ -3411,7 +3414,7 @@ public class Class9216
     }
     
     public static void method33811(final Class7351 class7351) {
-        final Class6789 class7352 = new Class6789(class7351.method22569().method32111());
+        final Matrix4f class7352 = new Matrix4f(class7351.method22569().method32111());
         class7352.method20750();
         class7352.method20768(Class9216.field39068);
         Class8425.method28140(Class9216.field39060, Class9216.field39068, Class9216.field39066);
@@ -3427,7 +3430,7 @@ public class Class9216
     }
     
     public static void method33812(final Class7351 class7351) {
-        final Class6789 class7352 = new Class6789(class7351.method22569().method32111());
+        final Matrix4f class7352 = new Matrix4f(class7351.method22569().method32111());
         class7352.method20750();
         class7352.method20768(Class9216.field39068);
         Class8425.method28140(Class9216.field39063, Class9216.field39068, Class9216.field39065);
@@ -3697,9 +3700,9 @@ public class Class9216
     }
     
     public static void method33825(final Vec3d class5487) {
-        Class9216.field39072 = (float)class5487.field22770;
-        Class9216.field39073 = (float)class5487.field22771;
-        Class9216.field39074 = (float)class5487.field22772;
+        Class9216.field39072 = (float)class5487.x;
+        Class9216.field39073 = (float)class5487.y;
+        Class9216.field39074 = (float)class5487.z;
         method33781(Class9216.field39168, Class9216.field39072, Class9216.field39073, Class9216.field39074);
     }
     

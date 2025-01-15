@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Set;
 
@@ -70,14 +71,14 @@ public class Class9406
     
     public void method34986(final Class513 class513) {
         if (class513 != this.field40368) {
-            final Vec3d method16741 = class513.method1934().method16741(this.field40367.method32544());
+            final Vec3d method16741 = class513.method1934().subtract(this.field40367.method32544());
             final int min = Math.min(this.method34987(), (Class388.method1409(this.field40372) - 1) * 16);
             boolean b = false;
             Label_0130: {
-                if (method16741.field22770 >= -min) {
-                    if (method16741.field22770 <= min) {
-                        if (method16741.field22772 >= -min) {
-                            if (method16741.field22772 <= min) {
+                if (method16741.x >= -min) {
+                    if (method16741.x <= min) {
+                        if (method16741.z >= -min) {
+                            if (method16741.z <= min) {
                                 if (this.field40368.method1885(class513)) {
                                     b = true;
                                     break Label_0130;

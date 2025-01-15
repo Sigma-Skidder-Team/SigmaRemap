@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -415,10 +416,10 @@ public class Class5799 implements Class5800
                 final float n = class4258.method12785() * 360 / 256.0f;
                 final float n2 = class4258.method12786() * 360 / 256.0f;
                 Label_0209: {
-                    if (Math.abs(method6741.method1938() - method6742) < 0.03125) {
-                        if (Math.abs(method6741.method1941() - method6743) < 0.015625) {
-                            if (Math.abs(method6741.method1945() - method6744) < 0.03125) {
-                                method6741.method1788(method6741.method1938(), method6741.method1941(), method6741.method1945(), n, n2, 3, true);
+                    if (Math.abs(method6741.getPosX() - method6742) < 0.03125) {
+                        if (Math.abs(method6741.getPosY() - method6743) < 0.015625) {
+                            if (Math.abs(method6741.getPosZ() - method6744) < 0.03125) {
+                                method6741.method1788(method6741.getPosX(), method6741.getPosY(), method6741.getPosZ(), n, n2, 3, true);
                                 break Label_0209;
                             }
                         }
@@ -446,7 +447,7 @@ public class Class5799 implements Class5800
             if (!method13142.method1919()) {
                 if (!class4370.method13149()) {
                     if (class4370.method13148()) {
-                        method13142.method1788(method13142.method1938(), method13142.method1941(), method13142.method1945(), class4370.method13146() * 360 / 256.0f, class4370.method13147() * 360 / 256.0f, 3, false);
+                        method13142.method1788(method13142.getPosX(), method13142.getPosY(), method13142.getPosZ(), class4370.method13146() * 360 / 256.0f, class4370.method13147() * 360 / 256.0f, 3, false);
                     }
                 }
                 else {
@@ -457,7 +458,7 @@ public class Class5799 implements Class5800
                     final Entity class4373 = method13142;
                     class4373.field2446 += class4370.method13145();
                     final Vec3d method13143 = Class4370.method13141(method13142.field2444, method13142.field2445, method13142.field2446);
-                    method13142.method1788(method13143.field22770, method13143.field22771, method13143.field22772, class4370.method13148() ? (class4370.method13146() * 360 / 256.0f) : method13142.field2399, class4370.method13148() ? (class4370.method13147() * 360 / 256.0f) : method13142.field2400, 3, false);
+                    method13142.method1788(method13143.x, method13143.y, method13143.z, class4370.method13148() ? (class4370.method13146() * 360 / 256.0f) : method13142.field2399, class4370.method13148() ? (class4370.method13147() * 360 / 256.0f) : method13142.field2400, 3, false);
                 }
                 method13142.field2404 = class4370.method13150();
             }
@@ -497,8 +498,8 @@ public class Class5799 implements Class5800
             field4684.field2417 = method1937;
         }
         else {
-            method1936 = method1935.method16760();
-            method1937 = field4684.method1938() + class4328.method12992();
+            method1936 = method1935.getX();
+            method1937 = field4684.getPosX() + class4328.method12992();
             final Class756 class4329 = field4684;
             class4329.field2417 += class4328.method12992();
         }
@@ -510,8 +511,8 @@ public class Class5799 implements Class5800
             field4684.field2418 = method1939;
         }
         else {
-            method1938 = method1935.method16761();
-            method1939 = field4684.method1941() + class4328.method12993();
+            method1938 = method1935.getY();
+            method1939 = field4684.getPosY() + class4328.method12993();
             final Class756 class4330 = field4684;
             class4330.field2418 += class4328.method12993();
         }
@@ -523,8 +524,8 @@ public class Class5799 implements Class5800
             field4684.field2419 = method1941;
         }
         else {
-            method1940 = method1935.method16762();
-            method1941 = field4684.method1945() + class4328.method12994();
+            method1940 = method1935.getZ();
+            method1941 = field4684.getPosZ() + class4328.method12994();
             final Class756 class4331 = field4684;
             class4331.field2419 += class4328.method12994();
         }
@@ -543,7 +544,7 @@ public class Class5799 implements Class5800
         }
         field4684.method1728(method1937, method1939, method1941, method1942, method1943);
         this.field23805.method11174(new Class4348(class4328.method12997()));
-        this.field23805.method11174(new Class4355(field4684.method1938(), field4684.method1941(), field4684.method1945(), field4684.field2399, field4684.field2400, false));
+        this.field23805.method11174(new Class4355(field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), field4684.field2399, field4684.field2400, false));
         if (!this.field23810) {
             this.field23810 = true;
             this.field23808.method5244(null);
@@ -635,10 +636,10 @@ public class Class5799 implements Class5800
         }
         if (method6741 != null) {
             if (!(method6741 instanceof Class508)) {
-                this.field23809.method6708(method6741.method1938(), method6741.method1941(), method6741.method1945(), Class8520.field35327, Class286.field1585, 0.2f, (this.field23817.nextFloat() - this.field23817.nextFloat()) * 1.4f + 2.0f, false);
+                this.field23809.method6708(method6741.getPosX(), method6741.getPosY(), method6741.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, (this.field23817.nextFloat() - this.field23817.nextFloat()) * 1.4f + 2.0f, false);
             }
             else {
-                this.field23809.method6708(method6741.method1938(), method6741.method1941(), method6741.method1945(), Class8520.field35186, Class286.field1585, 0.1f, (this.field23817.nextFloat() - this.field23817.nextFloat()) * 0.35f + 0.9f, false);
+                this.field23809.method6708(method6741.getPosX(), method6741.getPosY(), method6741.getPosZ(), Class8520.field35186, Class286.field1585, 0.1f, (this.field23817.nextFloat() - this.field23817.nextFloat()) * 0.35f + 0.9f, false);
             }
             if (method6741 instanceof Class427) {
                 ((Class427)method6741).method2107().method27691(class4304.method12945());
@@ -800,7 +801,7 @@ public class Class5799 implements Class5800
                 }
                 else {
                     this.field23808.field4640.method6477(method12799, Class8432.field34644, 30);
-                    this.field23809.method6708(method12799.method1938(), method12799.method1941(), method12799.method1945(), Class8520.field35633, method12799.method1922(), 1.0f, 1.0f, false);
+                    this.field23809.method6708(method12799.getPosX(), method12799.getPosY(), method12799.getPosZ(), Class8520.field35633, method12799.method1922(), 1.0f, 1.0f, false);
                     if (method12799 == this.field23808.field4684) {
                         this.field23808.field4644.method5829(method17301(this.field23808.field4684));
                     }
@@ -867,7 +868,7 @@ public class Class5799 implements Class5800
     public void method17306(final Class4394 class4394) {
         Class8663.method29632((Class4252<Class5799>)class4394, this, this.field23808);
         new Class6154(this.field23808.field4683, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
-        this.field23808.field4684.method1936(this.field23808.field4684.method1935().method16744(class4394.method13211(), class4394.method13212(), class4394.method13213()));
+        this.field23808.field4684.method1936(this.field23808.field4684.method1935().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
     }
     
     @Override
@@ -1091,12 +1092,12 @@ public class Class5799 implements Class5800
                                                 }
                                             }
                                             else {
-                                                this.field23809.method6709(Class8432.field34613, field4684.method1938(), field4684.method1941(), field4684.method1945(), 0.0, 0.0, 0.0);
-                                                this.field23809.method6706(field4684, field4684.method1938(), field4684.method1941(), field4684.method1945(), Class8520.field35143, Class286.field1583, 1.0f, 1.0f);
+                                                this.field23809.method6709(Class8432.field34613, field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), 0.0, 0.0, 0.0);
+                                                this.field23809.method6706(field4684, field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), Class8520.field35143, Class286.field1583, 1.0f, 1.0f);
                                             }
                                         }
                                         else {
-                                            this.field23809.method6706(field4684, field4684.method1938(), field4684.method1941(), field4684.method1945(), Class8520.field35505, Class286.field1584, 1.0f, 1.0f);
+                                            this.field23809.method6706(field4684, field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), Class8520.field35505, Class286.field1584, 1.0f, 1.0f);
                                         }
                                     }
                                     else {
@@ -1108,7 +1109,7 @@ public class Class5799 implements Class5800
                                 }
                             }
                             else {
-                                this.field23809.method6706(field4684, field4684.method1938(), field4684.method1944(), field4684.method1945(), Class8520.field34992, Class286.field1585, 0.18f, 0.45f);
+                                this.field23809.method6706(field4684, field4684.getPosX(), field4684.method1944(), field4684.getPosZ(), Class8520.field34992, Class286.field1585, 0.18f, 0.45f);
                             }
                         }
                         else {

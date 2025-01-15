@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.util.Direction;
 
@@ -11,8 +14,8 @@ public class Class4155 extends Class4154
 {
     private static String[] field18518;
     private final Class4150 field18519;
-    private final Class6789 field18520;
-    private final Class9429 field18521;
+    private final Matrix4f field18520;
+    private final Matrix3f field18521;
     private float field18522;
     private float field18523;
     private float field18524;
@@ -26,7 +29,7 @@ public class Class4155 extends Class4154
     public Class4155(final Class4150 field18519, final Class8996 class8996) {
         this.field18519 = field18519;
         (this.field18520 = class8996.method32111().method20758()).method20751();
-        (this.field18521 = class8996.method32112().method35045()).method35041();
+        (this.field18521 = class8996.method32112().copy()).invert();
         this.method12452();
     }
     
@@ -45,11 +48,11 @@ public class Class4155 extends Class4154
     @Override
     public void method12397() {
         final Vector3f class9138 = new Vector3f(this.field18528, this.field18529, this.field18530);
-        class9138.method33324(this.field18521);
-        final Direction method800 = Direction.getFacingFromVector(class9138.method33311(), class9138.method33312(), class9138.method33313());
+        class9138.transform(this.field18521);
+        final Direction method800 = Direction.getFacingFromVector(class9138.getX(), class9138.getY(), class9138.getZ());
         final Vector4f class9139 = new Vector4f(this.field18522, this.field18523, this.field18524, 1.0f);
         class9139.method28603(this.field18520);
-        class9139.method28604(Vector3f.field38718.rotationDegrees(180.0f));
+        class9139.method28604(Vector3f.YP.rotationDegrees(180.0f));
         class9139.method28604(Vector3f.XP.rotationDegrees(-90.0f));
         class9139.method28604(method800.getRotation());
         this.field18519.method12432(this.field18522, this.field18523, this.field18524).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12391(-class9139.method28595(), -class9139.method28596()).method12433(this.field18525, this.field18526).method12440(this.field18527).method12436(this.field18528, this.field18529, this.field18530).method12397();

@@ -68,7 +68,7 @@ public class Class3384 extends Class3167
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
-        GL11.glTranslated(n - Class3384.field15514.field4644.method5833().method18161().method16760(), n2 - Class3384.field15514.field4644.method5833().method18161().method16761(), n3 - Class3384.field15514.field4644.method5833().method18161().method16762());
+        GL11.glTranslated(n - Class3384.field15514.field4644.method5833().method18161().getX(), n2 - Class3384.field15514.field4644.method5833().method18161().getY(), n3 - Class3384.field15514.field4644.method5833().method18161().getZ());
         GL11.glRotated((double)(class399.field2424 % 180 * 2), 0.0, -1.0, 0.0);
         float n4 = (float)(class399.field2424 % 100 - 50);
         if (n4 < 0.0f) {

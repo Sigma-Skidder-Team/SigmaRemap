@@ -36,7 +36,7 @@ public class Class4012 extends Class3833
         if (!class7097.field10067) {
             if (class7099.method1804()) {
                 if (intValue > 0) {
-                    if (class7099.method1941() <= n) {
+                    if (class7099.getPosY() <= n) {
                         class7099.method1667();
                         this.method12195(class7097, class7098, class7096, intValue - 1);
                     }

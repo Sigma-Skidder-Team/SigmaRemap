@@ -9,6 +9,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.List;
 
 public class Class3601 extends Class3446
@@ -59,7 +61,7 @@ public class Class3601 extends Class3446
     public boolean method11017() {
         if (!this.field16770.method4150().method24731()) {
             if (this.field16770.method4152() == null) {
-                if (!this.field16772.method1082(this.field16770.method1934(), this.field16770.method1930() + this.field16774)) {
+                if (!this.field16772.withinDistance(this.field16770.method1934(), this.field16770.method1930() + this.field16774)) {
                     if (!this.field16775) {
                         return true;
                     }
@@ -72,7 +74,7 @@ public class Class3601 extends Class3446
     
     @Override
     public void method11018() {
-        if (this.field16772.method1082(this.field16770.method1934(), this.field16774)) {
+        if (this.field16772.withinDistance(this.field16770.method1934(), this.field16774)) {
             this.field16773.add(this.field16772);
         }
     }
@@ -88,8 +90,8 @@ public class Class3601 extends Class3446
     @Override
     public void method11016() {
         if (this.field16770.method4150().method24731()) {
-            final Class5487 class5487 = new Class5487(this.field16772);
-            Class5487 class5488 = Class7775.method24906(this.field16770, 16, 7, class5487, 0.3141592741012573);
+            final Vec3d class5487 = new Vec3d(this.field16772);
+            Vec3d class5488 = Class7775.method24906(this.field16770, 16, 7, class5487, 0.3141592741012573);
             if (class5488 == null) {
                 class5488 = Class7775.method24905(this.field16770, 8, 7, class5487);
             }
@@ -97,7 +99,7 @@ public class Class3601 extends Class3446
                 this.field16775 = true;
                 return;
             }
-            this.field16770.method4150().method24724(class5488.field22770, class5488.field22771, class5488.field22772, this.field16771);
+            this.field16770.method4150().method24724(class5488.x, class5488.y, class5488.z, this.field16771);
         }
     }
     

@@ -20,7 +20,7 @@ public class Class4104 extends Class3820
                 if (!class8325.method4625()) {
                     if (!class8325.method2625()) {
                         class8325.method4626(true);
-                        class8325.field2391.method6706(class8322, class8325.method1938(), class8325.method1941(), class8325.method1945(), Class8520.field35463, Class286.field1584, 0.5f, 1.0f);
+                        class8325.field2391.method6706(class8322, class8325.getPosX(), class8325.getPosY(), class8325.getPosZ(), Class8520.field35463, Class286.field1584, 0.5f, 1.0f);
                         class8321.method27693(1);
                         return true;
                     }

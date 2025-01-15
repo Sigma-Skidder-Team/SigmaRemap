@@ -11,6 +11,7 @@ import com.google.gson.JsonDeserializationContext;
 import java.lang.reflect.Type;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonDeserializer;
+import net.minecraft.client.renderer.Vector3f;
 
 public class Class5983 implements JsonDeserializer<Class6429>
 {
@@ -22,10 +23,10 @@ public class Class5983 implements JsonDeserializer<Class6429>
         final JsonObject asJsonObject = jsonElement.getAsJsonObject();
         final Vector3f method17905 = this.method17905(asJsonObject, "rotation", Class5983.field24460);
         final Vector3f method17906 = this.method17905(asJsonObject, "translation", Class5983.field24461);
-        method17906.method33314(0.0625f);
-        method17906.method33316(-5.0f, 5.0f);
+        method17906.mul(0.0625f);
+        method17906.clamp(-5.0f, 5.0f);
         final Vector3f method17907 = this.method17905(asJsonObject, "scale", Class5983.field24462);
-        method17907.method33316(-4.0f, 4.0f);
+        method17907.clamp(-4.0f, 4.0f);
         return new Class6429(method17905, method17906, method17907);
     }
     

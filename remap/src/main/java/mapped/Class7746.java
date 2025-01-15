@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -38,8 +39,8 @@ public abstract class Class7746
     private final Class7914 field31676;
     
     public Class7746(final Class759 field31657, final Class1847 field31658) {
-        this.field31664 = Vec3d.field22769;
-        this.field31665 = Vec3d.field22769;
+        this.field31664 = Vec3d.ZERO;
+        this.field31665 = Vec3d.ZERO;
         this.field31669 = 0.5f;
         this.field31675 = 1.0f;
         this.field31657 = field31657;
@@ -107,7 +108,7 @@ public abstract class Class7746
         if (set.isEmpty()) {
             return null;
         }
-        if (this.field31657.method1941() < 0.0) {
+        if (this.field31657.getPosY() < 0.0) {
             return null;
         }
         if (this.method24735()) {
@@ -182,10 +183,10 @@ public abstract class Class7746
                     if (this.field31659.method35222() < this.field31659.method35221()) {
                         final Vec3d method24734 = this.method24734();
                         final Vec3d method24735 = this.field31659.method35224(this.field31657, this.field31659.method35222());
-                        if (method24734.field22771 > method24735.field22771) {
+                        if (method24734.y > method24735.y) {
                             if (!this.field31657.field2404) {
-                                if (MathHelper.floor(method24734.field22770) == MathHelper.floor(method24735.field22770)) {
-                                    if (MathHelper.floor(method24734.field22772) == MathHelper.floor(method24735.field22772)) {
+                                if (MathHelper.floor(method24734.x) == MathHelper.floor(method24735.x)) {
+                                    if (MathHelper.floor(method24734.z) == MathHelper.floor(method24735.z)) {
                                         this.field31659.method35223(this.field31659.method35222() + 1);
                                     }
                                 }
@@ -201,7 +202,7 @@ public abstract class Class7746
             if (!this.method24731()) {
                 final Vec3d method24736 = this.field31659.method35225(this.field31657);
                 final BlockPos class354 = new BlockPos(method24736);
-                this.field31657.method4148().method19907(method24736.field22770, this.field31658.method6701(class354.method1139()).method21706() ? method24736.field22771 : Class4651.method13906(this.field31658, class354), method24736.field22772, this.field31660);
+                this.field31657.method4148().method19907(method24736.x, this.field31658.method6701(class354.method1139()).method21706() ? method24736.y : Class4651.method13906(this.field31658, class354), method24736.z, this.field31660);
             }
         }
     }
@@ -210,9 +211,9 @@ public abstract class Class7746
         final Vec3d method24734 = this.method24734();
         this.field31669 = ((this.field31657.method1930() <= 0.75f) ? (0.75f - this.field31657.method1930() / 2.0f) : (this.field31657.method1930() / 2.0f));
         final Vec3d method24735 = this.field31659.method35226();
-        if (Math.abs(this.field31657.method1938() - (method24735.field22770 + 0.5)) < this.field31669) {
-            if (Math.abs(this.field31657.method1945() - (method24735.field22772 + 0.5)) < this.field31669) {
-                if (Math.abs(this.field31657.method1941() - method24735.field22771) < 1.0) {
+        if (Math.abs(this.field31657.getPosX() - (method24735.x + 0.5)) < this.field31669) {
+            if (Math.abs(this.field31657.getPosZ() - (method24735.z + 0.5)) < this.field31669) {
+                if (Math.abs(this.field31657.getPosY() - method24735.y) < 1.0) {
                     this.field31659.method35223(this.field31659.method35222() + 1);
                 }
             }
@@ -222,7 +223,7 @@ public abstract class Class7746
     
     public void method24730(final Vec3d field31664) {
         if (this.field31662 - this.field31663 > 100) {
-            if (field31664.method16746(this.field31664) < 2.25) {
+            if (field31664.squareDistanceTo(this.field31664) < 2.25) {
                 this.method24733();
             }
             this.field31663 = this.field31662;
@@ -233,7 +234,7 @@ public abstract class Class7746
                 final Vec3d method35226 = this.field31659.method35226();
                 if (!method35226.equals(this.field31665)) {
                     this.field31665 = method35226;
-                    final double method35227 = field31664.method16745(this.field31665);
+                    final double method35227 = field31664.distanceTo(this.field31665);
                     this.field31668 = ((this.field31657.method2732() <= 0.0f) ? 0.0 : (method35227 / this.field31657.method2732() * 1000.0));
                 }
                 else {
@@ -241,7 +242,7 @@ public abstract class Class7746
                 }
                 if (this.field31668 > 0.0) {
                     if (this.field31666 > this.field31668 * 3.0) {
-                        this.field31665 = Vec3d.field22769;
+                        this.field31665 = Vec3d.ZERO;
                         this.field31666 = 0L;
                         this.field31668 = 0.0;
                         this.method24733();
@@ -313,7 +314,7 @@ public abstract class Class7746
             if (!this.field31659.method35215()) {
                 if (this.field31659.method35221() != 0) {
                     final Class6772 method35216 = this.field31659.method35216();
-                    if (class354.method1082(new Vec3d((method35216.field26589 + this.field31657.method1938()) / 2.0, (method35216.field26590 + this.field31657.method1941()) / 2.0, (method35216.field26591 + this.field31657.method1945()) / 2.0), this.field31659.method35221() - this.field31659.method35222())) {
+                    if (class354.withinDistance(new Vec3d((method35216.field26589 + this.field31657.getPosX()) / 2.0, (method35216.field26590 + this.field31657.getPosY()) / 2.0, (method35216.field26591 + this.field31657.getPosZ()) / 2.0), this.field31659.method35221() - this.field31659.method35222())) {
                         this.method24718();
                     }
                 }

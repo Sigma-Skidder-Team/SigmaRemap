@@ -60,9 +60,9 @@ public class Class3599 extends Class3446
             final double method4154 = this.field16763.method1734(method4152);
             if (method4154 >= 4.0) {
                 if (method4154 < this.method11128() * this.method11128() && method4153) {
-                    final double n = method4152.method1938() - this.field16763.method1938();
+                    final double n = method4152.getPosX() - this.field16763.getPosX();
                     final double n2 = method4152.method1942(0.5) - this.field16763.method1942(0.5);
-                    final double n3 = method4152.method1945() - this.field16763.method1945();
+                    final double n3 = method4152.getPosZ() - this.field16763.getPosZ();
                     if (this.field16765 <= 0) {
                         ++this.field16764;
                         if (this.field16764 != 1) {
@@ -80,11 +80,11 @@ public class Class3599 extends Class3446
                             Class849.method5073(this.field16763, true);
                         }
                         if (this.field16764 > 1) {
-                            final float n4 = MathHelper.method35640(MathHelper.method35641(method4154)) * 0.5f;
+                            final float n4 = MathHelper.method35640(MathHelper.sqrt(method4154)) * 0.5f;
                             this.field16763.field2391.method6839(null, 1018, new BlockPos(this.field16763), 0);
                             for (int i = 0; i < 1; ++i) {
                                 final Class418 class418 = new Class418(this.field16763.field2391, this.field16763, n + this.field16763.method2633().nextGaussian() * n4, n2, n3 + this.field16763.method2633().nextGaussian() * n4);
-                                class418.method1656(class418.method1938(), this.field16763.method1942(0.5) + 0.5, class418.method1945());
+                                class418.method1656(class418.getPosX(), this.field16763.method1942(0.5) + 0.5, class418.getPosZ());
                                 this.field16763.field2391.method6886(class418);
                             }
                         }
@@ -92,7 +92,7 @@ public class Class3599 extends Class3446
                     this.field16763.method4147().method24667(method4152, 10.0f, 10.0f);
                 }
                 else if (this.field16766 < 5) {
-                    this.field16763.method4148().method19907(method4152.method1938(), method4152.method1941(), method4152.method1945(), 1.0);
+                    this.field16763.method4148().method19907(method4152.getPosX(), method4152.getPosY(), method4152.getPosZ(), 1.0);
                 }
             }
             else {
@@ -103,7 +103,7 @@ public class Class3599 extends Class3446
                     this.field16765 = 20;
                     this.field16763.method2734(method4152);
                 }
-                this.field16763.method4148().method19907(method4152.method1938(), method4152.method1941(), method4152.method1945(), 1.0);
+                this.field16763.method4148().method19907(method4152.getPosX(), method4152.getPosY(), method4152.getPosZ(), 1.0);
             }
             super.method11016();
         }

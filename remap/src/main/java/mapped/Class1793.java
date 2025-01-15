@@ -391,7 +391,7 @@ public class Class1793 implements Class1662
             final int method6702 = class354.getX();
             final int method6703 = class354.getY();
             final int method6704 = class354.getZ();
-            final Class6221 method6705 = method6701.method21725(this.field9923, class354).method24537();
+            final AxisAlignedBB method6705 = method6701.method21725(this.field9923, class354).method24537();
             double n = method6702 + this.field9927.nextDouble() * (method6705.field25076 - method6705.field25073 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25073;
             double n2 = method6703 + this.field9927.nextDouble() * (method6705.field25077 - method6705.field25074 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25074;
             double n3 = method6704 + this.field9927.nextDouble() * (method6705.field25078 - method6705.field25075 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25075;

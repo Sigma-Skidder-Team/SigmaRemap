@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Random;
 import java.util.EnumSet;
 
@@ -32,7 +34,7 @@ public class Class3461 extends Class3446
             return false;
         }
         if (((Class1849)this.field16317.field2391).method6924(new BlockPos(this.field16317), 6)) {
-            final Class5487 method24903 = Class7775.method24903(this.field16317, 15, 7, class1850 -> -class1849.method6925(Class353.method1089(class1850)));
+            final Vec3d method24903 = Class7775.method24903(this.field16317, 15, 7, class1850 -> -class1849.method6925(Class353.method1089(class1850)));
             this.field16319 = ((method24903 != null) ? new BlockPos(method24903) : null);
             return this.field16319 != null;
         }
@@ -56,10 +58,10 @@ public class Class3461 extends Class3446
         if (this.field16319 != null) {
             final Class7746 method4150 = this.field16317.method4150();
             if (method4150.method24731()) {
-                if (!this.field16319.method1082(this.field16317.method1934(), 10.0)) {
-                    final Class5487 class5487 = new Class5487(this.field16319);
-                    final Class5487 method4151 = this.field16317.method1934();
-                    final BlockPos method4152 = this.field16317.field2391.method6958(Class2020.field11526, new BlockPos(method4151.method16741(class5487).method16748(0.4).method16743(class5487).method16741(method4151).method16738().method16748(10.0).method16743(method4151)));
+                if (!this.field16319.withinDistance(this.field16317.method1934(), 10.0)) {
+                    final Vec3d class5487 = new Vec3d(this.field16319);
+                    final Vec3d method4151 = this.field16317.method1934();
+                    final BlockPos method4152 = this.field16317.field2391.method6958(Class2020.field11526, new BlockPos(method4151.subtract(class5487).scale(0.4).add(class5487).subtract(method4151).normalize().scale(10.0).add(method4151)));
                     if (!method4150.method24724(method4152.getX(), method4152.getY(), method4152.getZ(), 1.0)) {
                         this.method11024();
                     }

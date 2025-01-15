@@ -88,7 +88,7 @@ public class Class7843
             }
             if (this.field32118 > 0.0) {
                 final double n = this.field32118 * (this.field32123 ? class512.method2645(class511) : 1.0);
-                if (class511.method1733(class512.method1938(), class512.method1941(), class512.method1945()) > n * n) {
+                if (class511.method1733(class512.getPosX(), class512.getPosY(), class512.getPosZ()) > n * n) {
                     return false;
                 }
             }

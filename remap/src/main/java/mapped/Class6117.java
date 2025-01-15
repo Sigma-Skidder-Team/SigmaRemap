@@ -47,13 +47,13 @@ public class Class6117 implements Class6113
             final float n5 = class7355.getY() * 128 % 256 / 256.0f;
             final float n6 = class7355.getZ() * 128 % 256 / 256.0f;
             final float floatValue = this.field24832.get(class7354);
-            if (!class7353.method1081(class7354, 160.0)) {
+            if (!class7353.withinDistance(class7354, 160.0)) {
                 continue;
             }
             Class1656.method5734(method22695, class7354.getX() + 0.5f - n - floatValue, class7354.getY() + 0.5f - n2 - floatValue, class7354.getZ() + 0.5f - n3 - floatValue, class7354.getX() + 0.5f - n + floatValue, class7354.getY() + 0.5f - n2 + floatValue, class7354.getZ() + 0.5f - n3 + floatValue, n4, n5, n6, 0.5f);
         }
         for (final BlockPos class7356 : this.field24833) {
-            if (!class7353.method1081(class7356, 160.0)) {
+            if (!class7353.withinDistance(class7356, 160.0)) {
                 continue;
             }
             Class1656.method5734(method22695, class7356.getX() - n, class7356.getY() - n2, class7356.getZ() - n3, class7356.getX() + 1.0f - n, class7356.getY() + 1.0f - n2, class7356.getZ() + 1.0f - n3, 1.0f, 1.0f, 1.0f, 1.0f);

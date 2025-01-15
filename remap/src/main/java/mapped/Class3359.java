@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class Class3359 extends Class3355
 {
     public ArrayList<Thread> field16000;
     public Entity field16001;
-    public Class5487 field16002;
+    public Vec3d field16002;
     
     public Class3359(final String s, final String s2, final Class8013 class8013) {
         super("FightBot", "Jello AI Fight Bot", Class8013.field32987);

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class1815<T extends Class511> extends Class1799<T, Class5860<T>>
 {
     public static final Class1932 field9991;
@@ -19,7 +21,7 @@ public class Class1815<T extends Class511> extends Class1799<T, Class5860<T>>
             final Class4150 method25214 = class7352.method25214(Class6332.method18770(Class1815.field9991));
             for (int i = 0; i < 3; ++i) {
                 class7351.method22567();
-                class7351.method22566(Vector3f.field38718.rotationDegrees(n5 * -(45 + i * 5)));
+                class7351.method22566(Vector3f.YP.rotationDegrees(n5 * -(45 + i * 5)));
                 final float n8 = 0.75f * i;
                 class7351.method22565(n8, n8, n8);
                 class7351.method22564(0.0, -0.2f + 0.6f * i, 0.0);

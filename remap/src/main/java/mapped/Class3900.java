@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Optional;
 import java.util.List;
@@ -81,7 +82,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     private boolean method11986(final Class1847 class1847, final BlockPos class1848) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class824.class, new Class6221(class1848), Class511::method2783);
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class824.class, new AxisAlignedBB(class1848), Class511::method2783);
         if (!method6739.isEmpty()) {
             ((Class824)method6739.get(0)).method2787();
             return true;
@@ -105,9 +106,9 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     private void method11987(final Entity class399) {
-        final Class5487 method1935 = class399.method1935();
-        if (method1935.field22771 < 0.0) {
-            class399.method1937(method1935.field22770, -method1935.field22771 * 0.6600000262260437 * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.field22772);
+        final Vec3d method1935 = class399.method1935();
+        if (method1935.y < 0.0) {
+            class399.method1937(method1935.x, -method1935.y * 0.6600000262260437 * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.z);
         }
     }
     
@@ -184,7 +185,7 @@ public class Class3900 extends Class3892 implements Class3840
         return (class7096.method21772(Class3900.field17599) != Class105.field323) ? Class2083.field12049 : Class2083.field12048;
     }
     
-    public static Optional<Class5487> method11991(final Class7499<?> class7499, final Class1852 class7500, final BlockPos class7501, int n) {
+    public static Optional<Vec3d> method11991(final Class7499<?> class7499, final Class1852 class7500, final BlockPos class7501, int n) {
         final Direction class7502 = class7500.method6701(class7501).method21772((Class7111<Direction>)Class3900.field17564);
         final int method1074 = class7501.getX();
         final int method1075 = class7501.getY();
@@ -196,7 +197,7 @@ public class Class3900 extends Class3892 implements Class3840
             final int n5 = n3 + 2;
             for (int j = n2; j <= n4; ++j) {
                 for (int k = n3; k <= n5; ++k) {
-                    final Optional<Class5487> method1077 = method11992(class7499, class7500, new BlockPos(j, method1075, k));
+                    final Optional<Vec3d> method1077 = method11992(class7499, class7500, new BlockPos(j, method1075, k));
                     if (method1077.isPresent()) {
                         if (n <= 0) {
                             return method1077;
@@ -209,7 +210,7 @@ public class Class3900 extends Class3892 implements Class3840
         return Optional.empty();
     }
     
-    public static Optional<Class5487> method11992(final Class7499<?> class7499, final Class1852 class7500, final BlockPos class7501) {
+    public static Optional<Vec3d> method11992(final Class7499<?> class7499, final Class1852 class7500, final BlockPos class7501) {
         if (class7500.method6701(class7501).method21727(class7500, class7501).method24536(Axis.Y) > 0.4375) {
             return Optional.empty();
         }
@@ -230,8 +231,8 @@ public class Class3900 extends Class3892 implements Class3840
         final double n = class7502.getY() + method21727.method24536(Axis.Y) + 2.0E-7;
         if (class7501.getY() - n <= 2.0) {
             final float n2 = class7499.method23369() / 2.0f;
-            final Class5487 value = new Class5487(class7502.getX() + 0.5, n, class7502.getZ() + 0.5);
-            return class7500.method6976(new Class6221(value.field22770 - n2, value.field22771, value.field22772 - n2, value.field22770 + n2, value.field22771 + class7499.method23370(), value.field22772 + n2)) ? Optional.of(value) : Optional.empty();
+            final Vec3d value = new Vec3d(class7502.getX() + 0.5, n, class7502.getZ() + 0.5);
+            return class7500.method6976(new AxisAlignedBB(value.x - n2, value.y, value.z - n2, value.x + n2, value.y + class7499.method23370(), value.z + n2)) ? Optional.of(value) : Optional.empty();
         }
         return Optional.empty();
     }

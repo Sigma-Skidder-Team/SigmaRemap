@@ -21,7 +21,7 @@ public class Class6912 implements Class6909
         this.field27103 = field27103;
         this.field27104 = field27104;
         this.field27105 = field27105;
-        this.field27106 = MathHelper.method35653(n, 0.01f, 4.0f);
+        this.field27106 = MathHelper.clamp(n, 0.01f, 4.0f);
     }
     
     @Override

@@ -5,7 +5,7 @@
 package net.minecraft.util.math;
 
 import com.google.common.base.MoreObjects;
-import mapped.Class5488;
+import net.minecraft.dispenser.IPosition;
 import net.minecraft.util.Direction;
 
 import javax.annotation.concurrent.Immutable;
@@ -13,115 +13,146 @@ import javax.annotation.concurrent.Immutable;
 @Immutable
 public class Vec3i implements Comparable<Vec3i>
 {
-    public static final Vec3i field2166;
+    public static final Vec3i NULL_VECTOR = new Vec3i(0, 0, 0);
     @Deprecated
-    private final int field2167;
+    private final int x;
     @Deprecated
-    private final int field2168;
+    private final int y;
     @Deprecated
-    private final int field2169;
+    private final int z;
     
-    public Vec3i(final int field2167, final int field2168, final int field2169) {
-        this.field2167 = field2167;
-        this.field2168 = field2168;
-        this.field2169 = field2169;
+    public Vec3i(final int x, final int y, final int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
-    
-    public Vec3i(final double n, final double n2, final double n3) {
-        this(MathHelper.floor(n), MathHelper.floor(n2), MathHelper.floor(n3));
+
+    public Vec3i(double x, double y, double z)
+    {
+        this(MathHelper.floor(x), MathHelper.floor(y), MathHelper.floor(z));
     }
-    
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
+
+    public boolean equals(Object p_equals_1_)
+    {
+        if (this == p_equals_1_)
+        {
             return true;
         }
-        if (o instanceof Vec3i) {
-            final Vec3i class352 = (Vec3i)o;
-            return this.getX() == class352.getX() && this.getY() == class352.getY() && this.getZ() == class352.getZ();
+        else if (!(p_equals_1_ instanceof Vec3i))
+        {
+            return false;
         }
-        return false;
+        else
+        {
+            Vec3i vec3i = (Vec3i)p_equals_1_;
+
+            if (this.getX() != vec3i.getX())
+            {
+                return false;
+            }
+            else if (this.getY() != vec3i.getY())
+            {
+                return false;
+            }
+            else
+            {
+                return this.getZ() == vec3i.getZ();
+            }
+        }
     }
-    
-    @Override
-    public int hashCode() {
+
+    public int hashCode()
+    {
         return (this.getY() + this.getZ() * 31) * 31 + this.getX();
     }
-    
-    @Override
-    public int compareTo(final Vec3i class352) {
-        if (this.getY() != class352.getY()) {
-            return this.getY() - class352.getY();
+
+    public int compareTo(Vec3i p_compareTo_1_)
+    {
+        if (this.getY() == p_compareTo_1_.getY())
+        {
+            return this.getZ() == p_compareTo_1_.getZ() ? this.getX() - p_compareTo_1_.getX() : this.getZ() - p_compareTo_1_.getZ();
         }
-        return (this.getZ() != class352.getZ()) ? (this.getZ() - class352.getZ()) : (this.getX() - class352.getX());
+        else
+        {
+            return this.getY() - p_compareTo_1_.getY();
+        }
     }
     
     public int getX() {
-        return this.field2167;
+        return this.x;
     }
     
     public int getY() {
-        return this.field2168;
+        return this.y;
     }
     
     public int getZ() {
-        return this.field2169;
+        return this.z;
     }
     
-    public Vec3i method1077() {
-        return this.method1078(1);
+    public Vec3i down() {
+        return this.down(1);
     }
-    
-    public Vec3i method1078(final int n) {
-        return this.method1079(Direction.DOWN, n);
+
+    public Vec3i down(int n)
+    {
+        return this.offset(Direction.DOWN, n);
     }
-    
-    public Vec3i method1079(final Direction class179, final int n) {
-        return (n != 0) ? new Vec3i(this.getX() + class179.getXOffset() * n, this.getY() + class179.getYOffset() * n, this.getZ() + class179.getZOffset() * n) : this;
+
+    public Vec3i offset(Direction facing, int n)
+    {
+        return n == 0 ? this : new Vec3i(this.getX() + facing.getXOffset() * n, this.getY() + facing.getYOffset() * n, this.getZ() + facing.getZOffset() * n);
     }
-    
-    public Vec3i method1080(final Vec3i class352) {
-        return new Vec3i(this.getY() * class352.getZ() - this.getZ() * class352.getY(), this.getZ() * class352.getX() - this.getX() * class352.getZ(), this.getX() * class352.getY() - this.getY() * class352.getX());
+
+    public Vec3i crossProduct(Vec3i vec)
+    {
+        return new Vec3i(this.getY() * vec.getZ() - this.getZ() * vec.getY(), this.getZ() * vec.getX() - this.getX() * vec.getZ(), this.getX() * vec.getY() - this.getY() * vec.getX());
     }
-    
-    public boolean method1081(final Vec3i class352, final double n) {
-        return this.method1085(class352.getX(), class352.getY(), class352.getZ(), false) < n * n;
+
+    public boolean withinDistance(Vec3i p_218141_1_, double distance)
+    {
+        return this.distanceSq((double)p_218141_1_.getX(), (double)p_218141_1_.getY(), (double)p_218141_1_.getZ(), false) < distance * distance;
     }
-    
-    public boolean method1082(final Class5488 class5488, final double n) {
-        return this.method1085(class5488.method16760(), class5488.method16761(), class5488.method16762(), true) < n * n;
+
+    public boolean withinDistance(IPosition p_218137_1_, double distance)
+    {
+        return this.distanceSq(p_218137_1_.getX(), p_218137_1_.getY(), p_218137_1_.getZ(), true) < distance * distance;
     }
-    
-    public double method1083(final Vec3i class352) {
-        return this.method1085(class352.getX(), class352.getY(), class352.getZ(), true);
+
+    public double distanceSq(Vec3i to)
+    {
+        return this.distanceSq((double)to.getX(), (double)to.getY(), (double)to.getZ(), true);
     }
-    
-    public double method1084(final Class5488 class5488, final boolean b) {
-        return this.method1085(class5488.method16760(), class5488.method16761(), class5488.method16762(), b);
+
+    public double distanceSq(IPosition p_218138_1_, boolean useCenter)
+    {
+        return this.distanceSq(p_218138_1_.getX(), p_218138_1_.getY(), p_218138_1_.getZ(), useCenter);
     }
-    
-    public double method1085(final double n, final double n2, final double n3, final boolean b) {
-        final double n4 = b ? 0.5 : 0.0;
-        final double n5 = this.getX() + n4 - n;
-        final double n6 = this.getY() + n4 - n2;
-        final double n7 = this.getZ() + n4 - n3;
-        return n5 * n5 + n6 * n6 + n7 * n7;
+
+    public double distanceSq(double p_218140_1_, double p_218140_3_, double p_218140_5_, boolean useCenter)
+    {
+        double d0 = useCenter ? 0.5D : 0.0D;
+        double d1 = (double)this.getX() + d0 - p_218140_1_;
+        double d2 = (double)this.getY() + d0 - p_218140_3_;
+        double d3 = (double)this.getZ() + d0 - p_218140_5_;
+        return d1 * d1 + d2 * d2 + d3 * d3;
     }
-    
-    public int method1086(final Vec3i class352) {
-        return (int)(Math.abs(class352.getX() - this.getX()) + (float)Math.abs(class352.getY() - this.getY()) + Math.abs(class352.getZ() - this.getZ()));
+
+    public int manhattanDistance(Vec3i p_218139_1_)
+    {
+        float f = (float)Math.abs(p_218139_1_.getX() - this.getX());
+        float f1 = (float)Math.abs(p_218139_1_.getY() - this.getY());
+        float f2 = (float)Math.abs(p_218139_1_.getZ() - this.getZ());
+        return (int)(f + f1 + f2);
     }
-    
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("x", this.getX()).add("y", this.getY()).add("z", this.getZ()).toString();
+
+    public String toString()
+    {
+        return MoreObjects.toStringHelper(this).add("x", this.getX()).add("y", this.getY()).add("z", this.getZ()).toString();
     }
-    
-    public String method1087() {
+
+    public String func_229422_x_()
+    {
         return "" + this.getX() + ", " + this.getY() + ", " + this.getZ();
-    }
-    
-    static {
-        field2166 = new Vec3i(0, 0, 0);
     }
 }

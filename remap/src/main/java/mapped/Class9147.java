@@ -4,10 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 
@@ -142,8 +139,8 @@ public class Class9147
     }
     
     public static boolean method33407(final int n, final int n2, final int n3, final boolean b) {
-        final Class6221 class6221 = (Class9147.field38775.field4684.method1920() != null) ? Class9147.field38775.field4684.method1920().method1886() : Class9147.field38775.field4684.method1886();
-        return Class9147.field38775.field4683.method6981(Class9147.field38775.field4684, new Class6221(n + 0.5f - class6221.method18508() / 2.0, n2, n3 + 0.5f - class6221.method18510() / 2.0, n + 0.5f + class6221.method18508() / 2.0, n2 + class6221.method18509(), n3 + 0.5f + class6221.method18510() / 2.0)).count() == 0L;
+        final AxisAlignedBB class6221 = (Class9147.field38775.field4684.method1920() != null) ? Class9147.field38775.field4684.method1920().method1886() : Class9147.field38775.field4684.method1886();
+        return Class9147.field38775.field4683.method6981(Class9147.field38775.field4684, new AxisAlignedBB(n + 0.5f - class6221.method18508() / 2.0, n2, n3 + 0.5f - class6221.method18510() / 2.0, n + 0.5f + class6221.method18508() / 2.0, n2 + class6221.method18509(), n3 + 0.5f + class6221.method18510() / 2.0)).count() == 0L;
     }
     
     public Class9035 method33408(final Class9407 class9407) {

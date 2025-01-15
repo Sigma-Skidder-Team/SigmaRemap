@@ -106,7 +106,7 @@ public class Class815 extends Class812 implements Class768
     @Override
     public void method1773(final Entity class399) {
         if (this.method1909(class399)) {
-            class399.method1656(this.method1938() + 0.3f * MathHelper.sin(this.field2951 * 0.017453292f), this.method1941() + this.method1777() + class399.method1776(), this.method1945() - 0.3f * MathHelper.cos(this.field2951 * 0.017453292f));
+            class399.method1656(this.getPosX() + 0.3f * MathHelper.sin(this.field2951 * 0.017453292f), this.getPosY() + this.method1777() + class399.method1776(), this.getPosZ() - 0.3f * MathHelper.cos(this.field2951 * 0.017453292f));
         }
     }
     
@@ -174,7 +174,7 @@ public class Class815 extends Class812 implements Class768
         }
         if (b) {
             if (!this.method1696()) {
-                this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35351, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
+                this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35351, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
             }
         }
         return b;
@@ -335,11 +335,11 @@ public class Class815 extends Class812 implements Class768
     
     private void method4795(final Class511 class511) {
         final Class400 class512 = new Class400(this.field2391, this);
-        final double n = class511.method1938() - this.method1938();
-        final double n2 = class511.method1942(0.3333333333333333) - class512.method1941();
-        final double n3 = class511.method1945() - this.method1945();
-        class512.method1958(n, n2 + MathHelper.method35641(n * n + n3 * n3) * 0.2f, n3, 1.5f, 10.0f);
-        this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35353, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
+        final double n = class511.getPosX() - this.getPosX();
+        final double n2 = class511.method1942(0.3333333333333333) - class512.getPosY();
+        final double n3 = class511.getPosZ() - this.getPosZ();
+        class512.method1958(n, n2 + MathHelper.sqrt(n * n + n3 * n3) * 0.2f, n3, 1.5f, 10.0f);
+        this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35353, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
         this.field2391.method6886(class512);
         this.field4372 = true;
     }

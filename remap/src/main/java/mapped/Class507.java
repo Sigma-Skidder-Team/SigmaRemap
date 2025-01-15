@@ -96,7 +96,7 @@ public class Class507 extends Entity
             --this.field2893;
             if (this.field2893 == 14) {
                 for (int i = 0; i < 12; ++i) {
-                    this.field2391.method6709(Class8432.field34603, this.method1938() + (this.field2423.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, this.method1941() + 0.05 + this.field2423.nextDouble() + 1.0, this.method1945() + (this.field2423.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, (this.field2423.nextDouble() * 2.0 - 1.0) * 0.3, 0.3 + this.field2423.nextDouble() * 0.3, (this.field2423.nextDouble() * 2.0 - 1.0) * 0.3);
+                    this.field2391.method6709(Class8432.field34603, this.getPosX() + (this.field2423.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, this.getPosY() + 0.05 + this.field2423.nextDouble() + 1.0, this.getPosZ() + (this.field2423.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, (this.field2423.nextDouble() * 2.0 - 1.0) * 0.3, 0.3 + this.field2423.nextDouble() * 0.3, (this.field2423.nextDouble() * 2.0 - 1.0) * 0.3);
                 }
             }
         }
@@ -127,7 +127,7 @@ public class Class507 extends Entity
         if (b == 4) {
             this.field2894 = true;
             if (!this.method1696()) {
-                this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), Class8520.field35180, this.method1922(), 1.0f, this.field2423.nextFloat() * 0.2f + 0.85f, false);
+                this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35180, this.method1922(), 1.0f, this.field2423.nextFloat() * 0.2f + 0.85f, false);
             }
         }
     }

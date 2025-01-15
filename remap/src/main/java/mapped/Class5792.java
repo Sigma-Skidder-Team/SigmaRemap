@@ -15,7 +15,7 @@ public class Class5792 extends Class5791
     
     @Override
     public void method17246() {
-        this.field23764.field2391.method6708(this.field23764.method1938(), this.field23764.method1941(), this.field23764.method1945(), Class8520.field35157, this.field23764.method1922(), 2.5f, 0.8f + this.field23764.method2633().nextFloat() * 0.3f, false);
+        this.field23764.field2391.method6708(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ(), Class8520.field35157, this.field23764.method1922(), 2.5f, 0.8f + this.field23764.method2633().nextFloat() * 0.3f, false);
     }
     
     @Override

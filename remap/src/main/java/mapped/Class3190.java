@@ -119,9 +119,9 @@ public class Class3190 extends Class3167
                             }
                         }
                     }
-                    final float n3 = (float)(class5740.field33472 - Class869.method5277().field4644.method5833().method18161().method16761());
-                    float n4 = (float)(class5740.field33469 - Class869.method5277().field4644.method5833().method18161().method16760());
-                    float n5 = (float)(class5740.field33470 - Class869.method5277().field4644.method5833().method18161().method16762());
+                    final float n3 = (float)(class5740.field33472 - Class869.method5277().field4644.method5833().method18161().getY());
+                    float n4 = (float)(class5740.field33469 - Class869.method5277().field4644.method5833().method18161().getX());
+                    float n5 = (float)(class5740.field33470 - Class869.method5277().field4644.method5833().method18161().getZ());
                     if (class5740.field33469 < 0) {
                         --n4;
                     }

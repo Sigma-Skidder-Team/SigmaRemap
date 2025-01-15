@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import java.util.List;
 import it.unimi.dsi.fastutil.objects.ObjectList;
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 
 public class Class6300
 {
@@ -155,34 +158,34 @@ public class Class6300
     public void method18645(final Class7351 class7351) {
         class7351.method22564(this.field25180 / 16.0f, this.field25181 / 16.0f, this.field25182 / 16.0f);
         if (this.field25185 != 0.0f) {
-            class7351.method22566(Vector3f.ZP.method33327(this.field25185));
+            class7351.method22566(Vector3f.ZP.rotation(this.field25185));
         }
         if (this.field25184 != 0.0f) {
-            class7351.method22566(Vector3f.field38718.method33327(this.field25184));
+            class7351.method22566(Vector3f.YP.rotation(this.field25184));
         }
         if (this.field25183 != 0.0f) {
-            class7351.method22566(Vector3f.XP.method33327(this.field25183));
+            class7351.method22566(Vector3f.XP.rotation(this.field25183));
         }
     }
     
     private void method18646(final Class8996 class8996, final Class4150 class8997, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
-        final Class6789 method32111 = class8996.method32111();
-        final Class9429 method32112 = class8996.method32112();
+        final Matrix4f method32111 = class8996.method32111();
+        final Matrix3f method32112 = class8996.method32112();
         for (int size = this.field25188.size(), i = 0; i < size; ++i) {
             final Class9536 class8998 = (Class9536)this.field25188.get(i);
             for (int length = Class9536.method35604(class8998).length, j = 0; j < length; ++j) {
                 final Class9094 class8999 = Class9536.method35604(class8998)[j];
                 if (class8999 != null) {
                     final Vector3f method32113 = class8997.method12419(class8999.field38514);
-                    method32113.method33324(method32112);
-                    final float method32114 = method32113.method33311();
-                    final float method32115 = method32113.method33312();
-                    final float method32116 = method32113.method33313();
+                    method32113.transform(method32112);
+                    final float method32114 = method32113.getX();
+                    final float method32115 = method32113.getY();
+                    final float method32116 = method32113.getZ();
                     for (int k = 0; k < 4; ++k) {
                         final Class8741 class9000 = class8999.field38513[k];
-                        final float n7 = class9000.field36720.method33311() / 16.0f;
-                        final float n8 = class9000.field36720.method33312() / 16.0f;
-                        final float n9 = class9000.field36720.method33313() / 16.0f;
+                        final float n7 = class9000.field36720.getX() / 16.0f;
+                        final float n8 = class9000.field36720.getY() / 16.0f;
+                        final float n9 = class9000.field36720.getZ() / 16.0f;
                         class8997.method12400(method32111.method20761(n7, n8, n9, 1.0f), method32111.method20762(n7, n8, n9, 1.0f), method32111.method20763(n7, n8, n9, 1.0f), n3, n4, n5, n6, class9000.field36721, class9000.field36722, n2, n, method32114, method32115, method32116);
                     }
                 }

@@ -4,21 +4,23 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Objects;
 
 public class Class8104
 {
-    private final Class5487 field33367;
+    private final Vec3d field33367;
     private final float field33368;
     private final float field33369;
     
-    public Class8104(final Class5487 field33367, final float field33368, final float field33369) {
+    public Class8104(final Vec3d field33367, final float field33368, final float field33369) {
         this.field33367 = field33367;
         this.field33368 = field33368;
         this.field33369 = field33369;
     }
     
-    public Class5487 method26627() {
+    public Vec3d method26627() {
         return this.field33367;
     }
     

@@ -136,10 +136,10 @@ public class Class572 extends Class565
         }
         Class8726.method30060();
         if (n5 == 0) {
-            this.field3419 = MathHelper.method35653(this.field3419 - 0.04f, 0.0f, 1.0f);
+            this.field3419 = MathHelper.clamp(this.field3419 - 0.04f, 0.0f, 1.0f);
         }
         else {
-            this.field3419 = MathHelper.method35653(this.field3419 + 0.02f, 0.0f, 0.3f);
+            this.field3419 = MathHelper.clamp(this.field3419 + 0.02f, 0.0f, 0.3f);
         }
     }
     

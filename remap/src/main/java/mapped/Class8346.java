@@ -24,7 +24,7 @@ public class Class8346
             final float n6 = -MathHelper.sin(n5);
             final float n7 = MathHelper.cos(n5) * MathHelper.cos(n4);
             final float n8 = -MathHelper.cos(n5) * MathHelper.sin(n4);
-            final BlockPos class1851 = new BlockPos(MathHelper.floor(class1849.method1938()) >> 4, MathHelper.floor(class1849.method1941()) >> 4, MathHelper.floor(class1849.method1945()) >> 4);
+            final BlockPos class1851 = new BlockPos(MathHelper.floor(class1849.getPosX()) >> 4, MathHelper.floor(class1849.getPosY()) >> 4, MathHelper.floor(class1849.getPosZ()) >> 4);
             return new Class7246(class1850, class1851.method1133(-n6 * n3, -n7 * n3, -n8 * n3), class1851.method1133(n6 * n2, n7 * n2, n8 * n2), n3, n3);
         }
         return Arrays.asList(class1850.field38610).iterator();

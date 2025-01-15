@@ -50,7 +50,7 @@ public class Class7232
     }
     
     private void method22134() {
-        this.field28038.field2951 = MathHelper.method35672(this.field28038.field2951, this.field28038.field2953, this.field28038.method4174() * (1.0f - MathHelper.method35653((this.field28039 - 10) / 10.0f, 0.0f, 1.0f)));
+        this.field28038.field2951 = MathHelper.method35672(this.field28038.field2951, this.field28038.field2953, this.field28038.method4174() * (1.0f - MathHelper.clamp((this.field28039 - 10) / 10.0f, 0.0f, 1.0f)));
     }
     
     private boolean method22135() {
@@ -58,8 +58,8 @@ public class Class7232
     }
     
     private boolean method22136() {
-        final double n = this.field28038.method1938() - this.field28038.field2392;
-        final double n2 = this.field28038.method1945() - this.field28038.field2394;
+        final double n = this.field28038.getPosX() - this.field28038.field2392;
+        final double n2 = this.field28038.getPosZ() - this.field28038.field2394;
         return n * n + n2 * n2 > 2.500000277905201E-7;
     }
 }

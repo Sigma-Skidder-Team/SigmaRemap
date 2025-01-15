@@ -172,7 +172,7 @@ public enum Class305
                 return this.method970(array);
             }
             case 19: {
-                return MathHelper.method35653(method971(array, 0), method971(array, 1), method971(array, 2));
+                return MathHelper.clamp(method971(array, 0), method971(array, 1), method971(array, 2));
             }
             case 20: {
                 return MathHelper.method35647(method971(array, 0));

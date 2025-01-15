@@ -101,7 +101,7 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
         this.field23997.field25180 = 5.0f;
         float n6 = 1.0f;
         if (b) {
-            final float n7 = (float)t.method1935().method16753() / 0.2f;
+            final float n7 = (float)t.method1935().lengthSquared() / 0.2f;
             n6 = n7 * n7 * n7;
         }
         if (n6 < 1.0f) {
@@ -249,7 +249,7 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
             this.field23996.field25184 = -0.8f;
             this.field23996.field25183 = -0.97079635f;
             this.field23997.field25183 = -0.97079635f;
-            final float method1821 = MathHelper.method35653(this.field24004, 0.0f, n10);
+            final float method1821 = MathHelper.clamp(this.field24004, 0.0f, n10);
             this.field23997.field25184 = MathHelper.method35700(method1821 / n10, 0.4f, 0.85f);
             this.field23997.field25183 = MathHelper.method35700(method1821 / n10, this.field23997.field25183, -1.5707964f);
         }
@@ -257,7 +257,7 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
             this.field23997.field25184 = 0.8f;
             this.field23996.field25183 = -0.97079635f;
             this.field23997.field25183 = -0.97079635f;
-            final float method1822 = MathHelper.method35653(this.field24004, 0.0f, n10);
+            final float method1822 = MathHelper.clamp(this.field24004, 0.0f, n10);
             this.field23996.field25184 = MathHelper.method35700(method1822 / n10, -0.4f, -0.85f);
             this.field23996.field25183 = MathHelper.method35700(method1822 / n10, this.field23996.field25183, -1.5707964f);
         }

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -85,7 +86,7 @@ public class Class850 extends Class763
         if (this.field2424 >= this.field4524 + 400) {
             this.field4524 = this.field2424;
             if (!this.method1696()) {
-                this.field2391.method6708(this.method1938(), this.method1944(), this.method1945(), Class8520.field35166, this.method1922(), 2.5f, 1.0f, false);
+                this.field2391.method6708(this.getPosX(), this.method1944(), this.getPosZ(), Class8520.field35166, this.method1922(), 2.5f, 1.0f, false);
             }
         }
     }
@@ -126,9 +127,9 @@ public class Class850 extends Class763
     
     private boolean method5075(final Class512 class512) {
         if (class512.field3006.field2740.get(3).method27622() != Class7521.field29342.method11704()) {
-            final Vec3d method16738 = class512.method1741(1.0f).method16738();
-            final Vec3d class513 = new Vec3d(this.method1938() - class512.method1938(), this.method1944() - class512.method1944(), this.method1945() - class512.method1945());
-            return method16738.method16739(class513.method16738()) > 1.0 - 0.025 / class513.method16752() && class512.method2747(this);
+            final Vec3d method16738 = class512.method1741(1.0f).normalize();
+            final Vec3d class513 = new Vec3d(this.getPosX() - class512.getPosX(), this.method1944() - class512.method1944(), this.getPosZ() - class512.getPosZ());
+            return method16738.dotProduct(class513.normalize()) > 1.0 - 0.025 / class513.length() && class512.method2747(this);
         }
         return false;
     }
@@ -171,12 +172,12 @@ public class Class850 extends Class763
     }
     
     public boolean method5076() {
-        return !this.field2391.method6678() && this.method1768() && this.method5078(this.method1938() + (this.field2423.nextDouble() - 0.5) * 64.0, this.method1941() + (this.field2423.nextInt(64) - 32), this.method1945() + (this.field2423.nextDouble() - 0.5) * 64.0);
+        return !this.field2391.method6678() && this.method1768() && this.method5078(this.getPosX() + (this.field2423.nextDouble() - 0.5) * 64.0, this.getPosY() + (this.field2423.nextInt(64) - 32), this.getPosZ() + (this.field2423.nextDouble() - 0.5) * 64.0);
     }
     
     private boolean method5077(final Entity class399) {
-        final Vec3d method16738 = new Vec3d(this.method1938() - class399.method1938(), this.method1942(0.5) - class399.method1944(), this.method1945() - class399.method1945()).method16738();
-        return this.method5078(this.method1938() + (this.field2423.nextDouble() - 0.5) * 8.0 - method16738.field22770 * 16.0, this.method1941() + (this.field2423.nextInt(16) - 8) - method16738.field22771 * 16.0, this.method1945() + (this.field2423.nextDouble() - 0.5) * 8.0 - method16738.field22772 * 16.0);
+        final Vec3d method16738 = new Vec3d(this.getPosX() - class399.getPosX(), this.method1942(0.5) - class399.method1944(), this.getPosZ() - class399.getPosZ()).normalize();
+        return this.method5078(this.getPosX() + (this.field2423.nextDouble() - 0.5) * 8.0 - method16738.x * 16.0, this.getPosY() + (this.field2423.nextInt(16) - 8) - method16738.y * 16.0, this.getPosZ() + (this.field2423.nextDouble() - 0.5) * 8.0 - method16738.z * 16.0);
     }
     
     private boolean method5078(final double n, final double n2, final double n3) {

@@ -9,6 +9,7 @@ import java.util.Random;
 import java.util.Optional;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5418 extends Class5419<Class511>
 {
@@ -47,6 +48,6 @@ public class Class5418 extends Class5419<Class511>
     }
     
     public static boolean method16541(final Class1849 class1849, final Class511 class1850, final BlockPos class1851) {
-        return class1849.method6994(class1851) && class1849.method6958(Class2020.field11525, class1851).getY() <= class1850.method1941();
+        return class1849.method6994(class1851) && class1849.method6958(Class2020.field11525, class1851).getY() <= class1850.getPosY();
     }
 }

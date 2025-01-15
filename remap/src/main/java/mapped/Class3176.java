@@ -89,9 +89,9 @@ public class Class3176 extends Class3167
                 if (Class4609.method13666(class5741) != Class7521.field29147) {
                     continue;
                 }
-                final double n = class5741.getX() - Class3176.field15514.field4644.method5833().method18161().method16760();
-                final double n2 = class5741.getY() - Class3176.field15514.field4644.method5833().method18161().method16761();
-                final double n3 = class5741.getZ() - Class3176.field15514.field4644.method5833().method18161().method16762();
+                final double n = class5741.getX() - Class3176.field15514.field4644.method5833().method18161().getX();
+                final double n2 = class5741.getY() - Class3176.field15514.field4644.method5833().method18161().getY();
+                final double n3 = class5741.getZ() - Class3176.field15514.field4644.method5833().method18161().getZ();
                 final Class7644 class5742 = new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0);
                 Class8154.method26909(class5742, Class6430.method19118(Class265.field1285.field1292, 0.02f));
                 GL11.glEnable(2848);
@@ -101,9 +101,9 @@ public class Class3176 extends Class3167
             final Iterator<Class9052> iterator2 = this.field15541.iterator();
             while (iterator2.hasNext()) {
                 final BlockPos field38320 = iterator2.next().field38320;
-                final double n4 = field38320.getX() - Class3176.field15514.field4644.method5833().method18161().method16760();
-                final double n5 = field38320.getY() - Class3176.field15514.field4644.method5833().method18161().method16761();
-                final double n6 = field38320.getZ() - Class3176.field15514.field4644.method5833().method18161().method16762();
+                final double n4 = field38320.getX() - Class3176.field15514.field4644.method5833().method18161().getX();
+                final double n5 = field38320.getY() - Class3176.field15514.field4644.method5833().method18161().getY();
+                final double n6 = field38320.getZ() - Class3176.field15514.field4644.method5833().method18161().getZ();
                 final Class7644 class5743 = new Class7644(n4, n5, n6, n4 + 1.0, n5 + 1.0, n6 + 1.0);
                 Class8154.method26909(class5743, Class6430.method19118(Class265.field1274.field1292, 0.1f));
                 Class8154.method26911(class5743, Class6430.method19118(Class265.field1274.field1292, 0.2f));

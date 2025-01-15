@@ -59,7 +59,7 @@ public class Class9375
         return false;
     }
     
-    public boolean method34781(final Class6221 class6221) {
+    public boolean method34781(final AxisAlignedBB class6221) {
         if (class6221.field25076 > this.method34786()) {
             if (class6221.field25073 < this.method34788()) {
                 if (class6221.field25078 > this.method34787()) {
@@ -73,7 +73,7 @@ public class Class9375
     }
     
     public double method34782(final Entity class399) {
-        return this.method34784(class399.method1938(), class399.method1945());
+        return this.method34784(class399.getPosX(), class399.getPosZ());
     }
     
     public Class7702 method34783() {

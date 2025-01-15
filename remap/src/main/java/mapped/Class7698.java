@@ -32,10 +32,10 @@ public final class Class7698
     }
     
     public static Class7702 method24488(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        return method24489(new Class6221(n, n2, n3, n4, n5, n6));
+        return method24489(new AxisAlignedBB(n, n2, n3, n4, n5, n6));
     }
     
-    public static Class7702 method24489(final Class6221 class6221) {
+    public static Class7702 method24489(final AxisAlignedBB class6221) {
         final int method24490 = method24490(class6221.field25073, class6221.field25076);
         final int method24491 = method24490(class6221.field25074, class6221.field25077);
         final int method24492 = method24490(class6221.field25075, class6221.field25078);
@@ -166,7 +166,7 @@ public final class Class7698
         return !class83.method445((n, n2, n3) -> class84.method445((n3, n4, n5) -> class85.method445((n5, n6, n7) -> !class88.method34406(class86.method27426(n, n3, n5), class87.method27426(n2, n4, n6)))));
     }
     
-    public static double method24498(final Axis class111, final Class6221 class112, final Stream<Class7702> stream, double method24553) {
+    public static double method24498(final Axis class111, final AxisAlignedBB class112, final Stream<Class7702> stream, double method24553) {
         final Iterator<Object> iterator = (Iterator<Object>)stream.iterator();
         while (iterator.hasNext()) {
             if (Math.abs(method24553) < 1.0E-7) {
@@ -177,11 +177,11 @@ public final class Class7698
         return method24553;
     }
     
-    public static double method24499(final Axis class111, final Class6221 class112, final Class1852 class113, final double n, final Class7543 class114, final Stream<Class7702> stream, final boolean b) {
+    public static double method24499(final Axis class111, final AxisAlignedBB class112, final Class1852 class113, final double n, final Class7543 class114, final Stream<Class7702> stream, final boolean b) {
         return method24500(class112, class113, n, class114, Class309.method985(class111, Axis.Z), stream, b);
     }
     
-    private static double method24500(final Class6221 class6221, final Class1852 class6222, double method24553, final Class7543 class6223, final Class309 class6224, final Stream<Class7702> stream, final boolean b) {
+    private static double method24500(final AxisAlignedBB class6221, final Class1852 class6222, double method24553, final Class7543 class6223, final Class309 class6224, final Stream<Class7702> stream, final boolean b) {
         if (class6221.method18508() >= 1.0E-6) {
             if (class6221.method18509() >= 1.0E-6) {
                 if (class6221.method18510() >= 1.0E-6) {

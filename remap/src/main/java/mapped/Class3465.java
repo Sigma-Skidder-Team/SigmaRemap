@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Random;
 import java.util.Iterator;
 import java.util.List;
@@ -59,13 +61,13 @@ public class Class3465<T extends Class777> extends Class3446
             if (this.field16328.method4316() && method4316.isEmpty()) {
                 this.field16328.method4317(false);
             }
-            else if (method4314 && this.field16328.method4311().method1082(this.field16328.method1934(), 10.0)) {
+            else if (method4314 && this.field16328.method4311().withinDistance(this.field16328.method1934(), 10.0)) {
                 this.field16328.method4315();
             }
             else {
-                final Class5487 class5487 = new Class5487(this.field16328.method4311());
-                final Class5487 method4317 = this.field16328.method1934();
-                final BlockPos method4318 = this.field16328.field2391.method6958(Class2020.field11526, new BlockPos(method4317.method16741(class5487).method16755(90.0f).method16748(0.4).method16743(class5487).method16741(method4317).method16738().method16748(10.0).method16743(method4317)));
+                final Vec3d class5487 = new Vec3d(this.field16328.method4311());
+                final Vec3d method4317 = this.field16328.method1934();
+                final BlockPos method4318 = this.field16328.field2391.method6958(Class2020.field11526, new BlockPos(method4317.subtract(class5487).rotateYaw(90.0f).scale(0.4).add(class5487).subtract(method4317).normalize().scale(10.0).add(method4317)));
                 if (method4315.method24724(method4318.getX(), method4318.getY(), method4318.getZ(), method4314 ? this.field16330 : this.field16329)) {
                     if (method4314) {
                         final Iterator iterator = method4316.iterator();

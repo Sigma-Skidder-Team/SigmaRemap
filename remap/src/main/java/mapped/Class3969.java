@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -158,9 +159,9 @@ public class Class3969 extends Class3833
                     if (n >= 0) {
                         final int method21667 = method21656.getXOffset();
                         final int method21668 = method21656.getZOffset();
-                        final Class5487 method21669 = class7074.method21649();
-                        final double n2 = method21669.field22770 - method21655.getX();
-                        final double n3 = method21669.field22772 - method21655.getZ();
+                        final Vec3d method21669 = class7074.method21649();
+                        final double n2 = method21669.x - method21655.getX();
+                        final double n3 = method21669.z - method21655.getZ();
                         if (method21667 >= 0 || n3 >= 0.5) {
                             if (method21667 <= 0 || n3 <= 0.5) {
                                 if (method21668 >= 0 || n2 <= 0.5) {

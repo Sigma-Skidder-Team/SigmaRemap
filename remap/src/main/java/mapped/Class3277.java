@@ -13,12 +13,12 @@ import java.util.HashMap;
 
 public class Class3277 extends Class3167
 {
-    private HashMap<Class512, Class9544> field15776;
+    private HashMap<Class512, Vec2f> field15776;
     public static Class3277 field15777;
     
     public Class3277() {
         super(Class8013.field32984, "NameTags", "Render better name tags");
-        this.field15776 = new HashMap<Class512, Class9544>();
+        this.field15776 = new HashMap<Class512, Vec2f>();
         Class3277.field15777 = this;
     }
     
@@ -30,11 +30,11 @@ public class Class3277 extends Class3167
             for (final Map.Entry<Class512, V> entry : this.field15776.entrySet()) {
                 final Class512 class5735 = entry.getKey();
                 if (!class5735.method1823()) {
-                    final Class9544 class5736 = (Class9544)entry.getValue();
+                    final Vec2f class5736 = (Vec2f)entry.getValue();
                     final String method8459 = class5735.method1841().method8459();
                     final int n3 = Class9493.field40813.method23505(method8459) + 8;
-                    final int round = Math.round(class5736.field41091);
-                    final int round2 = Math.round(class5736.field41092);
+                    final int round = Math.round(class5736.x);
+                    final int round2 = Math.round(class5736.y);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float)(-n3 / 2), (float)(-n), 0.0f);
                     Class8154.method26874((float)round, (float)round2, (float)n3, 20.0f, Class6430.method19118(Class265.field1273.field1292, 0.5f));
@@ -109,7 +109,7 @@ public class Class3277 extends Class3167
                 if (method29095[2] >= 1.0) {
                     continue;
                 }
-                this.field15776.put(key, new Class9544((float)method29095[0], (float)method29095[1]));
+                this.field15776.put(key, new Vec2f((float)method29095[0], (float)method29095[1]));
             }
         }
     }

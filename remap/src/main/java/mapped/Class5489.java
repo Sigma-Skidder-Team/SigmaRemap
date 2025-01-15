@@ -4,7 +4,9 @@
 
 package mapped;
 
-public interface Class5489 extends Class5488
+import net.minecraft.dispenser.IPosition;
+
+public interface Class5489 extends IPosition
 {
     Class1847 method16763();
 }

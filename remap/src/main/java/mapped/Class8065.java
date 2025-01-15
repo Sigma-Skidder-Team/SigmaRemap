@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
@@ -24,7 +26,7 @@ public class Class8065
         Class8726.method30057(5889);
         Class8726.method30059();
         Class8726.method30058();
-        Class8726.method30067(Class6789.method20755(85.0, class869.method5332().method7692() / (float)class869.method5332().method7693(), 0.05f, 10.0f));
+        Class8726.method30067(Matrix4f.method20755(85.0, class869.method5332().method7692() / (float)class869.method5332().method7693(), 0.05f, 10.0f));
         Class8726.method30057(5888);
         Class8726.method30059();
         Class8726.method30058();

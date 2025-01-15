@@ -15,7 +15,7 @@ public class Class3539 extends Class3446
     
     @Override
     public boolean method11013() {
-        return this.field16583.field2391.method7134(this.field16583.method1938(), this.field16583.method1941(), this.field16583.method1945(), 10.0);
+        return this.field16583.field2391.method7134(this.field16583.getPosX(), this.field16583.getPosY(), this.field16583.getPosZ(), 10.0);
     }
     
     @Override
@@ -24,7 +24,7 @@ public class Class3539 extends Class3446
         this.field16583.method4779(false);
         this.field16583.method4719(true);
         this.field16583.method4354(0);
-        ((Class1849)this.field16583.field2391).method6903(new Class422(this.field16583.field2391, this.field16583.method1938(), this.field16583.method1941(), this.field16583.method1945(), true));
+        ((Class1849)this.field16583.field2391).method6903(new Class422(this.field16583.field2391, this.field16583.getPosX(), this.field16583.getPosY(), this.field16583.getPosZ(), true));
         this.method11091(method6784, this.field16583).method1778(this.field16583);
         for (int i = 0; i < 3; ++i) {
             final Class806 method6785 = this.method11090(method6784);
@@ -36,7 +36,7 @@ public class Class3539 extends Class3446
     private Class806 method11090(final Class9592 class9592) {
         final Class809 class9593 = Class7499.field29024.method23371(this.field16583.field2391);
         class9593.method4188(this.field16583.field2391, class9592, Class2101.field12184, null, null);
-        class9593.method1656(this.field16583.method1938(), this.field16583.method1941(), this.field16583.method1945());
+        class9593.method1656(this.field16583.getPosX(), this.field16583.getPosY(), this.field16583.getPosZ());
         class9593.field2430 = 60;
         class9593.method4190();
         class9593.method4719(true);
@@ -48,7 +48,7 @@ public class Class3539 extends Class3446
     private Class782 method11091(final Class9592 class9592, final Class806 class9593) {
         final Class782 class9594 = Class7499.field29023.method23371(class9593.field2391);
         class9594.method4188(class9593.field2391, class9592, Class2101.field12184, null, null);
-        class9594.method1656(class9593.method1938(), class9593.method1941(), class9593.method1945());
+        class9594.method1656(class9593.getPosX(), class9593.getPosY(), class9593.getPosZ());
         class9594.field2430 = 60;
         class9594.method4190();
         if (class9594.method2718(Class2215.field13605).method27620()) {

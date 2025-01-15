@@ -43,21 +43,21 @@ public class Class3270 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        final double field22771 = class5717.method16978().field22771;
-        class5717.method16978().field22771 = 0.0;
-        final double method16752 = class5717.method16978().method16752();
-        class5717.method16978().field22771 = field22771;
+        final double field22771 = class5717.method16978().y;
+        class5717.method16978().y = 0.0;
+        final double method16752 = class5717.method16978().length();
+        class5717.method16978().y = field22771;
         final float n = Class7482.method23143()[1];
         final float n2 = Class7482.method23143()[2];
         final float n3 = Class7482.method23143()[0];
         System.out.println(method16752);
-        if ((n != 0.0f || n2 != 0.0f) && class5717.method16978().field22771 >= -0.5) {
+        if ((n != 0.0f || n2 != 0.0f) && class5717.method16978().y >= -0.5) {
             final double cos = Math.cos(Math.toRadians(n3));
             final double sin = Math.sin(Math.toRadians(n3));
             class5717.method16973(n * method16752 * cos + n2 * method16752 * sin);
             class5717.method16977(n * method16752 * sin - n2 * method16752 * cos);
-            Class3270.field15514.field4684.method1935().field22770 = class5717.method16972();
-            Class3270.field15514.field4684.method1935().field22771 = class5717.method16974();
+            Class3270.field15514.field4684.method1935().x = class5717.method16972();
+            Class3270.field15514.field4684.method1935().y = class5717.method16974();
             return;
         }
         class5717.method16973(0.0);
@@ -95,7 +95,7 @@ public class Class3270 extends Class3167
             if (Class3270.field15514.field4684.field2970 < 0.0f) {
                 field2399 -= 180.0f;
             }
-            if (Class3270.field15514.field4684.method1935().field22771 < -0.1) {
+            if (Class3270.field15514.field4684.method1935().y < -0.1) {
                 n = 90.0f;
             }
             class5744.method17041(n);
@@ -103,7 +103,7 @@ public class Class3270 extends Class3167
             if (Class3270.field15514.field4684.field2404 && Class3270.field15514.field4684.field2406) {
                 Class3270.field15514.field4684.method2725();
             }
-            else if (Class3270.field15514.field4684.method1935().field22771 >= 0.0) {
+            else if (Class3270.field15514.field4684.method1935().y >= 0.0) {
                 if (Class3270.field15514.field4633.field26532 == 0.1f) {
                     Class3270.field15514.field4633.field26532 = 1.0f;
                 }

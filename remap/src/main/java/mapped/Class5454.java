@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5454 extends Class5419<Class787>
 {

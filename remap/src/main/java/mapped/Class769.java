@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class769 extends Class770 implements Class768
 {
@@ -18,8 +19,8 @@ public class Class769 extends Class770 implements Class768
         this.field4108 = 5;
         this.field4160 = new Vec3d[2][4];
         for (int i = 0; i < 4; ++i) {
-            this.field4160[0][i] = Vec3d.field22769;
-            this.field4160[1][i] = Vec3d.field22769;
+            this.field4160[0][i] = Vec3d.ZERO;
+            this.field4160[1][i] = Vec3d.ZERO;
         }
     }
     
@@ -60,7 +61,7 @@ public class Class769 extends Class770 implements Class768
     }
     
     @Override
-    public Class6221 method1887() {
+    public AxisAlignedBB method1887() {
         return this.method1886().method18495(3.0, 0.0, 3.0);
     }
     
@@ -91,7 +92,7 @@ public class Class769 extends Class770 implements Class768
                     for (int k = 0; k < 16; ++k) {
                         this.field2391.method6709(Class8432.field34602, this.method1940(0.5), this.method1943(), this.method1946(0.5), 0.0, 0.0, 0.0);
                     }
-                    this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), Class8520.field35308, this.method1922(), 1.0f, 1.0f, false);
+                    this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35308, this.method1922(), 1.0f, 1.0f, false);
                 }
             }
         }
@@ -107,7 +108,7 @@ public class Class769 extends Class770 implements Class768
             final double pow = Math.pow((this.field4159 - n) / 3.0f, 0.25);
             final Vec3d[] array = new Vec3d[4];
             for (int i = 0; i < 4; ++i) {
-                array[i] = this.field4160[1][i].method16748(1.0 - pow).method16743(this.field4160[0][i].method16748(pow));
+                array[i] = this.field4160[1][i].scale(1.0 - pow).add(this.field4160[0][i].scale(pow));
             }
             return array;
         }
@@ -146,10 +147,10 @@ public class Class769 extends Class770 implements Class768
     @Override
     public void method4252(final Class511 class511, final float n) {
         final Class402 method23101 = Class7476.method23101(this, this.method2790(this.method2715(Class7476.method23100(this, Class7739.field31279))), n);
-        final double n2 = class511.method1938() - this.method1938();
-        final double n3 = class511.method1942(0.3333333333333333) - method23101.method1941();
-        final double n4 = class511.method1945() - this.method1945();
-        method23101.method1958(n2, n3 + MathHelper.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        final double n2 = class511.getPosX() - this.getPosX();
+        final double n3 = class511.method1942(0.3333333333333333) - method23101.getPosY();
+        final double n4 = class511.getPosZ() - this.getPosZ();
+        method23101.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35575, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(method23101);
     }

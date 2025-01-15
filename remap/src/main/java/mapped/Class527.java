@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.client.renderer.Matrix4f;
 import org.apache.logging.log4j.LogManager;
 import java.io.File;
 import java.util.Locale;
@@ -143,7 +144,7 @@ public abstract class Class527 extends Class598 implements Class563
             final Class7351 class7351 = new Class7351();
             final Class7808 method6618 = Class7807.method25212(Class7392.method22694().method22696());
             class7351.method22564(0.0, 0.0, this.field3151.field9952);
-            final Class6789 method6619 = class7351.method22569().method32111();
+            final Matrix4f method6619 = class7351.method22569().method32111();
             for (int i = 0; i < list.size(); ++i) {
                 final String s = list.get(i);
                 if (s != null) {

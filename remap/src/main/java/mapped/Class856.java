@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.time.temporal.ChronoField;
 import java.time.LocalDate;
@@ -92,11 +93,11 @@ public class Class856 extends Class855
     public void method1659() {
         super.method1659();
         if (!this.method5144()) {
-            this.method1936(this.method1935().method16751(1.0, 0.6, 1.0));
+            this.method1936(this.method1935().mul(1.0, 0.6, 1.0));
         }
         else {
-            this.method1936(Vec3d.field22769);
-            this.method1948(this.method1938(), MathHelper.floor(this.method1941()) + 1.0 - this.method1931(), this.method1945());
+            this.method1936(Vec3d.ZERO);
+            this.method1948(this.getPosX(), MathHelper.floor(this.getPosY()) + 1.0 - this.method1931(), this.getPosZ());
         }
     }
     
@@ -114,20 +115,20 @@ public class Class856 extends Class855
             Label_0319: {
                 if (this.field4564 != null) {
                     if (this.field2423.nextInt(30) != 0) {
-                        if (!this.field4564.method1082(this.method1934(), 2.0)) {
+                        if (!this.field4564.withinDistance(this.method1934(), 2.0)) {
                             break Label_0319;
                         }
                     }
                 }
-                this.field4564 = new BlockPos(this.method1938() + this.field2423.nextInt(7) - this.field2423.nextInt(7), this.method1941() + this.field2423.nextInt(6) - 2.0, this.method1945() + this.field2423.nextInt(7) - this.field2423.nextInt(7));
+                this.field4564 = new BlockPos(this.getPosX() + this.field2423.nextInt(7) - this.field2423.nextInt(7), this.getPosY() + this.field2423.nextInt(6) - 2.0, this.getPosZ() + this.field2423.nextInt(7) - this.field2423.nextInt(7));
             }
-            final double d = this.field4564.getX() + 0.5 - this.method1938();
-            final double d2 = this.field4564.getY() + 0.1 - this.method1941();
-            final double d3 = this.field4564.getZ() + 0.5 - this.method1945();
+            final double d = this.field4564.getX() + 0.5 - this.getPosX();
+            final double d2 = this.field4564.getY() + 0.1 - this.getPosY();
+            final double d3 = this.field4564.getZ() + 0.5 - this.getPosZ();
             final Vec3d method1138 = this.method1935();
-            final Vec3d method1139 = method1138.method16744((Math.signum(d) * 0.5 - method1138.field22770) * 0.10000000149011612, (Math.signum(d2) * 0.699999988079071 - method1138.field22771) * 0.10000000149011612, (Math.signum(d3) * 0.5 - method1138.field22772) * 0.10000000149011612);
+            final Vec3d method1139 = method1138.add((Math.signum(d) * 0.5 - method1138.x) * 0.10000000149011612, (Math.signum(d2) * 0.699999988079071 - method1138.y) * 0.10000000149011612, (Math.signum(d3) * 0.5 - method1138.z) * 0.10000000149011612);
             this.method1936(method1139);
-            final float method1140 = MathHelper.method35668((float)(MathHelper.method35693(method1139.field22772, method1139.field22770) * 57.2957763671875) - 90.0f - this.field2399);
+            final float method1140 = MathHelper.method35668((float)(MathHelper.method35693(method1139.z, method1139.x) * 57.2957763671875) - 90.0f - this.field2399);
             this.field2970 = 0.5f;
             this.field2399 += method1140;
             if (this.field2423.nextInt(100) == 0) {

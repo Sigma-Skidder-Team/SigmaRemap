@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4164 extends Class4158<Class492>
@@ -36,7 +38,7 @@ public class Class4164 extends Class4158<Class492>
             class493.method22567();
             class493.method22564(0.5, 0.3f + n7 * 0.2f, 0.5);
             final Vector3f class495 = new Vector3f(0.5f, 1.0f, 0.5f);
-            class495.method33322();
+            class495.normalize();
             class493.method22566(new Quaternion(class495, n5, true));
             this.field18560.method18643(class493, Class4164.field18552.method11334(class494, Class6332::method18770), n2, n3);
             class493.method22568();
@@ -65,7 +67,7 @@ public class Class4164 extends Class4158<Class492>
             class493.method22567();
             class493.method22564(0.5, 0.3f + n7 * 0.2f, 0.5);
             class493.method22565(0.5f, 0.5f, 0.5f);
-            class493.method22566(Vector3f.field38718.rotationDegrees(-field41131.method18164()));
+            class493.method22566(Vector3f.YP.rotationDegrees(-field41131.method18164()));
             class493.method22566(Vector3f.XP.rotationDegrees(field41131.method18163()));
             class493.method22566(Vector3f.ZP.rotationDegrees(180.0f));
             class493.method22565(1.3333334f, 1.3333334f, 1.3333334f);
@@ -77,7 +79,7 @@ public class Class4164 extends Class4158<Class492>
             final Class4150 method11336 = Class4164.field18551.method11334(class494, Class6332::method18767);
             class493.method22567();
             class493.method22564(0.5, 0.5, 0.5);
-            class493.method22566(Vector3f.field38718.rotationDegrees(method11335));
+            class493.method22566(Vector3f.YP.rotationDegrees(method11335));
             this.field18559.method18643(class493, method11336, n2, n3);
             class493.method22568();
         }

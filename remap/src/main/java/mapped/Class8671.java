@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -96,7 +97,7 @@ public class Class8671
                 ex.printStackTrace();
                 return;
             }
-            class1850.method1730(method29683.field22770, method29683.field22771, method29683.field22772, class1849.field10062.nextFloat() * 360.0f, 0.0f);
+            class1850.method1730(method29683.x, method29683.y, method29683.z, class1849.field10062.nextFloat() * 360.0f, 0.0f);
             class1849.method6886(class1850);
         }
     }

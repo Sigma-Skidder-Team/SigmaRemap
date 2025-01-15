@@ -44,7 +44,7 @@ public class Class4550 extends Class4535<Class5143>
     private void method13562(final Class1851 class1851, final Random random, final Class5143 class1852, final Class9341 class1853) {
         final int method34621 = class1853.method34621();
         for (final BlockPos class1854 : BlockPos.method1154(new BlockPos(class1853.method34619() - method34621, 0, class1853.method34620() - method34621), new BlockPos(class1853.method34619() + method34621, class1853.method34622() + 10, class1853.method34620() + method34621))) {
-            if (class1854.method1085(class1853.method34619(), class1854.getY(), class1853.method34620(), false) <= method34621 * method34621 + 1 && class1854.getY() < class1853.method34622()) {
+            if (class1854.distanceSq(class1853.method34619(), class1854.getY(), class1853.method34620(), false) <= method34621 * method34621 + 1 && class1854.getY() < class1853.method34622()) {
                 this.method13529(class1851, class1854, Class7521.field29286.method11878());
             }
             else {

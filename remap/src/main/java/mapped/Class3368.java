@@ -7,6 +7,7 @@ package mapped;
 import java.util.HashMap;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Arrays;
@@ -82,7 +83,7 @@ public class Class3368 extends Class3355
                         if (Class2059.method8149(class5744.field40774) != method35385.method32950() - 33) {
                             continue;
                         }
-                        if (Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class5744.field40773)) >= Class3368.field15514.field4682.method27315()) {
+                        if (Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class5744.field40773)) >= Class3368.field15514.field4682.method27315()) {
                             continue;
                         }
                         float[] array = Class4609.method13672(class5744.field40773, Direction.UP);
@@ -105,7 +106,7 @@ public class Class3368 extends Class3355
             if (class9486.field40774 != -1.0f && !this.method10710(class9486.field40774, class9486.field40775)) {
                 continue;
             }
-            if (Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class9486.field40773)) >= Class3368.field15514.field4682.method27315()) {
+            if (Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class9486.field40773)) >= Class3368.field15514.field4682.method27315()) {
                 continue;
             }
             return false;
@@ -115,7 +116,7 @@ public class Class3368 extends Class3355
     
     public boolean method10706(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
-            if (class9486.field40774 == -1.0f && Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
+            if (class9486.field40774 == -1.0f && Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
                 final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                 Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.field4684.field2404));
                 Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class9486.field40773, Direction.UP));
@@ -129,7 +130,7 @@ public class Class3368 extends Class3355
     
     public boolean method10707(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
-            if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
+            if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
                 if (Class3368.field15514.field4684.field2424 % 1 == 0) {
                     final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                     Class3368.field15514.field4684.method2707(Class316.field1877);
@@ -159,9 +160,9 @@ public class Class3368 extends Class3355
     }
     
     public static void method10709(final BlockPos class354) {
-        final double n = class354.getX() + 0.5f - Class869.method5277().field4644.method5833().method18161().method16760();
-        final double n2 = class354.getY() + 1.0f - Class869.method5277().field4644.method5833().method18161().method16761();
-        final double n3 = class354.getZ() + 0.5f - Class869.method5277().field4644.method5833().method18161().method16762();
+        final double n = class354.getX() + 0.5f - Class869.method5277().field4644.method5833().method18161().getX();
+        final double n2 = class354.getY() + 1.0f - Class869.method5277().field4644.method5833().method18161().getY();
+        final double n3 = class354.getZ() + 0.5f - Class869.method5277().field4644.method5833().method18161().getZ();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -170,9 +171,9 @@ public class Class3368 extends Class3355
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
-        final Class5487 method16755 = new Class5487(0.0, 0.0, 1.0).method16754(-(float)Math.toRadians(Class869.method5277().field4684.field2400)).method16755(-(float)Math.toRadians(Class869.method5277().field4684.field2399));
+        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Class869.method5277().field4684.field2400)).rotateYaw(-(float)Math.toRadians(Class869.method5277().field4684.field2399));
         GL11.glBegin(1);
-        GL11.glVertex3d(method16755.field22770, method16755.field22771, method16755.field22772);
+        GL11.glVertex3d(method16755.x, method16755.y, method16755.z);
         GL11.glVertex3d(n, n2, n3);
         GL11.glEnd();
         GL11.glEnable(3553);
@@ -236,7 +237,7 @@ public class Class3368 extends Class3355
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
-        GL11.glTranslated(n - Class3368.field15514.field4644.method5833().method18161().method16760() + 0.5, n2 - Class3368.field15514.field4644.method5833().method18161().method16761() + 1.0, n3 - Class3368.field15514.field4644.method5833().method18161().method16762() + 0.5);
+        GL11.glTranslated(n - Class3368.field15514.field4644.method5833().method18161().getX() + 0.5, n2 - Class3368.field15514.field4644.method5833().method18161().getY() + 1.0, n3 - Class3368.field15514.field4644.method5833().method18161().getZ() + 0.5);
         GL11.glAlphaFunc(519, 0.0f);
         GL11.glRotatef(Class3368.field15514.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(Class3368.field15514.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);

@@ -307,8 +307,8 @@ public class Class7718 implements Class7712
     }
     
     private int method24635(final Class3090 class3090, final BlockPos class3091) {
-        final double n = MathHelper.method35653(class3090.method9845(class3091), 0.0f, 1.0f);
-        return this.method24630((int)((1.0 - n) * (this.field30689 - 1)), (int)((1.0 - MathHelper.method35653(class3090.method9863(), 0.0f, 1.0f) * n) * (this.field30690 - 1)));
+        final double n = MathHelper.clamp(class3090.method9845(class3091), 0.0f, 1.0f);
+        return this.method24630((int)((1.0 - n) * (this.field30689 - 1)), (int)((1.0 - MathHelper.clamp(class3090.method9863(), 0.0f, 1.0f) * n) * (this.field30690 - 1)));
     }
     
     private int method24636(final Class3090 class3090, final BlockPos class3091) {

@@ -29,7 +29,7 @@ public class Class569 extends Class565 implements Class570
     }
     
     private float method3321() {
-        return MathHelper.method35653((this.field3397 - Class8349.method27837() + 5000L) / 2000.0f, 0.0f, 1.0f);
+        return MathHelper.clamp((this.field3397 - Class8349.method27837() + 5000L) / 2000.0f, 0.0f, 1.0f);
     }
     
     public void method3322(final float n) {

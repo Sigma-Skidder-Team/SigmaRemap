@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class392 implements AutoCloseable
 {
     private final Class1773 field2279;
@@ -112,50 +114,50 @@ public class Class392 implements AutoCloseable
                     method6844 = Class1660.method5816(this.field2285.field4684, f);
                 }
                 final Vector3f class9138 = new Vector3f(method6842, method6842, 1.0f);
-                class9138.method33326(new Vector3f(1.0f, 1.0f, 1.0f), 0.35f);
+                class9138.lerp(new Vector3f(1.0f, 1.0f, 1.0f), 0.35f);
                 final float f2 = this.field2283 + 1.5f;
                 final Vector3f class9139 = new Vector3f();
                 for (int i = 0; i < 16; ++i) {
                     for (int j = 0; j < 16; ++j) {
                         final float f3 = this.method1421(field4683, i) * n;
                         final float n2 = this.method1421(field4683, j) * f2;
-                        class9139.method33317(n2, n2 * ((n2 * 0.6f + 0.4f) * 0.6f + 0.4f), n2 * (n2 * n2 * 0.6f + 0.4f));
+                        class9139.set(n2, n2 * ((n2 * 0.6f + 0.4f) * 0.6f + 0.4f), n2 * (n2 * n2 * 0.6f + 0.4f));
                         if (field4683.field10063.method20487() != Class383.field2225) {
                             final Vector3f method6845 = this.method1426(class9138);
-                            method6845.method33314(f3);
-                            class9139.method33319(method6845);
-                            class9139.method33326(this.method1425(0.75f, 0.75f, 0.75f), 0.04f);
+                            method6845.mul(f3);
+                            class9139.add(method6845);
+                            class9139.lerp(this.method1425(0.75f, 0.75f, 0.75f), 0.04f);
                             if (this.field2284.method5831(f) > 0.0f) {
                                 final float method6846 = this.field2284.method5831(f);
                                 final Vector3f method6847 = this.method1426(class9139);
-                                method6847.method33315(0.7f, 0.6f, 0.6f);
-                                class9139.method33326(method6847, method6846);
+                                method6847.mul(0.7f, 0.6f, 0.6f);
+                                class9139.lerp(method6847, method6846);
                             }
                         }
                         else {
-                            class9139.method33326(this.method1425(0.99f, 1.12f, 1.0f), 0.25f);
+                            class9139.lerp(this.method1425(0.99f, 1.12f, 1.0f), 0.25f);
                         }
                         if (Class9570.field41365.method22605()) {
                             Class9570.method35826(field4683.method6789(), Class9570.field41365, f, method6842, f2, f3, class9139);
                         }
-                        class9139.method33316(0.0f, 1.0f);
+                        class9139.clamp(0.0f, 1.0f);
                         if (method6844 > 0.0f) {
-                            final float max = Math.max(class9139.method33311(), Math.max(class9139.method33312(), class9139.method33313()));
+                            final float max = Math.max(class9139.getX(), Math.max(class9139.getY(), class9139.getZ()));
                             if (max < 1.0f) {
                                 final float n3 = 1.0f / max;
                                 final Vector3f method6848 = this.method1426(class9139);
-                                method6848.method33314(n3);
-                                class9139.method33326(method6848, method6844);
+                                method6848.mul(n3);
+                                class9139.lerp(method6848, method6844);
                             }
                         }
                         final float n4 = (float)this.field2285.field4648.field23472;
                         final Vector3f method6849 = this.method1426(class9139);
-                        method6849.method33330(this::method1420);
-                        class9139.method33326(method6849, n4);
-                        class9139.method33326(this.method1425(0.75f, 0.75f, 0.75f), 0.04f);
-                        class9139.method33316(0.0f, 1.0f);
-                        class9139.method33314(255.0f);
-                        this.field2280.method6648(j, i, 0xFF000000 | (int)class9139.method33313() << 16 | (int)class9139.method33312() << 8 | (int)class9139.method33311());
+                        method6849.apply(this::method1420);
+                        class9139.lerp(method6849, n4);
+                        class9139.lerp(this.method1425(0.75f, 0.75f, 0.75f), 0.04f);
+                        class9139.clamp(0.0f, 1.0f);
+                        class9139.mul(255.0f);
+                        this.field2280.method6648(j, i, 0xFF000000 | (int)class9139.getZ() << 16 | (int)class9139.getY() << 8 | (int)class9139.getX());
                     }
                 }
                 this.field2279.method6327();
@@ -186,12 +188,12 @@ public class Class392 implements AutoCloseable
     }
     
     private Vector3f method1425(final float n, final float n2, final float n3) {
-        this.field2288.method33317(n, n2, n3);
+        this.field2288.set(n, n2, n3);
         return this.field2288;
     }
     
     private Vector3f method1426(final Vector3f class9138) {
-        this.field2288.method33317(class9138.method33311(), class9138.method33312(), class9138.method33313());
+        this.field2288.set(class9138.getX(), class9138.getY(), class9138.getZ());
         return this.field2288;
     }
     

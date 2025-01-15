@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class Class4381 implements Class4252<Class5813>
     private static String[] field19621;
     private int field19622;
     private Class2029 field19623;
-    private Class5487 field19624;
+    private Vec3d field19624;
     private Class316 field19625;
     
     public Class4381() {
@@ -31,7 +32,7 @@ public class Class4381 implements Class4252<Class5813>
         this.field19625 = field19625;
     }
     
-    public Class4381(final Entity class399, final Class316 field19625, final Class5487 field19626) {
+    public Class4381(final Entity class399, final Class316 field19625, final Vec3d field19626) {
         this.field19622 = class399.method1643();
         this.field19623 = Class2029.field11566;
         this.field19625 = field19625;
@@ -43,7 +44,7 @@ public class Class4381 implements Class4252<Class5813>
         this.field19622 = class8654.method29501();
         this.field19623 = class8654.method29499(Class2029.class);
         if (this.field19623 == Class2029.field11566) {
-            this.field19624 = new Class5487(class8654.readFloat(), class8654.readFloat(), class8654.readFloat());
+            this.field19624 = new Vec3d(class8654.readFloat(), class8654.readFloat(), class8654.readFloat());
         }
         if (this.field19623 == Class2029.field11564 || this.field19623 == Class2029.field11566) {
             this.field19625 = class8654.method29499(Class316.class);
@@ -55,9 +56,9 @@ public class Class4381 implements Class4252<Class5813>
         class8654.method29505(this.field19622);
         class8654.method29500(this.field19623);
         if (this.field19623 == Class2029.field11566) {
-            class8654.writeFloat((float)this.field19624.field22770);
-            class8654.writeFloat((float)this.field19624.field22771);
-            class8654.writeFloat((float)this.field19624.field22772);
+            class8654.writeFloat((float)this.field19624.x);
+            class8654.writeFloat((float)this.field19624.y);
+            class8654.writeFloat((float)this.field19624.z);
         }
         if (this.field19623 == Class2029.field11564 || this.field19623 == Class2029.field11566) {
             class8654.method29500(this.field19625);
@@ -81,7 +82,7 @@ public class Class4381 implements Class4252<Class5813>
         return this.field19625;
     }
     
-    public Class5487 method13173() {
+    public Vec3d method13173() {
         return this.field19624;
     }
 }

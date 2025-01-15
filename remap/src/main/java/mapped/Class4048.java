@@ -15,7 +15,7 @@ public class Class4048 extends Class3820
     @Override
     public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
         final Class8321 method2715 = class1848.method2715(class1849);
-        class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), Class8520.field35595, Class286.field1584, 0.5f, 0.4f / (Class4048.field17363.nextFloat() * 0.4f + 0.8f));
+        class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35595, Class286.field1584, 0.5f, 0.4f / (Class4048.field17363.nextFloat() * 0.4f + 0.8f));
         if (!class1847.field10067) {
             final Class411 class1850 = new Class411(class1847, class1848);
             class1850.method2012(method2715);

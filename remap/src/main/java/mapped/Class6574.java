@@ -30,9 +30,9 @@ public class Class6574 extends Class6564
         else {
             this.field26073 = Class2198.field13375;
             this.field26066.method1699(true);
-            final double n = this.field26067 - this.field26066.method1938();
-            final double n2 = this.field26068 - this.field26066.method1941();
-            final double n3 = this.field26069 - this.field26066.method1945();
+            final double n = this.field26067 - this.field26066.getPosX();
+            final double n2 = this.field26068 - this.field26066.getPosY();
+            final double n3 = this.field26069 - this.field26066.getPosZ();
             if (n * n + n2 * n2 + n3 * n3 < 2.500000277905201E-7) {
                 this.field26066.method4163(0.0f);
                 this.field26066.method4162(0.0f);
@@ -47,7 +47,7 @@ public class Class6574 extends Class6564
                 n4 = (float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950());
             }
             this.field26066.method2733(n4);
-            this.field26066.field2400 = this.method19909(this.field26066.field2400, (float)(-(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875)), (float)this.field26095);
+            this.field26066.field2400 = this.method19909(this.field26066.field2400, (float)(-(MathHelper.method35693(n2, MathHelper.sqrt(n * n + n3 * n3)) * 57.2957763671875)), (float)this.field26095);
             this.field26066.method4163((n2 <= 0.0) ? (-n4) : n4);
         }
     }

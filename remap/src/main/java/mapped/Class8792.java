@@ -18,6 +18,7 @@ import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Optional;
 import java.util.Random;
@@ -266,7 +267,7 @@ public class Class8792
                                 this.method30628();
                             }
                             --this.field36967;
-                            this.field36965.method21064(MathHelper.method35653((300 - this.field36967) / 300.0f, 0.0f, 1.0f));
+                            this.field36965.method21064(MathHelper.clamp((300 - this.field36967) / 300.0f, 0.0f, 1.0f));
                         }
                         else if (this.field36967 == 0) {
                             if (this.field36964 > 0) {
@@ -398,7 +399,7 @@ public class Class8792
                 final BlockPos class777 = new BlockPos(class776);
                 if (!class776.field2410) {
                     if (class776.field2452 == this.field36958.method6789().method20487()) {
-                        if (this.field36957.method1083(class777) < 12544.0) {
+                        if (this.field36957.distanceSq(class777) < 12544.0) {
                             if (class776.field2424 <= 600) {
                                 continue;
                             }
@@ -432,13 +433,13 @@ public class Class8792
         for (final Class513 class355 : this.field36958.method6840()) {
             final Vec3d method21075 = class355.method1934();
             final Vec3d class356 = new Vec3d(class354);
-            final float method21076 = MathHelper.method35641((class356.field22770 - method21075.field22770) * (class356.field22770 - method21075.field22770) + (class356.field22772 - method21075.field22772) * (class356.field22772 - method21075.field22772));
-            final double n = method21075.field22770 + 13.0f / method21076 * (class356.field22770 - method21075.field22770);
-            final double n2 = method21075.field22772 + 13.0f / method21076 * (class356.field22772 - method21075.field22772);
+            final float method21076 = MathHelper.sqrt((class356.x - method21075.x) * (class356.x - method21075.x) + (class356.z - method21075.z) * (class356.z - method21075.z));
+            final double n = method21075.x + 13.0f / method21076 * (class356.x - method21075.x);
+            final double n2 = method21075.z + 13.0f / method21076 * (class356.z - method21075.z);
             if (method21076 > 64.0f && !method21074.contains(class355)) {
                 continue;
             }
-            class355.field3039.method17469(new Class4282(Class8520.field35512, Class286.field1584, n, class355.method1941(), n2, 64.0f, 1.0f));
+            class355.field3039.method17469(new Class4282(Class8520.field35512, Class286.field1584, n, class355.getPosY(), n2, 64.0f, 1.0f));
         }
     }
     
@@ -510,7 +511,7 @@ public class Class8792
     }
     
     public void method30645() {
-        this.field36965.method21064(MathHelper.method35653(this.method30646() / this.field36961, 0.0f, 1.0f));
+        this.field36965.method21064(MathHelper.clamp(this.method30646() / this.field36961, 0.0f, 1.0f));
     }
     
     public float method30646() {

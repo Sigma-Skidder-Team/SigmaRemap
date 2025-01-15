@@ -43,7 +43,7 @@ public final class Class7125
         method8146.method13454(0, method8148 - (method8147.field27294 + method8146.method13520()), 0);
         field27770.add(method8146);
         if (field27766 > 0) {
-            this.field27772.addLast(new Class8433(method8146, new AtomicReference(Class7698.method24494(Class7698.method24489(new Class6221(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), Class7698.method24489(Class6221.method18489(method8147)), Class9306.field39920)), method8148 + 80, 0, null));
+            this.field27772.addLast(new Class8433(method8146, new AtomicReference(Class7698.method24494(Class7698.method24489(new AxisAlignedBB(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), Class7698.method24489(AxisAlignedBB.method18489(method8147)), Class9306.field39920)), method8148 + 80, 0, null));
             while (!this.field27772.isEmpty()) {
                 final Class8433 class1934 = this.field27772.removeFirst();
                 this.method21866(Class8433.method28156(class1934), Class8433.method28157(class1934), Class8433.method28158(class1934), Class8433.method28159(class1934));
@@ -81,7 +81,7 @@ public final class Class7125
                         atomicReference3 = atomicReference2;
                         n5 = field27294;
                         if (atomicReference2.get() == null) {
-                            atomicReference2.set(Class7698.method24489(Class6221.method18489(method13522)));
+                            atomicReference2.set(Class7698.method24489(AxisAlignedBB.method18489(method13522)));
                         }
                     }
                     final ArrayList arrayList = Lists.newArrayList();
@@ -139,10 +139,10 @@ public final class Class7125
                                 if (orElse > 0) {
                                     method13530.field27297 = method13530.field27294 + Math.max(orElse + 1, method13530.field27297 - method13530.field27294);
                                 }
-                                if (Class7698.method24496(atomicReference3.get(), Class7698.method24489(Class6221.method18489(method13530).method18511(0.25)), Class9306.field39918)) {
+                                if (Class7698.method24496(atomicReference3.get(), Class7698.method24489(AxisAlignedBB.method18489(method13530).method18511(0.25)), Class9306.field39918)) {
                                     continue;
                                 }
-                                atomicReference3.set(Class7698.method24495(atomicReference3.get(), Class7698.method24489(Class6221.method18489(method13530)), Class9306.field39920));
+                                atomicReference3.set(Class7698.method24495(atomicReference3.get(), Class7698.method24489(AxisAlignedBB.method18489(method13530)), Class9306.field39920));
                                 final int method13532 = class4521.method13520();
                                 int method13533;
                                 if (!b2) {

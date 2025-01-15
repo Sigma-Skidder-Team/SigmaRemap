@@ -8,6 +8,7 @@ import java.awt.Color;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Map;
@@ -320,7 +321,7 @@ public class Class3376 extends Class3167
             n = 0.0;
         }
         GL11.glTranslated(key.field2417 + (key.field2395 - key.field2417) * n, key.field2418 + (key.field2396 - key.field2418) * n, key.field2419 + (key.field2397 - key.field2419) * n);
-        GL11.glTranslated(-Class3376.field15514.field4644.method5833().method18161().method16760(), -Class3376.field15514.field4644.method5833().method18161().method16761(), -Class3376.field15514.field4644.method5833().method18161().method16762());
+        GL11.glTranslated(-Class3376.field15514.field4644.method5833().method18161().getX(), -Class3376.field15514.field4644.method5833().method18161().getY(), -Class3376.field15514.field4644.method5833().method18161().getZ());
         GL11.glEnable(32823);
         GL11.glEnable(3008);
         GL11.glEnable(3042);
@@ -333,7 +334,7 @@ public class Class3376 extends Class3167
         final float n5 = (float)Math.sin(n4 * 3.141592653589793);
         this.method10749(b, 0.45f * n5, 0.6f, 0.35f * n5, this.field16073.get(key).method35858());
         GL11.glPushMatrix();
-        GL11.glTranslated(Class3376.field15514.field4644.method5833().method18161().method16760(), Class3376.field15514.field4644.method5833().method18161().method16761(), Class3376.field15514.field4644.method5833().method18161().method16762());
+        GL11.glTranslated(Class3376.field15514.field4644.method5833().method18161().getX(), Class3376.field15514.field4644.method5833().method18161().getY(), Class3376.field15514.field4644.method5833().method18161().getZ());
         GL11.glPopMatrix();
         GL11.glEnable(3553);
         GL11.glDisable(32925);
@@ -487,7 +488,7 @@ public class Class3376 extends Class3167
                     b3 = false;
                     if (b) {
                         if (this.field16072 != null) {
-                            if (Class3376.field15514.field4684.method1935().field22771 < 0.0) {
+                            if (Class3376.field15514.field4684.method1935().y < 0.0) {
                                 Class3376.field15514.method5269().method17292(new Class4354(this.field16072[0], this.field16072[1], this.field16072[2], false));
                                 this.field16072 = null;
                             }
@@ -787,7 +788,7 @@ public class Class3376 extends Class3167
             }
             case "AAC": {
                 final Class7988 method26805 = this.method10756(method26800);
-                if (!Class8845.method30923(new Class5487(method26800.field2395, method26800.field2396 - 1.6 - this.field16067 + method26800.method1892(), method26800.field2397))) {}
+                if (!Class8845.method30923(new Vec3d(method26800.field2395, method26800.field2396 - 1.6 - this.field16067 + method26800.method1892(), method26800.field2397))) {}
                 final float n4 = this.field16069 / Math.max(1.0f, this.field16068);
                 final double n5 = method26800.field2395 - method26800.field2417;
                 final double n6 = method26800.field2397 - method26800.field2419;
@@ -853,7 +854,7 @@ public class Class3376 extends Class3167
         final double x = class399.field2395 - Class3376.field15514.field4684.field2395 + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
         final double y = class399.field2396 - 1.6 - this.field16067 + class399.method1892() - Class3376.field15514.field4684.field2396;
         final double y2 = class399.field2397 - Class3376.field15514.field4684.field2397 + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        return new Class7988(Class8845.method30910(this.field16064.field32884, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), Class8845.method30910(this.field16064.field32885, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f));
+        return new Class7988(Class8845.method30910(this.field16064.field32884, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), Class8845.method30910(this.field16064.field32885, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f));
     }
     
     private double method10757(final double n, final double n2) {

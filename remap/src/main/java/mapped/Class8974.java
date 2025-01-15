@@ -20,7 +20,7 @@ public class Class8974
     private Class1946 field37811;
     private final Set<Class436> field37812;
     private final Map<Class6332, Class1918> field37813;
-    public Class6221 field37814;
+    public AxisAlignedBB field37814;
     private int field37815;
     private boolean field37816;
     private final Class385 field37817;
@@ -116,7 +116,7 @@ public class Class8974
         final int n4 = 8;
         this.field37823 = n >> n4 << n4;
         this.field37824 = n3 >> n4 << n4;
-        this.field37814 = new Class6221(n, n2, n3, n + 16, n2 + 16, n3 + 16);
+        this.field37814 = new AxisAlignedBB(n, n2, n3, n + 16, n2 + 16, n3 + 16);
         for (final Direction class179 : Direction.VALUES) {
             this.field37818[class179.ordinal()].method1287(this.field37817).method1291(class179, 16);
         }
@@ -134,9 +134,9 @@ public class Class8974
     
     public double method31868() {
         final Class6092 method5833 = Class869.method5277().field4644.method5833();
-        final double n = this.field37814.field25073 + 8.0 - method5833.method18161().field22770;
-        final double n2 = this.field37814.field25074 + 8.0 - method5833.method18161().field22771;
-        final double n3 = this.field37814.field25075 + 8.0 - method5833.method18161().field22772;
+        final double n = this.field37814.field25073 + 8.0 - method5833.method18161().x;
+        final double n2 = this.field37814.field25074 + 8.0 - method5833.method18161().y;
+        final double n3 = this.field37814.field25075 + 8.0 - method5833.method18161().z;
         return n * n + n2 * n2 + n3 * n3;
     }
     

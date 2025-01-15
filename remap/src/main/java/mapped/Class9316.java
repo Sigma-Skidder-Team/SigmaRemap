@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -36,7 +38,7 @@ public class Class9316
     private static Class7096 method34478(final Class512 class512) {
         final Class385 class513 = new Class385();
         for (int i = 0; i < 8; ++i) {
-            class513.method1286(class512.method1938() + ((i >> 0) % 2 - 0.5f) * class512.method1930() * 0.8f, class512.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, class512.method1945() + ((i >> 2) % 2 - 0.5f) * class512.method1930() * 0.8f);
+            class513.method1286(class512.getPosX() + ((i >> 0) % 2 - 0.5f) * class512.method1930() * 0.8f, class512.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, class512.getPosZ() + ((i >> 2) % 2 - 0.5f) * class512.method1930() * 0.8f);
             final Class7096 method6701 = class512.field2391.method6701(class513);
             if (method6701.method21710() != Class2115.field12305 && method6701.method21747(class512.field2391, class513)) {
                 return method6701;
@@ -55,7 +57,7 @@ public class Class9316
         final float method22698 = class870.method7498();
         final float method22699 = class870.method7500();
         final float method22700 = class870.method7501();
-        final Class6789 method22701 = class871.method22569().method32111();
+        final Matrix4f method22701 = class871.method22569().method32111();
         method22696.method12390(7, Class9237.field39618);
         method22696.method12444(method22701, -1.0f, -1.0f, -0.5f).method12439(0.1f, 0.1f, 0.1f, 1.0f).method12391(method22698, method22700).method12397();
         method22696.method12444(method22701, 1.0f, -1.0f, -0.5f).method12439(0.1f, 0.1f, 0.1f, 1.0f).method12391(method22697, method22700).method12397();
@@ -76,7 +78,7 @@ public class Class9316
         Class8726.method30117();
         final float n = -class869.field4684.field2399 / 64.0f;
         final float n2 = class869.field4684.field2400 / 64.0f;
-        final Class6789 method22698 = class870.method22569().method32111();
+        final Matrix4f method22698 = class870.method22569().method32111();
         method22696.method12390(7, Class9237.field39618);
         method22696.method12444(method22698, -1.0f, -1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(4.0f + n, 4.0f + n2).method12397();
         method22696.method12444(method22698, 1.0f, -1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(0.0f + n, 4.0f + n2).method12397();
@@ -114,8 +116,8 @@ public class Class9316
         for (int i = 0; i < 2; ++i) {
             class870.method22567();
             class870.method22564(-(i * 2 - 1) * 0.24f, -0.30000001192092896, 0.0);
-            class870.method22566(Vector3f.field38718.rotationDegrees((i * 2 - 1) * 10.0f));
-            final Class6789 method22707 = class870.method22569().method32111();
+            class870.method22566(Vector3f.YP.rotationDegrees((i * 2 - 1) * 10.0f));
+            final Matrix4f method22707 = class870.method22569().method32111();
             method22696.method12390(7, Class9237.field39618);
             method22696.method12444(method22707, -0.5f, -0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22704, method22706).method12397();
             method22696.method12444(method22707, 0.5f, -0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22703, method22706).method12397();

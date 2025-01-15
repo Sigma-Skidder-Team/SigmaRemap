@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 import javax.annotation.Nullable;
@@ -54,7 +55,7 @@ public class Class423 extends Entity
     public Class423(final Class1847 class1847, final double field2392, final double field2393, final double field2394) {
         this(Class7499.field28963, class1847);
         this.method1656(field2392, field2393, field2394);
-        this.method1936(Class5487.field22769);
+        this.method1936(Vec3d.ZERO);
         this.field2392 = field2392;
         this.field2393 = field2393;
         this.field2394 = field2394;
@@ -78,13 +79,13 @@ public class Class423 extends Entity
     
     @Nullable
     @Override
-    public Class6221 method1771(final Entity class399) {
+    public AxisAlignedBB method1771(final Entity class399) {
         return class399.method1750() ? class399.method1886() : null;
     }
     
     @Nullable
     @Override
-    public Class6221 method1702() {
+    public AxisAlignedBB method1702() {
         return this.method1886();
     }
     
@@ -138,9 +139,9 @@ public class Class423 extends Entity
                 this.method2059(60);
             }
         }
-        this.field2391.method6709(Class8432.field34646, this.method1938() + this.field2423.nextFloat(), this.method1941() + 0.7, this.method1945() + this.field2423.nextFloat(), 0.0, 0.0, 0.0);
+        this.field2391.method6709(Class8432.field34646, this.getPosX() + this.field2423.nextFloat(), this.getPosY() + 0.7, this.getPosZ() + this.field2423.nextFloat(), 0.0, 0.0, 0.0);
         if (this.field2423.nextInt(20) == 0) {
-            this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), this.method1687(), this.method1922(), 1.0f, 0.8f + 0.4f * this.field2423.nextFloat(), false);
+            this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), this.method1687(), this.method1922(), 1.0f, 0.8f + 0.4f * this.field2423.nextFloat(), false);
         }
     }
     
@@ -230,7 +231,7 @@ public class Class423 extends Entity
         super.method1659();
         this.method2043();
         if (!this.method1919()) {
-            this.method1936(Class5487.field22769);
+            this.method1936(Vec3d.ZERO);
         }
         else {
             if (this.method1908().isEmpty() || !(this.method1908().get(0) instanceof Class512)) {
@@ -254,8 +255,8 @@ public class Class423 extends Entity
                         if ((this.field2549[i] + 0.39269909262657166) % 6.2831854820251465 >= 0.7853981852531433) {
                             final Class7795 method2042 = this.method2042();
                             if (method2042 != null) {
-                                final Class5487 method2043 = this.method1741(1.0f);
-                                this.field2391.method6706(null, this.method1938() + ((i != 1) ? method2043.field22772 : (-method2043.field22772)), this.method1941(), this.method1945() + ((i != 1) ? (-method2043.field22770) : method2043.field22770), method2042, this.method1922(), 1.0f, 0.8f + 0.4f * this.field2423.nextFloat());
+                                final Vec3d method2043 = this.method1741(1.0f);
+                                this.field2391.method6706(null, this.getPosX() + ((i != 1) ? method2043.z : (-method2043.z)), this.getPosY(), this.getPosZ() + ((i != 1) ? (-method2043.x) : method2043.x), method2042, this.method1922(), 1.0f, 0.8f + 0.4f * this.field2423.nextFloat());
                             }
                         }
                     }
@@ -304,12 +305,12 @@ public class Class423 extends Entity
                 if (60 - method2060 - 1 > 0) {
                     if (method2060 == 0) {
                         this.method2059(0);
-                        final Class5487 method2061 = this.method1935();
+                        final Vec3d method2061 = this.method1935();
                         if (!this.field2569) {
-                            this.method1937(method2061.field22770, this.method1910(Class512.class) ? 2.7 : 0.6, method2061.field22772);
+                            this.method1937(method2061.x, this.method1910(Class512.class) ? 2.7 : 0.6, method2061.z);
                         }
                         else {
-                            this.method1936(method2061.method16744(0.0, -0.7, 0.0));
+                            this.method1936(method2061.add(0.0, -0.7, 0.0));
                             this.method1783();
                         }
                     }
@@ -324,7 +325,7 @@ public class Class423 extends Entity
             else {
                 this.field2570 += 0.05f;
             }
-            this.field2570 = MathHelper.method35653(this.field2570, 0.0f, 1.0f);
+            this.field2570 = MathHelper.clamp(this.field2570, 0.0f, 1.0f);
             this.field2572 = this.field2571;
             this.field2571 = 10.0f * (float)Math.sin(0.5f * this.field2391.method6754()) * this.field2570;
         }
@@ -350,12 +351,12 @@ public class Class423 extends Entity
     private void method2043() {
         if (this.method1919()) {
             this.field2553 = 0;
-            this.method1641(this.method1938(), this.method1941(), this.method1945());
+            this.method1641(this.getPosX(), this.getPosY(), this.getPosZ());
         }
         if (this.field2553 > 0) {
-            final double n = this.method1938() + (this.field2554 - this.method1938()) / this.field2553;
-            final double n2 = this.method1941() + (this.field2555 - this.method1941()) / this.field2553;
-            final double n3 = this.method1945() + (this.field2556 - this.method1945()) / this.field2553;
+            final double n = this.getPosX() + (this.field2554 - this.getPosX()) / this.field2553;
+            final double n2 = this.getPosY() + (this.field2555 - this.getPosY()) / this.field2553;
+            final double n3 = this.getPosZ() + (this.field2556 - this.getPosZ()) / this.field2553;
             this.field2399 += (float)(MathHelper.method35669(this.field2557 - this.field2399) / this.field2553);
             this.field2400 += (float)((this.field2558 - this.field2400) / this.field2553);
             --this.field2553;
@@ -391,7 +392,7 @@ public class Class423 extends Entity
     }
     
     public float method2047() {
-        final Class6221 method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.method1886();
         final int method1887 = MathHelper.floor(method1886.field25073);
         final int method1888 = MathHelper.method35650(method1886.field25076);
         final int method1889 = MathHelper.floor(method1886.field25077);
@@ -433,8 +434,8 @@ public class Class423 extends Entity
     }
     
     public float method2048() {
-        final Class6221 method1886 = this.method1886();
-        final Class6221 class6221 = new Class6221(method1886.field25073, method1886.field25074 - 0.001, method1886.field25075, method1886.field25076, method1886.field25074, method1886.field25078);
+        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB class6221 = new AxisAlignedBB(method1886.field25073, method1886.field25074 - 0.001, method1886.field25075, method1886.field25076, method1886.field25074, method1886.field25078);
         final int n = MathHelper.floor(class6221.field25073) - 1;
         final int n2 = MathHelper.method35650(class6221.field25076) + 1;
         final int n3 = MathHelper.floor(class6221.field25074) - 1;
@@ -467,7 +468,7 @@ public class Class423 extends Entity
     }
     
     private boolean method2049() {
-        final Class6221 method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.method1886();
         final int method1887 = MathHelper.floor(method1886.field25073);
         final int method1888 = MathHelper.method35650(method1886.field25076);
         final int method1889 = MathHelper.floor(method1886.field25074);
@@ -496,7 +497,7 @@ public class Class423 extends Entity
     
     @Nullable
     private Class2087 method2050() {
-        final Class6221 method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.method1886();
         final double n = method1886.field25077 + 0.001;
         final int method1887 = MathHelper.floor(method1886.field25073);
         final int method1888 = MathHelper.method35650(method1886.field25076);
@@ -532,8 +533,8 @@ public class Class423 extends Entity
             if (this.field2565 != Class2087.field12069) {
                 if (this.field2565 != Class2087.field12068) {
                     this.field2563 = this.method1942(1.0);
-                    this.method1656(this.method1938(), this.method2047() - this.method1931() + 0.101, this.method1945());
-                    this.method1936(this.method1935().method16751(1.0, 0.0, 1.0));
+                    this.method1656(this.getPosX(), this.method2047() - this.method1931() + 0.101, this.getPosZ());
+                    this.method1936(this.method1935().mul(1.0, 0.0, 1.0));
                     this.field2567 = 0.0;
                     this.field2565 = Class2087.field12065;
                     return;
@@ -566,15 +567,15 @@ public class Class423 extends Entity
             }
         }
         else {
-            n2 = (this.field2563 - this.method1941()) / this.method1931();
+            n2 = (this.field2563 - this.getPosY()) / this.method1931();
             this.field2550 = 0.9f;
         }
-        final Class5487 method1935 = this.method1935();
-        this.method1937(method1935.field22770 * this.field2550, method1935.field22771 + n, method1935.field22772 * this.field2550);
+        final Vec3d method1935 = this.method1935();
+        this.method1937(method1935.x * this.field2550, method1935.y + n, method1935.z * this.field2550);
         this.field2552 *= this.field2550;
         if (n2 > 0.0) {
-            final Class5487 method1936 = this.method1935();
-            this.method1937(method1936.field22770, (method1936.field22771 + n2 * 0.06153846016296973) * 0.75, method1936.field22772);
+            final Vec3d method1936 = this.method1935();
+            this.method1937(method1936.x, (method1936.y + n2 * 0.06153846016296973) * 0.75, method1936.z);
         }
     }
     
@@ -601,7 +602,7 @@ public class Class423 extends Entity
             if (this.field2562) {
                 n -= 0.005f;
             }
-            this.method1936(this.method1935().method16744(MathHelper.sin(-this.field2399 * 0.017453292f) * n, 0.0, MathHelper.cos(this.field2399 * 0.017453292f) * n));
+            this.method1936(this.method1935().add(MathHelper.sin(-this.field2399 * 0.017453292f) * n, 0.0, MathHelper.cos(this.field2399 * 0.017453292f) * n));
             this.method2044((this.field2560 && !this.field2559) || this.field2561, (this.field2559 && !this.field2560) || this.field2561);
         }
     }
@@ -622,8 +623,8 @@ public class Class423 extends Entity
                     n += (float)0.2;
                 }
             }
-            final Class5487 method16755 = new Class5487(n, 0.0, 0.0).method16755(-this.field2399 * 0.017453292f - 1.5707964f);
-            class399.method1656(this.method1938() + method16755.field22770, this.method1941() + n2, this.method1945() + method16755.field22772);
+            final Vec3d method16755 = new Vec3d(n, 0.0, 0.0).rotateYaw(-this.field2399 * 0.017453292f - 1.5707964f);
+            class399.method1656(this.getPosX() + method16755.x, this.getPosY() + n2, this.getPosZ() + method16755.z);
             class399.field2399 += this.field2552;
             class399.method1845(class399.method1844() + this.field2552);
             this.method2053(class399);
@@ -640,7 +641,7 @@ public class Class423 extends Entity
     public void method2053(final Entity class399) {
         class399.method1846(this.field2399);
         final float method35668 = MathHelper.method35668(class399.field2399 - this.field2399);
-        final float method35669 = MathHelper.method35653(method35668, -105.0f, 105.0f);
+        final float method35669 = MathHelper.clamp(method35668, -105.0f, 105.0f);
         class399.field2401 += method35669 - method35668;
         class399.method1845(class399.field2399 += method35669 - method35668);
     }
@@ -669,7 +670,7 @@ public class Class423 extends Entity
     
     @Override
     public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
-        this.field2567 = this.method1935().field22771;
+        this.field2567 = this.method1935().y;
         if (!this.method1805()) {
             if (!b) {
                 if (!this.field2391.method6702(new BlockPos(this).method1139()).method21793(Class7324.field28319)) {

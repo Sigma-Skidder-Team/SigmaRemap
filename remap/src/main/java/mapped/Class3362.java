@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.Collections;
@@ -110,14 +111,14 @@ public class Class3362 extends Class3355
         final float n3 = class400.getY() + 1.0f;
         final float n4 = class400.getZ() + 0.5f;
         final float n5 = n * 2.0f;
-        final Class5487 class401 = new Class5487(n2, n3, n4);
+        final Vec3d class401 = new Vec3d(n2, n3, n4);
         if (!class399.method1899()) {
-            final double n6 = MathHelper.method35641(class399.method1735(class401)) / n5;
+            final double n6 = MathHelper.sqrt(class399.method1735(class401)) / n5;
             if (n6 <= 1.0) {
-                final double n7 = class399.method1938() - n2;
+                final double n7 = class399.getPosX() - n2;
                 final double n8 = class399.method1944() - n3;
-                final double n9 = class399.method1945() - n4;
-                if (MathHelper.method35641(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
+                final double n9 = class399.getPosZ() - n4;
+                if (MathHelper.sqrt(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
                     final double n10 = (1.0 - n6) * Class6154.method18407(class401, class399);
                     return (float)(int)((n10 * n10 + n10) / 2.0 * 7.0 * n5 + 1.0);
                 }
@@ -131,7 +132,7 @@ public class Class3362 extends Class3355
         final List<Entity> method10657 = this.method10657();
         final ArrayList list = new ArrayList();
     Label_0068:
-        for (final BlockPos class400 : Class4609.method13676(Class4609.method13691(4.0f), new Class5487(class399.method1938(), class399.method1941() - 1.0, class399.method1945()))) {
+        for (final BlockPos class400 : Class4609.method13676(Class4609.method13691(4.0f), new Vec3d(class399.getPosX(), class399.getPosY() - 1.0, class399.getPosZ()))) {
             final Class3833 method10658 = Class3362.field15514.field4683.method6701(class400).method21696();
             if (method10658 != Class7521.field29286 && method10658 != Class7521.field29172) {
                 continue;
@@ -139,10 +140,10 @@ public class Class3362 extends Class3355
             if (Class3362.field15514.field4683.method6701(class400.method1137()).method21696() != Class7521.field29147) {
                 continue;
             }
-            final Class6221 method10659 = new Class6221(class400).method18495(0.5, 0.5, 0.5).method18499(0.0, 1.5, 0.0);
+            final AxisAlignedBB method10659 = new AxisAlignedBB(class400).method18495(0.5, 0.5, 0.5).method18499(0.0, 1.5, 0.0);
             for (final Entity class401 : method10657) {
-                final Class6221 method10660 = class401.method1886();
-                final Class6221 class402 = new Class6221(class400.method1137());
+                final AxisAlignedBB method10660 = class401.method1886();
+                final AxisAlignedBB class402 = new AxisAlignedBB(class400.method1137());
                 if (class401 instanceof Class858 && method10660.method18502(method10659)) {
                     continue Label_0068;
                 }

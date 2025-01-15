@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3360 extends Class3355
 {
@@ -22,8 +23,8 @@ public class Class3360 extends Class3355
             return;
         }
         if (Class3360.field15514.field4684.method1920() != null) {
-            final Class5487 method1935 = Class3360.field15514.field4684.method1920().method1935();
-            if (Math.sqrt(method1935.field22770 * method1935.field22770 + method1935.field22772 * method1935.field22772) >= 1.399999976158142) {}
+            final Vec3d method1935 = Class3360.field15514.field4684.method1920().method1935();
+            if (Math.sqrt(method1935.x * method1935.x + method1935.z * method1935.z) >= 1.399999976158142) {}
             final float method1936 = Class7482.method23147();
             double n = Math.cos(Math.toRadians(method1936)) * 5.0;
             double n2 = Math.sin(Math.toRadians(method1936)) * 5.0;

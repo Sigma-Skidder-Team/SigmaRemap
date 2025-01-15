@@ -19,8 +19,8 @@ public class Class6093
     public void method18176(final boolean b) {
     }
     
-    public Class9544 method18177() {
-        return new Class9544(this.field24721, this.field24722);
+    public Vec2f method18177() {
+        return new Vec2f(this.field24721, this.field24722);
     }
     
     public boolean method18178() {

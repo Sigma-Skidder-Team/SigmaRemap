@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Locale;
 
@@ -56,7 +57,7 @@ public class Class7335
                     return false;
                 }
                 this.method22497("debug.copy_location.message", new Object[0]);
-                this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", Class383.method1276(this.field28331.field4684.field2391.field10063.method20487()), this.field28331.field4684.method1938(), this.field28331.field4684.method1941(), this.field28331.field4684.method1945(), this.field28331.field4684.field2399, this.field28331.field4684.field2400));
+                this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", Class383.method1276(this.field28331.field4684.field2391.field10063.method20487()), this.field28331.field4684.getPosX(), this.field28331.field4684.getPosY(), this.field28331.field4684.getPosZ(), this.field28331.field4684.field2399, this.field28331.field4684.field2400));
                 return true;
             }
             case 68: {
@@ -218,14 +219,14 @@ public class Class7335
     private void method22502(final Class1932 class1932, final Vec3d class1933, final Class51 class1934) {
         String s;
         if (class1934 == null) {
-            s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", class1932.toString(), class1933.field22770, class1933.field22771, class1933.field22772);
+            s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", class1932.toString(), class1933.x, class1933.y, class1933.z);
         }
         else {
             class1934.method330("UUIDMost");
             class1934.method330("UUIDLeast");
             class1934.method330("Pos");
             class1934.method330("Dimension");
-            s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", class1932.toString(), class1933.field22770, class1933.field22771, class1933.field22772, class1934.method268().getString());
+            s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", class1932.toString(), class1933.x, class1933.y, class1933.z, class1934.method268().getString());
         }
         this.method22508(s);
     }

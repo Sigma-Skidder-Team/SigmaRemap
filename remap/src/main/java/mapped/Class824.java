@@ -427,7 +427,7 @@ public class Class824 extends Class819 implements Class831, Class825
             n += 5;
         }
         if (class9017.method32300()) {
-            this.field2391.method6886(new Class508(this.field2391, this.method1938(), this.method1941() + 0.5, this.method1945(), n));
+            this.field2391.method6886(new Class508(this.field2391, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), n));
         }
     }
     
@@ -448,7 +448,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public void method2673(final Class7929 class7929) {
-        Class824.field2379.info("Villager {} died, message: '{}'", (Object)this, (Object)class7929.method25690(this).getString());
+        Class824.LOGGER.info("Villager {} died, message: '{}'", (Object)this, (Object)class7929.method25690(this).getString());
         final Entity method25714 = class7929.method25714();
         if (method25714 != null) {
             this.method4871(method25714);
@@ -620,7 +620,7 @@ public class Class824 extends Class819 implements Class831, Class825
     @Override
     public void method1834(final Class422 class422) {
         final Class778 class423 = Class7499.field29047.method23371(this.field2391);
-        class423.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+        class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
         class423.method4188(this.field2391, this.field2391.method6784(new BlockPos(class423)), Class2101.field12182, null, null);
         class423.method4211(this.method4214());
         if (this.method1874()) {

@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.ImmutableStringReader;
 import com.mojang.brigadier.StringReader;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5347 implements Class5346
 {
@@ -22,15 +23,15 @@ public class Class5347 implements Class5346
     }
     
     @Override
-    public Class5487 method16504(final Class7492 class7492) {
-        final Class5487 method23249 = class7492.method23249();
-        return new Class5487(this.field22416.method23978(method23249.field22770), this.field22417.method23978(method23249.field22771), this.field22418.method23978(method23249.field22772));
+    public Vec3d method16504(final Class7492 class7492) {
+        final Vec3d method23249 = class7492.method23249();
+        return new Vec3d(this.field22416.method23978(method23249.x), this.field22417.method23978(method23249.y), this.field22418.method23978(method23249.z));
     }
     
     @Override
-    public Class9544 method16505(final Class7492 class7492) {
-        final Class9544 method23254 = class7492.method23254();
-        return new Class9544((float)this.field22416.method23978(method23254.field41091), (float)this.field22417.method23978(method23254.field41092));
+    public Vec2f method16505(final Class7492 class7492) {
+        final Vec2f method23254 = class7492.method23254();
+        return new Vec2f((float)this.field22416.method23978(method23254.x), (float)this.field22417.method23978(method23254.y));
     }
     
     @Override

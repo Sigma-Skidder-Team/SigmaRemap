@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4704 extends Class4703<Class423>
@@ -20,7 +22,7 @@ public class Class4704 extends Class4703<Class423>
     public void method13964(final Class423 class423, final float n, final float n2, final Class7351 class424, final Class7807 class425, final int n3) {
         class424.method22567();
         class424.method22564(0.0, 0.375, 0.0);
-        class424.method22566(Vector3f.field38718.rotationDegrees(180.0f - n));
+        class424.method22566(Vector3f.YP.rotationDegrees(180.0f - n));
         final float n4 = class423.method2058() - n2;
         float n5 = class423.method2056() - n2;
         if (n5 < 0.0f) {
@@ -33,7 +35,7 @@ public class Class4704 extends Class4703<Class423>
             class424.method22566(new Quaternion(new Vector3f(1.0f, 0.0f, 1.0f), class423.method2061(n2), true));
         }
         class424.method22565(-1.0f, -1.0f, 1.0f);
-        class424.method22566(Vector3f.field38718.rotationDegrees(90.0f));
+        class424.method22566(Vector3f.YP.rotationDegrees(90.0f));
         this.field20289.method17630(class423, n2, 0.0f, -0.1f, 0.0f, 0.0f);
         this.field20289.method17564(class424, class425.method25214(this.field20289.method17647(this.method13965(class423))), n3, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
         this.field20289.method17631().method18643(class424, class425.method25214(Class6332.method18782()), n3, Class1904.field10335);

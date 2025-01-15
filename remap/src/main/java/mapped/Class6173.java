@@ -6,13 +6,14 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.stream.Stream;
 import java.util.Random;
 
 public abstract class Class6173
 {
-    private static final Class6221 field24931;
+    private static final AxisAlignedBB field24931;
     public final Class1847 field24932;
     public double field24933;
     public double field24934;
@@ -23,7 +24,7 @@ public abstract class Class6173
     public double field24939;
     public double field24940;
     public double field24941;
-    private Class6221 field24942;
+    private AxisAlignedBB field24942;
     public boolean field24943;
     public boolean field24944;
     private boolean field24945;
@@ -68,7 +69,7 @@ public abstract class Class6173
         this.field24940 = n5 + (Math.random() * 2.0 - 1.0) * 0.4000000059604645;
         this.field24941 = n6 + (Math.random() * 2.0 - 1.0) * 0.4000000059604645;
         final float n7 = (float)(Math.random() + Math.random() + 1.0) * 0.15f;
-        final float method35641 = MathHelper.method35641(this.field24939 * this.field24939 + this.field24940 * this.field24940 + this.field24941 * this.field24941);
+        final float method35641 = MathHelper.sqrt(this.field24939 * this.field24939 + this.field24940 * this.field24940 + this.field24941 * this.field24941);
         this.field24939 = this.field24939 / method35641 * n7 * 0.4000000059604645;
         this.field24940 = this.field24940 / method35641 * n7 * 0.4000000059604645 + 0.10000000149011612;
         this.field24941 = this.field24941 / method35641 * n7 * 0.4000000059604645;
@@ -141,10 +142,10 @@ public abstract class Class6173
         if (field24947 != this.field24947 || field24948 != this.field24948) {
             this.field24947 = field24947;
             this.field24948 = field24948;
-            final Class6221 method18444 = this.method18444();
+            final AxisAlignedBB method18444 = this.method18444();
             final double n = (method18444.field25073 + method18444.field25076 - field24947) / 2.0;
             final double n2 = (method18444.field25075 + method18444.field25078 - field24947) / 2.0;
-            this.method18445(new Class6221(n, method18444.field25074, n2, n + this.field24947, method18444.field25074 + this.field24948, n2 + this.field24947));
+            this.method18445(new AxisAlignedBB(n, method18444.field25074, n2, n + this.field24947, method18444.field25074 + this.field24948, n2 + this.field24947));
         }
     }
     
@@ -153,7 +154,7 @@ public abstract class Class6173
         this.field24937 = field24937;
         this.field24938 = field24938;
         final float n = this.field24947 / 2.0f;
-        this.method18445(new Class6221(field24936 - n, field24937, field24938 - n, field24936 + n, field24937 + this.field24948, field24938 + n));
+        this.method18445(new AxisAlignedBB(field24936 - n, field24937, field24938 - n, field24936 + n, field24937 + this.field24948, field24938 + n));
     }
     
     public void method18431(double field22770, double field22771, double field22772) {
@@ -171,9 +172,9 @@ public abstract class Class6173
                     }
                     if (this.method18446(field22770, field22771, field22772)) {
                         final Vec3d method1681 = Entity.method1681(null, new Vec3d(field22770, field22771, field22772), this.method18444(), this.field24932, Class7543.method23629(), new Class8120<Class7702>(Stream.empty()));
-                        field22770 = method1681.field22770;
-                        field22771 = method1681.field22771;
-                        field22772 = method1681.field22772;
+                        field22770 = method1681.x;
+                        field22771 = method1681.y;
+                        field22772 = method1681.z;
                     }
                 }
             }
@@ -204,7 +205,7 @@ public abstract class Class6173
     }
     
     public void method18442() {
-        final Class6221 method18444 = this.method18444();
+        final AxisAlignedBB method18444 = this.method18444();
         this.field24936 = (method18444.field25073 + method18444.field25076) / 2.0;
         this.field24937 = method18444.field25074;
         this.field24938 = (method18444.field25075 + method18444.field25078) / 2.0;
@@ -219,11 +220,11 @@ public abstract class Class6173
         return !this.field24946;
     }
     
-    public Class6221 method18444() {
+    public AxisAlignedBB method18444() {
         return this.field24942;
     }
     
-    public void method18445(final Class6221 field24942) {
+    public void method18445(final AxisAlignedBB field24942) {
         this.field24942 = field24942;
     }
     
@@ -259,6 +260,6 @@ public abstract class Class6173
     }
     
     static {
-        field24931 = new Class6221(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+        field24931 = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
     }
 }

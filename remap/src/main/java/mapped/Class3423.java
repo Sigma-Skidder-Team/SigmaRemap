@@ -140,7 +140,7 @@ public class Class3423 extends Class3418
     private void method10926() {
         if (!this.field16182.method4838().field10067) {
             final Entity class399 = (Entity)this.field16182;
-            this.field16182.method4838().method6708(class399.method1938(), class399.method1941(), class399.method1945(), this.field16182.method4832(), Class286.field1584, 1.0f, 1.0f, false);
+            this.field16182.method4838().method6708(class399.getPosX(), class399.getPosY(), class399.getPosZ(), this.field16182.method4832(), Class286.field1584, 1.0f, 1.0f, false);
         }
     }
     

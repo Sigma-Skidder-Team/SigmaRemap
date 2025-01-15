@@ -8,8 +8,11 @@ import java.util.AbstractList;
 import java.util.HashMap;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -162,25 +165,25 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public void method4281(final Class511 class511, final Class8321 class512, final Class401 class513, final float n) {
         final Entity class514 = (Entity)class513;
-        final double n2 = class511.method1938() - this.method1938();
-        final double n3 = class511.method1945() - this.method1945();
-        final Vector3f method4282 = this.method4282(new Vec3d(n2, class511.method1942(0.3333333333333333) - class514.method1941() + MathHelper.method35641(n2 * n2 + n3 * n3) * 0.20000000298023224, n3), n);
-        class513.method1958(method4282.method33311(), method4282.method33312(), method4282.method33313(), 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        final double n2 = class511.getPosX() - this.getPosX();
+        final double n3 = class511.getPosZ() - this.getPosZ();
+        final Vector3f method4282 = this.method4282(new Vec3d(n2, class511.method1942(0.3333333333333333) - class514.getPosY() + MathHelper.sqrt(n2 * n2 + n3 * n3) * 0.20000000298023224, n3), n);
+        class513.method1958(method4282.getX(), method4282.getY(), method4282.getZ(), 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35112, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
     }
     
     private Vector3f method4282(final Vec3d class5487, final float n) {
-        final Vec3d method16738 = class5487.method16738();
-        Vec3d class5488 = method16738.method16740(new Vec3d(0.0, 1.0, 0.0));
-        if (class5488.method16753() <= 1.0E-7) {
-            class5488 = method16738.method16740(this.method1745(1.0f));
+        final Vec3d method16738 = class5487.normalize();
+        Vec3d class5488 = method16738.crossProduct(new Vec3d(0.0, 1.0, 0.0));
+        if (class5488.lengthSquared() <= 1.0E-7) {
+            class5488 = method16738.crossProduct(this.method1745(1.0f));
         }
         final Quaternion class5489 = new Quaternion(new Vector3f(class5488), 90.0f, true);
         final Vector3f class5490 = new Vector3f(method16738);
-        class5490.method33325(class5489);
+        class5490.transform(class5489);
         final Quaternion class5491 = new Quaternion(class5490, n, true);
         final Vector3f class5492 = new Vector3f(method16738);
-        class5492.method33325(class5491);
+        class5492.transform(class5491);
         return class5492;
     }
     

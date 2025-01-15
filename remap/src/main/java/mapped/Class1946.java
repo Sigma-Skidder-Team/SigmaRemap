@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 
@@ -34,10 +36,10 @@ public class Class1946 extends Class1944
         if (this.field10597.get()) {
             return CompletableFuture.completedFuture(Class2033.field11590);
         }
-        final Class5487 method23456 = this.field10599.field37833.method23456();
-        final float n = (float)method23456.field22770;
-        final float n2 = (float)method23456.field22771;
-        final float n3 = (float)method23456.field22772;
+        final Vec3d method23456 = this.field10599.field37833.method23456();
+        final float n = (float)method23456.x;
+        final float n2 = (float)method23456.y;
+        final float n3 = (float)method23456.z;
         final Class7819 method23457 = Class9006.method32225(this.field10601);
         if (method23457 == null || !Class9006.method32221(this.field10601).contains(Class6332.method18765())) {
             return CompletableFuture.completedFuture(Class2033.field11590);

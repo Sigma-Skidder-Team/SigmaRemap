@@ -156,7 +156,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
         if (this.field2647 == null) {
             n += (15 - Class3418.method10898(this)) * 0.001f;
         }
-        this.method1936(this.method1935().method16751(n, 0.0, n));
+        this.method1936(this.method1935().mul(n, 0.0, n));
     }
     
     public void method2163(final Class512 class512) {

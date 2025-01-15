@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+
 public abstract class Class565
 {
     public static final Class1932 field3361;
@@ -33,7 +35,7 @@ public abstract class Class565
         method3294(Class9294.method34322().method34328(), n, n2, n3, n4, n5);
     }
     
-    public static void method3294(final Class6789 class6789, int n, int n2, int n3, int n4, final int n5) {
+    public static void method3294(final Matrix4f class6789, int n, int n2, int n3, int n4, final int n5) {
         if (n < n3) {
             final int n6 = n;
             n = n3;

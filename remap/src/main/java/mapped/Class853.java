@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -29,7 +30,7 @@ public class Class853 extends Class759 implements Class762
         this.field4114.method22062(2, new Class3504(this));
         this.field4114.method22062(3, new Class3527(this));
         this.field4114.method22062(5, new Class3493(this));
-        this.field4115.method22062(1, new Class3555<Object>(this, Class512.class, 10, true, false, class511 -> Math.abs(class511.method1941() - this.method1941()) <= 4.0));
+        this.field4115.method22062(1, new Class3555<Object>(this, Class512.class, 10, true, false, class511 -> Math.abs(class511.getPosY() - this.getPosY()) <= 4.0));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
     }
     
@@ -102,7 +103,7 @@ public class Class853 extends Class759 implements Class762
             for (int method5130 = this.method5130(), i = 0; i < method5130 * 8; ++i) {
                 final float n = this.field2423.nextFloat() * 6.2831855f;
                 final float n2 = this.field2423.nextFloat() * 0.5f + 0.5f;
-                this.field2391.method6709(this.method5132(), this.method1938() + MathHelper.sin(n) * method5130 * 0.5f * n2, this.method1941(), this.method1945() + MathHelper.cos(n) * method5130 * 0.5f * n2, 0.0, 0.0, 0.0);
+                this.field2391.method6709(this.method5132(), this.getPosX() + MathHelper.sin(n) * method5130 * 0.5f * n2, this.getPosY(), this.getPosZ() + MathHelper.cos(n) * method5130 * 0.5f * n2, 0.0, 0.0, 0.0);
             }
             this.method1695(this.method5138(), this.method2720(), ((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f) / 0.8f);
             this.field4557 = -0.5f;
@@ -126,9 +127,9 @@ public class Class853 extends Class759 implements Class762
     
     @Override
     public void method1881() {
-        final double method1938 = this.method1938();
-        final double method1939 = this.method1941();
-        final double method1940 = this.method1945();
+        final double method1938 = this.getPosX();
+        final double method1939 = this.getPosY();
+        final double method1940 = this.getPosZ();
         super.method1881();
         this.method1656(method1938, method1939, method1940);
     }
@@ -171,7 +172,7 @@ public class Class853 extends Class759 implements Class762
                         }
                         class853.method1851(this.method1850());
                         class853.method5129(method5130 / 2, true);
-                        class853.method1730(this.method1938() + n2, this.method1941() + 0.5, this.method1945() + n3, this.field2423.nextFloat() * 360.0f, 0.0f);
+                        class853.method1730(this.getPosX() + n2, this.getPosY() + 0.5, this.getPosZ() + n3, this.field2423.nextFloat() * 360.0f, 0.0f);
                         this.field2391.method6886(class853);
                     }
                 }
@@ -291,7 +292,7 @@ public class Class853 extends Class759 implements Class762
     @Override
     public void method2725() {
         final Vec3d method1935 = this.method1935();
-        this.method1937(method1935.field22770, this.method2724(), method1935.field22772);
+        this.method1937(method1935.x, this.method2724(), method1935.z);
         this.field2448 = true;
     }
     

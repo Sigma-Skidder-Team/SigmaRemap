@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 public class Class4163 extends Class4158<Class448>
@@ -22,7 +23,7 @@ public class Class4163 extends Class4158<Class448>
             if (class452 != Class8321.field34174) {
                 class449.method22567();
                 class449.method22564(0.5, 0.44921875, 0.5);
-                class449.method22566(Vector3f.field38718.rotationDegrees(-Direction.byHorizontalIndex((i + class451.getHorizontalIndex()) % 4).getHorizontalAngle()));
+                class449.method22566(Vector3f.YP.rotationDegrees(-Direction.byHorizontalIndex((i + class451.getHorizontalIndex()) % 4).getHorizontalAngle()));
                 class449.method22566(Vector3f.XP.rotationDegrees(90.0f));
                 class449.method22564(-0.3125, -0.3125, 0.0);
                 class449.method22565(0.375f, 0.375f, 0.375f);

@@ -65,6 +65,6 @@ public class Class3544 extends Class3542
         this.field16601.method2745(false);
         Class803.method4703(this.field16601, true);
         this.field16601.method4150().method24733();
-        this.field16601.method4148().method19907(this.field16601.method1938(), this.field16601.method1941(), this.field16601.method1945(), 0.0);
+        this.field16601.method4148().method19907(this.field16601.getPosX(), this.field16601.getPosY(), this.field16601.getPosZ(), 0.0);
     }
 }

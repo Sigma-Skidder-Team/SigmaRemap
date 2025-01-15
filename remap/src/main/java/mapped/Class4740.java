@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class4740 extends Class4712<Class786, Class5874<Class786>>
 {
     private static final Class1932 field20356;

@@ -4,11 +4,8 @@
 
 package net.minecraft.util;
 
-import java.util.stream.Collector;
-import java.util.function.Supplier;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import java.util.Comparator;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.Random;
@@ -16,6 +13,9 @@ import javax.annotation.Nullable;
 import java.util.Locale;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import mapped.*;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
@@ -110,7 +110,7 @@ public enum Direction implements IStringSerializable
         return new Direction[] {first, second, third, third.getOpposite(), second.getOpposite(), first.getOpposite()};
     }
     
-    public static Direction rotateFace(final Class6789 class6789, final Direction class6790) {
+    public static Direction rotateFace(final Matrix4f class6789, final Direction class6790) {
         final Vec3i method802 = class6790.getDirectionVec();
         final Vector4f class6791 = new Vector4f((float)method802.getX(), (float)method802.getY(), (float)method802.getZ(), 0.0f);
         class6791.method28603(class6789);

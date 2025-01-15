@@ -28,6 +28,7 @@ import io.netty.handler.codec.DecoderException;
 import java.util.Map;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public class Class8654 extends ByteBuf
 {
@@ -340,9 +341,9 @@ public class Class8654 extends ByteBuf
         this.method29495(method21447);
         this.method29500(class7005.method21448());
         final Vec3d method21448 = class7005.method21451();
-        this.writeFloat((float)(method21448.field22770 - method21447.getX()));
-        this.writeFloat((float)(method21448.field22771 - method21447.getY()));
-        this.writeFloat((float)(method21448.field22772 - method21447.getZ()));
+        this.writeFloat((float)(method21448.x - method21447.getX()));
+        this.writeFloat((float)(method21448.y - method21447.getY()));
+        this.writeFloat((float)(method21448.z - method21447.getZ()));
         this.writeBoolean(class7005.method21450());
     }
     

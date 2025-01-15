@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 
 public class Class4781<T extends Entity & Class407> extends Class4703<T>
@@ -34,7 +35,7 @@ public class Class4781<T extends Entity & Class407> extends Class4703<T>
         class7351.method22567();
         class7351.method22565(this.field20412, this.field20412, this.field20412);
         class7351.method22566(this.field20283.method28717());
-        class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f));
+        class7351.method22566(Vector3f.YP.rotationDegrees(180.0f));
         this.field20411.method6536(t.method2005(), Class2016.field11493, n3, Class1904.field10335, class7351, class7352);
         class7351.method22568();
         super.method13951(t, n, n2, class7351, class7352, n3);

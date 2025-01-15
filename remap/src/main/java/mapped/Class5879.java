@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class5879 extends Class5846<Class844>
 {
@@ -68,14 +69,14 @@ public class Class5879 extends Class5846<Class844>
         if (class845 != null) {
             final Vec3d method1747 = class845.method1747(0.0f);
             final Vec3d method1748 = class844.method1747(0.0f);
-            if (method1747.field22771 - method1748.field22771 <= 0.0) {
+            if (method1747.y - method1748.y <= 0.0) {
                 this.field24108.field25181 = 1.0f;
             }
             else {
                 this.field24108.field25181 = 0.0f;
             }
             final Vec3d method1749 = class844.method1741(0.0f);
-            final double method1750 = new Vec3d(method1749.field22770, 0.0, method1749.field22772).method16739(new Vec3d(method1748.field22770 - method1747.field22770, 0.0, method1748.field22772 - method1747.field22772).method16738().method16755(1.5707964f));
+            final double method1750 = new Vec3d(method1749.x, 0.0, method1749.z).dotProduct(new Vec3d(method1748.x - method1747.x, 0.0, method1748.z - method1747.z).normalize().rotateYaw(1.5707964f));
             this.field24108.field25180 = MathHelper.method35640((float)Math.abs(method1750)) * 2.0f * (float)Math.signum(method1750);
         }
         this.field24108.field25187 = true;

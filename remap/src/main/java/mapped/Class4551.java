@@ -21,8 +21,8 @@ public class Class4551 extends Class4535<Class5122>
     
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
         for (final BlockPos class1855 : BlockPos.method1154(new BlockPos(class1853.getX() - 4, class1853.getY() - 1, class1853.getZ() - 4), new BlockPos(class1853.getX() + 4, class1853.getY() + 32, class1853.getZ() + 4))) {
-            final boolean method1081 = class1855.method1081(class1853, 2.5);
-            if (!method1081 && !class1855.method1081(class1853, 3.5)) {
+            final boolean method1081 = class1855.withinDistance(class1853, 2.5);
+            if (!method1081 && !class1855.withinDistance(class1853, 3.5)) {
                 continue;
             }
             if (class1855.getY() >= class1853.getY()) {

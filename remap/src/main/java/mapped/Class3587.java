@@ -5,7 +5,6 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.util.List;
 import java.util.EnumSet;
 
@@ -107,11 +106,11 @@ public class Class3587 extends Class3446
             this.field16719.method4364();
             this.field16722.method4364();
             method4349.method4354(-24000);
-            method4349.method1730(this.field16719.method1938(), this.field16719.method1941(), this.field16719.method1945(), 0.0f, 0.0f);
+            method4349.method1730(this.field16719.getPosX(), this.field16719.getPosY(), this.field16719.getPosZ(), 0.0f, 0.0f);
             this.field16721.method6886(method4349);
             this.field16721.method6761(this.field16719, (byte)18);
             if (this.field16721.method6765().method31216(Class8878.field37319)) {
-                this.field16721.method6886(new Class508(this.field16721, this.field16719.method1938(), this.field16719.method1941(), this.field16719.method1945(), this.field16719.method2633().nextInt(7) + 1));
+                this.field16721.method6886(new Class508(this.field16721, this.field16719.getPosX(), this.field16719.getPosY(), this.field16719.getPosZ(), this.field16719.method2633().nextInt(7) + 1));
             }
         }
     }

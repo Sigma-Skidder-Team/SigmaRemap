@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -43,11 +44,11 @@ public class Class792 extends Class789
     
     @Override
     public float method2724() {
-        if (!this.field2405 && (!this.field4110.method19905() || this.field4110.method19911() <= this.method1941() + 0.5)) {
+        if (!this.field2405 && (!this.field4110.method19905() || this.field4110.method19911() <= this.getPosY() + 0.5)) {
             final Class9468 method24727 = this.field4113.method24727();
             if (method24727 != null) {
                 if (method24727.method35222() < method24727.method35221()) {
-                    if (method24727.method35225(this).field22771 > this.method1941() + 0.5) {
+                    if (method24727.method35225(this).y > this.getPosY() + 0.5) {
                         return 0.5f;
                     }
                 }
@@ -120,8 +121,8 @@ public class Class792 extends Class789
                     final Class511 method4152 = this.method4152();
                     if (method4152 != null) {
                         if (this.method1734(method4152) < 16.0) {
-                            this.method4436(method4152.method1938(), method4152.method1945());
-                            this.field4110.method19907(method4152.method1938(), method4152.method1941(), method4152.method1945(), this.field4110.method19906());
+                            this.method4436(method4152.getPosX(), method4152.getPosZ());
+                            this.field4110.method19907(method4152.getPosX(), method4152.getPosY(), method4152.getPosZ(), this.field4110.method19906());
                             this.method4435();
                             this.field4232 = true;
                         }
@@ -143,7 +144,7 @@ public class Class792 extends Class789
                             method4154 = method4153.method35225(this);
                         }
                     }
-                    this.method4436(method4154.field22770, method4154.field22772);
+                    this.method4436(method4154.x, method4154.z);
                     this.method4435();
                 }
             }
@@ -156,7 +157,7 @@ public class Class792 extends Class789
     }
     
     private void method4436(final double n, final double n2) {
-        this.field2399 = (float)(MathHelper.method35693(n2 - this.method1945(), n - this.method1938()) * 57.2957763671875) - 90.0f;
+        this.field2399 = (float)(MathHelper.method35693(n2 - this.getPosZ(), n - this.getPosX()) * 57.2957763671875) - 90.0f;
     }
     
     private void method4437() {

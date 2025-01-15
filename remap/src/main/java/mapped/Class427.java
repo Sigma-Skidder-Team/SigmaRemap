@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -58,13 +59,13 @@ public class Class427 extends Entity
                     --this.field2615;
                 }
             }
-            this.field2392 = this.method1938();
-            this.field2393 = this.method1941();
-            this.field2394 = this.method1945();
+            this.field2392 = this.getPosX();
+            this.field2393 = this.getPosY();
+            this.field2394 = this.getPosZ();
             final Vec3d method1935 = this.method1935();
             if (!this.method1720(Class7324.field28319)) {
                 if (!this.method1698()) {
-                    this.method1936(this.method1935().method16744(0.0, -0.04, 0.0));
+                    this.method1936(this.method1935().add(0.0, -0.04, 0.0));
                 }
             }
             else {
@@ -72,7 +73,7 @@ public class Class427 extends Entity
             }
             if (!this.field2391.field10067) {
                 if (this.field2421 = !this.field2391.method6977(this)) {
-                    this.method1838(this.method1938(), (this.method1886().field25074 + this.method1886().field25077) / 2.0, this.method1945());
+                    this.method1838(this.getPosX(), (this.method1886().field25074 + this.method1886().field25077) / 2.0, this.getPosZ());
                 }
             }
             else {
@@ -89,18 +90,18 @@ public class Class427 extends Entity
                 this.method1671(Class2160.field12826, this.method1935());
                 float n = 0.98f;
                 if (this.field2404) {
-                    n = this.field2391.method6701(new BlockPos(this.method1938(), this.method1941() - 1.0, this.method1945())).method21696().method11865() * 0.98f;
+                    n = this.field2391.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
                 }
-                this.method1936(this.method1935().method16751(n, 0.98, n));
+                this.method1936(this.method1935().mul(n, 0.98, n));
                 if (this.field2404) {
-                    this.method1936(this.method1935().method16751(1.0, -0.5, 1.0));
+                    this.method1936(this.method1935().mul(1.0, -0.5, 1.0));
                 }
             }
             boolean b = false;
             Label_0441: {
-                if (MathHelper.floor(this.field2392) == MathHelper.floor(this.method1938())) {
-                    if (MathHelper.floor(this.field2393) == MathHelper.floor(this.method1941())) {
-                        if (MathHelper.floor(this.field2394) == MathHelper.floor(this.method1945())) {
+                if (MathHelper.floor(this.field2392) == MathHelper.floor(this.getPosX())) {
+                    if (MathHelper.floor(this.field2393) == MathHelper.floor(this.getPosY())) {
+                        if (MathHelper.floor(this.field2394) == MathHelper.floor(this.getPosZ())) {
                             b = false;
                             break Label_0441;
                         }
@@ -124,7 +125,7 @@ public class Class427 extends Entity
             }
             this.field2448 |= this.method1715();
             if (!this.field2391.field10067) {
-                if (this.method1935().method16741(method1935).method16753() > 0.01) {
+                if (this.method1935().subtract(method1935).lengthSquared() > 0.01) {
                     this.field2448 = true;
                 }
             }
@@ -141,7 +142,7 @@ public class Class427 extends Entity
     
     private void method2099() {
         final Vec3d method1935 = this.method1935();
-        this.method1937(method1935.field22770 * 0.9900000095367432, method1935.field22771 + ((method1935.field22771 >= 0.05999999865889549) ? 0.0f : 5.0E-4f), method1935.field22772 * 0.9900000095367432);
+        this.method1937(method1935.x * 0.9900000095367432, method1935.y + ((method1935.y >= 0.05999999865889549) ? 0.0f : 5.0E-4f), method1935.z * 0.9900000095367432);
     }
     
     private void method2100() {

@@ -19,7 +19,7 @@ public class Class3482 extends Class3479
         if (super.method11013()) {
             if (!this.field16405.field2391.method6703()) {
                 if (this.field16405.method1706()) {
-                    if (this.field16405.method1941() >= this.field16405.field2391.method6743() - 3) {
+                    if (this.field16405.getPosY() >= this.field16405.field2391.method6743() - 3) {
                         return true;
                     }
                 }

@@ -266,7 +266,7 @@ public class Class8969
     }
     
     public static boolean method31836(final int n) {
-        return MathHelper.method35679(n) == n;
+        return MathHelper.smallestEncompassingPowerOfTwo(n) == n;
     }
     
     public static Class1846 method31837(final Class1846 class1846, final int n) {

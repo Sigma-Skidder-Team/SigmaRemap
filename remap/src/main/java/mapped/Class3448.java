@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
@@ -45,16 +47,16 @@ public class Class3448<T extends Class511> extends Class3446
     
     @Override
     public boolean method11013() {
-        this.field16279 = this.field16276.field2391.method7139((Class<? extends T>)this.field16283, this.field16286, (Class511)this.field16276, this.field16276.method1938(), this.field16276.method1941(), this.field16276.method1945(), this.field16276.method1886().method18495(this.field16280, 3.0, this.field16280));
+        this.field16279 = this.field16276.field2391.method7139((Class<? extends T>)this.field16283, this.field16286, (Class511)this.field16276, this.field16276.getPosX(), this.field16276.getPosY(), this.field16276.getPosZ(), this.field16276.method1886().method18495(this.field16280, 3.0, this.field16280));
         if (this.field16279 == null) {
             return false;
         }
-        final Class5487 method24908 = Class7775.method24908(this.field16276, 16, 7, this.field16279.method1934());
+        final Vec3d method24908 = Class7775.method24908(this.field16276, 16, 7, this.field16279.method1934());
         if (method24908 == null) {
             return false;
         }
-        if (this.field16279.method1733(method24908.field22770, method24908.field22771, method24908.field22772) >= this.field16279.method1734(this.field16276)) {
-            this.field16281 = this.field16282.method24719(method24908.field22770, method24908.field22771, method24908.field22772, 0);
+        if (this.field16279.method1733(method24908.x, method24908.y, method24908.z) >= this.field16279.method1734(this.field16276)) {
+            this.field16281 = this.field16282.method24719(method24908.x, method24908.y, method24908.z, 0);
             return this.field16281 != null;
         }
         return false;

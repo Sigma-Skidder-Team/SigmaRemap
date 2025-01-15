@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+
 import java.util.List;
 
 public class Class730 extends Class527
@@ -117,7 +119,7 @@ public class Class730 extends Class527
                 return list.isEmpty() ? "" : list.get(0).method8461();
             });
         }
-        final Class6789 method2198 = class7351.method22569().method32111();
+        final Matrix4f method2198 = class7351.method22569().method32111();
         final int method2199 = this.field3984.method22557();
         final int method2200 = this.field3984.method22558();
         final int n4 = this.field3150.field4643.method6630() ? -1 : 1;

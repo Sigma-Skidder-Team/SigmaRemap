@@ -86,9 +86,9 @@ public class Class3353 extends Class3167
     }
     
     public float[] method10614() {
-        final double n = Class3353.field15514.field4684.field2395 + Class3353.field15514.field4684.method1935().field22770 * 26.0;
+        final double n = Class3353.field15514.field4684.field2395 + Class3353.field15514.field4684.method1935().x * 26.0;
         final double n2 = Class3353.field15514.field4684.field2403.field25074 - 3.6;
-        final double n3 = Class3353.field15514.field4684.field2397 + Class3353.field15514.field4684.method1935().field22772 * 26.0;
+        final double n3 = Class3353.field15514.field4684.field2397 + Class3353.field15514.field4684.method1935().z * 26.0;
         if (!this.method9883("Predict")) {
             return new float[] { Class3353.field15514.field4684.field2399, 90.0f };
         }

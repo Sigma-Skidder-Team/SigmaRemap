@@ -17,14 +17,14 @@ public class Class8490
     private final String field34848;
     private int field34849;
     private int field34850;
-    private Class9544 field34851;
+    private Vec2f field34851;
     private boolean field34852;
     private int field34853;
     public final /* synthetic */ Class6823 field34854;
     
     private Class8490(final Class6823 field34854, final int n, final int n2, final int n3, final Suggestions field34855, final boolean b) {
         this.field34854 = field34854;
-        this.field34851 = Class9544.field41083;
+        this.field34851 = Vec2f.ZERO;
         this.field34846 = new Class8344(n - 1, Class6823.method20900(field34854) ? (n2 - 3 - Math.min(field34855.getList().size(), Class6823.method20901(field34854)) * 12) : n2, n3 + 1, Math.min(field34855.getList().size(), Class6823.method20901(field34854)) * 12);
         this.field34847 = field34855;
         this.field34848 = Class6823.method20902(field34854).method3378();
@@ -37,9 +37,9 @@ public class Class8490
         final boolean b = this.field34849 > 0;
         final boolean b2 = this.field34847.getList().size() > this.field34849 + min;
         final boolean b3 = b || b2;
-        final boolean b4 = this.field34851.field41091 != n || this.field34851.field41092 != n2;
+        final boolean b4 = this.field34851.x != n || this.field34851.y != n2;
         if (b4) {
-            this.field34851 = new Class9544((float)n, (float)n2);
+            this.field34851 = new Vec2f((float)n, (float)n2);
         }
         if (b3) {
             Class565.method3293(this.field34846.method27808(), this.field34846.method27809() - 1, this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809(), Class6823.method20903(this.field34854));

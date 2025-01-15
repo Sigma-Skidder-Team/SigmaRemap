@@ -26,6 +26,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7793
 {
@@ -93,7 +94,7 @@ public class Class7793
     }
     
     public Class9043 method25035() {
-        Class6221 method25036 = null;
+        AxisAlignedBB method25036 = null;
         Label_0161: {
             if (this.field31912 == null) {
                 if (this.field31913 == null) {
@@ -103,7 +104,7 @@ public class Class7793
                             break Label_0161;
                         }
                         final float floatValue = this.field31907.method29743();
-                        method25036 = new Class6221(-floatValue, -floatValue, -floatValue, floatValue + 1.0f, floatValue + 1.0f, floatValue + 1.0f);
+                        method25036 = new AxisAlignedBB(-floatValue, -floatValue, -floatValue, floatValue + 1.0f, floatValue + 1.0f, floatValue + 1.0f);
                         break Label_0161;
                     }
                 }
@@ -125,11 +126,11 @@ public class Class7793
         return new Class9043(this.field31904, this.field31905, this.field31906, this.field31917, this.field31907, (Function<Vec3d, Vec3d>)o, method25036, this.field31918, this.field31919, this.field31920, this.field31922, this.field31932, this.field31936);
     }
     
-    private Class6221 method25036(final double n, final double n2, final double n3) {
+    private AxisAlignedBB method25036(final double n, final double n2, final double n3) {
         final boolean b = n < 0.0;
         final boolean b2 = n2 < 0.0;
         final boolean b3 = n3 < 0.0;
-        return new Class6221(b ? n : 0.0, b2 ? n2 : 0.0, b3 ? n3 : 0.0, (b ? 0.0 : n) + 1.0, (b2 ? 0.0 : n2) + 1.0, (b3 ? 0.0 : n3) + 1.0);
+        return new AxisAlignedBB(b ? n : 0.0, b2 ? n2 : 0.0, b3 ? n3 : 0.0, (b ? 0.0 : n) + 1.0, (b2 ? 0.0 : n2) + 1.0, (b3 ? 0.0 : n3) + 1.0);
     }
     
     private void method25037() {

@@ -11,6 +11,7 @@ import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import java.util.UUID;
@@ -244,11 +245,11 @@ public class Class3820 implements Class3832
     public static Class7006 method11733(final Class1847 class1847, final Class512 class1848, final Class2191 class1849) {
         final float field2400 = class1848.field2400;
         final float field2401 = class1848.field2399;
-        final Class5487 method1747 = class1848.method1747(1.0f);
+        final Vec3d method1747 = class1848.method1747(1.0f);
         final float method1748 = MathHelper.cos(-field2401 * 0.017453292f - 3.1415927f);
         final float method1749 = MathHelper.sin(-field2401 * 0.017453292f - 3.1415927f);
         final float n = -MathHelper.cos(-field2400 * 0.017453292f);
-        return class1847.method6987(new Class8478(method1747, method1747.method16744(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
+        return class1847.method6987(new Class8478(method1747, method1747.add(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
     }
     
     public int method11734() {
@@ -311,7 +312,7 @@ public class Class3820 implements Class3832
     static {
         field17355 = Maps.newHashMap();
         field17356 = ((class8321, class8322, class8323) -> class8321.method27631() ? 1.0f : 0.0f);
-        field17357 = ((class8321, class8322, class8323) -> MathHelper.method35653(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
+        field17357 = ((class8321, class8322, class8323) -> MathHelper.clamp(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
         field17358 = ((class8321, class8322, class8323) -> (class8323 != null && class8323.method2755() != Class2226.field13698) ? 1.0f : 0.0f);
         field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof Class512) ? ((Class512)class8323).method2906().method25770(class8321.method27622(), 0.0f) : 0.0f);
         field17360 = ((class8321, class8322, class8323) -> class8321.method27656() ? ((float)class8321.method27657().method319("CustomModelData")) : 0.0f);

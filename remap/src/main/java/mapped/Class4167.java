@@ -6,6 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 
 import java.util.Calendar;
@@ -67,7 +68,7 @@ public class Class4167<T extends Class436 & Class476> extends Class4158<T>
             class7351.method22567();
             final float method2188 = class7353.method21772((Class7111<Direction>)Class3865.field17497).getHorizontalAngle();
             class7351.method22564(0.5, 0.5, 0.5);
-            class7351.method22566(Vector3f.field38718.rotationDegrees(-method2188));
+            class7351.method22566(Vector3f.YP.rotationDegrees(-method2188));
             class7351.method22564(-0.5, -0.5, -0.5);
             Class7191 method2189;
             if (!b) {

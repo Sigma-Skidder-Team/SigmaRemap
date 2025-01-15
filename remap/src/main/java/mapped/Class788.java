@@ -49,7 +49,7 @@ public abstract class Class788 extends Class787
                 final Class788 method2717 = this.method4349(this);
                 if (method2717 != null) {
                     method2717.method4354(-24000);
-                    method2717.method1730(this.method1938(), this.method1941(), this.method1945(), 0.0f, 0.0f);
+                    method2717.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), 0.0f, 0.0f);
                     this.field2391.method6886(method2717);
                     if (method2715.method27667()) {
                         method2717.method1872(method2715.method27664());

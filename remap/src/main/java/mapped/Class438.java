@@ -62,7 +62,7 @@ public class Class438 extends Class436 implements Class439
                     continue;
                 }
                 final Class798 class516 = (Class798)class515;
-                if (class512.method1934().method16746(class515.method1934()) > 16.0) {
+                if (class512.method1934().squareDistanceTo(class515.method1934()) > 16.0) {
                     continue;
                 }
                 if (this.method2223()) {

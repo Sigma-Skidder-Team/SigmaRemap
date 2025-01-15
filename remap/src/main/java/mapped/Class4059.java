@@ -27,7 +27,7 @@ public class Class4059 extends Class3820
         final double n = method21657.getX();
         final double n2 = method21657.getY();
         final double n3 = method21657.getZ();
-        if (method21654.method7127(null, new Class6221(n, n2, n3, n + 1.0, n2 + 2.0, n3 + 1.0)).isEmpty()) {
+        if (method21654.method7127(null, new AxisAlignedBB(n, n2, n3, n + 1.0, n2 + 2.0, n3 + 1.0)).isEmpty()) {
             if (!method21654.field10067) {
                 final Class858 class7076 = new Class858(method21654, n + 0.5, n2, n3 + 0.5);
                 class7076.method5184(false);

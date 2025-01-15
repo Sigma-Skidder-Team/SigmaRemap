@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.function.Predicate;
@@ -94,10 +95,10 @@ public enum Class234
             if (this.field889 <= 0.0) {
                 break;
             }
-            final Class5487 class5487 = new Class5487(this.field888, this.field889, this.field890);
-            final Class5487 class5488 = new Class5487(this.field888 + this.field891, this.field889 + this.field892, this.field890 + this.field893);
+            final Vec3d class5487 = new Vec3d(this.field888, this.field889, this.field890);
+            final Vec3d class5488 = new Vec3d(this.field888 + this.field891, this.field889 + this.field892, this.field890 + this.field893);
             final float n5 = (float)((this.field884 instanceof Class4087) ? 0.3 : 0.25);
-            final List<Entity> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new Class6221(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).method18499(this.field891, this.field892, this.field893).method18495(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
+            final List<Entity> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).method18499(this.field891, this.field892, this.field893).method18495(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
             if (method6737.size() > 0) {
                 final Iterator<Entity> iterator = method6737.iterator();
                 while (iterator.hasNext()) {
@@ -108,9 +109,9 @@ public enum Class234
             final Class7005 method6738 = Class3213.method10132().field4683.method6987(new Class8478(class5487, class5488, Class2040.field11632, Class2191.field13325, Class3213.method10131().field4684));
             if (method6738 != null && method6738.method21449() != Class2165.field12880) {
                 this.field894 = method6738;
-                this.field888 = this.field894.method21451().field22770;
-                this.field889 = this.field894.method21451().field22771;
-                this.field890 = this.field894.method21451().field22772;
+                this.field888 = this.field894.method21451().x;
+                this.field889 = this.field894.method21451().y;
+                this.field890 = this.field894.method21451().z;
                 list.add(new Class8797(this.field888, this.field889, this.field890));
                 break;
             }

@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 
 public class Class5795 extends Class5784
 {
     private static String[] field23798;
-    private Class5487 field23799;
+    private Vec3d field23799;
     
     public Class5795(final Class852 class852) {
         super(class852);
@@ -39,7 +41,7 @@ public class Class5795 extends Class5784
     
     @Nullable
     @Override
-    public Class5487 method17254() {
+    public Vec3d method17254() {
         return this.field23799;
     }
     

@@ -87,13 +87,13 @@ public enum Class338 implements Class328
                                 return field35913.field2968;
                             }
                             case 7: {
-                                return (float)field35913.method1938();
+                                return (float)field35913.getPosX();
                             }
                             case 8: {
-                                return (float)field35913.method1941();
+                                return (float)field35913.getPosY();
                             }
                             case 9: {
-                                return (float)field35913.method1945();
+                                return (float)field35913.getPosZ();
                             }
                             case 10: {
                                 return (float)field35913.method2635();

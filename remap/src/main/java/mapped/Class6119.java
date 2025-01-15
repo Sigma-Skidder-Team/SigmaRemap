@@ -37,7 +37,7 @@ public class Class6119 implements Class6113
         Class8726.method30041();
         this.field24838.forEach((p1, list) -> {
             final Class6092 class7354;
-            final Object o = new BlockPos(class7354.method18161().field22770, 0.0, class7354.method18161().field22772);
+            final Object o = new BlockPos(class7354.method18161().x, 0.0, class7354.method18161().z);
             int i = 0;
             while (i < list.size()) {
                 final Class7472 class7355 = list.get(i);

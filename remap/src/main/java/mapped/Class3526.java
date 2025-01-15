@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.EnumSet;
 
 public class Class3526 extends Class3446
@@ -39,11 +41,11 @@ public class Class3526 extends Class3446
     
     @Override
     public void method11015() {
-        final Class5487 method1935 = this.field16538.method1935();
-        Class5487 method1936 = new Class5487(this.field16539.method1938() - this.field16538.method1938(), 0.0, this.field16539.method1945() - this.field16538.method1945());
-        if (method1936.method16753() > 1.0E-7) {
-            method1936 = method1936.method16738().method16748(0.4).method16743(method1935.method16748(0.2));
+        final Vec3d method1935 = this.field16538.method1935();
+        Vec3d method1936 = new Vec3d(this.field16539.getPosX() - this.field16538.getPosX(), 0.0, this.field16539.getPosZ() - this.field16538.getPosZ());
+        if (method1936.lengthSquared() > 1.0E-7) {
+            method1936 = method1936.normalize().scale(0.4).add(method1935.scale(0.2));
         }
-        this.field16538.method1937(method1936.field22770, this.field16540, method1936.field22772);
+        this.field16538.method1937(method1936.x, this.field16540, method1936.z);
     }
 }

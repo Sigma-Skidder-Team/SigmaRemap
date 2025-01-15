@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.Matrix4f;
+
 import java.nio.ByteBuffer;
 import java.util.concurrent.CompletableFuture;
 
@@ -60,7 +62,7 @@ public class Class1918 implements AutoCloseable
         }
     }
     
-    public void method7591(final Class6789 class6789, int field10428) {
+    public void method7591(final Matrix4f class6789, int field10428) {
         Class8726.method30059();
         Class8726.method30058();
         Class8726.method30067(class6789);

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -42,11 +43,11 @@ public class Class3607 extends Class3446
     }
     
     public boolean method11135() {
-        final Class5487 method24900 = Class7775.method24900(this.field16794, 5, 4);
+        final Vec3d method24900 = Class7775.method24900(this.field16794, 5, 4);
         if (method24900 != null) {
-            this.field16796 = method24900.field22770;
-            this.field16797 = method24900.field22771;
-            this.field16798 = method24900.field22772;
+            this.field16796 = method24900.x;
+            this.field16797 = method24900.y;
+            this.field16798 = method24900.z;
             return true;
         }
         return false;

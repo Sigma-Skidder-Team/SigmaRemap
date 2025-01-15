@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -60,7 +61,7 @@ public abstract class Class5784 implements Class5783
     
     @Override
     public float method17252() {
-        final float a = MathHelper.method35641(Entity.method1680(this.field23764.method1935())) + 1.0f;
+        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.method1935())) + 1.0f;
         return 0.7f / Math.min(a, 40.0f) / a;
     }
 }

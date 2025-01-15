@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.List;
@@ -90,8 +91,8 @@ public class Class491 extends Class436 implements Class439
         final double b = n - this.field2823;
         final Class7702 method2477 = this.method2470().method21727(this.field2656, this.method2193());
         if (!method2477.method24540()) {
-            final List<Class6221> method2478 = method2477.method24545();
-            final Class6221 method2479 = this.method2479(this.method2477(method2478));
+            final List<AxisAlignedBB> method2478 = method2477.method24545();
+            final AxisAlignedBB method2479 = this.method2479(this.method2477(method2478));
             final List<Entity> method2480 = this.field2656.method7127(null, Class8159.method26948(method2479, method2476, b).method18498(method2479));
             if (!method2480.isEmpty()) {
                 final boolean b2 = this.field2818.method21696() == Class7521.field29516;
@@ -99,9 +100,9 @@ public class Class491 extends Class436 implements Class439
                     if (class399.method1921() != Class2117.field12343) {
                         if (b2) {
                             final Vec3d method2481 = class399.method1935();
-                            double field22770 = method2481.field22770;
-                            double field22771 = method2481.field22771;
-                            double field22772 = method2481.field22772;
+                            double field22770 = method2481.x;
+                            double field22771 = method2481.y;
+                            double field22772 = method2481.z;
                             switch (Class8986.field37876[method2476.getAxis().ordinal()]) {
                                 case 1: {
                                     field22770 = method2476.getXOffset();
@@ -119,10 +120,10 @@ public class Class491 extends Class436 implements Class439
                             class399.method1937(field22770, field22771, field22772);
                         }
                         double max = 0.0;
-                        final Iterator<Class6221> iterator2 = method2478.iterator();
+                        final Iterator<AxisAlignedBB> iterator2 = method2478.iterator();
                         while (iterator2.hasNext()) {
-                            final Class6221 method2482 = Class8159.method26948(this.method2479(iterator2.next()), method2476, b);
-                            final Class6221 method2483 = class399.method1886();
+                            final AxisAlignedBB method2482 = Class8159.method26948(this.method2479(iterator2.next()), method2476, b);
+                            final AxisAlignedBB method2483 = class399.method1886();
                             if (method2482.method18502(method2483)) {
                                 max = Math.max(max, method2478(method2482, method2476, method2483));
                                 if (max >= b) {
@@ -155,7 +156,7 @@ public class Class491 extends Class436 implements Class439
         if (this.method2475()) {
             final Direction method2476 = this.method2476();
             if (method2476.getAxis().isHorizontal()) {
-                final Class6221 method2477 = this.method2479(new Class6221(0.0, this.field2818.method21727(this.field2656, this.field2657).method24536(Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
+                final AxisAlignedBB method2477 = this.method2479(new AxisAlignedBB(0.0, this.field2818.method21727(this.field2656, this.field2657).method24536(Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
                 final double n2 = n - this.field2823;
                 final Iterator<Entity> iterator = this.field2656.method6737(null, method2477, class6222 -> method2474(class6221, class6222)).iterator();
                 while (iterator.hasNext()) {
@@ -165,13 +166,13 @@ public class Class491 extends Class436 implements Class439
         }
     }
     
-    private static boolean method2474(final Class6221 class6221, final Entity class6222) {
+    private static boolean method2474(final AxisAlignedBB class6221, final Entity class6222) {
         if (class6222.method1921() == Class2117.field12340) {
             if (class6222.field2404) {
-                if (class6222.method1938() >= class6221.field25073) {
-                    if (class6222.method1938() <= class6221.field25076) {
-                        if (class6222.method1945() >= class6221.field25075) {
-                            if (class6222.method1945() <= class6221.field25078) {
+                if (class6222.getPosX() >= class6221.field25073) {
+                    if (class6222.getPosX() <= class6221.field25076) {
+                        if (class6222.getPosZ() >= class6221.field25075) {
+                            if (class6222.getPosZ() <= class6221.field25078) {
                                 return true;
                             }
                         }
@@ -190,14 +191,14 @@ public class Class491 extends Class436 implements Class439
         return this.field2820 ? this.field2819 : this.field2819.getOpposite();
     }
     
-    private Class6221 method2477(final List<Class6221> list) {
+    private AxisAlignedBB method2477(final List<AxisAlignedBB> list) {
         double min = 0.0;
         double min2 = 0.0;
         double min3 = 0.0;
         double max = 1.0;
         double max2 = 1.0;
         double max3 = 1.0;
-        for (final Class6221 class6221 : list) {
+        for (final AxisAlignedBB class6221 : list) {
             min = Math.min(class6221.field25073, min);
             min2 = Math.min(class6221.field25074, min2);
             min3 = Math.min(class6221.field25075, min3);
@@ -205,10 +206,10 @@ public class Class491 extends Class436 implements Class439
             max2 = Math.max(class6221.field25077, max2);
             max3 = Math.max(class6221.field25078, max3);
         }
-        return new Class6221(min, min2, min3, max, max2, max3);
+        return new AxisAlignedBB(min, min2, min3, max, max2, max3);
     }
     
-    private static double method2478(final Class6221 class6221, final Direction class6222, final Class6221 class6223) {
+    private static double method2478(final AxisAlignedBB class6221, final Direction class6222, final AxisAlignedBB class6223) {
         switch (Class8986.field37877[class6222.ordinal()]) {
             case 1: {
                 return class6221.field25076 - class6223.field25073;
@@ -231,14 +232,14 @@ public class Class491 extends Class436 implements Class439
         }
     }
     
-    private Class6221 method2479(final Class6221 class6221) {
+    private AxisAlignedBB method2479(final AxisAlignedBB class6221) {
         final double n = this.method2469(this.field2823);
         return class6221.method18499(this.field2657.getX() + n * this.field2819.getXOffset(), this.field2657.getY() + n * this.field2819.getYOffset(), this.field2657.getZ() + n * this.field2819.getZOffset());
     }
     
     private void method2480(final Entity class399, final Direction class400, final double b) {
-        final Class6221 method1886 = class399.method1886();
-        final Class6221 method1887 = Class7698.method24487().method24537().method18500(this.field2657);
+        final AxisAlignedBB method1886 = class399.method1886();
+        final AxisAlignedBB method1887 = Class7698.method24487().method24537().method18500(this.field2657);
         if (method1886.method18502(method1887)) {
             final Direction method1888 = class400.getOpposite();
             final double a = method2478(method1887, method1888, method1886) + 0.01;

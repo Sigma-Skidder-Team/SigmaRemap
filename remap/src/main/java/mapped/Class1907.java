@@ -174,7 +174,7 @@ public class Class1907 extends Class1906
     
     @Override
     public boolean method7408(final Entity class399) {
-        return this.method7401(MathHelper.floor(class399.method1938()) >> 4, MathHelper.floor(class399.method1945()) >> 4);
+        return this.method7401(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4);
     }
     
     static {

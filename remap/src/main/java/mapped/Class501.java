@@ -422,7 +422,7 @@ public class Class501 extends Class436
         }
         final Class9092 method2196 = new Class9092().method32844(this.field2869).method32845(this.field2870).method32847(this.field2872).method32848(null);
         if (this.field2876 < 1.0f) {
-            method2196.method32852().method32853(new Class4108(MathHelper.method35653(this.field2876, 0.0f, 1.0f))).method32850(method2586(this.field2877));
+            method2196.method32852().method32853(new Class4108(MathHelper.clamp(this.field2876, 0.0f, 1.0f))).method32850(method2586(this.field2877));
         }
         class6585.method19954(this.field2656, method2193.method1135(this.field2867), method2196);
         return true;

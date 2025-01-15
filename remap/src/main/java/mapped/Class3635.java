@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.List;
@@ -66,7 +67,7 @@ public class Class3635 extends Class3634
     @Override
     public void method11016() {
         final Class511 method4152 = this.field16871.method4152();
-        Class851.method5102(this.field16871, new Class5487(method4152.method1938(), method4152.method1942(0.5), method4152.method1945()));
+        Class851.method5102(this.field16871, new Vec3d(method4152.getPosX(), method4152.method1942(0.5), method4152.getPosZ()));
         if (!this.field16871.method1886().method18496(0.20000000298023224).method18502(method4152.method1886())) {
             if (this.field16871.field2405 || this.field16871.field2938 > 0) {
                 Class851.method5103(this.field16871, Class2129.field12430);

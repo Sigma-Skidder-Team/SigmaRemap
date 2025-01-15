@@ -18,7 +18,7 @@ public class Class9193
     }
     
     public static void method33639(final Class1847 class1847, final Entity class1848, final Class446 class1849) {
-        method33640(class1847, class1848.method1938(), class1848.method1941(), class1848.method1945(), class1849);
+        method33640(class1847, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), class1849);
     }
     
     private static void method33640(final Class1847 class1847, final double n, final double n2, final double n3, final Class446 class1848) {

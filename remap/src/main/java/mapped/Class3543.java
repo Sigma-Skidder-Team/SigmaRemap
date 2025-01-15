@@ -68,7 +68,7 @@ public class Class3543 extends Class3542
             --this.field16598;
             this.method11094();
         }
-        this.field16593.method4147().method24669(this.field16593.method1938() + this.field16595, this.field16593.method1944(), this.field16593.method1945() + this.field16596, (float)this.field16593.method4174(), (float)this.field16593.method4173());
+        this.field16593.method4147().method24669(this.field16593.getPosX() + this.field16595, this.field16593.method1944(), this.field16593.getPosZ() + this.field16596, (float)this.field16593.method4174(), (float)this.field16593.method4173());
     }
     
     private void method11094() {

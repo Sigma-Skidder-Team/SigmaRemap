@@ -23,7 +23,7 @@ public class Class7644
         this.field30366 = field30366;
     }
     
-    public Class7644(final Class6221 class6221) {
+    public Class7644(final AxisAlignedBB class6221) {
         this.field30361 = class6221.field25073;
         this.field30362 = class6221.field25074;
         this.field30363 = class6221.field25075;

@@ -115,7 +115,7 @@ public enum Class2242
                 class1850.method29255();
                 for (final Class858 class1852 : list) {
                     class1852.method5182(null);
-                    class1849.method6722(class1852, class1852.method1938(), class1852.method1941(), class1852.method1945(), 6.0f, Class2196.field13365);
+                    class1849.method6722(class1852, class1852.getPosX(), class1852.getPosY(), class1852.getPosZ(), 6.0f, Class2196.field13365);
                     class1852.method1652();
                 }
             }

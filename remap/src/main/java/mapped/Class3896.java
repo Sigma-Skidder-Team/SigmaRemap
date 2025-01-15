@@ -79,7 +79,7 @@ public class Class3896 extends Class3895 implements Class3840
     
     @Nullable
     private Class862 method11979(final Class1847 class1847, final Direction class1848, final BlockPos class1849) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class862.class, new Class6221(class1849.getX(), class1849.getY(), class1849.getZ(), class1849.getX() + 1, class1849.getY() + 1, class1849.getZ() + 1), class1851 -> class1851 != null && class1851.method1882() == class1850);
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class862.class, new AxisAlignedBB(class1849.getX(), class1849.getY(), class1849.getZ(), class1849.getX() + 1, class1849.getY() + 1, class1849.getZ() + 1), class1851 -> class1851 != null && class1851.method1882() == class1850);
         return (method6739.size() != 1) ? null : ((Class862)method6739.get(0));
     }
     

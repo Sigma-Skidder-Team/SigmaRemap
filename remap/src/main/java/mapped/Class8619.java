@@ -408,7 +408,7 @@ public class Class8619
                 final BlockPos method1138 = class354.method1138(1);
                 final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
                 while (iterator.hasNext()) {
-                    final List<Entity> method1139 = this.field36166.method7128((Class<? extends Entity>)Class858.class, new Class6221(method1138.method1150(iterator.next(), 2)));
+                    final List<Entity> method1139 = this.field36166.method7128((Class<? extends Entity>)Class858.class, new AxisAlignedBB(method1138.method1150(iterator.next(), 2)));
                     if (method1139.isEmpty()) {
                         return;
                     }

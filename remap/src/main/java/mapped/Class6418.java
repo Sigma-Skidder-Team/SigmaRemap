@@ -16,7 +16,7 @@ public final class Class6418 extends Class6404
         final double n = class5493.getXOffset();
         final double n2 = class5493.getYOffset();
         final double n3 = class5493.getZOffset();
-        final Class406 class5494 = new Class406(class5491.method16763(), class5492, class5491.method16760() + n, class5491.method16764().getY() + 0.2f, class5491.method16762() + n3, true);
+        final Class406 class5494 = new Class406(class5491.method16763(), class5492, class5491.getX() + n, class5491.method16764().getY() + 0.2f, class5491.getZ() + n3, true);
         class5494.method1958(n, n2, n3, 0.5f, 1.0f);
         class5491.method16763().method6886(class5494);
         class5492.method27693(1);

@@ -62,7 +62,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
         this.method6839(null, n, class354, n2);
     }
     
-    default Stream<Class7702> method6956(final Entity class399, final Class6221 class400, final Set<Entity> set) {
+    default Stream<Class7702> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return super.method6956(class399, class400, set);
     }
     

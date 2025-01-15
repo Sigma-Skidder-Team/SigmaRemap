@@ -47,9 +47,9 @@ public class Class3170 extends Class3167
                     }
                     this.method9927(Class8591.method29093(class5740).field38854, Class8591.method29093(class5740).field38855 + class5740.method1931(), Class8591.method29093(class5740).field38856, class5740, 0.8f);
                     if (this.method9925(class5741)) {
-                        final double n = Class8591.method29093(class5740).field38854 - Class3170.field15514.field4644.method5833().method18161().method16760();
-                        final double n2 = Class8591.method29093(class5740).field38855 - Class3170.field15514.field4644.method5833().method18161().method16761();
-                        final double n3 = Class8591.method29093(class5740).field38856 - Class3170.field15514.field4644.method5833().method18161().method16762();
+                        final double n = Class8591.method29093(class5740).field38854 - Class3170.field15514.field4644.method5833().method18161().getX();
+                        final double n2 = Class8591.method29093(class5740).field38855 - Class3170.field15514.field4644.method5833().method18161().getY();
+                        final double n3 = Class8591.method29093(class5740).field38856 - Class3170.field15514.field4644.method5833().method18161().getZ();
                         final float n4 = 0.3f;
                         GL11.glEnable(3042);
                         GL11.glAlphaFunc(516, 0.0f);
@@ -79,7 +79,7 @@ public class Class3170 extends Class3167
             final double x = class427.field2395 - Class3170.field15514.field4684.field2395;
             final double y = class427.field2396 - Class3170.field15514.field4684.field2396 - Class3170.field15514.field4684.method1931() + 0.4000000059604645;
             final double y2 = class427.field2397 - Class3170.field15514.field4684.field2397;
-            final double x2 = MathHelper.method35641(x * x + y2 * y2);
+            final double x2 = MathHelper.sqrt(x * x + y2 * y2);
             final float method30910 = Class8845.method30910(Class3170.field15514.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
             final float method30911 = Class8845.method30910(Class3170.field15514.field4684.field2400, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
             return this.method9926(Class3170.field15514.field4684.field2399, method30910) <= n && this.method9926(Class3170.field15514.field4684.field2400, method30911) <= n;
@@ -95,9 +95,9 @@ public class Class3170 extends Class3167
     public void method9927(final double n, final double n2, final double n3, final Entity class399, final float n4) {
         final Class7524 field40314 = Class9400.field40314;
         final String method8459 = class399.method1841().method8459();
-        final float n5 = (float)(n - Class3170.field15514.field4644.method5833().method18161().method16760());
-        final float n6 = (float)(n2 - Class3170.field15514.field4644.method5833().method18161().method16761());
-        final float n7 = (float)(n3 - Class3170.field15514.field4644.method5833().method18161().method16762());
+        final float n5 = (float)(n - Class3170.field15514.field4644.method5833().method18161().getX());
+        final float n6 = (float)(n2 - Class3170.field15514.field4644.method5833().method18161().getY());
+        final float n7 = (float)(n3 - Class3170.field15514.field4644.method5833().method18161().getZ());
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);

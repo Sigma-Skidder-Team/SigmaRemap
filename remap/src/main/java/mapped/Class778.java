@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Iterator;
 import java.util.List;
@@ -139,7 +140,7 @@ public class Class778 extends Class776 implements Class768
                         this.method1803(Class2215.field13600, Class5333.method16476(new Class8321(Class7739.field31441), class8061));
                         this.field4182 = this.method2713().method27652();
                         this.method4318(true);
-                        this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35716, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
+                        this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35716, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
                         final Class7619 method2710 = this.method2710(Class8107.field33408);
                         method2710.method23947(Class778.field4180);
                         method2710.method23946(Class778.field4180);
@@ -180,7 +181,7 @@ public class Class778 extends Class776 implements Class768
         }
         else {
             for (int i = 0; i < this.field2423.nextInt(35) + 10; ++i) {
-                this.field2391.method6709(Class8432.field34647, this.method1938() + this.field2423.nextGaussian() * 0.12999999523162842, this.method1886().field25077 + 0.5 + this.field2423.nextGaussian() * 0.12999999523162842, this.method1945() + this.field2423.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
+                this.field2391.method6709(Class8432.field34647, this.getPosX() + this.field2423.nextGaussian() * 0.12999999523162842, this.method1886().field25077 + 0.5 + this.field2423.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.field2423.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
             }
         }
     }
@@ -201,10 +202,10 @@ public class Class778 extends Class776 implements Class768
     public void method4252(final Class511 class511, final float n) {
         if (!this.method4319()) {
             final Vec3d method1935 = class511.method1935();
-            final double n2 = class511.method1938() + method1935.field22770 - this.method1938();
-            final double n3 = class511.method1944() - 1.100000023841858 - this.method1941();
-            final double n4 = class511.method1945() + method1935.field22772 - this.method1945();
-            final float method1936 = MathHelper.method35641(n2 * n2 + n4 * n4);
+            final double n2 = class511.getPosX() + method1935.x - this.getPosX();
+            final double n3 = class511.method1944() - 1.100000023841858 - this.getPosY();
+            final double n4 = class511.getPosZ() + method1935.z - this.getPosZ();
+            final float method1936 = MathHelper.sqrt(n2 * n2 + n4 * n4);
             Class8061 class512 = Class8644.field36277;
             if (!(class511 instanceof Class776)) {
                 if (method1936 >= 8.0f && !class511.method2653(Class9439.field40475)) {
@@ -235,7 +236,7 @@ public class Class778 extends Class776 implements Class768
             final Class415 class514 = class513;
             class514.field2400 += 20.0f;
             class513.method1958(n2, n3 + method1936 * 0.2f, n4, 0.75f, 8.0f);
-            this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35718, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
+            this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35718, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
             this.field2391.method6886(class513);
         }
     }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.client.renderer.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3i;
@@ -42,7 +42,7 @@ public class Class6225
     }
     
     public static Class8435 method18520(final Class8435 class8435, final Direction class8436, final Class9294 class8437, final Class1932 class8438) {
-        final Class6789 method34328 = Class7235.method22138(class8437, class8436, () -> "Unable to resolve UVLock for model: " + obj).method34328();
+        final Matrix4f method34328 = Class7235.method22138(class8437, class8436, () -> "Unable to resolve UVLock for model: " + obj).method34328();
         final float method34329 = class8435.method28163(class8435.method28166(0));
         final float method34330 = class8435.method28164(class8435.method28166(0));
         final Vector4f class8439 = new Vector4f(method34329 / 16.0f, method34330 / 16.0f, 0.0f, 1.0f);
@@ -77,8 +77,8 @@ public class Class6225
         }
         final float n9 = (float)Math.toRadians(class8435.field34668);
         final Vector3f class8441 = new Vector3f(MathHelper.cos(n9), MathHelper.sin(n9), 0.0f);
-        class8441.method33324(new Class9429(method34328));
-        return new Class8435(new float[] { n5, n7, n6, n8 }, Math.floorMod(-(int)Math.round(Math.toDegrees(Math.atan2(class8441.method33312(), class8441.method33311())) / 90.0) * 90, 360));
+        class8441.transform(new Matrix3f(method34328));
+        return new Class8435(new float[] { n5, n7, n6, n8 }, Math.floorMod(-(int)Math.round(Math.toDegrees(Math.atan2(class8441.getY(), class8441.getX())) / 90.0) * 90, 360));
     }
     
     private int[] method18521(final Class8435 class8435, final Class1912 class8436, final Direction class8437, final float[] array, final Class9294 class8438, final Class8225 class8439, final boolean b) {
@@ -127,12 +127,12 @@ public class Class6225
     
     private float[] method18524(final Vector3f class9138, final Vector3f class9139) {
         final float[] array = new float[Direction.values().length];
-        array[Class6352.field25404] = class9138.method33311() / 16.0f;
-        array[Class6352.field25403] = class9138.method33312() / 16.0f;
-        array[Class6352.field25402] = class9138.method33313() / 16.0f;
-        array[Class6352.field25401] = class9139.method33311() / 16.0f;
-        array[Class6352.field25400] = class9139.method33312() / 16.0f;
-        array[Class6352.field25399] = class9139.method33313() / 16.0f;
+        array[Class6352.field25404] = class9138.getX() / 16.0f;
+        array[Class6352.field25403] = class9138.getY() / 16.0f;
+        array[Class6352.field25402] = class9138.getZ() / 16.0f;
+        array[Class6352.field25401] = class9139.getX() / 16.0f;
+        array[Class6352.field25400] = class9139.getY() / 16.0f;
+        array[Class6352.field25399] = class9139.getZ() / 16.0f;
         return array;
     }
     
@@ -149,9 +149,9 @@ public class Class6225
     
     private void method18526(final int[] array, final int n, final Vector3f class9138, final int n2, final Class1912 class9139, final Class8435 class9140) {
         final int n3 = n * (array.length / 4);
-        array[n3] = Float.floatToRawIntBits(class9138.method33311());
-        array[n3 + 1] = Float.floatToRawIntBits(class9138.method33312());
-        array[n3 + 2] = Float.floatToRawIntBits(class9138.method33313());
+        array[n3] = Float.floatToRawIntBits(class9138.getX());
+        array[n3 + 1] = Float.floatToRawIntBits(class9138.getY());
+        array[n3 + 2] = Float.floatToRawIntBits(class9138.getZ());
         array[n3 + 3] = n2;
         array[n3 + 4] = Float.floatToRawIntBits(class9139.method7499(class9140.method28163(n)));
         array[n3 + 4 + 1] = Float.floatToRawIntBits(class9139.method7502(class9140.method28164(n)));
@@ -184,17 +184,17 @@ public class Class6225
             final Quaternion class9142 = new Quaternion(class9140, class9139.field33785, true);
             if (class9139.field33786) {
                 if (Math.abs(class9139.field33785) == 22.5f) {
-                    class9141.method33314(Class6225.field25093);
+                    class9141.mul(Class6225.field25093);
                 }
                 else {
-                    class9141.method33314(Class6225.field25094);
+                    class9141.mul(Class6225.field25094);
                 }
-                class9141.method33318(1.0f, 1.0f, 1.0f);
+                class9141.add(1.0f, 1.0f, 1.0f);
             }
             else {
-                class9141.method33317(1.0f, 1.0f, 1.0f);
+                class9141.set(1.0f, 1.0f, 1.0f);
             }
-            this.method18529(class9138, class9139.field33783.method33329(), new Class6789(class9142), class9141);
+            this.method18529(class9138, class9139.field33783.copy(), new Matrix4f(class9142), class9141);
         }
     }
     
@@ -204,11 +204,11 @@ public class Class6225
         }
     }
     
-    private void method18529(final Vector3f class9138, final Vector3f class9139, final Class6789 class9140, final Vector3f class9141) {
-        final Vector4f class9142 = new Vector4f(class9138.method33311() - class9139.method33311(), class9138.method33312() - class9139.method33312(), class9138.method33313() - class9139.method33313(), 1.0f);
+    private void method18529(final Vector3f class9138, final Vector3f class9139, final Matrix4f class9140, final Vector3f class9141) {
+        final Vector4f class9142 = new Vector4f(class9138.getX() - class9139.getX(), class9138.getY() - class9139.getY(), class9138.getZ() - class9139.getZ(), 1.0f);
         class9142.method28603(class9140);
         class9142.method28599(class9141);
-        class9138.method33317(class9142.method28595() + class9139.method33311(), class9142.method28596() + class9139.method33312(), class9142.method28597() + class9139.method33313());
+        class9138.set(class9142.method28595() + class9139.getX(), class9142.method28596() + class9139.getY(), class9142.method28597() + class9139.getZ());
     }
     
     public static Direction method18530(final int[] array) {
@@ -217,18 +217,18 @@ public class Class6225
         final Vector3f class9138 = new Vector3f(Float.intBitsToFloat(array[0]), Float.intBitsToFloat(array[1]), Float.intBitsToFloat(array[2]));
         final Vector3f class9139 = new Vector3f(Float.intBitsToFloat(array[n]), Float.intBitsToFloat(array[n + 1]), Float.intBitsToFloat(array[n + 2]));
         final Vector3f class9140 = new Vector3f(Float.intBitsToFloat(array[n2]), Float.intBitsToFloat(array[n2 + 1]), Float.intBitsToFloat(array[n2 + 2]));
-        final Vector3f method33329 = class9138.method33329();
-        method33329.method33320(class9139);
-        final Vector3f method33330 = class9140.method33329();
-        method33330.method33320(class9139);
-        final Vector3f method33331 = method33330.method33329();
-        method33331.method33323(method33329);
-        method33331.method33322();
+        final Vector3f method33329 = class9138.copy();
+        method33329.sub(class9139);
+        final Vector3f method33330 = class9140.copy();
+        method33330.sub(class9139);
+        final Vector3f method33331 = method33330.copy();
+        method33331.cross(method33329);
+        method33331.normalize();
         Direction class9141 = null;
         float n3 = 0.0f;
         for (final Direction class9142 : Direction.values()) {
             final Vec3i method33332 = class9142.getDirectionVec();
-            final float method33333 = method33331.method33321(new Vector3f((float)method33332.getX(), (float)method33332.getY(), (float)method33332.getZ()));
+            final float method33333 = method33331.dot(new Vector3f((float)method33332.getX(), (float)method33332.getY(), (float)method33332.getZ()));
             if (method33333 >= 0.0f) {
                 if (method33333 > n3) {
                     n3 = method33333;

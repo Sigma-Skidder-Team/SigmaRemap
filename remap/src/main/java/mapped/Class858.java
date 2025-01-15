@@ -83,7 +83,7 @@ public class Class858 extends Entity
                 if (!this.field2391.field10067) {
                     this.method1652();
                     if (!class7929.method25707()) {
-                        this.field2391.method6722(null, this.method1938(), this.method1941(), this.method1945(), 6.0f, Class2196.field13367);
+                        this.field2391.method6722(null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0f, Class2196.field13367);
                     }
                     this.method5181(class7929);
                 }

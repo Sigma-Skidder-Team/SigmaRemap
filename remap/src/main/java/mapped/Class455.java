@@ -307,7 +307,7 @@ public class Class455 extends Class456 implements Class453, Class439
             class1848 = ((Class3966)method6702).method12099(method6701, class1847, class1849);
         }
         if (class1848 == null) {
-            final List<Entity> method6704 = class1847.method6737(null, new Class6221(n - 0.5, n2 - 0.5, n3 - 0.5, n + 0.5, n2 + 0.5, n3 + 0.5), Class9170.field38848);
+            final List<Entity> method6704 = class1847.method6737(null, new AxisAlignedBB(n - 0.5, n2 - 0.5, n3 - 0.5, n + 0.5, n2 + 0.5, n3 + 0.5), Class9170.field38848);
             if (!method6704.isEmpty()) {
                 class1848 = (Class446)method6704.get(class1847.field10062.nextInt(method6704.size()));
             }

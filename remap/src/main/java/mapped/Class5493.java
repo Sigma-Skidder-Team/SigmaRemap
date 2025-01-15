@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class5493 implements Class5488
+import net.minecraft.dispenser.IPosition;
+
+public class Class5493 implements IPosition
 {
     private static String[] field22776;
     public final double field22777;
@@ -18,17 +20,17 @@ public class Class5493 implements Class5488
     }
     
     @Override
-    public double method16760() {
+    public double getX() {
         return this.field22777;
     }
     
     @Override
-    public double method16761() {
+    public double getY() {
         return this.field22778;
     }
     
     @Override
-    public double method16762() {
+    public double getZ() {
         return this.field22779;
     }
 }

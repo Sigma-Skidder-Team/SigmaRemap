@@ -407,7 +407,7 @@ public class Class685 extends Class565
             if (!class1948.method7909()) {
                 this.method3186(j, i, 141, 166, 24, 24);
                 if (class1948.method7907() <= 200) {
-                    f = MathHelper.method35653(class1948.method7907() / 10.0f / 5.0f * 0.5f, 0.0f, 0.5f) + MathHelper.cos(class1948.method7907() * 3.1415927f / 5.0f) * MathHelper.method35653((10 - class1948.method7907() / 20) / 10.0f * 0.25f, 0.0f, 0.25f);
+                    f = MathHelper.clamp(class1948.method7907() / 10.0f / 5.0f * 0.5f, 0.0f, 0.5f) + MathHelper.cos(class1948.method7907() * 3.1415927f / 5.0f) * MathHelper.clamp((10 - class1948.method7907() / 20) / 10.0f * 0.25f, 0.0f, 0.25f);
                 }
             }
             else {
@@ -873,7 +873,7 @@ public class Class685 extends Class565
     
     private void method3797(final Entity class399) {
         if (class399 != null) {
-            this.field3760 += (float)((MathHelper.method35653(1.0f - class399.method1726(), 0.0f, 1.0f) - this.field3760) * 0.01);
+            this.field3760 += (float)((MathHelper.clamp(1.0f - class399.method1726(), 0.0f, 1.0f) - this.field3760) * 0.01);
         }
     }
     

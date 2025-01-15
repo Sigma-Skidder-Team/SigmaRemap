@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4797 extends Class4703<Class508>
@@ -36,12 +39,12 @@ public class Class4797 extends Class4703<Class508>
         final int n9 = (int)((MathHelper.sin(method2609 + 4.1887903f) + 1.0f) * 0.1f * 255.0f);
         class509.method22564(0.0, 0.10000000149011612, 0.0);
         class509.method22566(this.field20283.method28717());
-        class509.method22566(Vector3f.field38718.rotationDegrees(180.0f));
+        class509.method22566(Vector3f.YP.rotationDegrees(180.0f));
         class509.method22565(0.3f, 0.3f, 0.3f);
         final Class4150 method2610 = class510.method25214(Class4797.field20450);
         final Class8996 method2611 = class509.method22569();
-        final Class6789 method2612 = method2611.method32111();
-        final Class9429 method2613 = method2611.method32112();
+        final Matrix4f method2612 = method2611.method32111();
+        final Matrix3f method2613 = method2611.method32112();
         int n10 = n8;
         int n11 = 255;
         int n12 = n9;
@@ -61,7 +64,7 @@ public class Class4797 extends Class4703<Class508>
         super.method13951(class508, n, n2, class509, class510, n3);
     }
     
-    private static void method14192(final Class4150 class4150, final Class6789 class4151, final Class9429 class4152, final float n, final float n2, final int n3, final int n4, final int n5, final float n6, final float n7, final int n8) {
+    private static void method14192(final Class4150 class4150, final Matrix4f class4151, final Matrix3f class4152, final float n, final float n2, final int n3, final int n4, final int n5, final float n6, final float n7, final int n8) {
         class4150.method12444(class4151, n, n2, 0.0f).method12399(n3, n4, n5, 128).method12391(n6, n7).method12441(Class1904.field10335).method12440(n8).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
     }
     

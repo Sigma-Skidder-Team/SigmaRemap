@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.Optional;
-import java.util.List;
 import java.util.Objects;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
@@ -25,7 +24,7 @@ public class Class5437 extends Class5419<Class511>
         if (class1849.method6790().nextInt(100) == 0) {
             if (method2619.isPresent()) {
                 if (Objects.equals(class1849.method6789().method20487(), method2619.get().method1169())) {
-                    if (method2619.get().method1170().method1082(class1850.method1934(), 4.0)) {
+                    if (method2619.get().method1170().withinDistance(class1850.method1934(), 4.0)) {
                         if (method2618.method1198(Class8233.field33805).get().stream().anyMatch(class1851 -> Class7499.field29042.equals(class1851.method1642()))) {
                             return true;
                         }

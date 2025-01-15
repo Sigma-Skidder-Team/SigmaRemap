@@ -62,7 +62,7 @@ public class Class3299 extends Class3167
                     field2396 -= n8;
                     field2397 -= n9;
                     final double n11 = 0.3;
-                    if (Class3299.field15514.field4683.method6981(Class3299.field15514.field4684, new Class6221(field2395 - n11, field2397, field2396 - n11, field2395 + n11, field2397 + 1.9, field2396 + n11)).count() == 0L) {
+                    if (Class3299.field15514.field4683.method6981(Class3299.field15514.field4684, new AxisAlignedBB(field2395 - n11, field2397, field2396 - n11, field2395 + n11, field2397 + 1.9, field2396 + n11)).count() == 0L) {
                         Class3299.field15514.method5269().method17292(new Class4354(field2395, field2397, field2396, true));
                     }
                     this.field15867.add(new Class9407(field2395, field2397, field2396));
@@ -96,16 +96,16 @@ public class Class3299 extends Class3167
                     GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
                     GL11.glBegin(3);
                     for (final Class9407 class5740 : this.field15867) {
-                        GL11.glVertex3d(class5740.method34993() - Class3299.field15514.field4644.method5833().method18161().method16760(), class5740.method34994() - Class3299.field15514.field4644.method5833().method18161().method16761(), class5740.method34995() - Class3299.field15514.field4644.method5833().method18161().method16762());
+                        GL11.glVertex3d(class5740.method34993() - Class3299.field15514.field4644.method5833().method18161().getX(), class5740.method34994() - Class3299.field15514.field4644.method5833().method18161().getY(), class5740.method34995() - Class3299.field15514.field4644.method5833().method18161().getZ());
                     }
                     GL11.glEnd();
                     for (final Class9407 class5741 : this.field15867) {
-                        final double n = class5741.method34993() - Class3299.field15514.field4644.method5833().method18161().method16760();
-                        final double n2 = class5741.method34995() - Class3299.field15514.field4644.method5833().method18161().method16762();
-                        Class8154.method26909(new Class7644(n - 0.30000001192092896, class5741.method34994() - Class3299.field15514.field4644.method5833().method18161().method16761(), n2 - 0.30000001192092896, n + 0.30000001192092896, class5741.method34994() - Class3299.field15514.field4644.method5833().method18161().method16761() + 1.600000023841858, n2 + 0.30000001192092896), Class6430.method19118(Class265.field1285.field1292, 0.2f));
+                        final double n = class5741.method34993() - Class3299.field15514.field4644.method5833().method18161().getX();
+                        final double n2 = class5741.method34995() - Class3299.field15514.field4644.method5833().method18161().getZ();
+                        Class8154.method26909(new Class7644(n - 0.30000001192092896, class5741.method34994() - Class3299.field15514.field4644.method5833().method18161().getY(), n2 - 0.30000001192092896, n + 0.30000001192092896, class5741.method34994() - Class3299.field15514.field4644.method5833().method18161().getY() + 1.600000023841858, n2 + 0.30000001192092896), Class6430.method19118(Class265.field1285.field1292, 0.2f));
                     }
                     GL11.glPushMatrix();
-                    GL11.glTranslated(Class3299.field15514.field4644.method5833().method18161().method16760(), Class3299.field15514.field4644.method5833().method18161().method16761(), Class3299.field15514.field4644.method5833().method18161().method16762());
+                    GL11.glTranslated(Class3299.field15514.field4644.method5833().method18161().getX(), Class3299.field15514.field4644.method5833().method18161().getY(), Class3299.field15514.field4644.method5833().method18161().getZ());
                     GL11.glPopMatrix();
                     GL11.glDisable(3042);
                     GL11.glEnable(3553);

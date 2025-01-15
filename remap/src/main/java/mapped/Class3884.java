@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
@@ -51,12 +52,12 @@ public class Class3884 extends Class3874 implements Class3872
         if (class7099 instanceof Class511) {
             if (class7099.method1642() != Class7499.field28985) {
                 if (class7099.method1642() != Class7499.field28961) {
-                    class7099.method1839(class7096, new Class5487(0.800000011920929, 0.75, 0.800000011920929));
+                    class7099.method1839(class7096, new Vec3d(0.800000011920929, 0.75, 0.800000011920929));
                     if (!class7097.field10067) {
                         if (class7096.method21772((Class7111<Integer>)Class3884.field17541) > 0) {
-                            if (class7099.field2417 != class7099.method1938() || class7099.field2419 != class7099.method1945()) {
-                                final double abs = Math.abs(class7099.method1938() - class7099.field2417);
-                                final double abs2 = Math.abs(class7099.method1945() - class7099.field2419);
+                            if (class7099.field2417 != class7099.getPosX() || class7099.field2419 != class7099.getPosZ()) {
+                                final double abs = Math.abs(class7099.getPosX() - class7099.field2417);
+                                final double abs2 = Math.abs(class7099.getPosZ() - class7099.field2419);
                                 if (abs >= 0.003000000026077032 || abs2 >= 0.003000000026077032) {
                                     class7099.method1740(Class7929.field32583, 1.0f);
                                 }

@@ -4,8 +4,11 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL20;
 import java.util.List;
@@ -174,7 +177,7 @@ public class Class7778
                 final Class6663 class1663 = new Class6663();
                 method5277.method5327().method15300("shadow culling");
                 final Vec3d method5278 = class1661.method18161();
-                class1663.method20262(method5278.field22770, method5278.field22771, method5278.field22772);
+                class1663.method20262(method5278.x, method5278.y, method5278.z);
                 Class8933.method31621(7425);
                 Class8933.method31515();
                 Class8933.method31516(515);
@@ -188,9 +191,9 @@ public class Class7778
                 field4636.method5707(class1661, class1663, false, method5277.field4636.method5769(), method5277.field4684.method1639());
                 method5277.method5327().method15300("shadow updatechunks");
                 method5277.method5327().method15300("shadow terrain");
-                final double method5279 = method5278.method16760();
-                final double method5280 = method5278.method16761();
-                final double method5281 = method5278.method16762();
+                final double method5279 = method5278.getX();
+                final double method5280 = method5278.getY();
+                final double method5281 = method5278.getZ();
                 Class8933.method31633(5888);
                 Class8933.method31635();
                 Class8933.method31502();
@@ -253,7 +256,7 @@ public class Class7778
                     }
                     for (final Class436 class1665 : method5285) {
                         if (method5284) {
-                            final Class6221 class1666 = (Class6221)Class9570.method35826(class1665, Class9570.field41359, new Object[0]);
+                            final AxisAlignedBB class1666 = (AxisAlignedBB)Class9570.method35826(class1665, Class9570.field41359, new Object[0]);
                             if (class1666 != null) {
                                 if (!class1664.method20261(class1666)) {
                                     continue;
@@ -489,8 +492,8 @@ public class Class7778
         }
         Class8933.method31506();
         final Class8996 method22569 = class490.method22569();
-        final Class6789 method22570 = method22569.method32111();
-        final Class9429 method22571 = method22569.method32112();
+        final Matrix4f method22570 = method22569.method32111();
+        final Matrix3f method22571 = method22569.method32112();
         final Class4150 method22572 = class491.method25214(Class6332.method18767(Class7778.field31852));
         final float n5 = 0.5f;
         final float n6 = n5 * 0.15f;
@@ -507,9 +510,9 @@ public class Class7778
             final float n15 = (float)method22573.getX();
             final float n16 = (float)method22573.getY();
             final float n17 = (float)method22573.getZ();
-            final float method22574 = method22571.method35046(n15, n16, n17);
-            final float method22575 = method22571.method35047(n15, n16, n17);
-            final float method22576 = method22571.method35048(n15, n16, n17);
+            final float method22574 = method22571.getTransformX(n15, n16, n17);
+            final float method22575 = method22571.getTransformY(n15, n16, n17);
+            final float method22576 = method22571.getTransformZ(n15, n16, n17);
             method22572.method12444(method22570, n12, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
@@ -520,9 +523,9 @@ public class Class7778
             final float n18 = (float)method22577.getX();
             final float n19 = (float)method22577.getY();
             final float n20 = (float)method22577.getZ();
-            final float method22578 = method22571.method35046(n18, n19, n20);
-            final float method22579 = method22571.method35047(n18, n19, n20);
-            final float method22580 = method22571.method35048(n18, n19, n20);
+            final float method22578 = method22571.getTransformX(n18, n19, n20);
+            final float method22579 = method22571.getTransformY(n18, n19, n20);
+            final float method22580 = method22571.getTransformZ(n18, n19, n20);
             method22572.method12444(method22570, n12, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
@@ -533,9 +536,9 @@ public class Class7778
             final float n21 = (float)method22581.getX();
             final float n22 = (float)method22581.getY();
             final float n23 = (float)method22581.getZ();
-            final float method22582 = method22571.method35046(n21, n22, n23);
-            final float method22583 = method22571.method35047(n21, n22, n23);
-            final float method22584 = method22571.method35048(n21, n22, n23);
+            final float method22582 = method22571.getTransformX(n21, n22, n23);
+            final float method22583 = method22571.getTransformY(n21, n22, n23);
+            final float method22584 = method22571.getTransformZ(n21, n22, n23);
             method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
@@ -546,9 +549,9 @@ public class Class7778
             final float n24 = (float)method22585.getX();
             final float n25 = (float)method22585.getY();
             final float n26 = (float)method22585.getZ();
-            final float method22586 = method22571.method35046(n24, n25, n26);
-            final float method22587 = method22571.method35047(n24, n25, n26);
-            final float method22588 = method22571.method35048(n24, n25, n26);
+            final float method22586 = method22571.getTransformX(n24, n25, n26);
+            final float method22587 = method22571.getTransformY(n24, n25, n26);
+            final float method22588 = method22571.getTransformZ(n24, n25, n26);
             method22572.method12444(method22570, n12, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
             method22572.method12444(method22570, n12, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
             method22572.method12444(method22570, n12, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
@@ -559,9 +562,9 @@ public class Class7778
             final float n27 = (float)method22589.getX();
             final float n28 = (float)method22589.getY();
             final float n29 = (float)method22589.getZ();
-            final float method22590 = method22571.method35046(n27, n28, n29);
-            final float method22591 = method22571.method35047(n27, n28, n29);
-            final float method22592 = method22571.method35048(n27, n28, n29);
+            final float method22590 = method22571.getTransformX(n27, n28, n29);
+            final float method22591 = method22571.getTransformY(n27, n28, n29);
+            final float method22592 = method22571.getTransformZ(n27, n28, n29);
             method22572.method12444(method22570, n12, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
@@ -572,9 +575,9 @@ public class Class7778
             final float n30 = (float)method22593.getX();
             final float n31 = (float)method22593.getY();
             final float n32 = (float)method22593.getZ();
-            final float method22594 = method22571.method35046(n30, n31, n32);
-            final float method22595 = method22571.method35047(n30, n31, n32);
-            final float method22596 = method22571.method35048(n30, n31, n32);
+            final float method22594 = method22571.getTransformX(n30, n31, n32);
+            final float method22595 = method22571.getTransformY(n30, n31, n32);
+            final float method22596 = method22571.getTransformZ(n30, n31, n32);
             method22572.method12444(method22570, n12, n13 + n2, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13 + n2, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();
             method22572.method12444(method22570, n12 + 1.0f, n13 + n2, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();

@@ -40,7 +40,7 @@ public class Class432 extends Class428
         }
         else {
             --this.field2644;
-            this.field2391.method6709(Class8432.field34639, this.method1938(), this.method1941() + 0.5, this.method1945(), 0.0, 0.0, 0.0);
+            this.field2391.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
         }
         if (this.field2405) {
             final double method1680 = Entity.method1680(this.method1935());
@@ -56,7 +56,7 @@ public class Class432 extends Class428
         if (method25713 instanceof Class402) {
             final Class402 class7930 = (Class402)method25713;
             if (class7930.method1804()) {
-                this.method2152(class7930.method1935().method16753());
+                this.method2152(class7930.method1935().lengthSquared());
             }
         }
         return super.method1740(class7929, n);
@@ -92,7 +92,7 @@ public class Class432 extends Class428
             if (sqrt > 5.0) {
                 sqrt = 5.0;
             }
-            this.field2391.method6722(this, this.method1938(), this.method1941(), this.method1945(), (float)(4.0 + this.field2423.nextDouble() * 1.5 * sqrt), Class2196.field13366);
+            this.field2391.method6722(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.field2423.nextDouble() * 1.5 * sqrt), Class2196.field13366);
             this.method1652();
         }
     }
@@ -130,7 +130,7 @@ public class Class432 extends Class428
         if (!this.field2391.field10067) {
             this.field2391.method6761(this, (byte)10);
             if (!this.method1696()) {
-                this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35632, Class286.field1582, 1.0f, 1.0f);
+                this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35632, Class286.field1582, 1.0f, 1.0f);
             }
         }
     }

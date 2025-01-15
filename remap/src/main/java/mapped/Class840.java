@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -193,7 +194,7 @@ public class Class840 extends Class832
                     this.method1740(Class7929.field32582, 1.0f);
                 }
                 if (this.field2404) {
-                    this.method1936(this.method1935().method16744((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.2f, 0.5, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.2f));
+                    this.method1936(this.method1935().add((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.2f, 0.5, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.2f));
                     this.field2399 = this.field2423.nextFloat() * 360.0f;
                     this.field2404 = false;
                     this.field2448 = true;
@@ -204,14 +205,14 @@ public class Class840 extends Class832
             }
             if (this.field2391.field10067) {
                 if (this.method1706()) {
-                    if (this.method1935().method16753() > 0.03) {
+                    if (this.method1935().lengthSquared() > 0.03) {
                         final Vec3d method1741 = this.method1741(0.0f);
                         final float n = MathHelper.cos(this.field2399 * 0.017453292f) * 0.3f;
                         final float n2 = MathHelper.sin(this.field2399 * 0.017453292f) * 0.3f;
                         final float n3 = 1.2f - this.field2423.nextFloat() * 0.7f;
                         for (int i = 0; i < 2; ++i) {
-                            this.field2391.method6709(Class8432.field34652, this.method1938() - method1741.field22770 * n3 + n, this.method1941() - method1741.field22771, this.method1945() - method1741.field22772 * n3 + n2, 0.0, 0.0, 0.0);
-                            this.field2391.method6709(Class8432.field34652, this.method1938() - method1741.field22770 * n3 - n, this.method1941() - method1741.field22771, this.method1945() - method1741.field22772 * n3 - n2, 0.0, 0.0, 0.0);
+                            this.field2391.method6709(Class8432.field34652, this.getPosX() - method1741.x * n3 + n, this.getPosY() - method1741.y, this.getPosZ() - method1741.z * n3 + n2, 0.0, 0.0, 0.0);
+                            this.field2391.method6709(Class8432.field34652, this.getPosX() - method1741.x * n3 - n, this.getPosY() - method1741.y, this.getPosZ() - method1741.z * n3 - n2, 0.0, 0.0, 0.0);
                         }
                     }
                 }
@@ -293,7 +294,7 @@ public class Class840 extends Class832
     
     public boolean method5010() {
         final BlockPos method24714 = this.method4150().method24714();
-        return method24714 != null && method24714.method1082(this.method1934(), 12.0);
+        return method24714 != null && method24714.withinDistance(this.method1934(), 12.0);
     }
     
     @Override
@@ -301,9 +302,9 @@ public class Class840 extends Class832
         if (this.method2749() && this.method1706()) {
             this.method1724(this.method2732(), class5487);
             this.method1671(Class2160.field12826, this.method1935());
-            this.method1936(this.method1935().method16748(0.9));
+            this.method1936(this.method1935().scale(0.9));
             if (this.method4152() == null) {
-                this.method1936(this.method1935().method16744(0.0, -0.005, 0.0));
+                this.method1936(this.method1935().add(0.0, -0.005, 0.0));
             }
         }
         else {

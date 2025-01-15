@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
@@ -31,9 +32,9 @@ public class Class3883 extends Class3882
     
     @Override
     public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
-        final Class5487 method18517 = this.method11808(class7096, class7097, class7098, Class7543.method23629()).method24537().method18517();
-        final double n = class7098.getX() + method18517.field22770;
-        final double n2 = class7098.getZ() + method18517.field22772;
+        final Vec3d method18517 = this.method11808(class7096, class7097, class7098, Class7543.method23629()).method24537().method18517();
+        final double n = class7098.getX() + method18517.x;
+        final double n2 = class7098.getZ() + method18517.z;
         for (int i = 0; i < 3; ++i) {
             if (random.nextBoolean()) {
                 class7097.method6709(Class8432.field34639, n + random.nextFloat() / 5.0f, class7098.getY() + (0.5 - random.nextFloat()), n2 + random.nextFloat() / 5.0f, 0.0, 0.0, 0.0);

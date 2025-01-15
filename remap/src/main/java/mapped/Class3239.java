@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3239 extends Class3167
 {
@@ -94,10 +95,10 @@ public class Class3239 extends Class3167
         final int n4 = 0;
         method30920[n4] += n3;
         final float n5 = array[0] * 0.017453292f;
-        final float n6 = Class8845.method30920(Class3239.field15514.field4684.method1934(), new Class5487(class399.field2395 - MathHelper.sin(n5) * n2, class399.field2396, class399.field2397 + MathHelper.cos(n5) * n2))[0] * 0.017453292f;
+        final float n6 = Class8845.method30920(Class3239.field15514.field4684.method1934(), new Vec3d(class399.field2395 - MathHelper.sin(n5) * n2, class399.field2396, class399.field2397 + MathHelper.cos(n5) * n2))[0] * 0.017453292f;
         class400.method16973(-MathHelper.sin(n6) * n);
         class400.method16977(MathHelper.cos(n6) * n);
-        final Class5487 class401 = new Class5487(Class3239.field15514.field4684.field2395 + class400.method16972(), Class3239.field15514.field4684.field2396 + class400.method16974(), Class3239.field15514.field4684.field2397 + class400.method16976());
+        final Vec3d class401 = new Vec3d(Class3239.field15514.field4684.field2395 + class400.method16972(), Class3239.field15514.field4684.field2396 + class400.method16974(), Class3239.field15514.field4684.field2397 + class400.method16976());
         if (this.method9883("Avoid void")) {
             if (!this.field15728 && this.method10230(class401)) {
                 this.field15727 *= -1;
@@ -111,7 +112,7 @@ public class Class3239 extends Class3167
         }
     }
     
-    private boolean method10230(final Class5487 class5487) {
-        return Class3239.field15514.field4684.method1895().field22771 < 1.0 || Class3239.field15514.field4683.method6981(Class3239.field15514.field4684, new Class6221(class5487.method16744(-0.15, 0.0, -0.15), class5487.method16744(0.15, Class3239.field15514.field4684.method1931(), 0.15)).method18494(0.0, -Class3239.field15514.field4684.method1934().field22771, 0.0)).count() == 0L;
+    private boolean method10230(final Vec3d class5487) {
+        return Class3239.field15514.field4684.method1895().y < 1.0 || Class3239.field15514.field4683.method6981(Class3239.field15514.field4684, new AxisAlignedBB(class5487.add(-0.15, 0.0, -0.15), class5487.add(0.15, Class3239.field15514.field4684.method1931(), 0.15)).method18494(0.0, -Class3239.field15514.field4684.method1934().y, 0.0)).count() == 0L;
     }
 }

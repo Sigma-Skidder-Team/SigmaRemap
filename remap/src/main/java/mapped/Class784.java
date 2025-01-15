@@ -56,9 +56,9 @@ public class Class784 extends Class785 implements Class768
     public void method2736() {
         super.method2736();
         if (!this.field2391.field10067) {
-            final int method35644 = MathHelper.floor(this.method1938());
-            final int method35645 = MathHelper.floor(this.method1941());
-            final int method35646 = MathHelper.floor(this.method1945());
+            final int method35644 = MathHelper.floor(this.getPosX());
+            final int method35645 = MathHelper.floor(this.getPosY());
+            final int method35646 = MathHelper.floor(this.getPosZ());
             if (this.method1710()) {
                 this.method1740(Class7929.field32569, 1.0f);
             }
@@ -70,7 +70,7 @@ public class Class784 extends Class785 implements Class768
             }
             final Class7096 method35647 = Class7521.field29329.method11878();
             for (int i = 0; i < 4; ++i) {
-                final BlockPos class354 = new BlockPos(MathHelper.floor(this.method1938() + (i % 2 * 2 - 1) * 0.25f), MathHelper.floor(this.method1941()), MathHelper.floor(this.method1945() + (i / 2 % 2 * 2 - 1) * 0.25f));
+                final BlockPos class354 = new BlockPos(MathHelper.floor(this.getPosX() + (i % 2 * 2 - 1) * 0.25f), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ() + (i / 2 % 2 * 2 - 1) * 0.25f));
                 if (this.field2391.method6701(class354).method21706()) {
                     if (this.field2391.method6959(class354).method9845(class354) < 0.8f) {
                         if (method35647.method21752(this.field2391, class354)) {
@@ -86,10 +86,10 @@ public class Class784 extends Class785 implements Class768
     public void method4252(final Class511 class511, final float n) {
         final Class411 class512 = new Class411(this.field2391, this);
         final double n2 = class511.method1944() - 1.100000023841858;
-        final double n3 = class511.method1938() - this.method1938();
-        final double n4 = n2 - class512.method1941();
-        final double n5 = class511.method1945() - this.method1945();
-        class512.method1958(n3, n4 + MathHelper.method35641(n3 * n3 + n5 * n5) * 0.2f, n5, 1.6f, 12.0f);
+        final double n3 = class511.getPosX() - this.getPosX();
+        final double n4 = n2 - class512.getPosY();
+        final double n5 = class511.getPosZ() - this.getPosZ();
+        class512.method1958(n3, n4 + MathHelper.sqrt(n3 * n3 + n5 * n5) * 0.2f, n5, 1.6f, 12.0f);
         this.method1695(Class8520.field35601, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(class512);
     }

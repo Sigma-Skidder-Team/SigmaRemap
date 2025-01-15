@@ -108,7 +108,7 @@ public class Class6176 extends Class6175
     }
     
     private boolean method18447() {
-        return Class869.method5277().field4644.method5833().method18161().method16747(this.field24936, this.field24937, this.field24938) >= 256.0;
+        return Class869.method5277().field4644.method5833().method18161().squareDistanceTo(this.field24936, this.field24937, this.field24938) >= 256.0;
     }
     
     private void method18448(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final int[] array, final int[] array2, final boolean b, final boolean b2) {
@@ -132,7 +132,7 @@ public class Class6176 extends Class6175
                     final double n3 = j + (this.field24949.nextDouble() - this.field24949.nextDouble()) * 0.5;
                     final double n4 = i + (this.field24949.nextDouble() - this.field24949.nextDouble()) * 0.5;
                     final double n5 = k + (this.field24949.nextDouble() - this.field24949.nextDouble()) * 0.5;
-                    final double n6 = MathHelper.method35641(n3 * n3 + n4 * n4 + n5 * n5) / n + this.field24949.nextGaussian() * 0.05;
+                    final double n6 = MathHelper.sqrt(n3 * n3 + n4 * n4 + n5 * n5) / n + this.field24949.nextGaussian() * 0.05;
                     this.method18448(field24936, field24937, field24938, n3 / n6, n4 / n6, n5 / n6, array, array2, b, b2);
                     if (i != -n2) {
                         if (i != n2) {

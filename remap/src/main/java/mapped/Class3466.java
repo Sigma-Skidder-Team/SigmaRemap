@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.EnumSet;
 
 public class Class3466 extends Class3446
@@ -33,11 +35,11 @@ public class Class3466 extends Class3446
         if (this.field16334.method1734(this.field16333) > this.field16339 * this.field16339) {
             return false;
         }
-        final Class5487 method24905 = Class7775.method24905(this.field16333, 16, 7, this.field16334.method1934());
+        final Vec3d method24905 = Class7775.method24905(this.field16333, 16, 7, this.field16334.method1934());
         if (method24905 != null) {
-            this.field16335 = method24905.field22770;
-            this.field16336 = method24905.field22771;
-            this.field16337 = method24905.field22772;
+            this.field16335 = method24905.x;
+            this.field16336 = method24905.y;
+            this.field16337 = method24905.z;
             return true;
         }
         return false;

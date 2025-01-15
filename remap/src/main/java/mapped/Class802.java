@@ -186,7 +186,7 @@ public class Class802 extends Class789
             for (int n = 1 + this.field2423.nextInt(3), i = 0; i < n; ++i) {
                 final Class427 method1765 = this.method1765(Class802.field4306.get(this.method4634()), 1);
                 if (method1765 != null) {
-                    method1765.method1936(method1765.method1935().method16744((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.1f, this.field2423.nextFloat() * 0.05f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.1f));
+                    method1765.method1936(method1765.method1935().add((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.1f, this.field2423.nextFloat() * 0.05f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.1f));
                 }
             }
         }

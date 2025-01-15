@@ -20,9 +20,9 @@ public class Class4375 implements Class4252<Class5800>
     
     public Class4375(final Class508 class508) {
         this.field19585 = class508.method1643();
-        this.field19586 = class508.method1938();
-        this.field19587 = class508.method1941();
-        this.field19588 = class508.method1945();
+        this.field19586 = class508.getPosX();
+        this.field19587 = class508.getPosY();
+        this.field19588 = class508.getPosZ();
         this.field19589 = class508.method2607();
     }
     

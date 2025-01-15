@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3847 extends Class3846
 {
@@ -35,19 +36,19 @@ public class Class3847 extends Class3846
     }
     
     private void method11901(final Entity class399) {
-        final Class5487 method1935 = class399.method1935();
-        if (method1935.field22771 < 0.0) {
-            class399.method1937(method1935.field22770, -method1935.field22771 * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.field22772);
+        final Vec3d method1935 = class399.method1935();
+        if (method1935.y < 0.0) {
+            class399.method1937(method1935.x, -method1935.y * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.z);
         }
     }
     
     @Override
     public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
-        final double abs = Math.abs(class1849.method1935().field22771);
+        final double abs = Math.abs(class1849.method1935().y);
         if (abs < 0.1) {
             if (!class1849.method1810()) {
                 final double n = 0.4 + abs * 0.2;
-                class1849.method1936(class1849.method1935().method16751(n, 1.0, n));
+                class1849.method1936(class1849.method1935().mul(n, 1.0, n));
             }
         }
         super.method11845(class1847, class1848, class1849);

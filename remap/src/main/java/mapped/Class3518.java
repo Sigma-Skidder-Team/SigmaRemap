@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -19,8 +20,8 @@ public class Class3518 extends Class3517
     
     @Nullable
     @Override
-    public Class5487 method11071() {
-        Class5487 class5487 = null;
+    public Vec3d method11071() {
+        Vec3d class5487 = null;
         if (this.field16510.method1706()) {
             class5487 = Class7775.method24902(this.field16510, 15, 15);
         }
@@ -31,11 +32,11 @@ public class Class3518 extends Class3517
     }
     
     @Nullable
-    private Class5487 method11074() {
+    private Vec3d method11074() {
         final BlockPos class354 = new BlockPos(this.field16510);
         final Class385 class355 = new Class385();
         final Class385 class356 = new Class385();
-        for (final BlockPos class357 : BlockPos.method1158(MathHelper.floor(this.field16510.method1938() - 3.0), MathHelper.floor(this.field16510.method1941() - 6.0), MathHelper.floor(this.field16510.method1945() - 3.0), MathHelper.floor(this.field16510.method1938() + 3.0), MathHelper.floor(this.field16510.method1941() + 6.0), MathHelper.floor(this.field16510.method1945() + 3.0))) {
+        for (final BlockPos class357 : BlockPos.method1158(MathHelper.floor(this.field16510.getPosX() - 3.0), MathHelper.floor(this.field16510.getPosY() - 6.0), MathHelper.floor(this.field16510.getPosZ() - 3.0), MathHelper.floor(this.field16510.getPosX() + 3.0), MathHelper.floor(this.field16510.getPosY() + 6.0), MathHelper.floor(this.field16510.getPosZ() + 3.0))) {
             if (class354.equals(class357)) {
                 continue;
             }
@@ -49,7 +50,7 @@ public class Class3518 extends Class3517
             if (!this.field16510.field2391.method6961(class355.method1287(class357).method1290(Direction.UP))) {
                 continue;
             }
-            return new Class5487(class357);
+            return new Vec3d(class357);
         }
         return null;
     }

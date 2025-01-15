@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 
 public class Class3195 extends Class3167
@@ -56,11 +57,11 @@ public class Class3195 extends Class3167
         final double field38854 = Class8591.method29094(class399).field38854;
         final double n = Class8591.method29094(class399).field38855 + class399.method1931() / 2.0f;
         final double field38855 = Class8591.method29094(class399).field38856;
-        final Class5487 method16755 = new Class5487(0.0, 0.0, 10.0).method16754(-(float)Math.toRadians(Class869.method5277().field4684.field2400)).method16755(-(float)Math.toRadians(Class869.method5277().field4684.field2399));
+        final Vec3d method16755 = new Vec3d(0.0, 0.0, 10.0).rotatePitch(-(float)Math.toRadians(Class869.method5277().field4684.field2400)).rotateYaw(-(float)Math.toRadians(Class869.method5277().field4684.field2399));
         final int method16756 = this.method9885("Color");
         GL11.glBegin(1);
         GL11.glColor4fv(Class6430.method19139(Class6430.method19118(method16756, 0.45f)));
-        GL11.glVertex3d(method16755.field22770, method16755.field22771, method16755.field22772);
+        GL11.glVertex3d(method16755.x, method16755.y, method16755.z);
         GL11.glColor4fv(Class6430.method19139(Class6430.method19118(method16756, 0.0f)));
         GL11.glVertex3d(field38854, n, field38855);
         GL11.glEnd();

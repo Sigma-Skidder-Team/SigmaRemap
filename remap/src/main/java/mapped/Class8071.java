@@ -98,9 +98,9 @@ public class Class8071
     }
     
     public void method26478(final BlockPos field33255, final Class2003 class2003, final Direction class2004, final int n) {
-        final double n2 = this.field33248.method1938() - (field33255.getX() + 0.5);
-        final double n3 = this.field33248.method1941() - (field33255.getY() + 0.5) + 1.5;
-        final double n4 = this.field33248.method1945() - (field33255.getZ() + 0.5);
+        final double n2 = this.field33248.getPosX() - (field33255.getX() + 0.5);
+        final double n3 = this.field33248.getPosY() - (field33255.getY() + 0.5) + 1.5;
+        final double n4 = this.field33248.getPosZ() - (field33255.getZ() + 0.5);
         if (n2 * n2 + n3 * n3 + n4 * n4 <= 36.0) {
             if (field33255.getY() < n) {
                 if (class2003 != Class2003.field11240) {

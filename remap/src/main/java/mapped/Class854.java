@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Random;
 
 public class Class854 extends Class853
@@ -68,7 +70,7 @@ public class Class854 extends Class853
     @Override
     public void method2725() {
         final Vec3d method1935 = this.method1935();
-        this.method1937(method1935.field22770, this.method2724() + this.method5130() * 0.1f, method1935.field22772);
+        this.method1937(method1935.x, this.method2724() + this.method5130() * 0.1f, method1935.z);
         this.field2448 = true;
     }
     
@@ -79,7 +81,7 @@ public class Class854 extends Class853
         }
         else {
             final Vec3d method1935 = this.method1935();
-            this.method1937(method1935.field22770, 0.22f + this.method5130() * 0.05f, method1935.field22772);
+            this.method1937(method1935.x, 0.22f + this.method5130() * 0.05f, method1935.z);
             this.field2448 = true;
         }
     }

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 public class Class7256 extends Class7255
 {
@@ -22,7 +23,7 @@ public class Class7256 extends Class7255
     
     @Override
     public Vec3d method22155(final Class1855 class1855, final BlockPos class1856, final Class7099 class1857) {
-        return Vec3d.field22769;
+        return Vec3d.ZERO;
     }
     
     @Override

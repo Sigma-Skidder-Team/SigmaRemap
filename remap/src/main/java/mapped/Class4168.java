@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
@@ -42,7 +45,7 @@ public class Class4168 extends Class4158<Class490>
         final float n11 = array[1];
         final float n12 = array[2];
         class7351.method22567();
-        class7351.method22566(Vector3f.field38718.rotationDegrees(n8 * 2.25f - 45.0f));
+        class7351.method22566(Vector3f.YP.rotationDegrees(n8 * 2.25f - 45.0f));
         final float n13 = -n5;
         final float n14 = -n5;
         final float n15 = -1.0f + method35686;
@@ -59,22 +62,22 @@ public class Class4168 extends Class4158<Class490>
     
     private static void method12479(final Class7351 class7351, final Class4150 class7352, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final float n7, final float n8, final float n9, final float n10, final float n11, final float n12, final float n13, final float n14, final float n15, final float n16, final float n17, final float n18) {
         final Class8996 method22569 = class7351.method22569();
-        final Class6789 method22570 = method22569.method32111();
-        final Class9429 method22571 = method22569.method32112();
+        final Matrix4f method22570 = method22569.method32111();
+        final Matrix3f method22571 = method22569.method32112();
         method12480(method22570, method22571, class7352, n, n2, n3, n4, n5, n6, n7, n8, n9, n10, n15, n16, n17, n18);
         method12480(method22570, method22571, class7352, n, n2, n3, n4, n5, n6, n13, n14, n11, n12, n15, n16, n17, n18);
         method12480(method22570, method22571, class7352, n, n2, n3, n4, n5, n6, n9, n10, n13, n14, n15, n16, n17, n18);
         method12480(method22570, method22571, class7352, n, n2, n3, n4, n5, n6, n11, n12, n7, n8, n15, n16, n17, n18);
     }
     
-    private static void method12480(final Class6789 class6789, final Class9429 class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final float n7, final float n8, final float n9, final float n10, final float n11, final float n12, final float n13, final float n14) {
+    private static void method12480(final Matrix4f class6789, final Matrix3f class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final float n7, final float n8, final float n9, final float n10, final float n11, final float n12, final float n13, final float n14) {
         method12481(class6789, class6790, class6791, n, n2, n3, n4, n6, n7, n8, n12, n13);
         method12481(class6789, class6790, class6791, n, n2, n3, n4, n5, n7, n8, n12, n14);
         method12481(class6789, class6790, class6791, n, n2, n3, n4, n5, n9, n10, n11, n14);
         method12481(class6789, class6790, class6791, n, n2, n3, n4, n6, n9, n10, n11, n13);
     }
     
-    private static void method12481(final Class6789 class6789, final Class9429 class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final int n5, final float n6, final float n7, final float n8, final float n9) {
+    private static void method12481(final Matrix4f class6789, final Matrix3f class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final int n5, final float n6, final float n7, final float n8, final float n9) {
         class6791.method12444(class6789, n6, (float)n5, n7).method12439(n, n2, n3, n4).method12391(n8, n9).method12441(Class1904.field10335).method12440(15728880).method12445(class6790, 0.0f, 1.0f, 0.0f).method12397();
     }
     

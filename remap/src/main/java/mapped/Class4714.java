@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 public class Class4714 extends Class4712<Class841, Class5876<Class841>>
 {
     public static final Class1932 field20315;
@@ -32,7 +34,7 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
                 if (class841.method5026()) {
                     final Vec3d class843 = new Vec3d(class841.method5019());
                     final Vec3d class844 = new Vec3d(class841.method5025());
-                    if (class842.method20261(new Class6221(class844.field22770, class844.field22771, class844.field22772, class843.field22770, class843.field22771, class843.field22772))) {
+                    if (class842.method20261(new AxisAlignedBB(class844.x, class844.y, class844.z, class843.x, class843.y, class843.z))) {
                         return true;
                     }
                 }

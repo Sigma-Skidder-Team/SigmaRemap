@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 import java.util.List;
@@ -95,7 +96,7 @@ public class Class796 extends Class795 implements Class797
         method4496(this.field2391, this);
         Label_0071: {
             if (this.field4258 != null) {
-                if (this.field4258.method1082(this.method1934(), 3.46)) {
+                if (this.field4258.withinDistance(this.method1934(), 3.46)) {
                     if (this.field2391.method6701(this.field4258).method21696() == Class7521.field29335) {
                         break Label_0071;
                     }
@@ -122,7 +123,7 @@ public class Class796 extends Class795 implements Class797
         this.field4255 = this.field4252;
         this.field4254 = this.field4253;
         this.field4253 += (float)(((!this.field2404 && !this.method1805()) ? 4 : -1) * 0.3);
-        this.field4253 = MathHelper.method35653(this.field4253, 0.0f, 1.0f);
+        this.field4253 = MathHelper.clamp(this.field4253, 0.0f, 1.0f);
         if (!this.field2404) {
             if (this.field4256 < 1.0f) {
                 this.field4256 = 1.0f;
@@ -131,8 +132,8 @@ public class Class796 extends Class795 implements Class797
         this.field4256 *= (float)0.9;
         final Vec3d method1935 = this.method1935();
         if (!this.field2404) {
-            if (method1935.field22771 < 0.0) {
-                this.method1936(method1935.method16751(1.0, 0.6, 1.0));
+            if (method1935.y < 0.0) {
+                this.method1936(method1935.mul(1.0, 0.6, 1.0));
             }
         }
         this.field4252 += this.field4256 * 2.0f;
@@ -146,7 +147,7 @@ public class Class796 extends Class795 implements Class797
                     if (!method6739.isEmpty()) {
                         final Class759 class1849 = method6739.get(class1847.field10062.nextInt(method6739.size()));
                         if (!class1849.method1696()) {
-                            class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), method4500(class1849.method1642()), class1848.method1922(), 0.7f, method4501(class1847.field10062));
+                            class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method4500(class1849.method1642()), class1848.method1922(), 0.7f, method4501(class1847.field10062));
                             return true;
                         }
                     }
@@ -168,7 +169,7 @@ public class Class796 extends Class795 implements Class797
                 method2715.method27693(1);
             }
             if (!this.method1696()) {
-                this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35422, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
+                this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35422, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
             }
             if (!this.field2391.field10067) {
                 if (this.field2423.nextInt(10) != 0) {
@@ -250,7 +251,7 @@ public class Class796 extends Class795 implements Class797
         if (!class1848.method1696()) {
             if (!method4496(class1847, class1848)) {
                 if (class1847.field10062.nextInt(200) == 0) {
-                    class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), method4499(class1847.field10062), class1848.method1922(), 1.0f, method4501(class1847.field10062));
+                    class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method4499(class1847.field10062), class1848.method1922(), 1.0f, method4501(class1847.field10062));
                 }
             }
         }

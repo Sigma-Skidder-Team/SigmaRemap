@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 
@@ -24,13 +25,13 @@ public class Class4159 extends Class4158<Class497>
         class498.method22567();
         if (!(method2194.method21696() instanceof Class3861)) {
             class498.method22564(0.5, 0.5, 0.5);
-            class498.method22566(Vector3f.field38718.rotationDegrees(-method2194.method21772((Class7111<Direction>)Class3862.field17489).getHorizontalAngle()));
+            class498.method22566(Vector3f.YP.rotationDegrees(-method2194.method21772((Class7111<Direction>)Class3862.field17489).getHorizontalAngle()));
             class498.method22564(0.0, -0.3125, -0.4375);
             this.field18542.field24273.field25187 = false;
         }
         else {
             class498.method22564(0.5, 0.5, 0.5);
-            class498.method22566(Vector3f.field38718.rotationDegrees(-(method2194.method21772((Class7111<Integer>)Class3861.field17487) * 360 / 16.0f)));
+            class498.method22566(Vector3f.YP.rotationDegrees(-(method2194.method21772((Class7111<Integer>)Class3861.field17487) * 360 / 16.0f)));
             this.field18542.field24273.field25187 = true;
         }
         class498.method22567();
@@ -77,7 +78,7 @@ public class Class4159 extends Class4158<Class497>
         if (!Class9216.field39049) {
             if (!Class8571.field36033) {
                 final Entity method5303 = Class869.method5277().method5303();
-                if (class497.method2191(method5303.method1938(), method5303.method1941(), method5303.method1945()) > Class4159.field18543) {
+                if (class497.method2191(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4159.field18543) {
                     return false;
                 }
             }

@@ -74,7 +74,7 @@ public class Class4087 extends Class4085
                         }
                         class8322.method6886(method2792);
                     }
-                    class8322.method6706(null, class8324.method1938(), class8324.method1941(), class8324.method1945(), Class8520.field34993, Class286.field1585, 1.0f, 1.0f / (Class4087.field17363.nextFloat() * 0.4f + 1.2f) + method2791 * 0.5f);
+                    class8322.method6706(null, class8324.getPosX(), class8324.getPosY(), class8324.getPosZ(), Class8520.field34993, Class286.field1585, 1.0f, 1.0f / (Class4087.field17363.nextFloat() * 0.4f + 1.2f) + method2791 * 0.5f);
                     if (!b2) {
                         if (!class8324.field3025.field27304) {
                             method2790.method27693(1);

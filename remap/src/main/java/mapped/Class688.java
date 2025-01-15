@@ -236,7 +236,7 @@ public class Class688 extends Class565
             if (method23971 > 0) {
                 final int method23972 = MathHelper.method35642(Math.min((n3 - n2 - 4) / (float)max, 9.0f));
                 if (method23972 <= 3) {
-                    final float method23973 = MathHelper.method35653(method23969 / 20.0f, 0.0f, 1.0f);
+                    final float method23973 = MathHelper.clamp(method23969 / 20.0f, 0.0f, 1.0f);
                     final int n4 = (int)((1.0f - method23973) * 255.0f) << 16 | (int)(method23973 * 255.0f) << 8;
                     String s2 = "" + method23969 / 2.0f;
                     if (n3 - this.field3785.field4643.method6617(s2 + "hp") >= n2) {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -27,7 +28,7 @@ public class Class5788 extends Class5784
     
     @Override
     public void method17247() {
-        final double n = (this.field23779 != null) ? this.field23779.method16747(this.field23764.method1938(), this.field23764.method1941(), this.field23764.method1945()) : 0.0;
+        final double n = (this.field23779 != null) ? this.field23779.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ()) : 0.0;
         if (n >= 100.0) {
             if (n <= 22500.0) {
                 if (!this.field23764.field2405) {
@@ -64,7 +65,7 @@ public class Class5788 extends Class5784
                 double n2 = 64.0;
                 final Class512 method6959 = this.field23764.field2391.method7137(Class5788.field23777, method6958.getX(), method6958.getY(), method6958.getZ());
                 if (method6959 != null) {
-                    n2 = method6958.method1084(method6959.method1934(), true) / 512.0;
+                    n2 = method6958.distanceSq(method6959.method1934(), true) / 512.0;
                 }
                 if (method6959 != null) {
                     if (!method6959.field3025.field27301) {
@@ -117,12 +118,12 @@ public class Class5788 extends Class5784
             if (!this.field23778.method35215()) {
                 final Vec3d method35226 = this.field23778.method35226();
                 this.field23778.method35214();
-                final double field22770 = method35226.field22770;
-                final double field22771 = method35226.field22772;
+                final double field22770 = method35226.x;
+                final double field22771 = method35226.z;
                 double n;
                 do {
-                    n = method35226.field22771 + this.field23764.method2633().nextFloat() * 20.0f;
-                } while (n < method35226.field22771);
+                    n = method35226.y + this.field23764.method2633().nextFloat() * 20.0f;
+                } while (n < method35226.y);
                 this.field23779 = new Vec3d(field22770, n, field22771);
             }
         }

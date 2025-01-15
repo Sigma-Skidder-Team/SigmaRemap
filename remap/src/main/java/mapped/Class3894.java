@@ -111,7 +111,7 @@ public class Class3894 extends Class3892 implements Class3856
         final Direction method11880 = class7074.method21648();
         Class7096 class7075;
         if (!class7074.method21641() && method11880.getAxis().isHorizontal()) {
-            class7075 = ((Class7097<O, Class7096>)((Class7097<Object, Class7096>)method11878).method21773((Class7111<Comparable>)Class3894.field17564, method11880)).method21773(Class3894.field17568, (class7074.method21649().field22771 - class7074.method21639().getY() <= 0.5) ? Class109.field344 : Class109.field343);
+            class7075 = ((Class7097<O, Class7096>)((Class7097<Object, Class7096>)method11878).method21773((Class7111<Comparable>)Class3894.field17564, method11880)).method21773(Class3894.field17568, (class7074.method21649().y - class7074.method21639().getY() <= 0.5) ? Class109.field344 : Class109.field343);
         }
         else {
             class7075 = ((Class7097<O, Class7096>)((Class7097<Object, Class7096>)method11878).method21773((Class7111<Comparable>)Class3894.field17564, class7074.method21644().getOpposite())).method21773(Class3894.field17568, (method11880 != Direction.UP) ? Class109.field343 : Class109.field344);

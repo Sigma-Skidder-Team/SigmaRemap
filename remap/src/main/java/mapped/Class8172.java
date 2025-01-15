@@ -9,6 +9,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class8172
 {
@@ -53,14 +54,14 @@ public class Class8172
             return false;
         }
         if (class1850 != null) {
-            if (!this.field33666.method30757(class1850.field22770, class1850.field22771, class1850.field22772, class1851.method1938(), class1851.method1941(), class1851.method1945())) {
+            if (!this.field33666.method30757(class1850.x, class1850.y, class1850.z, class1851.getPosX(), class1851.getPosY(), class1851.getPosZ())) {
                 return false;
             }
         }
         else if (this.field33666 != Class8817.field37024) {
             return false;
         }
-        if (!this.field33667.method29811(class1849, class1851.method1938(), class1851.method1941(), class1851.method1945())) {
+        if (!this.field33667.method29811(class1849, class1851.getPosX(), class1851.getPosY(), class1851.getPosZ())) {
             return false;
         }
         if (!this.field33668.method26193(class1851)) {

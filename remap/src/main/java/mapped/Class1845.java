@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 public class Class1845 implements AutoCloseable
@@ -36,7 +38,7 @@ public class Class1845 implements AutoCloseable
     }
     
     private void method6633(final Class7351 class7351, final Class7807 class7352, final boolean b, final int n) {
-        final Class6789 method32111 = class7351.method22569().method32111();
+        final Matrix4f method32111 = class7351.method22569().method32111();
         final Class4150 method32112 = class7352.method25214(this.field10038);
         method32112.method12444(method32111, 0.0f, 128.0f, -0.01f).method12399(255, 255, 255, 255).method12391(0.0f, 1.0f).method12440(n).method12397();
         method32112.method12444(method32111, 128.0f, 128.0f, -0.01f).method12399(255, 255, 255, 255).method12391(1.0f, 1.0f).method12440(n).method12397();
@@ -57,7 +59,7 @@ public class Class1845 implements AutoCloseable
             final float n4 = (method32113 / 16 + 0) / 16.0f;
             final float n5 = (method32113 % 16 + 1) / 16.0f;
             final float n6 = (method32113 / 16 + 1) / 16.0f;
-            final Class6789 method32114 = class7351.method22569().method32111();
+            final Matrix4f method32114 = class7351.method22569().method32111();
             final Class4150 method32115 = class7352.method25214(Class1905.method7397());
             method32115.method12444(method32114, -1.0f, 1.0f, n2 * -0.001f).method12399(255, 255, 255, 255).method12391(n3, n4).method12440(n).method12397();
             method32115.method12444(method32114, 1.0f, 1.0f, n2 * -0.001f).method12399(255, 255, 255, 255).method12391(n5, n4).method12440(n).method12397();
@@ -68,7 +70,7 @@ public class Class1845 implements AutoCloseable
                 final Class1844 field4643 = Class869.method5277().field4643;
                 final String method32116 = class7353.method34528().method8461();
                 final float n7 = (float)field4643.method6617(method32116);
-                final float method32117 = MathHelper.method35653(25.0f / n7, 0.0f, 0.6666667f);
+                final float method32117 = MathHelper.clamp(25.0f / n7, 0.0f, 0.6666667f);
                 class7351.method22567();
                 class7351.method22564(0.0f + class7353.method34524() / 2.0f + 64.0f - n7 * method32117 / 2.0f, 0.0f + class7353.method34525() / 2.0f + 64.0f + 4.0f, -0.02500000037252903);
                 class7351.method22565(method32117, method32117, 1.0f);

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.EnumSet;
 
 public class Class3547 extends Class3545
@@ -58,7 +57,7 @@ public class Class3547 extends Class3545
     
     public void method11101() {
         final double method11096 = this.method11096();
-        for (final Class759 class759 : this.field16602.field2391.method7129(this.field16602.getClass(), new Class6221(this.field16602.method1938(), this.field16602.method1941(), this.field16602.method1945(), this.field16602.method1938() + 1.0, this.field16602.method1941() + 1.0, this.field16602.method1945() + 1.0).method18495(method11096, 10.0, method11096))) {
+        for (final Class759 class759 : this.field16602.field2391.method7129(this.field16602.getClass(), new AxisAlignedBB(this.field16602.getPosX(), this.field16602.getPosY(), this.field16602.getPosZ(), this.field16602.getPosX() + 1.0, this.field16602.getPosY() + 1.0, this.field16602.getPosZ() + 1.0).method18495(method11096, 10.0, method11096))) {
             if (this.field16602 == class759) {
                 continue;
             }

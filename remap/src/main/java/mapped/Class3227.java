@@ -61,7 +61,7 @@ public class Class3227 extends Class3167
             }
             if (Class6430.method19114() && this.method9883("Auto Jump")) {
                 Class3227.field15514.field4684.method2725();
-                class5717.method16975(Class3227.field15514.field4684.method1935().field22771);
+                class5717.method16975(Class3227.field15514.field4684.method1935().y);
             }
         }
         else if (this.field15686 >= 0) {
@@ -79,13 +79,13 @@ public class Class3227 extends Class3167
             case "Fast1": {
                 this.field15689 = this.method10171(this.field15686, this.field15687);
                 class5717.method16975(this.field15690 = this.method10170(this.field15686));
-                Class3227.field15514.field4684.method1935().field22771 = this.field15690;
+                Class3227.field15514.field4684.method1935().y = this.field15690;
                 break;
             }
             case "Fast2": {
                 this.field15689 = this.method10173(this.field15686, this.field15687);
                 class5717.method16975(this.field15690 = this.method10172(this.field15686));
-                Class3227.field15514.field4684.method1935().field22771 = this.field15690;
+                Class3227.field15514.field4684.method1935().y = this.field15690;
                 break;
             }
         }
@@ -166,7 +166,7 @@ public class Class3227 extends Class3167
     }
     
     private double method10170(final int n) {
-        double field22771 = Class3227.field15514.field4684.method1935().field22771;
+        double field22771 = Class3227.field15514.field4684.method1935().y;
         final boolean method19160 = Class6430.method19160(Class3227.field15514.field4684, 0.37f);
         final double[] array = { 0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, method19160 ? -0.0 : -0.4, method19160 ? -0.13 : -0.47 };
         if (n >= 0) {
@@ -223,7 +223,7 @@ public class Class3227 extends Class3167
     }
     
     private double method10172(final int n) {
-        double field22771 = Class3227.field15514.field4684.method1935().field22771;
+        double field22771 = Class3227.field15514.field4684.method1935().y;
         final boolean method19160 = Class6430.method19160(Class3227.field15514.field4684, 0.37f);
         final double[] array = { 0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18 };
         if (n >= 0) {

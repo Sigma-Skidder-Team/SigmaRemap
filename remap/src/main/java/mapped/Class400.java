@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.UUID;
 
@@ -21,7 +22,7 @@ public class Class400 extends Entity implements Class401
     public Class400(final Class1847 class1847, final Class815 field2466) {
         this(Class7499.field28997, class1847);
         this.field2466 = field2466;
-        this.method1656(field2466.method1938() - (field2466.method1930() + 1.0f) * 0.5 * MathHelper.sin(field2466.field2951 * 0.017453292f), field2466.method1944() - 0.10000000149011612, field2466.method1945() + (field2466.method1930() + 1.0f) * 0.5 * MathHelper.cos(field2466.field2951 * 0.017453292f));
+        this.method1656(field2466.getPosX() - (field2466.method1930() + 1.0f) * 0.5 * MathHelper.sin(field2466.field2951 * 0.017453292f), field2466.method1944() - 0.10000000149011612, field2466.getPosZ() + (field2466.method1930() + 1.0f) * 0.5 * MathHelper.cos(field2466.field2951 * 0.017453292f));
     }
     
     public Class400(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
@@ -40,17 +41,17 @@ public class Class400 extends Entity implements Class401
         if (this.field2467 != null) {
             this.method1960();
         }
-        final Class5487 method1935 = this.method1935();
+        final Vec3d method1935 = this.method1935();
         final Class7006 method1936 = Class7476.method23093(this, this.method1886().method18493(method1935).method18496(1.0), class399 -> !class399.method1639() && class399 != this.field2466, Class2040.field11633, true);
         if (method1936 != null) {
             this.method1959(method1936);
         }
-        final double n = this.method1938() + method1935.field22770;
-        final double n2 = this.method1941() + method1935.field22771;
-        final double n3 = this.method1945() + method1935.field22772;
-        final float method1937 = MathHelper.method35641(Entity.method1680(method1935));
-        this.field2399 = (float)(MathHelper.method35693(method1935.field22770, method1935.field22772) * 57.2957763671875);
-        this.field2400 = (float)(MathHelper.method35693(method1935.field22771, method1937) * 57.2957763671875);
+        final double n = this.getPosX() + method1935.x;
+        final double n2 = this.getPosY() + method1935.y;
+        final double n3 = this.getPosZ() + method1935.z;
+        final float method1937 = MathHelper.sqrt(Entity.method1680(method1935));
+        this.field2399 = (float)(MathHelper.method35693(method1935.x, method1935.z) * 57.2957763671875);
+        this.field2400 = (float)(MathHelper.method35693(method1935.y, method1937) * 57.2957763671875);
         while (this.field2400 - this.field2402 < -180.0f) {
             this.field2402 -= 360.0f;
         }
@@ -67,9 +68,9 @@ public class Class400 extends Entity implements Class401
         this.field2399 = MathHelper.method35700(0.2f, this.field2401, this.field2399);
         if (this.field2391.method6721(this.method1886(), Class8059.field33153)) {
             if (!this.method1711()) {
-                this.method1936(method1935.method16748(0.9900000095367432));
+                this.method1936(method1935.scale(0.9900000095367432));
                 if (!this.method1698()) {
-                    this.method1936(this.method1935().method16744(0.0, -0.05999999865889549, 0.0));
+                    this.method1936(this.method1935().add(0.0, -0.05999999865889549, 0.0));
                 }
                 this.method1656(n, n2, n3);
             }
@@ -87,22 +88,22 @@ public class Class400 extends Entity implements Class401
         this.method1937(n, n2, n3);
         if (this.field2402 == 0.0f) {
             if (this.field2401 == 0.0f) {
-                this.field2400 = (float)(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875);
+                this.field2400 = (float)(MathHelper.method35693(n2, MathHelper.sqrt(n * n + n3 * n3)) * 57.2957763671875);
                 this.field2399 = (float)(MathHelper.method35693(n, n3) * 57.2957763671875);
                 this.field2402 = this.field2400;
                 this.field2401 = this.field2399;
-                this.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+                this.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
             }
         }
     }
     
     @Override
     public void method1958(final double n, final double n2, final double n3, final float n4, final float n5) {
-        final Class5487 method16748 = new Class5487(n, n2, n3).method16738().method16744(this.field2423.nextGaussian() * 0.007499999832361937 * n5, this.field2423.nextGaussian() * 0.007499999832361937 * n5, this.field2423.nextGaussian() * 0.007499999832361937 * n5).method16748(n4);
+        final Vec3d method16748 = new Vec3d(n, n2, n3).normalize().add(this.field2423.nextGaussian() * 0.007499999832361937 * n5, this.field2423.nextGaussian() * 0.007499999832361937 * n5, this.field2423.nextGaussian() * 0.007499999832361937 * n5).scale(n4);
         this.method1936(method16748);
-        final float method16749 = MathHelper.method35641(Entity.method1680(method16748));
-        this.field2399 = (float)(MathHelper.method35693(method16748.field22770, n3) * 57.2957763671875);
-        this.field2400 = (float)(MathHelper.method35693(method16748.field22771, method16749) * 57.2957763671875);
+        final float method16749 = MathHelper.sqrt(Entity.method1680(method16748));
+        this.field2399 = (float)(MathHelper.method35693(method16748.x, n3) * 57.2957763671875);
+        this.field2400 = (float)(MathHelper.method35693(method16748.y, method16749) * 57.2957763671875);
         this.field2401 = this.field2399;
         this.field2402 = this.field2400;
     }

@@ -136,10 +136,10 @@ public abstract class Class780 extends Class763 implements Class768
     @Override
     public void method4252(final Class511 class511, final float n) {
         final Class402 method4330 = this.method4330(this.method2790(this.method2715(Class7476.method23100(this, Class7739.field31279))), n);
-        final double n2 = class511.method1938() - this.method1938();
-        final double n3 = class511.method1942(0.3333333333333333) - method4330.method1941();
-        final double n4 = class511.method1945() - this.method1945();
-        method4330.method1958(n2, n3 + MathHelper.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        final double n2 = class511.getPosX() - this.getPosX();
+        final double n3 = class511.method1942(0.3333333333333333) - method4330.getPosY();
+        final double n4 = class511.getPosZ() - this.getPosZ();
+        method4330.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35575, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(method4330);
     }

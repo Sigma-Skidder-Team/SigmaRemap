@@ -17,6 +17,7 @@ import com.google.gson.JsonDeserializationContext;
 import java.lang.reflect.Type;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonDeserializer;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
@@ -40,7 +41,7 @@ public class Class5970 implements JsonDeserializer<Class9219>
         if (jsonObject.has("rotation")) {
             final JsonObject method35914 = Class9583.method35914(jsonObject, "rotation");
             final Vector3f method35915 = this.method17890(method35914, "origin");
-            method35915.method33314(0.0625f);
+            method35915.mul(0.0625f);
             class8225 = new Class8225(method35915, this.method17884(method35914), this.method17883(method35914), Class9583.method35901(method35914, "rescale", false));
         }
         return class8225;
@@ -93,12 +94,12 @@ public class Class5970 implements JsonDeserializer<Class9219>
     
     private Vector3f method17888(final JsonObject jsonObject) {
         final Vector3f method17890 = this.method17890(jsonObject, "to");
-        if (method17890.method33311() >= -16.0f) {
-            if (method17890.method33312() >= -16.0f) {
-                if (method17890.method33313() >= -16.0f) {
-                    if (method17890.method33311() <= 32.0f) {
-                        if (method17890.method33312() <= 32.0f) {
-                            if (method17890.method33313() <= 32.0f) {
+        if (method17890.getX() >= -16.0f) {
+            if (method17890.getY() >= -16.0f) {
+                if (method17890.getZ() >= -16.0f) {
+                    if (method17890.getX() <= 32.0f) {
+                        if (method17890.getY() <= 32.0f) {
+                            if (method17890.getZ() <= 32.0f) {
                                 return method17890;
                             }
                         }
@@ -111,12 +112,12 @@ public class Class5970 implements JsonDeserializer<Class9219>
     
     private Vector3f method17889(final JsonObject jsonObject) {
         final Vector3f method17890 = this.method17890(jsonObject, "from");
-        if (method17890.method33311() >= -16.0f) {
-            if (method17890.method33312() >= -16.0f) {
-                if (method17890.method33313() >= -16.0f) {
-                    if (method17890.method33311() <= 32.0f) {
-                        if (method17890.method33312() <= 32.0f) {
-                            if (method17890.method33313() <= 32.0f) {
+        if (method17890.getX() >= -16.0f) {
+            if (method17890.getY() >= -16.0f) {
+                if (method17890.getZ() >= -16.0f) {
+                    if (method17890.getX() <= 32.0f) {
+                        if (method17890.getY() <= 32.0f) {
+                            if (method17890.getZ() <= 32.0f) {
                                 return method17890;
                             }
                         }

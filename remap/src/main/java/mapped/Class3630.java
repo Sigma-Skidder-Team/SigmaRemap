@@ -30,10 +30,10 @@ public class Class3630 extends Class3628
         if (this.field16858.method2633().nextFloat() < this.field16862) {
             if (this.field16859 == null) {
                 if (this.field16863 != Class512.class) {
-                    this.field16859 = this.field16858.field2391.method7139((Class<? extends Entity>)this.field16863, this.field16864, (Class511)this.field16858, this.field16858.method1938(), this.field16858.method1944(), this.field16858.method1945(), this.field16858.method1886().method18495(this.field16860, 3.0, this.field16860));
+                    this.field16859 = this.field16858.field2391.method7139((Class<? extends Entity>)this.field16863, this.field16864, (Class511)this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ(), this.field16858.method1886().method18495(this.field16860, 3.0, this.field16860));
                 }
                 else {
-                    this.field16859 = this.field16858.field2391.method7136(this.field16864, this.field16858, this.field16858.method1938(), this.field16858.method1944(), this.field16858.method1945());
+                    this.field16859 = this.field16858.field2391.method7136(this.field16864, this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ());
                 }
             }
             return this.field16866.method4414() && this.field16859 != null;

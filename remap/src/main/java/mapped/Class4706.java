@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class4706 extends Class4703<Class406>
 {
     private static String[] field20293;
@@ -17,10 +19,10 @@ public class Class4706 extends Class4703<Class406>
     public void method13969(final Class406 class406, final float n, final float n2, final Class7351 class407, final Class7807 class408, final int n3) {
         class407.method22567();
         class407.method22566(this.field20283.method28717());
-        class407.method22566(Vector3f.field38718.rotationDegrees(180.0f));
+        class407.method22566(Vector3f.YP.rotationDegrees(180.0f));
         if (class406.method2004()) {
             class407.method22566(Vector3f.ZP.rotationDegrees(180.0f));
-            class407.method22566(Vector3f.field38718.rotationDegrees(180.0f));
+            class407.method22566(Vector3f.YP.rotationDegrees(180.0f));
             class407.method22566(Vector3f.XP.rotationDegrees(90.0f));
         }
         this.field20294.method6536(class406.method2005(), Class2016.field11493, n3, Class1904.field10335, class407, class408);

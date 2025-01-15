@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.concurrent.CancellationException;
 import java.util.List;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
@@ -44,10 +46,10 @@ public class Class1945 extends Class1944
         if (this.field10597.get()) {
             return CompletableFuture.completedFuture(Class2033.field11590);
         }
-        final Class5487 method23456 = this.field10599.field37833.method23456();
-        final float n = (float)method23456.field22770;
-        final float n2 = (float)method23456.field22771;
-        final float n3 = (float)method23456.field22772;
+        final Vec3d method23456 = this.field10599.field37833.method23456();
+        final float n = (float)method23456.x;
+        final float n2 = (float)method23456.y;
+        final float n3 = (float)method23456.z;
         final Class9006 class9227 = new Class9006();
         Class8974.method31908(this.field10599, this.method7897(n, n2, n3, class9227, class9226));
         if (!this.field10597.get()) {

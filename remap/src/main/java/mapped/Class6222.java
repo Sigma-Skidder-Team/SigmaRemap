@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class6222 extends Class6221
+public class Class6222 extends AxisAlignedBB
 {
     private static String[] field25079;
     private int field25080;

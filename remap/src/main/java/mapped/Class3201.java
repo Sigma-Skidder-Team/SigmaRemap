@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.math.RoundingMode;
 import java.math.BigDecimal;
 import java.io.FileWriter;
@@ -12,7 +14,7 @@ public class Class3201 extends Class3167
 {
     public FileWriter field15618;
     public int field15619;
-    public Class5487 field15620;
+    public Vec3d field15620;
     
     public Class3201() {
         super(Class8013.field32988, "DebugSpeed", "");
@@ -22,10 +24,10 @@ public class Class3201 extends Class3167
     @Class6753
     public void method10042(final Class5743 class5743) {
         if (this.method9906()) {
-            final Class5487 field15620 = new Class5487(Class3201.field15514.field4684.field2395, 0.0, Class3201.field15514.field4684.field2397);
+            final Vec3d field15620 = new Vec3d(Class3201.field15514.field4684.field2395, 0.0, Class3201.field15514.field4684.field2397);
             if (Class3201.field15514.field4684.field2404) {
                 if (this.field15620 != null) {
-                    final double d = field15620.method16745(this.field15620) / this.field15619 * Class3201.field15514.field4633.field26532;
+                    final double d = field15620.distanceTo(this.field15620) / this.field15619 * Class3201.field15514.field4633.field26532;
                     final boolean b = Class9463.method35173().method35194().method29228() > 1 && Class3201.field15514.field4684.field2985 == 0;
                     float floatValue = new BigDecimal(d / (b ? 0.280616 : 0.312948)).setScale(4, RoundingMode.DOWN).floatValue();
                     if (floatValue <= 9.0E-4) {

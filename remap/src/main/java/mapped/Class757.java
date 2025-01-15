@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.UUID;
 
 public class Class757 extends Class756
@@ -24,11 +26,11 @@ public class Class757 extends Class756
     }
     
     @Override
-    public void method1671(final Class2160 class2160, final Class5487 class2161) {
+    public void method1671(final Class2160 class2160, final Vec3d class2161) {
         final Class5717 class2162 = new Class5717(class2161);
         Class9463.method35173().method35188().method21097(class2162);
         if (!class2162.method16962()) {
-            super.method1671(class2160, new Class5487(class2162.method16972(), class2162.method16974(), class2162.method16976()));
+            super.method1671(class2160, new Vec3d(class2162.method16972(), class2162.method16974(), class2162.method16976()));
         }
     }
     

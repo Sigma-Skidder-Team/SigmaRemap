@@ -22,7 +22,7 @@ public class Class7542 implements Class7543
     
     @Deprecated
     public Class7542(final Entity class399) {
-        this(class399.method1813(), class399.method1941(), (class399 instanceof Class511) ? ((Class511)class399).method2713().method27622() : Class7739.field30754);
+        this(class399.method1813(), class399.getPosY(), (class399 instanceof Class511) ? ((Class511)class399).method2713().method27622() : Class7739.field30754);
     }
     
     @Override

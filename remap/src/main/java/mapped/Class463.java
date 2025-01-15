@@ -55,7 +55,7 @@ public class Class463 extends Class436 implements Class462, Class439
             this.field2732 -= 0.1f;
         }
         else {
-            this.field2736 = (float) MathHelper.method35693(method7132.method1945() - (this.field2657.getZ() + 0.5), method7132.method1938() - (this.field2657.getX() + 0.5));
+            this.field2736 = (float) MathHelper.method35693(method7132.getPosZ() - (this.field2657.getZ() + 0.5), method7132.getPosX() - (this.field2657.getX() + 0.5));
             this.field2732 += 0.1f;
             if (this.field2732 < 0.5f || Class463.field2737.nextInt(40) == 0) {
                 final float field2730 = this.field2730;
@@ -82,10 +82,10 @@ public class Class463 extends Class436 implements Class462, Class439
             n += 6.2831855f;
         }
         this.field2734 += n * 0.4f;
-        this.field2732 = MathHelper.method35653(this.field2732, 0.0f, 1.0f);
+        this.field2732 = MathHelper.clamp(this.field2732, 0.0f, 1.0f);
         ++this.field2727;
         this.field2729 = this.field2728;
-        this.field2731 += (MathHelper.method35653((this.field2730 - this.field2728) * 0.4f, -0.2f, 0.2f) - this.field2731) * 0.9f;
+        this.field2731 += (MathHelper.clamp((this.field2730 - this.field2728) * 0.4f, -0.2f, 0.2f) - this.field2731) * 0.9f;
         this.field2728 += this.field2731;
     }
     

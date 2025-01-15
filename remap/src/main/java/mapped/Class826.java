@@ -130,7 +130,7 @@ public class Class826 extends Class827 implements Class825
             super.method1798(b);
         }
         else if (!this.method1696()) {
-            this.field2391.method6708(this.method1938(), this.method1944(), this.method1945(), Class8520.field35770, this.method1922(), 1.0f + this.field2423.nextFloat(), this.field2423.nextFloat() * 0.7f + 0.3f, false);
+            this.field2391.method6708(this.getPosX(), this.method1944(), this.getPosZ(), Class8520.field35770, this.method1922(), 1.0f + this.field2423.nextFloat(), this.field2423.nextFloat() * 0.7f + 0.3f, false);
         }
     }
     
@@ -189,12 +189,12 @@ public class Class826 extends Class827 implements Class825
         if (this.field2423.nextFloat() < 0.01f) {
             int n2 = 0;
             final Class385 class385 = new Class385();
-            for (int i = (int)this.method1938() - 4; i < (int)this.method1938() + 4; ++i) {
+            for (int i = (int)this.getPosX() - 4; i < (int)this.getPosX() + 4; ++i) {
                 if (n2 >= 14) {
                     break;
                 }
-                for (int n3 = (int)this.method1941() - 4; n3 < (int)this.method1941() + 4 && n2 < 14; ++n3) {
-                    for (int n4 = (int)this.method1945() - 4; n4 < (int)this.method1945() + 4 && n2 < 14; ++n4) {
+                for (int n3 = (int)this.getPosY() - 4; n3 < (int)this.getPosY() + 4 && n2 < 14; ++n3) {
+                    for (int n4 = (int)this.getPosZ() - 4; n4 < (int)this.getPosZ() + 4 && n2 < 14; ++n4) {
                         final Class3833 method21696 = this.field2391.method6701(class385.method1284(i, n3, n4)).method21696();
                         if (method21696 == Class7521.field29381 || method21696 instanceof Class3900) {
                             if (this.field2423.nextFloat() < 0.3f) {

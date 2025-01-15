@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.function.ToIntFunction;
 import java.util.Comparator;
 
@@ -47,8 +49,8 @@ public class Class6793
     }
     
     public static void method20791(final Class511 class511, final Class8321 class512, final Class511 class513) {
-        final Class427 class514 = new Class427(class511.field2391, class511.method1938(), class511.method1944() - 0.30000001192092896, class511.method1945(), class512);
-        class514.method1936(new Vec3d(new BlockPos(class513).method1136(new BlockPos(class511))).method16738().method16748(0.30000001192092896));
+        final Class427 class514 = new Class427(class511.field2391, class511.getPosX(), class511.method1944() - 0.30000001192092896, class511.getPosZ(), class512);
+        class514.method1936(new Vec3d(new BlockPos(class513).method1136(new BlockPos(class511))).normalize().scale(0.30000001192092896));
         class514.method2114();
         class511.field2391.method6886(class514);
     }

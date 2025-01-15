@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import javax.annotation.Nullable;
 
 public class Class846 extends Class763
@@ -123,7 +125,7 @@ public class Class846 extends Class763
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1851.method6790().nextInt(100) == 0) {
             final Class782 class1855 = Class7499.field29023.method23371(this.field2391);
-            class1855.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, 0.0f);
+            class1855.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, 0.0f);
             class1855.method4188(class1851, class1852, class1853, null, null);
             class1851.method6886(class1855);
             class1855.method1778(this);

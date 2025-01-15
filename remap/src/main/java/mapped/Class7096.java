@@ -16,6 +16,7 @@ import java.util.Random;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

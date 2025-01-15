@@ -11,6 +11,7 @@ import java.util.Collections;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.UUID;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Class9043
     private final Predicate<Entity> field38273;
     private final Class8683 field38274;
     private final Function<Vec3d, Vec3d> field38275;
-    private final Class6221 field38276;
+    private final AxisAlignedBB field38276;
     private final BiConsumer<Vec3d, List<? extends Entity>> field38277;
     private final boolean field38278;
     private final String field38279;
@@ -35,7 +36,7 @@ public class Class9043
     private final Class7499<?> field38281;
     private final boolean field38282;
     
-    public Class9043(final int field38270, final boolean field38271, final boolean field38272, final Predicate<Entity> field38273, final Class8683 field38274, final Function<Vec3d, Vec3d> field38275, final Class6221 field38276, final BiConsumer<Vec3d, List<? extends Entity>> field38277, final boolean field38278, final String field38279, final UUID field38280, final Class7499<?> field38281, final boolean field38282) {
+    public Class9043(final int field38270, final boolean field38271, final boolean field38272, final Predicate<Entity> field38273, final Class8683 field38274, final Function<Vec3d, Vec3d> field38275, final AxisAlignedBB field38276, final BiConsumer<Vec3d, List<? extends Entity>> field38277, final boolean field38278, final String field38279, final UUID field38280, final Class7499<?> field38281, final boolean field38282) {
         this.field38270 = field38270;
         this.field38271 = field38271;
         this.field38272 = field38272;

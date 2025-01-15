@@ -20,9 +20,9 @@ public class Class6839 extends Class6831
         this.field26840 = true;
         this.field26841 = 0;
         this.field26835 = 0.0f;
-        this.field26837 = (float)field26852.method1938();
-        this.field26838 = (float)field26852.method1941();
-        this.field26839 = (float)field26852.method1945();
+        this.field26837 = (float)field26852.getPosX();
+        this.field26838 = (float)field26852.getPosY();
+        this.field26839 = (float)field26852.getPosZ();
     }
     
     @Override
@@ -33,17 +33,17 @@ public class Class6839 extends Class6831
     @Override
     public void method20918() {
         if (!this.field26852.field2410) {
-            this.field26837 = (float)this.field26852.method1938();
-            this.field26838 = (float)this.field26852.method1941();
-            this.field26839 = (float)this.field26852.method1945();
-            final float method35641 = MathHelper.method35641(Entity.method1680(this.field26852.method1935()));
+            this.field26837 = (float)this.field26852.getPosX();
+            this.field26838 = (float)this.field26852.getPosY();
+            this.field26839 = (float)this.field26852.getPosZ();
+            final float method35641 = MathHelper.sqrt(Entity.method1680(this.field26852.method1935()));
             if (method35641 < 0.01) {
                 this.field26853 = 0.0f;
                 this.field26835 = 0.0f;
             }
             else {
-                this.field26853 = MathHelper.method35653(this.field26853 + 0.0025f, 0.0f, 1.0f);
-                this.field26835 = MathHelper.method35700(MathHelper.method35653(method35641, 0.0f, 0.5f), 0.0f, 0.7f);
+                this.field26853 = MathHelper.clamp(this.field26853 + 0.0025f, 0.0f, 1.0f);
+                this.field26835 = MathHelper.method35700(MathHelper.clamp(method35641, 0.0f, 0.5f), 0.0f, 0.7f);
             }
         }
         else {

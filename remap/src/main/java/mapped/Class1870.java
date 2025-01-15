@@ -45,7 +45,7 @@ public class Class1870 extends Class1868
         final int n4 = n2 / 2;
         final int n5 = n % 2;
         final int n6 = n2 % 2;
-        float a = MathHelper.method35653(100.0f - MathHelper.method35640((float)(n * n + n2 * n2)) * 8.0f, -100.0f, 80.0f);
+        float a = MathHelper.clamp(100.0f - MathHelper.method35640((float)(n * n + n2 * n2)) * 8.0f, -100.0f, 80.0f);
         for (int i = -12; i <= 12; ++i) {
             for (int j = -12; j <= 12; ++j) {
                 final long n7 = n3 + i;
@@ -55,7 +55,7 @@ public class Class1870 extends Class1868
                         final float n9 = (MathHelper.method35647((float)n7) * 3439.0f + MathHelper.method35647((float)n8) * 147.0f) % 13.0f + 9.0f;
                         final float n10 = (float)(n5 - i * 2);
                         final float n11 = (float)(n6 - j * 2);
-                        a = Math.max(a, MathHelper.method35653(100.0f - MathHelper.method35640(n10 * n10 + n11 * n11) * n9, -100.0f, 80.0f));
+                        a = Math.max(a, MathHelper.clamp(100.0f - MathHelper.method35640(n10 * n10 + n11 * n11) * n9, -100.0f, 80.0f));
                     }
                 }
             }

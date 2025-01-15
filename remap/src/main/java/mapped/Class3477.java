@@ -62,7 +62,7 @@ public class Class3477 extends Class3446
     
     private void method11042(final Class8321 class8321) {
         if (!class8321.method27620()) {
-            final Class427 class8322 = new Class427(this.field16385.field2391, this.field16385.method1938(), this.field16385.method1944() - 0.30000001192092896, this.field16385.method1945(), class8321);
+            final Class427 class8322 = new Class427(this.field16385.field2391, this.field16385.getPosX(), this.field16385.method1944() - 0.30000001192092896, this.field16385.getPosZ(), class8321);
             class8322.method2117(40);
             class8322.method2112(this.field16385.method1865());
             final float n = Class840.method5013(this.field16385).nextFloat() * 6.2831855f;

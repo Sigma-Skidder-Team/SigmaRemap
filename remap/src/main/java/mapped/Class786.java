@@ -76,9 +76,9 @@ public class Class786 extends Class785
         }
         if (Entity.method1680(this.method1935()) > 2.500000277905201E-7) {
             if (this.field2423.nextInt(5) == 0) {
-                final Class7096 method6701 = this.field2391.method6701(new BlockPos(MathHelper.floor(this.method1938()), MathHelper.floor(this.method1941() - 0.20000000298023224), MathHelper.floor(this.method1945())));
+                final Class7096 method6701 = this.field2391.method6701(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
                 if (!method6701.method21706()) {
-                    this.field2391.method6709(new Class6911(Class8432.field34600, method6701), this.method1938() + (this.field2423.nextFloat() - 0.5) * this.method1930(), this.method1941() + 0.1, this.method1945() + (this.field2423.nextFloat() - 0.5) * this.method1930(), 4.0 * (this.field2423.nextFloat() - 0.5), 0.5, (this.field2423.nextFloat() - 0.5) * 4.0);
+                    this.field2391.method6709(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.field2423.nextFloat() - 0.5) * this.method1930(), this.getPosY() + 0.1, this.getPosZ() + (this.field2423.nextFloat() - 0.5) * this.method1930(), 4.0 * (this.field2423.nextFloat() - 0.5), 0.5, (this.field2423.nextFloat() - 0.5) * 4.0);
                 }
             }
         }
@@ -112,7 +112,7 @@ public class Class786 extends Class785
         final float method4336 = this.method4336();
         final boolean method4337 = class399.method1740(Class7929.method25693(this), (method4336 <= 0.0f) ? 0.0f : (method4336 / 2.0f + this.field2423.nextInt((int)method4336)));
         if (method4337) {
-            class399.method1936(class399.method1935().method16744(0.0, 0.4000000059604645, 0.0));
+            class399.method1936(class399.method1935().add(0.0, 0.4000000059604645, 0.0));
             this.method1900(this, class399);
         }
         this.method1695(Class8520.field35313, 1.0f, 1.0f);

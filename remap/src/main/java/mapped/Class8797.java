@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class Class8797
 {
@@ -65,21 +66,21 @@ public class Class8797
     }
     
     public Vec3d method30686() {
-        return new Vec3d(this.method30683(), this.method30684(), this.method30685()).method16744(0.5, 0.0, 0.5);
+        return new Vec3d(this.method30683(), this.method30684(), this.method30685()).add(0.5, 0.0, 0.5);
     }
     
     public float method30687(final Entity class399) {
         final double n = class399.field2395 - this.method30683();
         final double n2 = class399.field2396 - this.method30684();
         final double n3 = class399.field2397 - this.method30685();
-        return MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
+        return MathHelper.sqrt(n * n + n2 * n2 + n3 * n3);
     }
     
     public float method30688(final Class8797 class8797) {
         final double n = class8797.method30683() - this.method30683();
         final double n2 = class8797.method30684() - this.method30684();
         final double n3 = class8797.method30685() - this.method30685();
-        return MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
+        return MathHelper.sqrt(n * n + n2 * n2 + n3 * n3);
     }
     
     public double method30689(final Class8797 class8797) {

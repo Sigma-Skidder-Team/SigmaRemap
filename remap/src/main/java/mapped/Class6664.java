@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector4f;
 
 public class Class6664
@@ -15,7 +16,7 @@ public class Class6664
     private double field26327;
     public boolean field26328;
     
-    public Class6664(final Class6789 class6789, final Class6789 class6790) {
+    public Class6664(final Matrix4f class6789, final Matrix4f class6790) {
         this.field26324 = new Vector4f[6];
         this.field26328 = false;
         this.method20263(class6789, class6790);
@@ -27,8 +28,8 @@ public class Class6664
         this.field26327 = field26327;
     }
     
-    private void method20263(final Class6789 class6789, final Class6789 class6790) {
-        final Class6789 method20758 = class6790.method20758();
+    private void method20263(final Matrix4f class6789, final Matrix4f class6790) {
+        final Matrix4f method20758 = class6790.method20758();
         method20758.method20752(class6789);
         method20758.method20750();
         this.method20264(method20758, -1, 0, 0, 0);
@@ -39,14 +40,14 @@ public class Class6664
         this.method20264(method20758, 0, 0, 1, 5);
     }
     
-    private void method20264(final Class6789 class6789, final int n, final int n2, final int n3, final int n4) {
+    private void method20264(final Matrix4f class6789, final int n, final int n2, final int n3, final int n4) {
         final Vector4f class6790 = new Vector4f((float)n, (float)n2, (float)n3, 1.0f);
         class6790.method28603(class6789);
         class6790.method28602();
         this.field26324[n4] = class6790;
     }
     
-    public boolean method20261(final Class6221 class6221) {
+    public boolean method20261(final AxisAlignedBB class6221) {
         return this.method20265(class6221.field25073, class6221.field25074, class6221.field25075, class6221.field25076, class6221.field25077, class6221.field25078);
     }
     

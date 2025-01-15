@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class Class8088
         if (!this.method26560()) {
             return;
         }
-        final double sqrt = Math.sqrt(this.field33313.field4684.method1935().field22770 * this.field33313.field4684.method1935().field22770 + this.field33313.field4684.method1935().field22772 * this.field33313.field4684.method1935().field22772);
+        final double sqrt = Math.sqrt(this.field33313.field4684.method1935().x * this.field33313.field4684.method1935().x + this.field33313.field4684.method1935().z * this.field33313.field4684.method1935().z);
         final int n = this.field33314.size() - 1;
         Class8733 class5743 = this.field33314.get(n);
         Class2049 class5744 = class5743.field36691;
@@ -109,9 +110,9 @@ public class Class8088
             return;
         }
         this.field33313.field4684.method1816(true);
-        final double method16745 = class5743.field36684.method30686().method16745(this.field33313.field4684.method1934());
-        final Vec3d method16746 = class5743.field36684.method30686().method16741(this.field33313.field4684.method1934());
-        final double n5 = Math.abs(method16746.field22770) + Math.abs(method16746.field22772);
+        final double method16745 = class5743.field36684.method30686().distanceTo(this.field33313.field4684.method1934());
+        final Vec3d method16746 = class5743.field36684.method30686().subtract(this.field33313.field4684.method1934());
+        final double n5 = Math.abs(method16746.x) + Math.abs(method16746.z);
         final float field33315 = Class8845.method30920(this.field33313.field4684.method1934(), class5743.field36684.method30686())[0];
         final double n6 = Math.min(method16745 * 0.75, Class7482.method23137()) * 0.8999999761581421;
         this.field33315 = field33315;
@@ -185,8 +186,8 @@ public class Class8088
     public boolean method26563(final BlockPos class354) {
         final float n = class354.getX() + 0.5f;
         final float n2 = class354.getZ() + 0.5f;
-        double field22770 = this.field33313.field4684.method1935().field22770;
-        double field22771 = this.field33313.field4684.method1935().field22772;
+        double field22770 = this.field33313.field4684.method1935().x;
+        double field22771 = this.field33313.field4684.method1935().z;
         double field22772 = this.field33313.field4684.field2395;
         double field22773 = this.field33313.field4684.field2397;
         while (Math.abs(field22770) + Math.abs(field22771) > 0.05) {
@@ -218,7 +219,7 @@ public class Class8088
             final Iterator<Long> iterator = class5745.field36693.iterator();
             while (iterator.hasNext()) {
                 final BlockPos method1129 = BlockPos.method1129(iterator.next());
-                if (this.field33313.field4684.method1934().method16747(method1129.getX(), method1129.getY(), method1129.getZ()) >= 9.0) {
+                if (this.field33313.field4684.method1934().squareDistanceTo(method1129.getX(), method1129.getY(), method1129.getZ()) >= 9.0) {
                     continue;
                 }
                 if (Class8797.method30696(method1129)) {
@@ -294,9 +295,9 @@ public class Class8088
                     while (iterator2.hasNext()) {
                         final BlockPos method19120 = BlockPos.method1129(iterator2.next());
                         if (!this.field33313.field4683.method6701(method19120).method21706()) {
-                            final double n = method19120.getX() - this.field33313.field4644.method5833().method18161().method16760();
-                            final double n2 = method19120.getY() - this.field33313.field4644.method5833().method18161().method16761();
-                            final double n3 = method19120.getZ() - this.field33313.field4644.method5833().method18161().method16762();
+                            final double n = method19120.getX() - this.field33313.field4644.method5833().method18161().getX();
+                            final double n2 = method19120.getY() - this.field33313.field4644.method5833().method18161().getY();
+                            final double n3 = method19120.getZ() - this.field33313.field4644.method5833().method18161().getZ();
                             Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
                         }
                     }
@@ -304,9 +305,9 @@ public class Class8088
                     while (iterator3.hasNext()) {
                         final BlockPos method19121 = BlockPos.method1129(iterator3.next());
                         if (this.field33313.field4683.method6701(method19121).method21706()) {
-                            final double n4 = method19121.getX() - this.field33313.field4644.method5833().method18161().method16760();
-                            final double n5 = method19121.getY() - this.field33313.field4644.method5833().method18161().method16761();
-                            final double n6 = method19121.getZ() - this.field33313.field4644.method5833().method18161().method16762();
+                            final double n4 = method19121.getX() - this.field33313.field4644.method5833().method18161().getX();
+                            final double n5 = method19121.getY() - this.field33313.field4644.method5833().method18161().getY();
+                            final double n6 = method19121.getZ() - this.field33313.field4644.method5833().method18161().getZ();
                             Class8154.method26909(new Class7644(n4, n5, n6, n4 + 1.0, n5 + 1.0, n6 + 1.0), method19119);
                         }
                     }
@@ -327,7 +328,7 @@ public class Class8088
         GL11.glDepthMask(false);
         GL11.glAlphaFunc(519, 0.0f);
         GL11.glPushMatrix();
-        GL11.glTranslated(n - this.field33313.field4644.method5833().method18161().method16760() + 0.5, n2 - this.field33313.field4644.method5833().method18161().method16761(), n3 - this.field33313.field4644.method5833().method18161().method16762() + 0.5);
+        GL11.glTranslated(n - this.field33313.field4644.method5833().method18161().getX() + 0.5, n2 - this.field33313.field4644.method5833().method18161().getY(), n3 - this.field33313.field4644.method5833().method18161().getZ() + 0.5);
         GL11.glAlphaFunc(519, 0.0f);
         GL11.glRotatef(this.field33313.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(this.field33313.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);

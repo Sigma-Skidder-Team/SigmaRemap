@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
@@ -53,7 +54,7 @@ public class Class684 extends Class565
                 final double n2 = this.field3742.field4648.field23390 * 0.8999999761581421 + 0.10000000149011612;
                 final double field23391 = this.field3742.field4648.field23391;
                 int n3 = 0;
-                final Class6789 method3776 = Class6789.method20760(0.0f, 0.0f, -100.0f);
+                final Matrix4f method3776 = Matrix4f.method20760(0.0f, 0.0f, -100.0f);
                 for (int n4 = 0; n4 + this.field3746 < this.field3745.size() && n4 < method3773; ++n4) {
                     final Class8693 class8693 = this.field3745.get(n4 + this.field3746);
                     if (class8693 != null) {

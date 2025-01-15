@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.EnumSet;
 
@@ -39,7 +40,7 @@ public class Class3509 extends Class3446
     }
     
     private void method11068() {
-        final Iterable<BlockPos> method1158 = BlockPos.method1158(MathHelper.floor(this.field16501.method1938() - 1.0), MathHelper.floor(this.field16501.method1941()), MathHelper.floor(this.field16501.method1945() - 1.0), MathHelper.floor(this.field16501.method1938() + 1.0), MathHelper.floor(this.field16501.method1941() + 8.0), MathHelper.floor(this.field16501.method1945() + 1.0));
+        final Iterable<BlockPos> method1158 = BlockPos.method1158(MathHelper.floor(this.field16501.getPosX() - 1.0), MathHelper.floor(this.field16501.getPosY()), MathHelper.floor(this.field16501.getPosZ() - 1.0), MathHelper.floor(this.field16501.getPosX() + 1.0), MathHelper.floor(this.field16501.getPosY() + 8.0), MathHelper.floor(this.field16501.getPosZ() + 1.0));
         BlockPos class354 = null;
         for (final BlockPos class355 : method1158) {
             if (!this.method11069(this.field16501.field2391, class355)) {
@@ -49,7 +50,7 @@ public class Class3509 extends Class3446
             break;
         }
         if (class354 == null) {
-            class354 = new BlockPos(this.field16501.method1938(), this.field16501.method1941() + 8.0, this.field16501.method1945());
+            class354 = new BlockPos(this.field16501.getPosX(), this.field16501.getPosY() + 8.0, this.field16501.getPosZ());
         }
         this.field16501.method4150().method24724(class354.getX(), class354.getY() + 1, class354.getZ(), 1.0);
     }
@@ -57,7 +58,7 @@ public class Class3509 extends Class3446
     @Override
     public void method11016() {
         this.method11068();
-        this.field16501.method1724(0.02f, new Class5487(this.field16501.field2968, this.field16501.field2969, this.field16501.field2970));
+        this.field16501.method1724(0.02f, new Vec3d(this.field16501.field2968, this.field16501.field2969, this.field16501.field2970));
         this.field16501.method1671(Class2160.field12826, this.field16501.method1935());
     }
     

@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.dispenser.IPosition;
+
 public final class Class6410 extends Class6409
 {
     private static String[] field25523;
     
     @Override
-    public Class401 method19093(final Class1847 class1847, final Class5488 class1848, final Class8321 class1849) {
-        final Class405 class1850 = new Class405(class1847, class1848.method16760(), class1848.method16761(), class1848.method16762());
+    public Class401 method19093(final Class1847 class1847, final IPosition class1848, final Class8321 class1849) {
+        final Class405 class1850 = new Class405(class1847, class1848.getX(), class1848.getY(), class1848.getZ());
         class1850.field2474 = Class2151.field12783;
         return class1850;
     }

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class Class5785 extends Class5784
 {
     private static final Logger field23765;
-    private Class5487 field23766;
+    private Vec3d field23766;
     private int field23767;
     
     public Class5785(final Class852 class852) {
@@ -25,7 +26,7 @@ public class Class5785 extends Class5784
                 this.field23764.method5127().method33696(Class7193.field27948);
             }
             else {
-                final double method16747 = this.field23766.method16747(this.field23764.method1938(), this.field23764.method1941(), this.field23764.method1945());
+                final double method16747 = this.field23766.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
                 if (method16747 >= 100.0) {
                     if (method16747 <= 22500.0) {
                         if (!this.field23764.field2405) {
@@ -50,7 +51,7 @@ public class Class5785 extends Class5784
         this.field23767 = 0;
     }
     
-    public void method17256(final Class5487 field23766) {
+    public void method17256(final Vec3d field23766) {
         this.field23766 = field23766;
     }
     
@@ -61,7 +62,7 @@ public class Class5785 extends Class5784
     
     @Nullable
     @Override
-    public Class5487 method17254() {
+    public Vec3d method17254() {
         return this.field23766;
     }
     

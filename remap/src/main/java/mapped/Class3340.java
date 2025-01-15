@@ -27,7 +27,7 @@ public class Class3340 extends Class3167
     public void method9897() {
         Class3340.field15514.field4633.field26532 = 1.0f;
         Class7482.method23151(0.2);
-        if (Class3340.field15514.field4684.method1935().field22771 > 0.0) {
+        if (Class3340.field15514.field4684.method1935().y > 0.0) {
             Class6430.method19155(-0.078);
         }
     }
@@ -46,7 +46,7 @@ public class Class3340 extends Class3167
                 if (Class6430.method19160(Class3340.field15514.field4684, 0.01f)) {
                     if (this.method9883("AutoJump")) {
                         Class3340.field15514.field4684.method2725();
-                        class5717.method16975(Class3340.field15514.field4684.method1935().field22771);
+                        class5717.method16975(Class3340.field15514.field4684.method1935().y);
                         Class7482.method23149(class5717, this.field15942);
                     }
                     if (this.field15941 == 1) {
@@ -93,7 +93,7 @@ public class Class3340 extends Class3167
                 }
                 if (this.method9883("AutoJump")) {
                     Class3340.field15514.field4684.method2725();
-                    class5717.method16975(Class3340.field15514.field4684.method1935().field22771);
+                    class5717.method16975(Class3340.field15514.field4684.method1935().y);
                     Class7482.method23149(class5717, this.field15942);
                     break;
                 }

@@ -26,7 +26,7 @@ public class Class3183 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3183.field15514.field4684.method1935().field22771 > 0.0) {
+        if (Class3183.field15514.field4684.method1935().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }

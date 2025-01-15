@@ -13,7 +13,7 @@ public abstract class Class4000 extends Class3833
 {
     public static final Class7702 field18031;
     public static final Class7702 field18032;
-    public static final Class6221 field18033;
+    public static final AxisAlignedBB field18033;
     
     public Class4000(final Class9288 class9288) {
         super(class9288);
@@ -136,6 +136,6 @@ public abstract class Class4000 extends Class3833
     static {
         field18031 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
         field18032 = Class3833.method11778(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
-        field18033 = new Class6221(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
+        field18033 = new AxisAlignedBB(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
     }
 }

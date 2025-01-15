@@ -45,7 +45,7 @@ public class MathHelper
         return (float)Math.sqrt(n);
     }
     
-    public static float method35641(final double a) {
+    public static float sqrt(final double a) {
         return (float)Math.sqrt(a);
     }
     
@@ -104,7 +104,7 @@ public class MathHelper
         return n2;
     }
     
-    public static float method35653(final float n, final float n2, final float n3) {
+    public static float clamp(final float n, final float n2, final float n3) {
         if (n >= n2) {
             return (n <= n3) ? n : n3;
         }
@@ -221,12 +221,12 @@ public class MathHelper
     }
     
     public static float method35672(final float n, final float n2, final float n3) {
-        return n2 - method35653(method35670(n, n2), -n3, n3);
+        return n2 - clamp(method35670(n, n2), -n3, n3);
     }
     
     public static float method35673(final float n, final float n2, float method35647) {
         method35647 = method35647(method35647);
-        return (n >= n2) ? method35653(n - method35647, n2, n) : method35653(n + method35647, n, n2);
+        return (n >= n2) ? clamp(n - method35647, n2, n) : clamp(n + method35647, n, n2);
     }
     
     public static float method35674(final float n, final float n2, final float n3) {
@@ -254,7 +254,7 @@ public class MathHelper
         return Math.max(a, method35677(s, n));
     }
     
-    public static int method35679(final int n) {
+    public static int smallestEncompassingPowerOfTwo(final int n) {
         final int n2 = n - 1;
         final int n3 = n2 | n2 >> 1;
         final int n4 = n3 | n3 >> 2;
@@ -268,11 +268,11 @@ public class MathHelper
     }
     
     public static int method35681(int n) {
-        n = (method35680(n) ? n : method35679(n));
+        n = (method35680(n) ? n : smallestEncompassingPowerOfTwo(n));
         return MathHelper.field41108[(int)(n * 125613361L >> 27) & 0x1F];
     }
     
-    public static int method35682(final int n) {
+    public static int log2(final int n) {
         return method35681(n) - (method35680(n) ? 0 : 1);
     }
     
@@ -366,7 +366,7 @@ public class MathHelper
         return Double.NaN;
     }
     
-    public static float method35694(float intBitsToFloat) {
+    public static float fastInvSqrt(float intBitsToFloat) {
         final float n = 0.5f * intBitsToFloat;
         intBitsToFloat = Float.intBitsToFloat(1597463007 - (Float.floatToIntBits(intBitsToFloat) >> 1));
         intBitsToFloat *= 1.5f - n * intBitsToFloat * intBitsToFloat;

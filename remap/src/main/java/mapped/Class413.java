@@ -38,7 +38,7 @@ public class Class413 extends Class409
             while (i > 0) {
                 final int method2609 = Class508.method2609(i);
                 i -= method2609;
-                this.field2391.method6886(new Class508(this.field2391, this.method1938(), this.method1941(), this.method1945(), method2609));
+                this.field2391.method6886(new Class508(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ(), method2609));
             }
             this.method1652();
         }

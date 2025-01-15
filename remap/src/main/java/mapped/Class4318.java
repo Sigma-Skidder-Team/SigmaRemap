@@ -22,9 +22,9 @@ public class Class4318 implements Class4252<Class5800>
     
     public Class4318(final Entity class399) {
         this.field19348 = class399.method1643();
-        this.field19349 = class399.method1938();
-        this.field19350 = class399.method1941();
-        this.field19351 = class399.method1945();
+        this.field19349 = class399.getPosX();
+        this.field19350 = class399.getPosY();
+        this.field19351 = class399.getPosZ();
         if (class399 instanceof Class422) {
             this.field19352 = 1;
         }

@@ -21,8 +21,8 @@ public class Class4615 extends Class4611<Class4226>
     }
     
     public void method13742(final Class513 class513, final BlockPos class514) {
-        final double n = class513.method1938() - class514.getX();
-        final double n2 = class513.method1945() - class514.getZ();
+        final double n = class513.getPosX() - class514.getX();
+        final double n2 = class513.getPosZ() - class514.getZ();
         this.method13726(class513.method2957(), class515 -> class515.method12714(n3));
     }
     

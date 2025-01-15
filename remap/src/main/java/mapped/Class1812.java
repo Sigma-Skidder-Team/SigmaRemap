@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector3f;
+
 public class Class1812 extends Class1799<Class803, Class5927<Class803>>
 {
     private static String[] field9983;
@@ -21,8 +23,8 @@ public class Class1812 extends Class1799<Class803, Class5927<Class803>>
             class7351.method22564(0.0, 0.5, 0.20937499403953552);
         }
         class7351.method22564(((Class1799<T, Class5927>)this).method6559().field24363.field25180 / 16.0f, ((Class1799<T, Class5927>)this).method6559().field24363.field25181 / 16.0f, ((Class1799<T, Class5927>)this).method6559().field24363.field25182 / 16.0f);
-        class7351.method22566(Vector3f.ZP.method33327(class7353.method4671(n4)));
-        class7351.method22566(Vector3f.field38718.rotationDegrees(n6));
+        class7351.method22566(Vector3f.ZP.rotation(class7353.method4671(n4)));
+        class7351.method22566(Vector3f.YP.rotationDegrees(n6));
         class7351.method22566(Vector3f.XP.rotationDegrees(n7));
         if (!class7353.method2625()) {
             if (!method2783) {

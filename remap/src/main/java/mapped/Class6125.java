@@ -56,7 +56,7 @@ public class Class6125 implements Class6113
                     if (!hashSet.add(class7353)) {
                         continue;
                     }
-                    final Class6221 method6756 = new Class6221(BlockPos.ZERO).method18496(0.002).method18511(0.0025 * n5).method18499(class7353.getX(), class7353.getY(), class7353.getZ()).method18499(-n, -n2, -n3);
+                    final AxisAlignedBB method6756 = new AxisAlignedBB(BlockPos.ZERO).method18496(0.002).method18511(0.0025 * n5).method18499(class7353.getX(), class7353.getY(), class7353.getZ()).method18499(-n, -n2, -n3);
                     Class1656.method5730(method6755, method6756.field25073, method6756.field25074, method6756.field25075, method6756.field25076, method6756.field25077, method6756.field25078, 1.0f, 1.0f, 1.0f, 1.0f);
                     hashMap.put(class7353, n6);
                 }

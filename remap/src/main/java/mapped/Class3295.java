@@ -198,7 +198,7 @@ public class Class3295 extends Class3167
         return Class7482.method23142();
     }
     
-    public boolean method10432(final Class6221 class6221) {
+    public boolean method10432(final AxisAlignedBB class6221) {
         return Class3295.field15514.field4683.method6721(class6221, Class8059.field33161) || Class3295.field15514.field4683.method6721(class6221, Class8059.field33163);
     }
     

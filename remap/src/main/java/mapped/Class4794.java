@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Matrix3f;
+import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
@@ -31,7 +34,7 @@ public class Class4794 extends Class4703<Class852>
         class853.method22567();
         final float n4 = (float)class852.method5108(7, n2)[0];
         final float n5 = (float)(class852.method5108(5, n2)[1] - class852.method5108(10, n2)[1]);
-        class853.method22566(Vector3f.field38718.rotationDegrees(-n4));
+        class853.method22566(Vector3f.YP.rotationDegrees(-n4));
         class853.method22566(Vector3f.XP.rotationDegrees(n5 * 10.0f));
         class853.method22564(0.0, 0.0, 1.0);
         class853.method22565(-1.0f, -1.0f, 1.0f);
@@ -67,14 +70,14 @@ public class Class4794 extends Class4703<Class852>
             class853.method22564(0.0, -1.0, -2.0);
             for (int n8 = 0; n8 < (n6 + n6 * n6) / 2.0f * 60.0f; ++n8) {
                 class853.method22566(Vector3f.XP.rotationDegrees(random.nextFloat() * 360.0f));
-                class853.method22566(Vector3f.field38718.rotationDegrees(random.nextFloat() * 360.0f));
+                class853.method22566(Vector3f.YP.rotationDegrees(random.nextFloat() * 360.0f));
                 class853.method22566(Vector3f.ZP.rotationDegrees(random.nextFloat() * 360.0f));
                 class853.method22566(Vector3f.XP.rotationDegrees(random.nextFloat() * 360.0f));
-                class853.method22566(Vector3f.field38718.rotationDegrees(random.nextFloat() * 360.0f));
+                class853.method22566(Vector3f.YP.rotationDegrees(random.nextFloat() * 360.0f));
                 class853.method22566(Vector3f.ZP.rotationDegrees(random.nextFloat() * 360.0f + n6 * 90.0f));
                 final float n9 = random.nextFloat() * 20.0f + 5.0f + n7 * 10.0f;
                 final float n10 = random.nextFloat() * 2.0f + 1.0f + n7 * 2.0f;
-                final Class6789 method25216 = class853.method22569().method32111();
+                final Matrix4f method25216 = class853.method22569().method32111();
                 final int n11 = (int)(255.0f * (1.0f - n7));
                 method14180(method25215, method25216, n11);
                 method14181(method25215, method25216, n9, n10);
@@ -91,26 +94,26 @@ public class Class4794 extends Class4703<Class852>
         class853.method22568();
         if (class852.field4548 != null) {
             class853.method22567();
-            method14184((float)(class852.field4548.method1938() - MathHelper.method35701(n2, class852.field2392, class852.method1938())), (float)(class852.field4548.method1941() - MathHelper.method35701(n2, class852.field2393, class852.method1941())) + Class4702.method13947(class852.field4548, n2), (float)(class852.field4548.method1945() - MathHelper.method35701(n2, class852.field2394, class852.method1945())), n2, class852.field2424, class853, class854, n3);
+            method14184((float)(class852.field4548.getPosX() - MathHelper.method35701(n2, class852.field2392, class852.getPosX())), (float)(class852.field4548.getPosY() - MathHelper.method35701(n2, class852.field2393, class852.getPosY())) + Class4702.method13947(class852.field4548, n2), (float)(class852.field4548.getPosZ() - MathHelper.method35701(n2, class852.field2394, class852.getPosZ())), n2, class852.field2424, class853, class854, n3);
             class853.method22568();
         }
         super.method13951(class852, n, n2, class853, class854, n3);
     }
     
-    private static void method14180(final Class4150 class4150, final Class6789 class4151, final int n) {
+    private static void method14180(final Class4150 class4150, final Matrix4f class4151, final int n) {
         class4150.method12444(class4151, 0.0f, 0.0f, 0.0f).method12399(255, 255, 255, n).method12397();
         class4150.method12444(class4151, 0.0f, 0.0f, 0.0f).method12399(255, 255, 255, n).method12397();
     }
     
-    private static void method14181(final Class4150 class4150, final Class6789 class4151, final float n, final float n2) {
+    private static void method14181(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
         class4150.method12444(class4151, -Class4794.field20444 * n2, n, -0.5f * n2).method12399(255, 0, 255, 0).method12397();
     }
     
-    private static void method14182(final Class4150 class4150, final Class6789 class4151, final float n, final float n2) {
+    private static void method14182(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
         class4150.method12444(class4151, Class4794.field20444 * n2, n, -0.5f * n2).method12399(255, 0, 255, 0).method12397();
     }
     
-    private static void method14183(final Class4150 class4150, final Class6789 class4151, final float n, final float n2) {
+    private static void method14183(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
         class4150.method12444(class4151, 0.0f, n, 1.0f * n2).method12399(255, 0, 255, 0).method12397();
     }
     
@@ -119,8 +122,8 @@ public class Class4794 extends Class4703<Class852>
         final float method35641 = MathHelper.method35640(n * n + n2 * n2 + n3 * n3);
         class7351.method22567();
         class7351.method22564(0.0, 2.0, 0.0);
-        class7351.method22566(Vector3f.field38718.method33327((float)(-Math.atan2(n3, n)) - 1.5707964f));
-        class7351.method22566(Vector3f.XP.method33327((float)(-Math.atan2(method35640, n2)) - 1.5707964f));
+        class7351.method22566(Vector3f.YP.rotation((float)(-Math.atan2(n3, n)) - 1.5707964f));
+        class7351.method22566(Vector3f.XP.rotation((float)(-Math.atan2(method35640, n2)) - 1.5707964f));
         final Class4150 method35642 = class7352.method25214(Class4794.field20443);
         final float n7 = 0.0f - (n5 + n4) * 0.01f;
         final float n8 = MathHelper.method35640(n * n + n2 * n2 + n3 * n3) / 32.0f - (n5 + n4) * 0.01f;
@@ -128,8 +131,8 @@ public class Class4794 extends Class4703<Class852>
         float n10 = 0.75f;
         float n11 = 0.0f;
         final Class8996 method35643 = class7351.method22569();
-        final Class6789 method35644 = method35643.method32111();
-        final Class9429 method35645 = method35643.method32112();
+        final Matrix4f method35644 = method35643.method32111();
+        final Matrix3f method35645 = method35643.method32112();
         for (int i = 1; i <= 8; ++i) {
             final float n12 = MathHelper.sin(i * 6.2831855f / 8.0f) * 0.75f;
             final float n13 = MathHelper.cos(i * 6.2831855f / 8.0f) * 0.75f;

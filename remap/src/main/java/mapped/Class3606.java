@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.EnumSet;
 
 public class Class3606 extends Class3446
@@ -43,14 +45,14 @@ public class Class3606 extends Class3446
                     Class821.method4852(this.field16792).method24724(method4849.getX(), method4849.getY(), method4849.getZ(), this.field16791);
                 }
                 else {
-                    final Class5487 method4850 = new Class5487(method4849.getX() - this.field16789.method1938(), method4849.getY() - this.field16789.method1941(), method4849.getZ() - this.field16789.method1945()).method16738().method16748(10.0).method16744(this.field16789.method1938(), this.field16789.method1941(), this.field16789.method1945());
-                    Class821.method4851(this.field16792).method24724(method4850.field22770, method4850.field22771, method4850.field22772, this.field16791);
+                    final Vec3d method4850 = new Vec3d(method4849.getX() - this.field16789.getPosX(), method4849.getY() - this.field16789.getPosY(), method4849.getZ() - this.field16789.getPosZ()).normalize().scale(10.0).add(this.field16789.getPosX(), this.field16789.getPosY(), this.field16789.getPosZ());
+                    Class821.method4851(this.field16792).method24724(method4850.x, method4850.y, method4850.z, this.field16791);
                 }
             }
         }
     }
     
     private boolean method11134(final BlockPos class354, final double n) {
-        return !class354.method1082(this.field16789.method1934(), n);
+        return !class354.withinDistance(this.field16789.method1934(), n);
     }
 }

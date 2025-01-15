@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
 public class Class3848 extends Class3846
 {
@@ -58,12 +59,12 @@ public class Class3848 extends Class3846
         if (class355.field2404) {
             return false;
         }
-        if (class355.method1941() > class354.getY() + 0.9375 - 1.0E-7) {
+        if (class355.getPosY() > class354.getY() + 0.9375 - 1.0E-7) {
             return false;
         }
-        if (class355.method1935().field22771 < -0.08) {
-            final double abs = Math.abs(class354.getX() + 0.5 - class355.method1938());
-            final double abs2 = Math.abs(class354.getZ() + 0.5 - class355.method1945());
+        if (class355.method1935().y < -0.08) {
+            final double abs = Math.abs(class354.getX() + 0.5 - class355.getPosX());
+            final double abs2 = Math.abs(class354.getZ() + 0.5 - class355.getPosZ());
             final double n = 0.4375 + class355.method1930() / 2.0f;
             return abs + 1.0E-7 > n || abs2 + 1.0E-7 > n;
         }
@@ -79,13 +80,13 @@ public class Class3848 extends Class3846
     }
     
     private void method11905(final Entity class399) {
-        final Class5487 method1935 = class399.method1935();
-        if (method1935.field22771 >= -0.13) {
-            class399.method1936(new Class5487(method1935.field22770, -0.05, method1935.field22772));
+        final Vec3d method1935 = class399.method1935();
+        if (method1935.y >= -0.13) {
+            class399.method1936(new Vec3d(method1935.x, -0.05, method1935.z));
         }
         else {
-            final double n = -0.05 / method1935.field22771;
-            class399.method1936(new Class5487(method1935.field22770 * n, -0.05, method1935.field22772 * n));
+            final double n = -0.05 / method1935.y;
+            class399.method1936(new Vec3d(method1935.x * n, -0.05, method1935.z * n));
         }
         class399.field2414 = 0.0f;
     }
@@ -115,7 +116,7 @@ public class Class3848 extends Class3846
         if (class399.field2391.field10067) {
             final Class7096 method11878 = Class7521.field29825.method11878();
             for (int i = 0; i < n; ++i) {
-                class399.field2391.method6709(new Class6911(Class8432.field34600, method11878), class399.method1938(), class399.method1941(), class399.method1945(), 0.0, 0.0, 0.0);
+                class399.field2391.method6709(new Class6911(Class8432.field34600, method11878), class399.getPosX(), class399.getPosY(), class399.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

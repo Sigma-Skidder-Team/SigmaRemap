@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
 
@@ -153,7 +154,7 @@ public class Class801 extends Class789
     public void method1834(final Class422 class422) {
         final Class828 class423 = Class7499.field29014.method23371(this.field2391);
         class423.method1803(Class2215.field13600, new Class8321(Class7739.field31302));
-        class423.method1730(this.method1938(), this.method1941(), this.method1945(), this.field2399, this.field2400);
+        class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
         class423.method4211(this.method4214());
         if (this.method1874()) {
             class423.method1872(this.method1873());
@@ -182,7 +183,7 @@ public class Class801 extends Class789
                     }
                 }
                 if (!this.method1919()) {
-                    this.method1936(Vec3d.field22769);
+                    this.method1936(Vec3d.ZERO);
                 }
                 else {
                     float n = (float)this.method2710(Class8107.field33408).method23950() * 0.225f;
@@ -194,9 +195,9 @@ public class Class801 extends Class789
                     this.field2971 = 0;
                 }
                 this.field2945 = this.field2946;
-                final double n2 = this.method1938() - this.field2392;
-                final double n3 = this.method1945() - this.field2394;
-                float n4 = MathHelper.method35641(n2 * n2 + n3 * n3) * 4.0f;
+                final double n2 = this.getPosX() - this.field2392;
+                final double n3 = this.getPosZ() - this.field2394;
+                float n4 = MathHelper.sqrt(n2 * n2 + n3 * n3) * 4.0f;
                 if (n4 > 1.0f) {
                     n4 = 1.0f;
                 }

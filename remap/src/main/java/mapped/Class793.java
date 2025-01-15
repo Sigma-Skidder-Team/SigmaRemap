@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -276,10 +278,10 @@ public class Class793 extends Class789
         if (this.method2749() && this.method1706()) {
             this.method1724(0.1f, class5487);
             this.method1671(Class2160.field12826, this.method1935());
-            this.method1936(this.method1935().method16748(0.9));
+            this.method1936(this.method1935().scale(0.9));
             if (this.method4152() == null) {
-                if (!this.method4460() || !this.method4453().method1082(this.method1934(), 20.0)) {
-                    this.method1936(this.method1935().method16744(0.0, -0.005, 0.0));
+                if (!this.method4460() || !this.method4453().withinDistance(this.method1934(), 20.0)) {
+                    this.method1936(this.method1935().add(0.0, -0.005, 0.0));
                 }
             }
         }
