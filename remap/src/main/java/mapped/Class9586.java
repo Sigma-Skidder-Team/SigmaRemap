@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.Set;
 import java.util.List;
 

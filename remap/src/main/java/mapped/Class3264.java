@@ -4,9 +4,7 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.Collections;
-import java.util.Collection;
 import java.util.ConcurrentModificationException;
 import java.util.ArrayList;
 
@@ -73,7 +71,7 @@ public class Class3264 extends Class3247
         if (!this.field15754.isEmpty()) {
             final String method9887 = this.method9887("Type");
             try {
-                if (Class3264.field15514.field4684.field2424 <= 3) {
+                if (Class3264.field15514.field4684.ticksExisted <= 3) {
                     this.field15754.clear();
                 }
                 long n = 3200L;

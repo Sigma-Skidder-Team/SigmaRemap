@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
 public class Class1808 extends Class1799<Class791, Class5840<Class791>>

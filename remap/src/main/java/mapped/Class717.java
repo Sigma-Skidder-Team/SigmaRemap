@@ -12,7 +12,7 @@ public class Class717 extends Class698
     private Class8297 field3927;
     
     public Class717(final Class527 field3924, final Class5760 field3925) {
-        super(new Class2260(Class8822.method30773("of.options.performanceTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.performanceTitle", new Object[0])));
         this.field3927 = new Class8297(this, new Class7298());
         this.field3924 = field3924;
         this.field3925 = field3925;
@@ -53,7 +53,7 @@ public class Class717 extends Class698
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3843, this.field3148.method8461(), this.field3152 / 2, 15, 16777215);
+        this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
         super.method2975(n, n2, n3);
         this.field3927.method27577(n, n2, this.field3842);
     }

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 
 public class Class3389 extends Class3167
@@ -23,14 +22,14 @@ public class Class3389 extends Class3167
             final int index = 5;
             final int n = 60;
             final int n2 = Class869.method5277().field4648.field23466 ? 60 : 0;
-            final ArrayList<Integer> method10807 = this.method10807((int)this.method10809(Class3389.field15514.field4684.field2399), index);
+            final ArrayList<Integer> method10807 = this.method10807((int)this.method10809(Class3389.field15514.field4684.rotationYaw), index);
             int intValue = method10807.get(index);
             if (intValue == 0) {
-                if (this.method10809(Class3389.field15514.field4684.field2399) > 345.0f) {
+                if (this.method10809(Class3389.field15514.field4684.rotationYaw) > 345.0f) {
                     intValue = 360;
                 }
             }
-            final double n3 = (7.0f + this.method10809(Class3389.field15514.field4684.field2399) - intValue) / 15.0f * n;
+            final double n3 = (7.0f + this.method10809(Class3389.field15514.field4684.rotationYaw) - intValue) / 15.0f * n;
             Class8154.method26899(Class3389.field15514.field4632.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), Class7853.field32200, Class6430.method19118(Class265.field1278.field1292, 0.25f));
             int n4 = 0;
             for (final int intValue2 : method10807) {

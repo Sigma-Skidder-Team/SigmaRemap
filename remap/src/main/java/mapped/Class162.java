@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Set;
@@ -25,7 +26,7 @@ public class Class162 implements Class122
     
     @Override
     public boolean test(final Class7529 class7529) {
-        final Class7929 class7530 = class7529.method23579(Class6683.field26364);
+        final DamageSource class7530 = class7529.method23579(Class6683.field26364);
         final BlockPos class7531 = class7529.method23579(Class6683.field26367);
         if (class7531 != null) {
             if (class7530 != null) {

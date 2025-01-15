@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -63,7 +64,7 @@ public class Class3838 extends Class3834
         }
     }
     
-    public void method11897(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public void method11897(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final Direction class1850 = class1849.method21772((Class7111<Direction>)Class3838.field17415);
         final BlockPos method1149 = class1848.method1149(class1850.getOpposite());
         class1847.method6698(method1149, this, class1848);
@@ -86,7 +87,7 @@ public class Class3838 extends Class3834
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             if (!class7097.method6678()) {
                 if (class7096.method21772((Class7111<Boolean>)Class3838.field17451)) {
@@ -101,7 +102,7 @@ public class Class3838 extends Class3834
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             if (!class7097.field10067) {
                 if (class7096.method21772((Class7111<Boolean>)Class3838.field17451)) {

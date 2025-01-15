@@ -16,6 +16,7 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.item.ItemStack;
 
 public class Class9508 implements ArgumentType<Class6311>
 {

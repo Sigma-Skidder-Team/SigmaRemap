@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 
 import java.util.Random;
@@ -13,7 +14,7 @@ public class Class4508 extends Class4500
 {
     private boolean field19906;
     
-    public Class4508(final int n, final Class6997 field19849, final Direction class179) {
+    public Class4508(final int n, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40969, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -38,12 +39,12 @@ public class Class4508 extends Class4500
     }
     
     public static Class4508 method13503(final List<Class4473> list, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -4, -1, 0, 11, 8, 16, class179);
+        final MutableBoundingBox method21408 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -4, -1, 0, 11, 8, 16, class179);
         return (Class4500.method13497(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4508(n4, method21408, class179) : null;
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13445(class1851, class1853, 0, 0, 0, 10, 7, 15, false, random, Class6924.method21296());
         this.method13492(class1851, random, class1853, Class1982.field10978, 4, 1, 0);
         final int n = 6;
@@ -111,7 +112,7 @@ public class Class4508 extends Class4500
         }
         if (!this.field19906) {
             final BlockPos class1862 = new BlockPos(this.method13437(5, 6), this.method13438(3), this.method13439(5, 6));
-            if (class1853.method21415(class1862)) {
+            if (class1853.isVecInside(class1862)) {
                 this.field19906 = true;
                 class1851.method6688(class1862, Class7521.field29290.method11878(), 2);
                 final Class436 method11879 = class1851.method6727(class1862);

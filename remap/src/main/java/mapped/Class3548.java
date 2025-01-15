@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class3548 extends Class3547
 {
     private static String[] field16614;
@@ -24,7 +26,7 @@ public class Class3548 extends Class3547
     }
     
     @Override
-    public void method11102(final Class759 class759, final Class511 class760) {
+    public void method11102(final Class759 class759, final LivingEntity class760) {
         if (class759 instanceof Class791) {
             if (((Class791)class759).method4216()) {
                 class759.method4153(class760);

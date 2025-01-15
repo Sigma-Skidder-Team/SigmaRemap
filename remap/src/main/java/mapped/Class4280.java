@@ -6,11 +6,12 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
 
-public class Class4280 implements Class4252<Class5800>
+public class Class4280 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19201;
     private double field19202;
@@ -33,7 +34,7 @@ public class Class4280 implements Class4252<Class5800>
     
     public Class4280(final Class2042 field19206, final Entity class399, final Class2042 field19207) {
         this.field19206 = field19206;
-        this.field19205 = class399.method1643();
+        this.field19205 = class399.getEntityId();
         this.field19207 = field19207;
         final Vec3d method8122 = field19207.method8122(class399);
         this.field19202 = method8122.x;
@@ -43,32 +44,32 @@ public class Class4280 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19206 = class8654.method29499(Class2042.class);
         this.field19202 = class8654.readDouble();
         this.field19203 = class8654.readDouble();
         this.field19204 = class8654.readDouble();
         if (class8654.readBoolean()) {
             this.field19208 = true;
-            this.field19205 = class8654.method29501();
+            this.field19205 = class8654.readVarInt();
             this.field19207 = class8654.method29499(Class2042.class);
         }
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29500(this.field19206);
         class8654.writeDouble(this.field19202);
         class8654.writeDouble(this.field19203);
         class8654.writeDouble(this.field19204);
         class8654.writeBoolean(this.field19208);
         if (this.field19208) {
-            class8654.method29505(this.field19205);
+            class8654.writeVarInt(this.field19205);
             class8654.method29500(this.field19207);
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17328(this);
     }
     
@@ -77,11 +78,11 @@ public class Class4280 implements Class4252<Class5800>
     }
     
     @Nullable
-    public Vec3d method12858(final Class1847 class1847) {
+    public Vec3d method12858(final World class1847) {
         if (!this.field19208) {
             return new Vec3d(this.field19202, this.field19203, this.field19204);
         }
-        final Entity method6741 = class1847.method6741(this.field19205);
+        final Entity method6741 = class1847.getEntityByID(this.field19205);
         return (method6741 != null) ? this.field19207.method8122(method6741) : new Vec3d(this.field19202, this.field19203, this.field19204);
     }
 }

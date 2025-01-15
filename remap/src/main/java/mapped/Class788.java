@@ -4,16 +4,22 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public abstract class Class788 extends Class787
 {
-    private static final Class8810<Boolean> field4198;
+    private static final DataParameter<Boolean> field4198;
     public int field4199;
     public int field4200;
     public int field4201;
     
-    public Class788(final EntityType<? extends Class788> class7499, final Class1847 class7500) {
+    public Class788(final EntityType<? extends Class788> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -25,7 +31,7 @@ public abstract class Class788 extends Class787
         final Class5497 class1856 = (Class5497)class1854;
         if (class1856.method16800()) {
             if (class1856.method16798() > 0) {
-                if (this.field2423.nextFloat() <= class1856.method16802()) {
+                if (this.rand.nextFloat() <= class1856.method16802()) {
                     this.method4354(-24000);
                 }
             }
@@ -44,13 +50,13 @@ public abstract class Class788 extends Class787
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
         final Class3820 method2716 = method2715.method27622();
-        if (method2716 instanceof Class3831 && ((Class3831)method2716).method11769(method2715.method27657(), this.method1642())) {
-            if (!this.field2391.field10067) {
+        if (method2716 instanceof Class3831 && ((Class3831)method2716).method11769(method2715.method27657(), this.getType())) {
+            if (!this.world.field10067) {
                 final Class788 method2717 = this.method4349(this);
                 if (method2717 != null) {
                     method2717.method4354(-24000);
                     method2717.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), 0.0f, 0.0f);
-                    this.field2391.method6886(method2717);
+                    this.world.method6886(method2717);
                     if (method2715.method27667()) {
                         method2717.method1872(method2715.method27664());
                     }
@@ -68,14 +74,14 @@ public abstract class Class788 extends Class787
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class788.field4198, false);
+        this.dataManager.register(Class788.field4198, false);
     }
     
     public int method4351() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             return this.field4199;
         }
-        return this.field2432.method33568(Class788.field4198) ? -1 : 1;
+        return this.dataManager.get(Class788.field4198) ? -1 : 1;
     }
     
     public void method4352(final int n, final boolean b) {
@@ -114,7 +120,7 @@ public abstract class Class788 extends Class787
             }
             return;
         }
-        this.field2432.method33569(Class788.field4198, field4199 < 0);
+        this.dataManager.set(Class788.field4198, field4199 < 0);
         this.method4355();
     }
     
@@ -133,7 +139,7 @@ public abstract class Class788 extends Class787
     }
     
     @Override
-    public void method1880(final Class8810<?> class8810) {
+    public void method1880(final DataParameter<?> class8810) {
         if (Class788.field4198.equals(class8810)) {
             this.method1881();
         }
@@ -143,7 +149,7 @@ public abstract class Class788 extends Class787
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.method1768()) {
                 int method4351 = this.method4351();
                 if (method4351 >= 0) {
@@ -160,7 +166,7 @@ public abstract class Class788 extends Class787
         }
         else if (this.field4201 > 0) {
             if (this.field4201 % 4 == 0) {
-                this.field2391.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
+                this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
             }
             --this.field4201;
         }
@@ -175,6 +181,6 @@ public abstract class Class788 extends Class787
     }
     
     static {
-        field4198 = Class9184.method33564(Class788.class, Class7709.field30661);
+        field4198 = EntityDataManager.method33564(Class788.class, Class7709.field30661);
     }
 }

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Iterator;
 import java.util.EnumSet;
 
@@ -25,12 +28,12 @@ public class Class3459 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class511 method2634 = this.field16309.method2634();
+        final LivingEntity method2634 = this.field16309.method2634();
         if (this.field16309.method4292() == null) {
             if (this.field16309.method4316()) {
                 if (this.field16309.method4152() != null) {
                     if (!this.field16309.method4216()) {
-                        if (method2634 == null || method2634.method1642() != EntityType.field29058) {
+                        if (method2634 == null || method2634.getType() != EntityType.field29058) {
                             return true;
                         }
                     }
@@ -44,7 +47,7 @@ public class Class3459 extends Class3446
     public void method11015() {
         super.method11015();
         this.field16309.method4150().method24733();
-        final Iterator<Class511> iterator = (Iterator<Class511>)this.field16309.field2391.method7142((Class<? extends Class776>)Class776.class, this.field16311, (Class511)this.field16309, this.field16309.method1886().method18495(8.0, 8.0, 8.0)).iterator();
+        final Iterator<LivingEntity> iterator = (Iterator<LivingEntity>)this.field16309.world.method7142((Class<? extends Class776>)Class776.class, this.field16311, (LivingEntity)this.field16309, this.field16309.method1886().method18495(8.0, 8.0, 8.0)).iterator();
         while (iterator.hasNext()) {
             iterator.next().method4153(this.field16309.method4152());
         }
@@ -53,9 +56,9 @@ public class Class3459 extends Class3446
     @Override
     public void method11018() {
         super.method11018();
-        final Class511 method4152 = this.field16309.method4152();
+        final LivingEntity method4152 = this.field16309.method4152();
         if (method4152 != null) {
-            for (final Class776 class776 : this.field16309.field2391.method7142((Class<? extends Class776>)Class776.class, this.field16311, (Class511)this.field16309, this.field16309.method1886().method18495(8.0, 8.0, 8.0))) {
+            for (final Class776 class776 : this.field16309.world.method7142((Class<? extends Class776>)Class776.class, this.field16311, (LivingEntity)this.field16309, this.field16309.method1886().method18495(8.0, 8.0, 8.0))) {
                 class776.method4153(method4152);
                 class776.method4213(true);
             }
@@ -65,7 +68,7 @@ public class Class3459 extends Class3446
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16309.method4152();
+        final LivingEntity method4152 = this.field16309.method4152();
         if (method4152 != null) {
             if (this.field16309.method1734(method4152) <= this.field16310) {
                 this.field16309.method4213(true);

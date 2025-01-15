@@ -165,7 +165,7 @@ public class Class613 extends Class608<Class639>
     
     public void method3587(final ITextComponent class2250, final int n, final int n2) {
         if (class2250 != null) {
-            final String method8461 = class2250.method8461();
+            final String method8461 = class2250.getFormattedText();
             final int n3 = n + 12;
             final int n4 = n2 - 12;
             this.method3189(n3 - 3, n4 - 3, n3 + this.field3583.field3156.method6617(method8461) + 3, n4 + 8 + 3, -1073741824, -1073741824);

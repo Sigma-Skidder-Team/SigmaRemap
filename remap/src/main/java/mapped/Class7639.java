@@ -37,11 +37,11 @@ public class Class7639
     private final Class394 field30279;
     public volatile boolean field30280;
     private final List<ChannelFuture> field30281;
-    private final List<Class3641> field30282;
+    private final List<NetworkManager> field30282;
     
     public Class7639(final Class394 field30279) {
         this.field30281 = Collections.synchronizedList((List<ChannelFuture>)Lists.newArrayList());
-        this.field30282 = Collections.synchronizedList((List<Class3641>)Lists.newArrayList());
+        this.field30282 = Collections.synchronizedList((List<NetworkManager>)Lists.newArrayList());
         this.field30279 = field30279;
         this.field30280 = true;
     }
@@ -87,9 +87,9 @@ public class Class7639
     
     public void method24063() {
         synchronized (this.field30282) {
-            final Iterator<Class3641> iterator = this.field30282.iterator();
+            final Iterator<NetworkManager> iterator = this.field30282.iterator();
             while (iterator.hasNext()) {
-                final Class3641 class3641 = iterator.next();
+                final NetworkManager class3641 = iterator.next();
                 if (!class3641.method11188()) {
                     if (class3641.method11187()) {
                         try {
@@ -105,7 +105,7 @@ public class Class7639
                         }
                         final Exception ex;
                         Class7639.field30276.warn("Failed to handle packet for {}", (Object)class3641.method11180(), (Object)ex);
-                        final Class2260 class3642 = new Class2260("Internal server error");
+                        final StringTextComponent class3642 = new StringTextComponent("Internal server error");
                         class3641.method11175(new Class4262(class3642), (GenericFutureListener<? extends Future<? super Void>>)(future -> class3641.method11181(class3642)));
                         class3641.method11191();
                     }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class3483 extends Class3479
 {
     private static String[] field16406;
@@ -19,7 +21,7 @@ public class Class3483 extends Class3479
     @Override
     public boolean method11013() {
         if (this.field16392 <= 0) {
-            if (!this.field16407.field2391.method6765().method31216(Class8878.field37316)) {
+            if (!this.field16407.world.method6765().method31216(Class8878.field37316)) {
                 return false;
             }
             this.field16409 = false;
@@ -39,7 +41,7 @@ public class Class3483 extends Class3479
         super.method11016();
         this.field16407.method4147().method24669(this.field16395.getX() + 0.5, this.field16395.getY() + 1, this.field16395.getZ() + 0.5, 10.0f, (float)this.field16407.method4173());
         if (this.method11048()) {
-            final Class1847 field2391 = this.field16407.field2391;
+            final World field2391 = this.field16407.world;
             final BlockPos method1137 = this.field16395.method1137();
             final Class7096 method1138 = field2391.method6701(method1137);
             final Class3833 method1139 = method1138.method21696();

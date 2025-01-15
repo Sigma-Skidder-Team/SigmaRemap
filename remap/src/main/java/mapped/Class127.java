@@ -8,6 +8,8 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class127 extends Class126

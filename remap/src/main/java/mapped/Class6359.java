@@ -58,7 +58,7 @@ public class Class6359 extends Class6354
                 method347.method20542(method348);
             }
             if (method346.method316("TeamColor", 8)) {
-                method347.method20562(Class2116.method8260(method346.method323("TeamColor")));
+                method347.method20562(TextFormatting.getValueByName(method346.method323("TeamColor")));
             }
             if (method346.method316("AllowFriendlyFire", 99)) {
                 method347.method20551(method346.method329("AllowFriendlyFire"));
@@ -147,8 +147,8 @@ public class Class6359 extends Class6354
             final Class51 e = new Class51();
             e.method306("Name", class53.method20539());
             e.method306("DisplayName", Class5953.method17869(class53.method20540()));
-            if (class53.method20563().method8253() >= 0) {
-                e.method306("TeamColor", class53.method20563().method8258());
+            if (class53.getColor().getColorIndex() >= 0) {
+                e.method306("TeamColor", class53.getColor().getFriendlyName());
             }
             e.method312("AllowFriendlyFire", class53.method20550());
             e.method312("SeeFriendlyInvisibles", class53.method20552());

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3665 extends Class3664
 {
     public Class3665(final Class1932 class1932) {
@@ -11,7 +14,7 @@ public class Class3665 extends Class3664
     }
     
     @Override
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         if (!super.method11301(class473, class474)) {
             return false;
         }

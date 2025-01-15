@@ -4,21 +4,28 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
 public abstract class Class833 extends Class832
 {
-    private static final Class8810<Boolean> field4444;
+    private static final DataParameter<Boolean> field4444;
     
-    public Class833(final EntityType<? extends Class833> class7499, final Class1847 class7500) {
+    public Class833(final EntityType<? extends Class833> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6575(this);
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return class291.field34098 * 0.65f;
     }
     
@@ -50,15 +57,15 @@ public abstract class Class833 extends Class832
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class833.field4444, false);
+        this.dataManager.register(Class833.field4444, false);
     }
     
     private boolean method4953() {
-        return this.field2432.method33568(Class833.field4444);
+        return this.dataManager.get(Class833.field4444);
     }
     
     public void method4954(final boolean b) {
-        this.field2432.method33569(Class833.field4444, b);
+        this.dataManager.set(Class833.field4444, b);
     }
     
     @Override
@@ -82,7 +89,7 @@ public abstract class Class833 extends Class832
     }
     
     @Override
-    public Class7746 method4143(final Class1847 class1847) {
+    public Class7746 method4143(final World class1847) {
         return new Class7752(this, class1847);
     }
     
@@ -90,10 +97,10 @@ public abstract class Class833 extends Class832
     public void method2729(final Vec3d class5487) {
         if (this.method2749() && this.method1706()) {
             this.method1724(0.01f, class5487);
-            this.method1671(Class2160.field12826, this.method1935());
-            this.method1936(this.method1935().scale(0.9));
+            this.method1671(Class2160.field12826, this.getMotion());
+            this.method1936(this.getMotion().scale(0.9));
             if (this.method4152() == null) {
-                this.method1936(this.method1935().add(0.0, -0.005, 0.0));
+                this.method1936(this.getMotion().add(0.0, -0.005, 0.0));
             }
         }
         else {
@@ -104,11 +111,11 @@ public abstract class Class833 extends Class832
     @Override
     public void method2736() {
         if (!this.method1706()) {
-            if (this.field2404) {
-                if (this.field2406) {
-                    this.method1936(this.method1935().add((this.field2423.nextFloat() * 2.0f - 1.0f) * 0.05f, 0.4000000059604645, (this.field2423.nextFloat() * 2.0f - 1.0f) * 0.05f));
-                    this.field2404 = false;
-                    this.field2448 = true;
+            if (this.onGround) {
+                if (this.collidedVertically) {
+                    this.method1936(this.getMotion().add((this.rand.nextFloat() * 2.0f - 1.0f) * 0.05f, 0.4000000059604645, (this.rand.nextFloat() * 2.0f - 1.0f) * 0.05f));
+                    this.onGround = false;
+                    this.isAirBorne = true;
                     this.method1695(this.method4958(), this.method2720(), this.method2721());
                 }
             }
@@ -124,7 +131,7 @@ public abstract class Class833 extends Class832
             method2715.method27693(1);
             final ItemStack method2716 = this.method4956();
             this.method4955(method2716);
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 Class7770.field31784.method13862((Class513)class512, method2716);
             }
             if (!method2715.method27620()) {
@@ -161,6 +168,6 @@ public abstract class Class833 extends Class832
     }
     
     static {
-        field4444 = Class9184.method33564(Class833.class, Class7709.field30661);
+        field4444 = EntityDataManager.method33564(Class833.class, Class7709.field30661);
     }
 }

@@ -11,7 +11,7 @@ public class Class701 extends Class698
     private Class8297 field3861;
     
     public Class701(final Class527 field3859, final Class5760 field3860) {
-        super(new Class2260(Class8822.method30773("of.options.otherTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.otherTitle", new Object[0])));
         this.field3861 = new Class8297(this, new Class7298());
         this.field3859 = field3859;
         this.field3860 = field3860;
@@ -46,7 +46,7 @@ public class Class701 extends Class698
                 }
                 if (class574.field3708 == 210) {
                     this.field3150.field4648.method17121();
-                    this.field3150.method5244(new Class546(this::method3902, new Class2260(Class8822.method30773("of.message.other.reset", new Object[0])), new Class2260("")));
+                    this.field3150.method5244(new Class546(this::method3902, new StringTextComponent(Class8822.method30773("of.message.other.reset", new Object[0])), new StringTextComponent("")));
                 }
             }
         }
@@ -69,7 +69,7 @@ public class Class701 extends Class698
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3843, this.field3148.method8461(), this.field3152 / 2, 15, 16777215);
+        this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
         super.method2975(n, n2, n3);
         this.field3861.method27577(n, n2, this.field3842);
     }

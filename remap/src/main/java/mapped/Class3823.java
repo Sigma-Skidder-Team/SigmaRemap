@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ public class Class3823 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class51 method2716 = method2715.method27657();
         if (!class1848.field3025.field27304) {

@@ -33,11 +33,11 @@ public abstract class Class378 implements IDynamicSerializable
     public abstract int method1264(final int p0, final int p1, final int p2, final int p3);
     
     public void method1265(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final BlockPos class1877, final int n2, final int n3, final Set<BlockPos> set) {
-        final Class385 class1878 = new Class385();
+        final Mutable class1878 = new Mutable();
         for (int i = -n3; i <= n3; ++i) {
             for (int j = -n3; j <= n3; ++j) {
                 if (!this.method1263(random, n, i, n2, j, n3)) {
-                    class1878.method1284(i + class1877.getX(), n2 + class1877.getY(), j + class1877.getZ());
+                    class1878.setPos(i + class1877.getX(), n2 + class1877.getY(), j + class1877.getZ());
                     this.method1266(class1875, random, class1878, class1876, set);
                 }
             }
@@ -53,11 +53,11 @@ public abstract class Class378 implements IDynamicSerializable
             }
         }
         class1875.method6688(class1876, class1877.field22080.method1164(random, class1876), 19);
-        set.add(class1876.method1153());
+        set.add(class1876.toImmutable());
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         builder.put(dynamicOps.createString("type"), dynamicOps.createString(Class90.field220.method503(this.field2222).toString())).put(dynamicOps.createString("radius"), dynamicOps.createInt(this.field2220)).put(dynamicOps.createString("radius_random"), dynamicOps.createInt(this.field2221));
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();

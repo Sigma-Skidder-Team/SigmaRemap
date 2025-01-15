@@ -24,10 +24,10 @@ public class Class3604 extends Class3446
         if (this.field16785.method1706()) {
             return false;
         }
-        if (!this.field16785.field2404) {
+        if (!this.field16785.onGround) {
             return false;
         }
-        if (!this.field16785.field2408) {
+        if (!this.field16785.velocityChanged) {
             final Class512 method4823 = this.field16785.method4823();
             return method4823 != null && this.field16785.method1734(method4823) <= 16.0 && method4823.field3009 != null;
         }

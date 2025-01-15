@@ -38,7 +38,7 @@ public class Class7533
     }
     
     public int method23608(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
-        final long method1132 = class7098.method1132();
+        final long method1132 = class7098.toLong();
         if (this.field29912) {
             final int value = this.field29913.get(method1132);
             if (value != Integer.MAX_VALUE) {
@@ -56,7 +56,7 @@ public class Class7533
     }
     
     public float method23609(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
-        final long method1132 = class7098.method1132();
+        final long method1132 = class7098.toLong();
         if (this.field29912) {
             final float value = this.field29914.get(method1132);
             if (!Float.isNaN(value)) {

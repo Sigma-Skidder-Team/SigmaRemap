@@ -18,7 +18,7 @@ public class Class702 extends Class698
     private Class673 field3866;
     
     public Class702(final Class527 field3862) {
-        super(new Class2260(Class8822.method30773("of.options.capeOF.title", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.capeOF.title", new Object[0])));
         this.field3862 = field3862;
     }
     
@@ -90,7 +90,7 @@ public class Class702 extends Class698
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3843, this.field3148.method8461(), this.field3152 / 2, 20, 16777215);
+        this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 20, 16777215);
         if (this.field3863 != null) {
             this.method3295(this.field3843, this.field3863, this.field3152 / 2, this.field3153 / 6 + 60, 16777215);
             if (System.currentTimeMillis() > this.field3864) {

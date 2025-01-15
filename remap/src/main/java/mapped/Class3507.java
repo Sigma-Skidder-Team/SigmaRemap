@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.EnumSet;
@@ -12,7 +13,7 @@ public class Class3507 extends Class3446
 {
     private final Class759 field16488;
     private final Class768 field16489;
-    private Class511 field16490;
+    private LivingEntity field16490;
     private int field16491;
     private final double field16492;
     private int field16493;
@@ -27,7 +28,7 @@ public class Class3507 extends Class3446
     
     public Class3507(final Class768 field16489, final double field16490, final int field16491, final int field16492, final float field16493) {
         this.field16491 = -1;
-        if (field16489 instanceof Class511) {
+        if (field16489 instanceof LivingEntity) {
             this.field16489 = field16489;
             this.field16488 = (Class759)field16489;
             this.field16492 = field16490;
@@ -43,7 +44,7 @@ public class Class3507 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class511 method4152 = this.field16488.method4152();
+        final LivingEntity method4152 = this.field16488.method4152();
         if (method4152 != null && method4152.method1768()) {
             this.field16490 = method4152;
             return true;

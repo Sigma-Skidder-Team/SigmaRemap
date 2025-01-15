@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -19,7 +20,7 @@ public class Class3925 extends Class3924
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         this.method12037(class7096, class7097, class7098);
     }
     

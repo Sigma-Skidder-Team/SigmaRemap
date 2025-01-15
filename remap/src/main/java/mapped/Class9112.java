@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import javax.annotation.Nullable;
@@ -16,14 +17,14 @@ public class Class9112
 {
     private static String[] field38604;
     public final Class1656 field38605;
-    public final Class1847 field38606;
+    public final World field38606;
     public int field38607;
     public int field38608;
     public int field38609;
     public Class8974[] field38610;
     private Map<Class7859, Class8871[]> field38611;
     
-    public Class9112(final Class7520 class7520, final Class1847 field38606, final int n, final Class1656 field38607) {
+    public Class9112(final Class7520 class7520, final World field38606, final int n, final Class1656 field38607) {
         this.field38611 = new HashMap<Class7859, Class8871[]>();
         this.field38605 = field38607;
         this.field38606 = field38606;

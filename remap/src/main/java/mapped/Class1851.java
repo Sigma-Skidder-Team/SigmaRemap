@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.stream.Stream;
 import java.util.Set;
@@ -30,7 +32,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     Class6952<Class7255> method6834();
     
-    Class1847 method6744();
+    World method6744();
     
     Class8660 method6764();
     

@@ -29,7 +29,7 @@ public class Class735 extends Class527
     
     @Override
     public void method2969() {
-        this.field3993 = this.field3156.method6626(this.field3992.method8461(), this.field3152 - 50);
+        this.field3993 = this.field3156.method6626(this.field3992.getFormattedText(), this.field3152 - 50);
         this.field3995 = this.field3993.size() * 9;
         this.method3029(new Class654(this.field3152 / 2 - 100, Math.min(this.field3153 / 2 + this.field3995 / 2 + 9, this.field3153 - 30), 200, 20, Class8822.method30773("gui.toMenu", new Object[0]), class654 -> this.field3150.method5244(this.field3994)));
     }
@@ -37,7 +37,7 @@ public class Class735 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, this.field3153 / 2 - this.field3995 / 2 - 18, 11184810);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, this.field3153 / 2 - this.field3995 / 2 - 18, 11184810);
         int n4 = this.field3153 / 2 - this.field3995 / 2;
         if (this.field3993 != null) {
             final Iterator<String> iterator = this.field3993.iterator();

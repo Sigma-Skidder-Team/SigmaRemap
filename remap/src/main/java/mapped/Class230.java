@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import javax.annotation.Nullable;
 
 public enum Class230

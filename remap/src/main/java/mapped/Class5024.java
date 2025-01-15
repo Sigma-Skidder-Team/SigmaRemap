@@ -7,6 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
+import net.minecraft.item.ItemStack;
 
 public class Class5024
 {

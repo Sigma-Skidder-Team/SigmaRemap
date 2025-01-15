@@ -16,6 +16,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -28,7 +29,7 @@ public class Class9051
     private static int method32547(final Class7492 class7492, final Collection<? extends Entity> collection, final Entity class7493) {
         final Iterator<? extends Entity> iterator = collection.iterator();
         while (iterator.hasNext()) {
-            method32549(class7492, (Entity)iterator.next(), (Class1849)class7493.field2391, class7493.getPosX(), class7493.getPosY(), class7493.getPosZ(), EnumSet.noneOf(Class2143.class), class7493.field2399, class7493.field2400, null);
+            method32549(class7492, (Entity)iterator.next(), (Class1849)class7493.world, class7493.getPosX(), class7493.getPosY(), class7493.getPosZ(), EnumSet.noneOf(Class2143.class), class7493.rotationYaw, class7493.rotationPitch, null);
         }
         if (collection.size() != 1) {
             class7492.method23257(new Class2259("commands.teleport.success.entity.multiple", new Object[] { collection.size(), class7493.getDisplayName() }), true);
@@ -69,7 +70,7 @@ public class Class9051
                 method32549(class7492, class7498, class7493, method16504.x, method16504.y, method16504.z, none, class7497.y, class7497.x, class7496);
             }
             else {
-                method32549(class7492, class7498, class7493, method16504.x, method16504.y, method16504.z, none, class7498.field2399, class7498.field2400, class7496);
+                method32549(class7492, class7498, class7493, method16504.x, method16504.y, method16504.z, none, class7498.rotationYaw, class7498.rotationPitch, class7496);
             }
         }
         if (collection.size() != 1) {
@@ -85,11 +86,11 @@ public class Class9051
         if (!(method23371 instanceof Class513)) {
             final float method23372 = MathHelper.method35668(n4);
             final float method23373 = MathHelper.clamp(MathHelper.method35668(n5), -90.0f, 90.0f);
-            if (class7493 != method23371.field2391) {
-                method23371.method1640();
-                method23371.field2452 = class7493.field10063.method20487();
+            if (class7493 != method23371.world) {
+                method23371.detach();
+                method23371.dimension = class7493.dimension.getType();
                 final Entity class7495 = method23371;
-                method23371 = (Entity)method23371.method1642().method23371(class7493);
+                method23371 = (Entity)method23371.getType().method23371(class7493);
                 if (method23371 == null) {
                     return;
                 }
@@ -97,7 +98,7 @@ public class Class9051
                 method23371.method1730(n, n2, n3, method23372, method23373);
                 method23371.method1845(method23372);
                 class7493.method6888(method23371);
-                class7495.field2410 = true;
+                class7495.removed = true;
             }
             else {
                 method23371.method1730(n, n2, n3, method23372, method23373);
@@ -105,12 +106,12 @@ public class Class9051
             }
         }
         else {
-            class7493.method6904().method7441(Class9105.field38571, new Class7859(new BlockPos(n, n2, n3)), 1, method23371.method1643());
-            method23371.method1784();
+            class7493.method6904().method7441(Class9105.field38571, new Class7859(new BlockPos(n, n2, n3)), 1, method23371.getEntityId());
+            method23371.stopRiding();
             if (((Class513)method23371).method2783()) {
                 ((Class513)method23371).method2849(true, true);
             }
-            if (class7493 != method23371.field2391) {
+            if (class7493 != method23371.world) {
                 ((Class513)method23371).method2958(class7493, n, n2, n3, n4, n5);
             }
             else {
@@ -121,9 +122,9 @@ public class Class9051
         if (class7494 != null) {
             class7494.method26828(class7492, method23371);
         }
-        if (!(method23371 instanceof Class511) || !((Class511)method23371).method2773()) {
-            method23371.method1936(method23371.method1935().mul(1.0, 0.0, 1.0));
-            method23371.field2404 = true;
+        if (!(method23371 instanceof LivingEntity) || !((LivingEntity)method23371).method2773()) {
+            method23371.method1936(method23371.getMotion().mul(1.0, 0.0, 1.0));
+            method23371.onGround = true;
         }
     }
 }

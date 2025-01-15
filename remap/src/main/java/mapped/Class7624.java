@@ -18,7 +18,7 @@ public class Class7624 implements Class7622
     
     @Override
     public void method23959() {
-        final Class7096 method6720 = this.field30199.field2391.method6720(this.field30199.method1886().method18495(0.0, -0.4000000059604645, 0.0).method18511(0.001), Class7521.field29765);
+        final Class7096 method6720 = this.field30199.world.method6720(this.field30199.method1886().method18495(0.0, -0.4000000059604645, 0.0).method18511(0.001), Class7521.field29765);
         if (method6720 == null) {
             this.field30200 = false;
         }
@@ -26,7 +26,7 @@ public class Class7624 implements Class7622
             if (!this.field30200) {
                 if (!this.field30201) {
                     if (method6720.method21696() == Class7521.field29765) {
-                        if (!this.field30199.method1639()) {
+                        if (!this.field30199.isSpectator()) {
                             if (!method6720.method21772((Class7111<Boolean>)Class3858.field17478)) {
                                 this.field30199.method1695(Class8520.field35046, 1.0f, 1.0f);
                             }

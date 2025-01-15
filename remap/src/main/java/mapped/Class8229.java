@@ -56,13 +56,13 @@ public class Class8229 extends Class8228
     }
     
     @Override
-    public Class6997 method27254(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797) {
+    public MutableBoundingBox method27254(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797) {
         final BlockPos method27267 = this.method27267(class1795, class1797);
-        return new Class6997(class1796.getX(), class1796.getY(), class1796.getZ(), class1796.getX() + method27267.getX(), class1796.getY() + method27267.getY(), class1796.getZ() + method27267.getZ());
+        return new MutableBoundingBox(class1796.getX(), class1796.getY(), class1796.getZ(), class1796.getX() + method27267.getX(), class1796.getY() + method27267.getY(), class1796.getZ() + method27267.getZ());
     }
     
     @Override
-    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
+    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final MutableBoundingBox class1800, final Random random) {
         return this.field33792.method28613(class1796, (Class6346<? extends Class7065>)class1797, random, class1798);
     }
     

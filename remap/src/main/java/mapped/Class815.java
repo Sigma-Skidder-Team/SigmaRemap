@@ -5,21 +5,28 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import javax.annotation.Nullable;
 
 public class Class815 extends Class812 implements Class768
 {
-    private static final Class8810<Integer> field4369;
-    private static final Class8810<Integer> field4370;
-    private static final Class8810<Integer> field4371;
+    private static final DataParameter<Integer> field4369;
+    private static final DataParameter<Integer> field4370;
+    private static final DataParameter<Integer> field4371;
     private boolean field4372;
     private Class815 field4373;
     private Class815 field4374;
     
-    public Class815(final EntityType<? extends Class815> class7499, final Class1847 class7500) {
+    public Class815(final EntityType<? extends Class815> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -28,15 +35,15 @@ public class Class815 extends Class812 implements Class768
     }
     
     private void method4785(final int b) {
-        this.field2432.method33569(Class815.field4369, Math.max(1, Math.min(5, b)));
+        this.dataManager.set(Class815.field4369, Math.max(1, Math.min(5, b)));
     }
     
     private void method4786() {
-        this.method4785(1 + this.field2423.nextInt((this.field2423.nextFloat() >= 0.04f) ? 3 : 5));
+        this.method4785(1 + this.rand.nextInt((this.rand.nextFloat() >= 0.04f) ? 3 : 5));
     }
     
     public int method4787() {
-        return this.field2432.method33568(Class815.field4369);
+        return this.dataManager.get(Class815.field4369);
     }
     
     @Override
@@ -85,17 +92,17 @@ public class Class815 extends Class812 implements Class768
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class815.field4369, 0);
-        this.field2432.method33565(Class815.field4370, -1);
-        this.field2432.method33565(Class815.field4371, 0);
+        this.dataManager.register(Class815.field4369, 0);
+        this.dataManager.register(Class815.field4370, -1);
+        this.dataManager.register(Class815.field4371, 0);
     }
     
     public int method4788() {
-        return MathHelper.method35651(this.field2432.method33568(Class815.field4371), 0, 3);
+        return MathHelper.method35651(this.dataManager.get(Class815.field4371), 0, 3);
     }
     
     public void method4789(final int i) {
-        this.field2432.method33569(Class815.field4371, i);
+        this.dataManager.set(Class815.field4371, i);
     }
     
     @Override
@@ -106,7 +113,7 @@ public class Class815 extends Class812 implements Class768
     @Override
     public void method1773(final Entity class399) {
         if (this.method1909(class399)) {
-            class399.method1656(this.getPosX() + 0.3f * MathHelper.sin(this.field2951 * 0.017453292f), this.getPosY() + this.method1777() + class399.method1776(), this.getPosZ() - 0.3f * MathHelper.cos(this.field2951 * 0.017453292f));
+            class399.setPosition(this.getPosX() + 0.3f * MathHelper.sin(this.field2951 * 0.017453292f), this.getPosY() + this.method1777() + class399.method1776(), this.getPosZ() - 0.3f * MathHelper.cos(this.field2951 * 0.017453292f));
         }
     }
     
@@ -155,8 +162,8 @@ public class Class815 extends Class812 implements Class768
         }
         if (this.method2625()) {
             if (n > 0) {
-                this.field2391.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
-                if (!this.field2391.field10067) {
+                this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
+                if (!this.world.field10067) {
                     this.method4353(n);
                 }
                 b = true;
@@ -166,7 +173,7 @@ public class Class815 extends Class812 implements Class768
             if (b || !this.method4715()) {
                 if (this.method4726() < this.method4739()) {
                     b = true;
-                    if (!this.field2391.field10067) {
+                    if (!this.world.field10067) {
                         this.method4728(n2);
                     }
                 }
@@ -174,7 +181,7 @@ public class Class815 extends Class812 implements Class768
         }
         if (b) {
             if (!this.method1696()) {
-                this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35351, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
+                this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35351, this.method1922(), 1.0f, 1.0f + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
             }
         }
         return b;
@@ -191,7 +198,7 @@ public class Class815 extends Class812 implements Class768
         this.method4786();
         int n;
         if (!(class1854 instanceof Class5501)) {
-            n = this.field2423.nextInt(4);
+            n = this.rand.nextInt(4);
             class1854 = new Class5501(n, null);
         }
         else {
@@ -212,7 +219,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35352;
     }
     
@@ -228,7 +235,7 @@ public class Class815 extends Class812 implements Class768
     
     @Override
     public void method4782() {
-        this.method1695(Class8520.field35349, 1.0f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
+        this.method1695(Class8520.field35349, 1.0f, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
     }
     
     @Override
@@ -264,7 +271,7 @@ public class Class815 extends Class812 implements Class768
         final Class181 method4792 = this.method4792();
         super.method4733(class446);
         final Class181 method4793 = this.method4792();
-        if (this.field2424 > 20) {
+        if (this.ticksExisted > 20) {
             if (method4793 != null) {
                 if (method4793 != method4792) {
                     this.method1695(Class8520.field35355, 0.5f, 1.0f);
@@ -275,14 +282,14 @@ public class Class815 extends Class812 implements Class768
     
     @Override
     public void method4732() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             super.method4732();
             this.method4790(method4791(this.field4342.method2157(1)));
         }
     }
     
     private void method4790(final Class181 class181) {
-        this.field2432.method33569(Class815.field4370, (class181 != null) ? class181.method813() : -1);
+        this.dataManager.set(Class815.field4370, (class181 != null) ? class181.method813() : -1);
     }
     
     @Nullable
@@ -293,7 +300,7 @@ public class Class815 extends Class812 implements Class768
     
     @Nullable
     public Class181 method4792() {
-        final int intValue = this.field2432.method33568(Class815.field4370);
+        final int intValue = this.dataManager.get(Class815.field4370);
         return (intValue != -1) ? Class181.method819(intValue) : null;
     }
     
@@ -320,27 +327,27 @@ public class Class815 extends Class812 implements Class768
         final Class815 method4794 = this.method4794();
         this.method4754(class788, method4794);
         final Class815 class789 = (Class815)class788;
-        int n = this.field2423.nextInt(Math.max(this.method4787(), class789.method4787())) + 1;
-        if (this.field2423.nextFloat() < 0.03f) {
+        int n = this.rand.nextInt(Math.max(this.method4787(), class789.method4787())) + 1;
+        if (this.rand.nextFloat() < 0.03f) {
             ++n;
         }
         method4794.method4785(n);
-        method4794.method4789(this.field2423.nextBoolean() ? this.method4788() : class789.method4788());
+        method4794.method4789(this.rand.nextBoolean() ? this.method4788() : class789.method4788());
         return method4794;
     }
     
     public Class815 method4794() {
-        return EntityType.field28996.method23371(this.field2391);
+        return EntityType.field28996.method23371(this.world);
     }
     
-    private void method4795(final Class511 class511) {
-        final Class400 class512 = new Class400(this.field2391, this);
+    private void method4795(final LivingEntity class511) {
+        final Class400 class512 = new Class400(this.world, this);
         final double n = class511.getPosX() - this.getPosX();
         final double n2 = class511.method1942(0.3333333333333333) - class512.getPosY();
         final double n3 = class511.getPosZ() - this.getPosZ();
         class512.method1958(n, n2 + MathHelper.sqrt(n * n + n3 * n3) * 0.2f, n3, 1.5f, 10.0f);
-        this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35353, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
-        this.field2391.method6886(class512);
+        this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35353, this.method1922(), 1.0f, 1.0f + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
+        this.world.method6886(class512);
         this.field4372 = true;
     }
     
@@ -353,11 +360,11 @@ public class Class815 extends Class812 implements Class768
         final int method2691 = this.method2691(n, n2);
         if (method2691 > 0) {
             if (n >= 6.0f) {
-                this.method1740(Class7929.field32572, (float)method2691);
-                if (this.method1806()) {
+                this.attackEntityFrom(DamageSource.field32572, (float)method2691);
+                if (this.isBeingRidden()) {
                     final Iterator<Entity> iterator = this.method1911().iterator();
                     while (iterator.hasNext()) {
-                        iterator.next().method1740(Class7929.field32572, (float)method2691);
+                        iterator.next().attackEntityFrom(DamageSource.field32572, (float)method2691);
                     }
                 }
             }
@@ -412,13 +419,13 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public void method4252(final Class511 class511, final float n) {
+    public void method4252(final LivingEntity class511, final float n) {
         this.method4795(class511);
     }
     
     static {
-        field4369 = Class9184.method33564(Class815.class, Class7709.field30654);
-        field4370 = Class9184.method33564(Class815.class, Class7709.field30654);
-        field4371 = Class9184.method33564(Class815.class, Class7709.field30654);
+        field4369 = EntityDataManager.method33564(Class815.class, Class7709.field30654);
+        field4370 = EntityDataManager.method33564(Class815.class, Class7709.field30654);
+        field4371 = EntityDataManager.method33564(Class815.class, Class7709.field30654);
     }
 }

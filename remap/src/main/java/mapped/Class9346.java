@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.nbt.INBT;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
@@ -96,7 +98,7 @@ public final class Class9346
     }
     
     @VisibleForTesting
-    public static boolean method34642(final Class41 class41, final Class41 obj, final boolean b) {
+    public static boolean method34642(final INBT class41, final INBT obj, final boolean b) {
         if (class41 == obj) {
             return true;
         }
@@ -127,7 +129,7 @@ public final class Class9346
         final Class52 class45 = (Class52)obj;
         if (!class44.isEmpty()) {
             for (int i = 0; i < class44.size(); ++i) {
-                final Class41 value = class44.get(i);
+                final INBT value = class44.get(i);
                 int n = 0;
                 for (int j = 0; j < class45.size(); ++j) {
                     if (method34642(value, class45.get(j), b)) {

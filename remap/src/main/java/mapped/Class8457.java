@@ -13,9 +13,9 @@ import io.netty.channel.ChannelInitializer;
 
 public final class Class8457 extends ChannelInitializer<Channel>
 {
-    public final /* synthetic */ Class3641 field34727;
+    public final /* synthetic */ NetworkManager field34727;
     
-    public Class8457(final Class3641 field34727) {
+    public Class8457(final NetworkManager field34727) {
         this.field34727 = field34727;
     }
     

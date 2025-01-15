@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 
 public class Class487 extends Class443 implements Class441

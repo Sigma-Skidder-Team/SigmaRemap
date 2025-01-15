@@ -42,7 +42,7 @@ public class Class4570 extends Class4535<Class5122>
         final Class6585 method6792 = method6791.method6518(Class4570.field20058[nextInt]);
         final Class6585 method6793 = method6791.method6518(Class4570.field20059[nextInt]);
         final Class7859 class1856 = new Class7859(class1853);
-        final Class9092 method6794 = new Class9092().method32845(class1855).method32849(new Class6997(class1856.method25426(), 0, class1856.method25427(), class1856.method25428(), 256, class1856.method25429())).method32850(method6790).method32853(Class4106.field18209);
+        final Class9092 method6794 = new Class9092().method32845(class1855).method32849(new MutableBoundingBox(class1856.method25426(), 0, class1856.method25427(), class1856.method25428(), 256, class1856.method25429())).method32850(method6790).method32853(Class4106.field18209);
         final BlockPos method6795 = method6792.method19961(class1855);
         final int nextInt2 = method6790.nextInt(16 - method6795.getX());
         final int nextInt3 = method6790.nextInt(16 - method6795.getZ());
@@ -52,7 +52,7 @@ public class Class4570 extends Class4535<Class5122>
                 min = Math.min(min, class1851.method6699(Class2020.field11523, class1853.getX() + i + nextInt2, class1853.getZ() + j + nextInt3));
             }
         }
-        final BlockPos method6796 = method6792.method19964(class1853.method1134(nextInt2, Math.max(min - 15 - method6790.nextInt(10), 10), nextInt3), Class2181.field12917, class1855);
+        final BlockPos method6796 = method6792.method19964(class1853.add(nextInt2, Math.max(min - 15 - method6790.nextInt(10), 10), nextInt3), Class2181.field12917, class1855);
         final Class4108 class1857 = new Class4108(0.9f);
         method6794.method32852().method32853(class1857);
         method6792.method19956(class1851, method6796, method6794, 4);

@@ -19,13 +19,18 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import java.util.Map;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
 
-public class Class1848 extends Class1847
+public class Class1848 extends World
 {
     private final List<Entity> field10071;
     public final Int2ObjectMap<Entity> field10072;
@@ -40,7 +45,7 @@ public class Class1848 extends Class1847
     private final Object2ObjectArrayMap<Class8895, Class8141> field10081;
     private boolean field10082;
     
-    public Class1848(final Class5799 field10073, final Class8511 class8511, final Class383 class8512, final int n, final Class5028 class8513, final Class1656 field10074) {
+    public Class1848(final Class5799 field10073, final Class8511 class8511, final DimensionType class8512, final int n, final Class5028 class8513, final Class1656 field10074) {
         super(new Class8660(class8511, "MpServer"), class8512, (class8515, p2) -> new Class1907((Class1848)class8515, n2), class8513, true);
         this.field10071 = Lists.newArrayList();
         this.field10072 = (Int2ObjectMap<Entity>)new Int2ObjectOpenHashMap();
@@ -62,7 +67,7 @@ public class Class1848 extends Class1847
         this.method6733();
         this.method6735();
         if (Class9570.field41366.method22605()) {
-            Class9570.method35826(this, Class9570.field41185, Class9570.method35826(this.field10063, Class9570.field41366, new Object[0]));
+            Class9570.method35826(this, Class9570.field41185, Class9570.method35826(this.dimension, Class9570.field41366, new Object[0]));
         }
         Class9570.method35840(Class9570.field41427, this);
         if (this.field10075.field4682 != null) {
@@ -93,13 +98,13 @@ public class Class1848 extends Class1847
         for (int i = 0; i < this.field10071.size(); ++i) {
             final Entity class399 = this.field10071.get(i);
             this.method6717(class401 -> {
-                ++class401.field2424;
+                ++class401.ticksExisted;
                 if (!(!Class7667.method24316(class401))) {
                     class401.method1659();
                 }
                 return;
             }, class399);
-            if (class399.field2410) {
+            if (class399.removed) {
                 this.field10071.remove(i--);
             }
         }
@@ -107,16 +112,16 @@ public class Class1848 extends Class1847
         final ObjectIterator iterator = this.field10072.int2ObjectEntrySet().iterator();
         while (iterator.hasNext()) {
             final Entity class400 = (Entity)((Int2ObjectMap$Entry)iterator.next()).getValue();
-            if (class400.method1805()) {
+            if (class400.isPassenger()) {
                 continue;
             }
             method6796.method15297("tick");
-            if (!class400.field2410) {
+            if (!class400.removed) {
                 this.method6717(this::method6808, class400);
             }
             method6796.method15299();
             method6796.method15297("remove");
-            if (class400.field2410) {
+            if (class400.removed) {
                 iterator.remove();
                 this.method6822(class400);
             }
@@ -130,10 +135,10 @@ public class Class1848 extends Class1847
     public void method6808(final Entity class399) {
         if (class399 instanceof Class512 || this.method6835().method7408(class399)) {
             class399.method1731(class399.getPosX(), class399.getPosY(), class399.getPosZ());
-            class399.field2401 = class399.field2399;
-            class399.field2402 = class399.field2400;
-            if (class399.field2440 || class399.method1639()) {
-                ++class399.field2424;
+            class399.prevRotationYaw = class399.rotationYaw;
+            class399.prevRotationPitch = class399.rotationPitch;
+            if (class399.addedToChunk || class399.isSpectator()) {
+                ++class399.ticksExisted;
                 this.method6796().method15298(() -> Class90.field210.method503(class400.method1642()).toString());
                 if (Class7667.method24316(class399)) {
                     class399.method1659();
@@ -141,7 +146,7 @@ public class Class1848 extends Class1847
                 this.method6796().method15299();
             }
             this.method6810(class399);
-            if (class399.field2440) {
+            if (class399.addedToChunk) {
                 final Iterator<Entity> iterator = class399.method1908().iterator();
                 while (iterator.hasNext()) {
                     this.method6809(class399, iterator.next());
@@ -151,17 +156,17 @@ public class Class1848 extends Class1847
     }
     
     public void method6809(final Entity class399, final Entity class400) {
-        if (!class400.field2410 && class400.method1920() == class399) {
+        if (!class400.removed && class400.method1920() == class399) {
             if (class400 instanceof Class512 || this.method6835().method7408(class400)) {
                 class400.method1731(class400.getPosX(), class400.getPosY(), class400.getPosZ());
-                class400.field2401 = class400.field2399;
-                class400.field2402 = class400.field2400;
-                if (class400.field2440) {
-                    ++class400.field2424;
+                class400.prevRotationYaw = class400.rotationYaw;
+                class400.prevRotationPitch = class400.rotationPitch;
+                if (class400.addedToChunk) {
+                    ++class400.ticksExisted;
                     class400.method1772();
                 }
                 this.method6810(class400);
-                if (class400.field2440) {
+                if (class400.addedToChunk) {
                     final Iterator<Entity> iterator = class400.method1908().iterator();
                     while (iterator.hasNext()) {
                         this.method6809(class400, iterator.next());
@@ -170,7 +175,7 @@ public class Class1848 extends Class1847
             }
         }
         else {
-            class400.method1784();
+            class400.stopRiding();
         }
     }
     
@@ -180,22 +185,22 @@ public class Class1848 extends Class1847
         final int method35645 = MathHelper.floor(class399.getPosY() / 16.0);
         final int method35646 = MathHelper.floor(class399.getPosZ() / 16.0);
         Label_0123: {
-            if (class399.field2440) {
-                if (class399.field2441 == method35644) {
-                    if (class399.field2442 == method35645) {
-                        if (class399.field2443 == method35646) {
+            if (class399.addedToChunk) {
+                if (class399.chunkCoordX == method35644) {
+                    if (class399.chunkCoordY == method35645) {
+                        if (class399.chunkCoordZ == method35646) {
                             break Label_0123;
                         }
                     }
                 }
             }
-            if (class399.field2440) {
-                if (this.method6814(class399.field2441, class399.field2443)) {
-                    this.method6686(class399.field2441, class399.field2443).method7054(class399, class399.field2442);
+            if (class399.addedToChunk) {
+                if (this.method6814(class399.chunkCoordX, class399.chunkCoordZ)) {
+                    this.method6686(class399.chunkCoordX, class399.chunkCoordZ).method7054(class399, class399.chunkCoordY);
                 }
             }
             if (!class399.method1906() && !this.method6814(method35644, method35646)) {
-                class399.field2440 = false;
+                class399.addedToChunk = false;
             }
             else {
                 this.method6686(method35644, method35646).method7010(class399);
@@ -233,7 +238,7 @@ public class Class1848 extends Class1847
         if (this.field10075.field4684 != null) {
             if (this.field10077 <= 0) {
                 final BlockPos class354 = new BlockPos(this.field10075.field4684);
-                final BlockPos method1134 = class354.method1134(4 * (this.field10062.nextInt(3) - 1), 4 * (this.field10062.nextInt(3) - 1), 4 * (this.field10062.nextInt(3) - 1));
+                final BlockPos method1134 = class354.add(4 * (this.field10062.nextInt(3) - 1), 4 * (this.field10062.nextInt(3) - 1), 4 * (this.field10062.nextInt(3) - 1));
                 final double method1135 = class354.distanceSq(method1134);
                 if (method1135 >= 4.0) {
                     if (method1135 <= 256.0) {
@@ -258,7 +263,7 @@ public class Class1848 extends Class1847
         return this.field10072.size();
     }
     
-    public void method6817(final Class422 class422) {
+    public void method6817(final LightningBoltEntity class422) {
         this.field10071.add(class422);
     }
     
@@ -292,9 +297,9 @@ public class Class1848 extends Class1847
     }
     
     private void method6822(final Entity class399) {
-        class399.method1640();
-        if (class399.field2440) {
-            this.method6686(class399.field2441, class399.field2443).method7053(class399);
+        class399.detach();
+        if (class399.addedToChunk) {
+            this.method6686(class399.chunkCoordX, class399.chunkCoordZ).method7053(class399);
         }
         this.field10076.remove(class399);
         if (Class9570.field41254.method22605()) {
@@ -321,7 +326,7 @@ public class Class1848 extends Class1847
     
     @Nullable
     @Override
-    public Entity method6741(final int n) {
+    public Entity getEntityByID(final int n) {
         return (Entity)this.field10072.get(n);
     }
     
@@ -331,7 +336,7 @@ public class Class1848 extends Class1847
     
     @Override
     public void method6751() {
-        this.field10073.method17369().method11181(new Class2259("multiplayer.status.quitting", new Object[0]));
+        this.field10073.getNetworkManager().method11181(new Class2259("multiplayer.status.quitting", new Object[0]));
     }
     
     public void method6825(final int n, final int n2, final int n3) {
@@ -347,18 +352,18 @@ public class Class1848 extends Class1847
                 break;
             }
         }
-        final Class385 class385 = new Class385();
+        final Mutable class385 = new Mutable();
         for (int i = 0; i < 667; ++i) {
             this.method6826(n, n2, n3, 16, random, b, class385);
             this.method6826(n, n2, n3, 32, random, b, class385);
         }
     }
     
-    public void method6826(final int n, final int n2, final int n3, final int n4, final Random random, final boolean b, final Class385 class385) {
+    public void method6826(final int n, final int n2, final int n3, final int n4, final Random random, final boolean b, final Mutable class385) {
         final int n5 = n + this.field10062.nextInt(n4) - this.field10062.nextInt(n4);
         final int n6 = n2 + this.field10062.nextInt(n4) - this.field10062.nextInt(n4);
         final int n7 = n3 + this.field10062.nextInt(n4) - this.field10062.nextInt(n4);
-        class385.method1284(n5, n6, n7);
+        class385.setPos(n5, n6, n7);
         final Class7096 method6701 = this.method6701(class385);
         method6701.method21696().method11823(method6701, this, class385, random);
         final Class7099 method6702 = this.method6702(class385);
@@ -418,7 +423,7 @@ public class Class1848 extends Class1847
         final ObjectIterator iterator = this.field10072.int2ObjectEntrySet().iterator();
         while (iterator.hasNext()) {
             final Entity class399 = (Entity)((Int2ObjectMap$Entry)iterator.next()).getValue();
-            if (!class399.field2410) {
+            if (!class399.removed) {
                 continue;
             }
             iterator.remove();
@@ -488,7 +493,7 @@ public class Class1848 extends Class1847
     }
     
     @Override
-    public void method6788(final Class4252<?> class4252) {
+    public void method6788(final IPacket<?> class4252) {
         this.field10073.method17292(class4252);
     }
     
@@ -709,7 +714,7 @@ public class Class1848 extends Class1847
     }
     
     public Vec3d method6845(final float n) {
-        return this.field10063.method20493(this.method6952(n), n);
+        return this.dimension.method20493(this.method6952(n), n);
     }
     
     public float method6846(final float n) {
@@ -742,10 +747,10 @@ public class Class1848 extends Class1847
             int n2 = 0;
             int n3 = 0;
             int n4 = 0;
-            final Class8243 class356 = new Class8243(class354.getX() - field23410, class354.getY(), class354.getZ() - field23410, class354.getX() + field23410, class354.getY(), class354.getZ() + field23410);
-            final Class385 class357 = new Class385();
-            while (class356.method27301()) {
-                class357.method1284(class356.method27302(), class356.method27303(), class356.method27304());
+            final CubeCoordinateIterator class356 = new CubeCoordinateIterator(class354.getX() - field23410, class354.getY(), class354.getZ() - field23410, class354.getX() + field23410, class354.getY(), class354.getZ() + field23410);
+            final Mutable class357 = new Mutable();
+            while (class356.hasNext()) {
+                class357.setPos(class356.getX(), class356.getY(), class356.getZ());
                 final int method31308 = class355.method31308(this.method6959(class357), class357.getX(), class357.getZ());
                 n2 += (method31308 & 0xFF0000) >> 16;
                 n3 += (method31308 & 0xFF00) >> 8;

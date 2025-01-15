@@ -26,10 +26,10 @@ public class Class4471 extends Class4469
         this.method13456(class179);
         final Direction method13455 = this.method13455();
         if (method13455.getAxis() != Axis.Z) {
-            this.field19849 = new Class6997(n, 39, n2, n + 58 - 1, 61, n2 + 58 - 1);
+            this.field19849 = new MutableBoundingBox(n, 39, n2, n + 58 - 1, 61, n2 + 58 - 1);
         }
         else {
-            this.field19849 = new Class6997(n, 39, n2, n + 58 - 1, 61, n2 + 58 - 1);
+            this.field19849 = new MutableBoundingBox(n, 39, n2, n + 58 - 1, 61, n2 + 58 - 1);
         }
         final List<Class8123> method13456 = this.method13422(random);
         Class8123.method26746(this.field19844, true);
@@ -58,16 +58,16 @@ public class Class4471 extends Class4469
                 break;
             }
         }
-        final int field27294 = this.field19849.field27294;
+        final int field27294 = this.field19849.minY;
         final int method13457 = this.method13437(9, 22);
         final int method13458 = this.method13439(9, 22);
         final Iterator<Class4469> iterator3 = this.field19846.iterator();
         while (iterator3.hasNext()) {
-            iterator3.next().method13432().method21413(method13457, field27294, method13458);
+            iterator3.next().method13432().offset(method13457, field27294, method13458);
         }
-        final Class6997 method13459 = Class6997.method21409(this.method13437(1, 1), this.method13438(1), this.method13439(1, 1), this.method13437(23, 21), this.method13438(8), this.method13439(23, 21));
-        final Class6997 method13460 = Class6997.method21409(this.method13437(34, 1), this.method13438(1), this.method13439(34, 1), this.method13437(56, 21), this.method13438(8), this.method13439(56, 21));
-        final Class6997 method13461 = Class6997.method21409(this.method13437(22, 22), this.method13438(13), this.method13439(22, 22), this.method13437(35, 35), this.method13438(17), this.method13439(35, 35));
+        final MutableBoundingBox method13459 = MutableBoundingBox.createProper(this.method13437(1, 1), this.method13438(1), this.method13439(1, 1), this.method13437(23, 21), this.method13438(8), this.method13439(23, 21));
+        final MutableBoundingBox method13460 = MutableBoundingBox.createProper(this.method13437(34, 1), this.method13438(1), this.method13439(34, 1), this.method13437(56, 21), this.method13438(8), this.method13439(56, 21));
+        final MutableBoundingBox method13461 = MutableBoundingBox.createProper(this.method13437(22, 22), this.method13438(13), this.method13439(22, 22), this.method13437(35, 35), this.method13438(17), this.method13439(35, 35));
         int nextInt = random.nextInt();
         this.field19846.add(new Class4527(method13455, method13459, nextInt++));
         this.field19846.add(new Class4527(method13455, method13460, nextInt++));
@@ -191,8 +191,8 @@ public class Class4471 extends Class4469
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
-        this.method13416(class1851, class1853, 0, 0, 0, 58, Math.max(class1851.method6743(), 64) - this.field19849.field27294, 58);
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+        this.method13416(class1851, class1853, 0, 0, 0, 58, Math.max(class1851.method6743(), 64) - this.field19849.minY, 58);
         this.method13423(false, 0, class1851, random, class1853);
         this.method13423(true, 33, class1851, random, class1853);
         this.method13424(class1851, random, class1853);
@@ -232,7 +232,7 @@ public class Class4471 extends Class4469
             this.method13416(class1851, class1853, 0 - n3, 0 + n3 * 2, 58 + n3, 57 + n3, 23, 58 + n3);
         }
         for (final Class4469 class1855 : this.field19846) {
-            if (!class1855.method13432().method21410(class1853)) {
+            if (!class1855.method13432().intersectsWith(class1853)) {
                 continue;
             }
             class1855.method13421(class1851, class1852, random, class1853, class1854);
@@ -240,7 +240,7 @@ public class Class4471 extends Class4469
         return true;
     }
     
-    private void method13423(final boolean b, final int n, final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13423(final boolean b, final int n, final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, n, 0, n + 23, 20)) {
             this.method13444(class1851, class1852, n + 0, 0, 0, n + 24, 0, 20, Class4471.field19829, Class4471.field19829, false);
             this.method13416(class1851, class1852, n + 0, 1, 0, n + 24, 10, 20);
@@ -276,7 +276,7 @@ public class Class4471 extends Class4469
         }
     }
     
-    private void method13424(final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13424(final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, 22, 5, 35, 17)) {
             this.method13416(class1851, class1852, 25, 0, 0, 32, 8, 20);
             for (int i = 0; i < 4; ++i) {
@@ -295,7 +295,7 @@ public class Class4471 extends Class4469
         }
     }
     
-    private void method13425(final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13425(final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, 15, 20, 42, 21)) {
             this.method13444(class1851, class1852, 15, 0, 21, 42, 0, 21, Class4471.field19829, Class4471.field19829, false);
             this.method13416(class1851, class1852, 26, 1, 21, 31, 3, 21);
@@ -349,7 +349,7 @@ public class Class4471 extends Class4469
         }
     }
     
-    private void method13426(final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13426(final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, 21, 21, 36, 36)) {
             this.method13444(class1851, class1852, 21, 0, 22, 36, 0, 36, Class4471.field19829, Class4471.field19829, false);
             this.method13416(class1851, class1852, 21, 1, 22, 36, 23, 36);
@@ -383,7 +383,7 @@ public class Class4471 extends Class4469
         }
     }
     
-    private void method13427(final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13427(final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, 0, 21, 6, 58)) {
             this.method13444(class1851, class1852, 0, 0, 21, 6, 0, 57, Class4471.field19829, Class4471.field19829, false);
             this.method13416(class1851, class1852, 0, 1, 21, 6, 7, 57);
@@ -424,7 +424,7 @@ public class Class4471 extends Class4469
         }
     }
     
-    private void method13428(final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13428(final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, 7, 21, 13, 50)) {
             this.method13444(class1851, class1852, 7, 0, 21, 13, 0, 50, Class4471.field19829, Class4471.field19829, false);
             this.method13416(class1851, class1852, 7, 1, 21, 13, 10, 50);
@@ -485,7 +485,7 @@ public class Class4471 extends Class4469
         }
     }
     
-    private void method13429(final Class1851 class1851, final Random random, final Class6997 class1852) {
+    private void method13429(final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, 14, 21, 20, 43)) {
             this.method13444(class1851, class1852, 14, 0, 21, 20, 0, 43, Class4471.field19829, Class4471.field19829, false);
             this.method13416(class1851, class1852, 14, 1, 22, 20, 14, 43);

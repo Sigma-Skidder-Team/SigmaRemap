@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3498 extends Class3446
 {
     private static String[] field16453;
     private final Class765 field16454;
-    private Class511 field16455;
+    private LivingEntity field16455;
     
     public Class3498(final Class765 field16454) {
         this.field16454 = field16454;
@@ -19,7 +21,7 @@ public class Class3498 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class511 method4152 = this.field16454.method4152();
+        final LivingEntity method4152 = this.field16454.method4152();
         return this.field16454.method4235() > 0 || (method4152 != null && this.field16454.method1734(method4152) < 9.0);
     }
     

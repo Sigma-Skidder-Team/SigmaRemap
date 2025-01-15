@@ -23,6 +23,8 @@ import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -172,7 +174,7 @@ public class Class689 extends Class565
     
     public List<String> method3832() {
         final Class1655 method5285 = this.field3792.method5285();
-        final Class3641 method5286 = this.field3792.method5269().method17369();
+        final NetworkManager method5286 = this.field3792.method5269().getNetworkManager();
         final float method5287 = method5286.method11195();
         final float method5288 = method5286.method11194();
         String s;
@@ -216,7 +218,7 @@ public class Class689 extends Class565
             this.field3796 = class355;
             this.method3827();
         }
-        final Class1847 method5291 = this.method3834();
+        final World method5291 = this.method3834();
         final Object o = (method5291 instanceof Class1849) ? ((Class1849)method5291).method6919() : LongSets.EMPTY_SET;
         String str = Class9528.method35579().getName();
         if (!this.field3792.method5284()) {
@@ -227,12 +229,12 @@ public class Class689 extends Class565
         if (method5292 != null) {
             arrayList.add(method5292);
         }
-        arrayList.add(Class383.method1276(this.field3792.field4683.field10063.method20487()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
+        arrayList.add(DimensionType.method1276(this.field3792.field4683.dimension.getType()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
         arrayList.add("");
         arrayList.add(String.format(Locale.ROOT, "XYZ: %.3f / %.5f / %.3f", this.field3792.method5303().getPosX(), this.field3792.method5303().getPosY(), this.field3792.method5303().getPosZ()));
         arrayList.add(String.format("Block: %d %d %d", class354.getX(), class354.getY(), class354.getZ()));
         arrayList.add(String.format("Chunk: %d %d %d in %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF, class354.getX() >> 4, class354.getY() >> 4, class354.getZ() >> 4));
-        arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, MathHelper.method35668(method5289.field2399), MathHelper.method35668(method5289.field2400)));
+        arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, MathHelper.method35668(method5289.rotationYaw), MathHelper.method35668(method5289.rotationPitch)));
         if (this.field3792.field4683 != null) {
             if (this.field3792.field4683.method6971(class354)) {
                 final Class1862 method5293 = this.method3836();
@@ -310,7 +312,7 @@ public class Class689 extends Class565
     private String method3833() {
         final Class1655 method5285 = this.field3792.method5285();
         if (method5285 != null) {
-            final Class1849 method5286 = method5285.method1481(this.field3792.field4683.method6789().method20487());
+            final Class1849 method5286 = method5285.method1481(this.field3792.field4683.method6789().getType());
             if (method5286 != null) {
                 return method5286.method6726();
             }
@@ -318,8 +320,8 @@ public class Class689 extends Class565
         return null;
     }
     
-    private Class1847 method3834() {
-        return (Class1847)DataFixUtils.orElse((Optional)Optional.ofNullable(this.field3792.method5285()).map(class1655 -> class1655.method1481(this.field3792.field4683.field10063.method20487())), (Object)this.field3792.field4683);
+    private World method3834() {
+        return (World)DataFixUtils.orElse((Optional)Optional.ofNullable(this.field3792.method5285()).map(class1655 -> class1655.method1481(this.field3792.field4683.dimension.getType())), (Object)this.field3792.field4683);
     }
     
     @Nullable
@@ -327,7 +329,7 @@ public class Class689 extends Class565
         if (this.field3798 == null) {
             final Class1655 method5285 = this.field3792.method5285();
             if (method5285 != null) {
-                final Class1849 method5286 = method5285.method1481(this.field3792.field4683.field10063.method20487());
+                final Class1849 method5286 = method5285.method1481(this.field3792.field4683.dimension.getType());
                 if (method5286 != null) {
                     this.field3798 = (CompletableFuture<Class1862>)method5286.method6904().method7427(this.field3796.field32290, this.field3796.field32291, Class9312.field39989, false).thenApply(either -> either.map(class1860 -> class1860, p0 -> null));
                 }
@@ -366,7 +368,7 @@ public class Class689 extends Class565
             if (this.field3794.method21449() == Class2165.field12881) {
                 final Class7096 method6701 = this.field3792.field4683.method6701(((Class7005)this.field3794).method21447());
                 arrayList.add("");
-                arrayList.add(Class2116.field12328 + "Targeted Block");
+                arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
                 arrayList.add(String.valueOf(Class90.field208.method503(method6701.method21696())));
                 final UnmodifiableIterator iterator2 = method6701.method21776().entrySet().iterator();
                 while (((Iterator)iterator2).hasNext()) {
@@ -387,7 +389,7 @@ public class Class689 extends Class565
             if (this.field3795.method21449() == Class2165.field12881) {
                 final Class7099 method6703 = this.field3792.field4683.method6702(((Class7005)this.field3795).method21447());
                 arrayList.add("");
-                arrayList.add(Class2116.field12328 + "Targeted Fluid");
+                arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
                 arrayList.add(String.valueOf(Class90.field206.method503(method6703.method21779())));
                 final UnmodifiableIterator iterator4 = method6703.method21776().entrySet().iterator();
                 while (((Iterator)iterator4).hasNext()) {
@@ -408,10 +410,10 @@ public class Class689 extends Class565
             final Entity field4690 = this.field3792.field4690;
             if (field4690 != null) {
                 arrayList.add("");
-                arrayList.add(Class2116.field12328 + "Targeted Entity");
-                arrayList.add(String.valueOf(Class90.field210.method503(field4690.method1642())));
+                arrayList.add(TextFormatting.UNDERLINE + "Targeted Entity");
+                arrayList.add(String.valueOf(Class90.field210.method503(field4690.getType())));
                 if (Class9570.field41259.method22605()) {
-                    ((Collection)Class9570.method35826(field4690.method1642(), Class9570.field41259, new Object[0])).forEach(obj -> list.add("#" + obj));
+                    ((Collection)Class9570.method35826(field4690.getType(), Class9570.field41259, new Object[0])).forEach(obj -> list.add("#" + obj));
                 }
             }
             return arrayList;
@@ -425,11 +427,11 @@ public class Class689 extends Class565
         String str = Class8349.method27835((Class7111<Comparable>)class7111, comparable);
         if (!Boolean.TRUE.equals(comparable)) {
             if (Boolean.FALSE.equals(comparable)) {
-                str = Class2116.field12321 + str;
+                str = TextFormatting.RED + str;
             }
         }
         else {
-            str = Class2116.field12319 + str;
+            str = TextFormatting.GREEN + str;
         }
         return class7111.method21826() + ": " + str;
     }

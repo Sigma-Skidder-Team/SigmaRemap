@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.Random;
@@ -31,8 +32,8 @@ public class Class3920 extends Class3833 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
-        if (class7099.method23627(class7096.method21696().method11704())) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        if (class7099.hasItem(class7096.method21696().method11704())) {
             return Class7698.method24487();
         }
         return class7096.method21772((Class7111<Boolean>)Class3920.field17775) ? Class3920.field17770 : Class3920.field17769;
@@ -51,13 +52,13 @@ public class Class3920 extends Class3833 implements Class3856
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         final BlockPos method21639 = class7074.method21639();
-        final Class1847 method21640 = class7074.method21654();
+        final World method21640 = class7074.method21654();
         final int method21641 = method12036(method21640, method21639);
         return (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3920.field17774, method21640.method6702(method21639).method21779() == Class7558.field29976)).method21773((Class7111<Comparable>)Class3920.field17773, method21641)).method21773((Class7111<Comparable>)Class3920.field17775, this.method12035(method21640, method21639, method21641));
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!class7097.field10067) {
             class7097.method6833().method21345(class7098, this, 1);
         }
@@ -97,13 +98,13 @@ public class Class3920 extends Class3833 implements Class3856
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
-        if (class7099.method23626(Class7698.method24487(), class7098, true) && !class7099.method23628()) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        if (class7099.func_216378_a(Class7698.method24487(), class7098, true) && !class7099.func_225581_b_()) {
             return Class3920.field17769;
         }
         if (class7096.method21772((Class7111<Integer>)Class3920.field17773) != 0) {
             if (class7096.method21772((Class7111<Boolean>)Class3920.field17775)) {
-                if (class7099.method23626(Class3920.field17772, class7098, true)) {
+                if (class7099.func_216378_a(Class3920.field17772, class7098, true)) {
                     return Class3920.field17771;
                 }
             }
@@ -121,7 +122,7 @@ public class Class3920 extends Class3833 implements Class3856
     }
     
     public static int method12036(final Class1855 class1855, final BlockPos class1856) {
-        final Class385 method1290 = new Class385(class1856).method1290(Direction.DOWN);
+        final Mutable method1290 = new Mutable(class1856).method1290(Direction.DOWN);
         final Class7096 method1291 = class1855.method6701(method1290);
         int a = 7;
         if (method1291.method21696() != Class7521.field29805) {

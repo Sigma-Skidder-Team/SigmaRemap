@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -63,7 +65,7 @@ public class Class448 extends Class436 implements Class447, Class439
     }
     
     private void method2269() {
-        final Class1847 method2186 = this.method2186();
+        final World method2186 = this.method2186();
         if (method2186 != null) {
             final BlockPos method2187 = this.method2193();
             final Random field10062 = method2186.field10062;

@@ -17,7 +17,7 @@ public class Class3610 extends Class3607
         if (this.field16794.method2634() == null && !this.field16794.method1804()) {
             return false;
         }
-        final BlockPos method11136 = this.method11136(this.field16794.field2391, this.field16794, 7, 4);
+        final BlockPos method11136 = this.method11136(this.field16794.world, this.field16794, 7, 4);
         if (method11136 == null) {
             return this.method11135();
         }

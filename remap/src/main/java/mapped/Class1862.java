@@ -5,7 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.shorts.ShortListIterator;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
@@ -36,7 +39,7 @@ public class Class1862 implements Class1860
     private Class1873 field10143;
     private final Map<BlockPos, Class51> field10144;
     public boolean field10145;
-    private final Class1847 field10146;
+    private final World field10146;
     private final Map<Class2020, Class9548> field10147;
     private final Class8288 field10148;
     private final Map<BlockPos, Class436> field10149;
@@ -55,11 +58,11 @@ public class Class1862 implements Class1860
     private final Class7859 field10162;
     private volatile boolean field10163;
     
-    public Class1862(final Class1847 class1847, final Class7859 class1848, final Class1873 class1849) {
+    public Class1862(final World class1847, final Class7859 class1848, final Class1873 class1849) {
         this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Class3833>)Class6954.method21355(), (Class6952<Class7255>)Class6954.method21355(), 0L, null, null);
     }
     
-    public Class1862(final Class1847 field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Class3833> field10150, final Class6952<Class7255> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
+    public Class1862(final World field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Class3833> field10150, final Class6952<Class7255> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
         this.field10142 = new Class8199[16];
         this.field10144 = Maps.newHashMap();
         this.field10147 = Maps.newEnumMap((Class)Class2020.class);
@@ -94,7 +97,7 @@ public class Class1862 implements Class1860
         }
     }
     
-    public Class1862(final Class1847 class1847, final Class1865 class1848) {
+    public Class1862(final World class1847, final Class1865 class1848) {
         this(class1847, class1848.method7019(), class1848.method7024(), class1848.method7039(), class1848.method7102(), class1848.method7103(), class1848.method7041(), class1848.method7014(), null);
         final Iterator<Class51> iterator = class1848.method7096().iterator();
         while (iterator.hasNext()) {
@@ -269,7 +272,7 @@ public class Class1862 implements Class1860
         final int method35645 = MathHelper.floor(class399.getPosZ() / 16.0);
         if (method35644 != this.field10162.field32290 || method35645 != this.field10162.field32291) {
             Class1862.field10140.warn("Wrong location! ({}, {}) should be ({}, {}), {}", (Object)method35644, (Object)method35645, (Object)this.field10162.field32290, (Object)this.field10162.field32291, (Object)class399);
-            class399.field2410 = true;
+            class399.removed = true;
         }
         int method35646 = MathHelper.floor(class399.getPosY() / 16.0);
         if (method35646 < 0) {
@@ -278,10 +281,10 @@ public class Class1862 implements Class1860
         if (method35646 >= this.field10150.length) {
             method35646 = this.field10150.length - 1;
         }
-        class399.field2440 = true;
-        class399.field2441 = this.field10162.field32290;
-        class399.field2442 = method35646;
-        class399.field2443 = this.field10162.field32291;
+        class399.addedToChunk = true;
+        class399.chunkCoordX = this.field10162.field32290;
+        class399.chunkCoordY = method35646;
+        class399.chunkCoordZ = this.field10162.field32291;
         this.field10150[method35646].add(class399);
     }
     
@@ -291,7 +294,7 @@ public class Class1862 implements Class1860
     }
     
     public void method7053(final Entity class399) {
-        this.method7054(class399, class399.field2442);
+        this.method7054(class399, class399.chunkCoordY);
     }
     
     public void method7054(final Entity class399, int n) {
@@ -358,7 +361,7 @@ public class Class1862 implements Class1860
         if (this.method6701(class354).method21696() instanceof Class3840) {
             class355.method2187(this.field10146, class354);
             class355.method2199();
-            final Class436 class356 = this.field10149.put(class354.method1153(), class355);
+            final Class436 class356 = this.field10149.put(class354.toImmutable(), class355);
             if (class356 != null) {
                 if (class356 != class355) {
                     class356.method2198();
@@ -449,7 +452,7 @@ public class Class1862 implements Class1860
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
         for (int method35647 = MathHelper.method35651(method35645, 0, this.field10150.length - 1), i = method35646; i <= method35647; ++i) {
             for (final Entity class7501 : this.field10150[i].method443(Entity.class)) {
-                if (class7499 != null && class7501.method1642() != class7499) {
+                if (class7499 != null && class7501.getType() != class7499) {
                     continue;
                 }
                 if (!class7501.method1886().method18502(class7500)) {
@@ -489,7 +492,7 @@ public class Class1862 implements Class1860
         return this.field10162;
     }
     
-    public void method7063(final Class1873 field10143, final Class8654 class8654, final Class51 class8655, final int n) {
+    public void method7063(final Class1873 field10143, final PacketBuffer class8654, final Class51 class8655, final int n) {
         final boolean b = field10143 != null;
         Sets.newHashSet((Iterable)this.field10149.keySet()).stream().filter(b ? (p0 -> true) : (class8658 -> (n2 & 1 << (class8658.method1075() >> 4)) != 0x0)).forEach(this.field10146::method6730);
         for (int i = 0; i < this.field10142.length; ++i) {
@@ -531,7 +534,7 @@ public class Class1862 implements Class1860
         this.field10145 = field10145;
     }
     
-    public Class1847 method7065() {
+    public World method7065() {
         return this.field10146;
     }
     
@@ -555,7 +558,7 @@ public class Class1862 implements Class1860
     
     @Override
     public Stream<BlockPos> method7035() {
-        return StreamSupport.stream(BlockPos.method1158(this.field10162.method25426(), 0, this.field10162.method25427(), this.field10162.method25428(), 255, this.field10162.method25429()).spliterator(), false).filter(class354 -> this.method6701(class354).method21704() != 0);
+        return StreamSupport.stream(BlockPos.getAllInBoxMutable(this.field10162.method25426(), 0, this.field10162.method25427(), this.field10162.method25428(), 255, this.field10162.method25429()).spliterator(), false).filter(class354 -> this.method6701(class354).method21704() != 0);
     }
     
     @Override

@@ -6,7 +6,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4375 implements Class4252<Class5800>
+public class Class4375 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19584;
     private int field19585;
@@ -19,7 +19,7 @@ public class Class4375 implements Class4252<Class5800>
     }
     
     public Class4375(final Class508 class508) {
-        this.field19585 = class508.method1643();
+        this.field19585 = class508.getEntityId();
         this.field19586 = class508.getPosX();
         this.field19587 = class508.getPosY();
         this.field19588 = class508.getPosZ();
@@ -27,8 +27,8 @@ public class Class4375 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19585 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19585 = class8654.readVarInt();
         this.field19586 = class8654.readDouble();
         this.field19587 = class8654.readDouble();
         this.field19588 = class8654.readDouble();
@@ -36,15 +36,15 @@ public class Class4375 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19585);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19585);
         class8654.writeDouble(this.field19586);
         class8654.writeDouble(this.field19587);
         class8654.writeDouble(this.field19588);
         class8654.writeShort(this.field19589);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17274(this);
     }
     

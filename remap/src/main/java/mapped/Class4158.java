@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public abstract class Class4158<T extends Class436>
 {
     public final Class9550 field18539;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import javax.annotation.concurrent.Immutable;
 
 @Immutable

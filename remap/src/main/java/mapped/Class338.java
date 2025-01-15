@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public enum Class338 implements Class328
 {
     field2063("limb_swing"), 
@@ -63,7 +65,7 @@ public enum Class338 implements Class328
                         return class4710.field20308;
                     }
                     default: {
-                        final Class511 field35913 = class4710.field20303;
+                        final LivingEntity field35913 = class4710.field20303;
                         if (field35913 == null) {
                             return 0.0f;
                         }

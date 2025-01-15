@@ -6,6 +6,8 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class7877

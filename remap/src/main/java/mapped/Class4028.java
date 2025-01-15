@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
 
 public class Class4028 extends Class4027
 {
@@ -16,7 +17,7 @@ public class Class4028 extends Class4027
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         class1849.method1705(n, 0.2f);
     }
 }

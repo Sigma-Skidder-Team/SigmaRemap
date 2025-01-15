@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public abstract class Class3467 extends Class3446
 {
     public Class759 field16340;
@@ -26,7 +28,7 @@ public abstract class Class3467 extends Class3446
         if (!this.field16342) {
             return false;
         }
-        final Class7096 method6701 = this.field16340.field2391.method6701(this.field16341);
+        final Class7096 method6701 = this.field16340.world.method6701(this.field16341);
         if (method6701.method21696() instanceof Class3969) {
             return method6701.method21772((Class7111<Boolean>)Class3969.field17932);
         }
@@ -35,16 +37,16 @@ public abstract class Class3467 extends Class3446
     
     public void method11034(final boolean b) {
         if (this.field16342) {
-            final Class7096 method6701 = this.field16340.field2391.method6701(this.field16341);
+            final Class7096 method6701 = this.field16340.world.method6701(this.field16341);
             if (method6701.method21696() instanceof Class3969) {
-                ((Class3969)method6701.method21696()).method12110(this.field16340.field2391, this.field16341, b);
+                ((Class3969)method6701.method21696()).method12110(this.field16340.world, this.field16341, b);
             }
         }
     }
     
     @Override
     public boolean method11013() {
-        if (this.field16340.field2405) {
+        if (this.field16340.collidedHorizontally) {
             final Class7747 class7747 = (Class7747)this.field16340.method4150();
             final Class9468 method24727 = class7747.method24727();
             if (method24727 != null) {
@@ -53,12 +55,12 @@ public abstract class Class3467 extends Class3446
                         for (int i = 0; i < Math.min(method24727.method35222() + 2, method24727.method35221()); ++i) {
                             final Class6772 method24728 = method24727.method35217(i);
                             this.field16341 = new BlockPos(method24728.field26589, method24728.field26590 + 1, method24728.field26591);
-                            if (this.field16340.method1733(this.field16341.getX(), this.field16340.getPosY(), this.field16341.getZ()) <= 2.25 && (this.field16342 = method11035(this.field16340.field2391, this.field16341))) {
+                            if (this.field16340.method1733(this.field16341.getX(), this.field16340.getPosY(), this.field16341.getZ()) <= 2.25 && (this.field16342 = method11035(this.field16340.world, this.field16341))) {
                                 return true;
                             }
                         }
                         this.field16341 = new BlockPos(this.field16340).method1137();
-                        return this.field16342 = method11035(this.field16340.field2391, this.field16341);
+                        return this.field16342 = method11035(this.field16340.world, this.field16341);
                     }
                 }
             }
@@ -86,7 +88,7 @@ public abstract class Class3467 extends Class3446
         }
     }
     
-    public static boolean method11035(final Class1847 class1847, final BlockPos class1848) {
+    public static boolean method11035(final World class1847, final BlockPos class1848) {
         final Class7096 method6701 = class1847.method6701(class1848);
         return method6701.method21696() instanceof Class3969 && method6701.method21697() == Class8059.field33176;
     }

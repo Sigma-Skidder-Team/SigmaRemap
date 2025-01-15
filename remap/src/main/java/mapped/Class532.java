@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.TextComponent;
 import org.apache.commons.io.FileUtils;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
@@ -97,10 +98,10 @@ public class Class532 extends Class527
             t = ex;
         }
         Class2259 class7953;
-        Class2251 class7954;
+        TextComponent class7954;
         if (t != null) {
             class7953 = new Class2259("selectWorld.edit.backupFailed", new Object[0]);
-            class7954 = new Class2260(t.getMessage());
+            class7954 = new StringTextComponent(t.getMessage());
         }
         else {
             class7953 = new Class2259("selectWorld.edit.backupCreated", new Object[] { s });
@@ -112,7 +113,7 @@ public class Class532 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 20, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 20, 16777215);
         this.method3297(this.field3156, Class8822.method30773("selectWorld.enterName", new Object[0]), this.field3152 / 2 - 100, 40, 10526880);
         this.field3179.method2975(n, n2, n3);
         super.method2975(n, n2, n3);

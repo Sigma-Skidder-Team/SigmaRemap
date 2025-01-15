@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public abstract class Class760 extends Class759
 {
-    public Class760(final EntityType<? extends Class760> class7499, final Class1847 class7500) {
+    public Class760(final EntityType<? extends Class760> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -27,32 +29,32 @@ public abstract class Class760 extends Class759
         if (!this.method1706()) {
             if (!this.method1723()) {
                 float n = 0.91f;
-                if (this.field2404) {
-                    n = this.field2391.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
+                if (this.onGround) {
+                    n = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
                 }
                 final float n2 = 0.16277137f / (n * n * n);
                 float n3 = 0.91f;
-                if (this.field2404) {
-                    n3 = this.field2391.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
+                if (this.onGround) {
+                    n3 = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.91f;
                 }
-                this.method1724(this.field2404 ? (0.1f * n2) : 0.02f, class5487);
-                this.method1671(Class2160.field12826, this.method1935());
-                this.method1936(this.method1935().scale(n3));
+                this.method1724(this.onGround ? (0.1f * n2) : 0.02f, class5487);
+                this.method1671(Class2160.field12826, this.getMotion());
+                this.method1936(this.getMotion().scale(n3));
             }
             else {
                 this.method1724(0.02f, class5487);
-                this.method1671(Class2160.field12826, this.method1935());
-                this.method1936(this.method1935().scale(0.5));
+                this.method1671(Class2160.field12826, this.getMotion());
+                this.method1936(this.getMotion().scale(0.5));
             }
         }
         else {
             this.method1724(0.02f, class5487);
-            this.method1671(Class2160.field12826, this.method1935());
-            this.method1936(this.method1935().scale(0.800000011920929));
+            this.method1671(Class2160.field12826, this.getMotion());
+            this.method1936(this.getMotion().scale(0.800000011920929));
         }
         this.field2945 = this.field2946;
-        final double n4 = this.getPosX() - this.field2392;
-        final double n5 = this.getPosZ() - this.field2394;
+        final double n4 = this.getPosX() - this.prevPosX;
+        final double n5 = this.getPosZ() - this.prevPosZ;
         float n6 = MathHelper.sqrt(n4 * n4 + n5 * n5) * 4.0f;
         if (n6 > 1.0f) {
             n6 = 1.0f;

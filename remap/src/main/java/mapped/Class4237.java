@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.util.DamageSource;
 
 public class Class4237 extends Class4211
 {
@@ -20,7 +21,7 @@ public class Class4237 extends Class4211
         return new Class4237(class9504.method35397());
     }
     
-    public boolean method12740(final Class513 class513, final Class7929 class514, final float n, final float n2, final boolean b) {
+    public boolean method12740(final Class513 class513, final DamageSource class514, final float n, final float n2, final boolean b) {
         return this.field19051.method28170(class513, class514, n, n2, b);
     }
     

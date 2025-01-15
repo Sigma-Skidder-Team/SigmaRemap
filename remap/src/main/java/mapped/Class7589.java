@@ -50,7 +50,7 @@ public class Class7589
                 hashSet.add(null);
             }
             else {
-                hashSet.add(class399.method1825());
+                hashSet.add(class399.getTeam());
             }
         }
         return hashSet.size();
@@ -126,7 +126,7 @@ public class Class7589
                 class1851 = array[n2++];
             }
             else {
-                final Class6750 class1852 = (class1850 instanceof Class512) ? class1850.method1825() : null;
+                final Team class1852 = (class1850 instanceof Class512) ? class1850.getTeam() : null;
                 if (!hashMap.containsKey(class1852)) {
                     hashMap.put(class1852, array[n2++]);
                 }

@@ -13,6 +13,7 @@ import com.mojang.datafixers.Dynamic;
 import java.util.function.Function;
 import java.util.List;
 import com.google.common.cache.LoadingCache;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4550 extends Class4535<Class5143>
@@ -43,7 +44,7 @@ public class Class4550 extends Class4535<Class5143>
     
     private void method13562(final Class1851 class1851, final Random random, final Class5143 class1852, final Class9341 class1853) {
         final int method34621 = class1853.method34621();
-        for (final BlockPos class1854 : BlockPos.method1154(new BlockPos(class1853.method34619() - method34621, 0, class1853.method34620() - method34621), new BlockPos(class1853.method34619() + method34621, class1853.method34622() + 10, class1853.method34620() + method34621))) {
+        for (final BlockPos class1854 : BlockPos.getAllInBoxMutable(new BlockPos(class1853.method34619() - method34621, 0, class1853.method34620() - method34621), new BlockPos(class1853.method34619() + method34621, class1853.method34622() + 10, class1853.method34620() + method34621))) {
             if (class1854.distanceSq(class1853.method34619(), class1854.getY(), class1853.method34620(), false) <= method34621 * method34621 + 1 && class1854.getY() < class1853.method34622()) {
                 this.method13529(class1851, class1854, Class7521.field29286.method11878());
             }
@@ -55,7 +56,7 @@ public class Class4550 extends Class4535<Class5143>
             }
         }
         if (class1853.method34623()) {
-            final Class385 class1855 = new Class385();
+            final Mutable class1855 = new Mutable();
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
                     for (int k = 0; k <= 3; ++k) {
@@ -95,7 +96,7 @@ public class Class4550 extends Class4535<Class5143>
                             b6 = true;
                         }
                         final boolean b7 = b6;
-                        this.method13529(class1851, class1855.method1284(class1853.method34619() + i, class1853.method34622() + k, class1853.method34620() + j), (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, b5 && j != -2)).method21773((Class7111<Comparable>)Class3853.field17467, b5 && j != 2)).method21773((Class7111<Comparable>)Class3853.field17468, b7 && i != -2)).method21773((Class7111<Comparable>)Class3853.field17466, b7 && i != 2));
+                        this.method13529(class1851, class1855.setPos(class1853.method34619() + i, class1853.method34622() + k, class1853.method34620() + j), (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, b5 && j != -2)).method21773((Class7111<Comparable>)Class3853.field17467, b5 && j != 2)).method21773((Class7111<Comparable>)Class3853.field17468, b7 && i != -2)).method21773((Class7111<Comparable>)Class3853.field17466, b7 && i != 2));
                     }
                 }
             }

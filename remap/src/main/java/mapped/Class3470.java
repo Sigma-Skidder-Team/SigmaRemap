@@ -32,7 +32,7 @@ public class Class3470 extends Class3467
     
     @Override
     public boolean method11013() {
-        return super.method11013() && this.field16340.field2391.method6765().method31216(Class8878.field37316) && this.method11037(this.field16340.field2391.method6954()) && !this.method11033();
+        return super.method11013() && this.field16340.world.method6765().method31216(Class8878.field37316) && this.method11037(this.field16340.world.method6954()) && !this.method11033();
     }
     
     @Override
@@ -46,7 +46,7 @@ public class Class3470 extends Class3467
         if (this.field16353 <= this.method11036()) {
             if (!this.method11033()) {
                 if (this.field16341.withinDistance(this.field16340.method1934(), 2.0)) {
-                    if (this.method11037(this.field16340.field2391.method6954())) {
+                    if (this.method11037(this.field16340.world.method6954())) {
                         return true;
                     }
                 }
@@ -58,14 +58,14 @@ public class Class3470 extends Class3467
     @Override
     public void method11018() {
         super.method11018();
-        this.field16340.field2391.method6780(this.field16340.method1643(), this.field16341, -1);
+        this.field16340.world.method6780(this.field16340.getEntityId(), this.field16341, -1);
     }
     
     @Override
     public void method11016() {
         super.method11016();
         if (this.field16340.method2633().nextInt(20) == 0) {
-            this.field16340.field2391.method6955(1019, this.field16341, 0);
+            this.field16340.world.method6955(1019, this.field16341, 0);
             if (!this.field16340.field2933) {
                 this.field16340.method2707(this.field16340.method2757());
             }
@@ -73,14 +73,14 @@ public class Class3470 extends Class3467
         ++this.field16353;
         final int field16354 = (int)(this.field16353 / (float)this.method11036() * 10.0f);
         if (field16354 != this.field16354) {
-            this.field16340.field2391.method6780(this.field16340.method1643(), this.field16341, field16354);
+            this.field16340.world.method6780(this.field16340.getEntityId(), this.field16341, field16354);
             this.field16354 = field16354;
         }
         if (this.field16353 == this.method11036()) {
-            if (this.method11037(this.field16340.field2391.method6954())) {
-                this.field16340.field2391.method6690(this.field16341, false);
-                this.field16340.field2391.method6955(1021, this.field16341, 0);
-                this.field16340.field2391.method6955(2001, this.field16341, Class3833.method11774(this.field16340.field2391.method6701(this.field16341)));
+            if (this.method11037(this.field16340.world.method6954())) {
+                this.field16340.world.method6690(this.field16341, false);
+                this.field16340.world.method6955(1021, this.field16341, 0);
+                this.field16340.world.method6955(2001, this.field16341, Class3833.method11774(this.field16340.world.method6701(this.field16341)));
             }
         }
     }

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
@@ -16,7 +17,7 @@ public class Class4730 extends Class4712<Class850, Class5868<Class850>>
     public Class4730(final Class8551 class8551) {
         super(class8551, new Class5868(0.0f), 0.5f);
         this.field20333 = new Random();
-        this.method13978((Class1799<Class850, Class5868<Class850>>)new Class1839((Class4778<Class511, Class5868<Class511>>)this));
+        this.method13978((Class1799<Class850, Class5868<Class850>>)new Class1839((Class4778<LivingEntity, Class5868<LivingEntity>>)this));
         this.method13978(new Class1833(this));
     }
     

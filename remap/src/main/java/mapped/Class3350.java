@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class3350 extends Class3167
 {
     private Class7617 field15964;
@@ -61,11 +63,11 @@ public class Class3350 extends Class3167
                 break;
             }
             case "On Use": {
-                if (!Class3350.field15514.field4684.field2404 && Class3350.field15514.field4684.field2985 == 0 && Class3350.field15514.field4684.field2967 && !this.field15968) {
+                if (!Class3350.field15514.field4684.onGround && Class3350.field15514.field4684.field2985 == 0 && Class3350.field15514.field4684.field2967 && !this.field15968) {
                     this.field15967 = true;
                     break;
                 }
-                if (Class3350.field15514.field4684.field2404) {
+                if (Class3350.field15514.field4684.onGround) {
                     this.field15967 = false;
                     break;
                 }
@@ -127,7 +129,7 @@ public class Class3350 extends Class3167
                                             Class3350.field15966 = true;
                                             if (this.method9887("Elytra").equals("On Use")) {
                                                 Class3350.field15514.method5269().method17292(new Class4336(Class3350.field15514.field4684, Class287.field1599));
-                                                Class3350.field15514.field4684.method1830(7, true);
+                                                Class3350.field15514.field4684.setFlag(7, true);
                                             }
                                             if (Class9463.method35173().method35189().method21551(Class3350.class).method9886("Delay") > 0.0f) {
                                                 return;

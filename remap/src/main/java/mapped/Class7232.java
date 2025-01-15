@@ -34,7 +34,7 @@ public class Class7232
             }
         }
         else {
-            this.field28038.field2951 = this.field28038.field2399;
+            this.field28038.field2951 = this.field28038.rotationYaw;
             this.method22133();
             this.field28040 = this.field28038.field2953;
             this.field28039 = 0;
@@ -58,8 +58,8 @@ public class Class7232
     }
     
     private boolean method22136() {
-        final double n = this.field28038.getPosX() - this.field28038.field2392;
-        final double n2 = this.field28038.getPosZ() - this.field28038.field2394;
+        final double n = this.field28038.getPosX() - this.field28038.prevPosX;
+        final double n2 = this.field28038.getPosZ() - this.field28038.prevPosZ;
         return n * n + n2 * n2 > 2.500000277905201E-7;
     }
 }

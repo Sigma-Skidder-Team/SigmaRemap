@@ -20,6 +20,9 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
 
 public class Class7798
@@ -189,10 +192,10 @@ public class Class7798
     
     private static ItemStack method25169(final Class7492 class7492, final Class2215 class7493) throws CommandSyntaxException {
         final Entity method23252 = class7492.method23252();
-        if (!(method23252 instanceof Class511)) {
+        if (!(method23252 instanceof LivingEntity)) {
             throw Class7798.field31960.create((Object)method23252.getDisplayName());
         }
-        return ((Class511)method23252).method2718(class7493);
+        return ((LivingEntity)method23252).method2718(class7493);
     }
     
     private static int method25170(final CommandContext<Class7492> commandContext, final BlockPos class354, final ItemStack class355, final Class8917 class356) throws CommandSyntaxException {
@@ -203,15 +206,15 @@ public class Class7798
     }
     
     private static int method25171(final CommandContext<Class7492> commandContext, final Entity class399, final Class8917 class400) throws CommandSyntaxException {
-        if (class399 instanceof Class511) {
-            final Class1932 method2679 = ((Class511)class399).method2679();
+        if (class399 instanceof LivingEntity) {
+            final Class1932 method2679 = ((LivingEntity)class399).method2679();
             final Class7492 class401 = (Class7492)commandContext.getSource();
             final Class9098 class402 = new Class9098(class401.method23250());
             final Entity method2680 = class401.method23251();
             if (method2680 instanceof Class512) {
                 class402.method32877(Class6683.field26363, (Class512)method2680);
             }
-            class402.method32877(Class6683.field26364, Class7929.field32576);
+            class402.method32877(Class6683.field26364, DamageSource.field32576);
             class402.method32878(Class6683.field26366, method2680);
             class402.method32878(Class6683.field26365, method2680);
             class402.method32877(Class6683.field26362, class399);

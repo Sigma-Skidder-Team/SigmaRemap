@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
+
 import java.util.function.BiFunction;
 import java.util.Map;
 

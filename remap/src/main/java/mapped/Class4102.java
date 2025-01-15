@@ -5,8 +5,11 @@
 package mapped;
 
 import com.google.common.collect.Multimap;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class4102 extends Class3820
 {
@@ -25,7 +28,7 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         return !class7099.method2889();
     }
     
@@ -40,7 +43,7 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public void method11727(final ItemStack class8321, final Class1847 class8322, final Class511 class8323, final int n) {
+    public void method11727(final ItemStack class8321, final World class8322, final LivingEntity class8323, final int n) {
         if (class8323 instanceof Class512) {
             final Class512 class8324 = (Class512)class8323;
             if (this.method11726(class8321) - n >= 10) {
@@ -50,7 +53,7 @@ public class Class4102 extends Class3820
                         class8321.method27636(1, class8324, class8328 -> class8328.method2795(class8327.method2757()));
                         if (method30220 == 0) {
                             final Class403 class8325 = new Class403(class8322, class8324, class8321);
-                            class8325.method1963(class8324, class8324.field2400, class8324.field2399, 0.0f, 2.5f + method30220 * 0.5f, 1.0f);
+                            class8325.method1963(class8324, class8324.rotationPitch, class8324.rotationYaw, 0.0f, 2.5f + method30220 * 0.5f, 1.0f);
                             if (class8324.field3025.field27304) {
                                 class8325.field2474 = Class2151.field12784;
                             }
@@ -63,8 +66,8 @@ public class Class4102 extends Class3820
                     }
                     class8324.method2859(Class8276.field33981.method8449(this));
                     if (method30220 > 0) {
-                        final float field2399 = class8324.field2399;
-                        final float field2400 = class8324.field2400;
+                        final float field2399 = class8324.rotationYaw;
+                        final float field2400 = class8324.rotationPitch;
                         final float n2 = -MathHelper.sin(field2399 * 0.017453292f) * MathHelper.cos(field2400 * 0.017453292f);
                         final float n3 = -MathHelper.sin(field2400 * 0.017453292f);
                         final float n4 = MathHelper.cos(field2399 * 0.017453292f) * MathHelper.cos(field2400 * 0.017453292f);
@@ -72,7 +75,7 @@ public class Class4102 extends Class3820
                         final float n5 = 3.0f * ((1.0f + method30220) / 4.0f);
                         class8324.method1738(n2 * (n5 / method30221), n3 * (n5 / method30221), n4 * (n5 / method30221));
                         class8324.method2743(20);
-                        if (class8324.field2404) {
+                        if (class8324.onGround) {
                             class8324.method1671(Class2160.field12826, new Vec3d(0.0, 1.1999999284744263, 0.0));
                         }
                         Class7795 class8326;
@@ -95,7 +98,7 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         if (method2715.method27632() >= method2715.method27634() - 1) {
             return Class9355.method34677(method2715);
@@ -108,13 +111,13 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public boolean method11711(final ItemStack class8321, final Class511 class8322, final Class511 class8323) {
+    public boolean method11711(final ItemStack class8321, final LivingEntity class8322, final LivingEntity class8323) {
         class8321.method27636(1, class8323, class8324 -> class8324.method2794(Class2215.field13600));
         return true;
     }
     
     @Override
-    public boolean method11712(final ItemStack class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
+    public boolean method11712(final ItemStack class8321, final World class8322, final Class7096 class8323, final BlockPos class8324, final LivingEntity class8325) {
         if (class8323.method21718(class8322, class8324) != 0.0) {
             class8321.method27636(2, class8325, class8326 -> class8326.method2794(Class2215.field13600));
         }

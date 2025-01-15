@@ -18,7 +18,7 @@ public class Class3493 extends Class3446
     
     @Override
     public boolean method11013() {
-        return !this.field16438.method1805();
+        return !this.field16438.isPassenger();
     }
     
     @Override

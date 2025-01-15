@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class4049 extends Class3820
 {
     public Class4049(final Class8959 class8959) {
@@ -12,7 +15,7 @@ public class Class4049 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21696() != Class7521.field29813) {
@@ -22,7 +25,7 @@ public class Class4049 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2835(method2715, class1849);
         class1848.method2859(Class8276.field33981.method8449(this));

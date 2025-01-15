@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+
 public class Class9173
 {
     private int field38857;
@@ -31,7 +34,7 @@ public class Class9173
     }
     
     public void method33488(final Class512 class512) {
-        final Class2113 method6954 = class512.field2391.method6954();
+        final Class2113 method6954 = class512.world.method6954();
         this.field38861 = this.field38857;
         if (this.field38859 > 4.0f) {
             this.field38859 -= 4.0f;
@@ -44,7 +47,7 @@ public class Class9173
                 this.field38858 = Math.max(this.field38858 - 1.0f, 0.0f);
             }
         }
-        final boolean method6955 = class512.field2391.method6765().method31216(Class8878.field37323);
+        final boolean method6955 = class512.world.method6765().method31216(Class8878.field37323);
         if (method6955) {
             if (this.field38858 > 0.0f) {
                 if (class512.method2879()) {
@@ -93,7 +96,7 @@ public class Class9173
                             }
                         }
                     }
-                    class512.method1740(Class7929.field32570, 1.0f);
+                    class512.attackEntityFrom(DamageSource.field32570, 1.0f);
                 }
                 this.field38860 = 0;
             }

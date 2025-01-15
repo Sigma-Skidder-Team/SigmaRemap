@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import com.google.common.collect.Lists;
+import net.minecraft.world.World;
 
 public class Class6347 extends Class6346<Class7067>
 {
@@ -97,7 +98,7 @@ public class Class6347 extends Class6346<Class7067>
     @Override
     public void method18861(final Class1851 class1851, final Class1860 class1852) {
         final Class7096[] method21601 = ((Class7067)this.field25386).method21601();
-        final Class385 class1853 = new Class385();
+        final Mutable class1853 = new Mutable();
         final Class9548 method21602 = class1852.method7017(Class2020.field11523);
         final Class9548 method21603 = class1852.method7017(Class2020.field11521);
         for (int i = 0; i < method21601.length; ++i) {
@@ -105,7 +106,7 @@ public class Class6347 extends Class6346<Class7067>
             if (class1854 != null) {
                 for (int j = 0; j < 16; ++j) {
                     for (int k = 0; k < 16; ++k) {
-                        class1852.method7008(class1853.method1284(j, i, k), class1854, false);
+                        class1852.method7008(class1853.setPos(j, i, k), class1854, false);
                         method21602.method35712(j, i, k, class1854);
                         method21603.method35712(j, i, k, class1854);
                     }
@@ -145,7 +146,7 @@ public class Class6347 extends Class6346<Class7067>
     
     @Nullable
     @Override
-    public BlockPos method18874(final Class1847 class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
+    public BlockPos method18874(final World class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
         return ((Class7067)this.field25386).method21589().keySet().contains(s.toLowerCase(Locale.ROOT)) ? super.method18874(class1847, s, class1848, n, b) : null;
     }
 }

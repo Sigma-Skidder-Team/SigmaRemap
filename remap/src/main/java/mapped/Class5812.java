@@ -13,11 +13,11 @@ public class Class5812 implements Class5811
     private boolean field23848;
     private boolean field23849;
     private long field23850;
-    public final /* synthetic */ Class3641 field23851;
+    public final /* synthetic */ NetworkManager field23851;
     public final /* synthetic */ Class9575 field23852;
     public final /* synthetic */ Class8115 field23853;
     
-    public Class5812(final Class8115 field23853, final Class3641 field23854, final Class9575 field23855) {
+    public Class5812(final Class8115 field23853, final NetworkManager field23854, final Class9575 field23855) {
         this.field23853 = field23853;
         this.field23851 = field23854;
         this.field23852 = field23855;
@@ -32,7 +32,7 @@ public class Class5812 implements Class5811
                 this.field23852.field41615 = "";
             }
             else {
-                this.field23852.field41615 = method13250.method24990().method8461();
+                this.field23852.field41615 = method13250.method24990().getFormattedText();
             }
             if (method13250.method24994() == null) {
                 this.field23852.field41618 = Class8822.method30773("multiplayer.status.old", new Object[0]);
@@ -43,10 +43,10 @@ public class Class5812 implements Class5811
                 this.field23852.field41617 = method13250.method24994().method34476();
             }
             if (method13250.method24992() == null) {
-                this.field23852.field41614 = Class2116.field12317 + Class8822.method30773("multiplayer.status.unknown", new Object[0]);
+                this.field23852.field41614 = TextFormatting.DARK_GRAY + Class8822.method30773("multiplayer.status.unknown", new Object[0]);
             }
             else {
-                this.field23852.field41614 = Class2116.field12316 + "" + method13250.method24992().method28398() + "" + Class2116.field12317 + "/" + Class2116.field12316 + method13250.method24992().method28397();
+                this.field23852.field41614 = TextFormatting.GRAY + "" + method13250.method24992().method28398() + "" + TextFormatting.DARK_GRAY + "/" + TextFormatting.GRAY + method13250.method24992().method28397();
                 if (ArrayUtils.isNotEmpty((Object[])method13250.method24992().method28399())) {
                     final StringBuilder sb = new StringBuilder();
                     for (final GameProfile gameProfile : method13250.method24992().method28399()) {
@@ -92,17 +92,17 @@ public class Class5812 implements Class5811
     }
     
     @Override
-    public void method17291(final ITextComponent class2250) {
+    public void onDisconnect(final ITextComponent class2250) {
         if (!this.field23848) {
             Class8115.method26698().error("Can't ping {}: {}", (Object)this.field23852.field41613, (Object)class2250.getString());
-            this.field23852.field41615 = Class2116.field12313 + Class8822.method30773("multiplayer.status.cannot_connect", new Object[0]);
+            this.field23852.field41615 = TextFormatting.DARK_RED + Class8822.method30773("multiplayer.status.cannot_connect", new Object[0]);
             this.field23852.field41614 = "";
             Class8115.method26699(this.field23853, this.field23852);
         }
     }
     
     @Override
-    public Class3641 method17369() {
+    public NetworkManager getNetworkManager() {
         return this.field23851;
     }
 }

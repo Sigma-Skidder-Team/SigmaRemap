@@ -5,9 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class1821<T extends Class511, M extends Class5860<T>> extends Class1820<T, M>
+public class Class1821<T extends LivingEntity, M extends Class5860<T>> extends Class1820<T, M>
 {
     private static String[] field10000;
     private final Class8551 field10001;
@@ -26,11 +27,11 @@ public class Class1821<T extends Class511, M extends Class5860<T>> extends Class
     @Override
     public void method6586(final Class7351 class7351, final Class7807 class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5) {
         final float method35640 = MathHelper.method35640(n2 * n2 + n4 * n4);
-        this.field10002 = new Class405(class7353.field2391, class7353.getPosX(), class7353.getPosY(), class7353.getPosZ());
-        this.field10002.field2399 = (float)(Math.atan2(n2, n4) * 57.2957763671875);
-        this.field10002.field2400 = (float)(Math.atan2(n3, method35640) * 57.2957763671875);
-        this.field10002.field2401 = this.field10002.field2399;
-        this.field10002.field2402 = this.field10002.field2400;
+        this.field10002 = new Class405(class7353.world, class7353.getPosX(), class7353.getPosY(), class7353.getPosZ());
+        this.field10002.rotationYaw = (float)(Math.atan2(n2, n4) * 57.2957763671875);
+        this.field10002.rotationPitch = (float)(Math.atan2(n3, method35640) * 57.2957763671875);
+        this.field10002.prevRotationYaw = this.field10002.rotationYaw;
+        this.field10002.prevRotationPitch = this.field10002.rotationPitch;
         this.field10001.method28706(this.field10002, 0.0, 0.0, 0.0, 0.0f, n5, class7351, class7352, n);
     }
 }

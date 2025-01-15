@@ -9,6 +9,9 @@ import com.google.common.collect.Maps;
 import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Map;
 
 public class Class3678 extends Class3666
@@ -23,7 +26,7 @@ public class Class3678 extends Class3666
         super(class1932);
     }
     
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         int n = 0;
         boolean b = false;
         int n2 = 0;

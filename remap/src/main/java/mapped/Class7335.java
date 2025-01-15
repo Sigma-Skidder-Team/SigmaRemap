@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Locale;
 
@@ -29,11 +30,11 @@ public class Class7335
     }
     
     private void method22497(final String s, final Object... array) {
-        this.field28331.field4647.method3807().method3761(new Class2260("").method8458(new Class2259("debug.prefix", new Object[0]).method8468(Class2116.field12323, Class2116.field12326)).method8457(" ").method8458(new Class2259(s, array)));
+        this.field28331.field4647.method3807().method3761(new StringTextComponent("").appendSibling(new Class2259("debug.prefix", new Object[0]).applyTextStyles(TextFormatting.YELLOW, TextFormatting.BOLD)).appendText(" ").appendSibling(new Class2259(s, array)));
     }
     
     private void method22498(final String s, final Object... array) {
-        this.field28331.field4647.method3807().method3761(new Class2260("").method8458(new Class2259("debug.prefix", new Object[0]).method8468(Class2116.field12321, Class2116.field12326)).method8457(" ").method8458(new Class2259(s, array)));
+        this.field28331.field4647.method3807().method3761(new StringTextComponent("").appendSibling(new Class2259("debug.prefix", new Object[0]).applyTextStyles(TextFormatting.RED, TextFormatting.BOLD)).appendText(" ").appendSibling(new Class2259(s, array)));
     }
     
     private boolean method22499(final int n) {
@@ -57,7 +58,7 @@ public class Class7335
                     return false;
                 }
                 this.method22497("debug.copy_location.message", new Object[0]);
-                this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", Class383.method1276(this.field28331.field4684.field2391.field10063.method20487()), this.field28331.field4684.getPosX(), this.field28331.field4684.getPosY(), this.field28331.field4684.getPosZ(), this.field28331.field4684.field2399, this.field28331.field4684.field2400));
+                this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", DimensionType.method1276(this.field28331.field4684.world.dimension.getType()), this.field28331.field4684.getPosX(), this.field28331.field4684.getPosY(), this.field28331.field4684.getPosZ(), this.field28331.field4684.rotationYaw, this.field28331.field4684.rotationPitch));
                 return true;
             }
             case 68: {
@@ -93,7 +94,7 @@ public class Class7335
             case 76: {
                 final Class869 method28894 = Class8571.method28894();
                 method28894.field4636.field9366 = 1;
-                method28894.field4647.method3807().method3762(new Class2260(Class8822.method30773("of.message.loadingVisibleChunks", new Object[0])), 201435902);
+                method28894.field4647.method3807().method3762(new StringTextComponent(Class8822.method30773("of.message.loadingVisibleChunks", new Object[0])), 201435902);
                 return true;
             }
             case 78: {
@@ -159,7 +160,7 @@ public class Class7335
             switch (Class8540.field35858[field4691.method21449().ordinal()]) {
                 case 1: {
                     final BlockPos method21447 = ((Class7005)field4691).method21447();
-                    final Class7096 method21448 = this.field28331.field4684.field2391.method6701(method21447);
+                    final Class7096 method21448 = this.field28331.field4684.world.method6701(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
                         this.method22497("debug.inspect.client.block", new Object[0]);
@@ -173,21 +174,21 @@ public class Class7335
                         });
                         break;
                     }
-                    final Class436 method21449 = this.field28331.field4684.field2391.method6727(method21447);
+                    final Class436 method21449 = this.field28331.field4684.world.method6727(method21447);
                     this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new Class51()) : null);
                     this.method22497("debug.inspect.client.block", new Object[0]);
                     break;
                 }
                 case 2: {
                     final Entity method21450 = ((Class7007)field4691).method21452();
-                    final Class1932 method21451 = Class90.field210.method503(method21450.method1642());
+                    final Class1932 method21451 = Class90.field210.method503(method21450.getType());
                     if (!b) {
                         this.method22502(method21451, method21450.method1934(), null);
                         this.method22497("debug.inspect.client.entity", new Object[0]);
                         break;
                     }
                     if (b2) {
-                        this.field28331.field4684.field4069.method17378().method26647(method21450.method1643(), class7101 -> {
+                        this.field28331.field4684.field4069.method17378().method26647(method21450.getEntityId(), class7101 -> {
                             this.method22502(class7099, class7100.method1934(), class7101);
                             this.method22497("debug.inspect.server.entity", new Object[0]);
                             return;
@@ -226,7 +227,7 @@ public class Class7335
             class1934.method330("UUIDLeast");
             class1934.method330("Pos");
             class1934.method330("Dimension");
-            s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", class1932.toString(), class1933.x, class1933.y, class1933.z, class1934.method268().getString());
+            s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", class1932.toString(), class1933.x, class1933.y, class1933.z, class1934.toFormattedComponent().getString());
         }
         this.method22508(s);
     }

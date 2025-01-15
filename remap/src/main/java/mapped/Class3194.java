@@ -21,9 +21,9 @@ public class Class3194 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15600 = Class3194.field15514.field4684.field2395;
-        this.field15601 = Class3194.field15514.field4684.field2396;
-        this.field15602 = Class3194.field15514.field4684.field2397;
+        this.field15600 = Class3194.field15514.field4684.posX;
+        this.field15601 = Class3194.field15514.field4684.posY;
+        this.field15602 = Class3194.field15514.field4684.posZ;
         this.field15603 = 0.0;
         this.field15598 = 2;
         this.field15599 = 0;
@@ -32,7 +32,7 @@ public class Class3194 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3194.field15514.field4684.method1935().y > 0.0) {
+        if (Class3194.field15514.field4684.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
         Class3194.field15514.field4633.field26532 = 1.0f;
@@ -94,7 +94,7 @@ public class Class3194 extends Class3167
     @Class6753
     public void method10020(final Class5723 class5723) {
         if (this.method9906()) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328)method16998;
                 if (this.field15598 >= 1) {
@@ -105,8 +105,8 @@ public class Class3194 extends Class3167
                 this.field15600 = class5724.field19377;
                 this.field15601 = class5724.field19378;
                 this.field15602 = class5724.field19379;
-                class5724.field19380 = Class3194.field15514.field4684.field2399;
-                class5724.field19381 = Class3194.field15514.field4684.field2400;
+                class5724.field19380 = Class3194.field15514.field4684.rotationYaw;
+                class5724.field19381 = Class3194.field15514.field4684.rotationPitch;
             }
         }
     }
@@ -114,7 +114,7 @@ public class Class3194 extends Class3167
     @Class6753
     public void method10021(final Class5721 class5721) {
         if (this.method9906()) {
-            final Class4252 method16990 = class5721.method16990();
+            final IPacket method16990 = class5721.method16990();
             if (method16990 instanceof Class4353) {
                 final Class4353 class5722 = (Class4353)method16990;
                 if (this.field15598 == -1) {

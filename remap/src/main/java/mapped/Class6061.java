@@ -33,16 +33,16 @@ public class Class6061<T> implements Class6058<T>
     }
     
     @Override
-    public void method18029(final Class8654 class8654) {
+    public void method18029(final PacketBuffer class8654) {
     }
     
     @Override
-    public void method18030(final Class8654 class8654) {
+    public void method18030(final PacketBuffer class8654) {
     }
     
     @Override
     public int method18031() {
-        return Class8654.method29484(0);
+        return PacketBuffer.method29484(0);
     }
     
     @Override

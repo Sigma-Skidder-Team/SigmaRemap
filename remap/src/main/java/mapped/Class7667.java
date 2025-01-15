@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,7 @@ public class Class7667
         return Class9570.field41243.method22605() ? Class9570.method35821(class7096, Class9570.field41243, class7097, class7098) : class7096.method21704();
     }
     
-    public static Class6356 method24307(final ItemStack class8321, final Class1847 class8322) {
+    public static Class6356 method24307(final ItemStack class8321, final World class8322) {
         if (!Class9570.field41282.method22623()) {
             return Class4094.method12328(class8321, class8322);
         }

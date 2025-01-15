@@ -7,6 +7,9 @@ package mapped;
 import java.util.EnumMap;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Map;
@@ -30,7 +33,7 @@ public abstract class Class6257
         this.field25116 = field25119;
     }
     
-    public Map<Class2215, ItemStack> method18591(final Class511 class511) {
+    public Map<Class2215, ItemStack> method18591(final LivingEntity class511) {
         final EnumMap enumMap = Maps.newEnumMap((Class)Class2215.class);
         for (final Class2215 class512 : this.field25116) {
             final ItemStack method2718 = class511.method2718(class512);
@@ -61,7 +64,7 @@ public abstract class Class6257
         return this.method18586(n) + 5;
     }
     
-    public int method18594(final int n, final Class7929 class7929) {
+    public int method18594(final int n, final DamageSource class7929) {
         return 0;
     }
     
@@ -91,13 +94,13 @@ public abstract class Class6257
     public ITextComponent method18599(final int i) {
         final Class2259 class2259 = new Class2259(this.method18598(), new Object[0]);
         if (!this.method18604()) {
-            class2259.method8469(Class2116.field12316);
+            class2259.applyTextStyle(TextFormatting.GRAY);
         }
         else {
-            class2259.method8469(Class2116.field12321);
+            class2259.applyTextStyle(TextFormatting.RED);
         }
         if (i != 1 || this.method18588() != 1) {
-            class2259.method8457(" ").method8458(new Class2259("enchantment.level." + i, new Object[0]));
+            class2259.appendText(" ").appendSibling(new Class2259("enchantment.level." + i, new Object[0]));
         }
         return class2259;
     }
@@ -106,10 +109,10 @@ public abstract class Class6257
         return this.field25118.method894(class8321.method27622());
     }
     
-    public void method18601(final Class511 class511, final Entity class512, final int n) {
+    public void method18601(final LivingEntity class511, final Entity class512, final int n) {
     }
     
-    public void method18602(final Class511 class511, final Entity class512, final int n) {
+    public void method18602(final LivingEntity class511, final Entity class512, final int n) {
     }
     
     public boolean method18603() {

@@ -21,7 +21,7 @@ public final class Class366 implements IDynamicSerializable
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)dynamicOps.createLong(this.field2208);
     }
     

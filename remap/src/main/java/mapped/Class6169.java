@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class6169 extends Class6159
 {
     private static String[] field24927;
     
-    private Class6169(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    private Class6169(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(class1847, n, n2, n3);
         this.method18440(0.02f, 0.02f);
         this.field24930 *= this.field24949.nextFloat() * 0.6f + 0.2f;

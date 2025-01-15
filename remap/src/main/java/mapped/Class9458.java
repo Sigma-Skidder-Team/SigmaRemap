@@ -8,6 +8,8 @@ import java.util.Objects;
 import com.google.common.base.MoreObjects;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
 public class Class9458
@@ -32,9 +34,9 @@ public class Class9458
         this.field40666 = field40658.method5307();
     }
     
-    public void method35143(final Class511 class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final int n) {
+    public void method35143(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final int n) {
         if (!class512.method27620()) {
-            this.field40666.method6537(class511, class512, class513, b, class514, class515, class511.field2391, n, Class1904.field10335);
+            this.field40666.method6537(class511, class512, class513, b, class514, class515, class511.world, n, Class1904.field10335);
         }
     }
     
@@ -171,7 +173,7 @@ public class Class9458
     public void method35153(final float n, final Class7351 class7351, final Class7808 class7352, final Class756 class7353, final int n2) {
         final float method2748 = class7353.method2748(n);
         final Class316 class7354 = (Class316)MoreObjects.firstNonNull((Object)class7353.field2934, (Object)Class316.field1877);
-        final float method2749 = MathHelper.method35700(n, class7353.field2402, class7353.field2400);
+        final float method2749 = MathHelper.method35700(n, class7353.prevRotationPitch, class7353.rotationPitch);
         boolean b = true;
         int n3 = 1;
         if (!class7353.method2756()) {

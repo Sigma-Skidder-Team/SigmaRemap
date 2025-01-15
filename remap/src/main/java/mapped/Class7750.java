@@ -7,12 +7,13 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class7750 extends Class7746
 {
     private static String[] field31681;
     
-    public Class7750(final Class759 class759, final Class1847 class760) {
+    public Class7750(final Class759 class759, final World class760) {
         super(class759, class760);
     }
     
@@ -24,7 +25,7 @@ public class Class7750 extends Class7746
     
     @Override
     public boolean method24735() {
-        return (this.method24742() && this.method24736()) || !this.field31657.method1805();
+        return (this.method24742() && this.method24736()) || !this.field31657.isPassenger();
     }
     
     @Override

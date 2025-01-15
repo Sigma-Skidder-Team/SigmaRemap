@@ -89,7 +89,7 @@ public class Class603 extends Class599
                     this.method3523(n);
                 }
                 this.field3512.method5244(this.field3538);
-            }, new Class2260(Class8822.method30773("of.message.shaders.nv1", ("HD_U_" + trim).replace('_', ' '))), new Class2260(Class8822.method30773("of.message.shaders.nv2", new Object[0]))));
+            }, new StringTextComponent(Class8822.method30773("of.message.shaders.nv1", ("HD_U_" + trim).replace('_', ' '))), new StringTextComponent(Class8822.method30773("of.message.shaders.nv2", new Object[0]))));
             return false;
         }
         return true;

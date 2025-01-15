@@ -92,9 +92,9 @@ public class Class8733
     }
     
     public Class8733 method30168(final Class8797 class8797, final boolean b) {
-        final long method1132 = class8797.method30692().method1132();
+        final long method1132 = class8797.method30692().toLong();
         if (b) {
-            final long method1133 = class8797.method30692().method1137().method1132();
+            final long method1133 = class8797.method30692().method1137().toLong();
             this.field36694.add(method1133);
             this.field36693.add(method1133);
             this.field36695.remove(method1133);
@@ -106,7 +106,7 @@ public class Class8733
     }
     
     public Class8733 method30169(final Class8797 class8797) {
-        final long method1132 = class8797.method30692().method1132();
+        final long method1132 = class8797.method30692().toLong();
         this.field36694.remove(method1132);
         this.field36695.add(method1132);
         return this;

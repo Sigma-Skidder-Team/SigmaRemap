@@ -62,13 +62,13 @@ public class Class6115 implements Class6113
         Class8726.method30040();
         Class8726.method30012();
         Class8726.method30060();
-        if (!this.field24824.field4684.method1639()) {
+        if (!this.field24824.field4684.isSpectator()) {
             this.method18300();
         }
     }
     
     private void method18278() {
-        this.field24826.entrySet().removeIf(entry -> this.field24824.field4683.method6741(entry.getValue().field36433) == null);
+        this.field24826.entrySet().removeIf(entry -> this.field24824.field4683.getEntityByID(entry.getValue().field36433) == null);
     }
     
     private void method18279() {

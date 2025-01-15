@@ -5,6 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -23,20 +27,20 @@ public class Class4005 extends Class3833
     }
     
     @Override
-    public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
+    public void method11845(final World class1847, final BlockPos class1848, final Entity class1849) {
         this.method12168(class1847, class1848, class1849, 100);
         super.method11845(class1847, class1848, class1849);
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         if (!(class1849 instanceof Class827)) {
             this.method12168(class1847, class1848, class1849, 3);
         }
         super.method11860(class1847, class1848, class1849, n);
     }
     
-    private void method12168(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final int bound) {
+    private void method12168(final World class1847, final BlockPos class1848, final Entity class1849, final int bound) {
         if (this.method12172(class1847, class1849)) {
             if (!class1847.field10067) {
                 if (class1847.field10062.nextInt(bound) == 0) {
@@ -49,7 +53,7 @@ public class Class4005 extends Class3833
         }
     }
     
-    private void method12169(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    private void method12169(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         class1847.method6705(null, class1848, Class8520.field35653, Class286.field1582, 0.7f, 0.9f + class1847.field10062.nextFloat() * 0.2f);
         final int intValue = class1849.method21772((Class7111<Integer>)Class4005.field18053);
         if (intValue > 1) {
@@ -91,7 +95,7 @@ public class Class4005 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (this.method12170(class7097, class7098)) {
             if (!class7097.field10067) {
                 class7097.method6955(2005, class7098, 0);
@@ -99,13 +103,13 @@ public class Class4005 extends Class3833
         }
     }
     
-    private boolean method12171(final Class1847 class1847) {
+    private boolean method12171(final World class1847) {
         final float method6952 = class1847.method6952(1.0f);
         return (method6952 < 0.69 && method6952 > 0.65) || class1847.field10062.nextInt(500) == 0;
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         this.method12169(class1847, class1849, class1850);
     }
@@ -123,7 +127,7 @@ public class Class4005 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return (class7096.method21772((Class7111<Integer>)Class4005.field18053) <= 1) ? Class4005.field18050 : Class4005.field18051;
     }
     
@@ -132,8 +136,8 @@ public class Class4005 extends Class3833
         class9500.method35378(Class4005.field18052, Class4005.field18053);
     }
     
-    private boolean method12172(final Class1847 class1847, final Entity class1848) {
-        return !(class1848 instanceof Class793) && (!(class1848 instanceof Class511) || class1848 instanceof Class512 || class1847.method6765().method31216(Class8878.field37316));
+    private boolean method12172(final World class1847, final Entity class1848) {
+        return !(class1848 instanceof Class793) && (!(class1848 instanceof LivingEntity) || class1848 instanceof Class512 || class1847.method6765().method31216(Class8878.field37316));
     }
     
     static {

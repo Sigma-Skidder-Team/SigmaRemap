@@ -6,16 +6,16 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4392 implements Class4252<Class5809>
+public class Class4392 implements IPacket<Class5809>
 {
     private static String[] field19671;
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
     }
     
     public void method12979(final Class5809 class5809) {

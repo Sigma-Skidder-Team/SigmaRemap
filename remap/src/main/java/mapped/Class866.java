@@ -17,13 +17,13 @@ public class Class866 extends Class865
     
     @Override
     public Class1849 method5216() {
-        return (Class1849)this.field4618.field2391;
+        return (Class1849)this.field4618.world;
     }
     
     @Override
     public void method5217() {
-        this.field4618.method1650().method33569(Class429.method2150(), this.method5212());
-        this.field4618.method1650().method33569(Class429.method2151(), this.method5208());
+        this.field4618.method1650().set(Class429.method2150(), this.method5212());
+        this.field4618.method1650().set(Class429.method2151(), this.method5208());
     }
     
     @Override

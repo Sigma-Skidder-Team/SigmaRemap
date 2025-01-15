@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -22,7 +23,7 @@ public class Class3593 extends Class3592
         if (!this.field16738.method4667()) {
             return false;
         }
-        final Class511 method4152 = this.field16738.method4152();
+        final LivingEntity method4152 = this.field16738.method4152();
         if (method4152 == null || !method4152.method1768()) {
             return false;
         }
@@ -40,12 +41,12 @@ public class Class3593 extends Class3592
     
     @Override
     public boolean method11017() {
-        final Class511 method4152 = this.field16738.method4152();
+        final LivingEntity method4152 = this.field16738.method4152();
         if (method4152 != null && method4152.method1768()) {
-            final double field22771 = this.field16738.method1935().y;
+            final double field22771 = this.field16738.getMotion().y;
             if (field22771 * field22771 < 0.05000000074505806) {
-                if (Math.abs(this.field16738.field2400) < 15.0f) {
-                    if (this.field16738.field2404) {
+                if (Math.abs(this.field16738.rotationPitch) < 15.0f) {
+                    if (this.field16738.onGround) {
                         return false;
                     }
                 }
@@ -68,10 +69,10 @@ public class Class3593 extends Class3592
         this.field16738.method2745(true);
         this.field16738.method4666(true);
         this.field16738.method4669(false);
-        final Class511 method4152 = this.field16738.method4152();
+        final LivingEntity method4152 = this.field16738.method4152();
         this.field16738.method4147().method24667(method4152, 60.0f, 30.0f);
         final Vec3d method4153 = new Vec3d(method4152.getPosX() - this.field16738.getPosX(), method4152.getPosY() - this.field16738.getPosY(), method4152.getPosZ() - this.field16738.getPosZ()).normalize();
-        this.field16738.method1936(this.field16738.method1935().add(method4153.x * 0.8, 0.9, method4153.z * 0.8));
+        this.field16738.method1936(this.field16738.getMotion().add(method4153.x * 0.8, 0.9, method4153.z * 0.8));
         this.field16738.method4150().method24733();
     }
     
@@ -86,27 +87,27 @@ public class Class3593 extends Class3592
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16738.method4152();
+        final LivingEntity method4152 = this.field16738.method4152();
         if (method4152 != null) {
             this.field16738.method4147().method24667(method4152, 60.0f, 30.0f);
         }
         if (!this.field16738.method4656()) {
-            final Vec3d method4153 = this.field16738.method1935();
-            if (method4153.y * method4153.y < 0.029999999329447746 && this.field16738.field2400 != 0.0f) {
-                this.field16738.field2400 = MathHelper.method35707(this.field16738.field2400, 0.0f, 0.2f);
+            final Vec3d method4153 = this.field16738.getMotion();
+            if (method4153.y * method4153.y < 0.029999999329447746 && this.field16738.rotationPitch != 0.0f) {
+                this.field16738.rotationPitch = MathHelper.method35707(this.field16738.rotationPitch, 0.0f, 0.2f);
             }
             else {
-                this.field16738.field2400 = (float)(Math.signum(-method4153.y) * Math.acos(Math.sqrt(Entity.method1680(method4153)) / method4153.length()) * 57.2957763671875);
+                this.field16738.rotationPitch = (float)(Math.signum(-method4153.y) * Math.acos(Math.sqrt(Entity.method1680(method4153)) / method4153.length()) * 57.2957763671875);
             }
         }
         if (method4152 != null && this.field16738.method1732(method4152) <= 2.0f) {
             this.field16738.method2734(method4152);
         }
-        else if (this.field16738.field2400 > 0.0f) {
-            if (this.field16738.field2404) {
-                if ((float)this.field16738.method1935().y != 0.0f) {
-                    if (this.field16738.field2391.method6701(new BlockPos(this.field16738)).method21696() == Class7521.field29329) {
-                        this.field16738.field2400 = 60.0f;
+        else if (this.field16738.rotationPitch > 0.0f) {
+            if (this.field16738.onGround) {
+                if ((float)this.field16738.getMotion().y != 0.0f) {
+                    if (this.field16738.world.method6701(new BlockPos(this.field16738)).method21696() == Class7521.field29329) {
+                        this.field16738.rotationPitch = 60.0f;
                         this.field16738.method4153(null);
                         Class803.method4694(this.field16738, true);
                     }

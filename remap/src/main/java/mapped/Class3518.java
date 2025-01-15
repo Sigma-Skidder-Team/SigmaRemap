@@ -34,20 +34,20 @@ public class Class3518 extends Class3517
     @Nullable
     private Vec3d method11074() {
         final BlockPos class354 = new BlockPos(this.field16510);
-        final Class385 class355 = new Class385();
-        final Class385 class356 = new Class385();
-        for (final BlockPos class357 : BlockPos.method1158(MathHelper.floor(this.field16510.getPosX() - 3.0), MathHelper.floor(this.field16510.getPosY() - 6.0), MathHelper.floor(this.field16510.getPosZ() - 3.0), MathHelper.floor(this.field16510.getPosX() + 3.0), MathHelper.floor(this.field16510.getPosY() + 6.0), MathHelper.floor(this.field16510.getPosZ() + 3.0))) {
+        final Mutable class355 = new Mutable();
+        final Mutable class356 = new Mutable();
+        for (final BlockPos class357 : BlockPos.getAllInBoxMutable(MathHelper.floor(this.field16510.getPosX() - 3.0), MathHelper.floor(this.field16510.getPosY() - 6.0), MathHelper.floor(this.field16510.getPosZ() - 3.0), MathHelper.floor(this.field16510.getPosX() + 3.0), MathHelper.floor(this.field16510.getPosY() + 6.0), MathHelper.floor(this.field16510.getPosZ() + 3.0))) {
             if (class354.equals(class357)) {
                 continue;
             }
-            final Class3833 method21696 = this.field16510.field2391.method6701(class356.method1287(class357).method1290(Direction.DOWN)).method21696();
+            final Class3833 method21696 = this.field16510.world.method6701(class356.method1287(class357).method1290(Direction.DOWN)).method21696();
             if (!(method21696 instanceof Class3972) && !method21696.method11785(Class7188.field27893)) {
                 continue;
             }
-            if (!this.field16510.field2391.method6961(class357)) {
+            if (!this.field16510.world.method6961(class357)) {
                 continue;
             }
-            if (!this.field16510.field2391.method6961(class355.method1287(class357).method1290(Direction.UP))) {
+            if (!this.field16510.world.method6961(class355.method1287(class357).method1290(Direction.UP))) {
                 continue;
             }
             return new Vec3d(class357);

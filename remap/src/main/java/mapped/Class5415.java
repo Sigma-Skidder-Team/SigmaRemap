@@ -8,6 +8,7 @@ import java.util.Locale;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.function.Function;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5415 implements Class5414
@@ -42,8 +43,8 @@ public class Class5415 implements Class5414
     }
     
     @Override
-    public ITextComponent method16528(final Class41 class41) {
-        return new Class2259("commands.data.storage.query", new Object[] { this.field22584, class41.method268() });
+    public ITextComponent method16528(final INBT class41) {
+        return new Class2259("commands.data.storage.query", new Object[] { this.field22584, class41.toFormattedComponent() });
     }
     
     @Override

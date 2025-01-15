@@ -8,6 +8,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class8697
 {
@@ -17,12 +18,12 @@ public class Class8697
     private final Class8683 field36547;
     private final Class3090 field36548;
     private final Class4574<?> field36549;
-    private final Class383 field36550;
+    private final DimensionType field36550;
     private final Class8355 field36551;
     private final Class7854 field36552;
     private final Class8744 field36553;
     
-    public Class8697(final Class8683 field36545, final Class8683 field36546, final Class8683 field36547, final Class3090 field36548, final Class4574<?> field36549, final Class383 field36550, final Class8355 field36551, final Class7854 field36552, final Class8744 field36553) {
+    public Class8697(final Class8683 field36545, final Class8683 field36546, final Class8683 field36547, final Class3090 field36548, final Class4574<?> field36549, final DimensionType field36550, final Class8355 field36551, final Class7854 field36552, final Class8744 field36553) {
         this.field36545 = field36545;
         this.field36546 = field36546;
         this.field36547 = field36547;
@@ -38,7 +39,7 @@ public class Class8697
         return new Class8697(Class8683.field36492, Class8683.field36492, Class8683.field36492, class3090, null, null, Class8355.field34288, Class7854.field32229, Class8744.field36724);
     }
     
-    public static Class8697 method29809(final Class383 class383) {
+    public static Class8697 method29809(final DimensionType class383) {
         return new Class8697(Class8683.field36492, Class8683.field36492, Class8683.field36492, null, null, class383, Class8355.field34288, Class7854.field32229, Class8744.field36724);
     }
     
@@ -60,7 +61,7 @@ public class Class8697
         if (!this.field36547.method29736(n3)) {
             return false;
         }
-        if (this.field36550 != null && this.field36550 != class1849.field10063.method20487()) {
+        if (this.field36550 != null && this.field36550 != class1849.dimension.getType()) {
             return false;
         }
         final BlockPos class1850 = new BlockPos(n, n2, n3);
@@ -86,7 +87,7 @@ public class Class8697
                 jsonObject.add("position", (JsonElement)jsonObject2);
             }
             if (this.field36550 != null) {
-                jsonObject.addProperty("dimension", Class383.method1276(this.field36550).toString());
+                jsonObject.addProperty("dimension", DimensionType.method1276(this.field36550).toString());
             }
             if (this.field36549 != null) {
                 jsonObject.addProperty("feature", (String)Class4535.field20023.inverse().get((Object)this.field36549));
@@ -109,7 +110,7 @@ public class Class8697
             final Class8683 method35915 = Class8683.method29738(method35914.get("x"));
             final Class8683 method35916 = Class8683.method29738(method35914.get("y"));
             final Class8683 method35917 = Class8683.method29738(method35914.get("z"));
-            final Class383 class383 = method35913.has("dimension") ? Class383.method1275(new Class1932(Class9583.method35895(method35913, "dimension"))) : null;
+            final DimensionType class383 = method35913.has("dimension") ? DimensionType.method1275(new Class1932(Class9583.method35895(method35913, "dimension"))) : null;
             final Class4574 class384 = method35913.has("feature") ? ((Class4574)Class4535.field20023.get((Object)Class9583.method35895(method35913, "feature"))) : null;
             Class3090 class385 = null;
             if (method35913.has("biome")) {

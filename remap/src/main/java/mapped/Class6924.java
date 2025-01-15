@@ -138,8 +138,8 @@ public class Class6924
                     return method21294;
                 }
             }
-            final Class6997 method21295 = Class4514.method13509(list, random, n, n2, n3, class4508);
-            return (method21295 != null && method21295.field27294 > 1) ? new Class4514(n4, method21295, class4508) : null;
+            final MutableBoundingBox method21295 = Class4514.method13509(list, random, n, n2, n3, class4508);
+            return (method21295 != null && method21295.minY > 1) ? new Class4514(n4, method21295, class4508) : null;
         }
         return null;
     }
@@ -148,7 +148,7 @@ public class Class6924
         if (n4 > 50) {
             return null;
         }
-        if (Math.abs(n - class4507.method13432().field27293) <= 112 && Math.abs(n3 - class4507.method13432().field27295) <= 112) {
+        if (Math.abs(n - class4507.method13432().minX) <= 112 && Math.abs(n3 - class4507.method13432().minZ) <= 112) {
             final Class4500 method21294 = method21294(class4507, list, random, n, n2, n3, class4508, n4 + 1);
             if (method21294 != null) {
                 list.add(method21294);

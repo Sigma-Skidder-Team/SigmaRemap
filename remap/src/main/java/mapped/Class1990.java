@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public enum Class1990
 {
     field11132((EntityType<? extends Class776>) EntityType.field29044, new int[] { 0, 0, 2, 0, 1, 4, 2, 5 }),

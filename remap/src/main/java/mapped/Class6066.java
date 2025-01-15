@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
+
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
@@ -16,7 +16,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
 
-public class Class6066 implements ArgumentType<Class2116>
+public class Class6066 implements ArgumentType<TextFormatting>
 {
     private static final Collection<String> field24692;
     public static final DynamicCommandExceptionType field24693;
@@ -28,21 +28,21 @@ public class Class6066 implements ArgumentType<Class2116>
         return new Class6066();
     }
     
-    public static Class2116 method18117(final CommandContext<Class7492> commandContext, final String s) {
-        return (Class2116)commandContext.getArgument(s, (Class)Class2116.class);
+    public static TextFormatting method18117(final CommandContext<Class7492> commandContext, final String s) {
+        return (TextFormatting)commandContext.getArgument(s, (Class) TextFormatting.class);
     }
     
-    public Class2116 parse(final StringReader stringReader) throws CommandSyntaxException {
+    public TextFormatting parse(final StringReader stringReader) throws CommandSyntaxException {
         final String unquotedString = stringReader.readUnquotedString();
-        final Class2116 method8260 = Class2116.method8260(unquotedString);
-        if (method8260 != null && !method8260.method8254()) {
+        final TextFormatting method8260 = TextFormatting.getValueByName(unquotedString);
+        if (method8260 != null && !method8260.isFancyStyling()) {
             return method8260;
         }
         throw Class6066.field24693.create((Object)unquotedString);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
-        return Class7491.method23226(Class2116.method8263(true, false), suggestionsBuilder);
+        return Class7491.method23226(TextFormatting.getValidValues(true, false), suggestionsBuilder);
     }
     
     public Collection<String> getExamples() {

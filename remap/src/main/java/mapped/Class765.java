@@ -5,23 +5,30 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.Collection;
 
 public class Class765 extends Class763 implements Class766
 {
-    private static final Class8810<Integer> field4135;
-    private static final Class8810<Boolean> field4136;
-    private static final Class8810<Boolean> field4137;
+    private static final DataParameter<Integer> field4135;
+    private static final DataParameter<Boolean> field4136;
+    private static final DataParameter<Boolean> field4137;
     private int field4138;
     private int field4139;
     private int field4140;
     private int field4141;
     private int field4142;
     
-    public Class765(final EntityType<? extends Class765> class7499, final Class1847 class7500) {
+    public Class765(final EntityType<? extends Class765> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4140 = 30;
         this.field4141 = 3;
@@ -65,15 +72,15 @@ public class Class765 extends Class763 implements Class766
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class765.field4135, -1);
-        this.field2432.method33565(Class765.field4136, false);
-        this.field2432.method33565(Class765.field4137, false);
+        this.dataManager.register(Class765.field4135, -1);
+        this.dataManager.register(Class765.field4136, false);
+        this.dataManager.register(Class765.field4137, false);
     }
     
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        if (this.field2432.method33568(Class765.field4136)) {
+        if (this.dataManager.get(Class765.field4136)) {
             class51.method312("powered", true);
         }
         class51.method297("Fuse", (short)this.field4140);
@@ -84,7 +91,7 @@ public class Class765 extends Class763 implements Class766
     @Override
     public void method1760(final Class51 class51) {
         super.method1760(class51);
-        this.field2432.method33569(Class765.field4136, class51.method329("powered"));
+        this.dataManager.set(Class765.field4136, class51.method329("powered"));
         if (class51.method316("Fuse", 99)) {
             this.field4140 = class51.method318("Fuse");
         }
@@ -122,7 +129,7 @@ public class Class765 extends Class763 implements Class766
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35101;
     }
     
@@ -132,7 +139,7 @@ public class Class765 extends Class763 implements Class766
     }
     
     @Override
-    public void method2678(final Class7929 class7929, final int n, final boolean b) {
+    public void method2678(final DamageSource class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
         final Entity method25714 = class7929.method25714();
         if (method25714 != this) {
@@ -153,7 +160,7 @@ public class Class765 extends Class763 implements Class766
     
     @Override
     public boolean method4233() {
-        return this.field2432.method33568(Class765.field4136);
+        return this.dataManager.get(Class765.field4136);
     }
     
     public float method4234(final float n) {
@@ -161,17 +168,17 @@ public class Class765 extends Class763 implements Class766
     }
     
     public int method4235() {
-        return this.field2432.method33568(Class765.field4135);
+        return this.dataManager.get(Class765.field4135);
     }
     
     public void method4236(final int i) {
-        this.field2432.method33569(Class765.field4135, i);
+        this.dataManager.set(Class765.field4135, i);
     }
     
     @Override
-    public void method1834(final Class422 class422) {
-        super.method1834(class422);
-        this.field2432.method33569(Class765.field4136, true);
+    public void onStruckByLightning(final LightningBoltEntity class422) {
+        super.onStruckByLightning(class422);
+        this.dataManager.set(Class765.field4136, true);
     }
     
     @Override
@@ -180,8 +187,8 @@ public class Class765 extends Class763 implements Class766
         if (method2715.method27622() != Class7739.field31277) {
             return super.method4195(class512, class513);
         }
-        this.field2391.method6706(class512, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35201, this.method1922(), 1.0f, this.field2423.nextFloat() * 0.4f + 0.8f);
-        if (!this.field2391.field10067) {
+        this.world.method6706(class512, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35201, this.method1922(), 1.0f, this.rand.nextFloat() * 0.4f + 0.8f);
+        if (!this.world.field10067) {
             this.method4240();
             method2715.method27636(1, class512, class515 -> class515.method2795(class514));
         }
@@ -189,11 +196,11 @@ public class Class765 extends Class763 implements Class766
     }
     
     private void method4237() {
-        if (!this.field2391.field10067) {
-            final Class2196 class2196 = this.field2391.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365;
+        if (!this.world.field10067) {
+            final Class2196 class2196 = this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365;
             final float n = this.method4233() ? 2.0f : 1.0f;
             this.field2958 = true;
-            this.field2391.method6722(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, class2196);
+            this.world.method6722(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, class2196);
             this.method1652();
             this.method4238();
         }
@@ -202,7 +209,7 @@ public class Class765 extends Class763 implements Class766
     private void method4238() {
         final Collection<Class1948> method2651 = this.method2651();
         if (!method2651.isEmpty()) {
-            final Class426 class426 = new Class426(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ());
+            final Class426 class426 = new Class426(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
             class426.method2081(2.5f);
             class426.method2094(-0.5f);
             class426.method2096(10);
@@ -212,16 +219,16 @@ public class Class765 extends Class763 implements Class766
             while (iterator.hasNext()) {
                 class426.method2085(new Class1948((Class1948)iterator.next()));
             }
-            this.field2391.method6886(class426);
+            this.world.method6886(class426);
         }
     }
     
     public boolean method4239() {
-        return this.field2432.method33568(Class765.field4137);
+        return this.dataManager.get(Class765.field4137);
     }
     
     public void method4240() {
-        this.field2432.method33569(Class765.field4137, true);
+        this.dataManager.set(Class765.field4137, true);
     }
     
     public boolean method4241() {
@@ -233,8 +240,8 @@ public class Class765 extends Class763 implements Class766
     }
     
     static {
-        field4135 = Class9184.method33564(Class765.class, Class7709.field30654);
-        field4136 = Class9184.method33564(Class765.class, Class7709.field30661);
-        field4137 = Class9184.method33564(Class765.class, Class7709.field30661);
+        field4135 = EntityDataManager.method33564(Class765.class, Class7709.field30654);
+        field4136 = EntityDataManager.method33564(Class765.class, Class7709.field30661);
+        field4137 = EntityDataManager.method33564(Class765.class, Class7709.field30661);
     }
 }

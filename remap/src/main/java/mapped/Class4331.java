@@ -11,7 +11,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.List;
 
-public class Class4331 implements Class4252<Class5800>
+public class Class4331 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19389;
     private Class2227 field19390;
@@ -35,24 +35,24 @@ public class Class4331 implements Class4252<Class5800>
         this.field19396 = field19394;
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17331(this);
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19390 = class8654.method29499(Class2227.class);
         this.field19393 = class8654.readBoolean();
         this.field19394 = class8654.readBoolean();
         this.field19395 = class8654.readBoolean();
         this.field19396 = class8654.readBoolean();
-        final int method29501 = class8654.method29501();
+        final int method29501 = class8654.readVarInt();
         this.field19391 = Lists.newArrayList();
         for (int i = 0; i < method29501; ++i) {
             this.field19391.add(class8654.method29516());
         }
         if (this.field19390 == Class2227.field13701) {
-            final int method29502 = class8654.method29501();
+            final int method29502 = class8654.readVarInt();
             this.field19392 = Lists.newArrayList();
             for (int j = 0; j < method29502; ++j) {
                 this.field19392.add(class8654.method29516());
@@ -61,19 +61,19 @@ public class Class4331 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29500(this.field19390);
         class8654.writeBoolean(this.field19393);
         class8654.writeBoolean(this.field19394);
         class8654.writeBoolean(this.field19395);
         class8654.writeBoolean(this.field19396);
-        class8654.method29505(this.field19391.size());
+        class8654.writeVarInt(this.field19391.size());
         final Iterator<Class1932> iterator = this.field19391.iterator();
         while (iterator.hasNext()) {
             class8654.method29517(iterator.next());
         }
         if (this.field19390 == Class2227.field13701) {
-            class8654.method29505(this.field19392.size());
+            class8654.writeVarInt(this.field19392.size());
             final Iterator<Class1932> iterator2 = this.field19392.iterator();
             while (iterator2.hasNext()) {
                 class8654.method29517(iterator2.next());

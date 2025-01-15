@@ -5,7 +5,12 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -27,7 +32,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (class7096.method21772((Class7111<Integer>)Class3884.field17541) != 0) {
             return (class7096.method21772((Class7111<Integer>)Class3884.field17541) >= 3) ? super.method11808(class7096, class7097, class7098, class7099) : Class3884.field17543;
         }
@@ -48,18 +53,18 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
-        if (class7099 instanceof Class511) {
-            if (class7099.method1642() != EntityType.field28985) {
-                if (class7099.method1642() != EntityType.field28961) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
+        if (class7099 instanceof LivingEntity) {
+            if (class7099.getType() != EntityType.field28985) {
+                if (class7099.getType() != EntityType.field28961) {
                     class7099.method1839(class7096, new Vec3d(0.800000011920929, 0.75, 0.800000011920929));
                     if (!class7097.field10067) {
                         if (class7096.method21772((Class7111<Integer>)Class3884.field17541) > 0) {
-                            if (class7099.field2417 != class7099.getPosX() || class7099.field2419 != class7099.getPosZ()) {
-                                final double abs = Math.abs(class7099.getPosX() - class7099.field2417);
-                                final double abs2 = Math.abs(class7099.getPosZ() - class7099.field2419);
+                            if (class7099.lastTickPosX != class7099.getPosX() || class7099.lastTickPosZ != class7099.getPosZ()) {
+                                final double abs = Math.abs(class7099.getPosX() - class7099.lastTickPosX);
+                                final double abs2 = Math.abs(class7099.getPosZ() - class7099.lastTickPosZ);
                                 if (abs >= 0.003000000026077032 || abs2 >= 0.003000000026077032) {
-                                    class7099.method1740(Class7929.field32583, 1.0f);
+                                    class7099.attackEntityFrom(DamageSource.field32583, 1.0f);
                                 }
                             }
                         }
@@ -70,7 +75,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3884.field17541);
         final int n = (intValue == 3) ? 1 : 0;
         if (n == 0 && class7099.method2715(class7100).method27622() == Class7739.field31400) {
@@ -96,7 +101,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     

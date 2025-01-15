@@ -26,10 +26,10 @@ public class Class6116 implements Class6113
         Class8726.method30041();
         final BlockPos class7353 = new BlockPos(n, n2, n3);
         final LongOpenHashSet set = new LongOpenHashSet();
-        for (final BlockPos class7354 : BlockPos.method1154(class7353.method1134(-10, -10, -10), class7353.method1134(10, 10, 10))) {
+        for (final BlockPos class7354 : BlockPos.getAllInBoxMutable(class7353.add(-10, -10, -10), class7353.add(10, 10, 10))) {
             final int method6992 = field4683.method6992(Class237.field911, class7354);
             final int method6993 = MathHelper.method35697((15 - method6992) / 15.0f * 0.5f + 0.16f, 0.9f, 0.9f);
-            final long method6994 = Class353.method1111(class7354.method1132());
+            final long method6994 = Class353.method1111(class7354.toLong());
             if (((LongSet)set).add(method6994)) {
                 Class7282.method22340(field4683.method6762().method7405().method7289(Class237.field911, Class353.method1092(method6994)), Class353.method1099(method6994) * 16 + 8, Class353.method1100(method6994) * 16 + 8, Class353.method1101(method6994) * 16 + 8, 16711680, 0.3f);
             }

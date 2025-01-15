@@ -10,26 +10,27 @@ import com.mojang.datafixers.types.DynamicOps;
 import java.util.Objects;
 import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.world.dimension.DimensionType;
 
 public final class Class363 implements IDynamicSerializable
 {
-    private final Class383 field2191;
+    private final DimensionType field2191;
     private final BlockPos field2192;
     
-    private Class363(final Class383 field2191, final BlockPos field2192) {
+    private Class363(final DimensionType field2191, final BlockPos field2192) {
         this.field2191 = field2191;
         this.field2192 = field2192;
     }
     
-    public static Class363 method1167(final Class383 class383, final BlockPos class384) {
+    public static Class363 method1167(final DimensionType class383, final BlockPos class384) {
         return new Class363(class383, class384);
     }
     
     public static Class363 method1168(final Dynamic<?> dynamic) {
-        return dynamic.get("dimension").map((Function)Class383::method1268).flatMap(p1 -> dynamic2.get("pos").map((Function) BlockPos::method1122).map(class384 -> new Class363(class383, class384))).orElseThrow(() -> new IllegalArgumentException("Could not parse GlobalPos"));
+        return dynamic.get("dimension").map((Function) DimensionType::method1268).flatMap(p1 -> dynamic2.get("pos").map((Function) BlockPos::deserialize).map(class384 -> new Class363(class383, class384))).orElseThrow(() -> new IllegalArgumentException("Could not parse GlobalPos"));
     }
     
-    public Class383 method1169() {
+    public DimensionType method1169() {
         return this.field2191;
     }
     
@@ -55,8 +56,8 @@ public final class Class363 implements IDynamicSerializable
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("dimension"), this.field2191.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps), dynamicOps.createString("pos"), this.field2192.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)));
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("dimension"), this.field2191.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps), dynamicOps.createString("pos"), this.field2192.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)));
     }
     
     @Override

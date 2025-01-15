@@ -39,7 +39,7 @@ public class Class4566 extends Class4535<Class5122>
                     n3 += n2 / 2;
                 }
                 if (n3 >= 1) {
-                    final BlockPos method1134 = class1853.method1134(random.nextInt(n3) - random.nextInt(n3), n2, random.nextInt(n3) - random.nextInt(n3));
+                    final BlockPos method1134 = class1853.add(random.nextInt(n3) - random.nextInt(n3), n2, random.nextInt(n3) - random.nextInt(n3));
                     final Class7096 method1135 = class1851.method6701(method1134);
                     final Class3833 method1136 = method1135.method21696();
                     if (method1135.method21697() != Class8059.field33153) {

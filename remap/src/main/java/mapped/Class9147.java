@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.ArrayList;

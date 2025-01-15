@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class5729 extends Class5725
 {
     private static String[] field23284;
@@ -12,12 +14,12 @@ public class Class5729 extends Class5725
     private float field23287;
     private float field23288;
     private float field23289;
-    private Class511 field23290;
+    private LivingEntity field23290;
     private boolean field23291;
     private boolean field23292;
     private Class1953 field23293;
     
-    public Class5729(final float field23285, final float field23286, final float field23287, final float field23288, final float field23289, final Class511 field23290) {
+    public Class5729(final float field23285, final float field23286, final float field23287, final float field23288, final float field23289, final LivingEntity field23290) {
         this.field23291 = true;
         this.field23292 = true;
         this.field23285 = field23285;
@@ -73,7 +75,7 @@ public class Class5729 extends Class5725
         this.field23288 = field23288;
     }
     
-    public Class511 method17016() {
+    public LivingEntity method17016() {
         return this.field23290;
     }
     

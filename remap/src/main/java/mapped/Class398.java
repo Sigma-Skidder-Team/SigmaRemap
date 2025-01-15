@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class398 implements ICommandSource
 {
@@ -27,8 +28,8 @@ public class Class398 implements ICommandSource
     }
     
     public Class7492 method1637() {
-        final Class1849 method1481 = this.field2378.method1481(Class383.field2223);
-        return new Class7492(this, new Vec3d(method1481.method6758()), Vec2f.ZERO, method1481, 4, "Recon", new Class2260("Rcon"), this.field2378, null);
+        final Class1849 method1481 = this.field2378.method1481(DimensionType.field2223);
+        return new Class7492(this, new Vec3d(method1481.method6758()), Vec2f.ZERO, method1481, 4, "Recon", new StringTextComponent("Rcon"), this.field2378, null);
     }
     
     @Override

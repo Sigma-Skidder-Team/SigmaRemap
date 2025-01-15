@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -12,7 +15,7 @@ public class Class854 extends Class853
 {
     private static String[] field4561;
     
-    public Class854(final EntityType<? extends Class854> class7499, final Class1847 class7500) {
+    public Class854(final EntityType<? extends Class854> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -49,7 +52,7 @@ public class Class854 extends Class853
     
     @Override
     public Class1932 method4161() {
-        return this.method5131() ? Class9020.field38063 : this.method1642().method23368();
+        return this.method5131() ? Class9020.field38063 : this.getType().method23368();
     }
     
     @Override
@@ -69,9 +72,9 @@ public class Class854 extends Class853
     
     @Override
     public void method2725() {
-        final Vec3d method1935 = this.method1935();
-        this.method1937(method1935.x, this.method2724() + this.method5130() * 0.1f, method1935.z);
-        this.field2448 = true;
+        final Vec3d method1935 = this.getMotion();
+        this.setMotion(method1935.x, this.method2724() + this.method5130() * 0.1f, method1935.z);
+        this.isAirBorne = true;
     }
     
     @Override
@@ -80,9 +83,9 @@ public class Class854 extends Class853
             super.method2727(class7909);
         }
         else {
-            final Vec3d method1935 = this.method1935();
-            this.method1937(method1935.x, 0.22f + this.method5130() * 0.05f, method1935.z);
-            this.field2448 = true;
+            final Vec3d method1935 = this.getMotion();
+            this.setMotion(method1935.x, 0.22f + this.method5130() * 0.05f, method1935.z);
+            this.isAirBorne = true;
         }
     }
     
@@ -102,7 +105,7 @@ public class Class854 extends Class853
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return this.method5131() ? Class8520.field35588 : Class8520.field35357;
     }
     

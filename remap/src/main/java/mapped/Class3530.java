@@ -34,8 +34,8 @@ public class Class3530 extends Class3446
         }
         int i = 0;
         while (i < 3) {
-            final BlockPos method5038 = method5037.method1134(Class843.method5050(this.field16559).nextInt(15) - 7, Class843.method5051(this.field16559).nextInt(11) - 5, Class843.method5052(this.field16559).nextInt(15) - 7);
-            if (!this.field16559.field2391.method6961(method5038)) {
+            final BlockPos method5038 = method5037.add(Class843.method5050(this.field16559).nextInt(15) - 7, Class843.method5051(this.field16559).nextInt(11) - 5, Class843.method5052(this.field16559).nextInt(15) - 7);
+            if (!this.field16559.world.method6961(method5038)) {
                 ++i;
             }
             else {

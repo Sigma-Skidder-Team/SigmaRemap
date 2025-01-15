@@ -14,7 +14,7 @@ public final class Class6992 implements Class6991
     
     @Override
     public ITextComponent method21403() {
-        return new Class2260("");
+        return new StringTextComponent("");
     }
     
     @Override

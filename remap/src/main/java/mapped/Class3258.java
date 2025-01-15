@@ -19,7 +19,7 @@ public class Class3258 extends Class3247
     @Class6753
     public void method10272(final Class5739 class5739) {
         if (this.method9906() && (Class3258.field15514.field4684.method1809() || !this.method9883("Sneak"))) {
-            final Class7005 method13697 = Class4609.method13697(Class3258.field15514.field4684.field2399, Class3258.field15514.field4684.field2400, this.method9886("Maximum range"));
+            final Class7005 method13697 = Class4609.method13697(Class3258.field15514.field4684.rotationYaw, Class3258.field15514.field4684.rotationPitch, this.method9886("Maximum range"));
             Vec3i method13698 = null;
             if (method13697 != null) {
                 method13698 = method13697.method21447();
@@ -29,7 +29,7 @@ public class Class3258 extends Class3247
     }
     
     private double method10273() {
-        return MathHelper.sin((float)Math.toRadians(90.0f - Class3258.field15514.field4684.field2400)) * 10.0f;
+        return MathHelper.sin((float)Math.toRadians(90.0f - Class3258.field15514.field4684.rotationPitch)) * 10.0f;
     }
     
     private void method10274(final double n, final double n2, final double n3, final double n4) {
@@ -41,7 +41,7 @@ public class Class3258 extends Class3247
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(n2, n3, n4);
-        GL11.glRotatef((float)(Class3258.field15514.field4684.field2424 % 90 * 4), 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef((float)(Class3258.field15514.field4684.ticksExisted % 90 * 4), 0.0f, 1.0f, 0.0f);
         this.method10276();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

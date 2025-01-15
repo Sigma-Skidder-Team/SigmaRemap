@@ -9,6 +9,7 @@ import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
+import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class9341
 {

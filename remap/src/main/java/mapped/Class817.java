@@ -5,6 +5,13 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -12,21 +19,21 @@ import javax.annotation.Nullable;
 public class Class817 extends Class789
 {
     private static final Class120 field4376;
-    private static final Class8810<Boolean> field4377;
+    private static final DataParameter<Boolean> field4377;
     private Class3452<Class512> field4378;
     private Class3474 field4379;
     
-    public Class817(final EntityType<? extends Class817> class7499, final Class1847 class7500) {
+    public Class817(final EntityType<? extends Class817> class7499, final World class7500) {
         super(class7499, class7500);
         this.method4812();
     }
     
     private boolean method4808() {
-        return this.field2432.method33568(Class817.field4377);
+        return this.dataManager.get(Class817.field4377);
     }
     
     private void method4809(final boolean b) {
-        this.field2432.method33569(Class817.field4377, b);
+        this.dataManager.set(Class817.field4377, b);
         this.method4812();
     }
     
@@ -45,7 +52,7 @@ public class Class817 extends Class789
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class817.field4377, false);
+        this.dataManager.register(Class817.field4377, false);
     }
     
     @Override
@@ -65,23 +72,23 @@ public class Class817 extends Class789
     @Override
     public void method4172() {
         if (!this.method4148().method19905()) {
-            this.method1653(Class290.field1663);
+            this.method1653(Pose.field1663);
             this.method1816(false);
         }
         else {
             final double method19906 = this.method4148().method19906();
             if (method19906 != 0.6) {
                 if (method19906 != 1.33) {
-                    this.method1653(Class290.field1663);
+                    this.method1653(Pose.field1663);
                     this.method1816(false);
                 }
                 else {
-                    this.method1653(Class290.field1663);
+                    this.method1653(Pose.field1663);
                     this.method1816(true);
                 }
             }
             else {
-                this.method1653(Class290.field1668);
+                this.method1653(Pose.field1668);
                 this.method1816(false);
             }
         }
@@ -89,7 +96,7 @@ public class Class817 extends Class789
     
     @Override
     public boolean method4168(final double n) {
-        return !this.method4808() && this.field2424 > 2400;
+        return !this.method4808() && this.ticksExisted > 2400;
     }
     
     @Override
@@ -117,7 +124,7 @@ public class Class817 extends Class789
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35404;
     }
     
@@ -132,12 +139,12 @@ public class Class817 extends Class789
     
     @Override
     public boolean method2734(final Entity class399) {
-        return class399.method1740(Class7929.method25693(this), this.method4810());
+        return class399.attackEntityFrom(DamageSource.method25693(this), this.method4810());
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
-        return !this.method1849(class7929) && super.method1740(class7929, n);
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
+        return !this.method1849(class7929) && super.attackEntityFrom(class7929, n);
     }
     
     @Override
@@ -148,15 +155,15 @@ public class Class817 extends Class789
                 if (this.method4357(method2715)) {
                     if (class512.method1734(this) < 9.0) {
                         this.method4358(class512, method2715);
-                        if (!this.field2391.field10067) {
-                            if (this.field2423.nextInt(3) != 0) {
+                        if (!this.world.field10067) {
+                            if (this.rand.nextInt(3) != 0) {
                                 this.method4811(false);
-                                this.field2391.method6761(this, (byte)40);
+                                this.world.method6761(this, (byte)40);
                             }
                             else {
                                 this.method4809(true);
                                 this.method4811(true);
-                                this.field2391.method6761(this, (byte)41);
+                                this.world.method6761(this, (byte)41);
                             }
                         }
                         return true;
@@ -188,7 +195,7 @@ public class Class817 extends Class789
             class6908 = Class8432.field34639;
         }
         for (int i = 0; i < 7; ++i) {
-            this.field2391.method6709(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02);
+            this.world.method6709(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     
@@ -203,7 +210,7 @@ public class Class817 extends Class789
     }
     
     public Class817 method4813(final Class788 class788) {
-        return EntityType.field29008.method23371(this.field2391);
+        return EntityType.field29008.method23371(this.world);
     }
     
     @Override
@@ -244,6 +251,6 @@ public class Class817 extends Class789
     
     static {
         field4376 = Class120.method618(Class7739.field31379, Class7739.field31380);
-        field4377 = Class9184.method33564(Class817.class, Class7709.field30661);
+        field4377 = EntityDataManager.method33564(Class817.class, Class7709.field30661);
     }
 }

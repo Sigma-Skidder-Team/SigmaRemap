@@ -25,7 +25,7 @@ public class Class3330 extends Class3167
             if (this.field15927 >= this.method9886("Flags")) {
                 Class7482.method23149(class5717, 0.0);
                 class5717.method16975(0.0);
-                Class3330.field15514.field4684.method1937(0.0, 0.0, 0.0);
+                Class3330.field15514.field4684.setMotion(0.0, 0.0, 0.0);
             }
         }
     }
@@ -40,7 +40,7 @@ public class Class3330 extends Class3167
     @Class6753
     public void method10544(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            if (!Class3330.field15514.field4684.field2404 && !Class6430.method19160(Class3330.field15514.field4684, 0.001f)) {
+            if (!Class3330.field15514.field4684.onGround && !Class6430.method19160(Class3330.field15514.field4684, 0.001f)) {
                 if (this.field15927 >= this.method9886("Flags")) {
                     if (this.field15928 == 0) {
                         this.field15928 = 60;
@@ -69,7 +69,7 @@ public class Class3330 extends Class3167
         if (Class3330.field15514.field4684 != null) {
             if (class5723.method16998() instanceof Class4328) {
                 if (!Class6430.method19160(Class3330.field15514.field4684, 0.3f)) {
-                    if (Class3330.field15514.field4684.field2424 > 10) {
+                    if (Class3330.field15514.field4684.ticksExisted > 10) {
                         ++this.field15927;
                         if (this.field15927 > this.method9886("Flags")) {
                             class5723.method16961(true);

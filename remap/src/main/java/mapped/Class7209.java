@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public final class Class7209 extends Class7207
 {
     public Class7209(final int n, final String s) {

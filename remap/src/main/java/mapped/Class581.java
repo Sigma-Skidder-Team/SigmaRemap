@@ -10,6 +10,8 @@ import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import java.util.Locale;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class581 extends Class565 implements Class563, Class574, Class586, Class587<Class120>
@@ -262,7 +264,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     
     @Override
     public boolean method2982(final double n, final double n2, final int n3) {
-        if (!this.method3421() || this.field3471.field4684.method1639()) {
+        if (!this.method3421() || this.field3471.field4684.isSpectator()) {
             return false;
         }
         if (this.field3475.method34158(n, n2, n3, (this.field3464 - 147) / 2 - this.field3463, (this.field3465 - 166) / 2, 147, 166)) {
@@ -358,7 +360,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     @Override
     public boolean method2972(final int n, final int n2, final int n3) {
         this.field3478 = false;
-        if (!this.method3421() || this.field3471.field4684.method1639()) {
+        if (!this.method3421() || this.field3471.field4684.isSpectator()) {
             return false;
         }
         if (n == 256 && !this.method3436()) {
@@ -395,7 +397,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
         if (this.field3478) {
             return false;
         }
-        if (!this.method3421() || this.field3471.field4684.method1639()) {
+        if (!this.method3421() || this.field3471.field4684.isSpectator()) {
             return false;
         }
         if (!this.field3472.method3004(c, n)) {

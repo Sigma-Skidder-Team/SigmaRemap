@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Calendar;
 
@@ -57,7 +58,7 @@ public class Class4167<T extends Class436 & Class476> extends Class4158<T>
     
     @Override
     public void method12454(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
-        final Class1847 method2186 = t.method2186();
+        final World method2186 = t.method2186();
         final boolean b = method2186 != null;
         final Class7096 class7353 = b ? t.method2194() : ((Class7097<O, Class7096>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, Direction.SOUTH);
         final Class180 class7354 = class7353.method21771(Class3865.field17498) ? class7353.method21772(Class3865.field17498) : Class180.field530;

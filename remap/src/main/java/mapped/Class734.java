@@ -7,7 +7,7 @@ package mapped;
 public class Class734 extends Class527
 {
     public Class734() {
-        super(new Class2260("Out of memory!"));
+        super(new StringTextComponent("Out of memory!"));
     }
     
     @Override
@@ -24,7 +24,7 @@ public class Class734 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, this.field3153 / 4 - 60 + 20, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, this.field3153 / 4 - 60 + 20, 16777215);
         this.method3297(this.field3156, "Minecraft has run out of memory.", this.field3152 / 2 - 140, this.field3153 / 4 - 60 + 60 + 0, 10526880);
         this.method3297(this.field3156, "This could be caused by a bug in the game or by the", this.field3152 / 2 - 140, this.field3153 / 4 - 60 + 60 + 18, 10526880);
         this.method3297(this.field3156, "Java Virtual Machine not being allocated enough", this.field3152 / 2 - 140, this.field3153 / 4 - 60 + 60 + 27, 10526880);

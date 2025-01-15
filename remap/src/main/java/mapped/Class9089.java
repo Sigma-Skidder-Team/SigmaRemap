@@ -8,6 +8,7 @@ import com.google.gson.JsonNull;
 import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
 
 public class Class9089
@@ -37,12 +38,12 @@ public class Class9089
         this.field38494 = field38494;
     }
     
-    public boolean method32836(final Class513 class513, final Class7929 class514) {
+    public boolean method32836(final Class513 class513, final DamageSource class514) {
         return this.method32837(class513.method2940(), class513.method1934(), class514);
     }
     
-    public boolean method32837(final Class1849 class1849, final Vec3d class1850, final Class7929 class1851) {
-        return this == Class9089.field38484 || ((this.field38485 == null || this.field38485 == class1851.method25705()) && (this.field38486 == null || this.field38486 == class1851.method25707()) && (this.field38487 == null || this.field38487 == class1851.method25709()) && (this.field38488 == null || this.field38488 == class1851.method25711()) && (this.field38489 == null || this.field38489 == class1851.method25712()) && (this.field38490 == null || this.field38490 == class1851.method25719()) && (this.field38491 == null || this.field38491 == class1851.method25723()) && (this.field38492 == null || this.field38492 == (class1851 == Class7929.field32563)) && this.field38493.method27016(class1849, class1850, class1851.method25713()) && this.field38494.method27016(class1849, class1850, class1851.method25714()));
+    public boolean method32837(final Class1849 class1849, final Vec3d class1850, final DamageSource class1851) {
+        return this == Class9089.field38484 || ((this.field38485 == null || this.field38485 == class1851.method25705()) && (this.field38486 == null || this.field38486 == class1851.method25707()) && (this.field38487 == null || this.field38487 == class1851.method25709()) && (this.field38488 == null || this.field38488 == class1851.method25711()) && (this.field38489 == null || this.field38489 == class1851.method25712()) && (this.field38490 == null || this.field38490 == class1851.method25719()) && (this.field38491 == null || this.field38491 == class1851.method25723()) && (this.field38492 == null || this.field38492 == (class1851 == DamageSource.LIGHTNING_BOLT)) && this.field38493.method27016(class1849, class1850, class1851.method25713()) && this.field38494.method27016(class1849, class1850, class1851.method25714()));
     }
     
     public static Class9089 method32838(final JsonElement jsonElement) {

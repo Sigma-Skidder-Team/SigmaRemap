@@ -7,7 +7,10 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Multimap;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Map;
 
@@ -23,7 +26,7 @@ public class Class4076 extends Class4071
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         if (class7075.method21648() != Direction.DOWN) {
             if (method21654.method6701(method21655.method1137()).method21706()) {
@@ -45,7 +48,7 @@ public class Class4076 extends Class4071
     }
     
     @Override
-    public boolean method11711(final ItemStack class8321, final Class511 class8322, final Class511 class8323) {
+    public boolean method11711(final ItemStack class8321, final LivingEntity class8322, final LivingEntity class8323) {
         class8321.method27636(1, class8323, class8324 -> class8324.method2794(Class2215.field13600));
         return true;
     }

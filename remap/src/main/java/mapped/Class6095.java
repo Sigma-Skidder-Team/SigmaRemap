@@ -22,11 +22,11 @@ public class Class6095<T extends Class3662<?>> implements Class6096<T>
     }
     
     @Override
-    public T method18180(final Class1932 class1932, final Class8654 class1933) {
+    public T method18180(final Class1932 class1932, final PacketBuffer class1933) {
         return this.field24732.apply(class1932);
     }
     
     @Override
-    public void method18181(final Class8654 class8654, final T t) {
+    public void method18181(final PacketBuffer class8654, final T t) {
     }
 }

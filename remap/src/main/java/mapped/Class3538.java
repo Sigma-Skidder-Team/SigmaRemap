@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Predicate;
 
 public class Class3538<T extends Class759> extends Class3446

@@ -46,7 +46,7 @@ public class Class3282 extends Class3167
                     class5745.method17050((method17051 <= 0.42) ? method17051 : 0.4199998);
                     this.field15790 = Class7482.method23144()[0] - 90.0f;
                     this.field15787 = 1;
-                    this.field15788 = Class3282.field15514.field4684.field2396;
+                    this.field15788 = Class3282.field15514.field4684.posY;
                     class5745.method17049();
                 }
             }
@@ -97,7 +97,7 @@ public class Class3282 extends Class3167
                     }
                 }
                 else {
-                    class5717.method16975(this.field15788 + this.field15789 - Class3282.field15514.field4684.field2396);
+                    class5717.method16975(this.field15788 + this.field15789 - Class3282.field15514.field4684.posY);
                     final double n = this.method9883("AAC") ? 0.301 : Class7482.method23136();
                     final float n2 = this.field15790 * 0.017453292f;
                     class5717.method16973(-MathHelper.sin(n2) * n);
@@ -121,10 +121,10 @@ public class Class3282 extends Class3167
     private void method10365(final Class5738 class5738) {
         if (this.method9906() && Class3282.field15514.field4684 != null) {
             if (!class5738.method17027()) {
-                Class3282.field15514.field4684.field2420 = 1.07f;
+                Class3282.field15514.field4684.stepHeight = 1.07f;
             }
             else {
-                Class3282.field15514.field4684.field2420 = 0.5f;
+                Class3282.field15514.field4684.stepHeight = 0.5f;
             }
         }
     }

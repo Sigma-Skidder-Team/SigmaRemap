@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import java.io.IOException;
 import java.util.List;
 
-public class Class4286 implements Class4252<Class5800>
+public class Class4286 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19223;
     private int field19224;
@@ -19,27 +19,27 @@ public class Class4286 implements Class4252<Class5800>
     }
     
     public Class4286(final Entity class399) {
-        this.field19224 = class399.method1643();
+        this.field19224 = class399.getEntityId();
         final List<Entity> method1908 = class399.method1908();
         this.field19225 = new int[method1908.size()];
         for (int i = 0; i < method1908.size(); ++i) {
-            this.field19225[i] = ((Entity)method1908.get(i)).method1643();
+            this.field19225[i] = ((Entity)method1908.get(i)).getEntityId();
         }
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19224 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19224 = class8654.readVarInt();
         this.field19225 = class8654.method29489();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19224);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19224);
         class8654.method29488(this.field19225);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17299(this);
     }
     

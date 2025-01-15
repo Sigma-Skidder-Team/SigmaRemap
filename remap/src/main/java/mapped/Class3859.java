@@ -8,7 +8,9 @@ import java.util.Collections;
 import java.util.Random;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -66,7 +68,7 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24486();
     }
     
@@ -76,7 +78,7 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
             class7097.method6834().method21345(class7098, class7096.method21756().method21779(), this.method11826(class7097));
         }
@@ -91,13 +93,13 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
             class7097.method6834().method21345(class7098, class7096.method21756().method21779(), this.method11826(class7097));
         }
     }
     
-    public boolean method11926(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11926(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         if (this.field17481.method22166(Class7324.field28320)) {
             int n = 0;
             for (final Direction class1850 : Direction.values()) {
@@ -142,7 +144,7 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (this.field17481.method22166(Class7324.field28320)) {
             class7099.method1722();
         }

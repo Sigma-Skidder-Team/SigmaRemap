@@ -27,7 +27,7 @@ public class Class3340 extends Class3167
     public void method9897() {
         Class3340.field15514.field4633.field26532 = 1.0f;
         Class7482.method23151(0.2);
-        if (Class3340.field15514.field4684.method1935().y > 0.0) {
+        if (Class3340.field15514.field4684.getMotion().y > 0.0) {
             Class6430.method19155(-0.078);
         }
     }
@@ -46,7 +46,7 @@ public class Class3340 extends Class3167
                 if (Class6430.method19160(Class3340.field15514.field4684, 0.01f)) {
                     if (this.method9883("AutoJump")) {
                         Class3340.field15514.field4684.method2725();
-                        class5717.method16975(Class3340.field15514.field4684.method1935().y);
+                        class5717.method16975(Class3340.field15514.field4684.getMotion().y);
                         Class7482.method23149(class5717, this.field15942);
                     }
                     if (this.field15941 == 1) {
@@ -79,7 +79,7 @@ public class Class3340 extends Class3167
                 break;
             }
             case "Hop": {
-                if (!Class3340.field15514.field4684.field2406 || !Class6430.method19160(Class3340.field15514.field4684, 0.001f) || !Class7482.method23148()) {
+                if (!Class3340.field15514.field4684.collidedVertically || !Class6430.method19160(Class3340.field15514.field4684, 0.001f) || !Class7482.method23148()) {
                     ++this.field15941;
                     if (this.field15941 == 1) {
                         this.field15942 = 0.4 + Class7482.method23139() * 0.1;
@@ -93,20 +93,20 @@ public class Class3340 extends Class3167
                 }
                 if (this.method9883("AutoJump")) {
                     Class3340.field15514.field4684.method2725();
-                    class5717.method16975(Class3340.field15514.field4684.method1935().y);
+                    class5717.method16975(Class3340.field15514.field4684.getMotion().y);
                     Class7482.method23149(class5717, this.field15942);
                     break;
                 }
                 break;
             }
             case "YPort": {
-                if (Class3340.field15514.field4684.field2404) {
+                if (Class3340.field15514.field4684.onGround) {
                     if (Class6430.method19114()) {
                         class5717.method16975(0.53000000000001);
                         Class7482.method23149(class5717, 3.67 * this.method9886("Speed"));
                         this.field15941 = 0;
                     }
-                    this.field15943 = Class3340.field15514.field4684.field2396;
+                    this.field15943 = Class3340.field15514.field4684.posY;
                     if (!Class9463.method35173().method35189().method21551(Class3280.class).method9906()) {
                         Class3340.field15514.field4633.field26532 = 1.0f;
                         break;
@@ -139,15 +139,15 @@ public class Class3340 extends Class3167
         if (this.method9906()) {
             if (this.field15943 >= 0.0) {
                 if (this.method9887("Mode").equals("YPort")) {
-                    if (Class3340.field15514.field4684.field2404) {
+                    if (Class3340.field15514.field4684.onGround) {
                         if (Class6430.method19160(Class3340.field15514.field4684, 0.001f)) {
-                            this.field15943 = Class3340.field15514.field4684.field2396;
+                            this.field15943 = Class3340.field15514.field4684.posY;
                         }
                     }
-                    Class3340.field15514.field4684.field2396 = this.field15943;
-                    Class3340.field15514.field4684.field2418 = this.field15943;
+                    Class3340.field15514.field4684.posY = this.field15943;
+                    Class3340.field15514.field4684.lastTickPosY = this.field15943;
                     Class3340.field15514.field4684.field3019 = this.field15943;
-                    Class3340.field15514.field4684.field2393 = this.field15943;
+                    Class3340.field15514.field4684.prevPosY = this.field15943;
                     if (Class7482.method23148()) {
                         Class3340.field15514.field4684.field3013 = 0.099999994f;
                     }

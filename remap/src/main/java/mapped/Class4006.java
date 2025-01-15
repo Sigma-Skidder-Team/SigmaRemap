@@ -33,7 +33,7 @@ public class Class4006 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         Class7702 class7100 = Class7698.method24486();
         if (class7096.method21772((Class7111<Boolean>)Class4006.field18055)) {
             class7100 = Class7698.method24492(class7100, Class4006.field18061);
@@ -257,7 +257,7 @@ public class Class4006 extends Class3833
     }
     
     private boolean method12180(final Class1855 class1855, final BlockPos class1856) {
-        final Iterable<BlockPos> method1158 = BlockPos.method1158(class1856.getX() - 4, class1856.getY() - 1, class1856.getZ() - 4, class1856.getX() + 4, class1856.getY() + 1, class1856.getZ() + 4);
+        final Iterable<BlockPos> method1158 = BlockPos.getAllInBoxMutable(class1856.getX() - 4, class1856.getY() - 1, class1856.getZ() - 4, class1856.getX() + 4, class1856.getY() + 1, class1856.getZ() + 4);
         int n = 5;
         final Iterator<BlockPos> iterator = method1158.iterator();
         while (iterator.hasNext()) {

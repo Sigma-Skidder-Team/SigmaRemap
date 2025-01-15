@@ -278,7 +278,7 @@ public class Class4995
     
     public static String method15170(final Class527 class527) {
         final ITextComponent method3026 = class527.method3026();
-        return (method3026 != null) ? method3026.method8459() : null;
+        return (method3026 != null) ? method3026.getUnformattedComponentText() : null;
     }
     
     private boolean method15171(final BlockPos class354, final Class1856 class355) {

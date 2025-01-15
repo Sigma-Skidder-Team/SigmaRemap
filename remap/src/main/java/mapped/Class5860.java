@@ -8,10 +8,11 @@ import java.util.Random;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import java.util.function.Function;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 
-public class Class5860<T extends Class511> extends Class5853<T>
+public class Class5860<T extends LivingEntity> extends Class5853<T>
 {
     private static String[] field24020;
     private List<Class6300> field24021;

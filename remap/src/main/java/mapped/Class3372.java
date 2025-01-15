@@ -44,7 +44,7 @@ public class Class3372 extends Class3167
     @Class6753
     public void method10730(final Class5717 class5717) {
         if (this.method9906() && Class3372.field15514.field4684 != null) {
-            if (!Class3372.field15514.field4684.field2404) {
+            if (!Class3372.field15514.field4684.onGround) {
                 if (this.field16042 >= 0) {
                     if (this.field16045) {
                         if (!Class6430.method19114()) {
@@ -70,11 +70,11 @@ public class Class3372 extends Class3167
                             this.field16041 -= 0.05;
                         }
                     }
-                    if (Class3372.field15514.field4684.field2405) {
+                    if (Class3372.field15514.field4684.collidedHorizontally) {
                         this.field16040 = 0.35;
                         this.field16043 = 1;
                     }
-                    if (Class3372.field15514.field4684.field2406) {
+                    if (Class3372.field15514.field4684.collidedVertically) {
                         this.field16041 = -0.078;
                         this.field16042 = 23;
                     }
@@ -101,11 +101,11 @@ public class Class3372 extends Class3167
                     }
                 }
                 this.field16045 = Class6430.method19114();
-                final BlockPos class5718 = new BlockPos(Class3372.field15514.field4684.field2395, Class3372.field15514.field4684.field2396 - 0.4, Class3372.field15514.field4684.field2397);
+                final BlockPos class5718 = new BlockPos(Class3372.field15514.field4684.posX, Class3372.field15514.field4684.posY - 0.4, Class3372.field15514.field4684.posZ);
                 if (Class6430.method19114()) {
                     if ((this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718)) || this.method9914().method9883("Auto Jump")) {
                         Class3372.field15514.field4684.method2725();
-                        class5717.method16975(Class3372.field15514.field4684.method1935().y);
+                        class5717.method16975(Class3372.field15514.field4684.getMotion().y);
                         Class7482.method23149(class5717, 0.0);
                     }
                 }
@@ -117,7 +117,7 @@ public class Class3372 extends Class3167
     public void method10731(final Class5722 class5722) {
         if (this.method9906() && Class3372.field15514.field4684 != null) {
             this.field16040 = 0.81 + this.field16043 * 0.095;
-            if (Class3372.field15514.field4684.field2396 != (int)Class3372.field15514.field4684.field2396) {
+            if (Class3372.field15514.field4684.posY != (int)Class3372.field15514.field4684.posY) {
                 this.field16040 = 0.52;
                 this.field16043 = 1;
             }

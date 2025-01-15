@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.List;
@@ -34,13 +35,13 @@ public class Class3975 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.method21772((Class7111<Boolean>)Class3975.field17954) ? Class3975.field17961 : Class3975.field17962;
     }
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         return (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)Class3975.field17956, this.method12117(method21654.method6701(method21655.method1141()), Direction.NORTH))).method21773((Class7111<Comparable>)Class3975.field17957, this.method12117(method21654.method6701(method21655.method1147()), Direction.EAST))).method21773((Class7111<Comparable>)Class3975.field17958, this.method12117(method21654.method6701(method21655.method1143()), Direction.SOUTH))).method21773((Class7111<Comparable>)Class3975.field17959, this.method12117(method21654.method6701(method21655.method1145()), Direction.WEST));
     }
@@ -51,14 +52,14 @@ public class Class3975 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
             this.method12115(class7097, class7098, class7096);
         }
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!b) {
             if (class7096.method21696() != class7099.method21696()) {
                 this.method12115(class7097, class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3975.field17953, true));
@@ -67,7 +68,7 @@ public class Class3975 extends Class3833
     }
     
     @Override
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         if (!class1847.field10067) {
             if (!class1850.method2713().method27620()) {
                 if (class1850.method2713().method27622() == Class7739.field31426) {
@@ -78,7 +79,7 @@ public class Class3975 extends Class3833
         super.method11870(class1847, class1848, class1849, class1850);
     }
     
-    private void method12115(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    private void method12115(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         for (final Direction class1850 : new Direction[] { Direction.SOUTH, Direction.WEST}) {
             int j = 1;
             while (j < 42) {
@@ -102,7 +103,7 @@ public class Class3975 extends Class3833
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.field10067) {
             if (!class7096.method21772((Class7111<Boolean>)Class3975.field17953)) {
                 this.method12116(class7097, class7098);
@@ -117,7 +118,7 @@ public class Class3975 extends Class3833
         }
     }
     
-    private void method12116(final Class1847 class1847, final BlockPos class1848) {
+    private void method12116(final World class1847, final BlockPos class1848) {
         final Class7096 method6701 = class1847.method6701(class1848);
         final boolean booleanValue = ((Class7097<Object, Class7096>)method6701).method21772((Class7111<Boolean>)Class3975.field17953);
         boolean b = false;

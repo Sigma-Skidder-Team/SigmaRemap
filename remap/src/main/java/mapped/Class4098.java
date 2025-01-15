@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -22,7 +24,7 @@ public class Class4098 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13327);
         if (method2716.method21449() == Class2165.field12880) {
@@ -43,7 +45,7 @@ public class Class4098 extends Class3820
         }
         final Class423 class1851 = new Class423(class1847, method2716.method21451().x, method2716.method21451().y, method2716.method21451().z);
         class1851.method2064(this.field18200);
-        class1851.field2399 = class1848.field2399;
+        class1851.rotationYaw = class1848.rotationYaw;
         if (class1847.method6978(class1851, class1851.method1886().method18496(-0.1))) {
             if (!class1847.field10067) {
                 class1847.method6886(class1851);

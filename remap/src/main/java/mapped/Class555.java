@@ -7,7 +7,7 @@ package mapped;
 public class Class555 extends Class527
 {
     public Class555() {
-        super(new Class2260("Jello Options"));
+        super(new StringTextComponent("Jello Options"));
     }
     
     @Override

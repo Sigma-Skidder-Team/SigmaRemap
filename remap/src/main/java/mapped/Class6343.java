@@ -168,30 +168,30 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         final Class7859 method7020 = class1879.method7019();
         final int method7021 = method7020.method25426();
         final int method7022 = method7020.method25427();
-        final Class385 class1881 = new Class385();
+        final Mutable class1881 = new Mutable();
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
                 final int n = method7021 + i;
                 final int n2 = method7022 + j;
                 final int n3 = class1879.method7018(Class2020.field11521, i, j) + 1;
-                class1878.method6959(class1881.method1284(method7021 + i, n3, method7022 + j)).method9860(class1880, class1879, n, n2, n3, this.field25370.method29028(n * 0.0625, n2 * 0.0625, 0.0625, i * 0.0625) * 15.0, this.method18876().method21582(), this.method18876().method21583(), this.method18853(), this.field25383.method6753());
+                class1878.method6959(class1881.setPos(method7021 + i, n3, method7022 + j)).method9860(class1880, class1879, n, n2, n3, this.field25370.method29028(n * 0.0625, n2 * 0.0625, 0.0625, i * 0.0625) * 15.0, this.method18876().method21582(), this.method18876().method21583(), this.method18853(), this.field25383.method6753());
             }
         }
         this.method18860(class1879, class1880);
     }
     
     public void method18860(final Class1860 class1860, final Random random) {
-        final Class385 class1861 = new Class385();
+        final Mutable class1861 = new Mutable();
         final int method25426 = class1860.method7019().method25426();
         final int method25427 = class1860.method7019().method25427();
         final Class7065 method25428 = this.method18876();
         final int method25429 = method25428.method21563();
         final int method25430 = method25428.method21564();
-        for (final BlockPos class1862 : BlockPos.method1158(method25426, 0, method25427, method25426 + 15, 0, method25427 + 15)) {
+        for (final BlockPos class1862 : BlockPos.getAllInBoxMutable(method25426, 0, method25427, method25426 + 15, 0, method25427 + 15)) {
             if (method25430 > 0) {
                 for (int i = method25430; i >= method25430 - 4; --i) {
                     if (i >= method25430 - random.nextInt(5)) {
-                        class1860.method7008(class1861.method1284(class1862.getX(), i, class1862.getZ()), Class7521.field29172.method11878(), false);
+                        class1860.method7008(class1861.setPos(class1862.getX(), i, class1862.getZ()), Class7521.field29172.method11878(), false);
                     }
                 }
             }
@@ -200,7 +200,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             for (int j = method25429 + 4; j >= method25429; --j) {
                 if (j <= method25429 + random.nextInt(5)) {
-                    class1860.method7008(class1861.method1284(class1862.getX(), j, class1862.getZ()), Class7521.field29172.method11878(), false);
+                    class1860.method7008(class1861.setPos(class1862.getX(), j, class1862.getZ()), Class7521.field29172.method11878(), false);
                 }
             }
         }
@@ -268,7 +268,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         final Class1865 class1857 = (Class1865)class1852;
         final Class9548 method18859 = class1857.method7017(Class2020.field11523);
         final Class9548 method18860 = class1857.method7017(Class2020.field11521);
-        final Class385 class1858 = new Class385();
+        final Mutable class1858 = new Mutable();
         final ObjectListIterator iterator5 = ((ObjectList)list).iterator();
         final ObjectListIterator iterator6 = ((ObjectList)list2).iterator();
         for (int j = 0; j < this.field25363; ++j) {
@@ -314,8 +314,8 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                                 double n24 = method18867 / 2.0 - method18867 * method18867 * method18867 / 24.0;
                                 while (iterator5.hasNext()) {
                                     final Class4521 class1860 = (Class4521)iterator5.next();
-                                    final Class6997 method18868 = class1860.method13432();
-                                    n24 += method18862(Math.max(0, Math.max(method18868.field27293 - n18, n18 - method18868.field27296)), n13 - (method18868.field27294 + class1860.method13520()), Math.max(0, Math.max(method18868.field27295 - n22, n22 - method18868.field27298))) * 0.8;
+                                    final MutableBoundingBox method18868 = class1860.method13432();
+                                    n24 += method18862(Math.max(0, Math.max(method18868.minX - n18, n18 - method18868.maxX)), n13 - (method18868.minY + class1860.method13520()), Math.max(0, Math.max(method18868.minZ - n22, n22 - method18868.maxZ))) * 0.8;
                                 }
                                 iterator5.back(((ObjectList)list).size());
                                 while (iterator6.hasNext()) {
@@ -337,7 +337,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                                 }
                                 if (class1862 != Class6343.field25360) {
                                     if (class1862.method21704() != 0) {
-                                        class1858.method1284(n18, n13, n22);
+                                        class1858.setPos(n18, n13, n22);
                                         class1857.method7092(class1858);
                                     }
                                     class1859.method27153(n19, n14, n23, class1862, false);

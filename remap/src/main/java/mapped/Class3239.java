@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -66,18 +67,18 @@ public class Class3239 extends Class3167
                 }
                 case "Ninja": {
                     final float n2 = (float)Math.toRadians(class5718.method1844() - 180.0f);
-                    final double n3 = class5718.field2395 - MathHelper.sin(n2) * method9886;
-                    final double n4 = class5718.field2397 + MathHelper.cos(n2) * method9886;
-                    class5717.method16973(n3 - Class3239.field15514.field4684.field2395);
-                    class5717.method16977(n4 - Class3239.field15514.field4684.field2397);
+                    final double n3 = class5718.posX - MathHelper.sin(n2) * method9886;
+                    final double n4 = class5718.posZ + MathHelper.cos(n2) * method9886;
+                    class5717.method16973(n3 - Class3239.field15514.field4684.posX);
+                    class5717.method16977(n4 - Class3239.field15514.field4684.posZ);
                     break;
                 }
                 case "Random": {
                     final float n5 = (float)(Math.random() * 2.0 * 3.141592653589793);
-                    final double n6 = class5718.field2395 - MathHelper.sin(n5) * method9886;
-                    final double n7 = class5718.field2397 + MathHelper.cos(n5) * method9886;
-                    class5717.method16973(n6 - Class3239.field15514.field4684.field2395);
-                    class5717.method16977(n7 - Class3239.field15514.field4684.field2397);
+                    final double n6 = class5718.posX - MathHelper.sin(n5) * method9886;
+                    final double n7 = class5718.posZ + MathHelper.cos(n5) * method9886;
+                    class5717.method16973(n6 - Class3239.field15514.field4684.posX);
+                    class5717.method16977(n7 - Class3239.field15514.field4684.posZ);
                     break;
                 }
             }
@@ -86,7 +87,7 @@ public class Class3239 extends Class3167
     
     public void method10229(final Entity class399, final double n, final double n2, final Class5717 class400) {
         final float field32884 = Class8845.method30922(class399).field32884;
-        if (Class3239.field15514.field4684.field2405) {
+        if (Class3239.field15514.field4684.collidedHorizontally) {
             this.field15727 *= -1;
         }
         final float n3 = (float)(n / (n2 * 3.141592653589793 * 2.0)) * 360.0f * this.field15727;
@@ -95,10 +96,10 @@ public class Class3239 extends Class3167
         final int n4 = 0;
         method30920[n4] += n3;
         final float n5 = array[0] * 0.017453292f;
-        final float n6 = Class8845.method30920(Class3239.field15514.field4684.method1934(), new Vec3d(class399.field2395 - MathHelper.sin(n5) * n2, class399.field2396, class399.field2397 + MathHelper.cos(n5) * n2))[0] * 0.017453292f;
+        final float n6 = Class8845.method30920(Class3239.field15514.field4684.method1934(), new Vec3d(class399.posX - MathHelper.sin(n5) * n2, class399.posY, class399.posZ + MathHelper.cos(n5) * n2))[0] * 0.017453292f;
         class400.method16973(-MathHelper.sin(n6) * n);
         class400.method16977(MathHelper.cos(n6) * n);
-        final Vec3d class401 = new Vec3d(Class3239.field15514.field4684.field2395 + class400.method16972(), Class3239.field15514.field4684.field2396 + class400.method16974(), Class3239.field15514.field4684.field2397 + class400.method16976());
+        final Vec3d class401 = new Vec3d(Class3239.field15514.field4684.posX + class400.method16972(), Class3239.field15514.field4684.posY + class400.method16974(), Class3239.field15514.field4684.posZ + class400.method16976());
         if (this.method9883("Avoid void")) {
             if (!this.field15728 && this.method10230(class401)) {
                 this.field15727 *= -1;

@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class9298
 {
@@ -152,7 +153,7 @@ public class Class9298
                 }
             }
         }
-        final Class1847 method7065 = class1862.method7065();
+        final World method7065 = class1862.method7065();
         if (this.field39887 == 64) {
             this.field39889 = -1;
         }
@@ -194,7 +195,7 @@ public class Class9298
         this.field39888 = 0;
     }
     
-    private void method34352(final Class1847 class1847, final BlockPos class1848) {
+    private void method34352(final World class1847, final BlockPos class1848) {
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 != null) {
             final Class4357 method6728 = method6727.method2195();
@@ -204,7 +205,7 @@ public class Class9298
         }
     }
     
-    private void method34353(final Class4252<?> class4252, final boolean b) {
+    private void method34353(final IPacket<?> class4252, final boolean b) {
         this.field39894.method1351(this.field39885, b).forEach(class4254 -> class4254.field3039.method17469(class4253));
     }
     

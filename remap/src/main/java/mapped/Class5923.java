@@ -5,9 +5,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
-public class Class5923<T extends Class511> extends Class5844<T>
+public class Class5923<T extends LivingEntity> extends Class5844<T>
 {
     private static String[] field24335;
     private final Class6300 field24336;
@@ -45,7 +46,7 @@ public class Class5923<T extends Class511> extends Class5844<T>
         }
         else {
             float n6 = 1.0f;
-            final Vec3d method1935 = t.method1935();
+            final Vec3d method1935 = t.getMotion();
             if (method1935.y < 0.0) {
                 n6 = 1.0f - (float)Math.pow(-method1935.normalize().y, 1.5);
             }

@@ -19,7 +19,7 @@ public class Class713 extends Class698
     public static final String field3899 = "*";
     
     public Class713(final Class527 field3891, final Class5760 field3892) {
-        super(new Class2260(Class8822.method30773("of.options.shaderOptionsTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.shaderOptionsTitle", new Object[0])));
         this.field3893 = new Class8297(this, new Class7299());
         this.field3894 = null;
         this.field3895 = null;
@@ -180,7 +180,7 @@ public class Class713 extends Class698
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
         if (this.field3895 == null) {
-            this.method3295(this.field3843, this.field3148.method8461(), this.field3152 / 2, 15, 16777215);
+            this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
         }
         else {
             this.method3295(this.field3843, this.field3895, this.field3152 / 2, 15, 16777215);

@@ -8,15 +8,15 @@ import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import java.util.Iterator;
-import java.util.function.Function;
+
 import com.google.common.base.Joiner;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class8914
 {
@@ -31,7 +31,7 @@ public class Class8914
     
     private static int method31410(final Class7492 class7492, final Class7587 class7493) throws CommandSyntaxException {
         final Class7859 class7494 = new Class7859(class7493.field30106 >> 4, class7493.field30107 >> 4);
-        final Class383 method20487 = class7492.method23250().method6789().method20487();
+        final DimensionType method20487 = class7492.method23250().method6789().getType();
         if (!class7492.method23255().method1481(method20487).method6919().contains(class7494.method25422())) {
             throw Class8914.field37491.create((Object)class7494, (Object)method20487);
         }
@@ -40,7 +40,7 @@ public class Class8914
     }
     
     private static int method31411(final Class7492 class7492) {
-        final Class383 method20487 = class7492.method23250().method6789().method20487();
+        final DimensionType method20487 = class7492.method23250().method6789().getType();
         final LongSet method20488 = class7492.method23255().method1481(method20487).method6919();
         final int size = method20488.size();
         if (size <= 0) {
@@ -59,7 +59,7 @@ public class Class8914
     }
     
     private static int method31412(final Class7492 class7492) {
-        final Class383 method20487 = class7492.method23250().method6789().method20487();
+        final DimensionType method20487 = class7492.method23250().method6789().getType();
         class7492.method23255().method1481(method20487).method6919().forEach(n2 -> class7493.method6920(Class7859.method25424(n2), Class7859.method25425(n2), (boolean)(0 != 0)));
         class7492.method23257(new Class2259("commands.forceload.removed.all", new Object[] { method20487 }), true);
         return 0;
@@ -82,7 +82,7 @@ public class Class8914
                         if (l > 256L) {
                             throw Class8914.field37490.create((Object)256, (Object)l);
                         }
-                        final Class383 method20487 = class7492.method23250().method6789().method20487();
+                        final DimensionType method20487 = class7492.method23250().method6789().getType();
                         final Class1849 method20488 = class7492.method23255().method1481(method20487);
                         Object o = null;
                         int i = 0;

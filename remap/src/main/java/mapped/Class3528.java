@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3528 extends Class3446
 {
     private final Class794 field16545;
-    private Class511 field16546;
+    private LivingEntity field16546;
     private final Class1852 field16547;
     private final double field16548;
     private final Class7746 field16549;
@@ -21,7 +23,7 @@ public class Class3528 extends Class3446
     
     public Class3528(final Class794 field16545, final double field16546, final float field16547, final float field16548, final boolean field16549) {
         this.field16545 = field16545;
-        this.field16547 = field16545.field2391;
+        this.field16547 = field16545.world;
         this.field16548 = field16546;
         this.field16549 = field16545.method4150();
         this.field16552 = field16547;
@@ -35,11 +37,11 @@ public class Class3528 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class511 method4488 = this.field16545.method4488();
+        final LivingEntity method4488 = this.field16545.method4488();
         if (method4488 == null) {
             return false;
         }
-        if (method4488.method1639()) {
+        if (method4488.isSpectator()) {
             return false;
         }
         if (this.field16545.method4483()) {
@@ -79,7 +81,7 @@ public class Class3528 extends Class3446
         if (field16550 <= 0) {
             this.field16550 = 10;
             if (!this.field16545.method4205()) {
-                if (!this.field16545.method1805()) {
+                if (!this.field16545.isPassenger()) {
                     if (this.field16545.method1734(this.field16546) < 144.0) {
                         this.field16549.method24725(this.field16546, this.field16548);
                     }
@@ -105,7 +107,7 @@ public class Class3528 extends Class3446
             return false;
         }
         if (this.method11079(new BlockPos(n, n2, n3))) {
-            this.field16545.method1730(n + 0.5f, n2, n3 + 0.5f, this.field16545.field2399, this.field16545.field2400);
+            this.field16545.method1730(n + 0.5f, n2, n3 + 0.5f, this.field16545.rotationYaw, this.field16545.rotationPitch);
             this.field16549.method24733();
             return true;
         }

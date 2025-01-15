@@ -7,34 +7,42 @@ package mapped;
 import javax.annotation.Nullable;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.INBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import java.util.UUID;
 
 public class Class826 extends Class827 implements Class825
 {
-    private static final Class8810<Boolean> field4416;
-    private static final Class8810<Class8562> field4417;
+    private static final DataParameter<Boolean> field4416;
+    private static final DataParameter<Class8562> field4417;
     private int field4418;
     private UUID field4419;
-    private Class41 field4420;
+    private INBT field4420;
     private Class51 field4421;
     private int field4422;
     
-    public Class826(final EntityType<? extends Class826> class7499, final Class1847 class7500) {
+    public Class826(final EntityType<? extends Class826> class7499, final World class7500) {
         super(class7499, class7500);
-        this.method4921(this.method4870().method28784(Class90.field240.method508(this.field2423)));
+        this.method4921(this.method4870().method28784(Class90.field240.method508(this.rand)));
     }
     
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class826.field4416, false);
-        this.field2432.method33565(Class826.field4417, new Class8562(Class7611.field30165, Class9334.field40060, 1));
+        this.dataManager.register(Class826.field4416, false);
+        this.dataManager.register(Class826.field4417, new Class8562(Class7611.field30165, Class9334.field40060, 1));
     }
     
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        class51.method295("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<Class41>)Class8453.field34721));
+        class51.method295("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
         if (this.field4421 != null) {
             class51.method295("Offers", this.field4421);
         }
@@ -72,12 +80,12 @@ public class Class826 extends Class827 implements Class825
     
     @Override
     public void method1659() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.method1768()) {
                 if (this.method4913()) {
                     this.field4418 -= this.method4916();
                     if (this.field4418 <= 0) {
-                        this.method4915((Class1849)this.field2391);
+                        this.method4915((Class1849)this.world);
                     }
                 }
             }
@@ -92,8 +100,8 @@ public class Class826 extends Class827 implements Class825
             if (!class512.field3025.field27304) {
                 method2715.method27693(1);
             }
-            if (!this.field2391.field10067) {
-                this.method4914(class512.method1865(), this.field2423.nextInt(2401) + 3600);
+            if (!this.world.field10067) {
+                this.method4914(class512.method1865(), this.rand.nextInt(2401) + 3600);
                 class512.method2708(class513, true);
             }
             return true;
@@ -112,16 +120,16 @@ public class Class826 extends Class827 implements Class825
     }
     
     public boolean method4913() {
-        return this.method1650().method33568(Class826.field4416);
+        return this.method1650().get(Class826.field4416);
     }
     
     private void method4914(final UUID field4419, final int field4420) {
         this.field4419 = field4419;
         this.field4418 = field4420;
-        this.method1650().method33569(Class826.field4416, true);
+        this.method1650().set(Class826.field4416, true);
         this.method2659(Class9439.field40491);
-        this.method2655(new Class1948(Class9439.field40478, field4420, Math.min(this.field2391.method6954().method8235() - 1, 0)));
-        this.field2391.method6761(this, (byte)16);
+        this.method2655(new Class1948(Class9439.field40478, field4420, Math.min(this.world.method6954().method8235() - 1, 0)));
+        this.world.method6761(this, (byte)16);
     }
     
     @Override
@@ -130,7 +138,7 @@ public class Class826 extends Class827 implements Class825
             super.method1798(b);
         }
         else if (!this.method1696()) {
-            this.field2391.method6708(this.getPosX(), this.method1944(), this.getPosZ(), Class8520.field35770, this.method1922(), 1.0f + this.field2423.nextFloat(), this.field2423.nextFloat() * 0.7f + 0.3f, false);
+            this.world.method6708(this.getPosX(), this.method1944(), this.getPosZ(), Class8520.field35770, this.method1922(), 1.0f + this.rand.nextFloat(), this.rand.nextFloat() * 0.7f + 0.3f, false);
         }
     }
     
@@ -186,18 +194,18 @@ public class Class826 extends Class827 implements Class825
     
     private int method4916() {
         int n = 1;
-        if (this.field2423.nextFloat() < 0.01f) {
+        if (this.rand.nextFloat() < 0.01f) {
             int n2 = 0;
-            final Class385 class385 = new Class385();
+            final Mutable class385 = new Mutable();
             for (int i = (int)this.getPosX() - 4; i < (int)this.getPosX() + 4; ++i) {
                 if (n2 >= 14) {
                     break;
                 }
                 for (int n3 = (int)this.getPosY() - 4; n3 < (int)this.getPosY() + 4 && n2 < 14; ++n3) {
                     for (int n4 = (int)this.getPosZ() - 4; n4 < (int)this.getPosZ() + 4 && n2 < 14; ++n4) {
-                        final Class3833 method21696 = this.field2391.method6701(class385.method1284(i, n3, n4)).method21696();
+                        final Class3833 method21696 = this.world.method6701(class385.setPos(i, n3, n4)).method21696();
                         if (method21696 == Class7521.field29381 || method21696 instanceof Class3900) {
-                            if (this.field2423.nextFloat() < 0.3f) {
+                            if (this.rand.nextFloat() < 0.3f) {
                                 ++n;
                             }
                             ++n2;
@@ -211,7 +219,7 @@ public class Class826 extends Class827 implements Class825
     
     @Override
     public float method2721() {
-        return this.method2625() ? ((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 2.0f) : ((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
+        return this.method2625() ? ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 2.0f) : ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
     }
     
     @Override
@@ -220,7 +228,7 @@ public class Class826 extends Class827 implements Class825
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35772;
     }
     
@@ -243,7 +251,7 @@ public class Class826 extends Class827 implements Class825
         this.field4421 = field4421;
     }
     
-    public void method4920(final Class41 field4420) {
+    public void method4920(final INBT field4420) {
         this.field4420 = field4420;
     }
     
@@ -258,12 +266,12 @@ public class Class826 extends Class827 implements Class825
         if (this.method4870().method28781() != class8562.method28781()) {
             this.field4421 = null;
         }
-        this.field2432.method33569(Class826.field4417, class8562);
+        this.dataManager.set(Class826.field4417, class8562);
     }
     
     @Override
     public Class8562 method4870() {
-        return this.field2432.method33568(Class826.field4417);
+        return this.dataManager.get(Class826.field4417);
     }
     
     public void method4922(final int field4422) {
@@ -271,7 +279,7 @@ public class Class826 extends Class827 implements Class825
     }
     
     static {
-        field4416 = Class9184.method33564(Class826.class, Class7709.field30661);
-        field4417 = Class9184.method33564(Class826.class, Class7709.field30669);
+        field4416 = EntityDataManager.method33564(Class826.class, Class7709.field30661);
+        field4417 = EntityDataManager.method33564(Class826.class, Class7709.field30669);
     }
 }

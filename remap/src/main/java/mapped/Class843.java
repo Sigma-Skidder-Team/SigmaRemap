@@ -4,19 +4,25 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public class Class843 extends Class763
 {
-    public static final Class8810<Byte> field4491;
+    public static final DataParameter<Byte> field4491;
     private Class759 field4492;
     private BlockPos field4493;
     private boolean field4494;
     private int field4495;
     
-    public Class843(final EntityType<? extends Class843> class7499, final Class1847 class7500) {
+    public Class843(final EntityType<? extends Class843> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6565(this, this);
         this.field4108 = 3;
@@ -30,14 +36,14 @@ public class Class843 extends Class763
     
     @Override
     public void method1659() {
-        this.field2421 = true;
+        this.noClip = true;
         super.method1659();
-        this.field2421 = false;
+        this.noClip = false;
         this.method1699(true);
         if (this.field4494) {
             if (--this.field4495 <= 0) {
                 this.field4495 = 20;
-                this.method1740(Class7929.field32570, 1.0f);
+                this.attackEntityFrom(DamageSource.field32570, 1.0f);
             }
         }
     }
@@ -65,7 +71,7 @@ public class Class843 extends Class763
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class843.field4491, (Byte)0);
+        this.dataManager.register(Class843.field4491, (Byte)0);
     }
     
     @Override
@@ -106,11 +112,11 @@ public class Class843 extends Class763
     }
     
     private boolean method5039(final int n) {
-        return (this.field2432.method33568(Class843.field4491) & n) != 0x0;
+        return (this.dataManager.get(Class843.field4491) & n) != 0x0;
     }
     
     private void method5040(final int n, final boolean b) {
-        final byte byteValue = this.field2432.method33568(Class843.field4491);
+        final byte byteValue = this.dataManager.get(Class843.field4491);
         int n2;
         if (!b) {
             n2 = (byteValue & ~n);
@@ -118,7 +124,7 @@ public class Class843 extends Class763
         else {
             n2 = (byteValue | n);
         }
-        this.field2432.method33569(Class843.field4491, (byte)(n2 & 0xFF));
+        this.dataManager.set(Class843.field4491, (byte)(n2 & 0xFF));
     }
     
     public boolean method5041() {
@@ -149,7 +155,7 @@ public class Class843 extends Class763
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35674;
     }
     
@@ -173,6 +179,6 @@ public class Class843 extends Class763
     }
     
     static {
-        field4491 = Class9184.method33564(Class843.class, Class7709.field30653);
+        field4491 = EntityDataManager.method33564(Class843.class, Class7709.field30653);
     }
 }

@@ -17,8 +17,8 @@ public abstract class Class4785<T extends Class402> extends Class4703<T>
     
     public void method14152(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int n3) {
         class7351.method22567();
-        class7351.method22566(Vector3f.YP.rotationDegrees(MathHelper.method35700(n2, t.field2401, t.field2399) - 90.0f));
-        class7351.method22566(Vector3f.ZP.rotationDegrees(MathHelper.method35700(n2, t.field2402, t.field2400)));
+        class7351.method22566(Vector3f.YP.rotationDegrees(MathHelper.method35700(n2, t.prevRotationYaw, t.rotationYaw) - 90.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(MathHelper.method35700(n2, t.prevRotationPitch, t.rotationPitch)));
         final float n4 = t.field2475 - n2;
         if (n4 > 0.0f) {
             class7351.method22566(Vector3f.ZP.rotationDegrees(-MathHelper.sin(n4 * 3.0f) * n4));

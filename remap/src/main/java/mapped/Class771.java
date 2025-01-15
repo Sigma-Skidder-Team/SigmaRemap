@@ -5,6 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -13,7 +17,7 @@ public class Class771 extends Class770
     private static String[] field4164;
     private Class802 field4165;
     
-    public Class771(final EntityType<? extends Class771> class7499, final Class1847 class7500) {
+    public Class771(final EntityType<? extends Class771> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4108 = 10;
     }
@@ -81,7 +85,7 @@ public class Class771 extends Class770
             return true;
         }
         if (!(class399 instanceof Class843)) {
-            return class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null;
+            return class399 instanceof LivingEntity && ((LivingEntity)class399).method2712() == Class6363.field25463 && this.getTeam() == null && class399.getTeam() == null;
         }
         return this.method1826(((Class843)class399).method5036());
     }
@@ -97,7 +101,7 @@ public class Class771 extends Class770
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35181;
     }
     

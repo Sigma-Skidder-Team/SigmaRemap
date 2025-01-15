@@ -42,7 +42,7 @@ public abstract class Class754 extends Class512
     }
     
     @Override
-    public boolean method1639() {
+    public boolean isSpectator() {
         final Class9081 method17371 = Class869.method5277().method5269().method17371(this.method2844().getId());
         return method17371 != null && method17371.method32720() == Class101.field301;
     }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import javax.annotation.Nullable;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.INameable;
 import net.minecraft.util.text.ITextComponent;
 

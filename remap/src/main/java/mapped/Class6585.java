@@ -13,8 +13,12 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.IntNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -44,18 +48,18 @@ public class Class6585
         return this.field26127;
     }
     
-    public void method19948(final Class1847 class1847, final BlockPos class1848, final BlockPos field26126, final boolean b, final Class3833 class1849) {
+    public void method19948(final World class1847, final BlockPos class1848, final BlockPos field26126, final boolean b, final Class3833 class1849) {
         if (field26126.getX() >= 1) {
             if (field26126.getY() >= 1) {
                 if (field26126.getZ() >= 1) {
-                    final BlockPos method1134 = class1848.method1135(field26126).method1134(-1, -1, -1);
+                    final BlockPos method1134 = class1848.add(field26126).add(-1, -1, -1);
                     final ArrayList arrayList = Lists.newArrayList();
                     final ArrayList arrayList2 = Lists.newArrayList();
                     final ArrayList arrayList3 = Lists.newArrayList();
                     final BlockPos class1850 = new BlockPos(Math.min(class1848.getX(), method1134.getX()), Math.min(class1848.getY(), method1134.getY()), Math.min(class1848.getZ(), method1134.getZ()));
                     final BlockPos class1851 = new BlockPos(Math.max(class1848.getX(), method1134.getX()), Math.max(class1848.getY(), method1134.getY()), Math.max(class1848.getZ(), method1134.getZ()));
                     this.field26126 = field26126;
-                    for (final BlockPos class1852 : BlockPos.method1154(class1850, class1851)) {
+                    for (final BlockPos class1852 : BlockPos.getAllInBoxMutable(class1850, class1851)) {
                         final BlockPos method1135 = class1852.method1136(class1850);
                         final Class7096 method1136 = class1847.method6701(class1852);
                         if (class1849 != null && class1849 == method1136.method21696()) {
@@ -88,14 +92,14 @@ public class Class6585
                         this.field26125.clear();
                     }
                     else {
-                        this.method19949(class1847, class1850, class1851.method1134(1, 1, 1));
+                        this.method19949(class1847, class1850, class1851.add(1, 1, 1));
                     }
                 }
             }
         }
     }
     
-    private void method19949(final Class1847 class1847, final BlockPos class1848, final BlockPos class1849) {
+    private void method19949(final World class1847, final BlockPos class1848, final BlockPos class1849) {
         final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class1848, class1849), class1853 -> !(class1853 instanceof Class512));
         this.field26125.clear();
         for (final Entity class1850 : method6739) {
@@ -119,10 +123,10 @@ public class Class6585
     
     public List<Class9038> method19951(final BlockPos class354, final Class9092 class355, final Class3833 class356, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class6997 method32860 = class355.method32860();
+        final MutableBoundingBox method32860 = class355.method32860();
         for (final Class9038 class357 : class355.method32865(this.field26124, class354)) {
-            final BlockPos class358 = b ? method19953(class355, class357.field38248).method1135(class354) : class357.field38248;
-            if (method32860 != null && !method32860.method21415(class358)) {
+            final BlockPos class358 = b ? method19953(class355, class357.field38248).add(class354) : class357.field38248;
+            if (method32860 != null && !method32860.isVecInside(class358)) {
                 continue;
             }
             final Class7096 field38249 = class357.field38249;
@@ -165,7 +169,7 @@ public class Class6585
             if (this.field26126.getX() >= 1) {
                 if (this.field26126.getY() >= 1) {
                     if (this.field26126.getZ() >= 1) {
-                        final Class6997 method32866 = class1853.method32860();
+                        final MutableBoundingBox method32866 = class1853.method32860();
                         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(class1853.method32864() ? method32865.size() : 0);
                         final ArrayList arrayListWithCapacity2 = Lists.newArrayListWithCapacity(method32865.size());
                         int min = Integer.MAX_VALUE;
@@ -176,7 +180,7 @@ public class Class6585
                         int max3 = Integer.MIN_VALUE;
                         for (final Class9038 class1854 : method19958(class1851, class1852, class1853, method32865)) {
                             final BlockPos field38248 = class1854.field38248;
-                            if (method32866 != null && !method32866.method21415(field38248)) {
+                            if (method32866 != null && !method32866.isVecInside(field38248)) {
                                 continue;
                             }
                             final Class7099 class1855 = class1853.method32864() ? class1851.method6702(field38248) : null;
@@ -319,7 +323,7 @@ public class Class6585
     public static List<Class9038> method19958(final Class1851 class1851, final BlockPos class1852, final Class9092 class1853, final List<Class9038> list) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class9038 class1854 : list) {
-            Class9038 method12350 = new Class9038(method19953(class1853, class1854.field38248).method1135(class1852), class1854.field38249, class1854.field38250);
+            Class9038 method12350 = new Class9038(method19953(class1853, class1854.field38248).add(class1852), class1854.field38249, class1854.field38250);
             for (Iterator<Class4107> iterator2 = class1853.method32862().iterator(); method12350 != null && iterator2.hasNext(); method12350 = iterator2.next().method12350(class1851, class1852, class1854, method12350, class1853)) {}
             if (method12350 == null) {
                 continue;
@@ -329,10 +333,10 @@ public class Class6585
         return arrayList;
     }
     
-    private void method19959(final Class1851 class1851, final BlockPos class1852, final Class2181 class1853, final Class2052 class1854, final BlockPos class1855, final Class6997 class1856) {
+    private void method19959(final Class1851 class1851, final BlockPos class1852, final Class2181 class1853, final Class2052 class1854, final BlockPos class1855, final MutableBoundingBox class1856) {
         for (final Class7682 class1857 : this.field26125) {
-            final BlockPos method1135 = method19962(class1857.field30511, class1853, class1854, class1855).method1135(class1852);
-            if (class1856 != null && !class1856.method21415(method1135)) {
+            final BlockPos method1135 = method19962(class1857.field30511, class1853, class1854, class1855).add(class1852);
+            if (class1856 != null && !class1856.isVecInside(method1135)) {
                 continue;
             }
             final Class51 field30512 = class1857.field30512;
@@ -345,7 +349,7 @@ public class Class6585
             field30512.method330("UUIDMost");
             field30512.method330("UUIDLeast");
             method19960(class1851, field30512).ifPresent(class1863 -> {
-                class1863.method1730(class1861.field22770, class1861.field22771, class1861.field22772, class1863.method1904(class1859) + (class1863.field2399 - class1863.method1903(class1860)), class1863.field2400);
+                class1863.method1730(class1861.field22770, class1861.field22771, class1861.field22772, class1863.method1904(class1859) + (class1863.rotationYaw - class1863.method1903(class1860)), class1863.rotationPitch);
                 class1862.method6886(class1863);
             });
         }
@@ -458,26 +462,26 @@ public class Class6585
         BlockPos class357 = class354;
         switch (Class9249.field39662[class356.ordinal()]) {
             case 1: {
-                class357 = class354.method1134(n4, 0, n - n3);
+                class357 = class354.add(n4, 0, n - n3);
                 break;
             }
             case 2: {
-                class357 = class354.method1134(n2 - n4, 0, n3);
+                class357 = class354.add(n2 - n4, 0, n3);
                 break;
             }
             case 3: {
-                class357 = class354.method1134(n - n3, 0, n2 - n4);
+                class357 = class354.add(n - n3, 0, n2 - n4);
                 break;
             }
             case 4: {
-                class357 = class354.method1134(n3, 0, n4);
+                class357 = class354.add(n3, 0, n4);
                 break;
             }
         }
         return class357;
     }
     
-    public Class6997 method19966(final Class9092 class9092, final BlockPos class9093) {
+    public MutableBoundingBox method19966(final Class9092 class9092, final BlockPos class9093) {
         final Class2052 method32856 = class9092.method32856();
         final BlockPos method32857 = class9092.method32857();
         final BlockPos method32858 = this.method19961(method32856);
@@ -487,22 +491,22 @@ public class Class6585
         final int n = method32858.getX() - 1;
         final int n2 = method32858.getY() - 1;
         final int n3 = method32858.getZ() - 1;
-        Class6997 class9094 = new Class6997(0, 0, 0, 0, 0, 0);
+        MutableBoundingBox class9094 = new MutableBoundingBox(0, 0, 0, 0, 0, 0);
         switch (Class9249.field39662[method32856.ordinal()]) {
             case 1: {
-                class9094 = new Class6997(method32860 - method32861, 0, method32860 + method32861 - n3, method32860 - method32861 + n, n2, method32860 + method32861);
+                class9094 = new MutableBoundingBox(method32860 - method32861, 0, method32860 + method32861 - n3, method32860 - method32861 + n, n2, method32860 + method32861);
                 break;
             }
             case 2: {
-                class9094 = new Class6997(method32860 + method32861 - n, 0, method32861 - method32860, method32860 + method32861, n2, method32861 - method32860 + n3);
+                class9094 = new MutableBoundingBox(method32860 + method32861 - n, 0, method32861 - method32860, method32860 + method32861, n2, method32861 - method32860 + n3);
                 break;
             }
             case 3: {
-                class9094 = new Class6997(method32860 + method32860 - n, 0, method32861 + method32861 - n3, method32860 + method32860, n2, method32861 + method32861);
+                class9094 = new MutableBoundingBox(method32860 + method32860 - n, 0, method32861 + method32861 - n3, method32860 + method32860, n2, method32861 + method32861);
                 break;
             }
             case 4: {
-                class9094 = new Class6997(0, 0, 0, n, n2, n3);
+                class9094 = new MutableBoundingBox(0, 0, 0, n, n2, n3);
                 break;
             }
         }
@@ -516,11 +520,11 @@ public class Class6585
                 break;
             }
         }
-        class9094.method21413(class9093.getX(), class9093.getY(), class9093.getZ());
+        class9094.offset(class9093.getX(), class9093.getY(), class9093.getZ());
         return class9094;
     }
     
-    private void method19967(final Class2052 class2052, final int n, final int n2, final Class6997 class2053, final Direction class2054, final Direction class2055) {
+    private void method19967(final Class2052 class2052, final int n, final int n2, final MutableBoundingBox class2053, final Direction class2054, final Direction class2055) {
         final BlockPos field2173 = BlockPos.ZERO;
         BlockPos class2056;
         if (class2052 != Class2052.field11708 && class2052 != Class2052.field11710) {
@@ -534,7 +538,7 @@ public class Class6585
         else {
             class2056 = field2173.method1150(class2052.method8142(class2054), n2);
         }
-        class2053.method21413(class2056.getX(), 0, class2056.getZ());
+        class2053.offset(class2056.getX(), 0, class2056.getZ());
     }
     
     public Class51 method19968(final Class51 class51) {
@@ -658,7 +662,7 @@ public class Class6585
     private Class52 method19971(final int... array) {
         final Class52 class52 = new Class52();
         for (int length = array.length, i = 0; i < length; ++i) {
-            ((AbstractList<Class45>)class52).add(Class45.method279(array[i]));
+            ((AbstractList<IntNBT>)class52).add(IntNBT.valueOf(array[i]));
         }
         return class52;
     }

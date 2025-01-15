@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.function.Supplier;
 
 public class Class8705<C extends Class7065, T extends Class6346<C>> implements Class8704<C, T>
@@ -28,7 +30,7 @@ public class Class8705<C extends Class7065, T extends Class6346<C>> implements C
     }
     
     @Override
-    public T method29872(final Class1847 class1847, final Class1868 class1848, final C c) {
+    public T method29872(final World class1847, final Class1868 class1848, final C c) {
         return this.field36579.method29872(class1847, class1848, c);
     }
     

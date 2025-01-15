@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Collection;
 import java.util.Collections;
 import javax.annotation.Nullable;
@@ -25,7 +27,7 @@ public interface Class469
         }
     }
     
-    default boolean method2416(final Class1847 class1847, final Class513 class1848, final Class3662<?> class1849) {
+    default boolean method2416(final World class1847, final Class513 class1848, final Class3662<?> class1849) {
         if (!class1849.method11295()) {
             if (class1847.method6765().method31216(Class8878.field37335)) {
                 if (!class1848.method2948().method19695(class1849)) {

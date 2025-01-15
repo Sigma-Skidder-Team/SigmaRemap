@@ -8,28 +8,35 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.Sets;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
+
 import java.util.Set;
 
 public class Class405 extends Class402
 {
-    private static final Class8810<Integer> field2490;
+    private static final DataParameter<Integer> field2490;
     private Class8061 field2491;
     private final Set<Class1948> field2492;
     private boolean field2493;
     
-    public Class405(final EntityType<? extends Class405> class7499, final Class1847 class7500) {
+    public Class405(final EntityType<? extends Class405> class7499, final World class7500) {
         super(class7499, class7500);
         this.field2491 = Class8644.field36250;
         this.field2492 = Sets.newHashSet();
     }
     
-    public Class405(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class405(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field28959, n, n2, n3, class1847);
         this.field2491 = Class8644.field36250;
         this.field2492 = Sets.newHashSet();
     }
     
-    public Class405(final Class1847 class1847, final Class511 class1848) {
+    public Class405(final World class1847, final LivingEntity class1848) {
         super(EntityType.field28959, class1848, class1847);
         this.field2491 = Class8644.field36250;
         this.field2492 = Sets.newHashSet();
@@ -40,7 +47,7 @@ public class Class405 extends Class402
             if (class8321.method27622() == Class7739.field31280) {
                 this.field2491 = Class8644.field36250;
                 this.field2492.clear();
-                this.field2432.method33569(Class405.field2490, -1);
+                this.dataManager.set(Class405.field2490, -1);
             }
         }
         else {
@@ -70,36 +77,36 @@ public class Class405 extends Class402
     private void method1994() {
         this.field2493 = false;
         if (this.field2491 == Class8644.field36250 && this.field2492.isEmpty()) {
-            this.field2432.method33569(Class405.field2490, -1);
+            this.dataManager.set(Class405.field2490, -1);
         }
         else {
-            this.field2432.method33569(Class405.field2490, Class5333.method16473(Class5333.method16466(this.field2491, this.field2492)));
+            this.dataManager.set(Class405.field2490, Class5333.method16473(Class5333.method16466(this.field2491, this.field2492)));
         }
     }
     
     public void method1995(final Class1948 class1948) {
         this.field2492.add(class1948);
-        this.method1650().method33569(Class405.field2490, Class5333.method16473(Class5333.method16466(this.field2491, this.field2492)));
+        this.method1650().set(Class405.field2490, Class5333.method16473(Class5333.method16466(this.field2491, this.field2492)));
     }
     
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class405.field2490, -1);
+        this.dataManager.register(Class405.field2490, -1);
     }
     
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.field2472) {
                 if (this.field2473 != 0) {
                     if (!this.field2492.isEmpty()) {
                         if (this.field2473 >= 600) {
-                            this.field2391.method6761(this, (byte)0);
+                            this.world.method6761(this, (byte)0);
                             this.field2491 = Class8644.field36250;
                             this.field2492.clear();
-                            this.field2432.method33569(Class405.field2490, -1);
+                            this.dataManager.set(Class405.field2490, -1);
                         }
                     }
                 }
@@ -121,19 +128,19 @@ public class Class405 extends Class402
                 final double n3 = (method1997 >> 8 & 0xFF) / 255.0;
                 final double n4 = (method1997 >> 0 & 0xFF) / 255.0;
                 for (int i = 0; i < n; ++i) {
-                    this.field2391.method6709(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n2, n3, n4);
+                    this.world.method6709(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n2, n3, n4);
                 }
             }
         }
     }
     
     public int method1997() {
-        return this.field2432.method33568(Class405.field2490);
+        return this.dataManager.get(Class405.field2490);
     }
     
     private void method1998(final int i) {
         this.field2493 = true;
-        this.field2432.method33569(Class405.field2490, i);
+        this.dataManager.set(Class405.field2490, i);
     }
     
     @Override
@@ -176,7 +183,7 @@ public class Class405 extends Class402
     }
     
     @Override
-    public void method1970(final Class511 class511) {
+    public void method1970(final LivingEntity class511) {
         super.method1970(class511);
         for (final Class1948 class512 : this.field2491.method26449()) {
             class511.method2655(new Class1948(class512.method7906(), Math.max(class512.method7907() / 8, 1), class512.method7908(), class512.method7909(), class512.method7910()));
@@ -215,13 +222,13 @@ public class Class405 extends Class402
                 final double n2 = (method1997 >> 8 & 0xFF) / 255.0;
                 final double n3 = (method1997 >> 0 & 0xFF) / 255.0;
                 for (int i = 0; i < 20; ++i) {
-                    this.field2391.method6709(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n, n2, n3);
+                    this.world.method6709(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n, n2, n3);
                 }
             }
         }
     }
     
     static {
-        field2490 = Class9184.method33564(Class405.class, Class7709.field30654);
+        field2490 = EntityDataManager.method33564(Class405.class, Class7709.field30654);
     }
 }

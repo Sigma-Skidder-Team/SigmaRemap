@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class4796 extends Class4703<Class424>
@@ -18,7 +20,7 @@ public class Class4796 extends Class4703<Class424>
     public void method14188(final Class424 class424, final float n, final float n2, final Class7351 class425, final Class7807 class426, final int n3) {
         final Class7096 method2071 = class424.method2071();
         if (method2071.method21710() == Class2115.field12307) {
-            final Class1847 method2072 = class424.method2069();
+            final World method2072 = class424.method2069();
             if (method2071 != method2072.method6701(new BlockPos(class424))) {
                 if (method2071.method21710() != Class2115.field12305) {
                     class425.method22567();

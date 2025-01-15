@@ -17,7 +17,7 @@ public class Class8477
         if (class436 instanceof INameable) {
             final INameable class437 = (INameable)class436;
             method28303(class436);
-            return class437.hasCustomName() ? class437.getCustomName().method8459() : null;
+            return class437.hasCustomName() ? class437.getCustomName().getUnformattedComponentText() : null;
         }
         return null;
     }
@@ -27,7 +27,7 @@ public class Class8477
         if (method28305(class436) == null) {
             ITextComponent method2194 = method28304(method2193);
             if (method2194 == null) {
-                method2194 = new Class2260("");
+                method2194 = new StringTextComponent("");
             }
             method28306(class436, method2194);
         }

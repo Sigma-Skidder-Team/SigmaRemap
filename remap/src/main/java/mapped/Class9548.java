@@ -65,9 +65,9 @@ public class Class9548
         if (n2 > method35713 - 2) {
             if (!this.field41117.test(class7096)) {
                 if (method35713 - 1 == n2) {
-                    final Class385 class7097 = new Class385();
+                    final Mutable class7097 = new Mutable();
                     for (int i = n2 - 1; i >= 0; --i) {
-                        class7097.method1284(n, i, n3);
+                        class7097.setPos(n, i, n3);
                         if (this.field41117.test(this.field41118.method6701(class7097))) {
                             this.method35715(n, n3, i + 1);
                             return true;

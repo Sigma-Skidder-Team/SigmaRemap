@@ -57,7 +57,7 @@ public class Class3241 extends Class3167
         return Short.toString(field.getShort(o));
     }
     
-    private void method10235(final Class4252 class4252, final boolean b) {
+    private void method10235(final IPacket class4252, final boolean b) {
         try {
             this.field15729.write((b ? "-->" : "<--") + "\t" + class4252.getClass().getSimpleName() + "\n");
             for (final Field field : FieldUtils.getAllFields((Class)class4252.getClass())) {

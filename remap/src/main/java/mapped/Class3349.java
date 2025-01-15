@@ -23,7 +23,7 @@ public class Class3349 extends Class3167
         if (this.method9906()) {
             if (Class3349.field15514.field4684 != null) {
                 if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                    if (Class3349.field15514.field4684.field2404) {
+                    if (Class3349.field15514.field4684.onGround) {
                         if (class5744.method17046()) {
                             if (Class6430.method19146()) {
                                 class5744.method17037(class5744.method17036() + 1.0E-14);
@@ -40,13 +40,13 @@ public class Class3349 extends Class3167
         this.field15959 = false;
         this.field15963 = 0;
         this.field15961 = ((Class3349.field15514.field4684 != null) ? Class7482.method23136() : 0.2873);
-        this.field15960 = Class3349.field15514.field4684.field2396;
+        this.field15960 = Class3349.field15514.field4684.posY;
     }
     
     @Override
     public void method9897() {
         this.field15959 = false;
-        if (Class3349.field15514.field4684.method1935().y > 0.33) {
+        if (Class3349.field15514.field4684.getMotion().y > 0.33) {
             Class6430.method19155(-0.43 + Class7482.method23140() * 0.1);
             Class7482.method23151(Class7482.method23136());
         }
@@ -63,12 +63,12 @@ public class Class3349 extends Class3167
         final String method9887 = this.method9887("Mode");
         switch (method9887) {
             case "NCP": {
-                if (Class7482.method23148() && Class3349.field15514.field4684.field2404) {
+                if (Class7482.method23148() && Class3349.field15514.field4684.onGround) {
                     Class3349.field15514.field4684.method2725();
-                    class5717.method16975(Class3349.field15514.field4684.method1935().y);
+                    class5717.method16975(Class3349.field15514.field4684.getMotion().y);
                     Class7482.method23149(class5717, 0.461);
                     this.field15959 = true;
-                    Class3349.field15514.field4684.field2420 = 0.5f;
+                    Class3349.field15514.field4684.stepHeight = 0.5f;
                     break;
                 }
                 if (this.field15959 && Class6430.method19160(Class3349.field15514.field4684, (float)(Class7482.method23141() + Class7482.method23140() * 0.1 + 0.0010000000474974513))) {
@@ -76,7 +76,7 @@ public class Class3349 extends Class3167
                     Class7482.method23149(class5717, 0.312);
                     class5717.method16975(-0.43 + Class7482.method23140() * 0.1);
                     Class6430.method19155(class5717.method16974());
-                    Class3349.field15514.field4684.field2420 = 0.0f;
+                    Class3349.field15514.field4684.stepHeight = 0.0f;
                     break;
                 }
                 if (this.field15959) {
@@ -87,7 +87,7 @@ public class Class3349 extends Class3167
                 break;
             }
             case "OldNCP": {
-                if (Class3349.field15514.field4684.field2404 && Class6430.method19114()) {
+                if (Class3349.field15514.field4684.onGround && Class6430.method19114()) {
                     this.field15963 = 2;
                 }
                 if (this.field15963 == 1 && Class6430.method19114()) {
@@ -104,13 +104,13 @@ public class Class3349 extends Class3167
                     this.field15961 = this.field15962 - 0.66 * (this.field15962 - Class7482.method23136());
                 }
                 else {
-                    if (Class3349.field15514.field4683.method6981(Class3349.field15514.field4684, Class3349.field15514.field4684.field2403.method18499(0.0, Class3349.field15514.field4684.method1935().y, 0.0)).count() > 0L || Class3349.field15514.field4684.field2406) {
+                    if (Class3349.field15514.field4683.method6981(Class3349.field15514.field4684, Class3349.field15514.field4684.boundingBox.method18499(0.0, Class3349.field15514.field4684.getMotion().y, 0.0)).count() > 0L || Class3349.field15514.field4684.collidedVertically) {
                         this.field15963 = 1;
                     }
                     this.field15961 = this.field15962 - this.field15962 / 159.0;
                 }
                 Class7482.method23149(class5717, this.field15961 = Math.max(this.field15961, Class7482.method23136()));
-                Class3349.field15514.field4684.field2420 = 0.6f;
+                Class3349.field15514.field4684.stepHeight = 0.6f;
                 Class6430.method19155(class5717.method16974());
                 break;
             }
@@ -130,7 +130,7 @@ public class Class3349 extends Class3167
                                         if (!Class7482.method23142()) {
                                             if (!Class3349.field15514.field4684.method1706()) {
                                                 if (Class6430.method19160(Class3349.field15514.field4684, 1.0f)) {
-                                                    if (!Class3349.field15514.field4684.field2404) {
+                                                    if (!Class3349.field15514.field4684.onGround) {
                                                         if (this.field15963 == 3) {
                                                             Class6430.method19155(-0.3994);
                                                         }
@@ -140,8 +140,8 @@ public class Class3349 extends Class3167
                                         }
                                     }
                                 }
-                                final double n = Class3349.field15514.field4684.field2395 - Class3349.field15514.field4684.field2392;
-                                final double n2 = Class3349.field15514.field4684.field2397 - Class3349.field15514.field4684.field2394;
+                                final double n = Class3349.field15514.field4684.posX - Class3349.field15514.field4684.prevPosX;
+                                final double n2 = Class3349.field15514.field4684.posZ - Class3349.field15514.field4684.prevPosZ;
                                 this.field15962 = Math.sqrt(n * n + n2 * n2);
                             }
                         }
@@ -155,19 +155,19 @@ public class Class3349 extends Class3167
     public void method10599(final Class5741 class5741) {
         if (this.method9906()) {
             if (Class6430.method19160(Class3349.field15514.field4684, 0.43f)) {
-                if (Class3349.field15514.field4684.field2414 <= 0.09) {
+                if (Class3349.field15514.field4684.fallDistance <= 0.09) {
                     if (this.method9883("OnGround")) {
                         if (!Class3349.field15514.field4648.field23439.field2162) {
                             if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                                if (Class3349.field15514.field4684.field2404) {
+                                if (Class3349.field15514.field4684.onGround) {
                                     if (Class6430.method19160(Class3349.field15514.field4684, 0.001f)) {
-                                        this.field15960 = Class3349.field15514.field4684.field2396;
+                                        this.field15960 = Class3349.field15514.field4684.posY;
                                     }
                                 }
-                                Class3349.field15514.field4684.field2396 = this.field15960;
-                                Class3349.field15514.field4684.field2418 = this.field15960;
+                                Class3349.field15514.field4684.posY = this.field15960;
+                                Class3349.field15514.field4684.lastTickPosY = this.field15960;
                                 Class3349.field15514.field4684.field3019 = this.field15960;
-                                Class3349.field15514.field4684.field2393 = this.field15960;
+                                Class3349.field15514.field4684.prevPosY = this.field15960;
                                 if (Class7482.method23148()) {
                                     Class3349.field15514.field4684.field3013 = 0.099999994f;
                                 }

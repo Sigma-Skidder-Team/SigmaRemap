@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class5535 extends Class5509
 {
     public Class5535() {

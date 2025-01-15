@@ -8,17 +8,19 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class861 extends Class860
 {
     public Class8539 field4601;
     
-    public Class861(final EntityType<? extends Class861> class7499, final Class1847 class7500) {
+    public Class861(final EntityType<? extends Class861> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class861(final Class1847 class1847, final BlockPos class1848, final Direction class1849) {
+    public Class861(final World class1847, final BlockPos class1848, final Direction class1849) {
         super(EntityType.field29009, class1847, class1848);
         final ArrayList arrayList = Lists.newArrayList();
         int n = 0;
@@ -44,12 +46,12 @@ public class Class861 extends Class860
                 }
                 iterator2.remove();
             }
-            this.field4601 = (Class8539)arrayList.get(this.field2423.nextInt(arrayList.size()));
+            this.field4601 = (Class8539)arrayList.get(this.rand.nextInt(arrayList.size()));
         }
         this.method5186(class1849);
     }
     
-    public Class861(final Class1847 class1847, final BlockPos class1848, final Direction class1849, final Class8539 field4601) {
+    public Class861(final World class1847, final BlockPos class1848, final Direction class1849, final Class8539 field4601) {
         this(class1847, class1848, class1849);
         this.field4601 = field4601;
         this.method5186(class1849);
@@ -79,7 +81,7 @@ public class Class861 extends Class860
     
     @Override
     public void method5192(final Entity class399) {
-        if (this.field2391.method6765().method31216(Class8878.field37321)) {
+        if (this.world.method6765().method31216(Class8878.field37321)) {
             this.method1695(Class8520.field35407, 1.0f, 1.0f);
             if (class399 instanceof Class512 && ((Class512)class399).field3025.field27304) {
                 return;
@@ -95,17 +97,17 @@ public class Class861 extends Class860
     
     @Override
     public void method1730(final double n, final double n2, final double n3, final float n4, final float n5) {
-        this.method1656(n, n2, n3);
+        this.setPosition(n, n2, n3);
     }
     
     @Override
     public void method1788(final double n, final double n2, final double n3, final float n4, final float n5, final int n6, final boolean b) {
-        final BlockPos method1133 = this.field4599.method1133(n - this.getPosX(), n2 - this.getPosY(), n3 - this.getPosZ());
-        this.method1656(method1133.getX(), method1133.getY(), method1133.getZ());
+        final BlockPos method1133 = this.field4599.add(n - this.getPosX(), n2 - this.getPosY(), n3 - this.getPosZ());
+        this.setPosition(method1133.getX(), method1133.getY(), method1133.getZ());
     }
     
     @Override
-    public Class4252<?> method1932() {
+    public IPacket<?> method1932() {
         return new Class4293(this);
     }
 }

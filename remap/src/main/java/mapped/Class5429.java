@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
 public class Class5429 extends Class5419<Class824>
 {
@@ -39,11 +40,11 @@ public class Class5429 extends Class5419<Class824>
         }
     }
     
-    public static boolean method16586(final Class511 class511) {
+    public static boolean method16586(final LivingEntity class511) {
         return class511.method2618().method1193(Class8233.field33819);
     }
     
-    public static boolean method16587(final Class511 class511) {
+    public static boolean method16587(final LivingEntity class511) {
         return class511.method2618().method1193(Class8233.field33817);
     }
 }

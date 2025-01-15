@@ -6,12 +6,11 @@ package mapped;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Collection;
 import com.google.common.collect.Lists;
 import java.util.List;
 
-public class Class4347 implements Class4252<Class5800>
+public class Class4347 implements IPacket<IClientPlayNetHandler>
 {
     private int field19472;
     private final List<Class8494> field19473;
@@ -29,13 +28,13 @@ public class Class4347 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19472 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19472 = class8654.readVarInt();
         for (int int1 = class8654.readInt(), i = 0; i < int1; ++i) {
             final String method29513 = class8654.method29513(64);
             final double double1 = class8654.readDouble();
             final ArrayList arrayList = Lists.newArrayList();
-            for (int method29514 = class8654.method29501(), j = 0; j < method29514; ++j) {
+            for (int method29514 = class8654.readVarInt(), j = 0; j < method29514; ++j) {
                 arrayList.add(new Class7919(class8654.method29504(), "Unknown synced attribute modifier", class8654.readDouble(), Class2157.method8323(class8654.readByte())));
             }
             this.field19473.add(new Class8494(method29513, double1, arrayList));
@@ -43,13 +42,13 @@ public class Class4347 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19472);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19472);
         class8654.writeInt(this.field19473.size());
         for (final Class8494 class8655 : this.field19473) {
             class8654.method29514(class8655.method28383());
             class8654.writeDouble(class8655.method28384());
-            class8654.method29505(class8655.method28385().size());
+            class8654.writeVarInt(class8655.method28385().size());
             for (final Class7919 class8656 : class8655.method28385()) {
                 class8654.method29503(class8656.method25635());
                 class8654.writeDouble(class8656.method25638());
@@ -58,7 +57,7 @@ public class Class4347 implements Class4252<Class5800>
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17361(this);
     }
     

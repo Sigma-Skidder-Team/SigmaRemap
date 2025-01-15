@@ -6,13 +6,14 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class7752 extends Class7746
 {
     private static String[] field31684;
     private boolean field31685;
     
-    public Class7752(final Class759 class759, final Class1847 class760) {
+    public Class7752(final Class759 class759, final World class760) {
         super(class759, class760);
     }
     
@@ -71,7 +72,7 @@ public class Class7752 extends Class7746
             final Vec3d method24734 = this.method24734();
             final float method24735 = this.field31657.method1930();
             float n = (method24735 <= 0.75f) ? (0.75f - method24735 / 2.0f) : (method24735 / 2.0f);
-            final Vec3d method24736 = this.field31657.method1935();
+            final Vec3d method24736 = this.field31657.getMotion();
             if (Math.abs(method24736.x) > 0.2 || Math.abs(method24736.z) > 0.2) {
                 n = (float)(n * method24736.length() * 6.0);
             }

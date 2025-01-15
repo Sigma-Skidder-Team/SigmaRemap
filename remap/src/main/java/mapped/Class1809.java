@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.item.ItemStack;
 
 public class Class1809 extends Class1799<Class784, Class5894<Class784>>
 {
@@ -22,7 +23,7 @@ public class Class1809 extends Class1799<Class784, Class5894<Class784>>
                 class7351.method22564(0.0, -0.34375, 0.0);
                 class7351.method22566(Vector3f.YP.rotationDegrees(180.0f));
                 class7351.method22565(0.625f, -0.625f, -0.625f);
-                Class869.method5277().method5307().method6537(class7353, new ItemStack(Class7521.field29342), Class2016.field11491, false, class7351, class7352, class7353.field2391, n, Class4710.method13982(class7353, 0.0f));
+                Class869.method5277().method5307().method6537(class7353, new ItemStack(Class7521.field29342), Class2016.field11491, false, class7351, class7352, class7353.world, n, Class4710.method13982(class7353, 0.0f));
                 class7351.method22568();
             }
         }

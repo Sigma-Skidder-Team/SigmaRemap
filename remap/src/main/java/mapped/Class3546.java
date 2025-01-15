@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.List;
 import java.util.EnumSet;
 
@@ -11,7 +14,7 @@ public class Class3546 extends Class3545
 {
     private static String[] field16610;
     private final Class786 field16611;
-    private Class511 field16612;
+    private LivingEntity field16612;
     private final Class7843 field16613;
     
     public Class3546(final Class786 field16611) {
@@ -24,8 +27,8 @@ public class Class3546 extends Class3545
     @Override
     public boolean method11013() {
         final AxisAlignedBB method18495 = this.field16611.method1886().method18495(10.0, 8.0, 10.0);
-        final List<Class511> method18496 = this.field16611.field2391.method7142((Class<? extends Class511>)Class824.class, this.field16613, (Class511)this.field16611, method18495);
-        final List<Class512> method18497 = this.field16611.field2391.method7141(this.field16613, this.field16611, method18495);
+        final List<LivingEntity> method18496 = this.field16611.world.method7142((Class<? extends LivingEntity>)Class824.class, this.field16613, (LivingEntity)this.field16611, method18495);
+        final List<Class512> method18497 = this.field16611.world.method7141(this.field16613, this.field16611, method18495);
         for (final Class824 class824 : method18496) {
             for (final Class512 field16612 : method18497) {
                 if (class824.method4876(field16612) > -100) {
@@ -34,7 +37,7 @@ public class Class3546 extends Class3545
                 this.field16612 = field16612;
             }
         }
-        return this.field16612 != null && (!(this.field16612 instanceof Class512) || (!this.field16612.method1639() && !((Class512)this.field16612).method2889()));
+        return this.field16612 != null && (!(this.field16612 instanceof Class512) || (!this.field16612.isSpectator() && !((Class512)this.field16612).method2889()));
     }
     
     @Override

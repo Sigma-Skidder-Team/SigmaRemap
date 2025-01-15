@@ -6,11 +6,12 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.function.Function;
 
-public class Class5853<T extends Class511> extends Class5844<T> implements Class5852, Class5855
+public class Class5853<T extends LivingEntity> extends Class5844<T> implements Class5852, Class5855
 {
     private static String[] field23992;
     public Class6300 field23993;
@@ -101,7 +102,7 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
         this.field23997.field25180 = 5.0f;
         float n6 = 1.0f;
         if (b) {
-            final float n7 = (float)t.method1935().lengthSquared() / 0.2f;
+            final float n7 = (float)t.getMotion().lengthSquared() / 0.2f;
             n6 = n7 * n7 * n7;
         }
         if (n6 < 1.0f) {

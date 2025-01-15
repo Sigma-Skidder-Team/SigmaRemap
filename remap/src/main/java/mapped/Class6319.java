@@ -23,24 +23,24 @@ public class Class6319
     
     public ITextComponent method18705(final Class7492 class7492, final boolean b) throws CommandSyntaxException {
         if (this.field25272.length != 0 && b) {
-            final Class2260 class7493 = new Class2260(this.field25271.substring(0, this.field25272[0].method27398()));
+            final StringTextComponent class7493 = new StringTextComponent(this.field25271.substring(0, this.field25272[0].method27398()));
             int n = this.field25272[0].method27398();
             for (final Class8256 class7494 : this.field25272) {
                 final ITextComponent method27400 = class7494.method27400(class7492);
                 if (n < class7494.method27398()) {
-                    class7493.method8457(this.field25271.substring(n, class7494.method27398()));
+                    class7493.appendText(this.field25271.substring(n, class7494.method27398()));
                 }
                 if (method27400 != null) {
-                    class7493.method8458(method27400);
+                    class7493.appendSibling(method27400);
                 }
                 n = class7494.method27399();
             }
             if (n < this.field25271.length()) {
-                class7493.method8457(this.field25271.substring(n, this.field25271.length()));
+                class7493.appendText(this.field25271.substring(n, this.field25271.length()));
             }
             return class7493;
         }
-        return new Class2260(this.field25271);
+        return new StringTextComponent(this.field25271);
     }
     
     public static Class6319 method18706(final StringReader stringReader, final boolean b) throws CommandSyntaxException {

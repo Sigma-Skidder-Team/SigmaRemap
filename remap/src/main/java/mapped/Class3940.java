@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class3940 extends Class3841
 {
@@ -20,7 +21,7 @@ public class Class3940 extends Class3841
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3940.field17829;
     }
     
@@ -34,8 +35,8 @@ public class Class3940 extends Class3841
         return class7096.method21772((Class7111<Integer>)Class3940.field17827);
     }
     
-    public static void method12055(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
-        if (class7097.field10063.method20503()) {
+    public static void method12055(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+        if (class7097.dimension.method20503()) {
             int round = class7097.method6992(Class237.field911, class7098) - class7097.method6785();
             final float method6713 = class7097.method6713(1.0f);
             if (!class7096.method21772((Class7111<Boolean>)Class3940.field17828)) {
@@ -54,7 +55,7 @@ public class Class3940 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7099.method2880()) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }

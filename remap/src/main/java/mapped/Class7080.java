@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Iterator;

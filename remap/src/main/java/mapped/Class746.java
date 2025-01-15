@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
@@ -51,20 +52,20 @@ public class Class746 extends Class516<Class3423>
             if (method10922 > 0) {
                 if (method10922 <= 5) {
                     if (((Class3423)this.field3077).method10932()) {
-                        final String method10923 = this.field3148.method8461();
+                        final String method10923 = this.field3148.getFormattedText();
                         final String string = "- " + Class8822.method30773("merchant.level." + method10922, new Object[0]);
                         final int method10924 = this.field3156.method6617(method10923);
                         final int n4 = 49 + this.field3075 / 2 - (method10924 + this.field3156.method6617(string) + 3) / 2;
                         this.field3156.method6610(method10923, (float)n4, 6.0f, 4210752);
-                        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 107.0f, (float)n3, 4210752);
+                        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 107.0f, (float)n3, 4210752);
                         this.field3156.method6610(string, (float)(n4 + method10924 + 3), 6.0f, 4210752);
                         break Label_0302;
                     }
                 }
             }
-            final String method10925 = this.field3148.method8461();
+            final String method10925 = this.field3148.getFormattedText();
             this.field3156.method6610(method10925, (float)(49 + this.field3075 / 2 - this.field3156.method6617(method10925) / 2), 6.0f, 4210752);
-            this.field3156.method6610(this.field3078.getDisplayName().method8461(), 107.0f, (float)n3, 4210752);
+            this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 107.0f, (float)n3, 4210752);
         }
         final String method10926 = Class8822.method30773("merchant.trades", new Object[0]);
         this.field3156.method6610(method10926, (float)(5 - this.field3156.method6617(method10926) / 2 + 48), 6.0f, 4210752);

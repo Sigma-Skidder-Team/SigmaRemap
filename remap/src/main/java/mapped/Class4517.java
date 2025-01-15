@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 
 import java.util.Random;
@@ -44,7 +46,7 @@ public class Class4517 extends Class4515
     }
     
     @Override
-    public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final Class6997 class356) {
+    public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (!s.startsWith("Chest")) {
             if (!s.startsWith("Sentry")) {
                 if (s.startsWith("Elytra")) {
@@ -55,14 +57,14 @@ public class Class4517 extends Class4515
             }
             else {
                 final Class841 class358 = EntityType.field29020.method23371(class355.method6744());
-                class358.method1656(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5);
+                class358.setPosition(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5);
                 class358.method5020(class354);
                 class355.method6886(class358);
             }
         }
         else {
             final BlockPos method1139 = class354.method1139();
-            if (class356.method21415(method1139)) {
+            if (class356.isVecInside(method1139)) {
                 Class456.method2323(class355, random, method1139, Class9020.field38065);
             }
         }

@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public enum Class1956

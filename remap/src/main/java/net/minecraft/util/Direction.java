@@ -56,7 +56,7 @@ public enum Direction implements IStringSerializable
         return new Direction[p_lambda$static$5_0_];
     });
     private static final Long2ObjectMap<Direction> BY_LONG = Arrays.stream(VALUES).collect(Collectors.toMap((p_lambda$static$6_0_) -> {
-        return (new BlockPos(p_lambda$static$6_0_.getDirectionVec())).method1132();
+        return (new BlockPos(p_lambda$static$6_0_.getDirectionVec())).toLong();
     }, (p_lambda$static$7_0_) -> {
         return p_lambda$static$7_0_;
     }, (p_lambda$static$8_0_, p_lambda$static$8_1_) -> {

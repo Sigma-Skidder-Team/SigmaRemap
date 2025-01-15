@@ -4,7 +4,10 @@
 
 package mapped;
 
-public class Class1801<T extends Class511, M extends Class5845<T>> extends Class1799<T, M>
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
+public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends Class1799<T, M>
 {
     private static final Class1932 field9968;
     private final Class5923<T> field9969;

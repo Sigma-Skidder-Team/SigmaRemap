@@ -27,7 +27,7 @@ public class Class730 extends Class527
         this.field3150.field4651.method22505(true);
         this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 120, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method4031()));
         this.field3981.method2524(false);
-        this.field3984 = new Class7343(this.field3150, () -> this.field3981.method2520(this.field3983).getString(), s -> this.field3981.method2521(this.field3983, new Class2260(s)), 90);
+        this.field3984 = new Class7343(this.field3150, () -> this.field3981.method2520(this.field3983).getString(), s -> this.field3981.method2521(this.field3983, new StringTextComponent(s)), 90);
     }
     
     @Override
@@ -87,7 +87,7 @@ public class Class730 extends Class527
     public void method2975(final int n, final int n2, final float n3) {
         Class8317.method27611();
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 40, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 40, 16777215);
         final Class7351 class7351 = new Class7351();
         class7351.method22567();
         class7351.method22564(this.field3152 / 2, 0.0, 50.0);

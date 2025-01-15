@@ -50,7 +50,7 @@ public class Class1885 extends Class1886 implements AutoCloseable
     
     @Override
     public void method7252(final BlockPos class354) {
-        class354.method1153();
+        class354.toImmutable();
         this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Class8349.method27856(() -> super.method7252(class355), () -> "checkBlock " + obj));
     }
     

@@ -7,13 +7,14 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class7747 extends Class7746
 {
     private static String[] field31677;
     private boolean field31678;
     
-    public Class7747(final Class759 class759, final Class1847 class760) {
+    public Class7747(final Class759 class759, final World class760) {
         super(class759, class760);
     }
     
@@ -25,9 +26,9 @@ public class Class7747 extends Class7746
     
     @Override
     public boolean method24735() {
-        if (!this.field31657.field2404) {
+        if (!this.field31657.onGround) {
             if (!this.method24736()) {
-                if (!this.field31657.method1805()) {
+                if (!this.field31657.isPassenger()) {
                     return false;
                 }
             }
@@ -197,7 +198,7 @@ public class Class7747 extends Class7746
     }
     
     private boolean method24746(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Vec3d class5487, final double n7, final double n8) {
-        for (final BlockPos class5488 : BlockPos.method1154(new BlockPos(n, n2, n3), new BlockPos(n + n4 - 1, n2 + n5 - 1, n3 + n6 - 1))) {
+        for (final BlockPos class5488 : BlockPos.getAllInBoxMutable(new BlockPos(n, n2, n3), new BlockPos(n + n4 - 1, n2 + n5 - 1, n3 + n6 - 1))) {
             if ((class5488.getX() + 0.5 - class5487.x) * n7 + (class5488.getZ() + 0.5 - class5487.z) * n8 >= 0.0 && !this.field31658.method6701(class5488).method21749(this.field31658, class5488, Class2084.field12051)) {
                 return false;
             }

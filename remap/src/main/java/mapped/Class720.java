@@ -179,7 +179,7 @@ public class Class720 extends Class527
         this.field3937 = null;
         this.method3041();
         this.field3932.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 20, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 20, 16777215);
         super.method2975(n, n2, n3);
         if (this.field3937 != null) {
             this.method3032(Lists.newArrayList(Splitter.on("\n").split((CharSequence)this.field3937)), n, n2);

@@ -24,8 +24,8 @@ public class Class9213 extends ByteToMessageDecoder
     
     public void decode(final ChannelHandlerContext channelHandlerContext, final ByteBuf byteBuf, final List<Object> list) throws Exception {
         if (byteBuf.readableBytes() != 0) {
-            final Class8654 class8654 = new Class8654(byteBuf);
-            final int method29501 = class8654.method29501();
+            final PacketBuffer class8654 = new PacketBuffer(byteBuf);
+            final int method29501 = class8654.readVarInt();
             if (method29501 != 0) {
                 if (method29501 < this.field39026) {
                     throw new DecoderException("Badly compressed packet - size of " + method29501 + " is below server threshold of " + this.field39026);

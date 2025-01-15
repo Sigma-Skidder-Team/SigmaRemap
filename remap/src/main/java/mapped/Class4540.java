@@ -15,7 +15,7 @@ public class Class4540 extends Class4535<Class5116>
     }
     
     public boolean method13538(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5116 class1854) {
-        for (final BlockPos class1855 : BlockPos.method1154(class1853.method1134(-1, -2, -1), class1853.method1134(1, 2, 1))) {
+        for (final BlockPos class1855 : BlockPos.getAllInBoxMutable(class1853.add(-1, -2, -1), class1853.add(1, 2, 1))) {
             final boolean b = class1855.getX() == class1853.getX();
             final boolean b2 = class1855.getY() == class1853.getY();
             final boolean b3 = class1855.getZ() == class1853.getZ();
@@ -23,7 +23,7 @@ public class Class4540 extends Class4535<Class5116>
             if (b) {
                 if (b2) {
                     if (b3) {
-                        this.method13529(class1851, class1855.method1153(), Class7521.field29638.method11878());
+                        this.method13529(class1851, class1855.toImmutable(), Class7521.field29638.method11878());
                         class1854.method16016().ifPresent(class1859 -> {
                             class1856.method6727(class1857);
                             final Class488 class1860;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.ArrayList;
 
 public class Class3363 extends Class3355
@@ -188,10 +190,10 @@ public class Class3363 extends Class3355
     
     public boolean method10670(final ItemStack class8321, final int n) {
         final Class3820 method27622 = class8321.method27622();
-        if (!class8321.method27664().method8461().toLowerCase().contains("(right click)")) {
-            if (!class8321.method27664().method8461().toLowerCase().contains("(clique direito)")) {
-                if (!class8321.method27664().method8461().toLowerCase().contains("(click derecho)")) {
-                    if (class8321.method27664().method8461().toLowerCase().contains("§k||")) {
+        if (!class8321.method27664().getFormattedText().toLowerCase().contains("(right click)")) {
+            if (!class8321.method27664().getFormattedText().toLowerCase().contains("(clique direito)")) {
+                if (!class8321.method27664().getFormattedText().toLowerCase().contains("(click derecho)")) {
+                    if (class8321.method27664().getFormattedText().toLowerCase().contains("§k||")) {
                         return false;
                     }
                     if (n == Class3363.field16013 && method10667(Class3363.field15514.field4684.field3008.method10878(n).method20053())) {
@@ -270,33 +272,33 @@ public class Class3363 extends Class3355
                                         if (method27622 instanceof Class4046 && this.method9883("Heads")) {
                                             return true;
                                         }
-                                        if (!method27622.method11715().method8461().toLowerCase().contains("tnt")) {
-                                            if (!method27622.method11715().method8461().toLowerCase().contains("stick")) {
-                                                if (!method27622.method11715().method8461().toLowerCase().contains("egg")) {
-                                                    if (!method27622.method11715().method8461().toLowerCase().contains("string")) {
-                                                        if (!method27622.method11715().method8461().toLowerCase().contains("cake")) {
-                                                            if (!method27622.method11715().method8461().toLowerCase().contains("mushroom")) {
-                                                                if (!method27622.method11715().method8461().toLowerCase().contains("flint")) {
-                                                                    if (!method27622.method11715().method8461().toLowerCase().contains("dyePowder")) {
-                                                                        if (!method27622.method11715().method8461().toLowerCase().contains("feather")) {
-                                                                            if (!method27622.method11715().method8461().toLowerCase().contains("bucket")) {
-                                                                                if (!method27622.method11715().method8461().toLowerCase().contains("chest") || class8321.method27664().method8461().toLowerCase().contains("collect")) {
-                                                                                    if (!method27622.method11715().method8461().toLowerCase().contains("snow")) {
-                                                                                        if (!method27622.method11715().method8461().toLowerCase().contains("fish")) {
-                                                                                            if (!method27622.method11715().method8461().toLowerCase().contains("enchant")) {
-                                                                                                if (!method27622.method11715().method8461().toLowerCase().contains("exp")) {
-                                                                                                    if (!method27622.method11715().method8461().toLowerCase().contains("shears")) {
-                                                                                                        if (!method27622.method11715().method8461().toLowerCase().contains("anvil")) {
-                                                                                                            if (!method27622.method11715().method8461().toLowerCase().contains("torch")) {
-                                                                                                                if (!method27622.method11715().method8461().toLowerCase().contains("seeds")) {
-                                                                                                                    if (!method27622.method11715().method8461().toLowerCase().contains("leather")) {
-                                                                                                                        if (!method27622.method11715().method8461().toLowerCase().contains("reeds")) {
-                                                                                                                            if (!method27622.method11715().method8461().toLowerCase().contains("record")) {
-                                                                                                                                if (!method27622.method11715().method8461().toLowerCase().contains("snowball")) {
+                                        if (!method27622.method11715().getFormattedText().toLowerCase().contains("tnt")) {
+                                            if (!method27622.method11715().getFormattedText().toLowerCase().contains("stick")) {
+                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("egg")) {
+                                                    if (!method27622.method11715().getFormattedText().toLowerCase().contains("string")) {
+                                                        if (!method27622.method11715().getFormattedText().toLowerCase().contains("cake")) {
+                                                            if (!method27622.method11715().getFormattedText().toLowerCase().contains("mushroom")) {
+                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("flint")) {
+                                                                    if (!method27622.method11715().getFormattedText().toLowerCase().contains("dyePowder")) {
+                                                                        if (!method27622.method11715().getFormattedText().toLowerCase().contains("feather")) {
+                                                                            if (!method27622.method11715().getFormattedText().toLowerCase().contains("bucket")) {
+                                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("chest") || class8321.method27664().getFormattedText().toLowerCase().contains("collect")) {
+                                                                                    if (!method27622.method11715().getFormattedText().toLowerCase().contains("snow")) {
+                                                                                        if (!method27622.method11715().getFormattedText().toLowerCase().contains("fish")) {
+                                                                                            if (!method27622.method11715().getFormattedText().toLowerCase().contains("enchant")) {
+                                                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("exp")) {
+                                                                                                    if (!method27622.method11715().getFormattedText().toLowerCase().contains("shears")) {
+                                                                                                        if (!method27622.method11715().getFormattedText().toLowerCase().contains("anvil")) {
+                                                                                                            if (!method27622.method11715().getFormattedText().toLowerCase().contains("torch")) {
+                                                                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("seeds")) {
+                                                                                                                    if (!method27622.method11715().getFormattedText().toLowerCase().contains("leather")) {
+                                                                                                                        if (!method27622.method11715().getFormattedText().toLowerCase().contains("reeds")) {
+                                                                                                                            if (!method27622.method11715().getFormattedText().toLowerCase().contains("record")) {
+                                                                                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("snowball")) {
                                                                                                                                     if (!(method27622 instanceof Class4064)) {
                                                                                                                                         if (method27622 != Class7739.field31371) {
                                                                                                                                             if (method27622 != Class7739.field31308) {
-                                                                                                                                                if (!method27622.method11715().method8461().toLowerCase().contains("piston")) {
+                                                                                                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("piston")) {
                                                                                                                                                     return false;
                                                                                                                                                 }
                                                                                                                                             }
@@ -541,7 +543,7 @@ public class Class3363 extends Class3355
     public static float method10681(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         if (method27622 instanceof Class4072) {
-            final String lowerCase = method27622.method11715().method8461().toLowerCase();
+            final String lowerCase = method27622.method11715().getFormattedText().toLowerCase();
             final Class4072 class8322 = (Class4072)method27622;
             float n;
             if (!(method27622 instanceof Class4073)) {

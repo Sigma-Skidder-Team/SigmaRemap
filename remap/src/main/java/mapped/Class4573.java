@@ -23,7 +23,7 @@ public class Class4573 extends Class4572<Class5144>
     }
     
     public BlockPos method13586(final Random random, final BlockPos class354, final Class5144 class355) {
-        return class354.method1134(random.nextInt(class355.field22138) - random.nextInt(class355.field22138), random.nextInt(class355.field22139) - random.nextInt(class355.field22139), random.nextInt(class355.field22140) - random.nextInt(class355.field22140));
+        return class354.add(random.nextInt(class355.field22138) - random.nextInt(class355.field22138), random.nextInt(class355.field22139) - random.nextInt(class355.field22139), random.nextInt(class355.field22140) - random.nextInt(class355.field22140));
     }
     
     public Class7096 method13587(final Random random, final BlockPos class354, final Class5144 class355) {

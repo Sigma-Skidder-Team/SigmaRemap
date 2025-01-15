@@ -5,7 +5,6 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongList;
-import java.util.HashMap;
 import com.google.common.collect.ImmutableList;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import java.io.IOException;
@@ -15,6 +14,8 @@ import java.util.Iterator;
 import com.google.common.collect.Maps;
 import java.util.List;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import net.minecraft.world.dimension.DimensionType;
+
 import java.util.Map;
 
 public class Class8734
@@ -173,15 +174,15 @@ public class Class8734
         }
     }
     
-    public static Class8734 method30176(final Class383 class383, final Class8213 class384) {
-        if (class383 == Class383.field2223) {
+    public static Class8734 method30176(final DimensionType class383, final Class8213 class384) {
+        if (class383 == DimensionType.field2223) {
             return new Class8734(class384, (List<String>)ImmutableList.of((Object)"Monument", (Object)"Stronghold", (Object)"Village", (Object)"Mineshaft", (Object)"Temple", (Object)"Mansion"), (List<String>)ImmutableList.of((Object)"Village", (Object)"Mineshaft", (Object)"Mansion", (Object)"Igloo", (Object)"Desert_Pyramid", (Object)"Jungle_Pyramid", (Object)"Swamp_Hut", (Object)"Stronghold", (Object)"Monument"));
         }
-        if (class383 == Class383.field2224) {
+        if (class383 == DimensionType.field2224) {
             final ImmutableList of = ImmutableList.of((Object)"Fortress");
             return new Class8734(class384, (List<String>)of, (List<String>)of);
         }
-        if (class383 != Class383.field2225) {
+        if (class383 != DimensionType.field2225) {
             throw new RuntimeException(String.format("Unknown dimension type : %s", class383));
         }
         final ImmutableList of2 = ImmutableList.of((Object)"EndCity");

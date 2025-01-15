@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -18,7 +19,7 @@ public class Class4037 extends Class4036
     @Override
     public Class7074 method12231(final Class7074 class7074) {
         final BlockPos method21639 = class7074.method21639();
-        final Class1847 method21640 = class7074.method21654();
+        final World method21640 = class7074.method21654();
         if (method21640.method6701(method21639).method21696() == this.method12240()) {
             Direction class7075;
             if (!class7074.method21645()) {
@@ -28,9 +29,9 @@ public class Class4037 extends Class4036
                 class7075 = (class7074.method21650() ? class7074.method21648().getOpposite() : class7074.method21648());
             }
             int i = 0;
-            final Class385 method21641 = new Class385(method21639).method1290(class7075);
+            final Mutable method21641 = new Mutable(method21639).method1290(class7075);
             while (i < 7) {
-                if (!method21640.field10067 && !Class1847.method6682(method21641)) {
+                if (!method21640.field10067 && !World.method6682(method21641)) {
                     final Class512 method21642 = class7074.method21652();
                     final int method21643 = method21640.method6986();
                     if (!(method21642 instanceof Class513)) {
@@ -39,7 +40,7 @@ public class Class4037 extends Class4036
                     if (method21641.getY() < method21643) {
                         break;
                     }
-                    ((Class513)method21642).field3039.method17469(new Class4378(new Class2259("build.tooHigh", new Object[] { method21643 }).method8469(Class2116.field12321), Class285.field1574));
+                    ((Class513)method21642).field3039.method17469(new Class4378(new Class2259("build.tooHigh", new Object[] { method21643 }).applyTextStyle(TextFormatting.RED), Class285.field1574));
                     break;
                 }
                 else {

@@ -21,9 +21,9 @@ public class Class3605 extends Class3446
     @Override
     public boolean method11013() {
         if (this.field16787.method2625() || this.field16787.method4396()) {
-            if (this.field16787.field2404) {
+            if (this.field16787.onGround) {
                 if (this.field16787.method4414()) {
-                    final float n = this.field16787.field2399 * 0.017453292f;
+                    final float n = this.field16787.rotationYaw * 0.017453292f;
                     int n2 = 0;
                     int n3 = 0;
                     final float n4 = -MathHelper.sin(n);
@@ -34,7 +34,7 @@ public class Class3605 extends Class3446
                     if (Math.abs(method35639) > 0.5) {
                         n3 += (int)(method35639 / Math.abs(method35639));
                     }
-                    return this.field16787.field2391.method6701(new BlockPos(this.field16787).method1134(n2, -1, n3)).method21706() || (this.field16787.method4396() && Class791.method4425(this.field16787).nextInt(60) == 1) || Class791.method4426(this.field16787).nextInt(500) == 1;
+                    return this.field16787.world.method6701(new BlockPos(this.field16787).add(n2, -1, n3)).method21706() || (this.field16787.method4396() && Class791.method4425(this.field16787).nextInt(60) == 1) || Class791.method4426(this.field16787).nextInt(500) == 1;
                 }
                 return false;
             }

@@ -5,8 +5,9 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
 
-public class Class1827<T extends Class511, M extends Class5845<T>> extends Class1799<T, M>
+public class Class1827<T extends LivingEntity, M extends Class5845<T>> extends Class1799<T, M>
 {
     private static String[] field10008;
     

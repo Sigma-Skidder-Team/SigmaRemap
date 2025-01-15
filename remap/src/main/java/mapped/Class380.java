@@ -25,7 +25,7 @@ public class Class380 extends Class378
         final BlockPos method1137 = class1877.method1137();
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
-                this.method1266(class1875, random, method1137.method1134(i, 0, j), class1876, set);
+                this.method1266(class1875, random, method1137.add(i, 0, j), class1876, set);
             }
         }
         for (int k = 2; k <= n3 - 1; ++k) {

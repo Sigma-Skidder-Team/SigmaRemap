@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -15,14 +18,14 @@ public class Class454 extends Class433 implements Class453
     private int field2705;
     private final BlockPos field2706;
     
-    public Class454(final EntityType<? extends Class454> class7499, final Class1847 class7500) {
+    public Class454(final EntityType<? extends Class454> class7499, final World class7500) {
         super(class7499, class7500);
         this.field2704 = true;
         this.field2705 = -1;
         this.field2706 = BlockPos.ZERO;
     }
     
-    public Class454(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class454(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field29003, n, n2, n3, class1847);
         this.field2704 = true;
         this.field2705 = -1;
@@ -66,8 +69,8 @@ public class Class454 extends Class433 implements Class453
     }
     
     @Override
-    public Class1847 method2186() {
-        return this.field2391;
+    public World method2186() {
+        return this.world;
     }
     
     @Override
@@ -88,7 +91,7 @@ public class Class454 extends Class433 implements Class453
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.method1768()) {
                 if (this.method2289()) {
                     if (!new BlockPos(this).equals(this.field2706)) {
@@ -111,7 +114,7 @@ public class Class454 extends Class433 implements Class453
     
     public boolean method2291() {
         if (!Class455.method2300(this)) {
-            final List<Entity> method6739 = this.field2391.method6739((Class<? extends Entity>)Class427.class, this.method1886().method18495(0.25, 0.0, 0.25), (Predicate<? super Entity>)Class9170.field38845);
+            final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>)Class427.class, this.method1886().method18495(0.25, 0.0, 0.25), (Predicate<? super Entity>)Class9170.field38845);
             if (!method6739.isEmpty()) {
                 Class455.method2302(this, (Class427)method6739.get(0));
             }
@@ -121,9 +124,9 @@ public class Class454 extends Class433 implements Class453
     }
     
     @Override
-    public void method2123(final Class7929 class7929) {
+    public void method2123(final DamageSource class7929) {
         super.method2123(class7929);
-        if (this.field2391.method6765().method31216(Class8878.field37321)) {
+        if (this.world.method6765().method31216(Class8878.field37321)) {
             this.method1764(Class7521.field29475);
         }
     }

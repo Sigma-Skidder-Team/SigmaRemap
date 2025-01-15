@@ -4,15 +4,17 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.INBTType;
 import net.minecraft.util.text.ITextComponent;
 
 import java.io.IOException;
 import java.io.DataOutput;
 import java.util.Objects;
 
-public class Class50 implements Class41
+public class Class50 implements INBT
 {
-    public static final Class6068<Class50> field121;
+    public static final INBTType<Class50> field121;
     private static final Class50 field122;
     private final String field123;
     
@@ -26,17 +28,17 @@ public class Class50 implements Class41
     }
     
     @Override
-    public void method259(final DataOutput dataOutput) throws IOException {
+    public void write(final DataOutput dataOutput) throws IOException {
         dataOutput.writeUTF(this.field123);
     }
     
     @Override
-    public byte method260() {
+    public byte getId() {
         return 8;
     }
     
     @Override
-    public Class6068<Class50> method261() {
+    public INBTType<Class50> getType() {
         return Class50.field121;
     }
     
@@ -60,15 +62,15 @@ public class Class50 implements Class41
     }
     
     @Override
-    public String method267() {
+    public String getString() {
         return this.field123;
     }
     
     @Override
-    public ITextComponent method263(final String s, final int n) {
+    public ITextComponent toFormattedComponent(final String s, final int n) {
         final String method292 = method292(this.field123);
         final String substring = method292.substring(0, 1);
-        return new Class2260(substring).method8458(new Class2260(method292.substring(1, method292.length() - 1)).method8469(Class50.field99)).method8457(substring);
+        return new StringTextComponent(substring).appendSibling(new StringTextComponent(method292.substring(1, method292.length() - 1)).applyTextStyle(Class50.SYNTAX_HIGHLIGHTING_STRING)).appendText(substring);
     }
     
     public static String method292(final String s) {

@@ -26,7 +26,7 @@ public class Class375 extends Class373
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field219.method503(this.field2213).toString())))).getValue();
     }
 }

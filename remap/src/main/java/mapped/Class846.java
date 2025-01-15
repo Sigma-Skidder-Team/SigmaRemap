@@ -4,16 +4,23 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public class Class846 extends Class763
 {
     private static String[] field4509;
-    private static final Class8810<Byte> field4510;
+    private static final DataParameter<Byte> field4510;
     
-    public Class846(final EntityType<? extends Class846> class7499, final Class1847 class7500) {
+    public Class846(final EntityType<? extends Class846> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -36,21 +43,21 @@ public class Class846 extends Class763
     }
     
     @Override
-    public Class7746 method4143(final Class1847 class1847) {
+    public Class7746 method4143(final World class1847) {
         return new Class7749(this, class1847);
     }
     
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class846.field4510, (Byte)0);
+        this.dataManager.register(Class846.field4510, (Byte)0);
     }
     
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.field2391.field10067) {
-            this.method5069(this.field2405);
+        if (!this.world.field10067) {
+            this.method5069(this.collidedHorizontally);
         }
     }
     
@@ -67,7 +74,7 @@ public class Class846 extends Class763
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35607;
     }
     
@@ -104,11 +111,11 @@ public class Class846 extends Class763
     }
     
     public boolean method5068() {
-        return (this.field2432.method33568(Class846.field4510) & 0x1) != 0x0;
+        return (this.dataManager.get(Class846.field4510) & 0x1) != 0x0;
     }
     
     public void method5069(final boolean b) {
-        final byte byteValue = this.field2432.method33568(Class846.field4510);
+        final byte byteValue = this.dataManager.get(Class846.field4510);
         byte b2;
         if (!b) {
             b2 = (byte)(byteValue & 0xFFFFFFFE);
@@ -116,7 +123,7 @@ public class Class846 extends Class763
         else {
             b2 = (byte)(byteValue | 0x1);
         }
-        this.field2432.method33569(Class846.field4510, b2);
+        this.dataManager.set(Class846.field4510, b2);
     }
     
     @Nullable
@@ -124,8 +131,8 @@ public class Class846 extends Class763
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final Class51 class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1851.method6790().nextInt(100) == 0) {
-            final Class782 class1855 = EntityType.field29023.method23371(this.field2391);
-            class1855.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, 0.0f);
+            final Class782 class1855 = EntityType.field29023.method23371(this.world);
+            class1855.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0f);
             class1855.method4188(class1851, class1852, class1853, null, null);
             class1851.method6886(class1855);
             class1855.method1778(this);
@@ -148,11 +155,11 @@ public class Class846 extends Class763
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 0.65f;
     }
     
     static {
-        field4510 = Class9184.method33564(Class846.class, Class7709.field30653);
+        field4510 = EntityDataManager.method33564(Class846.class, Class7709.field30653);
     }
 }

@@ -8,9 +8,11 @@ import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import org.apache.commons.lang3.StringUtils;
 
-public class Class1831<T extends Class511, M extends Class5845<T> & Class5855> extends Class1799<T, M>
+public class Class1831<T extends LivingEntity, M extends Class5845<T> & Class5855> extends Class1799<T, M>
 {
     public Class1831(final Class4778<T, M> class4778) {
         super(class4778);

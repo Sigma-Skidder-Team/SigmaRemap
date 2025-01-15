@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class4083 extends Class3820
 {
     private static String[] field18187;
@@ -14,7 +16,7 @@ public class Class4083 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         int n = 0;
@@ -40,7 +42,7 @@ public class Class4083 extends Class3820
         return Class2201.field13400;
     }
     
-    private void method12288(final Class1847 class1847, final BlockPos class1848) {
+    private void method12288(final World class1847, final BlockPos class1848) {
         class1847.method6705(null, class1848, Class8520.field35189, Class286.field1582, 1.0f, (Class4083.field17363.nextFloat() - Class4083.field17363.nextFloat()) * 0.2f + 1.0f);
     }
 }

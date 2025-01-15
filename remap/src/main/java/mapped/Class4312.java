@@ -6,7 +6,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4312 implements Class4252<Class5800>
+public class Class4312 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19329;
     public Class7859 field19330;
@@ -24,26 +24,26 @@ public class Class4312 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19330 = new Class7859(class8654.readInt(), class8654.readInt());
-        this.field19331 = new Class7870[class8654.method29501()];
+        this.field19331 = new Class7870[class8654.readVarInt()];
         for (int i = 0; i < this.field19331.length; ++i) {
-            this.field19331[i] = new Class7870(this, class8654.readShort(), Class3833.field17391.method499(class8654.method29501()));
+            this.field19331[i] = new Class7870(this, class8654.readShort(), Class3833.field17391.method499(class8654.readVarInt()));
         }
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeInt(this.field19330.field32290);
         class8654.writeInt(this.field19330.field32291);
-        class8654.method29505(this.field19331.length);
+        class8654.writeVarInt(this.field19331.length);
         for (final Class7870 class8655 : this.field19331) {
             class8654.writeShort(class8655.method25490());
-            class8654.method29505(Class3833.method11774(class8655.method25491()));
+            class8654.writeVarInt(Class3833.method11774(class8655.method25491()));
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17286(this);
     }
     

@@ -4,7 +4,13 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.time.temporal.ChronoField;
@@ -15,7 +21,7 @@ public abstract class Class780 extends Class763 implements Class768
     private final Class3626<Class780> field4189;
     private final Class3574 field4190;
     
-    public Class780(final EntityType<? extends Class780> class7499, final Class1847 class7500) {
+    public Class780(final EntityType<? extends Class780> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4189 = new Class3626<Class780>(this, 1.0, 20, 15.0f);
         this.field4190 = new Class3579(this, this, 1.2, false);
@@ -61,7 +67,7 @@ public abstract class Class780 extends Class763 implements Class768
             final ItemStack method4218 = this.method2718(Class2215.field13605);
             if (!method4218.method27620()) {
                 if (method4218.method27630()) {
-                    method4218.method27633(method4218.method27632() + this.field2423.nextInt(2));
+                    method4218.method27633(method4218.method27632() + this.rand.nextInt(2));
                     if (method4218.method27632() >= method4218.method27634()) {
                         this.method2794(Class2215.field13605);
                         this.method1803(Class2215.field13605, ItemStack.field34174);
@@ -70,7 +76,7 @@ public abstract class Class780 extends Class763 implements Class768
                 method4217 = 0;
             }
             if (method4217 != 0) {
-                this.method1664(8);
+                this.setFire(8);
             }
         }
         super.method2736();
@@ -97,14 +103,14 @@ public abstract class Class780 extends Class763 implements Class768
         this.method4184(class1852);
         this.method4187(class1852);
         this.method4329();
-        this.method4193(this.field2423.nextFloat() < 0.55f * class1852.method35975());
+        this.method4193(this.rand.nextFloat() < 0.55f * class1852.method35975());
         if (this.method2718(Class2215.field13605).method27620()) {
             final LocalDate now = LocalDate.now();
             final int value = now.get(ChronoField.DAY_OF_MONTH);
             if (now.get(ChronoField.MONTH_OF_YEAR) == 10) {
                 if (value == 31) {
-                    if (this.field2423.nextFloat() < 0.25f) {
-                        this.method1803(Class2215.field13605, new ItemStack((this.field2423.nextFloat() >= 0.1f) ? Class7521.field29342 : Class7521.field29343));
+                    if (this.rand.nextFloat() < 0.25f) {
+                        this.method1803(Class2215.field13605, new ItemStack((this.rand.nextFloat() >= 0.1f) ? Class7521.field29342 : Class7521.field29343));
                         this.field4121[Class2215.field13605.method8402()] = 0.0f;
                     }
                 }
@@ -114,8 +120,8 @@ public abstract class Class780 extends Class763 implements Class768
     }
     
     public void method4329() {
-        if (this.field2391 != null) {
-            if (!this.field2391.field10067) {
+        if (this.world != null) {
+            if (!this.world.field10067) {
                 this.field4114.method22063(this.field4190);
                 this.field4114.method22063(this.field4189);
                 if (this.method2715(Class7476.method23100(this, Class7739.field31279)).method27622() != Class7739.field31279) {
@@ -123,7 +129,7 @@ public abstract class Class780 extends Class763 implements Class768
                 }
                 else {
                     int n = 20;
-                    if (this.field2391.method6954() != Class2113.field12293) {
+                    if (this.world.method6954() != Class2113.field12293) {
                         n = 40;
                     }
                     this.field4189.method11163(n);
@@ -134,14 +140,14 @@ public abstract class Class780 extends Class763 implements Class768
     }
     
     @Override
-    public void method4252(final Class511 class511, final float n) {
+    public void method4252(final LivingEntity class511, final float n) {
         final Class402 method4330 = this.method4330(this.method2790(this.method2715(Class7476.method23100(this, Class7739.field31279))), n);
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.method1942(0.3333333333333333) - method4330.getPosY();
         final double n4 = class511.getPosZ() - this.getPosZ();
-        method4330.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        method4330.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.world.method6954().method8235() * 4));
         this.method1695(Class8520.field35575, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
-        this.field2391.method6886(method4330);
+        this.world.method6886(method4330);
     }
     
     public Class402 method4330(final ItemStack class8321, final float n) {
@@ -157,13 +163,13 @@ public abstract class Class780 extends Class763 implements Class768
     @Override
     public void method1803(final Class2215 class2215, final ItemStack class2216) {
         super.method1803(class2215, class2216);
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             this.method4329();
         }
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 1.74f;
     }
     

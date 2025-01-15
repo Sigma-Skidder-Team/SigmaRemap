@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -15,9 +17,9 @@ public class Class6738 extends Class6737
     public static final BlockPos field26498;
     private final Class8619 field26499;
     
-    public Class6738(final Class1847 class1847, final Class383 class1848) {
+    public Class6738(final World class1847, final DimensionType class1848) {
         super(class1847, class1848, 0.0f);
-        final Class51 method29603 = class1847.method6764().method29603(Class383.field2225);
+        final Class51 method29603 = class1847.method6764().method29603(DimensionType.field2225);
         this.field26499 = ((class1847 instanceof Class1849) ? new Class8619((Class1849)class1847, method29603.method327("DragonFight")) : null);
     }
     
@@ -92,8 +94,8 @@ public class Class6738 extends Class6737
     }
     
     @Override
-    public Class383 method20487() {
-        return Class383.field2225;
+    public DimensionType getType() {
+        return DimensionType.field2225;
     }
     
     @Override
@@ -102,7 +104,7 @@ public class Class6738 extends Class6737
         if (this.field26499 != null) {
             class51.method295("DragonFight", this.field26499.method29234());
         }
-        this.field26492.method6764().method29604(Class383.field2225, class51);
+        this.field26492.method6764().method29604(DimensionType.field2225, class51);
     }
     
     @Override

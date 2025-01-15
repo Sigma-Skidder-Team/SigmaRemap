@@ -7,6 +7,8 @@ package mapped;
 import net.minecraft.client.renderer.Matrix3f;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -27,7 +29,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
     public boolean method14103(final Class844 class844, final Class6664 class845, final double n, final double n2, final double n3) {
         if (!super.method14005(class844, class845, n, n2, n3)) {
             if (class844.method5058()) {
-                final Class511 method5059 = class844.method5059();
+                final LivingEntity method5059 = class844.method5059();
                 if (method5059 != null) {
                     final Vec3d method5060 = this.method14104(method5059, method5059.method1931() * 0.5, 1.0f);
                     final Vec3d method5061 = this.method14104(class844, class844.method1892(), 1.0f);
@@ -39,16 +41,16 @@ public class Class4764 extends Class4712<Class844, Class5879>
         return true;
     }
     
-    private Vec3d method14104(final Class511 class511, final double n, final float n2) {
-        return new Vec3d(MathHelper.method35701(n2, class511.field2417, class511.getPosX()), MathHelper.method35701(n2, class511.field2418, class511.getPosY()) + n, MathHelper.method35701(n2, class511.field2419, class511.getPosZ()));
+    private Vec3d method14104(final LivingEntity class511, final double n, final float n2) {
+        return new Vec3d(MathHelper.method35701(n2, class511.lastTickPosX, class511.getPosX()), MathHelper.method35701(n2, class511.lastTickPosY, class511.getPosY()) + n, MathHelper.method35701(n2, class511.lastTickPosZ, class511.getPosZ()));
     }
     
     public void method14105(final Class844 class844, final float n, final float n2, final Class7351 class845, final Class7807 class846, final int n3) {
         super.method14006(class844, n, n2, class845, class846, n3);
-        final Class511 method5059 = class844.method5059();
+        final LivingEntity method5059 = class844.method5059();
         if (method5059 != null) {
             final float method5060 = class844.method5063(n2);
-            final float n4 = class844.field2391.method6754() + n2;
+            final float n4 = class844.world.method6754() + n2;
             final float n5 = n4 * 0.5f % 1.0f;
             final float method5061 = class844.method1892();
             class845.method22567();
@@ -95,7 +97,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
             method14106(method5064, method5066, method5067, n27, 0.0f, n28, n10, n11, n12, 0.0f, n29);
             method14106(method5064, method5066, method5067, n27, n6, n28, n10, n11, n12, 0.0f, n30);
             float n31 = 0.0f;
-            if (class844.field2424 % 2 == 0) {
+            if (class844.ticksExisted % 2 == 0) {
                 n31 = 0.5f;
             }
             method14106(method5064, method5066, method5067, n13, n6, n14, n10, n11, n12, 0.5f, n31 + 0.5f);

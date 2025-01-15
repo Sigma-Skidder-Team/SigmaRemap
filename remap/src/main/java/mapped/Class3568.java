@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class3568 extends Class3555<Class512>
 {
@@ -18,7 +19,7 @@ public class Class3568 extends Class3555<Class512>
     
     @Override
     public boolean method11013() {
-        return this.field16659.field2391.method6954() != Class2113.field12290 && super.method11013();
+        return this.field16659.world.method6954() != Class2113.field12290 && super.method11013();
     }
     
     @Override

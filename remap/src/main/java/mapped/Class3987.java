@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class3987 extends Class3986
 {
@@ -16,24 +17,24 @@ public class Class3987 extends Class3986
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3987.field17996;
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         this.method12135(class7096, class7097, class7098);
         return Class2201.field13400;
     }
     
     @Override
-    public void method11847(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
+    public void method11847(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         this.method12135(class7096, class7097, class7098);
     }
     
-    private void method12135(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    private void method12135(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         for (int i = 0; i < 1000; ++i) {
-            final BlockPos method1134 = class7098.method1134(class7097.field10062.nextInt(16) - class7097.field10062.nextInt(16), class7097.field10062.nextInt(8) - class7097.field10062.nextInt(8), class7097.field10062.nextInt(16) - class7097.field10062.nextInt(16));
+            final BlockPos method1134 = class7098.add(class7097.field10062.nextInt(16) - class7097.field10062.nextInt(16), class7097.field10062.nextInt(8) - class7097.field10062.nextInt(8), class7097.field10062.nextInt(16) - class7097.field10062.nextInt(16));
             if (class7097.method6701(method1134).method21706()) {
                 if (!class7097.field10067) {
                     class7097.method6688(method1134, class7096, 2);

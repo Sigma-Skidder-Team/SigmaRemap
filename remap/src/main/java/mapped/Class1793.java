@@ -26,7 +26,9 @@ import com.google.common.collect.Queues;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import java.util.Queue;
@@ -36,7 +38,7 @@ import java.util.List;
 public class Class1793 implements Class1662
 {
     private static final List<Class6451> field9922;
-    public Class1847 field9923;
+    public World field9923;
     private final Map<Class6451, Queue<Class6173>> field9924;
     private final Queue<Class6177> field9925;
     private final Class1663 field9926;
@@ -46,7 +48,7 @@ public class Class1793 implements Class1662
     private final Map<Class1932, Class7806> field9930;
     private final Class1774 field9931;
     
-    public Class1793(final Class1847 field9923, final Class1663 field9924) {
+    public Class1793(final World field9923, final Class1663 field9924) {
         this.field9924 = Maps.newIdentityHashMap();
         this.field9925 = Queues.newArrayDeque();
         this.field9927 = new Random();
@@ -348,7 +350,7 @@ public class Class1793 implements Class1662
         Class8726.method30008();
     }
     
-    public void method6485(final Class1847 field9923) {
+    public void method6485(final World field9923) {
         this.field9923 = field9923;
         this.field9924.clear();
         this.field9925.clear();

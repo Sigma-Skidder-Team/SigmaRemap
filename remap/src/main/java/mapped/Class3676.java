@@ -4,13 +4,16 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3676 extends Class3666
 {
     public Class3676(final Class1932 class1932) {
         super(class1932);
     }
     
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         int n = 0;
         ItemStack field34174 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {

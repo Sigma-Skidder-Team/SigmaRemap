@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.function.Predicate;
 import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.item.ItemStack;
 
 public interface Class6311
 {

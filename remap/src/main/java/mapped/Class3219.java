@@ -31,7 +31,7 @@ public class Class3219 extends Class3167
     private void method10145(final Class5723 class5723) {
         if (this.method9906()) {
             if (class5723.method16998() instanceof Class4378) {
-                if (((Class4378)class5723.method16998()).method13164().method8461().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
+                if (((Class4378)class5723.method16998()).method13164().getFormattedText().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
                     class5723.method16961(true);
                 }
             }
@@ -81,7 +81,7 @@ public class Class3219 extends Class3167
         for (float n2 = n + 2.0f; n2 >= -n + 1.0f; --n2) {
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
-                    final BlockPos class354 = new BlockPos(Class3219.field15514.field4684.field2395 + n3, Class3219.field15514.field4684.field2396 + n2, Class3219.field15514.field4684.field2397 + n4);
+                    final BlockPos class354 = new BlockPos(Class3219.field15514.field4684.posX + n3, Class3219.field15514.field4684.posY + n2, Class3219.field15514.field4684.posZ + n4);
                     if (Class3219.field15514.field4683.method6701(class354).method21696() instanceof Class3963) {
                         if (Math.sqrt(Class3219.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
                             list.add(class354);

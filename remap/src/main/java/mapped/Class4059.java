@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
+
 public class Class4059 extends Class3820
 {
     private static String[] field18154;
@@ -14,7 +18,7 @@ public class Class4059 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21696() != Class7521.field29286 && method21656.method21696() != Class7521.field29172) {
@@ -32,8 +36,8 @@ public class Class4059 extends Class3820
                 final Class858 class7076 = new Class858(method21654, n + 0.5, n2, n3 + 0.5);
                 class7076.method5184(false);
                 method21654.method6886(class7076);
-                if (method21654.field10063 instanceof Class6738) {
-                    ((Class6738)method21654.field10063).method20509().method29253();
+                if (method21654.dimension instanceof Class6738) {
+                    ((Class6738)method21654.dimension).method20509().method29253();
                 }
             }
             class7075.method21651().method27693(1);

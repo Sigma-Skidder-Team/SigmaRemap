@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.AbstractList;
 import java.util.List;
@@ -31,7 +33,7 @@ public class Class4034 extends Class3820
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11728(class8321, class8322, list, class8323);
         ItemStack.method27669(list, method12225(class8321));
     }

@@ -4,6 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class842 extends Class763
@@ -11,7 +17,7 @@ public class Class842 extends Class763
     private int field4489;
     private boolean field4490;
     
-    public Class842(final EntityType<? extends Class842> class7499, final Class1847 class7500) {
+    public Class842(final EntityType<? extends Class842> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4108 = 3;
     }
@@ -28,7 +34,7 @@ public class Class842 extends Class763
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 0.1f;
     }
     
@@ -51,7 +57,7 @@ public class Class842 extends Class763
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35170;
     }
     
@@ -81,13 +87,13 @@ public class Class842 extends Class763
     
     @Override
     public void method1659() {
-        this.field2951 = this.field2399;
+        this.field2951 = this.rotationYaw;
         super.method1659();
     }
     
     @Override
     public void method1846(final float field2399) {
-        super.method1846(this.field2399 = field2399);
+        super.method1846(this.rotationYaw = field2399);
     }
     
     @Override
@@ -106,7 +112,7 @@ public class Class842 extends Class763
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (!this.method4194()) {
                 ++this.field4489;
             }
@@ -116,7 +122,7 @@ public class Class842 extends Class763
         }
         else {
             for (int i = 0; i < 2; ++i) {
-                this.field2391.method6709(Class8432.field34637, this.method1940(0.5), this.method1943(), this.method1947(0.5), (this.field2423.nextDouble() - 0.5) * 2.0, -this.field2423.nextDouble(), (this.field2423.nextDouble() - 0.5) * 2.0);
+                this.world.method6709(Class8432.field34637, this.method1940(0.5), this.method1943(), this.method1947(0.5), (this.rand.nextDouble() - 0.5) * 2.0, -this.rand.nextDouble(), (this.rand.nextDouble() - 0.5) * 2.0);
             }
         }
     }

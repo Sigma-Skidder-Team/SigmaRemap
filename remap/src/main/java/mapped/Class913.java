@@ -28,7 +28,7 @@ public class Class913 extends Thread
                 return;
             }
             byName = InetAddress.getByName(this.field4873);
-            Class694.method3876(this.field4875, Class3641.method11183(byName, this.field4874, this.field4875.field3150.field4648.method17129()));
+            Class694.method3876(this.field4875, NetworkManager.method11183(byName, this.field4874, this.field4875.field3150.field4648.method17129()));
             Class694.method3877(this.field4875).method11173(new Class5808(Class694.method3877(this.field4875), this.field4875.field3150, Class694.method3878(this.field4875), class2250 -> Class694.method3880(this.field4875, class2250)));
             Class694.method3877(this.field4875).method11174(new Class4398(this.field4873, this.field4874, Class2208.field13457));
             Class694.method3877(this.field4875).method11174(new Class4327(this.field4875.field3150.method5287().method33694()));

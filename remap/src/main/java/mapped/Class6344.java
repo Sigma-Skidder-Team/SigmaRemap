@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.List;
 
 public class Class6344 extends Class6343<Class7064>
@@ -11,7 +13,7 @@ public class Class6344 extends Class6343<Class7064>
     private static String[] field25373;
     private final double[] field25374;
     
-    public Class6344(final Class1847 class1847, final Class1868 class1848, final Class7064 class1849) {
+    public Class6344(final World class1847, final Class1868 class1848, final Class7064 class1849) {
         super(class1847, class1848, 4, 8, 128, class1849, false);
         this.field25374 = this.method18865();
     }

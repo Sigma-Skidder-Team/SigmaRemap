@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -17,7 +19,7 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3888.field17550;
     }
     
@@ -25,20 +27,20 @@ public class Class3888 extends Class3874 implements Class3872
     public void method11822(final Class7096 class7096, final Class1849 class7097, BlockPos class7098, final Random random) {
         if (random.nextInt(25) == 0) {
             int n = 5;
-            final Iterator<BlockPos> iterator = BlockPos.method1154(class7098.method1134(-4, -1, -4), class7098.method1134(4, 1, 4)).iterator();
+            final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(class7098.add(-4, -1, -4), class7098.add(4, 1, 4)).iterator();
             while (iterator.hasNext()) {
                 if (class7097.method6701(iterator.next()).method21696() == this && --n <= 0) {
                     return;
                 }
             }
-            BlockPos class7099 = class7098.method1134(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
+            BlockPos class7099 = class7098.add(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
             for (int i = 0; i < 4; ++i) {
                 if (class7097.method6961(class7099)) {
                     if (class7096.method21752(class7097, class7099)) {
                         class7098 = class7099;
                     }
                 }
-                class7099 = class7098.method1134(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
+                class7099 = class7098.add(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
             }
             if (class7097.method6961(class7099)) {
                 if (class7096.method21752(class7097, class7099)) {
@@ -87,7 +89,7 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return random.nextFloat() < 0.4;
     }
     

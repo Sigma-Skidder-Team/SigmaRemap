@@ -39,17 +39,17 @@ public class Class6348 extends Class6346<Class7066>
     
     @Override
     public void method18875(final Class1878 class1878) {
-        final Class385 class1879 = new Class385();
+        final Mutable class1879 = new Mutable();
         final int method7150 = class1878.method7150();
         final int method7151 = class1878.method7151();
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
                 final int n = (method7150 << 4) + i;
                 final int n2 = (method7151 << 4) + j;
-                class1878.method6688(class1879.method1284(n, 60, n2), Class6348.field25395, 2);
+                class1878.method6688(class1879.setPos(n, 60, n2), Class6348.field25395, 2);
                 final Class7096 method7152 = method18887(n, n2);
                 if (method7152 != null) {
-                    class1878.method6688(class1879.method1284(n, 70, n2), method7152, 2);
+                    class1878.method6688(class1879.setPos(n, 70, n2), method7152, 2);
                 }
             }
         }

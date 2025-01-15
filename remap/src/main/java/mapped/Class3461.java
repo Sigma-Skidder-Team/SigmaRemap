@@ -24,16 +24,16 @@ public class Class3461 extends Class3446
     
     @Override
     public boolean method11013() {
-        if (this.field16317.method1806()) {
+        if (this.field16317.isBeingRidden()) {
             return false;
         }
-        if (this.field16317.field2391.method6703()) {
+        if (this.field16317.world.method6703()) {
             return false;
         }
         if (this.field16317.method2633().nextInt(this.field16318) != 0) {
             return false;
         }
-        if (((Class1849)this.field16317.field2391).method6924(new BlockPos(this.field16317), 6)) {
+        if (((Class1849)this.field16317.world).method6924(new BlockPos(this.field16317), 6)) {
             final Vec3d method24903 = Class7775.method24903(this.field16317, 15, 7, class1850 -> -class1849.method6925(Class353.method1089(class1850)));
             this.field16319 = ((method24903 != null) ? new BlockPos(method24903) : null);
             return this.field16319 != null;
@@ -61,7 +61,7 @@ public class Class3461 extends Class3446
                 if (!this.field16319.withinDistance(this.field16317.method1934(), 10.0)) {
                     final Vec3d class5487 = new Vec3d(this.field16319);
                     final Vec3d method4151 = this.field16317.method1934();
-                    final BlockPos method4152 = this.field16317.field2391.method6958(Class2020.field11526, new BlockPos(method4151.subtract(class5487).scale(0.4).add(class5487).subtract(method4151).normalize().scale(10.0).add(method4151)));
+                    final BlockPos method4152 = this.field16317.world.method6958(Class2020.field11526, new BlockPos(method4151.subtract(class5487).scale(0.4).add(class5487).subtract(method4151).normalize().scale(10.0).add(method4151)));
                     if (!method4150.method24724(method4152.getX(), method4152.getY(), method4152.getZ(), 1.0)) {
                         this.method11024();
                     }
@@ -72,7 +72,7 @@ public class Class3461 extends Class3446
     
     private void method11024() {
         final Random method2633 = this.field16317.method2633();
-        final BlockPos method2634 = this.field16317.field2391.method6958(Class2020.field11526, new BlockPos(this.field16317).method1134(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
+        final BlockPos method2634 = this.field16317.world.method6958(Class2020.field11526, new BlockPos(this.field16317).add(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
         this.field16317.method4150().method24724(method2634.getX(), method2634.getY(), method2634.getZ(), 1.0);
     }
 }

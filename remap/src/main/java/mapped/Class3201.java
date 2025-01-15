@@ -24,8 +24,8 @@ public class Class3201 extends Class3167
     @Class6753
     public void method10042(final Class5743 class5743) {
         if (this.method9906()) {
-            final Vec3d field15620 = new Vec3d(Class3201.field15514.field4684.field2395, 0.0, Class3201.field15514.field4684.field2397);
-            if (Class3201.field15514.field4684.field2404) {
+            final Vec3d field15620 = new Vec3d(Class3201.field15514.field4684.posX, 0.0, Class3201.field15514.field4684.posZ);
+            if (Class3201.field15514.field4684.onGround) {
                 if (this.field15620 != null) {
                     final double d = field15620.distanceTo(this.field15620) / this.field15619 * Class3201.field15514.field4633.field26532;
                     final boolean b = Class9463.method35173().method35194().method29228() > 1 && Class3201.field15514.field4684.field2985 == 0;
@@ -42,7 +42,7 @@ public class Class3201 extends Class3167
                 }
             }
             int field15621;
-            if (!Class3201.field15514.field4684.field2404) {
+            if (!Class3201.field15514.field4684.onGround) {
                 this.field15619 = (field15621 = this.field15619) + 1;
             }
             else {

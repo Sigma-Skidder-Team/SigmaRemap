@@ -145,7 +145,7 @@ public class Class7658
         if (false) {
             return;
         }
-        if (this.field30396.field4684.field2424 % 120 == 0) {
+        if (this.field30396.field4684.ticksExisted % 120 == 0) {
             final Class2420 method28644 = Class8537.method28644(this.field30396.field4683.method6965(this.field30396.field4684.method1894()).method7019());
             final Iterator<Map.Entry<Long, Class8537>> iterator = this.field30403.entrySet().iterator();
             while (iterator.hasNext()) {

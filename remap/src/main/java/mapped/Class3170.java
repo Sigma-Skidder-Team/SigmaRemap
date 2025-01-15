@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Iterator;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
@@ -77,13 +78,13 @@ public class Class3170 extends Class3167
     public boolean method9925(final Class427 class427) {
         if (Class3170.field15514.field4684.method1732(class427) <= 5.0f) {
             final float n = 10.0f * (float)Math.sqrt(6.0 / Class8591.method29091(class427));
-            final double x = class427.field2395 - Class3170.field15514.field4684.field2395;
-            final double y = class427.field2396 - Class3170.field15514.field4684.field2396 - Class3170.field15514.field4684.method1931() + 0.4000000059604645;
-            final double y2 = class427.field2397 - Class3170.field15514.field4684.field2397;
+            final double x = class427.posX - Class3170.field15514.field4684.posX;
+            final double y = class427.posY - Class3170.field15514.field4684.posY - Class3170.field15514.field4684.method1931() + 0.4000000059604645;
+            final double y2 = class427.posZ - Class3170.field15514.field4684.posZ;
             final double x2 = MathHelper.sqrt(x * x + y2 * y2);
-            final float method30910 = Class8845.method30910(Class3170.field15514.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
-            final float method30911 = Class8845.method30910(Class3170.field15514.field4684.field2400, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
-            return this.method9926(Class3170.field15514.field4684.field2399, method30910) <= n && this.method9926(Class3170.field15514.field4684.field2400, method30911) <= n;
+            final float method30910 = Class8845.method30910(Class3170.field15514.field4684.rotationYaw, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
+            final float method30911 = Class8845.method30910(Class3170.field15514.field4684.rotationPitch, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
+            return this.method9926(Class3170.field15514.field4684.rotationYaw, method30910) <= n && this.method9926(Class3170.field15514.field4684.rotationPitch, method30911) <= n;
         }
         return false;
     }
@@ -95,7 +96,7 @@ public class Class3170 extends Class3167
     
     public void method9927(final double n, final double n2, final double n3, final Entity class399, final float n4) {
         final Class7524 field40314 = Class9400.field40314;
-        final String method8459 = class399.getName().method8459();
+        final String method8459 = class399.getName().getUnformattedComponentText();
         final float n5 = (float)(n - Class3170.field15514.field4644.method5833().method18161().getX());
         final float n6 = (float)(n2 - Class3170.field15514.field4644.method5833().method18161().getY());
         final float n7 = (float)(n3 - Class3170.field15514.field4644.method5833().method18161().getZ());
@@ -113,7 +114,7 @@ public class Class3170 extends Class3167
         GL11.glRotatef(Class3170.field15514.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
         GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
         GL11.glTranslated((double)(-field40314.method23505(method8459) / 2), 0.0, 0.0);
-        this.method9929(-87, -70, this.method9931(((Class427)class399).method2107()), ((Class427)class399).method2107().method27664().method8459(), false);
+        this.method9929(-87, -70, this.method9931(((Class427)class399).method2107()), ((Class427)class399).method2107().method27664().getUnformattedComponentText(), false);
         GL11.glPopMatrix();
         GL11.glEnable(2929);
         GL11.glEnable(2896);
@@ -146,7 +147,7 @@ public class Class3170 extends Class3167
                             final int n = 1;
                             final int n2 = 12;
                             Class9400.field40314.method23539();
-                            this.method9929((int)(Class3170.field15514.field4650.method26959() * Class9000.field37993 - 9 * (round + n) - n2 * 3), (int)(Class3170.field15514.field4650.method26960() * Class9000.field37993 - 33.0), method20054, method20053.method27664().method8459(), true);
+                            this.method9929((int)(Class3170.field15514.field4650.method26959() * Class9000.field37993 - 9 * (round + n) - n2 * 3), (int)(Class3170.field15514.field4650.method26960() * Class9000.field37993 - 33.0), method20054, method20053.method27664().getUnformattedComponentText(), true);
                             GL11.glPopMatrix();
                             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                             Class8726.method30028();
@@ -210,7 +211,7 @@ public class Class3170 extends Class3167
             if (j == this.field15530) {
                 if (b) {
                     Class8726.method30002();
-                    int a = Class3170.field15514.field4643.method6617(class8322.method27664().method8459());
+                    int a = Class3170.field15514.field4643.method6617(class8322.method27664().getUnformattedComponentText());
                     final List<String> method23541 = this.method9930(class8322);
                     for (int k = 0; k < method23541.size(); ++k) {
                         a = Math.max(a, Class3170.field15514.field4643.method6617((String)method23541.get(k)));
@@ -238,7 +239,7 @@ public class Class3170 extends Class3167
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<ITextComponent> iterator = method27668.iterator();
         while (iterator.hasNext()) {
-            arrayList.add(iterator.next().method8461());
+            arrayList.add(iterator.next().getFormattedText());
         }
         return arrayList;
     }

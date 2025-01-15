@@ -8,11 +8,11 @@ public final class Class4414 implements Class4410<Float>
 {
     private static String[] field19745;
     
-    public void method13358(final Class8654 class8654, final Float n) {
+    public void method13358(final PacketBuffer class8654, final Float n) {
         class8654.writeFloat(n);
     }
     
-    public Float method13359(final Class8654 class8654) {
+    public Float method13359(final PacketBuffer class8654) {
         return class8654.readFloat();
     }
     

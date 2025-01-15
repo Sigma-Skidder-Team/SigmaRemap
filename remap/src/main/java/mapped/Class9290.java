@@ -40,8 +40,8 @@ public class Class9290
     }
     
     public ITextComponent method34315() {
-        return Class9479.method35299(this.field39849.method8466().method8467(class8768 -> {
-            new Class9390(Class1961.field10697, new Class2260(this.method34312()));
+        return Class9479.method35299(this.field39849.deepCopy().applyTextStyle(class8768 -> {
+            new Class9390(Class1961.field10697, new StringTextComponent(this.method34312()));
             final Class9390 class8769;
             class8768.method30420(class8769);
         }));

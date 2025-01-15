@@ -9,17 +9,26 @@ import java.util.Iterator;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
 public abstract class Class819 extends Class788 implements Class820, Class822
 {
-    private static final Class8810<Integer> field4388;
+    private static final DataParameter<Integer> field4388;
     private Class512 field4389;
     public Class57 field4390;
     private final Class443 field4391;
     
-    public Class819(final EntityType<? extends Class819> class7499, final Class1847 class7500) {
+    public Class819(final EntityType<? extends Class819> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4391 = new Class443(8);
     }
@@ -34,11 +43,11 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     public int method4819() {
-        return this.field2432.method33568(Class819.field4388);
+        return this.dataManager.get(Class819.field4388);
     }
     
     public void method4820(final int i) {
-        this.field2432.method33569(Class819.field4388, i);
+        this.dataManager.set(Class819.field4388, i);
     }
     
     @Override
@@ -47,14 +56,14 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return this.method2625() ? 0.81f : 1.62f;
     }
     
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class819.field4388, 0);
+        this.dataManager.register(Class819.field4388, 0);
     }
     
     @Override
@@ -108,7 +117,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     
     @Override
     public void method4831(final ItemStack class8321) {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.field4107 > -this.method4155() + 20) {
                 this.field4107 = -this.method4155();
                 this.method1695(this.method4833(!class8321.method27620()), this.method2720(), this.method2721());
@@ -163,7 +172,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     
     @Nullable
     @Override
-    public Entity method1854(final Class383 class383) {
+    public Entity method1854(final DimensionType class383) {
         this.method4835();
         return super.method1854(class383);
     }
@@ -173,14 +182,14 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public void method2673(final Class7929 class7929) {
+    public void method2673(final DamageSource class7929) {
         super.method2673(class7929);
         this.method4835();
     }
     
     public void method4836(final Class6909 class6909) {
         for (int i = 0; i < 5; ++i) {
-            this.field2391.method6709(class6909, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02);
+            this.world.method6709(class6909, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     
@@ -207,8 +216,8 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public Class1847 method4838() {
-        return this.field2391;
+    public World method4838() {
+        return this.world;
     }
     
     public abstract void method4839();
@@ -222,12 +231,12 @@ public abstract class Class819 extends Class788 implements Class820, Class822
         }
         else {
             while (hashSet.size() < n) {
-                hashSet.add(this.field2423.nextInt(array.length));
+                hashSet.add(this.rand.nextInt(array.length));
             }
         }
         final Iterator iterator = hashSet.iterator();
         while (iterator.hasNext()) {
-            final Class9017 method25804 = array[(int)iterator.next()].method25804(this, this.field2423);
+            final Class9017 method25804 = array[(int)iterator.next()].method25804(this, this.rand);
             if (method25804 == null) {
                 continue;
             }
@@ -236,6 +245,6 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     static {
-        field4388 = Class9184.method33564(Class819.class, Class7709.field30654);
+        field4388 = EntityDataManager.method33564(Class819.class, Class7709.field30654);
     }
 }

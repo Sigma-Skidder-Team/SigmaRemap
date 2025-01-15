@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.regex.Matcher;
 import java.util.ArrayList;
@@ -42,19 +43,19 @@ public class Class9495
     private volatile int field40836;
     private volatile int field40837;
     private volatile int field40838;
-    private final Object2FloatMap<Class383> field40839;
+    private final Object2FloatMap<DimensionType> field40839;
     private volatile ITextComponent field40840;
     private static final Pattern field40841;
     private final Class8213 field40842;
     
     public Class9495(final String s, final Class7952 class7952, final Class8660 class7953, final boolean field40829) {
         this.field40833 = true;
-        this.field40839 = (Object2FloatMap<Class383>)Object2FloatMaps.synchronize((Object2FloatMap)new Object2FloatOpenCustomHashMap((Hash$Strategy)Class8349.method27852()));
+        this.field40839 = (Object2FloatMap<DimensionType>)Object2FloatMaps.synchronize((Object2FloatMap)new Object2FloatOpenCustomHashMap((Hash$Strategy)Class8349.method27852()));
         this.field40840 = new Class2259("optimizeWorld.stage.counting", new Object[0]);
         this.field40828 = class7953.method29549();
         this.field40829 = field40829;
         (this.field40830 = class7952.method25787(s, null)).method29395(class7953);
-        this.field40842 = new Class8213(new File(Class383.field2223.method1272(this.field40830.method29392()), "data"), this.field40830.method29400());
+        this.field40842 = new Class8213(new File(DimensionType.field2223.method1272(this.field40830.method29392()), "data"), this.field40830.method29400());
         this.field40832 = this.field40830.method29392();
         (this.field40831 = Class9495.field40827.newThread(this::method35336)).setUncaughtExceptionHandler((p0, t2) -> {
             Class9495.field40826.error("Error upgrading world", t2);
@@ -77,7 +78,7 @@ public class Class9495
         final File method29392 = this.field40830.method29392();
         this.field40836 = 0;
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        for (final Class383 class383 : Class383.method1269()) {
+        for (final DimensionType class383 : DimensionType.method1269()) {
             final List<Class7859> method29393 = this.method35337(class383);
             builder.put((Object)class383, (Object)method29393.listIterator());
             this.field40836 += method29393.size();
@@ -89,7 +90,7 @@ public class Class9495
             final float n = (float)this.field40836;
             final ImmutableMap build = builder.build();
             final ImmutableMap$Builder builder2 = ImmutableMap.builder();
-            for (final Class383 class384 : Class383.method1269()) {
+            for (final DimensionType class384 : DimensionType.method1269()) {
                 builder2.put((Object)class384, (Object)new Class387(new File(class384.method1272(method29392), "region"), this.field40830.method29400()));
             }
             final ImmutableMap build2 = builder2.build();
@@ -98,7 +99,7 @@ public class Class9495
             while (this.field40833) {
                 boolean b = false;
                 float field40835 = 0.0f;
-                for (final Class383 class385 : Class383.method1269()) {
+                for (final DimensionType class385 : DimensionType.method1269()) {
                     final ListIterator listIterator = (ListIterator)build.get((Object)class385);
                     final Class387 class386 = (Class387)build2.get((Object)class385);
                     if (listIterator.hasNext()) {
@@ -168,7 +169,7 @@ public class Class9495
         }
     }
     
-    private List<Class7859> method35337(final Class383 class383) {
+    private List<Class7859> method35337(final DimensionType class383) {
         final File file = new File(class383.method1272(this.field40832), "region");
         final File[] listFiles = file.listFiles((p0, s) -> s.endsWith(".mca"));
         if (listFiles == null) {
@@ -200,7 +201,7 @@ public class Class9495
         return this.field40834;
     }
     
-    public float method35339(final Class383 class383) {
+    public float method35339(final DimensionType class383) {
         return this.field40839.getFloat((Object)class383);
     }
     

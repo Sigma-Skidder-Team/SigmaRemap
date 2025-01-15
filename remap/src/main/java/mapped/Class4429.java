@@ -384,7 +384,7 @@ public class Class4429
         final BlockPos method19965 = Class6585.method19965(new BlockPos(1, 0, 0), Class2181.field12917, class358, 7, 7);
         final Class2052 method19966 = class358.method8141(class355);
         final BlockPos method19967 = method19965.method1151(class355);
-        list.add(new Class4520(this.field19760, s, class354.method1134(method19967.getX(), 0, method19967.getZ()), method19966));
+        list.add(new Class4520(this.field19760, s, class354.add(method19967.getX(), 0, method19967.getZ()), method19966));
     }
     
     private void method13403(final List<Class4520> list, final BlockPos class354, final Class2052 class355, final Direction class356, final Direction class357, final Class6716 class358, final boolean b) {

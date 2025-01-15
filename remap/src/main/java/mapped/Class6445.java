@@ -13,6 +13,8 @@ import com.google.common.collect.Streams;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
+
 import java.util.Collection;
 
 public class Class6445
@@ -52,7 +54,7 @@ public class Class6445
     
     private static void method19226(final Class9083 class9083) {
         final Throwable method32765 = class9083.method32765();
-        method19230(class9083.method32758(), Class2116.field12321, class9083.method32754() + " failed! " + Class8349.method27860(method32765));
+        method19230(class9083.method32758(), TextFormatting.RED, class9083.method32754() + " failed! " + Class8349.method27860(method32765));
         if (method32765 instanceof Class2360) {
             final Class2360 class9084 = (Class2360)method32765;
             method19232(class9083.method32758(), class9084.method9497(), class9084.method9496());
@@ -62,19 +64,19 @@ public class Class6445
     
     private static void method19227(final Class9083 class9083, final Class3833 class9084) {
         final Class1849 method32758 = class9083.method32758();
-        final BlockPos method32759 = class9083.method32755().method1134(-1, -1, -1);
+        final BlockPos method32759 = class9083.method32755().add(-1, -1, -1);
         method32758.method6692(method32759, Class7521.field29417.method11878());
-        method32758.method6692(method32759.method1134(0, 1, 0), class9084.method11878());
+        method32758.method6692(method32759.add(0, 1, 0), class9084.method11878());
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
-                method32758.method6692(method32759.method1134(i, -1, j), Class7521.field29281.method11878());
+                method32758.method6692(method32759.add(i, -1, j), Class7521.field29281.method11878());
             }
         }
     }
     
     private static void method19228(final Class9083 class9083, final String s) {
         final Class1849 method32758 = class9083.method32758();
-        final BlockPos method32759 = class9083.method32755().method1134(-1, 1, -1);
+        final BlockPos method32759 = class9083.method32755().add(-1, 1, -1);
         method32758.method6692(method32759, Class7521.field29813.method11878());
         Class3930.method12040(method32758, method32759, method32758.method6701(method32759), method19229(class9083.method32754(), class9083.method32768(), s));
     }
@@ -93,8 +95,8 @@ public class Class6445
         return class8321;
     }
     
-    private static void method19230(final Class1849 class1849, final Class2116 class1850, final String s) {
-        class1849.method6883(p0 -> true).forEach(class1852 -> class1852.sendMessage(new Class2260(s2).method8469(class1851)));
+    private static void method19230(final Class1849 class1849, final TextFormatting class1850, final String s) {
+        class1849.method6883(p0 -> true).forEach(class1852 -> class1852.sendMessage(new StringTextComponent(s2).applyTextStyle(class1851)));
     }
     
     public static void method19231(final Class1849 class1849) {
@@ -107,7 +109,7 @@ public class Class6445
     
     public static void method19233(final Class1849 class1849, final BlockPos class1850, final Class8564 class1851, final int n) {
         class1851.method28796();
-        BlockPos.method1155(class1850.method1134(-n, 0, -n), class1850.method1134(n, 0, n)).filter(class1853 -> class1852.method6701(class1853).method21696() == Class7521.field29820).forEach(class1855 -> {
+        BlockPos.getAllInBox(class1850.add(-n, 0, -n), class1850.add(n, 0, n)).filter(class1853 -> class1852.method6701(class1853).method21696() == Class7521.field29820).forEach(class1855 -> {
             final Class501 class1856 = (Class501)class1854.method6727(class1855);
             class1856.method2193();
             final BlockPos class1857;

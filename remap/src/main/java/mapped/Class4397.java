@@ -6,7 +6,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4397 implements Class4252<Class5813>
+public class Class4397 implements IPacket<Class5813>
 {
     private static String[] field19692;
     private Class2125 field19693;
@@ -41,7 +41,7 @@ public class Class4397 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19693 = class8654.method29499(Class2125.class);
         if (this.field19693 != Class2125.field12397) {
             if (this.field19693 == Class2125.field12398) {
@@ -61,7 +61,7 @@ public class Class4397 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29500(this.field19693);
         if (this.field19693 != Class2125.field12397) {
             if (this.field19693 == Class2125.field12398) {

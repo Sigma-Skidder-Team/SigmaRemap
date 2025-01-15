@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
@@ -181,7 +183,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     @Override
     public void method2241(final Class512 class512) {
-        if (!class512.method1639()) {
+        if (!class512.isSpectator()) {
             if (this.field2667 < 0) {
                 this.field2667 = 0;
             }
@@ -195,7 +197,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     @Override
     public void method2242(final Class512 class512) {
-        if (!class512.method1639()) {
+        if (!class512.isSpectator()) {
             --this.field2667;
             this.field2656.method6763(this.field2657, this.method2194().method21696(), 1, this.field2667);
             if (this.field2667 <= 0) {

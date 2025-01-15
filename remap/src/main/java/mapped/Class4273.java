@@ -10,7 +10,7 @@ import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
 
-public class Class4273 implements Class4252<Class5800>
+public class Class4273 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19163;
     private int field19164;
@@ -22,7 +22,7 @@ public class Class4273 implements Class4252<Class5800>
     }
     
     public Class4273(final Entity class399) {
-        this(class399.method1643(), class399.method1935());
+        this(class399.getEntityId(), class399.getMotion());
     }
     
     public Class4273(final int field19164, final Vec3d class5487) {
@@ -36,22 +36,22 @@ public class Class4273 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19164 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19164 = class8654.readVarInt();
         this.field19165 = class8654.readShort();
         this.field19166 = class8654.readShort();
         this.field19167 = class8654.readShort();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19164);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19164);
         class8654.writeShort(this.field19165);
         class8654.writeShort(this.field19166);
         class8654.writeShort(this.field19167);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17277(this);
     }
     

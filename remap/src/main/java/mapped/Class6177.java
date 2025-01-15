@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class6177 extends Class6175
 {
@@ -15,15 +16,15 @@ public class Class6177 extends Class6175
     private final int field24974;
     private final Class6909 field24975;
     
-    public Class6177(final Class1847 class1847, final Entity class1848, final Class6909 class1849) {
+    public Class6177(final World class1847, final Entity class1848, final Class6909 class1849) {
         this(class1847, class1848, class1849, 3);
     }
     
-    public Class6177(final Class1847 class1847, final Entity class1848, final Class6909 class1849, final int n) {
-        this(class1847, class1848, class1849, n, class1848.method1935());
+    public Class6177(final World class1847, final Entity class1848, final Class6909 class1849, final int n) {
+        this(class1847, class1848, class1849, n, class1848.getMotion());
     }
     
-    private Class6177(final Class1847 class1847, final Entity field24972, final Class6909 field24973, final int field24974, final Vec3d class1848) {
+    private Class6177(final World class1847, final Entity field24972, final Class6909 field24973, final int field24974, final Vec3d class1848) {
         super(class1847, field24972.getPosX(), field24972.method1942(0.5), field24972.getPosZ(), class1848.x, class1848.y, class1848.z);
         this.field24972 = field24972;
         this.field24974 = field24974;

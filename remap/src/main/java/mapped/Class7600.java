@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.dimension.DimensionType;
+
 public class Class7600
 {
     private static String[] field30138;
@@ -12,7 +14,7 @@ public class Class7600
     private Class8683 field30141;
     private Class3090 field30142;
     private Class4574<?> field30143;
-    private Class383 field30144;
+    private DimensionType field30144;
     private Class8355 field30145;
     private Class7854 field30146;
     private Class8744 field30147;

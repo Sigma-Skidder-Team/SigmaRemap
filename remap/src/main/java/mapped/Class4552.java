@@ -24,11 +24,11 @@ public class Class4552 extends Class4535<Class5122>
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
         final Class7859 class1855 = new Class7859(class1853);
         if (method13563(class1855.field32290, class1855.field32291, Class4552.field20034.field32290, Class4552.field20034.field32291) <= 1) {
-            final Class385 class1856 = new Class385();
+            final Mutable class1856 = new Mutable();
             for (int i = class1855.method25427(); i <= class1855.method25429(); ++i) {
                 for (int j = class1855.method25426(); j <= class1855.method25428(); ++j) {
                     if (method13563(Class4552.field20033.getX(), Class4552.field20033.getZ(), j, i) <= 16) {
-                        class1856.method1284(j, Class4552.field20033.getY(), i);
+                        class1856.setPos(j, Class4552.field20033.getY(), i);
                         if (!class1856.equals(Class4552.field20033)) {
                             class1851.method6688(class1856, Class7521.field29148.method11878(), 2);
                         }

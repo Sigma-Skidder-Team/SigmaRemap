@@ -7,6 +7,7 @@ package mapped;
 import java.util.Optional;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
 
 public class Class5465 extends Class5419<Class824>
 {
@@ -109,14 +110,14 @@ public class Class5465 extends Class5419<Class824>
             class825.method4354(6000);
             method4882.method4354(-24000);
             method4882.method1730(class824.getPosX(), class824.getPosY(), class824.getPosZ(), 0.0f, 0.0f);
-            class824.field2391.method6886(method4882);
-            class824.field2391.method6761(method4882, (byte)12);
+            class824.world.method6886(method4882);
+            class824.world.method6761(method4882, (byte)12);
             return Optional.of(method4882);
         }
         return Optional.empty();
     }
     
     private void method16699(final Class1849 class1849, final Class824 class1850, final BlockPos class1851) {
-        class1850.method2618().method1196(Class8233.field33800, Class363.method1167(class1849.method6789().method20487(), class1851));
+        class1850.method2618().method1196(Class8233.field33800, Class363.method1167(class1849.method6789().getType(), class1851));
     }
 }

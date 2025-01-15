@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -32,7 +33,7 @@ public abstract class Class5784 implements Class5783
     }
     
     @Override
-    public void method17248(final Class858 class858, final BlockPos class859, final Class7929 class860, final Class512 class861) {
+    public void method17248(final Class858 class858, final BlockPos class859, final DamageSource class860, final Class512 class861) {
     }
     
     @Override
@@ -55,13 +56,13 @@ public abstract class Class5784 implements Class5783
     }
     
     @Override
-    public float method17255(final Class7929 class7929, final float n) {
+    public float method17255(final DamageSource class7929, final float n) {
         return n;
     }
     
     @Override
     public float method17252() {
-        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.method1935())) + 1.0f;
+        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.getMotion())) + 1.0f;
         return 0.7f / Math.min(a, 40.0f) / a;
     }
 }

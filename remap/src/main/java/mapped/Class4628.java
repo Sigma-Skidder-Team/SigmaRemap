@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class4628 extends Class4611<Class4225>
 {
@@ -17,10 +18,10 @@ public class Class4628 extends Class4611<Class4225>
     }
     
     public Class4225 method13795(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        return new Class4225(jsonObject.has("from") ? Class383.method1275(new Class1932(Class9583.method35895(jsonObject, "from"))) : null, jsonObject.has("to") ? Class383.method1275(new Class1932(Class9583.method35895(jsonObject, "to"))) : null);
+        return new Class4225(jsonObject.has("from") ? DimensionType.method1275(new Class1932(Class9583.method35895(jsonObject, "from"))) : null, jsonObject.has("to") ? DimensionType.method1275(new Class1932(Class9583.method35895(jsonObject, "to"))) : null);
     }
     
-    public void method13796(final Class513 class513, final Class383 class514, final Class383 class515) {
+    public void method13796(final Class513 class513, final DimensionType class514, final DimensionType class515) {
         this.method13726(class513.method2957(), class518 -> class518.method12713(class516, class517));
     }
     

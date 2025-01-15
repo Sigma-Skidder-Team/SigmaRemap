@@ -4,13 +4,12 @@
 
 package mapped;
 
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 
 public class Class6676 implements Class6672<IntegerArgumentType>
 {
-    public void method20309(final IntegerArgumentType integerArgumentType, final Class8654 class8654) {
+    public void method20309(final IntegerArgumentType integerArgumentType, final PacketBuffer class8654) {
         final boolean b = integerArgumentType.getMinimum() != Integer.MIN_VALUE;
         final boolean b2 = integerArgumentType.getMaximum() != Integer.MAX_VALUE;
         class8654.writeByte(Class7126.method21869(b, b2));
@@ -22,7 +21,7 @@ public class Class6676 implements Class6672<IntegerArgumentType>
         }
     }
     
-    public IntegerArgumentType method20310(final Class8654 class8654) {
+    public IntegerArgumentType method20310(final PacketBuffer class8654) {
         final byte byte1 = class8654.readByte();
         return IntegerArgumentType.integer(Class7126.method21870(byte1) ? class8654.readInt() : Integer.MIN_VALUE, Class7126.method21871(byte1) ? class8654.readInt() : Integer.MAX_VALUE);
     }

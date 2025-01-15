@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import net.minecraft.network.ThreadQuickExitException;
 import org.apache.logging.log4j.Logger;
@@ -11,13 +12,13 @@ import org.apache.logging.log4j.Logger;
 public class Class8663
 {
     private static final Logger field36392;
-    public static Class383 field36393;
+    public static DimensionType field36393;
     
-    public static <T extends Class5801> void method29631(final Class4252<T> class4252, final T t, final Class1849 class4253) throws ThreadQuickExitException {
+    public static <T extends INetHandler> void method29631(final IPacket<T> class4252, final T t, final Class1849 class4253) throws ThreadQuickExitException {
         method29632(class4252, t, class4253.method6679());
     }
     
-    public static <T extends Class5801> void method29632(final Class4252<T> class4252, final T t, final Class872<?> class4253) throws ThreadQuickExitException {
+    public static <T extends INetHandler> void method29632(final IPacket<T> class4252, final T t, final Class872<?> class4253) throws ThreadQuickExitException {
         if (class4253.method5374()) {
             method29633(class4252);
             return;
@@ -35,7 +36,7 @@ public class Class8663
         throw Class2382.field14183;
     }
     
-    public static void method29633(final Class4252 class4252) {
+    public static void method29633(final IPacket class4252) {
         if (class4252 instanceof Class4328) {
             Class869.method5277().field4636.method5765();
         }

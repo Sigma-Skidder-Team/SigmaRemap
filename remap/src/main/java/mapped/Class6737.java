@@ -6,20 +6,22 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
 public abstract class Class6737
 {
     public static final float[] field26491;
-    public final Class1847 field26492;
-    private final Class383 field26493;
+    public final World field26492;
+    private final DimensionType field26493;
     public boolean field26494;
     public boolean field26495;
     public final float[] field26496;
     private final float[] field26497;
     
-    public Class6737(final Class1847 field26492, final Class383 field26493, final float n) {
+    public Class6737(final World field26492, final DimensionType field26493, final float n) {
         this.field26496 = new float[16];
         this.field26497 = new float[4];
         this.field26492 = field26492;
@@ -111,7 +113,7 @@ public abstract class Class6737
     
     public abstract boolean method20495(final int p0, final int p1);
     
-    public abstract Class383 method20487();
+    public abstract DimensionType getType();
     
     static {
         field26491 = new float[] { 1.0f, 0.75f, 0.5f, 0.25f, 0.0f, 0.25f, 0.5f, 0.75f };

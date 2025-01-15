@@ -48,11 +48,11 @@ public class Class595 extends Class594
         }
         if (!b2) {
             if (n9 != 0) {
-                this.field3501.method3367(Class2116.field12321 + this.field3501.method3369());
+                this.field3501.method3367(TextFormatting.RED + this.field3501.method3369());
             }
         }
         else {
-            this.field3501.method3367(Class2116.field12324 + "> " + Class2116.field12323 + this.field3501.method3369() + Class2116.field12324 + " <");
+            this.field3501.method3367(TextFormatting.WHITE + "> " + TextFormatting.YELLOW + this.field3501.method3369() + TextFormatting.WHITE + " <");
         }
         this.field3501.method2975(n6, n7, n8);
     }

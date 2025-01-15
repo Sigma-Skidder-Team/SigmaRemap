@@ -8,13 +8,14 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.List;
 
 public class Class9236
 {
     private static String[] field39590;
-    private final Class1847 field39591;
+    private final World field39591;
     private final BlockPos field39592;
     private final boolean field39593;
     private final BlockPos field39594;
@@ -23,7 +24,7 @@ public class Class9236
     private final List<BlockPos> field39597;
     private final Direction field39598;
     
-    public Class9236(final Class1847 field39591, final BlockPos field39592, final Direction class179, final boolean field39593) {
+    public Class9236(final World field39591, final BlockPos field39592, final Direction class179, final boolean field39593) {
         this.field39596 = Lists.newArrayList();
         this.field39597 = Lists.newArrayList();
         this.field39591 = field39591;

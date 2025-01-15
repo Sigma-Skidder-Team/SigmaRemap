@@ -6,10 +6,12 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 
 import java.util.Map;
 
-public abstract class Class1834<T extends Class511, M extends Class5853<T>, A extends Class5853<T>> extends Class1799<T, M>
+public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, A extends Class5853<T>> extends Class1799<T, M>
 {
     public final A field10014;
     public final A field10015;

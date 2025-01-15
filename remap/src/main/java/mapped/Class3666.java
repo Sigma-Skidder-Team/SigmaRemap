@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public abstract class Class3666 implements Class3663
 {
     private final Class1932 field16952;

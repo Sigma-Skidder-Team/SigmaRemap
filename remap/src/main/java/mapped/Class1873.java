@@ -26,7 +26,7 @@ public class Class1873 implements Class1867
         this(new Class3090[Class1873.field10210]);
     }
     
-    public Class1873(final Class8654 class8654) {
+    public Class1873(final PacketBuffer class8654) {
         this();
         for (int i = 0; i < this.field10213.length; ++i) {
             final int int1 = class8654.readInt();
@@ -77,7 +77,7 @@ public class Class1873 implements Class1867
         return array;
     }
     
-    public void method7126(final Class8654 class8654) {
+    public void method7126(final PacketBuffer class8654) {
         final Class3090[] field10213 = this.field10213;
         for (int length = field10213.length, i = 0; i < length; ++i) {
             class8654.writeInt(Class90.field217.method504(field10213[i]));

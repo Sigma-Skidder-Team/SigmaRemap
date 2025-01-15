@@ -19,6 +19,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.nbt.INBT;
 
 public class Class8258 implements ArgumentType<Class8570>
 {
@@ -136,7 +137,7 @@ public class Class8258 implements ArgumentType<Class8570>
         return false;
     }
     
-    private static Predicate<Class41> method27409(final Class51 class51) {
+    private static Predicate<INBT> method27409(final Class51 class51) {
         return class53 -> Class9346.method34642(class52, class53, true);
     }
     

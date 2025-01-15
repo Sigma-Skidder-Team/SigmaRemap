@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.AbstractList;
 
 public class Class3439 extends Class3418

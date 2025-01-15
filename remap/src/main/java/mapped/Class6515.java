@@ -8,7 +8,6 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.List;
-import java.util.Collection;
 import java.util.Arrays;
 import com.google.common.collect.Sets;
 import java.util.Set;
@@ -149,7 +148,7 @@ public class Class6515 extends Class6516
         }
     }
     
-    public List<Class4252<?>> method19625(final Class9290 class9290) {
+    public List<IPacket<?>> method19625(final Class9290 class9290) {
         final ArrayList arrayList = Lists.newArrayList();
         arrayList.add(new Class4400(class9290, 0));
         for (int i = 0; i < 19; ++i) {
@@ -164,9 +163,9 @@ public class Class6515 extends Class6516
     }
     
     public void method19626(final Class9290 class9290) {
-        final List<Class4252<?>> method19625 = this.method19625(class9290);
+        final List<IPacket<?>> method19625 = this.method19625(class9290);
         for (final Class513 class9291 : this.field25927.method1537().method20623()) {
-            final Iterator<Class4252<?>> iterator2 = method19625.iterator();
+            final Iterator<IPacket<?>> iterator2 = method19625.iterator();
             while (iterator2.hasNext()) {
                 class9291.field3039.method17469(iterator2.next());
             }
@@ -174,7 +173,7 @@ public class Class6515 extends Class6516
         this.field25928.add(class9290);
     }
     
-    public List<Class4252<?>> method19627(final Class9290 class9290) {
+    public List<IPacket<?>> method19627(final Class9290 class9290) {
         final ArrayList arrayList = Lists.newArrayList();
         arrayList.add(new Class4400(class9290, 1));
         for (int i = 0; i < 19; ++i) {
@@ -186,9 +185,9 @@ public class Class6515 extends Class6516
     }
     
     public void method19628(final Class9290 class9290) {
-        final List<Class4252<?>> method19627 = this.method19627(class9290);
+        final List<IPacket<?>> method19627 = this.method19627(class9290);
         for (final Class513 class9291 : this.field25927.method1537().method20623()) {
-            final Iterator<Class4252<?>> iterator2 = method19627.iterator();
+            final Iterator<IPacket<?>> iterator2 = method19627.iterator();
             while (iterator2.hasNext()) {
                 class9291.field3039.method17469(iterator2.next());
             }

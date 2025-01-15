@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.EnumSet;
 
 public class Class3547 extends Class3545
@@ -24,7 +27,7 @@ public class Class3547 extends Class3545
     @Override
     public boolean method11013() {
         final int method2635 = this.field16602.method2635();
-        final Class511 method2636 = this.field16602.method2634();
+        final LivingEntity method2636 = this.field16602.method2634();
         if (method2635 != this.field16617 && method2636 != null) {
             final Class<?>[] field16618 = this.field16618;
             for (int length = field16618.length, i = 0; i < length; ++i) {
@@ -57,7 +60,7 @@ public class Class3547 extends Class3545
     
     public void method11101() {
         final double method11096 = this.method11096();
-        for (final Class759 class759 : this.field16602.field2391.method7129(this.field16602.getClass(), new AxisAlignedBB(this.field16602.getPosX(), this.field16602.getPosY(), this.field16602.getPosZ(), this.field16602.getPosX() + 1.0, this.field16602.getPosY() + 1.0, this.field16602.getPosZ() + 1.0).method18495(method11096, 10.0, method11096))) {
+        for (final Class759 class759 : this.field16602.world.method7129(this.field16602.getClass(), new AxisAlignedBB(this.field16602.getPosX(), this.field16602.getPosY(), this.field16602.getPosZ(), this.field16602.getPosX() + 1.0, this.field16602.getPosY() + 1.0, this.field16602.getPosZ() + 1.0).method18495(method11096, 10.0, method11096))) {
             if (this.field16602 == class759) {
                 continue;
             }
@@ -87,7 +90,7 @@ public class Class3547 extends Class3545
         }
     }
     
-    public void method11102(final Class759 class759, final Class511 class760) {
+    public void method11102(final Class759 class759, final LivingEntity class760) {
         class759.method4153(class760);
     }
     

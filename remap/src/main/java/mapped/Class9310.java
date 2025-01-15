@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Properties;
 
@@ -244,8 +245,8 @@ public class Class9310
         if (this.field39966 != null) {
             if (class8444 instanceof Class8443) {
                 final Entity method28184 = ((Class8443)class8444).method28183();
-                if (method28184 instanceof Class511) {
-                    if (((Class511)method28184).method2625() != this.field39966) {
+                if (method28184 instanceof LivingEntity) {
+                    if (((LivingEntity)method28184).method2625() != this.field39966) {
                         return false;
                     }
                 }

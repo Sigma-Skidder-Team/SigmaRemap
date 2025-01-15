@@ -33,7 +33,7 @@ public class Class8098
             }
             return class7063;
         }).field27474.tryAcquire(1)) {
-            Class7895.field32404.method25555(Class285.field1573, new Class2260(s));
+            Class7895.field32404.method25555(Class285.field1573, new StringTextComponent(s));
         }
     }
 }

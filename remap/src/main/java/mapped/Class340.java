@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public enum Class340 implements Class326
 {
     field2085("is_alive"), 
@@ -41,7 +43,7 @@ public enum Class340 implements Class326
             return false;
         }
         if (field35912 instanceof Class4710) {
-            final Class511 field35913 = ((Class4710)field35912).field20303;
+            final LivingEntity field35913 = ((Class4710)field35912).field20303;
             if (field35913 == null) {
                 return false;
             }
@@ -71,13 +73,13 @@ public enum Class340 implements Class326
                     return field35913.method1823();
                 }
                 case 9: {
-                    return field35913.field2404;
+                    return field35913.onGround;
                 }
                 case 10: {
-                    return field35913.method1806();
+                    return field35913.isBeingRidden();
                 }
                 case 11: {
-                    return field35913.method1805();
+                    return field35913.isPassenger();
                 }
                 case 12: {
                     return field35913.method1814();

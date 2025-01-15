@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
@@ -16,7 +17,7 @@ public interface Class5783
     
     void method17247();
     
-    void method17248(final Class858 p0, final BlockPos p1, final Class7929 p2, final Class512 p3);
+    void method17248(final Class858 p0, final BlockPos p1, final DamageSource p2, final Class512 p3);
     
     void method17249();
     
@@ -31,5 +32,5 @@ public interface Class5783
     @Nullable
     Vec3d method17254();
     
-    float method17255(final Class7929 p0, final float p1);
+    float method17255(final DamageSource p0, final float p1);
 }

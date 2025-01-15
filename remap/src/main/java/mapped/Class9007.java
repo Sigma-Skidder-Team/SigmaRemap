@@ -9,6 +9,7 @@ import com.google.gson.JsonElement;
 import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class Class9007
 {
@@ -41,8 +42,8 @@ public class Class9007
             return false;
         }
         if (this.field38035 != null) {
-            if (class399 instanceof Class511) {
-                if (((Class511)class399).method2625() != this.field38035) {
+            if (class399 instanceof LivingEntity) {
+                if (((LivingEntity)class399).method2625() != this.field38035) {
                     return false;
                 }
             }

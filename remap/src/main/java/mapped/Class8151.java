@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonNull;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.EntityType;
 
 public final class Class8151 extends Class8150
 {

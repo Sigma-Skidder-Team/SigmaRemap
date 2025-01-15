@@ -63,7 +63,7 @@ public class Class3540 extends Class3446
             }
             if (class5488 != null) {
                 if (!method4467) {
-                    if (this.field16585.field2391.method6701(new BlockPos(class5488)).method21696() != Class7521.field29173) {
+                    if (this.field16585.world.method6701(new BlockPos(class5488)).method21696() != Class7521.field29173) {
                         class5488 = Class7775.method24905(this.field16585, 16, 5, class5487);
                     }
                 }

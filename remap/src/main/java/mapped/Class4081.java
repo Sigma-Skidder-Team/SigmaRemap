@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class4081 extends Class3820
 {
@@ -26,7 +29,7 @@ public class Class4081 extends Class3820
         if (method21642 != null && !this.method12287(method21642, method21640, method21643, method21641)) {
             return Class2201.field13403;
         }
-        final Class1847 method21644 = class7075.method21654();
+        final World method21644 = class7075.method21654();
         Class860 class7076;
         if (this.field18186 != EntityType.field29009) {
             if (this.field18186 != EntityType.field28993) {

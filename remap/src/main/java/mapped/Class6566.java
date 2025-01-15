@@ -18,7 +18,7 @@ public class Class6566 extends Class6564
     @Override
     public void method19904() {
         Label_0017: {
-            if (this.field26076.field2404) {
+            if (this.field26076.onGround) {
                 if (!this.field26076.field2967) {
                     if (!((Class7295)Class792.method4449(this.field26076)).method22378()) {
                         this.field26076.method4434(0.0);

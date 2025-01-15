@@ -4,10 +4,12 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public interface Class5350<T extends Class6909>
 {
     @Nullable
-    Class6173 method16516(final T p0, final Class1847 p1, final double p2, final double p3, final double p4, final double p5, final double p6, final double p7);
+    Class6173 method16516(final T p0, final World p1, final double p2, final double p3, final double p4, final double p5, final double p6, final double p7);
 }

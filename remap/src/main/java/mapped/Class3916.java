@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -78,7 +79,7 @@ public class Class3916 extends Class3833 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return ((class7096.method21772(Class3916.field17733) != Class109.field343) ? Class3916.field17747 : Class3916.field17746)[Class3916.field17748[this.method12023(class7096)]];
     }
     
@@ -87,12 +88,12 @@ public class Class3916 extends Class3833 implements Class3856
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         this.field17749.method11823(class7096, class7097, class7098, random);
     }
     
     @Override
-    public void method11847(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
+    public void method11847(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         this.field17750.method21745(class7097, class7098, class7099);
     }
     
@@ -112,7 +113,7 @@ public class Class3916 extends Class3833 implements Class3856
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7096.method21696()) {
             this.field17750.method21734(class7097, class7098, Class7521.field29147, class7098, false);
             this.field17749.method11828(this.field17750, class7097, class7098, class7099, false);
@@ -120,14 +121,14 @@ public class Class3916 extends Class3833 implements Class3856
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             this.field17750.method21738(class7097, class7098, class7099, b);
         }
     }
     
     @Override
-    public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
+    public void method11845(final World class1847, final BlockPos class1848, final Entity class1849) {
         this.field17749.method11845(class1847, class1848, class1849);
     }
     
@@ -137,12 +138,12 @@ public class Class3916 extends Class3833 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         return this.field17750.method21744(class7097, class7099, class7100, class7101);
     }
     
     @Override
-    public void method11842(final Class1847 class1847, final BlockPos class1848, final Class6154 class1849) {
+    public void method11842(final World class1847, final BlockPos class1848, final Class6154 class1849) {
         this.field17749.method11842(class1847, class1848, class1849);
     }
     

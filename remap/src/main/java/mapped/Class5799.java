@@ -5,10 +5,15 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -34,10 +39,10 @@ import java.util.Map;
 import com.mojang.authlib.GameProfile;
 import org.apache.logging.log4j.Logger;
 
-public class Class5799 implements Class5800
+public class Class5799 implements IClientPlayNetHandler
 {
     private static final Logger field23804;
-    private final Class3641 field23805;
+    private final NetworkManager field23805;
     private final GameProfile field23806;
     private final Class527 field23807;
     private Class869 field23808;
@@ -54,7 +59,7 @@ public class Class5799 implements Class5800
     private final Class1780 field23819;
     private final UUID field23820;
     
-    public Class5799(final Class869 field23808, final Class527 field23809, final Class3641 field23810, final GameProfile field23811) {
+    public Class5799(final Class869 field23808, final Class527 field23809, final NetworkManager field23810, final GameProfile field23811) {
         this.field23811 = Maps.newHashMap();
         this.field23814 = new Class1792();
         this.field23815 = new Class8108(this);
@@ -85,14 +90,14 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17272(final Class4383 class4383) {
-        Class8663.method29632((Class4252<Class5799>)class4383, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4383, this, this.field23808);
         this.field23808.field4682 = new Class8244(this.field23808, this);
         this.field23816 = class4383.method13182();
         this.field23809 = new Class1848(this, new Class8511(class4383.method13177(), class4383.method13179(), false, class4383.method13178(), class4383.method13181()), class4383.method13180(), this.field23816, this.field23808.method5327(), this.field23808.field4636);
         this.field23808.method5263(this.field23809);
         if (this.field23808.field4684 == null) {
             this.field23808.field4684 = this.field23808.field4682.method27306(this.field23809, new Class7474(), new Class6520(this.field23809.method6792()));
-            this.field23808.field4684.field2399 = -180.0f;
+            this.field23808.field4684.rotationYaw = -180.0f;
             if (this.field23808.method5285() != null) {
                 this.field23808.method5285().method5680(this.field23808.field4684.method1865());
             }
@@ -104,20 +109,20 @@ public class Class5799 implements Class5800
         this.field23808.field4684.field4085 = new Class6094(this.field23808.field4648);
         this.field23808.field4682.method27308(this.field23808.field4684);
         this.field23808.field4689 = this.field23808.field4684;
-        this.field23808.field4684.field2452 = class4383.method13180();
+        this.field23808.field4684.dimension = class4383.method13180();
         this.field23808.method5244(new Class556());
         this.field23808.field4684.method1644(method13176);
         this.field23808.field4684.method2897(class4383.method13183());
         this.field23808.field4684.method4127(class4383.method13184());
         this.field23808.field4682.method27309(class4383.method13179());
         this.field23808.field4648.method17124();
-        this.field23805.method11174(new Class4326(Class4326.field19371, new Class8654(Unpooled.buffer()).method29514(Class7932.method25729())));
+        this.field23805.method11174(new Class4326(Class4326.field19371, new PacketBuffer(Unpooled.buffer()).method29514(Class7932.method25729())));
         this.field23808.method5328().method25567();
     }
     
     @Override
     public void method17273(final Class4339 class4339) {
-        Class8663.method29632((Class4252<Class5799>)class4339, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4339, this, this.field23808);
         final double method13025 = class4339.method13025();
         final double method13026 = class4339.method13026();
         final double method13027 = class4339.method13027();
@@ -253,7 +258,7 @@ public class Class5799 implements Class5800
                                                 }
                                                 else {
                                                     class4340 = new Class403(this.field23809, method13025, method13026, method13027);
-                                                    final Entity method13029 = this.field23809.method6741(class4339.method13034());
+                                                    final Entity method13029 = this.field23809.getEntityByID(class4339.method13034());
                                                     if (method13029 != null) {
                                                         ((Class402)class4340).method1972(method13029);
                                                     }
@@ -261,7 +266,7 @@ public class Class5799 implements Class5800
                                             }
                                             else {
                                                 class4340 = new Class404(this.field23809, method13025, method13026, method13027);
-                                                final Entity method13030 = this.field23809.method6741(class4339.method13034());
+                                                final Entity method13030 = this.field23809.getEntityByID(class4339.method13034());
                                                 if (method13030 != null) {
                                                     ((Class402)class4340).method1972(method13030);
                                                 }
@@ -269,14 +274,14 @@ public class Class5799 implements Class5800
                                         }
                                         else {
                                             class4340 = new Class405(this.field23809, method13025, method13026, method13027);
-                                            final Entity method13031 = this.field23809.method6741(class4339.method13034());
+                                            final Entity method13031 = this.field23809.getEntityByID(class4339.method13034());
                                             if (method13031 != null) {
                                                 ((Class402)class4340).method1972(method13031);
                                             }
                                         }
                                     }
                                     else {
-                                        final Entity method13032 = this.field23809.method6741(class4339.method13034());
+                                        final Entity method13032 = this.field23809.getEntityByID(class4339.method13034());
                                         if (!(method13032 instanceof Class512)) {
                                             class4340 = null;
                                         }
@@ -314,9 +319,9 @@ public class Class5799 implements Class5800
         }
         if (class4340 != null) {
             final int method13033 = class4339.method13023();
-            class4340.method1641(method13025, method13026, method13027);
-            class4340.field2400 = class4339.method13031() * 360 / 256.0f;
-            class4340.field2399 = class4339.method13032() * 360 / 256.0f;
+            class4340.setPacketCoordinates(method13025, method13026, method13027);
+            class4340.rotationPitch = class4339.method13031() * 360 / 256.0f;
+            class4340.rotationYaw = class4339.method13032() * 360 / 256.0f;
             class4340.method1644(method13033);
             class4340.method1864(class4339.method13024());
             this.field23809.method6819(method13033, class4340);
@@ -328,29 +333,29 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17274(final Class4375 class4375) {
-        Class8663.method29632((Class4252<Class5799>)class4375, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4375, this, this.field23808);
         final double method13154 = class4375.method13154();
         final double method13155 = class4375.method13155();
         final double method13156 = class4375.method13156();
         final Class508 class4376 = new Class508(this.field23809, method13154, method13155, method13156, class4375.method13157());
-        class4376.method1641(method13154, method13155, method13156);
-        class4376.field2399 = 0.0f;
-        class4376.field2400 = 0.0f;
+        class4376.setPacketCoordinates(method13154, method13155, method13156);
+        class4376.rotationYaw = 0.0f;
+        class4376.rotationPitch = 0.0f;
         class4376.method1644(class4375.method13153());
         this.field23809.method6819(class4375.method13153(), class4376);
     }
     
     @Override
     public void method17275(final Class4318 class4318) {
-        Class8663.method29632((Class4252<Class5799>)class4318, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4318, this, this.field23808);
         final double method12975 = class4318.method12975();
         final double method12976 = class4318.method12976();
         final double method12977 = class4318.method12977();
         if (class4318.method12978() == 1) {
-            final Class422 class4319 = new Class422(this.field23809, method12975, method12976, method12977, false);
-            class4319.method1641(method12975, method12976, method12977);
-            class4319.field2399 = 0.0f;
-            class4319.field2400 = 0.0f;
+            final LightningBoltEntity class4319 = new LightningBoltEntity(this.field23809, method12975, method12976, method12977, false);
+            class4319.setPacketCoordinates(method12975, method12976, method12977);
+            class4319.rotationYaw = 0.0f;
+            class4319.rotationPitch = 0.0f;
             class4319.method1644(class4318.method12974());
             this.field23809.method6817(class4319);
         }
@@ -358,7 +363,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17276(final Class4293 class4293) {
-        Class8663.method29632((Class4252<Class5799>)class4293, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4293, this, this.field23808);
         final Class861 class4294 = new Class861(this.field23809, class4293.method12896(), class4293.method12897(), class4293.method12898());
         class4294.method1644(class4293.method12894());
         class4294.method1864(class4293.method12895());
@@ -367,8 +372,8 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17277(final Class4273 class4273) {
-        Class8663.method29632((Class4252<Class5799>)class4273, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4273.method12822());
+        Class8663.method29632((IPacket<Class5799>)class4273, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4273.method12822());
         if (method6741 != null) {
             method6741.method1797(class4273.method12823() / 8000.0, class4273.method12824() / 8000.0, class4273.method12825() / 8000.0);
         }
@@ -376,8 +381,8 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17278(final Class4268 class4268) {
-        Class8663.method29632((Class4252<Class5799>)class4268, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4268.method12811());
+        Class8663.method29632((IPacket<Class5799>)class4268, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4268.method12811());
         if (method6741 != null) {
             if (class4268.method12810() != null) {
                 method6741.method1650().method33577(class4268.method12810());
@@ -387,7 +392,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17279(final Class4361 class4361) {
-        Class8663.method29632((Class4252<Class5799>)class4361, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4361, this, this.field23808);
         final double method13117 = class4361.method13117();
         final double method13118 = class4361.method13118();
         final double method13119 = class4361.method13119();
@@ -398,7 +403,7 @@ public class Class5799 implements Class5800
             final Class755 class4362 = new Class755(this.field23808.field4683, this.method17371(class4361.method13116()).method32719());
             class4362.method1644(method13120);
             class4362.method1731(method13117, method13118, method13119);
-            class4362.method1641(method13117, method13118, method13119);
+            class4362.setPacketCoordinates(method13117, method13118, method13119);
             class4362.method1728(method13117, method13118, method13119, n, n2);
             this.field23809.method6818(method13120, class4362);
         }
@@ -406,13 +411,13 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17280(final Class4258 class4258) {
-        Class8663.method29632((Class4252<Class5799>)class4258, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4258.method12781());
+        Class8663.method29632((IPacket<Class5799>)class4258, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4258.method12781());
         if (method6741 != null) {
             final double method6742 = class4258.method12782();
             final double method6743 = class4258.method12783();
             final double method6744 = class4258.method12784();
-            method6741.method1641(method6742, method6743, method6744);
+            method6741.setPacketCoordinates(method6742, method6743, method6744);
             if (!method6741.method1919()) {
                 final float n = class4258.method12785() * 360 / 256.0f;
                 final float n2 = class4258.method12786() * 360 / 256.0f;
@@ -427,48 +432,48 @@ public class Class5799 implements Class5800
                     }
                     method6741.method1788(method6742, method6743, method6744, n, n2, 3, true);
                 }
-                method6741.field2404 = class4258.method12787();
+                method6741.onGround = class4258.method12787();
             }
         }
     }
     
     @Override
     public void method17281(final Class4388 class4388) {
-        Class8663.method29632((Class4252<Class5799>)class4388, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4388, this, this.field23808);
         if (Class464.method2352(class4388.method13205())) {
             this.field23808.field4684.field3006.field2743 = class4388.method13205();
         }
     }
     
     @Override
-    public void method17282(final Class4370 class4370) {
-        Class8663.method29632((Class4252<Class5799>)class4370, this, this.field23808);
-        final Entity method13142 = class4370.method13142(this.field23809);
+    public void handleEntityMovement(final SEntityPacket class4370) {
+        Class8663.method29632((IPacket<Class5799>)class4370, this, this.field23808);
+        final Entity method13142 = class4370.getEntity(this.field23809);
         if (method13142 != null) {
             if (!method13142.method1919()) {
-                if (!class4370.method13149()) {
-                    if (class4370.method13148()) {
-                        method13142.method1788(method13142.getPosX(), method13142.getPosY(), method13142.getPosZ(), class4370.method13146() * 360 / 256.0f, class4370.method13147() * 360 / 256.0f, 3, false);
+                if (!class4370.getIsMovePacket()) {
+                    if (class4370.isRotating()) {
+                        method13142.method1788(method13142.getPosX(), method13142.getPosY(), method13142.getPosZ(), class4370.getYaw() * 360 / 256.0f, class4370.getPitch() * 360 / 256.0f, 3, false);
                     }
                 }
                 else {
                     final Entity class4371 = method13142;
-                    class4371.field2444 += class4370.method13143();
+                    class4371.serverPosX += class4370.getX();
                     final Entity class4372 = method13142;
-                    class4372.field2445 += class4370.method13144();
+                    class4372.serverPosY += class4370.getY();
                     final Entity class4373 = method13142;
-                    class4373.field2446 += class4370.method13145();
-                    final Vec3d method13143 = Class4370.method13141(method13142.field2444, method13142.field2445, method13142.field2446);
-                    method13142.method1788(method13143.x, method13143.y, method13143.z, class4370.method13148() ? (class4370.method13146() * 360 / 256.0f) : method13142.field2399, class4370.method13148() ? (class4370.method13147() * 360 / 256.0f) : method13142.field2400, 3, false);
+                    class4373.serverPosZ += class4370.getZ();
+                    final Vec3d method13143 = SEntityPacket.func_218744_a(method13142.serverPosX, method13142.serverPosY, method13142.serverPosZ);
+                    method13142.method1788(method13143.x, method13143.y, method13143.z, class4370.isRotating() ? (class4370.getYaw() * 360 / 256.0f) : method13142.rotationYaw, class4370.isRotating() ? (class4370.getPitch() * 360 / 256.0f) : method13142.rotationPitch, 3, false);
                 }
-                method13142.field2404 = class4370.method13150();
+                method13142.onGround = class4370.getOnGround();
             }
         }
     }
     
     @Override
     public void method17283(final Class4364 class4364) {
-        Class8663.method29632((Class4252<Class5799>)class4364, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4364, this, this.field23808);
         final Entity method13127 = class4364.method13127(this.field23809);
         if (method13127 != null) {
             method13127.method1789(class4364.method13128() * 360 / 256.0f, 3);
@@ -477,7 +482,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17284(final Class4325 class4325) {
-        Class8663.method29632((Class4252<Class5799>)class4325, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4325, this, this.field23808);
         for (int i = 0; i < class4325.method12989().length; ++i) {
             this.field23809.method6821(class4325.method12989()[i]);
         }
@@ -485,9 +490,9 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17285(final Class4328 class4328) {
-        Class8663.method29632((Class4252<Class5799>)class4328, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4328, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
-        final Vec3d method1935 = field4684.method1935();
+        final Vec3d method1935 = field4684.getMotion();
         final boolean contains = class4328.method12998().contains(Class2143.field12617);
         final boolean contains2 = class4328.method12998().contains(Class2143.field12618);
         final boolean contains3 = class4328.method12998().contains(Class2143.field12619);
@@ -496,56 +501,56 @@ public class Class5799 implements Class5800
         if (!contains) {
             method1936 = 0.0;
             method1937 = class4328.method12992();
-            field4684.field2417 = method1937;
+            field4684.lastTickPosX = method1937;
         }
         else {
             method1936 = method1935.getX();
             method1937 = field4684.getPosX() + class4328.method12992();
             final Class756 class4329 = field4684;
-            class4329.field2417 += class4328.method12992();
+            class4329.lastTickPosX += class4328.method12992();
         }
         double method1938;
         double method1939;
         if (!contains2) {
             method1938 = 0.0;
             method1939 = class4328.method12993();
-            field4684.field2418 = method1939;
+            field4684.lastTickPosY = method1939;
         }
         else {
             method1938 = method1935.getY();
             method1939 = field4684.getPosY() + class4328.method12993();
             final Class756 class4330 = field4684;
-            class4330.field2418 += class4328.method12993();
+            class4330.lastTickPosY += class4328.method12993();
         }
         double method1940;
         double method1941;
         if (!contains3) {
             method1940 = 0.0;
             method1941 = class4328.method12994();
-            field4684.field2419 = method1941;
+            field4684.lastTickPosZ = method1941;
         }
         else {
             method1940 = method1935.getZ();
             method1941 = field4684.getPosZ() + class4328.method12994();
             final Class756 class4331 = field4684;
-            class4331.field2419 += class4328.method12994();
+            class4331.lastTickPosZ += class4328.method12994();
         }
         field4684.method1948(method1937, method1939, method1941);
-        field4684.field2392 = method1937;
-        field4684.field2393 = method1939;
-        field4684.field2394 = method1941;
-        field4684.method1937(method1936, method1938, method1940);
+        field4684.prevPosX = method1937;
+        field4684.prevPosY = method1939;
+        field4684.prevPosZ = method1941;
+        field4684.setMotion(method1936, method1938, method1940);
         float method1942 = class4328.method12995();
         float method1943 = class4328.method12996();
         if (class4328.method12998().contains(Class2143.field12621)) {
-            method1943 += field4684.field2400;
+            method1943 += field4684.rotationPitch;
         }
         if (class4328.method12998().contains(Class2143.field12620)) {
-            method1942 += field4684.field2399;
+            method1942 += field4684.rotationYaw;
         }
         field4684.method1728(method1937, method1939, method1941, method1942, method1943);
         this.field23805.method11174(new Class4348(class4328.method12997()));
-        this.field23805.method11174(new Class4355(field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), field4684.field2399, field4684.field2400, false));
+        this.field23805.method11174(new Class4355(field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), field4684.rotationYaw, field4684.rotationPitch, false));
         if (!this.field23810) {
             this.field23810 = true;
             this.field23808.method5244(null);
@@ -554,7 +559,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17286(final Class4312 class4312) {
-        Class8663.method29632((Class4252<Class5799>)class4312, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4312, this, this.field23808);
         for (final Class7870 class4313 : class4312.method12963()) {
             this.field23809.method6824(class4313.method25489(), class4313.method25491());
         }
@@ -562,7 +567,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17287(final Class4298 class4298) {
-        Class8663.method29632((Class4252<Class5799>)class4298, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4298, this, this.field23808);
         final int method12909 = class4298.method12909();
         final int method12910 = class4298.method12910();
         final Class1862 method12911 = this.field23809.method6835().method7415(method12909, method12910, class4298.method12915(), class4298.method12905(), class4298.method12913(), class4298.method12911());
@@ -585,7 +590,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17288(final Class4288 class4288) {
-        Class8663.method29632((Class4252<Class5799>)class4288, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4288, this, this.field23808);
         final int method12876 = class4288.method12876();
         final int method12877 = class4288.method12877();
         final Class1907 method12878 = this.field23809.method6835();
@@ -600,7 +605,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17289(final Class4271 class4271) {
-        Class8663.method29632((Class4252<Class5799>)class4271, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4271, this, this.field23808);
         this.field23809.method6824(class4271.method12818(), class4271.method12817());
     }
     
@@ -610,7 +615,7 @@ public class Class5799 implements Class5800
     }
     
     @Override
-    public void method17291(final ITextComponent class2250) {
+    public void onDisconnect(final ITextComponent class2250) {
         this.field23808.method5264();
         if (this.field23807 == null) {
             this.field23808.method5244(new Class735(new Class720(new Class548()), "disconnect.lost", class2250));
@@ -623,15 +628,15 @@ public class Class5799 implements Class5800
         }
     }
     
-    public void method17292(final Class4252<?> class4252) {
+    public void method17292(final IPacket<?> class4252) {
         this.field23805.method11174(class4252);
     }
     
     @Override
     public void method17293(final Class4304 class4304) {
-        Class8663.method29632((Class4252<Class5799>)class4304, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4304.method12943());
-        Class511 field4684 = (Class511)this.field23809.method6741(class4304.method12944());
+        Class8663.method29632((IPacket<Class5799>)class4304, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4304.method12943());
+        LivingEntity field4684 = (LivingEntity)this.field23809.getEntityByID(class4304.method12944());
         if (field4684 == null) {
             field4684 = this.field23808.field4684;
         }
@@ -652,14 +657,14 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17294(final Class4378 class4378) {
-        Class8663.method29632((Class4252<Class5799>)class4378, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4378, this, this.field23808);
         this.field23808.field4647.method3806(class4378.method13166(), class4378.method13164());
     }
     
     @Override
     public void method17295(final Class4289 class4289) {
-        Class8663.method29632((Class4252<Class5799>)class4289, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4289.method12878());
+        Class8663.method29632((IPacket<Class5799>)class4289, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4289.method12878());
         if (method6741 != null) {
             if (class4289.method12879() != 0) {
                 if (class4289.method12879() != 3) {
@@ -683,29 +688,29 @@ public class Class5799 implements Class5800
                     }
                 }
                 else {
-                    ((Class511)method6741).method2707(Class316.field1878);
+                    ((LivingEntity)method6741).method2707(Class316.field1878);
                 }
             }
             else {
-                ((Class511)method6741).method2707(Class316.field1877);
+                ((LivingEntity)method6741).method2707(Class316.field1877);
             }
         }
     }
     
     @Override
     public void method17296(final Class4276 class4276) {
-        Class8663.method29632((Class4252<Class5799>)class4276, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4276, this, this.field23808);
         final double method12832 = class4276.method12832();
         final double method12833 = class4276.method12833();
         final double method12834 = class4276.method12834();
         final float n = class4276.method12838() * 360 / 256.0f;
         final float n2 = class4276.method12839() * 360 / 256.0f;
-        final Class511 class4277 = (Class511) EntityType.method23372(class4276.method12831(), this.field23808.field4683);
+        final LivingEntity class4277 = (LivingEntity) EntityType.method23372(class4276.method12831(), this.field23808.field4683);
         if (class4277 == null) {
             Class5799.field23804.warn("Skipping Entity with id {}", (Object)class4276.method12831());
         }
         else {
-            class4277.method1641(method12832, method12833, method12834);
+            class4277.setPacketCoordinates(method12832, method12833, method12834);
             class4277.field2951 = class4276.method12840() * 360 / 256.0f;
             class4277.field2953 = class4276.method12840() * 360 / 256.0f;
             if (class4277 instanceof Class852) {
@@ -717,7 +722,7 @@ public class Class5799 implements Class5800
             class4277.method1644(class4276.method12829());
             class4277.method1864(class4276.method12830());
             class4277.method1728(method12832, method12833, method12834, n, n2);
-            class4277.method1937(class4276.method12835() / 8000.0f, class4276.method12836() / 8000.0f, class4276.method12837() / 8000.0f);
+            class4277.setMotion(class4276.method12835() / 8000.0f, class4276.method12836() / 8000.0f, class4276.method12837() / 8000.0f);
             this.field23809.method6819(class4276.method12829(), class4277);
             if (class4277 instanceof Class798) {
                 Class6842 class4278;
@@ -734,28 +739,28 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17297(final Class4345 class4345) {
-        Class8663.method29632((Class4252<Class5799>)class4345, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4345, this, this.field23808);
         this.field23808.field4683.method6752(class4345.method13048());
         this.field23808.field4683.method6756(class4345.method13049());
     }
     
     @Override
     public void method17298(final Class4335 class4335) {
-        Class8663.method29632((Class4252<Class5799>)class4335, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4335, this, this.field23808);
         this.field23808.field4684.method2856(class4335.method13017(), true, false);
         this.field23808.field4683.method6764().method29548(class4335.method13017());
     }
     
     @Override
     public void method17299(final Class4286 class4286) {
-        Class8663.method29632((Class4252<Class5799>)class4286, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4286.method12873());
+        Class8663.method29632((IPacket<Class5799>)class4286, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4286.method12873());
         if (method6741 != null) {
             final boolean method6742 = method6741.method1917(this.field23808.field4684);
-            method6741.method1783();
+            method6741.removePassengers();
             final int[] method6743 = class4286.method12872();
             for (int length = method6743.length, i = 0; i < length; ++i) {
-                final Entity method6744 = this.field23809.method6741(method6743[i]);
+                final Entity method6744 = this.field23809.getEntityByID(method6743[i]);
                 if (method6744 != null) {
                     method6744.method1780(method6741, true);
                     if (method6744 == this.field23808.field4684) {
@@ -773,8 +778,8 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17300(final Class4305 class4305) {
-        Class8663.method29632((Class4252<Class5799>)class4305, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4305.method12946());
+        Class8663.method29632((IPacket<Class5799>)class4305, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4305.method12946());
         if (method6741 instanceof Class759) {
             ((Class759)method6741).method4208(class4305.method12947());
         }
@@ -793,7 +798,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17302(final Class4264 class4264) {
-        Class8663.method29632((Class4252<Class5799>)class4264, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4264, this, this.field23808);
         final Entity method12799 = class4264.method12799(this.field23809);
         if (method12799 != null) {
             if (class4264.method12800() != 21) {
@@ -816,7 +821,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17303(final Class4292 class4292) {
-        Class8663.method29632((Class4252<Class5799>)class4292, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4292, this, this.field23808);
         this.field23808.field4684.method4116(class4292.method12891());
         this.field23808.field4684.method2877().method33495(class4292.method12892());
         this.field23808.field4684.method2877().method33496(class4292.method12893());
@@ -824,17 +829,17 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17304(final Class4313 class4313) {
-        Class8663.method29632((Class4252<Class5799>)class4313, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4313, this, this.field23808);
         this.field23808.field4684.method4126(class4313.method12964(), class4313.method12965(), class4313.method12966());
     }
     
     @Override
     public void method17305(final Class4359 class4359) {
-        Class8663.method29632((Class4252<Class5799>)class4359, this, this.field23808);
-        final Class383 method13097 = class4359.method13097();
+        Class8663.method29632((IPacket<Class5799>)class4359, this, this.field23808);
+        final DimensionType method13097 = class4359.method13097();
         final Class756 field4684 = this.field23808.field4684;
-        final int method13098 = field4684.method1643();
-        if (method13097 != field4684.field2452) {
+        final int method13098 = field4684.getEntityId();
+        if (method13097 != field4684.dimension) {
             this.field23810 = false;
             (this.field23809 = new Class1848(this, new Class8511(class4359.method13098(), class4359.method13099(), false, this.field23808.field4683.method6764().method29568(), class4359.method13100()), class4359.method13097(), this.field23816, this.field23808.method5327(), this.field23808.field4636)).method6832(this.field23809.method6782());
             this.field23808.method5263(this.field23809);
@@ -846,7 +851,7 @@ public class Class5799 implements Class5800
         this.field23808.field4689 = null;
         final Class756 method13100 = this.field23808.field4682.method27306(this.field23809, field4684.method4121(), field4684.method4122());
         method13100.method1644(method13098);
-        method13100.field2452 = method13097;
+        method13100.dimension = method13097;
         this.field23808.field4684 = method13100;
         this.field23808.field4689 = method13100;
         method13100.method1650().method33577(field4684.method1650().method33573());
@@ -854,7 +859,7 @@ public class Class5799 implements Class5800
         method13100.method1651();
         method13100.method4119(method13099);
         this.field23809.method6818(method13098, method13100);
-        method13100.field2399 = -180.0f;
+        method13100.rotationYaw = -180.0f;
         method13100.field4085 = new Class6094(this.field23808.field4648);
         this.field23808.field4682.method27308(method13100);
         method13100.method2897(field4684.method2896());
@@ -867,15 +872,15 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17306(final Class4394 class4394) {
-        Class8663.method29632((Class4252<Class5799>)class4394, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4394, this, this.field23808);
         new Class6154(this.field23808.field4683, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
-        this.field23808.field4684.method1936(this.field23808.field4684.method1935().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
+        this.field23808.field4684.method1936(this.field23808.field4684.getMotion().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
     }
     
     @Override
     public void method17307(final Class4259 class4259) {
-        Class8663.method29632((Class4252<Class5799>)class4259, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4259.method12790());
+        Class8663.method29632((IPacket<Class5799>)class4259, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4259.method12790());
         if (method6741 instanceof Class806) {
             final Class756 field4684 = this.field23808.field4684;
             final Class806 class4260 = (Class806)method6741;
@@ -887,13 +892,13 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17308(final Class4308 class4308) {
-        Class8663.method29632((Class4252<Class5799>)class4308, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4308, this, this.field23808);
         Class4970.method15154(class4308.method12952(), this.field23808, class4308.method12951(), class4308.method12953());
     }
     
     @Override
     public void method17309(final Class4272 class4272) {
-        Class8663.method29632((Class4252<Class5799>)class4272, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4272, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
         final ItemStack method12821 = class4272.method12821();
         final int method12822 = class4272.method12820();
@@ -935,7 +940,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17310(final Class4393 class4393) {
-        Class8663.method29632((Class4252<Class5799>)class4393, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4393, this, this.field23808);
         Class3418 class4394 = null;
         final Class756 field4684 = this.field23808.field4684;
         if (class4393.method13208() != 0) {
@@ -955,7 +960,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17311(final Class4365 class4365) {
-        Class8663.method29632((Class4252<Class5799>)class4365, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4365, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
         if (class4365.method13129() != 0) {
             if (class4365.method13129() == field4684.field3009.field16154) {
@@ -969,7 +974,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17312(final Class4350 class4350) {
-        Class8663.method29632((Class4252<Class5799>)class4350, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4350, this, this.field23808);
         Class436 method6727 = this.field23809.method6727(class4350.method13067());
         if (!(method6727 instanceof Class497)) {
             method6727 = new Class497();
@@ -980,7 +985,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17313(final Class4357 class4357) {
-        Class8663.method29632((Class4252<Class5799>)class4357, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4357, this, this.field23808);
         if (this.field23808.field4683.method6971(class4357.method13084())) {
             final Class436 method6727 = this.field23808.field4683.method6727(class4357.method13084());
             final int method6728 = class4357.method13085();
@@ -1028,7 +1033,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17314(final Class4311 class4311) {
-        Class8663.method29632((Class4252<Class5799>)class4311, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4311, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
         if (field4684.field3009 != null) {
             if (field4684.field3009.field16154 == class4311.method12960()) {
@@ -1039,8 +1044,8 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17315(final Class4402 class4402) {
-        Class8663.method29632((Class4252<Class5799>)class4402, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4402.method13248());
+        Class8663.method29632((IPacket<Class5799>)class4402, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4402.method13248());
         if (method6741 != null) {
             method6741.method1803(class4402.method13249(), class4402.method13247());
         }
@@ -1048,25 +1053,25 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17316(final Class4284 class4284) {
-        Class8663.method29632((Class4252<Class5799>)class4284, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4284, this, this.field23808);
         this.field23808.field4684.method4115();
     }
     
     @Override
     public void method17317(final Class4363 class4363) {
-        Class8663.method29632((Class4252<Class5799>)class4363, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4363, this, this.field23808);
         this.field23808.field4683.method6763(class4363.method13123(), class4363.method13126(), class4363.method13124(), class4363.method13125());
     }
     
     @Override
     public void method17318(final Class4310 class4310) {
-        Class8663.method29632((Class4252<Class5799>)class4310, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4310, this, this.field23808);
         this.field23808.field4683.method6780(class4310.method12957(), class4310.method12958(), class4310.method12959());
     }
     
     @Override
     public void method17319(final Class4306 class4306) {
-        Class8663.method29632((Class4252<Class5799>)class4306, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4306, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
         final int method12948 = class4306.method12948();
         final float method12949 = class4306.method12949();
@@ -1167,7 +1172,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17320(final Class4333 class4333) {
-        Class8663.method29632((Class4252<Class5799>)class4333, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4333, this, this.field23808);
         final Class1905 method5822 = this.field23808.field4644.method5822();
         final String method5823 = Class4094.method12331(class4333.method13011());
         Class6356 method5824 = this.field23808.field4683.method6774(method5823);
@@ -1187,7 +1192,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17321(final Class4395 class4395) {
-        Class8663.method29632((Class4252<Class5799>)class4395, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4395, this, this.field23808);
         if (!class4395.method13219()) {
             this.field23808.field4683.method6955(class4395.method13220(), class4395.method13222(), class4395.method13221());
         }
@@ -1198,13 +1203,13 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17322(final Class4385 class4385) {
-        Class8663.method29632((Class4252<Class5799>)class4385, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4385, this, this.field23808);
         this.field23812.method30867(class4385);
     }
     
     @Override
     public void method17323(final Class4269 class4269) {
-        Class8663.method29632((Class4252<Class5799>)class4269, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4269, this, this.field23808);
         final Class1932 method12812 = class4269.method12812();
         if (method12812 != null) {
             this.field23812.method30869(this.field23812.method30868().method19675(method12812), false);
@@ -1216,25 +1221,25 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17324(final Class4369 class4369) {
-        Class8663.method29632((Class4252<Class5799>)class4369, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4369, this, this.field23808);
         this.field23818 = (CommandDispatcher<Class7491>)new CommandDispatcher((RootCommandNode)class4369.method13139());
     }
     
     @Override
     public void method17325(final Class4382 class4382) {
-        Class8663.method29632((Class4252<Class5799>)class4382, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4382, this, this.field23808);
         this.field23808.method5299().method6435(class4382.method13174(), class4382.method13175());
     }
     
     @Override
     public void method17326(final Class4337 class4337) {
-        Class8663.method29632((Class4252<Class5799>)class4337, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4337, this, this.field23808);
         this.field23813.method23216(class4337.method13020(), class4337.method13021());
     }
     
     @Override
     public void method17327(final Class4281 class4281) {
-        Class8663.method29632((Class4252<Class5799>)class4281, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4281, this, this.field23808);
         this.field23819.method6386(class4281.method12859());
         final Class8924<Class9586> method5309 = this.field23808.method5309(Class1659.field9377);
         method5309.method31459();
@@ -1246,7 +1251,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17328(final Class4280 class4280) {
-        Class8663.method29632((Class4252<Class5799>)class4280, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4280, this, this.field23808);
         final Vec3d method12858 = class4280.method12858(this.field23809);
         if (method12858 != null) {
             this.field23808.field4684.method1927(class4280.method12857(), method12858);
@@ -1255,7 +1260,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17329(final Class4296 class4296) {
-        Class8663.method29632((Class4252<Class5799>)class4296, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4296, this, this.field23808);
         if (!this.field23815.method26645(class4296.method12902(), class4296.method12903())) {
             Class5799.field23804.debug("Got unhandled response to tag query {}", (Object)class4296.method12902());
         }
@@ -1263,7 +1268,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17330(final Class4279 class4279) {
-        Class8663.method29632((Class4252<Class5799>)class4279, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4279, this, this.field23808);
         for (final Map.Entry<Class9455, V> entry : class4279.method12856().entrySet()) {
             this.field23808.field4684.method4121().method23075(this.field23808.field4684, entry.getKey(), (int)entry.getValue());
         }
@@ -1274,7 +1279,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17331(final Class4331 class4331) {
-        Class8663.method29632((Class4252<Class5799>)class4331, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4331, this, this.field23808);
         final Class6520 method4122 = this.field23808.field4684.method4122();
         method4122.method19704(class4331.method13005());
         method4122.method19707(class4331.method13006());
@@ -1320,21 +1325,21 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17332(final Class4384 class4384) {
-        Class8663.method29632((Class4252<Class5799>)class4384, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4384.method13186());
-        if (method6741 instanceof Class511) {
+        Class8663.method29632((IPacket<Class5799>)class4384, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4384.method13186());
+        if (method6741 instanceof LivingEntity) {
             final Class5328 method6742 = Class5328.method16450(class4384.method13187());
             if (method6742 != null) {
                 final Class1948 class4385 = new Class1948(method6742, class4384.method13189(), class4384.method13188(), class4384.method13191(), class4384.method13190(), class4384.method13192());
                 class4385.method7920(class4384.method13185());
-                ((Class511)method6741).method2655(class4385);
+                ((LivingEntity)method6741).method2655(class4385);
             }
         }
     }
     
     @Override
     public void method17333(final Class4297 class4297) {
-        Class8663.method29632((Class4252<Class5799>)class4297, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4297, this, this.field23808);
         this.field23814 = class4297.method12904();
         if (!this.field23805.method11182()) {
             Class7188.method22056(this.field23814.method6463());
@@ -1347,9 +1352,9 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17334(final Class4260 class4260) {
-        Class8663.method29632((Class4252<Class5799>)class4260, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4260, this, this.field23808);
         if (class4260.field19115 == Class344.field2122) {
-            if (this.field23809.method6741(class4260.field19116) == this.field23808.field4684) {
+            if (this.field23809.getEntityByID(class4260.field19116) == this.field23808.field4684) {
                 if (!this.field23808.field4684.method4128()) {
                     this.field23808.field4684.method2842();
                 }
@@ -1362,14 +1367,14 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17335(final Class4315 class4315) {
-        Class8663.method29632((Class4252<Class5799>)class4315, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4315, this, this.field23808);
         this.field23808.field4683.method6764().method29598(class4315.method12971());
         this.field23808.field4683.method6764().method29600(class4315.method12970());
     }
     
     @Override
     public void method17336(final Class4343 class4343) {
-        Class8663.method29632((Class4252<Class5799>)class4343, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4343, this, this.field23808);
         final Entity method13045 = class4343.method13045(this.field23809);
         if (method13045 != null) {
             this.field23808.method5304(method13045);
@@ -1378,17 +1383,17 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17337(final Class4340 class4340) {
-        Class8663.method29632((Class4252<Class5799>)class4340, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4340, this, this.field23808);
         class4340.method13035(this.field23809.method6787());
     }
     
     @Override
     public void method17338(final Class4352 class4352) {
-        Class8663.method29632((Class4252<Class5799>)class4352, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4352, this, this.field23808);
         final Class2019 method13073 = class4352.method13073();
         String s = null;
         String s2 = null;
-        final String s3 = (class4352.method13074() != null) ? class4352.method13074().method8461() : "";
+        final String s3 = (class4352.method13074() != null) ? class4352.method13074().getFormattedText() : "";
         switch (Class8379.field34356[method13073.ordinal()]) {
             case 1: {
                 s = s3;
@@ -1413,22 +1418,22 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17339(final Class4374 class4374) {
-        this.field23808.field4647.method3811().method3825(class4374.method13151().method8461().isEmpty() ? null : class4374.method13151());
-        this.field23808.field4647.method3811().method3824(class4374.method13152().method8461().isEmpty() ? null : class4374.method13152());
+        this.field23808.field4647.method3811().method3825(class4374.method13151().getFormattedText().isEmpty() ? null : class4374.method13151());
+        this.field23808.field4647.method3811().method3824(class4374.method13152().getFormattedText().isEmpty() ? null : class4374.method13152());
     }
     
     @Override
     public void method17340(final Class4295 class4295) {
-        Class8663.method29632((Class4252<Class5799>)class4295, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4295, this, this.field23808);
         final Entity method12900 = class4295.method12900(this.field23809);
-        if (method12900 instanceof Class511) {
-            ((Class511)method12900).method2658(class4295.method12901());
+        if (method12900 instanceof LivingEntity) {
+            ((LivingEntity)method12900).method2658(class4295.method12901());
         }
     }
     
     @Override
     public void method17341(final Class4330 class4330) {
-        Class8663.method29632((Class4252<Class5799>)class4330, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4330, this, this.field23808);
         for (final Class4646 class4331 : class4330.method13001()) {
             if (class4330.method13002() == Class2156.field12807) {
                 this.field23811.remove(class4331.method13869().getId());
@@ -1473,7 +1478,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17343(final Class4300 class4300) {
-        Class8663.method29632((Class4252<Class5799>)class4300, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4300, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
         field4684.field3025.field27302 = class4300.method12919();
         field4684.field3025.field27304 = class4300.method12923();
@@ -1485,14 +1490,14 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17344(final Class4282 class4282) {
-        Class8663.method29632((Class4252<Class5799>)class4282, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4282, this, this.field23808);
         this.field23808.field4683.method6706(this.field23808.field4684, class4282.method12865(), class4282.method12866(), class4282.method12867(), class4282.method12863(), class4282.method12864(), class4282.method12868(), class4282.method12869());
     }
     
     @Override
     public void method17345(final Class4351 class4351) {
-        Class8663.method29632((Class4252<Class5799>)class4351, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4351.method13070());
+        Class8663.method29632((IPacket<Class5799>)class4351, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4351.method13070());
         if (method6741 != null) {
             this.field23808.field4683.method6707(this.field23808.field4684, method6741, class4351.method13068(), class4351.method13069(), class4351.method13071(), class4351.method13072());
         }
@@ -1500,7 +1505,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17346(final Class4342 class4342) {
-        Class8663.method29632((Class4252<Class5799>)class4342, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4342, this, this.field23808);
         this.field23808.method5299().method6422(new Class6836(class4342.method13038(), class4342.method13039(), class4342.method13043(), class4342.method13044(), false, 0, Class229.field810, (float)class4342.method13040(), (float)class4342.method13041(), (float)class4342.method13042(), false));
     }
     
@@ -1591,13 +1596,13 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17351(final Class4301 class4301) {
-        Class8663.method29632((Class4252<Class5799>)class4301, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4301, this, this.field23808);
         this.field23808.field4647.method3813().method3332(class4301);
     }
     
     @Override
     public void method17352(final Class4391 class4391) {
-        Class8663.method29632((Class4252<Class5799>)class4391, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4391, this, this.field23808);
         if (class4391.method13207() != 0) {
             this.field23808.field4684.method2906().method25772(class4391.method13206(), class4391.method13207());
         }
@@ -1608,7 +1613,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17353(final Class4263 class4263) {
-        Class8663.method29632((Class4252<Class5799>)class4263, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4263, this, this.field23808);
         final Entity method1915 = this.field23808.field4684.method1915();
         if (method1915 != this.field23808.field4684) {
             if (method1915.method1919()) {
@@ -1620,7 +1625,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17354(final Class4316 class4316) {
-        Class8663.method29632((Class4252<Class5799>)class4316, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4316, this, this.field23808);
         final ItemStack method2715 = this.field23808.field4684.method2715(class4316.method12972());
         if (method2715.method27622() == Class7739.field31513) {
             this.field23808.method5244(new Class723(new Class7738(method2715)));
@@ -1629,9 +1634,9 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17355(final Class4376 class4376) {
-        Class8663.method29632((Class4252<Class5799>)class4376, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4376, this, this.field23808);
         final Class1932 method13158 = class4376.method13158();
-        Class8654 method13159 = null;
+        PacketBuffer method13159 = null;
         try {
             method13159 = class4376.method13159();
             if (Class4376.field19590.equals(method13158)) {
@@ -1655,13 +1660,13 @@ public class Class5799 implements Class5800
                 this.field23808.field4645.field28213.method18312(method13160, arrayList, arrayList2);
             }
             else if (Class4376.field19594.equals(method13158)) {
-                final Class383 method13161 = Class383.method1274(method13159.readInt());
-                final Class6997 class4377 = new Class6997(method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt());
+                final DimensionType method13161 = DimensionType.method1274(method13159.readInt());
+                final MutableBoundingBox class4377 = new MutableBoundingBox(method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt());
                 final int int2 = method13159.readInt();
                 final ArrayList arrayList3 = Lists.newArrayList();
                 final ArrayList arrayList4 = Lists.newArrayList();
                 for (int j = 0; j < int2; ++j) {
-                    arrayList3.add(new Class6997(method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt()));
+                    arrayList3.add(new MutableBoundingBox(method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt(), method13159.readInt()));
                     arrayList4.add(method13159.readBoolean());
                 }
                 this.field23808.field4645.field28214.method18345(class4377, arrayList3, arrayList4, method13161);
@@ -1788,7 +1793,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17356(final Class4400 class4400) {
-        Class8663.method29632((Class4252<Class5799>)class4400, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4400, this, this.field23808);
         final Class6516 method6782 = this.field23809.method6782();
         final String method6783 = class4400.method13240();
         if (class4400.method13242() != 0) {
@@ -1812,7 +1817,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17357(final Class4377 class4377) {
-        Class8663.method29632((Class4252<Class5799>)class4377, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4377, this, this.field23808);
         final Class6516 method6782 = this.field23809.method6782();
         final String method6783 = class4377.method13161();
         switch (Class8379.field34358[class4377.method13163().ordinal()]) {
@@ -1829,7 +1834,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17358(final Class4253 class4253) {
-        Class8663.method29632((Class4252<Class5799>)class4253, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4253, this, this.field23808);
         final Class6516 method6782 = this.field23809.method6782();
         final String method6783 = class4253.method12766();
         method6782.method19614(class4253.method12765(), (method6783 != null) ? method6782.method19631(method6783) : null);
@@ -1837,7 +1842,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17359(final Class4290 class4290) {
-        Class8663.method29632((Class4252<Class5799>)class4290, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4290, this, this.field23808);
         final Class6516 method6782 = this.field23809.method6782();
         Class6749 class4291;
         if (class4290.method12883() != 0) {
@@ -1880,7 +1885,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17360(final Class4278 class4278) {
-        Class8663.method29632((Class4252<Class5799>)class4278, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4278, this, this.field23808);
         if (class4278.method12852() == 0) {
             final double n = class4278.method12851() * class4278.method12848();
             final double n2 = class4278.method12851() * class4278.method12849();
@@ -1913,13 +1918,13 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17361(final Class4347 class4347) {
-        Class8663.method29632((Class4252<Class5799>)class4347, this, this.field23808);
-        final Entity method6741 = this.field23809.method6741(class4347.method13056());
+        Class8663.method29632((IPacket<Class5799>)class4347, this, this.field23808);
+        final Entity method6741 = this.field23809.getEntityByID(class4347.method13056());
         if (method6741 != null) {
-            if (!(method6741 instanceof Class511)) {
+            if (!(method6741 instanceof LivingEntity)) {
                 throw new IllegalStateException("Server tried to update attributes of a non-living entity (actually: " + method6741 + ")");
             }
-            final Class6821 method6742 = ((Class511)method6741).method2711();
+            final Class6821 method6742 = ((LivingEntity)method6741).method2711();
             for (final Class8494 class4348 : class4347.method13057()) {
                 Class7619 class4349 = method6742.method20878(class4348.method28383());
                 if (class4349 == null) {
@@ -1937,7 +1942,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17362(final Class4257 class4257) {
-        Class8663.method29632((Class4252<Class5799>)class4257, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4257, this, this.field23808);
         final Class3418 field3009 = this.field23808.field4684.field3009;
         if (field3009.field16154 == class4257.method12780()) {
             if (field3009.method10886(this.field23808.field4684)) {
@@ -1952,7 +1957,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17363(final Class4349 class4349) {
-        Class8663.method29632((Class4252<Class5799>)class4349, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4349, this, this.field23808);
         final int method13059 = class4349.method13059();
         final int method13060 = class4349.method13060();
         final Class1886 method13061 = this.field23809.method6835().method7405();
@@ -1962,7 +1967,7 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17364(final Class4346 class4346) {
-        Class8663.method29632((Class4252<Class5799>)class4346, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4346, this, this.field23808);
         final Class3418 field3009 = this.field23808.field4684.field3009;
         if (class4346.method13050() == field3009.field16154) {
             if (field3009 instanceof Class3423) {
@@ -1977,20 +1982,20 @@ public class Class5799 implements Class5800
     
     @Override
     public void method17365(final Class4332 class4332) {
-        Class8663.method29632((Class4252<Class5799>)class4332, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4332, this, this.field23808);
         this.field23816 = class4332.method13010();
         this.field23809.method6835().method7417(class4332.method13010());
     }
     
     @Override
     public void method17366(final Class4379 class4379) {
-        Class8663.method29632((Class4252<Class5799>)class4379, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4379, this, this.field23808);
         this.field23809.method6835().method7416(class4379.method13167(), class4379.method13168());
     }
     
     @Override
     public void method17367(final Class4320 class4320) {
-        Class8663.method29632((Class4252<Class5799>)class4320, this, this.field23808);
+        Class8663.method29632((IPacket<Class5799>)class4320, this, this.field23808);
         this.field23808.field4682.method27340(this.field23809, class4320.method12982(), class4320.method12981(), class4320.method12984(), class4320.method12983());
     }
     
@@ -2007,7 +2012,7 @@ public class Class5799 implements Class5800
     }
     
     @Override
-    public Class3641 method17369() {
+    public NetworkManager getNetworkManager() {
         return this.field23805;
     }
     

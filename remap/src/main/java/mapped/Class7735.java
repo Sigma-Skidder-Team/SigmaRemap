@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 public interface Class7735
@@ -13,7 +14,7 @@ public interface Class7735
     ITextComponent method24685(final int p0);
     
     default ITextComponent method24686(final int n) {
-        return (n >= 0 && n < this.method24684()) ? this.method24685(n) : new Class2260("");
+        return (n >= 0 && n < this.method24684()) ? this.method24685(n) : new StringTextComponent("");
     }
     
     default Class7735 method24687(final ItemStack class8321) {

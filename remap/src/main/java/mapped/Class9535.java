@@ -8,6 +8,9 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
@@ -15,7 +18,7 @@ import java.util.List;
 public class Class9535
 {
     private final List<Class8779> field41036;
-    private final Class511 field41037;
+    private final LivingEntity field41037;
     private int field41038;
     private int field41039;
     private int field41040;
@@ -23,7 +26,7 @@ public class Class9535
     private boolean field41042;
     private String field41043;
     
-    public Class9535(final Class511 field41037) {
+    public Class9535(final LivingEntity field41037) {
         this.field41036 = Lists.newArrayList();
         this.field41037 = field41037;
     }
@@ -36,7 +39,7 @@ public class Class9535
             }
         }
         else {
-            final Class3833 method21696 = this.field41037.field2391.method6701(new BlockPos(this.field41037)).method21696();
+            final Class3833 method21696 = this.field41037.world.method6701(new BlockPos(this.field41037)).method21696();
             if (method21696 != Class7521.field29307) {
                 if (method21696 == Class7521.field29388) {
                     this.field41043 = "vines";
@@ -48,18 +51,18 @@ public class Class9535
         }
     }
     
-    public void method35594(final Class7929 class7929, final float n, final float n2) {
+    public void method35594(final DamageSource class7929, final float n, final float n2) {
         this.method35601();
         this.method35593();
-        final Class8779 class7930 = new Class8779(class7929, this.field41037.field2424, n, n2, this.field41043, this.field41037.field2414);
+        final Class8779 class7930 = new Class8779(class7929, this.field41037.ticksExisted, n, n2, this.field41043, this.field41037.fallDistance);
         this.field41036.add(class7930);
-        this.field41038 = this.field41037.field2424;
+        this.field41038 = this.field41037.ticksExisted;
         this.field41042 = true;
         if (class7930.method30539()) {
             if (!this.field41041) {
                 if (this.field41037.method1768()) {
                     this.field41041 = true;
-                    this.field41039 = this.field41037.field2424;
+                    this.field41039 = this.field41037.ticksExisted;
                     this.field41040 = this.field41039;
                     this.field41037.method2752();
                 }
@@ -74,12 +77,12 @@ public class Class9535
             final ITextComponent method35598 = class8779.method30541();
             final Entity method35599 = class8779.method30537().method25714();
             ITextComponent method35602;
-            if (method35597 != null && class8779.method30537() == Class7929.field32572) {
+            if (method35597 != null && class8779.method30537() == DamageSource.field32572) {
                 final ITextComponent method35600 = method35597.method30541();
-                if (method35597.method30537() != Class7929.field32572 && method35597.method30537() != Class7929.field32574) {
+                if (method35597.method30537() != DamageSource.field32572 && method35597.method30537() != DamageSource.field32574) {
                     if (method35600 != null && (method35598 == null || !method35600.equals(method35598))) {
                         final Entity method35601 = method35597.method30537().method25714();
-                        final ItemStack class8780 = (method35601 instanceof Class511) ? ((Class511)method35601).method2713() : ItemStack.field34174;
+                        final ItemStack class8780 = (method35601 instanceof LivingEntity) ? ((LivingEntity)method35601).method2713() : ItemStack.field34174;
                         if (!class8780.method27620() && class8780.method27667()) {
                             method35602 = new Class2259("death.fell.assist.item", new Object[] { this.field41037.getDisplayName(), method35600, class8780.method27684() });
                         }
@@ -91,7 +94,7 @@ public class Class9535
                         method35602 = new Class2259("death.fell.killer", new Object[] { this.field41037.getDisplayName() });
                     }
                     else {
-                        final ItemStack class8781 = (method35599 instanceof Class511) ? ((Class511)method35599).method2713() : ItemStack.field34174;
+                        final ItemStack class8781 = (method35599 instanceof LivingEntity) ? ((LivingEntity)method35599).method2713() : ItemStack.field34174;
                         if (!class8781.method27620() && class8781.method27667()) {
                             method35602 = new Class2259("death.fell.finish.item", new Object[] { this.field41037.getDisplayName(), method35598, class8781.method27684() });
                         }
@@ -113,9 +116,9 @@ public class Class9535
     }
     
     @Nullable
-    public Class511 method35596() {
-        Class511 class511 = null;
-        Class511 class512 = null;
+    public LivingEntity method35596() {
+        LivingEntity class511 = null;
+        LivingEntity class512 = null;
         float method30538 = 0.0f;
         float method30539 = 0.0f;
         for (final Class8779 class513 : this.field41036) {
@@ -125,14 +128,14 @@ public class Class9535
                     class512 = (Class512)class513.method30537().method25714();
                 }
             }
-            if (!(class513.method30537().method25714() instanceof Class511)) {
+            if (!(class513.method30537().method25714() instanceof LivingEntity)) {
                 continue;
             }
             if (class511 != null && class513.method30538() <= method30538) {
                 continue;
             }
             method30538 = class513.method30538();
-            class511 = (Class511)class513.method30537().method25714();
+            class511 = (LivingEntity)class513.method30537().method25714();
         }
         return (class512 != null && method30539 >= method30538 / 3.0f) ? class512 : class511;
     }
@@ -146,7 +149,7 @@ public class Class9535
         for (int i = 0; i < this.field41036.size(); ++i) {
             final Class8779 class8781 = this.field41036.get(i);
             final Class8779 class8782 = (i <= 0) ? null : this.field41036.get(i - 1);
-            if (class8781.method30537() == Class7929.field32572 || class8781.method30537() == Class7929.field32574) {
+            if (class8781.method30537() == DamageSource.field32572 || class8781.method30537() == DamageSource.field32574) {
                 if (class8781.method30542() > 0.0f) {
                     if (class8779 == null || class8781.method30542() > method30539) {
                         if (i <= 0) {
@@ -177,7 +180,7 @@ public class Class9535
     }
     
     public int method35599() {
-        return this.field41041 ? (this.field41037.field2424 - this.field41039) : (this.field41040 - this.field41039);
+        return this.field41041 ? (this.field41037.ticksExisted - this.field41039) : (this.field41040 - this.field41039);
     }
     
     private void method35600() {
@@ -187,11 +190,11 @@ public class Class9535
     public void method35601() {
         final int n = this.field41041 ? 300 : 100;
         if (this.field41042) {
-            if (!this.field41037.method1768() || this.field41037.field2424 - this.field41038 > n) {
+            if (!this.field41037.method1768() || this.field41037.ticksExisted - this.field41038 > n) {
                 final boolean field41041 = this.field41041;
                 this.field41042 = false;
                 this.field41041 = false;
-                this.field41040 = this.field41037.field2424;
+                this.field41040 = this.field41037.ticksExisted;
                 if (field41041) {
                     this.field41037.method2753();
                 }
@@ -200,7 +203,7 @@ public class Class9535
         }
     }
     
-    public Class511 method35602() {
+    public LivingEntity method35602() {
         return this.field41037;
     }
 }

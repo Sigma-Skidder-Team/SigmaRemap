@@ -37,7 +37,7 @@ public class Class5420 extends Class5419<Class787>
         this.field22600 = class1849.method6754() + class1849.method6790().nextInt(20);
         final Class1883 method6921 = class1849.method6921();
         final Class9468 method6922 = class1850.method4150().method24720(method6921.method7203(this.field22597.method31396(), class1851 -> {
-            class1851.method1132();
+            class1851.toLong();
             final long n2;
             if (!this.field22601.containsKey(n2)) {
                 if (++this.field22602 < 5) {

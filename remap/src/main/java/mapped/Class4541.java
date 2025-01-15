@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
@@ -33,7 +34,7 @@ public class Class4541 extends Class4535<Class5122>
         for (int i = n2; i <= n3; ++i) {
             for (int j = -1; j <= 4; ++j) {
                 for (int k = n5; k <= n6; ++k) {
-                    final BlockPos method1134 = class1853.method1134(i, j, k);
+                    final BlockPos method1134 = class1853.add(i, j, k);
                     final boolean method1135 = class1851.method6701(method1134).method21697().method26439();
                     if (j == -1 && !method1135) {
                         return false;
@@ -64,7 +65,7 @@ public class Class4541 extends Class4535<Class5122>
             for (int l = n2; l <= n3; ++l) {
                 for (int n8 = 3; n8 >= -1; --n8) {
                     for (int n9 = n5; n9 <= n6; ++n9) {
-                        final BlockPos method1136 = class1853.method1134(l, n8, n9);
+                        final BlockPos method1136 = class1853.add(l, n8, n9);
                         if (l != n2) {
                             if (n8 != -1) {
                                 if (n9 != n5) {

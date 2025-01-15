@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -116,7 +118,7 @@ public abstract class Class456 extends Class460
     
     @Override
     public boolean method2328(final Class512 class512) {
-        return super.method2328(class512) && (this.field2710 == null || !class512.method1639());
+        return super.method2328(class512) && (this.field2710 == null || !class512.isSpectator());
     }
     
     @Nullable

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.Random;
 
 public class Class4518 extends Class4515
@@ -50,7 +52,7 @@ public class Class4518 extends Class4515
     }
     
     @Override
-    public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final Class6997 class356) {
+    public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (!"chest".equals(s)) {
             if ("drowned".equals(s)) {
                 final Class830 class357 = EntityType.field28973.method23371(class355.method6744());
@@ -76,10 +78,10 @@ public class Class4518 extends Class4515
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.field19919.method32852().method32853(new Class4108(this.field19926)).method32853(Class4106.field18209);
         this.field19920 = new BlockPos(this.field19920.getX(), class1851.method6699(Class2020.field11523, this.field19920.getX(), this.field19920.getZ()), this.field19920.getZ());
-        this.field19920 = new BlockPos(this.field19920.getX(), this.method13515(this.field19920, class1851, Class6585.method19962(new BlockPos(this.field19918.method19945().getX() - 1, 0, this.field19918.method19945().getZ() - 1), Class2181.field12917, this.field19928, BlockPos.ZERO).method1135(this.field19920)), this.field19920.getZ());
+        this.field19920 = new BlockPos(this.field19920.getX(), this.method13515(this.field19920, class1851, Class6585.method19962(new BlockPos(this.field19918.method19945().getX() - 1, 0, this.field19918.method19945().getZ() - 1), Class2181.field12917, this.field19928, BlockPos.ZERO).add(this.field19920)), this.field19920.getZ());
         return super.method13421(class1851, class1852, random, class1853, class1854);
     }
     
@@ -89,11 +91,11 @@ public class Class4518 extends Class4515
         final int n = method1075 - 1;
         int n2 = 0;
     Label_0152_Outer:
-        for (final BlockPos class357 : BlockPos.method1154(class354, class356)) {
+        for (final BlockPos class357 : BlockPos.getAllInBoxMutable(class354, class356)) {
             final int method1076 = class357.getX();
             final int method1077 = class357.getZ();
             int b = class354.getY() - 1;
-            final Class385 class358 = new Class385(method1076, b, method1077);
+            final Mutable class358 = new Mutable(method1076, b, method1077);
             Class7096 class359 = class355.method6701(class358);
             Class7099 class360 = class355.method6702(class358);
             while (true) {
@@ -108,7 +110,7 @@ public class Class4518 extends Class4515
                     break;
                 }
                 --b;
-                class358.method1284(method1076, b, method1077);
+                class358.setPos(method1076, b, method1077);
                 class359 = class355.method6701(class358);
                 class360 = class355.method6702(class358);
             }

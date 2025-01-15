@@ -97,10 +97,10 @@ public class Class3198 extends Class3167
     @Class6753
     public void method10039(final Class5723 class5723) {
         if (this.method9906() && this.field15614 > 1) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4268) {
                 final Class4268 class5724 = (Class4268)method16998;
-                if (class5724.method12811() == Class3198.field15514.field4684.method1643()) {
+                if (class5724.method12811() == Class3198.field15514.field4684.getEntityId()) {
                     final Iterator<Class9369<?>> iterator = class5724.method12810().iterator();
                     while (iterator.hasNext()) {
                         if (iterator.next().method34766().method30737() != 14) {

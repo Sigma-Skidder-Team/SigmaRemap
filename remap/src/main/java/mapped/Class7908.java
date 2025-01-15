@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.Collection;
 
 public class Class7908 extends Class7909<EntityType<?>>

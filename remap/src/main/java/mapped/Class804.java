@@ -4,11 +4,18 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 public class Class804 extends Class789
 {
     private static String[] field4326;
     
-    public Class804(final EntityType<? extends Class804> class7499, final Class1847 class7500) {
+    public Class804(final EntityType<? extends Class804> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -37,7 +44,7 @@ public class Class804 extends Class789
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35097;
     }
     
@@ -80,11 +87,11 @@ public class Class804 extends Class789
     }
     
     public Class804 method4704(final Class788 class788) {
-        return EntityType.field28968.method23371(this.field2391);
+        return EntityType.field28968.method23371(this.world);
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return this.method2625() ? (class291.field34098 * 0.95f) : 1.3f;
     }
 }

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class6179 extends Class6173
 {
@@ -13,7 +14,7 @@ public class Class6179 extends Class6173
     private final Class5901 field24979;
     private final Class6332 field24980;
     
-    private Class6179(final Class1847 class1847, final double n, final double n2, final double n3) {
+    private Class6179(final World class1847, final double n, final double n2, final double n3) {
         super(class1847, n, n2, n3);
         this.field24979 = new Class5879();
         this.field24980 = Class6332.method18773(Class4765.field20392);

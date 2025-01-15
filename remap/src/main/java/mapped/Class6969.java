@@ -8,6 +8,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class Class6969
 {
@@ -33,8 +34,8 @@ public class Class6969
         if (this == Class6969.field27249) {
             return true;
         }
-        if (class399 instanceof Class511) {
-            final Class511 class400 = (Class511)class399;
+        if (class399 instanceof LivingEntity) {
+            final LivingEntity class400 = (LivingEntity)class399;
             return this.field27251.method34627(class400.method2718(Class2215.field13605)) && this.field27252.method34627(class400.method2718(Class2215.field13604)) && this.field27253.method34627(class400.method2718(Class2215.field13603)) && this.field27254.method34627(class400.method2718(Class2215.field13602)) && this.field27255.method34627(class400.method2718(Class2215.field13600)) && this.field27256.method34627(class400.method2718(Class2215.field13601));
         }
         return false;

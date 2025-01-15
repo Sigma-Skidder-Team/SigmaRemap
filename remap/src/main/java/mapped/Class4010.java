@@ -5,7 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -18,11 +22,11 @@ public class Class4010 extends Class3833
     }
     
     @Override
-    public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
+    public void method11845(final World class1847, final BlockPos class1848, final Entity class1849) {
         if (!class1849.method1704()) {
-            if (class1849 instanceof Class511) {
-                if (!Class8742.method30216((Class511)class1849)) {
-                    class1849.method1740(Class7929.field32566, 1.0f);
+            if (class1849 instanceof LivingEntity) {
+                if (!Class8742.method30216((LivingEntity)class1849)) {
+                    class1849.attackEntityFrom(DamageSource.field32566, 1.0f);
                 }
             }
         }
@@ -64,7 +68,7 @@ public class Class4010 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         class7097.method6833().method21345(class7098, this, this.method11826(class7097));
     }
     

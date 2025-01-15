@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public final class Class3109 extends Class3090
 {
     public Class3109() {

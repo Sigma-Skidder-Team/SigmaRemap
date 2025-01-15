@@ -5,7 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -27,7 +31,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7096.method21772((Class7111<Boolean>)Class3918.field17760)) {
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class448) {
@@ -47,12 +51,12 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7099.method1704()) {
             if (class7096.method21772((Class7111<Boolean>)Class3918.field17760)) {
-                if (class7099 instanceof Class511) {
-                    if (!Class8742.method30216((Class511)class7099)) {
-                        class7099.method1740(Class7929.field32562, 1.0f);
+                if (class7099 instanceof LivingEntity) {
+                    if (!Class8742.method30216((LivingEntity)class7099)) {
+                        class7099.attackEntityFrom(DamageSource.field32562, 1.0f);
                     }
                 }
             }
@@ -61,7 +65,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class448) {
@@ -74,7 +78,7 @@ public class Class3918 extends Class3841 implements Class3856
     @Nullable
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         final boolean b = method21654.method6702(method21655).method21779() == Class7558.field29976;
         return (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)Class3918.field17762, b)).method21773((Class7111<Comparable>)Class3918.field17761, this.method12030(method21654.method6701(method21655.method1139())))).method21773((Class7111<Comparable>)Class3918.field17760, !b)).method21773((Class7111<Comparable>)Class3918.field17763, class7074.method21644());
@@ -98,7 +102,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3918.field17759;
     }
     
@@ -108,7 +112,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class3918.field17760)) {
             if (random.nextInt(10) == 0) {
                 class7097.method6708(class7098.getX() + 0.5f, class7098.getY() + 0.5f, class7098.getZ() + 0.5f, Class8520.field35055, Class286.field1582, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
@@ -154,7 +158,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public void method11869(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
+    public void method11869(final World class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
         if (!class1847.field10067) {
             if (class1850 instanceof Class416 || (class1850 instanceof Class402 && class1850.method1804())) {
                 final Entity method12031 = this.method12031(class1850);
@@ -181,7 +185,7 @@ public class Class3918 extends Class3841 implements Class3856
         }
     }
     
-    public static void method12032(final Class1847 class1847, final BlockPos class1848, final boolean b, final boolean b2) {
+    public static void method12032(final World class1847, final BlockPos class1848, final boolean b, final boolean b2) {
         final Random method6790 = class1847.method6790();
         class1847.method6712(b ? Class8432.field34654 : Class8432.field34653, true, class1848.getX() + 0.5 + method6790.nextDouble() / 3.0 * (method6790.nextBoolean() ? 1 : -1), class1848.getY() + method6790.nextDouble() + method6790.nextDouble(), class1848.getZ() + 0.5 + method6790.nextDouble() / 3.0 * (method6790.nextBoolean() ? 1 : -1), 0.0, 0.07, 0.0);
         if (b2) {
@@ -189,14 +193,14 @@ public class Class3918 extends Class3841 implements Class3856
         }
     }
     
-    public static boolean method12033(final Class1847 class1847, final BlockPos class1848, final int n) {
+    public static boolean method12033(final World class1847, final BlockPos class1848, final int n) {
         for (int i = 1; i <= n; ++i) {
             final BlockPos method1140 = class1848.method1140(i);
             final Class7096 method1141 = class1847.method6701(method1140);
             if (method12034(method1141)) {
                 return true;
             }
-            if (Class7698.method24496(Class3918.field17764, method1141.method21728(class1847, class1848, Class7543.method23629()), Class9306.field39924)) {
+            if (Class7698.method24496(Class3918.field17764, method1141.method21728(class1847, class1848, ISelectionContext.dummy()), Class9306.field39924)) {
                 return method12034(class1847.method6701(method1140.method1139()));
             }
         }

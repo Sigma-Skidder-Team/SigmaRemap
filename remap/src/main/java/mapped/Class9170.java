@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.base.Predicates;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.function.Predicate;
 
@@ -13,7 +14,7 @@ public final class Class9170
 {
     private static String[] field38844;
     public static final Predicate<Entity> field38845;
-    public static final Predicate<Class511> field38846;
+    public static final Predicate<LivingEntity> field38846;
     public static final Predicate<Entity> field38847;
     public static final Predicate<Entity> field38848;
     public static final Predicate<Entity> field38849;
@@ -24,15 +25,15 @@ public final class Class9170
     }
     
     public static Predicate<Entity> method33474(final Entity class399) {
-        final Class6750 method1825 = class399.method1825();
+        final Team method1825 = class399.getTeam();
         return (Predicate<Entity>)((((method1825 != null) ? method1825.method20558() : Class343.field2112) != Class343.field2113) ? Class9170.field38850.and(class403 -> {
             if (class403.method1750()) {
                 if (class400.field2391.field10067 && (class403 instanceof Class512 && ((Class512)class403).method2843())) {
                     return false;
                 }
                 else {
-                    class403.method1825();
-                    final Class6750 class405;
+                    class403.getTeam();
+                    final Team class405;
                     final Class343 class404 = (class405 != null) ? class405.method20558() : Class343.field2112;
                     if (class404 != Class343.field2113) {
                         final boolean b = class401 != null && class401.method20565(class405);
@@ -56,7 +57,7 @@ public final class Class9170
     
     public static Predicate<Entity> method33475(final Entity class399) {
         return method1920 -> {
-            while (method1920.method1805()) {
+            while (method1920.isPassenger()) {
                 method1920 = method1920.method1920();
                 if (method1920 == class400) {
                     return false;
@@ -68,12 +69,12 @@ public final class Class9170
     
     static {
         field38845 = Entity::method1768;
-        field38846 = Class511::method1768;
+        field38846 = LivingEntity::method1768;
         field38847 = (class399 -> {
             final boolean b;
             if (!(!class399.method1768())) {
-                if (!class399.method1806()) {
-                    if (!class399.method1805()) {
+                if (!class399.isBeingRidden()) {
+                    if (!class399.isPassenger()) {
                         return b;
                     }
                 }
@@ -81,7 +82,7 @@ public final class Class9170
             return b;
         });
         field38848 = (class400 -> class400 instanceof Class446 && class400.method1768());
-        field38849 = (class401 -> !(class401 instanceof Class512) || (!class401.method1639() && !((Class512)class401).method2889()));
-        field38850 = (class402 -> !class402.method1639());
+        field38849 = (class401 -> !(class401 instanceof Class512) || (!class401.isSpectator() && !((Class512)class401).method2889()));
+        field38850 = (class402 -> !class402.isSpectator());
     }
 }

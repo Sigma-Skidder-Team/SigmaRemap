@@ -5,8 +5,9 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
 
-public class Class1815<T extends Class511> extends Class1799<T, Class5860<T>>
+public class Class1815<T extends LivingEntity> extends Class1799<T, Class5860<T>>
 {
     public static final Class1932 field9991;
     private final Class6300 field9992;

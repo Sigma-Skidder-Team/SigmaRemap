@@ -10,6 +10,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonElement;
+import net.minecraft.item.ItemStack;
+
 import java.util.Map;
 
 public class Class9342

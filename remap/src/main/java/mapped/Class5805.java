@@ -9,9 +9,9 @@ import net.minecraft.util.text.ITextComponent;
 public class Class5805 implements Class5804
 {
     private final Class394 field23833;
-    private final Class3641 field23834;
+    private final NetworkManager field23834;
     
-    public Class5805(final Class394 field23833, final Class3641 field23834) {
+    public Class5805(final Class394 field23833, final NetworkManager field23834) {
         this.field23833 = field23833;
         this.field23834 = field23834;
     }
@@ -48,11 +48,11 @@ public class Class5805 implements Class5804
     }
     
     @Override
-    public void method17291(final ITextComponent class2250) {
+    public void onDisconnect(final ITextComponent class2250) {
     }
     
     @Override
-    public Class3641 method17369() {
+    public NetworkManager getNetworkManager() {
         return this.field23834;
     }
 }

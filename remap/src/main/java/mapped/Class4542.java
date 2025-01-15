@@ -50,7 +50,7 @@ public class Class4542 extends Class4535<Class5122>
                                     continue;
                                 }
                             }
-                            final Class7096 method35650 = class1851.method6701(class1853.method1134(j, i, k));
+                            final Class7096 method35650 = class1851.method6701(class1853.add(j, i, k));
                             final Class3833 method35651 = method35650.method21696();
                             Label_0447: {
                                 if (!method35650.method21706()) {
@@ -62,11 +62,11 @@ public class Class4542 extends Class4535<Class5122>
                                         }
                                     }
                                 }
-                                this.method13529(class1851, class1853.method1134(j, i, k), Class7521.field29548.method11878());
+                                this.method13529(class1851, class1853.add(j, i, k), Class7521.field29548.method11878());
                             }
                             if (i != 0) {
                                 if (method35649 > 1) {
-                                    final Class7096 method35652 = class1851.method6701(class1853.method1134(j, -i, k));
+                                    final Class7096 method35652 = class1851.method6701(class1853.add(j, -i, k));
                                     final Class3833 method35653 = method35652.method21696();
                                     if (!method35652.method21706()) {
                                         if (!Class4535.method13533(method35653)) {
@@ -77,7 +77,7 @@ public class Class4542 extends Class4535<Class5122>
                                             }
                                         }
                                     }
-                                    this.method13529(class1851, class1853.method1134(j, -i, k), Class7521.field29548.method11878());
+                                    this.method13529(class1851, class1853.add(j, -i, k), Class7521.field29548.method11878());
                                 }
                             }
                         }
@@ -95,7 +95,7 @@ public class Class4542 extends Class4535<Class5122>
             }
             for (int l = -n6; l <= n6; ++l) {
                 for (int a = -n6; a <= n6; ++a) {
-                    BlockPos class1855 = class1853.method1134(l, -1, a);
+                    BlockPos class1855 = class1853.add(l, -1, a);
                     int n7 = 50;
                     if (Math.abs(l) == 1) {
                         if (Math.abs(a) == 1) {

@@ -15,7 +15,7 @@ import java.util.Set;
 public abstract class Class4473
 {
     public static final Class7096 field19848;
-    public Class6997 field19849;
+    public MutableBoundingBox field19849;
     private Direction field19850;
     private Class2181 field19851;
     private Class2052 field19852;
@@ -31,7 +31,7 @@ public abstract class Class4473
     public Class4473(final Class9520 class9520, final Class51 class9521) {
         this(class9520, class9521.method319("GD"));
         if (class9521.method315("BB")) {
-            this.field19849 = new Class6997(class9521.method325("BB"));
+            this.field19849 = new MutableBoundingBox(class9521.method325("BB"));
         }
         final int method319 = class9521.method319("O");
         this.method13456((method319 != -1) ? Direction.byHorizontalIndex(method319) : null);
@@ -40,7 +40,7 @@ public abstract class Class4473
     public final Class51 method13430() {
         final Class51 class51 = new Class51();
         class51.method306("id", Class90.field231.method503(this.method13458()).toString());
-        class51.method295("BB", this.field19849.method21421());
+        class51.method295("BB", this.field19849.toNBTTagIntArray());
         final Direction method13455 = this.method13455();
         class51.method298("O", (method13455 != null) ? method13455.getHorizontalIndex() : -1);
         class51.method298("GD", this.field19853);
@@ -53,9 +53,9 @@ public abstract class Class4473
     public void method13431(final Class4473 class4473, final List<Class4473> list, final Random random) {
     }
     
-    public abstract boolean method13421(final Class1851 p0, final Class6346<?> p1, final Random p2, final Class6997 p3, final Class7859 p4);
+    public abstract boolean method13421(final Class1851 p0, final Class6346<?> p1, final Random p2, final MutableBoundingBox p3, final Class7859 p4);
     
-    public Class6997 method13432() {
+    public MutableBoundingBox method13432() {
         return this.field19849;
     }
     
@@ -66,52 +66,52 @@ public abstract class Class4473
     public boolean method13434(final Class7859 class7859, final int n) {
         final int n2 = class7859.field32290 << 4;
         final int n3 = class7859.field32291 << 4;
-        return this.field19849.method21411(n2 - n, n3 - n, n2 + 15 + n, n3 + 15 + n);
+        return this.field19849.intersectsWith(n2 - n, n3 - n, n2 + 15 + n, n3 + 15 + n);
     }
     
-    public static Class4473 method13435(final List<Class4473> list, final Class6997 class6997) {
+    public static Class4473 method13435(final List<Class4473> list, final MutableBoundingBox class6997) {
         for (final Class4473 class6998 : list) {
-            if (class6998.method13432() != null && class6998.method13432().method21410(class6997)) {
+            if (class6998.method13432() != null && class6998.method13432().intersectsWith(class6997)) {
                 return class6998;
             }
         }
         return null;
     }
     
-    public boolean method13436(final Class1855 class1855, final Class6997 class1856) {
-        final int max = Math.max(this.field19849.field27293 - 1, class1856.field27293);
-        final int max2 = Math.max(this.field19849.field27294 - 1, class1856.field27294);
-        final int max3 = Math.max(this.field19849.field27295 - 1, class1856.field27295);
-        final int min = Math.min(this.field19849.field27296 + 1, class1856.field27296);
-        final int min2 = Math.min(this.field19849.field27297 + 1, class1856.field27297);
-        final int min3 = Math.min(this.field19849.field27298 + 1, class1856.field27298);
-        final Class385 class1857 = new Class385();
+    public boolean method13436(final Class1855 class1855, final MutableBoundingBox class1856) {
+        final int max = Math.max(this.field19849.minX - 1, class1856.minX);
+        final int max2 = Math.max(this.field19849.minY - 1, class1856.minY);
+        final int max3 = Math.max(this.field19849.minZ - 1, class1856.minZ);
+        final int min = Math.min(this.field19849.maxX + 1, class1856.maxX);
+        final int min2 = Math.min(this.field19849.maxY + 1, class1856.maxY);
+        final int min3 = Math.min(this.field19849.maxZ + 1, class1856.maxZ);
+        final Mutable class1857 = new Mutable();
         for (int i = max; i <= min; ++i) {
             for (int j = max3; j <= min3; ++j) {
-                if (class1855.method6701(class1857.method1284(i, max2, j)).method21697().method26438()) {
+                if (class1855.method6701(class1857.setPos(i, max2, j)).method21697().method26438()) {
                     return true;
                 }
-                if (class1855.method6701(class1857.method1284(i, min2, j)).method21697().method26438()) {
+                if (class1855.method6701(class1857.setPos(i, min2, j)).method21697().method26438()) {
                     return true;
                 }
             }
         }
         for (int k = max; k <= min; ++k) {
             for (int l = max2; l <= min2; ++l) {
-                if (class1855.method6701(class1857.method1284(k, l, max3)).method21697().method26438()) {
+                if (class1855.method6701(class1857.setPos(k, l, max3)).method21697().method26438()) {
                     return true;
                 }
-                if (class1855.method6701(class1857.method1284(k, l, min3)).method21697().method26438()) {
+                if (class1855.method6701(class1857.setPos(k, l, min3)).method21697().method26438()) {
                     return true;
                 }
             }
         }
         for (int n = max3; n <= min3; ++n) {
             for (int n2 = max2; n2 <= min2; ++n2) {
-                if (class1855.method6701(class1857.method1284(max, n2, n)).method21697().method26438()) {
+                if (class1855.method6701(class1857.setPos(max, n2, n)).method21697().method26438()) {
                     return true;
                 }
-                if (class1855.method6701(class1857.method1284(min, n2, n)).method21697().method26438()) {
+                if (class1855.method6701(class1857.setPos(min, n2, n)).method21697().method26438()) {
                     return true;
                 }
             }
@@ -127,13 +127,13 @@ public abstract class Class4473
         switch (Class8291.field34093[method13455.ordinal()]) {
             case 1:
             case 2: {
-                return this.field19849.field27293 + n;
+                return this.field19849.minX + n;
             }
             case 3: {
-                return this.field19849.field27296 - n2;
+                return this.field19849.maxX - n2;
             }
             case 4: {
-                return this.field19849.field27293 + n2;
+                return this.field19849.minX + n2;
             }
             default: {
                 return n;
@@ -142,7 +142,7 @@ public abstract class Class4473
     }
     
     public int method13438(final int n) {
-        return (this.method13455() != null) ? (n + this.field19849.field27294) : n;
+        return (this.method13455() != null) ? (n + this.field19849.minY) : n;
     }
     
     public int method13439(final int n, final int n2) {
@@ -152,14 +152,14 @@ public abstract class Class4473
         }
         switch (Class8291.field34093[method13455.ordinal()]) {
             case 1: {
-                return this.field19849.field27298 - n2;
+                return this.field19849.maxZ - n2;
             }
             case 2: {
-                return this.field19849.field27295 + n2;
+                return this.field19849.minZ + n2;
             }
             case 3:
             case 4: {
-                return this.field19849.field27295 + n;
+                return this.field19849.minZ + n;
             }
             default: {
                 return n2;
@@ -167,9 +167,9 @@ public abstract class Class4473
         }
     }
     
-    public void method13440(final Class1851 class1851, Class7096 class1852, final int n, final int n2, final int n3, final Class6997 class1853) {
+    public void method13440(final Class1851 class1851, Class7096 class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
         final BlockPos class1854 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
-        if (class1853.method21415(class1854)) {
+        if (class1853.isVecInside(class1854)) {
             if (this.field19851 != Class2181.field12917) {
                 class1852 = class1852.method21709(this.field19851);
             }
@@ -187,19 +187,19 @@ public abstract class Class4473
         }
     }
     
-    public Class7096 method13441(final Class1855 class1855, final int n, final int n2, final int n3, final Class6997 class1856) {
+    public Class7096 method13441(final Class1855 class1855, final int n, final int n2, final int n3, final MutableBoundingBox class1856) {
         final BlockPos class1857 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
-        return class1856.method21415(class1857) ? class1855.method6701(class1857) : Class7521.field29147.method11878();
+        return class1856.isVecInside(class1857) ? class1855.method6701(class1857) : Class7521.field29147.method11878();
     }
     
-    public boolean method13442(final Class1852 class1852, final int n, final int n2, final int n3, final Class6997 class1853) {
+    public boolean method13442(final Class1852 class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
         final int method13437 = this.method13437(n, n3);
         final int method13438 = this.method13438(n2 + 1);
         final int method13439 = this.method13439(n, n3);
-        return class1853.method21415(new BlockPos(method13437, method13438, method13439)) && method13438 < class1852.method6699(Class2020.field11523, method13437, method13439);
+        return class1853.isVecInside(new BlockPos(method13437, method13438, method13439)) && method13438 < class1852.method6699(Class2020.field11523, method13437, method13439);
     }
     
-    public void method13443(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
+    public void method13443(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
@@ -209,7 +209,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13444(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853, final Class7096 class1854, final boolean b) {
+    public void method13444(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853, final Class7096 class1854, final boolean b) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
@@ -235,7 +235,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13445(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final Random random, final Class6863 class1853) {
+    public void method13445(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final Random random, final Class6863 class1853) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
@@ -269,7 +269,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13446(final Class1851 class1851, final Class6997 class1852, final Random random, final float n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final Class7096 class1853, final Class7096 class1854, final boolean b, final boolean b2) {
+    public void method13446(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final Class7096 class1853, final Class7096 class1854, final boolean b, final boolean b2) {
         for (int i = n3; i <= n6; ++i) {
             for (int j = n2; j <= n5; ++j) {
                 for (int k = n4; k <= n7; ++k) {
@@ -299,13 +299,13 @@ public abstract class Class4473
         }
     }
     
-    public void method13447(final Class1851 class1851, final Class6997 class1852, final Random random, final float n, final int n2, final int n3, final int n4, final Class7096 class1853) {
+    public void method13447(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4, final Class7096 class1853) {
         if (random.nextFloat() < n) {
             this.method13440(class1851, class1853, n2, n3, n4, class1852);
         }
     }
     
-    public void method13448(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853, final boolean b) {
+    public void method13448(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853, final boolean b) {
         final float n7 = (float)(n4 - n + 1);
         final float n8 = (float)(n5 - n2 + 1);
         final float n9 = (float)(n6 - n3 + 1);
@@ -327,11 +327,11 @@ public abstract class Class4473
         }
     }
     
-    public void method13449(final Class1851 class1851, final Class7096 class1852, final int n, final int n2, final int n3, final Class6997 class1853) {
+    public void method13449(final Class1851 class1851, final Class7096 class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
         final int method13437 = this.method13437(n, n3);
         int method13438 = this.method13438(n2);
         final int method13439 = this.method13439(n, n3);
-        if (class1853.method21415(new BlockPos(method13437, method13438, method13439))) {
+        if (class1853.isVecInside(new BlockPos(method13437, method13438, method13439))) {
             while (class1851.method6961(new BlockPos(method13437, method13438, method13439)) || class1851.method6701(new BlockPos(method13437, method13438, method13439)).method21697().method26438()) {
                 if (method13438 <= 1) {
                     break;
@@ -342,7 +342,7 @@ public abstract class Class4473
         }
     }
     
-    public boolean method13450(final Class1851 class1851, final Class6997 class1852, final Random random, final int n, final int n2, final int n3, final Class1932 class1853) {
+    public boolean method13450(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final int n, final int n2, final int n3, final Class1932 class1853) {
         return this.method13452(class1851, class1852, random, new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3)), class1853, null);
     }
     
@@ -383,8 +383,8 @@ public abstract class Class4473
         return (Class7096)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1858.getOpposite());
     }
     
-    public boolean method13452(final Class1851 class1851, final Class6997 class1852, final Random random, final BlockPos class1853, final Class1932 class1854, Class7096 method13451) {
-        if (class1852.method21415(class1853) && class1851.method6701(class1853).method21696() != Class7521.field29292) {
+    public boolean method13452(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final BlockPos class1853, final Class1932 class1854, Class7096 method13451) {
+        if (class1852.isVecInside(class1853) && class1851.method6701(class1853).method21696() != Class7521.field29292) {
             if (method13451 == null) {
                 method13451 = method13451(class1851, class1853, Class7521.field29292.method11878());
             }
@@ -398,9 +398,9 @@ public abstract class Class4473
         return false;
     }
     
-    public boolean method13453(final Class1851 class1851, final Class6997 class1852, final Random random, final int n, final int n2, final int n3, final Direction class1853, final Class1932 class1854) {
+    public boolean method13453(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final int n, final int n2, final int n3, final Direction class1853, final Class1932 class1854) {
         final BlockPos class1855 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
-        if (class1852.method21415(class1855) && class1851.method6701(class1855).method21696() != Class7521.field29216) {
+        if (class1852.isVecInside(class1855) && class1851.method6701(class1855).method21696() != Class7521.field29216) {
             this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29216.method11878()).method21773((Class7111<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
             final Class436 method6727 = class1851.method6727(class1855);
             if (method6727 instanceof Class458) {
@@ -412,7 +412,7 @@ public abstract class Class4473
     }
     
     public void method13454(final int n, final int n2, final int n3) {
-        this.field19849.method21413(n, n2, n3);
+        this.field19849.offset(n, n2, n3);
     }
     
     @Nullable

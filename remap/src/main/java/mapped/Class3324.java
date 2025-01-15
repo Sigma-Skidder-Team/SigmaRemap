@@ -19,9 +19,9 @@ public class Class3324 extends Class3167
                 if (Class3324.field15514.field4684.method2877().method33491() > 17) {
                     if (Class3324.field15514.field4684.method2664() < 20.0f) {
                         if (Class3324.field15514.field4684.method2664() != 0.0f) {
-                            if (Class3324.field15514.field4684.field2404 || !this.method9883("Only OnGround")) {
+                            if (Class3324.field15514.field4684.onGround || !this.method9883("Only OnGround")) {
                                 for (int n = 0; n < this.method9886("Packet amount"); ++n) {
-                                    Class3324.field15514.method5269().method17292(new Class4353(Class3324.field15514.field4684.field2404));
+                                    Class3324.field15514.method5269().method17292(new Class4353(Class3324.field15514.field4684.onGround));
                                 }
                             }
                         }

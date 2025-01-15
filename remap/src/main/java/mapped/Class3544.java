@@ -38,7 +38,7 @@ public class Class3544 extends Class3542
     
     private boolean method11095() {
         if (this.field16600 <= 0) {
-            if (this.field16601.field2391.method6703()) {
+            if (this.field16601.world.method6703()) {
                 if (this.method11092()) {
                     if (!this.method11093()) {
                         return true;

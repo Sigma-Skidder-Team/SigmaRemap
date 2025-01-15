@@ -10,20 +10,20 @@ public class Class5810 implements Class5809
 {
     private static final ITextComponent field23844;
     private final Class394 field23845;
-    private final Class3641 field23846;
+    private final NetworkManager field23846;
     private boolean field23847;
     
-    public Class5810(final Class394 field23845, final Class3641 field23846) {
+    public Class5810(final Class394 field23845, final NetworkManager field23846) {
         this.field23845 = field23845;
         this.field23846 = field23846;
     }
     
     @Override
-    public void method17291(final ITextComponent class2250) {
+    public void onDisconnect(final ITextComponent class2250) {
     }
     
     @Override
-    public Class3641 method17369() {
+    public NetworkManager getNetworkManager() {
         return this.field23846;
     }
     

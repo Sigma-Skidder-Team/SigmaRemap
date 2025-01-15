@@ -65,9 +65,9 @@ public class Class538 extends Class527
         this.field3200.method3380(this.field3204);
         this.field3200.method3374(this::method3096);
         this.field3149.add(this.field3200);
-        this.field3202 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 72, 200, 20, Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().method8461(), class654 -> {
+        this.field3202 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 72, 200, 20, Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().getFormattedText(), class654 -> {
             this.field3199.method35867(Class2203.values()[(this.field3199.method35866().ordinal() + 1) % Class2203.values().length]);
-            this.field3202.method3367(Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().method8461());
+            this.field3202.method3367(Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().getFormattedText());
         }));
         this.field3197 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 96 + 18, 200, 20, Class8822.method30773("addServer.add", new Object[0]), class654 -> this.method3097()));
         this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 120 + 18, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3198.accept(false)));
@@ -124,7 +124,7 @@ public class Class538 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 17, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 17, 16777215);
         this.method3297(this.field3156, Class8822.method30773("addServer.enterName", new Object[0]), this.field3152 / 2 - 100, 53, 10526880);
         this.method3297(this.field3156, Class8822.method30773("addServer.enterIp", new Object[0]), this.field3152 / 2 - 100, 94, 10526880);
         this.field3201.method2975(n, n2, n3);

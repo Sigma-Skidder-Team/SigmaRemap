@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Map;
@@ -177,7 +178,7 @@ public class Class3441 extends Class3418
             else if (!this.field16258.equals(method2157.method27664().getString())) {
                 n3 = 1;
                 n += n3;
-                class8321.method27665(new Class2260(this.field16258));
+                class8321.method27665(new StringTextComponent(this.field16258));
             }
             this.field16255.method19833(n4 + n);
             if (n <= 0) {
@@ -268,7 +269,7 @@ public class Class3441 extends Class3418
         if (this.method10878(2).method20054()) {
             final ItemStack method20053 = this.method10878(2).method20053();
             if (!StringUtils.isBlank((CharSequence)field16258)) {
-                method20053.method27665(new Class2260(this.field16258));
+                method20053.method27665(new StringTextComponent(this.field16258));
             }
             else {
                 method20053.method27666();

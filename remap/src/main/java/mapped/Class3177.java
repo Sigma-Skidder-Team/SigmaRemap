@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 public class Class3177 extends Class3167
 {
-    private ArrayList<Class4252<?>> field15553;
+    private ArrayList<IPacket<?>> field15553;
     private Class7617 field15554;
     private boolean field15555;
     
     public Class3177() {
         super(Class8013.field32987, "FakeLag", "Other players will see you lagging !");
-        this.field15553 = new ArrayList<Class4252<?>>();
+        this.field15553 = new ArrayList<IPacket<?>>();
         this.field15554 = new Class7617();
         this.method9881(new Class4996("Lag duration", "The lags duration", 0.3f, Float.class, 0.1f, 2.0f, 0.01f));
         this.method9881(new Class4996("Delay", "The lags cooldown", 0.4f, Float.class, 0.1f, 2.0f, 0.01f));
@@ -34,9 +34,9 @@ public class Class3177 extends Class3167
     
     @Override
     public void method9897() {
-        final Iterator<Class4252<?>> iterator = this.field15553.iterator();
+        final Iterator<IPacket<?>> iterator = this.field15553.iterator();
         while (iterator.hasNext()) {
-            Class3177.field15514.method5269().method17369().method11176(iterator.next());
+            Class3177.field15514.method5269().getNetworkManager().method11176(iterator.next());
         }
     }
     
@@ -87,9 +87,9 @@ public class Class3177 extends Class3167
             else {
                 this.field15555 = false;
                 this.field15554.method23934();
-                final Iterator<Class4252<?>> iterator = this.field15553.iterator();
+                final Iterator<IPacket<?>> iterator = this.field15553.iterator();
                 while (iterator.hasNext()) {
-                    Class3177.field15514.method5269().method17369().method11176(iterator.next());
+                    Class3177.field15514.method5269().getNetworkManager().method11176(iterator.next());
                 }
                 this.field15553.clear();
             }

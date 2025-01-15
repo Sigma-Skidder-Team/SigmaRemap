@@ -21,7 +21,7 @@ public class Class7460<T>
     
     public Class7460(final BlockPos class354, final T field28773, final long field28774, final Class1955 field28775) {
         this.field28777 = Class7460.field28772++;
-        this.field28774 = class354.method1153();
+        this.field28774 = class354.toImmutable();
         this.field28773 = field28773;
         this.field28775 = field28774;
         this.field28776 = field28775;

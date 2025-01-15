@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.collect.ComparisonChain;
 import org.apache.logging.log4j.Logger;
@@ -134,7 +135,7 @@ public class Class1948 implements Comparable<Class1948>
         return this.field10614;
     }
     
-    public boolean method7912(final Class511 class511, final Runnable runnable) {
+    public boolean method7912(final LivingEntity class511, final Runnable runnable) {
         if (this.field10608 > 0) {
             if (this.field10607.method16448(this.field10608, this.field10609)) {
                 this.method7914(class511);
@@ -158,7 +159,7 @@ public class Class1948 implements Comparable<Class1948>
         return --this.field10608;
     }
     
-    public void method7914(final Class511 class511) {
+    public void method7914(final LivingEntity class511) {
         if (this.field10608 > 0) {
             this.field10607.method16449(class511, this.field10609);
         }

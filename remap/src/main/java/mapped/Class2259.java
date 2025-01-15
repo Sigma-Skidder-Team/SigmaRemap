@@ -15,11 +15,13 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponent;
 
 import java.util.regex.Pattern;
 import java.util.List;
 
-public class Class2259 extends Class2251 implements Class2253
+public class Class2259 extends TextComponent implements Class2253
 {
     private static final Class8837 field13809;
     private static final Class8837 field13810;
@@ -44,9 +46,9 @@ public class Class2259 extends Class2251 implements Class2253
                 }
             }
             else {
-                final ITextComponent method8466 = ((ITextComponent)o).method8466();
+                final ITextComponent method8466 = ((ITextComponent)o).deepCopy();
                 this.field13812[i] = method8466;
-                method8466.method8456().method30422(this.method8456());
+                method8466.getStyle().method30422(this.getStyle());
             }
         }
     }
@@ -67,7 +69,7 @@ public class Class2259 extends Class2251 implements Class2253
         }
         catch (final Class2373 class2373) {
             this.field13815.clear();
-            this.field13815.add(new Class2260(method30864));
+            this.field13815.add(new StringTextComponent(method30864));
         }
     }
     
@@ -81,15 +83,15 @@ public class Class2259 extends Class2251 implements Class2253
                 final int start = matcher.start();
                 end = matcher.end();
                 if (start > beginIndex) {
-                    final Class2260 class2260 = new Class2260(String.format(input.substring(beginIndex, start), new Object[0]));
-                    class2260.method8456().method30422(this.method8456());
+                    final StringTextComponent class2260 = new StringTextComponent(String.format(input.substring(beginIndex, start), new Object[0]));
+                    class2260.getStyle().method30422(this.getStyle());
                     this.field13815.add(class2260);
                 }
                 final String group = matcher.group(2);
                 final String substring = input.substring(start, end);
                 if ("%".equals(group) && "%%".equals(substring)) {
-                    final Class2260 class2261 = new Class2260("%");
-                    class2261.method8456().method30422(this.method8456());
+                    final StringTextComponent class2261 = new StringTextComponent("%");
+                    class2261.getStyle().method30422(this.getStyle());
                     this.field13815.add(class2261);
                 }
                 else {
@@ -104,8 +106,8 @@ public class Class2259 extends Class2251 implements Class2253
                 }
             }
             if (beginIndex < input.length()) {
-                final Class2260 class2262 = new Class2260(String.format(input.substring(beginIndex), new Object[0]));
-                class2262.method8456().method30422(this.method8456());
+                final StringTextComponent class2262 = new StringTextComponent(String.format(input.substring(beginIndex), new Object[0]));
+                class2262.getStyle().method30422(this.getStyle());
                 this.field13815.add(class2262);
             }
         }
@@ -119,8 +121,8 @@ public class Class2259 extends Class2251 implements Class2253
             final Object o = this.field13812[n];
             ITextComponent class2250;
             if (!(o instanceof ITextComponent)) {
-                class2250 = new Class2260((o != null) ? o.toString() : "null");
-                class2250.method8456().method30422(this.method8456());
+                class2250 = new StringTextComponent((o != null) ? o.toString() : "null");
+                class2250.getStyle().method30422(this.getStyle());
             }
             else {
                 class2250 = (ITextComponent)o;
@@ -131,35 +133,35 @@ public class Class2259 extends Class2251 implements Class2253
     }
     
     @Override
-    public ITextComponent method8455(final Class8768 class8768) {
-        super.method8455(class8768);
+    public ITextComponent setStyle(final Style class8768) {
+        super.setStyle(class8768);
         for (final Object o : this.field13812) {
             if (o instanceof ITextComponent) {
-                ((ITextComponent)o).method8456().method30422(this.method8456());
+                ((ITextComponent)o).getStyle().method30422(this.getStyle());
             }
         }
         if (this.field13814 > -1L) {
             final Iterator<ITextComponent> iterator = this.field13815.iterator();
             while (iterator.hasNext()) {
-                iterator.next().method8456().method30422(class8768);
+                iterator.next().getStyle().method30422(class8768);
             }
         }
         return this;
     }
     
     @Override
-    public Stream<ITextComponent> method8463() {
+    public Stream<ITextComponent> stream() {
         this.method8492();
-        return Streams.concat(new Stream[] { this.field13815.stream(), this.field13791.stream() }).flatMap(ITextComponent::method8463);
+        return Streams.concat(new Stream[] { this.field13815.stream(), this.siblings.stream() }).flatMap(ITextComponent::stream);
     }
     
     @Override
-    public String method8459() {
+    public String getUnformattedComponentText() {
         this.method8492();
         final StringBuilder sb = new StringBuilder();
         final Iterator<ITextComponent> iterator = this.field13815.iterator();
         while (iterator.hasNext()) {
-            sb.append(iterator.next().method8459());
+            sb.append(iterator.next().getUnformattedComponentText());
         }
         return sb.toString();
     }
@@ -171,7 +173,7 @@ public class Class2259 extends Class2251 implements Class2253
                 array[i] = this.field13812[i];
             }
             else {
-                array[i] = ((ITextComponent)this.field13812[i]).method8466();
+                array[i] = ((ITextComponent)this.field13812[i]).deepCopy();
             }
         }
         return new Class2259(this.field13811, array);
@@ -218,7 +220,7 @@ public class Class2259 extends Class2251 implements Class2253
     
     @Override
     public String toString() {
-        return "TranslatableComponent{key='" + this.field13811 + '\'' + ", args=" + Arrays.toString(this.field13812) + ", siblings=" + this.field13791 + ", style=" + this.method8456() + '}';
+        return "TranslatableComponent{key='" + this.field13811 + '\'' + ", args=" + Arrays.toString(this.field13812) + ", siblings=" + this.siblings + ", style=" + this.getStyle() + '}';
     }
     
     public String method8496() {

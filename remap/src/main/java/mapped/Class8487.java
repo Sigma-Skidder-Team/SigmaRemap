@@ -27,7 +27,7 @@ public class Class8487 implements ArgumentType<Class6812>
         final String unquotedString = stringReader.readUnquotedString();
         final Optional<Class6812> method31858 = Class8972.method31858(unquotedString);
         if (!method31858.isPresent()) {
-            final Class2260 class2260 = new Class2260("No such test: " + unquotedString);
+            final StringTextComponent class2260 = new StringTextComponent("No such test: " + unquotedString);
             throw new CommandSyntaxException((CommandExceptionType)new SimpleCommandExceptionType((Message)class2260), (Message)class2260);
         }
         return method31858.get();

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.Collection;
 
@@ -20,7 +22,7 @@ public class Class4060 extends Class3820
     }
     
     @Override
-    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         if (!class7097.field10067) {
             this.method12265(class7099, class7096, class7097, class7098, false, class7099.method2715(Class316.field1877));
         }
@@ -30,7 +32,7 @@ public class Class4060 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class512 method21652 = class7075.method21652();
-        final Class1847 method21653 = class7075.method21654();
+        final World method21653 = class7075.method21654();
         if (!method21653.field10067) {
             if (method21652 != null) {
                 final BlockPos method21654 = class7075.method21639();

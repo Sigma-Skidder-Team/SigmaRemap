@@ -28,11 +28,11 @@ public class Class4549 extends Class4535<Class5122>
         Collections.shuffle(list, random);
         final List<? super Integer> list2 = IntStream.rangeClosed(class1855.method25427(), class1855.method25429()).boxed().collect((Collector<? super Integer, ?, List<? super Integer>>)Collectors.toList());
         Collections.shuffle(list2, random);
-        final Class385 class1856 = new Class385();
+        final Mutable class1856 = new Mutable();
         for (final Integer n : list) {
             final Iterator<? super Integer> iterator2 = list2.iterator();
             while (iterator2.hasNext()) {
-                class1856.method1284(n, 0, iterator2.next());
+                class1856.setPos(n, 0, iterator2.next());
                 final BlockPos method6958 = class1851.method6958(Class2020.field11526, class1856);
                 if (!class1851.method6961(method6958) && !class1851.method6701(method6958).method21727(class1851, method6958).method24540()) {
                     continue;

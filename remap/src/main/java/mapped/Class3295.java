@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.Iterator;
 
 public class Class3295 extends Class3167
@@ -34,22 +36,22 @@ public class Class3295 extends Class3167
                             }
                         }
                     }
-                    if (class5753.method17064().getY() >= Class3295.field15514.field4684.field2396 - ((Class3295.field15514.field4684.field2396 % 0.5 != 0.0) ? 0.0f : 0.5f)) {
+                    if (class5753.method17064().getY() >= Class3295.field15514.field4684.posY - ((Class3295.field15514.field4684.posY % 0.5 != 0.0) ? 0.0f : 0.5f)) {
                         return;
                     }
-                    if (this.method10432(Class3295.field15514.field4684.field2403)) {
+                    if (this.method10432(Class3295.field15514.field4684.boundingBox)) {
                         return;
                     }
                     if (Class3295.field15514.field4684.method1809()) {
                         return;
                     }
-                    if (Class3295.field15514.field4684.field2414 <= 10.0f) {
+                    if (Class3295.field15514.field4684.fallDistance <= 10.0f) {
                         final int method21784 = Class3295.field15514.field4683.method6701(class5753.method17064()).method21756().method21784();
                         float n = 0.0f;
                         if (method21784 > 3) {
                             ++n;
                         }
-                        if (Class3295.field15514.field4684.field2414 > 10.0f) {
+                        if (Class3295.field15514.field4684.fallDistance > 10.0f) {
                             n -= 0.8f;
                         }
                         class5753.method17067(Class7698.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0));
@@ -65,13 +67,13 @@ public class Class3295 extends Class3167
             if (Class3295.field15514.field4683 != null) {
                 if (class5744.method17046()) {
                     if (Class3295.field15514.method5282() != null) {
-                        if (method10433() && !this.method10432(Class3295.field15514.field4684.field2403)) {
+                        if (method10433() && !this.method10432(Class3295.field15514.field4684.boundingBox)) {
                             ++this.field15856;
                         }
                         else {
                             this.field15856 = 0;
                         }
-                        if (method10433() && !this.method10432(Class3295.field15514.field4684.field2403)) {
+                        if (method10433() && !this.method10432(Class3295.field15514.field4684.boundingBox)) {
                             Class3295.field15514.field4684.field2985 = 0;
                             class5744.method17033(true);
                             ++this.field15854;
@@ -80,7 +82,7 @@ public class Class3295 extends Class3167
                             }
                         }
                         else {
-                            this.field15854 = (Class3295.field15514.field4684.field2404 ? 0 : 1);
+                            this.field15854 = (Class3295.field15514.field4684.onGround ? 0 : 1);
                         }
                     }
                 }
@@ -94,7 +96,7 @@ public class Class3295 extends Class3167
         if (this.method9906()) {
             if (Class3295.field15514.field4683 != null) {
                 if (!Class3361.method10645()) {
-                    if (this.method10432(Class3295.field15514.field4684.field2403) && !Class3295.field15514.field4684.method1809()) {
+                    if (this.method10432(Class3295.field15514.field4684.boundingBox) && !Class3295.field15514.field4684.method1809()) {
                         final Class7096 method6701 = Class3295.field15514.field4683.method6701(Class3295.field15514.field4684.method1894());
                         if (method6701 != null) {
                             if (!method6701.method21756().method21781()) {
@@ -102,9 +104,9 @@ public class Class3295 extends Class3167
                                     if (this.method9883("Swim up")) {
                                         class5717.method16975(0.13);
                                     }
-                                    if (!this.method10432(Class3295.field15514.field4684.field2403.method18499(0.0, class5717.method16974(), 0.0))) {
-                                        class5717.method16975((int)Class3295.field15514.field4684.field2396 + 1 - Class3295.field15514.field4684.field2396);
-                                        Class3295.field15514.field4684.field2404 = true;
+                                    if (!this.method10432(Class3295.field15514.field4684.boundingBox.method18499(0.0, class5717.method16974(), 0.0))) {
+                                        class5717.method16975((int)Class3295.field15514.field4684.posY + 1 - Class3295.field15514.field4684.posY);
+                                        Class3295.field15514.field4684.onGround = true;
                                         this.field15854 = 1;
                                     }
                                 }
@@ -125,7 +127,7 @@ public class Class3295 extends Class3167
                                 this.field15855 = 0;
                             }
                             else {
-                                if (Class3295.field15514.field4684.method1809() || Class3295.field15514.field4684.field2406) {
+                                if (Class3295.field15514.field4684.method1809() || Class3295.field15514.field4684.collidedVertically) {
                                     this.field15855 = 0;
                                     return;
                                 }
@@ -203,7 +205,7 @@ public class Class3295 extends Class3167
     }
     
     public static boolean method10433() {
-        final Iterator<Object> iterator = Class3295.field15514.field4683.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.field2403.method18499(0.0, -0.001, 0.0)).iterator();
+        final Iterator<Object> iterator = Class3295.field15514.field4683.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.boundingBox.method18499(0.0, -0.001, 0.0)).iterator();
         boolean b = true;
         if (iterator.hasNext()) {
             while (iterator.hasNext()) {

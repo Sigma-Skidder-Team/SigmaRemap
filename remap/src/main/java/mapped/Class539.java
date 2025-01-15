@@ -306,7 +306,7 @@ public class Class539 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 20, -1);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 20, -1);
         if (!this.field3217) {
             this.method3297(this.field3156, Class8822.method30773("selectWorld.enterName", new Object[0]), this.field3152 / 2 - 100, 47, -6250336);
             this.method3297(this.field3156, Class8822.method30773("selectWorld.resultFolder", new Object[0]) + " " + this.field3208, this.field3152 / 2 - 100, 85, -6250336);

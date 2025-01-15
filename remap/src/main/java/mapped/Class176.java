@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Predicate;
 
 public class Class176 implements Predicate<ItemStack>

@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
@@ -13,7 +15,7 @@ public class Class6739 extends Class6737
     private static String[] field26500;
     private static final Vec3d field26501;
     
-    public Class6739(final Class1847 class1847, final Class383 class1848) {
+    public Class6739(final World class1847, final DimensionType class1848) {
         super(class1847, class1848, 0.1f);
         this.field26494 = true;
         this.field26495 = true;
@@ -70,8 +72,8 @@ public class Class6739 extends Class6737
     }
     
     @Override
-    public Class383 method20487() {
-        return Class383.field2224;
+    public DimensionType getType() {
+        return DimensionType.field2224;
     }
     
     static {

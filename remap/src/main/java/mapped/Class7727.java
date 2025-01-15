@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -46,7 +47,7 @@ public class Class7727
     
     public void method24665() {
         if (this.method24670()) {
-            this.field30732.field2400 = 0.0f;
+            this.field30732.rotationPitch = 0.0f;
         }
         if (!this.field30735) {
             this.field30732.field2953 = this.method24677(this.field30732.field2953, this.field30732.field2951, 10.0f);
@@ -54,7 +55,7 @@ public class Class7727
         else {
             this.field30735 = false;
             this.field30732.field2953 = this.method24677(this.field30732.field2953, this.method24676(), this.field30733);
-            this.field30732.field2400 = this.method24677(this.field30732.field2400, this.method24675(), this.field30734);
+            this.field30732.rotationPitch = this.method24677(this.field30732.rotationPitch, this.method24675(), this.field30734);
         }
         if (!this.field30732.method4150().method24731()) {
             this.field30732.field2953 = MathHelper.method35672(this.field30732.field2953, this.field30732.field2951, (float)this.field30732.method4174());
@@ -97,6 +98,6 @@ public class Class7727
     }
     
     private static double method24678(final Entity class399) {
-        return (class399 instanceof Class511) ? class399.method1944() : ((class399.method1886().field25074 + class399.method1886().field25077) / 2.0);
+        return (class399 instanceof LivingEntity) ? class399.method1944() : ((class399.method1886().field25074 + class399.method1886().field25077) / 2.0);
     }
 }

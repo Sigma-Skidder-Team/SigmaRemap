@@ -23,9 +23,9 @@ public class Class1819 extends Class1799<Class754, Class5860<Class754>>
                         if (class7353.method2718(Class2215.field13604).method27622() != Class7739.field31584) {
                             class7351.method22567();
                             class7351.method22564(0.0, 0.0, 0.125);
-                            final double n8 = MathHelper.method35701(n4, class7353.field3015, class7353.field3018) - MathHelper.method35701(n4, class7353.field2392, class7353.getPosX());
-                            final double n9 = MathHelper.method35701(n4, class7353.field3016, class7353.field3019) - MathHelper.method35701(n4, class7353.field2393, class7353.getPosY());
-                            final double n10 = MathHelper.method35701(n4, class7353.field3017, class7353.field3020) - MathHelper.method35701(n4, class7353.field2394, class7353.getPosZ());
+                            final double n8 = MathHelper.method35701(n4, class7353.field3015, class7353.field3018) - MathHelper.method35701(n4, class7353.prevPosX, class7353.getPosX());
+                            final double n9 = MathHelper.method35701(n4, class7353.field3016, class7353.field3019) - MathHelper.method35701(n4, class7353.prevPosY, class7353.getPosY());
+                            final double n10 = MathHelper.method35701(n4, class7353.field3017, class7353.field3020) - MathHelper.method35701(n4, class7353.prevPosZ, class7353.getPosZ());
                             final float n11 = class7353.field2952 + (class7353.field2951 - class7353.field2952);
                             final double n12 = MathHelper.sin(n11 * 0.017453292f);
                             final double n13 = -MathHelper.cos(n11 * 0.017453292f);
@@ -41,7 +41,7 @@ public class Class1819 extends Class1799<Class754, Class5860<Class754>>
                             if (method35653 < -5.0f) {
                                 method35653 = -5.0f;
                             }
-                            float n14 = method35653 + MathHelper.sin(MathHelper.method35700(n4, class7353.field2411, class7353.field2412) * 6.0f) * 32.0f * MathHelper.method35700(n4, class7353.field3012, class7353.field3013);
+                            float n14 = method35653 + MathHelper.sin(MathHelper.method35700(n4, class7353.prevDistanceWalkedModified, class7353.distanceWalkedModified) * 6.0f) * 32.0f * MathHelper.method35700(n4, class7353.field3012, class7353.field3013);
                             if (class7353.method1814()) {
                                 n14 += 25.0f;
                                 class7351.method22564(0.0, 0.1420000046491623, -0.017799999564886093);

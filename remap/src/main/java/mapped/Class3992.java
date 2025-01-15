@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -33,7 +35,7 @@ public class Class3992 extends Class3833
     }
     
     @Override
-    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final ItemStack class7099) {
+    public void method11831(final Class7096 class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
         super.method11831(class7096, class7097, class7098, class7099);
         if (Class8742.method30195(Class7882.field32366, class7099) == 0) {
             final int method12141 = this.method12141(class7097.field10062);

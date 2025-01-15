@@ -4,18 +4,24 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
 import org.apache.commons.lang3.tuple.Pair;
 import java.util.Random;
 import java.util.UUID;
 
 public class Class805 extends Class804
 {
-    private static final Class8810<String> field4327;
+    private static final DataParameter<String> field4327;
     private Class5328 field4328;
     private int field4329;
     private UUID field4330;
     
-    public Class805(final EntityType<? extends Class805> class7499, final Class1847 class7500) {
+    public Class805(final EntityType<? extends Class805> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -29,7 +35,7 @@ public class Class805 extends Class804
     }
     
     @Override
-    public void method1834(final Class422 class422) {
+    public void onStruckByLightning(final LightningBoltEntity class422) {
         final UUID method1865 = class422.method1865();
         if (!method1865.equals(this.field4330)) {
             this.method4707((this.method4708() != Class1983.field10981) ? Class1983.field10981 : Class1983.field10982);
@@ -41,7 +47,7 @@ public class Class805 extends Class804
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class805.field4327, Class1983.method7994(Class1983.field10981));
+        this.dataManager.register(Class805.field4327, Class1983.method7994(Class1983.field10981));
     }
     
     @Override
@@ -84,11 +90,11 @@ public class Class805 extends Class804
             }
         }
         if (method2715.method27622() == Class7739.field31426 && !this.method2625()) {
-            this.field2391.method6709(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
-            if (!this.field2391.field10067) {
+            this.world.method6709(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
+            if (!this.world.field10067) {
                 this.method1652();
-                final Class804 class516 = EntityType.field28968.method23371(this.field2391);
-                class516.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
+                final Class804 class516 = EntityType.field28968.method23371(this.world);
+                class516.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
                 class516.method2665(this.method2664());
                 class516.field2951 = this.field2951;
                 if (this.hasCustomName()) {
@@ -99,9 +105,9 @@ public class Class805 extends Class804
                     class516.method4190();
                 }
                 class516.method1851(this.method1850());
-                this.field2391.method6886(class516);
+                this.world.method6886(class516);
                 for (int i = 0; i < 5; ++i) {
-                    this.field2391.method6886(new Class427(this.field2391, this.getPosX(), this.method1942(1.0), this.getPosZ(), new ItemStack(Class1983.method7995(this.method4708()).method21696())));
+                    this.world.method6886(new Class427(this.world, this.getPosX(), this.method1942(1.0), this.getPosZ(), new ItemStack(Class1983.method7995(this.method4708()).method21696())));
                 }
                 method2715.method27636(1, class512, class518 -> class518.method2795(class517));
                 this.method1695(Class8520.field35373, 1.0f, 1.0f);
@@ -116,7 +122,7 @@ public class Class805 extends Class804
                         method2715.method27693(1);
                     }
                     for (int j = 0; j < 4; ++j) {
-                        this.field2391.method6709(Class8432.field34612, this.getPosX() + this.field2423.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.field2423.nextFloat() / 2.0f, 0.0, this.field2423.nextFloat() / 5.0f, 0.0);
+                        this.world.method6709(Class8432.field34612, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
                     }
                     this.field4328 = (Class5328)method2716.getLeft();
                     this.field4329 = (int)method2716.getRight();
@@ -124,7 +130,7 @@ public class Class805 extends Class804
                 }
                 else {
                     for (int k = 0; k < 2; ++k) {
-                        this.field2391.method6709(Class8432.field34639, this.getPosX() + this.field2423.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.field2423.nextFloat() / 2.0f, 0.0, this.field2423.nextFloat() / 5.0f, 0.0);
+                        this.world.method6709(Class8432.field34639, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
                     }
                 }
             }
@@ -160,15 +166,15 @@ public class Class805 extends Class804
     }
     
     private void method4707(final Class1983 class1983) {
-        this.field2432.method33569(Class805.field4327, Class1983.method7994(class1983));
+        this.dataManager.set(Class805.field4327, Class1983.method7994(class1983));
     }
     
     public Class1983 method4708() {
-        return Class1983.method7996(this.field2432.method33568(Class805.field4327));
+        return Class1983.method7996(this.dataManager.get(Class805.field4327));
     }
     
     public Class805 method4709(final Class788 class788) {
-        final Class805 class789 = EntityType.field29007.method23371(this.field2391);
+        final Class805 class789 = EntityType.field29007.method23371(this.world);
         class789.method4707(this.method4710((Class805)class788));
         return class789;
     }
@@ -177,16 +183,16 @@ public class Class805 extends Class804
         final Class1983 method4708 = this.method4708();
         final Class1983 method4709 = class805.method4708();
         Class1983 class806;
-        if (method4708 == method4709 && this.field2423.nextInt(1024) == 0) {
+        if (method4708 == method4709 && this.rand.nextInt(1024) == 0) {
             class806 = ((method4708 != Class1983.field10982) ? Class1983.field10982 : Class1983.field10981);
         }
         else {
-            class806 = (this.field2423.nextBoolean() ? method4708 : method4709);
+            class806 = (this.rand.nextBoolean() ? method4708 : method4709);
         }
         return class806;
     }
     
     static {
-        field4327 = Class9184.method33564(Class805.class, Class7709.field30656);
+        field4327 = EntityDataManager.method33564(Class805.class, Class7709.field30656);
     }
 }

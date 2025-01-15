@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class3871 extends Class3870 implements Class3872
@@ -25,7 +28,7 @@ public class Class3871 extends Class3870 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     

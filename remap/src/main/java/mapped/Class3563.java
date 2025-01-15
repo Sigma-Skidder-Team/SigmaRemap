@@ -4,19 +4,21 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 
-public class Class3563 extends Class3555<Class511>
+public class Class3563 extends Class3555<LivingEntity>
 {
     private static String[] field16651;
     
     public Class3563(final Class841 class841) {
-        super(class841, Class511.class, 10, true, false, class842 -> class842 instanceof Class762);
+        super(class841, LivingEntity.class, 10, true, false, class842 -> class842 instanceof Class762);
     }
     
     @Override
     public boolean method11013() {
-        return this.field16602.method1825() != null && super.method11013();
+        return this.field16602.getTeam() != null && super.method11013();
     }
     
     @Override

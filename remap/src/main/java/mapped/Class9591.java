@@ -22,7 +22,7 @@ public class Class9591
     private int field41809;
     private long field41810;
     private Set<BlockPos> field41811;
-    private Class385 field41812;
+    private Mutable field41812;
     
     public Class9591(final Entity field41804) {
         this.field41804 = null;
@@ -33,7 +33,7 @@ public class Class9591
         this.field41809 = 0;
         this.field41810 = 0L;
         this.field41811 = new HashSet<BlockPos>();
-        this.field41812 = new Class385();
+        this.field41812 = new Mutable();
         this.field41804 = field41804;
         this.field41805 = field41804.method1892();
     }
@@ -109,7 +109,7 @@ public class Class9591
                     class8974.method31874(false);
                 }
             }
-            final BlockPos method31871 = class8974.method31873().method1153();
+            final BlockPos method31871 = class8974.method31873().toImmutable();
             if (set != null) {
                 set.remove(method31871);
             }

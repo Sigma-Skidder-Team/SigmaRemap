@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
 

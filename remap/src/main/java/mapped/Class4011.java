@@ -10,6 +10,8 @@ import javax.annotation.Nullable;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Map;
 
@@ -34,7 +36,7 @@ public class Class4011 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24486();
     }
     
@@ -85,7 +87,7 @@ public class Class4011 extends Class3833
             final Class3833 method21696 = class7097.method6701(class7098.method1139()).method21696();
             boolean b = false;
             Label_0104: {
-                if (!(class7097.field10063 instanceof Class6738) || method21696 != Class7521.field29172) {
+                if (!(class7097.dimension instanceof Class6738) || method21696 != Class7521.field29172) {
                     if (method21696 != Class7521.field29338) {
                         if (method21696 != Class7521.field29642) {
                             b = false;
@@ -138,7 +140,7 @@ public class Class4011 extends Class3833
             this.method12188(class7097, class7098.method1137(), 250 + n, random, intValue);
             this.method12188(class7097, class7098.method1141(), 300 + n, random, intValue);
             this.method12188(class7097, class7098.method1143(), 300 + n, random, intValue);
-            final Class385 class7099 = new Class385();
+            final Mutable class7099 = new Mutable();
             for (int i = -1; i <= 1; ++i) {
                 for (int j = -1; j <= 1; ++j) {
                     for (int k = -1; k <= 4; ++k) {
@@ -174,7 +176,7 @@ public class Class4011 extends Class3833
         }
     }
     
-    public boolean method12185(final Class1847 class1847, final BlockPos class1848) {
+    public boolean method12185(final World class1847, final BlockPos class1848) {
         if (!class1847.method6772(class1848)) {
             if (!class1847.method6772(class1848.method1145())) {
                 if (!class1847.method6772(class1848.method1147())) {
@@ -197,7 +199,7 @@ public class Class4011 extends Class3833
         return (class7096.method21771((Class7111<Comparable>)Class8970.field37747) && class7096.method21772((Class7111<Boolean>)Class8970.field37747)) ? 0 : this.field18078.getInt((Object)class7096.method21696());
     }
     
-    private void method12188(final Class1847 class1847, final BlockPos class1848, final int bound, final Random random, final int n) {
+    private void method12188(final World class1847, final BlockPos class1848, final int bound, final Random random, final int n) {
         if (random.nextInt(bound) < this.method12186(class1847.method6701(class1848))) {
             final Class7096 method6701 = class1847.method6701(class1848);
             if (random.nextInt(n + 10) < 5 && !class1847.method6772(class1848)) {
@@ -241,9 +243,9 @@ public class Class4011 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
-            if ((class7097.field10063.method20487() != Class383.field2223 && class7097.field10063.method20487() != Class383.field2224) || !((Class3998)Class7521.field29341).method12147(class7097, class7098)) {
+            if ((class7097.dimension.getType() != DimensionType.field2223 && class7097.dimension.getType() != DimensionType.field2224) || !((Class3998)Class7521.field29341).method12147(class7097, class7098)) {
                 if (class7096.method21752(class7097, class7098)) {
                     class7097.method6833().method21345(class7098, this, this.method11826(class7097) + class7097.field10062.nextInt(10));
                 }
@@ -255,7 +257,7 @@ public class Class4011 extends Class3833
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (random.nextInt(24) == 0) {
             class7097.method6708(class7098.getX() + 0.5f, class7098.getY() + 0.5f, class7098.getZ() + 0.5f, Class8520.field35198, Class286.field1582, 1.0f + random.nextFloat(), random.nextFloat() * 0.7f + 0.3f, false);
         }

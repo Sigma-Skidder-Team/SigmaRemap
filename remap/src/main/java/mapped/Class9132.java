@@ -4,10 +4,11 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.Properties;
 import java.util.ArrayList;
 
 public class Class9132
@@ -86,9 +87,9 @@ public class Class9132
         return array2;
     }
     
-    public static void method33155(final Class1847 class1847, final Class1663 class1848, final Class7351 class1849, final float n) {
+    public static void method33155(final World class1847, final Class1663 class1848, final Class7351 class1849, final float n) {
         if (Class9132.field38704 != null) {
-            final int method1270 = class1847.field10063.method20487().method1270();
+            final int method1270 = class1847.dimension.getType().method1270();
             if (method1270 >= 0) {
                 if (method1270 < Class9132.field38704.length) {
                     final Class6741[] array = Class9132.field38704[method1270];
@@ -113,11 +114,11 @@ public class Class9132
         }
     }
     
-    public static boolean method33156(final Class1847 class1847) {
+    public static boolean method33156(final World class1847) {
         if (Class9132.field38704 == null) {
             return false;
         }
-        final int method1270 = class1847.field10063.method20487().method1270();
+        final int method1270 = class1847.dimension.getType().method1270();
         if (method1270 >= 0 && method1270 < Class9132.field38704.length) {
             final Class6741[] array = Class9132.field38704[method1270];
             return array != null && array.length > 0;

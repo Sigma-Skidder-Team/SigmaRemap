@@ -49,9 +49,9 @@ public class Class3601 extends Class3446
     }
     
     private boolean method11130() {
-        final Optional<BlockPos> method7207 = ((Class1849)this.field16770.field2391).method6921().method7207(class8912 -> class8912 == Class8912.field37476, this::method11131, Class2045.field11652, new BlockPos(this.field16770), 48, Class776.method4306(this.field16770));
+        final Optional<BlockPos> method7207 = ((Class1849)this.field16770.world).method6921().method7207(class8912 -> class8912 == Class8912.field37476, this::method11131, Class2045.field11652, new BlockPos(this.field16770), 48, Class776.method4306(this.field16770));
         if (method7207.isPresent()) {
-            this.field16772 = method7207.get().method1153();
+            this.field16772 = method7207.get().toImmutable();
             return true;
         }
         return false;

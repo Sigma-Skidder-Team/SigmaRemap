@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 import java.util.Arrays;
 import java.util.List;
@@ -76,7 +77,7 @@ public class Class3260 extends Class3247
                     }
                     Class3260.field15514.field4684.field3006.field2743 = n;
                     if (this.method9887("ItemSpoof").equals("LiteSpoof") && (this.field15750 < 0 || this.field15750 != n)) {
-                        Class3260.field15514.method5269().method17369().method11174(new Class4321(n));
+                        Class3260.field15514.method5269().getNetworkManager().method11174(new Class4321(n));
                         this.field15750 = n;
                         break;
                     }
@@ -235,7 +236,7 @@ public class Class3260 extends Class3247
         if (Class3260.field15514.field4633.field26532 == 0.8038576f) {
             Class3260.field15514.field4633.field26532 = 1.0f;
         }
-        if (this.method10281() != 0 && (!Class3260.field15514.field4684.field2406 || this.method9887("Tower Mode").equalsIgnoreCase("Cubecraft"))) {
+        if (this.method10281() != 0 && (!Class3260.field15514.field4684.collidedVertically || this.method9887("Tower Mode").equalsIgnoreCase("Cubecraft"))) {
             if (!Class6430.method19114() || this.method9883("Tower while moving")) {
                 final String method9887 = this.method9887("Tower Mode");
                 switch (method9887) {
@@ -243,17 +244,17 @@ public class Class3260 extends Class3247
                         if (class5717.method16974() > 0.0) {
                             if (Class7482.method23140() == 0) {
                                 if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
-                                    class5717.method16975((int)(Class3260.field15514.field4684.field2396 + class5717.method16974()) - Class3260.field15514.field4684.field2396);
+                                    class5717.method16975((int)(Class3260.field15514.field4684.posY + class5717.method16974()) - Class3260.field15514.field4684.posY);
                                 }
                             }
                             else {
-                                final double n2 = (int)(Class3260.field15514.field4684.field2396 + class5717.method16974());
-                                if (n2 != (int)Class3260.field15514.field4684.field2396 && Class3260.field15514.field4684.field2396 + class5717.method16974() - n2 < 0.15) {
-                                    class5717.method16975(n2 - Class3260.field15514.field4684.field2396);
+                                final double n2 = (int)(Class3260.field15514.field4684.posY + class5717.method16974());
+                                if (n2 != (int)Class3260.field15514.field4684.posY && Class3260.field15514.field4684.posY + class5717.method16974() - n2 < 0.15) {
+                                    class5717.method16975(n2 - Class3260.field15514.field4684.posY);
                                 }
                             }
                         }
-                        if (Class3260.field15514.field4684.field2396 != (int)Class3260.field15514.field4684.field2396 || !Class6430.method19160(Class3260.field15514.field4684, 0.001f)) {
+                        if (Class3260.field15514.field4684.posY != (int)Class3260.field15514.field4684.posY || !Class6430.method19160(Class3260.field15514.field4684, 0.001f)) {
                             break;
                         }
                         if (Class3260.field15514.field4648.field23439.field2162) {
@@ -269,7 +270,7 @@ public class Class3260 extends Class3247
                     }
                     case "AAC": {
                         if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
-                            class5717.method16975((int)(Class3260.field15514.field4684.field2396 + class5717.method16974()) - Class3260.field15514.field4684.field2396);
+                            class5717.method16975((int)(Class3260.field15514.field4684.posY + class5717.method16974()) - Class3260.field15514.field4684.posY);
                             if (Class3260.field15514.field4648.field23439.field2162 && !Class6430.method19114()) {
                                 Class7482.method23151(0.0);
                                 Class7482.method23149(class5717, 0.0);
@@ -278,7 +279,7 @@ public class Class3260 extends Class3247
                             break;
                         }
                         else {
-                            if (Class3260.field15514.field4684.field2396 == (int)Class3260.field15514.field4684.field2396 && Class6430.method19160(Class3260.field15514.field4684, 0.001f)) {
+                            if (Class3260.field15514.field4684.posY == (int)Class3260.field15514.field4684.posY && Class6430.method19160(Class3260.field15514.field4684, 0.001f)) {
                                 class5717.method16975(-1.0E-10);
                                 break;
                             }
@@ -287,8 +288,8 @@ public class Class3260 extends Class3247
                         break;
                     }
                     case "Cubecraft": {
-                        if (Class3260.field15514.field4648.field23439.field2162 && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.field4683.method6981(Class3260.field15514.field4684, Class3260.field15514.field4684.field2403.method18499(0.0, 1.0, 0.0)).count() == 0L) {
-                            Class3260.field15514.field4684.method1656(Class3260.field15514.field4684.field2395, Class3260.field15514.field4684.field2396 + 1.0, Class3260.field15514.field4684.field2397);
+                        if (Class3260.field15514.field4648.field23439.field2162 && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.field4683.method6981(Class3260.field15514.field4684, Class3260.field15514.field4684.boundingBox.method18499(0.0, 1.0, 0.0)).count() == 0L) {
+                            Class3260.field15514.field4684.setPosition(Class3260.field15514.field4684.posX, Class3260.field15514.field4684.posY + 1.0, Class3260.field15514.field4684.posZ);
                             class5717.method16975(0.0);
                             Class7482.method23149(class5717, 0.0);
                             Class3260.field15514.field4633.field26532 = 0.8038576f;

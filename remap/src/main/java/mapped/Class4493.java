@@ -13,7 +13,7 @@ public class Class4493 extends Class4484
 {
     private static String[] field19886;
     
-    public Class4493(final int n, final Class6997 field19849, final Direction class179) {
+    public Class4493(final int n, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40949, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -23,10 +23,10 @@ public class Class4493 extends Class4484
         super(Class9520.field40949, 0);
         this.method13456(Plane.HORIZONTAL.method576(random));
         if (this.method13455().getAxis() != Axis.Z) {
-            this.field19849 = new Class6997(n, 64, n2, n + 19 - 1, 73, n2 + 19 - 1);
+            this.field19849 = new MutableBoundingBox(n, 64, n2, n + 19 - 1, 73, n2 + 19 - 1);
         }
         else {
-            this.field19849 = new Class6997(n, 64, n2, n + 19 - 1, 73, n2 + 19 - 1);
+            this.field19849 = new MutableBoundingBox(n, 64, n2, n + 19 - 1, 73, n2 + 19 - 1);
         }
     }
     
@@ -46,12 +46,12 @@ public class Class4493 extends Class4484
     }
     
     public static Class4493 method13486(final List<Class4473> list, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -8, -3, 0, 19, 10, 19, class179);
+        final MutableBoundingBox method21408 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -8, -3, 0, 19, 10, 19, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4493(n4, method21408, class179) : null;
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13444(class1851, class1853, 7, 3, 0, 11, 4, 18, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 0, 3, 7, 18, 4, 11, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 8, 5, 0, 10, 7, 18, Class7521.field29147.method11878(), Class7521.field29147.method11878(), false);

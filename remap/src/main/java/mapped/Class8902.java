@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public interface Class8902
 {
     void method31349(final double p0, final double p1, final double p2);

@@ -15,6 +15,8 @@ import com.google.common.collect.Ordering;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
@@ -154,7 +156,7 @@ public class Class685 extends Class565
             if (this.field3753.field4648.field23400 && this.field3753.field4682.method27336() != Class101.field301) {
                 this.method3787();
             }
-            else if (this.field3753.field4684.method1639()) {
+            else if (this.field3753.field4684.isSpectator()) {
                 this.field3765.method3325();
             }
         }
@@ -247,7 +249,7 @@ public class Class685 extends Class565
                 Class9290 method3816 = null;
                 final Class6749 method3817 = method3815.method19651(this.field3753.field4684.method1867());
                 if (method3817 != null) {
-                    final int method3818 = method3817.method20563().method8253();
+                    final int method3818 = method3817.getColor().getColorIndex();
                     if (method3818 >= 0) {
                         method3816 = method3815.method19644(3 + method3818);
                     }
@@ -328,7 +330,7 @@ public class Class685 extends Class565
                     final float method5834 = this.field3753.field4684.method2904(0.0f);
                     boolean b = false;
                     if (this.field3753.field4690 != null) {
-                        if (this.field3753.field4690 instanceof Class511) {
+                        if (this.field3753.field4690 instanceof LivingEntity) {
                             if (method5834 >= 1.0f) {
                                 b = (this.field3753.field4684.method2903() > 5.0f & this.field3753.field4690.method1768());
                             }
@@ -536,11 +538,11 @@ public class Class685 extends Class565
         this.field3753.method5327().method15297("selectedItemName");
         if (this.field3761 > 0) {
             if (!this.field3762.method27620()) {
-                final ITextComponent method8469 = new Class2260("").method8458(this.field3762.method27664()).method8469(this.field3762.method27672().field11190);
+                final ITextComponent method8469 = new StringTextComponent("").appendSibling(this.field3762.method27664()).applyTextStyle(this.field3762.method27672().field11190);
                 if (this.field3762.method27667()) {
-                    method8469.method8469(Class2116.field12329);
+                    method8469.applyTextStyle(TextFormatting.ITALIC);
                 }
-                String s = method8469.method8461();
+                String s = method8469.getFormattedText();
                 if (Class9570.field41336.method22605()) {
                     s = Class9570.method35825(this.field3762, Class9570.field41336, s);
                 }
@@ -600,11 +602,11 @@ public class Class685 extends Class565
         else {
             arrayList = Lists.newArrayList(Iterables.skip((Iterable)list, method34312.size() - 15));
         }
-        final String method34313 = class9290.method34314().method8461();
+        final String method34313 = class9290.method34314().getFormattedText();
         int a;
         final int n = a = this.method3809().method6617(method34313);
         for (final Class7628 class9291 : arrayList) {
-            a = Math.max(a, this.method3809().method6617(Class6749.method20549(method34311.method19651(class9291.method23973()), new Class2260(class9291.method23973())).method8461() + ": " + Class2116.field12321 + class9291.method23969()));
+            a = Math.max(a, this.method3809().method6617(Class6749.method20549(method34311.method19651(class9291.method23973()), new StringTextComponent(class9291.method23973())).getFormattedText() + ": " + TextFormatting.RED + class9291.method23969()));
         }
         final int n2 = this.field3779 / 2 + arrayList.size() * 9 / 3;
         final int n3 = this.field3778 - a - 3;
@@ -613,8 +615,8 @@ public class Class685 extends Class565
         final int method34315 = this.field3753.field4648.method17115(0.4f);
         for (final Class7628 class9292 : arrayList) {
             ++n4;
-            final String method34316 = Class6749.method20549(method34311.method19651(class9292.method23973()), new Class2260(class9292.method23973())).method8461();
-            final String string = Class2116.field12321 + "" + class9292.method23969();
+            final String method34316 = Class6749.method20549(method34311.method19651(class9292.method23973()), new StringTextComponent(class9292.method23973())).getFormattedText();
+            final String string = TextFormatting.RED + "" + class9292.method23969();
             final int n5 = n2 - n4 * 9;
             final int n6 = this.field3778 - 3 + 2;
             Class565.method3293(n3 - 2, n5, n6, n5 + 9, method34314);
@@ -633,21 +635,21 @@ public class Class685 extends Class565
         return (this.field3753.method5303() instanceof Class512) ? ((Class512)this.field3753.method5303()) : null;
     }
     
-    private Class511 method3791() {
+    private LivingEntity method3791() {
         final Class512 method3790 = this.method3790();
         if (method3790 != null) {
             final Entity method3791 = method3790.method1920();
             if (method3791 == null) {
                 return null;
             }
-            if (method3791 instanceof Class511) {
-                return (Class511)method3791;
+            if (method3791 instanceof LivingEntity) {
+                return (LivingEntity)method3791;
             }
         }
         return null;
     }
     
-    private int method3792(final Class511 class511) {
+    private int method3792(final LivingEntity class511) {
         if (class511 != null && class511.method1779()) {
             int n = (int)(class511.method2701() + 0.5f) / 2;
             if (n > 30) {
@@ -668,12 +670,12 @@ public class Class685 extends Class565
             final int method3791 = MathHelper.method35649(method3790.method2664());
             final boolean b = this.field3777 > this.field3756 && (this.field3777 - this.field3756) / 3L % 2L == 1L;
             final long method3792 = Class8349.method27837();
-            if (method3791 < this.field3774 && method3790.field2430 > 0) {
+            if (method3791 < this.field3774 && method3790.hurtResistantTime > 0) {
                 this.field3776 = method3792;
                 this.field3777 = this.field3756 + 20;
             }
             else if (method3791 > this.field3774) {
-                if (method3790.field2430 > 0) {
+                if (method3790.hurtResistantTime > 0) {
                     this.field3776 = method3792;
                     this.field3777 = this.field3756 + 10;
                 }
@@ -745,7 +747,7 @@ public class Class685 extends Class565
                     }
                 }
                 int n15 = 0;
-                if (method3790.field2391.method6764().method29568()) {
+                if (method3790.world.method6764().method29568()) {
                     n15 = 5;
                 }
                 this.method3186(n13, n14, 16 + n11 * 9, 9 * n15, 9, 9);
@@ -802,8 +804,8 @@ public class Class685 extends Class565
                 n6 -= 10;
             }
             this.field3753.method5327().method15300("air");
-            final int method3799 = method3790.method1832();
-            final int method3800 = method3790.method1831();
+            final int method3799 = method3790.getAir();
+            final int method3800 = method3790.getMaxAir();
             if (method3790.method1720(Class7324.field28319) || method3799 < method3800) {
                 final int n20 = n6 - (this.method3793(method3798) - 1) * 10;
                 for (int method3801 = MathHelper.method35650((method3799 - 2) * 10.0 / method3800), n21 = MathHelper.method35650(method3799 * 10.0 / method3800) - method3801, l = 0; l < method3801 + n21; ++l) {
@@ -820,7 +822,7 @@ public class Class685 extends Class565
     }
     
     private void method3795() {
-        final Class511 method3791 = this.method3791();
+        final LivingEntity method3791 = this.method3791();
         if (method3791 != null) {
             int i = this.method3792(method3791);
             if (i != 0) {
@@ -991,7 +993,7 @@ public class Class685 extends Class565
             final ItemStack method5304 = this.field3753.field4684.field3006.method2345();
             boolean equals = true;
             if (Class9570.field41336.method22605()) {
-                equals = Class8571.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().method8459()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().method8459()));
+                equals = Class8571.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().getUnformattedComponentText()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().getUnformattedComponentText()));
             }
             Label_0317: {
                 if (!method5304.method27620()) {

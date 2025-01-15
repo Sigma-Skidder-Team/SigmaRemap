@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
 
 import java.util.HashMap;
 import java.io.InputStream;
@@ -27,7 +30,7 @@ public class Class8850
     private static final int field37217 = 13;
     private static final int field37218 = 8;
     private static final int field37219 = 8;
-    private static final Class8810<ItemStack> field37220;
+    private static final DataParameter<ItemStack> field37220;
     private static boolean field37221;
     
     public static void method30983(final Entity class399, final Class1656 class400) {
@@ -35,7 +38,7 @@ public class Class8850
     
     public static void method30984(final Entity class399, final Class1656 class400) {
         synchronized (Class8850.field37207) {
-            final Class9591 method29176 = Class8850.field37207.method29176(class399.method1643());
+            final Class9591 method29176 = Class8850.field37207.method29176(class399.getEntityId());
             if (method29176 != null) {
                 method29176.method35965(class400);
             }
@@ -135,14 +138,14 @@ public class Class8850
         if (method5763 != null) {
             for (final Entity class1657 : method5763.method6806()) {
                 if (method30995(class1657) <= 0) {
-                    final Class9591 method5764 = Class8850.field37207.method29176(class1657.method1643());
+                    final Class9591 method5764 = Class8850.field37207.method29176(class1657.getEntityId());
                     if (method5764 == null) {
                         continue;
                     }
                     method5764.method35965(class1656);
                 }
                 else {
-                    final int method5765 = class1657.method1643();
+                    final int method5765 = class1657.getEntityId();
                     if (Class8850.field37207.method29174(method5765) != null) {
                         continue;
                     }
@@ -246,7 +249,7 @@ public class Class8850
         if (class399 == Class8571.method28894().method5303() && !Class8571.method29004()) {
             return 0;
         }
-        if (class399 instanceof Class512 && ((Class512)class399).method1639()) {
+        if (class399 instanceof Class512 && ((Class512)class399).isSpectator()) {
             return 0;
         }
         if (class399.method1804()) {
@@ -273,8 +276,8 @@ public class Class8850
         if (class399 instanceof Class765 && ((Class765)class399).method4234(0.0f) > 0.001) {
             return 15;
         }
-        if (class399 instanceof Class511) {
-            final Class511 class400 = (Class511)class399;
+        if (class399 instanceof LivingEntity) {
+            final LivingEntity class400 = (LivingEntity)class399;
             return Math.max(Math.max(method30994(class400.method2713()), method30994(class400.method2714())), method30994(class400.method2718(Class2215.field13605)));
         }
         if (!(class399 instanceof Class427)) {
@@ -306,7 +309,7 @@ public class Class8850
     }
     
     public static ItemStack method30999(final Class427 class427) {
-        return class427.method1650().method33568(Class8850.field37220);
+        return class427.method1650().get(Class8850.field37220);
     }
     
     static {
@@ -314,6 +317,6 @@ public class Class8850
         Class8850.field37208 = new HashMap<String, Integer>();
         Class8850.field37209 = new HashMap<Class3820, Integer>();
         Class8850.field37210 = 0L;
-        field37220 = (Class8810)Class9570.field41430.method22630();
+        field37220 = (DataParameter)Class9570.field41430.method22630();
     }
 }

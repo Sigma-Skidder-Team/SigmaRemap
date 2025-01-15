@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class3317 extends Class3167
 {
@@ -49,24 +50,24 @@ public class Class3317 extends Class3167
             if (Class3317.field15901 == null) {
                 this.method9879();
             }
-            Class3317.field15514.field4684.field4078 = Class3317.field15514.field4684.field2400;
-            final AxisAlignedBB field2403 = Class3317.field15514.field4684.field2403;
-            Class3317.field15901.method1656((field2403.field25073 + field2403.field25076) / 2.0, field2403.field25074, (field2403.field25075 + field2403.field25078) / 2.0);
+            Class3317.field15514.field4684.field4078 = Class3317.field15514.field4684.rotationPitch;
+            final AxisAlignedBB field2403 = Class3317.field15514.field4684.boundingBox;
+            Class3317.field15901.setPosition((field2403.field25073 + field2403.field25076) / 2.0, field2403.field25074, (field2403.field25075 + field2403.field25078) / 2.0);
             final double n = this.field15905 + (this.field15902 - this.field15905) * class5741.field23312;
             final double n2 = this.field15906 + (this.field15903 - this.field15906) * class5741.field23312;
             final double n3 = this.field15907 + (this.field15904 - this.field15907) * class5741.field23312;
-            Class3317.field15514.field4684.field2395 = n;
-            Class3317.field15514.field4684.field2417 = n;
+            Class3317.field15514.field4684.posX = n;
+            Class3317.field15514.field4684.lastTickPosX = n;
             Class3317.field15514.field4684.field3018 = n;
-            Class3317.field15514.field4684.field2392 = n;
-            Class3317.field15514.field4684.field2396 = n2;
-            Class3317.field15514.field4684.field2418 = n2;
+            Class3317.field15514.field4684.prevPosX = n;
+            Class3317.field15514.field4684.posY = n2;
+            Class3317.field15514.field4684.lastTickPosY = n2;
             Class3317.field15514.field4684.field3019 = n2;
-            Class3317.field15514.field4684.field2393 = n2;
-            Class3317.field15514.field4684.field2397 = n3;
-            Class3317.field15514.field4684.field2419 = n3;
+            Class3317.field15514.field4684.prevPosY = n2;
+            Class3317.field15514.field4684.posZ = n3;
+            Class3317.field15514.field4684.lastTickPosZ = n3;
             Class3317.field15514.field4684.field3020 = n3;
-            Class3317.field15514.field4684.field2394 = n3;
+            Class3317.field15514.field4684.prevPosZ = n3;
             if (Class7482.method23148()) {
                 Class3317.field15514.field4684.field3013 = 0.099999994f;
             }
@@ -77,22 +78,22 @@ public class Class3317 extends Class3167
     public void method10499(final Class5739 class5739) {
         if (this.method9906()) {
             Class3317.field15901.method1685();
-            Class3317.field15901.field2403 = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            Class3317.field15901.boundingBox = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }
     }
     
     @Override
     public void method9879() {
-        this.field15902 = Class3317.field15514.field4684.field2395;
-        this.field15903 = Class3317.field15514.field4684.field2396;
-        this.field15904 = Class3317.field15514.field4684.field2397;
-        this.field15908 = Class3317.field15514.field4684.field2399;
-        this.field15909 = Class3317.field15514.field4684.field2400;
-        Class3317.field15901 = new Class755(Class3317.field15514.field4683, new GameProfile(Class3317.field15514.field4684.method2844().getId(), Class3317.field15514.field4684.getName().method8461()));
+        this.field15902 = Class3317.field15514.field4684.posX;
+        this.field15903 = Class3317.field15514.field4684.posY;
+        this.field15904 = Class3317.field15514.field4684.posZ;
+        this.field15908 = Class3317.field15514.field4684.rotationYaw;
+        this.field15909 = Class3317.field15514.field4684.rotationPitch;
+        Class3317.field15901 = new Class755(Class3317.field15514.field4683, new GameProfile(Class3317.field15514.field4684.method2844().getId(), Class3317.field15514.field4684.getName().getFormattedText()));
         Class3317.field15901.field3006 = Class3317.field15514.field4684.field3006;
         Class3317.field15901.method1728(this.field15902, this.field15903, this.field15904, this.field15908, this.field15909);
-        Class3317.field15901.field2421 = true;
-        Class3317.field15901.field2422 = Class3317.field15514.field4684.field2422;
+        Class3317.field15901.noClip = true;
+        Class3317.field15901.entityCollisionReduction = Class3317.field15514.field4684.entityCollisionReduction;
         Class3317.field15901.field2953 = this.field15908;
         Class3317.field15901.field2954 = this.field15908;
         Class3317.field15901.field2951 = this.field15908;
@@ -125,7 +126,7 @@ public class Class3317 extends Class3167
         Class3317.field15514.field4683.method6821(this.field15910);
         Class3317.field15514.field4684.method1685();
         if (Class3317.field15901 != null) {
-            Class3317.field15514.field4684.field2422 = Class3317.field15901.field2422;
+            Class3317.field15514.field4684.entityCollisionReduction = Class3317.field15901.entityCollisionReduction;
         }
         Class3317.field15901 = null;
     }
@@ -266,15 +267,15 @@ public class Class3317 extends Class3167
                 final Class4328 class5724 = (Class4328)class5723.method16998();
                 this.field15908 = class5724.field19380;
                 this.field15909 = class5724.field19381;
-                class5724.field19380 = Class3317.field15514.field4684.field2399;
-                class5724.field19381 = Class3317.field15514.field4684.field2400;
+                class5724.field19380 = Class3317.field15514.field4684.rotationYaw;
+                class5724.field19381 = Class3317.field15514.field4684.rotationPitch;
                 final double field19377 = class5724.field19377;
                 final double field19378 = class5724.field19378;
                 final double field19379 = class5724.field19379;
                 final float field19380 = Class512.field2997.field34097;
                 Class3317.field15514.field4684.method1889(new AxisAlignedBB(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + Class512.field2997.field34098, field19379 + field19380));
                 class5723.method16961(true);
-                Class3317.field15901.method1937(0.0, 0.0, 0.0);
+                Class3317.field15901.setMotion(0.0, 0.0, 0.0);
             }
         }
     }

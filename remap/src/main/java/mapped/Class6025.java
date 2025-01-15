@@ -37,7 +37,7 @@ public class Class6025 extends Class6024<GameProfile>
     @Override
     public ITextComponent method17951() {
         final GameProfile gameProfile = this.method17942();
-        return new Class2260((gameProfile.getName() == null) ? Objects.toString(gameProfile.getId(), "(Unknown)") : gameProfile.getName());
+        return new StringTextComponent((gameProfile.getName() == null) ? Objects.toString(gameProfile.getId(), "(Unknown)") : gameProfile.getName());
     }
     
     private static GameProfile method17952(final JsonObject jsonObject) {

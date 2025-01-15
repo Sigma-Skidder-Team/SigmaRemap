@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class515 extends Class516<Class3441> implements Class514
@@ -56,7 +57,7 @@ public class Class515 extends Class516<Class3441> implements Class514
     @Override
     public void method2973(final int n, final int n2) {
         Class8726.method30012();
-        this.field3156.method6610(this.field3148.method8461(), 60.0f, 6.0f, 4210752);
+        this.field3156.method6610(this.field3148.getFormattedText(), 60.0f, 6.0f, 4210752);
         final int method10998 = ((Class3441)this.field3077).method10998();
         if (method10998 > 0) {
             int n3 = 8453920;

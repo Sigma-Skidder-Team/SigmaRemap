@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class Class8443 implements Class8444
 {
@@ -33,16 +34,16 @@ public class Class8443 implements Class8444
     
     @Override
     public int method28181() {
-        if (this.field34700 instanceof Class511) {
-            return (int)((Class511)this.field34700).method2664();
+        if (this.field34700 instanceof LivingEntity) {
+            return (int)((LivingEntity)this.field34700).method2664();
         }
         return 0;
     }
     
     @Override
     public int method28182() {
-        if (this.field34700 instanceof Class511) {
-            return (int)((Class511)this.field34700).method2701();
+        if (this.field34700 instanceof LivingEntity) {
+            return (int)((LivingEntity)this.field34700).method2701();
         }
         return 0;
     }

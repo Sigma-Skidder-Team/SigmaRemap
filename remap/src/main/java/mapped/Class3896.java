@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -32,12 +34,12 @@ public class Class3896 extends Class3895 implements Class3840
         return (method6727 instanceof Class499) ? ((Class499)method6727).method2537() : 0;
     }
     
-    private int method11978(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    private int method11978(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         return (class1849.method21772(Class3896.field17580) != Class110.field348) ? this.method11969(class1847, class1848, class1849) : Math.max(this.method11969(class1847, class1848, class1849) - this.method11970(class1847, class1848, class1849), 0);
     }
     
     @Override
-    public boolean method11968(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11968(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final int method11969 = this.method11969(class1847, class1848, class1849);
         if (method11969 != 0) {
             final int method11970 = this.method11970(class1847, class1848, class1849);
@@ -47,7 +49,7 @@ public class Class3896 extends Class3895 implements Class3840
     }
     
     @Override
-    public int method11969(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public int method11969(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         int n = super.method11969(class1847, class1848, class1849);
         final Direction class1850 = class1849.method21772((Class7111<Direction>)Class3896.field17564);
         final BlockPos method1149 = class1848.method1149(class1850);
@@ -78,13 +80,13 @@ public class Class3896 extends Class3895 implements Class3840
     }
     
     @Nullable
-    private Class862 method11979(final Class1847 class1847, final Direction class1848, final BlockPos class1849) {
+    private Class862 method11979(final World class1847, final Direction class1848, final BlockPos class1849) {
         final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class862.class, new AxisAlignedBB(class1849.getX(), class1849.getY(), class1849.getZ(), class1849.getX() + 1, class1849.getY() + 1, class1849.getZ() + 1), class1851 -> class1851 != null && class1851.method1882() == class1850);
         return (method6739.size() != 1) ? null : ((Class862)method6739.get(0));
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7099.field3025.field27305) {
             class7096 = ((Class7097<O, Class7096>)class7096).method21768(Class3896.field17580);
             class7097.method6705(class7099, class7098, Class8520.field35085, Class286.field1582, 0.3f, (class7096.method21772(Class3896.field17580) != Class110.field348) ? 0.5f : 0.55f);
@@ -96,7 +98,7 @@ public class Class3896 extends Class3895 implements Class3840
     }
     
     @Override
-    public void method11966(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public void method11966(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         if (!class1847.method6833().method21342(class1848, this)) {
             final int method11978 = this.method11978(class1847, class1848, class1849);
             final Class436 method11979 = class1847.method6727(class1848);
@@ -106,7 +108,7 @@ public class Class3896 extends Class3895 implements Class3840
         }
     }
     
-    private void method11980(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    private void method11980(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final int method11978 = this.method11978(class1847, class1848, class1849);
         final Class436 method11979 = class1847.method6727(class1848);
         int method11980 = 0;
@@ -136,7 +138,7 @@ public class Class3896 extends Class3895 implements Class3840
     }
     
     @Override
-    public boolean method11857(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final int n, final int n2) {
+    public boolean method11857(final Class7096 class7096, final World class7097, final BlockPos class7098, final int n, final int n2) {
         super.method11857(class7096, class7097, class7098, n, n2);
         final Class436 method6727 = class7097.method6727(class7098);
         return method6727 != null && method6727.method2200(n, n2);

@@ -7,8 +7,7 @@ package mapped;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import com.mojang.brigadier.Message;
-import java.util.function.Function;
+
 import com.google.common.collect.Streams;
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
@@ -19,18 +18,19 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.world.dimension.DimensionType;
 
-public class Class9437 implements ArgumentType<Class383>
+public class Class9437 implements ArgumentType<DimensionType>
 {
     private static final Collection<String> field40467;
     public static final DynamicCommandExceptionType field40468;
     
-    public Class383 parse(final StringReader stringReader) throws CommandSyntaxException {
+    public DimensionType parse(final StringReader stringReader) throws CommandSyntaxException {
         return Class90.field226.method506(Class1932.method7799(stringReader)).orElseThrow(() -> Class9437.field40468.create((Object)class1932));
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
-        return Class7491.method23222(Streams.stream((Iterable)Class383.method1269()).map(Class383::method1276), suggestionsBuilder);
+        return Class7491.method23222(Streams.stream((Iterable) DimensionType.method1269()).map(DimensionType::method1276), suggestionsBuilder);
     }
     
     public Collection<String> getExamples() {
@@ -41,12 +41,12 @@ public class Class9437 implements ArgumentType<Class383>
         return new Class9437();
     }
     
-    public static Class383 method35068(final CommandContext<Class7492> commandContext, final String s) {
-        return (Class383)commandContext.getArgument(s, (Class)Class383.class);
+    public static DimensionType method35068(final CommandContext<Class7492> commandContext, final String s) {
+        return (DimensionType)commandContext.getArgument(s, (Class) DimensionType.class);
     }
     
     static {
-        field40467 = Stream.of(new Class383[] { Class383.field2223, Class383.field2224 }).map(class383 -> Class383.method1276(class383).toString()).collect((Collector<? super Object, ?, Collection<String>>)Collectors.toList());
+        field40467 = Stream.of(new DimensionType[] { DimensionType.field2223, DimensionType.field2224 }).map(class383 -> DimensionType.method1276(class383).toString()).collect((Collector<? super Object, ?, Collection<String>>)Collectors.toList());
         field40468 = new DynamicCommandExceptionType(o -> {
             new Class2259("argument.dimension.invalid", new Object[] { o });
             return;

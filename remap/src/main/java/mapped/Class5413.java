@@ -8,6 +8,7 @@ import com.mojang.brigadier.Message;
 import java.util.Locale;
 import java.util.function.Function;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5413 implements Class5414
@@ -44,8 +45,8 @@ public class Class5413 implements Class5414
     }
     
     @Override
-    public ITextComponent method16528(final Class41 class41) {
-        return new Class2259("commands.data.block.query", new Object[] { this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), class41.method268() });
+    public ITextComponent method16528(final INBT class41) {
+        return new Class2259("commands.data.block.query", new Object[] { this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), class41.toFormattedComponent() });
     }
     
     @Override

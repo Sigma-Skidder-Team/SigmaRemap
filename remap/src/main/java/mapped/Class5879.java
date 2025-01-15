@@ -57,7 +57,7 @@ public class Class5879 extends Class5846<Class844>
     }
     
     public void method17625(final Class844 class844, final float n, final float n2, final float n3, final float n4, final float n5) {
-        final float n6 = n3 - class844.field2424;
+        final float n6 = n3 - class844.ticksExisted;
         this.field24107.field25184 = n4 * 0.017453292f;
         this.field24107.field25183 = n5 * 0.017453292f;
         this.method17626(n3, (1.0f - class844.method5062(n6)) * 0.55f);

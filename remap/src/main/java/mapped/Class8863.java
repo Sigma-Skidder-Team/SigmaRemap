@@ -36,15 +36,15 @@ public class Class8863
             field37257.method31041(this);
         }
         if (class2252 != null) {
-            this.field37260 = new Class2260("[").method8458(class2252.method22527().method8466().method8467(class2251 -> {
+            this.field37260 = new StringTextComponent("[").appendSibling(class2252.method22527().deepCopy().applyTextStyle(class2251 -> {
                 final ITextComponent class2253;
-                final Class2116 class2254;
-                class2253.method8466().method8469(class2254).method8457("\n").method8458(class2252.method22528());
+                final TextFormatting class2254;
+                class2253.deepCopy().applyTextStyle(class2254).appendText("\n").appendSibling(class2252.method22528());
                 class2251.method30420(new Class9390(Class1961.field10697, class2250));
-            })).method8457("]").method8469(class2252.method22531().method8018());
+            })).appendText("]").applyTextStyle(class2252.method22531().method8018());
         }
         else {
-            this.field37260 = new Class2260(field37256.toString());
+            this.field37260 = new StringTextComponent(field37256.toString());
         }
     }
     

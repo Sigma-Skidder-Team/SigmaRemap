@@ -16,14 +16,14 @@ public class Class3322 extends Class3167
             return;
         }
         final int method10264 = ((Class3249)this.method9914()).method10264();
-        if (method10264 != 0 && Class3322.field15514.field4684.field2405) {
-            final double field2395 = Class3322.field15514.field4684.field2395;
-            final double field2396 = Class3322.field15514.field4684.field2396;
-            final double field2397 = Class3322.field15514.field4684.field2397;
+        if (method10264 != 0 && Class3322.field15514.field4684.collidedHorizontally) {
+            final double field2395 = Class3322.field15514.field4684.posX;
+            final double field2396 = Class3322.field15514.field4684.posY;
+            final double field2397 = Class3322.field15514.field4684.posZ;
             double n = 1.19209289E-8;
-            if (Class3322.field15514.field4684.method1935().y <= -0.22768848754498797 || Class3322.field15514.field4684.field2404) {
-                if (!Class3322.field15514.field4684.field2404) {
-                    Class3322.field15514.field4684.method1656(field2395, field2396 - (field2396 - (int)field2396), field2397);
+            if (Class3322.field15514.field4684.getMotion().y <= -0.22768848754498797 || Class3322.field15514.field4684.onGround) {
+                if (!Class3322.field15514.field4684.onGround) {
+                    Class3322.field15514.field4684.setPosition(field2395, field2396 - (field2396 - (int)field2396), field2397);
                     class5744.method17037(field2396 - (field2396 - (int)field2396));
                     n = -1.0E-13;
                 }
@@ -72,7 +72,7 @@ public class Class3322 extends Class3167
         if (this.method9906() && Class3322.field15514.field4684 != null) {
             if (class5753.method17065() != null) {
                 if (!class5753.method17065().method24540()) {
-                    if (class5753.method17065().method24537().field25074 > Class3322.field15514.field4684.field2403.field25074 + 1.0) {
+                    if (class5753.method17065().method24537().field25074 > Class3322.field15514.field4684.boundingBox.field25074 + 1.0) {
                         class5753.method16961(true);
                     }
                 }

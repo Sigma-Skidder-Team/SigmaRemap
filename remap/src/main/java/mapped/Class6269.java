@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 
 public class Class6269 extends Class6257
@@ -35,7 +37,7 @@ public class Class6269 extends Class6257
     }
     
     @Override
-    public int method18594(final int n, final Class7929 class7929) {
+    public int method18594(final int n, final DamageSource class7929) {
         if (class7929.method25711()) {
             return 0;
         }
@@ -45,7 +47,7 @@ public class Class6269 extends Class6257
         if (this.field25132 == Class2119.field12351 && class7929.method25719()) {
             return n * 2;
         }
-        if (this.field25132 == Class2119.field12352 && class7929 == Class7929.field32572) {
+        if (this.field25132 == Class2119.field12352 && class7929 == DamageSource.field32572) {
             return n * 3;
         }
         if (this.field25132 == Class2119.field12353 && class7929.method25707()) {
@@ -63,7 +65,7 @@ public class Class6269 extends Class6257
         return this.field25132 != class6258.field25132 && (this.field25132 == Class2119.field12352 || class6258.field25132 == Class2119.field12352);
     }
     
-    public static int method18607(final Class511 class511, int n) {
+    public static int method18607(final LivingEntity class511, int n) {
         final int method30206 = Class8742.method30206(Class7882.field32348, class511);
         if (method30206 > 0) {
             n -= MathHelper.method35642(n * (float)method30206 * 0.15f);
@@ -71,7 +73,7 @@ public class Class6269 extends Class6257
         return n;
     }
     
-    public static double method18608(final Class511 class511, double n) {
+    public static double method18608(final LivingEntity class511, double n) {
         final int method30206 = Class8742.method30206(Class7882.field32350, class511);
         if (method30206 > 0) {
             n -= MathHelper.floor(n * (method30206 * 0.15f));

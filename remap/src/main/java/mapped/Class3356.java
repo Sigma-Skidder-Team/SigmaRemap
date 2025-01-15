@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import org.lwjgl.opengl.GL11;
 
 public class Class3356 extends Class3355
@@ -64,8 +65,8 @@ public class Class3356 extends Class3355
         }
     }
     
-    public boolean method10623(final Class511 class511) {
-        return this.method10624(Class3356.field15514.field4684.field2399, Class8845.method30913(class511, Class3356.field15514.field4684.field2395, Class3356.field15514.field4684.field2396, Class3356.field15514.field4684.field2397)[0]) <= 90.0f;
+    public boolean method10623(final LivingEntity class511) {
+        return this.method10624(Class3356.field15514.field4684.rotationYaw, Class8845.method30913(class511, Class3356.field15514.field4684.posX, Class3356.field15514.field4684.posY, Class3356.field15514.field4684.posZ)[0]) <= 90.0f;
     }
     
     public float method10624(final float n, final float n2) {
@@ -182,9 +183,9 @@ public class Class3356 extends Class3355
             Class8726.method30003();
             Math.max(Math.min(Class869.method5338(), Class3356.field15514.field4648.field23383), 60);
             final long n = Class8349.method27838() - class5741.field23313;
-            final float field2399 = Class3356.field15514.field4684.field2399;
+            final float field2399 = Class3356.field15514.field4684.rotationYaw;
             final Class756 field2400 = Class3356.field15514.field4684;
-            field2400.field2399 += 180.0f;
+            field2400.rotationYaw += 180.0f;
             Class8726.method30008();
             GL11.glAlphaFunc(519, 0.0f);
             final double field2401 = Class3356.field15514.field4648.field23471;
@@ -198,7 +199,7 @@ public class Class3356 extends Class3355
             Class9463.field40711 = false;
             Class3356.field15514.field4644.field9392 = true;
             Class3356.field15514.field4648.field23471 = field2401;
-            Class3356.field15514.field4684.field2399 = field2399;
+            Class3356.field15514.field4684.rotationYaw = field2399;
             Class8726.method30060();
             Class3356.field15514.method5234().method18395(true);
             return;

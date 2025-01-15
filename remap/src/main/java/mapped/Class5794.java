@@ -22,10 +22,10 @@ public class Class5794 extends Class5791
     @Override
     public void method17247() {
         ++this.field23797;
-        final Class512 method7136 = this.field23764.field2391.method7136(this.field23796, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
+        final Class512 method7136 = this.field23764.world.method7136(this.field23796, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
         if (method7136 == null) {
             if (this.field23797 >= 100) {
-                final Class512 method7137 = this.field23764.field2391.method7136(Class5794.field23795, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
+                final Class512 method7137 = this.field23764.world.method7136(Class5794.field23795, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
                 this.field23764.method5127().method33696(Class7193.field27952);
                 if (method7137 != null) {
                     this.field23764.method5127().method33696(Class7193.field27956);
@@ -34,11 +34,11 @@ public class Class5794 extends Class5791
             }
         }
         else if (this.field23797 <= 25) {
-            final float n = (float)(Math.acos((float)new Vec3d(MathHelper.sin(this.field23764.field2399 * 0.017453292f), 0.0, -MathHelper.cos(this.field23764.field2399 * 0.017453292f)).normalize().dotProduct(new Vec3d(method7136.getPosX() - this.field23764.getPosX(), 0.0, method7136.getPosZ() - this.field23764.getPosZ()).normalize())) * 57.2957763671875) + 0.5f;
+            final float n = (float)(Math.acos((float)new Vec3d(MathHelper.sin(this.field23764.rotationYaw * 0.017453292f), 0.0, -MathHelper.cos(this.field23764.rotationYaw * 0.017453292f)).normalize().dotProduct(new Vec3d(method7136.getPosX() - this.field23764.getPosX(), 0.0, method7136.getPosZ() - this.field23764.getPosZ()).normalize())) * 57.2957763671875) + 0.5f;
             if (n < 0.0f || n > 10.0f) {
                 final double n2 = method7136.getPosX() - this.field23764.field4535.getPosX();
                 final double n3 = method7136.getPosZ() - this.field23764.field4535.getPosZ();
-                final double method7138 = MathHelper.method35654(MathHelper.method35669(180.0 - MathHelper.method35693(n2, n3) * 57.2957763671875 - this.field23764.field2399), -100.0, 100.0);
+                final double method7138 = MathHelper.method35654(MathHelper.method35669(180.0 - MathHelper.method35693(n2, n3) * 57.2957763671875 - this.field23764.rotationYaw), -100.0, 100.0);
                 final Class852 field23764 = this.field23764;
                 field23764.field4547 *= 0.8f;
                 final float n5;
@@ -48,7 +48,7 @@ public class Class5794 extends Class5791
                 }
                 this.field23764.field4547 += (float)(method7138 * (0.7f / n4 / n5));
                 final Class852 field23765 = this.field23764;
-                field23765.field2399 += this.field23764.field4547;
+                field23765.rotationYaw += this.field23764.field4547;
             }
         }
         else {

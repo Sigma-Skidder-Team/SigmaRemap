@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.commons.lang3.Validate;
 import java.util.stream.StreamSupport;
@@ -43,7 +45,7 @@ public abstract class Class90<T> implements Class89<T>
     public static final Class90<Class7768<?, ?>> field223;
     public static final Class90<Class5412<?>> field224;
     public static final Class90<Class8705<?, ?>> field225;
-    public static final Class90<Class383> field226;
+    public static final Class90<DimensionType> field226;
     public static final Class93<Class8539> field227;
     public static final Class90<Class1932> field228;
     public static final Class93<Class9312> field229;
@@ -136,7 +138,7 @@ public abstract class Class90<T> implements Class89<T>
         field223 = method500("biome_source_type", () -> Class7768.field31770);
         field224 = method500("block_entity_type", () -> Class5412.field22541);
         field225 = method500("chunk_generator_type", () -> Class8705.field36578);
-        field226 = method500("dimension_type", () -> Class383.field2223);
+        field226 = method500("dimension_type", () -> DimensionType.field2223);
         field227 = method501("motive", "kebab", () -> Class8539.field35829);
         field228 = method500("custom_stat", () -> Class8276.field34007);
         field229 = method501("chunk_status", "empty", () -> Class9312.field39977);

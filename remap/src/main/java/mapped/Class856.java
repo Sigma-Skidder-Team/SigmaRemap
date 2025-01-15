@@ -5,8 +5,15 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.time.temporal.ChronoField;
 import java.time.LocalDate;
@@ -15,11 +22,11 @@ import javax.annotation.Nullable;
 
 public class Class856 extends Class855
 {
-    private static final Class8810<Byte> field4562;
+    private static final DataParameter<Byte> field4562;
     private static final Class7843 field4563;
     private BlockPos field4564;
     
-    public Class856(final EntityType<? extends Class856> class7499, final Class1847 class7500) {
+    public Class856(final EntityType<? extends Class856> class7499, final World class7500) {
         super(class7499, class7500);
         this.method5145(true);
     }
@@ -27,7 +34,7 @@ public class Class856 extends Class855
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class856.field4562, (Byte)0);
+        this.dataManager.register(Class856.field4562, (Byte)0);
     }
     
     @Override
@@ -43,11 +50,11 @@ public class Class856 extends Class855
     @Nullable
     @Override
     public Class7795 method4160() {
-        return (this.method5144() && this.field2423.nextInt(4) != 0) ? null : Class8520.field35005;
+        return (this.method5144() && this.rand.nextInt(4) != 0) ? null : Class8520.field35005;
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35007;
     }
     
@@ -76,16 +83,16 @@ public class Class856 extends Class855
     }
     
     public boolean method5144() {
-        return (this.field2432.method33568(Class856.field4562) & 0x1) != 0x0;
+        return (this.dataManager.get(Class856.field4562) & 0x1) != 0x0;
     }
     
     public void method5145(final boolean b) {
-        final byte byteValue = this.field2432.method33568(Class856.field4562);
+        final byte byteValue = this.dataManager.get(Class856.field4562);
         if (!b) {
-            this.field2432.method33569(Class856.field4562, (byte)(byteValue & 0xFFFFFFFE));
+            this.dataManager.set(Class856.field4562, (byte)(byteValue & 0xFFFFFFFE));
         }
         else {
-            this.field2432.method33569(Class856.field4562, (byte)(byteValue | 0x1));
+            this.dataManager.set(Class856.field4562, (byte)(byteValue | 0x1));
         }
     }
     
@@ -93,7 +100,7 @@ public class Class856 extends Class855
     public void method1659() {
         super.method1659();
         if (!this.method5144()) {
-            this.method1936(this.method1935().mul(1.0, 0.6, 1.0));
+            this.method1936(this.getMotion().mul(1.0, 0.6, 1.0));
         }
         else {
             this.method1936(Vec3d.ZERO);
@@ -108,46 +115,46 @@ public class Class856 extends Class855
         final BlockPos method1137 = class354.method1137();
         if (!this.method5144()) {
             if (this.field4564 != null) {
-                if (!this.field2391.method6961(this.field4564) || this.field4564.getY() < 1) {
+                if (!this.world.method6961(this.field4564) || this.field4564.getY() < 1) {
                     this.field4564 = null;
                 }
             }
             Label_0319: {
                 if (this.field4564 != null) {
-                    if (this.field2423.nextInt(30) != 0) {
+                    if (this.rand.nextInt(30) != 0) {
                         if (!this.field4564.withinDistance(this.method1934(), 2.0)) {
                             break Label_0319;
                         }
                     }
                 }
-                this.field4564 = new BlockPos(this.getPosX() + this.field2423.nextInt(7) - this.field2423.nextInt(7), this.getPosY() + this.field2423.nextInt(6) - 2.0, this.getPosZ() + this.field2423.nextInt(7) - this.field2423.nextInt(7));
+                this.field4564 = new BlockPos(this.getPosX() + this.rand.nextInt(7) - this.rand.nextInt(7), this.getPosY() + this.rand.nextInt(6) - 2.0, this.getPosZ() + this.rand.nextInt(7) - this.rand.nextInt(7));
             }
             final double d = this.field4564.getX() + 0.5 - this.getPosX();
             final double d2 = this.field4564.getY() + 0.1 - this.getPosY();
             final double d3 = this.field4564.getZ() + 0.5 - this.getPosZ();
-            final Vec3d method1138 = this.method1935();
+            final Vec3d method1138 = this.getMotion();
             final Vec3d method1139 = method1138.add((Math.signum(d) * 0.5 - method1138.x) * 0.10000000149011612, (Math.signum(d2) * 0.699999988079071 - method1138.y) * 0.10000000149011612, (Math.signum(d3) * 0.5 - method1138.z) * 0.10000000149011612);
             this.method1936(method1139);
-            final float method1140 = MathHelper.method35668((float)(MathHelper.method35693(method1139.z, method1139.x) * 57.2957763671875) - 90.0f - this.field2399);
+            final float method1140 = MathHelper.method35668((float)(MathHelper.method35693(method1139.z, method1139.x) * 57.2957763671875) - 90.0f - this.rotationYaw);
             this.field2970 = 0.5f;
-            this.field2399 += method1140;
-            if (this.field2423.nextInt(100) == 0) {
-                if (this.field2391.method6701(method1137).method21713(this.field2391, method1137)) {
+            this.rotationYaw += method1140;
+            if (this.rand.nextInt(100) == 0) {
+                if (this.world.method6701(method1137).method21713(this.world, method1137)) {
                     this.method5145(true);
                 }
             }
         }
-        else if (!this.field2391.method6701(method1137).method21713(this.field2391, class354)) {
+        else if (!this.world.method6701(method1137).method21713(this.world, class354)) {
             this.method5145(false);
-            this.field2391.method6839(null, 1025, class354, 0);
+            this.world.method6839(null, 1025, class354, 0);
         }
         else {
-            if (this.field2423.nextInt(200) == 0) {
-                this.field2953 = (float)this.field2423.nextInt(360);
+            if (this.rand.nextInt(200) == 0) {
+                this.field2953 = (float)this.rand.nextInt(360);
             }
-            if (this.field2391.method7135(Class856.field4563, this) != null) {
+            if (this.world.method7135(Class856.field4563, this) != null) {
                 this.method5145(false);
-                this.field2391.method6839(null, 1025, class354, 0);
+                this.world.method6839(null, 1025, class354, 0);
             }
         }
     }
@@ -172,14 +179,14 @@ public class Class856 extends Class855
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 if (this.method5144()) {
                     this.method5145(false);
                 }
             }
-            return super.method1740(class7929, n);
+            return super.attackEntityFrom(class7929, n);
         }
         return false;
     }
@@ -187,13 +194,13 @@ public class Class856 extends Class855
     @Override
     public void method1760(final Class51 class51) {
         super.method1760(class51);
-        this.field2432.method33569(Class856.field4562, class51.method317("BatFlags"));
+        this.dataManager.set(Class856.field4562, class51.method317("BatFlags"));
     }
     
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        class51.method296("BatFlags", this.field2432.method33568(Class856.field4562));
+        class51.method296("BatFlags", this.dataManager.get(Class856.field4562));
     }
     
     public static boolean method5146(final EntityType<Class856> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
@@ -221,12 +228,12 @@ public class Class856 extends Class855
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return class291.field34098 / 2.0f;
     }
     
     static {
-        field4562 = Class9184.method33564(Class856.class, Class7709.field30653);
+        field4562 = EntityDataManager.method33564(Class856.class, Class7709.field30653);
         field4563 = new Class7843().method25337(4.0).method25339();
     }
 }

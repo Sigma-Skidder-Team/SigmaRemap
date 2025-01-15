@@ -18,11 +18,11 @@ public class Class6674<T extends ArgumentType<?>> implements Class6672<T>
     }
     
     @Override
-    public void method20301(final T t, final Class8654 class8654) {
+    public void method20301(final T t, final PacketBuffer class8654) {
     }
     
     @Override
-    public T method20297(final Class8654 class8654) {
+    public T method20297(final PacketBuffer class8654) {
         return this.field26358.get();
     }
     

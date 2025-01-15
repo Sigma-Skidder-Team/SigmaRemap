@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
 public class Class7843
@@ -16,7 +18,7 @@ public class Class7843
     private boolean field32121;
     private boolean field32122;
     private boolean field32123;
-    private Predicate<Class511> field32124;
+    private Predicate<LivingEntity> field32124;
     
     public Class7843() {
         this.field32118 = -1.0;
@@ -53,16 +55,16 @@ public class Class7843
         return this;
     }
     
-    public Class7843 method25343(final Predicate<Class511> field32124) {
+    public Class7843 method25343(final Predicate<LivingEntity> field32124) {
         this.field32124 = field32124;
         return this;
     }
     
-    public boolean method25344(final Class511 class511, final Class511 class512) {
+    public boolean method25344(final LivingEntity class511, final LivingEntity class512) {
         if (class511 == class512) {
             return false;
         }
-        if (class512.method1639()) {
+        if (class512.isSpectator()) {
             return false;
         }
         if (!class512.method1768()) {
@@ -79,7 +81,7 @@ public class Class7843
                 if (!class511.method2646(class512)) {
                     return false;
                 }
-                if (!class511.method2620(class512.method1642())) {
+                if (!class511.method2620(class512.getType())) {
                     return false;
                 }
             }

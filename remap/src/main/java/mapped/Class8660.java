@@ -19,6 +19,8 @@ import java.util.UUID;
 import java.util.Map;
 import java.util.Set;
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.nbt.INBT;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class8660
 {
@@ -66,7 +68,7 @@ public class Class8660
     private int field36378;
     private final Set<String> field36379;
     private final Set<String> field36380;
-    private final Map<Class383, Class51> field36381;
+    private final Map<DimensionType, Class51> field36381;
     private Class51 field36382;
     private int field36383;
     private int field36384;
@@ -228,7 +230,7 @@ public class Class8660
         if (class51.method316("DimensionData", 10)) {
             final Class51 method331 = class51.method327("DimensionData");
             for (final String s : method331.method293()) {
-                this.field36381.put(Class383.method1274(Integer.parseInt(s)), method331.method327(s));
+                this.field36381.put(DimensionType.method1274(Integer.parseInt(s)), method331.method327(s));
             }
         }
         if (class51.method316("DataPacks", 10)) {
@@ -356,7 +358,7 @@ public class Class8660
         class51.method295("GameRules", this.field36388.method31212());
         final Class51 class55 = new Class51();
         for (final Map.Entry entry : this.field36381.entrySet()) {
-            class55.method295(String.valueOf(((Class383)entry.getKey()).method1270()), (Class41)entry.getValue());
+            class55.method295(String.valueOf(((DimensionType)entry.getKey()).method1270()), (INBT)entry.getValue());
         }
         class51.method295("DimensionData", class55);
         if (class52 != null) {
@@ -700,12 +702,12 @@ public class Class8660
         class5204.method16296("Level game mode", () -> String.format("Game mode: %s (ID %d). Hardcore: %b. Cheats: %b", this.field36363.method586(), this.field36363.method585(), this.field36365, this.field36366));
     }
     
-    public Class51 method29603(final Class383 class383) {
+    public Class51 method29603(final DimensionType class383) {
         final Class51 class384 = this.field36381.get(class383);
         return (class384 != null) ? class384 : new Class51();
     }
     
-    public void method29604(final Class383 class383, final Class51 class384) {
+    public void method29604(final DimensionType class383, final Class51 class384) {
         this.field36381.put(class383, class384);
     }
     

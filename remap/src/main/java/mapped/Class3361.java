@@ -40,7 +40,7 @@ public class Class3361 extends Class3355
     private void method10646(final Class5717 class5717) {
         if (this.method9906()) {
             if (Class3361.field16007 > 0) {
-                if (!Class3361.field15514.field4684.field2404) {
+                if (!Class3361.field15514.field4684.onGround) {
                     Class7482.method23149(class5717, 0.0);
                 }
             }
@@ -74,8 +74,8 @@ public class Class3361 extends Class3355
             final int method30920 = this.method10648();
             if (!Class3229.method10177()) {
                 if (method30920 != -1) {
-                    if (!Class3361.field15514.field4684.field2404) {
-                        if (Class3361.field15514.field4684.field2414 > 3.0f) {
+                    if (!Class3361.field15514.field4684.onGround) {
+                        if (Class3361.field15514.field4684.fallDistance > 3.0f) {
                             final BlockPos method30921 = this.method10649();
                             if (method30921 != null) {
                                 if (class5744.method17046() && Class3361.field16007 == -1) {
@@ -122,17 +122,17 @@ public class Class3361 extends Class3355
     }
     
     private BlockPos method10649() {
-        final double field22770 = Class3361.field15514.field4684.method1935().x;
-        final double field22771 = Class3361.field15514.field4684.method1935().y;
-        final double field22772 = Class3361.field15514.field4684.method1935().z;
-        final Iterator<Object> iterator = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.field2403.method18494(field22770, 0.0, field22772).method18499(0.0, field22771, 0.0), Collections.EMPTY_SET).iterator();
+        final double field22770 = Class3361.field15514.field4684.getMotion().x;
+        final double field22771 = Class3361.field15514.field4684.getMotion().y;
+        final double field22772 = Class3361.field15514.field4684.getMotion().z;
+        final Iterator<Object> iterator = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.boundingBox.method18494(field22770, 0.0, field22772).method18499(0.0, field22771, 0.0), Collections.EMPTY_SET).iterator();
         Vec3i class352 = null;
         while (iterator.hasNext()) {
             final BlockPos class353 = new BlockPos(iterator.next().method24537().method18517());
             if (!Class4609.method13708(class353)) {
                 continue;
             }
-            if (class353.getY() + 1 >= Class3361.field15514.field4684.field2396) {
+            if (class353.getY() + 1 >= Class3361.field15514.field4684.posY) {
                 continue;
             }
             if (class352 != null && Class3361.field15514.field4684.method1733(class352.getX() + 0.5 - field22770, class352.getY() + 1, class352.getZ() + 0.5 - field22772) <= Class3361.field15514.field4684.method1733(class353.getX() + 0.5 - field22770, class353.getY() + 1, class353.getZ() + 0.5 - field22772)) {
@@ -141,13 +141,13 @@ public class Class3361 extends Class3355
             class352 = class353;
         }
         if (class352 == null) {
-            final Iterator<Object> iterator2 = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.field2403.method18494(field22770, 0.0, field22772).method18499(0.0, Class3361.field15514.field4684.method1935().y - 1.0, 0.0), Collections.EMPTY_SET).iterator();
+            final Iterator<Object> iterator2 = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.boundingBox.method18494(field22770, 0.0, field22772).method18499(0.0, Class3361.field15514.field4684.getMotion().y - 1.0, 0.0), Collections.EMPTY_SET).iterator();
             while (iterator2.hasNext()) {
                 final BlockPos class354 = new BlockPos(iterator2.next().method24537().method18517());
                 if (!Class4609.method13708(class354)) {
                     continue;
                 }
-                if (class354.getY() + 1 >= Class3361.field15514.field4684.field2396) {
+                if (class354.getY() + 1 >= Class3361.field15514.field4684.posY) {
                     continue;
                 }
                 if (class352 != null && Class3361.field15514.field4684.method1733(class352.getX() + 0.5 - field22770, class352.getY() + 1, class352.getZ() + 0.5 - field22772) <= Class3361.field15514.field4684.method1733(class354.getX() + 0.5 - field22770, class354.getY() + 1, class354.getZ() + 0.5 - field22772)) {

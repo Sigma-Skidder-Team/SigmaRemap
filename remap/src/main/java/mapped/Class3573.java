@@ -42,10 +42,10 @@ public class Class3573 extends Class3446
     @Override
     public boolean method11013() {
         this.method11114();
-        if (this.field16680 && this.field16676.field2391.method6703()) {
+        if (this.field16680 && this.field16676.world.method6703()) {
             return false;
         }
-        final Class1849 class1849 = (Class1849)this.field16676.field2391;
+        final Class1849 class1849 = (Class1849)this.field16676.world;
         if (!class1849.method6924(new BlockPos(this.field16676), 6)) {
             return false;
         }
@@ -64,7 +64,7 @@ public class Class3573 extends Class3446
         }
         final Optional<BlockPos> method24904 = class1849.method6921().method7204(Class8912.field37458, this::method11113, new BlockPos(method24903), 10, Class2045.field11651);
         if (method24904.isPresent()) {
-            this.field16679 = method24904.get().method1153();
+            this.field16679 = method24904.get().toImmutable();
             final Class7747 class1850 = (Class7747)this.field16676.method4150();
             final boolean method24905 = class1850.method24748();
             class1850.method24747(this.field16683.getAsBoolean());
@@ -84,7 +84,7 @@ public class Class3573 extends Class3446
             }
             for (int i = 0; i < this.field16678.method35221(); ++i) {
                 final Class6772 method24907 = this.field16678.method35217(i);
-                if (Class3467.method11035(this.field16676.field2391, new BlockPos(method24907.field26589, method24907.field26590 + 1, method24907.field26591))) {
+                if (Class3467.method11035(this.field16676.world, new BlockPos(method24907.field26589, method24907.field26590 + 1, method24907.field26591))) {
                     this.field16678 = this.field16676.method4150().method24719(method24907.field26589, method24907.field26590, method24907.field26591, 0);
                     break;
                 }

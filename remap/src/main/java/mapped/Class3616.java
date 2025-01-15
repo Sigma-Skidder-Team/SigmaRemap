@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.EnumSet;
 
@@ -25,7 +26,7 @@ public class Class3616 extends Class3446
     
     @Override
     public boolean method11013() {
-        return this.field16812.method5004() && this.field16812.method1832() >= 100;
+        return this.field16812.method5004() && this.field16812.getAir() >= 100;
     }
     
     @Override
@@ -33,7 +34,7 @@ public class Class3616 extends Class3446
         final BlockPos method5003 = this.field16812.method5003();
         if (!new BlockPos(method5003.getX(), this.field16812.getPosY(), method5003.getZ()).withinDistance(this.field16812.method1934(), 4.0)) {
             if (!this.field16813) {
-                if (this.field16812.method1832() >= 100) {
+                if (this.field16812.getAir() >= 100) {
                     return true;
                 }
             }
@@ -43,8 +44,8 @@ public class Class3616 extends Class3446
     
     @Override
     public void method11015() {
-        if (this.field16812.field2391 instanceof Class1849) {
-            final Class1849 class1849 = (Class1849)this.field16812.field2391;
+        if (this.field16812.world instanceof Class1849) {
+            final Class1849 class1849 = (Class1849)this.field16812.world;
             this.field16813 = false;
             this.field16812.method4150().method24733();
             final BlockPos class1850 = new BlockPos(this.field16812);
@@ -75,7 +76,7 @@ public class Class3616 extends Class3446
     
     @Override
     public void method11016() {
-        final Class1847 field2391 = this.field16812.field2391;
+        final World field2391 = this.field16812.world;
         if (this.field16812.method5010() || this.field16812.method4150().method24731()) {
             final Vec3d class5487 = new Vec3d(this.field16812.method5003());
             Vec3d class5488 = Class7775.method24906(this.field16812, 16, 1, class5487, 0.39269909262657166);

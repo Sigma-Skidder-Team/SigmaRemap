@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Iterator;
 import java.util.Comparator;
@@ -112,10 +113,10 @@ public class Class8866
             final Entity method26798 = class400.method26798();
             if (method26798 != this.field37269.field4684 && method26798 != Class3276.field15771) {
                 if (!Class9463.method35173().method35190().method29878(method26798)) {
-                    if (method26798 instanceof Class511) {
-                        if (((Class511)method26798).method2664() != 0.0f) {
+                    if (method26798 instanceof LivingEntity) {
+                        if (((LivingEntity)method26798).method2664() != 0.0f) {
                             if (this.field37269.field4684.method1732(method26798) <= n) {
-                                if (this.field37269.field4684.method2646((Class511)method26798)) {
+                                if (this.field37269.field4684.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
                                         if (!this.field37268.method9883("Players") && method26798 instanceof Class512) {
                                             iterator2.remove();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class5393 implements Class5350<Class6911>
@@ -16,7 +18,7 @@ public class Class5393 implements Class5350<Class6911>
     }
     
     @Nullable
-    public Class6173 method16517(final Class6911 class6911, final Class1847 class6912, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class6173 method16517(final Class6911 class6911, final World class6912, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         final Class7096 method21276 = class6911.method21276();
         if (!method21276.method21706() && method21276.method21710() == Class2115.field12305) {
             return null;

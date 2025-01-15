@@ -6,9 +6,7 @@ package mapped;
 
 import java.time.Duration;
 import java.util.Arrays;
-import java.io.OutputStream;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.FileInputStream;
 import java.io.File;
 import java.util.concurrent.CompletableFuture;
@@ -158,7 +156,7 @@ public class Class7847
     public static void method25381(final String s) {
         final Class7895 field32404 = Class7895.field32404;
         field32404.method25561();
-        field32404.method25555(Class285.field1573, new Class2260(method25382(s)));
+        field32404.method25555(Class285.field1573, new StringTextComponent(method25382(s)));
     }
     
     private static String method25382(final String s) {

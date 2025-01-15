@@ -17,7 +17,7 @@ public class Class4147 extends ChannelInitializer<Channel>
     }
     
     public void initChannel(final Channel channel) throws Exception {
-        final Class3641 class3641 = new Class3641(Class2060.field11779);
+        final NetworkManager class3641 = new NetworkManager(Class2060.field11779);
         class3641.method11173(new Class5806(Class7639.method24069(this.field18474), class3641));
         Class7639.method24068(this.field18474).add(class3641);
         channel.pipeline().addLast("packet_handler", (ChannelHandler)class3641);

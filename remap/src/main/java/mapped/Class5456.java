@@ -9,9 +9,11 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 
-public class Class5456<E extends Class511> extends Class5455<E>
+public class Class5456<E extends LivingEntity> extends Class5455<E>
 {
     private static String[] field22695;
     

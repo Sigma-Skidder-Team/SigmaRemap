@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.EnumSet;
@@ -14,7 +17,7 @@ public class Class3587 extends Class3446
     private static final Class7843 field16718;
     public final Class789 field16719;
     private final Class<? extends Class789> field16720;
-    public final Class1847 field16721;
+    public final World field16721;
     public Class789 field16722;
     private int field16723;
     private final double field16724;
@@ -25,7 +28,7 @@ public class Class3587 extends Class3446
     
     public Class3587(final Class789 field16719, final double field16720, final Class<? extends Class789> field16721) {
         this.field16719 = field16719;
-        this.field16721 = field16719.field2391;
+        this.field16721 = field16719.world;
         this.field16720 = field16721;
         this.field16724 = field16720;
         this.method11019(EnumSet.of(Class2139.field12580, Class2139.field12581));
@@ -72,7 +75,7 @@ public class Class3587 extends Class3446
     
     @Nullable
     private Class789 method11118() {
-        final List<Class789> method7142 = this.field16721.method7142(this.field16720, Class3587.field16718, (Class511)this.field16719, this.field16719.method1886().method18496(8.0));
+        final List<Class789> method7142 = this.field16721.method7142(this.field16720, Class3587.field16718, (LivingEntity)this.field16719, this.field16719.method1886().method18496(8.0));
         double method7143 = Double.MAX_VALUE;
         Class789 class789 = null;
         for (final Class789 class790 : method7142) {

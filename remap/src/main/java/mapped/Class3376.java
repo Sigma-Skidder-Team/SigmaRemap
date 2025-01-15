@@ -88,8 +88,8 @@ public class Class3376 extends Class3167
         this.field16054 = 0;
         Class3376.field16066 = 0;
         this.field16065 = new Class7988(Class3376.field15514.field4684.field4077, Class3376.field15514.field4684.field4078);
-        this.field16064 = new Class7988(Class3376.field15514.field4684.field2399, Class3376.field15514.field4684.field2400);
-        Class3376.field16063 = new Class7988(Class3376.field15514.field4684.field2399, Class3376.field15514.field4684.field2400);
+        this.field16064 = new Class7988(Class3376.field15514.field4684.rotationYaw, Class3376.field15514.field4684.rotationPitch);
+        Class3376.field16063 = new Class7988(Class3376.field15514.field4684.rotationYaw, Class3376.field15514.field4684.rotationPitch);
         this.field16069 = -1.0f;
         this.field16050.method31129(Class3376.field15514.field4684.method2715(Class316.field1877).method27622() instanceof Class4077 && Class3376.field15514.field4648.field23445.method1056());
         this.field16071 = false;
@@ -191,7 +191,7 @@ public class Class3376 extends Class3167
                         }
                     }
                     this.method10754();
-                    if (class5744.method17042() - Class3376.field15514.field4684.field2399 != 0.0f) {
+                    if (class5744.method17042() - Class3376.field15514.field4684.rotationYaw != 0.0f) {
                         this.field16064.field32884 = class5744.method17042();
                         this.field16064.field32885 = class5744.method17040();
                     }
@@ -320,7 +320,7 @@ public class Class3376 extends Class3167
         if (!key.method1768()) {
             n = 0.0;
         }
-        GL11.glTranslated(key.field2417 + (key.field2395 - key.field2417) * n, key.field2418 + (key.field2396 - key.field2418) * n, key.field2419 + (key.field2397 - key.field2419) * n);
+        GL11.glTranslated(key.lastTickPosX + (key.posX - key.lastTickPosX) * n, key.lastTickPosY + (key.posY - key.lastTickPosY) * n, key.lastTickPosZ + (key.posZ - key.lastTickPosZ) * n);
         GL11.glTranslated(-Class3376.field15514.field4644.method5833().method18161().getX(), -Class3376.field15514.field4644.method5833().method18161().getY(), -Class3376.field15514.field4644.method5833().method18161().getZ());
         GL11.glEnable(32823);
         GL11.glEnable(3008);
@@ -430,7 +430,7 @@ public class Class3376 extends Class3167
                     this.field16052 = 0;
                     b3 = false;
                 }
-                if (!Class3295.method10433() && (!Class3376.field15514.field4684.field2404 && !Class6430.method19160(Class3376.field15514.field4684, 0.001f))) {
+                if (!Class3295.method10433() && (!Class3376.field15514.field4684.onGround && !Class6430.method19160(Class3376.field15514.field4684, 0.001f))) {
                     ++this.field16053;
                 }
                 else {
@@ -488,7 +488,7 @@ public class Class3376 extends Class3167
                     b3 = false;
                     if (b) {
                         if (this.field16072 != null) {
-                            if (Class3376.field15514.field4684.method1935().y < 0.0) {
+                            if (Class3376.field15514.field4684.getMotion().y < 0.0) {
                                 Class3376.field15514.method5269().method17292(new Class4354(this.field16072[0], this.field16072[1], this.field16072[2], false));
                                 this.field16072 = null;
                             }
@@ -497,11 +497,11 @@ public class Class3376 extends Class3167
                 }
             }
         }
-        final boolean b5 = !Class3295.method10433() && (Class3376.field15514.field4684.field2404 || Class6430.method19160(Class3376.field15514.field4684, 0.001f));
+        final boolean b5 = !Class3295.method10433() && (Class3376.field15514.field4684.onGround || Class6430.method19160(Class3376.field15514.field4684, 0.001f));
         if (b5) {
             ++this.field16053;
             if (!Class9463.method35173().method35189().method21551(Class3256.class).method9906() || Class9463.method35173().method35189().method21551(Class3256.class).method9887("Type").equalsIgnoreCase("Cubecraft")) {
-                if (Class3376.field15514.field4684.field2406) {
+                if (Class3376.field15514.field4684.collidedVertically) {
                     if (b5) {
                         if (!Class3376.field15514.field4684.field2967) {
                             if (!Class3376.field15514.field4684.method1706()) {
@@ -512,7 +512,7 @@ public class Class3376 extends Class3167
                                     else {
                                         Class3376.field16049 = true;
                                     }
-                                    class5744.method17037(Class3376.field15514.field4684.field2396 + n);
+                                    class5744.method17037(Class3376.field15514.field4684.posY + n);
                                     class5744.method17045(b3);
                                 }
                             }
@@ -697,8 +697,8 @@ public class Class3376 extends Class3167
                     this.field16051 = (int)this.field16050.method31134(0);
                     this.field16052 = 0;
                     Class3376.field16049 = false;
-                    this.field16064.field32884 = Class3376.field15514.field4684.field2399;
-                    this.field16064.field32885 = Class3376.field15514.field4684.field2400;
+                    this.field16064.field32884 = Class3376.field15514.field4684.rotationYaw;
+                    this.field16064.field32885 = Class3376.field15514.field4684.rotationPitch;
                     Class3376.field16063.field32884 = this.field16064.field32884;
                     Class3376.field16063.field32885 = this.field16064.field32885;
                     this.field16069 = -1.0f;
@@ -716,8 +716,8 @@ public class Class3376 extends Class3167
         this.field16051 = (int)this.field16050.method31134(0);
         this.field16052 = 0;
         Class3376.field16049 = false;
-        this.field16064.field32884 = Class3376.field15514.field4684.field2399;
-        this.field16064.field32885 = Class3376.field15514.field4684.field2400;
+        this.field16064.field32884 = Class3376.field15514.field4684.rotationYaw;
+        this.field16064.field32885 = Class3376.field15514.field4684.rotationPitch;
         Class3376.field16063.field32884 = this.field16064.field32884;
         Class3376.field16063.field32885 = this.field16064.field32885;
         this.field16069 = -1.0f;
@@ -728,8 +728,8 @@ public class Class3376 extends Class3167
     private void method10754() {
         final Class7988 method26799 = Class3376.field16061.method26799();
         final Entity method26800 = Class3376.field16061.method26798();
-        final float method26801 = Class8845.method30925(this.field16064.field32884, Class3376.field16061.method26798().field2395, Class3376.field16061.method26798().field2397);
-        final float method26802 = Class8845.method30927(this.field16064.field32885, Class3376.field16061.method26798(), Class3376.field16061.method26798().field2396);
+        final float method26801 = Class8845.method30925(this.field16064.field32884, Class3376.field16061.method26798().posX, Class3376.field16061.method26798().posZ);
+        final float method26802 = Class8845.method30927(this.field16064.field32885, Class3376.field16061.method26798(), Class3376.field16061.method26798().posY);
         final String method26803 = this.method9887("Rotation Mode");
         switch (method26803) {
             case "Test": {
@@ -762,7 +762,7 @@ public class Class3376 extends Class3167
                     final Class7988 field16075 = this.field16064;
                     field16075.field32884 += this.field16070 + (float)this.method10757(-n3, n3);
                 }
-                if (Class3376.field15514.field4684.field2424 % 5 == 0) {
+                if (Class3376.field15514.field4684.ticksExisted % 5 == 0) {
                     final Class7988 field16076 = this.field16064;
                     field16076.field32884 += (float)this.method10757(-25.0, 25.0) / (Class3376.field15514.field4684.method1732(method26800) + 1.0f);
                     final Class7988 field16077 = this.field16064;
@@ -788,10 +788,10 @@ public class Class3376 extends Class3167
             }
             case "AAC": {
                 final Class7988 method26805 = this.method10756(method26800);
-                if (!Class8845.method30923(new Vec3d(method26800.field2395, method26800.field2396 - 1.6 - this.field16067 + method26800.method1892(), method26800.field2397))) {}
+                if (!Class8845.method30923(new Vec3d(method26800.posX, method26800.posY - 1.6 - this.field16067 + method26800.method1892(), method26800.posZ))) {}
                 final float n4 = this.field16069 / Math.max(1.0f, this.field16068);
-                final double n5 = method26800.field2395 - method26800.field2417;
-                final double n6 = method26800.field2397 - method26800.field2419;
+                final double n5 = method26800.posX - method26800.lastTickPosX;
+                final double n6 = method26800.posZ - method26800.lastTickPosZ;
                 final float n7 = (float)Math.sqrt(n5 * n5 + n6 * n6);
                 float n8 = Class8862.method31033(n4, 0.57, -0.135, 0.095, -0.3);
                 float n9 = Math.min(1.0f, Class8862.method31033(n4, 0.57, -0.135, 0.095, -0.3));
@@ -830,8 +830,8 @@ public class Class3376 extends Class3167
             case "None": {
                 this.field16065.field32884 = this.field16064.field32884;
                 this.field16065.field32885 = this.field16064.field32885;
-                this.field16064.field32884 = Class3376.field15514.field4684.field2399;
-                this.field16064.field32885 = Class3376.field15514.field4684.field2400;
+                this.field16064.field32884 = Class3376.field15514.field4684.rotationYaw;
+                this.field16064.field32885 = Class3376.field15514.field4684.rotationPitch;
                 break;
             }
         }
@@ -851,9 +851,9 @@ public class Class3376 extends Class3167
     }
     
     public Class7988 method10756(final Entity class399) {
-        final double x = class399.field2395 - Class3376.field15514.field4684.field2395 + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        final double y = class399.field2396 - 1.6 - this.field16067 + class399.method1892() - Class3376.field15514.field4684.field2396;
-        final double y2 = class399.field2397 - Class3376.field15514.field4684.field2397 + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
+        final double x = class399.posX - Class3376.field15514.field4684.posX + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
+        final double y = class399.posY - 1.6 - this.field16067 + class399.method1892() - Class3376.field15514.field4684.posY;
+        final double y2 = class399.posZ - Class3376.field15514.field4684.posZ + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
         return new Class7988(Class8845.method30910(this.field16064.field32884, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), Class8845.method30910(this.field16064.field32885, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f));
     }
     

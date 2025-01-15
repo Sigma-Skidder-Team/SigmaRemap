@@ -24,11 +24,11 @@ public class Class8982 extends MessageToByteEncoder<ByteBuf>
     
     public void encode(final ChannelHandlerContext channelHandlerContext, final ByteBuf byteBuf, final ByteBuf byteBuf2) throws Exception {
         final int readableBytes = byteBuf.readableBytes();
-        final Class8654 class8654 = new Class8654(byteBuf2);
+        final PacketBuffer class8654 = new PacketBuffer(byteBuf2);
         if (readableBytes >= this.field37860) {
             final byte[] input = new byte[readableBytes];
             byteBuf.readBytes(input);
-            class8654.method29505(input.length);
+            class8654.writeVarInt(input.length);
             this.field37859.setInput(input, 0, readableBytes);
             this.field37859.finish();
             while (!this.field37859.finished()) {
@@ -37,7 +37,7 @@ public class Class8982 extends MessageToByteEncoder<ByteBuf>
             this.field37859.reset();
         }
         else {
-            class8654.method29505(0);
+            class8654.writeVarInt(0);
             class8654.writeBytes(byteBuf);
         }
     }

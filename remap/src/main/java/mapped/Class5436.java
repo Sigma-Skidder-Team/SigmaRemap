@@ -74,10 +74,10 @@ public class Class5436 extends Class5419<Class824>
     }
     
     private boolean method16603(final Class1849 class1849, final Class824 class1850, final Class363 class1851) {
-        return class1851.method1169() != class1849.method6789().method20487() || class1851.method1170().manhattanDistance(new BlockPos(class1850)) > this.field22642;
+        return class1851.method1169() != class1849.method6789().getType() || class1851.method1170().manhattanDistance(new BlockPos(class1850)) > this.field22642;
     }
     
     private boolean method16604(final Class1849 class1849, final Class824 class1850, final Class363 class1851) {
-        return class1851.method1169() == class1849.method6789().method20487() && class1851.method1170().manhattanDistance(new BlockPos(class1850)) <= this.field22641;
+        return class1851.method1169() == class1849.method6789().getType() && class1851.method1170().manhattanDistance(new BlockPos(class1850)) <= this.field22641;
     }
 }

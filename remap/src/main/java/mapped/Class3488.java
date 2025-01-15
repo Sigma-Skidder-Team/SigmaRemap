@@ -19,7 +19,7 @@ public class Class3488 extends Class3479
     public boolean method11017() {
         if (!this.field16422.method1706()) {
             if (this.field16393 <= 1200) {
-                if (this.method11050(this.field16422.field2391, this.field16395)) {
+                if (this.method11050(this.field16422.world, this.field16395)) {
                     return true;
                 }
             }

@@ -63,13 +63,13 @@ public class Class3289 extends Class3167
             if (Class3289.field15514.field4684 != null) {
                 if (Class3289.field15514.field4683 != null) {
                     ++this.field15835;
-                    if (Class3289.field15836 < Class3289.field15514.field4684.field2396) {
-                        if (Class3289.field15514.field4684.field2404) {
+                    if (Class3289.field15836 < Class3289.field15514.field4684.posY) {
+                        if (Class3289.field15514.field4684.onGround) {
                             Class3289.field15836 += 0.5f;
                         }
                     }
-                    if (Class3289.field15836 > Class3289.field15514.field4684.field2396) {
-                        if (Class3289.field15514.field4684.field2404) {
+                    if (Class3289.field15836 > Class3289.field15514.field4684.posY) {
+                        if (Class3289.field15514.field4684.onGround) {
                             Class3289.field15836 -= 0.5f;
                         }
                     }
@@ -77,12 +77,12 @@ public class Class3289 extends Class3167
                         final ArrayList list = new ArrayList();
                         for (int i = -this.field15843 / 2; i < this.field15843 / 2; ++i) {
                             for (int j = -this.field15843 / 2; j < this.field15843 / 2; ++j) {
-                                list.add(Class3289.field15514.field4683.method6686(Class3289.field15514.field4684.field2441 + i, Class3289.field15514.field4684.field2443 + j));
+                                list.add(Class3289.field15514.field4683.method6686(Class3289.field15514.field4684.chunkCoordX + i, Class3289.field15514.field4684.chunkCoordZ + j));
                             }
                         }
                         final Iterator<Class6824> iterator = this.field15844.iterator();
                         while (iterator.hasNext()) {
-                            if (iterator.next().field26810.method7019().method25436(new Class7859(Class3289.field15514.field4684.field2441, Class3289.field15514.field4684.field2443)) <= 7) {
+                            if (iterator.next().field26810.method7019().method25436(new Class7859(Class3289.field15514.field4684.chunkCoordX, Class3289.field15514.field4684.chunkCoordZ)) <= 7) {
                                 continue;
                             }
                             iterator.remove();
@@ -109,8 +109,8 @@ public class Class3289 extends Class3167
                         while (iterator4.hasNext()) {
                             iterator4.next().method20912();
                         }
-                        this.field15845 = (Class3289.field15514.field4684.field2395 - Class3289.field15514.field4684.field2441 * 16) / 16.0;
-                        this.field15846 = (Class3289.field15514.field4684.field2397 - Class3289.field15514.field4684.field2443 * 16) / 16.0;
+                        this.field15845 = (Class3289.field15514.field4684.posX - Class3289.field15514.field4684.chunkCoordX * 16) / 16.0;
+                        this.field15846 = (Class3289.field15514.field4684.posZ - Class3289.field15514.field4684.chunkCoordZ * 16) / 16.0;
                         this.field15832 = this.method10407(this.field15834);
                         this.field15842 = Class3289.field15514.field4684.method1894();
                         this.field15835 = 0;
@@ -145,7 +145,7 @@ public class Class3289 extends Class3167
                             final float n3 = (float)(n2 * n * this.field15846);
                             final float n4 = (float)(-n2 * n * this.field15845);
                             GL11.glTranslatef((float)(this.field15839 + this.field15838 / 2), (float)(this.field15840 + this.field15837 / 2), 0.0f);
-                            GL11.glRotatef(90.0f - Class3289.field15514.field4684.field2399, 0.0f, 0.0f, 1.0f);
+                            GL11.glRotatef(90.0f - Class3289.field15514.field4684.rotationYaw, 0.0f, 0.0f, 1.0f);
                             GL11.glTranslatef((float)(-this.field15838 / 2), (float)(-this.field15837 / 2), 0.0f);
                             final float n5 = this.field15838 * n;
                             final float n6 = this.field15837 * n;
@@ -173,7 +173,7 @@ public class Class3289 extends Class3167
         final ArrayList list = new ArrayList();
         for (int i = -this.field15843 / 2; i < this.field15843 / 2; ++i) {
             for (int j = -this.field15843 / 2; j < this.field15843 / 2; ++j) {
-                list.add(Class3289.field15514.field4683.method6686(Class3289.field15514.field4684.field2441 + i, Class3289.field15514.field4684.field2443 + j));
+                list.add(Class3289.field15514.field4683.method6686(Class3289.field15514.field4684.chunkCoordX + i, Class3289.field15514.field4684.chunkCoordZ + j));
             }
         }
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(this.field15843 * 16 * this.field15843 * 16 * 3);

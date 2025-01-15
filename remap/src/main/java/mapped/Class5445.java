@@ -8,6 +8,8 @@ import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class5445 extends Class5419<Class824>
@@ -44,7 +46,7 @@ public class Class5445 extends Class5419<Class824>
                     break;
                 }
             }
-            final Class385 class1851 = new Class385(class1850);
+            final Mutable class1851 = new Mutable(class1850);
             this.field22672.clear();
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {

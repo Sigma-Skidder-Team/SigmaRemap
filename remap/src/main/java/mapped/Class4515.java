@@ -43,7 +43,7 @@ public abstract class Class4515 extends Class4473
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.field19919.method32849(class1853);
         this.field19849 = this.field19918.method19966(this.field19919, this.field19920);
         if (this.field19918.method19956(class1851, this.field19920, this.field19919, 2)) {
@@ -77,12 +77,12 @@ public abstract class Class4515 extends Class4473
         return true;
     }
     
-    public abstract void method13511(final String p0, final BlockPos p1, final Class1851 p2, final Random p3, final Class6997 p4);
+    public abstract void method13511(final String p0, final BlockPos p1, final Class1851 p2, final Random p3, final MutableBoundingBox p4);
     
     @Override
     public void method13454(final int n, final int n2, final int n3) {
         super.method13454(n, n2, n3);
-        this.field19920 = this.field19920.method1134(n, n2, n3);
+        this.field19920 = this.field19920.add(n, n2, n3);
     }
     
     @Override

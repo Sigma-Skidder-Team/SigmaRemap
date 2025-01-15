@@ -12,21 +12,21 @@ import java.util.List;
 public class Class3276 extends Class3167
 {
     public static Class755 field15771;
-    private List<Class4252<?>> field15772;
+    private List<IPacket<?>> field15772;
     private Vec3d field15773;
     public float field15774;
     public float field15775;
     
     public Class3276() {
         super(Class8013.field32985, "Blink", "Stops your packets to blink");
-        this.field15772 = new ArrayList<Class4252<?>>();
+        this.field15772 = new ArrayList<IPacket<?>>();
     }
     
     @Override
     public void method9879() {
-        this.field15773 = new Vec3d(Class3276.field15514.field4684.field2395, Class3276.field15514.field4684.field2396, Class3276.field15514.field4684.field2397);
-        this.field15774 = Class3276.field15514.field4684.field2399;
-        this.field15775 = Class3276.field15514.field4684.field2400;
+        this.field15773 = new Vec3d(Class3276.field15514.field4684.posX, Class3276.field15514.field4684.posY, Class3276.field15514.field4684.posZ);
+        this.field15774 = Class3276.field15514.field4684.rotationYaw;
+        this.field15775 = Class3276.field15514.field4684.rotationPitch;
         Class3276.field15771 = new Class755(Class3276.field15514.field4683, Class3276.field15514.field4684.method2844());
         Class3276.field15771.field3006 = Class3276.field15514.field4684.field3006;
         Class3276.field15771.method1728(this.field15773.x, this.field15773.y, this.field15773.z, this.field15774, this.field15775);

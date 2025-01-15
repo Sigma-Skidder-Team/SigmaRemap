@@ -24,7 +24,7 @@ public class Class5438 extends Class5419<Class824>
         if (class1849.field10062.nextInt(2) == 0) {
             this.field22646 = class1849.method6754();
             final Class363 class1851 = class1850.method2618().method1198(Class8233.field33801).get();
-            return Objects.equals(class1851.method1169(), class1849.method6789().method20487()) && class1851.method1170().withinDistance(class1850.method1934(), 1.73);
+            return Objects.equals(class1851.method1169(), class1849.method6789().getType()) && class1851.method1170().withinDistance(class1850.method1934(), 1.73);
         }
         return false;
     }

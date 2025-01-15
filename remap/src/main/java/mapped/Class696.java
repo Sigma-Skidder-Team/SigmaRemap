@@ -94,7 +94,7 @@ public class Class696 extends Class527
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
         this.field3830.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 8, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
         final int n4 = this.field3152 / 2 - 92 - 16;
         this.method3297(this.field3156, this.field3828, n4, 32, 16777215);
         this.method3297(this.field3156, this.field3829, n4 + 2 + 213 - this.field3156.method6617(this.field3829), 32, 16777215);

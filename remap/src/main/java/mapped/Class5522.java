@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.Iterator;
 
 public class Class5522 extends Class5515

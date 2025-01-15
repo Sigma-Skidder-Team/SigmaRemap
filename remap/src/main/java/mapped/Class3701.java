@@ -47,7 +47,7 @@ public class Class3701 implements Class3689
     @Nullable
     public static Path method11378(final Path path, final String str, final Path path2) {
         try {
-            final String string = Class8097.method26590(Files.newInputStream(path, new OpenOption[0])).method263("    ", 0).getString() + "\n";
+            final String string = Class8097.method26590(Files.newInputStream(path, new OpenOption[0])).toFormattedComponent("    ", 0).getString() + "\n";
             final Path resolve = path2.resolve(str + ".snbt");
             Files.createDirectories(resolve.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
             try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(resolve, new OpenOption[0])) {

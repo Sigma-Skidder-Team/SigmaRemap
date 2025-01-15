@@ -4,14 +4,11 @@
 
 package mapped;
 
-import com.mojang.datafixers.Typed;
-import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.Dynamic;
 import java.util.stream.Stream;
 import com.mojang.datafixers.types.Type;
 import java.util.Optional;
 import com.mojang.datafixers.DataFixUtils;
-import java.util.function.Function;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
@@ -36,6 +33,6 @@ public class Class9045 extends DataFix
     }
     
     private static String method32527(final String s) {
-        return Class5953.method17869(new Class2260(s));
+        return Class5953.method17869(new StringTextComponent(s));
     }
 }

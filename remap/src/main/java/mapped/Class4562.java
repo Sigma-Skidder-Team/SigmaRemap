@@ -77,13 +77,13 @@ public class Class4562 extends Class4535<Class5141>
                             b = false;
                         }
                         if (b) {
-                            final Class8059 method21697 = class1851.method6701(class1853.method1134(n11, n13, n12)).method21697();
+                            final Class8059 method21697 = class1851.method6701(class1853.add(n11, n13, n12)).method21697();
                             if (n13 >= 4 && method21697.method26438()) {
                                 return false;
                             }
                             if (n13 < 4) {
                                 if (!method21697.method26439()) {
-                                    if (class1851.method6701(class1853.method1134(n11, n13, n12)) != class1854.field22127) {
+                                    if (class1851.method6701(class1853.add(n11, n13, n12)) != class1854.field22127) {
                                         return false;
                                     }
                                 }
@@ -96,7 +96,7 @@ public class Class4562 extends Class4535<Class5141>
                 for (int n15 = 0; n15 < 16; ++n15) {
                     for (int n16 = 0; n16 < 8; ++n16) {
                         if (array[(n14 * 16 + n15) * 8 + n16]) {
-                            class1851.method6688(class1853.method1134(n14, n16, n15), (n16 < 4) ? class1854.field22127 : Class4562.field20040, 2);
+                            class1851.method6688(class1853.add(n14, n16, n15), (n16 < 4) ? class1854.field22127 : Class4562.field20040, 2);
                         }
                     }
                 }
@@ -105,9 +105,9 @@ public class Class4562 extends Class4535<Class5141>
                 for (int n18 = 0; n18 < 16; ++n18) {
                     for (int n19 = 4; n19 < 8; ++n19) {
                         if (array[(n17 * 16 + n18) * 8 + n19]) {
-                            final BlockPos method21698 = class1853.method1134(n17, n19 - 1, n18);
+                            final BlockPos method21698 = class1853.add(n17, n19 - 1, n18);
                             if (Class4535.method13533(class1851.method6701(method21698).method21696())) {
-                                if (class1851.method6992(Class237.field911, class1853.method1134(n17, n19, n18)) > 0) {
+                                if (class1851.method6992(Class237.field911, class1853.add(n17, n19, n18)) > 0) {
                                     if (class1851.method6959(method21698).method9872().method13338().method21696() != Class7521.field29392) {
                                         class1851.method6688(method21698, Class7521.field29155.method11878(), 2);
                                     }
@@ -152,8 +152,8 @@ public class Class4562 extends Class4535<Class5141>
                             }
                             if (b2) {
                                 if (n22 < 4 || random.nextInt(2) != 0) {
-                                    if (class1851.method6701(class1853.method1134(n20, n22, n21)).method21697().method26439()) {
-                                        class1851.method6688(class1853.method1134(n20, n22, n21), Class7521.field29148.method11878(), 2);
+                                    if (class1851.method6701(class1853.add(n20, n22, n21)).method21697().method26439()) {
+                                        class1851.method6688(class1853.add(n20, n22, n21), Class7521.field29148.method11878(), 2);
                                     }
                                 }
                             }
@@ -164,7 +164,7 @@ public class Class4562 extends Class4535<Class5141>
             if (class1854.field22127.method21697() == Class8059.field33161) {
                 for (int n23 = 0; n23 < 16; ++n23) {
                     for (int n24 = 0; n24 < 16; ++n24) {
-                        final BlockPos method21699 = class1853.method1134(n23, 4, n24);
+                        final BlockPos method21699 = class1853.add(n23, 4, n24);
                         if (class1851.method6959(method21699).method9847(class1851, method21699, false)) {
                             class1851.method6688(method21699, Class7521.field29330.method11878(), 2);
                         }

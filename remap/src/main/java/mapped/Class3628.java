@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.EnumSet;
 
@@ -16,14 +17,14 @@ public class Class3628 extends Class3446
     public final float field16860;
     private int field16861;
     public final float field16862;
-    public final Class<? extends Class511> field16863;
+    public final Class<? extends LivingEntity> field16863;
     public final Class7843 field16864;
     
-    public Class3628(final Class759 class759, final Class<? extends Class511> clazz, final float n) {
+    public Class3628(final Class759 class759, final Class<? extends LivingEntity> clazz, final float n) {
         this(class759, clazz, n, 0.02f);
     }
     
-    public Class3628(final Class759 field16858, final Class<? extends Class511> field16859, final float field16860, final float field16861) {
+    public Class3628(final Class759 field16858, final Class<? extends LivingEntity> field16859, final float field16860, final float field16861) {
         this.field16858 = field16858;
         this.field16863 = field16859;
         this.field16860 = field16860;
@@ -44,10 +45,10 @@ public class Class3628 extends Class3446
                 this.field16859 = this.field16858.method4152();
             }
             if (this.field16863 != Class512.class) {
-                this.field16859 = this.field16858.field2391.method7139((Class<? extends Entity>)this.field16863, this.field16864, (Class511)this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ(), this.field16858.method1886().method18495(this.field16860, 3.0, this.field16860));
+                this.field16859 = this.field16858.world.method7139((Class<? extends Entity>)this.field16863, this.field16864, (LivingEntity)this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ(), this.field16858.method1886().method18495(this.field16860, 3.0, this.field16860));
             }
             else {
-                this.field16859 = this.field16858.field2391.method7136(this.field16864, this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ());
+                this.field16859 = this.field16858.world.method7136(this.field16864, this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ());
             }
             return this.field16859 != null;
         }

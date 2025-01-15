@@ -5,11 +5,12 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
-public abstract class Class1820<T extends Class511, M extends Class5860<T>> extends Class1799<T, M>
+public abstract class Class1820<T extends LivingEntity, M extends Class5860<T>> extends Class1799<T, M>
 {
     public Class1820(final Class4710<T, M> class4710) {
         super(class4710);
@@ -21,7 +22,7 @@ public abstract class Class1820<T extends Class511, M extends Class5860<T>> exte
     
     public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final int method6585 = this.method6585(t);
-        final Random random = new Random(t.method1643());
+        final Random random = new Random(t.getEntityId());
         if (method6585 > 0) {
             for (int i = 0; i < method6585; ++i) {
                 class7351.method22567();

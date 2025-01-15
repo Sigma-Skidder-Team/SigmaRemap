@@ -112,8 +112,8 @@ public class Class364 implements IDynamicSerializable
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Records"), dynamicOps.createList((Stream)this.field2194.values().stream().map(class377 -> class377.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))), dynamicOps.createString("Valid"), dynamicOps.createBoolean(this.field2197)));
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Records"), dynamicOps.createList((Stream)this.field2194.values().stream().map(class377 -> class377.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))), dynamicOps.createString("Valid"), dynamicOps.createBoolean(this.field2197)));
     }
     
     public void method1181(final Consumer<BiConsumer<BlockPos, Class8912>> consumer) {

@@ -38,7 +38,7 @@ public class Class8000
         return "CriterionProgress{obtained=" + ((this.field32951 != null) ? this.field32951 : "false") + '}';
     }
     
-    public void method26171(final Class8654 class8654) {
+    public void method26171(final PacketBuffer class8654) {
         class8654.writeBoolean(this.field32951 != null);
         if (this.field32951 != null) {
             class8654.method29519(this.field32951);
@@ -49,7 +49,7 @@ public class Class8000
         return (JsonElement)((this.field32951 == null) ? JsonNull.INSTANCE : new JsonPrimitive(Class8000.field32950.format(this.field32951)));
     }
     
-    public static Class8000 method26173(final Class8654 class8654) {
+    public static Class8000 method26173(final PacketBuffer class8654) {
         final Class8000 class8655 = new Class8000();
         if (class8654.readBoolean()) {
             class8655.field32951 = class8654.method29518();

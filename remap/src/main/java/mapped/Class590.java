@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;

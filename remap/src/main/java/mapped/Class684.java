@@ -68,12 +68,12 @@ public class Class684 extends Class565
                             if (n7 > 3) {
                                 final int n9 = -n4 * 9;
                                 if (this.field3742.field4648.field23528 == 5) {
-                                    method3775 = this.field3742.field4643.method6617(class8693.method29803().method8461()) - 2;
+                                    method3775 = this.field3742.field4643.method6617(class8693.method29803().getFormattedText()) - 2;
                                 }
                                 if (this.field3742.field4648.field23528 != 3) {
                                     Class565.method3294(method3776, -2, n9 - 9, 0 + method3775 + 4, n9, n8 << 24);
                                 }
-                                final String method3777 = class8693.method29803().method8461();
+                                final String method3777 = class8693.method29803().getFormattedText();
                                 Class8726.method30011();
                                 if (this.field3742.field4648.field23529) {
                                     this.field3742.field4643.method6609(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
@@ -214,10 +214,10 @@ public class Class684 extends Class565
                                 final Class8693 class8693 = this.field3745.get(n7);
                                 int n8 = 0;
                                 for (final ITextComponent class8694 : class8693.method29803()) {
-                                    if (!(class8694 instanceof Class2260)) {
+                                    if (!(class8694 instanceof StringTextComponent)) {
                                         continue;
                                     }
-                                    n8 += this.field3742.field4643.method6617(Class8936.method31696(((Class2260)class8694).method8498(), false));
+                                    n8 += this.field3742.field4643.method6617(Class8936.method31696(((StringTextComponent)class8694).getText(), false));
                                     if (n8 <= n5) {
                                         continue;
                                     }

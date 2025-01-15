@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -27,7 +28,7 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public void method22150(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22150(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
         if (!class1849.method21780() && !class1849.method21772((Class7111<Boolean>)Class7258.field28132)) {
             if (random.nextInt(64) == 0) {
                 class1847.method6708(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5, Class8520.field35710, Class286.field1582, random.nextFloat() * 0.25f + 0.75f, random.nextFloat() + 0.5f, false);

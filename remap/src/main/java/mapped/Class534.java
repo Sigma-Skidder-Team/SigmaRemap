@@ -103,7 +103,7 @@ public class Class534 extends Class527
     public void method2975(final int n, final int n2, final float n3) {
         this.method3043(0);
         this.field3187.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 8, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
         this.method3295(this.field3156, Class8822.method30773("createWorld.customize.buffet.generator", new Object[0]), this.field3152 / 2, 30, 10526880);
         this.method3295(this.field3156, Class8822.method30773("createWorld.customize.buffet.biome", new Object[0]), this.field3152 / 2, 68, 10526880);
         super.method2975(n, n2, n3);

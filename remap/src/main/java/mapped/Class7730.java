@@ -20,14 +20,14 @@ public class Class7730 extends Class7727
     public void method24665() {
         if (!this.field30735) {
             if (this.field30732.method4150().method24731()) {
-                this.field30732.field2400 = this.method24677(this.field30732.field2400, 0.0f, 5.0f);
+                this.field30732.rotationPitch = this.method24677(this.field30732.rotationPitch, 0.0f, 5.0f);
             }
             this.field30732.field2953 = this.method24677(this.field30732.field2953, this.field30732.field2951, this.field30733);
         }
         else {
             this.field30735 = false;
             this.field30732.field2953 = this.method24677(this.field30732.field2953, this.method24676() + 20.0f, this.field30733);
-            this.field30732.field2400 = this.method24677(this.field30732.field2400, this.method24675() + 10.0f, this.field30734);
+            this.field30732.rotationPitch = this.method24677(this.field30732.rotationPitch, this.method24675() + 10.0f, this.field30734);
         }
         final float method35668 = MathHelper.method35668(this.field30732.field2953 - this.field30732.field2951);
         if (method35668 >= -this.field30742) {

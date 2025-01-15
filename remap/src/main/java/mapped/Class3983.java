@@ -6,7 +6,10 @@ package mapped;
 
 import java.util.Random;
 import com.google.common.base.MoreObjects;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -27,7 +30,7 @@ public class Class3983 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8528.field35802[class7096.method21772((Class7111<Direction>)Class3983.field17983).ordinal()]) {
             default: {
                 return Class3983.field17989;
@@ -68,7 +71,7 @@ public class Class3983 extends Class3833
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         Class7096 class7075 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3983.field17984, false)).method21773((Class7111<Comparable>)Class3983.field17985, false);
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         for (final Direction class7076 : class7074.method21643()) {
             if (class7076.getAxis().isHorizontal()) {
@@ -82,11 +85,11 @@ public class Class3983 extends Class3833
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         this.method12126(class1847, class1848, class1849, false, false, -1, null);
     }
     
-    public void method12126(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final boolean b, final boolean b2, final int n, final Class7096 class1850) {
+    public void method12126(final World class1847, final BlockPos class1848, final Class7096 class1849, final boolean b, final boolean b2, final int n, final Class7096 class1850) {
         final Direction class1851 = class1849.method21772((Class7111<Direction>)Class3983.field17983);
         final boolean booleanValue = class1849.method21772((Class7111<Boolean>)Class3983.field17985);
         final boolean booleanValue2 = class1849.method21772((Class7111<Boolean>)Class3983.field17984);
@@ -159,7 +162,7 @@ public class Class3983 extends Class3833
         this.method12126(class7097, class7098, class7096, false, true, -1, null);
     }
     
-    private void method12127(final Class1847 class1847, final BlockPos class1848, final boolean b, final boolean b2, final boolean b3, final boolean b4) {
+    private void method12127(final World class1847, final BlockPos class1848, final boolean b, final boolean b2, final boolean b3, final boolean b4) {
         if (b2 && !b4) {
             class1847.method6705(null, class1848, Class8520.field35644, Class286.field1582, 0.4f, 0.6f);
         }
@@ -176,13 +179,13 @@ public class Class3983 extends Class3833
         }
     }
     
-    private void method12128(final Class1847 class1847, final BlockPos class1848, final Direction class1849) {
+    private void method12128(final World class1847, final BlockPos class1848, final Direction class1849) {
         class1847.method6696(class1848, this);
         class1847.method6696(class1848.method1149(class1849.getOpposite()), this);
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!b) {
             if (class7096.method21696() != class7099.method21696()) {
                 final boolean booleanValue = class7096.method21772((Class7111<Boolean>)Class3983.field17985);

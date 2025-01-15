@@ -5,8 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.List;
@@ -26,7 +28,7 @@ public final class Class8532
         final int method7441 = method7439.getY();
         final int method7442 = method7439.getZ();
         if (method7441 >= 1 && !class1978.method6701(method7439).method21713(class1978, method7439)) {
-            final Class385 class1980 = new Class385();
+            final Mutable class1980 = new Mutable();
             for (int i = 0; i < 3; ++i) {
                 int n2 = method7440;
                 int n3 = method7442;
@@ -37,7 +39,7 @@ public final class Class8532
                 for (int j = 0; j < method7445; ++j) {
                     n2 += class1977.field10062.nextInt(6) - class1977.field10062.nextInt(6);
                     n3 += class1977.field10062.nextInt(6) - class1977.field10062.nextInt(6);
-                    class1980.method1284(n2, method7441, n3);
+                    class1980.setPos(n2, method7441, n3);
                     final float n5 = n2 + 0.5f;
                     final float n6 = n3 + 0.5f;
                     final Class512 method7446 = class1977.method7133(n5, n6, -1.0);
@@ -114,7 +116,7 @@ public final class Class8532
         return !method18866.isEmpty() && method18866.contains(class6348);
     }
     
-    private static BlockPos method28619(final Class1847 class1847, final Class1862 class1848) {
+    private static BlockPos method28619(final World class1847, final Class1862 class1848) {
         final Class7859 method7019 = class1848.method7019();
         final int n = method7019.method25426() + class1847.field10062.nextInt(16);
         final int n2 = method7019.method25427() + class1847.field10062.nextInt(16);

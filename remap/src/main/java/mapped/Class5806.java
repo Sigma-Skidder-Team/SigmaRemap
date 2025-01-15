@@ -10,9 +10,9 @@ public class Class5806 implements Class5804
 {
     private static String[] field23835;
     private final Class394 field23836;
-    private final Class3641 field23837;
+    private final NetworkManager field23837;
     
-    public Class5806(final Class394 field23836, final Class3641 field23837) {
+    public Class5806(final Class394 field23836, final NetworkManager field23837) {
         this.field23836 = field23836;
         this.field23837 = field23837;
     }
@@ -24,11 +24,11 @@ public class Class5806 implements Class5804
     }
     
     @Override
-    public void method17291(final ITextComponent class2250) {
+    public void onDisconnect(final ITextComponent class2250) {
     }
     
     @Override
-    public Class3641 method17369() {
+    public NetworkManager getNetworkManager() {
         return this.field23837;
     }
 }

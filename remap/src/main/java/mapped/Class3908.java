@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -24,7 +26,7 @@ public class Class3908 extends Class3833 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
         return Class3908.field17714.method24541(method21732.x, method21732.y, method21732.z);
     }
@@ -69,7 +71,7 @@ public class Class3908 extends Class3833 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
@@ -83,7 +85,7 @@ public class Class3908 extends Class3833 implements Class3872
         return (class7097.method2713().method27622() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
     }
     
-    public void method12014(final Class1847 class1847, final BlockPos class1848) {
+    public void method12014(final World class1847, final BlockPos class1848) {
         class1847.method6688(class1848.method1137(), ((Class7097<O, Class7096>)Class7521.field29761.method11878()).method21773(Class3913.field17724, Class184.field575), 3);
     }
     

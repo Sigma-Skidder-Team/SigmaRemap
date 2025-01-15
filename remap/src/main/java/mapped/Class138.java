@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 
 import java.util.Set;
 
@@ -33,8 +35,8 @@ public class Class138 extends Class126
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         final Entity class8323 = class8322.method23579(Class6683.field26365);
-        if (class8323 instanceof Class511) {
-            final int method30214 = Class8742.method30214((Class511)class8323);
+        if (class8323 instanceof LivingEntity) {
+            final int method30214 = Class8742.method30214((LivingEntity)class8323);
             if (method30214 == 0) {
                 return class8321;
             }

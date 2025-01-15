@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -18,7 +19,7 @@ public class Class4022 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4022.field18108;
     }
     
@@ -33,7 +34,7 @@ public class Class4022 extends Class3833
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         final double n = class7098.getX() + 0.5;
         final double n2 = class7098.getY() + 0.7;
         final double n3 = class7098.getZ() + 0.5;

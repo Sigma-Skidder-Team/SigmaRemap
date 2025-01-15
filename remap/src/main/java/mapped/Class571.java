@@ -29,7 +29,7 @@ public class Class571 extends Class565
                 Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                 this.field3400.method5290().method5849(Class571.field3399);
                 this.method3331(n2, n, class6881);
-                final String method7697 = class6881.method21076().method8461();
+                final String method7697 = class6881.method21076().getFormattedText();
                 this.field3400.field4643.method6609(method7697, (float)(method7696 / 2 - this.field3400.field4643.method6617(method7697) / 2), (float)(n - 9), 16777215);
                 n += 19;
                 if (n < this.field3400.method5332().method7697() / 3) {

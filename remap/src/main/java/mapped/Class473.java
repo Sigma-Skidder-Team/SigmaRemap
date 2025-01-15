@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.Iterator;
 
 public class Class473 implements Class446, Class472

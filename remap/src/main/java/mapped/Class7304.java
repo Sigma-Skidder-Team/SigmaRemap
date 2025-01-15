@@ -62,9 +62,9 @@ public abstract class Class7304<C extends Class5118>
                         final int min3 = Math.min(MathHelper.floor(n7 + n8) - n4 * 16 + 1, 16);
                         if (!this.method22409(class1860, n3, n4, max, min, max2, min2, max3, min3)) {
                             boolean b = false;
-                            final Class385 class1861 = new Class385();
-                            final Class385 class1862 = new Class385();
-                            final Class385 class1863 = new Class385();
+                            final Mutable class1861 = new Mutable();
+                            final Mutable class1862 = new Mutable();
+                            final Mutable class1863 = new Mutable();
                             for (int i = max; i < min; ++i) {
                                 final int n12 = i + n3 * 16;
                                 final double n13 = (n12 + 0.5 - n5) / n8;
@@ -91,13 +91,13 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Class385 class1861, final Class385 class1862, final Class385 class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         final int n9 = n6 | n8 << 4 | n7 << 8;
         if (set.get(n9)) {
             return false;
         }
         set.set(n9);
-        class1861.method1284(n4, n7, n5);
+        class1861.setPos(n4, n7, n5);
         final Class7096 method6701 = class1860.method6701(class1861);
         final Class7096 method6702 = class1860.method6701(class1862.method1287(class1861).method1290(Direction.UP));
         if (method6701.method21696() == Class7521.field29155 || method6701.method21696() == Class7521.field29392) {
@@ -143,11 +143,11 @@ public abstract class Class7304<C extends Class5118>
     }
     
     public boolean method22409(final Class1860 class1860, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
-        final Class385 class1861 = new Class385();
+        final Mutable class1861 = new Mutable();
         for (int i = n3; i < n4; ++i) {
             for (int j = n7; j < n8; ++j) {
                 for (int k = n5 - 1; k <= n6 + 1; ++k) {
-                    if (this.field28286.contains(class1860.method6702(class1861.method1284(i + n * 16, k, j + n2 * 16)).method21779())) {
+                    if (this.field28286.contains(class1860.method6702(class1861.setPos(i + n * 16, k, j + n2 * 16)).method21779())) {
                         return true;
                     }
                     if (k != n6 + 1) {

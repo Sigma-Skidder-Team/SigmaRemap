@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -34,7 +35,7 @@ public class Class7816 extends Class7814
     
     @Class6753
     private void method25251(final Class5743 class5743) {
-        if (Class7816.field32015.field4684.field2424 < 10) {
+        if (Class7816.field32015.field4684.ticksExisted < 10) {
             this.field32022.clear();
         }
         for (final Class512 class5744 : Class6430.method19108()) {
@@ -44,13 +45,13 @@ public class Class7816 extends Class7814
                         if (Class6430.method19160(class5744, 0.01f)) {
                             if (!class5744.method1823()) {
                                 if (class5744.method1732(Class7816.field32015.field4684) <= 5.0f) {
-                                    if (class5744.field2395 != class5744.field2417) {
+                                    if (class5744.posX != class5744.lastTickPosX) {
                                         break Label_0079;
                                     }
-                                    if (class5744.field2397 != class5744.field2419) {
+                                    if (class5744.posZ != class5744.lastTickPosZ) {
                                         break Label_0079;
                                     }
-                                    if (class5744.field2396 != class5744.field2418) {
+                                    if (class5744.posY != class5744.lastTickPosY) {
                                         break Label_0079;
                                     }
                                 }
@@ -71,17 +72,17 @@ public class Class7816 extends Class7814
     @Class6753
     private void method25252(final Class5723 class5723) {
         if (Class7816.field32015.field4684 != null && this.field32022 != null) {
-            if (Class7816.field32015.field4684.field2424 < 10) {
+            if (Class7816.field32015.field4684.ticksExisted < 10) {
                 this.field32022.clear();
             }
             if (class5723.method16998() instanceof Class4372) {
                 final Class4372 class5724 = (Class4372)class5723.method16998();
-                if (!(class5724.method13142(Class7816.field32015.field4683) instanceof Class512)) {
+                if (!(class5724.getEntity(Class7816.field32015.field4683) instanceof Class512)) {
                     return;
                 }
-                final Entity method13142 = class5724.method13142(Class7816.field32015.field4683);
+                final Entity method13142 = class5724.getEntity(Class7816.field32015.field4683);
                 final boolean method13143 = Class6430.method19160(method13142, 0.5f);
-                final short method13144 = class5724.method13144();
+                final short method13144 = class5724.getY();
                 if (!this.field32023.containsKey(method13142)) {
                     this.field32023.put(method13142, new ArrayList<Integer>());
                 }
@@ -142,7 +143,7 @@ public class Class7816 extends Class7814
     
     public boolean method25255(final Entity class399) {
         if (!Class7816.field32015.field4683.method6701(class399.method1894()).method21723()) {
-            final AxisAlignedBB class400 = new AxisAlignedBB(class399.field2403.field25073, class399.field2403.field25074 - 0.5, class399.field2403.field25075, class399.field2403.field25076, class399.field2403.field25077, class399.field2403.field25078);
+            final AxisAlignedBB class400 = new AxisAlignedBB(class399.boundingBox.field25073, class399.boundingBox.field25074 - 0.5, class399.boundingBox.field25075, class399.boundingBox.field25076, class399.boundingBox.field25077, class399.boundingBox.field25078);
             for (final BlockPos class401 : method25256(class399)) {
                 final Class7702 method21725 = Class7816.field32015.field4683.method6701(class401).method21725(Class7816.field32015.field4683, class401);
                 if (!method21725.method24540() && class400.method18502(method21725.method24537().method18500(class401))) {
@@ -159,7 +160,7 @@ public class Class7816 extends Class7814
         final int n = 1;
         for (float n2 = (float)(-n); n2 <= n; ++n2) {
             for (float n3 = (float)(-n); n3 <= n; ++n3) {
-                list.add(new BlockPos(class399.field2395 + n2, class399.field2396 - 1.0, class399.field2397 + n3));
+                list.add(new BlockPos(class399.posX + n2, class399.posY - 1.0, class399.posZ + n3));
             }
         }
         return list;

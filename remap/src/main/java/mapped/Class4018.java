@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -33,7 +35,7 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.field10067) {
             if (!class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
                 this.method12206(class7097, class7098, class7096);
@@ -61,7 +63,7 @@ public class Class4018 extends Class4017
         return 0;
     }
     
-    private void method12206(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    private void method12206(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final boolean booleanValue = class1849.method21772((Class7111<Boolean>)Class4018.field18098);
         boolean b = false;
         if (!this.method12208(class1847, class1848, Class428.class, null).isEmpty()) {
@@ -93,7 +95,7 @@ public class Class4018 extends Class4017
         class1847.method6783(class1848, this);
     }
     
-    public void method12207(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
+    public void method12207(final World class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
         for (final BlockPos class1850 : new Class8354(class1847, class1848, class1849).method27877()) {
             final Class7096 method6701 = class1847.method6701(class1850);
             method6701.method21734(class1847, class1850, method6701.method21696(), class1848, false);
@@ -101,7 +103,7 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
             super.method11828(class7096, class7097, class7098, class7099, b);
             this.method12206(class7097, class7098, class7096);
@@ -119,7 +121,7 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         if (class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
             final List<Class429> method12208 = this.method12208(class7097, class7098, Class429.class, null);
             if (!method12208.isEmpty()) {
@@ -133,7 +135,7 @@ public class Class4018 extends Class4017
         return 0;
     }
     
-    public <T extends Class428> List<T> method12208(final Class1847 class1847, final BlockPos class1848, final Class<T> clazz, final Predicate<Entity> predicate) {
+    public <T extends Class428> List<T> method12208(final World class1847, final BlockPos class1848, final Class<T> clazz, final Predicate<Entity> predicate) {
         return class1847.method6739((Class<? extends T>)clazz, this.method12209(class1848), (Predicate<? super T>)predicate);
     }
     

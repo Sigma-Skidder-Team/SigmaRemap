@@ -51,7 +51,7 @@ public abstract class Class3479 extends Class3446
     public boolean method11017() {
         if (this.field16393 >= -this.field16394) {
             if (this.field16393 <= 1200) {
-                if (this.method11050(this.field16390.field2391, this.field16395)) {
+                if (this.method11050(this.field16390.world, this.field16395)) {
                     return true;
                 }
             }
@@ -101,13 +101,13 @@ public abstract class Class3479 extends Class3446
         final int field16397 = this.field16397;
         final int field16398 = this.field16398;
         final BlockPos class354 = new BlockPos(this.field16390);
-        final Class385 field16399 = new Class385();
+        final Mutable field16399 = new Mutable();
         for (int i = this.field16399; i <= field16398; i = ((i <= 0) ? (1 - i) : (-i))) {
             for (int j = 0; j < field16397; ++j) {
                 for (int k = 0; k <= j; k = ((k <= 0) ? (1 - k) : (-k))) {
                     for (int l = (k < j && k > -j) ? j : 0; l <= j; l = ((l <= 0) ? (1 - l) : (-l))) {
                         field16399.method1287(class354).method1292(k, i - 1, l);
-                        if (this.field16390.method4197(field16399) && this.method11050(this.field16390.field2391, field16399)) {
+                        if (this.field16390.method4197(field16399) && this.method11050(this.field16390.world, field16399)) {
                             this.field16395 = field16399;
                             return true;
                         }

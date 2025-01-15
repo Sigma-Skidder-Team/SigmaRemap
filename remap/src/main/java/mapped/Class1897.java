@@ -73,7 +73,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     public abstract int method7351(final long p0);
     
     public int method7352(final long n) {
-        return this.method7348(Class353.method1111(n), true).method22322(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)));
+        return this.method7348(Class353.method1111(n), true).method22322(Class353.method1096(BlockPos.unpackX(n)), Class353.method1096(BlockPos.unpackY(n)), Class353.method1096(BlockPos.unpackZ(n)));
     }
     
     public void method7353(final long n, final int n2) {
@@ -81,11 +81,11 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
         if (this.field10307.add(method1111)) {
             this.field10306.method23394(method1111);
         }
-        this.method7348(method1111, true).method22323(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)), n2);
+        this.method7348(method1111, true).method22323(Class353.method1096(BlockPos.unpackX(n)), Class353.method1096(BlockPos.unpackY(n)), Class353.method1096(BlockPos.unpackZ(n)), n2);
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
-                    this.field10308.add(Class353.method1111(BlockPos.method1125(n, j, k, i)));
+                    this.field10308.add(Class353.method1111(BlockPos.offset(n, j, k, i)));
                 }
             }
         }
@@ -134,7 +134,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             for (int k = -1; k <= 1; ++k) {
-                                this.field10308.add(Class353.method1111(BlockPos.method1125(n, j, k, i)));
+                                this.field10308.add(Class353.method1111(BlockPos.offset(n, j, k, i)));
                             }
                         }
                     }

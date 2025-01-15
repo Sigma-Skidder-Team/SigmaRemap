@@ -5,9 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
@@ -107,7 +109,7 @@ public class Class8245
                             method6701.method21745(this.field33863.field4683, field33865, this.field33863.field4684);
                         }
                     }
-                    if (b && method6701.method21719(this.field33863.field4684, this.field33863.field4684.field2391, field33865) >= 1.0f) {
+                    if (b && method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, field33865) >= 1.0f) {
                         this.method27311(field33865);
                     }
                     else {
@@ -116,7 +118,7 @@ public class Class8245
                         this.field33866 = this.field33863.field4684.method2713();
                         this.field33867 = 0.0f;
                         this.field33868 = 0.0f;
-                        this.field33863.field4683.method6780(this.field33863.field4684.method1643(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
+                        this.field33863.field4683.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
                     }
                 }
             }
@@ -137,7 +139,7 @@ public class Class8245
             this.method27339(Class2003.field11241, this.field33865, Direction.DOWN);
             this.field33870 = false;
             this.field33867 = 0.0f;
-            this.field33863.field4683.method6780(this.field33863.field4684.method1643(), this.field33865, -1);
+            this.field33863.field4683.method6780(this.field33863.field4684.getEntityId(), this.field33865, -1);
             this.field33863.field4684.method2905();
         }
     }
@@ -160,7 +162,7 @@ public class Class8245
         }
         final Class7096 method6701 = this.field33863.field4683.method6701(class354);
         if (!method6701.method21706()) {
-            this.field33867 += method6701.method21719(this.field33863.field4684, this.field33863.field4684.field2391, class354);
+            this.field33867 += method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, class354);
             if (this.field33868 % 4.0f == 0.0f) {
                 final Class7696 method6702 = method6701.method21759();
                 this.field33863.method5299().method6422(new Class6836(method6702.method24482(), Class286.field1582, (method6702.method24477() + 1.0f) / 8.0f, method6702.method24478() * 0.5f, class354));
@@ -175,7 +177,7 @@ public class Class8245
                 this.field33868 = 0.0f;
                 this.field33869 = 5;
             }
-            this.field33863.field4683.method6780(this.field33863.field4684.method1643(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
+            this.field33863.field4683.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
             return true;
         }
         return this.field33870 = false;
@@ -187,11 +189,11 @@ public class Class8245
     
     public void method27316() {
         this.method27318();
-        if (!this.field33864.method17369().method11187()) {
-            this.field33864.method17369().method11193();
+        if (!this.field33864.getNetworkManager().method11187()) {
+            this.field33864.getNetworkManager().method11193();
         }
         else {
-            this.field33864.method17369().method11179();
+            this.field33864.getNetworkManager().method11179();
         }
     }
     
@@ -262,7 +264,7 @@ public class Class8245
         return Class2201.field13402;
     }
     
-    public Class2201 method27320(final Class512 class512, final Class1847 class513, final Class316 class514) {
+    public Class2201 method27320(final Class512 class512, final World class513, final Class316 class514) {
         if (this.field33871 == Class101.field301) {
             return Class2201.field13402;
         }
@@ -356,7 +358,7 @@ public class Class8245
     }
     
     public boolean method27334() {
-        return this.field33863.field4684.method1805() && this.field33863.field4684.method1920() instanceof Class806;
+        return this.field33863.field4684.isPassenger() && this.field33863.field4684.method1920() instanceof Class806;
     }
     
     public boolean method27335() {
@@ -377,7 +379,7 @@ public class Class8245
     
     public void method27339(final Class2003 class2003, final BlockPos class2004, final Direction class2005) {
         final Class756 field4684 = this.field33863.field4684;
-        this.field33872.put((Object)Pair.of((Object)class2004, (Object)class2003), (Object)new Class8104(field4684.method1934(), field4684.field2400, field4684.field2399));
+        this.field33872.put((Object)Pair.of((Object)class2004, (Object)class2003), (Object)new Class8104(field4684.method1934(), field4684.rotationPitch, field4684.rotationYaw));
         this.field33864.method17292(new Class4399(class2003, class2004, class2005));
     }
     

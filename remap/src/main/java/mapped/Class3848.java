@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class3848 extends Class3846
 {
@@ -17,7 +19,7 @@ public class Class3848 extends Class3846
     }
     
     private static boolean method11902(final Entity class399) {
-        if (!(class399 instanceof Class511)) {
+        if (!(class399 instanceof LivingEntity)) {
             if (!(class399 instanceof Class428)) {
                 if (!(class399 instanceof Class510)) {
                     if (!(class399 instanceof Class423)) {
@@ -30,12 +32,12 @@ public class Class3848 extends Class3846
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3848.field17457;
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         class1849.method1695(Class8520.field35269, 1.0f, 1.0f);
         if (!class1847.field10067) {
             class1847.method6761(class1849, (byte)54);
@@ -46,7 +48,7 @@ public class Class3848 extends Class3846
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (this.method11903(class7098, class7099)) {
             this.method11904(class7099, class7098);
             this.method11905(class7099);
@@ -56,13 +58,13 @@ public class Class3848 extends Class3846
     }
     
     private boolean method11903(final BlockPos class354, final Entity class355) {
-        if (class355.field2404) {
+        if (class355.onGround) {
             return false;
         }
         if (class355.getPosY() > class354.getY() + 0.9375 - 1.0E-7) {
             return false;
         }
-        if (class355.method1935().y < -0.08) {
+        if (class355.getMotion().y < -0.08) {
             final double abs = Math.abs(class354.getX() + 0.5 - class355.getPosX());
             final double abs2 = Math.abs(class354.getZ() + 0.5 - class355.getPosZ());
             final double n = 0.4375 + class355.method1930() / 2.0f;
@@ -73,14 +75,14 @@ public class Class3848 extends Class3846
     
     private void method11904(final Entity class399, final BlockPos class400) {
         if (class399 instanceof Class513) {
-            if (class399.field2391.method6754() % 20L == 0L) {
-                Class7770.field31811.method13782((Class513)class399, class399.field2391.method6701(class400));
+            if (class399.world.method6754() % 20L == 0L) {
+                Class7770.field31811.method13782((Class513)class399, class399.world.method6701(class400));
             }
         }
     }
     
     private void method11905(final Entity class399) {
-        final Vec3d method1935 = class399.method1935();
+        final Vec3d method1935 = class399.getMotion();
         if (method1935.y >= -0.13) {
             class399.method1936(new Vec3d(method1935.x, -0.05, method1935.z));
         }
@@ -88,10 +90,10 @@ public class Class3848 extends Class3846
             final double n = -0.05 / method1935.y;
             class399.method1936(new Vec3d(method1935.x * n, -0.05, method1935.z * n));
         }
-        class399.field2414 = 0.0f;
+        class399.fallDistance = 0.0f;
     }
     
-    private void method11906(final Class1847 class1847, final Entity class1848) {
+    private void method11906(final World class1847, final Entity class1848) {
         if (method11902(class1848)) {
             if (class1847.field10062.nextInt(5) == 0) {
                 class1848.method1695(Class8520.field35269, 1.0f, 1.0f);
@@ -113,10 +115,10 @@ public class Class3848 extends Class3846
     }
     
     private static void method11909(final Entity class399, final int n) {
-        if (class399.field2391.field10067) {
+        if (class399.world.field10067) {
             final Class7096 method11878 = Class7521.field29825.method11878();
             for (int i = 0; i < n; ++i) {
-                class399.field2391.method6709(new Class6911(Class8432.field34600, method11878), class399.getPosX(), class399.getPosY(), class399.getPosZ(), 0.0, 0.0, 0.0);
+                class399.world.method6709(new Class6911(Class8432.field34600, method11878), class399.getPosX(), class399.getPosY(), class399.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

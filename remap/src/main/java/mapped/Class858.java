@@ -5,25 +5,30 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class Class858 extends Entity
 {
-    private static final Class8810<Optional<BlockPos>> field4590;
-    private static final Class8810<Boolean> field4591;
+    private static final DataParameter<Optional<BlockPos>> field4590;
+    private static final DataParameter<Boolean> field4591;
     public int field4592;
     
-    public Class858(final EntityType<? extends Class858> class7499, final Class1847 class7500) {
+    public Class858(final EntityType<? extends Class858> class7499, final World class7500) {
         super(class7499, class7500);
         this.preventEntitySpawning = true;
-        this.field4592 = this.field2423.nextInt(100000);
+        this.field4592 = this.rand.nextInt(100000);
     }
     
-    public Class858(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class858(final World class1847, final double n, final double n2, final double n3) {
         this(EntityType.field28975, class1847);
-        this.method1656(n, n2, n3);
+        this.setPosition(n, n2, n3);
     }
     
     @Override
@@ -33,18 +38,18 @@ public class Class858 extends Entity
     
     @Override
     public void method1649() {
-        this.method1650().method33565(Class858.field4590, Optional.empty());
-        this.method1650().method33565(Class858.field4591, true);
+        this.method1650().register(Class858.field4590, Optional.empty());
+        this.method1650().register(Class858.field4591, true);
     }
     
     @Override
     public void method1659() {
         ++this.field4592;
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             final BlockPos class354 = new BlockPos(this);
-            if (this.field2391.field10063 instanceof Class6738) {
-                if (this.field2391.method6701(class354).method21706()) {
-                    this.field2391.method6692(class354, Class7521.field29289.method11878());
+            if (this.world.dimension instanceof Class6738) {
+                if (this.world.method6701(class354).method21706()) {
+                    this.world.method6692(class354, Class7521.field29289.method11878());
                 }
             }
         }
@@ -74,16 +79,16 @@ public class Class858 extends Entity
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (this.method1849(class7929)) {
             return false;
         }
         if (!(class7929.method25714() instanceof Class852)) {
-            if (!this.field2410) {
-                if (!this.field2391.field10067) {
+            if (!this.removed) {
+                if (!this.world.field10067) {
                     this.method1652();
                     if (!class7929.method25707()) {
-                        this.field2391.method6722(null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0f, Class2196.field13367);
+                        this.world.method6722(null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0f, Class2196.field13367);
                     }
                     this.method5181(class7929);
                 }
@@ -95,13 +100,13 @@ public class Class858 extends Entity
     
     @Override
     public void method1648() {
-        this.method5181(Class7929.field32575);
+        this.method5181(DamageSource.field32575);
         super.method1648();
     }
     
-    private void method5181(final Class7929 class7929) {
-        if (this.field2391.field10063 instanceof Class6738) {
-            final Class8619 method20509 = ((Class6738)this.field2391.field10063).method20509();
+    private void method5181(final DamageSource class7929) {
+        if (this.world.dimension instanceof Class6738) {
+            final Class8619 method20509 = ((Class6738)this.world.dimension).method20509();
             if (method20509 != null) {
                 method20509.method29251(this, class7929);
             }
@@ -109,20 +114,20 @@ public class Class858 extends Entity
     }
     
     public void method5182(final BlockPos value) {
-        this.method1650().method33569(Class858.field4590, Optional.ofNullable(value));
+        this.method1650().set(Class858.field4590, Optional.ofNullable(value));
     }
     
     @Nullable
     public BlockPos method5183() {
-        return this.method1650().method33568(Class858.field4590).orElse(null);
+        return this.method1650().get(Class858.field4590).orElse(null);
     }
     
     public void method5184(final boolean b) {
-        this.method1650().method33569(Class858.field4591, b);
+        this.method1650().set(Class858.field4591, b);
     }
     
     public boolean method5185() {
-        return this.method1650().method33568(Class858.field4591);
+        return this.method1650().get(Class858.field4591);
     }
     
     @Override
@@ -131,12 +136,12 @@ public class Class858 extends Entity
     }
     
     @Override
-    public Class4252<?> method1932() {
+    public IPacket<?> method1932() {
         return new Class4339(this);
     }
     
     static {
-        field4590 = Class9184.method33564(Class858.class, Class7709.field30665);
-        field4591 = Class9184.method33564(Class858.class, Class7709.field30661);
+        field4590 = EntityDataManager.method33564(Class858.class, Class7709.field30665);
+        field4591 = EntityDataManager.method33564(Class858.class, Class7709.field30661);
     }
 }

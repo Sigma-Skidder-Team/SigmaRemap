@@ -4,20 +4,22 @@
 
 package mapped;
 
+import net.minecraft.network.datasync.DataParameter;
+
 public class Class9369<T>
 {
     private static String[] field40177;
-    private final Class8810<T> field40178;
+    private final DataParameter<T> field40178;
     private T field40179;
     private boolean field40180;
     
-    public Class9369(final Class8810<T> field40178, final T field40179) {
+    public Class9369(final DataParameter<T> field40178, final T field40179) {
         this.field40178 = field40178;
         this.field40179 = field40179;
         this.field40180 = true;
     }
     
-    public Class8810<T> method34766() {
+    public DataParameter<T> method34766() {
         return this.field40178;
     }
     

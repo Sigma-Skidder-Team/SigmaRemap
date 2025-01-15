@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class8276
 {
     public static final Class2248<Class3833> field33979;

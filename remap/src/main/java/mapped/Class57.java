@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.AbstractList;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -35,7 +37,7 @@ public class Class57 extends ArrayList<Class9017>
         return null;
     }
     
-    public void method360(final Class8654 class8654) {
+    public void method360(final PacketBuffer class8654) {
         class8654.writeByte((byte)(this.size() & 0xFF));
         for (int i = 0; i < this.size(); ++i) {
             final Class9017 class8655 = this.get(i);
@@ -56,7 +58,7 @@ public class Class57 extends ArrayList<Class9017>
         }
     }
     
-    public static Class57 method361(final Class8654 class8654) {
+    public static Class57 method361(final PacketBuffer class8654) {
         final Class57 class8655 = new Class57();
         for (int n = class8654.readByte() & 0xFF, i = 0; i < n; ++i) {
             final ItemStack method29511 = class8654.method29511();

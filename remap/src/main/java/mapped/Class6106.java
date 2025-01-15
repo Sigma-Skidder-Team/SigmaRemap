@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBT;
+
 import java.util.function.Supplier;
 import java.util.List;
 
@@ -17,9 +19,9 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public void method18197(final Class41 class41, final List<Class41> list) {
+    public void method18197(final INBT class41, final List<INBT> list) {
         if (class41 instanceof Class51) {
-            final Class41 method313 = ((Class51)class41).method313(this.field24767);
+            final INBT method313 = ((Class51)class41).method313(this.field24767);
             if (method313 != null) {
                 list.add(method313);
             }
@@ -27,10 +29,10 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public void method18198(final Class41 class41, final Supplier<Class41> supplier, final List<Class41> list) {
+    public void method18198(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
         if (class41 instanceof Class51) {
             final Class51 class42 = (Class51)class41;
-            Class41 method313;
+            INBT method313;
             if (!class42.method315(this.field24767)) {
                 method313 = supplier.get();
                 class42.method295(this.field24767, method313);
@@ -43,15 +45,15 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public Class41 method18199() {
+    public INBT method18199() {
         return new Class51();
     }
     
     @Override
-    public int method18200(final Class41 class41, final Supplier<Class41> supplier) {
+    public int method18200(final INBT class41, final Supplier<INBT> supplier) {
         if (class41 instanceof Class51) {
             final Class51 class42 = (Class51)class41;
-            final Class41 class43 = supplier.get();
+            final INBT class43 = supplier.get();
             if (!class43.equals(class42.method295(this.field24767, class43))) {
                 return 1;
             }
@@ -60,7 +62,7 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public int method18201(final Class41 class41) {
+    public int method18201(final INBT class41) {
         if (class41 instanceof Class51) {
             final Class51 class42 = (Class51)class41;
             if (class42.method315(this.field24767)) {

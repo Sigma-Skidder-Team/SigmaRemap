@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.UUID;
 
-public class Class4294 implements Class4252<Class5813>
+public class Class4294 implements IPacket<Class5813>
 {
     private static String[] field19257;
     private UUID field19258;
@@ -23,12 +23,12 @@ public class Class4294 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19258 = class8654.method29504();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29503(this.field19258);
     }
     

@@ -5,10 +5,11 @@
 package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.entity.effect.LightningBoltEntity;
 
 import java.util.Random;
 
-public class Class4784 extends Class4703<Class422>
+public class Class4784 extends Class4703<LightningBoltEntity>
 {
     private static String[] field20417;
     
@@ -16,7 +17,7 @@ public class Class4784 extends Class4703<Class422>
         super(class8551);
     }
     
-    public void method14149(final Class422 class422, final float n, final float n2, final Class7351 class423, final Class7807 class424, final int n3) {
+    public void method14149(final LightningBoltEntity class422, final float n, final float n2, final Class7351 class423, final Class7807 class424, final int n3) {
         final float[] array = new float[8];
         final float[] array2 = new float[8];
         float n4 = 0.0f;
@@ -78,7 +79,7 @@ public class Class4784 extends Class4703<Class422>
         class6790.method12444(class6789, n + (b3 ? n10 : (-n10)), (float)(n3 * 16), n2 + (b4 ? n10 : (-n10))).method12439(n6, n7, n8, 0.3f).method12397();
     }
     
-    public Class1932 method14151(final Class422 class422) {
+    public Class1932 method14151(final LightningBoltEntity class422) {
         return Class1774.field9853;
     }
 }

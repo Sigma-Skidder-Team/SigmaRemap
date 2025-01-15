@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.EnumSet;
 
 public class Class3472 extends Class3446
@@ -40,7 +42,7 @@ public class Class3472 extends Class3446
     @Override
     public boolean method11013() {
         if (this.field16366 <= 0) {
-            this.field16365 = this.field16358.field2391.method7135(Class3472.field16357, this.field16358);
+            this.field16365 = this.field16358.world.method7135(Class3472.field16357, this.field16358);
             return this.field16365 != null && (this.method11038(this.field16365.method2713()) || this.method11038(this.field16365.method2714()));
         }
         --this.field16366;
@@ -63,12 +65,12 @@ public class Class3472 extends Class3446
                 if (this.field16365.method1733(this.field16360, this.field16361, this.field16362) > 0.010000000000000002) {
                     return false;
                 }
-                if (Math.abs(this.field16365.field2400 - this.field16363) > 5.0 || Math.abs(this.field16365.field2399 - this.field16364) > 5.0) {
+                if (Math.abs(this.field16365.rotationPitch - this.field16363) > 5.0 || Math.abs(this.field16365.rotationYaw - this.field16364) > 5.0) {
                     return false;
                 }
             }
-            this.field16363 = this.field16365.field2400;
-            this.field16364 = this.field16365.field2399;
+            this.field16363 = this.field16365.rotationPitch;
+            this.field16364 = this.field16365.rotationYaw;
         }
         return this.method11013();
     }

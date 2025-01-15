@@ -8,13 +8,13 @@ public final class Class4422 implements Class4410<Class8396>
 {
     private static String[] field19753;
     
-    public void method13373(final Class8654 class8654, final Class8396 class8655) {
+    public void method13373(final PacketBuffer class8654, final Class8396 class8655) {
         class8654.writeFloat(class8655.method27997());
         class8654.writeFloat(class8655.method27998());
         class8654.writeFloat(class8655.method27999());
     }
     
-    public Class8396 method13374(final Class8654 class8654) {
+    public Class8396 method13374(final PacketBuffer class8654) {
         return new Class8396(class8654.readFloat(), class8654.readFloat(), class8654.readFloat());
     }
     

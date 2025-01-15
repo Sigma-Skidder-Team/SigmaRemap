@@ -8,6 +8,7 @@ import com.google.common.collect.Sets;
 import java.util.IdentityHashMap;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.Set;
@@ -62,7 +63,7 @@ public class Class8288
     }
     
     private static void method27547(final Class1862 class1862, final Class322 o) {
-        final Class1847 method7065 = class1862.method7065();
+        final World method7065 = class1862.method7065();
         if (class1862.method7039().field34080.remove(o)) {
             final Set<Direction> method7066 = o.method993();
             final boolean contains = method7066.contains(Direction.EAST);
@@ -76,8 +77,8 @@ public class Class8288
             final int n3 = method7067.method25427() + ((b && (contains || contains2)) ? 1 : (contains4 ? 0 : 15));
             final int n4 = method7067.method25427() + ((b && (contains || contains2)) ? 14 : (contains4 ? 0 : 15));
             final Direction[] values = Direction.values();
-            final Class385 class1863 = new Class385();
-            for (final BlockPos class1864 : BlockPos.method1158(n, 0, n3, n2, method7065.method6986() - 1, n4)) {
+            final Mutable class1863 = new Mutable();
+            for (final BlockPos class1864 : BlockPos.getAllInBoxMutable(n, 0, n3, n2, method7065.method6986() - 1, n4)) {
                 Class7096 class1866;
                 final Class7096 class1865 = class1866 = method7065.method6701(class1864);
                 for (final Direction class1867 : values) {
@@ -97,7 +98,7 @@ public class Class8288
         try (final Class386 method1296 = Class386.method1296();
              final Class386 method1297 = Class386.method1296()) {
             final Class7859 method1298 = class1862.method7019();
-            final Class1847 method1299 = class1862.method7065();
+            final World method1299 = class1862.method7065();
             for (int i = 0; i < 16; ++i) {
                 final Class8199 class1863 = class1862.method7014()[i];
                 final int[] array = this.field34081[i];

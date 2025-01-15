@@ -8,12 +8,12 @@ public final class Class4416 implements Class4410<Integer>
 {
     private static String[] field19747;
     
-    public void method13364(final Class8654 class8654, final Integer n) {
-        class8654.method29505(n);
+    public void method13364(final PacketBuffer class8654, final Integer n) {
+        class8654.writeVarInt(n);
     }
     
-    public Integer method13365(final Class8654 class8654) {
-        return class8654.method29501();
+    public Integer method13365(final PacketBuffer class8654) {
+        return class8654.readVarInt();
     }
     
     public Integer method13366(final Integer n) {

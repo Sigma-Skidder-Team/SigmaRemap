@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;

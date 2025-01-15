@@ -17,20 +17,20 @@ public class Class9191
         final int nextInt = random.nextInt(100);
         if (nextInt < 80) {
             if (nextInt < 70) {
-                final Class6997 method13466 = Class4481.method13466(list, random, n, n2, n3, class179);
+                final MutableBoundingBox method13466 = Class4481.method13466(list, random, n, n2, n3, class179);
                 if (method13466 != null) {
                     return new Class4481(n4, random, method13466, class179, class180);
                 }
             }
             else {
-                final Class6997 method13467 = Class4480.method13465(list, random, n, n2, n3, class179);
+                final MutableBoundingBox method13467 = Class4480.method13465(list, random, n, n2, n3, class179);
                 if (method13467 != null) {
                     return new Class4480(n4, method13467, class179, class180);
                 }
             }
         }
         else {
-            final Class6997 method13468 = Class4483.method13469(list, random, n, n2, n3, class179);
+            final MutableBoundingBox method13468 = Class4483.method13469(list, random, n, n2, n3, class179);
             if (method13468 != null) {
                 return new Class4483(n4, method13468, class179, class180);
             }
@@ -42,7 +42,7 @@ public class Class9191
         if (n4 > 8) {
             return null;
         }
-        if (Math.abs(n - class4473.method13432().field27293) <= 80 && Math.abs(n3 - class4473.method13432().field27295) <= 80) {
+        if (Math.abs(n - class4473.method13432().minX) <= 80 && Math.abs(n3 - class4473.method13432().minZ) <= 80) {
             final Class4479 method33627 = method33627(list, random, n, n2, n3, class4474, n4 + 1, ((Class4479)class4473).field19869);
             if (method33627 != null) {
                 list.add(method33627);

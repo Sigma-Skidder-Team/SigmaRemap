@@ -17,13 +17,13 @@ public class Class9316
     public static void method34477(final Class869 class869, final Class7351 class870) {
         Class8726.method29998();
         final Class756 field4684 = class869.field4684;
-        if (!field4684.field2421) {
+        if (!field4684.noClip) {
             final Class7096 method34478 = method34478(field4684);
             if (method34478 != null) {
                 method34479(class869, class869.method5305().method5787().method35427(method34478), class870);
             }
         }
-        if (!class869.field4684.method1639()) {
+        if (!class869.field4684.isSpectator()) {
             if (class869.field4684.method1720(Class7324.field28319)) {
                 method34480(class869, class870);
             }
@@ -36,11 +36,11 @@ public class Class9316
     
     @Nullable
     private static Class7096 method34478(final Class512 class512) {
-        final Class385 class513 = new Class385();
+        final Mutable class513 = new Mutable();
         for (int i = 0; i < 8; ++i) {
             class513.method1286(class512.getPosX() + ((i >> 0) % 2 - 0.5f) * class512.method1930() * 0.8f, class512.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, class512.getPosZ() + ((i >> 2) % 2 - 0.5f) * class512.method1930() * 0.8f);
-            final Class7096 method6701 = class512.field2391.method6701(class513);
-            if (method6701.method21710() != Class2115.field12305 && method6701.method21747(class512.field2391, class513)) {
+            final Class7096 method6701 = class512.world.method6701(class513);
+            if (method6701.method21710() != Class2115.field12305 && method6701.method21747(class512.world, class513)) {
                 return method6701;
             }
         }
@@ -76,8 +76,8 @@ public class Class9316
         final float method22697 = class869.field4684.method1726();
         Class8726.method30011();
         Class8726.method30117();
-        final float n = -class869.field4684.field2399 / 64.0f;
-        final float n2 = class869.field4684.field2400 / 64.0f;
+        final float n = -class869.field4684.rotationYaw / 64.0f;
+        final float n2 = class869.field4684.rotationPitch / 64.0f;
         final Matrix4f method22698 = class870.method22569().method32111();
         method22696.method12390(7, Class9237.field39618);
         method22696.method12444(method22698, -1.0f, -1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(4.0f + n, 4.0f + n2).method12397();

@@ -5,6 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import java.util.UUID;
@@ -17,13 +22,13 @@ public class Class828 extends Class827
     private int field4437;
     private UUID field4438;
     
-    public Class828(final EntityType<? extends Class828> class7499, final Class1847 class7500) {
+    public Class828(final EntityType<? extends Class828> class7499, final World class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1210, 8.0f);
     }
     
     @Override
-    public void method2636(final Class511 class511) {
+    public void method2636(final LivingEntity class511) {
         super.method2636(class511);
         if (class511 != null) {
             this.field4438 = class511.method1865();
@@ -54,7 +59,7 @@ public class Class828 extends Class827
     @Override
     public void method4172() {
         final Class7619 method2710 = this.method2710(Class8107.field33408);
-        final Class511 method2711 = this.method2634();
+        final LivingEntity method2711 = this.method2634();
         if (!this.method4938()) {
             if (method2710.method23944(Class828.field4435)) {
                 method2710.method23947(Class828.field4435);
@@ -67,7 +72,7 @@ public class Class828 extends Class827
                 }
             }
             --this.field4436;
-            final Class511 class511 = (method2711 == null) ? this.method4152() : method2711;
+            final LivingEntity class511 = (method2711 == null) ? this.method4152() : method2711;
             if (!this.method4938()) {
                 if (class511 != null) {
                     if (this.method2747(class511)) {
@@ -82,13 +87,13 @@ public class Class828 extends Class827
         }
         if (this.field4437 > 0) {
             if (--this.field4437 == 0) {
-                this.method1695(Class8520.field35764, this.method2720() * 2.0f, ((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f) * 1.8f);
+                this.method1695(Class8520.field35764, this.method2720() * 2.0f, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f) * 1.8f);
             }
         }
         if (this.method4938()) {
             if (this.field4438 != null) {
                 if (method2711 == null) {
-                    final Class512 method2712 = this.field2391.method7143(this.field4438);
+                    final Class512 method2712 = this.world.method7143(this.field4438);
                     this.method2636(method2712);
                     this.field2956 = method2712;
                     this.field2957 = this.method2635();
@@ -126,7 +131,7 @@ public class Class828 extends Class827
         final String method323 = class51.method323("HurtBy");
         if (!method323.isEmpty()) {
             this.field4438 = UUID.fromString(method323);
-            final Class512 method324 = this.field2391.method7143(this.field4438);
+            final Class512 method324 = this.world.method7143(this.field4438);
             this.method2636(method324);
             if (method324 != null) {
                 this.field2956 = method324;
@@ -136,30 +141,30 @@ public class Class828 extends Class827
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             final Entity method25714 = class7929.method25714();
             if (method25714 instanceof Class512) {
                 if (!((Class512)method25714).method2889()) {
                     if (this.method2747(method25714)) {
-                        this.method4936((Class511)method25714);
+                        this.method4936((LivingEntity)method25714);
                     }
                 }
             }
-            return super.method1740(class7929, n);
+            return super.attackEntityFrom(class7929, n);
         }
         return false;
     }
     
-    private boolean method4936(final Class511 class511) {
+    private boolean method4936(final LivingEntity class511) {
         this.field4436 = this.method4937();
-        this.field4437 = this.field2423.nextInt(40);
+        this.field4437 = this.rand.nextInt(40);
         this.method2636(class511);
         return true;
     }
     
     private int method4937() {
-        return 400 + this.field2423.nextInt(400);
+        return 400 + this.rand.nextInt(400);
     }
     
     private boolean method4938() {
@@ -172,7 +177,7 @@ public class Class828 extends Class827
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35766;
     }
     

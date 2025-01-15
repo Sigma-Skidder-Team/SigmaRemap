@@ -64,7 +64,7 @@ public class Class5891<T extends Entity> extends Class5846<T>
     
     @Override
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
-        final float n6 = (t.method1643() * 3 + n3) * 0.13f;
+        final float n6 = (t.getEntityId() * 3 + n3) * 0.13f;
         this.field24187.field25185 = MathHelper.cos(n6) * 16.0f * 0.017453292f;
         this.field24188.field25185 = MathHelper.cos(n6) * 16.0f * 0.017453292f;
         this.field24189.field25185 = -this.field24187.field25185;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class4020 extends Class4017
 {
     private static String[] field18102;
@@ -15,7 +17,7 @@ public class Class4020 extends Class4017
     }
     
     @Override
-    public void method12203(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099) {
+    public void method12203(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099) {
         if (class7099.method11878().method21714()) {
             if (new Class8354(class7097, class7098, class7096).method27884() == 3) {
                 this.method12204(class7097, class7098, class7096, false);

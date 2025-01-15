@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class638 extends Class623<Class638>
 {
     public final /* synthetic */ Class618 field3637;
@@ -28,7 +30,7 @@ public class Class638 extends Class623<Class638>
             }
         }
         final ItemStack class9129 = new ItemStack(class9128);
-        final String method21697 = class9128.method11729(class9129).method8461();
+        final String method21697 = class9128.method11729(class9129).getFormattedText();
         this.method3666(n3, n2, class9129);
         this.field3637.field3591.field3156.method6610(method21697, (float)(n3 + 18 + 5), (float)(n2 + 3), 16777215);
         String s;

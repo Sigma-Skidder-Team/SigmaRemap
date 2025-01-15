@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 
 public class Class497 extends Class436
 {
@@ -21,7 +22,7 @@ public class Class497 extends Class436
     
     public Class497() {
         super(Class5412.field22548);
-        this.field2850 = new ITextComponent[] { new Class2260(""), new Class2260(""), new Class2260(""), new Class2260("") };
+        this.field2850 = new ITextComponent[] { new StringTextComponent(""), new StringTextComponent(""), new StringTextComponent(""), new StringTextComponent("") };
         this.field2851 = true;
         this.field2853 = new String[4];
         this.field2854 = Class181.field552;
@@ -116,7 +117,7 @@ public class Class497 extends Class436
     
     public boolean method2527(final Class512 class512) {
         for (final ITextComponent class513 : this.field2850) {
-            final Class8768 class514 = (class513 != null) ? class513.method8456() : null;
+            final Style class514 = (class513 != null) ? class513.getStyle() : null;
             if (class514 != null) {
                 if (class514.method30410() != null) {
                     final Class9485 method30410 = class514.method30410();
@@ -130,7 +131,7 @@ public class Class497 extends Class436
     }
     
     public Class7492 method2528(final Class513 class513) {
-        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, (class513 != null) ? class513.getName().getString() : "Sign", (class513 != null) ? class513.getDisplayName() : new Class2260("Sign"), this.field2656.method6679(), class513);
+        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, (class513 != null) ? class513.getName().getString() : "Sign", (class513 != null) ? class513.getDisplayName() : new StringTextComponent("Sign"), this.field2656.method6679(), class513);
     }
     
     public Class181 method2529() {

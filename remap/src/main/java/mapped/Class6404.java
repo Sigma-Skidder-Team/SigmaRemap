@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.dispenser.IPosition;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class6404 implements Class6423
 {
@@ -24,7 +26,7 @@ public class Class6404 implements Class6423
         return class5492;
     }
     
-    public static void method19091(final Class1847 class1847, final ItemStack class1848, final int n, final Direction class1849, final IPosition class1850) {
+    public static void method19091(final World class1847, final ItemStack class1848, final int n, final Direction class1849, final IPosition class1850) {
         final double method16760 = class1850.getX();
         final double method16761 = class1850.getY();
         final double method16762 = class1850.getZ();
@@ -37,7 +39,7 @@ public class Class6404 implements Class6423
         }
         final Class427 class1851 = new Class427(class1847, method16760, n2, method16762, class1848);
         final double n3 = class1847.field10062.nextDouble() * 0.1 + 0.2;
-        class1851.method1937(class1847.field10062.nextGaussian() * 0.007499999832361937 * n + class1849.getXOffset() * n3, class1847.field10062.nextGaussian() * 0.007499999832361937 * n + 0.20000000298023224, class1847.field10062.nextGaussian() * 0.007499999832361937 * n + class1849.getZOffset() * n3);
+        class1851.setMotion(class1847.field10062.nextGaussian() * 0.007499999832361937 * n + class1849.getXOffset() * n3, class1847.field10062.nextGaussian() * 0.007499999832361937 * n + 0.20000000298023224, class1847.field10062.nextGaussian() * 0.007499999832361937 * n + class1849.getZOffset() * n3);
         class1847.method6886(class1851);
     }
     

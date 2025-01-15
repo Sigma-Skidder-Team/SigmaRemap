@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.io.IOException;
 
-public class Class4400 implements Class4252<Class5800>
+public class Class4400 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19712;
     private String field19713;
@@ -27,7 +27,7 @@ public class Class4400 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19713 = class8654.method29513(16);
         this.field19716 = class8654.readByte();
         if (this.field19716 == 0 || this.field19716 == 2) {
@@ -37,7 +37,7 @@ public class Class4400 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29514(this.field19713);
         class8654.writeByte(this.field19716);
         if (this.field19716 == 0 || this.field19716 == 2) {
@@ -46,7 +46,7 @@ public class Class4400 implements Class4252<Class5800>
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17356(this);
     }
     

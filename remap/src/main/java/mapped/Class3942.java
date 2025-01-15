@@ -4,8 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -38,11 +41,11 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7097.field10067) {
             return Class2201.field13400;
         }
-        if (class7099.method1639()) {
+        if (class7099.isSpectator()) {
             return Class2201.field13400;
         }
         final Class436 method6727 = class7097.method6727(class7098);
@@ -69,7 +72,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         final Class436 method6727 = class1847.method6727(class1848);
         Label_0015: {
             if (method6727 instanceof Class440) {
@@ -112,7 +115,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class440) {
@@ -122,7 +125,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             if (class7097.method6727(class7098) instanceof Class440) {
                 class7097.method6783(class7098, class7096.method21696());
@@ -137,7 +140,7 @@ public class Class3942 extends Class3841
         final Class51 method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
             if (method27660.method316("LootTable", 8)) {
-                list.add(new Class2260("???????"));
+                list.add(new StringTextComponent("???????"));
             }
             if (method27660.method316("Items", 9)) {
                 final Class2265<ItemStack> method27661 = Class2265.method8507(27, ItemStack.field34174);
@@ -153,12 +156,12 @@ public class Class3942 extends Class3841
                         continue;
                     }
                     ++n;
-                    final ITextComponent method27662 = class8324.method27664().method8466();
-                    method27662.method8457(" x").method8457(String.valueOf(class8324.method27690()));
+                    final ITextComponent method27662 = class8324.method27664().deepCopy();
+                    method27662.appendText(" x").appendText(String.valueOf(class8324.method27690()));
                     list.add(method27662);
                 }
                 if (n2 - n > 0) {
-                    list.add(new Class2259("container.shulkerBox.more", new Object[] { n2 - n }).method8469(Class2116.field12329));
+                    list.add(new Class2259("container.shulkerBox.more", new Object[] { n2 - n }).applyTextStyle(TextFormatting.ITALIC));
                 }
             }
         }
@@ -170,7 +173,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Class436 method6727 = class7097.method6727(class7098);
         return (method6727 instanceof Class440) ? Class7698.method24489(((Class440)method6727).method2235(class7096)) : Class7698.method24487();
     }
@@ -181,7 +184,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return Class3418.method10898((Class446)class7097.method6727(class7098));
     }
     

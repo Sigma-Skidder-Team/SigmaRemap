@@ -36,12 +36,12 @@ public class Class8706
                     final Class9070 method35204 = Class9463.method35173().method35204();
                     method35204.method32672();
                     if (this.method29878(this.field36585.field4690)) {
-                        this.method29886(this.field36585.field4690.getName().method8459());
-                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().method8459() + " is no longer your friend.");
+                        this.method29886(this.field36585.field4690.getName().getUnformattedComponentText());
+                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is no longer your friend.");
                     }
                     else {
-                        this.method29882(this.field36585.field4690.getName().method8459());
-                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().method8459() + " is now your friend.");
+                        this.method29882(this.field36585.field4690.getName().getUnformattedComponentText());
+                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is now your friend.");
                     }
                     this.method29890();
                 }
@@ -50,7 +50,7 @@ public class Class8706
     }
     
     public boolean method29878(final Entity class399) {
-        return this.field36582.contains(class399.getName().method8459().toLowerCase());
+        return this.field36582.contains(class399.getName().getUnformattedComponentText().toLowerCase());
     }
     
     public boolean method29879(final String s) {
@@ -58,7 +58,7 @@ public class Class8706
     }
     
     public boolean method29880(final Entity class399) {
-        return this.field36583.contains(class399.getName().method8459().toLowerCase());
+        return this.field36583.contains(class399.getName().getUnformattedComponentText().toLowerCase());
     }
     
     public boolean method29881(final String s) {

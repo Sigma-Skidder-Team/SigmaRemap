@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.concurrent.CompletionStage;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.EntityType;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
@@ -42,14 +44,14 @@ public class Class1792 implements Class1662
         return this.field9921;
     }
     
-    public void method6467(final Class8654 class8654) {
+    public void method6467(final PacketBuffer class8654) {
         this.field9918.method18474(class8654);
         this.field9919.method18474(class8654);
         this.field9920.method18474(class8654);
         this.field9921.method18474(class8654);
     }
     
-    public static Class1792 method6468(final Class8654 class8654) {
+    public static Class1792 method6468(final PacketBuffer class8654) {
         final Class1792 class8655 = new Class1792();
         class8655.method6463().method18475(class8654);
         class8655.method6464().method18475(class8654);

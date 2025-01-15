@@ -10,6 +10,7 @@ import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.item.ItemStack;
 
 public class Class4228 extends Class4211
 {

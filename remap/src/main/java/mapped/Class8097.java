@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.nbt.EndNBT;
+import net.minecraft.nbt.INBT;
+
 import javax.annotation.Nullable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -25,7 +28,7 @@ public class Class8097
     public static Class51 method26590(final InputStream in) throws IOException {
         Class51 method26596;
         try (final DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new GZIPInputStream(in)))) {
-            method26596 = method26596(dataInputStream, Class7553.field29956);
+            method26596 = method26596(dataInputStream, NBTSizeTracker.INFINITE);
         }
         return method26596;
     }
@@ -70,7 +73,7 @@ public class Class8097
         final DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
         Class51 method26596;
         try {
-            method26596 = method26596(dataInputStream, Class7553.field29956);
+            method26596 = method26596(dataInputStream, NBTSizeTracker.INFINITE);
         }
         finally {
             dataInputStream.close();
@@ -79,11 +82,11 @@ public class Class8097
     }
     
     public static Class51 method26595(final DataInputStream dataInputStream) throws IOException {
-        return method26596(dataInputStream, Class7553.field29956);
+        return method26596(dataInputStream, NBTSizeTracker.INFINITE);
     }
     
-    public static Class51 method26596(final DataInput dataInput, final Class7553 class7553) throws IOException {
-        final Class41 method26599 = method26599(dataInput, 0, class7553);
+    public static Class51 method26596(final DataInput dataInput, final NBTSizeTracker class7553) throws IOException {
+        final INBT method26599 = method26599(dataInput, 0, class7553);
         if (!(method26599 instanceof Class51)) {
             throw new IOException("Root tag must be a named compound tag");
         }
@@ -94,22 +97,22 @@ public class Class8097
         method26598(class51, dataOutput);
     }
     
-    private static void method26598(final Class41 class41, final DataOutput dataOutput) throws IOException {
-        dataOutput.writeByte(class41.method260());
-        if (class41.method260() != 0) {
+    private static void method26598(final INBT class41, final DataOutput dataOutput) throws IOException {
+        dataOutput.writeByte(class41.getId());
+        if (class41.getId() != 0) {
             dataOutput.writeUTF("");
-            class41.method259(dataOutput);
+            class41.write(dataOutput);
         }
     }
     
-    private static Class41 method26599(final DataInput dataInput, final int n, final Class7553 class7553) throws IOException {
+    private static INBT method26599(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         final byte byte1 = dataInput.readByte();
         if (byte1 == 0) {
-            return Class42.field103;
+            return EndNBT.INSTANCE;
         }
         dataInput.readUTF();
         try {
-            return (Class41)Class7638.method24059(byte1).method18123(dataInput, n, class7553);
+            return (INBT)Class7638.method24059(byte1).func_225649_b_(dataInput, n, class7553);
         }
         catch (final IOException ex) {
             final Class7689 method24421 = Class7689.method24421(ex, "Loading NBT data");

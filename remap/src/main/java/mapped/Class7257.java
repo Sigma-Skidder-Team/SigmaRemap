@@ -16,6 +16,7 @@ import java.util.Map;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public abstract class Class7257 extends Class7255
 {
@@ -384,12 +385,12 @@ public abstract class Class7257 extends Class7255
     
     public abstract int method22191(final Class1852 p0);
     
-    public int method22192(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
+    public int method22192(final World class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
         return this.method22156(class1847);
     }
     
     @Override
-    public void method22151(final Class1847 class1847, final BlockPos class1848, Class7099 obj) {
+    public void method22151(final World class1847, final BlockPos class1848, Class7099 obj) {
         if (!obj.method21780()) {
             final Class7099 method22172 = this.method22172(class1847, class1848, class1847.method6701(class1848));
             final int method22173 = this.method22192(class1847, class1848, obj, method22172);

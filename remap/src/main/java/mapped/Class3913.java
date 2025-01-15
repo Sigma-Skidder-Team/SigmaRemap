@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -41,7 +42,7 @@ public class Class3913 extends Class3833 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Class7702 class7100 = (class7096.method21772(Class3913.field17724) != Class184.field576) ? Class3913.field17720 : Class3913.field17721;
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
         return class7100.method24541(method21732.x, method21732.y, method21732.z);
@@ -53,7 +54,7 @@ public class Class3913 extends Class3833 implements Class3872
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
         return Class3913.field17722.method24541(method21732.x, method21732.y, method21732.z);
     }
@@ -126,7 +127,7 @@ public class Class3913 extends Class3833 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
@@ -158,7 +159,7 @@ public class Class3913 extends Class3833 implements Class3872
         return (class7097.method2713().method27622() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
     }
     
-    public void method12017(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random, final int n) {
+    public void method12017(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random, final int n) {
         final Class7096 method6701 = class7097.method6701(class7098.method1139());
         final BlockPos method6702 = class7098.method1140(2);
         final Class7096 method6703 = class7097.method6701(method6702);

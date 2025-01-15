@@ -18,10 +18,10 @@ public class Class6035 extends Class6032<Class4408>
         if (Class3090.field15442.method29027(n * 0.25, n2 * 0.25, false) > 0.0) {
             final int n7 = n & 0xF;
             final int n8 = n2 & 0xF;
-            final Class385 class1865 = new Class385();
+            final Mutable class1865 = new Mutable();
             int i = n3;
             while (i >= 0) {
-                class1865.method1284(n7, i, n8);
+                class1865.setPos(n7, i, n8);
                 if (class1860.method6701(class1865).method21706()) {
                     --i;
                 }

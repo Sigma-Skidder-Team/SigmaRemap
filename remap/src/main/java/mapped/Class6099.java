@@ -34,18 +34,18 @@ public class Class6099 implements Class6096<Class3679>
         return (Class2265<Class120>)method8506;
     }
     
-    public Class3679 method18192(final Class1932 class1932, final Class8654 class1933) {
+    public Class3679 method18192(final Class1932 class1932, final PacketBuffer class1933) {
         final String method29513 = class1933.method29513(32767);
-        final Class2265<Class120> method29514 = Class2265.method8507(class1933.method29501(), Class120.field374);
+        final Class2265<Class120> method29514 = Class2265.method8507(class1933.readVarInt(), Class120.field374);
         for (int i = 0; i < method29514.size(); ++i) {
             method29514.set(i, Class120.method621(class1933));
         }
         return new Class3679(class1932, method29513, class1933.method29511(), method29514);
     }
     
-    public void method18193(final Class8654 class8654, final Class3679 class8655) {
+    public void method18193(final PacketBuffer class8654, final Class3679 class8655) {
         class8654.method29514(Class3679.method11325(class8655));
-        class8654.method29505(Class3679.method11326(class8655).size());
+        class8654.writeVarInt(Class3679.method11326(class8655).size());
         final Iterator iterator = Class3679.method11326(class8655).iterator();
         while (iterator.hasNext()) {
             ((Class120)iterator.next()).method614(class8654);

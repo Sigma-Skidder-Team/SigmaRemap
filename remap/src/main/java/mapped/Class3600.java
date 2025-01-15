@@ -18,14 +18,14 @@ public class Class3600 extends Class3446
     
     @Override
     public boolean method11013() {
-        return this.field16768.field2404 && !this.field16768.field2391.method6702(new BlockPos(this.field16768)).method21793(Class7324.field28319);
+        return this.field16768.onGround && !this.field16768.world.method6702(new BlockPos(this.field16768)).method21793(Class7324.field28319);
     }
     
     @Override
     public void method11015() {
         Vec3i class352 = null;
-        for (final BlockPos class353 : BlockPos.method1158(MathHelper.floor(this.field16768.getPosX() - 2.0), MathHelper.floor(this.field16768.getPosY() - 2.0), MathHelper.floor(this.field16768.getPosZ() - 2.0), MathHelper.floor(this.field16768.getPosX() + 2.0), MathHelper.floor(this.field16768.getPosY()), MathHelper.floor(this.field16768.getPosZ() + 2.0))) {
-            if (!this.field16768.field2391.method6702(class353).method21793(Class7324.field28319)) {
+        for (final BlockPos class353 : BlockPos.getAllInBoxMutable(MathHelper.floor(this.field16768.getPosX() - 2.0), MathHelper.floor(this.field16768.getPosY() - 2.0), MathHelper.floor(this.field16768.getPosZ() - 2.0), MathHelper.floor(this.field16768.getPosX() + 2.0), MathHelper.floor(this.field16768.getPosY()), MathHelper.floor(this.field16768.getPosZ() + 2.0))) {
+            if (!this.field16768.world.method6702(class353).method21793(Class7324.field28319)) {
                 continue;
             }
             class352 = class353;

@@ -15,7 +15,7 @@ public class Class3224 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (!Class3224.field15514.field4684.field2404) {
+        if (!Class3224.field15514.field4684.onGround) {
             return;
         }
         if (!Class6430.method19159()) {

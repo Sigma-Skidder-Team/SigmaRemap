@@ -22,7 +22,7 @@ public class Class3174 extends Class3167
         if (this.method9906()) {
             if (Class3174.field15514.field4648.field23440.method1056()) {
                 if (class5748.method17055() == Class1958.field10672) {
-                    if (Class3174.field15514.field4684.field2400 >= 0.0f) {
+                    if (Class3174.field15514.field4684.rotationPitch >= 0.0f) {
                         this.method9948(this.method9946());
                     }
                     else {
@@ -47,8 +47,8 @@ public class Class3174 extends Class3167
             if (method9945(replaceAll)) {
                 int1 = Integer.parseInt(replaceAll);
             }
-            final float n = (float)Math.toRadians(Class3174.field15514.field4684.field2399 + 90.0f);
-            Class3174.field15514.field4684.method1656(Class3174.field15514.field4684.field2395 + MathHelper.cos(n) * int1, Class3174.field15514.field4684.field2396, Class3174.field15514.field4684.field2397 + MathHelper.sin(n) * int1);
+            final float n = (float)Math.toRadians(Class3174.field15514.field4684.rotationYaw + 90.0f);
+            Class3174.field15514.field4684.setPosition(Class3174.field15514.field4684.posX + MathHelper.cos(n) * int1, Class3174.field15514.field4684.posY, Class3174.field15514.field4684.posZ + MathHelper.sin(n) * int1);
         }
     }
     
@@ -60,7 +60,7 @@ public class Class3174 extends Class3167
         boolean method21723 = false;
         int n = 0;
         for (int i = 0; i < 10; ++i) {
-            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 - i, Class3174.field15514.field4684.field2397);
+            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY - i, Class3174.field15514.field4684.posZ);
             if (Class3174.field15514.field4683.method6701(class354).method21723() && method21723) {
                 n = -i;
                 break;
@@ -74,7 +74,7 @@ public class Class3174 extends Class3167
         boolean method21723 = false;
         int n = 0;
         for (int i = 10; i > 0; --i) {
-            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 + i, Class3174.field15514.field4684.field2397);
+            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ);
             if (Class3174.field15514.field4683.method6701(class354).method21723()) {
                 if (method21723) {
                     if (!Class3174.field15514.field4683.method6701(class354.method1139()).method21723()) {
@@ -93,8 +93,8 @@ public class Class3174 extends Class3167
             Class6430.method19106("§cCouldn't VClip");
         }
         else {
-            Class3174.field15514.method5269().method17292(new Class4354(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 + i, Class3174.field15514.field4684.field2397, false));
-            Class3174.field15514.field4684.method1656(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 + i, Class3174.field15514.field4684.field2397);
+            Class3174.field15514.method5269().method17292(new Class4354(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ, false));
+            Class3174.field15514.field4684.setPosition(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ);
             Class9463.method35173().method35197().method25776(new Class6224("Successfuly VCliped", i + " Blocks", 2000, Class7853.field32190));
         }
     }

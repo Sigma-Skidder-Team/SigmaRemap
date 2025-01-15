@@ -12,7 +12,7 @@ public class Class4524 extends Class4469
 {
     private static String[] field19944;
     
-    public Class4524(final Direction class179, final Class6997 class180) {
+    public Class4524(final Direction class179, final MutableBoundingBox class180) {
         super(Class9520.field40990, class179, class180);
     }
     
@@ -21,7 +21,7 @@ public class Class4524 extends Class4469
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13444(class1851, class1853, 2, -1, 2, 11, -1, 11, Class4524.field19830, Class4524.field19830, false);
         this.method13444(class1851, class1853, 0, -1, 0, 1, -1, 11, Class4524.field19829, Class4524.field19829, false);
         this.method13444(class1851, class1853, 12, -1, 0, 13, -1, 11, Class4524.field19829, Class4524.field19829, false);

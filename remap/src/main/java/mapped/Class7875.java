@@ -125,7 +125,7 @@ public class Class7875<T> implements Class7876<T>
         return (method18028 != null) ? method18028 : this.field32328;
     }
     
-    public void method25509(final Class8654 class8654) {
+    public void method25509(final PacketBuffer class8654) {
         this.method25498();
         final byte byte1 = class8654.readByte();
         if (this.field32331 != byte1) {
@@ -136,7 +136,7 @@ public class Class7875<T> implements Class7876<T>
         this.method25499();
     }
     
-    public void method25510(final Class8654 class8654) {
+    public void method25510(final PacketBuffer class8654) {
         this.method25498();
         class8654.writeByte(this.field32331);
         this.field32330.method18030(class8654);
@@ -200,7 +200,7 @@ public class Class7875<T> implements Class7876<T>
     }
     
     public int method25513() {
-        return 1 + this.field32330.method18031() + Class8654.method29484(this.field32329.method33929()) + this.field32329.method33928().length * 8;
+        return 1 + this.field32330.method18031() + PacketBuffer.method29484(this.field32329.method33929()) + this.field32329.method33928().length * 8;
     }
     
     public boolean method25514(final T t) {

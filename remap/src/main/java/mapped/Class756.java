@@ -9,10 +9,16 @@ import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
 
@@ -66,18 +72,18 @@ public class Class756 extends Class754
         this.field4070 = field4088;
         this.field4071 = field4089;
         this.field4086 = field4086;
-        this.field2452 = Class383.field2223;
+        this.dimension = DimensionType.field2223;
         this.field4072.add(new Class7623(this, field4086.method5299()));
         this.field4072.add(new Class7624(this));
     }
     
     @Override
     public boolean method1821() {
-        return super.method1821() || (this.field4086.field4684.method1639() && this.field4086.field4648.field23455.method1056());
+        return super.method1821() || (this.field4086.field4684.isSpectator() && this.field4086.field4648.field23455.method1056());
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         return false;
     }
     
@@ -92,9 +98,9 @@ public class Class756 extends Class754
                 this.field4086.method5299().method6422(new Class6830(this, (Class428)class399));
             }
             if (class399 instanceof Class423) {
-                this.field2401 = class399.field2399;
-                this.field2399 = class399.field2399;
-                this.method1845(class399.field2399);
+                this.prevRotationYaw = class399.rotationYaw;
+                this.rotationYaw = class399.rotationYaw;
+                this.method1845(class399.rotationYaw);
             }
             return true;
         }
@@ -102,30 +108,30 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method1784() {
-        super.method1784();
+    public void stopRiding() {
+        super.stopRiding();
         this.field4099 = false;
     }
     
     @Override
     public float getPitch(final float n) {
-        return this.field2400;
+        return this.rotationPitch;
     }
     
     @Override
     public float getYaw(final float n) {
-        return this.method1805() ? super.getYaw(n) : this.field2399;
+        return this.isPassenger() ? super.getYaw(n) : this.rotationYaw;
     }
     
     @Override
     public void method1659() {
-        if (this.field2391.method6971(new BlockPos(this.getPosX(), 0.0, this.getPosZ()))) {
+        if (this.world.method6971(new BlockPos(this.getPosX(), 0.0, this.getPosZ()))) {
             super.method1659();
-            if (!this.method1805()) {
+            if (!this.isPassenger()) {
                 this.method4113();
             }
             else {
-                this.field4069.method17292(new Class4356(this.field2399, this.field2400, this.field2404));
+                this.field4069.method17292(new Class4356(this.rotationYaw, this.rotationPitch, this.onGround));
                 this.field4069.method17292(new Class4254(this.field2968, this.field2970, this.field4085.field24727, this.field4085.field24728));
                 final Entity method1915 = this.method1915();
                 if (method1915 != this) {
@@ -142,7 +148,7 @@ public class Class756 extends Class754
     }
     
     public void method4113() {
-        final Class5744 class5744 = new Class5744(this.field2395, this.method1886().field25074, this.field2397, this.field2400, this.field2399, this.field2404);
+        final Class5744 class5744 = new Class5744(this.posX, this.method1886().field25074, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
         Class9463.method35173().method35188().method21097(class5744);
         if (!class5744.method16962()) {
             final boolean method1815 = this.method1815();
@@ -182,13 +188,13 @@ public class Class756 extends Class754
                 }
                 int n7 = n6;
                 final boolean b = n4 != 0.0 || n5 != 0.0;
-                if (!this.method1805()) {
+                if (!this.isPassenger()) {
                     if (n7 != 0 && b) {
                         this.field4069.method17292(new Class4355(method1817, method1818, method1819, field4077, method1820, method1821));
                     }
                     else if (n7 == 0) {
                         if (!b) {
-                            if (this.field4079 != this.field2404 || Class9367.field40167 == Class7906.field32452) {
+                            if (this.field4079 != this.onGround || Class9367.field40167 == Class7906.field32452) {
                                 this.field4069.method17292(new Class4353(method1821));
                             }
                         }
@@ -201,7 +207,7 @@ public class Class756 extends Class754
                     }
                 }
                 else {
-                    final Vec3d method1822 = this.method1935();
+                    final Vec3d method1822 = this.getMotion();
                     this.field4069.method17292(new Class4355(method1822.x, -999.0, method1822.z, field4077, method1820, method1821));
                     n7 = 0;
                 }
@@ -215,7 +221,7 @@ public class Class756 extends Class754
                     this.field4077 = field4077;
                     this.field4078 = method1820;
                 }
-                this.field4079 = this.field2404;
+                this.field4079 = this.onGround;
                 this.field4100 = this.field4086.field4648.field23414;
             }
             final Iterator<Runnable> iterator = class5744.method17048().iterator();
@@ -249,7 +255,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method2698(final Class7929 class7929, final float n) {
+    public void method2698(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             this.method2665(this.method2664() - n);
         }
@@ -277,15 +283,15 @@ public class Class756 extends Class754
             if (field2966 > 0.0f) {
                 this.field2966 = field2966;
                 this.method2665(this.method2664());
-                this.field2430 = 20;
-                this.method2698(Class7929.field32575, field2966);
+                this.hurtResistantTime = 20;
+                this.method2698(DamageSource.field32575, field2966);
                 this.field2939 = 10;
                 this.field2938 = this.field2939;
             }
             else {
                 this.method2665(n);
                 if (field2966 < 0.0f) {
-                    this.field2430 = 10;
+                    this.hurtResistantTime = 10;
                 }
             }
         }
@@ -375,22 +381,22 @@ public class Class756 extends Class754
                 enum1 = Direction.SOUTH;
             }
             if (enum1 != null) {
-                final Vec3d method1935 = this.method1935();
+                final Vec3d method1935 = this.getMotion();
                 switch (Class9120.field38642[enum1.ordinal()]) {
                     case 1: {
-                        this.method1937(-0.1, method1935.y, method1935.z);
+                        this.setMotion(-0.1, method1935.y, method1935.z);
                         break;
                     }
                     case 2: {
-                        this.method1937(0.1, method1935.y, method1935.z);
+                        this.setMotion(0.1, method1935.y, method1935.z);
                         break;
                     }
                     case 3: {
-                        this.method1937(method1935.x, method1935.y, -0.1);
+                        this.setMotion(method1935.x, method1935.y, -0.1);
                         break;
                     }
                     case 4: {
-                        this.method1937(method1935.x, method1935.y, 0.1);
+                        this.setMotion(method1935.x, method1935.y, 0.1);
                         break;
                     }
                 }
@@ -400,7 +406,7 @@ public class Class756 extends Class754
     
     private boolean method4125(final BlockPos class354) {
         final AxisAlignedBB method1886 = this.method1886();
-        final Class385 class355 = new Class385(class354);
+        final Mutable class355 = new Mutable(class354);
         for (int i = MathHelper.floor(method1886.field25074); i < MathHelper.method35650(method1886.field25077); ++i) {
             class355.method1294(i);
             if (!this.method2865(class355)) {
@@ -447,12 +453,12 @@ public class Class756 extends Class754
     
     @Override
     public void method1695(final Class7795 class7795, final float n, final float n2) {
-        this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), class7795, this.method1922(), n, n2, false);
+        this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), class7795, this.method1922(), n, n2, false);
     }
     
     @Override
     public void method2812(final Class7795 class7795, final Class286 class7796, final float n, final float n2) {
-        this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), class7795, class7796, n, n2, false);
+        this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), class7795, class7796, n, n2, false);
     }
     
     @Override
@@ -488,11 +494,11 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method1880(final Class8810<?> class8810) {
+    public void method1880(final DataParameter<?> class8810) {
         super.method1880(class8810);
         if (Class756.field2920.equals(class8810)) {
-            final boolean b = (this.field2432.method33568(Class756.field2920) & 0x1) > 0;
-            final Class316 class8811 = ((this.field2432.method33568(Class756.field2920) & 0x2) <= 0) ? Class316.field1877 : Class316.field1878;
+            final boolean b = (this.dataManager.get(Class756.field2920) & 0x1) > 0;
+            final Class316 class8811 = ((this.dataManager.get(Class756.field2920) & 0x2) <= 0) ? Class316.field1877 : Class316.field1878;
             if (b && !this.field4097) {
                 this.method2762(class8811);
             }
@@ -502,7 +508,7 @@ public class Class756 extends Class754
                 }
             }
         }
-        if (Class756.field2433.equals(class8810)) {
+        if (Class756.FLAGS.equals(class8810)) {
             if (this.method2773()) {
                 if (!this.field4102) {
                     this.field4086.method5299().method6422(new Class6832(this));
@@ -513,7 +519,7 @@ public class Class756 extends Class754
     
     public boolean method4129() {
         final Entity method1920 = this.method1920();
-        if (this.method1805()) {
+        if (this.isPassenger()) {
             if (method1920 instanceof Class810) {
                 if (((Class810)method1920).method4759()) {
                     return true;
@@ -578,8 +584,8 @@ public class Class756 extends Class754
     public boolean method1814() {
         if (!this.field3025.field27302) {
             if (!this.method1817()) {
-                if (this.method1782(Class290.field1668)) {
-                    return this.method1809() || (!this.method2783() && !this.method1782(Class290.field1663));
+                if (this.method1782(Pose.field1668)) {
+                    return this.method1809() || (!this.method2783() && !this.method1782(Pose.field1663));
                 }
             }
         }
@@ -599,8 +605,8 @@ public class Class756 extends Class754
             this.field2967 = this.field4085.field24727;
             this.field4091 = this.field4089;
             this.field4092 = this.field4090;
-            this.field4090 += (float)((this.field2400 - this.field4090) * 0.5);
-            this.field4089 += (float)((this.field2399 - this.field4089) * 0.5);
+            this.field4090 += (float)((this.rotationPitch - this.field4090) * 0.5);
+            this.field4089 += (float)((this.rotationYaw - this.field4089) * 0.5);
         }
     }
     
@@ -621,7 +627,7 @@ public class Class756 extends Class754
         this.field4085.method18176(this.method4131());
         this.field4086.method5319().method32917(this.field4085);
         if (this.method2756()) {
-            if (!this.method1805()) {
+            if (!this.isPassenger()) {
                 final Class5728 class5728 = new Class5728(0.2f);
                 Class9463.method35173().method35188().method21097(class5728);
                 if (!class5728.method16962()) {
@@ -639,14 +645,14 @@ public class Class756 extends Class754
             b = true;
             this.field4085.field24727 = true;
         }
-        if (!this.field2421) {
+        if (!this.noClip) {
             this.method1838(this.getPosX() - this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() + this.method1930() * 0.35);
             this.method1838(this.getPosX() - this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() - this.method1930() * 0.35);
             this.method1838(this.getPosX() + this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() - this.method1930() * 0.35);
             this.method1838(this.getPosX() + this.method1930() * 0.35, this.getPosY() + 0.5, this.getPosZ() + this.method1930() * 0.35);
         }
         final boolean b2 = this.method2877().method33491() > 6.0f || this.field3025.field27303;
-        if (this.field2404 || this.method1712()) {
+        if (this.onGround || this.method1712()) {
             if (!field24728) {
                 if (!method4139) {
                     if (this.method4139()) {
@@ -689,7 +695,7 @@ public class Class756 extends Class754
                 boolean b4 = false;
                 Label_0834: {
                     if (!b3) {
-                        if (!this.field2405) {
+                        if (!this.collidedHorizontally) {
                             if (!this.method1706() || this.method1712()) {
                                 b4 = false;
                                 break Label_0834;
@@ -706,7 +712,7 @@ public class Class756 extends Class754
                 }
                 else {
                     Label_0889: {
-                        if (!this.field2404) {
+                        if (!this.onGround) {
                             if (!this.field4085.field24728) {
                                 if (b3) {
                                     break Label_0889;
@@ -752,7 +758,7 @@ public class Class756 extends Class754
             if (!b6) {
                 if (!field24727) {
                     if (!this.field3025.field27302) {
-                        if (!this.method1805()) {
+                        if (!this.isPassenger()) {
                             if (!this.method2688()) {
                                 final ItemStack method4140 = this.method2718(Class2215.field13604);
                                 if (method4140.method27622() == Class7739.field31584) {
@@ -781,7 +787,7 @@ public class Class756 extends Class754
             }
         }
         else {
-            this.field4103 = MathHelper.method35651(this.field4103 + (this.method1639() ? 10 : 1), 0, 600);
+            this.field4103 = MathHelper.method35651(this.field4103 + (this.isSpectator() ? 10 : 1), 0, 600);
         }
         if (this.field3025.field27302) {
             if (this.method4132()) {
@@ -793,7 +799,7 @@ public class Class756 extends Class754
                     ++n;
                 }
                 if (n != 0) {
-                    this.method1936(this.method1935().add(0.0, n * this.field3025.method21425() * 3.0f, 0.0));
+                    this.method1936(this.getMotion().add(0.0, n * this.field3025.method21425() * 3.0f, 0.0));
                 }
             }
         }
@@ -828,7 +834,7 @@ public class Class756 extends Class754
             }
         }
         super.method2736();
-        if (this.field2404) {
+        if (this.onGround) {
             if (this.field3025.field27302) {
                 if (!this.field4086.field4682.method27335()) {
                     this.field3025.field27302 = false;
@@ -840,7 +846,7 @@ public class Class756 extends Class754
     
     private void method4133() {
         this.field4096 = this.field4095;
-        if (!this.field2450) {
+        if (!this.inPortal) {
             if (this.method2653(Class9439.field40482) && this.method2654(Class9439.field40482).method7907() > 60) {
                 this.field4095 += 0.006666667f;
                 if (this.field4095 > 1.0f) {
@@ -866,13 +872,13 @@ public class Class756 extends Class754
                 }
             }
             if (this.field4095 == 0.0f) {
-                this.field4086.method5299().method6422(Class6836.method20933(Class8520.field35498, this.field2423.nextFloat() * 0.4f + 0.8f));
+                this.field4086.method5299().method6422(Class6836.method20933(Class8520.field35498, this.rand.nextFloat() * 0.4f + 0.8f));
             }
             this.field4095 += 0.0125f;
             if (this.field4095 >= 1.0f) {
                 this.field4095 = 1.0f;
             }
-            this.field2450 = false;
+            this.inPortal = false;
         }
         this.method1661();
     }
@@ -939,8 +945,8 @@ public class Class756 extends Class754
                 final Vec2f method1937 = this.field4085.method18177();
                 final float n4 = method1936 * method1937.x;
                 final float n5 = method1936 * method1937.y;
-                final float method1938 = MathHelper.sin(this.field2399 * 0.017453292f);
-                final float method1939 = MathHelper.cos(this.field2399 * 0.017453292f);
+                final float method1938 = MathHelper.sin(this.rotationYaw * 0.017453292f);
+                final float method1939 = MathHelper.cos(this.rotationYaw * 0.017453292f);
                 class5487 = new Vec3d(n4 * method1939 - n5 * method1938, class5487.y, n5 * method1939 + n4 * method1938);
                 n3 = (float)class5487.lengthSquared();
                 if (n3 <= 0.001f) {
@@ -951,11 +957,11 @@ public class Class756 extends Class754
             final Vec3d method1941 = class5487.scale(method1940);
             final Vec3d method1942 = this.method1793();
             if ((float)(method1942.x * method1941.x + method1942.z * method1941.z) >= -0.15f) {
-                final Class7543 method1943 = Class7543.method23630(this);
+                final ISelectionContext method1943 = ISelectionContext.forEntity(this);
                 final BlockPos class5488 = new BlockPos(this.getPosX(), this.method1886().field25077, this.getPosZ());
-                if (this.field2391.method6701(class5488).method21728(this.field2391, class5488, method1943).method24540()) {
+                if (this.world.method6701(class5488).method21728(this.world, class5488, method1943).method24540()) {
                     BlockPos class5489 = class5488.method1137();
-                    if (this.field2391.method6701(class5489).method21728(this.field2391, class5489, method1943).method24540()) {
+                    if (this.world.method6701(class5489).method21728(this.world, class5489, method1943).method24540()) {
                         float n6 = 1.2f;
                         if (this.method2653(Class9439.field40481)) {
                             n6 += (this.method2654(Class9439.field40481).method7908() + 1) * 0.75f;
@@ -970,7 +976,7 @@ public class Class756 extends Class754
                         final Vec3d method1951 = method1948.subtract(method1949);
                         final Vec3d method1952 = method1947.add(method1949);
                         final Vec3d method1953 = method1948.add(method1949);
-                        final Iterator<Object> iterator = this.field2391.method6980(this, method1946, Collections.emptySet()).flatMap(class5492 -> class5492.method24545().stream()).iterator();
+                        final Iterator<Object> iterator = this.world.method6980(this, method1946, Collections.emptySet()).flatMap(class5492 -> class5492.method24545().stream()).iterator();
                         float n7 = Float.MIN_VALUE;
                         while (iterator.hasNext()) {
                             final AxisAlignedBB class5490 = iterator.next();
@@ -982,7 +988,7 @@ public class Class756 extends Class754
                             for (int n8 = 1; n8 < n6; ++n8) {
                                 final BlockPos method1954 = class5491.method1138(n8);
                                 final Class7702 method1955;
-                                if (!(method1955 = this.field2391.method6701(method1954).method21728(this.field2391, method1954, method1943)).method24540()) {
+                                if (!(method1955 = this.world.method6701(method1954).method21728(this.world, method1954, method1943)).method24540()) {
                                     n7 = (float)method1955.method24536(Axis.Y) + method1954.getY();
                                     if (n7 - this.getPosY() > n6) {
                                         return;
@@ -990,7 +996,7 @@ public class Class756 extends Class754
                                 }
                                 if (n8 > 1) {
                                     class5489 = class5489.method1137();
-                                    if (!this.field2391.method6701(class5489).method21728(this.field2391, class5489, method1943).method24540()) {
+                                    if (!this.world.method6701(class5489).method21728(this.world, class5489, method1943).method24540()) {
                                         return;
                                     }
                                 }
@@ -1014,9 +1020,9 @@ public class Class756 extends Class754
     private boolean method4137() {
         if (this.method4135()) {
             if (this.field4101 <= 0) {
-                if (this.field2404) {
+                if (this.onGround) {
                     if (!this.method2806()) {
-                        if (!this.method1805()) {
+                        if (!this.isPassenger()) {
                             if (this.method4138()) {
                                 if (this.method1673() >= 1.0) {
                                     return true;
@@ -1058,16 +1064,16 @@ public class Class756 extends Class754
     public boolean method2807() {
         final boolean field3022 = this.field3022;
         final boolean method2807 = super.method2807();
-        if (!this.method1639()) {
+        if (!this.isSpectator()) {
             if (!field3022) {
                 if (method2807) {
-                    this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34965, Class286.field1586, 1.0f, 1.0f, false);
+                    this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34965, Class286.field1586, 1.0f, 1.0f, false);
                     this.field4086.method5299().method6422(new Class6837(this));
                 }
             }
             if (field3022) {
                 if (!method2807) {
-                    this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34966, Class286.field1586, 1.0f, 1.0f, false);
+                    this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34966, Class286.field1586, 1.0f, 1.0f, false);
                 }
             }
             return this.field3022;

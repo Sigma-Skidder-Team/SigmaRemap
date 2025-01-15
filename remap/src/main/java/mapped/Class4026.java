@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class4026 extends Class3833
@@ -16,7 +19,7 @@ public class Class4026 extends Class3833
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4026.field18118;
     }
     
@@ -26,7 +29,7 @@ public class Class4026 extends Class3833
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         class7097.method6833().method21345(class7098, this, this.method11826(class7097));
     }
     
@@ -41,7 +44,7 @@ public class Class4026 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         class7097.method6833().method21345(class7098, this, this.method11826(class7097));
     }
     

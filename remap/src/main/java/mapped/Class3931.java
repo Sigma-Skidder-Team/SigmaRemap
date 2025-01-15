@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3931 extends Class3841
 {
     private static String[] field17810;
@@ -15,7 +18,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.method21772((Class7111<Boolean>)Class3931.field17811)) {
             return Class2201.field13402;
         }
@@ -33,7 +36,7 @@ public class Class3931 extends Class3841
         }
     }
     
-    private void method12049(final Class1847 class1847, final BlockPos class1848) {
+    private void method12049(final World class1847, final BlockPos class1848) {
         if (!class1847.field10067) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class449) {
@@ -51,7 +54,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             this.method12049(class7097, class7098);
             super.method11829(class7096, class7097, class7098, class7099, b);
@@ -69,7 +72,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         final Class436 method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class449) {
             final Class3820 method6728 = ((Class449)method6727).method2277().method27622();

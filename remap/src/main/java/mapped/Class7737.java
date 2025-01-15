@@ -15,6 +15,6 @@ public final class Class7737 implements Class7735
     
     @Override
     public ITextComponent method24685(final int n) {
-        return new Class2260("");
+        return new StringTextComponent("");
     }
 }

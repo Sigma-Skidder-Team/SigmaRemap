@@ -24,12 +24,12 @@ public class Class3217 extends Class3167
     @Class6753
     private void method10140(final Class5723 class5723) {
         if (this.method9906() && Class3217.field15514.field4684 != null) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();
-                final String method16999 = class5724.method13164().method8461();
-                final String lowerCase = Class3217.field15514.field4684.getName().method8461().toLowerCase();
+                final String method16999 = class5724.method13164().getFormattedText();
+                final String lowerCase = Class3217.field15514.field4684.getName().getFormattedText().toLowerCase();
                 Label_0100: {
                     if (this.field15666.method9883("AutoL")) {
                         if (!string.toLowerCase().contains("was slain by " + lowerCase)) {
@@ -56,7 +56,7 @@ public class Class3217 extends Class3167
                     if (this.field15666.method9883("Auto Join")) {
                         final Iterator<ITextComponent> iterator = class5724.method13164().iterator();
                         while (iterator.hasNext()) {
-                            final Class9485 method17000 = iterator.next().method8456().method30410();
+                            final Class9485 method17000 = iterator.next().getStyle().method30410();
                             if (method17000 == null) {
                                 continue;
                             }
@@ -73,7 +73,7 @@ public class Class3217 extends Class3167
                     }
                 }
                 if (this.field15666.method9883("AutoGG")) {
-                    if (method16999.equalsIgnoreCase("§e" + Class3217.field15514.field4684.getName().method8461() + "§r§a won the game!§r")) {
+                    if (method16999.equalsIgnoreCase("§e" + Class3217.field15514.field4684.getName().getFormattedText() + "§r§a won the game!§r")) {
                         this.field15666.method10295();
                     }
                 }

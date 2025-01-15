@@ -23,11 +23,11 @@ public class Class6832 extends Class6831
     @Override
     public void method20918() {
         ++this.field26830;
-        if (!this.field26829.field2410 && (this.field26830 <= 20 || this.field26829.method2773())) {
+        if (!this.field26829.removed && (this.field26830 <= 20 || this.field26829.method2773())) {
             this.field26837 = (float)this.field26829.getPosX();
             this.field26838 = (float)this.field26829.getPosY();
             this.field26839 = (float)this.field26829.getPosZ();
-            final float n = (float)this.field26829.method1935().lengthSquared();
+            final float n = (float)this.field26829.getMotion().lengthSquared();
             if (n < 1.0E-7) {
                 this.field26835 = 0.0f;
             }

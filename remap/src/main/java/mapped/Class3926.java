@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class Class3926 extends Class3924
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3926.field17792.get(class7096.method21772((Class7111<Object>)Class3926.field17791));
     }
     
@@ -61,7 +62,7 @@ public class Class3926 extends Class3924
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         Class7096 method11846 = super.method11846(class7074);
-        final Class1847 method11847 = class7074.method21654();
+        final World method11847 = class7074.method21654();
         final BlockPos method11848 = class7074.method21639();
         for (final Direction class7075 : class7074.method21643()) {
             if (class7075.getAxis().isHorizontal()) {

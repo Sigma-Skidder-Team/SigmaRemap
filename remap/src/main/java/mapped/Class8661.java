@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.dimension.DimensionType;
+
 public class Class8661 extends Class8660
 {
     private final Class8660 field36390;
@@ -206,12 +208,12 @@ public class Class8661 extends Class8660
     }
     
     @Override
-    public void method29604(final Class383 class383, final Class51 class384) {
+    public void method29604(final DimensionType class383, final Class51 class384) {
         this.field36390.method29604(class383, class384);
     }
     
     @Override
-    public Class51 method29603(final Class383 class383) {
+    public Class51 method29603(final DimensionType class383) {
         return this.field36390.method29603(class383);
     }
     

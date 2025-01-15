@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.DamageSource;
+
 public abstract class Class5791 extends Class5784
 {
     public Class5791(final Class852 class852) {
@@ -16,11 +18,11 @@ public abstract class Class5791 extends Class5784
     }
     
     @Override
-    public float method17255(final Class7929 class7929, final float n) {
+    public float method17255(final DamageSource class7929, final float n) {
         if (!(class7929.method25713() instanceof Class402)) {
             return super.method17255(class7929, n);
         }
-        class7929.method25713().method1664(1);
+        class7929.method25713().setFire(1);
         return 0.0f;
     }
 }

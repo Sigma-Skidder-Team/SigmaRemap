@@ -8,8 +8,10 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.function.Predicate;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.INameable;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -257,7 +259,7 @@ public class Class464 implements Class446, INameable
         for (final Class2265 class2265 : this.field2742) {
             for (int i = 0; i < class2265.size(); ++i) {
                 if (!((ItemStack)class2265.get(i)).method27620()) {
-                    ((ItemStack)class2265.get(i)).method27650(this.field2744.field2391, this.field2744, i, this.field2743 == i);
+                    ((ItemStack)class2265.get(i)).method27650(this.field2744.world, this.field2744, i, this.field2743 == i);
                 }
             }
         }
@@ -316,7 +318,7 @@ public class Class464 implements Class446, INameable
         }
     }
     
-    public void method2364(final Class1847 class1847, final ItemStack class1848) {
+    public void method2364(final World class1847, final ItemStack class1848) {
         if (!class1847.field10067) {
             while (!class1848.method27620()) {
                 int n = this.method2360(class1848);
@@ -551,7 +553,7 @@ public class Class464 implements Class446, INameable
     
     @Override
     public boolean method2162(final Class512 class512) {
-        return !this.field2744.field2410 && class512.method1734(this.field2744) <= 64.0;
+        return !this.field2744.removed && class512.method1734(this.field2744) <= 64.0;
     }
     
     public boolean method2376(final ItemStack class8321) {

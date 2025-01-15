@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 import java.util.Arrays;
 import com.google.common.math.IntMath;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 
 public final class Class7698
@@ -177,11 +178,11 @@ public final class Class7698
         return method24553;
     }
     
-    public static double method24499(final Axis class111, final AxisAlignedBB class112, final Class1852 class113, final double n, final Class7543 class114, final Stream<Class7702> stream, final boolean b) {
+    public static double method24499(final Axis class111, final AxisAlignedBB class112, final Class1852 class113, final double n, final ISelectionContext class114, final Stream<Class7702> stream, final boolean b) {
         return method24500(class112, class113, n, class114, Class309.method985(class111, Axis.Z), stream, b);
     }
     
-    private static double method24500(final AxisAlignedBB class6221, final Class1852 class6222, double method24553, final Class7543 class6223, final Class309 class6224, final Stream<Class7702> stream, final boolean b) {
+    private static double method24500(final AxisAlignedBB class6221, final Class1852 class6222, double method24553, final ISelectionContext class6223, final Class309 class6224, final Stream<Class7702> stream, final boolean b) {
         if (class6221.method18508() >= 1.0E-6) {
             if (class6221.method18509() >= 1.0E-6) {
                 if (class6221.method18510() >= 1.0E-6) {
@@ -190,7 +191,7 @@ public final class Class7698
                         final Axis method24555 = method24554.method983(Axis.X);
                         final Axis method24556 = method24554.method983(Axis.Y);
                         final Axis method24557 = method24554.method983(Axis.Z);
-                        final Class385 class6225 = new Class385();
+                        final Mutable class6225 = new Mutable();
                         final int n = MathHelper.floor(class6221.method18490(method24555) - 1.0E-7) - 1;
                         final int n2 = MathHelper.floor(class6221.method18491(method24555) + 1.0E-7) + 1;
                         final int n3 = MathHelper.floor(class6221.method18490(method24556) - 1.0E-7) - 1;

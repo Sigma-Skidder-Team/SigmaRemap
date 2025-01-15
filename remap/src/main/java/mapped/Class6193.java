@@ -5,12 +5,13 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class6193 extends Class6159
 {
     private static String[] field25007;
     
-    private Class6193(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    private Class6193(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(class1847, n, n2, n3, 0.0, 0.0, 0.0);
         this.field24939 *= 0.10000000149011612;
         this.field24940 *= 0.10000000149011612;

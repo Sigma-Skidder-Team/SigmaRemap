@@ -5,9 +5,10 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.nbt.INBT;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import java.util.function.Supplier;
-import java.util.function.Consumer;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -15,7 +16,7 @@ public class Class6107 implements Class6102
 {
     private static String[] field24768;
     private final Class51 field24769;
-    private final Predicate<Class41> field24770;
+    private final Predicate<INBT> field24770;
     
     public Class6107(final Class51 field24769) {
         this.field24769 = field24769;
@@ -23,14 +24,14 @@ public class Class6107 implements Class6102
     }
     
     @Override
-    public void method18197(final Class41 class41, final List<Class41> list) {
+    public void method18197(final INBT class41, final List<INBT> list) {
         if (class41 instanceof Class52) {
             ((Class52)class41).stream().filter(this.field24770).forEach(list::add);
         }
     }
     
     @Override
-    public void method18198(final Class41 class41, final Supplier<Class41> supplier, final List<Class41> list) {
+    public void method18198(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
         final MutableBoolean mutableBoolean = new MutableBoolean();
         if (class41 instanceof Class52) {
             final Class52 class42 = (Class52)class41;
@@ -48,23 +49,23 @@ public class Class6107 implements Class6102
     }
     
     @Override
-    public Class41 method18199() {
+    public INBT method18199() {
         return new Class52();
     }
     
     @Override
-    public int method18200(final Class41 class41, final Supplier<Class41> supplier) {
+    public int method18200(final INBT class41, final Supplier<INBT> supplier) {
         int n = 0;
         if (class41 instanceof Class52) {
             final Class52 class42 = (Class52)class41;
             final int size = class42.size();
             if (size != 0) {
                 for (int i = 0; i < size; ++i) {
-                    final Class41 value = class42.get(i);
+                    final INBT value = class42.get(i);
                     if (this.field24770.test(value)) {
-                        final Class41 class43 = supplier.get();
+                        final INBT class43 = supplier.get();
                         if (!class43.equals(value)) {
-                            if (class42.method257(i, class43)) {
+                            if (class42.func_218659_a(i, class43)) {
                                 ++n;
                             }
                         }
@@ -80,7 +81,7 @@ public class Class6107 implements Class6102
     }
     
     @Override
-    public int method18201(final Class41 class41) {
+    public int method18201(final INBT class41) {
         int n = 0;
         if (class41 instanceof Class52) {
             final Class52 class42 = (Class52)class41;

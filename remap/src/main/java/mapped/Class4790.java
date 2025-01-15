@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
@@ -50,7 +51,7 @@ public class Class4790 extends Class4703<Class427>
         class428.method22567();
         final ItemStack method2107 = class427.method2107();
         this.field20426.setSeed(method2107.method27620() ? 187 : (Class3820.method11696(method2107.method27622()) + method2107.method27632()));
-        Class6313 class430 = this.field20425.method6534(method2107, class427.field2391, null);
+        Class6313 class430 = this.field20425.method6534(method2107, class427.world, null);
         if (Class8571.method28987()) {
             class430 = Class9404.method34966(method2107, class430, Class9168.field38843, true);
         }

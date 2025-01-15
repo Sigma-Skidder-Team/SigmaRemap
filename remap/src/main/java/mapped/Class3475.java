@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3475 extends Class3446
@@ -11,18 +13,18 @@ public class Class3475 extends Class3446
     private static String[] field16375;
     private final Class1855 field16376;
     private final Class759 field16377;
-    private Class511 field16378;
+    private LivingEntity field16378;
     private int field16379;
     
     public Class3475(final Class759 field16377) {
         this.field16377 = field16377;
-        this.field16376 = field16377.field2391;
+        this.field16376 = field16377.world;
         this.method11019(EnumSet.of(Class2139.field12580, Class2139.field12581));
     }
     
     @Override
     public boolean method11013() {
-        final Class511 method4152 = this.field16377.method4152();
+        final LivingEntity method4152 = this.field16377.method4152();
         if (method4152 != null) {
             this.field16378 = method4152;
             return true;

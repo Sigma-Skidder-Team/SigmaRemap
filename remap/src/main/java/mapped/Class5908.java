@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.function.Consumer;
 
 public class Class5908 implements Consumer<Consumer<Class8863>>

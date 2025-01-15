@@ -28,9 +28,9 @@ public class Class3212 extends Class3167
     @Override
     public void method9879() {
         this.field15653 = Class3212.field15514.field4684.field3006.field2743;
-        this.field15650 = Class3212.field15514.field4684.field2399;
-        this.field15651 = Class3212.field15514.field4684.field2400;
-        this.field15652 = (int)Class3212.field15514.field4684.field2396;
+        this.field15650 = Class3212.field15514.field4684.rotationYaw;
+        this.field15651 = Class3212.field15514.field4684.rotationPitch;
+        this.field15652 = (int)Class3212.field15514.field4684.posY;
         this.field15655 = -1;
         ((Class3260)this.method9914()).field15750 = -1;
     }
@@ -74,7 +74,7 @@ public class Class3212 extends Class3167
     @Class6753
     public void method10100(final Class5738 class5738) {
         if (this.method9906()) {
-            if (Class3212.field15514.field4684.field2404) {
+            if (Class3212.field15514.field4684.onGround) {
                 if (Class9463.method35173().method35189().method21551(Class3385.class).method9906()) {
                     class5738.method17026(true);
                 }
@@ -96,7 +96,7 @@ public class Class3212 extends Class3167
         }
         ((Class3260)this.method9914()).method10287(class5717);
         if (this.method9883("Haphe (AACAP)")) {
-            if (Class3212.field15514.field4684.field2404 && (Class3212.field15514.field4684.field2970 != 0.0f || Class3212.field15514.field4684.field2968 != 0.0f)) {
+            if (Class3212.field15514.field4684.onGround && (Class3212.field15514.field4684.field2970 != 0.0f || Class3212.field15514.field4684.field2968 != 0.0f)) {
                 this.field15654 = 0;
                 Class3212.field15514.field4684.method2725();
                 class5717.method16975(0.419998 + Class7482.method23140() * 0.1);
@@ -107,7 +107,7 @@ public class Class3212 extends Class3167
             else if (this.field15654 >= 0) {
                 ++this.field15654;
             }
-            if ((Class3212.field15514.field4684.field2970 == 0.0f && Class3212.field15514.field4684.field2968 == 0.0f) || Class3212.field15514.field4684.field2405) {
+            if ((Class3212.field15514.field4684.field2970 == 0.0f && Class3212.field15514.field4684.field2968 == 0.0f) || Class3212.field15514.field4684.collidedHorizontally) {
                 this.field15655 = 0;
             }
             this.field15656 = Class3227.method10174(this.field15654, this.field15655, () -> this.field15655 = 0);
@@ -147,7 +147,7 @@ public class Class3212 extends Class3167
                 }
                 if (this.method9883("Haphe (AACAP)")) {
                     if (!Class3212.field15514.field4684.field2967) {
-                        if (!Class3212.field15514.field4684.field2404) {
+                        if (!Class3212.field15514.field4684.onGround) {
                             if (class7005.method21448() == Direction.UP) {
                                 return false;
                             }
@@ -158,13 +158,13 @@ public class Class3212 extends Class3167
                     }
                 }
                 if (class7005.method21448() == Direction.UP) {
-                    if (class7005.method21447().getY() + 2 > Class3212.field15514.field4684.field2396) {
+                    if (class7005.method21447().getY() + 2 > Class3212.field15514.field4684.posY) {
                         if (Class4609.method13708(class7005.method21447())) {
                             return false;
                         }
                     }
                 }
-                if (class7005.method21447().getY() == Class3212.field15514.field4684.field2396) {
+                if (class7005.method21447().getY() == Class3212.field15514.field4684.posY) {
                     return false;
                 }
                 ((Class3260)this.method9914()).method10282();
@@ -213,7 +213,7 @@ public class Class3212 extends Class3167
         if (this.method9906()) {
             if (!class5744.method17046()) {
                 if (Class7482.method23148()) {
-                    if (Class3212.field15514.field4684.field2404) {
+                    if (Class3212.field15514.field4684.onGround) {
                         if (this.method9883("Haphe (AACAP)")) {
                             if (!Class3212.field15514.field4684.field2967) {
                                 Class3212.field15514.field4684.method2725();
@@ -235,13 +235,13 @@ public class Class3212 extends Class3167
                 }
             }
             else {
-                double field2396 = Class3212.field15514.field4684.field2396;
+                double field2396 = Class3212.field15514.field4684.posY;
                 if (!Class3212.field15514.field4684.field2967) {
                     if (this.method9883("Haphe (AACAP)")) {
                         field2396 = this.field15652;
                     }
                 }
-                final List<Class9052> method10104 = this.method10104(Class7521.field29148, new BlockPos(Class3212.field15514.field4684.field2395, (double)Math.round(field2396 - 1.0), Class3212.field15514.field4684.field2397));
+                final List<Class9052> method10104 = this.method10104(Class7521.field29148, new BlockPos(Class3212.field15514.field4684.posX, (double)Math.round(field2396 - 1.0), Class3212.field15514.field4684.posZ));
                 if (!method10104.isEmpty()) {
                     final Class9052 class5745 = method10104.get(method10104.size() - 1);
                     final Class7005 method10105 = Class4609.method13697(this.field15650, this.field15651, 5.0f);

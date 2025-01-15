@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.Reader;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import org.apache.commons.io.IOUtils;
 import java.nio.file.Files;
@@ -27,14 +28,14 @@ public class Class8787
     public static String field36936;
     
     public static AxisAlignedBB method30573(final Class501 class501) {
-        final BlockPos method1135 = class501.method2193().method1135(class501.method2560());
-        return new AxisAlignedBB(method1135, method1135.method1135(class501.method2562()));
+        final BlockPos method1135 = class501.method2193().add(class501.method2560());
+        return new AxisAlignedBB(method1135, method1135.add(class501.method2562()));
     }
     
     public static void method30574(final BlockPos class354, final Class1849 class355) {
         class355.method6692(class354, Class7521.field29416.method11878());
         ((Class500)class355.method6727(class354)).method2539().method5211("test runthis");
-        class355.method6692(class354.method1134(0, 0, -1), Class7521.field29328.method11878());
+        class355.method6692(class354.add(0, 0, -1), Class7521.field29328.method11878());
     }
     
     public static void method30575(final String s, final BlockPos class354, final BlockPos class355, final int n, final Class1849 class356) {
@@ -49,7 +50,7 @@ public class Class8787
     }
     
     public static Class501 method30576(final String s, final BlockPos class354, final int n, final Class1849 class355, final boolean b) {
-        final Class6997 method30579 = method30579(class354, method30583(s, class355).method19945(), n);
+        final MutableBoundingBox method30579 = method30579(class354, method30583(s, class355).method19945(), n);
         method30577(class354, class355);
         method30578(method30579, class354.getY(), class355);
         final Class501 method30580 = method30584(s, class354, class355, b);
@@ -67,17 +68,17 @@ public class Class8787
         }
     }
     
-    public static void method30578(final Class6997 class6997, final int n, final Class1849 class6998) {
-        BlockPos.method1156(class6997).forEach(class7000 -> method30586(n2, class7000, class6999));
+    public static void method30578(final MutableBoundingBox class6997, final int n, final Class1849 class6998) {
+        BlockPos.getAllInBox(class6997).forEach(class7000 -> method30586(n2, class7000, class6999));
         class6998.method6907().method21348(class6997, true, false);
         class6998.method6933(class6997);
-        class6998.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class6997.field27293, class6997.field27294, class6997.field27295, class6997.field27296, class6997.field27297, class6997.field27298), class7001 -> !(class7001 instanceof Class512)).forEach(Entity::method1652);
+        class6998.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class6997.minX, class6997.minY, class6997.minZ, class6997.maxX, class6997.maxY, class6997.maxZ), class7001 -> !(class7001 instanceof Class512)).forEach(Entity::method1652);
     }
     
-    public static Class6997 method30579(final BlockPos class354, final BlockPos class355, final int n) {
-        final BlockPos method1134 = class354.method1134(-n, -3, -n);
-        final BlockPos method1135 = class354.method1135(class355).method1134(n - 1, 30, n - 1);
-        return Class6997.method21409(method1134.getX(), method1134.getY(), method1134.getZ(), method1135.getX(), method1135.getY(), method1135.getZ());
+    public static MutableBoundingBox method30579(final BlockPos class354, final BlockPos class355, final int n) {
+        final BlockPos method1134 = class354.add(-n, -3, -n);
+        final BlockPos method1135 = class354.add(class355).add(n - 1, 30, n - 1);
+        return MutableBoundingBox.createProper(method1134.getX(), method1134.getY(), method1134.getZ(), method1135.getX(), method1135.getY(), method1135.getZ());
     }
     
     public static Optional<BlockPos> method30580(final BlockPos class354, final int n, final Class1849 class355) {

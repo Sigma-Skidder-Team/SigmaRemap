@@ -6,9 +6,11 @@ package mapped;
 
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Optional;
 
-public class Class5467 extends Class5419<Class511>
+public class Class5467 extends Class5419<LivingEntity>
 {
     private static String[] field22734;
     private final float field22735;
@@ -25,7 +27,7 @@ public class Class5467 extends Class5419<Class511>
     }
     
     @Override
-    public boolean method16538(final Class1849 class1849, final Class511 class1850) {
+    public boolean method16538(final Class1849 class1849, final LivingEntity class1850) {
         final Optional<BlockPos> method7204 = class1849.method6921().method7204(class1851 -> class1851 == Class8912.field37476, p0 -> true, new BlockPos(class1850), this.field22737 + 1, Class2045.field11652);
         if (method7204.isPresent() && method7204.get().withinDistance(class1850.method1934(), this.field22737)) {
             this.field22738 = method7204;
@@ -37,7 +39,7 @@ public class Class5467 extends Class5419<Class511>
     }
     
     @Override
-    public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
+    public void method16539(final Class1849 class1849, final LivingEntity class1850, final long n) {
         final Class365<?> method2618 = class1850.method2618();
         Optional<BlockPos> optional = this.field22738;
         if (!optional.isPresent()) {
@@ -54,7 +56,7 @@ public class Class5467 extends Class5419<Class511>
             method2618.method1195(Class8233.field33810);
             method2618.method1195(Class8233.field33812);
             method2618.method1195(Class8233.field33811);
-            method2618.method1196(Class8233.field33820, Class363.method1167(class1849.method6789().method20487(), optional.get()));
+            method2618.method1196(Class8233.field33820, Class363.method1167(class1849.method6789().getType(), optional.get()));
             if (!optional.get().withinDistance(class1850.method1934(), this.field22737)) {
                 method2618.method1196(Class8233.field33809, new Class6949(optional.get(), this.field22735, this.field22737));
             }

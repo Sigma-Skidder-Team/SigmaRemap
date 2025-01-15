@@ -35,8 +35,8 @@ public class Class5790 extends Class5784
         final double n = (this.field23787 != null) ? this.field23787.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ()) : 0.0;
         if (n >= 100.0) {
             if (n <= 22500.0) {
-                if (!this.field23764.field2405) {
-                    if (!this.field23764.field2406) {
+                if (!this.field23764.collidedHorizontally) {
+                    if (!this.field23764.collidedVertically) {
                         return;
                     }
                 }
@@ -54,8 +54,8 @@ public class Class5790 extends Class5784
     private void method17263() {
         if (this.field23786 == null || this.field23786.method35215()) {
             final int method5119 = this.field23764.method5119();
-            final BlockPos method5120 = this.field23764.field2391.method6958(Class2020.field11526, Class4551.field20031);
-            final Class512 method5121 = this.field23764.field2391.method7137(Class5790.field23785, method5120.getX(), method5120.getY(), method5120.getZ());
+            final BlockPos method5120 = this.field23764.world.method6958(Class2020.field11526, Class4551.field20031);
+            final Class512 method5121 = this.field23764.world.method7137(Class5790.field23785, method5120.getX(), method5120.getY(), method5120.getZ());
             int n;
             if (method5121 == null) {
                 n = this.field23764.method5120(40.0, method5120.getY(), 0.0);

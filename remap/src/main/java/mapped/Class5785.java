@@ -29,8 +29,8 @@ public class Class5785 extends Class5784
                 final double method16747 = this.field23766.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
                 if (method16747 >= 100.0) {
                     if (method16747 <= 22500.0) {
-                        if (!this.field23764.field2405) {
-                            if (!this.field23764.field2406) {
+                        if (!this.field23764.collidedHorizontally) {
+                            if (!this.field23764.collidedVertically) {
                                 return;
                             }
                         }

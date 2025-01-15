@@ -7,6 +7,8 @@ package mapped;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 import java.util.Random;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class Class3965 extends Class3833 implements Class3966
 {
@@ -97,7 +99,7 @@ public class Class3965 extends Class3833 implements Class3966
         this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3965.field17915, 0));
     }
     
-    public static void method12096(final Class1847 class1847, final BlockPos class1848, final boolean b) {
+    public static void method12096(final World class1847, final BlockPos class1848, final boolean b) {
         final Class7096 method6701 = class1847.method6701(class1848);
         class1847.method6708(class1848.getX(), class1848.getY(), class1848.getZ(), b ? Class8520.field35088 : Class8520.field35087, Class286.field1582, 1.0f, 1.0f, false);
         final double n = method6701.method21725(class1847, class1848).method24547(Axis.Y, 0.5, 0.5) + 0.03125;
@@ -108,7 +110,7 @@ public class Class3965 extends Class3833 implements Class3966
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3965.field17918[class7096.method21772((Class7111<Integer>)Class3965.field17915)];
     }
     
@@ -118,19 +120,19 @@ public class Class3965 extends Class3833 implements Class3966
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3965.field17918[0];
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21772((Class7111<Integer>)Class3965.field17915) == 7) {
             class7097.method6833().method21345(class7098, class7096.method21696(), 20);
         }
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
         final ItemStack method2715 = class7099.method2715(class7100);
         if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.method27622())) {
@@ -192,7 +194,7 @@ public class Class3965 extends Class3833 implements Class3966
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return class7096.method21772((Class7111<Integer>)Class3965.field17915);
     }
     

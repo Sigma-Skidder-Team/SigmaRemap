@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public interface Class768
 {
-    void method4252(final Class511 p0, final float p1);
+    void method4252(final LivingEntity p0, final float p1);
 }

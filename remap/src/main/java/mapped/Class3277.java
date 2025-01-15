@@ -7,6 +7,7 @@ package mapped;
 import java.util.List;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 import java.util.HashMap;
@@ -31,7 +32,7 @@ public class Class3277 extends Class3167
                 final Class512 class5735 = entry.getKey();
                 if (!class5735.method1823()) {
                     final Vec2f class5736 = (Vec2f)entry.getValue();
-                    final String method8459 = class5735.getName().method8459();
+                    final String method8459 = class5735.getName().getUnformattedComponentText();
                     final int n3 = Class9493.field40813.method23505(method8459) + 8;
                     final int round = Math.round(class5736.x);
                     final int round2 = Math.round(class5736.y);
@@ -54,7 +55,7 @@ public class Class3277 extends Class3167
                         final int n5 = round2 - Math.max(0, method8461.size() - 4) * 8 - 2;
                         for (int j = 0; j < method8461.size(); ++j) {
                             Class90.field209.method506(Class1932.method7795(method8461.method346(j).method323("id"))).ifPresent(class5739 -> {
-                                class5739.method18599(1).method8459();
+                                class5739.method18599(1).getUnformattedComponentText();
                                 final String s;
                                 new StringBuilder().append("§f").append(s.substring(0, Math.min(2, s.length()))).toString();
                                 int method8462 = 0;

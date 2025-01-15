@@ -10,14 +10,15 @@ import com.ibm.icu.text.NumberFormat;
 import java.awt.Color;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 
 public class Class3335 extends Class3167
 {
     private double field15933;
-    public static Map<Class511, double[]> field15934;
-    public static Map<Class511, double[]> field15935;
+    public static Map<LivingEntity, double[]> field15934;
+    public static Map<LivingEntity, double[]> field15935;
     public static final /* synthetic */ boolean field15936;
     
     public Class3335() {
@@ -182,9 +183,9 @@ public class Class3335 extends Class3167
                 continue;
             }
             final Class512 class512 = next;
-            final double n = class512.field2418 + (class512.field2396 - class512.field2418) * field26528 - method16761;
-            final double n2 = class512.field2417 + (class512.field2395 + 10.0 - (class512.field2417 + 10.0)) * field26528 - method16760;
-            final double n3 = class512.field2419 + (class512.field2397 + 10.0 - (class512.field2419 + 10.0)) * field26528 - method16762;
+            final double n = class512.lastTickPosY + (class512.posY - class512.lastTickPosY) * field26528 - method16761;
+            final double n2 = class512.lastTickPosX + (class512.posX + 10.0 - (class512.lastTickPosX + 10.0)) * field26528 - method16760;
+            final double n3 = class512.lastTickPosZ + (class512.posZ + 10.0 - (class512.lastTickPosZ + 10.0)) * field26528 - method16762;
             final double n4 = n + (class512.method1931() + 0.2);
             final double[] method16763 = Class8154.method26931(n2, n4, n3);
             final double abs = Math.abs(Class8154.method26931(n2, n4 + 1.0, n3)[1] - Class8154.method26931(n2, n4, n3)[1]);
@@ -198,7 +199,7 @@ public class Class3335 extends Class3167
                 continue;
             }
             Class3335.field15934.put(class512, new double[] { method16763[0], method16763[1], abs, method16763[2] });
-            final double n5 = class512.field2418 + (class512.field2396 - 2.2 - (class512.field2418 - 2.2)) * field26528 - method16761;
+            final double n5 = class512.lastTickPosY + (class512.posY - 2.2 - (class512.lastTickPosY - 2.2)) * field26528 - method16761;
             Class3335.field15935.put(class512, new double[] { Class8154.method26931(n2, n5, n3)[0], Class8154.method26931(n2, n5, n3)[1], abs, Class8154.method26931(n2, n5, n3)[2] });
         }
     }
@@ -216,7 +217,7 @@ public class Class3335 extends Class3167
     
     static {
         field15936 = !Class3335.class.desiredAssertionStatus();
-        Class3335.field15934 = new HashMap<Class511, double[]>();
-        Class3335.field15935 = new HashMap<Class511, double[]>();
+        Class3335.field15934 = new HashMap<LivingEntity, double[]>();
+        Class3335.field15935 = new HashMap<LivingEntity, double[]>();
     }
 }

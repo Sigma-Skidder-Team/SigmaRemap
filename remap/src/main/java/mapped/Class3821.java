@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3821 extends Class3820
 {
@@ -17,7 +19,7 @@ public class Class3821 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Class3820.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? Class2191.field13325 : Class2191.field13326);
         if (method2716.method21449() == Class2165.field12880) {
@@ -65,7 +67,7 @@ public class Class3821 extends Class3820
         return class8322.field3025.field27304 ? class8321 : new ItemStack(Class7739.field31349);
     }
     
-    public void method11753(final Class1847 class1847, final ItemStack class1848, final BlockPos class1849) {
+    public void method11753(final World class1847, final ItemStack class1848, final BlockPos class1849) {
     }
     
     private ItemStack method11754(final ItemStack class8321, final Class512 class8322, final Class3820 class8323) {
@@ -82,7 +84,7 @@ public class Class3821 extends Class3820
         return new ItemStack(class8323);
     }
     
-    public boolean method11755(final Class512 class512, final Class1847 class513, final BlockPos class514, final Class7005 class515) {
+    public boolean method11755(final Class512 class512, final World class513, final BlockPos class514, final Class7005 class515) {
         if (this.field17373 instanceof Class7257) {
             final Class7096 method6701 = class513.method6701(class514);
             final Class8059 method6702 = method6701.method21697();
@@ -94,7 +96,7 @@ public class Class3821 extends Class3820
                     }
                 }
             }
-            if (class513.field10063.method20502() && this.field17373.method22166(Class7324.field28319)) {
+            if (class513.dimension.method20502() && this.field17373.method22166(Class7324.field28319)) {
                 final int method6704 = class514.getX();
                 final int method6705 = class514.getY();
                 final int method6706 = class514.getZ();

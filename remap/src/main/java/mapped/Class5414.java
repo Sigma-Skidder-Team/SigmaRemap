@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.ITextComponent;
 
 public interface Class5414
@@ -15,7 +16,7 @@ public interface Class5414
     
     ITextComponent method16527();
     
-    ITextComponent method16528(final Class41 p0);
+    ITextComponent method16528(final INBT p0);
     
     ITextComponent method16529(final Class8570 p0, final double p1, final int p2);
 }

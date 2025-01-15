@@ -12,6 +12,7 @@ import java.util.function.Function;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
@@ -395,7 +396,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Map.Entry<Class1932, Integer>> iterator = this.field2761.entrySet().iterator();
         while (iterator.hasNext()) {
-            class512.field2391.method6792().method6382(((Map.Entry<Class1932, V>)iterator.next()).getKey()).ifPresent(class514 -> {
+            class512.world.method6792().method6382(((Map.Entry<Class1932, V>)iterator.next()).getKey()).ifPresent(class514 -> {
                 list.add(class514);
                 method2405(class513, entry.getValue(), ((Class3680)class514).method11328());
                 return;
@@ -423,7 +424,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         while (i > 0) {
             final int method35643 = Class508.method2609(i);
             i -= method35643;
-            class512.field2391.method6886(new Class508(class512.field2391, class512.getPosX(), class512.getPosY() + 0.5, class512.getPosZ() + 0.5, method35643));
+            class512.world.method6886(new Class508(class512.world, class512.getPosX(), class512.getPosY() + 0.5, class512.getPosZ() + 0.5, method35643));
         }
     }
     

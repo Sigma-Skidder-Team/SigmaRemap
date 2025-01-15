@@ -13,7 +13,7 @@ public class Class4496 extends Class4484
 {
     private static String[] field19892;
     
-    public Class4496(final int n, final Class6997 field19849, final Direction class179) {
+    public Class4496(final int n, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40953, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -35,12 +35,12 @@ public class Class4496 extends Class4484
     }
     
     public static Class4496 method13488(final List<Class4473> list, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -3, 0, 0, 9, 7, 9, class179);
+        final MutableBoundingBox method21408 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -3, 0, 0, 9, 7, 9, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4496(n4, method21408, class179) : null;
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         final Class7096 class1855 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17465, true)).method21773((Class7111<Comparable>)Class3929.field17467, true);
         final Class7096 class1856 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17468, true)).method21773((Class7111<Comparable>)Class3929.field17466, true);
         this.method13444(class1851, class1853, 0, 0, 0, 8, 1, 8, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);

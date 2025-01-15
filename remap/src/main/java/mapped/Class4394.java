@@ -11,7 +11,7 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 
-public class Class4394 implements Class4252<Class5800>
+public class Class4394 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19676;
     private double field19677;
@@ -40,7 +40,7 @@ public class Class4394 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19677 = class8654.readFloat();
         this.field19678 = class8654.readFloat();
         this.field19679 = class8654.readFloat();
@@ -59,7 +59,7 @@ public class Class4394 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeFloat((float)this.field19677);
         class8654.writeFloat((float)this.field19678);
         class8654.writeFloat((float)this.field19679);
@@ -81,7 +81,7 @@ public class Class4394 implements Class4252<Class5800>
         class8654.writeFloat(this.field19684);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17306(this);
     }
     

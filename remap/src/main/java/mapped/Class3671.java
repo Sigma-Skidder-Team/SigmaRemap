@@ -7,6 +7,8 @@ package mapped;
 import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class Class3671 extends Class3666
 {
@@ -16,7 +18,7 @@ public class Class3671 extends Class3666
         super(class1932);
     }
     
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         boolean b = false;
         int n = 0;
         for (int i = 0; i < class473.method2239(); ++i) {

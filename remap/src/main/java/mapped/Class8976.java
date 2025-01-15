@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Optional;
 
 public interface Class8976<T extends Class3662<?>>
@@ -19,7 +21,7 @@ public interface Class8976<T extends Class3662<?>>
         return Class90.method512(Class90.field236, new Class1932(s), (Class8976<T>)new Class8977(s));
     }
     
-    default <C extends Class446> Optional<T> method31918(final Class3662<C> value, final Class1847 class1847, final C c) {
+    default <C extends Class446> Optional<T> method31918(final Class3662<C> value, final World class1847, final C c) {
         return (Optional<T>)(value.method11289(c, class1847) ? Optional.of(value) : Optional.empty());
     }
 }

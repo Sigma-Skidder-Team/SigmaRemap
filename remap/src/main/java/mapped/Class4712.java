@@ -48,8 +48,8 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
     private <E extends Entity> void method14007(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final E e) {
         if (!Class8571.method28955() || !Class9216.field39049) {
             class7351.method22567();
-            final double n2 = MathHelper.method35700(n * 0.5f, e.field2399, e.field2401) * 0.017453292f;
-            final double n3 = MathHelper.method35700(n * 0.5f, e.field2400, e.field2402) * 0.017453292f;
+            final double n2 = MathHelper.method35700(n * 0.5f, e.rotationYaw, e.prevRotationYaw) * 0.017453292f;
+            final double n3 = MathHelper.method35700(n * 0.5f, e.rotationPitch, e.prevRotationPitch) * 0.017453292f;
             double cos = Math.cos(n2);
             double sin = Math.sin(n2);
             double sin2 = Math.sin(n3);
@@ -59,15 +59,15 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
                 sin2 = -1.0;
             }
             final double cos2 = Math.cos(n3);
-            final double n4 = MathHelper.method35701(n, e.field2392, e.getPosX()) - cos * 0.7 - sin * 0.5 * cos2;
-            final double n5 = MathHelper.method35701(n, e.field2393 + e.method1892() * 0.7, e.getPosY() + e.method1892() * 0.7) - sin2 * 0.5 - 0.25;
-            final double n6 = MathHelper.method35701(n, e.field2394, e.getPosZ()) - sin * 0.7 + cos * 0.5 * cos2;
+            final double n4 = MathHelper.method35701(n, e.prevPosX, e.getPosX()) - cos * 0.7 - sin * 0.5 * cos2;
+            final double n5 = MathHelper.method35701(n, e.prevPosY + e.method1892() * 0.7, e.getPosY() + e.method1892() * 0.7) - sin2 * 0.5 - 0.25;
+            final double n6 = MathHelper.method35701(n, e.prevPosZ, e.getPosZ()) - sin * 0.7 + cos * 0.5 * cos2;
             final double n7 = MathHelper.method35700(n, t.field2951, t.field2952) * 0.017453292f + 1.5707963267948966;
             final double n8 = Math.cos(n7) * t.method1930() * 0.4;
             final double n9 = Math.sin(n7) * t.method1930() * 0.4;
-            final double n10 = MathHelper.method35701(n, t.field2392, t.getPosX()) + n8;
-            final double method35701 = MathHelper.method35701(n, t.field2393, t.getPosY());
-            final double n11 = MathHelper.method35701(n, t.field2394, t.getPosZ()) + n9;
+            final double n10 = MathHelper.method35701(n, t.prevPosX, t.getPosX()) + n8;
+            final double method35701 = MathHelper.method35701(n, t.prevPosY, t.getPosY());
+            final double n11 = MathHelper.method35701(n, t.prevPosZ, t.getPosZ()) + n9;
             class7351.method22564(n8, -(1.6 - t.method1931()) * 0.5, n9);
             final float n12 = (float)(n4 - n10);
             final float n13 = (float)(n5 - method35701);
@@ -79,8 +79,8 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
             final float n17 = n12 * n15;
             final int method35704 = this.method13954((T)t, n);
             final int method35705 = this.field20283.method28699(e).method13954(e, n);
-            final int method35706 = t.field2391.method6992(Class237.field911, new BlockPos(t.method1747(n)));
-            final int method35707 = t.field2391.method6992(Class237.field911, new BlockPos(e.method1747(n)));
+            final int method35706 = t.world.method6992(Class237.field911, new BlockPos(t.method1747(n)));
+            final int method35707 = t.world.method6992(Class237.field911, new BlockPos(e.method1747(n)));
             if (Class8571.method28955()) {
                 Class9216.method33873();
             }

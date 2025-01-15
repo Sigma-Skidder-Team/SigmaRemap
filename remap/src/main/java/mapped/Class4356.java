@@ -22,16 +22,16 @@ public class Class4356 extends Class4353
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19502 = class8654.readFloat();
         this.field19503 = class8654.readFloat();
-        super.method12754(class8654);
+        super.readPacketData(class8654);
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeFloat(this.field19502);
         class8654.writeFloat(this.field19503);
-        super.method12755(class8654);
+        super.writePacketData(class8654);
     }
 }

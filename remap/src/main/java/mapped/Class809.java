@@ -4,6 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class809 extends Class806
@@ -12,7 +17,7 @@ public class Class809 extends Class806
     private boolean field4363;
     private int field4364;
     
-    public Class809(final EntityType<? extends Class809> class7499, final Class1847 class7500) {
+    public Class809(final EntityType<? extends Class809> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4362 = new Class3539(this);
     }
@@ -42,15 +47,15 @@ public class Class809 extends Class806
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         super.method2683(class7929);
         return Class8520.field35568;
     }
     
     @Override
     public Class7795 method1686() {
-        if (this.field2404) {
-            if (!this.method1806()) {
+        if (this.onGround) {
+            if (!this.isBeingRidden()) {
                 return Class8520.field35573;
             }
             ++this.field4353;
@@ -66,7 +71,7 @@ public class Class809 extends Class806
     
     @Override
     public void method1692(final float n) {
-        if (!this.field2404) {
+        if (!this.onGround) {
             super.method1692(Math.min(0.1f, n * 25.0f));
         }
         else {
@@ -146,7 +151,7 @@ public class Class809 extends Class806
     @Nullable
     @Override
     public Class788 method4349(final Class788 class788) {
-        return EntityType.field29024.method23371(this.field2391);
+        return EntityType.field29024.method23371(this.world);
     }
     
     @Override
@@ -165,7 +170,7 @@ public class Class809 extends Class806
             this.method4740(class512);
             return true;
         }
-        if (!this.method1806()) {
+        if (!this.isBeingRidden()) {
             if (!method2715.method27620()) {
                 if (method2715.method27622() == Class7739.field31353 && !this.method4736()) {
                     this.method4740(class512);

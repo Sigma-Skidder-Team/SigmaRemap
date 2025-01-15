@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.util.Supplier;
 import javax.annotation.Nullable;
@@ -13,7 +14,7 @@ public abstract class Class436
 {
     private static final Logger field2654;
     private final Class5412<?> field2655;
-    public Class1847 field2656;
+    public World field2656;
     public BlockPos field2657;
     public boolean field2658;
     private Class7096 field2659;
@@ -25,13 +26,13 @@ public abstract class Class436
     }
     
     @Nullable
-    public Class1847 method2186() {
+    public World method2186() {
         return this.field2656;
     }
     
-    public void method2187(final Class1847 field2656, final BlockPos class354) {
+    public void method2187(final World field2656, final BlockPos class354) {
         this.field2656 = field2656;
-        this.field2657 = class354.method1153();
+        this.field2657 = class354.toImmutable();
     }
     
     public boolean method2188() {
@@ -153,7 +154,7 @@ public abstract class Class436
     }
     
     public void method2203(final BlockPos class354) {
-        this.field2657 = class354.method1153();
+        this.field2657 = class354.toImmutable();
     }
     
     public boolean method2178() {

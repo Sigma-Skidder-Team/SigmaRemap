@@ -7,6 +7,7 @@ package mapped;
 import java.util.Locale;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Map;

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.Random;
@@ -111,12 +112,12 @@ public class Class4031 extends Class3833
         }
     }
     
-    private void method12220(final Class1847 class1847, final BlockPos class1848, final int i) {
+    private void method12220(final World class1847, final BlockPos class1848, final int i) {
         class1847.method6688(class1848, ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class4031.field18127, i), 2);
         class1847.method6955(1033, class1848, 0);
     }
     
-    private void method12221(final Class1847 class1847, final BlockPos class1848) {
+    private void method12221(final World class1847, final BlockPos class1848) {
         class1847.method6688(class1848, ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class4031.field18127, 5), 2);
         class1847.method6955(1034, class1848, 0);
     }
@@ -225,7 +226,7 @@ public class Class4031 extends Class3833
     }
     
     @Override
-    public void method11869(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
+    public void method11869(final World class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
         class1847.method6691(class1849.method21447(), true, class1850);
     }
     

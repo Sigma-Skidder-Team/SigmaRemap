@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class3577 extends Class3574
 {
     private static String[] field16697;
@@ -15,7 +17,7 @@ public class Class3577 extends Class3574
     }
     
     @Override
-    public double method11117(final Class511 class511) {
+    public double method11117(final LivingEntity class511) {
         if (!(this.field16685.method1920() instanceof Class779)) {
             return super.method11117(class511);
         }

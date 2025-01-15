@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.nbt.*;
 
 public class Class5704
 {
@@ -60,7 +61,7 @@ public class Class5704
         throw Class5704.field23155.createWithContext((ImmutableStringReader)this.field23167);
     }
     
-    public Class41 method16941() throws CommandSyntaxException {
+    public INBT method16941() throws CommandSyntaxException {
         this.field23167.skipWhitespace();
         final int cursor = this.field23167.getCursor();
         if (StringReader.isQuotedStringStart(this.field23167.peek())) {
@@ -74,7 +75,7 @@ public class Class5704
         throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
     }
     
-    private Class41 method16942(final String anotherString) {
+    private INBT method16942(final String anotherString) {
         try {
             if (Class5704.field23162.matcher(anotherString).matches()) {
                 return Class46.method281(Float.parseFloat(anotherString.substring(0, anotherString.length() - 1)));
@@ -89,7 +90,7 @@ public class Class5704
                 return Class48.method286(Short.parseShort(anotherString.substring(0, anotherString.length() - 1)));
             }
             if (Class5704.field23166.matcher(anotherString).matches()) {
-                return Class45.method279(Integer.parseInt(anotherString));
+                return IntNBT.valueOf(Integer.parseInt(anotherString));
             }
             if (Class5704.field23161.matcher(anotherString).matches()) {
                 return Class44.method277(Double.parseDouble(anotherString.substring(0, anotherString.length() - 1)));
@@ -108,7 +109,7 @@ public class Class5704
         return Class50.method290(anotherString);
     }
     
-    public Class41 method16943() throws CommandSyntaxException {
+    public INBT method16943() throws CommandSyntaxException {
         this.field23167.skipWhitespace();
         if (!this.field23167.canRead()) {
             throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
@@ -120,7 +121,7 @@ public class Class5704
         return this.method16945();
     }
     
-    public Class41 method16944() throws CommandSyntaxException {
+    public INBT method16944() throws CommandSyntaxException {
         if (this.field23167.canRead(3)) {
             if (!StringReader.isQuotedStringStart(this.field23167.peek(1))) {
                 if (this.field23167.peek(2) == ';') {
@@ -159,20 +160,20 @@ public class Class5704
         return class51;
     }
     
-    private Class41 method16946() throws CommandSyntaxException {
+    private INBT method16946() throws CommandSyntaxException {
         this.method16950('[');
         this.field23167.skipWhitespace();
         if (this.field23167.canRead()) {
             final Class52 class52 = new Class52();
-            Class6068 class53 = null;
+            INBTType class53 = null;
             while (this.field23167.peek() != ']') {
                 final int cursor = this.field23167.getCursor();
-                final Class41 method16943 = this.method16943();
-                final Class6068<?> method16944 = method16943.method261();
+                final INBT method16943 = this.method16943();
+                final INBTType<?> method16944 = method16943.getType();
                 if (class53 != null) {
                     if (method16944 != class53) {
                         this.field23167.setCursor(cursor);
-                        throw Class5704.field23157.createWithContext((ImmutableStringReader)this.field23167, (Object)method16944.method18121(), (Object)class53.method18121());
+                        throw Class5704.field23157.createWithContext((ImmutableStringReader)this.field23167, (Object)method16944.func_225650_b_(), (Object)class53.func_225650_b_());
                     }
                 }
                 else {
@@ -193,7 +194,7 @@ public class Class5704
         throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
     }
     
-    private Class41 method16947() throws CommandSyntaxException {
+    private INBT method16947() throws CommandSyntaxException {
         this.method16950('[');
         final int cursor = this.field23167.getCursor();
         final char read = this.field23167.read();
@@ -212,29 +213,29 @@ public class Class5704
             this.field23167.setCursor(cursor);
             throw Class5704.field23159.createWithContext((ImmutableStringReader)this.field23167, (Object)String.valueOf(read));
         }
-        return new Class53(this.method16948(Class53.field132, Class45.field108));
+        return new IntArrayNBT(this.method16948(IntArrayNBT.TYPE, IntNBT.TYPE));
     }
     
-    private <T extends Number> List<T> method16948(final Class6068<?> class6068, final Class6068<?> class6069) throws CommandSyntaxException {
+    private <T extends Number> List<T> method16948(final INBTType<?> class6068, final INBTType<?> class6069) throws CommandSyntaxException {
         final ArrayList arrayList = Lists.newArrayList();
         while (this.field23167.peek() != ']') {
             final int cursor = this.field23167.getCursor();
-            final Class41 method16943 = this.method16943();
-            final Class6068<?> method16944 = method16943.method261();
+            final INBT method16943 = this.method16943();
+            final INBTType<?> method16944 = method16943.getType();
             if (method16944 != class6069) {
                 this.field23167.setCursor(cursor);
-                throw Class5704.field23158.createWithContext((ImmutableStringReader)this.field23167, (Object)method16944.method18121(), (Object)class6068.method18121());
+                throw Class5704.field23158.createWithContext((ImmutableStringReader)this.field23167, (Object)method16944.func_225650_b_(), (Object)class6068.func_225650_b_());
             }
             if (class6069 != Class47.field113) {
                 if (class6069 != Class49.field119) {
-                    arrayList.add(((Class43)method16943).method271());
+                    arrayList.add(((NumberNBT)method16943).method271());
                 }
                 else {
-                    arrayList.add(((Class43)method16943).method270());
+                    arrayList.add(((NumberNBT)method16943).method270());
                 }
             }
             else {
-                arrayList.add(((Class43)method16943).method273());
+                arrayList.add(((NumberNBT)method16943).method273());
             }
             if (!this.method16949()) {
                 break;

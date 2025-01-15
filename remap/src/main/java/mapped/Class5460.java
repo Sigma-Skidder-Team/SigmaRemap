@@ -7,6 +7,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class5460 extends Class5419<Class824>
@@ -26,8 +30,8 @@ public class Class5460 extends Class5419<Class824>
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
         final Class365<Class824> method2618 = class1850.method2618();
         if (method2618.method1198(Class8233.field33811).isPresent()) {
-            final Class511 class1851 = method2618.method1198(Class8233.field33811).get();
-            if (class1851.method1642() == EntityType.field29058) {
+            final LivingEntity class1851 = method2618.method1198(Class8233.field33811).get();
+            if (class1851.getType() == EntityType.field29058) {
                 if (class1850.method1768()) {
                     if (class1851.method1768()) {
                         if (!class1850.method2625()) {
@@ -81,7 +85,7 @@ public class Class5460 extends Class5419<Class824>
         this.field22713 = null;
     }
     
-    private void method16678(final Class511 class511, final Class824 class512) {
+    private void method16678(final LivingEntity class511, final Class824 class512) {
         boolean b = false;
         final ItemStack method2713 = class511.method2713();
         if (this.field22713 == null || !ItemStack.method27645(this.field22713, method2713)) {
@@ -120,9 +124,9 @@ public class Class5460 extends Class5419<Class824>
         return ItemStack.method27645(this.field22713, class9017.method32281()) || ItemStack.method27645(this.field22713, class9017.method32282());
     }
     
-    private Class511 method16682(final Class824 class824) {
+    private LivingEntity method16682(final Class824 class824) {
         final Class365<Class824> method2618 = class824.method2618();
-        final Class511 class825 = method2618.method1198(Class8233.field33811).get();
+        final LivingEntity class825 = method2618.method1198(Class8233.field33811).get();
         method2618.method1196((Class8233<Class6440>)Class8233.field33810, new Class6440(class825));
         return class825;
     }

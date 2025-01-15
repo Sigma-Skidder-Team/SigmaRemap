@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.text.ITextComponent;
@@ -67,7 +68,7 @@ public class Class457 extends Class456
     
     @Override
     public void method2241(final Class512 class512) {
-        if (!class512.method1639()) {
+        if (!class512.isSpectator()) {
             if (this.field2713 < 0) {
                 this.field2713 = 0;
             }
@@ -105,7 +106,7 @@ public class Class457 extends Class456
     
     @Override
     public void method2242(final Class512 class512) {
-        if (!class512.method1639()) {
+        if (!class512.isSpectator()) {
             --this.field2713;
         }
     }

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3853 extends Class3854
 {
@@ -17,7 +18,7 @@ public class Class3853 extends Class3854
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         final Class7099 method21656 = class7074.method21654().method6702(class7074.method21639());
         final BlockPos method21657 = method21655.method1141();

@@ -5,6 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -12,15 +16,15 @@ public class Class420 extends Class419
 {
     private static String[] field2533;
     
-    public Class420(final EntityType<? extends Class420> class7499, final Class1847 class7500) {
+    public Class420(final EntityType<? extends Class420> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class420(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class420(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(EntityType.field28972, n, n2, n3, n4, n5, n6, class1847);
     }
     
-    public Class420(final Class1847 class1847, final Class511 class1848, final double n, final double n2, final double n3) {
+    public Class420(final World class1847, final LivingEntity class1848, final double n, final double n2, final double n3) {
         super(EntityType.field28972, class1848, n, n2, n3, class1847);
     }
     
@@ -28,9 +32,9 @@ public class Class420 extends Class419
     public void method2032(final Class7006 class7006) {
         super.method2032(class7006);
         if (class7006.method21449() != Class2165.field12882 || !((Class7007)class7006).method21452().method1843(this.field2527)) {
-            if (!this.field2391.field10067) {
-                final List<Entity> method7128 = this.field2391.method7128((Class<? extends Entity>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0));
-                final Class426 class7007 = new Class426(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ());
+            if (!this.world.field10067) {
+                final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.method1886().method18495(4.0, 2.0, 4.0));
+                final Class426 class7007 = new Class426(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
                 class7007.method2097(this.field2527);
                 class7007.method2089(Class8432.field34605);
                 class7007.method2081(3.0f);
@@ -38,16 +42,16 @@ public class Class420 extends Class419
                 class7007.method2095((7.0f - class7007.method2082()) / class7007.method2092());
                 class7007.method2085(new Class1948(Class9439.field40480, 1, 1));
                 if (!method7128.isEmpty()) {
-                    for (final Class511 class7008 : method7128) {
+                    for (final LivingEntity class7008 : method7128) {
                         if (this.method1734(class7008) >= 16.0) {
                             continue;
                         }
-                        class7007.method1656(class7008.getPosX(), class7008.getPosY(), class7008.getPosZ());
+                        class7007.setPosition(class7008.getPosX(), class7008.getPosY(), class7008.getPosZ());
                         break;
                     }
                 }
-                this.field2391.method6955(2006, new BlockPos(this), 0);
-                this.field2391.method6886(class7007);
+                this.world.method6955(2006, new BlockPos(this), 0);
+                this.world.method6886(class7007);
                 this.method1652();
             }
         }
@@ -59,7 +63,7 @@ public class Class420 extends Class419
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         return false;
     }
     

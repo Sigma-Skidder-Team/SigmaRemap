@@ -16,7 +16,7 @@ public class Class758 extends Class754
     }
     
     @Override
-    public boolean method1639() {
+    public boolean isSpectator() {
         return false;
     }
     

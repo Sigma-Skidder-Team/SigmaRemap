@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
@@ -47,7 +48,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
                 if (method7045 == Class5936.field24429) {
                     continue;
                 }
-                method7045.method17853(class1851, class1852, random, new Class6997(n3, n4, n3 + 15, n4 + 15), new Class7859(n, n2));
+                method7045.method17853(class1851, class1852, random, new MutableBoundingBox(n3, n4, n3 + 15, n4 + 15), new Class7859(n, n2));
                 b = true;
             }
             return b;
@@ -57,13 +58,13 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
     
     public Class5936 method13588(final Class1851 class1851, final BlockPos class1852, final boolean b) {
         for (final Class5936 class1853 : this.method13592(class1851, class1852.getX() >> 4, class1852.getZ() >> 4)) {
-            if (class1853.method17858() && class1853.method17851().method21415(class1852)) {
+            if (class1853.method17858() && class1853.method17851().isVecInside(class1852)) {
                 if (!b) {
                     return class1853;
                 }
                 final Iterator<Class4473> iterator2 = class1853.method17852().iterator();
                 while (iterator2.hasNext()) {
-                    if (!iterator2.next().method13432().method21415(class1852)) {
+                    if (!iterator2.next().method13432().isVecInside(class1852)) {
                         continue;
                     }
                     return class1853;
@@ -82,7 +83,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
     }
     
     @Nullable
-    public BlockPos method13591(final Class1847 class1847, final Class6346<? extends Class7065> class1848, final BlockPos class1849, final int n, final boolean b) {
+    public BlockPos method13591(final World class1847, final Class6346<? extends Class7065> class1848, final BlockPos class1849, final int n, final boolean b) {
         if (class1848.method18879().method7121(this)) {
             final int n2 = class1849.getX() >> 4;
             final int n3 = class1849.getZ() >> 4;

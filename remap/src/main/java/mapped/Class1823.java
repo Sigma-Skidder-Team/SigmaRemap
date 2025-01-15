@@ -5,8 +5,10 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 
-public class Class1823<T extends Class511, M extends Class5845<T> & Class5852> extends Class1799<T, M>
+public class Class1823<T extends LivingEntity, M extends Class5845<T> & Class5852> extends Class1799<T, M>
 {
     private static String[] field10004;
     
@@ -30,7 +32,7 @@ public class Class1823<T extends Class511, M extends Class5845<T> & Class5852> e
         }
     }
     
-    private void method6588(final Class511 class511, final ItemStack class512, final Class2016 class513, final Class2226 class514, final Class7351 class515, final Class7807 class516, final int n) {
+    private void method6588(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final Class2226 class514, final Class7351 class515, final Class7807 class516, final int n) {
         if (!class512.method27620()) {
             class515.method22567();
             this.method6559().method17578(class514, class515);

@@ -24,7 +24,7 @@ public class Class5803 implements Class5802
     private static final Random field23823;
     private final byte[] field23824;
     private final Class394 field23825;
-    public final Class3641 field23826;
+    public final NetworkManager field23826;
     private Class2055 field23827;
     private int field23828;
     private GameProfile field23829;
@@ -32,7 +32,7 @@ public class Class5803 implements Class5802
     private SecretKey field23831;
     private Class513 field23832;
     
-    public Class5803(final Class394 field23825, final Class3641 field23826) {
+    public Class5803(final Class394 field23825, final NetworkManager field23826) {
         this.field23824 = new byte[4];
         this.field23827 = Class2055.field11726;
         this.field23825 = field23825;
@@ -59,7 +59,7 @@ public class Class5803 implements Class5802
     }
     
     @Override
-    public Class3641 method17369() {
+    public NetworkManager getNetworkManager() {
         return this.field23826;
     }
     
@@ -101,7 +101,7 @@ public class Class5803 implements Class5802
     }
     
     @Override
-    public void method17291(final ITextComponent class2250) {
+    public void onDisconnect(final ITextComponent class2250) {
         Class5803.field23822.info("{} lost connection: {}", (Object)this.method17394(), (Object)class2250.getString());
     }
     

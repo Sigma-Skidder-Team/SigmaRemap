@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class Class3675 extends Class3666
 {
@@ -15,7 +17,7 @@ public class Class3675 extends Class3666
         super(class1932);
     }
     
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);

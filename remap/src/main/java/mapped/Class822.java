@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.OptionalInt;
 import javax.annotation.Nullable;
@@ -24,7 +26,7 @@ public interface Class822
     
     void method4831(final ItemStack p0);
     
-    Class1847 method4838();
+    World method4838();
     
     int method4821();
     

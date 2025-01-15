@@ -55,7 +55,7 @@ public class Class5932<T extends Class793> extends Class5839<T>
         this.field23939.field25184 = 0.0f;
         this.field24402.field25183 = 1.5707964f;
         if (!t.method1706()) {
-            if (t.field2404) {
+            if (t.onGround) {
                 final float n6 = t.method4458() ? 4.0f : 1.0f;
                 final float n7 = t.method4458() ? 2.0f : 1.0f;
                 this.field23940.field25184 = MathHelper.cos(n6 * n * 5.0f + 3.1415927f) * 8.0f * n2 * n7;

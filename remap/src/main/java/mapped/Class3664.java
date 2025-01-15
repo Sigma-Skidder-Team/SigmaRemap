@@ -15,6 +15,9 @@ import com.google.common.annotations.VisibleForTesting;
 import java.util.HashSet;
 import com.google.gson.JsonSyntaxException;
 import com.google.common.collect.Sets;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Map;
 
 public class Class3664 implements Class3663
@@ -65,7 +68,7 @@ public class Class3664 implements Class3663
         return n >= this.field16946 && n2 >= this.field16947;
     }
     
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         for (int i = 0; i <= class473.method2418() - this.field16946; ++i) {
             for (int j = 0; j <= class473.method2417() - this.field16947; ++j) {
                 if (this.method11302(class473, i, j, true)) {

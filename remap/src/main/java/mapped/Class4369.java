@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.ArrayDeque;
 import com.mojang.brigadier.tree.RootCommandNode;
 
-public class Class4369 implements Class4252<Class5800>
+public class Class4369 implements IPacket<IClientPlayNetHandler>
 {
     private RootCommandNode<Class7491> field19568;
     
@@ -33,8 +33,8 @@ public class Class4369 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        final Class8624[] array = new Class8624[class8654.method29501()];
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        final Class8624[] array = new Class8624[class8654.readVarInt()];
         final ArrayDeque arrayDeque = new ArrayDeque(array.length);
         for (int i = 0; i < array.length; ++i) {
             arrayDeque.add((Object)(array[i] = this.method13136(class8654)));
@@ -54,11 +54,11 @@ public class Class4369 implements Class4252<Class5800>
             }
             throw new IllegalStateException("Server sent an impossible command tree");
         }
-        this.field19568 = (RootCommandNode<Class7491>)Class8624.method29266(array[class8654.method29501()]);
+        this.field19568 = (RootCommandNode<Class7491>)Class8624.method29266(array[class8654.readVarInt()]);
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         final HashMap hashMap = Maps.newHashMap();
         final ArrayDeque arrayDeque = new ArrayDeque();
         arrayDeque.add(this.field19568);
@@ -78,21 +78,21 @@ public class Class4369 implements Class4252<Class5800>
         for (final Map.Entry<K, Integer> entry : hashMap.entrySet()) {
             array[entry.getValue()] = (CommandNode)entry.getKey();
         }
-        class8654.method29505(array.length);
+        class8654.writeVarInt(array.length);
         final CommandNode[] array2 = array;
         for (int length = array2.length, i = 0; i < length; ++i) {
             this.method13138(class8654, (CommandNode<Class7491>)array2[i], hashMap);
         }
-        class8654.method29505((int)hashMap.get(this.field19568));
+        class8654.writeVarInt((int)hashMap.get(this.field19568));
     }
     
-    private Class8624 method13136(final Class8654 class8654) {
+    private Class8624 method13136(final PacketBuffer class8654) {
         final byte byte1 = class8654.readByte();
         return new Class8624(this.method13137(class8654, byte1), byte1, 0, class8654.method29489(), null);
     }
     
     @Nullable
-    private ArgumentBuilder<Class7491, ?> method13137(final Class8654 class8654, final byte b) {
+    private ArgumentBuilder<Class7491, ?> method13137(final PacketBuffer class8654, final byte b) {
         final int n = b & 0x3;
         if (n != 2) {
             return (ArgumentBuilder<Class7491, ?>)((n != 1) ? null : LiteralArgumentBuilder.literal(class8654.method29513(32767)));
@@ -109,7 +109,7 @@ public class Class4369 implements Class4252<Class5800>
         return null;
     }
     
-    private void method13138(final Class8654 class8654, final CommandNode<Class7491> obj, final Map<CommandNode<Class7491>, Integer> map) {
+    private void method13138(final PacketBuffer class8654, final CommandNode<Class7491> obj, final Map<CommandNode<Class7491>, Integer> map) {
         byte b = 0;
         if (obj.getRedirect() != null) {
             b |= 0x8;
@@ -136,13 +136,13 @@ public class Class4369 implements Class4252<Class5800>
             b2 = (byte)(b | 0x0);
         }
         class8654.writeByte(b2);
-        class8654.method29505(obj.getChildren().size());
+        class8654.writeVarInt(obj.getChildren().size());
         final Iterator iterator = obj.getChildren().iterator();
         while (iterator.hasNext()) {
-            class8654.method29505(map.get(iterator.next()));
+            class8654.writeVarInt(map.get(iterator.next()));
         }
         if (obj.getRedirect() != null) {
-            class8654.method29505(map.get(obj.getRedirect()));
+            class8654.writeVarInt(map.get(obj.getRedirect()));
         }
         if (!(obj instanceof ArgumentCommandNode)) {
             if (obj instanceof LiteralCommandNode) {
@@ -159,7 +159,7 @@ public class Class4369 implements Class4252<Class5800>
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17324(this);
     }
     

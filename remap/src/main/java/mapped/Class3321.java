@@ -39,7 +39,7 @@ public class Class3321 extends Class3167
                         }
                         return (boolean)void1;
                     });
-                    if (class5724.method12822() == Class3321.field15514.field4684.method1643()) {
+                    if (class5724.method12822() == Class3321.field15514.field4684.getEntityId()) {
                         if (method6739.size() > 0) {
                             this.field15922.add(class5724);
                             class5723.method16961(true);

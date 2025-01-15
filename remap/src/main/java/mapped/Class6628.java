@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class6628 extends Class6601
 {
     private static String[] field26171;
@@ -49,7 +51,7 @@ public class Class6628 extends Class6601
     
     @Override
     public ItemStack method20047(final Class512 class512, final ItemStack class513) {
-        class513.method27622().method11723(class513, class512.field2391, class512);
+        class513.method27622().method11723(class513, class512.world, class512);
         this.field26212.method22437((class514, class515) -> {
             class514.method6754();
             final long n;

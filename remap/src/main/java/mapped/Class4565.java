@@ -24,7 +24,7 @@ public class Class4565 extends Class4535<Class5144>
             method1165 = class1851.method6958(Class2020.field11521, class1853);
         }
         int n = 0;
-        final Class385 class1855 = new Class385();
+        final Mutable class1855 = new Mutable();
         for (int i = 0; i < class1854.field22137; ++i) {
             class1855.method1287(method1165).method1292(random.nextInt(class1854.field22138 + 1) - random.nextInt(class1854.field22138 + 1), random.nextInt(class1854.field22139 + 1) - random.nextInt(class1854.field22139 + 1), random.nextInt(class1854.field22140 + 1) - random.nextInt(class1854.field22140 + 1));
             final BlockPos method1166 = class1855.method1139();

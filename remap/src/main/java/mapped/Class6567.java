@@ -15,7 +15,7 @@ public class Class6567 extends Class6564
     public Class6567(final Class853 field26081) {
         super(field26081);
         this.field26081 = field26081;
-        this.field26079 = 180.0f * field26081.field2399 / 3.1415927f;
+        this.field26079 = 180.0f * field26081.rotationYaw / 3.1415927f;
     }
     
     public void method19913(final float field26079, final boolean field26080) {
@@ -30,12 +30,12 @@ public class Class6567 extends Class6564
     
     @Override
     public void method19904() {
-        this.field26066.field2399 = this.method19909(this.field26066.field2399, this.field26079, 90.0f);
-        this.field26066.field2953 = this.field26066.field2399;
-        this.field26066.field2951 = this.field26066.field2399;
+        this.field26066.rotationYaw = this.method19909(this.field26066.rotationYaw, this.field26079, 90.0f);
+        this.field26066.field2953 = this.field26066.rotationYaw;
+        this.field26066.field2951 = this.field26066.rotationYaw;
         if (this.field26073 == Class2198.field13376) {
             this.field26073 = Class2198.field13375;
-            if (!this.field26066.field2404) {
+            if (!this.field26066.onGround) {
                 this.field26066.method2733((float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950()));
             }
             else {

@@ -146,9 +146,9 @@ public class Class1844 implements AutoCloseable
                 char1 = ' ';
             }
             if (char1 == '§' && i + 1 < method17001.length()) {
-                final Class2116 method17002 = Class2116.method8262(method17001.charAt(i + 1));
+                final TextFormatting method17002 = TextFormatting.fromFormattingCode(method17001.charAt(i + 1));
                 if (method17002 != null) {
-                    if (method17002.method8257()) {
+                    if (method17002.isNormalStyle()) {
                         b3 = false;
                         b4 = false;
                         b7 = false;
@@ -158,12 +158,12 @@ public class Class1844 implements AutoCloseable
                         n12 = n8;
                         n13 = n9;
                     }
-                    if (method17002.method8256() == null) {
-                        if (method17002 != Class2116.field12325) {
-                            if (method17002 != Class2116.field12326) {
-                                if (method17002 != Class2116.field12327) {
-                                    if (method17002 != Class2116.field12328) {
-                                        if (method17002 == Class2116.field12329) {
+                    if (method17002.getColor() == null) {
+                        if (method17002 != TextFormatting.OBFUSCATED) {
+                            if (method17002 != TextFormatting.BOLD) {
+                                if (method17002 != TextFormatting.STRIKETHROUGH) {
+                                    if (method17002 != TextFormatting.UNDERLINE) {
+                                        if (method17002 == TextFormatting.ITALIC) {
                                             b5 = true;
                                         }
                                     }
@@ -184,9 +184,9 @@ public class Class1844 implements AutoCloseable
                         }
                     }
                     else {
-                        int n15 = method17002.method8256();
+                        int n15 = method17002.getColor();
                         if (Class8571.method28945()) {
-                            n15 = Class8763.method30372(method17002.method8253(), n15);
+                            n15 = Class8763.method30372(method17002.getColorIndex(), n15);
                         }
                         n11 = (n15 >> 16 & 0xFF) / 255.0f * n6;
                         n12 = (n15 >> 8 & 0xFF) / 255.0f * n6;
@@ -243,10 +243,10 @@ public class Class1844 implements AutoCloseable
                 final char char1 = s.charAt(i);
                 if (char1 == '§' && i < s.length() - 1) {
                     ++i;
-                    final Class2116 method8262 = Class2116.method8262(s.charAt(i));
-                    if (method8262 != Class2116.field12326) {
+                    final TextFormatting method8262 = TextFormatting.fromFormattingCode(s.charAt(i));
+                    if (method8262 != TextFormatting.BOLD) {
                         if (method8262 != null) {
-                            if (method8262.method8257()) {
+                            if (method8262.isNormalStyle()) {
                                 b = false;
                             }
                         }
@@ -300,10 +300,10 @@ public class Class1844 implements AutoCloseable
             }
             else {
                 n5 = 0;
-                final Class2116 method8262 = Class2116.method8262(char1);
-                if (method8262 != Class2116.field12326) {
+                final TextFormatting method8262 = TextFormatting.fromFormattingCode(char1);
+                if (method8262 != TextFormatting.BOLD) {
                     if (method8262 != null) {
-                        if (method8262.method8257()) {
+                        if (method8262.isNormalStyle()) {
                             n6 = 0;
                         }
                     }
@@ -367,7 +367,7 @@ public class Class1844 implements AutoCloseable
         int method6628;
         String substring;
         char char1;
-        for (string2 = ""; !string.isEmpty(); string = Class2116.method8252(substring) + string.substring(method6628 + ((char1 == ' ' || char1 == '\n') ? 1 : 0)), string2 = string2 + substring + "\n") {
+        for (string2 = ""; !string.isEmpty(); string = TextFormatting.getFormatString(substring) + string.substring(method6628 + ((char1 == ' ' || char1 == '\n') ? 1 : 0)), string2 = string2 + substring + "\n") {
             method6628 = this.method6628(string, n);
             if (string.length() <= method6628) {
                 return string2 + string;
@@ -403,12 +403,12 @@ public class Class1844 implements AutoCloseable
                             break Label_0182;
                         }
                         ++i;
-                        final Class2116 method8262 = Class2116.method8262(s.charAt(i));
-                        if (method8262 == Class2116.field12326) {
+                        final TextFormatting method8262 = TextFormatting.fromFormattingCode(s.charAt(i));
+                        if (method8262 == TextFormatting.BOLD) {
                             n3 = 1;
                             break Label_0182;
                         }
-                        if (method8262 != null && method8262.method8257()) {
+                        if (method8262 != null && method8262.isNormalStyle()) {
                             n3 = 0;
                         }
                         break Label_0182;

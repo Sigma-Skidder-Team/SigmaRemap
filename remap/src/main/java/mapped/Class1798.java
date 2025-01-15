@@ -9,9 +9,10 @@ import java.io.IOException;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class1798<T extends Class511 & Class825, M extends Class5845<T> & Class5858> extends Class1799<T, M> implements Class1657
+public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T> & Class5858> extends Class1799<T, M> implements Class1657
 {
     private static final Int2ObjectMap<Class1932> field9961;
     private final Object2ObjectMap<Class7611, Class235> field9962;

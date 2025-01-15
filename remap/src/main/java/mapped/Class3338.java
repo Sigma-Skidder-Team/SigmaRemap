@@ -19,7 +19,7 @@ public class Class3338 extends Class3167
             if (Class3338.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
-                    if (class5724.method12822() == Class3338.field15514.field4684.method1643()) {
+                    if (class5724.method12822() == Class3338.field15514.field4684.getEntityId()) {
                         if (this.method9886("H-Multiplier") == 0.0f) {
                             if (this.method9886("V-Multiplier") == 0.0f) {
                                 class5723.method16961(true);

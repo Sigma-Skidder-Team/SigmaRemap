@@ -47,7 +47,7 @@ public class Class704 extends Class703
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.field3870.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 16, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 16, 16777215);
         this.method3295(this.field3156, "(" + Class8822.method30773("options.languageWarning", new Object[0]) + ")", this.field3152 / 2, this.field3153 - 56, 8421504);
         super.method2975(n, n2, n3);
     }

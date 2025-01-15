@@ -5,15 +5,22 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class792 extends Class789
 {
-    private static final Class8810<Integer> field4228;
+    private static final DataParameter<Integer> field4228;
     private static final Class1932 field4229;
     private int field4230;
     private int field4231;
@@ -21,7 +28,7 @@ public class Class792 extends Class789
     private int field4233;
     private int field4234;
     
-    public Class792(final EntityType<? extends Class792> class7499, final Class1847 class7500) {
+    public Class792(final EntityType<? extends Class792> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4111 = new Class7295(this, this);
         this.field4110 = new Class6566(this);
@@ -44,7 +51,7 @@ public class Class792 extends Class789
     
     @Override
     public float method2724() {
-        if (!this.field2405 && (!this.field4110.method19905() || this.field4110.method19911() <= this.getPosY() + 0.5)) {
+        if (!this.collidedHorizontally && (!this.field4110.method19905() || this.field4110.method19911() <= this.getPosY() + 0.5)) {
             final Class9468 method24727 = this.field4113.method24727();
             if (method24727 != null) {
                 if (method24727.method35222() < method24727.method35221()) {
@@ -62,12 +69,12 @@ public class Class792 extends Class789
     public void method2725() {
         super.method2725();
         if (this.field4110.method19906() > 0.0) {
-            if (Entity.method1680(this.method1935()) < 0.01) {
+            if (Entity.method1680(this.getMotion()) < 0.01) {
                 this.method1724(0.1f, new Vec3d(0.0, 0.0, 1.0));
             }
         }
-        if (!this.field2391.field10067) {
-            this.field2391.method6761(this, (byte)1);
+        if (!this.world.field10067) {
+            this.world.method6761(this, (byte)1);
         }
     }
     
@@ -84,7 +91,7 @@ public class Class792 extends Class789
     public void method2745(final boolean b) {
         super.method2745(b);
         if (b) {
-            this.method1695(this.method4441(), this.method2720(), ((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f) * 0.8f);
+            this.method1695(this.method4441(), this.method2720(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f) * 0.8f);
         }
     }
     
@@ -97,7 +104,7 @@ public class Class792 extends Class789
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class792.field4228, 0);
+        this.dataManager.register(Class792.field4228, 0);
     }
     
     @Override
@@ -106,19 +113,19 @@ public class Class792 extends Class789
             --this.field4233;
         }
         if (this.field4234 > 0) {
-            this.field4234 -= this.field2423.nextInt(3);
+            this.field4234 -= this.rand.nextInt(3);
             if (this.field4234 < 0) {
                 this.field4234 = 0;
             }
         }
-        if (this.field2404) {
+        if (this.onGround) {
             if (!this.field4232) {
                 this.method2745(false);
                 this.method4440();
             }
             if (this.method4444() == 99) {
                 if (this.field4233 == 0) {
-                    final Class511 method4152 = this.method4152();
+                    final LivingEntity method4152 = this.method4152();
                     if (method4152 != null) {
                         if (this.method1734(method4152) < 16.0) {
                             this.method4436(method4152.getPosX(), method4152.getPosZ());
@@ -149,7 +156,7 @@ public class Class792 extends Class789
                 }
             }
         }
-        this.field4232 = this.field2404;
+        this.field4232 = this.onGround;
     }
     
     @Override
@@ -157,7 +164,7 @@ public class Class792 extends Class789
     }
     
     private void method4436(final double n, final double n2) {
-        this.field2399 = (float)(MathHelper.method35693(n2 - this.getPosZ(), n - this.getPosX()) * 57.2957763671875) - 90.0f;
+        this.rotationYaw = (float)(MathHelper.method35693(n2 - this.getPosZ(), n - this.getPosX()) * 57.2957763671875) - 90.0f;
     }
     
     private void method4437() {
@@ -228,7 +235,7 @@ public class Class792 extends Class789
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35510;
     }
     
@@ -240,10 +247,10 @@ public class Class792 extends Class789
     @Override
     public boolean method2734(final Entity class399) {
         if (this.method4444() != 99) {
-            return class399.method1740(Class7929.method25693(this), 3.0f);
+            return class399.attackEntityFrom(DamageSource.method25693(this), 3.0f);
         }
-        this.method1695(Class8520.field35508, 1.0f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
-        return class399.method1740(Class7929.method25693(this), 8.0f);
+        this.method1695(Class8520.field35508, 1.0f, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
+        return class399.attackEntityFrom(DamageSource.method25693(this), 8.0f);
     }
     
     @Override
@@ -252,8 +259,8 @@ public class Class792 extends Class789
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
-        return !this.method1849(class7929) && super.method1740(class7929, n);
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
+        return !this.method1849(class7929) && super.attackEntityFrom(class7929, n);
     }
     
     private boolean method4442(final Class3820 class3820) {
@@ -268,10 +275,10 @@ public class Class792 extends Class789
     }
     
     public Class792 method4443(final Class788 class788) {
-        final Class792 class789 = EntityType.field29017.method23371(this.field2391);
-        int n = this.method4446(this.field2391);
-        if (this.field2423.nextInt(20) != 0) {
-            if (class788 instanceof Class792 && this.field2423.nextBoolean()) {
+        final Class792 class789 = EntityType.field29017.method23371(this.world);
+        int n = this.method4446(this.world);
+        if (this.rand.nextInt(20) != 0) {
+            if (class788 instanceof Class792 && this.rand.nextBoolean()) {
                 n = ((Class792)class788).method4444();
             }
             else {
@@ -288,7 +295,7 @@ public class Class792 extends Class789
     }
     
     public int method4444() {
-        return this.field2432.method33568(Class792.field4228);
+        return this.dataManager.get(Class792.field4228);
     }
     
     public void method4445(final int i) {
@@ -302,7 +309,7 @@ public class Class792 extends Class789
                 this.method1872(new Class2259(Class8349.method27836("entity", Class792.field4229), new Object[0]));
             }
         }
-        this.field2432.method33569(Class792.field4228, i);
+        this.dataManager.set(Class792.field4228, i);
     }
     
     @Nullable
@@ -321,7 +328,7 @@ public class Class792 extends Class789
     
     private int method4446(final Class1851 class1851) {
         final Class3090 method6959 = class1851.method6959(new BlockPos(this));
-        final int nextInt = this.field2423.nextInt(100);
+        final int nextInt = this.rand.nextInt(100);
         if (method6959.method9841() == Class2145.field12630) {
             return (nextInt >= 80) ? 3 : 1;
         }
@@ -363,7 +370,7 @@ public class Class792 extends Class789
     }
     
     static {
-        field4228 = Class9184.method33564(Class792.class, Class7709.field30654);
+        field4228 = EntityDataManager.method33564(Class792.class, Class7709.field30654);
         field4229 = new Class1932("killer_bunny");
     }
 }

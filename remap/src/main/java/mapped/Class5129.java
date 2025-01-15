@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMap$Builder;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
@@ -44,7 +43,7 @@ public class Class5129 extends Class5127
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("foliage_placer"), this.field22086.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("height_rand_a"), dynamicOps.createInt(this.field22087)).put(dynamicOps.createString("height_rand_b"), dynamicOps.createInt(this.field22088)).put(dynamicOps.createString("trunk_height"), dynamicOps.createInt(this.field22089)).put(dynamicOps.createString("trunk_height_random"), dynamicOps.createInt(this.field22090)).put(dynamicOps.createString("trunk_top_offset"), dynamicOps.createInt(this.field22091)).put(dynamicOps.createString("trunk_top_offset_random"), dynamicOps.createInt(this.field22092)).put(dynamicOps.createString("foliage_height"), dynamicOps.createInt(this.field22093)).put(dynamicOps.createString("foliage_height_random"), dynamicOps.createInt(this.field22094)).put(dynamicOps.createString("max_water_depth"), dynamicOps.createInt(this.field22095)).put(dynamicOps.createString("ignore_vines"), dynamicOps.createBoolean(this.field22096));
+        builder.put(dynamicOps.createString("foliage_placer"), this.field22086.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("height_rand_a"), dynamicOps.createInt(this.field22087)).put(dynamicOps.createString("height_rand_b"), dynamicOps.createInt(this.field22088)).put(dynamicOps.createString("trunk_height"), dynamicOps.createInt(this.field22089)).put(dynamicOps.createString("trunk_height_random"), dynamicOps.createInt(this.field22090)).put(dynamicOps.createString("trunk_top_offset"), dynamicOps.createInt(this.field22091)).put(dynamicOps.createString("trunk_top_offset_random"), dynamicOps.createInt(this.field22092)).put(dynamicOps.createString("foliage_height"), dynamicOps.createInt(this.field22093)).put(dynamicOps.createString("foliage_height_random"), dynamicOps.createInt(this.field22094)).put(dynamicOps.createString("max_water_depth"), dynamicOps.createInt(this.field22095)).put(dynamicOps.createString("ignore_vines"), dynamicOps.createBoolean(this.field22096));
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).merge((Dynamic)super.method16010((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
     }
     

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class3581 extends Class3574
 {
     private static String[] field16684;
@@ -15,7 +17,7 @@ public class Class3581 extends Class3574
     }
     
     @Override
-    public void method11116(final Class511 class511, final double n) {
+    public void method11116(final LivingEntity class511, final double n) {
         if (n <= this.method11117(class511)) {
             if (this.field16686 <= 0) {
                 this.field16686 = 20;

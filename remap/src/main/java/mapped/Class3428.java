@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Optional;
 
 public class Class3428 extends Class3426<Class473>
@@ -40,7 +43,7 @@ public class Class3428 extends Class3426<Class473>
         }
     }
     
-    public static void method10942(final int n, final Class1847 class1847, final Class512 class1848, final Class473 class1849, final Class470 class1850) {
+    public static void method10942(final int n, final World class1847, final Class512 class1848, final Class473 class1849, final Class470 class1850) {
         if (!class1847.field10067) {
             final Class513 class1851 = (Class513)class1848;
             ItemStack class1852 = ItemStack.field34174;
@@ -74,7 +77,7 @@ public class Class3428 extends Class3426<Class473>
     
     @Override
     public boolean method10936(final Class3662<? super Class473> class3662) {
-        return class3662.method11289(this.field16205, this.field16208.field2391);
+        return class3662.method11289(this.field16205, this.field16208.world);
     }
     
     @Override

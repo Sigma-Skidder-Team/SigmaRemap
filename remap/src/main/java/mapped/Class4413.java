@@ -8,11 +8,11 @@ public final class Class4413 implements Class4410<Boolean>
 {
     private static String[] field19744;
     
-    public void method13355(final Class8654 class8654, final Boolean b) {
+    public void method13355(final PacketBuffer class8654, final Boolean b) {
         class8654.writeBoolean(b);
     }
     
-    public Boolean method13356(final Class8654 class8654) {
+    public Boolean method13356(final PacketBuffer class8654) {
         return class8654.readBoolean();
     }
     

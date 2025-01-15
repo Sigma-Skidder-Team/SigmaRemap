@@ -5,6 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 
@@ -18,7 +22,7 @@ public class Class3938 extends Class3936
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class493) {
@@ -26,7 +30,7 @@ public class Class3938 extends Class3936
         }
     }
     
-    public static void method12051(final Class1847 class1847, final BlockPos class1848, final Class493 class1849) {
+    public static void method12051(final World class1847, final BlockPos class1848, final Class493 class1849) {
         if (!class1847.field10067) {
             final Class3833 method21696 = class1849.method2194().method21696();
             if (method21696 == Class7521.field29455 || method21696 == Class7521.field29456) {
@@ -64,7 +68,7 @@ public class Class3938 extends Class3936
         }
     }
     
-    public static boolean method12052(final Class1847 class1847, final BlockPos class1848, final ItemStack class1849) {
+    public static boolean method12052(final World class1847, final BlockPos class1848, final ItemStack class1849) {
         if (class1849.method27622() == Class7739.field31524) {
             if (class1848.getY() >= 2) {
                 if (class1847.method6954() != Class2113.field12290) {

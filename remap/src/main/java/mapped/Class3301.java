@@ -60,6 +60,6 @@ public class Class3301 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15872 = (int)Class3301.field15514.field4684.field2399;
+        this.field15872 = (int)Class3301.field15514.field4684.rotationYaw;
     }
 }

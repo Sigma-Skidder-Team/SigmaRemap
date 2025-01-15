@@ -5,17 +5,20 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.Pose;
+import net.minecraft.util.DamageSource;
 
 public class Class859 extends Entity
 {
     private static String[] field4593;
     public final Class852 field4594;
     public final String field4595;
-    private final Class8295 field4596;
+    private final EntitySize field4596;
     
     public Class859(final Class852 field4594, final String field4595, final float n, final float n2) {
-        super(field4594.method1642(), field4594.field2391);
-        this.field4596 = Class8295.method27563(n, n2);
+        super(field4594.getType(), field4594.world);
+        this.field4596 = EntitySize.method27563(n, n2);
         this.method1881();
         this.field4594 = field4594;
         this.field4595 = field4595;
@@ -39,7 +42,7 @@ public class Class859 extends Entity
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         return !this.method1849(class7929) && this.field4594.method5116(this, class7929, n);
     }
     
@@ -49,12 +52,12 @@ public class Class859 extends Entity
     }
     
     @Override
-    public Class4252<?> method1932() {
+    public IPacket<?> method1932() {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8295 method1933(final Class290 class290) {
+    public EntitySize method1933(final Pose class290) {
         return this.field4596;
     }
 }

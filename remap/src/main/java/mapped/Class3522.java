@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3522 extends Class3446
@@ -19,7 +21,7 @@ public class Class3522 extends Class3446
     @Override
     public boolean method11013() {
         if (!this.field16525.method2783()) {
-            final Class511 method4152 = this.field16525.method4152();
+            final LivingEntity method4152 = this.field16525.method4152();
             if (method4152 != null) {
                 if (method4152.method1768()) {
                     if (Class803.method4693().test(method4152)) {
@@ -48,7 +50,7 @@ public class Class3522 extends Class3446
     
     @Override
     public void method11018() {
-        final Class511 method4152 = this.field16525.method4152();
+        final LivingEntity method4152 = this.field16525.method4152();
         if (method4152 != null && Class803.method4677(this.field16525, method4152)) {
             this.field16525.method4669(true);
             this.field16525.method4668(true);
@@ -63,7 +65,7 @@ public class Class3522 extends Class3446
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16525.method4152();
+        final LivingEntity method4152 = this.field16525.method4152();
         this.field16525.method4147().method24667(method4152, (float)this.field16525.method4174(), (float)this.field16525.method4173());
         if (this.field16525.method1734(method4152) > 36.0) {
             this.field16525.method4150().method24725(method4152, 1.5);

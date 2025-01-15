@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -99,7 +100,7 @@ public class Class491 extends Class436 implements Class439
                 for (final Entity class399 : method2480) {
                     if (class399.method1921() != Class2117.field12343) {
                         if (b2) {
-                            final Vec3d method2481 = class399.method1935();
+                            final Vec3d method2481 = class399.getMotion();
                             double field22770 = method2481.x;
                             double field22771 = method2481.y;
                             double field22772 = method2481.z;
@@ -117,7 +118,7 @@ public class Class491 extends Class436 implements Class439
                                     break;
                                 }
                             }
-                            class399.method1937(field22770, field22771, field22772);
+                            class399.setMotion(field22770, field22771, field22772);
                         }
                         double max = 0.0;
                         final Iterator<AxisAlignedBB> iterator2 = method2478.iterator();
@@ -168,7 +169,7 @@ public class Class491 extends Class436 implements Class439
     
     private static boolean method2474(final AxisAlignedBB class6221, final Entity class6222) {
         if (class6222.method1921() == Class2117.field12340) {
-            if (class6222.field2404) {
+            if (class6222.onGround) {
                 if (class6222.getPosX() >= class6221.field25073) {
                     if (class6222.getPosX() <= class6221.field25076) {
                         if (class6222.getPosZ() >= class6221.field25075) {

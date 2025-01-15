@@ -56,7 +56,7 @@ public class Class6564
                 }
                 else {
                     this.field26066.method2733((float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950()));
-                    if (this.field26066.field2404) {
+                    if (this.field26066.onGround) {
                         this.field26073 = Class2198.field13375;
                     }
                 }
@@ -67,14 +67,14 @@ public class Class6564
                 final double n2 = this.field26069 - this.field26066.getPosZ();
                 final double n3 = this.field26068 - this.field26066.getPosY();
                 if (n * n + n3 * n3 + n2 * n2 >= 2.500000277905201E-7) {
-                    this.field26066.field2399 = this.method19909(this.field26066.field2399, (float)(MathHelper.method35693(n2, n) * 57.2957763671875) - 90.0f, 90.0f);
+                    this.field26066.rotationYaw = this.method19909(this.field26066.rotationYaw, (float)(MathHelper.method35693(n2, n) * 57.2957763671875) - 90.0f, 90.0f);
                     this.field26066.method2733((float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950()));
                     final BlockPos class354 = new BlockPos(this.field26066);
-                    final Class7096 method6701 = this.field26066.field2391.method6701(class354);
+                    final Class7096 method6701 = this.field26066.world.method6701(class354);
                     final Class3833 method6702 = method6701.method21696();
-                    final Class7702 method6703 = method6701.method21727(this.field26066.field2391, class354);
+                    final Class7702 method6703 = method6701.method21727(this.field26066.world, class354);
                     Label_0593: {
-                        if (n3 > this.field26066.field2420 && n * n + n2 * n2 < Math.max(1.0f, this.field26066.method1930())) {
+                        if (n3 > this.field26066.stepHeight && n * n + n2 * n2 < Math.max(1.0f, this.field26066.method1930())) {
                             break Label_0593;
                         }
                         if (!method6703.method24540()) {
@@ -107,15 +107,15 @@ public class Class6564
             final float n6 = n5 / method6704;
             final float n7 = field26071 * n6;
             final float n8 = field26072 * n6;
-            final float method6705 = MathHelper.sin(this.field26066.field2399 * 0.017453292f);
-            final float method6706 = MathHelper.cos(this.field26066.field2399 * 0.017453292f);
+            final float method6705 = MathHelper.sin(this.field26066.rotationYaw * 0.017453292f);
+            final float method6706 = MathHelper.cos(this.field26066.rotationYaw * 0.017453292f);
             final float n9 = n7 * method6706 - n8 * method6705;
             final float n10 = n8 * method6706 + n7 * method6705;
             final Class7746 method6707 = this.field26066.method4150();
             if (method6707 != null) {
                 final Class4654 method6708 = method6707.method24740();
                 if (method6708 != null) {
-                    if (method6708.method13913(this.field26066.field2391, MathHelper.floor(this.field26066.getPosX() + n9), MathHelper.floor(this.field26066.getPosY()), MathHelper.floor(this.field26066.getPosZ() + n10)) != Class257.field1207) {
+                    if (method6708.method13913(this.field26066.world, MathHelper.floor(this.field26066.getPosX() + n9), MathHelper.floor(this.field26066.getPosY()), MathHelper.floor(this.field26066.getPosZ() + n10)) != Class257.field1207) {
                         this.field26071 = 1.0f;
                         this.field26072 = 0.0f;
                         n5 = n4;

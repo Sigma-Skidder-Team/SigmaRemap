@@ -20,12 +20,12 @@ public class Class3325 extends Class3167
     private void method10528(final Class5743 class5743) {
         if (this.method9906()) {
             if (Class6430.method19135() > this.field15924) {
-                if (Class3325.field15514.field4684.field2424 % 3 == 0) {
+                if (Class3325.field15514.field4684.ticksExisted % 3 == 0) {
                     ++this.field15924;
                 }
             }
             if (Class6430.method19135() < this.field15924) {
-                if (Class3325.field15514.field4684.field2424 % 3 == 0) {
+                if (Class3325.field15514.field4684.ticksExisted % 3 == 0) {
                     --this.field15924;
                 }
             }

@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -29,7 +30,7 @@ public class Class4023 extends Class4022
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return method12215(class7096);
     }
     
@@ -48,7 +49,7 @@ public class Class4023 extends Class4022
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         Class7096 method11878 = this.method11878();
-        final Class1847 method11879 = class7074.method21654();
+        final World method11879 = class7074.method21654();
         final BlockPos method11880 = class7074.method21639();
         for (final Direction class7075 : class7074.method21643()) {
             if (class7075.getAxis().isHorizontal()) {
@@ -67,7 +68,7 @@ public class Class4023 extends Class4022
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         final Direction class7099 = class7096.method21772((Class7111<Direction>)Class4023.field18110);
         final double n = class7098.getX() + 0.5;
         final double n2 = class7098.getY() + 0.7;

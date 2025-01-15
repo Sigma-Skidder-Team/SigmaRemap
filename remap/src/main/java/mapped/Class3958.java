@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -34,7 +35,7 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         final boolean method6749 = class7097.method6749(class7098);
         if (method6749 != class7096.method21772((Class7111<Boolean>)Class3958.field17867)) {
             if (method6749) {
@@ -45,7 +46,7 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public void method11869(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
+    public void method11869(final World class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
         if (class1850 instanceof Class402) {
             final Entity method1973 = ((Class402)class1850).method1973();
             this.method12074(class1847, class1848, class1849, (method1973 instanceof Class512) ? ((Class512)method1973) : null, true);
@@ -53,11 +54,11 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         return this.method12074(class7097, class7096, class7101, class7099, true) ? Class2201.field13400 : Class2201.field13402;
     }
     
-    public boolean method12074(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Class512 class1850, final boolean b) {
+    public boolean method12074(final World class1847, final Class7096 class1848, final Class7005 class1849, final Class512 class1850, final boolean b) {
         final Direction method21448 = class1849.method21448();
         final BlockPos method21449 = class1849.method21447();
         if (b && !this.method12075(class1848, method21448, class1849.method21451().y - method21449.getY())) {
@@ -93,7 +94,7 @@ public class Class3958 extends Class3841
         }
     }
     
-    public boolean method12076(final Class1847 class1847, final BlockPos class1848, Direction class1849) {
+    public boolean method12076(final World class1847, final BlockPos class1848, Direction class1849) {
         final Class436 method6727 = class1847.method6727(class1848);
         if (!class1847.field10067 && method6727 instanceof Class495) {
             if (class1849 == null) {
@@ -128,12 +129,12 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.method12077(class7096);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.method12077(class7096);
     }
     
@@ -147,7 +148,7 @@ public class Class3958 extends Class3841
     public Class7096 method11846(final Class7074 class7074) {
         final Direction method21648 = class7074.method21648();
         final BlockPos method21649 = class7074.method21639();
-        final Class1847 method21650 = class7074.method21654();
+        final World method21650 = class7074.method21654();
         final Axis method21651 = method21648.getAxis();
         if (method21651 != Axis.Y) {
             boolean b = false;

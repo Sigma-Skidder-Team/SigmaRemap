@@ -15,10 +15,10 @@ public class Class3382 extends Class3167
     private void method10795(final Class5738 class5738) {
         if (this.method9906() && Class3382.field15514.field4684 != null) {
             if (!class5738.method17027()) {
-                Class3382.field15514.field4684.field2420 = this.method9886("Maximum heigh");
+                Class3382.field15514.field4684.stepHeight = this.method9886("Maximum heigh");
             }
             else {
-                Class3382.field15514.field4684.field2420 = 0.5f;
+                Class3382.field15514.field4684.stepHeight = 0.5f;
             }
         }
     }

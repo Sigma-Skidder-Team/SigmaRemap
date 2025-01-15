@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public interface Class453 extends Class446
@@ -17,7 +19,7 @@ public interface Class453 extends Class446
     }
     
     @Nullable
-    Class1847 method2186();
+    World method2186();
     
     double method2286();
     

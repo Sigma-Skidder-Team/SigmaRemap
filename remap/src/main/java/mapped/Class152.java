@@ -31,7 +31,7 @@ public class Class152 implements Class122
     public boolean test(final Class7529 class7529) {
         final Entity class7530 = class7529.method23579(this.field448.method8153());
         if (class7530 != null) {
-            final Class6516 method6782 = class7530.field2391.method6782();
+            final Class6516 method6782 = class7530.world.method6782();
             for (final Map.Entry entry : this.field447.entrySet()) {
                 if (this.method733(class7530, method6782, (String)entry.getKey(), (Class5772)entry.getValue())) {
                     continue;

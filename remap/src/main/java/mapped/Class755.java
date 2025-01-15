@@ -6,6 +6,7 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
@@ -13,8 +14,8 @@ public class Class755 extends Class754
 {
     public Class755(final Class1848 class1848, final GameProfile gameProfile) {
         super(class1848, gameProfile);
-        this.field2420 = 1.0f;
-        this.field2421 = true;
+        this.stepHeight = 1.0f;
+        this.noClip = true;
     }
     
     @Override
@@ -28,7 +29,7 @@ public class Class755 extends Class754
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         return true;
     }
     
@@ -36,8 +37,8 @@ public class Class755 extends Class754
     public void method1659() {
         super.method1659();
         this.field2945 = this.field2946;
-        final double n = this.getPosX() - this.field2392;
-        final double n2 = this.getPosZ() - this.field2394;
+        final double n = this.getPosX() - this.prevPosX;
+        final double n2 = this.getPosZ() - this.prevPosZ;
         float n3 = MathHelper.sqrt(n * n + n2 * n2) * 4.0f;
         if (n3 > 1.0f) {
             n3 = 1.0f;
@@ -52,11 +53,11 @@ public class Class755 extends Class754
             final double n = this.getPosX() + (this.field2972 - this.getPosX()) / this.field2971;
             final double n2 = this.getPosY() + (this.field2973 - this.getPosY()) / this.field2971;
             final double n3 = this.getPosZ() + (this.field2974 - this.getPosZ()) / this.field2971;
-            this.field2399 += (float)(MathHelper.method35669(this.field2975 - this.field2399) / this.field2971);
-            this.field2400 += (float)((this.field2976 - this.field2400) / this.field2971);
+            this.rotationYaw += (float)(MathHelper.method35669(this.field2975 - this.rotationYaw) / this.field2971);
+            this.rotationPitch += (float)((this.field2976 - this.rotationPitch) / this.field2971);
             --this.field2971;
-            this.method1656(n, n2, n3);
-            this.method1655(this.field2399, this.field2400);
+            this.setPosition(n, n2, n3);
+            this.method1655(this.rotationYaw, this.rotationPitch);
         }
         if (this.field2978 > 0) {
             this.field2953 += (float)(MathHelper.method35669(this.field2977 - this.field2953) / this.field2978);
@@ -65,19 +66,19 @@ public class Class755 extends Class754
         this.field3012 = this.field3013;
         this.method2709();
         float min;
-        if (this.field2404 && this.method2664() > 0.0f) {
-            min = Math.min(0.1f, MathHelper.sqrt(Entity.method1680(this.method1935())));
+        if (this.onGround && this.method2664() > 0.0f) {
+            min = Math.min(0.1f, MathHelper.sqrt(Entity.method1680(this.getMotion())));
         }
         else {
             min = 0.0f;
         }
-        if (!this.field2404 && this.method2664() > 0.0f) {
-            final float n4 = (float)Math.atan(-this.method1935().y * 0.20000000298023224) * 15.0f;
+        if (!this.onGround && this.method2664() > 0.0f) {
+            final float n4 = (float)Math.atan(-this.getMotion().y * 0.20000000298023224) * 15.0f;
         }
         this.field3013 += (min - this.field3013) * 0.4f;
-        this.field2391.method6796().method15297("push");
+        this.world.method6796().method15297("push");
         this.method2739();
-        this.field2391.method6796().method15299();
+        this.world.method6796().method15299();
     }
     
     @Override

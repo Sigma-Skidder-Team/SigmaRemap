@@ -9,6 +9,7 @@ import java.nio.file.OpenOption;
 import java.io.Reader;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.Style;
 import org.apache.commons.io.IOUtils;
 import java.nio.file.Path;
 import java.io.IOException;
@@ -45,7 +46,7 @@ public class Class7321
                             new Class118(Class7521.field29154.method11878(), Collections.EMPTY_SET, null).method610(method23250, new BlockPos(class7494.getX() + i, class7494.getY() + 1, class7494.getZ() + j), 2);
                         }
                     }
-                    Class8787.method30574(class7494.method1134(1, 0, -1), method23250);
+                    Class8787.method30574(class7494.add(1, 0, -1), method23250);
                     return 0;
                 }
             }
@@ -64,11 +65,11 @@ public class Class7321
             final Class501 class7493 = (Class501)method21448.method6727(optional.get());
             final BlockPos method21449 = method21447.method1136(optional.get());
             final String string = method21449.getX() + ", " + method21449.getY() + ", " + method21449.getZ();
-            class7492.method23257(new Class2260("Position relative to " + class7493.method2555() + ": ").method8458(new Class2260(string).method8455(new Class8768().method30414(true).method30413(Class2116.field12319).method30420(new Class9390(Class1961.field10697, new Class2260("Click to copy to clipboard"))).method30419(new Class9485(Class2075.field11976, "final BlockPos " + str + " = new BlockPos(" + string + ");")))), false);
+            class7492.method23257(new StringTextComponent("Position relative to " + class7493.method2555() + ": ").appendSibling(new StringTextComponent(string).setStyle(new Style().setBold(true).setColor(TextFormatting.GREEN).method30420(new Class9390(Class1961.field10697, new StringTextComponent("Click to copy to clipboard"))).method30419(new Class9485(Class2075.field11976, "final BlockPos " + str + " = new BlockPos(" + string + ");")))), false);
             Class9324.method34529(method21448, new BlockPos(method21447), string, -2147418368, 10000);
             return 1;
         }
-        class7492.method23259(new Class2260("Can't find a structure block that contains the targeted pos " + method21447));
+        class7492.method23259(new StringTextComponent("Can't find a structure block that contains the targeted pos " + method21447));
         return 0;
     }
     
@@ -81,7 +82,7 @@ public class Class7321
             method22444(method23250, method23251, null);
             return 1;
         }
-        method22455(method23250, "Couldn't find any structure block within 15 radius", Class2116.field12321);
+        method22455(method23250, "Couldn't find any structure block within 15 radius", TextFormatting.RED);
         return 0;
     }
     
@@ -99,7 +100,7 @@ public class Class7321
             });
             return 1;
         }
-        method22455(method23250, "Couldn't find any structure blocks within 200 block radius", Class2116.field12321);
+        method22455(method23250, "Couldn't find any structure blocks within 200 block radius", TextFormatting.RED);
         return 1;
     }
     
@@ -116,15 +117,15 @@ public class Class7321
     
     private static void method22445(final Class1849 class1849, final Class7333 class1850) {
         if (class1850.method22493()) {
-            method22455(class1849, "GameTest done! " + class1850.method22492() + " tests were run", Class2116.field12324);
+            method22455(class1849, "GameTest done! " + class1850.method22492() + " tests were run", TextFormatting.WHITE);
             if (!class1850.method22490()) {
-                method22455(class1849, "All required tests passed :)", Class2116.field12319);
+                method22455(class1849, "All required tests passed :)", TextFormatting.GREEN);
             }
             else {
-                method22455(class1849, "" + class1850.method22487() + " required tests failed :(", Class2116.field12321);
+                method22455(class1849, "" + class1850.method22487() + " required tests failed :(", TextFormatting.RED);
             }
             if (class1850.method22491()) {
-                method22455(class1849, "" + class1850.method22488() + " optional tests failed", Class2116.field12316);
+                method22455(class1849, "" + class1850.method22488() + " optional tests failed", TextFormatting.GRAY);
             }
         }
     }
@@ -176,7 +177,7 @@ public class Class7321
     }
     
     private static void method22452(final Class7492 class7492, final String s) {
-        class7492.method23257(new Class2260(s), false);
+        class7492.method23257(new StringTextComponent(s), false);
     }
     
     private static int method22453(final Class7492 class7492, final String s) {
@@ -216,10 +217,10 @@ public class Class7321
         }
     }
     
-    private static void method22455(final Class1849 class1849, final String s, final Class2116 class1850) {
+    private static void method22455(final Class1849 class1849, final String s, final TextFormatting class1850) {
         class1849.method6883(p0 -> true).forEach(class1851 -> {
-            new Class2260(obj + str);
-            final Class2260 class1852;
+            new StringTextComponent(obj + str);
+            final StringTextComponent class1852;
             class1851.sendMessage(class1852);
         });
     }

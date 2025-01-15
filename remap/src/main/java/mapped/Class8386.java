@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.Logger;
 import io.netty.handler.codec.MessageToByteEncoder;
 
-public class Class8386 extends MessageToByteEncoder<Class4252<?>>
+public class Class8386 extends MessageToByteEncoder<IPacket<?>>
 {
     private static final Logger field34377;
     private static final Marker field34378;
@@ -24,27 +24,27 @@ public class Class8386 extends MessageToByteEncoder<Class4252<?>>
         this.field34379 = field34379;
     }
     
-    public void encode(final ChannelHandlerContext channelHandlerContext, final Class4252<?> obj, final ByteBuf byteBuf) throws Exception {
-        final Class2208 class2208 = (Class2208)channelHandlerContext.channel().attr((AttributeKey)Class3641.field16893).get();
+    public void encode(final ChannelHandlerContext channelHandlerContext, final IPacket<?> obj, final ByteBuf byteBuf) throws Exception {
+        final Class2208 class2208 = (Class2208)channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get();
         if (class2208 == null) {
             throw new RuntimeException("ConnectionProtocol unknown: " + obj);
         }
         final Integer method8387 = class2208.method8387(this.field34379, obj);
         if (Class8386.field34377.isDebugEnabled()) {
-            Class8386.field34377.debug(Class8386.field34378, "OUT: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey)Class3641.field16893).get(), (Object)method8387, (Object)obj.getClass().getName());
+            Class8386.field34377.debug(Class8386.field34378, "OUT: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), (Object)method8387, (Object)obj.getClass().getName());
         }
         if (method8387 == null) {
             throw new IOException("Can't serialize unregistered packet");
         }
-        final Class8654 class2209 = new Class8654(byteBuf);
-        class2209.method29505(method8387);
+        final PacketBuffer class2209 = new PacketBuffer(byteBuf);
+        class2209.writeVarInt(method8387);
         try {
-            obj.method12755(class2209);
+            obj.writePacketData(class2209);
             return;
         }
         catch (final Throwable t) {
             Class8386.field34377.error((Object)t);
-            if (obj.method12763()) {
+            if (obj.shouldSkipErrors()) {
                 throw new Class6577(t);
             }
         }
@@ -53,6 +53,6 @@ public class Class8386 extends MessageToByteEncoder<Class4252<?>>
     
     static {
         field34377 = LogManager.getLogger();
-        field34378 = MarkerManager.getMarker("PACKET_SENT", Class3641.field16892);
+        field34378 = MarkerManager.getMarker("PACKET_SENT", NetworkManager.field16892);
     }
 }

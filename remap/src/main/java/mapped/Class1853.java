@@ -8,6 +8,8 @@ import java.util.Spliterator;
 import java.util.stream.StreamSupport;
 import com.google.common.collect.Streams;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.stream.Stream;
@@ -26,7 +28,7 @@ public interface Class1853 extends Class1855
         return true;
     }
     
-    default boolean method6974(final Class7096 class7096, final BlockPos class7097, final Class7543 class7098) {
+    default boolean method6974(final Class7096 class7096, final BlockPos class7097, final ISelectionContext class7098) {
         final Class7702 method21728 = class7096.method21728(this, class7097, class7098);
         return method21728.method24540() || this.method6957(null, method21728.method24541(class7097.getX(), class7097.getY(), class7097.getZ()));
     }
@@ -60,6 +62,6 @@ public interface Class1853 extends Class1855
     }
     
     default Stream<Class7702> method6981(final Entity class399, final AxisAlignedBB class400) {
-        return StreamSupport.stream((Spliterator<Class7702>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new Class8243(MathHelper.floor(class400.field25073 - 1.0E-7) - 1, MathHelper.floor(class400.field25074 - 1.0E-7) - 1, MathHelper.floor(class400.field25075 - 1.0E-7) - 1, MathHelper.floor(class400.field25076 + 1.0E-7) + 1, MathHelper.floor(class400.field25077 + 1.0E-7) + 1, MathHelper.floor(class400.field25078 + 1.0E-7) + 1), new Class385(), (class399 != null) ? Class7543.method23630(class399) : Class7543.method23629(), Class7698.method24489(class400)), false);
+        return StreamSupport.stream((Spliterator<Class7702>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new CubeCoordinateIterator(MathHelper.floor(class400.field25073 - 1.0E-7) - 1, MathHelper.floor(class400.field25074 - 1.0E-7) - 1, MathHelper.floor(class400.field25075 - 1.0E-7) - 1, MathHelper.floor(class400.field25076 + 1.0E-7) + 1, MathHelper.floor(class400.field25077 + 1.0E-7) + 1, MathHelper.floor(class400.field25078 + 1.0E-7) + 1), new Mutable(), (class399 != null) ? ISelectionContext.forEntity(class399) : ISelectionContext.dummy(), Class7698.method24489(class400)), false);
     }
 }

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -76,7 +78,7 @@ public class Class3972 extends Class3833
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7097.method6772(class7098.method1137())) {
             if (random.nextInt(15) == 1) {
                 final BlockPos method1139 = class7098.method1139();

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.function.Supplier;
 import java.io.File;
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class387 implements AutoCloseable
 {
@@ -21,7 +22,7 @@ public class Class387 implements AutoCloseable
         this.field2245 = new Class1914(new Class1881(file), "chunk");
     }
     
-    public Class51 method1307(final Class383 class383, final Supplier<Class8213> supplier, Class51 class384) {
+    public Class51 method1307(final DimensionType class383, final Supplier<Class8213> supplier, Class51 class384) {
         final int method1308 = method1308(class384);
         if (method1308 < 1493) {
             class384 = Class9346.method34652(this.field2246, Class1959.field10677, class384, method1308, 1493);

@@ -55,6 +55,6 @@ public class Class3621 extends Class3617
     }
     
     private List<BlockPos> method11148() {
-        return ((Class1849)this.field16823.field2391).method6921().method7200(class8912 -> class8912 == Class8912.field37478 || class8912 == Class8912.field37479, new BlockPos(this.field16823), 20, Class2045.field11652).map((Function<? super Class377, ?>)Class377::method1259).filter(class8913 -> Class798.method4586(this.field16823, class8913)).sorted(Comparator.comparingDouble(class8915 -> class8915.method1083(class8914))).collect((Collector<? super Object, ?, List<BlockPos>>)Collectors.toList());
+        return ((Class1849)this.field16823.world).method6921().method7200(class8912 -> class8912 == Class8912.field37478 || class8912 == Class8912.field37479, new BlockPos(this.field16823), 20, Class2045.field11652).map((Function<? super Class377, ?>)Class377::method1259).filter(class8913 -> Class798.method4586(this.field16823, class8913)).sorted(Comparator.comparingDouble(class8915 -> class8915.method1083(class8914))).collect((Collector<? super Object, ?, List<BlockPos>>)Collectors.toList());
     }
 }

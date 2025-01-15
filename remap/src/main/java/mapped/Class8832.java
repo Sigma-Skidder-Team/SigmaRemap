@@ -5,7 +5,6 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.util.HashMap;
 import com.google.gson.JsonElement;
 import com.google.common.collect.Maps;
@@ -26,7 +25,7 @@ public class Class8832
         this.field37130 = null;
     }
     
-    public void method30838(final Class8654 class8654) {
+    public void method30838(final PacketBuffer class8654) {
     }
     
     public static Class8832 method30839(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
@@ -38,7 +37,7 @@ public class Class8832
         throw new JsonSyntaxException("Invalid criterion trigger: " + obj);
     }
     
-    public static Class8832 method30840(final Class8654 class8654) {
+    public static Class8832 method30840(final PacketBuffer class8654) {
         return new Class8832();
     }
     
@@ -50,16 +49,16 @@ public class Class8832
         return hashMap;
     }
     
-    public static Map<String, Class8832> method30842(final Class8654 class8654) {
+    public static Map<String, Class8832> method30842(final PacketBuffer class8654) {
         final HashMap hashMap = Maps.newHashMap();
-        for (int method29501 = class8654.method29501(), i = 0; i < method29501; ++i) {
+        for (int method29501 = class8654.readVarInt(), i = 0; i < method29501; ++i) {
             hashMap.put(class8654.method29513(32767), method30840(class8654));
         }
         return hashMap;
     }
     
-    public static void method30843(final Map<String, Class8832> map, final Class8654 class8654) {
-        class8654.method29505(map.size());
+    public static void method30843(final Map<String, Class8832> map, final PacketBuffer class8654) {
+        class8654.writeVarInt(map.size());
         for (final Map.Entry<String, V> entry : map.entrySet()) {
             class8654.method29514(entry.getKey());
             ((Class8832)entry.getValue()).method30838(class8654);

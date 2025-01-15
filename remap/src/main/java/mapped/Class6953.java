@@ -106,10 +106,10 @@ public class Class6953<T> implements Class6952<T>
         final int n = (class7859.field32290 << 4) - 2;
         final int n2 = n + 16 + 2;
         final int n3 = (class7859.field32291 << 4) - 2;
-        return this.method21348(new Class6997(n, 0, n3, n2, 256, n3 + 16 + 2), b, b2);
+        return this.method21348(new MutableBoundingBox(n, 0, n3, n2, 256, n3 + 16 + 2), b, b2);
     }
     
-    public List<Class7460<T>> method21348(final Class6997 class6997, final boolean b, final boolean b2) {
+    public List<Class7460<T>> method21348(final MutableBoundingBox class6997, final boolean b, final boolean b2) {
         final List<Class7460<T>> method21349 = this.method21349(null, this.field27223, class6997, b);
         if (b) {
             if (method21349 != null) {
@@ -124,21 +124,21 @@ public class Class6953<T> implements Class6952<T>
     }
     
     @Nullable
-    private List<Class7460<T>> method21349(List<Class7460<T>> arrayList, final Collection<Class7460<T>> collection, final Class6997 class6997, final boolean b) {
+    private List<Class7460<T>> method21349(List<Class7460<T>> arrayList, final Collection<Class7460<T>> collection, final MutableBoundingBox class6997, final boolean b) {
         final Iterator<Class7460<T>> iterator = collection.iterator();
         while (iterator.hasNext()) {
             final Class7460 class6998 = iterator.next();
             final BlockPos field28774 = class6998.field28774;
-            if (field28774.getX() < class6997.field27293) {
+            if (field28774.getX() < class6997.minX) {
                 continue;
             }
-            if (field28774.getX() >= class6997.field27296) {
+            if (field28774.getX() >= class6997.maxX) {
                 continue;
             }
-            if (field28774.getZ() < class6997.field27295) {
+            if (field28774.getZ() < class6997.minZ) {
                 continue;
             }
-            if (field28774.getZ() >= class6997.field27298) {
+            if (field28774.getZ() >= class6997.maxZ) {
                 continue;
             }
             if (b) {
@@ -152,12 +152,12 @@ public class Class6953<T> implements Class6952<T>
         return arrayList;
     }
     
-    public void method21350(final Class6997 class6997, final BlockPos class6998) {
+    public void method21350(final MutableBoundingBox class6997, final BlockPos class6998) {
         for (final Class7460 class6999 : this.method21348(class6997, false, false)) {
-            if (!class6997.method21415(class6999.field28774)) {
+            if (!class6997.isVecInside(class6999.field28774)) {
                 continue;
             }
-            this.method21353(new Class7460<T>(class6999.field28774.method1135(class6998), class6999.method22980(), class6999.field28775, class6999.field28776));
+            this.method21353(new Class7460<T>(class6999.field28774.add(class6998), class6999.method22980(), class6999.field28775, class6999.field28776));
         }
     }
     

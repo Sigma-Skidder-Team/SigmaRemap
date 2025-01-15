@@ -25,6 +25,8 @@ import java.util.function.BiConsumer;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -135,10 +137,10 @@ public class Class7793
     
     private void method25037() {
         if (this.field31915 != Class9588.field41797) {
-            this.field31917 = this.field31917.and(this.method25038(this.field31915, class399 -> class399.field2400));
+            this.field31917 = this.field31917.and(this.method25038(this.field31915, class399 -> class399.rotationPitch));
         }
         if (this.field31916 != Class9588.field41797) {
-            this.field31917 = this.field31917.and(this.method25038(this.field31916, class400 -> class400.field2399));
+            this.field31917 = this.field31917.and(this.method25038(this.field31916, class400 -> class400.rotationYaw));
         }
         if (!this.field31908.method29744()) {
             this.field31917 = this.field31917.and(class401 -> class401 instanceof Class513 && this.field31908.method29755(((Class513)class401).field3026));

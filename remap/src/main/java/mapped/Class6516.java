@@ -275,9 +275,9 @@ public class Class6516
             }
             default: {
                 if (n >= 3 && n <= 18) {
-                    final Class2116 method8261 = Class2116.method8261(n - 3);
-                    if (method8261 != null && method8261 != Class2116.field12330) {
-                        return "sidebar.team." + method8261.method8258();
+                    final TextFormatting method8261 = TextFormatting.fromColorIndex(n - 3);
+                    if (method8261 != null && method8261 != TextFormatting.RESET) {
+                        return "sidebar.team." + method8261.getFriendlyName();
                     }
                 }
                 return null;
@@ -294,10 +294,10 @@ public class Class6516
         }
         if (!"belowName".equalsIgnoreCase(anotherString)) {
             if (anotherString.startsWith("sidebar.team.")) {
-                final Class2116 method8260 = Class2116.method8260(anotherString.substring("sidebar.team.".length()));
+                final TextFormatting method8260 = TextFormatting.getValueByName(anotherString.substring("sidebar.team.".length()));
                 if (method8260 != null) {
-                    if (method8260.method8253() >= 0) {
-                        return method8260.method8253() + 3;
+                    if (method8260.getColorIndex() >= 0) {
+                        return method8260.getColorIndex() + 3;
                     }
                 }
             }

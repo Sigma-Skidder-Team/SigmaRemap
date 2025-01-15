@@ -15,7 +15,7 @@ public abstract class Class1805<T extends Entity & Class766, M extends Class5845
     @Override
     public void method6554(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (t.method4233()) {
-            final float n8 = t.field2424 + n4;
+            final float n8 = t.ticksExisted + n4;
             final Class5845<T> method6567 = this.method6567();
             method6567.method17558(t, n2, n3, n4);
             this.method6559().method17569(method6567);

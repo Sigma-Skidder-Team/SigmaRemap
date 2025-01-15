@@ -8,6 +8,8 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.item.ItemStack;
+
 import java.util.Arrays;
 
 public class Class9032
@@ -41,7 +43,7 @@ public class Class9032
                     method32884.method2110(class513.method1865());
                 }
                 else {
-                    class513.field2391.method6706(null, class513.getPosX(), class513.getPosY(), class513.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, ((class513.method2633().nextFloat() - class513.method2633().nextFloat()) * 0.7f + 1.0f) * 2.0f);
+                    class513.world.method6706(null, class513.getPosX(), class513.getPosY(), class513.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, ((class513.method2633().nextFloat() - class513.method2633().nextFloat()) * 0.7f + 1.0f) * 2.0f);
                     n = 1;
                 }
             }

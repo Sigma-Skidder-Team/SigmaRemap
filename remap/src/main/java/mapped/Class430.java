@@ -4,15 +4,18 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
+
 public class Class430 extends Class428
 {
     private static String[] field2641;
     
-    public Class430(final EntityType<?> class7499, final Class1847 class7500) {
+    public Class430(final EntityType<?> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class430(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class430(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field28999, class1847, n, n2, n3);
     }
     
@@ -21,8 +24,8 @@ public class Class430 extends Class428
         if (class512.method2804()) {
             return false;
         }
-        if (!this.method1806()) {
-            if (!this.field2391.field10067) {
+        if (!this.isBeingRidden()) {
+            if (!this.world.field10067) {
                 class512.method1778(this);
             }
             return true;
@@ -33,8 +36,8 @@ public class Class430 extends Class428
     @Override
     public void method2126(final int n, final int n2, final int n3, final boolean b) {
         if (b) {
-            if (this.method1806()) {
-                this.method1783();
+            if (this.isBeingRidden()) {
+                this.removePassengers();
             }
             if (this.method2136() == 0) {
                 this.method2137(-this.method2138());

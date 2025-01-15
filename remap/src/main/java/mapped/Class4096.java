@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -32,27 +34,27 @@ public class Class4096 extends Class3820
         if (class8321.method27656()) {
             final String method323 = class8321.method27657().method323("title");
             if (!Class8272.method27500(method323)) {
-                return new Class2260(method323);
+                return new StringTextComponent(method323);
             }
         }
         return super.method11729(class8321);
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         if (class8321.method27656()) {
             final Class51 method27657 = class8321.method27657();
             final String method27658 = method27657.method323("author");
             if (!Class8272.method27500(method27658)) {
-                list.add(new Class2259("book.byAuthor", new Object[] { method27658 }).method8469(Class2116.field12316));
+                list.add(new Class2259("book.byAuthor", new Object[] { method27658 }).applyTextStyle(TextFormatting.GRAY));
             }
-            list.add(new Class2259("book.generation." + method27657.method319("generation"), new Object[0]).method8469(Class2116.field12316));
+            list.add(new Class2259("book.generation." + method27657.method319("generation"), new Object[0]).applyTextStyle(TextFormatting.GRAY));
         }
     }
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21696() != Class7521.field29813) {
@@ -62,7 +64,7 @@ public class Class4096 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2835(method2715, class1849);
         class1848.method2859(Class8276.field33981.method8449(this));
@@ -86,7 +88,7 @@ public class Class4096 extends Class3820
                 method27660 = Class9479.method35294(class8322, Class5953.method17873(method27659), class8323, 0);
             }
             catch (final Exception ex) {
-                method27660 = new Class2260(method27659);
+                method27660 = new StringTextComponent(method27659);
             }
             method27658.set(i, Class50.method290(Class5953.method17869(method27660)));
         }

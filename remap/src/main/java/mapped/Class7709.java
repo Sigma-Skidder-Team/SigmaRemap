@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
 
@@ -34,7 +36,7 @@ public class Class7709
     public static final Class4410<Class51> field30668;
     public static final Class4410<Class8562> field30669;
     public static final Class4410<OptionalInt> field30670;
-    public static final Class4410<Class290> field30671;
+    public static final Class4410<Pose> field30671;
     
     public static void method24606(final Class4410<?> class4410) {
         Class7709.field30652.method567(class4410);

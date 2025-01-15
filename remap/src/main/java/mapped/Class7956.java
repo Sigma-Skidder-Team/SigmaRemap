@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 
 import java.util.Random;
 

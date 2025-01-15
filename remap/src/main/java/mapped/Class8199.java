@@ -146,12 +146,12 @@ public class Class8199
         return this.field33724;
     }
     
-    public void method27162(final Class8654 class8654) {
+    public void method27162(final PacketBuffer class8654) {
         this.field33721 = class8654.readShort();
         this.field33724.method25509(class8654);
     }
     
-    public void method27163(final Class8654 class8654) {
+    public void method27163(final PacketBuffer class8654) {
         class8654.writeShort(this.field33721);
         this.field33724.method25510(class8654);
     }

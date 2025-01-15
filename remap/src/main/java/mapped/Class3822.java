@@ -5,7 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -19,7 +22,7 @@ public class Class3822 extends Class3821
     }
     
     @Override
-    public void method11753(final Class1847 class1847, final ItemStack class1848, final BlockPos class1849) {
+    public void method11753(final World class1847, final ItemStack class1848, final BlockPos class1849) {
         if (!class1847.field10067) {
             this.method11757(class1847, class1848, class1849);
         }
@@ -30,7 +33,7 @@ public class Class3822 extends Class3821
         class513.method6705(class512, class514, Class8520.field35050, Class286.field1584, 1.0f, 1.0f);
     }
     
-    private void method11757(final Class1847 class1847, final ItemStack class1848, final BlockPos class1849) {
+    private void method11757(final World class1847, final ItemStack class1848, final BlockPos class1849) {
         final Entity method23356 = this.field17374.method23356(class1847, class1848, null, class1849, Class2101.field12185, true, false);
         if (method23356 != null) {
             ((Class833)method23356).method4954(true);
@@ -38,27 +41,27 @@ public class Class3822 extends Class3821
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         if (this.field17374 == EntityType.field29034) {
             final Class51 method27657 = class8321.method27657();
             if (method27657 != null) {
                 if (method27657.method316("BucketVariantTag", 3)) {
                     final int method27658 = method27657.method319("BucketVariantTag");
-                    final Class2116[] array = { Class2116.field12329, Class2116.field12316 };
+                    final TextFormatting[] array = { TextFormatting.ITALIC, TextFormatting.GRAY};
                     final String string = "color.minecraft." + Class835.method4974(method27658);
                     final String string2 = "color.minecraft." + Class835.method4975(method27658);
                     for (int i = 0; i < Class835.field4451.length; ++i) {
                         if (method27658 == Class835.field4451[i]) {
-                            list.add(new Class2259(Class835.method4973(i), new Object[0]).method8468(array));
+                            list.add(new Class2259(Class835.method4973(i), new Object[0]).applyTextStyles(array));
                             return;
                         }
                     }
-                    list.add(new Class2259(Class835.method4976(method27658), new Object[0]).method8468(array));
+                    list.add(new Class2259(Class835.method4976(method27658), new Object[0]).applyTextStyles(array));
                     final Class2259 class8324 = new Class2259(string, new Object[0]);
                     if (!string.equals(string2)) {
-                        class8324.method8457(", ").method8458(new Class2259(string2, new Object[0]));
+                        class8324.appendText(", ").appendSibling(new Class2259(string2, new Object[0]));
                     }
-                    class8324.method8468(array);
+                    class8324.applyTextStyles(array);
                     list.add(class8324);
                 }
             }

@@ -5,8 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;
@@ -66,27 +69,27 @@ public abstract class Class6765
         this.method20592().method26204(true);
     }
     
-    public void method20577(final Class3641 class3641, final Class513 class3642) {
+    public void method20577(final NetworkManager class3641, final Class513 class3642) {
         final GameProfile method2844 = class3642.method2844();
         final Class8608 method2845 = this.field26562.method1556();
         final GameProfile method2846 = method2845.method29196(method2844.getId());
         final String anotherString = (method2846 != null) ? method2846.getName() : method2844.getName();
         method2845.method29193(method2844);
         final Class51 method2847 = this.method20580(class3642);
-        final Class1849 method2848 = this.field26562.method1481(class3642.field2452);
+        final Class1849 method2848 = this.field26562.method1481(class3642.dimension);
         class3642.method1727(method2848);
-        class3642.field3041.method26489((Class1849)class3642.field2391);
+        class3642.field3041.method26489((Class1849)class3642.world);
         String string = "local";
         if (class3641.method11180() != null) {
             string = class3641.method11180().toString();
         }
-        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.getName().getString(), (Object)string, (Object)class3642.method1643(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
+        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.getName().getString(), (Object)string, (Object)class3642.getEntityId(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
         final Class8660 method2849 = method2848.method6764();
         this.method20615(class3642, null, method2848);
         final Class5814 class3643 = new Class5814(this.field26562, class3641, class3642);
         final Class8878 method2850 = method2848.method6765();
-        class3643.method17469(new Class4383(class3642.method1643(), class3642.field3041.method26482(), Class8660.method29535(method2849.method29534()), method2849.method29568(), method2848.field10063.method20487(), this.method20609(), method2849.method29570(), this.field26574, method2850.method31216(Class8878.field37329), !method2850.method31216(Class8878.field37340)));
-        class3643.method17469(new Class4376(Class4376.field19590, new Class8654(Unpooled.buffer()).method29514(this.method20576().method1490())));
+        class3643.method17469(new Class4383(class3642.getEntityId(), class3642.field3041.method26482(), Class8660.method29535(method2849.method29534()), method2849.method29568(), method2848.dimension.getType(), this.method20609(), method2849.method29570(), this.field26574, method2850.method31216(Class8878.field37329), !method2850.method31216(Class8878.field37340)));
+        class3643.method17469(new Class4376(Class4376.field19590, new PacketBuffer(Unpooled.buffer()).method29514(this.method20576().method1490())));
         class3643.method17469(new Class4315(method2849.method29597(), method2849.method29599()));
         class3643.method17469(new Class4300(class3642.field3025));
         class3643.method17469(new Class4388(class3642.field3006.field2743));
@@ -104,8 +107,8 @@ public abstract class Class6765
         else {
             class3644 = new Class2259("multiplayer.player.joined", new Object[] { class3642.getDisplayName() });
         }
-        this.method20619(class3644.method8469(Class2116.field12323));
-        class3643.method17467(class3642.getPosX(), class3642.getPosY(), class3642.getPosZ(), class3642.field2399, class3642.field2400);
+        this.method20619(class3644.applyTextStyle(TextFormatting.YELLOW));
+        class3643.method17467(class3642.getPosX(), class3642.getPosY(), class3642.getPosZ(), class3642.rotationYaw, class3642.rotationPitch);
         this.field26563.add(class3642);
         this.field26564.put(class3642.method1865(), class3642);
         this.method20586(new Class4330(Class2156.field12803, new Class513[] { class3642 }));
@@ -120,12 +123,12 @@ public abstract class Class6765
         }
         final Iterator<Class1948> iterator = class3642.method2651().iterator();
         while (iterator.hasNext()) {
-            class3643.method17469(new Class4384(class3642.method1643(), iterator.next()));
+            class3643.method17469(new Class4384(class3642.getEntityId(), iterator.next()));
         }
         if (method2847 != null) {
             if (method2847.method316("RootVehicle", 10)) {
                 final Class51 method2851 = method2847.method327("RootVehicle");
-                final Entity method2852 = EntityType.method23378(method2851.method327("Entity"), (Class1847)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
+                final Entity method2852 = EntityType.method23378(method2851.method327("Entity"), (World)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
                 if (method2852 != null) {
                     final UUID method2853 = method2851.method301("Attach");
                     if (!method2852.method1865().equals(method2853)) {
@@ -140,7 +143,7 @@ public abstract class Class6765
                     else {
                         class3642.method1780(method2852, true);
                     }
-                    if (!class3642.method1805()) {
+                    if (!class3642.isPassenger()) {
                         Class6765.field26560.warn("Couldn't reattach entity to player");
                         method2848.method6900(method2852);
                         final Iterator<Entity> iterator3 = method2852.method1911().iterator();
@@ -164,7 +167,7 @@ public abstract class Class6765
             final Class9290 method19644 = class6515.method19644(i);
             if (method19644 != null) {
                 if (!hashSet.contains(method19644)) {
-                    final Iterator<Class4252<?>> iterator2 = class6515.method19625(method19644).iterator();
+                    final Iterator<IPacket<?>> iterator2 = class6515.method19625(method19644).iterator();
                     while (iterator2.hasNext()) {
                         class6516.field3039.method17469(iterator2.next());
                     }
@@ -181,7 +184,7 @@ public abstract class Class6765
     
     @Nullable
     public Class51 method20580(final Class513 class513) {
-        final Class51 method29542 = this.field26562.method1481(Class383.field2223).method6764().method29542();
+        final Class51 method29542 = this.field26562.method1481(DimensionType.field2223).method6764().method29542();
         Class51 method29543;
         if (class513.getName().getString().equals(this.field26562.method1498()) && method29542 != null) {
             method29543 = method29542;
@@ -210,20 +213,20 @@ public abstract class Class6765
         final Class1849 method2940 = class513.method2940();
         class513.method2857(Class8276.field33988);
         this.method20572(class513);
-        if (class513.method1805()) {
+        if (class513.isPassenger()) {
             final Entity method2941 = class513.method1915();
             if (method2941.method1913()) {
                 Class6765.field26560.debug("Removing player mount");
-                class513.method1784();
+                class513.stopRiding();
                 method2940.method6900(method2941);
                 final Iterator<Entity> iterator = method2941.method1911().iterator();
                 while (iterator.hasNext()) {
                     method2940.method6900(iterator.next());
                 }
-                method2940.method6686(class513.field2441, class513.field2443).method7058();
+                method2940.method6686(class513.chunkCoordX, class513.chunkCoordZ).method7058();
             }
         }
-        class513.method1640();
+        class513.detach();
         method2940.method6902(class513);
         class513.method2957().method21457();
         this.field26563.remove(class513);
@@ -243,7 +246,7 @@ public abstract class Class6765
             final Class6025 class6025 = this.field26565.method26207(gameProfile);
             final Class2259 class6026 = new Class2259("multiplayer.disconnect.banned.reason", new Object[] { class6025.method17950() });
             if (class6025.method17949() != null) {
-                class6026.method8458(new Class2259("multiplayer.disconnect.banned.expiration", new Object[] { Class6765.field26561.format(class6025.method17949()) }));
+                class6026.appendSibling(new Class2259("multiplayer.disconnect.banned.expiration", new Object[] { Class6765.field26561.format(class6025.method17949()) }));
             }
             return class6026;
         }
@@ -256,7 +259,7 @@ public abstract class Class6765
         final Class6026 method26224 = this.field26566.method26224(socketAddress);
         final Class2259 class6027 = new Class2259("multiplayer.disconnect.banned_ip.reason", new Object[] { method26224.method17950() });
         if (method26224.method17949() != null) {
-            class6027.method8458(new Class2259("multiplayer.disconnect.banned_ip.expiration", new Object[] { Class6765.field26561.format(method26224.method17949()) }));
+            class6027.appendSibling(new Class2259("multiplayer.disconnect.banned_ip.expiration", new Object[] { Class6765.field26561.format(method26224.method17949()) }));
         }
         return class6027;
     }
@@ -282,40 +285,40 @@ public abstract class Class6765
         }
         Class8071 class515;
         if (!this.field26562.method1509()) {
-            class515 = new Class8071(this.field26562.method1481(Class383.field2223));
+            class515 = new Class8071(this.field26562.method1481(DimensionType.field2223));
         }
         else {
-            class515 = new Class8070(this.field26562.method1481(Class383.field2223));
+            class515 = new Class8070(this.field26562.method1481(DimensionType.field2223));
         }
-        return new Class513(this.field26562, this.field26562.method1481(Class383.field2223), gameProfile, class515);
+        return new Class513(this.field26562, this.field26562.method1481(DimensionType.field2223), gameProfile, class515);
     }
     
-    public Class513 method20583(final Class513 class513, final Class383 field2452, final boolean b) {
+    public Class513 method20583(final Class513 class513, final DimensionType field2452, final boolean b) {
         this.field26563.remove(class513);
         class513.method2940().method6902(class513);
         final BlockPos method2854 = class513.method2854();
         final boolean method2855 = class513.method2855();
-        class513.field2452 = field2452;
+        class513.dimension = field2452;
         Class8071 class514;
         if (!this.field26562.method1509()) {
-            class514 = new Class8071(this.field26562.method1481(class513.field2452));
+            class514 = new Class8071(this.field26562.method1481(class513.dimension));
         }
         else {
-            class514 = new Class8070(this.field26562.method1481(class513.field2452));
+            class514 = new Class8070(this.field26562.method1481(class513.dimension));
         }
-        final Class513 class515 = new Class513(this.field26562, this.field26562.method1481(class513.field2452), class513.method2844(), class514);
+        final Class513 class515 = new Class513(this.field26562, this.field26562.method1481(class513.dimension), class513.method2844(), class514);
         class515.field3039 = class513.field3039;
         class515.method2939(class513, b);
-        class515.method1644(class513.method1643());
+        class515.method1644(class513.getEntityId());
         class515.method2898(class513.method2755());
         final Iterator<String> iterator = class513.method1645().iterator();
         while (iterator.hasNext()) {
             class515.method1646(iterator.next());
         }
-        final Class1849 method2856 = this.field26562.method1481(class513.field2452);
+        final Class1849 method2856 = this.field26562.method1481(class513.dimension);
         this.method20615(class515, class513, method2856);
         if (method2854 != null) {
-            final Optional<Vec3d> method2857 = Class512.method2850(this.field26562.method1481(class513.field2452), method2854, method2855);
+            final Optional<Vec3d> method2857 = Class512.method2850(this.field26562.method1481(class513.dimension), method2854, method2855);
             if (!method2857.isPresent()) {
                 class515.field3039.method17469(new Class4306(0, 0.0f));
             }
@@ -326,12 +329,12 @@ public abstract class Class6765
             }
         }
         while (!method2856.method6977(class515) && class515.getPosY() < 256.0) {
-            class515.method1656(class515.getPosX(), class515.getPosY() + 1.0, class515.getPosZ());
+            class515.setPosition(class515.getPosX(), class515.getPosY() + 1.0, class515.getPosZ());
         }
-        final Class8660 method2858 = class515.field2391.method6764();
-        class515.field3039.method17469(new Class4359(class515.field2452, Class8660.method29535(method2858.method29534()), method2858.method29570(), class515.field3041.method26482()));
+        final Class8660 method2858 = class515.world.method6764();
+        class515.field3039.method17469(new Class4359(class515.dimension, Class8660.method29535(method2858.method29534()), method2858.method29570(), class515.field3041.method26482()));
         final BlockPos method2859 = method2856.method6758();
-        class515.field3039.method17467(class515.getPosX(), class515.getPosY(), class515.getPosZ(), class515.field2399, class515.field2400);
+        class515.field3039.method17467(class515.getPosX(), class515.getPosY(), class515.getPosZ(), class515.rotationYaw, class515.rotationPitch);
         class515.field3039.method17469(new Class4335(method2859));
         class515.field3039.method17469(new Class4315(method2858.method29597(), method2858.method29599()));
         class515.field3039.method17469(new Class4313(class515.field3028, class515.field3027, class515.field3026));
@@ -356,23 +359,23 @@ public abstract class Class6765
         }
     }
     
-    public void method20586(final Class4252<?> class4252) {
+    public void method20586(final IPacket<?> class4252) {
         for (int i = 0; i < this.field26563.size(); ++i) {
             this.field26563.get(i).field3039.method17469(class4252);
         }
     }
     
-    public void method20587(final Class4252<?> class4252, final Class383 class4253) {
+    public void method20587(final IPacket<?> class4252, final DimensionType class4253) {
         for (int i = 0; i < this.field26563.size(); ++i) {
             final Class513 class4254 = this.field26563.get(i);
-            if (class4254.field2452 == class4253) {
+            if (class4254.dimension == class4253) {
                 class4254.field3039.method17469(class4252);
             }
         }
     }
     
     public void method20588(final Class512 class512, final ITextComponent class513) {
-        final Class6750 method1825 = class512.method1825();
+        final Team method1825 = class512.getTeam();
         if (method1825 != null) {
             final Iterator<String> iterator = method1825.method20547().iterator();
             while (iterator.hasNext()) {
@@ -389,11 +392,11 @@ public abstract class Class6765
     }
     
     public void method20589(final Class512 class512, final ITextComponent class513) {
-        final Class6750 method1825 = class512.method1825();
+        final Team method1825 = class512.getTeam();
         if (method1825 != null) {
             for (int i = 0; i < this.field26563.size(); ++i) {
                 final Class513 class514 = this.field26563.get(i);
-                if (class514.method1825() != method1825) {
+                if (class514.getTeam() != method1825) {
                     class514.sendMessage(class513);
                 }
             }
@@ -467,7 +470,7 @@ public abstract class Class6765
     
     public boolean method20597(final GameProfile gameProfile) {
         if (!((Class8006<GameProfile, V>)this.field26567).method26213(gameProfile)) {
-            if (!this.field26562.method1592(gameProfile) || !this.field26562.method1481(Class383.field2223).method6764().method29574()) {
+            if (!this.field26562.method1592(gameProfile) || !this.field26562.method1481(DimensionType.field2223).method6764().method29574()) {
                 if (!this.field26576) {
                     return false;
                 }
@@ -487,11 +490,11 @@ public abstract class Class6765
         return null;
     }
     
-    public void method20599(final Class512 class512, final double n, final double n2, final double n3, final double n4, final Class383 class513, final Class4252<?> class514) {
+    public void method20599(final Class512 class512, final double n, final double n2, final double n3, final double n4, final DimensionType class513, final IPacket<?> class514) {
         for (int i = 0; i < this.field26563.size(); ++i) {
             final Class513 class515 = this.field26563.get(i);
             if (class515 != class512) {
-                if (class515.field2452 == class513) {
+                if (class515.dimension == class513) {
                     final double n5 = n - class515.getPosX();
                     final double n6 = n2 - class515.getPosY();
                     final double n7 = n3 - class515.getPosZ();
@@ -529,7 +532,7 @@ public abstract class Class6765
     }
     
     public void method20606(final Class513 class513, final Class1849 class514) {
-        class513.field3039.method17469(new Class4340(this.field26562.method1481(Class383.field2223).method6787(), Class2217.field13617));
+        class513.field3039.method17469(new Class4340(this.field26562.method1481(DimensionType.field2223).method6787(), Class2217.field13617));
         class513.field3039.method17469(new Class4345(class514.method6754(), class514.method6755(), class514.method6765().method31216(Class8878.field37324)));
         class513.field3039.method17469(new Class4335(class514.method6758()));
         if (class514.method6771()) {
@@ -623,7 +626,7 @@ public abstract class Class6765
         final UUID method1865 = class512.method1865();
         Class7473 class513 = (method1865 != null) ? this.field26569.get(method1865) : null;
         if (class513 == null) {
-            final File file = new File(this.field26562.method1481(Class383.field2223).method6917().method29392(), "stats");
+            final File file = new File(this.field26562.method1481(DimensionType.field2223).method6917().method29392(), "stats");
             final File dest = new File(file, method1865 + ".json");
             if (!dest.exists()) {
                 final File file2 = new File(file, class512.getName().getString() + ".json");
@@ -643,7 +646,7 @@ public abstract class Class6765
         final UUID method1865 = class513.method1865();
         Class7012 class514 = this.field26570.get(method1865);
         if (class514 == null) {
-            class514 = new Class7012(this.field26562, new File(new File(this.field26562.method1481(Class383.field2223).method6917().method29392(), "advancements"), method1865 + ".json"), class513);
+            class514 = new Class7012(this.field26562, new File(new File(this.field26562.method1481(DimensionType.field2223).method6917().method29392(), "advancements"), method1865 + ".json"), class513);
             this.field26570.put(method1865, class514);
         }
         class514.method21456(class513);

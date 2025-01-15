@@ -14,14 +14,14 @@ public class Class8478
     private final Vec3d field34790;
     private final Class2040 field34791;
     private final Class2191 field34792;
-    private final Class7543 field34793;
+    private final ISelectionContext field34793;
     
     public Class8478(final Vec3d field34789, final Vec3d field34790, final Class2040 field34791, final Class2191 field34792, final Entity class399) {
         this.field34789 = field34789;
         this.field34790 = field34790;
         this.field34791 = field34791;
         this.field34792 = field34792;
-        this.field34793 = Class7543.method23630(class399);
+        this.field34793 = ISelectionContext.forEntity(class399);
     }
     
     public Vec3d method28307() {

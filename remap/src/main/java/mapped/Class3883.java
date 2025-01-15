@@ -5,7 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -31,8 +34,8 @@ public class Class3883 extends Class3882
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
-        final Vec3d method18517 = this.method11808(class7096, class7097, class7098, Class7543.method23629()).method24537().method18517();
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
+        final Vec3d method18517 = this.method11808(class7096, class7097, class7098, ISelectionContext.dummy()).method24537().method18517();
         final double n = class7098.getX() + method18517.x;
         final double n2 = class7098.getZ() + method18517.z;
         for (int i = 0; i < 3; ++i) {
@@ -43,12 +46,12 @@ public class Class3883 extends Class3882
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.field10067) {
             if (class7097.method6954() != Class2113.field12290) {
-                if (class7099 instanceof Class511) {
-                    final Class511 class7100 = (Class511)class7099;
-                    if (!class7100.method1849(Class7929.field32577)) {
+                if (class7099 instanceof LivingEntity) {
+                    final LivingEntity class7100 = (LivingEntity)class7099;
+                    if (!class7100.method1849(DamageSource.field32577)) {
                         class7100.method2655(new Class1948(Class9439.field40493, 40));
                     }
                 }

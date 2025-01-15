@@ -8,7 +8,7 @@ import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
 
-public class Class4342 implements Class4252<Class5800>
+public class Class4342 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19449;
     public Class1932 field19450;
@@ -35,7 +35,7 @@ public class Class4342 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19450 = class8654.method29516();
         this.field19451 = class8654.method29499(Class286.class);
         this.field19452 = class8654.readInt();
@@ -46,7 +46,7 @@ public class Class4342 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29517(this.field19450);
         class8654.method29500(this.field19451);
         class8654.writeInt(this.field19452);
@@ -84,7 +84,7 @@ public class Class4342 implements Class4252<Class5800>
         return this.field19456;
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17346(this);
     }
 }

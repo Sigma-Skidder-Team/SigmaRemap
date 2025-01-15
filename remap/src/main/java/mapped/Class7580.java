@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.math.CubeCoordinateIterator;
+
 import java.util.function.Consumer;
 
 public final class Class7580 extends AbstractSpliterator<BlockPos>
 {
     private static String[] field30060;
-    public final Class8243 field30061;
-    public final Class385 field30062;
+    public final CubeCoordinateIterator field30061;
+    public final Mutable field30062;
     public final /* synthetic */ int field30063;
     public final /* synthetic */ int field30064;
     public final /* synthetic */ int field30065;
@@ -26,16 +28,16 @@ public final class Class7580 extends AbstractSpliterator<BlockPos>
         this.field30067 = field30067;
         this.field30068 = field30068;
         super(est, additionalCharacteristics);
-        this.field30061 = new Class8243(this.field30063, this.field30064, this.field30065, this.field30066, this.field30067, this.field30068);
-        this.field30062 = new Class385();
+        this.field30061 = new CubeCoordinateIterator(this.field30063, this.field30064, this.field30065, this.field30066, this.field30067, this.field30068);
+        this.field30062 = new Mutable();
     }
     
     @Override
     public boolean tryAdvance(final Consumer<? super BlockPos> consumer) {
-        if (!this.field30061.method27301()) {
+        if (!this.field30061.hasNext()) {
             return false;
         }
-        consumer.accept(this.field30062.method1284(this.field30061.method27302(), this.field30061.method27303(), this.field30061.method27304()));
+        consumer.accept(this.field30062.setPos(this.field30061.getX(), this.field30061.getY(), this.field30061.getZ()));
         return true;
     }
 }

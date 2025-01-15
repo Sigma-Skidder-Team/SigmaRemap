@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -21,7 +23,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3878.field17530[class7096.method21772((Class7111<Integer>)this.method11952())];
     }
     
@@ -63,7 +65,7 @@ public class Class3878 extends Class3874 implements Class3872
         }
     }
     
-    public void method11957(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public void method11957(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         int n = this.method11954(class1849) + this.method11958(class1847);
         final int method11953 = this.method11953();
         if (n > method11953) {
@@ -72,7 +74,7 @@ public class Class3878 extends Class3874 implements Class3872
         class1847.method6688(class1848, this.method11955(n), 2);
     }
     
-    public int method11958(final Class1847 class1847) {
+    public int method11958(final World class1847) {
         return MathHelper.method35658(class1847.field10062, 2, 5);
     }
     
@@ -82,7 +84,7 @@ public class Class3878 extends Class3874 implements Class3872
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 float n2 = 0.0f;
-                final Class7096 method1140 = class3834.method6701(method1139.method1134(i, 0, j));
+                final Class7096 method1140 = class3834.method6701(method1139.add(i, 0, j));
                 if (method1140.method21696() == Class7521.field29298) {
                     n2 = 1.0f;
                     if (method1140.method21772((Class7111<Integer>)Class4021.field18105) > 0) {
@@ -137,7 +139,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (class7099 instanceof Class779) {
             if (class7097.method6765().method31216(Class8878.field37316)) {
                 class7097.method6691(class7098, true, class7099);
@@ -161,7 +163,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     

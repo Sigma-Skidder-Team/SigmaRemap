@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.stream.Collectors;
 import com.google.common.collect.Sets;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Map;
 import java.util.Set;
@@ -23,8 +25,8 @@ public class Class8974
     public AxisAlignedBB field37814;
     private int field37815;
     private boolean field37816;
-    private final Class385 field37817;
-    private final Class385[] field37818;
+    private final Mutable field37817;
+    private final Mutable[] field37818;
     private boolean field37819;
     private final boolean field37820;
     private final boolean field37821;
@@ -48,11 +50,11 @@ public class Class8974
         this.field37813 = Class6332.method18795().stream().collect(Collectors.toMap(class6332 -> class6332, p0 -> new Class1918(Class9237.field39607)));
         this.field37815 = -1;
         this.field37816 = true;
-        this.field37817 = new Class385(-1, -1, -1);
-        this.field37818 = Class8349.method27851(new Class385[6], array -> {
+        this.field37817 = new Mutable(-1, -1, -1);
+        this.field37818 = Class8349.method27851(new Mutable[6], array -> {
             int i = 0;
             while (i < array.length) {
-                array[i] = new Class385();
+                array[i] = new Mutable();
                 ++i;
             }
             return;
@@ -112,7 +114,7 @@ public class Class8974
             }
         }
         this.method31871();
-        this.field37817.method1284(n, n2, n3);
+        this.field37817.setPos(n, n2, n3);
         final int n4 = 8;
         this.field37823 = n >> n4 << n4;
         this.field37824 = n3 >> n4 << n4;
@@ -221,7 +223,7 @@ public class Class8974
     
     public Class1944 method31881() {
         this.method31880();
-        this.field37817.method1153();
+        this.field37817.toImmutable();
         final Class1858 class1858 = null;
         if (!Class7520.method23479()) {
             this.field37810 = new Class1945(this, this.method31868(), class1858);
@@ -319,12 +321,12 @@ public class Class8974
     }
     
     private Class1857 method31892(final BlockPos class354) {
-        final BlockPos method1134 = class354.method1134(-1, -1, -1);
-        final BlockPos method1135 = class354.method1134(16, 16, 16);
+        final BlockPos method1134 = class354.add(-1, -1, -1);
+        final BlockPos method1135 = class354.add(16, 16, 16);
         return new Class1857(this.method31893(Class7520.method23478(this.field37833), method1134, method1135, 1), method1134, method1135, 1);
     }
     
-    public Class1858 method31893(final Class1847 class1847, final BlockPos class1848, final BlockPos class1849, final int n) {
+    public Class1858 method31893(final World class1847, final BlockPos class1848, final BlockPos class1849, final int n) {
         return Class1858.method7004(class1847, class1848, class1849, n, false);
     }
     

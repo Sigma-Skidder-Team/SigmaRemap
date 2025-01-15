@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.network.datasync.DataParameter;
+
 public interface Class4410<T>
 {
-    void method13347(final Class8654 p0, final T p1);
+    void method13347(final PacketBuffer p0, final T p1);
     
-    T method13346(final Class8654 p0);
+    T method13346(final PacketBuffer p0);
     
-    default Class8810<T> method13348(final int n) {
-        return new Class8810<T>(n, this);
+    default DataParameter<T> method13348(final int n) {
+        return new DataParameter<T>(n, this);
     }
     
     T method13345(final T p0);

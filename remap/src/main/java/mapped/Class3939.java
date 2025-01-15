@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -21,7 +24,7 @@ public class Class3939 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7097.field10067) {
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class457) {
@@ -34,7 +37,7 @@ public class Class3939 extends Class3841
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class446) {
@@ -65,7 +68,7 @@ public class Class3939 extends Class3841
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class457) {
@@ -80,7 +83,7 @@ public class Class3939 extends Class3841
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return Class3418.method10897(class7097.method6727(class7098));
     }
     

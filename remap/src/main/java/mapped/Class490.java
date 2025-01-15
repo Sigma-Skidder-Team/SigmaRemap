@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.Arrays;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;

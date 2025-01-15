@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -40,13 +41,13 @@ public abstract class Class7255
     
     public abstract Class3820 method22149();
     
-    public void method22150(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22150(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
     }
     
-    public void method22151(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849) {
+    public void method22151(final World class1847, final BlockPos class1848, final Class7099 class1849) {
     }
     
-    public void method22152(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22152(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
     }
     
     @Nullable

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 
@@ -19,7 +21,7 @@ public class Class3827 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class512 method21652 = class7075.method21652();
-        final Class1847 method21653 = class7075.method21654();
+        final World method21653 = class7075.method21654();
         final BlockPos method21654 = class7075.method21639();
         final Class7096 method21655 = method21653.method6701(method21654);
         if (method11759(method21655)) {

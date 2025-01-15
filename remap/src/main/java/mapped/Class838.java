@@ -4,35 +4,45 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import java.util.function.Predicate;
 
 public class Class838 extends Class833
 {
-    private static final Class8810<Integer> field4455;
+    private static final DataParameter<Integer> field4455;
     private int field4456;
     private int field4457;
-    private static final Predicate<Class511> field4458;
+    private static final Predicate<LivingEntity> field4458;
     
-    public Class838(final EntityType<? extends Class838> class7499, final Class1847 class7500) {
+    public Class838(final EntityType<? extends Class838> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class838.field4455, 0);
+        this.dataManager.register(Class838.field4455, 0);
     }
     
     public int method4988() {
-        return this.field2432.method33568(Class838.field4455);
+        return this.dataManager.get(Class838.field4455);
     }
     
     public void method4989(final int i) {
-        this.field2432.method33569(Class838.field4455, i);
+        this.dataManager.set(Class838.field4455, i);
     }
     
     @Override
-    public void method1880(final Class8810<?> class8810) {
+    public void method1880(final DataParameter<?> class8810) {
         if (Class838.field4455.equals(class8810)) {
             this.method1881();
         }
@@ -64,7 +74,7 @@ public class Class838 extends Class833
     
     @Override
     public void method1659() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.method1768()) {
                 if (this.method2749()) {
                     if (this.field4456 <= 0) {
@@ -108,7 +118,7 @@ public class Class838 extends Class833
         super.method2736();
         if (this.method1768()) {
             if (this.method4988() > 0) {
-                for (final Class759 class759 : this.field2391.method6739((Class<? extends Class759>)Class759.class, this.method1886().method18496(0.3), (Predicate<? super Class759>)Class838.field4458)) {
+                for (final Class759 class759 : this.world.method6739((Class<? extends Class759>)Class759.class, this.method1886().method18496(0.3), (Predicate<? super Class759>)Class838.field4458)) {
                     if (!class759.method1768()) {
                         continue;
                     }
@@ -120,7 +130,7 @@ public class Class838 extends Class833
     
     private void method4990(final Class759 class759) {
         final int method4988 = this.method4988();
-        if (class759.method1740(Class7929.method25693(this), (float)(1 + method4988))) {
+        if (class759.attackEntityFrom(DamageSource.method25693(this), (float)(1 + method4988))) {
             class759.method2655(new Class1948(Class9439.field40492, 60 * method4988, 0));
             this.method1695(Class8520.field35505, 1.0f, 1.0f);
         }
@@ -131,7 +141,7 @@ public class Class838 extends Class833
         final int method4988 = this.method4988();
         if (class512 instanceof Class513) {
             if (method4988 > 0) {
-                if (class512.method1740(Class7929.method25693(this), (float)(1 + method4988))) {
+                if (class512.attackEntityFrom(DamageSource.method25693(this), (float)(1 + method4988))) {
                     ((Class513)class512).field3039.method17469(new Class4306(9, 0.0f));
                     class512.method2655(new Class1948(Class9439.field40492, 60 * method4988, 0));
                 }
@@ -150,7 +160,7 @@ public class Class838 extends Class833
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35504;
     }
     
@@ -160,7 +170,7 @@ public class Class838 extends Class833
     }
     
     @Override
-    public Class8295 method1933(final Class290 class290) {
+    public EntitySize method1933(final Pose class290) {
         return super.method1933(class290).method27561(method4991(this.method4988()));
     }
     
@@ -179,10 +189,10 @@ public class Class838 extends Class833
     }
     
     static {
-        field4455 = Class9184.method33564(Class838.class, Class7709.field30654);
+        field4455 = EntityDataManager.method33564(Class838.class, Class7709.field30654);
         field4458 = (class511 -> {
             if (class511 != null) {
-                if (class511 instanceof Class512 && (class511.method1639() || ((Class512)class511).method2889())) {
+                if (class511 instanceof Class512 && (class511.isSpectator() || ((Class512)class511).method2889())) {
                     return false;
                 }
                 else {

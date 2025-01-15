@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 
@@ -79,7 +81,7 @@ public class Class388 extends Class387 implements Class389
     private int field2273;
     
     public Class388(final Class1849 field2254, final File file, final DataFixer dataFixer, final Class1795 field2255, final Executor executor, final Class872<Runnable> field2256, final Class1908 class1908, final Class6346<?> field2257, final Class6459 field2258, final Supplier<Class8213> field2259, final int n) {
-        super(new File(field2254.method6789().method20487().method1272(file), "region"), dataFixer);
+        super(new File(field2254.method6789().getType().method1272(file), "region"), dataFixer);
         this.field2250 = (Long2ObjectLinkedOpenHashMap<Class9298>)new Long2ObjectLinkedOpenHashMap();
         this.field2251 = (Long2ObjectLinkedOpenHashMap<Class9298>)this.field2250.clone();
         this.field2252 = (Long2ObjectLinkedOpenHashMap<Class9298>)new Long2ObjectLinkedOpenHashMap();
@@ -90,7 +92,7 @@ public class Class388 extends Class387 implements Class389
         this.field2271 = (Int2ObjectMap<Class9406>)new Int2ObjectOpenHashMap();
         this.field2272 = Queues.newConcurrentLinkedQueue();
         this.field2268 = field2255;
-        this.field2269 = field2254.method6789().method20487().method1272(file);
+        this.field2269 = field2254.method6789().getType().method1272(file);
         this.field2254 = field2254;
         this.field2257 = field2257;
         this.field2256 = field2256;
@@ -558,7 +560,7 @@ public class Class388 extends Class387 implements Class389
         thenApplyAsync.thenAcceptAsync(either2 -> either2.mapLeft(class9302 -> {
             this.field2267.getAndIncrement();
             this.method1351(class9301, (boolean)(0 != 0)).forEach(class9304 -> {
-                final Object o2 = new Class4252[2];
+                final Object o2 = new IPacket[2];
                 this.method1357(class9304, array, class9303);
                 return;
             });
@@ -628,7 +630,7 @@ public class Class388 extends Class387 implements Class389
             final ObjectIterator iterator = this.field2250.values().iterator();
             while (((Iterator)iterator).hasNext()) {
                 this.method1351(((Class9298)((Iterator)iterator).next()).method34357(), false).forEach(class7860 -> {
-                    final Object o = new Class4252[2];
+                    final Object o = new IPacket[2];
                     method1313(class7859, class7860, (boolean)(1 != 0));
                     final int n3;
                     this.method1339(class7860, class7859, array, n3 <= n2, n3 <= this.field2273);
@@ -637,8 +639,8 @@ public class Class388 extends Class387 implements Class389
         }
     }
     
-    public void method1339(final Class513 class513, final Class7859 class514, final Class4252<?>[] array, final boolean b, final boolean b2) {
-        if (class513.field2391 == this.field2254) {
+    public void method1339(final Class513 class513, final Class7859 class514, final IPacket<?>[] array, final boolean b, final boolean b2) {
+        if (class513.world == this.field2254) {
             if (Class9570.field41264.method22605()) {
                 Class9570.field41264.method22608(b, b2, class513, class514, this.field2254);
             }
@@ -701,16 +703,16 @@ public class Class388 extends Class387 implements Class389
     @Nullable
     private Class51 method1345(final Class7859 class7859) throws IOException {
         final Class51 method1309 = this.method1309(class7859);
-        return (method1309 != null) ? this.method1307(this.field2254.method6789().method20487(), this.field2258, method1309) : null;
+        return (method1309 != null) ? this.method1307(this.field2254.method6789().getType(), this.field2258, method1309) : null;
     }
     
     public boolean method1346(final Class7859 class7859) {
         final long method25422 = class7859.method25422();
-        return !this.field2266.method30141(method25422) || this.field2270.method27351(method25422).noneMatch(class7861 -> !class7861.method1639() && method1312(class7860, class7861) < 16384.0);
+        return !this.field2266.method30141(method25422) || this.field2270.method27351(method25422).noneMatch(class7861 -> !class7861.isSpectator() && method1312(class7860, class7861) < 16384.0);
     }
     
     private boolean method1347(final Class513 class513) {
-        return class513.method1639() && !this.field2254.method6765().method31216(Class8878.field37330);
+        return class513.isSpectator() && !this.field2254.method6765().method31216(Class8878.field37330);
     }
     
     public void method1348(final Class513 class513, final boolean b) {
@@ -734,7 +736,7 @@ public class Class388 extends Class387 implements Class389
         }
         for (int i = n - this.field2273; i <= n + this.field2273; ++i) {
             for (int j = n2 - this.field2273; j <= n2 + this.field2273; ++j) {
-                this.method1339(class513, new Class7859(i, j), new Class4252[2], !b, b);
+                this.method1339(class513, new Class7859(i, j), new IPacket[2], !b, b);
             }
         }
     }
@@ -795,19 +797,19 @@ public class Class388 extends Class387 implements Class389
             for (int i = n3; i <= n5; ++i) {
                 for (int j = n4; j <= n6; ++j) {
                     final Class7859 class515 = new Class7859(i, j);
-                    this.method1339(class513, class515, new Class4252[2], method1314(class515, method2967, method2968) <= this.field2273, method1314(class515, n, n2) <= this.field2273);
+                    this.method1339(class513, class515, new IPacket[2], method1314(class515, method2967, method2968) <= this.field2273, method1314(class515, n, n2) <= this.field2273);
                 }
             }
         }
         else {
             for (int k = method2967 - this.field2273; k <= method2967 + this.field2273; ++k) {
                 for (int l = method2968 - this.field2273; l <= method2968 + this.field2273; ++l) {
-                    this.method1339(class513, new Class7859(k, l), new Class4252[2], true, false);
+                    this.method1339(class513, new Class7859(k, l), new IPacket[2], true, false);
                 }
             }
             for (int n7 = n - this.field2273; n7 <= n + this.field2273; ++n7) {
                 for (int n8 = n2 - this.field2273; n8 <= n2 + this.field2273; ++n8) {
-                    this.method1339(class513, new Class7859(n7, n8), new Class4252[2], false, true);
+                    this.method1339(class513, new Class7859(n7, n8), new IPacket[2], false, true);
                 }
             }
         }
@@ -829,15 +831,15 @@ public class Class388 extends Class387 implements Class389
     
     public void method1352(final Entity class399) {
         if (!(class399 instanceof Class859)) {
-            if (!(class399 instanceof Class422)) {
-                final EntityType<?> method1642 = class399.method1642();
+            if (!(class399 instanceof LightningBoltEntity)) {
+                final EntityType<?> method1642 = class399.getType();
                 final int n = method1642.method23380() * 16;
                 final int method1643 = method1642.method23381();
-                if (this.field2271.containsKey(class399.method1643())) {
+                if (this.field2271.containsKey(class399.getEntityId())) {
                     throw Class8349.method27859(new IllegalStateException("Entity is already tracked!"));
                 }
                 final Class9406 class400 = new Class9406(this, class399, n, method1643, method1642.method23382());
-                this.field2271.put(class399.method1643(), (Object)class400);
+                this.field2271.put(class399.getEntityId(), (Object)class400);
                 class400.method34988(this.field2254.method6840());
                 if (class399 instanceof Class513) {
                     final Class513 class401 = (Class513)class399;
@@ -862,7 +864,7 @@ public class Class388 extends Class387 implements Class389
                 ((Class9406)((Iterator)iterator).next()).method34985(class400);
             }
         }
-        final Class9406 class401 = (Class9406)this.field2271.remove(class399.method1643());
+        final Class9406 class401 = (Class9406)this.field2271.remove(class399.getEntityId());
         if (class401 != null) {
             class401.method34984();
         }
@@ -892,21 +894,21 @@ public class Class388 extends Class387 implements Class389
         }
     }
     
-    public void method1355(final Entity class399, final Class4252<?> class400) {
-        final Class9406 class401 = (Class9406)this.field2271.get(class399.method1643());
+    public void method1355(final Entity class399, final IPacket<?> class400) {
+        final Class9406 class401 = (Class9406)this.field2271.get(class399.getEntityId());
         if (class401 != null) {
             class401.method34982(class400);
         }
     }
     
-    public void method1356(final Entity class399, final Class4252<?> class400) {
-        final Class9406 class401 = (Class9406)this.field2271.get(class399.method1643());
+    public void method1356(final Entity class399, final IPacket<?> class400) {
+        final Class9406 class401 = (Class9406)this.field2271.get(class399.getEntityId());
         if (class401 != null) {
             class401.method34983(class400);
         }
     }
     
-    private void method1357(final Class513 class513, final Class4252<?>[] array, final Class1862 class514) {
+    private void method1357(final Class513 class513, final IPacket<?>[] array, final Class1862 class514) {
         if (array[0] == null) {
             array[0] = new Class4298(class514, 65535);
             array[1] = new Class4349(class514.method7019(), this.field2255);
@@ -920,10 +922,10 @@ public class Class388 extends Class387 implements Class389
             if (method34989 == class513) {
                 continue;
             }
-            if (method34989.field2441 != class514.method7019().field32290) {
+            if (method34989.chunkCoordX != class514.method7019().field32290) {
                 continue;
             }
-            if (method34989.field2443 != class514.method7019().field32291) {
+            if (method34989.chunkCoordZ != class514.method7019().field32291) {
                 continue;
             }
             class515.method34986(class513);

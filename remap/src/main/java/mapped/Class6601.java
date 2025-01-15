@@ -6,6 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.item.ItemStack;
 
 public class Class6601
 {

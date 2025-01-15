@@ -4,11 +4,18 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class835 extends Class834
 {
-    private static final Class8810<Integer> field4447;
+    private static final DataParameter<Integer> field4447;
     private static final Class1932[] field4448;
     private static final Class1932[] field4449;
     private static final Class1932[] field4450;
@@ -19,7 +26,7 @@ public class Class835 extends Class834
         return (class296.method947() & 0xFF) | (class296.method948() & 0xFF) << 8 | (class297.method813() & 0xFF) << 16 | (class298.method813() & 0xFF) << 24;
     }
     
-    public Class835(final EntityType<? extends Class835> class7499, final Class1847 class7500) {
+    public Class835(final EntityType<? extends Class835> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4452 = true;
     }
@@ -43,7 +50,7 @@ public class Class835 extends Class834
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class835.field4447, 0);
+        this.dataManager.register(Class835.field4447, 0);
     }
     
     @Override
@@ -59,7 +66,7 @@ public class Class835 extends Class834
     }
     
     public void method4977(final int i) {
-        this.field2432.method33569(Class835.field4447, i);
+        this.dataManager.set(Class835.field4447, i);
     }
     
     @Override
@@ -68,7 +75,7 @@ public class Class835 extends Class834
     }
     
     public int method4978() {
-        return this.field2432.method33568(Class835.field4447);
+        return this.dataManager.get(Class835.field4447);
     }
     
     @Override
@@ -93,7 +100,7 @@ public class Class835 extends Class834
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35649;
     }
     
@@ -151,15 +158,15 @@ public class Class835 extends Class834
         int n3;
         int n4;
         if (!(method4188 instanceof Class5504)) {
-            if (this.field2423.nextFloat() >= 0.9) {
+            if (this.rand.nextFloat() >= 0.9) {
                 this.field4452 = false;
-                n = this.field2423.nextInt(2);
-                n2 = this.field2423.nextInt(6);
-                n3 = this.field2423.nextInt(15);
-                n4 = this.field2423.nextInt(15);
+                n = this.rand.nextInt(2);
+                n2 = this.rand.nextInt(6);
+                n3 = this.rand.nextInt(15);
+                n4 = this.rand.nextInt(15);
             }
             else {
-                final int n5 = Class835.field4451[this.field2423.nextInt(Class835.field4451.length)];
+                final int n5 = Class835.field4451[this.rand.nextInt(Class835.field4451.length)];
                 n = (n5 & 0xFF);
                 n2 = (n5 & 0xFF00) >> 8;
                 n3 = (n5 & 0xFF0000) >> 16;
@@ -179,7 +186,7 @@ public class Class835 extends Class834
     }
     
     static {
-        field4447 = Class9184.method33564(Class835.class, Class7709.field30654);
+        field4447 = EntityDataManager.method33564(Class835.class, Class7709.field30654);
         field4448 = new Class1932[] { new Class1932("textures/entity/fish/tropical_a.png"), new Class1932("textures/entity/fish/tropical_b.png") };
         field4449 = new Class1932[] { new Class1932("textures/entity/fish/tropical_a_pattern_1.png"), new Class1932("textures/entity/fish/tropical_a_pattern_2.png"), new Class1932("textures/entity/fish/tropical_a_pattern_3.png"), new Class1932("textures/entity/fish/tropical_a_pattern_4.png"), new Class1932("textures/entity/fish/tropical_a_pattern_5.png"), new Class1932("textures/entity/fish/tropical_a_pattern_6.png") };
         field4450 = new Class1932[] { new Class1932("textures/entity/fish/tropical_b_pattern_1.png"), new Class1932("textures/entity/fish/tropical_b_pattern_2.png"), new Class1932("textures/entity/fish/tropical_b_pattern_3.png"), new Class1932("textures/entity/fish/tropical_b_pattern_4.png"), new Class1932("textures/entity/fish/tropical_b_pattern_5.png"), new Class1932("textures/entity/fish/tropical_b_pattern_6.png") };

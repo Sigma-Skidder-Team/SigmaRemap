@@ -5,21 +5,28 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public abstract class Class776 extends Class777
 {
-    public static final Class8810<Boolean> field4170;
+    public static final DataParameter<Boolean> field4170;
     private static final Predicate<Class427> field4171;
     public Class8792 field4172;
     private int field4173;
     private boolean field4174;
     private int field4175;
     
-    public Class776(final EntityType<? extends Class776> class7499, final Class1847 class7500) {
+    public Class776(final EntityType<? extends Class776> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -35,7 +42,7 @@ public abstract class Class776 extends Class777
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class776.field4170, false);
+        this.dataManager.register(Class776.field4170, false);
     }
     
     public abstract void method4263(final int p0, final boolean p1);
@@ -50,20 +57,20 @@ public abstract class Class776 extends Class777
     
     @Override
     public void method2736() {
-        if (this.field2391 instanceof Class1849) {
+        if (this.world instanceof Class1849) {
             if (this.method1768()) {
                 final Class8792 method4292 = this.method4292();
                 if (this.method4288()) {
                     if (method4292 != null) {
-                        final Class511 method4293 = this.method4152();
+                        final LivingEntity method4293 = this.method4152();
                         if (method4293 != null) {
-                            if (method4293.method1642() == EntityType.field29058 || method4293.method1642() == EntityType.field29043) {
+                            if (method4293.getType() == EntityType.field29058 || method4293.getType() == EntityType.field29043) {
                                 this.field2959 = 0;
                             }
                         }
                     }
-                    else if (this.field2391.method6754() % 20L == 0L) {
-                        final Class8792 method4294 = ((Class1849)this.field2391).method6927(new BlockPos(this));
+                    else if (this.world.method6754() % 20L == 0L) {
+                        final Class8792 method4294 = ((Class1849)this.world).method6927(new BlockPos(this));
                         if (method4294 != null) {
                             if (Class6357.method18927(this, method4294)) {
                                 method4294.method30644(method4294.method30626(), this, null, true);
@@ -82,8 +89,8 @@ public abstract class Class776 extends Class777
     }
     
     @Override
-    public void method2673(final Class7929 class7929) {
-        if (this.field2391 instanceof Class1849) {
+    public void method2673(final DamageSource class7929) {
+        if (this.world instanceof Class1849) {
             final Entity method25714 = class7929.method25714();
             final Class8792 method25715 = this.method4292();
             if (method25715 != null) {
@@ -91,7 +98,7 @@ public abstract class Class776 extends Class777
                     method25715.method30657(this.method4295());
                 }
                 if (method25714 != null) {
-                    if (method25714.method1642() == EntityType.field29058) {
+                    if (method25714.getType() == EntityType.field29058) {
                         method25715.method30667(method25714);
                     }
                 }
@@ -99,13 +106,13 @@ public abstract class Class776 extends Class777
             }
             if (this.method4314()) {
                 if (method25715 == null) {
-                    if (((Class1849)this.field2391).method6927(new BlockPos(this)) == null) {
+                    if (((Class1849)this.world).method6927(new BlockPos(this)) == null) {
                         final ItemStack method25716 = this.method2718(Class2215.field13605);
-                        Class511 class7930 = null;
+                        LivingEntity class7930 = null;
                         if (!(method25714 instanceof Class512)) {
                             if (method25714 instanceof Class799) {
                                 final Class799 class7931 = (Class799)method25714;
-                                final Class511 method25717 = class7931.method4488();
+                                final LivingEntity method25717 = class7931.method4488();
                                 if (class7931.method4480()) {
                                     if (method25717 instanceof Class512) {
                                         class7930 = method25717;
@@ -129,7 +136,7 @@ public abstract class Class776 extends Class777
                                         class7930.method2658(Class9439.field40504);
                                     }
                                     final Class1948 class7932 = new Class1948(Class9439.field40504, 120000, MathHelper.method35651(n, 0, 5), false, false, true);
-                                    if (!this.field2391.method6765().method31216(Class8878.field37338)) {
+                                    if (!this.world.method6765().method31216(Class8878.field37338)) {
                                         class7930.method2655(class7932);
                                     }
                                 }
@@ -169,11 +176,11 @@ public abstract class Class776 extends Class777
     }
     
     public boolean method4296() {
-        return this.field2432.method33568(Class776.field4170);
+        return this.dataManager.get(Class776.field4170);
     }
     
     public void method4297(final boolean b) {
-        this.field2432.method33569(Class776.field4170, b);
+        this.dataManager.set(Class776.field4170, b);
     }
     
     @Override
@@ -192,8 +199,8 @@ public abstract class Class776 extends Class777
         this.field4173 = class51.method319("Wave");
         this.field4174 = class51.method329("CanJoinRaid");
         if (class51.method316("RaidId", 3)) {
-            if (this.field2391 instanceof Class1849) {
-                this.field4172 = ((Class1849)this.field2391).method6926().method18925(class51.method319("RaidId"));
+            if (this.world instanceof Class1849) {
+                this.field4172 = ((Class1849)this.world).method6926().method18925(class51.method319("RaidId"));
             }
             if (this.field4172 != null) {
                 this.field4172.method30655(this.field4173, this, false);
@@ -215,7 +222,7 @@ public abstract class Class776 extends Class777
                     final ItemStack method2108 = this.method2718(field13605);
                     final double n = this.method4183(field13605);
                     if (!method2108.method27620()) {
-                        if (Math.max(this.field2423.nextFloat() - 0.1f, 0.0f) < n) {
+                        if (Math.max(this.rand.nextFloat() - 0.1f, 0.0f) < n) {
                             this.method1766(method2108);
                         }
                     }
@@ -250,24 +257,24 @@ public abstract class Class776 extends Class777
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (this.method4293()) {
             this.method4292().method30645();
         }
-        return super.method1740(class7929, n);
+        return super.attackEntityFrom(class7929, n);
     }
     
     @Nullable
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.method4289(this.method1642() != EntityType.field29047 || class1853 != Class2101.field12174);
+        this.method4289(this.getType() != EntityType.field29047 || class1853 != Class2101.field12174);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
     public abstract Class7795 method4260();
     
     static {
-        field4170 = Class9184.method33564(Class776.class, Class7709.field30661);
+        field4170 = EntityDataManager.method33564(Class776.class, Class7709.field30661);
         field4171 = (class427 -> {
             final boolean b;
             if (!class427.method2118()) {

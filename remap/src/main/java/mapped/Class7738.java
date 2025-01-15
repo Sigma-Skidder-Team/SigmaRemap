@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class Class7738 implements Class7735
     
     private static List<String> method24689(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
-        return (List<String>)((method27657 != null && Class4096.method12339(method27657)) ? Class723.method3979(method27657) : ImmutableList.of((Object)new Class2259("book.invalid.tag", new Object[0]).method8469(Class2116.field12313).method8461()));
+        return (List<String>)((method27657 != null && Class4096.method12339(method27657)) ? Class723.method3979(method27657) : ImmutableList.of((Object)new Class2259("book.invalid.tag", new Object[0]).applyTextStyle(TextFormatting.DARK_RED).getFormattedText()));
     }
     
     @Override
@@ -37,6 +38,6 @@ public class Class7738 implements Class7735
             }
         }
         catch (final Exception ex) {}
-        return new Class2260(s);
+        return new StringTextComponent(s);
     }
 }

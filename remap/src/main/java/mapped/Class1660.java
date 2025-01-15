@@ -7,9 +7,13 @@ package mapped;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.Style;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Date;
 import java.util.Calendar;
@@ -56,7 +60,7 @@ public class Class1660 implements AutoCloseable, Class1657
     private boolean field9410;
     private final Class6092 field9411;
     private boolean field9412;
-    private Class1847 field9413;
+    private World field9413;
     private float field9414;
     private long field9415;
     private int field9416;
@@ -245,7 +249,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     method5305 = this.field9380.field4691.method21451().squareDistanceTo(method5304);
                 }
                 final Vec3d method5306 = method5303.method1741(1.0f);
-                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.method1886().method18493(method5306.scale(n4)).method18495(1.0, 1.0, 1.0), class399 -> !class399.method1639() && class399.method1749(), method5305);
+                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.method1886().method18493(method5306.scale(n4)).method18495(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
                 if (method5307 != null) {
                     final Entity method5308 = method5307.method21452();
                     final Vec3d method5309 = method5307.method21451();
@@ -255,7 +259,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     }
                     else if (method5310 < method5305 || this.field9380.field4691 == null) {
                         this.field9380.field4691 = method5307;
-                        if (method5308 instanceof Class511 || method5308 instanceof Class862) {
+                        if (method5308 instanceof LivingEntity || method5308 instanceof Class862) {
                             this.field9380.field4690 = method5308;
                         }
                     }
@@ -310,9 +314,9 @@ public class Class1660 implements AutoCloseable, Class1657
                     field23471 /= 4.0;
                 }
             }
-            if (class6092.method18166() instanceof Class511) {
-                if (((Class511)class6092.method18166()).method2664() <= 0.0f) {
-                    field23471 /= (1.0f - 500.0f / (Math.min(((Class511)class6092.method18166()).field2941 + f, 20.0f) + 500.0f)) * 2.0f + 1.0f;
+            if (class6092.method18166() instanceof LivingEntity) {
+                if (((LivingEntity)class6092.method18166()).method2664() <= 0.0f) {
+                    field23471 /= (1.0f - 500.0f / (Math.min(((LivingEntity)class6092.method18166()).field2941 + f, 20.0f) + 500.0f)) * 2.0f + 1.0f;
                 }
             }
             if (!class6092.method18169().method21781()) {
@@ -324,8 +328,8 @@ public class Class1660 implements AutoCloseable, Class1657
     }
     
     private void method5810(final Class7351 class7351, final float n) {
-        if (this.field9380.method5303() instanceof Class511) {
-            final Class511 class7352 = (Class511)this.field9380.method5303();
+        if (this.field9380.method5303() instanceof LivingEntity) {
+            final LivingEntity class7352 = (LivingEntity)this.field9380.method5303();
             final float n2 = class7352.field2938 - n;
             if (class7352.method2664() <= 0.0f) {
                 class7351.method22566(Vector3f.ZP.rotationDegrees(40.0f - 8000.0f / (Math.min(class7352.field2941 + n, 20.0f) + 200.0f)));
@@ -345,7 +349,7 @@ public class Class1660 implements AutoCloseable, Class1657
     private void method5811(final Class7351 class7351, final float n) {
         if (this.field9380.method5303() instanceof Class512) {
             final Class512 class7352 = (Class512)this.field9380.method5303();
-            final float n2 = -(class7352.field2412 + (class7352.field2412 - class7352.field2411) * n);
+            final float n2 = -(class7352.distanceWalkedModified + (class7352.distanceWalkedModified - class7352.prevDistanceWalkedModified) * n);
             final float method35700 = MathHelper.method35700(n, class7352.field3012, class7352.field3013);
             class7351.method22564(MathHelper.sin(n2 * 3.1415927f) * method35700 * 0.5f, -Math.abs(MathHelper.cos(n2 * 3.1415927f) * method35700), 0.0);
             class7351.method22566(Vector3f.ZP.rotationDegrees(MathHelper.sin(n2 * 3.1415927f) * method35700 * 3.0f));
@@ -371,7 +375,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 if (this.field9380.field4648.field23431) {
                     this.method5811(class7351, n);
                 }
-                b4 = (this.field9380.method5303() instanceof Class511 && ((Class511)this.field9380.method5303()).method2783());
+                b4 = (this.field9380.method5303() instanceof LivingEntity && ((LivingEntity)this.field9380.method5303()).method2783());
                 if (this.field9380.field4648.field23465 == 0) {
                     if (!b4) {
                         if (!this.field9380.field4648.field23464) {
@@ -438,7 +442,7 @@ public class Class1660 implements AutoCloseable, Class1657
         return class6093.method22569().method32111();
     }
     
-    public static float method5816(final Class511 class511, final float n) {
+    public static float method5816(final LivingEntity class511, final float n) {
         final int method7907 = class511.method2654(Class9439.field40489).method7907();
         return (method7907 <= 200) ? (0.7f + MathHelper.sin((method7907 - n) * 3.1415927f * 0.2f) * 0.3f) : 1.0f;
     }
@@ -628,7 +632,7 @@ public class Class1660 implements AutoCloseable, Class1657
             boolean b = method5303 instanceof Class512 && !this.field9380.field4648.field23464;
             if (b) {
                 if (!((Class512)method5303).field3025.field27305) {
-                    final ItemStack method5304 = ((Class511)method5303).method2713();
+                    final ItemStack method5304 = ((LivingEntity)method5303).method2713();
                     final Class7006 field4691 = this.field9380.field4691;
                     if (field4691 != null) {
                         if (field4691.method21449() == Class2165.field12881) {
@@ -832,14 +836,14 @@ public class Class1660 implements AutoCloseable, Class1657
         final Class1848 field4683 = this.field9380.field4683;
         if (field4683 != null) {
             if (Class8571.method28963() != null) {
-                final Class2260 class2260 = new Class2260(Class8822.method30773("of.message.newVersion", "§n" + ("HD_U".replace("HD_U", "HD Ultra").replace("L", "Light") + " " + Class8571.method28963()) + "§r"));
-                class2260.method8455(new Class8768().method30419(new Class9485(Class2075.field11971, "https://optifine.net/downloads")));
+                final StringTextComponent class2260 = new StringTextComponent(Class8822.method30773("of.message.newVersion", "§n" + ("HD_U".replace("HD_U", "HD Ultra").replace("L", "Light") + " " + Class8571.method28963()) + "§r"));
+                class2260.setStyle(new Style().method30419(new Class9485(Class2075.field11971, "https://optifine.net/downloads")));
                 this.field9380.field4647.method3807().method3761(class2260);
                 Class8571.method28964(null);
             }
             if (Class8571.method28993()) {
                 Class8571.method28994(false);
-                this.field9380.field4647.method3807().method3761(new Class2260(Class8822.method30773("of.message.java64Bit", new Object[0])));
+                this.field9380.field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.java64Bit", new Object[0])));
             }
         }
         if (this.field9380.field4700 instanceof Class548) {
@@ -869,7 +873,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     final int method31662 = Class8933.method31662();
                     if (method31662 != 0) {
                         if (Class8492.method28378(method31662)) {
-                            this.field9380.field4647.method3807().method3761(new Class2260(Class8822.method30773("of.message.openglError", method31662, Class8571.method29017(method31662))));
+                            this.field9380.field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.openglError", method31662, Class8571.method29017(method31662))));
                         }
                     }
                 }

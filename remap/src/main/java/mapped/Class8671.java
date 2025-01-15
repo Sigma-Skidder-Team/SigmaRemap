@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -59,7 +60,7 @@ public class Class8671
     
     private boolean method29681(final Class1849 class1849) {
         for (final Class512 class1850 : class1849.method6840()) {
-            if (class1850.method1639()) {
+            if (class1850.isSpectator()) {
                 continue;
             }
             final BlockPos method1894 = class1850.method1894();

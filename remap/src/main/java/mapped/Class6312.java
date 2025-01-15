@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.Optional;
 import java.util.Iterator;
 import java.util.stream.Collector;

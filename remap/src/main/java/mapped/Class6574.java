@@ -38,16 +38,16 @@ public class Class6574 extends Class6564
                 this.field26066.method4162(0.0f);
                 return;
             }
-            this.field26066.field2399 = this.method19909(this.field26066.field2399, (float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f, 90.0f);
+            this.field26066.rotationYaw = this.method19909(this.field26066.rotationYaw, (float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f, 90.0f);
             float n4;
-            if (!this.field26066.field2404) {
+            if (!this.field26066.onGround) {
                 n4 = (float)(this.field26070 * this.field26066.method2710(Class8107.field33409).method23950());
             }
             else {
                 n4 = (float)(this.field26070 * this.field26066.method2710(Class8107.field33408).method23950());
             }
             this.field26066.method2733(n4);
-            this.field26066.field2400 = this.method19909(this.field26066.field2400, (float)(-(MathHelper.method35693(n2, MathHelper.sqrt(n * n + n3 * n3)) * 57.2957763671875)), (float)this.field26095);
+            this.field26066.rotationPitch = this.method19909(this.field26066.rotationPitch, (float)(-(MathHelper.method35693(n2, MathHelper.sqrt(n * n + n3 * n3)) * 57.2957763671875)), (float)this.field26095);
             this.field26066.method4163((n2 <= 0.0) ? (-n4) : n4);
         }
     }

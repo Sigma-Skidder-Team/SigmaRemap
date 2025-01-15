@@ -5,11 +5,12 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
 
-public class Class4401 implements Class4252<Class5813>
+public class Class4401 implements IPacket<Class5813>
 {
     private static String[] field19717;
     private int field19718;
@@ -26,15 +27,15 @@ public class Class4401 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19718 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19718 = class8654.readVarInt();
         this.field19719 = class8654.method29513(32767);
         this.field19720 = class8654.readBoolean();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19718);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19718);
         class8654.method29514(this.field19719);
         class8654.writeBoolean(this.field19720);
     }
@@ -44,8 +45,8 @@ public class Class4401 implements Class4252<Class5813>
     }
     
     @Nullable
-    public Class865 method13244(final Class1847 class1847) {
-        final Entity method6741 = class1847.method6741(this.field19718);
+    public Class865 method13244(final World class1847) {
+        final Entity method6741 = class1847.getEntityByID(this.field19718);
         return (method6741 instanceof Class429) ? ((Class429)method6741).method2149() : null;
     }
     

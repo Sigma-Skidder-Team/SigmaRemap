@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Collections;
 import java.util.List;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.nbt.INBT;
 
 public class Class8570
 {
@@ -24,8 +25,8 @@ public class Class8570
         this.field36008 = field36009;
     }
     
-    public List<Class41> method28804(final Class41 o) throws CommandSyntaxException {
-        List<Class41> list = Collections.singletonList(o);
+    public List<INBT> method28804(final INBT o) throws CommandSyntaxException {
+        List<INBT> list = Collections.singletonList(o);
         for (final Class6102 class6102 : this.field36009) {
             list = class6102.method18202(list);
             if (list.isEmpty()) {
@@ -35,8 +36,8 @@ public class Class8570
         return list;
     }
     
-    public int method28805(final Class41 o) {
-        List<Class41> list = Collections.singletonList(o);
+    public int method28805(final INBT o) {
+        List<INBT> list = Collections.singletonList(o);
         final Class6102[] field36009 = this.field36009;
         for (int length = field36009.length, i = 0; i < length; ++i) {
             list = field36009[i].method18202(list);
@@ -47,8 +48,8 @@ public class Class8570
         return list.size();
     }
     
-    private List<Class41> method28806(final Class41 o) throws CommandSyntaxException {
-        List<Class41> list = Collections.singletonList(o);
+    private List<INBT> method28806(final INBT o) throws CommandSyntaxException {
+        List<INBT> list = Collections.singletonList(o);
         for (int i = 0; i < this.field36009.length - 1; ++i) {
             final Class6102 class6102 = this.field36009[i];
             list = class6102.method18203(list, this.field36009[i + 1]::method18199);
@@ -59,23 +60,23 @@ public class Class8570
         return list;
     }
     
-    public List<Class41> method28807(final Class41 class41, final Supplier<Class41> supplier) throws CommandSyntaxException {
+    public List<INBT> method28807(final INBT class41, final Supplier<INBT> supplier) throws CommandSyntaxException {
         return this.field36009[this.field36009.length - 1].method18203(this.method28806(class41), supplier);
     }
     
-    private static int method28808(final List<Class41> list, final Function<Class41, Integer> function) {
+    private static int method28808(final List<INBT> list, final Function<INBT, Integer> function) {
         return list.stream().map((Function<? super Object, ? extends Integer>)function).reduce(Integer.valueOf(0), (n, n3) -> n + n3);
     }
     
-    public int method28809(final Class41 class41, final Supplier<Class41> supplier) throws CommandSyntaxException {
+    public int method28809(final INBT class41, final Supplier<INBT> supplier) throws CommandSyntaxException {
         return method28808(this.method28806(class41), class44 -> {
             final Object o = this.field36009[this.field36009.length - 1];
             return class42.method18200(class44, supplier2);
         });
     }
     
-    public int method28810(final Class41 o) {
-        List<Class41> list = Collections.singletonList(o);
+    public int method28810(final INBT o) {
+        List<INBT> list = Collections.singletonList(o);
         for (int i = 0; i < this.field36009.length - 1; ++i) {
             list = this.field36009[i].method18202(list);
         }

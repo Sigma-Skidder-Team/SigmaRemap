@@ -16,19 +16,19 @@ public class Class3341 extends Class3167
     @Class6753
     private void method10572(final Class5747 class5747) {
         if (this.method9906()) {
-            if ((int)Class3341.field15514.field4684.field2396 == this.field15944) {
+            if ((int)Class3341.field15514.field4684.posY == this.field15944) {
                 if (!Class3341.field15514.field4684.field2967) {
                     Class6430.method19155(-2.0);
                 }
             }
-            if (Class3341.field15514.field4684.field2396 > this.field15944) {
+            if (Class3341.field15514.field4684.posY > this.field15944) {
                 if (Class3341.field15514.field4684.field2967) {
                     if (!Class3341.field15514.field4684.method1809()) {
                         ++this.field15944;
                     }
                 }
             }
-            if (Class3341.field15514.field4684.field2396 % 1.0 == 0.0) {
+            if (Class3341.field15514.field4684.posY % 1.0 == 0.0) {
                 if (Class3341.field15514.field4684.method1809()) {
                     --this.field15944;
                 }
@@ -67,7 +67,7 @@ public class Class3341 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15944 = (int)Class3341.field15514.field4684.field2396;
-        this.field15945 = this.field15944 - Class3341.field15514.field4684.field2396;
+        this.field15944 = (int)Class3341.field15514.field4684.posY;
+        this.field15945 = this.field15944 - Class3341.field15514.field4684.posY;
     }
 }

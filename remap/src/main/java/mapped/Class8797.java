@@ -70,9 +70,9 @@ public class Class8797
     }
     
     public float method30687(final Entity class399) {
-        final double n = class399.field2395 - this.method30683();
-        final double n2 = class399.field2396 - this.method30684();
-        final double n3 = class399.field2397 - this.method30685();
+        final double n = class399.posX - this.method30683();
+        final double n2 = class399.posY - this.method30684();
+        final double n3 = class399.posZ - this.method30685();
         return MathHelper.sqrt(n * n + n2 * n2 + n3 * n3);
     }
     
@@ -125,7 +125,7 @@ public class Class8797
     
     public static boolean method30695(final BlockPos class354) {
         for (final Class8422 class355 : Class8797.field36993) {
-            final Class7096 method6701 = Class8797.field36991.field4683.method6701(class354.method1133(class355.field34567, class355.field34568, class355.field34569));
+            final Class7096 method6701 = Class8797.field36991.field4683.method6701(class354.add(class355.field34567, class355.field34568, class355.field34569));
             if (method6701.method21696() == Class7521.field29173 || method6701.method21696() == Class7521.field29174) {
                 return true;
             }
@@ -135,7 +135,7 @@ public class Class8797
     
     public static boolean method30696(final BlockPos class354) {
         for (final Class8422 class355 : Class8797.field36993) {
-            if (Class8797.field36991.field4683.method6701(class354.method1133(class355.field34567, class355.field34568, class355.field34569)).method21706()) {
+            if (Class8797.field36991.field4683.method6701(class354.add(class355.field34567, class355.field34568, class355.field34569)).method21706()) {
                 return false;
             }
         }
@@ -144,18 +144,18 @@ public class Class8797
     
     public boolean method30697() {
         for (final Class8422 class8422 : Class8797.field36993) {
-            final Class7096 method6701 = Class8797.field36991.field4683.method6701(this.method30692().method1133(class8422.field34567, class8422.field34568, class8422.field34569));
+            final Class7096 method6701 = Class8797.field36991.field4683.method6701(this.method30692().add(class8422.field34567, class8422.field34568, class8422.field34569));
             if (method6701.method21696() == Class7521.field29173 || method6701.method21696() == Class7521.field29174) {
                 return true;
             }
         }
         for (final Class8422 class8423 : Class8797.field36993) {
-            final Class7096 method6702 = Class8797.field36991.field4683.method6701(this.method30692().method1133(class8423.field34567, class8423.field34568 + 1.0, class8423.field34569));
+            final Class7096 method6702 = Class8797.field36991.field4683.method6701(this.method30692().add(class8423.field34567, class8423.field34568 + 1.0, class8423.field34569));
             if (method6702.method21696() == Class7521.field29173 || method6702.method21696() == Class7521.field29174) {
                 return true;
             }
         }
-        return Class8797.field36991.field4683.method6701(this.method30692().method1138(2)).method21696() instanceof Class3986 && !this.field36992.field36694.contains(this.method30692().method1138(2).method1132());
+        return Class8797.field36991.field4683.method6701(this.method30692().method1138(2)).method21696() instanceof Class3986 && !this.field36992.field36694.contains(this.method30692().method1138(2).toLong());
     }
     
     public boolean method30698() {
@@ -170,12 +170,12 @@ public class Class8797
     }
     
     public boolean method30699(final BlockPos class354) {
-        return this.field36992.field36694.contains(class354.method1132()) || Class869.method5277().field4683.method6701(class354).method21727(Class8797.field36991.field4683, class354).method24540();
+        return this.field36992.field36694.contains(class354.toLong()) || Class869.method5277().field4683.method6701(class354).method21727(Class8797.field36991.field4683, class354).method24540();
     }
     
     public boolean method30700() {
         final BlockPos method30692 = this.method30692();
-        return !this.field36992.field36694.contains(this.method30692().method1132()) && !Class869.method5277().field4683.method6701(method30692).method21727(Class8797.field36991.field4683, method30692).method24540() && Class869.method5277().field4683.method6701(method30692).method21727(Class8797.field36991.field4683, method30692).method24537().method18507() == 1.0;
+        return !this.field36992.field36694.contains(this.method30692().toLong()) && !Class869.method5277().field4683.method6701(method30692).method21727(Class8797.field36991.field4683, method30692).method24540() && Class869.method5277().field4683.method6701(method30692).method21727(Class8797.field36991.field4683, method30692).method24537().method18507() == 1.0;
     }
     
     static {

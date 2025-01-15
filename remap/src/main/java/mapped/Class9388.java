@@ -9,6 +9,8 @@ import java.util.Comparator;
 import java.util.Arrays;
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
+
+import net.minecraft.item.ItemStack;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class9388

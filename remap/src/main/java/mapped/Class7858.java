@@ -4,13 +4,14 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBT;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Iterator;
 import java.util.Collections;
 import java.util.Set;
 import java.util.Collection;
-import java.util.function.Consumer;
+
 import com.google.common.collect.HashBasedTable;
 import java.util.PriorityQueue;
 import java.util.Comparator;
@@ -84,7 +85,7 @@ public class Class7858<T>
         this.field32287 = UnsignedLong.ZERO;
         if (!obj.isEmpty()) {
             if (obj.method356() == 10) {
-                final Iterator<Class41> iterator = obj.iterator();
+                final Iterator<INBT> iterator = obj.iterator();
                 while (iterator.hasNext()) {
                     this.method25416((Class51)iterator.next());
                 }

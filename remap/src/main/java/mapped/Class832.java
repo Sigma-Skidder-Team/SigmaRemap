@@ -4,9 +4,13 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 public abstract class Class832 extends Class787
 {
-    public Class832(final EntityType<? extends Class832> class7499, final Class1847 class7500) {
+    public Class832(final EntityType<? extends Class832> class7499, final World class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1211, 0.0f);
     }
@@ -33,25 +37,25 @@ public abstract class Class832 extends Class787
     
     @Override
     public int method2631(final Class512 class512) {
-        return 1 + this.field2391.field10062.nextInt(3);
+        return 1 + this.world.field10062.nextInt(3);
     }
     
     public void method4951(final int n) {
         if (this.method1768() && !this.method1711()) {
-            this.method1833(n - 1);
-            if (this.method1832() == -20) {
-                this.method1833(0);
-                this.method1740(Class7929.field32569, 2.0f);
+            this.setAir(n - 1);
+            if (this.getAir() == -20) {
+                this.setAir(0);
+                this.attackEntityFrom(DamageSource.field32569, 2.0f);
             }
         }
         else {
-            this.method1833(300);
+            this.setAir(300);
         }
     }
     
     @Override
     public void method1660() {
-        final int method1832 = this.method1832();
+        final int method1832 = this.getAir();
         super.method1660();
         this.method4951(method1832);
     }

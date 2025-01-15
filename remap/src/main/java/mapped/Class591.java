@@ -8,6 +8,7 @@ import java.util.Iterator;
 import it.unimi.dsi.fastutil.ints.IntListIterator;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.item.ItemStack;
 
 public class Class591<C extends Class446> extends Class590<C>
 {

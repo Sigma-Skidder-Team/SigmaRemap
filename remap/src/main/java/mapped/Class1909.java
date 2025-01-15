@@ -19,6 +19,7 @@ import java.util.concurrent.Executor;
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.io.File;
 import java.util.List;
@@ -52,7 +53,7 @@ public class Class1909 extends Class1906
         this.field10353 = new Class873(this, field10350, null);
         this.field10349 = field10351;
         this.field10351 = Thread.currentThread();
-        final File file2 = new File(field10350.method6789().method20487().method1272(file), "data");
+        final File file2 = new File(field10350.method6789().getType().method1272(file), "data");
         file2.mkdirs();
         this.field10355 = new Class8213(file2, dataFixer);
         this.field10354 = new Class388(field10350, file, dataFixer, class1795, executor, this.field10353, this, this.method7438(), class1796, supplier, n);
@@ -321,7 +322,7 @@ public class Class1909 extends Class1906
         }
     }
     
-    public Class1847 method7430() {
+    public World method7430() {
         return this.field10350;
     }
     
@@ -514,11 +515,11 @@ public class Class1909 extends Class1906
         this.field10354.method1352(class399);
     }
     
-    public void method7446(final Entity class399, final Class4252<?> class400) {
+    public void method7446(final Entity class399, final IPacket<?> class400) {
         this.field10354.method1356(class399, class400);
     }
     
-    public void method7447(final Entity class399, final Class4252<?> class400) {
+    public void method7447(final Entity class399, final IPacket<?> class400) {
         this.field10354.method1355(class399, class400);
     }
     

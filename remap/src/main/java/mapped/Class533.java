@@ -30,7 +30,7 @@ public class Class533 extends Class527
         }));
         final Class654 class654 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 96, 200, 20, Class8822.method30773("deathScreen.titleScreen", new Object[0]), class654 -> {
             if (!this.field3183) {
-                final Class546 class655 = new Class546(this::method3076, new Class2259("deathScreen.quit.confirm", new Object[0]), new Class2260(""), Class8822.method30773("deathScreen.titleScreen", new Object[0]), Class8822.method30773("deathScreen.respawn", new Object[0]));
+                final Class546 class655 = new Class546(this::method3076, new Class2259("deathScreen.quit.confirm", new Object[0]), new StringTextComponent(""), Class8822.method30773("deathScreen.titleScreen", new Object[0]), Class8822.method30773("deathScreen.respawn", new Object[0]));
                 this.field3150.method5244(class655);
                 class655.method3209(20);
             }
@@ -77,18 +77,18 @@ public class Class533 extends Class527
         this.method3189(0, 0, this.field3152, this.field3153, 1615855616, -1602211792);
         Class8726.method30059();
         Class8726.method30063(2.0f, 2.0f, 2.0f);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2 / 2, 30, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2 / 2, 30, 16777215);
         Class8726.method30060();
         if (this.field3182 != null) {
-            this.method3295(this.field3156, this.field3182.method8461(), this.field3152 / 2, 85, 16777215);
+            this.method3295(this.field3156, this.field3182.getFormattedText(), this.field3152 / 2, 85, 16777215);
         }
-        this.method3295(this.field3156, Class8822.method30773("deathScreen.score", new Object[0]) + ": " + Class2116.field12323 + this.field3150.field4684.method2817(), this.field3152 / 2, 100, 16777215);
+        this.method3295(this.field3156, Class8822.method30773("deathScreen.score", new Object[0]) + ": " + TextFormatting.YELLOW + this.field3150.field4684.method2817(), this.field3152 / 2, 100, 16777215);
         if (this.field3182 != null) {
             if (n2 > 85) {
                 if (n2 < 94) {
                     final ITextComponent method3078 = this.method3078(n);
                     if (method3078 != null) {
-                        if (method3078.method8456().method30411() != null) {
+                        if (method3078.getStyle().method30411() != null) {
                             this.method3033(method3078, n, n2);
                         }
                     }
@@ -103,13 +103,13 @@ public class Class533 extends Class527
         if (this.field3182 == null) {
             return null;
         }
-        final int method6617 = this.field3150.field4643.method6617(this.field3182.method8461());
+        final int method6617 = this.field3150.field4643.method6617(this.field3182.getFormattedText());
         final int n2 = this.field3152 / 2 - method6617 / 2;
         final int n3 = this.field3152 / 2 + method6617 / 2;
         int n4 = n2;
         if (n >= n2 && n <= n3) {
             for (final ITextComponent class2250 : this.field3182) {
-                n4 += this.field3150.field4643.method6617(Class8936.method31696(class2250.method8459(), false));
+                n4 += this.field3150.field4643.method6617(Class8936.method31696(class2250.getUnformattedComponentText(), false));
                 if (n4 <= n) {
                     continue;
                 }
@@ -127,8 +127,8 @@ public class Class533 extends Class527
                 if (n2 < 94.0) {
                     final ITextComponent method3078 = this.method3078((int)n);
                     if (method3078 != null) {
-                        if (method3078.method8456().method30410() != null) {
-                            if (method3078.method8456().method30410().method35309() == Class2075.field11971) {
+                        if (method3078.getStyle().method30410() != null) {
+                            if (method3078.getStyle().method30410().method35309() == Class2075.field11971) {
                                 this.method3035(method3078);
                                 return false;
                             }

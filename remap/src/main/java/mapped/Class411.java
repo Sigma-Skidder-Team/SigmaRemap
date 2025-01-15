@@ -5,20 +5,25 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 public class Class411 extends Class409
 {
     private static String[] field2508;
     
-    public Class411(final EntityType<? extends Class411> class7499, final Class1847 class7500) {
+    public Class411(final EntityType<? extends Class411> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class411(final Class1847 class1847, final Class511 class1848) {
+    public Class411(final World class1847, final LivingEntity class1848) {
         super(EntityType.field29028, class1848, class1847);
     }
     
-    public Class411(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class411(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field29028, n, n2, n3, class1847);
     }
     
@@ -37,7 +42,7 @@ public class Class411 extends Class409
         if (b == 3) {
             final Class6909 method2017 = this.method2017();
             for (int i = 0; i < 8; ++i) {
-                this.field2391.method6709(method2017, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
+                this.world.method6709(method2017, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }
@@ -46,10 +51,10 @@ public class Class411 extends Class409
     public void method2016(final Class7006 class7006) {
         if (class7006.method21449() == Class2165.field12882) {
             final Entity method21452 = ((Class7007)class7006).method21452();
-            method21452.method1740(Class7929.method25699(this, this.method2019()), (method21452 instanceof Class849) ? 3 : 0);
+            method21452.attackEntityFrom(DamageSource.method25699(this, this.method2019()), (method21452 instanceof Class849) ? 3 : 0);
         }
-        if (!this.field2391.field10067) {
-            this.field2391.method6761(this, (byte)3);
+        if (!this.world.field10067) {
+            this.world.method6761(this, (byte)3);
             this.method1652();
         }
     }

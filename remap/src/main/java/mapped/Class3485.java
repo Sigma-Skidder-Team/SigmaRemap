@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -24,7 +26,7 @@ public class Class3485 extends Class3479
     
     @Override
     public boolean method11013() {
-        if (!this.field16415.field2391.method6765().method31216(Class8878.field37316)) {
+        if (!this.field16415.world.method6765().method31216(Class8878.field37316)) {
             return false;
         }
         if (this.field16392 > 0) {
@@ -40,13 +42,13 @@ public class Class3485 extends Class3479
     }
     
     private boolean method11052() {
-        return (this.field16395 != null && this.method11050(this.field16390.field2391, this.field16395)) || this.method11049();
+        return (this.field16395 != null && this.method11050(this.field16390.world, this.field16395)) || this.method11049();
     }
     
     @Override
     public void method11018() {
         super.method11018();
-        this.field16415.field2414 = 1.0f;
+        this.field16415.fallDistance = 1.0f;
     }
     
     @Override
@@ -58,27 +60,27 @@ public class Class3485 extends Class3479
     public void method11053(final Class1851 class1851, final BlockPos class1852) {
     }
     
-    public void method11054(final Class1847 class1847, final BlockPos class1848) {
+    public void method11054(final World class1847, final BlockPos class1848) {
     }
     
     @Override
     public void method11016() {
         super.method11016();
-        final Class1847 field2391 = this.field16415.field2391;
+        final World field2391 = this.field16415.world;
         final BlockPos method11055 = this.method11055(new BlockPos(this.field16415), field2391);
         final Random method11056 = this.field16415.method2633();
         if (this.method11048()) {
             if (method11055 != null) {
                 if (this.field16416 > 0) {
-                    final Vec3d method11057 = this.field16415.method1935();
-                    this.field16415.method1937(method11057.x, 0.3, method11057.z);
+                    final Vec3d method11057 = this.field16415.getMotion();
+                    this.field16415.setMotion(method11057.x, 0.3, method11057.z);
                     if (!field2391.field10067) {
                         ((Class1849)field2391).method6911(new Class6910(Class8432.field34629, new ItemStack(Class7739.field31374)), method11055.getX() + 0.5, method11055.getY() + 0.7, method11055.getZ() + 0.5, 3, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, 0.15000000596046448);
                     }
                 }
                 if (this.field16416 % 2 == 0) {
-                    final Vec3d method11058 = this.field16415.method1935();
-                    this.field16415.method1937(method11058.x, -0.3, method11058.z);
+                    final Vec3d method11058 = this.field16415.getMotion();
+                    this.field16415.setMotion(method11058.x, -0.3, method11058.z);
                     if (this.field16416 % 6 == 0) {
                         this.method11053(field2391, this.field16395);
                     }

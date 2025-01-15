@@ -25,9 +25,9 @@ public class Class3589 extends Class3587
         if (this.method11120()) {
             return true;
         }
-        if (this.field16727 <= this.field16726.field2424) {
+        if (this.field16727 <= this.field16726.ticksExisted) {
             this.field16726.method4372(32);
-            this.field16727 = this.field16726.field2424 + 600;
+            this.field16727 = this.field16726.ticksExisted + 600;
             if (this.field16726.method2749()) {
                 Class791.method4422(this.field16726).method11166(this.field16721.method7135(Class791.method4421(), this.field16726));
             }
@@ -37,7 +37,7 @@ public class Class3589 extends Class3587
     
     private boolean method11120() {
         final BlockPos class354 = new BlockPos(this.field16726);
-        final Class385 class355 = new Class385();
+        final Mutable class355 = new Mutable();
         for (int i = 0; i < 3; ++i) {
             for (boolean b = false; (b ? 1 : 0) < 8; ++b) {
                 for (int j = 0; j <= (b ? 1 : 0); j = ((j <= 0) ? (1 - j) : (-j))) {

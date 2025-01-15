@@ -4,24 +4,27 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class505 extends Class433
 {
     private static String[] field2885;
     
-    public Class505(final EntityType<? extends Class505> class7499, final Class1847 class7500) {
+    public Class505(final EntityType<? extends Class505> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class505(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class505(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field29000, n, n2, n3, class1847);
     }
     
     @Override
-    public void method2123(final Class7929 class7929) {
+    public void method2123(final DamageSource class7929) {
         super.method2123(class7929);
-        if (this.field2391.method6765().method31216(Class8878.field37321)) {
+        if (this.world.method6765().method31216(Class8878.field37321)) {
             this.method1764(Class7521.field29292);
         }
     }

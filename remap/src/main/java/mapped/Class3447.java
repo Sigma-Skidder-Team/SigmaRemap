@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3447 extends Class3446
 {
     private static String[] field16272;
     private final Class850 field16273;
-    private Class511 field16274;
+    private LivingEntity field16274;
     
     public Class3447(final Class850 field16273) {
         this.field16273 = field16273;

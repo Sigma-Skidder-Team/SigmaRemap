@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.List;
@@ -52,7 +55,7 @@ public class Class4002 extends Class4000
     }
     
     @Override
-    public int method12165(final Class1847 class1847, final BlockPos class1848) {
+    public int method12165(final World class1847, final BlockPos class1848) {
         final AxisAlignedBB method18500 = Class4002.field18033.method18500(class1848);
         List<Entity> list = null;
         switch (Class8318.field34167[this.field18039.ordinal()]) {
@@ -61,7 +64,7 @@ public class Class4002 extends Class4000
                 break;
             }
             case 2: {
-                list = class1847.method7128((Class<? extends Entity>)Class511.class, method18500);
+                list = class1847.method7128((Class<? extends Entity>) LivingEntity.class, method18500);
                 break;
             }
             default: {

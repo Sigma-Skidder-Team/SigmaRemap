@@ -13,7 +13,7 @@ public class Class694 extends Class527
 {
     private static final AtomicInteger field3817;
     private static final Logger field3146;
-    private Class3641 field3818;
+    private NetworkManager field3818;
     private boolean field3819;
     private final Class527 field3820;
     private ITextComponent field3821;
@@ -88,7 +88,7 @@ public class Class694 extends Class527
             this.field3822 = method27837;
             Class7895.field32404.method25556(new Class2259("narrator.joining", new Object[0]).getString());
         }
-        this.method3295(this.field3156, this.field3821.method8461(), this.field3152 / 2, this.field3153 / 2 - 50, 16777215);
+        this.method3295(this.field3156, this.field3821.getFormattedText(), this.field3152 / 2, this.field3153 / 2 - 50, 16777215);
         super.method2975(n, n2, n3);
     }
     

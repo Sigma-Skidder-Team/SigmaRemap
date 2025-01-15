@@ -25,7 +25,7 @@ public class Class4751 extends Class4748<Class830, Class5864<Class830>>
         super.method14084(class830, class831, n, n2, n3);
         final float method2623 = class830.method2623(n3);
         if (method2623 > 0.0f) {
-            class831.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method2623, class830.field2400, -10.0f - class830.field2400)));
+            class831.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method2623, class830.rotationPitch, -10.0f - class830.rotationPitch)));
         }
     }
     

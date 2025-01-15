@@ -49,7 +49,7 @@ public class Class9380
         final int method324 = class6348.method319("ChunkX");
         final int method325 = class6348.method319("ChunkZ");
         final int method326 = class6348.method319("references");
-        final Class6997 class6350 = class6348.method315("BB") ? new Class6997(class6348.method325("BB")) : Class6997.method21407();
+        final MutableBoundingBox class6350 = class6348.method315("BB") ? new MutableBoundingBox(class6348.method325("BB")) : MutableBoundingBox.getNewBoundingBox();
         final Class52 method327 = class6348.method328("Children", 10);
         try {
             final Class5936 method328 = class6349.method13595().method19048(class6349, method324, method325, class6350, method326, class6346.method18880());

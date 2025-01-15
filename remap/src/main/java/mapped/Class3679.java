@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3679 implements Class3663
 {
     private static String[] field16969;
@@ -44,7 +47,7 @@ public class Class3679 implements Class3663
         return this.field16973;
     }
     
-    public boolean method11301(final Class473 class473, final Class1847 class474) {
+    public boolean method11301(final Class473 class473, final World class474) {
         final Class5024 class475 = new Class5024();
         int n = 0;
         for (int i = 0; i < class473.method2239(); ++i) {

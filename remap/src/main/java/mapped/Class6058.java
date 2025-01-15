@@ -15,9 +15,9 @@ public interface Class6058<T>
     @Nullable
     T method18028(final int p0);
     
-    void method18029(final Class8654 p0);
+    void method18029(final PacketBuffer p0);
     
-    void method18030(final Class8654 p0);
+    void method18030(final PacketBuffer p0);
     
     int method18031();
     

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class3274 extends Class3167
 {
     public Class3274() {
@@ -24,7 +26,7 @@ public class Class3274 extends Class3167
                 switch (method2767) {
                     case "Basic": {
                         for (int n2 = Class3274.field15514.field4684.method2767() + 2, i = 0; i < n2; ++i) {
-                            Class3274.field15514.method5269().method17292(new Class4353(Class3274.field15514.field4684.field2404));
+                            Class3274.field15514.method5269().method17292(new Class4353(Class3274.field15514.field4684.onGround));
                             Class3274.field15514.field4684.method2769();
                         }
                         break;

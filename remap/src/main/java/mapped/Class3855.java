@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3855 extends Class3854
 {
@@ -21,12 +22,12 @@ public class Class3855 extends Class3854
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.method21772((Class7111<Boolean>)Class3855.field17474) ? this.field17475[this.method11916(class7096)] : super.method11808(class7096, class7097, class7098, class7099);
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.method21772((Class7111<Boolean>)Class3855.field17474) ? this.field17476[this.method11916(class7096)] : super.method11809(class7096, class7097, class7098, class7099);
     }
     
@@ -43,7 +44,7 @@ public class Class3855 extends Class3854
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         final Class7099 method21656 = class7074.method21654().method6702(class7074.method21639());
         final BlockPos method21657 = method21655.method1141();

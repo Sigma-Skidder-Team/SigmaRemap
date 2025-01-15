@@ -5,8 +5,13 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -14,20 +19,20 @@ public class Class863 extends Class860
 {
     private static String[] field4606;
     
-    public Class863(final EntityType<? extends Class863> class7499, final Class1847 class7500) {
+    public Class863(final EntityType<? extends Class863> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class863(final Class1847 class1847, final BlockPos class1848) {
+    public Class863(final World class1847, final BlockPos class1848) {
         super(EntityType.field28995, class1847, class1848);
-        this.method1656(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
+        this.setPosition(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
         this.method1889(new AxisAlignedBB(this.getPosX() - 0.1875, this.getPosY() - 0.25 + 0.125, this.getPosZ() - 0.1875, this.getPosX() + 0.1875, this.getPosY() + 0.25 + 0.125, this.getPosZ() + 0.1875));
-        this.field2390 = true;
+        this.forceSpawn = true;
     }
     
     @Override
-    public void method1656(final double n, final double n2, final double n3) {
-        super.method1656(MathHelper.floor(n) + 0.5, MathHelper.floor(n2) + 0.5, MathHelper.floor(n3) + 0.5);
+    public void setPosition(final double n, final double n2, final double n3) {
+        super.setPosition(MathHelper.floor(n) + 0.5, MathHelper.floor(n2) + 0.5, MathHelper.floor(n3) + 0.5);
     }
     
     @Override
@@ -50,7 +55,7 @@ public class Class863 extends Class860
     }
     
     @Override
-    public float method1890(final Class290 class290, final Class8295 class291) {
+    public float method1890(final Pose class290, final EntitySize class291) {
         return -0.0625f;
     }
     
@@ -74,9 +79,9 @@ public class Class863 extends Class860
     
     @Override
     public boolean method1770(final Class512 class512, final Class316 class513) {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             int n = 0;
-            final List<Class759> method7128 = this.field2391.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(this.getPosX() - 7.0, this.getPosY() - 7.0, this.getPosZ() - 7.0, this.getPosX() + 7.0, this.getPosY() + 7.0, this.getPosZ() + 7.0));
+            final List<Class759> method7128 = this.world.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(this.getPosX() - 7.0, this.getPosY() - 7.0, this.getPosZ() - 7.0, this.getPosX() + 7.0, this.getPosY() + 7.0, this.getPosZ() + 7.0));
             for (final Class759 class514 : method7128) {
                 if (class514.method4206() != class512) {
                     continue;
@@ -105,10 +110,10 @@ public class Class863 extends Class860
     
     @Override
     public boolean method5189() {
-        return this.field2391.method6701(this.field4599).method21696().method11785(Class7188.field27911);
+        return this.world.method6701(this.field4599).method21696().method11785(Class7188.field27911);
     }
     
-    public static Class863 method5205(final Class1847 class1847, final BlockPos class1848) {
+    public static Class863 method5205(final World class1847, final BlockPos class1848) {
         final int method1074 = class1848.getX();
         final int method1075 = class1848.getY();
         final int method1076 = class1848.getZ();
@@ -130,7 +135,7 @@ public class Class863 extends Class860
     }
     
     @Override
-    public Class4252<?> method1932() {
-        return new Class4339(this, this.method1642(), 0, this.method5194());
+    public IPacket<?> method1932() {
+        return new Class4339(this, this.getType(), 0, this.method5194());
     }
 }

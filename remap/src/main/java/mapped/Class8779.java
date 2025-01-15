@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
@@ -11,14 +13,14 @@ import javax.annotation.Nullable;
 public class Class8779
 {
     private static String[] field36914;
-    private final Class7929 field36915;
+    private final DamageSource field36915;
     private final int field36916;
     private final float field36917;
     private final float field36918;
     private final String field36919;
     private final float field36920;
     
-    public Class8779(final Class7929 field36915, final int field36916, final float field36917, final float field36918, final String field36919, final float field36920) {
+    public Class8779(final DamageSource field36915, final int field36916, final float field36917, final float field36918, final String field36919, final float field36920) {
         this.field36915 = field36915;
         this.field36916 = field36916;
         this.field36917 = field36918;
@@ -27,7 +29,7 @@ public class Class8779
         this.field36920 = field36920;
     }
     
-    public Class7929 method30537() {
+    public DamageSource method30537() {
         return this.field36915;
     }
     
@@ -36,7 +38,7 @@ public class Class8779
     }
     
     public boolean method30539() {
-        return this.field36915.method25714() instanceof Class511;
+        return this.field36915.method25714() instanceof LivingEntity;
     }
     
     @Nullable
@@ -50,6 +52,6 @@ public class Class8779
     }
     
     public float method30542() {
-        return (this.field36915 != Class7929.field32574) ? this.field36920 : Float.MAX_VALUE;
+        return (this.field36915 != DamageSource.field32574) ? this.field36920 : Float.MAX_VALUE;
     }
 }

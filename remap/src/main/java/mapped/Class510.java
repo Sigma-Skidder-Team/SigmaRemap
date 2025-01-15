@@ -4,37 +4,40 @@
 
 package mapped;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public class Class510 extends Entity
 {
-    private static final Class8810<Integer> field2915;
-    private Class511 field2916;
+    private static final DataParameter<Integer> field2915;
+    private LivingEntity field2916;
     private int field2917;
     
-    public Class510(final EntityType<? extends Class510> class7499, final Class1847 class7500) {
+    public Class510(final EntityType<? extends Class510> class7499, final World class7500) {
         super(class7499, class7500);
         this.field2917 = 80;
         this.preventEntitySpawning = true;
     }
     
-    public Class510(final Class1847 class1847, final double field2392, final double field2393, final double field2394, final Class511 field2395) {
+    public Class510(final World class1847, final double field2392, final double field2393, final double field2394, final LivingEntity field2395) {
         this(EntityType.field29016, class1847);
-        this.method1656(field2392, field2393, field2394);
+        this.setPosition(field2392, field2393, field2394);
         final double n = class1847.field10062.nextDouble() * 6.2831854820251465;
-        this.method1937(-Math.sin(n) * 0.02, 0.20000000298023224, -Math.cos(n) * 0.02);
+        this.setMotion(-Math.sin(n) * 0.02, 0.20000000298023224, -Math.cos(n) * 0.02);
         this.method2615(80);
-        this.field2392 = field2392;
-        this.field2393 = field2393;
-        this.field2394 = field2394;
+        this.prevPosX = field2392;
+        this.prevPosY = field2393;
+        this.prevPosZ = field2394;
         this.field2916 = field2395;
     }
     
     @Override
     public void method1649() {
-        this.field2432.method33565(Class510.field2915, 80);
+        this.dataManager.register(Class510.field2915, 80);
     }
     
     @Override
@@ -44,36 +47,36 @@ public class Class510 extends Entity
     
     @Override
     public boolean method1749() {
-        return !this.field2410;
+        return !this.removed;
     }
     
     @Override
     public void method1659() {
         if (!this.method1698()) {
-            this.method1936(this.method1935().add(0.0, -0.04, 0.0));
+            this.method1936(this.getMotion().add(0.0, -0.04, 0.0));
         }
-        this.method1671(Class2160.field12826, this.method1935());
-        this.method1936(this.method1935().scale(0.98));
-        if (this.field2404) {
-            this.method1936(this.method1935().mul(0.7, -0.5, 0.7));
+        this.method1671(Class2160.field12826, this.getMotion());
+        this.method1936(this.getMotion().scale(0.98));
+        if (this.onGround) {
+            this.method1936(this.getMotion().mul(0.7, -0.5, 0.7));
         }
         --this.field2917;
         if (this.field2917 > 0) {
             this.method1715();
-            if (this.field2391.field10067) {
-                this.field2391.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+            if (this.world.field10067) {
+                this.world.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
         else {
             this.method1652();
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 this.method2613();
             }
         }
     }
     
     private void method2613() {
-        this.field2391.method6722(this, this.getPosX(), this.method1942(0.0625), this.getPosZ(), 4.0f, Class2196.field13366);
+        this.world.method6722(this, this.getPosX(), this.method1942(0.0625), this.getPosZ(), 4.0f, Class2196.field13366);
     }
     
     @Override
@@ -87,29 +90,29 @@ public class Class510 extends Entity
     }
     
     @Nullable
-    public Class511 method2614() {
+    public LivingEntity method2614() {
         return this.field2916;
     }
     
     @Override
-    public float method1890(final Class290 class290, final Class8295 class291) {
+    public float method1890(final Pose class290, final EntitySize class291) {
         return 0.0f;
     }
     
     public void method2615(final int n) {
-        this.field2432.method33569(Class510.field2915, n);
+        this.dataManager.set(Class510.field2915, n);
         this.field2917 = n;
     }
     
     @Override
-    public void method1880(final Class8810<?> class8810) {
+    public void method1880(final DataParameter<?> class8810) {
         if (Class510.field2915.equals(class8810)) {
             this.field2917 = this.method2616();
         }
     }
     
     public int method2616() {
-        return this.field2432.method33568(Class510.field2915);
+        return this.dataManager.get(Class510.field2915);
     }
     
     public int method2617() {
@@ -117,11 +120,11 @@ public class Class510 extends Entity
     }
     
     @Override
-    public Class4252<?> method1932() {
+    public IPacket<?> method1932() {
         return new Class4339(this);
     }
     
     static {
-        field2915 = Class9184.method33564(Class510.class, Class7709.field30654);
+        field2915 = EntityDataManager.method33564(Class510.class, Class7709.field30654);
     }
 }

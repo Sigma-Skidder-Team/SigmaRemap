@@ -13,16 +13,18 @@ import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class6736 extends Class6737
 {
-    public Class6736(final Class1847 class1847, final Class383 class1848) {
+    public Class6736(final World class1847, final DimensionType class1848) {
         super(class1847, class1848, 0.0f);
     }
     
     @Override
-    public Class383 method20487() {
-        return Class383.field2223;
+    public DimensionType getType() {
+        return DimensionType.field2223;
     }
     
     @Override
@@ -133,7 +135,7 @@ public class Class6736 extends Class6737
     @Nullable
     @Override
     public BlockPos method20490(final int n, final int n2, final boolean b) {
-        final Class385 class385 = new Class385(n, 0, n2);
+        final Mutable class385 = new Mutable(n, 0, n2);
         final Class7096 method13338 = this.field26492.method6959(class385).method9872().method13338();
         if (b && !method13338.method21696().method11785(Class7188.field27918)) {
             return null;
@@ -145,13 +147,13 @@ public class Class6736 extends Class6737
         }
         if (method13339.method7018(Class2020.field11522, n & 0xF, n2 & 0xF) <= method13339.method7018(Class2020.field11524, n & 0xF, n2 & 0xF)) {
             for (int i = method13340 + 1; i >= 0; --i) {
-                class385.method1284(n, i, n2);
+                class385.setPos(n, i, n2);
                 final Class7096 method13341 = this.field26492.method6701(class385);
                 if (!method13341.method21756().method21781()) {
                     break;
                 }
                 if (method13341.equals(method13338)) {
-                    return class385.method1137().method1153();
+                    return class385.method1137().toImmutable();
                 }
             }
             return null;

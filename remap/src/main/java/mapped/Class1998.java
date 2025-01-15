@@ -6,14 +6,14 @@ package mapped;
 
 public enum Class1998
 {
-    field11186(Class2116.field12324), 
-    field11187(Class2116.field12323), 
-    field11188(Class2116.field12320), 
-    field11189(Class2116.field12322);
+    field11186(TextFormatting.WHITE),
+    field11187(TextFormatting.YELLOW),
+    field11188(TextFormatting.AQUA),
+    field11189(TextFormatting.LIGHT_PURPLE);
     
-    public final Class2116 field11190;
+    public final TextFormatting field11190;
     
-    private Class1998(final Class2116 field11190) {
+    private Class1998(final TextFormatting field11190) {
         this.field11190 = field11190;
     }
 }

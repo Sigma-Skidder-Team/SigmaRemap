@@ -106,7 +106,7 @@ public class Class3296 extends Class3167
             if (class5723.method16998() instanceof Class4402) {
                 final Class4402 class5724 = (Class4402)class5723.method16998();
                 if (class5724.method13247() != null) {
-                    if (class5724.method13248() == Class3296.field15514.field4684.method1643()) {
+                    if (class5724.method13248() == Class3296.field15514.field4684.getEntityId()) {
                         if (class5724.method13247().method27622() instanceof Class4100) {
                             class5723.method16961(true);
                         }

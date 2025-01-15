@@ -7,7 +7,9 @@ package mapped;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Set;
 import java.util.List;
@@ -483,7 +485,7 @@ public abstract class Class3418
         }
     }
     
-    public void method10881(final Class512 class512, final Class1847 class513, final Class446 class514) {
+    public void method10881(final Class512 class512, final World class513, final Class446 class514) {
         if (class512.method1768() && (class512 instanceof Class513 && ((Class513)class512).method2936())) {
             for (int i = 0; i < class514.method2239(); ++i) {
                 class512.field3006.method2364(class513, class514.method2159(i));

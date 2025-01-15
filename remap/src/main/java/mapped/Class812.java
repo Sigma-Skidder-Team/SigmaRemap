@@ -4,13 +4,19 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
+
 import java.util.AbstractList;
 
 public abstract class Class812 extends Class806
 {
-    private static final Class8810<Boolean> field4366;
+    private static final DataParameter<Boolean> field4366;
     
-    public Class812(final EntityType<? extends Class812> class7499, final Class1847 class7500) {
+    public Class812(final EntityType<? extends Class812> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4352 = false;
     }
@@ -18,7 +24,7 @@ public abstract class Class812 extends Class806
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class812.field4366, false);
+        this.dataManager.register(Class812.field4366, false);
     }
     
     @Override
@@ -30,11 +36,11 @@ public abstract class Class812 extends Class806
     }
     
     public boolean method4780() {
-        return this.field2432.method33568(Class812.field4366);
+        return this.dataManager.get(Class812.field4366);
     }
     
     public void method4781(final boolean b) {
-        this.field2432.method33569(Class812.field4366, b);
+        this.dataManager.set(Class812.field4366, b);
     }
     
     @Override
@@ -57,7 +63,7 @@ public abstract class Class812 extends Class806
     public void method2676() {
         super.method2676();
         if (this.method4780()) {
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 this.method1764(Class7521.field29292);
             }
             this.method4781(false);
@@ -133,7 +139,7 @@ public abstract class Class812 extends Class806
                 this.method4740(class512);
                 return true;
             }
-            if (this.method1806()) {
+            if (this.isBeingRidden()) {
                 return super.method4195(class512, class513);
             }
         }
@@ -181,7 +187,7 @@ public abstract class Class812 extends Class806
     }
     
     public void method4782() {
-        this.method1695(Class8520.field35128, 1.0f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
+        this.method1695(Class8520.field35128, 1.0f, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
     }
     
     public int method4783() {
@@ -189,6 +195,6 @@ public abstract class Class812 extends Class806
     }
     
     static {
-        field4366 = Class9184.method33564(Class812.class, Class7709.field30661);
+        field4366 = EntityDataManager.method33564(Class812.class, Class7709.field30661);
     }
 }

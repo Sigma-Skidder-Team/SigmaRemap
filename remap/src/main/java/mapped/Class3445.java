@@ -21,7 +21,7 @@ public class Class3445 extends Class3446
         boolean b = false;
         Label_0057: {
             if (class513 != null) {
-                if (!class513.method1639()) {
+                if (!class513.isSpectator()) {
                     if (!class513.field3025.field27302) {
                         if (!class513.method1706()) {
                             b = true;

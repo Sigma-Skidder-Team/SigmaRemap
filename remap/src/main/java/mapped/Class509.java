@@ -7,15 +7,20 @@ package mapped;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.UUID;
 
 public class Class509 extends Entity
 {
-    private Class511 field2904;
+    private LivingEntity field2904;
     private Entity field2905;
     private Direction field2906;
     private int field2907;
@@ -27,22 +32,22 @@ public class Class509 extends Entity
     private UUID field2913;
     private BlockPos field2914;
     
-    public Class509(final EntityType<? extends Class509> class7499, final Class1847 class7500) {
+    public Class509(final EntityType<? extends Class509> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2421 = true;
+        this.noClip = true;
     }
     
-    public Class509(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class509(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         this(EntityType.field29021, class1847);
-        this.method1730(n, n2, n3, this.field2399, this.field2400);
-        this.method1937(n4, n5, n6);
+        this.method1730(n, n2, n3, this.rotationYaw, this.rotationPitch);
+        this.setMotion(n4, n5, n6);
     }
     
-    public Class509(final Class1847 class1847, final Class511 field2904, final Entity field2905, final Axis class1848) {
+    public Class509(final World class1847, final LivingEntity field2904, final Entity field2905, final Axis class1848) {
         this(EntityType.field29021, class1847);
         this.field2904 = field2904;
         final BlockPos class1849 = new BlockPos(field2904);
-        this.method1730(class1849.getX() + 0.5, class1849.getY() + 0.5, class1849.getZ() + 0.5, this.field2399, this.field2400);
+        this.method1730(class1849.getX() + 0.5, class1849.getY() + 0.5, class1849.getZ() + 0.5, this.rotationYaw, this.rotationPitch);
         this.field2905 = field2905;
         this.field2906 = Direction.UP;
         this.method2611(class1848);
@@ -127,41 +132,41 @@ public class Class509 extends Entity
             final BlockPos class113 = new BlockPos(this);
             final ArrayList arrayList = Lists.newArrayList();
             if (class111 != Axis.X) {
-                if (class113.getX() < method1139.getX() && this.field2391.method6961(class113.method1147())) {
+                if (class113.getX() < method1139.getX() && this.world.method6961(class113.method1147())) {
                     arrayList.add(Direction.EAST);
                 }
                 else if (class113.getX() > method1139.getX()) {
-                    if (this.field2391.method6961(class113.method1145())) {
+                    if (this.world.method6961(class113.method1145())) {
                         arrayList.add(Direction.WEST);
                     }
                 }
             }
             if (class111 != Axis.Y) {
-                if (class113.getY() < method1139.getY() && this.field2391.method6961(class113.method1137())) {
+                if (class113.getY() < method1139.getY() && this.world.method6961(class113.method1137())) {
                     arrayList.add(Direction.UP);
                 }
                 else if (class113.getY() > method1139.getY()) {
-                    if (this.field2391.method6961(class113.method1139())) {
+                    if (this.world.method6961(class113.method1139())) {
                         arrayList.add(Direction.DOWN);
                     }
                 }
             }
             if (class111 != Axis.Z) {
-                if (class113.getZ() < method1139.getZ() && this.field2391.method6961(class113.method1143())) {
+                if (class113.getZ() < method1139.getZ() && this.world.method6961(class113.method1143())) {
                     arrayList.add(Direction.SOUTH);
                 }
                 else if (class113.getZ() > method1139.getZ()) {
-                    if (this.field2391.method6961(class113.method1141())) {
+                    if (this.world.method6961(class113.method1141())) {
                         arrayList.add(Direction.NORTH);
                     }
                 }
             }
-            class112 = Direction.random(this.field2423);
+            class112 = Direction.random(this.rand);
             if (!arrayList.isEmpty()) {
-                class112 = (Direction)arrayList.get(this.field2423.nextInt(arrayList.size()));
+                class112 = (Direction)arrayList.get(this.rand.nextInt(arrayList.size()));
             }
             else {
-                for (int n5 = 5; !this.field2391.method6961(class113.method1149(class112)) && n5 > 0; class112 = Direction.random(this.field2423), --n5) {}
+                for (int n5 = 5; !this.world.method6961(class113.method1149(class112)) && n5 > 0; class112 = Direction.random(this.rand), --n5) {}
             }
             n2 = this.getPosX() + class112.getXOffset();
             n3 = this.getPosY() + class112.getYOffset();
@@ -182,13 +187,13 @@ public class Class509 extends Entity
             this.field2909 = 0.0;
             this.field2910 = 0.0;
         }
-        this.field2448 = true;
-        this.field2907 = 10 + this.field2423.nextInt(5) * 10;
+        this.isAirBorne = true;
+        this.field2907 = 10 + this.rand.nextInt(5) * 10;
     }
     
     @Override
     public void method1949() {
-        if (this.field2391.method6954() == Class2113.field12290) {
+        if (this.world.method6954() == Class2113.field12290) {
             this.method1652();
         }
     }
@@ -196,10 +201,10 @@ public class Class509 extends Entity
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.field2905 == null) {
                 if (this.field2913 != null) {
-                    for (final Class511 field2905 : this.field2391.method7128((Class<? extends Class511>)Class511.class, new AxisAlignedBB(this.field2914.method1134(-2, -2, -2), this.field2914.method1134(2, 2, 2)))) {
+                    for (final LivingEntity field2905 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, new AxisAlignedBB(this.field2914.add(-2, -2, -2), this.field2914.add(2, 2, 2)))) {
                         if (!field2905.method1865().equals(this.field2913)) {
                             continue;
                         }
@@ -211,7 +216,7 @@ public class Class509 extends Entity
             }
             if (this.field2904 == null) {
                 if (this.field2911 != null) {
-                    for (final Class511 field2906 : this.field2391.method7128((Class<? extends Class511>)Class511.class, new AxisAlignedBB(this.field2912.method1134(-2, -2, -2), this.field2912.method1134(2, 2, 2)))) {
+                    for (final LivingEntity field2906 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, new AxisAlignedBB(this.field2912.add(-2, -2, -2), this.field2912.add(2, 2, 2)))) {
                         if (!field2906.method1865().equals(this.field2911)) {
                             continue;
                         }
@@ -224,18 +229,18 @@ public class Class509 extends Entity
             Label_0104: {
                 if (this.field2905 != null) {
                     if (this.field2905.method1768()) {
-                        if (!(this.field2905 instanceof Class512) || !((Class512)this.field2905).method1639()) {
+                        if (!(this.field2905 instanceof Class512) || !((Class512)this.field2905).isSpectator()) {
                             this.field2908 = MathHelper.method35654(this.field2908 * 1.025, -1.0, 1.0);
                             this.field2909 = MathHelper.method35654(this.field2909 * 1.025, -1.0, 1.0);
                             this.field2910 = MathHelper.method35654(this.field2910 * 1.025, -1.0, 1.0);
-                            final Vec3d method1935 = this.method1935();
+                            final Vec3d method1935 = this.getMotion();
                             this.method1936(method1935.add((this.field2908 - method1935.x) * 0.2, (this.field2909 - method1935.y) * 0.2, (this.field2910 - method1935.z) * 0.2));
                             break Label_0104;
                         }
                     }
                 }
                 if (!this.method1698()) {
-                    this.method1936(this.method1935().add(0.0, -0.04, 0.0));
+                    this.method1936(this.getMotion().add(0.0, -0.04, 0.0));
                 }
             }
             final Class7006 method1936 = Class7476.method23092(this, true, false, this.field2904, Class2040.field11632);
@@ -243,12 +248,12 @@ public class Class509 extends Entity
                 this.method2612(method1936);
             }
         }
-        final Vec3d method1937 = this.method1935();
-        this.method1656(this.getPosX() + method1937.x, this.getPosY() + method1937.y, this.getPosZ() + method1937.z);
+        final Vec3d method1937 = this.getMotion();
+        this.setPosition(this.getPosX() + method1937.x, this.getPosY() + method1937.y, this.getPosZ() + method1937.z);
         Class7476.method23099(this, 0.5f);
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.field2905 != null) {
-                if (!this.field2905.field2410) {
+                if (!this.field2905.removed) {
                     if (this.field2907 > 0) {
                         --this.field2907;
                         if (this.field2907 == 0) {
@@ -258,7 +263,7 @@ public class Class509 extends Entity
                     if (this.field2906 != null) {
                         final BlockPos class354 = new BlockPos(this);
                         final Axis method1938 = this.field2906.getAxis();
-                        if (!this.field2391.method6732(class354.method1149(this.field2906), this)) {
+                        if (!this.world.method6732(class354.method1149(this.field2906), this)) {
                             final BlockPos class355 = new BlockPos(this.field2905);
                             if (method1938 != Axis.X || class354.getX() != class355.getX()) {
                                 if (method1938 != Axis.Z || class354.getZ() != class355.getZ()) {
@@ -280,7 +285,7 @@ public class Class509 extends Entity
             }
         }
         else {
-            this.field2391.method6709(Class8432.field34616, this.getPosX() - method1937.x, this.getPosY() - method1937.y + 0.15, this.getPosZ() - method1937.z, 0.0, 0.0, 0.0);
+            this.world.method6709(Class8432.field34616, this.getPosX() - method1937.x, this.getPosY() - method1937.y + 0.15, this.getPosZ() - method1937.z, 0.0, 0.0, 0.0);
         }
     }
     
@@ -301,15 +306,15 @@ public class Class509 extends Entity
     
     public void method2612(final Class7006 class7006) {
         if (class7006.method21449() != Class2165.field12882) {
-            ((Class1849)this.field2391).method6911(Class8432.field34619, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
+            ((Class1849)this.world).method6911(Class8432.field34619, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
             this.method1695(Class8520.field35551, 1.0f, 1.0f);
         }
         else {
             final Entity method21452 = ((Class7007)class7006).method21452();
-            if (method21452.method1740(Class7929.method25694(this, this.field2904).method25706(), 4.0f)) {
+            if (method21452.attackEntityFrom(DamageSource.method25694(this, this.field2904).method25706(), 4.0f)) {
                 this.method1900(this.field2904, method21452);
-                if (method21452 instanceof Class511) {
-                    ((Class511)method21452).method2655(new Class1948(Class9439.field40498, 200));
+                if (method21452 instanceof LivingEntity) {
+                    ((LivingEntity)method21452).method2655(new Class1948(Class9439.field40498, 200));
                 }
             }
         }
@@ -322,17 +327,17 @@ public class Class509 extends Entity
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
-        if (!this.field2391.field10067) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
+        if (!this.world.field10067) {
             this.method1695(Class8520.field35552, 1.0f, 1.0f);
-            ((Class1849)this.field2391).method6911(Class8432.field34603, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
+            ((Class1849)this.world).method6911(Class8432.field34603, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
             this.method1652();
         }
         return true;
     }
     
     @Override
-    public Class4252<?> method1932() {
+    public IPacket<?> method1932() {
         return new Class4339(this);
     }
 }

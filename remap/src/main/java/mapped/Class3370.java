@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.util.InDevelopment;
+import net.minecraft.entity.EntityType;
 
 @InDevelopment
 public class Class3370 extends Class3167

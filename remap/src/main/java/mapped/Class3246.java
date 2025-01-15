@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 import java.util.Collection;
 import java.util.ArrayList;
@@ -267,7 +269,7 @@ public class Class3246 extends Class3167
         final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(Class7739.field31375, Class7739.field31307, Class7739.field31337, Class7739.field31374, Class7739.field31306, Class7739.field31299, Class7739.field30896, Class7739.field31349, Class7739.field31351, Class7739.field31350, Class7739.field30929, Class7739.field31534, Class7739.field31510, Class7739.field31426, Class7739.field31019, Class7739.field30900, Class7739.field31576, Class7739.field31430, Class7739.field31429, Class7739.field31314, Class7739.field31357, Class7739.field31442, Class7739.field30835, Class7739.field31355, Class7739.field31376));
         if (class8321 != null) {
             if (!list.contains(method27622)) {
-                if (!method27622.method11715().method8461().toLowerCase().contains("seed")) {
+                if (!method27622.method11715().getFormattedText().toLowerCase().contains("seed")) {
                     return false;
                 }
             }

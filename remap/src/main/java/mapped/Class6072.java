@@ -4,28 +4,30 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBTType;
+
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6072 implements Class6068<Class47>
+public final class Class6072 implements INBTType<Class47>
 {
-    public Class47 method18127(final DataInput dataInput, final int n, final Class7553 class7553) throws IOException {
-        class7553.method23718(72L);
+    public Class47 method18127(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+        class7553.read(72L);
         return Class47.method283(dataInput.readByte());
     }
     
     @Override
-    public String method18120() {
+    public String func_225648_a_() {
         return "BYTE";
     }
     
     @Override
-    public String method18121() {
+    public String func_225650_b_() {
         return "TAG_Byte";
     }
     
     @Override
-    public boolean method18122() {
+    public boolean func_225651_c_() {
         return true;
     }
 }

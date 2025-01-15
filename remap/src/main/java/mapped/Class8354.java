@@ -8,20 +8,21 @@ import java.util.Iterator;
 import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.List;
 
 public class Class8354
 {
     private static String[] field34281;
-    private final Class1847 field34282;
+    private final World field34282;
     private final BlockPos field34283;
     private final Class4017 field34284;
     private Class7096 field34285;
     private final boolean field34286;
     private final List<BlockPos> field34287;
     
-    public Class8354(final Class1847 field34282, final BlockPos field34283, final Class7096 field34284) {
+    public Class8354(final World field34282, final BlockPos field34283, final Class7096 field34284) {
         this.field34287 = Lists.newArrayList();
         this.field34282 = field34282;
         this.field34283 = field34283;

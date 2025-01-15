@@ -38,7 +38,7 @@ public class Class4477 extends Class4475
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         if (this.method13460(class1851, class1853, 0)) {
             this.method13445(class1851, class1853, 0, -4, 0, this.field19857 - 1, 0, this.field19859 - 1, false, random, Class4477.field19867);
             this.method13445(class1851, class1853, 2, 1, 2, 9, 2, 2, false, random, Class4477.field19867);

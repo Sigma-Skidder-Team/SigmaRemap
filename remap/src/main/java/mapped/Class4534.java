@@ -33,13 +33,13 @@ public class Class4534 extends Class4535<Class5139>
                 final int n3 = field22124 + random.nextInt(2);
                 final int n4 = field22124 + random.nextInt(2);
                 final float n5 = (n2 + n3 + n4) * 0.333f + 0.5f;
-                for (final BlockPos class1855 : BlockPos.method1154(class1853.method1134(-n2, -n3, -n4), class1853.method1134(n2, n3, n4))) {
+                for (final BlockPos class1855 : BlockPos.getAllInBoxMutable(class1853.add(-n2, -n3, -n4), class1853.add(n2, n3, n4))) {
                     if (class1855.distanceSq(class1853) > n5 * n5) {
                         continue;
                     }
                     class1851.method6688(class1855, class1854.field22123, 4);
                 }
-                class1853 = class1853.method1134(-(field22124 + 1) + random.nextInt(2 + field22124 * 2), 0 - random.nextInt(2), -(field22124 + 1) + random.nextInt(2 + field22124 * 2));
+                class1853 = class1853.add(-(field22124 + 1) + random.nextInt(2 + field22124 * 2), 0 - random.nextInt(2), -(field22124 + 1) + random.nextInt(2 + field22124 * 2));
             }
             return true;
         }

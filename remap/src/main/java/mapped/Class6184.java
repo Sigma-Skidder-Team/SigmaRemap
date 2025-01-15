@@ -5,13 +5,14 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class6184 extends Class6159
 {
     private static String[] field24993;
     private final Class7805 field24994;
     
-    private Class6184(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class7805 field24994) {
+    private Class6184(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class7805 field24994) {
         super(class1847, n, n2, n3, 0.0, 0.0, 0.0);
         this.field24994 = field24994;
         this.field24939 *= 0.10000000149011612;
@@ -56,7 +57,7 @@ public class Class6184 extends Class6159
                 final double method7133 = method7132.getPosY();
                 if (this.field24937 > method7133) {
                     this.field24937 += (method7133 - this.field24937) * 0.2;
-                    this.field24940 += (method7132.method1935().y - this.field24940) * 0.2;
+                    this.field24940 += (method7132.getMotion().y - this.field24940) * 0.2;
                     this.method18441(this.field24936, this.field24937, this.field24938);
                 }
             }

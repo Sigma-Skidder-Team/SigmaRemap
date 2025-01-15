@@ -94,7 +94,7 @@ public class Class4794 extends Class4703<Class852>
         class853.method22568();
         if (class852.field4548 != null) {
             class853.method22567();
-            method14184((float)(class852.field4548.getPosX() - MathHelper.method35701(n2, class852.field2392, class852.getPosX())), (float)(class852.field4548.getPosY() - MathHelper.method35701(n2, class852.field2393, class852.getPosY())) + Class4702.method13947(class852.field4548, n2), (float)(class852.field4548.getPosZ() - MathHelper.method35701(n2, class852.field2394, class852.getPosZ())), n2, class852.field2424, class853, class854, n3);
+            method14184((float)(class852.field4548.getPosX() - MathHelper.method35701(n2, class852.prevPosX, class852.getPosX())), (float)(class852.field4548.getPosY() - MathHelper.method35701(n2, class852.prevPosY, class852.getPosY())) + Class4702.method13947(class852.field4548, n2), (float)(class852.field4548.getPosZ() - MathHelper.method35701(n2, class852.prevPosZ, class852.getPosZ())), n2, class852.ticksExisted, class853, class854, n3);
             class853.method22568();
         }
         super.method13951(class852, n, n2, class853, class854, n3);

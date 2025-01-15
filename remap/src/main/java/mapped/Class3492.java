@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
@@ -12,12 +14,12 @@ public class Class3492 extends Class3446
     private static String[] field16432;
     private static final Predicate<Class7096> field16433;
     private final Class759 field16434;
-    private final Class1847 field16435;
+    private final World field16435;
     private int field16436;
     
     public Class3492(final Class759 field16434) {
         this.field16434 = field16434;
-        this.field16435 = field16434.field2391;
+        this.field16435 = field16434.world;
         this.method11019(EnumSet.of(Class2139.field12580, Class2139.field12581, Class2139.field12582));
     }
     

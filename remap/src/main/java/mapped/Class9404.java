@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.HashMap;
@@ -710,7 +713,7 @@ public class Class9404
         return false;
     }
     
-    public static boolean method34978(final Class511 class511, final ItemStack class512, final Class5845 class513, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public static boolean method34978(final LivingEntity class511, final ItemStack class512, final Class5845 class513, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (Class9404.field40347 == null) {
             return false;
         }

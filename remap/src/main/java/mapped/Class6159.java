@@ -4,15 +4,17 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public abstract class Class6159 extends Class6172
 {
     public Class1912 field24910;
     
-    public Class6159(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class6159(final World class1847, final double n, final double n2, final double n3) {
         super(class1847, n, n2, n3);
     }
     
-    public Class6159(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class6159(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(class1847, n, n2, n3, n4, n5, n6);
     }
     

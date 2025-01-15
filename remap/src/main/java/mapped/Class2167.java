@@ -83,14 +83,14 @@ public enum Class2167 implements Class2168
                         list.add(new ObjectOpenHashSet());
                     }
                 }
-                ((ObjectSet)list.get(intValue)).add((Object)class7100.method1153());
+                ((ObjectSet)list.get(intValue)).add((Object)class7100.toImmutable());
             }
             return class7096;
         }
         
         @Override
         public void method8336(final Class1851 class1851) {
-            final Class385 class1852 = new Class385();
+            final Mutable class1852 = new Mutable();
             final List list = this.field12895.get();
             for (int i = 2; i < list.size(); ++i) {
                 final int j = i - 1;
@@ -110,7 +110,7 @@ public enum Class2167 implements Class2168
                         class1852.method1287(class1853).method1290(field12893[k]);
                         if (class1851.method6701(class1852).method21771((Class7111<Comparable>)Class8970.field37778)) {
                             if (((Class7097<Object, Class7096>)method6701).method21772((Class7111<Integer>)Class8970.field37778) > i) {
-                                set2.add((Object)class1852.method1153());
+                                set2.add((Object)class1852.toImmutable());
                             }
                         }
                     }

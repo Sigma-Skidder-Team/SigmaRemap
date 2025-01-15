@@ -11,6 +11,7 @@ import java.util.UUID;
 import java.util.function.Function;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5416 implements Class5414
@@ -45,8 +46,8 @@ public class Class5416 implements Class5414
     }
     
     @Override
-    public ITextComponent method16528(final Class41 class41) {
-        return new Class2259("commands.data.entity.query", new Object[] { this.field22587.getDisplayName(), class41.method268() });
+    public ITextComponent method16528(final INBT class41) {
+        return new Class2259("commands.data.entity.query", new Object[] { this.field22587.getDisplayName(), class41.toFormattedComponent() });
     }
     
     @Override

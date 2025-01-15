@@ -7,6 +7,7 @@ package mapped;
 import java.util.Comparator;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Collections;
@@ -74,7 +75,7 @@ public class Class3211 extends Class3167
                 if ((int)this.method9886("Targets") < ++n) {
                     break;
                 }
-                final ArrayList<Class9407> method10096 = Class9147.method33405(new Class9407(method10095.field2395, method10095.field2396, method10095.field2397), new Class9407(class5744.field2395, class5744.field2396, class5744.field2397));
+                final ArrayList<Class9407> method10096 = Class9147.method33405(new Class9407(method10095.posX, method10095.posY, method10095.posZ), new Class9407(class5744.posX, class5744.posY, class5744.posZ));
                 this.field15649.add(method10096);
                 Collections.reverse(method10096);
                 this.method10092(method10096, Class9463.method35173().method35189().method21551(Class3261.class).method9906());
@@ -95,15 +96,15 @@ public class Class3211 extends Class3167
                 Class3211.field15514.method5269().method17292(new Class4354(class9408.method34993(), class9408.method34994(), class9408.method34995(), true));
             }
             else {
-                method1920.field2395 = class9408.method34993() + 0.5;
-                method1920.field2396 = class9408.method34994();
-                method1920.field2397 = class9408.method34995() + 0.5;
+                method1920.posX = class9408.method34993() + 0.5;
+                method1920.posY = class9408.method34994();
+                method1920.posZ = class9408.method34995() + 0.5;
                 Class3211.field15514.method5269().method17292(new Class4302(false, false));
-                Class3211.field15514.method5269().method17292(new Class4356(Class3211.field15514.field4684.field2399, Class3211.field15514.field4684.field2400, false));
+                Class3211.field15514.method5269().method17292(new Class4356(Class3211.field15514.field4684.rotationYaw, Class3211.field15514.field4684.rotationPitch, false));
                 Class3211.field15514.method5269().method17292(new Class4254(0.0f, 1.0f, false, false));
                 final Class423 class9409 = new Class423(Class3211.field15514.field4683, class9408.method34993() + 0.5, class9408.method34994(), class9408.method34995() + 0.5);
-                class9409.field2399 = method1920.field2399;
-                class9409.field2400 = method1920.field2400;
+                class9409.rotationYaw = method1920.rotationYaw;
+                class9409.rotationPitch = method1920.rotationPitch;
                 Class3211.field15514.method5269().method17292(new Class4251(class9409));
             }
         }
@@ -160,10 +161,10 @@ public class Class3211 extends Class3167
             final Entity method26798 = ((Class8131)iterator2.next()).method26798();
             if (method26798 != Class3211.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(method26798)) {
-                    if (method26798 instanceof Class511) {
-                        if (((Class511)method26798).method2664() != 0.0f) {
+                    if (method26798 instanceof LivingEntity) {
+                        if (((LivingEntity)method26798).method2664() != 0.0f) {
                             if (Class3211.field15514.field4684.method1732(method26798) <= n) {
-                                if (Class3211.field15514.field4684.method2646((Class511)method26798)) {
+                                if (Class3211.field15514.field4684.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
                                         if (!this.method9883("Players") && method26798 instanceof Class512) {
                                             iterator2.remove();

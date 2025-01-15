@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.Random;
@@ -55,7 +57,7 @@ public class Class4021 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4021.field18106;
     }
     
@@ -83,10 +85,10 @@ public class Class4021 extends Class3833
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         if (!class1847.field10067) {
             if (class1847.field10062.nextFloat() < n - 0.5f) {
-                if (class1849 instanceof Class511) {
+                if (class1849 instanceof LivingEntity) {
                     if (class1849 instanceof Class512 || class1847.method6765().method31216(Class8878.field37316)) {
                         if (class1849.method1930() * class1849.method1930() * class1849.method1931() > 0.512f) {
                             method12212(class1847.method6701(class1848), class1847, class1848);
@@ -98,7 +100,7 @@ public class Class4021 extends Class3833
         super.method11860(class1847, class1848, class1849, n);
     }
     
-    public static void method12212(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public static void method12212(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         class7097.method6692(class7098, Class3833.method11777(class7096, Class7521.field29156.method11878(), class7097, class7098));
     }
     
@@ -115,7 +117,7 @@ public class Class4021 extends Class3833
     }
     
     private static boolean method12214(final Class1852 class1852, final BlockPos class1853) {
-        final Iterator<BlockPos> iterator = BlockPos.method1154(class1853.method1134(-4, 0, -4), class1853.method1134(4, 1, 4)).iterator();
+        final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(class1853.add(-4, 0, -4), class1853.add(4, 1, 4)).iterator();
         while (iterator.hasNext()) {
             if (!class1852.method6702(iterator.next()).method21793(Class7324.field28319)) {
                 continue;

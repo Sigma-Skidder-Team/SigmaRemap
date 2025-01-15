@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class4103 extends Class3820
 {
     private static String[] field18203;
@@ -13,7 +17,7 @@ public class Class4103 extends Class3820
     }
     
     @Override
-    public boolean method11712(final ItemStack class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
+    public boolean method11712(final ItemStack class8321, final World class8322, final Class7096 class8323, final BlockPos class8324, final LivingEntity class8325) {
         if (!class8322.field10067) {
             class8321.method27636(1, class8325, class8326 -> class8326.method2794(Class2215.field13600));
         }

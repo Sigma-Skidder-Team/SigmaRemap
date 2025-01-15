@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class3879 extends Class3878
@@ -39,7 +41,7 @@ public class Class3879 extends Class3878
     }
     
     @Override
-    public int method11958(final Class1847 class1847) {
+    public int method11958(final World class1847) {
         return super.method11958(class1847) / 3;
     }
     
@@ -49,7 +51,7 @@ public class Class3879 extends Class3878
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3879.field17532[class7096.method21772((Class7111<Integer>)this.method11952())];
     }
     

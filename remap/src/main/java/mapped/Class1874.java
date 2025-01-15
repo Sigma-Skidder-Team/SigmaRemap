@@ -8,6 +8,8 @@ import java.util.UUID;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import javax.annotation.Nullable;
 import java.util.function.Function;
@@ -36,7 +38,7 @@ public interface Class1874
     default boolean method6957(final Entity class399, final Class7702 class400) {
         return class400.method24540() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
             final boolean b;
-            if (!class402.field2410) {
+            if (!class402.removed) {
                 if (!(!class402.preventEntitySpawning)) {
                     if (class401 == null || !class402.method1916(class401)) {
                         return b;
@@ -133,35 +135,35 @@ public interface Class1874
     }
     
     @Nullable
-    default Class512 method7135(final Class7843 class7843, final Class511 class7844) {
+    default Class512 method7135(final Class7843 class7843, final LivingEntity class7844) {
         return this.method7140(this.method6840(), class7843, class7844, class7844.getPosX(), class7844.getPosY(), class7844.getPosZ());
     }
     
     @Nullable
-    default Class512 method7136(final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3) {
+    default Class512 method7136(final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3) {
         return this.method7140(this.method6840(), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
     default Class512 method7137(final Class7843 class7843, final double n, final double n2, final double n3) {
-        return this.method7140(this.method6840(), class7843, (Class511)null, n, n2, n3);
+        return this.method7140(this.method6840(), class7843, (LivingEntity)null, n, n2, n3);
     }
     
     @Nullable
-    default <T extends Class511> T method7138(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
+    default <T extends LivingEntity> T method7138(final Class<? extends T> clazz, final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
         return this.method7140(this.method6739(clazz, class7845, (Predicate<? super T>)null), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
-    default <T extends Class511> T method7139(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
+    default <T extends LivingEntity> T method7139(final Class<? extends T> clazz, final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
         return this.method7140(this.method6740(clazz, class7845, (Predicate<? super T>)null), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
-    default <T extends Class511> T method7140(final List<? extends T> list, final Class7843 class7843, final Class511 class7844, final double n, final double n2, final double n3) {
+    default <T extends LivingEntity> T method7140(final List<? extends T> list, final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3) {
         double n4 = -1.0;
-        Class511 class7845 = null;
-        for (final Class511 class7846 : list) {
+        LivingEntity class7845 = null;
+        for (final LivingEntity class7846 : list) {
             if (!class7843.method25344(class7844, class7846)) {
                 continue;
             }
@@ -175,7 +177,7 @@ public interface Class1874
         return (T)class7845;
     }
     
-    default List<Class512> method7141(final Class7843 class7843, final Class511 class7844, final AxisAlignedBB class7845) {
+    default List<Class512> method7141(final Class7843 class7843, final LivingEntity class7844, final AxisAlignedBB class7845) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class512 class7846 : this.method6840()) {
             if (!class7845.method18506(class7846.getPosX(), class7846.getPosY(), class7846.getPosZ())) {
@@ -189,10 +191,10 @@ public interface Class1874
         return arrayList;
     }
     
-    default <T extends Class511> List<T> method7142(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final AxisAlignedBB class7845) {
-        final List<Entity> method6739 = (List<Entity>)this.method6739((Class<? extends Class511>)clazz, class7845, (Predicate<? super Class511>)null);
+    default <T extends LivingEntity> List<T> method7142(final Class<? extends T> clazz, final Class7843 class7843, final LivingEntity class7844, final AxisAlignedBB class7845) {
+        final List<Entity> method6739 = (List<Entity>)this.method6739((Class<? extends LivingEntity>)clazz, class7845, (Predicate<? super LivingEntity>)null);
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class511 class7846 : method6739) {
+        for (final LivingEntity class7846 : method6739) {
             if (!class7843.method25344(class7844, class7846)) {
                 continue;
             }

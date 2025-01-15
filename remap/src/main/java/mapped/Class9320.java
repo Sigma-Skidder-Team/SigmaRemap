@@ -7,6 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.mutable.MutableInt;
 import com.google.common.collect.Lists;

@@ -33,7 +33,7 @@ public class Class3514 extends Class3446
     
     @Override
     public boolean method11013() {
-        if (this.field16510.method1806()) {
+        if (this.field16510.isBeingRidden()) {
             return false;
         }
         if (!this.field16516) {
@@ -62,7 +62,7 @@ public class Class3514 extends Class3446
     
     @Override
     public boolean method11017() {
-        return !this.field16510.method4150().method24731() && !this.field16510.method1806();
+        return !this.field16510.method4150().method24731() && !this.field16510.isBeingRidden();
     }
     
     @Override

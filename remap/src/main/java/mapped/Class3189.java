@@ -29,7 +29,7 @@ public class Class3189 extends Class3167
         if (this.method9906()) {
             if (Class3189.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4273) {
-                    if (((Class4273)class5723.method16998()).method12822() == Class3189.field15514.field4684.method1643()) {
+                    if (((Class4273)class5723.method16998()).method12822() == Class3189.field15514.field4684.getEntityId()) {
                         this.field15591 = -1;
                     }
                 }
@@ -47,11 +47,11 @@ public class Class3189 extends Class3167
         }
         if (this.field15591 >= 0) {
             if (!Class6430.method19114()) {
-                if (Class3189.field15514.field4684.field2404) {
-                    this.field15593 = Class3189.field15514.field4684.field2399 + 90.0f;
+                if (Class3189.field15514.field4684.onGround) {
+                    this.field15593 = Class3189.field15514.field4684.rotationYaw + 90.0f;
                 }
             }
-            else if (!Class3189.field15514.field4684.field2404) {
+            else if (!Class3189.field15514.field4684.onGround) {
                 this.field15592 -= 0.00775;
                 if (this.field15592 < 0.17) {
                     this.field15592 = 0.17;

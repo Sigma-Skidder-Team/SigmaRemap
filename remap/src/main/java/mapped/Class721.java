@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
 
 public class Class721 extends Class720
 {
@@ -35,7 +34,7 @@ public class Class721 extends Class720
         this.method3041();
         Class8154.method26872();
         this.field3944.method2975(n, n2, n3);
-        this.method3297(this.field3156, this.field3148.method8461(), this.field3152 / 2 - 146, 13, 16777215);
+        this.method3297(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2 - 146, 13, 16777215);
         this.method3297(this.field3156, "Jello Portal:", this.field3152 / 2 - 30, 13, Class6430.method19118(Class265.field1278.field1292, 0.5f));
     }
     

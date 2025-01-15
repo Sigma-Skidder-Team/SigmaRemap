@@ -5,23 +5,29 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class506 extends Class428
 {
-    private static final Class8810<Boolean> field2886;
+    private static final DataParameter<Boolean> field2886;
     private int field2887;
     public double field2888;
     public double field2889;
     private static final Class120 field2890;
     
-    public Class506(final EntityType<? extends Class506> class7499, final Class1847 class7500) {
+    public Class506(final EntityType<? extends Class506> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class506(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class506(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field29002, class1847, n, n2, n3);
     }
     
@@ -33,13 +39,13 @@ public class Class506 extends Class428
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class506.field2886, false);
+        this.dataManager.register(Class506.field2886, false);
     }
     
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.field2391.method6678()) {
+        if (!this.world.method6678()) {
             if (this.field2887 > 0) {
                 --this.field2887;
             }
@@ -50,8 +56,8 @@ public class Class506 extends Class428
             this.method2599(this.field2887 > 0);
         }
         if (this.method2598()) {
-            if (this.field2423.nextInt(4) == 0) {
-                this.field2391.method6709(Class8432.field34632, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
+            if (this.rand.nextInt(4) == 0) {
+                this.world.method6709(Class8432.field34632, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }
@@ -62,10 +68,10 @@ public class Class506 extends Class428
     }
     
     @Override
-    public void method2123(final Class7929 class7929) {
+    public void method2123(final DamageSource class7929) {
         super.method2123(class7929);
         if (!class7929.method25707()) {
-            if (this.field2391.method6765().method31216(Class8878.field37321)) {
+            if (this.world.method6765().method31216(Class8878.field37321)) {
                 this.method1764(Class7521.field29299);
             }
         }
@@ -74,7 +80,7 @@ public class Class506 extends Class428
     @Override
     public void method2128(final BlockPos class354, final Class7096 class355) {
         super.method2128(class354, class355);
-        final Vec3d method1935 = this.method1935();
+        final Vec3d method1935 = this.getMotion();
         final double method1936 = Entity.method1680(method1935);
         final double n = this.field2888 * this.field2888 + this.field2889 * this.field2889;
         if (n > 1.0E-4) {
@@ -91,13 +97,13 @@ public class Class506 extends Class428
     public void method2130() {
         final double n = this.field2888 * this.field2888 + this.field2889 * this.field2889;
         if (n <= 1.0E-7) {
-            this.method1936(this.method1935().mul(0.98, 0.0, 0.98));
+            this.method1936(this.getMotion().mul(0.98, 0.0, 0.98));
         }
         else {
             final double n2 = MathHelper.sqrt(n);
             this.field2888 /= n2;
             this.field2889 /= n2;
-            this.method1936(this.method1935().mul(0.8, 0.0, 0.8).add(this.field2888, 0.0, this.field2889));
+            this.method1936(this.getMotion().mul(0.8, 0.0, 0.8).add(this.field2888, 0.0, this.field2889));
         }
         super.method2130();
     }
@@ -137,11 +143,11 @@ public class Class506 extends Class428
     }
     
     public boolean method2598() {
-        return this.field2432.method33568(Class506.field2886);
+        return this.dataManager.get(Class506.field2886);
     }
     
     public void method2599(final boolean b) {
-        this.field2432.method33569(Class506.field2886, b);
+        this.dataManager.set(Class506.field2886, b);
     }
     
     @Override
@@ -150,7 +156,7 @@ public class Class506 extends Class428
     }
     
     static {
-        field2886 = Class9184.method33564(Class506.class, Class7709.field30661);
+        field2886 = EntityDataManager.method33564(Class506.class, Class7709.field30661);
         field2890 = Class120.method618(Class7739.field31281, Class7739.field31282);
     }
 }

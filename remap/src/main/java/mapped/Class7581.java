@@ -4,13 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.math.CubeCoordinateIterator;
+
 import java.util.function.Consumer;
-import java.util.Spliterators;
 
 public final class Class7581 extends AbstractSpliterator<Class353>
 {
     private static String[] field30069;
-    public final Class8243 field30070;
+    public final CubeCoordinateIterator field30070;
     public final /* synthetic */ int field30071;
     public final /* synthetic */ int field30072;
     public final /* synthetic */ int field30073;
@@ -26,15 +27,15 @@ public final class Class7581 extends AbstractSpliterator<Class353>
         this.field30075 = field30075;
         this.field30076 = field30076;
         super(est, additionalCharacteristics);
-        this.field30070 = new Class8243(this.field30071, this.field30072, this.field30073, this.field30074, this.field30075, this.field30076);
+        this.field30070 = new CubeCoordinateIterator(this.field30071, this.field30072, this.field30073, this.field30074, this.field30075, this.field30076);
     }
     
     @Override
     public boolean tryAdvance(final Consumer<? super Class353> consumer) {
-        if (!this.field30070.method27301()) {
+        if (!this.field30070.hasNext()) {
             return false;
         }
-        consumer.accept(new Class353(this.field30070.method27302(), this.field30070.method27303(), this.field30070.method27304(), null));
+        consumer.accept(new Class353(this.field30070.getX(), this.field30070.getY(), this.field30070.getZ(), null));
         return true;
     }
 }

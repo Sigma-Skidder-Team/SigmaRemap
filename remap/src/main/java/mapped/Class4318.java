@@ -5,10 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.effect.LightningBoltEntity;
 
 import java.io.IOException;
 
-public class Class4318 implements Class4252<Class5800>
+public class Class4318 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19347;
     private int field19348;
@@ -21,18 +22,18 @@ public class Class4318 implements Class4252<Class5800>
     }
     
     public Class4318(final Entity class399) {
-        this.field19348 = class399.method1643();
+        this.field19348 = class399.getEntityId();
         this.field19349 = class399.getPosX();
         this.field19350 = class399.getPosY();
         this.field19351 = class399.getPosZ();
-        if (class399 instanceof Class422) {
+        if (class399 instanceof LightningBoltEntity) {
             this.field19352 = 1;
         }
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19348 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19348 = class8654.readVarInt();
         this.field19352 = class8654.readByte();
         this.field19349 = class8654.readDouble();
         this.field19350 = class8654.readDouble();
@@ -40,15 +41,15 @@ public class Class4318 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19348);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19348);
         class8654.writeByte(this.field19352);
         class8654.writeDouble(this.field19349);
         class8654.writeDouble(this.field19350);
         class8654.writeDouble(this.field19351);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17275(this);
     }
     

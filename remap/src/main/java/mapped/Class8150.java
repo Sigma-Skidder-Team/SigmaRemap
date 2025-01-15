@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonElement;
 import com.google.common.base.Joiner;
+import net.minecraft.entity.EntityType;
 
 public abstract class Class8150
 {

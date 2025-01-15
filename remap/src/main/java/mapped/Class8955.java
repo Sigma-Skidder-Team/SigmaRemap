@@ -29,11 +29,11 @@ public class Class8955
     
     public boolean method31767(final Entity class399, final float n) {
         final Vec3d method1859 = class399.method1859();
-        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.method1935(), class399.method1860(), method1859.x, method1859.y, class399 instanceof Class512);
+        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.getMotion(), class399.method1860(), method1859.x, method1859.y, class399 instanceof Class512);
         if (method1860 != null) {
             final Vec3d field40340 = method1860.field40340;
             class399.method1936(method1860.field40341);
-            class399.field2399 = n + method1860.field40342;
+            class399.rotationYaw = n + method1860.field40342;
             class399.method1950(field40340.x, field40340.y, field40340.z);
             return true;
         }
@@ -62,15 +62,15 @@ public class Class8955
         int n4 = method35646;
         int n5 = 0;
         final int nextInt = this.field37653.nextInt(4);
-        final Class385 class400 = new Class385();
+        final Mutable class400 = new Mutable();
         for (int i = method35644 - 16; i <= method35644 + 16; ++i) {
             final double n6 = i + 0.5 - class399.getPosX();
             for (int j = method35646 - 16; j <= method35646 + 16; ++j) {
                 final double n7 = j + 0.5 - class399.getPosZ();
             Label_0236:
                 for (int k = this.field37652.method6778() - 1; k >= 0; --k) {
-                    if (this.field37652.method6961(class400.method1284(i, k, j))) {
-                        while (k > 0 && this.field37652.method6961(class400.method1284(i, k - 1, j))) {
+                    if (this.field37652.method6961(class400.setPos(i, k, j))) {
+                        while (k > 0 && this.field37652.method6961(class400.setPos(i, k - 1, j))) {
                             --k;
                         }
                         for (int l = nextInt; l < nextInt + 4; ++l) {
@@ -83,7 +83,7 @@ public class Class8955
                             for (int n10 = 0; n10 < 3; ++n10) {
                                 for (int n11 = 0; n11 < 4; ++n11) {
                                     for (int n12 = -1; n12 < 4; ++n12) {
-                                        class400.method1284(i + (n11 - 1) * n8 + n10 * n9, k + n12, j + (n11 - 1) * n9 - n10 * n8);
+                                        class400.setPos(i + (n11 - 1) * n8 + n10 * n9, k + n12, j + (n11 - 1) * n9 - n10 * n8);
                                         if (n12 < 0 && !this.field37652.method6701(class400).method21697().method26439()) {
                                             continue Label_0236;
                                         }
@@ -114,8 +114,8 @@ public class Class8955
                     final double n18 = n17 + 0.5 - class399.getPosZ();
                 Label_0702:
                     for (int n19 = this.field37652.method6778() - 1; n19 >= 0; --n19) {
-                        if (this.field37652.method6961(class400.method1284(n15, n19, n17))) {
-                            while (n19 > 0 && this.field37652.method6961(class400.method1284(n15, n19 - 1, n17))) {
+                        if (this.field37652.method6961(class400.setPos(n15, n19, n17))) {
+                            while (n19 > 0 && this.field37652.method6961(class400.setPos(n15, n19 - 1, n17))) {
                                 --n19;
                             }
                             for (int n20 = nextInt; n20 < nextInt + 2; ++n20) {
@@ -123,7 +123,7 @@ public class Class8955
                                 final int n22 = 1 - n21;
                                 for (int n23 = 0; n23 < 4; ++n23) {
                                     for (int n24 = -1; n24 < 4; ++n24) {
-                                        class400.method1284(n15 + (n23 - 1) * n21, n19 + n24, n17 + (n23 - 1) * n22);
+                                        class400.setPos(n15 + (n23 - 1) * n21, n19 + n24, n17 + (n23 - 1) * n22);
                                         if (n24 < 0 && !this.field37652.method6701(class400).method21697().method26439()) {
                                             continue Label_0702;
                                         }
@@ -165,7 +165,7 @@ public class Class8955
                         final int n35 = method35647 + n33;
                         final int n36 = n28 + (n32 - 1) * n30 - n31 * n29;
                         final boolean b = n33 < 0;
-                        class400.method1284(n34, n35, n36);
+                        class400.setPos(n34, n35, n36);
                         this.field37652.method6692(class400, b ? Class7521.field29286.method11878() : Class7521.field29147.method11878());
                     }
                 }
@@ -182,14 +182,14 @@ public class Class8955
                         }
                     }
                 }
-                class400.method1284(n27 + n37 * n29, method35647 + n38, n28 + n37 * n30);
+                class400.setPos(n27 + n37 * n29, method35647 + n38, n28 + n37 * n30);
                 this.field37652.method6688(class400, Class7521.field29286.method11878(), 3);
             }
         }
         final Class7096 class401 = ((Class7097<O, Class7096>)Class7521.field29341.method11878()).method21773(Class3998.field18018, (n29 != 0) ? Axis.X : Axis.Z);
         for (int n39 = 0; n39 < 2; ++n39) {
             for (int n40 = 0; n40 < 3; ++n40) {
-                class400.method1284(n27 + n39 * n29, method35647 + n40, n28 + n39 * n30);
+                class400.setPos(n27 + n39 * n29, method35647 + n40, n28 + n39 * n30);
                 this.field37652.method6688(class400, class401, 18);
             }
         }

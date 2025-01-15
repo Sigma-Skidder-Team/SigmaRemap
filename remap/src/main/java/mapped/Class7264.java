@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.item.ItemStack;
 
 public class Class7264
 {

@@ -4,11 +4,11 @@
 
 package mapped;
 
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
 import java.io.DataOutputStream;
 import java.io.DataInputStream;
-import java.io.DataOutput;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -29,8 +29,8 @@ public class Class6512
         final ArrayList arrayList2 = Lists.newArrayList();
         final ArrayList arrayList3 = Lists.newArrayList();
         final File parent = new File(path.toFile(), child);
-        final File method1272 = Class383.field2224.method1272(parent);
-        final File method1273 = Class383.field2225.method1272(parent);
+        final File method1272 = DimensionType.field2224.method1272(parent);
+        final File method1273 = DimensionType.field2225.method1272(parent);
         Class6512.field25888.info("Scanning folders...");
         method19602(parent, arrayList);
         if (method1272.exists()) {

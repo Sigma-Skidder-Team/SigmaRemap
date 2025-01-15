@@ -77,7 +77,7 @@ public class Class1945 extends Class1944
     
     private Set<Class436> method7897(final float n, final float n2, final float n3, final Class9006 class9006, final Class9226 class9007) {
         final BlockPos method1153 = Class8974.method31909(this.field10599).method1153();
-        final BlockPos method1154 = method1153.method1134(15, 15, 15);
+        final BlockPos method1154 = method1153.add(15, 15, 15);
         final Class8388 class9008 = new Class8388();
         final HashSet hashSet = Sets.newHashSet();
         this.field10600 = null;

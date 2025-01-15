@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 
@@ -13,7 +16,7 @@ public abstract class Class777 extends Class763
     private boolean field4177;
     private boolean field4178;
     
-    public Class777(final EntityType<? extends Class777> class7499, final Class1847 class7500) {
+    public Class777(final EntityType<? extends Class777> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -58,7 +61,7 @@ public abstract class Class777 extends Class763
         if (class1853 != Class2101.field12189) {
             if (class1853 != Class2101.field12181) {
                 if (class1853 != Class2101.field12177) {
-                    if (this.field2423.nextFloat() < 0.06f) {
+                    if (this.rand.nextFloat() < 0.06f) {
                         if (this.method4308()) {
                             this.field4177 = true;
                         }
@@ -112,7 +115,7 @@ public abstract class Class777 extends Class763
     }
     
     public void method4315() {
-        this.field4176 = new BlockPos(this).method1134(-500 + this.field2423.nextInt(1000), 0, -500 + this.field2423.nextInt(1000));
+        this.field4176 = new BlockPos(this).add(-500 + this.rand.nextInt(1000), 0, -500 + this.rand.nextInt(1000));
         this.field4178 = true;
     }
     

@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class6855 extends Class6851<Class824>
 {
@@ -19,13 +20,13 @@ public class Class6855 extends Class6851<Class824>
     }
     
     public void method20959(final Class1849 class1849, final Class824 class1850) {
-        final Class383 method20487 = class1849.method6789().method20487();
+        final DimensionType method20487 = class1849.method6789().getType();
         final BlockPos class1851 = new BlockPos(class1850);
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = -4; i <= 4; ++i) {
             for (int j = -2; j <= 2; ++j) {
                 for (int k = -4; k <= 4; ++k) {
-                    final BlockPos method20488 = class1851.method1134(i, j, k);
+                    final BlockPos method20488 = class1851.add(i, j, k);
                     if (class1850.method4870().method28781().method34577().contains((Object)class1849.method6701(method20488).method21696())) {
                         arrayList.add(Class363.method1167(method20487, method20488));
                     }

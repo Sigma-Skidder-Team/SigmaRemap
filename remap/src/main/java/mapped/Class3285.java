@@ -102,8 +102,8 @@ public class Class3285 extends Class3167
                     }
                     for (final Direction class7862 : Direction.values()) {
                         if (class7862 != Direction.UP) {
-                            if (Class3285.field15514.field4683.method6701(class7861.method1135(class7862.getDirectionVec())).method21696() != Class7521.field29286) {
-                                if (Class3285.field15514.field4683.method6701(class7861.method1135(class7862.getDirectionVec())).method21696() != Class7521.field29172) {
+                            if (Class3285.field15514.field4683.method6701(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29286) {
+                                if (Class3285.field15514.field4683.method6701(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29172) {
                                     continue Label_0145;
                                 }
                             }
@@ -122,18 +122,18 @@ public class Class3285 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3285.field15514.field4684.field2424 >= 20) {
+        if (Class3285.field15514.field4684.ticksExisted >= 20) {
             final int n = (int)this.method9886("Chunk Range");
             final ArrayList list = new ArrayList();
             for (int i = -5; i < 5; ++i) {
                 for (int j = -5; j < 5; ++j) {
-                    list.add(new Class7859(Class3285.field15514.field4684.field2441 + i, Class3285.field15514.field4684.field2443 + j));
+                    list.add(new Class7859(Class3285.field15514.field4684.chunkCoordX + i, Class3285.field15514.field4684.chunkCoordZ + j));
                 }
             }
             final Iterator<Class6731> iterator = this.field15793.iterator();
             while (iterator.hasNext()) {
                 final Class6731 class5744 = iterator.next();
-                if (class5744.method20419(new Class7859(Class3285.field15514.field4684.field2441, Class3285.field15514.field4684.field2443)) <= 7 && !this.field15794.contains(class5744.method20420())) {
+                if (class5744.method20419(new Class7859(Class3285.field15514.field4684.chunkCoordX, Class3285.field15514.field4684.chunkCoordZ)) <= 7 && !this.field15794.contains(class5744.method20420())) {
                     continue;
                 }
                 iterator.remove();

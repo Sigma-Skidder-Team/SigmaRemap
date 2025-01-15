@@ -20,8 +20,8 @@ public class Class1842 extends Class1799<Class754, Class5860<Class754>>
                     final Class4150 method25214 = class7352.method25214(Class6332.method18767(class7353.method4097()));
                     final int method25215 = Class4710.method13982(class7353, 0.0f);
                     for (int i = 0; i < 2; ++i) {
-                        final float n8 = MathHelper.method35700(n4, class7353.field2401, class7353.field2399) - MathHelper.method35700(n4, class7353.field2952, class7353.field2951);
-                        final float method25216 = MathHelper.method35700(n4, class7353.field2402, class7353.field2400);
+                        final float n8 = MathHelper.method35700(n4, class7353.prevRotationYaw, class7353.rotationYaw) - MathHelper.method35700(n4, class7353.field2952, class7353.field2951);
+                        final float method25216 = MathHelper.method35700(n4, class7353.prevRotationPitch, class7353.rotationPitch);
                         class7351.method22567();
                         class7351.method22566(Vector3f.YP.rotationDegrees(n8));
                         class7351.method22566(Vector3f.XP.rotationDegrees(method25216));

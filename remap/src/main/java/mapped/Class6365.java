@@ -23,8 +23,8 @@ public class Class6365
     
     private static int method19011(final Class7492 class7492, final Collection<Class513> collection, final ITextComponent class7493) {
         for (final Class513 class7494 : collection) {
-            class7494.sendMessage(new Class2259("commands.message.display.incoming", new Object[] { class7492.method23247(), class7493.method8466() }).method8468(Class2116.field12316, Class2116.field12329));
-            class7492.method23257(new Class2259("commands.message.display.outgoing", new Object[] { class7494.getDisplayName(), class7493.method8466() }).method8468(Class2116.field12316, Class2116.field12329), false);
+            class7494.sendMessage(new Class2259("commands.message.display.incoming", new Object[] { class7492.method23247(), class7493.deepCopy() }).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC));
+            class7492.method23257(new Class2259("commands.message.display.outgoing", new Object[] { class7494.getDisplayName(), class7493.deepCopy() }).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC), false);
         }
         return collection.size();
     }

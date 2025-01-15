@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3574 extends Class3446
@@ -30,12 +32,12 @@ public class Class3574 extends Class3446
     
     @Override
     public boolean method11013() {
-        final long method6754 = this.field16685.field2391.method6754();
+        final long method6754 = this.field16685.world.method6754();
         if (method6754 - this.field16695 < 20L) {
             return false;
         }
         this.field16695 = method6754;
-        final Class511 method6755 = this.field16685.method4152();
+        final LivingEntity method6755 = this.field16685.method4152();
         if (method6755 == null) {
             return false;
         }
@@ -48,7 +50,7 @@ public class Class3574 extends Class3446
     
     @Override
     public boolean method11017() {
-        final Class511 method4152 = this.field16685.method4152();
+        final LivingEntity method4152 = this.field16685.method4152();
         if (method4152 == null) {
             return false;
         }
@@ -56,7 +58,7 @@ public class Class3574 extends Class3446
             return false;
         }
         if (this.field16688) {
-            return this.field16685.method4197(new BlockPos(method4152)) && (!(method4152 instanceof Class512) || (!method4152.method1639() && !((Class512)method4152).method2889()));
+            return this.field16685.method4197(new BlockPos(method4152)) && (!(method4152 instanceof Class512) || (!method4152.isSpectator() && !((Class512)method4152).method2889()));
         }
         return !this.field16685.method4150().method24731();
     }
@@ -79,7 +81,7 @@ public class Class3574 extends Class3446
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16685.method4152();
+        final LivingEntity method4152 = this.field16685.method4152();
         this.field16685.method4147().method24667(method4152, 30.0f, 30.0f);
         final double method4153 = this.field16685.method1733(method4152.getPosX(), method4152.getPosY(), method4152.getPosZ());
         --this.field16690;
@@ -122,7 +124,7 @@ public class Class3574 extends Class3446
         this.method11116(method4152, method4153);
     }
     
-    public void method11116(final Class511 class511, final double n) {
+    public void method11116(final LivingEntity class511, final double n) {
         if (n <= this.method11117(class511)) {
             if (this.field16686 <= 0) {
                 this.field16686 = 20;
@@ -132,7 +134,7 @@ public class Class3574 extends Class3446
         }
     }
     
-    public double method11117(final Class511 class511) {
+    public double method11117(final LivingEntity class511) {
         return this.field16685.method1930() * 2.0f * this.field16685.method1930() * 2.0f + class511.method1930();
     }
 }

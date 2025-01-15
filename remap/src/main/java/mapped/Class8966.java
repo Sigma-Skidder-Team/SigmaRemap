@@ -5,7 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class8966 implements Class8967
 {
@@ -20,16 +23,16 @@ public class Class8966 implements Class8967
     }
     
     @Override
-    public float method31812(final ItemStack class8321, Class1847 field2391, final Class511 class8322) {
+    public float method31812(final ItemStack class8321, World field2391, final LivingEntity class8322) {
         final Entity class8323 = (class8322 != null) ? class8322 : class8321.method27679();
         if (field2391 == null) {
             if (class8323 != null) {
-                field2391 = class8323.field2391;
+                field2391 = class8323.world;
             }
         }
         if (field2391 != null) {
             double random;
-            if (!field2391.field10063.method20492()) {
+            if (!field2391.dimension.method20492()) {
                 random = Math.random();
             }
             else {
@@ -40,7 +43,7 @@ public class Class8966 implements Class8967
         return 0.0f;
     }
     
-    private double method31813(final Class1847 class1847, final double n) {
+    private double method31813(final World class1847, final double n) {
         if (class1847.method6754() != this.field37676) {
             this.field37676 = class1847.method6754();
             this.field37675 += (MathHelper.method35666(n - this.field37674 + 0.5, 1.0) - 0.5) * 0.1;

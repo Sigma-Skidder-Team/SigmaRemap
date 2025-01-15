@@ -90,7 +90,7 @@ public class Class8577 implements Class8576
     }
     
     public static double method29032(final double n) {
-        return n - MathHelper.method35645(n / 3.3554432E7 + 0.5) * 3.3554432E7;
+        return n - MathHelper.lfloor(n / 3.3554432E7 + 0.5) * 3.3554432E7;
     }
     
     @Override

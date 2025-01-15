@@ -4,6 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class848 extends Class763
@@ -11,7 +17,7 @@ public class Class848 extends Class763
     private static String[] field4512;
     private Class3529 field4513;
     
-    public Class848(final EntityType<? extends Class848> class7499, final Class1847 class7500) {
+    public Class848(final EntityType<? extends Class848> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -32,7 +38,7 @@ public class Class848 extends Class763
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 0.1f;
     }
     
@@ -55,7 +61,7 @@ public class Class848 extends Class763
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35562;
     }
     
@@ -70,27 +76,27 @@ public class Class848 extends Class763
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
-            if (class7929 instanceof Class7930 || class7929 == Class7929.field32576) {
+            if (class7929 instanceof Class7930 || class7929 == DamageSource.field32576) {
                 if (this.field4513 != null) {
                     this.field4513.method11081();
                 }
             }
-            return super.method1740(class7929, n);
+            return super.attackEntityFrom(class7929, n);
         }
         return false;
     }
     
     @Override
     public void method1659() {
-        this.field2951 = this.field2399;
+        this.field2951 = this.rotationYaw;
         super.method1659();
     }
     
     @Override
     public void method1846(final float field2399) {
-        super.method1846(this.field2399 = field2399);
+        super.method1846(this.rotationYaw = field2399);
     }
     
     @Override

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class4040 extends Class4036
 {
@@ -20,7 +22,7 @@ public class Class4040 extends Class4036
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13326);
         if (method2716.method21449() != Class2165.field12880) {

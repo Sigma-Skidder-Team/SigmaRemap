@@ -5,22 +5,26 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 public class Class417 extends Class416
 {
     public int field2525;
     
-    public Class417(final EntityType<? extends Class417> class7499, final Class1847 class7500) {
+    public Class417(final EntityType<? extends Class417> class7499, final World class7500) {
         super(class7499, class7500);
         this.field2525 = 1;
     }
     
-    public Class417(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class417(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(EntityType.field28994, n, n2, n3, n4, n5, n6, class1847);
         this.field2525 = 1;
     }
     
-    public Class417(final Class1847 class1847, final Class511 class1848, final double n, final double n2, final double n3) {
+    public Class417(final World class1847, final LivingEntity class1848, final double n, final double n2, final double n3) {
         super(EntityType.field28994, class1848, n, n2, n3, class1847);
         this.field2525 = 1;
     }
@@ -28,14 +32,14 @@ public class Class417 extends Class416
     @Override
     public void method2032(final Class7006 class7006) {
         super.method2032(class7006);
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (class7006.method21449() == Class2165.field12882) {
                 final Entity method21452 = ((Class7007)class7006).method21452();
-                method21452.method1740(Class7929.method25698(this, this.field2527), 6.0f);
+                method21452.attackEntityFrom(DamageSource.method25698(this, this.field2527), 6.0f);
                 this.method1900(this.field2527, method21452);
             }
-            final boolean method21453 = this.field2391.method6765().method31216(Class8878.field37316);
-            this.field2391.method6723(null, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field2525, method21453, method21453 ? Class2196.field13367 : Class2196.field13365);
+            final boolean method21453 = this.world.method6765().method31216(Class8878.field37316);
+            this.world.method6723(null, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field2525, method21453, method21453 ? Class2196.field13367 : Class2196.field13365);
             this.method1652();
         }
     }

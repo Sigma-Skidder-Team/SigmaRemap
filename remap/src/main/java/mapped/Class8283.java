@@ -79,7 +79,7 @@ public class Class8283
         Class1673.field9460.execute(() -> {
             try {
                 class6154.method6657(file);
-                new Class2260(file.getName()).method8469(Class2116.field12328).method8467(class6158 -> class6158.method30419(new Class9485(Class2075.field11972, file2.getAbsolutePath())));
+                new StringTextComponent(file.getName()).applyTextStyle(TextFormatting.UNDERLINE).applyTextStyle(class6158 -> class6158.method30419(new Class9485(Class2075.field11972, file2.getAbsolutePath())));
                 if (o != null && Class9570.method35826(o, Class9570.field41422, new Object[0]) != null) {
                     consumer2.accept(Class9570.method35826(o, Class9570.field41422, new Object[0]));
                 }

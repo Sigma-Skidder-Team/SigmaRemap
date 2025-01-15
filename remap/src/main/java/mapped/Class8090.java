@@ -32,7 +32,7 @@ public class Class8090
             if (Class869.method5277().field4683 != null) {
                 final Class4298 class5727 = (Class4298)class5723.method16998();
                 final Class1862 class5728 = new Class1862(Class869.method5277().field4683, new Class7859(class5727.method12909(), class5727.method12910()), class5727.method12915());
-                class5728.method7063(class5727.method12915(), new Class8654(class5727.method12905().copy()), class5727.method12913(), class5727.method12911());
+                class5728.method7063(class5727.method12915(), new PacketBuffer(class5727.method12905().copy()), class5727.method12913(), class5727.method12911());
                 if (class5728 != null) {
                     int n = 0;
                     for (final Class8199 class5729 : class5728.method7014()) {

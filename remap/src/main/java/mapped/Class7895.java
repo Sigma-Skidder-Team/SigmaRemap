@@ -104,7 +104,7 @@ public class Class7895 implements Class7894
     }
     
     static {
-        field32402 = new Class2260("");
+        field32402 = new StringTextComponent("");
         field32403 = LogManager.getLogger();
         field32404 = new Class7895();
     }

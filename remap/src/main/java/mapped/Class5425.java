@@ -15,8 +15,9 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
-public class Class5425 extends Class5419<Class511>
+public class Class5425 extends Class5419<LivingEntity>
 {
     private static String[] field22612;
     
@@ -25,7 +26,7 @@ public class Class5425 extends Class5419<Class511>
     }
     
     @Override
-    public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
+    public void method16539(final Class1849 class1849, final LivingEntity class1850, final long n) {
         final Class365<?> method2618 = class1850.method2618();
         final Class9468 class1851 = method2618.method1198(Class8233.field33813).get();
         final List list = method2618.method1198(Class8233.field33814).get();
@@ -37,7 +38,7 @@ public class Class5425 extends Class5419<Class511>
         return list.stream().filter(class1851 -> class1851.method1169() == class1850.method6789().method20487()).map((Function<? super Object, ?>)Class363::method1170).filter(list2::contains).collect((Collector<? super Object, ?, Set<BlockPos>>)Collectors.toSet());
     }
     
-    private void method16573(final Class1849 class1849, final List<BlockPos> list, final Set<BlockPos> set, final int n, final Class511 class1850, final Class365<?> class1851) {
+    private void method16573(final Class1849 class1849, final List<BlockPos> list, final Set<BlockPos> set, final int n, final LivingEntity class1850, final Class365<?> class1851) {
         set.forEach(class1854 -> {
             list2.indexOf(class1854);
             class1852.method6701(class1854).method21696();
@@ -69,7 +70,7 @@ public class Class5425 extends Class5419<Class511>
         method16574(class1849, list, n, class1850, class1851);
     }
     
-    public static void method16574(final Class1849 class1849, final List<BlockPos> list, final int n, final Class511 class1850, final Class365<?> class1851) {
+    public static void method16574(final Class1849 class1849, final List<BlockPos> list, final int n, final LivingEntity class1850, final Class365<?> class1851) {
         class1851.method1198(Class8233.field33815).ifPresent(set -> {
             set.iterator();
             final Iterator iterator;

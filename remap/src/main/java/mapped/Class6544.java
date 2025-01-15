@@ -131,10 +131,10 @@ public class Class6544
         throw Class6544.field26004.create();
     }
     
-    private static int method19794(final Class7492 class7492, final Class6749 class7493, final Class2116 class7494) throws CommandSyntaxException {
-        if (class7493.method20563() != class7494) {
+    private static int method19794(final Class7492 class7492, final Class6749 class7493, final TextFormatting class7494) throws CommandSyntaxException {
+        if (class7493.getColor() != class7494) {
             class7493.method20562(class7494);
-            class7492.method23257(new Class2259("commands.team.option.color.success", new Object[] { class7493.method20541(), class7494.method8258() }), true);
+            class7492.method23257(new Class2259("commands.team.option.color.success", new Object[] { class7493.method20541(), class7494.getFriendlyName() }), true);
             return 0;
         }
         throw Class6544.field26005.create();
@@ -162,7 +162,7 @@ public class Class6544
     }
     
     private static int method19797(final Class7492 class7492, final String s) throws CommandSyntaxException {
-        return method19798(class7492, s, new Class2260(s));
+        return method19798(class7492, s, new StringTextComponent(s));
     }
     
     private static int method19798(final Class7492 class7492, final String s, final ITextComponent class7493) throws CommandSyntaxException {

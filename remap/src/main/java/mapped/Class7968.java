@@ -43,8 +43,8 @@ public class Class7968
     private static void method25821(final Class1795 class1795, final Random random, final Class2052 class1796, final BlockPos class1797, final Class5130 class1798, final List<Class4473> list) {
         final int method1074 = class1797.getX();
         final int method1075 = class1797.getZ();
-        final BlockPos method1076 = Class6585.method19962(new BlockPos(15, 0, 15), Class2181.field12917, class1796, BlockPos.ZERO).method1134(method1074, 0, method1075);
-        final Class6997 method1077 = Class6997.method21409(method1074, 0, method1075, method1076.getX(), 0, method1076.getZ());
+        final BlockPos method1076 = Class6585.method19962(new BlockPos(15, 0, 15), Class2181.field12917, class1796, BlockPos.ZERO).add(method1074, 0, method1075);
+        final MutableBoundingBox method1077 = MutableBoundingBox.createProper(method1074, 0, method1075, method1076.getX(), 0, method1076.getZ());
         final BlockPos class1799 = new BlockPos(Math.min(method1074, method1076.getX()), 0, Math.min(method1075, method1076.getZ()));
         final List<BlockPos> method1078 = method25822(random, class1799.getX(), class1799.getZ());
         for (int method1079 = MathHelper.method35658(random, 4, 8), i = 0; i < method1079; ++i) {
@@ -53,8 +53,8 @@ public class Class7968
                 final int method1080 = class1800.getX();
                 final int method1081 = class1800.getZ();
                 final Class2052 class1801 = Class2052.values()[random.nextInt(Class2052.values().length)];
-                final BlockPos method1082 = Class6585.method19962(new BlockPos(5, 0, 6), Class2181.field12917, class1801, BlockPos.ZERO).method1134(method1080, 0, method1081);
-                if (!Class6997.method21409(method1080, 0, method1081, method1082.getX(), 0, method1082.getZ()).method21410(method1077)) {
+                final BlockPos method1082 = Class6585.method19962(new BlockPos(5, 0, 6), Class2181.field12917, class1801, BlockPos.ZERO).add(method1080, 0, method1081);
+                if (!MutableBoundingBox.createProper(method1080, 0, method1081, method1082.getX(), 0, method1082.getZ()).intersectsWith(method1077)) {
                     method25823(class1795, class1800, class1801, list, random, class1798, false, 0.8f);
                 }
             }

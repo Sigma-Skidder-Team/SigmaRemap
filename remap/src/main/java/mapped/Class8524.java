@@ -13,7 +13,10 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class8524
 {
@@ -27,13 +30,13 @@ public class Class8524
         final Class51 method333 = class7495.method333();
         method333.method306("id", class7493.toString());
         if (EntityType.method23354(EntityType.field29057).equals(class7493)) {
-            final Class422 class7496 = new Class422(class7492.method23250(), class7494.x, class7494.y, class7494.z, false);
+            final LightningBoltEntity class7496 = new LightningBoltEntity(class7492.method23250(), class7494.x, class7494.y, class7494.z, false);
             class7492.method23250().method6903(class7496);
             class7492.method23257(new Class2259("commands.summon.success", new Object[] { class7496.getDisplayName() }), true);
             return 1;
         }
-        final Entity method334 = EntityType.method23378(method333, (Class1847)class7492.method23250(), class7500 -> {
-            class7500.method1730(class7497.field22770, class7497.field22771, class7497.field22772, class7500.field2399, class7500.field2400);
+        final Entity method334 = EntityType.method23378(method333, (World)class7492.method23250(), class7500 -> {
+            class7500.method1730(class7497.field22770, class7497.field22771, class7497.field22772, class7500.rotationYaw, class7500.rotationPitch);
             return class7499.method6887(class7500) ? class7500 : null;
         });
         if (method334 != null) {

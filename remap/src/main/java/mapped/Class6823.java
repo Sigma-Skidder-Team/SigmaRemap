@@ -183,7 +183,7 @@ public class Class6823
         this.field26802 = 0;
         this.field26803 = this.field26792.field3152;
         if (this.field26801.isEmpty()) {
-            this.method20893(Class2116.field12316);
+            this.method20893(TextFormatting.GRAY);
         }
         this.field26806 = null;
         if (this.field26807) {
@@ -193,7 +193,7 @@ public class Class6823
         }
     }
     
-    private void method20893(final Class2116 obj) {
+    private void method20893(final TextFormatting obj) {
         final SuggestionContext suggestionContext = this.field26804.getContext().findSuggestionContext(this.field26793.method3399());
         final Map smartUsage = this.field26791.field4684.field4069.method17375().getSmartUsage(suggestionContext.parent, (Object)this.field26791.field4684.field4069.method17269());
         final ArrayList arrayList = Lists.newArrayList();
@@ -222,8 +222,8 @@ public class Class6823
     }
     
     public static String method20896(final ParseResults<Class7491> parseResults, final String s, final int n) {
-        final Class2116[] array = { Class2116.field12320, Class2116.field12323, Class2116.field12319, Class2116.field12322, Class2116.field12315 };
-        final String string = Class2116.field12316.toString();
+        final TextFormatting[] array = { TextFormatting.AQUA, TextFormatting.YELLOW, TextFormatting.GREEN, TextFormatting.LIGHT_PURPLE, TextFormatting.GOLD};
+        final String string = TextFormatting.GRAY.toString();
         final StringBuilder sb = new StringBuilder(string);
         int start = 0;
         int n2 = -1;
@@ -250,7 +250,7 @@ public class Class6823
             if (max2 < s.length()) {
                 final int min2 = Math.min(max2 + parseResults.getReader().getRemainingLength(), s.length());
                 sb.append(s, start, max2);
-                sb.append(Class2116.field12321);
+                sb.append(TextFormatting.RED);
                 sb.append(s, max2, min2);
                 start = min2;
             }

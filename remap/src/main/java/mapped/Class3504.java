@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3504 extends Class3446
@@ -19,7 +21,7 @@ public class Class3504 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class511 method4152 = this.field16479.method4152();
+        final LivingEntity method4152 = this.field16479.method4152();
         return method4152 != null && method4152.method1768() && (!(method4152 instanceof Class512) || !((Class512)method4152).field3025.field27301) && this.field16479.method4148() instanceof Class6567;
     }
     
@@ -31,7 +33,7 @@ public class Class3504 extends Class3446
     
     @Override
     public boolean method11017() {
-        final Class511 method4152 = this.field16479.method4152();
+        final LivingEntity method4152 = this.field16479.method4152();
         if (method4152 == null) {
             return false;
         }
@@ -49,6 +51,6 @@ public class Class3504 extends Class3446
     @Override
     public void method11016() {
         this.field16479.method4176(this.field16479.method4152(), 10.0f, 10.0f);
-        ((Class6567)this.field16479.method4148()).method19913(this.field16479.field2399, this.field16479.method5136());
+        ((Class6567)this.field16479.method4148()).method19913(this.field16479.rotationYaw, this.field16479.method5136());
     }
 }

@@ -93,18 +93,18 @@ public class Class3392 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3392.field15514.field4684.field2424 >= 20) {
+        if (Class3392.field15514.field4684.ticksExisted >= 20) {
             final int n = (int)this.method9886("Chunk Range");
             final ArrayList list = new ArrayList();
             for (int i = -4; i < 4; ++i) {
                 for (int j = -4; j < 4; ++j) {
-                    list.add(new Class7859(Class3392.field15514.field4684.field2441 + i, Class3392.field15514.field4684.field2443 + j));
+                    list.add(new Class7859(Class3392.field15514.field4684.chunkCoordX + i, Class3392.field15514.field4684.chunkCoordZ + j));
                 }
             }
             final Iterator<Class8938> iterator = this.field16103.iterator();
             while (iterator.hasNext()) {
                 final Class8938 class5744 = iterator.next();
-                if (class5744.method31700(new Class7859(Class3392.field15514.field4684.field2441, Class3392.field15514.field4684.field2443)) <= 7 && !this.field16104.contains(class5744.method31701())) {
+                if (class5744.method31700(new Class7859(Class3392.field15514.field4684.chunkCoordX, Class3392.field15514.field4684.chunkCoordZ)) <= 7 && !this.field16104.contains(class5744.method31701())) {
                     continue;
                 }
                 iterator.remove();
@@ -125,7 +125,7 @@ public class Class3392 extends Class3167
                 break;
             }
             if (n2 == 0) {
-                if (Class3392.field15514.field4684.field2404) {
+                if (Class3392.field15514.field4684.onGround) {
                     if (!Class9463.method35173().method35205().method26559()) {
                         if (this.field16106 == null) {
                             this.method10821();
@@ -188,7 +188,7 @@ public class Class3392 extends Class3167
             if (this.method9906()) {
                 if (this.field16105 != null) {
                     if (this.field16106 != null) {
-                        if (Class3392.field15514.field4684.field2424 % 20 == 0) {
+                        if (Class3392.field15514.field4684.ticksExisted % 20 == 0) {
                             this.field16110 = this.field16109;
                             this.field16109 = this.method10825();
                         }
@@ -323,7 +323,7 @@ public class Class3392 extends Class3167
                     GL11.glLineWidth(1.4f);
                     GL11.glColor4d(1.0, 1.0, 1.0, 0.4399999976158142);
                     GL11.glBegin(3);
-                    final float min = Math.min(1.0f, (Class3392.field15514.field4684.field2424 % 20 + Class3392.field15514.field4633.field26528) / 20.0f);
+                    final float min = Math.min(1.0f, (Class3392.field15514.field4684.ticksExisted % 20 + Class3392.field15514.field4633.field26528) / 20.0f);
                     for (int i = 0; i < (int)(this.field16109.size() * min); ++i) {
                         final Class8797 class8797 = this.field16109.get(i);
                         Class8797 class8798;

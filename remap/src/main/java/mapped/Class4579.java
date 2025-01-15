@@ -8,6 +8,8 @@ import com.google.common.collect.Lists;
 import java.util.Iterator;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.entity.EntityType;
+
 import java.util.function.Function;
 import java.util.List;
 

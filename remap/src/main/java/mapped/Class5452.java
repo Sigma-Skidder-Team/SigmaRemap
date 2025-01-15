@@ -10,8 +10,9 @@ import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.longs.Long2LongMap;
+import net.minecraft.entity.LivingEntity;
 
-public class Class5452 extends Class5419<Class511>
+public class Class5452 extends Class5419<LivingEntity>
 {
     private static String[] field22684;
     private final float field22685;
@@ -26,7 +27,7 @@ public class Class5452 extends Class5419<Class511>
     }
     
     @Override
-    public boolean method16538(final Class1849 class1849, final Class511 class1850) {
+    public boolean method16538(final Class1849 class1849, final LivingEntity class1850) {
         if (class1849.method6754() - this.field22688 >= 20L) {
             final Class787 class1851 = (Class787)class1850;
             final Optional<BlockPos> method7205 = class1849.method6921().method7205(Class8912.field37476.method31396(), p0 -> true, new BlockPos(class1850), 48, Class2045.field11652);
@@ -36,13 +37,13 @@ public class Class5452 extends Class5419<Class511>
     }
     
     @Override
-    public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
+    public void method16539(final Class1849 class1849, final LivingEntity class1850, final long n) {
         this.field22687 = 0;
         this.field22688 = class1849.method6754() + class1849.method6790().nextInt(20);
         final Class787 class1851 = (Class787)class1850;
         final Class1883 method6921 = class1849.method6921();
         final Class9468 method6922 = class1851.method4150().method24720(method6921.method7203(Class8912.field37476.method31396(), class1852 -> {
-            class1852.method1132();
+            class1852.toLong();
             final long n2;
             if (!this.field22686.containsKey(n2)) {
                 if (++this.field22687 < 5) {

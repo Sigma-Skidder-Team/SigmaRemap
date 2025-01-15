@@ -24,7 +24,7 @@ public class Class8894 implements ArgumentType<String>
     public String parse(final StringReader stringReader) throws CommandSyntaxException {
         final String unquotedString = stringReader.readUnquotedString();
         if (!Class8972.method31856(unquotedString)) {
-            final Class2260 class2260 = new Class2260("No such test class: " + unquotedString);
+            final StringTextComponent class2260 = new StringTextComponent("No such test class: " + unquotedString);
             throw new CommandSyntaxException((CommandExceptionType)new SimpleCommandExceptionType((Message)class2260), (Message)class2260);
         }
         return unquotedString;

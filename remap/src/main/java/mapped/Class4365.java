@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.Iterator;
 import java.io.IOException;
 import java.util.List;
 
-public class Class4365 implements Class4252<Class5800>
+public class Class4365 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19558;
     private int field19559;
@@ -26,7 +28,7 @@ public class Class4365 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19559 = class8654.readUnsignedByte();
         final short short1 = class8654.readShort();
         this.field19560 = Class2265.method8507(short1, ItemStack.field34174);
@@ -36,7 +38,7 @@ public class Class4365 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeByte(this.field19559);
         class8654.writeShort(this.field19560.size());
         final Iterator<ItemStack> iterator = this.field19560.iterator();
@@ -45,7 +47,7 @@ public class Class4365 implements Class4252<Class5800>
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17311(this);
     }
     

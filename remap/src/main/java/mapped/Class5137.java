@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMap$Builder;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
@@ -26,7 +25,7 @@ public class Class5137 implements Class5113
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("cap_provider"), this.field22116.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("stem_provider"), this.field22117.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("foliage_radius"), dynamicOps.createInt(this.field22118));
+        builder.put(dynamicOps.createString("cap_provider"), this.field22116.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("stem_provider"), this.field22117.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("foliage_radius"), dynamicOps.createInt(this.field22118));
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     

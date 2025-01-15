@@ -7,6 +7,10 @@ package mapped;
 import java.util.Iterator;
 import java.util.Collection;
 import com.google.common.primitives.Floats;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,19 +30,19 @@ public class Class7974
         this.field32807 = field32807;
     }
     
-    public Integer method25914(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+    public Integer method25914(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
         final Class9100 method25916 = this.method25916(class8321, class8322, class8323);
         return (method25916 != null) ? this.field32808.get(method25916) : null;
     }
     
-    public void method25915(final ItemStack class8321, final Class1847 class8322, final Class511 class8323, final Integer n) {
+    public void method25915(final ItemStack class8321, final World class8322, final LivingEntity class8323, final Integer n) {
         final Class9100 method25916 = this.method25916(class8321, class8322, class8323);
         if (method25916 != null) {
             this.field32808.put(method25916, n);
         }
     }
     
-    private Class9100 method25916(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+    private Class9100 method25916(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
         final Integer[] array = new Integer[this.field32807.length];
         for (int i = 0; i < array.length; ++i) {
             final Integer method28533 = this.field32807[i].method28533(class8321, class8322, class8323);

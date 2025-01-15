@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Comparator;
 
@@ -21,8 +22,8 @@ public class Class4459 implements Comparator<Class8131>
     public int compare(final Class8131 class8131, final Class8131 class8132) {
         final Entity method26798 = class8131.method26798();
         final Entity method26799 = class8132.method26798();
-        final float method26800 = ((Class511)method26798).method2664();
-        final float method26801 = ((Class511)method26799).method2664();
+        final float method26800 = ((LivingEntity)method26798).method2664();
+        final float method26801 = ((LivingEntity)method26799).method2664();
         if (method26800 - method26801 < 0.0f) {
             return -1;
         }

@@ -23,7 +23,7 @@ public class Class9061
     private final List<Pair<Class8928, Collection<Class9083>>> field38369;
     private Class7333 field38370;
     private int field38371;
-    private Class385 field38372;
+    private Mutable field38372;
     private int field38373;
     
     public Class9061(final Collection<Class8928> collection, final BlockPos field38365, final Class1849 field38366, final Class8564 field38367) {
@@ -31,7 +31,7 @@ public class Class9061
         this.field38369 = Lists.newArrayList();
         this.field38371 = 0;
         this.field38373 = 0;
-        this.field38372 = new Class385(field38365);
+        this.field38372 = new Mutable(field38365);
         this.field38365 = field38365;
         this.field38366 = field38366;
         this.field38367 = field38367;

@@ -14,7 +14,7 @@ import com.google.common.collect.Lists;
 import java.util.Map;
 import java.util.List;
 
-public class Class4298 implements Class4252<Class5800>
+public class Class4298 implements IPacket<IClientPlayNetHandler>
 {
     private int field19267;
     private int field19268;
@@ -45,7 +45,7 @@ public class Class4298 implements Class4252<Class5800>
             this.field19271 = class1862.method7024().clone();
         }
         this.field19272 = new byte[this.method12908(class1862, n)];
-        this.field19269 = this.method12907(new Class8654(this.method12906()), class1862, n);
+        this.field19269 = this.method12907(new PacketBuffer(this.method12906()), class1862, n);
         this.field19273 = Lists.newArrayList();
         for (final Map.Entry<BlockPos, V> entry2 : class1862.method7066().entrySet()) {
             final BlockPos class1863 = entry2.getKey();
@@ -60,19 +60,19 @@ public class Class4298 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19267 = class8654.readInt();
         this.field19268 = class8654.readInt();
         this.field19274 = class8654.readBoolean();
-        this.field19269 = class8654.method29501();
+        this.field19269 = class8654.readVarInt();
         this.field19270 = class8654.method29508();
         if (this.field19274) {
             this.field19271 = new Class1873(class8654);
         }
-        final int method29501 = class8654.method29501();
+        final int method29501 = class8654.readVarInt();
         if (method29501 <= 2097152) {
             class8654.readBytes(this.field19272 = new byte[method29501]);
-            final int method29502 = class8654.method29501();
+            final int method29502 = class8654.readVarInt();
             this.field19273 = Lists.newArrayList();
             for (int i = 0; i < method29502; ++i) {
                 this.field19273.add(class8654.method29508());
@@ -83,30 +83,30 @@ public class Class4298 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeInt(this.field19267);
         class8654.writeInt(this.field19268);
         class8654.writeBoolean(this.field19274);
-        class8654.method29505(this.field19269);
+        class8654.writeVarInt(this.field19269);
         class8654.method29507(this.field19270);
         if (this.field19271 != null) {
             this.field19271.method7126(class8654);
         }
-        class8654.method29505(this.field19272.length);
+        class8654.writeVarInt(this.field19272.length);
         class8654.writeBytes(this.field19272);
-        class8654.method29505(this.field19273.size());
+        class8654.writeVarInt(this.field19273.size());
         final Iterator<Class51> iterator = this.field19273.iterator();
         while (iterator.hasNext()) {
             class8654.method29507(iterator.next());
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17287(this);
     }
     
-    public Class8654 method12905() {
-        return new Class8654(Unpooled.wrappedBuffer(this.field19272), this.field19275);
+    public PacketBuffer method12905() {
+        return new PacketBuffer(Unpooled.wrappedBuffer(this.field19272), this.field19275);
     }
     
     private ByteBuf method12906() {
@@ -115,7 +115,7 @@ public class Class4298 implements Class4252<Class5800>
         return wrappedBuffer;
     }
     
-    public int method12907(final Class8654 class8654, final Class1862 class8655, final int n) {
+    public int method12907(final PacketBuffer class8654, final Class1862 class8655, final int n) {
         int n2 = 0;
         final Class8199[] method7014 = class8655.method7014();
         for (int i = 0; i < method7014.length; ++i) {

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
@@ -29,7 +30,7 @@ public class Class3532 extends Class3531
     
     @Override
     public void method11082() {
-        final Class511 method4152 = this.field16564.method4152();
+        final LivingEntity method4152 = this.field16564.method4152();
         final double min = Math.min(method4152.getPosY(), this.field16564.getPosY());
         final double n = Math.max(method4152.getPosY(), this.field16564.getPosY()) + 1.0;
         final float n2 = (float) MathHelper.method35693(method4152.getPosZ() - this.field16564.getPosZ(), method4152.getPosX() - this.field16564.getPosX());
@@ -57,9 +58,9 @@ public class Class3532 extends Class3531
         double method1140 = 0.0;
         do {
             final BlockPos method1141 = method1139.method1139();
-            if (this.field16564.field2391.method6701(method1141).method21761(this.field16564.field2391, method1141, Direction.UP)) {
-                if (!this.field16564.field2391.method6961(method1139)) {
-                    final Class7702 method1142 = this.field16564.field2391.method6701(method1139).method21727(this.field16564.field2391, method1139);
+            if (this.field16564.world.method6701(method1141).method21761(this.field16564.world, method1141, Direction.UP)) {
+                if (!this.field16564.world.method6961(method1139)) {
+                    final Class7702 method1142 = this.field16564.world.method6701(method1139).method21727(this.field16564.world, method1139);
                     if (!method1142.method24540()) {
                         method1140 = method1142.method24536(Axis.Y);
                     }
@@ -70,7 +71,7 @@ public class Class3532 extends Class3531
             method1139 = method1139.method1139();
         } while (method1139.getY() >= MathHelper.floor(n3) - 1);
         if (b) {
-            this.field16564.field2391.method6886(new Class507(this.field16564.field2391, n, method1139.getY() + method1140, n2, n5, n6, this.field16564));
+            this.field16564.world.method6886(new Class507(this.field16564.world, n, method1139.getY() + method1140, n2, n5, n6, this.field16564));
         }
     }
     

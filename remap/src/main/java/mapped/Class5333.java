@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Collection;
@@ -147,20 +148,20 @@ public class Class5333
                     }
                 }
                 if (class8322.method7908() > 0) {
-                    class8323.method8457(" ").method8458(new Class2259("potion.potency." + class8322.method7908(), new Object[0]));
+                    class8323.appendText(" ").appendSibling(new Class2259("potion.potency." + class8322.method7908(), new Object[0]));
                 }
                 if (class8322.method7907() > 20) {
-                    class8323.method8457(" (").method8457(Class9434.method35057(class8322, n)).method8457(")");
+                    class8323.appendText(" (").appendText(Class9434.method35057(class8322, n)).appendText(")");
                 }
-                list.add(class8323.method8469(method16466.method16457().method8161()));
+                list.add(class8323.applyTextStyle(method16466.method16457().method8161()));
             }
         }
         else {
-            list.add(new Class2259("effect.none", new Object[0]).method8469(Class2116.field12316));
+            list.add(new Class2259("effect.none", new Object[0]).applyTextStyle(TextFormatting.GRAY));
         }
         if (!arrayList.isEmpty()) {
-            list.add(new Class2260(""));
-            list.add(new Class2259("potion.whenDrank", new Object[0]).method8469(Class2116.field12314));
+            list.add(new StringTextComponent(""));
+            list.add(new Class2259("potion.whenDrank", new Object[0]).applyTextStyle(TextFormatting.DARK_PURPLE));
             for (final Class8554 class8325 : arrayList) {
                 final Class7919 class8326 = (Class7919)class8325.method28746();
                 final double method16468 = class8326.method25638();
@@ -175,10 +176,10 @@ public class Class5333
                     if (method16468 >= 0.0) {
                         continue;
                     }
-                    list.add(new Class2259("attribute.modifier.take." + class8326.method25637().method8322(), new Object[] { ItemStack.field34175.format(method16469 * -1.0), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).method8469(Class2116.field12321));
+                    list.add(new Class2259("attribute.modifier.take." + class8326.method25637().method8322(), new Object[] { ItemStack.field34175.format(method16469 * -1.0), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).applyTextStyle(TextFormatting.RED));
                 }
                 else {
-                    list.add(new Class2259("attribute.modifier.plus." + class8326.method25637().method8322(), new Object[] { ItemStack.field34175.format(method16469), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).method8469(Class2116.field12318));
+                    list.add(new Class2259("attribute.modifier.plus." + class8326.method25637().method8322(), new Object[] { ItemStack.field34175.format(method16469), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).applyTextStyle(TextFormatting.BLUE));
                 }
             }
         }

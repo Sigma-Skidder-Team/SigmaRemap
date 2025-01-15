@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.world.dimension.DimensionType;
+
 import java.io.IOException;
 
-public class Class4359 implements Class4252<Class5800>
+public class Class4359 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19520;
-    private Class383 field19521;
+    private DimensionType field19521;
     private long field19522;
     private Class101 field19523;
     private Class9505 field19524;
@@ -17,20 +19,20 @@ public class Class4359 implements Class4252<Class5800>
     public Class4359() {
     }
     
-    public Class4359(final Class383 field19521, final long field19522, final Class9505 field19523, final Class101 field19524) {
+    public Class4359(final DimensionType field19521, final long field19522, final Class9505 field19523, final Class101 field19524) {
         this.field19521 = field19521;
         this.field19522 = field19522;
         this.field19523 = field19524;
         this.field19524 = field19523;
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17305(this);
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19521 = Class383.method1274(class8654.readInt());
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19521 = DimensionType.method1274(class8654.readInt());
         this.field19522 = class8654.readLong();
         this.field19523 = Class101.method592(class8654.readUnsignedByte());
         this.field19524 = Class9505.method35410(class8654.method29513(16));
@@ -40,14 +42,14 @@ public class Class4359 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeInt(this.field19521.method1270());
         class8654.writeLong(this.field19522);
         class8654.writeByte(this.field19523.method585());
         class8654.method29514(this.field19524.method35398());
     }
     
-    public Class383 method13097() {
+    public DimensionType method13097() {
         return this.field19521;
     }
     

@@ -40,7 +40,7 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
                     for (int n4 = -n2; n4 <= n2 && b; ++n4) {
                         if (class1878.getY() + i >= 0) {
                             if (class1878.getY() + i < 256) {
-                                if (Class4592.method13608(class1877, class1878.method1134(n3, i, n4))) {
+                                if (Class4592.method13608(class1877, class1878.add(n3, i, n4))) {
                                     continue;
                                 }
                             }
@@ -70,7 +70,7 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
         return this.method13635(class1875, class1876, n) && this.method13636(class1875, class1876);
     }
     
-    public void method13638(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
+    public void method13638(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5127 class1878) {
         final int n2 = n * n;
         for (int i = -n; i <= n + 1; ++i) {
             for (int j = -n; j <= n + 1; ++j) {
@@ -78,26 +78,26 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
                 final int min2 = Math.min(Math.abs(j), Math.abs(j - 1));
                 if (min + min2 < 7) {
                     if (min * min + min2 * min2 <= n2) {
-                        this.method13619(class1875, random, class1876.method1134(i, 0, j), set, class1877, class1878);
+                        this.method13619(class1875, random, class1876.add(i, 0, j), set, class1877, class1878);
                     }
                 }
             }
         }
     }
     
-    public void method13639(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
+    public void method13639(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5127 class1878) {
         final int n2 = n * n;
         for (int i = -n; i <= n; ++i) {
             for (int j = -n; j <= n; ++j) {
                 if (i * i + j * j <= n2) {
-                    this.method13619(class1875, random, class1876.method1134(i, 0, j), set, class1877, class1878);
+                    this.method13619(class1875, random, class1876.add(i, 0, j), set, class1877, class1878);
                 }
             }
         }
     }
     
-    public void method13640(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5128 class1878) {
-        final Class385 class1879 = new Class385();
+    public void method13640(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5128 class1878) {
+        final Mutable class1879 = new Mutable();
         for (int i = 0; i < n; ++i) {
             class1879.method1287(class1876).method1292(0, i, 0);
             if (Class4592.method13608(class1875, class1879)) {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import javax.annotation.Nullable;
@@ -57,7 +58,7 @@ public class Class1921 implements AutoCloseable
     }
     
     public Class1921(final String s, final boolean b, final Supplier<Class1727> supplier, final Class1727 class1727, final Class8545 class1728, final Class2043 class1729) {
-        this(s, b, supplier, new Class2260(class1727.method6102()), class1728.method28688(), Class2009.method8044(class1728.method28689()), class1729, false);
+        this(s, b, supplier, new StringTextComponent(class1727.method6102()), class1728.method28688(), Class2009.method8044(class1728.method28689()), class1729, false);
     }
     
     public ITextComponent method7616() {
@@ -69,12 +70,12 @@ public class Class1921 implements AutoCloseable
     }
     
     public ITextComponent method7618(final boolean b) {
-        return Class9479.method35299(new Class2260(this.field10444)).method8467(class8768 -> {
-            class8768.method30413(b2 ? Class2116.field12319 : Class2116.field12321).method30421(StringArgumentType.escapeIfRequired(this.field10444));
-            new Class9390(Class1961.field10697, new Class2260("").method8458(this.field10446).method8457("\n").method8458(this.field10447));
+        return Class9479.method35299(new StringTextComponent(this.field10444)).applyTextStyle(class8768 -> {
+            class8768.setColor(b2 ? TextFormatting.GREEN : TextFormatting.RED).method30421(StringArgumentType.escapeIfRequired(this.field10444));
+            new Class9390(Class1961.field10697, new StringTextComponent("").appendSibling(this.field10446).appendText("\n").appendSibling(this.field10447));
             final Class9390 class8769;
             final Object o;
-            ((Class8768)o).method30420(class8769);
+            ((Style)o).method30420(class8769);
         });
     }
     
@@ -118,6 +119,6 @@ public class Class1921 implements AutoCloseable
     
     static {
         field10442 = LogManager.getLogger();
-        field10443 = new Class8545(new Class2259("resourcePack.broken_assets", new Object[0]).method8468(Class2116.field12321, Class2116.field12329), Class9528.method35579().getPackVersion());
+        field10443 = new Class8545(new Class2259("resourcePack.broken_assets", new Object[0]).applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC), Class9528.method35579().getPackVersion());
     }
 }

@@ -6,7 +6,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4376 implements Class4252<Class5800>
+public class Class4376 implements IPacket<IClientPlayNetHandler>
 {
     public static final Class1932 field19590;
     public static final Class1932 field19591;
@@ -26,12 +26,12 @@ public class Class4376 implements Class4252<Class5800>
     public static final Class1932 field19605;
     public static final Class1932 field19606;
     private Class1932 field19607;
-    private Class8654 field19608;
+    private PacketBuffer field19608;
     
     public Class4376() {
     }
     
-    public Class4376(final Class1932 field19607, final Class8654 field19608) {
+    public Class4376(final Class1932 field19607, final PacketBuffer field19608) {
         this.field19607 = field19607;
         this.field19608 = field19608;
         if (field19608.writerIndex() <= 1048576) {
@@ -41,23 +41,23 @@ public class Class4376 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19607 = class8654.method29516();
         final int readableBytes = class8654.readableBytes();
         if (readableBytes >= 0 && readableBytes <= 1048576) {
-            this.field19608 = new Class8654(class8654.readBytes(readableBytes));
+            this.field19608 = new PacketBuffer(class8654.readBytes(readableBytes));
             return;
         }
         throw new IOException("Payload may not be larger than 1048576 bytes");
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29517(this.field19607);
         class8654.writeBytes(this.field19608.copy());
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17355(this);
     }
     
@@ -65,8 +65,8 @@ public class Class4376 implements Class4252<Class5800>
         return this.field19607;
     }
     
-    public Class8654 method13159() {
-        return new Class8654(this.field19608.copy());
+    public PacketBuffer method13159() {
+        return new PacketBuffer(this.field19608.copy());
     }
     
     static {

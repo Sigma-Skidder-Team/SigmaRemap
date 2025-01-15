@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.INameable;
 
 import java.util.Set;

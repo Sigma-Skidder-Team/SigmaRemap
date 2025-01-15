@@ -8,6 +8,8 @@ import com.google.gson.JsonObject;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.Collection;
 
 public class Class7451 implements Class7452

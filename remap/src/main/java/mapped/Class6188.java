@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class6188 extends Class6159
 {
     private static String[] field25001;
     private final Class7805 field25002;
     
-    public Class6188(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class7805 field25002) {
+    public Class6188(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class7805 field25002) {
         super(class1847, n, n2, n3);
         this.field25002 = field25002;
         this.field24939 = n4 + (Math.random() * 2.0 - 1.0) * 0.05000000074505806;

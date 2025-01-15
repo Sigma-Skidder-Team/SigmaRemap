@@ -5,13 +5,14 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
 import java.util.UUID;
 
-public class Class4339 implements Class4252<Class5800>
+public class Class4339 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19423;
     private int field19424;
@@ -50,18 +51,18 @@ public class Class4339 implements Class4252<Class5800>
     }
     
     public Class4339(final Entity class399, final int n) {
-        this(class399.method1643(), class399.method1865(), class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.field2400, class399.field2399, class399.method1642(), n, class399.method1935());
+        this(class399.getEntityId(), class399.method1865(), class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.rotationPitch, class399.rotationYaw, class399.getType(), n, class399.getMotion());
     }
     
     public Class4339(final Entity class399, final EntityType<?> class400, final int n, final BlockPos class401) {
-        this(class399.method1643(), class399.method1865(), class401.getX(), class401.getY(), class401.getZ(), class399.field2400, class399.field2399, class400, n, class399.method1935());
+        this(class399.getEntityId(), class399.method1865(), class401.getX(), class401.getY(), class401.getZ(), class399.rotationPitch, class399.rotationYaw, class400, n, class399.getMotion());
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19424 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19424 = class8654.readVarInt();
         this.field19425 = class8654.method29504();
-        this.field19434 = Class90.field210.method499(class8654.method29501());
+        this.field19434 = Class90.field210.method499(class8654.readVarInt());
         this.field19426 = class8654.readDouble();
         this.field19427 = class8654.readDouble();
         this.field19428 = class8654.readDouble();
@@ -74,10 +75,10 @@ public class Class4339 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19424);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19424);
         class8654.method29503(this.field19425);
-        class8654.method29505(Class90.field210.method504(this.field19434));
+        class8654.writeVarInt(Class90.field210.method504(this.field19434));
         class8654.writeDouble(this.field19426);
         class8654.writeDouble(this.field19427);
         class8654.writeDouble(this.field19428);
@@ -89,7 +90,7 @@ public class Class4339 implements Class4252<Class5800>
         class8654.writeShort(this.field19431);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17273(this);
     }
     

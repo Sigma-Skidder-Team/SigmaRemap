@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3825 extends Class3824
 {
     private static String[] field17377;
@@ -13,7 +17,7 @@ public class Class3825 extends Class3824
     }
     
     @Override
-    public Class402 method11758(final Class1847 class1847, final ItemStack class1848, final Class511 class1849) {
+    public Class402 method11758(final World class1847, final ItemStack class1848, final LivingEntity class1849) {
         return new Class404(class1847, class1849);
     }
 }

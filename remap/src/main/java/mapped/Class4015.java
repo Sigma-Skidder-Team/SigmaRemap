@@ -7,6 +7,7 @@ package mapped;
 import java.util.LinkedList;
 import com.google.common.collect.Lists;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class4015 extends Class3833
 {
@@ -17,26 +18,26 @@ public class Class4015 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
             this.method12197(class7097, class7098);
         }
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         this.method12197(class7097, class7098);
         super.method11825(class7096, class7097, class7098, class7099, class7100, b);
     }
     
-    public void method12197(final Class1847 class1847, final BlockPos class1848) {
+    public void method12197(final World class1847, final BlockPos class1848) {
         if (this.method12198(class1847, class1848)) {
             class1847.method6688(class1848, Class7521.field29212.method11878(), 2);
             class1847.method6955(2001, class1848, Class3833.method11774(Class7521.field29173.method11878()));
         }
     }
     
-    private boolean method12198(final Class1847 class1847, final BlockPos class1848) {
+    private boolean method12198(final World class1847, final BlockPos class1848) {
         final LinkedList linkedList = Lists.newLinkedList();
         linkedList.add(new Class8554(class1848, 0));
         int n = 0;

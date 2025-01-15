@@ -128,7 +128,7 @@ public class Class9468
         return this.field40716;
     }
     
-    public static Class9468 method35231(final Class8654 class8654) {
+    public static Class9468 method35231(final PacketBuffer class8654) {
         final boolean boolean1 = class8654.readBoolean();
         final int int1 = class8654.readInt();
         final int int2 = class8654.readInt();

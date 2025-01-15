@@ -6,7 +6,10 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Iterables;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -29,7 +32,7 @@ public class Class3831 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         if (!method21654.field10067) {
             final ItemStack method21655 = class7075.method21651();
             final BlockPos method21656 = class7075.method21639();
@@ -61,7 +64,7 @@ public class Class3831 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13326);
         if (method2716.method21449() != Class2165.field12881) {

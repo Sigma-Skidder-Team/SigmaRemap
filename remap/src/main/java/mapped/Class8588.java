@@ -23,9 +23,9 @@ public class Class8588 extends ByteToMessageDecoder
             }
             array[i] = byteBuf.readByte();
             if (array[i] >= 0) {
-                final Class8654 class8654 = new Class8654(Unpooled.wrappedBuffer(array));
+                final PacketBuffer class8654 = new PacketBuffer(Unpooled.wrappedBuffer(array));
                 try {
-                    final int method29501 = class8654.method29501();
+                    final int method29501 = class8654.readVarInt();
                     if (byteBuf.readableBytes() >= method29501) {
                         list.add(byteBuf.readBytes(method29501));
                         return;

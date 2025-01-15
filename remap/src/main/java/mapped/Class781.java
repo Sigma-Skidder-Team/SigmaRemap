@@ -4,7 +4,10 @@
 
 package mapped;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -12,7 +15,7 @@ public class Class781 extends Class780
 {
     private static String[] field4191;
     
-    public Class781(final EntityType<? extends Class781> class7499, final Class1847 class7500) {
+    public Class781(final EntityType<? extends Class781> class7499, final World class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1210, 8.0f);
     }
@@ -23,7 +26,7 @@ public class Class781 extends Class780
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35726;
     }
     
@@ -38,7 +41,7 @@ public class Class781 extends Class780
     }
     
     @Override
-    public void method2678(final Class7929 class7929, final int n, final boolean b) {
+    public void method2678(final DamageSource class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
         final Entity method25714 = class7929.method25714();
         if (method25714 instanceof Class765) {
@@ -69,15 +72,15 @@ public class Class781 extends Class780
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 2.1f;
     }
     
     @Override
     public boolean method2734(final Entity class399) {
         if (super.method2734(class399)) {
-            if (class399 instanceof Class511) {
-                ((Class511)class399).method2655(new Class1948(Class9439.field40493, 200));
+            if (class399 instanceof LivingEntity) {
+                ((LivingEntity)class399).method2655(new Class1948(Class9439.field40493, 200));
             }
             return true;
         }
@@ -87,7 +90,7 @@ public class Class781 extends Class780
     @Override
     public Class402 method4330(final ItemStack class8321, final float n) {
         final Class402 method4330 = super.method4330(class8321, n);
-        method4330.method1664(100);
+        method4330.setFire(100);
         return method4330;
     }
     

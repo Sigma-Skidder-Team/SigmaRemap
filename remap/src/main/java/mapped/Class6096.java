@@ -31,9 +31,9 @@ public interface Class6096<T extends Class3662<?>>
     
     T method18179(final Class1932 p0, final JsonObject p1);
     
-    T method18180(final Class1932 p0, final Class8654 p1);
+    T method18180(final Class1932 p0, final PacketBuffer p1);
     
-    void method18181(final Class8654 p0, final T p1);
+    void method18181(final PacketBuffer p0, final T p1);
     
     default <S extends Class6096<T>, T extends Class3662<?>> S method18182(final String s, final S n) {
         return Class90.method511(Class90.field237, s, n);

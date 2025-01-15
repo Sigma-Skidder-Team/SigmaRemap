@@ -23,7 +23,7 @@ public class Class4607 extends Class4535<Class5122>
         if (class1851.method6701(class1853.method1137()).method21696() == Class7521.field29338) {
             class1851.method6688(class1853, Class7521.field29340.method11878(), 2);
             for (int i = 0; i < 1500; ++i) {
-                final BlockPos method1134 = class1853.method1134(random.nextInt(8) - random.nextInt(8), -random.nextInt(12), random.nextInt(8) - random.nextInt(8));
+                final BlockPos method1134 = class1853.add(random.nextInt(8) - random.nextInt(8), -random.nextInt(12), random.nextInt(8) - random.nextInt(8));
                 if (class1851.method6701(method1134).method21706()) {
                     int n = 0;
                     final Direction[] values = Direction.values();

@@ -4,16 +4,18 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBTType;
+import net.minecraft.nbt.NumberNBT;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 import java.io.IOException;
 import java.io.DataOutput;
 
-public class Class46 extends Class43
+public class Class46 extends NumberNBT
 {
     public static final Class46 field110;
-    public static final Class6068<Class46> field111;
+    public static final INBTType<Class46> field111;
     private final float field112;
     
     private Class46(final float field112) {
@@ -25,17 +27,17 @@ public class Class46 extends Class43
     }
     
     @Override
-    public void method259(final DataOutput dataOutput) throws IOException {
+    public void write(final DataOutput dataOutput) throws IOException {
         dataOutput.writeFloat(this.field112);
     }
     
     @Override
-    public byte method260() {
+    public byte getId() {
         return 5;
     }
     
     @Override
-    public Class6068<Class46> method261() {
+    public INBTType<Class46> getType() {
         return Class46.field111;
     }
     
@@ -59,8 +61,8 @@ public class Class46 extends Class43
     }
     
     @Override
-    public ITextComponent method263(final String s, final int n) {
-        return new Class2260(String.valueOf(this.field112)).method8458(new Class2260("f").method8469(Class46.field101)).method8469(Class46.field100);
+    public ITextComponent toFormattedComponent(final String s, final int n) {
+        return new StringTextComponent(String.valueOf(this.field112)).appendSibling(new StringTextComponent("f").applyTextStyle(Class46.SYNTAX_HIGHLIGHTING_NUMBER_TYPE)).applyTextStyle(Class46.SYNTAX_HIGHLIGHTING_NUMBER);
     }
     
     @Override

@@ -36,13 +36,13 @@ public class Class528 extends Class527
         super.method2969();
         this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 6 + 168, 200, 20, this.field3161, class654 -> this.field3158.run()));
         this.field3160.clear();
-        this.field3160.addAll(this.field3156.method6626(this.field3159.method8461(), this.field3152 - 50));
+        this.field3160.addAll(this.field3156.method6626(this.field3159.getFormattedText(), this.field3152 - 50));
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 70, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 70, 16777215);
         int n4 = 90;
         final Iterator<String> iterator = this.field3160.iterator();
         while (iterator.hasNext()) {

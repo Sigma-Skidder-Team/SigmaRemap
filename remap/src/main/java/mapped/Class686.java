@@ -39,8 +39,8 @@ public class Class686 extends Class565 implements Class687
                 Class8726.method30011();
                 Class8726.method30117();
                 final Vec3d class5487 = new Vec3d(this.field3781.field4684.getPosX(), this.field3781.field4684.method1944(), this.field3781.field4684.getPosZ());
-                final Vec3d method16755 = new Vec3d(0.0, 0.0, -1.0).rotatePitch(-this.field3781.field4684.field2400 * 0.017453292f).rotateYaw(-this.field3781.field4684.field2399 * 0.017453292f);
-                final Vec3d method16756 = method16755.crossProduct(new Vec3d(0.0, 1.0, 0.0).rotatePitch(-this.field3781.field4684.field2400 * 0.017453292f).rotateYaw(-this.field3781.field4684.field2399 * 0.017453292f));
+                final Vec3d method16755 = new Vec3d(0.0, 0.0, -1.0).rotatePitch(-this.field3781.field4684.rotationPitch * 0.017453292f).rotateYaw(-this.field3781.field4684.rotationYaw * 0.017453292f);
+                final Vec3d method16756 = method16755.crossProduct(new Vec3d(0.0, 1.0, 0.0).rotatePitch(-this.field3781.field4684.rotationPitch * 0.017453292f).rotateYaw(-this.field3781.field4684.rotationYaw * 0.017453292f));
                 int n = 0;
                 int max = 0;
                 final Iterator<Class8395> iterator = this.field3782.iterator();
@@ -93,7 +93,7 @@ public class Class686 extends Class565 implements Class687
     @Override
     public void method3818(final Class6834 class6834, final Class7833 class6835) {
         if (class6835.method25313() != null) {
-            final String method8461 = class6835.method25313().method8461();
+            final String method8461 = class6835.method25313().getFormattedText();
             if (!this.field3782.isEmpty()) {
                 for (final Class8395 class6836 : this.field3782) {
                     if (!class6836.method27992().equals(method8461)) {

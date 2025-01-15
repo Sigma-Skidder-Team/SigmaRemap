@@ -7,6 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class4169 extends Class4158<Class437>
 {
@@ -40,7 +41,7 @@ public class Class4169 extends Class4158<Class437>
     
     public void method12483(final Class437 class437, final float n, final Class7351 class438, final Class7807 class439, final int n2, final int n3) {
         final Class3687 class440 = Class8752.field36753[class437.method2213().method813()];
-        final Class1847 method2186 = class437.method2186();
+        final World method2186 = class437.method2186();
         if (method2186 == null) {
             this.method12484(class438, class439, true, Direction.SOUTH, class440, n2, n3, false);
             this.method12484(class438, class439, false, Direction.SOUTH, class440, n2, n3, true);

@@ -73,7 +73,7 @@ public class Class5924<T extends Class798> extends Class5844<T>
         this.field24347.field25183 = 0.0f;
         this.field24338.field25183 = 0.0f;
         this.field24338.field25181 = 19.0f;
-        final boolean b = t.field2404 && t.method1935().lengthSquared() < 1.0E-7;
+        final boolean b = t.onGround && t.getMotion().lengthSquared() < 1.0E-7;
         if (!b) {
             final float n6 = n3 * 2.1f;
             this.field24340.field25184 = 0.0f;

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class Class6357 extends Class6354
     private int field25436;
     
     public Class6357(final Class1849 field25434) {
-        super(method18930(field25434.field10063));
+        super(method18930(field25434.dimension));
         this.field25433 = Maps.newHashMap();
         this.field25434 = field25434;
         this.field25435 = 1;
@@ -63,7 +64,7 @@ public class Class6357 extends Class6354
                     if (class776.method1768()) {
                         if (class776.method4288()) {
                             if (class776.method2640() <= 2400) {
-                                if (class776.field2391.method6789().method20487() == class777.method30624().method6789().method20487()) {
+                                if (class776.world.method6789().getType() == class777.method30624().method6789().getType()) {
                                     return true;
                                 }
                             }
@@ -78,13 +79,13 @@ public class Class6357 extends Class6354
     
     @Nullable
     public Class8792 method18928(final Class513 class513) {
-        if (class513.method1639()) {
+        if (class513.isSpectator()) {
             return null;
         }
         if (this.field25434.method6765().method31216(Class8878.field37338)) {
             return null;
         }
-        if (class513.field2391.method6789().method20487() != Class383.field2224) {
+        if (class513.world.method6789().getType() != DimensionType.field2224) {
             final BlockPos class514 = new BlockPos(class513);
             final List<? super Class377> list = this.field25434.method6921().method7200(Class8912.field37458, class514, 64, Class2045.field11651).collect((Collector<? super Class377, ?, List<? super Class377>>)Collectors.toList());
             int n = 0;
@@ -164,7 +165,7 @@ public class Class6357 extends Class6354
     }
     
     public static String method18930(final Class6737 class6737) {
-        return "raids" + class6737.method20487().method1271();
+        return "raids" + class6737.getType().method1271();
     }
     
     private int method18931() {

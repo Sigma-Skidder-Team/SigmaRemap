@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.commands.CommandException;
+import net.minecraft.item.ItemStack;
 
 public class Class6692 extends Class6693
 {

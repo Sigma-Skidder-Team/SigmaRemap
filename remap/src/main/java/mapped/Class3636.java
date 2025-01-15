@@ -54,13 +54,13 @@ public class Class3636 extends Class3634
             this.method11168();
         }
         if (Class851.method5090(this.field16871).field22771 < this.field16871.getPosY()) {
-            if (!this.field16871.field2391.method6961(new BlockPos(this.field16871).method1140(1))) {
+            if (!this.field16871.world.method6961(new BlockPos(this.field16871).method1140(1))) {
                 this.field16876 = Math.max(1.0f, this.field16876);
                 this.method11168();
             }
         }
         if (Class851.method5090(this.field16871).field22771 > this.field16871.getPosY()) {
-            if (!this.field16871.field2391.method6961(new BlockPos(this.field16871).method1138(1))) {
+            if (!this.field16871.world.method6961(new BlockPos(this.field16871).method1138(1))) {
                 this.field16876 = Math.min(-1.0f, this.field16876);
                 this.method11168();
             }

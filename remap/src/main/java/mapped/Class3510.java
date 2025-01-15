@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.EnumSet;
@@ -59,7 +60,7 @@ public class Class3510 extends Class3446
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16503.method4152();
+        final LivingEntity method4152 = this.field16503.method4152();
         if (!this.field16503.method1886().method18502(method4152.method1886())) {
             if (this.field16503.method1734(method4152) < 9.0) {
                 final Vec3d method4153 = method4152.method1747(1.0f);

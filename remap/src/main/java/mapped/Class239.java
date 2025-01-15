@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public enum Class239
 {
     field1167(0, 0, 28, 32, 8), 

@@ -8,25 +8,25 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.io.IOException;
 
-public class Class4374 implements Class4252<Class5800>
+public class Class4374 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19581;
     private ITextComponent field19582;
     private ITextComponent field19583;
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19582 = class8654.method29497();
         this.field19583 = class8654.method29497();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29498(this.field19582);
         class8654.method29498(this.field19583);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17339(this);
     }
     

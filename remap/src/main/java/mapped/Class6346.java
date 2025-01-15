@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Map;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -57,7 +59,7 @@ public abstract class Class6346<C extends Class7065>
     }
     
     @Nullable
-    public BlockPos method18874(final Class1847 class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
+    public BlockPos method18874(final World class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
         final Class4574 class1849 = (Class4574)Class4535.field20023.get((Object)s.toLowerCase(Locale.ROOT));
         return (class1849 == null) ? null : class1849.method13591(class1847, this, class1848, n, b);
     }
@@ -68,7 +70,7 @@ public abstract class Class6346<C extends Class7065>
         final int n = method7150 * 16;
         final int n2 = method7151 * 16;
         final BlockPos class1879 = new BlockPos(n, 0, n2);
-        final Class3090 method7152 = this.method18872(class1878.method6797(), class1879.method1134(8, 8, 8));
+        final Class3090 method7152 = this.method18872(class1878.method6797(), class1879.add(8, 8, 8));
         final Class2317 class1880 = new Class2317();
         final long method7153 = class1880.method9438(class1878.method6753(), n, n2);
         for (final Class2108 class1881 : Class2108.values()) {
@@ -134,7 +136,7 @@ public abstract class Class6346<C extends Class7065>
             Class5936 field24429 = Class5936.field24429;
             final Class3090 method7047 = class5507.method16810(new BlockPos(method7046.method25426() + 9, 0, method7046.method25427() + 9));
             if (class5511.method13594(class5507, class5509, class5512, method7046.field32290, method7046.field32291, method7047)) {
-                final Class5936 method7048 = class5511.method13595().method19048(class5511, method7046.field32290, method7046.field32291, Class6997.method21407(), n, class5509.method18880());
+                final Class5936 method7048 = class5511.method13595().method19048(class5511, method7046.field32290, method7046.field32291, MutableBoundingBox.getNewBoundingBox(), n, class5509.method18880());
                 method7048.method17850(this, class5510, method7046.field32290, method7046.field32291, method7047);
                 field24429 = (method7048.method17858() ? method7048 : Class5936.field24429);
             }
@@ -155,7 +157,7 @@ public abstract class Class6346<C extends Class7065>
                     if (class1853 == Class5936.field24429) {
                         continue;
                     }
-                    if (!class1853.method17851().method21411(n, n2, n + 15, n2 + 15)) {
+                    if (!class1853.method17851().intersectsWith(n, n2, n + 15, n2 + 15)) {
                         continue;
                     }
                     class1852.method7048((String)entry.getKey(), method25423);

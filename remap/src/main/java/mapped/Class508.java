@@ -5,7 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Map;
 
@@ -19,15 +23,15 @@ public class Class508 extends Entity
     private Class512 field2902;
     private int field2903;
     
-    public Class508(final Class1847 class1847, final double n, final double n2, final double n3, final int field2901) {
+    public Class508(final World class1847, final double n, final double n2, final double n3, final int field2901) {
         this(EntityType.field28981, class1847);
-        this.method1656(n, n2, n3);
-        this.field2399 = (float)(this.field2423.nextDouble() * 360.0);
-        this.method1937((this.field2423.nextDouble() * 0.20000000298023224 - 0.10000000149011612) * 2.0, this.field2423.nextDouble() * 0.2 * 2.0, (this.field2423.nextDouble() * 0.20000000298023224 - 0.10000000149011612) * 2.0);
+        this.setPosition(n, n2, n3);
+        this.rotationYaw = (float)(this.rand.nextDouble() * 360.0);
+        this.setMotion((this.rand.nextDouble() * 0.20000000298023224 - 0.10000000149011612) * 2.0, this.rand.nextDouble() * 0.2 * 2.0, (this.rand.nextDouble() * 0.20000000298023224 - 0.10000000149011612) * 2.0);
         this.field2901 = field2901;
     }
     
-    public Class508(final EntityType<? extends Class508> class7499, final Class1847 class7500) {
+    public Class508(final EntityType<? extends Class508> class7499, final World class7500) {
         super(class7499, class7500);
         this.field2900 = 5;
     }
@@ -47,32 +51,32 @@ public class Class508 extends Entity
         if (this.field2899 > 0) {
             --this.field2899;
         }
-        this.field2392 = this.getPosX();
-        this.field2393 = this.getPosY();
-        this.field2394 = this.getPosZ();
+        this.prevPosX = this.getPosX();
+        this.prevPosY = this.getPosY();
+        this.prevPosZ = this.getPosZ();
         if (!this.method1720(Class7324.field28319)) {
             if (!this.method1698()) {
-                this.method1936(this.method1935().add(0.0, -0.03, 0.0));
+                this.method1936(this.getMotion().add(0.0, -0.03, 0.0));
             }
         }
         else {
             this.method2604();
         }
-        if (this.field2391.method6702(new BlockPos(this)).method21793(Class7324.field28320)) {
-            this.method1937((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f, 0.20000000298023224, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
-            this.method1695(Class8520.field35214, 0.4f, 2.0f + this.field2423.nextFloat() * 0.4f);
+        if (this.world.method6702(new BlockPos(this)).method21793(Class7324.field28320)) {
+            this.setMotion((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f, 0.20000000298023224, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
+            this.method1695(Class8520.field35214, 0.4f, 2.0f + this.rand.nextFloat() * 0.4f);
         }
-        if (!this.field2391.method6976(this.method1886())) {
+        if (!this.world.method6976(this.method1886())) {
             this.method1838(this.getPosX(), (this.method1886().field25074 + this.method1886().field25077) / 2.0, this.getPosZ());
         }
-        if (this.field2903 < this.field2897 - 20 + this.method1643() % 100) {
+        if (this.field2903 < this.field2897 - 20 + this.getEntityId() % 100) {
             if (this.field2902 == null || this.field2902.method1734(this) > 64.0) {
-                this.field2902 = this.field2391.method7131(this, 8.0);
+                this.field2902 = this.world.method7131(this, 8.0);
             }
             this.field2903 = this.field2897;
         }
         if (this.field2902 != null) {
-            if (this.field2902.method1639()) {
+            if (this.field2902.isSpectator()) {
                 this.field2902 = null;
             }
         }
@@ -81,17 +85,17 @@ public class Class508 extends Entity
             final double method16753 = class5487.lengthSquared();
             if (method16753 < 64.0) {
                 final double n = 1.0 - Math.sqrt(method16753) / 8.0;
-                this.method1936(this.method1935().add(class5487.normalize().scale(n * n * 0.1)));
+                this.method1936(this.getMotion().add(class5487.normalize().scale(n * n * 0.1)));
             }
         }
-        this.method1671(Class2160.field12826, this.method1935());
+        this.method1671(Class2160.field12826, this.getMotion());
         float n2 = 0.98f;
-        if (this.field2404) {
-            n2 = this.field2391.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
+        if (this.onGround) {
+            n2 = this.world.method6701(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method21696().method11865() * 0.98f;
         }
-        this.method1936(this.method1935().mul(n2, 0.98, n2));
-        if (this.field2404) {
-            this.method1936(this.method1935().mul(1.0, -0.9, 1.0));
+        this.method1936(this.getMotion().mul(n2, 0.98, n2));
+        if (this.onGround) {
+            this.method1936(this.getMotion().mul(1.0, -0.9, 1.0));
         }
         ++this.field2897;
         ++this.field2898;
@@ -101,8 +105,8 @@ public class Class508 extends Entity
     }
     
     private void method2604() {
-        final Vec3d method1935 = this.method1935();
-        this.method1937(method1935.x * 0.9900000095367432, Math.min(method1935.y + 5.000000237487257E-4, 0.05999999865889549), method1935.z * 0.9900000095367432);
+        final Vec3d method1935 = this.getMotion();
+        this.setMotion(method1935.x * 0.9900000095367432, Math.min(method1935.y + 5.000000237487257E-4, 0.05999999865889549), method1935.z * 0.9900000095367432);
     }
     
     @Override
@@ -111,11 +115,11 @@ public class Class508 extends Entity
     
     @Override
     public void method1703(final int n) {
-        this.method1740(Class7929.field32562, (float)n);
+        this.attackEntityFrom(DamageSource.field32562, (float)n);
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             this.method1739();
             this.field2900 -= (int)n;
@@ -143,7 +147,7 @@ public class Class508 extends Entity
     
     @Override
     public void method1736(final Class512 class512) {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.field2899 == 0) {
                 if (class512.field3014 == 0) {
                     class512.field3014 = 2;
@@ -248,7 +252,7 @@ public class Class508 extends Entity
     }
     
     @Override
-    public Class4252<?> method1932() {
+    public IPacket<?> method1932() {
         return new Class4375(this);
     }
 }

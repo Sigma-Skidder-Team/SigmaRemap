@@ -7,6 +7,7 @@ package mapped;
 import java.util.AbstractList;
 import com.mojang.authlib.AuthenticationService;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
@@ -117,7 +118,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     public Class756 field4684;
     private Class1655 field4685;
     private Class9575 field4686;
-    private Class3641 field4687;
+    private NetworkManager field4687;
     private boolean field4688;
     public Entity field4689;
     public Entity field4690;
@@ -311,7 +312,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private String method5228() {
         final StringBuilder sb = new StringBuilder((Class9463.method35173().method35209() == Class2209.field13464) ? "Jello for Sigma 5.0" : "Sigma 5.0");
         final Class5799 method5269 = this.method5269();
-        if (method5269 != null && method5269.method17369().method11187()) {
+        if (method5269 != null && method5269.getNetworkManager().method11187()) {
             sb.append(" - ");
             if (this.field4685 != null && !this.field4685.method1539()) {
                 sb.append(Class8822.method30773("title.singleplayer", new Object[0]));
@@ -336,7 +337,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private void method5230(final Throwable t) {
         if (this.field4663.method7611().size() > 1) {
             if (t instanceof Class2370) {
-                final Class2260 class2260 = new Class2260(((Class2370)t).method9501().method6102());
+                final StringTextComponent class2260 = new StringTextComponent(((Class2370)t).method9501().method6102());
             }
             Class869.field4622.info("Caught error loading resourcepacks, removing all selected resourcepacks", t);
             this.field4663.method7608((Collection<Class1922>)Collections.emptyList());
@@ -390,7 +391,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     }
     
     private void method5231() {
-        final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, Class1980.field10972).stream().map(class8926 -> Class2116.method8259(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Class90.field211.method503(class8927.method27622())));
+        final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, Class1980.field10972).stream().map(class8926 -> TextFormatting.getTextWithoutFormattingCodes(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Class90.field211.method503(class8927.method27622())));
         final Class8923 class8923 = new Class8923(class8928 -> Class7855.method25402().method18463(class8928.method27622()).stream());
         final Class2265<Object> method8506 = Class2265.method8506();
         final Iterator<Object> iterator = Class90.field211.iterator();
@@ -402,7 +403,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             class8930.method31458(class8931);
             return;
         });
-        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> Class2116.method8259(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Class90.field211.method503(class8936.method11292().method27622())));
+        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Class90.field211.method503(class8936.method11292().method27622())));
         this.field4641.method5798(Class1659.field9375, class8922);
         this.field4641.method5798(Class1659.field9376, class8923);
         this.field4641.method5798(Class1659.field9377, class8924);
@@ -1163,7 +1164,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             final boolean method1056 = this.field4648.field23458.method1056();
             final boolean method1057 = this.field4648.field23459.method1056();
             if (this.field4648.field23457[i].method1058()) {
-                if (this.field4684.method1639()) {
+                if (this.field4684.isSpectator()) {
                     this.field4647.method3810().method3320(i);
                 }
                 else if (!this.field4684.method2889() || this.field4700 != null || (!method1057 && !method1056)) {
@@ -1187,12 +1188,12 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.method5244(new Class557(this.field4684.field4069.method17374()));
         }
         while (this.field4648.field23443.method1058()) {
-            if (!this.field4684.method1639()) {
+            if (!this.field4684.isSpectator()) {
                 this.method5269().method17292(new Class4399(Class2003.field11246, BlockPos.ZERO, Direction.DOWN));
             }
         }
         while (this.field4648.field23444.method1058()) {
-            if (!this.field4684.method1639() && this.field4684.method2821(Class527.method3046())) {
+            if (!this.field4684.isSpectator() && this.field4684.method2821(Class527.method3046())) {
                 this.field4684.method2707(Class316.field1877);
             }
         }
@@ -1286,7 +1287,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
         }
         final SocketAddress method25791 = this.field4685.method1541().method24061();
-        final Class3641 method25792 = Class3641.method11184(method25791);
+        final NetworkManager method25792 = NetworkManager.method11184(method25791);
         method25792.method11173(new Class5808(method25792, this, null, p0 -> {}));
         method25792.method11174(new Class4398(method25791.toString(), 0, Class2208.field13457));
         method25792.method11174(new Class4327(this.method5287().method33694()));
@@ -1464,7 +1465,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     class5749 = new ItemStack(Class7739.field31572);
                 }
                 else {
-                    final Class3831 method6734 = Class3831.method11771(method6732.method1642());
+                    final Class3831 method6734 = Class3831.method11771(method6732.getType());
                     if (method6734 == null) {
                         return;
                     }
@@ -1477,7 +1478,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     s = Class90.field208.method503(this.field4683.method6701(((Class7005)this.field4691).method21447()).method21696()).toString();
                 }
                 else if (method6728 == Class2165.field12882) {
-                    s = Class90.field210.method503(((Class7007)this.field4691).method21452().method1642()).toString();
+                    s = Class90.field210.method503(((Class7007)this.field4691).method21452().getType()).toString();
                 }
                 Class869.field4622.warn("Picking on: [{}] {} gave null item", (Object)method6728, (Object)s);
             }
@@ -1728,13 +1729,13 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (this.field4684 == null) {
             return Class264.field1261;
         }
-        if (this.field4684.field2391.field10063 instanceof Class6739) {
+        if (this.field4684.world.dimension instanceof Class6739) {
             return Class264.field1265;
         }
-        if (this.field4684.field2391.field10063 instanceof Class6738) {
+        if (this.field4684.world.dimension instanceof Class6738) {
             return this.field4647.method3813().method3334() ? Class264.field1266 : Class264.field1267;
         }
-        final Class2140 method9870 = this.field4684.field2391.method6959(new BlockPos(this.field4684)).method9870();
+        final Class2140 method9870 = this.field4684.world.method6959(new BlockPos(this.field4684)).method9870();
         if (!this.field4669.method26548(Class264.field1268) && (!this.field4684.method1712() || this.field4669.method26548(Class264.field1262) || (method9870 != Class2140.field12596 && method9870 != Class2140.field12598))) {
             return (this.field4684.field3025.field27304 && this.field4684.field3025.field27303) ? Class264.field1263 : Class264.field1262;
         }

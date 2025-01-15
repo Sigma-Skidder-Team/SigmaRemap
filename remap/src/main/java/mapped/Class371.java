@@ -23,7 +23,7 @@ public class Class371 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list, final List<BlockPos> list2, final Set<BlockPos> set, final MutableBoundingBox class1852) {
         list.forEach(class1855 -> {
             if (random2.nextInt(3) > 0) {
                 class1855.method1145();
@@ -57,7 +57,7 @@ public class Class371 extends Class367
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString())))).getValue();
     }
 }

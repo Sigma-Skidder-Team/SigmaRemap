@@ -22,7 +22,7 @@ public class Class5424 extends Class5419<Class824>
         if (class1850.method1768()) {
             if (method4823 != null) {
                 if (!class1850.method1706()) {
-                    if (!class1850.field2408) {
+                    if (!class1850.velocityChanged) {
                         if (class1850.method1734(method4823) <= 16.0) {
                             if (method4823.field3009 != null) {
                                 return true;

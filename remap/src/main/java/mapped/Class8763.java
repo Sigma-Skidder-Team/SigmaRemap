@@ -13,8 +13,12 @@ import javax.imageio.ImageIO;
 import java.util.Set;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import java.util.HashMap;
 import java.io.InputStream;
@@ -830,7 +834,7 @@ public class Class8763
         if (Class8763.field36808 == null) {
             return false;
         }
-        final int n3 = class1848.field10063.method20487().method1270() - Class8763.field36809;
+        final int n3 = class1848.dimension.getType().method1270() - Class8763.field36809;
         if (n3 >= 0 && n3 < Class8763.field36808.length) {
             final Class8265 class1850 = Class8763.field36808[n3];
             return class1850 != null && class1850.method27449(class1848, n, class1849, b, n2);
@@ -838,23 +842,23 @@ public class Class8763
         return false;
     }
     
-    public static Vec3d method30362(final Vec3d class5487, final Class1847 class5488, final Entity class5489, final float n) {
-        final Class383 method20487 = class5488.field10063.method20487();
+    public static Vec3d method30362(final Vec3d class5487, final World class5488, final Entity class5489, final float n) {
+        final DimensionType method20487 = class5488.dimension.getType();
         final Class869 method20488 = Class869.method5277();
-        if (method20487 == Class383.field2224) {
+        if (method20487 == DimensionType.field2224) {
             return method30352(class5487);
         }
-        if (method20487 != Class383.field2223) {
-            return (method20487 != Class383.field2225) ? class5487 : method30353(class5487);
+        if (method20487 != DimensionType.field2223) {
+            return (method20487 != DimensionType.field2225) ? class5487 : method30353(class5487);
         }
         return method30356(class5487, method20488.field4683, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
     }
     
-    public static Vec3d method30363(final Vec3d class5487, final Class1847 class5488, final Entity class5489, final float n) {
-        final Class383 method20487 = class5488.field10063.method20487();
+    public static Vec3d method30363(final Vec3d class5487, final World class5488, final Entity class5489, final float n) {
+        final DimensionType method20487 = class5488.dimension.getType();
         final Class869 method20488 = Class869.method5277();
-        if (method20487 != Class383.field2223) {
-            return (method20487 != Class383.field2225) ? class5487 : method30354(class5487);
+        if (method20487 != DimensionType.field2223) {
+            return (method20487 != DimensionType.field2225) ? class5487 : method30354(class5487);
         }
         return method30355(class5487, method20488.field4683, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
     }

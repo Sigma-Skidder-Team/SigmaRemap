@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class6185 extends Class6159
 {
     private static String[] field24995;
     private final Class7805 field24996;
     
-    private Class6185(final Class1847 class1847, final double n, final double n2, final double n3, final double field24939, final double field24940, final double field24941, final Class7805 field24942) {
+    private Class6185(final World class1847, final double n, final double n2, final double n3, final double field24939, final double field24940, final double field24941, final Class7805 field24942) {
         super(class1847, n, n2, n3);
         this.field24996 = field24942;
         this.field24951 = 4;

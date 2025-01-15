@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -18,7 +19,7 @@ public class Class6092
     private Class1855 field24706;
     private Entity field24707;
     private Vec3d field24708;
-    private final Class385 field24709;
+    private final Mutable field24709;
     private final Vector3f field24710;
     private final Vector3f field24711;
     private final Vector3f field24712;
@@ -32,7 +33,7 @@ public class Class6092
     
     public Class6092() {
         this.field24708 = Vec3d.ZERO;
-        this.field24709 = new Class385();
+        this.field24709 = new Mutable();
         this.field24710 = new Vector3f(0.0f, 0.0f, 1.0f);
         this.field24711 = new Vector3f(0.0f, 1.0f, 0.0f);
         this.field24712 = new Vector3f(1.0f, 0.0f, 0.0f);
@@ -46,11 +47,11 @@ public class Class6092
         this.field24716 = field24708;
         this.field24717 = field24709;
         this.method18158(field24707.getYaw(n), field24707.getPitch(n));
-        this.method18159(MathHelper.method35701(n, field24707.field2392, field24707.getPosX()), MathHelper.method35701(n, field24707.field2393, field24707.getPosY()) + MathHelper.method35700(n, this.field24719, this.field24718), MathHelper.method35701(n, field24707.field2394, field24707.getPosZ()));
+        this.method18159(MathHelper.method35701(n, field24707.prevPosX, field24707.getPosX()), MathHelper.method35701(n, field24707.prevPosY, field24707.getPosY()) + MathHelper.method35700(n, this.field24719, this.field24718), MathHelper.method35701(n, field24707.prevPosZ, field24707.getPosZ()));
         if (!field24708) {
-            if (field24707 instanceof Class511) {
-                if (((Class511)field24707).method2783()) {
-                    final Direction method2788 = ((Class511)field24707).method2788();
+            if (field24707 instanceof LivingEntity) {
+                if (((LivingEntity)field24707).method2783()) {
+                    final Direction method2788 = ((LivingEntity)field24707).method2788();
                     this.method18158((method2788 == null) ? 0.0f : (method2788.getHorizontalAngle() - 180.0f), 0.0f);
                     this.method18157(0.0, 0.3, 0.0);
                 }

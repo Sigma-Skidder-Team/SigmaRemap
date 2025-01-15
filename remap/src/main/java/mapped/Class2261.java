@@ -4,10 +4,12 @@
 
 package mapped;
 
+import net.minecraft.util.text.TextComponent;
+
 import java.util.function.Supplier;
 import java.util.function.Function;
 
-public class Class2261 extends Class2251
+public class Class2261 extends TextComponent
 {
     public static Function<String, Supplier<String>> field13818;
     private final String field13819;
@@ -18,7 +20,7 @@ public class Class2261 extends Class2251
     }
     
     @Override
-    public String method8459() {
+    public String getUnformattedComponentText() {
         if (this.field13820 == null) {
             this.field13820 = Class2261.field13818.apply(this.field13819);
         }
@@ -36,7 +38,7 @@ public class Class2261 extends Class2251
     
     @Override
     public String toString() {
-        return "KeybindComponent{keybind='" + this.field13819 + '\'' + ", siblings=" + this.field13791 + ", style=" + this.method8456() + '}';
+        return "KeybindComponent{keybind='" + this.field13819 + '\'' + ", siblings=" + this.siblings + ", style=" + this.getStyle() + '}';
     }
     
     public String method8501() {

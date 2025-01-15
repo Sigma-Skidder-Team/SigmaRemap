@@ -6,11 +6,10 @@ package mapped;
 
 import java.security.PrivateKey;
 import java.io.IOException;
-import java.security.Key;
 import java.security.PublicKey;
 import javax.crypto.SecretKey;
 
-public class Class4341 implements Class4252<Class5802>
+public class Class4341 implements IPacket<Class5802>
 {
     private static String[] field19446;
     private byte[] field19447;
@@ -29,13 +28,13 @@ public class Class4341 implements Class4252<Class5802>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19447 = class8654.method29486();
         this.field19448 = class8654.method29486();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29485(this.field19447);
         class8654.method29485(this.field19448);
     }

@@ -28,10 +28,10 @@ public class Class3180 extends Class3167
     @Class6753
     private void method9975(final Class5723 class5723) {
         if (this.method9906() && Class3180.field15514.field4684 != null) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final String string = ((Class4378)method16998).method13164().getString();
-                final String lowerCase = Class3180.field15514.field4684.getName().method8461().toLowerCase();
+                final String lowerCase = Class3180.field15514.field4684.getName().getFormattedText().toLowerCase();
                 if (this.field15564.method9883("AutoL")) {
                     if (string.toLowerCase().contains("killed by " + lowerCase + " ")) {
                         this.field15564.method10296(string);

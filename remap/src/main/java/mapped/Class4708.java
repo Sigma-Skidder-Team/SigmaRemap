@@ -22,14 +22,14 @@ public class Class4708<T extends Class428> extends Class4703<T>
     public void method13973(final T t, float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int n3) {
         super.method13951(t, n, n2, class7351, class7352, n3);
         class7351.method22567();
-        final long n4 = t.method1643() * 493286711L;
+        final long n4 = t.getEntityId() * 493286711L;
         final long n5 = n4 * n4 * 4392167121L + n4 * 98761L;
         class7351.method22564((((n5 >> 16 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 20 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 24 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f);
-        final double method35701 = MathHelper.method35701(n2, t.field2417, t.getPosX());
-        final double method35702 = MathHelper.method35701(n2, t.field2418, t.getPosY());
-        final double method35703 = MathHelper.method35701(n2, t.field2419, t.getPosZ());
+        final double method35701 = MathHelper.method35701(n2, t.lastTickPosX, t.getPosX());
+        final double method35702 = MathHelper.method35701(n2, t.lastTickPosY, t.getPosY());
+        final double method35703 = MathHelper.method35701(n2, t.lastTickPosZ, t.getPosZ());
         final Vec3d method35704 = t.method2132(method35701, method35702, method35703);
-        float method35705 = MathHelper.method35700(n2, t.field2402, t.field2400);
+        float method35705 = MathHelper.method35700(n2, t.prevRotationPitch, t.rotationPitch);
         if (method35704 != null) {
             Vec3d method35706 = t.method2131(method35701, method35702, method35703, 0.30000001192092896);
             Vec3d method35707 = t.method2131(method35701, method35702, method35703, -0.30000001192092896);

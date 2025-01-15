@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
 import org.apache.logging.log4j.Logger;
@@ -67,7 +69,7 @@ public class Class8071
                     this.method26486(method6701, this.field33252, this.field33251);
                 }
                 else {
-                    this.field33247.method6780(this.field33248.method1643(), this.field33252, -1);
+                    this.field33247.method6780(this.field33248.getEntityId(), this.field33252, -1);
                     this.field33257 = -1;
                     this.field33250 = false;
                 }
@@ -88,10 +90,10 @@ public class Class8071
     }
     
     private float method26486(final Class7096 class7096, final BlockPos class7097, final int n) {
-        final float n2 = class7096.method21719(this.field33248, this.field33248.field2391, class7097) * (this.field33253 - n + 1);
+        final float n2 = class7096.method21719(this.field33248, this.field33248.world, class7097) * (this.field33253 - n + 1);
         final int field33257 = (int)(n2 * 10.0f);
         if (field33257 != this.field33257) {
-            this.field33247.method6780(this.field33248.method1643(), class7097, field33257);
+            this.field33247.method6780(this.field33248.getEntityId(), class7097, field33257);
             this.field33257 = field33257;
         }
         return n2;
@@ -109,10 +111,10 @@ public class Class8071
                             this.field33250 = false;
                             if (!Objects.equals(this.field33252, field33255)) {
                                 Class8071.field33246.warn("Mismatch in destroy block pos: " + this.field33252 + " " + field33255);
-                                this.field33247.method6780(this.field33248.method1643(), this.field33252, -1);
+                                this.field33247.method6780(this.field33248.getEntityId(), this.field33252, -1);
                                 this.field33248.field3039.method17469(new Class4320(this.field33252, this.field33247.method6701(this.field33252), class2003, true, "aborted mismatched destroying"));
                             }
-                            this.field33247.method6780(this.field33248.method1643(), field33255, -1);
+                            this.field33247.method6780(this.field33248.getEntityId(), field33255, -1);
                             this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, true, "aborted destroying"));
                         }
                     }
@@ -121,9 +123,9 @@ public class Class8071
                             final int n5 = this.field33253 - this.field33251;
                             final Class7096 method6701 = this.field33247.method6701(field33255);
                             if (!method6701.method21706()) {
-                                if (method6701.method21719(this.field33248, this.field33248.field2391, field33255) * (n5 + 1) >= 0.7f) {
+                                if (method6701.method21719(this.field33248, this.field33248.world, field33255) * (n5 + 1) >= 0.7f) {
                                     this.field33250 = false;
-                                    this.field33247.method6780(this.field33248.method1643(), field33255, -1);
+                                    this.field33247.method6780(this.field33248.getEntityId(), field33255, -1);
                                     this.method26487(field33255, class2003, "destroyed");
                                     return;
                                 }
@@ -162,7 +164,7 @@ public class Class8071
                     final Class7096 method6703 = this.field33247.method6701(field33255);
                     if (!method6703.method21706()) {
                         method6703.method21745(this.field33247, field33255, this.field33248);
-                        method6702 = method6703.method21719(this.field33248, this.field33248.field2391, field33255);
+                        method6702 = method6703.method21719(this.field33248, this.field33248.world, field33255);
                     }
                     if (!method6703.method21706() && method6702 >= 1.0f) {
                         this.method26487(field33255, class2003, "insta mine");
@@ -172,9 +174,9 @@ public class Class8071
                             this.field33248.field3039.method17469(new Class4320(this.field33252, this.field33247.method6701(this.field33252), Class2003.field11240, false, "abort destroying since another started (client insta mine, server disagreed)"));
                         }
                         this.field33250 = true;
-                        this.field33252 = field33255.method1153();
+                        this.field33252 = field33255.toImmutable();
                         final int field33256 = (int)(method6702 * 10.0f);
-                        this.field33247.method6780(this.field33248.method1643(), field33255, field33256);
+                        this.field33247.method6780(this.field33248.getEntityId(), field33255, field33256);
                         this.field33248.field3039.method17469(new Class4320(field33255, this.field33247.method6701(field33255), class2003, true, "actual start of destroying"));
                         this.field33257 = field33256;
                     }
@@ -241,7 +243,7 @@ public class Class8071
         return true;
     }
     
-    public Class2201 method26479(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515) {
+    public Class2201 method26479(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515) {
         if (this.field33249 == Class101.field301) {
             return Class2201.field13402;
         }
@@ -286,7 +288,7 @@ public class Class8071
         return Class2201.field13402;
     }
     
-    public Class2201 method26480(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         final BlockPos method21447 = class516.method21447();
         final Class7096 method21448 = class513.method6701(method21447);
         if (this.field33249 != Class101.field301) {

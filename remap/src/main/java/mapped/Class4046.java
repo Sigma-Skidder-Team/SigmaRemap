@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.StringUtils;
 

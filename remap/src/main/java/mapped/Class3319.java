@@ -44,7 +44,7 @@ public class Class3319 extends Class3167
                         final ITextComponent class5745 = (method17371 == null) ? null : method17371.method32732();
                         if (method17371 != null && this.field15919.contains(uuid)) {
                             if (class5745 == null) {
-                                Class9463.method35173().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished !!" + method17371.method32732().method8459(), 5500));
+                                Class9463.method35173().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished !!" + method17371.method32732().getUnformattedComponentText(), 5500));
                             }
                             else {
                                 Class9463.method35173().method35197().method25776(new Class6224("Vanish Warning", method17371.method32732().getString() + " is no longer Vanished.", 5500));

@@ -17,9 +17,13 @@ import java.util.function.Predicate;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.Optional;
 import java.util.Random;
@@ -132,7 +136,7 @@ public class Class8792
         return this.field36970 == Class302.field1760;
     }
     
-    public Class1847 method30624() {
+    public World method30624() {
         return this.field36958;
     }
     
@@ -289,7 +293,7 @@ public class Class8792
                         this.field36965.method21070(Class8792.field36948);
                     }
                     else {
-                        this.field36965.method21070(Class8792.field36948.method8495().method8457(" - ").method8458(new Class2259("event.minecraft.raid.raiders_remaining", new Object[] { method30648 })));
+                        this.field36965.method21070(Class8792.field36948.method8495().appendText(" - ").appendSibling(new Class2259("event.minecraft.raid.raiders_remaining", new Object[] { method30648 })));
                     }
                 }
                 int n3 = 0;
@@ -321,13 +325,13 @@ public class Class8792
                                 final Iterator<UUID> iterator = this.field36955.iterator();
                                 while (iterator.hasNext()) {
                                     final Entity method30649 = this.field36958.method6914(iterator.next());
-                                    if (!(method30649 instanceof Class511)) {
+                                    if (!(method30649 instanceof LivingEntity)) {
                                         continue;
                                     }
-                                    if (method30649.method1639()) {
+                                    if (method30649.isSpectator()) {
                                         continue;
                                     }
-                                    final Class511 class355 = (Class511)method30649;
+                                    final LivingEntity class355 = (LivingEntity)method30649;
                                     class355.method2655(new Class1948(Class9439.field40505, 48000, this.field36962 - 1, false, false, true));
                                     if (!(class355 instanceof Class513)) {
                                         continue;
@@ -398,10 +402,10 @@ public class Class8792
         while (iterator.hasNext()) {
             for (final Class776 class776 : iterator.next()) {
                 final BlockPos class777 = new BlockPos(class776);
-                if (!class776.field2410) {
-                    if (class776.field2452 == this.field36958.method6789().method20487()) {
+                if (!class776.removed) {
+                    if (class776.dimension == this.field36958.method6789().getType()) {
                         if (this.field36957.distanceSq(class777) < 12544.0) {
-                            if (class776.field2424 <= 600) {
+                            if (class776.ticksExisted <= 600) {
                                 continue;
                             }
                             if (this.field36958.method6914(class776.method1865()) == null) {
@@ -501,10 +505,10 @@ public class Class8792
             class776.method4299(0);
             if (!b) {
                 if (class777 != null) {
-                    class776.method1656(class777.getX() + 0.5, class777.getY() + 1.0, class777.getZ() + 0.5);
+                    class776.setPosition(class777.getX() + 0.5, class777.getY() + 1.0, class777.getZ() + 0.5);
                     class776.method4188(this.field36958, this.field36958.method6784(class777), Class2101.field12181, null, null);
                     class776.method4263(n, false);
-                    class776.field2404 = true;
+                    class776.onGround = true;
                     this.field36958.method6886(class776);
                 }
             }
@@ -563,7 +567,7 @@ public class Class8792
     public static ItemStack method30651() {
         final ItemStack class8321 = new ItemStack(Class7739.field31556);
         class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field837, Class181.field546).method33336(Class230.field817, Class181.field545).method33336(Class230.field821, Class181.field544).method33336(Class230.field842, Class181.field545).method33336(Class230.field822, Class181.field552).method33336(Class230.field839, Class181.field545).method33336(Class230.field836, Class181.field545).method33336(Class230.field842, Class181.field552).method33337());
-        class8321.method27665(new Class2259("block.minecraft.ominous_banner", new Object[0]).method8469(Class2116.field12315));
+        class8321.method27665(new Class2259("block.minecraft.ominous_banner", new Object[0]).applyTextStyle(TextFormatting.GOLD));
         return class8321;
     }
     
@@ -575,12 +579,12 @@ public class Class8792
     @Nullable
     private BlockPos method30653(final int n, final int n2) {
         final int n3 = (n != 0) ? (2 - n) : 2;
-        final Class385 class385 = new Class385();
+        final Mutable class385 = new Mutable();
         for (int i = 0; i < n2; ++i) {
             final float n4 = this.field36958.field10062.nextFloat() * 6.2831855f;
             final int n5 = this.field36957.getX() + MathHelper.method35642(MathHelper.cos(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
             final int n6 = this.field36957.getZ() + MathHelper.method35642(MathHelper.sin(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
-            class385.method1284(n5, this.field36958.method6699(Class2020.field11522, n5, n6), n6);
+            class385.setPos(n5, this.field36958.method6699(Class2020.field11522, n5, n6), n6);
             if (!this.field36958.method6922(class385) || n >= 2) {
                 if (this.field36958.method6973(class385.getX() - 10, class385.getY() - 10, class385.getZ() - 10, class385.getX() + 10, class385.getY() + 10, class385.getZ() + 10)) {
                     if (this.field36958.method6904().method7409(new Class7859(class385))) {
@@ -759,7 +763,7 @@ public class Class8792
         field36948 = new Class2259("event.minecraft.raid", new Object[0]);
         field36949 = new Class2259("event.minecraft.raid.victory", new Object[0]);
         field36950 = new Class2259("event.minecraft.raid.defeat", new Object[0]);
-        field36951 = Class8792.field36948.method8495().method8457(Class8792.\ub327\u3df9\u97e7\u6a3c\u5691\uca70[16]).method8458(Class8792.field36949);
-        field36952 = Class8792.field36948.method8495().method8457(Class8792.\ub327\u3df9\u97e7\u6a3c\u5691\uca70[16]).method8458(Class8792.field36950);
+        field36951 = Class8792.field36948.method8495().appendText(Class8792.\ub327\u3df9\u97e7\u6a3c\u5691\uca70[16]).appendSibling(Class8792.field36949);
+        field36952 = Class8792.field36948.method8495().appendText(Class8792.\ub327\u3df9\u97e7\u6a3c\u5691\uca70[16]).appendSibling(Class8792.field36950);
     }
 }

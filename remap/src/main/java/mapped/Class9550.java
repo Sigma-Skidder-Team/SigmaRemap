@@ -6,6 +6,8 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
+import net.minecraft.world.World;
+
 import java.util.Map;
 
 public class Class9550
@@ -15,7 +17,7 @@ public class Class9550
     private final Class4148 field41127;
     private Class1844 field41128;
     public Class1663 field41129;
-    public Class1847 field41130;
+    public World field41130;
     public Class6092 field41131;
     public Class7006 field41132;
     public Class436 field41133;
@@ -53,7 +55,7 @@ public class Class9550
         return (Class4158)this.field41125.get(e.method2206());
     }
     
-    public void method35725(final Class1847 class1847, final Class1663 field41129, final Class1844 field41130, final Class6092 field41131, final Class7006 field41132) {
+    public void method35725(final World class1847, final Class1663 field41129, final Class1844 field41130, final Class6092 field41131, final Class7006 field41132) {
         if (this.field41130 != class1847) {
             this.method35730(class1847);
         }
@@ -89,7 +91,7 @@ public class Class9550
     }
     
     private static <T extends Class436> void method35727(final Class4158<T> class4158, final T t, final float n, final Class7351 class4159, final Class7807 class4160) {
-        final Class1847 method2186 = t.method2186();
+        final World method2186 = t.method2186();
         int method2187;
         if (method2186 == null) {
             method2187 = 15728880;
@@ -123,7 +125,7 @@ public class Class9550
         }
     }
     
-    public void method35730(final Class1847 field41130) {
+    public void method35730(final World field41130) {
         this.field41130 = field41130;
         if (field41130 == null) {
             this.field41131 = null;

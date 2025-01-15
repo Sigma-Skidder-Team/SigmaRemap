@@ -72,7 +72,7 @@ public class Class561 extends Class527
         this.field3347.method2975(n, n2, n3);
         Class8726.method30059();
         Class8726.method30065(0.0f, 0.0f, 400.0f);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 8, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
         this.method3297(this.field3156, this.field3345, 50, 30, 10526880);
         this.method3297(this.field3156, this.field3346, 50, 70, 10526880);
         Class8726.method30060();

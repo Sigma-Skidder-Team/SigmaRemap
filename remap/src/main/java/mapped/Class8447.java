@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.Set;
 import java.util.LinkedHashMap;
 import java.util.Map;

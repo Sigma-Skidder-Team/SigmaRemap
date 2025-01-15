@@ -31,11 +31,11 @@ public abstract class Class6842 extends Class6831
                 this.field26859 = true;
             }
         }
-        if (!this.field26858.field2410 && !this.field26859) {
+        if (!this.field26858.removed && !this.field26859) {
             this.field26837 = (float)this.field26858.getPosX();
             this.field26838 = (float)this.field26858.getPosY();
             this.field26839 = (float)this.field26858.getPosZ();
-            final float method35641 = MathHelper.sqrt(Entity.method1680(this.field26858.method1935()));
+            final float method35641 = MathHelper.sqrt(Entity.method1680(this.field26858.getMotion()));
             if (method35641 < 0.01) {
                 this.field26836 = 0.0f;
                 this.field26835 = 0.0f;

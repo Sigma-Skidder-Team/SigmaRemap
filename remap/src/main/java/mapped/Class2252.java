@@ -6,12 +6,13 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import org.apache.logging.log4j.Logger;
 
-public class Class2252 extends Class2251 implements Class2253
+public class Class2252 extends TextComponent implements Class2253
 {
     private static final Logger field13793;
     private final String field13794;
@@ -35,11 +36,11 @@ public class Class2252 extends Class2251 implements Class2253
     
     @Override
     public ITextComponent method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
-        return (class7492 != null && this.field13795 != null) ? Class9043.method32517(this.field13795.method32511(class7492)) : new Class2260("");
+        return (class7492 != null && this.field13795 != null) ? Class9043.method32517(this.field13795.method32511(class7492)) : new StringTextComponent("");
     }
     
     @Override
-    public String method8459() {
+    public String getUnformattedComponentText() {
         return this.field13794;
     }
     
@@ -54,7 +55,7 @@ public class Class2252 extends Class2251 implements Class2253
     
     @Override
     public String toString() {
-        return "SelectorComponent{pattern='" + this.field13794 + '\'' + ", siblings=" + this.field13791 + ", style=" + this.method8456() + '}';
+        return "SelectorComponent{pattern='" + this.field13794 + '\'' + ", siblings=" + this.siblings + ", style=" + this.getStyle() + '}';
     }
     
     static {

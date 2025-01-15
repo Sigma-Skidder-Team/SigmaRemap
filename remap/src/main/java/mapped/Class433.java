@@ -5,6 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;
@@ -16,23 +21,23 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     private Class1932 field2647;
     private long field2648;
     
-    public Class433(final EntityType<?> class7499, final Class1847 class7500) {
+    public Class433(final EntityType<?> class7499, final World class7500) {
         super(class7499, class7500);
         this.field2645 = Class2265.method8507(36, ItemStack.field34174);
         this.field2646 = true;
     }
     
-    public Class433(final EntityType<?> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
+    public Class433(final EntityType<?> class7499, final double n, final double n2, final double n3, final World class7500) {
         super(class7499, class7500, n, n2, n3);
         this.field2645 = Class2265.method8507(36, ItemStack.field34174);
         this.field2646 = true;
     }
     
     @Override
-    public void method2123(final Class7929 class7929) {
+    public void method2123(final DamageSource class7929) {
         super.method2123(class7929);
-        if (this.field2391.method6765().method31216(Class8878.field37321)) {
-            Class9193.method33639(this.field2391, this, this);
+        if (this.world.method6765().method31216(Class8878.field37321)) {
+            Class9193.method33639(this.world, this, this);
         }
     }
     
@@ -97,21 +102,21 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     @Override
     public boolean method2162(final Class512 class512) {
-        return !this.field2410 && class512.method1734(this) <= 64.0;
+        return !this.removed && class512.method1734(this) <= 64.0;
     }
     
     @Nullable
     @Override
-    public Entity method1854(final Class383 class383) {
+    public Entity method1854(final DimensionType class383) {
         this.field2646 = false;
         return super.method1854(class383);
     }
     
     @Override
     public void method1652() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.field2646) {
-                Class9193.method33639(this.field2391, this, this);
+                Class9193.method33639(this.world, this, this);
             }
         }
         super.method1652();
@@ -156,15 +161,15 @@ public abstract class Class433 extends Class428 implements Class446, Class434
         if (this.field2647 == null) {
             n += (15 - Class3418.method10898(this)) * 0.001f;
         }
-        this.method1936(this.method1935().mul(n, 0.0, n));
+        this.method1936(this.getMotion().mul(n, 0.0, n));
     }
     
     public void method2163(final Class512 class512) {
         if (this.field2647 != null) {
-            if (this.field2391.method6679() != null) {
-                final Class9317 method6402 = this.field2391.method6679().method1581().method6402(this.field2647);
+            if (this.world.method6679() != null) {
+                final Class9317 method6402 = this.world.method6679().method1581().method6402(this.field2647);
                 this.field2647 = null;
-                final Class9098 method6403 = new Class9098((Class1849)this.field2391).method32877(Class6683.field26367, new BlockPos(this)).method32874(this.field2648);
+                final Class9098 method6403 = new Class9098((Class1849)this.world).method32877(Class6683.field26367, new BlockPos(this)).method32874(this.field2648);
                 if (class512 != null) {
                     method6403.method32876(class512.method2907()).method32877(Class6683.field26362, class512);
                 }
@@ -187,7 +192,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     @Nullable
     @Override
     public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
-        if (this.field2647 != null && class465.method1639()) {
+        if (this.field2647 != null && class465.isSpectator()) {
             return null;
         }
         this.method2163(class464.field2744);

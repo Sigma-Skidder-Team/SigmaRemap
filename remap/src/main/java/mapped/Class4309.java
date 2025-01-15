@@ -7,7 +7,7 @@ package mapped;
 import java.io.IOException;
 import java.security.PublicKey;
 
-public class Class4309 implements Class4252<Class5807>
+public class Class4309 implements IPacket<Class5807>
 {
     private static String[] field19317;
     private String field19318;
@@ -24,14 +24,14 @@ public class Class4309 implements Class4252<Class5807>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19318 = class8654.method29513(20);
         this.field19319 = Class9359.method34701(class8654.method29486());
         this.field19320 = class8654.method29486();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29514(this.field19318);
         class8654.method29485(this.field19319.getEncoded());
         class8654.method29485(this.field19320);

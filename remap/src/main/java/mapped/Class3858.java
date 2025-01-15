@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -20,12 +21,12 @@ public class Class3858 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.method6701(class7098.method1137()).method21706()) {
-            class7099.method1836(class7096.method21772((Class7111<Boolean>)Class3858.field17478));
+            class7099.onEnterBubbleColumn(class7096.method21772((Class7111<Boolean>)Class3858.field17478));
         }
         else {
-            class7099.method1835(class7096.method21772((Class7111<Boolean>)Class3858.field17478));
+            class7099.onEnterBubbleColumnWithAirAbove(class7096.method21772((Class7111<Boolean>)Class3858.field17478));
             if (!class7097.field10067) {
                 final Class1849 class7100 = (Class1849)class7097;
                 for (int i = 0; i < 2; ++i) {
@@ -37,7 +38,7 @@ public class Class3858 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         method11923(class7097, class7098.method1137(), method11925(class7097, class7098.method1139()));
     }
     
@@ -84,7 +85,7 @@ public class Class3858 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         final double n = class7098.getX();
         final double n2 = class7098.getY();
         final double n3 = class7098.getZ();
@@ -138,7 +139,7 @@ public class Class3858 extends Class3833 implements Class3857
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24486();
     }
     

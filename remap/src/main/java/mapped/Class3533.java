@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+
 public class Class3533 extends Class3531
 {
     private static String[] field16565;
@@ -18,7 +21,7 @@ public class Class3533 extends Class3531
     
     @Override
     public boolean method11013() {
-        return super.method11013() && Class771.method4273(this.field16567).nextInt(8) + 1 > this.field16567.field2391.method7142((Class<? extends Class511>)Class843.class, this.field16566, (Class511)this.field16567, this.field16567.method1886().method18496(16.0)).size();
+        return super.method11013() && Class771.method4273(this.field16567).nextInt(8) + 1 > this.field16567.world.method7142((Class<? extends LivingEntity>)Class843.class, this.field16566, (LivingEntity)this.field16567, this.field16567.method1886().method18496(16.0)).size();
     }
     
     @Override
@@ -34,14 +37,14 @@ public class Class3533 extends Class3531
     @Override
     public void method11082() {
         for (int i = 0; i < 3; ++i) {
-            final BlockPos method1134 = new BlockPos(this.field16567).method1134(-2 + Class771.method4274(this.field16567).nextInt(5), 1, -2 + Class771.method4275(this.field16567).nextInt(5));
-            final Class843 class843 = EntityType.field29041.method23371(this.field16567.field2391);
+            final BlockPos method1134 = new BlockPos(this.field16567).add(-2 + Class771.method4274(this.field16567).nextInt(5), 1, -2 + Class771.method4275(this.field16567).nextInt(5));
+            final Class843 class843 = EntityType.field29041.method23371(this.field16567.world);
             class843.method1729(method1134, 0.0f, 0.0f);
-            class843.method4188(this.field16567.field2391, this.field16567.field2391.method6784(method1134), Class2101.field12179, null, null);
+            class843.method4188(this.field16567.world, this.field16567.world.method6784(method1134), Class2101.field12179, null, null);
             class843.method5043(this.field16567);
             class843.method5038(method1134);
             class843.method5044(20 * (30 + Class771.method4276(this.field16567).nextInt(90)));
-            this.field16567.field2391.method6886(class843);
+            this.field16567.world.method6886(class843);
         }
     }
     

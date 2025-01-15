@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.EnumSet;
@@ -12,7 +13,7 @@ public class Class3466 extends Class3446
 {
     private static String[] field16332;
     private final Class787 field16333;
-    private Class511 field16334;
+    private LivingEntity field16334;
     private double field16335;
     private double field16336;
     private double field16337;

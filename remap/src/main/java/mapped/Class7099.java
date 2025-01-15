@@ -13,6 +13,7 @@ import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -44,7 +45,7 @@ public interface Class7099 extends Class7098<Class7099>
     default boolean method21785(final Class1855 class1855, final BlockPos class1856) {
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
-                final BlockPos method1134 = class1856.method1134(i, 0, j);
+                final BlockPos method1134 = class1856.add(i, 0, j);
                 if (!class1855.method6702(method1134).method21779().method22165(this.method21779()) && !class1855.method6701(method1134).method21722(class1855, method1134)) {
                     return true;
                 }
@@ -53,11 +54,11 @@ public interface Class7099 extends Class7098<Class7099>
         return false;
     }
     
-    default void method21786(final Class1847 class1847, final BlockPos class1848) {
+    default void method21786(final World class1847, final BlockPos class1848) {
         this.method21779().method22151(class1847, class1848, this);
     }
     
-    default void method21787(final Class1847 class1847, final BlockPos class1848, final Random random) {
+    default void method21787(final World class1847, final BlockPos class1848, final Random random) {
         this.method21779().method22150(class1847, class1848, this, random);
     }
     
@@ -65,7 +66,7 @@ public interface Class7099 extends Class7098<Class7099>
         return this.method21779().method22157();
     }
     
-    default void method21789(final Class1847 class1847, final BlockPos class1848, final Random random) {
+    default void method21789(final World class1847, final BlockPos class1848, final Random random) {
         this.method21779().method22152(class1847, class1848, this, random);
     }
     

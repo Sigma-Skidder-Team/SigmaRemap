@@ -8,6 +8,8 @@ import java.util.AbstractCollection;
 import java.util.AbstractList;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.shorts.ShortListIterator;
 import it.unimi.dsi.fastutil.shorts.ShortList;
@@ -86,7 +88,7 @@ public class Class7532
             }
             if (!method7441) {
                 if (class1858.method7027().method34451(Class9312.field39986)) {
-                    for (final BlockPos class1860 : BlockPos.method1158(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
+                    for (final BlockPos class1860 : BlockPos.getAllInBoxMutable(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
                         if (class1859.method6701(class1860).method21704() == 0) {
                             continue;
                         }
@@ -305,7 +307,7 @@ public class Class7532
     
     private static void method23595(final Class51 class51, final Class1862 class52) {
         final Class52 method328 = class51.method328("Entities", 10);
-        final Class1847 method329 = class52.method7065();
+        final World method329 = class52.method7065();
         for (int i = 0; i < method328.size(); ++i) {
             EntityType.method23378(method328.method346(i), method329, class55 -> {
                 class53.method7010(class55);

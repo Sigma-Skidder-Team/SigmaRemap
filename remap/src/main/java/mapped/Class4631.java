@@ -7,6 +7,7 @@ package mapped;
 import java.util.Collection;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 
 public class Class4631 extends Class4611<Class4231>
 {

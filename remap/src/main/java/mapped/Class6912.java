@@ -25,7 +25,7 @@ public class Class6912 implements Class6909
     }
     
     @Override
-    public void method21273(final Class8654 class8654) {
+    public void method21273(final PacketBuffer class8654) {
         class8654.writeFloat(this.field27103);
         class8654.writeFloat(this.field27104);
         class8654.writeFloat(this.field27105);

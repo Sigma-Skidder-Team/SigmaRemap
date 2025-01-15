@@ -31,9 +31,9 @@ public class Class9253
             return true;
         }
         if (!this.field39689.contains(class399)) {
-            this.field39687.field2391.method6796().method15297("canSee");
+            this.field39687.world.method6796().method15297("canSee");
             final boolean method2747 = this.field39687.method2747(class399);
-            this.field39687.field2391.method6796().method15299();
+            this.field39687.world.method6796().method15299();
             if (!method2747) {
                 this.field39689.add(class399);
             }

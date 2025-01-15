@@ -38,11 +38,11 @@ public class Class632 extends Class623<Class632>
     }
     
     public String method3643() {
-        return this.field3621.method7617().method8461();
+        return this.field3621.method7617().getFormattedText();
     }
     
     public String method3644() {
-        return this.field3621.method7616().method8461();
+        return this.field3621.method7616().getFormattedText();
     }
     
     public Class1922 method3645() {
@@ -71,7 +71,7 @@ public class Class632 extends Class623<Class632>
                     final int n10 = n7 - n2;
                     if (!method3642.method8043()) {
                         s = Class615.method3592().method8461();
-                        s2 = method3642.method8045().method8461();
+                        s2 = method3642.method8045().getFormattedText();
                     }
                     if (!this.method3647()) {
                         if (this.method3648()) {

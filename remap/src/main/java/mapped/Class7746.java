@@ -8,6 +8,7 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -18,7 +19,7 @@ import javax.annotation.Nullable;
 public abstract class Class7746
 {
     public final Class759 field31657;
-    public final Class1847 field31658;
+    public final World field31658;
     public Class9468 field31659;
     public double field31660;
     private final Class7619 field31661;
@@ -38,7 +39,7 @@ public abstract class Class7746
     private float field31675;
     private final Class7914 field31676;
     
-    public Class7746(final Class759 field31657, final Class1847 field31658) {
+    public Class7746(final Class759 field31657, final World field31658) {
         this.field31664 = Vec3d.ZERO;
         this.field31665 = Vec3d.ZERO;
         this.field31669 = 0.5f;
@@ -123,7 +124,7 @@ public abstract class Class7746
             final float n2 = (float)this.field31661.method23950();
             final BlockPos class354 = b ? new BlockPos(this.field31657).method1137() : new BlockPos(this.field31657);
             final int n3 = (int)(n2 + n);
-            final Class9468 method25625 = this.field31676.method25625(new Class1854(this.field31658, class354.method1134(-n3, -n3, -n3), class354.method1134(n3, n3, n3)), this.field31657, set, n2, field31674, this.field31675);
+            final Class9468 method25625 = this.field31676.method25625(new Class1854(this.field31658, class354.add(-n3, -n3, -n3), class354.add(n3, n3, n3)), this.field31657, set, n2, field31674, this.field31675);
             this.field31658.method6796().method15299();
             if (method25625 != null) {
                 if (method25625.method35232() != null) {
@@ -184,7 +185,7 @@ public abstract class Class7746
                         final Vec3d method24734 = this.method24734();
                         final Vec3d method24735 = this.field31659.method35224(this.field31657, this.field31659.method35222());
                         if (method24734.y > method24735.y) {
-                            if (!this.field31657.field2404) {
+                            if (!this.field31657.onGround) {
                                 if (MathHelper.floor(method24734.x) == MathHelper.floor(method24735.x)) {
                                     if (MathHelper.floor(method24734.z) == MathHelper.floor(method24735.z)) {
                                         this.field31659.method35223(this.field31659.method35222() + 1);

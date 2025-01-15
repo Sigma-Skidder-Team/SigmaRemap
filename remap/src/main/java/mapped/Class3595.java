@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3595<T extends Class763 & Class768 & Class774> extends Class3446
@@ -64,7 +66,7 @@ public class Class3595<T extends Class763 & Class768 & Class774> extends Class34
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16745.method4152();
+        final LivingEntity method4152 = this.field16745.method4152();
         if (method4152 != null) {
             final boolean method4153 = this.field16745.method4151().method34143(method4152);
             if (method4153 != this.field16749 > 0) {

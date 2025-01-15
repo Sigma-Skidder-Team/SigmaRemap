@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 
 public class Class3478 extends Class3446
@@ -23,7 +25,7 @@ public class Class3478 extends Class3446
     public boolean method11013() {
         if (this.field16388 <= 0) {
             this.field16388 = 60;
-            final List<Class512> method7141 = this.field16389.field2391.method7141(this.field16387, this.field16389, this.field16389.method1886().method18495(16.0, 64.0, 16.0));
+            final List<Class512> method7141 = this.field16389.world.method7141(this.field16387, this.field16389, this.field16389.method1886().method18495(16.0, 64.0, 16.0));
             if (!method7141.isEmpty()) {
                 method7141.sort((class513, class514) -> (class513.getPosY() <= class514.getPosY()) ? 1 : -1);
                 for (final Class512 class512 : method7141) {
@@ -42,7 +44,7 @@ public class Class3478 extends Class3446
     
     @Override
     public boolean method11017() {
-        final Class511 method4152 = this.field16389.method4152();
+        final LivingEntity method4152 = this.field16389.method4152();
         return method4152 != null && this.field16389.method2647(method4152, Class7843.field32117);
     }
 }

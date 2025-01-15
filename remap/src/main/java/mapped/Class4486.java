@@ -13,7 +13,7 @@ public class Class4486 extends Class4484
 {
     private static String[] field19879;
     
-    public Class4486(final int n, final Random random, final Class6997 field19849, final Direction class179) {
+    public Class4486(final int n, final Random random, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40954, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -29,12 +29,12 @@ public class Class4486 extends Class4484
     }
     
     public static Class4486 method13479(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -5, -3, 0, 13, 14, 13, class179);
+        final MutableBoundingBox method21408 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -5, -3, 0, 13, 14, 13, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4486(n4, random, method21408, class179) : null;
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13444(class1851, class1853, 0, 3, 0, 12, 4, 12, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 0, 5, 0, 12, 13, 12, Class7521.field29147.method11878(), Class7521.field29147.method11878(), false);
         this.method13444(class1851, class1853, 0, 5, 0, 1, 12, 12, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
@@ -96,7 +96,7 @@ public class Class4486 extends Class4484
         this.method13440(class1851, Class7521.field29394.method11878(), 6, 0, 6, class1853);
         this.method13440(class1851, Class7521.field29174.method11878(), 6, 5, 6, class1853);
         final BlockPos class1857 = new BlockPos(this.method13437(6, 6), this.method13438(5), this.method13439(6, 6));
-        if (class1853.method21415(class1857)) {
+        if (class1853.isVecInside(class1857)) {
             class1851.method6834().method21345(class1857, Class7558.field29978, 0);
         }
         return true;

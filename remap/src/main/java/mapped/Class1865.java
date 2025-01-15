@@ -7,6 +7,7 @@ package mapped;
 import java.util.AbstractCollection;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import java.util.Collections;
@@ -84,7 +85,7 @@ public class Class1865 implements Class1860
     @Override
     public Class7096 method6701(final BlockPos class354) {
         final int method1075 = class354.getY();
-        if (!Class1847.method6684(method1075)) {
+        if (!World.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
             return Class8199.method27155(class355) ? Class7521.field29147.method11878() : class355.method27148(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
         }
@@ -94,7 +95,7 @@ public class Class1865 implements Class1860
     @Override
     public Class7099 method6702(final BlockPos class354) {
         final int method1075 = class354.getY();
-        if (!Class1847.method6684(method1075)) {
+        if (!World.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
             return Class8199.method27155(class355) ? Class7558.field29974.method22148() : class355.method27149(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
         }
@@ -119,7 +120,7 @@ public class Class1865 implements Class1860
     }
     
     public void method7092(final BlockPos class354) {
-        this.field10179.add(class354.method1153());
+        this.field10179.add(class354.toImmutable());
     }
     
     @Nullable
@@ -351,7 +352,7 @@ public class Class1865 implements Class1860
     
     @Override
     public void method7029(final BlockPos class354) {
-        if (!Class1847.method6683(class354)) {
+        if (!World.method6683(class354)) {
             Class1860.method7042(this.field10180, class354.getY() >> 4).add(method7100(class354));
         }
     }

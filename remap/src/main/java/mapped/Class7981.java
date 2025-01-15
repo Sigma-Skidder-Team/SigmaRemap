@@ -17,6 +17,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class Class7981
 {
@@ -46,10 +47,10 @@ public class Class7981
             intValue = n;
         }
         for (final Entity class7494 : collection) {
-            if (!(class7494 instanceof Class511)) {
+            if (!(class7494 instanceof LivingEntity)) {
                 continue;
             }
-            if (!((Class511)class7494).method2655(new Class1948(class7493, intValue, n2, false, b))) {
+            if (!((LivingEntity)class7494).method2655(new Class1948(class7493, intValue, n2, false, b))) {
                 continue;
             }
             ++n3;
@@ -69,10 +70,10 @@ public class Class7981
     private static int method26022(final Class7492 class7492, final Collection<? extends Entity> collection) throws CommandSyntaxException {
         int n = 0;
         for (final Entity class7493 : collection) {
-            if (!(class7493 instanceof Class511)) {
+            if (!(class7493 instanceof LivingEntity)) {
                 continue;
             }
-            if (!((Class511)class7493).method2650()) {
+            if (!((LivingEntity)class7493).method2650()) {
                 continue;
             }
             ++n;
@@ -92,10 +93,10 @@ public class Class7981
     private static int method26023(final Class7492 class7492, final Collection<? extends Entity> collection, final Class5328 class7493) throws CommandSyntaxException {
         int n = 0;
         for (final Entity class7494 : collection) {
-            if (!(class7494 instanceof Class511)) {
+            if (!(class7494 instanceof LivingEntity)) {
                 continue;
             }
-            if (!((Class511)class7494).method2659(class7493)) {
+            if (!((LivingEntity)class7494).method2659(class7493)) {
                 continue;
             }
             ++n;

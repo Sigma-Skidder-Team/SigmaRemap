@@ -52,7 +52,7 @@ public class Class3637 extends Class3446
                 this.field16880.method1695(this.field16880.method4260(), Class776.method4302(this.field16880), Class776.method4303(this.field16880));
             }
         }
-        if (!this.field16879.method1805()) {
+        if (!this.field16879.isPassenger()) {
             if (Class776.method4304(this.field16879).nextInt(50) == 0) {
                 this.field16879.method4149().method22382();
             }

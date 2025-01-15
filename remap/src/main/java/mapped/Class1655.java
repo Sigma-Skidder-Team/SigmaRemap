@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.authlib.GameProfile;
 import com.google.common.collect.Lists;
@@ -29,7 +31,7 @@ public class Class1655 extends Class394
     private Class917 field9273;
     private UUID field9274;
     private long field9275;
-    public Class1847 field9276;
+    public World field9276;
     public BlockPos field9277;
     public Class9592 field9278;
     
@@ -66,7 +68,7 @@ public class Class1655 extends Class394
         method25789.method29617(this.method1490(), this.method1492().isPresent());
         this.method1441(method25787.method29392(), method25789);
         this.method1439(method25787, method25789, this.field9270, method25788);
-        if (this.method1481(Class383.field2223).method6764().method29597() == null) {
+        if (this.method1481(DimensionType.field2223).method6764().method29597() == null) {
             this.method1505(this.field9269.field4648.field23463, true);
         }
         this.method1442(method25788);
@@ -86,7 +88,7 @@ public class Class1655 extends Class394
             return false;
         }
         this.method1438(this.method1501(), this.method1503(), this.field9270.method28435(), this.field9270.method28439(), this.field9270.method28441());
-        this.method1533(this.method1498() + " - " + this.method1481(Class383.field2223).method6764().method29549());
+        this.method1533(this.method1498() + " - " + this.method1481(DimensionType.field2223).method6764().method29549());
         return !Class9570.field41425.method22605() || Class9570.method35812(Class9570.field41425, this);
     }
     
@@ -310,7 +312,7 @@ public class Class1655 extends Class394
         }
     }
     
-    public Class9592 method5683(final Class1847 field9276, final BlockPos field9277) {
+    public Class9592 method5683(final World field9276, final BlockPos field9277) {
         this.field9276 = field9276;
         this.field9277 = field9277;
         return this.field9278;

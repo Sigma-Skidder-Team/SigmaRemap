@@ -19,7 +19,7 @@ public class Class3205 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15634 = Class3205.field15514.field4684.field2396;
+        this.field15634 = Class3205.field15514.field4684.posY;
         this.field15632 = 0;
         if (!Class3205.field15514.field4648.field23440.method1056()) {
             if (!Class3205.field15514.field4648.field23440.method1056()) {
@@ -35,7 +35,7 @@ public class Class3205 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3205.field15514.field4684.method1935().y > 0.0) {
+        if (Class3205.field15514.field4684.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -81,12 +81,12 @@ public class Class3205 extends Class3167
                     if (!Class3205.field15514.field4648.field23439.method1056()) {
                         class5717.method16975((this.field15636 && !Class6430.method19160(Class3205.field15514.field4684, 0.01f)) ? (-n / 2.0) : Class7482.method23141());
                         this.field15635 = this.field15634;
-                        this.field15634 = ((this.field15636 && !Class6430.method19160(Class3205.field15514.field4684, 0.01f)) ? (Class3205.field15514.field4684.field2396 + class5717.method16974()) : this.field15634);
+                        this.field15634 = ((this.field15636 && !Class6430.method19160(Class3205.field15514.field4684, 0.01f)) ? (Class3205.field15514.field4684.posY + class5717.method16974()) : this.field15634);
                     }
                     else {
                         class5717.method16975(this.field15636 ? Class7482.method23141() : (n / 2.0));
                         this.field15635 = this.field15634;
-                        this.field15634 = (this.field15636 ? this.field15634 : (Class3205.field15514.field4684.field2396 + class5717.method16974()));
+                        this.field15634 = (this.field15636 ? this.field15634 : (Class3205.field15514.field4684.posY + class5717.method16974()));
                     }
                     Class6430.method19155(class5717.method16974());
                     Class7482.method23149(class5717, n);
@@ -126,10 +126,10 @@ public class Class3205 extends Class3167
     @Class6753
     public void method10060(final Class5723 class5723) {
         if (this.method9906()) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (!(method16998 instanceof Class4328)) {
                 if (method16998 instanceof Class4378) {
-                    final String method16999 = ((Class4378)method16998).method13164().method8461();
+                    final String method16999 = ((Class4378)method16998).method13164().getFormattedText();
                     if (this.field15633 > 0) {
                         if (method16999.contains("Now leaving: §") || method16999.contains("Now entering: §")) {
                             --this.field15633;
@@ -145,8 +145,8 @@ public class Class3205 extends Class3167
                 }
                 this.field15635 = this.field15634;
                 this.field15634 = class5724.field19378;
-                class5724.field19380 = Class3205.field15514.field4684.field2399;
-                class5724.field19381 = Class3205.field15514.field4684.field2400;
+                class5724.field19380 = Class3205.field15514.field4684.rotationYaw;
+                class5724.field19381 = Class3205.field15514.field4684.rotationPitch;
             }
         }
     }
@@ -154,7 +154,7 @@ public class Class3205 extends Class3167
     @Class6753
     public void method10061(final Class5721 class5721) {
         if (this.method9906()) {
-            final Class4252 method16990 = class5721.method16990();
+            final IPacket method16990 = class5721.method16990();
             if (method16990 instanceof Class4353) {
                 final Class4353 class5722 = (Class4353)method16990;
                 if (this.field15632 == -1) {
@@ -169,10 +169,10 @@ public class Class3205 extends Class3167
         if (this.method9906()) {
             final double n = this.field15634 - this.field15635;
             final double field15634 = this.field15634;
-            Class3205.field15514.field4684.field2396 = field15634;
-            Class3205.field15514.field4684.field2418 = field15634;
+            Class3205.field15514.field4684.posY = field15634;
+            Class3205.field15514.field4684.lastTickPosY = field15634;
             Class3205.field15514.field4684.field3019 = field15634;
-            Class3205.field15514.field4684.field2393 = field15634;
+            Class3205.field15514.field4684.prevPosY = field15634;
         }
     }
 }

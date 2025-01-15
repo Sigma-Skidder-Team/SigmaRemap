@@ -23,7 +23,7 @@ public class Class370 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list, final List<BlockPos> list2, final Set<BlockPos> set, final MutableBoundingBox class1852) {
         list2.forEach(class1855 -> {
             if (random2.nextInt(4) == 0) {
                 class1855.method1145();
@@ -56,7 +56,7 @@ public class Class370 extends Class367
         });
     }
     
-    private void method1250(final Class1875 class1875, final BlockPos class1876, final Class7113 class1877, final Set<BlockPos> set, final Class6997 class1878) {
+    private void method1250(final Class1875 class1875, final BlockPos class1876, final Class7113 class1877, final Set<BlockPos> set, final MutableBoundingBox class1878) {
         this.method1242(class1875, class1876, class1877, set, class1878);
         int n = 4;
         for (BlockPos class1879 = class1876.method1139(); Class4592.method13609(class1875, class1879) && n > 0; class1879 = class1879.method1139(), --n) {
@@ -65,7 +65,7 @@ public class Class370 extends Class367
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString())))).getValue();
     }
 }

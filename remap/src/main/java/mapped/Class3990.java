@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -33,7 +34,7 @@ public class Class3990 extends Class3986
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7097.field10067) {
             class7099.method2833(class7096.method21754(class7097, class7098));
             class7099.method2857(Class8276.field34057);
@@ -44,12 +45,12 @@ public class Class3990 extends Class3986
     
     @Nullable
     @Override
-    public Class434 method11827(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public Class434 method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return new Class504((n, class1849, class1850) -> new Class3441(n, class1849, Class7318.method22434(class7097, class7098)), Class3990.field18010);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return (class7096.method21772((Class7111<Direction>)Class3990.field18000).getAxis() != Axis.X) ? Class3990.field18009 : Class3990.field18008;
     }
     
@@ -59,12 +60,12 @@ public class Class3990 extends Class3986
     }
     
     @Override
-    public void method12132(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class7096 class1850) {
+    public void method12132(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class7096 class1850) {
         class1847.method6955(1031, class1848, 0);
     }
     
     @Override
-    public void method12133(final Class1847 class1847, final BlockPos class1848) {
+    public void method12133(final World class1847, final BlockPos class1848) {
         class1847.method6955(1029, class1848, 0);
     }
     

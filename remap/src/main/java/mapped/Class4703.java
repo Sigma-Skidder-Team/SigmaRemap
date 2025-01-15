@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 
 public abstract class Class4703<T extends Entity>
@@ -24,18 +26,18 @@ public abstract class Class4703<T extends Entity>
     }
     
     public final int method13953(final T t, final float n) {
-        return Class392.method1422(this.method13954(t, n), t.field2391.method6992(Class237.field911, new BlockPos(t.method1747(n))));
+        return Class392.method1422(this.method13954(t, n), t.world.method6992(Class237.field911, new BlockPos(t.method1747(n))));
     }
     
     public int method13954(final T t, final float n) {
-        return t.method1804() ? 15 : t.field2391.method6992(Class237.field912, new BlockPos(t.method1747(n)));
+        return t.method1804() ? 15 : t.world.method6992(Class237.field912, new BlockPos(t.method1747(n)));
     }
     
     public boolean method13952(final T t, final Class6664 class6664, final double n, final double n2, final double n3) {
         if (!t.method1752(n, n2, n3)) {
             return false;
         }
-        if (!t.field2447) {
+        if (!t.ignoreFrustumCheck) {
             AxisAlignedBB method18496 = t.method1887().method18496(0.5);
             if (method18496.method18516() || method18496.method18507() == 0.0) {
                 method18496 = new AxisAlignedBB(t.getPosX() - 2.0, t.getPosY() - 2.0, t.getPosZ() - 2.0, t.getPosX() + 2.0, t.getPosY() + 2.0, t.getPosZ() + 2.0);
@@ -51,7 +53,7 @@ public abstract class Class4703<T extends Entity>
     
     public void method13951(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int i) {
         if (Class9570.field41417.method22619()) {
-            final Object method35842 = Class9570.method35842(Class9570.field41417, t, t.getDisplayName().method8461(), this, class7351, class7352, i);
+            final Object method35842 = Class9570.method35842(Class9570.field41417, t, t.getDisplayName().getFormattedText(), this, class7351, class7352, i);
             Class9570.method35841(method35842);
             final Object method35843 = Class9570.method35826(method35842, Class9570.field41226, new Object[0]);
             if (method35843 != Class7667.field30453) {
@@ -61,7 +63,7 @@ public abstract class Class4703<T extends Entity>
             }
         }
         else if (this.method13956(t)) {
-            this.method13958(t, t.getDisplayName().method8461(), class7351, class7352, i);
+            this.method13958(t, t.getDisplayName().getFormattedText(), class7351, class7352, i);
         }
     }
     

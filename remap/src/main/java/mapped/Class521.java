@@ -57,9 +57,9 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     
     @Override
     public void method2973(final int n, final int n2) {
-        final String method8461 = this.field3148.method8461();
+        final String method8461 = this.field3148.getFormattedText();
         this.field3156.method6610(method8461, (float)(this.field3075 / 2 - this.field3156.method6617(method8461) / 2), 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override

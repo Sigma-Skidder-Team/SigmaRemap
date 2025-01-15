@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.function.Predicate;
+import net.minecraft.nbt.CollectionNBT;
+import net.minecraft.nbt.INBT;
+
 import java.util.function.Supplier;
 import java.util.Collection;
 import java.util.List;
@@ -18,22 +20,22 @@ public class Class6101 implements Class6102
     }
     
     @Override
-    public void method18197(final Class41 class41, final List<Class41> list) {
-        if (class41 instanceof Class38) {
-            list.addAll((Collection<? extends Class41>)class41);
+    public void method18197(final INBT class41, final List<INBT> list) {
+        if (class41 instanceof CollectionNBT) {
+            list.addAll((Collection<? extends INBT>)class41);
         }
     }
     
     @Override
-    public void method18198(final Class41 class41, final Supplier<Class41> supplier, final List<Class41> list) {
-        if (class41 instanceof Class38) {
-            final Class38 class42 = (Class38)class41;
+    public void method18198(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
+        if (class41 instanceof CollectionNBT) {
+            final CollectionNBT class42 = (CollectionNBT)class41;
             if (!class42.isEmpty()) {
                 list.addAll(class42);
             }
             else {
-                final Class41 class43 = supplier.get();
-                if (class42.method258(0, class43)) {
+                final INBT class43 = supplier.get();
+                if (class42.func_218660_b(0, class43)) {
                     list.add(class43);
                 }
             }
@@ -41,30 +43,30 @@ public class Class6101 implements Class6102
     }
     
     @Override
-    public Class41 method18199() {
+    public INBT method18199() {
         return new Class52();
     }
     
     @Override
-    public int method18200(final Class41 class41, final Supplier<Class41> supplier) {
-        if (!(class41 instanceof Class38)) {
+    public int method18200(final INBT class41, final Supplier<INBT> supplier) {
+        if (!(class41 instanceof CollectionNBT)) {
             return 0;
         }
-        final Class38 class42 = (Class38)class41;
+        final CollectionNBT class42 = (CollectionNBT)class41;
         final int size = class42.size();
         if (size == 0) {
-            class42.method258(0, supplier.get());
+            class42.func_218660_b(0, supplier.get());
             return 1;
         }
-        final Class41 class43 = supplier.get();
+        final INBT class43 = supplier.get();
         final int n = size - (int)class42.stream().filter(class43::equals).count();
         if (n == 0) {
             return 0;
         }
         class42.clear();
-        if (class42.method258(0, class43)) {
+        if (class42.func_218660_b(0, class43)) {
             for (int i = 1; i < size; ++i) {
-                class42.method258(i, supplier.get());
+                class42.func_218660_b(i, supplier.get());
             }
             return n;
         }
@@ -72,9 +74,9 @@ public class Class6101 implements Class6102
     }
     
     @Override
-    public int method18201(final Class41 class41) {
-        if (class41 instanceof Class38) {
-            final Class38 class42 = (Class38)class41;
+    public int method18201(final INBT class41) {
+        if (class41 instanceof CollectionNBT) {
+            final CollectionNBT class42 = (CollectionNBT)class41;
             final int size = class42.size();
             if (size > 0) {
                 class42.clear();

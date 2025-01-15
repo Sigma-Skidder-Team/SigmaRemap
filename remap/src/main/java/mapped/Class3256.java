@@ -26,7 +26,7 @@ public class Class3256 extends Class3247
                 Class3256.field15748 = 0;
                 if (this.method9883("Lag back checker")) {
                     if (this.method9906()) {
-                        if (Class3256.field15514.field4684.field2424 > 2) {
+                        if (Class3256.field15514.field4684.ticksExisted > 2) {
                             Class9463.method35173().method35197().method25776(new Class6224("Speed", "Disabled speed due to lagback."));
                             this.method9910();
                         }

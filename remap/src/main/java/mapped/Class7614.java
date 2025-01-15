@@ -90,7 +90,7 @@ public class Class7614
         return null;
     }
     
-    public Class4252 method23923(final Class4252 class4252) {
+    public IPacket method23923(final IPacket class4252) {
         final HashMap hashMap = new HashMap();
         if (!(class4252 instanceof Class4312)) {
             if (class4252 instanceof Class4271) {

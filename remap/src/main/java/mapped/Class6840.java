@@ -21,7 +21,7 @@ public class Class6840 extends Class6831
     
     @Override
     public void method20918() {
-        if (this.field26855.field2410 || !this.field26855.method1712()) {
+        if (this.field26855.removed || !this.field26855.method1712()) {
             this.field26827 = true;
         }
     }

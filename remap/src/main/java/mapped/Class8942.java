@@ -32,13 +32,13 @@ public class Class8942
     }
     
     private static int method31712(final Class7492 class7492, final BlockPos class7493, final BlockPos class7494, final BlockPos class7495, final Predicate<Class7990> predicate, final Class2220 class7496) throws CommandSyntaxException {
-        final Class6997 class7497 = new Class6997(class7493, class7494);
-        final BlockPos method1135 = class7495.method1135(class7497.method21416());
-        final Class6997 class7498 = new Class6997(class7495, method1135);
-        if (!class7496.method8408() && class7498.method21410(class7497)) {
+        final MutableBoundingBox class7497 = new MutableBoundingBox(class7493, class7494);
+        final BlockPos method1135 = class7495.add(class7497.getLength());
+        final MutableBoundingBox class7498 = new MutableBoundingBox(class7495, method1135);
+        if (!class7496.method8408() && class7498.intersectsWith(class7497)) {
             throw Class8942.field37627.create();
         }
-        final int i = class7497.method21417() * class7497.method21418() * class7497.method21419();
+        final int i = class7497.getXSize() * class7497.getYSize() * class7497.getZSize();
         if (i > 32768) {
             throw Class8942.field37628.create((Object)32768, (Object)i);
         }
@@ -50,12 +50,12 @@ public class Class8942
         final ArrayList arrayList2 = Lists.newArrayList();
         final ArrayList arrayList3 = Lists.newArrayList();
         final LinkedList linkedList = Lists.newLinkedList();
-        final BlockPos class7499 = new BlockPos(class7498.field27293 - class7497.field27293, class7498.field27294 - class7497.field27294, class7498.field27295 - class7497.field27295);
-        for (int j = class7497.field27295; j <= class7497.field27298; ++j) {
-            for (int k = class7497.field27294; k <= class7497.field27297; ++k) {
-                for (int l = class7497.field27293; l <= class7497.field27296; ++l) {
+        final BlockPos class7499 = new BlockPos(class7498.minX - class7497.minX, class7498.minY - class7497.minY, class7498.minZ - class7497.minZ);
+        for (int j = class7497.minZ; j <= class7497.maxZ; ++j) {
+            for (int k = class7497.minY; k <= class7497.maxY; ++k) {
+                for (int l = class7497.minX; l <= class7497.maxX; ++l) {
                     final BlockPos class7500 = new BlockPos(l, k, j);
-                    final BlockPos method1137 = class7500.method1135(class7499);
+                    final BlockPos method1137 = class7500.add(class7499);
                     final Class7990 class7501 = new Class7990(method1136, class7500, false);
                     final Class7096 method1138 = class7501.method26065();
                     if (predicate.test(class7501)) {

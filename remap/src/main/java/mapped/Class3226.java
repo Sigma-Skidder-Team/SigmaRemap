@@ -9,26 +9,26 @@ import java.util.List;
 
 public class Class3226 extends Class3167
 {
-    private List<Class4252<?>> field15683;
+    private List<IPacket<?>> field15683;
     private boolean field15684;
     private Class7617 field15685;
     
     public Class3226() {
         super(Class8013.field32989, "Hypixel", "Disable watchdog.");
-        this.field15683 = new ArrayList<Class4252<?>>();
+        this.field15683 = new ArrayList<IPacket<?>>();
         this.field15685 = new Class7617();
     }
     
     @Override
     public void method9879() {
         if (Class9171.field38852) {
-            if (!Class3226.field15514.field4684.field2404) {
+            if (!Class3226.field15514.field4684.onGround) {
                 this.field15684 = false;
             }
             else {
-                final double field2395 = Class3226.field15514.field4684.field2395;
-                final double field2396 = Class3226.field15514.field4684.field2396;
-                final double field2397 = Class3226.field15514.field4684.field2397;
+                final double field2395 = Class3226.field15514.field4684.posX;
+                final double field2396 = Class3226.field15514.field4684.posY;
+                final double field2397 = Class3226.field15514.field4684.posZ;
                 this.field15684 = false;
                 Class3226.field15514.method5269().method17292(new Class4354(field2395, field2396 + 0.2, field2397, false));
                 Class3226.field15514.method5269().method17292(new Class4354(field2395, field2396 + 0.1, field2397, false));
@@ -64,7 +64,7 @@ public class Class3226 extends Class3167
     public void method10162(final Class5744 class5744) {
         if (Class3226.field15514.field4684 != null && Class9171.field38852) {
             if (!this.field15684) {
-                if (Class3226.field15514.field4684.field2404) {
+                if (Class3226.field15514.field4684.onGround) {
                     if (!this.method9883("Instant")) {
                         Class9463.method35173().method35197().method25776(new Class6224("Hypixel disabler", "Wait 5s..."));
                     }

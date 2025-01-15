@@ -9,20 +9,22 @@ import java.util.Set;
 import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.dimension.DimensionType;
 
-public class Class6854 extends Class6851<Class511>
+public class Class6854 extends Class6851<LivingEntity>
 {
     private static String[] field26883;
     
     @Override
-    public void method20955(final Class1849 class1849, final Class511 class1850) {
-        final Class383 method20487 = class1849.method6789().method20487();
+    public void method20955(final Class1849 class1849, final LivingEntity class1850) {
+        final DimensionType method20487 = class1849.method6789().getType();
         final BlockPos class1851 = new BlockPos(class1850);
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
-                    final BlockPos method20488 = class1851.method1134(i, j, k);
+                    final BlockPos method20488 = class1851.add(i, j, k);
                     if (class1849.method6701(method20488).method21755(Class7188.field27885)) {
                         arrayList.add(Class363.method1167(method20487, method20488));
                     }

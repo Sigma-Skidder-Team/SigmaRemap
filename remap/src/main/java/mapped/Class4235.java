@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.item.ItemStack;
 
 public class Class4235 extends Class4211
 {

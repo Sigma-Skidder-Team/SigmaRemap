@@ -8,9 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import java.io.InputStream;
 import java.io.Closeable;
 import org.apache.commons.io.IOUtils;
-import java.util.Collection;
+
 import java.util.Random;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -66,7 +65,7 @@ public class Class697 extends Class527
             this.field3838 = Lists.newArrayList();
             Class1671 method19933 = null;
             try {
-                final String string = "" + Class2116.field12324 + Class2116.field12325 + Class2116.field12319 + Class2116.field12320;
+                final String string = "" + TextFormatting.WHITE + TextFormatting.OBFUSCATED + TextFormatting.GREEN + TextFormatting.AQUA;
                 if (this.field3835) {
                     method19933 = this.field3150.method5291().method19933(new Class1932("texts/end.txt"));
                     final InputStream method19934 = method19933.method5887();
@@ -76,7 +75,7 @@ public class Class697 extends Class527
                     while ((line = bufferedReader.readLine()) != null) {
                         String s;
                         int index;
-                        for (s = line.replaceAll("PLAYERNAME", this.field3150.method5287().method33692()); s.contains(string); s = s.substring(0, index) + Class2116.field12324 + Class2116.field12325 + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + s.substring(index + string.length())) {
+                        for (s = line.replaceAll("PLAYERNAME", this.field3150.method5287().method33692()); s.contains(string); s = s.substring(0, index) + TextFormatting.WHITE + TextFormatting.OBFUSCATED + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + s.substring(index + string.length())) {
                             index = s.indexOf(string);
                         }
                         this.field3838.addAll(this.field3150.field4643.method6626(s, 274));

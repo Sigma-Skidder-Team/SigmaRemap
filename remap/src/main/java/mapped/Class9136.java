@@ -10,8 +10,9 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.nbt.INBT;
 
-public class Class9136 implements ArgumentType<Class41>
+public class Class9136 implements ArgumentType<INBT>
 {
     private static final Collection<String> field38712;
     
@@ -22,11 +23,11 @@ public class Class9136 implements ArgumentType<Class41>
         return new Class9136();
     }
     
-    public static <S> Class41 method33310(final CommandContext<S> commandContext, final String s) {
-        return (Class41)commandContext.getArgument(s, (Class)Class41.class);
+    public static <S> INBT method33310(final CommandContext<S> commandContext, final String s) {
+        return (INBT)commandContext.getArgument(s, (Class) INBT.class);
     }
     
-    public Class41 parse(final StringReader stringReader) throws CommandSyntaxException {
+    public INBT parse(final StringReader stringReader) throws CommandSyntaxException {
         return new Class5704(stringReader).method16943();
     }
     

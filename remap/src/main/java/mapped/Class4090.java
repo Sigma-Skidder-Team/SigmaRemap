@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class4090 extends Class4089
 {
     private static String[] field18194;
@@ -13,12 +16,12 @@ public class Class4090 extends Class4089
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         if (!class1847.field10067) {
             final Class415 class1850 = new Class415(class1847, class1848);
             class1850.method2022(method2715);
-            class1850.method1963(class1848, class1848.field2400, class1848.field2399, -20.0f, 0.5f, 1.0f);
+            class1850.method1963(class1848, class1848.rotationPitch, class1848.rotationYaw, -20.0f, 0.5f, 1.0f);
             class1847.method6886(class1850);
         }
         class1848.method2859(Class8276.field33981.method8449(this));

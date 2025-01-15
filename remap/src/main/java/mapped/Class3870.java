@@ -4,8 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -47,7 +50,7 @@ public class Class3870 extends Class3874
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         class1847.method6688(class1848.method1137(), ((Class7097<O, Class7096>)this.method11878()).method21773(Class3870.field17513, Class182.field564), 3);
     }
     
@@ -66,12 +69,12 @@ public class Class3870 extends Class3874
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, Class7521.field29147.method11878(), class1851, class1852);
     }
     
     @Override
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         final Class182 class1851 = class1849.method21772(Class3870.field17513);
         final BlockPos class1852 = (class1851 != Class182.field565) ? class1848.method1139() : class1848.method1137();
         final Class7096 method6701 = class1847.method6701(class1852);

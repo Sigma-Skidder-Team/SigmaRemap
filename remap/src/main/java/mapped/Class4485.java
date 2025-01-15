@@ -13,7 +13,7 @@ public class Class4485 extends Class4484
 {
     private final int field19878;
     
-    public Class4485(final int n, final Random random, final Class6997 field19849, final Direction class179) {
+    public Class4485(final int n, final Random random, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40950, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -26,7 +26,7 @@ public class Class4485 extends Class4484
     }
     
     public static Class4485 method13478(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -1, -3, 0, 5, 10, 8, class179);
+        final MutableBoundingBox method21408 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -1, -3, 0, 5, 10, 8, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4485(n4, random, method21408, class179) : null;
     }
     
@@ -37,7 +37,7 @@ public class Class4485 extends Class4484
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         final Random random2 = new Random(this.field19878);
         for (int i = 0; i <= 4; ++i) {
             for (int j = 3; j <= 4; ++j) {

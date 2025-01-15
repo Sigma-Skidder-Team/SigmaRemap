@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Map;
 
 public class Class6618 extends Class6601
@@ -41,7 +44,7 @@ public class Class6618 extends Class6601
         return class513;
     }
     
-    private int method20067(final Class1847 class1847) {
+    private int method20067(final World class1847) {
         final int n = 0 + this.method20068(Class3440.method10994(this.field26196).method2157(0)) + this.method20068(Class3440.method10994(this.field26196).method2157(1));
         if (n <= 0) {
             return 0;

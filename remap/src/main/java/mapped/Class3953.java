@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Random;
 import org.apache.logging.log4j.Logger;
@@ -28,7 +31,7 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.field10067) {
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class500) {
@@ -89,7 +92,7 @@ public class Class3953 extends Class3841
         }
     }
     
-    private void method12067(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class865 class7099, final boolean b) {
+    private void method12067(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class865 class7099, final boolean b) {
         if (!b) {
             class7099.method5207(0);
         }
@@ -105,7 +108,7 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final Class436 method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class500 && class7099.method2908()) {
             class7099.method2829((Class500)method6727);
@@ -120,13 +123,13 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         final Class436 method6727 = class7097.method6727(class7098);
         return (method6727 instanceof Class500) ? ((Class500)method6727).method2539().method5206() : 0;
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class500) {
             final Class500 class1852 = (Class500)method6727;
@@ -171,8 +174,8 @@ public class Class3953 extends Class3841
         return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class7074.method21642().getOpposite());
     }
     
-    private static void method12068(final Class1847 class1847, final BlockPos class1848, Direction class1849) {
-        final Class385 class1850 = new Class385(class1848);
+    private static void method12068(final World class1847, final BlockPos class1848, Direction class1849) {
+        final Mutable class1850 = new Mutable(class1848);
         final Class8878 method6765 = class1847.method6765();
         int method6766 = method6765.method31217(Class8878.field37336);
         while (method6766-- > 0) {

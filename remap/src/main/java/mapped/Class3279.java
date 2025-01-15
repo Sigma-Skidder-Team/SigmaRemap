@@ -7,6 +7,8 @@ package mapped;
 import java.awt.Color;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Map;
@@ -183,7 +185,7 @@ public class Class3279 extends Class3167
                     n = (float)Math.max(1.0, Math.sqrt(Class8591.method29091(class5740) / 30.0));
                 }
                 this.method10336(Class8591.method29093(class5740).field38854, Class8591.method29093(class5740).field38855 + class5740.method1931(), Class8591.method29093(class5740).field38856, class5740, n, null);
-                class5740.method1650().method33569(Entity.field2436, false);
+                class5740.method1650().set(Entity.CUSTOM_NAME_VISIBLE, false);
             }
             for (final Map.Entry<BlockPos, V> entry : this.field15778.entrySet()) {
                 float n2 = 1.0f;
@@ -228,7 +230,7 @@ public class Class3279 extends Class3167
                         n3 = (float)Math.max(1.0, Math.sqrt(Class8591.method29091(class5741) / 30.0));
                     }
                     this.method10336(Class8591.method29093(class5741).field38854, Class8591.method29093(class5741).field38855 + class5741.method1931(), Class8591.method29093(class5741).field38856, class5741, n3, this.field15785.get(uuid));
-                    class5741.method1650().method33569(Entity.field2436, false);
+                    class5741.method1650().set(Entity.CUSTOM_NAME_VISIBLE, false);
                 }
             }
             GL11.glDisable(2896);
@@ -282,7 +284,7 @@ public class Class3279 extends Class3167
         final ItemStack method18690 = class355.method18690();
         int max;
         if (method18690 != null) {
-            max = Math.max(Class9400.field40313.method23505(method18690.method27664().method8459()), 50);
+            max = Math.max(Class9400.field40313.method23505(method18690.method27664().getUnformattedComponentText()), 50);
         }
         else {
             max = 37;
@@ -299,7 +301,7 @@ public class Class3279 extends Class3167
         final ItemStack method18691 = class355.method18690();
         if (method18691 != null) {
             Class8154.method26929(method18691, n5, n5 + 27, 45, 45);
-            Class8154.method26889(Class9400.field40313, (float)(n5 + 51), 40.0f, method18691.method27664().method8459(), Class265.field1278.field1292);
+            Class8154.method26889(Class9400.field40313, (float)(n5 + 51), 40.0f, method18691.method27664().getUnformattedComponentText(), Class265.field1278.field1292);
             Class8154.method26889(Class9400.field40311, (float)(n5 + 51), 62.0f, "Count: " + method18691.field34176, Class265.field1278.field1292);
         }
         Class8154.method26876(0.0f, n8 - 12.0f, Math.min(n7 * min2, (float)n7), n8 - 6.0f, Class6430.method19118(-106750, 0.3f));
@@ -316,7 +318,7 @@ public class Class3279 extends Class3167
     
     public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
         final Class7524 field40314 = Class9400.field40314;
-        String method9887 = (s == null) ? class399.getName().method8459().replaceAll("§.", "") : s;
+        String method9887 = (s == null) ? class399.getName().getUnformattedComponentText().replaceAll("§.", "") : s;
         if (Class9463.method35173().method35189().method21551(Class3230.class).method9906()) {
             if (method9887.equals(Class3279.field15514.method5287().method33692())) {
                 method9887 = Class9463.method35173().method35189().method21551(Class3230.class).method9887("Username");
@@ -332,8 +334,8 @@ public class Class3279 extends Class3167
             GL11.glDisable(2929);
             GL11.glDisable(2896);
             GL11.glDepthMask(false);
-            final String string = Math.round(((Class511)class399).method2664() * 10.0f) / 10.0f + "";
-            final float min = Math.min(((Class511)class399).method2664() / ((Class511)class399).method2701(), 1.0f);
+            final String string = Math.round(((LivingEntity)class399).method2664() * 10.0f) / 10.0f + "";
+            final float min = Math.min(((LivingEntity)class399).method2664() / ((LivingEntity)class399).method2701(), 1.0f);
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0f);
             GL11.glTranslated((double)n5, (double)(n6 + 0.6f - 0.33333334f * (1.0f - n4)), (double)n7);
@@ -361,7 +363,7 @@ public class Class3279 extends Class3167
                 GL11.glTranslatef(27.0f, 0.0f, 0.0f);
             }
             Class8154.method26876((float)(-n9 - 10), -25.0f, (float)(n9 + 10), (float)(field40314.method23539() + 2), n8);
-            Class8154.method26876((float)(-n9 - 10), field40314.method23539() - 1 - ((Class511)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.method23539() + 2), method9888);
+            Class8154.method26876((float)(-n9 - 10), field40314.method23539() - 1 - ((LivingEntity)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.method23539() + 2), method9888);
             GL11.glPushMatrix();
             GL11.glTranslated((double)(-field40314.method23505(method9887) / 2), 0.0, 0.0);
             final int method9889 = Class9400.field40311.method23505("Health: 20.0");

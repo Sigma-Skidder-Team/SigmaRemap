@@ -114,7 +114,7 @@ public class Class353 extends Vec3i
     }
     
     public static long method1111(final long n) {
-        return method1116(method1095(BlockPos.method1126(n)), method1095(BlockPos.method1127(n)), method1095(BlockPos.method1128(n)));
+        return method1116(method1095(BlockPos.unpackX(n)), method1095(BlockPos.unpackY(n)), method1095(BlockPos.unpackZ(n)));
     }
     
     public static long method1112(final long n) {
@@ -126,7 +126,7 @@ public class Class353 extends Vec3i
     }
     
     public BlockPos method1114() {
-        return this.method1113().method1134(8, 8, 8);
+        return this.method1113().add(8, 8, 8);
     }
     
     public Class7859 method1115() {
@@ -142,7 +142,7 @@ public class Class353 extends Vec3i
     }
     
     public Stream<BlockPos> method1118() {
-        return BlockPos.method1157(this.method1105(), this.method1106(), this.method1107(), this.method1108(), this.method1109(), this.method1110());
+        return BlockPos.getAllInBox(this.method1105(), this.method1106(), this.method1107(), this.method1108(), this.method1109(), this.method1110());
     }
     
     public static Stream<Class353> method1119(final Class353 class353, final int n) {

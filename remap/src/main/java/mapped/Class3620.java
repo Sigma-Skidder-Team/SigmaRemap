@@ -19,7 +19,7 @@ public class Class3620 extends Class3617
     public Class3620(final Class798 field16821) {
         this.field16821 = field16821;
         super(field16821, null);
-        this.field16818 = this.field16821.field2391.field10062.nextInt(10);
+        this.field16818 = this.field16821.world.field10062.nextInt(10);
         this.field16819 = Lists.newArrayList();
         this.field16820 = null;
         this.method11019(EnumSet.of(Class2139.field12580));
@@ -31,7 +31,7 @@ public class Class3620 extends Class3617
             if (!this.field16821.method4201()) {
                 if (Class798.method4544(this.field16821)) {
                     if (!this.method11145(Class798.method4545(this.field16821))) {
-                        if (this.field16821.field2391.method6701(Class798.method4545(this.field16821)).method21755(Class7188.field27931)) {
+                        if (this.field16821.world.method6701(Class798.method4545(this.field16821)).method21755(Class7188.field27931)) {
                             return true;
                         }
                     }

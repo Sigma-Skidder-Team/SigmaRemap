@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3894 extends Class3892 implements Class3856
 {
@@ -26,7 +28,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((Class7111<Boolean>)Class3894.field17567)) {
             return (class7096.method21772(Class3894.field17568) == Class109.field343) ? Class3894.field17576 : Class3894.field17575;
         }
@@ -65,7 +67,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (this.field17401 != Class8059.field33186) {
             class7096 = ((Class7097<O, Class7096>)class7096).method21768((Class7111<Comparable>)Class3894.field17567);
             class7097.method6688(class7098, class7096, 2);
@@ -78,7 +80,7 @@ public class Class3894 extends Class3892 implements Class3856
         return Class2201.field13402;
     }
     
-    public void method11965(final Class512 class512, final Class1847 class513, final BlockPos class514, final boolean b) {
+    public void method11965(final Class512 class512, final World class513, final BlockPos class514, final boolean b) {
         if (!b) {
             class513.method6839(class512, (this.field17401 != Class8059.field33186) ? 1013 : 1036, class514, 0);
         }
@@ -88,7 +90,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public void method11825(Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.field10067) {
             final boolean method6749 = class7097.method6749(class7098);
             if (method6749 != class7096.method21772((Class7111<Boolean>)Class3894.field17569)) {

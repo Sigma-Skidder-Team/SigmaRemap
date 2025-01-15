@@ -56,8 +56,8 @@ public class Class3270 extends Class3167
             final double sin = Math.sin(Math.toRadians(n3));
             class5717.method16973(n * method16752 * cos + n2 * method16752 * sin);
             class5717.method16977(n * method16752 * sin - n2 * method16752 * cos);
-            Class3270.field15514.field4684.method1935().x = class5717.method16972();
-            Class3270.field15514.field4684.method1935().y = class5717.method16974();
+            Class3270.field15514.field4684.getMotion().x = class5717.method16972();
+            Class3270.field15514.field4684.getMotion().y = class5717.method16974();
             return;
         }
         class5717.method16973(0.0);
@@ -87,7 +87,7 @@ public class Class3270 extends Class3167
                 }
                 return;
             }
-            float field2399 = Class3270.field15514.field4684.field2399;
+            float field2399 = Class3270.field15514.field4684.rotationYaw;
             float n = -90.0f;
             if (Class3270.field15514.field4684.field2970 != 0.0f || Class3270.field15514.field4684.field2968 != 0.0f) {
                 n = -80.0f;
@@ -95,15 +95,15 @@ public class Class3270 extends Class3167
             if (Class3270.field15514.field4684.field2970 < 0.0f) {
                 field2399 -= 180.0f;
             }
-            if (Class3270.field15514.field4684.method1935().y < -0.1) {
+            if (Class3270.field15514.field4684.getMotion().y < -0.1) {
                 n = 90.0f;
             }
             class5744.method17041(n);
             class5744.method17043(field2399);
-            if (Class3270.field15514.field4684.field2404 && Class3270.field15514.field4684.field2406) {
+            if (Class3270.field15514.field4684.onGround && Class3270.field15514.field4684.collidedVertically) {
                 Class3270.field15514.field4684.method2725();
             }
-            else if (Class3270.field15514.field4684.method1935().y >= 0.0) {
+            else if (Class3270.field15514.field4684.getMotion().y >= 0.0) {
                 if (Class3270.field15514.field4633.field26532 == 0.1f) {
                     Class3270.field15514.field4633.field26532 = 1.0f;
                 }

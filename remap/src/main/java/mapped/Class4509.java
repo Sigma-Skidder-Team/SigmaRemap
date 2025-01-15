@@ -13,7 +13,7 @@ public class Class4509 extends Class4500
 {
     public final int field19907;
     
-    public Class4509(final int n, final Random random, final Class6997 field19849, final Direction class179) {
+    public Class4509(final int n, final Random random, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40972, n);
         this.method13456(class179);
         this.field19896 = this.method13493(random);
@@ -40,12 +40,12 @@ public class Class4509 extends Class4500
     }
     
     public static Class4509 method13504(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        final Class6997 method21408 = Class6997.method21408(n, n2, n3, -4, -1, 0, 11, 7, 11, class179);
+        final MutableBoundingBox method21408 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -4, -1, 0, 11, 7, 11, class179);
         return (Class4500.method13497(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4509(n4, random, method21408, class179) : null;
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13445(class1851, class1853, 0, 0, 0, 10, 6, 10, true, random, Class6924.method21296());
         this.method13492(class1851, random, class1853, this.field19896, 4, 1, 0);
         this.method13444(class1851, class1853, 4, 1, 10, 6, 3, 10, Class4509.field19848, Class4509.field19848, false);

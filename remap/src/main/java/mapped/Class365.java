@@ -18,11 +18,13 @@ import com.google.common.collect.Maps;
 import com.mojang.datafixers.Dynamic;
 import java.util.Collection;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Set;
 import java.util.Optional;
 import java.util.Map;
 
-public class Class365<E extends Class511> implements IDynamicSerializable
+public class Class365<E extends LivingEntity> implements IDynamicSerializable
 {
     private final Map<Class8233<?>, Optional<?>> field2198;
     private final Map<Class8033<? extends Class6851<? super E>>, Class6851<? super E>> field2199;
@@ -183,7 +185,7 @@ public class Class365<E extends Class511> implements IDynamicSerializable
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("memories"), dynamicOps.createMap((Map)this.field2198.entrySet().stream().filter(entry -> entry.getKey().method27285().isPresent() && ((Optional)entry.getValue()).isPresent()).map(entry2 -> Pair.of(dynamicOps2.createString(Class90.field242.method503(entry2.getKey()).toString()), ((Optional)entry2.getValue()).get().method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
     }
     

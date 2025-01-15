@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 
 import java.util.Random;
@@ -31,7 +32,7 @@ public class Class4476 extends Class4475
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         if (this.method13460(class1851, class1853, 0)) {
             this.method13444(class1851, class1853, 1, 1, 1, 5, 1, 7, Class7521.field29161.method11878(), Class7521.field29161.method11878(), false);
             this.method13444(class1851, class1853, 1, 4, 2, 5, 4, 7, Class7521.field29161.method11878(), Class7521.field29161.method11878(), false);
@@ -75,7 +76,7 @@ public class Class4476 extends Class4475
                 final int method13437 = this.method13437(2, 5);
                 final int method13438 = this.method13438(2);
                 final int method13439 = this.method13439(2, 5);
-                if (class1853.method21415(new BlockPos(method13437, method13438, method13439))) {
+                if (class1853.isVecInside(new BlockPos(method13437, method13438, method13439))) {
                     this.field19861 = true;
                     final Class778 class1859 = EntityType.field29047.method23371(class1851.method6744());
                     class1859.method4190();
@@ -90,12 +91,12 @@ public class Class4476 extends Class4475
         return false;
     }
     
-    private void method13461(final Class1851 class1851, final Class6997 class1852) {
+    private void method13461(final Class1851 class1851, final MutableBoundingBox class1852) {
         if (!this.field19862) {
             final int method13437 = this.method13437(2, 5);
             final int method13438 = this.method13438(2);
             final int method13439 = this.method13439(2, 5);
-            if (class1852.method21415(new BlockPos(method13437, method13438, method13439))) {
+            if (class1852.isVecInside(new BlockPos(method13437, method13438, method13439))) {
                 this.field19862 = true;
                 final Class800 class1853 = EntityType.field28964.method23371(class1851.method6744());
                 class1853.method4190();

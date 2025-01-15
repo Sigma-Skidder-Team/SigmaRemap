@@ -7,7 +7,9 @@ package mapped;
 import net.minecraft.client.renderer.Matrix3f;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL20;
@@ -188,7 +190,7 @@ public class Class7778
                 method5277.method5327().method15300("shadow prepareterrain");
                 method5277.method5290().method5849(Class1774.field9853);
                 method5277.method5327().method15300("shadow setupterrain");
-                field4636.method5707(class1661, class1663, false, method5277.field4636.method5769(), method5277.field4684.method1639());
+                field4636.method5707(class1661, class1663, false, method5277.field4636.method5769(), method5277.field4684.isSpectator());
                 method5277.method5327().method15300("shadow updatechunks");
                 method5277.method5327().method15300("shadow terrain");
                 final double method5279 = method5278.getX();
@@ -222,10 +224,10 @@ public class Class7778
                     if (field4638 == class1661.method18166()) {
                         if (!Class9216.field39049) {
                             if (!class1661.method18168()) {
-                                if (!(class1661.method18166() instanceof Class511)) {
+                                if (!(class1661.method18166() instanceof LivingEntity)) {
                                     continue;
                                 }
-                                if (!((Class511)class1661.method18166()).method2783()) {
+                                if (!((LivingEntity)class1661.method18166()).method2783()) {
                                     continue;
                                 }
                             }

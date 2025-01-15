@@ -30,7 +30,7 @@ public class Class3316 extends Class3167
         if (this.method9906()) {
             if (Class3316.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4273) {
-                    if (((Class4273)class5723.method16998()).method12822() == Class3316.field15514.field4684.method1643()) {
+                    if (((Class4273)class5723.method16998()).method12822() == Class3316.field15514.field4684.getEntityId()) {
                         this.field15900 = 0;
                     }
                 }

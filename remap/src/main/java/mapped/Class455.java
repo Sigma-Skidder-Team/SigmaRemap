@@ -5,8 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -281,12 +284,12 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Nullable
-    public static Class446 method2310(final Class1847 class1847, final BlockPos class1848) {
+    public static Class446 method2310(final World class1847, final BlockPos class1848) {
         return method2311(class1847, class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
     }
     
     @Nullable
-    public static Class446 method2311(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public static Class446 method2311(final World class1847, final double n, final double n2, final double n3) {
         Class446 class1848 = null;
         final BlockPos class1849 = new BlockPos(n, n2, n3);
         final Class7096 method6701 = class1847.method6701(class1849);

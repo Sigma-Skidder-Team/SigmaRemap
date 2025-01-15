@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 
 import java.util.Random;
@@ -48,7 +49,7 @@ public class Class4520 extends Class4515
     }
     
     @Override
-    public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final Class6997 class356) {
+    public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (s.startsWith("Chest")) {
             final Class2052 method32856 = this.field19919.method32856();
             Class7096 method32857 = Class7521.field29292.method11878();

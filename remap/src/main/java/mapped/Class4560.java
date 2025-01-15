@@ -23,8 +23,8 @@ public class Class4560 extends Class4535<Class5117>
     
     public boolean method13572(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5117 class1854) {
         int n = 0;
-        final Class385 class1855 = new Class385(class1853);
-        final Class385 class1856 = new Class385(class1853);
+        final Mutable class1855 = new Mutable(class1853);
+        final Mutable class1856 = new Mutable(class1853);
         if (class1851.method6961(class1855)) {
             if (Class7521.field29761.method11878().method21752(class1851, class1855)) {
                 final int n2 = random.nextInt(12) + 5;
@@ -34,7 +34,7 @@ public class Class4560 extends Class4535<Class5117>
                             final int n4 = i - class1853.getX();
                             final int n5 = j - class1853.getZ();
                             if (n4 * n4 + n5 * n5 <= n3 * n3) {
-                                class1856.method1284(i, class1851.method6699(Class2020.field11522, i, j) - 1, j);
+                                class1856.setPos(i, class1851.method6699(Class2020.field11522, i, j) - 1, j);
                                 if (Class4535.method13533(class1851.method6701(class1856).method21696())) {
                                     class1851.method6688(class1856, Class7521.field29158.method11878(), 2);
                                 }

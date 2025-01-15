@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 
 import java.util.Set;
@@ -32,7 +33,7 @@ public abstract class Class4469 extends Class4473
         super(class9520, n);
     }
     
-    public Class4469(final Class9520 class9520, final Direction class9521, final Class6997 field19849) {
+    public Class4469(final Class9520 class9520, final Direction class9521, final MutableBoundingBox field19849) {
         super(class9520, 1);
         this.method13456(class9521);
         this.field19849 = field19849;
@@ -47,26 +48,26 @@ public abstract class Class4469 extends Class4473
         final int n6 = method26744 / 5 % 5;
         final int n7 = method26744 / 25;
         if (class9521 != Direction.NORTH && class9521 != Direction.SOUTH) {
-            this.field19849 = new Class6997(0, 0, 0, n4 * 8 - 1, n3 * 4 - 1, n2 * 8 - 1);
+            this.field19849 = new MutableBoundingBox(0, 0, 0, n4 * 8 - 1, n3 * 4 - 1, n2 * 8 - 1);
         }
         else {
-            this.field19849 = new Class6997(0, 0, 0, n2 * 8 - 1, n3 * 4 - 1, n4 * 8 - 1);
+            this.field19849 = new MutableBoundingBox(0, 0, 0, n2 * 8 - 1, n3 * 4 - 1, n4 * 8 - 1);
         }
         switch (Class6364.field25466[class9521.ordinal()]) {
             case 1: {
-                this.field19849.method21413(n5 * 8, n7 * 4, -(n6 + n4) * 8 + 1);
+                this.field19849.offset(n5 * 8, n7 * 4, -(n6 + n4) * 8 + 1);
                 break;
             }
             case 2: {
-                this.field19849.method21413(n5 * 8, n7 * 4, n6 * 8);
+                this.field19849.offset(n5 * 8, n7 * 4, n6 * 8);
                 break;
             }
             case 3: {
-                this.field19849.method21413(-(n6 + n4) * 8 + 1, n7 * 4, n5 * 8);
+                this.field19849.offset(-(n6 + n4) * 8 + 1, n7 * 4, n5 * 8);
                 break;
             }
             default: {
-                this.field19849.method21413(n6 * 8, n7 * 4, n5 * 8);
+                this.field19849.offset(n6 * 8, n7 * 4, n5 * 8);
                 break;
             }
         }
@@ -80,7 +81,7 @@ public abstract class Class4469 extends Class4473
     public void method13415(final Class51 class51) {
     }
     
-    public void method13416(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
+    public void method13416(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
@@ -98,7 +99,7 @@ public abstract class Class4469 extends Class4473
         }
     }
     
-    public void method13417(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final boolean b) {
+    public void method13417(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final boolean b) {
         if (!b) {
             this.method13444(class1851, class1852, n + 0, 0, n2 + 0, n + 8 - 1, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
         }
@@ -114,7 +115,7 @@ public abstract class Class4469 extends Class4473
         }
     }
     
-    public void method13418(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853) {
+    public void method13418(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
@@ -126,19 +127,19 @@ public abstract class Class4469 extends Class4473
         }
     }
     
-    public boolean method13419(final Class6997 class6997, final int n, final int n2, final int n3, final int n4) {
+    public boolean method13419(final MutableBoundingBox class6997, final int n, final int n2, final int n3, final int n4) {
         final int method13437 = this.method13437(n, n2);
         final int method13438 = this.method13439(n, n2);
         final int method13439 = this.method13437(n3, n4);
         final int method13440 = this.method13439(n3, n4);
-        return class6997.method21411(Math.min(method13437, method13439), Math.min(method13438, method13440), Math.max(method13437, method13439), Math.max(method13438, method13440));
+        return class6997.intersectsWith(Math.min(method13437, method13439), Math.min(method13438, method13440), Math.max(method13437, method13439), Math.max(method13438, method13440));
     }
     
-    public boolean method13420(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3) {
+    public boolean method13420(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3) {
         final int method13437 = this.method13437(n, n3);
         final int method13438 = this.method13438(n2);
         final int method13439 = this.method13439(n, n3);
-        if (!class1852.method21415(new BlockPos(method13437, method13438, method13439))) {
+        if (!class1852.isVecInside(new BlockPos(method13437, method13438, method13439))) {
             return false;
         }
         final Class845 class1853 = EntityType.field28974.method23371(class1851.method6744());

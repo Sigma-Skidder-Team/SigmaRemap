@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.io.File;
@@ -97,7 +98,7 @@ public abstract class Class527 extends Class598 implements Class563
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<ITextComponent> iterator = method27668.iterator();
         while (iterator.hasNext()) {
-            arrayList.add(iterator.next().method8461());
+            arrayList.add(iterator.next().getFormattedText());
         }
         return arrayList;
     }
@@ -165,8 +166,8 @@ public abstract class Class527 extends Class598 implements Class563
     }
     
     public void method3033(final ITextComponent class2250, final int n, final int n2) {
-        if (class2250 != null && class2250.method8456().method30411() != null) {
-            final Class9390 method30411 = class2250.method8456().method30411();
+        if (class2250 != null && class2250.getStyle().method30411() != null) {
+            final Class9390 method30411 = class2250.getStyle().method30411();
             if (method30411.method34911() == Class1961.field10698) {
                 ItemStack class2251 = ItemStack.field34174;
                 try {
@@ -177,7 +178,7 @@ public abstract class Class527 extends Class598 implements Class563
                 }
                 catch (final CommandSyntaxException ex) {}
                 if (class2251.method27620()) {
-                    this.method3031(Class2116.field12321 + "Invalid Item!", n, n2);
+                    this.method3031(TextFormatting.RED + "Invalid Item!", n, n2);
                 }
                 else {
                     this.method3014(class2251, n, n2);
@@ -190,7 +191,7 @@ public abstract class Class527 extends Class598 implements Class563
                         final ArrayList arrayList = Lists.newArrayList();
                         final ITextComponent method30414 = Class5953.method17871(method30413.method323("name"));
                         if (method30414 != null) {
-                            arrayList.add(method30414.method8461());
+                            arrayList.add(method30414.getFormattedText());
                         }
                         if (method30413.method316("type", 8)) {
                             arrayList.add("Type: " + method30413.method323("type"));
@@ -199,12 +200,12 @@ public abstract class Class527 extends Class598 implements Class563
                         this.method3032(arrayList, n, n2);
                     }
                     catch (final CommandSyntaxException | JsonSyntaxException ex2) {
-                        this.method3031(Class2116.field12321 + "Invalid Entity!", n, n2);
+                        this.method3031(TextFormatting.RED + "Invalid Entity!", n, n2);
                     }
                 }
             }
             else if (method30411.method34911() == Class1961.field10697) {
-                this.method3032(this.field3150.field4643.method6626(method30411.method34912().method8461(), Math.max(this.field3152 / 2, 200)), n, n2);
+                this.method3032(this.field3150.field4643.method6626(method30411.method34912().getFormattedText(), Math.max(this.field3152 / 2, 200)), n, n2);
             }
         }
     }
@@ -216,10 +217,10 @@ public abstract class Class527 extends Class598 implements Class563
         if (class2250 == null) {
             return false;
         }
-        final Class9485 method30410 = class2250.method8456().method30410();
+        final Class9485 method30410 = class2250.getStyle().method30410();
         if (method3047()) {
-            if (class2250.method8456().method30412() != null) {
-                this.method3034(class2250.method8456().method30412(), false);
+            if (class2250.getStyle().method30412() != null) {
+                this.method3034(class2250.getStyle().method30412(), false);
             }
         }
         else if (method30410 != null) {

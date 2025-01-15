@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Optional;

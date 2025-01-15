@@ -5,8 +5,14 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class769 extends Class770 implements Class768
 {
@@ -14,7 +20,7 @@ public class Class769 extends Class770 implements Class768
     private int field4159;
     private final Vec3d[][] field4160;
     
-    public Class769(final EntityType<? extends Class769> class7499, final Class1847 class7500) {
+    public Class769(final EntityType<? extends Class769> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4108 = 5;
         this.field4160 = new Vec3d[2][4];
@@ -68,13 +74,13 @@ public class Class769 extends Class770 implements Class768
     @Override
     public void method2736() {
         super.method2736();
-        if (this.field2391.field10067) {
+        if (this.world.field10067) {
             if (this.method1823()) {
                 --this.field4159;
                 if (this.field4159 < 0) {
                     this.field4159 = 0;
                 }
-                if (this.field2938 != 1 && this.field2424 % 1200 != 0) {
+                if (this.field2938 != 1 && this.ticksExisted % 1200 != 0) {
                     if (this.field2938 == this.field2939 - 1) {
                         this.field4159 = 3;
                         for (int i = 0; i < 4; ++i) {
@@ -87,12 +93,12 @@ public class Class769 extends Class770 implements Class768
                     this.field4159 = 3;
                     for (int j = 0; j < 4; ++j) {
                         this.field4160[0][j] = this.field4160[1][j];
-                        this.field4160[1][j] = new Vec3d((-6.0f + this.field2423.nextInt(13)) * 0.5, Math.max(0, this.field2423.nextInt(6) - 4), (-6.0f + this.field2423.nextInt(13)) * 0.5);
+                        this.field4160[1][j] = new Vec3d((-6.0f + this.rand.nextInt(13)) * 0.5, Math.max(0, this.rand.nextInt(6) - 4), (-6.0f + this.rand.nextInt(13)) * 0.5);
                     }
                     for (int k = 0; k < 16; ++k) {
-                        this.field2391.method6709(Class8432.field34602, this.method1940(0.5), this.method1943(), this.method1946(0.5), 0.0, 0.0, 0.0);
+                        this.world.method6709(Class8432.field34602, this.method1940(0.5), this.method1943(), this.method1946(0.5), 0.0, 0.0, 0.0);
                     }
-                    this.field2391.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35308, this.method1922(), 1.0f, 1.0f, false);
+                    this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35308, this.method1922(), 1.0f, 1.0f, false);
                 }
             }
         }
@@ -117,7 +123,7 @@ public class Class769 extends Class770 implements Class768
     
     @Override
     public boolean method1826(final Entity class399) {
-        return super.method1826(class399) || (class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null);
+        return super.method1826(class399) || (class399 instanceof LivingEntity && ((LivingEntity)class399).method2712() == Class6363.field25463 && this.getTeam() == null && class399.getTeam() == null);
     }
     
     @Override
@@ -131,7 +137,7 @@ public class Class769 extends Class770 implements Class768
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35307;
     }
     
@@ -145,14 +151,14 @@ public class Class769 extends Class770 implements Class768
     }
     
     @Override
-    public void method4252(final Class511 class511, final float n) {
+    public void method4252(final LivingEntity class511, final float n) {
         final Class402 method23101 = Class7476.method23101(this, this.method2790(this.method2715(Class7476.method23100(this, Class7739.field31279))), n);
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.method1942(0.3333333333333333) - method23101.getPosY();
         final double n4 = class511.getPosZ() - this.getPosZ();
-        method23101.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        method23101.method1958(n2, n3 + MathHelper.sqrt(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.world.method6954().method8235() * 4));
         this.method1695(Class8520.field35575, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
-        this.field2391.method6886(method23101);
+        this.world.method6886(method23101);
     }
     
     @Override

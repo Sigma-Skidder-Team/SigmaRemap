@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Set;
 
@@ -29,8 +30,8 @@ public class Class159 implements Class122
     public boolean test(final Class7529 class7529) {
         final Entity class7530 = class7529.method23579(Class6683.field26365);
         int method30214 = 0;
-        if (class7530 instanceof Class511) {
-            method30214 = Class8742.method30214((Class511)class7530);
+        if (class7530 instanceof LivingEntity) {
+            method30214 = Class8742.method30214((LivingEntity)class7530);
         }
         return class7529.method23586().nextFloat() < this.field465 + method30214 * this.field466;
     }

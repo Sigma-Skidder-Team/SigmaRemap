@@ -31,7 +31,7 @@ public class Class3373 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3373.field15514.field4684.method1935().y > 0.0) {
+        if (Class3373.field15514.field4684.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -105,15 +105,15 @@ public class Class3373 extends Class3167
     @Class6753
     public void method10737(final Class5723 class5723) {
         if (this.method9906()) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (Class3373.field15514.field4684 != null) {
                 if (method16998 instanceof Class4328) {
                     final Class4328 class5724 = (Class4328)method16998;
                     if (this.field16046 >= 1) {
                         this.field16046 = -1;
                     }
-                    class5724.field19380 = Class3373.field15514.field4684.field2399;
-                    class5724.field19381 = Class3373.field15514.field4684.field2400;
+                    class5724.field19380 = Class3373.field15514.field4684.rotationYaw;
+                    class5724.field19381 = Class3373.field15514.field4684.rotationPitch;
                 }
             }
         }

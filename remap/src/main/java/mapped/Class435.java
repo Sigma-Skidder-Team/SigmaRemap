@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.command.ICommandSource;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
@@ -85,7 +86,7 @@ public class Class435 extends Class436 implements Class447, Class434
         }
         else {
             string = "Lectern";
-            method1871 = new Class2260("Lectern");
+            method1871 = new StringTextComponent("Lectern");
         }
         return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
     }

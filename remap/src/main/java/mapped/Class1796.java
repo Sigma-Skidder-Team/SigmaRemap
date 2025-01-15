@@ -5,8 +5,11 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Objects;
@@ -162,7 +165,7 @@ public class Class1796 implements Class1657
         }
     }
     
-    public Class6313 method6534(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+    public Class6313 method6534(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
         final Class3820 method27622 = class8321.method27622();
         Class6313 class8324;
         if (method27622 != Class7739.field31607) {
@@ -174,7 +177,7 @@ public class Class1796 implements Class1657
         return method27622.method11701() ? this.method6535(class8324, class8321, class8322, class8323) : class8324;
     }
     
-    private Class6313 method6535(final Class6313 class6313, final ItemStack class6314, final Class1847 class6315, final Class511 class6316) {
+    private Class6313 method6535(final Class6313 class6313, final ItemStack class6314, final World class6315, final LivingEntity class6316) {
         Class6313 method33469 = null;
         if (class6313 != null) {
             final Class9168 method33470 = class6313.method18698();
@@ -189,7 +192,7 @@ public class Class1796 implements Class1657
         this.method6537(null, class8321, class8322, false, class8323, class8324, null, n, n2);
     }
     
-    public void method6537(final Class511 class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final Class1847 class516, final int n, final int n2) {
+    public void method6537(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final World class516, final int n, final int n2) {
         if (!class512.method27620()) {
             this.method6531(class512, class513, b, class514, class515, n, n2, this.method6534(class512, class516, class511));
         }
@@ -239,7 +242,7 @@ public class Class1796 implements Class1657
         this.method6541(Class869.method5277().field4684, class8321, n, n2);
     }
     
-    public void method6541(final Class511 class511, final ItemStack class512, final int n, final int n2) {
+    public void method6541(final LivingEntity class511, final ItemStack class512, final int n, final int n2) {
         if (!class512.method27620()) {
             this.field9952 += 50.0f;
             try {

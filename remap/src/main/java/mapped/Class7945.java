@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 @FunctionalInterface

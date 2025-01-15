@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class3480 extends Class3479
 {
     private static String[] field16400;
@@ -39,7 +41,7 @@ public class Class3480 extends Class3479
             if (this.method11048()) {
                 if (Class793.method4469(this.field16401) >= 1) {
                     if (Class793.method4469(this.field16401) > 200) {
-                        final Class1847 field2391 = this.field16401.field2391;
+                        final World field2391 = this.field16401.world;
                         field2391.method6705(null, class354, Class8520.field35658, Class286.field1582, 0.3f, 0.9f + field2391.field10062.nextFloat() * 0.2f);
                         field2391.method6688(this.field16395.method1137(), ((Class7097<O, Class7096>)Class7521.field29716.method11878()).method21773((Class7111<Comparable>)Class4005.field18053, Class793.method4471(this.field16401).nextInt(4) + 1), 3);
                         Class793.method4472(this.field16401, false);

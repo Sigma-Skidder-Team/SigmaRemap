@@ -9,8 +9,9 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponent;
 
-public class Class2254 extends Class2251 implements Class2253
+public class Class2254 extends TextComponent implements Class2253
 {
     private final String field13796;
     private final Class9043 field13797;
@@ -42,7 +43,7 @@ public class Class2254 extends Class2251 implements Class2253
     }
     
     @Override
-    public String method8459() {
+    public String getUnformattedComponentText() {
         return this.field13799;
     }
     
@@ -118,6 +119,6 @@ public class Class2254 extends Class2251 implements Class2253
     
     @Override
     public String toString() {
-        return "ScoreComponent{name='" + this.field13796 + '\'' + "objective='" + this.field13798 + '\'' + ", siblings=" + this.field13791 + ", style=" + this.method8456() + '}';
+        return "ScoreComponent{name='" + this.field13796 + '\'' + "objective='" + this.field13798 + '\'' + ", siblings=" + this.siblings + ", style=" + this.getStyle() + '}';
     }
 }

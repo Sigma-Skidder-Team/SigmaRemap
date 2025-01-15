@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class6405 extends Class6404
 {
@@ -20,7 +22,7 @@ public class Class6405 extends Class6404
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         final Direction class5493 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
-        final Class1847 method16763 = class5491.method16763();
+        final World method16763 = class5491.method16763();
         final double n = class5491.getX() + class5493.getXOffset() * 1.125f;
         final double n2 = class5491.getY() + class5493.getYOffset() * 1.125f;
         final double n3 = class5491.getZ() + class5493.getZOffset() * 1.125f;
@@ -37,7 +39,7 @@ public class Class6405 extends Class6404
         }
         final Class423 class5494 = new Class423(method16763, n, n2 + n4, n3);
         class5494.method2064(this.field25525);
-        class5494.field2399 = class5493.getHorizontalAngle();
+        class5494.rotationYaw = class5493.getHorizontalAngle();
         method16763.method6886(class5494);
         class5492.method27693(1);
         return class5492;

@@ -99,7 +99,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         }
     }
     
-    public boolean method13618(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
+    public boolean method13618(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5127 class1878) {
         if (!method13613(class1875, class1876)) {
             if (!method13616(class1875, class1876)) {
                 if (!method13612(class1875, class1876)) {
@@ -108,11 +108,11 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
             }
         }
         this.method13620(class1875, class1876, class1878.field22079.method1164(random, class1876), class1877);
-        set.add(class1876.method1153());
+        set.add(class1876.toImmutable());
         return true;
     }
     
-    public boolean method13619(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
+    public boolean method13619(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5127 class1878) {
         if (!method13613(class1875, class1876)) {
             if (!method13616(class1875, class1876)) {
                 if (!method13612(class1875, class1876)) {
@@ -121,7 +121,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
             }
         }
         this.method13620(class1875, class1876, class1878.field22080.method1164(random, class1876), class1877);
-        set.add(class1876.method1153());
+        set.add(class1876.toImmutable());
         return true;
     }
     
@@ -130,9 +130,9 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         this.method13621(class1876, class1877, class1878);
     }
     
-    public final void method13620(final Class1876 class1876, final BlockPos class1877, final Class7096 class1878, final Class6997 class1879) {
+    public final void method13620(final Class1876 class1876, final BlockPos class1877, final Class7096 class1878, final MutableBoundingBox class1879) {
         this.method13621(class1876, class1877, class1878);
-        class1879.method21412(new Class6997(class1877, class1877));
+        class1879.expandTo(new MutableBoundingBox(class1877, class1877));
     }
     
     private void method13621(final Class1876 class1876, final BlockPos class1877, final Class7096 class1878) {
@@ -143,9 +143,9 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         final HashSet hashSet = Sets.newHashSet();
         final HashSet hashSet2 = Sets.newHashSet();
         final HashSet hashSet3 = Sets.newHashSet();
-        final Class6997 method21407 = Class6997.method21407();
+        final MutableBoundingBox method21407 = MutableBoundingBox.getNewBoundingBox();
         final boolean method21408 = this.method13624(class1851, random, class1853, hashSet, hashSet2, method21407, t);
-        if (method21407.field27293 <= method21407.field27296) {
+        if (method21407.minX <= method21407.maxX) {
             if (method21408) {
                 if (!hashSet.isEmpty()) {
                     if (!t.field22081.isEmpty()) {
@@ -155,7 +155,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                         arrayList2.sort(Comparator.comparingInt(Vec3i::getY));
                         t.field22081.forEach(class1856 -> class1856.method1241(class1854, random2, list, list2, set, class1855));
                     }
-                    Class6585.method19957(class1851, 3, this.method13623(class1851, method21407, hashSet, hashSet3), method21407.field27293, method21407.field27294, method21407.field27295);
+                    Class6585.method19957(class1851, 3, this.method13623(class1851, method21407, hashSet, hashSet3), method21407.minX, method21407.minY, method21407.minZ);
                     return true;
                 }
             }
@@ -163,21 +163,21 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         return false;
     }
     
-    private Class8260 method13623(final Class1851 class1851, final Class6997 class1852, final Set<BlockPos> set, final Set<BlockPos> set2) {
+    private Class8260 method13623(final Class1851 class1851, final MutableBoundingBox class1852, final Set<BlockPos> set, final Set<BlockPos> set2) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class8259 class1853 = new Class8259(class1852.method21417(), class1852.method21418(), class1852.method21419());
+        final Class8259 class1853 = new Class8259(class1852.getXSize(), class1852.getYSize(), class1852.getZSize());
         for (int i = 0; i < 6; ++i) {
             arrayList.add(Sets.newHashSet());
         }
         try (final Class386 method1296 = Class386.method1296()) {
             for (final BlockPos class1854 : Lists.newArrayList((Iterable)set2)) {
-                if (class1852.method21415(class1854)) {
-                    class1853.method27415(class1854.getX() - class1852.field27293, class1854.getY() - class1852.field27294, class1854.getZ() - class1852.field27295, true, true);
+                if (class1852.isVecInside(class1854)) {
+                    class1853.method27415(class1854.getX() - class1852.minX, class1854.getY() - class1852.minY, class1854.getZ() - class1852.minZ, true, true);
                 }
             }
             for (final BlockPos class1855 : Lists.newArrayList((Iterable)set)) {
-                if (class1852.method21415(class1855)) {
-                    class1853.method27415(class1855.getX() - class1852.field27293, class1855.getY() - class1852.field27294, class1855.getZ() - class1852.field27295, true, true);
+                if (class1852.isVecInside(class1855)) {
+                    class1853.method27415(class1855.getX() - class1852.minX, class1855.getY() - class1852.minY, class1855.getZ() - class1852.minZ, true, true);
                 }
                 final Direction[] values = Direction.values();
                 for (int length = values.length, j = 0; j < length; ++j) {
@@ -185,10 +185,10 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                     if (!set.contains(method1296)) {
                         final Class7096 method1297 = class1851.method6701(method1296);
                         if (((Class7097<Object, Object>)method1297).method21771((Class7111<Comparable>)Class8970.field37778)) {
-                            ((Set)arrayList.get(0)).add(method1296.method1153());
+                            ((Set)arrayList.get(0)).add(method1296.toImmutable());
                             this.method13621(class1851, method1296, ((Class7097<Object, Class7096>)method1297).method21773((Class7111<Comparable>)Class8970.field37778, 1));
-                            if (class1852.method21415(method1296)) {
-                                class1853.method27415(method1296.getX() - class1852.field27293, method1296.getY() - class1852.field27294, method1296.getZ() - class1852.field27295, true, true);
+                            if (class1852.isVecInside(method1296)) {
+                                class1853.method27415(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
                             }
                         }
                     }
@@ -198,8 +198,8 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                 final Set set3 = (Set)arrayList.get(k - 1);
                 final Set set4 = (Set)arrayList.get(k);
                 for (final BlockPos class1856 : set3) {
-                    if (class1852.method21415(class1856)) {
-                        class1853.method27415(class1856.getX() - class1852.field27293, class1856.getY() - class1852.field27294, class1856.getZ() - class1852.field27295, true, true);
+                    if (class1852.isVecInside(class1856)) {
+                        class1853.method27415(class1856.getX() - class1852.minX, class1856.getY() - class1852.minY, class1856.getZ() - class1852.minZ, true, true);
                     }
                     final Direction[] values2 = Direction.values();
                     for (int length2 = values2.length, l = 0; l < length2; ++l) {
@@ -208,10 +208,10 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                             final Class7096 method1298 = class1851.method6701(method1296);
                             if (((Class7097<Object, Object>)method1298).method21771((Class7111<Comparable>)Class8970.field37778) && ((Class7097<Object, Class7096>)method1298).method21772((Class7111<Integer>)Class8970.field37778) > k + 1) {
                                 this.method13621(class1851, method1296, ((Class7097<Object, Class7096>)method1298).method21773((Class7111<Comparable>)Class8970.field37778, k + 1));
-                                if (class1852.method21415(method1296)) {
-                                    class1853.method27415(method1296.getX() - class1852.field27293, method1296.getY() - class1852.field27294, method1296.getZ() - class1852.field27295, true, true);
+                                if (class1852.isVecInside(method1296)) {
+                                    class1853.method27415(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
                                 }
-                                set4.add(method1296.method1153());
+                                set4.add(method1296.toImmutable());
                             }
                         }
                     }
@@ -221,5 +221,5 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         return class1853;
     }
     
-    public abstract boolean method13624(final Class1875 p0, final Random p1, final BlockPos p2, final Set<BlockPos> p3, final Set<BlockPos> p4, final Class6997 p5, final T p6);
+    public abstract boolean method13624(final Class1875 p0, final Random p1, final BlockPos p2, final Set<BlockPos> p3, final Set<BlockPos> p4, final MutableBoundingBox p5, final T p6);
 }

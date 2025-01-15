@@ -16,7 +16,7 @@ public class Class4600 extends Class4598<Class5129>
         super(function);
     }
     
-    public boolean method13647(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final Class6997 class1877, final Class5129 class1878) {
+    public boolean method13647(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final MutableBoundingBox class1877, final Class5129 class1878) {
         final int n = class1878.field22082 + random.nextInt(class1878.field22087 + 1) + random.nextInt(class1878.field22088 + 1);
         final int n2 = (class1878.field22089 < 0) ? (n - (class1878.field22093 + random.nextInt(class1878.field22094 + 1))) : (class1878.field22089 + random.nextInt(class1878.field22090 + 1));
         final int method1262 = class1878.field22086.method1262(random, n2, n, class1878);

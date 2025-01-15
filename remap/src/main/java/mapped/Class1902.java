@@ -33,12 +33,12 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         final MutableInt mutableInt = new MutableInt();
         final Class7096 method7297 = this.method7297(n2, mutableInt);
         if (mutableInt.getValue() < 15) {
-            final int method7298 = BlockPos.method1126(n);
-            final int method7299 = BlockPos.method1127(n);
-            final int method7300 = BlockPos.method1128(n);
-            final int method7301 = BlockPos.method1126(n2);
-            final int method7302 = BlockPos.method1127(n2);
-            final int method7303 = BlockPos.method1128(n2);
+            final int method7298 = BlockPos.unpackX(n);
+            final int method7299 = BlockPos.unpackY(n);
+            final int method7300 = BlockPos.unpackZ(n);
+            final int method7301 = BlockPos.unpackX(n2);
+            final int method7302 = BlockPos.unpackY(n2);
+            final int method7303 = BlockPos.unpackZ(n2);
             final boolean b = method7298 == method7301 && method7300 == method7303;
             final int signum = Integer.signum(method7301 - method7298);
             final int signum2 = Integer.signum(method7302 - method7299);
@@ -81,7 +81,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
     @Override
     public void method7326(final long n, final int n2, final boolean b) {
         final long method1111 = Class353.method1111(n);
-        final int method1112 = BlockPos.method1127(n);
+        final int method1112 = BlockPos.unpackY(n);
         final int method1113 = Class353.method1096(method1112);
         final int method1114 = Class353.method1095(method1112);
         int n4;
@@ -93,12 +93,12 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         else {
             n4 = 0;
         }
-        final long method1115 = BlockPos.method1125(n, 0, -1 - n4 * 16, 0);
+        final long method1115 = BlockPos.offset(n, 0, -1 - n4 * 16, 0);
         final long method1116 = Class353.method1111(method1115);
         if (method1111 == method1116 || ((Class1898)this.field10277).method7347(method1116)) {
             this.method7322(n, method1115, n2, b);
         }
-        final long method1117 = BlockPos.method1124(n, Direction.UP);
+        final long method1117 = BlockPos.offset(n, Direction.UP);
         final long method1118 = Class353.method1111(method1117);
         if (method1111 == method1118 || ((Class1898)this.field10277).method7347(method1118)) {
             this.method7322(n, method1117, n2, b);
@@ -106,7 +106,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         for (final Direction class179 : Class1902.field10327) {
             int n5 = 0;
             do {
-                final long method1119 = BlockPos.method1125(n, class179.getXOffset(), -n5, class179.getZOffset());
+                final long method1119 = BlockPos.offset(n, class179.getXOffset(), -n5, class179.getZOffset());
                 final long method1120 = Class353.method1111(method1119);
                 if (method1111 == method1120) {
                     this.method7322(n, method1119, n2, b);
@@ -134,7 +134,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         final long method7306 = Class353.method1111(n);
         final Class7281 method7307 = ((Class1898)this.field10277).method7348(method7306, true);
         for (final Direction class179 : Class1902.field10274) {
-            final long method7308 = BlockPos.method1124(n, class179);
+            final long method7308 = BlockPos.offset(n, class179);
             long n5 = Class353.method1111(method7308);
             Class7281 method7309;
             if (method7306 != n5) {
@@ -146,7 +146,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
             if (method7309 == null) {
                 if (class179 != Direction.DOWN) {
                     long n6;
-                    for (n6 = BlockPos.method1131(method7308); !((Class1898)this.field10277).method7347(n5) && !((Class1898)this.field10277).method7372(n5); n5 = Class353.method1093(n5, Direction.UP), n6 = BlockPos.method1125(n6, 0, 16, 0)) {}
+                    for (n6 = BlockPos.func_218288_f(method7308); !((Class1898)this.field10277).method7347(n5) && !((Class1898)this.field10277).method7372(n5); n5 = Class353.method1093(n5, Direction.UP), n6 = BlockPos.offset(n6, 0, 16, 0)) {}
                     final Class7281 method7310 = ((Class1898)this.field10277).method7348(n5, true);
                     if (n6 != n2) {
                         int method7311;
@@ -183,7 +183,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         ((Class1898)this.field10277).method7364();
         long n2 = Class353.method1111(n);
         if (!((Class1898)this.field10277).method7347(n2)) {
-            for (n = BlockPos.method1131(n); !((Class1898)this.field10277).method7347(n2) && !((Class1898)this.field10277).method7372(n2); n2 = Class353.method1093(n2, Direction.UP), n = BlockPos.method1125(n, 0, 16, 0)) {}
+            for (n = BlockPos.func_218288_f(n); !((Class1898)this.field10277).method7347(n2) && !((Class1898)this.field10277).method7372(n2); n2 = Class353.method1093(n2, Direction.UP), n = BlockPos.offset(n, 0, 16, 0)) {}
             if (((Class1898)this.field10277).method7347(n2)) {
                 super.method7294(n);
             }

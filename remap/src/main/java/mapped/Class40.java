@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.nbt.CollectionNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.INBTType;
+import net.minecraft.nbt.NumberNBT;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 import java.util.Arrays;
@@ -11,9 +15,9 @@ import java.io.IOException;
 import java.io.DataOutput;
 import java.util.List;
 
-public class Class40 extends Class38<Class47>
+public class Class40 extends CollectionNBT<Class47>
 {
-    public static final Class6068<Class40> field96;
+    public static final INBTType<Class40> field96;
     private byte[] field97;
     
     public Class40(final byte[] field97) {
@@ -34,18 +38,18 @@ public class Class40 extends Class38<Class47>
     }
     
     @Override
-    public void method259(final DataOutput dataOutput) throws IOException {
+    public void write(final DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(this.field97.length);
         dataOutput.write(this.field97);
     }
     
     @Override
-    public byte method260() {
+    public byte getId() {
         return 7;
     }
     
     @Override
-    public Class6068<Class40> method261() {
+    public INBTType<Class40> getType() {
         return Class40.field96;
     }
     
@@ -62,7 +66,7 @@ public class Class40 extends Class38<Class47>
     }
     
     @Override
-    public Class41 method265() {
+    public INBT copy() {
         final byte[] array = new byte[this.field97.length];
         System.arraycopy(this.field97, 0, array, 0, this.field97.length);
         return new Class40(array);
@@ -79,16 +83,16 @@ public class Class40 extends Class38<Class47>
     }
     
     @Override
-    public ITextComponent method263(final String s, final int n) {
-        final ITextComponent method8469 = new Class2260("B").method8469(Class40.field101);
-        final ITextComponent method8470 = new Class2260("[").method8458(method8469).method8457(";");
+    public ITextComponent toFormattedComponent(final String s, final int n) {
+        final ITextComponent method8469 = new StringTextComponent("B").applyTextStyle(Class40.SYNTAX_HIGHLIGHTING_NUMBER_TYPE);
+        final ITextComponent method8470 = new StringTextComponent("[").appendSibling(method8469).appendText(";");
         for (int i = 0; i < this.field97.length; ++i) {
-            method8470.method8457(" ").method8458(new Class2260(String.valueOf(this.field97[i])).method8469(Class40.field100)).method8458(method8469);
+            method8470.appendText(" ").appendSibling(new StringTextComponent(String.valueOf(this.field97[i])).applyTextStyle(Class40.SYNTAX_HIGHLIGHTING_NUMBER)).appendSibling(method8469);
             if (i != this.field97.length - 1) {
-                method8470.method8457(",");
+                method8470.appendText(",");
             }
         }
-        method8470.method8457("]");
+        method8470.appendText("]");
         return method8470;
     }
     
@@ -119,20 +123,20 @@ public class Class40 extends Class38<Class47>
     }
     
     @Override
-    public boolean method257(final int n, final Class41 class41) {
-        if (!(class41 instanceof Class43)) {
+    public boolean func_218659_a(final int n, final INBT class41) {
+        if (!(class41 instanceof NumberNBT)) {
             return false;
         }
-        this.field97[n] = ((Class43)class41).method273();
+        this.field97[n] = ((NumberNBT)class41).method273();
         return true;
     }
     
     @Override
-    public boolean method258(final int n, final Class41 class41) {
-        if (!(class41 instanceof Class43)) {
+    public boolean func_218660_b(final int n, final INBT class41) {
+        if (!(class41 instanceof NumberNBT)) {
             return false;
         }
-        this.field97 = ArrayUtils.add(this.field97, n, ((Class43)class41).method273());
+        this.field97 = ArrayUtils.add(this.field97, n, ((NumberNBT)class41).method273());
         return true;
     }
     

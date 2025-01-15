@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3988 extends Class3986
 {
@@ -17,7 +18,7 @@ public class Class3988 extends Class3986
     }
     
     @Override
-    public void method12132(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class7096 class1850) {
+    public void method12132(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class7096 class1850) {
         if (method12136(class1847, class1848, class1850)) {
             class1847.method6688(class1848, this.field17997, 3);
         }
@@ -25,7 +26,7 @@ public class Class3988 extends Class3986
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         return method12136(method21654, method21655, method21654.method6701(method21655)) ? this.field17997 : super.method11846(class7074);
     }
@@ -36,7 +37,7 @@ public class Class3988 extends Class3986
     
     private static boolean method12137(final Class1855 class1855, final BlockPos class1856) {
         boolean b = false;
-        final Class385 class1857 = new Class385(class1856);
+        final Mutable class1857 = new Mutable(class1856);
         for (final Direction class1858 : Direction.values()) {
             final Class7096 method6701 = class1855.method6701(class1857);
             if (class1858 != Direction.DOWN || method12138(method6701)) {

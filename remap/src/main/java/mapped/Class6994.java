@@ -53,7 +53,7 @@ public class Class6994 implements Class6991
     
     @Override
     public void method21404(final float n, final int n2) {
-        final Integer method8256 = this.field27287.method20563().method8256();
+        final Integer method8256 = this.field27287.getColor().getColor();
         if (method8256 != null) {
             Class565.method3293(1, 1, 15, 15, MathHelper.method35684((method8256 >> 16 & 0xFF) / 255.0f * n, (method8256 >> 8 & 0xFF) / 255.0f * n, (method8256 & 0xFF) / 255.0f * n) | n2 << 24);
         }

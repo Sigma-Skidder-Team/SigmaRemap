@@ -28,7 +28,7 @@ public class Class5070 extends Class5046
         Class7847.method25369(false);
         Class7847.method25371();
         Class7847.method25381(this.field21745 + ": " + this.field21746.getString());
-        this.field21747 = this.method15426(this.field21746.method8461(), this.method15421() - 50);
+        this.field21747 = this.method15426(this.field21746.getFormattedText(), this.method15421() - 50);
         this.field21749 = this.field21747.size() * this.method15423();
         this.method15431(new Class5620(this, 0, this.method15421() / 2 - 100, this.method15422() / 2 + this.field21749 / 2 + this.method15423(), Class5046.method15438("gui.back")));
     }

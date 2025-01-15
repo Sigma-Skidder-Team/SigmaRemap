@@ -46,9 +46,9 @@ public class Class3191 extends Class3167
                     this.method9914().method9910();
                     this.field15596 = 0;
                 }
-                final double field2395 = Class3191.field15514.field4684.field2395;
-                final double field2396 = Class3191.field15514.field4684.field2396;
-                final double field2397 = Class3191.field15514.field4684.field2397;
+                final double field2395 = Class3191.field15514.field4684.posX;
+                final double field2396 = Class3191.field15514.field4684.posY;
+                final double field2397 = Class3191.field15514.field4684.posZ;
                 for (int n = 49 + Class7482.method23140() * 17, i = 0; i < n; ++i) {
                     Class3191.field15514.method5269().method17292(new Class4354(field2395, field2396 + 0.06248, field2397, false));
                     Class3191.field15514.method5269().method17292(new Class4354(field2395, field2396, field2397, false));

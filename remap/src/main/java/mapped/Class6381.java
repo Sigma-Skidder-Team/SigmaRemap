@@ -15,7 +15,7 @@ public final class Class6381 implements Class6382<Class6908>
         return (Class6908)class6907;
     }
     
-    public Class6908 method19055(final Class6907<Class6908> class6907, final Class8654 class6908) {
+    public Class6908 method19055(final Class6907<Class6908> class6907, final PacketBuffer class6908) {
         return (Class6908)class6907;
     }
 }

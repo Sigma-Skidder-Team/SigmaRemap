@@ -14,7 +14,10 @@ import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.lwjgl.BufferUtils;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
@@ -1492,12 +1495,12 @@ public class Class9216
     }
     
     private static void method33743(final String s) {
-        Class9216.field39031.field4647.method3807().method3761(new Class2260(s));
+        Class9216.field39031.field4647.method3807().method3761(new StringTextComponent(s));
     }
     
     private static void method33744(final String s) {
         Class8885.method31270(s);
-        Class9216.field39031.field4647.method3807().method3761(new Class2260(s));
+        Class9216.field39031.field4647.method3807().method3761(new StringTextComponent(s));
     }
     
     public static void method33745(final String str, final IntBuffer intBuffer) {
@@ -1674,7 +1677,7 @@ public class Class9216
             final Class9319 method23441 = Class7510.method23441(Class9216.field39335, Class9216.field39333, false);
             String string = "";
             if (Class9216.field39357 != null) {
-                final int method23442 = Class9216.field39357.field10063.method20487().method1270();
+                final int method23442 = Class9216.field39357.dimension.getType().method1270();
                 if (Class9216.field39358.contains(method23442)) {
                     string = "world" + method23442 + "/";
                 }
@@ -3040,7 +3043,7 @@ public class Class9216
             Class9216.field39090 = Class9216.field39090 * n3 + Class9216.field39089 * (1.0f - n3);
             final Entity method18166 = class6092.method18166();
             if (method18166 != null) {
-                Class9216.field39051 = (method18166 instanceof Class511 && ((Class511)method18166).method2783());
+                Class9216.field39051 = (method18166 instanceof LivingEntity && ((LivingEntity)method18166).method2783());
                 Class9216.field39099 = (float)class6092.method18161().getY();
                 Class9216.field39096 = Class9216.field39031.method5306().method28695(method18166, n);
                 final float n4 = (float)Math.exp(Math.log(0.5) * (Class9216.field39084 * 0.01f) / Class9216.field39093);
@@ -3056,8 +3059,8 @@ public class Class9216
                 else {
                     Class9216.field39095 = 0;
                 }
-                if (method18166 instanceof Class511) {
-                    final Class511 class6093 = (Class511)method18166;
+                if (method18166 instanceof LivingEntity) {
+                    final LivingEntity class6093 = (LivingEntity)method18166;
                     Class9216.field39105 = 0.0f;
                     if (class6093.method2653(Class9439.field40489)) {
                         final Class1660 field39033 = Class9216.field39032;
@@ -3169,8 +3172,8 @@ public class Class9216
         Class7901.method25572();
     }
     
-    private static int method33799(final Class1847 class1847) {
-        return (class1847 == null) ? Integer.MIN_VALUE : class1847.field10063.method20487().method1270();
+    private static int method33799(final World class1847) {
+        return (class1847 == null) ? Integer.MIN_VALUE : class1847.dimension.getType().method1270();
     }
     
     public static void method33800(final float n, final long n2) {

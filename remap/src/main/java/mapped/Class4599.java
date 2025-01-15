@@ -18,7 +18,7 @@ public class Class4599 extends Class4598<Class5129>
         super(function);
     }
     
-    public boolean method13647(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final Class6997 class1877, final Class5129 class1878) {
+    public boolean method13647(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final MutableBoundingBox class1877, final Class5129 class1878) {
         final int n = class1878.field22082 + random.nextInt(class1878.field22087 + 1) + random.nextInt(class1878.field22088 + 1);
         final int n2 = (class1878.field22089 < 0) ? (n - (class1878.field22093 + random.nextInt(class1878.field22094 + 1))) : (class1878.field22089 + random.nextInt(class1878.field22090 + 1));
         final int method1262 = class1878.field22086.method1262(random, n2, n, class1878);
@@ -29,7 +29,7 @@ public class Class4599 extends Class4598<Class5129>
             final Direction method1264 = Plane.HORIZONTAL.method576(random);
             final int n3 = n - random.nextInt(4) - 1;
             int n4 = 3 - random.nextInt(3);
-            final Class385 class1880 = new Class385();
+            final Mutable class1880 = new Mutable();
             int method1265 = class1879.getX();
             int method1266 = class1879.getZ();
             int n5 = 0;
@@ -42,7 +42,7 @@ public class Class4599 extends Class4598<Class5129>
                         --n4;
                     }
                 }
-                if (this.method13618(class1875, random, class1880.method1284(method1265, n6, method1266), set, class1877, class1878)) {
+                if (this.method13618(class1875, random, class1880.setPos(method1265, n6, method1266), set, class1877, class1878)) {
                     n5 = n6;
                 }
             }
@@ -59,7 +59,7 @@ public class Class4599 extends Class4598<Class5129>
                         final int n11 = class1879.getY() + n10;
                         method1267 += method1269.getXOffset();
                         method1268 += method1269.getZOffset();
-                        if (this.method13618(class1875, random, class1880.method1284(method1267, n11, method1268), set, class1877, class1878)) {
+                        if (this.method13618(class1875, random, class1880.setPos(method1267, n11, method1268), set, class1877, class1878)) {
                             n9 = n11;
                         }
                     }

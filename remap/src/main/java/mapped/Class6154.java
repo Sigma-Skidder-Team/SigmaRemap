@@ -14,8 +14,13 @@ import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Map;
 import java.util.List;
@@ -26,26 +31,26 @@ public class Class6154
     private final boolean field24894;
     private final Class2196 field24895;
     private final Random field24896;
-    private final Class1847 field24897;
+    private final World field24897;
     private final double field24898;
     private final double field24899;
     private final double field24900;
     private final Entity field24901;
     private final float field24902;
-    private Class7929 field24903;
+    private DamageSource field24903;
     private final List<BlockPos> field24904;
     private final Map<Class512, Vec3d> field24905;
     
-    public Class6154(final Class1847 class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final List<BlockPos> list) {
+    public Class6154(final World class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final List<BlockPos> list) {
         this(class1847, class1848, n, n2, n3, n4, false, Class2196.field13367, list);
     }
     
-    public Class6154(final Class1847 class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class1849, final List<BlockPos> list) {
+    public Class6154(final World class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class1849, final List<BlockPos> list) {
         this(class1847, class1848, n, n2, n3, n4, b, class1849);
         this.field24904.addAll(list);
     }
     
-    public Class6154(final Class1847 field24897, final Entity field24898, final double field24899, final double field24900, final double field24901, final float field24902, final boolean field24903, final Class2196 field24904) {
+    public Class6154(final World field24897, final Entity field24898, final double field24899, final double field24900, final double field24901, final float field24902, final boolean field24903, final Class2196 field24904) {
         this.field24896 = new Random();
         this.field24904 = Lists.newArrayList();
         this.field24905 = Maps.newHashMap();
@@ -57,7 +62,7 @@ public class Class6154
         this.field24900 = field24901;
         this.field24894 = field24903;
         this.field24895 = field24904;
-        this.field24903 = Class7929.method25702(this);
+        this.field24903 = DamageSource.method25702(this);
     }
     
     public static float method18407(final Vec3d class5487, final Entity class5488) {
@@ -75,7 +80,7 @@ public class Class6154
                     for (float n8 = 0.0f; n8 <= 1.0f; n8 += (float)n) {
                         for (float n9 = 0.0f; n9 <= 1.0f; n9 += (float)n2) {
                             for (float n10 = 0.0f; n10 <= 1.0f; n10 += (float)n3) {
-                                if (class5488.field2391.method6987(new Class8478(new Vec3d(MathHelper.method35701(n8, method1886.field25073, method1886.field25076) + n4, MathHelper.method35701(n9, method1886.field25074, method1886.field25077), MathHelper.method35701(n10, method1886.field25075, method1886.field25078) + n5), class5487, Class2040.field11633, Class2191.field13325, class5488)).method21449() == Class2165.field12880) {
+                                if (class5488.world.method6987(new Class8478(new Vec3d(MathHelper.method35701(n8, method1886.field25073, method1886.field25076) + n4, MathHelper.method35701(n9, method1886.field25074, method1886.field25077), MathHelper.method35701(n10, method1886.field25075, method1886.field25078) + n5), class5487, Class2040.field11633, Class2191.field13325, class5488)).method21449() == Class2165.field12880) {
                                     ++n6;
                                 }
                                 ++n7;
@@ -160,15 +165,15 @@ public class Class6154
                         final double n16 = n12 / n14;
                         final double n17 = n13 / n14;
                         final double n18 = (1.0 - n10) * method18407(class355, class356);
-                        class356.method1740(this.method18411(), (float)(int)((n18 * n18 + n18) / 2.0 * 7.0 * n9 + 1.0));
+                        class356.attackEntityFrom(this.method18411(), (float)(int)((n18 * n18 + n18) / 2.0 * 7.0 * n9 + 1.0));
                         double method6704 = n18;
-                        if (class356 instanceof Class511) {
-                            method6704 = Class6269.method18608((Class511)class356, n18);
+                        if (class356 instanceof LivingEntity) {
+                            method6704 = Class6269.method18608((LivingEntity)class356, n18);
                         }
-                        class356.method1936(class356.method1935().add(n15 * method6704, n16 * method6704, n17 * method6704));
+                        class356.method1936(class356.getMotion().add(n15 * method6704, n16 * method6704, n17 * method6704));
                         if (class356 instanceof Class512) {
                             final Class512 class357 = (Class512)class356;
-                            if (!class357.method1639()) {
+                            if (!class357.isSpectator()) {
                                 if (!class357.method2889() || !class357.field3025.field27302) {
                                     this.field24905.put(class357, new Vec3d(n15 * n18, n16 * n18, n17 * n18));
                                 }
@@ -202,7 +207,7 @@ public class Class6154
                 if (method6701.method21706()) {
                     continue;
                 }
-                class354.method1153();
+                class354.toImmutable();
                 this.field24897.method6796().method15297("explosion_blocks");
                 if (method6702.method11872(this)) {
                     if (this.field24897 instanceof Class1849) {
@@ -251,11 +256,11 @@ public class Class6154
         list.add((Object)Pair.of((Object)class8321, (Object)class8322));
     }
     
-    public Class7929 method18411() {
+    public DamageSource method18411() {
         return this.field24903;
     }
     
-    public void method18412(final Class7929 field24903) {
+    public void method18412(final DamageSource field24903) {
         this.field24903 = field24903;
     }
     
@@ -264,17 +269,17 @@ public class Class6154
     }
     
     @Nullable
-    public Class511 method18414() {
+    public LivingEntity method18414() {
         if (this.field24901 == null) {
             return null;
         }
         if (this.field24901 instanceof Class510) {
             return ((Class510)this.field24901).method2614();
         }
-        if (!(this.field24901 instanceof Class511)) {
+        if (!(this.field24901 instanceof LivingEntity)) {
             return (this.field24901 instanceof Class419) ? ((Class419)this.field24901).field2527 : null;
         }
-        return (Class511)this.field24901;
+        return (LivingEntity)this.field24901;
     }
     
     public void method18415() {

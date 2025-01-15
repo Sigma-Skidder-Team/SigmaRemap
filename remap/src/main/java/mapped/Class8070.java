@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class8070 extends Class8071
 {
@@ -82,7 +84,7 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public Class2201 method26479(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515) {
+    public Class2201 method26479(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515) {
         if (!this.field33243) {
             return super.method26479(class512, class513, class514, class515);
         }
@@ -91,7 +93,7 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public Class2201 method26480(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         if (!this.field33243) {
             return super.method26480(class512, class513, class514, class515, class516);
         }

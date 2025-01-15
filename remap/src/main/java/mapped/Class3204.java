@@ -56,8 +56,8 @@ public class Class3204 extends Class3167
         }
         this.field15631 = -1.0;
         this.field15630 = false;
-        if (Class3204.field15514.field4684.field2404) {
-            this.field15631 = Class3204.field15514.field4684.field2396;
+        if (Class3204.field15514.field4684.onGround) {
+            this.field15631 = Class3204.field15514.field4684.posY;
         }
         this.field15626 = -1;
     }
@@ -87,13 +87,13 @@ public class Class3204 extends Class3167
     public void method10044(final Class5738 class5738) {
         if (this.method9906()) {
             if (this.method9887("Speed Mode").equals("Cubecraft") && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                if (Class3204.field15514.field4683.method6981(Class3204.field15514.field4684, Class3204.field15514.field4684.field2403.method18494(0.0, -1.5, 0.0).method18492(0.05, 0.0, 0.05).method18492(-0.05, 0.0, -0.05)).count() == 0L) {
-                    if (Class3204.field15514.field4684.field2414 < 1.0f) {
+                if (Class3204.field15514.field4683.method6981(Class3204.field15514.field4684, Class3204.field15514.field4684.boundingBox.method18494(0.0, -1.5, 0.0).method18492(0.05, 0.0, 0.05).method18492(-0.05, 0.0, -0.05)).count() == 0L) {
+                    if (Class3204.field15514.field4684.fallDistance < 1.0f) {
                         class5738.method17026(true);
                     }
                 }
             }
-            else if (Class3204.field15514.field4684.field2404) {
+            else if (Class3204.field15514.field4684.onGround) {
                 if (Class9463.method35173().method35189().method21551(Class3385.class).method9906()) {
                     if (!this.field15629 || !this.method9883("Downwards")) {
                         class5738.method17026(true);
@@ -166,7 +166,7 @@ public class Class3204 extends Class3167
                 double n = class5744.method17034();
                 double n2 = class5744.method17038();
                 double n3 = class5744.method17036();
-                if (!Class3204.field15514.field4684.field2405) {
+                if (!Class3204.field15514.field4684.collidedHorizontally) {
                     if (!Class3204.field15514.field4648.field23439.field2162) {
                         final double[] method10052 = this.method10052();
                         n = method10052[0];
@@ -174,10 +174,10 @@ public class Class3204 extends Class3167
                     }
                 }
                 Label_0177: {
-                    if (Class3204.field15514.field4684.method1935().y < 0.0) {
-                        if (Class3204.field15514.field4684.field2414 > 1.0f) {
+                    if (Class3204.field15514.field4684.getMotion().y < 0.0) {
+                        if (Class3204.field15514.field4684.fallDistance > 1.0f) {
                             if (Class4609.method13697(0.0f, 90.0f, 3.0f).method21449() == Class2165.field12880) {
-                                n3 += Math.min(Class3204.field15514.field4684.method1935().y * 2.0, 4.0);
+                                n3 += Math.min(Class3204.field15514.field4684.getMotion().y * 2.0, 4.0);
                                 break Label_0177;
                             }
                         }
@@ -214,8 +214,8 @@ public class Class3204 extends Class3167
                     }
                     this.field15623 = null;
                 }
-                if (Class3204.field15514.field4684.field2399 != class5744.method17042()) {
-                    if (Class3204.field15514.field4684.field2400 != class5744.method17040()) {
+                if (Class3204.field15514.field4684.rotationYaw != class5744.method17042()) {
+                    if (Class3204.field15514.field4684.rotationPitch != class5744.method17040()) {
                         this.field15625 = 0;
                     }
                 }
@@ -229,13 +229,13 @@ public class Class3204 extends Class3167
         if (!this.method9906() || this.field15628.method10281() == 0) {
             return;
         }
-        if (Class3204.field15514.field4684.field2404 || Class6430.method19160(Class3204.field15514.field4684, 0.01f)) {
-            this.field15631 = Class3204.field15514.field4684.field2396;
+        if (Class3204.field15514.field4684.onGround || Class6430.method19160(Class3204.field15514.field4684, 0.01f)) {
+            this.field15631 = Class3204.field15514.field4684.posY;
         }
         if (this.method9914().method9883("No Sprint")) {
             Class3204.field15514.field4684.method1816(false);
         }
-        if (Class3204.field15514.field4684.field2404) {
+        if (Class3204.field15514.field4684.onGround) {
             this.field15626 = 0;
         }
         else if (this.field15626 >= 0) {
@@ -247,20 +247,20 @@ public class Class3204 extends Class3167
         final String method9887 = this.method9887("Speed Mode");
         switch (method9887) {
             case "Jump": {
-                if (Class3204.field15514.field4684.field2404 && Class6430.method19114() && !Class3204.field15514.field4684.method1809() && !this.field15629) {
+                if (Class3204.field15514.field4684.onGround && Class6430.method19114() && !Class3204.field15514.field4684.method1809() && !this.field15629) {
                     this.field15630 = false;
                     Class3204.field15514.field4684.method2725();
                     ((Class3256)Class9463.method35173().method35189().method21551(Class3256.class)).method10269();
                     this.field15630 = true;
-                    class5717.method16975(Class3204.field15514.field4684.method1935().y);
-                    class5717.method16973(Class3204.field15514.field4684.method1935().x);
-                    class5717.method16977(Class3204.field15514.field4684.method1935().z);
+                    class5717.method16975(Class3204.field15514.field4684.getMotion().y);
+                    class5717.method16973(Class3204.field15514.field4684.getMotion().x);
+                    class5717.method16977(Class3204.field15514.field4684.getMotion().z);
                     break;
                 }
                 break;
             }
             case "AAC": {
-                if (this.field15625 == 0 && Class3204.field15514.field4684.field2404) {
+                if (this.field15625 == 0 && Class3204.field15514.field4684.onGround) {
                     Class7482.method23149(class5717, Class7482.method23136() * 0.82);
                     break;
                 }
@@ -268,11 +268,11 @@ public class Class3204 extends Class3167
             }
             case "Cubecraft": {
                 double n2 = 0.2;
-                final float method9888 = this.method10055(MathHelper.method35668(Class3204.field15514.field4684.field2399));
+                final float method9888 = this.method10055(MathHelper.method35668(Class3204.field15514.field4684.rotationYaw));
                 if (Class3204.field15514.field4648.field23439.method1056()) {
                     Class3204.field15514.field4633.field26532 = 1.0f;
                 }
-                else if (Class3204.field15514.field4684.field2404) {
+                else if (Class3204.field15514.field4684.onGround) {
                     if (Class6430.method19114() && !Class3204.field15514.field4684.method1809() && !this.field15629) {
                         class5717.method16975(1.00000000000001);
                     }
@@ -310,14 +310,14 @@ public class Class3204 extends Class3167
                 if (!Class6430.method19114()) {
                     n2 = 0.0;
                 }
-                if (Class3204.field15514.field4684.field2414 < 1.0f) {
+                if (Class3204.field15514.field4684.fallDistance < 1.0f) {
                     Class7482.method23153(class5717, n2, method9888, method9888, 360.0f);
                 }
                 Class6430.method19155(class5717.method16974());
                 break;
             }
             case "Slow": {
-                if (Class3204.field15514.field4684.field2404) {
+                if (Class3204.field15514.field4684.onGround) {
                     class5717.method16973(class5717.method16972() * 0.75);
                     class5717.method16977(class5717.method16976() * 0.75);
                     break;
@@ -327,7 +327,7 @@ public class Class3204 extends Class3167
                 break;
             }
             case "Sneak": {
-                if (Class3204.field15514.field4684.field2404) {
+                if (Class3204.field15514.field4684.onGround) {
                     class5717.method16973(class5717.method16972() * 0.65);
                     class5717.method16977(class5717.method16976() * 0.65);
                     break;
@@ -368,17 +368,17 @@ public class Class3204 extends Class3167
         if (this.method9906()) {
             if (this.method9887("Speed Mode").equals("Cubecraft")) {
                 if (this.field15626 >= 0) {
-                    if (Class3204.field15514.field4684.field2414 > 1.2f) {
+                    if (Class3204.field15514.field4684.fallDistance > 1.2f) {
                         return;
                     }
                     if (Class3204.field15514.field4684.field3019 < this.field15631) {
                         return;
                     }
                     if (!Class3204.field15514.field4684.field2967) {
-                        Class3204.field15514.field4684.field2396 = this.field15631;
-                        Class3204.field15514.field4684.field2418 = this.field15631;
+                        Class3204.field15514.field4684.posY = this.field15631;
+                        Class3204.field15514.field4684.lastTickPosY = this.field15631;
                         Class3204.field15514.field4684.field3019 = this.field15631;
-                        Class3204.field15514.field4684.field2393 = this.field15631;
+                        Class3204.field15514.field4684.prevPosY = this.field15631;
                         if (Class7482.method23148()) {
                             Class3204.field15514.field4684.field3013 = 0.099999994f;
                         }
@@ -389,12 +389,12 @@ public class Class3204 extends Class3167
     }
     
     public double[] method10052() {
-        final double field2395 = Class3204.field15514.field4684.field2395;
-        final double field2396 = Class3204.field15514.field4684.field2397;
+        final double field2395 = Class3204.field15514.field4684.posX;
+        final double field2396 = Class3204.field15514.field4684.posZ;
         final double n = Class3204.field15514.field4684.field4085.field24722;
         final double n2 = Class3204.field15514.field4684.field4085.field24721;
-        final float field2397 = Class3204.field15514.field4684.field2399;
-        BlockPos class354 = new BlockPos(field2395, Class3204.field15514.field4684.field2396 - 1.0, field2396);
+        final float field2397 = Class3204.field15514.field4684.rotationYaw;
+        BlockPos class354 = new BlockPos(field2395, Class3204.field15514.field4684.posY - 1.0, field2396);
         double n3 = field2395;
         double n4 = field2396;
         double n5 = 0.0;
@@ -411,7 +411,7 @@ public class Class3204 extends Class3167
             if (n5 == n6) {
                 break;
             }
-            class354 = new BlockPos(n3, Class3204.field15514.field4684.field2396 - 1.0, n4);
+            class354 = new BlockPos(n3, Class3204.field15514.field4684.posY - 1.0, n4);
         }
         return new double[] { n3, n4 };
     }

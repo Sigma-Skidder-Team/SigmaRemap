@@ -4,6 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class821 extends Class819
@@ -11,16 +16,16 @@ public class Class821 extends Class819
     private BlockPos field4392;
     private int field4393;
     
-    public Class821(final EntityType<? extends Class821> class7499, final Class1847 class7500) {
+    public Class821(final EntityType<? extends Class821> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2390 = true;
+        this.forceSpawn = true;
     }
     
     @Override
     public void method4142() {
         this.field4114.method22062(0, new Class3490(this));
-        this.field4114.method22062(0, new Class3538<Object>(this, Class5333.method16476(new ItemStack(Class7739.field31441), Class8644.field36257), Class8520.field35702, class821 -> !this.field2391.method6703() && !class821.method1823()));
-        this.field4114.method22062(0, new Class3538<Object>(this, new ItemStack(Class7739.field31358), Class8520.field35707, class822 -> this.field2391.method6703() && class822.method1823()));
+        this.field4114.method22062(0, new Class3538<Object>(this, Class5333.method16476(new ItemStack(Class7739.field31441), Class8644.field36257), Class8520.field35702, class821 -> !this.world.method6703() && !class821.method1823()));
+        this.field4114.method22062(0, new Class3538<Object>(this, new ItemStack(Class7739.field31358), Class8520.field35707, class822 -> this.world.method6703() && class822.method1823()));
         this.field4114.method22062(1, new Class3604(this));
         this.field4114.method22062(1, new Class3448<Object>(this, Class827.class, 8.0f, 0.5, 0.5));
         this.field4114.method22062(1, new Class3448<Object>(this, Class771.class, 12.0f, 0.5, 0.5));
@@ -60,7 +65,7 @@ public class Class821 extends Class819
                                 class512.method2857(Class8276.field34021);
                             }
                             if (!this.method4825().isEmpty()) {
-                                if (!this.field2391.field10067) {
+                                if (!this.world.field10067) {
                                     this.method4822(class512);
                                     this.method4854(class512, this.getDisplayName(), 1);
                                 }
@@ -85,7 +90,7 @@ public class Class821 extends Class819
             if (array2 != null) {
                 final Class57 method4825 = this.method4825();
                 this.method4840(method4825, array, 5);
-                final Class9017 method4826 = array2[this.field2423.nextInt(array2.length)].method25804(this, this.field2423);
+                final Class9017 method4826 = array2[this.rand.nextInt(array2.length)].method25804(this, this.rand);
                 if (method4826 != null) {
                     method4825.add(method4826);
                 }
@@ -122,7 +127,7 @@ public class Class821 extends Class819
     @Override
     public void method4829(final Class9017 class9017) {
         if (class9017.method32300()) {
-            this.field2391.method6886(new Class508(this.field2391, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 3 + this.field2423.nextInt(4)));
+            this.world.method6886(new Class508(this.world, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 3 + this.rand.nextInt(4)));
         }
     }
     
@@ -132,7 +137,7 @@ public class Class821 extends Class819
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35705;
     }
     
@@ -167,7 +172,7 @@ public class Class821 extends Class819
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             this.method4843();
         }
     }

@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.io.IOException;
 
-public class Class4344 implements Class4252<Class5813>
+public class Class4344 implements IPacket<Class5813>
 {
     private static String[] field19459;
     private BlockPos field19460;
@@ -23,7 +23,7 @@ public class Class4344 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19460 = class8654.method29494();
         this.field19461 = new String[4];
         for (int i = 0; i < 4; ++i) {
@@ -32,7 +32,7 @@ public class Class4344 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29495(this.field19460);
         for (int i = 0; i < 4; ++i) {
             class8654.method29514(this.field19461[i]);

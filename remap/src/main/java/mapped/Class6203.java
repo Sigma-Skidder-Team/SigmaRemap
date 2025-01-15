@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class6203 extends Class6159
 {
@@ -12,7 +13,7 @@ public class Class6203 extends Class6159
     private boolean field25036;
     private final Class7805 field25037;
     
-    private Class6203(final Class1847 class1847, final double n, final double n2, final double n3, final double field24939, final double field24940, final double field24941, final Class7805 field24942) {
+    private Class6203(final World class1847, final double n, final double n2, final double n3, final double field24939, final double field24940, final double field24941, final Class7805 field24942) {
         super(class1847, n, n2, n3);
         this.field24939 = field24939;
         this.field24940 = field24940;

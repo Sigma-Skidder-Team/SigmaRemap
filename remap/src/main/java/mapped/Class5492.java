@@ -4,19 +4,21 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class5492 implements Class5491
 {
     private static String[] field22773;
-    private final Class1847 field22774;
+    private final World field22774;
     private final BlockPos field22775;
     
-    public Class5492(final Class1847 field22774, final BlockPos field22775) {
+    public Class5492(final World field22774, final BlockPos field22775) {
         this.field22774 = field22774;
         this.field22775 = field22775;
     }
     
     @Override
-    public Class1847 method16763() {
+    public World method16763() {
         return this.field22774;
     }
     

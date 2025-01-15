@@ -59,8 +59,8 @@ public class Class520 extends Class516<Class3428> implements Class519
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.method8461(), 28.0f, 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3148.getFormattedText(), 28.0f, 6.0f, 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3686 extends Class3685
 {
     private static String[] field16991;
@@ -13,7 +16,7 @@ public class Class3686 extends Class3685
     }
     
     @Override
-    public boolean method11289(final Class446 class446, final Class1847 class447) {
+    public boolean method11289(final Class446 class446, final World class447) {
         return this.field16985.test(class446.method2157(0));
     }
     

@@ -6,6 +6,8 @@ package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Predicate;
 
 public class Class175 implements Predicate<ItemStack>

@@ -63,7 +63,7 @@ public class MathHelper
         return (n >= n2) ? n2 : (n2 - 1);
     }
     
-    public static long method35645(final double n) {
+    public static long lfloor(final double n) {
         final long n2 = (long)n;
         return (n >= n2) ? n2 : (n2 - 1L);
     }
@@ -303,7 +303,7 @@ public class MathHelper
     }
     
     public static double method35687(final double n) {
-        return n - method35645(n);
+        return n - lfloor(n);
     }
     
     public static long method35688(final Vec3i class352) {

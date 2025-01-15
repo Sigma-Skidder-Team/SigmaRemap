@@ -172,7 +172,7 @@ public class Class535 extends Class527
         this.field3194.method20897(n, n2);
         final ITextComponent method3769 = this.field3150.field4647.method3807().method3769(n, n2);
         if (method3769 != null) {
-            if (method3769.method8456().method30411() != null) {
+            if (method3769.getStyle().method30411() != null) {
                 this.method3033(method3769, n, n2);
             }
         }

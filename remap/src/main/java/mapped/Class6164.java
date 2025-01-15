@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class6164 extends Class6159
@@ -12,7 +14,7 @@ public class Class6164 extends Class6159
     private static final Random field24919;
     private final Class7805 field24920;
     
-    private Class6164(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class7805 field24920) {
+    private Class6164(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class7805 field24920) {
         super(class1847, n, n2, n3, 0.5 - Class6164.field24919.nextDouble(), n5, 0.5 - Class6164.field24919.nextDouble());
         this.field24920 = field24920;
         this.field24940 *= 0.20000000298023224;

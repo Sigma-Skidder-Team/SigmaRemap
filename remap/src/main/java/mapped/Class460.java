@@ -65,7 +65,7 @@ public abstract class Class460 extends Class436 implements Class446, Class434, I
     }
     
     public static boolean method2336(final Class512 class512, final Class9115 class513, final ITextComponent class514) {
-        if (!class512.method1639() && !class513.method32976(class512.method2713())) {
+        if (!class512.isSpectator() && !class513.method32976(class512.method2713())) {
             class512.method2853(new Class2259("container.isLocked", new Object[] { class514 }), true);
             class512.method2812(Class8520.field35066, Class286.field1582, 1.0f, 1.0f);
             return false;

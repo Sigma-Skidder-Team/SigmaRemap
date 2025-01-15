@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class3941 extends Class3841
 {
     private static String[] field17830;
@@ -19,7 +23,7 @@ public class Class3941 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final Class436 method6727 = class7097.method6727(class7098);
         if (!(method6727 instanceof Class501)) {
             return Class2201.field13402;
@@ -28,7 +32,7 @@ public class Class3941 extends Class3841
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (!class1847.field10067) {
             if (class1850 != null) {
                 final Class436 method6727 = class1847.method6727(class1848);
@@ -55,7 +59,7 @@ public class Class3941 extends Class3841
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.field10067) {
             final Class436 method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class501) {

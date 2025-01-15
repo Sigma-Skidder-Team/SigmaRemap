@@ -19,7 +19,7 @@ public class Class377 implements IDynamicSerializable
     private final Runnable field2219;
     
     private Class377(final BlockPos class354, final Class8912 field2217, final int field2218, final Runnable field2219) {
-        this.field2216 = class354.method1153();
+        this.field2216 = class354.toImmutable();
         this.field2217 = field2217;
         this.field2218 = field2218;
         this.field2219 = field2219;
@@ -30,12 +30,12 @@ public class Class377 implements IDynamicSerializable
     }
     
     public <T> Class377(final Dynamic<T> dynamic, final Runnable runnable) {
-        this(dynamic.get("pos").map((Function) BlockPos::method1122).orElse(new BlockPos(0, 0, 0)), Class90.field241.method505(new Class1932(dynamic.get("type").asString(""))), dynamic.get("free_tickets").asInt(0), runnable);
+        this(dynamic.get("pos").map((Function) BlockPos::deserialize).orElse(new BlockPos(0, 0, 0)), Class90.field241.method505(new Class1932(dynamic.get("type").asString(""))), dynamic.get("free_tickets").asInt(0), runnable);
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("pos"), this.field2216.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps), dynamicOps.createString("type"), dynamicOps.createString(Class90.field241.method503(this.field2217).toString()), dynamicOps.createString("free_tickets"), dynamicOps.createInt(this.field2218)));
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("pos"), this.field2216.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps), dynamicOps.createString("type"), dynamicOps.createString(Class90.field241.method503(this.field2217).toString()), dynamicOps.createString("free_tickets"), dynamicOps.createInt(this.field2218)));
     }
     
     public boolean method1255() {

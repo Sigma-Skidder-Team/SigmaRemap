@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import org.lwjgl.opengl.GL11;
 
@@ -36,10 +37,10 @@ public class Class3182 extends Class3167
                 if (!Class4609.method13665(Class3182.field15514.field4684, field15568)) {
                     continue;
                 }
-                if (field15568.getY() < Class3182.field15514.field4684.field2396 - 2.0) {
+                if (field15568.getY() < Class3182.field15514.field4684.posY - 2.0) {
                     continue;
                 }
-                if (field15568.getY() > Class3182.field15514.field4684.field2396 - 1.0) {
+                if (field15568.getY() > Class3182.field15514.field4684.posY - 1.0) {
                     continue;
                 }
                 if (this.method9981(field15568)) {

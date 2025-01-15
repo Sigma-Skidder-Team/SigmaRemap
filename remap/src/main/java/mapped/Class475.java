@@ -4,9 +4,12 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 public class Class475 extends Class456 implements Class476, Class439
 {
@@ -98,7 +101,7 @@ public class Class475 extends Class456 implements Class476, Class439
         this.field2774 = 0.0f;
     }
     
-    public static int method2419(final Class1847 class1847, final Class460 class1848, final int n, final int n2, final int n3, final int n4, int method2420) {
+    public static int method2419(final World class1847, final Class460 class1848, final int n, final int n2, final int n3, final int n4, int method2420) {
         if (!class1847.field10067) {
             if (method2420 != 0) {
                 if ((n + n2 + n3 + n4) % 200 == 0) {
@@ -109,7 +112,7 @@ public class Class475 extends Class456 implements Class476, Class439
         return method2420;
     }
     
-    public static int method2420(final Class1847 class1847, final Class460 class1848, final int n, final int n2, final int n3) {
+    public static int method2420(final World class1847, final Class460 class1848, final int n, final int n2, final int n3) {
         int n4 = 0;
         for (final Class512 class1849 : class1847.method7128((Class<? extends Class512>)Class512.class, new AxisAlignedBB(n - 5.0f, n2 - 5.0f, n3 - 5.0f, n + 1 + 5.0f, n2 + 1 + 5.0f, n3 + 1 + 5.0f))) {
             if (!(class1849.field3009 instanceof Class3438)) {
@@ -155,7 +158,7 @@ public class Class475 extends Class456 implements Class476, Class439
     
     @Override
     public void method2241(final Class512 class512) {
-        if (!class512.method1639()) {
+        if (!class512.isSpectator()) {
             if (this.field2776 < 0) {
                 this.field2776 = 0;
             }
@@ -166,7 +169,7 @@ public class Class475 extends Class456 implements Class476, Class439
     
     @Override
     public void method2242(final Class512 class512) {
-        if (!class512.method1639()) {
+        if (!class512.isSpectator()) {
             --this.field2776;
             this.method2422();
         }

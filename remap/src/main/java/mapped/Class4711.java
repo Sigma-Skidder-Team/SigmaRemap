@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -17,7 +19,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
     
     public Class4711(final Class8551 class8551, final boolean b) {
         super(class8551, new Class5860(0.0f, b), 0.5f);
-        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1835((Class4778<Class511, Class5853>)this, new Class5853(0.5f), new Class5853(1.0f)));
+        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1835((Class4778<LivingEntity, Class5853>)this, new Class5853(0.5f), new Class5853(1.0f)));
         this.method13978(new Class1823<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1821<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1842(this));
@@ -25,7 +27,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         this.method13978(new Class1831<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1801<Class754, Class5860<Class754>>(this));
         this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1817((Class4778<Class512, Class5860<Class512>>)this));
-        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1815((Class4778<Class511, Class5860<Class511>>)this));
+        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1815((Class4778<LivingEntity, Class5860<LivingEntity>>)this));
         this.method13978(new Class1822<Class754, Class5860<Class754>>(this));
     }
     
@@ -40,7 +42,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
     
     private void method13995(final Class754 class754) {
         final Class5860 class755 = ((Class4710<T, Class5860>)this).method13979();
-        if (!class754.method1639()) {
+        if (!class754.isSpectator()) {
             final ItemStack method2713 = class754.method2713();
             final ItemStack method2714 = class754.method2714();
             class755.method17584(true);
@@ -134,7 +136,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
             final Class6516 method28716 = class754.method2890();
             final Class9290 method28717 = method28716.method19644(2);
             if (method28717 != null) {
-                super.method13958((T)class754, method28716.method19636(class754.method1867(), method28717).method23969() + " " + method28717.method34314().method8461(), class755, class756, n);
+                super.method13958((T)class754, method28716.method19636(class754.method1867(), method28717).method23969() + " " + method28717.method34314().getFormattedText(), class755, class756, n);
                 class755.method22564(0.0, 0.25874999165534973, 0.0);
             }
         }
@@ -170,7 +172,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
             }
             else {
                 super.method13985(class754, class755, n, n2, n3);
-                class755.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method2623, 0.0f, class754.method1706() ? (-90.0f - class754.field2400) : -90.0f)));
+                class755.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method2623, 0.0f, class754.method1706() ? (-90.0f - class754.rotationPitch) : -90.0f)));
                 if (class754.method1818()) {
                     class755.method22564(0.0, -1.0, 0.30000001192092896);
                 }
@@ -181,10 +183,10 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
             final float n4 = class754.method2774() + n3;
             final float method2624 = MathHelper.clamp(n4 * n4 / 100.0f, 0.0f, 1.0f);
             if (!class754.method2744()) {
-                class755.method22566(Vector3f.XP.rotationDegrees(method2624 * (-90.0f - class754.field2400)));
+                class755.method22566(Vector3f.XP.rotationDegrees(method2624 * (-90.0f - class754.rotationPitch)));
             }
             final Vec3d method2625 = class754.method1741(n3);
-            final Vec3d method2626 = class754.method1935();
+            final Vec3d method2626 = class754.getMotion();
             final double method2627 = Entity.method1680(method2626);
             final double method2628 = Entity.method1680(method2625);
             if (method2627 > 0.0) {

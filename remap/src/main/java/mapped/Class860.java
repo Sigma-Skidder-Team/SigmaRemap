@@ -5,9 +5,15 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.apache.commons.lang3.Validate;
 import java.util.function.Predicate;
 
@@ -18,12 +24,12 @@ public abstract class Class860 extends Entity
     public BlockPos field4599;
     public Direction field4600;
     
-    public Class860(final EntityType<? extends Class860> class7499, final Class1847 class7500) {
+    public Class860(final EntityType<? extends Class860> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4600 = Direction.SOUTH;
     }
     
-    public Class860(final EntityType<? extends Class860> class7499, final Class1847 class7500, final BlockPos field4599) {
+    public Class860(final EntityType<? extends Class860> class7499, final World class7500, final BlockPos field4599) {
         this(class7499, class7500);
         this.field4599 = field4599;
     }
@@ -36,8 +42,8 @@ public abstract class Class860 extends Entity
         Validate.notNull((Object)field4600);
         Validate.isTrue(field4600.getAxis().isHorizontal());
         this.field4600 = field4600;
-        this.field2399 = (float)(this.field4600.getHorizontalIndex() * 90);
-        this.field2401 = this.field2399;
+        this.rotationYaw = (float)(this.field4600.getHorizontalIndex() * 90);
+        this.prevRotationYaw = this.rotationYaw;
         this.method5187();
     }
     
@@ -78,9 +84,9 @@ public abstract class Class860 extends Entity
     @Override
     public void method1659() {
         if (this.field4598++ == 100) {
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 this.field4598 = 0;
-                if (!this.field2410) {
+                if (!this.removed) {
                     if (!this.method5189()) {
                         this.method1652();
                         this.method5192(null);
@@ -91,22 +97,22 @@ public abstract class Class860 extends Entity
     }
     
     public boolean method5189() {
-        if (this.field2391.method6977(this)) {
+        if (this.world.method6977(this)) {
             final int max = Math.max(1, this.method5190() / 16);
             final int max2 = Math.max(1, this.method5191() / 16);
             final BlockPos method1149 = this.field4599.method1149(this.field4600.getOpposite());
             final Direction method1150 = this.field4600.method784();
-            final Class385 class385 = new Class385();
+            final Mutable class385 = new Mutable();
             for (int i = 0; i < max; ++i) {
                 for (int j = 0; j < max2; ++j) {
                     class385.method1287(method1149).method1291(method1150, i + (max - 1) / -2).method1291(Direction.UP, j + (max2 - 1) / -2);
-                    final Class7096 method1151 = this.field2391.method6701(class385);
+                    final Class7096 method1151 = this.world.method6701(class385);
                     if (!method1151.method21697().method26439() && !Class3895.method11975(method1151)) {
                         return false;
                     }
                 }
             }
-            return this.field2391.method6737(this, this.method1886(), Class860.field4597).isEmpty();
+            return this.world.method6737(this, this.method1886(), Class860.field4597).isEmpty();
         }
         return false;
     }
@@ -122,7 +128,7 @@ public abstract class Class860 extends Entity
             return false;
         }
         final Class512 class400 = (Class512)class399;
-        return !this.field2391.method6760(class400, this.field4599) || this.method1740(Class7929.method25695(class400), 0.0f);
+        return !this.world.method6760(class400, this.field4599) || this.attackEntityFrom(DamageSource.method25695(class400), 0.0f);
     }
     
     @Override
@@ -131,10 +137,10 @@ public abstract class Class860 extends Entity
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
-            if (!this.field2410) {
-                if (!this.field2391.field10067) {
+            if (!this.removed) {
+                if (!this.world.field10067) {
                     this.method1652();
                     this.method1739();
                     this.method5192(class7929.method25714());
@@ -147,8 +153,8 @@ public abstract class Class860 extends Entity
     
     @Override
     public void method1671(final Class2160 class2160, final Vec3d class2161) {
-        if (!this.field2391.field10067) {
-            if (!this.field2410) {
+        if (!this.world.field10067) {
+            if (!this.removed) {
                 if (class2161.lengthSquared() > 0.0) {
                     this.method1652();
                     this.method5192(null);
@@ -159,8 +165,8 @@ public abstract class Class860 extends Entity
     
     @Override
     public void method1738(final double n, final double n2, final double n3) {
-        if (!this.field2391.field10067) {
-            if (!this.field2410) {
+        if (!this.world.field10067) {
+            if (!this.removed) {
                 if (n * n + n2 * n2 + n3 * n3 > 0.0) {
                     this.method1652();
                     this.method5192(null);
@@ -194,9 +200,9 @@ public abstract class Class860 extends Entity
     
     @Override
     public Class427 method1767(final ItemStack class8321, final float n) {
-        final Class427 class8322 = new Class427(this.field2391, this.getPosX() + this.field4600.getXOffset() * 0.15f, this.getPosY() + n, this.getPosZ() + this.field4600.getZOffset() * 0.15f, class8321);
+        final Class427 class8322 = new Class427(this.world, this.getPosX() + this.field4600.getXOffset() * 0.15f, this.getPosY() + n, this.getPosZ() + this.field4600.getZOffset() * 0.15f, class8321);
         class8322.method2114();
-        this.field2391.method6886(class8322);
+        this.world.method6886(class8322);
         return class8322;
     }
     
@@ -206,10 +212,10 @@ public abstract class Class860 extends Entity
     }
     
     @Override
-    public void method1656(final double n, final double n2, final double n3) {
+    public void setPosition(final double n, final double n2, final double n3) {
         this.field4599 = new BlockPos(n, n2, n3);
         this.method5187();
-        this.field2448 = true;
+        this.isAirBorne = true;
     }
     
     public BlockPos method5194() {
@@ -234,7 +240,7 @@ public abstract class Class860 extends Entity
                 }
             }
         }
-        final float method35668 = MathHelper.method35668(this.field2399);
+        final float method35668 = MathHelper.method35668(this.rotationYaw);
         switch (Class7786.field31868[class2052.ordinal()]) {
             case 1: {
                 return method35668 + 180.0f;
@@ -257,7 +263,7 @@ public abstract class Class860 extends Entity
     }
     
     @Override
-    public void method1834(final Class422 class422) {
+    public void onStruckByLightning(final LightningBoltEntity class422) {
     }
     
     @Override

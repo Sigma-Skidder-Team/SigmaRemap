@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.List;
 
 public class Class3422 extends Class3418
@@ -12,7 +15,7 @@ public class Class3422 extends Class3418
     private static String[] field16169;
     private final Class7318 field16170;
     private final Class6546 field16171;
-    private final Class1847 field16172;
+    private final World field16172;
     private List<Class3686> field16173;
     private ItemStack field16174;
     private long field16175;
@@ -35,7 +38,7 @@ public class Class3422 extends Class3418
         this.field16179 = new Class479(this, 1);
         this.field16180 = new Class470();
         this.field16170 = field16170;
-        this.field16172 = class464.field2744.field2391;
+        this.field16172 = class464.field2744.world;
         this.field16176 = this.method10870(new Class6601(this.field16179, 0, 20, 33));
         this.field16177 = this.method10870(new Class6600(this, this.field16180, 1, 143, 33, field16170));
         for (int i = 0; i < 3; ++i) {
@@ -157,7 +160,7 @@ public class Class3422 extends Class3418
                     }
                 }
                 else {
-                    method20054.method11723(method20053, class512.field2391, class512);
+                    method20054.method11723(method20053, class512.world, class512);
                     if (!this.method10888(method20053, 2, 38, true)) {
                         return ItemStack.field34174;
                     }

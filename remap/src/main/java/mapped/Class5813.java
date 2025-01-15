@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class5813 extends Class5801
+public interface Class5813 extends INetHandler
 {
     void method17417(final Class4380 p0);
     

@@ -7,6 +7,7 @@ package mapped;
 import java.util.AbstractList;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.nbt.IntArrayNBT;
 import net.minecraft.util.Direction;
 
 import java.util.Random;
@@ -14,13 +15,13 @@ import java.util.List;
 
 public class Class4482 extends Class4479
 {
-    private final List<Class6997> field19875;
+    private final List<MutableBoundingBox> field19875;
     
     public Class4482(final int n, final Random random, final int n2, final int n3, final Class1964 field19869) {
         super(Class9520.field40945, n, field19869);
         this.field19875 = Lists.newLinkedList();
         this.field19869 = field19869;
-        this.field19849 = new Class6997(n2, 50, n3, n2 + 7 + random.nextInt(6), 54 + random.nextInt(6), n3 + 7 + random.nextInt(6));
+        this.field19849 = new MutableBoundingBox(n2, 50, n3, n2 + 7 + random.nextInt(6), 54 + random.nextInt(6), n3 + 7 + random.nextInt(6));
     }
     
     public Class4482(final Class1795 class1795, final Class51 class1796) {
@@ -28,76 +29,76 @@ public class Class4482 extends Class4479
         this.field19875 = Lists.newLinkedList();
         final Class52 method328 = class1796.method328("Entrances", 11);
         for (int i = 0; i < method328.size(); ++i) {
-            this.field19875.add(new Class6997(method328.method350(i)));
+            this.field19875.add(new MutableBoundingBox(method328.method350(i)));
         }
     }
     
     @Override
     public void method13431(final Class4473 class4473, final List<Class4473> list, final Random random) {
         final int method13433 = this.method13433();
-        int n = this.field19849.method21418() - 3 - 1;
+        int n = this.field19849.getYSize() - 3 - 1;
         if (n <= 0) {
             n = 1;
         }
         int n2;
-        for (int i = 0; i < this.field19849.method21417(); i = n2 + 4) {
-            n2 = i + random.nextInt(this.field19849.method21417());
-            if (n2 + 3 > this.field19849.method21417()) {
+        for (int i = 0; i < this.field19849.getXSize(); i = n2 + 4) {
+            n2 = i + random.nextInt(this.field19849.getXSize());
+            if (n2 + 3 > this.field19849.getXSize()) {
                 break;
             }
-            final Class4479 method13434 = Class9191.method33629(class4473, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 - 1, Direction.NORTH, method13433);
+            final Class4479 method13434 = Class9191.method33629(class4473, list, random, this.field19849.minX + n2, this.field19849.minY + random.nextInt(n) + 1, this.field19849.minZ - 1, Direction.NORTH, method13433);
             if (method13434 != null) {
-                final Class6997 method13435 = method13434.method13432();
-                this.field19875.add(new Class6997(method13435.field27293, method13435.field27294, this.field19849.field27295, method13435.field27296, method13435.field27297, this.field19849.field27295 + 1));
+                final MutableBoundingBox method13435 = method13434.method13432();
+                this.field19875.add(new MutableBoundingBox(method13435.minX, method13435.minY, this.field19849.minZ, method13435.maxX, method13435.maxY, this.field19849.minZ + 1));
             }
         }
         int n3;
-        for (int j = 0; j < this.field19849.method21417(); j = n3 + 4) {
-            n3 = j + random.nextInt(this.field19849.method21417());
-            if (n3 + 3 > this.field19849.method21417()) {
+        for (int j = 0; j < this.field19849.getXSize(); j = n3 + 4) {
+            n3 = j + random.nextInt(this.field19849.getXSize());
+            if (n3 + 3 > this.field19849.getXSize()) {
                 break;
             }
-            final Class4479 method13436 = Class9191.method33629(class4473, list, random, this.field19849.field27293 + n3, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27298 + 1, Direction.SOUTH, method13433);
+            final Class4479 method13436 = Class9191.method33629(class4473, list, random, this.field19849.minX + n3, this.field19849.minY + random.nextInt(n) + 1, this.field19849.maxZ + 1, Direction.SOUTH, method13433);
             if (method13436 != null) {
-                final Class6997 method13437 = method13436.method13432();
-                this.field19875.add(new Class6997(method13437.field27293, method13437.field27294, this.field19849.field27298 - 1, method13437.field27296, method13437.field27297, this.field19849.field27298));
+                final MutableBoundingBox method13437 = method13436.method13432();
+                this.field19875.add(new MutableBoundingBox(method13437.minX, method13437.minY, this.field19849.maxZ - 1, method13437.maxX, method13437.maxY, this.field19849.maxZ));
             }
         }
         int n4;
-        for (int k = 0; k < this.field19849.method21419(); k = n4 + 4) {
-            n4 = k + random.nextInt(this.field19849.method21419());
-            if (n4 + 3 > this.field19849.method21419()) {
+        for (int k = 0; k < this.field19849.getZSize(); k = n4 + 4) {
+            n4 = k + random.nextInt(this.field19849.getZSize());
+            if (n4 + 3 > this.field19849.getZSize()) {
                 break;
             }
-            final Class4479 method13438 = Class9191.method33629(class4473, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 + n4, Direction.WEST, method13433);
+            final Class4479 method13438 = Class9191.method33629(class4473, list, random, this.field19849.minX - 1, this.field19849.minY + random.nextInt(n) + 1, this.field19849.minZ + n4, Direction.WEST, method13433);
             if (method13438 != null) {
-                final Class6997 method13439 = method13438.method13432();
-                this.field19875.add(new Class6997(this.field19849.field27293, method13439.field27294, method13439.field27295, this.field19849.field27293 + 1, method13439.field27297, method13439.field27298));
+                final MutableBoundingBox method13439 = method13438.method13432();
+                this.field19875.add(new MutableBoundingBox(this.field19849.minX, method13439.minY, method13439.minZ, this.field19849.minX + 1, method13439.maxY, method13439.maxZ));
             }
         }
         int n5;
-        for (int l = 0; l < this.field19849.method21419(); l = n5 + 4) {
-            n5 = l + random.nextInt(this.field19849.method21419());
-            if (n5 + 3 > this.field19849.method21419()) {
+        for (int l = 0; l < this.field19849.getZSize(); l = n5 + 4) {
+            n5 = l + random.nextInt(this.field19849.getZSize());
+            if (n5 + 3 > this.field19849.getZSize()) {
                 break;
             }
-            final Class4479 method13440 = Class9191.method33629(class4473, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 + n5, Direction.EAST, method13433);
+            final Class4479 method13440 = Class9191.method33629(class4473, list, random, this.field19849.maxX + 1, this.field19849.minY + random.nextInt(n) + 1, this.field19849.minZ + n5, Direction.EAST, method13433);
             if (method13440 != null) {
-                final Class6997 method13441 = method13440.method13432();
-                this.field19875.add(new Class6997(this.field19849.field27296 - 1, method13441.field27294, method13441.field27295, this.field19849.field27296, method13441.field27297, method13441.field27298));
+                final MutableBoundingBox method13441 = method13440.method13432();
+                this.field19875.add(new MutableBoundingBox(this.field19849.maxX - 1, method13441.minY, method13441.minZ, this.field19849.maxX, method13441.maxY, method13441.maxZ));
             }
         }
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         if (!this.method13436(class1851, class1853)) {
-            this.method13444(class1851, class1853, this.field19849.field27293, this.field19849.field27294, this.field19849.field27295, this.field19849.field27296, this.field19849.field27294, this.field19849.field27298, Class7521.field29156.method11878(), Class4482.field19848, true);
-            this.method13444(class1851, class1853, this.field19849.field27293, this.field19849.field27294 + 1, this.field19849.field27295, this.field19849.field27296, Math.min(this.field19849.field27294 + 3, this.field19849.field27297), this.field19849.field27298, Class4482.field19848, Class4482.field19848, false);
-            for (final Class6997 class1855 : this.field19875) {
-                this.method13444(class1851, class1853, class1855.field27293, class1855.field27297 - 2, class1855.field27295, class1855.field27296, class1855.field27297, class1855.field27298, Class4482.field19848, Class4482.field19848, false);
+            this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY, this.field19849.minZ, this.field19849.maxX, this.field19849.minY, this.field19849.maxZ, Class7521.field29156.method11878(), Class4482.field19848, true);
+            this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY + 1, this.field19849.minZ, this.field19849.maxX, Math.min(this.field19849.minY + 3, this.field19849.maxY), this.field19849.maxZ, Class4482.field19848, Class4482.field19848, false);
+            for (final MutableBoundingBox class1855 : this.field19875) {
+                this.method13444(class1851, class1853, class1855.minX, class1855.maxY - 2, class1855.minZ, class1855.maxX, class1855.maxY, class1855.maxZ, Class4482.field19848, Class4482.field19848, false);
             }
-            this.method13448(class1851, class1853, this.field19849.field27293, this.field19849.field27294 + 4, this.field19849.field27295, this.field19849.field27296, this.field19849.field27297, this.field19849.field27298, Class4482.field19848, false);
+            this.method13448(class1851, class1853, this.field19849.minX, this.field19849.minY + 4, this.field19849.minZ, this.field19849.maxX, this.field19849.maxY, this.field19849.maxZ, Class4482.field19848, false);
             return true;
         }
         return false;
@@ -106,9 +107,9 @@ public class Class4482 extends Class4479
     @Override
     public void method13454(final int n, final int n2, final int n3) {
         super.method13454(n, n2, n3);
-        final Iterator<Class6997> iterator = this.field19875.iterator();
+        final Iterator<MutableBoundingBox> iterator = this.field19875.iterator();
         while (iterator.hasNext()) {
-            iterator.next().method21413(n, n2, n3);
+            iterator.next().offset(n, n2, n3);
         }
     }
     
@@ -116,9 +117,9 @@ public class Class4482 extends Class4479
     public void method13415(final Class51 class51) {
         super.method13415(class51);
         final Class52 class52 = new Class52();
-        final Iterator<Class6997> iterator = this.field19875.iterator();
+        final Iterator<MutableBoundingBox> iterator = this.field19875.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class53>)class52).add(iterator.next().method21421());
+            ((AbstractList<IntArrayNBT>)class52).add(iterator.next().toNBTTagIntArray());
         }
         class51.method295("Entrances", class52);
     }

@@ -26,7 +26,7 @@ public class Class8591
     }
     
     public static Class9172 method29093(final Entity class399) {
-        return new Class9172(class399.field2417 + (class399.field2395 - class399.field2417) * Class8591.field36092.field4633.field26528, class399.field2418 + (class399.field2396 - class399.field2418) * Class8591.field36092.field4633.field26528, class399.field2419 + (class399.field2397 - class399.field2419) * Class8591.field36092.field4633.field26528);
+        return new Class9172(class399.lastTickPosX + (class399.posX - class399.lastTickPosX) * Class8591.field36092.field4633.field26528, class399.lastTickPosY + (class399.posY - class399.lastTickPosY) * Class8591.field36092.field4633.field26528, class399.lastTickPosZ + (class399.posZ - class399.lastTickPosZ) * Class8591.field36092.field4633.field26528);
     }
     
     public static Class9172 method29094(final Entity class399) {

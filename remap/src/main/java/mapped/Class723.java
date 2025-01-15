@@ -137,7 +137,7 @@ public class Class723 extends Class527
         this.field3951 = this.field3949;
         this.field3156.method6610(method30773, (float)(n4 - this.method3977(method30773) + 192 - 44), 18.0f, 0);
         for (int min = Math.min(14, this.field3950.size()), i = 0; i < min; ++i) {
-            this.field3156.method6610(this.field3950.get(i).method8461(), (float)(n4 + 36), (float)(32 + i * 9), 0);
+            this.field3156.method6610(this.field3950.get(i).getFormattedText(), (float)(n4 + 36), (float)(32 + i * 9), 0);
         }
         final ITextComponent method30774 = this.method3978(n, n2);
         if (method30774 != null) {
@@ -165,7 +165,7 @@ public class Class723 extends Class527
     
     @Override
     public boolean method3035(final ITextComponent class2250) {
-        final Class9485 method30410 = class2250.method8456().method30410();
+        final Class9485 method30410 = class2250.getStyle().method30410();
         if (method30410 == null) {
             return false;
         }
@@ -203,10 +203,10 @@ public class Class723 extends Class527
                     final ITextComponent class2250 = this.field3950.get(n3);
                     int n4 = 0;
                     for (final ITextComponent class2251 : class2250) {
-                        if (!(class2251 instanceof Class2260)) {
+                        if (!(class2251 instanceof StringTextComponent)) {
                             continue;
                         }
-                        n4 += this.field3150.field4643.method6617(class2251.method8461());
+                        n4 += this.field3150.field4643.method6617(class2251.getFormattedText());
                         if (n4 <= method35644) {
                             continue;
                         }

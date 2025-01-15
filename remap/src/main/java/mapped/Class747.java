@@ -30,8 +30,8 @@ public class Class747 extends Class516<Class3422>
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.method8461(), 8.0f, 4.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 94), 4210752);
+        this.field3156.method6610(this.field3148.getFormattedText(), 8.0f, 4.0f, 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 94), 4210752);
     }
     
     @Override

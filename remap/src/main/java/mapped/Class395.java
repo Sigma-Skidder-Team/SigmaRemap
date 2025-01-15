@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.authlib.GameProfile;
 import java.util.function.BooleanSupplier;
@@ -347,8 +349,8 @@ public class Class395 extends Class394 implements Class396
     }
     
     @Override
-    public boolean method1549(final Class1847 class1847, final BlockPos class1848, final Class512 class1849) {
-        if (class1847.field10063.method20487() != Class383.field2223) {
+    public boolean method1549(final World class1847, final BlockPos class1848, final Class512 class1849) {
+        if (class1847.dimension.getType() != DimensionType.field2223) {
             return false;
         }
         if (this.method1618().method20603().method26211()) {

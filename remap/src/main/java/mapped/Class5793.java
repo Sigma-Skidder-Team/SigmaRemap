@@ -33,7 +33,7 @@ public class Class5793 extends Class5791
                     final double n2 = method16740 + this.field23764.method2633().nextGaussian() / 2.0;
                     final double n3 = method16741 + this.field23764.method2633().nextGaussian() / 2.0;
                     for (int j = 0; j < 6; ++j) {
-                        this.field23764.field2391.method6709(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 * j, -method16738.y * 0.6000000238418579, -method16738.z * 0.07999999821186066 * j);
+                        this.field23764.world.method6709(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 * j, -method16738.y * 0.6000000238418579, -method16738.z * 0.07999999821186066 * j);
                     }
                     method16738.rotateYaw(0.19634955f);
                 }
@@ -51,8 +51,8 @@ public class Class5793 extends Class5791
                 final double n2 = this.field23764.field4535.getPosZ() + method16738.z * 5.0 / 2.0;
                 double method16739;
                 final double n3 = method16739 = this.field23764.field4535.method1942(0.5);
-                final Class385 class385 = new Class385(n, n3, n2);
-                while (this.field23764.field2391.method6961(class385)) {
+                final Mutable class385 = new Mutable(n, n3, n2);
+                while (this.field23764.world.method6961(class385)) {
                     --method16739;
                     if (method16739 < 0.0) {
                         method16739 = n3;
@@ -60,12 +60,12 @@ public class Class5793 extends Class5791
                     }
                     class385.method1286(n, method16739, n2);
                 }
-                (this.field23793 = new Class426(this.field23764.field2391, n, MathHelper.floor(method16739) + 1, n2)).method2097(this.field23764);
+                (this.field23793 = new Class426(this.field23764.world, n, MathHelper.floor(method16739) + 1, n2)).method2097(this.field23764);
                 this.field23793.method2081(5.0f);
                 this.field23793.method2093(200);
                 this.field23793.method2089(Class8432.field34605);
                 this.field23793.method2085(new Class1948(Class9439.field40480));
-                this.field23764.field2391.method6886(this.field23793);
+                this.field23764.world.method6886(this.field23793);
             }
         }
         else if (this.field23792 < 4) {

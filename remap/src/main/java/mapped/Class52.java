@@ -16,16 +16,17 @@ import java.io.DataOutput;
 import com.google.common.collect.Lists;
 import java.util.List;
 import it.unimi.dsi.fastutil.bytes.ByteSet;
+import net.minecraft.nbt.*;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class52 extends Class38<Class41>
+public class Class52 extends CollectionNBT<INBT>
 {
-    public static final Class6068<Class52> field128;
+    public static final INBTType<Class52> field128;
     private static final ByteSet field129;
-    private final List<Class41> field130;
+    private final List<INBT> field130;
     private byte field131;
     
-    private Class52(final List<Class41> field130, final byte field131) {
+    private Class52(final List<INBT> field130, final byte field131) {
         this.field130 = field130;
         this.field131 = field131;
     }
@@ -35,28 +36,28 @@ public class Class52 extends Class38<Class41>
     }
     
     @Override
-    public void method259(final DataOutput dataOutput) throws IOException {
+    public void write(final DataOutput dataOutput) throws IOException {
         if (!this.field130.isEmpty()) {
-            this.field131 = this.field130.get(0).method260();
+            this.field131 = this.field130.get(0).getId();
         }
         else {
             this.field131 = 0;
         }
         dataOutput.writeByte(this.field131);
         dataOutput.writeInt(this.field130.size());
-        final Iterator<Class41> iterator = this.field130.iterator();
+        final Iterator<INBT> iterator = this.field130.iterator();
         while (iterator.hasNext()) {
-            iterator.next().method259(dataOutput);
+            iterator.next().write(dataOutput);
         }
     }
     
     @Override
-    public byte method260() {
+    public byte getId() {
         return 9;
     }
     
     @Override
-    public Class6068<Class52> method261() {
+    public INBTType<Class52> getType() {
         return Class52.field128;
     }
     
@@ -79,8 +80,8 @@ public class Class52 extends Class38<Class41>
     }
     
     @Override
-    public Class41 remove(final int n) {
-        final Class41 class41 = this.field130.remove(n);
+    public INBT remove(final int n) {
+        final INBT class41 = this.field130.remove(n);
         this.method345();
         return class41;
     }
@@ -93,8 +94,8 @@ public class Class52 extends Class38<Class41>
     public Class51 method346(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 10) {
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 10) {
                     return (Class51)class41;
                 }
             }
@@ -105,8 +106,8 @@ public class Class52 extends Class38<Class41>
     public Class52 method347(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 9) {
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 9) {
                     return (Class52)class41;
                 }
             }
@@ -117,8 +118,8 @@ public class Class52 extends Class38<Class41>
     public short method348(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 2) {
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 2) {
                     return ((Class48)class41).method272();
                 }
             }
@@ -129,9 +130,9 @@ public class Class52 extends Class38<Class41>
     public int method349(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 3) {
-                    return ((Class45)class41).method271();
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 3) {
+                    return ((IntNBT)class41).method271();
                 }
             }
         }
@@ -141,9 +142,9 @@ public class Class52 extends Class38<Class41>
     public int[] method350(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 11) {
-                    return ((Class53)class41).method358();
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 11) {
+                    return ((IntArrayNBT)class41).getIntArray();
                 }
             }
         }
@@ -153,8 +154,8 @@ public class Class52 extends Class38<Class41>
     public double method351(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 6) {
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 6) {
                     return ((Class44)class41).method274();
                 }
             }
@@ -165,8 +166,8 @@ public class Class52 extends Class38<Class41>
     public float method352(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
-                final Class41 class41 = this.field130.get(n);
-                if (class41.method260() == 5) {
+                final INBT class41 = this.field130.get(n);
+                if (class41.getId() == 5) {
                     return ((Class46)class41).method275();
                 }
             }
@@ -176,8 +177,8 @@ public class Class52 extends Class38<Class41>
     
     public String method353(final int n) {
         if (n >= 0 && n < this.field130.size()) {
-            final Class41 class41 = this.field130.get(n);
-            return (class41.method260() != 8) ? class41.toString() : class41.method267();
+            final INBT class41 = this.field130.get(n);
+            return (class41.getId() != 8) ? class41.toString() : class41.getString();
         }
         return "";
     }
@@ -188,29 +189,29 @@ public class Class52 extends Class38<Class41>
     }
     
     @Override
-    public Class41 get(final int n) {
+    public INBT get(final int n) {
         return this.field130.get(n);
     }
     
     @Override
-    public Class41 set(final int n, final Class41 class41) {
-        final Class41 value = this.get(n);
-        if (this.method257(n, class41)) {
+    public INBT set(final int n, final INBT class41) {
+        final INBT value = this.get(n);
+        if (this.func_218659_a(n, class41)) {
             return value;
         }
-        throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", class41.method260(), this.field131));
+        throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", class41.getId(), this.field131));
     }
     
     @Override
-    public void add(final int n, final Class41 class41) {
-        if (this.method258(n, class41)) {
+    public void add(final int n, final INBT class41) {
+        if (this.func_218660_b(n, class41)) {
             return;
         }
-        throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", class41.method260(), this.field131));
+        throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", class41.getId(), this.field131));
     }
     
     @Override
-    public boolean method257(final int n, final Class41 class41) {
+    public boolean func_218659_a(final int n, final INBT class41) {
         if (!this.method354(class41)) {
             return false;
         }
@@ -219,7 +220,7 @@ public class Class52 extends Class38<Class41>
     }
     
     @Override
-    public boolean method258(final int n, final Class41 class41) {
+    public boolean func_218660_b(final int n, final INBT class41) {
         if (!this.method354(class41)) {
             return false;
         }
@@ -227,19 +228,19 @@ public class Class52 extends Class38<Class41>
         return true;
     }
     
-    private boolean method354(final Class41 class41) {
-        if (class41.method260() == 0) {
+    private boolean method354(final INBT class41) {
+        if (class41.getId() == 0) {
             return false;
         }
         if (this.field131 != 0) {
-            return this.field131 == class41.method260();
+            return this.field131 == class41.getId();
         }
-        this.field131 = class41.method260();
+        this.field131 = class41.getId();
         return true;
     }
     
     public Class52 method355() {
-        return new Class52(Lists.newArrayList((Iterable)(Class7638.method24059(this.field131).method18122() ? this.field130 : Iterables.transform((Iterable)this.field130, Class41::method265))), this.field131);
+        return new Class52(Lists.newArrayList((Iterable)(Class7638.method24059(this.field131).func_225651_c_() ? this.field130 : Iterables.transform((Iterable)this.field130, INBT::copy))), this.field131);
     }
     
     @Override
@@ -253,38 +254,38 @@ public class Class52 extends Class38<Class41>
     }
     
     @Override
-    public ITextComponent method263(final String s, final int n) {
+    public ITextComponent toFormattedComponent(final String s, final int n) {
         if (this.isEmpty()) {
-            return new Class2260("[]");
+            return new StringTextComponent("[]");
         }
         if (Class52.field129.contains(this.field131) && this.size() <= 8) {
-            final Class2260 class2260 = new Class2260("[");
+            final StringTextComponent class2260 = new StringTextComponent("[");
             for (int i = 0; i < this.field130.size(); ++i) {
                 if (i != 0) {
-                    class2260.method8457(", ");
+                    class2260.appendText(", ");
                 }
-                class2260.method8458(this.field130.get(i).method268());
+                class2260.appendSibling(this.field130.get(i).toFormattedComponent());
             }
-            class2260.method8457("]");
+            class2260.appendText("]");
             return class2260;
         }
-        final Class2260 class2261 = new Class2260("[");
+        final StringTextComponent class2261 = new StringTextComponent("[");
         if (!s.isEmpty()) {
-            class2261.method8457("\n");
+            class2261.appendText("\n");
         }
         final String value = String.valueOf(',');
         for (int j = 0; j < this.field130.size(); ++j) {
-            final Class2260 class2262 = new Class2260(Strings.repeat(s, n + 1));
-            class2262.method8458(this.field130.get(j).method263(s, n + 1));
+            final StringTextComponent class2262 = new StringTextComponent(Strings.repeat(s, n + 1));
+            class2262.appendSibling(this.field130.get(j).toFormattedComponent(s, n + 1));
             if (j != this.field130.size() - 1) {
-                class2262.method8457(value).method8457(s.isEmpty() ? " " : "\n");
+                class2262.appendText(value).appendText(s.isEmpty() ? " " : "\n");
             }
-            class2261.method8458(class2262);
+            class2261.appendSibling(class2262);
         }
         if (!s.isEmpty()) {
-            class2261.method8457("\n").method8457(Strings.repeat(s, n));
+            class2261.appendText("\n").appendText(Strings.repeat(s, n));
         }
-        class2261.method8457("]");
+        class2261.appendText("]");
         return class2261;
     }
     

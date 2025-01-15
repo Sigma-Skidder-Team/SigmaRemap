@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.EnumSet;
 
 public class Class3572 extends Class3446
@@ -11,14 +14,14 @@ public class Class3572 extends Class3446
     private static String[] field16669;
     private final Class799 field16670;
     private Class512 field16671;
-    private final Class1847 field16672;
+    private final World field16672;
     private final float field16673;
     private int field16674;
     private final Class7843 field16675;
     
     public Class3572(final Class799 field16670, final float field16671) {
         this.field16670 = field16670;
-        this.field16672 = field16670.field2391;
+        this.field16672 = field16670.world;
         this.field16673 = field16671;
         this.field16675 = new Class7843().method25337(field16671).method25338().method25339().method25341();
         this.method11019(EnumSet.of(Class2139.field12581));

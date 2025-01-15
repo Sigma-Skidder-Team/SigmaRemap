@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class3525 extends Class3446
 {
@@ -33,9 +35,9 @@ public class Class3525 extends Class3446
     
     @Override
     public void method11016() {
-        final Class511 method4152 = this.field16535.method4152();
+        final LivingEntity method4152 = this.field16535.method4152();
         if (method4152.method1734(this.field16535) < 4096.0 && this.field16535.method2747(method4152)) {
-            final Class1847 field2391 = this.field16535.field2391;
+            final World field2391 = this.field16535.world;
             ++this.field16536;
             if (this.field16536 == 10) {
                 field2391.method6839(null, 1015, new BlockPos(this.field16535), 0);
@@ -48,7 +50,7 @@ public class Class3525 extends Class3446
                 field2391.method6839(null, 1016, new BlockPos(this.field16535), 0);
                 final Class417 class417 = new Class417(field2391, this.field16535, n, n2, n3);
                 class417.field2525 = this.field16535.method4224();
-                class417.method1656(this.field16535.getPosX() + method4153.x * 4.0, this.field16535.method1942(0.5) + 0.5, class417.getPosZ() + method4153.z * 4.0);
+                class417.setPosition(this.field16535.getPosX() + method4153.x * 4.0, this.field16535.method1942(0.5) + 0.5, class417.getPosZ() + method4153.z * 4.0);
                 field2391.method6886(class417);
                 this.field16536 = -40;
             }

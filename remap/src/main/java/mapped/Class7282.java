@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Optional;
@@ -94,7 +95,7 @@ public class Class7282
         final Vec3d method1749 = method1747.add(method1748);
         final AxisAlignedBB method1750 = class399.method1886().method18493(method1748).method18496(1.0);
         final int n2 = n * n;
-        final Class7007 method1751 = Class7476.method23096(class399, method1747, method1749, method1750, class400 -> !class400.method1639() && class400.method1749(), n2);
+        final Class7007 method1751 = Class7476.method23096(class399, method1747, method1749, method1750, class400 -> !class400.isSpectator() && class400.method1749(), n2);
         if (method1751 != null) {
             return (method1747.squareDistanceTo(method1751.method21451()) <= n2) ? Optional.of(method1751.method21452()) : Optional.empty();
         }

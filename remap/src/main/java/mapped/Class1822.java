@@ -8,9 +8,10 @@ import net.minecraft.client.renderer.Matrix3f;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class1822<T extends Class511, M extends Class5860<T>> extends Class1820<T, M>
+public class Class1822<T extends LivingEntity, M extends Class5860<T>> extends Class1820<T, M>
 {
     private static final Class1932 field10003;
     

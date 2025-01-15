@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Iterator;
@@ -49,11 +50,11 @@ public class Class3379 extends Class3167
     public void method9879() {
         this.field16086 = 0.0;
         this.field16098 = new Class9572(1000, 100000, Class2186.field12964);
-        this.field16092 = Class3379.field15514.field4684.field2399;
-        this.field16093 = Class3379.field15514.field4684.field2400;
-        final double field2395 = Class3379.field15514.field4684.field2395;
-        final double field2396 = Class3379.field15514.field4684.field2396;
-        final double field2397 = Class3379.field15514.field4684.field2397;
+        this.field16092 = Class3379.field15514.field4684.rotationYaw;
+        this.field16093 = Class3379.field15514.field4684.rotationPitch;
+        final double field2395 = Class3379.field15514.field4684.posX;
+        final double field2396 = Class3379.field15514.field4684.posY;
+        final double field2397 = Class3379.field15514.field4684.posZ;
         this.field16090 = false;
         this.field16085 = 0.0;
     }
@@ -113,8 +114,8 @@ public class Class3379 extends Class3167
             }
             else {
                 final float[] method10787 = Class8845.method30912(method10786);
-                Class3379.field15514.field4684.field2399 = method10787[0];
-                Class3379.field15514.field4684.field2400 = method10787[1];
+                Class3379.field15514.field4684.rotationYaw = method10787[0];
+                Class3379.field15514.field4684.rotationPitch = method10787[1];
                 if (this.field16099 != null) {
                     this.field16087 -= (int)this.field16087;
                     Class6430.method19165(this.field16099, true);
@@ -150,7 +151,7 @@ public class Class3379 extends Class3167
     @Class6753
     @Class6755
     public void method10783(final Class5721 class5721) {
-        final Class4252 method16990 = class5721.method16990();
+        final IPacket method16990 = class5721.method16990();
         if (this.method9906() && Class3379.field15514.field4684 != null) {
             if (!(method16990 instanceof Class4381)) {
                 if (!(method16990 instanceof Class4353)) {
@@ -194,7 +195,7 @@ public class Class3379 extends Class3167
             }
             else {
                 final Entity method16991 = ((Class4381)method16990).method13170(Class3379.field15514.field4683);
-                final String str = (method16991 != null) ? method16991.getName().method8461() : "null";
+                final String str = (method16991 != null) ? method16991.getName().getFormattedText() : "null";
                 if (this.field16090) {
                     class5721.method16961(true);
                 }
@@ -210,7 +211,7 @@ public class Class3379 extends Class3167
     
     @Class6753
     public void method10784(final Class5723 class5723) {
-        final Class4252 method16998 = class5723.method16998();
+        final IPacket method16998 = class5723.method16998();
         if (this.method9906()) {
             if (!(method16998 instanceof Class4396)) {
                 if (!(method16998 instanceof Class4393)) {
@@ -237,10 +238,10 @@ public class Class3379 extends Class3167
             final Entity class399 = iterator.next();
             if (class399 != Class3379.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(class399)) {
-                    if (class399 instanceof Class511) {
-                        if (((Class511)class399).method2664() != 0.0f) {
+                    if (class399 instanceof LivingEntity) {
+                        if (((LivingEntity)class399).method2664() != 0.0f) {
                             if (Class3379.field15514.field4684.method1732(class399) <= n) {
-                                if (Class3379.field15514.field4684.method2646((Class511)class399)) {
+                                if (Class3379.field15514.field4684.method2646((LivingEntity)class399)) {
                                     if (!(class399 instanceof Class857) && !(class399 instanceof Class512)) {
                                         if (class399 instanceof Class512 && Class9463.method35173().method35191().method31751(class399)) {
                                             iterator.remove();
@@ -301,10 +302,10 @@ public class Class3379 extends Class3167
             final Entity class400 = iterator.next();
             if (class400 != Class3379.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(class400)) {
-                    if (class400 instanceof Class511) {
-                        if (((Class511)class400).method2664() != 0.0f) {
+                    if (class400 instanceof LivingEntity) {
+                        if (((LivingEntity)class400).method2664() != 0.0f) {
                             if (Class3379.field15514.field4684.method1732(class400) <= n) {
-                                if (Class3379.field15514.field4684.method2646((Class511)class400)) {
+                                if (Class3379.field15514.field4684.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
                                         if (class400 instanceof Class512 && Class9463.method35173().method35191().method31751(class400)) {
                                             iterator.remove();
@@ -354,14 +355,14 @@ public class Class3379 extends Class3167
     }
     
     public static float[] method10787(final Entity class399) {
-        final double x = class399.field2395 - Class3379.field15514.field4684.field2395;
-        final double y = class399.field2397 - Class3379.field15514.field4684.field2397;
-        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -(float)(-(Math.atan2(Class3379.field15514.field4684.field2396 + Class3379.field15514.field4684.method1892() - (class399.field2396 + class399.method1892()), MathHelper.sqrt(x * x + y * y)) * 180.0 / 3.141592653589793)) };
+        final double x = class399.posX - Class3379.field15514.field4684.posX;
+        final double y = class399.posZ - Class3379.field15514.field4684.posZ;
+        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -(float)(-(Math.atan2(Class3379.field15514.field4684.posY + Class3379.field15514.field4684.method1892() - (class399.posY + class399.method1892()), MathHelper.sqrt(x * x + y * y)) * 180.0 / 3.141592653589793)) };
     }
     
     public static float method10788(final float n, final double n2, final double n3) {
-        final double n4 = n2 - Class3379.field15514.field4684.field2395;
-        final double n5 = n3 - Class3379.field15514.field4684.field2397;
+        final double n4 = n2 - Class3379.field15514.field4684.posX;
+        final double n5 = n3 - Class3379.field15514.field4684.posZ;
         double degrees = 0.0;
         if (n5 < 0.0 && n4 < 0.0) {
             if (n4 != 0.0) {
@@ -384,8 +385,8 @@ public class Class3379 extends Class3167
     }
     
     public static float method10790(final float n, final Entity class399, final double n2) {
-        final double n3 = class399.field2395 - Class3379.field15514.field4684.field2395;
-        final double n4 = class399.field2397 - Class3379.field15514.field4684.field2397;
-        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class3379.field15514.field4684.field2396) / MathHelper.sqrt(n3 * n3 + n4 * n4))))) - 2.5f;
+        final double n3 = class399.posX - Class3379.field15514.field4684.posX;
+        final double n4 = class399.posZ - Class3379.field15514.field4684.posZ;
+        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class3379.field15514.field4684.posY) / MathHelper.sqrt(n3 * n3 + n4 * n4))))) - 2.5f;
     }
 }

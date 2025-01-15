@@ -6,6 +6,8 @@ package mapped;
 
 import com.mojang.datafixers.DataFixUtils;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
 
 public class Class8868<T extends Entity>
 {
@@ -15,12 +17,12 @@ public class Class8868<T extends Entity>
     private boolean field37281;
     private boolean field37282;
     private boolean field37283;
-    private Class8295 field37284;
+    private EntitySize field37284;
     
     private Class8868(final Class8962<T> field37278, final Class1976 field37279) {
         this.field37280 = true;
         this.field37281 = true;
-        this.field37284 = Class8295.method27563(0.6f, 1.8f);
+        this.field37284 = EntitySize.method27563(0.6f, 1.8f);
         this.field37278 = field37278;
         this.field37279 = field37279;
         this.field37283 = (field37279 == Class1976.field10949 || field37279 == Class1976.field10952);
@@ -35,7 +37,7 @@ public class Class8868<T extends Entity>
     }
     
     public Class8868<T> method31157(final float n, final float n2) {
-        this.field37284 = Class8295.method27563(n, n2);
+        this.field37284 = EntitySize.method27563(n, n2);
         return this;
     }
     

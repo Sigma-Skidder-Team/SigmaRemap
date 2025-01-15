@@ -12,6 +12,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonElement;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Map;
 
@@ -34,10 +35,10 @@ public class Class8003
     }
     
     public boolean method26193(final Entity class399) {
-        return this == Class8003.field32963 || (class399 instanceof Class511 && this.method26195(((Class511)class399).method2652()));
+        return this == Class8003.field32963 || (class399 instanceof LivingEntity && this.method26195(((LivingEntity)class399).method2652()));
     }
     
-    public boolean method26194(final Class511 class511) {
+    public boolean method26194(final LivingEntity class511) {
         return this == Class8003.field32963 || this.method26195(class511.method2652());
     }
     

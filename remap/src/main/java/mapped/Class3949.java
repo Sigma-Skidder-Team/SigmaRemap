@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class3949 extends Class3948
@@ -20,7 +22,7 @@ public class Class3949 extends Class3948
     }
     
     @Override
-    public void method12066(final Class1847 class1847, final BlockPos class1848, final Class512 class1849) {
+    public void method12066(final World class1847, final BlockPos class1848, final Class512 class1849) {
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class468) {
             class1849.method2833((Class434)method6727);
@@ -29,7 +31,7 @@ public class Class3949 extends Class3948
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class3949.field17847)) {
             final double n = class7098.getX() + 0.5;
             final double n2 = class7098.getY();

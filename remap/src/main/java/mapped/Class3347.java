@@ -21,8 +21,8 @@ public class Class3347 extends Class3167
     @Override
     public void method9879() {
         this.field15952 = 7;
-        final double field22770 = Class3347.field15514.field4684.method1935().x;
-        final double field22771 = Class3347.field15514.field4684.method1935().z;
+        final double field22770 = Class3347.field15514.field4684.getMotion().x;
+        final double field22771 = Class3347.field15514.field4684.getMotion().z;
         this.field15954 = Math.sqrt(field22770 * field22770 + field22771 * field22771);
         this.field15953 = 0;
     }
@@ -45,11 +45,11 @@ public class Class3347 extends Class3167
                     if (!Class9463.method35173().method35189().method21551(Class3260.class).method9906()) {
                         if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
                             if (class5744.method17046()) {
-                                if (!Class3347.field15514.field4684.field2404) {
+                                if (!Class3347.field15514.field4684.onGround) {
                                     if (class5744.method17046()) {
                                         if (Class3256.field15748 > 1) {
-                                            final double n = Class3347.field15514.field4684.field2395 - Class3347.field15514.field4684.field4074;
-                                            final double n2 = Class3347.field15514.field4684.field2397 - Class3347.field15514.field4684.field4076;
+                                            final double n = Class3347.field15514.field4684.posX - Class3347.field15514.field4684.field4074;
+                                            final double n2 = Class3347.field15514.field4684.posZ - Class3347.field15514.field4684.field4076;
                                             if (this.field15951 != 0) {
                                                 this.field15954 = Math.sqrt(n * n + n2 * n2);
                                             }
@@ -102,7 +102,7 @@ public class Class3347 extends Class3167
                     if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
                         Class3347.field15955 = false;
                         Class3347.field15514.field4684.field2985 = 5;
-                        if (!Class3347.field15514.field4684.field2404) {
+                        if (!Class3347.field15514.field4684.onGround) {
                             if (this.field15951 >= 0) {
                                 ++this.field15951;
                                 if (Class7482.method23140() == 0) {
@@ -145,9 +145,9 @@ public class Class3347 extends Class3167
                             if (((this.method9883("Auto Jump") || Class3347.field15514.field4684.field2967) && Class6430.method19114()) || Class3347.field15514.field4648.field23439.method1056()) {
                                 this.field15951 = 0;
                                 Class3347.field15514.field4684.method2725();
-                                class5717.method16973(Class3347.field15514.field4684.method1935().x);
-                                class5717.method16975(Class3347.field15514.field4684.method1935().y);
-                                class5717.method16977(Class3347.field15514.field4684.method1935().z);
+                                class5717.method16973(Class3347.field15514.field4684.getMotion().x);
+                                class5717.method16975(Class3347.field15514.field4684.getMotion().y);
+                                class5717.method16977(Class3347.field15514.field4684.getMotion().z);
                             }
                         }
                         else {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class4649 extends Class4648
 {
     private static String[] field20132;
@@ -15,12 +17,12 @@ public class Class4649 extends Class4648
     
     @Override
     public void method13894(final int n) {
-        this.field20133.field2391.method6761(this.field20133, (byte)n);
+        this.field20133.world.method6761(this.field20133, (byte)n);
     }
     
     @Override
-    public Class1847 method13895() {
-        return this.field20133.field2391;
+    public World method13895() {
+        return this.field20133.world;
     }
     
     @Override

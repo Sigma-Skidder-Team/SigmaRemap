@@ -28,7 +28,7 @@ public class Class376 extends Class373
     
     @Override
     public void method1254(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Random random) {
-        final Class385 class1854 = new Class385(class1852);
+        final Mutable class1854 = new Mutable(class1852);
         for (int n = this.field2214 + random.nextInt(random.nextInt(this.field2215 + 1) + 1), i = 0; i < n; ++i) {
             class1851.method6688(class1854, class1853, 2);
             class1854.method1290(Direction.UP);
@@ -36,7 +36,7 @@ public class Class376 extends Class373
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field219.method503(this.field2213).toString()), dynamicOps.createString("min_size"), dynamicOps.createInt(this.field2214), dynamicOps.createString("extra_size"), dynamicOps.createInt(this.field2215)))).getValue();
     }
 }

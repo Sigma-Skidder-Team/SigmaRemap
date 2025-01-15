@@ -19,13 +19,13 @@ public class Class3396 extends Class3167
                 if (Class9463.method35173().method35191().method31751(class5744)) {
                     continue;
                 }
-                if (class5744.field2424 <= 30) {
+                if (class5744.ticksExisted <= 30) {
                     continue;
                 }
                 if (!class5744.hasCustomName()) {
                     continue;
                 }
-                Class6430.method19106(class5744.getName().method8459() + " might have a custom nametag");
+                Class6430.method19106(class5744.getName().getUnformattedComponentText() + " might have a custom nametag");
             }
         }
     }

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3835 extends Class3834
 {
@@ -64,7 +66,7 @@ public class Class3835 extends Class3834
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24492(this.method11890(class7096), this.method11891(class7096));
     }
     
@@ -93,7 +95,7 @@ public class Class3835 extends Class3834
     }
     
     @Override
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         if (!class1847.field10067) {
             if (class1850.field3025.field27304) {
                 final BlockPos method1149 = class1848.method1149(class1849.method21772((Class7111<Direction>)Class3835.field17415).getOpposite());
@@ -107,7 +109,7 @@ public class Class3835 extends Class3834
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, BlockPos method1149, final Class7096 class7098, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, BlockPos method1149, final Class7096 class7098, final boolean b) {
         if (class7096.method21696() != class7098.method21696()) {
             super.method11829(class7096, class7097, method1149, class7098, b);
             method1149 = method1149.method1149(class7096.method21772((Class7111<Direction>)Class3835.field17415).getOpposite());
@@ -140,7 +142,7 @@ public class Class3835 extends Class3834
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (class7096.method21752(class7097, class7098)) {
             final BlockPos method1149 = class7098.method1149(class7096.method21772((Class7111<Direction>)Class3835.field17415).getOpposite());
             class7097.method6701(method1149).method21734(class7097, method1149, class7099, class7100, false);

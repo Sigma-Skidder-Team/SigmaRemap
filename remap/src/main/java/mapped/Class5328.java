@@ -7,6 +7,8 @@ package mapped;
 import java.util.UUID;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
@@ -34,7 +36,7 @@ public class Class5328
         this.field22364 = field22364;
     }
     
-    public void method16449(final Class511 class511, final int n) {
+    public void method16449(final LivingEntity class511, final int n) {
         if (this != Class9439.field40483) {
             if (this != Class9439.field40492) {
                 if (this != Class9439.field40493) {
@@ -42,7 +44,7 @@ public class Class5328
                         ((Class512)class511).method2876(0.005f * (n + 1));
                     }
                     else if (this == Class9439.field40496 && class511 instanceof Class512) {
-                        if (!class511.field2391.field10067) {
+                        if (!class511.world.field10067) {
                             ((Class512)class511).method2877().method33486(n + 1, 1.0f);
                         }
                     }
@@ -55,18 +57,18 @@ public class Class5328
                                 return;
                             }
                         }
-                        class511.method1740(Class7929.field32576, (float)(6 << n));
+                        class511.attackEntityFrom(DamageSource.field32576, (float)(6 << n));
                     }
                     else {
                         class511.method2663((float)Math.max(4 << n, 0));
                     }
                 }
                 else {
-                    class511.method1740(Class7929.field32577, 1.0f);
+                    class511.attackEntityFrom(DamageSource.field32577, 1.0f);
                 }
             }
             else if (class511.method2664() > 1.0f) {
-                class511.method1740(Class7929.field32576, 1.0f);
+                class511.attackEntityFrom(DamageSource.field32576, 1.0f);
             }
         }
         else if (class511.method2664() < class511.method2701()) {
@@ -74,7 +76,7 @@ public class Class5328
         }
     }
     
-    public void method16452(final Entity class399, final Entity class400, final Class511 class401, final int n, final double n2) {
+    public void method16452(final Entity class399, final Entity class400, final LivingEntity class401, final int n, final double n2) {
         if ((this != Class9439.field40479 || class401.method2657()) && (this != Class9439.field40480 || !class401.method2657())) {
             if ((this != Class9439.field40480 || class401.method2657()) && (this != Class9439.field40479 || !class401.method2657())) {
                 this.method16449(class401, n);
@@ -82,10 +84,10 @@ public class Class5328
             else {
                 final int n3 = (int)(n2 * (6 << n) + 0.5);
                 if (class399 != null) {
-                    class401.method1740(Class7929.method25700(class399, class400), (float)n3);
+                    class401.attackEntityFrom(DamageSource.method25700(class399, class400), (float)n3);
                 }
                 else {
-                    class401.method1740(Class7929.field32576, (float)n3);
+                    class401.attackEntityFrom(DamageSource.field32576, (float)n3);
                 }
             }
         }
@@ -146,7 +148,7 @@ public class Class5328
         return this.field22362;
     }
     
-    public void method16461(final Class511 class511, final Class6821 class512, final int n) {
+    public void method16461(final LivingEntity class511, final Class6821 class512, final int n) {
         for (final Map.Entry<Class8725, V> entry : this.field22362.entrySet()) {
             final Class7619 method20879 = class512.method20879(entry.getKey());
             if (method20879 == null) {
@@ -156,7 +158,7 @@ public class Class5328
         }
     }
     
-    public void method16462(final Class511 class511, final Class6821 class512, final int i) {
+    public void method16462(final LivingEntity class511, final Class6821 class512, final int i) {
         for (final Map.Entry<Class8725, V> entry : this.field22362.entrySet()) {
             final Class7619 method20879 = class512.method20879(entry.getKey());
             if (method20879 == null) {

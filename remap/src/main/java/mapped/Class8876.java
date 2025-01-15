@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.UUID;
 
@@ -25,11 +26,11 @@ public class Class8876
         if (method28895 == null) {
             return null;
         }
-        final Class6737 field4684 = field4683.field10063;
+        final Class6737 field4684 = field4683.dimension;
         if (field4684 == null) {
             return null;
         }
-        final Class383 method28896 = field4684.method20487();
+        final DimensionType method28896 = field4684.getType();
         try {
             return method28895.method1481(method28896);
         }

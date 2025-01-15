@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 
 import java.io.IOException;
 
-public class Class4263 implements Class4252<Class5800>
+public class Class4263 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19125;
     private double field19126;
@@ -24,12 +24,12 @@ public class Class4263 implements Class4252<Class5800>
         this.field19126 = class399.getPosX();
         this.field19127 = class399.getPosY();
         this.field19128 = class399.getPosZ();
-        this.field19129 = class399.field2399;
-        this.field19130 = class399.field2400;
+        this.field19129 = class399.rotationYaw;
+        this.field19130 = class399.rotationPitch;
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19126 = class8654.readDouble();
         this.field19127 = class8654.readDouble();
         this.field19128 = class8654.readDouble();
@@ -38,7 +38,7 @@ public class Class4263 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeDouble(this.field19126);
         class8654.writeDouble(this.field19127);
         class8654.writeDouble(this.field19128);
@@ -46,7 +46,7 @@ public class Class4263 implements Class4252<Class5800>
         class8654.writeFloat(this.field19130);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17353(this);
     }
     

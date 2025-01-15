@@ -27,7 +27,7 @@ public class Class9274
     }
     
     public static void method34209(final String s) {
-        Class869.method5277().field4647.method3807().method3761(new Class2260(s));
+        Class869.method5277().field4647.method3807().method3761(new StringTextComponent(s));
     }
     
     public static boolean method34210(final String s) {

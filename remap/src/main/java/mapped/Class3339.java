@@ -25,8 +25,8 @@ public class Class3339 extends Class3167
                 if (this.field15940 >= n2) {
                     Class3339.field15514.field4684.method2707(Class316.field1877);
                     this.field15940 = 0;
-                    if (Class6430.method19141(Class3339.field15514.field4684.field2399, Class3339.field15514.field4684.field2400, 4.6f, 0.0) != null) {
-                        Class3339.field15514.method5269().method17292(new Class4381(Class6430.method19141(Class3339.field15514.field4684.field2399, Class3339.field15514.field4684.field2400, 4.6f, 0.0)));
+                    if (Class6430.method19141(Class3339.field15514.field4684.rotationYaw, Class3339.field15514.field4684.rotationPitch, 4.6f, 0.0) != null) {
+                        Class3339.field15514.method5269().method17292(new Class4381(Class6430.method19141(Class3339.field15514.field4684.rotationYaw, Class3339.field15514.field4684.rotationPitch, 4.6f, 0.0)));
                         Class3339.field15514.field4684.method2707(Class316.field1877);
                     }
                 }

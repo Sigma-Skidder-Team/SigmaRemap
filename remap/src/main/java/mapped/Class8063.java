@@ -38,7 +38,7 @@ public final class Class8063
         else {
             this.field33213 = null;
         }
-        this.field33214 = method21696.method11809(class7096, Class1859.field10138, BlockPos.ZERO, Class7543.method23629());
+        this.field33214 = method21696.method11809(class7096, Class1859.field10138, BlockPos.ZERO, ISelectionContext.dummy());
         this.field33215 = Arrays.stream(Axis.values()).anyMatch(class7099 -> this.field33214.method24535(class7099) < 0.0 || this.field33214.method24536(class7099) > 1.0);
         this.field33216 = new boolean[6];
         for (final Direction class7098 : Class8063.field33208) {

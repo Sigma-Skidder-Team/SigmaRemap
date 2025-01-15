@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
 
@@ -30,8 +31,8 @@ public class Class4791 extends Class4703<Class862>
         final Vec3d method1883 = this.method14169(class862, n2);
         class863.method22564(-method1883.getX(), -method1883.getY(), -method1883.getZ());
         class863.method22564(method1882.getXOffset() * 0.46875, method1882.getYOffset() * 0.46875, method1882.getZOffset() * 0.46875);
-        class863.method22566(Vector3f.XP.rotationDegrees(class862.field2400));
-        class863.method22566(Vector3f.YP.rotationDegrees(180.0f - class862.field2399));
+        class863.method22566(Vector3f.XP.rotationDegrees(class862.rotationPitch));
+        class863.method22566(Vector3f.YP.rotationDegrees(180.0f - class862.rotationYaw));
         final Class1658 method1884 = this.field20429.method5305();
         final Class1790 method1885 = method1884.method5787().method35429();
         final Class1933 class865 = (class862.method5198().method27622() instanceof Class4094) ? Class4791.field20428 : Class4791.field20427;
@@ -55,7 +56,7 @@ public class Class4791 extends Class4703<Class862>
                     class863.method22566(Vector3f.ZP.rotationDegrees(180.0f));
                     class863.method22565(0.0078125f, 0.0078125f, 0.0078125f);
                     class863.method22564(-64.0, -64.0, 0.0);
-                    final Class6356 method1887 = Class7667.method24307(method1886, class862.field2391);
+                    final Class6356 method1887 = Class7667.method24307(method1886, class862.world);
                     class863.method22564(0.0, 0.0, -1.0);
                     if (method1887 != null) {
                         this.field20429.field4644.method5822().method7391(class863, class864, method1887, true, i);
@@ -90,7 +91,7 @@ public class Class4791 extends Class4703<Class862>
     }
     
     public void method14172(final Class862 class862, final String s, final Class7351 class863, final Class7807 class864, final int n) {
-        super.method13958(class862, class862.method5198().method27664().method8461(), class863, class864, n);
+        super.method13958(class862, class862.method5198().method27664().getFormattedText(), class863, class864, n);
     }
     
     private boolean method14173(final Class862 class862) {

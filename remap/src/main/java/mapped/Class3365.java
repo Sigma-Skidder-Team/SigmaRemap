@@ -41,9 +41,9 @@ public class Class3365 extends Class3355
             Class6430.method19155(-0.0789);
         }
         else {
-            final double field2395 = Class3365.field15514.field4684.field2395;
-            final double field2396 = Class3365.field15514.field4684.field2396;
-            Class3365.field15514.method5269().method17292(new Class4354(field2395, -150.0, Class3365.field15514.field4684.field2397, false));
+            final double field2395 = Class3365.field15514.field4684.posX;
+            final double field2396 = Class3365.field15514.field4684.posY;
+            Class3365.field15514.method5269().method17292(new Class4354(field2395, -150.0, Class3365.field15514.field4684.posZ, false));
             Class7482.method23151(0.0);
             Class6430.method19155(0.0);
             this.field16023 = -3;
@@ -145,11 +145,11 @@ public class Class3365 extends Class3355
         if (!this.method9906() && this.field16023 >= 0) {
             return;
         }
-        final Class4252 method16998 = class5723.method16998();
+        final IPacket method16998 = class5723.method16998();
         if (method16998 instanceof Class4328) {
             final Class4328 class5724 = (Class4328)method16998;
-            class5724.field19380 = Class3365.field15514.field4684.field2399;
-            class5724.field19381 = Class3365.field15514.field4684.field2400;
+            class5724.field19380 = Class3365.field15514.field4684.rotationYaw;
+            class5724.field19381 = Class3365.field15514.field4684.rotationPitch;
             if (this.field16023 != -3) {
                 this.field16023 = 0;
             }

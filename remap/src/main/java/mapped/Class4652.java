@@ -31,7 +31,7 @@ public class Class4652 extends Class4651
         int n;
         if (this.method13927() && this.field20141.method1706()) {
             n = MathHelper.floor(this.field20141.getPosY());
-            final Class385 class385 = new Class385(this.field20141.getPosX(), n, this.field20141.getPosZ());
+            final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
             for (Class3833 class386 = this.field20140.method6701(class385).method21696(); class386 == Class7521.field29173; class386 = this.field20140.method6701(class385).method21696()) {
                 ++n;
                 class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());

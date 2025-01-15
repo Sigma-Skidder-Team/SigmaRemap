@@ -63,7 +63,7 @@ public class Class3302 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (!Class3302.field15514.field4684.field2404 && this.method9883("Kick bypass")) {
+        if (!Class3302.field15514.field4684.onGround && this.method9883("Kick bypass")) {
             if (this.field15874 > 0) {
                 if (this.field15874 % 30 == 0) {
                     if (!Class6430.method19160(Class3302.field15514.field4684, 0.01f)) {
@@ -137,8 +137,8 @@ public class Class3302 extends Class3167
         if (Class3302.field15514.field4684.method1895().y < 1.0) {
             return -1.0;
         }
-        if (!Class3302.field15514.field4684.field2404) {
-            final Iterator<Object> iterator = Class3302.field15514.field4683.method6981(Class3302.field15514.field4684, Class3302.field15514.field4684.field2403.method18494(0.0, -Class3302.field15514.field4684.method1934().y, 0.0)).iterator();
+        if (!Class3302.field15514.field4684.onGround) {
+            final Iterator<Object> iterator = Class3302.field15514.field4683.method6981(Class3302.field15514.field4684, Class3302.field15514.field4684.boundingBox.method18494(0.0, -Class3302.field15514.field4684.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             while (iterator.hasNext()) {
                 final Class7702 class7702 = iterator.next();
@@ -149,6 +149,6 @@ public class Class3302 extends Class3167
             }
             return field25077;
         }
-        return Class3302.field15514.field4684.field2396;
+        return Class3302.field15514.field4684.posY;
     }
 }

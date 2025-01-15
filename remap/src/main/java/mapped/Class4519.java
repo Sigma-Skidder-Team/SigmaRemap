@@ -42,7 +42,7 @@ public class Class4519 extends Class4515
     }
     
     @Override
-    public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final Class6997 class356) {
+    public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (!"map_chest".equals(anObject)) {
             if (!"treasure_chest".equals(anObject)) {
                 if ("supply_chest".equals(anObject)) {
@@ -59,14 +59,14 @@ public class Class4519 extends Class4515
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         int min = 256;
         int n = 0;
         final BlockPos method19945 = this.field19918.method19945();
         final Class2020 class1855 = this.field19932 ? Class2020.field11521 : Class2020.field11523;
         final int n2 = method19945.getX() * method19945.getZ();
         if (n2 != 0) {
-            for (final BlockPos class1856 : BlockPos.method1154(this.field19920, this.field19920.method1134(method19945.getX() - 1, 0, method19945.getZ() - 1))) {
+            for (final BlockPos class1856 : BlockPos.getAllInBoxMutable(this.field19920, this.field19920.add(method19945.getX() - 1, 0, method19945.getZ() - 1))) {
                 final int method19946 = class1851.method6699(class1855, class1856.getX(), class1856.getZ());
                 n += method19946;
                 min = Math.min(min, method19946);

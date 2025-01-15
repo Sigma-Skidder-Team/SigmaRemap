@@ -27,7 +27,7 @@ public class Class5876<T extends Class841> extends Class5846<T>
     }
     
     public void method17621(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
-        final float n6 = n3 - t.field2424;
+        final float n6 = n3 - t.ticksExisted;
         final float n7 = (0.5f + t.method5023(n6)) * 3.1415927f;
         final float n8 = -1.0f + MathHelper.sin(n7);
         float n9 = 0.0f;

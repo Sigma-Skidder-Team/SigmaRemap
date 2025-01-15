@@ -5,24 +5,29 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
 public class Class412 extends Class409
 {
     private static String[] field2509;
-    private Class511 field2510;
+    private LivingEntity field2510;
     
-    public Class412(final EntityType<? extends Class412> class7499, final Class1847 class7500) {
+    public Class412(final EntityType<? extends Class412> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class412(final Class1847 class1847, final Class511 field2510) {
+    public Class412(final World class1847, final LivingEntity field2510) {
         super(EntityType.field29037, field2510, class1847);
         this.field2510 = field2510;
     }
     
-    public Class412(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class412(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field29037, n, n2, n3, class1847);
     }
     
@@ -33,17 +38,17 @@ public class Class412 extends Class409
     
     @Override
     public void method2016(final Class7006 class7006) {
-        final Class511 method2019 = this.method2019();
+        final LivingEntity method2019 = this.method2019();
         if (class7006.method21449() == Class2165.field12882) {
             final Entity method2020 = ((Class7007)class7006).method21452();
             if (method2020 == this.field2510) {
                 return;
             }
-            method2020.method1740(Class7929.method25699(this, method2019), 0.0f);
+            method2020.attackEntityFrom(DamageSource.method25699(this, method2019), 0.0f);
         }
         if (class7006.method21449() == Class2165.field12881) {
             final BlockPos method2021 = ((Class7005)class7006).method21447();
-            final Class436 method2022 = this.field2391.method6727(method2021);
+            final Class436 method2022 = this.world.method6727(method2021);
             if (method2022 instanceof Class488) {
                 final Class488 class7007 = (Class488)method2022;
                 if (method2019 == null) {
@@ -51,7 +56,7 @@ public class Class412 extends Class409
                     return;
                 }
                 if (method2019 instanceof Class513) {
-                    Class7770.field31778.method13813((Class513)method2019, this.field2391.method6701(method2021));
+                    Class7770.field31778.method13813((Class513)method2019, this.world.method6701(method2021));
                 }
                 class7007.method2437(method2019);
                 this.method1652();
@@ -59,34 +64,34 @@ public class Class412 extends Class409
             }
         }
         for (int i = 0; i < 32; ++i) {
-            this.field2391.method6709(Class8432.field34637, this.getPosX(), this.getPosY() + this.field2423.nextDouble() * 2.0, this.getPosZ(), this.field2423.nextGaussian(), 0.0, this.field2423.nextGaussian());
+            this.world.method6709(Class8432.field34637, this.getPosX(), this.getPosY() + this.rand.nextDouble() * 2.0, this.getPosZ(), this.rand.nextGaussian(), 0.0, this.rand.nextGaussian());
         }
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (!(method2019 instanceof Class513)) {
                 if (method2019 != null) {
                     method2019.method1878(this.getPosX(), this.getPosY(), this.getPosZ());
-                    method2019.field2414 = 0.0f;
+                    method2019.fallDistance = 0.0f;
                 }
             }
             else {
                 final Class513 class7008 = (Class513)method2019;
-                if (class7008.field3039.method17369().method11187()) {
-                    if (class7008.field2391 == this.field2391) {
+                if (class7008.field3039.getNetworkManager().method11187()) {
+                    if (class7008.world == this.world) {
                         if (!class7008.method2783()) {
-                            if (this.field2423.nextFloat() < 0.05f) {
-                                if (this.field2391.method6765().method31216(Class8878.field37318)) {
-                                    final Class842 class7009 = EntityType.field28978.method23371(this.field2391);
+                            if (this.rand.nextFloat() < 0.05f) {
+                                if (this.world.method6765().method31216(Class8878.field37318)) {
+                                    final Class842 class7009 = EntityType.field28978.method23371(this.world);
                                     class7009.method5034(true);
-                                    class7009.method1730(method2019.getPosX(), method2019.getPosY(), method2019.getPosZ(), method2019.field2399, method2019.field2400);
-                                    this.field2391.method6886(class7009);
+                                    class7009.method1730(method2019.getPosX(), method2019.getPosY(), method2019.getPosZ(), method2019.rotationYaw, method2019.rotationPitch);
+                                    this.world.method6886(class7009);
                                 }
                             }
-                            if (method2019.method1805()) {
-                                method2019.method1784();
+                            if (method2019.isPassenger()) {
+                                method2019.stopRiding();
                             }
                             method2019.method1878(this.getPosX(), this.getPosY(), this.getPosZ());
-                            method2019.field2414 = 0.0f;
-                            method2019.method1740(Class7929.field32572, 5.0f);
+                            method2019.fallDistance = 0.0f;
+                            method2019.attackEntityFrom(DamageSource.field32572, 5.0f);
                         }
                     }
                 }
@@ -97,7 +102,7 @@ public class Class412 extends Class409
     
     @Override
     public void method1659() {
-        final Class511 method2019 = this.method2019();
+        final LivingEntity method2019 = this.method2019();
         if (method2019 != null) {
             if (method2019 instanceof Class512) {
                 if (!method2019.method1768()) {
@@ -111,8 +116,8 @@ public class Class412 extends Class409
     
     @Nullable
     @Override
-    public Entity method1854(final Class383 class383) {
-        if (this.field2517.field2452 != class383) {
+    public Entity method1854(final DimensionType class383) {
+        if (this.field2517.dimension != class383) {
             this.field2517 = null;
         }
         return super.method1854(class383);

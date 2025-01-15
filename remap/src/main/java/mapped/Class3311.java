@@ -9,7 +9,6 @@ import java.awt.Color;
 import org.lwjgl.opengl.GL11;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Comparator;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -86,7 +85,7 @@ public class Class3311 extends Class3167
                 Class9290 method6783 = null;
                 final Class6749 method6784 = method6782.method19651(Class3311.field15514.field4684.method1867());
                 if (method6784 != null) {
-                    final int method6785 = method6784.method20563().method8253();
+                    final int method6785 = method6784.getColor().getColorIndex();
                     if (method6785 >= 0) {
                         method6783 = method6782.method19644(3 + method6785);
                     }

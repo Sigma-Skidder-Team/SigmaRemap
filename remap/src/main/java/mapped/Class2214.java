@@ -8,12 +8,12 @@ public enum Class2214
 {
     field13594((class6997, class6998, class6999, class7000) -> class6999), 
     field13595((class6997, class6998, class6999, class7000) -> {
-        if (class6998.getX() != class6997.field27293) {
-            if (class6998.getX() != class6997.field27296) {
-                if (class6998.getY() != class6997.field27294) {
-                    if (class6998.getY() != class6997.field27297) {
-                        if (class6998.getZ() != class6997.field27295) {
-                            if (class6998.getZ() != class6997.field27298) {
+        if (class6998.getX() != class6997.minX) {
+            if (class6998.getX() != class6997.maxX) {
+                if (class6998.getY() != class6997.minY) {
+                    if (class6998.getY() != class6997.maxY) {
+                        if (class6998.getZ() != class6997.minZ) {
+                            if (class6998.getZ() != class6997.maxZ) {
                                 return null;
                             }
                         }
@@ -24,12 +24,12 @@ public enum Class2214
         return class6999;
     }), 
     field13596((class6997, class6998, class6999, class7000) -> {
-        if (class6998.getX() != class6997.field27293) {
-            if (class6998.getX() != class6997.field27296) {
-                if (class6998.getY() != class6997.field27294) {
-                    if (class6998.getY() != class6997.field27297) {
-                        if (class6998.getZ() != class6997.field27295) {
-                            if (class6998.getZ() != class6997.field27298) {
+        if (class6998.getX() != class6997.minX) {
+            if (class6998.getX() != class6997.maxX) {
+                if (class6998.getY() != class6997.minY) {
+                    if (class6998.getY() != class6997.maxY) {
+                        if (class6998.getZ() != class6997.minZ) {
+                            if (class6998.getZ() != class6997.maxZ) {
                                 return Class8232.method27284();
                             }
                         }

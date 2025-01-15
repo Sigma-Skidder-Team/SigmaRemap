@@ -4,15 +4,18 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class Class3555<T extends Class511> extends Class3545
+public class Class3555<T extends LivingEntity> extends Class3545
 {
     private static String[] field16633;
     public final Class<T> field16634;
     public final int field16635;
-    public Class511 field16636;
+    public LivingEntity field16636;
     public Class7843 field16637;
     
     public Class3555(final Class759 class759, final Class<T> clazz, final boolean b) {
@@ -23,7 +26,7 @@ public class Class3555<T extends Class511> extends Class3545
         this(class759, clazz, 10, b, b2, null);
     }
     
-    public Class3555(final Class759 class759, final Class<T> field16634, final int field16635, final boolean b, final boolean b2, final Predicate<Class511> predicate) {
+    public Class3555(final Class759 class759, final Class<T> field16634, final int field16635, final boolean b, final boolean b2, final Predicate<LivingEntity> predicate) {
         super(class759, b, b2);
         this.field16634 = field16634;
         this.field16635 = field16635;
@@ -46,10 +49,10 @@ public class Class3555<T extends Class511> extends Class3545
     
     public void method11104() {
         if (this.field16634 != Class512.class && this.field16634 != Class513.class) {
-            this.field16636 = this.field16602.field2391.method7139((Class<? extends Class511>)this.field16634, this.field16637, (Class511)this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ(), this.method11103(this.method11096()));
+            this.field16636 = this.field16602.world.method7139((Class<? extends LivingEntity>)this.field16634, this.field16637, (LivingEntity)this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ(), this.method11103(this.method11096()));
         }
         else {
-            this.field16636 = this.field16602.field2391.method7136(this.field16637, this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ());
+            this.field16636 = this.field16602.world.method7136(this.field16637, this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ());
         }
     }
     

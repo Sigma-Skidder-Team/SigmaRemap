@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Arrays;
 import java.util.function.Predicate;
@@ -16,7 +18,7 @@ public class Class1864 extends Class1862
     private static String[] field10166;
     private static final Class3090[] field10167;
     
-    public Class1864(final Class1847 class1847, final Class7859 class1848) {
+    public Class1864(final World class1847, final Class7859 class1848) {
         super(class1847, class1848, new Class1873(Class1864.field10167));
     }
     

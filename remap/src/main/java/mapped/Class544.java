@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.List;
 import com.google.common.collect.Lists;
 import com.google.common.base.Splitter;
 
@@ -71,7 +70,7 @@ public class Class544 extends Class527
         this.field3281 = null;
         this.field3287.method2975(n, n2, n3);
         this.field3286.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 8, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
         super.method2975(n, n2, n3);
         if (this.field3281 != null) {
             this.method3032(Lists.newArrayList(Splitter.on("\n").split((CharSequence)this.field3281)), n, n2);

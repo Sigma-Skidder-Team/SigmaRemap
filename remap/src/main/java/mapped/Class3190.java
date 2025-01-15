@@ -61,13 +61,13 @@ public class Class3190 extends Class3167
             else {
                 final int[] method12989 = ((Class4325)class5723.method16998()).method12989();
                 for (int length = method12989.length, i = 0; i < length; ++i) {
-                    final Entity method12990 = Class3190.field15514.field4683.method6741(method12989[i]);
+                    final Entity method12990 = Class3190.field15514.field4683.getEntityByID(method12989[i]);
                     if (method12990 != null) {
                         if (method12990 instanceof Class512) {
                             if (this.field15594.containsKey(method12990.method1865())) {
                                 this.field15594.remove(method12990.method1865());
                             }
-                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().method8459() + " Unspawn", (int)method12990.field2395, (int)method12990.field2396, (int)method12990.field2397, Class265.field1284.field1292));
+                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, Class265.field1284.field1292));
                         }
                     }
                 }
@@ -216,13 +216,13 @@ public class Class3190 extends Class3167
         GL11.glPushMatrix();
         GL11.glColor4fv(Class6430.method19139(n4));
         GL11.glTranslated(n + 0.5, (double)(n2 + 0.7f), n3 + 0.5);
-        GL11.glRotatef((float)(Class3190.field15514.field4684.field2424 % 90 * 4), 0.0f, -1.0f, 0.0f);
+        GL11.glRotatef((float)(Class3190.field15514.field4684.ticksExisted % 90 * 4), 0.0f, -1.0f, 0.0f);
         GL11.glLineWidth(1.4f + 1.0f / n5 * 1.4f);
         this.method10012(0.6f);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslated(n + 0.5, (double)(n2 + 0.7f), n3 + 0.5);
-        GL11.glRotatef((float)(Class3190.field15514.field4684.field2424 % 90 * 4), 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef((float)(Class3190.field15514.field4684.ticksExisted % 90 * 4), 0.0f, 1.0f, 0.0f);
         this.method10009(n4);
         GL11.glPopMatrix();
         GL11.glPushMatrix();

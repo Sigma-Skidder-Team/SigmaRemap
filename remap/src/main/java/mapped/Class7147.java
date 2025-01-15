@@ -20,9 +20,9 @@ public class Class7147 extends Class7139<Class6936>
         if (random.nextInt(14) != 0) {
             return Stream.empty();
         }
-        Stream<Object> a = Stream.concat((Stream<?>)empty, (Stream<?>)Stream.of(class6937.method1134(random.nextInt(16), 55 + random.nextInt(16), random.nextInt(16))));
+        Stream<Object> a = Stream.concat((Stream<?>)empty, (Stream<?>)Stream.of(class6937.add(random.nextInt(16), 55 + random.nextInt(16), random.nextInt(16))));
         if (random.nextInt(4) == 0) {
-            a = Stream.concat((Stream<?>)a, (Stream<?>)Stream.of(class6937.method1134(random.nextInt(16), 55 + random.nextInt(16), random.nextInt(16))));
+            a = Stream.concat((Stream<?>)a, (Stream<?>)Stream.of(class6937.add(random.nextInt(16), 55 + random.nextInt(16), random.nextInt(16))));
         }
         return (Stream<BlockPos>)a;
     }

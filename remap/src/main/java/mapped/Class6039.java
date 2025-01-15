@@ -28,12 +28,12 @@ public class Class6039 extends Class6032<Class4408>
         final boolean b = this.field24578.method29029(n * 0.03125, n2 * 0.03125, 0.0) * 75.0 + random.nextDouble() > 0.0;
         final boolean b2 = this.field24578.method29029(n * 0.03125, 109.0, n2 * 0.03125) * 75.0 + random.nextDouble() > 0.0;
         final int n10 = (int)(n4 / 3.0 + 3.0 + random.nextDouble() * 0.25);
-        final Class385 class1865 = new Class385();
+        final Mutable class1865 = new Mutable();
         int n11 = -1;
         Class7096 class1866 = Class6039.field24574;
         Class7096 class1867 = Class6039.field24574;
         for (int i = 127; i >= 0; --i) {
-            class1865.method1284(n8, i, n9);
+            class1865.setPos(n8, i, n9);
             final Class7096 method6701 = class1860.method6701(class1865);
             if (method6701.method21696() != null && !method6701.method21706()) {
                 if (method6701.method21696() == class1862.method21696()) {

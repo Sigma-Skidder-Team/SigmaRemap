@@ -27,25 +27,25 @@ public class Class6965 extends ByteToMessageDecoder
     
     public void decode(final ChannelHandlerContext channelHandlerContext, final ByteBuf byteBuf, final List<Object> list) throws Exception {
         if (byteBuf.readableBytes() != 0) {
-            final Class8654 class8654 = new Class8654(byteBuf);
-            final int method29501 = class8654.method29501();
-            final Class4252<?> method29502 = ((Class2208)channelHandlerContext.channel().attr((AttributeKey)Class3641.field16893).get()).method8388(this.field27245, method29501);
+            final PacketBuffer class8654 = new PacketBuffer(byteBuf);
+            final int method29501 = class8654.readVarInt();
+            final IPacket<?> method29502 = ((Class2208)channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get()).method8388(this.field27245, method29501);
             if (method29502 == null) {
                 throw new IOException("Bad packet id " + method29501);
             }
-            method29502.method12754(class8654);
+            method29502.readPacketData(class8654);
             if (class8654.readableBytes() > 0) {
-                throw new IOException("Packet " + ((Class2208)channelHandlerContext.channel().attr((AttributeKey)Class3641.field16893).get()).method8389() + "/" + method29501 + " (" + method29502.getClass().getSimpleName() + ") was larger than I expected, found " + class8654.readableBytes() + " bytes extra whilst reading packet " + method29501);
+                throw new IOException("Packet " + ((Class2208)channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get()).method8389() + "/" + method29501 + " (" + method29502.getClass().getSimpleName() + ") was larger than I expected, found " + class8654.readableBytes() + " bytes extra whilst reading packet " + method29501);
             }
             list.add(method29502);
             if (Class6965.field27243.isDebugEnabled()) {
-                Class6965.field27243.debug(Class6965.field27244, " IN: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey)Class3641.field16893).get(), (Object)method29501, (Object)method29502.getClass().getName());
+                Class6965.field27243.debug(Class6965.field27244, " IN: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), (Object)method29501, (Object)method29502.getClass().getName());
             }
         }
     }
     
     static {
         field27243 = LogManager.getLogger();
-        field27244 = MarkerManager.getMarker("PACKET_RECEIVED", Class3641.field16892);
+        field27244 = MarkerManager.getMarker("PACKET_RECEIVED", NetworkManager.field16892);
     }
 }

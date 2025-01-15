@@ -37,13 +37,13 @@ public class Class683 extends Class565
         this.field3730 = field3731;
         this.field3731 = field3732;
         this.field3735 = field3730;
-        this.field3732 = field3730.field4643.method6619(field3732.method22527().method8461(), 163);
+        this.field3732 = field3730.field4643.method6619(field3732.method22527().getFormattedText(), 163);
         this.field3739 = MathHelper.method35642(field3732.method22532() * 28.0f);
         this.field3740 = MathHelper.method35642(field3732.method22533() * 27.0f);
         final int method31040 = field3731.method31040();
         final int length = String.valueOf(method31040).length();
         int max = 29 + field3730.field4643.method6617(this.field3732) + ((method31040 <= 1) ? 0 : (field3730.field4643.method6617("  ") + field3730.field4643.method6617("0") * length * 2 + field3730.field4643.method6617("/")));
-        this.field3734 = this.method3744(field3732.method22528().method8461(), max);
+        this.field3734 = this.method3744(field3732.method22528().getFormattedText(), max);
         final Iterator<String> iterator = this.field3734.iterator();
         while (iterator.hasNext()) {
             max = Math.max(max, field3730.field4643.method6617(iterator.next()));

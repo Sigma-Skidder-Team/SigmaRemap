@@ -11,8 +11,12 @@ import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Map;
 
@@ -24,7 +28,7 @@ public class Class8551
     private final Class4711 field35902;
     private final Class1844 field35903;
     public final Class1663 field35904;
-    private Class1847 field35905;
+    private World field35905;
     public Class6092 field35906;
     private Quaternion field35907;
     public Entity field35908;
@@ -175,13 +179,13 @@ public class Class8551
     
     public <T extends Entity> Class4703<? super T> method28699(final T t) {
         if (!(t instanceof Class754)) {
-            return (Class4703)this.field35900.get(t.method1642());
+            return (Class4703)this.field35900.get(t.getType());
         }
         final Class4711 class4711 = this.field35901.get(((Class754)t).method4103());
         return (Class4703<? super T>)((class4711 == null) ? this.field35902 : class4711);
     }
     
-    public void method28700(final Class1847 field35905, final Class6092 field35906, final Entity field35907) {
+    public void method28700(final World field35905, final Class6092 field35906, final Entity field35907) {
         this.field35905 = field35905;
         this.field35906 = field35906;
         this.field35907 = field35906.method18165();
@@ -257,17 +261,17 @@ public class Class8551
         final float n2 = class7353.method1930() / 2.0f;
         this.method28708(class7351, class7352, class7353, 1.0f, 1.0f, 1.0f);
         if (class7353 instanceof Class852) {
-            final double n3 = class7353.getPosX() - MathHelper.method35701(n, class7353.field2417, class7353.getPosX());
-            final double n4 = class7353.getPosY() - MathHelper.method35701(n, class7353.field2418, class7353.getPosY());
-            final double n5 = class7353.getPosZ() - MathHelper.method35701(n, class7353.field2419, class7353.getPosZ());
+            final double n3 = class7353.getPosX() - MathHelper.method35701(n, class7353.lastTickPosX, class7353.getPosX());
+            final double n4 = class7353.getPosY() - MathHelper.method35701(n, class7353.lastTickPosY, class7353.getPosY());
+            final double n5 = class7353.getPosZ() - MathHelper.method35701(n, class7353.lastTickPosZ, class7353.getPosZ());
             for (final Class859 class7354 : ((Class852)class7353).method5123()) {
                 class7351.method22567();
-                class7351.method22564(n3 + MathHelper.method35701(n, class7354.field2417, class7354.getPosX()), n4 + MathHelper.method35701(n, class7354.field2418, class7354.getPosY()), n5 + MathHelper.method35701(n, class7354.field2419, class7354.getPosZ()));
+                class7351.method22564(n3 + MathHelper.method35701(n, class7354.lastTickPosX, class7354.getPosX()), n4 + MathHelper.method35701(n, class7354.lastTickPosY, class7354.getPosY()), n5 + MathHelper.method35701(n, class7354.lastTickPosZ, class7354.getPosZ()));
                 this.method28708(class7351, class7352, class7354, 0.25f, 1.0f, 0.0f);
                 class7351.method22568();
             }
         }
-        if (class7353 instanceof Class511) {
+        if (class7353 instanceof LivingEntity) {
             Class1656.method5732(class7351, class7352, -n2, class7353.method1892() - 0.01f, -n2, n2, class7353.method1892() + 0.01f, n2, 1.0f, 0.0f, 0.0f, 1.0f);
         }
         final Vec3d method5124 = class7353.method1741(n);
@@ -340,9 +344,9 @@ public class Class8551
                     n4 = n3 * 0.5f;
                 }
             }
-            final double method35701 = MathHelper.method35701(n2, class7353.field2417, class7353.getPosX());
-            final double method35702 = MathHelper.method35701(n2, class7353.field2418, class7353.getPosY());
-            final double method35703 = MathHelper.method35701(n2, class7353.field2419, class7353.getPosZ());
+            final double method35701 = MathHelper.method35701(n2, class7353.lastTickPosX, class7353.getPosX());
+            final double method35702 = MathHelper.method35701(n2, class7353.lastTickPosY, class7353.getPosY());
+            final double method35703 = MathHelper.method35701(n2, class7353.lastTickPosZ, class7353.getPosZ());
             final int method35704 = MathHelper.floor(method35701 - n4);
             final int method35705 = MathHelper.floor(method35701 + n4);
             final int method35706 = MathHelper.floor(method35702 - n4);
@@ -351,7 +355,7 @@ public class Class8551
             final int method35709 = MathHelper.floor(method35703 + n4);
             final Class8996 method35710 = class7351.method22569();
             final Class4150 method35711 = class7352.method25214(Class8551.field35899);
-            final Iterator<BlockPos> iterator = BlockPos.method1154(new BlockPos(method35704, method35706, method35708), new BlockPos(method35705, method35707, method35709)).iterator();
+            final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(new BlockPos(method35704, method35706, method35708), new BlockPos(method35705, method35707, method35709)).iterator();
             while (iterator.hasNext()) {
                 method28712(method35710, method35711, class7354, iterator.next(), method35701, method35702, method35703, n4, n);
             }
@@ -401,7 +405,7 @@ public class Class8551
         class8997.method12444(class8996.method32111(), n2, n3, n4).method12439(1.0f, 1.0f, 1.0f, n).method12391(n5, n6).method12441(Class1904.field10335).method12440(15728880).method12445(class8996.method32112(), 0.0f, 1.0f, 0.0f).method12397();
     }
     
-    public void method28714(final Class1847 field35905) {
+    public void method28714(final World field35905) {
         this.field35905 = field35905;
         if (field35905 == null) {
             this.field35906 = null;

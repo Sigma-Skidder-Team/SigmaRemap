@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 import javax.annotation.Nullable;
 import java.io.IOException;
 
-public class Class4308 implements Class4252<Class5800>
+public class Class4308 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19313;
     private int field19314;
@@ -26,20 +26,20 @@ public class Class4308 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19314 = class8654.method29501();
-        this.field19315 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19314 = class8654.readVarInt();
+        this.field19315 = class8654.readVarInt();
         this.field19316 = class8654.method29497();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19314);
-        class8654.method29505(this.field19315);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19314);
+        class8654.writeVarInt(this.field19315);
         class8654.method29498(this.field19316);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17308(this);
     }
     

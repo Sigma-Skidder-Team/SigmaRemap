@@ -5,7 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -26,7 +28,7 @@ public class Class3828 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21696() == Class7521.field29335 && !method21656.method21772((Class7111<Boolean>)Class3931.field17811)) {
@@ -50,8 +52,8 @@ public class Class3828 extends Class3820
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        list.add(this.method11764().method8469(Class2116.field12316));
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+        list.add(this.method11764().applyTextStyle(TextFormatting.GRAY));
     }
     
     public ITextComponent method11764() {

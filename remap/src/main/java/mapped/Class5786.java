@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
@@ -16,7 +17,7 @@ public class Class5786 extends Class5784
     private int field23769;
     private Class9468 field23770;
     private Vec3d field23771;
-    private Class511 field23772;
+    private LivingEntity field23772;
     private boolean field23773;
     
     public Class5786(final Class852 class852) {
@@ -51,7 +52,7 @@ public class Class5786 extends Class5784
             }
             else {
                 ++this.field23769;
-                final float n4 = (float)(Math.acos((float)new Vec3d(MathHelper.sin(this.field23764.field2399 * 0.017453292f), 0.0, -MathHelper.cos(this.field23764.field2399 * 0.017453292f)).normalize().dotProduct(new Vec3d(this.field23772.getPosX() - this.field23764.getPosX(), 0.0, this.field23772.getPosZ() - this.field23764.getPosZ()).normalize())) * 57.2957763671875) + 0.5f;
+                final float n4 = (float)(Math.acos((float)new Vec3d(MathHelper.sin(this.field23764.rotationYaw * 0.017453292f), 0.0, -MathHelper.cos(this.field23764.rotationYaw * 0.017453292f)).normalize().dotProduct(new Vec3d(this.field23772.getPosX() - this.field23764.getPosX(), 0.0, this.field23772.getPosZ() - this.field23764.getPosZ()).normalize())) * 57.2957763671875) + 0.5f;
                 if (this.field23769 >= 5) {
                     if (n4 >= 0.0f) {
                         if (n4 < 10.0f) {
@@ -62,10 +63,10 @@ public class Class5786 extends Class5784
                             final double n8 = this.field23772.getPosX() - n5;
                             final double n9 = this.field23772.method1942(0.5) - n6;
                             final double n10 = this.field23772.getPosZ() - n7;
-                            this.field23764.field2391.method6839(null, 1017, new BlockPos(this.field23764), 0);
-                            final Class420 class420 = new Class420(this.field23764.field2391, this.field23764, n8, n9, n10);
+                            this.field23764.world.method6839(null, 1017, new BlockPos(this.field23764), 0);
+                            final Class420 class420 = new Class420(this.field23764.world, this.field23764, n8, n9, n10);
                             class420.method1730(n5, n6, n7, 0.0f, 0.0f);
-                            this.field23764.field2391.method6886(class420);
+                            this.field23764.world.method6886(class420);
                             this.field23769 = 0;
                             if (this.field23770 != null) {
                                 while (!this.field23770.method35215()) {
@@ -140,7 +141,7 @@ public class Class5786 extends Class5784
         this.field23772 = null;
     }
     
-    public void method17259(final Class511 field23772) {
+    public void method17259(final LivingEntity field23772) {
         this.field23772 = field23772;
         final int method5119 = this.field23764.method5119();
         final int method5120 = this.field23764.method5120(this.field23772.getPosX(), this.field23772.getPosY(), this.field23772.getPosZ());

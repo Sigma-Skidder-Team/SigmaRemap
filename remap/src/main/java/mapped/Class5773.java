@@ -24,6 +24,9 @@ import java.util.function.Function;
 import java.util.List;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.nbt.CollectionNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NumberNBT;
 import net.minecraft.util.math.MathHelper;
 
 public class Class5773
@@ -42,16 +45,16 @@ public class Class5773
     public static void method17173(final CommandDispatcher<Class7492> commandDispatcher) {
         final LiteralArgumentBuilder literalArgumentBuilder = (LiteralArgumentBuilder)Class7788.method25001("data").requires(class6596 -> class6596.method23210(2));
         for (final Class6595 class6595 : Class5773.field23619) {
-            ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)literalArgumentBuilder.then((ArgumentBuilder)class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("merge"), argumentBuilder2 -> argumentBuilder2.then(Class7788.method25002("nbt", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7418.method22831()).executes(commandContext -> method17182((Class7492)commandContext.getSource(), class6597.method20041((CommandContext<Class7492>)commandContext), Class7418.method22832((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "nbt"))))))).then((ArgumentBuilder)class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("get"), argumentBuilder4 -> argumentBuilder4.executes(commandContext -> method17181((Class7492)commandContext.getSource(), class6598.method20041((CommandContext<Class7492>)commandContext))).then(((RequiredArgumentBuilder)Class7788.method25002("path", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).executes(commandContext -> method17179((Class7492)commandContext.getSource(), class6598.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path")))).then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).executes(commandContext -> method17180((Class7492)commandContext.getSource(), class6598.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), DoubleArgumentType.getDouble(commandContext, "scale")))))))).then((ArgumentBuilder)class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("remove"), argumentBuilder6 -> argumentBuilder6.then(Class7788.method25002("path", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).executes(commandContext -> method17177((Class7492)commandContext.getSource(), class6599.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"))))))).then((ArgumentBuilder)method17175((argumentBuilder7, class6600) -> argumentBuilder7.then(Class7788.method25001("insert").then(Class7788.method25002("index", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> method17174(IntegerArgumentType.getInteger(commandContext, "index"), class51, class52, list))))).then(Class7788.method25001("prepend").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> method17174(0, class51, class52, list)))).then(Class7788.method25001("append").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> method17174(-1, class51, class52, list)))).then(Class7788.method25001("set").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> class52.method28809(class51, (Class41)Iterables.getLast((Iterable)list)::method265)))).then(Class7788.method25001("merge").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> {
-                final List<Class41> method28807 = class52.method28807(class51, (Supplier<Class41>)Class51::new);
+            ((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)literalArgumentBuilder.then((ArgumentBuilder)class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("merge"), argumentBuilder2 -> argumentBuilder2.then(Class7788.method25002("nbt", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7418.method22831()).executes(commandContext -> method17182((Class7492)commandContext.getSource(), class6597.method20041((CommandContext<Class7492>)commandContext), Class7418.method22832((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "nbt"))))))).then((ArgumentBuilder)class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("get"), argumentBuilder4 -> argumentBuilder4.executes(commandContext -> method17181((Class7492)commandContext.getSource(), class6598.method20041((CommandContext<Class7492>)commandContext))).then(((RequiredArgumentBuilder)Class7788.method25002("path", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).executes(commandContext -> method17179((Class7492)commandContext.getSource(), class6598.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path")))).then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).executes(commandContext -> method17180((Class7492)commandContext.getSource(), class6598.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), DoubleArgumentType.getDouble(commandContext, "scale")))))))).then((ArgumentBuilder)class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("remove"), argumentBuilder6 -> argumentBuilder6.then(Class7788.method25002("path", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).executes(commandContext -> method17177((Class7492)commandContext.getSource(), class6599.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"))))))).then((ArgumentBuilder)method17175((argumentBuilder7, class6600) -> argumentBuilder7.then(Class7788.method25001("insert").then(Class7788.method25002("index", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> method17174(IntegerArgumentType.getInteger(commandContext, "index"), class51, class52, list))))).then(Class7788.method25001("prepend").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> method17174(0, class51, class52, list)))).then(Class7788.method25001("append").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> method17174(-1, class51, class52, list)))).then(Class7788.method25001("set").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> class52.method28809(class51, (INBT)Iterables.getLast((Iterable)list)::method265)))).then(Class7788.method25001("merge").then((ArgumentBuilder)class6600.method31209((commandContext, class51, class52, list) -> {
+                final List<INBT> method28807 = class52.method28807(class51, (Supplier<INBT>)Class51::new);
                 int n = 0;
-                for (final Class41 class53 : method28807) {
+                for (final INBT class53 : method28807) {
                     if (!(class53 instanceof Class51)) {
                         throw Class5773.field23616.create((Object)class53);
                     }
                     final Class51 class54 = (Class51)class53;
                     final Class51 method28808 = class54.method333();
-                    for (final Class41 class55 : list) {
+                    for (final INBT class55 : list) {
                         if (!(class55 instanceof Class51)) {
                             throw Class5773.field23616.create((Object)class55);
                         }
@@ -65,19 +68,19 @@ public class Class5773
         commandDispatcher.register(literalArgumentBuilder);
     }
     
-    private static int method17174(final int n, final Class51 class51, final Class8570 class52, final List<Class41> list) throws CommandSyntaxException {
-        final List<Class41> method28807 = class52.method28807(class51, (Supplier<Class41>)Class52::new);
+    private static int method17174(final int n, final Class51 class51, final Class8570 class52, final List<INBT> list) throws CommandSyntaxException {
+        final List<INBT> method28807 = class52.method28807(class51, (Supplier<INBT>)Class52::new);
         int n2 = 0;
-        for (final Class41 class53 : method28807) {
-            if (!(class53 instanceof Class38)) {
+        for (final INBT class53 : method28807) {
+            if (!(class53 instanceof CollectionNBT)) {
                 throw Class5773.field23615.create((Object)class53);
             }
             int n3 = 0;
-            final Class38 class54 = (Class38)class53;
+            final CollectionNBT class54 = (CollectionNBT)class53;
             int i = (n < 0) ? (class54.size() + n + 1) : n;
-            for (final Class41 class55 : list) {
+            for (final INBT class55 : list) {
                 try {
-                    if (!class54.method258(i, class55.method265())) {
+                    if (!class54.func_218660_b(i, class55.copy())) {
                         continue;
                     }
                     ++i;
@@ -102,7 +105,7 @@ public class Class5773
                 final Iterator iterator2;
                 final ArgumentBuilder argumentBuilder3;
                 while (iterator2.hasNext()) {
-                    biConsumer2.accept(argumentBuilder3, class6597 -> class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("from"), argumentBuilder2 -> argumentBuilder2.executes(commandContext -> method17176((CommandContext<Class7492>)commandContext, class6599, class6600, (List<Class41>)Collections.singletonList(class6598.method20041((CommandContext<Class7492>)commandContext).method16526()))).then(Class7788.method25002("sourcePath", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).executes(commandContext -> method17176((CommandContext<Class7492>)commandContext, class6599, class6600, Class8258.method27404((CommandContext<Class7492>)commandContext, "sourcePath").method28804(class6598.method20041((CommandContext<Class7492>)commandContext).method16526()))))));
+                    biConsumer2.accept(argumentBuilder3, class6597 -> class6595.method20042((ArgumentBuilder<Class7492, ?>)Class7788.method25001("from"), argumentBuilder2 -> argumentBuilder2.executes(commandContext -> method17176((CommandContext<Class7492>)commandContext, class6599, class6600, (List<INBT>)Collections.singletonList(class6598.method20041((CommandContext<Class7492>)commandContext).method16526()))).then(Class7788.method25002("sourcePath", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).executes(commandContext -> method17176((CommandContext<Class7492>)commandContext, class6599, class6600, Class8258.method27404((CommandContext<Class7492>)commandContext, "sourcePath").method28804(class6598.method20041((CommandContext<Class7492>)commandContext).method16526()))))));
                 }
                 biConsumer2.accept(argumentBuilder3, class6596 -> Class7788.method25001("value").then(Class7788.method25002("value", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class9136.method33309()).executes(commandContext -> method17176((CommandContext<Class7492>)commandContext, class6595, class6596, Collections.singletonList(Class9136.method33310((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "value"))))));
                 return argumentBuilder2.then(argumentBuilder3);
@@ -111,7 +114,7 @@ public class Class5773
         return (ArgumentBuilder<Class7492, ?>)method25001;
     }
     
-    private static int method17176(final CommandContext<Class7492> commandContext, final Class6595 class6595, final Class9293 class6596, final List<Class41> list) throws CommandSyntaxException {
+    private static int method17176(final CommandContext<Class7492> commandContext, final Class6595 class6595, final Class9293 class6596, final List<INBT> list) throws CommandSyntaxException {
         final Class5414 method20041 = class6595.method20041(commandContext);
         final Class8570 method20042 = Class8258.method27404(commandContext, "targetPath");
         final Class51 method20043 = method20041.method16526();
@@ -135,9 +138,9 @@ public class Class5773
         throw Class5773.field23611.create();
     }
     
-    private static Class41 method17178(final Class8570 class8570, final Class5414 class8571) throws CommandSyntaxException {
+    private static INBT method17178(final Class8570 class8570, final Class5414 class8571) throws CommandSyntaxException {
         final Iterator<Object> iterator = class8570.method28804(class8571.method16526()).iterator();
-        final Class41 class8572 = iterator.next();
+        final INBT class8572 = iterator.next();
         if (!iterator.hasNext()) {
             return class8572;
         }
@@ -145,35 +148,35 @@ public class Class5773
     }
     
     private static int method17179(final Class7492 class7492, final Class5414 class7493, final Class8570 class7494) throws CommandSyntaxException {
-        final Class41 method17178 = method17178(class7494, class7493);
+        final INBT method17178 = method17178(class7494, class7493);
         int n;
-        if (!(method17178 instanceof Class43)) {
-            if (!(method17178 instanceof Class38)) {
+        if (!(method17178 instanceof NumberNBT)) {
+            if (!(method17178 instanceof CollectionNBT)) {
                 if (!(method17178 instanceof Class51)) {
                     if (!(method17178 instanceof Class50)) {
                         throw Class5773.field23613.create((Object)class7494.toString());
                     }
-                    n = method17178.method267().length();
+                    n = method17178.getString().length();
                 }
                 else {
                     n = ((Class51)method17178).method294();
                 }
             }
             else {
-                n = ((Class38)method17178).size();
+                n = ((CollectionNBT)method17178).size();
             }
         }
         else {
-            n = MathHelper.floor(((Class43)method17178).method274());
+            n = MathHelper.floor(((NumberNBT)method17178).method274());
         }
         class7492.method23257(class7493.method16528(method17178), false);
         return n;
     }
     
     private static int method17180(final Class7492 class7492, final Class5414 class7493, final Class8570 class7494, final double n) throws CommandSyntaxException {
-        final Class41 method17178 = method17178(class7494, class7493);
-        if (method17178 instanceof Class43) {
-            final int method17179 = MathHelper.floor(((Class43)method17178).method274() * n);
+        final INBT method17178 = method17178(class7494, class7493);
+        if (method17178 instanceof NumberNBT) {
+            final int method17179 = MathHelper.floor(((NumberNBT)method17178).method274() * n);
             class7492.method23257(class7493.method16529(class7494, n, method17179), false);
             return method17179;
         }

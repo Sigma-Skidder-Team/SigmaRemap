@@ -16,7 +16,7 @@ public class Class3323 extends Class3167
     private void method10525(final Class5722 class5722) {
         if (this.method9906()) {
             if (Class3376.field16049) {
-                Class3323.field15514.method5269().method17292(new Class4354(Class3323.field15514.field4684.field2395, Class3323.field15514.field4684.field2396, Class3323.field15514.field4684.field2397, true));
+                Class3323.field15514.method5269().method17292(new Class4354(Class3323.field15514.field4684.posX, Class3323.field15514.field4684.posY, Class3323.field15514.field4684.posZ, true));
             }
         }
     }

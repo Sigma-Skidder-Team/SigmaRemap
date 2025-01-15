@@ -31,7 +31,7 @@ public class Class3607 extends Class3446
             return false;
         }
         if (this.field16794.method1804()) {
-            final BlockPos method11136 = this.method11136(this.field16794.field2391, this.field16794, 5, 4);
+            final BlockPos method11136 = this.method11136(this.field16794.world, this.field16794, 5, 4);
             if (method11136 != null) {
                 this.field16796 = method11136.getX();
                 this.field16797 = method11136.getY();
@@ -71,11 +71,11 @@ public class Class3607 extends Class3446
         final int method1076 = class1857.getZ();
         float n3 = (float)(n * n * n2 * 2);
         BlockPos class1858 = null;
-        final Class385 class1859 = new Class385();
+        final Mutable class1859 = new Mutable();
         for (int i = method1074 - n; i <= method1074 + n; ++i) {
             for (int j = method1075 - n2; j <= method1075 + n2; ++j) {
                 for (int k = method1076 - n; k <= method1076 + n; ++k) {
-                    class1859.method1284(i, j, k);
+                    class1859.setPos(i, j, k);
                     if (class1855.method6702(class1859).method21793(Class7324.field28319)) {
                         final float n4 = (float)((i - method1074) * (i - method1074) + (j - method1075) * (j - method1075) + (k - method1076) * (k - method1076));
                         if (n4 < n3) {

@@ -4,11 +4,14 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public abstract class Class3429 extends Class3426<Class446>
 {
     private final Class446 field16209;
     private final Class7604 field16210;
-    public final Class1847 field16211;
+    public final World field16211;
     private final Class8976<? extends Class3680> field16212;
     
     public Class3429(final Class8471<?> class8471, final Class8976<? extends Class3680> class8472, final int n, final Class464 class8473) {
@@ -22,7 +25,7 @@ public abstract class Class3429 extends Class3426<Class446>
         Class3418.method10869(field16214, 4);
         this.field16209 = field16213;
         this.field16210 = field16214;
-        this.field16211 = class8472.field2744.field2391;
+        this.field16211 = class8472.field2744.world;
         this.method10870(new Class6601(field16213, 0, 56, 17));
         this.method10870(new Class6625(this, field16213, 1, 56, 53));
         this.method10870(new Class6607(class8472.field2744, field16213, 2, 116, 35));

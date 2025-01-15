@@ -10,11 +10,11 @@ public final class Class4421 implements Class4410<Direction>
 {
     private static String[] field19752;
     
-    public void method13370(final Class8654 class8654, final Direction class8655) {
+    public void method13370(final PacketBuffer class8654, final Direction class8655) {
         class8654.method29500(class8655);
     }
     
-    public Direction method13371(final Class8654 class8654) {
+    public Direction method13371(final PacketBuffer class8654) {
         return class8654.method29499(Direction.class);
     }
     

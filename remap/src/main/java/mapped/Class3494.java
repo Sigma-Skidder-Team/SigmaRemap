@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -19,13 +20,13 @@ public class Class3494 extends Class3446
     
     @Override
     public boolean method11013() {
-        return this.field16440.method5080() != null && this.field16440.field2391.method6765().method31216(Class8878.field37316) && this.field16440.method2633().nextInt(2000) == 0;
+        return this.field16440.method5080() != null && this.field16440.world.method6765().method31216(Class8878.field37316) && this.field16440.method2633().nextInt(2000) == 0;
     }
     
     @Override
     public void method11016() {
         final Random method2633 = this.field16440.method2633();
-        final Class1847 field2391 = this.field16440.field2391;
+        final World field2391 = this.field16440.world;
         final BlockPos class354 = new BlockPos(MathHelper.floor(this.field16440.getPosX() - 1.0 + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.getPosY() + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.getPosZ() - 1.0 + method2633.nextDouble() * 2.0));
         final Class7096 method2634 = field2391.method6701(class354);
         final BlockPos method2635 = class354.method1139();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public interface Class514
 {
     void method2930(final Class3418 p0, final Class2265<ItemStack> p1);

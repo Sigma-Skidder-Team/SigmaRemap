@@ -6,15 +6,15 @@ package mapped;
 
 public enum Class1993
 {
-    field11162("task", 0, Class2116.field12319), 
-    field11163("challenge", 26, Class2116.field12314), 
-    field11164("goal", 52, Class2116.field12319);
+    field11162("task", 0, TextFormatting.GREEN),
+    field11163("challenge", 26, TextFormatting.DARK_PURPLE),
+    field11164("goal", 52, TextFormatting.GREEN);
     
     private final String field11165;
     private final int field11166;
-    private final Class2116 field11167;
+    private final TextFormatting field11167;
     
-    private Class1993(final String field11165, final int field11166, final Class2116 field11167) {
+    private Class1993(final String field11165, final int field11166, final TextFormatting field11167) {
         this.field11165 = field11165;
         this.field11166 = field11166;
         this.field11167 = field11167;
@@ -37,7 +37,7 @@ public enum Class1993
         throw new IllegalArgumentException("Unknown frame type '" + s + "'");
     }
     
-    public Class2116 method8018() {
+    public TextFormatting method8018() {
         return this.field11167;
     }
 }

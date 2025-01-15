@@ -80,7 +80,7 @@ public class Class8490
         if (n3 != 0) {
             final Message tooltip = this.field34847.getList().get(this.field34850).getTooltip();
             if (tooltip != null) {
-                Class6823.method20905(this.field34854).method3031(Class9479.method35300(tooltip).method8461(), n, n2);
+                Class6823.method20905(this.field34854).method3031(Class9479.method35300(tooltip).getFormattedText(), n, n2);
             }
         }
     }

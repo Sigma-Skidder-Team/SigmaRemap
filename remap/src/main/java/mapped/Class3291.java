@@ -30,7 +30,7 @@ public class Class3291 extends Class3167
                     }
                 }
             }
-            this.field15850.add(new Vec3d(Class3291.field15514.field4684.field2395, Class3291.field15514.field4684.field2396, Class3291.field15514.field4684.field2397));
+            this.field15850.add(new Vec3d(Class3291.field15514.field4684.posX, Class3291.field15514.field4684.posY, Class3291.field15514.field4684.posZ));
         }
     }
     
@@ -53,7 +53,7 @@ public class Class3291 extends Class3167
     @Class6753
     public void method10419(final Class5739 class5739) {
         if (this.method9906()) {
-            final Vec3d class5740 = new Vec3d(Class3291.field15514.field4684.field2417 - (Class3291.field15514.field4684.field2417 - Class3291.field15514.field4684.field2395) * Class3291.field15514.method5314(), Class3291.field15514.field4684.field2418 - (Class3291.field15514.field4684.field2418 - Class3291.field15514.field4684.field2396) * Class3291.field15514.method5314(), Class3291.field15514.field4684.field2419 - (Class3291.field15514.field4684.field2419 - Class3291.field15514.field4684.field2397) * Class3291.field15514.method5314());
+            final Vec3d class5740 = new Vec3d(Class3291.field15514.field4684.lastTickPosX - (Class3291.field15514.field4684.lastTickPosX - Class3291.field15514.field4684.posX) * Class3291.field15514.method5314(), Class3291.field15514.field4684.lastTickPosY - (Class3291.field15514.field4684.lastTickPosY - Class3291.field15514.field4684.posY) * Class3291.field15514.method5314(), Class3291.field15514.field4684.lastTickPosZ - (Class3291.field15514.field4684.lastTickPosZ - Class3291.field15514.field4684.posZ) * Class3291.field15514.method5314());
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);
             GL11.glEnable(2848);

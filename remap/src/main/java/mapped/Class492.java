@@ -8,6 +8,9 @@ import java.util.Random;
 import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -22,7 +25,7 @@ public class Class492 extends Class436 implements Class439
     private boolean field2829;
     private boolean field2830;
     private final List<BlockPos> field2831;
-    private Class511 field2832;
+    private LivingEntity field2832;
     private UUID field2833;
     private long field2834;
     
@@ -104,7 +107,7 @@ public class Class492 extends Class436 implements Class439
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
-                    if (!this.field2656.method6967(this.field2657.method1134(i, j, k))) {
+                    if (!this.field2656.method6967(this.field2657.add(i, j, k))) {
                         return false;
                     }
                 }
@@ -149,7 +152,7 @@ public class Class492 extends Class436 implements Class439
                             }
                         }
                     }
-                    final BlockPos method1134 = this.field2657.method1134(l, a, a2);
+                    final BlockPos method1134 = this.field2657.add(l, a, a2);
                     final Class7096 method1135 = this.field2656.method6701(method1134);
                     final Class3833[] field2826 = Class492.field2826;
                     for (int length = field2826.length, n = 0; n < length; ++n) {
@@ -184,7 +187,7 @@ public class Class492 extends Class436 implements Class439
     }
     
     private void method2489() {
-        final Class511 field2832 = this.field2832;
+        final LivingEntity field2832 = this.field2832;
         if (this.field2831.size() >= 42) {
             if (this.field2832 == null && this.field2833 != null) {
                 this.field2832 = this.method2492();
@@ -196,9 +199,9 @@ public class Class492 extends Class436 implements Class439
                 }
             }
             else {
-                final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>)Class511.class, this.method2491(), class511 -> class511 instanceof Class762 && class511.method1709());
+                final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511 instanceof Class762 && class511.method1709());
                 if (!method6739.isEmpty()) {
-                    this.field2832 = (Class511)method6739.get(this.field2656.field10062.nextInt(method6739.size()));
+                    this.field2832 = (LivingEntity)method6739.get(this.field2656.field10062.nextInt(method6739.size()));
                 }
             }
         }
@@ -207,7 +210,7 @@ public class Class492 extends Class436 implements Class439
         }
         if (this.field2832 != null) {
             this.field2656.method6706(null, this.field2832.getPosX(), this.field2832.getPosY(), this.field2832.getPosZ(), Class8520.field35093, Class286.field1582, 1.0f, 1.0f);
-            this.field2832.method1740(Class7929.field32576, 4.0f);
+            this.field2832.attackEntityFrom(DamageSource.field32576, 4.0f);
         }
         if (field2832 != this.field2832) {
             final Class7096 method6740 = this.method2194();
@@ -237,9 +240,9 @@ public class Class492 extends Class436 implements Class439
     }
     
     @Nullable
-    private Class511 method2492() {
-        final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>)Class511.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
-        return (method6739.size() != 1) ? null : ((Class511)method6739.get(0));
+    private LivingEntity method2492() {
+        final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
+        return (method6739.size() != 1) ? null : ((LivingEntity)method6739.get(0));
     }
     
     private void method2493() {

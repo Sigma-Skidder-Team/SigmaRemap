@@ -40,7 +40,7 @@ public class Class6773 extends Class6772
         return this.field26605;
     }
     
-    public static Class6773 method20678(final Class8654 class8654) {
+    public static Class6773 method20678(final PacketBuffer class8654) {
         final Class6773 class8655 = new Class6773(class8654.readInt(), class8654.readInt(), class8654.readInt());
         class8655.field26599 = class8654.readFloat();
         class8655.field26600 = class8654.readFloat();

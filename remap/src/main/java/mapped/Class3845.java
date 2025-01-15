@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public abstract class Class3845 extends Class3846
 {
     public Class3845(final Class9288 class9288) {

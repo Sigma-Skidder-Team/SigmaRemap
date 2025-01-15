@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class1858 implements Class1856
@@ -18,14 +20,14 @@ public class Class1858 implements Class1856
     public final Class1862[][] field10134;
     public final Class7096[] field10135;
     public final Class7099[] field10136;
-    public final Class1847 field10137;
+    public final World field10137;
     
     @Nullable
-    public static Class1858 method7003(final Class1847 class1847, final BlockPos class1848, final BlockPos class1849, final int n) {
+    public static Class1858 method7003(final World class1847, final BlockPos class1848, final BlockPos class1849, final int n) {
         return method7004(class1847, class1848, class1849, n, true);
     }
     
-    public static Class1858 method7004(final Class1847 class1847, final BlockPos class1848, final BlockPos class1849, final int n, final boolean b) {
+    public static Class1858 method7004(final World class1847, final BlockPos class1848, final BlockPos class1849, final int n, final boolean b) {
         final int n2 = class1848.getX() - n >> 4;
         final int n3 = class1848.getZ() - n >> 4;
         final int n4 = class1849.getX() + n >> 4;
@@ -50,12 +52,12 @@ public class Class1858 implements Class1856
             }
         }
         if (!b2) {
-            return new Class1858(class1847, n2, n3, array, class1848.method1134(-1, -1, -1), class1849.method1134(1, 1, 1));
+            return new Class1858(class1847, n2, n3, array, class1848.add(-1, -1, -1), class1849.add(1, 1, 1));
         }
         return null;
     }
     
-    public Class1858(final Class1847 field10137, final int field10138, final int field10139, final Class1862[][] field10140, final BlockPos field10141, final BlockPos class354) {
+    public Class1858(final World field10137, final int field10138, final int field10139, final Class1862[][] field10140, final BlockPos field10141, final BlockPos class354) {
         this.field10137 = field10137;
         this.field10128 = field10138;
         this.field10129 = field10139;

@@ -11,6 +11,7 @@ import java.util.Collection;
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 
 import java.util.UUID;
 import java.util.Set;
@@ -75,11 +76,11 @@ public class Class6878 extends Class6879
     }
     
     public final ITextComponent method21057() {
-        return Class9479.method35299(this.method21076()).method8467(class8768 -> {
-            class8768.method30413(this.method21078().method8371());
-            new Class9390(Class1961.field10697, new Class2260(this.method21048().toString()));
+        return Class9479.method35299(this.method21076()).applyTextStyle(class8768 -> {
+            class8768.setColor(this.method21078().method8371());
+            new Class9390(Class1961.field10697, new StringTextComponent(this.method21048().toString()));
             final Class9390 class8769;
-            final Class8768 class8770;
+            final Style class8770;
             class8770.method30420(class8769).method30421(this.method21048().toString());
         });
     }

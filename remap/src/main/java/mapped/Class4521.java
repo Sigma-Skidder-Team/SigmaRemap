@@ -9,6 +9,8 @@ import java.util.Iterator;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import com.google.common.collect.Lists;
+import net.minecraft.nbt.INBT;
+
 import java.util.List;
 
 public abstract class Class4521 extends Class4473
@@ -20,7 +22,7 @@ public abstract class Class4521 extends Class4473
     private final List<Class9330> field19940;
     private final Class1795 field19941;
     
-    public Class4521(final Class9520 class9520, final Class1795 field19941, final Class8228 field19942, final BlockPos field19943, final int field19944, final Class2052 field19945, final Class6997 field19946) {
+    public Class4521(final Class9520 class9520, final Class1795 field19941, final Class8228 field19942, final BlockPos field19943, final int field19944, final Class2052 field19945, final MutableBoundingBox field19946) {
         super(class9520, 0);
         this.field19940 = Lists.newArrayList();
         this.field19941 = field19941;
@@ -51,25 +53,25 @@ public abstract class Class4521 extends Class4473
         class51.method298("PosY", this.field19937.getY());
         class51.method298("PosZ", this.field19937.getZ());
         class51.method298("ground_level_delta", this.field19938);
-        class51.method295("pool_element", (Class41)this.field19936.method27264((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
+        class51.method295("pool_element", (INBT)this.field19936.method27264((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
         class51.method306("rotation", this.field19939.name());
         final Class52 class52 = new Class52();
         final Iterator<Class9330> iterator = this.field19940.iterator();
         while (iterator.hasNext()) {
-            class52.add((Class41)iterator.next().method34567((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
+            class52.add((INBT)iterator.next().method34567((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
         }
         class51.method295("junctions", class52);
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         return this.field19936.method27255(this.field19941, class1851, class1852, this.field19937, this.field19939, class1853, random);
     }
     
     @Override
     public void method13454(final int n, final int n2, final int n3) {
         super.method13454(n, n2, n3);
-        this.field19937 = this.field19937.method1134(n, n2, n3);
+        this.field19937 = this.field19937.add(n, n2, n3);
     }
     
     @Override

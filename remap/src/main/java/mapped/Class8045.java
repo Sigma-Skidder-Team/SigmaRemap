@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 
 public class Class8045 implements Class8046<String>
 {
@@ -16,6 +17,6 @@ public class Class8045 implements Class8046<String>
     }
     
     public static String method26390(final Entity class399) {
-        return class399.method1642().method23366();
+        return class399.getType().method23366();
     }
 }

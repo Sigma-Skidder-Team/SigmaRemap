@@ -190,7 +190,7 @@ public class Class7012
                     class8863.method31037().method32433(this.field27341);
                     if (class8863.method31036() != null) {
                         if (class8863.method31036().method22535()) {
-                            if (this.field27341.field2391.method6765().method31216(Class8878.field37337)) {
+                            if (this.field27341.world.method6765().method31216(Class8878.field37337)) {
                                 this.field27335.method1537().method20619(new Class2259("chat.type.advancement." + class8863.method31036().method22531().method8015(), new Object[] { this.field27341.getDisplayName(), class8863.method31044() }));
                             }
                         }

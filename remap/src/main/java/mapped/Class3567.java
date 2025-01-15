@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
-public class Class3567<T extends Class511> extends Class3555<T>
+public class Class3567<T extends LivingEntity> extends Class3555<T>
 {
     private static String[] field16633;
     private int field16657;
     
-    public Class3567(final Class776 class776, final Class<T> clazz, final boolean b, final Predicate<Class511> predicate) {
+    public Class3567(final Class776 class776, final Class<T> clazz, final boolean b, final Predicate<LivingEntity> predicate) {
         super(class776, clazz, 500, b, false, predicate);
         this.field16657 = 0;
     }

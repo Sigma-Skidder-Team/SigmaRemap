@@ -10,24 +10,24 @@ import java.util.List;
 public class Class5721 extends Class5714
 {
     private static String[] field23268;
-    private Class4252 field23269;
-    private List<Class4252> field23270;
+    private IPacket field23269;
+    private List<IPacket> field23270;
     
-    public Class5721(final Class4252 field23269) {
-        this.field23270 = new ArrayList<Class4252>();
+    public Class5721(final IPacket field23269) {
+        this.field23270 = new ArrayList<IPacket>();
         this.field23269 = field23269;
         this.field23270.add(field23269);
     }
     
-    public Class4252 method16990() {
+    public IPacket method16990() {
         return this.field23269;
     }
     
-    public List<Class4252> method16991() {
+    public List<IPacket> method16991() {
         return this.field23270;
     }
     
-    public void method16992(final Class4252 field23269) {
+    public void method16992(final IPacket field23269) {
         this.field23269 = field23269;
     }
 }

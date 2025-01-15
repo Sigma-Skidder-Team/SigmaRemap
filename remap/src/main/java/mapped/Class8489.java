@@ -149,7 +149,7 @@ public class Class8489
                         if (n3 == 0 || Class8571.equals(method5281, "Unknown")) {
                             method5281 = method5280;
                         }
-                        Class869.method5277().field4647.method3807().method3761(new Class2260(Class8822.method30773("of.message.openglError", n3, method5281)));
+                        Class869.method5277().field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.openglError", n3, method5281)));
                     }
                 }
             }

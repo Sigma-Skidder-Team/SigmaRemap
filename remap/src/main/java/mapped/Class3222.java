@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class Class3222 extends Class3167
 {
@@ -23,18 +24,18 @@ public class Class3222 extends Class3167
             if (class5750.method17057() != null) {
                 if (class5750.method17059()) {
                     final Entity method17057 = class5750.method17057();
-                    if (method17057 instanceof Class511) {
-                        if (method17057.field2430 <= (int)this.method9886("HurtTime")) {
+                    if (method17057 instanceof LivingEntity) {
+                        if (method17057.hurtResistantTime <= (int)this.method9886("HurtTime")) {
                             if (Class3265.field15758 > 1) {
-                                if (this.field15680.method23935() > 200L || method17057.field2430 > 0) {
-                                    if (Class3222.field15514.field4684.field2404) {
-                                        if (Class3222.field15514.field4684.field2406) {
+                                if (this.field15680.method23935() > 200L || method17057.hurtResistantTime > 0) {
+                                    if (Class3222.field15514.field4684.onGround) {
+                                        if (Class3222.field15514.field4684.collidedVertically) {
                                             double[] array = { 0.2, 0.0 };
                                             if (this.method9914().method9883("Hypixel")) {
                                                 array = new double[] { 0.121600046157806, 0.200000047683686, 0.0 };
                                             }
                                             for (int i = 0; i < array.length; ++i) {
-                                                Class3222.field15514.method5269().method17292(new Class4354(Class3222.field15514.field4684.field2395, Class3222.field15514.field4684.field2396 + array[i], Class3222.field15514.field4684.field2397, false));
+                                                Class3222.field15514.method5269().method17292(new Class4354(Class3222.field15514.field4684.posX, Class3222.field15514.field4684.posY + array[i], Class3222.field15514.field4684.posZ, false));
                                             }
                                             this.field15681 = true;
                                             this.field15680.method23934();
@@ -58,7 +59,7 @@ public class Class3222 extends Class3167
                     this.field15680.method23932();
                 }
                 if (this.field15681) {
-                    if (Class3222.field15514.field4684.field2404) {
+                    if (Class3222.field15514.field4684.onGround) {
                         class5721.method16961(true);
                         this.field15681 = false;
                     }

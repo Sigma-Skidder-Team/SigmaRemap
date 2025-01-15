@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public interface Class9559
 {
     Class8651<EntityType, Class5412> method35767();

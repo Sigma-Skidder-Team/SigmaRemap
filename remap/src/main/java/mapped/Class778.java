@@ -4,8 +4,17 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.List;
@@ -15,12 +24,12 @@ public class Class778 extends Class776 implements Class768
 {
     private static final UUID field4179;
     private static final Class7919 field4180;
-    private static final Class8810<Boolean> field4181;
+    private static final DataParameter<Boolean> field4181;
     private int field4182;
     private Class3567<Class776> field4183;
     private Class3562<Class512> field4184;
     
-    public Class778(final EntityType<? extends Class778> class7499, final Class1847 class7500) {
+    public Class778(final EntityType<? extends Class778> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -31,7 +40,7 @@ public class Class778 extends Class776 implements Class768
             final boolean b;
             if (class511 != null) {
                 if (!(!this.method4293())) {
-                    if (class511.method1642() != EntityType.field29047) {
+                    if (class511.getType() != EntityType.field29047) {
                         return b;
                     }
                 }
@@ -52,7 +61,7 @@ public class Class778 extends Class776 implements Class768
     @Override
     public void method1649() {
         super.method1649();
-        this.method1650().method33565(Class778.field4181, false);
+        this.method1650().register(Class778.field4181, false);
     }
     
     @Override
@@ -61,7 +70,7 @@ public class Class778 extends Class776 implements Class768
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35717;
     }
     
@@ -71,11 +80,11 @@ public class Class778 extends Class776 implements Class768
     }
     
     public void method4318(final boolean b) {
-        this.method1650().method33569(Class778.field4181, b);
+        this.method1650().set(Class778.field4181, b);
     }
     
     public boolean method4319() {
-        return this.method1650().method33568(Class778.field4181);
+        return this.method1650().get(Class778.field4181);
     }
     
     @Override
@@ -87,7 +96,7 @@ public class Class778 extends Class776 implements Class768
     
     @Override
     public void method2736() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.method1768()) {
                 this.field4183.method11111();
                 if (this.field4183.method11110() > 0) {
@@ -99,7 +108,7 @@ public class Class778 extends Class776 implements Class768
                 if (!this.method4319()) {
                     Class8061 class8061 = null;
                     Label_0125: {
-                        if (this.field2423.nextFloat() < 0.15f) {
+                        if (this.rand.nextFloat() < 0.15f) {
                             if (this.method1720(Class7324.field28319)) {
                                 if (!this.method2653(Class9439.field40486)) {
                                     class8061 = Class8644.field36273;
@@ -108,7 +117,7 @@ public class Class778 extends Class776 implements Class768
                             }
                         }
                         Label_0099: {
-                            if (this.field2423.nextFloat() < 0.15f) {
+                            if (this.rand.nextFloat() < 0.15f) {
                                 if (!this.method1804()) {
                                     if (this.method2669() == null) {
                                         break Label_0099;
@@ -123,10 +132,10 @@ public class Class778 extends Class776 implements Class768
                                 }
                             }
                         }
-                        if (this.field2423.nextFloat() < 0.05f && this.method2664() < this.method2701()) {
+                        if (this.rand.nextFloat() < 0.05f && this.method2664() < this.method2701()) {
                             class8061 = Class8644.field36275;
                         }
-                        else if (this.field2423.nextFloat() < 0.5f) {
+                        else if (this.rand.nextFloat() < 0.5f) {
                             if (this.method4152() != null) {
                                 if (!this.method2653(Class9439.field40474)) {
                                     if (this.method4152().method1734(this) > 121.0) {
@@ -140,7 +149,7 @@ public class Class778 extends Class776 implements Class768
                         this.method1803(Class2215.field13600, Class5333.method16476(new ItemStack(Class7739.field31441), class8061));
                         this.field4182 = this.method2713().method27652();
                         this.method4318(true);
-                        this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35716, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
+                        this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35716, this.method1922(), 1.0f, 0.8f + this.rand.nextFloat() * 0.4f);
                         final Class7619 method2710 = this.method2710(Class8107.field33408);
                         method2710.method23947(Class778.field4180);
                         method2710.method23946(Class778.field4180);
@@ -161,8 +170,8 @@ public class Class778 extends Class776 implements Class768
                     }
                     this.method2710(Class8107.field33408).method23947(Class778.field4180);
                 }
-                if (this.field2423.nextFloat() < 7.5E-4f) {
-                    this.field2391.method6761(this, (byte)15);
+                if (this.rand.nextFloat() < 7.5E-4f) {
+                    this.world.method6761(this, (byte)15);
                 }
             }
         }
@@ -180,14 +189,14 @@ public class Class778 extends Class776 implements Class768
             super.method1798(b);
         }
         else {
-            for (int i = 0; i < this.field2423.nextInt(35) + 10; ++i) {
-                this.field2391.method6709(Class8432.field34647, this.getPosX() + this.field2423.nextGaussian() * 0.12999999523162842, this.method1886().field25077 + 0.5 + this.field2423.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.field2423.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
+            for (int i = 0; i < this.rand.nextInt(35) + 10; ++i) {
+                this.world.method6709(Class8432.field34647, this.getPosX() + this.rand.nextGaussian() * 0.12999999523162842, this.method1886().field25077 + 0.5 + this.rand.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.rand.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
             }
         }
     }
     
     @Override
-    public float method2697(final Class7929 class7929, float method2697) {
+    public float method2697(final DamageSource class7929, float method2697) {
         method2697 = super.method2697(class7929, method2697);
         if (class7929.method25714() == this) {
             method2697 = 0.0f;
@@ -199,9 +208,9 @@ public class Class778 extends Class776 implements Class768
     }
     
     @Override
-    public void method4252(final Class511 class511, final float n) {
+    public void method4252(final LivingEntity class511, final float n) {
         if (!this.method4319()) {
-            final Vec3d method1935 = class511.method1935();
+            final Vec3d method1935 = class511.getMotion();
             final double n2 = class511.getPosX() + method1935.x - this.getPosX();
             final double n3 = class511.method1944() - 1.100000023841858 - this.getPosY();
             final double n4 = class511.getPosZ() + method1935.z - this.getPosZ();
@@ -216,7 +225,7 @@ public class Class778 extends Class776 implements Class768
                 }
                 else if (method1936 <= 3.0f) {
                     if (!class511.method2653(Class9439.field40491)) {
-                        if (this.field2423.nextFloat() < 0.25f) {
+                        if (this.rand.nextFloat() < 0.25f) {
                             class512 = Class8644.field36288;
                         }
                     }
@@ -231,18 +240,18 @@ public class Class778 extends Class776 implements Class768
                 }
                 this.method4153(null);
             }
-            final Class415 class513 = new Class415(this.field2391, this);
+            final Class415 class513 = new Class415(this.world, this);
             class513.method2022(Class5333.method16476(new ItemStack(Class7739.field31579), class512));
             final Class415 class514 = class513;
-            class514.field2400 += 20.0f;
+            class514.rotationPitch += 20.0f;
             class513.method1958(n2, n3 + method1936 * 0.2f, n4, 0.75f, 8.0f);
-            this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35718, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
-            this.field2391.method6886(class513);
+            this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35718, this.method1922(), 1.0f, 0.8f + this.rand.nextFloat() * 0.4f);
+            this.world.method6886(class513);
         }
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 1.62f;
     }
     
@@ -258,6 +267,6 @@ public class Class778 extends Class776 implements Class768
     static {
         field4179 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
         field4180 = new Class7919(Class778.field4179, "Drinking speed penalty", -0.25, Class2157.field12809).method25640(false);
-        field4181 = Class9184.method33564(Class778.class, Class7709.field30661);
+        field4181 = EntityDataManager.method33564(Class778.class, Class7709.field30661);
     }
 }

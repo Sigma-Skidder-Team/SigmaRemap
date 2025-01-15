@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.UUID;
 import com.mojang.authlib.GameProfile;
 
-public class Class4327 implements Class4252<Class5802>
+public class Class4327 implements IPacket<Class5802>
 {
     private static String[] field19374;
     private GameProfile field19375;
@@ -21,12 +21,12 @@ public class Class4327 implements Class4252<Class5802>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19375 = new GameProfile((UUID)null, class8654.method29513(16));
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29514(this.field19375.getName());
     }
     

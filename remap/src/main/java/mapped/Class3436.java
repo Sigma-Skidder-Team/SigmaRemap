@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import javax.annotation.Nullable;
 
 public class Class3436 extends Class3418
@@ -39,7 +41,7 @@ public class Class3436 extends Class3418
     @Override
     public void method10859(final Class512 class512) {
         super.method10859(class512);
-        if (!class512.field2391.field10067) {
+        if (!class512.world.field10067) {
             final ItemStack method20060 = this.field16230.method20060(this.field16230.method20057());
             if (!method20060.method27620()) {
                 class512.method2822(method20060, false);

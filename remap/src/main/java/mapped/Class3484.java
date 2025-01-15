@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class3484 extends Class3479
 {
     private static String[] field16410;
@@ -50,21 +52,21 @@ public class Class3484 extends Class3479
     }
     
     public void method11051() {
-        if (this.field16412.field2391.method6765().method31216(Class8878.field37316)) {
-            final Class7096 method6701 = this.field16412.field2391.method6701(this.field16395);
+        if (this.field16412.world.method6765().method31216(Class8878.field37316)) {
+            final Class7096 method6701 = this.field16412.world.method6701(this.field16395);
             if (method6701.method21696() == Class7521.field29819) {
                 final int intValue = ((Class7097<Object, Object>)method6701).method21772((Class7111<Integer>)Class3884.field17541);
                 ((Class7097<Object, Object>)method6701).method21773((Class7111<Comparable>)Class3884.field17541, 1);
-                int n = 1 + this.field16412.field2391.field10062.nextInt(2) + ((intValue == 3) ? 1 : 0);
+                int n = 1 + this.field16412.world.field10062.nextInt(2) + ((intValue == 3) ? 1 : 0);
                 if (this.field16412.method2718(Class2215.field13600).method27620()) {
                     this.field16412.method1803(Class2215.field13600, new ItemStack(Class7739.field31630));
                     --n;
                 }
                 if (n > 0) {
-                    Class3833.method11839(this.field16412.field2391, this.field16395, new ItemStack(Class7739.field31630, n));
+                    Class3833.method11839(this.field16412.world, this.field16395, new ItemStack(Class7739.field31630, n));
                 }
                 this.field16412.method1695(Class8520.field35630, 1.0f, 1.0f);
-                this.field16412.field2391.method6688(this.field16395, ((Class7097<Object, Class7096>)method6701).method21773((Class7111<Comparable>)Class3884.field17541, 1), 2);
+                this.field16412.world.method6688(this.field16395, ((Class7097<Object, Class7096>)method6701).method21773((Class7111<Comparable>)Class3884.field17541, 1), 2);
             }
         }
     }

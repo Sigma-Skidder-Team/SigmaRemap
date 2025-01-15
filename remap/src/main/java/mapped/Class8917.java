@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.List;
 import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.item.ItemStack;
 
 @FunctionalInterface
 public interface Class8917

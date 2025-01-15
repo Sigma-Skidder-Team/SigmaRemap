@@ -5,9 +5,15 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Optional;
 import java.util.List;
@@ -46,7 +52,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public Class2201 method11844(Class7096 method6701, final Class1847 class1847, BlockPos method6702, final Class512 class1848, final Class316 class1849, final Class7005 class1850) {
+    public Class2201 method11844(Class7096 method6701, final World class1847, BlockPos method6702, final Class512 class1848, final Class316 class1849, final Class7005 class1850) {
         if (class1847.field10067) {
             return Class2201.field13401;
         }
@@ -57,13 +63,13 @@ public class Class3900 extends Class3892 implements Class3840
                 return Class2201.field13401;
             }
         }
-        if (!class1847.field10063.method20494() || class1847.method6959(method6702) == Class7102.field27640) {
+        if (!class1847.dimension.method20494() || class1847.method6959(method6702) == Class7102.field27640) {
             class1847.method6690(method6702, false);
             final BlockPos method6703 = method6702.method1149(method6701.method21772((Class7111<Direction>)Class3900.field17564).getOpposite());
             if (class1847.method6701(method6703).method21696() == this) {
                 class1847.method6690(method6703, false);
             }
-            class1847.method6724(null, Class7929.method25704(), method6702.getX() + 0.5, method6702.getY() + 0.5, method6702.getZ() + 0.5, 5.0f, true, Class2196.field13367);
+            class1847.method6724(null, DamageSource.method25704(), method6702.getX() + 0.5, method6702.getY() + 0.5, method6702.getZ() + 0.5, 5.0f, true, Class2196.field13367);
             return Class2201.field13400;
         }
         if (!method6701.method21772((Class7111<Boolean>)Class3900.field17600)) {
@@ -81,8 +87,8 @@ public class Class3900 extends Class3892 implements Class3840
         return Class2201.field13400;
     }
     
-    private boolean method11986(final Class1847 class1847, final BlockPos class1848) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class824.class, new AxisAlignedBB(class1848), Class511::method2783);
+    private boolean method11986(final World class1847, final BlockPos class1848) {
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class824.class, new AxisAlignedBB(class1848), LivingEntity::method2783);
         if (!method6739.isEmpty()) {
             ((Class824)method6739.get(0)).method2787();
             return true;
@@ -91,7 +97,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         super.method11860(class1847, class1848, class1849, n * 0.5f);
     }
     
@@ -106,9 +112,9 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     private void method11987(final Entity class399) {
-        final Vec3d method1935 = class399.method1935();
+        final Vec3d method1935 = class399.getMotion();
         if (method1935.y < 0.0) {
-            class399.method1937(method1935.x, -method1935.y * 0.6600000262260437 * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.z);
+            class399.setMotion(method1935.x, -method1935.y * 0.6600000262260437 * ((class399 instanceof LivingEntity) ? 1.0 : 0.8), method1935.z);
         }
     }
     
@@ -125,12 +131,12 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, Class7521.field29147.method11878(), class1851, class1852);
     }
     
     @Override
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         final Class105 class1851 = class1849.method21772(Class3900.field17599);
         final BlockPos method1149 = class1848.method1149(method11988(class1851, class1849.method21772((Class7111<Direction>)Class3900.field17564)));
         final Class7096 method1150 = class1847.method6701(method1149);
@@ -159,7 +165,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9422.field40421[method11989(class7096).getOpposite().ordinal()]) {
             case 1: {
                 return Class3900.field17606;
@@ -214,7 +220,7 @@ public class Class3900 extends Class3892 implements Class3840
         if (class7500.method6701(class7501).method21727(class7500, class7501).method24536(Axis.Y) > 0.4375) {
             return Optional.empty();
         }
-        final Class385 class7502 = new Class385(class7501);
+        final Mutable class7502 = new Mutable(class7501);
         while (class7502.getY() >= 0) {
             if (class7501.getY() - class7502.getY() > 2) {
                 break;
@@ -258,7 +264,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
         if (!class1847.field10067) {
             class1847.method6688(class1848.method1149(class1849.method21772((Class7111<Direction>)Class3900.field17564)), ((Class7097<O, Class7096>)class1849).method21773(Class3900.field17599, Class105.field323), 3);

@@ -12,7 +12,7 @@ public class Class9019
     private static final Logger field38057;
     private final Class5046 field38058;
     private volatile boolean field38059;
-    private Class3641 field38060;
+    private NetworkManager field38060;
     
     public Class9019(final Class5046 field38058) {
         this.field38058 = field38058;

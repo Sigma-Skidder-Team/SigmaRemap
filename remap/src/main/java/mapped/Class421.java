@@ -5,21 +5,27 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 public class Class421 extends Class419
 {
     private static String[] field2534;
-    private static final Class8810<Boolean> field2535;
+    private static final DataParameter<Boolean> field2535;
     
-    public Class421(final EntityType<? extends Class421> class7499, final Class1847 class7500) {
+    public Class421(final EntityType<? extends Class421> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class421(final Class1847 class1847, final Class511 class1848, final double n, final double n2, final double n3) {
+    public Class421(final World class1847, final LivingEntity class1848, final double n, final double n2, final double n3) {
         super(EntityType.field29050, class1848, n, n2, n3, class1847);
     }
     
-    public Class421(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class421(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(EntityType.field29050, n, n2, n3, n4, n5, n6, class1847);
     }
     
@@ -41,13 +47,13 @@ public class Class421 extends Class419
     @Override
     public void method2032(final Class7006 class7006) {
         super.method2032(class7006);
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (class7006.method21449() == Class2165.field12882) {
                 final Entity method21452 = ((Class7007)class7006).method21452();
                 if (this.field2527 == null) {
-                    method21452.method1740(Class7929.field32576, 5.0f);
+                    method21452.attackEntityFrom(DamageSource.field32576, 5.0f);
                 }
-                else if (method21452.method1740(Class7929.method25693(this.field2527), 8.0f)) {
+                else if (method21452.attackEntityFrom(DamageSource.method25693(this.field2527), 8.0f)) {
                     if (!method21452.method1768()) {
                         this.field2527.method2663(5.0f);
                     }
@@ -55,10 +61,10 @@ public class Class421 extends Class419
                         this.method1900(this.field2527, method21452);
                     }
                 }
-                if (method21452 instanceof Class511) {
+                if (method21452 instanceof LivingEntity) {
                     int n = 0;
-                    if (this.field2391.method6954() != Class2113.field12292) {
-                        if (this.field2391.method6954() == Class2113.field12293) {
+                    if (this.world.method6954() != Class2113.field12292) {
+                        if (this.world.method6954() == Class2113.field12293) {
                             n = 40;
                         }
                     }
@@ -66,11 +72,11 @@ public class Class421 extends Class419
                         n = 10;
                     }
                     if (n > 0) {
-                        ((Class511)method21452).method2655(new Class1948(Class9439.field40493, 20 * n, 1));
+                        ((LivingEntity)method21452).method2655(new Class1948(Class9439.field40493, 20 * n, 1));
                     }
                 }
             }
-            this.field2391.method6723(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0f, false, this.field2391.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365);
+            this.world.method6723(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0f, false, this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365);
             this.method1652();
         }
     }
@@ -81,21 +87,21 @@ public class Class421 extends Class419
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         return false;
     }
     
     @Override
     public void method1649() {
-        this.field2432.method33565(Class421.field2535, false);
+        this.dataManager.register(Class421.field2535, false);
     }
     
     public boolean method2036() {
-        return this.field2432.method33568(Class421.field2535);
+        return this.dataManager.get(Class421.field2535);
     }
     
     public void method2037(final boolean b) {
-        this.field2432.method33569(Class421.field2535, b);
+        this.dataManager.set(Class421.field2535, b);
     }
     
     @Override
@@ -104,6 +110,6 @@ public class Class421 extends Class419
     }
     
     static {
-        field2535 = Class9184.method33564(Class421.class, Class7709.field30661);
+        field2535 = EntityDataManager.method33564(Class421.class, Class7709.field30661);
     }
 }

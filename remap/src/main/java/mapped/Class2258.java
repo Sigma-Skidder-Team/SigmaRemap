@@ -28,7 +28,7 @@ public class Class2258 extends Class2255
     }
     
     @Override
-    public ITextComponent method8465() {
+    public ITextComponent shallowCopy() {
         return new Class2258(this.field13802, this.field13803, this.field13801, this.field13808);
     }
     
@@ -58,6 +58,6 @@ public class Class2258 extends Class2255
     
     @Override
     public String toString() {
-        return "StorageNbtComponent{id='" + this.field13808 + '\'' + "path='" + this.field13802 + '\'' + ", siblings=" + this.field13791 + ", style=" + this.method8456() + '}';
+        return "StorageNbtComponent{id='" + this.field13808 + '\'' + "path='" + this.field13802 + '\'' + ", siblings=" + this.siblings + ", style=" + this.getStyle() + '}';
     }
 }

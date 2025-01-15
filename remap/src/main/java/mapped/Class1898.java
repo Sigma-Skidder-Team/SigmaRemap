@@ -38,17 +38,17 @@ public class Class1898 extends Class1897<Class7500>
         if (value != Class7500.method23392(class7500) && method1100 < value) {
             Class7281 class7501 = this.method7349(class7500, n2);
             if (class7501 == null) {
-                n = BlockPos.method1131(n);
+                n = BlockPos.func_218288_f(n);
                 while (class7501 == null) {
                     n2 = Class353.method1093(n2, Direction.UP);
                     if (++method1100 >= value) {
                         return 15;
                     }
-                    n = BlockPos.method1125(n, 0, 16, 0);
+                    n = BlockPos.offset(n, 0, 16, 0);
                     class7501 = this.method7349(class7500, n2);
                 }
             }
-            return class7501.method22322(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)));
+            return class7501.method22322(Class353.method1096(BlockPos.unpackX(n)), Class353.method1096(BlockPos.unpackY(n)), Class353.method1096(BlockPos.unpackZ(n)));
         }
         return 15;
     }
@@ -243,7 +243,7 @@ public class Class1898 extends Class1897<Class7500>
     }
     
     public boolean method7371(final long n) {
-        final int method1127 = BlockPos.method1127(n);
+        final int method1127 = BlockPos.unpackY(n);
         if ((method1127 & 0xF) == 0xF) {
             final long method1128 = Class353.method1112(Class353.method1111(n));
             return this.field10318.contains(method1128) && Class353.method1098(Class7500.method23391((Class7500)this.field10306).get(method1128)) == method1127 + 16;

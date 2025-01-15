@@ -91,7 +91,7 @@ public class Class4545 extends Class4535<Class5141>
         for (int i = -n6; i < n6; ++i) {
             for (int j = -n6; j < n6; ++j) {
                 if (this.method13550(i, j, class356, n6, n7, n3) < 0.0) {
-                    final BlockPos method1134 = class354.method1134(i, n2, j);
+                    final BlockPos method1134 = class354.add(i, n2, j);
                     final Class3833 method1135 = class355.method6701(method1134).method21696();
                     if (this.method13554(method1135) || method1135 == Class7521.field29331) {
                         if (!b) {
@@ -116,7 +116,7 @@ public class Class4545 extends Class4535<Class5141>
     private void method13546(final Class1851 class1851, final Random random, final BlockPos class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final int n7, final double n8, final boolean b2, final Class7096 class1853) {
         final double n9 = b ? this.method13550(n2, n4, BlockPos.ZERO, n6, this.method13548(n3, n, n7), n8) : this.method13549(n2, n4, BlockPos.ZERO, n5, random);
         if (n9 < 0.0) {
-            final BlockPos method1134 = class1852.method1134(n2, n3, n4);
+            final BlockPos method1134 = class1852.add(n2, n3, n4);
             if (n9 > (b ? -0.5 : (-6 - random.nextInt(3))) && random.nextDouble() > 0.9) {
                 return;
             }
@@ -205,7 +205,7 @@ public class Class4545 extends Class4535<Class5141>
         for (int n4 = b ? n3 : (n / 2), i = -n4; i <= n4; ++i) {
             for (int j = -n4; j <= n4; ++j) {
                 for (int k = 0; k <= n2; ++k) {
-                    final BlockPos method1134 = class1852.method1134(i, k, j);
+                    final BlockPos method1134 = class1852.add(i, k, j);
                     final Class3833 method1135 = class1851.method6701(method1134).method21696();
                     if (this.method13554(method1135) || method1135 == Class7521.field29329) {
                         if (!this.method13555(class1851, method1134)) {

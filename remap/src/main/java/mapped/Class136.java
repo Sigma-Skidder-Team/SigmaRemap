@@ -7,6 +7,8 @@ package mapped;
 import java.util.Random;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.item.ItemStack;
+
 import java.util.Map;
 
 public class Class136 extends Class126

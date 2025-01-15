@@ -17,9 +17,9 @@ public class Class4813 extends Class4803
         this.method14239(class4805 = new Class4861(this, "openGui", n3 / 2, n4 - 80, 300, 38, method19739, "Open Jello's Click GUI", Class9400.field40318));
         final Class4861 class4806;
         this.method14239(class4806 = new Class4861(this, "credits", n3 / 2 - 100, n4 - 280, 200, 38, method19739, "Credits", Class9400.field40312));
-        class4804.method14260((class4803, n) -> Class4941.method14887(new Class531(new Class2260("Keybind Manager"))));
-        class4805.method14260((class4803, n) -> Class4941.method14887(new Class722(new Class2260("Click GUI"))));
-        class4806.method14260((class4803, n) -> Class4941.method14887(new Class718(new Class2260("GuiCredits"))));
+        class4804.method14260((class4803, n) -> Class4941.method14887(new Class531(new StringTextComponent("Keybind Manager"))));
+        class4805.method14260((class4803, n) -> Class4941.method14887(new Class722(new StringTextComponent("Click GUI"))));
+        class4806.method14260((class4803, n) -> Class4941.method14887(new Class718(new StringTextComponent("GuiCredits"))));
         final Class4867 class4807;
         this.method14239(class4807 = new Class4867(this, "guiBlurCheckBox", n3 / 2 - 70, n4 - 220, 25, 25));
         class4807.method14602(Class9463.method35173().method35193().method32144(), false);

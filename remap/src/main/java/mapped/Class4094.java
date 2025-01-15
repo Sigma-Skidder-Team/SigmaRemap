@@ -10,9 +10,12 @@ import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 import com.google.common.collect.LinkedHashMultiset;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
@@ -22,23 +25,23 @@ public class Class4094 extends Class4093
         super(class8959);
     }
     
-    public static ItemStack method12326(final Class1847 class1847, final int n, final int n2, final byte b, final boolean b2, final boolean b3) {
+    public static ItemStack method12326(final World class1847, final int n, final int n2, final byte b, final boolean b2, final boolean b3) {
         final ItemStack class1848 = new ItemStack(Class7739.field31425);
-        method12330(class1848, class1847, n, n2, b, b2, b3, class1847.field10063.method20487());
+        method12330(class1848, class1847, n, n2, b, b2, b3, class1847.dimension.getType());
         return class1848;
     }
     
     @Nullable
-    public static Class6356 method12327(final ItemStack class8321, final Class1847 class8322) {
+    public static Class6356 method12327(final ItemStack class8321, final World class8322) {
         return class8322.method6774(method12331(method12329(class8321)));
     }
     
     @Nullable
-    public static Class6356 method12328(final ItemStack class8321, final Class1847 class8322) {
+    public static Class6356 method12328(final ItemStack class8321, final World class8322) {
         Class6356 class8323 = method12327(class8321, class8322);
         if (class8323 == null) {
             if (!class8322.field10067) {
-                class8323 = method12330(class8321, class8322, class8322.method6764().method29536(), class8322.method6764().method29538(), 3, false, false, class8322.field10063.method20487());
+                class8323 = method12330(class8321, class8322, class8322.method6764().method29536(), class8322.method6764().method29538(), 3, false, false, class8322.dimension.getType());
             }
         }
         return class8323;
@@ -49,7 +52,7 @@ public class Class4094 extends Class4093
         return (method27657 != null && method27657.method316("map", 99)) ? method27657.method319("map") : 0;
     }
     
-    private static Class6356 method12330(final ItemStack class8321, final Class1847 class8322, final int n, final int n2, final int n3, final boolean b, final boolean b2, final Class383 class8323) {
+    private static Class6356 method12330(final ItemStack class8321, final World class8322, final int n, final int n2, final int n3, final boolean b, final boolean b2, final DimensionType class8323) {
         final int method6776 = class8322.method6776();
         final Class6356 class8324 = new Class6356(method12331(method6776));
         class8324.method18913(n, n2, n3, b, b2, class8323);
@@ -62,8 +65,8 @@ public class Class4094 extends Class4093
         return "map_" + i;
     }
     
-    public void method12332(final Class1847 class1847, final Entity class1848, final Class6356 class1849) {
-        if (class1847.field10063.method20487() == class1849.field25422) {
+    public void method12332(final World class1847, final Entity class1848, final Class6356 class1849) {
+        if (class1847.dimension.getType() == class1849.field25422) {
             if (class1848 instanceof Class512) {
                 final int n = 1 << class1849.field25425;
                 final int field25420 = class1849.field25420;
@@ -71,7 +74,7 @@ public class Class4094 extends Class4093
                 final int n2 = MathHelper.floor(class1848.getPosX() - field25420) / n + 64;
                 final int n3 = MathHelper.floor(class1848.getPosZ() - field25421) / n + 64;
                 int n4 = 128 / n;
-                if (class1847.field10063.method20504()) {
+                if (class1847.dimension.method20504()) {
                     n4 /= 2;
                 }
                 final Class9244 method18921;
@@ -100,9 +103,9 @@ public class Class4094 extends Class4093
                                                 final int n12 = n10 & 0xF;
                                                 int n13 = 0;
                                                 double n14 = 0.0;
-                                                if (!class1847.field10063.method20504()) {
-                                                    final Class385 class1851 = new Class385();
-                                                    final Class385 class1852 = new Class385();
+                                                if (!class1847.dimension.method20504()) {
+                                                    final Mutable class1851 = new Mutable();
+                                                    final Mutable class1852 = new Mutable();
                                                     for (int k = 0; k < n; ++k) {
                                                         for (int l = 0; l < n; ++l) {
                                                             int n15 = method18922.method7018(Class2020.field11522, k + n11, l + n12) + 1;
@@ -110,7 +113,7 @@ public class Class4094 extends Class4093
                                                             if (n15 > 1) {
                                                                 do {
                                                                     --n15;
-                                                                    class1851.method1284(method18923.method25426() + k + n11, n15, method18923.method25427() + l + n12);
+                                                                    class1851.setPos(method18923.method25426() + k + n11, n15, method18923.method25427() + l + n12);
                                                                     class1853 = method18922.method6701(class1851);
                                                                 } while (class1853.method21707(class1847, class1851) == Class8819.field37032 && n15 > 0);
                                                                 if (n15 > 0) {
@@ -192,7 +195,7 @@ public class Class4094 extends Class4093
         }
     }
     
-    private Class7096 method12333(final Class1847 class1847, final Class7096 class1848, final BlockPos class1849) {
+    private Class7096 method12333(final World class1847, final Class7096 class1848, final BlockPos class1849) {
         final Class7099 method21756 = class1848.method21756();
         return (!method21756.method21781() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.method21791() : class1848;
     }
@@ -204,7 +207,7 @@ public class Class4094 extends Class4093
     public static void method12335(final Class1849 class1849, final ItemStack class1850) {
         final Class6356 method12328 = method12328(class1850, class1849);
         if (method12328 != null) {
-            if (class1849.field10063.method20487() == method12328.field25422) {
+            if (class1849.dimension.getType() == method12328.field25422) {
                 final int n = 1 << method12328.field25425;
                 final int field25420 = method12328.field25420;
                 final int field25421 = method12328.field25421;
@@ -306,7 +309,7 @@ public class Class4094 extends Class4093
     }
     
     @Override
-    public void method11722(final ItemStack class8321, final Class1847 class8322, final Entity class8323, final int n, final boolean b) {
+    public void method11722(final ItemStack class8321, final World class8322, final Entity class8323, final int n, final boolean b) {
         if (!class8322.field10067) {
             final Class6356 method12328 = method12328(class8321, class8322);
             if (method12328 != null) {
@@ -330,12 +333,12 @@ public class Class4094 extends Class4093
     
     @Nullable
     @Override
-    public Class4252<?> method12325(final ItemStack class8321, final Class1847 class8322, final Class512 class8323) {
+    public IPacket<?> method12325(final ItemStack class8321, final World class8322, final Class512 class8323) {
         return method12328(class8321, class8322).method18919(class8321, class8322, class8323);
     }
     
     @Override
-    public void method11723(final ItemStack class8321, final Class1847 class8322, final Class512 class8323) {
+    public void method11723(final ItemStack class8321, final World class8322, final Class512 class8323) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 != null) {
             if (method27657.method316("map_scale_direction", 99)) {
@@ -345,7 +348,7 @@ public class Class4094 extends Class4093
         }
     }
     
-    public static void method12336(final ItemStack class8321, final Class1847 class8322, final int n) {
+    public static void method12336(final ItemStack class8321, final World class8322, final int n) {
         final Class6356 method12328 = method12328(class8321, class8322);
         if (method12328 != null) {
             method12330(class8321, class8322, method12328.field25420, method12328.field25421, MathHelper.method35651(method12328.field25425 + n, 0, 4), method12328.field25423, method12328.field25424, method12328.field25422);
@@ -353,7 +356,7 @@ public class Class4094 extends Class4093
     }
     
     @Nullable
-    public static ItemStack method12337(final Class1847 class1847, final ItemStack class1848) {
+    public static ItemStack method12337(final World class1847, final ItemStack class1848) {
         final Class6356 method12328 = method12328(class1848, class1847);
         if (method12328 == null) {
             return null;
@@ -364,21 +367,21 @@ public class Class4094 extends Class4093
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         final Class6356 class8324 = (class8322 != null) ? method12328(class8321, class8322) : null;
         if (class8324 != null) {
             if (class8324.field25427) {
-                list.add(new Class2259("filled_map.locked", new Object[] { method12329(class8321) }).method8469(Class2116.field12316));
+                list.add(new Class2259("filled_map.locked", new Object[] { method12329(class8321) }).applyTextStyle(TextFormatting.GRAY));
             }
         }
         if (class8323.method7991()) {
             if (class8324 == null) {
-                list.add(new Class2259("filled_map.unknown", new Object[0]).method8469(Class2116.field12316));
+                list.add(new Class2259("filled_map.unknown", new Object[0]).applyTextStyle(TextFormatting.GRAY));
             }
             else {
-                list.add(new Class2259("filled_map.id", new Object[] { method12329(class8321) }).method8469(Class2116.field12316));
-                list.add(new Class2259("filled_map.scale", new Object[] { 1 << class8324.field25425 }).method8469(Class2116.field12316));
-                list.add(new Class2259("filled_map.level", new Object[] { class8324.field25425, 4 }).method8469(Class2116.field12316));
+                list.add(new Class2259("filled_map.id", new Object[] { method12329(class8321) }).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.scale", new Object[] { 1 << class8324.field25425 }).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.level", new Object[] { class8324.field25425, 4 }).applyTextStyle(TextFormatting.GRAY));
             }
         }
     }

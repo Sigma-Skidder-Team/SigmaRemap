@@ -17,6 +17,8 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 
 public class Class6848
 {
@@ -36,14 +38,14 @@ public class Class6848
         }
         int n = 0;
         for (final Entity class7494 : collection) {
-            if (!(class7494 instanceof Class511)) {
+            if (!(class7494 instanceof LivingEntity)) {
                 if (collection.size() != 1) {
                     continue;
                 }
                 throw Class6848.field26866.create((Object)class7494.getName().getString());
             }
             else {
-                final Class511 class7495 = (Class511)class7494;
+                final LivingEntity class7495 = (LivingEntity)class7494;
                 final ItemStack method2713 = class7495.method2713();
                 if (method2713.method27620()) {
                     if (collection.size() != 1) {

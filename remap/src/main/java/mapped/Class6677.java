@@ -4,12 +4,11 @@
 
 package mapped;
 
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.google.gson.JsonObject;
 
 public class Class6677 implements Class6672<Class6886>
 {
-    public void method20312(final Class6886 class6886, final Class8654 class6887) {
+    public void method20312(final Class6886 class6886, final PacketBuffer class6887) {
         int n = 0;
         if (Class6886.method21154(class6886)) {
             n = (byte)(n | 0x1);
@@ -20,7 +19,7 @@ public class Class6677 implements Class6672<Class6886>
         class6887.writeByte(n);
     }
     
-    public Class6886 method20313(final Class8654 class8654) {
+    public Class6886 method20313(final PacketBuffer class8654) {
         class8654.readByte();
         return new Class6886(false, false);
     }

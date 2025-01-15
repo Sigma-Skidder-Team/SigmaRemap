@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public enum Class325 implements Class326
 {
@@ -39,8 +40,8 @@ public enum Class325 implements Class326
     @Override
     public boolean method1006() {
         final Entity method5303 = Class869.method5277().method5303();
-        if (method5303 instanceof Class511) {
-            final Class511 class511 = (Class511)method5303;
+        if (method5303 instanceof LivingEntity) {
+            final LivingEntity class511 = (LivingEntity)method5303;
             switch (Class7475.field28873[this.ordinal()]) {
                 case 1: {
                     return class511.method1768();
@@ -67,13 +68,13 @@ public enum Class325 implements Class326
                     return class511.method1823();
                 }
                 case 9: {
-                    return class511.field2404;
+                    return class511.onGround;
                 }
                 case 10: {
-                    return class511.method1806();
+                    return class511.isBeingRidden();
                 }
                 case 11: {
-                    return class511.method1805();
+                    return class511.isPassenger();
                 }
                 case 12: {
                     return class511.method1814();

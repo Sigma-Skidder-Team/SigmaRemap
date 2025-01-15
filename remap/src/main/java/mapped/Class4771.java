@@ -59,10 +59,10 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
         final float method14125 = class791.method4404(n3);
         if (method14125 > 0.0f) {
             class792.method22564(0.0, 0.8f * method14125, 0.0);
-            class792.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method14125, class791.field2400, class791.field2400 + 90.0f)));
+            class792.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method14125, class791.rotationPitch, class791.rotationPitch + 90.0f)));
             class792.method22564(0.0, -1.0f * method14125, 0.0);
             if (class791.method4398()) {
-                class792.method22566(Vector3f.YP.rotationDegrees((float)(Math.cos(class791.field2424 * 1.25) * 3.141592653589793 * 0.05000000074505806)));
+                class792.method22566(Vector3f.YP.rotationDegrees((float)(Math.cos(class791.ticksExisted * 1.25) * 3.141592653589793 * 0.05000000074505806)));
                 if (class791.method2625()) {
                     class792.method22564(0.0, 0.800000011920929, 0.550000011920929);
                 }
@@ -71,7 +71,7 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
         final float method14126 = class791.method4405(n3);
         if (method14126 > 0.0f) {
             class792.method22564(0.0, (class791.method2625() ? 0.5f : 1.3f) * method14126, 0.0);
-            class792.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method14126, class791.field2400, class791.field2400 + 180.0f)));
+            class792.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method14126, class791.rotationPitch, class791.rotationPitch + 180.0f)));
         }
     }
     

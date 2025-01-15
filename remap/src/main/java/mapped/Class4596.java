@@ -16,7 +16,7 @@ public class Class4596 extends Class4592<Class5127>
     }
     
     @Override
-    public boolean method13624(final Class1875 class1875, final Random random, BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final Class6997 class1877, final Class5127 class1878) {
+    public boolean method13624(final Class1875 class1875, final Random random, BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final MutableBoundingBox class1877, final Class5127 class1878) {
         class1876 = class1875.method6958(Class2020.field11526, class1876).method1139();
         if (Class4592.method13614(class1875, class1876)) {
             class1876 = class1876.method1137();

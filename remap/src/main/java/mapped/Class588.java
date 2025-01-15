@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public abstract class Class3542 extends Class3446
 {
     private final Class7843 field16592;
@@ -19,10 +21,10 @@ public abstract class Class3542 extends Class3446
     
     public boolean method11092() {
         final BlockPos class354 = new BlockPos(this.field16593);
-        return !this.field16593.field2391.method6994(class354) && this.field16593.method4345(class354) >= 0.0f;
+        return !this.field16593.world.method6994(class354) && this.field16593.method4345(class354) >= 0.0f;
     }
     
     public boolean method11093() {
-        return !this.field16593.field2391.method7142((Class<? extends Class511>)Class511.class, this.field16592, (Class511)this.field16593, this.field16593.method1886().method18495(12.0, 6.0, 12.0)).isEmpty();
+        return !this.field16593.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, this.field16592, (LivingEntity)this.field16593, this.field16593.method1886().method18495(12.0, 6.0, 12.0)).isEmpty();
     }
 }

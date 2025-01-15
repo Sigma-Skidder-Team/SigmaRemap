@@ -9,6 +9,8 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.world.World;
+
 import java.util.function.Function;
 import java.util.List;
 
@@ -64,7 +66,7 @@ public class Class4575 extends Class4574<Class5122>
     
     @Nullable
     @Override
-    public BlockPos method13591(final Class1847 class1847, final Class6346<? extends Class7065> class1848, final BlockPos class1849, final int n, final boolean b) {
+    public BlockPos method13591(final World class1847, final Class6346<? extends Class7065> class1848, final BlockPos class1849, final int n, final boolean b) {
         if (class1848.method18879().method7121(this)) {
             if (this.field20068 != class1847.method6753()) {
                 this.method13598();
@@ -74,10 +76,10 @@ public class Class4575 extends Class4574<Class5122>
                 this.field20065 = true;
             }
             BlockPos class1850 = null;
-            final Class385 class1851 = new Class385();
+            final Mutable class1851 = new Mutable();
             double n2 = Double.MAX_VALUE;
             for (final Class7859 class1852 : this.field20066) {
-                class1851.method1284((class1852.field32290 << 4) + 8, 32, (class1852.field32291 << 4) + 8);
+                class1851.setPos((class1852.field32290 << 4) + 8, 32, (class1852.field32291 << 4) + 8);
                 final double method1083 = class1851.distanceSq(class1849);
                 if (class1850 != null) {
                     if (method1083 < n2) {

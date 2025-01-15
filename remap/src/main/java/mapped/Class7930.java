@@ -5,12 +5,15 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
-public class Class7930 extends Class7929
+public class Class7930 extends DamageSource
 {
     public final Entity field32594;
     private boolean field32595;
@@ -36,8 +39,8 @@ public class Class7930 extends Class7929
     }
     
     @Override
-    public ITextComponent method25690(final Class511 class511) {
-        final ItemStack class512 = (this.field32594 instanceof Class511) ? ((Class511)this.field32594).method2713() : ItemStack.field34174;
+    public ITextComponent method25690(final LivingEntity class511) {
+        final ItemStack class512 = (this.field32594 instanceof LivingEntity) ? ((LivingEntity)this.field32594).method2713() : ItemStack.field34174;
         final String string = "death.attack." + this.field32593;
         return (!class512.method27620() && class512.method27667()) ? new Class2259(string + ".item", new Object[] { class511.getDisplayName(), this.field32594.getDisplayName(), class512.method27684() }) : new Class2259(string, new Object[] { class511.getDisplayName(), this.field32594.getDisplayName() });
     }
@@ -45,7 +48,7 @@ public class Class7930 extends Class7929
     @Override
     public boolean method25722() {
         if (this.field32594 != null) {
-            if (this.field32594 instanceof Class511) {
+            if (this.field32594 instanceof LivingEntity) {
                 if (!(this.field32594 instanceof Class512)) {
                     return true;
                 }

@@ -4,8 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -22,7 +26,7 @@ public class Class4050 extends Class3820
         if (class7075.method21648() == Direction.DOWN) {
             return Class2201.field13403;
         }
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final Class7074 class7076 = new Class7074(class7075);
         final BlockPos method21655 = class7076.method21639();
         final BlockPos method21656 = method21655.method1137();

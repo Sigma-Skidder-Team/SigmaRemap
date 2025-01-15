@@ -11,6 +11,8 @@ import com.google.common.collect.Sets;
 import java.util.Comparator;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.Map;
 
 public class Class6125 implements Class6113

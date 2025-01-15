@@ -27,7 +27,7 @@ public class Class368 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list3, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list3, final List<BlockPos> list2, final Set<BlockPos> set, final MutableBoundingBox class1852) {
         list3.stream().filter(class1853 -> {
             list3.get(0).getY();
             return class1853.getY() == n;
@@ -51,7 +51,7 @@ public class Class368 extends Class367
                             }
                         }
                     }
-                    this.method1244(class1854, random2, class1855.method1134(-3 + n2, 0, -3 + n3));
+                    this.method1244(class1854, random2, class1855.add(-3 + n2, 0, -3 + n3));
                 }
                 ++i;
             }
@@ -62,7 +62,7 @@ public class Class368 extends Class367
         for (int i = -2; i <= 2; ++i) {
             for (int j = -2; j <= 2; ++j) {
                 if (Math.abs(i) != 2 || Math.abs(j) != 2) {
-                    this.method1245(class1875, random, class1876.method1134(i, 0, j));
+                    this.method1245(class1875, random, class1876.add(i, 0, j));
                 }
             }
         }
@@ -82,7 +82,7 @@ public class Class368 extends Class367
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString()), dynamicOps.createString("provider"), this.field2210.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)))).getValue();
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
+        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString()), dynamicOps.createString("provider"), this.field2210.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)))).getValue();
     }
 }

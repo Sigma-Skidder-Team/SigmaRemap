@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public final class Class6427 extends Class6397
 {
@@ -12,7 +14,7 @@ public final class Class6427 extends Class6397
     
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
-        final Class1847 method16763 = class5491.method16763();
+        final World method16763 = class5491.method16763();
         final Direction class5493 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
         final BlockPos method16764 = class5491.method16764().method1149(class5493);
         if (method16763.method6961(method16764) && Class3938.method12052(method16763, method16764, class5492)) {

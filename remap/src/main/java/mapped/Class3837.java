@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -31,7 +32,7 @@ public class Class3837 extends Class3834
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9568.field41171[class7096.method21772((Class7111<Direction>)Class3837.field17415).getAxis().ordinal()]) {
             default: {
                 return Class3837.field17449;
@@ -53,7 +54,7 @@ public class Class3837 extends Class3834
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         final Direction class7099 = class7096.method21772((Class7111<Direction>)Class3837.field17415);
         final double n = class7098.getX() + 0.55 - random.nextFloat() * 0.1f;
         final double n2 = class7098.getY() + 0.55 - random.nextFloat() * 0.1f;

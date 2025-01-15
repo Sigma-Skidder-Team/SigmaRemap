@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.HashMap;
+
+import net.minecraft.entity.LivingEntity;
 import org.lwjgl.opengl.GL11;
 import java.awt.Color;
 import java.util.Map;
@@ -27,7 +29,7 @@ public class Class3337 extends Class3167
     }
     
     private void method10561(final Class5739 class5739, final Class512 class5740) {
-        final Color color = new Color(Class9463.method35173().method35190().method29879(class5740.getName().method8461()) ? -8401409 : (class5740.getName().method8461().equalsIgnoreCase(Class3337.field15514.field4684.getName().method8461()) ? -6684775 : new Color(16775672).getRGB()));
+        final Color color = new Color(Class9463.method35173().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(Class3337.field15514.field4684.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
         if (!class5740.method1823()) {
             final float[][] array = Class3337.field15939.get(class5740);
             if (array != null) {
@@ -162,7 +164,7 @@ public class Class3337 extends Class3167
     
     private Class9407 method10562(final Class5739 class5739, final Class512 class5740) {
         final float method5314 = Class3337.field15514.method5314();
-        return new Class9407(class5740.field2417 + (class5740.field2395 - class5740.field2417) * method5314, class5740.field2418 + (class5740.field2396 - class5740.field2418) * method5314, class5740.field2419 + (class5740.field2397 - class5740.field2419) * method5314);
+        return new Class9407(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * method5314, class5740.lastTickPosY + (class5740.posY - class5740.lastTickPosY) * method5314, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * method5314);
     }
     
     public static void method10563(final Class512 class512, final Class5860<Class512> class513) {
@@ -193,7 +195,7 @@ public class Class3337 extends Class3167
         GL11.glDepthMask(b);
     }
     
-    private int method10566(final Class511 class511) {
+    private int method10566(final LivingEntity class511) {
         final float method2664 = class511.method2664();
         final float method2665 = class511.method2701();
         return Color.HSBtoRGB(Math.max(0.0f, Math.min(method2664, method2665) / method2665) / 3.0f, 1.0f, 1.0f) | 0xFF000000;

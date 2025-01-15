@@ -5,13 +5,14 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
 
 public class Class7749 extends Class7747
 {
     private static String[] field31677;
     private BlockPos field31680;
     
-    public Class7749(final Class759 class759, final Class1847 class760) {
+    public Class7749(final Class759 class759, final World class760) {
         super(class759, class760);
     }
     

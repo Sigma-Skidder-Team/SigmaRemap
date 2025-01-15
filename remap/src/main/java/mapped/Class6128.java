@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 
@@ -19,14 +21,14 @@ public class Class6128 implements Class6113
     
     @Override
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        final Class1847 field2391 = this.field24873.field4684.field2391;
+        final World field2391 = this.field24873.field4684.world;
         Class8726.method30011();
         Class8726.method30117();
         Class8726.method30072(2.0f);
         Class8726.method30041();
         Class8726.method30010(false);
         final BlockPos class7353 = new BlockPos(n, n2, n3);
-        for (final BlockPos class7354 : BlockPos.method1154(class7353.method1134(-6, -6, -6), class7353.method1134(6, 6, 6))) {
+        for (final BlockPos class7354 : BlockPos.getAllInBoxMutable(class7353.add(-6, -6, -6), class7353.add(6, 6, 6))) {
             final Class7096 method6701 = field2391.method6701(class7354);
             if (method6701.method21696() == Class7521.field29147) {
                 continue;

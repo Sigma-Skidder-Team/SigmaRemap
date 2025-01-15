@@ -421,7 +421,7 @@ public class Class540 extends Class527
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
         final Class102 method2570 = this.field3232.method2570();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 10, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 10, 16777215);
         if (method2570 != Class102.field308) {
             this.method3297(this.field3156, Class8822.method30773("structure_block.structure_name", new Object[0]), this.field3152 / 2 - 153, 30, 10526880);
             this.field3239.method2975(n, n2, n3);

@@ -78,7 +78,7 @@ public class Class4780 extends Class4703<Class861>
                 if (method22585 == Direction.EAST) {
                     n14 = MathHelper.floor(class7353.getPosZ() + (n9 + n10) / 2.0f / 16.0f);
                 }
-                final int method22586 = Class1656.method5776(class7353.field2391, new BlockPos(n13, method22584, n14));
+                final int method22586 = Class1656.method5776(class7353.world, new BlockPos(n13, method22584, n14));
                 final float method22587 = class7354.method7499(n7 * (n5 - i));
                 final float method22588 = class7354.method7499(n7 * (n5 - (i + 1)));
                 final float method22589 = class7354.method7502(n8 * (n6 - j));

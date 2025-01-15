@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -17,7 +18,7 @@ public class Class9543
     private static final Map<String, Integer> field41081;
     
     public static int method35624(final Entity class399) {
-        return (class399 != null) ? method35625(class399.method1642()) : -1;
+        return (class399 != null) ? method35625(class399.getType()) : -1;
     }
     
     public static int method35625(final EntityType class7499) {

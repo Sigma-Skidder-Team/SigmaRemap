@@ -9,6 +9,8 @@ import com.google.common.collect.ImmutableSet;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.EntityType;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.function.BiConsumer;

@@ -5,19 +5,20 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class3564 extends Class3555<Class511>
+public class Class3564 extends Class3555<LivingEntity>
 {
     private static String[] field16633;
-    private Class511 field16652;
-    private Class511 field16653;
+    private LivingEntity field16652;
+    private LivingEntity field16653;
     private int field16654;
     public final /* synthetic */ Class803 field16655;
     
-    public Class3564(final Class803 field16655, final Class<Class511> clazz, final boolean b, final boolean b2, final Predicate<Class511> predicate) {
+    public Class3564(final Class803 field16655, final Class<LivingEntity> clazz, final boolean b, final boolean b2, final Predicate<LivingEntity> predicate) {
         this.field16655 = field16655;
         super(field16655, clazz, 10, b, b2, predicate);
     }
@@ -31,14 +32,14 @@ public class Class3564 extends Class3555<Class511>
             if (uuid == null) {
                 continue;
             }
-            if (!(this.field16655.field2391 instanceof Class1849)) {
+            if (!(this.field16655.world instanceof Class1849)) {
                 continue;
             }
-            final Entity method6914 = ((Class1849)this.field16655.field2391).method6914(uuid);
-            if (!(method6914 instanceof Class511)) {
+            final Entity method6914 = ((Class1849)this.field16655.world).method6914(uuid);
+            if (!(method6914 instanceof LivingEntity)) {
                 continue;
             }
-            final Class511 field16653 = (Class511)method6914;
+            final LivingEntity field16653 = (LivingEntity)method6914;
             this.field16653 = field16653;
             this.field16652 = field16653.method2634();
             return field16653.method2635() != this.field16654 && this.method11097(this.field16652, this.field16637);

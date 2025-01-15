@@ -45,8 +45,8 @@ public class Class3220 extends Class3167
             if (!Class9463.method35173().method35189().method21551(Class3260.class).method9906()) {
                 if (!Class6430.method19112(Class3220.field15514.field4684)) {
                     final double field15678 = this.method9886("OnGround Speed");
-                    if (!Class3220.field15514.field4684.field2404) {
-                        if (Class3220.field15514.field4684.field2405) {
+                    if (!Class3220.field15514.field4684.onGround) {
+                        if (Class3220.field15514.field4684.collidedHorizontally) {
                             this.field15678 = 0.35;
                             this.field15676 = 1;
                         }
@@ -69,7 +69,7 @@ public class Class3220 extends Class3167
                         if (this.method9883("AutoJump")) {
                             if (Class6430.method19114()) {
                                 Class3220.field15514.field4684.method2725();
-                                class5717.method16975(Class3220.field15514.field4684.method1935().y);
+                                class5717.method16975(Class3220.field15514.field4684.getMotion().y);
                             }
                         }
                         if (class5717.method16974() == 0.4199998) {
@@ -83,9 +83,9 @@ public class Class3220 extends Class3167
                             Class7482.method23149(class5717, 0.2);
                             return;
                         }
-                        Class3220.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3220.field15514.field4684).method1134(0, -1, 0), false)));
+                        Class3220.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3220.field15514.field4684).add(0, -1, 0), false)));
                         this.field15678 += field15678 / 4.0;
-                        if (Class3220.field15514.field4684.field2405) {
+                        if (Class3220.field15514.field4684.collidedHorizontally) {
                             this.field15678 /= 2.0;
                         }
                         if (this.field15678 > field15678) {
@@ -105,7 +105,7 @@ public class Class3220 extends Class3167
     public void method10151(final Class5722 class5722) {
         if (this.method9906()) {
             this.field15678 = 0.81 + this.field15676 * 0.095;
-            if (Class3220.field15514.field4684.field2396 != (int)Class3220.field15514.field4684.field2396) {
+            if (Class3220.field15514.field4684.posY != (int)Class3220.field15514.field4684.posY) {
                 this.field15678 = 0.52;
                 this.field15676 = 1;
             }

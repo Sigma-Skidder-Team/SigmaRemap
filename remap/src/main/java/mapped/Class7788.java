@@ -124,15 +124,15 @@ public class Class7788
             class7492.method23259(Class9479.method35300(ex.getRawMessage()));
             if (ex.getInput() != null && ex.getCursor() >= 0) {
                 final int min = Math.min(ex.getInput().length(), ex.getCursor());
-                final ITextComponent method8467 = new Class2260("").method8469(Class2116.field12316).method8467(class7496 -> class7496.method30419(new Class9485(Class2075.field11974, s2)));
+                final ITextComponent method8467 = new StringTextComponent("").applyTextStyle(TextFormatting.GRAY).applyTextStyle(class7496 -> class7496.method30419(new Class9485(Class2075.field11974, s2)));
                 if (min > 10) {
-                    method8467.method8457("...");
+                    method8467.appendText("...");
                 }
-                method8467.method8457(ex.getInput().substring(Math.max(0, min - 10), min));
+                method8467.appendText(ex.getInput().substring(Math.max(0, min - 10), min));
                 if (min < ex.getInput().length()) {
-                    method8467.method8458(new Class2260(ex.getInput().substring(min)).method8468(Class2116.field12321, Class2116.field12328));
+                    method8467.appendSibling(new StringTextComponent(ex.getInput().substring(min)).applyTextStyles(TextFormatting.RED, TextFormatting.UNDERLINE));
                 }
-                method8467.method8458(new Class2259("command.context.here", new Object[0]).method8468(Class2116.field12321, Class2116.field12329));
+                method8467.appendSibling(new Class2259("command.context.here", new Object[0]).applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC));
                 class7492.method23259(method8467);
             }
             return 0;
@@ -145,15 +145,15 @@ public class Class7788
                 Block_15: {
                     break Block_15;
                     Label_0499: {
-                        class7492.method23259(new Class2259("command.failed", new Object[0]).method8467(class7498 -> class7498.method30420(new Class9390(Class1961.field10697, class7497))));
+                        class7492.method23259(new Class2259("command.failed", new Object[0]).applyTextStyle(class7498 -> class7498.method30420(new Class9390(Class1961.field10697, class7497))));
                     }
                     iftrue(Label_0585:)(!Class9528.field41021);
-                    class7492.method23259(new Class2260(Class8349.method27860(ex2)));
+                    class7492.method23259(new StringTextComponent(Class8349.method27860(ex2)));
                     Class7788.field31874.error("'" + str + "' threw an exception", (Throwable)ex2);
                     return 0;
                 }
                 final ITextComponent class7494;
-                class7494.method8457("\n\n").method8457(stackTrace[n].getMethodName()).method8457("\n ").method8457(stackTrace[n].getFileName()).method8457(":").method8457(String.valueOf(stackTrace[n].getLineNumber()));
+                class7494.appendText("\n\n").appendText(stackTrace[n].getMethodName()).appendText("\n ").appendText(stackTrace[n].getFileName()).appendText(":").appendText(String.valueOf(stackTrace[n].getLineNumber()));
                 ++n;
                 continue;
             }
@@ -165,7 +165,7 @@ public class Class7788
                 break Label_0371;
                 s = ex2.getClass().getName();
             }
-            new Class2260(s);
+            new StringTextComponent(s);
             final ITextComponent class7495;
             final ITextComponent class7494 = class7495;
             iftrue(Label_0499:)(!Class7788.field31874.isDebugEnabled());

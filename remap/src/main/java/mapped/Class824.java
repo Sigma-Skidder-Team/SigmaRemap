@@ -20,15 +20,24 @@ import com.mojang.datafixers.Dynamic;
 import java.util.function.BiPredicate;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.INBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.Set;
 import java.util.Map;
 
 public class Class824 extends Class819 implements Class831, Class825
 {
-    private static final Class8810<Class8562> field4399;
+    private static final DataParameter<Class8562> field4399;
     public static final Map<Class3820, Integer> field4400;
     private static final Set<Class3820> field4401;
     private int field4402;
@@ -46,11 +55,11 @@ public class Class824 extends Class819 implements Class831, Class825
     private static final ImmutableList<Class8033<? extends Class6851<? super Class824>>> field4414;
     public static final Map<Class8233<Class363>, BiPredicate<Class824, Class8912>> field4415;
     
-    public Class824(final EntityType<? extends Class824> class7499, final Class1847 class7500) {
+    public Class824(final EntityType<? extends Class824> class7499, final World class7500) {
         this(class7499, class7500, Class7611.field30165);
     }
     
-    public Class824(final EntityType<? extends Class824> class7499, final Class1847 class7500, final Class7611 class7501) {
+    public Class824(final EntityType<? extends Class824> class7499, final World class7500, final Class7611 class7501) {
         super(class7499, class7500);
         this.field4406 = new Class9470();
         ((Class7747)this.method4150()).method24747(true);
@@ -101,14 +110,14 @@ public class Class824 extends Class819 implements Class831, Class825
         class365.method1202((Set)ImmutableSet.of((Object)Class7635.field30226));
         class365.method1206(Class7635.field30227);
         class365.method1204(Class7635.field30227);
-        class365.method1205(this.field2391.method6755(), this.field2391.method6754());
+        class365.method1205(this.world.method6755(), this.world.method6754());
     }
     
     @Override
     public void method4355() {
         super.method4355();
-        if (this.field2391 instanceof Class1849) {
-            this.method4856((Class1849)this.field2391);
+        if (this.world instanceof Class1849) {
+            this.method4856((Class1849)this.world);
         }
     }
     
@@ -121,9 +130,9 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public void method4172() {
-        this.field2391.method6796().method15297("brain");
-        this.method2618().method1211((Class1849)this.field2391, this);
-        this.field2391.method6796().method15299();
+        this.world.method6796().method15297("brain");
+        this.method2618().method1211((Class1849)this.world, this);
+        this.world.method6796().method15299();
         if (!this.method4824()) {
             if (this.field4402 > 0) {
                 --this.field4402;
@@ -137,19 +146,19 @@ public class Class824 extends Class819 implements Class831, Class825
             }
         }
         if (this.field4404 != null) {
-            if (this.field2391 instanceof Class1849) {
-                ((Class1849)this.field2391).method6929(Class8156.field33594, this.field4404, this);
-                this.field2391.method6761(this, (byte)14);
+            if (this.world instanceof Class1849) {
+                ((Class1849)this.world).method6929(Class8156.field33594, this.field4404, this);
+                this.world.method6761(this, (byte)14);
                 this.field4404 = null;
             }
         }
         if (!this.method4214()) {
-            if (this.field2423.nextInt(100) == 0) {
-                final Class8792 method6927 = ((Class1849)this.field2391).method6927(new BlockPos(this));
+            if (this.rand.nextInt(100) == 0) {
+                final Class8792 method6927 = ((Class1849)this.world).method6927(new BlockPos(this));
                 if (method6927 != null) {
                     if (method6927.method30663()) {
                         if (!method6927.method30618()) {
-                            this.field2391.method6761(this, (byte)42);
+                            this.world.method6761(this, (byte)42);
                         }
                     }
                 }
@@ -187,14 +196,14 @@ public class Class824 extends Class819 implements Class831, Class825
                             final boolean empty = this.method4825().isEmpty();
                             if (class513 == Class316.field1877) {
                                 if (empty) {
-                                    if (!this.field2391.field10067) {
+                                    if (!this.world.field10067) {
                                         this.method4858();
                                     }
                                 }
                                 class512.method2857(Class8276.field34021);
                             }
                             if (!empty) {
-                                if (!this.field2391.field10067) {
+                                if (!this.world.field10067) {
                                     if (!this.field4390.isEmpty()) {
                                         this.method4859(class512);
                                     }
@@ -214,7 +223,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     private void method4858() {
         this.method4820(40);
-        if (!this.field2391.method6678()) {
+        if (!this.world.method6678()) {
             this.method1695(Class8520.field35679, this.method2720(), this.method2721());
         }
     }
@@ -261,7 +270,7 @@ public class Class824 extends Class819 implements Class831, Class825
         if (this.method4870().method28781() == Class9334.field40065) {
             this.method4887();
         }
-        this.field4410 = this.field2391.method6754();
+        this.field4410 = this.world.method6754();
         ++this.field4411;
     }
     
@@ -277,14 +286,14 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     private boolean method4863() {
-        return this.field4411 == 0 || (this.field4411 < 2 && this.field2391.method6754() > this.field4410 + 2400L);
+        return this.field4411 == 0 || (this.field4411 < 2 && this.world.method6754() > this.field4410 + 2400L);
     }
     
     public boolean method4864() {
         final long n = this.field4410 + 12000L;
-        final long method6754 = this.field2391.method6754();
+        final long method6754 = this.world.method6754();
         boolean b = method6754 > n;
-        final long method6755 = this.field2391.method6755();
+        final long method6755 = this.world.method6755();
         if (this.field4412 > 0L) {
             b |= (method6755 / 24000L > this.field4412 / 24000L);
         }
@@ -334,15 +343,15 @@ public class Class824 extends Class819 implements Class831, Class825
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class824.field4399, new Class8562(Class7611.field30165, Class9334.field40060, 1));
+        this.dataManager.register(Class824.field4399, new Class8562(Class7611.field30165, Class9334.field40060, 1));
     }
     
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        class51.method295("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<Class41>)Class8453.field34721));
+        class51.method295("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
         class51.method296("FoodLevel", this.field4405);
-        class51.method295("Gossips", (Class41)this.field4406.method35243((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
+        class51.method295("Gossips", (INBT)this.field4406.method35243((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
         class51.method298("Xp", this.field4409);
         class51.method299("LastRestock", this.field4410);
         class51.method299("LastGossipDecay", this.field4408);
@@ -368,8 +377,8 @@ public class Class824 extends Class819 implements Class831, Class825
         this.field4410 = class51.method320("LastRestock");
         this.field4408 = class51.method320("LastGossipDecay");
         this.method4193(true);
-        if (this.field2391 instanceof Class1849) {
-            this.method4856((Class1849)this.field2391);
+        if (this.world instanceof Class1849) {
+            this.method4856((Class1849)this.world);
         }
         this.field4411 = class51.method319("RestocksToday");
     }
@@ -389,7 +398,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35678;
     }
     
@@ -409,17 +418,17 @@ public class Class824 extends Class819 implements Class831, Class825
         if (this.method4870().method28781() != class8562.method28781()) {
             this.field4390 = null;
         }
-        this.field2432.method33569(Class824.field4399, class8562);
+        this.dataManager.set(Class824.field4399, class8562);
     }
     
     @Override
     public Class8562 method4870() {
-        return this.field2432.method33568(Class824.field4399);
+        return this.dataManager.get(Class824.field4399);
     }
     
     @Override
     public void method4829(final Class9017 class9017) {
-        int n = 3 + this.field2423.nextInt(4);
+        int n = 3 + this.rand.nextInt(4);
         this.field4409 += class9017.method32296();
         this.field4404 = this.method4823();
         if (this.method4880()) {
@@ -428,18 +437,18 @@ public class Class824 extends Class819 implements Class831, Class825
             n += 5;
         }
         if (class9017.method32300()) {
-            this.field2391.method6886(new Class508(this.field2391, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), n));
+            this.world.method6886(new Class508(this.world, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), n));
         }
     }
     
     @Override
-    public void method2636(final Class511 class511) {
+    public void method2636(final LivingEntity class511) {
         if (class511 != null) {
-            if (this.field2391 instanceof Class1849) {
-                ((Class1849)this.field2391).method6929(Class8156.field33592, class511, this);
+            if (this.world instanceof Class1849) {
+                ((Class1849)this.world).method6929(Class8156.field33592, class511, this);
                 if (this.method1768()) {
                     if (class511 instanceof Class512) {
-                        this.field2391.method6761(this, (byte)13);
+                        this.world.method6761(this, (byte)13);
                     }
                 }
             }
@@ -448,7 +457,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     @Override
-    public void method2673(final Class7929 class7929) {
+    public void method2673(final DamageSource class7929) {
         Class824.LOGGER.info("Villager {} died, message: '{}'", (Object)this, (Object)class7929.method25690(this).getString());
         final Entity method25714 = class7929.method25714();
         if (method25714 != null) {
@@ -461,11 +470,11 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     private void method4871(final Entity class399) {
-        if (this.field2391 instanceof Class1849) {
-            final Optional<List<Class511>> method1198 = this.field2996.method1198(Class8233.field33805);
+        if (this.world instanceof Class1849) {
+            final Optional<List<LivingEntity>> method1198 = this.field2996.method1198(Class8233.field33805);
             if (method1198.isPresent()) {
                 method1198.get().stream().filter(class400 -> class400 instanceof Class831).forEach(class403 -> {
-                    final Object o = this.field2391;
+                    final Object o = this.world;
                     class401.method6929(Class8156.field33593, class402, (Class831)class403);
                 });
             }
@@ -473,9 +482,9 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public void method4872(final Class8233<Class363> class8233) {
-        if (this.field2391 instanceof Class1849) {
+        if (this.world instanceof Class1849) {
             this.field2996.method1198((Class8233<Object>)class8233).ifPresent(class8236 -> {
-                ((Class1849)this.field2391).method6679();
+                ((Class1849)this.world).method6679();
                 class8234.method1481(class8236.method1169());
                 final Class1849 class8237;
                 class8237.method6921();
@@ -552,7 +561,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public ITextComponent method1842() {
-        return new Class2259(this.method1642().method23366() + '.' + Class90.field240.method503(this.method4870().method28781()).method7797(), new Object[0]);
+        return new Class2259(this.getType().method23366() + '.' + Class90.field240.method503(this.method4870().method28781()).method7797(), new Object[0]);
     }
     
     @Override
@@ -600,7 +609,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public Class824 method4882(final Class788 class788) {
-        final double nextDouble = this.field2423.nextDouble();
+        final double nextDouble = this.rand.nextDouble();
         Class7611 class789;
         if (nextDouble >= 0.5) {
             if (nextDouble >= 0.75) {
@@ -611,24 +620,24 @@ public class Class824 extends Class819 implements Class831, Class825
             }
         }
         else {
-            class789 = Class7611.method23913(this.field2391.method6959(new BlockPos(this)));
+            class789 = Class7611.method23913(this.world.method6959(new BlockPos(this)));
         }
-        final Class824 class790 = new Class824(EntityType.field29042, this.field2391, class789);
-        class790.method4188(this.field2391, this.field2391.method6784(new BlockPos(class790)), Class2101.field12178, null, null);
+        final Class824 class790 = new Class824(EntityType.field29042, this.world, class789);
+        class790.method4188(this.world, this.world.method6784(new BlockPos(class790)), Class2101.field12178, null, null);
         return class790;
     }
     
     @Override
-    public void method1834(final Class422 class422) {
-        final Class778 class423 = EntityType.field29047.method23371(this.field2391);
-        class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
-        class423.method4188(this.field2391, this.field2391.method6784(new BlockPos(class423)), Class2101.field12182, null, null);
+    public void onStruckByLightning(final LightningBoltEntity class422) {
+        final Class778 class423 = EntityType.field29047.method23371(this.world);
+        class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
+        class423.method4188(this.world, this.world.method6784(new BlockPos(class423)), Class2101.field12182, null, null);
         class423.method4211(this.method4214());
         if (this.hasCustomName()) {
             class423.method1872(this.getCustomName());
             class423.method1875(this.method1876());
         }
-        this.field2391.method6886(class423);
+        this.world.method6886(class423);
         this.method1652();
     }
     
@@ -720,7 +729,7 @@ public class Class824 extends Class819 implements Class831, Class825
     public void method4889(final Class824 class824, final long n) {
         if (n < this.field4407 || n >= this.field4407 + 1200L) {
             if (n < class824.field4407 || n >= class824.field4407 + 1200L) {
-                this.field4406.method35240(class824.field4406, this.field2423, 10);
+                this.field4406.method35240(class824.field4406, this.rand, 10);
                 this.field4407 = n;
                 this.method4891(class824.field4407 = n, 5);
             }
@@ -728,7 +737,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     private void method4890() {
-        final long method6754 = this.field2391.method6754();
+        final long method6754 = this.world.method6754();
         if (this.field4408 != 0L) {
             if (method6754 >= this.field4408 + 24000L) {
                 this.field4406.method35236();
@@ -742,7 +751,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     public void method4891(final long n, final int n2) {
         if (this.method4894(n)) {
-            final List<Entity> method7128 = this.field2391.method7128((Class<? extends Entity>)Class824.class, this.method1886().method18495(10.0, 10.0, 10.0));
+            final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>)Class824.class, this.method1886().method18495(10.0, 10.0, 10.0));
             if (method7128.stream().filter(class824 -> class824.method4894(n3)).limit(5L).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).size() >= n2) {
                 if (this.method4895() != null) {
                     method7128.forEach(class825 -> class825.method4892(n4));
@@ -762,29 +771,29 @@ public class Class824 extends Class819 implements Class831, Class825
     
     public boolean method4894(final long n) {
         final Class8562 method4870 = this.method4870();
-        return method4870.method28781() != Class9334.field40060 && method4870.method28781() != Class9334.field40071 && this.method4901(this.field2391.method6754()) && !this.method4893(n);
+        return method4870.method28781() != Class9334.field40060 && method4870.method28781() != Class9334.field40071 && this.method4901(this.world.method6754()) && !this.method4893(n);
     }
     
     @Nullable
     private Class786 method4895() {
         final BlockPos class354 = new BlockPos(this);
         for (int i = 0; i < 10; ++i) {
-            final double n = this.field2391.field10062.nextInt(16) - 8;
-            final double n2 = this.field2391.field10062.nextInt(16) - 8;
+            final double n = this.world.field10062.nextInt(16) - 8;
+            final double n2 = this.world.field10062.nextInt(16) - 8;
             double n3 = 6.0;
             for (int j = 0; j >= -12; --j) {
-                final BlockPos method1133 = class354.method1133(n, n3 + j, n2);
-                if (this.field2391.method6701(method1133).method21706() || this.field2391.method6701(method1133).method21697().method26438()) {
-                    if (this.field2391.method6701(method1133.method1139()).method21697().method26443()) {
+                final BlockPos method1133 = class354.add(n, n3 + j, n2);
+                if (this.world.method6701(method1133).method21706() || this.world.method6701(method1133).method21697().method26438()) {
+                    if (this.world.method6701(method1133.method1139()).method21697().method26443()) {
                         n3 += j;
                         break;
                     }
                 }
             }
-            final Class786 class355 = EntityType.field29043.method23358(this.field2391, null, null, null, class354.method1133(n, n3, n2), Class2101.field12179, false, false);
+            final Class786 class355 = EntityType.field29043.method23358(this.world, null, null, null, class354.add(n, n3, n2), Class2101.field12179, false, false);
             if (class355 != null) {
-                if (class355.method4179(this.field2391, Class2101.field12179) && class355.method4180(this.field2391)) {
-                    this.field2391.method6886(class355);
+                if (class355.method4179(this.world, Class2101.field12179) && class355.method4180(this.world)) {
+                    this.world.method6886(class355);
                     return class355;
                 }
                 class355.method1652();
@@ -834,7 +843,7 @@ public class Class824 extends Class819 implements Class831, Class825
         return this.field4406;
     }
     
-    public void method4900(final Class41 class41) {
+    public void method4900(final INBT class41) {
         this.field4406.method35244((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class41));
     }
     
@@ -847,13 +856,13 @@ public class Class824 extends Class819 implements Class831, Class825
     @Override
     public void method2784(final BlockPos class354) {
         super.method2784(class354);
-        this.field2996.method1196(Class8233.field33824, Class366.method1240(this.field2391.method6754()));
+        this.field2996.method1196(Class8233.field33824, Class366.method1240(this.world.method6754()));
     }
     
     @Override
     public void method2787() {
         super.method2787();
-        this.field2996.method1196(Class8233.field33825, Class366.method1240(this.field2391.method6754()));
+        this.field2996.method1196(Class8233.field33825, Class366.method1240(this.world.method6754()));
     }
     
     private boolean method4901(final long n) {
@@ -863,7 +872,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     static {
-        field4399 = Class9184.method33564(Class824.class, Class7709.field30669);
+        field4399 = EntityDataManager.method33564(Class824.class, Class7709.field30669);
         field4400 = (Map)ImmutableMap.of((Object)Class7739.field31316, (Object)4, (Object)Class7739.field31518, (Object)1, (Object)Class7739.field31517, (Object)1, (Object)Class7739.field31575, (Object)1);
         field4401 = (Set)ImmutableSet.of((Object)Class7739.field31316, (Object)Class7739.field31518, (Object)Class7739.field31517, (Object)Class7739.field31315, (Object)Class7739.field31314, (Object)Class7739.field31575, (Object[])new Class3820[] { Class7739.field31576 });
         field4413 = ImmutableList.of((Object)Class8233.field33800, (Object)Class8233.field33801, (Object)Class8233.field33802, (Object)Class8233.field33804, (Object)Class8233.field33805, (Object)Class8233.field33806, (Object)Class8233.field33807, (Object)Class8233.field33808, (Object)Class8233.field33809, (Object)Class8233.field33810, (Object)Class8233.field33811, (Object)Class8233.field33812, (Object[])new Class8233[] { Class8233.field33813, Class8233.field33814, Class8233.field33815, Class8233.field33816, Class8233.field33817, Class8233.field33818, Class8233.field33819, Class8233.field33803, Class8233.field33820, Class8233.field33821, Class8233.field33822, Class8233.field33824, Class8233.field33825, Class8233.field33826, Class8233.field33823 });

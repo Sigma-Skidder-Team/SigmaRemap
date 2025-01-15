@@ -4,13 +4,18 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class783 extends Class780
 {
     private static String[] field4193;
     
-    public Class783(final EntityType<? extends Class783> class7499, final Class1847 class7500) {
+    public Class783(final EntityType<? extends Class783> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -24,7 +29,7 @@ public class Class783 extends Class780
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35626;
     }
     

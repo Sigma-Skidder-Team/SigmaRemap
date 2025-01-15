@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -49,7 +51,7 @@ public class Class3353 extends Class3167
         if (this.method9883("Speed")) {
             array[2] = 1;
         }
-        if (!Class3353.field15514.field4684.field2404) {
+        if (!Class3353.field15514.field4684.onGround) {
             this.field15980 = 0;
         }
         else {
@@ -86,11 +88,11 @@ public class Class3353 extends Class3167
     }
     
     public float[] method10614() {
-        final double n = Class3353.field15514.field4684.field2395 + Class3353.field15514.field4684.method1935().x * 26.0;
-        final double n2 = Class3353.field15514.field4684.field2403.field25074 - 3.6;
-        final double n3 = Class3353.field15514.field4684.field2397 + Class3353.field15514.field4684.method1935().z * 26.0;
+        final double n = Class3353.field15514.field4684.posX + Class3353.field15514.field4684.getMotion().x * 26.0;
+        final double n2 = Class3353.field15514.field4684.boundingBox.field25074 - 3.6;
+        final double n3 = Class3353.field15514.field4684.posZ + Class3353.field15514.field4684.getMotion().z * 26.0;
         if (!this.method9883("Predict")) {
-            return new float[] { Class3353.field15514.field4684.field2399, 90.0f };
+            return new float[] { Class3353.field15514.field4684.rotationYaw, 90.0f };
         }
         return Class8845.method30919(n, n3, n2);
     }
@@ -196,7 +198,7 @@ public class Class3353 extends Class3167
                     class5744.method17041(method10617[1]);
                 }
                 else {
-                    Class3353.field15514.method5269().method17292(new Class4356(method10617[0], method10617[1], !b && Class3353.field15514.field4684.field2404));
+                    Class3353.field15514.method5269().method17292(new Class4356(method10617[0], method10617[1], !b && Class3353.field15514.field4684.onGround));
                     Class3353.field15514.method5269().method17292(new Class4307(Class316.field1877));
                     Class3353.field15514.method5269().method17292(new Class4307(Class316.field1878));
                     Class3353.field15514.field4684.field3006.field2743 = field2743;

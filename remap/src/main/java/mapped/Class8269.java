@@ -53,7 +53,7 @@ public class Class8269
     }
     
     public static long method27469(final double n) {
-        return MathHelper.method35645(n);
+        return MathHelper.lfloor(n);
     }
     
     public static float method27470(final double n) {

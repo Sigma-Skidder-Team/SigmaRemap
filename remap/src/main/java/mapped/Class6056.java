@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 import com.google.gson.JsonSyntaxException;
@@ -159,7 +160,7 @@ public class Class6056
         return jsonObject;
     }
     
-    public void method18016(final Class8654 class8654) {
+    public void method18016(final PacketBuffer class8654) {
         if (this.field24612 != null) {
             class8654.writeBoolean(true);
             class8654.method29517(this.field24612);
@@ -175,9 +176,9 @@ public class Class6056
             class8654.writeBoolean(false);
         }
         Class8832.method30843(this.field24616, class8654);
-        class8654.method29505(this.field24617.length);
+        class8654.writeVarInt(this.field24617.length);
         for (final String[] array : this.field24617) {
-            class8654.method29505(array.length);
+            class8654.writeVarInt(array.length);
             final String[] array2 = array;
             for (int length2 = array2.length, j = 0; j < length2; ++j) {
                 class8654.method29514(array2[j]);
@@ -242,13 +243,13 @@ public class Class6056
         throw new JsonSyntaxException("Advancement criteria cannot be empty");
     }
     
-    public static Class6056 method18018(final Class8654 class8654) {
+    public static Class6056 method18018(final PacketBuffer class8654) {
         final Class1932 class8655 = class8654.readBoolean() ? class8654.method29516() : null;
         final Class7339 class8656 = class8654.readBoolean() ? Class7339.method22540(class8654) : null;
         final Map<String, Class8832> method30842 = Class8832.method30842(class8654);
-        final String[][] array = new String[class8654.method29501()][];
+        final String[][] array = new String[class8654.readVarInt()][];
         for (int i = 0; i < array.length; ++i) {
-            array[i] = new String[class8654.method29501()];
+            array[i] = new String[class8654.readVarInt()];
             for (int j = 0; j < array[i].length; ++j) {
                 array[i][j] = class8654.method29513(32767);
             }

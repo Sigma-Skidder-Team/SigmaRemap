@@ -9,10 +9,11 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class736 extends Class527
 {
-    private static final Object2IntMap<Class383> field3996;
+    private static final Object2IntMap<DimensionType> field3996;
     private final BooleanConsumer field3997;
     private final Class9495 field3998;
     
@@ -46,19 +47,19 @@ public class Class736 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 20, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 20, 16777215);
         final int n4 = this.field3152 / 2 - 150;
         final int n5 = this.field3152 / 2 + 150;
         final int n6 = this.field3153 / 4 + 100;
         final int n7 = n6 + 10;
-        this.method3295(this.field3156, this.field3998.method35344().method8461(), this.field3152 / 2, n6 - 9 - 2, 10526880);
+        this.method3295(this.field3156, this.field3998.method35344().getFormattedText(), this.field3152 / 2, n6 - 9 - 2, 10526880);
         if (this.field3998.method35341() > 0) {
             Class565.method3293(n4 - 1, n6 - 1, n5 + 1, n7 + 1, -16777216);
             this.method3297(this.field3156, Class8822.method30773("optimizeWorld.info.converted", this.field3998.method35342()), n4, 40, 10526880);
             this.method3297(this.field3156, Class8822.method30773("optimizeWorld.info.skipped", this.field3998.method35343()), n4, 52, 10526880);
             this.method3297(this.field3156, Class8822.method30773("optimizeWorld.info.total", this.field3998.method35341()), n4, 64, 10526880);
             int n8 = 0;
-            for (final Class383 class383 : Class383.method1269()) {
+            for (final DimensionType class383 : DimensionType.method1269()) {
                 final int method35642 = MathHelper.method35642(this.field3998.method35339(class383) * (n5 - n4));
                 Class565.method3293(n4 + n8, n6, n4 + n8 + method35642, n7, Class736.field3996.getInt((Object)class383));
                 n8 += method35642;
@@ -71,9 +72,9 @@ public class Class736 extends Class527
     
     static {
         field3996 = Class8349.method27851((Object2IntMap)new Object2IntOpenCustomHashMap((Hash$Strategy)Class8349.method27852()), object2IntOpenCustomHashMap -> {
-            object2IntOpenCustomHashMap.put((Object)Class383.field2223, -13408734);
-            object2IntOpenCustomHashMap.put((Object)Class383.field2224, -10075085);
-            object2IntOpenCustomHashMap.put((Object)Class383.field2225, -8943531);
+            object2IntOpenCustomHashMap.put((Object) DimensionType.field2223, -13408734);
+            object2IntOpenCustomHashMap.put((Object) DimensionType.field2224, -10075085);
+            object2IntOpenCustomHashMap.put((Object) DimensionType.field2225, -8943531);
             object2IntOpenCustomHashMap.defaultReturnValue(-2236963);
         });
     }

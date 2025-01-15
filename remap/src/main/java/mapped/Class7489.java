@@ -4,23 +4,20 @@
 
 package mapped;
 
-import com.mojang.brigadier.Message;
 import java.util.function.Function;
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import com.google.common.collect.Lists;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class7489
 {
@@ -39,7 +36,7 @@ public class Class7489
         final ArrayList arrayList = Lists.newArrayList((Iterable)method1572.method7611());
         class7494.method31023(arrayList, class7493);
         method1572.method7608(arrayList);
-        final Class8660 method1573 = class7492.method23255().method1481(Class383.field2223).method6764();
+        final Class8660 method1573 = class7492.method23255().method1481(DimensionType.field2223).method6764();
         method1573.method29609().clear();
         method1572.method7611().forEach(class7496 -> class7495.method29609().add(class7496.method7621()));
         method1573.method29608().remove(class7493.method7621());
@@ -53,7 +50,7 @@ public class Class7489
         final ArrayList arrayList = Lists.newArrayList((Iterable)method1572.method7611());
         arrayList.remove(class7493);
         method1572.method7608(arrayList);
-        final Class8660 method1573 = class7492.method23255().method1481(Class383.field2223).method6764();
+        final Class8660 method1573 = class7492.method23255().method1481(DimensionType.field2223).method6764();
         method1573.method29609().clear();
         method1572.method7611().forEach(class7495 -> class7494.method29609().add(class7495.method7621()));
         method1573.method29608().add(class7493.method7621());

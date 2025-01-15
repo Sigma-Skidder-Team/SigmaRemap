@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class131 extends Class126
 {
     private final Class1932 field399;

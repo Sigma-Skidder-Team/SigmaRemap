@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Class392 implements AutoCloseable
 {
@@ -122,7 +124,7 @@ public class Class392 implements AutoCloseable
                         final float f3 = this.method1421(field4683, i) * n;
                         final float n2 = this.method1421(field4683, j) * f2;
                         class9139.set(n2, n2 * ((n2 * 0.6f + 0.4f) * 0.6f + 0.4f), n2 * (n2 * n2 * 0.6f + 0.4f));
-                        if (field4683.field10063.method20487() != Class383.field2225) {
+                        if (field4683.dimension.getType() != DimensionType.field2225) {
                             final Vector3f method6845 = this.method1426(class9138);
                             method6845.mul(f3);
                             class9139.add(method6845);
@@ -171,8 +173,8 @@ public class Class392 implements AutoCloseable
         return 1.0f - n2 * n2 * n2 * n2;
     }
     
-    private float method1421(final Class1847 class1847, final int n) {
-        return class1847.field10063.method20505(n);
+    private float method1421(final World class1847, final int n) {
+        return class1847.dimension.method20505(n);
     }
     
     public static int method1422(final int n, final int n2) {

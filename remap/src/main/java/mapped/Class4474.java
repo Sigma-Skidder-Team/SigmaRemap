@@ -14,7 +14,7 @@ public class Class4474 extends Class4473
     
     public Class4474(final BlockPos class354) {
         super(Class9520.field40996, 0);
-        this.field19849 = new Class6997(class354.getX(), class354.getY(), class354.getZ(), class354.getX(), class354.getY(), class354.getZ());
+        this.field19849 = new MutableBoundingBox(class354.getX(), class354.getY(), class354.getZ(), class354.getX(), class354.getY(), class354.getZ());
     }
     
     public Class4474(final Class1795 class1795, final Class51 class1796) {
@@ -26,8 +26,8 @@ public class Class4474 extends Class4473
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
-        final Class385 class1855 = new Class385(this.field19849.field27293, class1851.method6699(Class2020.field11523, this.field19849.field27293, this.field19849.field27295), this.field19849.field27295);
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+        final Mutable class1855 = new Mutable(this.field19849.minX, class1851.method6699(Class2020.field11523, this.field19849.minX, this.field19849.minZ), this.field19849.minZ);
         while (class1855.getY() > 0) {
             final Class7096 method6701 = class1851.method6701(class1855);
             final Class7096 method6702 = class1851.method6701(class1855.method1139());
@@ -60,7 +60,7 @@ public class Class4474 extends Class4473
                     }
                 }
             }
-            this.field19849 = new Class6997(class1855.getX(), class1855.getY(), class1855.getZ(), class1855.getX(), class1855.getY(), class1855.getZ());
+            this.field19849 = new MutableBoundingBox(class1855.getX(), class1855.getY(), class1855.getZ(), class1855.getX(), class1855.getY(), class1855.getZ());
             return this.method13452(class1851, class1853, random, class1855, Class9020.field38095, null);
         }
         return false;

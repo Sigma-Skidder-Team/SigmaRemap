@@ -11,14 +11,14 @@ public final class Class4409 implements Class4410<Optional<UUID>>
 {
     private static String[] field19741;
     
-    public void method13342(final Class8654 class8654, final Optional<UUID> optional) {
+    public void method13342(final PacketBuffer class8654, final Optional<UUID> optional) {
         class8654.writeBoolean(optional.isPresent());
         if (optional.isPresent()) {
             class8654.method29503(optional.get());
         }
     }
     
-    public Optional<UUID> method13343(final Class8654 class8654) {
+    public Optional<UUID> method13343(final PacketBuffer class8654) {
         return class8654.readBoolean() ? Optional.of(class8654.method29504()) : Optional.empty();
     }
     

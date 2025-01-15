@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class1854 implements Class1855, Class1853
@@ -13,9 +15,9 @@ public class Class1854 implements Class1855, Class1853
     public final int field10106;
     public final Class1860[][] field10107;
     public boolean field10108;
-    public final Class1847 field10109;
+    public final World field10109;
     
-    public Class1854(final Class1847 field10109, final BlockPos class354, final BlockPos class355) {
+    public Class1854(final World field10109, final BlockPos class354, final BlockPos class355) {
         this.field10109 = field10109;
         this.field10105 = class354.getX() >> 4;
         this.field10106 = class354.getZ() >> 4;
@@ -78,7 +80,7 @@ public class Class1854 implements Class1855, Class1853
     
     @Override
     public Class7096 method6701(final BlockPos class354) {
-        if (!Class1847.method6683(class354)) {
+        if (!World.method6683(class354)) {
             return this.method6982(class354).method6701(class354);
         }
         return Class7521.field29147.method11878();
@@ -86,7 +88,7 @@ public class Class1854 implements Class1855, Class1853
     
     @Override
     public Class7099 method6702(final BlockPos class354) {
-        if (!Class1847.method6683(class354)) {
+        if (!World.method6683(class354)) {
             return this.method6982(class354).method6702(class354);
         }
         return Class7558.field29974.method22148();

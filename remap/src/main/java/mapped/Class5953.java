@@ -25,6 +25,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponent;
 
 public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializer<ITextComponent>
 {
@@ -34,11 +36,11 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
     
     public ITextComponent deserialize(final JsonElement obj, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if (obj.isJsonPrimitive()) {
-            return new Class2260(obj.getAsString());
+            return new StringTextComponent(obj.getAsString());
         }
         if (obj.isJsonObject()) {
             final JsonObject asJsonObject = obj.getAsJsonObject();
-            Class2251 class2251;
+            TextComponent class2251;
             if (!asJsonObject.has("text")) {
                 if (!asJsonObject.has("translate")) {
                     if (!asJsonObject.has("score")) {
@@ -93,11 +95,11 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
                         final Object[] array = new Object[method35899.size()];
                         for (int i = 0; i < array.length; ++i) {
                             array[i] = this.deserialize(method35899.get(i), type, jsonDeserializationContext);
-                            if (array[i] instanceof Class2260) {
-                                final Class2260 class2252 = (Class2260)array[i];
-                                if (class2252.method8456().method30409()) {
-                                    if (class2252.method8462().isEmpty()) {
-                                        array[i] = class2252.method8498();
+                            if (array[i] instanceof StringTextComponent) {
+                                final StringTextComponent class2252 = (StringTextComponent)array[i];
+                                if (class2252.getStyle().method30409()) {
+                                    if (class2252.getSiblings().isEmpty()) {
+                                        array[i] = class2252.getText();
                                     }
                                 }
                             }
@@ -107,7 +109,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
                 }
             }
             else {
-                class2251 = new Class2260(Class9583.method35895(asJsonObject, "text"));
+                class2251 = new StringTextComponent(Class9583.method35895(asJsonObject, "text"));
             }
             if (asJsonObject.has("extra")) {
                 final JsonArray method35900 = Class9583.method35917(asJsonObject, "extra");
@@ -115,10 +117,10 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
                     throw new JsonParseException("Unexpected empty array of components");
                 }
                 for (int j = 0; j < method35900.size(); ++j) {
-                    class2251.method8458(this.deserialize(method35900.get(j), type, jsonDeserializationContext));
+                    class2251.appendSibling(this.deserialize(method35900.get(j), type, jsonDeserializationContext));
                 }
             }
-            class2251.method8455((Class8768)jsonDeserializationContext.deserialize(obj, (Type)Class8768.class));
+            class2251.setStyle((Style)jsonDeserializationContext.deserialize(obj, (Type) Style.class));
             return class2251;
         }
         if (!obj.isJsonArray()) {
@@ -129,7 +131,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
         for (final JsonElement jsonElement : asJsonArray) {
             final ITextComponent deserialize = this.deserialize(jsonElement, jsonElement.getClass(), jsonDeserializationContext);
             if (class2253 != null) {
-                class2253.method8458(deserialize);
+                class2253.appendSibling(deserialize);
             }
             else {
                 class2253 = deserialize;
@@ -138,7 +140,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
         return class2253;
     }
     
-    private void method17868(final Class8768 class8768, final JsonObject jsonObject, final JsonSerializationContext jsonSerializationContext) {
+    private void method17868(final Style class8768, final JsonObject jsonObject, final JsonSerializationContext jsonSerializationContext) {
         final JsonElement serialize = jsonSerializationContext.serialize((Object)class8768);
         if (serialize.isJsonObject()) {
             for (final Map.Entry<String, V> entry : ((JsonObject)serialize).entrySet()) {
@@ -149,17 +151,17 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
     
     public JsonElement serialize(final ITextComponent class2250, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
-        if (!class2250.method8456().method30409()) {
-            this.method17868(class2250.method8456(), jsonObject, jsonSerializationContext);
+        if (!class2250.getStyle().method30409()) {
+            this.method17868(class2250.getStyle(), jsonObject, jsonSerializationContext);
         }
-        if (!class2250.method8462().isEmpty()) {
+        if (!class2250.getSiblings().isEmpty()) {
             final JsonArray jsonArray = new JsonArray();
-            for (final ITextComponent class2251 : class2250.method8462()) {
+            for (final ITextComponent class2251 : class2250.getSiblings()) {
                 jsonArray.add(this.serialize(class2251, class2251.getClass(), jsonSerializationContext));
             }
             jsonObject.add("extra", (JsonElement)jsonArray);
         }
-        if (!(class2250 instanceof Class2260)) {
+        if (!(class2250 instanceof StringTextComponent)) {
             if (!(class2250 instanceof Class2259)) {
                 if (!(class2250 instanceof Class2254)) {
                     if (!(class2250 instanceof Class2252)) {
@@ -198,7 +200,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
                     final JsonObject jsonObject2 = new JsonObject();
                     jsonObject2.addProperty("name", class2253.method8475());
                     jsonObject2.addProperty("objective", class2253.method8476());
-                    jsonObject2.addProperty("value", class2253.method8459());
+                    jsonObject2.addProperty("value", class2253.getUnformattedComponentText());
                     jsonObject.add("score", (JsonElement)jsonObject2);
                 }
             }
@@ -222,7 +224,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
             }
         }
         else {
-            jsonObject.addProperty("text", ((Class2260)class2250).method8498());
+            jsonObject.addProperty("text", ((StringTextComponent)class2250).getText());
         }
         return (JsonElement)jsonObject;
     }
@@ -277,7 +279,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
             final GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.disableHtmlEscaping();
             gsonBuilder.registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953());
-            gsonBuilder.registerTypeHierarchyAdapter((Class)Class8768.class, (Object)new Class5982());
+            gsonBuilder.registerTypeHierarchyAdapter((Class) Style.class, (Object)new Class5982());
             gsonBuilder.registerTypeAdapterFactory((TypeAdapterFactory)new Class8818());
             return gsonBuilder.create();
         });

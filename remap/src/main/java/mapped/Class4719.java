@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class4719 extends Class4712<Class764, Class5853<Class764>>
 {
     private static final Class1932 field20321;
@@ -13,7 +15,7 @@ public class Class4719 extends Class4712<Class764, Class5853<Class764>>
         super(class8551, new Class5865(), 0.5f * field20322);
         this.field20322 = field20322;
         this.method13978(new Class1823<Class764, Class5853<Class764>>(this));
-        this.method13978((Class1799<Class764, Class5853<Class764>>)new Class1835((Class4778<Class511, Class5853>)this, new Class5865(0.5f, true), new Class5865(1.0f, true)));
+        this.method13978((Class1799<Class764, Class5853<Class764>>)new Class1835((Class4778<LivingEntity, Class5853>)this, new Class5865(0.5f, true), new Class5865(1.0f, true)));
     }
     
     public void method14026(final Class764 class764, final Class7351 class765, final float n) {

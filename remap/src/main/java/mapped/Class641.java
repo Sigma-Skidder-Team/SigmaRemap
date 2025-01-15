@@ -6,7 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 import org.apache.commons.lang3.Validate;
-import java.io.InputStream;
+
 import java.io.FileInputStream;
 import org.apache.commons.lang3.StringUtils;
 import java.util.Date;
@@ -49,20 +49,20 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         if (!this.field3643.method7811()) {
             String s2 = Class8822.method30773("gameMode." + this.field3643.method7813().method586(), new Object[0]);
             if (this.field3643.method7814()) {
-                s2 = Class2116.field12313 + Class8822.method30773("gameMode.hardcore", new Object[0]) + Class2116.field12330;
+                s2 = TextFormatting.DARK_RED + Class8822.method30773("gameMode.hardcore", new Object[0]) + TextFormatting.RESET;
             }
             if (this.field3643.method7815()) {
                 s2 = s2 + ", " + Class8822.method30773("selectWorld.cheats", new Object[0]);
             }
-            final String method8461 = this.field3643.method7816().method8461();
+            final String method8461 = this.field3643.method7816().getFormattedText();
             if (!this.field3643.method7817()) {
                 s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + method8461;
             }
             else if (!this.field3643.method7818()) {
-                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + Class2116.field12329 + method8461 + Class2116.field12330;
+                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + TextFormatting.ITALIC + method8461 + TextFormatting.RESET;
             }
             else {
-                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + Class2116.field12321 + method8461 + Class2116.field12330;
+                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + TextFormatting.RED + method8461 + TextFormatting.RESET;
             }
         }
         else {
@@ -92,21 +92,21 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
                         if (!Class9528.method35579().isStable()) {
                             Class565.method3188(n3, n2, 64.0f, (float)n10, 32, 32, 256, 256);
                             if (n9 < 32) {
-                                this.field3642.method3172(Class2116.field12315 + Class8822.method30773("selectWorld.tooltip.snapshot1", new Object[0]) + "\n" + Class2116.field12315 + Class8822.method30773("selectWorld.tooltip.snapshot2", new Object[0]));
+                                this.field3642.method3172(TextFormatting.GOLD + Class8822.method30773("selectWorld.tooltip.snapshot1", new Object[0]) + "\n" + TextFormatting.GOLD + Class8822.method30773("selectWorld.tooltip.snapshot2", new Object[0]));
                             }
                         }
                     }
                     else {
                         Class565.method3188(n3, n2, 96.0f, (float)n10, 32, 32, 256, 256);
                         if (n9 < 32) {
-                            this.field3642.method3172(Class2116.field12321 + Class8822.method30773("selectWorld.tooltip.fromNewerVersion1", new Object[0]) + "\n" + Class2116.field12321 + Class8822.method30773("selectWorld.tooltip.fromNewerVersion2", new Object[0]));
+                            this.field3642.method3172(TextFormatting.RED + Class8822.method30773("selectWorld.tooltip.fromNewerVersion1", new Object[0]) + "\n" + TextFormatting.RED + Class8822.method30773("selectWorld.tooltip.fromNewerVersion2", new Object[0]));
                         }
                     }
                 }
                 else {
                     Class565.method3188(n3, n2, 96.0f, (float)n10, 32, 32, 256, 256);
                     if (n9 < 32) {
-                        this.field3642.method3172(this.field3641.field4643.method6627(new Class2259("selectWorld.tooltip.unsupported", new Object[] { this.field3643.method7816() }).method8469(Class2116.field12321).method8461(), 175));
+                        this.field3642.method3172(this.field3641.field4643.method6627(new Class2259("selectWorld.tooltip.unsupported", new Object[] { this.field3643.method7816() }).applyTextStyle(TextFormatting.RED).getFormattedText(), 175));
                     }
                 }
             }
@@ -148,12 +148,12 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
                     else {
                         this.field3641.method5244(this.field3642);
                     }
-                }, new Class2259("selectWorld.versionQuestion", new Object[0]), new Class2259("selectWorld.versionWarning", new Object[] { this.field3643.method7816().method8461() }), Class8822.method30773("selectWorld.versionJoinButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                }, new Class2259("selectWorld.versionQuestion", new Object[0]), new Class2259("selectWorld.versionWarning", new Object[] { this.field3643.method7816().getFormattedText() }), Class8822.method30773("selectWorld.versionJoinButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
             }
         }
         else {
             Class2259 class2259 = new Class2259("selectWorld.backupQuestion", new Object[0]);
-            Class2259 class2260 = new Class2259("selectWorld.backupWarning", new Object[] { this.field3643.method7816().method8461(), Class9528.method35579().getName() });
+            Class2259 class2260 = new Class2259("selectWorld.backupWarning", new Object[] { this.field3643.method7816().getFormattedText(), Class9528.method35579().getName() });
             if (this.field3643.method7819()) {
                 class2259 = new Class2259("selectWorld.backupQuestion.customized", new Object[0]);
                 class2260 = new Class2259("selectWorld.backupWarning.customized", new Object[0]);

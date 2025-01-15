@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.INBTType;
+import net.minecraft.nbt.IntArrayNBT;
+import net.minecraft.nbt.IntNBT;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.base.Strings;
@@ -24,14 +28,14 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import org.apache.logging.log4j.Logger;
 
-public class Class51 implements Class41
+public class Class51 implements INBT
 {
     private static final Logger field124;
     private static final Pattern field125;
-    public static final Class6068<Class51> field126;
-    private final Map<String, Class41> field127;
+    public static final INBTType<Class51> field126;
+    private final Map<String, INBT> field127;
     
-    private Class51(final Map<String, Class41> field127) {
+    private Class51(final Map<String, INBT> field127) {
         this.field127 = field127;
     }
     
@@ -40,7 +44,7 @@ public class Class51 implements Class41
     }
     
     @Override
-    public void method259(final DataOutput dataOutput) throws IOException {
+    public void write(final DataOutput dataOutput) throws IOException {
         for (final String s : this.field127.keySet()) {
             method334(s, this.field127.get(s), dataOutput);
         }
@@ -52,12 +56,12 @@ public class Class51 implements Class41
     }
     
     @Override
-    public byte method260() {
+    public byte getId() {
         return 10;
     }
     
     @Override
-    public Class6068<Class51> method261() {
+    public INBTType<Class51> getType() {
         return Class51.field126;
     }
     
@@ -66,7 +70,7 @@ public class Class51 implements Class41
     }
     
     @Nullable
-    public Class41 method295(final String s, final Class41 class41) {
+    public INBT method295(final String s, final INBT class41) {
         return this.field127.put(s, class41);
     }
     
@@ -79,7 +83,7 @@ public class Class51 implements Class41
     }
     
     public void method298(final String s, final int n) {
-        this.field127.put(s, Class45.method279(n));
+        this.field127.put(s, IntNBT.valueOf(n));
     }
     
     public void method299(final String s, final long n) {
@@ -121,11 +125,11 @@ public class Class51 implements Class41
     }
     
     public void method308(final String s, final int[] array) {
-        this.field127.put(s, new Class53(array));
+        this.field127.put(s, new IntArrayNBT(array));
     }
     
     public void method309(final String s, final List<Integer> list) {
-        this.field127.put(s, new Class53(list));
+        this.field127.put(s, new IntArrayNBT(list));
     }
     
     public void method310(final String s, final long[] array) {
@@ -141,13 +145,13 @@ public class Class51 implements Class41
     }
     
     @Nullable
-    public Class41 method313(final String s) {
+    public INBT method313(final String s) {
         return this.field127.get(s);
     }
     
     public byte method314(final String s) {
-        final Class41 class41 = this.field127.get(s);
-        return (byte)((class41 != null) ? class41.method260() : 0);
+        final INBT class41 = this.field127.get(s);
+        return (byte)((class41 != null) ? class41.getId() : 0);
     }
     
     public boolean method315(final String s) {
@@ -241,7 +245,7 @@ public class Class51 implements Class41
     public String method323(final String s) {
         try {
             if (this.method316(s, 8)) {
-                return this.field127.get(s).method267();
+                return this.field127.get(s).getString();
             }
         }
         catch (final ClassCastException ex) {}
@@ -267,7 +271,7 @@ public class Class51 implements Class41
             }
         }
         catch (final ClassCastException ex) {
-            throw new Class2365(this.method332(s, Class53.field132, ex));
+            throw new Class2365(this.method332(s, IntArrayNBT.TYPE, ex));
         }
         return new int[0];
     }
@@ -342,17 +346,17 @@ public class Class51 implements Class41
         return this.field127.isEmpty();
     }
     
-    private Class7689 method332(final String s, final Class6068<?> class6068, final ClassCastException ex) {
+    private Class7689 method332(final String s, final INBTType<?> class6068, final ClassCastException ex) {
         final Class7689 method24421 = Class7689.method24421(ex, "Reading NBT data");
         final Class5204 method24422 = method24421.method24419("Corrupt NBT tag", 1);
-        method24422.method16296("Tag type found", () -> this.field127.get(s2).method261().method18120());
-        method24422.method16296("Tag type expected", class6068::method18120);
+        method24422.method16296("Tag type found", () -> this.field127.get(s2).getType().func_225648_a_());
+        method24422.method16296("Tag type expected", class6068::func_225648_a_);
         method24422.method16297("Tag name", s);
         return method24421;
     }
     
     public Class51 method333() {
-        return new Class51(Maps.newHashMap(Maps.transformValues((Map)this.field127, Class41::method265)));
+        return new Class51(Maps.newHashMap(Maps.transformValues((Map)this.field127, INBT::copy)));
     }
     
     @Override
@@ -365,43 +369,43 @@ public class Class51 implements Class41
         return this.field127.hashCode();
     }
     
-    private static void method334(final String s, final Class41 class41, final DataOutput dataOutput) throws IOException {
-        dataOutput.writeByte(class41.method260());
-        if (class41.method260() != 0) {
+    private static void method334(final String s, final INBT class41, final DataOutput dataOutput) throws IOException {
+        dataOutput.writeByte(class41.getId());
+        if (class41.getId() != 0) {
             dataOutput.writeUTF(s);
-            class41.method259(dataOutput);
+            class41.write(dataOutput);
         }
     }
     
-    private static byte method335(final DataInput dataInput, final Class7553 class7553) throws IOException {
+    private static byte method335(final DataInput dataInput, final NBTSizeTracker class7553) throws IOException {
         return dataInput.readByte();
     }
     
-    private static String method336(final DataInput dataInput, final Class7553 class7553) throws IOException {
+    private static String method336(final DataInput dataInput, final NBTSizeTracker class7553) throws IOException {
         return dataInput.readUTF();
     }
     
-    private static Class41 method337(final Class6068<?> class6068, final String s, final DataInput dataInput, final int n, final Class7553 class6069) {
+    private static INBT method337(final INBTType<?> class6068, final String s, final DataInput dataInput, final int n, final NBTSizeTracker class6069) {
         try {
-            return class6068.method18123(dataInput, n, class6069);
+            return class6068.func_225649_b_(dataInput, n, class6069);
         }
         catch (final IOException ex) {
             final Class7689 method24421 = Class7689.method24421(ex, "Loading NBT data");
             final Class5204 method24422 = method24421.method24418("NBT Tag");
             method24422.method16297("Tag name", s);
-            method24422.method16297("Tag type", class6068.method18120());
+            method24422.method16297("Tag type", class6068.func_225648_a_());
             throw new Class2365(method24421);
         }
     }
     
     public Class51 method338(final Class51 class51) {
         for (final String s : class51.field127.keySet()) {
-            final Class41 class52 = class51.field127.get(s);
-            if (class52.method260() != 10) {
-                this.method295(s, class52.method265());
+            final INBT class52 = class51.field127.get(s);
+            if (class52.getId() != 10) {
+                this.method295(s, class52.copy());
             }
             else if (!this.method316(s, 10)) {
-                this.method295(s, class52.method265());
+                this.method295(s, class52.copy());
             }
             else {
                 this.method327(s).method338((Class51)class52);
@@ -418,15 +422,15 @@ public class Class51 implements Class41
         if (!Class51.field125.matcher(input).matches()) {
             final String method292 = Class50.method292(input);
             final String substring = method292.substring(0, 1);
-            return new Class2260(substring).method8458(new Class2260(method292.substring(1, method292.length() - 1)).method8469(Class51.field98)).method8457(substring);
+            return new StringTextComponent(substring).appendSibling(new StringTextComponent(method292.substring(1, method292.length() - 1)).applyTextStyle(Class51.SYNTAX_HIGHLIGHTING_KEY)).appendText(substring);
         }
-        return new Class2260(input).method8469(Class51.field98);
+        return new StringTextComponent(input).applyTextStyle(Class51.SYNTAX_HIGHLIGHTING_KEY);
     }
     
     @Override
-    public ITextComponent method263(final String s, final int n) {
+    public ITextComponent toFormattedComponent(final String s, final int n) {
         if (!this.field127.isEmpty()) {
-            final Class2260 class2260 = new Class2260("{");
+            final StringTextComponent class2260 = new StringTextComponent("{");
             Set<String> keySet = this.field127.keySet();
             if (Class51.field124.isDebugEnabled()) {
                 final ArrayList arrayList = Lists.newArrayList((Iterable)this.field127.keySet());
@@ -434,24 +438,24 @@ public class Class51 implements Class41
                 keySet = (Set<String>)arrayList;
             }
             if (!s.isEmpty()) {
-                class2260.method8457("\n");
+                class2260.appendText("\n");
             }
             final Iterator<Object> iterator = keySet.iterator();
             while (iterator.hasNext()) {
                 final String s2 = iterator.next();
-                final ITextComponent method8458 = new Class2260(Strings.repeat(s, n + 1)).method8458(method340(s2)).method8457(String.valueOf(':')).method8457(" ").method8458(this.field127.get(s2).method263(s, n + 1));
+                final ITextComponent method8458 = new StringTextComponent(Strings.repeat(s, n + 1)).appendSibling(method340(s2)).appendText(String.valueOf(':')).appendText(" ").appendSibling(this.field127.get(s2).toFormattedComponent(s, n + 1));
                 if (iterator.hasNext()) {
-                    method8458.method8457(String.valueOf(',')).method8457(s.isEmpty() ? " " : "\n");
+                    method8458.appendText(String.valueOf(',')).appendText(s.isEmpty() ? " " : "\n");
                 }
-                class2260.method8458(method8458);
+                class2260.appendSibling(method8458);
             }
             if (!s.isEmpty()) {
-                class2260.method8457("\n").method8457(Strings.repeat(s, n));
+                class2260.appendText("\n").appendText(Strings.repeat(s, n));
             }
-            class2260.method8457("}");
+            class2260.appendText("}");
             return class2260;
         }
-        return new Class2260("{}");
+        return new StringTextComponent("{}");
     }
     
     static {

@@ -11,6 +11,7 @@ import com.google.common.collect.Lists;
 import java.util.Random;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.item.ItemStack;
 
 public class Class5446 extends Class5419<Class824>
 {
@@ -49,7 +50,7 @@ public class Class5446 extends Class5419<Class824>
         }
         if (method2633.nextInt(200) == 0) {
             if (Class5418.method16541(class1849, class1850, new BlockPos(class1850))) {
-                class1850.field2391.method6886(new Class406(class1850.field2391, class1850.getPosX(), class1850.method1944(), class1850.getPosZ(), this.method16633(Class181.values()[method2633.nextInt(Class181.values().length)], method2633.nextInt(3))));
+                class1850.world.method6886(new Class406(class1850.world, class1850.getPosX(), class1850.method1944(), class1850.getPosZ(), this.method16633(Class181.values()[method2633.nextInt(Class181.values().length)], method2633.nextInt(3))));
             }
         }
     }

@@ -49,7 +49,7 @@ public class Class3622 extends Class3617
         if (this.field16831.method4529()) {
             return false;
         }
-        if (this.field16831.field2391.method6771()) {
+        if (this.field16831.world.method6771()) {
             return false;
         }
         if (Class798.method4574(this.field16831).nextFloat() < 0.7f) {
@@ -72,13 +72,13 @@ public class Class3622 extends Class3617
         if (!this.field16831.method4510()) {
             return false;
         }
-        if (this.field16831.field2391.method6771()) {
+        if (this.field16831.world.method6771()) {
             return false;
         }
         if (this.method11152()) {
             return Class798.method4576(this.field16831).nextFloat() < 0.2f;
         }
-        if (this.field16831.field2424 % 20 == 0 && !Class798.method4562(this.field16831, Class798.method4561(this.field16831))) {
+        if (this.field16831.ticksExisted % 20 == 0 && !Class798.method4562(this.field16831, Class798.method4561(this.field16831))) {
             Class798.method4565(this.field16831, null);
             return false;
         }
@@ -177,13 +177,13 @@ public class Class3622 extends Class3617
     
     private Optional<BlockPos> method11158(final Predicate<Class7096> predicate, final double n) {
         final BlockPos class354 = new BlockPos(this.field16831);
-        final Class385 value = new Class385();
+        final Mutable value = new Mutable();
         for (int n2 = 0; n2 <= n; n2 = ((n2 <= 0) ? (1 - n2) : (-n2))) {
             for (boolean b = false; (b ? 1 : 0) < n; ++b) {
                 for (int i = 0; i <= (b ? 1 : 0); i = ((i <= 0) ? (1 - i) : (-i))) {
                     for (int j = (i < (b ? 1 : 0) && i > ((-b) ? 1 : 0)) ? b : 0; j <= (b ? 1 : 0); j = ((j <= 0) ? (1 - j) : (-j))) {
                         value.method1287(class354).method1292(i, n2 - 1, j);
-                        if (class354.withinDistance(value, n) && predicate.test(this.field16831.field2391.method6701(value))) {
+                        if (class354.withinDistance(value, n) && predicate.test(this.field16831.world.method6701(value))) {
                             return (Optional<BlockPos>)Optional.of(value);
                         }
                     }

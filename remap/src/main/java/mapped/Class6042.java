@@ -39,9 +39,9 @@ public class Class6042 extends Class6040
         final boolean b = Math.cos(a2 / 3.0 * 3.141592653589793) > 0.0;
         int n11 = -1;
         boolean b2 = false;
-        final Class385 class1867 = new Class385();
+        final Mutable class1867 = new Mutable();
         for (int i = Math.max(a, (int)n5 + 1); i >= 0; --i) {
-            class1867.method1284(n8, i, n9);
+            class1867.setPos(n8, i, n9);
             if (class1860.method6701(class1867).method21706()) {
                 if (i < (int)n5) {
                     class1860.method7008(class1867, class1862, false);

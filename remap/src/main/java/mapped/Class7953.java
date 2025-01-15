@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;

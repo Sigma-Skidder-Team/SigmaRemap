@@ -4,13 +4,13 @@
 
 package mapped;
 
-public final class Class7554 extends Class7553
+public final class Class7554 extends NBTSizeTracker
 {
     public Class7554(final long n) {
         super(n);
     }
     
     @Override
-    public void method23718(final long n) {
+    public void read(final long n) {
     }
 }

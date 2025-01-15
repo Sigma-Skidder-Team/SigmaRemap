@@ -67,37 +67,37 @@ public class Class3342 extends Class3167
     @Class6753
     public void method10578(final Class5717 class5717) {
         if (this.method9906()) {
-            if (!Class3342.field15514.field4684.field2404 && !Class6430.method19160(Class3342.field15514.field4684, 0.001f)) {
+            if (!Class3342.field15514.field4684.onGround && !Class6430.method19160(Class3342.field15514.field4684, 0.001f)) {
                 if (class5717.method16974() < 0.0) {
-                    if (this.field15946 != Class3342.field15514.field4684.field2396) {
-                        if (Class3342.field15514.field4684.field2396 + class5717.method16974() < this.field15946) {
+                    if (this.field15946 != Class3342.field15514.field4684.posY) {
+                        if (Class3342.field15514.field4684.posY + class5717.method16974() < this.field15946) {
                             this.field15947 = true;
                             final int method10579 = this.method10579();
                             if (method10579 >= 0) {
                                 Class3342.field15514.method5269().method17292(new Class4321(method10579));
                             }
                             if (method10579 >= 0 || Class3342.field15514.field4684.method2715(Class316.field1877).method27622() instanceof Class4036) {
-                                Class3342.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(Class3342.field15514.field4684.method1934().add(0.0, -2.0, 0.0), Direction.UP, Class3342.field15514.field4684.method1894().method1134(0, -2, 0), false)));
+                                Class3342.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(Class3342.field15514.field4684.method1934().add(0.0, -2.0, 0.0), Direction.UP, Class3342.field15514.field4684.method1894().add(0, -2, 0), false)));
                             }
                             if (method10579 >= 0) {
                                 Class3342.field15514.method5269().method17292(new Class4321(Class3342.field15514.field4684.field3006.field2743));
                             }
-                            class5717.method16975(this.field15946 - Class3342.field15514.field4684.field2396);
+                            class5717.method16975(this.field15946 - Class3342.field15514.field4684.posY);
                         }
                     }
                     else {
                         Class3342.field15514.field4684.method2725();
-                        class5717.method16975(Class3342.field15514.field4684.method1935().y);
-                        this.field15946 = (Class3342.field15514.field4648.field23439.method1056() ? (this.field15948 ? Class3342.field15514.field4684.field2396 : (Class3342.field15514.field4684.field2396 + 1.0)) : (this.field15948 ? (Class3342.field15514.field4684.field2396 - 1.0) : Class3342.field15514.field4684.field2396));
+                        class5717.method16975(Class3342.field15514.field4684.getMotion().y);
+                        this.field15946 = (Class3342.field15514.field4648.field23439.method1056() ? (this.field15948 ? Class3342.field15514.field4684.posY : (Class3342.field15514.field4684.posY + 1.0)) : (this.field15948 ? (Class3342.field15514.field4684.posY - 1.0) : Class3342.field15514.field4684.posY));
                         Class7482.method23149(class5717, 0.35);
                     }
                 }
             }
             else {
                 Class3342.field15514.field4684.method2725();
-                class5717.method16975(Class3342.field15514.field4684.method1935().y);
+                class5717.method16975(Class3342.field15514.field4684.getMotion().y);
                 Class7482.method23149(class5717, 0.35);
-                this.field15946 = (Class3342.field15514.field4648.field23439.method1056() ? (this.field15948 ? Class3342.field15514.field4684.field2396 : (Class3342.field15514.field4684.field2396 + 1.0)) : (this.field15948 ? (Class3342.field15514.field4684.field2396 - 1.0) : Class3342.field15514.field4684.field2396));
+                this.field15946 = (Class3342.field15514.field4648.field23439.method1056() ? (this.field15948 ? Class3342.field15514.field4684.posY : (Class3342.field15514.field4684.posY + 1.0)) : (this.field15948 ? (Class3342.field15514.field4684.posY - 1.0) : Class3342.field15514.field4684.posY));
             }
             Class6430.method19154(class5717.method16972());
             Class6430.method19155(class5717.method16974());

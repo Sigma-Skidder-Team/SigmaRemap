@@ -28,7 +28,7 @@ public class Class688 extends Class565
     }
     
     public ITextComponent method3819(final Class9081 class9081) {
-        return (class9081.method32732() == null) ? Class6749.method20549(class9081.method32729(), new Class2260(class9081.method32719().getName())) : class9081.method32732();
+        return (class9081.method32732() == null) ? Class6749.method20549(class9081.method32729(), new StringTextComponent(class9081.method32719().getName())) : class9081.method32732();
     }
     
     public void method3820(final boolean field3790) {
@@ -45,7 +45,7 @@ public class Class688 extends Class565
         int max = 0;
         int max2 = 0;
         for (final Class9081 class6518 : sortedCopy) {
-            max = Math.max(max, this.field3785.field4643.method6617(this.method3819(class6518).method8461()));
+            max = Math.max(max, this.field3785.field4643.method6617(this.method3819(class6518).getFormattedText()));
             if (class6517 == null) {
                 continue;
             }
@@ -61,7 +61,7 @@ public class Class688 extends Class565
         for (n2 = (i = subList.size()), n3 = 1; i > 20; i = (n2 + n3 - 1) / n3) {
             ++n3;
         }
-        final boolean b = this.field3785.method5283() || this.field3785.method5269().method17369().method11186();
+        final boolean b = this.field3785.method5283() || this.field3785.method5269().getNetworkManager().method11186();
         int n4;
         if (class6517 == null) {
             n4 = 0;
@@ -78,7 +78,7 @@ public class Class688 extends Class565
         int n8 = n5 * n3 + (n3 - 1) * 5;
         List<String> method6626 = null;
         if (this.field3788 != null) {
-            method6626 = this.field3785.field4643.method6626(this.field3788.method8461(), n - 50);
+            method6626 = this.field3785.field4643.method6626(this.field3788.getFormattedText(), n - 50);
             final Iterator<String> iterator2 = method6626.iterator();
             while (iterator2.hasNext()) {
                 n8 = Math.max(n8, this.field3785.field4643.method6617(iterator2.next()));
@@ -86,7 +86,7 @@ public class Class688 extends Class565
         }
         List<String> method6627 = null;
         if (this.field3787 != null) {
-            method6627 = this.field3785.field4643.method6626(this.field3787.method8461(), n - 50);
+            method6627 = this.field3785.field4643.method6626(this.field3787.getFormattedText(), n - 50);
             final Iterator<String> iterator3 = method6627.iterator();
             while (iterator3.hasNext()) {
                 n8 = Math.max(n8, this.field3785.field4643.method6617(iterator3.next()));
@@ -139,12 +139,12 @@ public class Class688 extends Class565
                     }
                     n11 += 9;
                 }
-                final String method6631 = this.method3819(class6519).method8461();
+                final String method6631 = this.method3819(class6519).getFormattedText();
                 if (class6519.method32720() != Class101.field301) {
                     this.field3785.field4643.method6609(method6631, (float)n11, (float)n12, -1);
                 }
                 else {
-                    this.field3785.field4643.method6609(Class2116.field12329 + method6631, (float)n11, (float)n12, -1862270977);
+                    this.field3785.field4643.method6609(TextFormatting.ITALIC + method6631, (float)n11, (float)n12, -1862270977);
                 }
                 if (class6517 != null) {
                     if (class6519.method32720() != Class101.field301) {
@@ -206,7 +206,7 @@ public class Class688 extends Class565
     private void method3823(final Class9290 class9290, final int n, final String s, final int n2, final int n3, final Class9081 class9291) {
         final int method23969 = class9290.method34311().method19636(s, class9290).method23969();
         if (class9290.method34317() != Class263.field1257) {
-            final String string = Class2116.field12323 + "" + method23969;
+            final String string = TextFormatting.YELLOW + "" + method23969;
             this.field3785.field4643.method6609(string, (float)(n3 - this.field3785.field4643.method6617(string)), (float)n, 16777215);
         }
         else {

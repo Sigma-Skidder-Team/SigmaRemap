@@ -17,7 +17,7 @@ public class Class4597 extends Class4592<Class5128>
         super(function);
     }
     
-    public boolean method13641(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final Class6997 class1877, final Class5128 class1878) {
+    public boolean method13641(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final MutableBoundingBox class1877, final Class5128 class1878) {
         final int n = random.nextInt(3) + random.nextInt(2) + class1878.field22082;
         final int method1074 = class1876.getX();
         final int method1075 = class1876.getY();
@@ -134,7 +134,7 @@ public class Class4597 extends Class4592<Class5128>
         final int method1074 = class1878.getX();
         final int method1075 = class1878.getY();
         final int method1076 = class1878.getZ();
-        final Class385 class1879 = new Class385();
+        final Mutable class1879 = new Mutable();
         for (int i = 0; i <= n + 1; ++i) {
             int n2 = 1;
             if (i == 0) {
@@ -145,7 +145,7 @@ public class Class4597 extends Class4592<Class5128>
             }
             for (int j = -n2; j <= n2; ++j) {
                 for (int k = -n2; k <= n2; ++k) {
-                    if (!Class4592.method13608(class1877, class1879.method1284(method1074 + j, method1075 + i, method1076 + k))) {
+                    if (!Class4592.method13608(class1877, class1879.setPos(method1074 + j, method1075 + i, method1076 + k))) {
                         return false;
                     }
                 }

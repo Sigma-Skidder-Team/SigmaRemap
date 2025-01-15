@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class Class4064 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.method1886().method18496(2.0), class1851 -> {
             final boolean b;
             if (class1851 != null) {

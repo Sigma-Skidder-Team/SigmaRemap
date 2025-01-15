@@ -4,10 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Set;
 import java.util.Random;
 
-public abstract class Class6851<E extends Class511>
+public abstract class Class6851<E extends LivingEntity>
 {
     private static final Random field26878;
     private final int field26879;

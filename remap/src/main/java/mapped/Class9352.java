@@ -8,6 +8,8 @@ import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.item.ItemStack;
+
 import java.util.Map;
 
 public class Class9352

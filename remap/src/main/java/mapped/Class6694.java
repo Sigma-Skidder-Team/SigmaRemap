@@ -25,11 +25,11 @@ public class Class6694 extends Class6693
             throw new Class2332("Invalid heart damage amount \"" + array[0].method26314() + "\"");
         }
         for (int n = 0; n < 80.0 + 40.0 * (array[0].method26311() - 0.5); ++n) {
-            Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.field2395, Class6694.field26420.field4684.field2396 + 0.06, Class6694.field26420.field4684.field2397, false));
-            Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.field2395, Class6694.field26420.field4684.field2396, Class6694.field26420.field4684.field2397, false));
+            Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.posX, Class6694.field26420.field4684.posY + 0.06, Class6694.field26420.field4684.posZ, false));
+            Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.posX, Class6694.field26420.field4684.posY, Class6694.field26420.field4684.posZ, false));
         }
-        Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.field2395, Class6694.field26420.field4684.field2396, Class6694.field26420.field4684.field2397, false));
-        Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.field2395, Class6694.field26420.field4684.field2396 + 0.02, Class6694.field26420.field4684.field2397, false));
+        Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.posX, Class6694.field26420.field4684.posY, Class6694.field26420.field4684.posZ, false));
+        Class6694.field26420.method5269().method17292(new Class4354(Class6694.field26420.field4684.posX, Class6694.field26420.field4684.posY + 0.02, Class6694.field26420.field4684.posZ, false));
         class6428.method19104("Sent damage packets");
     }
 }

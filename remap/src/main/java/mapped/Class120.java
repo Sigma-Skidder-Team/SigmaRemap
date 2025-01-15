@@ -17,6 +17,8 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import java.util.Arrays;
 import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Predicate;
 
 public final class Class120 implements Predicate<ItemStack>
@@ -73,9 +75,9 @@ public final class Class120 implements Predicate<ItemStack>
         return this.field377;
     }
     
-    public void method614(final Class8654 class8654) {
+    public void method614(final PacketBuffer class8654) {
         this.method612();
-        class8654.method29505(this.field376.length);
+        class8654.writeVarInt(this.field376.length);
         for (int i = 0; i < this.field376.length; ++i) {
             class8654.method29509(this.field376[i]);
         }
@@ -124,8 +126,8 @@ public final class Class120 implements Predicate<ItemStack>
         return method617(Stream.of(new Class7451(class7909, null)));
     }
     
-    public static Class120 method621(final Class8654 class8654) {
-        return method617((Stream<? extends Class7452>)Stream.generate(() -> new Class7453(class8655.method29511(), null)).limit(class8654.method29501()));
+    public static Class120 method621(final PacketBuffer class8654) {
+        return method617((Stream<? extends Class7452>)Stream.generate(() -> new Class7453(class8655.method29511(), null)).limit(class8654.readVarInt()));
     }
     
     public static Class120 method622(final JsonElement jsonElement) {

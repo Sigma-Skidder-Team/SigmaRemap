@@ -16,7 +16,7 @@ public abstract class Class4598<T extends Class5129> extends Class4592<T>
         super(function);
     }
     
-    public void method13645(final Class1875 class1875, final Random random, final int n, final BlockPos class1876, final int n2, final Set<BlockPos> set, final Class6997 class1877, final Class5129 class1878) {
+    public void method13645(final Class1875 class1875, final Random random, final int n, final BlockPos class1876, final int n2, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5129 class1878) {
         for (int i = 0; i < n - n2; ++i) {
             this.method13618(class1875, random, class1876.method1138(i), set, class1877, class1878);
         }
@@ -38,13 +38,13 @@ public abstract class Class4598<T extends Class5129> extends Class4592<T>
         if (value.getY() >= 1 && value.getY() + n + 1 <= 256) {
             for (int i = 0; i <= n + 1; ++i) {
                 final int method1077 = class1877.field22086.method1264(n2, n, n3, i);
-                final Class385 class1878 = new Class385();
+                final Mutable class1878 = new Mutable();
                 for (int j = -method1077; j <= method1077; ++j) {
                     for (int k = -method1077; k <= method1077; ++k) {
                         if (i + value.getY() < 0 || i + value.getY() >= 256) {
                             return Optional.empty();
                         }
-                        class1878.method1284(j + value.getX(), i + value.getY(), k + value.getZ());
+                        class1878.setPos(j + value.getX(), i + value.getY(), k + value.getZ());
                         if (!Class4592.method13608(class1875, class1878) || (!class1877.field22096 && Class4592.method13611(class1875, class1878))) {
                             return Optional.empty();
                         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class7644
 {
     private static String[] field30360;

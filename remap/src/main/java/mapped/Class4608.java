@@ -45,7 +45,7 @@ public class Class4608 extends Class4535<Class5133>
     public boolean method13664(final Class1851 class1851, final Random random, final Class5133 class1852, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final int b, final int b2, final int b3, final int n7, final int n8) {
         int n9 = 0;
         final BitSet set = new BitSet(n7 * n8 * n7);
-        final Class385 class1853 = new Class385();
+        final Mutable class1853 = new Mutable();
         final double[] array = new double[class1852.field22108 * 4];
         for (int i = 0; i < class1852.field22108; ++i) {
             final float n10 = i / (float)class1852.field22108;
@@ -102,7 +102,7 @@ public class Class4608 extends Class4535<Class5133>
                                         final int n26 = n20 - b + (n22 - b2) * n7 + (n24 - b3) * n7 * n8;
                                         if (!set.get(n26)) {
                                             set.set(n26);
-                                            class1853.method1284(n20, n22, n24);
+                                            class1853.setPos(n20, n22, n24);
                                             if (class1852.field22107.method8158().test(class1851.method6701(class1853))) {
                                                 class1851.method6688(class1853, class1852.field22109, 2);
                                                 ++n9;

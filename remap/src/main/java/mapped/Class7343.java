@@ -62,7 +62,7 @@ public class Class7343
             return true;
         }
         if (Class527.method3050(n)) {
-            this.method22552(Class9528.method35577(Class2116.method8259(this.field28355.field4651.method22507().replaceAll("\\r", ""))));
+            this.method22552(Class9528.method35577(TextFormatting.getTextWithoutFormattingCodes(this.field28355.field4651.method22507().replaceAll("\\r", ""))));
             this.field28361 = this.field28360;
             return true;
         }

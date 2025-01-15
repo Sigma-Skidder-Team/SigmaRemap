@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 public final class Class6398 extends Class6397
 {
@@ -12,7 +15,7 @@ public final class Class6398 extends Class6397
     
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
-        final Class1847 method16763 = class5491.method16763();
+        final World method16763 = class5491.method16763();
         if (!method16763.method6678()) {
             this.field25515 = false;
             final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859));

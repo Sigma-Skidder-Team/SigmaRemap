@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class6828 extends Class6826
 {
     public final EntityType<?> field26820;

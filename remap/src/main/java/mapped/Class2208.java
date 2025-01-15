@@ -14,7 +14,7 @@ public enum Class2208
     public static final enum Class2208 field13456;
     public static final enum Class2208 field13457;
     private static final Class2208[] field13458;
-    private static final Map<Class<? extends Class4252<?>>, Class2208> field13459;
+    private static final Map<Class<? extends IPacket<?>>, Class2208> field13459;
     private final int field13460;
     private final Map<Class2060, ? extends Class7719<?>> field13461;
     
@@ -28,12 +28,12 @@ public enum Class2208
     }
     
     @Nullable
-    public Integer method8387(final Class2060 class2060, final Class4252<?> class2061) {
+    public Integer method8387(final Class2060 class2060, final IPacket<?> class2061) {
         return ((Class7719)this.field13461.get(class2060)).method24646(class2061.getClass());
     }
     
     @Nullable
-    public Class4252<?> method8388(final Class2060 class2060, final int n) {
+    public IPacket<?> method8388(final Class2060 class2060, final int n) {
         return ((Class7719)this.field13461.get(class2060)).method24647(n);
     }
     
@@ -46,7 +46,7 @@ public enum Class2208
         return (n >= -1 && n <= 2) ? Class2208.field13458[n + 1] : null;
     }
     
-    public static Class2208 method8391(final Class4252<?> class4252) {
+    public static Class2208 method8391(final IPacket<?> class4252) {
         return Class2208.field13459.get(class4252.getClass());
     }
     

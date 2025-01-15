@@ -42,11 +42,11 @@ public class Class634 extends Class633
                 }
                 catch (final UnknownHostException ex) {
                     this.field3624.field41616 = -1L;
-                    this.field3624.field41615 = Class2116.field12313 + Class8822.method30773("multiplayer.status.cannot_resolve", new Object[0]);
+                    this.field3624.field41615 = TextFormatting.DARK_RED + Class8822.method30773("multiplayer.status.cannot_resolve", new Object[0]);
                 }
                 catch (final Exception ex2) {
                     this.field3624.field41616 = -1L;
-                    this.field3624.field41615 = Class2116.field12313 + Class8822.method30773("multiplayer.status.cannot_connect", new Object[0]);
+                    this.field3624.field41615 = TextFormatting.DARK_RED + Class8822.method30773("multiplayer.status.cannot_connect", new Object[0]);
                 }
                 return;
             });
@@ -59,7 +59,7 @@ public class Class634 extends Class633
         for (int i = 0; i < Math.min(method6626.size(), 2); ++i) {
             this.field3623.field4643.method6610((String)method6626.get(i), (float)(n3 + 32 + 3), (float)(n2 + 12 + 9 * i), 8421504);
         }
-        final String s = b4 ? (Class2116.field12313 + this.field3624.field41618) : this.field3624.field41614;
+        final String s = b4 ? (TextFormatting.DARK_RED + this.field3624.field41618) : this.field3624.field41614;
         final int method6627 = this.field3623.field4643.method6617(s);
         this.field3623.field4643.method6610(s, (float)(n3 + n4 - method6627 - 15 - 2), (float)(n2 + 1), 8421504);
         int n9 = 0;

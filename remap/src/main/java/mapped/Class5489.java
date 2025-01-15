@@ -5,8 +5,9 @@
 package mapped;
 
 import net.minecraft.dispenser.IPosition;
+import net.minecraft.world.World;
 
 public interface Class5489 extends IPosition
 {
-    Class1847 method16763();
+    World method16763();
 }

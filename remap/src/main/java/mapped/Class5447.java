@@ -6,8 +6,9 @@ package mapped;
 
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
-public class Class5447 extends Class5419<Class511>
+public class Class5447 extends Class5419<LivingEntity>
 {
     private static String[] field22674;
     
@@ -16,7 +17,7 @@ public class Class5447 extends Class5419<Class511>
     }
     
     @Override
-    public boolean method16549(final Class1849 class1849, final Class511 class1850, final long n) {
+    public boolean method16549(final Class1849 class1849, final LivingEntity class1850, final long n) {
         return true;
     }
 }

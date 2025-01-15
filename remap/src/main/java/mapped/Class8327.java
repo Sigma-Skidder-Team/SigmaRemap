@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import java.util.Date;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,7 +23,7 @@ public class Class8327
     private void method27711(final Class5723 class5723) {
         if (this.field34199.method5282() != null) {
             if (class5723.method16998() instanceof Class4378) {
-                if (new ArrayList(Arrays.asList("§cYou are permanently banned from MinemenClub. §r", "§cYour connection to the server §r§c§leu-practice§r§c has been prevented due to you being associated to a blacklisted player.§r", "§cYou are blacklisted from MinemenClub. §r")).contains(((Class4378)class5723.method16998()).method13164().method8461())) {
+                if (new ArrayList(Arrays.asList("§cYou are permanently banned from MinemenClub. §r", "§cYour connection to the server §r§c§leu-practice§r§c has been prevented due to you being associated to a blacklisted player.§r", "§cYou are blacklisted from MinemenClub. §r")).contains(((Class4378)class5723.method16998()).method13164().getFormattedText())) {
                     final Class7971 method25462 = Class9463.method35173().method35198().method25462();
                     if (method25462 != null) {
                         method25462.method25895(new Class8848(this.field34199.method5282().field41613, new Date(Long.MAX_VALUE)));
@@ -50,7 +49,7 @@ public class Class8327
                     }
                 }
                 else {
-                    final long method25464 = this.method27712(((Class4262)class5723.method16998()).method12793().method8461());
+                    final long method25464 = this.method27712(((Class4262)class5723.method16998()).method12793().getFormattedText());
                     if (method25464 == 0L) {
                         return;
                     }
@@ -64,7 +63,7 @@ public class Class8327
                 }
             }
             else {
-                final long method25466 = this.method27712(((Class4277)class5723.method16998()).method12842().method8461());
+                final long method25466 = this.method27712(((Class4277)class5723.method16998()).method12842().getFormattedText());
                 if (method25466 == 0L) {
                     return;
                 }

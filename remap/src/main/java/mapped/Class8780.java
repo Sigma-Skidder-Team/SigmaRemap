@@ -35,14 +35,14 @@ public class Class8780 extends DataFix
                 if (!"null".equals(anObject) && !StringUtils.isEmpty((CharSequence)anObject)) {
                     if (anObject.charAt(0) != '\"' || anObject.charAt(anObject.length() - 1) != '\"') {
                         if (anObject.charAt(0) != '{' || anObject.charAt(anObject.length() - 1) != '}') {
-                            class2250 = new Class2260(anObject);
+                            class2250 = new StringTextComponent(anObject);
                             return dynamic4.createString(Class5953.method17869(class2250));
                         }
                     }
                     try {
                         class2250 = Class9583.method35925(Class6151.field24883, anObject, ITextComponent.class, true);
                         if (class2250 == null) {
-                            class2250 = new Class2260("");
+                            class2250 = new StringTextComponent("");
                         }
                     }
                     catch (final JsonParseException ex) {}
@@ -59,11 +59,11 @@ public class Class8780 extends DataFix
                         catch (final JsonParseException ex3) {}
                     }
                     if (class2250 == null) {
-                        class2250 = new Class2260(anObject);
+                        class2250 = new StringTextComponent(anObject);
                     }
                 }
                 else {
-                    class2250 = new Class2260("");
+                    class2250 = new StringTextComponent("");
                 }
                 return dynamic4.createString(Class5953.method17869(class2250));
             }

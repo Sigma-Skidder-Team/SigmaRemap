@@ -21,7 +21,7 @@ public class Class9092
     private BlockPos field38503;
     private boolean field38504;
     private Class7859 field38505;
-    private Class6997 field38506;
+    private MutableBoundingBox field38506;
     private boolean field38507;
     private Random field38508;
     private int field38509;
@@ -77,7 +77,7 @@ public class Class9092
         return this;
     }
     
-    public Class9092 method32849(final Class6997 field38506) {
+    public Class9092 method32849(final MutableBoundingBox field38506) {
         this.field38506 = field38506;
         return this;
     }
@@ -131,7 +131,7 @@ public class Class9092
     }
     
     @Nullable
-    public Class6997 method32860() {
+    public MutableBoundingBox method32860() {
         if (this.field38506 == null) {
             if (this.field38505 != null) {
                 this.method32863();
@@ -164,11 +164,11 @@ public class Class9092
     }
     
     @Nullable
-    private Class6997 method32866(final Class7859 class7859) {
+    private MutableBoundingBox method32866(final Class7859 class7859) {
         if (class7859 != null) {
             final int n = class7859.field32290 * 16;
             final int n2 = class7859.field32291 * 16;
-            return new Class6997(n, 0, n2, n + 16 - 1, 255, n2 + 16 - 1);
+            return new MutableBoundingBox(n, 0, n2, n + 16 - 1, 255, n2 + 16 - 1);
         }
         return this.field38506;
     }

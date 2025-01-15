@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.function.Predicate;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.item.ItemStack;
+
 import java.util.Set;
 
 public class Class137 extends Class126

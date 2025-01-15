@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
@@ -37,8 +38,8 @@ public class Class526 extends Class516<Class3433>
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.method8461(), 12.0f, 5.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3148.getFormattedText(), 12.0f, 5.0f, 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
@@ -200,7 +201,7 @@ public class Class526 extends Class516<Class3433>
                     if (n4 >= 0) {
                         if (method5316 != null) {
                             final ArrayList arrayList = Lists.newArrayList();
-                            arrayList.add("" + Class2116.field12324 + Class2116.field12329 + Class8822.method30773("container.enchant.clue", method5316.method18599(n4).method8461()));
+                            arrayList.add("" + TextFormatting.WHITE + TextFormatting.ITALIC + Class8822.method30773("container.enchant.clue", method5316.method18599(n4).getFormattedText()));
                             if (!field27304) {
                                 arrayList.add("");
                                 if (this.field3150.field4684.field3026 >= n3) {
@@ -211,7 +212,7 @@ public class Class526 extends Class516<Class3433>
                                     else {
                                         str = Class8822.method30773("container.enchant.lapis.one", new Object[0]);
                                     }
-                                    arrayList.add(((method5315 < n5) ? Class2116.field12321 : Class2116.field12316) + "" + str);
+                                    arrayList.add(((method5315 < n5) ? TextFormatting.RED : TextFormatting.GRAY) + "" + str);
                                     String str2;
                                     if (n5 != 1) {
                                         str2 = Class8822.method30773("container.enchant.level.many", n5);
@@ -219,10 +220,10 @@ public class Class526 extends Class516<Class3433>
                                     else {
                                         str2 = Class8822.method30773("container.enchant.level.one", new Object[0]);
                                     }
-                                    arrayList.add(Class2116.field12316 + "" + str2);
+                                    arrayList.add(TextFormatting.GRAY + "" + str2);
                                 }
                                 else {
-                                    arrayList.add(Class2116.field12321 + Class8822.method30773("container.enchant.level.requirement", ((Class3433)this.field3077).field16221[i]));
+                                    arrayList.add(TextFormatting.RED + Class8822.method30773("container.enchant.level.requirement", ((Class3433)this.field3077).field16221[i]));
                                 }
                             }
                             this.method3032(arrayList, n, n2);

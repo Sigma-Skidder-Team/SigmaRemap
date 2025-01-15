@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Properties;
 import java.util.Set;
+
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,7 +22,7 @@ public class Class9203
         if (Class9203.field38995 == null) {
             return null;
         }
-        final Class383 field36393 = Class8663.field36393;
+        final DimensionType field36393 = Class8663.field36393;
         if (field36393 != null) {
             final int n = field36393.method1270() - Class9203.field38996;
             Class9103 class9103 = null;

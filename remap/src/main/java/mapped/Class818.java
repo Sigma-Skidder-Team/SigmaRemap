@@ -4,9 +4,12 @@
 
 package mapped;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class818 extends Class789
 {
@@ -19,10 +22,10 @@ public class Class818 extends Class789
     public int field4386;
     public boolean field4387;
     
-    public Class818(final EntityType<? extends Class818> class7499, final Class1847 class7500) {
+    public Class818(final EntityType<? extends Class818> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4385 = 1.0f;
-        this.field4386 = this.field2423.nextInt(6000) + 6000;
+        this.field4386 = this.rand.nextInt(6000) + 6000;
         this.method4145(Class257.field1211, 0.0f);
     }
     
@@ -39,7 +42,7 @@ public class Class818 extends Class789
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return this.method2625() ? (class291.field34098 * 0.85f) : (class291.field34098 * 0.92f);
     }
     
@@ -55,29 +58,29 @@ public class Class818 extends Class789
         super.method2736();
         this.field4384 = this.field4381;
         this.field4383 = this.field4382;
-        this.field4382 += (float)((this.field2404 ? -1 : 4) * 0.3);
+        this.field4382 += (float)((this.onGround ? -1 : 4) * 0.3);
         this.field4382 = MathHelper.clamp(this.field4382, 0.0f, 1.0f);
-        if (!this.field2404) {
+        if (!this.onGround) {
             if (this.field4385 < 1.0f) {
                 this.field4385 = 1.0f;
             }
         }
         this.field4385 *= (float)0.9;
-        final Vec3d method1935 = this.method1935();
-        if (!this.field2404) {
+        final Vec3d method1935 = this.getMotion();
+        if (!this.onGround) {
             if (method1935.y < 0.0) {
                 this.method1936(method1935.mul(1.0, 0.6, 1.0));
             }
         }
         this.field4381 += this.field4385 * 2.0f;
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             if (this.method1768()) {
                 if (!this.method2625()) {
                     if (!this.method4817()) {
                         if (--this.field4386 <= 0) {
-                            this.method1695(Class8520.field35070, 1.0f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f);
+                            this.method1695(Class8520.field35070, 1.0f, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
                             this.method1764(Class7739.field31374);
-                            this.field4386 = this.field2423.nextInt(6000) + 6000;
+                            this.field4386 = this.rand.nextInt(6000) + 6000;
                         }
                     }
                 }
@@ -96,7 +99,7 @@ public class Class818 extends Class789
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35071;
     }
     
@@ -111,7 +114,7 @@ public class Class818 extends Class789
     }
     
     public Class818 method4816(final Class788 class788) {
-        return EntityType.field28966.method23371(this.field2391);
+        return EntityType.field28966.method23371(this.world);
     }
     
     @Override
@@ -142,15 +145,15 @@ public class Class818 extends Class789
     
     @Override
     public boolean method4168(final double n) {
-        return this.method4817() && !this.method1806();
+        return this.method4817() && !this.isBeingRidden();
     }
     
     @Override
     public void method1773(final Entity class399) {
         super.method1773(class399);
-        class399.method1656(this.getPosX() + 0.1f * MathHelper.sin(this.field2951 * 0.017453292f), this.method1942(0.5) + class399.method1776() + 0.0, this.getPosZ() - 0.1f * MathHelper.cos(this.field2951 * 0.017453292f));
-        if (class399 instanceof Class511) {
-            ((Class511)class399).field2951 = this.field2951;
+        class399.setPosition(this.getPosX() + 0.1f * MathHelper.sin(this.field2951 * 0.017453292f), this.method1942(0.5) + class399.method1776() + 0.0, this.getPosZ() - 0.1f * MathHelper.cos(this.field2951 * 0.017453292f));
+        if (class399 instanceof LivingEntity) {
+            ((LivingEntity)class399).field2951 = this.field2951;
         }
     }
     

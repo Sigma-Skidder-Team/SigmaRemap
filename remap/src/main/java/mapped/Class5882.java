@@ -63,7 +63,7 @@ public class Class5882<T extends Entity> extends Class5846<T>
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         this.field24132.field25183 = n5 * 0.017453292f;
         this.field24132.field25184 = n4 * 0.017453292f;
-        if (Entity.method1680(t.method1935()) > 1.0E-7) {
+        if (Entity.method1680(t.getMotion()) > 1.0E-7) {
             final Class6300 field24132 = this.field24132;
             field24132.field25183 += -0.05f + -0.05f * MathHelper.cos(n3 * 0.3f);
             this.field24133.field25183 = -0.1f * MathHelper.cos(n3 * 0.3f);

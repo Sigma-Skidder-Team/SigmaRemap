@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
 public class Class4058 extends Class3820
 {
     private static String[] field18153;
@@ -13,7 +16,7 @@ public class Class4058 extends Class3820
     }
     
     @Override
-    public boolean method11714(final ItemStack class8321, final Class512 class8322, final Class511 class8323, final Class316 class8324) {
+    public boolean method11714(final ItemStack class8321, final Class512 class8322, final LivingEntity class8323, final Class316 class8324) {
         if (class8321.method27667() && !(class8323 instanceof Class512)) {
             if (class8323.method1768()) {
                 class8323.method1872(class8321.method27664());

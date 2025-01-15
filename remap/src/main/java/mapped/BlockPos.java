@@ -4,13 +4,17 @@
 
 package mapped;
 
+import com.google.common.collect.AbstractIterator;
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 
+import java.util.Spliterators;
+import java.util.function.Consumer;
 import java.util.stream.StreamSupport;
 import java.util.stream.Stream;
 import java.util.stream.IntStream;
@@ -61,71 +65,76 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
     public BlockPos(final Vec3i class352) {
         this(class352.getX(), class352.getY(), class352.getZ());
     }
-    
-    public static <T> BlockPos method1122(final Dynamic<T> dynamic) {
-        final Spliterator.OfInt spliterator = dynamic.asIntStream().spliterator();
-        final int[] array = new int[3];
-        if (spliterator.tryAdvance(n -> array2[0] = n)) {
-            if (spliterator.tryAdvance(n2 -> array3[1] = n2)) {
-                spliterator.tryAdvance(n3 -> array4[2] = n3);
-            }
+
+    public static <T> BlockPos deserialize(Dynamic<T> p_218286_0_)
+    {
+        Spliterator.OfInt ofint = p_218286_0_.asIntStream().spliterator();
+        int[] aint = new int[3];
+
+        if (ofint.tryAdvance((Integer p_218285_1_) ->
+        {
+            aint[0] = p_218285_1_;
+        }) && ofint.tryAdvance((Integer p_218280_1_) ->
+        {
+            aint[1] = p_218280_1_;
+        }))
+        {
+            ofint.tryAdvance((Integer p_218284_1_) ->
+            {
+                aint[2] = p_218284_1_;
+            });
         }
-        return new BlockPos(array[0], array[1], array[2]);
+        return new BlockPos(aint[0], aint[1], aint[2]);
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)dynamicOps.createIntList(IntStream.of(this.getX(), this.getY(), this.getZ()));
     }
     
-    public static long method1124(final long n, final Direction class179) {
-        return method1125(n, class179.getXOffset(), class179.getYOffset(), class179.getZOffset());
+    public static long offset(final long n, final Direction class179) {
+        return offset(n, class179.getXOffset(), class179.getYOffset(), class179.getZOffset());
     }
     
-    public static long method1125(final long n, final int n2, final int n3, final int n4) {
-        return pack(method1126(n) + n2, method1127(n) + n3, method1128(n) + n4);
+    public static long offset(final long n, final int n2, final int n3, final int n4) {
+        return pack(unpackX(n) + n2, unpackY(n) + n3, unpackZ(n) + n4);
     }
     
-    public static int method1126(final long n) {
+    public static int unpackX(final long n) {
         return (int)(n << 64 - BlockPos.field_218293_k - BlockPos.NUM_X_BITS >> 64 - BlockPos.NUM_X_BITS);
     }
     
-    public static int method1127(final long n) {
+    public static int unpackY(final long n) {
         return (int)(n << 64 - BlockPos.NUM_Y_BITS >> 64 - BlockPos.NUM_Y_BITS);
     }
     
-    public static int method1128(final long n) {
+    public static int unpackZ(final long n) {
         return (int)(n << 64 - BlockPos.field_218292_j - BlockPos.NUM_Z_BITS >> 64 - BlockPos.NUM_Z_BITS);
     }
     
-    public static BlockPos method1129(final long n) {
-        return new BlockPos(method1126(n), method1127(n), method1128(n));
+    public static BlockPos fromLong(final long n) {
+        return new BlockPos(unpackX(n), unpackY(n), unpackZ(n));
     }
     
     public static long pack(final int n, final int n2, final int n3) {
         return 0x0L | ((long)n & BlockPos.X_MASK) << BlockPos.field_218293_k | ((long)n2 & BlockPos.Y_MASK) << 0 | ((long)n3 & BlockPos.Z_MASK) << BlockPos.field_218292_j;
     }
-    
-    public static long method1131(final long n) {
-        return n & 0xFFFFFFFFFFFFFFF0L;
+
+    public static long func_218288_f(long p_218288_0_)
+    {
+        return p_218288_0_ & -16L;
     }
     
-    public long method1132() {
+    public long toLong() {
         return pack(this.getX(), this.getY(), this.getZ());
     }
-    
-    public BlockPos method1133(final double n, final double n2, final double n3) {
-        if (n == 0.0) {
-            if (n2 == 0.0) {
-                if (n3 == 0.0) {
-                    return this;
-                }
-            }
-        }
-        return new BlockPos(this.getX() + n, this.getY() + n2, this.getZ() + n3);
+
+    public BlockPos add(double x, double y, double z)
+    {
+        return x == 0.0D && y == 0.0D && z == 0.0D ? this : new BlockPos((double)this.getX() + x, (double)this.getY() + y, (double)this.getZ() + z);
     }
     
-    public BlockPos method1134(final int n, final int n2, final int n3) {
+    public BlockPos add(final int n, final int n2, final int n3) {
         if (n == 0) {
             if (n2 == 0) {
                 if (n3 == 0) {
@@ -136,12 +145,12 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
         return new BlockPos(this.getX() + n, this.getY() + n2, this.getZ() + n3);
     }
     
-    public BlockPos method1135(final Vec3i class352) {
-        return this.method1134(class352.getX(), class352.getY(), class352.getZ());
+    public BlockPos add(final Vec3i class352) {
+        return this.add(class352.getX(), class352.getY(), class352.getZ());
     }
     
     public BlockPos method1136(final Vec3i class352) {
-        return this.method1134(-class352.getX(), -class352.getY(), -class352.getZ());
+        return this.add(-class352.getX(), -class352.getY(), -class352.getZ());
     }
     
     public BlockPos method1137() {
@@ -201,7 +210,7 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
     }
     
     public BlockPos method1151(final Class2052 class2052) {
-        switch (Class7867.field32310[class2052.ordinal()]) {
+        switch (class2052.ordinal()) {
             default: {
                 return this;
             }
@@ -221,27 +230,56 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
         return new BlockPos(this.getY() * class352.getZ() - this.getZ() * class352.getY(), this.getZ() * class352.getX() - this.getX() * class352.getZ(), this.getX() * class352.getY() - this.getY() * class352.getX());
     }
     
-    public BlockPos method1153() {
+    public BlockPos toImmutable() {
         return this;
     }
     
-    public static Iterable<BlockPos> method1154(final BlockPos class354, final BlockPos class355) {
-        return method1158(Math.min(class354.getX(), class355.getX()), Math.min(class354.getY(), class355.getY()), Math.min(class354.getZ(), class355.getZ()), Math.max(class354.getX(), class355.getX()), Math.max(class354.getY(), class355.getY()), Math.max(class354.getZ(), class355.getZ()));
+    public static Iterable<BlockPos> getAllInBoxMutable(final BlockPos class354, final BlockPos class355) {
+        return getAllInBoxMutable(Math.min(class354.getX(), class355.getX()), Math.min(class354.getY(), class355.getY()), Math.min(class354.getZ(), class355.getZ()), Math.max(class354.getX(), class355.getX()), Math.max(class354.getY(), class355.getY()), Math.max(class354.getZ(), class355.getZ()));
     }
     
-    public static Stream<BlockPos> method1155(final BlockPos class354, final BlockPos class355) {
-        return method1157(Math.min(class354.getX(), class355.getX()), Math.min(class354.getY(), class355.getY()), Math.min(class354.getZ(), class355.getZ()), Math.max(class354.getX(), class355.getX()), Math.max(class354.getY(), class355.getY()), Math.max(class354.getZ(), class355.getZ()));
+    public static Stream<BlockPos> getAllInBox(final BlockPos class354, final BlockPos class355) {
+        return getAllInBox(Math.min(class354.getX(), class355.getX()), Math.min(class354.getY(), class355.getY()), Math.min(class354.getZ(), class355.getZ()), Math.max(class354.getX(), class355.getX()), Math.max(class354.getY(), class355.getY()), Math.max(class354.getZ(), class355.getZ()));
     }
     
-    public static Stream<BlockPos> method1156(final Class6997 class6997) {
-        return method1157(Math.min(class6997.field27293, class6997.field27296), Math.min(class6997.field27294, class6997.field27297), Math.min(class6997.field27295, class6997.field27298), Math.max(class6997.field27293, class6997.field27296), Math.max(class6997.field27294, class6997.field27297), Math.max(class6997.field27295, class6997.field27298));
+    public static Stream<BlockPos> getAllInBox(final MutableBoundingBox class6997) {
+        return getAllInBox(Math.min(class6997.minX, class6997.maxX), Math.min(class6997.minY, class6997.maxY), Math.min(class6997.minZ, class6997.maxZ), Math.max(class6997.minX, class6997.maxX), Math.max(class6997.minY, class6997.maxY), Math.max(class6997.minZ, class6997.maxZ));
     }
-    
-    public static Stream<BlockPos> method1157(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        return StreamSupport.stream((Spliterator<BlockPos>)new Class7580((n4 - n + 1) * (n5 - n2 + 1) * (n6 - n3 + 1), 64, n, n2, n3, n4, n5, n6), false);
+
+    public static Stream<BlockPos> getAllInBox(final int p_218287_0_, final int p_218287_1_, final int p_218287_2_, final int p_218287_3_, final int p_218287_4_, final int p_218287_5_)
+    {
+        return StreamSupport.stream(new Spliterators.AbstractSpliterator<BlockPos>((long)((p_218287_3_ - p_218287_0_ + 1) * (p_218287_4_ - p_218287_1_ + 1) * (p_218287_5_ - p_218287_2_ + 1)), 64)
+        {
+            final CubeCoordinateIterator iter = new CubeCoordinateIterator(p_218287_0_, p_218287_1_, p_218287_2_, p_218287_3_, p_218287_4_, p_218287_5_);
+            final Mutable pos = new Mutable();
+            public boolean tryAdvance(Consumer<? super BlockPos > p_tryAdvance_1_)
+            {
+                if (this.iter.hasNext())
+                {
+                    p_tryAdvance_1_.accept(this.pos.setPos(this.iter.getX(), this.iter.getY(), this.iter.getZ()));
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }, false);
     }
-    
-    public static Iterable<BlockPos> method1158(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        return () -> new Class7248(n7, n8, n9, n10, n11, n12);
+
+    public static Iterable<BlockPos> getAllInBoxMutable(int x1, int y1, int z1, int x2, int y2, int z2)
+    {
+        return () ->
+        {
+            return new AbstractIterator<BlockPos>()
+            {
+                final CubeCoordinateIterator field_218298_a = new CubeCoordinateIterator(x1, y1, z1, x2, y2, z2);
+                final Mutable field_218299_b = new Mutable();
+                protected BlockPos computeNext()
+                {
+                    return (BlockPos)(this.field_218298_a.hasNext() ? this.field_218299_b.setPos(this.field_218298_a.getX(), this.field_218298_a.getY(), this.field_218298_a.getZ()) : this.endOfData());
+                }
+            };
+        };
     }
 }

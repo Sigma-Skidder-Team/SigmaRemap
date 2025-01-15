@@ -5,6 +5,8 @@
 package mapped;
 
 import java.awt.Color;
+
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;

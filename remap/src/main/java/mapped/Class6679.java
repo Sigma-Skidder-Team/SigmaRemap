@@ -4,18 +4,17 @@
 
 package mapped;
 
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.StringArgumentType$StringType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
 public class Class6679 implements Class6672<StringArgumentType>
 {
-    public void method20318(final StringArgumentType stringArgumentType, final Class8654 class8654) {
+    public void method20318(final StringArgumentType stringArgumentType, final PacketBuffer class8654) {
         class8654.method29500((Enum<?>)stringArgumentType.getType());
     }
     
-    public StringArgumentType method20319(final Class8654 class8654) {
+    public StringArgumentType method20319(final PacketBuffer class8654) {
         switch (Class7342.field28354[class8654.method29499(StringArgumentType$StringType.class).ordinal()]) {
             case 1: {
                 return StringArgumentType.word();

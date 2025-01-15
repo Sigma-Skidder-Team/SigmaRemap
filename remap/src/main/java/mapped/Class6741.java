@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +33,7 @@ public class Class6741
     private float field26518;
     private Class8690 field26519;
     public int field26520;
-    private Class1847 field26521;
+    private World field26521;
     public static final float[] field26522;
     private static final String field26523 = "clear";
     private static final String field26524 = "rain";
@@ -226,7 +227,7 @@ public class Class6741
         return i;
     }
     
-    public void method20519(final Class1847 class1847, final Class7351 class1848, final int n, final float n2, final float n3, final float n4) {
+    public void method20519(final World class1847, final Class7351 class1848, final int n, final float n2, final float n3, final float n4) {
         final float method28866 = Class8571.method28866(this.method20520(class1847) * this.method20522(n3, n4) * this.method20523(n), 0.0f, 1.0f);
         if (method28866 >= 1.0E-4f) {
             Class8933.method31617(this.field26520);
@@ -262,7 +263,7 @@ public class Class6741
         }
     }
     
-    private float method20520(final Class1847 class1847) {
+    private float method20520(final World class1847) {
         if (this.field26516 == null && this.field26517 == null) {
             return 1.0f;
         }
@@ -273,7 +274,7 @@ public class Class6741
         return this.field26519.method29790(method20521);
     }
     
-    private float method20521(final Class1847 class1847) {
+    private float method20521(final World class1847) {
         final Entity method5303 = Class869.method5277().method5303();
         if (method5303 != null) {
             final BlockPos method5304 = method5303.method1894();
@@ -332,7 +333,7 @@ public class Class6741
         class7392.method22695();
     }
     
-    public boolean method20525(final Class1847 field26521, final int n) {
+    public boolean method20525(final World field26521, final int n) {
         if (field26521 != this.field26521) {
             this.field26521 = field26521;
             this.field26519 = null;

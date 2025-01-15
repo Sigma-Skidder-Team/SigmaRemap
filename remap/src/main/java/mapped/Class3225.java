@@ -29,15 +29,15 @@ public class Class3225 extends Class3167
         if (Class3225.field15514.field4684 == null) {
             return;
         }
-        final Class4252 method16998 = class5723.method16998();
+        final IPacket method16998 = class5723.method16998();
         if (method16998 instanceof Class4378) {
             final Class4378 class5724 = (Class4378)method16998;
-            final String replaceAll = class5724.method13164().method8459().replaceAll("§.", "");
-            final String method16999 = class5724.method13164().method8461();
+            final String replaceAll = class5724.method13164().getUnformattedComponentText().replaceAll("§.", "");
+            final String method16999 = class5724.method13164().getFormattedText();
             if (class5724.method13166() != Class285.field1573 && class5724.method13166() != Class285.field1572) {
                 return;
             }
-            String s = Class3225.field15514.field4684.getName().method8461().toLowerCase();
+            String s = Class3225.field15514.field4684.getName().getFormattedText().toLowerCase();
             if (Class9463.method35173().method35189().method21551(Class3230.class).method9906()) {
                 s = Class9463.method35173().method35189().method21551(Class3230.class).method9887("Username").toLowerCase();
             }
@@ -60,7 +60,7 @@ public class Class3225 extends Class3167
                     Class9290 method17001 = null;
                     final Class6749 method17002 = method17000.method19651(Class3225.field15514.field4684.method1867());
                     if (method17002 != null) {
-                        final int method17003 = method17002.method20563().method8253();
+                        final int method17003 = method17002.getColor().getColorIndex();
                         if (method17003 >= 0) {
                             method17001 = method17000.method19644(3 + method17003);
                         }
@@ -69,7 +69,7 @@ public class Class3225 extends Class3167
                     int int1 = -1;
                 Label_0730:
                     for (final Class7628 class5725 : method17004) {
-                        final String replaceAll2 = Class6749.method20549(method17000.method19651(class5725.method23973()), new Class2260(class5725.method23973())).getString().replaceAll("§t", "");
+                        final String replaceAll2 = Class6749.method20549(method17000.method19651(class5725.method23973()), new StringTextComponent(class5725.method23973())).getString().replaceAll("§t", "");
                         final Iterator iterator2 = new ArrayList(Arrays.asList("players left", "joueurs restants", "spieler verbleibend")).iterator();
                         while (iterator2.hasNext()) {
                             if (replaceAll2.toLowerCase().contains((String)iterator2.next() + ":")) {
@@ -94,7 +94,7 @@ public class Class3225 extends Class3167
                 if (this.field15682.method9883("Auto Join")) {
                     final Iterator<ITextComponent> iterator3 = class5724.method13164().iterator();
                     while (iterator3.hasNext()) {
-                        final Class9485 method17005 = iterator3.next().method8456().method30410();
+                        final Class9485 method17005 = iterator3.next().getStyle().method30410();
                         if (method17005 != null && method17005.method35309() == Class2075.field11973) {
                             this.field15682.method10294(new Class7674(method17005.method35310(), (long)this.field15682.method9886("Auto Join delay") * 1000L));
                         }

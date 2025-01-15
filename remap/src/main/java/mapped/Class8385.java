@@ -91,7 +91,7 @@ public class Class8385
     
     public boolean method27947(final BlockPos class354) {
         for (final Class8422 class355 : Class8385.field34376) {
-            final Class7096 method6701 = Class8385.field34375.field4683.method6701(class354.method1133(class355.field34567, class355.field34568, class355.field34569));
+            final Class7096 method6701 = Class8385.field34375.field4683.method6701(class354.add(class355.field34567, class355.field34568, class355.field34569));
             if (method6701.method21696() == Class7521.field29173 || method6701.method21696() == Class7521.field29174) {
                 return true;
             }

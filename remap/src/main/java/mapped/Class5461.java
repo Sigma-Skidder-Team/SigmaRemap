@@ -10,8 +10,9 @@ import java.util.Optional;
 import java.util.Objects;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
-public class Class5461 extends Class5419<Class511>
+public class Class5461 extends Class5419<LivingEntity>
 {
     private static String[] field22718;
     private long field22719;
@@ -21,13 +22,13 @@ public class Class5461 extends Class5419<Class511>
     }
     
     @Override
-    public boolean method16538(final Class1849 class1849, final Class511 class1850) {
-        if (class1850.method1805()) {
+    public boolean method16538(final Class1849 class1849, final LivingEntity class1850) {
+        if (class1850.isPassenger()) {
             return false;
         }
         final Class365<?> method2618 = class1850.method2618();
         final Class363 class1851 = method2618.method1198(Class8233.field33800).get();
-        if (!Objects.equals(class1849.method6789().method20487(), class1851.method1169())) {
+        if (!Objects.equals(class1849.method6789().getType(), class1851.method1169())) {
             return false;
         }
         final Optional<Class366> method2619 = method2618.method1198(Class8233.field33825);
@@ -46,7 +47,7 @@ public class Class5461 extends Class5419<Class511>
     }
     
     @Override
-    public boolean method16549(final Class1849 class1849, final Class511 class1850, final long n) {
+    public boolean method16549(final Class1849 class1849, final LivingEntity class1850, final long n) {
         final Optional<Class363> method1198 = class1850.method2618().method1198(Class8233.field33800);
         if (method1198.isPresent()) {
             final BlockPos method1199 = method1198.get().method1170();
@@ -63,7 +64,7 @@ public class Class5461 extends Class5419<Class511>
     }
     
     @Override
-    public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
+    public void method16539(final Class1849 class1849, final LivingEntity class1850, final long n) {
         if (n > this.field22719) {
             class1850.method2618().method1198(Class8233.field33815).ifPresent(p2 -> Class5425.method16574(class1851, (List<BlockPos>)ImmutableList.of(), 0, class1852, class1852.method2618()));
             class1850.method2784(class1850.method2618().method1198(Class8233.field33800).get().method1170());
@@ -76,7 +77,7 @@ public class Class5461 extends Class5419<Class511>
     }
     
     @Override
-    public void method16548(final Class1849 class1849, final Class511 class1850, final long n) {
+    public void method16548(final Class1849 class1849, final LivingEntity class1850, final long n) {
         if (class1850.method2783()) {
             class1850.method2787();
             this.field22719 = n + 40L;

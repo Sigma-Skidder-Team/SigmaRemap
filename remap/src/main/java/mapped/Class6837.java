@@ -22,7 +22,7 @@ public class Class6837 extends Class6831
     
     @Override
     public void method20918() {
-        if (!this.field26847.field2410 && this.field26848 >= 0) {
+        if (!this.field26847.removed && this.field26848 >= 0) {
             if (!this.field26847.method1712()) {
                 this.field26848 -= 2;
             }

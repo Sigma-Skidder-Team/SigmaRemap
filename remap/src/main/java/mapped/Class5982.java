@@ -14,37 +14,38 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 
-public class Class5982 implements JsonDeserializer<Class8768>, JsonSerializer<Class8768>
+public class Class5982 implements JsonDeserializer<Style>, JsonSerializer<Style>
 {
     @Nullable
-    public Class8768 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+    public Style deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if (!jsonElement.isJsonObject()) {
             return null;
         }
-        final Class8768 class8768 = new Class8768();
+        final Style class8768 = new Style();
         final JsonObject asJsonObject = jsonElement.getAsJsonObject();
         if (asJsonObject != null) {
             if (asJsonObject.has("bold")) {
-                Class8768.method30427(class8768, asJsonObject.get("bold").getAsBoolean());
+                Style.method30427(class8768, asJsonObject.get("bold").getAsBoolean());
             }
             if (asJsonObject.has("italic")) {
-                Class8768.method30428(class8768, asJsonObject.get("italic").getAsBoolean());
+                Style.method30428(class8768, asJsonObject.get("italic").getAsBoolean());
             }
             if (asJsonObject.has("underlined")) {
-                Class8768.method30429(class8768, asJsonObject.get("underlined").getAsBoolean());
+                Style.method30429(class8768, asJsonObject.get("underlined").getAsBoolean());
             }
             if (asJsonObject.has("strikethrough")) {
-                Class8768.method30430(class8768, asJsonObject.get("strikethrough").getAsBoolean());
+                Style.method30430(class8768, asJsonObject.get("strikethrough").getAsBoolean());
             }
             if (asJsonObject.has("obfuscated")) {
-                Class8768.method30431(class8768, asJsonObject.get("obfuscated").getAsBoolean());
+                Style.method30431(class8768, asJsonObject.get("obfuscated").getAsBoolean());
             }
             if (asJsonObject.has("color")) {
-                Class8768.method30432(class8768, (Class2116)jsonDeserializationContext.deserialize(asJsonObject.get("color"), (Type)Class2116.class));
+                Style.method30432(class8768, (TextFormatting)jsonDeserializationContext.deserialize(asJsonObject.get("color"), (Type) TextFormatting.class));
             }
             if (asJsonObject.has("insertion")) {
-                Class8768.method30433(class8768, asJsonObject.get("insertion").getAsString());
+                Style.method30433(class8768, asJsonObject.get("insertion").getAsString());
             }
             if (asJsonObject.has("clickEvent")) {
                 final JsonObject method35914 = Class9583.method35914(asJsonObject, "clickEvent");
@@ -54,7 +55,7 @@ public class Class5982 implements JsonDeserializer<Class8768>, JsonSerializer<Cl
                 if (class8769 != null) {
                     if (method35916 != null) {
                         if (class8769.method8176()) {
-                            Class8768.method30434(class8768, new Class9485(class8769, method35916));
+                            Style.method30434(class8768, new Class9485(class8769, method35916));
                         }
                     }
                 }
@@ -67,7 +68,7 @@ public class Class5982 implements JsonDeserializer<Class8768>, JsonSerializer<Cl
                 if (class8770 != null) {
                     if (class8771 != null) {
                         if (class8770.method7947()) {
-                            Class8768.method30435(class8768, new Class9390(class8770, class8771));
+                            Style.method30435(class8768, new Class9390(class8770, class8771));
                         }
                     }
                 }
@@ -78,40 +79,40 @@ public class Class5982 implements JsonDeserializer<Class8768>, JsonSerializer<Cl
     }
     
     @Nullable
-    public JsonElement serialize(final Class8768 class8768, final Type type, final JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(final Style class8768, final Type type, final JsonSerializationContext jsonSerializationContext) {
         if (!class8768.method30409()) {
             final JsonObject jsonObject = new JsonObject();
-            if (Class8768.method30436(class8768) != null) {
-                jsonObject.addProperty("bold", Class8768.method30436(class8768));
+            if (Style.method30436(class8768) != null) {
+                jsonObject.addProperty("bold", Style.method30436(class8768));
             }
-            if (Class8768.method30437(class8768) != null) {
-                jsonObject.addProperty("italic", Class8768.method30437(class8768));
+            if (Style.method30437(class8768) != null) {
+                jsonObject.addProperty("italic", Style.method30437(class8768));
             }
-            if (Class8768.method30438(class8768) != null) {
-                jsonObject.addProperty("underlined", Class8768.method30438(class8768));
+            if (Style.method30438(class8768) != null) {
+                jsonObject.addProperty("underlined", Style.method30438(class8768));
             }
-            if (Class8768.method30439(class8768) != null) {
-                jsonObject.addProperty("strikethrough", Class8768.method30439(class8768));
+            if (Style.method30439(class8768) != null) {
+                jsonObject.addProperty("strikethrough", Style.method30439(class8768));
             }
-            if (Class8768.method30440(class8768) != null) {
-                jsonObject.addProperty("obfuscated", Class8768.method30440(class8768));
+            if (Style.method30440(class8768) != null) {
+                jsonObject.addProperty("obfuscated", Style.method30440(class8768));
             }
-            if (Class8768.method30441(class8768) != null) {
-                jsonObject.add("color", jsonSerializationContext.serialize((Object)Class8768.method30441(class8768)));
+            if (Style.method30441(class8768) != null) {
+                jsonObject.add("color", jsonSerializationContext.serialize((Object) Style.method30441(class8768)));
             }
-            if (Class8768.method30442(class8768) != null) {
-                jsonObject.add("insertion", jsonSerializationContext.serialize((Object)Class8768.method30442(class8768)));
+            if (Style.method30442(class8768) != null) {
+                jsonObject.add("insertion", jsonSerializationContext.serialize((Object) Style.method30442(class8768)));
             }
-            if (Class8768.method30443(class8768) != null) {
+            if (Style.method30443(class8768) != null) {
                 final JsonObject jsonObject2 = new JsonObject();
-                jsonObject2.addProperty("action", Class8768.method30443(class8768).method35309().method8177());
-                jsonObject2.addProperty("value", Class8768.method30443(class8768).method35310());
+                jsonObject2.addProperty("action", Style.method30443(class8768).method35309().method8177());
+                jsonObject2.addProperty("value", Style.method30443(class8768).method35310());
                 jsonObject.add("clickEvent", (JsonElement)jsonObject2);
             }
-            if (Class8768.method30444(class8768) != null) {
+            if (Style.method30444(class8768) != null) {
                 final JsonObject jsonObject3 = new JsonObject();
-                jsonObject3.addProperty("action", Class8768.method30444(class8768).method34911().method7948());
-                jsonObject3.add("value", jsonSerializationContext.serialize((Object)Class8768.method30444(class8768).method34912()));
+                jsonObject3.addProperty("action", Style.method30444(class8768).method34911().method7948());
+                jsonObject3.add("value", jsonSerializationContext.serialize((Object) Style.method30444(class8768).method34912()));
                 jsonObject.add("hoverEvent", (JsonElement)jsonObject3);
             }
             return (JsonElement)jsonObject;

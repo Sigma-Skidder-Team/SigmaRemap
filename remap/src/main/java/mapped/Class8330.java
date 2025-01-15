@@ -16,6 +16,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.world.World;
 
 public class Class8330 implements ArgumentType<Class5346>
 {
@@ -33,7 +34,7 @@ public class Class8330 implements ArgumentType<Class5346>
             throw Class8330.field34211.create();
         }
         ((Class7492)commandContext.getSource()).method23250();
-        if (Class1847.method6682(method16506)) {
+        if (World.method6682(method16506)) {
             return method16506;
         }
         throw Class8330.field34212.create();

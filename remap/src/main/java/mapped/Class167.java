@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class Class167 implements Predicate<Entity>
 {
@@ -18,7 +19,7 @@ public class Class167 implements Predicate<Entity>
     
     public boolean apply(final Entity class399) {
         if (class399 != null) {
-            if (class399 instanceof Class511) {
+            if (class399 instanceof LivingEntity) {
                 if (class399.method1768()) {
                     if (class399.method1732(Class3362.method10663().field4684) <= 9.0f) {
                         if (!(class399 instanceof Class756)) {

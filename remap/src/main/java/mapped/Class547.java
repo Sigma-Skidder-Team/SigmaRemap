@@ -14,7 +14,7 @@ public class Class547 extends Class546
     private final boolean field3299;
     
     public Class547(final BooleanConsumer booleanConsumer, final String field3298, final boolean b) {
-        super(booleanConsumer, new Class2259(b ? "chat.link.confirmTrusted" : "chat.link.confirm", new Object[0]), new Class2260(field3298));
+        super(booleanConsumer, new Class2259(b ? "chat.link.confirmTrusted" : "chat.link.confirm", new Object[0]), new StringTextComponent(field3298));
         this.field3292 = Class8822.method30773(b ? "chat.link.open" : "gui.yes", new Object[0]);
         this.field3293 = Class8822.method30773(b ? "gui.cancel" : "gui.no", new Object[0]);
         this.field3297 = Class8822.method30773("chat.copy", new Object[0]);

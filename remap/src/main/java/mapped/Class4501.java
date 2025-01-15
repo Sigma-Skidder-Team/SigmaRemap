@@ -13,12 +13,12 @@ public class Class4501 extends Class4500
 {
     private final boolean field19897;
     
-    public Class4501(final int n, final Random random, final Class6997 field19849, final Direction class179) {
+    public Class4501(final int n, final Random random, final MutableBoundingBox field19849, final Direction class179) {
         super(Class9520.field40968, n);
         this.method13456(class179);
         this.field19896 = this.method13493(random);
         this.field19849 = field19849;
-        this.field19897 = (field19849.method21418() > 6);
+        this.field19897 = (field19849.getYSize() > 6);
     }
     
     public Class4501(final Class1795 class1795, final Class51 class1796) {
@@ -33,9 +33,9 @@ public class Class4501 extends Class4500
     }
     
     public static Class4501 method13498(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
-        Class6997 class180 = Class6997.method21408(n, n2, n3, -4, -1, 0, 14, 11, 15, class179);
+        MutableBoundingBox class180 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -4, -1, 0, 14, 11, 15, class179);
         if (!Class4500.method13497(class180) || Class4473.method13435(list, class180) != null) {
-            class180 = Class6997.method21408(n, n2, n3, -4, -1, 0, 14, 6, 15, class179);
+            class180 = MutableBoundingBox.getComponentToAddBoundingBox(n, n2, n3, -4, -1, 0, 14, 6, 15, class179);
             if (!Class4500.method13497(class180) || Class4473.method13435(list, class180) != null) {
                 return null;
             }
@@ -44,7 +44,7 @@ public class Class4501 extends Class4500
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         int n = 11;
         if (!this.field19897) {
             n = 6;

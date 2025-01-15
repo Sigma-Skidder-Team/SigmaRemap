@@ -24,12 +24,12 @@ public class Class3267 extends Class3167
     @Class6753
     private void method10300(final Class5723 class5723) {
         if (this.method9906() && Class3267.field15514.field4684 != null) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();
-                final String lowerCase = Class3267.field15514.field4684.getName().method8461().toLowerCase();
-                final String method16999 = class5724.method13164().method8461();
+                final String lowerCase = Class3267.field15514.field4684.getName().getFormattedText().toLowerCase();
+                final String method16999 = class5724.method13164().getFormattedText();
                 Label_0100: {
                     if (this.field15759.method9883("AutoL")) {
                         if (!method16999.toLowerCase().contains("§r§7 has been killed by §r§a§l" + lowerCase)) {
@@ -49,7 +49,7 @@ public class Class3267 extends Class3167
                     if (this.field15759.method9883("Auto Join")) {
                         final Iterator<ITextComponent> iterator = class5724.method13164().iterator();
                         while (iterator.hasNext()) {
-                            final Class9485 method17000 = iterator.next().method8456().method30410();
+                            final Class9485 method17000 = iterator.next().getStyle().method30410();
                             if (method17000 != null && method17000.method35309() == Class2075.field11973) {
                                 this.field15759.method10294(new Class7674(method17000.method35310(), (long)this.field15759.method9886("Auto Join delay") * 1000L));
                                 Class9463.method35173().method35197().method25776(new Class6224("Auto Join", "Joining a new game in 3 seconds.", (int)(this.field15759.method9886("Auto Join delay") - 1.0f) * 1000));

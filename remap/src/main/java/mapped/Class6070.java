@@ -4,28 +4,30 @@
 
 package mapped;
 
-import java.io.IOException;
+import net.minecraft.nbt.EndNBT;
+import net.minecraft.nbt.INBTType;
+
 import java.io.DataInput;
 
-public final class Class6070 implements Class6068<Class42>
+public final class Class6070 implements INBTType<EndNBT>
 {
-    public Class42 method18126(final DataInput dataInput, final int n, final Class7553 class7553) {
-        class7553.method23718(64L);
-        return Class42.field103;
+    public EndNBT method18126(final DataInput dataInput, final int n, final NBTSizeTracker class7553) {
+        class7553.read(64L);
+        return EndNBT.INSTANCE;
     }
     
     @Override
-    public String method18120() {
+    public String func_225648_a_() {
         return "END";
     }
     
     @Override
-    public String method18121() {
+    public String func_225650_b_() {
         return "TAG_End";
     }
     
     @Override
-    public boolean method18122() {
+    public boolean func_225651_c_() {
         return true;
     }
 }

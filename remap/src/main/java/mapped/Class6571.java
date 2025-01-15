@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -30,7 +31,7 @@ public class Class6571 extends Class6564
                     this.field26073 = Class2198.field13375;
                 }
                 else {
-                    this.field26090.method1936(this.field26090.method1935().add(method16753.scale(0.1)));
+                    this.field26090.method1936(this.field26090.getMotion().add(method16753.scale(0.1)));
                 }
             }
         }
@@ -40,7 +41,7 @@ public class Class6571 extends Class6564
         AxisAlignedBB class5488 = this.field26090.method1886();
         for (int i = 1; i < n; ++i) {
             class5488 = class5488.method18501(class5487);
-            if (!this.field26090.field2391.method6978(this.field26090, class5488)) {
+            if (!this.field26090.world.method6978(this.field26090, class5488)) {
                 return false;
             }
         }

@@ -9,9 +9,9 @@ import com.mojang.brigadier.arguments.ArgumentType;
 
 public interface Class6672<T extends ArgumentType<?>>
 {
-    void method20301(final T p0, final Class8654 p1);
+    void method20301(final T p0, final PacketBuffer p1);
     
-    T method20297(final Class8654 p0);
+    T method20297(final PacketBuffer p0);
     
     void method20300(final T p0, final JsonObject p1);
 }

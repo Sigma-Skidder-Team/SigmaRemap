@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
+
 import java.util.Map;
 
 public class Class4761<T extends Class812> extends Class4759<T, Class5929<T>>
@@ -17,7 +19,7 @@ public class Class4761<T extends Class812> extends Class4759<T, Class5929<T>>
     }
     
     public Class1932 method14099(final T t) {
-        return Class4761.field20385.get(t.method1642());
+        return Class4761.field20385.get(t.getType());
     }
     
     static {

@@ -7,6 +7,7 @@ package mapped;
 import java.util.function.Predicate;
 import com.google.common.base.Predicates;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class3964 extends Class3833
 {
@@ -28,7 +29,7 @@ public class Class3964 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.method21772((Class7111<Boolean>)Class3964.field17909) ? Class3964.field17912 : Class3964.field17910;
     }
     
@@ -43,7 +44,7 @@ public class Class3964 extends Class3833
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return class7096.method21772((Class7111<Boolean>)Class3964.field17909) ? 15 : 0;
     }
     

@@ -53,12 +53,12 @@ public class Class3348 extends Class3167
             return;
         }
         if (Class3348.field15956 == 0) {
-            if (!Class3348.field15514.field4684.field2404) {
+            if (!Class3348.field15514.field4684.onGround) {
                 if (Class3348.field15514.field4684.field2938 > 0) {
-                    if (Class3348.field15514.field4684.field2414 < 2.0f) {
+                    if (Class3348.field15514.field4684.fallDistance < 2.0f) {
                         Class3348.field15514.field4684.method1738(0.0, -1.0, 0.0);
-                        Class6430.method19155(Class3348.field15514.field4684.method1935().getY());
-                        Class3348.field15514.field4684.field2404 = true;
+                        Class6430.method19155(Class3348.field15514.field4684.getMotion().getY());
+                        Class3348.field15514.field4684.onGround = true;
                         Class3348.field15956 = 20;
                     }
                 }
@@ -69,14 +69,14 @@ public class Class3348 extends Class3167
     @Class6753
     private void method10594(final Class5723 class5723) {
         if (this.method9906() && Class3348.field15514.field4684 != null) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4273) {
                 if (this.method10595()) {
                     Class3348.field15956 = 0;
                     return;
                 }
                 final Class4273 class5724 = (Class4273)method16998;
-                if (class5724.method12822() == Class3348.field15514.field4684.method1643()) {
+                if (class5724.method12822() == Class3348.field15514.field4684.getEntityId()) {
                     if (class5724.field19165 != 0 || class5724.field19167 != 0) {
                         this.field15958 = (float)(Math.sqrt(class5724.field19165 * class5724.field19165 + class5724.field19167 * class5724.field19167) / 1000.0);
                         this.field15957 = (float)(Math.atan2(class5724.field19165 / 1000, class5724.field19167 / 1000) * 180.0 / 3.141592653589793) - 90.0f;

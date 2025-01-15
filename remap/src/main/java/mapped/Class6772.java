@@ -107,7 +107,7 @@ public class Class6772
         return "Node{x=" + this.field26589 + ", y=" + this.field26590 + ", z=" + this.field26591 + '}';
     }
     
-    public static Class6772 method20673(final Class8654 class8654) {
+    public static Class6772 method20673(final PacketBuffer class8654) {
         final Class6772 class8655 = new Class6772(class8654.readInt(), class8654.readInt(), class8654.readInt());
         class8655.field26599 = class8654.readFloat();
         class8655.field26600 = class8654.readFloat();

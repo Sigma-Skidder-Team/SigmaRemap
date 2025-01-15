@@ -22,13 +22,13 @@ public class Class4538 extends Class4536
         final int n2 = random.nextInt(3) + 3;
         final int n3 = random.nextInt(3) + 3;
         final int n4 = random.nextInt(3) + 1;
-        final Class385 class1854 = new Class385(class1852);
+        final Mutable class1854 = new Mutable(class1852);
         for (int i = 0; i <= n2; ++i) {
             for (int j = 0; j <= n; ++j) {
                 int k = 0;
             Label_0141_Outer:
                 while (k <= n3) {
-                    class1854.method1284(i + class1852.getX(), j + class1852.getY(), k + class1852.getZ());
+                    class1854.setPos(i + class1852.getX(), j + class1852.getY(), k + class1852.getZ());
                     class1854.method1291(Direction.DOWN, n4);
                     while (true) {
                         Label_0155: {

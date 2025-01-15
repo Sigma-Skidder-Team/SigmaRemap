@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
@@ -16,12 +18,12 @@ import java.util.UUID;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class4710<T extends Class511, M extends Class5845<T>> extends Class4703<T> implements Class4778<T, M>
+public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> extends Class4703<T> implements Class4778<T, M>
 {
     private static final Logger field20300;
     public M field20301;
     public final List<Class1799<T, M>> field20302;
-    public Class511 field20303;
+    public LivingEntity field20303;
     public float field20304;
     public float field20305;
     public float field20306;
@@ -58,12 +60,12 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
             }
             class7351.method22567();
             this.field20301.field23955 = this.method13986(field20303, f);
-            this.field20301.field23956 = field20303.method1805();
+            this.field20301.field23956 = field20303.isPassenger();
             if (Class9570.field41255.method22605()) {
                 final Class5845<T> field20304 = this.field20301;
                 boolean field20305 = false;
                 Label_0425: {
-                    if (field20303.method1805()) {
+                    if (field20303.isPassenger()) {
                         if (field20303.method1920() != null) {
                             if (Class9570.method35820(field20303.method1920(), Class9570.field41255, new Object[0])) {
                                 field20305 = true;
@@ -80,8 +82,8 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
             final float method35707 = MathHelper.method35706(f, field20303.field2954, field20303.field2953);
             float n3 = method35707 - method35706;
             if (this.field20301.field23956) {
-                if (field20303.method1920() instanceof Class511) {
-                    final Class511 class7353 = (Class511)field20303.method1920();
+                if (field20303.method1920() instanceof LivingEntity) {
+                    final LivingEntity class7353 = (LivingEntity)field20303.method1920();
                     float method35708 = MathHelper.method35668(method35707 - MathHelper.method35706(f, class7353.field2952, class7353.field2951));
                     if (method35708 < -85.0f) {
                         method35708 = -85.0f;
@@ -96,7 +98,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                     n3 = method35707 - method35706;
                 }
             }
-            final Class5729 class7354 = new Class5729(method35706, method35707, n3, MathHelper.method35700(f, field20303.field2402, field20303.field2400), f, field20303);
+            final Class5729 class7354 = new Class5729(method35706, method35707, n3, MathHelper.method35700(f, field20303.prevRotationPitch, field20303.rotationPitch), f, field20303);
             Class9463.method35173().method35188().method21097(class7354);
             if (class7354.method16962()) {
                 class7351.method22568();
@@ -106,10 +108,10 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
             class7354.method17008();
             final float method35710 = class7354.method17009();
             final float method35711 = class7354.method17010();
-            if (field20303.method1654() == Class290.field1665) {
+            if (field20303.method1654() == Pose.field1665) {
                 final Direction method35712 = field20303.method2788();
                 if (method35712 != null) {
-                    final float n4 = field20303.method1891(Class290.field1663) - 0.1f;
+                    final float n4 = field20303.method1891(Pose.field1663) - 0.1f;
                     class7351.method22564(-method35712.getXOffset() * n4, 0.0, -method35712.getZOffset() * n4);
                 }
             }
@@ -120,7 +122,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
             class7351.method22564(0.0, -1.5010000467300415, 0.0);
             float method35714 = 0.0f;
             float field20306 = 0.0f;
-            if (!field20303.method1805()) {
+            if (!field20303.isPassenger()) {
                 if (field20303.method1768()) {
                     method35714 = MathHelper.method35700(f, field20303.field2945, field20303.field2946);
                     field20306 = field20303.field2947 - field20303.field2946 * (1.0f - f);
@@ -179,7 +181,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                     Class8880.method31242();
                 }
             }
-            if (!field20303.method1639()) {
+            if (!field20303.isSpectator()) {
                 if (class7354.method17017()) {
                     for (final Class1799 class7356 : this.field20302) {
                         if (Class8880.method31235()) {
@@ -232,7 +234,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
         return this.field20301.method17647(method13950);
     }
     
-    public static int method13982(final Class511 class511, final float n) {
+    public static int method13982(final LivingEntity class511, final float n) {
         return Class1904.method7387(Class1904.method7385(n), Class1904.method7386(class511.field2938 > 0 || class511.field2941 > 0));
     }
     
@@ -261,15 +263,15 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
     }
     
     public void method13985(final T t, final Class7351 class7351, final float n, final float n2, final float n3) {
-        final Class290 method1654 = t.method1654();
-        if (method1654 != Class290.field1665) {
+        final Pose method1654 = t.method1654();
+        if (method1654 != Pose.field1665) {
             class7351.method22566(Vector3f.YP.rotationDegrees(180.0f - n2));
         }
         if (t.field2941 <= 0) {
             if (!t.method2744()) {
-                if (method1654 != Class290.field1665) {
+                if (method1654 != Pose.field1665) {
                     if (t.hasCustomName() || t instanceof Class512) {
-                        final String method1655 = Class2116.method8259(t.getName().getString());
+                        final String method1655 = TextFormatting.getTextWithoutFormattingCodes(t.getName().getString());
                         if ("Dinnerbone".equals(method1655) || "Grumm".equals(method1655)) {
                             if (!(t instanceof Class512) || ((Class512)t).method2895(Class189.field610)) {
                                 class7351.method22564(0.0, t.method1931() + 0.1f, 0.0);
@@ -286,8 +288,8 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                 }
             }
             else {
-                class7351.method22566(Vector3f.XP.rotationDegrees(-90.0f - t.field2400));
-                class7351.method22566(Vector3f.YP.rotationDegrees((t.field2424 + n3) * -75.0f));
+                class7351.method22566(Vector3f.XP.rotationDegrees(-90.0f - t.rotationPitch));
+                class7351.method22566(Vector3f.YP.rotationDegrees((t.ticksExisted + n3) * -75.0f));
             }
         }
         else {
@@ -304,7 +306,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
     }
     
     public float method13987(final T t, final float n) {
-        return t.field2424 + n;
+        return t.ticksExisted + n;
     }
     
     public float method13988(final T t) {
@@ -333,8 +335,8 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
         final Class756 field4684 = method28716.field4684;
         final boolean b = !t.method1824(field4684);
         if (t != field4684) {
-            final Class6750 method28717 = t.method1825();
-            final Class6750 method28718 = field4684.method1825();
+            final Team method28717 = t.getTeam();
+            final Team method28718 = field4684.getTeam();
             if (method28717 != null) {
                 switch (Class9538.field41055[method28717.method20554().ordinal()]) {
                     case 1: {
@@ -355,7 +357,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                 }
             }
         }
-        return Class869.method5270() && t != method28716.method5303() && b && !t.method1806();
+        return Class869.method5270() && t != method28716.method5303() && b && !t.isBeingRidden();
     }
     
     public List<Class1799<T, M>> method13992() {

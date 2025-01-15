@@ -5,8 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -29,12 +32,12 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return class7096.method21772((Class7111<Integer>)Class3961.field17902);
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         if (!class1847.field10067) {
             if (class1851 instanceof Class438) {
@@ -49,7 +52,7 @@ public class Class3961 extends Class3841
         }
     }
     
-    private void method12082(final Class1847 class1847, final BlockPos class1848) {
+    private void method12082(final World class1847, final BlockPos class1848) {
         final List<Entity> method7128 = class1847.method7128((Class<? extends Entity>)Class798.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
         if (!method7128.isEmpty()) {
             final List<Entity> method7129 = class1847.method7128((Class<? extends Entity>)Class512.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
@@ -63,12 +66,12 @@ public class Class3961 extends Class3841
         }
     }
     
-    public static void method12083(final Class1847 class1847, final BlockPos class1848) {
+    public static void method12083(final World class1847, final BlockPos class1848) {
         Class3833.method11839(class1847, class1848, new ItemStack(Class7739.field31632, 3));
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final ItemStack method2716 = method2715.method27641();
         final int intValue = class7096.method21772((Class7111<Integer>)Class3961.field17902);
@@ -114,12 +117,12 @@ public class Class3961 extends Class3841
         return Class2201.field13400;
     }
     
-    private boolean method12084(final Class1847 class1847, final BlockPos class1848) {
+    private boolean method12084(final World class1847, final BlockPos class1848) {
         final Class436 method6727 = class1847.method6727(class1848);
         return method6727 instanceof Class438 && !((Class438)method6727).method2216();
     }
     
-    public void method12085(final Class1847 class1847, final Class7096 class1848, final BlockPos class1849, final Class512 class1850, final Class2144 class1851) {
+    public void method12085(final World class1847, final Class7096 class1848, final BlockPos class1849, final Class512 class1850, final Class2144 class1851) {
         this.method12086(class1847, class1848, class1849);
         final Class436 method6727 = class1847.method6727(class1849);
         if (method6727 instanceof Class438) {
@@ -127,12 +130,12 @@ public class Class3961 extends Class3841
         }
     }
     
-    public void method12086(final Class1847 class1847, final Class7096 class1848, final BlockPos class1849) {
+    public void method12086(final World class1847, final Class7096 class1848, final BlockPos class1849) {
         class1847.method6688(class1849, ((Class7097<O, Class7096>)class1848).method21773((Class7111<Comparable>)Class3961.field17902, 0), 3);
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Integer>)Class3961.field17902) >= 5) {
             for (int i = 0; i < random.nextInt(1) + 1; ++i) {
                 this.method12087(class7097, class7098, class7096);
@@ -140,7 +143,7 @@ public class Class3961 extends Class3841
         }
     }
     
-    private void method12087(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    private void method12087(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         if (class1849.method21756().method21781()) {
             if (class1847.field10062.nextFloat() >= 0.3f) {
                 final Class7702 method21727 = class1849.method21727(class1847, class1848);
@@ -165,11 +168,11 @@ public class Class3961 extends Class3841
         }
     }
     
-    private void method12088(final Class1847 class1847, final BlockPos class1848, final Class7702 class1849, final double n) {
+    private void method12088(final World class1847, final BlockPos class1848, final Class7702 class1849, final double n) {
         this.method12089(class1847, class1848.getX() + class1849.method24535(Axis.X), class1848.getX() + class1849.method24536(Axis.X), class1848.getZ() + class1849.method24535(Axis.Z), class1848.getZ() + class1849.method24536(Axis.Z), n);
     }
     
-    private void method12089(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5) {
+    private void method12089(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5) {
         class1847.method6709(Class8432.field34655, MathHelper.method35701(class1847.field10062.nextDouble(), n, n2), n5, MathHelper.method35701(class1847.field10062.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
@@ -195,7 +198,7 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         if (!class1847.field10067) {
             if (class1850.method2889()) {
                 if (class1847.method6765().method31216(Class8878.field37320)) {

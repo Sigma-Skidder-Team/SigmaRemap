@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
@@ -26,16 +27,16 @@ public class Class8011
             return 0;
         }
         this.field32979 += (60 + field10062.nextInt(60)) * 20;
-        if (class1849.method6785() < 5 && class1849.field10063.method20503()) {
+        if (class1849.method6785() < 5 && class1849.dimension.method20503()) {
             return 0;
         }
         int n = 0;
         for (final Class512 class1850 : class1849.method6840()) {
-            if (class1850.method1639()) {
+            if (class1850.isSpectator()) {
                 continue;
             }
             final BlockPos class1851 = new BlockPos(class1850);
-            if (class1849.field10063.method20503()) {
+            if (class1849.dimension.method20503()) {
                 if (class1851.getY() < class1849.method6743()) {
                     continue;
                 }

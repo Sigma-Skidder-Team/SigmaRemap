@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class145 extends Class126

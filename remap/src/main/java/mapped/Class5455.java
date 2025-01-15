@@ -6,13 +6,15 @@ package mapped;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.function.Consumer;
+
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Class5455<E extends Class511> extends Class5419<E>
+public class Class5455<E extends LivingEntity> extends Class5419<E>
 {
     private final Set<Class8233<?>> field22691;
     private final Class321 field22692;

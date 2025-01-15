@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMap$Builder;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
@@ -22,7 +21,7 @@ public class Class5112 implements Class5113
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("state_provider"), this.field22058.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
+        builder.put(dynamicOps.createString("state_provider"), this.field22058.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     

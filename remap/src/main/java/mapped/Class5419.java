@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Map;
 
-public abstract class Class5419<E extends Class511>
+public abstract class Class5419<E extends LivingEntity>
 {
     private final Map<Class8233<?>, Class1952> field22591;
     private Class232 field22592;

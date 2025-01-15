@@ -8,6 +8,7 @@ import java.util.Random;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.stream.Collector;
@@ -162,7 +163,7 @@ public class Class501 extends Class436
         this.field2864 = field2864;
     }
     
-    public void method2559(final Class511 class511) {
+    public void method2559(final LivingEntity class511) {
         this.field2865 = class511.getName().getString();
     }
     
@@ -270,12 +271,12 @@ public class Class501 extends Class436
         final BlockPos method2193 = this.method2193();
         final List<Class501> method2194 = this.method2580(this.method2581(new BlockPos(method2193.getX() - 80, 0, method2193.getZ() - 80), new BlockPos(method2193.getX() + 80, 255, method2193.getZ() + 80)));
         if (method2194.size() >= 1) {
-            final Class6997 method2195 = this.method2582(method2193, method2194);
-            if (method2195.field27296 - method2195.field27293 > 1) {
-                if (method2195.field27297 - method2195.field27294 > 1) {
-                    if (method2195.field27298 - method2195.field27295 > 1) {
-                        this.field2867 = new BlockPos(method2195.field27293 - method2193.getX() + 1, method2195.field27294 - method2193.getY() + 1, method2195.field27295 - method2193.getZ() + 1);
-                        this.field2868 = new BlockPos(method2195.field27296 - method2195.field27293 - 1, method2195.field27297 - method2195.field27294 - 1, method2195.field27298 - method2195.field27295 - 1);
+            final MutableBoundingBox method2195 = this.method2582(method2193, method2194);
+            if (method2195.maxX - method2195.minX > 1) {
+                if (method2195.maxY - method2195.minY > 1) {
+                    if (method2195.maxZ - method2195.minZ > 1) {
+                        this.field2867 = new BlockPos(method2195.minX - method2193.getX() + 1, method2195.minY - method2193.getY() + 1, method2195.minZ - method2193.getZ() + 1);
+                        this.field2868 = new BlockPos(method2195.maxX - method2195.minX - 1, method2195.maxY - method2195.minY - 1, method2195.maxZ - method2195.minZ - 1);
                         this.method2161();
                         final Class7096 method2196 = this.field2656.method6701(method2193);
                         this.field2656.method6693(method2193, method2196, method2196, 3);
@@ -294,7 +295,7 @@ public class Class501 extends Class436
     
     private List<Class501> method2581(final BlockPos class354, final BlockPos class355) {
         final ArrayList arrayList = Lists.newArrayList();
-        for (final BlockPos class356 : BlockPos.method1154(class354, class355)) {
+        for (final BlockPos class356 : BlockPos.getAllInBoxMutable(class354, class355)) {
             if (this.field2656.method6701(class356).method21696() != Class7521.field29820) {
                 continue;
             }
@@ -310,42 +311,42 @@ public class Class501 extends Class436
         return arrayList;
     }
     
-    private Class6997 method2582(final BlockPos class354, final List<Class501> list) {
-        Class6997 class355;
+    private MutableBoundingBox method2582(final BlockPos class354, final List<Class501> list) {
+        MutableBoundingBox class355;
         if (list.size() <= 1) {
-            class355 = new Class6997(class354, class354);
+            class355 = new MutableBoundingBox(class354, class354);
         }
         else {
             final BlockPos method2193 = list.get(0).method2193();
-            class355 = new Class6997(method2193, method2193);
+            class355 = new MutableBoundingBox(method2193, method2193);
         }
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             final BlockPos method2194 = ((Class501)iterator.next()).method2193();
-            if (method2194.getX() >= class355.field27293) {
-                if (method2194.getX() > class355.field27296) {
-                    class355.field27296 = method2194.getX();
+            if (method2194.getX() >= class355.minX) {
+                if (method2194.getX() > class355.maxX) {
+                    class355.maxX = method2194.getX();
                 }
             }
             else {
-                class355.field27293 = method2194.getX();
+                class355.minX = method2194.getX();
             }
-            if (method2194.getY() >= class355.field27294) {
-                if (method2194.getY() > class355.field27297) {
-                    class355.field27297 = method2194.getY();
+            if (method2194.getY() >= class355.minY) {
+                if (method2194.getY() > class355.maxY) {
+                    class355.maxY = method2194.getY();
                 }
             }
             else {
-                class355.field27294 = method2194.getY();
+                class355.minY = method2194.getY();
             }
-            if (method2194.getZ() >= class355.field27295) {
-                if (method2194.getZ() <= class355.field27298) {
+            if (method2194.getZ() >= class355.minZ) {
+                if (method2194.getZ() <= class355.maxZ) {
                     continue;
                 }
-                class355.field27298 = method2194.getZ();
+                class355.maxZ = method2194.getZ();
             }
             else {
-                class355.field27295 = method2194.getZ();
+                class355.minZ = method2194.getZ();
             }
         }
         return class355;
@@ -357,7 +358,7 @@ public class Class501 extends Class436
     
     public boolean method2584(final boolean b) {
         if (this.field2871 == Class102.field305 && !this.field2656.field10067 && this.field2864 != null) {
-            final BlockPos method1135 = this.method2193().method1135(this.field2867);
+            final BlockPos method1135 = this.method2193().add(this.field2867);
             final Class1795 method1136 = ((Class1849)this.field2656).method6910();
             Class6585 method1137;
             try {
@@ -424,7 +425,7 @@ public class Class501 extends Class436
         if (this.field2876 < 1.0f) {
             method2196.method32852().method32853(new Class4108(MathHelper.clamp(this.field2876, 0.0f, 1.0f))).method32850(method2586(this.field2877));
         }
-        class6585.method19954(this.field2656, method2193.method1135(this.field2867), method2196);
+        class6585.method19954(this.field2656, method2193.add(this.field2867), method2196);
         return true;
     }
     

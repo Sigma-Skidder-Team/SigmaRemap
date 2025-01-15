@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 
 import java.io.IOException;
 
-public class Class4305 implements Class4252<Class5800>
+public class Class4305 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19305;
     private int field19306;
@@ -18,23 +18,23 @@ public class Class4305 implements Class4252<Class5800>
     }
     
     public Class4305(final Entity class399, final Entity class400) {
-        this.field19306 = class399.method1643();
-        this.field19307 = ((class400 == null) ? 0 : class400.method1643());
+        this.field19306 = class399.getEntityId();
+        this.field19307 = ((class400 == null) ? 0 : class400.getEntityId());
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19306 = class8654.readInt();
         this.field19307 = class8654.readInt();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeInt(this.field19306);
         class8654.writeInt(this.field19307);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17300(this);
     }
     

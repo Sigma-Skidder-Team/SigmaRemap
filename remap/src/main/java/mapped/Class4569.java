@@ -20,7 +20,7 @@ public class Class4569 extends Class4535<Class5112>
         if (class1853.getY() >= 5) {
             final int n = 2 + random.nextInt(2);
             final int n2 = 2 + random.nextInt(2);
-            for (final BlockPos class1855 : BlockPos.method1154(class1853.method1134(-n, 0, -n2), class1853.method1134(n, 1, n2))) {
+            for (final BlockPos class1855 : BlockPos.getAllInBoxMutable(class1853.add(-n, 0, -n2), class1853.add(n, 1, n2))) {
                 final int n3 = class1853.getX() - class1855.getX();
                 final int n4 = class1853.getZ() - class1855.getZ();
                 if (n3 * n3 + n4 * n4 > random.nextFloat() * 10.0f - random.nextFloat() * 6.0f) {

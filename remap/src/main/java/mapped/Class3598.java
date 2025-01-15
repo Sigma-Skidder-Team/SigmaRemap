@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.EnumSet;
 import com.google.common.collect.Sets;
+import net.minecraft.item.ItemStack;
+
 import java.util.Set;
 
 public class Class3598 extends Class3446
@@ -28,7 +30,7 @@ public class Class3598 extends Class3446
     @Override
     public boolean method11013() {
         if (this.field16760 <= 0) {
-            this.field16759 = this.field16757.field2391.method7135(Class3598.field16756, this.field16757);
+            this.field16759 = this.field16757.world.method7135(Class3598.field16756, this.field16757);
             return this.field16759 != null && (this.method11127(this.field16759.method2713()) || this.method11127(this.field16759.method2714()));
         }
         --this.field16760;

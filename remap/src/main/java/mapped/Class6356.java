@@ -9,8 +9,10 @@ import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Map;
 import java.util.List;
@@ -19,7 +21,7 @@ public class Class6356 extends Class6354
 {
     public int field25420;
     public int field25421;
-    public Class383 field25422;
+    public DimensionType field25422;
     public boolean field25423;
     public boolean field25424;
     public byte field25425;
@@ -41,7 +43,7 @@ public class Class6356 extends Class6354
         this.field25432 = Maps.newHashMap();
     }
     
-    public void method18913(final int n, final int n2, final int n3, final boolean field25423, final boolean field25424, final Class383 field25425) {
+    public void method18913(final int n, final int n2, final int n3, final boolean field25423, final boolean field25424, final DimensionType field25425) {
         this.field25425 = (byte)n3;
         this.method18914(n, n2, this.field25425);
         this.field25422 = field25425;
@@ -61,7 +63,7 @@ public class Class6356 extends Class6354
     @Override
     public void method18901(final Class51 class51) {
         final int method319 = class51.method319("dimension");
-        final Class383 method320 = Class383.method1274(method319);
+        final DimensionType method320 = DimensionType.method1274(method319);
         if (method320 != null) {
             this.field25422 = method320;
             this.field25420 = class51.method319("xCenter");
@@ -138,11 +140,11 @@ public class Class6356 extends Class6354
         for (int i = 0; i < this.field25428.size(); ++i) {
             final Class9244 class515 = this.field25428.get(i);
             final String string = class515.field39643.getName().getString();
-            if (!class515.field39643.field2410 && (class515.field39643.field3006.method2376(class513) || class513.method27677())) {
+            if (!class515.field39643.removed && (class515.field39643.field3006.method2376(class513) || class513.method27677())) {
                 if (!class513.method27677()) {
-                    if (class515.field39643.field2452 == this.field25422) {
+                    if (class515.field39643.dimension == this.field25422) {
                         if (this.field25423) {
-                            this.method18918(Class2095.field12111, class515.field39643.field2391, string, class515.field39643.getPosX(), class515.field39643.getPosZ(), class515.field39643.field2399, null);
+                            this.method18918(Class2095.field12111, class515.field39643.world, string, class515.field39643.getPosX(), class515.field39643.getPosZ(), class515.field39643.rotationYaw, null);
                         }
                     }
                 }
@@ -159,14 +161,14 @@ public class Class6356 extends Class6354
                 final BlockPos method27680 = method27679.method5194();
                 final Class8525 class516 = this.field25432.get(Class8525.method28594(method27680));
                 if (class516 != null) {
-                    if (method27679.method1643() != class516.method28592()) {
+                    if (method27679.getEntityId() != class516.method28592()) {
                         if (this.field25432.containsKey(class516.method28593())) {
                             this.field25431.remove("frame-" + class516.method28592());
                         }
                     }
                 }
-                final Class8525 class517 = new Class8525(method27680, method27679.method1882().getHorizontalIndex() * 90, method27679.method1643());
-                this.method18918(Class2095.field12112, class512.field2391, "frame-" + method27679.method1643(), method27680.getX(), method27680.getZ(), method27679.method1882().getHorizontalIndex() * 90, null);
+                final Class8525 class517 = new Class8525(method27680, method27679.method1882().getHorizontalIndex() * 90, method27679.getEntityId());
+                this.method18918(Class2095.field12112, class512.world, "frame-" + method27679.getEntityId(), method27680.getX(), method27680.getZ(), method27679.method1882().getHorizontalIndex() * 90, null);
                 this.field25432.put(class517.method28593(), class517);
             }
         }
@@ -177,7 +179,7 @@ public class Class6356 extends Class6354
                 for (int j = 0; j < method27682.size(); ++j) {
                     final Class51 method27683 = method27682.method346(j);
                     if (!this.field25431.containsKey(method27683.method323("id"))) {
-                        this.method18918(Class2095.method8216(method27683.method317("type")), class512.field2391, method27683.method323("id"), method27683.method322("x"), method27683.method322("z"), method27683.method322("rot"), null);
+                        this.method18918(Class2095.method8216(method27683.method317("type")), class512.world, method27683.method323("id"), method27683.method322("x"), method27683.method322("z"), method27683.method322("rot"), null);
                     }
                 }
             }
@@ -219,7 +221,7 @@ public class Class6356 extends Class6354
                         if (a2 <= 63.0f) {
                             n3 += ((n3 >= 0.0) ? 8.0 : -8.0);
                             b3 = (byte)(n3 * 16.0 / 360.0);
-                            if (this.field25422 != Class383.field2224) {
+                            if (this.field25422 != DimensionType.field2224) {
                                 break Label_0201;
                             }
                             if (class2096 == null) {
@@ -264,7 +266,7 @@ public class Class6356 extends Class6354
     }
     
     @Nullable
-    public Class4252<?> method18919(final ItemStack class8321, final Class1855 class8322, final Class512 class8323) {
+    public IPacket<?> method18919(final ItemStack class8321, final Class1855 class8322, final Class512 class8323) {
         final Class9244 class8324 = this.field25429.get(class8323);
         return (class8324 != null) ? class8324.method34084(class8321) : null;
     }

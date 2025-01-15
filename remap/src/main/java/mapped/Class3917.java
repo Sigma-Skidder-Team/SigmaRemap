@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -24,7 +25,7 @@ public class Class3917 extends Class3833 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9074.field38422[class7096.method21772((Class7111<Direction>)Class3917.field17752).ordinal()]) {
             case 1: {
                 return Class3917.field17757;
@@ -75,7 +76,7 @@ public class Class3917 extends Class3833 implements Class3856
             }
         }
         Class7096 method6702 = this.method11878();
-        final Class1847 method6703 = class7074.method21654();
+        final World method6703 = class7074.method21654();
         final BlockPos method6704 = class7074.method21639();
         final Class7099 method6705 = class7074.method21654().method6702(class7074.method21639());
         for (final Direction class7075 : class7074.method21643()) {

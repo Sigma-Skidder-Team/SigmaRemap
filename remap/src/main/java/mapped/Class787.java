@@ -5,16 +5,18 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public abstract class Class787 extends Class759
 {
-    public Class787(final EntityType<? extends Class787> class7499, final Class1847 class7500) {
+    public Class787(final EntityType<? extends Class787> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
     public float method4345(final BlockPos class354) {
-        return this.method4228(class354, this.field2391);
+        return this.method4228(class354, this.world);
     }
     
     public float method4228(final BlockPos class354, final Class1852 class355) {
@@ -35,7 +37,7 @@ public abstract class Class787 extends Class759
         super.method4202();
         final Entity method4206 = this.method4206();
         if (method4206 != null) {
-            if (method4206.field2391 == this.field2391) {
+            if (method4206.world == this.world) {
                 this.method4198(new BlockPos(method4206), 5);
                 final float method4207 = this.method1732(method4206);
                 if (this instanceof Class794 && ((Class794)this).method4483()) {
@@ -55,7 +57,7 @@ public abstract class Class787 extends Class759
                         final double sign = (method4206.getPosX() - this.getPosX()) / method4207;
                         final double sign2 = (method4206.getPosY() - this.getPosY()) / method4207;
                         final double sign3 = (method4206.getPosZ() - this.getPosZ()) / method4207;
-                        this.method1936(this.method1935().add(Math.copySign(sign * sign * 0.4, sign), Math.copySign(sign2 * sign2 * 0.4, sign2), Math.copySign(sign3 * sign3 * 0.4, sign3)));
+                        this.method1936(this.getMotion().add(Math.copySign(sign * sign * 0.4, sign), Math.copySign(sign2 * sign2 * 0.4, sign2), Math.copySign(sign3 * sign3 * 0.4, sign3)));
                     }
                 }
                 else {

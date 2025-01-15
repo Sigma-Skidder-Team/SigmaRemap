@@ -68,7 +68,7 @@ public class Class1845 implements AutoCloseable
             class7351.method22568();
             if (class7353.method34528() != null) {
                 final Class1844 field4643 = Class869.method5277().field4643;
-                final String method32116 = class7353.method34528().method8461();
+                final String method32116 = class7353.method34528().getFormattedText();
                 final float n7 = (float)field4643.method6617(method32116);
                 final float method32117 = MathHelper.clamp(25.0f / n7, 0.0f, 0.6666667f);
                 class7351.method22567();

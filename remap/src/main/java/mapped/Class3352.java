@@ -92,7 +92,7 @@ public class Class3352 extends Class3167
         for (float n2 = n + 2.0f; n2 >= -n + 1.0f; --n2) {
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
-                    final BlockPos class354 = new BlockPos(Class3352.field15514.field4684.field2395 + n3, Class3352.field15514.field4684.field2396 + n2, Class3352.field15514.field4684.field2397 + n4);
+                    final BlockPos class354 = new BlockPos(Class3352.field15514.field4684.posX + n3, Class3352.field15514.field4684.posY + n2, Class3352.field15514.field4684.posZ + n4);
                     if (!Class3352.field15514.field4683.method6701(class354).method21706() && Class3352.field15514.field4683.method6701(class354).method21756().method21781() && Math.sqrt(Class3352.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
                         final String method9887 = this.method9887("Mode");
                         switch (method9887) {

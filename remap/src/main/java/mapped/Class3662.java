@@ -4,9 +4,12 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public interface Class3662<C extends Class446>
 {
-    boolean method11289(final C p0, final Class1847 p1);
+    boolean method11289(final C p0, final World p1);
     
     ItemStack method11290(final C p0);
     

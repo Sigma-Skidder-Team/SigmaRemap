@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 
 public class Class4614 extends Class4611<Class4233>
 {
@@ -25,7 +26,7 @@ public class Class4614 extends Class4611<Class4233>
         return new Class4233(this.field20080, Class8172.method27017(jsonObject.get("entity")), Class9089.method32838(jsonObject.get("killing_blow")));
     }
     
-    public void method13738(final Class513 class513, final Entity class514, final Class7929 class515) {
+    public void method13738(final Class513 class513, final Entity class514, final DamageSource class515) {
         this.method13726(class513.method2957(), class519 -> class519.method12732(class516, class517, class518));
     }
 }

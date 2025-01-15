@@ -28,8 +28,8 @@ public class Class6112 implements Class6113
         final double n5 = 256.0 - n2;
         Class8726.method30041();
         Class8726.method30012();
-        final double n6 = (method18166.field2441 << 4) - n;
-        final double n7 = (method18166.field2443 << 4) - n3;
+        final double n6 = (method18166.chunkCoordX << 4) - n;
+        final double n7 = (method18166.chunkCoordZ << 4) - n3;
         Class8726.method30072(1.0f);
         method18168.method12390(3, Class9237.field39615);
         for (int i = -16; i <= 32; i += 16) {

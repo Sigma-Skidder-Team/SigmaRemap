@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class Class4003 extends Class3833
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class1847 method21654 = class7074.method21654();
+        final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
         return (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)Class4003.field18046, this != method21654.method6701(method21655.method1139()).method21696())).method21773((Class7111<Comparable>)Class4003.field18045, this != method21654.method6701(method21655.method1137()).method21696())).method21773((Class7111<Comparable>)Class4003.field18041, this != method21654.method6701(method21655.method1141()).method21696())).method21773((Class7111<Comparable>)Class4003.field18042, this != method21654.method6701(method21655.method1147()).method21696())).method21773((Class7111<Comparable>)Class4003.field18043, this != method21654.method6701(method21655.method1143()).method21696())).method21773((Class7111<Comparable>)Class4003.field18044, this != method21654.method6701(method21655.method1145()).method21696());
     }

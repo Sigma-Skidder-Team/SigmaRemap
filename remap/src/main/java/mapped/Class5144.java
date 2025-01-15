@@ -5,10 +5,10 @@
 package mapped;
 
 import com.google.common.collect.Sets;
-import java.util.stream.Collector;
+
 import java.util.stream.Collectors;
 import java.util.function.Function;
-import java.util.function.Supplier;
+
 import com.google.common.collect.ImmutableMap$Builder;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -48,7 +48,7 @@ public class Class5144 implements Class5113
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("state_provider"), this.field22133.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("block_placer"), this.field22134.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("whitelist"), dynamicOps.createList((Stream)this.field22135.stream().map(class3833 -> Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.method11878()).getValue()))).put(dynamicOps.createString("blacklist"), dynamicOps.createList((Stream)this.field22136.stream().map(class3834 -> Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps3, class3834).getValue()))).put(dynamicOps.createString("tries"), dynamicOps.createInt(this.field22137)).put(dynamicOps.createString("xspread"), dynamicOps.createInt(this.field22138)).put(dynamicOps.createString("yspread"), dynamicOps.createInt(this.field22139)).put(dynamicOps.createString("zspread"), dynamicOps.createInt(this.field22140)).put(dynamicOps.createString("can_replace"), dynamicOps.createBoolean(this.field22141)).put(dynamicOps.createString("project"), dynamicOps.createBoolean(this.field22142)).put(dynamicOps.createString("need_water"), dynamicOps.createBoolean(this.field22143));
+        builder.put(dynamicOps.createString("state_provider"), this.field22133.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("block_placer"), this.field22134.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("whitelist"), dynamicOps.createList((Stream)this.field22135.stream().map(class3833 -> Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.method11878()).getValue()))).put(dynamicOps.createString("blacklist"), dynamicOps.createList((Stream)this.field22136.stream().map(class3834 -> Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps3, class3834).getValue()))).put(dynamicOps.createString("tries"), dynamicOps.createInt(this.field22137)).put(dynamicOps.createString("xspread"), dynamicOps.createInt(this.field22138)).put(dynamicOps.createString("yspread"), dynamicOps.createInt(this.field22139)).put(dynamicOps.createString("zspread"), dynamicOps.createInt(this.field22140)).put(dynamicOps.createString("can_replace"), dynamicOps.createBoolean(this.field22141)).put(dynamicOps.createString("project"), dynamicOps.createBoolean(this.field22142)).put(dynamicOps.createString("need_water"), dynamicOps.createBoolean(this.field22143));
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     

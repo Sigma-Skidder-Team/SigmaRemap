@@ -21,7 +21,7 @@ public class Class3527 extends Class3446
     @Override
     public boolean method11013() {
         if (this.field16542.method4152() == null) {
-            if (!this.field16542.field2404) {
+            if (!this.field16542.onGround) {
                 if (!this.field16542.method1706()) {
                     if (!this.field16542.method1723()) {
                         if (!this.field16542.method2653(Class9439.field40498)) {

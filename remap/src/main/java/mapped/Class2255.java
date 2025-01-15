@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import com.google.common.base.Joiner;
@@ -16,7 +18,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class2255 extends Class2251 implements Class2253
+public abstract class Class2255 extends TextComponent implements Class2253
 {
     private static final Logger field13800;
     public final boolean field13801;
@@ -46,7 +48,7 @@ public abstract class Class2255 extends Class2251 implements Class2253
     public abstract Stream<Class51> method8481(final Class7492 p0) throws CommandSyntaxException;
     
     @Override
-    public String method8459() {
+    public String getUnformattedComponentText() {
         return "";
     }
     
@@ -68,7 +70,7 @@ public abstract class Class2255 extends Class2251 implements Class2253
                 catch (final CommandSyntaxException ex) {
                     return Stream.empty();
                 }
-            }).map((Function<? super Object, ?>)Class41::method267);
+            }).map((Function<? super Object, ?>) INBT::getString);
             return this.field13801 ? ((ITextComponent)map.flatMap(str -> {
                 try {
                     return Stream.of(Class9479.method35294(class7495, Class5953.method17871(str), class7496, n2));
@@ -77,9 +79,9 @@ public abstract class Class2255 extends Class2251 implements Class2253
                     Class2255.field13800.warn("Failed to parse component: " + str, (Throwable)ex2);
                     return Stream.of(new ITextComponent[0]);
                 }
-            }).reduce((class7497, class7499) -> class7497.method8457(", ").method8458(class7499)).orElse(new Class2260(""))) : new Class2260(Joiner.on(", ").join((Iterator)map.iterator()));
+            }).reduce((class7497, class7499) -> class7497.appendText(", ").appendSibling(class7499)).orElse(new StringTextComponent(""))) : new StringTextComponent(Joiner.on(", ").join((Iterator)map.iterator()));
         }
-        return new Class2260("");
+        return new StringTextComponent("");
     }
     
     static {

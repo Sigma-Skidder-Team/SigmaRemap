@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.commands.CommandException;
-import java.util.Iterator;
+
 import java.util.Map;
 
 public class Class6707 extends Class6693
@@ -21,7 +21,7 @@ public class Class6707 extends Class6693
         if (array.length == 0) {
             Class9070.method32674(() -> {
                 final Class869 field26420 = Class6707.field26420;
-                new Class531(new Class2260("GuiKeybinds"));
+                new Class531(new StringTextComponent("GuiKeybinds"));
                 final Class531 class6429;
                 field26420.method5244(class6429);
                 return;

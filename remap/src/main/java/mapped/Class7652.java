@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.Iterator;
 import java.util.function.Predicate;
 import java.util.List;

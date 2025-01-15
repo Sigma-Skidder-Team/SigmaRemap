@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 public final class Class9434
@@ -15,11 +16,11 @@ public final class Class9434
         return "**:**";
     }
     
-    public static boolean method35058(final Class511 class511) {
+    public static boolean method35058(final LivingEntity class511) {
         return class511.method2653(Class9439.field40476) || class511.method2653(Class9439.field40502);
     }
     
-    public static int method35059(final Class511 class511) {
+    public static int method35059(final LivingEntity class511) {
         int method7908 = 0;
         int method7909 = 0;
         if (class511.method2653(Class9439.field40476)) {
@@ -31,7 +32,7 @@ public final class Class9434
         return Math.max(method7908, method7909);
     }
     
-    public static boolean method35060(final Class511 class511) {
+    public static boolean method35060(final LivingEntity class511) {
         return class511.method2653(Class9439.field40486) || class511.method2653(Class9439.field40502);
     }
 }

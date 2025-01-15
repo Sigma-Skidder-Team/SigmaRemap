@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.IdentityHashMap;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.minecraft.entity.EntityType;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;

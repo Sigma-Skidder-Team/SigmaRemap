@@ -147,7 +147,7 @@ public abstract class Class3090
     }
     
     public final float method9845(final BlockPos class354) {
-        final long method1132 = class354.method1132();
+        final long method1132 = class354.toLong();
         final Long2FloatLinkedOpenHashMap long2FloatLinkedOpenHashMap = this.field15460.get();
         final float value = long2FloatLinkedOpenHashMap.get(method1132);
         if (Float.isNaN(value)) {

@@ -8,7 +8,12 @@ import java.util.HashMap;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -18,7 +23,7 @@ public class Class775 extends Class772
     private static final Predicate<Class2113> field4168;
     private boolean field4169;
     
-    public Class775(final EntityType<? extends Class775> class7499, final Class1847 class7500) {
+    public Class775(final EntityType<? extends Class775> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -45,7 +50,7 @@ public class Class775 extends Class772
         if (!this.method4214()) {
             final Class7746 method4150 = this.method4150();
             if (method4150 instanceof Class7747) {
-                ((Class7747)method4150).method24747(((Class1849)this.field2391).method6928(new BlockPos(this)));
+                ((Class7747)method4150).method24747(((Class1849)this.world).method6928(new BlockPos(this)));
             }
         }
         super.method4172();
@@ -108,7 +113,7 @@ public class Class775 extends Class772
     
     @Override
     public boolean method1826(final Entity class399) {
-        return super.method1826(class399) || (class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null);
+        return super.method1826(class399) || (class399 instanceof LivingEntity && ((LivingEntity)class399).method2712() == Class6363.field25463 && this.getTeam() == null && class399.getTeam() == null);
     }
     
     @Override
@@ -134,7 +139,7 @@ public class Class775 extends Class772
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35698;
     }
     
@@ -146,7 +151,7 @@ public class Class775 extends Class772
         if (n > method4292.method30665(Class2113.field12292)) {
             i = 2;
         }
-        if (this.field2423.nextFloat() <= method4292.method30666()) {
+        if (this.rand.nextFloat() <= method4292.method30666()) {
             final HashMap hashMap = Maps.newHashMap();
             hashMap.put(Class7882.field32358, i);
             Class8742.method30198(hashMap, class8321);

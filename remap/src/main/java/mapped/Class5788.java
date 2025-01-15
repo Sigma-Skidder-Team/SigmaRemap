@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -31,8 +32,8 @@ public class Class5788 extends Class5784
         final double n = (this.field23779 != null) ? this.field23779.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ()) : 0.0;
         if (n >= 100.0) {
             if (n <= 22500.0) {
-                if (!this.field23764.field2405) {
-                    if (!this.field23764.field2406) {
+                if (!this.field23764.collidedHorizontally) {
+                    if (!this.field23764.collidedVertically) {
                         return;
                     }
                 }
@@ -56,14 +57,14 @@ public class Class5788 extends Class5784
     private void method17260() {
         if (this.field23778 != null) {
             if (this.field23778.method35215()) {
-                final BlockPos method6958 = this.field23764.field2391.method6958(Class2020.field11526, new BlockPos(Class4551.field20031));
+                final BlockPos method6958 = this.field23764.world.method6958(Class2020.field11526, new BlockPos(Class4551.field20031));
                 final int n = (this.field23764.method5128() != null) ? this.field23764.method5128().method29250() : 0;
                 if (this.field23764.method2633().nextInt(n + 3) == 0) {
                     this.field23764.method5127().method33696(Class7193.field27950);
                     return;
                 }
                 double n2 = 64.0;
-                final Class512 method6959 = this.field23764.field2391.method7137(Class5788.field23777, method6958.getX(), method6958.getY(), method6958.getZ());
+                final Class512 method6959 = this.field23764.world.method7137(Class5788.field23777, method6958.getX(), method6958.getY(), method6958.getZ());
                 if (method6959 != null) {
                     n2 = method6958.distanceSq(method6959.method1934(), true) / 512.0;
                 }
@@ -130,7 +131,7 @@ public class Class5788 extends Class5784
     }
     
     @Override
-    public void method17248(final Class858 class858, final BlockPos class859, final Class7929 class860, final Class512 class861) {
+    public void method17248(final Class858 class858, final BlockPos class859, final DamageSource class860, final Class512 class861) {
         if (class861 != null) {
             if (!class861.field3025.field27301) {
                 this.method17261(class861);

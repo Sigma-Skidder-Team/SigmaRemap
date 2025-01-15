@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public abstract class Class3680 implements Class3662<Class446>
 {
     public final Class8976<?> field16974;
@@ -25,7 +28,7 @@ public abstract class Class3680 implements Class3662<Class446>
     }
     
     @Override
-    public boolean method11289(final Class446 class446, final Class1847 class447) {
+    public boolean method11289(final Class446 class446, final World class447) {
         return this.field16977.test(class446.method2157(0));
     }
     

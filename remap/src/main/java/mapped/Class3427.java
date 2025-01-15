@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class3427 extends Class3426<Class473>
 {
     public static final Class1932 field16192;
@@ -58,20 +60,20 @@ public class Class3427 extends Class3426<Class473>
     
     @Override
     public boolean method10936(final Class3662<? super Class473> class3662) {
-        return class3662.method11289(this.field16200, this.field16203.field2391);
+        return class3662.method11289(this.field16200, this.field16203.world);
     }
     
     @Override
     public void method10855(final Class446 class446) {
-        Class3428.method10942(this.field16154, this.field16203.field2391, this.field16203, this.field16200, this.field16201);
+        Class3428.method10942(this.field16154, this.field16203.world, this.field16203, this.field16200, this.field16201);
     }
     
     @Override
     public void method10859(final Class512 class512) {
         super.method10859(class512);
         this.field16201.method2164();
-        if (!class512.field2391.field10067) {
-            this.method10881(class512, class512.field2391, this.field16200);
+        if (!class512.world.field10067) {
+            this.method10881(class512, class512.world, this.field16200);
         }
     }
     

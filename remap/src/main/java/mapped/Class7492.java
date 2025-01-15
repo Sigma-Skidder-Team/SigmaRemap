@@ -180,7 +180,7 @@ public class Class7492 implements Class7491
     }
     
     private void method23258(final ITextComponent class2250) {
-        final ITextComponent method8468 = new Class2259("chat.type.admin", new Object[] { this.method23247(), class2250 }).method8468(Class2116.field12316, Class2116.field12329);
+        final ITextComponent method8468 = new Class2259("chat.type.admin", new Object[] { this.method23247(), class2250 }).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC);
         if (this.field28934.method1583().method31216(Class8878.field37328)) {
             for (final Class513 class2251 : this.field28934.method1537().method20623()) {
                 if (class2251 == this.field28928) {
@@ -202,7 +202,7 @@ public class Class7492 implements Class7491
     public void method23259(final ITextComponent class2250) {
         if (this.field28928.shouldReceiveErrors()) {
             if (!this.field28935) {
-                this.field28928.sendMessage(new Class2260("").method8458(class2250).method8469(Class2116.field12321));
+                this.field28928.sendMessage(new StringTextComponent("").appendSibling(class2250).applyTextStyle(TextFormatting.RED));
             }
         }
     }

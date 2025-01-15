@@ -16,7 +16,7 @@ public final class Class5965 implements JsonDeserializer<ITextComponent>
 {
     public ITextComponent deserialize(final JsonElement obj, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if (obj.isJsonPrimitive()) {
-            return new Class2260(obj.getAsString());
+            return new StringTextComponent(obj.getAsString());
         }
         if (!obj.isJsonArray()) {
             throw new JsonParseException("Don't know how to turn " + obj + " into a Component");
@@ -26,7 +26,7 @@ public final class Class5965 implements JsonDeserializer<ITextComponent>
         for (final JsonElement jsonElement : asJsonArray) {
             final ITextComponent deserialize = this.deserialize(jsonElement, jsonElement.getClass(), jsonDeserializationContext);
             if (class2250 != null) {
-                class2250.method8458(deserialize);
+                class2250.appendSibling(deserialize);
             }
             else {
                 class2250 = deserialize;

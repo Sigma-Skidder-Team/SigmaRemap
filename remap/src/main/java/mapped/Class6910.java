@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class6910 implements Class6909
 {
     public static final Class6382<Class6910> field27095;
@@ -16,7 +18,7 @@ public class Class6910 implements Class6909
     }
     
     @Override
-    public void method21273(final Class8654 class8654) {
+    public void method21273(final PacketBuffer class8654) {
         class8654.method29509(this.field27097);
     }
     

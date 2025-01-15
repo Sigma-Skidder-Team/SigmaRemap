@@ -16,13 +16,13 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     public final Class237 field10276;
     public final S field10277;
     private boolean field10278;
-    public final Class385 field10279;
+    public final Mutable field10279;
     private final long[] field10280;
     private final Class1855[] field10281;
     
     public Class1890(final Class1908 field10275, final Class237 field10276, final S field10277) {
         super(16, 256, 8192);
-        this.field10279 = new Class385();
+        this.field10279 = new Mutable();
         this.field10280 = new long[2];
         this.field10281 = new Class1855[2];
         this.field10275 = field10275;
@@ -68,7 +68,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
             }
             return Class7521.field29147.method11878();
         }
-        final Class1855 method7295 = this.method7295(Class353.method1095(BlockPos.method1126(n)), Class353.method1095(BlockPos.method1128(n)));
+        final Class1855 method7295 = this.method7295(Class353.method1095(BlockPos.unpackX(n)), Class353.method1095(BlockPos.unpackZ(n)));
         if (method7295 != null) {
             this.field10279.method1288(n);
             final Class7096 method7296 = method7295.method6701(this.field10279);
@@ -113,7 +113,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     public int method7303(final Class7281 class7281, final long n) {
-        return 15 - class7281.method22322(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)));
+        return 15 - class7281.method22322(Class353.method1096(BlockPos.unpackX(n)), Class353.method1096(BlockPos.unpackY(n)), Class353.method1096(BlockPos.unpackZ(n)));
     }
     
     @Override
@@ -172,7 +172,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     
     @Override
     public int method7293(final BlockPos class354) {
-        return this.field10277.method7351(class354.method1132());
+        return this.field10277.method7351(class354.toLong());
     }
     
     public String method7309(final long n) {
@@ -180,11 +180,11 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     public void method7310(final BlockPos class354) {
-        final long method1132 = class354.method1132();
+        final long method1132 = class354.toLong();
         this.method7294(method1132);
         final Direction[] field10274 = Class1890.field10274;
         for (int length = field10274.length, i = 0; i < length; ++i) {
-            this.method7294(BlockPos.method1124(method1132, field10274[i]));
+            this.method7294(BlockPos.offset(method1132, field10274[i]));
         }
     }
     

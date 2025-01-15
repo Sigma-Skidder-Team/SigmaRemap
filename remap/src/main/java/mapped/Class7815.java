@@ -19,16 +19,16 @@ public class Class7815 extends Class7814
     
     @Override
     public boolean method25239(final Entity class399) {
-        final String method8461 = class399.getDisplayName().method8461();
-        final String s = (class399.getCustomName() != null) ? class399.getCustomName().method8461() : null;
-        final String method8462 = class399.getName().method8461();
+        final String method8461 = class399.getDisplayName().getFormattedText();
+        final String s = (class399.getCustomName() != null) ? class399.getCustomName().getFormattedText() : null;
+        final String method8462 = class399.getName().getFormattedText();
         if (class399.method1823()) {
             if (!method8461.startsWith("§c")) {
                 if (method8461.endsWith("§r")) {
                     if (s == null || s.equals(method8462)) {
-                        final double abs = Math.abs(class399.field2395 - Class7815.field32015.field4684.field2395);
-                        final double abs2 = Math.abs(class399.field2396 - Class7815.field32015.field4684.field2396);
-                        final double abs3 = Math.abs(class399.field2397 - Class7815.field32015.field4684.field2397);
+                        final double abs = Math.abs(class399.posX - Class7815.field32015.field4684.posX);
+                        final double abs2 = Math.abs(class399.posY - Class7815.field32015.field4684.posY);
+                        final double abs3 = Math.abs(class399.posZ - Class7815.field32015.field4684.posZ);
                         final double sqrt = Math.sqrt(abs * abs + abs3 * abs3);
                         if (abs2 < 13.0) {
                             if (abs2 > 10.0) {

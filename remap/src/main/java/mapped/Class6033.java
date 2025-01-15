@@ -26,8 +26,8 @@ public class Class6033 extends Class6032<Class4408>
     public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final Class7096 class1862, final Class7096 class1863, final int n3, final long n4, final Class4408 class1864) {
         double n5 = 0.0;
         double n6 = 0.0;
-        final Class385 class1865 = new Class385();
-        final float method9845 = class1861.method9845(class1865.method1284(n, 63, n2));
+        final Mutable class1865 = new Mutable();
+        final float method9845 = class1861.method9845(class1865.setPos(n, 63, n2));
         final double min = Math.min(Math.abs(a2), this.field24570.method29027(n * 0.1, n2 * 0.1, false) * 15.0);
         if (min > 1.8) {
             final double abs = Math.abs(this.field24571.method29027(n * 0.09765625, n2 * 0.09765625, false));
@@ -57,7 +57,7 @@ public class Class6033 extends Class6032<Class4408>
         final int n14 = 2 + random.nextInt(4);
         final int n15 = n3 + 18 + random.nextInt(10);
         for (int i = Math.max(a, (int)n5 + 1); i >= 0; --i) {
-            class1865.method1284(n9, i, n10);
+            class1865.setPos(n9, i, n10);
             Label_0364: {
                 if (class1860.method6701(class1865).method21706()) {
                     if (i < (int)n5) {
@@ -111,7 +111,7 @@ public class Class6033 extends Class6032<Class4408>
                         }
                         if (i < n3) {
                             if (class1867 == null || class1867.method21706()) {
-                                if (class1861.method9845(class1865.method1284(n, i, n2)) >= 0.15f) {
+                                if (class1861.method9845(class1865.setPos(n, i, n2)) >= 0.15f) {
                                     class1867 = class1863;
                                 }
                                 else {

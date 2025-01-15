@@ -1025,7 +1025,7 @@ public class Class8571
                 method28850(String.format("OpenGL error: %s (%s), at: %s", method31662, method31663, s));
                 if (method29013()) {
                     if (Class9419.method35020("ShowGlError", 10000L)) {
-                        Class8571.field36028.field4647.method3807().method3761(new Class2260(Class8822.method30773("of.message.openglError", method31662, method31663)));
+                        Class8571.field36028.field4647.method3807().method3761(new StringTextComponent(Class8822.method30773("of.message.openglError", method31662, method31663)));
                     }
                 }
             }

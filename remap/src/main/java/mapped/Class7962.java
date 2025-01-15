@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nullable;
 import java.util.Locale;
@@ -29,10 +30,10 @@ public class Class7962 implements Class7954
     @Nullable
     @Override
     public Class9017 method25804(final Entity class399, final Random random) {
-        if (!(class399.field2391 instanceof Class1849)) {
+        if (!(class399.world instanceof Class1849)) {
             return null;
         }
-        final Class1849 class400 = (Class1849)class399.field2391;
+        final Class1849 class400 = (Class1849)class399.world;
         final BlockPos method6915 = class400.method6915(this.field32719, new BlockPos(class399), 100, true);
         if (method6915 == null) {
             return null;

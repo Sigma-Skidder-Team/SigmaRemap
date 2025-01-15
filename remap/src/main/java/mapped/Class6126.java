@@ -33,7 +33,7 @@ public class Class6126 implements Class6113
     }
     
     private static void method18348(final BlockPos class354) {
-        Class7282.method22334(class354.method1133(-0.5, -0.5, -0.5), class354.method1133(1.5, 1.5, 1.5), 1.0f, 0.0f, 0.0f, 0.15f);
+        Class7282.method22334(class354.add(-0.5, -0.5, -0.5), class354.add(1.5, 1.5, 1.5), 1.0f, 0.0f, 0.0f, 0.15f);
         method18349("Raid center", class354, -65536);
     }
     

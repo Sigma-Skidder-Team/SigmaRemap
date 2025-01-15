@@ -16,7 +16,7 @@ public class Class3541 extends Class3446
     
     @Override
     public boolean method11013() {
-        if (this.field16591 < this.field16590.field2424) {
+        if (this.field16591 < this.field16590.ticksExisted) {
             if (this.field16590.method4394()) {
                 if (this.field16590.method4414()) {
                     if (Class791.method4418(this.field16590).nextInt(400) == 1) {
@@ -42,6 +42,6 @@ public class Class3541 extends Class3446
     @Override
     public void method11018() {
         this.field16590.method4377(false);
-        this.field16591 = this.field16590.field2424 + 200;
+        this.field16591 = this.field16590.ticksExisted + 200;
     }
 }

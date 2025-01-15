@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.entity.LivingEntity;
 
 public class Class518 extends Class517<Class3427> implements Class519
 {
@@ -58,7 +59,7 @@ public class Class518 extends Class517<Class3427> implements Class519
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.method8461(), 97.0f, 8.0f, 4210752);
+        this.field3156.method6610(this.field3148.getFormattedText(), 97.0f, 8.0f, 4210752);
     }
     
     @Override
@@ -91,7 +92,7 @@ public class Class518 extends Class517<Class3427> implements Class519
         method2999(field3079 + 51, field3080 + 75, 30, field3079 + 51 - this.field3105, field3080 + 75 - 50 - this.field3106, this.field3150.field4684);
     }
     
-    public static void method2999(final int n, final int n2, final int n3, final float n4, final float n5, final Class511 class511) {
+    public static void method2999(final int n, final int n2, final int n3, final float n4, final float n5, final LivingEntity class511) {
         final float n6 = (float)Math.atan(n4 / 40.0f);
         final float n7 = (float)Math.atan(n5 / 40.0f);
         Class8726.method30059();
@@ -105,15 +106,15 @@ public class Class518 extends Class517<Class3427> implements Class519
         method33328.multiply(method33329);
         class512.method22566(method33328);
         final float field2951 = class511.field2951;
-        final float field2952 = class511.field2399;
-        final float field2953 = class511.field2400;
+        final float field2952 = class511.rotationYaw;
+        final float field2953 = class511.rotationPitch;
         final float field2954 = class511.field2954;
         final float field2955 = class511.field2953;
         class511.field2951 = 180.0f + n6 * 20.0f;
-        class511.field2399 = 180.0f + n6 * 40.0f;
-        class511.field2400 = -n7 * 20.0f;
-        class511.field2953 = class511.field2399;
-        class511.field2954 = class511.field2399;
+        class511.rotationYaw = 180.0f + n6 * 40.0f;
+        class511.rotationPitch = -n7 * 20.0f;
+        class511.field2953 = class511.rotationYaw;
+        class511.field2954 = class511.rotationYaw;
         final Class8551 method33330 = Class869.method5277().method5306();
         method33329.conjugate();
         method33330.method28701(method33329);
@@ -123,8 +124,8 @@ public class Class518 extends Class517<Class3427> implements Class519
         method33331.method25216();
         method33330.method28702(true);
         class511.field2951 = field2951;
-        class511.field2399 = field2952;
-        class511.field2400 = field2953;
+        class511.rotationYaw = field2952;
+        class511.rotationPitch = field2953;
         class511.field2954 = field2954;
         class511.field2953 = field2955;
         Class8726.method30060();

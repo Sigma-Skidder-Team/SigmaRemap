@@ -39,7 +39,7 @@ public class Class5459 extends Class5419<Class824>
                 if (!list.isEmpty()) {
                     this.field22711 = (Class363)list.get(class1849.method6790().nextInt(list.size()));
                     if (this.field22711 != null) {
-                        if (Objects.equals(class1849.method6789().method20487(), this.field22711.method1169())) {
+                        if (Objects.equals(class1849.method6789().getType(), this.field22711.method1169())) {
                             if (method1199.get().method1170().withinDistance(class1850.method1934(), this.field22709)) {
                                 return true;
                             }

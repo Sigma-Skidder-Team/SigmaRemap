@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class6867 implements Class6866

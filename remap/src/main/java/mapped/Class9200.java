@@ -12,6 +12,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.item.ItemStack;
 
 public class Class9200
 {
@@ -32,7 +33,7 @@ public class Class9200
                     if (method773 != null) {
                         method773.method2120();
                     }
-                    class7494.field2391.method6706(null, class7494.getPosX(), class7494.getPosY(), class7494.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, ((class7494.method2633().nextFloat() - class7494.method2633().nextFloat()) * 0.7f + 1.0f) * 2.0f);
+                    class7494.world.method6706(null, class7494.getPosX(), class7494.getPosY(), class7494.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, ((class7494.method2633().nextFloat() - class7494.method2633().nextFloat()) * 0.7f + 1.0f) * 2.0f);
                     class7494.field3008.method10876();
                 }
                 else {

@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;

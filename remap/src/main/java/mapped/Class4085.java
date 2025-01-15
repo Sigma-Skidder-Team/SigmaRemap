@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Predicate;
 
 public abstract class Class4085 extends Class3820
@@ -21,7 +24,7 @@ public abstract class Class4085 extends Class3820
     
     public abstract Predicate<ItemStack> method12290();
     
-    public static ItemStack method12291(final Class511 class511, final Predicate<ItemStack> predicate) {
+    public static ItemStack method12291(final LivingEntity class511, final Predicate<ItemStack> predicate) {
         if (!predicate.test(class511.method2715(Class316.field1878))) {
             return predicate.test(class511.method2715(Class316.field1877)) ? class511.method2715(Class316.field1877) : ItemStack.field34174;
         }

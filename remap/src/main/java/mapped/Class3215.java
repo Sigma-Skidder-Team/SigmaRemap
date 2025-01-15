@@ -28,16 +28,16 @@ public class Class3215 extends Class3167
         this.field15662 = 0.0;
         this.field15664 = 0;
         this.field15663 = 0;
-        if (Class3215.field15514.field4684.field2404 || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
-            this.field15665 = new Vec3d(Class3215.field15514.field4684.field2395, Class3215.field15514.field4684.field2396, Class3215.field15514.field4684.field2397);
+        if (Class3215.field15514.field4684.onGround || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
+            this.field15665 = new Vec3d(Class3215.field15514.field4684.posX, Class3215.field15514.field4684.posY, Class3215.field15514.field4684.posZ);
         }
     }
     
     @Class6753
     private void method10134(final Class5717 class5717) {
         if (this.method9906()) {
-            if (Class3215.field15514.field4684.field2404 || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
-                this.field15665 = new Vec3d(Class3215.field15514.field4684.field2395, Class3215.field15514.field4684.field2396, Class3215.field15514.field4684.field2397);
+            if (Class3215.field15514.field4684.onGround || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
+                this.field15665 = new Vec3d(Class3215.field15514.field4684.posX, Class3215.field15514.field4684.posY, Class3215.field15514.field4684.posZ);
             }
             if (this.field15664 <= 0) {
                 final Class3167 method21551 = Class9463.method35173().method35189().method21551(Class3259.class);
@@ -55,10 +55,10 @@ public class Class3215 extends Class3167
                         method21555 = true;
                     }
                 }
-                if (Class3215.field15514.field4684.method1935().y < -0.08 && !method21555) {
-                    this.field15662 -= Class3215.field15514.field4684.method1935().y;
+                if (Class3215.field15514.field4684.getMotion().y < -0.08 && !method21555) {
+                    this.field15662 -= Class3215.field15514.field4684.getMotion().y;
                 }
-                else if (Class3215.field15514.field4684.field2404) {
+                else if (Class3215.field15514.field4684.onGround) {
                     this.field15662 = 0.0;
                 }
             }
@@ -102,7 +102,7 @@ public class Class3215 extends Class3167
     }
     
     private boolean method10137() {
-        return Class3215.field15514.field4684.method1895().y < 1.0 || (!Class3215.field15514.field4684.field2404 && Class3215.field15514.field4683.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.field2403.method18494(0.0, -Class3215.field15514.field4684.method1934().y, 0.0)).count() == 0L);
+        return Class3215.field15514.field4684.method1895().y < 1.0 || (!Class3215.field15514.field4684.onGround && Class3215.field15514.field4683.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.boundingBox.method18494(0.0, -Class3215.field15514.field4684.method1934().y, 0.0)).count() == 0L);
     }
     
     private void method10138(String s, final Class5717 class5717) {

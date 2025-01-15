@@ -18,13 +18,13 @@ public class Class3367 extends Class3355
     @Override
     public void method9879() {
         this.field16030 = false;
-        if (!Class3367.field15514.field4684.field2405) {
+        if (!Class3367.field15514.field4684.collidedHorizontally) {
             this.field16031 = -1;
         }
         else {
             this.field16031 = 0;
-            if (Class3367.field15514.field4684.field2404) {
-                Class3367.field15514.method5269().method17292(new Class4354(Class3367.field15514.field4684.field2395, Class3367.field15514.field4684.field2396 + 0.0626, Class3367.field15514.field4684.field2397, false));
+            if (Class3367.field15514.field4684.onGround) {
+                Class3367.field15514.method5269().method17292(new Class4354(Class3367.field15514.field4684.posX, Class3367.field15514.field4684.posY + 0.0626, Class3367.field15514.field4684.posZ, false));
             }
         }
     }
@@ -33,19 +33,19 @@ public class Class3367 extends Class3355
     private void method10698(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
             if (Class3367.field15514.field4648.field23440.method1056()) {
-                final double field2395 = Class3367.field15514.field4684.field2395;
-                final double field2396 = Class3367.field15514.field4684.field2396;
-                final double field2397 = Class3367.field15514.field4684.field2397;
+                final double field2395 = Class3367.field15514.field4684.posX;
+                final double field2396 = Class3367.field15514.field4684.posY;
+                final double field2397 = Class3367.field15514.field4684.posZ;
                 if (!Class6430.method19114()) {
                     if (Class6430.method19160(Class3367.field15514.field4684, 0.001f) && !method10703()) {
-                        Class3367.field15514.field4684.method1656(field2395, field2396 - 1.0, field2397);
+                        Class3367.field15514.field4684.setPosition(field2395, field2396 - 1.0, field2397);
                         class5744.method17037(field2396 - 1.0);
                         class5744.method17033(true);
                         class5744.method17043(class5744.method17042() + 10.0f);
                         Class6430.method19155(0.0);
                     }
-                    else if (Class3367.field15514.field4684.field2396 == (int)Class3367.field15514.field4684.field2396) {
-                        Class3367.field15514.field4684.method1656(field2395, field2396 - 0.3, field2397);
+                    else if (Class3367.field15514.field4684.posY == (int)Class3367.field15514.field4684.posY) {
+                        Class3367.field15514.field4684.setPosition(field2395, field2396 - 0.3, field2397);
                     }
                 }
             }
@@ -75,11 +75,11 @@ public class Class3367 extends Class3355
         if (!this.method9906()) {
             return;
         }
-        if (Class3367.field15514.field4684.field2405) {
+        if (Class3367.field15514.field4684.collidedHorizontally) {
             if (this.field16031 != 0) {
                 this.field16031 = 0;
-                if (Class3367.field15514.field4684.field2404) {
-                    Class3367.field15514.method5269().method17292(new Class4354(Class3367.field15514.field4684.field2395, Class3367.field15514.field4684.field2396 + 0.0626, Class3367.field15514.field4684.field2397, false));
+                if (Class3367.field15514.field4684.onGround) {
+                    Class3367.field15514.method5269().method17292(new Class4354(Class3367.field15514.field4684.posX, Class3367.field15514.field4684.posY + 0.0626, Class3367.field15514.field4684.posZ, false));
                 }
             }
         }
@@ -115,11 +115,11 @@ public class Class3367 extends Class3355
     @Class6753
     private void method10701(final Class5723 class5723) {
         if (this.method9906()) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4328) {
                 final Class4328 class5724 = (Class4328)method16998;
-                class5724.field19380 = Class3367.field15514.field4684.field2399;
-                class5724.field19381 = Class3367.field15514.field4684.field2400;
+                class5724.field19380 = Class3367.field15514.field4684.rotationYaw;
+                class5724.field19381 = Class3367.field15514.field4684.rotationPitch;
                 this.field16030 = true;
             }
         }
@@ -128,7 +128,7 @@ public class Class3367 extends Class3355
     private void method10702(final double n) {
         double n2 = Class3367.field15514.field4684.field4085.field24722;
         double n3 = Class3367.field15514.field4684.field4085.field24721;
-        float field2399 = Class3367.field15514.field4684.field2399;
+        float field2399 = Class3367.field15514.field4684.rotationYaw;
         if (n2 != 0.0) {
             if (n3 <= 0.0) {
                 if (n3 < 0.0) {
@@ -148,10 +148,10 @@ public class Class3367 extends Class3355
                 n2 = 1.0;
             }
         }
-        Class3367.field15514.field4684.method1656(Class3367.field15514.field4684.field2395 + (n2 * n * Math.cos(Math.toRadians(field2399 + 90.0f)) + n3 * n * Math.sin(Math.toRadians(field2399 + 90.0f))), Class3367.field15514.field4684.field2396, Class3367.field15514.field4684.field2397 + (n2 * n * Math.sin(Math.toRadians(field2399 + 90.0f)) - n3 * n * Math.cos(Math.toRadians(field2399 + 90.0f))));
+        Class3367.field15514.field4684.setPosition(Class3367.field15514.field4684.posX + (n2 * n * Math.cos(Math.toRadians(field2399 + 90.0f)) + n3 * n * Math.sin(Math.toRadians(field2399 + 90.0f))), Class3367.field15514.field4684.posY, Class3367.field15514.field4684.posZ + (n2 * n * Math.sin(Math.toRadians(field2399 + 90.0f)) - n3 * n * Math.cos(Math.toRadians(field2399 + 90.0f))));
     }
     
     public static boolean method10703() {
-        return Class3367.field15514.field4683.method6981(Class3367.field15514.field4684, Class3367.field15514.field4684.field2403).count() != 0L;
+        return Class3367.field15514.field4683.method6981(Class3367.field15514.field4684, Class3367.field15514.field4684.boundingBox).count() != 0L;
     }
 }

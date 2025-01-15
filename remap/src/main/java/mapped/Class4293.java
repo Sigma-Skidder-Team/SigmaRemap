@@ -9,7 +9,7 @@ import net.minecraft.util.Direction;
 import java.io.IOException;
 import java.util.UUID;
 
-public class Class4293 implements Class4252<Class5800>
+public class Class4293 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19251;
     private int field19252;
@@ -22,7 +22,7 @@ public class Class4293 implements Class4252<Class5800>
     }
     
     public Class4293(final Class861 class861) {
-        this.field19252 = class861.method1643();
+        this.field19252 = class861.getEntityId();
         this.field19253 = class861.method1865();
         this.field19254 = class861.method5194();
         this.field19255 = class861.method1882();
@@ -30,24 +30,24 @@ public class Class4293 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19252 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19252 = class8654.readVarInt();
         this.field19253 = class8654.method29504();
-        this.field19256 = class8654.method29501();
+        this.field19256 = class8654.readVarInt();
         this.field19254 = class8654.method29494();
         this.field19255 = Direction.byHorizontalIndex(class8654.readUnsignedByte());
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19252);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19252);
         class8654.method29503(this.field19253);
-        class8654.method29505(this.field19256);
+        class8654.writeVarInt(this.field19256);
         class8654.method29495(this.field19254);
         class8654.writeByte(this.field19255.getHorizontalIndex());
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17276(this);
     }
     

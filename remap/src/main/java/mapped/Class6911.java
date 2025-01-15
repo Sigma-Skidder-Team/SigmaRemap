@@ -16,8 +16,8 @@ public class Class6911 implements Class6909
     }
     
     @Override
-    public void method21273(final Class8654 class8654) {
-        class8654.method29505(Class3833.field17391.method563(this.field27100));
+    public void method21273(final PacketBuffer class8654) {
+        class8654.writeVarInt(Class3833.field17391.method563(this.field27100));
     }
     
     @Override

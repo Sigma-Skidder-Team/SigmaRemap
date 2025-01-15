@@ -30,7 +30,7 @@ public abstract class Class4500 extends Class4473
         class51.method306("EntryDoor", this.field19896.name());
     }
     
-    public void method13492(final Class1851 class1851, final Random random, final Class6997 class1852, final Class1982 class1853, final int n, final int n2, final int n3) {
+    public void method13492(final Class1851 class1851, final Random random, final MutableBoundingBox class1852, final Class1982 class1853, final int n, final int n2, final int n3) {
         switch (Class6870.field26918[class1853.ordinal()]) {
             case 1: {
                 this.method13444(class1851, class1852, n, n2, n3, n + 3 - 1, n2 + 3 - 1, n3, Class4500.field19848, Class4500.field19848, false);
@@ -100,16 +100,16 @@ public abstract class Class4500 extends Class4473
         if (method13455 != null) {
             switch (Class6870.field26919[method13455.ordinal()]) {
                 case 1: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n, this.field19849.field27294 + n2, this.field19849.field27295 - 1, method13455, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX + n, this.field19849.minY + n2, this.field19849.minZ - 1, method13455, this.method13433());
                 }
                 case 2: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n, this.field19849.field27294 + n2, this.field19849.field27298 + 1, method13455, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX + n, this.field19849.minY + n2, this.field19849.maxZ + 1, method13455, this.method13433());
                 }
                 case 3: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n2, this.field19849.field27295 + n, method13455, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX - 1, this.field19849.minY + n2, this.field19849.minZ + n, method13455, this.method13433());
                 }
                 case 4: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n2, this.field19849.field27295 + n, method13455, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.maxX + 1, this.field19849.minY + n2, this.field19849.minZ + n, method13455, this.method13433());
                 }
             }
         }
@@ -122,16 +122,16 @@ public abstract class Class4500 extends Class4473
         if (method13455 != null) {
             switch (Class6870.field26919[method13455.ordinal()]) {
                 case 1: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.WEST, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX - 1, this.field19849.minY + n, this.field19849.minZ + n2, Direction.WEST, this.method13433());
                 }
                 case 2: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.WEST, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX - 1, this.field19849.minY + n, this.field19849.minZ + n2, Direction.WEST, this.method13433());
                 }
                 case 3: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27295 - 1, Direction.NORTH, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX + n2, this.field19849.minY + n, this.field19849.minZ - 1, Direction.NORTH, this.method13433());
                 }
                 case 4: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27295 - 1, Direction.NORTH, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX + n2, this.field19849.minY + n, this.field19849.minZ - 1, Direction.NORTH, this.method13433());
                 }
             }
         }
@@ -144,23 +144,23 @@ public abstract class Class4500 extends Class4473
         if (method13455 != null) {
             switch (Class6870.field26919[method13455.ordinal()]) {
                 case 1: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.EAST, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.maxX + 1, this.field19849.minY + n, this.field19849.minZ + n2, Direction.EAST, this.method13433());
                 }
                 case 2: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.EAST, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.maxX + 1, this.field19849.minY + n, this.field19849.minZ + n2, Direction.EAST, this.method13433());
                 }
                 case 3: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27298 + 1, Direction.SOUTH, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX + n2, this.field19849.minY + n, this.field19849.maxZ + 1, Direction.SOUTH, this.method13433());
                 }
                 case 4: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27298 + 1, Direction.SOUTH, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.minX + n2, this.field19849.minY + n, this.field19849.maxZ + 1, Direction.SOUTH, this.method13433());
                 }
             }
         }
         return null;
     }
     
-    public static boolean method13497(final Class6997 class6997) {
-        return class6997 != null && class6997.field27294 > 10;
+    public static boolean method13497(final MutableBoundingBox class6997) {
+        return class6997 != null && class6997.minY > 10;
     }
 }

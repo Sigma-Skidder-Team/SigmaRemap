@@ -12,6 +12,8 @@ import com.mojang.brigadier.StringReader;
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.INBT;
 
 import java.util.function.Function;
 import java.util.List;
@@ -20,8 +22,8 @@ public class Class147 extends Class126
 {
     private final Class2053 field432;
     private final List<Class9254> field433;
-    private static final Function<Entity, Class41> field434;
-    private static final Function<Class436, Class41> field435;
+    private static final Function<Entity, INBT> field434;
+    private static final Function<Class436, INBT> field435;
     
     private Class147(final Class122[] array, final Class2053 field432, final List<Class9254> list) {
         super(array);
@@ -46,7 +48,7 @@ public class Class147 extends Class126
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (this.field432.field11718.apply(class8322) != null) {
-            this.field433.forEach(class8325 -> class8325.method34144((Supplier<Class41>)class8323::method27658, class8324));
+            this.field433.forEach(class8325 -> class8325.method34144((Supplier<INBT>)class8323::method27658, class8324));
         }
         return class8321;
     }

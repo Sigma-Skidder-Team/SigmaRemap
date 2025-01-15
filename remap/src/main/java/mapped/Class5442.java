@@ -6,9 +6,12 @@ package mapped;
 
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
-public class Class5442<E extends Class511, T extends Class511> extends Class5419<E>
+public class Class5442<E extends LivingEntity, T extends LivingEntity> extends Class5419<E>
 {
     private static String[] field22650;
     private final int field22651;
@@ -30,18 +33,18 @@ public class Class5442<E extends Class511, T extends Class511> extends Class5419
         this.field22657 = field22656;
     }
     
-    public static <T extends Class511> Class5442<Class511, T> method16615(final EntityType<? extends T> class7499, final int n, final Class8233<T> class7500, final float n2, final int n3) {
-        return new Class5442<Class511, T>(class7499, n, p0 -> true, p0 -> true, class7500, n2, n3);
+    public static <T extends LivingEntity> Class5442<LivingEntity, T> method16615(final EntityType<? extends T> class7499, final int n, final Class8233<T> class7500, final float n2, final int n3) {
+        return new Class5442<LivingEntity, T>(class7499, n, p0 -> true, p0 -> true, class7500, n2, n3);
     }
     
     @Override
     public boolean method16538(final Class1849 class1849, final E e) {
-        return this.field22656.test(e) && e.method2618().method1198(Class8233.field33805).get().stream().anyMatch(class1850 -> this.field22653.equals(class1850.method1642()) && this.field22655.test((T)class1850));
+        return this.field22656.test(e) && e.method2618().method1198(Class8233.field33805).get().stream().anyMatch(class1850 -> this.field22653.equals(class1850.getType()) && this.field22655.test((T)class1850));
     }
     
     @Override
     public void method16539(final Class1849 class1849, final E e, final long n) {
-        e.method2618().method1198(Class8233.field33805).ifPresent(list -> list.stream().filter(class1850 -> this.field22653.equals(class1850.method1642())).map(class1851 -> class1851).filter(class1853 -> class1853.method1734(class1852) <= this.field22654).filter(this.field22655).findFirst().ifPresent(class1855 -> {
+        e.method2618().method1198(Class8233.field33805).ifPresent(list -> list.stream().filter(class1850 -> this.field22653.equals(class1850.getType())).map(class1851 -> class1851).filter(class1853 -> class1853.method1734(class1852) <= this.field22654).filter(this.field22655).findFirst().ifPresent(class1855 -> {
             class1854.method1196(this.field22657, class1855);
             class1854.method1196(Class8233.field33810, new Class6440(class1855));
             final Class8233<Class6949> field33809 = Class8233.field33809;

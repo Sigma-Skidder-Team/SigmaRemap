@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
@@ -30,6 +31,6 @@ public class Class7736 implements Class7735
     
     @Override
     public ITextComponent method24685(final int n) {
-        return new Class2260(this.field30752.get(n));
+        return new StringTextComponent(this.field30752.get(n));
     }
 }

@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.item.ItemStack;
 
 public class Class6617 extends Class6601
 {

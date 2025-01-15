@@ -21,14 +21,14 @@ public class Class4539 extends Class4536
     
     @Override
     public boolean method13536(final Class1851 class1851, final Random rnd, final BlockPos class1852, final Class7096 class1853) {
-        final Class385 class1854 = new Class385(class1852);
+        final Mutable class1854 = new Mutable(class1852);
         for (int n = rnd.nextInt(3) + 1, i = 0; i < n; ++i) {
             if (!this.method13537(class1851, rnd, class1854, class1853)) {
                 return true;
             }
             class1854.method1290(Direction.UP);
         }
-        final BlockPos method1153 = class1854.method1153();
+        final BlockPos method1153 = class1854.toImmutable();
         final int n2 = rnd.nextInt(3) + 2;
         final ArrayList arrayList = Lists.newArrayList((Iterable) Plane.HORIZONTAL);
         Collections.shuffle(arrayList, rnd);

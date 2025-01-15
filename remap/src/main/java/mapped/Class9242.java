@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,11 +23,11 @@ public class Class9242
     private static int field39634;
     private static int field39635;
     private static int field39636;
-    private static Class1847 field39637;
+    private static World field39637;
     private static int field39638;
     private static int field39639;
     
-    public static int method34073(final Class1847 field39637, final Entity class399, final int n) {
+    public static int method34073(final World field39637, final Entity class399, final int n) {
         final int field39638 = MathHelper.floor(class399.getPosX()) >> 4;
         final int n2 = MathHelper.floor(class399.getPosY()) >> 4;
         final int field39639 = MathHelper.floor(class399.getPosZ()) >> 4;

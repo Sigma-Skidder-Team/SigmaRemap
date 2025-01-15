@@ -19,7 +19,7 @@ public class Class4554 extends Class4535<Class5122>
     }
     
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
-        final Class385 class1855 = new Class385(class1853);
+        final Mutable class1855 = new Mutable(class1853);
         for (int i = class1853.getY(); i < 256; ++i) {
             class1855.method1287(class1853);
             class1855.method1292(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));

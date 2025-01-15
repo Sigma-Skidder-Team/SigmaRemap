@@ -33,15 +33,15 @@ public class Class3213 extends Class3167
         if (Class3213.field15514.field4684.method2713() != null) {
             final Class234 method872 = Class234.method872(Class3213.field15514.field4684.method2713().method27622());
             if (method872 != null) {
-                final float n = (float)Math.toRadians(Class3213.field15514.field4684.field2399 - 25.0f);
-                final float n2 = (float)Math.toRadians(Class3213.field15514.field4684.field2400);
+                final float n = (float)Math.toRadians(Class3213.field15514.field4684.rotationYaw - 25.0f);
+                final float n2 = (float)Math.toRadians(Class3213.field15514.field4684.rotationPitch);
                 final double n3 = 0.20000000298023224;
-                final double n4 = Class3213.field15514.field4684.field2403.method18507() / 2.0;
+                final double n4 = Class3213.field15514.field4684.boundingBox.method18507() / 2.0;
                 final double n5 = MathHelper.cos(n) * n4;
                 final double n6 = MathHelper.sin(n) * n4;
-                final double n7 = Class3213.field15514.field4684.field2417 + (Class3213.field15514.field4684.field2395 - Class3213.field15514.field4684.field2417) * Class3213.field15514.field4633.field26528;
-                final double n8 = Class3213.field15514.field4684.field2418 + (Class3213.field15514.field4684.field2396 - Class3213.field15514.field4684.field2418) * Class3213.field15514.field4633.field26528;
-                final double n9 = Class3213.field15514.field4684.field2419 + (Class3213.field15514.field4684.field2397 - Class3213.field15514.field4684.field2419) * Class3213.field15514.field4633.field26528;
+                final double n7 = Class3213.field15514.field4684.lastTickPosX + (Class3213.field15514.field4684.posX - Class3213.field15514.field4684.lastTickPosX) * Class3213.field15514.field4633.field26528;
+                final double n8 = Class3213.field15514.field4684.lastTickPosY + (Class3213.field15514.field4684.posY - Class3213.field15514.field4684.lastTickPosY) * Class3213.field15514.field4633.field26528;
+                final double n9 = Class3213.field15514.field4684.lastTickPosZ + (Class3213.field15514.field4684.posZ - Class3213.field15514.field4684.lastTickPosZ) * Class3213.field15514.field4633.field26528;
                 GL11.glPushMatrix();
                 GL11.glEnable(2848);
                 GL11.glBlendFunc(770, 771);
@@ -81,9 +81,9 @@ public class Class3213 extends Class3167
                 GL11.glDisable(2929);
                 if (method872.field894 == null) {
                     if (method872.field895 != null) {
-                        final double n16 = method872.field895.field2417 + (method872.field895.field2395 - method872.field895.field2417) * Class3213.field15514.field4633.field26528 - Class3213.field15514.field4644.method5833().method18161().getX();
-                        final double n17 = method872.field895.field2418 + (method872.field895.field2396 - method872.field895.field2418) * Class3213.field15514.field4633.field26528 - Class3213.field15514.field4644.method5833().method18161().getY();
-                        final double n18 = method872.field895.field2419 + (method872.field895.field2397 - method872.field895.field2419) * Class3213.field15514.field4633.field26528 - Class3213.field15514.field4644.method5833().method18161().getZ();
+                        final double n16 = method872.field895.lastTickPosX + (method872.field895.posX - method872.field895.lastTickPosX) * Class3213.field15514.field4633.field26528 - Class3213.field15514.field4644.method5833().method18161().getX();
+                        final double n17 = method872.field895.lastTickPosY + (method872.field895.posY - method872.field895.lastTickPosY) * Class3213.field15514.field4633.field26528 - Class3213.field15514.field4644.method5833().method18161().getY();
+                        final double n18 = method872.field895.lastTickPosZ + (method872.field895.posZ - method872.field895.lastTickPosZ) * Class3213.field15514.field4633.field26528 - Class3213.field15514.field4644.method5833().method18161().getZ();
                         final double n19 = method872.field895.method1930() / 2.0f + 0.2f;
                         final Class7644 class5742 = new Class7644(n16 - n19, n17, n18 - n19, n16 + n19, n17 + (method872.field895.method1931() + 0.1f), n18 + n19);
                         Class8154.method26909(class5742, Class6430.method19118(Class265.field1274.field1292, 0.1f));

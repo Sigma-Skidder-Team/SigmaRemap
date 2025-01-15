@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class4093 extends Class3820
@@ -20,7 +23,7 @@ public class Class4093 extends Class3820
     }
     
     @Nullable
-    public Class4252<?> method12325(final ItemStack class8321, final Class1847 class8322, final Class512 class8323) {
+    public IPacket<?> method12325(final ItemStack class8321, final World class8322, final Class512 class8323) {
         return null;
     }
 }

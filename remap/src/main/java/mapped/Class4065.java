@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public class Class4065 extends Class3820
 {
     private static String[] field18158;
@@ -13,10 +16,10 @@ public class Class4065 extends Class3820
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         if (!class1847.field10067) {
-            if (class1848.method1805()) {
+            if (class1848.isPassenger()) {
                 if (class1848.method1920() instanceof Class801) {
                     final Class801 class1850 = (Class801)class1848.method1920();
                     if (method2715.method27634() - method2715.method27632() >= 7) {

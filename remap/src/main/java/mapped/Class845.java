@@ -4,12 +4,16 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 public class Class845 extends Class844
 {
     private static String[] field4496;
     public static final float field4508;
     
-    public Class845(final EntityType<? extends Class845> class7499, final Class1847 class7500) {
+    public Class845(final EntityType<? extends Class845> class7499, final World class7500) {
         super(class7499, class7500);
         this.method4190();
         if (this.field4507 != null) {
@@ -36,7 +40,7 @@ public class Class845 extends Class844
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return this.method1711() ? Class8520.field35147 : Class8520.field35148;
     }
     
@@ -53,9 +57,9 @@ public class Class845 extends Class844
     @Override
     public void method4172() {
         super.method4172();
-        if ((this.field2424 + this.method1643()) % 1200 == 0) {
+        if ((this.ticksExisted + this.getEntityId()) % 1200 == 0) {
             final Class5328 field40477 = Class9439.field40477;
-            for (final Class513 class513 : ((Class1849)this.field2391).method6883(class514 -> this.method1734(class514) < 2500.0 && class514.field3041.method26483())) {
+            for (final Class513 class513 : ((Class1849)this.world).method6883(class514 -> this.method1734(class514) < 2500.0 && class514.field3041.method26483())) {
                 if (class513.method2653(field40477)) {
                     if (class513.method2654(field40477).method7908() >= 2) {
                         if (class513.method2654(field40477).method7907() >= 1200) {

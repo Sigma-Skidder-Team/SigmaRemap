@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.common.collect.Lists;
-import java.util.Collection;
 
 public class Class711 extends Class703
 {
@@ -108,7 +107,7 @@ public class Class711 extends Class703
         this.method3043(0);
         this.field3885.method2975(n, n2, n3);
         this.field3886.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 16, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 16, 16777215);
         this.method3295(this.field3156, Class8822.method30773("resourcePack.folderInfo", new Object[0]), this.field3152 / 2 - 77, this.field3153 - 26, 8421504);
         super.method2975(n, n2, n3);
     }

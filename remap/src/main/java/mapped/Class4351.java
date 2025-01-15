@@ -9,7 +9,7 @@ import java.io.IOException;
 import net.minecraft.entity.Entity;
 import org.apache.commons.lang3.Validate;
 
-public class Class4351 implements Class4252<Class5800>
+public class Class4351 implements IPacket<IClientPlayNetHandler>
 {
     private Class7795 field19487;
     private Class286 field19488;
@@ -24,25 +24,25 @@ public class Class4351 implements Class4252<Class5800>
         Validate.notNull((Object)field19487, "sound", new Object[0]);
         this.field19487 = field19487;
         this.field19488 = field19488;
-        this.field19489 = class399.method1643();
+        this.field19489 = class399.getEntityId();
         this.field19490 = field19489;
         this.field19491 = field19490;
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19487 = Class90.field205.method499(class8654.method29501());
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19487 = Class90.field205.method499(class8654.readVarInt());
         this.field19488 = class8654.method29499(Class286.class);
-        this.field19489 = class8654.method29501();
+        this.field19489 = class8654.readVarInt();
         this.field19490 = class8654.readFloat();
         this.field19491 = class8654.readFloat();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(Class90.field205.method504(this.field19487));
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(Class90.field205.method504(this.field19487));
         class8654.method29500(this.field19488);
-        class8654.method29505(this.field19489);
+        class8654.writeVarInt(this.field19489);
         class8654.writeFloat(this.field19490);
         class8654.writeFloat(this.field19491);
     }
@@ -67,7 +67,7 @@ public class Class4351 implements Class4252<Class5800>
         return this.field19491;
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17345(this);
     }
 }

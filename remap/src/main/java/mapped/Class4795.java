@@ -24,11 +24,11 @@ public class Class4795 extends Class4703<Class507>
                 n4 *= (float)((1.0 - method2603) / 0.10000000149011612);
             }
             class508.method22567();
-            class508.method22566(Vector3f.YP.rotationDegrees(90.0f - class507.field2399));
+            class508.method22566(Vector3f.YP.rotationDegrees(90.0f - class507.rotationYaw));
             class508.method22565(-n4, -n4, n4);
             class508.method22564(0.0, -0.6259999871253967, 0.0);
             class508.method22565(0.5f, 0.5f, 0.5f);
-            this.field20447.method17557(class507, method2603, 0.0f, 0.0f, class507.field2399, class507.field2400);
+            this.field20447.method17557(class507, method2603, 0.0f, 0.0f, class507.rotationYaw, class507.rotationPitch);
             this.field20447.method17564(class508, class509.method25214(this.field20447.method17647(Class4795.field20446)), n3, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
             class508.method22568();
             super.method13951(class507, n, n2, class508, class509, n3);

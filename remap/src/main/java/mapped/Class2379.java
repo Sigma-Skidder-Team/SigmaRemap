@@ -13,7 +13,7 @@ public class Class2379 extends RuntimeException
     private final ITextComponent field14177;
     
     public Class2379(final ITextComponent field14177) {
-        super(field14177.method8459(), null, CommandSyntaxException.ENABLE_COMMAND_STACK_TRACES, CommandSyntaxException.ENABLE_COMMAND_STACK_TRACES);
+        super(field14177.getUnformattedComponentText(), null, CommandSyntaxException.ENABLE_COMMAND_STACK_TRACES, CommandSyntaxException.ENABLE_COMMAND_STACK_TRACES);
         this.field14177 = field14177;
     }
     

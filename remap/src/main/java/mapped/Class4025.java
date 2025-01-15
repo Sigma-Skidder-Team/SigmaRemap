@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -26,7 +27,7 @@ public class Class4025 extends Class4024
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4023.method12215(class7096);
     }
     
@@ -48,7 +49,7 @@ public class Class4025 extends Class4024
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class4025.field18116)) {
             final Direction method782 = class7096.method21772((Class7111<Direction>)Class4025.field18115).getOpposite();
             class7097.method6709(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getXOffset(), class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2 + 0.22, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
@@ -56,7 +57,7 @@ public class Class4025 extends Class4024
     }
     
     @Override
-    public boolean method12216(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method12216(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final Direction method782 = class1849.method21772((Class7111<Direction>)Class4025.field18115).getOpposite();
         return class1847.method6747(class1848.method1149(method782), method782);
     }

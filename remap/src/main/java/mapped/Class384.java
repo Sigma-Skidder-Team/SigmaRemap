@@ -80,12 +80,12 @@ public class Class384 extends BlockPos
             }
             return class180;
         }
-        return super.method1150(class179, 1).method1153();
+        return super.method1150(class179, 1).toImmutable();
     }
     
     @Override
     public BlockPos method1150(final Direction class179, final int n) {
-        return (n != 1) ? super.method1150(class179, n).method1153() : this.method1149(class179);
+        return (n != 1) ? super.method1150(class179, n).toImmutable() : this.method1149(class179);
     }
     
     public void method1281(final BlockPos class354, final Direction class355) {
@@ -112,7 +112,7 @@ public class Class384 extends BlockPos
     }
     
     @Override
-    public BlockPos method1153() {
+    public BlockPos toImmutable() {
         return new BlockPos(this.field2232, this.field2233, this.field2234);
     }
     

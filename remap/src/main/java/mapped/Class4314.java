@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.io.IOException;
 
-public class Class4314 implements Class4252<Class5813>
+public class Class4314 implements IPacket<Class5813>
 {
     private static String[] field19336;
     private ItemStack field19337;
@@ -23,14 +25,14 @@ public class Class4314 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19337 = class8654.method29511();
         this.field19338 = class8654.readBoolean();
         this.field19339 = class8654.method29499(Class316.class);
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29509(this.field19337);
         class8654.writeBoolean(this.field19338);
         class8654.method29500(this.field19339);

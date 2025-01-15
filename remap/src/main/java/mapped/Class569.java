@@ -89,7 +89,7 @@ public class Class569 extends Class565 implements Class570
         if (n > 3) {
             if (this.field3398 != null) {
                 final Class6991 method32494 = this.field3398.method32494();
-                final String s = (method32494 != Class9039.field38256) ? method32494.method21403().method8461() : this.field3398.method32495().method21401().method8461();
+                final String s = (method32494 != Class9039.field38256) ? method32494.method21403().getFormattedText() : this.field3398.method32495().method21401().getFormattedText();
                 if (s != null) {
                     final int n2 = (this.field3396.method5332().method7696() - this.field3396.field4643.method6617(s)) / 2;
                     final int n3 = this.field3396.method5332().method7697() - 35;

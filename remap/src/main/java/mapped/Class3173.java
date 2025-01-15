@@ -43,7 +43,7 @@ public class Class3173 extends Class3167
             if (Class3173.field15514.field4682.method27337()) {
                 Class3173.field15534 = 0;
             }
-            if (Class3173.field15514.field4684.field2404 && Class3173.field15514.field4684.field2406) {
+            if (Class3173.field15514.field4684.onGround && Class3173.field15514.field4684.collidedVertically) {
                 ++Class3173.field15534;
                 Class3173.field15514.field4684.field4075 = 0.0;
                 if (Class3173.field15534 != 2) {

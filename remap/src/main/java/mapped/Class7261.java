@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -27,7 +28,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22150(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22150(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
         final BlockPos method1137 = class1848.method1137();
         if (class1847.method6701(method1137).method21706()) {
             if (!class1847.method6701(method1137).method21722(class1847, method1137)) {
@@ -46,12 +47,12 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22152(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22152(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
         if (class1847.method6765().method31216(Class8878.field37315)) {
             final int nextInt = random.nextInt(3);
             if (nextInt <= 0) {
                 for (int i = 0; i < 3; ++i) {
-                    final BlockPos method1134 = class1848.method1134(random.nextInt(3) - 1, 0, random.nextInt(3) - 1);
+                    final BlockPos method1134 = class1848.add(random.nextInt(3) - 1, 0, random.nextInt(3) - 1);
                     if (!class1847.method6731(method1134)) {
                         return;
                     }
@@ -65,7 +66,7 @@ public abstract class Class7261 extends Class7257
             else {
                 BlockPos method1135 = class1848;
                 for (int j = 0; j < nextInt; ++j) {
-                    method1135 = method1135.method1134(random.nextInt(3) - 1, 1, random.nextInt(3) - 1);
+                    method1135 = method1135.add(random.nextInt(3) - 1, 1, random.nextInt(3) - 1);
                     if (!class1847.method6731(method1135)) {
                         return;
                     }
@@ -147,7 +148,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public int method22192(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
+    public int method22192(final World class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
         int method22156 = this.method22156(class1847);
         if (!class1849.method21781()) {
             if (!class1850.method21781()) {

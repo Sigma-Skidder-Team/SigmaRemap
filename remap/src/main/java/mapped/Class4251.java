@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 
 import java.io.IOException;
 
-public class Class4251 implements Class4252<Class5813>
+public class Class4251 implements IPacket<Class5813>
 {
     private static String[] field19076;
     private double field19077;
@@ -24,12 +24,12 @@ public class Class4251 implements Class4252<Class5813>
         this.field19077 = class399.getPosX();
         this.field19078 = class399.getPosY();
         this.field19079 = class399.getPosZ();
-        this.field19080 = class399.field2399;
-        this.field19081 = class399.field2400;
+        this.field19080 = class399.rotationYaw;
+        this.field19081 = class399.rotationPitch;
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19077 = class8654.readDouble();
         this.field19078 = class8654.readDouble();
         this.field19079 = class8654.readDouble();
@@ -38,7 +38,7 @@ public class Class4251 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeDouble(this.field19077);
         class8654.writeDouble(this.field19078);
         class8654.writeDouble(this.field19079);

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -113,7 +114,7 @@ public class Class8335
     }
     
     private boolean method27777(final BlockPos class354) {
-        for (final BlockPos class355 : BlockPos.method1154(class354, class354.method1134(1, 2, 1))) {
+        for (final BlockPos class355 : BlockPos.getAllInBoxMutable(class354, class354.add(1, 2, 1))) {
             if (this.field34223.method6701(class355).method21727(this.field34223, class355).method24540()) {
                 continue;
             }

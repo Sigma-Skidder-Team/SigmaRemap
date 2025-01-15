@@ -29,14 +29,14 @@ public class Class6151 extends Class6132
         if (!"null".equals(string) && !StringUtils.isEmpty((CharSequence)string)) {
             if (string.charAt(0) != '\"' || string.charAt(string.length() - 1) != '\"') {
                 if (string.charAt(0) != '{' || string.charAt(string.length() - 1) != '}') {
-                    class2250 = new Class2260(string);
+                    class2250 = new StringTextComponent(string);
                     return (Dynamic<?>)dynamic.set(s, dynamic.createString(Class5953.method17869(class2250)));
                 }
             }
             try {
                 class2250 = Class9583.method35925(Class6151.field24883, string, ITextComponent.class, true);
                 if (class2250 == null) {
-                    class2250 = new Class2260("");
+                    class2250 = new StringTextComponent("");
                 }
             }
             catch (final JsonParseException ex) {}
@@ -53,11 +53,11 @@ public class Class6151 extends Class6132
                 catch (final JsonParseException ex3) {}
             }
             if (class2250 == null) {
-                class2250 = new Class2260(string);
+                class2250 = new StringTextComponent(string);
             }
         }
         else {
-            class2250 = new Class2260("");
+            class2250 = new StringTextComponent("");
         }
         return (Dynamic<?>)dynamic.set(s, dynamic.createString(Class5953.method17869(class2250)));
     }

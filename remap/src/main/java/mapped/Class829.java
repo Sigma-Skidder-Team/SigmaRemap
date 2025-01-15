@@ -5,6 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -12,7 +17,7 @@ public class Class829 extends Class827
 {
     private static String[] field4439;
     
-    public Class829(final EntityType<? extends Class829> class7499, final Class1847 class7500) {
+    public Class829(final EntityType<? extends Class829> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -31,7 +36,7 @@ public class Class829 extends Class827
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35294;
     }
     
@@ -50,8 +55,8 @@ public class Class829 extends Class827
         final boolean method2734 = super.method2734(class399);
         if (method2734) {
             if (this.method2713().method27620()) {
-                if (class399 instanceof Class511) {
-                    ((Class511)class399).method2655(new Class1948(Class9439.field40490, 140 * (int)this.field2391.method6784(new BlockPos(this)).method35973()));
+                if (class399 instanceof LivingEntity) {
+                    ((LivingEntity)class399).method2655(new Class1948(Class9439.field40490, 140 * (int)this.world.method6784(new BlockPos(this)).method35973()));
                 }
             }
         }
@@ -66,7 +71,7 @@ public class Class829 extends Class827
     @Override
     public void method4929() {
         this.method4930(EntityType.field29052);
-        this.field2391.method6839(null, 1041, new BlockPos(this), 0);
+        this.world.method6839(null, 1041, new BlockPos(this), 0);
     }
     
     @Override

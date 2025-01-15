@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
@@ -14,7 +16,7 @@ public abstract class Class834 extends Class833
     private Class834 field4445;
     private int field4446;
     
-    public Class834(final EntityType<? extends Class834> class7499, final Class1847 class7500) {
+    public Class834(final EntityType<? extends Class834> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4446 = 1;
     }
@@ -69,8 +71,8 @@ public abstract class Class834 extends Class833
     public void method1659() {
         super.method1659();
         if (this.method4966()) {
-            if (this.field2391.field10062.nextInt(200) == 1) {
-                if (this.field2391.method7128((Class<? extends Entity>)this.getClass(), this.method1886().method18495(8.0, 8.0, 8.0)).size() <= 1) {
+            if (this.world.field10062.nextInt(200) == 1) {
+                if (this.world.method7128((Class<? extends Entity>)this.getClass(), this.method1886().method18495(8.0, 8.0, 8.0)).size() <= 1) {
                     this.field4446 = 1;
                 }
             }

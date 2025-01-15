@@ -33,7 +33,7 @@ public class Class6850 extends Class6851<Class759>
             this.field26877 = class1849.method6754() + class1849.method6790().nextInt(20);
             final Class1883 method6921 = class1849.method6921();
             final Class9468 method6922 = class1850.method4150().method24720(method6921.method7203(Class8912.field37476.method31396(), class1851 -> {
-                class1851.method1132();
+                class1851.toLong();
                 final long n;
                 if (!this.field26875.containsKey(n)) {
                     if (++this.field26876 < 5) {

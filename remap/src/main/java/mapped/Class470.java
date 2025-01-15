@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import javax.annotation.Nullable;
 import java.util.Iterator;
 

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Collection;
@@ -29,7 +30,7 @@ public class Class7520
     private final Class9226 field29133;
     private final Class877<Runnable> field29134;
     private final Executor field29135;
-    private Class1847 field29136;
+    private World field29136;
     private final Class1656 field29137;
     private Vec3d field29138;
     private int field29139;
@@ -41,11 +42,11 @@ public class Class7520
     private static final boolean field29145;
     public static int field29146;
     
-    public Class7520(final Class1847 class1847, final Class1656 class1848, final Executor executor, final boolean b, final Class9226 class1849) {
+    public Class7520(final World class1847, final Class1656 class1848, final Executor executor, final boolean b, final Class9226 class1849) {
         this(class1847, class1848, executor, b, class1849, -1);
     }
     
-    public Class7520(final Class1847 field29136, final Class1656 field29137, final Executor field29138, final boolean b, final Class9226 field29139, final int n) {
+    public Class7520(final World field29136, final Class1656 field29137, final Executor field29138, final boolean b, final Class9226 field29139, final int n) {
         this.field29128 = Queues.newPriorityQueue();
         this.field29130 = Queues.newConcurrentLinkedQueue();
         this.field29138 = Vec3d.ZERO;
@@ -82,7 +83,7 @@ public class Class7520
         (this.field29134 = Class877.method5393(field29138, "Chunk Renderer")).method5386(this::method23453);
     }
     
-    public void method23452(final Class1847 field29136) {
+    public void method23452(final World field29136) {
         this.field29136 = field29136;
     }
     

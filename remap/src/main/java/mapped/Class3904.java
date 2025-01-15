@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -27,7 +28,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8073.field33262[class7096.method21772(Class3904.field17618).ordinal()]) {
             case 1: {
                 switch (Class8073.field33260[class7096.method21772((Class7111<Direction>)Class3904.field17564).getAxis().ordinal()]) {
@@ -72,7 +73,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7097.field10067) {
             class7097.method6705(null, class7098, Class8520.field35343, Class286.field1582, 0.3f, ((boolean)this.method12006(class7096, class7097, class7098).method21772((Class7111<Boolean>)Class3904.field17684)) ? 0.6f : 0.5f);
             return Class2201.field13400;
@@ -84,7 +85,7 @@ public class Class3904 extends Class3902
         return Class2201.field13400;
     }
     
-    public Class7096 method12006(Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public Class7096 method12006(Class7096 class7096, final World class7097, final BlockPos class7098) {
         class7096 = ((Class7097<O, Class7096>)class7096).method21768((Class7111<Comparable>)Class3904.field17684);
         class7097.method6688(class7098, class7096, 3);
         this.method12008(class7096, class7097, class7098);
@@ -98,7 +99,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class3904.field17684)) {
             if (random.nextFloat() < 0.25f) {
                 method12007(class7096, class7097, class7098, 0.5f);
@@ -107,7 +108,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!b) {
             if (class7096.method21696() != class7099.method21696()) {
                 if (class7096.method21772((Class7111<Boolean>)Class3904.field17684)) {
@@ -133,7 +134,7 @@ public class Class3904 extends Class3902
         return true;
     }
     
-    private void method12008(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    private void method12008(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         class7097.method6696(class7098, this);
         class7097.method6696(class7098.method1149(Class3902.method12003(class7096).getOpposite()), this);
     }

@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -38,7 +40,7 @@ public class Class3850 extends Class3849
         }
     }
     
-    private boolean method11911(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    private boolean method11911(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3850.field17459);
         if (intValue >= 3) {
             this.method11910(class7096, class7097, class7098);
@@ -49,7 +51,7 @@ public class Class3850 extends Class3849
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (class7099 == this) {
             if (this.method11912(class7097, class7098, 2)) {
                 this.method11910(class7096, class7097, class7098);

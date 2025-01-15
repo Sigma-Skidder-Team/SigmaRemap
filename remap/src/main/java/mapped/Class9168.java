@@ -12,6 +12,10 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.Collections;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.List;
 
 public class Class9168
@@ -44,7 +48,7 @@ public class Class9168
     }
     
     @Nullable
-    public Class6313 method33469(final Class6313 class6313, final ItemStack class6314, final Class1847 class6315, final Class511 class6316) {
+    public Class6313 method33469(final Class6313 class6313, final ItemStack class6314, final World class6315, final LivingEntity class6316) {
         final boolean method28987 = Class8571.method28987();
         if (method28987) {
             Class9168.field38843 = null;

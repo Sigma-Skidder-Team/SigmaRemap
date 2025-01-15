@@ -14,7 +14,7 @@ public class Class3307 extends Class3167
     @Class6753
     private void method10468(final Class5717 class5717) {
         if (this.method9906()) {
-            if (Class3307.field15514.field4684.field2405) {
+            if (Class3307.field15514.field4684.collidedHorizontally) {
                 class5717.method16975(this.method9886("Motion"));
             }
         }

@@ -10,8 +10,9 @@ import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import com.google.gson.Gson;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 
-public class Class4403 implements Class4252<Class5811>
+public class Class4403 implements IPacket<Class5811>
 {
     private static String[] field19725;
     private static final Gson field19726;
@@ -25,12 +26,12 @@ public class Class4403 implements Class4252<Class5811>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19727 = Class9583.method35929(Class4403.field19726, class8654.method29513(32767), Class7787.class);
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29514(Class4403.field19726.toJson((Object)this.field19727));
     }
     
@@ -43,6 +44,6 @@ public class Class4403 implements Class4252<Class5811>
     }
     
     static {
-        field19726 = new GsonBuilder().registerTypeAdapter((Type)Class9315.class, (Object)new Class5954()).registerTypeAdapter((Type)Class8499.class, (Object)new Class5956()).registerTypeAdapter((Type)Class7787.class, (Object)new Class5978()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class)Class8768.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
+        field19726 = new GsonBuilder().registerTypeAdapter((Type)Class9315.class, (Object)new Class5954()).registerTypeAdapter((Type)Class8499.class, (Object)new Class5956()).registerTypeAdapter((Type)Class7787.class, (Object)new Class5978()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class) Style.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
     }
 }

@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.AbstractList;
 
 public class Class4035 extends Class3820
@@ -23,7 +27,7 @@ public class Class4035 extends Class3820
     }
     
     @Override
-    public ItemStack method11707(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+    public ItemStack method11707(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
         final ItemStack method11707 = super.method11707(class8321, class8322, class8323);
         final Class51 method11708 = class8321.method27657();
         if (method11708 != null) {

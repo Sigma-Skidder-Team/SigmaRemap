@@ -61,7 +61,7 @@ public class Class4210 extends Class4211
             final HashSet hashSet = Sets.newHashSet();
             final Iterator<Entity> iterator2 = collection.iterator();
             while (iterator2.hasNext()) {
-                hashSet.add(iterator2.next().method1642());
+                hashSet.add(iterator2.next().getType());
             }
             return this.field19002.method29755(hashSet.size()) && this.field19002.method29755(n);
         }

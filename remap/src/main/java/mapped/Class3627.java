@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.function.Predicate;
 
@@ -19,7 +20,7 @@ public class Class3627 extends Class3446
     
     @Override
     public boolean method11013() {
-        return !this.field16856.field2391.method6739((Class<? extends Entity>)Class511.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Entity>)Class838.method4993()).isEmpty();
+        return !this.field16856.world.method6739((Class<? extends Entity>) LivingEntity.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Entity>)Class838.method4993()).isEmpty();
     }
     
     @Override
@@ -35,6 +36,6 @@ public class Class3627 extends Class3446
     
     @Override
     public boolean method11017() {
-        return !this.field16856.field2391.method6739((Class<? extends Entity>)Class511.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Entity>)Class838.method4993()).isEmpty();
+        return !this.field16856.world.method6739((Class<? extends Entity>) LivingEntity.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Entity>)Class838.method4993()).isEmpty();
     }
 }

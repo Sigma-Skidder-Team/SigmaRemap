@@ -8,6 +8,8 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Comparator;
@@ -88,7 +90,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     private final DataFixer field2305;
     private String field2306;
     private int field2307;
-    private final Map<Class383, Class1849> field2308;
+    private final Map<DimensionType, Class1849> field2308;
     private Class6765 field2309;
     private volatile boolean field2310;
     private boolean field2311;
@@ -280,13 +282,13 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         if (this.method1509()) {
             class8643.method29531(Class394.field2295);
         }
-        final Class1849 class8646 = new Class1849(this, this.field2365, class8642, class8643, Class383.field2223, this.field2300, class8645);
-        this.field2308.put(Class383.field2223, class8646);
+        final Class1849 class8646 = new Class1849(this, this.field2365, class8642, class8643, DimensionType.field2223, this.field2300, class8645);
+        this.field2308.put(DimensionType.field2223, class8646);
         final Class8213 method6918 = class8646.method6918();
         this.method1434(method6918);
         this.field2354 = new Class8965(method6918);
         class8646.method6787().method34811(class8643);
-        final Class1849 method6919 = this.method1481(Class383.field2223);
+        final Class1849 method6919 = this.method1481(DimensionType.field2223);
         if (!class8643.method29576()) {
             try {
                 method6919.method6876(class8644);
@@ -309,8 +311,8 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         if (class8643.method29610() != null) {
             this.method1584().method28266(class8643.method29610());
         }
-        for (final Class383 class8647 : Class383.method1269()) {
-            if (class8647 != Class383.field2223) {
+        for (final DimensionType class8647 : DimensionType.method1269()) {
+            if (class8647 != DimensionType.field2223) {
                 this.field2308.put(class8647, new Class1850(method6919, this, this.field2365, class8642, class8647, this.field2300, class8645));
             }
         }
@@ -352,8 +354,8 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     
     public void method1442(final Class6459 class6459) {
         this.method1437(new Class2259("menu.generatingTerrain", new Object[0]));
-        final Class1849 method1481 = this.method1481(Class383.field2223);
-        Class394.field2292.info("Preparing start region for dimension " + Class383.method1276(method1481.field10063.method20487()));
+        final Class1849 method1481 = this.method1481(DimensionType.field2223);
+        Class394.field2292.info("Preparing start region for dimension " + DimensionType.method1276(method1481.dimension.getType()));
         final BlockPos method1482 = method1481.method6758();
         class6459.method19317(new Class7859(method1482));
         final Class1909 method1483 = method1481.method6904();
@@ -366,7 +368,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         }
         this.field2343 = Class8349.method27837() + 10L;
         this.method1458();
-        for (final Class383 class6460 : Class383.method1269()) {
+        for (final DimensionType class6460 : DimensionType.method1269()) {
             final Class6358 class6461 = this.method1481(class6460).method6918().method27209(Class6358::new, "chunks");
             if (class6461 == null) {
                 continue;
@@ -412,7 +414,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         boolean b4 = false;
         for (final Class1849 class1849 : this.method1482()) {
             if (!b) {
-                Class394.field2292.info("Saving chunks for level '{}'/{}", (Object)class1849.method6764().method29549(), (Object)Class383.method1276(class1849.field10063.method20487()));
+                Class394.field2292.info("Saving chunks for level '{}'/{}", (Object)class1849.method6764().method29549(), (Object) DimensionType.method1276(class1849.dimension.getType()));
             }
             try {
                 class1849.method6879(null, b2, class1849.field10092 && !b3);
@@ -422,7 +424,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             }
             b4 = true;
         }
-        final Class1849 method1481 = this.method1481(Class383.field2223);
+        final Class1849 method1481 = this.method1481(DimensionType.field2223);
         final Class8660 method1482 = method1481.method6764();
         method1481.method6787().method34810(method1482);
         method1482.method29611(this.method1584().method28265());
@@ -498,7 +500,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 Label_0291: {
                     if (this.method1435()) {
                         this.field2343 = Class8349.method27837();
-                        this.field2303.method24991(new Class2260(this.field2320));
+                        this.field2303.method24991(new StringTextComponent(this.field2320));
                         this.field2303.method24995(new Class9315(Class9528.method35579().getName(), Class9528.method35579().getProtocolVersion()));
                         this.method1463(this.field2303);
                         while (this.field2310) {
@@ -718,11 +720,11 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         this.method1567().method6507();
         this.field2300.method15300("levels");
         for (final Class1849 class1849 : this.method1482()) {
-            if (class1849.field10063.method20487() == Class383.field2223 || this.method1471()) {
+            if (class1849.dimension.getType() == DimensionType.field2223 || this.method1471()) {
                 this.field2300.method15298(() -> class1850.method6764().method29549() + " " + Class90.field226.method503(class1850.field10063.method20487()));
                 if (this.field2312 % 20 == 0) {
                     this.field2300.method15297("timeSync");
-                    this.field2309.method20587(new Class4345(class1849.method6754(), class1849.method6755(), class1849.method6765().method31216(Class8878.field37324)), class1849.field10063.method20487());
+                    this.field2309.method20587(new Class4345(class1849.method6754(), class1849.method6755(), class1849.method6765().method31216(Class8878.field37324)), class1849.dimension.getType());
                     this.field2300.method15299();
                 }
                 this.field2300.method15297("tick");
@@ -854,7 +856,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         Class394.field2292.warn(s);
     }
     
-    public Class1849 method1481(final Class383 class383) {
+    public Class1849 method1481(final DimensionType class383) {
         return this.field2308.get(class383);
     }
     
@@ -1053,7 +1055,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         if (this.field2309 != null) {
             class9037.method32486("players_current", this.method1484());
             class9037.method32486("players_max", this.method1485());
-            class9037.method32486("players_seen", this.method1481(Class383.field2223).method6917().method29398().length);
+            class9037.method32486("players_seen", this.method1481(DimensionType.field2223).method6917().method29398().length);
         }
         class9037.method32486("uses_auth", this.field2314);
         class9037.method32486("gui_state", this.method1543() ? "enabled" : "disabled");
@@ -1065,7 +1067,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 continue;
             }
             final Class8660 method6764 = class9038.method6764();
-            class9037.method32486("world[" + i + "][dimension]", class9038.field10063.method20487());
+            class9037.method32486("world[" + i + "][dimension]", class9038.dimension.getType());
             class9037.method32486("world[" + i + "][mode]", method6764.method29564());
             class9037.method32486("world[" + i + "][difficulty]", class9038.method6954());
             class9037.method32486("world[" + i + "][hardcore]", method6764.method29568());
@@ -1200,7 +1202,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         return 16;
     }
     
-    public boolean method1549(final Class1847 class1847, final BlockPos class1848, final Class512 class1849) {
+    public boolean method1549(final World class1847, final BlockPos class1848, final Class512 class1849) {
         return false;
     }
     
@@ -1282,7 +1284,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         if (this.method5374()) {
             this.method1537().method20600();
             this.field2348.method7606();
-            this.method1569(this.method1481(Class383.field2223).method6764());
+            this.method1569(this.method1481(DimensionType.field2223).method6764());
             this.method1537().method20626();
             this.method1599();
         }
@@ -1348,7 +1350,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     public Class7492 method1574() {
-        return new Class7492(this, (this.method1481(Class383.field2223) != null) ? new Vec3d(this.method1481(Class383.field2223).method6758()) : Vec3d.ZERO, Vec2f.ZERO, this.method1481(Class383.field2223), 4, "Server", new Class2260("Server"), this, null);
+        return new Class7492(this, (this.method1481(DimensionType.field2223) != null) ? new Vec3d(this.method1481(DimensionType.field2223).method6758()) : Vec3d.ZERO, Vec2f.ZERO, this.method1481(DimensionType.field2223), 4, "Server", new StringTextComponent("Server"), this, null);
     }
     
     @Override
@@ -1389,7 +1391,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     public Class8878 method1583() {
-        return this.method1481(Class383.field2223).method6765();
+        return this.method1481(DimensionType.field2223).method6765();
     }
     
     public Class8467 method1584() {
@@ -1441,8 +1443,8 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     
     public void method1593(final Path path) throws IOException {
         final Path resolve = path.resolve("levels");
-        for (final Map.Entry<Class383, V> entry : this.field2308.entrySet()) {
-            final Class1932 method1276 = Class383.method1276(entry.getKey());
+        for (final Map.Entry<DimensionType, V> entry : this.field2308.entrySet()) {
+            final Class1932 method1276 = DimensionType.method1276(entry.getKey());
             final Path resolve2 = resolve.resolve(method1276.method7798()).resolve(method1276.method7797());
             Files.createDirectories(resolve2, (FileAttribute<?>[])new FileAttribute[0]);
             ((Class1849)entry.getValue()).method6930(resolve2);

@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -15,14 +17,14 @@ public class Class7075
     public final Class512 field27551;
     public final Class316 field27552;
     public final Class7005 field27553;
-    public final Class1847 field27554;
+    public final World field27554;
     public final ItemStack field27555;
     
     public Class7075(final Class512 class512, final Class316 class513, final Class7005 class514) {
-        this(class512.field2391, class512, class513, class512.method2715(class513), class514);
+        this(class512.world, class512, class513, class512.method2715(class513), class514);
     }
     
-    public Class7075(final Class1847 field27554, final Class512 field27555, final Class316 field27556, final ItemStack field27557, final Class7005 field27558) {
+    public Class7075(final World field27554, final Class512 field27555, final Class316 field27556, final ItemStack field27557, final Class7005 field27558) {
         this.field27551 = field27555;
         this.field27552 = field27556;
         this.field27553 = field27558;
@@ -59,7 +61,7 @@ public class Class7075
         return this.field27552;
     }
     
-    public Class1847 method21654() {
+    public World method21654() {
         return this.field27554;
     }
     
@@ -72,6 +74,6 @@ public class Class7075
     }
     
     public float method21646() {
-        return (this.field27551 != null) ? this.field27551.field2399 : 0.0f;
+        return (this.field27551 != null) ? this.field27551.rotationYaw : 0.0f;
     }
 }

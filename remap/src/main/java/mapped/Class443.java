@@ -8,6 +8,8 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 
 public class Class443 implements Class446, Class472

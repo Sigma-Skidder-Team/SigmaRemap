@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.GsonBuilder;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import org.apache.logging.log4j.LogManager;
 
 import java.lang.reflect.Type;
@@ -65,6 +66,6 @@ public class Class1781 extends Class1779
     
     static {
         field9879 = LogManager.getLogger();
-        field9886 = new GsonBuilder().registerTypeHierarchyAdapter((Class)Class6056.class, (Object)((jsonElement, type, jsonDeserializationContext) -> Class6056.method18017(Class9583.method35913(jsonElement, "advancement"), jsonDeserializationContext))).registerTypeAdapter((Type)Class9032.class, (Object)new Class5992()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class)Class8768.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
+        field9886 = new GsonBuilder().registerTypeHierarchyAdapter((Class)Class6056.class, (Object)((jsonElement, type, jsonDeserializationContext) -> Class6056.method18017(Class9583.method35913(jsonElement, "advancement"), jsonDeserializationContext))).registerTypeAdapter((Type)Class9032.class, (Object)new Class5992()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class) Style.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
     }
 }

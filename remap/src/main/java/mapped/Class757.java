@@ -48,10 +48,10 @@ public class Class757 extends Class756
         final Class5743 class5743 = new Class5743();
         if (Class1607.field8977) {
             try {
-                if (this.field2424 % 150 == 0) {
+                if (this.ticksExisted % 150 == 0) {
                     Thread.sleep((long)(1800.0 + 7000.0 * Math.random()));
                 }
-                else if (this.field2424 % 42 == 0 && Math.random() > 0.20000000298023224) {
+                else if (this.ticksExisted % 42 == 0 && Math.random() > 0.20000000298023224) {
                     Thread.sleep((long)(200.0 + 300.0 * Math.random()));
                 }
             }
@@ -71,7 +71,7 @@ public class Class757 extends Class756
     }
     
     @Override
-    public boolean method1639() {
+    public boolean isSpectator() {
         return false;
     }
     

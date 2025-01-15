@@ -6,8 +6,10 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Random;
@@ -128,7 +130,7 @@ public class Class488 extends Class489 implements Class439
             if (!this.method2433()) {
                 this.field2803 = 100;
                 if (this.field2804 == null) {
-                    if (this.field2656.field10063 instanceof Class6738) {
+                    if (this.field2656.dimension instanceof Class6738) {
                         this.method2439((Class1849)this.field2656);
                     }
                 }
@@ -164,7 +166,7 @@ public class Class488 extends Class489 implements Class439
         else {
             this.field2804 = new BlockPos(class1850.x + 0.5, 75.0, class1850.z + 0.5);
             Class488.field2801.debug("Failed to find suitable block, settling on {}", (Object)this.field2804);
-            Class4535.field20005.method13527(Class5113.field22059).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(this.field2804.method1132()), this.field2804);
+            Class4535.field20005.method13527(Class5113.field22059).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(this.field2804.toLong()), this.field2804);
         }
         this.field2804 = method2440(class1849, this.field2804, 16, true);
         Class488.field2801.debug("Creating portal at {}", (Object)this.field2804);
@@ -196,7 +198,7 @@ public class Class488 extends Class489 implements Class439
         return (class1857 != null) ? class1857 : class1856;
     }
     
-    private static Class1862 method2441(final Class1847 class1847, final Vec3d class1848) {
+    private static Class1862 method2441(final World class1847, final Vec3d class1848) {
         return class1847.method6686(MathHelper.floor(class1848.x / 16.0), MathHelper.floor(class1848.z / 16.0));
     }
     
@@ -207,7 +209,7 @@ public class Class488 extends Class489 implements Class439
         final BlockPos class1864 = new BlockPos(method7019.method25428(), class1862.method7012() + 16 - 1, method7019.method25429());
         BlockPos class1865 = null;
         double n = 0.0;
-        for (final BlockPos class1866 : BlockPos.method1154(class1863, class1864)) {
+        for (final BlockPos class1866 : BlockPos.getAllInBoxMutable(class1863, class1864)) {
             final Class7096 method7020 = class1862.method6701(class1866);
             final BlockPos method7021 = class1866.method1137();
             final BlockPos method7022 = class1866.method1138(2);

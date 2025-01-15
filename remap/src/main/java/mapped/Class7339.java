@@ -10,6 +10,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
@@ -113,7 +114,7 @@ public class Class7339
         return class8321;
     }
     
-    public void method22539(final Class8654 class8654) {
+    public void method22539(final PacketBuffer class8654) {
         class8654.method29498(this.field28342);
         class8654.method29498(this.field28343);
         class8654.method29509(this.field28344);
@@ -136,7 +137,7 @@ public class Class7339
         class8654.writeFloat(this.field28351);
     }
     
-    public static Class7339 method22540(final Class8654 class8654) {
+    public static Class7339 method22540(final PacketBuffer class8654) {
         final ITextComponent method29497 = class8654.method29497();
         final ITextComponent method29498 = class8654.method29497();
         final ItemStack method29499 = class8654.method29511();

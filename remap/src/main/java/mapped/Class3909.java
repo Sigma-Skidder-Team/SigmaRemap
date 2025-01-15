@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.List;
 import java.util.Random;
 
@@ -21,7 +23,7 @@ public class Class3909 extends Class3910 implements Class3872
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11946(final World class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
@@ -36,7 +38,7 @@ public class Class3909 extends Class3910 implements Class3872
             int j = 0;
             while (true) {
                 while (j < i / 16) {
-                    method1139 = method1139.method1134(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
+                    method1139 = method1139.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
                     if (class1849.method6701(method1139.method1139()).method21696() == this) {
                         if (!class1849.method6701(method1139).method21762(class1849, method1139)) {
                             ++j;

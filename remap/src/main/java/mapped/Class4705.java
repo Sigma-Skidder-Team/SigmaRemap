@@ -24,8 +24,8 @@ public class Class4705 extends Class4703<Class421>
     public void method13967(final Class421 class421, final float n, final float n2, final Class7351 class422, final Class7807 class423, final int n3) {
         class422.method22567();
         class422.method22565(-1.0f, -1.0f, 1.0f);
-        final float method35707 = MathHelper.method35707(class421.field2401, class421.field2399, n2);
-        final float method35708 = MathHelper.method35700(n2, class421.field2402, class421.field2400);
+        final float method35707 = MathHelper.method35707(class421.prevRotationYaw, class421.rotationYaw, n2);
+        final float method35708 = MathHelper.method35700(n2, class421.prevRotationPitch, class421.rotationPitch);
         final Class4150 method35709 = class423.method25214(this.field20292.method17647(this.method13968(class421)));
         this.field20292.method17790(0.0f, method35707, method35708);
         this.field20292.method17564(class422, method35709, n3, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);

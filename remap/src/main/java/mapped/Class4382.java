@@ -7,7 +7,7 @@ package mapped;
 import javax.annotation.Nullable;
 import java.io.IOException;
 
-public class Class4382 implements Class4252<Class5800>
+public class Class4382 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19626;
     private Class1932 field19627;
@@ -22,12 +22,12 @@ public class Class4382 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         class8654.readByte();
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         if (this.field19628 == null) {
             if (this.field19627 == null) {
                 class8654.writeByte(0);
@@ -58,7 +58,7 @@ public class Class4382 implements Class4252<Class5800>
         return this.field19628;
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17325(this);
     }
 }

@@ -322,7 +322,7 @@ public class Class9356
         int n = 0;
         float n2 = 0.0f;
         for (int i = 0; i < 4; ++i) {
-            final BlockPos method1134 = class1856.method1134(-(i & 0x1), 0, -(i >> 1 & 0x1));
+            final BlockPos method1134 = class1856.add(-(i & 0x1), 0, -(i >> 1 & 0x1));
             if (class1855.method6702(method1134.method1137()).method21779().method22165(class1857)) {
                 return 1.0f;
             }

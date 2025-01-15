@@ -7,9 +7,11 @@ package mapped;
 import java.util.Objects;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
-public class Class5458 extends Class5419<Class511>
+public class Class5458 extends Class5419<LivingEntity>
 {
     private static String[] field22701;
     private final Class8233<Class363> field22702;
@@ -22,13 +24,13 @@ public class Class5458 extends Class5419<Class511>
     }
     
     @Override
-    public boolean method16538(final Class1849 class1849, final Class511 class1850) {
+    public boolean method16538(final Class1849 class1849, final LivingEntity class1850) {
         final Class363 class1851 = class1850.method2618().method1198(this.field22702).get();
-        return Objects.equals(class1849.method6789().method20487(), class1851.method1169()) && class1851.method1170().withinDistance(class1850.method1934(), 5.0);
+        return Objects.equals(class1849.method6789().getType(), class1851.method1169()) && class1851.method1170().withinDistance(class1850.method1934(), 5.0);
     }
     
     @Override
-    public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
+    public void method16539(final Class1849 class1849, final LivingEntity class1850, final long n) {
         final Class365<?> method2618 = class1850.method2618();
         final Class363 class1851 = method2618.method1198(this.field22702).get();
         final BlockPos method2619 = class1851.method1170();
@@ -45,7 +47,7 @@ public class Class5458 extends Class5419<Class511>
         }
     }
     
-    private boolean method16676(final Class1849 class1849, final BlockPos class1850, final Class511 class1851) {
+    private boolean method16676(final Class1849 class1849, final BlockPos class1850, final LivingEntity class1851) {
         final Class7096 method6701 = class1849.method6701(class1850);
         if (method6701.method21696().method11785(Class7188.field27910)) {
             if (method6701.method21772((Class7111<Boolean>)Class3900.field17600)) {

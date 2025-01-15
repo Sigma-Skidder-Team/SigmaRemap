@@ -41,7 +41,7 @@ public class Class554 extends Class527
     public void method2969() {
         super.method2969();
         this.field3329.clear();
-        this.field3329.addAll(this.field3156.method6626(this.field3327.method8461(), this.field3152 - 50));
+        this.field3329.addAll(this.field3156.method6626(this.field3327.getFormattedText(), this.field3152 - 50));
         final int n = (this.field3329.size() + 1) * 9;
         this.method3029(new Class654(this.field3152 / 2 - 155, 100 + n, 150, 20, this.field3331, class654 -> this.field3326.method10853(true, this.field3334.method3743())));
         this.method3029(new Class654(this.field3152 / 2 - 155 + 160, 100 + n, 150, 20, this.field3332, class654 -> this.field3326.method10853(false, this.field3334.method3743())));
@@ -55,7 +55,7 @@ public class Class554 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 50, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 50, 16777215);
         int n4 = 70;
         final Iterator<String> iterator = this.field3329.iterator();
         while (iterator.hasNext()) {

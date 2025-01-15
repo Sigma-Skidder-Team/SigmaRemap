@@ -6,13 +6,15 @@ package mapped;
 
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public abstract class Class6409 extends Class6404
 {
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
-        final Class1847 method16763 = class5491.method16763();
+        final World method16763 = class5491.method16763();
         final IPosition method16764 = Class3955.method12072(class5491);
         final Direction class5493 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
         final Class401 method16765 = this.method19093(method16763, method16764, class5492);
@@ -27,7 +29,7 @@ public abstract class Class6409 extends Class6404
         class5491.method16763().method6955(1002, class5491.method16764(), 0);
     }
     
-    public abstract Class401 method19093(final Class1847 p0, final IPosition p1, final ItemStack p2);
+    public abstract Class401 method19093(final World p0, final IPosition p1, final ItemStack p2);
     
     public float method19094() {
         return 6.0f;

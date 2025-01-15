@@ -5,13 +5,12 @@
 package mapped;
 
 import java.util.List;
-import java.util.Random;
 
 public class Class5935 extends Class5936
 {
     private static String[] field24428;
     
-    public Class5935(final Class4574<?> class4574, final int n, final int n2, final Class6997 class4575, final int n3, final long n4) {
+    public Class5935(final Class4574<?> class4574, final int n, final int n2, final MutableBoundingBox class4575, final int n3, final long n4) {
         super(class4574, n, n2, class4575, n3, n4);
     }
     
@@ -22,7 +21,7 @@ public class Class5935 extends Class5936
         Class4507 class6349;
         do {
             this.field24431.clear();
-            this.field24432 = Class6997.method21407();
+            this.field24432 = MutableBoundingBox.getNewBoundingBox();
             this.field24436.method9440(method18880 + n3++, n, n2);
             Class6924.method21291();
             class6349 = new Class4507(this.field24436, (n << 4) + 2, (n2 << 4) + 2);

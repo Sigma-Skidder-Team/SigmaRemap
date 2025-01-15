@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 
 import java.io.IOException;
 
-public class Class4258 implements Class4252<Class5800>
+public class Class4258 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19103;
     private int field19104;
@@ -23,18 +23,18 @@ public class Class4258 implements Class4252<Class5800>
     }
     
     public Class4258(final Entity class399) {
-        this.field19104 = class399.method1643();
+        this.field19104 = class399.getEntityId();
         this.field19105 = class399.getPosX();
         this.field19106 = class399.getPosY();
         this.field19107 = class399.getPosZ();
-        this.field19108 = (byte)(class399.field2399 * 256.0f / 360.0f);
-        this.field19109 = (byte)(class399.field2400 * 256.0f / 360.0f);
-        this.field19110 = class399.field2404;
+        this.field19108 = (byte)(class399.rotationYaw * 256.0f / 360.0f);
+        this.field19109 = (byte)(class399.rotationPitch * 256.0f / 360.0f);
+        this.field19110 = class399.onGround;
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19104 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19104 = class8654.readVarInt();
         this.field19105 = class8654.readDouble();
         this.field19106 = class8654.readDouble();
         this.field19107 = class8654.readDouble();
@@ -44,8 +44,8 @@ public class Class4258 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19104);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19104);
         class8654.writeDouble(this.field19105);
         class8654.writeDouble(this.field19106);
         class8654.writeDouble(this.field19107);
@@ -54,7 +54,7 @@ public class Class4258 implements Class4252<Class5800>
         class8654.writeBoolean(this.field19110);
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17280(this);
     }
     

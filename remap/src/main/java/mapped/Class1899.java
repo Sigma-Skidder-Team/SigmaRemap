@@ -17,6 +17,6 @@ public class Class1899 extends Class1897<Class7502>
     @Override
     public int method7351(final long n) {
         final Class7281 method7348 = this.method7348(Class353.method1111(n), false);
-        return (method7348 != null) ? method7348.method22322(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n))) : 0;
+        return (method7348 != null) ? method7348.method22322(Class353.method1096(BlockPos.unpackX(n)), Class353.method1096(BlockPos.unpackY(n)), Class353.method1096(BlockPos.unpackZ(n))) : 0;
     }
 }

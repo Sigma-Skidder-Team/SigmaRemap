@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.EnumSet;
@@ -23,7 +24,7 @@ public class Class3599 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class511 method4152 = this.field16763.method4152();
+        final LivingEntity method4152 = this.field16763.method4152();
         if (method4152 != null) {
             if (method4152.method1768()) {
                 if (this.field16763.method2646(method4152)) {
@@ -48,7 +49,7 @@ public class Class3599 extends Class3446
     @Override
     public void method11016() {
         --this.field16765;
-        final Class511 method4152 = this.field16763.method4152();
+        final LivingEntity method4152 = this.field16763.method4152();
         if (method4152 != null) {
             final boolean method4153 = this.field16763.method4151().method34143(method4152);
             if (!method4153) {
@@ -81,11 +82,11 @@ public class Class3599 extends Class3446
                         }
                         if (this.field16764 > 1) {
                             final float n4 = MathHelper.method35640(MathHelper.sqrt(method4154)) * 0.5f;
-                            this.field16763.field2391.method6839(null, 1018, new BlockPos(this.field16763), 0);
+                            this.field16763.world.method6839(null, 1018, new BlockPos(this.field16763), 0);
                             for (int i = 0; i < 1; ++i) {
-                                final Class418 class418 = new Class418(this.field16763.field2391, this.field16763, n + this.field16763.method2633().nextGaussian() * n4, n2, n3 + this.field16763.method2633().nextGaussian() * n4);
-                                class418.method1656(class418.getPosX(), this.field16763.method1942(0.5) + 0.5, class418.getPosZ());
-                                this.field16763.field2391.method6886(class418);
+                                final Class418 class418 = new Class418(this.field16763.world, this.field16763, n + this.field16763.method2633().nextGaussian() * n4, n2, n3 + this.field16763.method2633().nextGaussian() * n4);
+                                class418.setPosition(class418.getPosX(), this.field16763.method1942(0.5) + 0.5, class418.getPosZ());
+                                this.field16763.world.method6886(class418);
                             }
                         }
                     }

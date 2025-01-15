@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public final class Class873 extends Class872<Runnable>
 {
     public final /* synthetic */ Class1909 field4721;
     
-    private Class873(final Class1909 field4721, final Class1847 class1847) {
+    private Class873(final Class1909 field4721, final World class1847) {
         this.field4721 = field4721;
-        super("Chunk source main thread executor for " + Class90.field226.method503(class1847.method6789().method20487()));
+        super("Chunk source main thread executor for " + Class90.field226.method503(class1847.method6789().getType()));
     }
     
     @Override

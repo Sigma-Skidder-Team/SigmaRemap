@@ -10,6 +10,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.Style;
 
 public class Class8125
 {
@@ -24,16 +25,16 @@ public class Class8125
         final BlockPos method6915 = class7492.method23250().method6915(s, class7493, 100, false);
         if (method6915 != null) {
             final int method6916 = MathHelper.method35642(method26752(class7493.getX(), class7493.getZ(), method6915.getX(), method6915.getZ()));
-            class7492.method23257(new Class2259("commands.locate.success", new Object[] { s, Class9479.method35299(new Class2259("chat.coordinates", new Object[] { method6915.getX(), "~", method6915.getZ() })).method8467(class7495 -> {
-                    class7495.method30413(Class2116.field12319);
+            class7492.method23257(new Class2259("commands.locate.success", new Object[] { s, Class9479.method35299(new Class2259("chat.coordinates", new Object[] { method6915.getX(), "~", method6915.getZ() })).applyTextStyle(class7495 -> {
+                    class7495.setColor(TextFormatting.GREEN);
                     new Class9485(Class2075.field11974, "/tp @s " + class7494.method1074() + " ~ " + class7494.method1076());
                     final Class9485 class7496;
                     final Object o;
-                    ((Class8768)o).method30419(class7496);
+                    ((Style)o).method30419(class7496);
                     new Class9390(Class1961.field10697, new Class2259("chat.coordinates.tooltip", new Object[0]));
                     final Class9390 class7497;
                     final Object o2;
-                    ((Class8768)o2).method30420(class7497);
+                    ((Style)o2).method30420(class7497);
                     return;
                 }), method6916 }), false);
             return method6916;

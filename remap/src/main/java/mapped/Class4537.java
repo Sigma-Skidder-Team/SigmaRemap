@@ -27,7 +27,7 @@ public class Class4537 extends Class4536
             final ArrayList arrayList = Lists.newArrayList((Object[])new Direction[] { method576, method576.rotateY(), method576.method784() });
             Collections.shuffle(arrayList, rnd);
             for (final Direction class1854 : arrayList.subList(0, n)) {
-                final Class385 class1855 = new Class385(class1852);
+                final Mutable class1855 = new Mutable(class1852);
                 final int n2 = rnd.nextInt(2) + 1;
                 class1855.method1290(class1854);
                 Direction class1856;

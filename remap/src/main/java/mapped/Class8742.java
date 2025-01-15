@@ -13,6 +13,9 @@ import com.google.common.collect.Lists;
 import java.util.Collection;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
@@ -103,7 +106,7 @@ public class Class8742
         }
     }
     
-    public static int method30201(final Iterable<ItemStack> iterable, final Class7929 class7929) {
+    public static int method30201(final Iterable<ItemStack> iterable, final DamageSource class7929) {
         final MutableInt mutableInt = new MutableInt();
         method30200((class7930, n) -> mutableInt.add(class7930.method18594(n, class7929)), iterable);
         return mutableInt.intValue();
@@ -115,12 +118,12 @@ public class Class8742
         return mutableFloat.floatValue();
     }
     
-    public static float method30203(final Class511 class511) {
+    public static float method30203(final LivingEntity class511) {
         final int method30206 = method30206(Class7882.field32364, class511);
         return (method30206 <= 0) ? 0.0f : Class6267.method18606(method30206);
     }
     
-    public static void method30204(final Class511 class511, final Entity class512) {
+    public static void method30204(final LivingEntity class511, final Entity class512) {
         final Class7311 class513 = (class513, n) -> class513.method18602(class511, class512, n);
         if (class511 != null) {
             method30200(class513, class511.method1802());
@@ -130,7 +133,7 @@ public class Class8742
         }
     }
     
-    public static void method30205(final Class511 class511, final Entity class512) {
+    public static void method30205(final LivingEntity class511, final Entity class512) {
         final Class7311 class513 = (class513, n) -> class513.method18601(class511, class512, n);
         if (class511 != null) {
             method30200(class513, class511.method1802());
@@ -140,7 +143,7 @@ public class Class8742
         }
     }
     
-    public static int method30206(final Class6257 class6257, final Class511 class6258) {
+    public static int method30206(final Class6257 class6257, final LivingEntity class6258) {
         final Collection<ItemStack> values = class6257.method18591(class6258).values();
         if (values != null) {
             int n = 0;
@@ -157,23 +160,23 @@ public class Class8742
         return 0;
     }
     
-    public static int method30207(final Class511 class511) {
+    public static int method30207(final LivingEntity class511) {
         return method30206(Class7882.field32361, class511);
     }
     
-    public static int method30208(final Class511 class511) {
+    public static int method30208(final LivingEntity class511) {
         return method30206(Class7882.field32362, class511);
     }
     
-    public static int method30209(final Class511 class511) {
+    public static int method30209(final LivingEntity class511) {
         return method30206(Class7882.field32352, class511);
     }
     
-    public static int method30210(final Class511 class511) {
+    public static int method30210(final LivingEntity class511) {
         return method30206(Class7882.field32355, class511);
     }
     
-    public static int method30211(final Class511 class511) {
+    public static int method30211(final LivingEntity class511) {
         return method30206(Class7882.field32365, class511);
     }
     
@@ -185,15 +188,15 @@ public class Class8742
         return method30195(Class7882.field32374, class8321);
     }
     
-    public static int method30214(final Class511 class511) {
+    public static int method30214(final LivingEntity class511) {
         return method30206(Class7882.field32363, class511);
     }
     
-    public static boolean method30215(final Class511 class511) {
+    public static boolean method30215(final LivingEntity class511) {
         return method30206(Class7882.field32353, class511) > 0;
     }
     
-    public static boolean method30216(final Class511 class511) {
+    public static boolean method30216(final LivingEntity class511) {
         return method30206(Class7882.field32356, class511) > 0;
     }
     
@@ -218,7 +221,7 @@ public class Class8742
     }
     
     @Nullable
-    public static Map.Entry<Class2215, ItemStack> method30222(final Class6257 class6257, final Class511 class6258) {
+    public static Map.Entry<Class2215, ItemStack> method30222(final Class6257 class6257, final LivingEntity class6258) {
         final Map<Class2215, ItemStack> method18591 = class6257.method18591(class6258);
         if (!method18591.isEmpty()) {
             final ArrayList arrayList = Lists.newArrayList();

@@ -17,7 +17,7 @@ public class Class4595 extends Class4593<Class5128>
         super(function);
     }
     
-    public boolean method13641(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final Class6997 class1877, final Class5128 class1878) {
+    public boolean method13641(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final MutableBoundingBox class1877, final Class5128 class1878) {
         final int method13634 = this.method13634(random, class1878);
         if (this.method13637(class1875, class1876, method13634)) {
             this.method13643(class1875, random, class1876.method1138(method13634), 2, set2, class1877, class1878);
@@ -41,7 +41,7 @@ public class Class4595 extends Class4593<Class5128>
         return false;
     }
     
-    private void method13643(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
+    private void method13643(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final MutableBoundingBox class1877, final Class5127 class1878) {
         for (int i = -2; i <= 0; ++i) {
             this.method13638(class1875, random, class1876.method1138(i), n + 1 - i, set, class1877, class1878);
         }

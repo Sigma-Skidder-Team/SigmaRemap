@@ -6,11 +6,12 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
 
-public class Class4381 implements Class4252<Class5813>
+public class Class4381 implements IPacket<Class5813>
 {
     private static String[] field19621;
     private int field19622;
@@ -22,26 +23,26 @@ public class Class4381 implements Class4252<Class5813>
     }
     
     public Class4381(final Entity class399) {
-        this.field19622 = class399.method1643();
+        this.field19622 = class399.getEntityId();
         this.field19623 = Class2029.field11565;
     }
     
     public Class4381(final Entity class399, final Class316 field19625) {
-        this.field19622 = class399.method1643();
+        this.field19622 = class399.getEntityId();
         this.field19623 = Class2029.field11564;
         this.field19625 = field19625;
     }
     
     public Class4381(final Entity class399, final Class316 field19625, final Vec3d field19626) {
-        this.field19622 = class399.method1643();
+        this.field19622 = class399.getEntityId();
         this.field19623 = Class2029.field11566;
         this.field19625 = field19625;
         this.field19624 = field19626;
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19622 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19622 = class8654.readVarInt();
         this.field19623 = class8654.method29499(Class2029.class);
         if (this.field19623 == Class2029.field11566) {
             this.field19624 = new Vec3d(class8654.readFloat(), class8654.readFloat(), class8654.readFloat());
@@ -52,8 +53,8 @@ public class Class4381 implements Class4252<Class5813>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19622);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19622);
         class8654.method29500(this.field19623);
         if (this.field19623 == Class2029.field11566) {
             class8654.writeFloat((float)this.field19624.x);
@@ -70,8 +71,8 @@ public class Class4381 implements Class4252<Class5813>
     }
     
     @Nullable
-    public Entity method13170(final Class1847 class1847) {
-        return class1847.method6741(this.field19622);
+    public Entity method13170(final World class1847) {
+        return class1847.getEntityByID(this.field19622);
     }
     
     public Class2029 method13171() {

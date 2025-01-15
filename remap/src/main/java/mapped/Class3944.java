@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 public abstract class Class3944 extends Class3841
 {
     private final Class181 field17837;
@@ -24,7 +28,7 @@ public abstract class Class3944 extends Class3841
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class465) {

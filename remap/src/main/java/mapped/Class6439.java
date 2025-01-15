@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
 public class Class6439 implements Class6438
@@ -27,7 +28,7 @@ public class Class6439 implements Class6438
     }
     
     @Override
-    public boolean method19206(final Class511 class511) {
+    public boolean method19206(final LivingEntity class511) {
         return true;
     }
     

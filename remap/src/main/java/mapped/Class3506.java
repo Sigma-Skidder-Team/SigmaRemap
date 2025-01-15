@@ -39,7 +39,7 @@ public class Class3506 extends Class3446
         final int n = method4475.nextInt(1025) - 512;
         int n2 = method4475.nextInt(9) - 4;
         final int n3 = method4475.nextInt(1025) - 512;
-        if (n2 + this.field16485.getPosY() > this.field16485.field2391.method6743() - 1) {
+        if (n2 + this.field16485.getPosY() > this.field16485.world.method6743() - 1) {
             n2 = 0;
         }
         Class793.method4476(this.field16485, new BlockPos(n + this.field16485.getPosX(), n2 + this.field16485.getPosY(), n3 + this.field16485.getPosZ()));
@@ -58,7 +58,7 @@ public class Class3506 extends Class3446
             if (class5488 != null) {
                 final int method35644 = MathHelper.floor(class5488.x);
                 final int method35645 = MathHelper.floor(class5488.z);
-                if (!this.field16485.field2391.method6973(method35644 - 34, 0, method35645 - 34, method35644 + 34, 0, method35645 + 34)) {
+                if (!this.field16485.world.method6973(method35644 - 34, 0, method35645 - 34, method35644 + 34, 0, method35645 + 34)) {
                     class5488 = null;
                 }
             }

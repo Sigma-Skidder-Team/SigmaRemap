@@ -31,6 +31,8 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.IntNBT;
 
 public class Class8865
 {
@@ -52,7 +54,7 @@ public class Class8865
         })))).then(Class7788.method25001("at").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).fork((CommandNode)register, commandContext -> {
             final ArrayList arrayList = Lists.newArrayList();
             for (final Entity class399 : Class6886.method21147((CommandContext<Class7492>)commandContext, "targets")) {
-                arrayList.add(((Class7492)commandContext.getSource()).method23244((Class1849)class399.field2391).method23236(class399.method1895()).method23237(class399.method1792()));
+                arrayList.add(((Class7492)commandContext.getSource()).method23244((Class1849)class399.world).method23236(class399.method1895()).method23237(class399.method1792()));
             }
             return arrayList;
         })))).then(((LiteralArgumentBuilder)Class7788.method25001("store").then((ArgumentBuilder)method31049((LiteralCommandNode<Class7492>)register, Class7788.method25001("result"), true))).then((ArgumentBuilder)method31049((LiteralCommandNode<Class7492>)register, Class7788.method25001("success"), false)))).then(((LiteralArgumentBuilder)Class7788.method25001("positioned").then(Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23236(Class7555.method23721((CommandContext<Class7492>)commandContext, "pos")).method23243(Class2042.field11636)))).then(Class7788.method25001("as").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).fork((CommandNode)register, commandContext -> {
@@ -85,7 +87,7 @@ public class Class8865
         literalArgumentBuilder.then(Class7788.method25001("bossbar").then(((RequiredArgumentBuilder)Class7788.method25002("id", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class8522.field35786).then(Class7788.method25001("value").redirect((CommandNode)literalCommandNode, commandContext -> method31051((Class7492)commandContext.getSource(), Class8522.method28551((CommandContext<Class7492>)commandContext), true, b)))).then(Class7788.method25001("max").redirect((CommandNode)literalCommandNode, commandContext -> method31051((Class7492)commandContext.getSource(), Class8522.method28551((CommandContext<Class7492>)commandContext), false, b)))));
         final Iterator<Class6595> iterator = Class5773.field23619.iterator();
         while (iterator.hasNext()) {
-            iterator.next().method20042((ArgumentBuilder<Class7492, ?>)literalArgumentBuilder, argumentBuilder2 -> argumentBuilder2.then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("path", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).then(Class7788.method25001("int").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class45.method279((int)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("float").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class46.method281((float)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("short").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class48.method286((short)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("long").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class49.method288((long)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("double").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class44.method277(n2 * DoubleArgumentType.getDouble(commandContext2, "scale")), b2))))).then(Class7788.method25001("byte").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class47.method283((byte)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))));
+            iterator.next().method20042((ArgumentBuilder<Class7492, ?>)literalArgumentBuilder, argumentBuilder2 -> argumentBuilder2.then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("path", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8258.method27403()).then(Class7788.method25001("int").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> IntNBT.valueOf((int)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("float").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class46.method281((float)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("short").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class48.method286((short)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("long").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class49.method288((long)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))).then(Class7788.method25001("double").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class44.method277(n2 * DoubleArgumentType.getDouble(commandContext2, "scale")), b2))))).then(Class7788.method25001("byte").then(Class7788.method25002("scale", (com.mojang.brigadier.arguments.ArgumentType<Object>)DoubleArgumentType.doubleArg()).redirect((CommandNode)literalCommandNode2, commandContext -> method31052((Class7492)commandContext.getSource(), class6595.method20041((CommandContext<Class7492>)commandContext), Class8258.method27404((CommandContext<Class7492>)commandContext, "path"), n2 -> Class47.method283((byte)(n2 * DoubleArgumentType.getDouble(commandContext2, "scale"))), b2))))));
         }
         return (ArgumentBuilder<Class7492, ?>)literalArgumentBuilder;
     }
@@ -111,13 +113,13 @@ public class Class8865
         }), Class8865.field37264);
     }
     
-    private static Class7492 method31052(final Class7492 class7492, final Class5414 class7493, final Class8570 class7494, final IntFunction<Class41> intFunction, final boolean b) {
+    private static Class7492 method31052(final Class7492 class7492, final Class5414 class7493, final Class8570 class7494, final IntFunction<INBT> intFunction, final boolean b) {
         return class7492.method23239((ResultConsumer<Class7492>)((commandContext, b2, n) -> {
             try {
                 final Class51 method16526 = class7493.method16526();
                 class7494.method28809(method16526, () -> {
                     final Object o = b3 ? n3 : (b4 ? 1 : 0);
-                    return (Class41)intFunction2.apply(n2);
+                    return (INBT)intFunction2.apply(n2);
                 });
                 class7493.method16525(method16526);
             }
@@ -217,17 +219,17 @@ public class Class8865
     }
     
     private static OptionalInt method31065(final Class1849 class1849, final BlockPos class1850, final BlockPos class1851, final BlockPos class1852, final boolean b) throws CommandSyntaxException {
-        final Class6997 class1853 = new Class6997(class1850, class1851);
-        final Class6997 class1854 = new Class6997(class1852, class1852.method1135(class1853.method21416()));
-        final BlockPos class1855 = new BlockPos(class1854.field27293 - class1853.field27293, class1854.field27294 - class1853.field27294, class1854.field27295 - class1853.field27295);
-        final int i = class1853.method21417() * class1853.method21418() * class1853.method21419();
+        final MutableBoundingBox class1853 = new MutableBoundingBox(class1850, class1851);
+        final MutableBoundingBox class1854 = new MutableBoundingBox(class1852, class1852.add(class1853.getLength()));
+        final BlockPos class1855 = new BlockPos(class1854.minX - class1853.minX, class1854.minY - class1853.minY, class1854.minZ - class1853.minZ);
+        final int i = class1853.getXSize() * class1853.getYSize() * class1853.getZSize();
         if (i <= 32768) {
             int value = 0;
-            for (int j = class1853.field27295; j <= class1853.field27298; ++j) {
-                for (int k = class1853.field27294; k <= class1853.field27297; ++k) {
-                    for (int l = class1853.field27293; l <= class1853.field27296; ++l) {
+            for (int j = class1853.minZ; j <= class1853.maxZ; ++j) {
+                for (int k = class1853.minY; k <= class1853.maxY; ++k) {
+                    for (int l = class1853.minX; l <= class1853.maxX; ++l) {
                         final BlockPos class1856 = new BlockPos(l, k, j);
-                        final BlockPos method1135 = class1856.method1135(class1855);
+                        final BlockPos method1135 = class1856.add(class1855);
                         final Class7096 method1136 = class1849.method6701(class1856);
                         if (!b || method1136.method21696() != Class7521.field29147) {
                             if (method1136 != class1849.method6701(method1135)) {

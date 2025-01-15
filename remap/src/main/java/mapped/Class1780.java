@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
@@ -56,11 +58,11 @@ public class Class1780 extends Class1779
         Class1780.field9879.info("Loaded {} recipes", (Object)hashMap.size());
     }
     
-    public <C extends Class446, T extends Class3662<C>> Optional<T> method6378(final Class8976<T> class8976, final C c, final Class1847 class8977) {
+    public <C extends Class446, T extends Class3662<C>> Optional<T> method6378(final Class8976<T> class8976, final C c, final World class8977) {
         return this.method6380(class8976).values().stream().flatMap(class8981 -> Class8349.method27854(class8978.method31918(class8981, class8979, class8980))).findFirst();
     }
     
-    public <C extends Class446, T extends Class3662<C>> List<T> method6379(final Class8976<T> class8976, final C c, final Class1847 class8977) {
+    public <C extends Class446, T extends Class3662<C>> List<T> method6379(final Class8976<T> class8976, final C c, final World class8977) {
         return this.method6380(class8976).values().stream().flatMap(class8981 -> Class8349.method27854(class8978.method31918(class8981, class8979, class8980))).sorted(Comparator.comparing(class8982 -> class8982.method11292().method27649())).collect((Collector<? super Object, ?, List<T>>)Collectors.toList());
     }
     
@@ -68,7 +70,7 @@ public class Class1780 extends Class1779
         return (Map)this.field9884.getOrDefault(key, Collections.emptyMap());
     }
     
-    public <C extends Class446, T extends Class3662<C>> Class2265<ItemStack> method6381(final Class8976<T> class8976, final C c, final Class1847 class8977) {
+    public <C extends Class446, T extends Class3662<C>> Class2265<ItemStack> method6381(final Class8976<T> class8976, final C c, final World class8977) {
         final Optional<T> method6378 = this.method6378(class8976, c, class8977);
         if (!method6378.isPresent()) {
             final Class2265<ItemStack> method6379 = Class2265.method8507(c.method2239(), ItemStack.field34174);

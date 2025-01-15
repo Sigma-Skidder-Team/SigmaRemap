@@ -69,7 +69,7 @@ public enum Class2242
                 else {
                     final Class9341 class1852 = method13560.get(n2);
                     if (!b) {
-                        final Iterator<BlockPos> iterator = BlockPos.method1154(new BlockPos(class1852.method34619() - 10, class1852.method34622() - 10, class1852.method34620() - 10), new BlockPos(class1852.method34619() + 10, class1852.method34622() + 10, class1852.method34620() + 10)).iterator();
+                        final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(new BlockPos(class1852.method34619() - 10, class1852.method34622() - 10, class1852.method34620() - 10), new BlockPos(class1852.method34619() + 10, class1852.method34622() + 10, class1852.method34620() + 10)).iterator();
                         while (iterator.hasNext()) {
                             class1849.method6690(iterator.next(), false);
                         }

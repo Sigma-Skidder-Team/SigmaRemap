@@ -5,8 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
@@ -20,7 +23,7 @@ public class Class495 extends Class436 implements Class439
     public int field2843;
     public boolean field2844;
     public Direction field2845;
-    private List<Class511> field2846;
+    private List<LivingEntity> field2846;
     private boolean field2847;
     private int field2848;
     
@@ -89,14 +92,14 @@ public class Class495 extends Class436 implements Class439
         final BlockPos method2193 = this.method2193();
         if (this.field2656.method6754() > this.field2842 + 60L || this.field2846 == null) {
             this.field2842 = this.field2656.method6754();
-            this.field2846 = (List<Class511>)this.field2656.method7128((Class<? extends Entity>)Class511.class, new AxisAlignedBB(method2193).method18496(48.0));
+            this.field2846 = (List<LivingEntity>)this.field2656.method7128((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(method2193).method18496(48.0));
         }
         if (!this.field2656.field10067) {
-            for (final Class511 class511 : this.field2846) {
+            for (final LivingEntity class511 : this.field2846) {
                 if (!class511.method1768()) {
                     continue;
                 }
-                if (class511.field2410) {
+                if (class511.removed) {
                     continue;
                 }
                 if (!method2193.withinDistance(class511.method1934(), 32.0)) {
@@ -109,17 +112,17 @@ public class Class495 extends Class436 implements Class439
     
     private boolean method2513() {
         final BlockPos method2193 = this.method2193();
-        for (final Class511 class511 : this.field2846) {
+        for (final LivingEntity class511 : this.field2846) {
             if (!class511.method1768()) {
                 continue;
             }
-            if (class511.field2410) {
+            if (class511.removed) {
                 continue;
             }
             if (!method2193.withinDistance(class511.method1934(), 32.0)) {
                 continue;
             }
-            if (!class511.method1642().method23383(Class8039.field33100)) {
+            if (!class511.getType().method23383(Class8039.field33100)) {
                 continue;
             }
             return true;
@@ -127,13 +130,13 @@ public class Class495 extends Class436 implements Class439
         return false;
     }
     
-    private void method2514(final Class1847 class1847) {
+    private void method2514(final World class1847) {
         if (!class1847.field10067) {
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach((Consumer<? super Object>)this::method2517);
         }
     }
     
-    private void method2515(final Class1847 class1847) {
+    private void method2515(final World class1847) {
         if (class1847.field10067) {
             this.method2193();
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach(class1850 -> {
@@ -155,11 +158,11 @@ public class Class495 extends Class436 implements Class439
         }
     }
     
-    private boolean method2516(final Class511 class511) {
+    private boolean method2516(final LivingEntity class511) {
         if (class511.method1768()) {
-            if (!class511.field2410) {
+            if (!class511.removed) {
                 if (this.method2193().withinDistance(class511.method1934(), 48.0)) {
-                    if (class511.method1642().method23383(Class8039.field33100)) {
+                    if (class511.getType().method23383(Class8039.field33100)) {
                         return true;
                     }
                 }
@@ -168,7 +171,7 @@ public class Class495 extends Class436 implements Class439
         return false;
     }
     
-    private void method2517(final Class511 class511) {
+    private void method2517(final LivingEntity class511) {
         class511.method2655(new Class1948(Class9439.field40497, 60));
     }
 }

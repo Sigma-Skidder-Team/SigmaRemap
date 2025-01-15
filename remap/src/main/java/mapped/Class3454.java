@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -20,13 +21,13 @@ public class Class3454 extends Class3446
     
     @Override
     public boolean method11013() {
-        return this.field16294.method5080() == null && this.field16294.field2391.method6765().method31216(Class8878.field37316) && this.field16294.method2633().nextInt(20) == 0;
+        return this.field16294.method5080() == null && this.field16294.world.method6765().method31216(Class8878.field37316) && this.field16294.method2633().nextInt(20) == 0;
     }
     
     @Override
     public void method11016() {
         final Random method2633 = this.field16294.method2633();
-        final Class1847 field2391 = this.field16294.field2391;
+        final World field2391 = this.field16294.world;
         final int method2634 = MathHelper.floor(this.field16294.getPosX() - 2.0 + method2633.nextDouble() * 4.0);
         final int method2635 = MathHelper.floor(this.field16294.getPosY() + method2633.nextDouble() * 3.0);
         final int method2636 = MathHelper.floor(this.field16294.getPosZ() - 2.0 + method2633.nextDouble() * 4.0);

@@ -48,10 +48,10 @@ public class Class5857<T extends Entity> extends Class5856<T>
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         super.method17557(t, n, n2, n3, n4, n5);
         this.field24015.method18642(0.0f, -2.0f, 0.0f);
-        final float n6 = 0.01f * (t.method1643() % 10);
-        this.field24015.field25183 = MathHelper.sin(t.field2424 * n6) * 4.5f * 0.017453292f;
+        final float n6 = 0.01f * (t.getEntityId() % 10);
+        this.field24015.field25183 = MathHelper.sin(t.ticksExisted * n6) * 4.5f * 0.017453292f;
         this.field24015.field25184 = 0.0f;
-        this.field24015.field25185 = MathHelper.cos(t.field2424 * n6) * 2.5f * 0.017453292f;
+        this.field24015.field25185 = MathHelper.cos(t.ticksExisted * n6) * 2.5f * 0.017453292f;
         if (this.field24016) {
             this.field24015.method18642(0.0f, 1.0f, -1.5f);
             this.field24015.field25183 = -0.9f;

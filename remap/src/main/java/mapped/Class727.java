@@ -7,6 +7,7 @@ package mapped;
 import java.util.function.Function;
 import java.util.ListIterator;
 import com.google.common.collect.Lists;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
@@ -214,7 +215,7 @@ public class Class727 extends Class527
             return true;
         }
         if (Class527.method3050(n)) {
-            this.method4012(this.method3991(Class2116.method8259(this.field3150.field4651.method22507().replaceAll("\\r", ""))));
+            this.method4012(this.method3991(TextFormatting.getTextWithoutFormattingCodes(this.field3150.field4651.method22507().replaceAll("\\r", ""))));
             this.field3968 = this.field3967;
             return true;
         }
@@ -353,7 +354,7 @@ public class Class727 extends Class527
     private void method4004(final String str) {
         if (!str.isEmpty()) {
             final Class7116 method4018 = this.method4018(str, this.field3967);
-            if (Class7116.method21844(method4018) + 9 != this.field3156.method6624(str + "" + Class2116.field12309 + "_", 114)) {
+            if (Class7116.method21844(method4018) + 9 != this.field3156.method6624(str + "" + TextFormatting.BLACK + "_", 114)) {
                 final int method4019 = this.method4023(str, new Class7116(this, Class7116.method21845(method4018) + this.method4008(str, this.field3967) / 3, Class7116.method21844(method4018) + 9));
                 if (method4019 >= 0) {
                     this.field3967 = method4019;
@@ -443,7 +444,7 @@ public class Class727 extends Class527
         final String method4010 = this.method4010();
         this.field3967 = MathHelper.method35651(this.field3967, 0, method4010.length());
         final String string = new StringBuilder(method4010).insert(this.field3967, str).toString();
-        if (this.field3156.method6624(string + "" + Class2116.field12309 + "_", 114) <= 128) {
+        if (this.field3156.method6624(string + "" + TextFormatting.BLACK + "_", 114) <= 128) {
             if (string.length() < 1024) {
                 this.method4011(string);
                 final int min = Math.min(this.method4010().length(), this.field3967 + str.length());
@@ -486,16 +487,16 @@ public class Class727 extends Class527
             final String field3966 = this.field3966;
             String s;
             if (this.field3963 / 6 % 2 != 0) {
-                s = field3966 + "" + Class2116.field12316 + "_";
+                s = field3966 + "" + TextFormatting.GRAY + "_";
             }
             else {
-                s = field3966 + "" + Class2116.field12309 + "_";
+                s = field3966 + "" + TextFormatting.BLACK + "_";
             }
             final String method30776 = Class8822.method30773("book.editTitle", new Object[0]);
             this.field3156.method6610(method30776, (float)(n4 + 36 + (114 - this.method4013(method30776)) / 2), 34.0f, 0);
             this.field3156.method6610(s, (float)(n4 + 36 + (114 - this.method4013(s)) / 2), 50.0f, 0);
             final String method30777 = Class8822.method30773("book.byAuthor", this.field3959.getName().getString());
-            this.field3156.method6610(Class2116.field12317 + method30777, (float)(n4 + 36 + (114 - this.method4013(method30777)) / 2), 60.0f, 0);
+            this.field3156.method6610(TextFormatting.DARK_GRAY + method30777, (float)(n4 + 36 + (114 - this.method4013(method30777)) / 2), 60.0f, 0);
             this.field3156.method6622(Class8822.method30773("book.finalizeWarning", new Object[0]), n4 + 36, 82, 114, 0);
         }
         super.method2975(n, n2, n3);
@@ -532,8 +533,8 @@ public class Class727 extends Class527
                 final String substring = s2.substring(0, min2);
                 final char char1 = s2.charAt(min2);
                 final int n = (char1 == ' ' || char1 == '\n') ? 1 : 0;
-                s2 = Class2116.method8252(substring) + s2.substring(min2 + n);
-                s3 = Class2116.method8252(substring) + s3.substring(min2 + n);
+                s2 = TextFormatting.getFormatString(substring) + s2.substring(min2 + n);
+                s3 = TextFormatting.getFormatString(substring) + s3.substring(min2 + n);
                 Class7116.method21846(class7116, Class7116.method21845(method4018) + this.method4013(substring + " "));
                 this.method4017(method4018, class7116);
                 Class7116.method21846(method4018, 0);
@@ -585,7 +586,7 @@ public class Class727 extends Class527
             final String substring = string.substring(0, method4014);
             final char char1 = string.charAt(method4014);
             final int n4 = (char1 == ' ' || char1 == '\n') ? 1 : 0;
-            string = Class2116.method8252(substring) + string.substring(method4014 + n4);
+            string = TextFormatting.getFormatString(substring) + string.substring(method4014 + n4);
             n2 += substring.length() + n4;
             if (n2 - 1 >= n) {
                 Class7116.method21846(class7116, Class7116.method21845(class7116) + this.method4013(substring.substring(0, Math.min(Math.max(n - n3, 0), substring.length()))));
@@ -676,7 +677,7 @@ public class Class727 extends Class527
                     }
                     final char char1 = string.charAt(method4014);
                     final int n5 = (char1 == ' ' || char1 == '\n') ? 1 : 0;
-                    string = Class2116.method8252(substring) + string.substring(method4014 + n5);
+                    string = TextFormatting.getFormatString(substring) + string.substring(method4014 + n5);
                     n4 += substring.length() + n5;
                 }
             }

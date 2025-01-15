@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Iterator;
 import java.util.function.Predicate;
@@ -25,7 +27,7 @@ public class Class3901 extends Class3892
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
             this.method11996(class7097, class7098);
         }
@@ -35,7 +37,7 @@ public class Class3901 extends Class3892
         return this.method11997().method29796(class1852, class1853) != null || this.method11999().method29796(class1852, class1853) != null;
     }
     
-    private void method11996(final Class1847 class1847, final BlockPos class1848) {
+    private void method11996(final World class1847, final BlockPos class1848) {
         final Class7820 method29796 = this.method11998().method29796(class1847, class1848);
         if (method29796 == null) {
             final Class7820 method29797 = this.method12000().method29796(class1847, class1848);

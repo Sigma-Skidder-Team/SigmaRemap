@@ -7,10 +7,14 @@ package mapped;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.CacheBuilder;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
 import java.util.List;
@@ -66,7 +70,7 @@ public class Class3833 implements Class3832
         return (class3820 instanceof Class4036) ? ((Class4036)class3820).method12240() : Class7521.field29147;
     }
     
-    public static Class7096 method11777(final Class7096 class7096, final Class7096 class7097, final Class1847 class7098, final BlockPos class7099) {
+    public static Class7096 method11777(final Class7096 class7096, final Class7096 class7097, final World class7098, final BlockPos class7099) {
         final Class7702 method24541 = Class7698.method24495(class7096.method21727(class7098, class7099), class7097.method21727(class7098, class7099), Class9306.field39918).method24541(class7099.getX(), class7099.getY(), class7099.getZ());
         for (final Entity class7100 : class7098.method7127(null, method24541.method24537())) {
             class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + Class7698.method24498(Axis.Y, class7100.method1886().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
@@ -120,7 +124,7 @@ public class Class3833 implements Class3832
     
     public static Class7096 method11786(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098) {
         Class7096 method21748 = class7096;
-        final Class385 class7099 = new Class385();
+        final Mutable class7099 = new Mutable();
         for (final Direction class7100 : Class3833.field17392) {
             class7099.method1287(class7098).method1290(class7100);
             method21748 = method21748.method21748(class7100, class7097.method6701(class7099), class7097, class7098, class7099);
@@ -310,12 +314,12 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24487();
     }
     
     @Deprecated
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.field17408 ? class7096.method21725(class7097, class7098) : Class7698.method24486();
     }
     
@@ -382,14 +386,14 @@ public class Class3833 implements Class3832
     public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
     }
     
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
     }
     
     public void method11824(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
     }
     
     @Deprecated
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         Class9324.method34536(class7097, class7098);
     }
     
@@ -399,16 +403,16 @@ public class Class3833 implements Class3832
     
     @Nullable
     @Deprecated
-    public Class434 method11827(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public Class434 method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return null;
     }
     
     @Deprecated
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
     }
     
     @Deprecated
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (this.method11802()) {
             if (class7096.method21696() != class7099.method21696()) {
                 class7097.method6730(class7098);
@@ -426,7 +430,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final ItemStack class7099) {
+    public void method11831(final Class7096 class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
     }
     
     public Class1932 method11832() {
@@ -455,28 +459,28 @@ public class Class3833 implements Class3832
         return class7096.method21743(new Class9098(class7097).method32873(class7097.field10062).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, class7101).method32878(Class6683.field26362, class7100).method32878(Class6683.field26369, class7099));
     }
     
-    public static void method11836(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public static void method11836(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         if (class7097 instanceof Class1849) {
             method11834(class7096, (Class1849)class7097, class7098, null).forEach(class7101 -> method11839(class7099, class7100, class7101));
         }
         class7096.method21742(class7097, class7098, ItemStack.field34174);
     }
     
-    public static void method11837(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class436 class7099) {
+    public static void method11837(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class436 class7099) {
         if (class7097 instanceof Class1849) {
             method11834(class7096, (Class1849)class7097, class7098, class7099).forEach(class7102 -> method11839(class7100, class7101, class7102));
         }
         class7096.method21742(class7097, class7098, ItemStack.field34174);
     }
     
-    public static void method11838(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class436 class7099, final Entity class7100, final ItemStack class7101) {
+    public static void method11838(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class436 class7099, final Entity class7100, final ItemStack class7101) {
         if (class7097 instanceof Class1849) {
             method11835(class7096, (Class1849)class7097, class7098, class7099, class7100, class7101).forEach(class7104 -> method11839(class7102, class7103, class7104));
         }
         class7096.method21742(class7097, class7098, class7101);
     }
     
-    public static void method11839(final Class1847 class1847, final BlockPos class1848, final ItemStack class1849) {
+    public static void method11839(final World class1847, final BlockPos class1848, final ItemStack class1849) {
         if (!class1847.field10067) {
             if (!class1849.method27620()) {
                 if (class1847.method6765().method31216(Class8878.field37320)) {
@@ -488,7 +492,7 @@ public class Class3833 implements Class3832
         }
     }
     
-    public void method11840(final Class1847 class1847, final BlockPos class1848, int i) {
+    public void method11840(final World class1847, final BlockPos class1848, int i) {
         if (!class1847.field10067) {
             if (class1847.method6765().method31216(Class8878.field37320)) {
                 while (i > 0) {
@@ -504,7 +508,7 @@ public class Class3833 implements Class3832
         return this.field17398;
     }
     
-    public void method11842(final Class1847 class1847, final BlockPos class1848, final Class6154 class1849) {
+    public void method11842(final World class1847, final BlockPos class1848, final Class6154 class1849) {
     }
     
     @Deprecated
@@ -513,11 +517,11 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         return Class2201.field13402;
     }
     
-    public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
+    public void method11845(final World class1847, final BlockPos class1848, final Entity class1849) {
     }
     
     @Nullable
@@ -526,7 +530,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public void method11847(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
+    public void method11847(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
     }
     
     @Deprecated
@@ -540,7 +544,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
     }
     
     @Deprecated
@@ -548,13 +552,13 @@ public class Class3833 implements Class3832
         return 0;
     }
     
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         class1848.method2859(Class8276.field33979.method8449(this));
         class1848.method2876(0.005f);
         method11838(class1850, class1847, class1849, class1851, class1848, class1852);
     }
     
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
     }
     
     public boolean method11854() {
@@ -573,7 +577,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public boolean method11857(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final int n, final int n2) {
+    public boolean method11857(final Class7096 class7096, final World class7097, final BlockPos class7098, final int n, final int n2) {
         return false;
     }
     
@@ -587,12 +591,12 @@ public class Class3833 implements Class3832
         return class7096.method21762(class7097, class7098) ? 0.2f : 1.0f;
     }
     
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         class1849.method1705(n, 1.0f);
     }
     
     public void method11861(final Class1855 class1855, final Entity class1856) {
-        class1856.method1936(class1856.method1935().mul(1.0, 0.0, 1.0));
+        class1856.method1936(class1856.getMotion().mul(1.0, 0.0, 1.0));
     }
     
     public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
@@ -625,14 +629,14 @@ public class Class3833 implements Class3832
         return MathHelper.method35688(class7097);
     }
     
-    public void method11869(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
+    public void method11869(final World class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
     }
     
-    public void method11870(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
         class1847.method6839(class1850, 2001, class1848, method11774(class1849));
     }
     
-    public void method11871(final Class1847 class1847, final BlockPos class1848) {
+    public void method11871(final World class1847, final BlockPos class1848) {
     }
     
     public boolean method11872(final Class6154 class6154) {
@@ -645,7 +649,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
+    public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
         return 0;
     }
     

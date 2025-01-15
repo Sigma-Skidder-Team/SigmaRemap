@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMap$Builder;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -35,7 +34,7 @@ public class Class5127 implements Class5113
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("trunk_provider"), this.field22079.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("leaves_provider"), this.field22080.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("decorators"), dynamicOps.createList((Stream)this.field22081.stream().map(class367 -> class367.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2)))).put(dynamicOps.createString("base_height"), dynamicOps.createInt(this.field22082));
+        builder.put(dynamicOps.createString("trunk_provider"), this.field22079.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("leaves_provider"), this.field22080.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("decorators"), dynamicOps.createList((Stream)this.field22081.stream().map(class367 -> class367.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2)))).put(dynamicOps.createString("base_height"), dynamicOps.createInt(this.field22082));
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     

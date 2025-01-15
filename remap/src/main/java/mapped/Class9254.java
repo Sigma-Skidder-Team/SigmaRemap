@@ -7,6 +7,8 @@ package mapped;
 import com.google.gson.JsonObject;
 import java.util.List;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.INBT;
+
 import java.util.function.Supplier;
 
 public class Class9254
@@ -25,9 +27,9 @@ public class Class9254
         this.field39694 = field39692;
     }
     
-    public void method34144(final Supplier<Class41> supplier, final Class41 class41) {
+    public void method34144(final Supplier<INBT> supplier, final INBT class41) {
         try {
-            final List<Class41> method28804 = this.field39691.method28804(class41);
+            final List<INBT> method28804 = this.field39691.method28804(class41);
             if (!method28804.isEmpty()) {
                 this.field39694.method8420(supplier.get(), this.field39693, method28804);
             }

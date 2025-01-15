@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Iterator;
 import java.util.List;
@@ -26,10 +27,10 @@ public class Class3255 extends Class3247
             final Entity class400 = iterator.next();
             if (class400 != Class3255.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(class400)) {
-                    if (class400 instanceof Class511) {
-                        if (((Class511)class400).method2664() != 0.0f) {
+                    if (class400 instanceof LivingEntity) {
+                        if (((LivingEntity)class400).method2664() != 0.0f) {
                             if (Class3255.field15514.field4684.method1732(class400) <= n) {
-                                if (Class3255.field15514.field4684.method2646((Class511)class400)) {
+                                if (Class3255.field15514.field4684.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
                                         if (!this.method9883("Players") && class400 instanceof Class512) {
                                             iterator.remove();

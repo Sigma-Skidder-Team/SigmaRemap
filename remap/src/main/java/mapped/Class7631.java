@@ -6,14 +6,12 @@ package mapped;
 
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.tree.CommandNode;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
+
 import java.util.Iterator;
 import java.util.Map;
 import com.mojang.brigadier.ParseResults;
 import com.google.common.collect.Iterables;
 import com.mojang.brigadier.context.ParsedCommandNode;
-import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
@@ -28,7 +26,7 @@ public class Class7631
             final Map smartUsage = commandDispatcher.getSmartUsage((CommandNode)commandDispatcher.getRoot(), commandContext.getSource());
             final Iterator iterator = smartUsage.values().iterator();
             while (iterator.hasNext()) {
-                ((Class7492)commandContext.getSource()).method23257(new Class2260("/" + (String)iterator.next()), false);
+                ((Class7492)commandContext.getSource()).method23257(new StringTextComponent("/" + (String)iterator.next()), false);
             }
             return smartUsage.size();
         })).then(Class7788.method25002("command", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.greedyString()).executes(commandContext -> {
@@ -37,7 +35,7 @@ public class Class7631
                 final Map smartUsage = commandDispatcher.getSmartUsage(((ParsedCommandNode)Iterables.getLast((Iterable)parse.getContext().getNodes())).getNode(), commandContext.getSource());
                 final Iterator iterator = smartUsage.values().iterator();
                 while (iterator.hasNext()) {
-                    ((Class7492)commandContext.getSource()).method23257(new Class2260("/" + parse.getReader().getString() + " " + (String)iterator.next()), false);
+                    ((Class7492)commandContext.getSource()).method23257(new StringTextComponent("/" + parse.getReader().getString() + " " + (String)iterator.next()), false);
                 }
                 return smartUsage.size();
             }

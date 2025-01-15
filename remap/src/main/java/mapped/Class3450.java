@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class3450<T extends Class511> extends Class3448<T>
+import net.minecraft.entity.LivingEntity;
+
+public class Class3450<T extends LivingEntity> extends Class3448<T>
 {
     private static String[] field16275;
     private final Class791 field16288;

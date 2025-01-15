@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class6258 extends Class6257
 {
@@ -34,16 +36,16 @@ public class Class6258 extends Class6257
         return 2;
     }
     
-    public static void method18605(final Class511 class511, final Class1847 class512, final BlockPos class513, final int n) {
-        if (class511.field2404) {
+    public static void method18605(final LivingEntity class511, final World class512, final BlockPos class513, final int n) {
+        if (class511.onGround) {
             final Class7096 method11878 = Class7521.field29641.method11878();
             final float n2 = (float)Math.min(16, 2 + n);
-            final Class385 class514 = new Class385();
-            for (final BlockPos class515 : BlockPos.method1154(class513.method1133(-n2, -1.0, -n2), class513.method1133(n2, -1.0, n2))) {
+            final Mutable class514 = new Mutable();
+            for (final BlockPos class515 : BlockPos.getAllInBoxMutable(class513.add(-n2, -1.0, -n2), class513.add(n2, -1.0, n2))) {
                 if (!class515.withinDistance(class511.method1934(), n2)) {
                     continue;
                 }
-                class514.method1284(class515.getX(), class515.getY() + 1, class515.getZ());
+                class514.setPos(class515.getX(), class515.getY() + 1, class515.getZ());
                 if (!class512.method6701(class514).method21706()) {
                     continue;
                 }
@@ -57,7 +59,7 @@ public class Class6258 extends Class6257
                 if (!method11878.method21752(class512, class515)) {
                     continue;
                 }
-                if (!class512.method6974(method11878, class515, Class7543.method23629())) {
+                if (!class512.method6974(method11878, class515, ISelectionContext.dummy())) {
                     continue;
                 }
                 class512.method6692(class515, method11878);

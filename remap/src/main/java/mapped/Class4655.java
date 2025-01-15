@@ -77,7 +77,7 @@ public class Class4655 extends Class4654
     @Override
     public Class6772 method13919(final int n, final int n2, final int n3) {
         Class6772 method13919 = null;
-        final Class257 method13920 = this.method13913(this.field20141.field2391, n, n2, n3);
+        final Class257 method13920 = this.method13913(this.field20141.world, n, n2, n3);
         final float method13921 = this.field20141.method4144(method13920);
         if (method13921 >= 0.0f) {
             method13919 = super.method13919(n, n2, n3);
@@ -92,12 +92,12 @@ public class Class4655 extends Class4654
     }
     
     private Class257 method13930(final int n, final int n2, final int n3) {
-        final Class385 class385 = new Class385();
+        final Mutable class385 = new Mutable();
         for (int i = n; i < n + this.field20143; ++i) {
             for (int j = n2; j < n2 + this.field20144; ++j) {
                 for (int k = n3; k < n3 + this.field20145; ++k) {
-                    final Class7099 method6702 = this.field20140.method6702(class385.method1284(i, j, k));
-                    final Class7096 method6703 = this.field20140.method6701(class385.method1284(i, j, k));
+                    final Class7099 method6702 = this.field20140.method6702(class385.setPos(i, j, k));
+                    final Class7096 method6703 = this.field20140.method6701(class385.setPos(i, j, k));
                     if (method6702.method21781()) {
                         if (method6703.method21749(this.field20140, class385.method1139(), Class2084.field12052)) {
                             if (method6703.method21706()) {

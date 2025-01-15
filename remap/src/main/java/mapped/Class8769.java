@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.text.Style;
+
 import javax.annotation.Nullable;
 
-public final class Class8769 extends Class8768
+public final class Class8769 extends Style
 {
     @Nullable
     @Override
-    public Class2116 method30403() {
+    public TextFormatting method30403() {
         return null;
     }
     
@@ -58,47 +60,47 @@ public final class Class8769 extends Class8768
     }
     
     @Override
-    public Class8768 method30413(final Class2116 class2116) {
+    public Style setColor(final TextFormatting class2116) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30414(final Boolean b) {
+    public Style setBold(final Boolean b) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30415(final Boolean b) {
+    public Style setItalic(final Boolean b) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30416(final Boolean b) {
+    public Style setStrikethrough(final Boolean b) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30417(final Boolean b) {
+    public Style setUnderlined(final Boolean b) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30418(final Boolean b) {
+    public Style setObfuscated(final Boolean b) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30419(final Class9485 class9485) {
+    public Style method30419(final Class9485 class9485) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30420(final Class9390 class9390) {
+    public Style method30420(final Class9390 class9390) {
         throw new UnsupportedOperationException();
     }
     
     @Override
-    public Class8768 method30422(final Class8768 class8768) {
+    public Style method30422(final Style class8768) {
         throw new UnsupportedOperationException();
     }
     
@@ -108,17 +110,17 @@ public final class Class8769 extends Class8768
     }
     
     @Override
-    public Class8768 method30425() {
+    public Style createShallowCopy() {
         return this;
     }
     
     @Override
-    public Class8768 method30426() {
+    public Style createDeepCopy() {
         return this;
     }
     
     @Override
-    public String method30423() {
+    public String getFormattingCode() {
         return "";
     }
 }

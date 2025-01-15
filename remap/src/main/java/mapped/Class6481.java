@@ -11,6 +11,7 @@ import io.netty.buffer.ByteBufInputStream;
 import java.io.DataOutput;
 import io.netty.buffer.ByteBufOutputStream;
 import io.netty.buffer.Unpooled;
+import net.minecraft.item.ItemStack;
 
 public class Class6481 extends Class6480
 {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 
 public class Class3534 extends Class3531
@@ -26,13 +28,13 @@ public class Class3534 extends Class3531
         if (this.field16570.method4265()) {
             return false;
         }
-        if (this.field16570.field2424 < this.field16561) {
+        if (this.field16570.ticksExisted < this.field16561) {
             return false;
         }
-        if (!this.field16570.field2391.method6765().method31216(Class8878.field37316)) {
+        if (!this.field16570.world.method6765().method31216(Class8878.field37316)) {
             return false;
         }
-        final List<Class511> method7142 = this.field16570.field2391.method7142((Class<? extends Class511>)Class802.class, this.field16569, (Class511)this.field16570, this.field16570.method1886().method18495(16.0, 4.0, 16.0));
+        final List<LivingEntity> method7142 = this.field16570.world.method7142((Class<? extends LivingEntity>)Class802.class, this.field16569, (LivingEntity)this.field16570, this.field16570.method1886().method18495(16.0, 4.0, 16.0));
         if (!method7142.isEmpty()) {
             Class771.method4278(this.field16570, (Class802)method7142.get(Class771.method4277(this.field16570).nextInt(method7142.size())));
             return true;

@@ -27,7 +27,7 @@ public class Class6868 implements Class6866
         if (method31036 == null) {
             return Class2204.field13418;
         }
-        final List<String> method31037 = class690.method3853().field4643.method6626(method31036.method22527().method8461(), 125);
+        final List<String> method31037 = class690.method3853().field4643.method6626(method31036.method22527().getFormattedText(), 125);
         final int n2 = (method31036.method22531() != Class1993.field11163) ? 16776960 : 16746751;
         if (method31037.size() != 1) {
             if (n >= 1500L) {
@@ -45,7 +45,7 @@ public class Class6868 implements Class6866
         }
         else {
             class690.method3853().field4643.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 7.0f, n2 | 0xFF000000);
-            class690.method3853().field4643.method6610(method31036.method22527().method8461(), 30.0f, 18.0f, -1);
+            class690.method3853().field4643.method6610(method31036.method22527().getFormattedText(), 30.0f, 18.0f, -1);
         }
         if (!this.field26907) {
             if (n > 0L) {

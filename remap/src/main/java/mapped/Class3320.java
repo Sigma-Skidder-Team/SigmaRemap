@@ -50,7 +50,7 @@ public class Class3320 extends Class3167
             }
         }
         if (Class3320.field15514.field4684 != null && Class3320.field15514.method5282() != null) {
-            if (Class3320.field15514.field4684.field2424 <= 1) {
+            if (Class3320.field15514.field4684.ticksExisted <= 1) {
                 this.field15921.clear();
             }
             if (!this.field15921.isEmpty()) {
@@ -81,7 +81,7 @@ public class Class3320 extends Class3167
             }
         }
         if (Class3320.field15514.method5282() != null) {
-            final Class4252 method16998 = class5723.method16998();
+            final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4396) {
                 this.field15921.add(new Class8438(new Class4303(((Class4396)method16998).method13223()), (long)this.method9886("Lag")));
                 class5723.method16961(true);

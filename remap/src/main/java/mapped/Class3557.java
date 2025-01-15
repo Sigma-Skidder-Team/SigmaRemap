@@ -23,7 +23,7 @@ public class Class3557 extends Class3555<Class512>
     
     @Override
     public boolean method11013() {
-        this.field16641 = this.field16640.field2391.method7135(this.field16644, this.field16640);
+        this.field16641 = this.field16640.world.method7135(this.field16644, this.field16640);
         return this.field16641 != null;
     }
     
@@ -56,7 +56,7 @@ public class Class3557 extends Class3555<Class512>
     public void method11016() {
         if (this.field16641 == null) {
             if (this.field16636 != null) {
-                if (!this.field16640.method1805()) {
+                if (!this.field16640.isPassenger()) {
                     if (!Class850.method5085(this.field16640, (Class512)this.field16636)) {
                         if (this.field16636.method1734(this.field16640) > 256.0) {
                             if (this.field16643++ >= 30) {

@@ -28,7 +28,7 @@ public class Class369 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list3, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list3, final List<BlockPos> list2, final Set<BlockPos> set, final MutableBoundingBox class1852) {
         if (random.nextFloat() < this.field2211) {
             list3.stream().filter(class1853 -> {
                 list3.get(0).getY();
@@ -44,7 +44,7 @@ public class Class369 extends Class367
                     else {
                         class1857.getOpposite();
                         final Direction class1858;
-                        class1856.method1134(class1858.getXOffset(), 0, class1858.getZOffset());
+                        class1856.add(class1858.getXOffset(), 0, class1858.getZOffset());
                         final BlockPos class1859;
                         if (!Class4592.method13609(class1854, class1859)) {
                             continue;
@@ -59,7 +59,7 @@ public class Class369 extends Class367
     }
     
     @Override
-    public <T> T method1123(final DynamicOps<T> dynamicOps) {
+    public <T> T serialize(final DynamicOps<T> dynamicOps) {
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Class90.field221.method503(this.field2209).toString()), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field2211)))).getValue();
     }
 }

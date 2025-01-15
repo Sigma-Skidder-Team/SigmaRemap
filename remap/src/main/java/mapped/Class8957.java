@@ -4,8 +4,6 @@
 
 package mapped;
 
-import com.mojang.datafixers.Typed;
-import com.mojang.datafixers.OpticFinder;
 import java.util.Optional;
 import com.mojang.datafixers.Dynamic;
 import java.util.Objects;
@@ -33,6 +31,6 @@ public class Class8957 extends DataFix
     
     public static Dynamic<?> method31777(final Dynamic<?> dynamic) {
         final String string = dynamic.get("CustomName").asString("");
-        return (Dynamic<?>)(string.isEmpty() ? dynamic.remove("CustomName") : dynamic.set("CustomName", dynamic.createString(Class5953.method17869(new Class2260(string)))));
+        return (Dynamic<?>)(string.isEmpty() ? dynamic.remove("CustomName") : dynamic.set("CustomName", dynamic.createString(Class5953.method17869(new StringTextComponent(string)))));
     }
 }

@@ -11,17 +11,24 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public class Class773 extends Class772 implements Class774, Class768
 {
-    private static final Class8810<Boolean> field4166;
+    private static final DataParameter<Boolean> field4166;
     private final Class443 field4167;
     
-    public Class773(final EntityType<? extends Class773> class7499, final Class1847 class7500) {
+    public Class773(final EntityType<? extends Class773> class7499, final World class7500) {
         super(class7499, class7500);
         this.field4167 = new Class443(5);
     }
@@ -53,16 +60,16 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class773.field4166, false);
+        this.dataManager.register(Class773.field4166, false);
     }
     
     public boolean method4279() {
-        return this.field2432.method33568(Class773.field4166);
+        return this.dataManager.get(Class773.field4166);
     }
     
     @Override
     public void method4280(final boolean b) {
-        this.field2432.method33569(Class773.field4166, b);
+        this.dataManager.set(Class773.field4166, b);
     }
     
     @Override
@@ -124,7 +131,7 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public void method4184(final Class9592 class9592) {
         final ItemStack class9593 = new ItemStack(Class7739.field31611);
-        if (this.field2423.nextInt(300) == 0) {
+        if (this.rand.nextInt(300) == 0) {
             final HashMap hashMap = Maps.newHashMap();
             hashMap.put(Class7882.field32381, 1);
             Class8742.method30198(hashMap, class9593);
@@ -134,7 +141,7 @@ public class Class773 extends Class772 implements Class774, Class768
     
     @Override
     public boolean method1826(final Entity class399) {
-        return super.method1826(class399) || (class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null);
+        return super.method1826(class399) || (class399 instanceof LivingEntity && ((LivingEntity)class399).method2712() == Class6363.field25463 && this.getTeam() == null && class399.getTeam() == null);
     }
     
     @Override
@@ -148,27 +155,27 @@ public class Class773 extends Class772 implements Class774, Class768
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35468;
     }
     
     @Override
-    public void method4252(final Class511 class511, final float n) {
+    public void method4252(final LivingEntity class511, final float n) {
         final Class316 method23100 = Class7476.method23100(this, Class7739.field31611);
         final ItemStack method23101 = this.method2715(method23100);
         if (this.method4218(Class7739.field31611)) {
-            Class4086.method12304(this.field2391, this, method23100, method23101, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+            Class4086.method12304(this.world, this, method23100, method23101, 1.6f, (float)(14 - this.world.method6954().method8235() * 4));
         }
         this.field2959 = 0;
     }
     
     @Override
-    public void method4281(final Class511 class511, final ItemStack class512, final Class401 class513, final float n) {
+    public void method4281(final LivingEntity class511, final ItemStack class512, final Class401 class513, final float n) {
         final Entity class514 = (Entity)class513;
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.getPosZ() - this.getPosZ();
         final Vector3f method4282 = this.method4282(new Vec3d(n2, class511.method1942(0.3333333333333333) - class514.getPosY() + MathHelper.sqrt(n2 * n2 + n3 * n3) * 0.20000000298023224, n3), n);
-        class513.method1958(method4282.getX(), method4282.getY(), method4282.getZ(), 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        class513.method1958(method4282.getX(), method4282.getY(), method4282.getZ(), 1.6f, (float)(14 - this.world.method6954().method8235() * 4));
         this.method1695(Class8520.field35112, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
     }
     
@@ -226,7 +233,7 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public void method4263(final int n, final boolean b) {
         final Class8792 method4292 = this.method4292();
-        if (this.field2423.nextFloat() <= method4292.method30666()) {
+        if (this.rand.nextFloat() <= method4292.method30666()) {
             final ItemStack class8321 = new ItemStack(Class7739.field31611);
             final HashMap hashMap = Maps.newHashMap();
             if (n <= method4292.method30665(Class2113.field12292)) {
@@ -249,6 +256,6 @@ public class Class773 extends Class772 implements Class774, Class768
     }
     
     static {
-        field4166 = Class9184.method33564(Class773.class, Class7709.field30661);
+        field4166 = EntityDataManager.method33564(Class773.class, Class7709.field30661);
     }
 }

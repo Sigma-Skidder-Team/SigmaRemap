@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
-public class Class121 implements Predicate<Class511>
+public class Class121 implements Predicate<LivingEntity>
 {
     private static String[] field378;
     private final Class844 field379;
@@ -16,7 +18,7 @@ public class Class121 implements Predicate<Class511>
     }
     
     @Override
-    public boolean test(final Class511 class511) {
+    public boolean test(final LivingEntity class511) {
         if (class511 instanceof Class512 || class511 instanceof Class839) {
             if (class511.method1734(this.field379) > 9.0) {
                 return true;

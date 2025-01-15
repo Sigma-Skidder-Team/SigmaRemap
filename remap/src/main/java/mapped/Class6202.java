@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class6202 extends Class6159
 {
     private static String[] field25031;
@@ -11,7 +13,7 @@ public class Class6202 extends Class6159
     private final double field25033;
     private final double field25034;
     
-    private Class6202(final Class1847 class1847, final double field24936, final double field24937, final double field24938, final double field24939, final double field24940, final double field24941) {
+    private Class6202(final World class1847, final double field24936, final double field24937, final double field24938, final double field24939, final double field24940, final double field24941) {
         super(class1847, field24936, field24937, field24938);
         this.field24939 = field24939;
         this.field24940 = field24940;

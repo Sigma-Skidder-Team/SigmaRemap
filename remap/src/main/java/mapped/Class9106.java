@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class9106
@@ -101,6 +102,6 @@ public class Class9106
     }
     
     public static ITextComponent method32929(final String str) {
-        return new Class2261("key." + str).method8469(Class2116.field12326);
+        return new Class2261("key." + str).applyTextStyle(TextFormatting.BOLD);
     }
 }

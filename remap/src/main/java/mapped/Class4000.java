@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -20,7 +22,7 @@ public abstract class Class4000 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return (this.method12166(class7096) <= 0) ? Class4000.field18032 : Class4000.field18031;
     }
     
@@ -54,7 +56,7 @@ public abstract class Class4000 extends Class3833
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.field10067) {
             final int method12166 = this.method12166(class7096);
             if (method12166 == 0) {
@@ -63,7 +65,7 @@ public abstract class Class4000 extends Class3833
         }
     }
     
-    public void method12161(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final int n) {
+    public void method12161(final World class1847, final BlockPos class1848, final Class7096 class1849, final int n) {
         final int method12165 = this.method12165(class1847, class1848);
         final boolean b = n > 0;
         final boolean b2 = method12165 > 0;
@@ -91,7 +93,7 @@ public abstract class Class4000 extends Class3833
     public abstract void method12163(final Class1851 p0, final BlockPos p1);
     
     @Override
-    public void method11829(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (!b) {
             if (class7096.method21696() != class7099.method21696()) {
                 if (this.method12166(class7096) > 0) {
@@ -102,7 +104,7 @@ public abstract class Class4000 extends Class3833
         }
     }
     
-    public void method12164(final Class1847 class1847, final BlockPos class1848) {
+    public void method12164(final World class1847, final BlockPos class1848) {
         class1847.method6696(class1848, this);
         class1847.method6696(class1848.method1139(), this);
     }
@@ -127,7 +129,7 @@ public abstract class Class4000 extends Class3833
         return Class2117.field12341;
     }
     
-    public abstract int method12165(final Class1847 p0, final BlockPos p1);
+    public abstract int method12165(final World p0, final BlockPos p1);
     
     public abstract int method12166(final Class7096 p0);
     

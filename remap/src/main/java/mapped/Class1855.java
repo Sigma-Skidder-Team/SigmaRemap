@@ -84,7 +84,7 @@ public interface Class1855
         int method28316 = MathHelper.floor(method28313);
         int method28317 = MathHelper.floor(method28314);
         int method28318 = MathHelper.floor(method28315);
-        final Class385 class8479 = new Class385(method28316, method28317, method28318);
+        final Mutable class8479 = new Mutable(method28316, method28317, method28318);
         final T apply = biFunction.apply(class8478, class8479);
         if (apply != null) {
             return apply;
@@ -127,7 +127,7 @@ public interface Class1855
                 method28316 += method28319;
                 n7 += n4;
             }
-            final T apply2 = biFunction.apply(class8478, class8479.method1284(method28316, method28317, method28318));
+            final T apply2 = biFunction.apply(class8478, class8479.setPos(method28316, method28317, method28318));
             if (apply2 == null) {
                 continue;
             }

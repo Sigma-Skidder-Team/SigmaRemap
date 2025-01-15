@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 public class Class4079 extends Class3820
 {
@@ -16,7 +18,7 @@ public class Class4079 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class1847 method21654 = class7075.method21654();
+        final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         if (!method21654.method6701(method21655).method21696().method11785(Class7188.field27911)) {
             return Class2201.field13402;
@@ -30,7 +32,7 @@ public class Class4079 extends Class3820
         return Class2201.field13400;
     }
     
-    public static Class2201 method12284(final Class512 class512, final Class1847 class513, final BlockPos class514) {
+    public static Class2201 method12284(final Class512 class512, final World class513, final BlockPos class514) {
         Entity method5205 = null;
         boolean b = false;
         final int method5206 = class514.getX();

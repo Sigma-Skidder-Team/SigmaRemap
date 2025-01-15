@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class3495 extends Class3446
@@ -30,8 +32,8 @@ public class Class3495 extends Class3446
         if (this.field16442.method1711()) {
             return false;
         }
-        if (this.field16442.field2404) {
-            final Class511 method4488 = this.field16442.method4488();
+        if (this.field16442.onGround) {
+            final LivingEntity method4488 = this.field16442.method4488();
             return method4488 == null || ((this.field16442.method1734(method4488) >= 144.0 || method4488.method2634() == null) && this.field16443);
         }
         return false;

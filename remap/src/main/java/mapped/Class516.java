@@ -6,6 +6,7 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import com.google.common.collect.Sets;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
@@ -111,7 +112,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                     class8321 = class8321.method27641();
                     class8321.method27691(this.field3097);
                     if (class8321.method27620()) {
-                        string = "" + Class2116.field12323 + "0";
+                        string = "" + TextFormatting.YELLOW + "0";
                     }
                 }
             }
@@ -198,7 +199,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                             Class3418.method10895(this.field3092, this.field3094, class6602, class6601.method20053().method27620() ? 0 : class6601.method20053().method27690());
                             final int min = Math.min(class6602.method27628(), class6601.method20058(class6602));
                             if (class6602.method27690() > min) {
-                                string = Class2116.field12323.toString() + min;
+                                string = TextFormatting.YELLOW.toString() + min;
                                 class6602.method27691(min);
                             }
                         }
@@ -650,7 +651,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     @Override
     public void method2992() {
         super.method2992();
-        if (!this.field3150.field4684.method1768() || this.field3150.field4684.field2410) {
+        if (!this.field3150.field4684.method1768() || this.field3150.field4684.removed) {
             this.field3150.field4684.method2814();
         }
     }

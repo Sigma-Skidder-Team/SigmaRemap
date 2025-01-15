@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 import java.io.IOException;
 import java.util.UUID;
 
-public class Class4301 implements Class4252<Class5800>
+public class Class4301 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19286;
     private UUID field19287;
@@ -38,7 +38,7 @@ public class Class4301 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19287 = class8654.method29504();
         this.field19288 = class8654.method29499(Class1994.class);
         switch (Class8716.field36625[this.field19288.ordinal()]) {
@@ -128,7 +128,7 @@ public class Class4301 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29503(this.field19287);
         class8654.method29500(this.field19288);
         switch (Class8716.field36625[this.field19288.ordinal()]) {
@@ -174,7 +174,7 @@ public class Class4301 implements Class4252<Class5800>
         return n;
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17351(this);
     }
     

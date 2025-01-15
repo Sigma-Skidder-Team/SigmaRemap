@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.Map;
 import java.util.List;
@@ -40,7 +42,7 @@ public class Class4036 extends Class3820
         }
         if (this.method12238(method12231, method12232)) {
             final BlockPos method12233 = method12231.method21639();
-            final Class1847 method12234 = method12231.method21654();
+            final World method12234 = method12231.method21654();
             final Class512 method12235 = method12231.method21652();
             final ItemStack method12236 = method12231.method21651();
             Class7096 class7075 = method12234.method6701(method12233);
@@ -70,7 +72,7 @@ public class Class4036 extends Class3820
         return class7074;
     }
     
-    public boolean method12232(final BlockPos class354, final Class1847 class355, final Class512 class356, final ItemStack class357, final Class7096 class358) {
+    public boolean method12232(final BlockPos class354, final World class355, final Class512 class356, final ItemStack class357, final Class7096 class358) {
         return method12239(class355, class356, class354, class357);
     }
     
@@ -80,7 +82,7 @@ public class Class4036 extends Class3820
         return (method11846 != null && this.method12236(class7074, method11846)) ? method11846 : null;
     }
     
-    private Class7096 method12234(final BlockPos class354, final Class1847 class355, final ItemStack class356, final Class7096 class357) {
+    private Class7096 method12234(final BlockPos class354, final World class355, final ItemStack class356, final Class7096 class357) {
         Class7096 method12235 = class357;
         final Class51 method12236 = class356.method27657();
         if (method12236 != null) {
@@ -91,7 +93,7 @@ public class Class4036 extends Class3820
                 if (method12239 == null) {
                     continue;
                 }
-                method12235 = method12235(method12235, method12239, method12237.method313(s).method267());
+                method12235 = method12235(method12235, method12239, method12237.method313(s).getString());
             }
         }
         if (method12235 != class357) {
@@ -106,7 +108,7 @@ public class Class4036 extends Class3820
     
     public boolean method12236(final Class7074 class7074, final Class7096 class7075) {
         final Class512 method21652 = class7074.method21652();
-        final Class7543 class7076 = (method21652 != null) ? Class7543.method23630(method21652) : Class7543.method23629();
+        final ISelectionContext class7076 = (method21652 != null) ? ISelectionContext.forEntity(method21652) : ISelectionContext.dummy();
         if (!this.method12237() || class7075.method21752(class7074.method21654(), class7074.method21639())) {
             if (class7074.method21654().method6974(class7075, class7074.method21639(), class7076)) {
                 return true;
@@ -123,7 +125,7 @@ public class Class4036 extends Class3820
         return class7074.method21654().method6688(class7074.method21639(), class7075, 11);
     }
     
-    public static boolean method12239(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final ItemStack class1850) {
+    public static boolean method12239(final World class1847, final Class512 class1848, final BlockPos class1849, final ItemStack class1850) {
         if (class1847.method6679() != null) {
             final Class51 method27660 = class1850.method27660("BlockEntityTag");
             if (method27660 != null) {
@@ -167,7 +169,7 @@ public class Class4036 extends Class3820
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11728(class8321, class8322, list, class8323);
         this.method12240().method11883(class8321, class8322, list, class8323);
     }

@@ -22,7 +22,7 @@ public final class Class6384 implements Class6382<Class6912>
         return new Class6912(n, n2, n3, (float)stringReader.readDouble());
     }
     
-    public Class6912 method19061(final Class6907<Class6912> class6907, final Class8654 class6908) {
+    public Class6912 method19061(final Class6907<Class6912> class6907, final PacketBuffer class6908) {
         return new Class6912(class6908.readFloat(), class6908.readFloat(), class6908.readFloat(), class6908.readFloat());
     }
 }

@@ -5,9 +5,12 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.apache.http.HttpEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import java.net.UnknownHostException;
@@ -53,7 +56,7 @@ public class Class6430
     private static boolean field25546;
     
     public static void method19106(final String s) {
-        Class6430.field25541.field4647.method3807().method3761(new Class2260(s));
+        Class6430.field25541.field4647.method3807().method3761(new StringTextComponent(s));
     }
     
     public static void method19107(final String s) {
@@ -114,13 +117,13 @@ public class Class6430
     }
     
     public static final boolean method19112(final Entity class399) {
-        return Class6430.field25541.field4683.method6968(class399.field2403);
+        return Class6430.field25541.field4683.method6968(class399.boundingBox);
     }
     
     public static final boolean method19113(final Entity class399) {
-        final double n = class399.field2395 - class399.field2417;
-        final double n2 = class399.field2396 - class399.field2418;
-        final double n3 = class399.field2397 - class399.field2419;
+        final double n = class399.posX - class399.lastTickPosX;
+        final double n2 = class399.posY - class399.lastTickPosY;
+        final double n3 = class399.posZ - class399.lastTickPosZ;
         if (n == 0.0) {
             if (n2 == 0.0) {
                 if (n3 == 0.0) {
@@ -142,19 +145,19 @@ public class Class6430
     public static float[] method19116(final double n, final double n2, final double n3, final Direction class179) {
         final Class411 class181;
         final Class411 class180 = class181 = new Class411(Class6430.field25541.field4683, n + 0.5, n2 + 0.5, n3 + 0.5);
-        class181.field2395 += class179.getDirectionVec().getX() * 0.25;
+        class181.posX += class179.getDirectionVec().getX() * 0.25;
         final Class411 class182 = class180;
-        class182.field2396 += class179.getDirectionVec().getY() * 0.25;
+        class182.posY += class179.getDirectionVec().getY() * 0.25;
         final Class411 class183 = class180;
-        class183.field2397 += class179.getDirectionVec().getZ() * 0.25;
-        return method19117(class180.field2395, class180.field2396, class180.field2397);
+        class183.posZ += class179.getDirectionVec().getZ() * 0.25;
+        return method19117(class180.posX, class180.posY, class180.posZ);
     }
     
     public static float[] method19117(final double n, final double n2, final double n3) {
-        final double x = n - Class6430.field25541.field4684.field2395;
-        final double y = n2 - (Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892());
-        final double y2 = n3 - Class6430.field25541.field4684.field2397;
-        return new float[] { Class6430.field25541.field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class6430.field25541.field4684.field2399), Class6430.field25541.field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class6430.field25541.field4684.field2400) };
+        final double x = n - Class6430.field25541.field4684.posX;
+        final double y = n2 - (Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892());
+        final double y2 = n3 - Class6430.field25541.field4684.posZ;
+        return new float[] { Class6430.field25541.field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class6430.field25541.field4684.rotationYaw), Class6430.field25541.field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class6430.field25541.field4684.rotationPitch) };
     }
     
     public static int method19118(final int n, final float n2) {
@@ -409,7 +412,7 @@ public class Class6430
     }
     
     public static Class7007 method19142(final float n, final float n2, final float n3, final double n4) {
-        final Vec3d class5487 = new Vec3d(Class6430.field25541.field4684.field2395, Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.field2397);
+        final Vec3d class5487 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
         final Entity method5303 = Class6430.field25541.method5303();
         if (method5303 != null && Class6430.field25541.field4683 != null) {
             double n5 = Class6430.field25541.field4682.method27315();
@@ -417,12 +420,12 @@ public class Class6430
                 n5 = n3;
             }
             final Vec3d method5304 = method19151(n2, n);
-            return method19143(Class6430.field25541.field4683, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.method1886().method18493(method5304.scale(n5)).method18495(1.0, 1.0, 1.0), class5488 -> class5488 instanceof Class511, n3 * n3, n4);
+            return method19143(Class6430.field25541.field4683, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.method1886().method18493(method5304.scale(n5)).method18495(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
         }
         return null;
     }
     
-    public static Class7007 method19143(final Class1847 class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n, final double n2) {
+    public static Class7007 method19143(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n, final double n2) {
         double n3 = n;
         Entity class1852 = null;
         for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
@@ -440,7 +443,7 @@ public class Class6430
                 if (method18498 >= n3) {
                     continue;
                 }
-                if (!(class1853 instanceof Class511)) {
+                if (!(class1853 instanceof LivingEntity)) {
                     continue;
                 }
                 class1852 = class1853;
@@ -454,7 +457,7 @@ public class Class6430
         double n4 = n3 * n3;
         Entity class400 = null;
         Vec3d method16742 = null;
-        final Vec3d class401 = new Vec3d(Class6430.field25541.field4684.field2395, Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.field2397);
+        final Vec3d class401 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
         final Vec3d method16743 = method19151(n2, n);
         final Vec3d method16744 = class401.add(method16743.x * n4, method16743.y * n4, method16743.z * n4);
         for (final Entity class402 : Class6430.field25541.field4683.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.method1886().method18493(method16743.scale(n4)).method18495(1.0, 1.0, 1.0), predicate)) {
@@ -562,22 +565,22 @@ public class Class6430
     }
     
     public static double method19154(final double n) {
-        Class6430.field25541.field4684.method1937(n, Class6430.field25541.field4684.method1935().y, Class6430.field25541.field4684.method1935().z);
+        Class6430.field25541.field4684.setMotion(n, Class6430.field25541.field4684.getMotion().y, Class6430.field25541.field4684.getMotion().z);
         return n;
     }
     
     public static double method19155(final double n) {
-        Class6430.field25541.field4684.method1937(Class6430.field25541.field4684.method1935().x, n, Class6430.field25541.field4684.method1935().z);
+        Class6430.field25541.field4684.setMotion(Class6430.field25541.field4684.getMotion().x, n, Class6430.field25541.field4684.getMotion().z);
         return n;
     }
     
     public static double method19156(final double n) {
-        Class6430.field25541.field4684.method1937(Class6430.field25541.field4684.method1935().x, Class6430.field25541.field4684.method1935().y, n);
+        Class6430.field25541.field4684.setMotion(Class6430.field25541.field4684.getMotion().x, Class6430.field25541.field4684.getMotion().y, n);
         return n;
     }
     
     public static boolean method19157(final double n, final double n2, final boolean b) {
-        AxisAlignedBB class6221 = Class6430.field25541.field4684.field2403;
+        AxisAlignedBB class6221 = Class6430.field25541.field4684.boundingBox;
         if (b) {
             class6221 = class6221.method18495(1.2350000143051147, 0.0, 1.2350000143051147);
         }
@@ -589,15 +592,15 @@ public class Class6430
     }
     
     public static boolean method19159() {
-        AxisAlignedBB class6221 = Class6430.field25541.field4684.field2403.method18499(0.0, -1.0, 0.0);
+        AxisAlignedBB class6221 = Class6430.field25541.field4684.boundingBox.method18499(0.0, -1.0, 0.0);
         if (Class6430.field25541.field4684.method1920() != null) {
-            class6221 = Class6430.field25541.field4684.method1920().field2403.method18494(Math.abs(Class6430.field25541.field4684.method1920().field2392 - Class6430.field25541.field4684.method1920().field2395), 1.0, Math.abs(Class6430.field25541.field4684.method1920().field2394 - Class6430.field25541.field4684.method1920().field2397));
+            class6221 = Class6430.field25541.field4684.method1920().boundingBox.method18494(Math.abs(Class6430.field25541.field4684.method1920().prevPosX - Class6430.field25541.field4684.method1920().posX), 1.0, Math.abs(Class6430.field25541.field4684.method1920().prevPosZ - Class6430.field25541.field4684.method1920().posZ));
         }
         return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, class6221, Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19160(final Entity class399, final float n) {
-        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.field2403.field25073, class399.field2403.field25074 - n, class399.field2403.field25075, class399.field2403.field25076, class399.field2403.field25077, class399.field2403.field25078), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.boundingBox.field25073, class399.boundingBox.field25074 - n, class399.boundingBox.field25075, class399.boundingBox.field25076, class399.boundingBox.field25077, class399.boundingBox.field25078), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static List<BlockPos> method19161(final Entity class399) {
@@ -605,7 +608,7 @@ public class Class6430
         final int n = 1;
         for (float n2 = (float)(-n); n2 <= n; ++n2) {
             for (float n3 = (float)(-n); n3 <= n; ++n3) {
-                list.add(new BlockPos(class399.field2395 + n2, class399.field2396 - 1.0, class399.field2397 + n3));
+                list.add(new BlockPos(class399.posX + n2, class399.posY - 1.0, class399.posZ + n3));
             }
         }
         return list;
@@ -651,12 +654,12 @@ public class Class6430
             boolean b2 = false;
             Label_0290: {
                 if (Class6430.field25541.field4684.method2904(0.5f) > 0.9 || equals) {
-                    if (Class6430.field25541.field4684.field2414 > 0.0f) {
-                        if (!Class6430.field25541.field4684.field2404) {
+                    if (Class6430.field25541.field4684.fallDistance > 0.0f) {
+                        if (!Class6430.field25541.field4684.onGround) {
                             if (!Class6430.field25541.field4684.method2688()) {
                                 if (!Class6430.field25541.field4684.method1706()) {
                                     if (!Class6430.field25541.field4684.method2653(Class9439.field40488)) {
-                                        if (!Class6430.field25541.field4684.method1805()) {
+                                        if (!Class6430.field25541.field4684.isPassenger()) {
                                             b2 = true;
                                             break Label_0290;
                                         }
@@ -670,7 +673,7 @@ public class Class6430
             }
             Label_0330: {
                 if (!b2) {
-                    if (!Class6430.field25541.field4684.field2404) {
+                    if (!Class6430.field25541.field4684.onGround) {
                         break Label_0330;
                     }
                     if (!Class9463.method35173().method35189().method21551(Class3261.class).method9906()) {
@@ -777,7 +780,7 @@ public class Class6430
     }
     
     public static Class2068 method19174(final Entity class399) {
-        if (!(class399 instanceof Class511)) {
+        if (!(class399 instanceof LivingEntity)) {
             return Class2068.field11841;
         }
         if (!(class399 instanceof Class512)) {
@@ -909,13 +912,13 @@ public class Class6430
         if (Class9463.method35173().method35190().method29878(class399)) {
             return false;
         }
-        if (!(class399 instanceof Class511)) {
+        if (!(class399 instanceof LivingEntity)) {
             return false;
         }
-        if (((Class511)class399).method2664() == 0.0f) {
+        if (((LivingEntity)class399).method2664() == 0.0f) {
             return false;
         }
-        if (!Class6430.field25541.field4684.method2646((Class511)class399)) {
+        if (!Class6430.field25541.field4684.method2646((LivingEntity)class399)) {
             return false;
         }
         if (class399 instanceof Class857) {
@@ -950,9 +953,9 @@ public class Class6430
     }
     
     public static void method19179(final boolean b) {
-        final double field2395 = Class6430.field25541.field4684.field2395;
-        final double field2396 = Class6430.field25541.field4684.field2396;
-        final double field2397 = Class6430.field25541.field4684.field2397;
+        final double field2395 = Class6430.field25541.field4684.posX;
+        final double field2396 = Class6430.field25541.field4684.posY;
+        final double field2397 = Class6430.field25541.field4684.posZ;
         for (int n = 49 + Class7482.method23140() * 17, i = 0; i < n; ++i) {
             final double n2 = b ? method19180() : 0.0;
             Class6430.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.06248 + method19180(), field2397 + n2, false));

@@ -29,10 +29,10 @@ public class Class6041 extends Class6040
         int n10 = -1;
         boolean b2 = false;
         int n11 = 0;
-        final Class385 class1867 = new Class385();
+        final Mutable class1867 = new Mutable();
         for (int i = n3; i >= 0; --i) {
             if (n11 < 15) {
-                class1867.method1284(n7, i, n8);
+                class1867.setPos(n7, i, n8);
                 final Class7096 method6701 = class1860.method6701(class1867);
                 if (!method6701.method21706()) {
                     if (method6701.method21696() == class1862.method21696()) {

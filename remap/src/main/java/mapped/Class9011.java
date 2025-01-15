@@ -13,7 +13,7 @@ public class Class9011
     }
     
     public static int method32263(final Class512 class512) {
-        final Class6749 class513 = (Class6749)class512.method1825();
-        return (class513 != null && class513.method20563().method8256() != null) ? class513.method20563().method8256() : 16777215;
+        final Class6749 class513 = (Class6749)class512.getTeam();
+        return (class513 != null && class513.getColor().getColor() != null) ? class513.getColor().getColor() : 16777215;
     }
 }

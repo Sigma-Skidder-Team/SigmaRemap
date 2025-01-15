@@ -83,7 +83,7 @@ public class Class7482
     }
     
     public static float[] method23145(float n, float n2) {
-        float n3 = Class7482.field28903.field4684.field2399 + 90.0f;
+        float n3 = Class7482.field28903.field4684.rotationYaw + 90.0f;
         if (Class9463.method35173().method35205().method26561() != -999.0f) {
             n3 = Class9463.method35173().method35205().method26561() + 90.0f;
         }
@@ -116,7 +116,7 @@ public class Class7482
     }
     
     public static float[] method23146(float n, float n2) {
-        float n3 = Class7482.field28903.field4684.field2399 + 90.0f;
+        float n3 = Class7482.field28903.field4684.rotationYaw + 90.0f;
         if (n == 0.0f) {
             if (n2 != 0.0f) {
                 n3 += ((n2 <= 0.0f) ? 90 : -90);
@@ -150,7 +150,7 @@ public class Class7482
     public static float method23147() {
         float field2970 = Class7482.field28903.field4684.field2970;
         final float field2971 = Class7482.field28903.field4684.field2968;
-        float n = Class7482.field28903.field4684.field2399 + 90.0f;
+        float n = Class7482.field28903.field4684.rotationYaw + 90.0f;
         if (field2970 > 0.0f) {
             if (Class7482.field28903.field4648.field23437.method1056()) {
                 field2970 = -1.0f;
@@ -260,9 +260,9 @@ public class Class7482
     }
     
     public static void method23152() {
-        final double field2395 = Class7482.field28903.field4684.field2395;
-        final double field2396 = Class7482.field28903.field4684.field2396;
-        final double field2397 = Class7482.field28903.field4684.field2397;
+        final double field2395 = Class7482.field28903.field4684.posX;
+        final double field2396 = Class7482.field28903.field4684.posY;
+        final double field2397 = Class7482.field28903.field4684.posZ;
         for (int i = 0; i < 49 + method23140() * 17; ++i) {
             Class7482.field28903.method5269().method17292(new Class4354(field2395, field2396 + 0.06248, field2397, false));
             Class7482.field28903.method5269().method17292(new Class4354(field2395, field2396, field2397, false));

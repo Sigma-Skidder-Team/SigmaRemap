@@ -7,6 +7,7 @@ package mapped;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Map;
@@ -46,7 +47,7 @@ public class Class572 extends Class565
         this.field3407 = field3407;
         this.field3408 = field3408;
         this.field3409 = field3408.method22529();
-        this.field3410 = field3408.method22527().method8461();
+        this.field3410 = field3408.method22527().getFormattedText();
         this.method3347(this.field3411 = new Class683(this, field3403, field3407, field3408), field3407);
     }
     

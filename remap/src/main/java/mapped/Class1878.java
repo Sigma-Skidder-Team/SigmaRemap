@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
@@ -49,7 +51,7 @@ public class Class1878 implements Class1851
             this.field10222 = field10219.method6764();
             this.field10223 = field10219.method6790();
             this.field10224 = field10219.method6789();
-            this.field10228 = new Class5507(this, Class8660.method29535(this.field10220), this.field10224.method20487().method1278());
+            this.field10228 = new Class5507(this, Class8660.method29535(this.field10220), this.field10224.getType().method1278());
             return;
         }
         throw Class8349.method27859(new IllegalStateException("Cache size is not a square."));

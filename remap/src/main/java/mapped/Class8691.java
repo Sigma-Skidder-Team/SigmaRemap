@@ -69,7 +69,7 @@ public class Class8691
     public Class7820 method29796(final Class1852 class1852, final BlockPos class1853) {
         final LoadingCache<BlockPos, Class7990> method29797 = method29797(class1852, false);
         final int max = Math.max(Math.max(this.field36528, this.field36527), this.field36526);
-        for (final BlockPos class1854 : BlockPos.method1154(class1853, class1853.method1134(max - 1, max - 1, max - 1))) {
+        for (final BlockPos class1854 : BlockPos.getAllInBoxMutable(class1853, class1853.add(max - 1, max - 1, max - 1))) {
             for (final Direction class1855 : Direction.values()) {
                 for (final Direction class1856 : Direction.values()) {
                     if (class1856 != class1855) {
@@ -95,7 +95,7 @@ public class Class8691
             final Vec3i class357 = new Vec3i(class355.getXOffset(), class355.getYOffset(), class355.getZOffset());
             final Vec3i class358 = new Vec3i(class356.getXOffset(), class356.getYOffset(), class356.getZOffset());
             final Vec3i method1080 = class357.crossProduct(class358);
-            return class354.method1134(class358.getX() * -n2 + method1080.getX() * n + class357.getX() * n3, class358.getY() * -n2 + method1080.getY() * n + class357.getY() * n3, class358.getZ() * -n2 + method1080.getZ() * n + class357.getZ() * n3);
+            return class354.add(class358.getX() * -n2 + method1080.getX() * n + class357.getX() * n3, class358.getY() * -n2 + method1080.getY() * n + class357.getY() * n3, class358.getZ() * -n2 + method1080.getZ() * n + class357.getZ() * n3);
         }
         throw new IllegalArgumentException("Invalid forwards & up combination");
     }

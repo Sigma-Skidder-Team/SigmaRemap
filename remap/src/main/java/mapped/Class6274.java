@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 
 public class Class6274 extends Class6257
 {
@@ -56,9 +58,9 @@ public class Class6274 extends Class6257
     }
     
     @Override
-    public void method18601(final Class511 class511, final Entity class512, final int n) {
-        if (class512 instanceof Class511) {
-            final Class511 class513 = (Class511)class512;
+    public void method18601(final LivingEntity class511, final Entity class512, final int n) {
+        if (class512 instanceof LivingEntity) {
+            final LivingEntity class513 = (LivingEntity)class512;
             if (this.field25141 == 2) {
                 if (class513.method2712() == Class6363.field25462) {
                     class513.method2655(new Class1948(Class9439.field40475, 20 + class511.method2633().nextInt(10 * n), 3));

@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 
 public class Class4637 extends Class4611<Class4235>
 {

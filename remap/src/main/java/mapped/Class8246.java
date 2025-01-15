@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 public class Class8246 extends Class8245
 {
@@ -40,7 +41,7 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27320(final Class512 class512, final Class1847 class513, final Class316 class514) {
+    public Class2201 method27320(final Class512 class512, final World class513, final Class316 class514) {
         this.field33875 = true;
         final Class2201 method27320 = super.method27320(class512, class513, class514);
         this.field33875 = false;

@@ -51,7 +51,7 @@ public class Class5843<T extends Class790> extends Class5839<T>
     
     public void method17563(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         super.method17557(t, n, n2, n3, n4, n5);
-        final float method4370 = t.method4370(n3 - t.field2424);
+        final float method4370 = t.method4370(n3 - t.ticksExisted);
         final float n6 = method4370 * method4370;
         final float n7 = 1.0f - n6;
         this.field23937.field25183 = 1.5707964f - n6 * 3.1415927f * 0.35f;

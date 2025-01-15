@@ -4,11 +4,15 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public abstract class Class785 extends Class787
 {
-    public Class785(final EntityType<? extends Class785> class7499, final Class1847 class7500) {
+    public Class785(final EntityType<? extends Class785> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -25,7 +29,7 @@ public abstract class Class785 extends Class787
     
     @Nullable
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return null;
     }
     

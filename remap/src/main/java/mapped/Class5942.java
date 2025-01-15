@@ -14,7 +14,7 @@ public class Class5942 extends Class5936
 {
     private static String[] field24441;
     
-    public Class5942(final Class4574<?> class4574, final int n, final int n2, final Class6997 class4575, final int n3, final long n4) {
+    public Class5942(final Class4574<?> class4574, final int n, final int n2, final MutableBoundingBox class4575, final int n3, final long n4) {
         super(class4574, n, n2, class4575, n3, n4);
     }
     
@@ -50,18 +50,18 @@ public class Class5942 extends Class5936
     }
     
     @Override
-    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         super.method17853(class1851, class1852, random, class1853, class1854);
-        final int field27294 = this.field24432.field27294;
-        for (int i = class1853.field27293; i <= class1853.field27296; ++i) {
-            for (int j = class1853.field27295; j <= class1853.field27298; ++j) {
+        final int field27294 = this.field24432.minY;
+        for (int i = class1853.minX; i <= class1853.maxX; ++i) {
+            for (int j = class1853.minZ; j <= class1853.maxZ; ++j) {
                 final BlockPos class1855 = new BlockPos(i, field27294, j);
                 if (!class1851.method6961(class1855)) {
-                    if (this.field24432.method21415(class1855)) {
+                    if (this.field24432.isVecInside(class1855)) {
                         int n = 0;
                         final Iterator<Class4473> iterator = this.field24431.iterator();
                         while (iterator.hasNext()) {
-                            if (!iterator.next().method13432().method21415(class1855)) {
+                            if (!iterator.next().method13432().isVecInside(class1855)) {
                                 continue;
                             }
                             n = 1;

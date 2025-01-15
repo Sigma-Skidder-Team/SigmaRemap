@@ -8,7 +8,7 @@ public class Class5951 extends Class5936
 {
     private static String[] field24450;
     
-    public Class5951(final Class4574<?> class4574, final int n, final int n2, final Class6997 class4575, final int n3, final long n4) {
+    public Class5951(final Class4574<?> class4574, final int n, final int n2, final MutableBoundingBox class4575, final int n3, final long n4) {
         super(class4574, n, n2, class4575, n3, n4);
     }
     

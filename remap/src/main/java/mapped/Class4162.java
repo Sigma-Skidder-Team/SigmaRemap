@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class4162 extends Class4158<Class491>
@@ -17,7 +19,7 @@ public class Class4162 extends Class4158<Class491>
     }
     
     public void method12467(final Class491 class491, final float n, final Class7351 class492, final Class7807 class493, final int n2, final int n3) {
-        final Class1847 method2186 = class491.method2186();
+        final World method2186 = class491.method2186();
         if (method2186 != null) {
             final BlockPos method2187 = class491.method2193().method1149(class491.method2476().getOpposite());
             final Class7096 method2188 = class491.method2481();
@@ -46,7 +48,7 @@ public class Class4162 extends Class4158<Class491>
         }
     }
     
-    private void method12468(final BlockPos class354, final Class7096 class355, final Class7351 class356, final Class7807 class357, final Class1847 class358, final boolean b, final int n) {
+    private void method12468(final BlockPos class354, final Class7096 class355, final Class7351 class356, final Class7807 class357, final World class358, final boolean b, final int n) {
         this.field18549.method5793().method33353(class358, this.field18549.method5794(class355), class355, class354, class356, class357.method25214(Class7969.method25824(class355)), b, new Random(), class355.method21758(class354), n);
     }
 }

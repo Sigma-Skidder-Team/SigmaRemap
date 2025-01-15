@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class4650 extends Class4648
 {
     private static String[] field20134;
@@ -19,7 +21,7 @@ public class Class4650 extends Class4648
     }
     
     @Override
-    public Class1847 method13895() {
+    public World method13895() {
         return this.field20135.field2656;
     }
     

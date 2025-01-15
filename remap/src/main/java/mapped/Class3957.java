@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class3957 extends Class3841
@@ -20,7 +23,7 @@ public class Class3957 extends Class3841
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         final Class436 method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class488) {
             for (int method6728 = ((Class488)method6727).method2445(), i = 0; i < method6728; ++i) {

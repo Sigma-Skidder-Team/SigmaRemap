@@ -9,7 +9,7 @@ import java.io.IOException;
 import com.google.common.collect.Lists;
 import java.util.List;
 
-public class Class4349 implements Class4252<Class5800>
+public class Class4349 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19476;
     private int field19477;
@@ -89,13 +89,13 @@ public class Class4349 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19477 = class8654.method29501();
-        this.field19478 = class8654.method29501();
-        this.field19479 = class8654.method29501();
-        this.field19480 = class8654.method29501();
-        this.field19481 = class8654.method29501();
-        this.field19482 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19477 = class8654.readVarInt();
+        this.field19478 = class8654.readVarInt();
+        this.field19479 = class8654.readVarInt();
+        this.field19480 = class8654.readVarInt();
+        this.field19481 = class8654.readVarInt();
+        this.field19482 = class8654.readVarInt();
         this.field19483 = Lists.newArrayList();
         for (int i = 0; i < 18; ++i) {
             if ((this.field19479 & 1 << i) != 0x0) {
@@ -111,13 +111,13 @@ public class Class4349 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19477);
-        class8654.method29505(this.field19478);
-        class8654.method29505(this.field19479);
-        class8654.method29505(this.field19480);
-        class8654.method29505(this.field19481);
-        class8654.method29505(this.field19482);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19477);
+        class8654.writeVarInt(this.field19478);
+        class8654.writeVarInt(this.field19479);
+        class8654.writeVarInt(this.field19480);
+        class8654.writeVarInt(this.field19481);
+        class8654.writeVarInt(this.field19482);
         final Iterator<byte[]> iterator = this.field19483.iterator();
         while (iterator.hasNext()) {
             class8654.method29485(iterator.next());
@@ -128,7 +128,7 @@ public class Class4349 implements Class4252<Class5800>
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17363(this);
     }
     

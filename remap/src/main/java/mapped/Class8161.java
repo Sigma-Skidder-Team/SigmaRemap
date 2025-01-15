@@ -127,7 +127,7 @@ public class Class8161
                             }
                             Class350.method1052(Class2136.field12469.method8289(field33606), field33605);
                             if (field33605) {
-                                if (this.field33604.field4684.method1639() && field33606 == 2) {
+                                if (this.field33604.field4684.isSpectator() && field33606 == 2) {
                                     this.field33604.field4647.method3810().method3329();
                                 }
                                 else {
@@ -167,7 +167,7 @@ public class Class8161
                                 return;
                             }
                             this.field33619 -= n3;
-                            if (!this.field33604.field4684.method1639()) {
+                            if (!this.field33604.field4684.isSpectator()) {
                                 this.field33604.field4684.field3006.method2356(n3);
                             }
                             else if (!this.field33604.field4647.method3810().method3327()) {

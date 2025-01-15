@@ -16,14 +16,14 @@ public class Class3377 extends Class3167
     @Class6753
     public void method10769(final Class5743 class5743) {
         if (this.method9906()) {
-            if (Class3377.field15514.field4684.field2424 > 10) {
+            if (Class3377.field15514.field4684.ticksExisted > 10) {
                 if (Class3377.field15514.method5285() == null) {
                     if (Class3377.field15514.method5282() != null) {
                         if (Class3377.field15514.field4684.method2664() / Class3377.field15514.field4684.method2701() * 10.0f < this.method9886("Min Health") || Class8639.method29375(Class7739.field31590) == 0) {
                             final boolean method9883 = this.method9883("One Time Use");
                             Class3377.field15514.field4683.method6751();
                             Class3377.field15514.method5264();
-                            Class3377.field15514.method5244(new Class735(new Class720(new Class548()), "disconnect.lost", new Class2260("AutoLog disconnected you. " + (method9883 ? "The mod now disabled for you to reconnect." : "Disable it in a singleplayer world to reconnect."))));
+                            Class3377.field15514.method5244(new Class735(new Class720(new Class548()), "disconnect.lost", new StringTextComponent("AutoLog disconnected you. " + (method9883 ? "The mod now disabled for you to reconnect." : "Disable it in a singleplayer world to reconnect."))));
                         }
                     }
                 }

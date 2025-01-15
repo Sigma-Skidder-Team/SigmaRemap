@@ -63,7 +63,7 @@ public class Class8224 extends SimpleChannelInboundHandler<ByteBuf>
                 this.field33781.field26769.field41617 = -1;
                 this.field33781.field26769.field41618 = field41618;
                 this.field33781.field26769.field41615 = field41619;
-                this.field33781.field26769.field41614 = Class2116.field12316 + "" + method35675 + "" + Class2116.field12317 + "/" + Class2116.field12316 + method35676;
+                this.field33781.field26769.field41614 = TextFormatting.GRAY + "" + method35675 + "" + TextFormatting.DARK_GRAY + "/" + TextFormatting.GRAY + method35676;
             }
         }
         channelHandlerContext.close();

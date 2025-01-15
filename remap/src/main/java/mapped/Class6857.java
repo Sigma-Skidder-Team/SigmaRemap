@@ -7,9 +7,12 @@ package mapped;
 import java.util.Optional;
 import java.util.List;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Set;
 
-public class Class6857 extends Class6851<Class511>
+public class Class6857 extends Class6851<LivingEntity>
 {
     private static String[] field26886;
     
@@ -22,7 +25,7 @@ public class Class6857 extends Class6851<Class511>
     }
     
     @Override
-    public void method20955(final Class1849 class1849, final Class511 class1850) {
+    public void method20955(final Class1849 class1849, final LivingEntity class1850) {
         method20963(class1849.method6754(), class1850);
     }
     
@@ -31,11 +34,11 @@ public class Class6857 extends Class6851<Class511>
         return (Set<Class8233<?>>)ImmutableSet.of((Object)Class8233.field33804);
     }
     
-    public static void method20963(final long l, final Class511 class511) {
+    public static void method20963(final long l, final LivingEntity class511) {
         final Class365<?> method2618 = class511.method2618();
-        final Optional<List<Class511>> method2619 = method2618.method1198(Class8233.field33804);
+        final Optional<List<LivingEntity>> method2619 = method2618.method1198(Class8233.field33804);
         if (method2619.isPresent()) {
-            if (method2619.get().stream().anyMatch(class512 -> class512.method1642().equals(EntityType.field29043))) {
+            if (method2619.get().stream().anyMatch(class512 -> class512.getType().equals(EntityType.field29043))) {
                 method2618.method1196(Class8233.field33823, l);
             }
         }

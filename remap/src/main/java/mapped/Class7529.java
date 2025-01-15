@@ -8,6 +8,8 @@ import javax.annotation.Nullable;
 import java.util.function.Consumer;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+import net.minecraft.item.ItemStack;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;

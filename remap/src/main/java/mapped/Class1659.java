@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
+
 import java.util.Map;
 
 public class Class1659 implements Class1657

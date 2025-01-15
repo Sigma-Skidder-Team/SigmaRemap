@@ -72,7 +72,7 @@ public class Class3176 extends Class3167
         this.field15542 = new Class7838(file);
         if (this.field15542.method25316() && this.field15542.method25323().size() > 0) {
             Class6430.method19106(this.field15542.method25323().size() + " blocks loaded from schematic");
-            this.field15543 = new BlockPos(Class3176.field15514.field4684.field2395 + this.field15542.method25322().method7835() * 0.0, Class3176.field15514.field4684.field2396 + this.field15542.method25322().method7839() * 0.0, Class3176.field15514.field4684.field2397 + this.field15542.method25322().method7843() * 0.0);
+            this.field15543 = new BlockPos(Class3176.field15514.field4684.posX + this.field15542.method25322().method7835() * 0.0, Class3176.field15514.field4684.posY + this.field15542.method25322().method7839() * 0.0, Class3176.field15514.field4684.posZ + this.field15542.method25322().method7843() * 0.0);
             this.method9967();
             return;
         }

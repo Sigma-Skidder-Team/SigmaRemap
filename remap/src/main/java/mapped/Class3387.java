@@ -18,14 +18,14 @@ public class Class3387 extends Class3167
         if (Class3387.field15514.field4684 == null) {
             return;
         }
-        if (Class3387.field15514.field4684.field2424 >= 10) {
+        if (Class3387.field15514.field4684.ticksExisted >= 10) {
             if (Class3387.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4328) {
                     final Class4328 class5724 = (Class4328)class5723.method16998();
-                    Class3387.field15514.field4684.field2401 = class5724.field19380;
-                    Class3387.field15514.field4684.field2402 = class5724.field19381;
-                    class5724.field19380 = Class3387.field15514.field4684.field2399;
-                    class5724.field19381 = Class3387.field15514.field4684.field2400;
+                    Class3387.field15514.field4684.prevRotationYaw = class5724.field19380;
+                    Class3387.field15514.field4684.prevRotationPitch = class5724.field19381;
+                    class5724.field19380 = Class3387.field15514.field4684.rotationYaw;
+                    class5724.field19381 = Class3387.field15514.field4684.rotationPitch;
                 }
             }
         }

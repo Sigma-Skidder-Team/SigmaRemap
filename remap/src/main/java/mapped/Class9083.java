@@ -174,7 +174,7 @@ public class Class9083
     
     public void method32767(final int n) {
         Class8787.method30576(this.field38456.method20850(), this.field38457, n, this.field38458, false).method2557(this.method32754());
-        Class8787.method30574(this.field38457.method1134(1, 0, -1), this.field38458);
+        Class8787.method30574(this.field38457.add(1, 0, -1), this.field38458);
         this.field38459.forEach(class7373 -> class7373.method22640(this));
     }
     

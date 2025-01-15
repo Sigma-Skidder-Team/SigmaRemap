@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class6664
 {

@@ -4,6 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.UUID;
@@ -13,7 +18,7 @@ public abstract class Class789 extends Class788
     private int field4202;
     private UUID field4203;
     
-    public Class789(final EntityType<? extends Class789> class7499, final Class1847 class7500) {
+    public Class789(final EntityType<? extends Class789> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -34,16 +39,16 @@ public abstract class Class789 extends Class788
         if (this.field4202 > 0) {
             --this.field4202;
             if (this.field4202 % 10 == 0) {
-                this.field2391.method6709(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02);
+                this.world.method6709(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
             }
         }
     }
     
     @Override
-    public boolean method1740(final Class7929 class7929, final float n) {
+    public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             this.field4202 = 0;
-            return super.method1740(class7929, n);
+            return super.attackEntityFrom(class7929, n);
         }
         return false;
     }
@@ -90,7 +95,7 @@ public abstract class Class789 extends Class788
     
     @Override
     public int method2631(final Class512 class512) {
-        return 1 + this.field2391.field10062.nextInt(3);
+        return 1 + this.world.field10062.nextInt(3);
     }
     
     public boolean method4357(final ItemStack class8321) {
@@ -101,7 +106,7 @@ public abstract class Class789 extends Class788
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
         if (this.method4357(method2715)) {
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 if (this.method4351() == 0) {
                     if (this.method4359()) {
                         this.method4358(class512, method2715);
@@ -135,7 +140,7 @@ public abstract class Class789 extends Class788
         if (class512 != null) {
             this.field4203 = class512.method1865();
         }
-        this.field2391.method6761(this, (byte)18);
+        this.world.method6761(this, (byte)18);
     }
     
     public void method4361(final int field4202) {
@@ -145,7 +150,7 @@ public abstract class Class789 extends Class788
     @Nullable
     public Class513 method4362() {
         if (this.field4203 != null) {
-            final Class512 method7143 = this.field2391.method7143(this.field4203);
+            final Class512 method7143 = this.world.method7143(this.field4203);
             return (method7143 instanceof Class513) ? ((Class513)method7143) : null;
         }
         return null;
@@ -170,7 +175,7 @@ public abstract class Class789 extends Class788
         }
         else {
             for (int i = 0; i < 7; ++i) {
-                this.field2391.method6709(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02, this.field2423.nextGaussian() * 0.02);
+                this.world.method6709(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
             }
         }
     }

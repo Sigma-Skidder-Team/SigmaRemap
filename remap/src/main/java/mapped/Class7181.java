@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Consumer;
 
 public class Class7181 extends Class7180

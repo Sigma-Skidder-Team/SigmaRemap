@@ -35,7 +35,7 @@ public class Class6993 implements Class6991
     
     @Override
     public ITextComponent method21403() {
-        return new Class2260(this.field27284.getName());
+        return new StringTextComponent(this.field27284.getName());
     }
     
     @Override

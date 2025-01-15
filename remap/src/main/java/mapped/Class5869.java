@@ -59,7 +59,7 @@ public class Class5869 extends Class5846<Class796>
     }
     
     public void method17604(final Class796 class796, final float n, final float n2, final float n3, final float n4, final float n5) {
-        this.method17607(method17609(class796), class796.field2424, n, n2, n3, n4, n5);
+        this.method17607(method17609(class796), class796.ticksExisted, n, n2, n3, n4, n5);
     }
     
     public void method17605(final Class796 class796, final float n, final float n2, final float n3) {

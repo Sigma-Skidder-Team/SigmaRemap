@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class Class3847 extends Class3846
 {
@@ -16,7 +18,7 @@ public class Class3847 extends Class3846
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
+    public void method11860(final World class1847, final BlockPos class1848, final Entity class1849, final float n) {
         if (!class1849.method1811()) {
             class1849.method1705(n, 0.0f);
         }
@@ -36,19 +38,19 @@ public class Class3847 extends Class3846
     }
     
     private void method11901(final Entity class399) {
-        final Vec3d method1935 = class399.method1935();
+        final Vec3d method1935 = class399.getMotion();
         if (method1935.y < 0.0) {
-            class399.method1937(method1935.x, -method1935.y * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.z);
+            class399.setMotion(method1935.x, -method1935.y * ((class399 instanceof LivingEntity) ? 1.0 : 0.8), method1935.z);
         }
     }
     
     @Override
-    public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
-        final double abs = Math.abs(class1849.method1935().y);
+    public void method11845(final World class1847, final BlockPos class1848, final Entity class1849) {
+        final double abs = Math.abs(class1849.getMotion().y);
         if (abs < 0.1) {
             if (!class1849.method1810()) {
                 final double n = 0.4 + abs * 0.2;
-                class1849.method1936(class1849.method1935().mul(n, 1.0, n));
+                class1849.method1936(class1849.getMotion().mul(n, 1.0, n));
             }
         }
         super.method11845(class1847, class1848, class1849);

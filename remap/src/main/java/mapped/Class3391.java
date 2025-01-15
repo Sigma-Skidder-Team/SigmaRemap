@@ -29,8 +29,8 @@ public class Class3391 extends Class3167
     @Class6753
     private void method10813(final Class5723 class5726) {
         if (this.method9906()) {
-            if (class5726.method16998() instanceof Class4370) {
-                final Class4370 class5724 = (Class4370)class5726.method16998();
+            if (class5726.method16998() instanceof SEntityPacket) {
+                final SEntityPacket class5724 = (SEntityPacket)class5726.method16998();
             }
             if (class5726.method16998() instanceof Class4330) {
                 new Thread(() -> {

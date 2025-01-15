@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 
 public class Class6100<T extends Class3685> implements Class6096<T>
 {
@@ -27,11 +28,11 @@ public class Class6100<T extends Class3685> implements Class6096<T>
         return this.field24755.method34696(class1932, method35896, class1933, new ItemStack(Class90.field211.method505(new Class1932(Class9583.method35895(jsonObject, "result"))), Class9583.method35909(jsonObject, "count")));
     }
     
-    public T method18195(final Class1932 class1932, final Class8654 class1933) {
+    public T method18195(final Class1932 class1932, final PacketBuffer class1933) {
         return this.field24755.method34696(class1932, class1933.method29513(32767), Class120.method621(class1933), class1933.method29511());
     }
     
-    public void method18196(final Class8654 class8654, final T t) {
+    public void method18196(final PacketBuffer class8654, final T t) {
         class8654.method29514(t.field16990);
         t.field16985.method614(class8654);
         class8654.method29509(t.field16986);

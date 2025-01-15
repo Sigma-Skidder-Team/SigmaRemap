@@ -10,6 +10,7 @@ import com.google.common.collect.Lists;
 import java.util.concurrent.atomic.AtomicReference;
 import com.google.common.collect.Queues;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.Deque;
 import java.util.Random;
@@ -36,11 +37,11 @@ public final class Class7125
         final Class2052 method8144 = Class2052.method8144(field27771);
         final Class8228 method8145 = Class7323.field28316.method25554(class1932).method30673(field27771);
         final Class4521 method8146 = field27767.method24349(field27769, method8145, class1933, method8145.method27265(), method8144, method8145.method27254(field27769, class1933, method8144));
-        final Class6997 method8147 = method8146.method13432();
-        final int n = (method8147.field27296 + method8147.field27293) / 2;
-        final int n2 = (method8147.field27298 + method8147.field27295) / 2;
+        final MutableBoundingBox method8147 = method8146.method13432();
+        final int n = (method8147.maxX + method8147.minX) / 2;
+        final int n2 = (method8147.maxZ + method8147.minZ) / 2;
         final int method8148 = field27768.method18883(n, n2, Class2020.field11521);
-        method8146.method13454(0, method8148 - (method8147.field27294 + method8146.method13520()), 0);
+        method8146.method13454(0, method8148 - (method8147.minY + method8146.method13520()), 0);
         field27770.add(method8146);
         if (field27766 > 0) {
             this.field27772.addLast(new Class8433(method8146, new AtomicReference(Class7698.method24494(Class7698.method24489(new AxisAlignedBB(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), Class7698.method24489(AxisAlignedBB.method18489(method8147)), Class9306.field39920)), method8148 + 80, 0, null));
@@ -58,8 +59,8 @@ public final class Class7125
         final Class261 method13521 = method13518.method27263();
         final boolean b = method13521 == Class261.field1247;
         final AtomicReference atomicReference2 = new AtomicReference();
-        final Class6997 method13522 = class4521.method13432();
-        final int field27294 = method13522.field27294;
+        final MutableBoundingBox method13522 = class4521.method13432();
+        final int field27294 = method13522.minY;
     Label_0087:
         while (true) {
             for (final Class9038 class4522 : method13518.method27253(this.field27769, method13519, method13520, this.field27771)) {
@@ -73,7 +74,7 @@ public final class Class7125
                 if (method13524 != Class8795.field36978 && (method13524.method30676() != 0 || method13524 == Class8795.field36977)) {
                     AtomicReference<Class7702> atomicReference3;
                     int n5;
-                    if (!method13522.method21415(method13523)) {
+                    if (!method13522.isVecInside(method13523)) {
                         atomicReference3 = atomicReference;
                         n5 = n;
                     }
@@ -96,7 +97,7 @@ public final class Class7125
                         for (final Class2052 class4525 : Class2052.method8145(this.field27771)) {
                             final List<Class9038> method13526 = class4524.method27253(this.field27769, BlockPos.ZERO, class4525, this.field27771);
                             int orElse;
-                            if (class4524.method27254(this.field27769, BlockPos.ZERO, class4525).method21418() <= 16) {
+                            if (class4524.method27254(this.field27769, BlockPos.ZERO, class4525).getYSize() <= 16) {
                                 orElse = method13526.stream().mapToInt(class4529 -> {
                                     if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.method21772((Class7111<Direction>)Class3839.field17415)))) {
                                         Class7323.field28316.method25554(new Class1932(class4529.field38250.method323("target_pool")));
@@ -117,8 +118,8 @@ public final class Class7125
                                 }
                                 final BlockPos field27296 = class4526.field38248;
                                 final BlockPos class4527 = new BlockPos(method13523.getX() - field27296.getX(), method13523.getY() - field27296.getY(), method13523.getZ() - field27296.getZ());
-                                final Class6997 method13527 = class4524.method27254(this.field27769, class4527, class4525);
-                                final int field27297 = method13527.field27294;
+                                final MutableBoundingBox method13527 = class4524.method27254(this.field27769, class4527, class4525);
+                                final int field27297 = method13527.minY;
                                 final Class261 method13528 = class4524.method27263();
                                 final boolean b2 = method13528 == Class261.field1247;
                                 final int method13529 = field27296.getY();
@@ -134,10 +135,10 @@ public final class Class7125
                                     n7 = n4 - method13529;
                                 }
                                 final int n8 = n7 - field27297;
-                                final Class6997 method13530 = method13527.method21414(0, n8, 0);
-                                final BlockPos method13531 = class4527.method1134(0, n8, 0);
+                                final MutableBoundingBox method13530 = method13527.func_215127_b(0, n8, 0);
+                                final BlockPos method13531 = class4527.add(0, n8, 0);
                                 if (orElse > 0) {
-                                    method13530.field27297 = method13530.field27294 + Math.max(orElse + 1, method13530.field27297 - method13530.field27294);
+                                    method13530.maxY = method13530.minY + Math.max(orElse + 1, method13530.maxY - method13530.minY);
                                 }
                                 if (Class7698.method24496(atomicReference3.get(), Class7698.method24489(AxisAlignedBB.method18489(method13530).method18511(0.25)), Class9306.field39918)) {
                                     continue;

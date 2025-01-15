@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.nbt.INBT;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.HashMap;
 import com.google.common.collect.ImmutableMap;
@@ -75,7 +77,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
     }
     
     public boolean method7181(final Class353 class353) {
-        return Class1847.method6684(Class353.method1098(class353.method1103()));
+        return World.method6684(Class353.method1098(class353.method1103()));
     }
     
     public R method7182(final long n) {
@@ -131,7 +133,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
     }
     
     private void method7186(final Class7859 class7859) {
-        final Class41 class7860 = (Class41)this.method7187(class7859, (com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
+        final INBT class7860 = (INBT)this.method7187(class7859, (com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
         if (!(class7860 instanceof Class51)) {
             Class1882.field10241.error("Expected compound tag, got {}", (Object)class7860);
         }
@@ -148,7 +150,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
             final Optional optional = (Optional)this.field10243.get(method1117);
             if (optional != null) {
                 if (optional.isPresent()) {
-                    hashMap.put(dynamicOps.createString(Integer.toString(i)), ((IDynamicSerializable)optional.get()).method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
+                    hashMap.put(dynamicOps.createString(Integer.toString(i)), ((IDynamicSerializable)optional.get()).serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
                 }
             }
         }

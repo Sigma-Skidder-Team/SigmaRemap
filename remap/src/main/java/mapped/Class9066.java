@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,9 +40,9 @@ public class Class9066
     private static final String[] field38397;
     private static final String[] field38398;
     
-    public static void method32639(final Entity class399, final Class1847 class400) {
+    public static void method32639(final Entity class399, final World class400) {
         if (class400 != null) {
-            final Class9184 method1650 = class399.method1650();
+            final EntityDataManager method1650 = class399.method1650();
             method1650.field38922 = class399.method1894();
             method1650.field38921 = class400.method6959(method1650.field38922);
             if (class399 instanceof Class795) {
@@ -48,14 +51,14 @@ public class Class9066
         }
     }
     
-    public static void method32640(final Entity class399, final Class1847 class400) {
+    public static void method32640(final Entity class399, final World class400) {
         if (class399 instanceof Class795) {
             method32641((Class795)class399, true);
         }
     }
     
     private static void method32641(final Class795 class795, final boolean b) {
-        Class511 class796 = class795.method4488();
+        LivingEntity class796 = class795.method4488();
         if (class796 == null) {
             class796 = Class8571.method28894().field4684;
         }
@@ -63,10 +66,10 @@ public class Class9066
             final Class754 class797 = (Class754)class796;
             final UUID method1865 = class795.method1865();
             if (!b) {
-                final Class9184 method1866 = class795.method1650();
+                final EntityDataManager method1866 = class795.method1650();
                 if (class797.field4065 != null) {
                     if (Class8571.equals(class797.field4065.method1865(), method1865)) {
-                        final Class9184 method1867 = class797.field4065.method1650();
+                        final EntityDataManager method1867 = class797.field4065.method1650();
                         method1866.field38922 = method1867.field38922;
                         method1866.field38921 = method1867.field38921;
                         class797.field4065 = null;
@@ -74,7 +77,7 @@ public class Class9066
                 }
                 if (class797.field4066 != null) {
                     if (Class8571.equals(class797.field4066.method1865(), method1865)) {
-                        final Class9184 method1868 = class797.field4066.method1650();
+                        final EntityDataManager method1868 = class797.field4066.method1650();
                         method1866.field38922 = method1868.field38922;
                         method1866.field38921 = method1868.field38921;
                         class797.field4066 = null;
@@ -98,7 +101,7 @@ public class Class9066
         }
     }
     
-    public static void method32642(final Class1847 class1847, final Class1847 class1848) {
+    public static void method32642(final World class1847, final World class1848) {
         if (class1848 instanceof Class1848) {
             final Iterator<Entity> iterator = ((Class1848)class1848).method6806().iterator();
             while (iterator.hasNext()) {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.CubeCoordinateIterator;
 
 import java.util.function.Consumer;
 
@@ -13,13 +14,13 @@ public class Class7583 extends AbstractSpliterator<Class7702>
     private static String[] field30080;
     public boolean field30081;
     public final /* synthetic */ Entity field30082;
-    public final /* synthetic */ Class8243 field30083;
-    public final /* synthetic */ Class385 field30084;
-    public final /* synthetic */ Class7543 field30085;
+    public final /* synthetic */ CubeCoordinateIterator field30083;
+    public final /* synthetic */ Mutable field30084;
+    public final /* synthetic */ ISelectionContext field30085;
     public final /* synthetic */ Class7702 field30086;
     public final /* synthetic */ Class1853 field30087;
     
-    public Class7583(final Class1853 field30087, final long est, final int additionalCharacteristics, final Entity field30088, final Class8243 field30089, final Class385 field30090, final Class7543 field30091, final Class7702 field30092) {
+    public Class7583(final Class1853 field30087, final long est, final int additionalCharacteristics, final Entity field30088, final CubeCoordinateIterator field30089, final Mutable field30090, final ISelectionContext field30091, final Class7702 field30092) {
         this.field30087 = field30087;
         this.field30082 = field30088;
         this.field30083 = field30089;
@@ -44,10 +45,10 @@ public class Class7583 extends AbstractSpliterator<Class7702>
                 }
             }
         }
-        while (this.field30083.method27301()) {
-            final int method34786 = this.field30083.method27302();
-            final int method34787 = this.field30083.method27303();
-            final int method34788 = this.field30083.method27304();
+        while (this.field30083.hasNext()) {
+            final int method34786 = this.field30083.getX();
+            final int method34787 = this.field30083.getY();
+            final int method34788 = this.field30083.getZ();
             final int method34789 = this.field30083.method27305();
             if (method34789 == 3) {
                 continue;
@@ -56,7 +57,7 @@ public class Class7583 extends AbstractSpliterator<Class7702>
             if (method34790 == null) {
                 continue;
             }
-            this.field30084.method1284(method34786, method34787, method34788);
+            this.field30084.setPos(method34786, method34787, method34788);
             final Class7096 method34791 = method34790.method6701(this.field30084);
             if (method34789 == 1 && !method34791.method21702()) {
                 continue;

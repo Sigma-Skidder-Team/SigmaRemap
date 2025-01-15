@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Iterator;
 import java.util.Comparator;
@@ -58,8 +59,8 @@ public class Class3232 extends Class3167
         if (this.method9906() && !this.method9883("Silent")) {
             if (!this.field15703.isEmpty()) {
                 final float[] method30921 = Class8845.method30921(this.field15703.get(0));
-                Class3232.field15514.field4684.field2399 = method30921[0];
-                Class3232.field15514.field4684.field2400 = method30921[1];
+                Class3232.field15514.field4684.rotationYaw = method30921[0];
+                Class3232.field15514.field4684.rotationPitch = method30921[1];
             }
         }
     }
@@ -75,16 +76,16 @@ public class Class3232 extends Class3167
             else if (Class9463.method35173().method35190().method29878(class399)) {
                 iterator.remove();
             }
-            else if (!(class399 instanceof Class511)) {
+            else if (!(class399 instanceof LivingEntity)) {
                 iterator.remove();
             }
-            else if (((Class511)class399).method2664() == 0.0f) {
+            else if (((LivingEntity)class399).method2664() == 0.0f) {
                 iterator.remove();
             }
             else if (Class3232.field15514.field4684.method1732(class399) > n) {
                 iterator.remove();
             }
-            else if (!Class3232.field15514.field4684.method2646((Class511)class399)) {
+            else if (!Class3232.field15514.field4684.method2646((LivingEntity)class399)) {
                 iterator.remove();
             }
             else if (class399 instanceof Class857) {

@@ -15,13 +15,13 @@ public abstract class Class5936
     public static final Class5936 field24429;
     private final Class4574<?> field24430;
     public final List<Class4473> field24431;
-    public Class6997 field24432;
+    public MutableBoundingBox field24432;
     private final int field24433;
     private final int field24434;
     private int field24435;
     public final Class2317 field24436;
     
-    public Class5936(final Class4574<?> field24430, final int field24431, final int field24432, final Class6997 field24433, final int field24434, final long n) {
+    public Class5936(final Class4574<?> field24430, final int field24431, final int field24432, final MutableBoundingBox field24433, final int field24434, final long n) {
         this.field24431 = Lists.newArrayList();
         this.field24430 = field24430;
         this.field24433 = field24431;
@@ -33,7 +33,7 @@ public abstract class Class5936
     
     public abstract void method17850(final Class6346<?> p0, final Class1795 p1, final int p2, final int p3, final Class3090 p4);
     
-    public Class6997 method17851() {
+    public MutableBoundingBox method17851() {
         return this.field24432;
     }
     
@@ -41,12 +41,12 @@ public abstract class Class5936
         return this.field24431;
     }
     
-    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
+    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         synchronized (this.field24431) {
             final Iterator<Class4473> iterator = this.field24431.iterator();
             while (iterator.hasNext()) {
                 final Class4473 class1855 = iterator.next();
-                if (class1855.method13432().method21410(class1853) && !class1855.method13421(class1851, class1852, random, class1853, class1854)) {
+                if (class1855.method13432().intersectsWith(class1853) && !class1855.method13421(class1851, class1852, random, class1853, class1854)) {
                     iterator.remove();
                 }
             }
@@ -55,10 +55,10 @@ public abstract class Class5936
     }
     
     public void method17854() {
-        this.field24432 = Class6997.method21407();
+        this.field24432 = MutableBoundingBox.getNewBoundingBox();
         final Iterator<Class4473> iterator = this.field24431.iterator();
         while (iterator.hasNext()) {
-            this.field24432.method21412(iterator.next().method13432());
+            this.field24432.expandTo(iterator.next().method13432());
         }
     }
     
@@ -69,7 +69,7 @@ public abstract class Class5936
             class51.method298("ChunkX", n);
             class51.method298("ChunkZ", n2);
             class51.method298("references", this.field24435);
-            class51.method295("BB", this.field24432.method21421());
+            class51.method295("BB", this.field24432.toNBTTagIntArray());
             final Class52 class52 = new Class52();
             synchronized (this.field24431) {
                 final Iterator<Class4473> iterator = this.field24431.iterator();
@@ -86,12 +86,12 @@ public abstract class Class5936
     
     public void method17856(final int n, final Random random, final int n2) {
         final int n3 = n - n2;
-        int n4 = this.field24432.method21418() + 1;
+        int n4 = this.field24432.getYSize() + 1;
         if (n4 < n3) {
             n4 += random.nextInt(n3 - n4);
         }
-        final int n5 = n4 - this.field24432.field27297;
-        this.field24432.method21413(0, n5, 0);
+        final int n5 = n4 - this.field24432.maxY;
+        this.field24432.offset(0, n5, 0);
         final Iterator<Class4473> iterator = this.field24431.iterator();
         while (iterator.hasNext()) {
             iterator.next().method13454(0, n5, 0);
@@ -99,7 +99,7 @@ public abstract class Class5936
     }
     
     public void method17857(final Random random, final int n, final int n2) {
-        final int bound = n2 - n + 1 - this.field24432.method21418();
+        final int bound = n2 - n + 1 - this.field24432.getYSize();
         int n3;
         if (bound <= 1) {
             n3 = n;
@@ -107,8 +107,8 @@ public abstract class Class5936
         else {
             n3 = n + random.nextInt(bound);
         }
-        final int n4 = n3 - this.field24432.field27294;
-        this.field24432.method21413(0, n4, 0);
+        final int n4 = n3 - this.field24432.minY;
+        this.field24432.offset(0, n4, 0);
         final Iterator<Class4473> iterator = this.field24431.iterator();
         while (iterator.hasNext()) {
             iterator.next().method13454(0, n4, 0);
@@ -152,6 +152,6 @@ public abstract class Class5936
     }
     
     static {
-        field24429 = new Class5946(Class4535.field19959, 0, 0, Class6997.method21407(), 0, 0L);
+        field24429 = new Class5946(Class4535.field19959, 0, 0, MutableBoundingBox.getNewBoundingBox(), 0, 0L);
     }
 }

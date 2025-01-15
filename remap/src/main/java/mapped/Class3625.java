@@ -26,7 +26,7 @@ public class Class3625 extends Class3446
     
     @Override
     public boolean method11013() {
-        if (this.field16840.method4715() || !this.field16840.method1806()) {
+        if (this.field16840.method4715() || !this.field16840.isBeingRidden()) {
             return false;
         }
         final Vec3d method24900 = Class7775.method24900(this.field16840, 5, 4);
@@ -48,7 +48,7 @@ public class Class3625 extends Class3446
     public boolean method11017() {
         if (!this.field16840.method4715()) {
             if (!this.field16840.method4150().method24731()) {
-                if (this.field16840.method1806()) {
+                if (this.field16840.isBeingRidden()) {
                     return true;
                 }
             }
@@ -73,9 +73,9 @@ public class Class3625 extends Class3446
                     }
                     this.field16840.method4728(5);
                 }
-                this.field16840.method1783();
+                this.field16840.removePassengers();
                 this.field16840.method4750();
-                this.field16840.field2391.method6761(this.field16840, (byte)6);
+                this.field16840.world.method6761(this.field16840, (byte)6);
             }
         }
     }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class3585 extends Class3574
 {
     private static String[] field16711;
@@ -14,7 +16,7 @@ public class Class3585 extends Class3574
     
     @Override
     public boolean method11013() {
-        return super.method11013() && !this.field16685.method1806();
+        return super.method11013() && !this.field16685.isBeingRidden();
     }
     
     @Override
@@ -27,7 +29,7 @@ public class Class3585 extends Class3574
     }
     
     @Override
-    public double method11117(final Class511 class511) {
+    public double method11117(final LivingEntity class511) {
         return 4.0f + class511.method1930();
     }
 }

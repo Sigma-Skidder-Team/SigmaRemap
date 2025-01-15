@@ -22,7 +22,7 @@ public class Class3384 extends Class3167
                     if (Class9463.method35173().method35191().method31751(class5740)) {
                         continue;
                     }
-                    method10800(class5740.field2417 + (class5740.field2395 - class5740.field2417) * Class869.method5277().field4633.field26528, class5740.field2418 + class5740.method1931() + (class5740.field2396 - class5740.field2418) * Class869.method5277().field4633.field26528, class5740.field2419 + (class5740.field2397 - class5740.field2419) * Class869.method5277().field4633.field26528, class5740);
+                    method10800(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * Class869.method5277().field4633.field26528, class5740.lastTickPosY + class5740.method1931() + (class5740.posY - class5740.lastTickPosY) * Class869.method5277().field4633.field26528, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * Class869.method5277().field4633.field26528, class5740);
                 }
             }
         }
@@ -69,8 +69,8 @@ public class Class3384 extends Class3167
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(n - Class3384.field15514.field4644.method5833().method18161().getX(), n2 - Class3384.field15514.field4644.method5833().method18161().getY(), n3 - Class3384.field15514.field4644.method5833().method18161().getZ());
-        GL11.glRotated((double)(class399.field2424 % 180 * 2), 0.0, -1.0, 0.0);
-        float n4 = (float)(class399.field2424 % 100 - 50);
+        GL11.glRotated((double)(class399.ticksExisted % 180 * 2), 0.0, -1.0, 0.0);
+        float n4 = (float)(class399.ticksExisted % 100 - 50);
         if (n4 < 0.0f) {
             n4 *= -1.0f;
         }

@@ -12,7 +12,7 @@ import net.minecraft.util.math.Vec3i;
 
 import java.util.List;
 
-public final class Class386 extends Class385 implements AutoCloseable
+public final class Class386 extends Mutable implements AutoCloseable
 {
     private static String[] field2242;
     private boolean field2243;
@@ -49,7 +49,7 @@ public final class Class386 extends Class385 implements AutoCloseable
     }
     
     public Class386 method1300(final int n, final int n2, final int n3) {
-        return (Class386)super.method1284(n, n2, n3);
+        return (Class386)super.setPos(n, n2, n3);
     }
     
     public Class386 method1301(final Entity class399) {

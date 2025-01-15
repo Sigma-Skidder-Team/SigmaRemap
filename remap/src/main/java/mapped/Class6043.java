@@ -21,13 +21,13 @@ public class Class6043 extends Class6032<Class4408>
     public void method17965(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final Class7096 class1864, final Class7096 class1865, final Class7096 class1866, final int n5) {
         Class7096 class1867 = class1864;
         Class7096 class1868 = class1865;
-        final Class385 class1869 = new Class385();
+        final Mutable class1869 = new Mutable();
         int n6 = -1;
         final int n7 = (int)(n4 / 3.0 + 3.0 + random.nextDouble() * 0.25);
         final int n8 = n & 0xF;
         final int n9 = n2 & 0xF;
         for (int i = n3; i >= 0; --i) {
-            class1869.method1284(n8, i, n9);
+            class1869.setPos(n8, i, n9);
             final Class7096 method6701 = class1860.method6701(class1869);
             if (!method6701.method21706()) {
                 if (method6701.method21696() == class1862.method21696()) {
@@ -60,13 +60,13 @@ public class Class6043 extends Class6032<Class4408>
                         }
                         if (i < n5) {
                             if (class1867 == null || class1867.method21706()) {
-                                if (class1861.method9845(class1869.method1284(n, i, n2)) >= 0.15f) {
+                                if (class1861.method9845(class1869.setPos(n, i, n2)) >= 0.15f) {
                                     class1867 = class1863;
                                 }
                                 else {
                                     class1867 = Class7521.field29330.method11878();
                                 }
-                                class1869.method1284(n8, i, n9);
+                                class1869.setPos(n8, i, n9);
                             }
                         }
                         n6 = n7;

@@ -21,7 +21,7 @@ public class Class6026 extends Class6024<String>
     
     @Override
     public ITextComponent method17951() {
-        return new Class2260(this.method17942());
+        return new StringTextComponent(this.method17942());
     }
     
     public Class6026(final JsonObject jsonObject) {

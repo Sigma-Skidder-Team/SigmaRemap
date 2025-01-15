@@ -28,7 +28,7 @@ public class Class4722 extends Class4712<Class851, Class5891<Class851>>
     
     public void method14033(final Class851 class851, final Class7351 class852, final float n, final float n2, final float n3) {
         super.method13985(class851, class852, n, n2, n3);
-        class852.method22566(Vector3f.XP.rotationDegrees(class851.field2400));
+        class852.method22566(Vector3f.XP.rotationDegrees(class851.rotationPitch));
     }
     
     static {

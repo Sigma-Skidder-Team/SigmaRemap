@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4651 extends Class4654
@@ -34,7 +35,7 @@ public class Class4651 extends Class4654
         Label_0263: {
             if (this.method13927() && this.field20141.method1706()) {
                 n = MathHelper.floor(this.field20141.getPosY());
-                final Class385 class385 = new Class385(this.field20141.getPosX(), n, this.field20141.getPosZ());
+                final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
                 for (Class7096 class386 = this.field20140.method6701(class385); class386.method21696() == Class7521.field29173 || class386.method21756() == Class7558.field29976.method22177(false); class386 = this.field20140.method6701(class385)) {
                     ++n;
                     class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
@@ -42,7 +43,7 @@ public class Class4651 extends Class4654
                 --n;
             }
             else {
-                if (!this.field20141.field2404) {
+                if (!this.field20141.onGround) {
                     while (true) {
                         for (BlockPos method1139 = new BlockPos(this.field20141); this.field20140.method6701(method1139).method21706() || this.field20140.method6701(method1139).method21749(this.field20140, method1139, Class2084.field12051); method1139 = method1139.method1139()) {
                             if (method1139.getY() <= 0) {
@@ -84,7 +85,7 @@ public class Class4651 extends Class4654
         int method35642 = 0;
         if (this.field20141.method4144(this.method13912(this.field20141, class6772.field26589, class6772.field26590 + 1, class6772.field26591)) >= 0.0f) {
             if (this.method13912(this.field20141, class6772.field26589, class6772.field26590, class6772.field26591) != Class257.field1225) {
-                method35642 = MathHelper.method35642(Math.max(1.0f, this.field20141.field2420));
+                method35642 = MathHelper.method35642(Math.max(1.0f, this.field20141.stepHeight));
             }
             else {
                 method35642 = 0;

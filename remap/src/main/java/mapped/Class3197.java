@@ -27,14 +27,14 @@ public class Class3197 extends Class3167
     public void method10030(final Class5743 class5743) {
         if (this.method9906()) {
             Class3197.field15514.field4648.field23440.field2162 = false;
-            if (Class3197.field15514.field4684.method1935().y < 0.08 && !Class3197.field15514.field4684.field2404) {
+            if (Class3197.field15514.field4684.getMotion().y < 0.08 && !Class3197.field15514.field4684.onGround) {
                 if (!Class3197.field15514.field4684.method2773()) {
                     Class3197.field15514.method5269().method17292(new Class4336(Class3197.field15514.field4684, Class287.field1599));
-                    Class3197.field15514.field4684.method1830(7, true);
+                    Class3197.field15514.field4684.setFlag(7, true);
                 }
             }
             else {
-                Class3197.field15514.field4684.method1830(7, false);
+                Class3197.field15514.field4684.setFlag(7, false);
                 if (Class3197.field15514.field4684.method1809()) {
                     this.method9909(false);
                 }
@@ -95,11 +95,11 @@ public class Class3197 extends Class3167
             if (Class3197.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
-                    final Entity method6741 = Class3197.field15514.field4683.method6741(class5724.method12822());
+                    final Entity method6741 = Class3197.field15514.field4683.getEntityByID(class5724.method12822());
                     if (method6741 instanceof Class406) {
                         final Class406 class5725 = (Class406)method6741;
                         if (class5725.field2499 != null) {
-                            if (class5725.field2499.method1643() == Class3197.field15514.field4684.method1643()) {
+                            if (class5725.field2499.getEntityId() == Class3197.field15514.field4684.getEntityId()) {
                                 this.field15609 += class5724.field19165 / 8000.0f;
                                 this.field15611 += class5724.field19167 / 8000.0f;
                                 this.field15610 += class5724.field19166 / 8000.0f;
@@ -162,7 +162,7 @@ public class Class3197 extends Class3167
     
     @Override
     public void method9879() {
-        if (Class3197.field15514.field4684.field2404) {
+        if (Class3197.field15514.field4684.onGround) {
             Class6430.method19155(0.399399995803833);
         }
     }

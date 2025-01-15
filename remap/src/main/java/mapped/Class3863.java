@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -21,12 +22,12 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public Class7191<? extends Class475> method11929(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final boolean b) {
+    public Class7191<? extends Class475> method11929(final Class7096 class7096, final World class7097, final BlockPos class7098, final boolean b) {
         return Class6389::method19072;
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3863.field17493;
     }
     
@@ -41,7 +42,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final Class485 method2884 = class7099.method2884();
         final Class436 method2885 = class7097.method6727(class7098);
         if (method2884 == null || !(method2885 instanceof Class477)) {
@@ -66,7 +67,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         for (int i = 0; i < 3; ++i) {
             final int n = random.nextInt(2) * 2 - 1;
             final int n2 = random.nextInt(2) * 2 - 1;

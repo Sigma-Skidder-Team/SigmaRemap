@@ -54,26 +54,26 @@ public class Class6059<T> implements Class6058<T>
     }
     
     @Override
-    public void method18029(final Class8654 class8654) {
-        this.field24630 = class8654.method29501();
+    public void method18029(final PacketBuffer class8654) {
+        this.field24630 = class8654.readVarInt();
         for (int i = 0; i < this.field24630; ++i) {
-            this.field24626[i] = this.field24625.method499(class8654.method29501());
+            this.field24626[i] = this.field24625.method499(class8654.readVarInt());
         }
     }
     
     @Override
-    public void method18030(final Class8654 class8654) {
-        class8654.method29505(this.field24630);
+    public void method18030(final PacketBuffer class8654) {
+        class8654.writeVarInt(this.field24630);
         for (int i = 0; i < this.field24630; ++i) {
-            class8654.method29505(this.field24625.method563(this.field24626[i]));
+            class8654.writeVarInt(this.field24625.method563(this.field24626[i]));
         }
     }
     
     @Override
     public int method18031() {
-        int method29484 = Class8654.method29484(this.method18033());
+        int method29484 = PacketBuffer.method29484(this.method18033());
         for (int i = 0; i < this.method18033(); ++i) {
-            method29484 += Class8654.method29484(this.field24625.method563(this.field24626[i]));
+            method29484 += PacketBuffer.method29484(this.field24625.method563(this.field24626[i]));
         }
         return method29484;
     }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class3265 extends Class3247
 {
     public static int field15758;
@@ -15,7 +17,7 @@ public class Class3265 extends Class3247
     @Override
     public void method9897() {
         super.method9897();
-        Class3265.field15514.field4684.field2420 = 0.6f;
+        Class3265.field15514.field4684.stepHeight = 0.6f;
     }
     
     @Class6753
@@ -35,11 +37,11 @@ public class Class3265 extends Class3247
     }
     
     public Class2166 method10299(final Class5745 class5745) {
-        final double n = Class3265.field15514.field4684.field2395 + class5745.method17052().x;
-        final double n2 = Class3265.field15514.field4684.field2397 + class5745.method17052().z;
+        final double n = Class3265.field15514.field4684.posX + class5745.method17052().x;
+        final double n2 = Class3265.field15514.field4684.posZ + class5745.method17052().z;
         final double n3 = 0.41;
         final double n4 = class5745.method17049() - class5745.method17051();
-        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.field2403.field25074, n2 - n3, n + n3, Class3265.field15514.field4684.field2403.field25074 + n4, n2 + n3)).toArray();
+        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.boundingBox.field25074, n2 - n3, n + n3, Class3265.field15514.field4684.boundingBox.field25074 + n4, n2 + n3)).toArray();
         final int length = array.length;
         Class7096 class5746 = null;
         BlockPos class5747 = null;
@@ -56,7 +58,7 @@ public class Class3265 extends Class3247
         }
         if (!Class3265.field15514.field4684.method1706() && !Class3265.field15514.field4684.method1723()) {
             if (class5746 != null) {
-                if (Class3265.field15514.field4684.field2404) {
+                if (Class3265.field15514.field4684.onGround) {
                     if (n4 != class5745.method17049()) {
                         if (n4 < 0.5) {
                             if (!(class5746.method21696() instanceof Class3921)) {

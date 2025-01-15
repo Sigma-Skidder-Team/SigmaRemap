@@ -22,7 +22,7 @@ public class Class729 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3043(0);
-        this.method3295(this.field3156, this.field3148.method8461(), this.field3152 / 2, 70, 16777215);
+        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 70, 16777215);
         super.method2975(n, n2, n3);
     }
 }

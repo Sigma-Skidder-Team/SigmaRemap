@@ -7,7 +7,11 @@ package mapped;
 import java.util.AbstractList;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.IntNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
@@ -96,7 +100,7 @@ public class Class8619
         final Class52 class52 = new Class52();
         final Iterator<Integer> iterator = this.field36167.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class45>)class52).add(Class45.method279(iterator.next()));
+            ((AbstractList<IntNBT>)class52).add(IntNBT.valueOf(iterator.next()));
         }
         class51.method295("Gateways", class52);
         return class51;
@@ -368,7 +372,7 @@ public class Class8619
         return this.field36170;
     }
     
-    public void method29251(final Class858 class858, final Class7929 class859) {
+    public void method29251(final Class858 class858, final DamageSource class859) {
         if (this.field36178 != null && this.field36180.contains(class858)) {
             Class8619.field36163.debug("Aborting respawn sequence");
             this.field36178 = null;

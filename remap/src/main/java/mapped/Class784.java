@@ -4,15 +4,24 @@
 
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
 public class Class784 extends Class785 implements Class768
 {
-    private static final Class8810<Byte> field4194;
+    private static final DataParameter<Byte> field4194;
     
-    public Class784(final EntityType<? extends Class784> class7499, final Class1847 class7500) {
+    public Class784(final EntityType<? extends Class784> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -35,7 +44,7 @@ public class Class784 extends Class785 implements Class768
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class784.field4194, (Byte)16);
+        this.dataManager.register(Class784.field4194, (Byte)16);
     }
     
     @Override
@@ -55,26 +64,26 @@ public class Class784 extends Class785 implements Class768
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             final int method35644 = MathHelper.floor(this.getPosX());
             final int method35645 = MathHelper.floor(this.getPosY());
             final int method35646 = MathHelper.floor(this.getPosZ());
             if (this.method1710()) {
-                this.method1740(Class7929.field32569, 1.0f);
+                this.attackEntityFrom(DamageSource.field32569, 1.0f);
             }
-            if (this.field2391.method6959(new BlockPos(method35644, 0, method35646)).method9845(new BlockPos(method35644, method35645, method35646)) > 1.0f) {
-                this.method1740(Class7929.field32564, 1.0f);
+            if (this.world.method6959(new BlockPos(method35644, 0, method35646)).method9845(new BlockPos(method35644, method35645, method35646)) > 1.0f) {
+                this.attackEntityFrom(DamageSource.field32564, 1.0f);
             }
-            if (!this.field2391.method6765().method31216(Class8878.field37316)) {
+            if (!this.world.method6765().method31216(Class8878.field37316)) {
                 return;
             }
             final Class7096 method35647 = Class7521.field29329.method11878();
             for (int i = 0; i < 4; ++i) {
                 final BlockPos class354 = new BlockPos(MathHelper.floor(this.getPosX() + (i % 2 * 2 - 1) * 0.25f), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ() + (i / 2 % 2 * 2 - 1) * 0.25f));
-                if (this.field2391.method6701(class354).method21706()) {
-                    if (this.field2391.method6959(class354).method9845(class354) < 0.8f) {
-                        if (method35647.method21752(this.field2391, class354)) {
-                            this.field2391.method6692(class354, method35647);
+                if (this.world.method6701(class354).method21706()) {
+                    if (this.world.method6959(class354).method9845(class354) < 0.8f) {
+                        if (method35647.method21752(this.world, class354)) {
+                            this.world.method6692(class354, method35647);
                         }
                     }
                 }
@@ -83,19 +92,19 @@ public class Class784 extends Class785 implements Class768
     }
     
     @Override
-    public void method4252(final Class511 class511, final float n) {
-        final Class411 class512 = new Class411(this.field2391, this);
+    public void method4252(final LivingEntity class511, final float n) {
+        final Class411 class512 = new Class411(this.world, this);
         final double n2 = class511.method1944() - 1.100000023841858;
         final double n3 = class511.getPosX() - this.getPosX();
         final double n4 = n2 - class512.getPosY();
         final double n5 = class511.getPosZ() - this.getPosZ();
         class512.method1958(n3, n4 + MathHelper.sqrt(n3 * n3 + n5 * n5) * 0.2f, n5, 1.6f, 12.0f);
         this.method1695(Class8520.field35601, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
-        this.field2391.method6886(class512);
+        this.world.method6886(class512);
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 1.7f;
     }
     
@@ -103,7 +112,7 @@ public class Class784 extends Class785 implements Class768
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31426 && this.method4332()) {
-            if (!this.field2391.field10067) {
+            if (!this.world.field10067) {
                 this.method4333(false);
                 method2715.method27636(1, class512, class515 -> class515.method2795(class514));
             }
@@ -113,16 +122,16 @@ public class Class784 extends Class785 implements Class768
     }
     
     public boolean method4332() {
-        return (this.field2432.method33568(Class784.field4194) & 0x10) != 0x0;
+        return (this.dataManager.get(Class784.field4194) & 0x10) != 0x0;
     }
     
     public void method4333(final boolean b) {
-        final byte byteValue = this.field2432.method33568(Class784.field4194);
+        final byte byteValue = this.dataManager.get(Class784.field4194);
         if (!b) {
-            this.field2432.method33569(Class784.field4194, (byte)(byteValue & 0xFFFFFFEF));
+            this.dataManager.set(Class784.field4194, (byte)(byteValue & 0xFFFFFFEF));
         }
         else {
-            this.field2432.method33569(Class784.field4194, (byte)(byteValue | 0x10));
+            this.dataManager.set(Class784.field4194, (byte)(byteValue | 0x10));
         }
     }
     
@@ -134,7 +143,7 @@ public class Class784 extends Class785 implements Class768
     
     @Nullable
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35600;
     }
     
@@ -145,6 +154,6 @@ public class Class784 extends Class785 implements Class768
     }
     
     static {
-        field4194 = Class9184.method33564(Class784.class, Class7709.field30653);
+        field4194 = EntityDataManager.method33564(Class784.class, Class7709.field30653);
     }
 }

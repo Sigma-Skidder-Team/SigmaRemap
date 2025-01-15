@@ -97,7 +97,7 @@ public class Class3171 extends Class3167
                 GL11.glDisable(2929);
                 GL11.glEnable(3042);
                 final int method9885 = this.method9885("Color");
-                final Class7644 method9886 = new Class7644(class399.method1886().method18499((class399.field2395 - class399.field2417) * Class3171.field15514.field4633.field26528 - (class399.field2395 - class399.field2417), (class399.field2396 - class399.field2418) * Class3171.field15514.field4633.field26528 - (class399.field2396 - class399.field2418), (class399.field2397 - class399.field2419) * Class3171.field15514.field4633.field26528 - (class399.field2397 - class399.field2419))).method24204(0.10000000149011612);
+                final Class7644 method9886 = new Class7644(class399.method1886().method18499((class399.posX - class399.lastTickPosX) * Class3171.field15514.field4633.field26528 - (class399.posX - class399.lastTickPosX), (class399.posY - class399.lastTickPosY) * Class3171.field15514.field4633.field26528 - (class399.posY - class399.lastTickPosY), (class399.posZ - class399.lastTickPosZ) * Class3171.field15514.field4633.field26528 - (class399.posZ - class399.lastTickPosZ))).method24204(0.10000000149011612);
                 if (b) {
                     Class8154.method26912(method9886, 3.0f, Class6430.method19118(method9885, (Class9463.method35173().method35209() != Class2209.field13464) ? 0.8f : 0.35f));
                 }

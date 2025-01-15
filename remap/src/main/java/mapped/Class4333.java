@@ -7,7 +7,7 @@ package mapped;
 import java.io.IOException;
 import java.util.Collection;
 
-public class Class4333 implements Class4252<Class5800>
+public class Class4333 implements IPacket<IClientPlayNetHandler>
 {
     private int field19399;
     private byte field19400;
@@ -42,12 +42,12 @@ public class Class4333 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12754(final Class8654 class8654) throws IOException {
-        this.field19399 = class8654.method29501();
+    public void readPacketData(final PacketBuffer class8654) throws IOException {
+        this.field19399 = class8654.readVarInt();
         this.field19400 = class8654.readByte();
         this.field19401 = class8654.readBoolean();
         this.field19402 = class8654.readBoolean();
-        this.field19403 = new Class9323[class8654.method29501()];
+        this.field19403 = new Class9323[class8654.readVarInt()];
         for (int i = 0; i < this.field19403.length; ++i) {
             this.field19403[i] = new Class9323(class8654.method29499(Class2095.class), class8654.readByte(), class8654.readByte(), (byte)(class8654.readByte() & 0xF), class8654.readBoolean() ? class8654.method29497() : null);
         }
@@ -61,12 +61,12 @@ public class Class4333 implements Class4252<Class5800>
     }
     
     @Override
-    public void method12755(final Class8654 class8654) throws IOException {
-        class8654.method29505(this.field19399);
+    public void writePacketData(final PacketBuffer class8654) throws IOException {
+        class8654.writeVarInt(this.field19399);
         class8654.writeByte(this.field19400);
         class8654.writeBoolean(this.field19401);
         class8654.writeBoolean(this.field19402);
-        class8654.method29505(this.field19403.length);
+        class8654.writeVarInt(this.field19403.length);
         for (final Class9323 class8655 : this.field19403) {
             class8654.method29500(class8655.method34523());
             class8654.writeByte(class8655.method34524());
@@ -89,7 +89,7 @@ public class Class4333 implements Class4252<Class5800>
         }
     }
     
-    public void method12764(final Class5800 class5800) {
+    public void method12764(final IClientPlayNetHandler class5800) {
         class5800.method17320(this);
     }
     

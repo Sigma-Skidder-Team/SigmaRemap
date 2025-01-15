@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 import com.google.common.collect.ImmutableSet;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
 import java.util.Set;
 
 public class Class5422 extends Class5419<Class824>
@@ -64,7 +68,7 @@ public class Class5422 extends Class5419<Class824>
         }).collect((Collector<? super Object, ?, Set<Class3820>>)Collectors.toSet());
     }
     
-    private static void method16565(final Class824 class824, final Set<Class3820> set, final Class511 class825) {
+    private static void method16565(final Class824 class824, final Set<Class3820> set, final LivingEntity class825) {
         final Class443 method4837 = class824.method4837();
         ItemStack field34174 = ItemStack.field34174;
         for (int i = 0; i < method4837.method2239(); ++i) {

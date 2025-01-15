@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.dimension.DimensionType;
+
 public class Class8265
 {
     private static String[] field33933;
@@ -48,8 +50,8 @@ public class Class8265
         if (this.field33935 == null && this.field33936 == null) {
             return this.field33934.method35053(class1848, n, array, b);
         }
-        final Class383 method20487 = class1848.field10063.method20487();
-        if (method20487 == Class383.field2225 || method20487 == Class383.field2224) {
+        final DimensionType method20487 = class1848.dimension.getType();
+        if (method20487 == DimensionType.field2225 || method20487 == DimensionType.field2224) {
             return this.field33934.method35053(class1848, n, array, b);
         }
         final float method20488 = class1848.method6768(n2);

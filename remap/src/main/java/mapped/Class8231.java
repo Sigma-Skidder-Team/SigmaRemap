@@ -51,17 +51,17 @@ public class Class8231 extends Class8228
     }
     
     @Override
-    public Class6997 method27254(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797) {
-        final Class6997 method21407 = Class6997.method21407();
+    public MutableBoundingBox method27254(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797) {
+        final MutableBoundingBox method21407 = MutableBoundingBox.getNewBoundingBox();
         final Iterator<Class8228> iterator = this.field33795.iterator();
         while (iterator.hasNext()) {
-            method21407.method21412(iterator.next().method27254(class1795, class1796, class1797));
+            method21407.expandTo(iterator.next().method27254(class1795, class1796, class1797));
         }
         return method21407;
     }
     
     @Override
-    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
+    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final MutableBoundingBox class1800, final Random random) {
         final Iterator<Class8228> iterator = this.field33795.iterator();
         while (iterator.hasNext()) {
             if (iterator.next().method27255(class1795, class1796, class1797, class1798, class1799, class1800, random)) {

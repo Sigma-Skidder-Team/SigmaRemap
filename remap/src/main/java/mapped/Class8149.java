@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.EntityType;
 
 public class Class8149 extends Class8150
 {

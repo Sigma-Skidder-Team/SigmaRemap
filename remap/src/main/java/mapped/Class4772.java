@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4772 extends Class4712<Class853, Class5871<Class853>>
@@ -12,7 +13,7 @@ public class Class4772 extends Class4712<Class853, Class5871<Class853>>
     
     public Class4772(final Class8551 class8551) {
         super(class8551, new Class5871(16), 0.25f);
-        this.method13978((Class1799<Class853, Class5871<Class853>>)new Class1843((Class4778<Class511, Class5871<Class511>>)this));
+        this.method13978((Class1799<Class853, Class5871<Class853>>)new Class1843((Class4778<LivingEntity, Class5871<LivingEntity>>)this));
     }
     
     public void method14123(final Class853 class853, final float n, final float n2, final Class7351 class854, final Class7807 class855, final int n3) {

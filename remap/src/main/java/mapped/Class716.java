@@ -7,7 +7,6 @@ package mapped;
 import java.net.URI;
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
 
 public class Class716 extends Class698
 {
@@ -27,7 +26,7 @@ public class Class716 extends Class698
     public static final int field3923 = 4;
     
     public Class716(final Class527 field3910, final Class5760 class5760) {
-        super(new Class2260(Class8822.method30773("of.options.shadersTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.shadersTitle", new Object[0])));
         this.field3911 = new Class8297(this, new Class7301());
         this.field3912 = -1;
         this.field3914 = false;
@@ -297,7 +296,7 @@ public class Class716 extends Class698
             this.field3913.method3522();
             this.field3912 += 20;
         }
-        this.method3295(this.field3843, this.field3148.method8461(), this.field3152 / 2, 15, 16777215);
+        this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
         final String string = "OpenGL: " + Class9216.field39036 + ", " + Class9216.field39037 + ", " + Class9216.field39038;
         if (this.field3843.method6617(string) >= this.field3152 - 5) {
             this.method3297(this.field3843, string, 5, this.field3153 - 40, 8421504);

@@ -8,6 +8,7 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.ForwardingList;
+import net.minecraft.item.ItemStack;
 
 public class Class2262 extends ForwardingList<ItemStack>
 {

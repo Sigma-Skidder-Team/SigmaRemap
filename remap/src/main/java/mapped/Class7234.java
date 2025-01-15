@@ -17,6 +17,6 @@ public class Class7234 extends Class7232
     @Override
     public void method22131() {
         this.field28044.field2953 = this.field28044.field2951;
-        this.field28044.field2951 = this.field28044.field2399;
+        this.field28044.field2951 = this.field28044.rotationYaw;
     }
 }

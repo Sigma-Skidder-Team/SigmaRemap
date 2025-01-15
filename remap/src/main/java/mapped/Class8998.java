@@ -6,6 +6,9 @@ package mapped;
 
 import java.util.regex.Matcher;
 import java.util.Iterator;
+
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.IntNBT;
 import org.apache.commons.lang3.StringEscapeUtils;
 import java.util.Arrays;
 import java.util.regex.Pattern;
@@ -92,7 +95,7 @@ public class Class8998
         if (class51 == null) {
             return false;
         }
-        Class41 method32120 = class51;
+        INBT method32120 = class51;
         for (int i = 0; i < this.field37958.length; ++i) {
             method32120 = method32120(method32120, this.field37958[i]);
             if (method32120 == null) {
@@ -100,13 +103,13 @@ public class Class8998
             }
         }
         if (!this.field37959.equals("*")) {
-            final Class41 method32121 = method32120(method32120, this.field37959);
+            final INBT method32121 = method32120(method32120, this.field37959);
             return method32121 != null && this.method32121(method32121);
         }
         return this.method32119(method32120);
     }
     
-    private boolean method32119(final Class41 class41) {
+    private boolean method32119(final INBT class41) {
         if (class41 instanceof Class51) {
             final Class51 class42 = (Class51)class41;
             final Iterator<String> iterator = class42.method293().iterator();
@@ -128,7 +131,7 @@ public class Class8998
         return false;
     }
     
-    private static Class41 method32120(final Class41 class41, final String s) {
+    private static INBT method32120(final INBT class41, final String s) {
         if (class41 instanceof Class51) {
             return ((Class51)class41).method313(s);
         }
@@ -140,10 +143,10 @@ public class Class8998
             final int method28933 = Class8571.method28933(s, -1);
             return (method28933 >= 0 && method28933 < class42.size()) ? class42.get(method28933) : null;
         }
-        return Class45.method279(class42.size());
+        return IntNBT.valueOf(class42.size());
     }
     
-    public boolean method32121(final Class41 class41) {
+    public boolean method32121(final INBT class41) {
         return class41 != null && this.method32122(method32125(class41, this.field37963));
     }
     
@@ -181,12 +184,12 @@ public class Class8998
         return s.matches(regex);
     }
     
-    private static String method32125(final Class41 class41, final int n) {
+    private static String method32125(final INBT class41, final int n) {
         if (class41 == null) {
             return null;
         }
         if (class41 instanceof Class50) {
-            final String method267 = ((Class50)class41).method267();
+            final String method267 = ((Class50)class41).getString();
             if (method267.startsWith("{")) {
                 final Matcher matcher = Class8998.field37977.matcher(method267);
                 if (matcher.matches()) {
@@ -195,8 +198,8 @@ public class Class8998
             }
             return method267;
         }
-        if (class41 instanceof Class45) {
-            final Class45 class42 = (Class45)class41;
+        if (class41 instanceof IntNBT) {
+            final IntNBT class42 = (IntNBT)class41;
             return (n != 1) ? Integer.toString(class42.method271()) : ("#" + Class9518.method35513(Integer.toHexString(class42.method271()), 6, '0'));
         }
         if (class41 instanceof Class47) {

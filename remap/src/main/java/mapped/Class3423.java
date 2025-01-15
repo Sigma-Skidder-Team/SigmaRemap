@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 
 public class Class3423 extends Class3418
 {
@@ -150,8 +151,8 @@ public class Class3423 extends Class3418
         this.field16182.method4822(null);
         if (!this.field16182.method4838().field10067) {
             if (class512.method1768() && (class512 instanceof Class513 && ((Class513)class512).method2936())) {
-                class512.field3006.method2364(class512.field2391, this.field16183.method2159(0));
-                class512.field3006.method2364(class512.field2391, this.field16183.method2159(1));
+                class512.field3006.method2364(class512.world, this.field16183.method2159(0));
+                class512.field3006.method2364(class512.world, this.field16183.method2159(1));
             }
             else {
                 final ItemStack method2159 = this.field16183.method2159(0);

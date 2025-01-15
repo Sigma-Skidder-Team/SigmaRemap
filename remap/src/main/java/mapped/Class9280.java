@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.TreeSet;

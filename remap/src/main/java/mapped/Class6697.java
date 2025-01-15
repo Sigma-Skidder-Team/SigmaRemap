@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.AbstractList;
 import com.mentalfrostbyte.jello.commands.CommandException;
+import net.minecraft.item.ItemStack;
 
 public class Class6697 extends Class6693
 {

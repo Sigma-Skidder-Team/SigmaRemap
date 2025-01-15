@@ -108,7 +108,7 @@ public class Class5928<T extends Class806> extends Class5844<T>
     
     public void method17801(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         final boolean method4736 = t.method4736();
-        final boolean method4737 = t.method1806();
+        final boolean method4737 = t.isBeingRidden();
         final Class6300[] field24386 = this.field24386;
         for (int length = field24386.length, i = 0; i < length; ++i) {
             field24386[i].field25187 = method4736;
@@ -134,7 +134,7 @@ public class Class5928<T extends Class806> extends Class5844<T>
         super.method17558(t, n, n2, n3);
         final float method35707 = MathHelper.method35707(t.field2952, t.field2951, n3);
         final float method35708 = MathHelper.method35707(t.field2954, t.field2953, n3);
-        final float method35709 = MathHelper.method35700(n3, t.field2402, t.field2400);
+        final float method35709 = MathHelper.method35700(n3, t.prevRotationPitch, t.rotationPitch);
         float n4 = method35708 - method35707;
         float n5 = method35709 * 0.017453292f;
         if (n4 > 20.0f) {
@@ -151,7 +151,7 @@ public class Class5928<T extends Class806> extends Class5844<T>
         final float n6 = 1.0f - method35711;
         final float method35712 = t.method4757(n3);
         final boolean b = t.field4339 != 0;
-        final float n7 = t.field2424 + n3;
+        final float n7 = t.ticksExisted + n3;
         this.field24376.field25181 = 4.0f;
         this.field24376.field25182 = -12.0f;
         this.field24375.field25183 = 0.0f;

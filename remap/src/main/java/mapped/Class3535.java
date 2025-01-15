@@ -17,13 +17,13 @@ public class Class3535 extends Class3531
     
     @Override
     public boolean method11013() {
-        return super.method11013() && this.field16573.method4152() != null && this.field16573.method4152().method1643() != this.field16572 && this.field16573.field2391.method6784(new BlockPos(this.field16573)).method35974((float)Class2113.field12292.ordinal());
+        return super.method11013() && this.field16573.method4152() != null && this.field16573.method4152().getEntityId() != this.field16572 && this.field16573.world.method6784(new BlockPos(this.field16573)).method35974((float)Class2113.field12292.ordinal());
     }
     
     @Override
     public void method11015() {
         super.method11015();
-        this.field16572 = this.field16573.method4152().method1643();
+        this.field16572 = this.field16573.method4152().getEntityId();
     }
     
     @Override

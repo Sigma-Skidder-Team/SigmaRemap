@@ -5,8 +5,10 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 import java.util.stream.Stream;
 import java.util.Random;
@@ -14,7 +16,7 @@ import java.util.Random;
 public abstract class Class6173
 {
     private static final AxisAlignedBB field24931;
-    public final Class1847 field24932;
+    public final World field24932;
     public double field24933;
     public double field24934;
     public double field24935;
@@ -43,7 +45,7 @@ public abstract class Class6173
     public float field24958;
     private Class384 field24959;
     
-    public Class6173(final Class1847 field24932, final double field24933, final double field24934, final double field24935) {
+    public Class6173(final World field24932, final double field24933, final double field24934, final double field24935) {
         this.field24942 = Class6173.field24931;
         this.field24944 = true;
         this.field24947 = 0.6f;
@@ -63,7 +65,7 @@ public abstract class Class6173
         this.field24951 = (int)(4.0f / (this.field24949.nextFloat() * 0.9f + 0.1f));
     }
     
-    public Class6173(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class6173(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         this(class1847, n, n2, n3);
         this.field24939 = n4 + (Math.random() * 2.0 - 1.0) * 0.4000000059604645;
         this.field24940 = n5 + (Math.random() * 2.0 - 1.0) * 0.4000000059604645;
@@ -171,7 +173,7 @@ public abstract class Class6173
                         }
                     }
                     if (this.method18446(field22770, field22771, field22772)) {
-                        final Vec3d method1681 = Entity.method1681(null, new Vec3d(field22770, field22771, field22772), this.method18444(), this.field24932, Class7543.method23629(), new Class8120<Class7702>(Stream.empty()));
+                        final Vec3d method1681 = Entity.method1681(null, new Vec3d(field22770, field22771, field22772), this.method18444(), this.field24932, ISelectionContext.dummy(), new Class8120<Class7702>(Stream.empty()));
                         field22770 = method1681.x;
                         field22771 = method1681.y;
                         field22772 = method1681.z;

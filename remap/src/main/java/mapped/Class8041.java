@@ -25,7 +25,7 @@ public class Class8041 extends ChannelInitializer<Channel>
         }
         catch (final ChannelException ex) {}
         channel.pipeline().addLast("timeout", (ChannelHandler)new ReadTimeoutHandler(30)).addLast("legacy_query", (ChannelHandler)new Class9503(this.field33107)).addLast("splitter", (ChannelHandler)new Class8588()).addLast("decoder", (ChannelHandler)new Class6965(Class2060.field11779)).addLast("prepender", (ChannelHandler)new Class9340()).addLast("encoder", (ChannelHandler)new Class8386(Class2060.field11780));
-        final Class3641 class3641 = new Class3641(Class2060.field11779);
+        final NetworkManager class3641 = new NetworkManager(Class2060.field11779);
         Class7639.method24068(this.field33107).add(class3641);
         channel.pipeline().addLast("packet_handler", (ChannelHandler)class3641);
         class3641.method11173(new Class5805(Class7639.method24069(this.field33107), class3641));

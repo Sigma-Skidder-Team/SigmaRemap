@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public class Class823 implements Class822
@@ -50,8 +53,8 @@ public class Class823 implements Class822
     }
     
     @Override
-    public Class1847 method4838() {
-        return this.field4396.field2391;
+    public World method4838() {
+        return this.field4396.world;
     }
     
     @Override

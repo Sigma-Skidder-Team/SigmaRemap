@@ -7,6 +7,9 @@ package mapped;
 import java.util.AbstractList;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Iterator;
@@ -52,7 +55,7 @@ public abstract class Class4648
         }
         catch (final Class2357 class2357) {
             final BlockPos method324 = this.method13896();
-            Class4648.field20119.warn("Invalid entity id '{}' at spawner {}:[{},{},{}]", (Object)method323, (Object)this.method13895().field10063.method20487(), (Object)method324.getX(), (Object)method324.getY(), (Object)method324.getZ());
+            Class4648.field20119.warn("Invalid entity id '{}' at spawner {}:[{},{},{}]", (Object)method323, (Object)this.method13895().dimension.getType(), (Object)method324.getX(), (Object)method324.getY(), (Object)method324.getZ());
             return null;
         }
     }
@@ -68,7 +71,7 @@ public abstract class Class4648
     
     public void method13886() {
         if (this.method13885()) {
-            final Class1847 method13895 = this.method13895();
+            final World method13895 = this.method13895();
             final BlockPos method13896 = this.method13896();
             if (!method13895.field10067) {
                 if (this.field20120 == -1) {
@@ -94,7 +97,7 @@ public abstract class Class4648
                     if (method13895.method6976(method13898.get().method23375(n2, n3, n4))) {
                         if (Class8897.method31330(method13898.get(), method13895.method6744(), Class2101.field12176, new BlockPos(n2, n3, n4), method13895.method6790())) {
                             final Entity method13900 = EntityType.method23378(method13897, method13895, class761 -> {
-                                class761.method1730(n8, n9, n10, class761.field2399, class761.field2400);
+                                class761.method1730(n8, n9, n10, class761.rotationYaw, class761.rotationPitch);
                                 return class761;
                             });
                             if (method13900 == null) {
@@ -262,7 +265,7 @@ public abstract class Class4648
     
     public abstract void method13894(final int p0);
     
-    public abstract Class1847 method13895();
+    public abstract World method13895();
     
     public abstract BlockPos method13896();
     

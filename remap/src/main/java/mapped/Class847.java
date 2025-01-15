@@ -4,7 +4,8 @@
 
 package mapped;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.*;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -12,7 +13,7 @@ public class Class847 extends Class846
 {
     private static String[] field4511;
     
-    public Class847(final EntityType<? extends Class847> class7499, final Class1847 class7500) {
+    public Class847(final EntityType<? extends Class847> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -27,10 +28,10 @@ public class Class847 extends Class846
         if (!super.method2734(class399)) {
             return false;
         }
-        if (class399 instanceof Class511) {
+        if (class399 instanceof LivingEntity) {
             int n = 0;
-            if (this.field2391.method6954() != Class2113.field12292) {
-                if (this.field2391.method6954() == Class2113.field12293) {
+            if (this.world.method6954() != Class2113.field12292) {
+                if (this.world.method6954() == Class2113.field12293) {
                     n = 15;
                 }
             }
@@ -38,7 +39,7 @@ public class Class847 extends Class846
                 n = 7;
             }
             if (n > 0) {
-                ((Class511)class399).method2655(new Class1948(Class9439.field40492, n * 20, 0));
+                ((LivingEntity)class399).method2655(new Class1948(Class9439.field40492, n * 20, 0));
             }
         }
         return true;
@@ -51,7 +52,7 @@ public class Class847 extends Class846
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 0.45f;
     }
 }

@@ -5,12 +5,15 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
 
 public class Class782 extends Class780
 {
     private static String[] field4192;
     
-    public Class782(final EntityType<? extends Class782> class7499, final Class1847 class7500) {
+    public Class782(final EntityType<? extends Class782> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -20,7 +23,7 @@ public class Class782 extends Class780
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35574;
     }
     
@@ -35,7 +38,7 @@ public class Class782 extends Class780
     }
     
     @Override
-    public void method2678(final Class7929 class7929, final int n, final boolean b) {
+    public void method2678(final DamageSource class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
         final Entity method25714 = class7929.method25714();
         if (method25714 instanceof Class765) {

@@ -6,7 +6,10 @@ package mapped;
 
 import com.google.common.cache.LoadingCache;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -24,7 +27,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9275.field39763[class7096.method21772(Class3998.field18018).ordinal()]) {
             case 1: {
                 return Class3998.field18020;
@@ -37,7 +40,7 @@ public class Class3998 extends Class3833
     
     @Override
     public void method11822(final Class7096 class7096, final Class1849 class7097, BlockPos method1139, final Random random) {
-        if (class7097.field10063.method20492()) {
+        if (class7097.dimension.method20492()) {
             if (class7097.method6765().method31216(Class8878.field37318)) {
                 if (random.nextInt(2000) < class7097.method6954().method8235()) {
                     while (class7097.method6701(method1139).method21696() == this) {
@@ -46,7 +49,7 @@ public class Class3998 extends Class3833
                     if (class7097.method6701(method1139).method21698(class7097, method1139, EntityType.field29014)) {
                         final Class828 method1140 = EntityType.field29014.method23357(class7097, null, null, null, method1139.method1137(), Class2101.field12177, false, false);
                         if (method1140 != null) {
-                            method1140.field2449 = method1140.method1796();
+                            method1140.timeUntilPortal = method1140.method1796();
                         }
                     }
                 }
@@ -88,9 +91,9 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
-        if (!class7099.method1805()) {
-            if (!class7099.method1806()) {
+    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
+        if (!class7099.isPassenger()) {
+            if (!class7099.isBeingRidden()) {
                 if (class7099.method1855()) {
                     class7099.method1794(class7098);
                 }
@@ -99,7 +102,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (random.nextInt(100) == 0) {
             class7097.method6708(class7098.getX() + 0.5, class7098.getY() + 0.5, class7098.getZ() + 0.5, Class8520.field35496, Class286.field1582, 0.5f, random.nextFloat() * 0.4f + 0.8f, false);
         }

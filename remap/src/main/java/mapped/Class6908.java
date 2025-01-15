@@ -19,7 +19,7 @@ public class Class6908 extends Class6907<Class6908> implements Class6909
     }
     
     @Override
-    public void method21273(final Class8654 class8654) {
+    public void method21273(final PacketBuffer class8654) {
     }
     
     @Override

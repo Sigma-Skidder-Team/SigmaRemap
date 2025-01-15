@@ -9,6 +9,7 @@ import com.mojang.brigadier.ResultConsumer;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.text.SimpleDateFormat;
 
@@ -41,7 +42,7 @@ public abstract class Class865 implements ICommandSource
     }
     
     public ITextComponent method5208() {
-        return (this.field4614 != null) ? this.field4614 : new Class2260("");
+        return (this.field4614 != null) ? this.field4614 : new StringTextComponent("");
     }
     
     public Class51 method5209(final Class51 class51) {
@@ -77,7 +78,7 @@ public abstract class Class865 implements ICommandSource
                 this.field4614 = Class5953.method17871(class51.method323("LastOutput"));
             }
             catch (final Throwable t) {
-                this.field4614 = new Class2260(t.getMessage());
+                this.field4614 = new StringTextComponent(t.getMessage());
             }
         }
         else {
@@ -103,12 +104,12 @@ public abstract class Class865 implements ICommandSource
         return this.field4615;
     }
     
-    public boolean method5213(final Class1847 class1847) {
+    public boolean method5213(final World class1847) {
         if (class1847.field10067 || class1847.method6754() == this.field4610) {
             return false;
         }
         if ("Searge".equalsIgnoreCase(this.field4615)) {
-            this.field4614 = new Class2260("#itzlipofutzli");
+            this.field4614 = new StringTextComponent("#itzlipofutzli");
             this.field4612 = 1;
             return true;
         }
@@ -156,7 +157,7 @@ public abstract class Class865 implements ICommandSource
     @Override
     public void sendMessage(final ITextComponent class2250) {
         if (this.field4613) {
-            this.field4614 = new Class2260("[" + Class865.field4608.format(new Date()) + "] ").method8458(class2250);
+            this.field4614 = new StringTextComponent("[" + Class865.field4608.format(new Date()) + "] ").appendSibling(class2250);
             this.method5217();
         }
     }
@@ -208,6 +209,6 @@ public abstract class Class865 implements ICommandSource
     
     static {
         field4608 = new SimpleDateFormat("HH:mm:ss");
-        field4609 = new Class2260("@");
+        field4609 = new StringTextComponent("@");
     }
 }

@@ -96,7 +96,7 @@ public class Class8381
         return Class8381.field34362.get(argumentType.getClass());
     }
     
-    public static <T extends ArgumentType<?>> void method27934(final Class8654 class8654, final T t) {
+    public static <T extends ArgumentType<?>> void method27934(final PacketBuffer class8654, final T t) {
         final Class6219<?> method27933 = method27933(t);
         if (method27933 != null) {
             class8654.method29517(method27933.field25072);
@@ -109,7 +109,7 @@ public class Class8381
     }
     
     @Nullable
-    public static ArgumentType<?> method27935(final Class8654 class8654) {
+    public static ArgumentType<?> method27935(final PacketBuffer class8654) {
         final Class1932 method29516 = class8654.method29516();
         final Class6219<?> method29517 = method27932(method29516);
         if (method29517 != null) {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.world.World;
 
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -24,7 +25,7 @@ public class Class4043 extends Class4036
     public Class7096 method12233(final Class7074 class7074) {
         final Class7096 method11846 = this.field18138.method11846(class7074);
         Class7096 class7075 = null;
-        final Class1847 method11847 = class7074.method21654();
+        final World method11847 = class7074.method21654();
         final BlockPos method11848 = class7074.method21639();
         for (final Direction class7076 : class7074.method21643()) {
             if (class7076 != Direction.UP) {
@@ -37,7 +38,7 @@ public class Class4043 extends Class4036
                 }
             }
         }
-        return (class7075 != null && method11847.method6974(class7075, method11848, Class7543.method23629())) ? class7075 : null;
+        return (class7075 != null && method11847.method6974(class7075, method11848, ISelectionContext.dummy())) ? class7075 : null;
     }
     
     @Override

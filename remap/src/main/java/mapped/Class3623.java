@@ -15,7 +15,7 @@ public class Class3623 extends Class3617
     public Class3623(final Class798 field16834) {
         this.field16834 = field16834;
         super(field16834, null);
-        this.field16833 = this.field16834.field2391.field10062.nextInt(10);
+        this.field16833 = this.field16834.world.field10062.nextInt(10);
         this.method11019(EnumSet.of(Class2139.field12580));
     }
     

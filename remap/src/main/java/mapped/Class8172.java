@@ -50,7 +50,7 @@ public class Class8172
         if (class1851 == null) {
             return false;
         }
-        if (!this.field33665.method26845(class1851.method1642())) {
+        if (!this.field33665.method26845(class1851.getType())) {
             return false;
         }
         if (class1850 != null) {
@@ -78,7 +78,7 @@ public class Class8172
         }
         if (this.field33672.method26819(class1851)) {
             if (this.field33673 != null) {
-                final Class6750 method1825 = class1851.method1825();
+                final Team method1825 = class1851.getTeam();
                 if (method1825 == null || !this.field33673.equals(method1825.method20539())) {
                     return false;
                 }

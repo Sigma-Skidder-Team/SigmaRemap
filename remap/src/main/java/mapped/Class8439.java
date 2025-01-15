@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.util.DamageSource;
 
 public class Class8439
 {
@@ -33,7 +34,7 @@ public class Class8439
         this.field34689 = field34689;
     }
     
-    public boolean method28170(final Class513 class513, final Class7929 class514, final float n, final float n2, final boolean b) {
+    public boolean method28170(final Class513 class513, final DamageSource class514, final float n, final float n2, final boolean b) {
         return this == Class8439.field34684 || (this.field34685.method29736(n) && this.field34686.method29736(n2) && this.field34687.method27015(class513, class514.method25714()) && (this.field34688 == null || this.field34688 == b) && this.field34689.method32836(class513, class514));
     }
     

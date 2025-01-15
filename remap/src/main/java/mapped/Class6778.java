@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
 import java.util.HashMap;

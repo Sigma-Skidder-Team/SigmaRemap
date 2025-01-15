@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
+import net.minecraft.entity.EntityType;
+
 import java.util.Map;
 
 public class Class8533

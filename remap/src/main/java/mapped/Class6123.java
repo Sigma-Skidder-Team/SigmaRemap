@@ -86,7 +86,7 @@ public class Class6123 implements Class6113
         Class8726.method30040();
         Class8726.method30012();
         Class8726.method30060();
-        if (!this.field24855.field4684.method1639()) {
+        if (!this.field24855.field4684.isSpectator()) {
             this.method18338();
         }
     }
@@ -126,7 +126,7 @@ public class Class6123 implements Class6113
     
     private static void method18324(final Class353 class353) {
         final BlockPos method1114 = class353.method1114();
-        Class7282.method22334(method1114.method1133(-1.0, -1.0, -1.0), method1114.method1133(1.0, 1.0, 1.0), 0.2f, 1.0f, 0.2f, 0.15f);
+        Class7282.method22334(method1114.add(-1.0, -1.0, -1.0), method1114.add(1.0, 1.0, 1.0), 0.2f, 1.0f, 0.2f, 0.15f);
     }
     
     private static void method18325(final BlockPos class354) {

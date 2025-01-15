@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class3417 extends Class3418
 {
     private final Class7318 field16145;
@@ -167,7 +169,7 @@ public class Class3417 extends Class3418
                                 }
                             }).orElse(other);
                         }
-                        method20054.method11723(method20053, class512.field2391, class512);
+                        method20054.method11723(method20053, class512.world, class512);
                         if (!this.method10888(method20053, 3, 39, true)) {
                             return ItemStack.field34174;
                         }

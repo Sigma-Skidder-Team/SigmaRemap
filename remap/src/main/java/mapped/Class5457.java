@@ -11,6 +11,9 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Iterator;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+
 import java.util.Map;
 
 public class Class5457 extends Class5419<Class824>
@@ -68,7 +71,7 @@ public class Class5457 extends Class5419<Class824>
         class1850.method2618().method1195(Class8233.field33810);
     }
     
-    private void method16668(final Class824 class824, final Class511 class825) {
+    private void method16668(final Class824 class824, final LivingEntity class825) {
         final Iterator<ItemStack> iterator = this.method16669(class824).iterator();
         while (iterator.hasNext()) {
             Class6793.method20791(class824, iterator.next(), class825);
@@ -83,7 +86,7 @@ public class Class5457 extends Class5419<Class824>
         if (!Class5457.field22697.containsKey(method28781)) {
             return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Class7739.field31314));
         }
-        return class824.field2391.method6679().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.field2391).method32877(Class6683.field26367, new BlockPos(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
+        return class824.world.method6679().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.world).method32877(Class6683.field26367, new BlockPos(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
     }
     
     private boolean method16670(final Class824 class824) {

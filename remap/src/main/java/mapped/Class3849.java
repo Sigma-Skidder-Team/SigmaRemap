@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
 import java.util.Random;
 
 public class Class3849 extends Class3846
@@ -15,10 +19,10 @@ public class Class3849 extends Class3846
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         if (Class8742.method30195(Class7882.field32366, class1852) == 0) {
-            if (class1847.field10063.method20502()) {
+            if (class1847.dimension.method20502()) {
                 class1847.method6690(class1849, false);
                 return;
             }
@@ -36,8 +40,8 @@ public class Class3849 extends Class3846
         }
     }
     
-    public void method11910(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
-        if (!class7097.field10063.method20502()) {
+    public void method11910(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+        if (!class7097.dimension.method20502()) {
             class7097.method6692(class7098, Class7521.field29173.method11878());
             class7097.method6698(class7098, Class7521.field29173, class7098);
         }

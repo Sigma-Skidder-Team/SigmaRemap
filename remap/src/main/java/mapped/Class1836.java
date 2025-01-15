@@ -20,12 +20,12 @@ public class Class1836 extends Class1799<Class802, Class5838<Class802>>
                 float n12;
                 float n13;
                 float n14;
-                if (class7353.hasCustomName() && "jeb_".equals(class7353.getName().method8459())) {
-                    final int n8 = class7353.field2424 / 25 + class7353.method1643();
+                if (class7353.hasCustomName() && "jeb_".equals(class7353.getName().getUnformattedComponentText())) {
+                    final int n8 = class7353.ticksExisted / 25 + class7353.getEntityId();
                     final int length = Class181.values().length;
                     final int n9 = n8 % length;
                     final int n10 = (n8 + 1) % length;
-                    final float n11 = (class7353.field2424 % 25 + n4) / 25.0f;
+                    final float n11 = (class7353.ticksExisted % 25 + n4) / 25.0f;
                     float[] array = Class802.method4630(Class181.method819(n9));
                     float[] array2 = Class802.method4630(Class181.method819(n10));
                     if (Class8571.method28945()) {

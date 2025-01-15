@@ -24,8 +24,8 @@ public abstract class Class615 extends Class608<Class632>
     
     @Override
     public void method3544(final int n, final int b, final Class7392 class7392) {
-        final ITextComponent method8468 = new Class2260("").method8458(this.field3590).method8468(Class2116.field12328, Class2116.field12326);
-        this.field3589.field4643.method6610(method8468.method8461(), (float)(n + this.field3543 / 2 - this.field3589.field4643.method6617(method8468.method8461()) / 2), (float)Math.min(this.field3545 + 3, b), 16777215);
+        final ITextComponent method8468 = new StringTextComponent("").appendSibling(this.field3590).applyTextStyles(TextFormatting.UNDERLINE, TextFormatting.BOLD);
+        this.field3589.field4643.method6610(method8468.getFormattedText(), (float)(n + this.field3543 / 2 - this.field3589.field4643.method6617(method8468.getFormattedText()) / 2), (float)Math.min(this.field3545 + 3, b), 16777215);
     }
     
     @Override

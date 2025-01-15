@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class Class438 extends Class436 implements Class439
     
     public boolean method2215() {
         if (this.field2656 != null) {
-            final Iterator<BlockPos> iterator = BlockPos.method1154(this.field2657.method1134(-1, -1, -1), this.field2657.method1134(1, 1, 1)).iterator();
+            final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(this.field2657.add(-1, -1, -1), this.field2657.add(1, 1, 1)).iterator();
             while (iterator.hasNext()) {
                 if (!(this.field2656.method6701(iterator.next()).method21696() instanceof Class4011)) {
                     continue;
@@ -103,8 +104,8 @@ public class Class438 extends Class436 implements Class439
     
     public void method2225(final Entity class399, final boolean b, final int n) {
         if (this.field2663.size() < 3) {
-            class399.method1784();
-            class399.method1783();
+            class399.stopRiding();
+            class399.removePassengers();
             final Class51 class400 = new Class51();
             class399.method1755(class400);
             this.field2663.add(new Class7829(class400, n, b ? 2400 : 600, null));
@@ -146,8 +147,8 @@ public class Class438 extends Class436 implements Class439
         }
         final float method2196 = method2195.method1930();
         final double n = b ? 0.0 : (0.55 + method2196 / 2.0f);
-        method2195.method1730(method2193.getX() + 0.5 + n * class7099.getXOffset(), method2193.getY() + 0.5 - method2195.method1931() / 2.0f, method2193.getZ() + 0.5 + n * class7099.getZOffset(), method2195.field2399, method2195.field2400);
-        if (method2195.method1642().method23383(Class8039.field33101)) {
+        method2195.method1730(method2193.getX() + 0.5 + n * class7099.getXOffset(), method2193.getY() + 0.5 - method2195.method1931() / 2.0f, method2193.getZ() + 0.5 + n * class7099.getZOffset(), method2195.rotationYaw, method2195.rotationPitch);
+        if (method2195.getType().method23383(Class8039.field33101)) {
             if (method2195 instanceof Class798) {
                 final Class798 class7100 = (Class798)method2195;
                 if (this.method2227()) {

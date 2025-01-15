@@ -4,8 +4,6 @@
 
 package mapped;
 
-import com.mojang.datafixers.Typed;
-import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.types.Type;
 import java.util.function.Function;
 import com.mojang.datafixers.DSL;
@@ -35,7 +33,7 @@ public class Class5486 extends DataFix
             }
         }
         else {
-            dynamic2 = dynamic2.set("Name", dynamic2.createString(Class5953.method17869(new Class2260((String)string.get()))));
+            dynamic2 = dynamic2.set("Name", dynamic2.createString(Class5953.method17869(new StringTextComponent((String)string.get()))));
         }
         return (Dynamic<?>)dynamic.set("display", dynamic2);
     }

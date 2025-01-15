@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.item.ItemStack;
+
 import java.util.Set;
 
 public class Class153 implements Class122

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 import java.util.Random;
 
@@ -65,26 +67,26 @@ public class Class3433 extends Class3418
                         int k = 0;
                         while (k <= 1) {
                             if (j != 0 || k != 0) {
-                                if (!(!class448.method6961(class449.method1134(k, 0, j)))) {
-                                    if (!(!class448.method6961(class449.method1134(k, 1, j)))) {
-                                        if (class448.method6701(class449.method1134(k * 2, 0, j * 2)).method21696() == Class7521.field29284) {
+                                if (!(!class448.method6961(class449.add(k, 0, j)))) {
+                                    if (!(!class448.method6961(class449.add(k, 1, j)))) {
+                                        if (class448.method6701(class449.add(k * 2, 0, j * 2)).method21696() == Class7521.field29284) {
                                             ++n;
                                         }
-                                        if (class448.method6701(class449.method1134(k * 2, 1, j * 2)).method21696() == Class7521.field29284) {
+                                        if (class448.method6701(class449.add(k * 2, 1, j * 2)).method21696() == Class7521.field29284) {
                                             ++n;
                                         }
                                         if (k != 0) {
                                             if (j != 0) {
-                                                if (class448.method6701(class449.method1134(k * 2, 0, j)).method21696() == Class7521.field29284) {
+                                                if (class448.method6701(class449.add(k * 2, 0, j)).method21696() == Class7521.field29284) {
                                                     ++n;
                                                 }
-                                                if (class448.method6701(class449.method1134(k * 2, 1, j)).method21696() == Class7521.field29284) {
+                                                if (class448.method6701(class449.add(k * 2, 1, j)).method21696() == Class7521.field29284) {
                                                     ++n;
                                                 }
-                                                if (class448.method6701(class449.method1134(k, 0, j * 2)).method21696() == Class7521.field29284) {
+                                                if (class448.method6701(class449.add(k, 0, j * 2)).method21696() == Class7521.field29284) {
                                                     ++n;
                                                 }
-                                                if (class448.method6701(class449.method1134(k, 1, j * 2)).method21696() == Class7521.field29284) {
+                                                if (class448.method6701(class449.add(k, 1, j * 2)).method21696() == Class7521.field29284) {
                                                     ++n;
                                                 }
                                             }

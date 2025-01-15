@@ -28,7 +28,7 @@ public class Class3476 extends Class3446
     
     @Override
     public void method11018() {
-        Class851.method5101(this.field16382, this.field16382.field2391.method6958(Class2020.field11525, Class851.method5100(this.field16382)).method1138(10 + Class851.method5104(this.field16382).nextInt(20)));
+        Class851.method5101(this.field16382, this.field16382.world.method6958(Class2020.field11525, Class851.method5100(this.field16382)).method1138(10 + Class851.method5104(this.field16382).nextInt(20)));
     }
     
     @Override
@@ -46,8 +46,8 @@ public class Class3476 extends Class3446
     
     private void method11041() {
         Class851.method5101(this.field16382, new BlockPos(this.field16382.method4152()).method1138(20 + Class851.method5107(this.field16382).nextInt(20)));
-        if (Class851.method5100(this.field16382).method1075() < this.field16382.field2391.method6743()) {
-            Class851.method5101(this.field16382, new BlockPos(Class851.method5100(this.field16382).method1074(), this.field16382.field2391.method6743() + 1, Class851.method5100(this.field16382).method1076()));
+        if (Class851.method5100(this.field16382).method1075() < this.field16382.world.method6743()) {
+            Class851.method5101(this.field16382, new BlockPos(Class851.method5100(this.field16382).method1074(), this.field16382.world.method6743() + 1, Class851.method5100(this.field16382).method1076()));
         }
     }
 }

@@ -8,17 +8,18 @@ import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public abstract class Class6172 extends Class6173
 {
     public float field24930;
     
-    public Class6172(final Class1847 class1847, final double n, final double n2, final double n3) {
+    public Class6172(final World class1847, final double n, final double n2, final double n3) {
         super(class1847, n, n2, n3);
         this.field24930 = 0.1f * (this.field24949.nextFloat() * 0.5f + 0.5f) * 2.0f;
     }
     
-    public Class6172(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public Class6172(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         super(class1847, n, n2, n3, n4, n5, n6);
         this.field24930 = 0.1f * (this.field24949.nextFloat() * 0.5f + 0.5f) * 2.0f;
     }

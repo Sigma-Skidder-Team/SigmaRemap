@@ -4,32 +4,39 @@
 
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
+
 public abstract class Class409 extends Class414 implements Class407
 {
-    private static final Class8810<ItemStack> field2506;
+    private static final DataParameter<ItemStack> field2506;
     
-    public Class409(final EntityType<? extends Class409> class7499, final Class1847 class7500) {
+    public Class409(final EntityType<? extends Class409> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
-    public Class409(final EntityType<? extends Class409> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
+    public Class409(final EntityType<? extends Class409> class7499, final double n, final double n2, final double n3, final World class7500) {
         super(class7499, n, n2, n3, class7500);
     }
     
-    public Class409(final EntityType<? extends Class409> class7499, final Class511 class7500, final Class1847 class7501) {
+    public Class409(final EntityType<? extends Class409> class7499, final LivingEntity class7500, final World class7501) {
         super(class7499, class7500, class7501);
     }
     
     public void method2012(final ItemStack class8321) {
         if (class8321.method27622() != this.method2013() || class8321.method27656()) {
-            this.method1650().method33569(Class409.field2506, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
+            this.method1650().set(Class409.field2506, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
     
     public abstract Class3820 method2013();
     
     public ItemStack method2014() {
-        return this.method1650().method33568(Class409.field2506);
+        return this.method1650().get(Class409.field2506);
     }
     
     @Override
@@ -40,7 +47,7 @@ public abstract class Class409 extends Class414 implements Class407
     
     @Override
     public void method1649() {
-        this.method1650().method33565(Class409.field2506, ItemStack.field34174);
+        this.method1650().register(Class409.field2506, ItemStack.field34174);
     }
     
     @Override
@@ -59,6 +66,6 @@ public abstract class Class409 extends Class414 implements Class407
     }
     
     static {
-        field2506 = Class9184.method33564(Class409.class, Class7709.field30659);
+        field2506 = EntityDataManager.method33564(Class409.class, Class7709.field30659);
     }
 }

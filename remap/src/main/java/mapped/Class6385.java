@@ -17,7 +17,7 @@ public final class Class6385 implements Class6382<Class6910>
         return new Class6910(class6907, new Class175(method21632.method21626(), method21632.method21627()).method772(1, false));
     }
     
-    public Class6910 method19063(final Class6907<Class6910> class6907, final Class8654 class6908) {
+    public Class6910 method19063(final Class6907<Class6910> class6907, final PacketBuffer class6908) {
         return new Class6910(class6907, class6908.method29511());
     }
 }

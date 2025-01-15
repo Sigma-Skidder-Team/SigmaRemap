@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
 public abstract class Class3545 extends Class3446
@@ -14,7 +15,7 @@ public abstract class Class3545 extends Class3446
     private int field16605;
     private int field16606;
     private int field16607;
-    public Class511 field16608;
+    public LivingEntity field16608;
     public int field16609;
     
     public Class3545(final Class759 class759, final boolean b) {
@@ -30,7 +31,7 @@ public abstract class Class3545 extends Class3446
     
     @Override
     public boolean method11017() {
-        Class511 class511 = this.field16602.method4152();
+        LivingEntity class511 = this.field16602.method4152();
         if (class511 == null) {
             class511 = this.field16608;
         }
@@ -40,8 +41,8 @@ public abstract class Class3545 extends Class3446
         if (!class511.method1768()) {
             return false;
         }
-        final Class6750 method1825 = this.field16602.method1825();
-        final Class6750 method1826 = class511.method1825();
+        final Team method1825 = this.field16602.getTeam();
+        final Team method1826 = class511.getTeam();
         if (method1825 != null && method1826 == method1825) {
             return false;
         }
@@ -84,7 +85,7 @@ public abstract class Class3545 extends Class3446
         this.field16608 = null;
     }
     
-    public boolean method11097(final Class511 class511, final Class7843 class512) {
+    public boolean method11097(final LivingEntity class511, final Class7843 class512) {
         if (class511 == null) {
             return false;
         }
@@ -108,7 +109,7 @@ public abstract class Class3545 extends Class3446
         return false;
     }
     
-    private boolean method11098(final Class511 class511) {
+    private boolean method11098(final LivingEntity class511) {
         this.field16606 = 10 + this.field16602.method2633().nextInt(5);
         final Class9468 method24722 = this.field16602.method4150().method24722(class511, 0);
         if (method24722 == null) {

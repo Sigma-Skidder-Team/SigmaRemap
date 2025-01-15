@@ -10,6 +10,8 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonElement;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.INBT;
 
 public class Class7103
 {
@@ -28,7 +30,7 @@ public class Class7103
         return this == Class7103.field27707 || this.method21805(method21808(class399));
     }
     
-    public boolean method21805(final Class41 class41) {
+    public boolean method21805(final INBT class41) {
         if (class41 != null) {
             return this.field27708 == null || Class9346.method34642(this.field27708, class41, true);
         }

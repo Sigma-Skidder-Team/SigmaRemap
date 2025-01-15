@@ -27,11 +27,11 @@ public class Class7307 extends Class7303
     }
     
     @Override
-    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Class385 class1861, final Class385 class1862, final Class385 class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         return method22413(this, class1860, set, random, class1861, n, n2, n3, n4, n5, n6, n7, n8);
     }
     
-    public static boolean method22413(final Class7304<?> class7304, final Class1860 class7305, final BitSet set, final Random random, final Class385 class7306, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
+    public static boolean method22413(final Class7304<?> class7304, final Class1860 class7305, final BitSet set, final Random random, final Mutable class7306, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
         if (n7 >= n) {
             return false;
         }
@@ -40,7 +40,7 @@ public class Class7307 extends Class7303
             return false;
         }
         set.set(n9);
-        class7306.method1284(n4, n7, n5);
+        class7306.setPos(n4, n7, n5);
         if (!class7304.method22407(class7305.method6701(class7306))) {
             return false;
         }
@@ -64,7 +64,7 @@ public class Class7307 extends Class7303
             final int n12 = n5 + class7307.getZOffset();
             if (n11 >> 4 == n2) {
                 if (n12 >> 4 == n3) {
-                    if (!class7305.method6701(class7306.method1284(n11, n7, n12)).method21706()) {
+                    if (!class7305.method6701(class7306.setPos(n11, n7, n12)).method21706()) {
                         continue;
                     }
                 }
@@ -74,7 +74,7 @@ public class Class7307 extends Class7303
             n10 = 1;
             break;
         }
-        class7306.method1284(n4, n7, n5);
+        class7306.setPos(n4, n7, n5);
         if (n10 != 0) {
             return true;
         }

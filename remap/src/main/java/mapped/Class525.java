@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.Locale;
 import java.util.Objects;
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
@@ -35,7 +36,7 @@ public class Class525 extends Class517<Class3434>
     private final Map<Class1932, Class7909<Class3820>> field3133;
     
     public Class525(final Class512 class512) {
-        super(new Class3434(class512), class512.field3006, new Class2260(""));
+        super(new Class3434(class512), class512.field3006, new StringTextComponent(""));
         this.field3133 = Maps.newTreeMap();
         class512.field3009 = this.field3077;
         this.field3155 = true;
@@ -625,7 +626,7 @@ public class Class525 extends Class517<Class3434>
             final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(method27668.size());
             final Iterator iterator = method27668.iterator();
             while (iterator.hasNext()) {
-                arrayListWithCapacity.add(((ITextComponent)iterator.next()).method8461());
+                arrayListWithCapacity.add(((ITextComponent)iterator.next()).getFormattedText());
             }
             final Class3820 method27669 = class8321.method27622();
             Class7207 method27670 = method27669.method11737();
@@ -645,16 +646,16 @@ public class Class525 extends Class517<Class3434>
             }
             this.field3133.forEach((obj, class8325) -> {
                 if (!(!class8325.method25618(class8324))) {
-                    list.add(1, "" + Class2116.field12326 + Class2116.field12314 + "#" + obj);
+                    list.add(1, "" + TextFormatting.BOLD + TextFormatting.DARK_PURPLE + "#" + obj);
                 }
                 return;
             });
             if (method27670 != null) {
-                arrayListWithCapacity.add(1, "" + Class2116.field12326 + Class2116.field12318 + Class8822.method30773(method27670.method22111(), new Object[0]));
+                arrayListWithCapacity.add(1, "" + TextFormatting.BOLD + TextFormatting.BLUE + Class8822.method30773(method27670.method22111(), new Object[0]));
             }
             for (int j = 0; j < arrayListWithCapacity.size(); ++j) {
                 if (j != 0) {
-                    arrayListWithCapacity.set(j, Class2116.field12316 + (String)arrayListWithCapacity.get(j));
+                    arrayListWithCapacity.set(j, TextFormatting.GRAY + (String)arrayListWithCapacity.get(j));
                 }
                 else {
                     arrayListWithCapacity.set(j, class8321.method27672().field11190 + (String)arrayListWithCapacity.get(j));

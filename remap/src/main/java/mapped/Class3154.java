@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.EntityType;
 
 public class Class3154 extends Class3090
 {

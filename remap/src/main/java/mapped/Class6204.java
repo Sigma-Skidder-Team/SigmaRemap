@@ -5,13 +5,14 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 public class Class6204 extends Class6159
 {
     private static String[] field25038;
     private float field25039;
     
-    private Class6204(final Class1847 class1847, final double n, final double n2, final double n3) {
+    private Class6204(final World class1847, final double n, final double n2, final double n3) {
         super(class1847, n, n2, n3);
         this.field24951 = (int)(Math.random() * 60.0) + 30;
         this.field24944 = false;

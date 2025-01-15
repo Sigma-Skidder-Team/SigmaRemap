@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -22,8 +24,8 @@ public class Class4056 extends Class3820
     }
     
     @Override
-    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        list.add(this.method12261().method8469(Class2116.field12316));
+    public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
+        list.add(this.method12261().applyTextStyle(TextFormatting.GRAY));
     }
     
     public ITextComponent method12261() {

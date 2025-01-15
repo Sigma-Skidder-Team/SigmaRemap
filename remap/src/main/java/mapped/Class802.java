@@ -7,7 +7,15 @@ package mapped;
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 
 import java.util.function.Function;
 import javax.annotation.Nullable;
@@ -16,7 +24,7 @@ import java.util.Map;
 
 public class Class802 extends Class789
 {
-    private static final Class8810<Byte> field4305;
+    private static final DataParameter<Byte> field4305;
     private static final Map<Class181, Class3832> field4306;
     private static final Map<Class181, float[]> field4307;
     private int field4308;
@@ -34,7 +42,7 @@ public class Class802 extends Class789
         return Class802.field4307.get(class181);
     }
     
-    public Class802(final EntityType<? extends Class802> class7499, final Class1847 class7500) {
+    public Class802(final EntityType<? extends Class802> class7499, final World class7500) {
         super(class7499, class7500);
     }
     
@@ -60,7 +68,7 @@ public class Class802 extends Class789
     
     @Override
     public void method2736() {
-        if (this.field2391.field10067) {
+        if (this.world.field10067) {
             this.field4308 = Math.max(0, this.field4308 - 1);
         }
         super.method2736();
@@ -76,13 +84,13 @@ public class Class802 extends Class789
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class802.field4305, (Byte)0);
+        this.dataManager.register(Class802.field4305, (Byte)0);
     }
     
     @Override
     public Class1932 method4161() {
         if (this.method4636()) {
-            return this.method1642().method23368();
+            return this.getType().method23368();
         }
         switch (Class7128.field27777[this.method4634().ordinal()]) {
             default: {
@@ -160,7 +168,7 @@ public class Class802 extends Class789
         if (this.field4308 > 4 && this.field4308 <= 36) {
             return 0.62831855f + 0.21991149f * MathHelper.sin((this.field4308 - 4 - n) / 32.0f * 28.7f);
         }
-        return (this.field4308 <= 0) ? (this.field2400 * 0.017453292f) : 0.62831855f;
+        return (this.field4308 <= 0) ? (this.rotationPitch * 0.017453292f) : 0.62831855f;
     }
     
     @Override
@@ -170,7 +178,7 @@ public class Class802 extends Class789
             if (!this.method4636()) {
                 if (!this.method2625()) {
                     this.method4633();
-                    if (!this.field2391.field10067) {
+                    if (!this.world.field10067) {
                         method2715.method27636(1, class512, class515 -> class515.method2795(class514));
                     }
                     return true;
@@ -181,12 +189,12 @@ public class Class802 extends Class789
     }
     
     public void method4633() {
-        if (!this.field2391.field10067) {
+        if (!this.world.field10067) {
             this.method4637(true);
-            for (int n = 1 + this.field2423.nextInt(3), i = 0; i < n; ++i) {
+            for (int n = 1 + this.rand.nextInt(3), i = 0; i < n; ++i) {
                 final Class427 method1765 = this.method1765(Class802.field4306.get(this.method4634()), 1);
                 if (method1765 != null) {
-                    method1765.method1936(method1765.method1935().add((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.1f, this.field2423.nextFloat() * 0.05f, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.1f));
+                    method1765.method1936(method1765.getMotion().add((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1f, this.rand.nextFloat() * 0.05f, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1f));
                 }
             }
         }
@@ -213,7 +221,7 @@ public class Class802 extends Class789
     }
     
     @Override
-    public Class7795 method2683(final Class7929 class7929) {
+    public Class7795 method2683(final DamageSource class7929) {
         return Class8520.field35542;
     }
     
@@ -228,24 +236,24 @@ public class Class802 extends Class789
     }
     
     public Class181 method4634() {
-        return Class181.method819(this.field2432.method33568(Class802.field4305) & 0xF);
+        return Class181.method819(this.dataManager.get(Class802.field4305) & 0xF);
     }
     
     public void method4635(final Class181 class181) {
-        this.field2432.method33569(Class802.field4305, (byte)((this.field2432.method33568(Class802.field4305) & 0xF0) | (class181.method813() & 0xF)));
+        this.dataManager.set(Class802.field4305, (byte)((this.dataManager.get(Class802.field4305) & 0xF0) | (class181.method813() & 0xF)));
     }
     
     public boolean method4636() {
-        return (this.field2432.method33568(Class802.field4305) & 0x10) != 0x0;
+        return (this.dataManager.get(Class802.field4305) & 0x10) != 0x0;
     }
     
     public void method4637(final boolean b) {
-        final byte byteValue = this.field2432.method33568(Class802.field4305);
+        final byte byteValue = this.dataManager.get(Class802.field4305);
         if (!b) {
-            this.field2432.method33569(Class802.field4305, (byte)(byteValue & 0xFFFFFFEF));
+            this.dataManager.set(Class802.field4305, (byte)(byteValue & 0xFFFFFFEF));
         }
         else {
-            this.field2432.method33569(Class802.field4305, (byte)(byteValue | 0x10));
+            this.dataManager.set(Class802.field4305, (byte)(byteValue | 0x10));
         }
     }
     
@@ -268,7 +276,7 @@ public class Class802 extends Class789
     
     public Class802 method4639(final Class788 class788) {
         final Class802 class789 = (Class802)class788;
-        final Class802 class790 = EntityType.field29019.method23371(this.field2391);
+        final Class802 class790 = EntityType.field29019.method23371(this.world);
         class790.method4635(this.method4640(this, class789));
         return class790;
     }
@@ -289,7 +297,7 @@ public class Class802 extends Class789
     }
     
     private Class181 method4640(final Class789 class789, final Class789 class790) {
-        return this.field2391.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.field2391).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>) ItemStack::method27622).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.field2391.field10062.nextBoolean() ? class793 : class794);
+        return this.world.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>) ItemStack::method27622).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.field10062.nextBoolean() ? class793 : class794);
     }
     
     private static Class473 method4641(final Class181 class181, final Class181 class182) {
@@ -300,12 +308,12 @@ public class Class802 extends Class789
     }
     
     @Override
-    public float method2789(final Class290 class290, final Class8295 class291) {
+    public float method2789(final Pose class290, final EntitySize class291) {
         return 0.95f * class291.field34098;
     }
     
     static {
-        field4305 = Class9184.method33564(Class802.class, Class7709.field30653);
+        field4305 = EntityDataManager.method33564(Class802.class, Class7709.field30653);
         field4306 = Class8349.method27851(Maps.newEnumMap((Class)Class181.class), enumMap -> {
             enumMap.put(Class181.field537, Class7521.field29248);
             enumMap.put(Class181.field538, Class7521.field29249);

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -39,7 +40,7 @@ public class Class9111
                         method18172 = 0.0f;
                     }
                     if (method18172 > 0.0f) {
-                        final float[] method18173 = class6093.field10063.method20497(class6093.method6952(f), f);
+                        final float[] method18173 = class6093.dimension.method20497(class6093.method6952(f), f);
                         if (method18173 != null) {
                             final float n7 = method18172 * method18173[3];
                             Class9111.field38597 = Class9111.field38597 * (1.0f - n7) + method18173[0] * n7;
@@ -102,10 +103,10 @@ public class Class9111
                 Class9111.field38602 = method18176;
             }
         }
-        double n17 = class6092.method18161().y * class6093.field10063.method20501();
-        if (class6092.method18166() instanceof Class511) {
-            if (((Class511)class6092.method18166()).method2653(Class9439.field40488)) {
-                final int method18182 = ((Class511)class6092.method18166()).method2654(Class9439.field40488).method7907();
+        double n17 = class6092.method18161().y * class6093.dimension.method20501();
+        if (class6092.method18166() instanceof LivingEntity) {
+            if (((LivingEntity)class6092.method18166()).method2653(Class9439.field40488)) {
+                final int method18182 = ((LivingEntity)class6092.method18166()).method2654(Class9439.field40488).method7907();
                 if (method18182 >= 20) {
                     n17 = 0.0;
                 }
@@ -129,9 +130,9 @@ public class Class9111
             Class9111.field38599 = Class9111.field38599 * (1.0f - n2) + Class9111.field38599 * 0.6f * n2;
         }
         if (!method18169.method21793(Class7324.field28319)) {
-            if (class6092.method18166() instanceof Class511) {
-                if (((Class511)class6092.method18166()).method2653(Class9439.field40489)) {
-                    final float method18183 = Class1660.method5816((Class511)class6092.method18166(), f);
+            if (class6092.method18166() instanceof LivingEntity) {
+                if (((LivingEntity)class6092.method18166()).method2653(Class9439.field40489)) {
+                    final float method18183 = Class1660.method5816((LivingEntity)class6092.method18166(), f);
                     float n19 = Math.min(1.0f / Class9111.field38597, Math.min(1.0f / Class9111.field38598, 1.0f / Class9111.field38599));
                     if (Float.isInfinite(n19)) {
                         n19 = Math.nextAfter(n19, 0.0);
@@ -208,8 +209,8 @@ public class Class9111
             if (!b2) {
                 float n2;
                 float f;
-                if (method18170 instanceof Class511 && ((Class511)method18170).method2653(Class9439.field40488)) {
-                    final float method18172 = MathHelper.method35700(Math.min(1.0f, ((Class511)method18170).method2654(Class9439.field40488).method7907() / 20.0f), a, 5.0f);
+                if (method18170 instanceof LivingEntity && ((LivingEntity)method18170).method2653(Class9439.field40488)) {
+                    final float method18172 = MathHelper.method35700(Math.min(1.0f, ((LivingEntity)method18170).method2654(Class9439.field40488).method7907() / 20.0f), a, 5.0f);
                     if (class6093 != Class1985.field10993) {
                         n2 = method18172 * 0.25f;
                         f = method18172;
@@ -256,7 +257,7 @@ public class Class9111
                     if (method18170 instanceof Class756) {
                         final Class756 class6094 = (Class756)method18170;
                         n3 -= class6094.method4140() * class6094.method4140() * 0.03f;
-                        final Class3090 method18173 = class6094.field2391.method6959(new BlockPos(class6094));
+                        final Class3090 method18173 = class6094.world.method6959(new BlockPos(class6094));
                         if (method18173 == Class7102.field27638 || method18173 == Class7102.field27689) {
                             n3 += 0.005f;
                         }

@@ -10,14 +10,14 @@ public final class Class4418 implements Class4410<Optional<BlockPos>>
 {
     private static String[] field19749;
     
-    public void method13342(final Class8654 class8654, final Optional<BlockPos> optional) {
+    public void method13342(final PacketBuffer class8654, final Optional<BlockPos> optional) {
         class8654.writeBoolean(optional.isPresent());
         if (optional.isPresent()) {
             class8654.method29495(optional.get());
         }
     }
     
-    public Optional<BlockPos> method13343(final Class8654 class8654) {
+    public Optional<BlockPos> method13343(final PacketBuffer class8654) {
         return class8654.readBoolean() ? Optional.of(class8654.method29494()) : Optional.empty();
     }
     

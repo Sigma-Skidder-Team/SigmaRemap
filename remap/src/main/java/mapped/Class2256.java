@@ -44,7 +44,7 @@ public class Class2256 extends Class2255
     }
     
     @Override
-    public ITextComponent method8465() {
+    public ITextComponent shallowCopy() {
         return new Class2256(this.field13802, this.field13803, this.field13801, this.field13804, this.field13805);
     }
     
@@ -77,6 +77,6 @@ public class Class2256 extends Class2255
     
     @Override
     public String toString() {
-        return "EntityNbtComponent{selector='" + this.field13804 + '\'' + "path='" + this.field13802 + '\'' + ", siblings=" + this.field13791 + ", style=" + this.method8456() + '}';
+        return "EntityNbtComponent{selector='" + this.field13804 + '\'' + "path='" + this.field13802 + '\'' + ", siblings=" + this.siblings + ", style=" + this.getStyle() + '}';
     }
 }

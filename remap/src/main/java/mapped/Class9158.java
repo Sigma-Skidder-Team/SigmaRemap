@@ -15,6 +15,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
+import net.minecraft.item.ItemStack;
 
 public class Class9158
 {
@@ -52,7 +53,7 @@ public class Class9158
         if (collection.size() != 1) {
             throw Class9158.field38804.create((Object)collection.size());
         }
-        throw Class9158.field38803.create((Object)collection.iterator().next().getName().method8461());
+        throw Class9158.field38803.create((Object)collection.iterator().next().getName().getFormattedText());
     }
     
     static {

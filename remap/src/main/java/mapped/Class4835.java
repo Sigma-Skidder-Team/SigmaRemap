@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
 public class Class4835 extends Class4825

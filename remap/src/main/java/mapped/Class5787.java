@@ -32,8 +32,8 @@ public class Class5787 extends Class5784
             final double n = method16739 + method16742.nextGaussian() / 2.0;
             final double n2 = method16740 + method16742.nextGaussian() / 2.0;
             final double n3 = method16741 + method16742.nextGaussian() / 2.0;
-            final Vec3d method16743 = this.field23764.method1935();
-            this.field23764.field2391.method6709(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 + method16743.x, -method16738.y * 0.30000001192092896 + method16743.y, -method16738.z * 0.07999999821186066 + method16743.z);
+            final Vec3d method16743 = this.field23764.getMotion();
+            this.field23764.world.method6709(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 + method16743.x, -method16738.y * 0.30000001192092896 + method16743.y, -method16738.z * 0.07999999821186066 + method16743.z);
             method16738.rotateYaw(0.19634955f);
         }
     }
@@ -41,7 +41,7 @@ public class Class5787 extends Class5784
     @Override
     public void method17247() {
         if (this.field23775 == null) {
-            this.field23775 = new Vec3d(this.field23764.field2391.method6958(Class2020.field11526, Class4551.field20031));
+            this.field23775 = new Vec3d(this.field23764.world.method6958(Class2020.field11526, Class4551.field20031));
         }
         if (this.field23775.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ()) < 1.0) {
             this.field23764.method5127().method33698(Class7193.field27953).method17265();
@@ -56,7 +56,7 @@ public class Class5787 extends Class5784
     
     @Override
     public float method17252() {
-        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.method1935())) + 1.0f;
+        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.getMotion())) + 1.0f;
         return Math.min(a, 40.0f) / a;
     }
     

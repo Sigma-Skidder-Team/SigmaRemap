@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -27,7 +30,7 @@ public class Class8615
             return 0;
         }
         final Random field10062 = class1849.field10062;
-        final BlockPos method6885 = new BlockPos(method6884).method1134((8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1), 0, (8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1));
+        final BlockPos method6885 = new BlockPos(method6884).add((8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1), 0, (8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1));
         if (class1849.method6973(method6885.getX() - 10, method6885.getY() - 10, method6885.getZ() - 10, method6885.getX() + 10, method6885.getY() + 10, method6885.getZ() + 10)) {
             if (Class8532.method28621(Class2194.field13354, class1849, method6885, EntityType.field28964)) {
                 if (class1849.method6924(method6885, 2)) {
@@ -49,11 +52,11 @@ public class Class8615
         return 0;
     }
     
-    private int method29219(final Class1847 class1847, final BlockPos class1848) {
+    private int method29219(final World class1847, final BlockPos class1848) {
         return (class1847.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1848).method18495(16.0, 8.0, 16.0)).size() >= 1) ? 0 : this.method29220(class1848, class1847);
     }
     
-    private int method29220(final BlockPos class354, final Class1847 class355) {
+    private int method29220(final BlockPos class354, final World class355) {
         final Class800 class356 = EntityType.field28964.method23371(class355);
         if (class356 != null) {
             class356.method4188(class355, class355.method6784(class354), Class2101.field12174, null, null);

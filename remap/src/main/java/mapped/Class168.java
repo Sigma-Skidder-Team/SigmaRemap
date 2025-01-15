@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 
 import java.util.function.Predicate;
 
@@ -19,6 +21,6 @@ public class Class168 implements Predicate<Entity>
     
     @Override
     public boolean test(final Entity class399) {
-        return class399.method1768() && class399 instanceof Class511 && ((Class511)class399).method2779(this.field489);
+        return class399.method1768() && class399 instanceof LivingEntity && ((LivingEntity)class399).method2779(this.field489);
     }
 }

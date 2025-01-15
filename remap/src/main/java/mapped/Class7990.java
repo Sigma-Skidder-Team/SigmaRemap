@@ -19,7 +19,7 @@ public class Class7990
     
     public Class7990(final Class1852 field32894, final BlockPos class354, final boolean field32895) {
         this.field32894 = field32894;
-        this.field32895 = class354.method1153();
+        this.field32895 = class354.toImmutable();
         this.field32896 = field32895;
     }
     

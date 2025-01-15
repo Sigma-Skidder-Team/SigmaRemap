@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
 public class Class3329 extends Class3167
@@ -28,7 +29,7 @@ public class Class3329 extends Class3167
             return;
         }
         if (!(Class3329.field15514.field4700 instanceof Class535)) {
-            final float n = Class3329.field15514.field4684.field2399 % 360.0f - this.field15926 % 360.0f;
+            final float n = Class3329.field15514.field4684.rotationYaw % 360.0f - this.field15926 % 360.0f;
             final float field15926 = this.field15926;
             final float n2 = n;
             final Class869 field15927 = Class3329.field15514;
@@ -48,9 +49,9 @@ public class Class3329 extends Class3167
     
     public String method10538(final boolean b) {
         if (!b) {
-            return Math.round(Class3329.field15514.field4684.field2395) + " " + Math.round(Class3329.field15514.field4684.field2396) + " " + Math.round(Class3329.field15514.field4684.field2397);
+            return Math.round(Class3329.field15514.field4684.posX) + " " + Math.round(Class3329.field15514.field4684.posY) + " " + Math.round(Class3329.field15514.field4684.posZ);
         }
-        return Math.round(Class3329.field15514.field4684.field2395 * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.field4684.field2396 * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.field4684.field2397 * 10.0) / 10.0f;
+        return Math.round(Class3329.field15514.field4684.posX * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.field4684.posY * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.field4684.posZ * 10.0) / 10.0f;
     }
     
     public int method10539(final int n, final int n2) {
