@@ -74,7 +74,7 @@ public abstract class PlayerEntity extends LivingEntity {
       .put(Pose.field13624, EntitySize.method32101(0.6F, 1.5F))
       .put(Pose.field13625, EntitySize.method32102(0.2F, 0.2F))
       .build();
-   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.field33392);
+   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.FLOAT);
    private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class, DataSerializers.VARINT);
    public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
    public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);

@@ -20,7 +20,7 @@ public class DataSerializers {
    private static final Class2353<Class6466<?>> field33389 = new Class2353<Class6466<?>>(16);
    public static final Class6466<Byte> field33390 = new Class6465();
    public static final Class6466<Integer> VARINT = new Class6468();
-   public static final Class6466<Float> field33392 = new Class6467();
+   public static final Class6466<Float> FLOAT = new Class6467();
    public static final Class6466<String> field33393 = new Class6479();
    public static final Class6466<ITextComponent> field33394 = new Class6481();
    public static final Class6466<Optional<ITextComponent>> field33395 = new Class6484();
@@ -54,7 +54,7 @@ public class DataSerializers {
    static {
       method25804(field33390);
       method25804(VARINT);
-      method25804(field33392);
+      method25804(FLOAT);
       method25804(field33393);
       method25804(field33394);
       method25804(field33395);
