@@ -1,6 +1,6 @@
 package net.minecraft.util.math.vector;
 
-import mapped.Class8828;
+import mapped.Vector2m;
 
 public class Vector3m implements Comparable<Vector3m> {
    public final double x;
@@ -355,8 +355,8 @@ public class Vector3m implements Comparable<Vector3m> {
       return new IntegerVector(this);
    }
 
-   public Class8828 method8606() {
-      return new Class8828(this.x, this.z);
+   public Vector2m method8606() {
+      return new Vector2m(this.x, this.z);
    }
 
    @Override
