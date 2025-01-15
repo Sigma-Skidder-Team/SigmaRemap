@@ -106,16 +106,16 @@ public class Vector2m {
       return new Vector2m(x, y);
    }
 
-   public Vector2m multiply(Vector2m var1) {
-      return new Vector2m(this.x * var1.x, this.y * var1.y);
+   public Vector2m multiply(Vector2m vec) {
+      return new Vector2m(this.x * vec.x, this.y * vec.y);
    }
 
-   public Vector2m multiply(double var1, double var3) {
-      return new Vector2m(this.x * var1, this.y * var3);
+   public Vector2m multiply(double x, double y) {
+      return new Vector2m(this.x * x, this.y * y);
    }
 
-   public Vector2m multiply(int var1, int var2) {
-      return new Vector2m(this.x * (double)var1, this.y * (double)var2);
+   public Vector2m multiply(int x, int y) {
+      return new Vector2m(this.x * (double)x, this.y * (double)y);
    }
 
    public Vector2m multiplyAll(Vector2m... vectorsIn) {
@@ -174,12 +174,12 @@ public class Vector2m {
       return this.x * this.x + this.y * this.y;
    }
 
-   public double method31909(Vector2m var1) {
-      return Math.sqrt(Math.pow(var1.x - this.x, 2.0) + Math.pow(var1.y - this.y, 2.0));
+   public double distanceTo(Vector2m vec) {
+      return Math.sqrt(Math.pow(vec.x - this.x, 2.0) + Math.pow(vec.y - this.y, 2.0));
    }
 
-   public double method31910(Vector2m var1) {
-      return Math.pow(var1.x - this.x, 2.0) + Math.pow(var1.y - this.y, 2.0);
+   public double squaredDistanceTo(Vector2m vec) {
+      return Math.pow(vec.x - this.x, 2.0) + Math.pow(vec.y - this.y, 2.0);
    }
 
    public Vector2m normalize() {
@@ -222,11 +222,11 @@ public class Vector2m {
 
    public Vector2m rotateAroundPoint(double angleDegrees, double centerX, double centerZ, double offsetX, double offsetZ) {
       angleDegrees = Math.toRadians(angleDegrees);
-      double var13 = this.x - centerX;
-      double var15 = this.y - centerZ;
-      double var17 = var13 * Math.cos(angleDegrees) - var15 * Math.sin(angleDegrees);
-      double var19 = var13 * Math.sin(angleDegrees) + var15 * Math.cos(angleDegrees);
-      return new Vector2m(var17 + centerX + offsetX, var19 + centerZ + offsetZ);
+      double centeredX = this.x - centerX;
+      double centeredZ = this.y - centerZ;
+      double rotatedX = centeredX * Math.cos(angleDegrees) - centeredZ * Math.sin(angleDegrees);
+      double rotatedY = centeredX * Math.sin(angleDegrees) + centeredZ * Math.cos(angleDegrees);
+      return new Vector2m(rotatedX + centerX + offsetX, rotatedY + centerZ + offsetZ);
    }
 
    public boolean isProportionalTo(Vector2m vectorIn) {
@@ -259,25 +259,25 @@ public class Vector2m {
       }
    }
 
-   public Class8829 method31921() {
+   public Class8829 toClass8829() {
       return new Class8829(this);
    }
 
-   public Vector3m method31922() {
+   public Vector3m toVector3() {
       return new Vector3m(this.x, 0.0, this.y);
    }
 
-   public Vector3m method31923(double var1) {
-      return new Vector3m(this.x, var1, this.y);
+   public Vector3m toVector3(double y) {
+      return new Vector3m(this.x, y, this.y);
    }
 
    @Override
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof Vector2m)) {
+   public boolean equals(Object to) {
+      if (!(to instanceof Vector2m)) {
          return false;
       } else {
-         Vector2m var4 = (Vector2m)var1;
-         return var4.x == this.x && var4.y == this.y;
+         Vector2m other = (Vector2m)to;
+         return other.x == this.x && other.y == this.y;
       }
    }
 
@@ -291,11 +291,11 @@ public class Vector2m {
       return "(" + this.x + ", " + this.y + ")";
    }
 
-   public static Vector2m method31924(Vector2m var0, Vector2m var1) {
-      return new Vector2m(Math.min(var0.x, var1.x), Math.min(var0.y, var1.y));
+   public static Vector2m min(Vector2m a, Vector2m b) {
+      return new Vector2m(Math.min(a.x, b.x), Math.min(a.y, b.y));
    }
 
-   public static Vector2m method31925(Vector2m var0, Vector2m var1) {
-      return new Vector2m(Math.max(var0.x, var1.x), Math.max(var0.y, var1.y));
+   public static Vector2m max(Vector2m a, Vector2m b) {
+      return new Vector2m(Math.max(a.x, b.x), Math.max(a.y, b.y));
    }
 }

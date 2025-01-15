@@ -24,11 +24,11 @@ public class Class8829 extends Vector2m {
    }
 
    @Override
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof Vector2m)) {
+   public boolean equals(Object to) {
+      if (!(to instanceof Vector2m)) {
          return false;
       } else {
-         Vector2m var4 = (Vector2m)var1;
+         Vector2m var4 = (Vector2m) to;
          return (int)var4.x == (int)this.x && (int)var4.y == (int)this.y;
       }
    }
@@ -39,7 +39,7 @@ public class Class8829 extends Vector2m {
    }
 
    @Override
-   public Class8829 method31921() {
+   public Class8829 toClass8829() {
       return this;
    }
 }
