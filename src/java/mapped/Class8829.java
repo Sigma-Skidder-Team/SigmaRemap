@@ -1,13 +1,13 @@
 package mapped;
 
-public class Class8829 extends Class8828 {
+public class Class8829 extends Vector2m {
    private static String[] field39807;
    public static final Class8829 field39808 = new Class8829(0, 0);
    public static final Class8829 field39809 = new Class8829(1, 0);
    public static final Class8829 field39810 = new Class8829(0, 1);
    public static final Class8829 field39811 = new Class8829(1, 1);
 
-   public Class8829(Class8828 var1) {
+   public Class8829(Vector2m var1) {
       super(var1);
    }
 
@@ -24,22 +24,22 @@ public class Class8829 extends Class8828 {
    }
 
    @Override
-   public boolean equals(Object var1) {
-      if (!(var1 instanceof Class8828)) {
+   public boolean equals(Object to) {
+      if (!(to instanceof Vector2m)) {
          return false;
       } else {
-         Class8828 var4 = (Class8828)var1;
-         return (int)var4.field39805 == (int)this.field39805 && (int)var4.field39806 == (int)this.field39806;
+         Vector2m var4 = (Vector2m) to;
+         return (int)var4.x == (int)this.x && (int)var4.y == (int)this.y;
       }
    }
 
    @Override
    public int hashCode() {
-      return Integer.valueOf((int)this.field39805).hashCode() >> 13 ^ Integer.valueOf((int)this.field39806).hashCode();
+      return Integer.valueOf((int)this.x).hashCode() >> 13 ^ Integer.valueOf((int)this.y).hashCode();
    }
 
    @Override
-   public Class8829 method31921() {
+   public Class8829 toClass8829() {
       return this;
    }
 }
