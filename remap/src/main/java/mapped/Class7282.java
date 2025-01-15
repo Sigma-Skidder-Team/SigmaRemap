@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Optional;
 
 public class Class7282
@@ -81,13 +83,13 @@ public class Class7282
         this.field28223.method18269(class7351, class7352, n, n2, n3);
     }
     
-    public static Optional<Class399> method22333(final Class399 class399, final int n) {
+    public static Optional<Entity> method22333(final Entity class399, final int n) {
         if (class399 == null) {
             return Optional.empty();
         }
-        final Class5487 method1747 = class399.method1747(1.0f);
-        final Class5487 method1748 = class399.method1741(1.0f).method16748(n);
-        final Class5487 method1749 = method1747.method16743(method1748);
+        final Vec3d method1747 = class399.method1747(1.0f);
+        final Vec3d method1748 = class399.method1741(1.0f).method16748(n);
+        final Vec3d method1749 = method1747.method16743(method1748);
         final Class6221 method1750 = class399.method1886().method18493(method1748).method18496(1.0);
         final int n2 = n * n;
         final Class7007 method1751 = Class7476.method23096(class399, method1747, method1749, method1750, class400 -> !class400.method1639() && class400.method1749(), n2);
@@ -97,14 +99,14 @@ public class Class7282
         return Optional.empty();
     }
     
-    public static void method22334(final Class354 class354, final Class354 class355, final float n, final float n2, final float n3, final float n4) {
+    public static void method22334(final BlockPos class354, final BlockPos class355, final float n, final float n2, final float n3, final float n4) {
         final Class6092 method5833 = Class869.method5277().field4644.method5833();
         if (method5833.method18167()) {
             method22336(new Class6221(class354, class355).method18501(method5833.method18161().method16749()), n, n2, n3, n4);
         }
     }
     
-    public static void method22335(final Class354 class354, final float n, final float n2, final float n3, final float n4, final float n5) {
+    public static void method22335(final BlockPos class354, final float n, final float n2, final float n3, final float n4, final float n5) {
         final Class6092 method5833 = Class869.method5277().field4644.method5833();
         if (method5833.method18167()) {
             method22336(new Class6221(class354).method18501(method5833.method18161().method16749()).method18496(n), n2, n3, n4, n5);

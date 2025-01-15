@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +31,7 @@ public class Class5786 extends Class5784
                     final double method1939 = this.field23772.method1945();
                     final double n = method1938 - this.field23764.method1938();
                     final double n2 = method1939 - this.field23764.method1945();
-                    this.field23771 = new Class5487(method1938, this.field23772.method1941() + Math.min(0.4000000059604645 + Class9546.method35641(n * n + n2 * n2) / 80.0 - 1.0, 10.0), method1939);
+                    this.field23771 = new Class5487(method1938, this.field23772.method1941() + Math.min(0.4000000059604645 + MathHelper.method35641(n * n + n2 * n2) / 80.0 - 1.0, 10.0), method1939);
                 }
             }
             final double n3 = (this.field23771 != null) ? this.field23771.method16747(this.field23764.method1938(), this.field23764.method1941(), this.field23764.method1945()) : 0.0;
@@ -49,7 +50,7 @@ public class Class5786 extends Class5784
             }
             else {
                 ++this.field23769;
-                final float n4 = (float)(Math.acos((float)new Class5487(Class9546.method35638(this.field23764.field2399 * 0.017453292f), 0.0, -Class9546.method35639(this.field23764.field2399 * 0.017453292f)).method16738().method16739(new Class5487(this.field23772.method1938() - this.field23764.method1938(), 0.0, this.field23772.method1945() - this.field23764.method1945()).method16738())) * 57.2957763671875) + 0.5f;
+                final float n4 = (float)(Math.acos((float)new Class5487(MathHelper.sin(this.field23764.field2399 * 0.017453292f), 0.0, -MathHelper.cos(this.field23764.field2399 * 0.017453292f)).method16738().method16739(new Class5487(this.field23772.method1938() - this.field23764.method1938(), 0.0, this.field23772.method1945() - this.field23764.method1945()).method16738())) * 57.2957763671875) + 0.5f;
                 if (this.field23769 >= 5) {
                     if (n4 >= 0.0f) {
                         if (n4 < 10.0f) {
@@ -60,7 +61,7 @@ public class Class5786 extends Class5784
                             final double n8 = this.field23772.method1938() - n5;
                             final double n9 = this.field23772.method1942(0.5) - n6;
                             final double n10 = this.field23772.method1945() - n7;
-                            this.field23764.field2391.method6839(null, 1017, new Class354(this.field23764), 0);
+                            this.field23764.field2391.method6839(null, 1017, new BlockPos(this.field23764), 0);
                             final Class420 class420 = new Class420(this.field23764.field2391, this.field23764, n8, n9, n10);
                             class420.method1730(n5, n6, n7, 0.0f, 0.0f);
                             this.field23764.field2391.method6886(class420);
@@ -142,11 +143,11 @@ public class Class5786 extends Class5784
         this.field23772 = field23772;
         final int method5119 = this.field23764.method5119();
         final int method5120 = this.field23764.method5120(this.field23772.method1938(), this.field23772.method1941(), this.field23772.method1945());
-        final int method5121 = Class9546.method35644(this.field23772.method1938());
-        final int method5122 = Class9546.method35644(this.field23772.method1945());
+        final int method5121 = MathHelper.floor(this.field23772.method1938());
+        final int method5122 = MathHelper.floor(this.field23772.method1945());
         final double n = method5121 - this.field23764.method1938();
         final double n2 = method5122 - this.field23764.method1945();
-        this.field23770 = this.field23764.method5121(method5119, method5120, new Class6772(method5121, Class9546.method35644(this.field23772.method1941() + Math.min(0.4000000059604645 + Class9546.method35641(n * n + n2 * n2) / 80.0 - 1.0, 10.0)), method5122));
+        this.field23770 = this.field23764.method5121(method5119, method5120, new Class6772(method5121, MathHelper.floor(this.field23772.method1941() + Math.min(0.4000000059604645 + MathHelper.method35641(n * n + n2 * n2) / 80.0 - 1.0, 10.0)), method5122));
         if (this.field23770 != null) {
             this.field23770.method35214();
             this.method17258();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class403 extends Class402
@@ -44,7 +46,7 @@ public class Class403 extends Class402
         if (this.field2473 > 4) {
             this.field2487 = true;
         }
-        final Class399 method1973 = this.method1973();
+        final Entity method1973 = this.method1973();
         if (this.field2487 || this.method1987()) {
             if (method1973 != null) {
                 final byte byteValue = this.field2432.method33568(Class403.field2484);
@@ -75,7 +77,7 @@ public class Class403 extends Class402
     }
     
     private boolean method1990() {
-        final Class399 method1973 = this.method1973();
+        final Entity method1973 = this.method1973();
         return method1973 != null && method1973.method1768() && (!(method1973 instanceof Class513) || !method1973.method1639());
     }
     
@@ -96,12 +98,12 @@ public class Class403 extends Class402
     
     @Override
     public void method1967(final Class7007 class7007) {
-        final Class399 method21452 = class7007.method21452();
+        final Entity method21452 = class7007.method21452();
         float n = 8.0f;
         if (method21452 instanceof Class511) {
             n += Class8742.method30202(this.field2486, ((Class511)method21452).method2712());
         }
-        final Class399 method21453 = this.method1973();
+        final Entity method21453 = this.method1973();
         final Class7929 method21454 = Class7929.method25697(this, (method21453 != null) ? method21453 : this);
         this.field2487 = true;
         Class7795 class7008 = Class8520.field35634;
@@ -123,9 +125,9 @@ public class Class403 extends Class402
         if (this.field2391 instanceof Class1849) {
             if (this.field2391.method6770()) {
                 if (Class8742.method30221(this.field2486)) {
-                    final Class354 method21455 = method21452.method1894();
+                    final BlockPos method21455 = method21452.method1894();
                     if (this.field2391.method6994(method21455)) {
-                        final Class422 class7010 = new Class422(this.field2391, method21455.method1074() + 0.5, method21455.method1075(), method21455.method1076() + 0.5, false);
+                        final Class422 class7010 = new Class422(this.field2391, method21455.getX() + 0.5, method21455.getY(), method21455.getZ() + 0.5, false);
                         class7010.method2038((method21453 instanceof Class513) ? ((Class513)method21453) : null);
                         ((Class1849)this.field2391).method6903(class7010);
                         class7008 = Class8520.field35641;
@@ -144,7 +146,7 @@ public class Class403 extends Class402
     
     @Override
     public void method1736(final Class512 class512) {
-        final Class399 method1973 = this.method1973();
+        final Entity method1973 = this.method1973();
         if (method1973 == null || method1973.method1865() == class512.method1865()) {
             super.method1736(class512);
         }

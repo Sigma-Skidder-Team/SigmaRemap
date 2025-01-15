@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import java.util.concurrent.ForkJoinWorkerThread;
+
 import java.util.UUID;
 import com.mojang.datafixers.Dynamic;
 import java.util.Optional;
@@ -69,7 +70,7 @@ public class Class8349
     }
     
     private static ExecutorService method27840() {
-        final int method35651 = Class9546.method35651(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
+        final int method35651 = MathHelper.method35651(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
         Object directExecutorService;
         if (method35651 > 0) {
             directExecutorService = new ForkJoinPool(method35651, forkJoinPool -> {

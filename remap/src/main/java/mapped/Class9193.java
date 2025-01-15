@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class9193
@@ -11,11 +13,11 @@ public class Class9193
     private static String[] field38965;
     private static final Random field38966;
     
-    public static void method33638(final Class1847 class1847, final Class354 class1848, final Class446 class1849) {
-        method33640(class1847, class1848.method1074(), class1848.method1075(), class1848.method1076(), class1849);
+    public static void method33638(final Class1847 class1847, final BlockPos class1848, final Class446 class1849) {
+        method33640(class1847, class1848.getX(), class1848.getY(), class1848.getZ(), class1849);
     }
     
-    public static void method33639(final Class1847 class1847, final Class399 class1848, final Class446 class1849) {
+    public static void method33639(final Class1847 class1847, final Entity class1848, final Class446 class1849) {
         method33640(class1847, class1848.method1938(), class1848.method1941(), class1848.method1945(), class1849);
     }
     
@@ -25,7 +27,7 @@ public class Class9193
         }
     }
     
-    public static void method33641(final Class1847 class1847, final Class354 class1848, final Class2265<Class8321> class1849) {
+    public static void method33641(final Class1847 class1847, final BlockPos class1848, final Class2265<Class8321> class1849) {
         class1849.forEach(class1852 -> method33642(class1850, class1851.method1074(), class1851.method1075(), class1851.method1076(), class1852));
     }
     

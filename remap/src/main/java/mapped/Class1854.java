@@ -15,12 +15,12 @@ public class Class1854 implements Class1855, Class1853
     public boolean field10108;
     public final Class1847 field10109;
     
-    public Class1854(final Class1847 field10109, final Class354 class354, final Class354 class355) {
+    public Class1854(final Class1847 field10109, final BlockPos class354, final BlockPos class355) {
         this.field10109 = field10109;
-        this.field10105 = class354.method1074() >> 4;
-        this.field10106 = class354.method1076() >> 4;
-        final int n = class355.method1074() >> 4;
-        final int n2 = class355.method1076() >> 4;
+        this.field10105 = class354.getX() >> 4;
+        this.field10106 = class354.getZ() >> 4;
+        final int n = class355.getX() >> 4;
+        final int n2 = class355.getZ() >> 4;
         this.field10107 = new Class1860[n - this.field10105 + 1][n2 - this.field10106 + 1];
         final Class1906 method6762 = field10109.method6762();
         this.field10108 = true;
@@ -29,10 +29,10 @@ public class Class1854 implements Class1855, Class1853
                 this.field10107[i - this.field10105][j - this.field10106] = method6762.method7399(i, j);
             }
         }
-        for (int k = class354.method1074() >> 4; k <= class355.method1074() >> 4; ++k) {
-            for (int l = class354.method1076() >> 4; l <= class355.method1076() >> 4; ++l) {
+        for (int k = class354.getX() >> 4; k <= class355.getX() >> 4; ++k) {
+            for (int l = class354.getZ() >> 4; l <= class355.getZ() >> 4; ++l) {
                 final Class1860 class356 = this.field10107[k - this.field10105][l - this.field10106];
-                if (class356 != null && !class356.method7023(class354.method1075(), class355.method1075())) {
+                if (class356 != null && !class356.method7023(class354.getY(), class355.getY())) {
                     this.field10108 = false;
                     return;
                 }
@@ -40,8 +40,8 @@ public class Class1854 implements Class1855, Class1853
         }
     }
     
-    private Class1860 method6982(final Class354 class354) {
-        return this.method6983(class354.method1074() >> 4, class354.method1076() >> 4);
+    private Class1860 method6982(final BlockPos class354) {
+        return this.method6983(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     private Class1860 method6983(final int n, final int n2) {
@@ -72,12 +72,12 @@ public class Class1854 implements Class1855, Class1853
     
     @Nullable
     @Override
-    public Class436 method6727(final Class354 class354) {
+    public Class436 method6727(final BlockPos class354) {
         return this.method6982(class354).method6727(class354);
     }
     
     @Override
-    public Class7096 method6701(final Class354 class354) {
+    public Class7096 method6701(final BlockPos class354) {
         if (!Class1847.method6683(class354)) {
             return this.method6982(class354).method6701(class354);
         }
@@ -85,7 +85,7 @@ public class Class1854 implements Class1855, Class1853
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
+    public Class7099 method6702(final BlockPos class354) {
         if (!Class1847.method6683(class354)) {
             return this.method6982(class354).method6702(class354);
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class9472
 {
     private static String[] field40729;
@@ -18,6 +20,6 @@ public class Class9472
     
     public void method35257(final float n, final float n2) {
         this.field40732 += n;
-        this.field40731.method26461(this.field40730, Class9546.method35638(this.field40732 * 0.001f) * 5.0f + 25.0f, -this.field40732 * 0.1f, n2);
+        this.field40731.method26461(this.field40730, MathHelper.sin(this.field40732 * 0.001f) * 5.0f + 25.0f, -this.field40732 * 0.1f, n2);
     }
 }

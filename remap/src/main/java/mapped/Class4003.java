@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 
 public class Class4003 extends Class3833
@@ -15,7 +17,7 @@ public class Class4003 extends Class3833
     public static final Class7113 field18044;
     public static final Class7113 field18045;
     public static final Class7113 field18046;
-    private static final Map<Class179, Class7113> field18047;
+    private static final Map<Direction, Class7113> field18047;
     
     public Class4003(final Class9288 class9288) {
         super(class9288);
@@ -25,23 +27,23 @@ public class Class4003 extends Class3833
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         final Class1847 method21654 = class7074.method21654();
-        final Class354 method21655 = class7074.method21639();
+        final BlockPos method21655 = class7074.method21639();
         return (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)Class4003.field18046, this != method21654.method6701(method21655.method1139()).method21696())).method21773((Class7111<Comparable>)Class4003.field18045, this != method21654.method6701(method21655.method1137()).method21696())).method21773((Class7111<Comparable>)Class4003.field18041, this != method21654.method6701(method21655.method1141()).method21696())).method21773((Class7111<Comparable>)Class4003.field18042, this != method21654.method6701(method21655.method1147()).method21696())).method21773((Class7111<Comparable>)Class4003.field18043, this != method21654.method6701(method21655.method1143()).method21696())).method21773((Class7111<Comparable>)Class4003.field18044, this != method21654.method6701(method21655.method1145()).method21696());
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         return (class7098.method21696() != this) ? super.method11789(class7096, class7097, class7098, class7099, class7100, class7101) : ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097), false);
     }
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Class179.field513)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18041))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Class179.field514)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18043))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Class179.field516)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18042))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Class179.field515)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18044))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Class179.field512)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18045))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Class179.field511)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18046));
+        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Direction.NORTH)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18041))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Direction.SOUTH)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18043))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Direction.EAST)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18042))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Direction.WEST)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18044))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Direction.UP)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18045))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8142(Direction.DOWN)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18046));
     }
     
     @Override
     public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
-        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Class179.field513)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18041))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Class179.field514)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18043))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Class179.field516)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18042))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Class179.field515)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18044))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Class179.field512)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18045))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Class179.field511)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18046));
+        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Direction.NORTH)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18041))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Direction.SOUTH)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18043))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Direction.EAST)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18042))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Direction.WEST)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18044))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Direction.UP)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18045))).method21773((Class7111<Comparable>)Class4003.field18047.get(class7097.method8345(Direction.DOWN)), (Comparable)class7096.method21772((Class7111<V>)Class4003.field18046));
     }
     
     @Override

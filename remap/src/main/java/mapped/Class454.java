@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -11,20 +13,20 @@ public class Class454 extends Class433 implements Class453
 {
     private boolean field2704;
     private int field2705;
-    private final Class354 field2706;
+    private final BlockPos field2706;
     
     public Class454(final Class7499<? extends Class454> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2704 = true;
         this.field2705 = -1;
-        this.field2706 = Class354.field2173;
+        this.field2706 = BlockPos.ZERO;
     }
     
     public Class454(final Class1847 class1847, final double n, final double n2, final double n3) {
         super(Class7499.field29003, n, n2, n3, class1847);
         this.field2704 = true;
         this.field2705 = -1;
-        this.field2706 = Class354.field2173;
+        this.field2706 = BlockPos.ZERO;
     }
     
     @Override
@@ -89,7 +91,7 @@ public class Class454 extends Class433 implements Class453
         if (!this.field2391.field10067) {
             if (this.method1768()) {
                 if (this.method2289()) {
-                    if (!new Class354(this).equals(this.field2706)) {
+                    if (!new BlockPos(this).equals(this.field2706)) {
                         this.method2292(0);
                     }
                     else {
@@ -109,7 +111,7 @@ public class Class454 extends Class433 implements Class453
     
     public boolean method2291() {
         if (!Class455.method2300(this)) {
-            final List<Class399> method6739 = this.field2391.method6739((Class<? extends Class399>)Class427.class, this.method1886().method18495(0.25, 0.0, 0.25), (Predicate<? super Class399>)Class9170.field38845);
+            final List<Entity> method6739 = this.field2391.method6739((Class<? extends Entity>)Class427.class, this.method1886().method18495(0.25, 0.0, 0.25), (Predicate<? super Entity>)Class9170.field38845);
             if (!method6739.isEmpty()) {
                 Class455.method2302(this, (Class427)method6739.get(0));
             }

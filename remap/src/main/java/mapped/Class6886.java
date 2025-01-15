@@ -18,6 +18,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.entity.Entity;
 
 public class Class6886 implements ArgumentType<Class9043>
 {
@@ -40,7 +41,7 @@ public class Class6886 implements ArgumentType<Class9043>
         return new Class6886(true, false);
     }
     
-    public static Class399 method21144(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+    public static Entity method21144(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         return ((Class9043)commandContext.getArgument(s, (Class)Class9043.class)).method32510((Class7492)commandContext.getSource());
     }
     
@@ -48,15 +49,15 @@ public class Class6886 implements ArgumentType<Class9043>
         return new Class6886(false, false);
     }
     
-    public static Collection<? extends Class399> method21146(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        final Collection<? extends Class399> method21147 = method21147(commandContext, s);
+    public static Collection<? extends Entity> method21146(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+        final Collection<? extends Entity> method21147 = method21147(commandContext, s);
         if (!method21147.isEmpty()) {
             return method21147;
         }
         throw Class6886.field27004.create();
     }
     
-    public static Collection<? extends Class399> method21147(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+    public static Collection<? extends Entity> method21147(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         return ((Class9043)commandContext.getArgument(s, (Class)Class9043.class)).method32511((Class7492)commandContext.getSource());
     }
     

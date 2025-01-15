@@ -39,7 +39,7 @@ public class Class8530<FC extends Class5113, F extends Class4535<FC>>
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("name"), dynamicOps.createString(Class90.field215.method503(this.field35804).toString()), dynamicOps.createString("config"), this.field35805.method16010((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
     }
     
-    public boolean method28613(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853) {
+    public boolean method28613(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853) {
         return this.field35804.method13525(class1851, class1852, random, class1853, this.field35805);
     }
     

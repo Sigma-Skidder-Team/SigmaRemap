@@ -8,19 +8,21 @@ import java.util.List;
 import java.util.Collection;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
+import net.minecraft.entity.Entity;
+
 import java.util.Set;
 
 public class Class9406
 {
     private static String[] field40366;
     private final Class9049 field40367;
-    private final Class399 field40368;
+    private final Entity field40368;
     private final int field40369;
     private Class353 field40370;
     private final Set<Class513> field40371;
     public final /* synthetic */ Class388 field40372;
     
-    public Class9406(final Class388 field40372, final Class399 field40373, final int field40374, final int n, final boolean b) {
+    public Class9406(final Class388 field40372, final Entity field40373, final int field40374, final int n, final boolean b) {
         this.field40372 = field40372;
         this.field40371 = Sets.newHashSet();
         this.field40367 = new Class9049(Class388.method1408(field40372), field40373, n, b, this::method34982);
@@ -68,7 +70,7 @@ public class Class9406
     
     public void method34986(final Class513 class513) {
         if (class513 != this.field40368) {
-            final Class5487 method16741 = class513.method1934().method16741(this.field40367.method32544());
+            final Vec3d method16741 = class513.method1934().method16741(this.field40367.method32544());
             final int min = Math.min(this.method34987(), (Class388.method1409(this.field40372) - 1) * 16);
             boolean b = false;
             Label_0130: {
@@ -112,9 +114,9 @@ public class Class9406
     }
     
     private int method34987() {
-        final Collection<Class399> method1911 = this.field40368.method1911();
+        final Collection<Entity> method1911 = this.field40368.method1911();
         int field40369 = this.field40369;
-        final Iterator<Class399> iterator = method1911.iterator();
+        final Iterator<Entity> iterator = method1911.iterator();
         while (iterator.hasNext()) {
             final int n = iterator.next().method1642().method23380() * 16;
             if (n <= field40369) {

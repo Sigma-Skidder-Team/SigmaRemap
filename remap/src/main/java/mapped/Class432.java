@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class432 extends Class428
 {
     private int field2644;
@@ -33,7 +35,7 @@ public class Class432 extends Class428
         super.method1659();
         if (this.field2644 <= 0) {
             if (this.field2644 == 0) {
-                this.method2152(Class399.method1680(this.method1935()));
+                this.method2152(Entity.method1680(this.method1935()));
             }
         }
         else {
@@ -41,7 +43,7 @@ public class Class432 extends Class428
             this.field2391.method6709(Class8432.field34639, this.method1938(), this.method1941() + 0.5, this.method1945(), 0.0, 0.0, 0.0);
         }
         if (this.field2405) {
-            final double method1680 = Class399.method1680(this.method1935());
+            final double method1680 = Entity.method1680(this.method1935());
             if (method1680 >= 0.009999999776482582) {
                 this.method2152(method1680);
             }
@@ -50,7 +52,7 @@ public class Class432 extends Class428
     
     @Override
     public boolean method1740(final Class7929 class7929, final float n) {
-        final Class399 method25713 = class7929.method25713();
+        final Entity method25713 = class7929.method25713();
         if (method25713 instanceof Class402) {
             final Class402 class7930 = (Class402)method25713;
             if (class7930.method1804()) {
@@ -62,7 +64,7 @@ public class Class432 extends Class428
     
     @Override
     public void method2123(final Class7929 class7929) {
-        final double method1680 = Class399.method1680(this.method1935());
+        final double method1680 = Entity.method1680(this.method1935());
         if (!class7929.method25719()) {
             if (!class7929.method25707()) {
                 if (method1680 < 0.009999999776482582) {
@@ -142,12 +144,12 @@ public class Class432 extends Class428
     }
     
     @Override
-    public float method1856(final Class6154 class6154, final Class1855 class6155, final Class354 class6156, final Class7096 class6157, final Class7099 class6158, final float n) {
+    public float method1856(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final Class7096 class6157, final Class7099 class6158, final float n) {
         return (this.method2155() && (class6157.method21755(Class7188.field27906) || class6155.method6701(class6156.method1137()).method21755(Class7188.field27906))) ? 0.0f : super.method1856(class6154, class6155, class6156, class6157, class6158, n);
     }
     
     @Override
-    public boolean method1857(final Class6154 class6154, final Class1855 class6155, final Class354 class6156, final Class7096 class6157, final float n) {
+    public boolean method1857(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final Class7096 class6157, final float n) {
         return (!this.method2155() || (!class6157.method21755(Class7188.field27906) && !class6155.method6701(class6156.method1137()).method21755(Class7188.field27906))) && super.method1857(class6154, class6155, class6156, class6157, n);
     }
     

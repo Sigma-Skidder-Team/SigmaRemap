@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
-import java.util.Iterator;
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.List;
@@ -29,10 +30,10 @@ public class Class8850
     private static final Class8810<Class8321> field37220;
     private static boolean field37221;
     
-    public static void method30983(final Class399 class399, final Class1656 class400) {
+    public static void method30983(final Entity class399, final Class1656 class400) {
     }
     
-    public static void method30984(final Class399 class399, final Class1656 class400) {
+    public static void method30984(final Entity class399, final Class1656 class400) {
         synchronized (Class8850.field37207) {
             final Class9591 method29176 = Class8850.field37207.method29176(class399.method1643());
             if (method29176 != null) {
@@ -132,7 +133,7 @@ public class Class8850
     private static void method30989(final Class1656 class1656) {
         final Class1848 method5763 = class1656.method5763();
         if (method5763 != null) {
-            for (final Class399 class1657 : method5763.method6806()) {
+            for (final Entity class1657 : method5763.method6806()) {
                 if (method30995(class1657) <= 0) {
                     final Class9591 method5764 = Class8850.field37207.method29176(class1657.method1643());
                     if (method5764 == null) {
@@ -151,12 +152,12 @@ public class Class8850
         }
     }
     
-    public static int method30990(final Class354 class354, int method30992) {
+    public static int method30990(final BlockPos class354, int method30992) {
         method30992 = method30992(method30993(class354), method30992);
         return method30992;
     }
     
-    public static int method30991(final Class399 class399, int method30992) {
+    public static int method30991(final Entity class399, int method30992) {
         double a = method30993(class399.method1894());
         if (class399 == Class8571.method28894().field4684) {
             a = Math.max(a, method30995(class399));
@@ -176,7 +177,7 @@ public class Class8850
         return n2;
     }
     
-    public static double method30993(final Class354 class354) {
+    public static double method30993(final BlockPos class354) {
         double n = 0.0;
         synchronized (Class8850.field37207) {
             final List<Class9591> method29179 = Class8850.field37207.method29179();
@@ -187,9 +188,9 @@ public class Class8850
                     final double method29181 = class355.method35967();
                     final double method29182 = class355.method35968();
                     final double method29183 = class355.method35969();
-                    final double n2 = class354.method1074() - method29181;
-                    final double n3 = class354.method1075() - method29182;
-                    final double n4 = class354.method1076() - method29183;
+                    final double n2 = class354.getX() - method29181;
+                    final double n3 = class354.getY() - method29182;
+                    final double n4 = class354.getZ() - method29183;
                     final double a = n2 * n2 + n3 * n3 + n4 * n4;
                     if (a <= 56.25) {
                         final double n5 = (1.0 - Math.sqrt(a) / 7.5) * method29180;
@@ -241,7 +242,7 @@ public class Class8850
         return Class7521.field29417.method11781(Class7521.field29417.method11878()) / 2;
     }
     
-    public static int method30995(final Class399 class399) {
+    public static int method30995(final Entity class399) {
         if (class399 == Class8571.method28894().method5303() && !Class8571.method29004()) {
             return 0;
         }

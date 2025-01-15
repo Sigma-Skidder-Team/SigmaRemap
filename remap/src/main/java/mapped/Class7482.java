@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7482
 {
     private static String[] field28902;
@@ -273,11 +275,11 @@ public class Class7482
             n3 = n2;
         }
         else {
-            n3 += ((Class9546.method35668(n2 - n3) <= 0.0f) ? (-n4) : n4);
+            n3 += ((MathHelper.method35668(n2 - n3) <= 0.0f) ? (-n4) : n4);
         }
         final float n5 = (n3 - 90.0f) * 0.017453292f;
-        class5717.method16973(-Class9546.method35638(n5) * n);
-        class5717.method16977(Class9546.method35639(n5) * n);
+        class5717.method16973(-MathHelper.sin(n5) * n);
+        class5717.method16977(MathHelper.cos(n5) * n);
         Class6430.method19154(class5717.method16972());
         Class6430.method19156(class5717.method16976());
         return n3;
@@ -288,11 +290,11 @@ public class Class7482
             n3 = n2;
         }
         else {
-            n3 += ((Class9546.method35668(n2 - n3) <= 0.0f) ? (-n4) : n4);
+            n3 += ((MathHelper.method35668(n2 - n3) <= 0.0f) ? (-n4) : n4);
         }
         final float n5 = (n3 - 90.0f) * 0.017453292f;
-        Class6430.method19154(-Class9546.method35638(n5) * n);
-        Class6430.method19156(Class9546.method35639(n5) * n);
+        Class6430.method19154(-MathHelper.sin(n5) * n);
+        Class6430.method19156(MathHelper.cos(n5) * n);
         return n3;
     }
     

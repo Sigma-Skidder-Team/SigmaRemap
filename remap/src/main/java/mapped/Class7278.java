@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.nio.ByteBuffer;
@@ -44,8 +45,8 @@ public class Class7278
         }
         ALC10.alcMakeContextCurrent(this.field28187 = ALC10.alcCreateContext(this.field28186, (IntBuffer)null));
         final int method22309 = this.method22309();
-        final int method22310 = Class9546.method35651((int)Class9546.method35640((float)method22309), 2, 8);
-        this.field28189 = new Class3414(Class9546.method35651(method22309 - method22310, 8, 255));
+        final int method22310 = MathHelper.method35651((int) MathHelper.method35640((float)method22309), 2, 8);
+        this.field28189 = new Class3414(MathHelper.method35651(method22309 - method22310, 8, 255));
         this.field28190 = new Class3414(method22310);
         final ALCapabilities capabilities2 = AL.createCapabilities(capabilities);
         Class8109.method26650("Initialization");

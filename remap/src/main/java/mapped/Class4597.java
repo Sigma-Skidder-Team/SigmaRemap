@@ -7,6 +7,8 @@ package mapped;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
+
 import java.util.function.Function;
 
 public class Class4597 extends Class4592<Class5128>
@@ -15,15 +17,15 @@ public class Class4597 extends Class4592<Class5128>
         super(function);
     }
     
-    public boolean method13641(final Class1875 class1875, final Random random, final Class354 class1876, final Set<Class354> set, final Set<Class354> set2, final Class6997 class1877, final Class5128 class1878) {
+    public boolean method13641(final Class1875 class1875, final Random random, final BlockPos class1876, final Set<BlockPos> set, final Set<BlockPos> set2, final Class6997 class1877, final Class5128 class1878) {
         final int n = random.nextInt(3) + random.nextInt(2) + class1878.field22082;
-        final int method1074 = class1876.method1074();
-        final int method1075 = class1876.method1075();
-        final int method1076 = class1876.method1076();
+        final int method1074 = class1876.getX();
+        final int method1075 = class1876.getY();
+        final int method1076 = class1876.getZ();
         if (method1075 < 1 || method1075 + n + 1 >= 256) {
             return false;
         }
-        final Class354 method1077 = class1876.method1139();
+        final BlockPos method1077 = class1876.method1139();
         if (!Class4592.method13614(class1875, method1077)) {
             return false;
         }
@@ -32,7 +34,7 @@ public class Class4597 extends Class4592<Class5128>
             this.method13617(class1875, method1077.method1147());
             this.method13617(class1875, method1077.method1143());
             this.method13617(class1875, method1077.method1143().method1147());
-            final Class179 method1078 = Class98.field268.method576(random);
+            final Direction method1078 = Plane.HORIZONTAL.method576(random);
             final int n2 = n - random.nextInt(4);
             int n3 = 2 - random.nextInt(3);
             int n4 = method1074;
@@ -41,12 +43,12 @@ public class Class4597 extends Class4592<Class5128>
             for (int i = 0; i < n; ++i) {
                 if (i >= n2) {
                     if (n3 > 0) {
-                        n4 += method1078.method785();
-                        n5 += method1078.method787();
+                        n4 += method1078.getXOffset();
+                        n5 += method1078.getZOffset();
                         --n3;
                     }
                 }
-                final Class354 class1879 = new Class354(n4, method1075 + i, n5);
+                final BlockPos class1879 = new BlockPos(n4, method1075 + i, n5);
                 if (Class4592.method13613(class1875, class1879)) {
                     this.method13618(class1875, random, class1879, set, class1877, class1878);
                     this.method13618(class1875, random, class1879.method1147(), set, class1877, class1878);
@@ -57,26 +59,26 @@ public class Class4597 extends Class4592<Class5128>
             for (int j = -2; j <= 0; ++j) {
                 for (int k = -2; k <= 0; ++k) {
                     final int n7 = -1;
-                    this.method13619(class1875, random, new Class354(n4 + j, n6 + n7, n5 + k), set2, class1877, class1878);
-                    this.method13619(class1875, random, new Class354(1 + n4 - j, n6 + n7, n5 + k), set2, class1877, class1878);
-                    this.method13619(class1875, random, new Class354(n4 + j, n6 + n7, 1 + n5 - k), set2, class1877, class1878);
-                    this.method13619(class1875, random, new Class354(1 + n4 - j, n6 + n7, 1 + n5 - k), set2, class1877, class1878);
+                    this.method13619(class1875, random, new BlockPos(n4 + j, n6 + n7, n5 + k), set2, class1877, class1878);
+                    this.method13619(class1875, random, new BlockPos(1 + n4 - j, n6 + n7, n5 + k), set2, class1877, class1878);
+                    this.method13619(class1875, random, new BlockPos(n4 + j, n6 + n7, 1 + n5 - k), set2, class1877, class1878);
+                    this.method13619(class1875, random, new BlockPos(1 + n4 - j, n6 + n7, 1 + n5 - k), set2, class1877, class1878);
                     if (j > -2 || k > -1) {
                         if (j != -1 || k != -2) {
                             final int n8 = 1;
-                            this.method13619(class1875, random, new Class354(n4 + j, n6 + n8, n5 + k), set2, class1877, class1878);
-                            this.method13619(class1875, random, new Class354(1 + n4 - j, n6 + n8, n5 + k), set2, class1877, class1878);
-                            this.method13619(class1875, random, new Class354(n4 + j, n6 + n8, 1 + n5 - k), set2, class1877, class1878);
-                            this.method13619(class1875, random, new Class354(1 + n4 - j, n6 + n8, 1 + n5 - k), set2, class1877, class1878);
+                            this.method13619(class1875, random, new BlockPos(n4 + j, n6 + n8, n5 + k), set2, class1877, class1878);
+                            this.method13619(class1875, random, new BlockPos(1 + n4 - j, n6 + n8, n5 + k), set2, class1877, class1878);
+                            this.method13619(class1875, random, new BlockPos(n4 + j, n6 + n8, 1 + n5 - k), set2, class1877, class1878);
+                            this.method13619(class1875, random, new BlockPos(1 + n4 - j, n6 + n8, 1 + n5 - k), set2, class1877, class1878);
                         }
                     }
                 }
             }
             if (random.nextBoolean()) {
-                this.method13619(class1875, random, new Class354(n4, n6 + 2, n5), set2, class1877, class1878);
-                this.method13619(class1875, random, new Class354(n4 + 1, n6 + 2, n5), set2, class1877, class1878);
-                this.method13619(class1875, random, new Class354(n4 + 1, n6 + 2, n5 + 1), set2, class1877, class1878);
-                this.method13619(class1875, random, new Class354(n4, n6 + 2, n5 + 1), set2, class1877, class1878);
+                this.method13619(class1875, random, new BlockPos(n4, n6 + 2, n5), set2, class1877, class1878);
+                this.method13619(class1875, random, new BlockPos(n4 + 1, n6 + 2, n5), set2, class1877, class1878);
+                this.method13619(class1875, random, new BlockPos(n4 + 1, n6 + 2, n5 + 1), set2, class1877, class1878);
+                this.method13619(class1875, random, new BlockPos(n4, n6 + 2, n5 + 1), set2, class1877, class1878);
             }
             for (int l = -3; l <= 4; ++l) {
                 for (int a = -3; a <= 4; ++a) {
@@ -85,7 +87,7 @@ public class Class4597 extends Class4592<Class5128>
                             if (l != 4 || a != -3) {
                                 if (l != 4 || a != 4) {
                                     if (Math.abs(l) < 3 || Math.abs(a) < 3) {
-                                        this.method13619(class1875, random, new Class354(n4 + l, n6, n5 + a), set2, class1877, class1878);
+                                        this.method13619(class1875, random, new BlockPos(n4 + l, n6, n5 + a), set2, class1877, class1878);
                                     }
                                 }
                             }
@@ -106,17 +108,17 @@ public class Class4597 extends Class4592<Class5128>
                     }
                     if (random.nextInt(3) <= 0) {
                         for (int n11 = random.nextInt(3) + 2, n12 = 0; n12 < n11; ++n12) {
-                            this.method13618(class1875, random, new Class354(method1074 + n9, n6 - n12 - 1, method1076 + n10), set, class1877, class1878);
+                            this.method13618(class1875, random, new BlockPos(method1074 + n9, n6 - n12 - 1, method1076 + n10), set, class1877, class1878);
                         }
                         for (int n13 = -1; n13 <= 1; ++n13) {
                             for (int n14 = -1; n14 <= 1; ++n14) {
-                                this.method13619(class1875, random, new Class354(n4 + n9 + n13, n6, n5 + n10 + n14), set2, class1877, class1878);
+                                this.method13619(class1875, random, new BlockPos(n4 + n9 + n13, n6, n5 + n10 + n14), set2, class1877, class1878);
                             }
                         }
                         for (int a2 = -2; a2 <= 2; ++a2) {
                             for (int a3 = -2; a3 <= 2; ++a3) {
                                 if (Math.abs(a2) != 2 || Math.abs(a3) != 2) {
-                                    this.method13619(class1875, random, new Class354(n4 + n9 + a2, n6 - 1, n5 + n10 + a3), set2, class1877, class1878);
+                                    this.method13619(class1875, random, new BlockPos(n4 + n9 + a2, n6 - 1, n5 + n10 + a3), set2, class1877, class1878);
                                 }
                             }
                         }
@@ -128,10 +130,10 @@ public class Class4597 extends Class4592<Class5128>
         return false;
     }
     
-    private boolean method13644(final Class1877 class1877, final Class354 class1878, final int n) {
-        final int method1074 = class1878.method1074();
-        final int method1075 = class1878.method1075();
-        final int method1076 = class1878.method1076();
+    private boolean method13644(final Class1877 class1877, final BlockPos class1878, final int n) {
+        final int method1074 = class1878.getX();
+        final int method1075 = class1878.getY();
+        final int method1076 = class1878.getZ();
         final Class385 class1879 = new Class385();
         for (int i = 0; i <= n + 1; ++i) {
             int n2 = 1;

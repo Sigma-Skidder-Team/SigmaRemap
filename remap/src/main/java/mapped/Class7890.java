@@ -4,10 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Calendar;
 import java.io.InputStream;
 import java.io.FileNotFoundException;
-import java.util.Properties;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class Class7890
             return method25543(Class2005.field11267, Class7890.field32394.field4684.method1894(), field4701, class1932, field4700);
         }
         if (!(field4700 instanceof Class518)) {
-            final Class354 method27342 = Class7890.field32395.method27342();
+            final BlockPos method27342 = Class7890.field32395.method27342();
             if (method27342 != null) {
                 if (field4700 instanceof Class515) {
                     return method25543(Class2005.field11255, method27342, field4701, class1932, field4700);
@@ -74,7 +75,7 @@ public class Class7890
                     return method25543(Class2005.field11266, method27342, field4701, class1932, field4700);
                 }
             }
-            final Class399 method27343 = Class7890.field32395.method27343();
+            final Entity method27343 = Class7890.field32395.method27343();
             if (method27343 != null) {
                 if (field4700 instanceof Class742) {
                     return method25544(Class2005.field11264, method27343, field4701, class1932);
@@ -88,7 +89,7 @@ public class Class7890
         return method25543(Class2005.field11268, Class7890.field32394.field4684.method1894(), field4701, class1932, field4700);
     }
     
-    private static Class1932 method25543(final Class2005 class2005, final Class354 class2006, final Class1852 class2007, final Class1932 class2008, final Class527 class2009) {
+    private static Class1932 method25543(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final Class1932 class2008, final Class527 class2009) {
         final Class4995[] array = Class7890.field32396[class2005.ordinal()];
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {
@@ -102,7 +103,7 @@ public class Class7890
         return class2008;
     }
     
-    private static Class1932 method25544(final Class2005 class2005, final Class399 class2006, final Class1852 class2007, final Class1932 class2008) {
+    private static Class1932 method25544(final Class2005 class2005, final Entity class2006, final Class1852 class2007, final Class1932 class2008) {
         final Class4995[] array = Class7890.field32396[class2005.ordinal()];
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {

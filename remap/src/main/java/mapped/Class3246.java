@@ -62,9 +62,9 @@ public class Class3246 extends Class3167
                 if (Class3246.field15514.field4700 == null) {
                     if (this.field15740.method23935() > 1000L) {
                         final Class7005 class5745 = (Class7005)Class4609.method13700(this.field15741.method2193());
-                        if (class5745.method21447().method1074() == this.field15741.method2193().method1074()) {
-                            if (class5745.method21447().method1075() == this.field15741.method2193().method1075()) {
-                                if (class5745.method21447().method1076() == this.field15741.method2193().method1076()) {
+                        if (class5745.method21447().getX() == this.field15741.method2193().getX()) {
+                            if (class5745.method21447().getY() == this.field15741.method2193().getY()) {
+                                if (class5745.method21447().getZ() == this.field15741.method2193().getZ()) {
                                     this.field15737 = true;
                                     Class3246.field15514.method5269().method17292(new Class4329(Class316.field1877, class5745));
                                     Class3246.field15514.method5269().method17292(new Class4380(Class316.field1877));
@@ -79,9 +79,9 @@ public class Class3246 extends Class3167
             for (final Map.Entry<Class475, V> entry : this.field15738.entrySet()) {
                 final Class475 field15741 = entry.getKey();
                 final boolean booleanValue = (boolean)entry.getValue();
-                final float n2 = (float)field15741.method2193().method1074();
-                final float n3 = field15741.method2193().method1075() + 0.1f;
-                final float n4 = (float)field15741.method2193().method1076();
+                final float n2 = (float)field15741.method2193().getX();
+                final float n3 = field15741.method2193().getY() + 0.1f;
+                final float n4 = (float)field15741.method2193().getZ();
                 if (this.field15737) {
                     continue;
                 }
@@ -101,13 +101,13 @@ public class Class3246 extends Class3167
                     continue;
                 }
                 final Class7005 class5746 = (Class7005)Class4609.method13700(field15741.method2193());
-                if (class5746.method21447().method1074() != field15741.method2193().method1074()) {
+                if (class5746.method21447().getX() != field15741.method2193().getX()) {
                     continue;
                 }
-                if (class5746.method21447().method1075() != field15741.method2193().method1075()) {
+                if (class5746.method21447().getY() != field15741.method2193().getY()) {
                     continue;
                 }
-                if (class5746.method21447().method1076() != field15741.method2193().method1076()) {
+                if (class5746.method21447().getZ() != field15741.method2193().getZ()) {
                     continue;
                 }
                 this.field15741 = field15741;
@@ -218,7 +218,7 @@ public class Class3246 extends Class3167
     
     private boolean method10254(final Class726 class726) {
         final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList("menu", "selector", "game", "gui", "server", "inventory", "play", "teleporter", "shop", "melee", "armor", "block", "castle", "mini", "warp", "teleport", "user", "team", "tool", "sure", "trade", "cancel", "accept", "soul", "book", "recipe", "profile", "tele", "port", "map", "kit", "select", "lobby", "vault", "lock", "anticheat", "travel", "settings", "user", "preference", "compass", "cake", "wars", "buy", "upgrade", "ranged", "potions", "utility", "choose", "modalidades"));
-        final List<Class354> method13691 = Class4609.method13691(8.0f);
+        final List<BlockPos> method13691 = Class4609.method13691(8.0f);
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             if (!class726.method3027().toLowerCase().contains((CharSequence)iterator.next())) {
@@ -226,7 +226,7 @@ public class Class3246 extends Class3167
             }
             return false;
         }
-        for (final Class354 class727 : method13691) {
+        for (final BlockPos class727 : method13691) {
             if (!(Class4609.method13666(class727) instanceof Class3865) && !(Class4609.method13666(class727) instanceof Class3973)) {
                 continue;
             }

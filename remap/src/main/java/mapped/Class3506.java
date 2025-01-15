@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class3506 extends Class3446
@@ -39,7 +41,7 @@ public class Class3506 extends Class3446
         if (n2 + this.field16485.method1941() > this.field16485.field2391.method6743() - 1) {
             n2 = 0;
         }
-        Class793.method4476(this.field16485, new Class354(n + this.field16485.method1938(), n2 + this.field16485.method1941(), n3 + this.field16485.method1945()));
+        Class793.method4476(this.field16485, new BlockPos(n + this.field16485.method1938(), n2 + this.field16485.method1941(), n3 + this.field16485.method1945()));
         Class793.method4477(this.field16485, true);
         this.field16487 = false;
     }
@@ -53,8 +55,8 @@ public class Class3506 extends Class3446
                 class5488 = Class7775.method24905(this.field16485, 8, 7, class5487);
             }
             if (class5488 != null) {
-                final int method35644 = Class9546.method35644(class5488.field22770);
-                final int method35645 = Class9546.method35644(class5488.field22772);
+                final int method35644 = MathHelper.floor(class5488.field22770);
+                final int method35645 = MathHelper.floor(class5488.field22772);
                 if (!this.field16485.field2391.method6973(method35644 - 34, 0, method35645 - 34, method35644 + 34, 0, method35645 + 34)) {
                     class5488 = null;
                 }

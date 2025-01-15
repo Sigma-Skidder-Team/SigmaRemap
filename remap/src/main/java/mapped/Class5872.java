@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5872<T extends Class767> extends Class5846<T>
 {
@@ -45,9 +46,9 @@ public class Class5872<T extends Class767> extends Class5846<T>
     }
     
     public void method17612(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
-        final float method35639 = Class9546.method35639(n3 * 0.1f);
+        final float method35639 = MathHelper.cos(n3 * 0.1f);
         this.field24064[1].field25183 = (0.065f + 0.05f * method35639) * 3.1415927f;
-        this.field24064[2].method18642(-2.0f, 6.9f + Class9546.method35639(this.field24064[1].field25183) * 10.0f, -0.5f + Class9546.method35638(this.field24064[1].field25183) * 10.0f);
+        this.field24064[2].method18642(-2.0f, 6.9f + MathHelper.cos(this.field24064[1].field25183) * 10.0f, -0.5f + MathHelper.sin(this.field24064[1].field25183) * 10.0f);
         this.field24064[2].field25183 = (0.265f + 0.1f * method35639) * 3.1415927f;
         this.field24065[0].field25184 = n4 * 0.017453292f;
         this.field24065[0].field25183 = n5 * 0.017453292f;

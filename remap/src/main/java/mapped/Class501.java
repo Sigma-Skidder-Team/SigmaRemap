@@ -8,6 +8,8 @@ import java.util.Random;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Objects;
@@ -19,8 +21,8 @@ public class Class501 extends Class436
     private Class1932 field2864;
     private String field2865;
     private String field2866;
-    private Class354 field2867;
-    private Class354 field2868;
+    private BlockPos field2867;
+    private BlockPos field2868;
     private Class2181 field2869;
     private Class2052 field2870;
     private Class102 field2871;
@@ -35,8 +37,8 @@ public class Class501 extends Class436
         super(Class5412.field22560);
         this.field2865 = "";
         this.field2866 = "";
-        this.field2867 = new Class354(0, 1, 0);
-        this.field2868 = Class354.field2173;
+        this.field2867 = new BlockPos(0, 1, 0);
+        this.field2868 = BlockPos.ZERO;
         this.field2869 = Class2181.field12917;
         this.field2870 = Class2052.field11707;
         this.field2871 = Class102.field308;
@@ -51,12 +53,12 @@ public class Class501 extends Class436
         class51.method306("name", this.method2554());
         class51.method306("author", this.field2865);
         class51.method306("metadata", this.field2866);
-        class51.method298("posX", this.field2867.method1074());
-        class51.method298("posY", this.field2867.method1075());
-        class51.method298("posZ", this.field2867.method1076());
-        class51.method298("sizeX", this.field2868.method1074());
-        class51.method298("sizeY", this.field2868.method1075());
-        class51.method298("sizeZ", this.field2868.method1076());
+        class51.method298("posX", this.field2867.getX());
+        class51.method298("posY", this.field2867.getY());
+        class51.method298("posZ", this.field2867.getZ());
+        class51.method298("sizeX", this.field2868.getX());
+        class51.method298("sizeY", this.field2868.getY());
+        class51.method298("sizeZ", this.field2868.getZ());
         class51.method306("rotation", this.field2870.toString());
         class51.method306("mirror", this.field2869.toString());
         class51.method306("mode", this.field2871.toString());
@@ -75,8 +77,8 @@ public class Class501 extends Class436
         this.method2557(class51.method323("name"));
         this.field2865 = class51.method323("author");
         this.field2866 = class51.method323("metadata");
-        this.field2867 = new Class354(Class9546.method35651(class51.method319("posX"), -32, 32), Class9546.method35651(class51.method319("posY"), -32, 32), Class9546.method35651(class51.method319("posZ"), -32, 32));
-        this.field2868 = new Class354(Class9546.method35651(class51.method319("sizeX"), 0, 32), Class9546.method35651(class51.method319("sizeY"), 0, 32), Class9546.method35651(class51.method319("sizeZ"), 0, 32));
+        this.field2867 = new BlockPos(MathHelper.method35651(class51.method319("posX"), -32, 32), MathHelper.method35651(class51.method319("posY"), -32, 32), MathHelper.method35651(class51.method319("posZ"), -32, 32));
+        this.field2868 = new BlockPos(MathHelper.method35651(class51.method319("sizeX"), 0, 32), MathHelper.method35651(class51.method319("sizeY"), 0, 32), MathHelper.method35651(class51.method319("sizeZ"), 0, 32));
         try {
             this.field2870 = Class2052.valueOf(class51.method323("rotation"));
         }
@@ -111,7 +113,7 @@ public class Class501 extends Class436
     
     private void method2552() {
         if (this.field2656 != null) {
-            final Class354 method2193 = this.method2193();
+            final BlockPos method2193 = this.method2193();
             final Class7096 method2194 = this.field2656.method6701(method2193);
             if (method2194.method21696() == Class7521.field29820) {
                 this.field2656.method6688(method2193, ((Class7097<O, Class7096>)method2194).method21773(Class3941.field17831, this.field2871), 2);
@@ -164,19 +166,19 @@ public class Class501 extends Class436
         this.field2865 = class511.method1841().getString();
     }
     
-    public Class354 method2560() {
+    public BlockPos method2560() {
         return this.field2867;
     }
     
-    public void method2561(final Class354 field2867) {
+    public void method2561(final BlockPos field2867) {
         this.field2867 = field2867;
     }
     
-    public Class354 method2562() {
+    public BlockPos method2562() {
         return this.field2868;
     }
     
-    public void method2563(final Class354 field2868) {
+    public void method2563(final BlockPos field2868) {
         this.field2868 = field2868;
     }
     
@@ -265,15 +267,15 @@ public class Class501 extends Class436
         if (this.field2871 != Class102.field305) {
             return false;
         }
-        final Class354 method2193 = this.method2193();
-        final List<Class501> method2194 = this.method2580(this.method2581(new Class354(method2193.method1074() - 80, 0, method2193.method1076() - 80), new Class354(method2193.method1074() + 80, 255, method2193.method1076() + 80)));
+        final BlockPos method2193 = this.method2193();
+        final List<Class501> method2194 = this.method2580(this.method2581(new BlockPos(method2193.getX() - 80, 0, method2193.getZ() - 80), new BlockPos(method2193.getX() + 80, 255, method2193.getZ() + 80)));
         if (method2194.size() >= 1) {
             final Class6997 method2195 = this.method2582(method2193, method2194);
             if (method2195.field27296 - method2195.field27293 > 1) {
                 if (method2195.field27297 - method2195.field27294 > 1) {
                     if (method2195.field27298 - method2195.field27295 > 1) {
-                        this.field2867 = new Class354(method2195.field27293 - method2193.method1074() + 1, method2195.field27294 - method2193.method1075() + 1, method2195.field27295 - method2193.method1076() + 1);
-                        this.field2868 = new Class354(method2195.field27296 - method2195.field27293 - 1, method2195.field27297 - method2195.field27294 - 1, method2195.field27298 - method2195.field27295 - 1);
+                        this.field2867 = new BlockPos(method2195.field27293 - method2193.getX() + 1, method2195.field27294 - method2193.getY() + 1, method2195.field27295 - method2193.getZ() + 1);
+                        this.field2868 = new BlockPos(method2195.field27296 - method2195.field27293 - 1, method2195.field27297 - method2195.field27294 - 1, method2195.field27298 - method2195.field27295 - 1);
                         this.method2161();
                         final Class7096 method2196 = this.field2656.method6701(method2193);
                         this.field2656.method6693(method2193, method2196, method2196, 3);
@@ -290,9 +292,9 @@ public class Class501 extends Class436
         return list.stream().filter(class501 -> class501.field2871 == Class102.field307 && Objects.equals(this.field2864, class501.field2864)).collect((Collector<? super Object, ?, List<Class501>>)Collectors.toList());
     }
     
-    private List<Class501> method2581(final Class354 class354, final Class354 class355) {
+    private List<Class501> method2581(final BlockPos class354, final BlockPos class355) {
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class354 class356 : Class354.method1154(class354, class355)) {
+        for (final BlockPos class356 : BlockPos.method1154(class354, class355)) {
             if (this.field2656.method6701(class356).method21696() != Class7521.field29820) {
                 continue;
             }
@@ -308,42 +310,42 @@ public class Class501 extends Class436
         return arrayList;
     }
     
-    private Class6997 method2582(final Class354 class354, final List<Class501> list) {
+    private Class6997 method2582(final BlockPos class354, final List<Class501> list) {
         Class6997 class355;
         if (list.size() <= 1) {
             class355 = new Class6997(class354, class354);
         }
         else {
-            final Class354 method2193 = list.get(0).method2193();
+            final BlockPos method2193 = list.get(0).method2193();
             class355 = new Class6997(method2193, method2193);
         }
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
-            final Class354 method2194 = ((Class501)iterator.next()).method2193();
-            if (method2194.method1074() >= class355.field27293) {
-                if (method2194.method1074() > class355.field27296) {
-                    class355.field27296 = method2194.method1074();
+            final BlockPos method2194 = ((Class501)iterator.next()).method2193();
+            if (method2194.getX() >= class355.field27293) {
+                if (method2194.getX() > class355.field27296) {
+                    class355.field27296 = method2194.getX();
                 }
             }
             else {
-                class355.field27293 = method2194.method1074();
+                class355.field27293 = method2194.getX();
             }
-            if (method2194.method1075() >= class355.field27294) {
-                if (method2194.method1075() > class355.field27297) {
-                    class355.field27297 = method2194.method1075();
+            if (method2194.getY() >= class355.field27294) {
+                if (method2194.getY() > class355.field27297) {
+                    class355.field27297 = method2194.getY();
                 }
             }
             else {
-                class355.field27294 = method2194.method1075();
+                class355.field27294 = method2194.getY();
             }
-            if (method2194.method1076() >= class355.field27295) {
-                if (method2194.method1076() <= class355.field27298) {
+            if (method2194.getZ() >= class355.field27295) {
+                if (method2194.getZ() <= class355.field27298) {
                     continue;
                 }
-                class355.field27298 = method2194.method1076();
+                class355.field27298 = method2194.getZ();
             }
             else {
-                class355.field27295 = method2194.method1076();
+                class355.field27295 = method2194.getZ();
             }
         }
         return class355;
@@ -355,7 +357,7 @@ public class Class501 extends Class436
     
     public boolean method2584(final boolean b) {
         if (this.field2871 == Class102.field305 && !this.field2656.field10067 && this.field2864 != null) {
-            final Class354 method1135 = this.method2193().method1135(this.field2867);
+            final BlockPos method1135 = this.method2193().method1135(this.field2867);
             final Class1795 method1136 = ((Class1849)this.field2656).method6910();
             Class6585 method1137;
             try {
@@ -403,11 +405,11 @@ public class Class501 extends Class436
     }
     
     public boolean method2588(final boolean b, final Class6585 class6585) {
-        final Class354 method2193 = this.method2193();
+        final BlockPos method2193 = this.method2193();
         if (!Class8272.method27500(class6585.method19947())) {
             this.field2865 = class6585.method19947();
         }
-        final Class354 method2194 = class6585.method19945();
+        final BlockPos method2194 = class6585.method19945();
         final boolean equals = this.field2868.equals(method2194);
         if (!equals) {
             this.field2868 = method2194;
@@ -420,7 +422,7 @@ public class Class501 extends Class436
         }
         final Class9092 method2196 = new Class9092().method32844(this.field2869).method32845(this.field2870).method32847(this.field2872).method32848(null);
         if (this.field2876 < 1.0f) {
-            method2196.method32852().method32853(new Class4108(Class9546.method35653(this.field2876, 0.0f, 1.0f))).method32850(method2586(this.field2877));
+            method2196.method32852().method32853(new Class4108(MathHelper.method35653(this.field2876, 0.0f, 1.0f))).method32850(method2586(this.field2877));
         }
         class6585.method19954(this.field2656, method2193.method1135(this.field2867), method2196);
         return true;

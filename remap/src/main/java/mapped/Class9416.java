@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Collection;
+import net.minecraft.util.math.Vec3i;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class Class9416
     public int field40400;
     public Class7799 field40401;
     private static Class869 field40402;
-    public Class352 field40403;
+    public Vec3i field40403;
     public Class8797 field40404;
     public Class8733 field40405;
     public Class6973 field40406;
@@ -295,18 +296,18 @@ public class Class9416
         else {
             while (iterator.hasNext()) {
                 this.field40403 = iterator.next().field13727;
-                final Class8797 method30721 = this.method35016(1.0f, this.field40403.method1075());
+                final Class8797 method30721 = this.method35016(1.0f, this.field40403.getY());
                 if (!method30721.method30693()) {
                     continue;
                 }
-                list.add(new Class8733(method30721, Math.abs(this.field40403.method1075())));
+                list.add(new Class8733(method30721, Math.abs(this.field40403.getY())));
             }
         }
         return list;
     }
     
     private Class8797 method35016(final float n, final int n2) {
-        return this.field40404.method30690(this.field40403.method1074() * n, (float)n2, this.field40403.method1076() * n);
+        return this.field40404.method30690(this.field40403.getX() * n, (float)n2, this.field40403.getZ() * n);
     }
     
     public List<Class8733> method35017(final Class6973 field40406) throws Exception {

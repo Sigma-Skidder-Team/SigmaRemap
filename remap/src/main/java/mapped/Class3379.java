@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.Comparator;
 import java.util.Collections;
 import java.util.List;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -32,7 +34,7 @@ public class Class3379 extends Class3167
     private float field16096;
     private float field16097;
     public Class9572 field16098;
-    private Class399 field16099;
+    private Entity field16099;
     
     public Class3379() {
         super(Class8013.field32988, "Test", "A mod for testing things");
@@ -92,10 +94,10 @@ public class Class3379 extends Class3167
     @Class6753
     public void method10779(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            final Class399 method10786 = this.method10786(3.3f);
+            final Entity method10786 = this.method10786(3.3f);
             if (this.method10786(8.0f) != null) {
                 if (this.field16087 < 1.0) {
-                    this.field16087 += 20.0f / Class9546.method35658(new Random(), 4, 8);
+                    this.field16087 += 20.0f / MathHelper.method35658(new Random(), 4, 8);
                 }
                 ++this.field16085;
             }
@@ -191,7 +193,7 @@ public class Class3379 extends Class3167
                 }
             }
             else {
-                final Class399 method16991 = ((Class4381)method16990).method13170(Class3379.field15514.field4683);
+                final Entity method16991 = ((Class4381)method16990).method13170(Class3379.field15514.field4683);
                 final String str = (method16991 != null) ? method16991.method1841().method8461() : "null";
                 if (this.field16090) {
                     class5721.method16961(true);
@@ -228,11 +230,11 @@ public class Class3379 extends Class3167
         }
     }
     
-    public List<Class399> method10785(final float n) {
-        final List<Class399> method19138 = Class6430.method19138();
-        final Iterator<Class399> iterator = method19138.iterator();
+    public List<Entity> method10785(final float n) {
+        final List<Entity> method19138 = Class6430.method19138();
+        final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
-            final Class399 class399 = iterator.next();
+            final Entity class399 = iterator.next();
             if (class399 != Class3379.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(class399)) {
                     if (class399 instanceof Class511) {
@@ -291,12 +293,12 @@ public class Class3379 extends Class3167
         return method19138;
     }
     
-    public Class399 method10786(final float n) {
-        final List<Class399> method19138 = Class6430.method19138();
-        Class399 class399 = null;
-        final Iterator<Class399> iterator = method19138.iterator();
+    public Entity method10786(final float n) {
+        final List<Entity> method19138 = Class6430.method19138();
+        Entity class399 = null;
+        final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
-            final Class399 class400 = iterator.next();
+            final Entity class400 = iterator.next();
             if (class400 != Class3379.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(class400)) {
                     if (class400 instanceof Class511) {
@@ -351,10 +353,10 @@ public class Class3379 extends Class3167
         return class399;
     }
     
-    public static float[] method10787(final Class399 class399) {
+    public static float[] method10787(final Entity class399) {
         final double x = class399.field2395 - Class3379.field15514.field4684.field2395;
         final double y = class399.field2397 - Class3379.field15514.field4684.field2397;
-        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -(float)(-(Math.atan2(Class3379.field15514.field4684.field2396 + Class3379.field15514.field4684.method1892() - (class399.field2396 + class399.method1892()), Class9546.method35641(x * x + y * y)) * 180.0 / 3.141592653589793)) };
+        return new float[] { (float)Math.toDegrees(Math.atan2(y, x)) - 90.0f, -(float)(-(Math.atan2(Class3379.field15514.field4684.field2396 + Class3379.field15514.field4684.method1892() - (class399.field2396 + class399.method1892()), MathHelper.method35641(x * x + y * y)) * 180.0 / 3.141592653589793)) };
     }
     
     public static float method10788(final float n, final double n2, final double n3) {
@@ -374,16 +376,16 @@ public class Class3379 extends Class3167
         else if (n5 != 0.0) {
             degrees = Math.toDegrees(-Math.atan(n4 / n5));
         }
-        return Class9546.method35668(-(n - (float)degrees));
+        return MathHelper.method35668(-(n - (float)degrees));
     }
     
     private double method10789(final double n, final double n2) {
         return n + Math.random() * (n2 - n);
     }
     
-    public static float method10790(final float n, final Class399 class399, final double n2) {
+    public static float method10790(final float n, final Entity class399, final double n2) {
         final double n3 = class399.field2395 - Class3379.field15514.field4684.field2395;
         final double n4 = class399.field2397 - Class3379.field15514.field4684.field2397;
-        return -Class9546.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class3379.field15514.field4684.field2396) / Class9546.method35641(n3 * n3 + n4 * n4))))) - 2.5f;
+        return -MathHelper.method35668(n - (float)(-Math.toDegrees(Math.atan((n2 - 2.2 + class399.method1892() - Class3379.field15514.field4684.field2396) / MathHelper.method35641(n3 * n3 + n4 * n4))))) - 2.5f;
     }
 }

@@ -9,6 +9,8 @@ import java.util.regex.Matcher;
 import java.util.Collections;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -36,8 +38,8 @@ public class Class683 extends Class565
         this.field3731 = field3732;
         this.field3735 = field3730;
         this.field3732 = field3730.field4643.method6619(field3732.method22527().method8461(), 163);
-        this.field3739 = Class9546.method35642(field3732.method22532() * 28.0f);
-        this.field3740 = Class9546.method35642(field3732.method22533() * 27.0f);
+        this.field3739 = MathHelper.method35642(field3732.method22532() * 28.0f);
+        this.field3740 = MathHelper.method35642(field3732.method22533() * 27.0f);
         final int method31040 = field3731.method31040();
         final int length = String.valueOf(method31040).length();
         int max = 29 + field3730.field4643.method6617(this.field3732) + ((method31040 <= 1) ? 0 : (field3730.field4643.method6617("  ") + field3730.field4643.method6617("0") * length * 2 + field3730.field4643.method6617("/")));
@@ -151,7 +153,7 @@ public class Class683 extends Class565
         final int n6 = (s != null) ? this.field3735.field4643.method6617(s) : 0;
         final boolean b2 = 113 - n2 - this.field3740 - 26 <= 6 + this.field3734.size() * 9;
         final float n7 = (this.field3738 != null) ? this.field3738.method1038() : 0.0f;
-        int method35642 = Class9546.method35642(n7 * this.field3733);
+        int method35642 = MathHelper.method35642(n7 * this.field3733);
         Class1999 class1999;
         Class1999 class2000;
         Class1999 class2001;

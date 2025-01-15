@@ -12,35 +12,37 @@ import java.util.stream.Stream;
 import com.google.common.collect.Lists;
 import java.util.Collection;
 import com.mojang.brigadier.context.CommandContext;
-import java.util.Iterator;
+
 import javax.annotation.Nullable;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.function.BinaryOperator;
 import com.mojang.brigadier.ResultConsumer;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class7492 implements Class7491
 {
     public static final SimpleCommandExceptionType field28926;
     public static final SimpleCommandExceptionType field28927;
     private final Class397 field28928;
-    private final Class5487 field28929;
+    private final Vec3d field28929;
     private final Class1849 field28930;
     private final int field28931;
     private final String field28932;
     private final Class2250 field28933;
     private final Class394 field28934;
     private final boolean field28935;
-    private final Class399 field28936;
+    private final Entity field28936;
     private final ResultConsumer<Class7492> field28937;
     private final Class2042 field28938;
     private final Class9544 field28939;
     
-    public Class7492(final Class397 class397, final Class5487 class398, final Class9544 class399, final Class1849 class400, final int n, final String s, final Class2250 class401, final Class394 class402, final Class399 class403) {
+    public Class7492(final Class397 class397, final Vec3d class398, final Class9544 class399, final Class1849 class400, final int n, final String s, final Class2250 class401, final Class394 class402, final Entity class403) {
         this(class397, class398, class399, class400, n, s, class401, class402, class403, false, (ResultConsumer<Class7492>)((commandContext, b, n) -> {}), Class2042.field11636);
     }
     
-    public Class7492(final Class397 field28928, final Class5487 field28929, final Class9544 field28930, final Class1849 field28931, final int field28932, final String field28933, final Class2250 field28934, final Class394 field28935, final Class399 field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
+    public Class7492(final Class397 field28928, final Vec3d field28929, final Class9544 field28930, final Class1849 field28931, final int field28932, final String field28933, final Class2250 field28934, final Class394 field28935, final Entity field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
         this.field28928 = field28928;
         this.field28929 = field28929;
         this.field28930 = field28931;
@@ -55,11 +57,11 @@ public class Class7492 implements Class7491
         this.field28939 = field28930;
     }
     
-    public Class7492 method23235(final Class399 class399) {
+    public Class7492 method23235(final Entity class399) {
         return (this.field28936 != class399) ? new Class7492(this.field28928, this.field28929, this.field28939, this.field28930, this.field28931, class399.method1841().getString(), class399.method1871(), this.field28934, class399, this.field28935, this.field28937, this.field28938) : this;
     }
     
-    public Class7492 method23236(final Class5487 class5487) {
+    public Class7492 method23236(final Vec3d class5487) {
         return this.field28929.equals(class5487) ? this : new Class7492(this.field28928, class5487, this.field28939, this.field28930, this.field28931, this.field28932, this.field28933, this.field28934, this.field28936, this.field28935, this.field28937, this.field28938);
     }
     
@@ -95,16 +97,16 @@ public class Class7492 implements Class7491
         return (class1849 != this.field28930) ? new Class7492(this.field28928, this.field28929, this.field28939, class1849, this.field28931, this.field28932, this.field28933, this.field28934, this.field28936, this.field28935, this.field28937, this.field28938) : this;
     }
     
-    public Class7492 method23245(final Class399 class399, final Class2042 class400) throws CommandSyntaxException {
+    public Class7492 method23245(final Entity class399, final Class2042 class400) throws CommandSyntaxException {
         return this.method23246(class400.method8122(class399));
     }
     
-    public Class7492 method23246(final Class5487 class5487) throws CommandSyntaxException {
-        final Class5487 method8123 = this.field28938.method8123(this);
+    public Class7492 method23246(final Vec3d class5487) throws CommandSyntaxException {
+        final Vec3d method8123 = this.field28938.method8123(this);
         final double n = class5487.field22770 - method8123.field22770;
         final double n2 = class5487.field22771 - method8123.field22771;
         final double n3 = class5487.field22772 - method8123.field22772;
-        return this.method23237(new Class9544(Class9546.method35668((float)(-(Class9546.method35693(n2, Class9546.method35641(n * n + n3 * n3)) * 57.2957763671875))), Class9546.method35668((float)(Class9546.method35693(n3, n) * 57.2957763671875) - 90.0f)));
+        return this.method23237(new Class9544(MathHelper.method35668((float)(-(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875))), MathHelper.method35668((float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f)));
     }
     
     public Class2250 method23247() {
@@ -120,7 +122,7 @@ public class Class7492 implements Class7491
         return this.field28931 >= n;
     }
     
-    public Class5487 method23249() {
+    public Vec3d method23249() {
         return this.field28929;
     }
     
@@ -129,11 +131,11 @@ public class Class7492 implements Class7491
     }
     
     @Nullable
-    public Class399 method23251() {
+    public Entity method23251() {
         return this.field28936;
     }
     
-    public Class399 method23252() throws CommandSyntaxException {
+    public Entity method23252() throws CommandSyntaxException {
         if (this.field28936 != null) {
             return this.field28936;
         }

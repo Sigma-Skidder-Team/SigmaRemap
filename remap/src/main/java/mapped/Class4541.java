@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.Random;
@@ -21,7 +22,7 @@ public class Class4541 extends Class4535<Class5122>
         super(function);
     }
     
-    public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5122 class1854) {
+    public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
         final int n = random.nextInt(2) + 2;
         final int n2 = -n - 1;
         final int n3 = n + 1;
@@ -32,7 +33,7 @@ public class Class4541 extends Class4535<Class5122>
         for (int i = n2; i <= n3; ++i) {
             for (int j = -1; j <= 4; ++j) {
                 for (int k = n5; k <= n6; ++k) {
-                    final Class354 method1134 = class1853.method1134(i, j, k);
+                    final BlockPos method1134 = class1853.method1134(i, j, k);
                     final boolean method1135 = class1851.method6701(method1134).method21697().method26439();
                     if (j == -1 && !method1135) {
                         return false;
@@ -63,7 +64,7 @@ public class Class4541 extends Class4535<Class5122>
             for (int l = n2; l <= n3; ++l) {
                 for (int n8 = 3; n8 >= -1; --n8) {
                     for (int n9 = n5; n9 <= n6; ++n9) {
-                        final Class354 method1136 = class1853.method1134(l, n8, n9);
+                        final BlockPos method1136 = class1853.method1134(l, n8, n9);
                         if (l != n2) {
                             if (n8 != -1) {
                                 if (n9 != n5) {
@@ -81,7 +82,7 @@ public class Class4541 extends Class4535<Class5122>
                                 }
                             }
                         }
-                        if (method1136.method1075() >= 0 && !class1851.method6701(method1136.method1139()).method21697().method26439()) {
+                        if (method1136.getY() >= 0 && !class1851.method6701(method1136.method1139()).method21697().method26439()) {
                             class1851.method6688(method1136, Class4541.field20028, 2);
                         }
                         else if (class1851.method6701(method1136).method21697().method26439()) {
@@ -99,10 +100,10 @@ public class Class4541 extends Class4535<Class5122>
             }
             for (int n10 = 0; n10 < 2; ++n10) {
                 for (int n11 = 0; n11 < 3; ++n11) {
-                    final Class354 class1855 = new Class354(class1853.method1074() + random.nextInt(n * 2 + 1) - n, class1853.method1075(), class1853.method1076() + random.nextInt(n4 * 2 + 1) - n4);
+                    final BlockPos class1855 = new BlockPos(class1853.getX() + random.nextInt(n * 2 + 1) - n, class1853.getY(), class1853.getZ() + random.nextInt(n4 * 2 + 1) - n4);
                     if (class1851.method6961(class1855)) {
                         int n12 = 0;
-                        final Iterator<Class179> iterator = Class98.field268.iterator();
+                        final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
                         while (iterator.hasNext()) {
                             if (!class1851.method6701(class1855.method1149(iterator.next())).method21697().method26439()) {
                                 continue;
@@ -120,7 +121,7 @@ public class Class4541 extends Class4535<Class5122>
             class1851.method6688(class1853, Class7521.field29290.method11878(), 2);
             final Class436 method1137 = class1851.method6727(class1853);
             if (!(method1137 instanceof Class494)) {
-                Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", (Object)class1853.method1074(), (Object)class1853.method1075(), (Object)class1853.method1076());
+                Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", (Object)class1853.getX(), (Object)class1853.getY(), (Object)class1853.getZ());
             }
             else {
                 ((Class494)method1137).method2509().method13884(this.method13540(random));

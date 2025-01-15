@@ -5,6 +5,8 @@
 package mapped;
 
 import java.awt.Color;
+
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,20 +17,20 @@ import java.util.HashMap;
 
 public class Class3279 extends Class3167
 {
-    private HashMap<Class354, Class6312> field15778;
-    private Class354 field15779;
+    private HashMap<BlockPos, Class6312> field15778;
+    private BlockPos field15779;
     private static Class1780 field15780;
     private static HashMap<String, Class7776> field15781;
     public static Class3279 field15782;
-    private List<Class399> field15783;
+    private List<Entity> field15783;
     private boolean field15784;
     private HashMap<UUID, String> field15785;
     public int field15786;
     
     public Class3279() {
         super(Class8013.field32984, "NameTags", "Render better name tags");
-        this.field15778 = new HashMap<Class354, Class6312>();
-        this.field15783 = new ArrayList<Class399>();
+        this.field15778 = new HashMap<BlockPos, Class6312>();
+        this.field15783 = new ArrayList<Entity>();
         this.field15784 = false;
         this.field15785 = new HashMap<UUID, String>();
         this.field15786 = Class6430.method19118(Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 75.0f), 0.5f);
@@ -46,9 +48,9 @@ public class Class3279 extends Class3167
                 this.field15778.clear();
             }
             else {
-                final Iterator<Map.Entry<Class354, Class6312>> iterator = this.field15778.entrySet().iterator();
+                final Iterator<Map.Entry<BlockPos, Class6312>> iterator = this.field15778.entrySet().iterator();
                 while (iterator.hasNext()) {
-                    final Map.Entry<Class354, V> entry = (Map.Entry<Class354, V>)iterator.next();
+                    final Map.Entry<BlockPos, V> entry = (Map.Entry<BlockPos, V>)iterator.next();
                     if (!(Class3279.field15514.field4683.method6701(entry.getKey()).method21696() instanceof Class3951)) {
                         iterator.remove();
                     }
@@ -56,7 +58,7 @@ public class Class3279 extends Class3167
                 }
             }
             this.field15783.clear();
-            for (final Class399 class5744 : Class4609.method13679(Class6430.method19108())) {
+            for (final Entity class5744 : Class4609.method13679(Class6430.method19108())) {
                 if (class5744 == Class3279.field15514.field4684) {
                     continue;
                 }
@@ -175,15 +177,15 @@ public class Class3279 extends Class3167
         if (this.method9906()) {
             Class8726.method30084(33986, 240.0f, 240.0f);
             final boolean method9883 = this.method9883("Magnify");
-            for (final Class399 class5740 : this.field15783) {
+            for (final Entity class5740 : this.field15783) {
                 float n = 1.0f;
                 if (method9883) {
                     n = (float)Math.max(1.0, Math.sqrt(Class8591.method29091(class5740) / 30.0));
                 }
                 this.method10336(Class8591.method29093(class5740).field38854, Class8591.method29093(class5740).field38855 + class5740.method1931(), Class8591.method29093(class5740).field38856, class5740, n, null);
-                class5740.method1650().method33569(Class399.field2436, false);
+                class5740.method1650().method33569(Entity.field2436, false);
             }
-            for (final Map.Entry<Class354, V> entry : this.field15778.entrySet()) {
+            for (final Map.Entry<BlockPos, V> entry : this.field15778.entrySet()) {
                 float n2 = 1.0f;
                 if (method9883) {
                     n2 = (float)Math.max(0.800000011920929, Math.sqrt(Class8591.method29092(entry.getKey()) / 30.0));
@@ -191,7 +193,7 @@ public class Class3279 extends Class3167
                 this.method10335(entry.getKey(), (Class6312)entry.getValue(), n2);
             }
             if (this.method9883("Mob Owners")) {
-                for (final Class399 class5741 : Class3279.field15514.field4683.method6806()) {
+                for (final Entity class5741 : Class3279.field15514.field4683.method6806()) {
                     if (class5741 != Class3279.field15514.field4684) {
                         continue;
                     }
@@ -226,7 +228,7 @@ public class Class3279 extends Class3167
                         n3 = (float)Math.max(1.0, Math.sqrt(Class8591.method29091(class5741) / 30.0));
                     }
                     this.method10336(Class8591.method29093(class5741).field38854, Class8591.method29093(class5741).field38855 + class5741.method1931(), Class8591.method29093(class5741).field38856, class5741, n3, this.field15785.get(uuid));
-                    class5741.method1650().method33569(Class399.field2436, false);
+                    class5741.method1650().method33569(Entity.field2436, false);
                 }
             }
             GL11.glDisable(2896);
@@ -251,14 +253,14 @@ public class Class3279 extends Class3167
         GL11.glEnd();
     }
     
-    public void method10335(final Class354 class354, final Class6312 class355, final float n) {
+    public void method10335(final BlockPos class354, final Class6312 class355, final float n) {
         final Class7524 field40314 = Class9400.field40314;
         if (class355.field25240 != null) {
             new StringBuilder().append(class355.field25240.field34176).append(" ").append(class355.field25240.method27664()).toString();
         }
-        final float n2 = (float)(class354.method1074() - Class3279.field15514.field4644.method5833().method18161().method16760() + 0.5);
-        final float n3 = (float)(class354.method1075() - Class3279.field15514.field4644.method5833().method18161().method16761() + 1.0);
-        final float n4 = (float)(class354.method1076() - Class3279.field15514.field4644.method5833().method18161().method16762() + 0.5);
+        final float n2 = (float)(class354.getX() - Class3279.field15514.field4644.method5833().method18161().method16760() + 0.5);
+        final float n3 = (float)(class354.getY() - Class3279.field15514.field4644.method5833().method18161().method16761() + 1.0);
+        final float n4 = (float)(class354.getZ() - Class3279.field15514.field4644.method5833().method18161().method16762() + 0.5);
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -312,7 +314,7 @@ public class Class3279 extends Class3167
         GL11.glDisable(3042);
     }
     
-    public void method10336(final double n, final double n2, final double n3, final Class399 class399, final float n4, final String s) {
+    public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
         final Class7524 field40314 = Class9400.field40314;
         String method9887 = (s == null) ? class399.method1841().method8459().replaceAll("§.", "") : s;
         if (Class9463.method35173().method35189().method21551(Class3230.class).method9906()) {

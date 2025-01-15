@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3563 extends Class3555<Class511>
 {
     private static String[] field16651;
@@ -19,9 +21,9 @@ public class Class3563 extends Class3555<Class511>
     
     @Override
     public Class6221 method11103(final double n) {
-        final Class179 method5018 = ((Class841)this.field16602).method5018();
-        if (method5018.method790() != Class111.field351) {
-            return (method5018.method790() != Class111.field353) ? this.field16602.method1886().method18495(n, 4.0, n) : this.field16602.method1886().method18495(n, n, 4.0);
+        final Direction method5018 = ((Class841)this.field16602).method5018();
+        if (method5018.getAxis() != Axis.X) {
+            return (method5018.getAxis() != Axis.Z) ? this.field16602.method1886().method18495(n, 4.0, n) : this.field16602.method1886().method18495(n, n, 4.0);
         }
         return this.field16602.method1886().method18495(4.0, n, n);
     }

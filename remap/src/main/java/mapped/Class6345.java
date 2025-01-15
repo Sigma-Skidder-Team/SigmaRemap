@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
-import java.util.Random;
 
 public class Class6345 extends Class6343<Class7068>
 {
@@ -109,7 +110,7 @@ public class Class6345 extends Class6343<Class7068>
     }
     
     @Override
-    public List<Class6828> method18866(final Class1976 class1976, final Class354 class1977) {
+    public List<Class6828> method18866(final Class1976 class1976, final BlockPos class1977) {
         if (!Class4535.field19965.method13606(this.field25383, class1977)) {
             if (class1976 == Class1976.field10948) {
                 if (Class4535.field19958.method13589(this.field25383, class1977)) {
@@ -155,7 +156,7 @@ public class Class6345 extends Class6343<Class7068>
             while (i <= 2) {
                 int j = 0;
                 while (j <= 2) {
-                    array[i + 2 + (j + 2) * 5] = 10.0f / Class9546.method35640(i * i + j * j + 0.2f);
+                    array[i + 2 + (j + 2) * 5] = 10.0f / MathHelper.method35640(i * i + j * j + 0.2f);
                     ++j;
                 }
                 ++i;

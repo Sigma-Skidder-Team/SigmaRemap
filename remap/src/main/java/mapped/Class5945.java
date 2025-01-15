@@ -21,7 +21,7 @@ public class Class5945 extends Class5936
     }
     
     private void method17867(final int n, final int n2) {
-        this.field24431.add(new Class4471(this.field24436, n * 16 - 29, n2 * 16 - 29, Class98.field268.method576(this.field24436)));
+        this.field24431.add(new Class4471(this.field24436, n * 16 - 29, n2 * 16 - 29, Plane.HORIZONTAL.method576(this.field24436)));
         this.method17854();
         this.field24445 = true;
     }

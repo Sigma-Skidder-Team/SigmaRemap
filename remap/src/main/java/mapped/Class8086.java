@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class8086
@@ -25,11 +27,11 @@ public class Class8086
         if (this.field33309 != null) {
             if (!method5300.method904().method25124().equals(this.field33309.method20920())) {
                 this.field33308.method5299().method6431(this.field33309);
-                this.field33310 = Class9546.method35658(this.field33307, 0, method5300.method905() / 2);
+                this.field33310 = MathHelper.method35658(this.field33307, 0, method5300.method905() / 2);
             }
             if (!this.field33308.method5299().method6432(this.field33309)) {
                 this.field33309 = null;
-                this.field33310 = Math.min(Class9546.method35658(this.field33307, method5300.method905(), method5300.method906()), this.field33310);
+                this.field33310 = Math.min(MathHelper.method35658(this.field33307, method5300.method905(), method5300.method906()), this.field33310);
             }
         }
         this.field33310 = Math.min(this.field33310, method5300.method906());

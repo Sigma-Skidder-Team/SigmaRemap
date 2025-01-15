@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Iterables;
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.Map;
@@ -30,8 +32,8 @@ public class Class3831 extends Class3820
         final Class1847 method21654 = class7075.method21654();
         if (!method21654.field10067) {
             final Class8321 method21655 = class7075.method21651();
-            final Class354 method21656 = class7075.method21639();
-            final Class179 method21657 = class7075.method21648();
+            final BlockPos method21656 = class7075.method21639();
+            final Direction method21657 = class7075.method21648();
             final Class7096 method21658 = method21654.method6701(method21656);
             if (method21658.method21696() == Class7521.field29290) {
                 final Class436 method21659 = method21654.method6727(method21656);
@@ -43,14 +45,14 @@ public class Class3831 extends Class3820
                     return Class2201.field13400;
                 }
             }
-            Class354 method21660;
+            BlockPos method21660;
             if (!method21658.method21727(method21654, method21656).method24540()) {
                 method21660 = method21656.method1149(method21657);
             }
             else {
                 method21660 = method21656;
             }
-            if (this.method11773(method21655.method27657()).method23356(method21654, method21655, class7075.method21652(), method21660, Class2101.field12186, true, !Objects.equals(method21656, method21660) && method21657 == Class179.field512) != null) {
+            if (this.method11773(method21655.method27657()).method23356(method21654, method21655, class7075.method21652(), method21660, Class2101.field12186, true, !Objects.equals(method21656, method21660) && method21657 == Direction.UP) != null) {
                 method21655.method27693(1);
             }
             return Class2201.field13400;
@@ -69,7 +71,7 @@ public class Class3831 extends Class3820
             return Class9355.method34674(method2715);
         }
         final Class7005 class1850 = (Class7005)method2716;
-        final Class354 method2717 = class1850.method21447();
+        final BlockPos method2717 = class1850.method21447();
         if (!(class1847.method6701(method2717).method21696() instanceof Class3859)) {
             return Class9355.method34676(method2715);
         }

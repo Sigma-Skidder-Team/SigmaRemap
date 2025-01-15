@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4708<T extends Class428> extends Class4703<T>
 {
     private static final Class1932 field20297;
@@ -21,14 +23,14 @@ public class Class4708<T extends Class428> extends Class4703<T>
         final long n4 = t.method1643() * 493286711L;
         final long n5 = n4 * n4 * 4392167121L + n4 * 98761L;
         class7351.method22564((((n5 >> 16 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 20 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 24 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f);
-        final double method35701 = Class9546.method35701(n2, t.field2417, t.method1938());
-        final double method35702 = Class9546.method35701(n2, t.field2418, t.method1941());
-        final double method35703 = Class9546.method35701(n2, t.field2419, t.method1945());
-        final Class5487 method35704 = t.method2132(method35701, method35702, method35703);
-        float method35705 = Class9546.method35700(n2, t.field2402, t.field2400);
+        final double method35701 = MathHelper.method35701(n2, t.field2417, t.method1938());
+        final double method35702 = MathHelper.method35701(n2, t.field2418, t.method1941());
+        final double method35703 = MathHelper.method35701(n2, t.field2419, t.method1945());
+        final Vec3d method35704 = t.method2132(method35701, method35702, method35703);
+        float method35705 = MathHelper.method35700(n2, t.field2402, t.field2400);
         if (method35704 != null) {
-            Class5487 method35706 = t.method2131(method35701, method35702, method35703, 0.30000001192092896);
-            Class5487 method35707 = t.method2131(method35701, method35702, method35703, -0.30000001192092896);
+            Vec3d method35706 = t.method2131(method35701, method35702, method35703, 0.30000001192092896);
+            Vec3d method35707 = t.method2131(method35701, method35702, method35703, -0.30000001192092896);
             if (method35706 == null) {
                 method35706 = method35704;
             }
@@ -36,23 +38,23 @@ public class Class4708<T extends Class428> extends Class4703<T>
                 method35707 = method35704;
             }
             class7351.method22564(method35704.field22770 - method35701, (method35706.field22771 + method35707.field22771) / 2.0 - method35702, method35704.field22772 - method35703);
-            final Class5487 method35708 = method35707.method16744(-method35706.field22770, -method35706.field22771, -method35706.field22772);
+            final Vec3d method35708 = method35707.method16744(-method35706.field22770, -method35706.field22771, -method35706.field22772);
             if (method35708.method16752() != 0.0) {
-                final Class5487 method35709 = method35708.method16738();
+                final Vec3d method35709 = method35708.method16738();
                 n = (float)(Math.atan2(method35709.field22772, method35709.field22770) * 180.0 / 3.141592653589793);
                 method35705 = (float)(Math.atan(method35709.field22771) * 73.0);
             }
         }
         class7351.method22564(0.0, 0.375, 0.0);
-        class7351.method22566(Class9138.field38718.method33328(180.0f - n));
-        class7351.method22566(Class9138.field38720.method33328(-method35705));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f - n));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(-method35705));
         final float n6 = t.method2136() - n2;
         float n7 = t.method2134() - n2;
         if (n7 < 0.0f) {
             n7 = 0.0f;
         }
         if (n6 > 0.0f) {
-            class7351.method22566(Class9138.field38716.method33328(Class9546.method35638(n6) * n6 * n7 / 10.0f * t.method2138()));
+            class7351.method22566(Vector3f.XP.rotationDegrees(MathHelper.sin(n6) * n6 * n7 / 10.0f * t.method2138()));
         }
         final int method35710 = t.method2142();
         final Class7096 method35711 = t.method2140();
@@ -60,7 +62,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
             class7351.method22567();
             class7351.method22565(0.75f, 0.75f, 0.75f);
             class7351.method22564(-0.5, (method35710 - 8) / 16.0f, 0.5);
-            class7351.method22566(Class9138.field38718.method33328(90.0f));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(90.0f));
             this.method13975(t, n2, method35711, class7351, class7352, n3);
             class7351.method22568();
         }

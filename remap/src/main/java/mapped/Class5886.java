@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Arrays;
 
-public class Class5886<T extends Class399> extends Class5846<T>
+public class Class5886<T extends Entity> extends Class5846<T>
 {
     private static String[] field24160;
     private final Class6300[] field24161;

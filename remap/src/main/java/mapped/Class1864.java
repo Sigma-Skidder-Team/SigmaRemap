@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Arrays;
 import java.util.function.Predicate;
 import java.util.List;
@@ -19,18 +21,18 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public Class7096 method6701(final Class354 class354) {
+    public Class7096 method6701(final BlockPos class354) {
         return Class7521.field29763.method11878();
     }
     
     @Nullable
     @Override
-    public Class7096 method7008(final Class354 class354, final Class7096 class355, final boolean b) {
+    public Class7096 method7008(final BlockPos class354, final Class7096 class355, final boolean b) {
         return null;
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
+    public Class7099 method6702(final BlockPos class354) {
         return Class7558.field29974.method22148();
     }
     
@@ -41,25 +43,25 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public int method6984(final Class354 class354) {
+    public int method6984(final BlockPos class354) {
         return 0;
     }
     
     @Override
-    public void method7010(final Class399 class399) {
+    public void method7010(final Entity class399) {
     }
     
     @Override
-    public void method7053(final Class399 class399) {
+    public void method7053(final Entity class399) {
     }
     
     @Override
-    public void method7054(final Class399 class399, final int n) {
+    public void method7054(final Entity class399, final int n) {
     }
     
     @Nullable
     @Override
-    public Class436 method7000(final Class354 class354, final Class2079 class355) {
+    public Class436 method7000(final BlockPos class354, final Class2079 class355) {
         return null;
     }
     
@@ -68,11 +70,11 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public void method7009(final Class354 class354, final Class436 class355) {
+    public void method7009(final BlockPos class354, final Class436 class355) {
     }
     
     @Override
-    public void method7028(final Class354 class354) {
+    public void method7028(final BlockPos class354) {
     }
     
     @Override
@@ -80,11 +82,11 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public void method7059(final Class399 class399, final Class6221 class400, final List<Class399> list, final Predicate<? super Class399> predicate) {
+    public void method7059(final Entity class399, final Class6221 class400, final List<Entity> list, final Predicate<? super Entity> predicate) {
     }
     
     @Override
-    public <T extends Class399> void method7061(final Class<? extends T> clazz, final Class6221 class6221, final List<T> list, final Predicate<? super T> predicate) {
+    public <T extends Entity> void method7061(final Class<? extends T> clazz, final Class6221 class6221, final List<T> list, final Predicate<? super T> predicate) {
     }
     
     @Override

@@ -4,17 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.LinkedHashSet;
-import java.io.Reader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.util.Collection;
 import com.google.common.collect.ImmutableSet;
-import java.io.Writer;
+
 import java.io.PrintWriter;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.io.FileOutputStream;
@@ -1169,7 +1167,7 @@ public class Class5760
         }
         if (class6469 == Class6469.field25807) {
             this.field23518 = !this.field23518;
-            Class9546.field41105 = this.field23518;
+            MathHelper.field41105 = this.field23518;
         }
         if (class6469 == Class6469.field25808) {
             if (!this.field23519 && Class8571.method28955()) {
@@ -1938,7 +1936,7 @@ public class Class5760
                     }
                     if (split[0].equals("ofFastMath") && split.length >= 2) {
                         this.field23518 = Boolean.valueOf(split[1]);
-                        Class9546.field41105 = this.field23518;
+                        MathHelper.field41105 = this.field23518;
                     }
                     if (split[0].equals("ofFastRender") && split.length >= 2) {
                         this.field23519 = Boolean.valueOf(split[1]);

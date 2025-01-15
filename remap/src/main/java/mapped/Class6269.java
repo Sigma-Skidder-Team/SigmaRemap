@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6269 extends Class6257
 {
     private static String[] field25131;
@@ -64,7 +66,7 @@ public class Class6269 extends Class6257
     public static int method18607(final Class511 class511, int n) {
         final int method30206 = Class8742.method30206(Class7882.field32348, class511);
         if (method30206 > 0) {
-            n -= Class9546.method35642(n * (float)method30206 * 0.15f);
+            n -= MathHelper.method35642(n * (float)method30206 * 0.15f);
         }
         return n;
     }
@@ -72,7 +74,7 @@ public class Class6269 extends Class6257
     public static double method18608(final Class511 class511, double n) {
         final int method30206 = Class8742.method30206(Class7882.field32350, class511);
         if (method30206 > 0) {
-            n -= Class9546.method35644(n * (method30206 * 0.15f));
+            n -= MathHelper.floor(n * (method30206 * 0.15f));
         }
         return n;
     }

@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5875<T extends Class853> extends Class5846<T>
 {
@@ -43,7 +44,7 @@ public class Class5875<T extends Class853> extends Class5846<T>
     }
     
     public void method17620(final T t, final float n, final float n2, final float n3) {
-        float method35700 = Class9546.method35700(n3, t.field4559, t.field4558);
+        float method35700 = MathHelper.method35700(n3, t.field4559, t.field4558);
         if (method35700 < 0.0f) {
             method35700 = 0.0f;
         }

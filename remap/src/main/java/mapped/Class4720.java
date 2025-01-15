@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4720 extends Class4712<Class837, Class5877<Class837>>
 {
     private static final Class1932 field20323;
@@ -24,11 +26,11 @@ public class Class4720 extends Class4712<Class837, Class5877<Class837>>
             n4 = 1.3f;
             n5 = 1.7f;
         }
-        class838.method22566(Class9138.field38718.method33328(n4 * 4.3f * Class9546.method35638(n5 * 0.6f * n)));
+        class838.method22566(Vector3f.field38718.rotationDegrees(n4 * 4.3f * MathHelper.sin(n5 * 0.6f * n)));
         class838.method22564(0.0, 0.0, -0.4000000059604645);
         if (!class837.method1706()) {
             class838.method22564(0.20000000298023224, 0.10000000149011612, 0.0);
-            class838.method22566(Class9138.field38720.method33328(90.0f));
+            class838.method22566(Vector3f.ZP.rotationDegrees(90.0f));
         }
     }
     

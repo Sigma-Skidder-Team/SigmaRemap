@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Collection;
+import net.minecraft.util.Direction;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,8 +15,8 @@ public class Class8582
     
     public static boolean method29049(final List<Class9052> list) {
         if (list.size() > 0) {
-            final Class354 field38320 = list.get(0).field38320;
-            final Class9052[] array = { new Class9052(field38320.method1141(), Class179.field514), new Class9052(field38320.method1147(), Class179.field515), new Class9052(field38320.method1143(), Class179.field513), new Class9052(field38320.method1145(), Class179.field516), new Class9052(field38320.method1139(), Class179.field512), new Class9052(field38320.method1137(), Class179.field511) };
+            final BlockPos field38320 = list.get(0).field38320;
+            final Class9052[] array = { new Class9052(field38320.method1141(), Direction.SOUTH), new Class9052(field38320.method1147(), Direction.WEST), new Class9052(field38320.method1143(), Direction.NORTH), new Class9052(field38320.method1145(), Direction.EAST), new Class9052(field38320.method1139(), Direction.UP), new Class9052(field38320.method1137(), Direction.DOWN) };
             for (int length = array.length, i = 0; i < length; ++i) {
                 if (Class4609.method13666(array[i].field38320) != Class7521.field29147) {
                     return true;
@@ -34,14 +35,14 @@ public class Class8582
         return list2;
     }
     
-    public static List<Class9052> method29051(final Class3833 class3833, final Class354 class3834, final int n) {
+    public static List<Class9052> method29051(final Class3833 class3833, final BlockPos class3834, final int n) {
         final ArrayList list = new ArrayList();
         if (class3834 == null || n < 0) {
             return list;
         }
         if (Class4609.method13668(class3833, class3834)) {
             final Class9052[] array2;
-            final Class9052[] array = array2 = new Class9052[] { new Class9052(class3834.method1137(), Class179.field511), new Class9052(class3834.method1141(), Class179.field514), new Class9052(class3834.method1147(), Class179.field515), new Class9052(class3834.method1143(), Class179.field513), new Class9052(class3834.method1145(), Class179.field516), new Class9052(class3834.method1139(), Class179.field512) };
+            final Class9052[] array = array2 = new Class9052[] { new Class9052(class3834.method1137(), Direction.DOWN), new Class9052(class3834.method1141(), Direction.SOUTH), new Class9052(class3834.method1147(), Direction.WEST), new Class9052(class3834.method1143(), Direction.NORTH), new Class9052(class3834.method1145(), Direction.EAST), new Class9052(class3834.method1139(), Direction.UP) };
             for (final Class9052 class3835 : array2) {
                 if (!Class4609.method13668(class3833, class3835.field38320)) {
                     list.add(class3835);

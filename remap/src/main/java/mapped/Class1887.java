@@ -6,7 +6,7 @@ package mapped;
 
 public interface Class1887
 {
-    default void method7291(final Class354 class354, final boolean b) {
+    default void method7291(final BlockPos class354, final boolean b) {
         this.method7254(Class353.method1089(class354), b);
     }
     

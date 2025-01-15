@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Iterator;
 
 public class Class6128 implements Class6113
@@ -23,8 +25,8 @@ public class Class6128 implements Class6113
         Class8726.method30072(2.0f);
         Class8726.method30041();
         Class8726.method30010(false);
-        final Class354 class7353 = new Class354(n, n2, n3);
-        for (final Class354 class7354 : Class354.method1154(class7353.method1134(-6, -6, -6), class7353.method1134(6, 6, 6))) {
+        final BlockPos class7353 = new BlockPos(n, n2, n3);
+        for (final BlockPos class7354 : BlockPos.method1154(class7353.method1134(-6, -6, -6), class7353.method1134(6, 6, 6))) {
             final Class7096 method6701 = field2391.method6701(class7354);
             if (method6701.method21696() == Class7521.field29147) {
                 continue;
@@ -38,7 +40,7 @@ public class Class6128 implements Class6113
                 final double field2395 = method6702.field25076;
                 final double field2396 = method6702.field25077;
                 final double field2397 = method6702.field25078;
-                if (method6701.method21761(field2391, class7354, Class179.field515)) {
+                if (method6701.method21761(field2391, class7354, Direction.WEST)) {
                     final Class7392 method6703 = Class7392.method22694();
                     final Class4148 method6704 = method6703.method22696();
                     method6704.method12390(5, Class9237.field39615);
@@ -48,7 +50,7 @@ public class Class6128 implements Class6113
                     method6704.method12432(field2392, field2396, field2397).method12439(1.0f, 0.0f, 0.0f, 0.5f).method12397();
                     method6703.method22695();
                 }
-                if (method6701.method21761(field2391, class7354, Class179.field514)) {
+                if (method6701.method21761(field2391, class7354, Direction.SOUTH)) {
                     final Class7392 method6705 = Class7392.method22694();
                     final Class4148 method6706 = method6705.method22696();
                     method6706.method12390(5, Class9237.field39615);
@@ -58,7 +60,7 @@ public class Class6128 implements Class6113
                     method6706.method12432(field2395, field2393, field2397).method12439(1.0f, 0.0f, 0.0f, 0.5f).method12397();
                     method6705.method22695();
                 }
-                if (method6701.method21761(field2391, class7354, Class179.field516)) {
+                if (method6701.method21761(field2391, class7354, Direction.EAST)) {
                     final Class7392 method6707 = Class7392.method22694();
                     final Class4148 method6708 = method6707.method22696();
                     method6708.method12390(5, Class9237.field39615);
@@ -68,7 +70,7 @@ public class Class6128 implements Class6113
                     method6708.method12432(field2395, field2396, field2394).method12439(1.0f, 0.0f, 0.0f, 0.5f).method12397();
                     method6707.method22695();
                 }
-                if (method6701.method21761(field2391, class7354, Class179.field513)) {
+                if (method6701.method21761(field2391, class7354, Direction.NORTH)) {
                     final Class7392 method6709 = Class7392.method22694();
                     final Class4148 method6710 = method6709.method22696();
                     method6710.method12390(5, Class9237.field39615);
@@ -78,7 +80,7 @@ public class Class6128 implements Class6113
                     method6710.method12432(field2392, field2393, field2394).method12439(1.0f, 0.0f, 0.0f, 0.5f).method12397();
                     method6709.method22695();
                 }
-                if (method6701.method21761(field2391, class7354, Class179.field511)) {
+                if (method6701.method21761(field2391, class7354, Direction.DOWN)) {
                     final Class7392 method6711 = Class7392.method22694();
                     final Class4148 method6712 = method6711.method22696();
                     method6712.method12390(5, Class9237.field39615);
@@ -88,7 +90,7 @@ public class Class6128 implements Class6113
                     method6712.method12432(field2395, field2393, field2397).method12439(1.0f, 0.0f, 0.0f, 0.5f).method12397();
                     method6711.method22695();
                 }
-                if (!method6701.method21761(field2391, class7354, Class179.field512)) {
+                if (!method6701.method21761(field2391, class7354, Direction.UP)) {
                     continue;
                 }
                 final Class7392 method6713 = Class7392.method22694();

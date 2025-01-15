@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public abstract class Class770 extends Class772
 {
     private static final Class8810<Byte> field4161;
@@ -74,9 +76,9 @@ public abstract class Class770 extends Class772
                 final double n = Class2107.method8229(method4267)[0];
                 final double n2 = Class2107.method8229(method4267)[1];
                 final double n3 = Class2107.method8229(method4267)[2];
-                final float n4 = this.field2951 * 0.017453292f + Class9546.method35639(this.field2424 * 0.6662f) * 0.25f;
-                final float method4268 = Class9546.method35639(n4);
-                final float method4269 = Class9546.method35638(n4);
+                final float n4 = this.field2951 * 0.017453292f + MathHelper.cos(this.field2424 * 0.6662f) * 0.25f;
+                final float method4268 = MathHelper.cos(n4);
+                final float method4269 = MathHelper.sin(n4);
                 this.field2391.method6709(Class8432.field34617, this.method1938() + method4268 * 0.6, this.method1941() + 1.8, this.method1945() + method4269 * 0.6, n, n2, n3);
                 this.field2391.method6709(Class8432.field34617, this.method1938() - method4268 * 0.6, this.method1941() + 1.8, this.method1945() - method4269 * 0.6, n, n2, n3);
             }

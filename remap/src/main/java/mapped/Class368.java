@@ -10,7 +10,7 @@ import com.mojang.datafixers.types.DynamicOps;
 import java.util.Set;
 import java.util.List;
 import java.util.Random;
-import java.util.function.Supplier;
+
 import com.mojang.datafixers.Dynamic;
 
 public class Class368 extends Class367
@@ -27,10 +27,10 @@ public class Class368 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random, final List<Class354> list3, final List<Class354> list2, final Set<Class354> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list3, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
         list3.stream().filter(class1853 -> {
-            list3.get(0).method1075();
-            return class1853.method1075() == n;
+            list3.get(0).getY();
+            return class1853.getY() == n;
         }).forEach(class1855 -> {
             this.method1244(class1854, random2, class1855.method1145().method1141());
             this.method1244(class1854, random2, class1855.method1148(2).method1141());
@@ -58,7 +58,7 @@ public class Class368 extends Class367
         });
     }
     
-    private void method1244(final Class1875 class1875, final Random random, final Class354 class1876) {
+    private void method1244(final Class1875 class1875, final Random random, final BlockPos class1876) {
         for (int i = -2; i <= 2; ++i) {
             for (int j = -2; j <= 2; ++j) {
                 if (Math.abs(i) != 2 || Math.abs(j) != 2) {
@@ -68,9 +68,9 @@ public class Class368 extends Class367
         }
     }
     
-    private void method1245(final Class1875 class1875, final Random random, final Class354 class1876) {
+    private void method1245(final Class1875 class1875, final Random random, final BlockPos class1876) {
         for (int i = 2; i >= -3; --i) {
-            final Class354 method1138 = class1876.method1138(i);
+            final BlockPos method1138 = class1876.method1138(i);
             if (Class4592.method13614(class1875, method1138)) {
                 class1875.method6688(method1138, this.field2210.method1164(random, class1876), 19);
                 break;

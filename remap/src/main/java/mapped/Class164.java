@@ -5,8 +5,9 @@
 package mapped;
 
 import com.google.common.base.Predicate;
+import net.minecraft.entity.Entity;
 
-public class Class164 implements Predicate<Class399>
+public class Class164 implements Predicate<Entity>
 {
     private static String[] field475;
     public final /* synthetic */ float field476;
@@ -17,7 +18,7 @@ public class Class164 implements Predicate<Class399>
         this.field476 = field478;
     }
     
-    public boolean apply(final Class399 class399) {
+    public boolean apply(final Entity class399) {
         return class399 != null && class399.method1732(Class3362.method10664().field4684) <= this.field476 + 2.0f;
     }
 }

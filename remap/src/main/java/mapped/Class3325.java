@@ -68,7 +68,7 @@ public class Class3325 extends Class3167
         }
         if (!Class869.method5277().field4648.field23464) {
             final float min = Math.min(1.0f, 0.6f + this.field15925.method35858() * 4.0f);
-            final String string = Class3325.field15514.field4684.method1894().method1074() + " " + Class3325.field15514.field4684.method1894().method1075() + " " + Class3325.field15514.field4684.method1894().method1076();
+            final String string = Class3325.field15514.field4684.method1894().getX() + " " + Class3325.field15514.field4684.method1894().getY() + " " + Class3325.field15514.field4684.method1894().getZ();
             final int n = 85;
             final int method17028 = class5740.method17028();
             final float min2 = Math.min(1.0f, 150 / (float)Class9400.field40312.method23505(string));

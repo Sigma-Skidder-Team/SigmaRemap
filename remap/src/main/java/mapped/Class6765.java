@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;
@@ -122,11 +123,11 @@ public abstract class Class6765
         if (method2847 != null) {
             if (method2847.method316("RootVehicle", 10)) {
                 final Class51 method2851 = method2847.method327("RootVehicle");
-                final Class399 method2852 = Class7499.method23378(method2851.method327("Entity"), (Class1847)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
+                final Entity method2852 = Class7499.method23378(method2851.method327("Entity"), (Class1847)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
                 if (method2852 != null) {
                     final UUID method2853 = method2851.method301("Attach");
                     if (!method2852.method1865().equals(method2853)) {
-                        for (final Class399 class3645 : method2852.method1911()) {
+                        for (final Entity class3645 : method2852.method1911()) {
                             if (!class3645.method1865().equals(method2853)) {
                                 continue;
                             }
@@ -140,7 +141,7 @@ public abstract class Class6765
                     if (!class3642.method1805()) {
                         Class6765.field26560.warn("Couldn't reattach entity to player");
                         method2848.method6900(method2852);
-                        final Iterator<Class399> iterator3 = method2852.method1911().iterator();
+                        final Iterator<Entity> iterator3 = method2852.method1911().iterator();
                         while (iterator3.hasNext()) {
                             method2848.method6900(iterator3.next());
                         }
@@ -208,12 +209,12 @@ public abstract class Class6765
         class513.method2857(Class8276.field33988);
         this.method20572(class513);
         if (class513.method1805()) {
-            final Class399 method2941 = class513.method1915();
+            final Entity method2941 = class513.method1915();
             if (method2941.method1913()) {
                 Class6765.field26560.debug("Removing player mount");
                 class513.method1784();
                 method2940.method6900(method2941);
-                final Iterator<Class399> iterator = method2941.method1911().iterator();
+                final Iterator<Entity> iterator = method2941.method1911().iterator();
                 while (iterator.hasNext()) {
                     method2940.method6900(iterator.next());
                 }
@@ -290,7 +291,7 @@ public abstract class Class6765
     public Class513 method20583(final Class513 class513, final Class383 field2452, final boolean b) {
         this.field26563.remove(class513);
         class513.method2940().method6902(class513);
-        final Class354 method2854 = class513.method2854();
+        final BlockPos method2854 = class513.method2854();
         final boolean method2855 = class513.method2855();
         class513.field2452 = field2452;
         Class8071 class514;
@@ -312,12 +313,12 @@ public abstract class Class6765
         final Class1849 method2856 = this.field26562.method1481(class513.field2452);
         this.method20615(class515, class513, method2856);
         if (method2854 != null) {
-            final Optional<Class5487> method2857 = Class512.method2850(this.field26562.method1481(class513.field2452), method2854, method2855);
+            final Optional<Vec3d> method2857 = Class512.method2850(this.field26562.method1481(class513.field2452), method2854, method2855);
             if (!method2857.isPresent()) {
                 class515.field3039.method17469(new Class4306(0, 0.0f));
             }
             else {
-                final Class5487 class516 = method2857.get();
+                final Vec3d class516 = method2857.get();
                 class515.method1730(class516.field22770, class516.field22771, class516.field22772, 0.0f, 0.0f);
                 class515.method2856(method2854, method2855, false);
             }
@@ -327,7 +328,7 @@ public abstract class Class6765
         }
         final Class8660 method2858 = class515.field2391.method6764();
         class515.field3039.method17469(new Class4359(class515.field2452, Class8660.method29535(method2858.method29534()), method2858.method29570(), class515.field3041.method26482()));
-        final Class354 method2859 = method2856.method6758();
+        final BlockPos method2859 = method2856.method6758();
         class515.field3039.method17467(class515.method1938(), class515.method1941(), class515.method1945(), class515.field2399, class515.field2400);
         class515.field3039.method17469(new Class4335(method2859));
         class515.field3039.method17469(new Class4315(method2858.method29597(), method2858.method29599()));

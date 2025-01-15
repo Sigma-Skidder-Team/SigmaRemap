@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7923 implements Class7924
 {
     private static String[] field32541;
@@ -46,7 +48,7 @@ public class Class7923 implements Class7924
     @Override
     public double method25679() {
         final double n = (Class8349.method27837() - this.field32545) / this.field32546;
-        return (n >= 1.0) ? this.field32543 : Class9546.method35701(n, this.field32542, this.field32543);
+        return (n >= 1.0) ? this.field32543 : MathHelper.method35701(n, this.field32542, this.field32543);
     }
     
     @Override

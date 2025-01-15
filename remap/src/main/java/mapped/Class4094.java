@@ -9,6 +9,10 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 import com.google.common.collect.LinkedHashMultiset;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public class Class4094 extends Class4093
@@ -57,14 +61,14 @@ public class Class4094 extends Class4093
         return "map_" + i;
     }
     
-    public void method12332(final Class1847 class1847, final Class399 class1848, final Class6356 class1849) {
+    public void method12332(final Class1847 class1847, final Entity class1848, final Class6356 class1849) {
         if (class1847.field10063.method20487() == class1849.field25422) {
             if (class1848 instanceof Class512) {
                 final int n = 1 << class1849.field25425;
                 final int field25420 = class1849.field25420;
                 final int field25421 = class1849.field25421;
-                final int n2 = Class9546.method35644(class1848.method1938() - field25420) / n + 64;
-                final int n3 = Class9546.method35644(class1848.method1945() - field25421) / n + 64;
+                final int n2 = MathHelper.floor(class1848.method1938() - field25420) / n + 64;
+                final int n3 = MathHelper.floor(class1848.method1945() - field25421) / n + 64;
                 int n4 = 128 / n;
                 if (class1847.field10063.method20504()) {
                     n4 /= 2;
@@ -88,7 +92,7 @@ public class Class4094 extends Class4093
                                             final int n9 = (field25420 / n + i - 64) * n;
                                             final int n10 = (field25421 / n + j - 64) * n;
                                             final LinkedHashMultiset create = LinkedHashMultiset.create();
-                                            final Class1862 method18922 = class1847.method6685(new Class354(n9, 0, n10));
+                                            final Class1862 method18922 = class1847.method6685(new BlockPos(n9, 0, n10));
                                             if (!method18922.method7062()) {
                                                 final Class7859 method18923 = method18922.method7019();
                                                 final int n11 = n9 & 0xF;
@@ -134,10 +138,10 @@ public class Class4094 extends Class4093
                                                 else {
                                                     final int n17 = n9 + n10 * 231871;
                                                     if ((n17 * n17 * 31287121 + n17 * 11 >> 20 & 0x1) != 0x0) {
-                                                        ((Multiset)create).add((Object)Class7521.field29148.method11878().method21707(class1847, Class354.field2173), 100);
+                                                        ((Multiset)create).add((Object)Class7521.field29148.method11878().method21707(class1847, BlockPos.ZERO), 100);
                                                     }
                                                     else {
-                                                        ((Multiset)create).add((Object)Class7521.field29156.method11878().method21707(class1847, Class354.field2173), 10);
+                                                        ((Multiset)create).add((Object)Class7521.field29156.method11878().method21707(class1847, BlockPos.ZERO), 10);
                                                     }
                                                     n14 = 100.0;
                                                 }
@@ -187,9 +191,9 @@ public class Class4094 extends Class4093
         }
     }
     
-    private Class7096 method12333(final Class1847 class1847, final Class7096 class1848, final Class354 class1849) {
+    private Class7096 method12333(final Class1847 class1847, final Class7096 class1848, final BlockPos class1849) {
         final Class7099 method21756 = class1848.method21756();
-        return (!method21756.method21781() && !class1848.method21761(class1847, class1849, Class179.field512)) ? method21756.method21791() : class1848;
+        return (!method21756.method21781() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.method21791() : class1848;
     }
     
     private static boolean method12334(final Class3090[] array, final int n, final int n2, final int n3) {
@@ -206,7 +210,7 @@ public class Class4094 extends Class4093
                 final Class3090[] array = new Class3090[128 * n * 128 * n];
                 for (int i = 0; i < 128 * n; ++i) {
                     for (int j = 0; j < 128 * n; ++j) {
-                        array[i * 128 * n + j] = class1849.method6959(new Class354((field25420 / n - 64) * n + j, 0, (field25421 / n - 64) * n + i));
+                        array[i * 128 * n + j] = class1849.method6959(new BlockPos((field25420 / n - 64) * n + j, 0, (field25421 / n - 64) * n + i));
                     }
                 }
                 for (int k = 0; k < 128; ++k) {
@@ -257,7 +261,7 @@ public class Class4094 extends Class4093
                                         else {
                                             class1852 = Class8819.field37047;
                                             if (n2 > 7 && l % 2 == 0) {
-                                                n3 = (k + (int)(Class9546.method35638(l + 0.0f) * 7.0f)) / 8 % 5;
+                                                n3 = (k + (int)(MathHelper.sin(l + 0.0f) * 7.0f)) / 8 % 5;
                                                 if (n3 != 3) {
                                                     if (n3 == 4) {
                                                         n3 = 0;
@@ -301,7 +305,7 @@ public class Class4094 extends Class4093
     }
     
     @Override
-    public void method11722(final Class8321 class8321, final Class1847 class8322, final Class399 class8323, final int n, final boolean b) {
+    public void method11722(final Class8321 class8321, final Class1847 class8322, final Entity class8323, final int n, final boolean b) {
         if (!class8322.field10067) {
             final Class6356 method12328 = method12328(class8321, class8322);
             if (method12328 != null) {
@@ -343,7 +347,7 @@ public class Class4094 extends Class4093
     public static void method12336(final Class8321 class8321, final Class1847 class8322, final int n) {
         final Class6356 method12328 = method12328(class8321, class8322);
         if (method12328 != null) {
-            method12330(class8321, class8322, method12328.field25420, method12328.field25421, Class9546.method35651(method12328.field25425 + n, 0, 4), method12328.field25423, method12328.field25424, method12328.field25422);
+            method12330(class8321, class8322, method12328.field25420, method12328.field25421, MathHelper.method35651(method12328.field25425 + n, 0, 4), method12328.field25423, method12328.field25424, method12328.field25422);
         }
     }
     

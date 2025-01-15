@@ -26,7 +26,7 @@ public class Class7984
         return Class90.field217.method507();
     }
     
-    public static Class3090 method26045(final Class1856 class1856, final Class354 class1857) {
+    public static Class3090 method26045(final Class1856 class1856, final BlockPos class1857) {
         Class3090 class1858 = Class7102.field27633;
         if (!(class1856 instanceof Class1857)) {
             if (class1856 instanceof Class1852) {

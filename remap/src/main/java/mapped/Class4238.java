@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.Collection;
 
@@ -22,12 +24,12 @@ public class Class4238 extends Class4211
         return new Class4238(array);
     }
     
-    public boolean method12742(final Class513 class513, final Collection<? extends Class399> collection) {
+    public boolean method12742(final Class513 class513, final Collection<? extends Entity> collection) {
         for (final Class8172 class514 : this.field19052) {
             int n = 0;
-            final Iterator<? extends Class399> iterator = collection.iterator();
+            final Iterator<? extends Entity> iterator = collection.iterator();
             while (iterator.hasNext()) {
-                if (!class514.method27015(class513, (Class399)iterator.next())) {
+                if (!class514.method27015(class513, (Entity)iterator.next())) {
                     continue;
                 }
                 n = 1;

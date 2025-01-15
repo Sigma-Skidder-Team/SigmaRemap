@@ -7,7 +7,7 @@ package mapped;
 public class Class6342 extends Class6343<Class7069>
 {
     private static String[] field25357;
-    private final Class354 field25358;
+    private final BlockPos field25358;
     
     public Class6342(final Class1851 class1851, final Class1868 class1852, final Class7069 class1853) {
         super(class1851, class1852, 8, 4, 128, class1853, true);

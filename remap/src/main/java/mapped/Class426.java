@@ -5,13 +5,16 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
 import java.util.UUID;
@@ -19,7 +22,7 @@ import java.util.Map;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class426 extends Class399
+public class Class426 extends Entity
 {
     private static final Logger field2596;
     private static final Class8810<Float> field2597;
@@ -28,7 +31,7 @@ public class Class426 extends Class399
     private static final Class8810<Class6909> field2600;
     private Class8061 field2601;
     private final List<Class1948> field2602;
-    private final Map<Class399, Integer> field2603;
+    private final Map<Entity, Integer> field2603;
     private int field2604;
     private int field2605;
     private int field2606;
@@ -165,7 +168,7 @@ public class Class426 extends Class399
                 this.method2081(method2092);
             }
             if (this.field2424 % 5 == 0) {
-                final Iterator<Map.Entry<Class399, Integer>> iterator = this.field2603.entrySet().iterator();
+                final Iterator<Map.Entry<Entity, Integer>> iterator = this.field2603.entrySet().iterator();
                 while (iterator.hasNext()) {
                     if (this.field2424 < ((Map.Entry<K, Integer>)iterator.next()).getValue()) {
                         continue;
@@ -178,7 +181,7 @@ public class Class426 extends Class399
                 }
                 arrayList.addAll(this.field2602);
                 if (!arrayList.isEmpty()) {
-                    final List<Class399> method2093 = this.field2391.method7128((Class<? extends Class399>)Class511.class, this.method1886());
+                    final List<Entity> method2093 = this.field2391.method7128((Class<? extends Entity>)Class511.class, this.method1886());
                     if (!method2093.isEmpty()) {
                         for (final Class511 class1949 : method2093) {
                             if (this.field2603.containsKey(class1949)) {
@@ -231,9 +234,9 @@ public class Class426 extends Class399
                 final float n3 = 3.1415927f * method2092 * method2092;
                 for (int n4 = 0; n4 < n3; ++n4) {
                     final float n5 = this.field2423.nextFloat() * 6.2831855f;
-                    final float n6 = Class9546.method35640(this.field2423.nextFloat()) * method2092;
-                    final float n7 = Class9546.method35639(n5) * n6;
-                    final float n8 = Class9546.method35638(n5) * n6;
+                    final float n6 = MathHelper.method35640(this.field2423.nextFloat()) * method2092;
+                    final float n7 = MathHelper.cos(n5) * n6;
+                    final float n8 = MathHelper.sin(n5) * n6;
                     if (method2094.method21272() != Class8432.field34617) {
                         this.field2391.method6711(method2094, this.method1938() + n7, this.method1941(), this.method1945() + n8, (0.5 - this.field2423.nextDouble()) * 0.15, 0.009999999776482582, (0.5 - this.field2423.nextDouble()) * 0.15);
                     }
@@ -246,9 +249,9 @@ public class Class426 extends Class399
             else if (this.field2423.nextBoolean()) {
                 for (int i = 0; i < 2; ++i) {
                     final float n9 = this.field2423.nextFloat() * 6.2831855f;
-                    final float n10 = Class9546.method35640(this.field2423.nextFloat()) * 0.2f;
-                    final float n11 = Class9546.method35639(n9) * n10;
-                    final float n12 = Class9546.method35638(n9) * n10;
+                    final float n10 = MathHelper.method35640(this.field2423.nextFloat()) * 0.2f;
+                    final float n11 = MathHelper.cos(n9) * n10;
+                    final float n12 = MathHelper.sin(n9) * n10;
                     if (method2094.method21272() != Class8432.field34617) {
                         this.field2391.method6711(method2094, this.method1938() + n11, this.method1941(), this.method1945() + n12, 0.0, 0.0, 0.0);
                     }
@@ -283,7 +286,7 @@ public class Class426 extends Class399
         if (this.field2611 == null) {
             if (this.field2612 != null) {
                 if (this.field2391 instanceof Class1849) {
-                    final Class399 method6914 = ((Class1849)this.field2391).method6914(this.field2612);
+                    final Entity method6914 = ((Class1849)this.field2391).method6914(this.field2612);
                     if (method6914 instanceof Class511) {
                         this.field2611 = (Class511)method6914;
                     }

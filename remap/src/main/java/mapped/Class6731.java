@@ -11,9 +11,9 @@ public class Class6731
     private static String[] field26464;
     public int field26465;
     public int field26466;
-    public List<Class354> field26467;
+    public List<BlockPos> field26467;
     
-    public Class6731(final int field26465, final int field26466, final List<Class354> field26467) {
+    public Class6731(final int field26465, final int field26466, final List<BlockPos> field26467) {
         this.field26465 = field26465;
         this.field26466 = field26466;
         this.field26467 = field26467;

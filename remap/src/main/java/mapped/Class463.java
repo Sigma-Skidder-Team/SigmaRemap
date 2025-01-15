@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -47,13 +49,13 @@ public class Class463 extends Class436 implements Class462, Class439
     public void method2229() {
         this.field2733 = this.field2732;
         this.field2735 = this.field2734;
-        final Class512 method7132 = this.field2656.method7132(this.field2657.method1074() + 0.5f, this.field2657.method1075() + 0.5f, this.field2657.method1076() + 0.5f, 3.0, false);
+        final Class512 method7132 = this.field2656.method7132(this.field2657.getX() + 0.5f, this.field2657.getY() + 0.5f, this.field2657.getZ() + 0.5f, 3.0, false);
         if (method7132 == null) {
             this.field2736 += 0.02f;
             this.field2732 -= 0.1f;
         }
         else {
-            this.field2736 = (float)Class9546.method35693(method7132.method1945() - (this.field2657.method1076() + 0.5), method7132.method1938() - (this.field2657.method1074() + 0.5));
+            this.field2736 = (float) MathHelper.method35693(method7132.method1945() - (this.field2657.getZ() + 0.5), method7132.method1938() - (this.field2657.getX() + 0.5));
             this.field2732 += 0.1f;
             if (this.field2732 < 0.5f || Class463.field2737.nextInt(40) == 0) {
                 final float field2730 = this.field2730;
@@ -80,10 +82,10 @@ public class Class463 extends Class436 implements Class462, Class439
             n += 6.2831855f;
         }
         this.field2734 += n * 0.4f;
-        this.field2732 = Class9546.method35653(this.field2732, 0.0f, 1.0f);
+        this.field2732 = MathHelper.method35653(this.field2732, 0.0f, 1.0f);
         ++this.field2727;
         this.field2729 = this.field2728;
-        this.field2731 += (Class9546.method35653((this.field2730 - this.field2728) * 0.4f, -0.2f, 0.2f) - this.field2731) * 0.9f;
+        this.field2731 += (MathHelper.method35653((this.field2730 - this.field2728) * 0.4f, -0.2f, 0.2f) - this.field2731) * 0.9f;
         this.field2728 += this.field2731;
     }
     

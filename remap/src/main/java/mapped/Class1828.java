@@ -20,9 +20,9 @@ public class Class1828<T extends Class511> extends Class1827<T, Class5857<T>>
             this.method6559().method17577().method18645(class7351);
             this.method6559().method17590().method18645(class7351);
             class7351.method22564(0.0625, 0.25, 0.0);
-            class7351.method22566(Class9138.field38720.method33328(180.0f));
-            class7351.method22566(Class9138.field38716.method33328(140.0f));
-            class7351.method22566(Class9138.field38720.method33328(10.0f));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
+            class7351.method22566(Vector3f.XP.rotationDegrees(140.0f));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(10.0f));
             class7351.method22564(0.0, -0.4000000059604645, 0.4000000059604645);
         }
         super.method6551(class7351, class7352, n, t, n2, n3, n4, n5, n6, n7);

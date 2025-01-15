@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,12 +12,12 @@ public interface Class4150 extends Class4152
 {
     public static final Logger field18475 = LogManager.getLogger();
     public static final ThreadLocal<Class9145> field18506 = ThreadLocal.withInitial(() -> {
-        new Class9145(Class7521.field29147.method11878(), new Class354(0, 0, 0));
+        new Class9145(Class7521.field29147.method11878(), new BlockPos(0, 0, 0));
         return;
     });
     public static final boolean field18507 = Class9570.field41282.method22623();
     
-    default Class9145 method12414(final Class7096 class7096, final Class354 class7097) {
+    default Class9145 method12414(final Class7096 class7096, final BlockPos class7097) {
         final Class9145 class7098 = Class4150.field18506.get();
         class7098.method33373(class7096, class7097);
         return class7098;
@@ -78,10 +79,10 @@ public interface Class4150 extends Class4152
         final int[] array3 = this.method12408() ? class8997.method30296() : class8997.method30291();
         this.method12406(class8997.method30295());
         final boolean method12438 = this.method12438();
-        final Class352 method12439 = class8997.method30294().method802();
-        final float n5 = (float)method12439.method1074();
-        final float n6 = (float)method12439.method1075();
-        final float n7 = (float)method12439.method1076();
+        final Vec3i method12439 = class8997.method30294().getDirectionVec();
+        final float n5 = (float)method12439.getX();
+        final float n6 = (float)method12439.getY();
+        final float n7 = (float)method12439.getZ();
         final Class6789 method12440 = class8996.method32111();
         final Class9429 method12441 = class8996.method32112();
         float n8 = method12441.method35046(n5, n6, n7);
@@ -121,7 +122,7 @@ public interface Class4150 extends Class4152
             final float method12445 = method12440.method20762(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, 1.0f);
             final float method12446 = method12440.method20763(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, 1.0f);
             if (Class4150.field18507) {
-                final Class9138 method12447 = this.method12448(array3, n12, class8996.method32112());
+                final Vector3f method12447 = this.method12448(array3, n12, class8996.method32112());
                 if (method12447 != null) {
                     n8 = method12447.method33311();
                     n9 = method12447.method33312();
@@ -154,12 +155,12 @@ public interface Class4150 extends Class4152
     default void method12412(final Class6332 class6332) {
     }
     
-    default Class9138 method12419(final Class9138 class9138) {
+    default Vector3f method12419(final Vector3f class9138) {
         return class9138.method33329();
     }
     
-    default Class9138 method12420(final float n, final float n2, final float n3) {
-        return new Class9138(n, n2, n3);
+    default Vector3f method12420(final float n, final float n2, final float n3) {
+        return new Vector3f(n, n2, n3);
     }
     
     default float[] method12421(final float n, final float n2, final float n3, final float n4) {
@@ -184,7 +185,7 @@ public interface Class4150 extends Class4152
         return n * 8 + 6;
     }
     
-    default Class9138 method12448(final int[] array, final int n, final Class9429 class9429) {
+    default Vector3f method12448(final int[] array, final int n, final Class9429 class9429) {
         final int n2 = array[n + 7];
         final byte b = (byte)(n2 >> 0 & 0xFF);
         final byte b2 = (byte)(n2 >> 8 & 0xFF);
@@ -196,7 +197,7 @@ public interface Class4150 extends Class4152
                 }
             }
         }
-        final Class9138 method12420 = this.method12420(b / 127.0f, b2 / 127.0f, b3 / 127.0f);
+        final Vector3f method12420 = this.method12420(b / 127.0f, b2 / 127.0f, b3 / 127.0f);
         method12420.method33324(class9429);
         return method12420;
     }

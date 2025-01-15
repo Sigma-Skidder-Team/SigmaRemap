@@ -54,7 +54,7 @@ public class Class1831<T extends Class511, M extends Class5845<T> & Class5855> e
             }
             else if (!(method2719 instanceof Class4055) || ((Class4055)method2719).method12257() != Class2215.field13605) {
                 class7351.method22564(0.0, -0.25, 0.0);
-                class7351.method22566(Class9138.field38718.method33328(180.0f));
+                class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f));
                 class7351.method22565(0.625f, -0.625f, -0.625f);
                 if (b) {
                     class7351.method22564(0.0, 0.1875, 0.0);

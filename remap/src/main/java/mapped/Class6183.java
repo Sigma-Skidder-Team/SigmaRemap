@@ -29,7 +29,7 @@ public class Class6183 extends Class6159
             this.field24939 *= 0.8500000238418579;
             this.field24940 *= 0.8500000238418579;
             this.field24941 *= 0.8500000238418579;
-            if (!this.field24932.method6702(new Class354(this.field24936, this.field24937, this.field24938)).method21793(Class7324.field28319)) {
+            if (!this.field24932.method6702(new BlockPos(this.field24936, this.field24937, this.field24938)).method21793(Class7324.field28319)) {
                 this.method18439();
             }
         }

@@ -56,9 +56,9 @@ public class Class3591 extends Class3446
     @Nullable
     private Class5487 method11121() {
         final Random method2633 = this.field16731.method2633();
-        final Class354 class354 = new Class354(this.field16731);
+        final BlockPos class354 = new BlockPos(this.field16731);
         for (int i = 0; i < 10; ++i) {
-            final Class354 method2634 = class354.method1134(method2633.nextInt(20) - 10, 2 - method2633.nextInt(8), method2633.nextInt(20) - 10);
+            final BlockPos method2634 = class354.method1134(method2633.nextInt(20) - 10, 2 - method2633.nextInt(8), method2633.nextInt(20) - 10);
             if (this.field16736.method6701(method2634).method21696() == Class7521.field29173) {
                 return new Class5487(method2634);
             }

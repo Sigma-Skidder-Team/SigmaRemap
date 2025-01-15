@@ -12,6 +12,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
 
 public class Class8229 extends Class8228
 {
@@ -43,25 +44,25 @@ public class Class8229 extends Class8228
         return class51;
     }
     
-    public Class354 method27267(final Class1795 class1795, final Class2052 class1796) {
-        return Class354.field2173;
+    public BlockPos method27267(final Class1795 class1795, final Class2052 class1796) {
+        return BlockPos.ZERO;
     }
     
     @Override
-    public List<Class9038> method27253(final Class1795 class1795, final Class354 class1796, final Class2052 class1797, final Random random) {
+    public List<Class9038> method27253(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final Random random) {
         final ArrayList arrayList = Lists.newArrayList();
-        arrayList.add(new Class9038(class1796, ((Class7097<O, Class7096>)Class7521.field29821.method11878()).method21773((Class7111<Comparable>)Class3839.field17415, Class179.field511), this.field33793));
+        arrayList.add(new Class9038(class1796, ((Class7097<O, Class7096>)Class7521.field29821.method11878()).method21773((Class7111<Comparable>)Class3839.field17415, Direction.DOWN), this.field33793));
         return arrayList;
     }
     
     @Override
-    public Class6997 method27254(final Class1795 class1795, final Class354 class1796, final Class2052 class1797) {
-        final Class354 method27267 = this.method27267(class1795, class1797);
-        return new Class6997(class1796.method1074(), class1796.method1075(), class1796.method1076(), class1796.method1074() + method27267.method1074(), class1796.method1075() + method27267.method1075(), class1796.method1076() + method27267.method1076());
+    public Class6997 method27254(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797) {
+        final BlockPos method27267 = this.method27267(class1795, class1797);
+        return new Class6997(class1796.getX(), class1796.getY(), class1796.getZ(), class1796.getX() + method27267.getX(), class1796.getY() + method27267.getY(), class1796.getZ() + method27267.getZ());
     }
     
     @Override
-    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final Class354 class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
+    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
         return this.field33792.method28613(class1796, (Class6346<? extends Class7065>)class1797, random, class1798);
     }
     

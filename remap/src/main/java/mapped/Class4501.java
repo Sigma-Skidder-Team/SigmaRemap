@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.List;
 import java.util.Random;
 
@@ -11,7 +13,7 @@ public class Class4501 extends Class4500
 {
     private final boolean field19897;
     
-    public Class4501(final int n, final Random random, final Class6997 field19849, final Class179 class179) {
+    public Class4501(final int n, final Random random, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40968, n);
         this.method13456(class179);
         this.field19896 = this.method13493(random);
@@ -30,7 +32,7 @@ public class Class4501 extends Class4500
         class51.method312("Tall", this.field19897);
     }
     
-    public static Class4501 method13498(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+    public static Class4501 method13498(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
         Class6997 class180 = Class6997.method21408(n, n2, n3, -4, -1, 0, 14, 11, 15, class179);
         if (!Class4500.method13497(class180) || Class4473.method13435(list, class180) != null) {
             class180 = Class6997.method21408(n, n2, n3, -4, -1, 0, 14, 6, 15, class179);
@@ -62,8 +64,8 @@ public class Class4501 extends Class4500
             else {
                 this.method13444(class1851, class1853, 1, 1, i, 1, 4, i, Class7521.field29160.method11878(), Class7521.field29160.method11878(), false);
                 this.method13444(class1851, class1853, 12, 1, i, 12, 4, i, Class7521.field29160.method11878(), Class7521.field29160.method11878(), false);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Class179.field516), 2, 3, i, class1853);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Class179.field515), 11, 3, i, class1853);
+                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.EAST), 2, 3, i, class1853);
+                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.WEST), 11, 3, i, class1853);
                 if (this.field19897) {
                     this.method13444(class1851, class1853, 1, 6, i, 1, 9, i, Class7521.field29160.method11878(), Class7521.field29160.method11878(), false);
                     this.method13444(class1851, class1853, 12, 6, i, 12, 9, i, Class7521.field29160.method11878(), Class7521.field29160.method11878(), false);
@@ -98,7 +100,7 @@ public class Class4501 extends Class4500
                     this.method13440(class1851, ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29336.method11878()).method21773((Class7111<Comparable>)Class3929.field17465, true)).method21773((Class7111<Comparable>)Class3929.field17466, true), 8 + k, 6, 11 - k, class1853);
                 }
             }
-            final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29307.method11878()).method21773((Class7111<Comparable>)Class3917.field17752, Class179.field514);
+            final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29307.method11878()).method21773((Class7111<Comparable>)Class3917.field17752, Direction.SOUTH);
             this.method13440(class1851, class1857, 10, 1, 13, class1853);
             this.method13440(class1851, class1857, 10, 2, 13, class1853);
             this.method13440(class1851, class1857, 10, 3, 13, class1853);

@@ -14,7 +14,7 @@ public class Class1886 implements Class1887
         this.field10271 = (b2 ? new Class1902(class1908) : null);
     }
     
-    public void method7252(final Class354 class354) {
+    public void method7252(final BlockPos class354) {
         if (this.field10270 != null) {
             this.field10270.method7310(class354);
         }
@@ -23,7 +23,7 @@ public class Class1886 implements Class1887
         }
     }
     
-    public void method7251(final Class354 class354, final int n) {
+    public void method7251(final BlockPos class354, final int n) {
         if (this.field10270 != null) {
             this.field10270.method7311(class354, n);
         }
@@ -104,7 +104,7 @@ public class Class1886 implements Class1887
         }
     }
     
-    public int method7290(final Class354 class354, final int n) {
+    public int method7290(final BlockPos class354, final int n) {
         return Math.max((this.field10270 != null) ? this.field10270.method7293(class354) : 0, (this.field10271 != null) ? (this.field10271.method7293(class354) - n) : 0);
     }
 }

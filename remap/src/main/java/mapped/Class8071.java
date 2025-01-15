@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
 import org.apache.logging.log4j.Logger;
@@ -16,17 +17,17 @@ public class Class8071
     private Class101 field33249;
     private boolean field33250;
     private int field33251;
-    private Class354 field33252;
+    private BlockPos field33252;
     private int field33253;
     private boolean field33254;
-    private Class354 field33255;
+    private BlockPos field33255;
     private int field33256;
     private int field33257;
     
     public Class8071(final Class1849 field33247) {
         this.field33249 = Class101.field297;
-        this.field33252 = Class354.field2173;
-        this.field33255 = Class354.field2173;
+        this.field33252 = BlockPos.ZERO;
+        this.field33255 = BlockPos.ZERO;
         this.field33257 = -1;
         this.field33247 = field33247;
     }
@@ -86,7 +87,7 @@ public class Class8071
         }
     }
     
-    private float method26486(final Class7096 class7096, final Class354 class7097, final int n) {
+    private float method26486(final Class7096 class7096, final BlockPos class7097, final int n) {
         final float n2 = class7096.method21719(this.field33248, this.field33248.field2391, class7097) * (this.field33253 - n + 1);
         final int field33257 = (int)(n2 * 10.0f);
         if (field33257 != this.field33257) {
@@ -96,12 +97,12 @@ public class Class8071
         return n2;
     }
     
-    public void method26478(final Class354 field33255, final Class2003 class2003, final Class179 class2004, final int n) {
-        final double n2 = this.field33248.method1938() - (field33255.method1074() + 0.5);
-        final double n3 = this.field33248.method1941() - (field33255.method1075() + 0.5) + 1.5;
-        final double n4 = this.field33248.method1945() - (field33255.method1076() + 0.5);
+    public void method26478(final BlockPos field33255, final Class2003 class2003, final Direction class2004, final int n) {
+        final double n2 = this.field33248.method1938() - (field33255.getX() + 0.5);
+        final double n3 = this.field33248.method1941() - (field33255.getY() + 0.5) + 1.5;
+        final double n4 = this.field33248.method1945() - (field33255.getZ() + 0.5);
         if (n2 * n2 + n3 * n3 + n4 * n4 <= 36.0) {
-            if (field33255.method1075() < n) {
+            if (field33255.getY() < n) {
                 if (class2003 != Class2003.field11240) {
                     if (class2003 != Class2003.field11242) {
                         if (class2003 == Class2003.field11241) {
@@ -188,7 +189,7 @@ public class Class8071
         }
     }
     
-    public void method26487(final Class354 class354, final Class2003 class355, final String s) {
+    public void method26487(final BlockPos class354, final Class2003 class355, final String s) {
         if (!this.method26488(class354)) {
             this.field33248.field3039.method17469(new Class4320(class354, this.field33247.method6701(class354), class355, false, s));
         }
@@ -197,7 +198,7 @@ public class Class8071
         }
     }
     
-    public boolean method26488(final Class354 class354) {
+    public boolean method26488(final BlockPos class354) {
         final Class7096 method6701 = this.field33247.method6701(class354);
         if (!this.field33248.method2713().method27622().method11703(method6701, this.field33247, class354, this.field33248)) {
             return false;
@@ -286,7 +287,7 @@ public class Class8071
     }
     
     public Class2201 method26480(final Class512 class512, final Class1847 class513, final Class8321 class514, final Class316 class515, final Class7005 class516) {
-        final Class354 method21447 = class516.method21447();
+        final BlockPos method21447 = class516.method21447();
         final Class7096 method21448 = class513.method6701(method21447);
         if (this.field33249 != Class101.field301) {
             final boolean b = !class512.method2713().method27620() || !class512.method2714().method27620();

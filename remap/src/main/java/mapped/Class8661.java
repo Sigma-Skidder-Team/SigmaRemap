@@ -113,7 +113,7 @@ public class Class8661 extends Class8660
     }
     
     @Override
-    public void method29548(final Class354 class354) {
+    public void method29548(final BlockPos class354) {
     }
     
     @Override

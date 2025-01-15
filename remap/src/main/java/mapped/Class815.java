@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import javax.annotation.Nullable;
 
@@ -88,7 +91,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     public int method4788() {
-        return Class9546.method35651(this.field2432.method33568(Class815.field4371), 0, 3);
+        return MathHelper.method35651(this.field2432.method33568(Class815.field4371), 0, 3);
     }
     
     public void method4789(final int i) {
@@ -101,9 +104,9 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public void method1773(final Class399 class399) {
+    public void method1773(final Entity class399) {
         if (this.method1909(class399)) {
-            class399.method1656(this.method1938() + 0.3f * Class9546.method35638(this.field2951 * 0.017453292f), this.method1941() + this.method1777() + class399.method1776(), this.method1945() - 0.3f * Class9546.method35639(this.field2951 * 0.017453292f));
+            class399.method1656(this.method1938() + 0.3f * MathHelper.sin(this.field2951 * 0.017453292f), this.method1941() + this.method1777() + class399.method1776(), this.method1945() - 0.3f * MathHelper.cos(this.field2951 * 0.017453292f));
         }
     }
     
@@ -219,7 +222,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35354, 0.15f, 1.0f);
     }
     
@@ -335,7 +338,7 @@ public class Class815 extends Class812 implements Class768
         final double n = class511.method1938() - this.method1938();
         final double n2 = class511.method1942(0.3333333333333333) - class512.method1941();
         final double n3 = class511.method1945() - this.method1945();
-        class512.method1958(n, n2 + Class9546.method35641(n * n + n3 * n3) * 0.2f, n3, 1.5f, 10.0f);
+        class512.method1958(n, n2 + MathHelper.method35641(n * n + n3 * n3) * 0.2f, n3, 1.5f, 10.0f);
         this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35353, this.method1922(), 1.0f, 1.0f + (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
         this.field2391.method6886(class512);
         this.field4372 = true;
@@ -352,7 +355,7 @@ public class Class815 extends Class812 implements Class768
             if (n >= 6.0f) {
                 this.method1740(Class7929.field32572, (float)method2691);
                 if (this.method1806()) {
-                    final Iterator<Class399> iterator = this.method1911().iterator();
+                    final Iterator<Entity> iterator = this.method1911().iterator();
                     while (iterator.hasNext()) {
                         iterator.next().method1740(Class7929.field32572, (float)method2691);
                     }

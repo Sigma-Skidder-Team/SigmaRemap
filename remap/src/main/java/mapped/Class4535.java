@@ -101,11 +101,11 @@ public abstract class Class4535<FC extends Class5113>
         return (FC)this.field20025.apply(dynamic);
     }
     
-    public void method13529(final Class1876 class1876, final Class354 class1877, final Class7096 class1878) {
+    public void method13529(final Class1876 class1876, final BlockPos class1877, final Class7096 class1878) {
         class1876.method6688(class1877, class1878, 3);
     }
     
-    public abstract boolean method13525(final Class1851 p0, final Class6346<? extends Class7065> p1, final Random p2, final Class354 p3, final FC p4);
+    public abstract boolean method13525(final Class1851 p0, final Class6346<? extends Class7065> p1, final Random p2, final BlockPos p3, final FC p4);
     
     public List<Class6828> method13530() {
         return Collections.emptyList();

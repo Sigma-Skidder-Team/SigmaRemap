@@ -17,10 +17,10 @@ public class Class7151 extends Class7139<Class6927>
         super(function);
     }
     
-    public Stream<Class354> method21902(final Random random, final Class6927 class6927, final Class354 class6928) {
+    public Stream<BlockPos> method21902(final Random random, final Class6927 class6927, final BlockPos class6928) {
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < random.nextInt(random.nextInt(class6927.field27146) + 1) + 1; ++i) {
-            arrayList.add(new Class354(random.nextInt(16) + class6928.method1074(), random.nextInt(120) + 4, random.nextInt(16) + class6928.method1076()));
+            arrayList.add(new BlockPos(random.nextInt(16) + class6928.getX(), random.nextInt(120) + 4, random.nextInt(16) + class6928.getZ()));
         }
         return arrayList.stream();
     }

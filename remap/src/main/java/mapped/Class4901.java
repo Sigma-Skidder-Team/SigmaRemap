@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.Iterator;
+
+import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +84,7 @@ public class Class4901 extends Class4841
             final float a = n8 + n5 / n7 * 16.0f;
             final float a2 = n9 - n6 / n7 * 16.0f;
             System.out.println(n6 / n7 + " : " + n5 / n7);
-            this.method14720(n, n2, new Class352(Math.round(a), 0, Math.round(a2)));
+            this.method14720(n, n2, new Vec3i(Math.round(a), 0, Math.round(a2)));
             return false;
         }
         this.method14722();
@@ -172,7 +174,7 @@ public class Class4901 extends Class4841
         this.field20971.add(class8058);
     }
     
-    public final void method14720(final int n, final int n2, final Class352 class352) {
+    public final void method14720(final int n, final int n2, final Vec3i class352) {
         final Iterator<Class8058> iterator = this.field20971.iterator();
         while (iterator.hasNext()) {
             iterator.next().method26437(this, n, n2, class352);

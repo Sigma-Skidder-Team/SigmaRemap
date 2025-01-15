@@ -11,7 +11,7 @@ public class Class8758
 {
     private static String[] field36779;
     
-    public static Map<Class354, Class6349> method30317(final Class1847 class1847, final Class7859 class1848) {
+    public static Map<BlockPos, Class6349> method30317(final Class1847 class1847, final Class7859 class1848) {
         return Collections.emptyMap();
     }
 }

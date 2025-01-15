@@ -97,9 +97,9 @@ public class Class518 extends Class517<Class3427> implements Class519
         final Class7351 class512 = new Class7351();
         class512.method22564(0.0, 0.0, 1000.0);
         class512.method22565((float)n3, (float)n3, (float)n3);
-        final Class9389 method33328 = Class9138.field38720.method33328(180.0f);
-        final Class9389 method33329 = Class9138.field38716.method33328(n7 * 20.0f);
-        method33328.method34903(method33329);
+        final Quaternion method33328 = Vector3f.ZP.rotationDegrees(180.0f);
+        final Quaternion method33329 = Vector3f.XP.rotationDegrees(n7 * 20.0f);
+        method33328.multiply(method33329);
         class512.method22566(method33328);
         final float field2951 = class511.field2951;
         final float field2952 = class511.field2399;

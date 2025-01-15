@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class8864
 {
     public static void main(final String[] array) throws Exception {
@@ -16,14 +18,14 @@ public class Class8864
     }
     
     private static void method31046(final Class1963 class1963, final boolean field41105) {
-        Class9546.field41105 = field41105;
+        MathHelper.field41105 = field41105;
         double n = 0.0;
         double n2 = 0.0;
         switch (Class9195.field38972[class1963.ordinal()]) {
             case 1:
             case 2: {
-                n = -Class9546.field41099;
-                n2 = Class9546.field41099;
+                n = -MathHelper.field41099;
+                n2 = MathHelper.field41099;
                 break;
             }
             case 3:
@@ -43,12 +45,12 @@ public class Class8864
             switch (Class9195.field38972[class1963.ordinal()]) {
                 case 1: {
                     f = (float)Math.sin(d);
-                    f2 = Class9546.method35638((float)d);
+                    f2 = MathHelper.sin((float)d);
                     break;
                 }
                 case 2: {
                     f = (float)Math.cos(d);
-                    f2 = Class9546.method35639((float)d);
+                    f2 = MathHelper.cos((float)d);
                     break;
                 }
                 case 3: {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3i;
+
 import java.util.Comparator;
 
 public class Class9105<T>
@@ -16,7 +18,7 @@ public class Class9105<T>
     public static final Class9105<Class7859> field38567;
     public static final Class9105<Class7859> field38568;
     public static final Class9105<Class7859> field38569;
-    public static final Class9105<Class354> field38570;
+    public static final Class9105<BlockPos> field38570;
     public static final Class9105<Integer> field38571;
     public static final Class9105<Class7859> field38572;
     
@@ -53,7 +55,7 @@ public class Class9105<T>
         field38567 = method32911("player", Comparator.comparingLong(Class7859::method25422));
         field38568 = method32911("forced", Comparator.comparingLong(Class7859::method25422));
         field38569 = method32911("light", Comparator.comparingLong(Class7859::method25422));
-        field38570 = method32912("portal", Class352::compareTo, 300);
+        field38570 = method32912("portal", Vec3i::compareTo, 300);
         field38571 = method32912("post_teleport", Integer::compareTo, 5);
         field38572 = method32912("unknown", Comparator.comparingLong(Class7859::method25422), 1);
     }

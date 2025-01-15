@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class3886 extends Class3874
 {
     private static String[] field17547;
@@ -14,22 +16,22 @@ public class Class3886 extends Class3874
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class399 class7099) {
+    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
         super.method11850(class7096, class7097, class7098, class7099);
         if (class7097 instanceof Class1849) {
             if (class7099 instanceof Class423) {
-                class7097.method6691(new Class354(class7098), true, class7099);
+                class7097.method6691(new BlockPos(class7098), true, class7099);
             }
         }
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3886.field17548;
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return class7097.method6702(class7098).method21779() == Class7558.field29976 || class7096.method21697() == Class8059.field33183;
     }
     

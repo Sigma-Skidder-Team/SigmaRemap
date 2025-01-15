@@ -14,14 +14,14 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
         this.method13978(new Class1800(this));
     }
     
-    public Class5487 method14012(final Class841 class841, final float n) {
+    public Vec3d method14012(final Class841 class841, final float n) {
         final int method5024 = class841.method5024();
         if (method5024 > 0 && class841.method5026()) {
-            final Class354 method5025 = class841.method5019();
-            final Class354 method5026 = class841.method5025();
+            final BlockPos method5025 = class841.method5019();
+            final BlockPos method5026 = class841.method5025();
             final double n2 = (method5024 - n) / 6.0;
             final double n3 = n2 * n2;
-            return new Class5487(-((method5025.method1074() - method5026.method1074()) * n3), -((method5025.method1075() - method5026.method1075()) * n3), -((method5025.method1076() - method5026.method1076()) * n3));
+            return new Vec3d(-((method5025.getX() - method5026.getX()) * n3), -((method5025.getY() - method5026.getY()) * n3), -((method5025.getZ() - method5026.getZ()) * n3));
         }
         return super.method13955((T)class841, n);
     }
@@ -30,8 +30,8 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
         if (!super.method14005(class841, class842, n, n2, n3)) {
             if (class841.method5024() > 0) {
                 if (class841.method5026()) {
-                    final Class5487 class843 = new Class5487(class841.method5019());
-                    final Class5487 class844 = new Class5487(class841.method5025());
+                    final Vec3d class843 = new Vec3d(class841.method5019());
+                    final Vec3d class844 = new Vec3d(class841.method5025());
                     if (class842.method20261(new Class6221(class844.field22770, class844.field22771, class844.field22772, class843.field22770, class843.field22771, class843.field22772))) {
                         return true;
                     }
@@ -49,7 +49,7 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
     public void method14015(final Class841 class841, final Class7351 class842, final float n, final float n2, final float n3) {
         super.method13985(class841, class842, n, n2, n3);
         class842.method22564(0.0, 0.5, 0.0);
-        class842.method22566(class841.method5018().method782().method778());
+        class842.method22566(class841.method5018().getOpposite().getRotation());
         class842.method22564(0.0, -0.5, 0.0);
     }
     

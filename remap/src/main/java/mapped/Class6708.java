@@ -5,10 +5,11 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.commands.CommandException;
+import net.minecraft.entity.Entity;
 
 public class Class6708 extends Class6693
 {
-    private Class399 field26436;
+    private Entity field26436;
     
     public Class6708() {
         super("entitydesync", "Forces a client side entity dismount", new String[] { "vanish", "riderdesync" });

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -134,13 +136,13 @@ public enum Class305
                 return -method971(array, 0);
             }
             case 7: {
-                return Class9546.field41099;
+                return MathHelper.field41099;
             }
             case 8: {
-                return Class9546.method35638(method971(array, 0));
+                return MathHelper.sin(method971(array, 0));
             }
             case 9: {
-                return Class9546.method35639(method971(array, 0));
+                return MathHelper.cos(method971(array, 0));
             }
             case 10: {
                 return Class8500.method28401(method971(array, 0));
@@ -155,7 +157,7 @@ public enum Class305
                 return (float)Math.atan(method971(array, 0));
             }
             case 14: {
-                return (float)Class9546.method35693(method971(array, 0), method971(array, 1));
+                return (float) MathHelper.method35693(method971(array, 0), method971(array, 1));
             }
             case 15: {
                 return Class8500.method28408(method971(array, 0));
@@ -170,22 +172,22 @@ public enum Class305
                 return this.method970(array);
             }
             case 19: {
-                return Class9546.method35653(method971(array, 0), method971(array, 1), method971(array, 2));
+                return MathHelper.method35653(method971(array, 0), method971(array, 1), method971(array, 2));
             }
             case 20: {
-                return Class9546.method35647(method971(array, 0));
+                return MathHelper.method35647(method971(array, 0));
             }
             case 21: {
                 return (float)Math.exp(method971(array, 0));
             }
             case 22: {
-                return (float)Class9546.method35642(method971(array, 0));
+                return (float) MathHelper.method35642(method971(array, 0));
             }
             case 23: {
-                return (float)Class9546.method35649(method971(array, 0));
+                return (float) MathHelper.method35649(method971(array, 0));
             }
             case 24: {
-                return Class9546.method35686(method971(array, 0));
+                return MathHelper.method35686(method971(array, 0));
             }
             case 25: {
                 return (float)Math.log(method971(array, 0));
@@ -203,12 +205,12 @@ public enum Class305
                 return Math.signum(method971(array, 0));
             }
             case 30: {
-                return Class9546.method35640(method971(array, 0));
+                return MathHelper.method35640(method971(array, 0));
             }
             case 31: {
                 final float method973 = method971(array, 0);
                 final float method974 = method971(array, 1);
-                return method973 - method974 * Class9546.method35642(method973 / method974);
+                return method973 - method974 * MathHelper.method35642(method973 / method974);
             }
             case 32: {
                 final Class869 method975 = Class869.method5277();

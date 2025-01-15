@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 import java.util.OptionalInt;
 import java.util.UUID;
@@ -24,9 +26,9 @@ public class Class7709
     public static final Class4410<Boolean> field30661;
     public static final Class4410<Class6909> field30662;
     public static final Class4410<Class8396> field30663;
-    public static final Class4410<Class354> field30664;
-    public static final Class4410<Optional<Class354>> field30665;
-    public static final Class4410<Class179> field30666;
+    public static final Class4410<BlockPos> field30664;
+    public static final Class4410<Optional<BlockPos>> field30665;
+    public static final Class4410<Direction> field30666;
     public static final Class4410<Optional<UUID>> field30667;
     public static final Class4410<Class51> field30668;
     public static final Class4410<Class8562> field30669;

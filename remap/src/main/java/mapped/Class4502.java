@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.List;
 import java.util.Random;
 
@@ -11,7 +13,7 @@ public class Class4502 extends Class4500
 {
     private static String[] field19898;
     
-    public Class4502(final int n, final Random random, final Class6997 field19849, final Class179 class179) {
+    public Class4502(final int n, final Random random, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40970, n);
         this.method13456(class179);
         this.field19896 = this.method13493(random);
@@ -27,7 +29,7 @@ public class Class4502 extends Class4500
         this.method13494((Class4507)class4473, list, random, 1, 1);
     }
     
-    public static Class4502 method13499(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+    public static Class4502 method13499(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
         final Class6997 method21408 = Class6997.method21408(n, n2, n3, -1, -1, 0, 9, 5, 11, class179);
         return (Class4500.method13497(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4502(n4, random, method21408, class179) : null;
     }
@@ -51,8 +53,8 @@ public class Class4502 extends Class4500
         }
         this.method13440(class1851, ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, true)).method21773((Class7111<Comparable>)Class3853.field17467, true), 4, 3, 2, class1853);
         this.method13440(class1851, ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, true)).method21773((Class7111<Comparable>)Class3853.field17467, true), 4, 3, 8, class1853);
-        final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29318.method11878()).method21773((Class7111<Comparable>)Class3969.field17931, Class179.field515);
-        final Class7096 class1856 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29318.method11878()).method21773((Class7111<Comparable>)Class3969.field17931, Class179.field515)).method21773(Class3969.field17935, Class182.field564);
+        final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29318.method11878()).method21773((Class7111<Comparable>)Class3969.field17931, Direction.WEST);
+        final Class7096 class1856 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29318.method11878()).method21773((Class7111<Comparable>)Class3969.field17931, Direction.WEST)).method21773(Class3969.field17935, Class182.field564);
         this.method13440(class1851, class1855, 4, 1, 2, class1853);
         this.method13440(class1851, class1856, 4, 2, 2, class1853);
         this.method13440(class1851, class1855, 4, 1, 8, class1853);

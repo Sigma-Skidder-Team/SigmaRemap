@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class8500
 {
     private static String[] field34896;
@@ -39,7 +41,7 @@ public class Class8500
     }
     
     public static int method28405(final int n) {
-        final int method35679 = Class9546.method35679(n);
+        final int method35679 = MathHelper.method35679(n);
         return (n != method35679) ? (method35679 / 2) : method35679;
     }
     
@@ -48,23 +50,23 @@ public class Class8500
     }
     
     public static float method28407(final float n) {
-        return n * 180.0f / Class9546.field41099;
+        return n * 180.0f / MathHelper.field41099;
     }
     
     public static float method28408(final float n) {
-        return n / 180.0f * Class9546.field41099;
+        return n / 180.0f * MathHelper.field41099;
     }
     
     public static float method28409(final double n) {
         return (float)(Math.round(n * 1.0E8) / 1.0E8);
     }
     
-    public static double method28410(final Class354 class354, final double n, final double n2, final double n3) {
-        return method28412(class354.method1074(), class354.method1075(), class354.method1076(), n, n2, n3);
+    public static double method28410(final BlockPos class354, final double n, final double n2, final double n3) {
+        return method28412(class354.getX(), class354.getY(), class354.getZ(), n, n2, n3);
     }
     
-    public static float method28411(final Class354 class354, final float n, final float n2, final float n3) {
-        return method28413((float)class354.method1074(), (float)class354.method1075(), (float)class354.method1076(), n, n2, n3);
+    public static float method28411(final BlockPos class354, final float n, final float n2, final float n3) {
+        return method28413((float)class354.getX(), (float)class354.getY(), (float)class354.getZ(), n, n2, n3);
     }
     
     public static double method28412(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {

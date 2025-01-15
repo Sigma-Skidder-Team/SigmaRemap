@@ -32,8 +32,8 @@ public class Class1823<T extends Class511, M extends Class5845<T> & Class5852> e
         if (!class512.method27620()) {
             class515.method22567();
             this.method6559().method17578(class514, class515);
-            class515.method22566(Class9138.field38716.method33328(-90.0f));
-            class515.method22566(Class9138.field38718.method33328(180.0f));
+            class515.method22566(Vector3f.XP.rotationDegrees(-90.0f));
+            class515.method22566(Vector3f.field38718.rotationDegrees(180.0f));
             final boolean b = class514 == Class2226.field13697;
             class515.method22564((b ? -1 : 1) / 16.0f, 0.125, -0.625);
             Class869.method5277().method5308().method35143(class511, class512, class513, b, class515, class516, n);

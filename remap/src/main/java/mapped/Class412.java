@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class412 extends Class409
@@ -33,14 +35,14 @@ public class Class412 extends Class409
     public void method2016(final Class7006 class7006) {
         final Class511 method2019 = this.method2019();
         if (class7006.method21449() == Class2165.field12882) {
-            final Class399 method2020 = ((Class7007)class7006).method21452();
+            final Entity method2020 = ((Class7007)class7006).method21452();
             if (method2020 == this.field2510) {
                 return;
             }
             method2020.method1740(Class7929.method25699(this, method2019), 0.0f);
         }
         if (class7006.method21449() == Class2165.field12881) {
-            final Class354 method2021 = ((Class7005)class7006).method21447();
+            final BlockPos method2021 = ((Class7005)class7006).method21447();
             final Class436 method2022 = this.field2391.method6727(method2021);
             if (method2022 instanceof Class488) {
                 final Class488 class7007 = (Class488)method2022;
@@ -109,7 +111,7 @@ public class Class412 extends Class409
     
     @Nullable
     @Override
-    public Class399 method1854(final Class383 class383) {
+    public Entity method1854(final Class383 class383) {
         if (this.field2517.field2452 != class383) {
             this.field2517 = null;
         }

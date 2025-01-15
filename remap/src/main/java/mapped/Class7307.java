@@ -5,12 +5,13 @@
 package mapped;
 
 import java.util.Set;
-import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.Random;
 import java.util.BitSet;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
+
 import java.util.function.Function;
 
 public class Class7307 extends Class7303
@@ -26,7 +27,7 @@ public class Class7307 extends Class7303
     }
     
     @Override
-    public boolean method22396(final Class1860 class1860, final Function<Class354, Class3090> function, final BitSet set, final Random random, final Class385 class1861, final Class385 class1862, final Class385 class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Class385 class1861, final Class385 class1862, final Class385 class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         return method22413(this, class1860, set, random, class1861, n, n2, n3, n4, n5, n6, n7, n8);
     }
     
@@ -58,9 +59,9 @@ public class Class7307 extends Class7303
             return false;
         }
         int n10 = 0;
-        for (final Class179 class7307 : Class98.field268) {
-            final int n11 = n4 + class7307.method785();
-            final int n12 = n5 + class7307.method787();
+        for (final Direction class7307 : Plane.HORIZONTAL) {
+            final int n11 = n4 + class7307.getXOffset();
+            final int n12 = n5 + class7307.getZOffset();
             if (n11 >> 4 == n2) {
                 if (n12 >> 4 == n3) {
                     if (!class7305.method6701(class7306.method1284(n11, n7, n12)).method21706()) {

@@ -4,14 +4,13 @@
 
 package mapped;
 
-import java.util.Random;
 import java.util.List;
 
 public class Class8501
 {
     private static String[] field34901;
     
-    public static void method28414(final Class6346<?> class6346, final Class1795 class6347, final Class354 class6348, final List<Class4473> list, final Class2317 class6349, final Class5115 class6350) {
+    public static void method28414(final Class6346<?> class6346, final Class1795 class6347, final BlockPos class6348, final List<Class4473> list, final Class2317 class6349, final Class5115 class6350) {
         Class9525.method35558();
         Class9199.method33669();
         Class6902.method21250();

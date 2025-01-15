@@ -5,8 +5,9 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import com.mojang.brigadier.context.CommandContext;
+
 import java.nio.file.FileSystem;
 import java.nio.file.Path;
 import java.io.IOException;
@@ -55,7 +56,7 @@ public class Class8001
             final float f = method23257.method17106() / 1.0E9f;
             final float f2 = method23257.method17098() / f;
             class7492.method23257(new Class2259("commands.debug.stopped", new Object[] { String.format(Locale.ROOT, "%.2f", f), method23257.method17098(), String.format("%.2f", f2) }), true);
-            return Class9546.method35642(f2);
+            return MathHelper.method35642(f2);
         }
         throw Class8001.field32953.create();
     }

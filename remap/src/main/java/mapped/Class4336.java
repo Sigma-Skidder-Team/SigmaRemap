@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 
 public class Class4336 implements Class4252<Class5813>
@@ -16,11 +18,11 @@ public class Class4336 implements Class4252<Class5813>
     public Class4336() {
     }
     
-    public Class4336(final Class399 class399, final Class287 class400) {
+    public Class4336(final Entity class399, final Class287 class400) {
         this(class399, class400, 0);
     }
     
-    public Class4336(final Class399 class399, final Class287 field19416, final int field19417) {
+    public Class4336(final Entity class399, final Class287 field19416, final int field19417) {
         this.field19415 = class399.method1643();
         this.field19416 = field19416;
         this.field19417 = field19417;

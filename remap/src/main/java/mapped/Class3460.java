@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.EnumSet;
@@ -29,9 +31,9 @@ public class Class3460<T extends Class776> extends Class3446
                     if (!Class8321.method27643(this.field16314.method2718(Class2215.field13605), Class8792.method30651())) {
                         final Class776 method4293 = method4292.method30652(this.field16314.method4295());
                         if (method4293 == null || !method4293.method1768()) {
-                            final List<Class399> method4294 = this.field16314.field2391.method6739((Class<? extends Class399>)Class427.class, this.field16314.method1886().method18495(16.0, 8.0, 16.0), (Predicate<? super Class399>)Class776.method4307());
+                            final List<Entity> method4294 = this.field16314.field2391.method6739((Class<? extends Entity>)Class427.class, this.field16314.method1886().method18495(16.0, 8.0, 16.0), (Predicate<? super Entity>)Class776.method4307());
                             if (!method4294.isEmpty()) {
-                                return this.field16314.method4150().method24725((Class399)method4294.get(0), 1.149999976158142);
+                                return this.field16314.method4150().method24725((Entity)method4294.get(0), 1.149999976158142);
                             }
                         }
                         return false;
@@ -45,7 +47,7 @@ public class Class3460<T extends Class776> extends Class3446
     @Override
     public void method11016() {
         if (this.field16314.method4150().method24714().method1082(this.field16314.method1934(), 1.414)) {
-            final List<Class399> method6739 = this.field16314.field2391.method6739((Class<? extends Class399>)Class427.class, this.field16314.method1886().method18495(4.0, 4.0, 4.0), (Predicate<? super Class399>)Class776.method4307());
+            final List<Entity> method6739 = this.field16314.field2391.method6739((Class<? extends Entity>)Class427.class, this.field16314.method1886().method18495(4.0, 4.0, 4.0), (Predicate<? super Entity>)Class776.method4307());
             if (!method6739.isEmpty()) {
                 this.field16314.method4165((Class427)method6739.get(0));
             }

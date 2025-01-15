@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.base.Predicates;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.function.Consumer;
@@ -244,7 +246,7 @@ public class Class576 extends Class573 implements Class563, Class574
     }
     
     public void method3391(final int n) {
-        this.field3447 = Class9546.method35651(n, 0, this.field3439.length());
+        this.field3447 = MathHelper.method35651(n, 0, this.field3439.length());
     }
     
     public void method3392() {
@@ -381,7 +383,7 @@ public class Class576 extends Class573 implements Class563, Class574
             if (this.method3370()) {
                 if (b2) {
                     if (n3 == 0) {
-                        int n4 = Class9546.method35644(n) - this.field3426;
+                        int n4 = MathHelper.floor(n) - this.field3426;
                         if (this.field3442) {
                             n4 -= 4;
                         }
@@ -576,7 +578,7 @@ public class Class576 extends Class573 implements Class563, Class574
     
     public void method3407(final int n) {
         final int length = this.field3439.length();
-        this.field3448 = Class9546.method35651(n, 0, length);
+        this.field3448 = MathHelper.method35651(n, 0, length);
         if (this.field3438 != null) {
             if (this.field3446 > length) {
                 this.field3446 = length;
@@ -594,7 +596,7 @@ public class Class576 extends Class573 implements Class563, Class574
             else {
                 this.field3446 += this.field3448 - n2;
             }
-            this.field3446 = Class9546.method35651(this.field3446, 0, length);
+            this.field3446 = MathHelper.method35651(this.field3446, 0, length);
         }
     }
     

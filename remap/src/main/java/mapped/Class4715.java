@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4715 extends Class4712<Class796, Class5869>
 {
     public static final Class1932[] field20317;
@@ -17,7 +19,7 @@ public class Class4715 extends Class4712<Class796, Class5869>
     }
     
     public float method14020(final Class796 class796, final float n) {
-        return (Class9546.method35638(Class9546.method35700(n, class796.field4255, class796.field4252)) + 1.0f) * Class9546.method35700(n, class796.field4254, class796.field4253);
+        return (MathHelper.sin(MathHelper.method35700(n, class796.field4255, class796.field4252)) + 1.0f) * MathHelper.method35700(n, class796.field4254, class796.field4253);
     }
     
     static {

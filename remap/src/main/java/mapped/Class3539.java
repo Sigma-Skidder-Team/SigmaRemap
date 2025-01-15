@@ -20,7 +20,7 @@ public class Class3539 extends Class3446
     
     @Override
     public void method11016() {
-        final Class9592 method6784 = this.field16583.field2391.method6784(new Class354(this.field16583));
+        final Class9592 method6784 = this.field16583.field2391.method6784(new BlockPos(this.field16583));
         this.field16583.method4779(false);
         this.field16583.method4719(true);
         this.field16583.method4354(0);

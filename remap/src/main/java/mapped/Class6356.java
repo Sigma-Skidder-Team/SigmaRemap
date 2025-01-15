@@ -9,6 +9,8 @@ import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 import java.util.List;
 
@@ -49,8 +51,8 @@ public class Class6356 extends Class6354
     
     public void method18914(final double n, final double n2, final int n3) {
         final int n4 = 128 * (1 << n3);
-        final int method35644 = Class9546.method35644((n + 64.0) / n4);
-        final int method35645 = Class9546.method35644((n2 + 64.0) / n4);
+        final int method35644 = MathHelper.floor((n + 64.0) / n4);
+        final int method35645 = MathHelper.floor((n2 + 64.0) / n4);
         this.field25420 = method35644 * n4 + n4 / 2 - 64;
         this.field25421 = method35645 * n4 + n4 / 2 - 64;
     }
@@ -63,7 +65,7 @@ public class Class6356 extends Class6354
             this.field25422 = method320;
             this.field25420 = class51.method319("xCenter");
             this.field25421 = class51.method319("zCenter");
-            this.field25425 = (byte)Class9546.method35651(class51.method317("scale"), 0, 4);
+            this.field25425 = (byte) MathHelper.method35651(class51.method317("scale"), 0, 4);
             this.field25423 = (!class51.method316("trackingPosition", 1) || class51.method329("trackingPosition"));
             this.field25424 = class51.method329("unlimitedTracking");
             this.field25427 = class51.method329("locked");
@@ -75,13 +77,13 @@ public class Class6356 extends Class6354
             for (int i = 0; i < method321.size(); ++i) {
                 final Class8843 method322 = Class8843.method30895(method321.method346(i));
                 this.field25430.put(method322.method30901(), method322);
-                this.method18918(method322.method30898(), null, method322.method30901(), method322.method30897().method1074(), method322.method30897().method1076(), 180.0, method322.method30899());
+                this.method18918(method322.method30898(), null, method322.method30901(), method322.method30897().getX(), method322.method30897().getZ(), 180.0, method322.method30899());
             }
             final Class52 method323 = class51.method328("frames", 10);
             for (int j = 0; j < method323.size(); ++j) {
                 final Class8525 method324 = Class8525.method28588(method323.method346(j));
                 this.field25432.put(method324.method28593(), method324);
-                this.method18918(Class2095.field12112, null, "frame-" + method324.method28592(), method324.method28590().method1074(), method324.method28590().method1076(), method324.method28591(), null);
+                this.method18918(Class2095.field12112, null, "frame-" + method324.method28592(), method324.method28590().getX(), method324.method28590().getZ(), method324.method28591(), null);
             }
             return;
         }
@@ -153,7 +155,7 @@ public class Class6356 extends Class6354
         if (class513.method27677()) {
             if (this.field25423) {
                 final Class862 method27679 = class513.method27679();
-                final Class354 method27680 = method27679.method5194();
+                final BlockPos method27680 = method27679.method5194();
                 final Class8525 class516 = this.field25432.get(Class8525.method28594(method27680));
                 if (class516 != null) {
                     if (method27679.method1643() != class516.method28592()) {
@@ -162,8 +164,8 @@ public class Class6356 extends Class6354
                         }
                     }
                 }
-                final Class8525 class517 = new Class8525(method27680, method27679.method1882().method780() * 90, method27679.method1643());
-                this.method18918(Class2095.field12112, class512.field2391, "frame-" + method27679.method1643(), method27680.method1074(), method27680.method1076(), method27679.method1882().method780() * 90, null);
+                final Class8525 class517 = new Class8525(method27680, method27679.method1882().getHorizontalIndex() * 90, method27679.method1643());
+                this.method18918(Class2095.field12112, class512.field2391, "frame-" + method27679.method1643(), method27680.getX(), method27680.getZ(), method27679.method1882().getHorizontalIndex() * 90, null);
                 this.field25432.put(class517.method28593(), class517);
             }
         }
@@ -181,7 +183,7 @@ public class Class6356 extends Class6354
         }
     }
     
-    public static void method18917(final Class8321 class8321, final Class354 class8322, final String s, final Class2095 class8323) {
+    public static void method18917(final Class8321 class8321, final BlockPos class8322, final String s, final Class2095 class8323) {
         Class52 method328;
         if (class8321.method27656() && class8321.method27657().method316("Decorations", 9)) {
             method328 = class8321.method27657().method328("Decorations", 10);
@@ -193,8 +195,8 @@ public class Class6356 extends Class6354
         final Class51 e = new Class51();
         e.method296("type", class8323.method8212());
         e.method306("id", s);
-        e.method305("x", class8322.method1074());
-        e.method305("z", class8322.method1076());
+        e.method305("x", class8322.getX());
+        e.method305("z", class8322.getZ());
         e.method305("rot", 180.0);
         ((AbstractList<Class51>)method328).add(e);
         if (class8323.method8214()) {
@@ -284,9 +286,9 @@ public class Class6356 extends Class6354
         return class513;
     }
     
-    public void method18922(final Class1851 class1851, final Class354 class1852) {
-        final float n = class1852.method1074() + 0.5f;
-        final float n2 = class1852.method1076() + 0.5f;
+    public void method18922(final Class1851 class1851, final BlockPos class1852) {
+        final float n = class1852.getX() + 0.5f;
+        final float n2 = class1852.getZ() + 0.5f;
         final int n3 = 1 << this.field25425;
         final float n4 = (n - this.field25420) / n3;
         final float n5 = (n2 - this.field25421) / n3;
@@ -326,10 +328,10 @@ public class Class6356 extends Class6354
         final Iterator<Class8843> iterator = this.field25430.values().iterator();
         while (iterator.hasNext()) {
             final Class8843 class1856 = iterator.next();
-            if (class1856.method30897().method1074() != n) {
+            if (class1856.method30897().getX() != n) {
                 continue;
             }
-            if (class1856.method30897().method1076() != n2) {
+            if (class1856.method30897().getZ() != n2) {
                 continue;
             }
             if (class1856.equals(Class8843.method30896(class1855, class1856.method30897()))) {
@@ -340,7 +342,7 @@ public class Class6356 extends Class6354
         }
     }
     
-    public void method18924(final Class354 class354, final int i) {
+    public void method18924(final BlockPos class354, final int i) {
         this.field25431.remove("frame-" + i);
         this.field25432.remove(Class8525.method28594(class354));
     }

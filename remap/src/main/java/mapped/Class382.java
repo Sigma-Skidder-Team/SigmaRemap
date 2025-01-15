@@ -19,7 +19,7 @@ public class Class382 extends Class378
     }
     
     @Override
-    public void method1261(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final int n2, final int b, final Class354 class1877, final Set<Class354> set) {
+    public void method1261(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final int n2, final int b, final BlockPos class1877, final Set<BlockPos> set) {
         int nextInt = random.nextInt(2);
         int min = 1;
         int n3 = 0;

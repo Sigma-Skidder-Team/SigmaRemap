@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 import java.util.Map;
 
@@ -29,7 +31,7 @@ public class Class8897
         return (class7500 != null) ? Class8449.method28193(class7500) : Class2020.field11526;
     }
     
-    public static <T extends Class399> boolean method31330(final Class7499<T> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static <T extends Entity> boolean method31330(final Class7499<T> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class8449 class7503 = Class8897.field37407.get(class7499);
         return class7503 == null || Class8449.method28194(class7503).method17152(class7499, class7500, class7501, class7502, random);
     }

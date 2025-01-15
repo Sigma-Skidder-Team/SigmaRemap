@@ -25,7 +25,7 @@ public class Class6123 implements Class6113
 {
     private static final Logger field24854;
     private final Class869 field24855;
-    private final Map<Class354, Class7018> field24856;
+    private final Map<BlockPos, Class7018> field24856;
     private final Set<Class353> field24857;
     private final Map<UUID, Class9307> field24858;
     private UUID field24859;
@@ -49,11 +49,11 @@ public class Class6123 implements Class6113
         this.field24856.put(class7018.field27401, class7018);
     }
     
-    public void method18318(final Class354 class354) {
+    public void method18318(final BlockPos class354) {
         this.field24856.remove(class354);
     }
     
-    public void method18319(final Class354 obj, final int field27403) {
+    public void method18319(final BlockPos obj, final int field27403) {
         final Class7018 class7018 = this.field24856.get(obj);
         if (class7018 != null) {
             class7018.field27403 = field27403;
@@ -91,7 +91,7 @@ public class Class6123 implements Class6113
     }
     
     private void method18323(final double n, final double n2, final double n3) {
-        final Class354 class354 = new Class354(n, n2, n3);
+        final BlockPos class354 = new BlockPos(n, n2, n3);
         this.field24857.forEach(class357 -> {
             if (!(!class356.method1081(class357.method1114(), 60.0))) {
                 method18324(class357);
@@ -104,7 +104,7 @@ public class Class6123 implements Class6113
             }
             return;
         });
-        for (final Class354 class355 : this.field24856.keySet()) {
+        for (final BlockPos class355 : this.field24856.keySet()) {
             if (!class354.method1081(class355, 30.0)) {
                 continue;
             }
@@ -124,17 +124,17 @@ public class Class6123 implements Class6113
     }
     
     private static void method18324(final Class353 class353) {
-        final Class354 method1114 = class353.method1114();
+        final BlockPos method1114 = class353.method1114();
         Class7282.method22334(method1114.method1133(-1.0, -1.0, -1.0), method1114.method1133(1.0, 1.0, 1.0), 0.2f, 1.0f, 0.2f, 0.15f);
     }
     
-    private static void method18325(final Class354 class354) {
+    private static void method18325(final BlockPos class354) {
         Class8726.method30011();
         Class8726.method30117();
         Class7282.method22335(class354, 0.05f, 0.2f, 0.2f, 1.0f, 0.3f);
     }
     
-    private void method18326(final Class354 class354, final List<String> obj) {
+    private void method18326(final BlockPos class354, final List<String> obj) {
         Class8726.method30011();
         Class8726.method30117();
         Class7282.method22335(class354, 0.05f, 0.2f, 0.2f, 1.0f, 0.3f);
@@ -222,13 +222,13 @@ public class Class6123 implements Class6113
         method18331(s, class7018.field27401, n, n2);
     }
     
-    private static void method18331(final String s, final Class354 class354, final int n, final int n2) {
-        Class7282.method22341(s, class354.method1074() + 0.5, class354.method1075() + 1.3 + n * 0.2, class354.method1076() + 0.5, n2, 0.02f, true, 0.0f, true);
+    private static void method18331(final String s, final BlockPos class354, final int n, final int n2) {
+        Class7282.method22341(s, class354.getX() + 0.5, class354.getY() + 1.3 + n * 0.2, class354.getZ() + 0.5, n2, 0.02f, true, 0.0f, true);
     }
     
     private static void method18332(final Class5488 class5488, final int n, final String s, final int n2, final float n3) {
-        final Class354 class5489 = new Class354(class5488);
-        Class7282.method22341(s, class5489.method1074() + 0.5, class5488.method16761() + 2.4 + n * 0.25, class5489.method1076() + 0.5, n2, n3, false, 0.5f, true);
+        final BlockPos class5489 = new BlockPos(class5488);
+        Class7282.method22341(s, class5489.getX() + 0.5, class5488.method16761() + 2.4 + n * 0.25, class5489.getZ() + 0.5, n2, n3, false, 0.5f, true);
     }
     
     private Set<String> method18333(final Class7018 class7018) {
@@ -241,17 +241,17 @@ public class Class6123 implements Class6113
     
     private boolean method18335(final Class9307 class9307) {
         final Class756 field4684 = this.field24855.field4684;
-        return new Class354(field4684.method1938(), class9307.field39938.method16761(), field4684.method1945()).method1081(new Class354(class9307.field39938), 30.0);
+        return new BlockPos(field4684.method1938(), class9307.field39938.method16761(), field4684.method1945()).method1081(new BlockPos(class9307.field39938), 30.0);
     }
     
-    private Collection<UUID> method18336(final Class354 class354) {
+    private Collection<UUID> method18336(final BlockPos class354) {
         return this.field24858.values().stream().filter(class356 -> Class9307.method34425(class356, class355)).map((Function<? super Class9307, ?>)Class9307::method34424).collect((Collector<? super Object, ?, Collection<UUID>>)Collectors.toSet());
     }
     
-    private Map<Class354, List<String>> method18337() {
+    private Map<BlockPos, List<String>> method18337() {
         final HashMap hashMap = Maps.newHashMap();
         for (final Class9307 class9307 : this.field24858.values()) {
-            for (final Class354 class9308 : class9307.field39946) {
+            for (final BlockPos class9308 : class9307.field39946) {
                 if (this.field24856.containsKey(class9308)) {
                     continue;
                 }

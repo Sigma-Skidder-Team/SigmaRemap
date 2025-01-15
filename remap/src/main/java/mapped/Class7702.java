@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.List;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class7702
 {
@@ -20,35 +22,35 @@ public abstract class Class7702
         this.field30615 = field30615;
     }
     
-    public double method24535(final Class111 class111) {
+    public double method24535(final Axis class111) {
         final int method27417 = this.field30615.method27417(class111);
         return (method27417 < this.field30615.method27430(class111)) ? this.method24538(class111, method27417) : Double.POSITIVE_INFINITY;
     }
     
-    public double method24536(final Class111 class111) {
+    public double method24536(final Axis class111) {
         final int method27418 = this.field30615.method27418(class111);
         return (method27418 > 0) ? this.method24538(class111, method27418) : Double.NEGATIVE_INFINITY;
     }
     
     public Class6221 method24537() {
         if (!this.method24540()) {
-            return new Class6221(this.method24535(Class111.field351), this.method24535(Class111.field352), this.method24535(Class111.field353), this.method24536(Class111.field351), this.method24536(Class111.field352), this.method24536(Class111.field353));
+            return new Class6221(this.method24535(Axis.X), this.method24535(Axis.Y), this.method24535(Axis.Z), this.method24536(Axis.X), this.method24536(Axis.Y), this.method24536(Axis.Z));
         }
         throw Class8349.method27859(new UnsupportedOperationException("No bounds for empty shape."));
     }
     
-    public double method24538(final Class111 class111, final int n) {
+    public double method24538(final Axis class111, final int n) {
         return this.method24539(class111).getDouble(n);
     }
     
-    public abstract DoubleList method24539(final Class111 p0);
+    public abstract DoubleList method24539(final Axis p0);
     
     public boolean method24540() {
         return this.field30615.method27416();
     }
     
     public Class7702 method24541(final double n, final double n2, final double n3) {
-        return this.method24540() ? Class7698.method24486() : new Class7704(this.field30615, (DoubleList)new Class87(this.method24539(Class111.field351), n), (DoubleList)new Class87(this.method24539(Class111.field352), n2), (DoubleList)new Class87(this.method24539(Class111.field353), n3));
+        return this.method24540() ? Class7698.method24486() : new Class7704(this.field30615, (DoubleList)new Class87(this.method24539(Axis.X), n), (DoubleList)new Class87(this.method24539(Axis.Y), n2), (DoubleList)new Class87(this.method24539(Axis.Z), n3));
     }
     
     public Class7702 method24542() {
@@ -58,7 +60,7 @@ public abstract class Class7702
     }
     
     public void method24543(final Class9252 class9252) {
-        this.field30615.method27434((n, n2, n3, n4, n5, n6) -> class9252.method34141(this.method24538(Class111.field351, n), this.method24538(Class111.field352, n2), this.method24538(Class111.field353, n3), this.method24538(Class111.field351, n4), this.method24538(Class111.field352, n5), this.method24538(Class111.field353, n6)), true);
+        this.field30615.method27434((n, n2, n3, n4, n5, n6) -> class9252.method34141(this.method24538(Axis.X, n), this.method24538(Axis.Y, n2), this.method24538(Axis.Z, n3), this.method24538(Axis.X, n4), this.method24538(Axis.Y, n5), this.method24538(Axis.Z, n6)), true);
     }
     
     public void method24544(final Class9252 class9252) {
@@ -71,18 +73,18 @@ public abstract class Class7702
         return arrayList;
     }
     
-    public double method24546(final Class111 class111, final double n, final double n2) {
+    public double method24546(final Axis class111, final double n, final double n2) {
         final int method27428 = this.field30615.method27428(class111, this.method24548(Class309.field1838.method983(class111), n), this.method24548(Class309.field1839.method983(class111), n2));
         return (method27428 < this.field30615.method27430(class111)) ? this.method24538(class111, method27428) : Double.POSITIVE_INFINITY;
     }
     
-    public double method24547(final Class111 class111, final double n, final double n2) {
+    public double method24547(final Axis class111, final double n, final double n2) {
         final int method27429 = this.field30615.method27429(class111, this.method24548(Class309.field1838.method983(class111), n), this.method24548(Class309.field1839.method983(class111), n2));
         return (method27429 > 0) ? this.method24538(class111, method27429) : Double.NEGATIVE_INFINITY;
     }
     
-    public int method24548(final Class111 class111, final double n) {
-        return Class9546.method35699(0, this.field30615.method27430(class111) + 1, n4 -> {
+    public int method24548(final Axis class111, final double n) {
+        return MathHelper.method35699(0, this.field30615.method27430(class111) + 1, n4 -> {
             if (n4 >= 0) {
                 if (n4 <= this.field30615.method27430(class112)) {
                     return n3 < this.method24538(class112, n4);
@@ -98,23 +100,23 @@ public abstract class Class7702
     }
     
     public boolean method24549(final double n, final double n2, final double n3) {
-        return this.field30615.method27426(this.method24548(Class111.field351, n), this.method24548(Class111.field352, n2), this.method24548(Class111.field353, n3));
+        return this.field30615.method27426(this.method24548(Axis.X, n), this.method24548(Axis.Y, n2), this.method24548(Axis.Z, n3));
     }
     
     @Nullable
-    public Class7005 method24550(final Class5487 class5487, final Class5487 class5488, final Class354 class5489) {
+    public Class7005 method24550(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489) {
         if (this.method24540()) {
             return null;
         }
-        final Class5487 method16741 = class5488.method16741(class5487);
+        final Vec3d method16741 = class5488.method16741(class5487);
         if (method16741.method16753() >= 1.0E-7) {
-            final Class5487 method16742 = class5487.method16743(method16741.method16748(0.001));
-            return this.method24549(method16742.field22770 - class5489.method1074(), method16742.field22771 - class5489.method1075(), method16742.field22772 - class5489.method1076()) ? new Class7005(method16742, Class179.method799(method16741.field22770, method16741.field22771, method16741.field22772).method782(), class5489, true) : Class6221.method18513(this.method24545(), class5487, class5488, class5489);
+            final Vec3d method16742 = class5487.method16743(method16741.method16748(0.001));
+            return this.method24549(method16742.field22770 - class5489.getX(), method16742.field22771 - class5489.getY(), method16742.field22772 - class5489.getZ()) ? new Class7005(method16742, Direction.getFacingFromVector(method16741.field22770, method16741.field22771, method16741.field22772).getOpposite(), class5489, true) : Class6221.method18513(this.method24545(), class5487, class5488, class5489);
         }
         return null;
     }
     
-    public Class7702 method24551(final Class179 class179) {
+    public Class7702 method24551(final Direction class179) {
         if (!this.method24540() && this != Class7698.method24487()) {
             if (this.field30616 == null) {
                 this.field30616 = new Class7702[6];
@@ -130,9 +132,9 @@ public abstract class Class7702
         return this;
     }
     
-    private Class7702 method24552(final Class179 class179) {
-        final Class111 method790 = class179.method790();
-        final Class288 method791 = class179.method781();
+    private Class7702 method24552(final Direction class179) {
+        final Axis method790 = class179.getAxis();
+        final AxisDirection method791 = class179.getAxisDirection();
         final DoubleList method792 = this.method24539(method790);
         if (method792.size() == 2) {
             if (DoubleMath.fuzzyEquals(method792.getDouble(0), 0.0, 1.0E-7)) {
@@ -141,11 +143,11 @@ public abstract class Class7702
                 }
             }
         }
-        return new Class7703(this, method790, this.method24548(method790, (method791 != Class288.field1601) ? 1.0E-7 : 0.9999999));
+        return new Class7703(this, method790, this.method24548(method790, (method791 != AxisDirection.POSITIVE) ? 1.0E-7 : 0.9999999));
     }
     
-    public double method24553(final Class111 class111, final Class6221 class112, final double n) {
-        return this.method24554(Class309.method985(class111, Class111.field351), class112, n);
+    public double method24553(final Axis class111, final Class6221 class112, final double n) {
+        return this.method24554(Class309.method985(class111, Axis.X), class112, n);
     }
     
     public double method24554(final Class309 class309, final Class6221 class310, double a) {
@@ -154,9 +156,9 @@ public abstract class Class7702
         }
         if (Math.abs(a) >= 1.0E-7) {
             final Class309 method984 = class309.method984();
-            final Class111 method985 = method984.method983(Class111.field351);
-            final Class111 method986 = method984.method983(Class111.field352);
-            final Class111 method987 = method984.method983(Class111.field353);
+            final Axis method985 = method984.method983(Axis.X);
+            final Axis method986 = method984.method983(Axis.Y);
+            final Axis method987 = method984.method983(Axis.Z);
             final double method988 = class310.method18491(method985);
             final double method989 = class310.method18490(method985);
             final int method990 = this.method24548(method985, method989 + 1.0E-7);

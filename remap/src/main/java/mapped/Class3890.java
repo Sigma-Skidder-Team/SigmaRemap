@@ -16,22 +16,22 @@ public class Class3890 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3890.field17557;
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return true;
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
         final Class3870 class1852 = (Class3870)((this != Class7521.field29242) ? Class7521.field29553 : Class7521.field29554);
         if (class1852.method11878().method21752(class1849, class1850)) {
             if (class1849.method6961(class1850.method1137())) {

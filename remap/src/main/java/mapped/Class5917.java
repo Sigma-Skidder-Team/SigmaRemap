@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class5917 extends Class5901
@@ -44,16 +46,16 @@ public class Class5917 extends Class5901
     }
     
     public void method17788(final float n, final float n2, final float n3, final float n4) {
-        final float field25184 = (Class9546.method35638(n * 0.02f) * 0.1f + 1.25f) * n4;
+        final float field25184 = (MathHelper.sin(n * 0.02f) * 0.1f + 1.25f) * n4;
         this.field24307.field25184 = 3.1415927f + field25184;
         this.field24308.field25184 = -field25184;
         this.field24309.field25184 = field25184;
         this.field24310.field25184 = -field25184;
         this.field24311.field25184 = field25184 - field25184 * 2.0f * n2;
         this.field24312.field25184 = field25184 - field25184 * 2.0f * n3;
-        this.field24309.field25180 = Class9546.method35638(field25184);
-        this.field24310.field25180 = Class9546.method35638(field25184);
-        this.field24311.field25180 = Class9546.method35638(field25184);
-        this.field24312.field25180 = Class9546.method35638(field25184);
+        this.field24309.field25180 = MathHelper.sin(field25184);
+        this.field24310.field25180 = MathHelper.sin(field25184);
+        this.field24311.field25180 = MathHelper.sin(field25184);
+        this.field24312.field25180 = MathHelper.sin(field25184);
     }
 }

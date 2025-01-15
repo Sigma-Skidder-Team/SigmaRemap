@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -37,13 +39,13 @@ public abstract class Class7255
     
     public abstract Class3820 method22149();
     
-    public void method22150(final Class1847 class1847, final Class354 class1848, final Class7099 class1849, final Random random) {
+    public void method22150(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
     }
     
-    public void method22151(final Class1847 class1847, final Class354 class1848, final Class7099 class1849) {
+    public void method22151(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849) {
     }
     
-    public void method22152(final Class1847 class1847, final Class354 class1848, final Class7099 class1849, final Random random) {
+    public void method22152(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
     }
     
     @Nullable
@@ -51,9 +53,9 @@ public abstract class Class7255
         return null;
     }
     
-    public abstract boolean method22154(final Class7099 p0, final Class1855 p1, final Class354 p2, final Class7255 p3, final Class179 p4);
+    public abstract boolean method22154(final Class7099 p0, final Class1855 p1, final BlockPos p2, final Class7255 p3, final Direction p4);
     
-    public abstract Class5487 method22155(final Class1855 p0, final Class354 p1, final Class7099 p2);
+    public abstract Vec3d method22155(final Class1855 p0, final BlockPos p1, final Class7099 p2);
     
     public abstract int method22156(final Class1852 p0);
     
@@ -67,7 +69,7 @@ public abstract class Class7255
     
     public abstract float method22159();
     
-    public abstract float method22160(final Class7099 p0, final Class1855 p1, final Class354 p2);
+    public abstract float method22160(final Class7099 p0, final Class1855 p1, final BlockPos p2);
     
     public abstract float method22161(final Class7099 p0);
     
@@ -85,7 +87,7 @@ public abstract class Class7255
         return class7909.method25618(this);
     }
     
-    public abstract Class7702 method22167(final Class7099 p0, final Class1855 p1, final Class354 p2);
+    public abstract Class7702 method22167(final Class7099 p0, final Class1855 p1, final BlockPos p2);
     
     static {
         field28128 = new Class94<Class7099>();

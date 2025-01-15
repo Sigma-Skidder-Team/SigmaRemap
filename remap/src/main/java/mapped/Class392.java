@@ -15,12 +15,12 @@ public class Class392 implements AutoCloseable
     private final Class869 field2285;
     private boolean field2286;
     private boolean field2287;
-    private Class9138 field2288;
+    private Vector3f field2288;
     
     public Class392(final Class1660 field2284, final Class869 field2285) {
         this.field2286 = true;
         this.field2287 = false;
-        this.field2288 = new Class9138();
+        this.field2288 = new Vector3f();
         this.field2284 = field2284;
         this.field2285 = field2285;
         this.field2279 = new Class1773(16, 16, false);
@@ -111,23 +111,23 @@ public class Class392 implements AutoCloseable
                 else {
                     method6844 = Class1660.method5816(this.field2285.field4684, f);
                 }
-                final Class9138 class9138 = new Class9138(method6842, method6842, 1.0f);
-                class9138.method33326(new Class9138(1.0f, 1.0f, 1.0f), 0.35f);
+                final Vector3f class9138 = new Vector3f(method6842, method6842, 1.0f);
+                class9138.method33326(new Vector3f(1.0f, 1.0f, 1.0f), 0.35f);
                 final float f2 = this.field2283 + 1.5f;
-                final Class9138 class9139 = new Class9138();
+                final Vector3f class9139 = new Vector3f();
                 for (int i = 0; i < 16; ++i) {
                     for (int j = 0; j < 16; ++j) {
                         final float f3 = this.method1421(field4683, i) * n;
                         final float n2 = this.method1421(field4683, j) * f2;
                         class9139.method33317(n2, n2 * ((n2 * 0.6f + 0.4f) * 0.6f + 0.4f), n2 * (n2 * n2 * 0.6f + 0.4f));
                         if (field4683.field10063.method20487() != Class383.field2225) {
-                            final Class9138 method6845 = this.method1426(class9138);
+                            final Vector3f method6845 = this.method1426(class9138);
                             method6845.method33314(f3);
                             class9139.method33319(method6845);
                             class9139.method33326(this.method1425(0.75f, 0.75f, 0.75f), 0.04f);
                             if (this.field2284.method5831(f) > 0.0f) {
                                 final float method6846 = this.field2284.method5831(f);
-                                final Class9138 method6847 = this.method1426(class9139);
+                                final Vector3f method6847 = this.method1426(class9139);
                                 method6847.method33315(0.7f, 0.6f, 0.6f);
                                 class9139.method33326(method6847, method6846);
                             }
@@ -143,13 +143,13 @@ public class Class392 implements AutoCloseable
                             final float max = Math.max(class9139.method33311(), Math.max(class9139.method33312(), class9139.method33313()));
                             if (max < 1.0f) {
                                 final float n3 = 1.0f / max;
-                                final Class9138 method6848 = this.method1426(class9139);
+                                final Vector3f method6848 = this.method1426(class9139);
                                 method6848.method33314(n3);
                                 class9139.method33326(method6848, method6844);
                             }
                         }
                         final float n4 = (float)this.field2285.field4648.field23472;
-                        final Class9138 method6849 = this.method1426(class9139);
+                        final Vector3f method6849 = this.method1426(class9139);
                         method6849.method33330(this::method1420);
                         class9139.method33326(method6849, n4);
                         class9139.method33326(this.method1425(0.75f, 0.75f, 0.75f), 0.04f);
@@ -185,12 +185,12 @@ public class Class392 implements AutoCloseable
         return n >> 20 & 0xFFFF;
     }
     
-    private Class9138 method1425(final float n, final float n2, final float n3) {
+    private Vector3f method1425(final float n, final float n2, final float n3) {
         this.field2288.method33317(n, n2, n3);
         return this.field2288;
     }
     
-    private Class9138 method1426(final Class9138 class9138) {
+    private Vector3f method1426(final Vector3f class9138) {
         this.field2288.method33317(class9138.method33311(), class9138.method33312(), class9138.method33313());
         return this.field2288;
     }

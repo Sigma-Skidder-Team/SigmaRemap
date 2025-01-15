@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.Vec3i;
+
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,16 +31,16 @@ public class Class4818 extends Class4817
     public void method14390() {
     }
     
-    public void method14398(final String s, final Class352 class352, final int n) {
-        final String string = "waypoint x" + class352.method1074() + " z" + class352.method1076();
+    public void method14398(final String s, final Vec3i class352, final int n) {
+        final String string = "waypoint x" + class352.getX() + " z" + class352.getZ();
         if (this.field20610.method14224(string) == null) {
             final Class4846 class353 = new Class4846(this, string, this.field20478, this.method14250().get(0).method14250().size() * this.field20616, this.field20480, this.field20616, s, class352, n);
             class353.field20760 = class353.method14274();
             this.field20615.add(class353);
             this.method14239(class353);
-            class353.method14260((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.method1074(), class353.field20764.method1076()));
+            class353.method14260((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.getX(), class353.field20764.getZ()));
             class353.method14516(class4848 -> {
-                Class9463.method35173().method35200().method24266(new Class8124(class353.field20763, class353.field20764.method1074(), class353.field20764.method1076(), class353.field20765));
+                Class9463.method35173().method35200().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));
                 class4847.field20610.method14246(class353);
                 this.field20615.remove(class4848);
             });
@@ -91,7 +92,7 @@ public class Class4818 extends Class4817
                 if (this.field20617.method35857() == Class2186.field12964) {
                     Class9463.method35173().method35200().method24262().clear();
                     for (final Class4846 class4847 : this.field20615) {
-                        Class9463.method35173().method35200().method24262().add(new Class8124(class4847.field20763, class4847.field20764.method1074(), class4847.field20764.method1076(), class4847.field20765));
+                        Class9463.method35173().method35200().method24262().add(new Class8124(class4847.field20763, class4847.field20764.getX(), class4847.field20764.getZ(), class4847.field20765));
                     }
                     Collections.reverse(Class9463.method35173().method35200().method24262());
                     Class9463.method35173().method35200().method24264();

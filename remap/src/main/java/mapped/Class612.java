@@ -6,9 +6,10 @@ package mapped;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
-import java.util.function.Consumer;
+
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -55,10 +56,10 @@ public class Class612 extends Class608<Class633>
     
     @Override
     public void method3556(final int n) {
-        final int method35651 = Class9546.method35651(this.method3040().indexOf(((Class604<Object>)this).method3530()) + n, 0, this.method3537() - 1);
+        final int method35651 = MathHelper.method35651(this.method3040().indexOf(((Class604<Object>)this).method3530()) + n, 0, this.method3537() - 1);
         Class633 class633 = this.method3040().get(method35651);
         if (class633 instanceof Class636) {
-            class633 = this.method3040().get(Class9546.method35651(method35651 + ((n <= 0) ? -1 : 1), 0, this.method3537() - 1));
+            class633 = this.method3040().get(MathHelper.method35651(method35651 + ((n <= 0) ? -1 : 1), 0, this.method3537() - 1));
         }
         super.method3531(class633);
         this.method3548(class633);

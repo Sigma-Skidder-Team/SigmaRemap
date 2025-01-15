@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5876<T extends Class841> extends Class5846<T>
 {
@@ -28,12 +29,12 @@ public class Class5876<T extends Class841> extends Class5846<T>
     public void method17621(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         final float n6 = n3 - t.field2424;
         final float n7 = (0.5f + t.method5023(n6)) * 3.1415927f;
-        final float n8 = -1.0f + Class9546.method35638(n7);
+        final float n8 = -1.0f + MathHelper.sin(n7);
         float n9 = 0.0f;
         if (n7 > 3.1415927f) {
-            n9 = Class9546.method35638(n3 * 0.1f) * 0.7f;
+            n9 = MathHelper.sin(n3 * 0.1f) * 0.7f;
         }
-        this.field24087.method18642(0.0f, 16.0f + Class9546.method35638(n7) * 8.0f + n9, 0.0f);
+        this.field24087.method18642(0.0f, 16.0f + MathHelper.sin(n7) * 8.0f + n9, 0.0f);
         if (t.method5023(n6) <= 0.3f) {
             this.field24087.field25184 = 0.0f;
         }

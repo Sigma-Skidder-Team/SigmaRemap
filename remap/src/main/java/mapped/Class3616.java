@@ -28,8 +28,8 @@ public class Class3616 extends Class3446
     
     @Override
     public boolean method11017() {
-        final Class354 method5003 = this.field16812.method5003();
-        if (!new Class354(method5003.method1074(), this.field16812.method1941(), method5003.method1076()).method1082(this.field16812.method1934(), 4.0)) {
+        final BlockPos method5003 = this.field16812.method5003();
+        if (!new BlockPos(method5003.getX(), this.field16812.method1941(), method5003.getZ()).method1082(this.field16812.method1934(), 4.0)) {
             if (!this.field16813) {
                 if (this.field16812.method1832() >= 100) {
                     return true;
@@ -45,14 +45,14 @@ public class Class3616 extends Class3446
             final Class1849 class1849 = (Class1849)this.field16812.field2391;
             this.field16813 = false;
             this.field16812.method4150().method24733();
-            final Class354 class1850 = new Class354(this.field16812);
+            final BlockPos class1850 = new BlockPos(this.field16812);
             final String s = (class1849.field10062.nextFloat() < 0.5) ? "Shipwreck" : "Ocean_Ruin";
-            final Class354 method6915 = class1849.method6915(s, class1850, 50, false);
+            final BlockPos method6915 = class1849.method6915(s, class1850, 50, false);
             if (method6915 != null) {
                 this.field16812.method5002(method6915);
             }
             else {
-                final Class354 method6916 = class1849.method6915(s.equals("Ocean_Ruin") ? "Shipwreck" : "Ocean_Ruin", class1850, 50, false);
+                final BlockPos method6916 = class1849.method6915(s.equals("Ocean_Ruin") ? "Shipwreck" : "Ocean_Ruin", class1850, 50, false);
                 if (method6916 == null) {
                     this.field16813 = true;
                     return;
@@ -65,8 +65,8 @@ public class Class3616 extends Class3446
     
     @Override
     public void method11018() {
-        final Class354 method5003 = this.field16812.method5003();
-        if (new Class354(method5003.method1074(), this.field16812.method1941(), method5003.method1076()).method1082(this.field16812.method1934(), 4.0) || this.field16813) {
+        final BlockPos method5003 = this.field16812.method5003();
+        if (new BlockPos(method5003.getX(), this.field16812.method1941(), method5003.getZ()).method1082(this.field16812.method1934(), 4.0) || this.field16813) {
             this.field16812.method5005(false);
         }
     }
@@ -81,7 +81,7 @@ public class Class3616 extends Class3446
                 class5488 = Class7775.method24905(this.field16812, 8, 4, class5487);
             }
             if (class5488 != null) {
-                final Class354 class5489 = new Class354(class5488);
+                final BlockPos class5489 = new BlockPos(class5488);
                 if (!field2391.method6702(class5489).method21793(Class7324.field28319) || !field2391.method6701(class5489).method21749(field2391, class5489, Class2084.field12052)) {
                     class5488 = Class7775.method24905(this.field16812, 8, 5, class5487);
                 }

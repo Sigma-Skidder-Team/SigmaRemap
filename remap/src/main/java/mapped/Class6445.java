@@ -5,14 +5,9 @@
 package mapped;
 
 import java.util.AbstractList;
-import java.util.List;
-import java.util.Map;
 import java.util.Arrays;
-import java.util.stream.Stream;
 import java.util.HashMap;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.function.Consumer;
 import java.util.concurrent.atomic.AtomicInteger;
 import com.google.common.collect.Streams;
 import com.google.common.collect.Iterables;
@@ -31,13 +26,13 @@ public class Class6445
         class9083.method32767(2);
     }
     
-    public static Collection<Class9083> method19223(final Collection<Class8928> collection, final Class354 class354, final Class1849 class355, final Class8564 class356) {
+    public static Collection<Class9083> method19223(final Collection<Class8928> collection, final BlockPos class354, final Class1849 class355, final Class8564 class356) {
         final Class9061 class357 = new Class9061(collection, class354, class355, class356);
         class357.method32627();
         return class357.method32626();
     }
     
-    public static Collection<Class9083> method19224(final Collection<Class6812> collection, final Class354 class354, final Class1849 class355, final Class8564 class356) {
+    public static Collection<Class9083> method19224(final Collection<Class6812> collection, final BlockPos class354, final Class1849 class355, final Class8564 class356) {
         return method19223(method19225(collection), class354, class355, class356);
     }
     
@@ -67,7 +62,7 @@ public class Class6445
     
     private static void method19227(final Class9083 class9083, final Class3833 class9084) {
         final Class1849 method32758 = class9083.method32758();
-        final Class354 method32759 = class9083.method32755().method1134(-1, -1, -1);
+        final BlockPos method32759 = class9083.method32755().method1134(-1, -1, -1);
         method32758.method6692(method32759, Class7521.field29417.method11878());
         method32758.method6692(method32759.method1134(0, 1, 0), class9084.method11878());
         for (int i = -1; i <= 1; ++i) {
@@ -79,7 +74,7 @@ public class Class6445
     
     private static void method19228(final Class9083 class9083, final String s) {
         final Class1849 method32758 = class9083.method32758();
-        final Class354 method32759 = class9083.method32755().method1134(-1, 1, -1);
+        final BlockPos method32759 = class9083.method32755().method1134(-1, 1, -1);
         method32758.method6692(method32759, Class7521.field29813.method11878());
         Class3930.method12040(method32758, method32759, method32758.method6701(method32759), method19229(class9083.method32754(), class9083.method32768(), s));
     }
@@ -106,17 +101,17 @@ public class Class6445
         Class9324.method34530(class1849);
     }
     
-    private static void method19232(final Class1849 class1849, final Class354 class1850, final String s) {
+    private static void method19232(final Class1849 class1849, final BlockPos class1850, final String s) {
         Class9324.method34529(class1849, class1850, s, -2130771968, Integer.MAX_VALUE);
     }
     
-    public static void method19233(final Class1849 class1849, final Class354 class1850, final Class8564 class1851, final int n) {
+    public static void method19233(final Class1849 class1849, final BlockPos class1850, final Class8564 class1851, final int n) {
         class1851.method28796();
-        Class354.method1155(class1850.method1134(-n, 0, -n), class1850.method1134(n, 0, n)).filter(class1853 -> class1852.method6701(class1853).method21696() == Class7521.field29820).forEach(class1855 -> {
+        BlockPos.method1155(class1850.method1134(-n, 0, -n), class1850.method1134(n, 0, n)).filter(class1853 -> class1852.method6701(class1853).method21696() == Class7521.field29820).forEach(class1855 -> {
             final Class501 class1856 = (Class501)class1854.method6727(class1855);
             class1856.method2193();
-            final Class354 class1857;
-            Class8787.method30578(Class8787.method30579(class1857, class1856.method2562(), 2), class1857.method1075(), class1854);
+            final BlockPos class1857;
+            Class8787.method30578(Class8787.method30579(class1857, class1856.method2562(), 2), class1857.getY(), class1854);
         });
     }
     

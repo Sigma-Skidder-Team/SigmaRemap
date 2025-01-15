@@ -8,6 +8,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.Entity;
 
 public class Class8172
 {
@@ -37,11 +38,11 @@ public class Class8172
         this.field33674 = field33674;
     }
     
-    public boolean method27015(final Class513 class513, final Class399 class514) {
+    public boolean method27015(final Class513 class513, final Entity class514) {
         return this.method27016(class513.method2940(), class513.method1934(), class514);
     }
     
-    public boolean method27016(final Class1849 class1849, final Class5487 class1850, final Class399 class1851) {
+    public boolean method27016(final Class1849 class1849, final Vec3d class1850, final Entity class1851) {
         if (this == Class8172.field33663) {
             return true;
         }

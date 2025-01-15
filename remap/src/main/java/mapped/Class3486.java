@@ -15,12 +15,12 @@ public class Class3486 extends Class3485
     }
     
     @Override
-    public void method11053(final Class1851 class1851, final Class354 class1852) {
+    public void method11053(final Class1851 class1851, final BlockPos class1852) {
         class1851.method6705(null, class1852, Class8520.field35757, Class286.field1583, 0.5f, 0.9f + Class827.method4934(this.field16418).nextFloat() * 0.2f);
     }
     
     @Override
-    public void method11054(final Class1847 class1847, final Class354 class1848) {
+    public void method11054(final Class1847 class1847, final BlockPos class1848) {
         class1847.method6705(null, class1848, Class8520.field35653, Class286.field1582, 0.7f, 0.9f + class1847.field10062.nextFloat() * 0.2f);
     }
     

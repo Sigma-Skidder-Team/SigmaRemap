@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.io.IOException;
 
@@ -18,18 +20,18 @@ public class Class4381 implements Class4252<Class5813>
     public Class4381() {
     }
     
-    public Class4381(final Class399 class399) {
+    public Class4381(final Entity class399) {
         this.field19622 = class399.method1643();
         this.field19623 = Class2029.field11565;
     }
     
-    public Class4381(final Class399 class399, final Class316 field19625) {
+    public Class4381(final Entity class399, final Class316 field19625) {
         this.field19622 = class399.method1643();
         this.field19623 = Class2029.field11564;
         this.field19625 = field19625;
     }
     
-    public Class4381(final Class399 class399, final Class316 field19625, final Class5487 field19626) {
+    public Class4381(final Entity class399, final Class316 field19625, final Class5487 field19626) {
         this.field19622 = class399.method1643();
         this.field19623 = Class2029.field11566;
         this.field19625 = field19625;
@@ -67,7 +69,7 @@ public class Class4381 implements Class4252<Class5813>
     }
     
     @Nullable
-    public Class399 method13170(final Class1847 class1847) {
+    public Entity method13170(final Class1847 class1847) {
         return class1847.method6741(this.field19622);
     }
     

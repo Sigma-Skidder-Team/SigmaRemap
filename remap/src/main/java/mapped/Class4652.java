@@ -6,9 +6,9 @@ package mapped;
 
 import java.util.EnumSet;
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.MathHelper;
 
 public class Class4652 extends Class4651
 {
@@ -30,7 +30,7 @@ public class Class4652 extends Class4651
     public Class6772 method13902() {
         int n;
         if (this.method13927() && this.field20141.method1706()) {
-            n = Class9546.method35644(this.field20141.method1941());
+            n = MathHelper.floor(this.field20141.method1941());
             final Class385 class385 = new Class385(this.field20141.method1938(), n, this.field20141.method1945());
             for (Class3833 class386 = this.field20140.method6701(class385).method21696(); class386 == Class7521.field29173; class386 = this.field20140.method6701(class385).method21696()) {
                 ++n;
@@ -38,28 +38,28 @@ public class Class4652 extends Class4651
             }
         }
         else {
-            n = Class9546.method35644(this.field20141.method1941() + 0.5);
+            n = MathHelper.floor(this.field20141.method1941() + 0.5);
         }
-        final Class354 class387 = new Class354(this.field20141);
-        if (this.field20141.method4144(this.method13912(this.field20141, class387.method1074(), n, class387.method1076())) < 0.0f) {
+        final BlockPos class387 = new BlockPos(this.field20141);
+        if (this.field20141.method4144(this.method13912(this.field20141, class387.getX(), n, class387.getZ())) < 0.0f) {
             final HashSet hashSet = Sets.newHashSet();
-            hashSet.add(new Class354(this.field20141.method1886().field25073, n, this.field20141.method1886().field25075));
-            hashSet.add(new Class354(this.field20141.method1886().field25073, n, this.field20141.method1886().field25078));
-            hashSet.add(new Class354(this.field20141.method1886().field25076, n, this.field20141.method1886().field25075));
-            hashSet.add(new Class354(this.field20141.method1886().field25076, n, this.field20141.method1886().field25078));
-            for (final Class354 class388 : hashSet) {
+            hashSet.add(new BlockPos(this.field20141.method1886().field25073, n, this.field20141.method1886().field25075));
+            hashSet.add(new BlockPos(this.field20141.method1886().field25073, n, this.field20141.method1886().field25078));
+            hashSet.add(new BlockPos(this.field20141.method1886().field25076, n, this.field20141.method1886().field25075));
+            hashSet.add(new BlockPos(this.field20141.method1886().field25076, n, this.field20141.method1886().field25078));
+            for (final BlockPos class388 : hashSet) {
                 if (this.field20141.method4144(this.method13911(this.field20141, class388)) < 0.0f) {
                     continue;
                 }
-                return super.method13919(class388.method1074(), class388.method1075(), class388.method1076());
+                return super.method13919(class388.getX(), class388.getY(), class388.getZ());
             }
         }
-        return super.method13919(class387.method1074(), n, class387.method1076());
+        return super.method13919(class387.getX(), n, class387.getZ());
     }
     
     @Override
     public Class6773 method13903(final double n, final double n2, final double n3) {
-        return new Class6773(super.method13919(Class9546.method35644(n), Class9546.method35644(n2), Class9546.method35644(n3)));
+        return new Class6773(super.method13919(MathHelper.floor(n), MathHelper.floor(n2), MathHelper.floor(n3)));
     }
     
     @Override
@@ -297,7 +297,7 @@ public class Class4652 extends Class4651
     @Override
     public Class257 method13908(final Class1855 class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
         final EnumSet<Class257> none = EnumSet.noneOf(Class257.class);
-        final Class257 method13909 = this.method13909(class1855, n, n2, n3, n4, n5, n6, b, b2, none, Class257.field1205, new Class354(class1856));
+        final Class257 method13909 = this.method13909(class1855, n, n2, n3, n4, n5, n6, b, b2, none, Class257.field1205, new BlockPos(class1856));
         if (!none.contains(Class257.field1209)) {
             Class257 field1205 = Class257.field1205;
             for (final Class257 class1857 : none) {
@@ -320,7 +320,7 @@ public class Class4652 extends Class4651
         Label_0018: {
             if (class1856 == Class257.field1206) {
                 if (n2 >= 1) {
-                    final Class3833 method21696 = class1855.method6701(new Class354(n, n2 - 1, n3)).method21696();
+                    final Class3833 method21696 = class1855.method6701(new BlockPos(n, n2 - 1, n3)).method21696();
                     final Class257 method21697 = Class4651.method13916(class1855, n, n2 - 1, n3);
                     if (method21697 != Class257.field1215) {
                         if (method21696 != Class7521.field29642) {
@@ -370,8 +370,8 @@ public class Class4652 extends Class4651
         return class1856;
     }
     
-    private Class257 method13911(final Class759 class759, final Class354 class760) {
-        return this.method13912(class759, class760.method1074(), class760.method1075(), class760.method1076());
+    private Class257 method13911(final Class759 class759, final BlockPos class760) {
+        return this.method13912(class759, class760.getX(), class760.getY(), class760.getZ());
     }
     
     private Class257 method13912(final Class759 class759, final int n, final int n2, final int n3) {

@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public class Class821 extends Class819
 {
-    private Class354 field4392;
+    private BlockPos field4392;
     private int field4393;
     
     public Class821(final Class7499<? extends Class821> class7499, final Class1847 class7500) {
@@ -182,12 +182,12 @@ public class Class821 extends Class819
         }
     }
     
-    public void method4844(final Class354 field4392) {
+    public void method4844(final BlockPos field4392) {
         this.field4392 = field4392;
     }
     
     @Nullable
-    private Class354 method4845() {
+    private BlockPos method4845() {
         return this.field4392;
     }
 }

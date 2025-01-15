@@ -6,9 +6,13 @@ package mapped;
 
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 
-public class Class424 extends Class399
+public class Class424 extends Entity
 {
     private Class7096 field2573;
     public int field2574;
@@ -18,7 +22,7 @@ public class Class424 extends Class399
     private int field2578;
     private float field2579;
     public Class51 field2580;
-    public static final Class8810<Class354> field2581;
+    public static final Class8810<BlockPos> field2581;
     
     public Class424(final Class7499<? extends Class424> class7499, final Class1847 class7500) {
         super(class7499, class7500);
@@ -33,11 +37,11 @@ public class Class424 extends Class399
         this.field2573 = field2395;
         this.field2386 = true;
         this.method1656(field2392, field2393 + (1.0f - this.method1931()) / 2.0f, field2394);
-        this.method1936(Class5487.field22769);
+        this.method1936(Vec3d.field22769);
         this.field2392 = field2392;
         this.field2393 = field2393;
         this.field2394 = field2394;
-        this.method2067(new Class354(this));
+        this.method2067(new BlockPos(this));
     }
     
     @Override
@@ -45,11 +49,11 @@ public class Class424 extends Class399
         return false;
     }
     
-    public void method2067(final Class354 class354) {
+    public void method2067(final BlockPos class354) {
         this.field2432.method33569(Class424.field2581, class354);
     }
     
-    public Class354 method2068() {
+    public BlockPos method2068() {
         return this.field2432.method33568(Class424.field2581);
     }
     
@@ -60,7 +64,7 @@ public class Class424 extends Class399
     
     @Override
     public void method1649() {
-        this.field2432.method33565(Class424.field2581, Class354.field2173);
+        this.field2432.method33565(Class424.field2581, BlockPos.ZERO);
     }
     
     @Override
@@ -73,7 +77,7 @@ public class Class424 extends Class399
         if (!this.field2573.method21706()) {
             final Class3833 method21696 = this.field2573.method21696();
             if (this.field2574++ == 0) {
-                final Class354 class354 = new Class354(this);
+                final BlockPos class354 = new BlockPos(this);
                 if (this.field2391.method6701(class354).method21696() != method21696) {
                     if (!this.field2391.field10067) {
                         this.method1652();
@@ -90,13 +94,13 @@ public class Class424 extends Class399
             this.method1671(Class2160.field12826, this.method1935());
             Label_0060: {
                 if (!this.field2391.field10067) {
-                    Class354 method21697 = new Class354(this);
+                    BlockPos method21697 = new BlockPos(this);
                     final boolean b = this.field2573.method21696() instanceof Class3988;
                     boolean b2 = b && this.field2391.method6702(method21697).method21793(Class7324.field28319);
                     final double method21698 = this.method1935().method16753();
                     if (b) {
                         if (method21698 > 1.0) {
-                            final Class7005 method21699 = this.field2391.method6987(new Class8478(new Class5487(this.field2392, this.field2393, this.field2394), this.method1934(), Class2040.field11632, Class2191.field13326, this));
+                            final Class7005 method21699 = this.field2391.method6987(new Class8478(new Vec3d(this.field2392, this.field2393, this.field2394), this.method1934(), Class2040.field11632, Class2191.field13326, this));
                             if (method21699.method21449() != Class2165.field12880) {
                                 if (this.field2391.method6702(method21699.method21447()).method21793(Class7324.field28319)) {
                                     method21697 = method21699.method21447();
@@ -109,10 +113,10 @@ public class Class424 extends Class399
                         if (!this.field2391.field10067) {
                             Label_0461: {
                                 if (this.field2574 > 100) {
-                                    if (method21697.method1075() < 1) {
+                                    if (method21697.getY() < 1) {
                                         break Label_0461;
                                     }
-                                    if (method21697.method1075() > 256) {
+                                    if (method21697.getY() > 256) {
                                         break Label_0461;
                                     }
                                 }
@@ -139,7 +143,7 @@ public class Class424 extends Class399
                                 }
                             }
                             else {
-                                final boolean method21701 = method21700.method21750(new Class7073(this.field2391, method21697, Class179.field511, Class8321.field34174, Class179.field512));
+                                final boolean method21701 = method21700.method21750(new Class7073(this.field2391, method21697, Direction.DOWN, Class8321.field34174, Direction.UP));
                                 final boolean b3 = Class3986.method12131(this.field2391.method6701(method21697.method1139())) && (!b || !b2);
                                 final boolean b4 = this.field2573.method21752(this.field2391, method21697) && !b3;
                                 if (method21701 && b4) {
@@ -204,14 +208,14 @@ public class Class424 extends Class399
     @Override
     public boolean method1705(final float n, final float n2) {
         if (this.field2577) {
-            final int method35649 = Class9546.method35649(n - 1.0f);
+            final int method35649 = MathHelper.method35649(n - 1.0f);
             if (method35649 > 0) {
                 final ArrayList arrayList = Lists.newArrayList((Iterable)this.field2391.method7127(this, this.method1886()));
                 final boolean method35650 = this.field2573.method21755(Class7188.field27905);
                 final Class7929 class7929 = method35650 ? Class7929.field32578 : Class7929.field32579;
                 final Iterator iterator = arrayList.iterator();
                 while (iterator.hasNext()) {
-                    ((Class399)iterator.next()).method1740(class7929, (float)Math.min(Class9546.method35642(method35649 * this.field2579), this.field2578));
+                    ((Entity)iterator.next()).method1740(class7929, (float)Math.min(MathHelper.method35642(method35649 * this.field2579), this.field2578));
                 }
                 if (method35650) {
                     if (this.field2423.nextFloat() < 0.05000000074505806 + method35649 * 0.05) {

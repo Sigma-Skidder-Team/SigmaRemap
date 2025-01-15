@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class839 extends Class832
@@ -93,7 +96,7 @@ public class Class839 extends Class832
             }
         }
         if (!this.method1711()) {
-            this.field4466 = Class9546.method35647(Class9546.method35638(this.field4464)) * 3.1415927f * 0.25f;
+            this.field4466 = MathHelper.method35647(MathHelper.sin(this.field4464)) * 3.1415927f * 0.25f;
             if (!this.field2391.field10067) {
                 double field22771 = this.method1935().field22771;
                 if (!this.method2653(Class9439.field40498)) {
@@ -116,7 +119,7 @@ public class Class839 extends Class832
             }
             else {
                 final float n = this.field4464 / 3.1415927f;
-                this.field4466 = Class9546.method35638(n * n * 3.1415927f) * 3.1415927f * 0.25f;
+                this.field4466 = MathHelper.sin(n * n * 3.1415927f) * 3.1415927f * 0.25f;
                 if (n <= 0.75) {
                     this.field4470 *= 0.8f;
                 }
@@ -128,12 +131,12 @@ public class Class839 extends Class832
             if (!this.field2391.field10067) {
                 this.method1937(this.field4471 * this.field4468, this.field4472 * this.field4468, this.field4473 * this.field4468);
             }
-            final Class5487 method1935 = this.method1935();
-            final float method1936 = Class9546.method35641(Class399.method1680(method1935));
-            this.field2951 += (-(float)Class9546.method35693(method1935.field22770, method1935.field22772) * 57.295776f - this.field2951) * 0.1f;
+            final Vec3d method1935 = this.method1935();
+            final float method1936 = MathHelper.method35641(Entity.method1680(method1935));
+            this.field2951 += (-(float) MathHelper.method35693(method1935.field22770, method1935.field22772) * 57.295776f - this.field2951) * 0.1f;
             this.field2399 = this.field2951;
             this.field4462 += (float)(3.141592653589793 * this.field4470 * 1.5);
-            this.field4460 += (-(float)Class9546.method35693(method1936, method1935.field22771) * 57.295776f - this.field4460) * 0.1f;
+            this.field4460 += (-(float) MathHelper.method35693(method1936, method1935.field22771) * 57.295776f - this.field4460) * 0.1f;
         }
     }
     
@@ -146,26 +149,26 @@ public class Class839 extends Class832
         return false;
     }
     
-    private Class5487 method4996(final Class5487 class5487) {
+    private Vec3d method4996(final Vec3d class5487) {
         return class5487.method16754(this.field4461 * 0.017453292f).method16755(-this.field2952 * 0.017453292f);
     }
     
     private void method4997() {
         this.method1695(Class8520.field35614, this.method2720(), this.method2721());
-        final Class5487 method16744 = this.method4996(new Class5487(0.0, -1.0, 0.0)).method16744(this.method1938(), this.method1941(), this.method1945());
+        final Vec3d method16744 = this.method4996(new Vec3d(0.0, -1.0, 0.0)).method16744(this.method1938(), this.method1941(), this.method1945());
         for (int i = 0; i < 30; ++i) {
-            final Class5487 method16745 = this.method4996(new Class5487(this.field2423.nextFloat() * 0.6 - 0.3, -1.0, this.field2423.nextFloat() * 0.6 - 0.3)).method16748(0.3 + this.field2423.nextFloat() * 2.0f);
+            final Vec3d method16745 = this.method4996(new Vec3d(this.field2423.nextFloat() * 0.6 - 0.3, -1.0, this.field2423.nextFloat() * 0.6 - 0.3)).method16748(0.3 + this.field2423.nextFloat() * 2.0f);
             ((Class1849)this.field2391).method6911(Class8432.field34642, method16744.field22770, method16744.field22771 + 0.5, method16744.field22772, 0, method16745.field22770, method16745.field22771, method16745.field22772, 0.10000000149011612);
         }
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         this.method1671(Class2160.field12826, this.method1935());
     }
     
-    public static boolean method4998(final Class7499<Class839> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
-        return class7502.method1075() > 45 && class7502.method1075() < class7500.method6743();
+    public static boolean method4998(final Class7499<Class839> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+        return class7502.getY() > 45 && class7502.getY() < class7500.method6743();
     }
     
     @Override

@@ -5,8 +5,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-public class Class5880<T extends Class399> extends Class5846<T>
+public class Class5880<T extends Entity> extends Class5846<T>
 {
     private static String[] field24111;
     private final Class6300 field24112;
@@ -71,14 +73,14 @@ public class Class5880<T extends Class399> extends Class5846<T>
         this.field24120.field25184 = 0.3926991f;
         this.field24121.field25184 = -0.7853982f;
         this.field24122.field25184 = 0.7853982f;
-        final float n6 = -(Class9546.method35639(n * 0.6662f * 2.0f + 0.0f) * 0.4f) * n2;
-        final float n7 = -(Class9546.method35639(n * 0.6662f * 2.0f + 3.1415927f) * 0.4f) * n2;
-        final float n8 = -(Class9546.method35639(n * 0.6662f * 2.0f + 1.5707964f) * 0.4f) * n2;
-        final float n9 = -(Class9546.method35639(n * 0.6662f * 2.0f + 4.712389f) * 0.4f) * n2;
-        final float n10 = Math.abs(Class9546.method35638(n * 0.6662f + 0.0f) * 0.4f) * n2;
-        final float n11 = Math.abs(Class9546.method35638(n * 0.6662f + 3.1415927f) * 0.4f) * n2;
-        final float n12 = Math.abs(Class9546.method35638(n * 0.6662f + 1.5707964f) * 0.4f) * n2;
-        final float n13 = Math.abs(Class9546.method35638(n * 0.6662f + 4.712389f) * 0.4f) * n2;
+        final float n6 = -(MathHelper.cos(n * 0.6662f * 2.0f + 0.0f) * 0.4f) * n2;
+        final float n7 = -(MathHelper.cos(n * 0.6662f * 2.0f + 3.1415927f) * 0.4f) * n2;
+        final float n8 = -(MathHelper.cos(n * 0.6662f * 2.0f + 1.5707964f) * 0.4f) * n2;
+        final float n9 = -(MathHelper.cos(n * 0.6662f * 2.0f + 4.712389f) * 0.4f) * n2;
+        final float n10 = Math.abs(MathHelper.sin(n * 0.6662f + 0.0f) * 0.4f) * n2;
+        final float n11 = Math.abs(MathHelper.sin(n * 0.6662f + 3.1415927f) * 0.4f) * n2;
+        final float n12 = Math.abs(MathHelper.sin(n * 0.6662f + 1.5707964f) * 0.4f) * n2;
+        final float n13 = Math.abs(MathHelper.sin(n * 0.6662f + 4.712389f) * 0.4f) * n2;
         final Class6300 field24115 = this.field24115;
         field24115.field25184 += n6;
         final Class6300 field24116 = this.field24116;

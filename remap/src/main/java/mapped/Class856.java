@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.time.temporal.TemporalField;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.time.temporal.ChronoField;
 import java.time.LocalDate;
 import java.util.Random;
@@ -14,7 +16,7 @@ public class Class856 extends Class855
 {
     private static final Class8810<Byte> field4562;
     private static final Class7843 field4563;
-    private Class354 field4564;
+    private BlockPos field4564;
     
     public Class856(final Class7499<? extends Class856> class7499, final Class1847 class7500) {
         super(class7499, class7500);
@@ -59,7 +61,7 @@ public class Class856 extends Class855
     }
     
     @Override
-    public void method2741(final Class399 class399) {
+    public void method2741(final Entity class399) {
     }
     
     @Override
@@ -93,19 +95,19 @@ public class Class856 extends Class855
             this.method1936(this.method1935().method16751(1.0, 0.6, 1.0));
         }
         else {
-            this.method1936(Class5487.field22769);
-            this.method1948(this.method1938(), Class9546.method35644(this.method1941()) + 1.0 - this.method1931(), this.method1945());
+            this.method1936(Vec3d.field22769);
+            this.method1948(this.method1938(), MathHelper.floor(this.method1941()) + 1.0 - this.method1931(), this.method1945());
         }
     }
     
     @Override
     public void method4172() {
         super.method4172();
-        final Class354 class354 = new Class354(this);
-        final Class354 method1137 = class354.method1137();
+        final BlockPos class354 = new BlockPos(this);
+        final BlockPos method1137 = class354.method1137();
         if (!this.method5144()) {
             if (this.field4564 != null) {
-                if (!this.field2391.method6961(this.field4564) || this.field4564.method1075() < 1) {
+                if (!this.field2391.method6961(this.field4564) || this.field4564.getY() < 1) {
                     this.field4564 = null;
                 }
             }
@@ -117,15 +119,15 @@ public class Class856 extends Class855
                         }
                     }
                 }
-                this.field4564 = new Class354(this.method1938() + this.field2423.nextInt(7) - this.field2423.nextInt(7), this.method1941() + this.field2423.nextInt(6) - 2.0, this.method1945() + this.field2423.nextInt(7) - this.field2423.nextInt(7));
+                this.field4564 = new BlockPos(this.method1938() + this.field2423.nextInt(7) - this.field2423.nextInt(7), this.method1941() + this.field2423.nextInt(6) - 2.0, this.method1945() + this.field2423.nextInt(7) - this.field2423.nextInt(7));
             }
-            final double d = this.field4564.method1074() + 0.5 - this.method1938();
-            final double d2 = this.field4564.method1075() + 0.1 - this.method1941();
-            final double d3 = this.field4564.method1076() + 0.5 - this.method1945();
-            final Class5487 method1138 = this.method1935();
-            final Class5487 method1139 = method1138.method16744((Math.signum(d) * 0.5 - method1138.field22770) * 0.10000000149011612, (Math.signum(d2) * 0.699999988079071 - method1138.field22771) * 0.10000000149011612, (Math.signum(d3) * 0.5 - method1138.field22772) * 0.10000000149011612);
+            final double d = this.field4564.getX() + 0.5 - this.method1938();
+            final double d2 = this.field4564.getY() + 0.1 - this.method1941();
+            final double d3 = this.field4564.getZ() + 0.5 - this.method1945();
+            final Vec3d method1138 = this.method1935();
+            final Vec3d method1139 = method1138.method16744((Math.signum(d) * 0.5 - method1138.field22770) * 0.10000000149011612, (Math.signum(d2) * 0.699999988079071 - method1138.field22771) * 0.10000000149011612, (Math.signum(d3) * 0.5 - method1138.field22772) * 0.10000000149011612);
             this.method1936(method1139);
-            final float method1140 = Class9546.method35668((float)(Class9546.method35693(method1139.field22772, method1139.field22770) * 57.2957763671875) - 90.0f - this.field2399);
+            final float method1140 = MathHelper.method35668((float)(MathHelper.method35693(method1139.field22772, method1139.field22770) * 57.2957763671875) - 90.0f - this.field2399);
             this.field2970 = 0.5f;
             this.field2399 += method1140;
             if (this.field2423.nextInt(100) == 0) {
@@ -160,7 +162,7 @@ public class Class856 extends Class855
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final Class354 class7097) {
+    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
     }
     
     @Override
@@ -193,8 +195,8 @@ public class Class856 extends Class855
         class51.method296("BatFlags", this.field2432.method33568(Class856.field4562));
     }
     
-    public static boolean method5146(final Class7499<Class856> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
-        if (class7502.method1075() < class7500.method6743()) {
+    public static boolean method5146(final Class7499<Class856> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+        if (class7502.getY() < class7500.method6743()) {
             final int method6969 = class7500.method6969(class7502);
             int bound = 4;
             if (!method5147()) {

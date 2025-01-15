@@ -7,6 +7,7 @@ package mapped;
 import java.util.Collection;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 public class Class4610 extends Class4611<Class4238>
 {
@@ -21,7 +22,7 @@ public class Class4610 extends Class4611<Class4238>
         return new Class4238(Class8172.method27018(jsonObject.get("victims")));
     }
     
-    public void method13719(final Class513 class513, final Collection<? extends Class399> collection) {
+    public void method13719(final Class513 class513, final Collection<? extends Entity> collection) {
         this.method13726(class513.method2957(), class515 -> class515.method12742(class514, collection2));
     }
     

@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class744 extends Class516<Class3439>
@@ -183,7 +185,7 @@ public class Class744 extends Class516<Class3439>
         if (this.field4029 && this.field4025) {
             final int n6 = this.field3080 + 13;
             this.field4028 = ((float)n2 - n6 - 7.5f) / (n6 + 56 - n6 - 15.0f);
-            this.field4028 = Class9546.method35653(this.field4028, 0.0f, 1.0f);
+            this.field4028 = MathHelper.method35653(this.field4028, 0.0f, 1.0f);
             int n7 = (int)(this.field4028 * (Class744.field4019 - 4) + 0.5);
             if (n7 < 0) {
                 n7 = 0;
@@ -199,7 +201,7 @@ public class Class744 extends Class516<Class3439>
         if (this.field4025) {
             final int n4 = Class744.field4019 - 4;
             this.field4028 -= (float)(n3 / n4);
-            this.field4028 = Class9546.method35653(this.field4028, 0.0f, 1.0f);
+            this.field4028 = MathHelper.method35653(this.field4028, 0.0f, 1.0f);
             this.field4030 = 1 + (int)(this.field4028 * n4 + 0.5) * 4;
         }
         return true;

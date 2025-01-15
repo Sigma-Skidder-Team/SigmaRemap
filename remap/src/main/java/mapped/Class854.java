@@ -20,7 +20,7 @@ public class Class854 extends Class853
         this.method2710(Class8107.field33408).method23941(0.20000000298023224);
     }
     
-    public static boolean method5143(final Class7499<Class854> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method5143(final Class7499<Class854> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6954() != Class2113.field12290;
     }
     
@@ -67,7 +67,7 @@ public class Class854 extends Class853
     
     @Override
     public void method2725() {
-        final Class5487 method1935 = this.method1935();
+        final Vec3d method1935 = this.method1935();
         this.method1937(method1935.field22770, this.method2724() + this.method5130() * 0.1f, method1935.field22772);
         this.field2448 = true;
     }
@@ -78,7 +78,7 @@ public class Class854 extends Class853
             super.method2727(class7909);
         }
         else {
-            final Class5487 method1935 = this.method1935();
+            final Vec3d method1935 = this.method1935();
             this.method1937(method1935.field22770, 0.22f + this.method5130() * 0.05f, method1935.field22772);
             this.field2448 = true;
         }

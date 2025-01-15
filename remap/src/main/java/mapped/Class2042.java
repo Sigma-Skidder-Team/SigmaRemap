@@ -5,7 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.function.BiFunction;
 import java.util.Map;
@@ -17,9 +18,9 @@ public enum Class2042
     
     private static final Map<String, Class2042> field11638;
     private final String field11639;
-    private final BiFunction<Class5487, Class399, Class5487> field11640;
+    private final BiFunction<Class5487, Entity, Class5487> field11640;
     
-    private Class2042(final String field11639, final BiFunction<Class5487, Class399, Class5487> field11640) {
+    private Class2042(final String field11639, final BiFunction<Class5487, Entity, Class5487> field11640) {
         this.field11639 = field11639;
         this.field11640 = field11640;
     }
@@ -29,12 +30,12 @@ public enum Class2042
         return Class2042.field11638.get(s);
     }
     
-    public Class5487 method8122(final Class399 class399) {
+    public Class5487 method8122(final Entity class399) {
         return this.field11640.apply(class399.method1934(), class399);
     }
     
     public Class5487 method8123(final Class7492 class7492) {
-        final Class399 method23251 = class7492.method23251();
+        final Entity method23251 = class7492.method23251();
         return (method23251 != null) ? this.field11640.apply(class7492.method23249(), method23251) : class7492.method23249();
     }
     

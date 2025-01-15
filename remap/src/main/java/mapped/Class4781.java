@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4781<T extends Class399 & Class407> extends Class4703<T>
+import net.minecraft.entity.Entity;
+
+public class Class4781<T extends Entity & Class407> extends Class4703<T>
 {
     private static String[] field20410;
     private final Class1796 field20411;
@@ -32,14 +34,14 @@ public class Class4781<T extends Class399 & Class407> extends Class4703<T>
         class7351.method22567();
         class7351.method22565(this.field20412, this.field20412, this.field20412);
         class7351.method22566(this.field20283.method28717());
-        class7351.method22566(Class9138.field38718.method33328(180.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f));
         this.field20411.method6536(t.method2005(), Class2016.field11493, n3, Class1904.field10335, class7351, class7352);
         class7351.method22568();
         super.method13951(t, n, n2, class7351, class7352, n3);
     }
     
     @Override
-    public Class1932 method13950(final Class399 class399) {
+    public Class1932 method13950(final Entity class399) {
         return Class1774.field9853;
     }
 }

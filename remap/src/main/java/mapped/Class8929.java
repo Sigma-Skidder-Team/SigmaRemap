@@ -13,7 +13,7 @@ public class Class8929
     private static Class6332[] field37531;
     public static boolean field37532;
     
-    public static Class6332 method31486(final Class1855 class1855, final Class7096 class1856, final Class354 class1857) {
+    public static Class6332 method31486(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857) {
         if (Class8929.field37531 == null) {
             return null;
         }

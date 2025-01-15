@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -96,7 +98,7 @@ public class Class828 extends Class827
         super.method4172();
     }
     
-    public static boolean method4935(final Class7499<Class828> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4935(final Class7499<Class828> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6954() != Class2113.field12290;
     }
     
@@ -136,7 +138,7 @@ public class Class828 extends Class827
     @Override
     public boolean method1740(final Class7929 class7929, final float n) {
         if (!this.method1849(class7929)) {
-            final Class399 method25714 = class7929.method25714();
+            final Entity method25714 = class7929.method25714();
             if (method25714 instanceof Class512) {
                 if (!((Class512)method25714).method2889()) {
                     if (this.method2747(method25714)) {

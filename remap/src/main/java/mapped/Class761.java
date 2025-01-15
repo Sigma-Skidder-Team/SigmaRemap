@@ -93,7 +93,7 @@ public class Class761 extends Class760 implements Class762
         return 10.0f;
     }
     
-    public static boolean method4225(final Class7499<Class761> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4225(final Class7499<Class761> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6954() != Class2113.field12290) {
             if (random.nextInt(20) == 0) {
                 if (Class759.method4178(class7499, class7500, class7501, class7502, random)) {

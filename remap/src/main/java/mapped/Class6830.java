@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class6830 extends Class6831
 {
     private static String[] field26824;
@@ -30,12 +33,12 @@ public class Class6830 extends Class6831
         if (!this.field26826.field2410) {
             if (this.field26825.method1805()) {
                 if (this.field26825.method1920() == this.field26826) {
-                    final float method35641 = Class9546.method35641(Class399.method1680(this.field26826.method1935()));
+                    final float method35641 = MathHelper.method35641(Entity.method1680(this.field26826.method1935()));
                     if (method35641 < 0.01) {
                         this.field26835 = 0.0f;
                         return;
                     }
-                    this.field26835 = 0.0f + Class9546.method35653(method35641, 0.0f, 1.0f) * 0.75f;
+                    this.field26835 = 0.0f + MathHelper.method35653(method35641, 0.0f, 1.0f) * 0.75f;
                     return;
                 }
             }

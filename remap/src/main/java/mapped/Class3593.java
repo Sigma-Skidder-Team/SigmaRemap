@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3593 extends Class3592
 {
     private static String[] field16737;
@@ -89,10 +92,10 @@ public class Class3593 extends Class3592
         if (!this.field16738.method4656()) {
             final Class5487 method4153 = this.field16738.method1935();
             if (method4153.field22771 * method4153.field22771 < 0.029999999329447746 && this.field16738.field2400 != 0.0f) {
-                this.field16738.field2400 = Class9546.method35707(this.field16738.field2400, 0.0f, 0.2f);
+                this.field16738.field2400 = MathHelper.method35707(this.field16738.field2400, 0.0f, 0.2f);
             }
             else {
-                this.field16738.field2400 = (float)(Math.signum(-method4153.field22771) * Math.acos(Math.sqrt(Class399.method1680(method4153)) / method4153.method16752()) * 57.2957763671875);
+                this.field16738.field2400 = (float)(Math.signum(-method4153.field22771) * Math.acos(Math.sqrt(Entity.method1680(method4153)) / method4153.method16752()) * 57.2957763671875);
             }
         }
         if (method4152 != null && this.field16738.method1732(method4152) <= 2.0f) {
@@ -101,7 +104,7 @@ public class Class3593 extends Class3592
         else if (this.field16738.field2400 > 0.0f) {
             if (this.field16738.field2404) {
                 if ((float)this.field16738.method1935().field22771 != 0.0f) {
-                    if (this.field16738.field2391.method6701(new Class354(this.field16738)).method21696() == Class7521.field29329) {
+                    if (this.field16738.field2391.method6701(new BlockPos(this.field16738)).method21696() == Class7521.field29329) {
                         this.field16738.field2400 = 60.0f;
                         this.field16738.method4153(null);
                         Class803.method4694(this.field16738, true);

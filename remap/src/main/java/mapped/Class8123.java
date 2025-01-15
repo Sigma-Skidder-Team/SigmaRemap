@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8123
 {
     private static String[] field33461;
@@ -20,9 +22,9 @@ public class Class8123
         this.field33462 = field33462;
     }
     
-    public void method26738(final Class179 class179, final Class8123 class180) {
-        this.field33463[class179.method779()] = class180;
-        class180.field33463[class179.method782().method779()] = this;
+    public void method26738(final Direction class179, final Class8123 class180) {
+        this.field33463[class179.getIndex()] = class180;
+        class180.field33463[class179.getOpposite().getIndex()] = this;
     }
     
     public void method26739() {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
 {
     private Class6300 field9986;
@@ -17,7 +19,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
         (this.field9986 = new Class6300(((Class4710<T, Class5901>)class4778).method13979())).method18647(16, 16);
         this.field9986.field25180 = -6.0f;
         this.field9986.field25182 = -8.0f;
-        this.field9986.field25184 = Class9546.field41099 / 4.0f;
+        this.field9986.field25184 = MathHelper.field41099 / 4.0f;
         this.field9986.method18654(new int[][] { null, null, { 16, 16, 0, 0 }, { 16, 16, 0, 0 }, null, null }, 0.0f, 0.0f, 10.0f, 20.0f, 16.0f, 0.0f, 0.0f);
         this.field9986.method18654(new int[][] { null, null, null, null, { 16, 16, 0, 0 }, { 16, 16, 0, 0 } }, 10.0f, 0.0f, 0.0f, 0.0f, 16.0f, 20.0f, 0.0f);
     }
@@ -35,7 +37,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
                 final int method5309 = Class4710.method13982(t, 0.0f);
                 class7351.method22567();
                 class7351.method22564(0.20000000298023224, -0.3499999940395355, 0.5);
-                class7351.method22566(Class9138.field38718.method33328(-48.0f));
+                class7351.method22566(Vector3f.field38718.rotationDegrees(-48.0f));
                 class7351.method22565(-1.0f, -1.0f, 1.0f);
                 class7351.method22564(-0.5, -0.5, -0.5);
                 if (method5307 == null) {
@@ -47,9 +49,9 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
                 class7351.method22568();
                 class7351.method22567();
                 class7351.method22564(0.20000000298023224, -0.3499999940395355, 0.5);
-                class7351.method22566(Class9138.field38718.method33328(42.0f));
+                class7351.method22566(Vector3f.field38718.rotationDegrees(42.0f));
                 class7351.method22564(0.10000000149011612, 0.0, -0.6000000238418579);
-                class7351.method22566(Class9138.field38718.method33328(-48.0f));
+                class7351.method22566(Vector3f.field38718.rotationDegrees(-48.0f));
                 class7351.method22565(-1.0f, -1.0f, 1.0f);
                 class7351.method22564(-0.5, -0.5, -0.5);
                 if (method5307 == null) {
@@ -62,7 +64,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
                 class7351.method22567();
                 this.method6559().method17803().method18645(class7351);
                 class7351.method22564(0.0, -0.699999988079071, -0.20000000298023224);
-                class7351.method22566(Class9138.field38718.method33328(-78.0f));
+                class7351.method22566(Vector3f.field38718.rotationDegrees(-78.0f));
                 class7351.method22565(-1.0f, -1.0f, 1.0f);
                 class7351.method22564(-0.5, -0.5, -0.5);
                 if (method5307 == null) {

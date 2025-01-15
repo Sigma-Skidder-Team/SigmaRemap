@@ -34,7 +34,7 @@ public class Class3295 extends Class3167
                             }
                         }
                     }
-                    if (class5753.method17064().method1075() >= Class3295.field15514.field4684.field2396 - ((Class3295.field15514.field4684.field2396 % 0.5 != 0.0) ? 0.0f : 0.5f)) {
+                    if (class5753.method17064().getY() >= Class3295.field15514.field4684.field2396 - ((Class3295.field15514.field4684.field2396 % 0.5 != 0.0) ? 0.0f : 0.5f)) {
                         return;
                     }
                     if (this.method10432(Class3295.field15514.field4684.field2403)) {
@@ -207,7 +207,7 @@ public class Class3295 extends Class3167
         boolean b = true;
         if (iterator.hasNext()) {
             while (iterator.hasNext()) {
-                final Class3833 method21696 = Class3295.field15514.field4683.method6701(new Class354(iterator.next().method24537().method18517())).method21696();
+                final Class3833 method21696 = Class3295.field15514.field4683.method6701(new BlockPos(iterator.next().method24537().method18517())).method21696();
                 if (method21696 == Class7521.field29173) {
                     continue;
                 }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6204 extends Class6159
 {
     private static String[] field25038;
@@ -32,12 +34,12 @@ public class Class6204 extends Class6159
         this.field24934 = this.field24937;
         this.field24935 = this.field24938;
         if (this.field24950++ < this.field24951) {
-            this.field24939 += 0.6f * Class9546.method35639(this.field25039);
-            this.field24941 += 0.6f * Class9546.method35638(this.field25039);
+            this.field24939 += 0.6f * MathHelper.cos(this.field25039);
+            this.field24941 += 0.6f * MathHelper.sin(this.field25039);
             this.field24939 *= 0.07;
             this.field24941 *= 0.07;
             this.method18431(this.field24939, this.field24940, this.field24941);
-            if (!this.field24932.method6702(new Class354(this.field24936, this.field24937, this.field24938)).method21793(Class7324.field28319) || this.field24943) {
+            if (!this.field24932.method6702(new BlockPos(this.field24936, this.field24937, this.field24938)).method21793(Class7324.field28319) || this.field24943) {
                 this.method18439();
             }
             this.field25039 += (float)0.08;

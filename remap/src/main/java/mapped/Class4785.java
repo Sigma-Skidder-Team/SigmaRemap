@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public abstract class Class4785<T extends Class402> extends Class4703<T>
 {
     public Class4785(final Class8551 class8551) {
@@ -12,13 +14,13 @@ public abstract class Class4785<T extends Class402> extends Class4703<T>
     
     public void method14152(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int n3) {
         class7351.method22567();
-        class7351.method22566(Class9138.field38718.method33328(Class9546.method35700(n2, t.field2401, t.field2399) - 90.0f));
-        class7351.method22566(Class9138.field38720.method33328(Class9546.method35700(n2, t.field2402, t.field2400)));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(MathHelper.method35700(n2, t.field2401, t.field2399) - 90.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(MathHelper.method35700(n2, t.field2402, t.field2400)));
         final float n4 = t.field2475 - n2;
         if (n4 > 0.0f) {
-            class7351.method22566(Class9138.field38720.method33328(-Class9546.method35638(n4 * 3.0f) * n4));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(-MathHelper.sin(n4 * 3.0f) * n4));
         }
-        class7351.method22566(Class9138.field38716.method33328(45.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(45.0f));
         class7351.method22565(0.05625f, 0.05625f, 0.05625f);
         class7351.method22564(-4.0, 0.0, 0.0);
         final Class4150 method25214 = class7352.method25214(Class6332.method18768(this.method13950(t)));
@@ -34,7 +36,7 @@ public abstract class Class4785<T extends Class402> extends Class4703<T>
         this.method14153(method25216, method25217, method25214, -7, -2, 2, 0.15625f, 0.3125f, 1, 0, 0, n3);
         this.method14153(method25216, method25217, method25214, -7, -2, -2, 0.0f, 0.3125f, 1, 0, 0, n3);
         for (int i = 0; i < 4; ++i) {
-            class7351.method22566(Class9138.field38716.method33328(90.0f));
+            class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
             this.method14153(method25216, method25217, method25214, -8, -2, 0, 0.0f, 0.0f, 0, 1, 0, n3);
             this.method14153(method25216, method25217, method25214, 8, -2, 0, 0.5f, 0.0f, 0, 1, 0, n3);
             this.method14153(method25216, method25217, method25214, 8, 2, 0, 0.5f, 0.15625f, 0, 1, 0, n3);

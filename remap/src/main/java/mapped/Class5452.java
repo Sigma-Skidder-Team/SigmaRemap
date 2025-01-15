@@ -29,8 +29,8 @@ public class Class5452 extends Class5419<Class511>
     public boolean method16538(final Class1849 class1849, final Class511 class1850) {
         if (class1849.method6754() - this.field22688 >= 20L) {
             final Class787 class1851 = (Class787)class1850;
-            final Optional<Class354> method7205 = class1849.method6921().method7205(Class8912.field37476.method31396(), p0 -> true, new Class354(class1850), 48, Class2045.field11652);
-            return method7205.isPresent() && method7205.get().method1083(new Class354(class1851)) > 4.0;
+            final Optional<BlockPos> method7205 = class1849.method6921().method7205(Class8912.field37476.method31396(), p0 -> true, new BlockPos(class1850), 48, Class2045.field11652);
+            return method7205.isPresent() && method7205.get().method1083(new BlockPos(class1851)) > 4.0;
         }
         return false;
     }
@@ -56,9 +56,9 @@ public class Class5452 extends Class5419<Class511>
             else {
                 return false;
             }
-        }, new Class354(class1850), 48, Class2045.field11652), Class8912.field37476.method31397());
+        }, new BlockPos(class1850), 48, Class2045.field11652), Class8912.field37476.method31397());
         if (method6922 != null && method6922.method35228()) {
-            final Class354 method6923 = method6922.method35232();
+            final BlockPos method6923 = method6922.method35232();
             if (method6921.method7210(method6923).isPresent()) {
                 class1850.method2618().method1196(Class8233.field33809, new Class6949(method6923, this.field22685, 1));
                 Class9324.method34534(class1849, method6923);

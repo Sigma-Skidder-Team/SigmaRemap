@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class4496 extends Class4484
 {
     private static String[] field19892;
     
-    public Class4496(final int n, final Class6997 field19849, final Class179 class179) {
+    public Class4496(final int n, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40953, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -24,15 +26,15 @@ public class Class4496 extends Class4484
     @Override
     public void method13431(final Class4473 class4473, final List<Class4473> list, final Random random) {
         int n = 1;
-        final Class179 method13455 = this.method13455();
-        if (method13455 == Class179.field515 || method13455 == Class179.field513) {
+        final Direction method13455 = this.method13455();
+        if (method13455 == Direction.WEST || method13455 == Direction.NORTH) {
             n = 5;
         }
         this.method13475((Class4494)class4473, list, random, 0, n, random.nextInt(8) > 0);
         this.method13476((Class4494)class4473, list, random, 0, n, random.nextInt(8) > 0);
     }
     
-    public static Class4496 method13488(final List<Class4473> list, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+    public static Class4496 method13488(final List<Class4473> list, final int n, final int n2, final int n3, final Direction class179, final int n4) {
         final Class6997 method21408 = Class6997.method21408(n, n2, n3, -3, 0, 0, 9, 7, 9, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4496(n4, method21408, class179) : null;
     }

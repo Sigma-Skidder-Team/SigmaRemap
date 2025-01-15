@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class6274 extends Class6257
 {
     private static final String[] field25137;
@@ -54,7 +56,7 @@ public class Class6274 extends Class6257
     }
     
     @Override
-    public void method18601(final Class511 class511, final Class399 class512, final int n) {
+    public void method18601(final Class511 class511, final Entity class512, final int n) {
         if (class512 instanceof Class511) {
             final Class511 class513 = (Class511)class512;
             if (this.field25141 == 2) {

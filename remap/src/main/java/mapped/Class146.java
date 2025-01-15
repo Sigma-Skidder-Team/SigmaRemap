@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.function.UnaryOperator;
@@ -31,7 +32,7 @@ public class Class146 extends Class126
     public static UnaryOperator<Class2250> method706(final Class7529 class7529, final Class2065 class7530) {
         if (class7530 != null && class7529.method23579(class7530.method8153()) != null) {
             return (UnaryOperator<Class2250>)(class7534 -> {
-                final Class399 class7535;
+                final Entity class7535;
                 class7535.method1924().method23241(2);
                 try {
                     return Class9479.method35294(class7531, class7534, class7533, 0);

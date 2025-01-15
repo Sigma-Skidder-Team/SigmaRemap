@@ -28,22 +28,22 @@ public class Class3530 extends Class3446
     
     @Override
     public void method11016() {
-        Class354 method5037 = this.field16559.method5037();
+        BlockPos method5037 = this.field16559.method5037();
         if (method5037 == null) {
-            method5037 = new Class354(this.field16559);
+            method5037 = new BlockPos(this.field16559);
         }
         int i = 0;
         while (i < 3) {
-            final Class354 method5038 = method5037.method1134(Class843.method5050(this.field16559).nextInt(15) - 7, Class843.method5051(this.field16559).nextInt(11) - 5, Class843.method5052(this.field16559).nextInt(15) - 7);
+            final BlockPos method5038 = method5037.method1134(Class843.method5050(this.field16559).nextInt(15) - 7, Class843.method5051(this.field16559).nextInt(11) - 5, Class843.method5052(this.field16559).nextInt(15) - 7);
             if (!this.field16559.field2391.method6961(method5038)) {
                 ++i;
             }
             else {
-                Class843.method5053(this.field16559).method19907(method5038.method1074() + 0.5, method5038.method1075() + 0.5, method5038.method1076() + 0.5, 0.25);
+                Class843.method5053(this.field16559).method19907(method5038.getX() + 0.5, method5038.getY() + 0.5, method5038.getZ() + 0.5, 0.25);
                 if (this.field16559.method4152() != null) {
                     break;
                 }
-                this.field16559.method4147().method24669(method5038.method1074() + 0.5, method5038.method1075() + 0.5, method5038.method1076() + 0.5, 180.0f, 20.0f);
+                this.field16559.method4147().method24669(method5038.getX() + 0.5, method5038.getY() + 0.5, method5038.getZ() + 0.5, 180.0f, 20.0f);
                 break;
             }
         }

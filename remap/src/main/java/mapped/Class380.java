@@ -19,10 +19,10 @@ public class Class380 extends Class378
     }
     
     @Override
-    public void method1261(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final int n2, final int n3, final Class354 class1877, final Set<Class354> set) {
+    public void method1261(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final int n2, final int n3, final BlockPos class1877, final Set<BlockPos> set) {
         class1876.field22086.method1265(class1875, random, class1876, n, class1877, 0, n3, set);
         class1876.field22086.method1265(class1875, random, class1876, n, class1877, 1, 1, set);
-        final Class354 method1137 = class1877.method1137();
+        final BlockPos method1137 = class1877.method1137();
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 this.method1266(class1875, random, method1137.method1134(i, 0, j), class1876, set);

@@ -23,7 +23,7 @@ public class Class3882 extends Class3874
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         final Class5487 method21732 = class7096.method21732(class7097, class7098);
         return Class3882.field17537.method24541(method21732.field22770, method21732.field22771, method21732.field22772);
     }

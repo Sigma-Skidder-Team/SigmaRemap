@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class743 extends Class516<Class3421>
 {
     private static final Class1932 field4016;
@@ -33,7 +35,7 @@ public class Class743 extends Class516<Class3421>
         final int n4 = (this.field3152 - this.field3075) / 2;
         final int n5 = (this.field3153 - this.field3076) / 2;
         this.method3186(n4, n5, 0, 0, this.field3075, this.field3076);
-        final int method35651 = Class9546.method35651((18 * ((Class3421)this.field3077).method10902() + 20 - 1) / 20, 0, 18);
+        final int method35651 = MathHelper.method35651((18 * ((Class3421)this.field3077).method10902() + 20 - 1) / 20, 0, 18);
         if (method35651 > 0) {
             this.method3186(n4 + 60, n5 + 44, 176, 29, method35651, 4);
         }

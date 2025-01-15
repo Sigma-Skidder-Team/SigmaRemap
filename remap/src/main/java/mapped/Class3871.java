@@ -20,17 +20,17 @@ public class Class3871 extends Class3870 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return true;
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
         Class3833.method11839(class1849, class1850, new Class8321(this));
     }
 }

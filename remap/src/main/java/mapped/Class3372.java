@@ -101,7 +101,7 @@ public class Class3372 extends Class3167
                     }
                 }
                 this.field16045 = Class6430.method19114();
-                final Class354 class5718 = new Class354(Class3372.field15514.field4684.field2395, Class3372.field15514.field4684.field2396 - 0.4, Class3372.field15514.field4684.field2397);
+                final BlockPos class5718 = new BlockPos(Class3372.field15514.field4684.field2395, Class3372.field15514.field4684.field2396 - 0.4, Class3372.field15514.field4684.field2397);
                 if (Class6430.method19114()) {
                     if ((this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718)) || this.method9914().method9883("Auto Jump")) {
                         Class3372.field15514.field4684.method2725();

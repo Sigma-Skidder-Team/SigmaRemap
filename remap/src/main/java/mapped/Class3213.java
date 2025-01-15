@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.List;
+
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class Class3213 extends Class3167
@@ -35,8 +37,8 @@ public class Class3213 extends Class3167
                 final float n2 = (float)Math.toRadians(Class3213.field15514.field4684.field2400);
                 final double n3 = 0.20000000298023224;
                 final double n4 = Class3213.field15514.field4684.field2403.method18507() / 2.0;
-                final double n5 = Class9546.method35639(n) * n4;
-                final double n6 = Class9546.method35638(n) * n4;
+                final double n5 = MathHelper.cos(n) * n4;
+                final double n6 = MathHelper.sin(n) * n4;
                 final double n7 = Class3213.field15514.field4684.field2417 + (Class3213.field15514.field4684.field2395 - Class3213.field15514.field4684.field2417) * Class3213.field15514.field4633.field26528;
                 final double n8 = Class3213.field15514.field4684.field2418 + (Class3213.field15514.field4684.field2396 - Class3213.field15514.field4684.field2418) * Class3213.field15514.field4633.field26528;
                 final double n9 = Class3213.field15514.field4684.field2419 + (Class3213.field15514.field4684.field2397 - Class3213.field15514.field4684.field2419) * Class3213.field15514.field4633.field26528;
@@ -94,9 +96,9 @@ public class Class3213 extends Class3167
                     final double n22 = method872.field890 - Class3213.field15514.field4644.method5833().method18161().method16762();
                     GL11.glPushMatrix();
                     GL11.glTranslated(n20, n21, n22);
-                    final Class354 method874 = new Class354(0, 0, 0).method1149(((Class7005)method872.field894).method21448());
-                    GL11.glRotatef(45.0f, this.field15658.method28124((float)method874.method1074()), this.field15658.method28125((float)(-method874.method1075())), this.field15658.method28126((float)method874.method1076()));
-                    GL11.glRotatef(90.0f, this.field15659.method28124((float)method874.method1076()), this.field15659.method28125((float)method874.method1075()), this.field15659.method28126((float)(-method874.method1074())));
+                    final BlockPos method874 = new BlockPos(0, 0, 0).method1149(((Class7005)method872.field894).method21448());
+                    GL11.glRotatef(45.0f, this.field15658.method28124((float)method874.getX()), this.field15658.method28125((float)(-method874.getY())), this.field15658.method28126((float)method874.getZ()));
+                    GL11.glRotatef(90.0f, this.field15659.method28124((float)method874.getZ()), this.field15659.method28125((float)method874.getY()), this.field15659.method28126((float)(-method874.getX())));
                     GL11.glTranslatef(-0.5f, 0.0f, -0.5f);
                     final Class7644 class5743 = new Class7644(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
                     Class8154.method26909(class5743, Class6430.method19118(Class265.field1285.field1292, 0.1f));

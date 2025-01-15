@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public class Class3518 extends Class3517
@@ -30,21 +32,21 @@ public class Class3518 extends Class3517
     
     @Nullable
     private Class5487 method11074() {
-        final Class354 class354 = new Class354(this.field16510);
+        final BlockPos class354 = new BlockPos(this.field16510);
         final Class385 class355 = new Class385();
         final Class385 class356 = new Class385();
-        for (final Class354 class357 : Class354.method1158(Class9546.method35644(this.field16510.method1938() - 3.0), Class9546.method35644(this.field16510.method1941() - 6.0), Class9546.method35644(this.field16510.method1945() - 3.0), Class9546.method35644(this.field16510.method1938() + 3.0), Class9546.method35644(this.field16510.method1941() + 6.0), Class9546.method35644(this.field16510.method1945() + 3.0))) {
+        for (final BlockPos class357 : BlockPos.method1158(MathHelper.floor(this.field16510.method1938() - 3.0), MathHelper.floor(this.field16510.method1941() - 6.0), MathHelper.floor(this.field16510.method1945() - 3.0), MathHelper.floor(this.field16510.method1938() + 3.0), MathHelper.floor(this.field16510.method1941() + 6.0), MathHelper.floor(this.field16510.method1945() + 3.0))) {
             if (class354.equals(class357)) {
                 continue;
             }
-            final Class3833 method21696 = this.field16510.field2391.method6701(class356.method1287(class357).method1290(Class179.field511)).method21696();
+            final Class3833 method21696 = this.field16510.field2391.method6701(class356.method1287(class357).method1290(Direction.DOWN)).method21696();
             if (!(method21696 instanceof Class3972) && !method21696.method11785(Class7188.field27893)) {
                 continue;
             }
             if (!this.field16510.field2391.method6961(class357)) {
                 continue;
             }
-            if (!this.field16510.field2391.method6961(class355.method1287(class357).method1290(Class179.field512))) {
+            if (!this.field16510.field2391.method6961(class355.method1287(class357).method1290(Direction.UP))) {
                 continue;
             }
             return new Class5487(class357);

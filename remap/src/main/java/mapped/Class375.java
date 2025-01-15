@@ -21,7 +21,7 @@ public class Class375 extends Class373
     }
     
     @Override
-    public void method1254(final Class1851 class1851, final Class354 class1852, final Class7096 class1853, final Random random) {
+    public void method1254(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Random random) {
         class1851.method6688(class1852, class1853, 2);
     }
     

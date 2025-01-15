@@ -5,7 +5,6 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 public abstract class Class456 extends Class460
@@ -17,7 +16,7 @@ public abstract class Class456 extends Class460
         super(class5412);
     }
     
-    public static void method2323(final Class1855 class1855, final Random random, final Class354 class1856, final Class1932 class1857) {
+    public static void method2323(final Class1855 class1855, final Random random, final BlockPos class1856, final Class1932 class1857) {
         final Class436 method6727 = class1855.method6727(class1856);
         if (method6727 instanceof Class456) {
             ((Class456)method6727).method2327(class1857, random.nextLong());
@@ -49,7 +48,7 @@ public abstract class Class456 extends Class460
             if (this.field2656.method6679() != null) {
                 final Class9317 method6402 = this.field2656.method6679().method1581().method6402(this.field2710);
                 this.field2710 = null;
-                final Class9098 method6403 = new Class9098((Class1849)this.field2656).method32877(Class6683.field26367, new Class354(this.field2657)).method32874(this.field2711);
+                final Class9098 method6403 = new Class9098((Class1849)this.field2656).method32877(Class6683.field26367, new BlockPos(this.field2657)).method32874(this.field2711);
                 if (class512 != null) {
                     method6403.method32876(class512.method2907()).method32877(Class6683.field26362, class512);
                 }
@@ -103,7 +102,7 @@ public abstract class Class456 extends Class460
     
     @Override
     public boolean method2162(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5) <= 64.0;
+        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override

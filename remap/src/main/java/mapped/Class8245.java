@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
@@ -14,26 +17,26 @@ public class Class8245
     private static final Logger field33862;
     public final Class869 field33863;
     public final Class5799 field33864;
-    private Class354 field33865;
+    private BlockPos field33865;
     private Class8321 field33866;
     public float field33867;
     private float field33868;
     public int field33869;
     private boolean field33870;
     private Class101 field33871;
-    private final Object2ObjectLinkedOpenHashMap<Pair<Class354, Class2003>, Class8104> field33872;
+    private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, Class2003>, Class8104> field33872;
     private int field33873;
     
     public Class8245(final Class869 field33863, final Class5799 field33864) {
-        this.field33865 = new Class354(-1, -1, -1);
+        this.field33865 = new BlockPos(-1, -1, -1);
         this.field33866 = Class8321.field34174;
         this.field33871 = Class101.field298;
-        this.field33872 = (Object2ObjectLinkedOpenHashMap<Pair<Class354, Class2003>, Class8104>)new Object2ObjectLinkedOpenHashMap();
+        this.field33872 = (Object2ObjectLinkedOpenHashMap<Pair<BlockPos, Class2003>, Class8104>)new Object2ObjectLinkedOpenHashMap();
         this.field33863 = field33863;
         this.field33864 = field33864;
     }
     
-    public static void method27307(final Class869 class869, final Class8245 class870, final Class354 class871, final Class179 class872) {
+    public static void method27307(final Class869 class869, final Class8245 class870, final BlockPos class871, final Direction class872) {
         if (!class869.field4683.method6725(class869.field4684, class871, class872)) {
             class870.method27311(class871);
         }
@@ -51,7 +54,7 @@ public class Class8245
         return this.field33871.method591();
     }
     
-    public boolean method27311(final Class354 class354) {
+    public boolean method27311(final BlockPos class354) {
         if (this.field33863.field4684.method2803(this.field33863.field4683, class354, this.field33871)) {
             return false;
         }
@@ -84,7 +87,7 @@ public class Class8245
         return false;
     }
     
-    public boolean method27312(final Class354 field33865, final Class179 class179) {
+    public boolean method27312(final BlockPos field33865, final Direction class179) {
         if (this.field33863.field4684.method2803(this.field33863.field4683, field33865, this.field33871)) {
             return false;
         }
@@ -130,7 +133,7 @@ public class Class8245
     public void method27313() {
         if (this.field33870) {
             this.field33863.method5319().method32920(this.field33863.field4683, this.field33865, this.field33863.field4683.method6701(this.field33865), -1.0f);
-            this.method27339(Class2003.field11241, this.field33865, Class179.field511);
+            this.method27339(Class2003.field11241, this.field33865, Direction.DOWN);
             this.field33870 = false;
             this.field33867 = 0.0f;
             this.field33863.field4683.method6780(this.field33863.field4684.method1643(), this.field33865, -1);
@@ -138,7 +141,7 @@ public class Class8245
         }
     }
     
-    public boolean method27314(final Class354 class354, final Class179 class355) {
+    public boolean method27314(final BlockPos class354, final Direction class355) {
         this.method27318();
         if (this.field33869 > 0) {
             --this.field33869;
@@ -162,7 +165,7 @@ public class Class8245
                 this.field33863.method5299().method6422(new Class6836(method6702.method24482(), Class286.field1582, (method6702.method24477() + 1.0f) / 8.0f, method6702.method24478() * 0.5f, class354));
             }
             ++this.field33868;
-            this.field33863.method5319().method32920(this.field33863.field4683, class354, method6701, Class9546.method35653(this.field33867, 0.0f, 1.0f));
+            this.field33863.method5319().method32920(this.field33863.field4683, class354, method6701, MathHelper.method35653(this.field33867, 0.0f, 1.0f));
             if (this.field33867 >= 1.0f) {
                 this.field33870 = false;
                 this.method27339(Class2003.field11242, class354, class355);
@@ -191,7 +194,7 @@ public class Class8245
         }
     }
     
-    private boolean method27317(final Class354 class354) {
+    private boolean method27317(final BlockPos class354) {
         final Class8321 method2713 = this.field33863.field4684.method2713();
         int n = (this.field33866.method27620() && method2713.method27620()) ? 1 : 0;
         if (!this.field33866.method27620()) {
@@ -224,7 +227,7 @@ public class Class8245
     
     public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final Class7005 class759) {
         this.method27318();
-        final Class354 method21447 = class759.method21447();
+        final BlockPos method21447 = class759.method21447();
         if (!this.field33863.field4683.method6787().method34779(method21447)) {
             return Class2201.field13403;
         }
@@ -281,7 +284,7 @@ public class Class8245
         return new Class756(this.field33863, class1848, this.field33864, class1849, class1850);
     }
     
-    public void method27321(final Class512 class512, final Class399 class513) {
+    public void method27321(final Class512 class512, final Entity class513) {
         this.method27318();
         this.field33864.method17292(new Class4381(class513));
         if (this.field33871 != Class101.field301) {
@@ -290,15 +293,15 @@ public class Class8245
         }
     }
     
-    public Class2201 method27322(final Class512 class512, final Class399 class513, final Class316 class514) {
+    public Class2201 method27322(final Class512 class512, final Entity class513, final Class316 class514) {
         this.method27318();
         this.field33864.method17292(new Class4381(class513, class514));
         return (this.field33871 != Class101.field301) ? class512.method2836(class513, class514) : Class2201.field13402;
     }
     
-    public Class2201 method27323(final Class512 class512, final Class399 class513, final Class7007 class514, final Class316 class515) {
+    public Class2201 method27323(final Class512 class512, final Entity class513, final Class7007 class514, final Class316 class515) {
         this.method27318();
-        final Class5487 method16742 = class514.method21451().method16742(class513.method1938(), class513.method1941(), class513.method1945());
+        final Vec3d method16742 = class514.method21451().method16742(class513.method1938(), class513.method1941(), class513.method1945());
         this.field33864.method17292(new Class4381(class513, class515, method16742));
         return (this.field33871 != Class101.field301) ? class513.method1898(class512, method16742, class515) : Class2201.field13402;
     }
@@ -331,7 +334,7 @@ public class Class8245
     
     public void method27329(final Class512 class512) {
         this.method27318();
-        this.field33864.method17292(new Class4399(Class2003.field11245, Class354.field2173, Class179.field511));
+        this.field33864.method17292(new Class4399(Class2003.field11245, BlockPos.ZERO, Direction.DOWN));
         class512.method2769();
     }
     
@@ -371,13 +374,13 @@ public class Class8245
         this.field33864.method17292(new Class4267(n));
     }
     
-    public void method27339(final Class2003 class2003, final Class354 class2004, final Class179 class2005) {
+    public void method27339(final Class2003 class2003, final BlockPos class2004, final Direction class2005) {
         final Class756 field4684 = this.field33863.field4684;
         this.field33872.put((Object)Pair.of((Object)class2004, (Object)class2003), (Object)new Class8104(field4684.method1934(), field4684.field2400, field4684.field2399));
         this.field33864.method17292(new Class4399(class2003, class2004, class2005));
     }
     
-    public void method27340(final Class1848 class1848, final Class354 class1849, final Class7096 class1850, final Class2003 class1851, final boolean b) {
+    public void method27340(final Class1848 class1848, final BlockPos class1849, final Class7096 class1850, final Class2003 class1851, final boolean b) {
         final Class8104 class1852 = (Class8104)this.field33872.remove((Object)Pair.of((Object)class1849, (Object)class1851));
         while (true) {
             Label_0023: {
@@ -403,7 +406,7 @@ public class Class8245
             if (class1852 == null) {
                 continue;
             }
-            final Class5487 method26627 = class1852.method26627();
+            final Vec3d method26627 = class1852.method26627();
             this.field33863.field4684.method1728(method26627.field22770, method26627.field22771, method26627.field22772, class1852.method26629(), class1852.method26628());
             continue;
         }

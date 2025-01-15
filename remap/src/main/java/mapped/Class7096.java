@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import com.mojang.datafixers.util.Pair;
@@ -16,6 +14,9 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Class7096 extends Class7097<Class3833, Class7096> implements Class7098<Class7096>
@@ -84,19 +85,19 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11782(this);
     }
     
-    public boolean method21698(final Class1855 class1855, final Class354 class1856, final Class7499<?> class1857) {
+    public boolean method21698(final Class1855 class1855, final BlockPos class1856, final Class7499<?> class1857) {
         return this.method21696().method11779(this, class1855, class1856, class1857);
     }
     
-    public boolean method21699(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21699(final Class1855 class1855, final BlockPos class1856) {
         return (this.field27615 == null) ? this.method21696().method11818(this, class1855, class1856) : Class8063.method26452(this.field27615);
     }
     
-    public int method21700(final Class1855 class1855, final Class354 class1856) {
+    public int method21700(final Class1855 class1855, final BlockPos class1856) {
         return (this.field27615 == null) ? this.method21696().method11819(this, class1855, class1856) : Class8063.method26453(this.field27615);
     }
     
-    public Class7702 method21701(final Class1855 class1855, final Class354 class1856, final Class179 class1857) {
+    public Class7702 method21701(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
         return (this.field27615 != null && Class8063.method26454(this.field27615) != null) ? Class8063.method26454(this.field27615)[class1857.ordinal()] : Class7698.method24503(this.method21729(class1855, class1856), class1857);
     }
     
@@ -117,7 +118,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return 1;
     }
     
-    public int method21705(final Class1855 class1855, final Class354 class1856) {
+    public int method21705(final Class1855 class1855, final BlockPos class1856) {
         return this.method21704();
     }
     
@@ -125,7 +126,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11780(this);
     }
     
-    public Class8819 method21707(final Class1855 class1855, final Class354 class1856) {
+    public Class8819 method21707(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11783(this, class1855, class1856);
     }
     
@@ -145,11 +146,11 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11804(this);
     }
     
-    public float method21712(final Class1855 class1855, final Class354 class1856) {
+    public float method21712(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11859(this, class1855, class1856);
     }
     
-    public boolean method21713(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21713(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11793(this, class1855, class1856);
     }
     
@@ -157,7 +158,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11849(this);
     }
     
-    public int method21715(final Class1855 class1855, final Class354 class1856, final Class179 class1857) {
+    public int method21715(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
         return this.method21696().method11848(this, class1855, class1856, class1857);
     }
     
@@ -165,19 +166,19 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11873(this);
     }
     
-    public int method21717(final Class1847 class1847, final Class354 class1848) {
+    public int method21717(final Class1847 class1847, final BlockPos class1848) {
         return this.method21696().method11874(this, class1847, class1848);
     }
     
-    public float method21718(final Class1855 class1855, final Class354 class1856) {
+    public float method21718(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11800(this, class1855, class1856);
     }
     
-    public float method21719(final Class512 class512, final Class1855 class513, final Class354 class514) {
+    public float method21719(final Class512 class512, final Class1855 class513, final BlockPos class514) {
         return this.method21696().method11830(this, class512, class513, class514);
     }
     
-    public int method21720(final Class1855 class1855, final Class354 class1856, final Class179 class1857) {
+    public int method21720(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
         return this.method21696().method11851(this, class1855, class1856, class1857);
     }
     
@@ -185,7 +186,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11858(this);
     }
     
-    public boolean method21722(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21722(final Class1855 class1855, final BlockPos class1856) {
         return (this.field27615 == null) ? this.method21696().method11817(this, class1855, class1856) : Class8063.method26456(this.field27615);
     }
     
@@ -193,79 +194,79 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return (this.field27615 == null) ? this.method21696().method11806(this) : Class8063.method26457(this.field27615);
     }
     
-    public boolean method21724(final Class7096 class7096, final Class179 class7097) {
+    public boolean method21724(final Class7096 class7096, final Direction class7097) {
         return this.method21696().method11807(this, class7096, class7097);
     }
     
-    public Class7702 method21725(final Class1855 class1855, final Class354 class1856) {
+    public Class7702 method21725(final Class1855 class1855, final BlockPos class1856) {
         return this.method21726(class1855, class1856, Class7543.method23629());
     }
     
-    public Class7702 method21726(final Class1855 class1855, final Class354 class1856, final Class7543 class1857) {
+    public Class7702 method21726(final Class1855 class1855, final BlockPos class1856, final Class7543 class1857) {
         return this.method21696().method11808(this, class1855, class1856, class1857);
     }
     
-    public Class7702 method21727(final Class1855 class1855, final Class354 class1856) {
+    public Class7702 method21727(final Class1855 class1855, final BlockPos class1856) {
         return (this.field27615 == null) ? this.method21728(class1855, class1856, Class7543.method23629()) : Class8063.method26458(this.field27615);
     }
     
-    public Class7702 method21728(final Class1855 class1855, final Class354 class1856, final Class7543 class1857) {
+    public Class7702 method21728(final Class1855 class1855, final BlockPos class1856, final Class7543 class1857) {
         return this.method21696().method11809(this, class1855, class1856, class1857);
     }
     
-    public Class7702 method21729(final Class1855 class1855, final Class354 class1856) {
+    public Class7702 method21729(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11810(this, class1855, class1856);
     }
     
-    public Class7702 method21730(final Class1855 class1855, final Class354 class1856) {
+    public Class7702 method21730(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11811(this, class1855, class1856);
     }
     
-    public final boolean method21731(final Class1855 class1855, final Class354 class1856, final Class399 class1857) {
-        return Class3833.method11815(this.method21728(class1855, class1856, Class7543.method23630(class1857)), Class179.field512);
+    public final boolean method21731(final Class1855 class1855, final BlockPos class1856, final Entity class1857) {
+        return Class3833.method11815(this.method21728(class1855, class1856, Class7543.method23630(class1857)), Direction.UP);
     }
     
-    public Class5487 method21732(final Class1855 class1855, final Class354 class1856) {
+    public Vec3d method21732(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11880(this, class1855, class1856);
     }
     
-    public boolean method21733(final Class1847 class1847, final Class354 class1848, final int n, final int n2) {
+    public boolean method21733(final Class1847 class1847, final BlockPos class1848, final int n, final int n2) {
         return this.method21696().method11857(this, class1847, class1848, n, n2);
     }
     
-    public void method21734(final Class1847 class1847, final Class354 class1848, final Class3833 class1849, final Class354 class1850, final boolean b) {
+    public void method21734(final Class1847 class1847, final BlockPos class1848, final Class3833 class1849, final BlockPos class1850, final boolean b) {
         this.method21696().method11825(this, class1847, class1848, class1849, class1850, b);
     }
     
-    public void method21735(final Class1851 class1851, final Class354 class1852, final int n) {
+    public void method21735(final Class1851 class1851, final BlockPos class1852, final int n) {
         this.method21696().method11784(this, class1851, class1852, n);
     }
     
-    public void method21736(final Class1851 class1851, final Class354 class1852, final int n) {
+    public void method21736(final Class1851 class1851, final BlockPos class1852, final int n) {
         this.method21696().method11788(this, class1851, class1852, n);
     }
     
-    public void method21737(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final boolean b) {
+    public void method21737(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
         this.method21696().method11828(this, class1847, class1848, class1849, b);
     }
     
-    public void method21738(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final boolean b) {
+    public void method21738(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
         this.method21696().method11829(this, class1847, class1848, class1849, b);
     }
     
-    public void method21739(final Class1849 class1849, final Class354 class1850, final Random random) {
+    public void method21739(final Class1849 class1849, final BlockPos class1850, final Random random) {
         this.method21696().method11822(this, class1849, class1850, random);
     }
     
-    public void method21740(final Class1849 class1849, final Class354 class1850, final Random random) {
+    public void method21740(final Class1849 class1849, final BlockPos class1850, final Random random) {
         this.method21696().method11821(this, class1849, class1850, random);
     }
     
-    public void method21741(final Class1847 class1847, final Class354 class1848, final Class399 class1849) {
+    public void method21741(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
         this.method21696().method11850(this, class1847, class1848, class1849);
     }
     
-    public void method21742(final Class1847 class1847, final Class354 class1848, final Class8321 class1849) {
+    public void method21742(final Class1847 class1847, final BlockPos class1848, final Class8321 class1849) {
         this.method21696().method11831(this, class1847, class1848, class1849);
     }
     
@@ -277,23 +278,23 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11844(this, class1847, class1850.method21447(), class1848, class1849, class1850);
     }
     
-    public void method21745(final Class1847 class1847, final Class354 class1848, final Class512 class1849) {
+    public void method21745(final Class1847 class1847, final BlockPos class1848, final Class512 class1849) {
         this.method21696().method11847(this, class1847, class1848, class1849);
     }
     
-    public boolean method21746(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21746(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11794(this, class1855, class1856);
     }
     
-    public boolean method21747(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21747(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11795(this, class1855, class1856);
     }
     
-    public Class7096 method21748(final Class179 class179, final Class7096 class180, final Class1851 class181, final Class354 class182, final Class354 class183) {
+    public Class7096 method21748(final Direction class179, final Class7096 class180, final Class1851 class181, final BlockPos class182, final BlockPos class183) {
         return this.method21696().method11789(this, class179, class180, class181, class182, class183);
     }
     
-    public boolean method21749(final Class1855 class1855, final Class354 class1856, final Class2084 class1857) {
+    public boolean method21749(final Class1855 class1855, final BlockPos class1856, final Class2084 class1857) {
         return this.method21696().method11796(this, class1855, class1856, class1857);
     }
     
@@ -305,16 +306,16 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11799(this, class7255);
     }
     
-    public boolean method21752(final Class1852 class1852, final Class354 class1853) {
+    public boolean method21752(final Class1852 class1852, final BlockPos class1853) {
         return this.method21696().method11843(this, class1852, class1853);
     }
     
-    public boolean method21753(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21753(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11803(this, class1855, class1856);
     }
     
     @Nullable
-    public Class434 method21754(final Class1847 class1847, final Class354 class1848) {
+    public Class434 method21754(final Class1847 class1847, final BlockPos class1848) {
         return this.method21696().method11827(this, class1847, class1848);
     }
     
@@ -330,7 +331,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11801(this);
     }
     
-    public long method21758(final Class354 class354) {
+    public long method21758(final BlockPos class354) {
         return this.method21696().method11868(this, class354);
     }
     
@@ -338,15 +339,15 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11881(this);
     }
     
-    public void method21760(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Class399 class1850) {
+    public void method21760(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
         this.method21696().method11869(class1847, class1848, class1849, class1850);
     }
     
-    public boolean method21761(final Class1855 class1855, final Class354 class1856, final Class179 class1857) {
+    public boolean method21761(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
         return (this.field27615 == null) ? Class3833.method11814(this, class1855, class1856, class1857) : Class8063.method26459(this.field27615)[class1857.ordinal()];
     }
     
-    public boolean method21762(final Class1855 class1855, final Class354 class1856) {
+    public boolean method21762(final Class1855 class1855, final BlockPos class1856) {
         return (this.field27615 == null) ? Class3833.method11816(this.method21727(class1855, class1856)) : Class8063.method26460(this.field27615);
     }
     

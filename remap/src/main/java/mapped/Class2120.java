@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.ToIntFunction;
 import java.util.function.BiPredicate;
 import java.util.function.BiConsumer;
@@ -18,7 +20,7 @@ public enum Class2120
         else {
             return false;
         }
-    }, class514 -> Class9546.method35642(class514.field3028 * class514.method2875())), 
+    }, class514 -> MathHelper.method35642(class514.field3028 * class514.method2875())),
     field12360("levels", Class513::method2874, (class515, n2) -> {
         class515.method2918(n2);
         return true;

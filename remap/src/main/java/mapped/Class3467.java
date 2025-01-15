@@ -7,14 +7,14 @@ package mapped;
 public abstract class Class3467 extends Class3446
 {
     public Class759 field16340;
-    public Class354 field16341;
+    public BlockPos field16341;
     public boolean field16342;
     private boolean field16343;
     private float field16344;
     private float field16345;
     
     public Class3467(final Class759 field16340) {
-        this.field16341 = Class354.field2173;
+        this.field16341 = BlockPos.ZERO;
         this.field16340 = field16340;
         if (field16340.method4150() instanceof Class7747) {
             return;
@@ -52,12 +52,12 @@ public abstract class Class3467 extends Class3446
                     if (class7747.method24748()) {
                         for (int i = 0; i < Math.min(method24727.method35222() + 2, method24727.method35221()); ++i) {
                             final Class6772 method24728 = method24727.method35217(i);
-                            this.field16341 = new Class354(method24728.field26589, method24728.field26590 + 1, method24728.field26591);
-                            if (this.field16340.method1733(this.field16341.method1074(), this.field16340.method1941(), this.field16341.method1076()) <= 2.25 && (this.field16342 = method11035(this.field16340.field2391, this.field16341))) {
+                            this.field16341 = new BlockPos(method24728.field26589, method24728.field26590 + 1, method24728.field26591);
+                            if (this.field16340.method1733(this.field16341.getX(), this.field16340.method1941(), this.field16341.getZ()) <= 2.25 && (this.field16342 = method11035(this.field16340.field2391, this.field16341))) {
                                 return true;
                             }
                         }
-                        this.field16341 = new Class354(this.field16340).method1137();
+                        this.field16341 = new BlockPos(this.field16340).method1137();
                         return this.field16342 = method11035(this.field16340.field2391, this.field16341);
                     }
                 }
@@ -75,18 +75,18 @@ public abstract class Class3467 extends Class3446
     @Override
     public void method11015() {
         this.field16343 = false;
-        this.field16344 = (float)(this.field16341.method1074() + 0.5f - this.field16340.method1938());
-        this.field16345 = (float)(this.field16341.method1076() + 0.5f - this.field16340.method1945());
+        this.field16344 = (float)(this.field16341.getX() + 0.5f - this.field16340.method1938());
+        this.field16345 = (float)(this.field16341.getZ() + 0.5f - this.field16340.method1945());
     }
     
     @Override
     public void method11016() {
-        if (this.field16344 * (float)(this.field16341.method1074() + 0.5f - this.field16340.method1938()) + this.field16345 * (float)(this.field16341.method1076() + 0.5f - this.field16340.method1945()) < 0.0f) {
+        if (this.field16344 * (float)(this.field16341.getX() + 0.5f - this.field16340.method1938()) + this.field16345 * (float)(this.field16341.getZ() + 0.5f - this.field16340.method1945()) < 0.0f) {
             this.field16343 = true;
         }
     }
     
-    public static boolean method11035(final Class1847 class1847, final Class354 class1848) {
+    public static boolean method11035(final Class1847 class1847, final BlockPos class1848) {
         final Class7096 method6701 = class1847.method6701(class1848);
         return method6701.method21696() instanceof Class3969 && method6701.method21697() == Class8059.field33176;
     }

@@ -5,9 +5,11 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import java.util.Random;
+
 import it.unimi.dsi.fastutil.ints.IntSortedSet;
 import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.IntStream;
 
 public class Class8577 implements Class8576
@@ -88,7 +90,7 @@ public class Class8577 implements Class8576
     }
     
     public static double method29032(final double n) {
-        return n - Class9546.method35645(n / 3.3554432E7 + 0.5) * 3.3554432E7;
+        return n - MathHelper.method35645(n / 3.3554432E7 + 0.5) * 3.3554432E7;
     }
     
     @Override

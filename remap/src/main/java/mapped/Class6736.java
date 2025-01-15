@@ -11,6 +11,7 @@ import com.mojang.datafixers.types.JsonOps;
 import com.google.gson.JsonElement;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6736 extends Class6737
 {
@@ -98,7 +99,7 @@ public class Class6736 extends Class6737
                     }
                     if (Class8705.field36576 == class1872) {
                         final Class7069 class1874 = field36581.method29874();
-                        class1874.method21619(new Class354(0, 64, 0));
+                        class1874.method21619(new BlockPos(0, 64, 0));
                         class1874.method21584(class1870);
                         class1874.method21585(class1871);
                         return field36581.method29872(this.field26492, class1868, class1874);
@@ -116,10 +117,10 @@ public class Class6736 extends Class6737
     
     @Nullable
     @Override
-    public Class354 method20489(final Class7859 class7859, final boolean b) {
+    public BlockPos method20489(final Class7859 class7859, final boolean b) {
         for (int i = class7859.method25426(); i <= class7859.method25428(); ++i) {
             for (int j = class7859.method25427(); j <= class7859.method25429(); ++j) {
-                final Class354 method20490 = this.method20490(i, j, b);
+                final BlockPos method20490 = this.method20490(i, j, b);
                 if (method20490 != null) {
                     return method20490;
                 }
@@ -130,7 +131,7 @@ public class Class6736 extends Class6737
     
     @Nullable
     @Override
-    public Class354 method20490(final int n, final int n2, final boolean b) {
+    public BlockPos method20490(final int n, final int n2, final boolean b) {
         final Class385 class385 = new Class385(n, 0, n2);
         final Class7096 method13338 = this.field26492.method6959(class385).method9872().method13338();
         if (b && !method13338.method21696().method11785(Class7188.field27918)) {
@@ -159,7 +160,7 @@ public class Class6736 extends Class6737
     
     @Override
     public float method20491(final long n, final float n2) {
-        final double method35687 = Class9546.method35687(n / 24000.0 - 0.25);
+        final double method35687 = MathHelper.method35687(n / 24000.0 - 0.25);
         return (float)(method35687 * 2.0 + (0.5 - Math.cos(method35687 * 3.141592653589793) / 2.0)) / 3.0f;
     }
     
@@ -169,9 +170,9 @@ public class Class6736 extends Class6737
     }
     
     @Override
-    public Class5487 method20493(final float n, final float n2) {
-        final float method35653 = Class9546.method35653(Class9546.method35639(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
-        return new Class5487(0.7529412f * (method35653 * 0.94f + 0.06f), 0.84705883f * (method35653 * 0.94f + 0.06f), 1.0f * (method35653 * 0.91f + 0.09f));
+    public Vec3d method20493(final float n, final float n2) {
+        final float method35653 = MathHelper.method35653(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
+        return new Vec3d(0.7529412f * (method35653 * 0.94f + 0.06f), 0.84705883f * (method35653 * 0.94f + 0.06f), 1.0f * (method35653 * 0.91f + 0.09f));
     }
     
     @Override

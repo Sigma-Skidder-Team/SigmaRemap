@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public class Class3946 extends Class3944
@@ -21,23 +24,23 @@ public class Class3946 extends Class3944
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         return class7097.method6701(class7098.method1139()).method21697().method26439();
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3946.field17844;
     }
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3946.field17842, Class9546.method35644((180.0f + class7074.method21646()) * 16.0f / 360.0f + 0.5) & 0xF);
+        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3946.field17842, MathHelper.floor((180.0f + class7074.method21646()) * 16.0f / 360.0f + 0.5) & 0xF);
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
-        return (class7097 == Class179.field511 && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+        return (class7097 == Direction.DOWN && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override

@@ -37,7 +37,7 @@ public class Class7533
         this.field29914.clear();
     }
     
-    public int method23608(final Class7096 class7096, final Class1856 class7097, final Class354 class7098) {
+    public int method23608(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
         final long method1132 = class7098.method1132();
         if (this.field29912) {
             final int value = this.field29913.get(method1132);
@@ -55,7 +55,7 @@ public class Class7533
         return method1133;
     }
     
-    public float method23609(final Class7096 class7096, final Class1856 class7097, final Class354 class7098) {
+    public float method23609(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
         final long method1132 = class7098.method1132();
         if (this.field29912) {
             final float value = this.field29914.get(method1132);

@@ -12,7 +12,7 @@ public class Class5434 extends Class5419<Class759>
 {
     private static String[] field22631;
     private final float field22632;
-    private Class354 field22633;
+    private BlockPos field22633;
     private int field22634;
     private int field22635;
     private int field22636;
@@ -83,7 +83,7 @@ public class Class5434 extends Class5419<Class759>
         }
     }
     
-    private void method16592(final Class759 class759, final Class354 class760) {
+    private void method16592(final Class759 class759, final BlockPos class760) {
         class759.method2618().method1196(Class8233.field33809, new Class6949(class760, this.field22632, 0));
     }
     
@@ -92,20 +92,20 @@ public class Class5434 extends Class5419<Class759>
     }
     
     private boolean method16594(final Class1849 class1849, final Class759 class1850) {
-        final Class354 class1851 = new Class354(class1850);
-        final Class354 method1139 = class1851.method1139();
+        final BlockPos class1851 = new BlockPos(class1850);
+        final BlockPos method1139 = class1851.method1139();
         return this.method16596(class1849, class1851) || this.method16596(class1849, method1139);
     }
     
     private boolean method16595(final Class1849 class1849, final Class759 class1850) {
-        return this.method16596(class1849, new Class354(class1850));
+        return this.method16596(class1849, new BlockPos(class1850));
     }
     
-    private boolean method16596(final Class1849 class1849, final Class354 class1850) {
+    private boolean method16596(final Class1849 class1849, final BlockPos class1850) {
         return class1849.method6701(class1850).method21755(Class7188.field27910);
     }
     
-    private Optional<Class354> method16597(final Class759 class759) {
+    private Optional<BlockPos> method16597(final Class759 class759) {
         return class759.method2618().method1198(Class8233.field33816);
     }
     

@@ -6,8 +6,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableList$Builder;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,13 +42,13 @@ public class Class723 extends Class527
     
     public void method3968(final Class7735 field3948) {
         this.field3948 = field3948;
-        this.field3949 = Class9546.method35651(this.field3949, 0, field3948.method24684());
+        this.field3949 = MathHelper.method35651(this.field3949, 0, field3948.method24684());
         this.method3976();
         this.field3951 = -1;
     }
     
     public boolean method3969(final int n) {
-        final int method35651 = Class9546.method35651(n, 0, this.field3948.method24684() - 1);
+        final int method35651 = MathHelper.method35651(n, 0, this.field3948.method24684() - 1);
         if (method35651 == this.field3949) {
             return false;
         }
@@ -188,8 +189,8 @@ public class Class723 extends Class527
         if (this.field3950 == null) {
             return null;
         }
-        final int method35644 = Class9546.method35644(n - (this.field3152 - 192) / 2 - 36.0);
-        final int method35645 = Class9546.method35644(n2 - 2.0 - 30.0);
+        final int method35644 = MathHelper.floor(n - (this.field3152 - 192) / 2 - 36.0);
+        final int method35645 = MathHelper.floor(n2 - 2.0 - 30.0);
         if (method35644 < 0 || method35645 < 0) {
             return null;
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4751 extends Class4748<Class830, Class5864<Class830>>
 {
     private static final Class1932 field20373;
@@ -22,7 +24,7 @@ public class Class4751 extends Class4748<Class830, Class5864<Class830>>
         super.method14084(class830, class831, n, n2, n3);
         final float method2623 = class830.method2623(n3);
         if (method2623 > 0.0f) {
-            class831.method22566(Class9138.field38716.method33328(Class9546.method35700(method2623, class830.field2400, -10.0f - class830.field2400)));
+            class831.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method2623, class830.field2400, -10.0f - class830.field2400)));
         }
     }
     

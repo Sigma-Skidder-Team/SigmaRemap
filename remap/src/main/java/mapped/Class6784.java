@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class Class6784
     private static final Class7530[] field26685;
     private static final Class7530[] field26686;
     
-    private static Class4484 method20739(final Class7530 class7530, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class7531, final int n4) {
+    private static Class4484 method20739(final Class7530 class7530, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class7531, final int n4) {
         final Class<? extends Class4484> field29905 = class7530.field29905;
         Class4484 class7532 = null;
         if (field29905 != Class4491.class) {

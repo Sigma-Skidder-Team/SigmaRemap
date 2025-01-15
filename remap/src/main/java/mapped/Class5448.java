@@ -27,7 +27,7 @@ public class Class5448 extends Class5419<Class787>
     }
     
     public void method16554(final Class1849 class1849, final Class787 class1850, final long n) {
-        final Class354 class1851 = new Class354(class1850);
+        final BlockPos class1851 = new BlockPos(class1850);
         if (!class1849.method6922(class1851)) {
             final Class353 method1089 = Class353.method1089(class1851);
             final Class353 method1090 = Class6793.method20792(class1849, method1089, 2);
@@ -44,7 +44,7 @@ public class Class5448 extends Class5419<Class787>
     }
     
     private void method16634(final Class787 class787, final Class353 class788) {
-        class787.method2618().method1197(Class8233.field33809, Optional.ofNullable(Class7775.method24905(class787, this.field22677, this.field22678, new Class5487(class788.method1114()))).map(class789 -> new Class6949(class789, this.field22676, 0)));
+        class787.method2618().method1197(Class8233.field33809, Optional.ofNullable(Class7775.method24905(class787, this.field22677, this.field22678, new Vec3d(class788.method1114()))).map(class789 -> new Class6949(class789, this.field22676, 0)));
     }
     
     private void method16635(final Class787 class787) {

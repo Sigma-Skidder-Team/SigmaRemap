@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class535 extends Class527
 {
     private String field3190;
@@ -143,7 +145,7 @@ public class Class535 extends Class527
     public void method3090(final int n) {
         final int n2 = this.field3191 + n;
         final int size = this.field3150.field4647.method3807().method3765().size();
-        final int method35651 = Class9546.method35651(n2, 0, size);
+        final int method35651 = MathHelper.method35651(n2, 0, size);
         if (method35651 != this.field3191) {
             if (method35651 != size) {
                 if (this.field3191 == size) {

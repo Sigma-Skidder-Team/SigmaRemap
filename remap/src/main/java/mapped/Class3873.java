@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -21,24 +24,24 @@ public class Class3873 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3873.field17517[class7096.method21772((Class7111<Integer>)Class3873.field17516)];
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return class7096.method21696() == Class7521.field29298;
     }
     
     @Override
-    public void method11822(Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         super.method11822(class7096, class7097, class7098, random);
         if (class7097.method6993(class7098, 0) >= 9) {
             if (random.nextInt((int)(25.0f / Class3878.method11959(this, class7097, class7098)) + 1) == 0) {
                 final int intValue = class7096.method21772((Class7111<Integer>)Class3873.field17516);
                 if (intValue >= 7) {
-                    final Class179 method576 = Class98.field268.method576(random);
-                    final Class354 method577 = class7098.method1149(method576);
+                    final Direction method576 = Plane.HORIZONTAL.method576(random);
+                    final BlockPos method577 = class7098.method1149(method576);
                     final Class3833 method578 = class7097.method6701(method577.method1139()).method21696();
                     if (class7097.method6701(method577).method21706()) {
                         if (method578 != Class7521.field29298) {
@@ -73,24 +76,24 @@ public class Class3873 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
+    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
         final Class3820 method11948 = this.method11948();
         return (method11948 != null) ? new Class8321(method11948) : Class8321.field34174;
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return class1857.method21772((Class7111<Integer>)Class3873.field17516) != 7;
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
-        final int min = Math.min(7, class1851.method21772((Class7111<Integer>)Class3873.field17516) + Class9546.method35658(class1849.field10062, 2, 5));
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
+        final int min = Math.min(7, class1851.method21772((Class7111<Integer>)Class3873.field17516) + MathHelper.method35658(class1849.field10062, 2, 5));
         final Class7096 class1852 = ((Class7097<O, Class7096>)class1851).method21773((Class7111<Comparable>)Class3873.field17516, min);
         class1849.method6688(class1850, class1852, 2);
         if (min == 7) {

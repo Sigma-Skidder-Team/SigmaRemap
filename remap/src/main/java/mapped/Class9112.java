@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -49,8 +52,8 @@ public class Class9112
         }
         for (int l = 0; l < this.field38610.length; ++l) {
             final Class8974 class7521 = this.field38610[l];
-            for (int n2 = 0; n2 < Class179.field524.length; ++n2) {
-                final Class179 class7522 = Class179.field524[n2];
+            for (int n2 = 0; n2 < Direction.VALUES.length; ++n2) {
+                final Direction class7522 = Direction.VALUES[n2];
                 class7521.method31899(class7522, this.method32963(class7521.method31878(class7522)));
             }
         }
@@ -76,8 +79,8 @@ public class Class9112
     }
     
     public void method32961(final double n, final double n2) {
-        final int method35644 = Class9546.method35644(n);
-        final int method35645 = Class9546.method35644(n2);
+        final int method35644 = MathHelper.floor(n);
+        final int method35645 = MathHelper.floor(n2);
         for (int i = 0; i < this.field38608; ++i) {
             final int y = this.field38608 * 16;
             final int n3 = method35644 - 8 - y / 2;
@@ -98,19 +101,19 @@ public class Class9112
     }
     
     @Nullable
-    public Class8974 method32963(final Class354 class354) {
-        final int n = class354.method1074() >> 4;
-        final int n2 = class354.method1075() >> 4;
-        final int n3 = class354.method1076() >> 4;
+    public Class8974 method32963(final BlockPos class354) {
+        final int n = class354.getX() >> 4;
+        final int n2 = class354.getY() >> 4;
+        final int n3 = class354.getZ() >> 4;
         if (n2 >= 0 && n2 < this.field38607) {
-            return this.field38610[this.method32959(Class9546.method35664(n, this.field38608), n2, Class9546.method35664(n3, this.field38609))];
+            return this.field38610[this.method32959(MathHelper.method35664(n, this.field38608), n2, MathHelper.method35664(n3, this.field38609))];
         }
         return null;
     }
     
     private void method32964(final Class8974 class8974) {
-        final Class354 method31873 = class8974.method31873();
-        final Class7859 class8975 = new Class7859(method31873.method1074() >> 8 << 8, method31873.method1076() >> 8 << 8);
+        final BlockPos method31873 = class8974.method31873();
+        final Class7859 class8975 = new Class7859(method31873.getX() >> 8 << 8, method31873.getZ() >> 8 << 8);
         final Class6332[] field25344 = Class6332.field25344;
         Class8871[] array = this.field38611.get(class8975);
         if (array == null) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class9536
 {
     private static String[] field41044;
@@ -54,12 +56,12 @@ public class Class9536
         final float n24 = (float)n2;
         final float n25 = n2 + n5;
         final float n26 = n2 + n5 + n4;
-        this.field41045[2] = new Class9094(new Class8741[] { class8746, class8745, class8741, class8742 }, n19, n24, n20, n25, n9, n10, b, Class179.field511);
-        this.field41045[3] = new Class9094(new Class8741[] { class8743, class8744, class8748, class8747 }, n20, n25, n21, n24, n9, n10, b, Class179.field512);
-        this.field41045[1] = new Class9094(new Class8741[] { class8741, class8745, class8748, class8744 }, n18, n25, n19, n26, n9, n10, b, Class179.field515);
-        this.field41045[4] = new Class9094(new Class8741[] { class8742, class8741, class8744, class8743 }, n19, n25, n20, n26, n9, n10, b, Class179.field513);
-        this.field41045[0] = new Class9094(new Class8741[] { class8746, class8742, class8743, class8747 }, n20, n25, n22, n26, n9, n10, b, Class179.field516);
-        this.field41045[5] = new Class9094(new Class8741[] { class8745, class8746, class8747, class8748 }, n22, n25, n23, n26, n9, n10, b, Class179.field514);
+        this.field41045[2] = new Class9094(new Class8741[] { class8746, class8745, class8741, class8742 }, n19, n24, n20, n25, n9, n10, b, Direction.DOWN);
+        this.field41045[3] = new Class9094(new Class8741[] { class8743, class8744, class8748, class8747 }, n20, n25, n21, n24, n9, n10, b, Direction.UP);
+        this.field41045[1] = new Class9094(new Class8741[] { class8741, class8745, class8748, class8744 }, n18, n25, n19, n26, n9, n10, b, Direction.WEST);
+        this.field41045[4] = new Class9094(new Class8741[] { class8742, class8741, class8744, class8743 }, n19, n25, n20, n26, n9, n10, b, Direction.NORTH);
+        this.field41045[0] = new Class9094(new Class8741[] { class8746, class8742, class8743, class8747 }, n20, n25, n22, n26, n9, n10, b, Direction.EAST);
+        this.field41045[5] = new Class9094(new Class8741[] { class8745, class8746, class8747, class8748 }, n22, n25, n23, n26, n9, n10, b, Direction.SOUTH);
     }
     
     public Class9536(final int[][] array, float field41046, float field41047, float field41048, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final boolean b, final float n7, final float n8) {
@@ -92,15 +94,15 @@ public class Class9536
         final Class8741 class8746 = new Class8741(n12, field41047, n14, 0.0f, 8.0f);
         final Class8741 class8747 = new Class8741(n12, n13, n14, 8.0f, 8.0f);
         final Class8741 class8748 = new Class8741(field41046, n13, n14, 8.0f, 0.0f);
-        this.field41045[2] = this.method35603(new Class8741[] { class8746, class8745, class8741, class8742 }, array[1], true, n7, n8, b, Class179.field511);
-        this.field41045[3] = this.method35603(new Class8741[] { class8743, class8744, class8748, class8747 }, array[0], true, n7, n8, b, Class179.field512);
-        this.field41045[1] = this.method35603(new Class8741[] { class8741, class8745, class8748, class8744 }, array[5], false, n7, n8, b, Class179.field515);
-        this.field41045[4] = this.method35603(new Class8741[] { class8742, class8741, class8744, class8743 }, array[2], false, n7, n8, b, Class179.field513);
-        this.field41045[0] = this.method35603(new Class8741[] { class8746, class8742, class8743, class8747 }, array[4], false, n7, n8, b, Class179.field516);
-        this.field41045[5] = this.method35603(new Class8741[] { class8745, class8746, class8747, class8748 }, array[3], false, n7, n8, b, Class179.field514);
+        this.field41045[2] = this.method35603(new Class8741[] { class8746, class8745, class8741, class8742 }, array[1], true, n7, n8, b, Direction.DOWN);
+        this.field41045[3] = this.method35603(new Class8741[] { class8743, class8744, class8748, class8747 }, array[0], true, n7, n8, b, Direction.UP);
+        this.field41045[1] = this.method35603(new Class8741[] { class8741, class8745, class8748, class8744 }, array[5], false, n7, n8, b, Direction.WEST);
+        this.field41045[4] = this.method35603(new Class8741[] { class8742, class8741, class8744, class8743 }, array[2], false, n7, n8, b, Direction.NORTH);
+        this.field41045[0] = this.method35603(new Class8741[] { class8746, class8742, class8743, class8747 }, array[4], false, n7, n8, b, Direction.EAST);
+        this.field41045[5] = this.method35603(new Class8741[] { class8745, class8746, class8747, class8748 }, array[3], false, n7, n8, b, Direction.SOUTH);
     }
     
-    private Class9094 method35603(final Class8741[] array, final int[] array2, final boolean b, final float n, final float n2, final boolean b2, final Class179 class179) {
+    private Class9094 method35603(final Class8741[] array, final int[] array2, final boolean b, final float n, final float n2, final boolean b2, final Direction class179) {
         if (array2 != null) {
             return b ? new Class9094(array, (float)array2[2], (float)array2[3], (float)array2[0], (float)array2[1], n, n2, b2, class179) : new Class9094(array, (float)array2[0], (float)array2[1], (float)array2[2], (float)array2[3], n, n2, b2, class179);
         }

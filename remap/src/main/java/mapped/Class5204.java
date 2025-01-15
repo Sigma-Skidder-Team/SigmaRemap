@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Locale;
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -24,11 +23,11 @@ public class Class5204
     }
     
     public static String method16293(final double d, final double d2, final double d3) {
-        return String.format(Locale.ROOT, "%.2f,%.2f,%.2f - %s", d, d2, d3, method16294(new Class354(d, d2, d3)));
+        return String.format(Locale.ROOT, "%.2f,%.2f,%.2f - %s", d, d2, d3, method16294(new BlockPos(d, d2, d3)));
     }
     
-    public static String method16294(final Class354 class354) {
-        return method16295(class354.method1074(), class354.method1075(), class354.method1076());
+    public static String method16294(final BlockPos class354) {
+        return method16295(class354.getX(), class354.getY(), class354.getZ());
     }
     
     public static String method16295(final int i, final int j, final int k) {
@@ -142,7 +141,7 @@ public class Class5204
         return this.field22216;
     }
     
-    public static void method16304(final Class5204 class5204, final Class354 class5205, final Class7096 class5206) {
+    public static void method16304(final Class5204 class5204, final BlockPos class5205, final Class7096 class5206) {
         if (class5206 != null) {
             class5204.method16296("Block", class5206::toString);
         }

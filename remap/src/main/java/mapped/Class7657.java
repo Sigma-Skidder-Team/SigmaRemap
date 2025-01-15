@@ -87,7 +87,7 @@ public class Class7657
         }
     }
     
-    public static Class8754 method24259(final Class354 class354, final Class8754 class355) {
+    public static Class8754 method24259(final BlockPos class354, final Class8754 class355) {
         final Class1912 method30295 = class355.method30295();
         if (method30295 == null) {
             return class355;

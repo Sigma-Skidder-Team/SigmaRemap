@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
 import io.netty.handler.codec.DecoderException;
@@ -23,25 +24,25 @@ import org.apache.logging.log4j.Logger;
 public class Class9184
 {
     private static final Logger field38914;
-    private static final Map<Class<? extends Class399>, Integer> field38915;
-    private final Class399 field38916;
+    private static final Map<Class<? extends Entity>, Integer> field38915;
+    private final Entity field38916;
     private final Map<Integer, Class9369<?>> field38917;
     private final ReadWriteLock field38918;
     private boolean field38919;
     private boolean field38920;
     public Class3090 field38921;
-    public Class354 field38922;
+    public BlockPos field38922;
     
-    public Class9184(final Class399 field38916) {
+    public Class9184(final Entity field38916) {
         this.field38917 = Maps.newHashMap();
         this.field38918 = new ReentrantReadWriteLock();
         this.field38919 = true;
         this.field38921 = Class7102.field27633;
-        this.field38922 = Class354.field2173;
+        this.field38922 = BlockPos.ZERO;
         this.field38916 = field38916;
     }
     
-    public static <T> Class8810<T> method33564(final Class<? extends Class399> obj, final Class4410<T> class4410) {
+    public static <T> Class8810<T> method33564(final Class<? extends Entity> obj, final Class4410<T> class4410) {
         if (Class9184.field38914.isDebugEnabled()) {
             try {
                 final Class<?> forName = Class.forName(Thread.currentThread().getStackTrace()[2].getClassName());
@@ -57,8 +58,8 @@ public class Class9184
         }
         else {
             int n2 = 0;
-            Class<? super Class399> superclass = (Class<? super Class399>)obj;
-            while (superclass != Class399.class) {
+            Class<? super Entity> superclass = (Class<? super Entity>)obj;
+            while (superclass != Entity.class) {
                 superclass = superclass.getSuperclass();
                 if (Class9184.field38915.containsKey(superclass)) {
                     n2 = Class9184.field38915.get(superclass) + 1;

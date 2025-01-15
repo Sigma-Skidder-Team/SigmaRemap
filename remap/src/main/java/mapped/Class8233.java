@@ -29,7 +29,7 @@ public class Class8233<U>
     public static final Class8233<Class9468> field33813;
     public static final Class8233<List<Class363>> field33814;
     public static final Class8233<Set<Class363>> field33815;
-    public static final Class8233<Class354> field33816;
+    public static final Class8233<BlockPos> field33816;
     public static final Class8233<Class7929> field33817;
     public static final Class8233<Class511> field33818;
     public static final Class8233<Class511> field33819;
@@ -55,7 +55,7 @@ public class Class8233<U>
         return this.field33827;
     }
     
-    private static <U extends Class356> Class8233<U> method27286(final String s, final Optional<Function<Dynamic<?>, U>> optional) {
+    private static <U extends IDynamicSerializable> Class8233<U> method27286(final String s, final Optional<Function<Dynamic<?>, U>> optional) {
         return Class90.method512(Class90.field242, new Class1932(s), new Class8233<U>(optional));
     }
     

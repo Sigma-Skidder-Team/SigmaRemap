@@ -14,9 +14,9 @@ public class Class7587
         this.field30107 = field30107;
     }
     
-    public Class7587(final Class354 class354) {
-        this.field30106 = class354.method1074();
-        this.field30107 = class354.method1076();
+    public Class7587(final BlockPos class354) {
+        this.field30106 = class354.getX();
+        this.field30107 = class354.getZ();
     }
     
     @Override

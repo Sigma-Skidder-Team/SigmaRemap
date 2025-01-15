@@ -10,7 +10,7 @@ import java.util.List;
 public class Class6120 implements Class6113
 {
     private static String[] field24839;
-    private final List<Class354> field24840;
+    private final List<BlockPos> field24840;
     private final List<Float> field24841;
     private final List<Float> field24842;
     private final List<Float> field24843;
@@ -26,7 +26,7 @@ public class Class6120 implements Class6113
         this.field24845 = Lists.newArrayList();
     }
     
-    public void method18315(final Class354 class354, final float f, final float f2, final float f3, final float f4, final float f5) {
+    public void method18315(final BlockPos class354, final float f, final float f2, final float f3, final float f4, final float f5) {
         this.field24840.add(class354);
         this.field24841.add(f);
         this.field24842.add(f5);
@@ -45,9 +45,9 @@ public class Class6120 implements Class6113
         final Class4148 method22695 = method22694.method22696();
         method22695.method12390(5, Class9237.field39615);
         for (int i = 0; i < this.field24840.size(); ++i) {
-            final Class354 class7353 = this.field24840.get(i);
+            final BlockPos class7353 = this.field24840.get(i);
             final float n4 = this.field24841.get(i) / 2.0f;
-            Class1656.method5734(method22695, class7353.method1074() + 0.5f - n4 - n, class7353.method1075() + 0.5f - n4 - n2, class7353.method1076() + 0.5f - n4 - n3, class7353.method1074() + 0.5f + n4 - n, class7353.method1075() + 0.5f + n4 - n2, class7353.method1076() + 0.5f + n4 - n3, this.field24843.get(i), this.field24844.get(i), this.field24845.get(i), this.field24842.get(i));
+            Class1656.method5734(method22695, class7353.getX() + 0.5f - n4 - n, class7353.getY() + 0.5f - n4 - n2, class7353.getZ() + 0.5f - n4 - n3, class7353.getX() + 0.5f + n4 - n, class7353.getY() + 0.5f + n4 - n2, class7353.getZ() + 0.5f + n4 - n3, this.field24843.get(i), this.field24844.get(i), this.field24845.get(i), this.field24842.get(i));
         }
         method22694.method22695();
         Class8726.method30040();

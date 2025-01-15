@@ -10,16 +10,16 @@ public class Class7460<T>
 {
     private static long field28772;
     private final T field28773;
-    public final Class354 field28774;
+    public final BlockPos field28774;
     public final long field28775;
     public final Class1955 field28776;
     private final long field28777;
     
-    public Class7460(final Class354 class354, final T t) {
+    public Class7460(final BlockPos class354, final T t) {
         this(class354, t, 0L, Class1955.field10642);
     }
     
-    public Class7460(final Class354 class354, final T field28773, final long field28774, final Class1955 field28775) {
+    public Class7460(final BlockPos class354, final T field28773, final long field28774, final Class1955 field28775) {
         this.field28777 = Class7460.field28772++;
         this.field28774 = class354.method1153();
         this.field28773 = field28773;

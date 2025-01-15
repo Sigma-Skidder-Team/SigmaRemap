@@ -25,8 +25,8 @@ public class Class359 extends Class357
     }
     
     @Override
-    public Class7096 method1164(final Random random, final Class354 class354) {
-        if (Class3090.field15442.method29027(class354.method1074() / 200.0, class354.method1076() / 200.0, false) >= -0.8) {
+    public Class7096 method1164(final Random random, final BlockPos class354) {
+        if (Class3090.field15442.method29027(class354.getX() / 200.0, class354.getZ() / 200.0, false) >= -0.8) {
             return (random.nextInt(3) <= 0) ? Class7521.field29265.method11878() : Class359.field2187[random.nextInt(Class359.field2187.length)];
         }
         return Class359.field2186[random.nextInt(Class359.field2186.length)];

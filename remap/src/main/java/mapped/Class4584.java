@@ -48,7 +48,7 @@ public class Class4584 extends Class4582<Class5122>
         return Class4584.field20072;
     }
     
-    public boolean method13606(final Class1851 class1851, final Class354 class1852) {
+    public boolean method13606(final Class1851 class1851, final BlockPos class1852) {
         final Class5936 method13588 = this.method13588(class1851, class1852, true);
         if (method13588 != Class5936.field24429) {
             if (method13588 instanceof Class5944) {

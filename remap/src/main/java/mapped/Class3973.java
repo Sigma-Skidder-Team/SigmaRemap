@@ -13,7 +13,7 @@ public class Class3973 extends Class3833
     }
     
     @Override
-    public boolean method11818(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public boolean method11818(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return true;
     }
     
@@ -23,12 +23,12 @@ public class Class3973 extends Class3833
     }
     
     @Override
-    public float method11859(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public float method11859(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return 1.0f;
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7499<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7499<?> class7099) {
         return false;
     }
 }

@@ -16,8 +16,8 @@ public enum Class2242
         }
         
         @Override
-        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final Class354 class1851) {
-            final Class354 class1852 = new Class354(0, 128, 0);
+        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final BlockPos class1851) {
+            final BlockPos class1852 = new BlockPos(0, 128, 0);
             final Iterator<Class858> iterator = list.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method5182(class1852);
@@ -30,7 +30,7 @@ public enum Class2242
         }
         
         @Override
-        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final Class354 class1851) {
+        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final BlockPos class1851) {
             if (n >= 100) {
                 class1850.method29238(Class2247.field13781);
             }
@@ -46,7 +46,7 @@ public enum Class2242
                         }
                     }
                 }
-                class1849.method6955(3001, new Class354(0, 128, 0), 0);
+                class1849.method6955(3001, new BlockPos(0, 128, 0), 0);
             }
         }
     }, 
@@ -55,7 +55,7 @@ public enum Class2242
         }
         
         @Override
-        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final Class354 class1851) {
+        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final BlockPos class1851) {
             final boolean b = n % 40 == 0;
             final boolean b2 = n % 40 == 39;
             if (b || b2) {
@@ -69,17 +69,17 @@ public enum Class2242
                 else {
                     final Class9341 class1852 = method13560.get(n2);
                     if (!b) {
-                        final Iterator<Class354> iterator = Class354.method1154(new Class354(class1852.method34619() - 10, class1852.method34622() - 10, class1852.method34620() - 10), new Class354(class1852.method34619() + 10, class1852.method34622() + 10, class1852.method34620() + 10)).iterator();
+                        final Iterator<BlockPos> iterator = BlockPos.method1154(new BlockPos(class1852.method34619() - 10, class1852.method34622() - 10, class1852.method34620() - 10), new BlockPos(class1852.method34619() + 10, class1852.method34622() + 10, class1852.method34620() + 10)).iterator();
                         while (iterator.hasNext()) {
                             class1849.method6690(iterator.next(), false);
                         }
                         class1849.method6722(null, class1852.method34619() + 0.5f, class1852.method34622(), class1852.method34620() + 0.5f, 5.0f, Class2196.field13367);
-                        Class4535.field20004.method13527(new Class5143(true, (List<Class9341>)ImmutableList.of((Object)class1852), new Class354(0, 128, 0))).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(), new Class354(class1852.method34619(), 45, class1852.method34620()));
+                        Class4535.field20004.method13527(new Class5143(true, (List<Class9341>)ImmutableList.of((Object)class1852), new BlockPos(0, 128, 0))).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(), new BlockPos(class1852.method34619(), 45, class1852.method34620()));
                     }
                     else {
                         final Iterator<Class858> iterator2 = list.iterator();
                         while (iterator2.hasNext()) {
-                            iterator2.next().method5182(new Class354(class1852.method34619(), class1852.method34622() + 1, class1852.method34620()));
+                            iterator2.next().method5182(new BlockPos(class1852.method34619(), class1852.method34622() + 1, class1852.method34620()));
                         }
                     }
                 }
@@ -91,23 +91,23 @@ public enum Class2242
         }
         
         @Override
-        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final Class354 class1851) {
+        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final BlockPos class1851) {
             if (n < 100) {
                 if (n < 80) {
                     if (n != 0) {
                         if (n < 5) {
-                            class1849.method6955(3001, new Class354(0, 128, 0), 0);
+                            class1849.method6955(3001, new BlockPos(0, 128, 0), 0);
                         }
                     }
                     else {
                         final Iterator<Class858> iterator = list.iterator();
                         while (iterator.hasNext()) {
-                            iterator.next().method5182(new Class354(0, 128, 0));
+                            iterator.next().method5182(new BlockPos(0, 128, 0));
                         }
                     }
                 }
                 else {
-                    class1849.method6955(3001, new Class354(0, 128, 0), 0);
+                    class1849.method6955(3001, new BlockPos(0, 128, 0), 0);
                 }
             }
             else {
@@ -126,9 +126,9 @@ public enum Class2242
         }
         
         @Override
-        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final Class354 class1851) {
+        public void method8445(final Class1849 class1849, final Class8619 class1850, final List<Class858> list, final int n, final BlockPos class1851) {
         }
     };
     
-    public abstract void method8445(final Class1849 p0, final Class8619 p1, final List<Class858> p2, final int p3, final Class354 p4);
+    public abstract void method8445(final Class1849 p0, final Class8619 p1, final List<Class858> p2, final int p3, final BlockPos p4);
 }

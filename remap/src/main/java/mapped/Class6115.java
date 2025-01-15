@@ -16,13 +16,15 @@ import java.util.Collection;
 import com.google.common.collect.Sets;
 import java.util.Set;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.UUID;
 import java.util.Map;
 
 public class Class6115 implements Class6113
 {
     private final Class869 field24824;
-    private final Map<Class354, Class7850> field24825;
+    private final Map<BlockPos, Class7850> field24825;
     private final Map<UUID, Class8665> field24826;
     private UUID field24827;
     
@@ -76,7 +78,7 @@ public class Class6115 implements Class6113
     }
     
     private void method18280() {
-        final Class354 method18162 = this.method18294().method18162();
+        final BlockPos method18162 = this.method18294().method18162();
         this.field24826.values().forEach(class355 -> {
             if (!(!this.method18297(class355))) {
                 this.method18290(class355);
@@ -84,7 +86,7 @@ public class Class6115 implements Class6113
             return;
         });
         this.method18282();
-        for (final Class354 class354 : this.field24825.keySet()) {
+        for (final BlockPos class354 : this.field24825.keySet()) {
             if (!method18162.method1081(class354, 30.0)) {
                 continue;
             }
@@ -105,7 +107,7 @@ public class Class6115 implements Class6113
         });
     }
     
-    private Map<Class354, Set<UUID>> method18281() {
+    private Map<BlockPos, Set<UUID>> method18281() {
         final HashMap hashMap = Maps.newHashMap();
         this.field24826.values().forEach(class8665 -> class8665.field36440.forEach(class8667 -> method18284(map, class8666, class8667)));
         return hashMap;
@@ -123,18 +125,18 @@ public class Class6115 implements Class6113
             return;
         });
         hashMap.entrySet().forEach(entry -> {
-            final Class354 class8666 = entry.getKey();
+            final BlockPos class8666 = entry.getKey();
             final Set set2 = (Set)((Set)entry.getValue()).stream().map(Class8956::method31774).collect(Collectors.toSet());
             set2.toString();
             int n = 0;
             n++;
             final String s;
-            final Class354 class8667;
+            final BlockPos class8667;
             final int n2;
             method18292(s, class8667, n2, -256);
             n++;
             final String s2;
-            final Class354 class8668;
+            final BlockPos class8668;
             final int n3;
             method18292(s2, class8668, n3, -1);
             method18287(class8666, 0.05f, 0.8f, 0.8f, 0.0f, 0.3f);
@@ -148,7 +150,7 @@ public class Class6115 implements Class6113
         return "-";
     }
     
-    private static void method18284(final Map<Class354, Set<UUID>> map, final Class8665 class8665, final Class354 class8666) {
+    private static void method18284(final Map<BlockPos, Set<UUID>> map, final Class8665 class8665, final BlockPos class8666) {
         Set hashSet = map.get(class8666);
         if (hashSet == null) {
             hashSet = Sets.newHashSet();
@@ -157,17 +159,17 @@ public class Class6115 implements Class6113
         hashSet.add(class8665.method29669());
     }
     
-    private static void method18285(final Class354 class354) {
+    private static void method18285(final BlockPos class354) {
         method18287(class354, 0.05f, 0.2f, 0.2f, 1.0f, 0.3f);
     }
     
-    private void method18286(final Class354 class354, final List<String> obj) {
+    private void method18286(final BlockPos class354, final List<String> obj) {
         method18287(class354, 0.05f, 0.2f, 0.2f, 1.0f, 0.3f);
         method18292("" + obj, class354, 0, -256);
         method18292("Ghost Hive", class354, 1, -65536);
     }
     
-    private static void method18287(final Class354 class354, final float n, final float n2, final float n3, final float n4, final float n5) {
+    private static void method18287(final BlockPos class354, final float n, final float n2, final float n3, final float n4, final float n5) {
         Class8726.method30011();
         Class8726.method30117();
         Class7282.method22335(class354, n, n2, n3, n4, n5);
@@ -232,21 +234,21 @@ public class Class6115 implements Class6113
         method18292(s, class7850.field32146, n, n2);
     }
     
-    private static void method18292(final String s, final Class354 class354, final int n, final int n2) {
-        Class7282.method22341(s, class354.method1074() + 0.5, class354.method1075() + 1.3 + n * 0.2, class354.method1076() + 0.5, n2, 0.02f, true, 0.0f, true);
+    private static void method18292(final String s, final BlockPos class354, final int n, final int n2) {
+        Class7282.method22341(s, class354.getX() + 0.5, class354.getY() + 1.3 + n * 0.2, class354.getZ() + 0.5, n2, 0.02f, true, 0.0f, true);
     }
     
     private static void method18293(final Class5488 class5488, final int n, final String s, final int n2, final float n3) {
-        final Class354 class5489 = new Class354(class5488);
-        Class7282.method22341(s, class5489.method1074() + 0.5, class5488.method16761() + 2.4 + n * 0.25, class5489.method1076() + 0.5, n2, n3, false, 0.5f, true);
+        final BlockPos class5489 = new BlockPos(class5488);
+        Class7282.method22341(s, class5489.getX() + 0.5, class5488.method16761() + 2.4 + n * 0.25, class5489.getZ() + 0.5, n2, n3, false, 0.5f, true);
     }
     
     private Class6092 method18294() {
         return this.field24824.field4644.method5833();
     }
     
-    private String method18295(final Class8665 class8665, final Class354 class8666) {
-        return class8666.method1087() + " (dist " + Math.round(Class9546.method35641(class8666.method1085(class8665.field36434.method16760(), class8665.field36434.method16761(), class8665.field36434.method16762(), true)) * 10.0f) / 10.0 + ")";
+    private String method18295(final Class8665 class8665, final BlockPos class8666) {
+        return class8666.method1087() + " (dist " + Math.round(MathHelper.method35641(class8666.method1085(class8665.field36434.method16760(), class8665.field36434.method16761(), class8665.field36434.method16762(), true)) * 10.0f) / 10.0 + ")";
     }
     
     private boolean method18296(final Class8665 class8665) {
@@ -255,14 +257,14 @@ public class Class6115 implements Class6113
     
     private boolean method18297(final Class8665 class8665) {
         final Class756 field4684 = this.field24824.field4684;
-        return new Class354(field4684.method1938(), class8665.field36434.method16761(), field4684.method1945()).method1081(new Class354(class8665.field36434), 30.0);
+        return new BlockPos(field4684.method1938(), class8665.field36434.method16761(), field4684.method1945()).method1081(new BlockPos(class8665.field36434), 30.0);
     }
     
-    private Collection<UUID> method18298(final Class354 class354) {
+    private Collection<UUID> method18298(final BlockPos class354) {
         return this.field24826.values().stream().filter(class356 -> class356.method29668(class355)).map((Function<? super Class8665, ?>)Class8665::method29669).collect((Collector<? super Object, ?, Collection<UUID>>)Collectors.toSet());
     }
     
-    private Map<Class354, List<String>> method18299() {
+    private Map<BlockPos, List<String>> method18299() {
         final HashMap hashMap = Maps.newHashMap();
         for (final Class8665 class8665 : this.field24826.values()) {
             if (class8665.field36436 == null) {

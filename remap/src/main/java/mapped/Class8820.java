@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class8820
@@ -55,8 +57,8 @@ public class Class8820
     
     public double method30766(final double n, final double n2) {
         final double n3 = (n + n2) * Class8820.field37089;
-        final int method35644 = Class9546.method35644(n + n3);
-        final int method35645 = Class9546.method35644(n2 + n3);
+        final int method35644 = MathHelper.floor(n + n3);
+        final int method35645 = MathHelper.floor(n2 + n3);
         final double n4 = (method35644 + method35645) * Class8820.field37090;
         final double n5 = method35644 - n4;
         final double n6 = method35645 - n4;
@@ -83,9 +85,9 @@ public class Class8820
     
     public double method30767(final double n, final double n2, final double n3) {
         final double n4 = (n + n2 + n3) * 0.3333333333333333;
-        final int method35644 = Class9546.method35644(n + n4);
-        final int method35645 = Class9546.method35644(n2 + n4);
-        final int method35646 = Class9546.method35644(n3 + n4);
+        final int method35644 = MathHelper.floor(n + n4);
+        final int method35645 = MathHelper.floor(n2 + n4);
+        final int method35646 = MathHelper.floor(n3 + n4);
         final double n5 = (method35644 + method35645 + method35646) * 0.16666666666666666;
         final double n6 = method35644 - n5;
         final double n7 = method35645 - n5;

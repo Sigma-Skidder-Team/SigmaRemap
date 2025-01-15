@@ -11,6 +11,9 @@ import java.util.Properties;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.util.Set;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import java.util.HashMap;
 import java.io.InputStream;
@@ -55,9 +58,9 @@ public class Class8763
     private static int field36822;
     private static int field36823;
     private static int field36824;
-    private static Class5487 field36825;
-    private static Class5487 field36826;
-    private static Class5487 field36827;
+    private static Vec3d field36825;
+    private static Vec3d field36826;
+    private static Vec3d field36827;
     private static int[] field36828;
     private static int[] field36829;
     private static float[][] field36830;
@@ -436,10 +439,10 @@ public class Class8763
         }
     }
     
-    private static Class5487 method30332(final Properties properties, final String s) {
+    private static Vec3d method30332(final Properties properties, final String s) {
         final int method30330 = method30330(properties, s);
         if (method30330 >= 0) {
-            return new Class5487((method30330 >> 16 & 0xFF) / 255.0f, (method30330 >> 8 & 0xFF) / 255.0f, (method30330 & 0xFF) / 255.0f);
+            return new Vec3d((method30330 >> 16 & 0xFF) / 255.0f, (method30330 >> 8 & 0xFF) / 255.0f, (method30330 & 0xFF) / 255.0f);
         }
         return null;
     }
@@ -503,7 +506,7 @@ public class Class8763
         Class8763.field36818 = field36818;
     }
     
-    public static int method30336(final Class8754 class8754, final Class7096 class8755, final Class1856 class8756, Class354 class8757, final Class9145 class8758) {
+    public static int method30336(final Class8754 class8754, final Class7096 class8755, final Class1856 class8756, BlockPos class8757, final Class9145 class8758) {
         final Class3833 method21696 = class8755.method21696();
         Class7096 class8759 = class8755;
         if (Class8763.field36799 != null) {
@@ -587,7 +590,7 @@ public class Class8763
         return -1;
     }
     
-    public static Class3090 method30337(final Class1856 class1856, final Class354 class1857) {
+    public static Class3090 method30337(final Class1856 class1856, final BlockPos class1857) {
         Class3090 class1858 = Class7984.method26045(class1856, class1857);
         if (class1858 == Class7102.field27638 || class1858 == Class7102.field27689) {
             if (!Class8571.method28940()) {
@@ -621,13 +624,13 @@ public class Class8763
         return null;
     }
     
-    private static int method30339(final Class7096 class7096, final Class1856 class7097, final Class354 class7098, final Class7712 class7099, final Class384 class7100) {
+    private static int method30339(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098, final Class7712 class7099, final Class384 class7100) {
         int n = 0;
         int n2 = 0;
         int n3 = 0;
-        final int method1074 = class7098.method1074();
-        final int method1075 = class7098.method1075();
-        final int method1076 = class7098.method1076();
+        final int method1074 = class7098.getX();
+        final int method1075 = class7098.getY();
+        final int method1076 = class7098.getZ();
         final int method1077 = Class8571.method28944();
         final int n4 = method1077 * 2 + 1;
         final int n5 = n4 * n4;
@@ -643,7 +646,7 @@ public class Class8763
         return n / n5 << 16 | n2 / n5 << 8 | n3 / n5;
     }
     
-    public static int method30340(final Class1856 class1856, final Class7096 class1857, final Class354 class1858, final Class9145 class1859) {
+    public static int method30340(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Class9145 class1859) {
         class1857.method21696();
         Class7712 class1860 = method30338(class1857);
         if (class1860 == null) {
@@ -684,7 +687,7 @@ public class Class8763
     
     public static void method30345(final Class6173 class6173, final Class1856 class6174, final double n, final double n2, final double n3) {
         if (Class8763.field36810 != null) {
-            final int method24629 = Class8763.field36810.method24629(method30346(class6174.method6701(new Class354(n, n2, n3)), 15));
+            final int method24629 = Class8763.field36810.method24629(method30346(class6174.method6701(new BlockPos(n, n2, n3)), 15));
             class6173.method18435((method24629 >> 16 & 0xFF) / 255.0f, (method24629 >> 8 & 0xFF) / 255.0f, (method24629 & 0xFF) / 255.0f);
         }
     }
@@ -709,7 +712,7 @@ public class Class8763
     
     public static int method30348(final float n) {
         if (Class8763.field36811 != null) {
-            return Class8763.field36811.method24629((int)Math.round((Class9546.method35638(n) + 1.0f) * (Class8763.field36811.method24637() - 1) / 2.0));
+            return Class8763.field36811.method24629((int)Math.round((MathHelper.sin(n) + 1.0f) * (Class8763.field36811.method24637() - 1) / 2.0));
         }
         return -1;
     }
@@ -729,7 +732,7 @@ public class Class8763
                 }
             }
         }
-        final Class354 class6176 = new Class354(n, n2, n3);
+        final BlockPos class6176 = new BlockPos(n, n2, n3);
         class6175.method33373(Class8763.field36836, class6176);
         final int method30340 = method30340(class6174, Class8763.field36836, class6176, class6175);
         final int n4 = method30340 >> 16 & 0xFF;
@@ -749,23 +752,23 @@ public class Class8763
         class6173.method18435(n7, n8, n9);
     }
     
-    private static int method30351(final Class1856 class1856, final Class354 class1857) {
+    private static int method30351(final Class1856 class1856, final BlockPos class1857) {
         return (Class8763.field36821 >= 0) ? Class8763.field36821 : method30341().method25441(Class7521.field29393.method11878(), class1856, class1857, 0);
     }
     
-    private static Class5487 method30352(final Class5487 class5487) {
+    private static Vec3d method30352(final Vec3d class5487) {
         return (Class8763.field36825 != null) ? Class8763.field36825 : class5487;
     }
     
-    private static Class5487 method30353(final Class5487 class5487) {
+    private static Vec3d method30353(final Vec3d class5487) {
         return (Class8763.field36826 != null) ? Class8763.field36826 : class5487;
     }
     
-    private static Class5487 method30354(final Class5487 class5487) {
+    private static Vec3d method30354(final Vec3d class5487) {
         return (Class8763.field36827 != null) ? Class8763.field36827 : class5487;
     }
     
-    public static Class5487 method30355(final Class5487 class5487, final Class1856 class5488, final double n, final double n2, final double n3) {
+    public static Vec3d method30355(final Vec3d class5487, final Class1856 class5488, final double n, final double n2, final double n3) {
         if (Class8763.field36800 != null) {
             final int method24634 = Class8763.field36800.method24634(class5488, n, n2, n3, 3);
             return Class8763.field36801.method34320((method24634 >> 16 & 0xFF) / 255.0f * ((float)class5487.field22770 / 0.5f), (method24634 >> 8 & 0xFF) / 255.0f * ((float)class5487.field22771 / 0.66275f), (method24634 & 0xFF) / 255.0f * (float)class5487.field22772);
@@ -773,7 +776,7 @@ public class Class8763
         return class5487;
     }
     
-    private static Class5487 method30356(final Class5487 class5487, final Class1856 class5488, final double n, final double n2, final double n3) {
+    private static Vec3d method30356(final Vec3d class5487, final Class1856 class5488, final double n, final double n2, final double n3) {
         if (Class8763.field36802 != null) {
             final int method24634 = Class8763.field36802.method24634(class5488, n, n2, n3, 3);
             return Class8763.field36803.method34320((method24634 >> 16 & 0xFF) / 255.0f * ((float)class5487.field22770 / 0.753f), (method24634 >> 8 & 0xFF) / 255.0f * ((float)class5487.field22771 / 0.8471f), (method24634 & 0xFF) / 255.0f * (float)class5487.field22772);
@@ -781,15 +784,15 @@ public class Class8763
         return class5487;
     }
     
-    public static Class5487 method30357(final Class1856 class1856, final double n, final double n2, final double n3) {
+    public static Vec3d method30357(final Class1856 class1856, final double n, final double n2, final double n3) {
         return method30359(class1856, n, n2, n3, Class8763.field36804, Class8763.field36805);
     }
     
-    public static Class5487 method30358(final Class1856 class1856, final double n, final double n2, final double n3) {
+    public static Vec3d method30358(final Class1856 class1856, final double n, final double n2, final double n3) {
         return method30359(class1856, n, n2, n3, Class8763.field36806, Class8763.field36807);
     }
     
-    public static Class5487 method30359(final Class1856 class1856, final double n, final double n2, final double n3, final Class7718 class1857, final Class9292 class1858) {
+    public static Vec3d method30359(final Class1856 class1856, final double n, final double n2, final double n3, final Class7718 class1857, final Class9292 class1858) {
         if (class1857 != null) {
             final int method24634 = class1857.method24634(class1856, n, n2, n3, 3);
             return class1858.method34320((method24634 >> 16 & 0xFF) / 255.0f, (method24634 >> 8 & 0xFF) / 255.0f, (method24634 & 0xFF) / 255.0f);
@@ -797,7 +800,7 @@ public class Class8763
         return null;
     }
     
-    private static int method30360(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class9145 class7099) {
+    private static int method30360(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class9145 class7099) {
         Class7718 class7100 = Class8763.field36814;
         final Class3833 method21696 = class7096.method21696();
         if (method21696 == Class7521.field29386) {
@@ -834,7 +837,7 @@ public class Class8763
         return false;
     }
     
-    public static Class5487 method30362(final Class5487 class5487, final Class1847 class5488, final Class399 class5489, final float n) {
+    public static Vec3d method30362(final Vec3d class5487, final Class1847 class5488, final Entity class5489, final float n) {
         final Class383 method20487 = class5488.field10063.method20487();
         final Class869 method20488 = Class869.method5277();
         if (method20487 == Class383.field2224) {
@@ -846,7 +849,7 @@ public class Class8763
         return method30356(class5487, method20488.field4683, class5489.method1938(), class5489.method1941() + 1.0, class5489.method1945());
     }
     
-    public static Class5487 method30363(final Class5487 class5487, final Class1847 class5488, final Class399 class5489, final float n) {
+    public static Vec3d method30363(final Vec3d class5487, final Class1847 class5488, final Entity class5489, final float n) {
         final Class383 method20487 = class5488.field10063.method20487();
         final Class869 method20488 = Class869.method5277();
         if (method20487 != Class383.field2223) {
@@ -940,7 +943,7 @@ public class Class8763
         final HashMap hashMap = new HashMap();
         for (int i = 0; i < values.length; ++i) {
             final Class181 class181 = values[i];
-            hashMap.put(class181.method596(), class181);
+            hashMap.put(class181.getName(), class181);
         }
         hashMap.put("lightBlue", Class181.field540);
         hashMap.put("silver", Class181.field545);

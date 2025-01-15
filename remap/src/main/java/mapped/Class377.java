@@ -11,26 +11,26 @@ import com.mojang.datafixers.types.DynamicOps;
 import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
-public class Class377 implements Class356
+public class Class377 implements IDynamicSerializable
 {
-    private final Class354 field2216;
+    private final BlockPos field2216;
     private final Class8912 field2217;
     private int field2218;
     private final Runnable field2219;
     
-    private Class377(final Class354 class354, final Class8912 field2217, final int field2218, final Runnable field2219) {
+    private Class377(final BlockPos class354, final Class8912 field2217, final int field2218, final Runnable field2219) {
         this.field2216 = class354.method1153();
         this.field2217 = field2217;
         this.field2218 = field2218;
         this.field2219 = field2219;
     }
     
-    public Class377(final Class354 class354, final Class8912 class355, final Runnable runnable) {
+    public Class377(final BlockPos class354, final Class8912 class355, final Runnable runnable) {
         this(class354, class355, class355.method31395(), runnable);
     }
     
     public <T> Class377(final Dynamic<T> dynamic, final Runnable runnable) {
-        this(dynamic.get("pos").map((Function)Class354::method1122).orElse(new Class354(0, 0, 0)), Class90.field241.method505(new Class1932(dynamic.get("type").asString(""))), dynamic.get("free_tickets").asInt(0), runnable);
+        this(dynamic.get("pos").map((Function) BlockPos::method1122).orElse(new BlockPos(0, 0, 0)), Class90.field241.method505(new Class1932(dynamic.get("type").asString(""))), dynamic.get("free_tickets").asInt(0), runnable);
     }
     
     @Override
@@ -64,7 +64,7 @@ public class Class377 implements Class356
         return this.field2218 != this.field2217.method31395();
     }
     
-    public Class354 method1259() {
+    public BlockPos method1259() {
         return this.field2216;
     }
     

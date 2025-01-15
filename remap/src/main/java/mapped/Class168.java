@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.function.Predicate;
 
-public class Class168 implements Predicate<Class399>
+public class Class168 implements Predicate<Entity>
 {
     private static String[] field488;
     private final Class8321 field489;
@@ -16,7 +18,7 @@ public class Class168 implements Predicate<Class399>
     }
     
     @Override
-    public boolean test(final Class399 class399) {
+    public boolean test(final Entity class399) {
         return class399.method1768() && class399 instanceof Class511 && ((Class511)class399).method2779(this.field489);
     }
 }

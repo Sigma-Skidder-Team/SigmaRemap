@@ -23,7 +23,7 @@ public class Class5462 extends Class5419<Class511>
     @Override
     public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
         final Class365<?> method2618 = class1850.method2618();
-        final Class8792 method2619 = class1849.method6927(new Class354(class1850));
+        final Class8792 method2619 = class1849.method6927(new BlockPos(class1850));
         if (method2619 != null) {
             if (method2619.method30620() && !method2619.method30619()) {
                 method2618.method1206(Class7635.field30233);

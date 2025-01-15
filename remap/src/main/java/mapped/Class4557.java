@@ -15,7 +15,7 @@ public class Class4557 extends Class4556
     }
     
     @Override
-    public void method13570(final Class1851 class1851, final Random random, final Class354 class1852, final int n, final Class385 class1853, final Class5137 class1854) {
+    public void method13570(final Class1851 class1851, final Random random, final BlockPos class1852, final int n, final Class385 class1853, final Class5137 class1854) {
         for (int i = n - 3; i <= n; ++i) {
             final int n2 = (i >= n) ? (class1854.field22118 - 1) : class1854.field22118;
             final int n3 = class1854.field22118 - 2;

@@ -31,7 +31,7 @@ public abstract class Class833 extends Class832
         return this.method4953();
     }
     
-    public static boolean method4952(final Class7499<? extends Class833> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4952(final Class7499<? extends Class833> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6701(class7502).method21696() == Class7521.field29173 && class7500.method6701(class7502.method1137()).method21696() == Class7521.field29173;
     }
     
@@ -85,7 +85,7 @@ public abstract class Class833 extends Class832
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method2749() && this.method1706()) {
             this.method1724(0.01f, class5487);
             this.method1671(Class2160.field12826, this.method1935());

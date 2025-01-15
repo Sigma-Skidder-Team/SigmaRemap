@@ -5,6 +5,11 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3i;
+
 import java.util.List;
 
 public final class Class386 extends Class385 implements AutoCloseable
@@ -21,12 +26,12 @@ public final class Class386 extends Class385 implements AutoCloseable
         return method1299(0, 0, 0);
     }
     
-    public static Class386 method1297(final Class399 class399) {
+    public static Class386 method1297(final Entity class399) {
         return method1298(class399.method1938(), class399.method1941(), class399.method1945());
     }
     
     public static Class386 method1298(final double n, final double n2, final double n3) {
-        return method1299(Class9546.method35644(n), Class9546.method35644(n2), Class9546.method35644(n3));
+        return method1299(MathHelper.floor(n), MathHelper.floor(n2), MathHelper.floor(n3));
     }
     
     public static Class386 method1299(final int n, final int n2, final int n3) {
@@ -47,7 +52,7 @@ public final class Class386 extends Class385 implements AutoCloseable
         return (Class386)super.method1284(n, n2, n3);
     }
     
-    public Class386 method1301(final Class399 class399) {
+    public Class386 method1301(final Entity class399) {
         return (Class386)super.method1285(class399);
     }
     
@@ -55,15 +60,15 @@ public final class Class386 extends Class385 implements AutoCloseable
         return (Class386)super.method1286(n, n2, n3);
     }
     
-    public Class386 method1303(final Class352 class352) {
+    public Class386 method1303(final Vec3i class352) {
         return (Class386)super.method1287(class352);
     }
     
-    public Class386 method1304(final Class179 class179) {
+    public Class386 method1304(final Direction class179) {
         return (Class386)super.method1290(class179);
     }
     
-    public Class386 method1305(final Class179 class179, final int n) {
+    public Class386 method1305(final Direction class179, final int n) {
         return (Class386)super.method1291(class179, n);
     }
     

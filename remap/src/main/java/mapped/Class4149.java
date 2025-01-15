@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public interface Class4149 extends Class4150
 {
     Class7187 method12404();
@@ -95,6 +97,6 @@ public interface Class4149 extends Class4150
     }
     
     default byte method12437(final float n) {
-        return (byte)((int)(Class9546.method35653(n, -1.0f, 1.0f) * 127.0f) & 0xFF);
+        return (byte)((int)(MathHelper.method35653(n, -1.0f, 1.0f) * 127.0f) & 0xFF);
     }
 }

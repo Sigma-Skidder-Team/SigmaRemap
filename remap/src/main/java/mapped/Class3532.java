@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3532 extends Class3531
 {
     private static String[] field16563;
@@ -29,45 +32,45 @@ public class Class3532 extends Class3531
         final Class511 method4152 = this.field16564.method4152();
         final double min = Math.min(method4152.method1941(), this.field16564.method1941());
         final double n = Math.max(method4152.method1941(), this.field16564.method1941()) + 1.0;
-        final float n2 = (float)Class9546.method35693(method4152.method1945() - this.field16564.method1945(), method4152.method1938() - this.field16564.method1938());
+        final float n2 = (float) MathHelper.method35693(method4152.method1945() - this.field16564.method1945(), method4152.method1938() - this.field16564.method1938());
         if (this.field16564.method1734(method4152) >= 9.0) {
             for (int i = 0; i < 16; ++i) {
                 final double n3 = 1.25 * (i + 1);
-                this.method11088(this.field16564.method1938() + Class9546.method35639(n2) * n3, this.field16564.method1945() + Class9546.method35638(n2) * n3, min, n, n2, 1 * i);
+                this.method11088(this.field16564.method1938() + MathHelper.cos(n2) * n3, this.field16564.method1945() + MathHelper.sin(n2) * n3, min, n, n2, 1 * i);
             }
         }
         else {
             for (int j = 0; j < 5; ++j) {
                 final float n4 = n2 + j * 3.1415927f * 0.4f;
-                this.method11088(this.field16564.method1938() + Class9546.method35639(n4) * 1.5, this.field16564.method1945() + Class9546.method35638(n4) * 1.5, min, n, n4, 0);
+                this.method11088(this.field16564.method1938() + MathHelper.cos(n4) * 1.5, this.field16564.method1945() + MathHelper.sin(n4) * 1.5, min, n, n4, 0);
             }
             for (int k = 0; k < 8; ++k) {
                 final float n5 = n2 + k * 3.1415927f * 2.0f / 8.0f + 1.2566371f;
-                this.method11088(this.field16564.method1938() + Class9546.method35639(n5) * 2.5, this.field16564.method1945() + Class9546.method35638(n5) * 2.5, min, n, n5, 3);
+                this.method11088(this.field16564.method1938() + MathHelper.cos(n5) * 2.5, this.field16564.method1945() + MathHelper.sin(n5) * 2.5, min, n, n5, 3);
             }
         }
     }
     
     private void method11088(final double n, final double n2, final double n3, final double n4, final float n5, final int n6) {
-        Class354 method1139 = new Class354(n, n4, n2);
+        BlockPos method1139 = new BlockPos(n, n4, n2);
         boolean b = false;
         double method1140 = 0.0;
         do {
-            final Class354 method1141 = method1139.method1139();
-            if (this.field16564.field2391.method6701(method1141).method21761(this.field16564.field2391, method1141, Class179.field512)) {
+            final BlockPos method1141 = method1139.method1139();
+            if (this.field16564.field2391.method6701(method1141).method21761(this.field16564.field2391, method1141, Direction.UP)) {
                 if (!this.field16564.field2391.method6961(method1139)) {
                     final Class7702 method1142 = this.field16564.field2391.method6701(method1139).method21727(this.field16564.field2391, method1139);
                     if (!method1142.method24540()) {
-                        method1140 = method1142.method24536(Class111.field352);
+                        method1140 = method1142.method24536(Axis.Y);
                     }
                 }
                 b = true;
                 break;
             }
             method1139 = method1139.method1139();
-        } while (method1139.method1075() >= Class9546.method35644(n3) - 1);
+        } while (method1139.getY() >= MathHelper.floor(n3) - 1);
         if (b) {
-            this.field16564.field2391.method6886(new Class507(this.field16564.field2391, n, method1139.method1075() + method1140, n2, n5, n6, this.field16564));
+            this.field16564.field2391.method6886(new Class507(this.field16564.field2391, n, method1139.getY() + method1140, n2, n5, n6, this.field16564));
         }
     }
     

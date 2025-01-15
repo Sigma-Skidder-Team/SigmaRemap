@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrays;
 import java.util.Random;
-import java.util.Iterator;
+
 import com.google.common.collect.Lists;
 import java.util.Collection;
 import java.util.List;
@@ -40,7 +40,7 @@ public class Class8795
     
     public int method30671(final Class1795 class1795) {
         if (this.field36984 == Integer.MIN_VALUE) {
-            this.field36984 = this.field36981.stream().mapToInt(class1797 -> class1797.method27254(class1796, Class354.field2173, Class2052.field11707).method21418()).max().orElse(0);
+            this.field36984 = this.field36981.stream().mapToInt(class1797 -> class1797.method27254(class1796, BlockPos.ZERO, Class2052.field11707).method21418()).max().orElse(0);
         }
         return this.field36984;
     }

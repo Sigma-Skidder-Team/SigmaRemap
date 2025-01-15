@@ -17,7 +17,7 @@ public enum Class1889 implements Class1888
     }
     
     @Override
-    public int method7293(final Class354 class354) {
+    public int method7293(final BlockPos class354) {
         return 0;
     }
     

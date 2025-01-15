@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.Direction;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
@@ -126,9 +127,9 @@ public class Class7464
             return null;
         }
         if (class6313.method18691(null, null, Class7464.field28838).size() <= 0) {
-            final Class179[] field524 = Class179.field524;
+            final Direction[] field524 = Direction.VALUES;
             for (int i = 0; i < field524.length; ++i) {
-                final Class179 obj = field524[i];
+                final Direction obj = field524[i];
                 final List<Class8754> method18691 = class6313.method18691(null, obj, Class7464.field28838);
                 if (method18691.size() != 1) {
                     Class8571.method28848("SmartLeaves: Model is not cube, side: " + obj + ", quads: " + method18691.size() + ", model: " + class6313);

@@ -5,8 +5,10 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class526 extends Class516<Class3433>
@@ -88,16 +90,16 @@ public class Class526 extends Class516<Class3433>
         method22569.method32112().method35039();
         class7351.method22564(0.0, 3.299999952316284, 1984.0);
         class7351.method22565(5.0f, 5.0f, 5.0f);
-        class7351.method22566(Class9138.field38720.method33328(180.0f));
-        class7351.method22566(Class9138.field38716.method33328(20.0f));
-        final float method22570 = Class9546.method35700(n, this.field3144, this.field3143);
+        class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(20.0f));
+        final float method22570 = MathHelper.method35700(n, this.field3144, this.field3143);
         class7351.method22564((1.0f - method22570) * 0.2f, (1.0f - method22570) * 0.1f, (1.0f - method22570) * 0.25f);
-        class7351.method22566(Class9138.field38718.method33328(-(1.0f - method22570) * 90.0f - 90.0f));
-        class7351.method22566(Class9138.field38716.method33328(180.0f));
-        final float n7 = Class9546.method35700(n, this.field3140, this.field3139) + 0.25f;
-        final float n8 = Class9546.method35700(n, this.field3140, this.field3139) + 0.75f;
-        float n9 = (n7 - Class9546.method35643(n7)) * 1.6f - 0.3f;
-        float n10 = (n8 - Class9546.method35643(n8)) * 1.6f - 0.3f;
+        class7351.method22566(Vector3f.field38718.rotationDegrees(-(1.0f - method22570) * 90.0f - 90.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(180.0f));
+        final float n7 = MathHelper.method35700(n, this.field3140, this.field3139) + 0.25f;
+        final float n8 = MathHelper.method35700(n, this.field3140, this.field3139) + 0.75f;
+        float n9 = (n7 - MathHelper.method35643(n7)) * 1.6f - 0.3f;
+        float n10 = (n8 - MathHelper.method35643(n8)) * 1.6f - 0.3f;
         if (n9 < 0.0f) {
             n9 = 0.0f;
         }
@@ -255,8 +257,8 @@ public class Class526 extends Class516<Class3433>
         else {
             this.field3143 += 0.2f;
         }
-        this.field3143 = Class9546.method35653(this.field3143, 0.0f, 1.0f);
-        this.field3142 += (Class9546.method35653((this.field3141 - this.field3139) * 0.4f, -0.2f, 0.2f) - this.field3142) * 0.9f;
+        this.field3143 = MathHelper.method35653(this.field3143, 0.0f, 1.0f);
+        this.field3142 += (MathHelper.method35653((this.field3141 - this.field3139) * 0.4f, -0.2f, 0.2f) - this.field3142) * 0.9f;
         this.field3139 += this.field3142;
     }
     

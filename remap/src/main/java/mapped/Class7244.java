@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Iterator;
 
-public class Class7244 implements Iterator<Class354>
+public class Class7244 implements Iterator<BlockPos>
 {
     private Class7245 field28069;
     private Class384 field28070;
@@ -18,53 +18,53 @@ public class Class7244 implements Iterator<Class354>
     private static final int field28076 = 1;
     private static final int field28077 = 2;
     
-    public Class7244(Class354 method22142, Class354 method22143, final int n, final int n2) {
+    public Class7244(BlockPos method22142, BlockPos method22143, final int n, final int n2) {
         this.field28070 = new Class384(0, 0, 0);
         this.field28071 = 0;
-        final boolean b = method22142.method1074() > method22143.method1074();
-        final boolean b2 = method22142.method1075() > method22143.method1075();
-        final boolean b3 = method22142.method1076() > method22143.method1076();
+        final boolean b = method22142.getX() > method22143.getX();
+        final boolean b2 = method22142.getY() > method22143.getY();
+        final boolean b3 = method22142.getZ() > method22143.getZ();
         method22142 = this.method22142(method22142, b, b2, b3);
         method22143 = this.method22142(method22143, b, b2, b3);
         this.field28072 = (b ? -1 : 1);
         this.field28073 = (b2 ? -1 : 1);
         this.field28074 = (b3 ? -1 : 1);
-        final Class5487 method22144 = new Class5487(method22143.method1074() - method22142.method1074(), method22143.method1075() - method22142.method1075(), method22143.method1076() - method22142.method1076()).method16738();
-        final double abs = Math.abs(method22144.method16739(new Class5487(1.0, 0.0, 0.0)));
-        final double abs2 = Math.abs(method22144.method16739(new Class5487(0.0, 1.0, 0.0)));
-        final double abs3 = Math.abs(method22144.method16739(new Class5487(0.0, 0.0, 1.0)));
+        final Vec3d method22144 = new Vec3d(method22143.getX() - method22142.getX(), method22143.getY() - method22142.getY(), method22143.getZ() - method22142.getZ()).method16738();
+        final double abs = Math.abs(method22144.method16739(new Vec3d(1.0, 0.0, 0.0)));
+        final double abs2 = Math.abs(method22144.method16739(new Vec3d(0.0, 1.0, 0.0)));
+        final double abs3 = Math.abs(method22144.method16739(new Vec3d(0.0, 0.0, 1.0)));
         if (abs3 >= abs2 && abs3 >= abs) {
             this.field28071 = 2;
-            final Class354 class354 = new Class354(method22142.method1076(), method22142.method1075() - n, method22142.method1074() - n2);
-            final Class354 class355 = new Class354(method22143.method1076(), method22142.method1075() + n + 1, method22142.method1074() + n2 + 1);
-            final int n3 = method22143.method1076() - method22142.method1076();
-            this.field28069 = new Class7245(class354, class355, (method22143.method1075() - method22142.method1075()) / (1.0 * n3), (method22143.method1074() - method22142.method1074()) / (1.0 * n3));
+            final BlockPos class354 = new BlockPos(method22142.getZ(), method22142.getY() - n, method22142.getX() - n2);
+            final BlockPos class355 = new BlockPos(method22143.getZ(), method22142.getY() + n + 1, method22142.getX() + n2 + 1);
+            final int n3 = method22143.getZ() - method22142.getZ();
+            this.field28069 = new Class7245(class354, class355, (method22143.getY() - method22142.getY()) / (1.0 * n3), (method22143.getX() - method22142.getX()) / (1.0 * n3));
         }
         else if (abs2 >= abs && abs2 >= abs3) {
             this.field28071 = 1;
-            final Class354 class356 = new Class354(method22142.method1075(), method22142.method1074() - n, method22142.method1076() - n2);
-            final Class354 class357 = new Class354(method22143.method1075(), method22142.method1074() + n + 1, method22142.method1076() + n2 + 1);
-            final int n4 = method22143.method1075() - method22142.method1075();
-            this.field28069 = new Class7245(class356, class357, (method22143.method1074() - method22142.method1074()) / (1.0 * n4), (method22143.method1076() - method22142.method1076()) / (1.0 * n4));
+            final BlockPos class356 = new BlockPos(method22142.getY(), method22142.getX() - n, method22142.getZ() - n2);
+            final BlockPos class357 = new BlockPos(method22143.getY(), method22142.getX() + n + 1, method22142.getZ() + n2 + 1);
+            final int n4 = method22143.getY() - method22142.getY();
+            this.field28069 = new Class7245(class356, class357, (method22143.getX() - method22142.getX()) / (1.0 * n4), (method22143.getZ() - method22142.getZ()) / (1.0 * n4));
         }
         else {
             this.field28071 = 0;
-            final Class354 class358 = new Class354(method22142.method1074(), method22142.method1075() - n, method22142.method1076() - n2);
-            final Class354 class359 = new Class354(method22143.method1074(), method22142.method1075() + n + 1, method22142.method1076() + n2 + 1);
-            final int n5 = method22143.method1074() - method22142.method1074();
-            this.field28069 = new Class7245(class358, class359, (method22143.method1075() - method22142.method1075()) / (1.0 * n5), (method22143.method1076() - method22142.method1076()) / (1.0 * n5));
+            final BlockPos class358 = new BlockPos(method22142.getX(), method22142.getY() - n, method22142.getZ() - n2);
+            final BlockPos class359 = new BlockPos(method22143.getX(), method22142.getY() + n + 1, method22142.getZ() + n2 + 1);
+            final int n5 = method22143.getX() - method22142.getX();
+            this.field28069 = new Class7245(class358, class359, (method22143.getY() - method22142.getY()) / (1.0 * n5), (method22143.getZ() - method22142.getZ()) / (1.0 * n5));
         }
     }
     
-    private Class354 method22142(Class354 class354, final boolean b, final boolean b2, final boolean b3) {
+    private BlockPos method22142(BlockPos class354, final boolean b, final boolean b2, final boolean b3) {
         if (b) {
-            class354 = new Class354(-class354.method1074(), class354.method1075(), class354.method1076());
+            class354 = new BlockPos(-class354.getX(), class354.getY(), class354.getZ());
         }
         if (b2) {
-            class354 = new Class354(class354.method1074(), -class354.method1075(), class354.method1076());
+            class354 = new BlockPos(class354.getX(), -class354.getY(), class354.getZ());
         }
         if (b3) {
-            class354 = new Class354(class354.method1074(), class354.method1075(), -class354.method1076());
+            class354 = new BlockPos(class354.getX(), class354.getY(), -class354.getZ());
         }
         return class354;
     }
@@ -75,23 +75,23 @@ public class Class7244 implements Iterator<Class354>
     }
     
     @Override
-    public Class354 next() {
-        final Class354 next = this.field28069.next();
+    public BlockPos next() {
+        final BlockPos next = this.field28069.next();
         switch (this.field28071) {
             case 0: {
-                this.field28070.method1279(next.method1074() * this.field28072, next.method1075() * this.field28073, next.method1076() * this.field28074);
+                this.field28070.method1279(next.getX() * this.field28072, next.getY() * this.field28073, next.getZ() * this.field28074);
                 return this.field28070;
             }
             case 1: {
-                this.field28070.method1279(next.method1075() * this.field28072, next.method1074() * this.field28073, next.method1076() * this.field28074);
+                this.field28070.method1279(next.getY() * this.field28072, next.getX() * this.field28073, next.getZ() * this.field28074);
                 return this.field28070;
             }
             case 2: {
-                this.field28070.method1279(next.method1076() * this.field28072, next.method1075() * this.field28073, next.method1074() * this.field28074);
+                this.field28070.method1279(next.getZ() * this.field28072, next.getY() * this.field28073, next.getX() * this.field28074);
                 return this.field28070;
             }
             default: {
-                this.field28070.method1279(next.method1074() * this.field28072, next.method1075() * this.field28073, next.method1076() * this.field28074);
+                this.field28070.method1279(next.getX() * this.field28072, next.getY() * this.field28073, next.getZ() * this.field28074);
                 return this.field28070;
             }
         }
@@ -103,7 +103,7 @@ public class Class7244 implements Iterator<Class354>
     }
     
     public static void main(final String[] array) {
-        final Class7244 class7244 = new Class7244(new Class354(10, 20, 30), new Class354(30, 40, 20), 1, 1);
+        final Class7244 class7244 = new Class7244(new BlockPos(10, 20, 30), new BlockPos(30, 40, 20), 1, 1);
         while (class7244.hasNext()) {
             System.out.println("" + class7244.next());
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.io.IOException;
 
@@ -28,11 +30,11 @@ public class Class4280 implements Class4252<Class5800>
         this.field19204 = field19209;
     }
     
-    public Class4280(final Class2042 field19206, final Class399 class399, final Class2042 field19207) {
+    public Class4280(final Class2042 field19206, final Entity class399, final Class2042 field19207) {
         this.field19206 = field19206;
         this.field19205 = class399.method1643();
         this.field19207 = field19207;
-        final Class5487 method8122 = field19207.method8122(class399);
+        final Vec3d method8122 = field19207.method8122(class399);
         this.field19202 = method8122.field22770;
         this.field19203 = method8122.field22771;
         this.field19204 = method8122.field22772;
@@ -74,11 +76,11 @@ public class Class4280 implements Class4252<Class5800>
     }
     
     @Nullable
-    public Class5487 method12858(final Class1847 class1847) {
+    public Vec3d method12858(final Class1847 class1847) {
         if (!this.field19208) {
-            return new Class5487(this.field19202, this.field19203, this.field19204);
+            return new Vec3d(this.field19202, this.field19203, this.field19204);
         }
-        final Class399 method6741 = class1847.method6741(this.field19205);
-        return (method6741 != null) ? this.field19207.method8122(method6741) : new Class5487(this.field19202, this.field19203, this.field19204);
+        final Entity method6741 = class1847.method6741(this.field19205);
+        return (method6741 != null) ? this.field19207.method8122(method6741) : new Vec3d(this.field19202, this.field19203, this.field19204);
     }
 }

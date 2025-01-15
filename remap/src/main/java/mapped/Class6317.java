@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -24,7 +26,7 @@ public class Class6317 implements Class6313
     }
     
     @Override
-    public List<Class8754> method18691(final Class7096 class7096, final Class179 class7097, final Random random) {
+    public List<Class8754> method18691(final Class7096 class7096, final Direction class7097, final Random random) {
         return Collections.emptyList();
     }
     

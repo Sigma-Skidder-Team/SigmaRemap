@@ -8,7 +8,7 @@ public interface Class8444
 {
     int method28177();
     
-    Class354 method28178();
+    BlockPos method28178();
     
     Class3090 method28179();
     

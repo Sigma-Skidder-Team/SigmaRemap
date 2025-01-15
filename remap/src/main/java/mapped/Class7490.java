@@ -87,8 +87,8 @@ public class Class7490 implements Class7491
     public Collection<Class8762> method23214() {
         final Class7006 field4691 = this.field28923.field4691;
         if (field4691 != null && field4691.method21449() == Class2165.field12881) {
-            final Class354 method21447 = ((Class7005)field4691).method21447();
-            return Collections.singleton(new Class8762(method23213(method21447.method1074()), method23213(method21447.method1075()), method23213(method21447.method1076())));
+            final BlockPos method21447 = ((Class7005)field4691).method21447();
+            return Collections.singleton(new Class8762(method23213(method21447.getX()), method23213(method21447.getY()), method23213(method21447.getZ())));
         }
         return super.method23214();
     }
@@ -97,7 +97,7 @@ public class Class7490 implements Class7491
     public Collection<Class8762> method23215() {
         final Class7006 field4691 = this.field28923.field4691;
         if (field4691 != null && field4691.method21449() == Class2165.field12881) {
-            final Class5487 method21451 = field4691.method21451();
+            final Vec3d method21451 = field4691.method21451();
             return Collections.singleton(new Class8762(method23212(method21451.field22770), method23212(method21451.field22771), method23212(method21451.field22772)));
         }
         return super.method23215();

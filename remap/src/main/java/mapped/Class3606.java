@@ -30,27 +30,27 @@ public class Class3606 extends Class3446
     
     @Override
     public boolean method11013() {
-        final Class354 method4849 = Class821.method4849(this.field16789);
+        final BlockPos method4849 = Class821.method4849(this.field16789);
         return method4849 != null && this.method11134(method4849, this.field16790);
     }
     
     @Override
     public void method11016() {
-        final Class354 method4849 = Class821.method4849(this.field16789);
+        final BlockPos method4849 = Class821.method4849(this.field16789);
         if (method4849 != null) {
             if (Class821.method4850(this.field16792).method24731()) {
                 if (!this.method11134(method4849, 10.0)) {
-                    Class821.method4852(this.field16792).method24724(method4849.method1074(), method4849.method1075(), method4849.method1076(), this.field16791);
+                    Class821.method4852(this.field16792).method24724(method4849.getX(), method4849.getY(), method4849.getZ(), this.field16791);
                 }
                 else {
-                    final Class5487 method4850 = new Class5487(method4849.method1074() - this.field16789.method1938(), method4849.method1075() - this.field16789.method1941(), method4849.method1076() - this.field16789.method1945()).method16738().method16748(10.0).method16744(this.field16789.method1938(), this.field16789.method1941(), this.field16789.method1945());
+                    final Class5487 method4850 = new Class5487(method4849.getX() - this.field16789.method1938(), method4849.getY() - this.field16789.method1941(), method4849.getZ() - this.field16789.method1945()).method16738().method16748(10.0).method16744(this.field16789.method1938(), this.field16789.method1941(), this.field16789.method1945());
                     Class821.method4851(this.field16792).method24724(method4850.field22770, method4850.field22771, method4850.field22772, this.field16791);
                 }
             }
         }
     }
     
-    private boolean method11134(final Class354 class354, final double n) {
+    private boolean method11134(final BlockPos class354, final double n) {
         return !class354.method1082(this.field16789.method1934(), n);
     }
 }

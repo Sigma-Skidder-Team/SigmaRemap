@@ -27,8 +27,8 @@ public class Class8330 implements ArgumentType<Class5346>
         return new Class8330();
     }
     
-    public static Class354 method27768(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        final Class354 method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
+    public static BlockPos method27768(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+        final BlockPos method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
         if (!((Class7492)commandContext.getSource()).method23250().method6971(method16506)) {
             throw Class8330.field34211.create();
         }
@@ -39,7 +39,7 @@ public class Class8330 implements ArgumentType<Class5346>
         throw Class8330.field34212.create();
     }
     
-    public static Class354 method27769(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+    public static BlockPos method27769(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         return ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
     }
     

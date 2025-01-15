@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
-public class Class510 extends Class399
+public class Class510 extends Entity
 {
     private static final Class8810<Integer> field2915;
     private Class511 field2916;

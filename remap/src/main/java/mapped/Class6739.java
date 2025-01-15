@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public class Class6739 extends Class6737
 {
     private static String[] field26500;
-    private static final Class5487 field26501;
+    private static final Vec3d field26501;
     
     public Class6739(final Class1847 class1847, final Class383 class1848) {
         super(class1847, class1848, 0.1f);
@@ -18,7 +18,7 @@ public class Class6739 extends Class6737
     }
     
     @Override
-    public Class5487 method20493(final float n, final float n2) {
+    public Vec3d method20493(final float n, final float n2) {
         return Class6739.field26501;
     }
     
@@ -37,13 +37,13 @@ public class Class6739 extends Class6737
     
     @Nullable
     @Override
-    public Class354 method20489(final Class7859 class7859, final boolean b) {
+    public BlockPos method20489(final Class7859 class7859, final boolean b) {
         return null;
     }
     
     @Nullable
     @Override
-    public Class354 method20490(final int n, final int n2, final boolean b) {
+    public BlockPos method20490(final int n, final int n2, final boolean b) {
         return null;
     }
     
@@ -73,6 +73,6 @@ public class Class6739 extends Class6737
     }
     
     static {
-        field26501 = new Class5487(0.20000000298023224, 0.029999999329447746, 0.029999999329447746);
+        field26501 = new Vec3d(0.20000000298023224, 0.029999999329447746, 0.029999999329447746);
     }
 }

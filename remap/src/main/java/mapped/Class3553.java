@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.EnumSet;
 
 public class Class3553 extends Class3545
@@ -26,7 +28,7 @@ public class Class3553 extends Class3545
         if (!this.field16625.method4205()) {
             return false;
         }
-        final Class399 method4206 = this.field16625.method4206();
+        final Entity method4206 = this.field16625.method4206();
         if (method4206 instanceof Class821) {
             final Class821 class821 = (Class821)method4206;
             this.field16626 = class821.method2634();
@@ -38,7 +40,7 @@ public class Class3553 extends Class3545
     @Override
     public void method11015() {
         this.field16602.method4153(this.field16626);
-        final Class399 method4206 = this.field16625.method4206();
+        final Entity method4206 = this.field16625.method4206();
         if (method4206 instanceof Class821) {
             this.field16627 = ((Class821)method4206).method2635();
         }

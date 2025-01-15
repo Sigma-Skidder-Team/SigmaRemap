@@ -46,7 +46,7 @@ public class Class5436 extends Class5419<Class824>
                     final Class5487 class1855;
                     while (i < 1000) {
                         if (class1855 != null) {
-                            if (!this.method16603(class1851, class1852, Class363.method1167(class1852.field2452, new Class354(class1855)))) {
+                            if (!this.method16603(class1851, class1852, Class363.method1167(class1852.field2452, new BlockPos(class1855)))) {
                                 break;
                             }
                         }
@@ -73,10 +73,10 @@ public class Class5436 extends Class5419<Class824>
     }
     
     private boolean method16603(final Class1849 class1849, final Class824 class1850, final Class363 class1851) {
-        return class1851.method1169() != class1849.method6789().method20487() || class1851.method1170().method1086(new Class354(class1850)) > this.field22642;
+        return class1851.method1169() != class1849.method6789().method20487() || class1851.method1170().method1086(new BlockPos(class1850)) > this.field22642;
     }
     
     private boolean method16604(final Class1849 class1849, final Class824 class1850, final Class363 class1851) {
-        return class1851.method1169() == class1849.method6789().method20487() && class1851.method1170().method1086(new Class354(class1850)) <= this.field22641;
+        return class1851.method1169() == class1849.method6789().method20487() && class1851.method1170().method1086(new BlockPos(class1850)) <= this.field22641;
     }
 }

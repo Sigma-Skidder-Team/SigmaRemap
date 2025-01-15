@@ -53,7 +53,7 @@ public class Class3622 extends Class3617
         if (Class798.method4574(this.field16831).nextFloat() < 0.7f) {
             return false;
         }
-        final Optional<Class354> method11157 = this.method11157();
+        final Optional<BlockPos> method11157 = this.method11157();
         if (!method11157.isPresent()) {
             return false;
         }
@@ -169,12 +169,12 @@ public class Class3622 extends Class3617
         return (Class798.method4583(this.field16831).nextFloat() * 2.0f - 1.0f) * 0.33333334f;
     }
     
-    private Optional<Class354> method11157() {
+    private Optional<BlockPos> method11157() {
         return this.method11158(this.field16825, 5.0);
     }
     
-    private Optional<Class354> method11158(final Predicate<Class7096> predicate, final double n) {
-        final Class354 class354 = new Class354(this.field16831);
+    private Optional<BlockPos> method11158(final Predicate<Class7096> predicate, final double n) {
+        final BlockPos class354 = new BlockPos(this.field16831);
         final Class385 value = new Class385();
         for (int n2 = 0; n2 <= n; n2 = ((n2 <= 0) ? (1 - n2) : (-n2))) {
             for (boolean b = false; (b ? 1 : 0) < n; ++b) {
@@ -182,7 +182,7 @@ public class Class3622 extends Class3617
                     for (int j = (i < (b ? 1 : 0) && i > ((-b) ? 1 : 0)) ? b : 0; j <= (b ? 1 : 0); j = ((j <= 0) ? (1 - j) : (-j))) {
                         value.method1287(class354).method1292(i, n2 - 1, j);
                         if (class354.method1081(value, n) && predicate.test(this.field16831.field2391.method6701(value))) {
-                            return (Optional<Class354>)Optional.of(value);
+                            return (Optional<BlockPos>)Optional.of(value);
                         }
                     }
                 }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.List;
@@ -62,11 +64,11 @@ public class Class415 extends Class414 implements Class407
             if (class7006.method21449() == Class2165.field12881) {
                 if (b) {
                     final Class7005 class7007 = (Class7005)class7006;
-                    final Class179 method2008 = class7007.method21448();
-                    final Class354 method2009 = class7007.method21447().method1149(method2008);
+                    final Direction method2008 = class7007.method21448();
+                    final BlockPos method2009 = class7007.method21447().method1149(method2008);
                     this.method2027(method2009, method2008);
-                    this.method2027(method2009.method1149(method2008.method782()), method2008);
-                    for (final Class179 class7008 : Class98.field268) {
+                    this.method2027(method2009.method1149(method2008.getOpposite()), method2008);
+                    for (final Direction class7008 : Plane.HORIZONTAL) {
                         this.method2027(method2009.method1149(class7008), class7008);
                     }
                 }
@@ -84,13 +86,13 @@ public class Class415 extends Class414 implements Class407
             else {
                 this.method2023();
             }
-            this.field2391.method6955(method2006.method26450() ? 2007 : 2002, new Class354(this), Class5333.method16471(method2005));
+            this.field2391.method6955(method2006.method26450() ? 2007 : 2002, new BlockPos(this), Class5333.method16471(method2005));
             this.method1652();
         }
     }
     
     private void method2023() {
-        final List<Class399> method6739 = this.field2391.method6739((Class<? extends Class399>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0), (Predicate<? super Class399>)Class415.field2523);
+        final List<Entity> method6739 = this.field2391.method6739((Class<? extends Entity>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
         if (!method6739.isEmpty()) {
             for (final Class511 class511 : method6739) {
                 if (this.method1734(class511) >= 16.0) {
@@ -104,8 +106,8 @@ public class Class415 extends Class414 implements Class407
         }
     }
     
-    private void method2024(final List<Class1948> list, final Class399 class399) {
-        final List<Class399> method7128 = this.field2391.method7128((Class<? extends Class399>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0));
+    private void method2024(final List<Class1948> list, final Entity class399) {
+        final List<Entity> method7128 = this.field2391.method7128((Class<? extends Entity>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0));
         if (!method7128.isEmpty()) {
             for (final Class511 class400 : method7128) {
                 if (!class400.method2776()) {
@@ -161,7 +163,7 @@ public class Class415 extends Class414 implements Class407
         return this.method2005().method27622() == Class7739.field31582;
     }
     
-    private void method2027(final Class354 class354, final Class179 class355) {
+    private void method2027(final BlockPos class354, final Direction class355) {
         final Class7096 method6701 = this.field2391.method6701(class354);
         final Class3833 method6702 = method6701.method21696();
         if (method6702 != Class7521.field29289) {
@@ -173,7 +175,7 @@ public class Class415 extends Class414 implements Class407
             }
         }
         else {
-            this.field2391.method6725(null, class354.method1149(class355), class355.method782());
+            this.field2391.method6725(null, class354.method1149(class355), class355.getOpposite());
         }
     }
     

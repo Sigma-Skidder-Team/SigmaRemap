@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.stream.Collector;
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -18,7 +20,7 @@ public class Class4006 extends Class3833
     public static final Class7113 field18057;
     public static final Class7113 field18058;
     public static final Class7113 field18059;
-    public static final Map<Class179, Class7113> field18060;
+    public static final Map<Direction, Class7113> field18060;
     public static final Class7702 field18061;
     public static final Class7702 field18062;
     public static final Class7702 field18063;
@@ -31,7 +33,7 @@ public class Class4006 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         Class7702 class7100 = Class7698.method24486();
         if (class7096.method21772((Class7111<Boolean>)Class4006.field18055)) {
             class7100 = Class7698.method24492(class7100, Class4006.field18061);
@@ -52,7 +54,7 @@ public class Class4006 extends Class3833
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         return this.method12173(this.method12177(class7096, class7097, class7098));
     }
     
@@ -72,14 +74,14 @@ public class Class4006 extends Class3833
         return n;
     }
     
-    private boolean method12175(final Class1855 class1855, final Class354 class1856, final Class179 class1857) {
-        if (class1857 == Class179.field511) {
+    private boolean method12175(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+        if (class1857 == Direction.DOWN) {
             return false;
         }
         if (method12176(class1855, class1856.method1149(class1857), class1857)) {
             return true;
         }
-        if (class1857.method790() != Class111.field352) {
+        if (class1857.getAxis() != Axis.Y) {
             final Class7113 class1858 = Class4006.field18060.get(class1857);
             final Class7096 method6701 = class1855.method6701(class1856.method1137());
             return method6701.method21696() == this && method6701.method21772((Class7111<Boolean>)class1858);
@@ -87,17 +89,17 @@ public class Class4006 extends Class3833
         return false;
     }
     
-    public static boolean method12176(final Class1855 class1855, final Class354 class1856, final Class179 class1857) {
-        return Class3833.method11815(class1855.method6701(class1856).method21727(class1855, class1856), class1857.method782());
+    public static boolean method12176(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+        return Class3833.method11815(class1855.method6701(class1856).method21727(class1855, class1856), class1857.getOpposite());
     }
     
-    private Class7096 method12177(Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
-        final Class354 method1137 = class7098.method1137();
+    private Class7096 method12177(Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+        final BlockPos method1137 = class7098.method1137();
         if (class7096.method21772((Class7111<Boolean>)Class4006.field18055)) {
-            class7096 = (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class4006.field18055, method12176(class7097, method1137, Class179.field511));
+            class7096 = (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class4006.field18055, method12176(class7097, method1137, Direction.DOWN));
         }
         Class7096 method1138 = null;
-        for (final Class179 class7099 : Class98.field268) {
+        for (final Direction class7099 : Plane.HORIZONTAL) {
             final Class7113 method1139 = method12181(class7099);
             if (!class7096.method21772((Class7111<Boolean>)method1139)) {
                 continue;
@@ -115,8 +117,8 @@ public class Class4006 extends Class3833
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
-        if (class7097 != Class179.field511) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+        if (class7097 != Direction.DOWN) {
             final Class7096 method12177 = this.method12177(class7096, class7099, class7100);
             return this.method12173(method12177) ? method12177 : Class7521.field29147.method11878();
         }
@@ -124,27 +126,27 @@ public class Class4006 extends Class3833
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         final Class7096 method12177 = this.method12177(class7096, class7097, class7098);
         if (method12177 == class7096) {
             if (class7097.field10062.nextInt(4) == 0) {
-                final Class179 method12178 = Class179.method798(random);
-                final Class354 method12179 = class7098.method1137();
-                if (method12178.method790().method601() && !class7096.method21772((Class7111<Boolean>)method12181(method12178))) {
+                final Direction method12178 = Direction.random(random);
+                final BlockPos method12179 = class7098.method1137();
+                if (method12178.getAxis().isHorizontal() && !class7096.method21772((Class7111<Boolean>)method12181(method12178))) {
                     if (this.method12180(class7097, class7098)) {
-                        final Class354 method12180 = class7098.method1149(method12178);
+                        final BlockPos method12180 = class7098.method1149(method12178);
                         if (!class7097.method6701(method12180).method21706()) {
                             if (method12176(class7097, method12180, method12178)) {
                                 class7097.method6688(class7098, (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)method12181(method12178), true), 2);
                             }
                         }
                         else {
-                            final Class179 method12181 = method12178.method783();
-                            final Class179 method12182 = method12178.method784();
+                            final Direction method12181 = method12178.rotateY();
+                            final Direction method12182 = method12178.method784();
                             final boolean booleanValue = class7096.method21772((Class7111<Boolean>)method12181(method12181));
                             final boolean booleanValue2 = class7096.method21772((Class7111<Boolean>)method12181(method12182));
-                            final Class354 method12183 = method12180.method1149(method12181);
-                            final Class354 method12184 = method12180.method1149(method12182);
+                            final BlockPos method12183 = method12180.method1149(method12181);
+                            final BlockPos method12184 = method12180.method1149(method12182);
                             if (booleanValue && method12176(class7097, method12183, method12181)) {
                                 class7097.method6688(method12180, (Class7096)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)method12181(method12181), true), 2);
                             }
@@ -152,7 +154,7 @@ public class Class4006 extends Class3833
                                 class7097.method6688(method12180, (Class7096)((Class7097<Object, Object>)this.method11878()).method21773((Class7111<Comparable>)method12181(method12182), true), 2);
                             }
                             else {
-                                final Class179 method12185 = method12178.method782();
+                                final Direction method12185 = method12178.getOpposite();
                                 if (booleanValue) {
                                     if (class7097.method6961(method12183)) {
                                         if (method12176(class7097, class7098.method1149(method12181), method12185)) {
@@ -170,7 +172,7 @@ public class Class4006 extends Class3833
                                     }
                                 }
                                 if (class7097.field10062.nextFloat() < 0.05) {
-                                    if (method12176(class7097, method12180.method1137(), Class179.field512)) {
+                                    if (method12176(class7097, method12180.method1137(), Direction.UP)) {
                                         class7097.method6688(method12180, ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class4006.field18055, true), 2);
                                     }
                                 }
@@ -179,8 +181,8 @@ public class Class4006 extends Class3833
                     }
                 }
                 else {
-                    if (method12178 == Class179.field512) {
-                        if (class7098.method1075() < 255) {
+                    if (method12178 == Direction.UP) {
+                        if (class7098.getY() < 255) {
                             if (this.method12175(class7097, class7098, method12178)) {
                                 class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4006.field18055, true), 2);
                                 return;
@@ -188,8 +190,8 @@ public class Class4006 extends Class3833
                             if (class7097.method6961(method12179)) {
                                 if (this.method12180(class7097, class7098)) {
                                     Class7096 class7099 = class7096;
-                                    for (final Class179 class7100 : Class98.field268) {
-                                        if (!random.nextBoolean() && method12176(class7097, method12179.method1149(class7100), Class179.field512)) {
+                                    for (final Direction class7100 : Plane.HORIZONTAL) {
+                                        if (!random.nextBoolean() && method12176(class7097, method12179.method1149(class7100), Direction.UP)) {
                                             continue;
                                         }
                                         class7099 = ((Class7097<Object, Class7096>)class7099).method21773((Class7111<Comparable>)method12181(class7100), false);
@@ -202,8 +204,8 @@ public class Class4006 extends Class3833
                             }
                         }
                     }
-                    if (class7098.method1075() > 0) {
-                        final Class354 method12186 = class7098.method1139();
+                    if (class7098.getY() > 0) {
+                        final BlockPos method12186 = class7098.method1139();
                         final Class7096 method12187 = class7097.method6701(method12186);
                         if (method12187.method21706() || method12187.method21696() == this) {
                             final Class7096 class7101 = method12187.method21706() ? this.method11878() : method12187;
@@ -228,7 +230,7 @@ public class Class4006 extends Class3833
     }
     
     private Class7096 method12178(final Class7096 class7096, Class7096 class7097, final Random random) {
-        for (final Class179 class7098 : Class98.field268) {
+        for (final Direction class7098 : Plane.HORIZONTAL) {
             if (!random.nextBoolean()) {
                 continue;
             }
@@ -254,10 +256,10 @@ public class Class4006 extends Class3833
         return true;
     }
     
-    private boolean method12180(final Class1855 class1855, final Class354 class1856) {
-        final Iterable<Class354> method1158 = Class354.method1158(class1856.method1074() - 4, class1856.method1075() - 1, class1856.method1076() - 4, class1856.method1074() + 4, class1856.method1075() + 1, class1856.method1076() + 4);
+    private boolean method12180(final Class1855 class1855, final BlockPos class1856) {
+        final Iterable<BlockPos> method1158 = BlockPos.method1158(class1856.getX() - 4, class1856.getY() - 1, class1856.getZ() - 4, class1856.getX() + 4, class1856.getY() + 1, class1856.getZ() + 4);
         int n = 5;
-        final Iterator<Class354> iterator = method1158.iterator();
+        final Iterator<BlockPos> iterator = method1158.iterator();
         while (iterator.hasNext()) {
             if (class1855.method6701(iterator.next()).method21696() == this && --n <= 0) {
                 return false;
@@ -281,8 +283,8 @@ public class Class4006 extends Class3833
         final Class7096 method6701 = class7074.method21654().method6701(class7074.method21639());
         final boolean b = method6701.method21696() == this;
         final Class7096 class7075 = b ? method6701 : this.method11878();
-        for (final Class179 class7076 : class7074.method21643()) {
-            if (class7076 != Class179.field511) {
+        for (final Direction class7076 : class7074.method21643()) {
+            if (class7076 != Direction.DOWN) {
                 final Class7113 method6703 = method12181(class7076);
                 if (!b || !((Class7097<O, Class7096>)method6701).method21772((Class7111<Boolean>)method6703)) {
                     if (this.method12175(class7074.method21654(), class7074.method21639(), class7076)) {
@@ -332,7 +334,7 @@ public class Class4006 extends Class3833
         }
     }
     
-    public static Class7113 method12181(final Class179 class179) {
+    public static Class7113 method12181(final Direction class179) {
         return Class4006.field18060.get(class179);
     }
     
@@ -342,7 +344,7 @@ public class Class4006 extends Class3833
         field18057 = Class3967.field17922;
         field18058 = Class3967.field17923;
         field18059 = Class3967.field17924;
-        field18060 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey() != Class179.field511).collect((Collector<? super Object, ?, Map<Class179, Class7113>>)Class8349.method27834());
+        field18060 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey() != Direction.DOWN).collect((Collector<? super Object, ?, Map<Direction, Class7113>>)Class8349.method27834());
         field18061 = Class3833.method11778(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
         field18062 = Class3833.method11778(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
         field18063 = Class3833.method11778(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);

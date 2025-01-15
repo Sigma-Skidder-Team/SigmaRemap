@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Comparator;
@@ -15,7 +16,6 @@ import java.nio.file.OpenOption;
 import java.nio.file.Files;
 import java.nio.file.attribute.FileAttribute;
 import javax.annotation.Nullable;
-import java.util.function.Consumer;
 import java.nio.file.Path;
 import joptsimple.OptionSet;
 import joptsimple.NonOptionArgumentSpec;
@@ -36,7 +36,7 @@ import java.awt.image.BufferedImage;
 import io.netty.buffer.ByteBuf;
 import java.util.Base64;
 import java.io.OutputStream;
-import java.awt.image.RenderedImage;
+
 import io.netty.buffer.ByteBufOutputStream;
 import org.apache.commons.lang3.Validate;
 import javax.imageio.ImageIO;
@@ -48,7 +48,6 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import com.google.gson.JsonElement;
 import java.io.IOException;
@@ -222,7 +221,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                     final int method25793 = class9495.method35341();
                     if (method25793 > 0) {
                         final int i = class9495.method35342() + class9495.method35343();
-                        Class394.field2292.info("{}% completed ({} / {} chunks)...", (Object)Class9546.method35642(i / (float)method25793 * 100.0f), (Object)i, (Object)method25793);
+                        Class394.field2292.info("{}% completed ({} / {} chunks)...", (Object) MathHelper.method35642(i / (float)method25793 * 100.0f), (Object)i, (Object)method25793);
                     }
                     if (this.method1536()) {
                         class9495.method35335();
@@ -352,7 +351,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         this.method1437(new Class2259("menu.generatingTerrain", new Object[0]));
         final Class1849 method1481 = this.method1481(Class383.field2223);
         Class394.field2292.info("Preparing start region for dimension " + Class383.method1276(method1481.field10063.method20487()));
-        final Class354 method1482 = method1481.method6758();
+        final BlockPos method1482 = method1481.method6758();
         class6459.method19317(new Class7859(method1482));
         final Class1909 method1483 = method1481.method6904();
         method1483.method7422().method7263(500);
@@ -676,7 +675,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             this.field2341 = method27838;
             this.field2303.method24993(new Class8499(this.method1485(), this.method1484()));
             final GameProfile[] a = new GameProfile[Math.min(this.method1484(), 12)];
-            final int method27839 = Class9546.method35658(this.field2304, 0, this.method1484() - a.length);
+            final int method27839 = MathHelper.method35658(this.field2304, 0, this.method1484() - a.length);
             for (int i = 0; i < a.length; ++i) {
                 a[i] = this.field2309.method20623().get(method27839 + i).method2844();
             }
@@ -1056,7 +1055,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         class9037.method32486("uses_auth", this.field2314);
         class9037.method32486("gui_state", this.method1543() ? "enabled" : "disabled");
         class9037.method32486("run_time", (Class8349.method27837() - class9037.method32491()) / 60L * 1000L);
-        class9037.method32486("avg_tick_ms", (int)(Class9546.method35661(this.field2323) * 1.0E-6));
+        class9037.method32486("avg_tick_ms", (int)(MathHelper.method35661(this.field2323) * 1.0E-6));
         int i = 0;
         for (final Class1849 class9038 : this.method1482()) {
             if (class9038 == null) {
@@ -1198,7 +1197,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         return 16;
     }
     
-    public boolean method1549(final Class1847 class1847, final Class354 class1848, final Class512 class1849) {
+    public boolean method1549(final Class1847 class1847, final BlockPos class1848, final Class512 class1849) {
         return false;
     }
     

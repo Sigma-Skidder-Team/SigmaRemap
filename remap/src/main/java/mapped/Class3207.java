@@ -124,14 +124,14 @@ public class Class3207 extends Class3167
         if (!Class3207.field15514.field4684.field2404) {
             final Iterator<Object> iterator = Class3207.field15514.field4683.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.field2403.method18494(0.0, -Class3207.field15514.field4684.method1934().field22771, 0.0)).iterator();
             double field25077 = -1.0;
-            Class354 class354 = null;
+            BlockPos class354 = null;
             while (iterator.hasNext()) {
                 final Class7702 class355 = iterator.next();
                 if (class355.method24537().field25077 <= field25077) {
                     continue;
                 }
                 field25077 = class355.method24537().field25077;
-                class354 = new Class354(class355.method24537().field25073, class355.method24537().field25074, class355.method24537().field25075);
+                class354 = new BlockPos(class355.method24537().field25073, class355.method24537().field25074, class355.method24537().field25075);
             }
             if (class354 != null) {
                 if (Class3207.field15514.field4683.method6701(class354).method21696() instanceof Class4030) {

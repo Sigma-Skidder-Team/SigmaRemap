@@ -2,14 +2,17 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.util.math;
 
 import java.util.function.IntPredicate;
 import java.util.UUID;
+
+import mapped.Class8349;
+import mapped.Class8500;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Random;
 
-public class Class9546
+public class MathHelper
 {
     public static final float field41094;
     private static final int field41095 = 12;
@@ -30,12 +33,12 @@ public class Class9546
     private static final double[] field41110;
     private static final double[] field41111;
     
-    public static float method35638(final float n) {
-        return Class9546.field41105 ? Class9546.field41104[(int)(n * Class9546.field41102) & 0xFFF] : Class9546.field41106[(int)(n * 10430.378f) & 0xFFFF];
+    public static float sin(final float n) {
+        return MathHelper.field41105 ? MathHelper.field41104[(int)(n * MathHelper.field41102) & 0xFFF] : MathHelper.field41106[(int)(n * 10430.378f) & 0xFFFF];
     }
     
-    public static float method35639(final float n) {
-        return Class9546.field41105 ? Class9546.field41104[(int)(n * Class9546.field41102 + 1024.0f) & 0xFFF] : Class9546.field41106[(int)(n * 10430.378f + 16384.0f) & 0xFFFF];
+    public static float cos(final float n) {
+        return MathHelper.field41105 ? MathHelper.field41104[(int)(n * MathHelper.field41102 + 1024.0f) & 0xFFF] : MathHelper.field41106[(int)(n * 10430.378f + 16384.0f) & 0xFFFF];
     }
     
     public static float method35640(final float n) {
@@ -55,7 +58,7 @@ public class Class9546
         return (int)(n + 1024.0) - 1024;
     }
     
-    public static int method35644(final double n) {
+    public static int floor(final double n) {
         final int n2 = (int)n;
         return (n >= n2) ? n2 : (n2 - 1);
     }
@@ -73,7 +76,7 @@ public class Class9546
         return Math.abs(a);
     }
     
-    public static int method35648(final int a) {
+    public static int abs(final int a) {
         return Math.abs(a);
     }
     
@@ -266,7 +269,7 @@ public class Class9546
     
     public static int method35681(int n) {
         n = (method35680(n) ? n : method35679(n));
-        return Class9546.field41108[(int)(n * 125613361L >> 27) & 0x1F];
+        return MathHelper.field41108[(int)(n * 125613361L >> 27) & 0x1F];
     }
     
     public static int method35682(final int n) {
@@ -303,8 +306,8 @@ public class Class9546
         return n - method35645(n);
     }
     
-    public static long method35688(final Class352 class352) {
-        return method35689(class352.method1074(), class352.method1075(), class352.method1076());
+    public static long method35688(final Vec3i class352) {
+        return method35689(class352.getX(), class352.getY(), class352.getZ());
     }
     
     public static long method35689(final int n, final int n2, final int n3) {
@@ -317,7 +320,7 @@ public class Class9546
     }
     
     public static UUID method35691() {
-        return method35690(Class9546.field41107);
+        return method35690(MathHelper.field41107);
     }
     
     public static double method35692(final double n, final double n2, final double n3) {
@@ -344,10 +347,10 @@ public class Class9546
             final double method35695 = method35695(v);
             n2 *= method35695;
             n *= method35695;
-            final double n4 = Class9546.field41109 + n;
+            final double n4 = MathHelper.field41109 + n;
             final int n5 = (int)Double.doubleToRawLongBits(n4);
-            final double n6 = Class9546.field41110[n5];
-            final double n7 = n * Class9546.field41111[n5] - n2 * (n4 - Class9546.field41109);
+            final double n6 = MathHelper.field41110[n5];
+            final double n7 = n * MathHelper.field41111[n5] - n2 * (n4 - MathHelper.field41109);
             double n8 = n6 + (6.0 + n7 * n7) * n7 * 0.16666666666666666;
             if (b3) {
                 n8 = 1.5707963267948966 - n8;
@@ -521,7 +524,7 @@ public class Class9546
         field41102 = Class8500.method28409(651.8986469044033);
         field41103 = Class8500.method28409(0.017453292519943295);
         field41104 = new float[4096];
-        Class9546.field41105 = false;
+        MathHelper.field41105 = false;
         field41106 = Class8349.method27851(new float[65536], array -> {
             int k = 0;
             while (k < array.length) {
@@ -537,11 +540,11 @@ public class Class9546
         field41111 = new double[257];
         for (int i = 0; i < 257; ++i) {
             final double asin = Math.asin(i / 256.0);
-            Class9546.field41111[i] = Math.cos(asin);
-            Class9546.field41110[i] = asin;
+            MathHelper.field41111[i] = Math.cos(asin);
+            MathHelper.field41110[i] = asin;
         }
-        for (int j = 0; j < Class9546.field41104.length; ++j) {
-            Class9546.field41104[j] = Class8500.method28409(Math.sin(j * 3.141592653589793 * 2.0 / 4096.0));
+        for (int j = 0; j < MathHelper.field41104.length; ++j) {
+            MathHelper.field41104[j] = Class8500.method28409(Math.sin(j * 3.141592653589793 * 2.0 / 4096.0));
         }
     }
 }

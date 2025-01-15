@@ -7,8 +7,8 @@ package mapped;
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import com.google.common.collect.Maps;
-import java.util.EnumMap;
-import java.util.function.Predicate;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Function;
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -158,7 +158,7 @@ public class Class802 extends Class789
     
     public float method4632(final float n) {
         if (this.field4308 > 4 && this.field4308 <= 36) {
-            return 0.62831855f + 0.21991149f * Class9546.method35638((this.field4308 - 4 - n) / 32.0f * 28.7f);
+            return 0.62831855f + 0.21991149f * MathHelper.sin((this.field4308 - 4 - n) / 32.0f * 28.7f);
         }
         return (this.field4308 <= 0) ? (this.field2400 * 0.017453292f) : 0.62831855f;
     }
@@ -223,7 +223,7 @@ public class Class802 extends Class789
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35544, 0.15f, 1.0f);
     }
     

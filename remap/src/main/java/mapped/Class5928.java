@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5928<T extends Class806> extends Class5844<T>
 {
@@ -131,9 +132,9 @@ public class Class5928<T extends Class806> extends Class5844<T>
     
     public void method17802(final T t, final float n, final float n2, final float n3) {
         super.method17558(t, n, n2, n3);
-        final float method35707 = Class9546.method35707(t.field2952, t.field2951, n3);
-        final float method35708 = Class9546.method35707(t.field2954, t.field2953, n3);
-        final float method35709 = Class9546.method35700(n3, t.field2402, t.field2400);
+        final float method35707 = MathHelper.method35707(t.field2952, t.field2951, n3);
+        final float method35708 = MathHelper.method35707(t.field2954, t.field2953, n3);
+        final float method35709 = MathHelper.method35700(n3, t.field2402, t.field2400);
         float n4 = method35708 - method35707;
         float n5 = method35709 * 0.017453292f;
         if (n4 > 20.0f) {
@@ -143,7 +144,7 @@ public class Class5928<T extends Class806> extends Class5844<T>
             n4 = -20.0f;
         }
         if (n2 > 0.2f) {
-            n5 += Class9546.method35639(n * 0.4f) * 0.15f * n2;
+            n5 += MathHelper.cos(n * 0.4f) * 0.15f * n2;
         }
         final float method35710 = t.method4755(n3);
         final float method35711 = t.method4756(n3);
@@ -156,15 +157,15 @@ public class Class5928<T extends Class806> extends Class5844<T>
         this.field24375.field25183 = 0.0f;
         this.field24376.field25183 = 0.5235988f + n5;
         this.field24376.field25184 = n4 * 0.017453292f;
-        final float method35713 = Class9546.method35639((t.method1706() ? 0.2f : 1.0f) * n * 0.6662f + 3.1415927f);
+        final float method35713 = MathHelper.cos((t.method1706() ? 0.2f : 1.0f) * n * 0.6662f + 3.1415927f);
         final float n8 = method35713 * 0.8f * n2;
-        this.field24376.field25183 = method35711 * (0.2617994f + n5) + method35710 * (2.1816616f + Class9546.method35638(n7) * 0.05f) + (1.0f - Math.max(method35711, method35710)) * (0.5235988f + n5 + method35712 * Class9546.method35638(n7) * 0.05f);
+        this.field24376.field25183 = method35711 * (0.2617994f + n5) + method35710 * (2.1816616f + MathHelper.sin(n7) * 0.05f) + (1.0f - Math.max(method35711, method35710)) * (0.5235988f + n5 + method35712 * MathHelper.sin(n7) * 0.05f);
         this.field24376.field25184 = method35711 * n4 * 0.017453292f + (1.0f - Math.max(method35711, method35710)) * this.field24376.field25184;
         this.field24376.field25181 = method35711 * -4.0f + method35710 * 11.0f + (1.0f - Math.max(method35711, method35710)) * this.field24376.field25181;
         this.field24376.field25182 = method35711 * -4.0f + method35710 * -12.0f + (1.0f - Math.max(method35711, method35710)) * this.field24376.field25182;
         this.field24375.field25183 = method35711 * -0.7853982f + n6 * this.field24375.field25183;
         final float n9 = 0.2617994f * method35711;
-        final float method35714 = Class9546.method35639(n7 * 0.6f + 3.1415927f);
+        final float method35714 = MathHelper.cos(n7 * 0.6f + 3.1415927f);
         this.field24379.field25181 = 2.0f * method35711 + 14.0f * n6;
         this.field24379.field25182 = -6.0f * method35711 - 10.0f * n6;
         this.field24380.field25181 = this.field24379.field25181;
@@ -182,7 +183,7 @@ public class Class5928<T extends Class806> extends Class5844<T>
             this.field24385.field25184 = 0.0f;
         }
         else {
-            this.field24385.field25184 = Class9546.method35639(n7 * 0.7f);
+            this.field24385.field25184 = MathHelper.cos(n7 * 0.7f);
         }
         this.field24381.field25181 = this.field24377.field25181;
         this.field24381.field25182 = this.field24377.field25182;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -16,12 +18,12 @@ public class Class4286 implements Class4252<Class5800>
     public Class4286() {
     }
     
-    public Class4286(final Class399 class399) {
+    public Class4286(final Entity class399) {
         this.field19224 = class399.method1643();
-        final List<Class399> method1908 = class399.method1908();
+        final List<Entity> method1908 = class399.method1908();
         this.field19225 = new int[method1908.size()];
         for (int i = 0; i < method1908.size(); ++i) {
-            this.field19225[i] = ((Class399)method1908.get(i)).method1643();
+            this.field19225[i] = ((Entity)method1908.get(i)).method1643();
         }
     }
     

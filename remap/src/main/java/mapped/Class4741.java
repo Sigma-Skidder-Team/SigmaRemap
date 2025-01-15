@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4741 extends Class4712<Class838, Class5845<Class838>>
 {
     private static final Class1932 field20357;
@@ -45,7 +47,7 @@ public class Class4741 extends Class4712<Class838, Class5845<Class838>>
     }
     
     public void method14068(final Class838 class838, final Class7351 class839, final float n, final float n2, final float n3) {
-        class839.method22564(0.0, Class9546.method35639(n * 0.05f) * 0.08f, 0.0);
+        class839.method22564(0.0, MathHelper.cos(n * 0.05f) * 0.08f, 0.0);
         super.method13985(class838, class839, n, n2, n3);
     }
     

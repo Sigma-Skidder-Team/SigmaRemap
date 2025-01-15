@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class8723 extends Class8724
 {
     private final double field36642;
@@ -37,7 +39,7 @@ public class Class8723 extends Class8724
     
     @Override
     public double method29977(double method35654) {
-        method35654 = Class9546.method35654(method35654, this.field36642, this.field36643);
+        method35654 = MathHelper.method35654(method35654, this.field36642, this.field36643);
         return method35654;
     }
 }

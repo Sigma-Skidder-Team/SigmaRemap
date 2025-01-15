@@ -7,6 +7,8 @@ package mapped;
 import java.util.BitSet;
 import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -22,18 +24,18 @@ public class Class1866 extends Class1865
     
     @Nullable
     @Override
-    public Class436 method6727(final Class354 class354) {
+    public Class436 method6727(final BlockPos class354) {
         return this.field10190.method6727(class354);
     }
     
     @Nullable
     @Override
-    public Class7096 method6701(final Class354 class354) {
+    public Class7096 method6701(final BlockPos class354) {
         return this.field10190.method6701(class354);
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
+    public Class7099 method6702(final BlockPos class354) {
         return this.field10190.method6702(class354);
     }
     
@@ -44,16 +46,16 @@ public class Class1866 extends Class1865
     
     @Nullable
     @Override
-    public Class7096 method7008(final Class354 class354, final Class7096 class355, final boolean b) {
+    public Class7096 method7008(final BlockPos class354, final Class7096 class355, final boolean b) {
         return null;
     }
     
     @Override
-    public void method7009(final Class354 class354, final Class436 class355) {
+    public void method7009(final BlockPos class354, final Class436 class355) {
     }
     
     @Override
-    public void method7010(final Class399 class399) {
+    public void method7010(final Entity class399) {
     }
     
     @Override
@@ -153,11 +155,11 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public void method7028(final Class354 class354) {
+    public void method7028(final BlockPos class354) {
     }
     
     @Override
-    public void method7029(final Class354 class354) {
+    public void method7029(final BlockPos class354) {
     }
     
     @Override
@@ -166,13 +168,13 @@ public class Class1866 extends Class1865
     
     @Nullable
     @Override
-    public Class51 method7033(final Class354 class354) {
+    public Class51 method7033(final BlockPos class354) {
         return this.field10190.method7033(class354);
     }
     
     @Nullable
     @Override
-    public Class51 method7034(final Class354 class354) {
+    public Class51 method7034(final BlockPos class354) {
         return this.field10190.method7034(class354);
     }
     
@@ -181,7 +183,7 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public Stream<Class354> method7035() {
+    public Stream<BlockPos> method7035() {
         return this.field10190.method7035();
     }
     

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public abstract class Class6737
@@ -23,7 +25,7 @@ public abstract class Class6737
         this.field26493 = field26493;
         for (int i = 0; i <= 15; ++i) {
             final float n2 = i / 15.0f;
-            this.field26496[i] = Class9546.method35700(n, n2 / (4.0f - 3.0f * n2), 1.0f);
+            this.field26496[i] = MathHelper.method35700(n, n2 / (4.0f - 3.0f * n2), 1.0f);
         }
     }
     
@@ -33,10 +35,10 @@ public abstract class Class6737
     
     @Nullable
     public float[] method20497(final float n, final float n2) {
-        final float n3 = Class9546.method35639(n * 6.2831855f) - 0.0f;
+        final float n3 = MathHelper.cos(n * 6.2831855f) - 0.0f;
         if (n3 >= -0.4f && n3 <= 0.4f) {
             final float n4 = (n3 + 0.0f) / 0.4f * 0.5f + 0.5f;
-            final float n5 = 1.0f - (1.0f - Class9546.method35638(n4 * 3.1415927f)) * 0.99f;
+            final float n5 = 1.0f - (1.0f - MathHelper.sin(n4 * 3.1415927f)) * 0.99f;
             final float n6 = n5 * n5;
             this.field26497[0] = n4 * 0.3f + 0.7f;
             this.field26497[1] = n4 * n4 * 0.7f + 0.2f;
@@ -56,7 +58,7 @@ public abstract class Class6737
     }
     
     @Nullable
-    public Class354 method20500() {
+    public BlockPos method20500() {
         return null;
     }
     
@@ -93,16 +95,16 @@ public abstract class Class6737
     public abstract Class6346<?> method20488();
     
     @Nullable
-    public abstract Class354 method20489(final Class7859 p0, final boolean p1);
+    public abstract BlockPos method20489(final Class7859 p0, final boolean p1);
     
     @Nullable
-    public abstract Class354 method20490(final int p0, final int p1, final boolean p2);
+    public abstract BlockPos method20490(final int p0, final int p1, final boolean p2);
     
     public abstract float method20491(final long p0, final float p1);
     
     public abstract boolean method20492();
     
-    public abstract Class5487 method20493(final float p0, final float p1);
+    public abstract Vec3d method20493(final float p0, final float p1);
     
     public abstract boolean method20494();
     

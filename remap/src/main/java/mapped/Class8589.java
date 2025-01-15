@@ -42,29 +42,29 @@ public class Class8589
             return 0;
         }
         final Class385 method1292 = new Class385(class1850).method1292((24 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1), 0, (24 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1));
-        if (!class1849.method6973(method1292.method1074() - 10, method1292.method1075() - 10, method1292.method1076() - 10, method1292.method1074() + 10, method1292.method1075() + 10, method1292.method1076() + 10)) {
+        if (!class1849.method6973(method1292.getX() - 10, method1292.getY() - 10, method1292.getZ() - 10, method1292.getX() + 10, method1292.getY() + 10, method1292.getZ() + 10)) {
             return 0;
         }
         if (class1849.method6959(method1292).method9870() != Class2140.field12600) {
             int n = 0;
             for (int n2 = (int)Math.ceil(class1849.method6784(method1292).method35973()) + 1, i = 0; i < n2; ++i) {
                 ++n;
-                method1292.method1294(class1849.method6958(Class2020.field11526, method1292).method1075());
+                method1292.method1294(class1849.method6958(Class2020.field11526, method1292).getY());
                 if (i != 0) {
                     this.method29088(class1849, method1292, field10062, false);
                 }
                 else if (!this.method29088(class1849, method1292, field10062, true)) {
                     break;
                 }
-                method1292.method1293(method1292.method1074() + field10062.nextInt(5) - field10062.nextInt(5));
-                method1292.method1295(method1292.method1076() + field10062.nextInt(5) - field10062.nextInt(5));
+                method1292.method1293(method1292.getX() + field10062.nextInt(5) - field10062.nextInt(5));
+                method1292.method1295(method1292.getZ() + field10062.nextInt(5) - field10062.nextInt(5));
             }
             return n;
         }
         return 0;
     }
     
-    private boolean method29088(final Class1847 class1847, final Class354 class1848, final Random random, final boolean b) {
+    private boolean method29088(final Class1847 class1847, final BlockPos class1848, final Random random, final boolean b) {
         final Class7096 method6701 = class1847.method6701(class1848);
         if (!Class8532.method28620(class1847, class1848, method6701, method6701.method21756())) {
             return false;
@@ -80,7 +80,7 @@ public class Class8589
             class1849.method4313(true);
             class1849.method4315();
         }
-        class1849.method1656(class1848.method1074(), class1848.method1075(), class1848.method1076());
+        class1849.method1656(class1848.getX(), class1848.getY(), class1848.getZ());
         class1849.method4188(class1847, class1847.method6784(class1848), Class2101.field12189, null, null);
         class1847.method6886(class1849);
         return true;

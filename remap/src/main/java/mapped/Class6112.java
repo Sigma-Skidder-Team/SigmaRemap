@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class6112 implements Class6113
 {
     private static String[] field24819;
@@ -19,7 +21,7 @@ public class Class6112 implements Class6113
         Class8726.method30045(7425);
         Class8726.method29999();
         Class8726.method30118();
-        final Class399 method18166 = this.field24820.field4644.method5833().method18166();
+        final Entity method18166 = this.field24820.field4644.method5833().method18166();
         final Class7392 method18167 = Class7392.method22694();
         final Class4148 method18168 = method18167.method22696();
         final double n4 = 0.0 - n2;

@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
-import java.util.function.Predicate;
 
 public class Class790 extends Class789
 {
@@ -54,7 +56,7 @@ public class Class790 extends Class789
         this.method2710(Class8107.field33410).method23941(6.0);
     }
     
-    public static boolean method4366(final Class7499<Class790> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4366(final Class7499<Class790> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3090 method6959 = class7500.method6959(class7502);
         if (method6959 != Class7102.field27642 && method6959 != Class7102.field27682) {
             return Class789.method4356(class7499, class7500, class7501, class7502, random);
@@ -78,7 +80,7 @@ public class Class790 extends Class789
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35494, 0.15f, 1.0f);
     }
     
@@ -104,10 +106,10 @@ public class Class790 extends Class789
             }
             this.field4206 = this.field4207;
             if (!this.method4368()) {
-                this.field4207 = Class9546.method35653(this.field4207 - 1.0f, 0.0f, 6.0f);
+                this.field4207 = MathHelper.method35653(this.field4207 - 1.0f, 0.0f, 6.0f);
             }
             else {
-                this.field4207 = Class9546.method35653(this.field4207 + 1.0f, 0.0f, 6.0f);
+                this.field4207 = MathHelper.method35653(this.field4207 + 1.0f, 0.0f, 6.0f);
             }
         }
         if (this.field4208 > 0) {
@@ -124,7 +126,7 @@ public class Class790 extends Class789
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         final boolean method1740 = class399.method1740(Class7929.method25693(this), (float)(int)this.method2710(Class8107.field33410).method23950());
         if (method1740) {
             this.method1900(this, class399);
@@ -141,7 +143,7 @@ public class Class790 extends Class789
     }
     
     public float method4370(final float n) {
-        return Class9546.method35700(n, this.field4206, this.field4207) / 6.0f;
+        return MathHelper.method35700(n, this.field4206, this.field4207) / 6.0f;
     }
     
     @Override

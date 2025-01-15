@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class1821<T extends Class511, M extends Class5860<T>> extends Class1820<T, M>
 {
     private static String[] field10000;
@@ -21,8 +24,8 @@ public class Class1821<T extends Class511, M extends Class5860<T>> extends Class
     }
     
     @Override
-    public void method6586(final Class7351 class7351, final Class7807 class7352, final int n, final Class399 class7353, final float n2, final float n3, final float n4, final float n5) {
-        final float method35640 = Class9546.method35640(n2 * n2 + n4 * n4);
+    public void method6586(final Class7351 class7351, final Class7807 class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5) {
+        final float method35640 = MathHelper.method35640(n2 * n2 + n4 * n4);
         this.field10002 = new Class405(class7353.field2391, class7353.method1938(), class7353.method1941(), class7353.method1945());
         this.field10002.field2399 = (float)(Math.atan2(n2, n4) * 57.2957763671875);
         this.field10002.field2400 = (float)(Math.atan2(n3, method35640) * 57.2957763671875);

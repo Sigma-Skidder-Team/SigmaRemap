@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3309 extends Class3167
 {
     private int field15888;
@@ -21,7 +23,7 @@ public class Class3309 extends Class3167
                         for (int i = 0; i < 25; ++i) {
                             Class3309.field15514.method5269().method17292(new Class4353(true));
                         }
-                        Class3309.field15514.method5269().method17292(new Class4399(Class2003.field11245, Class354.field2173, Class179.field511));
+                        Class3309.field15514.method5269().method17292(new Class4399(Class2003.field11245, BlockPos.ZERO, Direction.DOWN));
                     }
                 }
             }

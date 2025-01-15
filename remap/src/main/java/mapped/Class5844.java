@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.function.Function;
 
-public abstract class Class5844<E extends Class399> extends Class5845<E>
+public abstract class Class5844<E extends Entity> extends Class5845<E>
 {
     private final boolean field23949;
     private final float field23950;

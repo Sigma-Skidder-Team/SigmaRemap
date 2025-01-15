@@ -13,7 +13,7 @@ public class Class3819 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
+        final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21696() != Class7521.field29402 || ((Class7097<Object, Class7096>)method21656).method21772((Class7111<Boolean>)Class3964.field17909)) {
             return Class2201.field13402;
@@ -27,7 +27,7 @@ public class Class3819 extends Class3820
             method21654.method6955(1503, method21655, 0);
             final Class7820 method21657 = Class3964.method12093().method29796(method21654, method21655);
             if (method21657 != null) {
-                final Class354 method21658 = method21657.method25265().method1134(-3, 0, -3);
+                final BlockPos method21658 = method21657.method25265().method1134(-3, 0, -3);
                 for (int i = 0; i < 3; ++i) {
                     for (int j = 0; j < 3; ++j) {
                         method21654.method6688(method21658.method1134(i, 0, j), Class7521.field29401.method11878(), 2);
@@ -49,7 +49,7 @@ public class Class3819 extends Class3820
         }
         class1848.method2762(class1849);
         if (class1847 instanceof Class1849) {
-            final Class354 method2717 = ((Class1849)class1847).method6904().method7438().method18874(class1847, "Stronghold", new Class354(class1848), 100, false);
+            final BlockPos method2717 = ((Class1849)class1847).method6904().method7438().method18874(class1847, "Stronghold", new BlockPos(class1848), 100, false);
             if (method2717 != null) {
                 final Class408 class1850 = new Class408(class1847, class1848.method1938(), class1848.method1942(0.5), class1848.method1945());
                 class1850.method2008(method2715);
@@ -59,7 +59,7 @@ public class Class3819 extends Class3820
                     Class7770.field31787.method13742((Class513)class1848, method2717);
                 }
                 class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), Class8520.field35161, Class286.field1584, 0.5f, 0.4f / (Class3819.field17363.nextFloat() * 0.4f + 0.8f));
-                class1847.method6839(null, 1003, new Class354(class1848), 0);
+                class1847.method6839(null, 1003, new BlockPos(class1848), 0);
                 if (!class1848.field3025.field27304) {
                     method2715.method27693(1);
                 }

@@ -13,6 +13,8 @@ import java.util.Collection;
 import java.util.Locale;
 import java.util.Objects;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 import java.util.List;
 
@@ -541,7 +543,7 @@ public class Class525 extends Class517<Class3434>
     public boolean method3012(final double n, final double n2, final double n3) {
         if (this.method3010()) {
             this.field3125 -= (float)(n3 / ((((Class3434)this.field3077).field16225.size() + 9 - 1) / 9 - 5));
-            this.field3125 = Class9546.method35653(this.field3125, 0.0f, 1.0f);
+            this.field3125 = MathHelper.method35653(this.field3125, 0.0f, 1.0f);
             ((Class3434)this.field3077).method10957(this.field3125);
             return true;
         }
@@ -590,7 +592,7 @@ public class Class525 extends Class517<Class3434>
         }
         final int n6 = this.field3080 + 18;
         this.field3125 = ((float)n2 - n6 - 7.5f) / (n6 + 112 - n6 - 15.0f);
-        this.field3125 = Class9546.method35653(this.field3125, 0.0f, 1.0f);
+        this.field3125 = MathHelper.method35653(this.field3125, 0.0f, 1.0f);
         ((Class3434)this.field3077).method10957(this.field3125);
         return true;
     }

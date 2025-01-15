@@ -50,7 +50,7 @@ public class Class6344 extends Class6343<Class7064>
     }
     
     @Override
-    public List<Class6828> method18866(final Class1976 class1976, final Class354 class1977) {
+    public List<Class6828> method18866(final Class1976 class1976, final BlockPos class1977) {
         if (class1976 == Class1976.field10948) {
             if (Class4535.field19969.method13590(this.field25383, class1977)) {
                 return Class4535.field19969.method13530();

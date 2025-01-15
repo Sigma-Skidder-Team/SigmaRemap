@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
 import java.util.function.Function;
@@ -15,12 +14,12 @@ public class Class4540 extends Class4535<Class5116>
         super(function);
     }
     
-    public boolean method13538(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5116 class1854) {
-        for (final Class354 class1855 : Class354.method1154(class1853.method1134(-1, -2, -1), class1853.method1134(1, 2, 1))) {
-            final boolean b = class1855.method1074() == class1853.method1074();
-            final boolean b2 = class1855.method1075() == class1853.method1075();
-            final boolean b3 = class1855.method1076() == class1853.method1076();
-            final boolean b4 = Math.abs(class1855.method1075() - class1853.method1075()) == 2;
+    public boolean method13538(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5116 class1854) {
+        for (final BlockPos class1855 : BlockPos.method1154(class1853.method1134(-1, -2, -1), class1853.method1134(1, 2, 1))) {
+            final boolean b = class1855.getX() == class1853.getX();
+            final boolean b2 = class1855.getY() == class1853.getY();
+            final boolean b3 = class1855.getZ() == class1853.getZ();
+            final boolean b4 = Math.abs(class1855.getY() - class1853.getY()) == 2;
             if (b) {
                 if (b2) {
                     if (b3) {

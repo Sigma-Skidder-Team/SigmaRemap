@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class4488 extends Class4484
 {
     private static String[] field19881;
     
-    public Class4488(final int n, final Class6997 field19849, final Class179 class179) {
+    public Class4488(final int n, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40961, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -28,7 +30,7 @@ public class Class4488 extends Class4484
         this.method13476((Class4494)class4473, list, random, 0, 2, false);
     }
     
-    public static Class4488 method13481(final List<Class4473> list, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+    public static Class4488 method13481(final List<Class4473> list, final int n, final int n2, final int n3, final Direction class179, final int n4) {
         final Class6997 method21408 = Class6997.method21408(n, n2, n3, -2, 0, 0, 7, 9, 7, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4488(n4, method21408, class179) : null;
     }

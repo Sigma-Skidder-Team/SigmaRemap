@@ -4,10 +4,11 @@
 
 package mapped;
 
-import java.util.Random;
 import java.util.HashMap;
-import java.util.Map;
+
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
@@ -43,7 +44,7 @@ public class Class775 extends Class772
         if (!this.method4214()) {
             final Class7746 method4150 = this.method4150();
             if (method4150 instanceof Class7747) {
-                ((Class7747)method4150).method24747(((Class1849)this.field2391).method6928(new Class354(this)));
+                ((Class7747)method4150).method24747(((Class1849)this.field2391).method6928(new BlockPos(this)));
             }
         }
         super.method4172();
@@ -105,7 +106,7 @@ public class Class775 extends Class772
     }
     
     @Override
-    public boolean method1826(final Class399 class399) {
+    public boolean method1826(final Entity class399) {
         return super.method1826(class399) || (class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null);
     }
     

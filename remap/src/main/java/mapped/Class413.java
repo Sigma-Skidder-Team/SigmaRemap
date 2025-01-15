@@ -33,7 +33,7 @@ public class Class413 extends Class409
     @Override
     public void method2016(final Class7006 class7006) {
         if (!this.field2391.field10067) {
-            this.field2391.method6955(2002, new Class354(this), Class5333.method16472(Class8644.field36251));
+            this.field2391.method6955(2002, new BlockPos(this), Class5333.method16472(Class8644.field36251));
             int i = 3 + this.field2391.field10062.nextInt(5) + this.field2391.field10062.nextInt(5);
             while (i > 0) {
                 final int method2609 = Class508.method2609(i);

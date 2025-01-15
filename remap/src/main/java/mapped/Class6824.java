@@ -26,8 +26,8 @@ public class Class6824
         final int n2 = this.field26810.method7019().field32291 * 16;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
-                final Class354 class354 = new Class354(n + i, 64, n2 + j);
-                final int method10409 = Class3289.method10409(new Class354(class354.method1074(), this.field26810.method7017(Class2020.field11522).method35713(i, j) - 1, class354.method1076()));
+                final BlockPos class354 = new BlockPos(n + i, 64, n2 + j);
+                final int method10409 = Class3289.method10409(new BlockPos(class354.getX(), this.field26810.method7017(Class2020.field11522).method35713(i, j) - 1, class354.getZ()));
                 this.field26811.put((byte)(method10409 >> 16 & 0xFF));
                 this.field26811.put((byte)(method10409 >> 8 & 0xFF));
                 this.field26811.put((byte)(method10409 & 0xFF));

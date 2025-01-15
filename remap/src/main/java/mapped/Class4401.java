@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.io.IOException;
 
@@ -43,7 +45,7 @@ public class Class4401 implements Class4252<Class5813>
     
     @Nullable
     public Class865 method13244(final Class1847 class1847) {
-        final Class399 method6741 = class1847.method6741(this.field19718);
+        final Entity method6741 = class1847.method6741(this.field19718);
         return (method6741 instanceof Class429) ? ((Class429)method6741).method2149() : null;
     }
     

@@ -5,8 +5,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.util.Random;
 import java.util.List;
 import java.util.Set;
@@ -15,7 +16,7 @@ public abstract class Class4473
 {
     public static final Class7096 field19848;
     public Class6997 field19849;
-    private Class179 field19850;
+    private Direction field19850;
     private Class2181 field19851;
     private Class2052 field19852;
     public int field19853;
@@ -33,15 +34,15 @@ public abstract class Class4473
             this.field19849 = new Class6997(class9521.method325("BB"));
         }
         final int method319 = class9521.method319("O");
-        this.method13456((method319 != -1) ? Class179.method793(method319) : null);
+        this.method13456((method319 != -1) ? Direction.byHorizontalIndex(method319) : null);
     }
     
     public final Class51 method13430() {
         final Class51 class51 = new Class51();
         class51.method306("id", Class90.field231.method503(this.method13458()).toString());
         class51.method295("BB", this.field19849.method21421());
-        final Class179 method13455 = this.method13455();
-        class51.method298("O", (method13455 != null) ? method13455.method780() : -1);
+        final Direction method13455 = this.method13455();
+        class51.method298("O", (method13455 != null) ? method13455.getHorizontalIndex() : -1);
         class51.method298("GD", this.field19853);
         this.method13415(class51);
         return class51;
@@ -119,7 +120,7 @@ public abstract class Class4473
     }
     
     public int method13437(final int n, final int n2) {
-        final Class179 method13455 = this.method13455();
+        final Direction method13455 = this.method13455();
         if (method13455 == null) {
             return n;
         }
@@ -145,7 +146,7 @@ public abstract class Class4473
     }
     
     public int method13439(final int n, final int n2) {
-        final Class179 method13455 = this.method13455();
+        final Direction method13455 = this.method13455();
         if (method13455 == null) {
             return n2;
         }
@@ -167,7 +168,7 @@ public abstract class Class4473
     }
     
     public void method13440(final Class1851 class1851, Class7096 class1852, final int n, final int n2, final int n3, final Class6997 class1853) {
-        final Class354 class1854 = new Class354(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
+        final BlockPos class1854 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         if (class1853.method21415(class1854)) {
             if (this.field19851 != Class2181.field12917) {
                 class1852 = class1852.method21709(this.field19851);
@@ -187,7 +188,7 @@ public abstract class Class4473
     }
     
     public Class7096 method13441(final Class1855 class1855, final int n, final int n2, final int n3, final Class6997 class1856) {
-        final Class354 class1857 = new Class354(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
+        final BlockPos class1857 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         return class1856.method21415(class1857) ? class1855.method6701(class1857) : Class7521.field29147.method11878();
     }
     
@@ -195,7 +196,7 @@ public abstract class Class4473
         final int method13437 = this.method13437(n, n3);
         final int method13438 = this.method13438(n2 + 1);
         final int method13439 = this.method13439(n, n3);
-        return class1853.method21415(new Class354(method13437, method13438, method13439)) && method13438 < class1852.method6699(Class2020.field11523, method13437, method13439);
+        return class1853.method21415(new BlockPos(method13437, method13438, method13439)) && method13438 < class1852.method6699(Class2020.field11523, method13437, method13439);
     }
     
     public void method13443(final Class1851 class1851, final Class6997 class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
@@ -330,25 +331,25 @@ public abstract class Class4473
         final int method13437 = this.method13437(n, n3);
         int method13438 = this.method13438(n2);
         final int method13439 = this.method13439(n, n3);
-        if (class1853.method21415(new Class354(method13437, method13438, method13439))) {
-            while (class1851.method6961(new Class354(method13437, method13438, method13439)) || class1851.method6701(new Class354(method13437, method13438, method13439)).method21697().method26438()) {
+        if (class1853.method21415(new BlockPos(method13437, method13438, method13439))) {
+            while (class1851.method6961(new BlockPos(method13437, method13438, method13439)) || class1851.method6701(new BlockPos(method13437, method13438, method13439)).method21697().method26438()) {
                 if (method13438 <= 1) {
                     break;
                 }
-                class1851.method6688(new Class354(method13437, method13438, method13439), class1852, 2);
+                class1851.method6688(new BlockPos(method13437, method13438, method13439), class1852, 2);
                 --method13438;
             }
         }
     }
     
     public boolean method13450(final Class1851 class1851, final Class6997 class1852, final Random random, final int n, final int n2, final int n3, final Class1932 class1853) {
-        return this.method13452(class1851, class1852, random, new Class354(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3)), class1853, null);
+        return this.method13452(class1851, class1852, random, new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3)), class1853, null);
     }
     
-    public static Class7096 method13451(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
-        Class179 class1858 = null;
-        for (final Class179 class1859 : Class98.field268) {
-            final Class354 method1149 = class1856.method1149(class1859);
+    public static Class7096 method13451(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        Direction class1858 = null;
+        for (final Direction class1859 : Plane.HORIZONTAL) {
+            final BlockPos method1149 = class1856.method1149(class1859);
             final Class7096 method1150 = class1855.method6701(method1149);
             if (method1150.method21696() == Class7521.field29292) {
                 return class1857;
@@ -363,26 +364,26 @@ public abstract class Class4473
             class1858 = class1859;
         }
         if (class1858 == null) {
-            Class179 class1860 = class1857.method21772((Class7111<Class179>)Class3892.field17564);
-            Class354 class1861 = class1856.method1149(class1860);
+            Direction class1860 = class1857.method21772((Class7111<Direction>)Class3892.field17564);
+            BlockPos class1861 = class1856.method1149(class1860);
             if (class1855.method6701(class1861).method21722(class1855, class1861)) {
-                class1860 = class1860.method782();
+                class1860 = class1860.getOpposite();
                 class1861 = class1856.method1149(class1860);
             }
             if (class1855.method6701(class1861).method21722(class1855, class1861)) {
-                class1860 = class1860.method783();
+                class1860 = class1860.rotateY();
                 class1861 = class1856.method1149(class1860);
             }
             if (class1855.method6701(class1861).method21722(class1855, class1861)) {
-                class1860 = class1860.method782();
+                class1860 = class1860.getOpposite();
                 class1856.method1149(class1860);
             }
             return (Class7096)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1860);
         }
-        return (Class7096)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1858.method782());
+        return (Class7096)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1858.getOpposite());
     }
     
-    public boolean method13452(final Class1851 class1851, final Class6997 class1852, final Random random, final Class354 class1853, final Class1932 class1854, Class7096 method13451) {
+    public boolean method13452(final Class1851 class1851, final Class6997 class1852, final Random random, final BlockPos class1853, final Class1932 class1854, Class7096 method13451) {
         if (class1852.method21415(class1853) && class1851.method6701(class1853).method21696() != Class7521.field29292) {
             if (method13451 == null) {
                 method13451 = method13451(class1851, class1853, Class7521.field29292.method11878());
@@ -397,8 +398,8 @@ public abstract class Class4473
         return false;
     }
     
-    public boolean method13453(final Class1851 class1851, final Class6997 class1852, final Random random, final int n, final int n2, final int n3, final Class179 class1853, final Class1932 class1854) {
-        final Class354 class1855 = new Class354(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
+    public boolean method13453(final Class1851 class1851, final Class6997 class1852, final Random random, final int n, final int n2, final int n3, final Direction class1853, final Class1932 class1854) {
+        final BlockPos class1855 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         if (class1852.method21415(class1855) && class1851.method6701(class1855).method21696() != Class7521.field29216) {
             this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29216.method11878()).method21773((Class7111<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
             final Class436 method6727 = class1851.method6727(class1855);
@@ -415,11 +416,11 @@ public abstract class Class4473
     }
     
     @Nullable
-    public Class179 method13455() {
+    public Direction method13455() {
         return this.field19850;
     }
     
-    public void method13456(final Class179 field19850) {
+    public void method13456(final Direction field19850) {
         this.field19850 = field19850;
         if (field19850 == null) {
             this.field19852 = Class2052.field11707;

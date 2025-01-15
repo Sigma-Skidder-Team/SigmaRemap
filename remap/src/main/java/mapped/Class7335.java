@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Locale;
 
 public class Class7335
@@ -66,7 +69,7 @@ public class Class7335
                 return false;
             }
             case 70: {
-                Class6469.field25717.method19475(this.field28331.field4648, Class9546.method35654(this.field28331.field4648.field23382 + (Class527.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
+                Class6469.field25717.method19475(this.field28331.field4648, MathHelper.method35654(this.field28331.field4648.field23382 + (Class527.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
                 this.method22497("debug.cycle_renderdistance.message", this.field28331.field4648.field23382);
                 return true;
             }
@@ -154,7 +157,7 @@ public class Class7335
         if (field4691 != null) {
             switch (Class8540.field35858[field4691.method21449().ordinal()]) {
                 case 1: {
-                    final Class354 method21447 = ((Class7005)field4691).method21447();
+                    final BlockPos method21447 = ((Class7005)field4691).method21447();
                     final Class7096 method21448 = this.field28331.field4684.field2391.method6701(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
@@ -175,7 +178,7 @@ public class Class7335
                     break;
                 }
                 case 2: {
-                    final Class399 method21450 = ((Class7007)field4691).method21452();
+                    final Entity method21450 = ((Class7007)field4691).method21452();
                     final Class1932 method21451 = Class90.field210.method503(method21450.method1642());
                     if (!b) {
                         this.method22502(method21451, method21450.method1934(), null);
@@ -198,7 +201,7 @@ public class Class7335
         }
     }
     
-    private void method22501(final Class7096 class7096, final Class354 class7097, final Class51 obj) {
+    private void method22501(final Class7096 class7096, final BlockPos class7097, final Class51 obj) {
         if (obj != null) {
             obj.method330("x");
             obj.method330("y");
@@ -209,10 +212,10 @@ public class Class7335
         if (obj != null) {
             sb.append(obj);
         }
-        this.method22508(String.format(Locale.ROOT, "/setblock %d %d %d %s", class7097.method1074(), class7097.method1075(), class7097.method1076(), sb));
+        this.method22508(String.format(Locale.ROOT, "/setblock %d %d %d %s", class7097.getX(), class7097.getY(), class7097.getZ(), sb));
     }
     
-    private void method22502(final Class1932 class1932, final Class5487 class1933, final Class51 class1934) {
+    private void method22502(final Class1932 class1932, final Vec3d class1933, final Class51 class1934) {
         String s;
         if (class1934 == null) {
             s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", class1932.toString(), class1933.field22770, class1933.field22771, class1933.field22772);
@@ -565,7 +568,7 @@ public class Class7335
             }
             if (n5 >= 1000L) {
                 if (this.field28336 != 0L) {
-                    this.method22498("debug.crash.warning", Class9546.method35649(n4 / 1000.0f));
+                    this.method22498("debug.crash.warning", MathHelper.method35649(n4 / 1000.0f));
                 }
                 else {
                     this.method22497("debug.crash.message", new Object[0]);

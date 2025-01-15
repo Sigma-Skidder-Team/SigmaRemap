@@ -127,8 +127,8 @@ public abstract class Class5936
         return this.field24434;
     }
     
-    public Class354 method17861() {
-        return new Class354(this.field24433 << 4, 0, this.field24434 << 4);
+    public BlockPos method17861() {
+        return new BlockPos(this.field24433 << 4, 0, this.field24434 << 4);
     }
     
     public boolean method17862() {

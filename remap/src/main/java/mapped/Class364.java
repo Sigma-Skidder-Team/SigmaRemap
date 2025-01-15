@@ -22,7 +22,7 @@ import java.util.Map;
 import it.unimi.dsi.fastutil.shorts.Short2ObjectMap;
 import org.apache.logging.log4j.Logger;
 
-public class Class364 implements Class356
+public class Class364 implements IDynamicSerializable
 {
     private static final Logger field2193;
     private final Short2ObjectMap<Class377> field2194;
@@ -56,7 +56,7 @@ public class Class364 implements Class356
         return this.field2195.entrySet().stream().filter(entry -> predicate2.test(entry.getKey())).flatMap(entry2 -> entry2.getValue().stream()).filter(class2045.method8130());
     }
     
-    public void method1175(final Class354 class354, final Class8912 class355) {
+    public void method1175(final BlockPos class354, final Class8912 class355) {
         if (this.method1176(new Class377(class354, class355, this.field2196))) {
             Class364.field2193.debug("Added POI of type {} @ {}", new Supplier[] { () -> class355, () -> class354 });
             this.field2196.run();
@@ -64,7 +64,7 @@ public class Class364 implements Class356
     }
     
     private boolean method1176(final Class377 class377) {
-        final Class354 method1259 = class377.method1259();
+        final BlockPos method1259 = class377.method1259();
         final Class8912 method1260 = class377.method1260();
         final short method1261 = Class353.method1097(method1259);
         final Class377 class378 = (Class377)this.field2194.get(method1261);
@@ -79,7 +79,7 @@ public class Class364 implements Class356
         return false;
     }
     
-    public void method1177(final Class354 obj) {
+    public void method1177(final BlockPos obj) {
         final Class377 class377 = (Class377)this.field2194.remove(Class353.method1097(obj));
         if (class377 != null) {
             this.field2195.get(class377.method1260()).remove(class377);
@@ -91,7 +91,7 @@ public class Class364 implements Class356
         }
     }
     
-    public boolean method1178(final Class354 obj) {
+    public boolean method1178(final BlockPos obj) {
         final Class377 class377 = (Class377)this.field2194.get(Class353.method1097(obj));
         if (class377 != null) {
             final boolean method1256 = class377.method1256();
@@ -101,12 +101,12 @@ public class Class364 implements Class356
         throw Class8349.method27859(new IllegalStateException("POI never registered at " + obj));
     }
     
-    public boolean method1179(final Class354 class354, final Predicate<Class8912> predicate) {
+    public boolean method1179(final BlockPos class354, final Predicate<Class8912> predicate) {
         final Class377 class355 = (Class377)this.field2194.get(Class353.method1097(class354));
         return class355 != null && predicate.test(class355.method1260());
     }
     
-    public Optional<Class8912> method1180(final Class354 class354) {
+    public Optional<Class8912> method1180(final BlockPos class354) {
         final Class377 class355 = (Class377)this.field2194.get(Class353.method1097(class354));
         return (class355 == null) ? Optional.empty() : Optional.of(class355.method1260());
     }
@@ -116,7 +116,7 @@ public class Class364 implements Class356
         return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Records"), dynamicOps.createList((Stream)this.field2194.values().stream().map(class377 -> class377.method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))), dynamicOps.createString("Valid"), dynamicOps.createBoolean(this.field2197)));
     }
     
-    public void method1181(final Consumer<BiConsumer<Class354, Class8912>> consumer) {
+    public void method1181(final Consumer<BiConsumer<BlockPos, Class8912>> consumer) {
         if (!this.field2197) {
             final Short2ObjectOpenHashMap short2ObjectOpenHashMap = new Short2ObjectOpenHashMap((Short2ObjectMap)this.field2194);
             this.method1182();

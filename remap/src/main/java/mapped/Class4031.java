@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -20,11 +23,11 @@ public class Class4031 extends Class3833
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21752(class7097, class7098)) {
-            final Class354 method1137 = class7098.method1137();
+            final BlockPos method1137 = class7098.method1137();
             if (class7097.method6961(method1137)) {
-                if (method1137.method1075() < 256) {
+                if (method1137.getY() < 256) {
                     final int intValue = class7096.method21772((Class7111<Integer>)Class4031.field18127);
                     if (intValue < 5) {
                         int n = 0;
@@ -81,11 +84,11 @@ public class Class4031 extends Class3833
                             }
                             int n3 = 0;
                             for (int j = 0; j < nextInt; ++j) {
-                                final Class179 method1141 = Class98.field268.method576(random);
-                                final Class354 method1142 = class7098.method1149(method1141);
+                                final Direction method1141 = Plane.HORIZONTAL.method576(random);
+                                final BlockPos method1142 = class7098.method1149(method1141);
                                 if (class7097.method6961(method1142)) {
                                     if (class7097.method6961(method1142.method1139())) {
-                                        if (method12222(class7097, method1142, method1141.method782())) {
+                                        if (method12222(class7097, method1142, method1141.getOpposite())) {
                                             this.method12220(class7097, method1142, intValue + 1);
                                             n3 = 1;
                                         }
@@ -108,18 +111,18 @@ public class Class4031 extends Class3833
         }
     }
     
-    private void method12220(final Class1847 class1847, final Class354 class1848, final int i) {
+    private void method12220(final Class1847 class1847, final BlockPos class1848, final int i) {
         class1847.method6688(class1848, ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class4031.field18127, i), 2);
         class1847.method6955(1033, class1848, 0);
     }
     
-    private void method12221(final Class1847 class1847, final Class354 class1848) {
+    private void method12221(final Class1847 class1847, final BlockPos class1848) {
         class1847.method6688(class1848, ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class4031.field18127, 5), 2);
         class1847.method6955(1034, class1848, 0);
     }
     
-    private static boolean method12222(final Class1852 class1852, final Class354 class1853, final Class179 class1854) {
-        for (final Class179 class1855 : Class98.field268) {
+    private static boolean method12222(final Class1852 class1852, final BlockPos class1853, final Direction class1854) {
+        for (final Direction class1855 : Plane.HORIZONTAL) {
             if (class1855 != class1854 && !class1852.method6961(class1853.method1149(class1855))) {
                 return false;
             }
@@ -128,8 +131,8 @@ public class Class4031 extends Class3833
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
-        if (class7097 != Class179.field512) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+        if (class7097 != Direction.UP) {
             if (!class7096.method21752(class7099, class7100)) {
                 class7099.method6833().method21345(class7100, this, 1);
             }
@@ -138,7 +141,7 @@ public class Class4031 extends Class3833
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         final Class7096 method6701 = class7097.method6701(class7098.method1139());
         final Class3833 method6702 = method6701.method21696();
         if (method6702 == this.field18128 || method6702 == Class7521.field29403) {
@@ -146,7 +149,7 @@ public class Class4031 extends Class3833
         }
         if (method6701.method21706()) {
             boolean b = false;
-            final Iterator<Class179> iterator = Class98.field268.iterator();
+            final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
             while (iterator.hasNext()) {
                 final Class7096 method6703 = class7097.method6701(class7098.method1149(iterator.next()));
                 if (method6703.method21696() != this.field18128) {
@@ -172,19 +175,19 @@ public class Class4031 extends Class3833
         class9500.method35378(Class4031.field18127);
     }
     
-    public static void method12223(final Class1851 class1851, final Class354 class1852, final Random random, final int n) {
+    public static void method12223(final Class1851 class1851, final BlockPos class1852, final Random random, final int n) {
         class1851.method6688(class1852, ((Class3968)Class7521.field29630).method12106(class1851, class1852), 2);
         method12224(class1851, class1852, random, class1852, n, 0);
     }
     
-    private static void method12224(final Class1851 class1851, final Class354 class1852, final Random random, final Class354 class1853, final int n, final int n2) {
+    private static void method12224(final Class1851 class1851, final BlockPos class1852, final Random random, final BlockPos class1853, final int n, final int n2) {
         final Class3968 class1854 = (Class3968)Class7521.field29630;
         int n3 = random.nextInt(4) + 1;
         if (n2 == 0) {
             ++n3;
         }
         for (int i = 0; i < n3; ++i) {
-            final Class354 method1138 = class1852.method1138(i + 1);
+            final BlockPos method1138 = class1852.method1138(i + 1);
             if (!method12222(class1851, method1138, null)) {
                 return;
             }
@@ -198,16 +201,16 @@ public class Class4031 extends Class3833
                 ++nextInt;
             }
             for (int j = 0; j < nextInt; ++j) {
-                final Class179 method1139 = Class98.field268.method576(random);
-                final Class354 method1140 = class1852.method1138(n3).method1149(method1139);
-                if (Math.abs(method1140.method1074() - class1853.method1074()) < n) {
-                    if (Math.abs(method1140.method1076() - class1853.method1076()) < n) {
+                final Direction method1139 = Plane.HORIZONTAL.method576(random);
+                final BlockPos method1140 = class1852.method1138(n3).method1149(method1139);
+                if (Math.abs(method1140.getX() - class1853.getX()) < n) {
+                    if (Math.abs(method1140.getZ() - class1853.getZ()) < n) {
                         if (class1851.method6961(method1140)) {
                             if (class1851.method6961(method1140.method1139())) {
-                                if (method12222(class1851, method1140, method1139.method782())) {
+                                if (method12222(class1851, method1140, method1139.getOpposite())) {
                                     n4 = 1;
                                     class1851.method6688(method1140, class1854.method12106(class1851, method1140), 2);
-                                    class1851.method6688(method1140.method1149(method1139.method782()), class1854.method12106(class1851, method1140.method1149(method1139.method782())), 2);
+                                    class1851.method6688(method1140.method1149(method1139.getOpposite()), class1854.method12106(class1851, method1140.method1149(method1139.getOpposite())), 2);
                                     method12224(class1851, method1140, random, class1853, n, n2 + 1);
                                 }
                             }
@@ -222,7 +225,7 @@ public class Class4031 extends Class3833
     }
     
     @Override
-    public void method11869(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Class399 class1850) {
+    public void method11869(final Class1847 class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
         class1847.method6691(class1849.method21447(), true, class1850);
     }
     

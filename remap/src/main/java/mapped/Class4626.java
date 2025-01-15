@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 public class Class4626 extends Class4611<Class4216>
 {
@@ -20,7 +21,7 @@ public class Class4626 extends Class4611<Class4216>
         return new Class4216(Class8172.method27017(jsonObject.get("entity")));
     }
     
-    public void method13788(final Class513 class513, final Class399 class514) {
+    public void method13788(final Class513 class513, final Entity class514) {
         this.method13726(class513.method2957(), class517 -> class517.method12694(class515, class516));
     }
     

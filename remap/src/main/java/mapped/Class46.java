@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.io.IOException;
 import java.io.DataOutput;
 
@@ -67,17 +69,17 @@ public class Class46 extends Class43
     
     @Override
     public int method271() {
-        return Class9546.method35642(this.field112);
+        return MathHelper.method35642(this.field112);
     }
     
     @Override
     public short method272() {
-        return (short)(Class9546.method35642(this.field112) & 0xFFFF);
+        return (short)(MathHelper.method35642(this.field112) & 0xFFFF);
     }
     
     @Override
     public byte method273() {
-        return (byte)(Class9546.method35642(this.field112) & 0xFF);
+        return (byte)(MathHelper.method35642(this.field112) & 0xFF);
     }
     
     @Override

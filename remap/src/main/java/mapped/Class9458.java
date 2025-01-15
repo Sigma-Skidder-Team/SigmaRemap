@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.Objects;
 import com.google.common.base.MoreObjects;
+import net.minecraft.util.math.MathHelper;
 
 public class Class9458
 {
@@ -36,7 +37,7 @@ public class Class9458
     }
     
     private float method35144(final float n) {
-        return -Class9546.method35639(Class9546.method35653(1.0f - n / 45.0f + 0.1f, 0.0f, 1.0f) * 3.1415927f) * 0.5f + 0.5f;
+        return -MathHelper.cos(MathHelper.method35653(1.0f - n / 45.0f + 0.1f, 0.0f, 1.0f) * 3.1415927f) * 0.5f + 0.5f;
     }
     
     private void method35145(final Class7351 class7351, final Class7807 class7352, final int n, final Class2226 class7353) {
@@ -44,9 +45,9 @@ public class Class9458
         final Class4711 class7354 = (Class4711)this.field40665.method28699(this.field40658.field4684);
         class7351.method22567();
         final float n2 = (class7353 != Class2226.field13698) ? -1.0f : 1.0f;
-        class7351.method22566(Class9138.field38718.method33328(92.0f));
-        class7351.method22566(Class9138.field38716.method33328(45.0f));
-        class7351.method22566(Class9138.field38720.method33328(n2 * -41.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(92.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(45.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(n2 * -41.0f));
         class7351.method22564(n2 * 0.3f, -1.100000023841858, 0.44999998807907104);
         if (class7353 != Class2226.field13698) {
             class7354.method14001(class7351, class7352, n, this.field40658.field4684);
@@ -62,42 +63,42 @@ public class Class9458
         class7351.method22564(n4 * 0.125f, -0.125, 0.0);
         if (!this.field40658.field4684.method1823()) {
             class7351.method22567();
-            class7351.method22566(Class9138.field38720.method33328(n4 * 10.0f));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(n4 * 10.0f));
             this.method35149(class7351, class7352, n, n2, n3, class7353);
             class7351.method22568();
         }
         class7351.method22567();
         class7351.method22564(n4 * 0.51f, -0.08f + n2 * -1.2f, -0.75);
-        final float method35640 = Class9546.method35640(n3);
-        final float method35641 = Class9546.method35638(method35640 * 3.1415927f);
-        class7351.method22564(n4 * (-0.5f * method35641), 0.4f * Class9546.method35638(method35640 * 6.2831855f) - 0.3f * method35641, -0.3f * Class9546.method35638(n3 * 3.1415927f));
-        class7351.method22566(Class9138.field38716.method33328(method35641 * -45.0f));
-        class7351.method22566(Class9138.field38718.method33328(n4 * method35641 * -30.0f));
+        final float method35640 = MathHelper.method35640(n3);
+        final float method35641 = MathHelper.sin(method35640 * 3.1415927f);
+        class7351.method22564(n4 * (-0.5f * method35641), 0.4f * MathHelper.sin(method35640 * 6.2831855f) - 0.3f * method35641, -0.3f * MathHelper.sin(n3 * 3.1415927f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(method35641 * -45.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n4 * method35641 * -30.0f));
         this.method35148(class7351, class7352, n, class7354);
         class7351.method22568();
     }
     
     private void method35147(final Class7351 class7351, final Class7807 class7352, final int n, final float n2, final float n3, final float n4) {
-        final float method35640 = Class9546.method35640(n4);
-        class7351.method22564(0.0, -(-0.2f * Class9546.method35638(n4 * 3.1415927f)) / 2.0f, -0.4f * Class9546.method35638(method35640 * 3.1415927f));
+        final float method35640 = MathHelper.method35640(n4);
+        class7351.method22564(0.0, -(-0.2f * MathHelper.sin(n4 * 3.1415927f)) / 2.0f, -0.4f * MathHelper.sin(method35640 * 3.1415927f));
         final float method35641 = this.method35144(n2);
         class7351.method22564(0.0, 0.04f + n3 * -1.2f + method35641 * -0.5f, -0.7200000286102295);
-        class7351.method22566(Class9138.field38716.method33328(method35641 * -85.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(method35641 * -85.0f));
         if (!this.field40658.field4684.method1823()) {
             class7351.method22567();
-            class7351.method22566(Class9138.field38718.method33328(90.0f));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(90.0f));
             this.method35145(class7351, class7352, n, Class2226.field13698);
             this.method35145(class7351, class7352, n, Class2226.field13697);
             class7351.method22568();
         }
-        class7351.method22566(Class9138.field38716.method33328(Class9546.method35638(method35640 * 3.1415927f) * 20.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(MathHelper.sin(method35640 * 3.1415927f) * 20.0f));
         class7351.method22565(2.0f, 2.0f, 2.0f);
         this.method35148(class7351, class7352, n, this.field40659);
     }
     
     private void method35148(final Class7351 class7351, final Class7807 class7352, final int n, final Class8321 class7353) {
-        class7351.method22566(Class9138.field38718.method33328(180.0f));
-        class7351.method22566(Class9138.field38720.method33328(180.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
         class7351.method22565(0.38f, 0.38f, 0.38f);
         class7351.method22564(-0.5, -0.5, 0.0);
         class7351.method22565(0.0078125f, 0.0078125f, 0.0078125f);
@@ -116,18 +117,18 @@ public class Class9458
     private void method35149(final Class7351 class7351, final Class7807 class7352, final int n, final float n2, final float n3, final Class2226 class7353) {
         final boolean b = class7353 != Class2226.field13697;
         final float n4 = b ? 1.0f : -1.0f;
-        final float method35640 = Class9546.method35640(n3);
-        class7351.method22564(n4 * (-0.3f * Class9546.method35638(method35640 * 3.1415927f) + 0.64000005f), 0.4f * Class9546.method35638(method35640 * 6.2831855f) - 0.6f + n2 * -0.6f, -0.4f * Class9546.method35638(n3 * 3.1415927f) - 0.71999997f);
-        class7351.method22566(Class9138.field38718.method33328(n4 * 45.0f));
-        final float method35641 = Class9546.method35638(n3 * n3 * 3.1415927f);
-        class7351.method22566(Class9138.field38718.method33328(n4 * Class9546.method35638(method35640 * 3.1415927f) * 70.0f));
-        class7351.method22566(Class9138.field38720.method33328(n4 * method35641 * -20.0f));
+        final float method35640 = MathHelper.method35640(n3);
+        class7351.method22564(n4 * (-0.3f * MathHelper.sin(method35640 * 3.1415927f) + 0.64000005f), 0.4f * MathHelper.sin(method35640 * 6.2831855f) - 0.6f + n2 * -0.6f, -0.4f * MathHelper.sin(n3 * 3.1415927f) - 0.71999997f);
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n4 * 45.0f));
+        final float method35641 = MathHelper.sin(n3 * n3 * 3.1415927f);
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n4 * MathHelper.sin(method35640 * 3.1415927f) * 70.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(n4 * method35641 * -20.0f));
         final Class756 field4684 = this.field40658.field4684;
         this.field40658.method5290().method5849(field4684.method4097());
         class7351.method22564(n4 * -1.0f, 3.5999999046325684, 3.5);
-        class7351.method22566(Class9138.field38720.method33328(n4 * 120.0f));
-        class7351.method22566(Class9138.field38716.method33328(200.0f));
-        class7351.method22566(Class9138.field38718.method33328(n4 * -135.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(n4 * 120.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(200.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n4 * -135.0f));
         class7351.method22564(n4 * 5.6f, 0.0, 0.0);
         final Class4711 class7354 = (Class4711)this.field40665.method28699(field4684);
         if (!b) {
@@ -142,23 +143,23 @@ public class Class9458
         final float n2 = this.field40658.field4684.method2767() - n + 1.0f;
         final float n3 = n2 / class7353.method27652();
         if (n3 < 0.8f) {
-            class7351.method22564(0.0, Class9546.method35647(Class9546.method35639(n2 / 4.0f * 3.1415927f) * 0.1f), 0.0);
+            class7351.method22564(0.0, MathHelper.method35647(MathHelper.cos(n2 / 4.0f * 3.1415927f) * 0.1f), 0.0);
         }
         final float n4 = 1.0f - (float)Math.pow(n3, 27.0);
         final int n5 = (class7352 != Class2226.field13698) ? -1 : 1;
         class7351.method22564(n4 * 0.6f * n5, n4 * -0.5f, n4 * 0.0f);
-        class7351.method22566(Class9138.field38718.method33328(n5 * n4 * 90.0f));
-        class7351.method22566(Class9138.field38716.method33328(n4 * 10.0f));
-        class7351.method22566(Class9138.field38720.method33328(n5 * n4 * 30.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n5 * n4 * 90.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(n4 * 10.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(n5 * n4 * 30.0f));
     }
     
     private void method35151(final Class7351 class7351, final Class2226 class7352, final float n) {
         final int n2 = (class7352 != Class2226.field13698) ? -1 : 1;
-        class7351.method22566(Class9138.field38718.method33328(n2 * (45.0f + Class9546.method35638(n * n * 3.1415927f) * -20.0f)));
-        final float method35638 = Class9546.method35638(Class9546.method35640(n) * 3.1415927f);
-        class7351.method22566(Class9138.field38720.method33328(n2 * method35638 * -20.0f));
-        class7351.method22566(Class9138.field38716.method33328(method35638 * -80.0f));
-        class7351.method22566(Class9138.field38718.method33328(n2 * -45.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n2 * (45.0f + MathHelper.sin(n * n * 3.1415927f) * -20.0f)));
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n) * 3.1415927f);
+        class7351.method22566(Vector3f.ZP.rotationDegrees(n2 * method35638 * -20.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(method35638 * -80.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n2 * -45.0f));
     }
     
     private void method35152(final Class7351 class7351, final Class2226 class7352, final float n) {
@@ -168,7 +169,7 @@ public class Class9458
     public void method35153(final float n, final Class7351 class7351, final Class7808 class7352, final Class756 class7353, final int n2) {
         final float method2748 = class7353.method2748(n);
         final Class316 class7354 = (Class316)MoreObjects.firstNonNull((Object)class7353.field2934, (Object)Class316.field1877);
-        final float method2749 = Class9546.method35700(n, class7353.field2402, class7353.field2400);
+        final float method2749 = MathHelper.method35700(n, class7353.field2402, class7353.field2400);
         boolean b = true;
         int n3 = 1;
         if (!class7353.method2756()) {
@@ -200,20 +201,20 @@ public class Class9458
                 }
             }
         }
-        final float method2753 = Class9546.method35700(n, class7353.field4092, class7353.field4090);
-        final float method2754 = Class9546.method35700(n, class7353.field4091, class7353.field4089);
-        class7351.method22566(Class9138.field38716.method33328((class7353.method1742(n) - method2753) * 0.1f));
-        class7351.method22566(Class9138.field38718.method33328((class7353.method1743(n) - method2754) * 0.1f));
+        final float method2753 = MathHelper.method35700(n, class7353.field4092, class7353.field4090);
+        final float method2754 = MathHelper.method35700(n, class7353.field4091, class7353.field4089);
+        class7351.method22566(Vector3f.XP.rotationDegrees((class7353.getPitch(n) - method2753) * 0.1f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees((class7353.getYaw(n) - method2754) * 0.1f));
         if (b) {
             final float f = (class7354 != Class316.field1877) ? 0.0f : method2748;
-            final float f2 = 1.0f - Class9546.method35700(n, this.field40662, this.field40661);
+            final float f2 = 1.0f - MathHelper.method35700(n, this.field40662, this.field40661);
             if (!Class9570.field41310.method22605() || !Class9570.method35812(Class9570.field41310, Class316.field1877, class7351, class7352, n2, n, method2749, f, f2, this.field40659)) {
                 this.method35154(class7353, n, method2749, Class316.field1877, f, this.field40659, f2, class7351, class7352, n2);
             }
         }
         if (n3 != 0) {
             final float f3 = (class7354 != Class316.field1878) ? 0.0f : method2748;
-            final float f4 = 1.0f - Class9546.method35700(n, this.field40664, this.field40663);
+            final float f4 = 1.0f - MathHelper.method35700(n, this.field40664, this.field40663);
             if (!Class9570.field41310.method22605() || !Class9570.method35812(Class9570.field41310, Class316.field1878, class7351, class7352, n2, n, method2749, f3, f4, this.field40660)) {
                 this.method35154(class7353, n, method2749, Class316.field1878, f3, this.field40660, f4, class7351, class7352, n2);
             }
@@ -246,29 +247,29 @@ public class Class9458
                 if (class754.method2756() && class754.method2767() > 0 && class754.method2757() == class755) {
                     this.method35152(class757, class759, n4);
                     class757.method22564(n6 * -0.4785682f, -0.0943870022892952, 0.05731530860066414);
-                    class757.method22566(Class9138.field38716.method33328(-11.935f));
-                    class757.method22566(Class9138.field38718.method33328(n6 * 65.3f));
-                    class757.method22566(Class9138.field38720.method33328(n6 * -9.785f));
+                    class757.method22566(Vector3f.XP.rotationDegrees(-11.935f));
+                    class757.method22566(Vector3f.field38718.rotationDegrees(n6 * 65.3f));
+                    class757.method22566(Vector3f.ZP.rotationDegrees(n6 * -9.785f));
                     final float n7 = class756.method27652() - (this.field40658.field4684.method2767() - n + 1.0f);
                     float n8 = n7 / Class4086.method12308(class756);
                     if (n8 > 1.0f) {
                         n8 = 1.0f;
                     }
                     if (n8 > 0.1f) {
-                        final float n9 = Class9546.method35638((n7 - 0.1f) * 1.3f) * (n8 - 0.1f);
+                        final float n9 = MathHelper.sin((n7 - 0.1f) * 1.3f) * (n8 - 0.1f);
                         class757.method22564(n9 * 0.0f, n9 * 0.004f, n9 * 0.0f);
                     }
                     class757.method22564(n8 * 0.0f, n8 * 0.0f, n8 * 0.04f);
                     class757.method22565(1.0f, 1.0f, 1.0f + n8 * 0.2f);
-                    class757.method22566(Class9138.field38717.method33328(n6 * 45.0f));
+                    class757.method22566(Vector3f.field38717.rotationDegrees(n6 * 45.0f));
                 }
                 else {
-                    class757.method22564(n6 * (-0.4f * Class9546.method35638(Class9546.method35640(n3) * 3.1415927f)), 0.2f * Class9546.method35638(Class9546.method35640(n3) * 6.2831855f), -0.2f * Class9546.method35638(n3 * 3.1415927f));
+                    class757.method22564(n6 * (-0.4f * MathHelper.sin(MathHelper.method35640(n3) * 3.1415927f)), 0.2f * MathHelper.sin(MathHelper.method35640(n3) * 6.2831855f), -0.2f * MathHelper.sin(n3 * 3.1415927f));
                     this.method35152(class757, class759, n4);
                     this.method35151(class757, class759, n3);
                     if (method12296 && n3 < 0.001f) {
                         class757.method22564(n6 * -0.641864f, 0.0, 0.0);
-                        class757.method22566(Class9138.field38718.method33328(n6 * 10.0f));
+                        class757.method22566(Vector3f.field38718.rotationDegrees(n6 * 10.0f));
                     }
                 }
                 this.method35143(class754, class756, b2 ? Class2016.field11490 : Class2016.field11489, !b2, class757, class758, n5);
@@ -297,9 +298,9 @@ public class Class9458
                         case 5: {
                             this.method35152(class757, class759, n4);
                             class757.method22564(n10 * -0.2785682f, 0.18344387412071228, 0.15731531381607056);
-                            class757.method22566(Class9138.field38716.method33328(-13.935f));
-                            class757.method22566(Class9138.field38718.method33328(n10 * 35.3f));
-                            class757.method22566(Class9138.field38720.method33328(n10 * -9.785f));
+                            class757.method22566(Vector3f.XP.rotationDegrees(-13.935f));
+                            class757.method22566(Vector3f.field38718.rotationDegrees(n10 * 35.3f));
+                            class757.method22566(Vector3f.ZP.rotationDegrees(n10 * -9.785f));
                             final float n11 = class756.method27652() - (this.field40658.field4684.method2767() - n + 1.0f);
                             final float n12 = n11 / 20.0f;
                             float n13 = (n12 * n12 + n12 * 2.0f) / 3.0f;
@@ -307,32 +308,32 @@ public class Class9458
                                 n13 = 1.0f;
                             }
                             if (n13 > 0.1f) {
-                                final float n14 = Class9546.method35638((n11 - 0.1f) * 1.3f) * (n13 - 0.1f);
+                                final float n14 = MathHelper.sin((n11 - 0.1f) * 1.3f) * (n13 - 0.1f);
                                 class757.method22564(n14 * 0.0f, n14 * 0.004f, n14 * 0.0f);
                             }
                             class757.method22564(n13 * 0.0f, n13 * 0.0f, n13 * 0.04f);
                             class757.method22565(1.0f, 1.0f, 1.0f + n13 * 0.2f);
-                            class757.method22566(Class9138.field38717.method33328(n10 * 45.0f));
+                            class757.method22566(Vector3f.field38717.rotationDegrees(n10 * 45.0f));
                             break;
                         }
                         case 6: {
                             this.method35152(class757, class759, n4);
                             class757.method22564(n10 * -0.5f, 0.699999988079071, 0.10000000149011612);
-                            class757.method22566(Class9138.field38716.method33328(-55.0f));
-                            class757.method22566(Class9138.field38718.method33328(n10 * 35.3f));
-                            class757.method22566(Class9138.field38720.method33328(n10 * -9.785f));
+                            class757.method22566(Vector3f.XP.rotationDegrees(-55.0f));
+                            class757.method22566(Vector3f.field38718.rotationDegrees(n10 * 35.3f));
+                            class757.method22566(Vector3f.ZP.rotationDegrees(n10 * -9.785f));
                             final float n15 = class756.method27652() - (this.field40658.field4684.method2767() - n + 1.0f);
                             float n16 = n15 / 10.0f;
                             if (n16 > 1.0f) {
                                 n16 = 1.0f;
                             }
                             if (n16 > 0.1f) {
-                                final float n17 = Class9546.method35638((n15 - 0.1f) * 1.3f) * (n16 - 0.1f);
+                                final float n17 = MathHelper.sin((n15 - 0.1f) * 1.3f) * (n16 - 0.1f);
                                 class757.method22564(n17 * 0.0f, n17 * 0.004f, n17 * 0.0f);
                             }
                             class757.method22564(0.0, 0.0, n16 * 0.2f);
                             class757.method22565(1.0f, 1.0f, 1.0f + n16 * 0.2f);
-                            class757.method22566(Class9138.field38717.method33328(n10 * 45.0f));
+                            class757.method22566(Vector3f.field38717.rotationDegrees(n10 * 45.0f));
                             break;
                         }
                     }
@@ -341,11 +342,11 @@ public class Class9458
                     this.method35152(class757, class759, n4);
                     final int n18 = b3 ? 1 : -1;
                     class757.method22564(n18 * -0.4f, 0.800000011920929, 0.30000001192092896);
-                    class757.method22566(Class9138.field38718.method33328(n18 * 65.0f));
-                    class757.method22566(Class9138.field38720.method33328(n18 * -85.0f));
+                    class757.method22566(Vector3f.field38718.rotationDegrees(n18 * 65.0f));
+                    class757.method22566(Vector3f.ZP.rotationDegrees(n18 * -85.0f));
                 }
                 else if (!class760.method16962()) {
-                    class757.method22564((b3 ? 1 : -1) * (-0.4f * Class9546.method35638(Class9546.method35640(n3) * 3.1415927f)), 0.2f * Class9546.method35638(Class9546.method35640(n3) * 6.2831855f), -0.2f * Class9546.method35638(n3 * 3.1415927f));
+                    class757.method22564((b3 ? 1 : -1) * (-0.4f * MathHelper.sin(MathHelper.method35640(n3) * 3.1415927f)), 0.2f * MathHelper.sin(MathHelper.method35640(n3) * 6.2831855f), -0.2f * MathHelper.sin(n3 * 3.1415927f));
                     this.method35152(class757, class759, n4);
                     this.method35151(class757, class759, n3);
                 }
@@ -380,12 +381,12 @@ public class Class9458
                     }
                 }
             }
-            this.field40661 += Class9546.method35653((Objects.equals(this.field40659, method2713) ? (method2715 * method2715 * method2715) : 0.0f) - this.field40661, -0.4f, 0.4f);
-            this.field40663 += Class9546.method35653((float)(Objects.equals(this.field40660, method2714) ? 1 : 0) - this.field40663, -0.4f, 0.4f);
+            this.field40661 += MathHelper.method35653((Objects.equals(this.field40659, method2713) ? (method2715 * method2715 * method2715) : 0.0f) - this.field40661, -0.4f, 0.4f);
+            this.field40663 += MathHelper.method35653((float)(Objects.equals(this.field40660, method2714) ? 1 : 0) - this.field40663, -0.4f, 0.4f);
         }
         else {
-            this.field40661 = Class9546.method35653(this.field40661 - 0.4f, 0.0f, 1.0f);
-            this.field40663 = Class9546.method35653(this.field40663 - 0.4f, 0.0f, 1.0f);
+            this.field40661 = MathHelper.method35653(this.field40661 - 0.4f, 0.0f, 1.0f);
+            this.field40663 = MathHelper.method35653(this.field40663 - 0.4f, 0.0f, 1.0f);
         }
         if (this.field40661 < 0.1f) {
             this.field40659 = method2713;

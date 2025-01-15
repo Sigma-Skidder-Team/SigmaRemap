@@ -6,19 +6,19 @@ package mapped;
 
 public class Class9569
 {
-    private final Class354 field41172;
+    private final BlockPos field41172;
     private final Class3833 field41173;
     private final int field41174;
     private final int field41175;
     
-    public Class9569(final Class354 field41172, final Class3833 field41173, final int field41174, final int field41175) {
+    public Class9569(final BlockPos field41172, final Class3833 field41173, final int field41174, final int field41175) {
         this.field41172 = field41172;
         this.field41173 = field41173;
         this.field41174 = field41174;
         this.field41175 = field41175;
     }
     
-    public Class354 method35807() {
+    public BlockPos method35807() {
         return this.field41172;
     }
     

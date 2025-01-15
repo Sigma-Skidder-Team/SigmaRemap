@@ -7,6 +7,8 @@ package mapped;
 import java.util.BitSet;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Function;
 
 public class Class7303 extends Class7304<Class5117>
@@ -19,7 +21,7 @@ public class Class7303 extends Class7304<Class5117>
         return random.nextFloat() <= class5117.field22066;
     }
     
-    public boolean method22398(final Class1860 class1860, final Function<Class354, Class3090> function, final Random random, final int n, final int n2, final int n3, final int n4, final int n5, final BitSet set, final Class5117 class1861) {
+    public boolean method22398(final Class1860 class1860, final Function<BlockPos, Class3090> function, final Random random, final int n, final int n2, final int n3, final int n4, final int n5, final BitSet set, final Class5117 class1861) {
         final int n6 = (this.method22405() * 2 - 1) * 16;
         for (int nextInt = random.nextInt(random.nextInt(random.nextInt(this.method22392()) + 1) + 1), i = 0; i < nextInt; ++i) {
             final double n7 = n2 * 16 + random.nextInt(16);
@@ -57,24 +59,24 @@ public class Class7303 extends Class7304<Class5117>
         return random.nextInt(random.nextInt(120) + 8);
     }
     
-    public void method22399(final Class1860 class1860, final Function<Class354, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final float n8, final double n9, final BitSet set) {
-        final double n10 = 1.5 + Class9546.method35638(1.5707964f) * n8;
+    public void method22399(final Class1860 class1860, final Function<BlockPos, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final float n8, final double n9, final BitSet set) {
+        final double n10 = 1.5 + MathHelper.sin(1.5707964f) * n8;
         this.method22406(class1860, function, n, n2, n3, n4, n5 + 1.0, n6, n7, n10, n10 * n9, set);
     }
     
-    public void method22400(final Class1860 class1860, final Function<Class354, Class3090> function, final long seed, final int n, final int n2, final int n3, double n4, double n5, double n6, final float n7, float n8, float n9, final int n10, final int n11, final double n12, final BitSet set) {
+    public void method22400(final Class1860 class1860, final Function<BlockPos, Class3090> function, final long seed, final int n, final int n2, final int n3, double n4, double n5, double n6, final float n7, float n8, float n9, final int n10, final int n11, final double n12, final BitSet set) {
         final Random random = new Random(seed);
         final int n13 = random.nextInt(n11 / 2) + n11 / 4;
         final boolean b = random.nextInt(6) == 0;
         float n14 = 0.0f;
         float n15 = 0.0f;
         for (int i = n10; i < n11; ++i) {
-            final double n16 = 1.5 + Class9546.method35638(3.1415927f * i / n11) * n7;
+            final double n16 = 1.5 + MathHelper.sin(3.1415927f * i / n11) * n7;
             final double n17 = n16 * n12;
-            final float method35639 = Class9546.method35639(n9);
-            n4 += Class9546.method35639(n8) * method35639;
-            n5 += Class9546.method35638(n9);
-            n6 += Class9546.method35638(n8) * method35639;
+            final float method35639 = MathHelper.cos(n9);
+            n4 += MathHelper.cos(n8) * method35639;
+            n5 += MathHelper.sin(n9);
+            n6 += MathHelper.sin(n8) * method35639;
             n9 *= (b ? 0.92f : 0.7f);
             n9 += n15 * 0.1f;
             n8 += n14 * 0.1f;

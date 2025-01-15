@@ -4,11 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.HashSet;
 import java.util.BitSet;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.Random;
 import com.google.common.collect.Sets;
 import java.util.ArrayList;
@@ -77,8 +74,8 @@ public class Class1945 extends Class1944
     }
     
     private Set<Class436> method7897(final float n, final float n2, final float n3, final Class9006 class9006, final Class9226 class9007) {
-        final Class354 method1153 = Class8974.method31909(this.field10599).method1153();
-        final Class354 method1154 = method1153.method1134(15, 15, 15);
+        final BlockPos method1153 = Class8974.method31909(this.field10599).method1153();
+        final BlockPos method1154 = method1153.method1134(15, 15, 15);
         final Class8388 class9008 = new Class8388();
         final HashSet hashSet = Sets.newHashSet();
         this.field10600 = null;
@@ -90,7 +87,7 @@ public class Class1945 extends Class1944
             Class9144.method33366();
             final Random random = new Random();
             final Class1658 method1156 = Class869.method5277().method5305();
-            for (final Class354 class9010 : Class384.method1154(method1153, method1154)) {
+            for (final BlockPos class9010 : Class384.method1154(method1153, method1154)) {
                 final Class7096 method1157 = method1155.method6701(class9010);
                 method1157.method21696();
                 if (method1157.method21722(method1155, class9010)) {
@@ -145,7 +142,7 @@ public class Class1945 extends Class1944
                                 Class8974.method31913(this.field10599, method1166);
                             }
                             class9009.method22567();
-                            class9009.method22564(class9010.method1074() & 0xF, class9010.method1075() & 0xF, class9010.method1076() & 0xF);
+                            class9009.method22564(class9010.getX() & 0xF, class9010.getY() & 0xF, class9010.getZ() & 0xF);
                             if (method1156.method5791(method1157, class9010, method1155, class9009, method1166, true, random, method1160)) {
                                 Class9006.method32220(class9006, false);
                                 Class9006.method32221(class9006).add(method1165);
@@ -165,7 +162,7 @@ public class Class1945 extends Class1944
             }
             if (Class9006.method32221(class9006).contains(Class6332.method18765())) {
                 final Class4148 method1168 = class9007.method34024(Class6332.method18765());
-                method1168.method12385(n - method1153.method1074(), n2 - method1153.method1075(), n3 - method1153.method1076());
+                method1168.method12385(n - method1153.getX(), n2 - method1153.getY(), n3 - method1153.getZ());
                 Class9006.method32222(class9006, method1168.method12387());
             }
             Class9006.method32219(class9006).stream().map(class9007::method34024).forEach(Class4148::method12393);

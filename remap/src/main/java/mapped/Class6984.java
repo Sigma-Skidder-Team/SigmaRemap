@@ -16,7 +16,7 @@ public class Class6984 extends Class6977
     }
     
     @Override
-    public Set<Class9488> method21398(final Class354 class354, final Class7096 class355, final Class7614 class356) {
+    public Set<Class9488> method21398(final BlockPos class354, final Class7096 class355, final Class7614 class356) {
         final HashSet set = new HashSet();
         final Class7096 method6701 = Class869.method5277().field4683.method6701(class354);
         if (method6701.method21696() instanceof Class3865) {

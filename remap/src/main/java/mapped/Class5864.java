@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class5864<T extends Class827> extends Class5863<T>
 {
     private static String[] field24033;
@@ -47,14 +49,14 @@ public class Class5864<T extends Class827> extends Class5863<T>
             this.field23996.field25184 = 0.0f;
         }
         if (this.field24003 > 0.0f) {
-            this.field23996.field25183 = this.method17581(this.field23996.field25183, -2.5132742f, this.field24003) + this.field24003 * 0.35f * Class9546.method35638(0.1f * n3);
-            this.field23997.field25183 = this.method17581(this.field23997.field25183, -2.5132742f, this.field24003) - this.field24003 * 0.35f * Class9546.method35638(0.1f * n3);
+            this.field23996.field25183 = this.method17581(this.field23996.field25183, -2.5132742f, this.field24003) + this.field24003 * 0.35f * MathHelper.sin(0.1f * n3);
+            this.field23997.field25183 = this.method17581(this.field23997.field25183, -2.5132742f, this.field24003) - this.field24003 * 0.35f * MathHelper.sin(0.1f * n3);
             this.field23996.field25185 = this.method17581(this.field23996.field25185, -0.15f, this.field24003);
             this.field23997.field25185 = this.method17581(this.field23997.field25185, 0.15f, this.field24003);
             final Class6300 field23999 = this.field23999;
-            field23999.field25183 -= this.field24003 * 0.55f * Class9546.method35638(0.1f * n3);
+            field23999.field25183 -= this.field24003 * 0.55f * MathHelper.sin(0.1f * n3);
             final Class6300 field24000 = this.field23998;
-            field24000.field25183 += this.field24003 * 0.55f * Class9546.method35638(0.1f * n3);
+            field24000.field25183 += this.field24003 * 0.55f * MathHelper.sin(0.1f * n3);
             this.field23993.field25183 = 0.0f;
         }
     }

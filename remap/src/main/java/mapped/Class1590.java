@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 
 public class Class1590 implements Runnable
@@ -36,7 +38,7 @@ public class Class1590 implements Runnable
         if (b && (class7007 != null || !this.field8873.method9883("Raytrace"))) {
             final Iterator iterator = Class3376.method10767(this.field8873).iterator();
             while (iterator.hasNext()) {
-                Class399 class7008 = ((Class8131)iterator.next()).method26798();
+                Entity class7008 = ((Class8131)iterator.next()).method26798();
                 if (class7007 != null) {
                     if (this.field8873.method9883("Raytrace")) {
                         class7008 = class7007.method21452();

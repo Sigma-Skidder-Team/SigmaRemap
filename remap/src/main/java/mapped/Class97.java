@@ -9,10 +9,10 @@ import java.util.Iterator;
 public final class Class97 implements Iterable
 {
     private static String[] field265;
-    public final /* synthetic */ Class354 field266;
-    public final /* synthetic */ Class354 field267;
+    public final /* synthetic */ BlockPos field266;
+    public final /* synthetic */ BlockPos field267;
     
-    public Class97(final Class354 field266, final Class354 field267) {
+    public Class97(final BlockPos field266, final BlockPos field267) {
         this.field266 = field266;
         this.field267 = field267;
     }

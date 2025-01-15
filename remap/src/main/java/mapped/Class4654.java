@@ -6,6 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class4654
 {
@@ -27,9 +28,9 @@ public abstract class Class4654
         this.field20140 = field20140;
         this.field20141 = field20141;
         this.field20142.clear();
-        this.field20143 = Class9546.method35642(field20141.method1930() + 1.0f);
-        this.field20144 = Class9546.method35642(field20141.method1931() + 1.0f);
-        this.field20145 = Class9546.method35642(field20141.method1930() + 1.0f);
+        this.field20143 = MathHelper.method35642(field20141.method1930() + 1.0f);
+        this.field20144 = MathHelper.method35642(field20141.method1931() + 1.0f);
+        this.field20145 = MathHelper.method35642(field20141.method1930() + 1.0f);
     }
     
     public void method13901() {

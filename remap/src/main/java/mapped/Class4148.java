@@ -47,7 +47,7 @@ public class Class4148 extends Class4154 implements Class4149
     public BitSet field18498;
     private boolean field18499;
     private ByteBuffer field18500;
-    private Class9138 field18501;
+    private Vector3f field18501;
     private float[] field18502;
     private int[] field18503;
     private IntBuffer field18504;
@@ -68,7 +68,7 @@ public class Class4148 extends Class4154 implements Class4149
         this.field18497 = null;
         this.field18498 = new BitSet();
         this.field18499 = false;
-        this.field18501 = new Class9138();
+        this.field18501 = new Vector3f();
         this.field18502 = new float[4];
         this.field18503 = new int[4];
         this.field18476 = Class9078.method32715(n * 4);
@@ -565,7 +565,7 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     @Override
-    public Class9145 method12414(final Class7096 class7096, final Class354 class7097) {
+    public Class9145 method12414(final Class7096 class7096, final BlockPos class7097) {
         if (this.field18496 != null) {
             this.field18496.method33373(class7096, class7097);
             return this.field18496;
@@ -617,13 +617,13 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     @Override
-    public Class9138 method12419(final Class9138 class9138) {
+    public Vector3f method12419(final Vector3f class9138) {
         this.field18501.method33317(class9138.method33311(), class9138.method33312(), class9138.method33313());
         return this.field18501;
     }
     
     @Override
-    public Class9138 method12420(final float n, final float n2, final float n3) {
+    public Vector3f method12420(final float n, final float n2, final float n3) {
         this.field18501.method33317(n, n2, n3);
         return this.field18501;
     }

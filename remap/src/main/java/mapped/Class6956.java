@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.HashSet;
-import java.util.function.Consumer;
 import java.util.stream.Stream;
 import com.google.common.collect.Sets;
 import java.util.List;
@@ -27,17 +26,17 @@ public class Class6956<T> implements Class6952<T>
     }
     
     @Override
-    public boolean method21340(final Class354 class354, final T t) {
+    public boolean method21340(final BlockPos class354, final T t) {
         return false;
     }
     
     @Override
-    public void method21341(final Class354 class354, final T t, final int n, final Class1955 class355) {
+    public void method21341(final BlockPos class354, final T t, final int n, final Class1955 class355) {
         this.field27232.add(new Class7460<T>(class354, t, n, class355));
     }
     
     @Override
-    public boolean method21342(final Class354 class354, final T t) {
+    public boolean method21342(final BlockPos class354, final T t) {
         return false;
     }
     
@@ -60,7 +59,7 @@ public class Class6956<T> implements Class6952<T>
             final Class51 method346 = class52.method346(i);
             final T apply = function2.apply(new Class1932(method346.method323("i")));
             if (apply != null) {
-                hashSet.add(new Class7460(new Class354(method346.method319("x"), method346.method319("y"), method346.method319("z")), apply, method346.method319("t"), Class1955.method7940(method346.method319("p"))));
+                hashSet.add(new Class7460(new BlockPos(method346.method319("x"), method346.method319("y"), method346.method319("z")), apply, method346.method319("t"), Class1955.method7940(method346.method319("p"))));
             }
         }
         return new Class6956<T>((Function<Object, Class1932>)function, hashSet);

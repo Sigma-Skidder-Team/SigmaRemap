@@ -12,7 +12,7 @@ public interface Class5491 extends Class5490
     
     double method16762();
     
-    Class354 method16764();
+    BlockPos method16764();
     
     Class7096 method16765();
     

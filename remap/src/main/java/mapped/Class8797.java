@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class8797
 {
     private static String[] field36987;
@@ -23,8 +26,8 @@ public class Class8797
         this.method30678(n, n2, n3);
     }
     
-    public Class8797(final Class354 class354) {
-        this.method30678(class354.method1074(), class354.method1075(), class354.method1076());
+    public Class8797(final BlockPos class354) {
+        this.method30678(class354.getX(), class354.getY(), class354.getZ());
     }
     
     public void method30678(final double field36988, final double field36989, final double field36990) {
@@ -61,22 +64,22 @@ public class Class8797
         return this.field36990;
     }
     
-    public Class5487 method30686() {
-        return new Class5487(this.method30683(), this.method30684(), this.method30685()).method16744(0.5, 0.0, 0.5);
+    public Vec3d method30686() {
+        return new Vec3d(this.method30683(), this.method30684(), this.method30685()).method16744(0.5, 0.0, 0.5);
     }
     
-    public float method30687(final Class399 class399) {
+    public float method30687(final Entity class399) {
         final double n = class399.field2395 - this.method30683();
         final double n2 = class399.field2396 - this.method30684();
         final double n3 = class399.field2397 - this.method30685();
-        return Class9546.method35641(n * n + n2 * n2 + n3 * n3);
+        return MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
     }
     
     public float method30688(final Class8797 class8797) {
         final double n = class8797.method30683() - this.method30683();
         final double n2 = class8797.method30684() - this.method30684();
         final double n3 = class8797.method30685() - this.method30685();
-        return Class9546.method35641(n * n + n2 * n2 + n3 * n3);
+        return MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
     }
     
     public double method30689(final Class8797 class8797) {
@@ -94,8 +97,8 @@ public class Class8797
         return Math.abs(class8797.method30683() - this.method30683()) + Math.abs(class8797.method30685() - this.method30685()) + Math.abs(class8797.method30684() - this.method30684());
     }
     
-    public Class354 method30692() {
-        return new Class354(this.method30683(), this.method30684(), this.method30685());
+    public BlockPos method30692() {
+        return new BlockPos(this.method30683(), this.method30684(), this.method30685());
     }
     
     public boolean method30693() {
@@ -119,7 +122,7 @@ public class Class8797
         return false;
     }
     
-    public static boolean method30695(final Class354 class354) {
+    public static boolean method30695(final BlockPos class354) {
         for (final Class8422 class355 : Class8797.field36993) {
             final Class7096 method6701 = Class8797.field36991.field4683.method6701(class354.method1133(class355.field34567, class355.field34568, class355.field34569));
             if (method6701.method21696() == Class7521.field29173 || method6701.method21696() == Class7521.field29174) {
@@ -129,7 +132,7 @@ public class Class8797
         return false;
     }
     
-    public static boolean method30696(final Class354 class354) {
+    public static boolean method30696(final BlockPos class354) {
         for (final Class8422 class355 : Class8797.field36993) {
             if (Class8797.field36991.field4683.method6701(class354.method1133(class355.field34567, class355.field34568, class355.field34569)).method21706()) {
                 return false;
@@ -165,12 +168,12 @@ public class Class8797
         return true;
     }
     
-    public boolean method30699(final Class354 class354) {
+    public boolean method30699(final BlockPos class354) {
         return this.field36992.field36694.contains(class354.method1132()) || Class869.method5277().field4683.method6701(class354).method21727(Class8797.field36991.field4683, class354).method24540();
     }
     
     public boolean method30700() {
-        final Class354 method30692 = this.method30692();
+        final BlockPos method30692 = this.method30692();
         return !this.field36992.field36694.contains(this.method30692().method1132()) && !Class869.method5277().field4683.method6701(method30692).method21727(Class8797.field36991.field4683, method30692).method24540() && Class869.method5277().field4683.method6701(method30692).method21727(Class8797.field36991.field4683, method30692).method24537().method18507() == 1.0;
     }
     

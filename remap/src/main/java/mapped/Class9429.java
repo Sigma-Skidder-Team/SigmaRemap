@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.Random;
+
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.tuple.Triple;
 import com.mojang.datafixers.util.Pair;
 
@@ -27,7 +29,7 @@ public final class Class9429
     public Class9429() {
     }
     
-    public Class9429(final Class9389 class9389) {
+    public Class9429(final Quaternion class9389) {
         final float method34899 = class9389.method34899();
         final float method34900 = class9389.method34900();
         final float method34901 = class9389.method34901();
@@ -89,7 +91,7 @@ public final class Class9429
         if (Class9429.field40438 * n2 * n2 >= n4 * n4) {
             return (Pair<Float, Float>)Pair.of((Object)Class9429.field40440, (Object)Class9429.field40439);
         }
-        final float method35694 = Class9546.method35694(n2 * n2 + n4 * n4);
+        final float method35694 = MathHelper.method35694(n2 * n2 + n4 * n4);
         return (Pair<Float, Float>)Pair.of((Object)(method35694 * n2), (Object)(method35694 * n4));
     }
     
@@ -102,22 +104,22 @@ public final class Class9429
             n2 = n3;
             n3 = n4;
         }
-        final float method35694 = Class9546.method35694(n3 * n3 + n2 * n2);
+        final float method35694 = MathHelper.method35694(n3 * n3 + n2 * n2);
         return (Pair<Float, Float>)Pair.of((Object)(n2 * method35694), (Object)(n3 * method35694));
     }
     
-    private static Class9389 method35035(final Class9429 class9429) {
+    private static Quaternion method35035(final Class9429 class9429) {
         final Class9429 class9430 = new Class9429();
-        final Class9389 method34910 = Class9389.field40291.method34910();
+        final Quaternion method34910 = Quaternion.ONE.copy();
         if (class9429.field40443 * class9429.field40443 + class9429.field40445 * class9429.field40445 > 1.0E-6f) {
             final Pair<Float, Float> method34911 = method35033(class9429.field40442, 0.5f * (class9429.field40443 + class9429.field40445), class9429.field40446);
             final Float n = (Float)method34911.getFirst();
             final Float n2 = (Float)method34911.getSecond();
-            final Class9389 class9431 = new Class9389(0.0f, 0.0f, n, n2);
+            final Quaternion class9431 = new Quaternion(0.0f, 0.0f, n, n2);
             final float n3 = n2 * n2 - n * n;
             final float field40443 = -2.0f * n * n2;
             final float field40444 = n2 * n2 + n * n;
-            method34910.method34903(class9431);
+            method34910.multiply(class9431);
             class9430.method35039();
             class9430.field40442 = n3;
             class9430.field40446 = n3;
@@ -133,11 +135,11 @@ public final class Class9429
             final Pair<Float, Float> method34912 = method35033(class9429.field40442, 0.5f * (class9429.field40444 + class9429.field40448), class9429.field40450);
             final float n4 = -(float)method34912.getFirst();
             final Float n5 = (Float)method34912.getSecond();
-            final Class9389 class9432 = new Class9389(0.0f, n4, 0.0f, n5);
+            final Quaternion class9432 = new Quaternion(0.0f, n4, 0.0f, n5);
             final float n6 = n5 * n5 - n4 * n4;
             final float field40445 = -2.0f * n4 * n5;
             final float field40446 = n5 * n5 + n4 * n4;
-            method34910.method34903(class9432);
+            method34910.multiply(class9432);
             class9430.method35039();
             class9430.field40442 = n6;
             class9430.field40450 = n6;
@@ -153,11 +155,11 @@ public final class Class9429
             final Pair<Float, Float> method34913 = method35033(class9429.field40446, 0.5f * (class9429.field40447 + class9429.field40449), class9429.field40450);
             final Float n7 = (Float)method34913.getFirst();
             final Float n8 = (Float)method34913.getSecond();
-            final Class9389 class9433 = new Class9389(n7, 0.0f, 0.0f, n8);
+            final Quaternion class9433 = new Quaternion(n7, 0.0f, 0.0f, n8);
             final float n9 = n8 * n8 - n7 * n7;
             final float field40447 = -2.0f * n7 * n8;
             final float field40448 = n8 * n8 + n7 * n7;
-            method34910.method34903(class9433);
+            method34910.multiply(class9433);
             class9430.method35039();
             class9430.field40446 = n9;
             class9430.field40450 = n9;
@@ -184,14 +186,14 @@ public final class Class9429
         this.field40449 = field40445;
     }
     
-    public Triple<Class9389, Class9138, Class9389> method35037() {
-        final Class9389 method34910 = Class9389.field40291.method34910();
-        final Class9389 method34911 = Class9389.field40291.method34910();
+    public Triple<Quaternion, Vector3f, Quaternion> method35037() {
+        final Quaternion method34910 = Quaternion.ONE.copy();
+        final Quaternion method34911 = Quaternion.ONE.copy();
         final Class9429 method34912 = this.method35045();
         method34912.method35036();
         method34912.method35042(this);
         for (int i = 0; i < 5; ++i) {
-            method34911.method34903(method35035(method34912));
+            method34911.multiply(method35035(method34912));
         }
         method34911.method34909();
         final Class9429 class9429 = new Class9429(this);
@@ -203,7 +205,7 @@ public final class Class9429
         final float n4 = n3 * n3 - n2 * n2;
         final float field40445 = -2.0f * n2 * n3;
         final float field40446 = n3 * n3 + n2 * n2;
-        method34910.method34903(new Class9389(0.0f, 0.0f, n2, n3));
+        method34910.multiply(new Quaternion(0.0f, 0.0f, n2, n3));
         final Class9429 class9430 = new Class9429();
         class9430.method35039();
         class9430.field40442 = n4;
@@ -219,7 +221,7 @@ public final class Class9429
         final float n8 = n7 * n7 - n6 * n6;
         final float field40447 = -2.0f * n6 * n7;
         final float field40448 = n7 * n7 + n6 * n6;
-        method34910.method34903(new Class9389(0.0f, n6, 0.0f, n7));
+        method34910.multiply(new Quaternion(0.0f, n6, 0.0f, n7));
         final Class9429 class9431 = new Class9429();
         class9431.method35039();
         class9431.field40442 = n8;
@@ -235,7 +237,7 @@ public final class Class9429
         final float n12 = n11 * n11 - n10 * n10;
         final float field40449 = -2.0f * n10 * n11;
         final float field40450 = n11 * n11 + n10 * n10;
-        method34910.method34903(new Class9389(n10, 0.0f, 0.0f, n11));
+        method34910.multiply(new Quaternion(n10, 0.0f, 0.0f, n11));
         final Class9429 class9432 = new Class9429();
         class9432.method35039();
         class9432.field40446 = n12;
@@ -247,7 +249,7 @@ public final class Class9429
         class9432.method35042(class9431);
         final float n14 = 1.0f / n13;
         method34910.method34904((float)Math.sqrt(n14));
-        return (Triple<Class9389, Class9138, Class9389>)Triple.of((Object)method34910, (Object)new Class9138(class9432.field40442 * n14, class9432.field40446 * n14, class9432.field40450 * n14), (Object)method34911);
+        return (Triple<Quaternion, Vector3f, Quaternion>)Triple.of((Object)method34910, (Object)new Vector3f(class9432.field40442 * n14, class9432.field40446 * n14, class9432.field40450 * n14), (Object)method34911);
     }
     
     @Override
@@ -388,7 +390,7 @@ public final class Class9429
         this.field40450 = field40450;
     }
     
-    public void method35043(final Class9389 class9389) {
+    public void method35043(final Quaternion class9389) {
         final float method34899 = class9389.method34899();
         final float method34900 = class9389.method34900();
         final float method34901 = class9389.method34901();

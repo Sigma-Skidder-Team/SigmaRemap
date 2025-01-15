@@ -4,25 +4,27 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Optional;
 import java.util.List;
 
 public class Class6440 implements Class6438
 {
-    private final Class399 field25568;
+    private final Entity field25568;
     
-    public Class6440(final Class399 field25568) {
+    public Class6440(final Entity field25568) {
         this.field25568 = field25568;
     }
     
     @Override
-    public Class354 method19204() {
-        return new Class354(this.field25568);
+    public BlockPos method19204() {
+        return new BlockPos(this.field25568);
     }
     
     @Override
-    public Class5487 method19205() {
-        return new Class5487(this.field25568.method1938(), this.field25568.method1944(), this.field25568.method1945());
+    public Vec3d method19205() {
+        return new Vec3d(this.field25568.method1938(), this.field25568.method1944(), this.field25568.method1945());
     }
     
     @Override

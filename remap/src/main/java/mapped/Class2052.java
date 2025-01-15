@@ -7,6 +7,8 @@ package mapped;
 import java.util.ArrayList;
 import java.util.Collections;
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 import java.util.Random;
 
@@ -85,16 +87,16 @@ public enum Class2052
         return this;
     }
     
-    public Class179 method8142(final Class179 class179) {
-        if (class179.method790() == Class111.field352) {
+    public Direction method8142(final Direction class179) {
+        if (class179.getAxis() == Axis.Y) {
             return class179;
         }
         switch (Class8513.field34925[this.ordinal()]) {
             case 2: {
-                return class179.method783();
+                return class179.rotateY();
             }
             case 3: {
-                return class179.method782();
+                return class179.getOpposite();
             }
             case 4: {
                 return class179.method784();

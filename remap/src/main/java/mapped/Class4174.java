@@ -5,10 +5,11 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture$Type;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 
 public class Class4174 extends Class4158<Class493>
@@ -24,11 +25,11 @@ public class Class4174 extends Class4158<Class493>
         final float method2504 = class493.method2504(n);
         final Class7096 method2505 = class493.method2194();
         final boolean b = method2505.method21696() instanceof Class3933;
-        final Class179 class496 = b ? method2505.method21772((Class7111<Class179>)Class3933.field17814) : null;
-        method12498(class496, 22.5f * (b ? ((2 + class496.method780()) * 4) : method2505.method21772((Class7111<Integer>)Class3936.field17819)), ((Class3932)method2505.method21696()).method12050(), class493.method2505(), method2504, class494, class495, n2);
+        final Direction class496 = b ? method2505.method21772((Class7111<Direction>)Class3933.field17814) : null;
+        method12498(class496, 22.5f * (b ? ((2 + class496.getHorizontalIndex()) * 4) : method2505.method21772((Class7111<Integer>)Class3936.field17819)), ((Class3932)method2505.method21696()).method12050(), class493.method2505(), method2504, class494, class495, n2);
     }
     
-    public static void method12498(final Class179 class179, final float n, final Class299 class180, final GameProfile gameProfile, final float n2, final Class7351 class181, final Class7807 class182, final int n3) {
+    public static void method12498(final Direction class179, final float n, final Class299 class180, final GameProfile gameProfile, final float n2, final Class7351 class181, final Class7807 class182, final int n3) {
         final Class5918 class183 = Class4174.field18591.get(class180);
         class181.method22567();
         if (class179 == null) {

@@ -5,7 +5,8 @@
 package mapped;
 
 import java.util.List;
-import java.util.Iterator;
+
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 import java.util.HashMap;
@@ -89,7 +90,7 @@ public class Class3277 extends Class3167
     public void method10325(final Class5739 class5739) {
         if (this.method9906()) {
             this.field15776.clear();
-            for (final Class399 class5740 : Class3277.field15514.field4683.method6806()) {
+            for (final Entity class5740 : Class3277.field15514.field4683.method6806()) {
                 if (!(class5740 instanceof Class512)) {
                     continue;
                 }

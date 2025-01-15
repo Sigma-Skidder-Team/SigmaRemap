@@ -4,19 +4,20 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 
 public class Class9219
 {
     private static String[] field39553;
-    public final Class9138 field39554;
-    public final Class9138 field39555;
-    public final Map<Class179, Class8111> field39556;
+    public final Vector3f field39554;
+    public final Vector3f field39555;
+    public final Map<Direction, Class8111> field39556;
     public final Class8225 field39557;
     public final boolean field39558;
     
-    public Class9219(final Class9138 field39554, final Class9138 field39555, final Map<Class179, Class8111> field39556, final Class8225 field39557, final boolean field39558) {
+    public Class9219(final Vector3f field39554, final Vector3f field39555, final Map<Direction, Class8111> field39556, final Class8225 field39557, final boolean field39558) {
         this.field39554 = field39554;
         this.field39555 = field39555;
         this.field39556 = field39556;
@@ -27,11 +28,11 @@ public class Class9219
     
     private void method34001() {
         for (final Map.Entry entry : this.field39556.entrySet()) {
-            ((Class8111)entry.getValue()).field33426.method28167(this.method34002((Class179)entry.getKey()));
+            ((Class8111)entry.getValue()).field33426.method28167(this.method34002((Direction)entry.getKey()));
         }
     }
     
-    private float[] method34002(final Class179 class179) {
+    private float[] method34002(final Direction class179) {
         switch (Class7789.field31877[class179.ordinal()]) {
             case 1: {
                 return new float[] { this.field39554.method33311(), 16.0f - this.field39555.method33313(), this.field39555.method33311(), 16.0f - this.field39554.method33313() };

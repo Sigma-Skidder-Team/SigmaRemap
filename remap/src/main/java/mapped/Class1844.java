@@ -10,6 +10,8 @@ import com.google.common.collect.Lists;
 import com.ibm.icu.text.ArabicShapingException;
 import com.ibm.icu.text.Bidi;
 import com.ibm.icu.text.ArabicShaping;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -109,7 +111,7 @@ public class Class1844 implements AutoCloseable
             this.method6615(method6611, method6612, n, n2, true, class6789, class6790, b2, n3, n4);
         }
         final Class6789 method6613 = class6789.method20758();
-        method6613.method20757(new Class9138(0.0f, 0.0f, 0.001f));
+        method6613.method20757(new Vector3f(0.0f, 0.0f, 0.001f));
         method6612 = this.method6615(method6611, method6612, n, n2, false, method6613, class6790, b2, n3, n4);
         if (this.field10033) {
             Class8933.method31679(this.field10034);
@@ -255,7 +257,7 @@ public class Class1844 implements AutoCloseable
                     n += this.method6631(char1).method8080(b);
                 }
             }
-            return Class9546.method35649(n);
+            return MathHelper.method35649(n);
         }
         return 0;
     }

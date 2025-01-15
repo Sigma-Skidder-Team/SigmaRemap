@@ -16,11 +16,11 @@ public class Class7141 extends Class7139<Class6929>
         super(function);
     }
     
-    public Stream<Class354> method21900(final Random random, final Class6929 class6932, final Class354 class6930) {
+    public Stream<BlockPos> method21900(final Random random, final Class6929 class6932, final BlockPos class6930) {
         return IntStream.range(0, class6932.field27148).mapToObj(p4 -> {
             final Object field27150 = class6932.field27150;
             final Object field27151 = class6932.field27149;
-            return new Class354(random2.nextInt(16) + class6931.method1074(), random2.nextInt(n2) + random2.nextInt(n2) - n2 + n3, random2.nextInt(16) + class6931.method1076());
+            return new BlockPos(random2.nextInt(16) + class6931.method1074(), random2.nextInt(n2) + random2.nextInt(n2) - n2 + n3, random2.nextInt(16) + class6931.method1076());
         });
     }
 }

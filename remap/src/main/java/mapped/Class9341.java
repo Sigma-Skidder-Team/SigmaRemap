@@ -28,8 +28,8 @@ public class Class9341
         this.field40106 = new Class6221(field40101 - field40103, 0.0, field40102 - field40103, field40101 + field40103, 256.0, field40102 + field40103);
     }
     
-    public boolean method34618(final Class354 class354) {
-        return class354.method1074() >> 4 == this.field40101 >> 4 && class354.method1076() >> 4 == this.field40102 >> 4;
+    public boolean method34618(final BlockPos class354) {
+        return class354.getX() >> 4 == this.field40101 >> 4 && class354.getZ() >> 4 == this.field40102 >> 4;
     }
     
     public int method34619() {

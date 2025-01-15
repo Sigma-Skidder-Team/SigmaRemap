@@ -42,11 +42,11 @@ public class Class3265 extends Class3247
         final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new Class6221(n - n3, Class3265.field15514.field4684.field2403.field25074, n2 - n3, n + n3, Class3265.field15514.field4684.field2403.field25074 + n4, n2 + n3)).toArray();
         final int length = array.length;
         Class7096 class5746 = null;
-        Class354 class5747 = null;
+        BlockPos class5747 = null;
         double field25077 = 0.0;
         for (int i = 0; i < length; ++i) {
             final Class7702 class5748 = (Class7702)array[i];
-            final Class354 class5749 = new Class354(class5748.method24535(Class111.field351), class5748.method24535(Class111.field352), class5748.method24535(Class111.field353));
+            final BlockPos class5749 = new BlockPos(class5748.method24535(Axis.X), class5748.method24535(Axis.Y), class5748.method24535(Axis.Z));
             final Class7096 method6701 = Class3265.field15514.field4683.method6701(class5749);
             if (class5746 == null || class5748.method24537().field25077 > field25077) {
                 class5746 = method6701;

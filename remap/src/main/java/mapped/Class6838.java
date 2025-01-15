@@ -4,16 +4,18 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class6838 extends Class6831
 {
     private static String[] field26849;
-    private final Class399 field26850;
+    private final Entity field26850;
     
-    public Class6838(final Class7795 class7795, final Class286 class7796, final Class399 class7797) {
+    public Class6838(final Class7795 class7795, final Class286 class7796, final Entity class7797) {
         this(class7795, class7796, 1.0f, 1.0f, class7797);
     }
     
-    public Class6838(final Class7795 class7795, final Class286 class7796, final float field26835, final float field26836, final Class399 field26837) {
+    public Class6838(final Class7795 class7795, final Class286 class7796, final float field26835, final float field26836, final Entity field26837) {
         super(class7795, class7796);
         this.field26835 = field26835;
         this.field26836 = field26836;

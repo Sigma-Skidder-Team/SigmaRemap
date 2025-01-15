@@ -11,12 +11,12 @@ public enum Class309
         }
         
         @Override
-        public int method982(final int n, final int n2, final int n3, final Class111 class111) {
-            return class111.method604(n, n2, n3);
+        public int method982(final int n, final int n2, final int n3, final Axis class111) {
+            return class111.getCoordinate(n, n2, n3);
         }
         
         @Override
-        public Class111 method983(final Class111 class111) {
+        public Axis method983(final Axis class111) {
             return class111;
         }
         
@@ -30,12 +30,12 @@ public enum Class309
         }
         
         @Override
-        public int method982(final int n, final int n2, final int n3, final Class111 class111) {
-            return class111.method604(n3, n, n2);
+        public int method982(final int n, final int n2, final int n3, final Axis class111) {
+            return class111.getCoordinate(n3, n, n2);
         }
         
         @Override
-        public Class111 method983(final Class111 class111) {
+        public Axis method983(final Axis class111) {
             return Class312.field1840[Math.floorMod(class111.ordinal() + 1, 3)];
         }
         
@@ -49,12 +49,12 @@ public enum Class309
         }
         
         @Override
-        public int method982(final int n, final int n2, final int n3, final Class111 class111) {
-            return class111.method604(n2, n3, n);
+        public int method982(final int n, final int n2, final int n3, final Axis class111) {
+            return class111.getCoordinate(n2, n3, n);
         }
         
         @Override
-        public Class111 method983(final Class111 class111) {
+        public Axis method983(final Axis class111) {
             return Class310.field1840[Math.floorMod(class111.ordinal() - 1, 3)];
         }
         
@@ -64,21 +64,21 @@ public enum Class309
         }
     };
     
-    public static final Class111[] field1840;
+    public static final Axis[] field1840;
     public static final Class309[] field1841;
     
-    public abstract int method982(final int p0, final int p1, final int p2, final Class111 p3);
+    public abstract int method982(final int p0, final int p1, final int p2, final Axis p3);
     
-    public abstract Class111 method983(final Class111 p0);
+    public abstract Axis method983(final Axis p0);
     
     public abstract Class309 method984();
     
-    public static Class309 method985(final Class111 class111, final Class111 class112) {
+    public static Class309 method985(final Axis class111, final Axis class112) {
         return Class309.field1841[Math.floorMod(class112.ordinal() - class111.ordinal(), 3)];
     }
     
     static {
-        field1840 = Class111.values();
+        field1840 = Axis.values();
         field1841 = values();
     }
 }

@@ -38,12 +38,12 @@ public class Class6951<T> implements Class6952<T>
         return Class7532.method23599(this.field27218);
     }
     
-    public void method21339(final Class6952<T> class6952, final Function<Class354, T> function) {
+    public void method21339(final Class6952<T> class6952, final Function<BlockPos, T> function) {
         for (int i = 0; i < this.field27218.length; ++i) {
             if (this.field27218[i] != null) {
                 final ShortListIterator iterator = this.field27218[i].iterator();
                 while (((Iterator)iterator).hasNext()) {
-                    final Class354 method7101 = Class1865.method7101((short)((Iterator)iterator).next(), i, this.field27217);
+                    final BlockPos method7101 = Class1865.method7101((short)((Iterator)iterator).next(), i, this.field27217);
                     class6952.method21345(method7101, function.apply(method7101), 0);
                 }
                 this.field27218[i].clear();
@@ -52,17 +52,17 @@ public class Class6951<T> implements Class6952<T>
     }
     
     @Override
-    public boolean method21340(final Class354 class354, final T t) {
+    public boolean method21340(final BlockPos class354, final T t) {
         return false;
     }
     
     @Override
-    public void method21341(final Class354 class354, final T t, final int n, final Class1955 class355) {
-        Class1860.method7042(this.field27218, class354.method1075() >> 4).add(Class1865.method7100(class354));
+    public void method21341(final BlockPos class354, final T t, final int n, final Class1955 class355) {
+        Class1860.method7042(this.field27218, class354.getY() >> 4).add(Class1865.method7100(class354));
     }
     
     @Override
-    public boolean method21342(final Class354 class354, final T t) {
+    public boolean method21342(final BlockPos class354, final T t) {
         return false;
     }
     

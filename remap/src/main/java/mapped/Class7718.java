@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.HashSet;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
@@ -108,7 +110,7 @@ public class Class7718 implements Class7712
                     this.field30686 = this.method24630(127, 127);
                 }
                 if (this.field30683 == 1) {
-                    this.field30686 = this.method24636(Class7102.field27633, new Class354(0, 64, 0));
+                    this.field30686 = this.method24636(Class7102.field27633, new BlockPos(0, 64, 0));
                 }
             }
         }
@@ -259,11 +261,11 @@ public class Class7718 implements Class7712
     }
     
     @Override
-    public int method24616(final Class7096 class7096, final Class1856 class7097, final Class354 class7098) {
+    public int method24616(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
         return this.method24632(class7097, class7098);
     }
     
-    public int method24632(final Class1856 class1856, final Class354 class1857) {
+    public int method24632(final Class1856 class1856, final BlockPos class1857) {
         return this.method24633(Class8763.method30337(class1856, class1857), class1857);
     }
     
@@ -272,7 +274,7 @@ public class Class7718 implements Class7712
         return this.field30683 == 2;
     }
     
-    public int method24633(final Class3090 class3090, final Class354 class3091) {
+    public int method24633(final Class3090 class3090, final BlockPos class3091) {
         if (this.field30683 != 0) {
             return (this.field30683 != 1) ? this.field30686 : this.method24636(class3090, class3091);
         }
@@ -281,9 +283,9 @@ public class Class7718 implements Class7712
     
     public int method24634(final Class1856 class1856, final double n, final double n2, final double n3, final int n4) {
         if (this.field30683 != 2) {
-            final int method35644 = Class9546.method35644(n);
-            final int method35645 = Class9546.method35644(n2);
-            final int method35646 = Class9546.method35644(n3);
+            final int method35644 = MathHelper.floor(n);
+            final int method35645 = MathHelper.floor(n2);
+            final int method35646 = MathHelper.floor(n3);
             int n5 = 0;
             int n6 = 0;
             int n7 = 0;
@@ -304,16 +306,16 @@ public class Class7718 implements Class7712
         return this.field30686;
     }
     
-    private int method24635(final Class3090 class3090, final Class354 class3091) {
-        final double n = Class9546.method35653(class3090.method9845(class3091), 0.0f, 1.0f);
-        return this.method24630((int)((1.0 - n) * (this.field30689 - 1)), (int)((1.0 - Class9546.method35653(class3090.method9863(), 0.0f, 1.0f) * n) * (this.field30690 - 1)));
+    private int method24635(final Class3090 class3090, final BlockPos class3091) {
+        final double n = MathHelper.method35653(class3090.method9845(class3091), 0.0f, 1.0f);
+        return this.method24630((int)((1.0 - n) * (this.field30689 - 1)), (int)((1.0 - MathHelper.method35653(class3090.method9863(), 0.0f, 1.0f) * n) * (this.field30690 - 1)));
     }
     
-    private int method24636(final Class3090 class3090, final Class354 class3091) {
+    private int method24636(final Class3090 class3090, final BlockPos class3091) {
         final int method504 = Class90.field217.method504(class3090);
-        int n = class3091.method1075() - this.field30688;
+        int n = class3091.getY() - this.field30688;
         if (this.field30687 > 0) {
-            n += (Class8571.method28967(class3091.method1074() << 16 + class3091.method1076()) & 0xFF) % (this.field30687 * 2 + 1) - this.field30687;
+            n += (Class8571.method28967(class3091.getX() << 16 + class3091.getZ()) & 0xFF) % (this.field30687 * 2 + 1) - this.field30687;
         }
         return this.method24630(method504, n);
     }

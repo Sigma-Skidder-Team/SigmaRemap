@@ -4,22 +4,24 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public enum Class2065
 {
-    field11820("this", (Class7915<? extends Class399>)Class6683.field26362), 
-    field11821("killer", (Class7915<? extends Class399>)Class6683.field26365), 
-    field11822("direct_killer", (Class7915<? extends Class399>)Class6683.field26366), 
-    field11823("killer_player", (Class7915<? extends Class399>)Class6683.field26363);
+    field11820("this", (Class7915<? extends Entity>)Class6683.field26362),
+    field11821("killer", (Class7915<? extends Entity>)Class6683.field26365),
+    field11822("direct_killer", (Class7915<? extends Entity>)Class6683.field26366),
+    field11823("killer_player", (Class7915<? extends Entity>)Class6683.field26363);
     
     private final String field11824;
-    private final Class7915<? extends Class399> field11825;
+    private final Class7915<? extends Entity> field11825;
     
-    private Class2065(final String field11824, final Class7915<? extends Class399> field11825) {
+    private Class2065(final String field11824, final Class7915<? extends Entity> field11825) {
         this.field11824 = field11824;
         this.field11825 = field11825;
     }
     
-    public Class7915<? extends Class399> method8153() {
+    public Class7915<? extends Entity> method8153() {
         return this.field11825;
     }
     

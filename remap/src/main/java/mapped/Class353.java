@@ -4,11 +4,16 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3i;
+
 import java.util.Spliterator;
 import java.util.stream.StreamSupport;
 import java.util.stream.Stream;
 
-public class Class353 extends Class352
+public class Class353 extends Vec3i
 {
     private static String[] field2170;
     
@@ -20,24 +25,24 @@ public class Class353 extends Class352
         return new Class353(n, n2, n3);
     }
     
-    public static Class353 method1089(final Class354 class354) {
-        return new Class353(method1095(class354.method1074()), method1095(class354.method1075()), method1095(class354.method1076()));
+    public static Class353 method1089(final BlockPos class354) {
+        return new Class353(method1095(class354.getX()), method1095(class354.getY()), method1095(class354.getZ()));
     }
     
     public static Class353 method1090(final Class7859 class7859, final int n) {
         return new Class353(class7859.field32290, n, class7859.field32291);
     }
     
-    public static Class353 method1091(final Class399 class399) {
-        return new Class353(method1095(Class9546.method35644(class399.method1938())), method1095(Class9546.method35644(class399.method1941())), method1095(Class9546.method35644(class399.method1945())));
+    public static Class353 method1091(final Entity class399) {
+        return new Class353(method1095(MathHelper.floor(class399.method1938())), method1095(MathHelper.floor(class399.method1941())), method1095(MathHelper.floor(class399.method1945())));
     }
     
     public static Class353 method1092(final long n) {
         return new Class353(method1099(n), method1100(n), method1101(n));
     }
     
-    public static long method1093(final long n, final Class179 class179) {
-        return method1094(n, class179.method785(), class179.method786(), class179.method787());
+    public static long method1093(final long n, final Direction class179) {
+        return method1094(n, class179.getXOffset(), class179.getYOffset(), class179.getZOffset());
     }
     
     public static long method1094(final long n, final int n2, final int n3, final int n4) {
@@ -52,8 +57,8 @@ public class Class353 extends Class352
         return n & 0xF;
     }
     
-    public static short method1097(final Class354 class354) {
-        return (short)(method1096(class354.method1074()) << 8 | method1096(class354.method1076()) << 4 | method1096(class354.method1075()));
+    public static short method1097(final BlockPos class354) {
+        return (short)(method1096(class354.getX()) << 8 | method1096(class354.getZ()) << 4 | method1096(class354.getY()));
     }
     
     public static int method1098(final int n) {
@@ -73,15 +78,15 @@ public class Class353 extends Class352
     }
     
     public int method1102() {
-        return this.method1074();
+        return this.getX();
     }
     
     public int method1103() {
-        return this.method1075();
+        return this.getY();
     }
     
     public int method1104() {
-        return this.method1076();
+        return this.getZ();
     }
     
     public int method1105() {
@@ -109,18 +114,18 @@ public class Class353 extends Class352
     }
     
     public static long method1111(final long n) {
-        return method1116(method1095(Class354.method1126(n)), method1095(Class354.method1127(n)), method1095(Class354.method1128(n)));
+        return method1116(method1095(BlockPos.method1126(n)), method1095(BlockPos.method1127(n)), method1095(BlockPos.method1128(n)));
     }
     
     public static long method1112(final long n) {
         return n & 0xFFFFFFFFFFF00000L;
     }
     
-    public Class354 method1113() {
-        return new Class354(method1098(this.method1102()), method1098(this.method1103()), method1098(this.method1104()));
+    public BlockPos method1113() {
+        return new BlockPos(method1098(this.method1102()), method1098(this.method1103()), method1098(this.method1104()));
     }
     
-    public Class354 method1114() {
+    public BlockPos method1114() {
         return this.method1113().method1134(8, 8, 8);
     }
     
@@ -136,8 +141,8 @@ public class Class353 extends Class352
         return method1116(this.method1102(), this.method1103(), this.method1104());
     }
     
-    public Stream<Class354> method1118() {
-        return Class354.method1157(this.method1105(), this.method1106(), this.method1107(), this.method1108(), this.method1109(), this.method1110());
+    public Stream<BlockPos> method1118() {
+        return BlockPos.method1157(this.method1105(), this.method1106(), this.method1107(), this.method1108(), this.method1109(), this.method1110());
     }
     
     public static Stream<Class353> method1119(final Class353 class353, final int n) {

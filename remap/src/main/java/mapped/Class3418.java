@@ -7,6 +7,8 @@ package mapped;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Set;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public abstract class Class3418
     }
     
     public static boolean method10866(final Class7318 class7318, final Class512 class7319, final Class3833 class7320) {
-        return class7318.method22436((class7325, class7326) -> class7325.method6701(class7326).method21696() == class7321 && class7323.method1733(class7326.method1074() + 0.5, class7326.method1075() + 0.5, class7326.method1076() + 0.5) <= 64.0, Boolean.valueOf(true));
+        return class7318.method22436((class7325, class7326) -> class7325.method6701(class7326).method21696() == class7321 && class7323.method1733(class7326.getX() + 0.5, class7326.getY() + 0.5, class7326.getZ() + 0.5) <= 64.0, Boolean.valueOf(true));
     }
     
     public Class8471<?> method10867() {
@@ -652,7 +654,7 @@ public abstract class Class3418
     public static void method10895(final Set<Class6601> set, final int n, final Class8321 class8321, final int n2) {
         switch (n) {
             case 0: {
-                class8321.method27691(Class9546.method35642(class8321.method27690() / (float)set.size()));
+                class8321.method27691(MathHelper.method35642(class8321.method27690() / (float)set.size()));
                 break;
             }
             case 1: {
@@ -686,7 +688,7 @@ public abstract class Class3418
                     ++n;
                 }
             }
-            return Class9546.method35642(n2 / class446.method2239() * 14.0f) + ((n > 0) ? 1 : 0);
+            return MathHelper.method35642(n2 / class446.method2239() * 14.0f) + ((n > 0) ? 1 : 0);
         }
         return 0;
     }

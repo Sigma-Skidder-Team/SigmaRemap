@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -272,9 +274,9 @@ public class Class6741
     }
     
     private float method20521(final Class1847 class1847) {
-        final Class399 method5303 = Class869.method5277().method5303();
+        final Entity method5303 = Class869.method5277().method5303();
         if (method5303 != null) {
-            final Class354 method5304 = method5303.method1894();
+            final BlockPos method5304 = method5303.method1894();
             if (this.field26516 != null) {
                 final Class3090 method5305 = class1847.method6959(method5304);
                 if (method5305 == null) {
@@ -284,7 +286,7 @@ public class Class6741
                     return 0.0f;
                 }
             }
-            return (this.field26517 != null && !this.field26517.method24697(method5304.method1075())) ? 0.0f : 1.0f;
+            return (this.field26517 != null && !this.field26517.method24697(method5304.getY())) ? 0.0f : 1.0f;
         }
         return 0.0f;
     }

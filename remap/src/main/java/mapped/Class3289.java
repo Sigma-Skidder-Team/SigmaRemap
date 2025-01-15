@@ -26,7 +26,7 @@ public class Class3289 extends Class3167
     private int field15839;
     private int field15840;
     private int field15841;
-    private Class354 field15842;
+    private BlockPos field15842;
     private int field15843;
     public List<Class6824> field15844;
     private double field15845;
@@ -238,7 +238,7 @@ public class Class3289 extends Class3167
         return byteBuffer;
     }
     
-    public static int method10409(Class354 method1139) {
+    public static int method10409(BlockPos method1139) {
         final float n = 1.0f;
         if (Class3289.field15514.field4683.method6701(method1139).method21696() == Class7521.field29147) {
             method1139 = method1139.method1139();

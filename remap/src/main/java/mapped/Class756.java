@@ -4,11 +4,14 @@
 
 package mapped;
 
-import java.util.stream.Stream;
 import java.util.Collections;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class756 extends Class754
@@ -81,7 +84,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public boolean method1780(final Class399 class399, final boolean b) {
+    public boolean method1780(final Entity class399, final boolean b) {
         if (super.method1780(class399, b)) {
             if (class399 instanceof Class428) {
                 this.field4086.method5299().method6422(new Class6830(this, (Class428)class399));
@@ -103,18 +106,18 @@ public class Class756 extends Class754
     }
     
     @Override
-    public float method1742(final float n) {
+    public float getPitch(final float n) {
         return this.field2400;
     }
     
     @Override
-    public float method1743(final float n) {
-        return this.method1805() ? super.method1743(n) : this.field2399;
+    public float getYaw(final float n) {
+        return this.method1805() ? super.getYaw(n) : this.field2399;
     }
     
     @Override
     public void method1659() {
-        if (this.field2391.method6971(new Class354(this.method1938(), 0.0, this.method1945()))) {
+        if (this.field2391.method6971(new BlockPos(this.method1938(), 0.0, this.method1945()))) {
             super.method1659();
             if (!this.method1805()) {
                 this.method4113();
@@ -122,7 +125,7 @@ public class Class756 extends Class754
             else {
                 this.field4069.method17292(new Class4356(this.field2399, this.field2400, this.field2404));
                 this.field4069.method17292(new Class4254(this.field2968, this.field2970, this.field4085.field24727, this.field4085.field24728));
-                final Class399 method1915 = this.method1915();
+                final Entity method1915 = this.method1915();
                 if (method1915 != this) {
                     if (method1915.method1919()) {
                         this.field4069.method17292(new Class4251(method1915));
@@ -196,7 +199,7 @@ public class Class756 extends Class754
                     }
                 }
                 else {
-                    final Class5487 method1822 = this.method1935();
+                    final Vec3d method1822 = this.method1935();
                     this.field4069.method17292(new Class4355(method1822.field22770, -999.0, method1822.field22772, field4077, method1820, method1821));
                     n7 = 0;
                 }
@@ -224,7 +227,7 @@ public class Class756 extends Class754
     
     @Override
     public boolean method2821(final boolean b) {
-        this.field4069.method17292(new Class4399(b ? Class2003.field11243 : Class2003.field11244, Class354.field2173, Class179.field511));
+        this.field4069.method17292(new Class4399(b ? Class2003.field11243 : Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
         return this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1) != Class8321.field34174;
     }
     
@@ -297,7 +300,7 @@ public class Class756 extends Class754
     }
     
     public void method4117() {
-        this.field4069.method17292(new Class4336(this, Class287.field1596, Class9546.method35642(this.method4130() * 100.0f)));
+        this.field4069.method17292(new Class4336(this, Class287.field1596, MathHelper.method35642(this.method4130() * 100.0f)));
     }
     
     public void method4118() {
@@ -348,29 +351,29 @@ public class Class756 extends Class754
     
     @Override
     public void method1838(final double n, final double n2, final double n3) {
-        final Class354 class354 = new Class354(n, n2, n3);
+        final BlockPos class354 = new BlockPos(n, n2, n3);
         if (this.method4125(class354)) {
-            final double n4 = n - class354.method1074();
-            final double n5 = n3 - class354.method1076();
+            final double n4 = n - class354.getX();
+            final double n5 = n3 - class354.getZ();
             Enum enum1 = null;
             double n6 = 9999.0;
             if (!this.method4125(class354.method1145()) && n4 < n6) {
                 n6 = n4;
-                enum1 = Class179.field515;
+                enum1 = Direction.WEST;
             }
             if (!this.method4125(class354.method1147()) && 1.0 - n4 < n6) {
                 n6 = 1.0 - n4;
-                enum1 = Class179.field516;
+                enum1 = Direction.EAST;
             }
             if (!this.method4125(class354.method1141()) && n5 < n6) {
                 n6 = n5;
-                enum1 = Class179.field513;
+                enum1 = Direction.NORTH;
             }
             if (!this.method4125(class354.method1143()) && 1.0 - n5 < n6) {
-                enum1 = Class179.field514;
+                enum1 = Direction.SOUTH;
             }
             if (enum1 != null) {
-                final Class5487 method1935 = this.method1935();
+                final Vec3d method1935 = this.method1935();
                 switch (Class9120.field38642[enum1.ordinal()]) {
                     case 1: {
                         this.method1937(-0.1, method1935.field22771, method1935.field22772);
@@ -393,10 +396,10 @@ public class Class756 extends Class754
         }
     }
     
-    private boolean method4125(final Class354 class354) {
+    private boolean method4125(final BlockPos class354) {
         final Class6221 method1886 = this.method1886();
         final Class385 class355 = new Class385(class354);
-        for (int i = Class9546.method35644(method1886.field25074); i < Class9546.method35650(method1886.field25077); ++i) {
+        for (int i = MathHelper.floor(method1886.field25074); i < MathHelper.method35650(method1886.field25077); ++i) {
             class355.method1294(i);
             if (!this.method2865(class355)) {
                 return true;
@@ -507,7 +510,7 @@ public class Class756 extends Class754
     }
     
     public boolean method4129() {
-        final Class399 method1920 = this.method1920();
+        final Entity method1920 = this.method1920();
         if (this.method1805()) {
             if (method1920 instanceof Class810) {
                 if (((Class810)method1920).method4759()) {
@@ -555,12 +558,12 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method2839(final Class399 class399) {
+    public void method2839(final Entity class399) {
         this.field4086.field4640.method6476(class399, Class8432.field34603);
     }
     
     @Override
-    public void method2840(final Class399 class399) {
+    public void method2840(final Entity class399) {
         this.field4086.field4640.method6476(class399, Class8432.field34614);
     }
     
@@ -772,11 +775,11 @@ public class Class756 extends Class754
         if (!this.method1720(Class7324.field28319)) {
             if (this.field4103 > 0) {
                 this.method1720(Class7324.field28319);
-                this.field4103 = Class9546.method35651(this.field4103 - 10, 0, 600);
+                this.field4103 = MathHelper.method35651(this.field4103 - 10, 0, 600);
             }
         }
         else {
-            this.field4103 = Class9546.method35651(this.field4103 + (this.method1639() ? 10 : 1), 0, 600);
+            this.field4103 = MathHelper.method35651(this.field4103 + (this.method1639() ? 10 : 1), 0, 600);
         }
         if (this.field3025.field27302) {
             if (this.method4132()) {
@@ -805,7 +808,7 @@ public class Class756 extends Class754
             }
             if (field24727 && !this.field4085.field24727) {
                 this.field4093 = -10;
-                class5729.method4758(Class9546.method35642(this.method4130() * 100.0f));
+                class5729.method4758(MathHelper.method35642(this.method4130() * 100.0f));
                 this.method4117();
             }
             else if (!field24727 && this.field4085.field24727) {
@@ -912,7 +915,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method1671(final Class2160 class2160, final Class5487 class2161) {
+    public void method1671(final Class2160 class2160, final Vec3d class2161) {
         final double method1938 = this.method1938();
         final double method1939 = this.method1945();
         super.method1671(class2160, class2161);
@@ -925,46 +928,46 @@ public class Class756 extends Class754
     
     public void method4136(final float n, final float n2) {
         if (this.method4137()) {
-            final Class5487 method1934 = this.method1934();
-            final Class5487 method1935 = method1934.method16744(n, 0.0, n2);
-            Class5487 class5487 = new Class5487(n, 0.0, n2);
+            final Vec3d method1934 = this.method1934();
+            final Vec3d method1935 = method1934.method16744(n, 0.0, n2);
+            Vec3d class5487 = new Vec3d(n, 0.0, n2);
             final float method1936 = this.method2732();
             float n3 = (float)class5487.method16753();
             if (n3 <= 0.001f) {
                 final Class9544 method1937 = this.field4085.method18177();
                 final float n4 = method1936 * method1937.field41091;
                 final float n5 = method1936 * method1937.field41092;
-                final float method1938 = Class9546.method35638(this.field2399 * 0.017453292f);
-                final float method1939 = Class9546.method35639(this.field2399 * 0.017453292f);
-                class5487 = new Class5487(n4 * method1939 - n5 * method1938, class5487.field22771, n5 * method1939 + n4 * method1938);
+                final float method1938 = MathHelper.sin(this.field2399 * 0.017453292f);
+                final float method1939 = MathHelper.cos(this.field2399 * 0.017453292f);
+                class5487 = new Vec3d(n4 * method1939 - n5 * method1938, class5487.field22771, n5 * method1939 + n4 * method1938);
                 n3 = (float)class5487.method16753();
                 if (n3 <= 0.001f) {
                     return;
                 }
             }
-            final float method1940 = Class9546.method35694(n3);
-            final Class5487 method1941 = class5487.method16748(method1940);
-            final Class5487 method1942 = this.method1793();
+            final float method1940 = MathHelper.method35694(n3);
+            final Vec3d method1941 = class5487.method16748(method1940);
+            final Vec3d method1942 = this.method1793();
             if ((float)(method1942.field22770 * method1941.field22770 + method1942.field22772 * method1941.field22772) >= -0.15f) {
                 final Class7543 method1943 = Class7543.method23630(this);
-                final Class354 class5488 = new Class354(this.method1938(), this.method1886().field25077, this.method1945());
+                final BlockPos class5488 = new BlockPos(this.method1938(), this.method1886().field25077, this.method1945());
                 if (this.field2391.method6701(class5488).method21728(this.field2391, class5488, method1943).method24540()) {
-                    Class354 class5489 = class5488.method1137();
+                    BlockPos class5489 = class5488.method1137();
                     if (this.field2391.method6701(class5489).method21728(this.field2391, class5489, method1943).method24540()) {
                         float n6 = 1.2f;
                         if (this.method2653(Class9439.field40481)) {
                             n6 += (this.method2654(Class9439.field40481).method7908() + 1) * 0.75f;
                         }
-                        final Class5487 method1944 = method1935.method16743(method1941.method16748(Math.max(method1936 * 7.0f, 1.0f / method1940)));
+                        final Vec3d method1944 = method1935.method16743(method1941.method16748(Math.max(method1936 * 7.0f, 1.0f / method1940)));
                         final float method1945 = this.method1930();
                         final Class6221 method1946 = new Class6221(method1934, method1944.method16744(0.0, this.method1931(), 0.0)).method18495(method1945, 0.0, method1945);
-                        final Class5487 method1947 = method1934.method16744(0.0, 0.5099999904632568, 0.0);
-                        final Class5487 method1948 = method1944.method16744(0.0, 0.5099999904632568, 0.0);
-                        final Class5487 method1949 = method1941.method16740(new Class5487(0.0, 1.0, 0.0)).method16748(method1945 * 0.5f);
-                        final Class5487 method1950 = method1947.method16741(method1949);
-                        final Class5487 method1951 = method1948.method16741(method1949);
-                        final Class5487 method1952 = method1947.method16743(method1949);
-                        final Class5487 method1953 = method1948.method16743(method1949);
+                        final Vec3d method1947 = method1934.method16744(0.0, 0.5099999904632568, 0.0);
+                        final Vec3d method1948 = method1944.method16744(0.0, 0.5099999904632568, 0.0);
+                        final Vec3d method1949 = method1941.method16740(new Vec3d(0.0, 1.0, 0.0)).method16748(method1945 * 0.5f);
+                        final Vec3d method1950 = method1947.method16741(method1949);
+                        final Vec3d method1951 = method1948.method16741(method1949);
+                        final Vec3d method1952 = method1947.method16743(method1949);
+                        final Vec3d method1953 = method1948.method16743(method1949);
                         final Iterator<Object> iterator = this.field2391.method6980(this, method1946, Collections.emptySet()).flatMap(class5492 -> class5492.method24545().stream()).iterator();
                         float n7 = Float.MIN_VALUE;
                         while (iterator.hasNext()) {
@@ -973,12 +976,12 @@ public class Class756 extends Class754
                                 continue;
                             }
                             n7 = (float)class5490.field25077;
-                            final Class354 class5491 = new Class354(class5490.method18517());
+                            final BlockPos class5491 = new BlockPos(class5490.method18517());
                             for (int n8 = 1; n8 < n6; ++n8) {
-                                final Class354 method1954 = class5491.method1138(n8);
+                                final BlockPos method1954 = class5491.method1138(n8);
                                 final Class7702 method1955;
                                 if (!(method1955 = this.field2391.method6701(method1954).method21728(this.field2391, method1954, method1943)).method24540()) {
-                                    n7 = (float)method1955.method24536(Class111.field352) + method1954.method1075();
+                                    n7 = (float)method1955.method24536(Axis.Y) + method1954.getY();
                                     if (n7 - this.method1941() > n6) {
                                         return;
                                     }
@@ -1039,7 +1042,7 @@ public class Class756 extends Class754
             return 0.0f;
         }
         if (this.field4103 < 600.0f) {
-            return Class9546.method35653(this.field4103 / 100.0f, 0.0f, 1.0f) * 0.6f + ((this.field4103 >= 100.0f) ? Class9546.method35653((this.field4103 - 100.0f) / 500.0f, 0.0f, 1.0f) : 0.0f) * 0.39999998f;
+            return MathHelper.method35653(this.field4103 / 100.0f, 0.0f, 1.0f) * 0.6f + ((this.field4103 >= 100.0f) ? MathHelper.method35653((this.field4103 - 100.0f) / 500.0f, 0.0f, 1.0f) : 0.0f) * 0.39999998f;
         }
         return 1.0f;
     }

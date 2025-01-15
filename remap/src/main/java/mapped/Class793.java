@@ -10,10 +10,10 @@ import java.util.function.Predicate;
 
 public class Class793 extends Class789
 {
-    private static final Class8810<Class354> field4235;
+    private static final Class8810<BlockPos> field4235;
     private static final Class8810<Boolean> field4236;
     private static final Class8810<Boolean> field4237;
-    private static final Class8810<Class354> field4238;
+    private static final Class8810<BlockPos> field4238;
     private static final Class8810<Boolean> field4239;
     private static final Class8810<Boolean> field4240;
     private int field4241;
@@ -26,19 +26,19 @@ public class Class793 extends Class789
         this.field2420 = 1.0f;
     }
     
-    public void method4452(final Class354 class354) {
+    public void method4452(final BlockPos class354) {
         this.field2432.method33569(Class793.field4235, class354);
     }
     
-    private Class354 method4453() {
+    private BlockPos method4453() {
         return this.field2432.method33568(Class793.field4235);
     }
     
-    private void method4454(final Class354 class354) {
+    private void method4454(final BlockPos class354) {
         this.field2432.method33569(Class793.field4238, class354);
     }
     
-    private Class354 method4455() {
+    private BlockPos method4455() {
         return this.field2432.method33568(Class793.field4238);
     }
     
@@ -78,9 +78,9 @@ public class Class793 extends Class789
     @Override
     public void method1649() {
         super.method1649();
-        this.field2432.method33565(Class793.field4235, Class354.field2173);
+        this.field2432.method33565(Class793.field4235, BlockPos.ZERO);
         this.field2432.method33565(Class793.field4236, false);
-        this.field2432.method33565(Class793.field4238, Class354.field2173);
+        this.field2432.method33565(Class793.field4238, BlockPos.ZERO);
         this.field2432.method33565(Class793.field4239, false);
         this.field2432.method33565(Class793.field4240, false);
         this.field2432.method33565(Class793.field4237, false);
@@ -89,33 +89,33 @@ public class Class793 extends Class789
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        class51.method298("HomePosX", this.method4453().method1074());
-        class51.method298("HomePosY", this.method4453().method1075());
-        class51.method298("HomePosZ", this.method4453().method1076());
+        class51.method298("HomePosX", this.method4453().getX());
+        class51.method298("HomePosY", this.method4453().getY());
+        class51.method298("HomePosZ", this.method4453().getZ());
         class51.method312("HasEgg", this.method4456());
-        class51.method298("TravelPosX", this.method4455().method1074());
-        class51.method298("TravelPosY", this.method4455().method1075());
-        class51.method298("TravelPosZ", this.method4455().method1076());
+        class51.method298("TravelPosX", this.method4455().getX());
+        class51.method298("TravelPosY", this.method4455().getY());
+        class51.method298("TravelPosZ", this.method4455().getZ());
     }
     
     @Override
     public void method1760(final Class51 class51) {
-        this.method4452(new Class354(class51.method319("HomePosX"), class51.method319("HomePosY"), class51.method319("HomePosZ")));
+        this.method4452(new BlockPos(class51.method319("HomePosX"), class51.method319("HomePosY"), class51.method319("HomePosZ")));
         super.method1760(class51);
         this.method4457(class51.method329("HasEgg"));
-        this.method4454(new Class354(class51.method319("TravelPosX"), class51.method319("TravelPosY"), class51.method319("TravelPosZ")));
+        this.method4454(new BlockPos(class51.method319("TravelPosX"), class51.method319("TravelPosY"), class51.method319("TravelPosZ")));
     }
     
     @Nullable
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.method4452(new Class354(this));
-        this.method4454(Class354.field2173);
+        this.method4452(new BlockPos(this));
+        this.method4454(BlockPos.ZERO);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
-    public static boolean method4464(final Class7499<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
-        if (class7502.method1075() < class7500.method6743() + 4) {
+    public static boolean method4464(final Class7499<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+        if (class7502.getY() < class7500.method6743() + 4) {
             if (class7500.method6701(class7502.method1139()).method21696() == Class7521.field29175) {
                 if (class7500.method6993(class7502, 0) > 8) {
                     return true;
@@ -201,7 +201,7 @@ public class Class793 extends Class789
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(this.method2625() ? Class8520.field35660 : Class8520.field35659, 0.15f, 1.0f);
     }
     
@@ -237,7 +237,7 @@ public class Class793 extends Class789
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         if (!this.method4460() && class355.method6702(class354).method21793(Class7324.field28319)) {
             return 10.0f;
         }
@@ -251,7 +251,7 @@ public class Class793 extends Class789
             if (this.method4458()) {
                 if (this.field4241 >= 1) {
                     if (this.field4241 % 5 == 0) {
-                        final Class354 class354 = new Class354(this);
+                        final BlockPos class354 = new BlockPos(this);
                         if (this.field2391.method6701(class354.method1139()).method21696() == Class7521.field29175) {
                             this.field2391.method6955(2001, class354, Class3833.method11774(Class7521.field29175.method11878()));
                         }
@@ -272,7 +272,7 @@ public class Class793 extends Class789
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method2749() && this.method1706()) {
             this.method1724(0.1f, class5487);
             this.method1671(Class2160.field12826, this.method1935());

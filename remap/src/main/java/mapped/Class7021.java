@@ -28,6 +28,6 @@ public class Class7021 extends Class7020<Class158>
     }
     
     public Class158 method21487(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        return new Class158(Class8697.method29814(jsonObject.get("predicate")), new Class354(Class9583.method35910(jsonObject, "offsetX", 0), Class9583.method35910(jsonObject, "offsetY", 0), Class9583.method35910(jsonObject, "offsetZ", 0)));
+        return new Class158(Class8697.method29814(jsonObject.get("predicate")), new BlockPos(Class9583.method35910(jsonObject, "offsetX", 0), Class9583.method35910(jsonObject, "offsetY", 0), Class9583.method35910(jsonObject, "offsetZ", 0)));
     }
 }

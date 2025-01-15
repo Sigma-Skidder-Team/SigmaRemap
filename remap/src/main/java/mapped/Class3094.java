@@ -47,17 +47,17 @@ public class Class3094 extends Class3090
     }
     
     @Override
-    public float method9844(final Class354 class354) {
+    public float method9844(final BlockPos class354) {
         float method9867 = this.method9867();
-        if (Class3094.field15464.method29027(class354.method1074() * 0.05, class354.method1076() * 0.05, false) * 7.0 + Class3094.field15442.method29027(class354.method1074() * 0.2, class354.method1076() * 0.2, false) < 0.3) {
-            if (Class3094.field15442.method29027(class354.method1074() * 0.09, class354.method1076() * 0.09, false) < 0.8) {
+        if (Class3094.field15464.method29027(class354.getX() * 0.05, class354.getZ() * 0.05, false) * 7.0 + Class3094.field15442.method29027(class354.getX() * 0.2, class354.getZ() * 0.2, false) < 0.3) {
+            if (Class3094.field15442.method29027(class354.getX() * 0.09, class354.getZ() * 0.09, false) < 0.8) {
                 method9867 = 0.2f;
             }
         }
-        if (class354.method1075() <= 64) {
+        if (class354.getY() <= 64) {
             return method9867;
         }
-        return method9867 - ((float)(Class3094.field15441.method29027(class354.method1074() / 8.0f, class354.method1076() / 8.0f, false) * 4.0) + class354.method1075() - 64.0f) * 0.05f / 30.0f;
+        return method9867 - ((float)(Class3094.field15441.method29027(class354.getX() / 8.0f, class354.getZ() / 8.0f, false) * 4.0) + class354.getY() - 64.0f) * 0.05f / 30.0f;
     }
     
     static {

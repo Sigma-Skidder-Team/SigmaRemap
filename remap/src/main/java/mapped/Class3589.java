@@ -36,7 +36,7 @@ public class Class3589 extends Class3587
     }
     
     private boolean method11120() {
-        final Class354 class354 = new Class354(this.field16726);
+        final BlockPos class354 = new BlockPos(this.field16726);
         final Class385 class355 = new Class385();
         for (int i = 0; i < 3; ++i) {
             for (boolean b = false; (b ? 1 : 0) < 8; ++b) {

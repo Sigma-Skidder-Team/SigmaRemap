@@ -4,22 +4,24 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class5750 extends Class5714
 {
     private static String[] field23341;
-    private Class399 field23342;
+    private Entity field23342;
     private boolean field23343;
     
-    public Class5750(final Class399 field23342, final boolean field23343) {
+    public Class5750(final Entity field23342, final boolean field23343) {
         this.field23342 = field23342;
         this.field23343 = field23343;
     }
     
-    public Class399 method17057() {
+    public Entity method17057() {
         return this.field23342;
     }
     
-    public void method17058(final Class399 field23342) {
+    public void method17058(final Entity field23342) {
         this.field23342 = field23342;
     }
     

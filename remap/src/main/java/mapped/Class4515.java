@@ -4,8 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import java.util.Random;
@@ -16,7 +16,7 @@ public abstract class Class4515 extends Class4473
     private static final Logger field19917;
     public Class6585 field19918;
     public Class9092 field19919;
-    public Class354 field19920;
+    public BlockPos field19920;
     
     public Class4515(final Class9520 class9520, final int n) {
         super(class9520, n);
@@ -24,12 +24,12 @@ public abstract class Class4515 extends Class4473
     
     public Class4515(final Class9520 class9520, final Class51 class9521) {
         super(class9520, class9521);
-        this.field19920 = new Class354(class9521.method319("TPX"), class9521.method319("TPY"), class9521.method319("TPZ"));
+        this.field19920 = new BlockPos(class9521.method319("TPX"), class9521.method319("TPY"), class9521.method319("TPZ"));
     }
     
-    public void method13510(final Class6585 field19918, final Class354 field19919, final Class9092 field19920) {
+    public void method13510(final Class6585 field19918, final BlockPos field19919, final Class9092 field19920) {
         this.field19918 = field19918;
-        this.method13456(Class179.field513);
+        this.method13456(Direction.NORTH);
         this.field19920 = field19919;
         this.field19919 = field19920;
         this.field19849 = field19918.method19966(field19920, field19919);
@@ -37,9 +37,9 @@ public abstract class Class4515 extends Class4473
     
     @Override
     public void method13415(final Class51 class51) {
-        class51.method298("TPX", this.field19920.method1074());
-        class51.method298("TPY", this.field19920.method1075());
-        class51.method298("TPZ", this.field19920.method1076());
+        class51.method298("TPX", this.field19920.getX());
+        class51.method298("TPY", this.field19920.getY());
+        class51.method298("TPZ", this.field19920.getZ());
     }
     
     @Override
@@ -77,7 +77,7 @@ public abstract class Class4515 extends Class4473
         return true;
     }
     
-    public abstract void method13511(final String p0, final Class354 p1, final Class1851 p2, final Random p3, final Class6997 p4);
+    public abstract void method13511(final String p0, final BlockPos p1, final Class1851 p2, final Random p3, final Class6997 p4);
     
     @Override
     public void method13454(final int n, final int n2, final int n3) {

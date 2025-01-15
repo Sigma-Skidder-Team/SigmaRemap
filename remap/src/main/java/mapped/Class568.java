@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -121,13 +122,13 @@ public class Class568 extends Class566
     }
     
     private void method3315(final int n, final int n2, final int n3, final int n4, final float n5, final float n6) {
-        final int method35649 = Class9546.method35649((n3 - n - 2) * n5);
+        final int method35649 = MathHelper.method35649((n3 - n - 2) * n5);
         final float n7 = (float)(this.field3386 >> 16 & 0xFF);
         final float n8 = (float)(this.field3386 >> 8 & 0xFF);
         final float n9 = (float)(this.field3386 & 0xFF);
         Class565.method3293(n - 1, n2 - 1, n3 + 1, n4 + 1, 0xFF000000 | Math.round((1.0f - n6) * n7) << 16 | Math.round((1.0f - n6) * n8) << 8 | Math.round((1.0f - n6) * n9));
         Class565.method3293(n, n2, n3, n4, this.field3387 | 0xFF000000);
-        Class565.method3293(n + 1, n2 + 1, n + method35649, n4 - 1, 0xFF000000 | (int)Class9546.method35700(1.0f - n6, (float)(this.field3388 >> 16 & 0xFF), n7) << 16 | (int)Class9546.method35700(1.0f - n6, (float)(this.field3388 >> 8 & 0xFF), n8) << 8 | (int)Class9546.method35700(1.0f - n6, (float)(this.field3388 & 0xFF), n9));
+        Class565.method3293(n + 1, n2 + 1, n + method35649, n4 - 1, 0xFF000000 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 >> 16 & 0xFF), n7) << 16 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 >> 8 & 0xFF), n8) << 8 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 & 0xFF), n9));
     }
     
     @Override

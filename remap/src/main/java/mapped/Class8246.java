@@ -4,12 +4,15 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 public class Class8246 extends Class8245
 {
     private static String[] field33874;
     private boolean field33875;
-    private Class354 field33876;
-    private Class399 field33877;
+    private BlockPos field33876;
+    private Entity field33877;
     
     public Class8246(final Class869 class869, final Class5799 class870) {
         super(class869, class870);
@@ -19,7 +22,7 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public boolean method27312(final Class354 field33876, final Class179 class179) {
+    public boolean method27312(final BlockPos field33876, final Direction class179) {
         this.field33875 = true;
         this.field33876 = field33876;
         final boolean method27312 = super.method27312(field33876, class179);
@@ -28,7 +31,7 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public boolean method27314(final Class354 field33876, final Class179 class179) {
+    public boolean method27314(final BlockPos field33876, final Direction class179) {
         this.field33875 = true;
         this.field33876 = field33876;
         final boolean method27314 = super.method27314(field33876, class179);
@@ -54,13 +57,13 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27322(final Class512 class512, final Class399 field33877, final Class316 class513) {
+    public Class2201 method27322(final Class512 class512, final Entity field33877, final Class316 class513) {
         this.field33877 = field33877;
         return super.method27322(class512, field33877, class513);
     }
     
     @Override
-    public Class2201 method27323(final Class512 class512, final Class399 field33877, final Class7007 class513, final Class316 class514) {
+    public Class2201 method27323(final Class512 class512, final Entity field33877, final Class7007 class513, final Class316 class514) {
         this.field33877 = field33877;
         return super.method27323(class512, field33877, class513, class514);
     }
@@ -69,11 +72,11 @@ public class Class8246 extends Class8245
         return this.field33875;
     }
     
-    public Class354 method27342() {
+    public BlockPos method27342() {
         return this.field33876;
     }
     
-    public Class399 method27343() {
+    public Entity method27343() {
         return this.field33877;
     }
 }

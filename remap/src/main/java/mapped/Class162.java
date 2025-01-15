@@ -24,7 +24,7 @@ public class Class162 implements Class122
     @Override
     public boolean test(final Class7529 class7529) {
         final Class7929 class7530 = class7529.method23579(Class6683.field26364);
-        final Class354 class7531 = class7529.method23579(Class6683.field26367);
+        final BlockPos class7531 = class7529.method23579(Class6683.field26367);
         if (class7531 != null) {
             if (class7530 != null) {
                 if (this.field472.method32837(class7529.method23588(), new Class5487(class7531), class7530)) {

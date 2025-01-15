@@ -4,10 +4,12 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.OptionalInt;
 
-public class Class406 extends Class399 implements Class407, Class401
+public class Class406 extends Entity implements Class407, Class401
 {
     private static final Class8810<Class8321> field2494;
     private static final Class8810<OptionalInt> field2495;
@@ -68,9 +70,9 @@ public class Class406 extends Class399 implements Class407, Class401
         this.method1937(n, n2, n3);
         if (this.field2402 == 0.0f) {
             if (this.field2401 == 0.0f) {
-                final float method35641 = Class9546.method35641(n * n + n3 * n3);
-                this.field2399 = (float)(Class9546.method35693(n, n3) * 57.2957763671875);
-                this.field2400 = (float)(Class9546.method35693(n2, method35641) * 57.2957763671875);
+                final float method35641 = MathHelper.method35641(n * n + n3 * n3);
+                this.field2399 = (float)(MathHelper.method35693(n, n3) * 57.2957763671875);
+                this.field2400 = (float)(MathHelper.method35693(n2, method35641) * 57.2957763671875);
                 this.field2401 = this.field2399;
                 this.field2402 = this.field2400;
             }
@@ -123,9 +125,9 @@ public class Class406 extends Class399 implements Class407, Class401
             this.method2000(method1794);
             this.field2448 = true;
         }
-        final float method1795 = Class9546.method35641(Class399.method1680(method1793));
-        this.field2399 = (float)(Class9546.method35693(method1793.field22770, method1793.field22772) * 57.2957763671875);
-        this.field2400 = (float)(Class9546.method35693(method1793.field22771, method1795) * 57.2957763671875);
+        final float method1795 = MathHelper.method35641(Entity.method1680(method1793));
+        this.field2399 = (float)(MathHelper.method35693(method1793.field22770, method1793.field22772) * 57.2957763671875);
+        this.field2400 = (float)(MathHelper.method35693(method1793.field22771, method1795) * 57.2957763671875);
         while (this.field2400 - this.field2402 < -180.0f) {
             this.field2402 -= 360.0f;
         }
@@ -138,8 +140,8 @@ public class Class406 extends Class399 implements Class407, Class401
         while (this.field2399 - this.field2401 >= 180.0f) {
             this.field2401 += 360.0f;
         }
-        this.field2400 = Class9546.method35700(0.2f, this.field2402, this.field2400);
-        this.field2399 = Class9546.method35700(0.2f, this.field2401, this.field2399);
+        this.field2400 = MathHelper.method35700(0.2f, this.field2402, this.field2400);
+        this.field2399 = MathHelper.method35700(0.2f, this.field2401, this.field2399);
         if (this.field2497 == 0) {
             if (!this.method1696()) {
                 this.field2391.method6706(null, this.method1938(), this.method1941(), this.method1945(), Class8520.field35194, Class286.field1586, 3.0f, 1.0f);
@@ -169,12 +171,12 @@ public class Class406 extends Class399 implements Class407, Class401
             this.method1999();
         }
         else if (this.field2407) {
-            Class354 class7007;
+            BlockPos class7007;
             if (class7006.method21449() != Class2165.field12881) {
-                class7007 = new Class354(this);
+                class7007 = new BlockPos(this);
             }
             else {
-                class7007 = new Class354(((Class7005)class7006).method21447());
+                class7007 = new BlockPos(((Class7005)class7006).method21447());
             }
             this.field2391.method6701(class7007).method21741(this.field2391, class7007, this);
             if (this.method2001()) {
@@ -297,7 +299,7 @@ public class Class406 extends Class399 implements Class407, Class401
     
     @Override
     public void method1958(double n, double n2, double n3, final float n4, final float n5) {
-        final float method35641 = Class9546.method35641(n * n + n2 * n2 + n3 * n3);
+        final float method35641 = MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
         n /= method35641;
         n2 /= method35641;
         n3 /= method35641;

@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5869 extends Class5846<Class796>
 {
@@ -85,13 +86,13 @@ public class Class5869 extends Class5846<Class796>
                 return;
             }
             case 2: {
-                final float method35639 = Class9546.method35639((float)n);
-                final float method35640 = Class9546.method35638((float)n);
+                final float method35639 = MathHelper.cos((float)n);
+                final float method35640 = MathHelper.sin((float)n);
                 this.field24049.field25180 = method35639;
                 this.field24049.field25181 = 15.69f + method35640;
                 this.field24049.field25183 = 0.0f;
                 this.field24049.field25184 = 0.0f;
-                this.field24049.field25185 = Class9546.method35638((float)n) * 0.4f;
+                this.field24049.field25185 = MathHelper.sin((float)n) * 0.4f;
                 this.field24045.field25180 = method35639;
                 this.field24045.field25181 = 16.5f + method35640;
                 this.field24047.field25185 = -0.0873f - n4;
@@ -106,15 +107,15 @@ public class Class5869 extends Class5846<Class796>
             }
             case 3: {
                 final Class6300 field24054 = this.field24054;
-                field24054.field25183 += Class9546.method35639(n2 * 0.6662f) * 1.4f * n3;
+                field24054.field25183 += MathHelper.cos(n2 * 0.6662f) * 1.4f * n3;
                 final Class6300 field24055 = this.field24055;
-                field24055.field25183 += Class9546.method35639(n2 * 0.6662f + 3.1415927f) * 1.4f * n3;
+                field24055.field25183 += MathHelper.cos(n2 * 0.6662f + 3.1415927f) * 1.4f * n3;
                 break;
             }
         }
         final float n7 = n4 * 0.3f;
         this.field24049.field25181 = 15.69f + n7;
-        this.field24046.field25183 = 1.015f + Class9546.method35639(n2 * 0.6662f) * 0.3f * n3;
+        this.field24046.field25183 = 1.015f + MathHelper.cos(n2 * 0.6662f) * 0.3f * n3;
         this.field24046.field25181 = 21.07f + n7;
         this.field24045.field25181 = 16.5f + n7;
         this.field24047.field25185 = -0.0873f - n4;

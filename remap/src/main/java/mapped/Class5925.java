@@ -5,8 +5,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-public class Class5925<T extends Class399> extends Class5844<T>
+public class Class5925<T extends Entity> extends Class5844<T>
 {
     public final Class6300 field24349;
     public final Class6300 field24350;
@@ -60,23 +62,23 @@ public class Class5925<T extends Class399> extends Class5844<T>
         if (this.field24357 != 3) {
             this.field24356.field25183 = 1.5707964f;
             if (this.field24357 != 2) {
-                this.field24349.field25183 = Class9546.method35639(n * 0.6662f) * n2;
-                this.field24350.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * n2;
-                this.field24351.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * n2;
-                this.field24352.field25183 = Class9546.method35639(n * 0.6662f) * n2;
+                this.field24349.field25183 = MathHelper.cos(n * 0.6662f) * n2;
+                this.field24350.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * n2;
+                this.field24351.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * n2;
+                this.field24352.field25183 = MathHelper.cos(n * 0.6662f) * n2;
                 if (this.field24357 != 1) {
-                    this.field24354.field25183 = 1.7278761f + 0.47123894f * Class9546.method35639(n) * n2;
+                    this.field24354.field25183 = 1.7278761f + 0.47123894f * MathHelper.cos(n) * n2;
                 }
                 else {
-                    this.field24354.field25183 = 1.7278761f + 0.7853982f * Class9546.method35639(n) * n2;
+                    this.field24354.field25183 = 1.7278761f + 0.7853982f * MathHelper.cos(n) * n2;
                 }
             }
             else {
-                this.field24349.field25183 = Class9546.method35639(n * 0.6662f) * n2;
-                this.field24350.field25183 = Class9546.method35639(n * 0.6662f + 0.3f) * n2;
-                this.field24351.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f + 0.3f) * n2;
-                this.field24352.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * n2;
-                this.field24354.field25183 = 1.7278761f + 0.31415927f * Class9546.method35639(n) * n2;
+                this.field24349.field25183 = MathHelper.cos(n * 0.6662f) * n2;
+                this.field24350.field25183 = MathHelper.cos(n * 0.6662f + 0.3f) * n2;
+                this.field24351.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f + 0.3f) * n2;
+                this.field24352.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * n2;
+                this.field24354.field25183 = 1.7278761f + 0.31415927f * MathHelper.cos(n) * n2;
             }
         }
     }

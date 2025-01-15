@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 public class Class9061
 {
     private static final Logger field38364;
-    private final Class354 field38365;
+    private final BlockPos field38365;
     private final Class1849 field38366;
     private final Class8564 field38367;
     private final List<Class9083> field38368;
@@ -26,7 +26,7 @@ public class Class9061
     private Class385 field38372;
     private int field38373;
     
-    public Class9061(final Collection<Class8928> collection, final Class354 field38365, final Class1849 field38366, final Class8564 field38367) {
+    public Class9061(final Collection<Class8928> collection, final BlockPos field38365, final Class1849 field38366, final Class8564 field38367) {
         this.field38368 = Lists.newArrayList();
         this.field38369 = Lists.newArrayList();
         this.field38371 = 0;
@@ -84,18 +84,18 @@ public class Class9061
     private void method32630(final Collection<Class9083> collection) {
         int n = 0;
         for (final Class9083 class9083 : collection) {
-            final Class354 class9084 = new Class354(this.field38372);
+            final BlockPos class9084 = new BlockPos(this.field38372);
             class9083.method32750(class9084);
             Class8787.method30576(class9083.method32770(), class9084, 2, this.field38366, true);
-            final Class354 method32756 = class9083.method32756();
-            final int n2 = (method32756 != null) ? method32756.method1074() : 1;
-            this.field38373 = Math.max(this.field38373, (method32756 != null) ? method32756.method1076() : 1);
+            final BlockPos method32756 = class9083.method32756();
+            final int n2 = (method32756 != null) ? method32756.getX() : 1;
+            this.field38373 = Math.max(this.field38373, (method32756 != null) ? method32756.getZ() : 1);
             this.field38372.method1292(n2 + 4, 0, 0);
             if (n++ % 8 != 0) {
                 continue;
             }
             this.field38372.method1292(0, 0, this.field38373 + 5);
-            this.field38372.method1293(this.field38365.method1074());
+            this.field38372.method1293(this.field38365.getX());
             this.field38373 = 0;
         }
     }

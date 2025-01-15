@@ -8,6 +8,8 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -70,7 +72,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             n11 /= 2.0;
         }
-        return Class9546.method35655(n8 / 512.0, n9 / 512.0, (n10 / 10.0 + 1.0) / 2.0);
+        return MathHelper.method35655(n8 / 512.0, n9 / 512.0, (n10 / 10.0 + 1.0) / 2.0);
     }
     
     public double[] method18855(final int n, final int n2) {
@@ -89,11 +91,11 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             double n11 = this.method18854(n, i, n2, n3, n4, n5, n6) - this.method18849(n9, n10, i);
             if (i <= method18849) {
                 if (i < method18850) {
-                    n11 = Class9546.method35655(n11, -30.0, (method18850 - i) / (method18850 - 1.0));
+                    n11 = MathHelper.method35655(n11, -30.0, (method18850 - i) / (method18850 - 1.0));
                 }
             }
             else {
-                n11 = Class9546.method35655(n11, n8, (i - method18849) / n7);
+                n11 = MathHelper.method35655(n11, n8, (i - method18849) / n7);
             }
             array[i] = n11;
         }
@@ -131,7 +133,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             final double n11 = array[2][i + 1];
             final double n12 = array[3][i + 1];
             for (int j = this.field25361 - 1; j >= 0; --j) {
-                final double method18854 = Class9546.method35703(j / (double)this.field25361, n3, n4, n5, n9, n7, n11, n6, n10, n8, n12);
+                final double method18854 = MathHelper.method35703(j / (double)this.field25361, n3, n4, n5, n9, n7, n11, n6, n10, n8, n12);
                 final int n13 = i * this.field25361 + j;
                 if (method18854 > 0.0 || n13 < method18853) {
                     Class7096 class2021;
@@ -185,11 +187,11 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         final Class7065 method25428 = this.method18876();
         final int method25429 = method25428.method21563();
         final int method25430 = method25428.method21564();
-        for (final Class354 class1862 : Class354.method1158(method25426, 0, method25427, method25426 + 15, 0, method25427 + 15)) {
+        for (final BlockPos class1862 : BlockPos.method1158(method25426, 0, method25427, method25426 + 15, 0, method25427 + 15)) {
             if (method25430 > 0) {
                 for (int i = method25430; i >= method25430 - 4; --i) {
                     if (i >= method25430 - random.nextInt(5)) {
-                        class1860.method7008(class1861.method1284(class1862.method1074(), i, class1862.method1076()), Class7521.field29172.method11878(), false);
+                        class1860.method7008(class1861.method1284(class1862.getX(), i, class1862.getZ()), Class7521.field29172.method11878(), false);
                     }
                 }
             }
@@ -198,7 +200,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             for (int j = method25429 + 4; j >= method25429; --j) {
                 if (j <= method25429 + random.nextInt(5)) {
-                    class1860.method7008(class1861.method1284(class1862.method1074(), j, class1862.method1076()), Class7521.field29172.method11878(), false);
+                    class1860.method7008(class1861.method1284(class1862.getX(), j, class1862.getZ()), Class7521.field29172.method11878(), false);
                 }
             }
         }
@@ -295,20 +297,20 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                             class1859.method27150();
                         }
                         final double n16 = n12 / (double)this.field25361;
-                        final double method18861 = Class9546.method35701(n16, n4, n8);
-                        final double method18862 = Class9546.method35701(n16, n6, n10);
-                        final double method18863 = Class9546.method35701(n16, n5, n9);
-                        final double method18864 = Class9546.method35701(n16, n7, n11);
+                        final double method18861 = MathHelper.method35701(n16, n4, n8);
+                        final double method18862 = MathHelper.method35701(n16, n6, n10);
+                        final double method18863 = MathHelper.method35701(n16, n5, n9);
+                        final double method18864 = MathHelper.method35701(n16, n7, n11);
                         for (int n17 = 0; n17 < this.field25362; ++n17) {
                             final int n18 = n + j * this.field25362 + n17;
                             final int n19 = n18 & 0xF;
                             final double n20 = n17 / (double)this.field25362;
-                            final double method18865 = Class9546.method35701(n20, method18861, method18862);
-                            final double method18866 = Class9546.method35701(n20, method18863, method18864);
+                            final double method18865 = MathHelper.method35701(n20, method18861, method18862);
+                            final double method18866 = MathHelper.method35701(n20, method18863, method18864);
                             for (int n21 = 0; n21 < this.field25362; ++n21) {
                                 final int n22 = n2 + l * this.field25362 + n21;
                                 final int n23 = n22 & 0xF;
-                                final double method18867 = Class9546.method35654(Class9546.method35701(n21 / (double)this.field25362, method18865, method18866) / 200.0, -1.0, 1.0);
+                                final double method18867 = MathHelper.method35654(MathHelper.method35701(n21 / (double)this.field25362, method18865, method18866) / 200.0, -1.0, 1.0);
                                 double n24 = method18867 / 2.0 - method18867 * method18867 * method18867 / 24.0;
                                 while (iterator5.hasNext()) {
                                     final Class4521 class1860 = (Class4521)iterator5.next();
@@ -371,7 +373,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         final double n4 = n * n + n3 * n3;
         final double n5 = n2 + 0.5;
         final double n6 = n5 * n5;
-        return -n5 * Class9546.method35695(n6 / 2.0 + n4 / 2.0) / 2.0 * Math.pow(2.718281828459045, -(n6 / 16.0 + n4 / 16.0));
+        return -n5 * MathHelper.method35695(n6 / 2.0 + n4 / 2.0) / 2.0 * Math.pow(2.718281828459045, -(n6 / 16.0 + n4 / 16.0));
     }
     
     static {

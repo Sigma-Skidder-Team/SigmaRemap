@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.MathHelper;
 
 public class Class362 extends Class357
 {
@@ -24,8 +25,8 @@ public class Class362 extends Class357
     }
     
     @Override
-    public Class7096 method1164(final Random random, final Class354 class354) {
-        return Class362.field2190[(int)(Class9546.method35654((1.0 + Class3090.field15442.method29027(class354.method1074() / 48.0, class354.method1076() / 48.0, false)) / 2.0, 0.0, 0.9999) * Class362.field2190.length)];
+    public Class7096 method1164(final Random random, final BlockPos class354) {
+        return Class362.field2190[(int)(MathHelper.method35654((1.0 + Class3090.field15442.method29027(class354.getX() / 48.0, class354.getZ() / 48.0, false)) / 2.0, 0.0, 0.9999) * Class362.field2190.length)];
     }
     
     @Override

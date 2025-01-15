@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
@@ -161,8 +163,8 @@ public class Class1907 extends Class1906
     }
     
     @Override
-    public boolean method7410(final Class354 class354) {
-        return this.method7401(class354.method1074() >> 4, class354.method1076() >> 4);
+    public boolean method7410(final BlockPos class354) {
+        return this.method7401(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     @Override
@@ -171,8 +173,8 @@ public class Class1907 extends Class1906
     }
     
     @Override
-    public boolean method7408(final Class399 class399) {
-        return this.method7401(Class9546.method35644(class399.method1938()) >> 4, Class9546.method35644(class399.method1945()) >> 4);
+    public boolean method7408(final Entity class399) {
+        return this.method7401(MathHelper.floor(class399.method1938()) >> 4, MathHelper.floor(class399.method1945()) >> 4);
     }
     
     static {

@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public final class Class9434
 {
     public static String method35057(final Class1948 class1948, final float n) {
         if (!class1948.method7921()) {
-            return Class8272.method27498(Class9546.method35642(class1948.method7907() * n));
+            return Class8272.method27498(MathHelper.method35642(class1948.method7907() * n));
         }
         return "**:**";
     }

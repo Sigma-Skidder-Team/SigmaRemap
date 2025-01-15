@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public abstract class Class6172 extends Class6173
 {
     public float field24930;
@@ -20,23 +22,23 @@ public abstract class Class6172 extends Class6173
     
     @Override
     public void method18432(final Class4150 class4150, final Class6092 class4151, final float n) {
-        final Class5487 method18161 = class4151.method18161();
-        final float n2 = (float)(Class9546.method35701(n, this.field24933, this.field24936) - method18161.method16760());
-        final float n3 = (float)(Class9546.method35701(n, this.field24934, this.field24937) - method18161.method16761());
-        final float n4 = (float)(Class9546.method35701(n, this.field24935, this.field24938) - method18161.method16762());
-        Class9389 method18162;
+        final Vec3d method18161 = class4151.method18161();
+        final float n2 = (float)(MathHelper.method35701(n, this.field24933, this.field24936) - method18161.method16760());
+        final float n3 = (float)(MathHelper.method35701(n, this.field24934, this.field24937) - method18161.method16761());
+        final float n4 = (float)(MathHelper.method35701(n, this.field24935, this.field24938) - method18161.method16762());
+        Quaternion method18162;
         if (this.field24957 != 0.0f) {
-            method18162 = new Class9389(class4151.method18165());
-            method18162.method34903(Class9138.field38720.method33327(Class9546.method35700(n, this.field24958, this.field24957)));
+            method18162 = new Quaternion(class4151.method18165());
+            method18162.multiply(Vector3f.ZP.method33327(MathHelper.method35700(n, this.field24958, this.field24957)));
         }
         else {
             method18162 = class4151.method18165();
         }
-        new Class9138(-1.0f, -1.0f, 0.0f).method33325(method18162);
-        final Class9138[] array = { new Class9138(-1.0f, -1.0f, 0.0f), new Class9138(-1.0f, 1.0f, 0.0f), new Class9138(1.0f, 1.0f, 0.0f), new Class9138(1.0f, -1.0f, 0.0f) };
+        new Vector3f(-1.0f, -1.0f, 0.0f).method33325(method18162);
+        final Vector3f[] array = { new Vector3f(-1.0f, -1.0f, 0.0f), new Vector3f(-1.0f, 1.0f, 0.0f), new Vector3f(1.0f, 1.0f, 0.0f), new Vector3f(1.0f, -1.0f, 0.0f) };
         final float method18163 = this.method18430(n);
         for (int i = 0; i < 4; ++i) {
-            final Class9138 class4152 = array[i];
+            final Vector3f class4152 = array[i];
             class4152.method33325(method18162);
             class4152.method33314(method18163);
             class4152.method33318(n2, n3, n4);

@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Class4266 implements Class4252<Class5813>
 {
     private static String[] field19137;
-    private Class354 field19138;
+    private BlockPos field19138;
     private String field19139;
     private boolean field19140;
     private boolean field19141;
@@ -19,7 +19,7 @@ public class Class4266 implements Class4252<Class5813>
     public Class4266() {
     }
     
-    public Class4266(final Class354 field19138, final String field19139, final Class2182 field19140, final boolean field19141, final boolean field19142, final boolean field19143) {
+    public Class4266(final BlockPos field19138, final String field19139, final Class2182 field19140, final boolean field19141, final boolean field19142, final boolean field19143) {
         this.field19138 = field19138;
         this.field19139 = field19139;
         this.field19140 = field19141;
@@ -111,7 +111,7 @@ public class Class4266 implements Class4252<Class5813>
         class5813.method17447(this);
     }
     
-    public Class354 method12803() {
+    public BlockPos method12803() {
         return this.field19138;
     }
     

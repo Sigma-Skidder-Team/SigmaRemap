@@ -18,13 +18,13 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.ArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import java.util.function.Function;
 import java.util.List;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5773
 {
@@ -164,7 +164,7 @@ public class Class5773
             }
         }
         else {
-            n = Class9546.method35644(((Class43)method17178).method274());
+            n = MathHelper.floor(((Class43)method17178).method274());
         }
         class7492.method23257(class7493.method16528(method17178), false);
         return n;
@@ -173,7 +173,7 @@ public class Class5773
     private static int method17180(final Class7492 class7492, final Class5414 class7493, final Class8570 class7494, final double n) throws CommandSyntaxException {
         final Class41 method17178 = method17178(class7494, class7493);
         if (method17178 instanceof Class43) {
-            final int method17179 = Class9546.method35644(((Class43)method17178).method274() * n);
+            final int method17179 = MathHelper.floor(((Class43)method17178).method274() * n);
             class7492.method23257(class7493.method16529(class7494, n, method17179), false);
             return method17179;
         }

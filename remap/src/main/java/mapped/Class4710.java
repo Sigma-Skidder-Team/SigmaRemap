@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
-import java.util.Iterator;
+
 import com.mojang.authlib.GameProfile;
 import com.google.common.collect.Lists;
 import java.util.UUID;
@@ -73,13 +75,13 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                 field20304.field23956 = field20305;
             }
             this.field20301.field23957 = field20303.method2625();
-            float method35706 = Class9546.method35706(f, field20303.field2952, field20303.field2951);
-            final float method35707 = Class9546.method35706(f, field20303.field2954, field20303.field2953);
+            float method35706 = MathHelper.method35706(f, field20303.field2952, field20303.field2951);
+            final float method35707 = MathHelper.method35706(f, field20303.field2954, field20303.field2953);
             float n3 = method35707 - method35706;
             if (this.field20301.field23956) {
                 if (field20303.method1920() instanceof Class511) {
                     final Class511 class7353 = (Class511)field20303.method1920();
-                    float method35708 = Class9546.method35668(method35707 - Class9546.method35706(f, class7353.field2952, class7353.field2951));
+                    float method35708 = MathHelper.method35668(method35707 - MathHelper.method35706(f, class7353.field2952, class7353.field2951));
                     if (method35708 < -85.0f) {
                         method35708 = -85.0f;
                     }
@@ -93,7 +95,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                     n3 = method35707 - method35706;
                 }
             }
-            final Class5729 class7354 = new Class5729(method35706, method35707, n3, Class9546.method35700(f, field20303.field2402, field20303.field2400), f, field20303);
+            final Class5729 class7354 = new Class5729(method35706, method35707, n3, MathHelper.method35700(f, field20303.field2402, field20303.field2400), f, field20303);
             Class9463.method35173().method35188().method21097(class7354);
             if (class7354.method16962()) {
                 class7351.method22568();
@@ -104,10 +106,10 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
             final float method35710 = class7354.method17009();
             final float method35711 = class7354.method17010();
             if (field20303.method1654() == Class290.field1665) {
-                final Class179 method35712 = field20303.method2788();
+                final Direction method35712 = field20303.method2788();
                 if (method35712 != null) {
                     final float n4 = field20303.method1891(Class290.field1663) - 0.1f;
-                    class7351.method22564(-method35712.method785() * n4, 0.0, -method35712.method787() * n4);
+                    class7351.method22564(-method35712.getXOffset() * n4, 0.0, -method35712.getZOffset() * n4);
                 }
             }
             final float method35713 = this.method13987(field20303, f);
@@ -119,7 +121,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
             float field20306 = 0.0f;
             if (!field20303.method1805()) {
                 if (field20303.method1768()) {
-                    method35714 = Class9546.method35700(f, field20303.field2945, field20303.field2946);
+                    method35714 = MathHelper.method35700(f, field20303.field2945, field20303.field2946);
                     field20306 = field20303.field2947 - field20303.field2946 * (1.0f - f);
                     if (field20303.method2625()) {
                         field20306 *= 3.0f;
@@ -237,7 +239,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
         return !t.method1823();
     }
     
-    private static float method13984(final Class179 class179) {
+    private static float method13984(final Direction class179) {
         switch (Class9538.field41054[class179.ordinal()]) {
             case 1: {
                 return 90.0f;
@@ -260,7 +262,7 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
     public void method13985(final T t, final Class7351 class7351, final float n, final float n2, final float n3) {
         final Class290 method1654 = t.method1654();
         if (method1654 != Class290.field1665) {
-            class7351.method22566(Class9138.field38718.method33328(180.0f - n2));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f - n2));
         }
         if (t.field2941 <= 0) {
             if (!t.method2744()) {
@@ -270,29 +272,29 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
                         if ("Dinnerbone".equals(method1655) || "Grumm".equals(method1655)) {
                             if (!(t instanceof Class512) || ((Class512)t).method2895(Class189.field610)) {
                                 class7351.method22564(0.0, t.method1931() + 0.1f, 0.0);
-                                class7351.method22566(Class9138.field38720.method33328(180.0f));
+                                class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
                             }
                         }
                     }
                 }
                 else {
-                    final Class179 method1656 = t.method2788();
-                    class7351.method22566(Class9138.field38718.method33328((method1656 == null) ? n2 : method13984(method1656)));
-                    class7351.method22566(Class9138.field38720.method33328(this.method13988(t)));
-                    class7351.method22566(Class9138.field38718.method33328(270.0f));
+                    final Direction method1656 = t.method2788();
+                    class7351.method22566(Vector3f.field38718.rotationDegrees((method1656 == null) ? n2 : method13984(method1656)));
+                    class7351.method22566(Vector3f.ZP.rotationDegrees(this.method13988(t)));
+                    class7351.method22566(Vector3f.field38718.rotationDegrees(270.0f));
                 }
             }
             else {
-                class7351.method22566(Class9138.field38716.method33328(-90.0f - t.field2400));
-                class7351.method22566(Class9138.field38718.method33328((t.field2424 + n3) * -75.0f));
+                class7351.method22566(Vector3f.XP.rotationDegrees(-90.0f - t.field2400));
+                class7351.method22566(Vector3f.field38718.rotationDegrees((t.field2424 + n3) * -75.0f));
             }
         }
         else {
-            float method1657 = Class9546.method35640((t.field2941 + n3 - 1.0f) / 20.0f * 1.6f);
+            float method1657 = MathHelper.method35640((t.field2941 + n3 - 1.0f) / 20.0f * 1.6f);
             if (method1657 > 1.0f) {
                 method1657 = 1.0f;
             }
-            class7351.method22566(Class9138.field38720.method33328(method1657 * this.method13988(t)));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(method1657 * this.method13988(t)));
         }
     }
     

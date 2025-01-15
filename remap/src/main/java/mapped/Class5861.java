@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5861 extends Class5853<Class843>
 {
@@ -46,7 +47,7 @@ public class Class5861 extends Class5853<Class843>
         this.field24031.field25182 = 2.0f;
         this.field24032.field25181 = 1.0f;
         this.field24031.field25181 = 1.0f;
-        this.field24032.field25184 = 0.47123894f + Class9546.method35639(n3 * 0.8f) * 3.1415927f * 0.05f;
+        this.field24032.field25184 = 0.47123894f + MathHelper.cos(n3 * 0.8f) * 3.1415927f * 0.05f;
         this.field24031.field25184 = -this.field24032.field25184;
         this.field24031.field25185 = -0.47123894f;
         this.field24031.field25183 = 0.47123894f;

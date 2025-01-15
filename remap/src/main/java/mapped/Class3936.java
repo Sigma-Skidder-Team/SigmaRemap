@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class3936 extends Class3932
 {
     private static String[] field17818;
@@ -16,18 +18,18 @@ public class Class3936 extends Class3932
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3936.field17820;
     }
     
     @Override
-    public Class7702 method11810(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public Class7702 method11810(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return Class7698.method24486();
     }
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3936.field17819, Class9546.method35644(class7074.method21646() * 16.0f / 360.0f + 0.5) & 0xF);
+        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3936.field17819, MathHelper.floor(class7074.method21646() * 16.0f / 360.0f + 0.5) & 0xF);
     }
     
     @Override

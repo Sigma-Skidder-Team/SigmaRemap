@@ -5,9 +5,9 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.HashSet;
+
 import com.google.common.collect.Sets;
-import java.util.function.Predicate;
+
 import java.util.function.Function;
 import java.util.Set;
 import java.util.stream.Collector;
@@ -29,15 +29,15 @@ public class Class5425 extends Class5419<Class511>
         final Class365<?> method2618 = class1850.method2618();
         final Class9468 class1851 = method2618.method1198(Class8233.field33813).get();
         final List list = method2618.method1198(Class8233.field33814).get();
-        final List<? super Object> list2 = class1851.method35218().stream().map(class1852 -> new Class354(class1852.field26589, class1852.field26590, class1852.field26591)).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
-        this.method16573(class1849, (List<Class354>)list2, this.method16572(class1849, list, (List<Class354>)list2), class1851.method35222() - 1, class1850, method2618);
+        final List<? super Object> list2 = class1851.method35218().stream().map(class1852 -> new BlockPos(class1852.field26589, class1852.field26590, class1852.field26591)).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
+        this.method16573(class1849, (List<BlockPos>)list2, this.method16572(class1849, list, (List<BlockPos>)list2), class1851.method35222() - 1, class1850, method2618);
     }
     
-    private Set<Class354> method16572(final Class1849 class1849, final List<Class363> list, final List<Class354> list2) {
-        return list.stream().filter(class1851 -> class1851.method1169() == class1850.method6789().method20487()).map((Function<? super Object, ?>)Class363::method1170).filter(list2::contains).collect((Collector<? super Object, ?, Set<Class354>>)Collectors.toSet());
+    private Set<BlockPos> method16572(final Class1849 class1849, final List<Class363> list, final List<BlockPos> list2) {
+        return list.stream().filter(class1851 -> class1851.method1169() == class1850.method6789().method20487()).map((Function<? super Object, ?>)Class363::method1170).filter(list2::contains).collect((Collector<? super Object, ?, Set<BlockPos>>)Collectors.toSet());
     }
     
-    private void method16573(final Class1849 class1849, final List<Class354> list, final Set<Class354> set, final int n, final Class511 class1850, final Class365<?> class1851) {
+    private void method16573(final Class1849 class1849, final List<BlockPos> list, final Set<BlockPos> set, final int n, final Class511 class1850, final Class365<?> class1851) {
         set.forEach(class1854 -> {
             list2.indexOf(class1854);
             class1852.method6701(class1854).method21696();
@@ -69,14 +69,14 @@ public class Class5425 extends Class5419<Class511>
         method16574(class1849, list, n, class1850, class1851);
     }
     
-    public static void method16574(final Class1849 class1849, final List<Class354> list, final int n, final Class511 class1850, final Class365<?> class1851) {
+    public static void method16574(final Class1849 class1849, final List<BlockPos> list, final int n, final Class511 class1850, final Class365<?> class1851) {
         class1851.method1198(Class8233.field33815).ifPresent(set -> {
             set.iterator();
             final Iterator iterator;
             while (iterator.hasNext()) {
                 final Class363 class1854 = iterator.next();
                 class1854.method1170();
-                final Class354 class1855;
+                final BlockPos class1855;
                 list2.indexOf(class1855);
                 if (class1852.method6789().method20487() == class1854.method1169()) {
                     class1852.method6701(class1855).method21696();

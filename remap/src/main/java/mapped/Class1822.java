@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class1822<T extends Class511, M extends Class5860<T>> extends Class1820<T, M>
 {
     private static final Class1932 field10003;
@@ -18,19 +21,19 @@ public class Class1822<T extends Class511, M extends Class5860<T>> extends Class
     }
     
     @Override
-    public void method6586(final Class7351 class7351, final Class7807 class7352, final int n, final Class399 class7353, final float n2, final float n3, final float n4, final float n5) {
-        final float method35640 = Class9546.method35640(n2 * n2 + n4 * n4);
+    public void method6586(final Class7351 class7351, final Class7807 class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5) {
+        final float method35640 = MathHelper.method35640(n2 * n2 + n4 * n4);
         final float n6 = (float)(Math.atan2(n2, n4) * 57.2957763671875);
         final float n7 = (float)(Math.atan2(n3, method35640) * 57.2957763671875);
         class7351.method22564(0.0, 0.0, 0.0);
-        class7351.method22566(Class9138.field38718.method33328(n6 - 90.0f));
-        class7351.method22566(Class9138.field38720.method33328(n7));
-        class7351.method22566(Class9138.field38716.method33328(45.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n6 - 90.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(n7));
+        class7351.method22566(Vector3f.XP.rotationDegrees(45.0f));
         class7351.method22565(0.03125f, 0.03125f, 0.03125f);
         class7351.method22564(2.5, 0.0, 0.0);
         final Class4150 method35641 = class7352.method25214(Class6332.method18770(Class1822.field10003));
         for (int i = 0; i < 4; ++i) {
-            class7351.method22566(Class9138.field38716.method33328(90.0f));
+            class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
             final Class8996 method35642 = class7351.method22569();
             final Class6789 method35643 = method35642.method32111();
             final Class9429 method35644 = method35642.method32112();

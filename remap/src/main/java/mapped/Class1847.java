@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -22,7 +25,7 @@ import org.apache.logging.log4j.Logger;
 public abstract class Class1847 implements Class1851, AutoCloseable
 {
     public static final Logger field10048;
-    private static final Class179[] field10049;
+    private static final Direction[] field10049;
     public final List<Class436> field10050;
     public final List<Class436> field10051;
     public final List<Class436> field10052;
@@ -73,21 +76,21 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     public void method6680() {
-        this.method6759(new Class354(8, 64, 8));
+        this.method6759(new BlockPos(8, 64, 8));
     }
     
-    public Class7096 method6681(final Class354 class354) {
-        Class354 method1137;
-        for (method1137 = new Class354(class354.method1074(), this.method6743(), class354.method1076()); !this.method6961(method1137.method1137()); method1137 = method1137.method1137()) {}
+    public Class7096 method6681(final BlockPos class354) {
+        BlockPos method1137;
+        for (method1137 = new BlockPos(class354.getX(), this.method6743(), class354.getZ()); !this.method6961(method1137.method1137()); method1137 = method1137.method1137()) {}
         return this.method6701(method1137);
     }
     
-    public static boolean method6682(final Class354 class354) {
+    public static boolean method6682(final BlockPos class354) {
         if (!method6683(class354)) {
-            if (class354.method1074() >= -30000000) {
-                if (class354.method1076() >= -30000000) {
-                    if (class354.method1074() < 30000000) {
-                        if (class354.method1076() < 30000000) {
+            if (class354.getX() >= -30000000) {
+                if (class354.getZ() >= -30000000) {
+                    if (class354.getX() < 30000000) {
+                        if (class354.getZ() < 30000000) {
                             return true;
                         }
                     }
@@ -97,16 +100,16 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return false;
     }
     
-    public static boolean method6683(final Class354 class354) {
-        return method6684(class354.method1075());
+    public static boolean method6683(final BlockPos class354) {
+        return method6684(class354.getY());
     }
     
     public static boolean method6684(final int n) {
         return n < 0 || n >= 256;
     }
     
-    public Class1862 method6685(final Class354 class354) {
-        return this.method6686(class354.method1074() >> 4, class354.method1076() >> 4);
+    public Class1862 method6685(final BlockPos class354) {
+        return this.method6686(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     public Class1862 method6686(final int n, final int n2) {
@@ -123,7 +126,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public boolean method6688(final Class354 class354, final Class7096 class355, final int n) {
+    public boolean method6688(final BlockPos class354, final Class7096 class355, final int n) {
         if (method6683(class354)) {
             return false;
         }
@@ -191,16 +194,16 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return false;
     }
     
-    public void method6689(final Class354 class354, final Class7096 class355, final Class7096 class356) {
+    public void method6689(final BlockPos class354, final Class7096 class355, final Class7096 class356) {
     }
     
     @Override
-    public boolean method6690(final Class354 class354, final boolean b) {
+    public boolean method6690(final BlockPos class354, final boolean b) {
         return this.method6688(class354, this.method6702(class354).method21791(), 0x3 | (b ? 64 : 0));
     }
     
     @Override
-    public boolean method6691(final Class354 class354, final boolean b, final Class399 class355) {
+    public boolean method6691(final BlockPos class354, final boolean b, final Entity class355) {
         final Class7096 method6701 = this.method6701(class354);
         if (!method6701.method21706()) {
             final Class7099 method6702 = this.method6702(class354);
@@ -213,23 +216,23 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return false;
     }
     
-    public boolean method6692(final Class354 class354, final Class7096 class355) {
+    public boolean method6692(final BlockPos class354, final Class7096 class355) {
         return this.method6688(class354, class355, 3);
     }
     
-    public abstract void method6693(final Class354 p0, final Class7096 p1, final Class7096 p2, final int p3);
+    public abstract void method6693(final BlockPos p0, final Class7096 p1, final Class7096 p2, final int p3);
     
     @Override
-    public void method6694(final Class354 class354, final Class3833 class355) {
+    public void method6694(final BlockPos class354, final Class3833 class355) {
         if (this.field10065.method29570() != Class9505.field40898) {
             this.method6696(class354, class355);
         }
     }
     
-    public void method6695(final Class354 class354, final Class7096 class355, final Class7096 class356) {
+    public void method6695(final BlockPos class354, final Class7096 class355, final Class7096 class356) {
     }
     
-    public void method6696(final Class354 class354, final Class3833 class355) {
+    public void method6696(final BlockPos class354, final Class3833 class355) {
         this.method6698(class354.method1145(), class355, class354);
         this.method6698(class354.method1147(), class355, class354);
         this.method6698(class354.method1139(), class355, class354);
@@ -238,28 +241,28 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         this.method6698(class354.method1143(), class355, class354);
     }
     
-    public void method6697(final Class354 class354, final Class3833 class355, final Class179 class356) {
-        if (class356 != Class179.field515) {
+    public void method6697(final BlockPos class354, final Class3833 class355, final Direction class356) {
+        if (class356 != Direction.WEST) {
             this.method6698(class354.method1145(), class355, class354);
         }
-        if (class356 != Class179.field516) {
+        if (class356 != Direction.EAST) {
             this.method6698(class354.method1147(), class355, class354);
         }
-        if (class356 != Class179.field511) {
+        if (class356 != Direction.DOWN) {
             this.method6698(class354.method1139(), class355, class354);
         }
-        if (class356 != Class179.field512) {
+        if (class356 != Direction.UP) {
             this.method6698(class354.method1137(), class355, class354);
         }
-        if (class356 != Class179.field513) {
+        if (class356 != Direction.NORTH) {
             this.method6698(class354.method1141(), class355, class354);
         }
-        if (class356 != Class179.field514) {
+        if (class356 != Direction.SOUTH) {
             this.method6698(class354.method1143(), class355, class354);
         }
     }
     
-    public void method6698(final Class354 class354, final Class3833 class355, final Class354 class356) {
+    public void method6698(final BlockPos class354, final Class3833 class355, final BlockPos class356) {
         if (!this.field10067) {
             final Class7096 method6701 = this.method6701(class354);
             try {
@@ -305,15 +308,15 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class7096 method6701(final Class354 class354) {
+    public Class7096 method6701(final BlockPos class354) {
         if (!method6683(class354)) {
-            return this.method6686(class354.method1074() >> 4, class354.method1076() >> 4).method6701(class354);
+            return this.method6686(class354.getX() >> 4, class354.getZ() >> 4).method6701(class354);
         }
         return Class7521.field29763.method11878();
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
+    public Class7099 method6702(final BlockPos class354) {
         if (!method6683(class354)) {
             return this.method6685(class354).method6702(class354);
         }
@@ -329,13 +332,13 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public void method6705(final Class512 class512, final Class354 class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
-        this.method6706(class512, class513.method1074() + 0.5, class513.method1075() + 0.5, class513.method1076() + 0.5, class514, class515, n, n2);
+    public void method6705(final Class512 class512, final BlockPos class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
+        this.method6706(class512, class513.getX() + 0.5, class513.getY() + 0.5, class513.getZ() + 0.5, class514, class515, n, n2);
     }
     
     public abstract void method6706(final Class512 p0, final double p1, final double p2, final double p3, final Class7795 p4, final Class286 p5, final float p6, final float p7);
     
-    public abstract void method6707(final Class512 p0, final Class399 p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
+    public abstract void method6707(final Class512 p0, final Entity p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
     
     public void method6708(final double n, final double n2, final double n3, final Class7795 class7795, final Class286 class7796, final float n4, final float n5, final boolean b) {
     }
@@ -368,7 +371,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
             }
         }
         if (this.field10067) {
-            final Class354 method2193 = class436.method2193();
+            final BlockPos method2193 = class436.method2193();
             final Class7096 method2194 = this.method6701(method2193);
             this.method6693(method2193, method2194, method2194, 2);
         }
@@ -400,7 +403,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         while (iterator.hasNext()) {
             final Class436 class436 = iterator.next();
             if (!class436.method2197() && class436.method2188()) {
-                final Class354 method6797 = class436.method2193();
+                final BlockPos method6797 = class436.method2193();
                 if (this.field10064.method7410(method6797) && this.method6787().method34779(method6797)) {
                     try {
                         method6796.method15298(() -> String.valueOf(Class5412.method16520(class438.method2206())));
@@ -450,7 +453,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         method6796.method15299();
     }
     
-    public void method6717(final Consumer<Class399> consumer, final Class399 class399) {
+    public void method6717(final Consumer<Entity> consumer, final Entity class399) {
         try {
             consumer.accept(class399);
         }
@@ -462,12 +465,12 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     public boolean method6718(final Class6221 class6221) {
-        final int method35644 = Class9546.method35644(class6221.field25073);
-        final int method35645 = Class9546.method35650(class6221.field25076);
-        final int method35646 = Class9546.method35644(class6221.field25074);
-        final int method35647 = Class9546.method35650(class6221.field25077);
-        final int method35648 = Class9546.method35644(class6221.field25075);
-        final int method35649 = Class9546.method35650(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.field25073);
+        final int method35645 = MathHelper.method35650(class6221.field25076);
+        final int method35646 = MathHelper.floor(class6221.field25074);
+        final int method35647 = MathHelper.method35650(class6221.field25077);
+        final int method35648 = MathHelper.floor(class6221.field25075);
+        final int method35649 = MathHelper.method35650(class6221.field25078);
         try (final Class386 method35650 = Class386.method1296()) {
             for (int i = method35644; i < method35645; ++i) {
                 for (int j = method35646; j < method35647; ++j) {
@@ -483,12 +486,12 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     public boolean method6719(final Class6221 class6221) {
-        final int method35644 = Class9546.method35644(class6221.field25073);
-        final int method35645 = Class9546.method35650(class6221.field25076);
-        final int method35646 = Class9546.method35644(class6221.field25074);
-        final int method35647 = Class9546.method35650(class6221.field25077);
-        final int method35648 = Class9546.method35644(class6221.field25075);
-        final int method35649 = Class9546.method35650(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.field25073);
+        final int method35645 = MathHelper.method35650(class6221.field25076);
+        final int method35646 = MathHelper.floor(class6221.field25074);
+        final int method35647 = MathHelper.method35650(class6221.field25077);
+        final int method35648 = MathHelper.floor(class6221.field25075);
+        final int method35649 = MathHelper.method35650(class6221.field25078);
         if (this.method6973(method35644, method35646, method35648, method35645, method35647, method35649)) {
             try (final Class386 method35650 = Class386.method1296()) {
                 for (int i = method35644; i < method35645; ++i) {
@@ -509,12 +512,12 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     
     @Nullable
     public Class7096 method6720(final Class6221 class6221, final Class3833 class6222) {
-        final int method35644 = Class9546.method35644(class6221.field25073);
-        final int method35645 = Class9546.method35650(class6221.field25076);
-        final int method35646 = Class9546.method35644(class6221.field25074);
-        final int method35647 = Class9546.method35650(class6221.field25077);
-        final int method35648 = Class9546.method35644(class6221.field25075);
-        final int method35649 = Class9546.method35650(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.field25073);
+        final int method35645 = MathHelper.method35650(class6221.field25076);
+        final int method35646 = MathHelper.floor(class6221.field25074);
+        final int method35647 = MathHelper.method35650(class6221.field25077);
+        final int method35648 = MathHelper.floor(class6221.field25075);
+        final int method35649 = MathHelper.method35650(class6221.field25078);
         if (this.method6973(method35644, method35646, method35648, method35645, method35647, method35649)) {
             try (final Class386 method35650 = Class386.method1296()) {
                 for (int i = method35644; i < method35645; ++i) {
@@ -534,21 +537,21 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     public boolean method6721(final Class6221 class6221, final Class8059 class6222) {
-        return Class354.method1157(Class9546.method35644(class6221.field25073), Class9546.method35644(class6221.field25074), Class9546.method35644(class6221.field25075), Class9546.method35650(class6221.field25076) - 1, Class9546.method35650(class6221.field25077) - 1, Class9546.method35650(class6221.field25078) - 1).anyMatch(class6225 -> {
+        return BlockPos.method1157(MathHelper.floor(class6221.field25073), MathHelper.floor(class6221.field25074), MathHelper.floor(class6221.field25075), MathHelper.method35650(class6221.field25076) - 1, MathHelper.method35650(class6221.field25077) - 1, MathHelper.method35650(class6221.field25078) - 1).anyMatch(class6225 -> {
             Class114.method607(class6224);
             return class6223.test(this.method6701(class6225));
         });
     }
     
-    public Class6154 method6722(final Class399 class399, final double n, final double n2, final double n3, final float n4, final Class2196 class400) {
+    public Class6154 method6722(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class2196 class400) {
         return this.method6724(class399, null, n, n2, n3, n4, false, class400);
     }
     
-    public Class6154 method6723(final Class399 class399, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class400) {
+    public Class6154 method6723(final Entity class399, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class400) {
         return this.method6724(class399, null, n, n2, n3, n4, b, class400);
     }
     
-    public Class6154 method6724(final Class399 class399, final Class7929 class400, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class401) {
+    public Class6154 method6724(final Entity class399, final Class7929 class400, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class401) {
         final Class6154 class402 = new Class6154(this, class399, n, n2, n3, n4, b, class401);
         if (class400 != null) {
             class402.method18412(class400);
@@ -558,7 +561,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return class402;
     }
     
-    public boolean method6725(final Class512 class512, Class354 method1149, final Class179 class513) {
+    public boolean method6725(final Class512 class512, BlockPos method1149, final Direction class513) {
         method1149 = method1149.method1149(class513);
         if (this.method6701(method1149).method21696() != Class7521.field29289) {
             return false;
@@ -574,7 +577,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     
     @Nullable
     @Override
-    public Class436 method6727(final Class354 class354) {
+    public Class436 method6727(final BlockPos class354) {
         if (method6683(class354)) {
             return null;
         }
@@ -595,7 +598,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Nullable
-    private Class436 method6728(final Class354 class354) {
+    private Class436 method6728(final BlockPos class354) {
         for (int i = 0; i < this.field10052.size(); ++i) {
             final Class436 class355 = this.field10052.get(i);
             if (!class355.method2197() && class355.method2193().equals(class354)) {
@@ -605,7 +608,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return null;
     }
     
-    public void method6729(final Class354 class354, final Class436 class355) {
+    public void method6729(final BlockPos class354, final Class436 class355) {
         if (!method6683(class354)) {
             if (class355 != null) {
                 if (!class355.method2197()) {
@@ -631,7 +634,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         }
     }
     
-    public void method6730(final Class354 class354) {
+    public void method6730(final BlockPos class354) {
         final Class436 method6727 = this.method6727(class354);
         if (method6727 != null && this.field10068) {
             method6727.method2198();
@@ -647,20 +650,20 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         }
     }
     
-    public boolean method6731(final Class354 class354) {
-        return !method6683(class354) && this.field10064.method7401(class354.method1074() >> 4, class354.method1076() >> 4);
+    public boolean method6731(final BlockPos class354) {
+        return !method6683(class354) && this.field10064.method7401(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
-    public boolean method6732(final Class354 class354, final Class399 class355) {
+    public boolean method6732(final BlockPos class354, final Entity class355) {
         if (!method6683(class354)) {
-            final Class1860 method6687 = this.method6687(class354.method1074() >> 4, class354.method1076() >> 4, Class9312.field39989, false);
+            final Class1860 method6687 = this.method6687(class354.getX() >> 4, class354.getZ() >> 4, Class9312.field39989, false);
             return method6687 != null && method6687.method6701(class354).method21731(this, class354, class355);
         }
         return false;
     }
     
     public void method6733() {
-        this.field10055 = (int)((1.0 - (0.5 + 2.0 * Class9546.method35654(Class9546.method35639(this.method6952(1.0f) * 6.2831855f), -0.25, 0.25)) * (1.0 - this.method6768(1.0f) * 5.0f / 16.0) * (1.0 - this.method6766(1.0f) * 5.0f / 16.0)) * 11.0);
+        this.field10055 = (int)((1.0 - (0.5 + 2.0 * MathHelper.method35654(MathHelper.cos(this.method6952(1.0f) * 6.2831855f), -0.25, 0.25)) * (1.0 - this.method6768(1.0f) * 5.0f / 16.0) * (1.0 - this.method6766(1.0f) * 5.0f / 16.0)) * 11.0);
     }
     
     public void method6734(final boolean b, final boolean b2) {
@@ -688,13 +691,13 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public List<Class399> method6737(final Class399 class399, final Class6221 class400, final Predicate<? super Class399> predicate) {
+    public List<Entity> method6737(final Entity class399, final Class6221 class400, final Predicate<? super Entity> predicate) {
         this.method6796().method15302("getEntities");
         final ArrayList arrayList = Lists.newArrayList();
-        final int method35644 = Class9546.method35644((class400.field25073 - 2.0) / 16.0);
-        final int method35645 = Class9546.method35644((class400.field25076 + 2.0) / 16.0);
-        final int method35646 = Class9546.method35644((class400.field25075 - 2.0) / 16.0);
-        final int method35647 = Class9546.method35644((class400.field25078 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class400.field25073 - 2.0) / 16.0);
+        final int method35645 = MathHelper.floor((class400.field25076 + 2.0) / 16.0);
+        final int method35646 = MathHelper.floor((class400.field25075 - 2.0) / 16.0);
+        final int method35647 = MathHelper.floor((class400.field25078 + 2.0) / 16.0);
         for (int i = method35644; i <= method35645; ++i) {
             for (int j = method35646; j <= method35647; ++j) {
                 final Class1862 method35648 = this.method6762().method7398(i, j, false);
@@ -706,18 +709,18 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return arrayList;
     }
     
-    public <T extends Class399> List<T> method6738(final Class7499<T> class7499, final Class6221 class7500, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6738(final Class7499<T> class7499, final Class6221 class7500, final Predicate<? super T> predicate) {
         this.method6796().method15302("getEntities");
-        final int method35644 = Class9546.method35644((class7500.field25073 - 2.0) / 16.0);
-        final int method35645 = Class9546.method35650((class7500.field25076 + 2.0) / 16.0);
-        final int method35646 = Class9546.method35644((class7500.field25075 - 2.0) / 16.0);
-        final int method35647 = Class9546.method35650((class7500.field25078 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class7500.field25073 - 2.0) / 16.0);
+        final int method35645 = MathHelper.method35650((class7500.field25076 + 2.0) / 16.0);
+        final int method35646 = MathHelper.floor((class7500.field25075 - 2.0) / 16.0);
+        final int method35647 = MathHelper.method35650((class7500.field25078 + 2.0) / 16.0);
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
                 final Class1862 method35648 = this.method6762().method7398(i, j, false);
                 if (method35648 != null) {
-                    method35648.method7060(class7499, class7500, arrayList, (Predicate<? super Class399>)predicate);
+                    method35648.method7060(class7499, class7500, arrayList, (Predicate<? super Entity>)predicate);
                 }
             }
         }
@@ -725,19 +728,19 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public <T extends Class399> List<T> method6739(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6739(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
         this.method6796().method15302("getEntities");
-        final int method35644 = Class9546.method35644((class6221.field25073 - 2.0) / 16.0);
-        final int method35645 = Class9546.method35650((class6221.field25076 + 2.0) / 16.0);
-        final int method35646 = Class9546.method35644((class6221.field25075 - 2.0) / 16.0);
-        final int method35647 = Class9546.method35650((class6221.field25078 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class6221.field25073 - 2.0) / 16.0);
+        final int method35645 = MathHelper.method35650((class6221.field25076 + 2.0) / 16.0);
+        final int method35646 = MathHelper.floor((class6221.field25075 - 2.0) / 16.0);
+        final int method35647 = MathHelper.method35650((class6221.field25078 + 2.0) / 16.0);
         final ArrayList arrayList = Lists.newArrayList();
         final Class1906 method35648 = this.method6762();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
                 final Class1862 method35649 = method35648.method7398(i, j, false);
                 if (method35649 != null) {
-                    method35649.method7061(clazz, class6221, (List<Class399>)arrayList, (Predicate<? super Class399>)predicate);
+                    method35649.method7061(clazz, class6221, (List<Entity>)arrayList, (Predicate<? super Entity>)predicate);
                 }
             }
         }
@@ -745,19 +748,19 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public <T extends Class399> List<T> method6740(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6740(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
         this.method6796().method15302("getLoadedEntities");
-        final int method35644 = Class9546.method35644((class6221.field25073 - 2.0) / 16.0);
-        final int method35645 = Class9546.method35650((class6221.field25076 + 2.0) / 16.0);
-        final int method35646 = Class9546.method35644((class6221.field25075 - 2.0) / 16.0);
-        final int method35647 = Class9546.method35650((class6221.field25078 + 2.0) / 16.0);
+        final int method35644 = MathHelper.floor((class6221.field25073 - 2.0) / 16.0);
+        final int method35645 = MathHelper.method35650((class6221.field25076 + 2.0) / 16.0);
+        final int method35646 = MathHelper.floor((class6221.field25075 - 2.0) / 16.0);
+        final int method35647 = MathHelper.method35650((class6221.field25078 + 2.0) / 16.0);
         final ArrayList arrayList = Lists.newArrayList();
         final Class1906 method35648 = this.method6762();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
                 final Class1862 method35649 = method35648.method7399(i, j);
                 if (method35649 != null) {
-                    method35649.method7061(clazz, class6221, (List<Class399>)arrayList, (Predicate<? super Class399>)predicate);
+                    method35649.method7061(clazz, class6221, (List<Entity>)arrayList, (Predicate<? super Entity>)predicate);
                 }
             }
         }
@@ -765,9 +768,9 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Nullable
-    public abstract Class399 method6741(final int p0);
+    public abstract Entity method6741(final int p0);
     
-    public void method6742(final Class354 class354, final Class436 class355) {
+    public void method6742(final BlockPos class354, final Class436 class355) {
         if (this.method6971(class354)) {
             this.method6685(class354).method7058();
         }
@@ -787,47 +790,47 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return this.field10065.method29570();
     }
     
-    public int method6746(final Class354 class354) {
-        final int max = Math.max(0, this.method6964(class354.method1139(), Class179.field511));
+    public int method6746(final BlockPos class354) {
+        final int max = Math.max(0, this.method6964(class354.method1139(), Direction.DOWN));
         if (max >= 15) {
             return max;
         }
-        final int max2 = Math.max(max, this.method6964(class354.method1137(), Class179.field512));
+        final int max2 = Math.max(max, this.method6964(class354.method1137(), Direction.UP));
         if (max2 >= 15) {
             return max2;
         }
-        final int max3 = Math.max(max2, this.method6964(class354.method1141(), Class179.field513));
+        final int max3 = Math.max(max2, this.method6964(class354.method1141(), Direction.NORTH));
         if (max3 >= 15) {
             return max3;
         }
-        final int max4 = Math.max(max3, this.method6964(class354.method1143(), Class179.field514));
+        final int max4 = Math.max(max3, this.method6964(class354.method1143(), Direction.SOUTH));
         if (max4 >= 15) {
             return max4;
         }
-        final int max5 = Math.max(max4, this.method6964(class354.method1145(), Class179.field515));
+        final int max5 = Math.max(max4, this.method6964(class354.method1145(), Direction.WEST));
         if (max5 < 15) {
-            final int max6 = Math.max(max5, this.method6964(class354.method1147(), Class179.field516));
+            final int max6 = Math.max(max5, this.method6964(class354.method1147(), Direction.EAST));
             return (max6 < 15) ? max6 : max6;
         }
         return max5;
     }
     
-    public boolean method6747(final Class354 class354, final Class179 class355) {
+    public boolean method6747(final BlockPos class354, final Direction class355) {
         return this.method6748(class354, class355) > 0;
     }
     
-    public int method6748(final Class354 class354, final Class179 class355) {
+    public int method6748(final BlockPos class354, final Direction class355) {
         final Class7096 method6701 = this.method6701(class354);
         return method6701.method21713(this, class354) ? this.method6746(class354) : method6701.method21715(this, class354, class355);
     }
     
-    public boolean method6749(final Class354 class354) {
-        return this.method6748(class354.method1139(), Class179.field511) > 0 || this.method6748(class354.method1137(), Class179.field512) > 0 || this.method6748(class354.method1141(), Class179.field513) > 0 || this.method6748(class354.method1143(), Class179.field514) > 0 || this.method6748(class354.method1145(), Class179.field515) > 0 || this.method6748(class354.method1147(), Class179.field516) > 0;
+    public boolean method6749(final BlockPos class354) {
+        return this.method6748(class354.method1139(), Direction.DOWN) > 0 || this.method6748(class354.method1137(), Direction.UP) > 0 || this.method6748(class354.method1141(), Direction.NORTH) > 0 || this.method6748(class354.method1143(), Direction.SOUTH) > 0 || this.method6748(class354.method1145(), Direction.WEST) > 0 || this.method6748(class354.method1147(), Direction.EAST) > 0;
     }
     
-    public int method6750(final Class354 class354) {
+    public int method6750(final BlockPos class354) {
         int n = 0;
-        for (final Class179 class355 : Class1847.field10049) {
+        for (final Direction class355 : Class1847.field10049) {
             final int method6748 = this.method6748(class354.method1149(class355), class355);
             if (method6748 >= 15) {
                 return 15;
@@ -871,23 +874,23 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class354 method6758() {
-        Class354 method6958 = new Class354(this.field10065.method29536(), this.field10065.method29537(), this.field10065.method29538());
+    public BlockPos method6758() {
+        BlockPos method6958 = new BlockPos(this.field10065.method29536(), this.field10065.method29537(), this.field10065.method29538());
         if (!this.method6787().method34779(method6958)) {
-            method6958 = this.method6958(Class2020.field11525, new Class354(this.method6787().method34777(), 0.0, this.method6787().method34778()));
+            method6958 = this.method6958(Class2020.field11525, new BlockPos(this.method6787().method34777(), 0.0, this.method6787().method34778()));
         }
         return method6958;
     }
     
-    public void method6759(final Class354 class354) {
+    public void method6759(final BlockPos class354) {
         this.field10065.method29548(class354);
     }
     
-    public boolean method6760(final Class512 class512, final Class354 class513) {
+    public boolean method6760(final Class512 class512, final BlockPos class513) {
         return true;
     }
     
-    public void method6761(final Class399 class399, final byte b) {
+    public void method6761(final Entity class399, final byte b) {
     }
     
     @Override
@@ -895,7 +898,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return this.field10064;
     }
     
-    public void method6763(final Class354 class354, final Class3833 class355, final int n, final int n2) {
+    public void method6763(final BlockPos class354, final Class3833 class355, final int n, final int n2) {
         this.method6701(class354).method21733(this, class354, n, n2);
     }
     
@@ -909,7 +912,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     public float method6766(final float n) {
-        return Class9546.method35700(n, this.field10060, this.field10061) * this.method6768(n);
+        return MathHelper.method35700(n, this.field10060, this.field10061) * this.method6768(n);
     }
     
     public void method6767(final float n) {
@@ -918,7 +921,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     public float method6768(final float n) {
-        return Class9546.method35700(n, this.field10058, this.field10059);
+        return MathHelper.method35700(n, this.field10058, this.field10059);
     }
     
     public void method6769(final float n) {
@@ -934,11 +937,11 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return this.method6768(1.0f) > 0.2;
     }
     
-    public boolean method6772(final Class354 class354) {
-        return this.method6771() && this.method6994(class354) && this.method6958(Class2020.field11525, class354).method1075() <= class354.method1075() && this.method6959(class354).method9841() == Class2145.field12629;
+    public boolean method6772(final BlockPos class354) {
+        return this.method6771() && this.method6994(class354) && this.method6958(Class2020.field11525, class354).getY() <= class354.getY() && this.method6959(class354).method9841() == Class2145.field12629;
     }
     
-    public boolean method6773(final Class354 class354) {
+    public boolean method6773(final BlockPos class354) {
         return this.method6959(class354).method9842();
     }
     
@@ -949,7 +952,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     
     public abstract int method6776();
     
-    public void method6777(final int n, final Class354 class354, final int n2) {
+    public void method6777(final int n, final BlockPos class354, final int n2) {
     }
     
     public int method6778() {
@@ -970,16 +973,16 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return method24419;
     }
     
-    public abstract void method6780(final int p0, final Class354 p1, final int p2);
+    public abstract void method6780(final int p0, final BlockPos p1, final int p2);
     
     public void method6781(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class51 class51) {
     }
     
     public abstract Class6516 method6782();
     
-    public void method6783(final Class354 class354, final Class3833 class355) {
-        for (final Class179 class356 : Class98.field268) {
-            final Class354 method1149 = class354.method1149(class356);
+    public void method6783(final BlockPos class354, final Class3833 class355) {
+        for (final Direction class356 : Plane.HORIZONTAL) {
+            final BlockPos method1149 = class354.method1149(class356);
             if (!this.method6971(method1149)) {
                 continue;
             }
@@ -988,7 +991,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
                 if (!method1150.method21713(this, method1149)) {
                     continue;
                 }
-                final Class354 method1151 = method1149.method1149(class356);
+                final BlockPos method1151 = method1149.method1149(class356);
                 final Class7096 method1152 = this.method6701(method1151);
                 if (method1152.method21696() != Class7521.field29471) {
                     continue;
@@ -1002,7 +1005,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class9592 method6784(final Class354 class354) {
+    public Class9592 method6784(final BlockPos class354) {
         long method7041 = 0L;
         float method7042 = 0.0f;
         if (this.method6971(class354)) {
@@ -1040,7 +1043,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     }
     
     @Override
-    public boolean method6791(final Class354 class354, final Predicate<Class7096> predicate) {
+    public boolean method6791(final BlockPos class354, final Predicate<Class7096> predicate) {
         return predicate.test(this.method6701(class354));
     }
     
@@ -1048,10 +1051,10 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     
     public abstract Class1792 method6793();
     
-    public Class354 method6794(final int n, final int n2, final int n3, final int n4) {
+    public BlockPos method6794(final int n, final int n2, final int n3, final int n4) {
         this.field10056 = this.field10056 * 3 + 1013904223;
         final int n5 = this.field10056 >> 2;
-        return new Class354(n + (n5 & 0xF), n2 + (n5 >> 16 & n4), n3 + (n5 >> 8 & 0xF));
+        return new BlockPos(n + (n5 & 0xF), n2 + (n5 >> 16 & n4), n3 + (n5 >> 8 & 0xF));
     }
     
     public boolean method6795() {
@@ -1069,6 +1072,6 @@ public abstract class Class1847 implements Class1851, AutoCloseable
     
     static {
         field10048 = LogManager.getLogger();
-        field10049 = Class179.values();
+        field10049 = Direction.values();
     }
 }

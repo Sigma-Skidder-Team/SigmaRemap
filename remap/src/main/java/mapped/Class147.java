@@ -11,6 +11,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+
 import java.util.function.Function;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Class147 extends Class126
 {
     private final Class2053 field432;
     private final List<Class9254> field433;
-    private static final Function<Class399, Class41> field434;
+    private static final Function<Entity, Class41> field434;
     private static final Function<Class436, Class41> field435;
     
     private Class147(final Class122[] array, final Class2053 field432, final List<Class9254> list) {

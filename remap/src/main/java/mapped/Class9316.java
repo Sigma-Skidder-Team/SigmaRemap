@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public class Class9316
@@ -103,16 +105,16 @@ public class Class9316
         final float method22701 = method22697.method7501();
         final float n2 = (method22700 + method22701) / 2.0f;
         final float method22702 = method22697.method7509();
-        final float method22703 = Class9546.method35700(method22702, method22698, n);
-        final float method22704 = Class9546.method35700(method22702, method22699, n);
-        final float method22705 = Class9546.method35700(method22702, method22700, n2);
-        final float method22706 = Class9546.method35700(method22702, method22701, n2);
+        final float method22703 = MathHelper.method35700(method22702, method22698, n);
+        final float method22704 = MathHelper.method35700(method22702, method22699, n);
+        final float method22705 = MathHelper.method35700(method22702, method22700, n2);
+        final float method22706 = MathHelper.method35700(method22702, method22701, n2);
         final Class5746 class871 = new Class5746(0.9f);
         Class9463.method35173().method35188().method21097(class871);
         for (int i = 0; i < 2; ++i) {
             class870.method22567();
             class870.method22564(-(i * 2 - 1) * 0.24f, -0.30000001192092896, 0.0);
-            class870.method22566(Class9138.field38718.method33328((i * 2 - 1) * 10.0f));
+            class870.method22566(Vector3f.field38718.rotationDegrees((i * 2 - 1) * 10.0f));
             final Class6789 method22707 = class870.method22569().method32111();
             method22696.method12390(7, Class9237.field39618);
             method22696.method12444(method22707, -0.5f, -0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22704, method22706).method12397();

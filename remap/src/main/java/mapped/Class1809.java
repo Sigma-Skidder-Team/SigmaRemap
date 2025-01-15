@@ -18,7 +18,7 @@ public class Class1809 extends Class1799<Class784, Class5894<Class784>>
                 class7351.method22567();
                 ((Class1799<T, Class5894>)this).method6559().method17634().method18645(class7351);
                 class7351.method22564(0.0, -0.34375, 0.0);
-                class7351.method22566(Class9138.field38718.method33328(180.0f));
+                class7351.method22566(Vector3f.field38718.rotationDegrees(180.0f));
                 class7351.method22565(0.625f, -0.625f, -0.625f);
                 Class869.method5277().method5307().method6537(class7353, new Class8321(Class7521.field29342), Class2016.field11491, false, class7351, class7352, class7353.field2391, n, Class4710.method13982(class7353, 0.0f));
                 class7351.method22568();

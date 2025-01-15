@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -12,8 +14,8 @@ public class Class4293 implements Class4252<Class5800>
     private static String[] field19251;
     private int field19252;
     private UUID field19253;
-    private Class354 field19254;
-    private Class179 field19255;
+    private BlockPos field19254;
+    private Direction field19255;
     private int field19256;
     
     public Class4293() {
@@ -33,7 +35,7 @@ public class Class4293 implements Class4252<Class5800>
         this.field19253 = class8654.method29504();
         this.field19256 = class8654.method29501();
         this.field19254 = class8654.method29494();
-        this.field19255 = Class179.method793(class8654.readUnsignedByte());
+        this.field19255 = Direction.byHorizontalIndex(class8654.readUnsignedByte());
     }
     
     @Override
@@ -42,7 +44,7 @@ public class Class4293 implements Class4252<Class5800>
         class8654.method29503(this.field19253);
         class8654.method29505(this.field19256);
         class8654.method29495(this.field19254);
-        class8654.writeByte(this.field19255.method780());
+        class8654.writeByte(this.field19255.getHorizontalIndex());
     }
     
     public void method12764(final Class5800 class5800) {
@@ -57,11 +59,11 @@ public class Class4293 implements Class4252<Class5800>
         return this.field19253;
     }
     
-    public Class354 method12896() {
+    public BlockPos method12896() {
         return this.field19254;
     }
     
-    public Class179 method12897() {
+    public Direction method12897() {
         return this.field19255;
     }
     

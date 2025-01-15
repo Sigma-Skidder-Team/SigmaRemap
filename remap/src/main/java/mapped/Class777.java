@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 public abstract class Class777 extends Class763
 {
-    private Class354 field4176;
+    private BlockPos field4176;
     private boolean field4177;
     private boolean field4178;
     
@@ -76,7 +76,7 @@ public abstract class Class777 extends Class763
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
-    public static boolean method4309(final Class7499<? extends Class777> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4309(final Class7499<? extends Class777> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6992(Class237.field912, class7502) <= 8 && Class763.method4231(class7499, class7500, class7501, class7502, random);
     }
     
@@ -85,12 +85,12 @@ public abstract class Class777 extends Class763
         return !this.field4178 || n > 16384.0;
     }
     
-    public void method4310(final Class354 field4176) {
+    public void method4310(final BlockPos field4176) {
         this.field4176 = field4176;
         this.field4178 = true;
     }
     
-    public Class354 method4311() {
+    public BlockPos method4311() {
         return this.field4176;
     }
     
@@ -112,7 +112,7 @@ public abstract class Class777 extends Class763
     }
     
     public void method4315() {
-        this.field4176 = new Class354(this).method1134(-500 + this.field2423.nextInt(1000), 0, -500 + this.field2423.nextInt(1000));
+        this.field4176 = new BlockPos(this).method1134(-500 + this.field2423.nextInt(1000), 0, -500 + this.field2423.nextInt(1000));
         this.field4178 = true;
     }
     

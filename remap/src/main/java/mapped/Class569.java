@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class569 extends Class565 implements Class570
 {
     private static final Class1932 field3394;
@@ -27,7 +29,7 @@ public class Class569 extends Class565 implements Class570
     }
     
     private float method3321() {
-        return Class9546.method35653((this.field3397 - Class8349.method27837() + 5000L) / 2000.0f, 0.0f, 1.0f);
+        return MathHelper.method35653((this.field3397 - Class8349.method27837() + 5000L) / 2000.0f, 0.0f, 1.0f);
     }
     
     public void method3322(final float n) {
@@ -37,7 +39,7 @@ public class Class569 extends Class565 implements Class570
                 final int n2 = this.field3396.method5332().method7696() / 2;
                 final int method3322 = this.method3303();
                 this.method3304(-90);
-                this.method3323(method3321, n2, Class9546.method35642(this.field3396.method5332().method7697() - 22.0f * method3321), this.field3398.method32500());
+                this.method3323(method3321, n2, MathHelper.method35642(this.field3396.method5332().method7697() - 22.0f * method3321), this.field3398.method32500());
                 this.method3304(method3322);
             }
             else {

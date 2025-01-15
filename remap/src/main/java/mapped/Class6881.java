@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6881 extends Class6880
 {
     private static String[] field26963;
@@ -29,7 +31,7 @@ public class Class6881 extends Class6880
     
     @Override
     public float method21077() {
-        return Class9546.method35700(Class9546.method35653((Class8349.method27837() - this.field26965) / 100.0f, 0.0f, 1.0f), this.field26957, this.field26964);
+        return MathHelper.method35700(MathHelper.method35653((Class8349.method27837() - this.field26965) / 100.0f, 0.0f, 1.0f), this.field26957, this.field26964);
     }
     
     public void method21083(final Class4301 class4301) {

@@ -5,11 +5,12 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import java.util.concurrent.atomic.AtomicReference;
 import com.google.common.collect.Queues;
+import net.minecraft.util.Direction;
+
 import java.util.Deque;
 import java.util.Random;
 import java.util.List;
@@ -24,7 +25,7 @@ public final class Class7125
     private final Random field27771;
     private final Deque<Class8433> field27772;
     
-    public Class7125(final Class1932 class1932, final int field27766, final Class7669 field27767, final Class6346<?> field27768, final Class1795 field27769, final Class354 class1933, final List<Class4473> field27770, final Random field27771) {
+    public Class7125(final Class1932 class1932, final int field27766, final Class7669 field27767, final Class6346<?> field27768, final Class1795 field27769, final BlockPos class1933, final List<Class4473> field27770, final Random field27771) {
         this.field27772 = Queues.newArrayDeque();
         this.field27766 = field27766;
         this.field27767 = field27767;
@@ -52,7 +53,7 @@ public final class Class7125
     
     private void method21866(final Class4521 class4521, final AtomicReference<Class7702> atomicReference, final int n, final int n2) {
         final Class8228 method13518 = class4521.method13518();
-        final Class354 method13519 = class4521.method13519();
+        final BlockPos method13519 = class4521.method13519();
         final Class2052 method13520 = class4521.method13457();
         final Class261 method13521 = method13518.method27263();
         final boolean b = method13521 == Class261.field1247;
@@ -62,10 +63,10 @@ public final class Class7125
     Label_0087:
         while (true) {
             for (final Class9038 class4522 : method13518.method27253(this.field27769, method13519, method13520, this.field27771)) {
-                final Class179 class4523 = class4522.field38249.method21772((Class7111<Class179>)Class3839.field17415);
-                final Class354 field27295 = class4522.field38248;
-                final Class354 method13523 = field27295.method1149(class4523);
-                final int n3 = field27295.method1075() - field27294;
+                final Direction class4523 = class4522.field38249.method21772((Class7111<Direction>)Class3839.field17415);
+                final BlockPos field27295 = class4522.field38248;
+                final BlockPos method13523 = field27295.method1149(class4523);
+                final int n3 = field27295.getY() - field27294;
                 int n4 = -1;
                 final Class8795 method13524 = Class7323.field28316.method25554(new Class1932(class4522.field38250.method323("target_pool")));
                 final Class8795 method13525 = Class7323.field28316.method25554(method13524.method30672());
@@ -93,11 +94,11 @@ public final class Class7125
                             break;
                         }
                         for (final Class2052 class4525 : Class2052.method8145(this.field27771)) {
-                            final List<Class9038> method13526 = class4524.method27253(this.field27769, Class354.field2173, class4525, this.field27771);
+                            final List<Class9038> method13526 = class4524.method27253(this.field27769, BlockPos.ZERO, class4525, this.field27771);
                             int orElse;
-                            if (class4524.method27254(this.field27769, Class354.field2173, class4525).method21418() <= 16) {
+                            if (class4524.method27254(this.field27769, BlockPos.ZERO, class4525).method21418() <= 16) {
                                 orElse = method13526.stream().mapToInt(class4529 -> {
-                                    if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.method21772((Class7111<Class179>)Class3839.field17415)))) {
+                                    if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.method21772((Class7111<Direction>)Class3839.field17415)))) {
                                         Class7323.field28316.method25554(new Class1932(class4529.field38250.method323("target_pool")));
                                         final Class8795 class4530;
                                         return Math.max(class4530.method30671(this.field27769), Class7323.field28316.method25554(class4530.method30672()).method30671(this.field27769));
@@ -114,27 +115,27 @@ public final class Class7125
                                 if (!Class3839.method11899(class4522, class4526)) {
                                     continue;
                                 }
-                                final Class354 field27296 = class4526.field38248;
-                                final Class354 class4527 = new Class354(method13523.method1074() - field27296.method1074(), method13523.method1075() - field27296.method1075(), method13523.method1076() - field27296.method1076());
+                                final BlockPos field27296 = class4526.field38248;
+                                final BlockPos class4527 = new BlockPos(method13523.getX() - field27296.getX(), method13523.getY() - field27296.getY(), method13523.getZ() - field27296.getZ());
                                 final Class6997 method13527 = class4524.method27254(this.field27769, class4527, class4525);
                                 final int field27297 = method13527.field27294;
                                 final Class261 method13528 = class4524.method27263();
                                 final boolean b2 = method13528 == Class261.field1247;
-                                final int method13529 = field27296.method1075();
-                                final int n6 = n3 - method13529 + class4522.field38249.method21772((Class7111<Class179>)Class3839.field17415).method786();
+                                final int method13529 = field27296.getY();
+                                final int n6 = n3 - method13529 + class4522.field38249.method21772((Class7111<Direction>)Class3839.field17415).getYOffset();
                                 int n7;
                                 if (b && b2) {
                                     n7 = field27294 + n6;
                                 }
                                 else {
                                     if (n4 == -1) {
-                                        n4 = this.field27768.method18883(field27295.method1074(), field27295.method1076(), Class2020.field11521);
+                                        n4 = this.field27768.method18883(field27295.getX(), field27295.getZ(), Class2020.field11521);
                                     }
                                     n7 = n4 - method13529;
                                 }
                                 final int n8 = n7 - field27297;
                                 final Class6997 method13530 = method13527.method21414(0, n8, 0);
-                                final Class354 method13531 = class4527.method1134(0, n8, 0);
+                                final BlockPos method13531 = class4527.method1134(0, n8, 0);
                                 if (orElse > 0) {
                                     method13530.field27297 = method13530.field27294 + Math.max(orElse + 1, method13530.field27297 - method13530.field27294);
                                 }
@@ -155,7 +156,7 @@ public final class Class7125
                                 if (!b) {
                                     if (!b2) {
                                         if (n4 == -1) {
-                                            n4 = this.field27768.method18883(field27295.method1074(), field27295.method1076(), Class2020.field11521);
+                                            n4 = this.field27768.method18883(field27295.getX(), field27295.getZ(), Class2020.field11521);
                                         }
                                         n9 = n4 + n6 / 2;
                                     }
@@ -166,8 +167,8 @@ public final class Class7125
                                 else {
                                     n9 = field27294 + n3;
                                 }
-                                class4521.method13521(new Class9330(method13523.method1074(), n9 - n3 + method13532, method13523.method1076(), n6, method13528));
-                                method13534.method13521(new Class9330(field27295.method1074(), n9 - method13529 + method13533, field27295.method1076(), -n6, method13521));
+                                class4521.method13521(new Class9330(method13523.getX(), n9 - n3 + method13532, method13523.getZ(), n6, method13528));
+                                method13534.method13521(new Class9330(field27295.getX(), n9 - method13529 + method13533, field27295.getZ(), -n6, method13521));
                                 this.field27770.add(method13534);
                                 if (n2 + 1 > this.field27766) {
                                     continue Label_0087;

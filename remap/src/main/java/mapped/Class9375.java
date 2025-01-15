@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class9375
@@ -31,11 +33,11 @@ public class Class9375
         this.field40210 = new Class7925(this, 6.0E7);
     }
     
-    public boolean method34779(final Class354 class354) {
-        if (class354.method1074() + 1 > this.method34786()) {
-            if (class354.method1074() < this.method34788()) {
-                if (class354.method1076() + 1 > this.method34787()) {
-                    if (class354.method1076() < this.method34789()) {
+    public boolean method34779(final BlockPos class354) {
+        if (class354.getX() + 1 > this.method34786()) {
+            if (class354.getX() < this.method34788()) {
+                if (class354.getZ() + 1 > this.method34787()) {
+                    if (class354.getZ() < this.method34789()) {
                         return true;
                     }
                 }
@@ -70,7 +72,7 @@ public class Class9375
         return false;
     }
     
-    public double method34782(final Class399 class399) {
+    public double method34782(final Entity class399) {
         return this.method34784(class399.method1938(), class399.method1945());
     }
     

@@ -90,7 +90,7 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public Class3090 method18872(final Class5507 class5507, final Class354 class5508) {
+    public Class3090 method18872(final Class5507 class5507, final BlockPos class5508) {
         return this.field25387;
     }
     
@@ -145,7 +145,7 @@ public class Class6347 extends Class6346<Class7067>
     
     @Nullable
     @Override
-    public Class354 method18874(final Class1847 class1847, final String s, final Class354 class1848, final int n, final boolean b) {
+    public BlockPos method18874(final Class1847 class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
         return ((Class7067)this.field25386).method21589().keySet().contains(s.toLowerCase(Locale.ROOT)) ? super.method18874(class1847, s, class1848, n, b) : null;
     }
 }

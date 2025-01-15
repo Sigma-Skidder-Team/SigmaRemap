@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
-
 public class Class845 extends Class844
 {
     private static String[] field4496;
@@ -70,7 +68,7 @@ public class Class845 extends Class844
             }
         }
         if (!this.method4201()) {
-            this.method4198(new Class354(this), 16);
+            this.method4198(new BlockPos(this), 16);
         }
     }
     

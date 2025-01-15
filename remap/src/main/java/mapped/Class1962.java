@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class1962
 {
     field10704(new Class8859[] { new Class8859(Class6352.field25404, Class6352.field25403, Class6352.field25399, null), new Class8859(Class6352.field25404, Class6352.field25403, Class6352.field25402, null), new Class8859(Class6352.field25401, Class6352.field25403, Class6352.field25402, null), new Class8859(Class6352.field25401, Class6352.field25403, Class6352.field25399, null) }), 
@@ -16,8 +18,8 @@ public enum Class1962
     private static final Class1962[] field10710;
     private final Class8859[] field10711;
     
-    public static Class1962 method7951(final Class179 class179) {
-        return Class1962.field10710[class179.method779()];
+    public static Class1962 method7951(final Direction class179) {
+        return Class1962.field10710[class179.getIndex()];
     }
     
     private Class1962(final Class8859[] field10711) {

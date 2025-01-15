@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.datafixers.util.Either;
+import net.minecraft.util.math.MathHelper;
 
 public class Class9298
 {
@@ -171,7 +172,7 @@ public class Class9298
                 if (this.field39887 != 0) {
                     this.method34353(new Class4312(this.field39887, this.field39886, class1862), false);
                     for (int i = 0; i < this.field39887; ++i) {
-                        final Class354 class1863 = new Class354((this.field39886[i] >> 12 & 0xF) + this.field39885.field32290 * 16, this.field39886[i] & 0xFF, (this.field39886[i] >> 8 & 0xF) + this.field39885.field32291 * 16);
+                        final BlockPos class1863 = new BlockPos((this.field39886[i] >> 12 & 0xF) + this.field39885.field32290 * 16, this.field39886[i] & 0xFF, (this.field39886[i] >> 8 & 0xF) + this.field39885.field32291 * 16);
                         if (method7065.method6701(class1863).method21696().method11802()) {
                             this.method34352(method7065, class1863);
                         }
@@ -183,7 +184,7 @@ public class Class9298
             }
         }
         else {
-            final Class354 class1864 = new Class354((this.field39886[0] >> 12 & 0xF) + this.field39885.field32290 * 16, this.field39886[0] & 0xFF, (this.field39886[0] >> 8 & 0xF) + this.field39885.field32291 * 16);
+            final BlockPos class1864 = new BlockPos((this.field39886[0] >> 12 & 0xF) + this.field39885.field32290 * 16, this.field39886[0] & 0xFF, (this.field39886[0] >> 8 & 0xF) + this.field39885.field32291 * 16);
             this.method34353(new Class4271(method7065, class1864), false);
             if (method7065.method6701(class1864).method21696().method11802()) {
                 this.method34352(method7065, class1864);
@@ -193,7 +194,7 @@ public class Class9298
         this.field39888 = 0;
     }
     
-    private void method34352(final Class1847 class1847, final Class354 class1848) {
+    private void method34352(final Class1847 class1847, final BlockPos class1848) {
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 != null) {
             final Class4357 method6728 = method6727.method2195();
@@ -325,7 +326,7 @@ public class Class9298
     }
     
     public static Class2152 method34364(final int n) {
-        return Class9298.field39876[Class9546.method35651(33 - n + 1, 0, Class9298.field39876.length - 1)];
+        return Class9298.field39876[MathHelper.method35651(33 - n + 1, 0, Class9298.field39876.length - 1)];
     }
     
     public boolean method34365() {

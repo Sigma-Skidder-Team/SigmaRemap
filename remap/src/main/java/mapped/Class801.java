@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public class Class801 extends Class789
@@ -41,13 +44,13 @@ public class Class801 extends Class789
     
     @Nullable
     @Override
-    public Class399 method1907() {
+    public Entity method1907() {
         return this.method1908().isEmpty() ? null : this.method1908().get(0);
     }
     
     @Override
     public boolean method4189() {
-        final Class399 method1907 = this.method1907();
+        final Entity method1907 = this.method1907();
         if (method1907 instanceof Class512) {
             final Class512 class512 = (Class512)method1907;
             return class512.method2713().method27622() == Class7739.field31529 || class512.method2714().method27622() == Class7739.field31529;
@@ -102,7 +105,7 @@ public class Class801 extends Class789
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35464, 0.15f, 1.0f);
     }
     
@@ -161,9 +164,9 @@ public class Class801 extends Class789
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method1768()) {
-            final Class399 class5488 = this.method1908().isEmpty() ? null : this.method1908().get(0);
+            final Entity class5488 = this.method1908().isEmpty() ? null : this.method1908().get(0);
             if (this.method1806() && this.method4189()) {
                 this.field2399 = class5488.field2399;
                 this.field2401 = this.field2399;
@@ -179,21 +182,21 @@ public class Class801 extends Class789
                     }
                 }
                 if (!this.method1919()) {
-                    this.method1936(Class5487.field22769);
+                    this.method1936(Vec3d.field22769);
                 }
                 else {
                     float n = (float)this.method2710(Class8107.field33408).method23950() * 0.225f;
                     if (this.field4302) {
-                        n += n * 1.15f * Class9546.method35638(this.field4303 / (float)this.field4304 * 3.1415927f);
+                        n += n * 1.15f * MathHelper.sin(this.field4303 / (float)this.field4304 * 3.1415927f);
                     }
                     this.method2733(n);
-                    super.method2729(new Class5487(0.0, 0.0, 1.0));
+                    super.method2729(new Vec3d(0.0, 0.0, 1.0));
                     this.field2971 = 0;
                 }
                 this.field2945 = this.field2946;
                 final double n2 = this.method1938() - this.field2392;
                 final double n3 = this.method1945() - this.field2394;
-                float n4 = Class9546.method35641(n2 * n2 + n3 * n3) * 4.0f;
+                float n4 = MathHelper.method35641(n2 * n2 + n3 * n3) * 4.0f;
                 if (n4 > 1.0f) {
                     n4 = 1.0f;
                 }

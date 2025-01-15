@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.Direction;
+
 import java.util.Set;
 
 public abstract class Class4469 extends Class4473
@@ -30,13 +32,13 @@ public abstract class Class4469 extends Class4473
         super(class9520, n);
     }
     
-    public Class4469(final Class9520 class9520, final Class179 class9521, final Class6997 field19849) {
+    public Class4469(final Class9520 class9520, final Direction class9521, final Class6997 field19849) {
         super(class9520, 1);
         this.method13456(class9521);
         this.field19849 = field19849;
     }
     
-    public Class4469(final Class9520 class9520, final int n, final Class179 class9521, final Class8123 field19840, final int n2, final int n3, final int n4) {
+    public Class4469(final Class9520 class9520, final int n, final Direction class9521, final Class8123 field19840, final int n2, final int n3, final int n4) {
         super(class9520, n);
         this.method13456(class9521);
         this.field19840 = field19840;
@@ -44,7 +46,7 @@ public abstract class Class4469 extends Class4473
         final int n5 = method26744 % 5;
         final int n6 = method26744 / 5 % 5;
         final int n7 = method26744 / 25;
-        if (class9521 != Class179.field513 && class9521 != Class179.field514) {
+        if (class9521 != Direction.NORTH && class9521 != Direction.SOUTH) {
             this.field19849 = new Class6997(0, 0, 0, n4 * 8 - 1, n3 * 4 - 1, n2 * 8 - 1);
         }
         else {
@@ -136,13 +138,13 @@ public abstract class Class4469 extends Class4473
         final int method13437 = this.method13437(n, n3);
         final int method13438 = this.method13438(n2);
         final int method13439 = this.method13439(n, n3);
-        if (!class1852.method21415(new Class354(method13437, method13438, method13439))) {
+        if (!class1852.method21415(new BlockPos(method13437, method13438, method13439))) {
             return false;
         }
         final Class845 class1853 = Class7499.field28974.method23371(class1851.method6744());
         class1853.method2663(class1853.method2701());
         class1853.method1730(method13437 + 0.5, method13438, method13439 + 0.5, 0.0f, 0.0f);
-        class1853.method4188(class1851, class1851.method6784(new Class354(class1853)), Class2101.field12177, null, null);
+        class1853.method4188(class1851, class1851.method6784(new BlockPos(class1853)), Class2101.field12177, null, null);
         class1851.method6886(class1853);
         return true;
     }

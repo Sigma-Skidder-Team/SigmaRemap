@@ -19,7 +19,7 @@ public class Class4068 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
+        final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21755(Class7188.field27906)) {
             final Class8321 method21657 = class7075.method21651();
@@ -29,7 +29,7 @@ public class Class4068 extends Class3820
                 if (class7076.method597()) {
                     n = 0.5;
                 }
-                final Class428 method21658 = Class428.method2122(method21654, method21655.method1074() + 0.5, method21655.method1075() + 0.0625 + n, method21655.method1076() + 0.5, this.field18163);
+                final Class428 method21658 = Class428.method2122(method21654, method21655.getX() + 0.5, method21655.getY() + 0.0625 + n, method21655.getZ() + 0.5, this.field18163);
                 if (method21657.method27667()) {
                     method21658.method1872(method21657.method27664());
                 }

@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8817
 {
@@ -37,9 +38,9 @@ public class Class8817
         final float n7 = (float)(n - n4);
         final float n8 = (float)(n2 - n5);
         final float n9 = (float)(n3 - n6);
-        if (this.field37025.method29736(Class9546.method35647(n7))) {
-            if (this.field37026.method29736(Class9546.method35647(n8))) {
-                if (this.field37027.method29736(Class9546.method35647(n9))) {
+        if (this.field37025.method29736(MathHelper.method35647(n7))) {
+            if (this.field37026.method29736(MathHelper.method35647(n8))) {
+                if (this.field37027.method29736(MathHelper.method35647(n9))) {
                     return this.field37028.method29737(n7 * n7 + n9 * n9) && this.field37029.method29737(n7 * n7 + n8 * n8 + n9 * n9);
                 }
             }

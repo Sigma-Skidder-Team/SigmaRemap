@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,7 @@ public class Class3321 extends Class3167
             if (Class3321.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
-                    final List<Class399> method6739 = Class3321.field15514.field4683.method6739((Class<? extends Class399>)Class512.class, Class3321.field15514.field4684.method1886().method18496(14.0), class5725 -> {
+                    final List<Entity> method6739 = Class3321.field15514.field4683.method6739((Class<? extends Entity>)Class512.class, Class3321.field15514.field4684.method1886().method18496(14.0), class5725 -> {
                         final void void1;
                         if (class5725.method1732(Class3321.field15514.field4684) < 6.0f) {
                             if (Class3321.field15514.field4684 != class5725) {

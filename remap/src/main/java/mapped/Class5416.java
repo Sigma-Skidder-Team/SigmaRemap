@@ -10,14 +10,15 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.UUID;
 import java.util.function.Function;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.entity.Entity;
 
 public class Class5416 implements Class5414
 {
     private static final SimpleCommandExceptionType field22585;
     public static final Function<String, Class6595> field22586;
-    private final Class399 field22587;
+    private final Entity field22587;
     
-    public Class5416(final Class399 field22587) {
+    public Class5416(final Entity field22587) {
         this.field22587 = field22587;
     }
     

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import com.google.common.base.Joiner;
@@ -57,7 +58,7 @@ public abstract class Class2255 extends Class2251 implements Class2253
     }
     
     @Override
-    public Class2250 method8473(final Class7492 class7492, final Class399 class7493, final int n) throws CommandSyntaxException {
+    public Class2250 method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
         if (class7492 != null && this.field13803 != null) {
             final Stream<Object> map = this.method8481(class7492).flatMap(class7494 -> {
                 try {

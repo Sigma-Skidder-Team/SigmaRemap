@@ -17,6 +17,7 @@ import java.math.BigInteger;
 import java.net.URISyntaxException;
 import java.util.Iterator;
 import com.google.gson.JsonArray;
+import net.minecraft.entity.Entity;
 import org.apache.http.impl.client.HttpClients;
 import java.util.ArrayList;
 import org.apache.http.client.HttpClient;
@@ -54,11 +55,11 @@ public class Class9198
         return this.field38986;
     }
     
-    public boolean method33656(final Class399 class399) {
+    public boolean method33656(final Entity class399) {
         return class399 != null && this.field38986.containsKey(class399.method1865());
     }
     
-    public Class6538 method33657(final Class399 class399) {
+    public Class6538 method33657(final Entity class399) {
         return this.field38986.get(class399.method1865());
     }
     
@@ -86,7 +87,7 @@ public class Class9198
             int n = 0;
             final JsonArray jsonArray = new JsonArray();
             while (iterator2.hasNext() && n++ < 70) {
-                final Class399 class5745 = iterator2.next();
+                final Entity class5745 = iterator2.next();
                 jsonArray.add(class5745.method1841().method8459());
                 this.field38985.add(class5745.method1865());
             }

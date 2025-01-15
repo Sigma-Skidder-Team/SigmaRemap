@@ -6,9 +6,9 @@ package mapped;
 
 import it.unimi.dsi.fastutil.Hash$Strategy;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
-import java.util.Iterator;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.util.math.MathHelper;
 
 public class Class736 extends Class527
 {
@@ -59,12 +59,12 @@ public class Class736 extends Class527
             this.method3297(this.field3156, Class8822.method30773("optimizeWorld.info.total", this.field3998.method35341()), n4, 64, 10526880);
             int n8 = 0;
             for (final Class383 class383 : Class383.method1269()) {
-                final int method35642 = Class9546.method35642(this.field3998.method35339(class383) * (n5 - n4));
+                final int method35642 = MathHelper.method35642(this.field3998.method35339(class383) * (n5 - n4));
                 Class565.method3293(n4 + n8, n6, n4 + n8 + method35642, n7, Class736.field3996.getInt((Object)class383));
                 n8 += method35642;
             }
             this.method3295(this.field3156, this.field3998.method35342() + this.field3998.method35343() + " / " + this.field3998.method35341(), this.field3152 / 2, n6 + 18 + 2, 10526880);
-            this.method3295(this.field3156, Class9546.method35642(this.field3998.method35340() * 100.0f) + "%", this.field3152 / 2, n6 + (n7 - n6) / 2 - 4, 10526880);
+            this.method3295(this.field3156, MathHelper.method35642(this.field3998.method35340() * 100.0f) + "%", this.field3152 / 2, n6 + (n7 - n6) / 2 - 4, 10526880);
         }
         super.method2975(n, n2, n3);
     }

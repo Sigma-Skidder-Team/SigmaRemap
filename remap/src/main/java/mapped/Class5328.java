@@ -4,9 +4,10 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.UUID;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.Map;
 
@@ -72,7 +73,7 @@ public class Class5328
         }
     }
     
-    public void method16452(final Class399 class399, final Class399 class400, final Class511 class401, final int n, final double n2) {
+    public void method16452(final Entity class399, final Entity class400, final Class511 class401, final int n, final double n2) {
         if ((this != Class9439.field40479 || class401.method2657()) && (this != Class9439.field40480 || !class401.method2657())) {
             if ((this != Class9439.field40480 || class401.method2657()) && (this != Class9439.field40479 || !class401.method2657())) {
                 this.method16449(class401, n);

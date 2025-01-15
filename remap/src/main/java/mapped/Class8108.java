@@ -36,7 +36,7 @@ public class Class8108
         this.field33417.method17292(new Class4261(this.method26646(consumer), n));
     }
     
-    public void method26648(final Class354 class354, final Consumer<Class51> consumer) {
+    public void method26648(final BlockPos class354, final Consumer<Class51> consumer) {
         this.field33417.method17292(new Class4275(this.method26646(consumer), class354));
     }
 }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class781 extends Class780
@@ -38,7 +40,7 @@ public class Class781 extends Class780
     @Override
     public void method2678(final Class7929 class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
-        final Class399 method25714 = class7929.method25714();
+        final Entity method25714 = class7929.method25714();
         if (method25714 instanceof Class765) {
             final Class765 class7930 = (Class765)method25714;
             if (class7930.method4241()) {
@@ -72,7 +74,7 @@ public class Class781 extends Class780
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         if (super.method2734(class399)) {
             if (class399 instanceof Class511) {
                 ((Class511)class399).method2655(new Class1948(Class9439.field40493, 200));

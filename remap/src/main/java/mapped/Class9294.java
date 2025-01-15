@@ -14,10 +14,10 @@ public final class Class9294
     private static String[] field39856;
     private final Class6789 field39857;
     private boolean field39858;
-    private Class9138 field39859;
-    private Class9389 field39860;
-    private Class9138 field39861;
-    private Class9389 field39862;
+    private Vector3f field39859;
+    private Quaternion field39860;
+    private Vector3f field39861;
+    private Quaternion field39862;
     private static final Class9294 field39863;
     
     public Class9294(final Class6789 field39857) {
@@ -29,12 +29,12 @@ public final class Class9294
         }
     }
     
-    public Class9294(final Class9138 class9138, final Class9389 class9139, final Class9138 class9140, final Class9389 class9141) {
+    public Class9294(final Vector3f class9138, final Quaternion class9139, final Vector3f class9140, final Quaternion class9141) {
         this.field39857 = method34326(class9138, class9139, class9140, class9141);
-        this.field39859 = ((class9138 == null) ? new Class9138() : class9138);
-        this.field39860 = ((class9139 == null) ? Class9389.field40291.method34910() : class9139);
-        this.field39861 = ((class9140 == null) ? new Class9138(1.0f, 1.0f, 1.0f) : class9140);
-        this.field39862 = ((class9141 == null) ? Class9389.field40291.method34910() : class9141);
+        this.field39859 = ((class9138 == null) ? new Vector3f() : class9138);
+        this.field39860 = ((class9139 == null) ? Quaternion.ONE.copy() : class9139);
+        this.field39861 = ((class9140 == null) ? new Vector3f(1.0f, 1.0f, 1.0f) : class9140);
+        this.field39862 = ((class9141 == null) ? Quaternion.ONE.copy() : class9141);
         this.field39858 = true;
     }
     
@@ -59,17 +59,17 @@ public final class Class9294
     
     private void method34325() {
         if (!this.field39858) {
-            final Pair<Class9429, Class9138> method34327 = method34327(this.field39857);
-            final Triple<Class9389, Class9138, Class9389> method34328 = ((Class9429)method34327.getFirst()).method35037();
-            this.field39859 = (Class9138)method34327.getSecond();
-            this.field39860 = (Class9389)method34328.getLeft();
-            this.field39861 = (Class9138)method34328.getMiddle();
-            this.field39862 = (Class9389)method34328.getRight();
+            final Pair<Class9429, Vector3f> method34327 = method34327(this.field39857);
+            final Triple<Quaternion, Vector3f, Quaternion> method34328 = ((Class9429)method34327.getFirst()).method35037();
+            this.field39859 = (Vector3f)method34327.getSecond();
+            this.field39860 = (Quaternion)method34328.getLeft();
+            this.field39861 = (Vector3f)method34328.getMiddle();
+            this.field39862 = (Quaternion)method34328.getRight();
             this.field39858 = true;
         }
     }
     
-    private static Class6789 method34326(final Class9138 class9138, final Class9389 class9139, final Class9138 class9140, final Class9389 class9141) {
+    private static Class6789 method34326(final Vector3f class9138, final Quaternion class9139, final Vector3f class9140, final Quaternion class9141) {
         final Class6789 class9142 = new Class6789();
         class9142.method20748();
         if (class9139 != null) {
@@ -89,18 +89,18 @@ public final class Class9294
         return class9142;
     }
     
-    public static Pair<Class9429, Class9138> method34327(final Class6789 class6789) {
+    public static Pair<Class9429, Vector3f> method34327(final Class6789 class6789) {
         class6789.method20754(1.0f / class6789.field26704);
-        return (Pair<Class9429, Class9138>)Pair.of((Object)new Class9429(class6789), (Object)new Class9138(class6789.field26692, class6789.field26696, class6789.field26700));
+        return (Pair<Class9429, Vector3f>)Pair.of((Object)new Class9429(class6789), (Object)new Vector3f(class6789.field26692, class6789.field26696, class6789.field26700));
     }
     
     public Class6789 method34328() {
         return this.field39857.method20758();
     }
     
-    public Class9389 method34329() {
+    public Quaternion method34329() {
         this.method34325();
-        return this.field39860.method34910();
+        return this.field39860.copy();
     }
     
     @Override

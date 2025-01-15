@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 
-public class Class508 extends Class399
+public class Class508 extends Entity
 {
     public int field2897;
     public int field2898;
@@ -55,7 +57,7 @@ public class Class508 extends Class399
         else {
             this.method2604();
         }
-        if (this.field2391.method6702(new Class354(this)).method21793(Class7324.field28320)) {
+        if (this.field2391.method6702(new BlockPos(this)).method21793(Class7324.field28320)) {
             this.method1937((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f, 0.20000000298023224, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
             this.method1695(Class8520.field35214, 0.4f, 2.0f + this.field2423.nextFloat() * 0.4f);
         }
@@ -74,7 +76,7 @@ public class Class508 extends Class399
             }
         }
         if (this.field2902 != null) {
-            final Class5487 class5487 = new Class5487(this.field2902.method1938() - this.method1938(), this.field2902.method1941() + this.field2902.method1892() / 2.0 - this.method1941(), this.field2902.method1945() - this.method1945());
+            final Vec3d class5487 = new Vec3d(this.field2902.method1938() - this.method1938(), this.field2902.method1941() + this.field2902.method1892() / 2.0 - this.method1941(), this.field2902.method1945() - this.method1945());
             final double method16753 = class5487.method16753();
             if (method16753 < 64.0) {
                 final double n = 1.0 - Math.sqrt(method16753) / 8.0;
@@ -84,7 +86,7 @@ public class Class508 extends Class399
         this.method1671(Class2160.field12826, this.method1935());
         float n2 = 0.98f;
         if (this.field2404) {
-            n2 = this.field2391.method6701(new Class354(this.method1938(), this.method1941() - 1.0, this.method1945())).method21696().method11865() * 0.98f;
+            n2 = this.field2391.method6701(new BlockPos(this.method1938(), this.method1941() - 1.0, this.method1945())).method21696().method11865() * 0.98f;
         }
         this.method1936(this.method1935().method16751(n2, 0.98, n2));
         if (this.field2404) {
@@ -98,7 +100,7 @@ public class Class508 extends Class399
     }
     
     private void method2604() {
-        final Class5487 method1935 = this.method1935();
+        final Vec3d method1935 = this.method1935();
         this.method1937(method1935.field22770 * 0.9900000095367432, Math.min(method1935.field22771 + 5.000000237487257E-4, 0.05999999865889549), method1935.field22772 * 0.9900000095367432);
     }
     

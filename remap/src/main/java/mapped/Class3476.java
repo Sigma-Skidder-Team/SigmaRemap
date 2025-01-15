@@ -45,9 +45,9 @@ public class Class3476 extends Class3446
     }
     
     private void method11041() {
-        Class851.method5101(this.field16382, new Class354(this.field16382.method4152()).method1138(20 + Class851.method5107(this.field16382).nextInt(20)));
+        Class851.method5101(this.field16382, new BlockPos(this.field16382.method4152()).method1138(20 + Class851.method5107(this.field16382).nextInt(20)));
         if (Class851.method5100(this.field16382).method1075() < this.field16382.field2391.method6743()) {
-            Class851.method5101(this.field16382, new Class354(Class851.method5100(this.field16382).method1074(), this.field16382.field2391.method6743() + 1, Class851.method5100(this.field16382).method1076()));
+            Class851.method5101(this.field16382, new BlockPos(Class851.method5100(this.field16382).method1074(), this.field16382.field2391.method6743() + 1, Class851.method5100(this.field16382).method1076()));
         }
     }
 }

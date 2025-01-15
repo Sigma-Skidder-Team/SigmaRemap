@@ -4,13 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.apache.commons.lang3.mutable.MutableInt;
 import java.util.Arrays;
 import javax.annotation.Nullable;
 
 public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> extends Class1891 implements Class1888
 {
-    private static final Class179[] field10274;
+    private static final Direction[] field10274;
     public final Class1908 field10275;
     public final Class237 field10276;
     public final S field10277;
@@ -67,7 +68,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
             }
             return Class7521.field29147.method11878();
         }
-        final Class1855 method7295 = this.method7295(Class353.method1095(Class354.method1126(n)), Class353.method1095(Class354.method1128(n)));
+        final Class1855 method7295 = this.method7295(Class353.method1095(BlockPos.method1126(n)), Class353.method1095(BlockPos.method1128(n)));
         if (method7295 != null) {
             this.field10279.method1288(n);
             final Class7096 method7296 = method7295.method6701(this.field10279);
@@ -83,11 +84,11 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
         return Class7521.field29172.method11878();
     }
     
-    public Class7702 method7298(final Class7096 class7096, final long n, final Class179 class7097) {
+    public Class7702 method7298(final Class7096 class7096, final long n, final Direction class7097) {
         return class7096.method21723() ? class7096.method21701(this.field10275.method7414(), this.field10279.method1288(n), class7097) : Class7698.method24486();
     }
     
-    public static int method7299(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class7096 class1858, final Class354 class1859, final Class179 class1860, final int n) {
+    public static int method7299(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Class7096 class1858, final BlockPos class1859, final Direction class1860, final int n) {
         final boolean b = class1856.method21723() && class1856.method21703();
         final boolean b2 = class1858.method21723() && class1858.method21703();
         if (!b && !b2) {
@@ -112,7 +113,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     public int method7303(final Class7281 class7281, final long n) {
-        return 15 - class7281.method22322(Class353.method1096(Class354.method1126(n)), Class353.method1096(Class354.method1127(n)), Class353.method1096(Class354.method1128(n)));
+        return 15 - class7281.method22322(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)));
     }
     
     @Override
@@ -170,7 +171,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     @Override
-    public int method7293(final Class354 class354) {
+    public int method7293(final BlockPos class354) {
         return this.field10277.method7351(class354.method1132());
     }
     
@@ -178,16 +179,16 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
         return "" + this.field10277.method7302(n);
     }
     
-    public void method7310(final Class354 class354) {
+    public void method7310(final BlockPos class354) {
         final long method1132 = class354.method1132();
         this.method7294(method1132);
-        final Class179[] field10274 = Class1890.field10274;
+        final Direction[] field10274 = Class1890.field10274;
         for (int length = field10274.length, i = 0; i < length; ++i) {
-            this.method7294(Class354.method1124(method1132, field10274[i]));
+            this.method7294(BlockPos.method1124(method1132, field10274[i]));
         }
     }
     
-    public void method7311(final Class354 class354, final int n) {
+    public void method7311(final BlockPos class354, final int n) {
     }
     
     @Override
@@ -204,6 +205,6 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     static {
-        field10274 = Class179.values();
+        field10274 = Direction.values();
     }
 }

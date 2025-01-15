@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.Map;
 import java.util.List;
-import java.util.Iterator;
 import javax.annotation.Nullable;
 
 public class Class4036 extends Class3820
@@ -38,7 +37,7 @@ public class Class4036 extends Class3820
             return Class2201.field13403;
         }
         if (this.method12238(method12231, method12232)) {
-            final Class354 method12233 = method12231.method21639();
+            final BlockPos method12233 = method12231.method21639();
             final Class1847 method12234 = method12231.method21654();
             final Class512 method12235 = method12231.method21652();
             final Class8321 method12236 = method12231.method21651();
@@ -69,7 +68,7 @@ public class Class4036 extends Class3820
         return class7074;
     }
     
-    public boolean method12232(final Class354 class354, final Class1847 class355, final Class512 class356, final Class8321 class357, final Class7096 class358) {
+    public boolean method12232(final BlockPos class354, final Class1847 class355, final Class512 class356, final Class8321 class357, final Class7096 class358) {
         return method12239(class355, class356, class354, class357);
     }
     
@@ -79,7 +78,7 @@ public class Class4036 extends Class3820
         return (method11846 != null && this.method12236(class7074, method11846)) ? method11846 : null;
     }
     
-    private Class7096 method12234(final Class354 class354, final Class1847 class355, final Class8321 class356, final Class7096 class357) {
+    private Class7096 method12234(final BlockPos class354, final Class1847 class355, final Class8321 class356, final Class7096 class357) {
         Class7096 method12235 = class357;
         final Class51 method12236 = class356.method27657();
         if (method12236 != null) {
@@ -122,7 +121,7 @@ public class Class4036 extends Class3820
         return class7074.method21654().method6688(class7074.method21639(), class7075, 11);
     }
     
-    public static boolean method12239(final Class1847 class1847, final Class512 class1848, final Class354 class1849, final Class8321 class1850) {
+    public static boolean method12239(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class8321 class1850) {
         if (class1847.method6679() != null) {
             final Class51 method27660 = class1850.method27660("BlockEntityTag");
             if (method27660 != null) {
@@ -138,9 +137,9 @@ public class Class4036 extends Class3820
                     final Class51 method27662 = method27661.method2180(new Class51());
                     final Class51 method27663 = method27662.method333();
                     method27662.method338(method27660);
-                    method27662.method298("x", class1849.method1074());
-                    method27662.method298("y", class1849.method1075());
-                    method27662.method298("z", class1849.method1076());
+                    method27662.method298("x", class1849.getX());
+                    method27662.method298("y", class1849.getY());
+                    method27662.method298("z", class1849.getZ());
                     if (!method27662.equals(method27663)) {
                         method27661.method2179(method27662);
                         method27661.method2161();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class417 extends Class416
 {
     public int field2525;
@@ -28,7 +30,7 @@ public class Class417 extends Class416
         super.method2032(class7006);
         if (!this.field2391.field10067) {
             if (class7006.method21449() == Class2165.field12882) {
-                final Class399 method21452 = ((Class7007)class7006).method21452();
+                final Entity method21452 = ((Class7007)class7006).method21452();
                 method21452.method1740(Class7929.method25698(this, this.field2527), 6.0f);
                 this.method1900(this.field2527, method21452);
             }

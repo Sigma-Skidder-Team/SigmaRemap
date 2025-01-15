@@ -7,7 +7,7 @@ package mapped;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
 
-public final class Class366 implements Class356
+public final class Class366 implements IDynamicSerializable
 {
     private static String[] field2207;
     private final long field2208;

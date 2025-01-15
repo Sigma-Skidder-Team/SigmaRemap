@@ -4,10 +4,12 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class7074 extends Class7075
 {
     private static String[] field27547;
-    public Class354 field27548;
+    public BlockPos field27548;
     public boolean field27549;
     
     public Class7074(final Class7075 class7075) {
@@ -21,12 +23,12 @@ public class Class7074 extends Class7075
         this.field27549 = class1847.method6701(class1851.method21447()).method21750(this);
     }
     
-    public static Class7074 method21647(final Class7074 class7074, final Class354 class7075, final Class179 class7076) {
-        return new Class7074(class7074.method21654(), class7074.method21652(), class7074.method21653(), class7074.method21651(), new Class7005(new Class5487(class7075.method1074() + 0.5 + class7076.method785() * 0.5, class7075.method1075() + 0.5 + class7076.method786() * 0.5, class7075.method1076() + 0.5 + class7076.method787() * 0.5), class7076, class7075, false));
+    public static Class7074 method21647(final Class7074 class7074, final BlockPos class7075, final Direction class7076) {
+        return new Class7074(class7074.method21654(), class7074.method21652(), class7074.method21653(), class7074.method21651(), new Class7005(new Vec3d(class7075.getX() + 0.5 + class7076.getXOffset() * 0.5, class7075.getY() + 0.5 + class7076.getYOffset() * 0.5, class7075.getZ() + 0.5 + class7076.getZOffset() * 0.5), class7076, class7075, false));
     }
     
     @Override
-    public Class354 method21639() {
+    public BlockPos method21639() {
         return this.field27549 ? super.method21639() : this.field27548;
     }
     
@@ -38,19 +40,19 @@ public class Class7074 extends Class7075
         return this.field27549;
     }
     
-    public Class179 method21642() {
-        return Class179.method775(this.field27551)[0];
+    public Direction method21642() {
+        return Direction.getFacingDirections(this.field27551)[0];
     }
     
-    public Class179[] method21643() {
-        final Class179[] method775 = Class179.method775(this.field27551);
+    public Direction[] method21643() {
+        final Direction[] method775 = Direction.getFacingDirections(this.field27551);
         if (!this.field27549) {
-            Class179 method776;
+            Direction method776;
             int n;
-            for (method776 = this.method21648(), n = 0; n < method775.length && method775[n] != method776.method782(); ++n) {}
+            for (method776 = this.method21648(), n = 0; n < method775.length && method775[n] != method776.getOpposite(); ++n) {}
             if (n > 0) {
                 System.arraycopy(method775, 0, method775, 1, n);
-                method775[0] = method776.method782();
+                method775[0] = method776.getOpposite();
             }
             return method775;
         }

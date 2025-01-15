@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class506 extends Class428
 {
     private static final Class8810<Boolean> field2886;
@@ -67,15 +71,15 @@ public class Class506 extends Class428
     }
     
     @Override
-    public void method2128(final Class354 class354, final Class7096 class355) {
+    public void method2128(final BlockPos class354, final Class7096 class355) {
         super.method2128(class354, class355);
-        final Class5487 method1935 = this.method1935();
-        final double method1936 = Class399.method1680(method1935);
+        final Vec3d method1935 = this.method1935();
+        final double method1936 = Entity.method1680(method1935);
         final double n = this.field2888 * this.field2888 + this.field2889 * this.field2889;
         if (n > 1.0E-4) {
             if (method1936 > 0.001) {
-                final double n2 = Class9546.method35641(method1936);
-                final double n3 = Class9546.method35641(n);
+                final double n2 = MathHelper.method35641(method1936);
+                final double n3 = MathHelper.method35641(n);
                 this.field2888 = method1935.field22770 / n2 * n3;
                 this.field2889 = method1935.field22772 / n2 * n3;
             }
@@ -89,7 +93,7 @@ public class Class506 extends Class428
             this.method1936(this.method1935().method16751(0.98, 0.0, 0.98));
         }
         else {
-            final double n2 = Class9546.method35641(n);
+            final double n2 = MathHelper.method35641(n);
             this.field2888 /= n2;
             this.field2889 /= n2;
             this.method1936(this.method1935().method16751(0.8, 0.0, 0.8).method16744(this.field2888, 0.0, this.field2889));
@@ -141,7 +145,7 @@ public class Class506 extends Class428
     
     @Override
     public Class7096 method2141() {
-        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29299.method11878()).method21773((Class7111<Comparable>)Class3951.field17846, Class179.field513)).method21773((Class7111<Comparable>)Class3951.field17847, this.method2598());
+        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29299.method11878()).method21773((Class7111<Comparable>)Class3951.field17846, Direction.NORTH)).method21773((Class7111<Comparable>)Class3951.field17847, this.method2598());
     }
     
     static {

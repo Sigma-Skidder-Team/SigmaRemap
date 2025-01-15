@@ -85,7 +85,7 @@ public class Class542 extends Class541
     
     @Override
     public void method3161(final Class865 class865) {
-        this.field3150.method5269().method17292(new Class4266(new Class354(class865.method5222()), this.field3264.method3378(), this.field3275, class865.method5220(), this.field3276, this.field3277));
+        this.field3150.method5269().method17292(new Class4266(new BlockPos(class865.method5222()), this.field3264.method3378(), this.field3275, class865.method5220(), this.field3276, this.field3277));
     }
     
     private void method3168() {

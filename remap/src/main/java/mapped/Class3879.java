@@ -32,7 +32,7 @@ public class Class3879 extends Class3878
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (random.nextInt(3) != 0) {
             super.method11822(class7096, class7097, class7098, random);
         }
@@ -49,7 +49,7 @@ public class Class3879 extends Class3878
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3879.field17532[class7096.method21772((Class7111<Integer>)this.method11952())];
     }
     

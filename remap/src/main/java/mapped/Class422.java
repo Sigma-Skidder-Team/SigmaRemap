@@ -4,11 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.List;
-import java.util.Collection;
 
-public class Class422 extends Class399
+public class Class422 extends Entity
 {
     private static String[] field2536;
     private int field2537;
@@ -64,8 +65,8 @@ public class Class422 extends Class399
         if (this.field2537 >= 0) {
             if (!this.field2391.field10067) {
                 if (!this.field2540) {
-                    final List<Class399> method6737 = this.field2391.method6737(this, new Class6221(this.method1938() - 3.0, this.method1941() - 3.0, this.method1945() - 3.0, this.method1938() + 3.0, this.method1941() + 6.0 + 3.0, this.method1945() + 3.0), Class399::method1768);
-                    final Iterator<Class399> iterator = method6737.iterator();
+                    final List<Entity> method6737 = this.field2391.method6737(this, new Class6221(this.method1938() - 3.0, this.method1941() - 3.0, this.method1945() - 3.0, this.method1938() + 3.0, this.method1941() + 6.0 + 3.0, this.method1945() + 3.0), Entity::method1768);
+                    final Iterator<Entity> iterator = method6737.iterator();
                     while (iterator.hasNext()) {
                         iterator.next().method1834(this);
                     }
@@ -85,14 +86,14 @@ public class Class422 extends Class399
             if (!this.field2391.field10067) {
                 if (this.field2391.method6765().method31216(Class8878.field37315)) {
                     final Class7096 method11878 = Class7521.field29289.method11878();
-                    final Class354 class354 = new Class354(this);
+                    final BlockPos class354 = new BlockPos(this);
                     if (this.field2391.method6701(class354).method21706()) {
                         if (method11878.method21752(this.field2391, class354)) {
                             this.field2391.method6692(class354, method11878);
                         }
                     }
                     for (int i = 0; i < n; ++i) {
-                        final Class354 method11879 = class354.method1134(this.field2423.nextInt(3) - 1, this.field2423.nextInt(3) - 1, this.field2423.nextInt(3) - 1);
+                        final BlockPos method11879 = class354.method1134(this.field2423.nextInt(3) - 1, this.field2423.nextInt(3) - 1, this.field2423.nextInt(3) - 1);
                         if (this.field2391.method6701(method11879).method21706()) {
                             if (method11878.method21752(this.field2391, method11879)) {
                                 this.field2391.method6692(method11879, method11878);

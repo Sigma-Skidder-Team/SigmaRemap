@@ -6,21 +6,21 @@ package mapped;
 
 public class Class6439 implements Class6438
 {
-    private final Class354 field25566;
-    private final Class5487 field25567;
+    private final BlockPos field25566;
+    private final Vec3d field25567;
     
-    public Class6439(final Class354 field25566) {
+    public Class6439(final BlockPos field25566) {
         this.field25566 = field25566;
-        this.field25567 = new Class5487(field25566.method1074() + 0.5, field25566.method1075() + 0.5, field25566.method1076() + 0.5);
+        this.field25567 = new Vec3d(field25566.getX() + 0.5, field25566.getY() + 0.5, field25566.getZ() + 0.5);
     }
     
     @Override
-    public Class354 method19204() {
+    public BlockPos method19204() {
         return this.field25566;
     }
     
     @Override
-    public Class5487 method19205() {
+    public Vec3d method19205() {
         return this.field25567;
     }
     

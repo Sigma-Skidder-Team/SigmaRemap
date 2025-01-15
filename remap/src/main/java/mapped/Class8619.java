@@ -5,6 +5,10 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,7 +30,7 @@ import org.apache.logging.log4j.Logger;
 public class Class8619
 {
     private static final Logger field36163;
-    private static final Predicate<Class399> field36164;
+    private static final Predicate<Entity> field36164;
     private final Class6879 field36165;
     private final Class1849 field36166;
     private final List<Integer> field36167;
@@ -39,7 +43,7 @@ public class Class8619
     private boolean field36174;
     private UUID field36175;
     private boolean field36176;
-    private Class354 field36177;
+    private BlockPos field36177;
     private Class2242 field36178;
     private int field36179;
     private List<Class858> field36180;
@@ -237,10 +241,10 @@ public class Class8619
                     if (method29796 == null) {
                         continue;
                     }
-                    final Class354 method29797 = method29796.method25270(3, 3, 3).method26068();
+                    final BlockPos method29797 = method29796.method25270(3, 3, 3).method26068();
                     if (this.field36177 == null) {
-                        if (method29797.method1074() == 0) {
-                            if (method29797.method1076() == 0) {
+                        if (method29797.getX() == 0) {
+                            if (method29797.getZ() == 0) {
                                 this.field36177 = method29797;
                             }
                         }
@@ -249,8 +253,8 @@ public class Class8619
                 }
             }
         }
-        for (int k = this.field36166.method6958(Class2020.field11525, Class4551.field20031).method1075(); k >= 0; --k) {
-            final Class7820 method29798 = this.field36168.method29796(this.field36166, new Class354(Class4551.field20031.method1074(), k, Class4551.field20031.method1076()));
+        for (int k = this.field36166.method6958(Class2020.field11525, Class4551.field20031).getY(); k >= 0; --k) {
+            final Class7820 method29798 = this.field36168.method29796(this.field36166, new BlockPos(Class4551.field20031.getX(), k, Class4551.field20031.getZ()));
             if (method29798 != null) {
                 if (this.field36177 == null) {
                     this.field36177 = method29798.method25270(3, 3, 3).method26068();
@@ -295,7 +299,7 @@ public class Class8619
         this.field36170 = 0;
         final Iterator<Class9341> iterator = Class4550.method13560(this.field36166).iterator();
         while (iterator.hasNext()) {
-            this.field36170 += this.field36166.method7128((Class<? extends Class399>)Class858.class, iterator.next().method34624()).size();
+            this.field36170 += this.field36166.method7128((Class<? extends Entity>)Class858.class, iterator.next().method34624()).size();
         }
         Class8619.field36163.debug("Found {} end crystals still alive", (Object)this.field36170);
     }
@@ -317,11 +321,11 @@ public class Class8619
     private void method29245() {
         if (!this.field36167.isEmpty()) {
             final int intValue = this.field36167.remove(this.field36167.size() - 1);
-            this.method29246(new Class354(Class9546.method35644(96.0 * Math.cos(2.0 * (-3.141592653589793 + 0.15707963267948966 * intValue))), 75, Class9546.method35644(96.0 * Math.sin(2.0 * (-3.141592653589793 + 0.15707963267948966 * intValue)))));
+            this.method29246(new BlockPos(MathHelper.floor(96.0 * Math.cos(2.0 * (-3.141592653589793 + 0.15707963267948966 * intValue))), 75, MathHelper.floor(96.0 * Math.sin(2.0 * (-3.141592653589793 + 0.15707963267948966 * intValue)))));
         }
     }
     
-    private void method29246(final Class354 class354) {
+    private void method29246(final BlockPos class354) {
         this.field36166.method6955(3000, class354, 0);
         Class4535.field20006.method13527(Class5116.method16015()).method28613(this.field36166, (Class6346<? extends Class7065>)this.field36166.method6904().method7438(), new Random(), class354);
     }
@@ -331,7 +335,7 @@ public class Class8619
         if (this.field36177 == null) {
             this.field36177 = this.field36166.method6958(Class2020.field11526, Class4551.field20031).method1139();
             while (this.field36166.method6701(this.field36177).method21696() == Class7521.field29172) {
-                if (this.field36177.method1075() <= this.field36166.method6743()) {
+                if (this.field36177.getY() <= this.field36166.method6743()) {
                     break;
                 }
                 this.field36177 = this.field36177.method1139();
@@ -341,7 +345,7 @@ public class Class8619
     }
     
     private Class852 method29248() {
-        this.field36166.method6685(new Class354(0, 128, 0));
+        this.field36166.method6685(new BlockPos(0, 128, 0));
         final Class852 class852 = Class7499.field28976.method23371(this.field36166);
         class852.method5127().method33696(Class7193.field27948);
         class852.method1730(0.0, 128.0, 0.0, this.field36166.field10062.nextFloat() * 360.0f, 0.0f);
@@ -374,9 +378,9 @@ public class Class8619
         }
         else {
             this.method29243();
-            final Class399 method6914 = this.field36166.method6914(this.field36175);
+            final Entity method6914 = this.field36166.method6914(this.field36175);
             if (method6914 instanceof Class852) {
-                ((Class852)method6914).method5126(class858, new Class354(class858), class859);
+                ((Class852)method6914).method5126(class858, new BlockPos(class858), class859);
             }
         }
     }
@@ -388,7 +392,7 @@ public class Class8619
     public void method29253() {
         if (this.field36173) {
             if (this.field36178 == null) {
-                Class354 class354 = this.field36177;
+                BlockPos class354 = this.field36177;
                 if (class354 == null) {
                     Class8619.field36163.debug("Tried to respawn, but need to find the portal first.");
                     if (this.method29240() != null) {
@@ -401,10 +405,10 @@ public class Class8619
                     class354 = this.field36177;
                 }
                 final ArrayList arrayList = Lists.newArrayList();
-                final Class354 method1138 = class354.method1138(1);
-                final Iterator<Class179> iterator = Class98.field268.iterator();
+                final BlockPos method1138 = class354.method1138(1);
+                final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
                 while (iterator.hasNext()) {
-                    final List<Class399> method1139 = this.field36166.method7128((Class<? extends Class399>)Class858.class, new Class6221(method1138.method1150(iterator.next(), 2)));
+                    final List<Entity> method1139 = this.field36166.method7128((Class<? extends Entity>)Class858.class, new Class6221(method1138.method1150(iterator.next(), 2)));
                     if (method1139.isEmpty()) {
                         return;
                     }

@@ -14,7 +14,7 @@ public class Class4603 extends Class4535<Class5114>
         super(function);
     }
     
-    public boolean method13661(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5114 class1854) {
+    public boolean method13661(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5114 class1854) {
         return class1854.field22061.method33461(class1851, class1852, random, class1853, class1854.field22060);
     }
     

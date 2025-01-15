@@ -4,13 +4,14 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.Properties;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.Map;
@@ -36,7 +37,7 @@ public class Class9066
     private static final String[] field38397;
     private static final String[] field38398;
     
-    public static void method32639(final Class399 class399, final Class1847 class400) {
+    public static void method32639(final Entity class399, final Class1847 class400) {
         if (class400 != null) {
             final Class9184 method1650 = class399.method1650();
             method1650.field38922 = class399.method1894();
@@ -47,7 +48,7 @@ public class Class9066
         }
     }
     
-    public static void method32640(final Class399 class399, final Class1847 class400) {
+    public static void method32640(final Entity class399, final Class1847 class400) {
         if (class399 instanceof Class795) {
             method32641((Class795)class399, true);
         }
@@ -99,7 +100,7 @@ public class Class9066
     
     public static void method32642(final Class1847 class1847, final Class1847 class1848) {
         if (class1848 instanceof Class1848) {
-            final Iterator<Class399> iterator = ((Class1848)class1848).method6806().iterator();
+            final Iterator<Entity> iterator = ((Class1848)class1848).method6806().iterator();
             while (iterator.hasNext()) {
                 method32639(iterator.next(), class1848);
             }

@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.function.IntConsumer;
+
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.Validate;
 
 public class Class9217
@@ -15,7 +17,7 @@ public class Class9217
     private final int field39429;
     
     public Class9217(final int n, final int n2) {
-        this(n, n2, new long[Class9546.method35683(n2 * n, 64) / 64]);
+        this(n, n2, new long[MathHelper.method35683(n2 * n, 64) / 64]);
     }
     
     public Class9217(final int field39427, final int field39428, final long[] field39429) {
@@ -24,7 +26,7 @@ public class Class9217
         this.field39427 = field39427;
         this.field39426 = field39429;
         this.field39428 = (1L << field39427) - 1L;
-        final int i = Class9546.method35683(field39428 * field39427, 64) / 64;
+        final int i = MathHelper.method35683(field39428 * field39427, 64) / 64;
         if (field39429.length == i) {
             return;
         }

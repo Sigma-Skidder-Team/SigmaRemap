@@ -51,7 +51,7 @@ public class Class5420 extends Class5419<Class787>
             else {
                 return false;
             }
-        }, new Class354(class1850), 48, Class2045.field11650), this.field22597.method31397());
+        }, new BlockPos(class1850), 48, Class2045.field11650), this.field22597.method31397());
         if (method6922 != null && method6922.method35228()) {
             method6921.method7210(method6922.method35232()).ifPresent(p4 -> {
                 class1852.method7206(this.field22597.method31396(), class1857 -> class1857.equals(class1856), class1853, 1);

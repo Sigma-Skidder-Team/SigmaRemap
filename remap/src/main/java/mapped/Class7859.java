@@ -21,10 +21,10 @@ public class Class7859
         this.field32291 = field32291;
     }
     
-    public Class7859(final Class354 class354) {
+    public Class7859(final BlockPos class354) {
         this.field32292 = 0;
-        this.field32290 = class354.method1074() >> 4;
-        this.field32291 = class354.method1076() >> 4;
+        this.field32290 = class354.getX() >> 4;
+        this.field32291 = class354.getZ() >> 4;
     }
     
     public Class7859(final long n) {
@@ -101,8 +101,8 @@ public class Class7859
         return this.field32291 & 0x1F;
     }
     
-    public Class354 method25434(final int n, final int n2, final int n3) {
-        return new Class354((this.field32290 << 4) + n, n2, (this.field32291 << 4) + n3);
+    public BlockPos method25434(final int n, final int n2, final int n3) {
+        return new BlockPos((this.field32290 << 4) + n, n2, (this.field32291 << 4) + n3);
     }
     
     @Override
@@ -110,8 +110,8 @@ public class Class7859
         return "[" + this.field32290 + ", " + this.field32291 + "]";
     }
     
-    public Class354 method25435() {
-        return new Class354(this.field32290 << 4, 0, this.field32291 << 4);
+    public BlockPos method25435() {
+        return new BlockPos(this.field32290 << 4, 0, this.field32291 << 4);
     }
     
     public int method25436(final Class7859 class7859) {

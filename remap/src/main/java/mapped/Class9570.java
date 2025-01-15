@@ -7,6 +7,8 @@ package mapped;
 import java.util.Map;
 import java.util.Set;
 import java.util.List;
+
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Constructor;
@@ -977,7 +979,7 @@ public class Class9570
         Class9570.field41220 = new Class7363("net.minecraftforge.client.event.EntityViewRenderEvent$RenderFogEvent");
         Class9570.field41221 = new Class7362(Class9570.field41220, new Class[] { Class1985.class, Class6092.class, Float.TYPE, Float.TYPE });
         Class9570.field41222 = new Class7363("net.minecraftforge.event.entity.EntityJoinWorldEvent");
-        Class9570.field41223 = new Class7362(Class9570.field41222, new Class[] { Class399.class, Class1847.class });
+        Class9570.field41223 = new Class7362(Class9570.field41222, new Class[] { Entity.class, Class1847.class });
         Class9570.field41224 = new Class7363("net.minecraftforge.eventbus.api.Event");
         Class9570.field41225 = new Class7361(Class9570.field41224, "isCanceled");
         Class9570.field41226 = new Class7361(Class9570.field41224, "getResult");
@@ -993,15 +995,15 @@ public class Class9570
         Class9570.field41236 = new Class7363("net.minecraftforge.client.model.pipeline.ForgeBlockModelRenderer");
         Class9570.field41237 = new Class7362(Class9570.field41236, new Class[] { Class7860.class });
         Class9570.field41238 = new Class7363(Class9509.class);
-        Class9570.field41239 = new Class7361(Class9570.field41238, "getTexture", new Class[] { Class7096.class, Class1847.class, Class354.class });
+        Class9570.field41239 = new Class7361(Class9570.field41238, "getTexture", new Class[] { Class7096.class, Class1847.class, BlockPos.class });
         Class9570.field41240 = new Class7363("net.minecraftforge.common.extensions.IForgeBlockState");
         Class9570.field41241 = new Class7361(Class9570.field41240, "addDestroyEffects");
         Class9570.field41242 = new Class7361(Class9570.field41240, "addHitEffects");
-        Class9570.field41243 = new Class7361(Class9570.field41240, "getLightValue", new Class[] { Class1855.class, Class354.class });
-        Class9570.field41244 = new Class7361(Class9570.field41240, "getSoundType", new Class[] { Class1852.class, Class354.class, Class399.class });
+        Class9570.field41243 = new Class7361(Class9570.field41240, "getLightValue", new Class[] { Class1855.class, BlockPos.class });
+        Class9570.field41244 = new Class7361(Class9570.field41240, "getSoundType", new Class[] { Class1852.class, BlockPos.class, Entity.class });
         Class9570.field41245 = new Class7361(Class9570.field41240, "getStateAtViewpoint");
         Class9570.field41246 = new Class7361(Class9570.field41240, "hasTileEntity");
-        Class9570.field41247 = new Class7361(Class9570.field41240, "isAir", new Class[] { Class1855.class, Class354.class });
+        Class9570.field41247 = new Class7361(Class9570.field41240, "isAir", new Class[] { Class1855.class, BlockPos.class });
         Class9570.field41248 = new Class7361(Class9570.field41240, "shouldDisplayFluidOverlay");
         Class9570.field41249 = new Class7363("net.minecraftforge.common.extensions.IForgeFluid");
         Class9570.field41250 = new Class7361(Class9570.field41249, "getAttributes");
@@ -1011,7 +1013,7 @@ public class Class9570
         Class9570.field41254 = new Class7361(Class9570.field41251, "onRemovedFromWorld");
         Class9570.field41255 = new Class7361(Class9570.field41251, "shouldRiderSit");
         Class9570.field41256 = new Class7363("net.minecraftforge.fluids.FluidAttributes");
-        Class9570.field41257 = new Class7361(Class9570.field41256, "getColor", new Class[] { Class1856.class, Class354.class });
+        Class9570.field41257 = new Class7361(Class9570.field41256, "getColor", new Class[] { Class1856.class, BlockPos.class });
         Class9570.field41258 = new Class7363(Class7499.class);
         Class9570.field41259 = new Class7361(Class9570.field41258, "getTags");
         Class9570.field41260 = new Class7363(Class511.class);
@@ -1171,7 +1173,7 @@ public class Class9570
         Class9570.field41414 = new Class7363("net.minecraftforge.client.event.RenderLivingEvent$Post");
         Class9570.field41415 = new Class7362(Class9570.field41414, new Class[] { Class511.class, Class4710.class, Float.TYPE, Class7351.class, Class7807.class, Integer.TYPE });
         Class9570.field41416 = new Class7363("net.minecraftforge.client.event.RenderNameplateEvent");
-        Class9570.field41417 = new Class7362(Class9570.field41416, new Class[] { Class399.class, String.class, Class4703.class, Class7351.class, Class7807.class, Integer.TYPE });
+        Class9570.field41417 = new Class7362(Class9570.field41416, new Class[] { Entity.class, String.class, Class4703.class, Class7351.class, Class7807.class, Integer.TYPE });
         Class9570.field41418 = new Class7361(Class9570.field41416, "getContent");
         Class9570.field41419 = new Class7363("net.minecraftforge.client.event.ScreenshotEvent");
         Class9570.field41420 = new Class7361(Class9570.field41419, "getCancelMessage");

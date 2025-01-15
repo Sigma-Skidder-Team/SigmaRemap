@@ -4,7 +4,9 @@
 
 package mapped;
 
-public enum Class106 implements Class103
+import net.minecraft.util.IStringSerializable;
+
+public enum Class106 implements IStringSerializable
 {
     field327("up"), 
     field328("side"), 
@@ -18,11 +20,11 @@ public enum Class106 implements Class103
     
     @Override
     public String toString() {
-        return this.method596();
+        return this.getName();
     }
     
     @Override
-    public String method596() {
+    public String getName() {
         return this.field330;
     }
 }

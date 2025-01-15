@@ -5,8 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
-import java.util.function.Predicate;
+
 import java.util.Optional;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -84,7 +83,7 @@ public class Class5457 extends Class5419<Class824>
         if (!Class5457.field22697.containsKey(method28781)) {
             return (List<Class8321>)ImmutableList.of((Object)new Class8321(Class7739.field31314));
         }
-        return class824.field2391.method6679().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.field2391).method32877(Class6683.field26367, new Class354(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
+        return class824.field2391.method6679().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.field2391).method32877(Class6683.field26367, new BlockPos(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
     }
     
     private boolean method16670(final Class824 class824) {
@@ -100,7 +99,7 @@ public class Class5457 extends Class5419<Class824>
     }
     
     private boolean method16673(final Class824 class824, final Class512 class825) {
-        return new Class354(class824).method1081(new Class354(class825), 5.0);
+        return new BlockPos(class824).method1081(new BlockPos(class825), 5.0);
     }
     
     private static int method16674(final Class1849 class1849) {

@@ -31,7 +31,7 @@ public class Class4106 extends Class4107
     
     @Nullable
     @Override
-    public Class9038 method12350(final Class1852 class1852, final Class354 class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
+    public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
         return this.field18210.contains((Object)class1855.field38249.method21696()) ? null : class1855;
     }
     

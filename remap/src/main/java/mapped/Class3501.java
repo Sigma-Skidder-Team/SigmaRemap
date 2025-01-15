@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.EnumSet;
 
@@ -26,7 +27,7 @@ public class Class3501 extends Class3446
         if (this.field16461.method4205() || this.field16461.method4800()) {
             return false;
         }
-        final List<Class399> method6737 = this.field16461.field2391.method6737(this.field16461, this.field16461.method1886().method18495(9.0, 4.0, 9.0), class818 -> {
+        final List<Entity> method6737 = this.field16461.field2391.method6737(this.field16461, this.field16461.method1886().method18495(9.0, 4.0, 9.0), class818 -> {
             class818.method1642();
             final Class7499 class819;
             return class819 == Class7499.field28996 || class819 == Class7499.field29033;

@@ -24,7 +24,7 @@ public class Class4650 extends Class4648
     }
     
     @Override
-    public Class354 method13896() {
+    public BlockPos method13896() {
         return this.field20135.field2657;
     }
     

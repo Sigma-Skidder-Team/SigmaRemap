@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -18,10 +19,10 @@ public class Class9058
     public static void method32617(final Class6313 obj) {
         if (obj != null) {
             Class8571.method28847("Model: " + obj + ", ao: " + obj.method18692() + ", gui3d: " + obj.method18693() + ", builtIn: " + obj.method18695() + ", particle: " + obj.method18696());
-            final Class179[] field524 = Class179.field524;
+            final Direction[] field524 = Direction.VALUES;
             for (int i = 0; i < field524.length; ++i) {
-                final Class179 class179 = field524[i];
-                method32618(class179.method596(), obj.method18691(null, class179, Class9058.field38362), "  ");
+                final Direction class179 = field524[i];
+                method32618(class179.getName(), obj.method18691(null, class179, Class9058.field38362), "  ");
             }
             method32618("General", obj.method18691(null, null, Class9058.field38362), "  ");
         }
@@ -50,10 +51,10 @@ public class Class9058
     
     public static Class6313 method32621(final Class6313 class6313) {
         final List method32622 = method32622(class6313.method18691(null, null, Class9058.field38362));
-        final Class179[] field524 = Class179.field524;
+        final Direction[] field524 = Direction.VALUES;
         final HashMap hashMap = new HashMap();
         for (int i = 0; i < field524.length; ++i) {
-            final Class179 class6314 = field524[i];
+            final Direction class6314 = field524[i];
             hashMap.put(class6314, method32622(class6313.method18691(null, class6314, Class9058.field38362)));
         }
         return new Class6315(method32622, hashMap, class6313.method18692(), class6313.method18693(), true, class6313.method18696(), class6313.method18697(), class6313.method18698());

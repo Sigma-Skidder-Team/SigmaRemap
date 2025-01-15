@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 public class Class4791 extends Class4703<Class862>
 {
     private static final Class1933 field20427;
@@ -21,12 +24,12 @@ public class Class4791 extends Class4703<Class862>
     public void method14168(final Class862 class862, final float n, final float n2, final Class7351 class863, final Class7807 class864, final int i) {
         super.method13951(class862, n, n2, class863, class864, i);
         class863.method22567();
-        final Class179 method1882 = class862.method1882();
-        final Class5487 method1883 = this.method14169(class862, n2);
+        final Direction method1882 = class862.method1882();
+        final Vec3d method1883 = this.method14169(class862, n2);
         class863.method22564(-method1883.method16760(), -method1883.method16761(), -method1883.method16762());
-        class863.method22564(method1882.method785() * 0.46875, method1882.method786() * 0.46875, method1882.method787() * 0.46875);
-        class863.method22566(Class9138.field38716.method33328(class862.field2400));
-        class863.method22566(Class9138.field38718.method33328(180.0f - class862.field2399));
+        class863.method22564(method1882.getXOffset() * 0.46875, method1882.getYOffset() * 0.46875, method1882.getZOffset() * 0.46875);
+        class863.method22566(Vector3f.XP.rotationDegrees(class862.field2400));
+        class863.method22566(Vector3f.field38718.rotationDegrees(180.0f - class862.field2399));
         final Class1658 method1884 = this.field20429.method5305();
         final Class1790 method1885 = method1884.method5787().method35429();
         final Class1933 class865 = (class862.method5198().method27622() instanceof Class4094) ? Class4791.field20428 : Class4791.field20427;
@@ -38,7 +41,7 @@ public class Class4791 extends Class4703<Class862>
         if (!method1886.method27620()) {
             final boolean b = method1886.method27622() instanceof Class4094;
             class863.method22564(0.0, 0.0, 0.4375);
-            class863.method22566(Class9138.field38720.method33328((b ? (class862.method5201() % 4 * 2) : class862.method5201()) * 360.0f / 8.0f));
+            class863.method22566(Vector3f.ZP.rotationDegrees((b ? (class862.method5201() % 4 * 2) : class862.method5201()) * 360.0f / 8.0f));
             if (!Class9570.method35840(Class9570.field41411, class862, this, class863, class864, i)) {
                 if (!b) {
                     class863.method22565(0.5f, 0.5f, 0.5f);
@@ -47,7 +50,7 @@ public class Class4791 extends Class4703<Class862>
                     }
                 }
                 else {
-                    class863.method22566(Class9138.field38720.method33328(180.0f));
+                    class863.method22566(Vector3f.ZP.rotationDegrees(180.0f));
                     class863.method22565(0.0078125f, 0.0078125f, 0.0078125f);
                     class863.method22564(-64.0, -64.0, 0.0);
                     final Class6356 method1887 = Class7667.method24307(method1886, class862.field2391);
@@ -61,8 +64,8 @@ public class Class4791 extends Class4703<Class862>
         class863.method22568();
     }
     
-    public Class5487 method14169(final Class862 class862, final float n) {
-        return new Class5487(class862.method1882().method785() * 0.3f, -0.25, class862.method1882().method787() * 0.3f);
+    public Vec3d method14169(final Class862 class862, final float n) {
+        return new Vec3d(class862.method1882().getXOffset() * 0.3f, -0.25, class862.method1882().getZOffset() * 0.3f);
     }
     
     public Class1932 method14170(final Class862 class862) {
@@ -91,7 +94,7 @@ public class Class4791 extends Class4703<Class862>
     private boolean method14173(final Class862 class862) {
         if (!Class9216.field39049) {
             if (!Class8571.field36033) {
-                final Class399 method5303 = this.field20429.method5303();
+                final Entity method5303 = this.field20429.method5303();
                 if (class862.method1733(method5303.method1938(), method5303.method1941(), method5303.method1945()) > Class4791.field20431) {
                     return false;
                 }

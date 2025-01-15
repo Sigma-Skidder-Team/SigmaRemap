@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.function.Predicate;
 import java.util.ArrayList;
@@ -30,7 +33,7 @@ public enum Class234
     public float field892;
     public float field893;
     public Class7006 field894;
-    public Class399 field895;
+    public Entity field895;
     
     private Class234(final Class3820 field884, final float field885, final float field886, final float field887) {
         this.field884 = field884;
@@ -78,9 +81,9 @@ public enum Class234
         this.field889 = n3 + Class3213.method10126().field4684.method1892() - 0.10000000149011612;
         this.field890 = field889;
         final float n4 = Math.min(20.0f, 72000 - Class3213.method10127().field4684.method2767() + Class3213.method10128().method5314()) / 20.0f;
-        this.field891 = -Class9546.method35638(n) * Class9546.method35639(n2) * this.field886 * n4;
-        this.field892 = -Class9546.method35638(n2) * this.field886 * n4;
-        this.field893 = Class9546.method35639(n) * Class9546.method35639(n2) * this.field886 * n4;
+        this.field891 = -MathHelper.sin(n) * MathHelper.cos(n2) * this.field886 * n4;
+        this.field892 = -MathHelper.sin(n2) * this.field886 * n4;
+        this.field893 = MathHelper.cos(n) * MathHelper.cos(n2) * this.field886 * n4;
         this.field894 = null;
         this.field895 = null;
         list.add(new Class8797(this.field888, this.field889, this.field890));
@@ -94,9 +97,9 @@ public enum Class234
             final Class5487 class5487 = new Class5487(this.field888, this.field889, this.field890);
             final Class5487 class5488 = new Class5487(this.field888 + this.field891, this.field889 + this.field892, this.field890 + this.field893);
             final float n5 = (float)((this.field884 instanceof Class4087) ? 0.3 : 0.25);
-            final List<Class399> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new Class6221(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).method18499(this.field891, this.field892, this.field893).method18495(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Class399>)new Class166(this, n5, class5487, class5488)));
+            final List<Entity> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new Class6221(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).method18499(this.field891, this.field892, this.field893).method18495(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
             if (method6737.size() > 0) {
-                final Iterator<Class399> iterator = method6737.iterator();
+                final Iterator<Entity> iterator = method6737.iterator();
                 while (iterator.hasNext()) {
                     this.field895 = iterator.next();
                 }

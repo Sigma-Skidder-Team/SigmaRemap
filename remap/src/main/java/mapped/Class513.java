@@ -4,9 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
-import java.util.function.Consumer;
 import java.util.Collection;
 import java.util.OptionalInt;
 import com.mojang.datafixers.util.Either;
@@ -44,14 +45,14 @@ public class Class513 extends Class512 implements Class514
     private Class2047 field3056;
     private boolean field3057;
     private long field3058;
-    private Class399 field3059;
+    private Entity field3059;
     private boolean field3060;
     private boolean field3061;
     private final Class6522 field3062;
-    private Class5487 field3063;
+    private Vec3d field3063;
     private int field3064;
     private boolean field3065;
-    private Class5487 field3066;
+    private Vec3d field3066;
     private Class353 field3067;
     private int field3068;
     public boolean field3069;
@@ -87,10 +88,10 @@ public class Class513 extends Class512 implements Class514
     }
     
     private void method2915(final Class1849 class1849) {
-        final Class354 method6758 = class1849.method6758();
+        final BlockPos method6758 = class1849.method6758();
         if (class1849.field10063.method20503() && class1849.method6764().method29564() != Class101.field300) {
             int max = Math.max(0, this.field3040.method1565(class1849));
-            final int method6759 = Class9546.method35644(class1849.method6787().method34784(method6758.method1074(), method6758.method1076()));
+            final int method6759 = MathHelper.floor(class1849.method6787().method34784(method6758.getX(), method6758.getZ()));
             if (method6759 < max) {
                 max = method6759;
             }
@@ -104,7 +105,7 @@ public class Class513 extends Class512 implements Class514
             final int nextInt = new Random().nextInt(bound);
             for (int i = 0; i < bound; ++i) {
                 final int n3 = (nextInt + method6760 * i) % bound;
-                final Class354 method6761 = class1849.method6789().method20490(method6758.method1074() + n3 % (max * 2 + 1) - max, method6758.method1076() + n3 / (max * 2 + 1) - max, false);
+                final BlockPos method6761 = class1849.method6789().method20490(method6758.getX() + n3 % (max * 2 + 1) - max, method6758.getZ() + n3 / (max * 2 + 1) - max, false);
                 if (method6761 != null) {
                     this.method1729(method6761, 0.0f, 0.0f);
                     if (class1849.method6977(this)) {
@@ -141,7 +142,7 @@ public class Class513 extends Class512 implements Class514
         }
         if (class51.method316("enteredNetherPosition", 10)) {
             final Class51 method327 = class51.method327("enteredNetherPosition");
-            this.field3066 = new Class5487(method327.method322("x"), method327.method322("y"), method327.method322("z"));
+            this.field3066 = new Vec3d(method327.method322("x"), method327.method322("y"), method327.method322("z"));
         }
         this.field3061 = class51.method329("seenCredits");
         if (class51.method316("recipeBook", 10)) {
@@ -164,8 +165,8 @@ public class Class513 extends Class512 implements Class514
             class52.method305("z", this.field3066.field22772);
             class51.method295("enteredNetherPosition", class52);
         }
-        final Class399 method1915 = this.method1915();
-        final Class399 method1916 = this.method1920();
+        final Entity method1915 = this.method1915();
+        final Entity method1916 = this.method1920();
         if (method1916 != null) {
             if (method1915 != this) {
                 if (method1915.method1913()) {
@@ -183,7 +184,7 @@ public class Class513 extends Class512 implements Class514
     
     public void method2917(final int n) {
         final float n2 = (float)this.method2875();
-        this.field3028 = Class9546.method35653(n / n2, 0.0f, (n2 - 1.0f) / n2);
+        this.field3028 = MathHelper.method35653(n / n2, 0.0f, (n2 - 1.0f) / n2);
         this.field3054 = -1;
     }
     
@@ -255,7 +256,7 @@ public class Class513 extends Class512 implements Class514
             }
             this.field3039.method17469(new Class4325(array));
         }
-        final Class399 method2951 = this.method2951();
+        final Entity method2951 = this.method2951();
         if (method2951 != this) {
             if (!method2951.method1768()) {
                 this.method2952(this);
@@ -277,7 +278,7 @@ public class Class513 extends Class512 implements Class514
     
     public void method2920() {
         try {
-            if (!this.method1639() || this.field2391.method6971(new Class354(this))) {
+            if (!this.method1639() || this.field2391.method6971(new BlockPos(this))) {
                 super.method1659();
             }
             for (int i = 0; i < this.field3006.method2239(); ++i) {
@@ -297,27 +298,27 @@ public class Class513 extends Class512 implements Class514
             }
             if (this.method2664() + this.method2750() != this.field3045) {
                 this.field3045 = this.method2664() + this.method2750();
-                this.method2921(Class9456.field40645, Class9546.method35649(this.field3045));
+                this.method2921(Class9456.field40645, MathHelper.method35649(this.field3045));
             }
             if (this.field3010.method33491() != this.field3046) {
                 this.field3046 = this.field3010.method33491();
-                this.method2921(Class9456.field40646, Class9546.method35649((float)this.field3046));
+                this.method2921(Class9456.field40646, MathHelper.method35649((float)this.field3046));
             }
             if (this.method1832() != this.field3047) {
                 this.field3047 = this.method1832();
-                this.method2921(Class9456.field40647, Class9546.method35649((float)this.field3047));
+                this.method2921(Class9456.field40647, MathHelper.method35649((float)this.field3047));
             }
             if (this.method2693() != this.field3048) {
                 this.field3048 = this.method2693();
-                this.method2921(Class9456.field40648, Class9546.method35649((float)this.field3048));
+                this.method2921(Class9456.field40648, MathHelper.method35649((float)this.field3048));
             }
             if (this.field3027 != this.field3050) {
                 this.field3050 = this.field3027;
-                this.method2921(Class9456.field40649, Class9546.method35649((float)this.field3050));
+                this.method2921(Class9456.field40649, MathHelper.method35649((float)this.field3050));
             }
             if (this.field3026 != this.field3049) {
                 this.field3049 = this.field3026;
-                this.method2921(Class9456.field40650, Class9546.method35649((float)this.field3049));
+                this.method2921(Class9456.field40650, MathHelper.method35649((float)this.field3049));
             }
             if (this.field3027 != this.field3054) {
                 this.field3054 = this.field3027;
@@ -387,7 +388,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method1751(final Class399 class399, final int n, final Class7929 class400) {
+    public void method1751(final Entity class399, final int n, final Class7929 class400) {
         if (class399 != this) {
             super.method1751(class399, n, class400);
             this.method2819(n);
@@ -442,12 +443,12 @@ public class Class513 extends Class512 implements Class514
                 }
             }
             if (class7929 instanceof Class7930) {
-                final Class399 method25714 = class7929.method25714();
+                final Entity method25714 = class7929.method25714();
                 if (method25714 instanceof Class512 && !this.method2826((Class512)method25714)) {
                     return false;
                 }
                 if (method25714 instanceof Class402) {
-                    final Class399 method25715 = ((Class402)method25714).method1973();
+                    final Entity method25715 = ((Class402)method25714).method1973();
                     if (method25715 instanceof Class512) {
                         if (!this.method2826((Class512)method25715)) {
                             return false;
@@ -471,7 +472,7 @@ public class Class513 extends Class512 implements Class514
     
     @Nullable
     @Override
-    public Class399 method1854(final Class383 field2452) {
+    public Entity method1854(final Class383 field2452) {
         this.field3060 = true;
         final Class383 field2453 = this.field2452;
         if (field2453 == Class383.field2225 && field2452 == Class383.field2223) {
@@ -512,10 +513,10 @@ public class Class513 extends Class512 implements Class514
         }
         else if (field2453 == Class383.field2223) {
             if (field2452 == Class383.field2225) {
-                final Class354 method1488 = method1482.method6878();
-                method1485 = method1488.method1074();
-                method1486 = method1488.method1075();
-                method1487 = method1488.method1076();
+                final BlockPos method1488 = method1482.method6878();
+                method1485 = method1488.getX();
+                method1486 = method1488.getY();
+                method1487 = method1488.getZ();
                 n = 90.0f;
                 field2454 = 0.0f;
             }
@@ -523,7 +524,7 @@ public class Class513 extends Class512 implements Class514
         this.method1730(method1485, method1486, method1487, n, field2454);
         method1481.method6796().method15299();
         method1481.method6796().method15297("placing");
-        this.method1730(Class9546.method35654(method1485, Math.min(-2.9999872E7, method1482.method6787().method34786() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34788() - 16.0)), method1486, Class9546.method35654(method1487, Math.min(-2.9999872E7, method1482.method6787().method34787() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34789() - 16.0)), n, field2454);
+        this.method1730(MathHelper.method35654(method1485, Math.min(-2.9999872E7, method1482.method6787().method34786() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34788() - 16.0)), method1486, MathHelper.method35654(method1487, Math.min(-2.9999872E7, method1482.method6787().method34787() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34789() - 16.0)), n, field2454);
         if (field2452 != Class383.field2225) {
             if (!method1482.method6909().method31767(this, field2455)) {
                 method1482.method6909().method31769(this);
@@ -531,18 +532,18 @@ public class Class513 extends Class512 implements Class514
             }
         }
         else {
-            final int method1489 = Class9546.method35644(this.method1938());
-            final int n2 = Class9546.method35644(this.method1941()) - 1;
-            final int method1490 = Class9546.method35644(this.method1945());
+            final int method1489 = MathHelper.floor(this.method1938());
+            final int n2 = MathHelper.floor(this.method1941()) - 1;
+            final int method1490 = MathHelper.floor(this.method1945());
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
                     for (int k = -1; k < 3; ++k) {
-                        method1482.method6692(new Class354(method1489 + j * 1 + i * 0, n2 + k, method1490 + j * 0 - i * 1), (k < 0) ? Class7521.field29286.method11878() : Class7521.field29147.method11878());
+                        method1482.method6692(new BlockPos(method1489 + j * 1 + i * 0, n2 + k, method1490 + j * 0 - i * 1), (k < 0) ? Class7521.field29286.method11878() : Class7521.field29147.method11878());
                     }
                 }
             }
             this.method1730(method1489, n2, method1490, n, 0.0f);
-            this.method1936(Class5487.field22769);
+            this.method1936(Vec3d.field22769);
         }
         method1481.method6796().method15299();
         this.method1727(method1482);
@@ -557,7 +558,7 @@ public class Class513 extends Class512 implements Class514
         while (iterator.hasNext()) {
             this.field3039.method17469(new Class4384(this.method1643(), iterator.next()));
         }
-        this.field3039.method17469(new Class4395(1032, Class354.field2173, 0, false));
+        this.field3039.method17469(new Class4395(1032, BlockPos.ZERO, 0, false));
         this.field3054 = -1;
         this.field3051 = -1.0f;
         this.field3052 = -1;
@@ -598,13 +599,13 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2746(final Class399 class399, final int n) {
+    public void method2746(final Entity class399, final int n) {
         super.method2746(class399, n);
         this.field3009.method10876();
     }
     
     @Override
-    public Either<Class2048, Class315> method2845(final Class354 class354) {
+    public Either<Class2048, Class315> method2845(final BlockPos class354) {
         return (Either<Class2048, Class315>)super.method2845(class354).ifRight(p0 -> {
             this.method2857(Class8276.field34044);
             Class7770.field31791.method13827(this);
@@ -623,8 +624,8 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public boolean method1780(final Class399 class399, final boolean b) {
-        final Class399 method1920 = this.method1920();
+    public boolean method1780(final Entity class399, final boolean b) {
+        final Entity method1920 = this.method1920();
         if (super.method1780(class399, b)) {
             if (this.method1920() != method1920) {
                 if (this.field3039 != null) {
@@ -638,7 +639,7 @@ public class Class513 extends Class512 implements Class514
     
     @Override
     public void method1784() {
-        final Class399 method1920 = this.method1920();
+        final Entity method1920 = this.method1920();
         super.method1784();
         if (this.method1920() != method1920) {
             if (this.field3039 != null) {
@@ -660,18 +661,18 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final Class354 class7097) {
+    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
     }
     
     @Override
-    public void method2624(final Class354 class354) {
+    public void method2624(final BlockPos class354) {
         if (!this.method1639()) {
             super.method2624(class354);
         }
     }
     
     public void method2926(final double n, final boolean b) {
-        final Class354 method1672 = this.method1672();
+        final BlockPos method1672 = this.method1672();
         if (this.field2391.method6971(method1672)) {
             super.method1701(n, b, this.field2391.method6701(method1672), method1672);
         }
@@ -870,12 +871,12 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method1927(final Class2042 class2042, final Class5487 class2043) {
+    public void method1927(final Class2042 class2042, final Vec3d class2043) {
         super.method1927(class2042, class2043);
         this.field3039.method17469(new Class4280(class2042, class2043.field22770, class2043.field22771, class2043.field22772));
     }
     
-    public void method2938(final Class2042 class2042, final Class399 class2043, final Class2042 class2044) {
+    public void method2938(final Class2042 class2042, final Entity class2043, final Class2042 class2044) {
         super.method1927(class2042, class2044.method8122(class2043));
         this.field3039.method17469(new Class4280(class2042, class2043, class2044));
     }
@@ -956,12 +957,12 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2839(final Class399 class399) {
+    public void method2839(final Entity class399) {
         this.method2940().method6904().method7446(this, new Class4289(class399, 4));
     }
     
     @Override
-    public void method2840(final Class399 class399) {
+    public void method2840(final Entity class399) {
         this.method2940().method6904().method7446(this, new Class4289(class399, 5));
     }
     
@@ -1056,7 +1057,7 @@ public class Class513 extends Class512 implements Class514
         return this.field3062;
     }
     
-    public void method2949(final Class399 class399) {
+    public void method2949(final Entity class399) {
         if (!(class399 instanceof Class512)) {
             this.field3042.add(class399.method1643());
         }
@@ -1065,7 +1066,7 @@ public class Class513 extends Class512 implements Class514
         }
     }
     
-    public void method2950(final Class399 class399) {
+    public void method2950(final Entity class399) {
         this.field3042.remove((Object)class399.method1643());
     }
     
@@ -1080,12 +1081,12 @@ public class Class513 extends Class512 implements Class514
         }
     }
     
-    public Class399 method2951() {
+    public Entity method2951() {
         return (this.field3059 != null) ? this.field3059 : this;
     }
     
-    public void method2952(final Class399 class399) {
-        final Class399 method2951 = this.method2951();
+    public void method2952(final Entity class399) {
+        final Entity method2951 = this.method2951();
         this.field3059 = ((class399 != null) ? class399 : this);
         if (method2951 != this.field3059) {
             this.field3039.method17469(new Class4343(this.field3059));
@@ -1103,7 +1104,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2837(final Class399 class399) {
+    public void method2837(final Entity class399) {
         if (this.field3041.method26482() != Class101.field301) {
             super.method2837(class399);
         }

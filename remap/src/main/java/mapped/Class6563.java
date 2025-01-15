@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6563 extends Class6564
 {
     private static String[] field26063;
@@ -24,7 +26,7 @@ public class Class6563 extends Class6564
             final double n2 = this.field26068 - this.field26064.method1941();
             final double n3 = this.field26069 - this.field26064.method1945();
             if (n * n + n2 * n2 + n3 * n3 >= 2.500000277905201E-7) {
-                this.field26064.field2399 = this.method19909(this.field26064.field2399, (float)(Class9546.method35693(n3, n) * 57.2957763671875) - 90.0f, 10.0f);
+                this.field26064.field2399 = this.method19909(this.field26064.field2399, (float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f, 10.0f);
                 this.field26064.field2951 = this.field26064.field2399;
                 this.field26064.field2953 = this.field26064.field2399;
                 final float n4 = (float)(this.field26070 * this.field26064.method2710(Class8107.field33408).method23950());
@@ -33,9 +35,9 @@ public class Class6563 extends Class6564
                 }
                 else {
                     this.field26064.method2733(n4 * 0.02f);
-                    this.field26064.field2400 = this.method19909(this.field26064.field2400, Class9546.method35653(Class9546.method35668(-(float)(Class9546.method35693(n2, Class9546.method35641(n * n + n3 * n3)) * 57.2957763671875)), -85.0f, 85.0f), 5.0f);
-                    final float method35639 = Class9546.method35639(this.field26064.field2400 * 0.017453292f);
-                    final float method35640 = Class9546.method35638(this.field26064.field2400 * 0.017453292f);
+                    this.field26064.field2400 = this.method19909(this.field26064.field2400, MathHelper.method35653(MathHelper.method35668(-(float)(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875)), -85.0f, 85.0f), 5.0f);
+                    final float method35639 = MathHelper.cos(this.field26064.field2400 * 0.017453292f);
+                    final float method35640 = MathHelper.sin(this.field26064.field2400 * 0.017453292f);
                     this.field26064.field2970 = method35639 * n4;
                     this.field26064.field2969 = -method35640 * n4;
                 }

@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5924<T extends Class798> extends Class5844<T>
 {
@@ -76,7 +77,7 @@ public class Class5924<T extends Class798> extends Class5844<T>
         if (!b) {
             final float n6 = n3 * 2.1f;
             this.field24340.field25184 = 0.0f;
-            this.field24340.field25185 = Class9546.method35639(n6) * 3.1415927f * 0.15f;
+            this.field24340.field25185 = MathHelper.cos(n6) * 3.1415927f * 0.15f;
             this.field24341.field25183 = this.field24340.field25183;
             this.field24341.field25184 = this.field24340.field25184;
             this.field24341.field25185 = -this.field24340.field25185;
@@ -102,13 +103,13 @@ public class Class5924<T extends Class798> extends Class5844<T>
             this.field24338.field25184 = 0.0f;
             this.field24338.field25185 = 0.0f;
             if (!b) {
-                final float method35639 = Class9546.method35639(n3 * 0.18f);
+                final float method35639 = MathHelper.cos(n3 * 0.18f);
                 this.field24338.field25183 = 0.1f + method35639 * 3.1415927f * 0.025f;
                 this.field24346.field25183 = method35639 * 3.1415927f * 0.03f;
                 this.field24347.field25183 = method35639 * 3.1415927f * 0.03f;
                 this.field24342.field25183 = -method35639 * 3.1415927f * 0.1f + 0.3926991f;
                 this.field24344.field25183 = -method35639 * 3.1415927f * 0.05f + 0.7853982f;
-                this.field24338.field25181 = 19.0f - Class9546.method35639(n3 * 0.18f) * 0.9f;
+                this.field24338.field25181 = 19.0f - MathHelper.cos(n3 * 0.18f) * 0.9f;
             }
         }
         if (this.field24348 > 0.0f) {

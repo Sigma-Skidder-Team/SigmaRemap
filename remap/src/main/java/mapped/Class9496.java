@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class9496
 {
     private static String[] field40843;
@@ -72,7 +74,7 @@ public class Class9496
         return this.field40849;
     }
     
-    public boolean method35354(final Class179 class179) {
+    public boolean method35354(final Direction class179) {
         float n = 0.0f;
         float n2 = 0.0f;
         float n3 = 0.0f;
@@ -120,7 +122,7 @@ public class Class9496
         return n == n3 && n2 == n3;
     }
     
-    public boolean method35355(final Class179 class179) {
+    public boolean method35355(final Direction class179) {
         float n = 0.0f;
         float n2 = 0.0f;
         float n3 = 0.0f;

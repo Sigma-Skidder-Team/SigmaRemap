@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.EnumSet;
 
 public class Class3628 extends Class3446
 {
     private static String[] field16857;
     public final Class759 field16858;
-    public Class399 field16859;
+    public Entity field16859;
     public final float field16860;
     private int field16861;
     public final float field16862;
@@ -42,7 +44,7 @@ public class Class3628 extends Class3446
                 this.field16859 = this.field16858.method4152();
             }
             if (this.field16863 != Class512.class) {
-                this.field16859 = this.field16858.field2391.method7139((Class<? extends Class399>)this.field16863, this.field16864, (Class511)this.field16858, this.field16858.method1938(), this.field16858.method1944(), this.field16858.method1945(), this.field16858.method1886().method18495(this.field16860, 3.0, this.field16860));
+                this.field16859 = this.field16858.field2391.method7139((Class<? extends Entity>)this.field16863, this.field16864, (Class511)this.field16858, this.field16858.method1938(), this.field16858.method1944(), this.field16858.method1945(), this.field16858.method1886().method18495(this.field16860, 3.0, this.field16860));
             }
             else {
                 this.field16859 = this.field16858.field2391.method7136(this.field16864, this.field16858, this.field16858.method1938(), this.field16858.method1944(), this.field16858.method1945());

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Predicate;
 import java.util.Objects;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -18,7 +17,7 @@ public class Class7154 extends Class7133<Class6936>
         super(function);
     }
     
-    public Stream<Class354> method21913(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6936 class1853, final Class354 class1854) {
+    public Stream<BlockPos> method21913(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6936 class1853, final BlockPos class1854) {
         return IntStream.range(0, random.nextInt(5)).mapToObj(p3 -> {
             final int n2 = random2.nextInt(16) + class1855.method1074();
             final int n3 = random2.nextInt(16) + class1855.method1076();
@@ -28,7 +27,7 @@ public class Class7154 extends Class7133<Class6936>
                 return null;
             }
             else {
-                return (Class354)(Class354)new Class354(n2, n4 - 1, n3);
+                return (BlockPos)(BlockPos)new BlockPos(n2, n4 - 1, n3);
             }
         }).filter(Objects::nonNull);
     }

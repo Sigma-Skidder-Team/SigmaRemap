@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.ArrayList;
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 import java.util.BitSet;
 
@@ -13,7 +15,7 @@ public class Class9145
 {
     private static String[] field38736;
     private Class7096 field38737;
-    private Class354 field38738;
+    private BlockPos field38738;
     private int field38739;
     private int field38740;
     private int field38741;
@@ -25,7 +27,7 @@ public class Class9145
     private boolean[] field38747;
     private boolean[] field38748;
     private boolean[] field38749;
-    private Class179[] field38750;
+    private Direction[] field38750;
     private List<Class8754> field38751;
     private List<Class8754> field38752;
     private Class8754[] field38753;
@@ -40,12 +42,12 @@ public class Class9145
     private static final int field38762 = 0;
     private static final int field38763 = 1;
     
-    public Class9145(final Class7096 field38737, final Class354 field38738) {
+    public Class9145(final Class7096 field38737, final BlockPos field38738) {
         this.field38739 = -1;
         this.field38740 = -1;
         this.field38741 = -1;
         this.field38742 = -1;
-        this.field38743 = new float[Class179.field524.length * 2];
+        this.field38743 = new float[Direction.VALUES.length * 2];
         this.field38744 = new BitSet(3);
         this.field38745 = new Class9436();
         this.field38746 = null;
@@ -67,7 +69,7 @@ public class Class9145
         this.field38738 = field38738;
     }
     
-    public void method33373(final Class7096 field38737, final Class354 field38738) {
+    public void method33373(final Class7096 field38737, final BlockPos field38738) {
         if (this.field38737 != field38737 || this.field38738 != field38738) {
             this.field38737 = field38737;
             this.field38738 = field38738;
@@ -167,15 +169,15 @@ public class Class9145
         return this.field38749;
     }
     
-    public Class179[] method33387() {
+    public Direction[] method33387() {
         if (this.field38750 == null) {
-            this.field38750 = new Class179[4];
+            this.field38750 = new Direction[4];
         }
         return this.field38750;
     }
     
-    public Class179[] method33388(final Class179 class179, final Class179 class180, final Class179 class181, final Class179 class182) {
-        final Class179[] method33387 = this.method33387();
+    public Direction[] method33388(final Direction class179, final Direction class180, final Direction class181, final Direction class182) {
+        final Direction[] method33387 = this.method33387();
         method33387[0] = class179;
         method33387[1] = class180;
         method33387[2] = class181;

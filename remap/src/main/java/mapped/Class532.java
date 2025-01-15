@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.io.FileUtils;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
@@ -103,7 +104,7 @@ public class Class532 extends Class527
         }
         else {
             class7953 = new Class2259("selectWorld.edit.backupCreated", new Object[] { s });
-            class7954 = new Class2259("selectWorld.edit.backupSize", new Object[] { Class9546.method35650(method5319 / 1048576.0) });
+            class7954 = new Class2259("selectWorld.edit.backupSize", new Object[] { MathHelper.method35650(method5319 / 1048576.0) });
         }
         method5318.method3852(new Class6865(Class2174.field12898, class7953, class7954));
     }

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Optional;
 import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.Typed;
@@ -14,13 +13,14 @@ import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.DataFix;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8873 extends DataFix
 {
     private static final int[] field37301;
     
     public static int method31183(final int n) {
-        return Class8873.field37301[Class9546.method35651(n - 1, 0, Class8873.field37301.length - 1)];
+        return Class8873.field37301[MathHelper.method35651(n - 1, 0, Class8873.field37301.length - 1)];
     }
     
     public Class8873(final Schema schema, final boolean b) {
@@ -40,7 +40,7 @@ public class Class8873 extends DataFix
                 final int n;
                 Typed<?> typed3 = null;
                 if (n == 0 || n == 1) {
-                    Class9546.method35651(typed2.getOptionalTyped(opticFinder3).flatMap(typed4 -> typed4.getOptionalTyped(opticFinder4)).map(typed5 -> typed5.getAllTyped(opticFinder5).size()).orElse(0) / 2, 1, 5);
+                    MathHelper.method35651(typed2.getOptionalTyped(opticFinder3).flatMap(typed4 -> typed4.getOptionalTyped(opticFinder4)).map(typed5 -> typed5.getAllTyped(opticFinder5).size()).orElse(0) / 2, 1, 5);
                     if (n > 1) {
                         typed3 = method31184((Typed<?>)typed2, n);
                     }

@@ -12,7 +12,6 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.io.Reader;
 import java.io.InputStreamReader;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
@@ -25,6 +24,10 @@ import java.util.concurrent.Executor;
 import java.util.HashMap;
 import com.google.common.collect.Queues;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 import java.util.Queue;
 import java.util.Map;
@@ -188,11 +191,11 @@ public class Class1793 implements Class1662
         }
     }
     
-    public void method6476(final Class399 class399, final Class6909 class400) {
+    public void method6476(final Entity class399, final Class6909 class400) {
         this.field9925.add(new Class6177(this.field9923, class399, class400));
     }
     
-    public void method6477(final Class399 class399, final Class6909 class400, final int n) {
+    public void method6477(final Entity class399, final Class6909 class400, final int n) {
         this.field9925.add(new Class6177(this.field9923, class399, class400, n));
     }
     
@@ -351,7 +354,7 @@ public class Class1793 implements Class1662
         this.field9925.clear();
     }
     
-    public void method6486(final Class354 class354, final Class7096 class355) {
+    public void method6486(final BlockPos class354, final Class7096 class355) {
         boolean b;
         if (Class9570.field41241.method22605() && Class9570.field41247.method22605()) {
             class355.method21696();
@@ -365,16 +368,16 @@ public class Class1793 implements Class1662
                 final double min = Math.min(1.0, n4 - n);
                 final double min2 = Math.min(1.0, n5 - n2);
                 final double min3 = Math.min(1.0, n6 - n3);
-                final int max = Math.max(2, Class9546.method35650(min / 0.25));
-                final int max2 = Math.max(2, Class9546.method35650(min2 / 0.25));
-                final int max3 = Math.max(2, Class9546.method35650(min3 / 0.25));
+                final int max = Math.max(2, MathHelper.method35650(min / 0.25));
+                final int max2 = Math.max(2, MathHelper.method35650(min2 / 0.25));
+                final int max3 = Math.max(2, MathHelper.method35650(min3 / 0.25));
                 for (int i = 0; i < max; ++i) {
                     for (int j = 0; j < max2; ++j) {
                         for (int k = 0; k < max3; ++k) {
                             final double n7 = (i + 0.5) / max;
                             final double n8 = (j + 0.5) / max2;
                             final double n9 = (k + 0.5) / max3;
-                            this.method6480(new Class6182(this.field9923, class354.method1074() + (n7 * min + n), class354.method1075() + (n8 * min2 + n2), class354.method1076() + (n9 * min3 + n3), n7 - 0.5, n8 - 0.5, n9 - 0.5, class355).method18452(class354));
+                            this.method6480(new Class6182(this.field9923, class354.getX() + (n7 * min + n), class354.getY() + (n8 * min2 + n2), class354.getZ() + (n9 * min3 + n3), n7 - 0.5, n8 - 0.5, n9 - 0.5, class355).method18452(class354));
                         }
                     }
                 }
@@ -382,32 +385,32 @@ public class Class1793 implements Class1662
         }
     }
     
-    public void method6487(final Class354 class354, final Class179 class355) {
+    public void method6487(final BlockPos class354, final Direction class355) {
         final Class7096 method6701 = this.field9923.method6701(class354);
         if (method6701.method21710() != Class2115.field12305) {
-            final int method6702 = class354.method1074();
-            final int method6703 = class354.method1075();
-            final int method6704 = class354.method1076();
+            final int method6702 = class354.getX();
+            final int method6703 = class354.getY();
+            final int method6704 = class354.getZ();
             final Class6221 method6705 = method6701.method21725(this.field9923, class354).method24537();
             double n = method6702 + this.field9927.nextDouble() * (method6705.field25076 - method6705.field25073 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25073;
             double n2 = method6703 + this.field9927.nextDouble() * (method6705.field25077 - method6705.field25074 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25074;
             double n3 = method6704 + this.field9927.nextDouble() * (method6705.field25078 - method6705.field25075 - 0.20000000298023224) + 0.10000000149011612 + method6705.field25075;
-            if (class355 == Class179.field511) {
+            if (class355 == Direction.DOWN) {
                 n2 = method6703 + method6705.field25074 - 0.10000000149011612;
             }
-            if (class355 == Class179.field512) {
+            if (class355 == Direction.UP) {
                 n2 = method6703 + method6705.field25077 + 0.10000000149011612;
             }
-            if (class355 == Class179.field513) {
+            if (class355 == Direction.NORTH) {
                 n3 = method6704 + method6705.field25075 - 0.10000000149011612;
             }
-            if (class355 == Class179.field514) {
+            if (class355 == Direction.SOUTH) {
                 n3 = method6704 + method6705.field25078 + 0.10000000149011612;
             }
-            if (class355 == Class179.field515) {
+            if (class355 == Direction.WEST) {
                 n = method6702 + method6705.field25073 - 0.10000000149011612;
             }
-            if (class355 == Class179.field516) {
+            if (class355 == Direction.EAST) {
                 n = method6702 + method6705.field25076 + 0.10000000149011612;
             }
             this.method6480(new Class6182(this.field9923, n, n2, n3, 0.0, 0.0, 0.0, method6701).method18452(class354).method18434(0.2f).method18433(0.6f));
@@ -438,7 +441,7 @@ public class Class1793 implements Class1662
         return false;
     }
     
-    public void method6490(final Class354 class354, final Class7005 class355) {
+    public void method6490(final BlockPos class354, final Class7005 class355) {
         final Class7096 method6701 = this.field9923.method6701(class354);
         if (method6701 != null) {
             if (!Class9570.method35820(method6701, Class9570.field41242, this.field9923, class355, this)) {

@@ -5,14 +5,16 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.function.Function;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import com.google.common.collect.Maps;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public abstract class Class466 extends Class460 implements Class441, Class469, Class472, Class439
@@ -159,7 +161,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
             if (!this.method2395() && (class8321.method27620() || this.field2755.get(0).method27620())) {
                 if (!this.method2395()) {
                     if (this.field2758 > 0) {
-                        this.field2758 = Class9546.method35651(this.field2758 - 2, 0, this.field2759);
+                        this.field2758 = MathHelper.method35651(this.field2758 - 2, 0, this.field2759);
                     }
                 }
             }
@@ -262,21 +264,21 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public int[] method2248(final Class179 class179) {
-        if (class179 != Class179.field511) {
-            return (class179 != Class179.field512) ? Class466.field2754 : Class466.field2752;
+    public int[] method2248(final Direction class179) {
+        if (class179 != Direction.DOWN) {
+            return (class179 != Direction.UP) ? Class466.field2754 : Class466.field2752;
         }
         return Class466.field2753;
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Class179 class8322) {
+    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
         return this.method2264(n, class8321);
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Class179 class8322) {
-        if (class8322 == Class179.field511) {
+    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
+        if (class8322 == Direction.DOWN) {
             if (n == 1) {
                 final Class3820 method27622 = class8321.method27622();
                 if (method27622 != Class7739.field31350) {
@@ -352,7 +354,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     @Override
     public boolean method2162(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5) <= 64.0;
+        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override
@@ -406,8 +408,8 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     private static void method2405(final Class512 class512, int i, final float n) {
         if (n != 0.0f) {
             if (n < 1.0f) {
-                int method35642 = Class9546.method35642(i * n);
-                if (method35642 < Class9546.method35649(i * n)) {
+                int method35642 = MathHelper.method35642(i * n);
+                if (method35642 < MathHelper.method35649(i * n)) {
                     if (Math.random() < i * n - method35642) {
                         ++method35642;
                     }

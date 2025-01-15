@@ -48,7 +48,7 @@ public class Class3540 extends Class3446
     
     @Override
     public void method11016() {
-        final Class354 method4466 = Class793.method4466(this.field16585);
+        final BlockPos method4466 = Class793.method4466(this.field16585);
         final boolean method4467 = method4466.method1082(this.field16585.method1934(), 16.0);
         if (method4467) {
             ++this.field16588;
@@ -61,7 +61,7 @@ public class Class3540 extends Class3446
             }
             if (class5488 != null) {
                 if (!method4467) {
-                    if (this.field16585.field2391.method6701(new Class354(class5488)).method21696() != Class7521.field29173) {
+                    if (this.field16585.field2391.method6701(new BlockPos(class5488)).method21696() != Class7521.field29173) {
                         class5488 = Class7775.method24905(this.field16585, 16, 5, class5487);
                     }
                 }

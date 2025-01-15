@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 
 public class Class4732 extends Class4712<Class800, Class5926<Class800>>
@@ -29,8 +32,8 @@ public class Class4732 extends Class4712<Class800, Class5926<Class800>>
         final float method4620 = class800.method4620(n3);
         if (method4620 > 0.0f) {
             class801.method22564(0.4f * method4620, 0.15f * method4620, 0.1f * method4620);
-            class801.method22566(Class9138.field38720.method33328(Class9546.method35706(method4620, 0.0f, 90.0f)));
-            final Iterator<Class399> iterator = (Iterator<Class399>)class800.field2391.method7128((Class<? extends Class512>)Class512.class, new Class6221(new Class354(class800)).method18495(2.0, 2.0, 2.0)).iterator();
+            class801.method22566(Vector3f.ZP.rotationDegrees(MathHelper.method35706(method4620, 0.0f, 90.0f)));
+            final Iterator<Entity> iterator = (Iterator<Entity>)class800.field2391.method7128((Class<? extends Class512>)Class512.class, new Class6221(new BlockPos(class800)).method18495(2.0, 2.0, 2.0)).iterator();
             while (iterator.hasNext()) {
                 if (!iterator.next().method2783()) {
                     continue;

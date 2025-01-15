@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
+
 import java.util.function.Function;
 
 public class Class4538 extends Class4536
@@ -15,7 +17,7 @@ public class Class4538 extends Class4536
     }
     
     @Override
-    public boolean method13536(final Class1851 class1851, final Random random, final Class354 class1852, final Class7096 class1853) {
+    public boolean method13536(final Class1851 class1851, final Random random, final BlockPos class1852, final Class7096 class1853) {
         final int n = random.nextInt(3) + 3;
         final int n2 = random.nextInt(3) + 3;
         final int n3 = random.nextInt(3) + 3;
@@ -26,8 +28,8 @@ public class Class4538 extends Class4536
                 int k = 0;
             Label_0141_Outer:
                 while (k <= n3) {
-                    class1854.method1284(i + class1852.method1074(), j + class1852.method1075(), k + class1852.method1076());
-                    class1854.method1291(Class179.field511, n4);
+                    class1854.method1284(i + class1852.getX(), j + class1852.getY(), k + class1852.getZ());
+                    class1854.method1291(Direction.DOWN, n4);
                     while (true) {
                         Label_0155: {
                             if (i != 0 && i != n2) {

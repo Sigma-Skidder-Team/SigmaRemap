@@ -14,12 +14,12 @@ public class Class5937 extends Class5936
     
     @Override
     public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Class3090 class6348) {
-        this.field24431.add(new Class4474(new Class354(n * 16 + 9, 90, n2 * 16 + 9)));
+        this.field24431.add(new Class4474(new BlockPos(n * 16 + 9, 90, n2 * 16 + 9)));
         this.method17854();
     }
     
     @Override
-    public Class354 method17861() {
-        return new Class354((this.method17859() << 4) + 9, 0, (this.method17860() << 4) + 9);
+    public BlockPos method17861() {
+        return new BlockPos((this.method17859() << 4) + 9, 0, (this.method17860() << 4) + 9);
     }
 }

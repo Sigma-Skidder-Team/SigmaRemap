@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 
 public class Class500 extends Class436
@@ -110,7 +112,7 @@ public class Class500 extends Class436
     public boolean method2547() {
         this.field2861 = true;
         if (this.method2551()) {
-            final Class354 method1149 = this.field2657.method1149(this.field2656.method6701(this.field2657).method21772((Class7111<Class179>)Class3953.field17853).method782());
+            final BlockPos method1149 = this.field2657.method1149(this.field2656.method6701(this.field2657).method21772((Class7111<Direction>)Class3953.field17853).getOpposite());
             if (!(this.field2656.method6701(method1149).method21696() instanceof Class3953)) {
                 this.field2861 = false;
             }

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.HashSet;
 import java.awt.Dimension;
@@ -232,7 +233,7 @@ public class Class1774 extends Class1666 implements Class1664
                 min = Math.min(min, Math.min(class6585.method34592(), class6585.method34593()));
                 final int min2 = Math.min(Integer.lowestOneBit(class6585.method34592()), Integer.lowestOneBit(class6585.method34593()));
                 if (min2 < b) {
-                    Class1774.field9852.warn("Texture {} with size {}x{} limits mip level from {} to {}", (Object)class6585.method34591(), (Object)class6585.method34592(), (Object)class6585.method34593(), (Object)Class9546.method35682(b), (Object)Class9546.method35682(min2));
+                    Class1774.field9852.warn("Texture {} with size {}x{} limits mip level from {} to {}", (Object)class6585.method34591(), (Object)class6585.method34592(), (Object)class6585.method34593(), (Object) MathHelper.method35682(b), (Object) MathHelper.method35682(min2));
                     b = min2;
                 }
                 class6584.method23341(class6585);
@@ -242,7 +243,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
         }
         final int min3 = Math.min(min, b);
-        int method6355 = Class9546.method35682(min3);
+        int method6355 = MathHelper.method35682(min3);
         if (method6355 < 0) {
             method6355 = 0;
         }
@@ -568,11 +569,11 @@ public class Class1774 extends Class1666 implements Class1664
         if (method6351 < 16) {
             method6351 = 16;
         }
-        final int method6352 = Class9546.method35679(method6351);
+        final int method6352 = MathHelper.method35679(method6351);
         if (method6352 > 16) {
             Class8571.method28852("Sprite size: " + method6352);
         }
-        int method6353 = Class9546.method35682(method6352);
+        int method6353 = MathHelper.method35682(method6352);
         if (method6353 < 4) {
             method6353 = 4;
         }
@@ -597,7 +598,7 @@ public class Class1774 extends Class1666 implements Class1664
                 if (method6339 == null) {
                     continue;
                 }
-                final int method6340 = Class9546.method35679(method6339.width);
+                final int method6340 = MathHelper.method35679(method6339.width);
                 if (!hashMap.containsKey(method6340)) {
                     hashMap.put(method6340, 1);
                 }

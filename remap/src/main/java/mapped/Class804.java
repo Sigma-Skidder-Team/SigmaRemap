@@ -47,7 +47,7 @@ public class Class804 extends Class789
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35099, 0.15f, 1.0f);
     }
     

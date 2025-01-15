@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Optional;
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -28,7 +31,7 @@ public class Class448 extends Class436 implements Class447, Class439
             if (!booleanValue) {
                 for (int i = 0; i < this.field2686.size(); ++i) {
                     if (this.field2687[i] > 0) {
-                        this.field2687[i] = Class9546.method35651(this.field2687[i] - 2, 0, this.field2688[i]);
+                        this.field2687[i] = MathHelper.method35651(this.field2687[i] - 2, 0, this.field2688[i]);
                     }
                 }
             }
@@ -50,8 +53,8 @@ public class Class448 extends Class436 implements Class447, Class439
                 ++field2687[n];
                 if (this.field2687[i] >= this.field2688[i]) {
                     final Class8321 class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new Class8321[] { other }), this.field2656).map(class8323 -> class8323.method11290(class8322)).orElse(other);
-                    final Class354 method2193 = this.method2193();
-                    Class9193.method33642(this.field2656, method2193.method1074(), method2193.method1075(), method2193.method1076(), class8321);
+                    final BlockPos method2193 = this.method2193();
+                    Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8321);
                     this.field2686.set(i, Class8321.field34174);
                     this.method2274();
                 }
@@ -62,21 +65,21 @@ public class Class448 extends Class436 implements Class447, Class439
     private void method2269() {
         final Class1847 method2186 = this.method2186();
         if (method2186 != null) {
-            final Class354 method2187 = this.method2193();
+            final BlockPos method2187 = this.method2193();
             final Random field10062 = method2186.field10062;
             if (field10062.nextFloat() < 0.11f) {
                 for (int i = 0; i < field10062.nextInt(2) + 2; ++i) {
                     Class3918.method12032(method2186, method2187, this.method2194().method21772((Class7111<Boolean>)Class3918.field17761), false);
                 }
             }
-            final int method2188 = this.method2194().method21772((Class7111<Class179>)Class3918.field17763).method780();
+            final int method2188 = this.method2194().method21772((Class7111<Direction>)Class3918.field17763).getHorizontalIndex();
             for (int j = 0; j < this.field2686.size(); ++j) {
                 if (!this.field2686.get(j).method27620()) {
                     if (field10062.nextFloat() < 0.2f) {
-                        final Class179 method2189 = Class179.method793(Math.floorMod(j + method2188, 4));
-                        final double n = method2187.method1074() + 0.5 - method2189.method785() * 0.3125f + method2189.method783().method785() * 0.3125f;
-                        final double n2 = method2187.method1075() + 0.5;
-                        final double n3 = method2187.method1076() + 0.5 - method2189.method787() * 0.3125f + method2189.method783().method787() * 0.3125f;
+                        final Direction method2189 = Direction.byHorizontalIndex(Math.floorMod(j + method2188, 4));
+                        final double n = method2187.getX() + 0.5 - method2189.getXOffset() * 0.3125f + method2189.rotateY().getXOffset() * 0.3125f;
+                        final double n2 = method2187.getY() + 0.5;
+                        final double n3 = method2187.getZ() + 0.5 - method2189.getZOffset() * 0.3125f + method2189.rotateY().getZOffset() * 0.3125f;
                         for (int k = 0; k < 4; ++k) {
                             method2186.method6709(Class8432.field34639, n, n2, n3, 0.0, 5.0E-4, 0.0);
                         }

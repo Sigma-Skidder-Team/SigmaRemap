@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
 import java.util.function.Function;
@@ -15,7 +14,7 @@ public class Class4543 extends Class4535<Class5145>
         super(function);
     }
     
-    public boolean method13541(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5145 class1854) {
+    public boolean method13541(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5145 class1854) {
         for (final Class9337 class1855 : class1854.field22144) {
             if (random.nextFloat() >= class1855.field40095) {
                 continue;

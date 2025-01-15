@@ -15,7 +15,7 @@ public class Class8445 implements Class8444
     }
     
     @Override
-    public Class354 method28178() {
+    public BlockPos method28178() {
         return this.field34702.method2193();
     }
     

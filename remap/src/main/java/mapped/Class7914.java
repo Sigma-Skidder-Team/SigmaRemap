@@ -5,9 +5,9 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
-import java.util.Iterator;
+
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.Comparator;
@@ -36,16 +36,16 @@ public class Class7914
     }
     
     @Nullable
-    public Class9468 method25625(final Class1854 class1854, final Class759 class1855, final Set<Class354> set, final float n, final int n2, final float n3) {
+    public Class9468 method25625(final Class1854 class1854, final Class759 class1855, final Set<BlockPos> set, final float n, final int n2, final float n3) {
         this.field32495.method27924();
         this.field32499.method13900(class1854, class1855);
-        final Class9468 method25626 = this.method25626(this.field32499.method13902(), (Map<Class6773, Class354>)set.stream().collect(Collectors.toMap(class1856 -> this.field32499.method13903(class1856.method1074(), class1856.method1075(), class1856.method1076()), (Function<? super Object, ?>)Function.identity())), n, n2, n3);
+        final Class9468 method25626 = this.method25626(this.field32499.method13902(), (Map<Class6773, BlockPos>)set.stream().collect(Collectors.toMap(class1856 -> this.field32499.method13903(class1856.getX(), class1856.getY(), class1856.getZ()), (Function<? super Object, ?>)Function.identity())), n, n2, n3);
         this.field32499.method13901();
         return method25626;
     }
     
     @Nullable
-    private Class9468 method25626(final Class6772 class6772, final Map<Class6773, Class354> map, final float n, final int n2, final float n3) {
+    private Class9468 method25626(final Class6772 class6772, final Map<Class6773, BlockPos> map, final float n, final int n2, final float n3) {
         final Set<Class6773> keySet = map.keySet();
         class6772.field26594 = 0.0f;
         class6772.field26595 = this.method25627(class6772, keySet);
@@ -113,7 +113,7 @@ public class Class7914
         return min;
     }
     
-    private Class9468 method25628(final Class6772 class6772, final Class354 class6773, final boolean b) {
+    private Class9468 method25628(final Class6772 class6772, final BlockPos class6773, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
         Class6772 field26597 = class6772;
         arrayList.add(0, class6772);

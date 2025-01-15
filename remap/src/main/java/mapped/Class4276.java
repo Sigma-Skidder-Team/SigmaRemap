@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -37,9 +39,9 @@ public class Class4276 implements Class4252<Class5800>
         this.field19184 = (byte)(class511.field2400 * 256.0f / 360.0f);
         this.field19185 = (byte)(class511.field2953 * 256.0f / 360.0f);
         final Class5487 method1935 = class511.method1935();
-        final double method1936 = Class9546.method35654(method1935.field22770, -3.9, 3.9);
-        final double method1937 = Class9546.method35654(method1935.field22771, -3.9, 3.9);
-        final double method1938 = Class9546.method35654(method1935.field22772, -3.9, 3.9);
+        final double method1936 = MathHelper.method35654(method1935.field22770, -3.9, 3.9);
+        final double method1937 = MathHelper.method35654(method1935.field22771, -3.9, 3.9);
+        final double method1938 = MathHelper.method35654(method1935.field22772, -3.9, 3.9);
         this.field19180 = (int)(method1936 * 8000.0);
         this.field19181 = (int)(method1937 * 8000.0);
         this.field19182 = (int)(method1938 * 8000.0);

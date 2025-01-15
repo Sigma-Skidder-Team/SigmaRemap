@@ -5,6 +5,11 @@
 package mapped;
 
 import java.util.Collections;
+
+import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.BitSet;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
@@ -50,7 +55,7 @@ public class Class1656 implements AutoCloseable, Class1657
     private static final Class1932 field9284;
     private static final Class1932 field9285;
     private static final Class1932 field9286;
-    public static final Class179[] field9287;
+    public static final Direction[] field9287;
     private final Class869 field9288;
     private final Class1663 field9289;
     public final Class8551 field9290;
@@ -70,7 +75,7 @@ public class Class1656 implements AutoCloseable, Class1657
     private int field9304;
     private final Int2ObjectMap<Class349> field9305;
     private final Long2ObjectMap<SortedSet<Class349>> field9306;
-    private final Map<Class354, Class6834> field9307;
+    private final Map<BlockPos, Class6834> field9307;
     public Class6153 field9308;
     private Class1884 field9309;
     private double field9310;
@@ -96,7 +101,7 @@ public class Class1656 implements AutoCloseable, Class1657
     private int field9330;
     private boolean field9331;
     private Class6664 field9332;
-    private final Class8526[] field9333;
+    private final Vector4f[] field9333;
     private final Class7283 field9334;
     private double field9335;
     private double field9336;
@@ -106,7 +111,7 @@ public class Class1656 implements AutoCloseable, Class1657
     private int field9340;
     private final float[] field9341;
     private final float[] field9342;
-    public Class399 field9343;
+    public Entity field9343;
     public Set field9344;
     public Set field9345;
     private Set<Class8974> field9346;
@@ -134,13 +139,13 @@ public class Class1656 implements AutoCloseable, Class1657
     private static boolean field9368;
     
     @Nullable
-    private Class8974 method5688(final Class354 class354, final Class8974 class355, final Class179 class356) {
-        final Class354 method31878 = class355.method31878(class356);
-        if (Class9546.method35648(class354.method1074() - method31878.method1074()) > this.field9328 * 16) {
+    private Class8974 method5688(final BlockPos class354, final Class8974 class355, final Direction class356) {
+        final BlockPos method31878 = class355.method31878(class356);
+        if (MathHelper.abs(class354.getX() - method31878.getX()) > this.field9328 * 16) {
             return null;
         }
-        if (method31878.method1075() >= 0 && method31878.method1075() < 256) {
-            return (Class9546.method35648(class354.method1076() - method31878.method1076()) > this.field9328 * 16) ? null : this.field9296.method32963(method31878);
+        if (method31878.getY() >= 0 && method31878.getY() < 256) {
+            return (MathHelper.abs(class354.getZ() - method31878.getZ()) > this.field9328 * 16) ? null : this.field9296.method32963(method31878);
         }
         return null;
     }
@@ -172,7 +177,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9324 = Class5487.field22769;
         this.field9327 = Class9237.field39607;
         this.field9328 = -1;
-        this.field9333 = new Class8526[8];
+        this.field9333 = new Vector4f[8];
         this.field9334 = new Class7283(0.0, 0.0, 0.0);
         this.field9338 = true;
         this.field9341 = new float[1024];
@@ -192,7 +197,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9356 = 0;
         this.field9357 = 0;
         this.field9360 = 0;
-        this.field9361 = new Class9145(Class7521.field29147.method11878(), new Class354(0, 0, 0));
+        this.field9361 = new Class9145(Class7521.field29147.method11878(), new BlockPos(0, 0, 0));
         this.field9362 = false;
         this.field9363 = false;
         this.field9364 = false;
@@ -205,7 +210,7 @@ public class Class1656 implements AutoCloseable, Class1657
             for (int j = 0; j < 32; ++j) {
                 final float n = (float)(j - 16);
                 final float n2 = (float)(i - 16);
-                final float method35640 = Class9546.method35640(n * n + n2 * n2);
+                final float method35640 = MathHelper.method35640(n * n + n2 * n2);
                 this.field9341[i << 5 | j] = -n2 / method35640;
                 this.field9342[i << 5 | j] = n / method35640;
             }
@@ -230,9 +235,9 @@ public class Class1656 implements AutoCloseable, Class1657
             }
             class392.method1418();
             final Class1848 field4683 = this.field9288.field4683;
-            final int method35828 = Class9546.method35644(n);
-            final int method35829 = Class9546.method35644(n2);
-            final int method35830 = Class9546.method35644(n3);
+            final int method35828 = MathHelper.floor(n);
+            final int method35829 = MathHelper.floor(n2);
+            final int method35830 = MathHelper.floor(n3);
             final Class7392 method35831 = Class7392.method22694();
             final Class4148 method35832 = method35831.method22696();
             Class8726.method30029();
@@ -256,7 +261,7 @@ public class Class1656 implements AutoCloseable, Class1657
                     class393.method1284(j, 0, i);
                     final Class3090 method35833 = field4683.method6959(class393);
                     if (method35833.method9841() != Class2145.field12628) {
-                        final int method35834 = field4683.method6958(Class2020.field11525, class393).method1075();
+                        final int method35834 = field4683.method6958(Class2020.field11525, class393).getY();
                         int n10 = method35829 - n4;
                         int n11 = method35829 + n4;
                         if (n10 < method35834) {
@@ -284,7 +289,7 @@ public class Class1656 implements AutoCloseable, Class1657
                                 final float n13 = -((this.field9304 + j * j * 3121 + j * 45238971 + i * i * 418711 + i * 13761 & 0x1F) + f) / 32.0f * (3.0f + random.nextFloat());
                                 final double n14 = j + 0.5f - n;
                                 final double n15 = i + 0.5f - n3;
-                                final float n16 = Class9546.method35641(n14 * n14 + n15 * n15) / n4;
+                                final float n16 = MathHelper.method35641(n14 * n14 + n15 * n15) / n4;
                                 final float n17 = ((1.0f - n16 * n16) * 0.5f + 0.5f) * method35827;
                                 class393.method1284(j, n12, i);
                                 final int method35835 = method5776(field4683, class393);
@@ -307,7 +312,7 @@ public class Class1656 implements AutoCloseable, Class1657
                                 final float n20 = (float)(random.nextDouble() + n6 * (float)random.nextGaussian() * 0.001);
                                 final double n21 = j + 0.5f - n;
                                 final double n22 = i + 0.5f - n3;
-                                final float n23 = Class9546.method35641(n21 * n21 + n22 * n22) / n4;
+                                final float n23 = MathHelper.method35641(n21 * n21 + n22 * n22) / n4;
                                 final float n24 = ((1.0f - n23 * n23) * 0.3f + 0.5f) * method35827;
                                 class393.method1284(j, n12, i);
                                 final int method35836 = method5776(field4683, class393);
@@ -342,7 +347,7 @@ public class Class1656 implements AutoCloseable, Class1657
         if (method6768 != 0.0f && Class8571.method28881()) {
             final Random random = new Random(this.field9304 * 312987231L);
             final Class1848 field4683 = this.field9288.field4683;
-            final Class354 class6093 = new Class354(class6092.method18161());
+            final BlockPos class6093 = new BlockPos(class6092.method18161());
             double n = 0.0;
             double n2 = 0.0;
             double n3 = 0.0;
@@ -355,21 +360,21 @@ public class Class1656 implements AutoCloseable, Class1657
                 n4 = 0;
             }
             for (int i = 0; i < n4; ++i) {
-                final Class354 method6769 = field4683.method6958(Class2020.field11525, class6093.method1134(random.nextInt(10) - random.nextInt(10), 0, random.nextInt(10) - random.nextInt(10)));
+                final BlockPos method6769 = field4683.method6958(Class2020.field11525, class6093.method1134(random.nextInt(10) - random.nextInt(10), 0, random.nextInt(10) - random.nextInt(10)));
                 final Class3090 method6770 = field4683.method6959(method6769);
-                final Class354 method6771 = method6769.method1139();
-                if (method6769.method1075() <= class6093.method1075() + 10 && method6769.method1075() >= class6093.method1075() - 10 && method6770.method9841() == Class2145.field12629 && method6770.method9845(method6769) >= 0.15f) {
+                final BlockPos method6771 = method6769.method1139();
+                if (method6769.getY() <= class6093.getY() + 10 && method6769.getY() >= class6093.getY() - 10 && method6770.method9841() == Class2145.field12629 && method6770.method9845(method6769) >= 0.15f) {
                     final double nextDouble = random.nextDouble();
                     final double nextDouble2 = random.nextDouble();
                     final Class7096 method6772 = field4683.method6701(method6771);
                     final Class7099 method6773 = field4683.method6702(method6769);
                     final Class7702 method6774 = method6772.method21727(field4683, method6771);
-                    final double method6775 = method6774.method24547(Class111.field352, nextDouble, nextDouble2);
+                    final double method6775 = method6774.method24547(Axis.Y, nextDouble, nextDouble2);
                     double n5;
                     double method6776;
                     if (method6775 >= method6773.method21782(field4683, method6769)) {
                         n5 = method6775;
-                        method6776 = method6774.method24546(Class111.field352, nextDouble, nextDouble2);
+                        method6776 = method6774.method24546(Axis.Y, nextDouble, nextDouble2);
                     }
                     else {
                         n5 = 0.0;
@@ -379,21 +384,21 @@ public class Class1656 implements AutoCloseable, Class1657
                         if (!method6773.method21793(Class7324.field28320) && method6772.method21696() != Class7521.field29642 && (method6772.method21696() != Class7521.field29818 || !method6772.method21772((Class7111<Boolean>)Class3918.field17760))) {
                             ++bound;
                             if (random.nextInt(bound) == 0) {
-                                n = method6771.method1074() + nextDouble;
-                                n2 = method6771.method1075() + 0.1f + n5 - 1.0;
-                                n3 = method6771.method1076() + nextDouble2;
+                                n = method6771.getX() + nextDouble;
+                                n2 = method6771.getY() + 0.1f + n5 - 1.0;
+                                n3 = method6771.getZ() + nextDouble2;
                             }
-                            this.field9288.field4683.method6709(Class8432.field34638, method6771.method1074() + nextDouble, method6771.method1075() + 0.1f + n5, method6771.method1076() + nextDouble2, 0.0, 0.0, 0.0);
+                            this.field9288.field4683.method6709(Class8432.field34638, method6771.getX() + nextDouble, method6771.getY() + 0.1f + n5, method6771.getZ() + nextDouble2, 0.0, 0.0, 0.0);
                         }
                         else {
-                            this.field9288.field4683.method6709(Class8432.field34639, method6769.method1074() + nextDouble, method6769.method1075() + 0.1f - method6776, method6769.method1076() + nextDouble2, 0.0, 0.0, 0.0);
+                            this.field9288.field4683.method6709(Class8432.field34639, method6769.getX() + nextDouble, method6769.getY() + 0.1f - method6776, method6769.getZ() + nextDouble2, 0.0, 0.0, 0.0);
                         }
                     }
                 }
             }
             if (bound > 0 && random.nextInt(3) < this.field9340++) {
                 this.field9340 = 0;
-                if (n2 > class6093.method1075() + 1 && field4683.method6958(Class2020.field11525, class6093).method1075() > Class9546.method35642((float)class6093.method1075())) {
+                if (n2 > class6093.getY() + 1 && field4683.method6958(Class2020.field11525, class6093).getY() > MathHelper.method35642((float)class6093.getY())) {
                     this.field9288.field4683.method6708(n, n2, n3, Class8520.field35712, Class286.field1581, 0.1f, 0.5f, false);
                 }
                 else {
@@ -610,7 +615,7 @@ public class Class1656 implements AutoCloseable, Class1657
             }
             this.field9296 = new Class9112(this.field9326, this.field9292, this.field9288.field4648.field23382, this);
             if (this.field9292 != null) {
-                final Class399 method5303 = this.field9288.method5303();
+                final Entity method5303 = this.field9288.method5303();
                 if (method5303 != null) {
                     this.field9296.method32961(method5303.method1938(), method5303.method1945());
                 }
@@ -676,9 +681,9 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9326.method23455(method18161);
         this.field9292.method6796().method15300("cull");
         this.field9288.method5327().method15300("culling");
-        final Class354 method18162 = class6092.method18162();
+        final BlockPos method18162 = class6092.method18162();
         final Class8974 method18163 = this.field9296.method32963(method18162);
-        final Class354 class6094 = new Class354(Class9546.method35644(method18161.field22770 / 16.0) * 16, Class9546.method35644(method18161.field22771 / 16.0) * 16, Class9546.method35644(method18161.field22772 / 16.0) * 16);
+        final BlockPos class6094 = new BlockPos(MathHelper.floor(method18161.field22770 / 16.0) * 16, MathHelper.floor(method18161.field22771 / 16.0) * 16, MathHelper.floor(method18161.field22772 / 16.0) * 16);
         final float method18164 = class6092.method18163();
         final float method18165 = class6092.method18164();
         this.field9338 = (this.field9338 || !this.field9293.isEmpty() || method18161.field22770 != this.field9316 || method18161.field22771 != this.field9317 || method18161.field22772 != this.field9318 || method18164 != this.field9319 || method18165 != this.field9320);
@@ -694,7 +699,7 @@ public class Class1656 implements AutoCloseable, Class1657
             this.field9360 = method18166;
             this.field9338 = true;
         }
-        final Class399 method18167 = class6092.method18166();
+        final Entity method18167 = class6092.method18166();
         int method18168 = 256;
         if (!Class9242.method34074()) {
             this.field9338 = true;
@@ -702,20 +707,20 @@ public class Class1656 implements AutoCloseable, Class1657
         if (!b && this.field9338 && Class8571.method29015() && !Class9216.field39049) {
             method18168 = Class9242.method34073(this.field9292, method18167, this.field9328);
         }
-        final Class8974 method18169 = this.field9296.method32963(new Class354(method18167.method1938(), method18167.method1941(), method18167.method1945()));
+        final Class8974 method18169 = this.field9296.method32963(new BlockPos(method18167.method1938(), method18167.method1941(), method18167.method1945()));
         if (Class9216.field39049) {
             this.field9294 = (ObjectList<Class9071>)this.field9353;
             this.field9348 = this.field9354;
             this.field9349 = this.field9355;
             if (!b && this.field9338) {
                 this.method5764();
-                if (method18169 != null && method18169.method31873().method1075() > method18168) {
+                if (method18169 != null && method18169.method31873().getY() > method18168) {
                     this.field9348.add(method18169.method31901());
                 }
                 final Iterator<Class8974> method18170 = Class8346.method27814(this.field9292, 0.0, method18167, this.field9328, this.field9296);
                 while (method18170.hasNext()) {
                     final Class8974 class6095 = method18170.next();
-                    if (class6095 != null && class6095.method31873().method1075() <= method18168) {
+                    if (class6095 != null && class6095.method31873().getY() <= method18168) {
                         final Class9071 method18171 = class6095.method31901();
                         if (!class6095.field37809.get().method32212()) {
                             this.field9294.add((Object)method18171);
@@ -741,15 +746,15 @@ public class Class1656 implements AutoCloseable, Class1657
             this.method5764();
             this.field9347.clear();
             final Deque field9347 = this.field9347;
-            Class399.method1870(Class9546.method35654(this.field9288.field4648.field23382 / 8.0, 1.0, 2.5));
+            Entity.method1870(MathHelper.method35654(this.field9288.field4648.field23382 / 8.0, 1.0, 2.5));
             boolean field9348 = this.field9288.field4710;
-            if (method18163 != null && method18163.method31873().method1075() <= method18168) {
+            if (method18163 != null && method18163.method31873().getY() <= method18168) {
                 boolean b3 = false;
                 final Class9071 class6096 = new Class9071(method18163, null, 0);
                 final Set field9349 = Class1656.field9358;
                 if (field9349.size() == 1) {
-                    final Class9138 method18172 = class6092.method18173();
-                    field9349.remove(Class179.method800(method18172.method33311(), method18172.method33312(), method18172.method33313()).method782());
+                    final Vector3f method18172 = class6092.method18173();
+                    field9349.remove(Direction.getFacingFromVector(method18172.method33311(), method18172.method33312(), method18172.method33313()).getOpposite());
                 }
                 if (field9349.isEmpty()) {
                     b3 = true;
@@ -766,16 +771,16 @@ public class Class1656 implements AutoCloseable, Class1657
                 }
             }
             else {
-                final int n5 = (class6094.method1075() > 0) ? Math.min(method18168, 248) : 8;
+                final int n5 = (class6094.getY() > 0) ? Math.min(method18168, 248) : 8;
                 if (method18169 != null) {
                     this.field9348.add(method18169.method31901());
                 }
-                final int n6 = Class9546.method35644(method18161.field22770 / 16.0) * 16;
-                final int n7 = Class9546.method35644(method18161.field22772 / 16.0) * 16;
+                final int n6 = MathHelper.floor(method18161.field22770 / 16.0) * 16;
+                final int n7 = MathHelper.floor(method18161.field22772 / 16.0) * 16;
                 final ArrayList arrayList = Lists.newArrayList();
                 for (int i = -this.field9328; i <= this.field9328; ++i) {
                     for (int j = -this.field9328; j <= this.field9328; ++j) {
-                        final Class8974 method18173 = this.field9296.method32963(new Class354(n6 + (i << 4) + 8, n5, n7 + (j << 4) + 8));
+                        final Class8974 method18173 = this.field9296.method32963(new BlockPos(n6 + (i << 4) + 8, n5, n7 + (j << 4) + 8));
                         if (method18173 != null && class6093.method20261(method18173.field37814)) {
                             method18173.method31865(n);
                             final Class9071 method18174 = method18173.method31901();
@@ -792,7 +797,7 @@ public class Class1656 implements AutoCloseable, Class1657
             while (!field9347.isEmpty()) {
                 final Class9071 class6097 = field9347.poll();
                 final Class8974 field9350 = class6097.field38417;
-                final Class179 method18176 = Class9071.method32681(class6097);
+                final Direction method18176 = Class9071.method32681(class6097);
                 final Class9006 class6098 = field9350.field37809.get();
                 if (!class6098.method32212() || field9350.method31876()) {
                     this.field9294.add((Object)class6097);
@@ -803,8 +808,8 @@ public class Class1656 implements AutoCloseable, Class1657
                 if (class6098.method32214().size() > 0) {
                     this.field9349.add(class6097);
                 }
-                for (final Class179 class6099 : field9348 ? Class9242.method34076(Class9071.method32682(class6097)) : Class179.field524) {
-                    if (!field9348 || method18176 == null || class6098.method32210(method18176.method782(), class6099)) {
+                for (final Direction class6099 : field9348 ? Class9242.method34076(Class9071.method32682(class6097)) : Direction.VALUES) {
+                    if (!field9348 || method18176 == null || class6098.method32210(method18176.getOpposite(), class6099)) {
                         final Class8974 method18177 = this.method5709(class6094, field9350, class6099, method18175, method18168);
                         if (method18177 != null && method18177.method31865(n) && class6093.method20261(method18177.field37814)) {
                             final int n8 = Class9071.method32682(class6097) | 1 << class6099.ordinal();
@@ -833,8 +838,8 @@ public class Class1656 implements AutoCloseable, Class1657
                 final Class8974 field9352 = ((Class9071)((Iterator)iterator).next()).field38417;
                 if (field9352.method31876() || field9351.contains(field9352)) {
                     this.field9338 = true;
-                    final Class354 method18179 = field9352.method31873();
-                    final boolean b4 = Class8500.method28411(class6094, (float)(method18179.method1074() + 8), (float)(method18179.method1075() + 8), (float)(method18179.method1076() + 8)) < 768.0;
+                    final BlockPos method18179 = field9352.method31873();
+                    final boolean b4 = Class8500.method28411(class6094, (float)(method18179.getX() + 8), (float)(method18179.getY() + 8), (float)(method18179.getZ() + 8)) < 768.0;
                     if (!field9352.method31877() && !b4) {
                         this.field9293.add(field9352);
                     }
@@ -855,14 +860,14 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    private Set<Class179> method5708(final Class354 class354) {
+    private Set<Direction> method5708(final BlockPos class354) {
         if (Class3237.field15720.method9906()) {
-            return new HashSet<Class179>(Arrays.asList(Class179.values()));
+            return new HashSet<Direction>(Arrays.asList(Direction.values()));
         }
         final Class8388 class355 = new Class8388();
-        final Class354 class356 = new Class354(class354.method1074() >> 4 << 4, class354.method1075() >> 4 << 4, class354.method1076() >> 4 << 4);
+        final BlockPos class356 = new BlockPos(class354.getX() >> 4 << 4, class354.getY() >> 4 << 4, class354.getZ() >> 4 << 4);
         final Class1862 method6685 = this.field9292.method6685(class356);
-        for (final Class354 class357 : Class354.method1154(class356, class356.method1134(15, 15, 15))) {
+        for (final BlockPos class357 : BlockPos.method1154(class356, class356.method1134(15, 15, 15))) {
             if (method6685.method6701(class357).method21722(this.field9292, class357)) {
                 class355.method27958(class357);
             }
@@ -871,18 +876,18 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     @Nullable
-    private Class8974 method5709(final Class354 class354, final Class8974 class355, final Class179 class356, final boolean b, final int n) {
+    private Class8974 method5709(final BlockPos class354, final Class8974 class355, final Direction class356, final boolean b, final int n) {
         final Class8974 method31900 = class355.method31900(class356);
         if (method31900 == null) {
             return null;
         }
-        if (method31900.method31873().method1075() > n) {
+        if (method31900.method31873().getY() > n) {
             return null;
         }
         if (b) {
-            final Class354 method31901 = method31900.method31873();
-            final int n2 = class354.method1074() - method31901.method1074();
-            final int n3 = class354.method1076() - method31901.method1076();
+            final BlockPos method31901 = method31900.method31873();
+            final int n2 = class354.getX() - method31901.getX();
+            final int n3 = class354.getZ() - method31901.getZ();
             if (n2 * n2 + n3 * n3 > this.field9357) {
                 return null;
             }
@@ -898,14 +903,14 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9334.field28226 = field28226;
         this.field9334.field28227 = field28227;
         this.field9334.field28228 = field28228;
-        this.field9333[0] = new Class8526(-1.0f, -1.0f, -1.0f, 1.0f);
-        this.field9333[1] = new Class8526(1.0f, -1.0f, -1.0f, 1.0f);
-        this.field9333[2] = new Class8526(1.0f, 1.0f, -1.0f, 1.0f);
-        this.field9333[3] = new Class8526(-1.0f, 1.0f, -1.0f, 1.0f);
-        this.field9333[4] = new Class8526(-1.0f, -1.0f, 1.0f, 1.0f);
-        this.field9333[5] = new Class8526(1.0f, -1.0f, 1.0f, 1.0f);
-        this.field9333[6] = new Class8526(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field9333[7] = new Class8526(-1.0f, 1.0f, 1.0f, 1.0f);
+        this.field9333[0] = new Vector4f(-1.0f, -1.0f, -1.0f, 1.0f);
+        this.field9333[1] = new Vector4f(1.0f, -1.0f, -1.0f, 1.0f);
+        this.field9333[2] = new Vector4f(1.0f, 1.0f, -1.0f, 1.0f);
+        this.field9333[3] = new Vector4f(-1.0f, 1.0f, -1.0f, 1.0f);
+        this.field9333[4] = new Vector4f(-1.0f, -1.0f, 1.0f, 1.0f);
+        this.field9333[5] = new Vector4f(1.0f, -1.0f, 1.0f, 1.0f);
+        this.field9333[6] = new Vector4f(1.0f, 1.0f, 1.0f, 1.0f);
+        this.field9333[7] = new Vector4f(-1.0f, 1.0f, 1.0f, 1.0f);
         for (int i = 0; i < 8; ++i) {
             this.field9333[i].method28603(method20758);
             this.field9333[i].method28605();
@@ -957,7 +962,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
         field9332.field26328 = (Class8571.method28955() && !Class9216.method33760());
         final float method6803 = class7353.method5832();
-        final boolean b3 = this.field9288.field4683.field10063.method20495(Class9546.method35644(method6798), Class9546.method35644(method6799)) || this.field9288.field4647.method3813().method3336();
+        final boolean b3 = this.field9288.field4683.field10063.method20495(MathHelper.floor(method6798), MathHelper.floor(method6799)) || this.field9288.field4647.method3813().method3336();
         if ((Class8571.method28913() || Class8571.method28914() || Class8571.method28918()) && !Class9216.field39049) {
             Class9111.method32955(class7352, Class1985.field10993, method6803, b3, f);
             method6796.method15300("sky");
@@ -986,7 +991,7 @@ public class Class1656 implements AutoCloseable, Class1657
         else {
             n2 = 1000000000 / field9333;
         }
-        final long method6804 = Class9546.method35652(this.field9303.method30857(Class8349.method27838() - n) * 3L / 2L, n2, 33333333L);
+        final long method6804 = MathHelper.method35652(this.field9303.method30857(Class8349.method27838() - n) * 3L / 2L, n2, 33333333L);
         Class9036.field38222.method26344();
         this.method5724(n + method6804);
         Class9036.field38222.method26345();
@@ -1027,7 +1032,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
         boolean b4 = false;
         final Class7808 method6805 = this.field9291.method11006();
-        for (final Class399 field9334 : this.field9292.method6806()) {
+        for (final Entity field9334 : this.field9292.method6806()) {
             if ((this.field9290.method28705(field9334, field9332, method6798, method6799, method6800) || field9334.method1917(this.field9288.field4684)) && (field9334 != class7352.method18166() || Class9216.field39049 || class7352.method18168() || (class7352.method18166() instanceof Class511 && ((Class511)class7352.method18166()).method2783())) && (!(field9334 instanceof Class756) || class7352.method18166() == field9334)) {
                 ++this.field9329;
                 if (field9334.field2424 == 0) {
@@ -1082,10 +1087,10 @@ public class Class1656 implements AutoCloseable, Class1657
                     if (method6802) {
                         Class9216.method33846(class7358);
                     }
-                    final Class354 method6810 = class7358.method2193();
+                    final BlockPos method6810 = class7358.method2193();
                     Class7807 class7360 = method6805;
                     class7351.method22567();
-                    class7351.method22564(method6810.method1074() - method6798, method6810.method1075() - method6799, method6810.method1076() - method6800);
+                    class7351.method22564(method6810.getX() - method6798, method6810.getY() - method6799, method6810.getZ() - method6800);
                     final SortedSet set = (SortedSet)this.field9306.get(method6810.method1132());
                     if (set != null && !set.isEmpty()) {
                         final int method6811 = set.last().method1048();
@@ -1115,9 +1120,9 @@ public class Class1656 implements AutoCloseable, Class1657
                 if (method6802) {
                     Class9216.method33846(class7361);
                 }
-                final Class354 method6812 = class7361.method2193();
+                final BlockPos method6812 = class7361.method2193();
                 class7351.method22567();
-                class7351.method22564(method6812.method1074() - method6798, method6812.method1075() - method6799, method6812.method1076() - method6800);
+                class7351.method22564(method6812.getX() - method6798, method6812.getY() - method6799, method6812.getZ() - method6800);
                 Class9550.field41126.method35726(class7361, f, class7351, method6805);
                 class7351.method22568();
                 ++this.field9359;
@@ -1143,10 +1148,10 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9362 = true;
         method6796.method15300("destroyProgress");
         for (final Long2ObjectMap$Entry long2ObjectMap$Entry : this.field9306.long2ObjectEntrySet()) {
-            final Class354 method6813 = Class354.method1129(long2ObjectMap$Entry.getLongKey());
-            final double n3 = method6813.method1074() - method6798;
-            final double n4 = method6813.method1075() - method6799;
-            final double n5 = method6813.method1076() - method6800;
+            final BlockPos method6813 = BlockPos.method1129(long2ObjectMap$Entry.getLongKey());
+            final double n3 = method6813.getX() - method6798;
+            final double n4 = method6813.getY() - method6799;
+            final double n5 = method6813.getZ() - method6800;
             if (n3 * n3 + n4 * n4 + n5 * n5 <= 1024.0) {
                 final SortedSet set2 = (SortedSet)long2ObjectMap$Entry.getValue();
                 if (set2 == null || set2.isEmpty()) {
@@ -1154,7 +1159,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 }
                 final int method6814 = set2.last().method1048();
                 class7351.method22567();
-                class7351.method22564(method6813.method1074() - method6798, method6813.method1075() - method6799, method6813.method1076() - method6800);
+                class7351.method22564(method6813.getX() - method6798, method6813.getY() - method6799, method6813.getZ() - method6800);
                 this.field9288.method5305().method5788(this.field9292.method6701(method6813), method6813, this.field9292, class7351, new Class4155(this.field9291.method11007().method25214(Class7637.field30247.get(method6814)), class7351.method22569()));
                 class7351.method22568();
             }
@@ -1166,7 +1171,7 @@ public class Class1656 implements AutoCloseable, Class1657
         final Class7006 field9335 = this.field9288.field4691;
         if (b && field9335 != null && field9335.method21449() == Class2165.field12881) {
             method6796.method15300("outline");
-            final Class354 method6815 = ((Class7005)field9335).method21447();
+            final BlockPos method6815 = ((Class7005)field9335).method21447();
             final Class7096 method6816 = this.field9292.method6701(method6815);
             boolean b5;
             if (Class9570.field41247.method22605() && Class9570.field41298.method22605()) {
@@ -1254,8 +1259,8 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5713(final Class399 class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
-        this.field9290.method28706(class399, Class9546.method35701(n4, class399.field2417, class399.method1938()) - n, Class9546.method35701(n4, class399.field2418, class399.method1941()) - n2, Class9546.method35701(n4, class399.field2419, class399.method1945()) - n3, Class9546.method35700(n4, class399.field2401, class399.field2399), n4, class400, class401, this.field9290.method28695(class399, n4));
+    public void method5713(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
+        this.field9290.method28706(class399, MathHelper.method35701(n4, class399.field2417, class399.method1938()) - n, MathHelper.method35701(n4, class399.field2418, class399.method1941()) - n2, MathHelper.method35701(n4, class399.field2419, class399.method1945()) - n3, MathHelper.method35700(n4, class399.field2401, class399.field2399), n4, class400, class401, this.field9290.method28695(class399, n4));
     }
     
     public void method5714(final Class6332 class6332, final Class7351 class6333, final double field9335, final double field9336, final double field9337) {
@@ -1302,8 +1307,8 @@ public class Class1656 implements AutoCloseable, Class1657
             if (!field9338.method31870().method32213(class6332)) {
                 final Class1918 method28957 = field9338.method31866(class6332);
                 class6333.method22567();
-                final Class354 method28958 = field9338.method31873();
-                class6333.method22564(method28958.method1074() - field9335, method28958.method1075() - field9336, method28958.method1076() - field9337);
+                final BlockPos method28958 = field9338.method31873();
+                class6333.method22564(method28958.getX() - field9335, method28958.getY() - field9336, method28958.getZ() - field9337);
                 method28957.method7587();
                 Class9237.field39607.method34196(0L);
                 if (method28955) {
@@ -1346,19 +1351,19 @@ public class Class1656 implements AutoCloseable, Class1657
             for (final Class9071 class6093 : this.field9294) {
                 final Class8974 field38417 = class6093.field38417;
                 Class8726.method30059();
-                final Class354 method22699 = field38417.method31873();
-                Class8726.method30066(method22699.method1074() - method22696, method22699.method1075() - method22697, method22699.method1076() - method22698);
+                final BlockPos method22699 = field38417.method31873();
+                Class8726.method30066(method22699.getX() - method22696, method22699.getY() - method22697, method22699.getZ() - method22698);
                 if (this.field9288.field4708) {
                     method22695.method12390(1, Class9237.field39615);
                     Class8726.method30072(10.0f);
-                    final int n = (Class9071.method32683(class6093) == 0) ? 0 : Class9546.method35697(Class9071.method32683(class6093) / 50.0f, 0.9f, 0.9f);
+                    final int n = (Class9071.method32683(class6093) == 0) ? 0 : MathHelper.method35697(Class9071.method32683(class6093) / 50.0f, 0.9f, 0.9f);
                     final int n2 = n >> 16 & 0xFF;
                     final int n3 = n >> 8 & 0xFF;
                     final int n4 = n & 0xFF;
-                    final Class179 method22700 = Class9071.method32681(class6093);
+                    final Direction method22700 = Class9071.method32681(class6093);
                     if (method22700 != null) {
                         method22695.method12432(8.0, 8.0, 8.0).method12399(n2, n3, n4, 255).method12397();
-                        method22695.method12432(8 - 16 * method22700.method785(), 8 - 16 * method22700.method786(), 8 - 16 * method22700.method787()).method12399(n2, n3, n4, 255).method12397();
+                        method22695.method12432(8 - 16 * method22700.getXOffset(), 8 - 16 * method22700.getYOffset(), 8 - 16 * method22700.getZOffset()).method12399(n2, n3, n4, 255).method12397();
                     }
                     method22694.method22695();
                     Class8726.method30072(1.0f);
@@ -1367,12 +1372,12 @@ public class Class1656 implements AutoCloseable, Class1657
                     method22695.method12390(1, Class9237.field39615);
                     Class8726.method30072(10.0f);
                     int n5 = 0;
-                    for (final Class179 class6094 : Class179.values()) {
-                        for (final Class179 class6095 : Class179.values()) {
+                    for (final Direction class6094 : Direction.values()) {
+                        for (final Direction class6095 : Direction.values()) {
                             if (!field38417.method31870().method32210(class6094, class6095)) {
                                 ++n5;
-                                method22695.method12432(8 + 8 * class6094.method785(), 8 + 8 * class6094.method786(), 8 + 8 * class6094.method787()).method12399(1, 0, 0, 1).method12397();
-                                method22695.method12432(8 + 8 * class6095.method785(), 8 + 8 * class6095.method786(), 8 + 8 * class6095.method787()).method12399(1, 0, 0, 1).method12397();
+                                method22695.method12432(8 + 8 * class6094.getXOffset(), 8 + 8 * class6094.getYOffset(), 8 + 8 * class6094.getZOffset()).method12399(1, 0, 0, 1).method12397();
+                                method22695.method12432(8 + 8 * class6095.getXOffset(), 8 + 8 * class6095.getYOffset(), 8 + 8 * class6095.getZOffset()).method12399(1, 0, 0, 1).method12397();
                             }
                         }
                     }
@@ -1514,19 +1519,19 @@ public class Class1656 implements AutoCloseable, Class1657
             for (int i = 0; i < 6; ++i) {
                 class7351.method22567();
                 if (i == 1) {
-                    class7351.method22566(Class9138.field38716.method33328(90.0f));
+                    class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
                 }
                 if (i == 2) {
-                    class7351.method22566(Class9138.field38716.method33328(-90.0f));
+                    class7351.method22566(Vector3f.XP.rotationDegrees(-90.0f));
                 }
                 if (i == 3) {
-                    class7351.method22566(Class9138.field38716.method33328(180.0f));
+                    class7351.method22566(Vector3f.XP.rotationDegrees(180.0f));
                 }
                 if (i == 4) {
-                    class7351.method22566(Class9138.field38720.method33328(90.0f));
+                    class7351.method22566(Vector3f.ZP.rotationDegrees(90.0f));
                 }
                 if (i == 5) {
-                    class7351.method22566(Class9138.field38720.method33328(-90.0f));
+                    class7351.method22566(Vector3f.ZP.rotationDegrees(-90.0f));
                 }
                 final Class6789 method22696 = class7351.method22569().method32111();
                 method22695.method12390(7, Class9237.field39619);
@@ -1610,9 +1615,9 @@ public class Class1656 implements AutoCloseable, Class1657
                 }
                 Class8726.method30045(7425);
                 class7351.method22567();
-                class7351.method22566(Class9138.field38716.method33328(90.0f));
-                class7351.method22566(Class9138.field38720.method33328((Class9546.method35638(this.field9292.method6713(f)) < 0.0f) ? 180.0f : 0.0f));
-                class7351.method22566(Class9138.field38720.method33328(90.0f));
+                class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
+                class7351.method22566(Vector3f.ZP.rotationDegrees((MathHelper.sin(this.field9292.method6713(f)) < 0.0f) ? 180.0f : 0.0f));
+                class7351.method22566(Vector3f.ZP.rotationDegrees(90.0f));
                 final float n4 = method35830[0];
                 final float n5 = method35830[1];
                 final float n6 = method35830[2];
@@ -1621,8 +1626,8 @@ public class Class1656 implements AutoCloseable, Class1657
                 method35829.method12444(method35831, 0.0f, 100.0f, 0.0f).method12439(n4, n5, n6, method35830[3]).method12397();
                 for (int i = 0; i <= 16; ++i) {
                     final float n7 = i * 6.2831855f / 16.0f;
-                    final float method35832 = Class9546.method35638(n7);
-                    final float method35833 = Class9546.method35639(n7);
+                    final float method35832 = MathHelper.sin(n7);
+                    final float method35833 = MathHelper.cos(n7);
                     method35829.method12444(method35831, method35832 * 120.0f, method35833 * 120.0f, -method35833 * 40.0f * method35830[3]).method12439(method35830[0], method35830[1], method35830[2], 0.0f).method12397();
                 }
                 method35829.method12393();
@@ -1638,12 +1643,12 @@ public class Class1656 implements AutoCloseable, Class1657
             class7351.method22567();
             final float n8 = 1.0f - this.field9292.method6768(f);
             Class8726.method30068(1.0f, 1.0f, 1.0f, n8);
-            class7351.method22566(Class9138.field38718.method33328(-90.0f));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(-90.0f));
             Class9132.method33155(this.field9292, this.field9289, class7351, f);
             if (method35827) {
                 Class9216.method33810(class7351);
             }
-            class7351.method22566(Class9138.field38716.method33328(this.field9292.method6952(f) * 360.0f));
+            class7351.method22566(Vector3f.XP.rotationDegrees(this.field9292.method6952(f) * 360.0f));
             if (method35827) {
                 Class9216.method33811(class7351);
             }
@@ -1748,11 +1753,11 @@ public class Class1656 implements AutoCloseable, Class1657
                 final double n4 = (n + (this.field9304 + f) * 0.03f) / 12.0;
                 final double n5 = this.field9292.field10063.method20498() - (float)n2 + 0.33f + this.field9288.field4648.field23490 * 128.0;
                 final double n6 = n3 / 12.0 + 0.33000001311302185;
-                final double a = n4 - Class9546.method35644(n4 / 2048.0) * 2048;
-                final double a2 = n6 - Class9546.method35644(n6 / 2048.0) * 2048;
-                final float n7 = (float)(a - Class9546.method35644(a));
-                final float n8 = (float)(n5 / 4.0 - Class9546.method35644(n5 / 4.0)) * 4.0f;
-                final float n9 = (float)(a2 - Class9546.method35644(a2));
+                final double a = n4 - MathHelper.floor(n4 / 2048.0) * 2048;
+                final double a2 = n6 - MathHelper.floor(n6 / 2048.0) * 2048;
+                final float n7 = (float)(a - MathHelper.floor(a));
+                final float n8 = (float)(n5 / 4.0 - MathHelper.floor(n5 / 4.0)) * 4.0f;
+                final float n9 = (float)(a2 - MathHelper.floor(a2));
                 final Class5487 method35827 = this.field9292.method6844(f);
                 final int field9321 = (int)Math.floor(a);
                 final int field9322 = (int)Math.floor(n5 / 4.0);
@@ -1809,8 +1814,8 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private void method5723(final Class4148 class4148, final double n, final double n2, final double n3, final Class5487 class4149) {
-        final float n4 = Class9546.method35644(n) * 0.00390625f;
-        final float n5 = Class9546.method35644(n3) * 0.00390625f;
+        final float n4 = MathHelper.floor(n) * 0.00390625f;
+        final float n5 = MathHelper.floor(n3) * 0.00390625f;
         final float n6 = (float)class4149.field22770;
         final float n7 = (float)class4149.field22771;
         final float n8 = (float)class4149.field22772;
@@ -1966,8 +1971,8 @@ public class Class1656 implements AutoCloseable, Class1657
             Class8726.method30029();
             final float n2 = Class8349.method27837() % 3000L / 3000.0f;
             method22696.method12390(7, Class9237.field39617);
-            final double max = Math.max(Class9546.method35644(field22772 - n), method22697.method34787());
-            final double min = Math.min(Class9546.method35650(field22772 + n), method22697.method34789());
+            final double max = Math.max(MathHelper.floor(field22772 - n), method22697.method34787());
+            final double min = Math.min(MathHelper.method35650(field22772 + n), method22697.method34789());
             if (field22770 > method22697.method34788() - n) {
                 float n3 = 0.0f;
                 for (double n4 = max; n4 < min; ++n4, n3 += 0.5f) {
@@ -1990,8 +1995,8 @@ public class Class1656 implements AutoCloseable, Class1657
                     this.method5726(method22696, field22770, field22771, field22772, method22697.method34786(), 0, n7, n2 + n6, n2 + 128.0f);
                 }
             }
-            final double max2 = Math.max(Class9546.method35644(field22770 - n), method22697.method34786());
-            final double min4 = Math.min(Class9546.method35650(field22770 + n), method22697.method34788());
+            final double max2 = Math.max(MathHelper.floor(field22770 - n), method22697.method34786());
+            final double min4 = Math.min(MathHelper.method35650(field22770 + n), method22697.method34788());
             if (field22772 > method22697.method34789() - n) {
                 float n9 = 0.0f;
                 for (double n10 = max2; n10 < min4; ++n10, n9 += 0.5f) {
@@ -2032,13 +2037,13 @@ public class Class1656 implements AutoCloseable, Class1657
         class4148.method12432(n4 - n, n5 - n2, n6 - n3).method12391(n7, n8).method12397();
     }
     
-    private void method5727(final Class7351 class7351, final Class4150 class7352, final Class399 class7353, final double n, final double n2, final double n3, final Class354 class7354, final Class7096 class7355) {
-        method5729(class7351, class7352, class7355.method21726(this.field9292, class7354, Class7543.method23630(class7353)), class7354.method1074() - n, class7354.method1075() - n2, class7354.method1076() - n3, 0.0f, 0.0f, 0.0f, 0.4f);
+    private void method5727(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final double n, final double n2, final double n3, final BlockPos class7354, final Class7096 class7355) {
+        method5729(class7351, class7352, class7355.method21726(this.field9292, class7354, Class7543.method23630(class7353)), class7354.getX() - n, class7354.getY() - n2, class7354.getZ() - n3, 0.0f, 0.0f, 0.0f, 0.4f);
     }
     
     public static void method5728(final Class7351 class7351, final Class4150 class7352, final Class7702 class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
         final List<Class6221> method24545 = class7353.method24545();
-        final int method24546 = Class9546.method35650(method24545.size() / 3.0);
+        final int method24546 = MathHelper.method35650(method24545.size() / 3.0);
         for (int i = 0; i < method24545.size(); ++i) {
             final Class6221 class7354 = method24545.get(i);
             final float n8 = (i % (float)method24546 + 1.0f) / method24546;
@@ -2133,14 +2138,14 @@ public class Class1656 implements AutoCloseable, Class1657
         class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
     }
     
-    public void method5735(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final Class7096 class1858, final int n) {
+    public void method5735(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final Class7096 class1858, final int n) {
         this.method5736(class1856, false);
     }
     
-    private void method5736(final Class354 class354, final boolean b) {
-        for (int i = class354.method1076() - 1; i <= class354.method1076() + 1; ++i) {
-            for (int j = class354.method1074() - 1; j <= class354.method1074() + 1; ++j) {
-                for (int k = class354.method1075() - 1; k <= class354.method1075() + 1; ++k) {
+    private void method5736(final BlockPos class354, final boolean b) {
+        for (int i = class354.getZ() - 1; i <= class354.getZ() + 1; ++i) {
+            for (int j = class354.getX() - 1; j <= class354.getX() + 1; ++j) {
+                for (int k = class354.getY() - 1; k <= class354.getY() + 1; ++k) {
                     this.method5741(j >> 4, k >> 4, i >> 4, b);
                 }
             }
@@ -2157,9 +2162,9 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5738(final Class354 class354, final Class7096 class355, final Class7096 class356) {
+    public void method5738(final BlockPos class354, final Class7096 class355, final Class7096 class356) {
         if (this.field9288.method5322().method6456(class355, class356)) {
-            this.method5737(class354.method1074(), class354.method1075(), class354.method1076(), class354.method1074(), class354.method1075(), class354.method1076());
+            this.method5737(class354.getX(), class354.getY(), class354.getZ(), class354.getX(), class354.getY(), class354.getZ());
         }
     }
     
@@ -2181,7 +2186,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9296.method32962(n, n2, n3, b);
     }
     
-    public void method5742(final Class7795 class7795, final Class354 class7796) {
+    public void method5742(final Class7795 class7795, final BlockPos class7796) {
         final Class6834 class7797 = this.field9307.get(class7796);
         if (class7797 != null) {
             this.field9288.method5299().method6431(class7797);
@@ -2192,15 +2197,15 @@ public class Class1656 implements AutoCloseable, Class1657
             if (method11765 != null) {
                 this.field9288.field4647.method3802(method11765.method11764().method8461());
             }
-            final Class6836 method11766 = Class6836.method20936(class7795, (float)class7796.method1074(), (float)class7796.method1075(), (float)class7796.method1076());
+            final Class6836 method11766 = Class6836.method20936(class7795, (float)class7796.getX(), (float)class7796.getY(), (float)class7796.getZ());
             this.field9307.put(class7796, method11766);
             this.field9288.method5299().method6422(method11766);
         }
         this.method5743(this.field9292, class7796, class7795 != null);
     }
     
-    private void method5743(final Class1847 class1847, final Class354 class1848, final boolean b) {
-        final Iterator<Class399> iterator = (Iterator<Class399>)class1847.method7128((Class<? extends Class511>)Class511.class, new Class6221(class1848).method18496(3.0)).iterator();
+    private void method5743(final Class1847 class1847, final BlockPos class1848, final boolean b) {
+        final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class511>)Class511.class, new Class6221(class1848).method18496(3.0)).iterator();
         while (iterator.hasNext()) {
             iterator.next().method2778(class1848, b);
         }
@@ -2339,7 +2344,7 @@ public class Class1656 implements AutoCloseable, Class1657
     public void method5750() {
     }
     
-    public void method5751(final int n, final Class354 class354, final int n2) {
+    public void method5751(final int n, final BlockPos class354, final int n2) {
         switch (n) {
             case 1023:
             case 1028:
@@ -2348,9 +2353,9 @@ public class Class1656 implements AutoCloseable, Class1657
                 if (!method5833.method18167()) {
                     break;
                 }
-                final double n3 = class354.method1074() - method5833.method18161().field22770;
-                final double n4 = class354.method1075() - method5833.method18161().field22771;
-                final double n5 = class354.method1076() - method5833.method18161().field22772;
+                final double n3 = class354.getX() - method5833.method18161().field22770;
+                final double n4 = class354.getY() - method5833.method18161().field22771;
+                final double n5 = class354.getZ() - method5833.method18161().field22772;
                 final double sqrt = Math.sqrt(n3 * n3 + n4 * n4 + n5 * n5);
                 double field22770 = method5833.method18161().field22770;
                 double field22771 = method5833.method18161().field22771;
@@ -2374,7 +2379,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5752(final Class512 class512, final int n, final Class354 class513, final int n2) {
+    public void method5752(final Class512 class512, final int n, final BlockPos class513, final int n2) {
         final Random field10062 = this.field9292.field10062;
         switch (n) {
             case 1000: {
@@ -2552,32 +2557,32 @@ public class Class1656 implements AutoCloseable, Class1657
             case 1501: {
                 this.field9292.method6831(class513, Class8520.field35339, Class286.field1582, 0.5f, 2.6f + (this.field9292.method6790().nextFloat() - this.field9292.method6790().nextFloat()) * 0.8f, false);
                 for (int i = 0; i < 8; ++i) {
-                    this.field9292.method6709(Class8432.field34632, class513.method1074() + Math.random(), class513.method1075() + 1.2, class513.method1076() + Math.random(), 0.0, 0.0, 0.0);
+                    this.field9292.method6709(Class8432.field34632, class513.getX() + Math.random(), class513.getY() + 1.2, class513.getZ() + Math.random(), 0.0, 0.0, 0.0);
                 }
                 break;
             }
             case 1502: {
                 this.field9292.method6831(class513, Class8520.field35525, Class286.field1582, 0.5f, 2.6f + (this.field9292.field10062.nextFloat() - this.field9292.field10062.nextFloat()) * 0.8f, false);
                 for (int j = 0; j < 5; ++j) {
-                    this.field9292.method6709(Class8432.field34639, class513.method1074() + field10062.nextDouble() * 0.6 + 0.2, class513.method1075() + field10062.nextDouble() * 0.6 + 0.2, class513.method1076() + field10062.nextDouble() * 0.6 + 0.2, 0.0, 0.0, 0.0);
+                    this.field9292.method6709(Class8432.field34639, class513.getX() + field10062.nextDouble() * 0.6 + 0.2, class513.getY() + field10062.nextDouble() * 0.6 + 0.2, class513.getZ() + field10062.nextDouble() * 0.6 + 0.2, 0.0, 0.0, 0.0);
                 }
                 break;
             }
             case 1503: {
                 this.field9292.method6831(class513, Class8520.field35174, Class286.field1582, 1.0f, 1.0f, false);
                 for (int k = 0; k < 16; ++k) {
-                    this.field9292.method6709(Class8432.field34639, class513.method1074() + (5.0f + field10062.nextFloat() * 6.0f) / 16.0f, class513.method1075() + 0.8125f, class513.method1076() + (5.0f + field10062.nextFloat() * 6.0f) / 16.0f, 0.0, 0.0, 0.0);
+                    this.field9292.method6709(Class8432.field34639, class513.getX() + (5.0f + field10062.nextFloat() * 6.0f) / 16.0f, class513.getY() + 0.8125f, class513.getZ() + (5.0f + field10062.nextFloat() * 6.0f) / 16.0f, 0.0, 0.0, 0.0);
                 }
                 break;
             }
             case 2000: {
-                final Class179 method792 = Class179.method792(n2);
-                final int method793 = method792.method785();
-                final int method794 = method792.method786();
-                final int method795 = method792.method787();
-                final double n3 = class513.method1074() + method793 * 0.6 + 0.5;
-                final double n4 = class513.method1075() + method794 * 0.6 + 0.5;
-                final double n5 = class513.method1076() + method795 * 0.6 + 0.5;
+                final Direction method792 = Direction.byIndex(n2);
+                final int method793 = method792.getXOffset();
+                final int method794 = method792.getYOffset();
+                final int method795 = method792.getZOffset();
+                final double n3 = class513.getX() + method793 * 0.6 + 0.5;
+                final double n4 = class513.getY() + method794 * 0.6 + 0.5;
+                final double n5 = class513.getZ() + method795 * 0.6 + 0.5;
                 for (int l = 0; l < 10; ++l) {
                     final double n6 = field10062.nextDouble() * 0.2 + 0.01;
                     this.method5746(Class8432.field34639, n3 + method793 * 0.01 + (field10062.nextDouble() - 0.5) * method795 * 0.5, n4 + method794 * 0.01 + (field10062.nextDouble() - 0.5) * method794 * 0.5, n5 + method795 * 0.01 + (field10062.nextDouble() - 0.5) * method793 * 0.5, method793 * n6 + field10062.nextGaussian() * 0.01, method794 * n6 + field10062.nextGaussian() * 0.01, method795 * n6 + field10062.nextGaussian() * 0.01);
@@ -2598,9 +2603,9 @@ public class Class1656 implements AutoCloseable, Class1657
             }
             case 2002:
             case 2007: {
-                final double n7 = class513.method1074();
-                final double n8 = class513.method1075();
-                final double n9 = class513.method1076();
+                final double n7 = class513.getX();
+                final double n8 = class513.getY();
+                final double n9 = class513.getZ();
                 for (int n10 = 0; n10 < 8; ++n10) {
                     this.method5746(new Class6910(Class8432.field34629, new Class8321(Class7739.field31579)), n7, n8, n9, field10062.nextGaussian() * 0.15, field10062.nextDouble() * 0.2, field10062.nextGaussian() * 0.15);
                 }
@@ -2625,9 +2630,9 @@ public class Class1656 implements AutoCloseable, Class1657
                 break;
             }
             case 2003: {
-                final double n21 = class513.method1074() + 0.5;
-                final double n22 = class513.method1075();
-                final double n23 = class513.method1076() + 0.5;
+                final double n21 = class513.getX() + 0.5;
+                final double n22 = class513.getY();
+                final double n23 = class513.getZ() + 0.5;
                 for (int n24 = 0; n24 < 8; ++n24) {
                     this.method5746(new Class6910(Class8432.field34629, new Class8321(Class7739.field31449)), n21, n22, n23, field10062.nextGaussian() * 0.15, field10062.nextDouble() * 0.2, field10062.nextGaussian() * 0.15);
                 }
@@ -2639,9 +2644,9 @@ public class Class1656 implements AutoCloseable, Class1657
             }
             case 2004: {
                 for (int n26 = 0; n26 < 20; ++n26) {
-                    final double n27 = class513.method1074() + 0.5 + (this.field9292.field10062.nextFloat() - 0.5) * 2.0;
-                    final double n28 = class513.method1075() + 0.5 + (this.field9292.field10062.nextFloat() - 0.5) * 2.0;
-                    final double n29 = class513.method1076() + 0.5 + (this.field9292.field10062.nextFloat() - 0.5) * 2.0;
+                    final double n27 = class513.getX() + 0.5 + (this.field9292.field10062.nextFloat() - 0.5) * 2.0;
+                    final double n28 = class513.getY() + 0.5 + (this.field9292.field10062.nextFloat() - 0.5) * 2.0;
+                    final double n29 = class513.getZ() + 0.5 + (this.field9292.field10062.nextFloat() - 0.5) * 2.0;
                     this.field9292.method6709(Class8432.field34639, n27, n28, n29, 0.0, 0.0, 0.0);
                     this.field9292.method6709(Class8432.field34623, n27, n28, n29, 0.0, 0.0, 0.0);
                 }
@@ -2655,10 +2660,10 @@ public class Class1656 implements AutoCloseable, Class1657
                 for (int n30 = 0; n30 < 200; ++n30) {
                     final float n31 = field10062.nextFloat() * 4.0f;
                     final float n32 = field10062.nextFloat() * 6.2831855f;
-                    final double n33 = Class9546.method35639(n32) * n31;
+                    final double n33 = MathHelper.cos(n32) * n31;
                     final double n34 = 0.01 + field10062.nextDouble() * 0.5;
-                    final double n35 = Class9546.method35638(n32) * n31;
-                    final Class6173 method799 = this.method5747(Class8432.field34605, false, class513.method1074() + n33 * 0.1, class513.method1075() + 0.3, class513.method1076() + n35 * 0.1, n33, n34, n35);
+                    final double n35 = MathHelper.sin(n32) * n31;
+                    final Class6173 method799 = this.method5747(Class8432.field34605, false, class513.getX() + n33 * 0.1, class513.getY() + 0.3, class513.getZ() + n35 * 0.1, n33, n34, n35);
                     if (method799 != null) {
                         method799.method18434(n31);
                     }
@@ -2667,17 +2672,17 @@ public class Class1656 implements AutoCloseable, Class1657
                 break;
             }
             case 2008: {
-                this.field9292.method6709(Class8432.field34619, class513.method1074() + 0.5, class513.method1075() + 0.5, class513.method1076() + 0.5, 0.0, 0.0, 0.0);
+                this.field9292.method6709(Class8432.field34619, class513.getX() + 0.5, class513.getY() + 0.5, class513.getZ() + 0.5, 0.0, 0.0, 0.0);
                 break;
             }
             case 2009: {
                 for (int n36 = 0; n36 < 8; ++n36) {
-                    this.field9292.method6709(Class8432.field34602, class513.method1074() + Math.random(), class513.method1075() + 1.2, class513.method1076() + Math.random(), 0.0, 0.0, 0.0);
+                    this.field9292.method6709(Class8432.field34602, class513.getX() + Math.random(), class513.getY() + 1.2, class513.getZ() + Math.random(), 0.0, 0.0, 0.0);
                 }
                 break;
             }
             case 3000: {
-                this.field9292.method6710(Class8432.field34618, true, class513.method1074() + 0.5, class513.method1075() + 0.5, class513.method1076() + 0.5, 0.0, 0.0, 0.0);
+                this.field9292.method6710(Class8432.field34618, true, class513.getX() + 0.5, class513.getY() + 0.5, class513.getZ() + 0.5, 0.0, 0.0, 0.0);
                 this.field9292.method6831(class513, Class8520.field35173, Class286.field1582, 10.0f, (1.0f + (this.field9292.field10062.nextFloat() - this.field9292.field10062.nextFloat()) * 0.2f) * 0.7f, false);
                 break;
             }
@@ -2688,13 +2693,13 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5753(final int n, final Class354 class354, final int n2) {
+    public void method5753(final int n, final BlockPos class354, final int n2) {
         if (n2 >= 0 && n2 < 10) {
             Class349 class355 = (Class349)this.field9305.get(n);
             if (class355 != null) {
                 this.method5719(class355);
             }
-            if (class355 == null || class355.method1046().method1074() != class354.method1074() || class355.method1046().method1075() != class354.method1075() || class355.method1046().method1076() != class354.method1076()) {
+            if (class355 == null || class355.method1046().getX() != class354.getX() || class355.method1046().getY() != class354.getY() || class355.method1046().getZ() != class354.getZ()) {
                 class355 = new Class349(n, class354);
                 this.field9305.put(n, (Object)class355);
             }
@@ -2747,7 +2752,7 @@ public class Class1656 implements AutoCloseable, Class1657
         return this.field9293.size();
     }
     
-    public Class8974 method5762(final Class354 class354) {
+    public Class8974 method5762(final BlockPos class354) {
         return this.field9296.method32963(class354);
     }
     
@@ -2873,11 +2878,11 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public static int method5776(final Class1856 class1856, final Class354 class1857) {
+    public static int method5776(final Class1856 class1856, final BlockPos class1857) {
         return method5777(class1856, class1856.method6701(class1857), class1857);
     }
     
-    public static int method5777(final Class1856 class1856, final Class7096 class1857, final Class354 class1858) {
+    public static int method5777(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858) {
         if (class1857.method21711()) {
             return 15728880;
         }
@@ -2907,8 +2912,8 @@ public class Class1656 implements AutoCloseable, Class1657
         field9284 = new Class1932("textures/misc/forcefield.png");
         field9285 = new Class1932("textures/environment/rain.png");
         field9286 = new Class1932("textures/environment/snow.png");
-        field9287 = Class179.values();
-        field9358 = Collections.unmodifiableSet((Set<?>)new HashSet<Object>(Arrays.asList(Class179.field524)));
+        field9287 = Direction.values();
+        field9358 = Collections.unmodifiableSet((Set<?>)new HashSet<Object>(Arrays.asList(Direction.VALUES)));
         Class1656.field9365 = 0;
         Class1656.field9368 = false;
     }

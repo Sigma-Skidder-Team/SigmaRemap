@@ -12,7 +12,7 @@ public class Class3461 extends Class3446
     private static String[] field16316;
     private final Class787 field16317;
     private final int field16318;
-    private Class354 field16319;
+    private BlockPos field16319;
     
     public Class3461(final Class787 field16317, final int field16318) {
         this.field16317 = field16317;
@@ -31,9 +31,9 @@ public class Class3461 extends Class3446
         if (this.field16317.method2633().nextInt(this.field16318) != 0) {
             return false;
         }
-        if (((Class1849)this.field16317.field2391).method6924(new Class354(this.field16317), 6)) {
+        if (((Class1849)this.field16317.field2391).method6924(new BlockPos(this.field16317), 6)) {
             final Class5487 method24903 = Class7775.method24903(this.field16317, 15, 7, class1850 -> -class1849.method6925(Class353.method1089(class1850)));
-            this.field16319 = ((method24903 != null) ? new Class354(method24903) : null);
+            this.field16319 = ((method24903 != null) ? new BlockPos(method24903) : null);
             return this.field16319 != null;
         }
         return false;
@@ -59,8 +59,8 @@ public class Class3461 extends Class3446
                 if (!this.field16319.method1082(this.field16317.method1934(), 10.0)) {
                     final Class5487 class5487 = new Class5487(this.field16319);
                     final Class5487 method4151 = this.field16317.method1934();
-                    final Class354 method4152 = this.field16317.field2391.method6958(Class2020.field11526, new Class354(method4151.method16741(class5487).method16748(0.4).method16743(class5487).method16741(method4151).method16738().method16748(10.0).method16743(method4151)));
-                    if (!method4150.method24724(method4152.method1074(), method4152.method1075(), method4152.method1076(), 1.0)) {
+                    final BlockPos method4152 = this.field16317.field2391.method6958(Class2020.field11526, new BlockPos(method4151.method16741(class5487).method16748(0.4).method16743(class5487).method16741(method4151).method16738().method16748(10.0).method16743(method4151)));
+                    if (!method4150.method24724(method4152.getX(), method4152.getY(), method4152.getZ(), 1.0)) {
                         this.method11024();
                     }
                 }
@@ -70,7 +70,7 @@ public class Class3461 extends Class3446
     
     private void method11024() {
         final Random method2633 = this.field16317.method2633();
-        final Class354 method2634 = this.field16317.field2391.method6958(Class2020.field11526, new Class354(this.field16317).method1134(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
-        this.field16317.method4150().method24724(method2634.method1074(), method2634.method1075(), method2634.method1076(), 1.0);
+        final BlockPos method2634 = this.field16317.field2391.method6958(Class2020.field11526, new BlockPos(this.field16317).method1134(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
+        this.field16317.method4150().method24724(method2634.getX(), method2634.getY(), method2634.getZ(), 1.0);
     }
 }

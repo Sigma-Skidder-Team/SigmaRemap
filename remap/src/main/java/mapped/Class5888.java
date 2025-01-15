@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5888 extends Class5846<Class423>
 {
@@ -69,8 +70,8 @@ public class Class5888 extends Class5846<Class423>
     public void method17633(final Class423 class423, final int n, final float n2) {
         final float method2045 = class423.method2045(n, n2);
         final Class6300 class424 = this.field24165[n];
-        class424.field25183 = (float)Class9546.method35655(-1.0471975803375244, -0.2617993950843811, (Class9546.method35638(-method2045) + 1.0f) / 2.0f);
-        class424.field25184 = (float)Class9546.method35655(-0.7853981852531433, 0.7853981852531433, (Class9546.method35638(-method2045 + 1.0f) + 1.0f) / 2.0f);
+        class424.field25183 = (float) MathHelper.method35655(-1.0471975803375244, -0.2617993950843811, (MathHelper.sin(-method2045) + 1.0f) / 2.0f);
+        class424.field25184 = (float) MathHelper.method35655(-0.7853981852531433, 0.7853981852531433, (MathHelper.sin(-method2045 + 1.0f) + 1.0f) / 2.0f);
         if (n == 1) {
             class424.field25184 = 3.1415927f - class424.field25184;
         }

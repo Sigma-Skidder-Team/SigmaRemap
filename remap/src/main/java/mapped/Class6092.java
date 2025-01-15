@@ -4,47 +4,51 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class6092
 {
     private static String[] field24704;
     private boolean field24705;
     private Class1855 field24706;
-    private Class399 field24707;
-    private Class5487 field24708;
+    private Entity field24707;
+    private Vec3d field24708;
     private final Class385 field24709;
-    private final Class9138 field24710;
-    private final Class9138 field24711;
-    private final Class9138 field24712;
+    private final Vector3f field24710;
+    private final Vector3f field24711;
+    private final Vector3f field24712;
     private float field24713;
     private float field24714;
-    private final Class9389 field24715;
+    private final Quaternion field24715;
     private boolean field24716;
     private boolean field24717;
     private float field24718;
     private float field24719;
     
     public Class6092() {
-        this.field24708 = Class5487.field22769;
+        this.field24708 = Vec3d.field22769;
         this.field24709 = new Class385();
-        this.field24710 = new Class9138(0.0f, 0.0f, 1.0f);
-        this.field24711 = new Class9138(0.0f, 1.0f, 0.0f);
-        this.field24712 = new Class9138(1.0f, 0.0f, 0.0f);
-        this.field24715 = new Class9389(0.0f, 0.0f, 0.0f, 1.0f);
+        this.field24710 = new Vector3f(0.0f, 0.0f, 1.0f);
+        this.field24711 = new Vector3f(0.0f, 1.0f, 0.0f);
+        this.field24712 = new Vector3f(1.0f, 0.0f, 0.0f);
+        this.field24715 = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
     }
     
-    public void method18154(final Class1855 field24706, final Class399 field24707, final boolean field24708, final boolean field24709, final float n) {
+    public void method18154(final Class1855 field24706, final Entity field24707, final boolean field24708, final boolean field24709, final float n) {
         this.field24705 = true;
         this.field24706 = field24706;
         this.field24707 = field24707;
         this.field24716 = field24708;
         this.field24717 = field24709;
-        this.method18158(field24707.method1743(n), field24707.method1742(n));
-        this.method18159(Class9546.method35701(n, field24707.field2392, field24707.method1938()), Class9546.method35701(n, field24707.field2393, field24707.method1941()) + Class9546.method35700(n, this.field24719, this.field24718), Class9546.method35701(n, field24707.field2394, field24707.method1945()));
+        this.method18158(field24707.getYaw(n), field24707.getPitch(n));
+        this.method18159(MathHelper.method35701(n, field24707.field2392, field24707.method1938()), MathHelper.method35701(n, field24707.field2393, field24707.method1941()) + MathHelper.method35700(n, this.field24719, this.field24718), MathHelper.method35701(n, field24707.field2394, field24707.method1945()));
         if (!field24708) {
             if (field24707 instanceof Class511) {
                 if (((Class511)field24707).method2783()) {
-                    final Class179 method2788 = ((Class511)field24707).method2788();
-                    this.method18158((method2788 == null) ? 0.0f : (method2788.method797() - 180.0f), 0.0f);
+                    final Direction method2788 = ((Class511)field24707).method2788();
+                    this.method18158((method2788 == null) ? 0.0f : (method2788.getHorizontalAngle() - 180.0f), 0.0f);
                     this.method18157(0.0, 0.3, 0.0);
                 }
             }
@@ -72,7 +76,7 @@ public class Class6092
             final float n5 = n2 * 0.1f;
             final float n6 = n3 * 0.1f;
             final float n7 = n4 * 0.1f;
-            final Class7005 method6987 = this.field24706.method6987(new Class8478(this.field24708.method16744(n5, n6, n7), new Class5487(this.field24708.field22770 - this.field24710.method33311() * n + n5 + n7, this.field24708.field22771 - this.field24710.method33312() * n + n6, this.field24708.field22772 - this.field24710.method33313() * n + n7), Class2040.field11632, Class2191.field13325, this.field24707));
+            final Class7005 method6987 = this.field24706.method6987(new Class8478(this.field24708.method16744(n5, n6, n7), new Vec3d(this.field24708.field22770 - this.field24710.method33311() * n + n5 + n7, this.field24708.field22771 - this.field24710.method33312() * n + n6, this.field24708.field22772 - this.field24710.method33313() * n + n7), Class2040.field11632, Class2191.field13325, this.field24707));
             if (method6987.method21449() != Class2165.field12880) {
                 final double method6988 = method6987.method21451().method16745(this.field24708);
                 if (method6988 < n) {
@@ -86,15 +90,15 @@ public class Class6092
     }
     
     public void method18157(final double n, final double n2, final double n3) {
-        this.method18160(new Class5487(this.field24708.field22770 + (this.field24710.method33311() * n + this.field24711.method33311() * n2 + this.field24712.method33311() * n3), this.field24708.field22771 + (this.field24710.method33312() * n + this.field24711.method33312() * n2 + this.field24712.method33312() * n3), this.field24708.field22772 + (this.field24710.method33313() * n + this.field24711.method33313() * n2 + this.field24712.method33313() * n3)));
+        this.method18160(new Vec3d(this.field24708.field22770 + (this.field24710.method33311() * n + this.field24711.method33311() * n2 + this.field24712.method33311() * n3), this.field24708.field22771 + (this.field24710.method33312() * n + this.field24711.method33312() * n2 + this.field24712.method33312() * n3), this.field24708.field22772 + (this.field24710.method33313() * n + this.field24711.method33313() * n2 + this.field24712.method33313() * n3)));
     }
     
     public void method18158(final float field24714, final float field24715) {
         this.field24713 = field24715;
         this.field24714 = field24714;
         this.field24715.method34906(0.0f, 0.0f, 0.0f, 1.0f);
-        this.field24715.method34903(Class9138.field38718.method33328(-field24714));
-        this.field24715.method34903(Class9138.field38716.method33328(field24715));
+        this.field24715.multiply(Vector3f.field38718.rotationDegrees(-field24714));
+        this.field24715.multiply(Vector3f.XP.rotationDegrees(field24715));
         this.field24710.method33317(0.0f, 0.0f, 1.0f);
         this.field24710.method33325(this.field24715);
         this.field24711.method33317(0.0f, 1.0f, 0.0f);
@@ -104,19 +108,19 @@ public class Class6092
     }
     
     public void method18159(final double n, final double n2, final double n3) {
-        this.method18160(new Class5487(n, n2, n3));
+        this.method18160(new Vec3d(n, n2, n3));
     }
     
-    public void method18160(final Class5487 field24708) {
+    public void method18160(final Vec3d field24708) {
         this.field24708 = field24708;
         this.field24709.method1286(field24708.field22770, field24708.field22771, field24708.field22772);
     }
     
-    public Class5487 method18161() {
+    public Vec3d method18161() {
         return this.field24708;
     }
     
-    public Class354 method18162() {
+    public BlockPos method18162() {
         return this.field24709;
     }
     
@@ -128,11 +132,11 @@ public class Class6092
         return this.field24714;
     }
     
-    public Class9389 method18165() {
+    public Quaternion method18165() {
         return this.field24715;
     }
     
-    public Class399 method18166() {
+    public Entity method18166() {
         return this.field24707;
     }
     
@@ -147,7 +151,7 @@ public class Class6092
     public Class7099 method18169() {
         if (this.field24705) {
             final Class7099 method6702 = this.field24706.method6702(this.field24709);
-            return (!method6702.method21781() && this.field24708.field22771 >= this.field24709.method1075() + method6702.method21782(this.field24706, this.field24709)) ? Class7558.field29974.method22148() : method6702;
+            return (!method6702.method21781() && this.field24708.field22771 >= this.field24709.getY() + method6702.method21782(this.field24706, this.field24709)) ? Class7558.field29974.method22148() : method6702;
         }
         return Class7558.field29974.method22148();
     }
@@ -175,11 +179,11 @@ public class Class6092
         return Class7521.field29147.method11878();
     }
     
-    public final Class9138 method18173() {
+    public final Vector3f method18173() {
         return this.field24710;
     }
     
-    public final Class9138 method18174() {
+    public final Vector3f method18174() {
         return this.field24711;
     }
     

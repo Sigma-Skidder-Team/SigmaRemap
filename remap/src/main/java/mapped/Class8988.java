@@ -5,10 +5,11 @@
 package mapped;
 
 import java.util.Collection;
+
+import net.minecraft.util.Direction;
 import org.lwjgl.opengl.GL11;
 import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.LinkedHashMap;
 import java.util.TreeSet;
@@ -734,14 +735,14 @@ public class Class8988
         final Class2122 field12371 = Class2122.field12371;
         final Class7878 method25530 = new Class7878(class1775, Class9168.field38839, false).method25530(class1775.method24395("particle").method11332());
         for (final Class9219 class1776 : class1775.method24387()) {
-            for (final Class179 class1777 : class1776.field39556.keySet()) {
+            for (final Direction class1777 : class1776.field39556.keySet()) {
                 Class8111 class1778 = class1776.field39556.get(class1777);
                 if (!b) {
                     class1778 = new Class8111(class1778.field33423, -1, class1778.field33425, class1778.field33426);
                 }
                 final Class8754 method25531 = method32027(class1776, class1778, class1775.method24395(class1778.field33425).method11332(), class1777, field12371);
                 if (class1778.field33423 != null) {
-                    method25530.method25528(Class179.method777(field12371.method8274().method34328(), class1778.field33423), method25531);
+                    method25530.method25528(Direction.rotateFace(field12371.method8274().method34328(), class1778.field33423), method25531);
                 }
                 else {
                     method25530.method25529(method25531);
@@ -751,7 +752,7 @@ public class Class8988
         return method25530.method25531();
     }
     
-    private static Class8754 method32027(final Class9219 class9219, final Class8111 class9220, final Class1912 class9221, final Class179 class9222, final Class2122 class9223) {
+    private static Class8754 method32027(final Class9219 class9219, final Class8111 class9220, final Class1912 class9221, final Direction class9222, final Class2122 class9223) {
         return new Class6225().method18519(class9219.field39554, class9219.field39555, class9220, class9221, class9222, class9223, class9219.field39557, class9219.field39558, class9221.method7503());
     }
     

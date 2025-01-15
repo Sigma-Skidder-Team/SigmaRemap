@@ -4,12 +4,12 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.lwjgl.opengl.GL11;
-import java.util.Iterator;
 
 public class Class3182 extends Class3167
 {
-    public Class354 field15568;
+    public BlockPos field15568;
     public int field15569;
     public int field15570;
     public int field15571;
@@ -31,15 +31,15 @@ public class Class3182 extends Class3167
     @Override
     public void method9879() {
         this.field15568 = null;
-        for (final Class354 field15568 : Class4609.method13675(Class4609.method13691(Class3182.field15514.field4682.method27315()))) {
+        for (final BlockPos field15568 : Class4609.method13675(Class4609.method13691(Class3182.field15514.field4682.method27315()))) {
             if (Class4609.method13680(Class3182.field15514.field4684, field15568) >= 2.0f) {
                 if (!Class4609.method13665(Class3182.field15514.field4684, field15568)) {
                     continue;
                 }
-                if (field15568.method1075() < Class3182.field15514.field4684.field2396 - 2.0) {
+                if (field15568.getY() < Class3182.field15514.field4684.field2396 - 2.0) {
                     continue;
                 }
-                if (field15568.method1075() > Class3182.field15514.field4684.field2396 - 1.0) {
+                if (field15568.getY() > Class3182.field15514.field4684.field2396 - 1.0) {
                     continue;
                 }
                 if (this.method9981(field15568)) {
@@ -76,7 +76,7 @@ public class Class3182 extends Class3167
         this.field15571 = 0;
     }
     
-    public boolean method9981(final Class354 class354) {
+    public boolean method9981(final BlockPos class354) {
         final Class7096 method6701 = Class3182.field15514.field4683.method6701(class354);
         final Class7096 method6702 = Class3182.field15514.field4683.method6701(class354.method1137());
         final Class7096 method6703 = Class3182.field15514.field4683.method6701(class354.method1138(2));
@@ -101,10 +101,10 @@ public class Class3182 extends Class3167
         }
         if (this.field15568 != null) {
             GL11.glAlphaFunc(516, 0.0f);
-            final Class354 field15568 = this.field15568;
-            final double n = field15568.method1074() - Class3182.field15514.field4644.method5833().method18161().method16760();
-            final double n2 = field15568.method1075() - Class3182.field15514.field4644.method5833().method18161().method16761();
-            final double n3 = field15568.method1076() - Class3182.field15514.field4644.method5833().method18161().method16762();
+            final BlockPos field15568 = this.field15568;
+            final double n = field15568.getX() - Class3182.field15514.field4644.method5833().method18161().method16760();
+            final double n2 = field15568.getY() - Class3182.field15514.field4644.method5833().method18161().method16761();
+            final double n3 = field15568.getZ() - Class3182.field15514.field4644.method5833().method18161().method16762();
             Class8154.method26909(new Class7644(n, n2 + 1.625, n3, n + 1.0, n2 + 3.0, n3 + 1.0), Class6430.method19118(Class265.field1285.field1292, 0.3f));
             GL11.glColor3f(1.0f, 1.0f, 1.0f);
             GL11.glBlendFunc(770, 771);
@@ -183,20 +183,20 @@ public class Class3182 extends Class3167
         if (this.field15568 != null) {
             if (this.field15571 != 0) {
                 if (this.field15571 == 1) {
-                    final float n = Class4609.method13673(this.field15568.method1137(), Class179.field512)[0];
-                    final float n2 = Class4609.method13673(this.field15568.method1137(), Class179.field512)[1];
+                    final float n = Class4609.method13673(this.field15568.method1137(), Direction.UP)[0];
+                    final float n2 = Class4609.method13673(this.field15568.method1137(), Direction.UP)[1];
                     class5744.method17043(n);
                     class5744.method17041(n2);
                     final int field2743 = Class3182.field15514.field4684.field3006.field2743;
                     Class3182.field15514.field4684.field3006.field2743 = this.field15569;
-                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, new Class7005(Class4609.method13702(Class179.field512, this.field15568), Class179.field512, this.field15568, false));
+                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, new Class7005(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
                     Class3182.field15514.field4684.method2707(Class316.field1877);
                     if (method27319 == Class2201.field13400) {
                         ++this.field15571;
                         Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.field4684, Class287.field1591));
                         Class3182.field15514.field4684.field4085.field24728 = true;
                         Class3182.field15514.field4684.field3006.field2743 = this.field15570;
-                        final Class7005 class5745 = new Class7005(Class4609.method13702(Class179.field512, this.field15568.method1137()), Class179.field512, this.field15568.method1137(), false);
+                        final Class7005 class5745 = new Class7005(Class4609.method13702(Direction.UP, this.field15568.method1137()), Direction.UP, this.field15568.method1137(), false);
                         Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, class5745);
                         Class3182.field15514.field4684.method2707(Class316.field1877);
                         Class3182.field15514.field4684.field4085.field24728 = false;
@@ -206,8 +206,8 @@ public class Class3182 extends Class3167
                 }
             }
             else {
-                final float n3 = Class4609.method13673(this.field15568, Class179.field512)[0];
-                final float n4 = Class4609.method13673(this.field15568, Class179.field512)[1];
+                final float n3 = Class4609.method13673(this.field15568, Direction.UP)[0];
+                final float n4 = Class4609.method13673(this.field15568, Direction.UP)[1];
                 class5744.method17043(n3);
                 class5744.method17041(n4);
                 ++this.field15571;
@@ -279,8 +279,8 @@ public class Class3182 extends Class3167
                 class5721.method16961(true);
             }
             if (class5721.method16990() instanceof Class4381) {
-                final float n = Class4609.method13673(this.field15568.method1137(), Class179.field512)[0];
-                final float n2 = Class4609.method13673(this.field15568.method1137(), Class179.field512)[1];
+                final float n = Class4609.method13673(this.field15568.method1137(), Direction.UP)[0];
+                final float n2 = Class4609.method13673(this.field15568.method1137(), Direction.UP)[1];
             }
             if (class5721.method16990() instanceof Class4353) {
                 ((Class4353)class5721.method16990()).field19504 = false;

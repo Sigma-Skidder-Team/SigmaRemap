@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
 
 public class Class3396 extends Class3167
 {
@@ -15,7 +15,7 @@ public class Class3396 extends Class3167
     @Class6753
     private void method10838(final Class5743 class5743) {
         if (this.method9906()) {
-            for (final Class399 class5744 : Class6430.method19108()) {
+            for (final Entity class5744 : Class6430.method19108()) {
                 if (Class9463.method35173().method35191().method31751(class5744)) {
                     continue;
                 }

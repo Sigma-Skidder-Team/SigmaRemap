@@ -4,10 +4,11 @@
 
 package mapped;
 
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 
 public enum Class2167 implements Class2168
@@ -17,7 +18,7 @@ public enum Class2167 implements Class2168
         }
         
         @Override
-        public Class7096 method8335(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        public Class7096 method8335(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
             return class7096;
         }
     }, 
@@ -26,7 +27,7 @@ public enum Class2167 implements Class2168
         }
         
         @Override
-        public Class7096 method8335(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        public Class7096 method8335(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
             return class7096.method21748(class7097, class7099.method6701(class7101), class7099, class7100, class7101);
         }
     }, 
@@ -35,17 +36,17 @@ public enum Class2167 implements Class2168
         }
         
         @Override
-        public Class7096 method8335(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        public Class7096 method8335(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
             if (class7098.method21696() == class7096.method21696()) {
-                if (class7097.method790().method601()) {
+                if (class7097.getAxis().isHorizontal()) {
                     if (class7096.method21772(Class3865.field17498) == Class180.field530) {
                         if (class7098.method21772(Class3865.field17498) == Class180.field530) {
-                            final Class179 class7102 = class7096.method21772((Class7111<Class179>)Class3865.field17497);
-                            if (class7097.method790() != class7102.method790()) {
-                                if (class7102 == class7098.method21772((Class7111<Class179>)Class3865.field17497)) {
-                                    final Class180 class7103 = (class7097 != class7102.method783()) ? Class180.field532 : Class180.field531;
+                            final Direction class7102 = class7096.method21772((Class7111<Direction>)Class3865.field17497);
+                            if (class7097.getAxis() != class7102.getAxis()) {
+                                if (class7102 == class7098.method21772((Class7111<Direction>)Class3865.field17497)) {
+                                    final Class180 class7103 = (class7097 != class7102.rotateY()) ? Class180.field532 : Class180.field531;
                                     class7099.method6688(class7101, (Class7096)((Class7097<Object, Object>)class7098).method21773(Class3865.field17498, class7103.method812()), 18);
-                                    if (class7102 == Class179.field513 || class7102 == Class179.field516) {
+                                    if (class7102 == Direction.NORTH || class7102 == Direction.EAST) {
                                         final Class436 method6727 = class7099.method6727(class7100);
                                         final Class436 method6728 = class7099.method6727(class7101);
                                         if (method6727 instanceof Class475) {
@@ -65,14 +66,14 @@ public enum Class2167 implements Class2168
         }
     }, 
     field12891("LEAVES", 3, true, new Class3833[] { Class7521.field29209, Class7521.field29207, Class7521.field29210, Class7521.field29208, Class7521.field29205, Class7521.field29206 }) {
-        private final ThreadLocal<List<ObjectSet<Class354>>> field12895;
+        private final ThreadLocal<List<ObjectSet<BlockPos>>> field12895;
         
         {
             this.field12895 = ThreadLocal.withInitial(() -> Lists.newArrayListWithCapacity(7));
         }
         
         @Override
-        public Class7096 method8335(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        public Class7096 method8335(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
             final Class7096 method21748 = class7096.method21748(class7097, class7099.method6701(class7101), class7099, class7100, class7101);
             if (class7096 != method21748) {
                 final int intValue = method21748.method21772((Class7111<Integer>)Class8970.field37778);
@@ -95,7 +96,7 @@ public enum Class2167 implements Class2168
                 final int j = i - 1;
                 final ObjectSet set = (ObjectSet)list.get(j);
                 final ObjectSet set2 = (ObjectSet)list.get(i);
-                for (final Class354 class1853 : set) {
+                for (final BlockPos class1853 : set) {
                     final Class7096 method6701 = class1851.method6701(class1853);
                     if (((Class7097<Object, Class7096>)method6701).method21772((Class7111<Integer>)Class8970.field37778) < j) {
                         continue;
@@ -104,7 +105,7 @@ public enum Class2167 implements Class2168
                     if (i == 7) {
                         continue;
                     }
-                    final Class179[] field12893 = Class2171.field12893;
+                    final Direction[] field12893 = Class2171.field12893;
                     for (int length = field12893.length, k = 0; k < length; ++k) {
                         class1852.method1287(class1853).method1290(field12893[k]);
                         if (class1851.method6701(class1852).method21771((Class7111<Comparable>)Class8970.field37778)) {
@@ -123,7 +124,7 @@ public enum Class2167 implements Class2168
         }
         
         @Override
-        public Class7096 method8335(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+        public Class7096 method8335(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
             if (class7096.method21772((Class7111<Integer>)Class3873.field17516) == 7) {
                 final Class3993 method11949 = ((Class3873)class7096.method21696()).method11949();
                 if (class7098.method21696() == method11949) {
@@ -134,7 +135,7 @@ public enum Class2167 implements Class2168
         }
     };
     
-    public static final Class179[] field12893;
+    public static final Direction[] field12893;
     
     private Class2167(final Class3833[] array) {
         this(false, array);
@@ -150,6 +151,6 @@ public enum Class2167 implements Class2168
     }
     
     static {
-        field12893 = Class179.values();
+        field12893 = Direction.values();
     }
 }

@@ -14,7 +14,7 @@ public interface Class5783
     
     void method17247();
     
-    void method17248(final Class858 p0, final Class354 p1, final Class7929 p2, final Class512 p3);
+    void method17248(final Class858 p0, final BlockPos p1, final Class7929 p2, final Class512 p3);
     
     void method17249();
     

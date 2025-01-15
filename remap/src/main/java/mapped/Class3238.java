@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3238 extends Class3167
 {
     private int field15721;
@@ -146,7 +148,7 @@ public class Class3238 extends Class3167
                         Class3238.field15514.method5269().method17292(new Class4307(Class316.field1878));
                         Class3238.field15514.method5269().method17292(new Class4307(Class316.field1877));
                         if (equals) {
-                            Class3238.field15514.method5269().method17292(new Class4399(Class2003.field11244, Class354.field2173, Class179.field511));
+                            Class3238.field15514.method5269().method17292(new Class4399(Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
                         }
                         Class3238.field15514.method5269().method17292(new Class4321(Class3238.field15514.field4684.field3006.field2743));
                         this.field15721 = 0;
@@ -170,7 +172,7 @@ public class Class3238 extends Class3167
             return;
         }
         if (equals) {
-            Class3238.field15514.method5269().method17292(new Class4399(Class2003.field11244, Class354.field2173, Class179.field511));
+            Class3238.field15514.method5269().method17292(new Class4399(Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
         }
         Class3238.field15514.field4684.field3006.field2743 = this.field15723;
         Class3238.field15514.field4682.method27318();

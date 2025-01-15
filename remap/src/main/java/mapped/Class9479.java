@@ -6,12 +6,14 @@ package mapped;
 
 import com.mojang.brigadier.Message;
 import java.util.ArrayList;
-import java.util.Comparator;
+
 import com.google.common.collect.Lists;
 import java.util.function.Function;
 import java.util.Collection;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 
 public class Class9479
@@ -23,7 +25,7 @@ public class Class9479
         return class2250;
     }
     
-    public static Class2250 method35294(final Class7492 class7492, final Class2250 class7493, final Class399 class7494, int n) throws CommandSyntaxException {
+    public static Class2250 method35294(final Class7492 class7492, final Class2250 class7493, final Entity class7494, int n) throws CommandSyntaxException {
         if (n <= 100) {
             ++n;
             final Class2250 class7495 = (class7493 instanceof Class2253) ? ((Class2253)class7493).method8473(class7492, class7494, n) : class7493.method8465();

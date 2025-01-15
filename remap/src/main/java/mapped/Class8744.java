@@ -22,7 +22,7 @@ public class Class8744
         this.field36727 = field36727;
     }
     
-    public boolean method30235(final Class1849 class1849, final Class354 class1850) {
+    public boolean method30235(final Class1849 class1849, final BlockPos class1850) {
         if (this == Class8744.field36724) {
             return true;
         }

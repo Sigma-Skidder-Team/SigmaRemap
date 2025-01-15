@@ -7,8 +7,10 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import java.util.Random;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-public class Class5890<T extends Class399> extends Class5846<T>
+public class Class5890<T extends Entity> extends Class5846<T>
 {
     private static String[] field24182;
     private final Class6300[] field24183;
@@ -38,7 +40,7 @@ public class Class5890<T extends Class399> extends Class5846<T>
     @Override
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         for (int i = 0; i < this.field24183.length; ++i) {
-            this.field24183[i].field25183 = 0.2f * Class9546.method35638(n3 * 0.3f + i) + 0.4f;
+            this.field24183[i].field25183 = 0.2f * MathHelper.sin(n3 * 0.3f + i) + 0.4f;
         }
     }
     

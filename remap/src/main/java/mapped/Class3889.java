@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 
@@ -43,18 +45,18 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
-        return !class7096.method21727(class7097, class7098).method24551(Class179.field512).method24540();
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+        return !class7096.method21727(class7097, class7098).method24551(Direction.UP).method24540();
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
-        final Class354 method1139 = class7098.method1139();
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
+        final BlockPos method1139 = class7098.method1139();
         return this.method11943(class7097.method6701(method1139), class7097, method1139);
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.method21752(class7099, class7100)) {
             if (class7096.method21772((Class7111<Boolean>)Class3889.field17552)) {
                 class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
@@ -70,7 +72,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         switch (class7096.method21772((Class7111<Integer>)Class3889.field17551)) {
             default: {
                 return Class3889.field17553;
@@ -98,27 +100,27 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return true;
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
         if (!this.method11964(class1851)) {
             if (class1849.method6701(class1850.method1139()).method21755(Class7188.field27921)) {
                 int n = 1;
                 int n2 = 0;
-                final int n3 = class1850.method1074() - 2;
+                final int n3 = class1850.getX() - 2;
                 int n4 = 0;
                 for (int i = 0; i < 5; ++i) {
                     for (int j = 0; j < n; ++j) {
-                        for (int n5 = 2 + class1850.method1075() - 1, k = n5 - 2; k < n5; ++k) {
-                            final Class354 class1852 = new Class354(n3 + i, k, class1850.method1076() - n4 + j);
+                        for (int n5 = 2 + class1850.getY() - 1, k = n5 - 2; k < n5; ++k) {
+                            final BlockPos class1852 = new BlockPos(n3 + i, k, class1850.getZ() - n4 + j);
                             if (class1852 != class1850) {
                                 if (random.nextInt(6) == 0) {
                                     if (class1849.method6701(class1852).method21696() == Class7521.field29173) {

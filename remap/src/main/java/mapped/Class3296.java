@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Collection;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -177,7 +178,7 @@ public class Class3296 extends Class3167
     }
     
     private void method10438(final float n, final float n2, final float n3, final float n4, final Class7351 class7351) {
-        class7351.method22566(new Class9138(n2, n3, n4).method33328(n));
+        class7351.method22566(new Vector3f(n2, n3, n4).rotationDegrees(n));
     }
     
     private void method10439(final float n, final float n2, final Class7351 class7351) {
@@ -185,8 +186,8 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(n2 * n2 * 3.1415927f);
-        final float method35639 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(n2 * n2 * 3.1415927f);
+        final float method35639 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(method35638 * -20.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(method35639 * -20.0f, 0.0f, 0.0f, 1.0f, class7351);
         this.method10438(method35639 * -69.0f, 1.0f, 0.0f, 0.0f, class7351);
@@ -200,8 +201,8 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(100.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-50.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(n2 * 3.1415927f);
-        final float method35639 = Class9546.method35638(n2 * 3.1415927f);
+        final float method35638 = MathHelper.sin(n2 * 3.1415927f);
+        final float method35639 = MathHelper.sin(n2 * 3.1415927f);
         this.method10438(method35638 * -10.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(method35639 * -30.0f, 0.0f, 0.0f, 1.0f, class7351);
         this.method10438(method35639 * 109.0f, 1.0f, 0.0f, 0.0f, class7351);
@@ -215,8 +216,8 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(n2 * n2 * 3.1415927f);
-        final float method35639 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(n2 * n2 * 3.1415927f);
+        final float method35639 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(method35638 * -20.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(method35639 * -20.0f, 0.0f, 0.0f, 1.0f, class7351);
         this.method10438(method35639 * -69.0f, 1.0f, 0.0f, 0.0f, class7351);
@@ -230,7 +231,7 @@ public class Class3296 extends Class3167
         class7351.method22564(0.5600000023841858, -0.5199999809265137, -0.7200000286102295);
         class7351.method22564(0.5600000023841858, -0.2199999988079071, -0.7199999690055847);
         this.method10438(45.0f, 0.0f, 1.0f, 0.0f, class7351);
-        final float method35638 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(0.0f, 0.0f, 0.0f, 1.0f, class7351);
         this.method10438(method35638 * -9.0f, 1.0f, 0.0f, 0.0f, class7351);
         this.method10438(-9.0f, 0.0f, 0.0f, 1.0f, class7351);
@@ -244,7 +245,7 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(-80.0f, 1.0f, 0.0f, 0.0f, class7351);
         this.method10438(-method35638 * 10.0f, 1.0f, -2.0f, 3.0f, class7351);
         final float n3 = 1.2f;
@@ -256,7 +257,7 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(-80.0f, 1.0f, 0.0f, 0.0f, class7351);
         this.method10438(-method35638 * 20.0f, 1.0f, 0.0f, 0.0f, class7351);
         final float n3 = 1.2f;
@@ -268,8 +269,8 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(n2 * n2 * 3.1415927f);
-        final float method35639 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(n2 * n2 * 3.1415927f);
+        final float method35639 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(method35638 * -20.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(method35639 * -20.0f, 0.0f, 0.0f, 1.0f, class7351);
         this.method10438(method35639 * -69.0f, 1.0f, 0.0f, 0.0f, class7351);
@@ -283,7 +284,7 @@ public class Class3296 extends Class3167
         class7351.method22564(0.0, n * -0.2f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
-        final float method35638 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(-80.0f, 1.0f, 0.0f, 0.0f, class7351);
         final float n3 = 1.2f - method35638 * 0.3f;
         class7351.method22565(n3, n3, n3);
@@ -291,7 +292,7 @@ public class Class3296 extends Class3167
     
     private void method10447(final float n, final float n2, final Class7351 class7351) {
         class7351.method22564(0.56, -0.52, -0.72);
-        final float method35638 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
         this.method10438(-10.0f, 0.0f, 0.0f, 1.0f, class7351);
         this.method10438(-80.0f, 1.0f, 0.0f, 0.0f, class7351);
@@ -300,7 +301,7 @@ public class Class3296 extends Class3167
     }
     
     private void method10448(final float n, final float n2, final Class7351 class7351) {
-        final float method35638 = Class9546.method35638(Class9546.method35640(n2) * 3.1415927f);
+        final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         class7351.method22564(0.47999998927116394, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, method35638 * -0.2f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.Set;
 import java.util.List;
@@ -19,11 +21,11 @@ public class Class9468
     private Class6772[] field40716;
     private Set<Class6773> field40717;
     private int field40718;
-    private final Class354 field40719;
+    private final BlockPos field40719;
     private final float field40720;
     private final boolean field40721;
     
-    public Class9468(final List<Class6772> field40714, final Class354 field40715, final boolean field40716) {
+    public Class9468(final List<Class6772> field40714, final BlockPos field40715, final boolean field40716) {
         this.field40715 = new Class6772[0];
         this.field40716 = new Class6772[0];
         this.field40714 = field40714;
@@ -75,18 +77,18 @@ public class Class9468
         this.field40718 = field40718;
     }
     
-    public Class5487 method35224(final Class399 class399, final int n) {
+    public Vec3d method35224(final Entity class399, final int n) {
         final Class6772 class400 = this.field40714.get(n);
-        return new Class5487(class400.field26589 + (int)(class399.method1930() + 1.0f) * 0.5, class400.field26590, class400.field26591 + (int)(class399.method1930() + 1.0f) * 0.5);
+        return new Vec3d(class400.field26589 + (int)(class399.method1930() + 1.0f) * 0.5, class400.field26590, class400.field26591 + (int)(class399.method1930() + 1.0f) * 0.5);
     }
     
-    public Class5487 method35225(final Class399 class399) {
+    public Vec3d method35225(final Entity class399) {
         return this.method35224(class399, this.field40718);
     }
     
-    public Class5487 method35226() {
+    public Vec3d method35226() {
         final Class6772 class6772 = this.field40714.get(this.field40718);
-        return new Class5487(class6772.field26589, class6772.field26590, class6772.field26591);
+        return new Vec3d(class6772.field26589, class6772.field26590, class6772.field26591);
     }
     
     public boolean method35227(final Class9468 class9468) {
@@ -133,7 +135,7 @@ public class Class9468
         for (int i = 0; i < int2; ++i) {
             hashSet.add(Class6773.method20678(class8654));
         }
-        final Class354 class8655 = new Class354(class8654.readInt(), class8654.readInt(), class8654.readInt());
+        final BlockPos class8655 = new BlockPos(class8654.readInt(), class8654.readInt(), class8654.readInt());
         final ArrayList arrayList = Lists.newArrayList();
         for (int int3 = class8654.readInt(), j = 0; j < int3; ++j) {
             arrayList.add(Class6772.method20673(class8654));
@@ -159,7 +161,7 @@ public class Class9468
         return "Path(length=" + this.field40714.size() + ")";
     }
     
-    public Class354 method35232() {
+    public BlockPos method35232() {
         return this.field40719;
     }
     

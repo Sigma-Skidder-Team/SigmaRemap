@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class421 extends Class419
 {
     private static String[] field2534;
@@ -32,7 +34,7 @@ public class Class421 extends Class419
     }
     
     @Override
-    public float method1856(final Class6154 class6154, final Class1855 class6155, final Class354 class6156, final Class7096 class6157, final Class7099 class6158, final float b) {
+    public float method1856(final Class6154 class6154, final Class1855 class6155, final BlockPos class6156, final Class7096 class6157, final Class7099 class6158, final float b) {
         return (this.method2036() && Class767.method4244(class6157)) ? Math.min(0.8f, b) : b;
     }
     
@@ -41,7 +43,7 @@ public class Class421 extends Class419
         super.method2032(class7006);
         if (!this.field2391.field10067) {
             if (class7006.method21449() == Class2165.field12882) {
-                final Class399 method21452 = ((Class7007)class7006).method21452();
+                final Entity method21452 = ((Class7007)class7006).method21452();
                 if (this.field2527 == null) {
                     method21452.method1740(Class7929.field32576, 5.0f);
                 }

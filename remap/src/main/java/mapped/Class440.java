@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.IntStream;
 import javax.annotation.Nullable;
 import java.util.List;
@@ -82,34 +86,34 @@ public class Class440 extends Class456 implements Class441, Class439
         return this.method2236(class7096.method21772(Class3942.field17832));
     }
     
-    public Class6221 method2236(final Class179 class179) {
+    public Class6221 method2236(final Direction class179) {
         final float method2251 = this.method2251(1.0f);
-        return Class7698.method24487().method24537().method18494(0.5f * method2251 * class179.method785(), 0.5f * method2251 * class179.method786(), 0.5f * method2251 * class179.method787());
+        return Class7698.method24487().method24537().method18494(0.5f * method2251 * class179.getXOffset(), 0.5f * method2251 * class179.getYOffset(), 0.5f * method2251 * class179.getZOffset());
     }
     
-    private Class6221 method2237(final Class179 class179) {
-        final Class179 method782 = class179.method782();
-        return this.method2236(class179).method18492(method782.method785(), method782.method786(), method782.method787());
+    private Class6221 method2237(final Direction class179) {
+        final Direction method782 = class179.getOpposite();
+        return this.method2236(class179).method18492(method782.getXOffset(), method782.getYOffset(), method782.getZOffset());
     }
     
     private void method2238() {
         final Class7096 method6701 = this.field2656.method6701(this.method2193());
         if (method6701.method21696() instanceof Class3942) {
-            final Class179 class179 = method6701.method21772(Class3942.field17832);
+            final Direction class179 = method6701.method21772(Class3942.field17832);
             final Class6221 method6702 = this.method2237(class179).method18500(this.field2657);
-            final List<Class399> method6703 = this.field2656.method7127(null, method6702);
+            final List<Entity> method6703 = this.field2656.method7127(null, method6702);
             if (!method6703.isEmpty()) {
                 for (int i = 0; i < method6703.size(); ++i) {
-                    final Class399 class180 = method6703.get(i);
+                    final Entity class180 = method6703.get(i);
                     if (class180.method1921() != Class2117.field12343) {
                         double n = 0.0;
                         double n2 = 0.0;
                         double n3 = 0.0;
                         final Class6221 method6704 = class180.method1886();
-                        switch (Class9309.field39950[class179.method790().ordinal()]) {
+                        switch (Class9309.field39950[class179.getAxis().ordinal()]) {
                             case 1: {
                                 double n4;
-                                if (class179.method781() == Class288.field1601) {
+                                if (class179.getAxisDirection() == AxisDirection.POSITIVE) {
                                     n4 = method6702.field25076 - method6704.field25073;
                                 }
                                 else {
@@ -120,7 +124,7 @@ public class Class440 extends Class456 implements Class441, Class439
                             }
                             case 2: {
                                 double n5;
-                                if (class179.method781() == Class288.field1601) {
+                                if (class179.getAxisDirection() == AxisDirection.POSITIVE) {
                                     n5 = method6702.field25077 - method6704.field25074;
                                 }
                                 else {
@@ -131,7 +135,7 @@ public class Class440 extends Class456 implements Class441, Class439
                             }
                             case 3: {
                                 double n6;
-                                if (class179.method781() == Class288.field1601) {
+                                if (class179.getAxisDirection() == AxisDirection.POSITIVE) {
                                     n6 = method6702.field25078 - method6704.field25075;
                                 }
                                 else {
@@ -141,7 +145,7 @@ public class Class440 extends Class456 implements Class441, Class439
                                 break;
                             }
                         }
-                        class180.method1671(Class2160.field12829, new Class5487(n * class179.method785(), n2 * class179.method786(), n3 * class179.method787()));
+                        class180.method1671(Class2160.field12829, new Vec3d(n * class179.getXOffset(), n2 * class179.getYOffset(), n3 * class179.getZOffset()));
                     }
                 }
             }
@@ -242,22 +246,22 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public int[] method2248(final Class179 class179) {
+    public int[] method2248(final Direction class179) {
         return Class440.field2665;
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Class179 class8322) {
+    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
         return !(Class3833.method11776(class8321.method27622()) instanceof Class3942);
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Class179 class8322) {
+    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
         return true;
     }
     
     public float method2251(final float n) {
-        return Class9546.method35700(n, this.field2670, this.field2669);
+        return MathHelper.method35700(n, this.field2670, this.field2669);
     }
     
     @Nullable

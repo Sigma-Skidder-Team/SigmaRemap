@@ -17,7 +17,7 @@ public class Class8355
         this.field34289 = field34289;
     }
     
-    public boolean method27890(final Class1849 class1849, final Class354 class1850) {
+    public boolean method27890(final Class1849 class1849, final BlockPos class1850) {
         return this == Class8355.field34288 || (class1849.method6731(class1850) && this.field34289.method29755(class1849.method6969(class1850)));
     }
     

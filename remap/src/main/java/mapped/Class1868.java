@@ -54,7 +54,7 @@ public abstract class Class1868 implements Class1867
     }
     
     @Nullable
-    public Class354 method7119(final int n, final int n2, final int n3, final int n4, final List<Class3090> list, final Random random) {
+    public BlockPos method7119(final int n, final int n2, final int n3, final int n4, final List<Class3090> list, final Random random) {
         final int n5 = n - n4 >> 2;
         final int n6 = n3 - n4 >> 2;
         final int n7 = n + n4 >> 2;
@@ -62,7 +62,7 @@ public abstract class Class1868 implements Class1867
         final int n9 = n7 - n5 + 1;
         final int n10 = n8 - n6 + 1;
         final int n11 = n2 >> 2;
-        Class354 class354 = null;
+        BlockPos class354 = null;
         int n12 = 0;
         for (int i = 0; i < n10; ++i) {
             for (int j = 0; j < n9; ++j) {
@@ -70,7 +70,7 @@ public abstract class Class1868 implements Class1867
                 final int n14 = n6 + i;
                 if (list.contains(this.method6960(n13, n11, n14))) {
                     if (class354 == null || random.nextInt(n12 + 1) == 0) {
-                        class354 = new Class354(n13 << 2, n2, n14 << 2);
+                        class354 = new BlockPos(n13 << 2, n2, n14 << 2);
                     }
                     ++n12;
                 }

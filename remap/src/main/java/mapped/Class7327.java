@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 
 public class Class7327 implements Class7326
@@ -19,7 +21,7 @@ public class Class7327 implements Class7326
     }
     
     @Override
-    public Class4469 method22484(final Class179 class179, final Class8123 class180, final Random random) {
+    public Class4469 method22484(final Direction class179, final Class8123 class180, final Random random) {
         Class8123.method26746(class180, true);
         return new Class4470(class179, class180, random);
     }

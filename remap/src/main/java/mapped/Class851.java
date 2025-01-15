@@ -4,19 +4,19 @@
 
 package mapped;
 
-import java.util.Random;
+import net.minecraft.util.math.MathHelper;
 
 public class Class851 extends Class760 implements Class762
 {
     private static final Class8810<Integer> field4526;
-    private Class5487 field4527;
-    private Class354 field4528;
+    private Vec3d field4527;
+    private BlockPos field4528;
     private Class2129 field4529;
     
     public Class851(final Class7499<? extends Class851> class7499, final Class1847 class7500) {
         super(class7499, class7500);
-        this.field4527 = Class5487.field22769;
-        this.field4528 = Class354.field2173;
+        this.field4527 = Vec3d.field22769;
+        this.field4528 = BlockPos.ZERO;
         this.field4529 = Class2129.field12430;
         this.field4108 = 5;
         this.field4110 = new Class6569(this, this);
@@ -49,7 +49,7 @@ public class Class851 extends Class760 implements Class762
     }
     
     public void method5087(final int n) {
-        this.field2432.method33569(Class851.field4526, Class9546.method35651(n, 0, 64));
+        this.field2432.method33569(Class851.field4526, MathHelper.method35651(n, 0, 64));
     }
     
     private void method5088() {
@@ -83,16 +83,16 @@ public class Class851 extends Class760 implements Class762
     public void method1659() {
         super.method1659();
         if (this.field2391.field10067) {
-            final float method35639 = Class9546.method35639((this.method1643() * 3 + this.field2424) * 0.13f + 3.1415927f);
-            final float method35640 = Class9546.method35639((this.method1643() * 3 + this.field2424 + 1) * 0.13f + 3.1415927f);
+            final float method35639 = MathHelper.cos((this.method1643() * 3 + this.field2424) * 0.13f + 3.1415927f);
+            final float method35640 = MathHelper.cos((this.method1643() * 3 + this.field2424 + 1) * 0.13f + 3.1415927f);
             if (method35639 > 0.0f) {
                 if (method35640 <= 0.0f) {
                     this.field2391.method6708(this.method1938(), this.method1941(), this.method1945(), Class8520.field35457, this.method1922(), 0.95f + this.field2423.nextFloat() * 0.05f, 0.95f + this.field2423.nextFloat() * 0.05f, false);
                 }
             }
             final int method35641 = this.method5089();
-            final float n = Class9546.method35639(this.field2399 * 0.017453292f) * (1.3f + 0.21f * method35641);
-            final float n2 = Class9546.method35638(this.field2399 * 0.017453292f) * (1.3f + 0.21f * method35641);
+            final float n = MathHelper.cos(this.field2399 * 0.017453292f) * (1.3f + 0.21f * method35641);
+            final float n2 = MathHelper.sin(this.field2399 * 0.017453292f) * (1.3f + 0.21f * method35641);
             final float n3 = (0.3f + method35639 * 0.45f) * (method35641 * 0.2f + 1.0f);
             this.field2391.method6709(Class8432.field34634, this.method1938() + n, this.method1941() + n3, this.method1945() + n2, 0.0, 0.0, 0.0);
             this.field2391.method6709(Class8432.field34634, this.method1938() - n, this.method1941() + n3, this.method1945() - n2, 0.0, 0.0, 0.0);
@@ -116,7 +116,7 @@ public class Class851 extends Class760 implements Class762
     
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.field4528 = new Class354(this).method1138(5);
+        this.field4528 = new BlockPos(this).method1138(5);
         this.method5087(0);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
@@ -125,7 +125,7 @@ public class Class851 extends Class760 implements Class762
     public void method1760(final Class51 class51) {
         super.method1760(class51);
         if (class51.method315("AX")) {
-            this.field4528 = new Class354(class51.method319("AX"), class51.method319("AY"), class51.method319("AZ"));
+            this.field4528 = new BlockPos(class51.method319("AX"), class51.method319("AY"), class51.method319("AZ"));
         }
         this.method5087(class51.method319("Size"));
     }
@@ -133,9 +133,9 @@ public class Class851 extends Class760 implements Class762
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        class51.method298("AX", this.field4528.method1074());
-        class51.method298("AY", this.field4528.method1075());
-        class51.method298("AZ", this.field4528.method1076());
+        class51.method298("AX", this.field4528.getX());
+        class51.method298("AY", this.field4528.getY());
+        class51.method298("AZ", this.field4528.getZ());
         class51.method298("Size", this.method5089());
     }
     

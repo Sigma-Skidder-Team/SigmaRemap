@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 
@@ -15,7 +17,7 @@ public class Class4025 extends Class4024
     
     public Class4025(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4025.field18115, Class179.field513)).method21773((Class7111<Comparable>)Class4025.field18116, true));
+        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4025.field18115, Direction.NORTH)).method21773((Class7111<Comparable>)Class4025.field18116, true));
     }
     
     @Override
@@ -24,17 +26,17 @@ public class Class4025 extends Class4024
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class4023.method12215(class7096);
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         return Class7521.field29288.method11843(class7096, class7097, class7098);
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         return Class7521.field29288.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
@@ -46,21 +48,21 @@ public class Class4025 extends Class4024
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Random random) {
+    public void method11823(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class4025.field18116)) {
-            final Class179 method782 = class7096.method21772((Class7111<Class179>)Class4025.field18115).method782();
-            class7097.method6709(Class6912.field27101, class7098.method1074() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.method785(), class7098.method1075() + 0.7 + (random.nextDouble() - 0.5) * 0.2 + 0.22, class7098.method1076() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.method787(), 0.0, 0.0, 0.0);
+            final Direction method782 = class7096.method21772((Class7111<Direction>)Class4025.field18115).getOpposite();
+            class7097.method6709(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getXOffset(), class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2 + 0.22, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
         }
     }
     
     @Override
-    public boolean method12216(final Class1847 class1847, final Class354 class1848, final Class7096 class1849) {
-        final Class179 method782 = class1849.method21772((Class7111<Class179>)Class4025.field18115).method782();
+    public boolean method12216(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
+        final Direction method782 = class1849.method21772((Class7111<Direction>)Class4025.field18115).getOpposite();
         return class1847.method6747(class1848.method1149(method782), method782);
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class179 class7099) {
+    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
         return (class7096.method21772((Class7111<Boolean>)Class4025.field18116) && class7096.method21772((Class7111<Comparable>)Class4025.field18115) != class7099) ? 15 : 0;
     }
     

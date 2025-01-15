@@ -17,13 +17,13 @@ public class Class8665
     public final int field36433;
     public final Class5488 field36434;
     public final Class9468 field36435;
-    public final Class354 field36436;
-    public final Class354 field36437;
+    public final BlockPos field36436;
+    public final BlockPos field36437;
     public final int field36438;
     public final List<String> field36439;
-    public final Set<Class354> field36440;
+    public final Set<BlockPos> field36440;
     
-    public Class8665(final UUID field36432, final int field36433, final Class5488 field36434, final Class9468 field36435, final Class354 field36436, final Class354 field36437, final int field36438) {
+    public Class8665(final UUID field36432, final int field36433, final Class5488 field36434, final Class9468 field36435, final BlockPos field36436, final BlockPos field36437, final int field36438) {
         this.field36439 = Lists.newArrayList();
         this.field36440 = Sets.newHashSet();
         this.field36432 = field36432;
@@ -35,7 +35,7 @@ public class Class8665
         this.field36438 = field36438;
     }
     
-    public boolean method29668(final Class354 class354) {
+    public boolean method29668(final BlockPos class354) {
         return this.field36436 != null && this.field36436.equals(class354);
     }
     

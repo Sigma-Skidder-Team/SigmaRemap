@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 
 public class Class4527 extends Class4469
@@ -11,7 +13,7 @@ public class Class4527 extends Class4469
     private static String[] field19947;
     private int field19948;
     
-    public Class4527(final Class179 class179, final Class6997 class180, final int n) {
+    public Class4527(final Direction class179, final Class6997 class180, final int n) {
         super(Class9520.field40993, class179, class180);
         this.field19948 = (n & 0x1);
     }

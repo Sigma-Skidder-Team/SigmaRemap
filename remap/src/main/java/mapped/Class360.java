@@ -25,7 +25,7 @@ public class Class360 extends Class357
     }
     
     @Override
-    public Class7096 method1164(final Random random, final Class354 class354) {
+    public Class7096 method1164(final Random random, final BlockPos class354) {
         return this.field2188;
     }
     

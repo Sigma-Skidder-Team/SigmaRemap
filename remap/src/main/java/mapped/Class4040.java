@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class4040 extends Class4036
 {
     private static String[] field18134;
@@ -24,12 +26,12 @@ public class Class4040 extends Class4036
         if (method2716.method21449() != Class2165.field12880) {
             if (method2716.method21449() == Class2165.field12881) {
                 final Class7005 class1850 = (Class7005)method2716;
-                final Class354 method2717 = class1850.method21447();
-                final Class179 method2718 = class1850.method21448();
+                final BlockPos method2717 = class1850.method21447();
+                final Direction method2718 = class1850.method21448();
                 if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2717.method1149(method2718), method2718, method2715)) {
                     return Class9355.method34677(method2715);
                 }
-                final Class354 method2719 = method2717.method1137();
+                final BlockPos method2719 = method2717.method1137();
                 final Class8059 method2720 = class1847.method6701(method2717).method21697();
                 if (class1847.method6702(method2717).method21779() == Class7558.field29976 || method2720 == Class8059.field33183) {
                     if (class1847.method6961(method2719)) {

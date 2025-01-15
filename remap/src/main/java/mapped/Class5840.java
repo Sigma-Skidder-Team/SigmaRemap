@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class5840<T extends Class791> extends Class5839<T>
 {
     private static String[] field23942;
@@ -50,10 +52,10 @@ public class Class5840<T extends Class791> extends Class5839<T>
             this.field23936.field25185 = 0.0f;
         }
         else {
-            this.field23936.field25184 = 0.35f * Class9546.method35638(0.6f * n3);
-            this.field23936.field25185 = 0.35f * Class9546.method35638(0.6f * n3);
-            this.field23940.field25183 = -0.75f * Class9546.method35638(0.3f * n3);
-            this.field23941.field25183 = 0.75f * Class9546.method35638(0.3f * n3);
+            this.field23936.field25184 = 0.35f * MathHelper.sin(0.6f * n3);
+            this.field23936.field25185 = 0.35f * MathHelper.sin(0.6f * n3);
+            this.field23940.field25183 = -0.75f * MathHelper.sin(0.3f * n3);
+            this.field23941.field25183 = 0.75f * MathHelper.sin(0.3f * n3);
         }
         if (method4373) {
             if (method4374 >= 15) {
@@ -79,9 +81,9 @@ public class Class5840<T extends Class791> extends Class5839<T>
             this.field23938.field25185 = 0.5707964f;
             this.field23939.field25185 = -0.5707964f;
             if (method4375) {
-                this.field23936.field25183 = 1.5707964f + 0.2f * Class9546.method35638(n3 * 0.6f);
-                this.field23940.field25183 = -0.4f - 0.2f * Class9546.method35638(n3 * 0.6f);
-                this.field23941.field25183 = -0.4f - 0.2f * Class9546.method35638(n3 * 0.6f);
+                this.field23936.field25183 = 1.5707964f + 0.2f * MathHelper.sin(n3 * 0.6f);
+                this.field23940.field25183 = -0.4f - 0.2f * MathHelper.sin(n3 * 0.6f);
+                this.field23941.field25183 = -0.4f - 0.2f * MathHelper.sin(n3 * 0.6f);
             }
             if (method4376) {
                 this.field23936.field25183 = 2.1707964f;
@@ -90,18 +92,18 @@ public class Class5840<T extends Class791> extends Class5839<T>
             }
         }
         if (this.field23944 > 0.0f) {
-            this.field23938.field25183 = -0.6f * Class9546.method35638(n3 * 0.15f);
-            this.field23939.field25183 = 0.6f * Class9546.method35638(n3 * 0.15f);
-            this.field23940.field25183 = 0.3f * Class9546.method35638(n3 * 0.25f);
-            this.field23941.field25183 = -0.3f * Class9546.method35638(n3 * 0.25f);
+            this.field23938.field25183 = -0.6f * MathHelper.sin(n3 * 0.15f);
+            this.field23939.field25183 = 0.6f * MathHelper.sin(n3 * 0.15f);
+            this.field23940.field25183 = 0.3f * MathHelper.sin(n3 * 0.25f);
+            this.field23941.field25183 = -0.3f * MathHelper.sin(n3 * 0.25f);
             this.field23936.field25183 = Class9102.method32896(this.field23936.field25183, 1.5707964f, this.field23944);
         }
         if (this.field23945 > 0.0f) {
             this.field23936.field25183 = Class9102.method32896(this.field23936.field25183, 2.0561945f, this.field23945);
-            this.field23938.field25183 = -0.5f * Class9546.method35638(n3 * 0.5f);
-            this.field23939.field25183 = 0.5f * Class9546.method35638(n3 * 0.5f);
-            this.field23940.field25183 = 0.5f * Class9546.method35638(n3 * 0.5f);
-            this.field23941.field25183 = -0.5f * Class9546.method35638(n3 * 0.5f);
+            this.field23938.field25183 = -0.5f * MathHelper.sin(n3 * 0.5f);
+            this.field23939.field25183 = 0.5f * MathHelper.sin(n3 * 0.5f);
+            this.field23940.field25183 = 0.5f * MathHelper.sin(n3 * 0.5f);
+            this.field23941.field25183 = -0.5f * MathHelper.sin(n3 * 0.5f);
         }
     }
 }

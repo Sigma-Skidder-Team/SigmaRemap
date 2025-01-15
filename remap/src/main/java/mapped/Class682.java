@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class682 extends Class648
 {
     private static final Class1932 field3725;
@@ -35,7 +37,7 @@ public class Class682 extends Class648
         Class8726.method30013(Class2050.field11693, Class2135.field12460);
         Class565.method3188(this.field3426, this.field3427, 0.0f, this.field3726 ? 20.0f : 0.0f, 20, this.field3425, 32, 64);
         this.method3354(method5277, n, n2);
-        this.method3297(field4643, this.method3369(), this.field3426 + 24, this.field3427 + (this.field3425 - 8) / 2, 0xE0E0E0 | Class9546.method35649(this.field3433 * 255.0f) << 24);
+        this.method3297(field4643, this.method3369(), this.field3426 + 24, this.field3427 + (this.field3425 - 8) / 2, 0xE0E0E0 | MathHelper.method35649(this.field3433 * 255.0f) << 24);
     }
     
     static {

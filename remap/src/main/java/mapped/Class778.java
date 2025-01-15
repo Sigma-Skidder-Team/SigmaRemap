@@ -4,9 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.UUID;
 
 public class Class778 extends Class776 implements Class768
@@ -199,11 +200,11 @@ public class Class778 extends Class776 implements Class768
     @Override
     public void method4252(final Class511 class511, final float n) {
         if (!this.method4319()) {
-            final Class5487 method1935 = class511.method1935();
+            final Vec3d method1935 = class511.method1935();
             final double n2 = class511.method1938() + method1935.field22770 - this.method1938();
             final double n3 = class511.method1944() - 1.100000023841858 - this.method1941();
             final double n4 = class511.method1945() + method1935.field22772 - this.method1945();
-            final float method1936 = Class9546.method35641(n2 * n2 + n4 * n4);
+            final float method1936 = MathHelper.method35641(n2 * n2 + n4 * n4);
             Class8061 class512 = Class8644.field36277;
             if (!(class511 instanceof Class776)) {
                 if (method1936 >= 8.0f && !class511.method2653(Class9439.field40475)) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class9191
 {
     private static String[] field38960;
     
-    private static Class4479 method33627(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179, final int n4, final Class1964 class180) {
+    private static Class4479 method33627(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4, final Class1964 class180) {
         final int nextInt = random.nextInt(100);
         if (nextInt < 80) {
             if (nextInt < 70) {
@@ -36,7 +38,7 @@ public class Class9191
         return null;
     }
     
-    private static Class4479 method33628(final Class4473 class4473, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class4474, final int n4) {
+    private static Class4479 method33628(final Class4473 class4473, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class4474, final int n4) {
         if (n4 > 8) {
             return null;
         }

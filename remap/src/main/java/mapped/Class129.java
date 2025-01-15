@@ -37,12 +37,12 @@ public class Class129 extends Class126
     @Override
     public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
         if (class8321.method27622() == Class7739.field31521) {
-            final Class354 class8323 = class8322.method23579(Class6683.field26367);
+            final BlockPos class8323 = class8322.method23579(Class6683.field26367);
             if (class8323 != null) {
                 final Class1849 method23588 = class8322.method23588();
-                final Class354 method23589 = method23588.method6915(this.field390, class8323, this.field393, this.field394);
+                final BlockPos method23589 = method23588.method6915(this.field390, class8323, this.field393, this.field394);
                 if (method23589 != null) {
-                    final Class8321 method23590 = Class4094.method12326(method23588, method23589.method1074(), method23589.method1076(), this.field392, true, true);
+                    final Class8321 method23590 = Class4094.method12326(method23588, method23589.getX(), method23589.getZ(), this.field392, true, true);
                     Class4094.method12335(method23588, method23590);
                     Class6356.method18917(method23590, method23589, "+", this.field391);
                     method23590.method27665(new Class2259("filled_map." + this.field390.toLowerCase(Locale.ROOT), new Object[0]));

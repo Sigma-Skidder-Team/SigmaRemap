@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.List;
 import java.io.InputStream;
 import java.io.IOException;
@@ -151,8 +153,8 @@ public class Class6110
         return class1774.method6359(new Class1932(property));
     }
     
-    public static List method18260(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class179 class1858, final List list) {
-        if (class1858 == Class179.field512 || class1858 == Class179.field511) {
+    public static List method18260(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Direction class1858, final List list) {
+        if (class1858 == Direction.UP || class1858 == Direction.DOWN) {
             return list;
         }
         if (!Class6110.field24807) {
@@ -174,7 +176,7 @@ public class Class6110
         return method18264(class1855, class1856, class1857, class1858, list);
     }
     
-    private static List method18261(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class179 class1858, final List list) {
+    private static List method18261(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Direction class1858, final List list) {
         final Class3833 method21696 = class1855.method6701(class1857.method1137()).method21696();
         final boolean b = method21696 == Class7521.field29331 || method21696 == Class7521.field29329;
         if (!Class8571.method28911()) {
@@ -202,7 +204,7 @@ public class Class6110
         return list;
     }
     
-    private static List method18262(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class179 class1858, final List list) {
+    private static List method18262(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Direction class1858, final List list) {
         if (!Class6110.field24786) {
             return list;
         }
@@ -212,8 +214,8 @@ public class Class6110
         return (method18266(class1857.method1139(), class1858, class1855) != Class7521.field29637) ? list : Class6110.field24802.method18691(class1856, class1858, Class6110.field24815);
     }
     
-    private static List method18263(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class179 class1858, final List list) {
-        final Class3833 method18266 = method18266(class1857, Class179.field512, class1855);
+    private static List method18263(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Direction class1858, final List list) {
+        final Class3833 method18266 = method18266(class1857, Direction.UP, class1855);
         final boolean b = method18266 == Class7521.field29331 || method18266 == Class7521.field29329;
         if (!Class8571.method28911()) {
             if (!b) {
@@ -240,8 +242,8 @@ public class Class6110
         return list;
     }
     
-    private static List method18264(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class179 class1858, final List list) {
-        if (method18266(class1857, Class179.field512, class1855) == Class7521.field29637) {
+    private static List method18264(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Direction class1858, final List list) {
+        if (method18266(class1857, Direction.UP, class1855) == Class7521.field29637) {
             if (Class6110.field24786) {
                 if (method18266(class1857, class1858, class1855) == Class7521.field29637) {
                     return Class6110.field24803.method18691(class1856, class1858, Class6110.field24815);
@@ -251,7 +253,7 @@ public class Class6110
         return list;
     }
     
-    private static List method18265(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class179 class1858, final List list) {
+    private static List method18265(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Direction class1858, final List list) {
         final Class3833 method21696 = class1855.method6701(class1857.method1137()).method21696();
         final boolean b = method21696 == Class7521.field29331 || method21696 == Class7521.field29329;
         if (!Class8571.method28911()) {
@@ -279,7 +281,7 @@ public class Class6110
         return list;
     }
     
-    private static Class3833 method18266(final Class354 class354, final Class179 class355, final Class1855 class356) {
+    private static Class3833 method18266(final BlockPos class354, final Direction class355, final Class1855 class356) {
         return class356.method6701(class354.method1149(class355)).method21696();
     }
     

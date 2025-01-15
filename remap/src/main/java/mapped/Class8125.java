@@ -5,11 +5,11 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
-import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8125
 {
@@ -20,11 +20,11 @@ public class Class8125
     }
     
     private static int method26751(final Class7492 class7492, final String s) throws CommandSyntaxException {
-        final Class354 class7493 = new Class354(class7492.method23249());
-        final Class354 method6915 = class7492.method23250().method6915(s, class7493, 100, false);
+        final BlockPos class7493 = new BlockPos(class7492.method23249());
+        final BlockPos method6915 = class7492.method23250().method6915(s, class7493, 100, false);
         if (method6915 != null) {
-            final int method6916 = Class9546.method35642(method26752(class7493.method1074(), class7493.method1076(), method6915.method1074(), method6915.method1076()));
-            class7492.method23257(new Class2259("commands.locate.success", new Object[] { s, Class9479.method35299(new Class2259("chat.coordinates", new Object[] { method6915.method1074(), "~", method6915.method1076() })).method8467(class7495 -> {
+            final int method6916 = MathHelper.method35642(method26752(class7493.getX(), class7493.getZ(), method6915.getX(), method6915.getZ()));
+            class7492.method23257(new Class2259("commands.locate.success", new Object[] { s, Class9479.method35299(new Class2259("chat.coordinates", new Object[] { method6915.getX(), "~", method6915.getZ() })).method8467(class7495 -> {
                     class7495.method30413(Class2116.field12319);
                     new Class9485(Class2075.field11974, "/tp @s " + class7494.method1074() + " ~ " + class7494.method1076());
                     final Class9485 class7496;
@@ -44,7 +44,7 @@ public class Class8125
     private static float method26752(final int n, final int n2, final int n3, final int n4) {
         final int n5 = n3 - n;
         final int n6 = n4 - n2;
-        return Class9546.method35640((float)(n5 * n5 + n6 * n6));
+        return MathHelper.method35640((float)(n5 * n5 + n6 * n6));
     }
     
     static {

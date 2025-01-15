@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class7727
 {
     private static String[] field30731;
@@ -19,11 +22,11 @@ public class Class7727
         this.field30732 = field30732;
     }
     
-    public void method24666(final Class5487 class5487) {
+    public void method24666(final Vec3d class5487) {
         this.method24668(class5487.field22770, class5487.field22771, class5487.field22772);
     }
     
-    public void method24667(final Class399 class399, final float n, final float n2) {
+    public void method24667(final Entity class399, final float n, final float n2) {
         this.method24669(class399.method1938(), method24678(class399), class399.method1945(), n, n2);
     }
     
@@ -53,7 +56,7 @@ public class Class7727
             this.field30732.field2400 = this.method24677(this.field30732.field2400, this.method24675(), this.field30734);
         }
         if (!this.field30732.method4150().method24731()) {
-            this.field30732.field2953 = Class9546.method35672(this.field30732.field2953, this.field30732.field2951, (float)this.field30732.method4174());
+            this.field30732.field2953 = MathHelper.method35672(this.field30732.field2953, this.field30732.field2951, (float)this.field30732.method4174());
         }
     }
     
@@ -81,18 +84,18 @@ public class Class7727
         final double n = this.field30736 - this.field30732.method1938();
         final double n2 = this.field30737 - this.field30732.method1944();
         final double n3 = this.field30738 - this.field30732.method1945();
-        return (float)(-(Class9546.method35693(n2, Class9546.method35641(n * n + n3 * n3)) * 57.2957763671875));
+        return (float)(-(MathHelper.method35693(n2, MathHelper.method35641(n * n + n3 * n3)) * 57.2957763671875));
     }
     
     public float method24676() {
-        return (float)(Class9546.method35693(this.field30738 - this.field30732.method1945(), this.field30736 - this.field30732.method1938()) * 57.2957763671875) - 90.0f;
+        return (float)(MathHelper.method35693(this.field30738 - this.field30732.method1945(), this.field30736 - this.field30732.method1938()) * 57.2957763671875) - 90.0f;
     }
     
     public float method24677(final float n, final float n2, final float n3) {
-        return n + Class9546.method35653(Class9546.method35670(n, n2), -n3, n3);
+        return n + MathHelper.method35653(MathHelper.method35670(n, n2), -n3, n3);
     }
     
-    private static double method24678(final Class399 class399) {
+    private static double method24678(final Entity class399) {
         return (class399 instanceof Class511) ? class399.method1944() : ((class399.method1886().field25074 + class399.method1886().field25077) / 2.0);
     }
 }

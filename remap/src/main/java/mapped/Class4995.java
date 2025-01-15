@@ -4,8 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
-import java.util.Set;
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Map;
@@ -110,7 +110,7 @@ public class Class4995
             final Class181[] values = Class181.values();
             for (int i = 0; i < values.length; ++i) {
                 final Class181 class181 = values[i];
-                if (class181.method596().equals(s)) {
+                if (class181.getName().equals(s)) {
                     return class181;
                 }
                 if (class181.method814().equals(s)) {
@@ -245,11 +245,11 @@ public class Class4995
         Class8571.method28848("[CustomGuis] " + str);
     }
     
-    private boolean method15168(final Class2005 class2005, final Class354 class2006, final Class1852 class2007) {
-        return this.field21476 == class2005 && (this.field21479 == null || Class7980.method26019(class2007.method6959(class2006), this.field21479)) && (this.field21480 == null || this.field21480.method24697(class2006.method1075()));
+    private boolean method15168(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007) {
+        return this.field21476 == class2005 && (this.field21479 == null || Class7980.method26019(class2007.method6959(class2006), this.field21479)) && (this.field21480 == null || this.field21480.method24697(class2006.getY()));
     }
     
-    public boolean method15169(final Class2005 class2005, final Class354 class2006, final Class1852 class2007, final Class527 class2008) {
+    public boolean method15169(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final Class527 class2008) {
         if (!this.method15168(class2005, class2006, class2007)) {
             return false;
         }
@@ -280,7 +280,7 @@ public class Class4995
         return (method3026 != null) ? method3026.method8459() : null;
     }
     
-    private boolean method15171(final Class354 class354, final Class1856 class355) {
+    private boolean method15171(final BlockPos class354, final Class1856 class355) {
         final Class436 method6727 = class355.method6727(class354);
         if (method6727 instanceof Class490) {
             final Class490 class356 = (Class490)method6727;
@@ -289,7 +289,7 @@ public class Class4995
         return false;
     }
     
-    private boolean method15172(final Class354 class354, final Class1856 class355) {
+    private boolean method15172(final BlockPos class354, final Class1856 class355) {
         final Class436 method6727 = class355.method6727(class354);
         if (!(method6727 instanceof Class475)) {
             return method6727 instanceof Class477 && this.method15174((Class477)method6727, class354, class355);
@@ -297,12 +297,12 @@ public class Class4995
         return this.method15173((Class475)method6727, class354, class355);
     }
     
-    private boolean method15173(final Class475 class475, final Class354 class476, final Class1856 class477) {
+    private boolean method15173(final Class475 class475, final BlockPos class476, final Class1856 class477) {
         final Class7096 method6701 = class477.method6701(class476);
         return this.method15175((method6701.method21771(Class3865.field17498) ? method6701.method21772(Class3865.field17498) : Class180.field530) == Class180.field530, class475 instanceof Class478, Class7890.field32397, false);
     }
     
-    private boolean method15174(final Class477 class477, final Class354 class478, final Class1856 class479) {
+    private boolean method15174(final Class477 class477, final BlockPos class478, final Class1856 class479) {
         return this.method15175(false, false, false, true);
     }
     
@@ -310,7 +310,7 @@ public class Class4995
         return (this.field21481 == null || this.field21481 == b) && (this.field21482 == null || this.field21482 == b2) && (this.field21483 == null || this.field21483 == b3) && (this.field21484 == null || this.field21484 == b4);
     }
     
-    private boolean method15176(final Class354 class354, final Class1856 class355) {
+    private boolean method15176(final BlockPos class354, final Class1856 class355) {
         final Class436 method6727 = class355.method6727(class354);
         if (method6727 instanceof Class458) {
             final Class458 class356 = (Class458)method6727;
@@ -323,7 +323,7 @@ public class Class4995
         return (class458 instanceof Class459) ? Class2004.field11253 : Class2004.field11252;
     }
     
-    private boolean method15178(final Class354 class354, final Class1856 class355) {
+    private boolean method15178(final BlockPos class354, final Class1856 class355) {
         final Class436 method6727 = class355.method6727(class354);
         if (method6727 instanceof Class440) {
             final Class440 class356 = (Class440)method6727;
@@ -332,7 +332,7 @@ public class Class4995
         return false;
     }
     
-    public boolean method15179(final Class2005 class2005, final Class399 class2006, final Class1852 class2007) {
+    public boolean method15179(final Class2005 class2005, final Entity class2006, final Class1852 class2007) {
         if (!this.method15168(class2005, class2006.method1894(), class2007)) {
             return false;
         }
@@ -352,7 +352,7 @@ public class Class4995
         }
     }
     
-    private boolean method15180(final Class399 class399, final Class1856 class400) {
+    private boolean method15180(final Entity class399, final Class1856 class400) {
         if (class399 instanceof Class824) {
             final Class824 class401 = (Class824)class399;
             if (this.field21486 != null) {
@@ -366,7 +366,7 @@ public class Class4995
         return false;
     }
     
-    private boolean method15181(final Class399 class399, final Class1856 class400) {
+    private boolean method15181(final Entity class399, final Class1856 class400) {
         if (!(class399 instanceof Class806)) {
             return false;
         }

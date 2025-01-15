@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+
 import java.util.Set;
 
 public class Class150 implements Class122
@@ -25,8 +27,8 @@ public class Class150 implements Class122
     
     @Override
     public boolean test(final Class7529 class7529) {
-        final Class399 class7530 = class7529.method23579(this.field442.method8153());
-        final Class354 class7531 = class7529.method23579(Class6683.field26367);
+        final Entity class7530 = class7529.method23579(this.field442.method8153());
+        final BlockPos class7531 = class7529.method23579(Class6683.field26367);
         return this.field441.method27016(class7529.method23588(), (class7531 == null) ? null : new Class5487(class7531), class7530);
     }
     

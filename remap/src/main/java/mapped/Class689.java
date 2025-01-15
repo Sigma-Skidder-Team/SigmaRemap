@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongSet;
 import java.util.EnumMap;
-import com.mojang.datafixers.util.Either;
+
 import com.google.common.collect.UnmodifiableIterator;
 import java.util.Iterator;
 import java.util.Collection;
@@ -19,6 +19,10 @@ import it.unimi.dsi.fastutil.longs.LongSets;
 import java.util.Objects;
 import com.google.common.collect.Lists;
 import com.google.common.base.Strings;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.Map;
@@ -57,7 +61,7 @@ public class Class689 extends Class565
     public void method3828() {
         this.field3792.method5327().method15297("debug");
         Class8726.method30059();
-        final Class399 method5303 = this.field3792.method5303();
+        final Entity method5303 = this.field3792.method5303();
         this.field3794 = method5303.method1748(20.0, 0.0f, false);
         this.field3795 = method5303.method1748(20.0, 0.0f, true);
         this.method3829();
@@ -177,12 +181,12 @@ public class Class689 extends Class565
         else {
             s = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field3792.field4684.method4120(), method5287, method5288);
         }
-        final Class354 class354 = new Class354(this.field3792.method5303());
+        final BlockPos class354 = new BlockPos(this.field3792.method5303());
         if (this.field3792.method5317()) {
-            return Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + this.field3792.method5235() + "/" + Class7932.method25729() + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.field4683.method6816(), this.field3792.field4683.method6726(), "", String.format("Chunk-relative: %d %d %d", class354.method1074() & 0xF, class354.method1075() & 0xF, class354.method1076() & 0xF) });
+            return Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + this.field3792.method5235() + "/" + Class7932.method25729() + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.field4683.method6816(), this.field3792.field4683.method6726(), "", String.format("Chunk-relative: %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF) });
         }
-        final Class399 method5289 = this.field3792.method5303();
-        final Class179 method5290 = method5289.method1882();
+        final Entity method5289 = this.field3792.method5303();
+        final Direction method5290 = method5289.method1882();
         String s2 = null;
         switch (Class8226.field33788[method5290.ordinal()]) {
             case 1: {
@@ -225,9 +229,9 @@ public class Class689 extends Class565
         arrayList.add(Class383.method1276(this.field3792.field4683.field10063.method20487()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
         arrayList.add("");
         arrayList.add(String.format(Locale.ROOT, "XYZ: %.3f / %.5f / %.3f", this.field3792.method5303().method1938(), this.field3792.method5303().method1941(), this.field3792.method5303().method1945()));
-        arrayList.add(String.format("Block: %d %d %d", class354.method1074(), class354.method1075(), class354.method1076()));
-        arrayList.add(String.format("Chunk: %d %d %d in %d %d %d", class354.method1074() & 0xF, class354.method1075() & 0xF, class354.method1076() & 0xF, class354.method1074() >> 4, class354.method1075() >> 4, class354.method1076() >> 4));
-        arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, Class9546.method35668(method5289.field2399), Class9546.method35668(method5289.field2400)));
+        arrayList.add(String.format("Block: %d %d %d", class354.getX(), class354.getY(), class354.getZ()));
+        arrayList.add(String.format("Chunk: %d %d %d in %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF, class354.getX() >> 4, class354.getY() >> 4, class354.getZ() >> 4));
+        arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, MathHelper.method35668(method5289.field2399), MathHelper.method35668(method5289.field2400)));
         if (this.field3792.field4683 != null) {
             if (this.field3792.field4683.method6971(class354)) {
                 final Class1862 method5293 = this.method3836();
@@ -247,7 +251,7 @@ public class Class689 extends Class565
                     final StringBuilder sb = new StringBuilder("CH");
                     for (final Class2020 class356 : Class2020.values()) {
                         if (class356.method8061()) {
-                            sb.append(" ").append(Class689.field3791.get(class356)).append(": ").append(method5293.method7018(class356, class354.method1074(), class354.method1076()));
+                            sb.append(" ").append(Class689.field3791.get(class356)).append(": ").append(method5293.method7018(class356, class354.getX(), class354.getZ()));
                         }
                     }
                     arrayList.add(sb.toString());
@@ -257,7 +261,7 @@ public class Class689 extends Class565
                         if (class357.method8062()) {
                             sb.append(" ").append(Class689.field3791.get(class357)).append(": ");
                             if (method5294 != null) {
-                                sb.append(method5294.method7018(class357, class354.method1074(), class354.method1076()));
+                                sb.append(method5294.method7018(class357, class354.getX(), class354.getZ()));
                             }
                             else {
                                 sb.append("??");
@@ -265,7 +269,7 @@ public class Class689 extends Class565
                         }
                     }
                     arrayList.add(sb.toString());
-                    if (class354.method1075() >= 0 && class354.method1075() < 256) {
+                    if (class354.getY() >= 0 && class354.getY() < 256) {
                         arrayList.add("Biome: " + Class90.field217.method503(this.field3792.field4683.method6959(class354)));
                         long method5296 = 0L;
                         float method5297 = 0.0f;
@@ -290,12 +294,12 @@ public class Class689 extends Class565
             arrayList.add("Shader: " + method5298.method7248());
         }
         if (this.field3794.method21449() == Class2165.field12881) {
-            final Class354 method5299 = ((Class7005)this.field3794).method21447();
-            arrayList.add(String.format("Looking at block: %d %d %d", method5299.method1074(), method5299.method1075(), method5299.method1076()));
+            final BlockPos method5299 = ((Class7005)this.field3794).method21447();
+            arrayList.add(String.format("Looking at block: %d %d %d", method5299.getX(), method5299.getY(), method5299.getZ()));
         }
         if (this.field3795.method21449() == Class2165.field12881) {
-            final Class354 method5300 = ((Class7005)this.field3795).method21447();
-            arrayList.add(String.format("Looking at liquid: %d %d %d", method5300.method1074(), method5300.method1075(), method5300.method1076()));
+            final BlockPos method5300 = ((Class7005)this.field3795).method21447();
+            arrayList.add(String.format("Looking at liquid: %d %d %d", method5300.getX(), method5300.getY(), method5300.getZ()));
         }
         arrayList.add(this.field3792.method5299().method6436());
         return arrayList;
@@ -400,7 +404,7 @@ public class Class689 extends Class565
                     arrayList.add("#" + iterator5.next());
                 }
             }
-            final Class399 field4690 = this.field3792.field4690;
+            final Entity field4690 = this.field3792.field4690;
             if (field4690 != null) {
                 arrayList.add("");
                 arrayList.add(Class2116.field12328 + "Targeted Entity");
@@ -461,7 +465,7 @@ public class Class689 extends Class565
             while (i != method35170) {
                 final int method35175 = class9462.method35168(method35171[i], b ? 30 : 60, b ? 60 : 20);
                 final int n6 = b ? 100 : 60;
-                final int method35176 = this.method3840(Class9546.method35651(method35175, 0, n6), 0, n6 / 2, n6);
+                final int method35176 = this.method3840(MathHelper.method35651(method35175, 0, n6), 0, n6 / 2, n6);
                 final int n7 = method35176 >> 24 & 0xFF;
                 final int n8 = method35176 >> 16 & 0xFF;
                 final int n9 = method35176 >> 8 & 0xFF;
@@ -515,7 +519,7 @@ public class Class689 extends Class565
     }
     
     private int method3841(final int n, final int n2, final float n3) {
-        return Class9546.method35651((int)Class9546.method35700(n3, (float)(n >> 24 & 0xFF), (float)(n2 >> 24 & 0xFF)), 0, 255) << 24 | Class9546.method35651((int)Class9546.method35700(n3, (float)(n >> 16 & 0xFF), (float)(n2 >> 16 & 0xFF)), 0, 255) << 16 | Class9546.method35651((int)Class9546.method35700(n3, (float)(n >> 8 & 0xFF), (float)(n2 >> 8 & 0xFF)), 0, 255) << 8 | Class9546.method35651((int)Class9546.method35700(n3, (float)(n & 0xFF), (float)(n2 & 0xFF)), 0, 255);
+        return MathHelper.method35651((int) MathHelper.method35700(n3, (float)(n >> 24 & 0xFF), (float)(n2 >> 24 & 0xFF)), 0, 255) << 24 | MathHelper.method35651((int) MathHelper.method35700(n3, (float)(n >> 16 & 0xFF), (float)(n2 >> 16 & 0xFF)), 0, 255) << 16 | MathHelper.method35651((int) MathHelper.method35700(n3, (float)(n >> 8 & 0xFF), (float)(n2 >> 8 & 0xFF)), 0, 255) << 8 | MathHelper.method35651((int) MathHelper.method35700(n3, (float)(n & 0xFF), (float)(n2 & 0xFF)), 0, 255);
     }
     
     private static long method3842(final long n) {

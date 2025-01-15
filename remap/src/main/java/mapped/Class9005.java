@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.BitSet;
 
 public final class Class9005 extends Class9006
 {
     @Override
-    public boolean method32210(final Class179 class179, final Class179 class180) {
+    public boolean method32210(final Direction class179, final Direction class180) {
         return false;
     }
     

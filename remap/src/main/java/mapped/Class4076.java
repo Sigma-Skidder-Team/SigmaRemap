@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Multimap;
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 
 public class Class4076 extends Class4071
@@ -22,8 +24,8 @@ public class Class4076 extends Class4071
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
-        if (class7075.method21648() != Class179.field511) {
+        final BlockPos method21655 = class7075.method21639();
+        if (class7075.method21648() != Direction.DOWN) {
             if (method21654.method6701(method21655.method1137()).method21706()) {
                 final Class7096 class7076 = Class4076.field18180.get(method21654.method6701(method21655).method21696());
                 if (class7076 != null) {

@@ -47,10 +47,10 @@ public class Class4298 implements Class4252<Class5800>
         this.field19272 = new byte[this.method12908(class1862, n)];
         this.field19269 = this.method12907(new Class8654(this.method12906()), class1862, n);
         this.field19273 = Lists.newArrayList();
-        for (final Map.Entry<Class354, V> entry2 : class1862.method7066().entrySet()) {
-            final Class354 class1863 = entry2.getKey();
+        for (final Map.Entry<BlockPos, V> entry2 : class1862.method7066().entrySet()) {
+            final BlockPos class1863 = entry2.getKey();
             final Class436 class1864 = (Class436)entry2.getValue();
-            final int n2 = class1863.method1075() >> 4;
+            final int n2 = class1863.getY() >> 4;
             if (!this.method12912() && (n & 1 << n2) == 0x0) {
                 continue;
             }

@@ -83,22 +83,22 @@ public class Class6357 extends Class6354
             return null;
         }
         if (class513.field2391.method6789().method20487() != Class383.field2224) {
-            final Class354 class514 = new Class354(class513);
+            final BlockPos class514 = new BlockPos(class513);
             final List<? super Class377> list = this.field25434.method6921().method7200(Class8912.field37458, class514, 64, Class2045.field11651).collect((Collector<? super Class377, ?, List<? super Class377>>)Collectors.toList());
             int n = 0;
-            Class5487 class515 = Class5487.field22769;
+            Vec3d class515 = Vec3d.field22769;
             final Iterator<? super Class377> iterator = list.iterator();
             while (iterator.hasNext()) {
-                final Class354 method1259 = iterator.next().method1259();
-                class515 = class515.method16744(method1259.method1074(), method1259.method1075(), method1259.method1076());
+                final BlockPos method1259 = iterator.next().method1259();
+                class515 = class515.method16744(method1259.getX(), method1259.getY(), method1259.getZ());
                 ++n;
             }
-            Class354 class516;
+            BlockPos class516;
             if (n <= 0) {
                 class516 = class514;
             }
             else {
-                class516 = new Class354(class515.method16748(1.0 / n));
+                class516 = new BlockPos(class515.method16748(1.0 / n));
             }
             final Class8792 method1260 = this.method18929(class513.method2940(), class516);
             boolean b = false;
@@ -131,7 +131,7 @@ public class Class6357 extends Class6354
         return null;
     }
     
-    private Class8792 method18929(final Class1849 class1849, final Class354 class1850) {
+    private Class8792 method18929(final Class1849 class1849, final BlockPos class1850) {
         final Class8792 method6927 = class1849.method6927(class1850);
         return (method6927 == null) ? new Class8792(this.method18931(), class1849, class1850) : method6927;
     }
@@ -170,7 +170,7 @@ public class Class6357 extends Class6354
     }
     
     @Nullable
-    public Class8792 method18932(final Class354 class354, final int n) {
+    public Class8792 method18932(final BlockPos class354, final int n) {
         Class8792 class355 = null;
         double n2 = n;
         for (final Class8792 class356 : this.field25433.values()) {

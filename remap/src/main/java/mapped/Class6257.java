@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.EnumMap;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -103,10 +105,10 @@ public abstract class Class6257
         return this.field25118.method894(class8321.method27622());
     }
     
-    public void method18601(final Class511 class511, final Class399 class512, final int n) {
+    public void method18601(final Class511 class511, final Entity class512, final int n) {
     }
     
-    public void method18602(final Class511 class511, final Class399 class512, final int n) {
+    public void method18602(final Class511 class511, final Entity class512, final int n) {
     }
     
     public boolean method18603() {

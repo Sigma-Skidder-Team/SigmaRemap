@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.AbstractIterator;
 
-public final class Class7248 extends AbstractIterator<Class354>
+public final class Class7248 extends AbstractIterator<BlockPos>
 {
     private static String[] field28097;
     public final Class8243 field28098;
@@ -29,7 +29,7 @@ public final class Class7248 extends AbstractIterator<Class354>
         this.field28099 = new Class385();
     }
     
-    public Class354 computeNext() {
-        return this.field28098.method27301() ? this.field28099.method1284(this.field28098.method27302(), this.field28098.method27303(), this.field28098.method27304()) : ((Class354)this.endOfData());
+    public BlockPos computeNext() {
+        return this.field28098.method27301() ? this.field28099.method1284(this.field28098.method27302(), this.field28098.method27303(), this.field28098.method27304()) : ((BlockPos)this.endOfData());
     }
 }

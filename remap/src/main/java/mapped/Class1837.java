@@ -4,7 +4,9 @@
 
 package mapped;
 
-public abstract class Class1837<T extends Class399, M extends Class5845<T>> extends Class1799<T, M>
+import net.minecraft.entity.Entity;
+
+public abstract class Class1837<T extends Entity, M extends Class5845<T>> extends Class1799<T, M>
 {
     public Class1837(final Class4778<T, M> class4778) {
         super(class4778);

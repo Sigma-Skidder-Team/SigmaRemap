@@ -6,6 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.util.math.MathHelper;
 
 public class Class695 extends Class527
 {
@@ -32,7 +33,7 @@ public class Class695 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        final String string = Class9546.method35651(this.field3823.method19326(), 0, 100) + "%";
+        final String string = MathHelper.method35651(this.field3823.method19326(), 0, 100) + "%";
         final long method27837 = Class8349.method27837();
         if (method27837 - this.field3824 > 2000L) {
             this.field3824 = method27837;

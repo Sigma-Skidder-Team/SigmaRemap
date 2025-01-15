@@ -6,10 +6,8 @@ package mapped;
 
 import java.awt.Color;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.FileInputStream;
-import java.io.OutputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileOutputStream;
 import java.util.Map;
@@ -388,8 +386,8 @@ public class Class7658
         final int n2 = class1862.method7019().field32291 * 16;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
-                final Class354 class1863 = new Class354(n + i, 64, n2 + j);
-                final int method24279 = this.method24279(new Class354(class1863.method1074(), class1862.method7017(Class2020.field11522).method35713(i, j) - 1, class1863.method1076()), b);
+                final BlockPos class1863 = new BlockPos(n + i, 64, n2 + j);
+                final int method24279 = this.method24279(new BlockPos(class1863.getX(), class1862.method7017(Class2020.field11522).method35713(i, j) - 1, class1863.getZ()), b);
                 byteBuffer.put((byte)(method24279 >> 16 & 0xFF));
                 byteBuffer.put((byte)(method24279 >> 8 & 0xFF));
                 byteBuffer.put((byte)(method24279 & 0xFF));
@@ -399,7 +397,7 @@ public class Class7658
         return byteBuffer;
     }
     
-    public int method24279(Class354 method1139, final boolean b) {
+    public int method24279(BlockPos method1139, final boolean b) {
         if (this.field30396.field4683.method6701(method1139).method21696() == Class7521.field29147) {
             method1139 = method1139.method1139();
         }
@@ -417,9 +415,9 @@ public class Class7658
             n = Class8059.field33161.method26446().field37084;
         }
         int rgba = new Color((n & 0xFF0000) >> 16, (n & 0xFF00) >> 8, n & 0xFF).getRGB();
-        boolean b2 = Math.abs(method1139.method1076() % 16) != 15 && Math.abs(method1139.method1076() % 16) != 0;
-        if (method1139.method1076() < 0) {
-            b2 = (Math.abs(method1139.method1076() % 16) != 16 && Math.abs(method1139.method1076() % 16) != 0);
+        boolean b2 = Math.abs(method1139.getZ() % 16) != 15 && Math.abs(method1139.getZ() % 16) != 0;
+        if (method1139.getZ() < 0) {
+            b2 = (Math.abs(method1139.getZ() % 16) != 16 && Math.abs(method1139.getZ() % 16) != 0);
         }
         if (b || b2) {
             final Class8059 method1141 = this.field30396.field4683.method6701(method1139.method1141()).method21697();

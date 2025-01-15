@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 import java.util.Iterator;
 import java.util.function.Predicate;
 
@@ -18,21 +21,21 @@ public class Class3901 extends Class3892
     
     public Class3901(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3901.field17611, Class179.field513));
+        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3901.field17611, Direction.NORTH));
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
             this.method11996(class7097, class7098);
         }
     }
     
-    public boolean method11995(final Class1852 class1852, final Class354 class1853) {
+    public boolean method11995(final Class1852 class1852, final BlockPos class1853) {
         return this.method11997().method29796(class1852, class1853) != null || this.method11999().method29796(class1852, class1853) != null;
     }
     
-    private void method11996(final Class1847 class1847, final Class354 class1848) {
+    private void method11996(final Class1847 class1847, final BlockPos class1848) {
         final Class7820 method29796 = this.method11998().method29796(class1847, class1848);
         if (method29796 == null) {
             final Class7820 method29797 = this.method12000().method29796(class1847, class1848);
@@ -44,12 +47,12 @@ public class Class3901 extends Class3892
                         class1847.method6955(2001, method29798.method26068(), Class3833.method11774(method29798.method26065()));
                     }
                 }
-                final Class354 method29799 = method29797.method25270(1, 2, 0).method26068();
+                final BlockPos method29799 = method29797.method25270(1, 2, 0).method26068();
                 final Class786 class1849 = Class7499.field29043.method23371(class1847);
                 class1849.method4342(true);
-                class1849.method1730(method29799.method1074() + 0.5, method29799.method1075() + 0.05, method29799.method1076() + 0.5, 0.0f, 0.0f);
+                class1849.method1730(method29799.getX() + 0.5, method29799.getY() + 0.05, method29799.getZ() + 0.5, 0.0f, 0.0f);
                 class1847.method6886(class1849);
-                final Iterator<Class399> iterator = (Iterator<Class399>)class1847.method7128((Class<? extends Class513>)Class513.class, class1849.method1886().method18496(5.0)).iterator();
+                final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1849.method1886().method18496(5.0)).iterator();
                 while (iterator.hasNext()) {
                     Class7770.field31788.method13788(iterator.next(), class1849);
                 }
@@ -67,10 +70,10 @@ public class Class3901 extends Class3892
                 class1847.method6955(2001, method29800.method26068(), Class3833.method11774(method29800.method26065()));
             }
             final Class784 class1850 = Class7499.field29027.method23371(class1847);
-            final Class354 method29801 = method29796.method25270(0, 2, 0).method26068();
-            class1850.method1730(method29801.method1074() + 0.5, method29801.method1075() + 0.05, method29801.method1076() + 0.5, 0.0f, 0.0f);
+            final BlockPos method29801 = method29796.method25270(0, 2, 0).method26068();
+            class1850.method1730(method29801.getX() + 0.5, method29801.getY() + 0.05, method29801.getZ() + 0.5, 0.0f, 0.0f);
             class1847.method6886(class1850);
-            final Iterator<Class399> iterator2 = (Iterator<Class399>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.method1886().method18496(5.0)).iterator();
+            final Iterator<Entity> iterator2 = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.method1886().method18496(5.0)).iterator();
             while (iterator2.hasNext()) {
                 Class7770.field31788.method13788(iterator2.next(), class1850);
             }
@@ -82,7 +85,7 @@ public class Class3901 extends Class3892
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3901.field17611, class7074.method21644().method782());
+        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3901.field17611, class7074.method21644().getOpposite());
     }
     
     @Override
@@ -119,7 +122,7 @@ public class Class3901 extends Class3892
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7499<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7499<?> class7099) {
         return true;
     }
     

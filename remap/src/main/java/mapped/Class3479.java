@@ -13,7 +13,7 @@ public abstract class Class3479 extends Class3446
     public int field16392;
     public int field16393;
     private int field16394;
-    public Class354 field16395;
+    public BlockPos field16395;
     private boolean field16396;
     private final int field16397;
     private final int field16398;
@@ -24,7 +24,7 @@ public abstract class Class3479 extends Class3446
     }
     
     public Class3479(final Class787 field16390, final double field16391, final int field16392, final int field16393) {
-        this.field16395 = Class354.field2173;
+        this.field16395 = BlockPos.ZERO;
         this.field16390 = field16390;
         this.field16391 = field16391;
         this.field16397 = field16392;
@@ -67,7 +67,7 @@ public abstract class Class3479 extends Class3446
     }
     
     public void method11045() {
-        this.field16390.method4150().method24724((float)this.field16395.method1074() + 0.5, this.field16395.method1075() + 1, (float)this.field16395.method1076() + 0.5, this.field16391);
+        this.field16390.method4150().method24724((float)this.field16395.getX() + 0.5, this.field16395.getY() + 1, (float)this.field16395.getZ() + 0.5, this.field16391);
     }
     
     public double method11046() {
@@ -84,7 +84,7 @@ public abstract class Class3479 extends Class3446
             this.field16396 = false;
             ++this.field16393;
             if (this.method11047()) {
-                this.field16390.method4150().method24724((float)this.field16395.method1074() + 0.5, this.field16395.method1075() + 1, (float)this.field16395.method1076() + 0.5, this.field16391);
+                this.field16390.method4150().method24724((float)this.field16395.getX() + 0.5, this.field16395.getY() + 1, (float)this.field16395.getZ() + 0.5, this.field16391);
             }
         }
     }
@@ -100,7 +100,7 @@ public abstract class Class3479 extends Class3446
     public boolean method11049() {
         final int field16397 = this.field16397;
         final int field16398 = this.field16398;
-        final Class354 class354 = new Class354(this.field16390);
+        final BlockPos class354 = new BlockPos(this.field16390);
         final Class385 field16399 = new Class385();
         for (int i = this.field16399; i <= field16398; i = ((i <= 0) ? (1 - i) : (-i))) {
             for (int j = 0; j < field16397; ++j) {
@@ -118,5 +118,5 @@ public abstract class Class3479 extends Class3446
         return false;
     }
     
-    public abstract boolean method11050(final Class1852 p0, final Class354 p1);
+    public abstract boolean method11050(final Class1852 p0, final BlockPos p1);
 }

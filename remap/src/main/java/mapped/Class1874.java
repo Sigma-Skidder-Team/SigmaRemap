@@ -7,8 +7,9 @@ package mapped;
 import java.util.UUID;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
-import java.util.Iterator;
 import java.util.function.Function;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -18,21 +19,21 @@ import java.util.function.Predicate;
 
 public interface Class1874
 {
-    List<Class399> method6737(final Class399 p0, final Class6221 p1, final Predicate<? super Class399> p2);
+    List<Entity> method6737(final Entity p0, final Class6221 p1, final Predicate<? super Entity> p2);
     
-     <T extends Class399> List<T> method6739(final Class<? extends T> p0, final Class6221 p1, final Predicate<? super T> p2);
+     <T extends Entity> List<T> method6739(final Class<? extends T> p0, final Class6221 p1, final Predicate<? super T> p2);
     
-    default <T extends Class399> List<T> method6740(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
-        return (List<T>)this.method6739((Class<? extends Class399>)clazz, class6221, (Predicate<? super Class399>)predicate);
+    default <T extends Entity> List<T> method6740(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+        return (List<T>)this.method6739((Class<? extends Entity>)clazz, class6221, (Predicate<? super Entity>)predicate);
     }
     
     List<? extends Class512> method6840();
     
-    default List<Class399> method7127(final Class399 class399, final Class6221 class400) {
+    default List<Entity> method7127(final Entity class399, final Class6221 class400) {
         return this.method6737(class399, class400, Class9170.field38850);
     }
     
-    default boolean method6957(final Class399 class399, final Class7702 class400) {
+    default boolean method6957(final Entity class399, final Class7702 class400) {
         return class400.method24540() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
             final boolean b;
             if (!class402.field2410) {
@@ -46,15 +47,15 @@ public interface Class1874
         }).noneMatch(class404 -> Class7698.method24496(class403, Class7698.method24489(class404.method1886()), Class9306.field39924));
     }
     
-    default <T extends Class399> List<T> method7128(final Class<? extends T> clazz, final Class6221 class6221) {
+    default <T extends Entity> List<T> method7128(final Class<? extends T> clazz, final Class6221 class6221) {
         return this.method6739(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
     }
     
-    default <T extends Class399> List<T> method7129(final Class<? extends T> clazz, final Class6221 class6221) {
+    default <T extends Entity> List<T> method7129(final Class<? extends T> clazz, final Class6221 class6221) {
         return this.method6740(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
     }
     
-    default Stream<Class7702> method6956(final Class399 class399, final Class6221 class400, final Set<Class399> set) {
+    default Stream<Class7702> method6956(final Entity class399, final Class6221 class400, final Set<Entity> set) {
         if (class400.method18507() >= 1.0E-7) {
             final Class6221 method18496 = class400.method18496(1.0E-7);
             return (Stream<Class7702>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new Class6221[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::method18502).map((Function<? super Object, ?>)Class7698::method24489);
@@ -63,7 +64,7 @@ public interface Class1874
     }
     
     @Nullable
-    default Class512 method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Class399> predicate) {
+    default Class512 method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Entity> predicate) {
         double n5 = -1.0;
         Class512 class512 = null;
         for (final Class512 class513 : this.method6840()) {
@@ -84,7 +85,7 @@ public interface Class1874
     }
     
     @Nullable
-    default Class512 method7131(final Class399 class399, final double n) {
+    default Class512 method7131(final Entity class399, final double n) {
         return this.method7132(class399.method1938(), class399.method1941(), class399.method1945(), n, false);
     }
     
@@ -189,7 +190,7 @@ public interface Class1874
     }
     
     default <T extends Class511> List<T> method7142(final Class<? extends T> clazz, final Class7843 class7843, final Class511 class7844, final Class6221 class7845) {
-        final List<Class399> method6739 = (List<Class399>)this.method6739((Class<? extends Class511>)clazz, class7845, (Predicate<? super Class511>)null);
+        final List<Entity> method6739 = (List<Entity>)this.method6739((Class<? extends Class511>)clazz, class7845, (Predicate<? super Class511>)null);
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class511 class7846 : method6739) {
             if (!class7843.method25344(class7844, class7846)) {

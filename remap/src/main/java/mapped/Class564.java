@@ -7,6 +7,8 @@ package mapped;
 import java.util.Iterator;
 import java.util.Collections;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class564 extends Class565 implements Class563, Class574
@@ -49,12 +51,12 @@ public class Class564 extends Class565 implements Class563, Class574
         final float n7 = (float)(this.field3355 + n4 * 25);
         final float n8 = (float)(n2 + 50);
         if (n7 > n8) {
-            this.field3355 -= (int)(n3 * Class9546.method35649((n7 - n8) / n3));
+            this.field3355 -= (int)(n3 * MathHelper.method35649((n7 - n8) / n3));
         }
         final float n9 = (float)this.field3355;
         final float n10 = (float)(n2 - 100);
         if (n9 < n10) {
-            this.field3355 -= (int)(n3 * Class9546.method35649((n9 - n10) / n3));
+            this.field3355 -= (int)(n3 * MathHelper.method35649((n9 - n10) / n3));
         }
         this.field3353 = true;
         this.field3352.clear();
@@ -116,7 +118,7 @@ public class Class564 extends Class565 implements Class563, Class574
             Class8726.method30059();
             Class8726.method30065(0.0f, 0.0f, 170.0f);
             final int b = (this.field3352.size() > 16) ? 5 : 4;
-            this.method3284(Math.min(this.field3352.size(), b), Class9546.method35649(this.field3352.size() / (float)b), 24, 4, 82, 208);
+            this.method3284(Math.min(this.field3352.size(), b), MathHelper.method35649(this.field3352.size() / (float)b), 24, 4, 82, 208);
             Class8726.method30012();
             final Iterator<Class588> iterator = this.field3352.iterator();
             while (iterator.hasNext()) {

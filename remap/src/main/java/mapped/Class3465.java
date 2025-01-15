@@ -65,8 +65,8 @@ public class Class3465<T extends Class777> extends Class3446
             else {
                 final Class5487 class5487 = new Class5487(this.field16328.method4311());
                 final Class5487 method4317 = this.field16328.method1934();
-                final Class354 method4318 = this.field16328.field2391.method6958(Class2020.field11526, new Class354(method4317.method16741(class5487).method16755(90.0f).method16748(0.4).method16743(class5487).method16741(method4317).method16738().method16748(10.0).method16743(method4317)));
-                if (method4315.method24724(method4318.method1074(), method4318.method1075(), method4318.method1076(), method4314 ? this.field16330 : this.field16329)) {
+                final BlockPos method4318 = this.field16328.field2391.method6958(Class2020.field11526, new BlockPos(method4317.method16741(class5487).method16755(90.0f).method16748(0.4).method16743(class5487).method16741(method4317).method16738().method16748(10.0).method16743(method4317)));
+                if (method4315.method24724(method4318.getX(), method4318.getY(), method4318.getZ(), method4314 ? this.field16330 : this.field16329)) {
                     if (method4314) {
                         final Iterator iterator = method4316.iterator();
                         while (iterator.hasNext()) {
@@ -88,7 +88,7 @@ public class Class3465<T extends Class777> extends Class3446
     
     private boolean method11031() {
         final Random method2633 = this.field16328.method2633();
-        final Class354 method2634 = this.field16328.field2391.method6958(Class2020.field11526, new Class354(this.field16328).method1134(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
-        return this.field16328.method4150().method24724(method2634.method1074(), method2634.method1075(), method2634.method1076(), this.field16329);
+        final BlockPos method2634 = this.field16328.field2391.method6958(Class2020.field11526, new BlockPos(this.field16328).method1134(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
+        return this.field16328.method4150().method24724(method2634.getX(), method2634.getY(), method2634.getZ(), this.field16329);
     }
 }

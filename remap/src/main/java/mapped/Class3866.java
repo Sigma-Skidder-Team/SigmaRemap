@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3866 extends Class3865
 {
     private static String[] field17496;
@@ -28,12 +31,12 @@ public class Class3866 extends Class3865
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class179 class7099) {
-        return Class9546.method35651(Class475.method2424(class7097, class7098), 0, 15);
+    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+        return MathHelper.method35651(Class475.method2424(class7097, class7098), 0, 15);
     }
     
     @Override
-    public int method11851(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class179 class7099) {
-        return (class7099 != Class179.field512) ? 0 : class7096.method21715(class7097, class7098, class7099);
+    public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+        return (class7099 != Direction.UP) ? 0 : class7096.method21715(class7097, class7098, class7099);
     }
 }

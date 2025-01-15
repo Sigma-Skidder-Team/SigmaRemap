@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
-import java.time.temporal.TemporalField;
 import java.time.temporal.ChronoField;
 import java.time.LocalDate;
 
@@ -42,7 +43,7 @@ public abstract class Class780 extends Class763 implements Class768
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(this.method4328(), 0.15f, 1.0f);
     }
     
@@ -138,7 +139,7 @@ public abstract class Class780 extends Class763 implements Class768
         final double n2 = class511.method1938() - this.method1938();
         final double n3 = class511.method1942(0.3333333333333333) - method4330.method1941();
         final double n4 = class511.method1945() - this.method1945();
-        method4330.method1958(n2, n3 + Class9546.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        method4330.method1958(n2, n3 + MathHelper.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35575, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(method4330);
     }

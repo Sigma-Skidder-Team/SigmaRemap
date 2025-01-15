@@ -10,14 +10,14 @@ public class Class4395 implements Class4252<Class5800>
 {
     private static String[] field19685;
     private int field19686;
-    private Class354 field19687;
+    private BlockPos field19687;
     private int field19688;
     private boolean field19689;
     
     public Class4395() {
     }
     
-    public Class4395(final int field19686, final Class354 class354, final int field19687, final boolean field19688) {
+    public Class4395(final int field19686, final BlockPos class354, final int field19687, final boolean field19688) {
         this.field19686 = field19686;
         this.field19687 = class354.method1153();
         this.field19688 = field19687;
@@ -56,7 +56,7 @@ public class Class4395 implements Class4252<Class5800>
         return this.field19688;
     }
     
-    public Class354 method13222() {
+    public BlockPos method13222() {
         return this.field19687;
     }
 }

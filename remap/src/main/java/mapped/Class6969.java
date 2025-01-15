@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.Entity;
 
 public class Class6969
 {
@@ -28,7 +29,7 @@ public class Class6969
         this.field27256 = field27256;
     }
     
-    public boolean method21383(final Class399 class399) {
+    public boolean method21383(final Entity class399) {
         if (this == Class6969.field27249) {
             return true;
         }

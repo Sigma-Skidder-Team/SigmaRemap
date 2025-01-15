@@ -4,24 +4,26 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class231
 {
-    field859(Class179.field512, 0, -1), 
-    field860(Class179.field511, 0, 1), 
-    field861(Class179.field516, -1, 0), 
-    field862(Class179.field515, 1, 0);
+    field859(Direction.UP, 0, -1),
+    field860(Direction.DOWN, 0, 1),
+    field861(Direction.EAST, -1, 0),
+    field862(Direction.WEST, 1, 0);
     
-    private final Class179 field863;
+    private final Direction field863;
     private final int field864;
     private final int field865;
     
-    private Class231(final Class179 field863, final int field864, final int field865) {
+    private Class231(final Direction field863, final int field864, final int field865) {
         this.field863 = field863;
         this.field864 = field864;
         this.field865 = field865;
     }
     
-    public Class179 method862() {
+    public Direction method862() {
         return this.field863;
     }
     

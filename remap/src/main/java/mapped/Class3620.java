@@ -12,7 +12,7 @@ public class Class3620 extends Class3617
 {
     private static String[] field16817;
     private int field16818;
-    private List<Class354> field16819;
+    private List<BlockPos> field16819;
     private Class9468 field16820;
     public final /* synthetic */ Class798 field16821;
     
@@ -92,17 +92,17 @@ public class Class3620 extends Class3617
         }
     }
     
-    private boolean method11139(final Class354 class354) {
+    private boolean method11139(final BlockPos class354) {
         Class798.method4555(this.field16821).method24713(10.0f);
-        Class798.method4556(this.field16821).method24724(class354.method1074(), class354.method1075(), class354.method1076(), 1.0);
+        Class798.method4556(this.field16821).method24724(class354.getX(), class354.getY(), class354.getZ(), 1.0);
         return Class798.method4557(this.field16821).method24727() != null && Class798.method4558(this.field16821).method24727().method35228();
     }
     
-    private boolean method11140(final Class354 class354) {
+    private boolean method11140(final BlockPos class354) {
         return this.field16819.contains(class354);
     }
     
-    private void method11141(final Class354 class354) {
+    private void method11141(final BlockPos class354) {
         this.field16819.add(class354);
         while (this.field16819.size() > 3) {
             this.field16819.remove(0);
@@ -125,7 +125,7 @@ public class Class3620 extends Class3617
         Class798.method4559(this.field16821, 200);
     }
     
-    private boolean method11145(final Class354 class354) {
+    private boolean method11145(final BlockPos class354) {
         if (!Class798.method4550(this.field16821, class354, 2)) {
             final Class9468 method24727 = Class798.method4560(this.field16821).method24727();
             if (method24727 != null) {

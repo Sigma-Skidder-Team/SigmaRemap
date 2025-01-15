@@ -33,14 +33,14 @@ public class Class3529 extends Class3446
         if (this.field16557 <= 0) {
             final Class1847 field2391 = this.field16556.field2391;
             final Random method2633 = this.field16556.method2633();
-            final Class354 class354 = new Class354(this.field16556);
+            final BlockPos class354 = new BlockPos(this.field16556);
             for (int i = 0; i <= 5; i = ((i <= 0) ? 1 : 0) - i) {
                 if (i < -5) {
                     break;
                 }
                 for (int n = 0; n <= 10 && n >= -10; n = ((n <= 0) ? 1 : 0) - n) {
                     for (int n2 = 0; n2 <= 10 && n2 >= -10; n2 = ((n2 <= 0) ? 1 : 0) - n2) {
-                        final Class354 method2634 = class354.method1134(n, i, n2);
+                        final BlockPos method2634 = class354.method1134(n, i, n2);
                         final Class3833 method2635 = field2391.method6701(method2634).method21696();
                         if (method2635 instanceof Class3979) {
                             if (!field2391.method6765().method31216(Class8878.field37316)) {

@@ -4,17 +4,19 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3i;
+
 public class Class4846 extends Class4841
 {
     public int field20760;
     public final Class9572 field20761;
     public final Class9572 field20762;
     public String field20763;
-    public Class352 field20764;
+    public Vec3i field20764;
     public int field20765;
     public int field20766;
     
-    public Class4846(final Class4803 class4803, final String s, final int n, final int field20760, final int n2, final int field20761, final String field20762, final Class352 field20763, final int field20764) {
+    public Class4846(final Class4803 class4803, final String s, final int n, final int field20760, final int n2, final int field20761, final String field20762, final Vec3i field20763, final int field20764) {
         super(class4803, s, n, field20760, n2, field20761, true);
         this.field20760 = field20760;
         this.field20761 = new Class9572(114, 114);
@@ -48,7 +50,7 @@ public class Class4846 extends Class4841
     public void method14205(final float n) {
         Class8154.method26874((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, Class6430.method19118(Class6430.method19121(Class265.field1278.field1292, 0.03f), this.field20761.method35858()));
         Class8154.method26889(Class9400.field40313, (float)(this.field20478 + 68), (float)(this.field20479 + 14), this.field20763, Class6430.method19118(Class265.field1273.field1292, 0.8f));
-        Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 68), (float)(this.field20479 + 38), "x:" + this.field20764.method1074() + " z:" + this.field20764.method1076(), Class6430.method19118(Class265.field1273.field1292, 0.5f));
+        Class8154.method26889(Class9400.field40311, (float)(this.field20478 + 68), (float)(this.field20479 + 38), "x:" + this.field20764.getX() + " z:" + this.field20764.getZ(), Class6430.method19118(Class265.field1273.field1292, 0.5f));
         final int n2 = 27;
         final int n3 = this.field20480 - 43;
         final float n4 = this.method14386() ? 0.4f : 0.2f;

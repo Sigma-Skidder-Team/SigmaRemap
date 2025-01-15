@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Iterator;
 
 public class Class3827 extends Class3820
@@ -18,7 +20,7 @@ public class Class3827 extends Class3820
     public Class2201 method11694(final Class7075 class7075) {
         final Class512 method21652 = class7075.method21652();
         final Class1847 method21653 = class7075.method21654();
-        final Class354 method21654 = class7075.method21639();
+        final BlockPos method21654 = class7075.method21639();
         final Class7096 method21655 = method21653.method6701(method21654);
         if (method11759(method21655)) {
             method21653.method6705(method21652, method21654, Class8520.field35201, Class286.field1582, 1.0f, Class3827.field17363.nextFloat() * 0.4f + 0.8f);
@@ -28,7 +30,7 @@ public class Class3827 extends Class3820
             }
             return Class2201.field13400;
         }
-        final Class354 method21656 = method21654.method1149(class7075.method21648());
+        final BlockPos method21656 = method21654.method1149(class7075.method21648());
         if (!method11760(method21653.method6701(method21656), method21653, method21656)) {
             return Class2201.field13403;
         }
@@ -53,10 +55,10 @@ public class Class3827 extends Class3820
         return false;
     }
     
-    public static boolean method11760(final Class7096 class7096, final Class1851 class7097, final Class354 class7098) {
+    public static boolean method11760(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098) {
         final Class7096 method12184 = ((Class4011)Class7521.field29289).method12184(class7097, class7098);
         boolean b = false;
-        final Iterator<Class179> iterator = Class98.field268.iterator();
+        final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
         while (iterator.hasNext()) {
             if (class7097.method6701(class7098.method1149(iterator.next())).method21696() != Class7521.field29286) {
                 continue;

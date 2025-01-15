@@ -8,20 +8,20 @@ import javax.annotation.Nullable;
 
 public class Class2360 extends Class2359
 {
-    private final Class354 field14146;
-    private final Class354 field14147;
+    private final BlockPos field14146;
+    private final BlockPos field14147;
     private final long field14148;
     
     private Class2360() {
         super("TestBlockPosException");
-        this.field14146 = new Class354(0, 0, 0);
-        this.field14147 = new Class354(0, 0, 0);
+        this.field14146 = new BlockPos(0, 0, 0);
+        this.field14147 = new BlockPos(0, 0, 0);
         this.field14148 = 0L;
     }
     
     @Override
     public String getMessage() {
-        return super.getMessage() + " at " + ("" + this.field14146.method1074() + "," + this.field14146.method1075() + "," + this.field14146.method1076() + " (relative: " + this.field14147.method1074() + "," + this.field14147.method1075() + "," + this.field14147.method1076() + ")") + " (t=" + this.field14148 + ")";
+        return super.getMessage() + " at " + ("" + this.field14146.getX() + "," + this.field14146.getY() + "," + this.field14146.getZ() + " (relative: " + this.field14147.getX() + "," + this.field14147.getY() + "," + this.field14147.getZ() + ")") + " (t=" + this.field14148 + ")";
     }
     
     @Nullable
@@ -30,7 +30,7 @@ public class Class2360 extends Class2359
     }
     
     @Nullable
-    public Class354 method9497() {
+    public BlockPos method9497() {
         return this.field14146;
     }
 }

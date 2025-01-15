@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3898 extends Class3892
 {
     private static String[] field17584;
@@ -27,39 +29,39 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17587)) {
-            return (class7096.method21772((Class7111<Class179>)Class3898.field17564).method790() != Class111.field351) ? Class3898.field17588 : Class3898.field17589;
+            return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17588 : Class3898.field17589;
         }
-        return (class7096.method21772((Class7111<Class179>)Class3898.field17564).method790() != Class111.field351) ? Class3898.field17590 : Class3898.field17591;
+        return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17590 : Class3898.field17591;
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
-        if (class7096.method21772((Class7111<Class179>)Class3898.field17564).method783().method790() == class7097.method790()) {
-            return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3898.field17587, this.method11982(class7098) || this.method11982(class7099.method6701(class7100.method1149(class7097.method782()))));
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+        if (class7096.method21772((Class7111<Direction>)Class3898.field17564).rotateY().getAxis() == class7097.getAxis()) {
+            return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3898.field17587, this.method11982(class7098) || this.method11982(class7099.method6701(class7100.method1149(class7097.getOpposite()))));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17585)) {
-            return (class7096.method21772((Class7111<Class179>)Class3898.field17564).method790() != Class111.field353) ? Class3898.field17593 : Class3898.field17592;
+            return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.Z) ? Class3898.field17593 : Class3898.field17592;
         }
         return Class7698.method24486();
     }
     
     @Override
-    public Class7702 method11810(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public Class7702 method11810(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17587)) {
-            return (class7096.method21772((Class7111<Class179>)Class3898.field17564).method790() != Class111.field351) ? Class3898.field17594 : Class3898.field17595;
+            return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17594 : Class3898.field17595;
         }
-        return (class7096.method21772((Class7111<Class179>)Class3898.field17564).method790() != Class111.field351) ? Class3898.field17596 : Class3898.field17597;
+        return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17596 : Class3898.field17597;
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class9050.field38318[class7099.ordinal()]) {
             case 1: {
                 return class7096.method21772((Class7111<Boolean>)Class3898.field17585);
@@ -79,12 +81,12 @@ public class Class3898 extends Class3892
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         final Class1847 method21654 = class7074.method21654();
-        final Class354 method21655 = class7074.method21639();
+        final BlockPos method21655 = class7074.method21639();
         final boolean method21656 = method21654.method6749(method21655);
-        final Class179 method21657 = class7074.method21644();
-        final Class111 method21658 = method21657.method790();
+        final Direction method21657 = class7074.method21644();
+        final Axis method21658 = method21657.getAxis();
         Label_0072: {
-            if (method21658 == Class111.field353) {
+            if (method21658 == Axis.Z) {
                 if (this.method11982(method21654.method6701(method21655.method1145()))) {
                     break Label_0072;
                 }
@@ -92,7 +94,7 @@ public class Class3898 extends Class3892
                     break Label_0072;
                 }
             }
-            if (method21658 == Class111.field351) {
+            if (method21658 == Axis.X) {
                 if (this.method11982(method21654.method6701(method21655.method1141()))) {
                     break Label_0072;
                 }
@@ -112,10 +114,10 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17585)) {
-            final Class179 method1882 = class7099.method1882();
-            if (class7096.method21772((Class7111<Comparable>)Class3898.field17564) == method1882.method782()) {
+            final Direction method1882 = class7099.method1882();
+            if (class7096.method21772((Class7111<Comparable>)Class3898.field17564) == method1882.getOpposite()) {
                 class7096 = (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3898.field17564, method1882);
             }
             class7096 = ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3898.field17585, true);
@@ -130,7 +132,7 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class3833 class7099, final Class354 class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.field10067) {
             final boolean method6749 = class7097.method6749(class7098);
             if (class7096.method21772((Class7111<Boolean>)Class3898.field17586) != method6749) {
@@ -147,8 +149,8 @@ public class Class3898 extends Class3892
         class9500.method35378(Class3898.field17564, Class3898.field17585, Class3898.field17586, Class3898.field17587);
     }
     
-    public static boolean method11983(final Class7096 class7096, final Class179 class7097) {
-        return class7096.method21772((Class7111<Class179>)Class3898.field17564).method790() == class7097.method783().method790();
+    public static boolean method11983(final Class7096 class7096, final Direction class7097) {
+        return class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() == class7097.rotateY().getAxis();
     }
     
     static {

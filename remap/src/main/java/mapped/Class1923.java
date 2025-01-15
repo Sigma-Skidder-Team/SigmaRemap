@@ -4,11 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.HashSet;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+
 import it.unimi.dsi.fastutil.chars.CharArrayList;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -66,7 +66,7 @@ public class Class1923 implements AutoCloseable
                 if (class1738 == Class2021.field11532) {
                     break;
                 }
-                ((CharList)this.field10465.computeIfAbsent(Class9546.method35649(class1738.method8080(false)), p0 -> new CharArrayList())).add(c);
+                ((CharList)this.field10465.computeIfAbsent(MathHelper.method35649(class1738.method8080(false)), p0 -> new CharArrayList())).add(c);
                 break;
             }
         }
@@ -152,7 +152,7 @@ public class Class1923 implements AutoCloseable
     }
     
     public Class8048 method7634(final Class2023 class2023) {
-        final CharList list = (CharList)this.field10465.get(Class9546.method35649(class2023.method8080(false)));
+        final CharList list = (CharList)this.field10465.get(MathHelper.method35649(class2023.method8080(false)));
         return (list != null && !list.isEmpty()) ? this.method7632(list.get(Class1923.field10457.nextInt(list.size()))) : this.field10460;
     }
     

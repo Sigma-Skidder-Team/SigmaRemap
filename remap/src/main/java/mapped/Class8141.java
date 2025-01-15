@@ -22,16 +22,16 @@ public class Class8141
         this.field33543 = new ReentrantReadWriteLock();
     }
     
-    public int method26829(final Class354 class354, final IntSupplier intSupplier) {
-        final int field22037 = class354.method1074() >> 4;
-        final int field22038 = class354.method1076() >> 4;
+    public int method26829(final BlockPos class354, final IntSupplier intSupplier) {
+        final int field22037 = class354.getX() >> 4;
+        final int field22038 = class354.getZ() >> 4;
         final Class5103 class355 = this.field33541.get();
         if (class355.field22037 != field22037 || class355.field22038 != field22038) {
             class355.field22037 = field22037;
             class355.field22038 = field22038;
             class355.field22039 = this.method26832(field22037, field22038);
         }
-        final int n = (class354.method1076() & 0xF) << 4 | (class354.method1074() & 0xF);
+        final int n = (class354.getZ() & 0xF) << 4 | (class354.getX() & 0xF);
         final int n2 = class355.field22039[n];
         if (n2 == -1) {
             return class355.field22039[n] = intSupplier.getAsInt();

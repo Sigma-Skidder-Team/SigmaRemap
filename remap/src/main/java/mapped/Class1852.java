@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public interface Class1852 extends Class1856, Class1853, Class1867
@@ -20,12 +23,12 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     Class5507 method6797();
     
-    default Class3090 method6959(final Class354 class354) {
+    default Class3090 method6959(final BlockPos class354) {
         return this.method6797().method16810(class354);
     }
     
-    default int method6849(final Class354 class354, final Class8895 class355) {
-        return class355.method31308(this.method6959(class354), class354.method1074(), class354.method1076());
+    default int method6849(final BlockPos class354, final Class8895 class355) {
+        return class355.method31308(this.method6959(class354), class354.getX(), class354.getZ());
     }
     
     default Class3090 method6960(final int n, final int n2, final int n3) {
@@ -41,21 +44,21 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     Class6737 method6789();
     
-    default Class354 method6958(final Class2020 class2020, final Class354 class2021) {
-        return new Class354(class2021.method1074(), this.method6699(class2020, class2021.method1074(), class2021.method1076()), class2021.method1076());
+    default BlockPos method6958(final Class2020 class2020, final BlockPos class2021) {
+        return new BlockPos(class2021.getX(), this.method6699(class2020, class2021.getX(), class2021.getZ()), class2021.getZ());
     }
     
-    default boolean method6961(final Class354 class354) {
+    default boolean method6961(final BlockPos class354) {
         return this.method6701(class354).method21706();
     }
     
-    default boolean method6962(final Class354 class354) {
-        if (class354.method1075() >= this.method6743()) {
+    default boolean method6962(final BlockPos class354) {
+        if (class354.getY() >= this.method6743()) {
             return this.method6994(class354);
         }
-        final Class354 class355 = new Class354(class354.method1074(), this.method6743(), class354.method1076());
+        final BlockPos class355 = new BlockPos(class354.getX(), this.method6743(), class354.getZ());
         if (this.method6994(class355)) {
-            for (Class354 class356 = class355.method1139(); class356.method1075() > class354.method1075(); class356 = class356.method1139()) {
+            for (BlockPos class356 = class355.method1139(); class356.getY() > class354.getY(); class356 = class356.method1139()) {
                 final Class7096 method6701 = this.method6701(class356);
                 if (method6701.method21700(this, class356) > 0 && !method6701.method21697().method26438()) {
                     return false;
@@ -67,16 +70,16 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     @Deprecated
-    default float method6963(final Class354 class354) {
+    default float method6963(final BlockPos class354) {
         return this.method6789().method20505(this.method6969(class354));
     }
     
-    default int method6964(final Class354 class354, final Class179 class355) {
+    default int method6964(final BlockPos class354, final Direction class355) {
         return this.method6701(class354).method21720(this, class354, class355);
     }
     
-    default Class1860 method6965(final Class354 class354) {
-        return this.method6798(class354.method1074() >> 4, class354.method1076() >> 4);
+    default Class1860 method6965(final BlockPos class354) {
+        return this.method6798(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     default Class1860 method6798(final int n, final int n2) {
@@ -92,17 +95,17 @@ public interface Class1852 extends Class1856, Class1853, Class1867
         return this.method6687(n, n2, Class9312.field39977, false);
     }
     
-    default boolean method6967(final Class354 class354) {
+    default boolean method6967(final BlockPos class354) {
         return this.method6702(class354).method21793(Class7324.field28319);
     }
     
     default boolean method6968(final Class6221 class6221) {
-        final int method35644 = Class9546.method35644(class6221.field25073);
-        final int method35645 = Class9546.method35650(class6221.field25076);
-        final int method35646 = Class9546.method35644(class6221.field25074);
-        final int method35647 = Class9546.method35650(class6221.field25077);
-        final int method35648 = Class9546.method35644(class6221.field25075);
-        final int method35649 = Class9546.method35650(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.field25073);
+        final int method35645 = MathHelper.method35650(class6221.field25076);
+        final int method35646 = MathHelper.floor(class6221.field25074);
+        final int method35647 = MathHelper.method35650(class6221.field25077);
+        final int method35648 = MathHelper.floor(class6221.field25075);
+        final int method35649 = MathHelper.method35650(class6221.field25078);
         try (final Class386 method35650 = Class386.method1296()) {
             for (int i = method35644; i < method35645; ++i) {
                 for (int j = method35646; j < method35647; ++j) {
@@ -117,15 +120,15 @@ public interface Class1852 extends Class1856, Class1853, Class1867
         }
     }
     
-    default int method6969(final Class354 class354) {
+    default int method6969(final BlockPos class354) {
         return this.method6970(class354, this.method6785());
     }
     
-    default int method6970(final Class354 class354, final int n) {
-        if (class354.method1074() >= -30000000) {
-            if (class354.method1076() >= -30000000) {
-                if (class354.method1074() < 30000000) {
-                    if (class354.method1076() < 30000000) {
+    default int method6970(final BlockPos class354, final int n) {
+        if (class354.getX() >= -30000000) {
+            if (class354.getZ() >= -30000000) {
+                if (class354.getX() < 30000000) {
+                    if (class354.getZ() < 30000000) {
                         return this.method6993(class354, n);
                     }
                 }
@@ -135,13 +138,13 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     @Deprecated
-    default boolean method6971(final Class354 class354) {
-        return this.method6814(class354.method1074() >> 4, class354.method1076() >> 4);
+    default boolean method6971(final BlockPos class354) {
+        return this.method6814(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     @Deprecated
-    default boolean method6972(final Class354 class354, final Class354 class355) {
-        return this.method6973(class354.method1074(), class354.method1075(), class354.method1076(), class355.method1074(), class355.method1075(), class355.method1076());
+    default boolean method6972(final BlockPos class354, final BlockPos class355) {
+        return this.method6973(class354.getX(), class354.getY(), class354.getZ(), class355.getX(), class355.getY(), class355.getZ());
     }
     
     @Deprecated

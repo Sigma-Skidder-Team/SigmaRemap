@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.EnumSet;
 import java.util.function.Predicate;
@@ -36,7 +37,7 @@ public class Class3502 extends Class3446
     
     @Override
     public boolean method11013() {
-        final List<Class399> method6739 = this.field16464.field2391.method6739((Class<? extends Class399>)Class759.class, this.field16464.method1886().method18496(this.field16472), (Predicate<? super Class399>)this.field16465);
+        final List<Entity> method6739 = this.field16464.field2391.method6739((Class<? extends Entity>)Class759.class, this.field16464.method1886().method18496(this.field16472), (Predicate<? super Entity>)this.field16465);
         if (!method6739.isEmpty()) {
             for (final Class759 field16466 : method6739) {
                 if (field16466.method1823()) {

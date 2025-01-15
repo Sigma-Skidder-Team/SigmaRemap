@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class9017
 {
     private final Class8321 field38047;
@@ -75,7 +77,7 @@ public class Class9017
     public Class8321 method32281() {
         final int method27690 = this.field38047.method27690();
         final Class8321 method27691 = this.field38047.method27641();
-        method27691.method27691(Class9546.method35651(method27690 + Math.max(0, Class9546.method35642(method27690 * this.field38054 * this.field38055)) + this.field38053, 1, this.field38047.method27622().method11708()));
+        method27691.method27691(MathHelper.method35651(method27690 + Math.max(0, MathHelper.method35642(method27690 * this.field38054 * this.field38055)) + this.field38053, 1, this.field38047.method27622().method11708()));
         return method27691;
     }
     

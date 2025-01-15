@@ -4,19 +4,22 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class769 extends Class770 implements Class768
 {
     private static String[] field4158;
     private int field4159;
-    private final Class5487[][] field4160;
+    private final Vec3d[][] field4160;
     
     public Class769(final Class7499<? extends Class769> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4108 = 5;
-        this.field4160 = new Class5487[2][4];
+        this.field4160 = new Vec3d[2][4];
         for (int i = 0; i < 4; ++i) {
-            this.field4160[0][i] = Class5487.field22769;
-            this.field4160[1][i] = Class5487.field22769;
+            this.field4160[0][i] = Vec3d.field22769;
+            this.field4160[1][i] = Vec3d.field22769;
         }
     }
     
@@ -75,7 +78,7 @@ public class Class769 extends Class770 implements Class768
                         this.field4159 = 3;
                         for (int i = 0; i < 4; ++i) {
                             this.field4160[0][i] = this.field4160[1][i];
-                            this.field4160[1][i] = new Class5487(0.0, 0.0, 0.0);
+                            this.field4160[1][i] = new Vec3d(0.0, 0.0, 0.0);
                         }
                     }
                 }
@@ -83,7 +86,7 @@ public class Class769 extends Class770 implements Class768
                     this.field4159 = 3;
                     for (int j = 0; j < 4; ++j) {
                         this.field4160[0][j] = this.field4160[1][j];
-                        this.field4160[1][j] = new Class5487((-6.0f + this.field2423.nextInt(13)) * 0.5, Math.max(0, this.field2423.nextInt(6) - 4), (-6.0f + this.field2423.nextInt(13)) * 0.5);
+                        this.field4160[1][j] = new Vec3d((-6.0f + this.field2423.nextInt(13)) * 0.5, Math.max(0, this.field2423.nextInt(6) - 4), (-6.0f + this.field2423.nextInt(13)) * 0.5);
                     }
                     for (int k = 0; k < 16; ++k) {
                         this.field2391.method6709(Class8432.field34602, this.method1940(0.5), this.method1943(), this.method1946(0.5), 0.0, 0.0, 0.0);
@@ -99,10 +102,10 @@ public class Class769 extends Class770 implements Class768
         return Class8520.field35304;
     }
     
-    public Class5487[] method4261(final float n) {
+    public Vec3d[] method4261(final float n) {
         if (this.field4159 > 0) {
             final double pow = Math.pow((this.field4159 - n) / 3.0f, 0.25);
-            final Class5487[] array = new Class5487[4];
+            final Vec3d[] array = new Vec3d[4];
             for (int i = 0; i < 4; ++i) {
                 array[i] = this.field4160[1][i].method16748(1.0 - pow).method16743(this.field4160[0][i].method16748(pow));
             }
@@ -112,7 +115,7 @@ public class Class769 extends Class770 implements Class768
     }
     
     @Override
-    public boolean method1826(final Class399 class399) {
+    public boolean method1826(final Entity class399) {
         return super.method1826(class399) || (class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null);
     }
     
@@ -146,7 +149,7 @@ public class Class769 extends Class770 implements Class768
         final double n2 = class511.method1938() - this.method1938();
         final double n3 = class511.method1942(0.3333333333333333) - method23101.method1941();
         final double n4 = class511.method1945() - this.method1945();
-        method23101.method1958(n2, n3 + Class9546.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        method23101.method1958(n2, n3 + MathHelper.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35575, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(method23101);
     }

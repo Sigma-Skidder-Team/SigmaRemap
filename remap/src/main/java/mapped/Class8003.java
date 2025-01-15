@@ -10,8 +10,9 @@ import java.util.HashMap;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonElement;
-import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 
 public class Class8003
@@ -32,7 +33,7 @@ public class Class8003
         return this;
     }
     
-    public boolean method26193(final Class399 class399) {
+    public boolean method26193(final Entity class399) {
         return this == Class8003.field32963 || (class399 instanceof Class511 && this.method26195(((Class511)class399).method2652()));
     }
     

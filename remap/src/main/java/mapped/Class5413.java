@@ -14,18 +14,18 @@ public class Class5413 implements Class5414
     private static final SimpleCommandExceptionType field22577;
     public static final Function<String, Class6595> field22578;
     private final Class436 field22579;
-    private final Class354 field22580;
+    private final BlockPos field22580;
     
-    public Class5413(final Class436 field22579, final Class354 field22580) {
+    public Class5413(final Class436 field22579, final BlockPos field22580) {
         this.field22579 = field22579;
         this.field22580 = field22580;
     }
     
     @Override
     public void method16525(final Class51 class51) {
-        class51.method298("x", this.field22580.method1074());
-        class51.method298("y", this.field22580.method1075());
-        class51.method298("z", this.field22580.method1076());
+        class51.method298("x", this.field22580.getX());
+        class51.method298("y", this.field22580.getY());
+        class51.method298("z", this.field22580.getZ());
         this.field22579.method2179(class51);
         this.field22579.method2161();
         final Class7096 method6701 = this.field22579.method2186().method6701(this.field22580);
@@ -39,17 +39,17 @@ public class Class5413 implements Class5414
     
     @Override
     public Class2250 method16527() {
-        return new Class2259("commands.data.block.modified", new Object[] { this.field22580.method1074(), this.field22580.method1075(), this.field22580.method1076() });
+        return new Class2259("commands.data.block.modified", new Object[] { this.field22580.getX(), this.field22580.getY(), this.field22580.getZ() });
     }
     
     @Override
     public Class2250 method16528(final Class41 class41) {
-        return new Class2259("commands.data.block.query", new Object[] { this.field22580.method1074(), this.field22580.method1075(), this.field22580.method1076(), class41.method268() });
+        return new Class2259("commands.data.block.query", new Object[] { this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), class41.method268() });
     }
     
     @Override
     public Class2250 method16529(final Class8570 class8570, final double d, final int i) {
-        return new Class2259("commands.data.block.get", new Object[] { class8570, this.field22580.method1074(), this.field22580.method1075(), this.field22580.method1076(), String.format(Locale.ROOT, "%.2f", d), i });
+        return new Class2259("commands.data.block.get", new Object[] { class8570, this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), String.format(Locale.ROOT, "%.2f", d), i });
     }
     
     static {

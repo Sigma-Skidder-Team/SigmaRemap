@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class1808 extends Class1799<Class791, Class5840<Class791>>
 {
     private static String[] field9979;
@@ -19,8 +21,8 @@ public class Class1808 extends Class1799<Class791, Class5840<Class791>>
                 float n8 = -0.6f;
                 float n9 = 1.4f;
                 if (class7353.method4378()) {
-                    n8 -= 0.2f * Class9546.method35638(n5 * 0.6f) + 0.2f;
-                    n9 -= 0.09f * Class9546.method35638(n5 * 0.6f);
+                    n8 -= 0.2f * MathHelper.sin(n5 * 0.6f) + 0.2f;
+                    n9 -= 0.09f * MathHelper.sin(n5 * 0.6f);
                 }
                 class7351.method22567();
                 class7351.method22564(0.10000000149011612, n9, n8);

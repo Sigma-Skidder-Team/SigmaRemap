@@ -4,10 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.AbstractList;
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Iterator;
 import java.util.function.Predicate;
 
 public class Class857 extends Class511
@@ -25,7 +26,7 @@ public class Class857 extends Class511
     public static final Class8810<Class8396> field4575;
     public static final Class8810<Class8396> field4576;
     public static final Class8810<Class8396> field4577;
-    private static final Predicate<Class399> field4578;
+    private static final Predicate<Entity> field4578;
     private final Class2265<Class8321> field4579;
     private final Class2265<Class8321> field4580;
     private boolean field4581;
@@ -277,14 +278,14 @@ public class Class857 extends Class511
     }
     
     @Override
-    public void method2741(final Class399 class399) {
+    public void method2741(final Entity class399) {
     }
     
     @Override
     public void method2739() {
-        final List<Class399> method6737 = this.field2391.method6737(this, this.method1886(), Class857.field4578);
+        final List<Entity> method6737 = this.field2391.method6737(this, this.method1886(), Class857.field4578);
         for (int i = 0; i < method6737.size(); ++i) {
-            final Class399 class399 = method6737.get(i);
+            final Entity class399 = method6737.get(i);
             if (this.method1734(class399) <= 0.2) {
                 class399.method1737(this);
             }
@@ -292,7 +293,7 @@ public class Class857 extends Class511
     }
     
     @Override
-    public Class2201 method1898(final Class512 class512, final Class5487 class513, final Class316 class514) {
+    public Class2201 method1898(final Class512 class512, final Vec3d class513, final Class316 class514) {
         final Class8321 method2715 = class512.method2715(class514);
         if (this.method5166() || method2715.method27622() == Class7739.field31552) {
             return Class2201.field13402;
@@ -325,7 +326,7 @@ public class Class857 extends Class511
         return Class2201.field13401;
     }
     
-    private Class2215 method5151(final Class5487 class5487) {
+    private Class2215 method5151(final Vec3d class5487) {
         Class2215 class5488 = Class2215.field13600;
         final boolean method5160 = this.method5160();
         final double n = method5160 ? (class5487.field22771 * 2.0) : class5487.field22771;
@@ -502,7 +503,7 @@ public class Class857 extends Class511
     }
     
     private void method5156(final Class7929 class7929) {
-        Class3833.method11839(this.field2391, new Class354(this), new Class8321(Class7739.field31546));
+        Class3833.method11839(this.field2391, new BlockPos(this), new Class8321(Class7739.field31546));
         this.method5157(class7929);
     }
     
@@ -512,14 +513,14 @@ public class Class857 extends Class511
         for (int i = 0; i < this.field4579.size(); ++i) {
             final Class8321 class7930 = this.field4579.get(i);
             if (!class7930.method27620()) {
-                Class3833.method11839(this.field2391, new Class354(this).method1137(), class7930);
+                Class3833.method11839(this.field2391, new BlockPos(this).method1137(), class7930);
                 this.field4579.set(i, Class8321.field34174);
             }
         }
         for (int j = 0; j < this.field4580.size(); ++j) {
             final Class8321 class7931 = this.field4580.get(j);
             if (!class7931.method27620()) {
-                Class3833.method11839(this.field2391, new Class354(this).method1137(), class7931);
+                Class3833.method11839(this.field2391, new BlockPos(this).method1137(), class7931);
                 this.field4580.set(j, Class8321.field34174);
             }
         }
@@ -547,7 +548,7 @@ public class Class857 extends Class511
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method5148()) {
             super.method2729(class5487);
         }
@@ -731,8 +732,8 @@ public class Class857 extends Class511
     }
     
     @Override
-    public boolean method1848(final Class399 class399) {
-        return class399 instanceof Class512 && !this.field2391.method6760((Class512)class399, new Class354(this));
+    public boolean method1848(final Entity class399) {
+        return class399 instanceof Class512 && !this.field2391.method6760((Class512)class399, new BlockPos(this));
     }
     
     @Override

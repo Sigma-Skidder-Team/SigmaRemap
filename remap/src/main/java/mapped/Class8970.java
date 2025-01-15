@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.function.Predicate;
+import net.minecraft.util.Direction;
 
 public class Class8970
 {
@@ -37,8 +37,8 @@ public class Class8970
     public static final Class7113 field37745;
     public static final Class7113 field37746;
     public static final Class7113 field37747;
-    public static final Class7114<Class111> field37748;
-    public static final Class7114<Class111> field37749;
+    public static final Class7114<Axis> field37748;
+    public static final Class7114<Axis> field37749;
     public static final Class7113 field37750;
     public static final Class7113 field37751;
     public static final Class7113 field37752;
@@ -124,17 +124,17 @@ public class Class8970
         field37745 = Class7113.method21834("triggered");
         field37746 = Class7113.method21834("unstable");
         field37747 = Class7113.method21834("waterlogged");
-        field37748 = Class7114.method21839("axis", Class111.class, Class111.field351, Class111.field353);
-        field37749 = Class7114.method21837("axis", Class111.class);
+        field37748 = Class7114.method21839("axis", Axis.class, Axis.X, Axis.Z);
+        field37749 = Class7114.method21837("axis", Axis.class);
         field37750 = Class7113.method21834("up");
         field37751 = Class7113.method21834("down");
         field37752 = Class7113.method21834("north");
         field37753 = Class7113.method21834("east");
         field37754 = Class7113.method21834("south");
         field37755 = Class7113.method21834("west");
-        field37756 = Class7115.method21842("facing", Class179.field513, Class179.field516, Class179.field514, Class179.field515, Class179.field512, Class179.field511);
-        field37757 = Class7115.method21841("facing", class179 -> class179 != Class179.field512);
-        field37758 = Class7115.method21841("facing", Class98.field268);
+        field37756 = Class7115.method21842("facing", Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.UP, Direction.DOWN);
+        field37757 = Class7115.method21841("facing", class179 -> class179 != Direction.UP);
+        field37758 = Class7115.method21841("facing", Plane.HORIZONTAL);
         field37759 = Class7114.method21837("face", Class107.class);
         field37760 = Class7114.method21837("attachment", Class108.class);
         field37761 = Class7114.method21837("east", Class106.class);

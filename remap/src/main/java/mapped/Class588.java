@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class588 extends Class573 implements Class587<Class120>
@@ -56,7 +58,7 @@ public class Class588 extends Class573 implements Class587<Class120>
             final int n6 = (int)((this.field3426 + class8370.field34328) / 0.42f - 3.0f);
             final int n7 = (int)((this.field3427 + class8370.field34329) / 0.42f - 3.0f);
             Class8726.method30063(0.42f, 0.42f, 1.0f);
-            Class564.method3288(this.field3487).method5307().method6540(class8370.field34327[Class9546.method35642(Class564.method3290(this.field3487) / 30.0f) % class8370.field34327.length], n6, n7);
+            Class564.method3288(this.field3487).method5307().method6540(class8370.field34327[MathHelper.method35642(Class564.method3290(this.field3487) / 30.0f) % class8370.field34327.length], n6, n7);
             Class8726.method30060();
         }
         Class8726.method29998();

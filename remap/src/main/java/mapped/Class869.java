@@ -6,9 +6,11 @@ package mapped;
 
 import java.util.AbstractList;
 import com.mojang.authlib.AuthenticationService;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import java.util.concurrent.CompletionStage;
-import com.mojang.authlib.properties.Property;
+
 import java.util.function.Supplier;
 import com.google.common.collect.Multimap;
 import java.util.regex.Matcher;
@@ -22,7 +24,6 @@ import java.net.SocketAddress;
 import com.mojang.authlib.GameProfileRepository;
 import java.text.DecimalFormatSymbols;
 import java.text.DecimalFormat;
-import com.google.common.collect.UnmodifiableIterator;
 import java.util.Locale;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -30,8 +31,6 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Optional;
-import java.util.concurrent.Executor;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.function.Function;
@@ -120,8 +119,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private Class9575 field4686;
     private Class3641 field4687;
     private boolean field4688;
-    public Class399 field4689;
-    public Class399 field4690;
+    public Entity field4689;
+    public Entity field4690;
     public Class7006 field4691;
     public int field4692;
     public int field4693;
@@ -801,7 +800,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             Class8726.method30012();
             double n3 = 0.0;
             for (final Class1943 class1944 : method17084) {
-                final int n4 = Class9546.method35644(class1944.field10592 / 4.0) + 1;
+                final int n4 = MathHelper.floor(class1944.field10592 / 4.0) + 1;
                 method17086.method12390(6, Class9237.field39615);
                 final int method17087 = class1944.method7893();
                 final int n5 = method17087 >> 16 & 0xFF;
@@ -810,14 +809,14 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 method17086.method12432(n, n2, 0.0).method12399(n5, n6, n7, 255).method12397();
                 for (int i = n4; i >= 0; --i) {
                     final float n8 = (float)((n3 + class1944.field10592 * i / n4) * 6.2831854820251465 / 100.0);
-                    method17086.method12432(n + Class9546.method35638(n8) * 160.0f, n2 - Class9546.method35639(n8) * 160.0f * 0.5f, 0.0).method12399(n5, n6, n7, 255).method12397();
+                    method17086.method12432(n + MathHelper.sin(n8) * 160.0f, n2 - MathHelper.cos(n8) * 160.0f * 0.5f, 0.0).method12399(n5, n6, n7, 255).method12397();
                 }
                 method17085.method22695();
                 method17086.method12390(5, Class9237.field39615);
                 for (int j = n4; j >= 0; --j) {
                     final float n9 = (float)((n3 + class1944.field10592 * j / n4) * 6.2831854820251465 / 100.0);
-                    final float n10 = Class9546.method35638(n9) * 160.0f;
-                    final float n11 = Class9546.method35639(n9) * 160.0f * 0.5f;
+                    final float n10 = MathHelper.sin(n9) * 160.0f;
+                    final float n11 = MathHelper.cos(n9) * 160.0f * 0.5f;
                     if (n11 <= 0.0f) {
                         method17086.method12432(n + n10, n2 - n11, 0.0).method12399(n5 >> 1, n6 >> 1, n7 >> 1, 255).method12397();
                         method17086.method12432(n + n10, n2 - n11 + 10.0f, 0.0).method12399(n5 >> 1, n6 >> 1, n7 >> 1, 255).method12397();
@@ -892,9 +891,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (this.field4693 <= 0 && !this.field4684.method2756()) {
             if (b && this.field4691 != null && this.field4691.method21449() == Class2165.field12881) {
                 final Class7005 class7005 = (Class7005)this.field4691;
-                final Class354 method21447 = class7005.method21447();
+                final BlockPos method21447 = class7005.method21447();
                 if (!this.field4683.method6701(method21447).method21706()) {
-                    final Class179 method21448 = class7005.method21448();
+                    final Direction method21448 = class7005.method21448();
                     if (this.field4682.method27314(method21447, method21448)) {
                         this.field4640.method6487(method21447, method21448);
                         this.field4684.method2707(Class316.field1877);
@@ -945,7 +944,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     }
                     case 2: {
                         final Class7005 class5750 = (Class7005)this.field4691;
-                        final Class354 method21447 = class5750.method21447();
+                        final BlockPos method21447 = class5750.method21447();
                         if (!this.field4683.method6701(method21447).method21706()) {
                             this.field4682.method27312(method21447, class5750.method21448());
                             break;
@@ -984,7 +983,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                         switch (Class8853.field37235[this.field4691.method21449().ordinal()]) {
                             case 1: {
                                 final Class7007 class5750 = (Class7007)this.field4691;
-                                final Class399 method2716 = class5750.method21452();
+                                final Entity method2716 = class5750.method21452();
                                 Class2201 class5751 = this.field4682.method27323(this.field4684, method2716, class5750, class5749);
                                 if (!class5751.method8374()) {
                                     class5751 = this.field4682.method27322(this.field4684, method2716, class5749);
@@ -1126,7 +1125,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
             this.field4660.method15300("animateTick");
             if (!this.field4694 && this.field4683 != null) {
-                this.field4683.method6825(Class9546.method35644(this.field4684.method1938()), Class9546.method35644(this.field4684.method1941()), Class9546.method35644(this.field4684.method1945()));
+                this.field4683.method6825(MathHelper.floor(this.field4684.method1938()), MathHelper.floor(this.field4684.method1941()), MathHelper.floor(this.field4684.method1945()));
             }
             this.field4660.method15300("particles");
             if (!this.field4694) {
@@ -1189,7 +1188,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         while (this.field4648.field23443.method1058()) {
             if (!this.field4684.method1639()) {
-                this.method5269().method17292(new Class4399(Class2003.field11246, Class354.field2173, Class179.field511));
+                this.method5269().method17292(new Class4399(Class2003.field11246, BlockPos.ZERO, Direction.DOWN));
             }
         }
         while (this.field4648.field23444.method1058()) {
@@ -1391,7 +1390,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             final Class2165 method6728 = this.field4691.method21449();
             Class8321 class5749;
             if (method6728 == Class2165.field12881) {
-                final Class354 method6729 = ((Class7005)this.field4691).method21447();
+                final BlockPos method6729 = ((Class7005)this.field4691).method21447();
                 final Class7096 method6730 = this.field4683.method6701(method6729);
                 final Class3833 method6731 = method6730.method21696();
                 if (method6730.method21706()) {
@@ -1409,7 +1408,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 if (method6728 != Class2165.field12882 || !field27304) {
                     return;
                 }
-                final Class399 method6732 = ((Class7007)this.field4691).method21452();
+                final Entity method6732 = ((Class7007)this.field4691).method21452();
                 if (method6732 instanceof Class861) {
                     class5749 = new Class8321(Class7739.field31340);
                 }
@@ -1735,7 +1734,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (this.field4684.field2391.field10063 instanceof Class6738) {
             return this.field4647.method3813().method3334() ? Class264.field1266 : Class264.field1267;
         }
-        final Class2140 method9870 = this.field4684.field2391.method6959(new Class354(this.field4684)).method9870();
+        final Class2140 method9870 = this.field4684.field2391.method6959(new BlockPos(this.field4684)).method9870();
         if (!this.field4669.method26548(Class264.field1268) && (!this.field4684.method1712() || this.field4669.method26548(Class264.field1262) || (method9870 != Class2140.field12596 && method9870 != Class2140.field12598))) {
             return (this.field4684.field3025.field27304 && this.field4684.field3025.field27303) ? Class264.field1263 : Class264.field1262;
         }
@@ -1751,11 +1750,11 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     }
     
     @Nullable
-    public Class399 method5303() {
+    public Entity method5303() {
         return this.field4689;
     }
     
-    public void method5304(final Class399 field4689) {
+    public void method5304(final Entity field4689) {
         this.field4689 = field4689;
         this.field4644.method5802(field4689);
     }

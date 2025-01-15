@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.Random;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.UUID;
 
@@ -21,8 +23,8 @@ public class Class798 extends Class789 implements Class797
     private int field4267;
     private int field4268;
     private int field4269;
-    private Class354 field4270;
-    private Class354 field4271;
+    private BlockPos field4270;
+    private BlockPos field4271;
     private Class3622 field4272;
     private Class3620 field4273;
     private Class3623 field4274;
@@ -49,7 +51,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         return class355.method6701(class354).method21706() ? 10.0f : 0.0f;
     }
     
@@ -127,7 +129,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         final boolean method1740 = class399.method1740(Class7929.method25692(this), (float)(int)this.method2710(Class8107.field33410).method23950());
         if (method1740) {
             this.method1900(this, class399);
@@ -169,14 +171,14 @@ public class Class798 extends Class789 implements Class797
     }
     
     private void method4507(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final Class6909 class1848) {
-        class1847.method6709(class1848, Class9546.method35701(class1847.field10062.nextDouble(), n, n2), n5, Class9546.method35701(class1847.field10062.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+        class1847.method6709(class1848, MathHelper.method35701(class1847.field10062.nextDouble(), n, n2), n5, MathHelper.method35701(class1847.field10062.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
-    private void method4508(final Class354 class354) {
-        final Class5487 class355 = new Class5487(class354);
+    private void method4508(final BlockPos class354) {
+        final Vec3d class355 = new Vec3d(class354);
         int n = 0;
-        final Class354 class356 = new Class354(this);
-        final int n2 = (int)class355.field22771 - class356.method1075();
+        final BlockPos class356 = new BlockPos(this);
+        final int n2 = (int)class355.field22771 - class356.getY();
         if (n2 <= 2) {
             if (n2 < -2) {
                 n = -4;
@@ -192,7 +194,7 @@ public class Class798 extends Class789 implements Class797
             n3 = method1086 / 2;
             n4 = method1086 / 2;
         }
-        final Class5487 method1087 = Class7775.method24907(this, n3, n4, n, class355, 0.3141592741012573);
+        final Vec3d method1087 = Class7775.method24907(this, n3, n4, n, class355, 0.3141592741012573);
         if (method1087 != null) {
             this.field4113.method24713(0.5f);
             this.field4113.method24724(method1087.field22770, method1087.field22771, method1087.field22772, 1.0);
@@ -200,7 +202,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Nullable
-    public Class354 method4509() {
+    public BlockPos method4509() {
         return this.field4270;
     }
     
@@ -208,7 +210,7 @@ public class Class798 extends Class789 implements Class797
         return this.field4270 != null;
     }
     
-    public void method4511(final Class354 field4270) {
+    public void method4511(final BlockPos field4270) {
         this.field4270 = field4270;
     }
     
@@ -243,7 +245,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     public float method4515(final float n) {
-        return Class9546.method35700(n, this.field4263, this.field4262);
+        return MathHelper.method35700(n, this.field4263, this.field4262);
     }
     
     private void method4516() {
@@ -279,7 +281,7 @@ public class Class798 extends Class789 implements Class797
         if (method4531) {
             ++this.field4264;
             if (this.field4264 % 5 == 0) {
-                if (this.field2423.nextInt(Class9546.method35651(1200 - this.field4264, 1, 1200)) == 0) {
+                if (this.field2423.nextInt(MathHelper.method35651(1200 - this.field4264, 1, 1200)) == 0) {
                     this.method1740(Class7929.field32575, this.method2664());
                 }
             }
@@ -323,7 +325,7 @@ public class Class798 extends Class789 implements Class797
         this.field2432.method33569(Class798.field4260, i);
     }
     
-    private boolean method4522(final Class354 class354) {
+    private boolean method4522(final BlockPos class354) {
         final Class436 method6727 = this.field2391.method6727(class354);
         return method6727 instanceof Class438 && !((Class438)method6727).method2217();
     }
@@ -333,7 +335,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Nullable
-    public Class354 method4524() {
+    public BlockPos method4524() {
         return this.field4271;
     }
     
@@ -426,7 +428,7 @@ public class Class798 extends Class789 implements Class797
         this.method4536(2, b);
     }
     
-    private boolean method4535(final Class354 class354) {
+    private boolean method4535(final BlockPos class354) {
         return !this.method4542(class354, 48);
     }
     
@@ -468,12 +470,12 @@ public class Class798 extends Class789 implements Class797
         return class8321.method27622().method11742(Class7855.field32270);
     }
     
-    private boolean method4538(final Class354 class354) {
+    private boolean method4538(final BlockPos class354) {
         return this.field2391.method6731(class354) && this.field2391.method6701(class354).method21696().method11785(Class7188.field27913);
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
     }
     
     @Override
@@ -511,7 +513,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final Class354 class7097) {
+    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
     }
     
     @Override
@@ -524,7 +526,7 @@ public class Class798 extends Class789 implements Class797
         this.method4526();
     }
     
-    public boolean method4541(final Class399 class399) {
+    public boolean method4541(final Entity class399) {
         this.method4521(400 + this.field2423.nextInt(400));
         if (class399 instanceof Class511) {
             this.method2636((Class511)class399);
@@ -535,7 +537,7 @@ public class Class798 extends Class789 implements Class797
     @Override
     public boolean method1740(final Class7929 class7929, final float n) {
         if (!this.method1849(class7929)) {
-            final Class399 method25714 = class7929.method25714();
+            final Entity method25714 = class7929.method25714();
             if (!this.field2391.field10067) {
                 if (method25714 instanceof Class512) {
                     if (!((Class512)method25714).method2889()) {
@@ -563,8 +565,8 @@ public class Class798 extends Class789 implements Class797
         this.method1936(this.method1935().method16744(0.0, 0.01, 0.0));
     }
     
-    private boolean method4542(final Class354 class354, final int n) {
-        return class354.method1081(new Class354(this), n);
+    private boolean method4542(final BlockPos class354, final int n) {
+        return class354.method1081(new BlockPos(this), n);
     }
     
     static {

@@ -6,9 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Collection;
 import java.util.Random;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 
 public class Class5942 extends Class5936
@@ -42,7 +41,7 @@ public class Class5942 extends Class5936
         final int n6 = (n2 << 4) + 7;
         final int min = Math.min(Math.min(class6346.method18884(n5, n6, Class2020.field11521), class6346.method18884(n5, n6 + n4, Class2020.field11521)), Math.min(class6346.method18884(n5 + n3, n6, Class2020.field11521), class6346.method18884(n5 + n3, n6 + n4, Class2020.field11521)));
         if (min >= 60) {
-            final Class354 class6350 = new Class354(n * 16 + 8, min + 1, n2 * 16 + 8);
+            final BlockPos class6350 = new BlockPos(n * 16 + 8, min + 1, n2 * 16 + 8);
             final LinkedList linkedList = Lists.newLinkedList();
             Class6913.method21281(class6347, class6350, class6349, linkedList, this.field24436);
             this.field24431.addAll(linkedList);
@@ -56,7 +55,7 @@ public class Class5942 extends Class5936
         final int field27294 = this.field24432.field27294;
         for (int i = class1853.field27293; i <= class1853.field27296; ++i) {
             for (int j = class1853.field27295; j <= class1853.field27298; ++j) {
-                final Class354 class1855 = new Class354(i, field27294, j);
+                final BlockPos class1855 = new BlockPos(i, field27294, j);
                 if (!class1851.method6961(class1855)) {
                     if (this.field24432.method21415(class1855)) {
                         int n = 0;
@@ -70,7 +69,7 @@ public class Class5942 extends Class5936
                         }
                         if (n != 0) {
                             for (int k = field27294 - 1; k > 1; --k) {
-                                final Class354 class1856 = new Class354(i, k, j);
+                                final BlockPos class1856 = new BlockPos(i, k, j);
                                 if (!class1851.method6961(class1856) && !class1851.method6701(class1856).method21697().method26438()) {
                                     break;
                                 }

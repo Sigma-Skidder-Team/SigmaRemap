@@ -6,13 +6,15 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.ArrayList;
 
 public class Class3359 extends Class3355
 {
     public ArrayList<Thread> field16000;
-    public Class399 field16001;
+    public Entity field16001;
     public Class5487 field16002;
     
     public Class3359(final String s, final String s2, final Class8013 class8013) {
@@ -27,18 +29,18 @@ public class Class3359 extends Class3355
         }
     }
     
-    public List<Class399> method10640() {
+    public List<Entity> method10640() {
         final ArrayList arrayList = Lists.newArrayList((Iterable)Class3359.field15514.field4683.method6806());
         arrayList.remove(Class3359.field15514.field4684);
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
-            final Class399 class399 = (Class399)iterator.next();
+            final Entity class399 = (Entity)iterator.next();
             if (class399 instanceof Class512 && !Class9463.method35173().method35191().method31751(class399)) {
                 continue;
             }
             iterator.remove();
         }
-        final List<Class399> method13678 = Class4609.method13678(arrayList);
+        final List<Entity> method13678 = Class4609.method13678(arrayList);
         if (method13678.size() <= 1) {
             return method13678;
         }

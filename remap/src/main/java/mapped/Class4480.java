@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class4480 extends Class4479
 {
     private static String[] field19870;
     
-    public Class4480(final int n, final Class6997 field19849, final Class179 class179, final Class1964 class180) {
+    public Class4480(final int n, final Class6997 field19849, final Direction class179, final Class1964 class180) {
         super(Class9520.field40946, n, class180);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -21,7 +23,7 @@ public class Class4480 extends Class4479
         super(Class9520.field40946, class1796);
     }
     
-    public static Class6997 method13465(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179) {
+    public static Class6997 method13465(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179) {
         final Class6997 class180 = new Class6997(n, n2 - 5, n3, n, n2 + 3 - 1, n3);
         switch (Class8427.field34587[class179.ordinal()]) {
             default: {
@@ -51,23 +53,23 @@ public class Class4480 extends Class4479
     @Override
     public void method13431(final Class4473 class4473, final List<Class4473> list, final Random random) {
         final int method13433 = this.method13433();
-        final Class179 method13434 = this.method13455();
+        final Direction method13434 = this.method13455();
         if (method13434 != null) {
             switch (Class8427.field34587[method13434.ordinal()]) {
                 default: {
-                    Class9191.method33629(class4473, list, random, this.field19849.field27293, this.field19849.field27294, this.field19849.field27295 - 1, Class179.field513, method13433);
+                    Class9191.method33629(class4473, list, random, this.field19849.field27293, this.field19849.field27294, this.field19849.field27295 - 1, Direction.NORTH, method13433);
                     break;
                 }
                 case 2: {
-                    Class9191.method33629(class4473, list, random, this.field19849.field27293, this.field19849.field27294, this.field19849.field27298 + 1, Class179.field514, method13433);
+                    Class9191.method33629(class4473, list, random, this.field19849.field27293, this.field19849.field27294, this.field19849.field27298 + 1, Direction.SOUTH, method13433);
                     break;
                 }
                 case 3: {
-                    Class9191.method33629(class4473, list, random, this.field19849.field27293 - 1, this.field19849.field27294, this.field19849.field27295, Class179.field515, method13433);
+                    Class9191.method33629(class4473, list, random, this.field19849.field27293 - 1, this.field19849.field27294, this.field19849.field27295, Direction.WEST, method13433);
                     break;
                 }
                 case 4: {
-                    Class9191.method33629(class4473, list, random, this.field19849.field27296 + 1, this.field19849.field27294, this.field19849.field27295, Class179.field516, method13433);
+                    Class9191.method33629(class4473, list, random, this.field19849.field27296 + 1, this.field19849.field27294, this.field19849.field27295, Direction.EAST, method13433);
                     break;
                 }
             }

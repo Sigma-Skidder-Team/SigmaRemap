@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class830 extends Class827 implements Class768
@@ -49,7 +51,7 @@ public class Class830 extends Class827 implements Class768
         return method4188;
     }
     
-    public static boolean method4942(final Class7499<Class830> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4942(final Class7499<Class830> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3090 method6959 = class7500.method6959(class7502);
         boolean b = false;
         Label_0078: {
@@ -77,8 +79,8 @@ public class Class830 extends Class827 implements Class768
         return random.nextInt(15) == 0 && b2;
     }
     
-    private static boolean method4943(final Class1851 class1851, final Class354 class1852) {
-        return class1852.method1075() < class1851.method6743() - 5;
+    private static boolean method4943(final Class1851 class1851, final BlockPos class1852) {
+        return class1852.getY() < class1851.method6743() - 5;
     }
     
     @Override
@@ -167,7 +169,7 @@ public class Class830 extends Class827 implements Class768
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method2749()) {
             if (this.method1706()) {
                 if (this.method4945()) {
@@ -201,9 +203,9 @@ public class Class830 extends Class827 implements Class768
     public boolean method4946() {
         final Class9468 method24727 = this.method4150().method24727();
         if (method24727 != null) {
-            final Class354 method24728 = method24727.method35232();
+            final BlockPos method24728 = method24727.method35232();
             if (method24728 != null) {
-                if (this.method1733(method24728.method1074(), method24728.method1075(), method24728.method1076()) < 4.0) {
+                if (this.method1733(method24728.getX(), method24728.getY(), method24728.getZ()) < 4.0) {
                     return true;
                 }
             }
@@ -217,7 +219,7 @@ public class Class830 extends Class827 implements Class768
         final double n2 = class511.method1938() - this.method1938();
         final double n3 = class511.method1942(0.3333333333333333) - class512.method1941();
         final double n4 = class511.method1945() - this.method1945();
-        class512.method1958(n2, n3 + Class9546.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
+        class512.method1958(n2, n3 + MathHelper.method35641(n2 * n2 + n4 * n4) * 0.20000000298023224, n4, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35137, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
         this.field2391.method6886(class512);
     }

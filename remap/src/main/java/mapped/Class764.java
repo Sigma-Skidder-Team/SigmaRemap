@@ -26,7 +26,7 @@ public class Class764 extends Class763
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         return class355.method6963(class354) - 0.5f;
     }
 }

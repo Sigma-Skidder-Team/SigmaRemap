@@ -4,10 +4,13 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-import java.util.Iterator;
 import java.util.List;
 
 public class Class495 extends Class436 implements Class439
@@ -16,7 +19,7 @@ public class Class495 extends Class436 implements Class439
     private long field2842;
     public int field2843;
     public boolean field2844;
-    public Class179 field2845;
+    public Direction field2845;
     private List<Class511> field2846;
     private boolean field2847;
     private int field2848;
@@ -32,7 +35,7 @@ public class Class495 extends Class436 implements Class439
         }
         this.method2512();
         this.field2848 = 0;
-        this.field2845 = Class179.method792(n2);
+        this.field2845 = Direction.byIndex(n2);
         this.field2843 = 0;
         return this.field2844 = true;
     }
@@ -70,8 +73,8 @@ public class Class495 extends Class436 implements Class439
         this.field2656.method6705(null, this.method2193(), Class8520.field35026, Class286.field1582, 1.0f, 1.0f);
     }
     
-    public void method2511(final Class179 field2845) {
-        final Class354 method2193 = this.method2193();
+    public void method2511(final Direction field2845) {
+        final BlockPos method2193 = this.method2193();
         this.field2845 = field2845;
         if (!this.field2844) {
             this.field2844 = true;
@@ -79,14 +82,14 @@ public class Class495 extends Class436 implements Class439
         else {
             this.field2843 = 0;
         }
-        this.field2656.method6763(method2193, this.method2194().method21696(), 1, field2845.method779());
+        this.field2656.method6763(method2193, this.method2194().method21696(), 1, field2845.getIndex());
     }
     
     private void method2512() {
-        final Class354 method2193 = this.method2193();
+        final BlockPos method2193 = this.method2193();
         if (this.field2656.method6754() > this.field2842 + 60L || this.field2846 == null) {
             this.field2842 = this.field2656.method6754();
-            this.field2846 = (List<Class511>)this.field2656.method7128((Class<? extends Class399>)Class511.class, new Class6221(method2193).method18496(48.0));
+            this.field2846 = (List<Class511>)this.field2656.method7128((Class<? extends Entity>)Class511.class, new Class6221(method2193).method18496(48.0));
         }
         if (!this.field2656.field10067) {
             for (final Class511 class511 : this.field2846) {
@@ -105,7 +108,7 @@ public class Class495 extends Class436 implements Class439
     }
     
     private boolean method2513() {
-        final Class354 method2193 = this.method2193();
+        final BlockPos method2193 = this.method2193();
         for (final Class511 class511 : this.field2846) {
             if (!class511.method1768()) {
                 continue;
@@ -136,11 +139,11 @@ public class Class495 extends Class436 implements Class439
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach(class1850 -> {
                 final Object o = (int)this.field2846.stream().filter(p1 -> {}).count();
                 final Object o2 = new AtomicInteger(16700985);
-                Class9546.method35641((class1850.method1938() - class1848.method1074()) * (class1850.method1938() - class1848.method1074()) + (class1850.method1945() - class1848.method1076()) * (class1850.method1945() - class1848.method1076()));
+                MathHelper.method35641((class1850.method1938() - class1848.method1074()) * (class1850.method1938() - class1848.method1074()) + (class1850.method1945() - class1848.method1076()) * (class1850.method1945() - class1848.method1076()));
                 final float n3;
                 final double n2 = class1848.method1074() + 0.5f + 1.0f / n3 * (class1850.method1938() - class1848.method1074());
                 final double n4 = class1848.method1076() + 0.5f + 1.0f / n3 * (class1850.method1945() - class1848.method1076());
-                Class9546.method35651((n - 21) / -2, 3, 15);
+                MathHelper.method35651((n - 21) / -2, 3, 15);
                 int i = 0;
                 final int n5;
                 while (i < n5) {

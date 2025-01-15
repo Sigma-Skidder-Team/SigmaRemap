@@ -4,10 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-import java.util.stream.Stream;
 import java.util.List;
 
 public class Class6348 extends Class6346<Class7066>
@@ -73,7 +74,7 @@ public class Class6348 extends Class6346<Class7066>
                         n2 /= 2;
                         if (n <= Class6348.field25392) {
                             if (n2 <= Class6348.field25393) {
-                                final int method35648 = Class9546.method35648(n * Class6348.field25392 + n2);
+                                final int method35648 = MathHelper.abs(n * Class6348.field25392 + n2);
                                 if (method35648 < Class6348.field25391.size()) {
                                     field25394 = Class6348.field25391.get(method35648);
                                 }
@@ -88,8 +89,8 @@ public class Class6348 extends Class6346<Class7066>
     
     static {
         field25391 = StreamSupport.stream(Class90.field208.spliterator(), false).flatMap(class3833 -> class3833.method11876().method32902().stream()).collect((Collector<? super Object, ?, List<Class7096>>)Collectors.toList());
-        field25392 = Class9546.method35649(Class9546.method35640((float)Class6348.field25391.size()));
-        field25393 = Class9546.method35649(Class6348.field25391.size() / (float)Class6348.field25392);
+        field25392 = MathHelper.method35649(MathHelper.method35640((float)Class6348.field25391.size()));
+        field25393 = MathHelper.method35649(Class6348.field25391.size() / (float)Class6348.field25392);
         field25394 = Class7521.field29147.method11878();
         field25395 = Class7521.field29517.method11878();
     }

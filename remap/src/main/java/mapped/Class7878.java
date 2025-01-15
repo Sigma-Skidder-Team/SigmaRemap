@@ -6,13 +6,15 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 import java.util.List;
 
 public class Class7878
 {
     private final List<Class8754> field32337;
-    private final Map<Class179, List<Class8754>> field32338;
+    private final Map<Direction, List<Class8754>> field32338;
     private final Class9168 field32339;
     private final boolean field32340;
     private Class1912 field32341;
@@ -26,8 +28,8 @@ public class Class7878
     
     private Class7878(final boolean field32340, final boolean field32341, final boolean field32342, final Class7503 field32343, final Class9168 field32344) {
         this.field32337 = Lists.newArrayList();
-        this.field32338 = Maps.newEnumMap((Class)Class179.class);
-        final Class179[] values = Class179.values();
+        this.field32338 = Maps.newEnumMap((Class) Direction.class);
+        final Direction[] values = Direction.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             this.field32338.put(values[i], Lists.newArrayList());
         }
@@ -38,7 +40,7 @@ public class Class7878
         this.field32344 = field32343;
     }
     
-    public Class7878 method25528(final Class179 class179, final Class8754 class180) {
+    public Class7878 method25528(final Direction class179, final Class8754 class180) {
         this.field32338.get(class179).add(class180);
         return this;
     }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 
@@ -129,7 +131,7 @@ public class Class817 extends Class789
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         return class399.method1740(Class7929.method25693(this), this.method4810());
     }
     
@@ -209,7 +211,7 @@ public class Class817 extends Class789
         return Class817.field4376.test(class8321);
     }
     
-    public static boolean method4814(final Class7499<Class817> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4814(final Class7499<Class817> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return random.nextInt(3) != 0;
     }
     
@@ -217,8 +219,8 @@ public class Class817 extends Class789
     public boolean method4180(final Class1852 class1852) {
         if (class1852.method6975(this)) {
             if (!class1852.method6968(this.method1886())) {
-                final Class354 class1853 = new Class354(this);
-                if (class1853.method1075() < class1852.method6743()) {
+                final BlockPos class1853 = new BlockPos(this);
+                if (class1853.getY() < class1852.method6743()) {
                     return false;
                 }
                 final Class7096 method6701 = class1852.method6701(class1853.method1139());

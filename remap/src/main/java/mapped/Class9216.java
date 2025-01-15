@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.IdentityHashMap;
 import java.nio.charset.StandardCharsets;
+
+import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.entity.Entity;
 import org.lwjgl.BufferUtils;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
@@ -21,7 +24,6 @@ import org.lwjgl.opengl.EXTFramebufferObject;
 import java.util.Comparator;
 import java.util.Collections;
 import java.io.FileInputStream;
-import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.util.HashSet;
 import org.lwjgl.opengl.GL11;
@@ -33,7 +35,6 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.io.InputStream;
 import java.io.IOException;
-import java.io.Writer;
 import java.io.FileWriter;
 import java.io.Reader;
 import java.io.FileReader;
@@ -269,7 +270,7 @@ public class Class9216
     public static int field39247;
     private static int[] field39248;
     public static boolean[] field39249;
-    public static Class8526[] field39250;
+    public static Vector4f[] field39250;
     private static Class9363 field39251;
     public static final Class9023 field39252;
     public static final Class9023 field39253;
@@ -1748,7 +1749,7 @@ public class Class9216
                 Class9216.field39295 = Class8990.method32053();
             }
             final Class7351 class9025 = new Class7351();
-            class9025.method22566(Class9138.field38718.method33328(-90.0f));
+            class9025.method22566(Vector3f.field38718.rotationDegrees(-90.0f));
             method33810(class9025);
             method33811(class9025);
             Class9216.field39034 = true;
@@ -2258,7 +2259,7 @@ public class Class9216
                                             if (method33752 < 0) {
                                                 continue;
                                             }
-                                            final Class8526 method33753 = method33738.method32208();
+                                            final Vector4f method33753 = method33738.method32208();
                                             if (method33753 != null) {
                                                 Class9216.field39250[method33752] = method33753;
                                                 Class8885.method31276("%s clear color: %s %s %s %s", method33751, method33753.method28595(), method33753.method28596(), method33753.method28597(), method33753.method28598());
@@ -3034,7 +3035,7 @@ public class Class9216
             Class9216.field39089 = field39032.method6768(n);
             final float n3 = (float)Math.exp(Math.log(0.5) * (Class9216.field39084 * 0.01f) / ((Class9216.field39090 < Class9216.field39089) ? Class9216.field39092 : Class9216.field39091));
             Class9216.field39090 = Class9216.field39090 * n3 + Class9216.field39089 * (1.0f - n3);
-            final Class399 method18166 = class6092.method18166();
+            final Entity method18166 = class6092.method18166();
             if (method18166 != null) {
                 Class9216.field39051 = (method18166 instanceof Class511 && ((Class511)method18166).method2783());
                 Class9216.field39099 = (float)class6092.method18161().method16761();
@@ -3064,7 +3065,7 @@ public class Class9216
                         Class9216.field39106 = Class8571.method28866(class6093.method2654(Class9439.field40488).method7907() / 20.0f, 0.0f, 1.0f);
                     }
                 }
-                final Class5487 method18168 = Class8763.method30363(field39032.method6843(method18166.method1894(), n), field39032, method18166, n);
+                final Vec3d method18168 = Class8763.method30363(field39032.method6843(method18166.method1894(), n), field39032, method18166, n);
                 Class9216.field39072 = (float)method18168.field22770;
                 Class9216.field39073 = (float)method18168.field22771;
                 Class9216.field39074 = (float)method18168.field22772;
@@ -3230,7 +3231,7 @@ public class Class9216
         else {
             method33739("clear pre");
             if (Class9216.field39249[0]) {
-                final Class8526 class8526 = Class9216.field39250[0];
+                final Vector4f class8526 = Class9216.field39250[0];
                 if (class8526 != null) {
                     GL32.glClearColor(class8526.method28595(), class8526.method28596(), class8526.method28597(), class8526.method28598());
                 }
@@ -3245,7 +3246,7 @@ public class Class9216
             }
             if (Class9216.field39249[1]) {
                 GL32.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-                final Class8526 class8527 = Class9216.field39250[1];
+                final Vector4f class8527 = Class9216.field39250[1];
                 if (class8527 != null) {
                     GL32.glClearColor(class8527.method28595(), class8527.method28596(), class8527.method28597(), class8527.method28598());
                 }
@@ -3261,7 +3262,7 @@ public class Class9216
             for (int i = 2; i < Class9216.field39240; ++i) {
                 if (Class9216.field39249[i]) {
                     GL32.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                    final Class8526 class8528 = Class9216.field39250[i];
+                    final Vector4f class8528 = Class9216.field39250[i];
                     if (class8528 != null) {
                         GL32.glClearColor(class8528.method28595(), class8528.method28596(), class8528.method28597(), class8528.method28598());
                     }
@@ -3282,8 +3283,8 @@ public class Class9216
     }
     
     public static void method33806(final Class7351 class7351, final Class6092 class7352, final float n) {
-        final Class399 method18166 = class7352.method18166();
-        final Class5487 method18167 = class7352.method18161();
+        final Entity method18166 = class7352.method18166();
+        final Vec3d method18167 = class7352.method18161();
         final double field22770 = method18167.field22770;
         final double field22771 = method18167.field22771;
         final double field22772 = method18167.field22772;
@@ -3306,7 +3307,7 @@ public class Class9216
         method33739("setCamera");
     }
     
-    private static void method33807(final Class399 class399) {
+    private static void method33807(final Entity class399) {
         final double abs = Math.abs(Class9216.field39217 - Class9216.field39214);
         final double abs2 = Math.abs(Class9216.field39219 - Class9216.field39216);
         final double abs3 = Math.abs(Class9216.field39217);
@@ -3316,7 +3317,7 @@ public class Class9216
         }
     }
     
-    private static void method33808(final Class399 class399) {
+    private static void method33808(final Entity class399) {
         if (class399 == null) {
             Class9216.field39220 = 0;
             Class9216.field39221 = 0;
@@ -3328,8 +3329,8 @@ public class Class9216
     }
     
     public static void method33809(final Class7351 class7351, final Class6092 class7352, final float n) {
-        final Class399 method18166 = class7352.method18166();
-        final Class5487 method18167 = class7352.method18161();
+        final Entity method18166 = class7352.method18166();
+        final Vec3d method18167 = class7352.method18161();
         final double field22770 = method18167.field22770;
         final double field22771 = method18167.field22771;
         final double field22772 = method18167.field22772;
@@ -3347,19 +3348,19 @@ public class Class9216
             Class8933.method31645(Class6789.method20755(Class9216.field39228, Class9216.field39224 / (float)Class9216.field39225, 0.05f, 256.0f));
         }
         class7351.method22564(0.0, 0.0, -100.0);
-        class7351.method22566(Class9138.field38716.method33328(90.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
         Class9216.field39078 = Class9216.field39031.field4683.method6952(n);
         Class9216.field39079 = ((Class9216.field39078 < 0.75f) ? (Class9216.field39078 + 0.25f) : (Class9216.field39078 - 0.75f));
         final float n2 = Class9216.field39078 * -360.0f;
         final float n3 = (Class9216.field39376 > 0.0f) ? (n2 % Class9216.field39376 - Class9216.field39376 * 0.5f) : 0.0f;
         if (Class9216.field39079 <= 0.5) {
-            class7351.method22566(Class9138.field38720.method33328(n2 - n3));
-            class7351.method22566(Class9138.field38716.method33328(Class9216.field39375));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(n2 - n3));
+            class7351.method22566(Vector3f.XP.rotationDegrees(Class9216.field39375));
             Class9216.field39080 = Class9216.field39079;
         }
         else {
-            class7351.method22566(Class9138.field38720.method33328(n2 + 180.0f - n3));
-            class7351.method22566(Class9138.field38716.method33328(Class9216.field39375));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(n2 + 180.0f - n3));
+            class7351.method22566(Vector3f.XP.rotationDegrees(Class9216.field39375));
             Class9216.field39080 = Class9216.field39079 - 0.5f;
         }
         if (Class9216.field39230) {
@@ -3405,7 +3406,7 @@ public class Class9216
     }
     
     public static void method33810(final Class7351 class7351) {
-        class7351.method22566(Class9138.field38720.method33328(Class9216.field39375 * 1.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(Class9216.field39375 * 1.0f));
         method33739("preCelestialRotate");
     }
     
@@ -3695,7 +3696,7 @@ public class Class9216
         method33886(-2, 0);
     }
     
-    public static void method33825(final Class5487 class5487) {
+    public static void method33825(final Vec3d class5487) {
         Class9216.field39072 = (float)class5487.field22770;
         Class9216.field39073 = (float)class5487.field22771;
         Class9216.field39074 = (float)class5487.field22772;
@@ -3813,14 +3814,14 @@ public class Class9216
         }
     }
     
-    public static void method33835(final Class399 class399) {
+    public static void method33835(final Entity class399) {
         if (Class9216.field39045) {
             method33776(Class9216.field39270);
             method33836(class399);
         }
     }
     
-    public static void method33836(final Class399 class399) {
+    public static void method33836(final Entity class399) {
         if (Class9216.field39126.method16084()) {
             Class9216.field39126.method16099(Class8251.method27360(Class9543.method35624(class399)));
         }
@@ -4391,8 +4392,8 @@ public class Class9216
         return Class9216.field39357;
     }
     
-    public static Class354 method33919() {
-        return new Class354(Class9216.field39217, Class9216.field39218, Class9216.field39219);
+    public static BlockPos method33919() {
+        return new BlockPos(Class9216.field39217, Class9216.field39218, Class9216.field39219);
     }
     
     public static boolean method33920() {
@@ -4604,7 +4605,7 @@ public class Class9216
         Class9216.field39247 = 0;
         Class9216.field39248 = new int[8];
         Class9216.field39249 = new boolean[8];
-        Class9216.field39250 = new Class8526[8];
+        Class9216.field39250 = new Vector4f[8];
         Class9216.field39251 = new Class9363();
         field39252 = Class9216.field39251.method34735();
         field39253 = Class9216.field39251.method34731(Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[67], Class9216.field39252);

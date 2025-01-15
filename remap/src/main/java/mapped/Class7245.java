@@ -7,7 +7,7 @@ package mapped;
 import java.util.NoSuchElementException;
 import java.util.Iterator;
 
-public class Class7245 implements Iterator<Class354>
+public class Class7245 implements Iterator<BlockPos>
 {
     private double field28078;
     private double field28079;
@@ -23,17 +23,17 @@ public class Class7245 implements Iterator<Class354>
     private Class384 field28089;
     private boolean field28090;
     
-    public Class7245(final Class354 class354, final Class354 class355, final double field28078, final double field28079) {
+    public Class7245(final BlockPos class354, final BlockPos class355, final double field28078, final double field28079) {
         this.field28089 = new Class384(0, 0, 0);
         this.field28090 = false;
         this.field28078 = field28078;
         this.field28079 = field28079;
-        this.field28080 = class354.method1074();
-        this.field28081 = class355.method1074();
-        this.field28082 = class354.method1075();
-        this.field28083 = class355.method1075() - 0.5;
-        this.field28084 = class354.method1076();
-        this.field28085 = class355.method1076() - 0.5;
+        this.field28080 = class354.getX();
+        this.field28081 = class355.getX();
+        this.field28082 = class354.getY();
+        this.field28083 = class355.getY() - 0.5;
+        this.field28084 = class354.getZ();
+        this.field28085 = class355.getZ() - 0.5;
         this.field28086 = this.field28080;
         this.field28087 = this.field28082;
         this.field28088 = this.field28084;
@@ -58,7 +58,7 @@ public class Class7245 implements Iterator<Class354>
     }
     
     @Override
-    public Class354 next() {
+    public BlockPos next() {
         if (this.field28090) {
             this.field28089.method1280(this.field28086, this.field28087, this.field28088);
             this.method22143();
@@ -105,8 +105,8 @@ public class Class7245 implements Iterator<Class354>
     }
     
     public static void main(final String[] array) throws Exception {
-        final Class354 obj = new Class354(-2, 10, 20);
-        final Class354 obj2 = new Class354(2, 12, 22);
+        final BlockPos obj = new BlockPos(-2, 10, 20);
+        final BlockPos obj2 = new BlockPos(2, 12, 22);
         final double d = -0.5;
         final double d2 = 0.5;
         final Class7245 class7245 = new Class7245(obj, obj2, d, d2);

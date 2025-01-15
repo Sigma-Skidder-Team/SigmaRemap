@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public abstract class Class3545 extends Class3446
 {
     public final Class759 field16602;
@@ -89,7 +91,7 @@ public abstract class Class3545 extends Class3446
         if (!class512.method25344(this.field16602, class511)) {
             return false;
         }
-        if (this.field16602.method4197(new Class354(class511))) {
+        if (this.field16602.method4197(new BlockPos(class511))) {
             if (this.field16604) {
                 if (--this.field16606 <= 0) {
                     this.field16605 = 0;
@@ -114,8 +116,8 @@ public abstract class Class3545 extends Class3446
         }
         final Class6772 method24723 = method24722.method35216();
         if (method24723 != null) {
-            final int n = method24723.field26589 - Class9546.method35644(class511.method1938());
-            final int n2 = method24723.field26591 - Class9546.method35644(class511.method1945());
+            final int n = method24723.field26589 - MathHelper.floor(class511.method1938());
+            final int n2 = method24723.field26591 - MathHelper.floor(class511.method1945());
             return n * n + n2 * n2 <= 2.25;
         }
         return false;

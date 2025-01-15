@@ -25,8 +25,8 @@ public class Class361 extends Class357
     }
     
     @Override
-    public Class7096 method1164(final Random random, final Class354 class354) {
-        return ((Class7097<O, Class7096>)this.field2189.method11878()).method21773(Class4027.field18120, Class111.method602(random));
+    public Class7096 method1164(final Random random, final BlockPos class354) {
+        return ((Class7097<O, Class7096>)this.field2189.method11878()).method21773(Class4027.field18120, Axis.random(random));
     }
     
     @Override

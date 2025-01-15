@@ -6,7 +6,7 @@ package mapped;
 
 import com.mojang.datafixers.types.DynamicOps;
 
-public interface Class356
+public interface IDynamicSerializable
 {
      <T> T method1123(final DynamicOps<T> p0);
 }

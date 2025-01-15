@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Comparator;
 
 public class Class4449 implements Comparator<Class7859>
@@ -18,7 +20,7 @@ public class Class4449 implements Comparator<Class7859>
         this.field19790 = field19790;
         this.field19791 = field19791;
         this.field19792 = field19792;
-        this.field19793 = 1.0 - Class9546.method35654(Math.abs(a) / 1.5707963267948966, 0.0, 1.0);
+        this.field19793 = 1.0 - MathHelper.method35654(Math.abs(a) / 1.5707963267948966, 0.0, 1.0);
     }
     
     @Override
@@ -30,7 +32,7 @@ public class Class4449 implements Comparator<Class7859>
         final int n = class7859.field32290 - this.field19790;
         final int n2 = class7859.field32291 - this.field19791;
         final int n3 = n * n + n2 * n2;
-        double abs = Math.abs(Class9546.method35693(n2, n) - this.field19792);
+        double abs = Math.abs(MathHelper.method35693(n2, n) - this.field19792);
         if (abs > 3.141592653589793) {
             abs = 6.283185307179586 - abs;
         }

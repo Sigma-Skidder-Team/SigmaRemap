@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public class Class858 extends Class399
+public class Class858 extends Entity
 {
-    private static final Class8810<Optional<Class354>> field4590;
+    private static final Class8810<Optional<BlockPos>> field4590;
     private static final Class8810<Boolean> field4591;
     public int field4592;
     
@@ -39,7 +41,7 @@ public class Class858 extends Class399
     public void method1659() {
         ++this.field4592;
         if (!this.field2391.field10067) {
-            final Class354 class354 = new Class354(this);
+            final BlockPos class354 = new BlockPos(this);
             if (this.field2391.field10063 instanceof Class6738) {
                 if (this.field2391.method6701(class354).method21706()) {
                     this.field2391.method6692(class354, Class7521.field29289.method11878());
@@ -106,12 +108,12 @@ public class Class858 extends Class399
         }
     }
     
-    public void method5182(final Class354 value) {
+    public void method5182(final BlockPos value) {
         this.method1650().method33569(Class858.field4590, Optional.ofNullable(value));
     }
     
     @Nullable
-    public Class354 method5183() {
+    public BlockPos method5183() {
         return this.method1650().method33568(Class858.field4590).orElse(null);
     }
     

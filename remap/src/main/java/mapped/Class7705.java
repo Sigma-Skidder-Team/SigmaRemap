@@ -5,6 +5,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.util.math.MathHelper;
 
 public final class Class7705 extends Class7702
 {
@@ -15,13 +16,13 @@ public final class Class7705 extends Class7702
     }
     
     @Override
-    public DoubleList method24539(final Class111 class111) {
+    public DoubleList method24539(final Axis class111) {
         return (DoubleList)new Class81(this.field30615.method27430(class111));
     }
     
     @Override
-    public int method24548(final Class111 class111, final double n) {
+    public int method24548(final Axis class111, final double n) {
         final int method27430 = this.field30615.method27430(class111);
-        return Class9546.method35651(Class9546.method35644(n * method27430), -1, method27430);
+        return MathHelper.method35651(MathHelper.floor(n * method27430), -1, method27430);
     }
 }

@@ -11,6 +11,9 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.Collection;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 import java.util.Iterator;
@@ -28,7 +31,7 @@ public class Class8742
                 final Class51 method505 = method504.method346(i);
                 final Class1932 method506 = Class1932.method7795(method505.method323("id"));
                 if (method506 != null && method506.equals(method503)) {
-                    return Class9546.method35651(method505.method319("lvl"), 0, 255);
+                    return MathHelper.method35651(method505.method319("lvl"), 0, 255);
                 }
             }
             return 0;
@@ -117,7 +120,7 @@ public class Class8742
         return (method30206 <= 0) ? 0.0f : Class6267.method18606(method30206);
     }
     
-    public static void method30204(final Class511 class511, final Class399 class512) {
+    public static void method30204(final Class511 class511, final Entity class512) {
         final Class7311 class513 = (class513, n) -> class513.method18602(class511, class512, n);
         if (class511 != null) {
             method30200(class513, class511.method1802());
@@ -127,7 +130,7 @@ public class Class8742
         }
     }
     
-    public static void method30205(final Class511 class511, final Class399 class512) {
+    public static void method30205(final Class511 class511, final Entity class512) {
         final Class7311 class513 = (class513, n) -> class513.method18601(class511, class512, n);
         if (class511 != null) {
             method30200(class513, class511.method1802());
@@ -270,7 +273,7 @@ public class Class8742
         final int method35652 = class8321.method27622().method11734();
         if (method35652 > 0) {
             method35651 = method35651 + 1 + random.nextInt(method35652 / 4 + 1) + random.nextInt(method35652 / 4 + 1);
-            method35651 = Class9546.method35651(Math.round(method35651 + method35651 * ((random.nextFloat() + random.nextFloat() - 1.0f) * 0.15f)), 1, Integer.MAX_VALUE);
+            method35651 = MathHelper.method35651(Math.round(method35651 + method35651 * ((random.nextFloat() + random.nextFloat() - 1.0f) * 0.15f)), 1, Integer.MAX_VALUE);
             final List<Class6827> method35653 = method30228(method35651, class8321, b);
             if (!method35653.isEmpty()) {
                 arrayList.add(Class8223.method27251(random, (List<Object>)method35653));

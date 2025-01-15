@@ -4,14 +4,15 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.function.Predicate;
 
 public class Class4098 extends Class3820
 {
     private static String[] field18198;
-    private static final Predicate<Class399> field18199;
+    private static final Predicate<Entity> field18199;
     private final Class241 field18200;
     
     public Class4098(final Class241 field18200, final Class8959 class8959) {
@@ -26,10 +27,10 @@ public class Class4098 extends Class3820
         if (method2716.method21449() == Class2165.field12880) {
             return Class9355.method34676(method2715);
         }
-        final List<Class399> method2717 = class1847.method6737(class1848, class1848.method1886().method18493(class1848.method1741(1.0f).method16748(5.0)).method18496(1.0), Class4098.field18199);
+        final List<Entity> method2717 = class1847.method6737(class1848, class1848.method1886().method18493(class1848.method1741(1.0f).method16748(5.0)).method18496(1.0), Class4098.field18199);
         if (!method2717.isEmpty()) {
             final Class5487 method2718 = class1848.method1747(1.0f);
-            for (final Class399 class1850 : method2717) {
+            for (final Entity class1850 : method2717) {
                 if (!class1850.method1886().method18496(class1850.method1790()).method18505(method2718)) {
                     continue;
                 }
@@ -56,6 +57,6 @@ public class Class4098 extends Class3820
     }
     
     static {
-        field18199 = Class9170.field38850.and(Class399::method1749);
+        field18199 = Class9170.field38850.and(Entity::method1749);
     }
 }

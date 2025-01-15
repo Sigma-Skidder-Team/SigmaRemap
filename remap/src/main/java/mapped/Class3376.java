@@ -5,6 +5,9 @@
 package mapped;
 
 import java.awt.Color;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Map;
@@ -25,7 +28,7 @@ public class Class3376 extends Class3167
     private int field16057;
     private int field16058;
     private int field16059;
-    public static Class399 field16060;
+    public static Entity field16060;
     public static Class8131 field16061;
     private List<Class8131> field16062;
     public static Class7988 field16063;
@@ -38,11 +41,11 @@ public class Class3376 extends Class3167
     private float field16070;
     private boolean field16071;
     private double[] field16072;
-    public HashMap<Class399, Class9572> field16073;
+    public HashMap<Entity, Class9572> field16073;
     
     public Class3376() {
         super(Class8013.field32986, "KillAura", "Automatically attacks entities");
-        this.field16073 = new HashMap<Class399, Class9572>();
+        this.field16073 = new HashMap<Entity, Class9572>();
         this.method9881(new Class5001("Mode", "Mode", 0, new String[] { "Single", "Switch", "Multi", "Multi2" }));
         this.method9881(new Class5001("Autoblock Mode", "Autoblock Mode", 0, new String[] { "None", "NCP", "Basic1", "Basic2", "Vanilla" }));
         this.method9881(new Class5001("Sort Mode", "Sort Mode", 0, new String[] { "Range", "Health", "Angle", "Armor", "Prev Range" }));
@@ -272,12 +275,12 @@ public class Class3376 extends Class3167
     public void method10747(final Class5739 class5739) {
         if (this.method9906()) {
             if (this.field16062 != null) {
-                final Iterator<Map.Entry<Class399, Class9572>> iterator = this.field16073.entrySet().iterator();
+                final Iterator<Map.Entry<Entity, Class9572>> iterator = this.field16073.entrySet().iterator();
                 while (iterator.hasNext()) {
                     final Map.Entry entry = iterator.next();
                     final Iterator<Class8131> iterator2 = this.field16062.iterator();
                     while (iterator2.hasNext()) {
-                        if (!((Class399)entry.getKey()).equals(iterator2.next().method26798())) {
+                        if (!((Entity)entry.getKey()).equals(iterator2.next().method26798())) {
                             continue;
                         }
                     }
@@ -297,15 +300,15 @@ public class Class3376 extends Class3167
                         }
                     }
                 }
-                final Iterator<Map.Entry<Class399, Class9572>> iterator4 = this.field16073.entrySet().iterator();
+                final Iterator<Map.Entry<Entity, Class9572>> iterator4 = this.field16073.entrySet().iterator();
                 while (iterator4.hasNext()) {
-                    this.method10748(((Map.Entry<Class399, V>)iterator4.next()).getKey());
+                    this.method10748(((Map.Entry<Entity, V>)iterator4.next()).getKey());
                 }
             }
         }
     }
     
-    public void method10748(final Class399 key) {
+    public void method10748(final Entity key) {
         GL11.glPushMatrix();
         GL11.glEnable(2848);
         GL11.glDisable(3553);
@@ -522,7 +525,7 @@ public class Class3376 extends Class3167
         this.field16052 = 0;
     }
     
-    private Class399 method10752(final List<Class8131> list) {
+    private Entity method10752(final List<Class8131> list) {
         final List<Class8131> method31138 = this.field16050.method31138(list);
         if (!method31138.isEmpty() && ((Class8131)method31138.get(0)).method26798().method1732(Class3376.field15514.field4684) <= this.method9886("Block Range")) {
             return ((Class8131)method31138.get(0)).method26798();
@@ -723,7 +726,7 @@ public class Class3376 extends Class3167
     
     private void method10754() {
         final Class7988 method26799 = Class3376.field16061.method26799();
-        final Class399 method26800 = Class3376.field16061.method26798();
+        final Entity method26800 = Class3376.field16061.method26798();
         final float method26801 = Class8845.method30925(this.field16064.field32884, Class3376.field16061.method26798().field2395, Class3376.field16061.method26798().field2397);
         final float method26802 = Class8845.method30927(this.field16064.field32885, Class3376.field16061.method26798(), Class3376.field16061.method26798().field2396);
         final String method26803 = this.method9887("Rotation Mode");
@@ -768,7 +771,7 @@ public class Class3376 extends Class3167
                     final Class7988 field16078 = this.field16064;
                     field16078.field32885 += (float)(method26802 * 0.81 + this.method10757(-2.0, 2.0));
                 }
-                final Class399 method26804 = Class6430.method19141(this.field16065.field32885, this.field16065.field32884, this.method9886("Range"), this.method9886("Hit box expand"));
+                final Entity method26804 = Class6430.method19141(this.field16065.field32885, this.field16065.field32884, this.method9886("Range"), this.method9886("Hit box expand"));
                 if (method26804 != null && this.field16059 > this.method10757(2.0, 5.0)) {
                     this.field16059 = 0;
                     Class6430.method19165(method26804, true);
@@ -846,11 +849,11 @@ public class Class3376 extends Class3167
         return (n3 <= 180.0f) ? ((n3 >= -180.0f) ? n3 : (n3 + 360.0f)) : (n3 - 360.0f);
     }
     
-    public Class7988 method10756(final Class399 class399) {
+    public Class7988 method10756(final Entity class399) {
         final double x = class399.field2395 - Class3376.field15514.field4684.field2395 + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
         final double y = class399.field2396 - 1.6 - this.field16067 + class399.method1892() - Class3376.field15514.field4684.field2396;
         final double y2 = class399.field2397 - Class3376.field15514.field4684.field2397 + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        return new Class7988(Class8845.method30910(this.field16064.field32884, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), Class8845.method30910(this.field16064.field32885, (float)(-(Math.atan2(y, Class9546.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f));
+        return new Class7988(Class8845.method30910(this.field16064.field32884, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), Class8845.method30910(this.field16064.field32885, (float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f));
     }
     
     private double method10757(final double n, final double n2) {

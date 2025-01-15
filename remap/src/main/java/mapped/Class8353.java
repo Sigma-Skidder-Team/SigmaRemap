@@ -15,7 +15,7 @@ public class Class8353
         boolean b = true;
         final Iterator<Long> iterator = class8733.field36693.iterator();
         while (iterator.hasNext()) {
-            if (Class8353.field34280.field4683.method6701(Class354.method1129(iterator.next())).method21706()) {
+            if (Class8353.field34280.field4683.method6701(BlockPos.method1129(iterator.next())).method21706()) {
                 continue;
             }
             b = false;

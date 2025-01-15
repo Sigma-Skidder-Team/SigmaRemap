@@ -8,7 +8,6 @@ import com.mojang.brigadier.context.ParsedArgument;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import com.mojang.brigadier.context.SuggestionContext;
-import java.util.Collection;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import java.util.Map;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -23,6 +22,8 @@ import com.google.common.collect.Lists;
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.ParseResults;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -82,7 +83,7 @@ public class Class6823
     }
     
     public boolean method20887(final double n) {
-        return this.field26806 != null && this.field26806.method28357(Class9546.method35654(n, -1.0, 1.0));
+        return this.field26806 != null && this.field26806.method28357(MathHelper.method35654(n, -1.0, 1.0));
     }
     
     public boolean method20888(final double n, final double n2, final int n3) {
@@ -99,7 +100,7 @@ public class Class6823
                     while (iterator.hasNext()) {
                         max = Math.max(max, this.field26794.method6617(((Suggestion)iterator.next()).getText()));
                     }
-                    this.field26806 = new Class8490(this, Class9546.method35651(this.field26793.method3412(suggestions.getRange().getStart()), 0, this.field26793.method3412(0) + this.field26793.method3406() - max), this.field26799 ? (this.field26792.field3153 - 12) : 72, max, suggestions, b, null);
+                    this.field26806 = new Class8490(this, MathHelper.method35651(this.field26793.method3412(suggestions.getRange().getStart()), 0, this.field26793.method3412(0) + this.field26793.method3406() - max), this.field26799 ? (this.field26792.field3153 - 12) : 72, max, suggestions, b, null);
                 }
             }
         }
@@ -206,7 +207,7 @@ public class Class6823
         }
         if (!arrayList.isEmpty()) {
             this.field26801.addAll(arrayList);
-            this.field26802 = Class9546.method35651(this.field26793.method3412(suggestionContext.startPos), 0, this.field26793.method3412(0) + this.field26793.method3406() - max);
+            this.field26802 = MathHelper.method35651(this.field26793.method3412(suggestionContext.startPos), 0, this.field26793.method3412(0) + this.field26793.method3406() - max);
             this.field26803 = max;
         }
     }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class489 extends Class436
 {
     private static String[] field2806;
@@ -16,7 +18,7 @@ public class Class489 extends Class436
         this(Class5412.field22553);
     }
     
-    public boolean method2444(final Class179 class179) {
-        return class179 == Class179.field512;
+    public boolean method2444(final Direction class179) {
+        return class179 == Direction.UP;
     }
 }

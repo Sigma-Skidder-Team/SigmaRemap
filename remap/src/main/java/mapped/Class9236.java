@@ -5,30 +5,32 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 
 public class Class9236
 {
     private static String[] field39590;
     private final Class1847 field39591;
-    private final Class354 field39592;
+    private final BlockPos field39592;
     private final boolean field39593;
-    private final Class354 field39594;
-    private final Class179 field39595;
-    private final List<Class354> field39596;
-    private final List<Class354> field39597;
-    private final Class179 field39598;
+    private final BlockPos field39594;
+    private final Direction field39595;
+    private final List<BlockPos> field39596;
+    private final List<BlockPos> field39597;
+    private final Direction field39598;
     
-    public Class9236(final Class1847 field39591, final Class354 field39592, final Class179 class179, final boolean field39593) {
+    public Class9236(final Class1847 field39591, final BlockPos field39592, final Direction class179, final boolean field39593) {
         this.field39596 = Lists.newArrayList();
         this.field39597 = Lists.newArrayList();
         this.field39591 = field39591;
         this.field39592 = field39592;
         this.field39598 = class179;
         if (!(this.field39593 = field39593)) {
-            this.field39595 = class179.method782();
+            this.field39595 = class179.getOpposite();
             this.field39594 = field39592.method1150(class179, 2);
         }
         else {
@@ -44,7 +46,7 @@ public class Class9236
         if (Class3836.method11894(method6701, this.field39591, this.field39594, this.field39595, false, this.field39598)) {
             if (this.method34055(this.field39594, this.field39595)) {
                 for (int i = 0; i < this.field39596.size(); ++i) {
-                    final Class354 class354 = this.field39596.get(i);
+                    final BlockPos class354 = this.field39596.get(i);
                     if (method34053(this.field39591.method6701(class354).method21696()) && !this.method34057(class354)) {
                         return false;
                     }
@@ -70,7 +72,7 @@ public class Class9236
         return (class3833 != Class7521.field29825 || class3834 != Class7521.field29516) && (class3833 != Class7521.field29516 || class3834 != Class7521.field29825) && (method34053(class3833) || method34053(class3834));
     }
     
-    private boolean method34055(final Class354 class354, final Class179 class355) {
+    private boolean method34055(final BlockPos class354, final Direction class355) {
         final Class7096 method6701 = this.field39591.method6701(class354);
         Class3833 class356 = method6701.method21696();
         if (method6701.method21706()) {
@@ -90,7 +92,7 @@ public class Class9236
             return false;
         }
         while (method34053(class356)) {
-            final Class354 method6702 = class354.method1150(this.field39595.method782(), n);
+            final BlockPos method6702 = class354.method1150(this.field39595.getOpposite(), n);
             final Class3833 class357 = class356;
             final Class7096 method6703 = this.field39591.method6701(method6702);
             class356 = method6703.method21696();
@@ -100,7 +102,7 @@ public class Class9236
             if (!method34054(class357, class356)) {
                 break;
             }
-            if (!Class3836.method11894(method6703, this.field39591, method6702, this.field39595, false, this.field39595.method782())) {
+            if (!Class3836.method11894(method6703, this.field39591, method6702, this.field39595, false, this.field39595.getOpposite())) {
                 break;
             }
             if (method6702.equals(this.field39592)) {
@@ -113,17 +115,17 @@ public class Class9236
         }
         int n2 = 0;
         for (int i = n - 1; i >= 0; --i) {
-            this.field39596.add(class354.method1150(this.field39595.method782(), i));
+            this.field39596.add(class354.method1150(this.field39595.getOpposite(), i));
             ++n2;
         }
         int n3 = 1;
         while (true) {
-            final Class354 method6704 = class354.method1150(this.field39595, n3);
+            final BlockPos method6704 = class354.method1150(this.field39595, n3);
             final int index = this.field39596.indexOf(method6704);
             if (index > -1) {
                 this.method34056(n2, index);
                 for (int j = 0; j <= index + n2; ++j) {
-                    final Class354 class358 = this.field39596.get(j);
+                    final BlockPos class358 = this.field39596.get(j);
                     if (method34053(this.field39591.method6701(class358).method21696()) && !this.method34057(class358)) {
                         return false;
                     }
@@ -163,11 +165,11 @@ public class Class9236
         this.field39596.addAll(arrayList3);
     }
     
-    private boolean method34057(final Class354 class354) {
+    private boolean method34057(final BlockPos class354) {
         final Class7096 method6701 = this.field39591.method6701(class354);
-        for (final Class179 class355 : Class179.values()) {
-            if (class355.method790() != this.field39595.method790()) {
-                final Class354 method6702 = class354.method1149(class355);
+        for (final Direction class355 : Direction.values()) {
+            if (class355.getAxis() != this.field39595.getAxis()) {
+                final BlockPos method6702 = class354.method1149(class355);
                 if (method34054(this.field39591.method6701(method6702).method21696(), method6701.method21696())) {
                     if (!this.method34055(method6702, class355)) {
                         return false;
@@ -178,11 +180,11 @@ public class Class9236
         return true;
     }
     
-    public List<Class354> method34058() {
+    public List<BlockPos> method34058() {
         return this.field39596;
     }
     
-    public List<Class354> method34059() {
+    public List<BlockPos> method34059() {
         return this.field39597;
     }
 }

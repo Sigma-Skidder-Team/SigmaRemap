@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class7542 implements Class7543
 {
     private static String[] field29923;
@@ -19,7 +21,7 @@ public class Class7542 implements Class7543
     }
     
     @Deprecated
-    public Class7542(final Class399 class399) {
+    public Class7542(final Entity class399) {
         this(class399.method1813(), class399.method1941(), (class399 instanceof Class511) ? ((Class511)class399).method2713().method27622() : Class7739.field30754);
     }
     
@@ -34,8 +36,8 @@ public class Class7542 implements Class7543
     }
     
     @Override
-    public boolean method23626(final Class7702 class7702, final Class354 class7703, final boolean b) {
-        return this.field29926 > class7703.method1075() + class7702.method24536(Class111.field352) - 9.999999747378752E-6;
+    public boolean method23626(final Class7702 class7702, final BlockPos class7703, final boolean b) {
+        return this.field29926 > class7703.getY() + class7702.method24536(Axis.Y) - 9.999999747378752E-6;
     }
     
     static {

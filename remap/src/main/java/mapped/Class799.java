@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.Random;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.UUID;
 import java.util.function.Predicate;
 
@@ -81,7 +83,7 @@ public class Class799 extends Class794
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35736, 0.15f, 1.0f);
     }
     
@@ -180,8 +182,8 @@ public class Class799 extends Class794
                         }
                         if (this.field4283 > 0.4f) {
                             final float n = (float)this.method1941();
-                            final int n2 = (int)(Class9546.method35638((this.field4283 - 0.4f) * 3.1415927f) * 7.0f);
-                            final Class5487 method1935 = this.method1935();
+                            final int n2 = (int)(MathHelper.sin((this.field4283 - 0.4f) * 3.1415927f) * 7.0f);
+                            final Vec3d method1935 = this.method1935();
                             for (int i = 0; i < n2; ++i) {
                                 this.field2391.method6709(Class8432.field34646, this.method1938() + (this.field2423.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, n + 0.8f, this.method1945() + (this.field2423.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, method1935.field22770, method1935.field22771, method1935.field22772);
                             }
@@ -212,11 +214,11 @@ public class Class799 extends Class794
     }
     
     public float method4593(final float n) {
-        return 0.75f + Class9546.method35700(n, this.field4284, this.field4283) / 2.0f * 0.25f;
+        return 0.75f + MathHelper.method35700(n, this.field4284, this.field4283) / 2.0f * 0.25f;
     }
     
     public float method4594(final float n, final float n2) {
-        float n3 = (Class9546.method35700(n, this.field4284, this.field4283) + n2) / 1.8f;
+        float n3 = (MathHelper.method35700(n, this.field4284, this.field4283) + n2) / 1.8f;
         if (n3 >= 0.0f) {
             if (n3 > 1.0f) {
                 n3 = 1.0f;
@@ -225,11 +227,11 @@ public class Class799 extends Class794
         else {
             n3 = 0.0f;
         }
-        return Class9546.method35638(n3 * 3.1415927f) * Class9546.method35638(n3 * 3.1415927f * 11.0f) * 0.15f * 3.1415927f;
+        return MathHelper.sin(n3 * 3.1415927f) * MathHelper.sin(n3 * 3.1415927f * 11.0f) * 0.15f * 3.1415927f;
     }
     
     public float method4595(final float n) {
-        return Class9546.method35700(n, this.field4280, this.field4279) * 0.15f * 3.1415927f;
+        return MathHelper.method35700(n, this.field4280, this.field4279) * 0.15f * 3.1415927f;
     }
     
     @Override
@@ -245,7 +247,7 @@ public class Class799 extends Class794
     @Override
     public boolean method1740(final Class7929 class7929, float n) {
         if (!this.method1849(class7929)) {
-            final Class399 method25714 = class7929.method25714();
+            final Entity method25714 = class7929.method25714();
             if (this.field4245 != null) {
                 this.field4245.method11058(false);
             }
@@ -262,7 +264,7 @@ public class Class799 extends Class794
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         final boolean method1740 = class399.method1740(Class7929.method25693(this), (float)(int)this.method2710(Class8107.field33410).method23950());
         if (method1740) {
             this.method1900(this, class399);

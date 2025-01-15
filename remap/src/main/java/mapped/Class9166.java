@@ -24,7 +24,7 @@ public class Class9166<DC extends Class6926>
         this.field38833 = field38833;
     }
     
-    public <FC extends Class5113, F extends Class4535<FC>> boolean method33461(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class8530<FC, F> class1854) {
+    public <FC extends Class5113, F extends Class4535<FC>> boolean method33461(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class8530<FC, F> class1854) {
         return this.field38832.method21890(class1851, class1852, random, class1853, this.field38833, class1854);
     }
     

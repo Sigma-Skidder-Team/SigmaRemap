@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.Collections;
 import java.util.Map;
@@ -77,19 +81,19 @@ public class Class3362 extends Class3355
         return this.method10653().size() > 0;
     }
     
-    private List<Class399> method10653() {
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.field2403.method18495(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Class399>)new Class167(this)));
+    private List<Entity> method10653() {
+        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.field2403.method18495(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
     }
     
-    private List<Class7014> method10654(final Class399 class399) {
+    private List<Class7014> method10654(final Entity class399) {
         final TreeMap treeMap = new TreeMap();
-        for (final Class354 value : this.method10656(class399)) {
+        for (final BlockPos value : this.method10656(class399)) {
             treeMap.put(this.method10655(class399, value), value);
             Class6430.method19106("Dmg: " + this.method10655(class399, value));
         }
         if (!treeMap.isEmpty()) {
             Class6430.method19106("Dmgs: " + treeMap.toString());
-            final Class354 class400 = treeMap.lastEntry().getValue();
+            final BlockPos class400 = treeMap.lastEntry().getValue();
             final ArrayList list = new ArrayList();
             for (final Map.Entry entry : treeMap.entrySet()) {
                 list.add(new Class7014(class400, treeMap.lastKey(), this.method10655(Class3362.field15514.field4684, class400)));
@@ -100,20 +104,20 @@ public class Class3362 extends Class3355
         return null;
     }
     
-    private float method10655(final Class399 class399, final Class354 class400) {
+    private float method10655(final Entity class399, final BlockPos class400) {
         final float n = 6.0f;
-        final float n2 = class400.method1074() + 0.5f;
-        final float n3 = class400.method1075() + 1.0f;
-        final float n4 = class400.method1076() + 0.5f;
+        final float n2 = class400.getX() + 0.5f;
+        final float n3 = class400.getY() + 1.0f;
+        final float n4 = class400.getZ() + 0.5f;
         final float n5 = n * 2.0f;
         final Class5487 class401 = new Class5487(n2, n3, n4);
         if (!class399.method1899()) {
-            final double n6 = Class9546.method35641(class399.method1735(class401)) / n5;
+            final double n6 = MathHelper.method35641(class399.method1735(class401)) / n5;
             if (n6 <= 1.0) {
                 final double n7 = class399.method1938() - n2;
                 final double n8 = class399.method1944() - n3;
                 final double n9 = class399.method1945() - n4;
-                if (Class9546.method35641(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
+                if (MathHelper.method35641(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
                     final double n10 = (1.0 - n6) * Class6154.method18407(class401, class399);
                     return (float)(int)((n10 * n10 + n10) / 2.0 * 7.0 * n5 + 1.0);
                 }
@@ -122,12 +126,12 @@ public class Class3362 extends Class3355
         return 0.0f;
     }
     
-    private List<Class354> method10656(final Class399 class399) {
+    private List<BlockPos> method10656(final Entity class399) {
         this.method9886("Reach");
-        final List<Class399> method10657 = this.method10657();
+        final List<Entity> method10657 = this.method10657();
         final ArrayList list = new ArrayList();
     Label_0068:
-        for (final Class354 class400 : Class4609.method13676(Class4609.method13691(4.0f), new Class5487(class399.method1938(), class399.method1941() - 1.0, class399.method1945()))) {
+        for (final BlockPos class400 : Class4609.method13676(Class4609.method13691(4.0f), new Class5487(class399.method1938(), class399.method1941() - 1.0, class399.method1945()))) {
             final Class3833 method10658 = Class3362.field15514.field4683.method6701(class400).method21696();
             if (method10658 != Class7521.field29286 && method10658 != Class7521.field29172) {
                 continue;
@@ -136,7 +140,7 @@ public class Class3362 extends Class3355
                 continue;
             }
             final Class6221 method10659 = new Class6221(class400).method18495(0.5, 0.5, 0.5).method18499(0.0, 1.5, 0.0);
-            for (final Class399 class401 : method10657) {
+            for (final Entity class401 : method10657) {
                 final Class6221 method10660 = class401.method1886();
                 final Class6221 class402 = new Class6221(class400.method1137());
                 if (class401 instanceof Class858 && method10660.method18502(method10659)) {
@@ -152,18 +156,18 @@ public class Class3362 extends Class3355
         return list;
     }
     
-    public List<Class399> method10657() {
+    public List<Entity> method10657() {
         final float method9886 = this.method9886("Reach");
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.field2403.method18495(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Class399>)new Class164(this, method9886)));
+        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.field2403.method18495(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
     }
     
-    private List<Class399> method10658() {
+    private List<Entity> method10658() {
         final float n = this.method9886("Reach") + 1.0f;
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.field2403.method18495(n, n, n), Class9170.field38850.and((Predicate<? super Class399>)new Class165(this, n)));
+        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.field2403.method18495(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
     }
     
     private void method10659(final Class5744 class5744) {
-        final List<Class399> method10658 = this.method10658();
+        final List<Entity> method10658 = this.method10658();
         if (method10658.size() != 0) {
             if (!this.field16010.containsKey(method10658.get(0))) {
                 this.field16010.put((Class858)method10658.get(0), 4);
@@ -188,7 +192,7 @@ public class Class3362 extends Class3355
         while (iterator.hasNext()) {
             final Map.Entry<K, Integer> entry = (Map.Entry<K, Integer>)iterator.next();
             if (entry.getValue() == 2) {
-                Class6430.method19165((Class399)entry.getKey(), true);
+                Class6430.method19165((Entity)entry.getKey(), true);
             }
             entry.setValue(entry.getValue() - 1);
             if (entry.getValue() != 0) {
@@ -201,14 +205,14 @@ public class Class3362 extends Class3355
     private void method10661(final Class5744 class5744) {
         this.field16011 = null;
         this.field16012 = null;
-        final List<Class399> method10653 = this.method10653();
+        final List<Entity> method10653 = this.method10653();
         if (method10653.isEmpty()) {
             return;
         }
         final List<Class7014> method10654 = this.method10654(method10653.get(0));
         if (method10654 != null && !method10654.isEmpty()) {
             for (final Class7014 field16011 : method10654) {
-                final float[] method10655 = Class4609.method13672(field16011.field27346, Class179.field512);
+                final float[] method10655 = Class4609.method13672(field16011.field27346, Direction.UP);
                 final Class7005 method10656 = Class4609.method13697(method10655[0], method10655[1], 5.0f);
                 if (!field16011.field27346.equals(method10656.method21447())) {
                     continue;

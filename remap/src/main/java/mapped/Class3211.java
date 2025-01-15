@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.Comparator;
+
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Collections;
@@ -65,10 +67,10 @@ public class Class3211 extends Class3167
             this.field15649.clear();
             this.field15648 -= (int)this.field15648;
             int n = 0;
-            final Class399 class5744 = (Class3211.field15514.field4684.method1920() == null) ? Class3211.field15514.field4684 : Class3211.field15514.field4684.method1920();
+            final Entity class5744 = (Class3211.field15514.field4684.method1920() == null) ? Class3211.field15514.field4684 : Class3211.field15514.field4684.method1920();
             final Iterator iterator = method10094.iterator();
             while (iterator.hasNext()) {
-                final Class399 method10095 = ((Class8131)iterator.next()).method26798();
+                final Entity method10095 = ((Class8131)iterator.next()).method26798();
                 if ((int)this.method9886("Targets") < ++n) {
                     break;
                 }
@@ -84,7 +86,7 @@ public class Class3211 extends Class3167
     }
     
     public void method10092(final List<Class9407> list, final boolean b) {
-        final Class399 method1920 = Class3211.field15514.field4684.method1920();
+        final Entity method1920 = Class3211.field15514.field4684.method1920();
         Class9407 class9407 = null;
         final Iterator<Class9407> iterator = list.iterator();
         while (iterator.hasNext()) {
@@ -150,12 +152,12 @@ public class Class3211 extends Class3167
     
     public List<Class8131> method10094(final float n) {
         final ArrayList list = new ArrayList();
-        for (final Class399 class399 : Class6430.method19138()) {
+        for (final Entity class399 : Class6430.method19138()) {
             list.add(new Class8131(class399, Class8845.method30922(class399)));
         }
         final Iterator iterator2 = list.iterator();
         while (iterator2.hasNext()) {
-            final Class399 method26798 = ((Class8131)iterator2.next()).method26798();
+            final Entity method26798 = ((Class8131)iterator2.next()).method26798();
             if (method26798 != Class3211.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(method26798)) {
                     if (method26798 instanceof Class511) {

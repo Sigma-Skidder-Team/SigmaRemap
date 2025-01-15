@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,7 @@ public class Class134 extends Class126
             Class134.field406.warn("Couldn't set damage of loot item {}", (Object)class8321);
         }
         else {
-            class8321.method27633(Class9546.method35642((1.0f - this.field407.method17169(class8322.method23586())) * class8321.method27634()));
+            class8321.method27633(MathHelper.method35642((1.0f - this.field407.method17169(class8322.method23586())) * class8321.method27634()));
         }
         return class8321;
     }

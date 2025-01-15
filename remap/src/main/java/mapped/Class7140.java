@@ -15,7 +15,7 @@ public class Class7140 extends Class7139<Class6928>
         super(function);
     }
     
-    public Stream<Class354> method21899(final Random random, final Class6928 class6928, final Class354 t) {
+    public Stream<BlockPos> method21899(final Random random, final Class6928 class6928, final BlockPos t) {
         return (random.nextFloat() >= 1.0f / class6928.field27147) ? Stream.empty() : Stream.of(t);
     }
 }

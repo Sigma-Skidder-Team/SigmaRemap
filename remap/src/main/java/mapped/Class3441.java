@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Logger;
@@ -217,7 +217,7 @@ public class Class3441 extends Class3418
     
     @Override
     public boolean method10854(final Class512 class512) {
-        return this.field16256.method22436((class515, class517) -> class515.method6701(class517).method21755(Class7188.field27905) && class513.method1733(class517.method1074() + 0.5, class517.method1075() + 0.5, class517.method1076() + 0.5) <= 64.0, Boolean.valueOf(true));
+        return this.field16256.method22436((class515, class517) -> class515.method6701(class517).method21755(Class7188.field27905) && class513.method1733(class517.getX() + 0.5, class517.getY() + 0.5, class517.getZ() + 0.5) <= 64.0, Boolean.valueOf(true));
     }
     
     @Override

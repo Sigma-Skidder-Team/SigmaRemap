@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class Class4002 extends Class4000
     }
     
     @Override
-    public void method12162(final Class1851 class1851, final Class354 class1852) {
+    public void method12162(final Class1851 class1851, final BlockPos class1852) {
         if (this.field17401 != Class8059.field33176) {
             class1851.method6705(null, class1852, Class8520.field35622, Class286.field1582, 0.3f, 0.6f);
         }
@@ -40,7 +42,7 @@ public class Class4002 extends Class4000
     }
     
     @Override
-    public void method12163(final Class1851 class1851, final Class354 class1852) {
+    public void method12163(final Class1851 class1851, final BlockPos class1852) {
         if (this.field17401 != Class8059.field33176) {
             class1851.method6705(null, class1852, Class8520.field35621, Class286.field1582, 0.3f, 0.5f);
         }
@@ -50,16 +52,16 @@ public class Class4002 extends Class4000
     }
     
     @Override
-    public int method12165(final Class1847 class1847, final Class354 class1848) {
+    public int method12165(final Class1847 class1847, final BlockPos class1848) {
         final Class6221 method18500 = Class4002.field18033.method18500(class1848);
-        List<Class399> list = null;
+        List<Entity> list = null;
         switch (Class8318.field34167[this.field18039.ordinal()]) {
             case 1: {
                 list = class1847.method7127(null, method18500);
                 break;
             }
             case 2: {
-                list = class1847.method7128((Class<? extends Class399>)Class511.class, method18500);
+                list = class1847.method7128((Class<? extends Entity>)Class511.class, method18500);
                 break;
             }
             default: {
@@ -69,7 +71,7 @@ public class Class4002 extends Class4000
         if (!list.isEmpty()) {
             final Iterator iterator = list.iterator();
             while (iterator.hasNext()) {
-                if (!((Class399)iterator.next()).method1861()) {
+                if (!((Entity)iterator.next()).method1861()) {
                     return 15;
                 }
             }

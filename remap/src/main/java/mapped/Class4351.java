@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import net.minecraft.entity.Entity;
 import org.apache.commons.lang3.Validate;
 
 public class Class4351 implements Class4252<Class5800>
@@ -18,7 +20,7 @@ public class Class4351 implements Class4252<Class5800>
     public Class4351() {
     }
     
-    public Class4351(final Class7795 field19487, final Class286 field19488, final Class399 class399, final float field19489, final float field19490) {
+    public Class4351(final Class7795 field19487, final Class286 field19488, final Entity class399, final float field19489, final float field19490) {
         Validate.notNull((Object)field19487, "sound", new Object[0]);
         this.field19487 = field19487;
         this.field19488 = field19488;

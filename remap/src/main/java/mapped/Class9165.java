@@ -7,16 +7,16 @@ package mapped;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Iterator;
+
 import java.util.Collection;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.math.MathHelper;
 
 public class Class9165
 {
@@ -35,7 +35,7 @@ public class Class9165
         return (LiteralArgumentBuilder<Class7492>)Class7788.method25001(class286.method935()).then(((RequiredArgumentBuilder)Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()).executes(commandContext -> method33454((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class7000.method21433((CommandContext<Class7492>)commandContext, "sound"), class286, ((Class7492)commandContext.getSource()).method23249(), 1.0f, 1.0f, 0.0f))).then(((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()).executes(commandContext -> method33454((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class7000.method21433((CommandContext<Class7492>)commandContext, "sound"), class286, Class7555.method23721((CommandContext<Class7492>)commandContext, "pos"), 1.0f, 1.0f, 0.0f))).then(((RequiredArgumentBuilder)Class7788.method25002("volume", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).executes(commandContext -> method33454((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class7000.method21433((CommandContext<Class7492>)commandContext, "sound"), class286, Class7555.method23721((CommandContext<Class7492>)commandContext, "pos"), (float)commandContext.getArgument("volume", (Class)Float.class), 1.0f, 0.0f))).then(((RequiredArgumentBuilder)Class7788.method25002("pitch", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f, 2.0f)).executes(commandContext -> method33454((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class7000.method21433((CommandContext<Class7492>)commandContext, "sound"), class286, Class7555.method23721((CommandContext<Class7492>)commandContext, "pos"), (float)commandContext.getArgument("volume", (Class)Float.class), (float)commandContext.getArgument("pitch", (Class)Float.class), 0.0f))).then(Class7788.method25002("minVolume", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f, 1.0f)).executes(commandContext -> method33454((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class7000.method21433((CommandContext<Class7492>)commandContext, "sound"), class286, Class7555.method23721((CommandContext<Class7492>)commandContext, "pos"), (float)commandContext.getArgument("volume", (Class)Float.class), (float)commandContext.getArgument("pitch", (Class)Float.class), (float)commandContext.getArgument("minVolume", (Class)Float.class))))))));
     }
     
-    private static int method33454(final Class7492 class7492, final Collection<Class513> collection, final Class1932 class7493, final Class286 class7494, final Class5487 class7495, final float n, final float n2, final float n3) throws CommandSyntaxException {
+    private static int method33454(final Class7492 class7492, final Collection<Class513> collection, final Class1932 class7493, final Class286 class7494, final Vec3d class7495, final float n, final float n2, final float n3) throws CommandSyntaxException {
         final double pow = Math.pow((n <= 1.0f) ? 16.0 : ((double)(n * 16.0f)), 2.0);
         int n4 = 0;
         for (final Class513 class7496 : collection) {
@@ -43,14 +43,14 @@ public class Class9165
             final double n6 = class7495.field22771 - class7496.method1941();
             final double n7 = class7495.field22772 - class7496.method1945();
             final double n8 = n5 * n5 + n6 * n6 + n7 * n7;
-            Class5487 class7497 = class7495;
+            Vec3d class7497 = class7495;
             float n9 = n;
             if (n8 > pow) {
                 if (n3 <= 0.0f) {
                     continue;
                 }
-                final double n10 = Class9546.method35641(n8);
-                class7497 = new Class5487(class7496.method1938() + n5 / n10 * 2.0, class7496.method1941() + n6 / n10 * 2.0, class7496.method1945() + n7 / n10 * 2.0);
+                final double n10 = MathHelper.method35641(n8);
+                class7497 = new Vec3d(class7496.method1938() + n5 / n10 * 2.0, class7496.method1941() + n6 / n10 * 2.0, class7496.method1945() + n7 / n10 * 2.0);
                 n9 = n3;
             }
             class7496.field3039.method17469(new Class4342(class7493, class7494, class7497, n9, n2));

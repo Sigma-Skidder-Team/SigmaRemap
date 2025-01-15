@@ -8,11 +8,11 @@ public class Class6429
 {
     private static String[] field25536;
     public static final Class6429 field25537;
-    public final Class9138 field25538;
-    public final Class9138 field25539;
-    public final Class9138 field25540;
+    public final Vector3f field25538;
+    public final Vector3f field25539;
+    public final Vector3f field25540;
     
-    public Class6429(final Class9138 class9138, final Class9138 class9139, final Class9138 class9140) {
+    public Class6429(final Vector3f class9138, final Vector3f class9139, final Vector3f class9140) {
         this.field25538 = class9138.method33329();
         this.field25539 = class9139.method33329();
         this.field25540 = class9140.method33329();
@@ -28,7 +28,7 @@ public class Class6429
                 method33313 = -method33313;
             }
             class7351.method22564((b ? -1 : 1) * this.field25539.method33311(), this.field25539.method33312(), this.field25539.method33313());
-            class7351.method22566(new Class9389(method33311, method33312, method33313, true));
+            class7351.method22566(new Quaternion(method33311, method33312, method33313, true));
             class7351.method22565(this.field25540.method33311(), this.field25540.method33312(), this.field25540.method33313());
         }
     }
@@ -58,6 +58,6 @@ public class Class6429
     }
     
     static {
-        field25537 = new Class6429(new Class9138(), new Class9138(), new Class9138(1.0f, 1.0f, 1.0f));
+        field25537 = new Class6429(new Vector3f(), new Vector3f(), new Vector3f(1.0f, 1.0f, 1.0f));
     }
 }

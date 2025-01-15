@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.Comparator;
 import java.util.Collections;
@@ -32,7 +34,7 @@ public class Class8866
         this.field37270 = field37270;
     }
     
-    public void method31130(final Class399 class399, final float n, final float n2) {
+    public void method31130(final Entity class399, final float n, final float n2) {
         if (this.field37268.method9883("Interact autoblock")) {
             final Class7007 method19144 = Class6430.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.method9886("Range"));
             if (method19144 != null) {
@@ -101,13 +103,13 @@ public class Class8866
     
     public List<Class8131> method31137(final float n) {
         final ArrayList list = new ArrayList();
-        for (final Class399 class399 : Class6430.method19138()) {
+        for (final Entity class399 : Class6430.method19138()) {
             list.add(new Class8131(class399, Class8845.method30922(class399)));
         }
         final Iterator iterator2 = list.iterator();
         while (iterator2.hasNext()) {
             final Class8131 class400 = (Class8131)iterator2.next();
-            final Class399 method26798 = class400.method26798();
+            final Entity method26798 = class400.method26798();
             if (method26798 != this.field37269.field4684 && method26798 != Class3276.field15771) {
                 if (!Class9463.method35173().method35190().method29878(method26798)) {
                     if (method26798 instanceof Class511) {

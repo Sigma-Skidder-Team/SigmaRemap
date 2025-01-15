@@ -155,13 +155,13 @@ public class Class6300
     public void method18645(final Class7351 class7351) {
         class7351.method22564(this.field25180 / 16.0f, this.field25181 / 16.0f, this.field25182 / 16.0f);
         if (this.field25185 != 0.0f) {
-            class7351.method22566(Class9138.field38720.method33327(this.field25185));
+            class7351.method22566(Vector3f.ZP.method33327(this.field25185));
         }
         if (this.field25184 != 0.0f) {
-            class7351.method22566(Class9138.field38718.method33327(this.field25184));
+            class7351.method22566(Vector3f.field38718.method33327(this.field25184));
         }
         if (this.field25183 != 0.0f) {
-            class7351.method22566(Class9138.field38716.method33327(this.field25183));
+            class7351.method22566(Vector3f.XP.method33327(this.field25183));
         }
     }
     
@@ -173,7 +173,7 @@ public class Class6300
             for (int length = Class9536.method35604(class8998).length, j = 0; j < length; ++j) {
                 final Class9094 class8999 = Class9536.method35604(class8998)[j];
                 if (class8999 != null) {
-                    final Class9138 method32113 = class8997.method12419(class8999.field38514);
+                    final Vector3f method32113 = class8997.method12419(class8999.field38514);
                     method32113.method33324(method32112);
                     final float method32114 = method32113.method33311();
                     final float method32115 = method32113.method33312();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 
 public class Class4364 implements Class4252<Class5800>
@@ -15,7 +17,7 @@ public class Class4364 implements Class4252<Class5800>
     public Class4364() {
     }
     
-    public Class4364(final Class399 class399, final byte field19557) {
+    public Class4364(final Entity class399, final byte field19557) {
         this.field19556 = class399.method1643();
         this.field19557 = field19557;
     }
@@ -36,7 +38,7 @@ public class Class4364 implements Class4252<Class5800>
         class5800.method17283(this);
     }
     
-    public Class399 method13127(final Class1847 class1847) {
+    public Entity method13127(final Class1847 class1847) {
         return class1847.method6741(this.field19556);
     }
     

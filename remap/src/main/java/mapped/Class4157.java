@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class4157 extends Class4158<Class494>
 {
     private static String[] field18538;
@@ -16,7 +19,7 @@ public class Class4157 extends Class4158<Class494>
         class495.method22567();
         class495.method22564(0.5, 0.0, 0.5);
         final Class4648 method2509 = class494.method2509();
-        final Class399 method2510 = method2509.method13891();
+        final Entity method2510 = method2509.method13891();
         if (method2510 != null) {
             float n4 = 0.53125f;
             final float max = Math.max(method2510.method1930(), method2510.method1931());
@@ -24,9 +27,9 @@ public class Class4157 extends Class4158<Class494>
                 n4 /= max;
             }
             class495.method22564(0.0, 0.4000000059604645, 0.0);
-            class495.method22566(Class9138.field38718.method33328((float)Class9546.method35701(n, method2509.method13898(), method2509.method13897()) * 10.0f));
+            class495.method22566(Vector3f.field38718.rotationDegrees((float) MathHelper.method35701(n, method2509.method13898(), method2509.method13897()) * 10.0f));
             class495.method22564(0.0, -0.20000000298023224, 0.0);
-            class495.method22566(Class9138.field38716.method33328(-30.0f));
+            class495.method22566(Vector3f.XP.rotationDegrees(-30.0f));
             class495.method22565(n4, n4, n4);
             Class869.method5277().method5306().method28706(method2510, 0.0, 0.0, 0.0, 0.0f, n, class495, class496, n2);
         }

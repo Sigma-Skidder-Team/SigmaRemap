@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
 import java.util.function.Predicate;
@@ -33,7 +35,7 @@ public class Class1878 implements Class1851
     public Class1878(final Class1849 field10219, final List<Class1860> field10220) {
         this.field10226 = new Class6955<Class3833>(class355 -> this.method6965(class355).method7036());
         this.field10227 = new Class6955<Class7255>(class357 -> this.method6965(class357).method7037());
-        final int method35644 = Class9546.method35644(Math.sqrt(field10220.size()));
+        final int method35644 = MathHelper.floor(Math.sqrt(field10220.size()));
         if (method35644 * method35644 == field10220.size()) {
             final Class7859 method35645 = field10220.get(field10220.size() / 2).method7019();
             this.field10215 = field10220;
@@ -110,18 +112,18 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class7096 method6701(final Class354 class354) {
-        return this.method6798(class354.method1074() >> 4, class354.method1076() >> 4).method6701(class354);
+    public Class7096 method6701(final BlockPos class354) {
+        return this.method6798(class354.getX() >> 4, class354.getZ() >> 4).method6701(class354);
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
+    public Class7099 method6702(final BlockPos class354) {
         return this.method6965(class354).method6702(class354);
     }
     
     @Nullable
     @Override
-    public Class512 method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Class399> predicate) {
+    public Class512 method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Entity> predicate) {
         return null;
     }
     
@@ -146,7 +148,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public boolean method6691(final Class354 class354, final boolean b, final Class399 class355) {
+    public boolean method6691(final BlockPos class354, final boolean b, final Entity class355) {
         final Class7096 method6701 = this.method6701(class354);
         if (!method6701.method21706()) {
             if (b) {
@@ -159,7 +161,7 @@ public class Class1878 implements Class1851
     
     @Nullable
     @Override
-    public Class436 method6727(final Class354 class354) {
+    public Class436 method6727(final BlockPos class354) {
         final Class1860 method6965 = this.method6965(class354);
         final Class436 method6966 = method6965.method6727(class354);
         if (method6966 == null) {
@@ -190,7 +192,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public boolean method6688(final Class354 class354, final Class7096 class355, final int n) {
+    public boolean method6688(final BlockPos class354, final Class7096 class355, final int n) {
         final Class1860 method6965 = this.method6965(class354);
         final Class7096 method6966 = method6965.method7008(class354, class355, false);
         if (method6966 != null) {
@@ -206,9 +208,9 @@ public class Class1878 implements Class1851
         }
         else if (method6965.method7027().method34448() != Class260.field1244) {
             final Class51 class356 = new Class51();
-            class356.method298("x", class354.method1074());
-            class356.method298("y", class354.method1075());
-            class356.method298("z", class354.method1076());
+            class356.method298("x", class354.getX());
+            class356.method298("y", class354.getY());
+            class356.method298("z", class354.getZ());
             class356.method306("id", "DUMMY");
             method6965.method7032(class356);
         }
@@ -221,18 +223,18 @@ public class Class1878 implements Class1851
         return true;
     }
     
-    private void method7152(final Class354 class354) {
+    private void method7152(final BlockPos class354) {
         this.method6965(class354).method7029(class354);
     }
     
     @Override
-    public boolean method6886(final Class399 class399) {
-        this.method6798(Class9546.method35644(class399.method1938() / 16.0), Class9546.method35644(class399.method1945() / 16.0)).method7010(class399);
+    public boolean method6886(final Entity class399) {
+        this.method6798(MathHelper.floor(class399.method1938() / 16.0), MathHelper.floor(class399.method1945() / 16.0)).method7010(class399);
         return true;
     }
     
     @Override
-    public boolean method6690(final Class354 class354, final boolean b) {
+    public boolean method6690(final BlockPos class354, final boolean b) {
         return this.method6688(class354, Class7521.field29147.method11878(), 3);
     }
     
@@ -257,8 +259,8 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class9592 method6784(final Class354 class354) {
-        if (this.method6814(class354.method1074() >> 4, class354.method1076() >> 4)) {
+    public Class9592 method6784(final BlockPos class354) {
+        if (this.method6814(class354.getX() >> 4, class354.getZ() >> 4)) {
             return new Class9592(this.field10219.method6954(), this.field10219.method6755(), 0L, this.field10219.method6951());
         }
         throw new RuntimeException("We are asking a region for a chunk out of bound");
@@ -295,7 +297,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6694(final Class354 class354, final Class3833 class355) {
+    public void method6694(final BlockPos class354, final Class3833 class355) {
     }
     
     @Override
@@ -304,7 +306,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6705(final Class512 class512, final Class354 class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
+    public void method6705(final Class512 class512, final BlockPos class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
     }
     
     @Override
@@ -312,11 +314,11 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6839(final Class512 class512, final int n, final Class354 class513, final int n2) {
+    public void method6839(final Class512 class512, final int n, final BlockPos class513, final int n2) {
     }
     
     @Override
-    public Class354 method6758() {
+    public BlockPos method6758() {
         return this.field10219.method6758();
     }
     
@@ -326,17 +328,17 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public boolean method6791(final Class354 class354, final Predicate<Class7096> predicate) {
+    public boolean method6791(final BlockPos class354, final Predicate<Class7096> predicate) {
         return predicate.test(this.method6701(class354));
     }
     
     @Override
-    public <T extends Class399> List<T> method6739(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6739(final Class<? extends T> clazz, final Class6221 class6221, final Predicate<? super T> predicate) {
         return Collections.emptyList();
     }
     
     @Override
-    public List<Class399> method6737(final Class399 class399, final Class6221 class400, final Predicate<? super Class399> predicate) {
+    public List<Entity> method6737(final Entity class399, final Class6221 class400, final Predicate<? super Entity> predicate) {
         return Collections.emptyList();
     }
     

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.function.Predicate;
 
 public class Class3627 extends Class3446
@@ -17,7 +19,7 @@ public class Class3627 extends Class3446
     
     @Override
     public boolean method11013() {
-        return !this.field16856.field2391.method6739((Class<? extends Class399>)Class511.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Class399>)Class838.method4993()).isEmpty();
+        return !this.field16856.field2391.method6739((Class<? extends Entity>)Class511.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Entity>)Class838.method4993()).isEmpty();
     }
     
     @Override
@@ -33,6 +35,6 @@ public class Class3627 extends Class3446
     
     @Override
     public boolean method11017() {
-        return !this.field16856.field2391.method6739((Class<? extends Class399>)Class511.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Class399>)Class838.method4993()).isEmpty();
+        return !this.field16856.field2391.method6739((Class<? extends Entity>)Class511.class, this.field16856.method1886().method18496(2.0), (Predicate<? super Entity>)Class838.method4993()).isEmpty();
     }
 }

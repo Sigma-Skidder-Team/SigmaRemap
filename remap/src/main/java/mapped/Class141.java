@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import java.util.Random;
 import com.google.common.collect.Lists;
@@ -45,7 +46,7 @@ public class Class141 extends Class126
             }
             class8323 = (Class6257)arrayList.get(method23586.nextInt(arrayList.size()));
         }
-        final int method23587 = Class9546.method35658(method23586, class8323.method18593(), class8323.method18588());
+        final int method23587 = MathHelper.method35658(method23586, class8323.method18593(), class8323.method18588());
         if (class8321.method27622() != Class7739.field31370) {
             class8321.method27674(class8323, method23587);
         }

@@ -5,10 +5,12 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
-import java.util.Iterator;
 import java.util.Set;
 
 public class Class1796 implements Class1657
@@ -56,7 +58,7 @@ public class Class1796 implements Class1657
             class6316.method12412(Class9484.field40759);
         }
         final Random random = new Random();
-        for (final Class179 class6317 : Class179.field524) {
+        for (final Direction class6317 : Direction.VALUES) {
             random.setSeed(42L);
             this.method6533(class6315, class6316, class6313.method18691(null, class6317, random), class6314, n, n2);
         }
@@ -281,7 +283,7 @@ public class Class1796 implements Class1657
                 final float n4 = (float)class1845.method27634();
                 final float max = Math.max(0.0f, (n4 - n3) / n4);
                 int n5 = Math.round(13.0f - n3 * 13.0f / n4);
-                int n6 = Class9546.method35697(max / 3.0f, 1.0f, 1.0f);
+                int n6 = MathHelper.method35697(max / 3.0f, 1.0f, 1.0f);
                 if (Class9570.field41324.method22605()) {
                     if (Class9570.field41328.method22605()) {
                         final double method25214 = Class9570.method35824(class1845.method27622(), Class9570.field41324, class1845);
@@ -307,7 +309,7 @@ public class Class1796 implements Class1657
                 Class8726.method30041();
                 Class8726.method30011();
                 Class8726.method30117();
-                this.method6544(Class7392.method22694().method22696(), n, n2 + Class9546.method35642(16.0f * (1.0f - n7)), 16, Class9546.method35649(16.0f * n7), 255, 255, 255, 127);
+                this.method6544(Class7392.method22694().method22696(), n, n2 + MathHelper.method35642(16.0f * (1.0f - n7)), 16, MathHelper.method35649(16.0f * n7), 255, 255, 255, 127);
                 Class8726.method30040();
                 Class8726.method30008();
             }

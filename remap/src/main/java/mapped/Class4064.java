@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class4064 extends Class3820
@@ -16,7 +18,7 @@ public class Class4064 extends Class3820
     
     @Override
     public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final List<Class399> method6739 = class1847.method6739((Class<? extends Class399>)Class426.class, class1848.method1886().method18496(2.0), class1851 -> {
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.method1886().method18496(2.0), class1851 -> {
             final boolean b;
             if (class1851 != null) {
                 if (!(!class1851.method1768())) {
@@ -37,7 +39,7 @@ public class Class4064 extends Class3820
         final Class7006 method6741 = Class3820.method11733(class1847, class1848, Class2191.field13326);
         if (method6741.method21449() != Class2165.field12880) {
             if (method6741.method21449() == Class2165.field12881) {
-                final Class354 method6742 = ((Class7005)method6741).method21447();
+                final BlockPos method6742 = ((Class7005)method6741).method21447();
                 if (!class1847.method6760(class1848, method6742)) {
                     return Class9355.method34676(method6740);
                 }

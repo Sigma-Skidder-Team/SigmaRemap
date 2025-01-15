@@ -16,7 +16,7 @@ public class Class7142 extends Class7139<Class6927>
         super(function);
     }
     
-    public Stream<Class354> method21902(final Random random, final Class6927 class6927, final Class354 class6928) {
-        return IntStream.range(0, random.nextInt(random.nextInt(class6927.field27146) + 1)).mapToObj(p2 -> new Class354(random2.nextInt(16) + class6929.method1074(), random2.nextInt(120) + 4, random2.nextInt(16) + class6929.method1076()));
+    public Stream<BlockPos> method21902(final Random random, final Class6927 class6927, final BlockPos class6928) {
+        return IntStream.range(0, random.nextInt(random.nextInt(class6927.field27146) + 1)).mapToObj(p2 -> new BlockPos(random2.nextInt(16) + class6929.method1074(), random2.nextInt(120) + 4, random2.nextInt(16) + class6929.method1076()));
     }
 }

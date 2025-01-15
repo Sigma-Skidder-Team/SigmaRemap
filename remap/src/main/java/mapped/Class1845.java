@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.MathHelper;
 
 public class Class1845 implements AutoCloseable
 {
@@ -49,7 +49,7 @@ public class Class1845 implements AutoCloseable
             }
             class7351.method22567();
             class7351.method22564(0.0f + class7353.method34524() / 2.0f + 64.0f, 0.0f + class7353.method34525() / 2.0f + 64.0f, -0.019999999552965164);
-            class7351.method22566(Class9138.field38720.method33328(class7353.method34526() * 360 / 16.0f));
+            class7351.method22566(Vector3f.ZP.rotationDegrees(class7353.method34526() * 360 / 16.0f));
             class7351.method22565(4.0f, 4.0f, 3.0f);
             class7351.method22564(-0.125, 0.125, 0.0);
             final byte method32113 = class7353.method34522();
@@ -68,7 +68,7 @@ public class Class1845 implements AutoCloseable
                 final Class1844 field4643 = Class869.method5277().field4643;
                 final String method32116 = class7353.method34528().method8461();
                 final float n7 = (float)field4643.method6617(method32116);
-                final float method32117 = Class9546.method35653(25.0f / n7, 0.0f, 0.6666667f);
+                final float method32117 = MathHelper.method35653(25.0f / n7, 0.0f, 0.6666667f);
                 class7351.method22567();
                 class7351.method22564(0.0f + class7353.method34524() / 2.0f + 64.0f - n7 * method32117 / 2.0f, 0.0f + class7353.method34525() / 2.0f + 64.0f + 4.0f, -0.02500000037252903);
                 class7351.method22565(method32117, method32117, 1.0f);

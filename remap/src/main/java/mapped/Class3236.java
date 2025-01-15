@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3236 extends Class3167
 {
     private float field15708;
@@ -99,8 +102,8 @@ public class Class3236 extends Class3167
                         if (method13698.method21449() == Class2165.field12880) {
                             return;
                         }
-                        if (method13698.method21448() == Class179.field512) {
-                            if (method13698.method21447().method1075() <= Class3236.field15514.field4684.field2396 - 1.0) {
+                        if (method13698.method21448() == Direction.UP) {
+                            if (method13698.method21447().getY() <= Class3236.field15514.field4684.field2396 - 1.0) {
                                 if (Class3236.field15514.field4684.field2404) {
                                     return;
                                 }
@@ -169,11 +172,11 @@ public class Class3236 extends Class3167
                         }
                     }
                 }
-                if (!Class4609.method13708(new Class354(Class3236.field15514.field4684.method1934().method16760(), Class3236.field15514.field4684.method1934().method16761() - 1.0, Class3236.field15514.field4684.method1934().method16762()))) {
+                if (!Class4609.method13708(new BlockPos(Class3236.field15514.field4684.method1934().method16760(), Class3236.field15514.field4684.method1934().method16761() - 1.0, Class3236.field15514.field4684.method1934().method16762()))) {
                     n = Class3236.field15514.field4684.method1934().method16760();
                     n2 = Class3236.field15514.field4684.method1934().method16762();
                 }
-                final Class354 class5746 = new Class354(n, n3 - 1.0, n2);
+                final BlockPos class5746 = new BlockPos(n, n3 - 1.0, n2);
                 Label_0589: {
                     if (!Class4609.method13708(class5746)) {
                         if (this.field15715.method10285(this.field15714)) {
@@ -251,7 +254,7 @@ public class Class3236 extends Class3167
             }
             case "Cubecraft": {
                 double n2 = 0.2;
-                final float method9888 = this.method10217(Class9546.method35668(Class3236.field15514.field4684.field2399));
+                final float method9888 = this.method10217(MathHelper.method35668(Class3236.field15514.field4684.field2399));
                 if (Class3236.field15514.field4648.field23439.method1056()) {
                     Class3236.field15514.field4633.field26532 = 1.0f;
                 }
@@ -377,7 +380,7 @@ public class Class3236 extends Class3167
         final double n = Class3236.field15514.field4684.field4085.field24722;
         final double n2 = Class3236.field15514.field4684.field4085.field24721;
         final float field2397 = Class3236.field15514.field4684.field2399;
-        Class354 class354 = new Class354(field2395, Class3236.field15514.field4684.field2396 - 1.0, field2396);
+        BlockPos class354 = new BlockPos(field2395, Class3236.field15514.field4684.field2396 - 1.0, field2396);
         double n3 = field2395;
         double n4 = field2396;
         double n5 = 0.0;
@@ -394,30 +397,30 @@ public class Class3236 extends Class3167
             if (n5 == n6) {
                 break;
             }
-            class354 = new Class354(n3, Class3236.field15514.field4684.field2396 - 1.0, n4);
+            class354 = new BlockPos(n3, Class3236.field15514.field4684.field2396 - 1.0, n4);
         }
         return new double[] { n3, n4 };
     }
     
-    public static Class5487 method10215(final Class354 class354, final Class179 class355) {
-        final double n = class354.method1074() + 0.5;
-        final double n2 = class354.method1075() + 0.5;
-        final double n3 = class354.method1076() + 0.5;
-        double n4 = n + class355.method785() / 2.0;
-        double n5 = n3 + class355.method787() / 2.0;
-        double n6 = n2 + class355.method786() / 2.0;
+    public static Class5487 method10215(final BlockPos class354, final Direction class355) {
+        final double n = class354.getX() + 0.5;
+        final double n2 = class354.getY() + 0.5;
+        final double n3 = class354.getZ() + 0.5;
+        double n4 = n + class355.getXOffset() / 2.0;
+        double n5 = n3 + class355.getZOffset() / 2.0;
+        double n6 = n2 + class355.getYOffset() / 2.0;
         final double n7 = 0.2;
-        if (class355 != Class179.field512 && class355 != Class179.field511) {
+        if (class355 != Direction.UP && class355 != Direction.DOWN) {
             n6 += method10216(n7, -n7);
         }
         else {
             n4 += method10216(n7, -n7);
             n5 += method10216(n7, -n7);
         }
-        if (class355 == Class179.field515 || class355 == Class179.field516) {
+        if (class355 == Direction.WEST || class355 == Direction.EAST) {
             n5 += method10216(n7, -n7);
         }
-        if (class355 == Class179.field514 || class355 == Class179.field513) {
+        if (class355 == Direction.SOUTH || class355 == Direction.NORTH) {
             n4 += method10216(n7, -n7);
         }
         return new Class5487(n4, n6, n5);

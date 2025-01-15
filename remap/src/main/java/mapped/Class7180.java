@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public abstract class Class7180 implements Class7182
 {
     public final /* synthetic */ Class6367 field27853;
@@ -14,6 +16,6 @@ public abstract class Class7180 implements Class7182
     
     @Override
     public int method21975(final float n) {
-        return Math.max(Class9546.method35642(this.field27853.field25468 + this.field27853.field25469 * n), 0);
+        return Math.max(MathHelper.method35642(this.field27853.field25468 + this.field27853.field25469 * n), 0);
     }
 }

@@ -5,13 +5,15 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class9253
 {
     private final Class759 field39687;
-    private final List<Class399> field39688;
-    private final List<Class399> field39689;
+    private final List<Entity> field39688;
+    private final List<Entity> field39689;
     
     public Class9253(final Class759 field39687) {
         this.field39688 = Lists.newArrayList();
@@ -24,7 +26,7 @@ public class Class9253
         this.field39689.clear();
     }
     
-    public boolean method34143(final Class399 class399) {
+    public boolean method34143(final Entity class399) {
         if (this.field39688.contains(class399)) {
             return true;
         }

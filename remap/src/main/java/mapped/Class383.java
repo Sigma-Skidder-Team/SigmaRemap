@@ -10,7 +10,7 @@ import java.io.File;
 import com.mojang.datafixers.Dynamic;
 import java.util.function.BiFunction;
 
-public class Class383 implements Class356
+public class Class383 implements IDynamicSerializable
 {
     public static final Class383 field2223;
     public static final Class383 field2224;

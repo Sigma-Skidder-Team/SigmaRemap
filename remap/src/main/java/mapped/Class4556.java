@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
+
 import java.util.function.Function;
 
 public abstract class Class4556 extends Class4535<Class5137>
@@ -14,9 +16,9 @@ public abstract class Class4556 extends Class4535<Class5137>
         super(function);
     }
     
-    public void method13565(final Class1851 class1851, final Random random, final Class354 class1852, final Class5137 class1853, final int n, final Class385 class1854) {
+    public void method13565(final Class1851 class1851, final Random random, final BlockPos class1852, final Class5137 class1853, final int n, final Class385 class1854) {
         for (int i = 0; i < n; ++i) {
-            class1854.method1287(class1852).method1291(Class179.field512, i);
+            class1854.method1287(class1852).method1291(Direction.UP, i);
             if (!class1851.method6701(class1854).method21722(class1851, class1854)) {
                 this.method13529(class1851, class1854, class1853.field22117.method1164(random, class1852));
             }
@@ -31,8 +33,8 @@ public abstract class Class4556 extends Class4535<Class5137>
         return n;
     }
     
-    public boolean method13567(final Class1851 class1851, final Class354 class1852, final int n, final Class385 class1853, final Class5137 class1854) {
-        final int method1075 = class1852.method1075();
+    public boolean method13567(final Class1851 class1851, final BlockPos class1852, final int n, final Class385 class1853, final Class5137 class1854) {
+        final int method1075 = class1852.getY();
         if (method1075 < 1 || method1075 + n + 1 >= 256) {
             return false;
         }
@@ -52,7 +54,7 @@ public abstract class Class4556 extends Class4535<Class5137>
         return false;
     }
     
-    public boolean method13568(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5137 class1854) {
+    public boolean method13568(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5137 class1854) {
         final int method13566 = this.method13566(random);
         final Class385 class1855 = new Class385();
         if (this.method13567(class1851, class1853, method13566, class1855, class1854)) {
@@ -65,5 +67,5 @@ public abstract class Class4556 extends Class4535<Class5137>
     
     public abstract int method13569(final int p0, final int p1, final int p2, final int p3);
     
-    public abstract void method13570(final Class1851 p0, final Random p1, final Class354 p2, final int p3, final Class385 p4, final Class5137 p5);
+    public abstract void method13570(final Class1851 p0, final Random p1, final BlockPos p2, final int p3, final Class385 p4, final Class5137 p5);
 }

@@ -34,7 +34,7 @@ public class Class3480 extends Class3479
     @Override
     public void method11016() {
         super.method11016();
-        final Class354 class354 = new Class354(this.field16401);
+        final BlockPos class354 = new BlockPos(this.field16401);
         if (!this.field16401.method1706()) {
             if (this.method11048()) {
                 if (Class793.method4469(this.field16401) >= 1) {
@@ -58,7 +58,7 @@ public class Class3480 extends Class3479
     }
     
     @Override
-    public boolean method11050(final Class1852 class1852, final Class354 class1853) {
+    public boolean method11050(final Class1852 class1852, final BlockPos class1853) {
         return class1852.method6961(class1853.method1137()) && class1852.method6701(class1853).method21696() == Class7521.field29175;
     }
 }

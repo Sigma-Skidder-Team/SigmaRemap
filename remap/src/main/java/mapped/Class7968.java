@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.Random;
 
@@ -28,7 +30,7 @@ public class Class7968
         return Class7968.field32745[random.nextInt(Class7968.field32745.length)];
     }
     
-    public static void method25820(final Class1795 class1795, final Class354 class1796, final Class2052 class1797, final List<Class4473> list, final Random random, final Class5130 class1798) {
+    public static void method25820(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final List<Class4473> list, final Random random, final Class5130 class1798) {
         final boolean b = random.nextFloat() <= class1798.field22098;
         method25823(class1795, class1796, class1797, list, random, class1798, b, b ? 0.9f : 0.8f);
         if (b) {
@@ -38,41 +40,41 @@ public class Class7968
         }
     }
     
-    private static void method25821(final Class1795 class1795, final Random random, final Class2052 class1796, final Class354 class1797, final Class5130 class1798, final List<Class4473> list) {
-        final int method1074 = class1797.method1074();
-        final int method1075 = class1797.method1076();
-        final Class354 method1076 = Class6585.method19962(new Class354(15, 0, 15), Class2181.field12917, class1796, Class354.field2173).method1134(method1074, 0, method1075);
-        final Class6997 method1077 = Class6997.method21409(method1074, 0, method1075, method1076.method1074(), 0, method1076.method1076());
-        final Class354 class1799 = new Class354(Math.min(method1074, method1076.method1074()), 0, Math.min(method1075, method1076.method1076()));
-        final List<Class354> method1078 = method25822(random, class1799.method1074(), class1799.method1076());
-        for (int method1079 = Class9546.method35658(random, 4, 8), i = 0; i < method1079; ++i) {
+    private static void method25821(final Class1795 class1795, final Random random, final Class2052 class1796, final BlockPos class1797, final Class5130 class1798, final List<Class4473> list) {
+        final int method1074 = class1797.getX();
+        final int method1075 = class1797.getZ();
+        final BlockPos method1076 = Class6585.method19962(new BlockPos(15, 0, 15), Class2181.field12917, class1796, BlockPos.ZERO).method1134(method1074, 0, method1075);
+        final Class6997 method1077 = Class6997.method21409(method1074, 0, method1075, method1076.getX(), 0, method1076.getZ());
+        final BlockPos class1799 = new BlockPos(Math.min(method1074, method1076.getX()), 0, Math.min(method1075, method1076.getZ()));
+        final List<BlockPos> method1078 = method25822(random, class1799.getX(), class1799.getZ());
+        for (int method1079 = MathHelper.method35658(random, 4, 8), i = 0; i < method1079; ++i) {
             if (!method1078.isEmpty()) {
-                final Class354 class1800 = method1078.remove(random.nextInt(method1078.size()));
-                final int method1080 = class1800.method1074();
-                final int method1081 = class1800.method1076();
+                final BlockPos class1800 = method1078.remove(random.nextInt(method1078.size()));
+                final int method1080 = class1800.getX();
+                final int method1081 = class1800.getZ();
                 final Class2052 class1801 = Class2052.values()[random.nextInt(Class2052.values().length)];
-                final Class354 method1082 = Class6585.method19962(new Class354(5, 0, 6), Class2181.field12917, class1801, Class354.field2173).method1134(method1080, 0, method1081);
-                if (!Class6997.method21409(method1080, 0, method1081, method1082.method1074(), 0, method1082.method1076()).method21410(method1077)) {
+                final BlockPos method1082 = Class6585.method19962(new BlockPos(5, 0, 6), Class2181.field12917, class1801, BlockPos.ZERO).method1134(method1080, 0, method1081);
+                if (!Class6997.method21409(method1080, 0, method1081, method1082.getX(), 0, method1082.getZ()).method21410(method1077)) {
                     method25823(class1795, class1800, class1801, list, random, class1798, false, 0.8f);
                 }
             }
         }
     }
     
-    private static List<Class354> method25822(final Random random, final int n, final int n2) {
+    private static List<BlockPos> method25822(final Random random, final int n, final int n2) {
         final ArrayList arrayList = Lists.newArrayList();
-        arrayList.add(new Class354(n - 16 + Class9546.method35658(random, 1, 8), 90, n2 + 16 + Class9546.method35658(random, 1, 7)));
-        arrayList.add(new Class354(n - 16 + Class9546.method35658(random, 1, 8), 90, n2 + Class9546.method35658(random, 1, 7)));
-        arrayList.add(new Class354(n - 16 + Class9546.method35658(random, 1, 8), 90, n2 - 16 + Class9546.method35658(random, 4, 8)));
-        arrayList.add(new Class354(n + Class9546.method35658(random, 1, 7), 90, n2 + 16 + Class9546.method35658(random, 1, 7)));
-        arrayList.add(new Class354(n + Class9546.method35658(random, 1, 7), 90, n2 - 16 + Class9546.method35658(random, 4, 6)));
-        arrayList.add(new Class354(n + 16 + Class9546.method35658(random, 1, 7), 90, n2 + 16 + Class9546.method35658(random, 3, 8)));
-        arrayList.add(new Class354(n + 16 + Class9546.method35658(random, 1, 7), 90, n2 + Class9546.method35658(random, 1, 7)));
-        arrayList.add(new Class354(n + 16 + Class9546.method35658(random, 1, 7), 90, n2 - 16 + Class9546.method35658(random, 4, 8)));
+        arrayList.add(new BlockPos(n - 16 + MathHelper.method35658(random, 1, 8), 90, n2 + 16 + MathHelper.method35658(random, 1, 7)));
+        arrayList.add(new BlockPos(n - 16 + MathHelper.method35658(random, 1, 8), 90, n2 + MathHelper.method35658(random, 1, 7)));
+        arrayList.add(new BlockPos(n - 16 + MathHelper.method35658(random, 1, 8), 90, n2 - 16 + MathHelper.method35658(random, 4, 8)));
+        arrayList.add(new BlockPos(n + MathHelper.method35658(random, 1, 7), 90, n2 + 16 + MathHelper.method35658(random, 1, 7)));
+        arrayList.add(new BlockPos(n + MathHelper.method35658(random, 1, 7), 90, n2 - 16 + MathHelper.method35658(random, 4, 6)));
+        arrayList.add(new BlockPos(n + 16 + MathHelper.method35658(random, 1, 7), 90, n2 + 16 + MathHelper.method35658(random, 3, 8)));
+        arrayList.add(new BlockPos(n + 16 + MathHelper.method35658(random, 1, 7), 90, n2 + MathHelper.method35658(random, 1, 7)));
+        arrayList.add(new BlockPos(n + 16 + MathHelper.method35658(random, 1, 7), 90, n2 - 16 + MathHelper.method35658(random, 4, 8)));
         return arrayList;
     }
     
-    private static void method25823(final Class1795 class1795, final Class354 class1796, final Class2052 class1797, final List<Class4473> list, final Random random, final Class5130 class1798, final boolean b, final float n) {
+    private static void method25823(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final List<Class4473> list, final Random random, final Class5130 class1798, final boolean b, final float n) {
         if (class1798.field22097 != Class1957.field10666) {
             if (class1798.field22097 == Class1957.field10667) {
                 final Class1932[] array = b ? Class7968.field32742 : Class7968.field32739;

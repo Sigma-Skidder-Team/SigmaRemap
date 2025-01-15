@@ -44,14 +44,14 @@ public class Class1885 extends Class1886 implements AutoCloseable
     }
     
     @Override
-    public void method7251(final Class354 class354, final int n) {
+    public void method7251(final BlockPos class354, final int n) {
         throw Class8349.method27859(new UnsupportedOperationException("Ran authomatically on a different thread!"));
     }
     
     @Override
-    public void method7252(final Class354 class354) {
+    public void method7252(final BlockPos class354) {
         class354.method1153();
-        this.method7257(class354.method1074() >> 4, class354.method1076() >> 4, Class2216.field13612, Class8349.method27856(() -> super.method7252(class355), () -> "checkBlock " + obj));
+        this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Class8349.method27856(() -> super.method7252(class355), () -> "checkBlock " + obj));
     }
     
     public void method7253(final Class7859 class7859) {

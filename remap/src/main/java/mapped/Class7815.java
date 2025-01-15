@@ -4,19 +4,21 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
 
 public class Class7815 extends Class7814
 {
-    public HashMap<Class399, Boolean> field32020;
+    public HashMap<Entity, Boolean> field32020;
     
     public Class7815() {
         super("Hypixel", "Detects bots on Hypixel based on entity names", Class304.field1770);
-        this.field32020 = new HashMap<Class399, Boolean>();
+        this.field32020 = new HashMap<Entity, Boolean>();
     }
     
     @Override
-    public boolean method25239(final Class399 class399) {
+    public boolean method25239(final Entity class399) {
         final String method8461 = class399.method1871().method8461();
         final String s = (class399.method1873() != null) ? class399.method1873().method8461() : null;
         final String method8462 = class399.method1841().method8461();
@@ -72,7 +74,7 @@ public class Class7815 extends Class7814
     }
     
     @Override
-    public boolean method25240(final Class399 class399) {
+    public boolean method25240(final Entity class399) {
         return true;
     }
 }

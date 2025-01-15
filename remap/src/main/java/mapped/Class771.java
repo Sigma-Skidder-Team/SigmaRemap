@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Random;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class771 extends Class770
@@ -69,7 +70,7 @@ public class Class771 extends Class770
     }
     
     @Override
-    public boolean method1826(final Class399 class399) {
+    public boolean method1826(final Entity class399) {
         if (class399 == null) {
             return false;
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4764 extends Class4712<Class844, Class5879>
 {
     private static final Class1932 field20389;
@@ -34,7 +36,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
     }
     
     private Class5487 method14104(final Class511 class511, final double n, final float n2) {
-        return new Class5487(Class9546.method35701(n2, class511.field2417, class511.method1938()), Class9546.method35701(n2, class511.field2418, class511.method1941()) + n, Class9546.method35701(n2, class511.field2419, class511.method1945()));
+        return new Class5487(MathHelper.method35701(n2, class511.field2417, class511.method1938()), MathHelper.method35701(n2, class511.field2418, class511.method1941()) + n, MathHelper.method35701(n2, class511.field2419, class511.method1945()));
     }
     
     public void method14105(final Class844 class844, final float n, final float n2, final Class7351 class845, final Class7807 class846, final int n3) {
@@ -51,29 +53,29 @@ public class Class4764 extends Class4712<Class844, Class5879>
             final float n6 = (float)(method5062.method16752() + 1.0);
             final Class5487 method5063 = method5062.method16738();
             final float n7 = (float)Math.acos(method5063.field22771);
-            class845.method22566(Class9138.field38718.method33328((1.5707964f - (float)Math.atan2(method5063.field22772, method5063.field22770)) * 57.295776f));
-            class845.method22566(Class9138.field38716.method33328(n7 * 57.295776f));
+            class845.method22566(Vector3f.field38718.rotationDegrees((1.5707964f - (float)Math.atan2(method5063.field22772, method5063.field22770)) * 57.295776f));
+            class845.method22566(Vector3f.XP.rotationDegrees(n7 * 57.295776f));
             final float n8 = n4 * 0.05f * -1.5f;
             final float n9 = method5060 * method5060;
             final int n10 = 64 + (int)(n9 * 191.0f);
             final int n11 = 32 + (int)(n9 * 191.0f);
             final int n12 = 128 - (int)(n9 * 64.0f);
-            final float n13 = Class9546.method35639(n8 + 2.3561945f) * 0.282f;
-            final float n14 = Class9546.method35638(n8 + 2.3561945f) * 0.282f;
-            final float n15 = Class9546.method35639(n8 + 0.7853982f) * 0.282f;
-            final float n16 = Class9546.method35638(n8 + 0.7853982f) * 0.282f;
-            final float n17 = Class9546.method35639(n8 + 3.926991f) * 0.282f;
-            final float n18 = Class9546.method35638(n8 + 3.926991f) * 0.282f;
-            final float n19 = Class9546.method35639(n8 + 5.4977875f) * 0.282f;
-            final float n20 = Class9546.method35638(n8 + 5.4977875f) * 0.282f;
-            final float n21 = Class9546.method35639(n8 + 3.1415927f) * 0.2f;
-            final float n22 = Class9546.method35638(n8 + 3.1415927f) * 0.2f;
-            final float n23 = Class9546.method35639(n8 + 0.0f) * 0.2f;
-            final float n24 = Class9546.method35638(n8 + 0.0f) * 0.2f;
-            final float n25 = Class9546.method35639(n8 + 1.5707964f) * 0.2f;
-            final float n26 = Class9546.method35638(n8 + 1.5707964f) * 0.2f;
-            final float n27 = Class9546.method35639(n8 + 4.712389f) * 0.2f;
-            final float n28 = Class9546.method35638(n8 + 4.712389f) * 0.2f;
+            final float n13 = MathHelper.cos(n8 + 2.3561945f) * 0.282f;
+            final float n14 = MathHelper.sin(n8 + 2.3561945f) * 0.282f;
+            final float n15 = MathHelper.cos(n8 + 0.7853982f) * 0.282f;
+            final float n16 = MathHelper.sin(n8 + 0.7853982f) * 0.282f;
+            final float n17 = MathHelper.cos(n8 + 3.926991f) * 0.282f;
+            final float n18 = MathHelper.sin(n8 + 3.926991f) * 0.282f;
+            final float n19 = MathHelper.cos(n8 + 5.4977875f) * 0.282f;
+            final float n20 = MathHelper.sin(n8 + 5.4977875f) * 0.282f;
+            final float n21 = MathHelper.cos(n8 + 3.1415927f) * 0.2f;
+            final float n22 = MathHelper.sin(n8 + 3.1415927f) * 0.2f;
+            final float n23 = MathHelper.cos(n8 + 0.0f) * 0.2f;
+            final float n24 = MathHelper.sin(n8 + 0.0f) * 0.2f;
+            final float n25 = MathHelper.cos(n8 + 1.5707964f) * 0.2f;
+            final float n26 = MathHelper.sin(n8 + 1.5707964f) * 0.2f;
+            final float n27 = MathHelper.cos(n8 + 4.712389f) * 0.2f;
+            final float n28 = MathHelper.sin(n8 + 4.712389f) * 0.2f;
             final float n29 = -1.0f + n5;
             final float n30 = n6 * 2.5f + n29;
             final Class4150 method5064 = class846.method25214(Class4764.field20391);

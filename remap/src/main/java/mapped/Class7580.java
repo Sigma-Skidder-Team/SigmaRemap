@@ -5,9 +5,8 @@
 package mapped;
 
 import java.util.function.Consumer;
-import java.util.Spliterators;
 
-public final class Class7580 extends AbstractSpliterator<Class354>
+public final class Class7580 extends AbstractSpliterator<BlockPos>
 {
     private static String[] field30060;
     public final Class8243 field30061;
@@ -32,7 +31,7 @@ public final class Class7580 extends AbstractSpliterator<Class354>
     }
     
     @Override
-    public boolean tryAdvance(final Consumer<? super Class354> consumer) {
+    public boolean tryAdvance(final Consumer<? super BlockPos> consumer) {
         if (!this.field30061.method27301()) {
             return false;
         }

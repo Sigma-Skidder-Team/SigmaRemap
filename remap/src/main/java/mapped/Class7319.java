@@ -12,7 +12,7 @@ public final class Class7319 implements Class7318
     private static String[] field28309;
     
     @Override
-    public <T> Optional<T> method22435(final BiFunction<Class1847, Class354, T> biFunction) {
+    public <T> Optional<T> method22435(final BiFunction<Class1847, BlockPos, T> biFunction) {
         return Optional.empty();
     }
 }

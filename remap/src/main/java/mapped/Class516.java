@@ -4,9 +4,10 @@
 
 package mapped;
 
-import java.util.Iterator;
 import com.mojang.datafixers.util.Pair;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Set;
 
 public abstract class Class516<T extends Class3418> extends Class527 implements Class725<T>
@@ -102,7 +103,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             String string = null;
             if (!this.field3084.method27620() && this.field3083) {
                 class8321 = class8321.method27641();
-                class8321.method27691(Class9546.method35649(class8321.method27690() / 2.0f));
+                class8321.method27691(MathHelper.method35649(class8321.method27690() / 2.0f));
             }
             else if (this.field3093) {
                 if (this.field3092.size() > 1) {
@@ -511,8 +512,8 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                     this.method2988(method2981, field3081, 0, Class2133.field12437);
                                     if (!this.field3150.field4684.field3006.method2375().method27620()) {
                                         this.method2988(this.field3082, this.field3082.field26174, n3, Class2133.field12437);
-                                        this.field3085 = Class9546.method35644(n - field3079);
-                                        this.field3086 = Class9546.method35644(n2 - field3080);
+                                        this.field3085 = MathHelper.floor(n - field3079);
+                                        this.field3086 = MathHelper.floor(n2 - field3080);
                                         this.field3087 = this.field3082;
                                         this.field3089 = this.field3084;
                                         this.field3088 = Class8349.method27837();
@@ -524,8 +525,8 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                             }
                         }
                         if (!this.field3084.method27620()) {
-                            this.field3085 = Class9546.method35644(n - field3079);
-                            this.field3086 = Class9546.method35644(n2 - field3080);
+                            this.field3085 = MathHelper.floor(n - field3079);
+                            this.field3086 = MathHelper.floor(n2 - field3080);
                             this.field3087 = this.field3082;
                             this.field3089 = this.field3084;
                             this.field3088 = Class8349.method27837();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 
 public class Class4251 implements Class4252<Class5813>
@@ -18,7 +20,7 @@ public class Class4251 implements Class4252<Class5813>
     public Class4251() {
     }
     
-    public Class4251(final Class399 class399) {
+    public Class4251(final Entity class399) {
         this.field19077 = class399.method1938();
         this.field19078 = class399.method1941();
         this.field19079 = class399.method1945();

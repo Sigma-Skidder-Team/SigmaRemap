@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonElement;
 import java.util.Map;
@@ -14,6 +13,7 @@ import com.google.gson.JsonArray;
 import java.awt.Dimension;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6514
 {
@@ -194,7 +194,7 @@ public class Class6514
         }
         final float[] method22665 = Class7382.method22666(jsonObject.get("rotate"), 3, new float[3]);
         for (int i = 0; i < method22665.length; ++i) {
-            method22665[i] = method22665[i] / 180.0f * Class9546.field41099;
+            method22665[i] = method22665[i] / 180.0f * MathHelper.field41099;
         }
         if (contains) {
             method22665[0] = -method22665[0];

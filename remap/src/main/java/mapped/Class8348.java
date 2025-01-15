@@ -7,12 +7,12 @@ package mapped;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.entity.Entity;
 
 public class Class8348
 {
@@ -23,7 +23,7 @@ public class Class8348
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("spectate").requires(class7492 -> class7492.method23210(2))).executes(commandContext -> method27828((Class7492)commandContext.getSource(), null, ((Class7492)commandContext.getSource()).method23253()))).then(((RequiredArgumentBuilder)Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method27828((Class7492)commandContext.getSource(), Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), ((Class7492)commandContext.getSource()).method23253()))).then(Class7788.method25002("player", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21149()).executes(commandContext -> method27828((Class7492)commandContext.getSource(), Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), Class6886.method21150((CommandContext<Class7492>)commandContext, "player"))))));
     }
     
-    private static int method27828(final Class7492 class7492, final Class399 class7493, final Class513 class7494) throws CommandSyntaxException {
+    private static int method27828(final Class7492 class7492, final Entity class7493, final Class513 class7494) throws CommandSyntaxException {
         if (class7494 == class7493) {
             throw Class8348.field34264.create();
         }

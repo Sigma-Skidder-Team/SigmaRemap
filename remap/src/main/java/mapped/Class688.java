@@ -9,6 +9,7 @@ import com.mojang.authlib.GameProfile;
 import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.Ordering;
+import net.minecraft.util.math.MathHelper;
 
 public class Class688 extends Class565
 {
@@ -229,13 +230,13 @@ public class Class688 extends Class565
             }
             class9291.method32742(this.field3789);
             class9291.method32734(method23969);
-            final int method23971 = Class9546.method35649(Math.max(method23969, class9291.method32735()) / 2.0f);
-            final int max = Math.max(Class9546.method35649((float)(method23969 / 2)), Math.max(Class9546.method35649((float)(class9291.method32735() / 2)), 10));
+            final int method23971 = MathHelper.method35649(Math.max(method23969, class9291.method32735()) / 2.0f);
+            final int max = Math.max(MathHelper.method35649((float)(method23969 / 2)), Math.max(MathHelper.method35649((float)(class9291.method32735() / 2)), 10));
             final boolean b = class9291.method32739() > this.field3786.method3808() && (class9291.method32739() - this.field3786.method3808()) / 3L % 2L == 1L;
             if (method23971 > 0) {
-                final int method23972 = Class9546.method35642(Math.min((n3 - n2 - 4) / (float)max, 9.0f));
+                final int method23972 = MathHelper.method35642(Math.min((n3 - n2 - 4) / (float)max, 9.0f));
                 if (method23972 <= 3) {
-                    final float method23973 = Class9546.method35653(method23969 / 20.0f, 0.0f, 1.0f);
+                    final float method23973 = MathHelper.method35653(method23969 / 20.0f, 0.0f, 1.0f);
                     final int n4 = (int)((1.0f - method23973) * 255.0f) << 16 | (int)(method23973 * 255.0f) << 8;
                     String s2 = "" + method23969 / 2.0f;
                     if (n3 - this.field3785.field4643.method6617(s2 + "hp") >= n2) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.EnumSet;
 
 public class Class3625 extends Class3446
@@ -57,7 +59,7 @@ public class Class3625 extends Class3446
     public void method11016() {
         if (!this.field16840.method4715()) {
             if (this.field16840.method2633().nextInt(50) == 0) {
-                final Class399 class399 = this.field16840.method1908().get(0);
+                final Entity class399 = this.field16840.method1908().get(0);
                 if (class399 == null) {
                     return;
                 }

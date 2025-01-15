@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -23,10 +25,10 @@ public class Class4043 extends Class4036
         final Class7096 method11846 = this.field18138.method11846(class7074);
         Class7096 class7075 = null;
         final Class1847 method11847 = class7074.method21654();
-        final Class354 method11848 = class7074.method21639();
-        for (final Class179 class7076 : class7074.method21643()) {
-            if (class7076 != Class179.field512) {
-                final Class7096 class7077 = (class7076 != Class179.field511) ? method11846 : this.method12240().method11846(class7074);
+        final BlockPos method11848 = class7074.method21639();
+        for (final Direction class7076 : class7074.method21643()) {
+            if (class7076 != Direction.UP) {
+                final Class7096 class7077 = (class7076 != Direction.DOWN) ? method11846 : this.method12240().method11846(class7074);
                 if (class7077 != null) {
                     if (class7077.method21752(method11847, method11848)) {
                         class7075 = class7077;

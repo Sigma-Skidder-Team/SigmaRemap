@@ -4,9 +4,9 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
-import java.util.Map;
 
 public class Class3242 extends Class3167
 {
@@ -52,7 +52,7 @@ public class Class3242 extends Class3167
         GL11.glEnable(3008);
         GL11.glEnable(2896);
         GL11.glPolygonOffset(-30000.0f, 1.0f);
-        for (final Class399 class399 : Class3242.field15514.field4683.method6806()) {
+        for (final Entity class399 : Class3242.field15514.field4683.method6806()) {
             if (!this.method10244(class399)) {
                 continue;
             }
@@ -95,8 +95,8 @@ public class Class3242 extends Class3167
         }
     }
     
-    public void method10242(final Class399 class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
-        Class3242.field15514.field4636.field9290.method28706(class399, Class9546.method35701(n4, class399.field2417, class399.method1938()) - n, Class9546.method35701(n4, class399.field2418, class399.method1941()) - n2, Class9546.method35701(n4, class399.field2419, class399.method1945()) - n3, Class9546.method35700(n4, class399.field2401, class399.field2399), n4, class400, class401, 255);
+    public void method10242(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
+        Class3242.field15514.field4636.field9290.method28706(class399, MathHelper.method35701(n4, class399.field2417, class399.method1938()) - n, MathHelper.method35701(n4, class399.field2418, class399.method1941()) - n2, MathHelper.method35701(n4, class399.field2419, class399.method1945()) - n3, MathHelper.method35700(n4, class399.field2401, class399.field2399), n4, class400, class401, 255);
     }
     
     @Class6753
@@ -108,7 +108,7 @@ public class Class3242 extends Class3167
         }
     }
     
-    private boolean method10244(final Class399 class399) {
+    private boolean method10244(final Entity class399) {
         return class399 instanceof Class511 && class399 instanceof Class512 && !(class399 instanceof Class756) && !Class9463.method35173().method35191().method31751(class399);
     }
     

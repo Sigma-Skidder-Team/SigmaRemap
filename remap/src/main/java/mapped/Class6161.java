@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6161 extends Class6159
 {
     private static String[] field24914;
@@ -14,9 +16,9 @@ public class Class6161 extends Class6159
         this.field24940 *= 0.009999999776482582;
         this.field24941 *= 0.009999999776482582;
         this.field24940 += 0.2;
-        this.field24953 = Math.max(0.0f, Class9546.method35638(((float)n4 + 0.0f) * 6.2831855f) * 0.65f + 0.35f);
-        this.field24954 = Math.max(0.0f, Class9546.method35638(((float)n4 + 0.33333334f) * 6.2831855f) * 0.65f + 0.35f);
-        this.field24955 = Math.max(0.0f, Class9546.method35638(((float)n4 + 0.6666667f) * 6.2831855f) * 0.65f + 0.35f);
+        this.field24953 = Math.max(0.0f, MathHelper.sin(((float)n4 + 0.0f) * 6.2831855f) * 0.65f + 0.35f);
+        this.field24954 = Math.max(0.0f, MathHelper.sin(((float)n4 + 0.33333334f) * 6.2831855f) * 0.65f + 0.35f);
+        this.field24955 = Math.max(0.0f, MathHelper.sin(((float)n4 + 0.6666667f) * 6.2831855f) * 0.65f + 0.35f);
         this.field24930 *= 1.5f;
         this.field24951 = 6;
     }
@@ -28,7 +30,7 @@ public class Class6161 extends Class6159
     
     @Override
     public float method18430(final float n) {
-        return this.field24930 * Class9546.method35653((this.field24950 + n) / this.field24951 * 32.0f, 0.0f, 1.0f);
+        return this.field24930 * MathHelper.method35653((this.field24950 + n) / this.field24951 * 32.0f, 0.0f, 1.0f);
     }
     
     @Override

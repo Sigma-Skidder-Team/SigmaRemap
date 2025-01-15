@@ -9,6 +9,9 @@ import java.util.Random;
 import java.util.BitSet;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Function;
 import java.util.Set;
 
@@ -43,7 +46,7 @@ public abstract class Class7304<C extends Class5118>
         return 4;
     }
     
-    public boolean method22406(final Class1860 class1860, final Function<Class354, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final double n8, final double n9, final BitSet set) {
+    public boolean method22406(final Class1860 class1860, final Function<BlockPos, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final double n8, final double n9, final BitSet set) {
         final Random random = new Random(n + n3 + n4);
         final double n10 = n3 * 16 + 8;
         final double n11 = n4 * 16 + 8;
@@ -51,12 +54,12 @@ public abstract class Class7304<C extends Class5118>
             if (n7 >= n11 - 16.0 - n8 * 2.0) {
                 if (n5 <= n10 + 16.0 + n8 * 2.0) {
                     if (n7 <= n11 + 16.0 + n8 * 2.0) {
-                        final int max = Math.max(Class9546.method35644(n5 - n8) - n3 * 16 - 1, 0);
-                        final int min = Math.min(Class9546.method35644(n5 + n8) - n3 * 16 + 1, 16);
-                        final int max2 = Math.max(Class9546.method35644(n6 - n9) - 1, 1);
-                        final int min2 = Math.min(Class9546.method35644(n6 + n9) + 1, this.field28288 - 8);
-                        final int max3 = Math.max(Class9546.method35644(n7 - n8) - n4 * 16 - 1, 0);
-                        final int min3 = Math.min(Class9546.method35644(n7 + n8) - n4 * 16 + 1, 16);
+                        final int max = Math.max(MathHelper.floor(n5 - n8) - n3 * 16 - 1, 0);
+                        final int min = Math.min(MathHelper.floor(n5 + n8) - n3 * 16 + 1, 16);
+                        final int max2 = Math.max(MathHelper.floor(n6 - n9) - 1, 1);
+                        final int min2 = Math.min(MathHelper.floor(n6 + n9) + 1, this.field28288 - 8);
+                        final int max3 = Math.max(MathHelper.floor(n7 - n8) - n4 * 16 - 1, 0);
+                        final int min3 = Math.min(MathHelper.floor(n7 + n8) - n4 * 16 + 1, 16);
                         if (!this.method22409(class1860, n3, n4, max, min, max2, min2, max3, min3)) {
                             boolean b = false;
                             final Class385 class1861 = new Class385();
@@ -88,7 +91,7 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public boolean method22396(final Class1860 class1860, final Function<Class354, Class3090> function, final BitSet set, final Random random, final Class385 class1861, final Class385 class1862, final Class385 class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final Class1860 class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Class385 class1861, final Class385 class1862, final Class385 class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         final int n9 = n6 | n8 << 4 | n7 << 8;
         if (set.get(n9)) {
             return false;
@@ -96,7 +99,7 @@ public abstract class Class7304<C extends Class5118>
         set.set(n9);
         class1861.method1284(n4, n7, n5);
         final Class7096 method6701 = class1860.method6701(class1861);
-        final Class7096 method6702 = class1860.method6701(class1862.method1287(class1861).method1290(Class179.field512));
+        final Class7096 method6702 = class1860.method6701(class1862.method1287(class1861).method1290(Direction.UP));
         if (method6701.method21696() == Class7521.field29155 || method6701.method21696() == Class7521.field29392) {
             atomicBoolean.set(true);
         }
@@ -104,7 +107,7 @@ public abstract class Class7304<C extends Class5118>
             if (n7 >= 11) {
                 class1860.method7008(class1861, Class7304.field28282, false);
                 if (atomicBoolean.get()) {
-                    class1863.method1287(class1861).method1290(Class179.field511);
+                    class1863.method1287(class1861).method1290(Direction.DOWN);
                     if (class1860.method6701(class1863).method21696() == Class7521.field29156) {
                         class1860.method7008(class1863, function.apply(class1861).method9872().method13338(), false);
                     }
@@ -118,7 +121,7 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public abstract boolean method22403(final Class1860 p0, final Function<Class354, Class3090> p1, final Random p2, final int p3, final int p4, final int p5, final int p6, final int p7, final BitSet p8, final C p9);
+    public abstract boolean method22403(final Class1860 p0, final Function<BlockPos, Class3090> p1, final Random p2, final int p3, final int p4, final int p5, final int p6, final int p7, final BitSet p8, final C p9);
     
     public abstract boolean method22402(final Random p0, final int p1, final int p2, final C p3);
     

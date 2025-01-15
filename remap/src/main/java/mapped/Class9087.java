@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 
 public class Class9087
@@ -19,7 +21,7 @@ public class Class9087
         return method22995;
     }
     
-    public static List<Class8754> method32833(List<Class8754> method18260, final Class1856 class1856, final Class7096 class1857, final Class354 class1858, final Class179 class1859, final Class6332 class1860, final long n, final Class9145 class1861) {
+    public static List<Class8754> method32833(List<Class8754> method18260, final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final Class6332 class1860, final long n, final Class9145 class1861) {
         if (class1859 != null) {
             if (class1861.method33389() && Class7464.method22996(class1856.method6701(class1858.method1149(class1859)), class1857)) {
                 return Class9087.field38481;
@@ -62,7 +64,7 @@ public class Class9087
         return (class6332 != null && class6332 != Class9484.field40759) ? class6332 : Class9484.field40760;
     }
     
-    private static Class8754[] method32835(Class8754 method24259, final Class1856 class1856, final Class7096 class1857, final Class354 class1858, final Class179 class1859, final long n, final Class9145 class1860) {
+    private static Class8754[] method32835(Class8754 method24259, final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final long n, final Class9145 class1860) {
         if (!class1860.method33380(method24259)) {
             final Class8754 class1861 = method24259;
             if (Class8571.method28949()) {

@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5879 extends Class5846<Class844>
 {
@@ -59,31 +61,31 @@ public class Class5879 extends Class5846<Class844>
         this.field24107.field25183 = n5 * 0.017453292f;
         this.method17626(n3, (1.0f - class844.method5062(n6)) * 0.55f);
         this.field24108.field25182 = -8.25f;
-        Class399 class845 = Class869.method5277().method5303();
+        Entity class845 = Class869.method5277().method5303();
         if (class844.method5058()) {
             class845 = class844.method5059();
         }
         if (class845 != null) {
-            final Class5487 method1747 = class845.method1747(0.0f);
-            final Class5487 method1748 = class844.method1747(0.0f);
+            final Vec3d method1747 = class845.method1747(0.0f);
+            final Vec3d method1748 = class844.method1747(0.0f);
             if (method1747.field22771 - method1748.field22771 <= 0.0) {
                 this.field24108.field25181 = 1.0f;
             }
             else {
                 this.field24108.field25181 = 0.0f;
             }
-            final Class5487 method1749 = class844.method1741(0.0f);
-            final double method1750 = new Class5487(method1749.field22770, 0.0, method1749.field22772).method16739(new Class5487(method1748.field22770 - method1747.field22770, 0.0, method1748.field22772 - method1747.field22772).method16738().method16755(1.5707964f));
-            this.field24108.field25180 = Class9546.method35640((float)Math.abs(method1750)) * 2.0f * (float)Math.signum(method1750);
+            final Vec3d method1749 = class844.method1741(0.0f);
+            final double method1750 = new Vec3d(method1749.field22770, 0.0, method1749.field22772).method16739(new Vec3d(method1748.field22770 - method1747.field22770, 0.0, method1748.field22772 - method1747.field22772).method16738().method16755(1.5707964f));
+            this.field24108.field25180 = MathHelper.method35640((float)Math.abs(method1750)) * 2.0f * (float)Math.signum(method1750);
         }
         this.field24108.field25187 = true;
         final float method1751 = class844.method5061(n6);
-        this.field24110[0].field25184 = Class9546.method35638(method1751) * 3.1415927f * 0.05f;
-        this.field24110[1].field25184 = Class9546.method35638(method1751) * 3.1415927f * 0.1f;
+        this.field24110[0].field25184 = MathHelper.sin(method1751) * 3.1415927f * 0.05f;
+        this.field24110[1].field25184 = MathHelper.sin(method1751) * 3.1415927f * 0.1f;
         this.field24110[1].field25180 = -1.5f;
         this.field24110[1].field25181 = 0.5f;
         this.field24110[1].field25182 = 14.0f;
-        this.field24110[2].field25184 = Class9546.method35638(method1751) * 3.1415927f * 0.15f;
+        this.field24110[2].field25184 = MathHelper.sin(method1751) * 3.1415927f * 0.15f;
         this.field24110[2].field25180 = 0.5f;
         this.field24110[2].field25181 = 0.5f;
         this.field24110[2].field25182 = 6.0f;
@@ -94,9 +96,9 @@ public class Class5879 extends Class5846<Class844>
             this.field24109[i].field25183 = 3.1415927f * Class5879.field24101[i];
             this.field24109[i].field25184 = 3.1415927f * Class5879.field24102[i];
             this.field24109[i].field25185 = 3.1415927f * Class5879.field24103[i];
-            this.field24109[i].field25180 = Class5879.field24104[i] * (1.0f + Class9546.method35639(n * 1.5f + i) * 0.01f - n2);
-            this.field24109[i].field25181 = 16.0f + Class5879.field24105[i] * (1.0f + Class9546.method35639(n * 1.5f + i) * 0.01f - n2);
-            this.field24109[i].field25182 = Class5879.field24106[i] * (1.0f + Class9546.method35639(n * 1.5f + i) * 0.01f - n2);
+            this.field24109[i].field25180 = Class5879.field24104[i] * (1.0f + MathHelper.cos(n * 1.5f + i) * 0.01f - n2);
+            this.field24109[i].field25181 = 16.0f + Class5879.field24105[i] * (1.0f + MathHelper.cos(n * 1.5f + i) * 0.01f - n2);
+            this.field24109[i].field25182 = Class5879.field24106[i] * (1.0f + MathHelper.cos(n * 1.5f + i) * 0.01f - n2);
         }
     }
     

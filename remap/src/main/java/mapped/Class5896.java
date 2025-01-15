@@ -7,8 +7,10 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-public class Class5896<T extends Class399> extends Class5846<T>
+public class Class5896<T extends Entity> extends Class5846<T>
 {
     private static String[] field24212;
     private final Class6300[] field24213;
@@ -50,8 +52,8 @@ public class Class5896<T extends Class399> extends Class5846<T>
     @Override
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         for (int i = 0; i < this.field24213.length; ++i) {
-            this.field24213[i].field25184 = Class9546.method35639(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.05f * (1 + Math.abs(i - 2));
-            this.field24213[i].field25180 = Class9546.method35638(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.2f * Math.abs(i - 2);
+            this.field24213[i].field25184 = MathHelper.cos(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.05f * (1 + Math.abs(i - 2));
+            this.field24213[i].field25180 = MathHelper.sin(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.2f * Math.abs(i - 2);
         }
         this.field24214[0].field25184 = this.field24213[2].field25184;
         this.field24214[1].field25184 = this.field24213[4].field25184;

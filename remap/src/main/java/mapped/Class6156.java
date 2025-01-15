@@ -40,10 +40,10 @@ public class Class6156 extends Class6159
                 this.field24939 *= 0.9800000190734863;
                 this.field24940 *= 0.9800000190734863;
                 this.field24941 *= 0.9800000190734863;
-                final Class354 class354 = new Class354(this.field24936, this.field24937, this.field24938);
+                final BlockPos class354 = new BlockPos(this.field24936, this.field24937, this.field24938);
                 final Class7099 method6702 = this.field24932.method6702(class354);
                 if (method6702.method21779() == this.field24908) {
-                    if (this.field24937 < class354.method1075() + method6702.method21782(this.field24932, class354)) {
+                    if (this.field24937 < class354.getY() + method6702.method21782(this.field24932, class354)) {
                         this.method18439();
                     }
                 }

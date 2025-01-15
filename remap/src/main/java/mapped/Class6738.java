@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class6738 extends Class6737
 {
-    public static final Class354 field26498;
+    public static final BlockPos field26498;
     private final Class8619 field26499;
     
     public Class6738(final Class1847 class1847, final Class383 class1848) {
@@ -39,9 +41,9 @@ public class Class6738 extends Class6737
     }
     
     @Override
-    public Class5487 method20493(final float n, final float n2) {
-        final float method35653 = Class9546.method35653(Class9546.method35639(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
-        return new Class5487(0.627451f * (method35653 * 0.0f + 0.15f), 0.5019608f * (method35653 * 0.0f + 0.15f), 0.627451f * (method35653 * 0.0f + 0.15f));
+    public Vec3d method20493(final float n, final float n2) {
+        final float method35653 = MathHelper.method35653(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
+        return new Vec3d(0.627451f * (method35653 * 0.0f + 0.15f), 0.5019608f * (method35653 * 0.0f + 0.15f), 0.627451f * (method35653 * 0.0f + 0.15f));
     }
     
     @Override
@@ -66,20 +68,20 @@ public class Class6738 extends Class6737
     
     @Nullable
     @Override
-    public Class354 method20489(final Class7859 class7859, final boolean b) {
+    public BlockPos method20489(final Class7859 class7859, final boolean b) {
         final Random random = new Random(this.field26492.method6753());
-        final Class354 class7860 = new Class354(class7859.method25426() + random.nextInt(15), 0, class7859.method25429() + random.nextInt(15));
+        final BlockPos class7860 = new BlockPos(class7859.method25426() + random.nextInt(15), 0, class7859.method25429() + random.nextInt(15));
         return this.field26492.method6681(class7860).method21697().method26440() ? class7860 : null;
     }
     
     @Override
-    public Class354 method20500() {
+    public BlockPos method20500() {
         return Class6738.field26498;
     }
     
     @Nullable
     @Override
-    public Class354 method20490(final int n, final int n2, final boolean b) {
+    public BlockPos method20490(final int n, final int n2, final boolean b) {
         return this.method20489(new Class7859(n >> 4, n2 >> 4), b);
     }
     
@@ -115,6 +117,6 @@ public class Class6738 extends Class6737
     }
     
     static {
-        field26498 = new Class354(100, 50, 0);
+        field26498 = new BlockPos(100, 50, 0);
     }
 }

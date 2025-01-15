@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,11 +13,11 @@ public class Class4514 extends Class4500
 {
     private final int field19916;
     
-    public Class4514(final int n, final Class6997 field19849, final Class179 class179) {
+    public Class4514(final int n, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40965, n);
         this.method13456(class179);
         this.field19849 = field19849;
-        this.field19916 = ((class179 != Class179.field513 && class179 != Class179.field514) ? field19849.method21417() : field19849.method21419());
+        this.field19916 = ((class179 != Direction.NORTH && class179 != Direction.SOUTH) ? field19849.method21417() : field19849.method21419());
     }
     
     public Class4514(final Class1795 class1795, final Class51 class1796) {
@@ -29,7 +31,7 @@ public class Class4514 extends Class4500
         class51.method298("Steps", this.field19916);
     }
     
-    public static Class6997 method13509(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179) {
+    public static Class6997 method13509(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179) {
         final Class6997 method21408 = Class6997.method21408(n, n2, n3, -1, -1, 0, 5, 5, 4, class179);
         final Class4473 method21409 = Class4473.method13435(list, method21408);
         if (method21409 != null) {

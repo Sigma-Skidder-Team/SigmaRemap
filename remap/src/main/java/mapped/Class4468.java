@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Comparator;
 
-public class Class4468 implements Comparator<Class354>
+public class Class4468 implements Comparator<BlockPos>
 {
     private static String[] field19827;
     public final /* synthetic */ Class3219 field19828;
@@ -16,7 +16,7 @@ public class Class4468 implements Comparator<Class354>
     }
     
     @Override
-    public int compare(final Class354 class354, final Class354 class355) {
-        return (Math.sqrt(Class3219.method10148().field4684.method1733(class354.method1074() + 0.5, class354.method1075() + 0.5, class354.method1076() + 0.5)) <= Math.sqrt(Class3219.method10149().field4684.method1733(class355.method1074() + 0.5, class355.method1075() + 0.5, class355.method1076() + 0.5))) ? -1 : 1;
+    public int compare(final BlockPos class354, final BlockPos class355) {
+        return (Math.sqrt(Class3219.method10148().field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) <= Math.sqrt(Class3219.method10149().field4684.method1733(class355.getX() + 0.5, class355.getY() + 0.5, class355.getZ() + 0.5))) ? -1 : 1;
     }
 }

@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class8011
@@ -33,9 +34,9 @@ public class Class8011
             if (class1850.method1639()) {
                 continue;
             }
-            final Class354 class1851 = new Class354(class1850);
+            final BlockPos class1851 = new BlockPos(class1850);
             if (class1849.field10063.method20503()) {
-                if (class1851.method1075() < class1849.method6743()) {
+                if (class1851.getY() < class1849.method6743()) {
                     continue;
                 }
                 if (!class1849.method6994(class1851)) {
@@ -46,10 +47,10 @@ public class Class8011
             if (!method6784.method35974(field10062.nextFloat() * 3.0f)) {
                 continue;
             }
-            if (field10062.nextInt(Class9546.method35651(((Class513)class1850).method2947().method23091(Class8276.field33987.method8449(Class8276.field33991)), 1, Integer.MAX_VALUE)) < 72000) {
+            if (field10062.nextInt(MathHelper.method35651(((Class513)class1850).method2947().method23091(Class8276.field33987.method8449(Class8276.field33991)), 1, Integer.MAX_VALUE)) < 72000) {
                 continue;
             }
-            final Class354 method6785 = class1851.method1138(20 + field10062.nextInt(15)).method1148(-10 + field10062.nextInt(21)).method1144(-10 + field10062.nextInt(21));
+            final BlockPos method6785 = class1851.method1138(20 + field10062.nextInt(15)).method1148(-10 + field10062.nextInt(21)).method1144(-10 + field10062.nextInt(21));
             if (!Class8532.method28620(class1849, method6785, class1849.method6701(method6785), class1849.method6702(method6785))) {
                 continue;
             }

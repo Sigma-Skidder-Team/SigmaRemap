@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Iterator;
 import java.util.Set;
 import java.util.BitSet;
@@ -18,16 +20,16 @@ public class Class8336
         this.field34227 = new BitSet();
     }
     
-    public void method27779(final Set<Class179> set) {
-        for (final Class179 class179 : set) {
-            final Iterator<Class179> iterator2 = set.iterator();
+    public void method27779(final Set<Direction> set) {
+        for (final Direction class179 : set) {
+            final Iterator<Direction> iterator2 = set.iterator();
             while (iterator2.hasNext()) {
                 this.method27780(class179, iterator2.next(), true);
             }
         }
     }
     
-    public void method27780(final Class179 class179, final Class179 class180, final boolean b) {
+    public void method27780(final Direction class179, final Direction class180, final boolean b) {
         this.method27784(class179.ordinal() + class180.ordinal() * Class8336.field34228, b);
         this.method27784(class180.ordinal() + class179.ordinal() * Class8336.field34228, b);
     }
@@ -41,7 +43,7 @@ public class Class8336
         }
     }
     
-    public boolean method27782(final Class179 class179, final Class179 class180) {
+    public boolean method27782(final Direction class179, final Direction class180) {
         return this.method27783(class179.ordinal() + class180.ordinal() * Class8336.field34228);
     }
     
@@ -49,14 +51,14 @@ public class Class8336
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append(' ');
-        final Class179[] values = Class179.values();
+        final Direction[] values = Direction.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             sb.append(' ').append(values[i].toString().toUpperCase().charAt(0));
         }
         sb.append('\n');
-        for (final Class179 class179 : Class179.values()) {
+        for (final Direction class179 : Direction.values()) {
             sb.append(class179.toString().toUpperCase().charAt(0));
-            for (final Class179 class180 : Class179.values()) {
+            for (final Direction class180 : Direction.values()) {
                 if (class179 != class180) {
                     sb.append(' ').append((char)(this.method27782(class179, class180) ? 89 : 110));
                 }
@@ -91,6 +93,6 @@ public class Class8336
     }
     
     static {
-        field34228 = Class179.values().length;
+        field34228 = Direction.values().length;
     }
 }

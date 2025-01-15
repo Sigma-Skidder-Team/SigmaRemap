@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.BiFunction;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -33,18 +35,18 @@ public class Class6470 extends Class6469
     }
     
     public double method19469(final double n) {
-        return Class9546.method35654((this.method19471(n) - this.field25824) / (this.field25825 - this.field25824), 0.0, 1.0);
+        return MathHelper.method35654((this.method19471(n) - this.field25824) / (this.field25825 - this.field25824), 0.0, 1.0);
     }
     
     public double method19470(final double n) {
-        return this.method19471(Class9546.method35701(Class9546.method35654(n, 0.0, 1.0), this.field25824, this.field25825));
+        return this.method19471(MathHelper.method35701(MathHelper.method35654(n, 0.0, 1.0), this.field25824, this.field25825));
     }
     
     private double method19471(double n) {
         if (this.field25823 > 0.0f) {
             n = this.field25823 * Math.round(n / this.field25823);
         }
-        return Class9546.method35654(n, this.field25824, this.field25825);
+        return MathHelper.method35654(n, this.field25824, this.field25825);
     }
     
     public double method19472() {

@@ -7,7 +7,7 @@ package mapped;
 import java.util.AbstractList;
 import javax.annotation.Nullable;
 import com.google.common.hash.Hashing;
-import java.util.function.Consumer;
+
 import java.util.function.Function;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
@@ -454,10 +454,10 @@ public class Class8660
         this.field36349 = field36349;
     }
     
-    public void method29548(final Class354 class354) {
-        this.field36345 = class354.method1074();
-        this.field36346 = class354.method1075();
-        this.field36347 = class354.method1076();
+    public void method29548(final BlockPos class354) {
+        this.field36345 = class354.getX();
+        this.field36346 = class354.getY();
+        this.field36347 = class354.getZ();
     }
     
     public String method29549() {

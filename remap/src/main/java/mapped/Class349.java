@@ -8,16 +8,16 @@ public class Class349 implements Comparable<Class349>
 {
     private static String[] field2149;
     private final int field2150;
-    private final Class354 field2151;
+    private final BlockPos field2151;
     private int field2152;
     private int field2153;
     
-    public Class349(final int field2150, final Class354 field2151) {
+    public Class349(final int field2150, final BlockPos field2151) {
         this.field2150 = field2150;
         this.field2151 = field2151;
     }
     
-    public Class354 method1046() {
+    public BlockPos method1046() {
         return this.field2151;
     }
     

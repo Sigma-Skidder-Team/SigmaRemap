@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.Objects;
-import java.util.Iterator;
 import java.util.UUID;
 
-public class Class427 extends Class399
+public class Class427 extends Entity
 {
     private static final Class8810<Class8321> field2613;
     private int field2614;
@@ -59,7 +61,7 @@ public class Class427 extends Class399
             this.field2392 = this.method1938();
             this.field2393 = this.method1941();
             this.field2394 = this.method1945();
-            final Class5487 method1935 = this.method1935();
+            final Vec3d method1935 = this.method1935();
             if (!this.method1720(Class7324.field28319)) {
                 if (!this.method1698()) {
                     this.method1936(this.method1935().method16744(0.0, -0.04, 0.0));
@@ -78,7 +80,7 @@ public class Class427 extends Class399
             }
             Label_0234: {
                 if (this.field2404) {
-                    if (Class399.method1680(this.method1935()) <= 9.999999747378752E-6) {
+                    if (Entity.method1680(this.method1935()) <= 9.999999747378752E-6) {
                         if ((this.field2424 + this.method1643()) % 4 != 0) {
                             break Label_0234;
                         }
@@ -87,7 +89,7 @@ public class Class427 extends Class399
                 this.method1671(Class2160.field12826, this.method1935());
                 float n = 0.98f;
                 if (this.field2404) {
-                    n = this.field2391.method6701(new Class354(this.method1938(), this.method1941() - 1.0, this.method1945())).method21696().method11865() * 0.98f;
+                    n = this.field2391.method6701(new BlockPos(this.method1938(), this.method1941() - 1.0, this.method1945())).method21696().method11865() * 0.98f;
                 }
                 this.method1936(this.method1935().method16751(n, 0.98, n));
                 if (this.field2404) {
@@ -96,9 +98,9 @@ public class Class427 extends Class399
             }
             boolean b = false;
             Label_0441: {
-                if (Class9546.method35644(this.field2392) == Class9546.method35644(this.method1938())) {
-                    if (Class9546.method35644(this.field2393) == Class9546.method35644(this.method1941())) {
-                        if (Class9546.method35644(this.field2394) == Class9546.method35644(this.method1945())) {
+                if (MathHelper.floor(this.field2392) == MathHelper.floor(this.method1938())) {
+                    if (MathHelper.floor(this.field2393) == MathHelper.floor(this.method1941())) {
+                        if (MathHelper.floor(this.field2394) == MathHelper.floor(this.method1945())) {
                             b = false;
                             break Label_0441;
                         }
@@ -107,7 +109,7 @@ public class Class427 extends Class399
                 b = true;
             }
             if (this.field2424 % (b ? 2 : 40) == 0) {
-                if (this.field2391.method6702(new Class354(this)).method21793(Class7324.field28320)) {
+                if (this.field2391.method6702(new BlockPos(this)).method21793(Class7324.field28320)) {
                     this.method1937((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f, 0.20000000298023224, (this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f);
                     this.method1695(Class8520.field35214, 0.4f, 2.0f + this.field2423.nextFloat() * 0.4f);
                 }
@@ -138,7 +140,7 @@ public class Class427 extends Class399
     }
     
     private void method2099() {
-        final Class5487 method1935 = this.method1935();
+        final Vec3d method1935 = this.method1935();
         this.method1937(method1935.field22770 * 0.9900000095367432, method1935.field22771 + ((method1935.field22771 >= 0.05999999865889549) ? 0.0f : 5.0E-4f), method1935.field22772 * 0.9900000095367432);
     }
     
@@ -307,8 +309,8 @@ public class Class427 extends Class399
     
     @Nullable
     @Override
-    public Class399 method1854(final Class383 class383) {
-        final Class399 method1854 = super.method1854(class383);
+    public Entity method1854(final Class383 class383) {
+        final Entity method1854 = super.method1854(class383);
         if (!this.field2391.field10067) {
             if (method1854 instanceof Class427) {
                 ((Class427)method1854).method2100();

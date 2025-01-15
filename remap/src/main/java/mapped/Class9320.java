@@ -4,10 +4,10 @@
 
 package mapped;
 
-import java.util.List;
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Random;
+
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.mutable.MutableInt;
 import com.google.common.collect.Lists;
 import java.util.function.Consumer;
@@ -74,7 +74,7 @@ public class Class9320
         if (this.field40022.test(class7529)) {
             final Consumer<Class8321> method637 = Class125.method637(this.field40024, consumer, class7529);
             final Random method638 = class7529.method23586();
-            for (int n = this.field40025.method17159(method638) + Class9546.method35642(this.field40026.method17169(method638) * class7529.method23587()), i = 0; i < n; ++i) {
+            for (int n = this.field40025.method17159(method638) + MathHelper.method35642(this.field40026.method17169(method638) * class7529.method23587()), i = 0; i < n; ++i) {
                 this.method34511(method637, class7529);
             }
         }

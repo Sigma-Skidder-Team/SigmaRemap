@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.IdentityHashMap;
 import java.util.Map;
 
@@ -75,7 +78,7 @@ public class Class9497
     private Class8754 method35358(final Class8754 class8754, int n, final boolean b) {
         final int[] method30291 = class8754.method30291();
         final int method30292 = class8754.method30293();
-        final Class179 method30293 = class8754.method30294();
+        final Direction method30293 = class8754.method30294();
         final Class1912 method30294 = class8754.method30295();
         if (!this.method35360(class8754)) {
             n = 0;
@@ -133,6 +136,6 @@ public class Class9497
     }
     
     private boolean method35361(final float n, final float n2, final float n3) {
-        return Class9546.method35647(n - n2) < n3;
+        return MathHelper.method35647(n - n2) < n3;
     }
 }

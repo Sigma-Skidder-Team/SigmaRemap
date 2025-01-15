@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.Map;
@@ -29,7 +31,7 @@ public enum Class2122 implements Class2123
     
     private static final Map<Integer, Class2122> field12387;
     private final int field12388;
-    private final Class9389 field12389;
+    private final Quaternion field12389;
     private final int field12390;
     private final int field12391;
     
@@ -39,11 +41,11 @@ public enum Class2122 implements Class2123
     
     private Class2122(final int n, final int n2) {
         this.field12388 = method8273(n, n2);
-        final Class9389 field12389 = new Class9389(new Class9138(0.0f, 1.0f, 0.0f), (float)(-n2), true);
-        field12389.method34903(new Class9389(new Class9138(1.0f, 0.0f, 0.0f), (float)(-n), true));
+        final Quaternion field12389 = new Quaternion(new Vector3f(0.0f, 1.0f, 0.0f), (float)(-n2), true);
+        field12389.multiply(new Quaternion(new Vector3f(1.0f, 0.0f, 0.0f), (float)(-n), true));
         this.field12389 = field12389;
-        this.field12390 = Class9546.method35648(n / 90);
-        this.field12391 = Class9546.method35648(n2 / 90);
+        this.field12390 = MathHelper.abs(n / 90);
+        this.field12391 = MathHelper.abs(n2 / 90);
     }
     
     @Override
@@ -52,7 +54,7 @@ public enum Class2122 implements Class2123
     }
     
     public static Class2122 method8275(final int n, final int n2) {
-        return Class2122.field12387.get(method8273(Class9546.method35664(n, 360), Class9546.method35664(n2, 360)));
+        return Class2122.field12387.get(method8273(MathHelper.method35664(n, 360), MathHelper.method35664(n2, 360)));
     }
     
     static {

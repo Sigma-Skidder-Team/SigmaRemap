@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3i;
+
 public class Class9407
 {
     public double field40373;
@@ -16,10 +18,10 @@ public class Class9407
         this.field40375 = field40375;
     }
     
-    public Class9407(final Class354 class354) {
-        this.field40373 = class354.method1074();
-        this.field40374 = class354.method1075();
-        this.field40375 = class354.method1076();
+    public Class9407(final BlockPos class354) {
+        this.field40373 = class354.getX();
+        this.field40374 = class354.getY();
+        this.field40375 = class354.getZ();
     }
     
     public double method34993() {
@@ -50,8 +52,8 @@ public class Class9407
         return this.method34996(class9407.method34993(), class9407.method34994(), class9407.method34995());
     }
     
-    public Class352 method35000() {
-        return new Class352(this.field40373, this.field40374, this.field40375);
+    public Vec3i method35000() {
+        return new Vec3i(this.field40373, this.field40374, this.field40375);
     }
     
     @Override

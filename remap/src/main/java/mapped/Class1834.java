@@ -5,7 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.function.Function;
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 
 public abstract class Class1834<T extends Class511, M extends Class5853<T>, A extends Class5853<T>> extends Class1799<T, M>
@@ -82,7 +83,7 @@ public abstract class Class1834<T extends Class511, M extends Class5853<T>, A ex
         return a;
     }
     
-    public Class1932 method6604(final Class399 class399, final Class8321 class400, final Class2215 class401, final String s) {
+    public Class1932 method6604(final Entity class399, final Class8321 class400, final Class2215 class401, final String s) {
         String s2 = ((Class4055)class400.method27622()).method12258().method8101();
         String substring = "minecraft";
         final int index = s2.indexOf(58);

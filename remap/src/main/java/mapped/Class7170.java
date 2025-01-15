@@ -16,15 +16,15 @@ public class Class7170 extends Class7133<Class6934>
         super(function);
     }
     
-    public Stream<Class354> method21932(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6934 class1853, final Class354 class1854) {
+    public Stream<BlockPos> method21932(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6934 class1853, final BlockPos class1854) {
         int field27162 = class1853.field27162;
         if (random.nextFloat() < class1853.field27163) {
             field27162 += class1853.field27164;
         }
-        return (Stream<Class354>)IntStream.range(0, field27162).mapToObj(p3 -> {
+        return (Stream<BlockPos>)IntStream.range(0, field27162).mapToObj(p3 -> {
             final int n2 = random2.nextInt(16) + class1855.method1074();
             final int n3 = random2.nextInt(16) + class1855.method1076();
-            return new Class354(n2, class1856.method6699(Class2020.field11525, n2, n3), n3);
+            return new BlockPos(n2, class1856.method6699(Class2020.field11525, n2, n3), n3);
         });
     }
 }

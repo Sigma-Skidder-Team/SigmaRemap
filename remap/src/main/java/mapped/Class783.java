@@ -14,7 +14,7 @@ public class Class783 extends Class780
         super(class7499, class7500);
     }
     
-    public static boolean method4331(final Class7499<Class783> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4331(final Class7499<Class783> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return Class763.method4230(class7499, class7500, class7501, class7502, random) && (class7501 == Class2101.field12176 || class7500.method6994(class7502));
     }
     

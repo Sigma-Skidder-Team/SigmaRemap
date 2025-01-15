@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Queues;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -43,11 +45,11 @@ public class Class7351
         final float n4 = 1.0f / n;
         final float n5 = 1.0f / n2;
         final float n6 = 1.0f / n3;
-        final float method35696 = Class9546.method35696(n4 * n5 * n6);
+        final float method35696 = MathHelper.method35696(n4 * n5 * n6);
         Class8996.method32114(class8996).method35042(Class9429.method35032(method35696 * n4, method35696 * n5, method35696 * n6));
     }
     
-    public void method22566(final Class9389 class9389) {
+    public void method22566(final Quaternion class9389) {
         final Class8996 class9390 = this.field28371.getLast();
         Class8996.method32113(class9390).method20753(class9389);
         Class8996.method32114(class9390).method35043(class9389);

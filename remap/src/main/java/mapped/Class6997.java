@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.base.MoreObjects;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3i;
 
 public class Class6997
 {
@@ -33,7 +35,7 @@ public class Class6997
         return new Class6997(Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE);
     }
     
-    public static Class6997 method21408(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final int n9, final Class179 class179) {
+    public static Class6997 method21408(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final int n9, final Direction class179) {
         switch (Class8926.field37517[class179.ordinal()]) {
             case 1: {
                 return new Class6997(n + n4, n2 + n5, n3 - n9 + 1 + n6, n + n7 - 1 + n4, n2 + n8 - 1 + n5, n3 + n6);
@@ -75,13 +77,13 @@ public class Class6997
         this.field27298 = field27298;
     }
     
-    public Class6997(final Class352 class352, final Class352 class353) {
-        this.field27293 = Math.min(class352.method1074(), class353.method1074());
-        this.field27294 = Math.min(class352.method1075(), class353.method1075());
-        this.field27295 = Math.min(class352.method1076(), class353.method1076());
-        this.field27296 = Math.max(class352.method1074(), class353.method1074());
-        this.field27297 = Math.max(class352.method1075(), class353.method1075());
-        this.field27298 = Math.max(class352.method1076(), class353.method1076());
+    public Class6997(final Vec3i class352, final Vec3i class353) {
+        this.field27293 = Math.min(class352.getX(), class353.getX());
+        this.field27294 = Math.min(class352.getY(), class353.getY());
+        this.field27295 = Math.min(class352.getZ(), class353.getZ());
+        this.field27296 = Math.max(class352.getX(), class353.getX());
+        this.field27297 = Math.max(class352.getY(), class353.getY());
+        this.field27298 = Math.max(class352.getZ(), class353.getZ());
     }
     
     public Class6997(final int field27293, final int field27294, final int field27295, final int field27296) {
@@ -145,13 +147,13 @@ public class Class6997
         return new Class6997(this.field27293 + n, this.field27294 + n2, this.field27295 + n3, this.field27296 + n, this.field27297 + n2, this.field27298 + n3);
     }
     
-    public boolean method21415(final Class352 class352) {
-        if (class352.method1074() >= this.field27293) {
-            if (class352.method1074() <= this.field27296) {
-                if (class352.method1076() >= this.field27295) {
-                    if (class352.method1076() <= this.field27298) {
-                        if (class352.method1075() >= this.field27294) {
-                            if (class352.method1075() <= this.field27297) {
+    public boolean method21415(final Vec3i class352) {
+        if (class352.getX() >= this.field27293) {
+            if (class352.getX() <= this.field27296) {
+                if (class352.getZ() >= this.field27295) {
+                    if (class352.getZ() <= this.field27298) {
+                        if (class352.getY() >= this.field27294) {
+                            if (class352.getY() <= this.field27297) {
                                 return true;
                             }
                         }
@@ -162,8 +164,8 @@ public class Class6997
         return false;
     }
     
-    public Class352 method21416() {
-        return new Class352(this.field27296 - this.field27293, this.field27297 - this.field27294, this.field27298 - this.field27295);
+    public Vec3i method21416() {
+        return new Vec3i(this.field27296 - this.field27293, this.field27297 - this.field27294, this.field27298 - this.field27295);
     }
     
     public int method21417() {
@@ -178,8 +180,8 @@ public class Class6997
         return this.field27298 - this.field27295 + 1;
     }
     
-    public Class352 method21420() {
-        return new Class354(this.field27293 + (this.field27296 - this.field27293 + 1) / 2, this.field27294 + (this.field27297 - this.field27294 + 1) / 2, this.field27295 + (this.field27298 - this.field27295 + 1) / 2);
+    public Vec3i method21420() {
+        return new BlockPos(this.field27293 + (this.field27296 - this.field27293 + 1) / 2, this.field27294 + (this.field27297 - this.field27294 + 1) / 2, this.field27295 + (this.field27298 - this.field27295 + 1) / 2);
     }
     
     @Override

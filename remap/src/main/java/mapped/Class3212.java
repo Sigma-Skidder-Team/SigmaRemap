@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.List;
 
 public class Class3212 extends Class3167
@@ -146,23 +148,23 @@ public class Class3212 extends Class3167
                 if (this.method9883("Haphe (AACAP)")) {
                     if (!Class3212.field15514.field4684.field2967) {
                         if (!Class3212.field15514.field4684.field2404) {
-                            if (class7005.method21448() == Class179.field512) {
+                            if (class7005.method21448() == Direction.UP) {
                                 return false;
                             }
-                            if (class7005.method21447().method1075() != this.field15652 - 1) {
+                            if (class7005.method21447().getY() != this.field15652 - 1) {
                                 return false;
                             }
                         }
                     }
                 }
-                if (class7005.method21448() == Class179.field512) {
-                    if (class7005.method21447().method1075() + 2 > Class3212.field15514.field4684.field2396) {
+                if (class7005.method21448() == Direction.UP) {
+                    if (class7005.method21447().getY() + 2 > Class3212.field15514.field4684.field2396) {
                         if (Class4609.method13708(class7005.method21447())) {
                             return false;
                         }
                     }
                 }
-                if (class7005.method21447().method1075() == Class3212.field15514.field4684.field2396) {
+                if (class7005.method21447().getY() == Class3212.field15514.field4684.field2396) {
                     return false;
                 }
                 ((Class3260)this.method9914()).method10282();
@@ -181,8 +183,8 @@ public class Class3212 extends Class3167
                     else {
                         Class3212.field15514.method5269().method17292(new Class4380(Class316.field1877));
                     }
-                    if (class7005.method21448() == Class179.field512) {
-                        this.field15652 = class7005.method21447().method1075() + 2;
+                    if (class7005.method21448() == Direction.UP) {
+                        this.field15652 = class7005.method21447().getY() + 2;
                     }
                     b = true;
                 }
@@ -191,7 +193,7 @@ public class Class3212 extends Class3167
         return b;
     }
     
-    public List<Class9052> method10104(final Class3833 class3833, final Class354 class3834) {
+    public List<Class9052> method10104(final Class3833 class3833, final BlockPos class3834) {
         return Class8582.method29051(class3833, class3834, (int)Class3212.field15514.field4682.method27315());
     }
     
@@ -239,7 +241,7 @@ public class Class3212 extends Class3167
                         field2396 = this.field15652;
                     }
                 }
-                final List<Class9052> method10104 = this.method10104(Class7521.field29148, new Class354(Class3212.field15514.field4684.field2395, (double)Math.round(field2396 - 1.0), Class3212.field15514.field4684.field2397));
+                final List<Class9052> method10104 = this.method10104(Class7521.field29148, new BlockPos(Class3212.field15514.field4684.field2395, (double)Math.round(field2396 - 1.0), Class3212.field15514.field4684.field2397));
                 if (!method10104.isEmpty()) {
                     final Class9052 class5745 = method10104.get(method10104.size() - 1);
                     final Class7005 method10105 = Class4609.method13697(this.field15650, this.field15651, 5.0f);

@@ -22,7 +22,7 @@ import java.util.Set;
 import java.util.Optional;
 import java.util.Map;
 
-public class Class365<E extends Class511> implements Class356
+public class Class365<E extends Class511> implements IDynamicSerializable
 {
     private final Map<Class8233<?>, Optional<?>> field2198;
     private final Map<Class8033<? extends Class6851<? super E>>, Class6851<? super E>> field2199;

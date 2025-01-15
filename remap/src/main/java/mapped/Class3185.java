@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 
 public class Class3185 extends Class3167
@@ -15,7 +17,7 @@ public class Class3185 extends Class3167
     @Class6753
     public void method9992(final Class5743 class5743) {
         if (this.method9906()) {
-            for (final Class399 class5744 : Class3185.field15514.field4683.method6806()) {
+            for (final Entity class5744 : Class3185.field15514.field4683.method6806()) {
                 if (!Class9463.method35173().method35191().method31751(class5744)) {
                     final boolean b = Class6430.method19174(class5744) == Class2068.field11839 && this.method9914().method9883("Show Players");
                     final boolean b2 = Class6430.method19174(class5744) == Class2068.field11838 && this.method9914().method9883("Show Mobs");
@@ -44,7 +46,7 @@ public class Class3185 extends Class3167
     
     @Override
     public void method9897() {
-        final Iterator<Class399> iterator = Class3185.field15514.field4683.method6806().iterator();
+        final Iterator<Entity> iterator = Class3185.field15514.field4683.method6806().iterator();
         while (iterator.hasNext()) {
             iterator.next().method1822(false);
         }

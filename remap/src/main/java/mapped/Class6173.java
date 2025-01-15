@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.Stream;
 import java.util.Random;
 
@@ -65,7 +68,7 @@ public abstract class Class6173
         this.field24940 = n5 + (Math.random() * 2.0 - 1.0) * 0.4000000059604645;
         this.field24941 = n6 + (Math.random() * 2.0 - 1.0) * 0.4000000059604645;
         final float n7 = (float)(Math.random() + Math.random() + 1.0) * 0.15f;
-        final float method35641 = Class9546.method35641(this.field24939 * this.field24939 + this.field24940 * this.field24940 + this.field24941 * this.field24941);
+        final float method35641 = MathHelper.method35641(this.field24939 * this.field24939 + this.field24940 * this.field24940 + this.field24941 * this.field24941);
         this.field24939 = this.field24939 / method35641 * n7 * 0.4000000059604645;
         this.field24940 = this.field24940 / method35641 * n7 * 0.4000000059604645 + 0.10000000149011612;
         this.field24941 = this.field24941 / method35641 * n7 * 0.4000000059604645;
@@ -167,7 +170,7 @@ public abstract class Class6173
                         }
                     }
                     if (this.method18446(field22770, field22771, field22772)) {
-                        final Class5487 method1681 = Class399.method1681(null, new Class5487(field22770, field22771, field22772), this.method18444(), this.field24932, Class7543.method23629(), new Class8120<Class7702>(Stream.empty()));
+                        final Vec3d method1681 = Entity.method1681(null, new Vec3d(field22770, field22771, field22772), this.method18444(), this.field24932, Class7543.method23629(), new Class8120<Class7702>(Stream.empty()));
                         field22770 = method1681.field22770;
                         field22771 = method1681.field22771;
                         field22772 = method1681.field22772;
@@ -208,7 +211,7 @@ public abstract class Class6173
     }
     
     public int method18419(final float n) {
-        final Class354 class354 = new Class354(this.field24936, this.field24937, this.field24938);
+        final BlockPos class354 = new BlockPos(this.field24936, this.field24937, this.field24938);
         return this.field24932.method6971(class354) ? Class1656.method5776(this.field24932, class354) : 0;
     }
     
@@ -228,17 +231,17 @@ public abstract class Class6173
         if (this.field24947 > 1.0f || this.field24948 > 1.0f) {
             return true;
         }
-        final int method35644 = Class9546.method35644(this.field24936);
-        final int method35645 = Class9546.method35644(this.field24937);
-        final int method35646 = Class9546.method35644(this.field24938);
+        final int method35644 = MathHelper.floor(this.field24936);
+        final int method35645 = MathHelper.floor(this.field24937);
+        final int method35646 = MathHelper.floor(this.field24938);
         this.field24959.method1279(method35644, method35645, method35646);
         if (this.field24932.method6701(this.field24959).method21706()) {
             final double n4 = (n <= 0.0) ? ((n >= 0.0) ? this.field24936 : this.field24942.field25073) : this.field24942.field25076;
             final double n5 = (n2 <= 0.0) ? ((n2 >= 0.0) ? this.field24937 : this.field24942.field25074) : this.field24942.field25077;
             final double n6 = (n3 <= 0.0) ? ((n3 >= 0.0) ? this.field24938 : this.field24942.field25075) : this.field24942.field25078;
-            final int method35647 = Class9546.method35644(n4 + n);
-            final int method35648 = Class9546.method35644(n5 + n2);
-            final int method35649 = Class9546.method35644(n6 + n3);
+            final int method35647 = MathHelper.floor(n4 + n);
+            final int method35648 = MathHelper.floor(n5 + n2);
+            final int method35649 = MathHelper.floor(n6 + n3);
             if (method35647 == method35644) {
                 if (method35648 == method35645) {
                     if (method35649 == method35646) {

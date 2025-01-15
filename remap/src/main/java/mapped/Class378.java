@@ -12,7 +12,7 @@ import com.mojang.datafixers.types.DynamicOps;
 import java.util.Set;
 import java.util.Random;
 
-public abstract class Class378 implements Class356
+public abstract class Class378 implements IDynamicSerializable
 {
     public final int field2220;
     public final int field2221;
@@ -24,7 +24,7 @@ public abstract class Class378 implements Class356
         this.field2222 = field2222;
     }
     
-    public abstract void method1261(final Class1875 p0, final Random p1, final Class5129 p2, final int p3, final int p4, final int p5, final Class354 p6, final Set<Class354> p7);
+    public abstract void method1261(final Class1875 p0, final Random p1, final Class5129 p2, final int p3, final int p4, final int p5, final BlockPos p6, final Set<BlockPos> p7);
     
     public abstract int method1262(final Random p0, final int p1, final int p2, final Class5129 p3);
     
@@ -32,19 +32,19 @@ public abstract class Class378 implements Class356
     
     public abstract int method1264(final int p0, final int p1, final int p2, final int p3);
     
-    public void method1265(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final Class354 class1877, final int n2, final int n3, final Set<Class354> set) {
+    public void method1265(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final BlockPos class1877, final int n2, final int n3, final Set<BlockPos> set) {
         final Class385 class1878 = new Class385();
         for (int i = -n3; i <= n3; ++i) {
             for (int j = -n3; j <= n3; ++j) {
                 if (!this.method1263(random, n, i, n2, j, n3)) {
-                    class1878.method1284(i + class1877.method1074(), n2 + class1877.method1075(), j + class1877.method1076());
+                    class1878.method1284(i + class1877.getX(), n2 + class1877.getY(), j + class1877.getZ());
                     this.method1266(class1875, random, class1878, class1876, set);
                 }
             }
         }
     }
     
-    public void method1266(final Class1875 class1875, final Random random, final Class354 class1876, final Class5129 class1877, final Set<Class354> set) {
+    public void method1266(final Class1875 class1875, final Random random, final BlockPos class1876, final Class5129 class1877, final Set<BlockPos> set) {
         if (!Class4592.method13613(class1875, class1876)) {
             if (!Class4592.method13616(class1875, class1876)) {
                 if (!Class4592.method13612(class1875, class1876)) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class8161
 {
     private final Class869 field33604;
@@ -169,7 +171,7 @@ public class Class8161
                                 this.field33604.field4684.field3006.method2356(n3);
                             }
                             else if (!this.field33604.field4647.method3810().method3327()) {
-                                this.field33604.field4684.field3025.method21426(Class9546.method35653(this.field33604.field4684.field3025.method21425() + n3 * 0.005f, 0.0f, 0.2f));
+                                this.field33604.field4684.field3025.method21426(MathHelper.method35653(this.field33604.field4684.field3025.method21425() + n3 * 0.005f, 0.0f, 0.2f));
                             }
                             else {
                                 this.field33604.field4647.method3810().method3328(-n3);

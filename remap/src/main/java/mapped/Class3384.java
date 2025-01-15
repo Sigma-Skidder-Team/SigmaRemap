@@ -4,9 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 import java.awt.Color;
-import java.util.Iterator;
 
 public class Class3384 extends Class3167
 {
@@ -17,7 +17,7 @@ public class Class3384 extends Class3167
     @Class6753
     public void method10797(final Class5739 class5739) {
         if (this.method9906()) {
-            for (final Class399 class5740 : Class4609.method13679(Class6430.method19108())) {
+            for (final Entity class5740 : Class4609.method13679(Class6430.method19108())) {
                 if (class5740 != Class3384.field15514.field4684) {
                     if (Class9463.method35173().method35191().method31751(class5740)) {
                         continue;
@@ -60,7 +60,7 @@ public class Class3384 extends Class3167
         GL11.glEnd();
     }
     
-    public static void method10800(final double n, final double n2, final double n3, final Class399 class399) {
+    public static void method10800(final double n, final double n2, final double n3, final Entity class399) {
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);

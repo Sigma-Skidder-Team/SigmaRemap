@@ -9,6 +9,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.Entity;
 
 public class Class7103
 {
@@ -23,7 +24,7 @@ public class Class7103
         return this == Class7103.field27707 || this.method21805(class8321.method27657());
     }
     
-    public boolean method21804(final Class399 class399) {
+    public boolean method21804(final Entity class399) {
         return this == Class7103.field27707 || this.method21805(method21808(class399));
     }
     
@@ -52,7 +53,7 @@ public class Class7103
         return Class7103.field27707;
     }
     
-    public static Class51 method21808(final Class399 class399) {
+    public static Class51 method21808(final Entity class399) {
         final Class51 method1756 = class399.method1756(new Class51());
         if (class399 instanceof Class512) {
             final Class8321 method1757 = ((Class512)class399).field3006.method2345();

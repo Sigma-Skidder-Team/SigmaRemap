@@ -13,12 +13,12 @@ import java.util.List;
 public class Class5445 extends Class5419<Class824>
 {
     private static String[] field22666;
-    private Class354 field22667;
+    private BlockPos field22667;
     private boolean field22668;
     private boolean field22669;
     private long field22670;
     private int field22671;
-    private final List<Class354> field22672;
+    private final List<BlockPos> field22672;
     
     public Class5445() {
         super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10629, (Object)Class8233.field33809, (Object)Class1952.field10629, (Object)Class8233.field33803, (Object)Class1952.field10628));
@@ -51,7 +51,7 @@ public class Class5445 extends Class5419<Class824>
                     for (int l = -1; l <= 1; ++l) {
                         class1851.method1286(class1850.method1938() + j, class1850.method1941() + k, class1850.method1945() + l);
                         if (this.method16632(class1851, class1849)) {
-                            this.field22672.add(new Class354(class1851));
+                            this.field22672.add(new BlockPos(class1851));
                         }
                     }
                 }
@@ -68,11 +68,11 @@ public class Class5445 extends Class5419<Class824>
     }
     
     @Nullable
-    private Class354 method16631(final Class1849 class1849) {
+    private BlockPos method16631(final Class1849 class1849) {
         return this.field22672.isEmpty() ? null : this.field22672.get(class1849.method6790().nextInt(this.field22672.size()));
     }
     
-    private boolean method16632(final Class354 class354, final Class1849 class355) {
+    private boolean method16632(final BlockPos class354, final Class1849 class355) {
         final Class7096 method6701 = class355.method6701(class354);
         final Class3833 method6702 = method6701.method21696();
         final Class3833 method6703 = class355.method6701(class354.method1139()).method21696();
@@ -160,7 +160,7 @@ public class Class5445 extends Class5419<Class824>
                                     ++i;
                                 }
                                 else {
-                                    class1849.method6706(null, this.field22667.method1074(), this.field22667.method1075(), this.field22667.method1076(), Class8520.field35104, Class286.field1582, 1.0f, 1.0f);
+                                    class1849.method6706(null, this.field22667.getX(), this.field22667.getY(), this.field22667.getZ(), Class8520.field35104, Class286.field1582, 1.0f, 1.0f);
                                     method6705.method27693(1);
                                     if (!method6705.method27620()) {
                                         break;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.Map;
 import java.util.List;
@@ -12,7 +14,7 @@ public class Class6315 implements Class6313
 {
     private static String[] field25243;
     public final List<Class8754> field25244;
-    public final Map<Class179, List<Class8754>> field25245;
+    public final Map<Direction, List<Class8754>> field25245;
     public final boolean field25246;
     public final boolean field25247;
     public final boolean field25248;
@@ -20,7 +22,7 @@ public class Class6315 implements Class6313
     public final Class7503 field25250;
     public final Class9168 field25251;
     
-    public Class6315(final List<Class8754> field25244, final Map<Class179, List<Class8754>> field25245, final boolean field25246, final boolean field25247, final boolean field25248, final Class1912 field25249, final Class7503 field25250, final Class9168 field25251) {
+    public Class6315(final List<Class8754> field25244, final Map<Direction, List<Class8754>> field25245, final boolean field25246, final boolean field25247, final boolean field25248, final Class1912 field25249, final Class7503 field25250, final Class9168 field25251) {
         this.field25244 = field25244;
         this.field25245 = field25245;
         this.field25246 = field25246;
@@ -32,7 +34,7 @@ public class Class6315 implements Class6313
     }
     
     @Override
-    public List<Class8754> method18691(final Class7096 class7096, final Class179 class7097, final Random random) {
+    public List<Class8754> method18691(final Class7096 class7096, final Direction class7097, final Random random) {
         return (class7097 != null) ? this.field25245.get(class7097) : this.field25244;
     }
     

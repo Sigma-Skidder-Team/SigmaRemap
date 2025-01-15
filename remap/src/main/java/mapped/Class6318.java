@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import java.util.Random;
 import it.unimi.dsi.fastutil.Hash$Strategy;
@@ -14,6 +14,8 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenCustomHashMap;
 import java.util.BitSet;
 import java.util.Map;
 import java.util.function.Predicate;
+
+import net.minecraft.util.Direction;
 import org.apache.commons.lang3.tuple.Pair;
 import java.util.List;
 
@@ -42,7 +44,7 @@ public class Class6318 implements Class6313
     }
     
     @Override
-    public List<Class8754> method18691(final Class7096 class7096, final Class179 class7097, final Random random) {
+    public List<Class8754> method18691(final Class7096 class7096, final Direction class7097, final Random random) {
         if (class7096 != null) {
             BitSet set = this.field25269.get(class7096);
             if (set == null) {

@@ -4,7 +4,9 @@
 
 package mapped;
 
-public interface Class4778<T extends Class399, M extends Class5845<T>>
+import net.minecraft.entity.Entity;
+
+public interface Class4778<T extends Entity, M extends Class5845<T>>
 {
     M method13979();
     

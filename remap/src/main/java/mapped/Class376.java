@@ -9,6 +9,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
 
 public class Class376 extends Class373
 {
@@ -26,11 +27,11 @@ public class Class376 extends Class373
     }
     
     @Override
-    public void method1254(final Class1851 class1851, final Class354 class1852, final Class7096 class1853, final Random random) {
+    public void method1254(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Random random) {
         final Class385 class1854 = new Class385(class1852);
         for (int n = this.field2214 + random.nextInt(random.nextInt(this.field2215 + 1) + 1), i = 0; i < n; ++i) {
             class1851.method6688(class1854, class1853, 2);
-            class1854.method1290(Class179.field512);
+            class1854.method1290(Direction.UP);
         }
     }
     

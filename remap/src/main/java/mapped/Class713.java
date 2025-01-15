@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.MathHelper;
 
 public class Class713 extends Class698
 {
@@ -46,7 +46,7 @@ public class Class713 extends Class698
         int method33724 = Class9216.method33724(this.field3894, 2);
         final Class5601[] method33725 = Class9216.method33723(this.field3894);
         if (method33725 != null) {
-            final int method33726 = Class9546.method35650(method33725.length / 9.0);
+            final int method33726 = MathHelper.method35650(method33725.length / 9.0);
             if (method33724 < method33726) {
                 method33724 = method33726;
             }

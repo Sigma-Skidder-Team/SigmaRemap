@@ -10,24 +10,24 @@ import java.util.function.Function;
 public class Class6955<T> implements Class6952<T>
 {
     private static String[] field27230;
-    private final Function<Class354, Class6952<T>> field27231;
+    private final Function<BlockPos, Class6952<T>> field27231;
     
-    public Class6955(final Function<Class354, Class6952<T>> field27231) {
+    public Class6955(final Function<BlockPos, Class6952<T>> field27231) {
         this.field27231 = field27231;
     }
     
     @Override
-    public boolean method21340(final Class354 class354, final T t) {
+    public boolean method21340(final BlockPos class354, final T t) {
         return this.field27231.apply(class354).method21340(class354, t);
     }
     
     @Override
-    public void method21341(final Class354 class354, final T t, final int n, final Class1955 class355) {
+    public void method21341(final BlockPos class354, final T t, final int n, final Class1955 class355) {
         this.field27231.apply(class354).method21341(class354, t, n, class355);
     }
     
     @Override
-    public boolean method21342(final Class354 class354, final T t) {
+    public boolean method21342(final BlockPos class354, final T t) {
         return false;
     }
     

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class477 extends Class436 implements Class476, Class439
 {
     private static String[] field2778;
@@ -22,9 +24,9 @@ public class Class477 extends Class436 implements Class476, Class439
             this.field2656.method6763(this.field2657, Class7521.field29409, 1, this.field2781);
         }
         this.field2780 = this.field2779;
-        final int method1074 = this.field2657.method1074();
-        final int method1075 = this.field2657.method1075();
-        final int method1076 = this.field2657.method1076();
+        final int method1074 = this.field2657.getX();
+        final int method1075 = this.field2657.getY();
+        final int method1076 = this.field2657.getZ();
         if (this.field2781 > 0) {
             if (this.field2779 == 0.0f) {
                 this.field2656.method6706(null, method1074 + 0.5, method1075 + 0.5, method1076 + 0.5, Class8520.field35152, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
@@ -88,11 +90,11 @@ public class Class477 extends Class436 implements Class476, Class439
     }
     
     public boolean method2428(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5) <= 64.0;
+        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override
     public float method2423(final float n) {
-        return Class9546.method35700(n, this.field2780, this.field2779);
+        return MathHelper.method35700(n, this.field2780, this.field2779);
     }
 }

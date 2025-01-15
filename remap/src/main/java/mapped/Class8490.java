@@ -8,6 +8,7 @@ import java.util.List;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.suggestion.Suggestion;
 import com.mojang.brigadier.suggestion.Suggestions;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8490
 {
@@ -102,7 +103,7 @@ public class Class8490
         if (!this.field34846.method27812((int)(Class6823.method20906(this.field34854).field4650.method26959() * Class6823.method20906(this.field34854).method5332().method7696() / Class6823.method20906(this.field34854).method5332().method7694()), (int)(Class6823.method20906(this.field34854).field4650.method26960() * Class6823.method20906(this.field34854).method5332().method7697() / Class6823.method20906(this.field34854).method5332().method7695()))) {
             return false;
         }
-        this.field34849 = Class9546.method35651((int)(this.field34849 - n), 0, Math.max(this.field34847.getList().size() - Class6823.method20901(this.field34854), 0));
+        this.field34849 = MathHelper.method35651((int)(this.field34849 - n), 0, Math.max(this.field34847.getList().size() - Class6823.method20901(this.field34854), 0));
         return true;
     }
     
@@ -137,11 +138,11 @@ public class Class8490
         final int n2 = this.field34849 + Class6823.method20901(this.field34854) - 1;
         if (this.field34850 >= field34849) {
             if (this.field34850 > n2) {
-                this.field34849 = Class9546.method35651(this.field34850 + Class6823.method20907(this.field34854) - Class6823.method20901(this.field34854), 0, Math.max(this.field34847.getList().size() - Class6823.method20901(this.field34854), 0));
+                this.field34849 = MathHelper.method35651(this.field34850 + Class6823.method20907(this.field34854) - Class6823.method20901(this.field34854), 0, Math.max(this.field34847.getList().size() - Class6823.method20901(this.field34854), 0));
             }
         }
         else {
-            this.field34849 = Class9546.method35651(this.field34850, 0, Math.max(this.field34847.getList().size() - Class6823.method20901(this.field34854), 0));
+            this.field34849 = MathHelper.method35651(this.field34850, 0, Math.max(this.field34847.getList().size() - Class6823.method20901(this.field34854), 0));
         }
     }
     

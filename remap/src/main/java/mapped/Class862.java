@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
-import java.util.function.Predicate;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +22,7 @@ public class Class862 extends Class860
         this.field4605 = 1.0f;
     }
     
-    public Class862(final Class1847 class1847, final Class354 class1848, final Class179 class1849) {
+    public Class862(final Class1847 class1847, final BlockPos class1848, final Direction class1849) {
         super(Class7499.field28993, class1847, class1848);
         this.field4605 = 1.0f;
         this.method5186(class1849);
@@ -39,16 +40,16 @@ public class Class862 extends Class860
     }
     
     @Override
-    public void method5186(final Class179 field4600) {
+    public void method5186(final Direction field4600) {
         Validate.notNull((Object)field4600);
         this.field4600 = field4600;
-        if (!field4600.method790().method601()) {
-            this.field2400 = (float)(-90 * field4600.method781().method936());
+        if (!field4600.getAxis().isHorizontal()) {
+            this.field2400 = (float)(-90 * field4600.getAxisDirection().getOffset());
             this.field2399 = 0.0f;
         }
         else {
             this.field2400 = 0.0f;
-            this.field2399 = (float)(this.field4600.method780() * 90);
+            this.field2399 = (float)(this.field4600.getHorizontalIndex() * 90);
         }
         this.field2402 = this.field2400;
         this.field2401 = this.field2399;
@@ -58,14 +59,14 @@ public class Class862 extends Class860
     @Override
     public void method5187() {
         if (this.field4600 != null) {
-            final double n = this.field4599.method1074() + 0.5 - this.field4600.method785() * 0.46875;
-            final double n2 = this.field4599.method1075() + 0.5 - this.field4600.method786() * 0.46875;
-            final double n3 = this.field4599.method1076() + 0.5 - this.field4600.method787() * 0.46875;
+            final double n = this.field4599.getX() + 0.5 - this.field4600.getXOffset() * 0.46875;
+            final double n2 = this.field4599.getY() + 0.5 - this.field4600.getYOffset() * 0.46875;
+            final double n3 = this.field4599.getZ() + 0.5 - this.field4600.getZOffset() * 0.46875;
             this.method1948(n, n2, n3);
             double n4 = this.method5190();
             double n5 = this.method5191();
             double n6 = this.method5190();
-            switch (Class8602.field36115[this.field4600.method790().ordinal()]) {
+            switch (Class8602.field36115[this.field4600.getAxis().ordinal()]) {
                 case 1: {
                     n4 = 1.0;
                     break;
@@ -89,8 +90,8 @@ public class Class862 extends Class860
     @Override
     public boolean method5189() {
         if (this.field2391.method6977(this)) {
-            final Class7096 method6701 = this.field2391.method6701(this.field4599.method1149(this.field4600.method782()));
-            return (method6701.method21697().method26439() || (this.field4600.method790().method601() && Class3895.method11975(method6701))) && this.field2391.method6737(this, this.method1886(), Class862.field4597).isEmpty();
+            final Class7096 method6701 = this.field2391.method6701(this.field4599.method1149(this.field4600.getOpposite()));
+            return (method6701.method21697().method26439() || (this.field4600.getAxis().isHorizontal() && Class3895.method11975(method6701))) && this.field2391.method6737(this, this.method1886(), Class862.field4597).isEmpty();
         }
         return false;
     }
@@ -138,7 +139,7 @@ public class Class862 extends Class860
     }
     
     @Override
-    public void method5192(final Class399 class399) {
+    public void method5192(final Entity class399) {
         this.method1695(Class8520.field35322, 1.0f, 1.0f);
         this.method5196(class399, true);
     }
@@ -148,7 +149,7 @@ public class Class862 extends Class860
         this.method1695(Class8520.field35323, 1.0f, 1.0f);
     }
     
-    private void method5196(final Class399 class399, final boolean b) {
+    private void method5196(final Entity class399, final boolean b) {
         if (this.field2391.method6765().method31216(Class8878.field37321)) {
             final Class8321 method5198 = this.method5198();
             this.method5199(Class8321.field34174);
@@ -252,7 +253,7 @@ public class Class862 extends Class860
             class51.method296("ItemRotation", (byte)this.method5201());
             class51.method304("ItemDropChance", this.field4605);
         }
-        class51.method296("Facing", (byte)this.field4600.method779());
+        class51.method296("Facing", (byte)this.field4600.getIndex());
     }
     
     @Override
@@ -278,7 +279,7 @@ public class Class862 extends Class860
                 }
             }
         }
-        this.method5186(Class179.method792(class51.method317("Facing")));
+        this.method5186(Direction.byIndex(class51.method317("Facing")));
     }
     
     @Override
@@ -308,7 +309,7 @@ public class Class862 extends Class860
     
     @Override
     public Class4252<?> method1932() {
-        return new Class4339(this, this.method1642(), this.field4600.method779(), this.method5194());
+        return new Class4339(this, this.method1642(), this.field4600.getIndex(), this.method5194());
     }
     
     static {

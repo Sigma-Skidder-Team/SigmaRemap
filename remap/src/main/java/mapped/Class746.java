@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.MathHelper;
 
 public class Class746 extends Class516<Class3423>
 {
@@ -98,11 +98,11 @@ public class Class746 extends Class516<Class3423>
             if (method10923 >= method10924) {
                 if (Class8562.method28789(method10922)) {
                     final float n3 = (float)(100 / (Class8562.method28788(method10922) - method10924));
-                    final int min = Math.min(Class9546.method35642(n3 * (method10923 - method10924)), 100);
+                    final int min = Math.min(MathHelper.method35642(n3 * (method10923 - method10924)), 100);
                     Class565.method3299(n + 136, n2 + 16, this.method3303(), 0.0f, 191.0f, min + 1, 5, 256, 512);
                     final int method10925 = ((Class3423)this.field3077).method10920();
                     if (method10925 > 0) {
-                        Class565.method3299(n + 136 + min + 1, n2 + 16 + 1, this.method3303(), 2.0f, 182.0f, Math.min(Class9546.method35642(method10925 * n3), 100 - min), 3, 256, 512);
+                        Class565.method3299(n + 136 + min + 1, n2 + 16 + 1, this.method3303(), 2.0f, 182.0f, Math.min(MathHelper.method35642(method10925 * n3), 100 - min), 3, 256, 512);
                     }
                 }
             }
@@ -221,7 +221,7 @@ public class Class746 extends Class516<Class3423>
         if (this.method4066(size)) {
             final int n4 = size - 7;
             this.field4035 -= (int)n3;
-            this.field4035 = Class9546.method35651(this.field4035, 0, n4);
+            this.field4035 = MathHelper.method35651(this.field4035, 0, n4);
         }
         return true;
     }
@@ -235,7 +235,7 @@ public class Class746 extends Class516<Class3423>
         final int n6 = this.field3080 + 18;
         final int n7 = n6 + 139;
         final int n8 = size - 7;
-        this.field4035 = Class9546.method35651((int)(((float)n2 - n6 - 13.5f) / (n7 - n6 - 27.0f) * n8 + 0.5f), 0, n8);
+        this.field4035 = MathHelper.method35651((int)(((float)n2 - n6 - 13.5f) / (n7 - n6 - 27.0f) * n8 + 0.5f), 0, n8);
         return true;
     }
     

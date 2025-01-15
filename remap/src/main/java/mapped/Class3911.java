@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3911 extends Class3833
 {
     private static String[] field17716;
@@ -15,8 +17,8 @@ public class Class3911 extends Class3833
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
-        if (class7097 == Class179.field512) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+        if (class7097 == Direction.UP) {
             final Class3833 method21696 = class7098.method21696();
             return (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3911.field17717, method21696 == Class7521.field29331 || method21696 == Class7521.field29329);
         }

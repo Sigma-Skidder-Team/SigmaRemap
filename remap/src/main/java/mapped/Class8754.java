@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8754
 {
     public int[] field36765;
     public final int field36766;
-    public Class179 field36767;
+    public Direction field36767;
     public Class1912 field36768;
     private int[] field36769;
     public boolean field36770;
@@ -16,7 +18,7 @@ public class Class8754
     private boolean field36772;
     private Class8754 field36773;
     
-    public Class8754(final int[] field36765, final int field36766, final Class179 field36767, final Class1912 field36768, final boolean field36769) {
+    public Class8754(final int[] field36765, final int field36766, final Direction field36767, final Class1912 field36768, final boolean field36769) {
         this.field36769 = null;
         this.field36770 = Class9570.field41285.method22605();
         this.field36765 = field36765;
@@ -27,7 +29,7 @@ public class Class8754
         this.method30302();
     }
     
-    public Class8754(final int[] field36765, final int field36766, final Class179 field36767, final Class1912 field36768) {
+    public Class8754(final int[] field36765, final int field36766, final Direction field36767, final Class1912 field36768) {
         this.field36769 = null;
         this.field36770 = Class9570.field41285.method22605();
         this.field36765 = field36765;
@@ -50,7 +52,7 @@ public class Class8754
         return this.field36766;
     }
     
-    public Class179 method30294() {
+    public Direction method30294() {
         if (this.field36767 == null) {
             this.field36767 = Class6225.method18530(this.method30291());
         }

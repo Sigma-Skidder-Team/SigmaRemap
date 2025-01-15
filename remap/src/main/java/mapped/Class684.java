@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.Iterator;
@@ -45,7 +46,7 @@ public class Class684 extends Class565
                     b = true;
                 }
                 final double method3774 = this.method3774();
-                int method3775 = Class9546.method35650(this.method3772() / method3774);
+                int method3775 = MathHelper.method35650(this.method3772() / method3774);
                 Class8726.method30059();
                 Class8726.method30065(2.0f, 8.0f, 0.0f);
                 Class8726.method30064(method3774, method3774, 1.0);
@@ -107,7 +108,7 @@ public class Class684 extends Class565
     }
     
     private static double method3759(final int n) {
-        final double method35654 = Class9546.method35654((1.0 - n / 200.0) * 10.0, 0.0, 1.0);
+        final double method35654 = MathHelper.method35654((1.0 - n / 200.0) * 10.0, 0.0, 1.0);
         return method35654 * method35654;
     }
     
@@ -132,7 +133,7 @@ public class Class684 extends Class565
         if (n != 0) {
             this.method3771(n);
         }
-        final List<Class2250> method31697 = Class8936.method31697(class2250, Class9546.method35644(this.method3772() / this.method3774()), this.field3742.field4643, false, false);
+        final List<Class2250> method31697 = Class8936.method31697(class2250, MathHelper.floor(this.method3772() / this.method3774()), this.field3742.field4643, false, false);
         final boolean method31698 = this.method3770();
         for (final Class2250 class2251 : method31697) {
             if (method31698) {
@@ -198,13 +199,13 @@ public class Class684 extends Class565
                     final double method3774 = this.method3774();
                     final double n3 = n - 2.0;
                     final double n4 = this.field3742.method5332().method7697() - n2 - 40.0;
-                    final double n5 = Class9546.method35644(n3 / method3774);
-                    final double n6 = Class9546.method35644(n4 / method3774);
+                    final double n5 = MathHelper.floor(n3 / method3774);
+                    final double n6 = MathHelper.floor(n4 / method3774);
                     if (n5 < 0.0 || n6 < 0.0) {
                         return null;
                     }
                     final int min = Math.min(this.method3777(), this.field3745.size());
-                    if (n5 <= Class9546.method35644(this.method3772() / this.method3774()) && n6 < 9 * min + min) {
+                    if (n5 <= MathHelper.floor(this.method3772() / this.method3774()) && n6 < 9 * min + min) {
                         final int n7 = (int)(n6 / 9.0 + this.field3746);
                         if (n7 >= 0) {
                             if (n7 < this.field3745.size()) {
@@ -256,7 +257,7 @@ public class Class684 extends Class565
     public int method3772() {
         final int method3775 = method3775(this.field3742.field4648.field23402);
         final Class1925 method3776 = Class869.method5277().method5332();
-        return Class9546.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.method7700()));
+        return MathHelper.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.method7700()));
     }
     
     public int method3773() {
@@ -268,11 +269,11 @@ public class Class684 extends Class565
     }
     
     public static int method3775(final double n) {
-        return Class9546.method35644(n * 280.0 + 40.0);
+        return MathHelper.floor(n * 280.0 + 40.0);
     }
     
     public static int method3776(final double n) {
-        return Class9546.method35644(n * 160.0 + 20.0);
+        return MathHelper.floor(n * 160.0 + 20.0);
     }
     
     public int method3777() {

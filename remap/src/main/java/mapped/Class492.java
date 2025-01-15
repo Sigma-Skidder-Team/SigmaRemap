@@ -5,9 +5,11 @@
 package mapped;
 
 import java.util.Random;
-import java.util.Iterator;
 import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.UUID;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Class492 extends Class436 implements Class439
     private float field2828;
     private boolean field2829;
     private boolean field2830;
-    private final List<Class354> field2831;
+    private final List<BlockPos> field2831;
     private Class511 field2832;
     private UUID field2833;
     private long field2834;
@@ -146,7 +148,7 @@ public class Class492 extends Class436 implements Class439
                             }
                         }
                     }
-                    final Class354 method1134 = this.field2657.method1134(l, a, a2);
+                    final BlockPos method1134 = this.field2657.method1134(l, a, a2);
                     final Class7096 method1135 = this.field2656.method6701(method1134);
                     final Class3833[] field2826 = Class492.field2826;
                     for (int length = field2826.length, n = 0; n < length; ++n) {
@@ -163,13 +165,13 @@ public class Class492 extends Class436 implements Class439
     
     private void method2488() {
         final int n = this.field2831.size() / 7 * 16;
-        final int method1074 = this.field2657.method1074();
-        final int method1075 = this.field2657.method1075();
-        final int method1076 = this.field2657.method1076();
-        final List<Class399> method1077 = this.field2656.method7128((Class<? extends Class399>)Class512.class, new Class6221(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+        final int method1074 = this.field2657.getX();
+        final int method1075 = this.field2657.getY();
+        final int method1076 = this.field2657.getZ();
+        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>)Class512.class, new Class6221(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
         if (!method1077.isEmpty()) {
             for (final Class512 class512 : method1077) {
-                if (!this.field2657.method1081(new Class354(class512), n)) {
+                if (!this.field2657.method1081(new BlockPos(class512), n)) {
                     continue;
                 }
                 if (!class512.method1709()) {
@@ -188,12 +190,12 @@ public class Class492 extends Class436 implements Class439
                 this.field2833 = null;
             }
             else if (this.field2832 != null) {
-                if (!this.field2832.method1768() || !this.field2657.method1081(new Class354(this.field2832), 8.0)) {
+                if (!this.field2832.method1768() || !this.field2657.method1081(new BlockPos(this.field2832), 8.0)) {
                     this.field2832 = null;
                 }
             }
             else {
-                final List<Class399> method6739 = this.field2656.method6739((Class<? extends Class399>)Class511.class, this.method2491(), class511 -> class511 instanceof Class762 && class511.method1709());
+                final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>)Class511.class, this.method2491(), class511 -> class511 instanceof Class762 && class511.method1709());
                 if (!method6739.isEmpty()) {
                     this.field2832 = (Class511)method6739.get(this.field2656.field10062.nextInt(method6739.size()));
                 }
@@ -227,36 +229,36 @@ public class Class492 extends Class436 implements Class439
     }
     
     private Class6221 method2491() {
-        final int method1074 = this.field2657.method1074();
-        final int method1075 = this.field2657.method1075();
-        final int method1076 = this.field2657.method1076();
+        final int method1074 = this.field2657.getX();
+        final int method1075 = this.field2657.getY();
+        final int method1076 = this.field2657.getZ();
         return new Class6221(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(8.0);
     }
     
     @Nullable
     private Class511 method2492() {
-        final List<Class399> method6739 = this.field2656.method6739((Class<? extends Class399>)Class511.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
+        final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>)Class511.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
         return (method6739.size() != 1) ? null : ((Class511)method6739.get(0));
     }
     
     private void method2493() {
         final Random field10062 = this.field2656.field10062;
-        final double n = Class9546.method35638((this.field2827 + 35) * 0.1f) / 2.0f + 0.5f;
-        final Class5487 class5487 = new Class5487(this.field2657.method1074() + 0.5, this.field2657.method1075() + 1.5 + (n * n + n) * 0.30000001192092896, this.field2657.method1076() + 0.5);
-        for (final Class354 class5488 : this.field2831) {
+        final double n = MathHelper.sin((this.field2827 + 35) * 0.1f) / 2.0f + 0.5f;
+        final Vec3d class5487 = new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 1.5 + (n * n + n) * 0.30000001192092896, this.field2657.getZ() + 0.5);
+        for (final BlockPos class5488 : this.field2831) {
             if (field10062.nextInt(50) != 0) {
                 continue;
             }
             final float n2 = -0.5f + field10062.nextFloat();
             final float n3 = -2.0f + field10062.nextFloat();
             final float n4 = -0.5f + field10062.nextFloat();
-            final Class354 method1136 = class5488.method1136(this.field2657);
-            final Class5487 method1137 = new Class5487(n2, n3, n4).method16744(method1136.method1074(), method1136.method1075(), method1136.method1076());
+            final BlockPos method1136 = class5488.method1136(this.field2657);
+            final Vec3d method1137 = new Vec3d(n2, n3, n4).method16744(method1136.getX(), method1136.getY(), method1136.getZ());
             this.field2656.method6709(Class8432.field34651, class5487.field22770, class5487.field22771, class5487.field22772, method1137.field22770, method1137.field22771, method1137.field22772);
         }
         if (this.field2832 != null) {
-            final Class5487 class5489 = new Class5487(this.field2832.method1938(), this.field2832.method1944(), this.field2832.method1945());
-            final Class5487 class5490 = new Class5487((-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()), -1.0f + field10062.nextFloat() * this.field2832.method1931(), (-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()));
+            final Vec3d class5489 = new Vec3d(this.field2832.method1938(), this.field2832.method1944(), this.field2832.method1945());
+            final Vec3d class5490 = new Vec3d((-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()), -1.0f + field10062.nextFloat() * this.field2832.method1931(), (-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()));
             this.field2656.method6709(Class8432.field34651, class5489.field22770, class5489.field22771, class5489.field22772, class5490.field22770, class5490.field22771, class5490.field22772);
         }
     }

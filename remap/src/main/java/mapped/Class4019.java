@@ -15,13 +15,13 @@ public class Class4019 extends Class4017
         this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773(Class4019.field18100, Class104.field311)).method21773((Class7111<Comparable>)Class4019.field18101, false));
     }
     
-    public boolean method12210(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final boolean b, final int n) {
+    public boolean method12210(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final boolean b, final int n) {
         if (n >= 8) {
             return false;
         }
-        int method1074 = class1848.method1074();
-        int method1075 = class1848.method1075();
-        int method1076 = class1848.method1076();
+        int method1074 = class1848.getX();
+        int method1075 = class1848.getY();
+        int method1076 = class1848.getZ();
         boolean b2 = true;
         Class104 class1850 = class1849.method21772(Class4019.field18100);
         switch (Class8913.field37487[class1850.ordinal()]) {
@@ -90,10 +90,10 @@ public class Class4019 extends Class4017
                 break;
             }
         }
-        return this.method12211(class1847, new Class354(method1074, method1075, method1076), b, n, class1850) || (b2 && this.method12211(class1847, new Class354(method1074, method1075 - 1, method1076), b, n, class1850));
+        return this.method12211(class1847, new BlockPos(method1074, method1075, method1076), b, n, class1850) || (b2 && this.method12211(class1847, new BlockPos(method1074, method1075 - 1, method1076), b, n, class1850));
     }
     
-    public boolean method12211(final Class1847 class1847, final Class354 class1848, final boolean b, final int n, final Class104 class1849) {
+    public boolean method12211(final Class1847 class1847, final BlockPos class1848, final boolean b, final int n, final Class104 class1849) {
         final Class7096 method6701 = class1847.method6701(class1848);
         if (method6701.method21696() == this) {
             final Class104 class1850 = method6701.method21772(Class4019.field18100);
@@ -125,7 +125,7 @@ public class Class4019 extends Class4017
     }
     
     @Override
-    public void method12203(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class3833 class7099) {
+    public void method12203(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099) {
         final boolean booleanValue = class7096.method21772((Class7111<Boolean>)Class4019.field18101);
         boolean b = false;
         Label_0065: {

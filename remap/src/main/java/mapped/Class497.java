@@ -127,7 +127,7 @@ public class Class497 extends Class436
     }
     
     public Class7492 method2528(final Class513 class513) {
-        return new Class7492(Class397.field2376, new Class5487(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5), Class9544.field41083, (Class1849)this.field2656, 2, (class513 != null) ? class513.method1841().getString() : "Sign", (class513 != null) ? class513.method1871() : new Class2260("Sign"), this.field2656.method6679(), class513);
+        return new Class7492(Class397.field2376, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Class9544.field41083, (Class1849)this.field2656, 2, (class513 != null) ? class513.method1841().getString() : "Sign", (class513 != null) ? class513.method1871() : new Class2260("Sign"), this.field2656.method6679(), class513);
     }
     
     public Class181 method2529() {

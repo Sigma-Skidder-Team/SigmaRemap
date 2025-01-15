@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public abstract class Class3892 extends Class3833
 {
     public static final Class7115 field17564;
@@ -14,12 +16,12 @@ public abstract class Class3892 extends Class3833
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3892.field17564, class7097.method8142(class7096.method21772((Class7111<Class179>)Class3892.field17564)));
+        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3892.field17564, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3892.field17564)));
     }
     
     @Override
     public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Class179>)Class3892.field17564)));
+        return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3892.field17564)));
     }
     
     static {

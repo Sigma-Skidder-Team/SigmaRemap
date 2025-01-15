@@ -4,9 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
-import java.util.Collection;
-import java.util.Map;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -23,10 +22,10 @@ public class Class6778
     
     public static Class6313 method20686(final Class1912 class1912, final int n) {
         final ArrayList list = new ArrayList();
-        final Class179[] field524 = Class179.field524;
+        final Direction[] field524 = Direction.VALUES;
         final HashMap hashMap = new HashMap();
         for (int i = 0; i < field524.length; ++i) {
-            final Class179 class1913 = field524[i];
+            final Direction class1913 = field524[i];
             final ArrayList list2 = new ArrayList();
             list2.add(method20688(class1913, class1912, n));
             hashMap.put(class1913, list2);
@@ -38,10 +37,10 @@ public class Class6778
         final ArrayList list = new ArrayList();
         list.addAll(class6313.method18691(null, null, Class6778.field26610));
         list.addAll(class6314.method18691(null, null, Class6778.field26610));
-        final Class179[] field524 = Class179.field524;
+        final Direction[] field524 = Direction.VALUES;
         final HashMap hashMap = new HashMap();
         for (int i = 0; i < field524.length; ++i) {
-            final Class179 class6315 = field524[i];
+            final Direction class6315 = field524[i];
             final ArrayList list2 = new ArrayList();
             list2.addAll(class6313.method18691(null, class6315, Class6778.field26610));
             list2.addAll(class6314.method18691(null, class6315, Class6778.field26610));
@@ -50,8 +49,8 @@ public class Class6778
         return new Class6315(list, hashMap, class6313.method18692(), class6313.method18695(), true, class6313.method18696(), class6313.method18697(), class6313.method18698());
     }
     
-    public static Class8754 method20688(final Class179 class179, final Class1912 class180, final int n) {
-        return new Class6225().method18519(new Class9138(0.0f, 0.0f, 0.0f), new Class9138(16.0f, 16.0f, 16.0f), new Class8111(class179, n, "#" + class179.method596(), new Class8435(new float[] { 0.0f, 0.0f, 16.0f, 16.0f }, 0)), class180, class179, Class2122.field12371, null, true, class180.method7503());
+    public static Class8754 method20688(final Direction class179, final Class1912 class180, final int n) {
+        return new Class6225().method18519(new Vector3f(0.0f, 0.0f, 0.0f), new Vector3f(16.0f, 16.0f, 16.0f), new Class8111(class179, n, "#" + class179.getName(), new Class8435(new float[] { 0.0f, 0.0f, 16.0f, 16.0f }, 0)), class180, class179, Class2122.field12371, null, true, class180.method7503());
     }
     
     public static Class6313 method20689(final String s, final String s2, final String s3) {
@@ -70,7 +69,7 @@ public class Class6778
         final Class6313 method28861 = method28860.method6451(new Class1933(s, ""));
         if (method28861 != null && method28861 != method28860.method6452()) {
             final Class6313 method28862 = Class9058.method32621(method28861);
-            final Class179[] field524 = Class179.field524;
+            final Direction[] field524 = Direction.VALUES;
             for (int i = 0; i < field524.length; ++i) {
                 method20691(method28862.method18691(null, field524[i], Class6778.field26610), class1912, class1913);
             }
@@ -92,7 +91,7 @@ public class Class6778
         list.addAll(list2);
     }
     
-    public static void method20692(final Class9138 class9138) {
+    public static void method20692(final Vector3f class9138) {
         class9138.method33317(method20693(class9138.method33311()), method20693(class9138.method33312()), method20693(class9138.method33313()));
     }
     
@@ -103,8 +102,8 @@ public class Class6778
         return (n > 0.999999f && n < 1.000001f) ? 1.0f : n;
     }
     
-    public static Class6221 method20694(final Class6221 class6221, final Class2180 class6222, final Class354 class6223) {
-        final long n = (long)(class6223.method1074() * 3129871) ^ class6223.method1076() * 116129781L;
+    public static Class6221 method20694(final Class6221 class6221, final Class2180 class6222, final BlockPos class6223) {
+        final long n = (long)(class6223.getX() * 3129871) ^ class6223.getZ() * 116129781L;
         final long n2 = n * n * 42317861L + n * 11L;
         final double n3 = ((n2 >> 16 & 0xFL) / 15.0f - 0.5) * 0.5;
         final double n4 = ((n2 >> 24 & 0xFL) / 15.0f - 0.5) * 0.5;

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.Vec3i;
+
 public class Class457 extends Class456
 {
     private Class2265<Class8321> field2712;
@@ -82,7 +85,7 @@ public class Class457 extends Class456
     }
     
     public void method2330() {
-        this.field2713 = Class475.method2420(this.field2656, this, this.field2657.method1074(), this.field2657.method1075(), this.field2657.method1076());
+        this.field2713 = Class475.method2420(this.field2656, this, this.field2657.getX(), this.field2657.getY(), this.field2657.getZ());
         if (this.field2713 <= 0) {
             final Class7096 method2194 = this.method2194();
             if (method2194.method21696() != Class7521.field29807) {
@@ -111,7 +114,7 @@ public class Class457 extends Class456
     }
     
     private void method2332(final Class7096 class7096, final Class7795 class7097) {
-        final Class352 method802 = class7096.method21772((Class7111<Class179>)Class3939.field17824).method802();
-        this.field2656.method6706(null, this.field2657.method1074() + 0.5 + method802.method1074() / 2.0, this.field2657.method1075() + 0.5 + method802.method1075() / 2.0, this.field2657.method1076() + 0.5 + method802.method1076() / 2.0, class7097, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+        final Vec3i method802 = class7096.method21772((Class7111<Direction>)Class3939.field17824).getDirectionVec();
+        this.field2656.method6706(null, this.field2657.getX() + 0.5 + method802.getX() / 2.0, this.field2657.getY() + 0.5 + method802.getY() / 2.0, this.field2657.getZ() + 0.5 + method802.getZ() / 2.0, class7097, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
     }
 }

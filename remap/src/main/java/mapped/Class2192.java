@@ -4,48 +4,50 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class2192
 {
-    field13330(Class179.field511), 
-    field13331(Class179.field512), 
-    field13332(Class179.field513), 
-    field13333(Class179.field514), 
-    field13334(Class179.field515), 
-    field13335(Class179.field516), 
-    field13336(Class179.field513, Class179.field515), 
-    field13337(Class179.field513, Class179.field516), 
-    field13338(Class179.field514, Class179.field515), 
-    field13339(Class179.field514, Class179.field516), 
-    field13340(Class179.field511, Class179.field513), 
-    field13341(Class179.field511, Class179.field514), 
-    field13342(Class179.field512, Class179.field513), 
-    field13343(Class179.field512, Class179.field514), 
-    field13344(Class179.field511, Class179.field515), 
-    field13345(Class179.field511, Class179.field516), 
-    field13346(Class179.field512, Class179.field515), 
-    field13347(Class179.field512, Class179.field516);
+    field13330(Direction.DOWN),
+    field13331(Direction.UP),
+    field13332(Direction.NORTH),
+    field13333(Direction.SOUTH),
+    field13334(Direction.WEST),
+    field13335(Direction.EAST),
+    field13336(Direction.NORTH, Direction.WEST),
+    field13337(Direction.NORTH, Direction.EAST),
+    field13338(Direction.SOUTH, Direction.WEST),
+    field13339(Direction.SOUTH, Direction.EAST),
+    field13340(Direction.DOWN, Direction.NORTH),
+    field13341(Direction.DOWN, Direction.SOUTH),
+    field13342(Direction.UP, Direction.NORTH),
+    field13343(Direction.UP, Direction.SOUTH),
+    field13344(Direction.DOWN, Direction.WEST),
+    field13345(Direction.DOWN, Direction.EAST),
+    field13346(Direction.UP, Direction.WEST),
+    field13347(Direction.UP, Direction.EAST);
     
-    private Class179 field13348;
-    private Class179 field13349;
+    private Direction field13348;
+    private Direction field13349;
     
-    private Class2192(final Class179 field13348) {
+    private Class2192(final Direction field13348) {
         this.field13348 = field13348;
     }
     
-    private Class2192(final Class179 field13348, final Class179 field13349) {
+    private Class2192(final Direction field13348, final Direction field13349) {
         this.field13348 = field13348;
         this.field13349 = field13349;
     }
     
-    public Class179 method8362() {
+    public Direction method8362() {
         return this.field13348;
     }
     
-    public Class179 method8363() {
+    public Direction method8363() {
         return this.field13349;
     }
     
-    public Class354 method8364(Class354 class354) {
+    public BlockPos method8364(BlockPos class354) {
         class354 = class354.method1150(this.field13348, 1);
         if (this.field13349 != null) {
             class354 = class354.method1150(this.field13349, 1);
@@ -54,25 +56,25 @@ public enum Class2192
     }
     
     public int method8365() {
-        int method785 = this.field13348.method785();
+        int method785 = this.field13348.getXOffset();
         if (this.field13349 != null) {
-            method785 += this.field13349.method785();
+            method785 += this.field13349.getXOffset();
         }
         return method785;
     }
     
     public int method8366() {
-        int method786 = this.field13348.method786();
+        int method786 = this.field13348.getYOffset();
         if (this.field13349 != null) {
-            method786 += this.field13349.method786();
+            method786 += this.field13349.getYOffset();
         }
         return method786;
     }
     
     public int method8367() {
-        int method787 = this.field13348.method787();
+        int method787 = this.field13348.getZOffset();
         if (this.field13349 != null) {
-            method787 += this.field13349.method787();
+            method787 += this.field13349.getZOffset();
         }
         return method787;
     }

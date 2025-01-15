@@ -15,7 +15,7 @@ public class Class7323
     private static final Logger field28315;
     public static final Class7891 field28316;
     
-    public static void method22475(final Class1932 class1932, final int n, final Class7669 class1933, final Class6346<?> class1934, final Class1795 class1935, final Class354 class1936, final List<Class4473> list, final Random random) {
+    public static void method22475(final Class1932 class1932, final int n, final Class7669 class1933, final Class6346<?> class1934, final Class1795 class1935, final BlockPos class1936, final List<Class4473> list, final Random random) {
         Class9380.method34830();
         new Class7125(class1932, n, class1933, class1934, class1935, class1936, list, random);
     }

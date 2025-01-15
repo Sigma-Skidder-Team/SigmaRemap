@@ -5,8 +5,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-public class Class5881<T extends Class399> extends Class5846<T>
+public class Class5881<T extends Entity> extends Class5846<T>
 {
     private static String[] field24123;
     private final Class6300 field24124;
@@ -47,9 +49,9 @@ public class Class5881<T extends Class399> extends Class5846<T>
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         this.field24124.field25184 = n4 * 0.017453292f;
         this.field24124.field25183 = n5 * 0.017453292f;
-        this.field24127.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
-        this.field24128.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-        this.field24129.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-        this.field24130.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
+        this.field24127.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
+        this.field24128.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+        this.field24129.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+        this.field24130.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
     }
 }

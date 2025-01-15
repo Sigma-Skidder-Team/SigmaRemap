@@ -13,6 +13,8 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 import java.util.Arrays;
 import com.google.common.math.IntMath;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 
 public final class Class7698
 {
@@ -116,9 +118,9 @@ public final class Class7698
             return method34407 ? class7703 : method24486();
         }
         if (!class7703.method24540()) {
-            final Class83 method34408 = method24506(1, class7702.method24539(Class111.field351), class7703.method24539(Class111.field351), method34406, method34407);
-            final Class83 method34409 = method24506(method34408.method447().size() - 1, class7702.method24539(Class111.field352), class7703.method24539(Class111.field352), method34406, method34407);
-            final Class83 method34410 = method24506((method34408.method447().size() - 1) * (method34409.method447().size() - 1), class7702.method24539(Class111.field353), class7703.method24539(Class111.field353), method34406, method34407);
+            final Class83 method34408 = method24506(1, class7702.method24539(Axis.X), class7703.method24539(Axis.X), method34406, method34407);
+            final Class83 method34409 = method24506(method34408.method447().size() - 1, class7702.method24539(Axis.Y), class7703.method24539(Axis.Y), method34406, method34407);
+            final Class83 method34410 = method24506((method34408.method447().size() - 1) * (method34409.method447().size() - 1), class7702.method24539(Axis.Z), class7703.method24539(Axis.Z), method34406, method34407);
             final Class8259 method34411 = Class8259.method27421(class7702.field30615, class7703.field30615, method34408, method34409, method34410, class7704);
             if (method34408 instanceof Class84) {
                 if (method34409 instanceof Class84) {
@@ -145,7 +147,7 @@ public final class Class7698
         if (!class7703.method24540()) {
             final boolean method34406 = class7704.method34406(true, false);
             final boolean method34407 = class7704.method34406(false, true);
-            for (final Class111 class7705 : Class309.field1840) {
+            for (final Axis class7705 : Class309.field1840) {
                 if (class7702.method24536(class7705) < class7703.method24535(class7705) - 1.0E-7) {
                     return method34406 || method34407;
                 }
@@ -153,9 +155,9 @@ public final class Class7698
                     return method34406 || method34407;
                 }
             }
-            final Class83 method34408 = method24506(1, class7702.method24539(Class111.field351), class7703.method24539(Class111.field351), method34406, method34407);
-            final Class83 method34409 = method24506(method34408.method447().size() - 1, class7702.method24539(Class111.field352), class7703.method24539(Class111.field352), method34406, method34407);
-            return method24497(method34408, method34409, method24506((method34408.method447().size() - 1) * (method34409.method447().size() - 1), class7702.method24539(Class111.field353), class7703.method24539(Class111.field353), method34406, method34407), class7702.field30615, class7703.field30615, class7704);
+            final Class83 method34408 = method24506(1, class7702.method24539(Axis.X), class7703.method24539(Axis.X), method34406, method34407);
+            final Class83 method34409 = method24506(method34408.method447().size() - 1, class7702.method24539(Axis.Y), class7703.method24539(Axis.Y), method34406, method34407);
+            return method24497(method34408, method34409, method24506((method34408.method447().size() - 1) * (method34409.method447().size() - 1), class7702.method24539(Axis.Z), class7703.method24539(Axis.Z), method34406, method34407), class7702.field30615, class7703.field30615, class7704);
         }
         return class7704.method34406(!class7702.method24540(), false);
     }
@@ -164,7 +166,7 @@ public final class Class7698
         return !class83.method445((n, n2, n3) -> class84.method445((n3, n4, n5) -> class85.method445((n5, n6, n7) -> !class88.method34406(class86.method27426(n, n3, n5), class87.method27426(n2, n4, n6)))));
     }
     
-    public static double method24498(final Class111 class111, final Class6221 class112, final Stream<Class7702> stream, double method24553) {
+    public static double method24498(final Axis class111, final Class6221 class112, final Stream<Class7702> stream, double method24553) {
         final Iterator<Object> iterator = (Iterator<Object>)stream.iterator();
         while (iterator.hasNext()) {
             if (Math.abs(method24553) < 1.0E-7) {
@@ -175,8 +177,8 @@ public final class Class7698
         return method24553;
     }
     
-    public static double method24499(final Class111 class111, final Class6221 class112, final Class1852 class113, final double n, final Class7543 class114, final Stream<Class7702> stream, final boolean b) {
-        return method24500(class112, class113, n, class114, Class309.method985(class111, Class111.field353), stream, b);
+    public static double method24499(final Axis class111, final Class6221 class112, final Class1852 class113, final double n, final Class7543 class114, final Stream<Class7702> stream, final boolean b) {
+        return method24500(class112, class113, n, class114, Class309.method985(class111, Axis.Z), stream, b);
     }
     
     private static double method24500(final Class6221 class6221, final Class1852 class6222, double method24553, final Class7543 class6223, final Class309 class6224, final Stream<Class7702> stream, final boolean b) {
@@ -185,18 +187,18 @@ public final class Class7698
                 if (class6221.method18510() >= 1.0E-6) {
                     if (Math.abs(method24553) >= 1.0E-7) {
                         final Class309 method24554 = class6224.method984();
-                        final Class111 method24555 = method24554.method983(Class111.field351);
-                        final Class111 method24556 = method24554.method983(Class111.field352);
-                        final Class111 method24557 = method24554.method983(Class111.field353);
+                        final Axis method24555 = method24554.method983(Axis.X);
+                        final Axis method24556 = method24554.method983(Axis.Y);
+                        final Axis method24557 = method24554.method983(Axis.Z);
                         final Class385 class6225 = new Class385();
-                        final int n = Class9546.method35644(class6221.method18490(method24555) - 1.0E-7) - 1;
-                        final int n2 = Class9546.method35644(class6221.method18491(method24555) + 1.0E-7) + 1;
-                        final int n3 = Class9546.method35644(class6221.method18490(method24556) - 1.0E-7) - 1;
-                        final int n4 = Class9546.method35644(class6221.method18491(method24556) + 1.0E-7) + 1;
+                        final int n = MathHelper.floor(class6221.method18490(method24555) - 1.0E-7) - 1;
+                        final int n2 = MathHelper.floor(class6221.method18491(method24555) + 1.0E-7) + 1;
+                        final int n3 = MathHelper.floor(class6221.method18490(method24556) - 1.0E-7) - 1;
+                        final int n4 = MathHelper.floor(class6221.method18491(method24556) + 1.0E-7) + 1;
                         final double n5 = class6221.method18490(method24557) - 1.0E-7;
                         final double n6 = class6221.method18491(method24557) + 1.0E-7;
                         final boolean b2 = method24553 > 0.0;
-                        final int n7 = b2 ? (Class9546.method35644(class6221.method18491(method24557) - 1.0E-7) - 1) : (Class9546.method35644(class6221.method18490(method24557) + 1.0E-7) + 1);
+                        final int n7 = b2 ? (MathHelper.floor(class6221.method18491(method24557) - 1.0E-7) - 1) : (MathHelper.floor(class6221.method18490(method24557) + 1.0E-7) + 1);
                         int n8 = method24501(method24553, n5, n6);
                         final int n9 = b2 ? 1 : -1;
                         int n10 = n7;
@@ -232,7 +234,7 @@ public final class Class7698
                                                     Class9463.method35173().method35188().method21097(class6227);
                                                     class6226 = class6227.method17065();
                                                 }
-                                                method24553 = class6226.method24553(method24557, class6221.method18499(-class6225.method1074(), -class6225.method1075(), -class6225.method1076()), method24553);
+                                                method24553 = class6226.method24553(method24557, class6221.method18499(-class6225.getX(), -class6225.getY(), -class6225.getZ()), method24553);
                                                 if (Math.abs(method24553) < 1.0E-7) {
                                                     return 0.0;
                                                 }
@@ -256,19 +258,19 @@ public final class Class7698
     }
     
     private static int method24501(final double n, final double n2, final double n3) {
-        return (n <= 0.0) ? (Class9546.method35644(n2 + n) - 1) : (Class9546.method35644(n3 + n) + 1);
+        return (n <= 0.0) ? (MathHelper.floor(n2 + n) - 1) : (MathHelper.floor(n3 + n) + 1);
     }
     
-    public static boolean method24502(final Class7702 class7702, final Class7702 class7703, final Class179 class7704) {
+    public static boolean method24502(final Class7702 class7702, final Class7702 class7703, final Direction class7704) {
         if (class7702 == method24487() && class7703 == method24487()) {
             return true;
         }
         if (!class7703.method24540()) {
-            final Class111 method790 = class7704.method790();
-            final Class288 method791 = class7704.method781();
-            final Class7702 class7705 = (method791 != Class288.field1601) ? class7703 : class7702;
-            final Class7702 class7706 = (method791 != Class288.field1601) ? class7702 : class7703;
-            final Class9306 class7707 = (method791 != Class288.field1601) ? Class9306.field39918 : Class9306.field39920;
+            final Axis method790 = class7704.getAxis();
+            final AxisDirection method791 = class7704.getAxisDirection();
+            final Class7702 class7705 = (method791 != AxisDirection.POSITIVE) ? class7703 : class7702;
+            final Class7702 class7706 = (method791 != AxisDirection.POSITIVE) ? class7702 : class7703;
+            final Class9306 class7707 = (method791 != AxisDirection.POSITIVE) ? Class9306.field39918 : Class9306.field39920;
             if (DoubleMath.fuzzyEquals(class7705.method24536(method790), 1.0, 1.0E-7)) {
                 if (DoubleMath.fuzzyEquals(class7706.method24535(method790), 0.0, 1.0E-7)) {
                     if (!method24496(new Class7703(class7705, method790, class7705.field30615.method27430(method790) - 1), new Class7703(class7706, method790, 0), class7707)) {
@@ -281,12 +283,12 @@ public final class Class7698
         return false;
     }
     
-    public static Class7702 method24503(final Class7702 class7702, final Class179 class7703) {
+    public static Class7702 method24503(final Class7702 class7702, final Direction class7703) {
         if (class7702 != method24487()) {
-            final Class111 method790 = class7703.method790();
+            final Axis method790 = class7703.getAxis();
             boolean b;
             int n;
-            if (class7703.method781() != Class288.field1601) {
+            if (class7703.getAxisDirection() != AxisDirection.POSITIVE) {
                 b = DoubleMath.fuzzyEquals(class7702.method24535(method790), 0.0, 1.0E-7);
                 n = 0;
             }
@@ -299,12 +301,12 @@ public final class Class7698
         return method24487();
     }
     
-    public static boolean method24504(final Class7702 class7702, final Class7702 class7703, final Class179 class7704) {
+    public static boolean method24504(final Class7702 class7702, final Class7702 class7703, final Direction class7704) {
         if (class7702 != method24487() && class7703 != method24487()) {
-            final Class111 method790 = class7704.method790();
-            final Class288 method791 = class7704.method781();
-            Class7702 method792 = (method791 != Class288.field1601) ? class7703 : class7702;
-            Class7702 method793 = (method791 != Class288.field1601) ? class7702 : class7703;
+            final Axis method790 = class7704.getAxis();
+            final AxisDirection method791 = class7704.getAxisDirection();
+            Class7702 method792 = (method791 != AxisDirection.POSITIVE) ? class7703 : class7702;
+            Class7702 method793 = (method791 != AxisDirection.POSITIVE) ? class7702 : class7703;
             if (!DoubleMath.fuzzyEquals(method792.method24536(method790), 1.0, 1.0E-7)) {
                 method792 = method24486();
             }

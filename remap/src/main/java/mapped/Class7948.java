@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public class Class7948
@@ -27,7 +29,7 @@ public class Class7948
         if (class3821 == null) {
             return 0.0f;
         }
-        return Class9546.method35653((Class7731.method24679(class3821) - (this.field32627 + n)) / (Class7731.method24679(class3821) - Class7731.method24680(class3821)), 0.0f, 1.0f);
+        return MathHelper.method35653((Class7731.method24679(class3821) - (this.field32627 + n)) / (Class7731.method24679(class3821) - Class7731.method24680(class3821)), 0.0f, 1.0f);
     }
     
     public void method25771() {

@@ -37,7 +37,7 @@ public class Class4075 extends Class4072
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
+        final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         final Class3833 class7076 = Class4075.field18178.get(method21656.method21696());
         if (class7076 == null) {

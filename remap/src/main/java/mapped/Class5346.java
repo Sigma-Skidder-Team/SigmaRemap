@@ -6,12 +6,12 @@ package mapped;
 
 public interface Class5346
 {
-    Class5487 method16504(final Class7492 p0);
+    Vec3d method16504(final Class7492 p0);
     
     Class9544 method16505(final Class7492 p0);
     
-    default Class354 method16506(final Class7492 class7492) {
-        return new Class354(this.method16504(class7492));
+    default BlockPos method16506(final Class7492 class7492) {
+        return new BlockPos(this.method16504(class7492));
     }
     
     boolean method16507();

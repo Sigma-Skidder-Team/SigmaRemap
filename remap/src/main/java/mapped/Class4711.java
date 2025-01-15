@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class4711 extends Class4710<Class754, Class5860<Class754>>
 {
     public Class4711(final Class8551 class8551) {
@@ -165,7 +168,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
             }
             else {
                 super.method13985(class754, class755, n, n2, n3);
-                class755.method22566(Class9138.field38716.method33328(Class9546.method35700(method2623, 0.0f, class754.method1706() ? (-90.0f - class754.field2400) : -90.0f)));
+                class755.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method2623, 0.0f, class754.method1706() ? (-90.0f - class754.field2400) : -90.0f)));
                 if (class754.method1818()) {
                     class755.method22564(0.0, -1.0, 0.30000001192092896);
                 }
@@ -174,17 +177,17 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         else {
             super.method13985(class754, class755, n, n2, n3);
             final float n4 = class754.method2774() + n3;
-            final float method2624 = Class9546.method35653(n4 * n4 / 100.0f, 0.0f, 1.0f);
+            final float method2624 = MathHelper.method35653(n4 * n4 / 100.0f, 0.0f, 1.0f);
             if (!class754.method2744()) {
-                class755.method22566(Class9138.field38716.method33328(method2624 * (-90.0f - class754.field2400)));
+                class755.method22566(Vector3f.XP.rotationDegrees(method2624 * (-90.0f - class754.field2400)));
             }
             final Class5487 method2625 = class754.method1741(n3);
             final Class5487 method2626 = class754.method1935();
-            final double method2627 = Class399.method1680(method2626);
-            final double method2628 = Class399.method1680(method2625);
+            final double method2627 = Entity.method1680(method2626);
+            final double method2628 = Entity.method1680(method2625);
             if (method2627 > 0.0) {
                 if (method2628 > 0.0) {
-                    class755.method22566(Class9138.field38718.method33327((float)(Math.signum(method2626.field22770 * method2625.field22772 - method2626.field22772 * method2625.field22770) * Math.acos((method2626.field22770 * method2625.field22770 + method2626.field22772 * method2625.field22772) / (Math.sqrt(method2627) * Math.sqrt(method2628))))));
+                    class755.method22566(Vector3f.field38718.method33327((float)(Math.signum(method2626.field22770 * method2625.field22772 - method2626.field22772 * method2625.field22770) * Math.acos((method2626.field22770 * method2625.field22770 + method2626.field22772 * method2625.field22772) / (Math.sqrt(method2627) * Math.sqrt(method2628))))));
                 }
             }
         }

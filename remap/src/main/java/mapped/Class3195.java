@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class Class3195 extends Class3167
@@ -26,7 +26,7 @@ public class Class3195 extends Class3167
             GL11.glLineWidth(2.0f * Class9000.field37993);
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
-            for (final Class399 class5740 : Class6430.method19108()) {
+            for (final Entity class5740 : Class6430.method19108()) {
                 if (class5740 == Class3195.field15514.field4684) {
                     continue;
                 }
@@ -52,7 +52,7 @@ public class Class3195 extends Class3167
         }
     }
     
-    public void method10024(final Class399 class399) {
+    public void method10024(final Entity class399) {
         final double field38854 = Class8591.method29094(class399).field38854;
         final double n = Class8591.method29094(class399).field38855 + class399.method1931() / 2.0f;
         final double field38855 = Class8591.method29094(class399).field38856;

@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
-import java.util.function.Predicate;
 
 public class Class3565 extends Class3555<Class512>
 {
@@ -21,7 +22,7 @@ public class Class3565 extends Class3555<Class512>
     public boolean method11013() {
         if (!this.field16656.method2625()) {
             if (super.method11013()) {
-                final Iterator<Class399> iterator = (Iterator<Class399>)this.field16656.field2391.method7128((Class<? extends Class790>)Class790.class, this.field16656.method1886().method18495(8.0, 4.0, 8.0)).iterator();
+                final Iterator<Entity> iterator = (Iterator<Entity>)this.field16656.field2391.method7128((Class<? extends Class790>)Class790.class, this.field16656.method1886().method18495(8.0, 4.0, 8.0)).iterator();
                 while (iterator.hasNext()) {
                     if (!iterator.next().method2625()) {
                         continue;

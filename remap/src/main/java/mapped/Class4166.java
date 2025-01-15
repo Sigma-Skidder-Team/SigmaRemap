@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class4166 extends Class4158<Class495>
 {
     public static final Class3687 field18565;
@@ -24,11 +27,11 @@ public class Class4166 extends Class4158<Class495>
         float field25183 = 0.0f;
         float field25184 = 0.0f;
         if (class495.field2844) {
-            final float n5 = Class9546.method35638(n4 / 3.1415927f) / (4.0f + n4 / 3.0f);
-            if (class495.field2845 != Class179.field513) {
-                if (class495.field2845 != Class179.field514) {
-                    if (class495.field2845 != Class179.field516) {
-                        if (class495.field2845 == Class179.field515) {
+            final float n5 = MathHelper.sin(n4 / 3.1415927f) / (4.0f + n4 / 3.0f);
+            if (class495.field2845 != Direction.NORTH) {
+                if (class495.field2845 != Direction.SOUTH) {
+                    if (class495.field2845 != Direction.EAST) {
+                        if (class495.field2845 == Direction.WEST) {
                             field25184 = n5;
                         }
                     }

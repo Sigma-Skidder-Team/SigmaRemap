@@ -16,23 +16,23 @@ public class Class3909 extends Class3910 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return class1855.method6701(class1856.method1137()).method21706();
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
-        final Class354 method1137 = class1850.method1137();
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
+        final BlockPos method1137 = class1850.method1137();
         final Class7096 method1138 = Class7521.field29241.method11878();
         int i = 0;
     Label_0096_Outer:
         while (i < 128) {
-            Class354 method1139 = method1137;
+            BlockPos method1139 = method1137;
             int j = 0;
             while (true) {
                 while (j < i / 16) {

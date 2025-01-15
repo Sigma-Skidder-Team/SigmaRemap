@@ -158,25 +158,25 @@ public class Class540 extends Class527
         (this.field3239 = new Class579(this, this.field3156, this.field3152 / 2 - 152, 40, 300, 20, Class8822.method30773("structure_block.structure_name", new Object[0]))).method3397(64);
         this.field3239.method3377(this.field3232.method2554());
         this.field3149.add(this.field3239);
-        final Class354 method2560 = this.field3232.method2560();
+        final BlockPos method2560 = this.field3232.method2560();
         (this.field3240 = new Class576(this.field3156, this.field3152 / 2 - 152, 80, 80, 20, Class8822.method30773("structure_block.position.x", new Object[0]))).method3397(15);
-        this.field3240.method3377(Integer.toString(method2560.method1074()));
+        this.field3240.method3377(Integer.toString(method2560.getX()));
         this.field3149.add(this.field3240);
         (this.field3241 = new Class576(this.field3156, this.field3152 / 2 - 72, 80, 80, 20, Class8822.method30773("structure_block.position.y", new Object[0]))).method3397(15);
-        this.field3241.method3377(Integer.toString(method2560.method1075()));
+        this.field3241.method3377(Integer.toString(method2560.getY()));
         this.field3149.add(this.field3241);
         (this.field3242 = new Class576(this.field3156, this.field3152 / 2 + 8, 80, 80, 20, Class8822.method30773("structure_block.position.z", new Object[0]))).method3397(15);
-        this.field3242.method3377(Integer.toString(method2560.method1076()));
+        this.field3242.method3377(Integer.toString(method2560.getZ()));
         this.field3149.add(this.field3242);
-        final Class354 method2561 = this.field3232.method2562();
+        final BlockPos method2561 = this.field3232.method2562();
         (this.field3243 = new Class576(this.field3156, this.field3152 / 2 - 152, 120, 80, 20, Class8822.method30773("structure_block.size.x", new Object[0]))).method3397(15);
-        this.field3243.method3377(Integer.toString(method2561.method1074()));
+        this.field3243.method3377(Integer.toString(method2561.getX()));
         this.field3149.add(this.field3243);
         (this.field3244 = new Class576(this.field3156, this.field3152 / 2 - 72, 120, 80, 20, Class8822.method30773("structure_block.size.y", new Object[0]))).method3397(15);
-        this.field3244.method3377(Integer.toString(method2561.method1075()));
+        this.field3244.method3377(Integer.toString(method2561.getY()));
         this.field3149.add(this.field3244);
         (this.field3245 = new Class576(this.field3156, this.field3152 / 2 + 8, 120, 80, 20, Class8822.method30773("structure_block.size.z", new Object[0]))).method3397(15);
-        this.field3245.method3377(Integer.toString(method2561.method1076()));
+        this.field3245.method3377(Integer.toString(method2561.getZ()));
         this.field3149.add(this.field3245);
         (this.field3246 = new Class576(this.field3156, this.field3152 / 2 - 152, 120, 80, 20, Class8822.method30773("structure_block.integrity.integrity", new Object[0]))).method3397(15);
         this.field3246.method3377(this.field3263.format(this.field3232.method2575()));
@@ -365,11 +365,11 @@ public class Class540 extends Class527
                 break;
             }
         }
-        this.field3257.method3367(Class8822.method30773("structure_block.mode." + this.field3232.method2570().method596(), new Object[0]));
+        this.field3257.method3367(Class8822.method30773("structure_block.mode." + this.field3232.method2570().getName(), new Object[0]));
     }
     
     private boolean method3139(final Class2146 class2146) {
-        this.field3150.method5269().method17292(new Class4360(this.field3232.method2193(), class2146, this.field3232.method2570(), this.field3239.method3378(), new Class354(this.method3142(this.field3240.method3378()), this.method3142(this.field3241.method3378()), this.method3142(this.field3242.method3378())), new Class354(this.method3142(this.field3243.method3378()), this.method3142(this.field3244.method3378()), this.method3142(this.field3245.method3378())), this.field3232.method2564(), this.field3232.method2566(), this.field3248.method3378(), this.field3232.method2573(), this.field3232.method2593(), this.field3232.method2595(), this.method3141(this.field3246.method3378()), this.method3140(this.field3247.method3378())));
+        this.field3150.method5269().method17292(new Class4360(this.field3232.method2193(), class2146, this.field3232.method2570(), this.field3239.method3378(), new BlockPos(this.method3142(this.field3240.method3378()), this.method3142(this.field3241.method3378()), this.method3142(this.field3242.method3378())), new BlockPos(this.method3142(this.field3243.method3378()), this.method3142(this.field3244.method3378()), this.method3142(this.field3245.method3378())), this.field3232.method2564(), this.field3232.method2566(), this.field3248.method3378(), this.field3232.method2573(), this.field3232.method2593(), this.field3232.method2595(), this.method3141(this.field3246.method3378()), this.method3140(this.field3247.method3378())));
         return true;
     }
     
@@ -455,7 +455,7 @@ public class Class540 extends Class527
             this.method3297(this.field3156, Class8822.method30773("structure_block.custom_data", new Object[0]), this.field3152 / 2 - 153, 110, 10526880);
             this.field3248.method2975(n, n2, n3);
         }
-        this.method3297(this.field3156, Class8822.method30773("structure_block.mode_info." + method2570.method596(), new Object[0]), this.field3152 / 2 - 153, 174, 10526880);
+        this.method3297(this.field3156, Class8822.method30773("structure_block.mode_info." + method2570.getName(), new Object[0]), this.field3152 / 2 - 153, 174, 10526880);
         super.method2975(n, n2, n3);
     }
     

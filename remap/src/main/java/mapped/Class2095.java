@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public enum Class2095
 {
     field12111(false), 
@@ -65,6 +67,6 @@ public enum Class2095
     }
     
     public static Class2095 method8216(final byte b) {
-        return values()[Class9546.method35651(b, 0, values().length - 1)];
+        return values()[MathHelper.method35651(b, 0, values().length - 1)];
     }
 }

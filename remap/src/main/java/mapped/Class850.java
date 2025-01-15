@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 import java.util.Optional;
@@ -123,8 +126,8 @@ public class Class850 extends Class763
     
     private boolean method5075(final Class512 class512) {
         if (class512.field3006.field2740.get(3).method27622() != Class7521.field29342.method11704()) {
-            final Class5487 method16738 = class512.method1741(1.0f).method16738();
-            final Class5487 class513 = new Class5487(this.method1938() - class512.method1938(), this.method1944() - class512.method1944(), this.method1945() - class512.method1945());
+            final Vec3d method16738 = class512.method1741(1.0f).method16738();
+            final Vec3d class513 = new Vec3d(this.method1938() - class512.method1938(), this.method1944() - class512.method1944(), this.method1945() - class512.method1945());
             return method16738.method16739(class513.method16738()) > 1.0 - 0.025 / class513.method16752() && class512.method2747(this);
         }
         return false;
@@ -155,7 +158,7 @@ public class Class850 extends Class763
             if (this.field2424 >= this.field4525 + 600) {
                 final float method1726 = this.method1726();
                 if (method1726 > 0.5f) {
-                    if (this.field2391.method6994(new Class354(this))) {
+                    if (this.field2391.method6994(new BlockPos(this))) {
                         if (this.field2423.nextFloat() * 30.0f < (method1726 - 0.4f) * 2.0f) {
                             this.method4153(null);
                             this.method5076();
@@ -171,15 +174,15 @@ public class Class850 extends Class763
         return !this.field2391.method6678() && this.method1768() && this.method5078(this.method1938() + (this.field2423.nextDouble() - 0.5) * 64.0, this.method1941() + (this.field2423.nextInt(64) - 32), this.method1945() + (this.field2423.nextDouble() - 0.5) * 64.0);
     }
     
-    private boolean method5077(final Class399 class399) {
-        final Class5487 method16738 = new Class5487(this.method1938() - class399.method1938(), this.method1942(0.5) - class399.method1944(), this.method1945() - class399.method1945()).method16738();
+    private boolean method5077(final Entity class399) {
+        final Vec3d method16738 = new Vec3d(this.method1938() - class399.method1938(), this.method1942(0.5) - class399.method1944(), this.method1945() - class399.method1945()).method16738();
         return this.method5078(this.method1938() + (this.field2423.nextDouble() - 0.5) * 8.0 - method16738.field22770 * 16.0, this.method1941() + (this.field2423.nextInt(16) - 8) - method16738.field22771 * 16.0, this.method1945() + (this.field2423.nextDouble() - 0.5) * 8.0 - method16738.field22772 * 16.0);
     }
     
     private boolean method5078(final double n, final double n2, final double n3) {
         final Class385 class385 = new Class385(n, n2, n3);
-        while (class385.method1075() > 0 && !this.field2391.method6701(class385).method21697().method26440()) {
-            class385.method1290(Class179.field511);
+        while (class385.getY() > 0 && !this.field2391.method6701(class385).method21697().method26440()) {
+            class385.method1290(Direction.DOWN);
         }
         final Class7096 method6701 = this.field2391.method6701(class385);
         final boolean method6702 = method6701.method21697().method26440();

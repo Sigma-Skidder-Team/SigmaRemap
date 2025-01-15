@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
+import net.minecraft.entity.Entity;
 
 public class Class4213 extends Class4211
 {
@@ -22,7 +23,7 @@ public class Class4213 extends Class4211
         return new Class4213(class9504.method35397(), Class8172.field33663);
     }
     
-    public boolean method12687(final Class513 class513, final Class399 class514, final Class7929 class515, final float n, final float n2, final boolean b) {
+    public boolean method12687(final Class513 class513, final Entity class514, final Class7929 class515, final float n, final float n2, final boolean b) {
         return this.field19006.method28170(class513, class515, n, n2, b) && this.field19007.method27015(class513, class514);
     }
     

@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
 import com.google.common.collect.HashMultimap;
@@ -13,7 +15,6 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.function.Function;
 import com.mojang.brigadier.StringReader;
-import java.util.Iterator;
 import com.google.common.collect.Multimap;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -237,7 +238,7 @@ public final class Class8321
         }
     }
     
-    public void method27638(final Class1847 class1847, final Class7096 class1848, final Class354 class1849, final Class512 class1850) {
+    public void method27638(final Class1847 class1847, final Class7096 class1848, final BlockPos class1849, final Class512 class1850) {
         final Class3820 method27622 = this.method27622();
         if (method27622.method11712(this, class1847, class1848, class1849, class1850)) {
             class1850.method2859(Class8276.field33981.method8449(method27622));
@@ -304,7 +305,7 @@ public final class Class8321
         return this.field34176 + " " + this.method27622();
     }
     
-    public void method27650(final Class1847 class1847, final Class399 class1848, final int n, final boolean b) {
+    public void method27650(final Class1847 class1847, final Entity class1848, final int n, final boolean b) {
         if (this.field34177 > 0) {
             --this.field34177;
         }

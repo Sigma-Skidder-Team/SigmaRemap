@@ -48,7 +48,7 @@ public final class Class6789
         this.field26704 = class6789.field26704;
     }
     
-    public Class6789(final Class9389 class9389) {
+    public Class6789(final Quaternion class9389) {
         final float method34899 = class9389.method34899();
         final float method34900 = class9389.method34900();
         final float method34901 = class9389.method34901();
@@ -318,7 +318,7 @@ public final class Class6789
         this.field26704 = field26704;
     }
     
-    public void method20753(final Class9389 class9389) {
+    public void method20753(final Quaternion class9389) {
         final float method34899 = class9389.method34899();
         final float method34900 = class9389.method34900();
         final float method34901 = class9389.method34901();
@@ -425,7 +425,7 @@ public final class Class6789
         return class6789;
     }
     
-    public void method20757(final Class9138 class9138) {
+    public void method20757(final Vector3f class9138) {
         this.field26692 += class9138.method33311();
         this.field26696 += class9138.method33312();
         this.field26700 += class9138.method33313();

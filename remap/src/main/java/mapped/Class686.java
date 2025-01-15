@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class686 extends Class565 implements Class687
@@ -35,9 +37,9 @@ public class Class686 extends Class565 implements Class687
                 Class8726.method30059();
                 Class8726.method30011();
                 Class8726.method30117();
-                final Class5487 class5487 = new Class5487(this.field3781.field4684.method1938(), this.field3781.field4684.method1944(), this.field3781.field4684.method1945());
-                final Class5487 method16755 = new Class5487(0.0, 0.0, -1.0).method16754(-this.field3781.field4684.field2400 * 0.017453292f).method16755(-this.field3781.field4684.field2399 * 0.017453292f);
-                final Class5487 method16756 = method16755.method16740(new Class5487(0.0, 1.0, 0.0).method16754(-this.field3781.field4684.field2400 * 0.017453292f).method16755(-this.field3781.field4684.field2399 * 0.017453292f));
+                final Vec3d class5487 = new Vec3d(this.field3781.field4684.method1938(), this.field3781.field4684.method1944(), this.field3781.field4684.method1945());
+                final Vec3d method16755 = new Vec3d(0.0, 0.0, -1.0).method16754(-this.field3781.field4684.field2400 * 0.017453292f).method16755(-this.field3781.field4684.field2399 * 0.017453292f);
+                final Vec3d method16756 = method16755.method16740(new Vec3d(0.0, 1.0, 0.0).method16754(-this.field3781.field4684.field2400 * 0.017453292f).method16755(-this.field3781.field4684.field2399 * 0.017453292f));
                 int n = 0;
                 int max = 0;
                 final Iterator<Class8395> iterator = this.field3782.iterator();
@@ -53,14 +55,14 @@ public class Class686 extends Class565 implements Class687
                 final int n2 = max + this.field3781.field4643.method6617("<") + this.field3781.field4643.method6617(" ") + this.field3781.field4643.method6617(">") + this.field3781.field4643.method6617(" ");
                 for (final Class8395 class5489 : this.field3782) {
                     final String method16757 = class5489.method27992();
-                    final Class5487 method16758 = class5489.method27994().method16741(class5487).method16738();
+                    final Vec3d method16758 = class5489.method27994().method16741(class5487).method16738();
                     final double n3 = -method16756.method16739(method16758);
                     final boolean b = -method16755.method16739(method16758) > 0.5;
                     final int n4 = n2 / 2;
                     final int n5 = 9;
                     final int n6 = n5 / 2;
                     final int method16759 = this.field3781.field4643.method6617(method16757);
-                    final int method16760 = Class9546.method35644(Class9546.method35655(255.0, 75.0, (Class8349.method27837() - class5489.method27993()) / 3000.0f));
+                    final int method16760 = MathHelper.floor(MathHelper.method35655(255.0, 75.0, (Class8349.method27837() - class5489.method27993()) / 3000.0f));
                     final int n7 = method16760 << 16 | method16760 << 8 | method16760;
                     Class8726.method30059();
                     Class8726.method30065(this.field3781.method5332().method7696() - n4 * 1.0f - 2.0f, this.field3781.method5332().method7697() - 30 - n * (n5 + 1) * 1.0f, 0.0f);
@@ -96,11 +98,11 @@ public class Class686 extends Class565 implements Class687
                     if (!class6836.method27992().equals(method8461)) {
                         continue;
                     }
-                    class6836.method27995(new Class5487(class6834.method20929(), class6834.method20930(), class6834.method20931()));
+                    class6836.method27995(new Vec3d(class6834.method20929(), class6834.method20930(), class6834.method20931()));
                     return;
                 }
             }
-            this.field3782.add(new Class8395(this, method8461, new Class5487(class6834.method20929(), class6834.method20930(), class6834.method20931())));
+            this.field3782.add(new Class8395(this, method8461, new Vec3d(class6834.method20929(), class6834.method20930(), class6834.method20931())));
         }
     }
 }

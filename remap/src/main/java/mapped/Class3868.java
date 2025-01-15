@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 
 public class Class3868 extends Class3869 implements Class3867
@@ -17,17 +19,17 @@ public class Class3868 extends Class3869 implements Class3867
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3868.field17509;
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
-        return class7096.method21761(class7097, class7098, Class179.field512) && class7096.method21696() != Class7521.field29642;
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+        return class7096.method21761(class7097, class7098, Direction.UP) && class7096.method21696() != Class7521.field29642;
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
+    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
         return new Class8321(Class7521.field29244);
     }
     
@@ -47,7 +49,7 @@ public class Class3868 extends Class3869 implements Class3867
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         if (class7096.method21772(Class3868.field17508) != Class182.field564) {
             final Class7099 method6702 = class7097.method6702(class7098);
             if (super.method11843(class7096, class7097, class7098)) {
@@ -69,12 +71,12 @@ public class Class3868 extends Class3869 implements Class3867
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final Class7255 class1858) {
+    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final Class7255 class1858) {
         return false;
     }
     
     @Override
-    public boolean method11921(final Class1851 class1851, final Class354 class1852, final Class7096 class1853, final Class7099 class1854) {
+    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Class7099 class1854) {
         return false;
     }
     

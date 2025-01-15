@@ -5,29 +5,30 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.util.math.MathHelper;
 
-public final class Class9138
+public final class Vector3f
 {
-    public static Class9138 field38715;
-    public static Class9138 field38716;
-    public static Class9138 field38717;
-    public static Class9138 field38718;
-    public static Class9138 field38719;
-    public static Class9138 field38720;
+    public static Vector3f field38715;
+    public static Vector3f XP;
+    public static Vector3f field38717;
+    public static Vector3f field38718;
+    public static Vector3f field38719;
+    public static Vector3f ZP;
     private float field38721;
     private float field38722;
     private float field38723;
     
-    public Class9138() {
+    public Vector3f() {
     }
     
-    public Class9138(final float field38721, final float field38722, final float field38723) {
+    public Vector3f(final float field38721, final float field38722, final float field38723) {
         this.field38721 = field38721;
         this.field38722 = field38722;
         this.field38723 = field38723;
     }
     
-    public Class9138(final Class5487 class5487) {
+    public Vector3f(final Vec3d class5487) {
         this((float)class5487.field22770, (float)class5487.field22771, (float)class5487.field22772);
     }
     
@@ -37,7 +38,7 @@ public final class Class9138
             return true;
         }
         if (o != null && this.getClass() == o.getClass()) {
-            final Class9138 class9138 = (Class9138)o;
+            final Vector3f class9138 = (Vector3f)o;
             return Float.compare(class9138.field38721, this.field38721) == 0 && Float.compare(class9138.field38722, this.field38722) == 0 && Float.compare(class9138.field38723, this.field38723) == 0;
         }
         return false;
@@ -73,9 +74,9 @@ public final class Class9138
     }
     
     public void method33316(final float n, final float n2) {
-        this.field38721 = Class9546.method35653(this.field38721, n, n2);
-        this.field38722 = Class9546.method35653(this.field38722, n, n2);
-        this.field38723 = Class9546.method35653(this.field38723, n, n2);
+        this.field38721 = MathHelper.method35653(this.field38721, n, n2);
+        this.field38722 = MathHelper.method35653(this.field38722, n, n2);
+        this.field38723 = MathHelper.method35653(this.field38723, n, n2);
     }
     
     public void method33317(final float field38721, final float field38722, final float field38723) {
@@ -90,26 +91,26 @@ public final class Class9138
         this.field38723 += n3;
     }
     
-    public void method33319(final Class9138 class9138) {
+    public void method33319(final Vector3f class9138) {
         this.field38721 += class9138.field38721;
         this.field38722 += class9138.field38722;
         this.field38723 += class9138.field38723;
     }
     
-    public void method33320(final Class9138 class9138) {
+    public void method33320(final Vector3f class9138) {
         this.field38721 -= class9138.field38721;
         this.field38722 -= class9138.field38722;
         this.field38723 -= class9138.field38723;
     }
     
-    public float method33321(final Class9138 class9138) {
+    public float method33321(final Vector3f class9138) {
         return this.field38721 * class9138.field38721 + this.field38722 * class9138.field38722 + this.field38723 * class9138.field38723;
     }
     
     public boolean method33322() {
         final float n = this.field38721 * this.field38721 + this.field38722 * this.field38722 + this.field38723 * this.field38723;
         if (n >= 1.0E-5) {
-            final float method35694 = Class9546.method35694(n);
+            final float method35694 = MathHelper.method35694(n);
             this.field38721 *= method35694;
             this.field38722 *= method35694;
             this.field38723 *= method35694;
@@ -118,7 +119,7 @@ public final class Class9138
         return false;
     }
     
-    public void method33323(final Class9138 class9138) {
+    public void method33323(final Vector3f class9138) {
         final float field38721 = this.field38721;
         final float field38722 = this.field38722;
         final float field38723 = this.field38723;
@@ -139,32 +140,32 @@ public final class Class9138
         this.field38723 = class9429.field40448 * field38721 + class9429.field40449 * field38722 + class9429.field40450 * field38723;
     }
     
-    public void method33325(final Class9389 class9389) {
-        final Class9389 class9390 = new Class9389(class9389);
-        class9390.method34903(new Class9389(this.method33311(), this.method33312(), this.method33313(), 0.0f));
-        final Class9389 class9391 = new Class9389(class9389);
+    public void method33325(final Quaternion class9389) {
+        final Quaternion class9390 = new Quaternion(class9389);
+        class9390.multiply(new Quaternion(this.method33311(), this.method33312(), this.method33313(), 0.0f));
+        final Quaternion class9391 = new Quaternion(class9389);
         class9391.method34905();
-        class9390.method34903(class9391);
+        class9390.multiply(class9391);
         this.method33317(class9390.method34899(), class9390.method34900(), class9390.method34901());
     }
     
-    public void method33326(final Class9138 class9138, final float n) {
+    public void method33326(final Vector3f class9138, final float n) {
         final float n2 = 1.0f - n;
         this.field38721 = this.field38721 * n2 + class9138.field38721 * n;
         this.field38722 = this.field38722 * n2 + class9138.field38722 * n;
         this.field38723 = this.field38723 * n2 + class9138.field38723 * n;
     }
     
-    public Class9389 method33327(final float n) {
-        return new Class9389(this, n, false);
+    public Quaternion method33327(final float n) {
+        return new Quaternion(this, n, false);
     }
     
-    public Class9389 method33328(final float n) {
-        return new Class9389(this, n, true);
+    public Quaternion rotationDegrees(final float n) {
+        return new Quaternion(this, n, true);
     }
     
-    public Class9138 method33329() {
-        return new Class9138(this.field38721, this.field38722, this.field38723);
+    public Vector3f method33329() {
+        return new Vector3f(this.field38721, this.field38722, this.field38723);
     }
     
     public void method33330(final Float2FloatFunction float2FloatFunction) {
@@ -179,11 +180,11 @@ public final class Class9138
     }
     
     static {
-        Class9138.field38715 = new Class9138(-1.0f, 0.0f, 0.0f);
-        Class9138.field38716 = new Class9138(1.0f, 0.0f, 0.0f);
-        Class9138.field38717 = new Class9138(0.0f, -1.0f, 0.0f);
-        Class9138.field38718 = new Class9138(0.0f, 1.0f, 0.0f);
-        Class9138.field38719 = new Class9138(0.0f, 0.0f, -1.0f);
-        Class9138.field38720 = new Class9138(0.0f, 0.0f, 1.0f);
+        Vector3f.field38715 = new Vector3f(-1.0f, 0.0f, 0.0f);
+        Vector3f.XP = new Vector3f(1.0f, 0.0f, 0.0f);
+        Vector3f.field38717 = new Vector3f(0.0f, -1.0f, 0.0f);
+        Vector3f.field38718 = new Vector3f(0.0f, 1.0f, 0.0f);
+        Vector3f.field38719 = new Vector3f(0.0f, 0.0f, -1.0f);
+        Vector3f.ZP = new Vector3f(0.0f, 0.0f, 1.0f);
     }
 }

@@ -4,10 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class8443 implements Class8444
 {
     private static String[] field34699;
-    private Class399 field34700;
+    private Entity field34700;
     
     @Override
     public int method28177() {
@@ -15,7 +17,7 @@ public class Class8443 implements Class8444
     }
     
     @Override
-    public Class354 method28178() {
+    public BlockPos method28178() {
         return this.field34700.method1650().field38922;
     }
     
@@ -45,11 +47,11 @@ public class Class8443 implements Class8444
         return 0;
     }
     
-    public Class399 method28183() {
+    public Entity method28183() {
         return this.field34700;
     }
     
-    public void method28184(final Class399 field34700) {
+    public void method28184(final Entity field34700) {
         this.field34700 = field34700;
     }
 }

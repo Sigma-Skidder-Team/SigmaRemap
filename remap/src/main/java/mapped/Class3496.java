@@ -27,7 +27,7 @@ public class Class3496 extends Class3446
     
     @Override
     public boolean method11013() {
-        return this.field16445.method4152() == null && this.field16450.method6703() && this.field16445.method1804() && this.field16450.method6994(new Class354(this.field16445)) && this.field16445.method2718(Class2215.field13605).method27620() && this.method11059();
+        return this.field16445.method4152() == null && this.field16450.method6703() && this.field16445.method1804() && this.field16450.method6994(new BlockPos(this.field16445)) && this.field16445.method2718(Class2215.field13605).method27620() && this.method11059();
     }
     
     public boolean method11059() {
@@ -54,9 +54,9 @@ public class Class3496 extends Class3446
     @Nullable
     public Class5487 method11060() {
         final Random method2633 = this.field16445.method2633();
-        final Class354 class354 = new Class354(this.field16445);
+        final BlockPos class354 = new BlockPos(this.field16445);
         for (int i = 0; i < 10; ++i) {
-            final Class354 method2634 = class354.method1134(method2633.nextInt(20) - 10, method2633.nextInt(6) - 3, method2633.nextInt(20) - 10);
+            final BlockPos method2634 = class354.method1134(method2633.nextInt(20) - 10, method2633.nextInt(6) - 3, method2633.nextInt(20) - 10);
             if (!this.field16450.method6994(method2634) && this.field16445.method4345(method2634) < 0.0f) {
                 return new Class5487(method2634);
             }

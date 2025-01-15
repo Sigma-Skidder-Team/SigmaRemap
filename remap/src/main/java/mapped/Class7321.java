@@ -7,6 +7,8 @@ package mapped;
 import com.mojang.brigadier.context.CommandContext;
 import java.nio.file.OpenOption;
 import java.io.Reader;
+
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.io.IOUtils;
 import java.nio.file.Path;
 import java.io.IOException;
@@ -17,12 +19,10 @@ import java.util.function.Consumer;
 import java.util.Collection;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Optional;
-import java.util.Set;
 import java.util.Collections;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 
@@ -37,12 +37,12 @@ public class Class7321
             if (n2 <= 32) {
                 if (n3 <= 32) {
                     final Class1849 method23250 = class7492.method23250();
-                    final Class354 class7493 = new Class354(class7492.method23249());
-                    final Class354 class7494 = new Class354(class7493.method1074(), class7492.method23250().method6958(Class2020.field11522, class7493).method1075(), class7493.method1076() + 3);
-                    Class8787.method30575(s.toLowerCase(), class7494, new Class354(n, n2, n3), 2, method23250);
+                    final BlockPos class7493 = new BlockPos(class7492.method23249());
+                    final BlockPos class7494 = new BlockPos(class7493.getX(), class7492.method23250().method6958(Class2020.field11522, class7493).getY(), class7493.getZ() + 3);
+                    Class8787.method30575(s.toLowerCase(), class7494, new BlockPos(n, n2, n3), 2, method23250);
                     for (int i = 0; i < n; ++i) {
                         for (int j = 0; j < n3; ++j) {
-                            new Class118(Class7521.field29154.method11878(), Collections.EMPTY_SET, null).method610(method23250, new Class354(class7494.method1074() + i, class7494.method1075() + 1, class7494.method1076() + j), 2);
+                            new Class118(Class7521.field29154.method11878(), Collections.EMPTY_SET, null).method610(method23250, new BlockPos(class7494.getX() + i, class7494.getY() + 1, class7494.getZ() + j), 2);
                         }
                     }
                     Class8787.method30574(class7494.method1134(1, 0, -1), method23250);
@@ -54,18 +54,18 @@ public class Class7321
     }
     
     private static int method22441(final Class7492 class7492, final String str) throws CommandSyntaxException {
-        final Class354 method21447 = ((Class7005)class7492.method23253().method1748(10.0, 1.0f, false)).method21447();
+        final BlockPos method21447 = ((Class7005)class7492.method23253().method1748(10.0, 1.0f, false)).method21447();
         final Class1849 method21448 = class7492.method23250();
-        Optional<Class354> optional = Class8787.method30580(method21447, 15, method21448);
+        Optional<BlockPos> optional = Class8787.method30580(method21447, 15, method21448);
         if (!optional.isPresent()) {
             optional = Class8787.method30580(method21447, 200, method21448);
         }
         if (optional.isPresent()) {
             final Class501 class7493 = (Class501)method21448.method6727(optional.get());
-            final Class354 method21449 = method21447.method1136(optional.get());
-            final String string = method21449.method1074() + ", " + method21449.method1075() + ", " + method21449.method1076();
+            final BlockPos method21449 = method21447.method1136(optional.get());
+            final String string = method21449.getX() + ", " + method21449.getY() + ", " + method21449.getZ();
             class7492.method23257(new Class2260("Position relative to " + class7493.method2555() + ": ").method8458(new Class2260(string).method8455(new Class8768().method30414(true).method30413(Class2116.field12319).method30420(new Class9390(Class1961.field10697, new Class2260("Click to copy to clipboard"))).method30419(new Class9485(Class2075.field11976, "final BlockPos " + str + " = new BlockPos(" + string + ");")))), false);
-            Class9324.method34529(method21448, new Class354(method21447), string, -2147418368, 10000);
+            Class9324.method34529(method21448, new BlockPos(method21447), string, -2147418368, 10000);
             return 1;
         }
         class7492.method23259(new Class2260("Can't find a structure block that contains the targeted pos " + method21447));
@@ -73,9 +73,9 @@ public class Class7321
     }
     
     private static int method22442(final Class7492 class7492) {
-        final Class354 class7493 = new Class354(class7492.method23249());
+        final BlockPos class7493 = new BlockPos(class7492.method23249());
         final Class1849 method23250 = class7492.method23250();
-        final Class354 method23251 = Class8787.method30581(class7493, 15, method23250);
+        final BlockPos method23251 = Class8787.method30581(class7493, 15, method23250);
         if (method23251 != null) {
             Class6445.method19231(method23250);
             method22444(method23250, method23251, null);
@@ -86,9 +86,9 @@ public class Class7321
     }
     
     private static int method22443(final Class7492 class7492) {
-        final Class354 class7493 = new Class354(class7492.method23249());
+        final BlockPos class7493 = new BlockPos(class7492.method23249());
         final Class1849 method23250 = class7492.method23250();
-        final Collection<Class354> method23251 = Class8787.method30582(class7493, 200, method23250);
+        final Collection<BlockPos> method23251 = Class8787.method30582(class7493, 200, method23250);
         if (!method23251.isEmpty()) {
             Class6445.method19231(method23250);
             method22452(class7492, "Running " + method23251.size() + " tests...");
@@ -103,7 +103,7 @@ public class Class7321
         return 1;
     }
     
-    private static void method22444(final Class1849 class1849, final Class354 class1850, final Class7333 class1851) {
+    private static void method22444(final Class1849 class1849, final BlockPos class1850, final Class7333 class1851) {
         final Class6812 method31859 = Class8972.method31859(((Class501)class1849.method6727(class1850)).method2555());
         final Class9083 class1852 = new Class9083(method31859, class1850, class1849);
         if (class1851 != null) {
@@ -132,14 +132,14 @@ public class Class7321
     private static int method22446(final Class7492 class7492, final int n) {
         final Class1849 method23250 = class7492.method23250();
         Class6445.method19231(method23250);
-        Class6445.method19233(method23250, new Class354(class7492.method23249().field22770, class7492.method23250().method6958(Class2020.field11522, new Class354(class7492.method23249())).method1075(), class7492.method23249().field22772), Class8564.field35990, Class9546.method35651(n, 0, 1024));
+        Class6445.method19233(method23250, new BlockPos(class7492.method23249().field22770, class7492.method23250().method6958(Class2020.field11522, new BlockPos(class7492.method23249())).getY(), class7492.method23249().field22772), Class8564.field35990, MathHelper.method35651(n, 0, 1024));
         return 1;
     }
     
     private static int method22447(final Class7492 class7492, final Class6812 class7493) {
         final Class1849 method23250 = class7492.method23250();
-        final Class354 class7494 = new Class354(class7492.method23249());
-        final Class354 class7495 = new Class354(class7494.method1074(), class7492.method23250().method6958(Class2020.field11522, class7494).method1075(), class7494.method1076() + 3);
+        final BlockPos class7494 = new BlockPos(class7492.method23249());
+        final BlockPos class7495 = new BlockPos(class7494.getX(), class7492.method23250().method6958(Class2020.field11522, class7494).getY(), class7494.getZ() + 3);
         Class6445.method19231(method23250);
         method22448(class7493, method23250);
         Class6445.method19222(new Class9083(class7493, class7495, method23250), Class8564.field35990);
@@ -167,8 +167,8 @@ public class Class7321
     }
     
     private static void method22451(final Class7492 class7492, final Collection<Class6812> collection) {
-        final Class354 class7493 = new Class354(class7492.method23249());
-        final Class354 class7494 = new Class354(class7493.method1074(), class7492.method23250().method6958(Class2020.field11522, class7493).method1075(), class7493.method1076() + 3);
+        final BlockPos class7493 = new BlockPos(class7492.method23249());
+        final BlockPos class7494 = new BlockPos(class7493.getX(), class7492.method23250().method6958(Class2020.field11522, class7493).getY(), class7493.getZ() + 3);
         final Class1849 method23250 = class7492.method23250();
         method22452(class7492, "Running " + collection.size() + " tests...");
         final Class7333 class7495 = new Class7333(Class6445.method19224(collection, class7494, method23250, Class8564.field35990));

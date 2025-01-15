@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 
 public class Class3258 extends Class3247
@@ -18,16 +20,16 @@ public class Class3258 extends Class3247
     public void method10272(final Class5739 class5739) {
         if (this.method9906() && (Class3258.field15514.field4684.method1809() || !this.method9883("Sneak"))) {
             final Class7005 method13697 = Class4609.method13697(Class3258.field15514.field4684.field2399, Class3258.field15514.field4684.field2400, this.method9886("Maximum range"));
-            Class352 method13698 = null;
+            Vec3i method13698 = null;
             if (method13697 != null) {
                 method13698 = method13697.method21447();
             }
-            this.method10274(this.method10273(), method13698.method1074() + 0.5 - Class869.method5277().field4644.method5833().method18161().method16760(), method13698.method1075() + 1 - Class869.method5277().field4644.method5833().method18161().method16761(), method13698.method1076() + 0.5 - Class869.method5277().field4644.method5833().method18161().method16762());
+            this.method10274(this.method10273(), method13698.getX() + 0.5 - Class869.method5277().field4644.method5833().method18161().method16760(), method13698.getY() + 1 - Class869.method5277().field4644.method5833().method18161().method16761(), method13698.getZ() + 0.5 - Class869.method5277().field4644.method5833().method18161().method16762());
         }
     }
     
     private double method10273() {
-        return Class9546.method35638((float)Math.toRadians(90.0f - Class3258.field15514.field4684.field2400)) * 10.0f;
+        return MathHelper.sin((float)Math.toRadians(90.0f - Class3258.field15514.field4684.field2400)) * 10.0f;
     }
     
     private void method10274(final double n, final double n2, final double n3, final double n4) {

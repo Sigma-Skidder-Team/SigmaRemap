@@ -93,7 +93,7 @@ public class Class6953<T> implements Class6952<T>
     }
     
     @Override
-    public boolean method21342(final Class354 class354, final T t) {
+    public boolean method21342(final BlockPos class354, final T t) {
         return this.field27225.contains(new Class7460(class354, t));
     }
     
@@ -128,17 +128,17 @@ public class Class6953<T> implements Class6952<T>
         final Iterator<Class7460<T>> iterator = collection.iterator();
         while (iterator.hasNext()) {
             final Class7460 class6998 = iterator.next();
-            final Class354 field28774 = class6998.field28774;
-            if (field28774.method1074() < class6997.field27293) {
+            final BlockPos field28774 = class6998.field28774;
+            if (field28774.getX() < class6997.field27293) {
                 continue;
             }
-            if (field28774.method1074() >= class6997.field27296) {
+            if (field28774.getX() >= class6997.field27296) {
                 continue;
             }
-            if (field28774.method1076() < class6997.field27295) {
+            if (field28774.getZ() < class6997.field27295) {
                 continue;
             }
-            if (field28774.method1076() >= class6997.field27298) {
+            if (field28774.getZ() >= class6997.field27298) {
                 continue;
             }
             if (b) {
@@ -152,7 +152,7 @@ public class Class6953<T> implements Class6952<T>
         return arrayList;
     }
     
-    public void method21350(final Class6997 class6997, final Class354 class6998) {
+    public void method21350(final Class6997 class6997, final BlockPos class6998) {
         for (final Class7460 class6999 : this.method21348(class6997, false, false)) {
             if (!class6997.method21415(class6999.field28774)) {
                 continue;
@@ -170,9 +170,9 @@ public class Class6953<T> implements Class6952<T>
         for (final Class7460 class53 : iterable) {
             final Class51 e = new Class51();
             e.method306("i", function.apply((T)class53.method22980()).toString());
-            e.method298("x", class53.field28774.method1074());
-            e.method298("y", class53.field28774.method1075());
-            e.method298("z", class53.field28774.method1076());
+            e.method298("x", class53.field28774.getX());
+            e.method298("y", class53.field28774.getY());
+            e.method298("z", class53.field28774.getZ());
             e.method298("t", (int)(class53.field28775 - n));
             e.method298("p", class53.field28776.method7941());
             ((AbstractList<Class51>)class52).add(e);
@@ -181,12 +181,12 @@ public class Class6953<T> implements Class6952<T>
     }
     
     @Override
-    public boolean method21340(final Class354 class354, final T t) {
+    public boolean method21340(final BlockPos class354, final T t) {
         return this.field27222.contains(new Class7460(class354, t));
     }
     
     @Override
-    public void method21341(final Class354 class354, final T t, final int n, final Class1955 class355) {
+    public void method21341(final BlockPos class354, final T t, final int n, final Class1955 class355) {
         if (!this.field27219.test(t)) {
             this.method21353(new Class7460<T>(class354, t, n + this.field27224.method6754(), class355));
         }

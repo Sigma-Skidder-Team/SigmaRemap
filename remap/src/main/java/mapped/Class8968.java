@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class8968 implements Class8967
 {
     private static String[] field37678;
@@ -22,7 +25,7 @@ public class Class8968 implements Class8967
             return 0.0f;
         }
         final boolean b = class8322 != null;
-        final Class399 class8323 = b ? class8322 : class8321.method27679();
+        final Entity class8323 = b ? class8322 : class8321.method27679();
         if (field2391 == null) {
             field2391 = class8323.field2391;
         }
@@ -31,30 +34,30 @@ public class Class8968 implements Class8967
             n = Math.random();
         }
         else {
-            n = 0.5 - (Class9546.method35666((b ? class8323.field2399 : this.method31815((Class862)class8323)) / 360.0, 1.0) - 0.25 - this.method31816(field2391, class8323) / 6.2831854820251465);
+            n = 0.5 - (MathHelper.method35666((b ? class8323.field2399 : this.method31815((Class862)class8323)) / 360.0, 1.0) - 0.25 - this.method31816(field2391, class8323) / 6.2831854820251465);
         }
         if (b) {
             n = this.method31814(field2391, n);
         }
-        return Class9546.method35665((float)n, 1.0f);
+        return MathHelper.method35665((float)n, 1.0f);
     }
     
     private double method31814(final Class1847 class1847, final double n) {
         if (class1847.method6754() != this.field37681) {
             this.field37681 = class1847.method6754();
-            this.field37680 += (Class9546.method35666(n - this.field37679 + 0.5, 1.0) - 0.5) * 0.1;
+            this.field37680 += (MathHelper.method35666(n - this.field37679 + 0.5, 1.0) - 0.5) * 0.1;
             this.field37680 *= 0.8;
-            this.field37679 = Class9546.method35666(this.field37679 + this.field37680, 1.0);
+            this.field37679 = MathHelper.method35666(this.field37679 + this.field37680, 1.0);
         }
         return this.field37679;
     }
     
     private double method31815(final Class862 class862) {
-        return Class9546.method35667(180 + class862.method1882().method780() * 90);
+        return MathHelper.method35667(180 + class862.method1882().getHorizontalIndex() * 90);
     }
     
-    private double method31816(final Class1851 class1851, final Class399 class1852) {
-        final Class354 method6758 = class1851.method6758();
-        return Math.atan2(method6758.method1076() - class1852.method1945(), method6758.method1074() - class1852.method1938());
+    private double method31816(final Class1851 class1851, final Entity class1852) {
+        final BlockPos method6758 = class1851.method6758();
+        return Math.atan2(method6758.getZ() - class1852.method1945(), method6758.getX() - class1852.method1938());
     }
 }

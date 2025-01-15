@@ -4,10 +4,11 @@
 
 package mapped;
 
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.ListIterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class727 extends Class527
@@ -396,7 +397,7 @@ public class Class727 extends Class527
     }
     
     private int method4008(final String s, final int n) {
-        return (int)this.field3156.method6618(s.charAt(Class9546.method35651(n, 0, s.length() - 1)));
+        return (int)this.field3156.method6618(s.charAt(MathHelper.method35651(n, 0, s.length() - 1)));
     }
     
     private boolean method4009(final int n, final int n2, final int n3) {
@@ -440,7 +441,7 @@ public class Class727 extends Class527
             this.method4007();
         }
         final String method4010 = this.method4010();
-        this.field3967 = Class9546.method35651(this.field3967, 0, method4010.length());
+        this.field3967 = MathHelper.method35651(this.field3967, 0, method4010.length());
         final String string = new StringBuilder(method4010).insert(this.field3967, str).toString();
         if (this.field3156.method6624(string + "" + Class2116.field12309 + "_", 114) <= 128) {
             if (string.length() < 1024) {

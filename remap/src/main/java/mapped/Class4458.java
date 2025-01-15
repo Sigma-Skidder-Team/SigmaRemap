@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Comparator;
 
 public class Class4458 implements Comparator<Class8131>
@@ -17,8 +19,8 @@ public class Class4458 implements Comparator<Class8131>
     
     @Override
     public int compare(final Class8131 class8131, final Class8131 class8132) {
-        final Class399 method26798 = class8131.method26798();
-        final Class399 method26799 = class8132.method26798();
+        final Entity method26798 = class8131.method26798();
+        final Entity method26799 = class8132.method26798();
         final int n = (method26798 instanceof Class512) ? Class8639.method29348((Class512)method26798) : 0;
         final int n2 = (method26799 instanceof Class512) ? Class8639.method29348((Class512)method26799) : 0;
         if (n - n2 < 0) {

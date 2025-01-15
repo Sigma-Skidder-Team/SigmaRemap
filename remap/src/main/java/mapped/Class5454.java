@@ -45,8 +45,8 @@ public class Class5454 extends Class5419<Class787>
     
     private void method16643(final Class1849 class1849, final Class787 class1850, final Class511 class1851) {
         for (int i = 0; i < 10; ++i) {
-            final Class5487 method24902 = Class7775.method24902(class1850, 20, 8);
-            if (method24902 != null && class1849.method6922(new Class354(method24902))) {
+            final Vec3d method24902 = Class7775.method24902(class1850, 20, 8);
+            if (method24902 != null && class1849.method6922(new BlockPos(method24902))) {
                 class1850.method2618().method1196(Class8233.field33809, new Class6949(method24902, 0.6f, 0));
                 return;
             }

@@ -25,7 +25,7 @@ public class Class4108 extends Class4107
     
     @Nullable
     @Override
-    public Class9038 method12350(final Class1852 class1852, final Class354 class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
+    public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
         final Random method32858 = class1856.method32858(class1855.field38248);
         return (this.field18211 < 1.0f && method32858.nextFloat() > this.field18211) ? null : class1855;
     }

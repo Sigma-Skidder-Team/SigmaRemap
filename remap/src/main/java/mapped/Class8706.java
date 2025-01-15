@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Collection;
+import net.minecraft.entity.Entity;
+
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class Class8706
         }
     }
     
-    public boolean method29878(final Class399 class399) {
+    public boolean method29878(final Entity class399) {
         return this.field36582.contains(class399.method1841().method8459().toLowerCase());
     }
     
@@ -56,7 +57,7 @@ public class Class8706
         return this.field36582.contains(s.toLowerCase());
     }
     
-    public boolean method29880(final Class399 class399) {
+    public boolean method29880(final Entity class399) {
         return this.field36583.contains(class399.method1841().method8459().toLowerCase());
     }
     

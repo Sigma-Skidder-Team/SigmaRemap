@@ -15,6 +15,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6662 implements ArgumentType<Class8356>
 {
@@ -74,7 +75,7 @@ public class Class6662 implements ArgumentType<Class8356>
             case "/=": {
                 return (n17, n19) -> {
                     if (n19 != 0) {
-                        return Class9546.method35657(n17, n19);
+                        return MathHelper.method35657(n17, n19);
                     }
                     else {
                         throw Class6662.field26321.create();
@@ -84,7 +85,7 @@ public class Class6662 implements ArgumentType<Class8356>
             case "%=": {
                 return (n21, n23) -> {
                     if (n23 != 0) {
-                        return Class9546.method35664(n21, n23);
+                        return MathHelper.method35664(n21, n23);
                     }
                     else {
                         throw Class6662.field26321.create();

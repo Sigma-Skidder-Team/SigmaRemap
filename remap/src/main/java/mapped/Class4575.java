@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -65,7 +64,7 @@ public class Class4575 extends Class4574<Class5122>
     
     @Nullable
     @Override
-    public Class354 method13591(final Class1847 class1847, final Class6346<? extends Class7065> class1848, final Class354 class1849, final int n, final boolean b) {
+    public BlockPos method13591(final Class1847 class1847, final Class6346<? extends Class7065> class1848, final BlockPos class1849, final int n, final boolean b) {
         if (class1848.method18879().method7121(this)) {
             if (this.field20068 != class1847.method6753()) {
                 this.method13598();
@@ -74,7 +73,7 @@ public class Class4575 extends Class4574<Class5122>
                 this.method13599(class1848);
                 this.field20065 = true;
             }
-            Class354 class1850 = null;
+            BlockPos class1850 = null;
             final Class385 class1851 = new Class385();
             double n2 = Double.MAX_VALUE;
             for (final Class7859 class1852 : this.field20066) {
@@ -82,12 +81,12 @@ public class Class4575 extends Class4574<Class5122>
                 final double method1083 = class1851.method1083(class1849);
                 if (class1850 != null) {
                     if (method1083 < n2) {
-                        class1850 = new Class354(class1851);
+                        class1850 = new BlockPos(class1851);
                         n2 = method1083;
                     }
                 }
                 else {
-                    class1850 = new Class354(class1851);
+                    class1850 = new BlockPos(class1851);
                     n2 = method1083;
                 }
             }
@@ -130,10 +129,10 @@ public class Class4575 extends Class4574<Class5122>
                 final double n7 = 4 * method21569 + method21569 * n6 * 6 + (random.nextDouble() - 0.5) * method21569 * 2.5;
                 int n8 = (int)Math.round(Math.cos(n3) * n7);
                 int n9 = (int)Math.round(Math.sin(n3) * n7);
-                final Class354 method21571 = class6346.method18879().method7119((n8 << 4) + 8, class6346.method18853(), (n9 << 4) + 8, 112, arrayList, random);
+                final BlockPos method21571 = class6346.method18879().method7119((n8 << 4) + 8, class6346.method18853(), (n9 << 4) + 8, 112, arrayList, random);
                 if (method21571 != null) {
-                    n8 = method21571.method1074() >> 4;
-                    n9 = method21571.method1076() >> 4;
+                    n8 = method21571.getX() >> 4;
+                    n9 = method21571.getZ() >> 4;
                 }
                 if (i >= n4) {
                     this.field20066[i] = new Class7859(n8, n9);

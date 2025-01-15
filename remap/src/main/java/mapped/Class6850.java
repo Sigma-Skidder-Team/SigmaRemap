@@ -47,9 +47,9 @@ public class Class6850 extends Class6851<Class759>
                 else {
                     return false;
                 }
-            }, new Class354(class1850), 48, Class2045.field11652), Class8912.field37476.method31397());
+            }, new BlockPos(class1850), 48, Class2045.field11652), Class8912.field37476.method31397());
             if (method6922 != null && method6922.method35228()) {
-                final Class354 method6923 = method6922.method35232();
+                final BlockPos method6923 = method6922.method35232();
                 if (method6921.method7210(method6923).isPresent()) {
                     class1850.method2618().method1196(Class8233.field33816, method6923);
                 }

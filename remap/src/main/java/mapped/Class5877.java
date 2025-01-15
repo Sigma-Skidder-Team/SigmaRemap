@@ -5,8 +5,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
-public class Class5877<T extends Class399> extends Class5846<T>
+public class Class5877<T extends Entity> extends Class5846<T>
 {
     private static String[] field24089;
     private final Class6300 field24090;
@@ -57,6 +59,6 @@ public class Class5877<T extends Class399> extends Class5846<T>
             n6 = 1.3f;
             n7 = 1.7f;
         }
-        this.field24091.field25184 = -n6 * 0.25f * Class9546.method35638(n7 * 0.6f * n3);
+        this.field24091.field25184 = -n6 * 0.25f * MathHelper.sin(n7 * 0.6f * n3);
     }
 }

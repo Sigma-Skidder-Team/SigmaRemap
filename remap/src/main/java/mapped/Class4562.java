@@ -16,11 +16,11 @@ public class Class4562 extends Class4535<Class5141>
         super(function);
     }
     
-    public boolean method13542(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, Class354 class1853, final Class5141 class1854) {
-        while (class1853.method1075() > 5 && class1851.method6961(class1853)) {
+    public boolean method13542(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, BlockPos class1853, final Class5141 class1854) {
+        while (class1853.getY() > 5 && class1851.method6961(class1853)) {
             class1853 = class1853.method1139();
         }
-        if (class1853.method1075() <= 4) {
+        if (class1853.getY() <= 4) {
             return false;
         }
         class1853 = class1853.method1140(4);
@@ -105,7 +105,7 @@ public class Class4562 extends Class4535<Class5141>
                 for (int n18 = 0; n18 < 16; ++n18) {
                     for (int n19 = 4; n19 < 8; ++n19) {
                         if (array[(n17 * 16 + n18) * 8 + n19]) {
-                            final Class354 method21698 = class1853.method1134(n17, n19 - 1, n18);
+                            final BlockPos method21698 = class1853.method1134(n17, n19 - 1, n18);
                             if (Class4535.method13533(class1851.method6701(method21698).method21696())) {
                                 if (class1851.method6992(Class237.field911, class1853.method1134(n17, n19, n18)) > 0) {
                                     if (class1851.method6959(method21698).method9872().method13338().method21696() != Class7521.field29392) {
@@ -164,7 +164,7 @@ public class Class4562 extends Class4535<Class5141>
             if (class1854.field22127.method21697() == Class8059.field33161) {
                 for (int n23 = 0; n23 < 16; ++n23) {
                     for (int n24 = 0; n24 < 16; ++n24) {
-                        final Class354 method21699 = class1853.method1134(n23, 4, n24);
+                        final BlockPos method21699 = class1853.method1134(n23, 4, n24);
                         if (class1851.method6959(method21699).method9847(class1851, method21699, false)) {
                             class1851.method6688(method21699, Class7521.field29330.method11878(), 2);
                         }

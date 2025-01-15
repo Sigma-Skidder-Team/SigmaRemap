@@ -5,9 +5,10 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
-import java.util.function.Predicate;
 import java.util.Map;
 
 public class Class800 extends Class794
@@ -197,7 +198,7 @@ public class Class800 extends Class794
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         return class399.method1740(Class7929.method25693(this), this.method4616());
     }
     
@@ -250,15 +251,15 @@ public class Class800 extends Class794
     }
     
     public float method4620(final float n) {
-        return Class9546.method35700(n, this.field4294, this.field4293);
+        return MathHelper.method35700(n, this.field4294, this.field4293);
     }
     
     public float method4621(final float n) {
-        return Class9546.method35700(n, this.field4296, this.field4295);
+        return MathHelper.method35700(n, this.field4296, this.field4295);
     }
     
     public float method4622(final float n) {
-        return Class9546.method35700(n, this.field4298, this.field4297);
+        return MathHelper.method35700(n, this.field4298, this.field4297);
     }
     
     public Class800 method4623(final Class788 class788) {
@@ -299,7 +300,7 @@ public class Class800 extends Class794
         else {
             this.method4608(this.field2423.nextInt(11));
         }
-        if (Class4535.field19965.method13590(class1851, new Class354(this))) {
+        if (Class4535.field19965.method13590(class1851, new BlockPos(this))) {
             this.method4608(10);
             this.method4190();
         }

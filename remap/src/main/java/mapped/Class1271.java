@@ -4,15 +4,17 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3i;
+
 public class Class1271 implements Runnable
 {
     public final /* synthetic */ Class4935 field6938;
     public final /* synthetic */ int field6939;
     public final /* synthetic */ int field6940;
-    public final /* synthetic */ Class352 field6941;
+    public final /* synthetic */ Vec3i field6941;
     public final /* synthetic */ Class4935 field6942;
     
-    public Class1271(final Class4935 field6942, final Class4935 field6943, final int field6944, final int field6945, final Class352 field6946) {
+    public Class1271(final Class4935 field6942, final Class4935 field6943, final int field6944, final int field6945, final Vec3i field6946) {
         this.field6942 = field6942;
         this.field6938 = field6943;
         this.field6939 = field6944;

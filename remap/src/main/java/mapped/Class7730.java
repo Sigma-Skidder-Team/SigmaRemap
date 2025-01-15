@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7730 extends Class7727
 {
     private static String[] field30741;
@@ -27,7 +29,7 @@ public class Class7730 extends Class7727
             this.field30732.field2953 = this.method24677(this.field30732.field2953, this.method24676() + 20.0f, this.field30733);
             this.field30732.field2400 = this.method24677(this.field30732.field2400, this.method24675() + 10.0f, this.field30734);
         }
-        final float method35668 = Class9546.method35668(this.field30732.field2953 - this.field30732.field2951);
+        final float method35668 = MathHelper.method35668(this.field30732.field2953 - this.field30732.field2951);
         if (method35668 >= -this.field30742) {
             if (method35668 > this.field30742) {
                 final Class759 field30732 = this.field30732;

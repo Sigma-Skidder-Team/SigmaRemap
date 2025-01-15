@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 
 public class Class7075
@@ -27,15 +29,15 @@ public class Class7075
         this.field27554 = field27554;
     }
     
-    public Class354 method21639() {
+    public BlockPos method21639() {
         return this.field27553.method21447();
     }
     
-    public Class179 method21648() {
+    public Direction method21648() {
         return this.field27553.method21448();
     }
     
-    public Class5487 method21649() {
+    public Vec3d method21649() {
         return this.field27553.method21451();
     }
     
@@ -60,8 +62,8 @@ public class Class7075
         return this.field27554;
     }
     
-    public Class179 method21644() {
-        return (this.field27551 != null) ? this.field27551.method1882() : Class179.field513;
+    public Direction method21644() {
+        return (this.field27551 != null) ? this.field27551.method1882() : Direction.NORTH;
     }
     
     public boolean method21645() {

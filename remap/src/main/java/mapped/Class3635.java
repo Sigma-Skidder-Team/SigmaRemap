@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
@@ -37,7 +39,7 @@ public class Class3635 extends Class3634
         }
         if (this.method11013()) {
             if (this.field16871.field2424 % 20 == 0) {
-                final List<Class399> method4153 = this.field16871.field2391.method6739((Class<? extends Class399>)Class800.class, this.field16871.method1886().method18496(16.0), (Predicate<? super Class399>)Class9170.field38845);
+                final List<Entity> method4153 = this.field16871.field2391.method6739((Class<? extends Entity>)Class800.class, this.field16871.method1886().method18496(16.0), (Predicate<? super Entity>)Class9170.field38845);
                 if (!method4153.isEmpty()) {
                     final Iterator iterator = method4153.iterator();
                     while (iterator.hasNext()) {
@@ -73,7 +75,7 @@ public class Class3635 extends Class3634
         else {
             this.field16871.method2734(method4152);
             Class851.method5103(this.field16871, Class2129.field12430);
-            this.field16871.field2391.method6955(1039, new Class354(this.field16871), 0);
+            this.field16871.field2391.method6955(1039, new BlockPos(this.field16871), 0);
         }
     }
 }

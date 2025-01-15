@@ -65,7 +65,7 @@ public class Class848 extends Class763
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35563, 0.15f, 1.0f);
     }
     
@@ -94,12 +94,12 @@ public class Class848 extends Class763
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         return Class3979.method12123(class355.method6701(class354.method1139())) ? 10.0f : super.method4228(class354, class355);
     }
     
-    public static boolean method5070(final Class7499<Class848> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
-        return Class763.method4231(class7499, class7500, class7501, class7502, random) && class7500.method7132(class7502.method1074() + 0.5, class7502.method1075() + 0.5, class7502.method1076() + 0.5, 5.0, true) == null;
+    public static boolean method5070(final Class7499<Class848> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+        return Class763.method4231(class7499, class7500, class7501, class7502, random) && class7500.method7132(class7502.getX() + 0.5, class7502.getY() + 0.5, class7502.getZ() + 0.5, 5.0, true) == null;
     }
     
     @Override

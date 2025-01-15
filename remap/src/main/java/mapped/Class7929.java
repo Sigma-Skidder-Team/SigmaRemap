@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class7929
@@ -49,7 +51,7 @@ public class Class7929
         return new Class7930("mob", class511);
     }
     
-    public static Class7929 method25694(final Class399 class399, final Class511 class400) {
+    public static Class7929 method25694(final Entity class399, final Class511 class400) {
         return new Class7931("mob", class399, class400);
     }
     
@@ -57,27 +59,27 @@ public class Class7929
         return new Class7930("player", class512);
     }
     
-    public static Class7929 method25696(final Class402 class402, final Class399 class403) {
+    public static Class7929 method25696(final Class402 class402, final Entity class403) {
         return new Class7931("arrow", class402, class403).method25706();
     }
     
-    public static Class7929 method25697(final Class399 class399, final Class399 class400) {
+    public static Class7929 method25697(final Entity class399, final Entity class400) {
         return new Class7931("trident", class399, class400).method25706();
     }
     
-    public static Class7929 method25698(final Class419 class419, final Class399 class420) {
+    public static Class7929 method25698(final Class419 class419, final Entity class420) {
         return (class420 != null) ? new Class7931("fireball", class419, class420).method25718().method25706() : new Class7931("onFire", class419, class419).method25718().method25706();
     }
     
-    public static Class7929 method25699(final Class399 class399, final Class399 class400) {
+    public static Class7929 method25699(final Entity class399, final Entity class400) {
         return new Class7931("thrown", class399, class400).method25706();
     }
     
-    public static Class7929 method25700(final Class399 class399, final Class399 class400) {
+    public static Class7929 method25700(final Entity class399, final Entity class400) {
         return new Class7931("indirectMagic", class399, class400).method25715().method25724();
     }
     
-    public static Class7929 method25701(final Class399 class399) {
+    public static Class7929 method25701(final Entity class399) {
         return new Class7930("thorns", class399).method25727().method25724();
     }
     
@@ -133,12 +135,12 @@ public class Class7929
     }
     
     @Nullable
-    public Class399 method25713() {
+    public Entity method25713() {
         return this.method25714();
     }
     
     @Nullable
-    public Class399 method25714() {
+    public Entity method25714() {
         return null;
     }
     
@@ -198,12 +200,12 @@ public class Class7929
     }
     
     public boolean method25725() {
-        final Class399 method25714 = this.method25714();
+        final Entity method25714 = this.method25714();
         return method25714 instanceof Class512 && ((Class512)method25714).field3025.field27304;
     }
     
     @Nullable
-    public Class5487 method25726() {
+    public Vec3d method25726() {
         return null;
     }
     

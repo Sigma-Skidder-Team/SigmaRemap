@@ -7,6 +7,8 @@ package mapped;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public class Class572 extends Class565
@@ -87,8 +89,8 @@ public class Class572 extends Class565
         else {
             this.field3403.method5290().method5849(method22530);
         }
-        final int method22531 = Class9546.method35644(this.field3413);
-        final int method22532 = Class9546.method35644(this.field3414);
+        final int method22531 = MathHelper.floor(this.field3413);
+        final int method22532 = MathHelper.floor(this.field3414);
         final int n = method22531 % 16;
         final int n2 = method22532 % 16;
         for (int i = -1; i <= 15; ++i) {
@@ -112,10 +114,10 @@ public class Class572 extends Class565
     public void method3342(final int n, final int n2, final int n3, final int n4) {
         Class8726.method30059();
         Class8726.method30065(0.0f, 0.0f, 200.0f);
-        Class565.method3293(0, 0, 234, 113, Class9546.method35642(this.field3419 * 255.0f) << 24);
+        Class565.method3293(0, 0, 234, 113, MathHelper.method35642(this.field3419 * 255.0f) << 24);
         int n5 = 0;
-        final int method35644 = Class9546.method35644(this.field3413);
-        final int method35645 = Class9546.method35644(this.field3414);
+        final int method35644 = MathHelper.floor(this.field3413);
+        final int method35645 = MathHelper.floor(this.field3414);
         if (n > 0) {
             if (n < 234) {
                 if (n2 > 0) {
@@ -134,10 +136,10 @@ public class Class572 extends Class565
         }
         Class8726.method30060();
         if (n5 == 0) {
-            this.field3419 = Class9546.method35653(this.field3419 - 0.04f, 0.0f, 1.0f);
+            this.field3419 = MathHelper.method35653(this.field3419 - 0.04f, 0.0f, 1.0f);
         }
         else {
-            this.field3419 = Class9546.method35653(this.field3419 + 0.02f, 0.0f, 0.3f);
+            this.field3419 = MathHelper.method35653(this.field3419 + 0.02f, 0.0f, 0.3f);
         }
     }
     
@@ -161,10 +163,10 @@ public class Class572 extends Class565
     
     public void method3345(final double n, final double n2) {
         if (this.field3417 - this.field3415 > 234) {
-            this.field3413 = Class9546.method35654(this.field3413 + n, -(this.field3417 - 234), 0.0);
+            this.field3413 = MathHelper.method35654(this.field3413 + n, -(this.field3417 - 234), 0.0);
         }
         if (this.field3418 - this.field3416 > 113) {
-            this.field3414 = Class9546.method35654(this.field3414 + n2, -(this.field3418 - 113), 0.0);
+            this.field3414 = MathHelper.method35654(this.field3414 + n2, -(this.field3418 - 113), 0.0);
         }
     }
     

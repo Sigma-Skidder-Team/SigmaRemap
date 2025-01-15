@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.BitSet;
 
 public class Class9436
@@ -43,8 +45,8 @@ public class Class9436
         this.field40464[3] = 1.0f;
     }
     
-    public void method35062(final Class1856 class1856, final Class7096 class1857, final Class354 class1858, final Class179 class1859, final float[] array, final BitSet set) {
-        final Class354 class1860 = set.get(0) ? class1858.method1149(class1859) : class1858;
+    public void method35062(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final float[] array, final BitSet set) {
+        final BlockPos class1860 = set.get(0) ? class1858.method1149(class1859) : class1858;
         final Class1973 method7975 = Class1973.method7975(class1859);
         final Class384 field40466 = this.field40466;
         Class9144.method33372();

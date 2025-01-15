@@ -14,13 +14,13 @@ public abstract class Class436
     private static final Logger field2654;
     private final Class5412<?> field2655;
     public Class1847 field2656;
-    public Class354 field2657;
+    public BlockPos field2657;
     public boolean field2658;
     private Class7096 field2659;
     private boolean field2660;
     
     public Class436(final Class5412<?> field2655) {
-        this.field2657 = Class354.field2173;
+        this.field2657 = BlockPos.ZERO;
         this.field2655 = field2655;
     }
     
@@ -29,7 +29,7 @@ public abstract class Class436
         return this.field2656;
     }
     
-    public void method2187(final Class1847 field2656, final Class354 class354) {
+    public void method2187(final Class1847 field2656, final BlockPos class354) {
         this.field2656 = field2656;
         this.field2657 = class354.method1153();
     }
@@ -39,7 +39,7 @@ public abstract class Class436
     }
     
     public void method2179(final Class51 class51) {
-        this.field2657 = new Class354(class51.method319("x"), class51.method319("y"), class51.method319("z"));
+        this.field2657 = new BlockPos(class51.method319("x"), class51.method319("y"), class51.method319("z"));
     }
     
     public Class51 method2180(final Class51 class51) {
@@ -50,9 +50,9 @@ public abstract class Class436
         final Class1932 method16520 = Class5412.method16520(this.method2206());
         if (method16520 != null) {
             class51.method306("id", method16520.toString());
-            class51.method298("x", this.field2657.method1074());
-            class51.method298("y", this.field2657.method1075());
-            class51.method298("z", this.field2657.method1076());
+            class51.method298("x", this.field2657.getX());
+            class51.method298("y", this.field2657.getY());
+            class51.method298("z", this.field2657.getZ());
             return class51;
         }
         throw new RuntimeException(this.getClass() + " is missing a mapping! This is a bug!");
@@ -94,9 +94,9 @@ public abstract class Class436
     }
     
     public double method2191(final double n, final double n2, final double n3) {
-        final double n4 = this.field2657.method1074() + 0.5 - n;
-        final double n5 = this.field2657.method1075() + 0.5 - n2;
-        final double n6 = this.field2657.method1076() + 0.5 - n3;
+        final double n4 = this.field2657.getX() + 0.5 - n;
+        final double n5 = this.field2657.getY() + 0.5 - n2;
+        final double n6 = this.field2657.getZ() + 0.5 - n3;
         return n4 * n4 + n5 * n5 + n6 * n6;
     }
     
@@ -104,7 +104,7 @@ public abstract class Class436
         return 4096.0;
     }
     
-    public Class354 method2193() {
+    public BlockPos method2193() {
         return this.field2657;
     }
     
@@ -152,7 +152,7 @@ public abstract class Class436
         }
     }
     
-    public void method2203(final Class354 class354) {
+    public void method2203(final BlockPos class354) {
         this.field2657 = class354.method1153();
     }
     

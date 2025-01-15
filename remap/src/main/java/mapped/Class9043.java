@@ -10,6 +10,8 @@ import java.util.Iterator;
 import java.util.Collections;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.entity.Entity;
+
 import java.util.UUID;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -22,18 +24,18 @@ public class Class9043
     private final int field38270;
     private final boolean field38271;
     private final boolean field38272;
-    private final Predicate<Class399> field38273;
+    private final Predicate<Entity> field38273;
     private final Class8683 field38274;
-    private final Function<Class5487, Class5487> field38275;
+    private final Function<Vec3d, Vec3d> field38275;
     private final Class6221 field38276;
-    private final BiConsumer<Class5487, List<? extends Class399>> field38277;
+    private final BiConsumer<Vec3d, List<? extends Entity>> field38277;
     private final boolean field38278;
     private final String field38279;
     private final UUID field38280;
     private final Class7499<?> field38281;
     private final boolean field38282;
     
-    public Class9043(final int field38270, final boolean field38271, final boolean field38272, final Predicate<Class399> field38273, final Class8683 field38274, final Function<Class5487, Class5487> field38275, final Class6221 field38276, final BiConsumer<Class5487, List<? extends Class399>> field38277, final boolean field38278, final String field38279, final UUID field38280, final Class7499<?> field38281, final boolean field38282) {
+    public Class9043(final int field38270, final boolean field38271, final boolean field38272, final Predicate<Entity> field38273, final Class8683 field38274, final Function<Vec3d, Vec3d> field38275, final Class6221 field38276, final BiConsumer<Vec3d, List<? extends Entity>> field38277, final boolean field38278, final String field38279, final UUID field38280, final Class7499<?> field38281, final boolean field38282) {
         this.field38270 = field38270;
         this.field38271 = field38271;
         this.field38272 = field38272;
@@ -71,40 +73,40 @@ public class Class9043
         }
     }
     
-    public Class399 method32510(final Class7492 class7492) throws CommandSyntaxException {
+    public Entity method32510(final Class7492 class7492) throws CommandSyntaxException {
         this.method32509(class7492);
-        final List<? extends Class399> method32511 = this.method32511(class7492);
+        final List<? extends Entity> method32511 = this.method32511(class7492);
         if (method32511.isEmpty()) {
             throw Class6886.field27004.create();
         }
         if (method32511.size() <= 1) {
-            return (Class399)method32511.get(0);
+            return (Entity)method32511.get(0);
         }
         throw Class6886.field27001.create();
     }
     
-    public List<? extends Class399> method32511(final Class7492 class7492) throws CommandSyntaxException {
+    public List<? extends Entity> method32511(final Class7492 class7492) throws CommandSyntaxException {
         this.method32509(class7492);
         if (!this.field38271) {
             return this.method32514(class7492);
         }
         if (this.field38279 != null) {
             final Class513 method20598 = class7492.method23255().method1537().method20598(this.field38279);
-            return (List<? extends Class399>)((method20598 != null) ? Lists.newArrayList((Object[])new Class513[] { method20598 }) : Collections.emptyList());
+            return (List<? extends Entity>)((method20598 != null) ? Lists.newArrayList((Object[])new Class513[] { method20598 }) : Collections.emptyList());
         }
         if (this.field38280 != null) {
             final Iterator<Class1849> iterator = class7492.method23255().method1482().iterator();
             while (iterator.hasNext()) {
-                final Class399 method20599 = iterator.next().method6914(this.field38280);
+                final Entity method20599 = iterator.next().method6914(this.field38280);
                 if (method20599 == null) {
                     continue;
                 }
-                return Lists.newArrayList((Object[])new Class399[] { method20599 });
+                return Lists.newArrayList((Object[])new Entity[] { method20599 });
             }
             return Collections.emptyList();
         }
-        final Class5487 class7493 = this.field38275.apply(class7492.method23249());
-        final Predicate<Class399> method20600 = this.method32515(class7493);
+        final Vec3d class7493 = this.field38275.apply(class7492.method23249());
+        final Predicate<Entity> method20600 = this.method32515(class7493);
         if (!this.field38278) {
             final ArrayList arrayList = Lists.newArrayList();
             if (!this.method32508()) {
@@ -116,17 +118,17 @@ public class Class9043
             else {
                 this.method32512(arrayList, class7492.method23250(), class7493, method20600);
             }
-            return this.method32516(class7493, (List<? extends Class399>)arrayList);
+            return this.method32516(class7493, (List<? extends Entity>)arrayList);
         }
-        return (List<? extends Class399>)((class7492.method23251() != null && method20600.test(class7492.method23251())) ? Lists.newArrayList((Object[])new Class399[] { class7492.method23251() }) : Collections.emptyList());
+        return (List<? extends Entity>)((class7492.method23251() != null && method20600.test(class7492.method23251())) ? Lists.newArrayList((Object[])new Entity[] { class7492.method23251() }) : Collections.emptyList());
     }
     
-    private void method32512(final List<Class399> list, final Class1849 class1849, final Class5487 class1850, final Predicate<Class399> predicate) {
+    private void method32512(final List<Entity> list, final Class1849 class1849, final Vec3d class1850, final Predicate<Entity> predicate) {
         if (this.field38276 == null) {
             list.addAll(class1849.method6881(this.field38281, predicate));
         }
         else {
-            list.addAll((Collection<? extends Class399>)class1849.method6738(this.field38281, this.field38276.method18501(class1850), predicate));
+            list.addAll((Collection<? extends Entity>)class1849.method6738(this.field38281, this.field38276.method18501(class1850), predicate));
         }
     }
     
@@ -149,8 +151,8 @@ public class Class9043
             final Class513 method20599 = class7492.method23255().method1537().method20624(this.field38280);
             return (List<Class513>)((method20599 != null) ? Lists.newArrayList((Object[])new Class513[] { method20599 }) : Collections.emptyList());
         }
-        final Class5487 class7493 = this.field38275.apply(class7492.method23249());
-        final Predicate<Class399> method20600 = this.method32515(class7493);
+        final Vec3d class7493 = this.field38275.apply(class7492.method23249());
+        final Predicate<Entity> method20600 = this.method32515(class7493);
         if (!this.field38278) {
             List<Class513> list;
             if (!this.method32508()) {
@@ -176,8 +178,8 @@ public class Class9043
         return Collections.emptyList();
     }
     
-    private Predicate<Class399> method32515(final Class5487 class5487) {
-        Predicate<Class399> predicate = this.field38273;
+    private Predicate<Entity> method32515(final Vec3d class5487) {
+        Predicate<Entity> predicate = this.field38273;
         if (this.field38276 != null) {
             predicate = predicate.and(class5490 -> {
                 this.field38276.method18501(class5489);
@@ -190,14 +192,14 @@ public class Class9043
         return predicate;
     }
     
-    private <T extends Class399> List<T> method32516(final Class5487 class5487, final List<T> list) {
+    private <T extends Entity> List<T> method32516(final Vec3d class5487, final List<T> list) {
         if (list.size() > 1) {
             this.field38277.accept(class5487, list);
         }
         return list.subList(0, Math.min(this.field38270, list.size()));
     }
     
-    public static Class2250 method32517(final List<? extends Class399> list) {
-        return Class9479.method35298((Collection<Object>)list, Class399::method1871);
+    public static Class2250 method32517(final List<? extends Entity> list) {
+        return Class9479.method35298((Collection<Object>)list, Entity::method1871);
     }
 }

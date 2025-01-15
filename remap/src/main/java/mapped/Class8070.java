@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8070 extends Class8071
 {
     private boolean field33242;
@@ -70,7 +72,7 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public void method26478(final Class354 class354, final Class2003 class355, final Class179 class356, final int n) {
+    public void method26478(final BlockPos class354, final Class2003 class355, final Direction class356, final int n) {
         if (!this.field33243) {
             super.method26478(class354, class355, class356, n);
         }

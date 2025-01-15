@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class4780 extends Class4703<Class861>
 {
     private static String[] field20409;
@@ -14,7 +17,7 @@ public class Class4780 extends Class4703<Class861>
     
     public void method14140(final Class861 class861, final float n, final float n2, final Class7351 class862, final Class7807 class863, final int n3) {
         class862.method22567();
-        class862.method22566(Class9138.field38718.method33328(180.0f - n));
+        class862.method22566(Vector3f.field38718.rotationDegrees(180.0f - n));
         final Class8539 field4601 = class861.field4601;
         class862.method22565(0.0625f, 0.0625f, 0.0625f);
         final Class4150 method25214 = class863.method25214(Class6332.method18767(this.method14141(class861)));
@@ -56,23 +59,23 @@ public class Class4780 extends Class4703<Class861>
                 final float n10 = n3 + i * 16;
                 final float n11 = n4 + (j + 1) * 16;
                 final float n12 = n4 + j * 16;
-                int n13 = Class9546.method35644(class7353.method1938());
-                final int method22584 = Class9546.method35644(class7353.method1941() + (n11 + n12) / 2.0f / 16.0f);
-                int n14 = Class9546.method35644(class7353.method1945());
-                final Class179 method22585 = class7353.method1882();
-                if (method22585 == Class179.field513) {
-                    n13 = Class9546.method35644(class7353.method1938() + (n9 + n10) / 2.0f / 16.0f);
+                int n13 = MathHelper.floor(class7353.method1938());
+                final int method22584 = MathHelper.floor(class7353.method1941() + (n11 + n12) / 2.0f / 16.0f);
+                int n14 = MathHelper.floor(class7353.method1945());
+                final Direction method22585 = class7353.method1882();
+                if (method22585 == Direction.NORTH) {
+                    n13 = MathHelper.floor(class7353.method1938() + (n9 + n10) / 2.0f / 16.0f);
                 }
-                if (method22585 == Class179.field515) {
-                    n14 = Class9546.method35644(class7353.method1945() - (n9 + n10) / 2.0f / 16.0f);
+                if (method22585 == Direction.WEST) {
+                    n14 = MathHelper.floor(class7353.method1945() - (n9 + n10) / 2.0f / 16.0f);
                 }
-                if (method22585 == Class179.field514) {
-                    n13 = Class9546.method35644(class7353.method1938() - (n9 + n10) / 2.0f / 16.0f);
+                if (method22585 == Direction.SOUTH) {
+                    n13 = MathHelper.floor(class7353.method1938() - (n9 + n10) / 2.0f / 16.0f);
                 }
-                if (method22585 == Class179.field516) {
-                    n14 = Class9546.method35644(class7353.method1945() + (n9 + n10) / 2.0f / 16.0f);
+                if (method22585 == Direction.EAST) {
+                    n14 = MathHelper.floor(class7353.method1945() + (n9 + n10) / 2.0f / 16.0f);
                 }
-                final int method22586 = Class1656.method5776(class7353.field2391, new Class354(n13, method22584, n14));
+                final int method22586 = Class1656.method5776(class7353.field2391, new BlockPos(n13, method22584, n14));
                 final float method22587 = class7354.method7499(n7 * (n5 - i));
                 final float method22588 = class7354.method7499(n7 * (n5 - (i + 1)));
                 final float method22589 = class7354.method7502(n8 * (n6 - j));

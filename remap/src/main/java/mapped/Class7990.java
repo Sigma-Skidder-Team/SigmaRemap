@@ -11,13 +11,13 @@ public class Class7990
 {
     private static String[] field32893;
     private final Class1852 field32894;
-    private final Class354 field32895;
+    private final BlockPos field32895;
     private final boolean field32896;
     private Class7096 field32897;
     private Class436 field32898;
     private boolean field32899;
     
-    public Class7990(final Class1852 field32894, final Class354 class354, final boolean field32895) {
+    public Class7990(final Class1852 field32894, final BlockPos class354, final boolean field32895) {
         this.field32894 = field32894;
         this.field32895 = class354.method1153();
         this.field32896 = field32895;
@@ -47,7 +47,7 @@ public class Class7990
         return this.field32894;
     }
     
-    public Class354 method26068() {
+    public BlockPos method26068() {
         return this.field32895;
     }
     

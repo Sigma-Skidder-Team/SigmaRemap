@@ -17,11 +17,11 @@ public class Class1833 extends Class1799<Class850, Class5868<Class850>>
         if (method5080 != null) {
             class7351.method22567();
             class7351.method22564(0.0, 0.6875, -0.75);
-            class7351.method22566(Class9138.field38716.method33328(20.0f));
-            class7351.method22566(Class9138.field38718.method33328(45.0f));
+            class7351.method22566(Vector3f.XP.rotationDegrees(20.0f));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(45.0f));
             class7351.method22564(0.25, 0.1875, 0.25);
             class7351.method22565(-0.5f, -0.5f, 0.5f);
-            class7351.method22566(Class9138.field38718.method33328(90.0f));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(90.0f));
             Class869.method5277().method5305().method5795(method5080, class7351, class7352, n, Class1904.field10335);
             class7351.method22568();
         }

@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5922<T extends Class799> extends Class5921<T>
 {
@@ -56,7 +57,7 @@ public class Class5922<T extends Class799> extends Class5921<T>
     
     public void method17792(final T t, final float n, final float n2, final float n3) {
         if (!t.method4597()) {
-            this.field24332.field25184 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
+            this.field24332.field25184 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
         }
         else {
             this.field24332.field25184 = 0.0f;
@@ -71,10 +72,10 @@ public class Class5922<T extends Class799> extends Class5921<T>
             this.field24329.method18642(0.5f, 16.0f, 7.0f);
             this.field24330.method18642(-2.5f, 16.0f, -4.0f);
             this.field24331.method18642(0.5f, 16.0f, -4.0f);
-            this.field24328.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
-            this.field24329.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-            this.field24330.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-            this.field24331.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
+            this.field24328.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
+            this.field24329.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+            this.field24330.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+            this.field24331.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
         }
         else {
             this.field24334.method18642(-1.0f, 16.0f, -3.0f);

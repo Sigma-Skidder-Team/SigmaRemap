@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.authlib.GameProfile;
 import java.util.function.BooleanSupplier;
@@ -346,7 +347,7 @@ public class Class395 extends Class394 implements Class396
     }
     
     @Override
-    public boolean method1549(final Class1847 class1847, final Class354 class1848, final Class512 class1849) {
+    public boolean method1549(final Class1847 class1847, final BlockPos class1848, final Class512 class1849) {
         if (class1847.field10063.method20487() != Class383.field2223) {
             return false;
         }
@@ -357,8 +358,8 @@ public class Class395 extends Class394 implements Class396
             return false;
         }
         if (this.method1548() > 0) {
-            final Class354 method6758 = class1847.method6758();
-            return Math.max(Class9546.method35648(class1848.method1074() - method6758.method1074()), Class9546.method35648(class1848.method1076() - method6758.method1076())) <= this.method1548();
+            final BlockPos method6758 = class1847.method6758();
+            return Math.max(MathHelper.abs(class1848.getX() - method6758.getX()), MathHelper.abs(class1848.getZ() - method6758.getZ())) <= this.method1548();
         }
         return false;
     }

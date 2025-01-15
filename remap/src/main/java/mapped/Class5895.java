@@ -7,8 +7,9 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import java.util.Arrays;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
 
-public class Class5895<T extends Class399> extends Class5846<T>
+public class Class5895<T extends Entity> extends Class5846<T>
 {
     private static String[] field24208;
     private final Class6300 field24209;

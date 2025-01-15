@@ -4,11 +4,10 @@
 
 package mapped;
 
-import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.HashMap;
 import com.google.common.collect.Maps;
-import java.util.Iterator;
+
 import java.util.HashSet;
 import com.google.common.collect.Sets;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -17,10 +16,11 @@ import java.util.Random;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.Dynamic4CommandExceptionType;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class7589
 {
@@ -31,7 +31,7 @@ public class Class7589
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("spreadplayers").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25002("center", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8930.method31491()).then(Class7788.method25002("spreadDistance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).then(Class7788.method25002("maxRange", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(1.0f)).then(Class7788.method25002("respectTeams", (com.mojang.brigadier.arguments.ArgumentType<Object>)BoolArgumentType.bool()).then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).executes(commandContext -> method23874((Class7492)commandContext.getSource(), Class8930.method31492((CommandContext<Class7492>)commandContext, "center"), FloatArgumentType.getFloat(commandContext, "spreadDistance"), FloatArgumentType.getFloat(commandContext, "maxRange"), BoolArgumentType.getBool(commandContext, "respectTeams"), Class6886.method21146((CommandContext<Class7492>)commandContext, "targets")))))))));
     }
     
-    private static int method23874(final Class7492 class7492, final Class9544 class7493, final float n, final float n2, final boolean b, final Collection<? extends Class399> collection) throws CommandSyntaxException {
+    private static int method23874(final Class7492 class7492, final Class9544 class7493, final float n, final float n2, final boolean b, final Collection<? extends Entity> collection) throws CommandSyntaxException {
         final Random random = new Random();
         final double n3 = class7493.field41091 - n2;
         final double n4 = class7493.field41092 - n2;
@@ -43,9 +43,9 @@ public class Class7589
         return method23878.length;
     }
     
-    private static int method23875(final Collection<? extends Class399> collection) {
+    private static int method23875(final Collection<? extends Entity> collection) {
         final HashSet hashSet = Sets.newHashSet();
-        for (final Class399 class399 : collection) {
+        for (final Entity class399 : collection) {
             if (!(class399 instanceof Class512)) {
                 hashSet.add(null);
             }
@@ -116,11 +116,11 @@ public class Class7589
         throw Class7589.field30108.create((Object)array.length, (Object)class9544.field41091, (Object)class9544.field41092, (Object)String.format(Locale.ROOT, "%.2f", min));
     }
     
-    private static double method23877(final Collection<? extends Class399> collection, final Class1849 class1849, final Class8296[] array, final boolean b) {
+    private static double method23877(final Collection<? extends Entity> collection, final Class1849 class1849, final Class8296[] array, final boolean b) {
         double n = 0.0;
         int n2 = 0;
         final HashMap hashMap = Maps.newHashMap();
-        for (final Class399 class1850 : collection) {
+        for (final Entity class1850 : collection) {
             Class8296 class1851;
             if (!b) {
                 class1851 = array[n2++];
@@ -132,7 +132,7 @@ public class Class7589
                 }
                 class1851 = (Class8296)hashMap.get(class1852);
             }
-            class1850.method1877(Class9546.method35644(Class8296.method27574(class1851)) + 0.5f, class1851.method27570(class1849), Class9546.method35644(Class8296.method27576(class1851)) + 0.5);
+            class1850.method1877(MathHelper.floor(Class8296.method27574(class1851)) + 0.5f, class1851.method27570(class1849), MathHelper.floor(Class8296.method27576(class1851)) + 0.5);
             double min = Double.MAX_VALUE;
             for (final Class8296 class1853 : array) {
                 if (class1851 != class1853) {

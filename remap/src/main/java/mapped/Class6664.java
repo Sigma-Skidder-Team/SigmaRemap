@@ -4,17 +4,19 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector4f;
+
 public class Class6664
 {
     private static String[] field26323;
-    private final Class8526[] field26324;
+    private final Vector4f[] field26324;
     private double field26325;
     private double field26326;
     private double field26327;
     public boolean field26328;
     
     public Class6664(final Class6789 class6789, final Class6789 class6790) {
-        this.field26324 = new Class8526[6];
+        this.field26324 = new Vector4f[6];
         this.field26328 = false;
         this.method20263(class6789, class6790);
     }
@@ -38,7 +40,7 @@ public class Class6664
     }
     
     private void method20264(final Class6789 class6789, final int n, final int n2, final int n3, final int n4) {
-        final Class8526 class6790 = new Class8526((float)n, (float)n2, (float)n3, 1.0f);
+        final Vector4f class6790 = new Vector4f((float)n, (float)n2, (float)n3, 1.0f);
         class6790.method28603(class6789);
         class6790.method28602();
         this.field26324[n4] = class6790;
@@ -54,7 +56,7 @@ public class Class6664
     
     private boolean method20266(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
         for (int i = 0; i < 6; ++i) {
-            final Class8526 class8526 = this.field26324[i];
+            final Vector4f class8526 = this.field26324[i];
             final float method28595 = class8526.method28595();
             final float method28596 = class8526.method28596();
             final float method28597 = class8526.method28597();
@@ -89,7 +91,7 @@ public class Class6664
             final float n11 = (float)n5;
             final float n12 = (float)n6;
             for (int i = 0; i < 6; ++i) {
-                final Class8526 class8526 = this.field26324[i];
+                final Vector4f class8526 = this.field26324[i];
                 final float method28595 = class8526.method28595();
                 final float method28596 = class8526.method28596();
                 final float method28597 = class8526.method28597();
@@ -137,7 +139,7 @@ public class Class6664
         return true;
     }
     
-    public Class8526[] method20268() {
+    public Vector4f[] method20268() {
         return this.field26324;
     }
 }

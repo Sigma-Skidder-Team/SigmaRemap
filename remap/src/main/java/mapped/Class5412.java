@@ -90,7 +90,7 @@ public class Class5412<T extends Class436>
     }
     
     @Nullable
-    public T method16524(final Class1855 class1855, final Class354 class1856) {
+    public T method16524(final Class1855 class1855, final BlockPos class1856) {
         final Class436 method6727 = class1855.method6727(class1856);
         return (T)((method6727 != null && method6727.method2206() == this) ? method6727 : null);
     }

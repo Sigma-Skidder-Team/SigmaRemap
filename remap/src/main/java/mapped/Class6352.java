@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public final class Class6352
 {
     private static String[] field25398;
@@ -15,11 +17,11 @@ public final class Class6352
     public static final int field25404;
     
     static {
-        field25399 = Class179.field514.method779();
-        field25400 = Class179.field512.method779();
-        field25401 = Class179.field516.method779();
-        field25402 = Class179.field513.method779();
-        field25403 = Class179.field511.method779();
-        field25404 = Class179.field515.method779();
+        field25399 = Direction.SOUTH.getIndex();
+        field25400 = Direction.UP.getIndex();
+        field25401 = Direction.EAST.getIndex();
+        field25402 = Direction.NORTH.getIndex();
+        field25403 = Direction.DOWN.getIndex();
+        field25404 = Direction.WEST.getIndex();
     }
 }

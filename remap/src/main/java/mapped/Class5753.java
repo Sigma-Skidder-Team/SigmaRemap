@@ -7,16 +7,16 @@ package mapped;
 public class Class5753 extends Class5714
 {
     private static String[] field23349;
-    private Class354 field23350;
+    private BlockPos field23350;
     private Class7702 field23351;
     public static boolean field23352;
     
-    public Class5753(final Class354 field23350, final Class7702 field23351) {
+    public Class5753(final BlockPos field23350, final Class7702 field23351) {
         this.field23350 = field23350;
         this.field23351 = field23351;
     }
     
-    public Class354 method17064() {
+    public BlockPos method17064() {
         return this.field23350;
     }
     
@@ -24,7 +24,7 @@ public class Class5753 extends Class5714
         return this.field23351;
     }
     
-    public void method17066(final Class354 field23350) {
+    public void method17066(final BlockPos field23350) {
         this.field23350 = field23350;
     }
     

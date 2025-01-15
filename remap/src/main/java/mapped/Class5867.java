@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5867 extends Class5866
 {
@@ -51,7 +52,7 @@ public class Class5867 extends Class5866
     
     public void method17603(final Class857 class857, final float n, final float n2, final float n3) {
         this.field24040.field25183 = 0.0f;
-        this.field24040.field25184 = 0.017453292f * -Class9546.method35706(n3, class857.field2401, class857.field2399);
+        this.field24040.field25184 = 0.017453292f * -MathHelper.method35706(n3, class857.field2401, class857.field2399);
         this.field24040.field25185 = 0.0f;
     }
     

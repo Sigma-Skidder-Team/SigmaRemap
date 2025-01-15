@@ -11,7 +11,7 @@ public final class Class7541 extends Class7542
     }
     
     @Override
-    public boolean method23626(final Class7702 class7702, final Class354 class7703, final boolean b) {
+    public boolean method23626(final Class7702 class7702, final BlockPos class7703, final boolean b) {
         return b;
     }
 }

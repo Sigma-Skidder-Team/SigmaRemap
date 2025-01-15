@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3594 extends Class3592
 {
     private static String[] field16739;
@@ -20,10 +24,10 @@ public class Class3594 extends Class3592
     @Override
     public boolean method11013() {
         if (this.field16741.method2633().nextInt(this.field16742) == 0) {
-            final Class179 method1883 = this.field16741.method1883();
-            final int method1884 = method1883.method785();
-            final int method1885 = method1883.method787();
-            final Class354 class354 = new Class354(this.field16741);
+            final Direction method1883 = this.field16741.method1883();
+            final int method1884 = method1883.getXOffset();
+            final int method1885 = method1883.getZOffset();
+            final BlockPos class354 = new BlockPos(this.field16741);
             for (final int n : Class3594.field16740) {
                 if (!this.method11122(class354, method1884, method1885, n) || !this.method11123(class354, method1884, method1885, n)) {
                     return false;
@@ -34,12 +38,12 @@ public class Class3594 extends Class3592
         return false;
     }
     
-    private boolean method11122(final Class354 class354, final int n, final int n2, final int n3) {
-        final Class354 method1134 = class354.method1134(n * n3, 0, n2 * n3);
+    private boolean method11122(final BlockPos class354, final int n, final int n2, final int n3) {
+        final BlockPos method1134 = class354.method1134(n * n3, 0, n2 * n3);
         return this.field16741.field2391.method6702(method1134).method21793(Class7324.field28319) && !this.field16741.field2391.method6701(method1134).method21697().method26440();
     }
     
-    private boolean method11123(final Class354 class354, final int n, final int n2, final int n3) {
+    private boolean method11123(final BlockPos class354, final int n, final int n2, final int n3) {
         return this.field16741.field2391.method6701(class354.method1134(n * n3, 1, n2 * n3)).method21706() && this.field16741.field2391.method6701(class354.method1134(n * n3, 2, n2 * n3)).method21706();
     }
     
@@ -68,8 +72,8 @@ public class Class3594 extends Class3592
     
     @Override
     public void method11015() {
-        final Class179 method1883 = this.field16741.method1883();
-        this.field16741.method1936(this.field16741.method1935().method16744(method1883.method785() * 0.6, 0.7, method1883.method787() * 0.6));
+        final Direction method1883 = this.field16741.method1883();
+        this.field16741.method1936(this.field16741.method1935().method16744(method1883.getXOffset() * 0.6, 0.7, method1883.getZOffset() * 0.6));
         this.field16741.method4150().method24733();
     }
     
@@ -82,7 +86,7 @@ public class Class3594 extends Class3592
     public void method11016() {
         final boolean field16743 = this.field16743;
         if (!field16743) {
-            this.field16743 = this.field16741.field2391.method6702(new Class354(this.field16741)).method21793(Class7324.field28319);
+            this.field16743 = this.field16741.field2391.method6702(new BlockPos(this.field16741)).method21793(Class7324.field28319);
         }
         if (this.field16743) {
             if (!field16743) {
@@ -91,10 +95,10 @@ public class Class3594 extends Class3592
         }
         final Class5487 method1935 = this.field16741.method1935();
         if (method1935.field22771 * method1935.field22771 < 0.029999999329447746 && this.field16741.field2400 != 0.0f) {
-            this.field16741.field2400 = Class9546.method35707(this.field16741.field2400, 0.0f, 0.2f);
+            this.field16741.field2400 = MathHelper.method35707(this.field16741.field2400, 0.0f, 0.2f);
         }
         else {
-            this.field16741.field2400 = (float)(Math.signum(-method1935.field22771) * Math.acos(Math.sqrt(Class399.method1680(method1935)) / method1935.method16752()) * 57.2957763671875);
+            this.field16741.field2400 = (float)(Math.signum(-method1935.field22771) * Math.acos(Math.sqrt(Entity.method1680(method1935)) / method1935.method16752()) * 57.2957763671875);
         }
     }
     

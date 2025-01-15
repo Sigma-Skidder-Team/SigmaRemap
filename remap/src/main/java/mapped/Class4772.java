@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4772 extends Class4712<Class853, Class5871<Class853>>
 {
     private static final Class1932 field20400;
@@ -22,7 +24,7 @@ public class Class4772 extends Class4712<Class853, Class5871<Class853>>
         class854.method22565(0.999f, 0.999f, 0.999f);
         class854.method22564(0.0, 0.0010000000474974513, 0.0);
         final float n2 = (float)class853.method5130();
-        final float n3 = 1.0f / (Class9546.method35700(n, class853.field4559, class853.field4558) / (n2 * 0.5f + 1.0f) + 1.0f);
+        final float n3 = 1.0f / (MathHelper.method35700(n, class853.field4559, class853.field4558) / (n2 * 0.5f + 1.0f) + 1.0f);
         class854.method22565(n3 * n2, 1.0f / n3 * n2, n3 * n2);
     }
     

@@ -4,14 +4,13 @@
 
 package mapped;
 
-import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class843 extends Class763
 {
     public static final Class8810<Byte> field4491;
     private Class759 field4492;
-    private Class354 field4493;
+    private BlockPos field4493;
     private boolean field4494;
     private int field4495;
     
@@ -22,7 +21,7 @@ public class Class843 extends Class763
     }
     
     @Override
-    public void method1671(final Class2160 class2160, final Class5487 class2161) {
+    public void method1671(final Class2160 class2160, final Vec3d class2161) {
         super.method1671(class2160, class2161);
         this.method1689();
     }
@@ -71,7 +70,7 @@ public class Class843 extends Class763
     public void method1760(final Class51 class51) {
         super.method1760(class51);
         if (class51.method315("BoundX")) {
-            this.field4493 = new Class354(class51.method319("BoundX"), class51.method319("BoundY"), class51.method319("BoundZ"));
+            this.field4493 = new BlockPos(class51.method319("BoundX"), class51.method319("BoundY"), class51.method319("BoundZ"));
         }
         if (class51.method315("LifeTicks")) {
             this.method5044(class51.method319("LifeTicks"));
@@ -82,9 +81,9 @@ public class Class843 extends Class763
     public void method1761(final Class51 class51) {
         super.method1761(class51);
         if (this.field4493 != null) {
-            class51.method298("BoundX", this.field4493.method1074());
-            class51.method298("BoundY", this.field4493.method1075());
-            class51.method298("BoundZ", this.field4493.method1076());
+            class51.method298("BoundX", this.field4493.getX());
+            class51.method298("BoundY", this.field4493.getY());
+            class51.method298("BoundZ", this.field4493.getZ());
         }
         if (this.field4494) {
             class51.method298("LifeTicks", this.field4495);
@@ -96,11 +95,11 @@ public class Class843 extends Class763
     }
     
     @Nullable
-    public Class354 method5037() {
+    public BlockPos method5037() {
         return this.field4493;
     }
     
-    public void method5038(final Class354 field4493) {
+    public void method5038(final BlockPos field4493) {
         this.field4493 = field4493;
     }
     

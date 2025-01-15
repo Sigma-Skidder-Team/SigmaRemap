@@ -20,12 +20,12 @@ public class Class3876 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3876.field17526;
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         super.method11822(class7096, class7097, class7098, random);
         if (class7097.method6969(class7098.method1137()) >= 9) {
             if (random.nextInt(7) == 0) {
@@ -34,7 +34,7 @@ public class Class3876 extends Class3874 implements Class3872
         }
     }
     
-    public void method11951(final Class1849 class1849, final Class354 class1850, final Class7096 class1851, final Random random) {
+    public void method11951(final Class1849 class1849, final BlockPos class1850, final Class7096 class1851, final Random random) {
         if (class1851.method21772((Class7111<Integer>)Class3876.field17525) != 0) {
             this.field17527.method17514(class1849, class1849.method6904().method7438(), class1850, class1851, random);
         }
@@ -44,17 +44,17 @@ public class Class3876 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return true;
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return class1847.field10062.nextFloat() < 0.45;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
         this.method11951(class1849, class1850, class1851, random);
     }
     

@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.stream.Collector;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.Direction;
+
 import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Random;
@@ -38,15 +40,15 @@ public class Class4171<T extends Class489> extends Class4158<T>
         final float n3 = (Class4171.field18586.nextFloat() * 0.5f + 0.1f) * n2;
         final float n4 = (Class4171.field18586.nextFloat() * 0.5f + 0.4f) * n2;
         final float n5 = (Class4171.field18586.nextFloat() * 0.5f + 0.5f) * n2;
-        this.method12491(t, class6789, class6790, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, n3, n4, n5, Class179.field514);
-        this.method12491(t, class6789, class6790, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, n3, n4, n5, Class179.field513);
-        this.method12491(t, class6789, class6790, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, n3, n4, n5, Class179.field516);
-        this.method12491(t, class6789, class6790, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, n3, n4, n5, Class179.field515);
-        this.method12491(t, class6789, class6790, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, n3, n4, n5, Class179.field511);
-        this.method12491(t, class6789, class6790, 0.0f, 1.0f, n, n, 1.0f, 1.0f, 0.0f, 0.0f, n3, n4, n5, Class179.field512);
+        this.method12491(t, class6789, class6790, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, n3, n4, n5, Direction.SOUTH);
+        this.method12491(t, class6789, class6790, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, n3, n4, n5, Direction.NORTH);
+        this.method12491(t, class6789, class6790, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, n3, n4, n5, Direction.EAST);
+        this.method12491(t, class6789, class6790, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, n3, n4, n5, Direction.WEST);
+        this.method12491(t, class6789, class6790, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, n3, n4, n5, Direction.DOWN);
+        this.method12491(t, class6789, class6790, 0.0f, 1.0f, n, n, 1.0f, 1.0f, 0.0f, 0.0f, n3, n4, n5, Direction.UP);
     }
     
-    private void method12491(final T t, final Class6789 class6789, final Class4150 class6790, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final Class179 class6791) {
+    private void method12491(final T t, final Class6789 class6789, final Class4150 class6790, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final Direction class6791) {
         if (t.method2444(class6791)) {
             class6790.method12444(class6789, n, n3, n5).method12439(n9, n10, n11, 1.0f).method12397();
             class6790.method12444(class6789, n2, n3, n6).method12439(n9, n10, n11, 1.0f).method12397();

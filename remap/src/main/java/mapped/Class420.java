@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class420 extends Class419
@@ -28,7 +29,7 @@ public class Class420 extends Class419
         super.method2032(class7006);
         if (class7006.method21449() != Class2165.field12882 || !((Class7007)class7006).method21452().method1843(this.field2527)) {
             if (!this.field2391.field10067) {
-                final List<Class399> method7128 = this.field2391.method7128((Class<? extends Class399>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0));
+                final List<Entity> method7128 = this.field2391.method7128((Class<? extends Entity>)Class511.class, this.method1886().method18495(4.0, 2.0, 4.0));
                 final Class426 class7007 = new Class426(this.field2391, this.method1938(), this.method1941(), this.method1945());
                 class7007.method2097(this.field2527);
                 class7007.method2089(Class8432.field34605);
@@ -45,7 +46,7 @@ public class Class420 extends Class419
                         break;
                     }
                 }
-                this.field2391.method6955(2006, new Class354(this), 0);
+                this.field2391.method6955(2006, new BlockPos(this), 0);
                 this.field2391.method6886(class7007);
                 this.method1652();
             }

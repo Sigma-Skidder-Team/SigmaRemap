@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class99
 {
     field273(0, 1, 2, 3), 
@@ -26,18 +28,18 @@ public enum Class99
         this.field282 = field282;
     }
     
-    public static Class99 method577(final Class179 class179) {
-        return Class99.field283[class179.method779()];
+    public static Class99 method577(final Direction class179) {
+        return Class99.field283[class179.getIndex()];
     }
     
     static {
         field283 = Class8349.method27851(new Class99[6], array -> {
-            array[Class179.field511.method779()] = Class99.field273;
-            array[Class179.field512.method779()] = Class99.field274;
-            array[Class179.field513.method779()] = Class99.field275;
-            array[Class179.field514.method779()] = Class99.field276;
-            array[Class179.field515.method779()] = Class99.field277;
-            array[Class179.field516.method779()] = Class99.field278;
+            array[Direction.DOWN.getIndex()] = Class99.field273;
+            array[Direction.UP.getIndex()] = Class99.field274;
+            array[Direction.NORTH.getIndex()] = Class99.field275;
+            array[Direction.SOUTH.getIndex()] = Class99.field276;
+            array[Direction.WEST.getIndex()] = Class99.field277;
+            array[Direction.EAST.getIndex()] = Class99.field278;
         });
     }
 }

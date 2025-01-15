@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
@@ -68,7 +70,7 @@ public abstract class Class834 extends Class833
         super.method1659();
         if (this.method4966()) {
             if (this.field2391.field10062.nextInt(200) == 1) {
-                if (this.field2391.method7128((Class<? extends Class399>)this.getClass(), this.method1886().method18495(8.0, 8.0, 8.0)).size() <= 1) {
+                if (this.field2391.method7128((Class<? extends Entity>)this.getClass(), this.method1886().method18495(8.0, 8.0, 8.0)).size() <= 1) {
                     this.field4446 = 1;
                 }
             }

@@ -10,8 +10,9 @@ import java.util.Comparator;
 import java.util.Arrays;
 import javax.annotation.Nullable;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.IStringSerializable;
 
-public enum Class181 implements Class103
+public enum Class181 implements IStringSerializable
 {
     field537(0, "white", 16383998, Class8819.field37040, 15790320, 16777215), 
     field538(1, "orange", 16351261, Class8819.field37047, 15435844, 16738335), 
@@ -106,7 +107,7 @@ public enum Class181 implements Class103
     }
     
     @Override
-    public String method596() {
+    public String getName() {
         return this.field556;
     }
     

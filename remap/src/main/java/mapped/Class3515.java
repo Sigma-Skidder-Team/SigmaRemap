@@ -20,7 +20,7 @@ public class Class3515 extends Class3514
         Class5487 class5487 = Class7775.method24900(this.field16510, 10, 7);
         int n = 0;
         while (class5487 != null) {
-            if (this.field16510.field2391.method6701(new Class354(class5487)).method21749(this.field16510.field2391, new Class354(class5487), Class2084.field12052)) {
+            if (this.field16510.field2391.method6701(new BlockPos(class5487)).method21749(this.field16510.field2391, new BlockPos(class5487), Class2084.field12052)) {
                 break;
             }
             if (n++ >= 10) {

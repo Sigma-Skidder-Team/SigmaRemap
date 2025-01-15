@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3220 extends Class3167
 {
     private int field15675;
@@ -80,7 +82,7 @@ public class Class3220 extends Class3167
                             Class7482.method23149(class5717, 0.2);
                             return;
                         }
-                        Class3220.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Class5487(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Class179.field512, new Class354(Class3220.field15514.field4684).method1134(0, -1, 0), false)));
+                        Class3220.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Class5487(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3220.field15514.field4684).method1134(0, -1, 0), false)));
                         this.field15678 += field15678 / 4.0;
                         if (Class3220.field15514.field4684.field2405) {
                             this.field15678 /= 2.0;

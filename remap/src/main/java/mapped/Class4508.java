@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class4508 extends Class4500
 {
     private boolean field19906;
     
-    public Class4508(final int n, final Class6997 field19849, final Class179 class179) {
+    public Class4508(final int n, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40969, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -35,7 +37,7 @@ public class Class4508 extends Class4500
         }
     }
     
-    public static Class4508 method13503(final List<Class4473> list, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+    public static Class4508 method13503(final List<Class4473> list, final int n, final int n2, final int n3, final Direction class179, final int n4) {
         final Class6997 method21408 = Class6997.method21408(n, n2, n3, -4, -1, 0, 11, 8, 16, class179);
         return (Class4500.method13497(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4508(n4, method21408, class179) : null;
     }
@@ -64,7 +66,7 @@ public class Class4508 extends Class4500
         for (int j = 2; j < 9; j += 2) {
             this.method13444(class1851, class1853, j, 3, 15, j, 4, 15, class1856, class1856, false);
         }
-        final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29391.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field513);
+        final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29391.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
         this.method13445(class1851, class1853, 4, 1, 5, 6, 1, 7, false, random, Class6924.method21296());
         this.method13445(class1851, class1853, 4, 2, 6, 6, 2, 7, false, random, Class6924.method21296());
         this.method13445(class1851, class1853, 4, 3, 7, 6, 3, 7, false, random, Class6924.method21296());
@@ -73,10 +75,10 @@ public class Class4508 extends Class4500
             this.method13440(class1851, class1857, k, 2, 5, class1853);
             this.method13440(class1851, class1857, k, 3, 6, class1853);
         }
-        final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Class179.field513);
-        final Class7096 class1859 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Class179.field514);
-        final Class7096 class1860 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Class179.field516);
-        final Class7096 class1861 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Class179.field515);
+        final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Direction.NORTH);
+        final Class7096 class1859 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Direction.SOUTH);
+        final Class7096 class1860 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Direction.EAST);
+        final Class7096 class1861 = ((Class7097<O, Class7096>)Class7521.field29402.method11878()).method21773((Class7111<Comparable>)Class3964.field17908, Direction.WEST);
         boolean b = true;
         final boolean[] array = new boolean[12];
         for (int l = 0; l < array.length; ++l) {
@@ -108,7 +110,7 @@ public class Class4508 extends Class4500
             this.method13440(class1851, method11878, 6, 3, 11, class1853);
         }
         if (!this.field19906) {
-            final Class354 class1862 = new Class354(this.method13437(5, 6), this.method13438(3), this.method13439(5, 6));
+            final BlockPos class1862 = new BlockPos(this.method13437(5, 6), this.method13438(3), this.method13439(5, 6));
             if (class1853.method21415(class1862)) {
                 this.field19906 = true;
                 class1851.method6688(class1862, Class7521.field29290.method11878(), 2);

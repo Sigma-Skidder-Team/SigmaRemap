@@ -5,17 +5,16 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.MarkerManager;
-import java.util.stream.Stream;
+
 import java.util.ConcurrentModificationException;
-import java.util.function.Consumer;
-import java.util.Collection;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Maps;
-import java.util.concurrent.Executor;
+
 import java.util.List;
 import com.google.common.collect.Multimap;
 import java.util.Map;
@@ -176,7 +175,7 @@ public class Class9382
             else {
                 this.method34848(class6833);
                 this.method34847(class6833);
-                final Class5487 class6834 = new Class5487(class6833.method20929(), class6833.method20930(), class6833.method20931());
+                final Vec3d class6834 = new Vec3d(class6833.method20929(), class6833.method20930(), class6833.method20931());
                 final Class9196 class6835 = this.field40254.get(class6833);
                 if (class6835 == null) {
                     continue;
@@ -265,7 +264,7 @@ public class Class9382
                         }
                         else {
                             final boolean b = class6834.method20924() && class6834.method20926() == 0;
-                            final Class5487 class6835 = new Class5487(class6834.method20929(), class6834.method20930(), class6834.method20931());
+                            final Vec3d class6835 = new Vec3d(class6834.method20929(), class6834.method20930(), class6834.method20931());
                             final Class9196 method20926 = this.field40252.method28008(method20923.method25309() ? Class269.field1461 : Class269.field1460);
                             Class9382.field40243.debug(Class9382.field40242, "Playing sound {} for event {}", (Object)method20923.method25304(), (Object)method20922);
                             this.field40258.put(class6834, this.field40253 + 20);
@@ -325,11 +324,11 @@ public class Class9382
     }
     
     private float method34847(final Class6834 class6834) {
-        return Class9546.method35653(class6834.method20928(), 0.5f, 2.0f);
+        return MathHelper.method35653(class6834.method20928(), 0.5f, 2.0f);
     }
     
     private float method34848(final Class6834 class6834) {
-        return Class9546.method35653(class6834.method20927() * this.method34834(class6834.method20923()), 0.0f, 1.0f);
+        return MathHelper.method35653(class6834.method20927() * this.method34834(class6834.method20923()), 0.0f, 1.0f);
     }
     
     public void method34849() {

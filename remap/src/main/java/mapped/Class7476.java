@@ -5,9 +5,12 @@
 package mapped;
 
 import java.util.Optional;
-import java.util.Iterator;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
@@ -15,7 +18,7 @@ public final class Class7476
 {
     private static String[] field28874;
     
-    public static Class7006 method23092(final Class399 class399, final boolean b, final boolean b2, final Class399 class400, final Class2040 class401) {
+    public static Class7006 method23092(final Entity class399, final boolean b, final boolean b2, final Entity class400, final Class2040 class401) {
         return method23095(class399, b, b2, class400, class401, true, class403 -> {
             final boolean b4;
             if (!class403.method1639()) {
@@ -31,23 +34,23 @@ public final class Class7476
         }, class399.method1886().method18493(class399.method1935()).method18496(1.0));
     }
     
-    public static Class7006 method23093(final Class399 class399, final Class6221 class400, final Predicate<Class399> predicate, final Class2040 class401, final boolean b) {
+    public static Class7006 method23093(final Entity class399, final Class6221 class400, final Predicate<Entity> predicate, final Class2040 class401, final boolean b) {
         return method23095(class399, b, false, null, class401, false, predicate, class400);
     }
     
     @Nullable
-    public static Class7007 method23094(final Class1847 class1847, final Class399 class1848, final Class5487 class1849, final Class5487 class1850, final Class6221 class1851, final Predicate<Class399> predicate) {
+    public static Class7007 method23094(final Class1847 class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final Class6221 class1851, final Predicate<Entity> predicate) {
         return method23097(class1847, class1848, class1849, class1850, class1851, predicate, Double.MAX_VALUE);
     }
     
-    private static Class7006 method23095(final Class399 class399, final boolean b, final boolean b2, final Class399 class400, final Class2040 class401, final boolean b3, final Predicate<Class399> predicate, final Class6221 class402) {
-        final Class5487 method1935 = class399.method1935();
+    private static Class7006 method23095(final Entity class399, final boolean b, final boolean b2, final Entity class400, final Class2040 class401, final boolean b3, final Predicate<Entity> predicate, final Class6221 class402) {
+        final Vec3d method1935 = class399.method1935();
         final Class1847 field2391 = class399.field2391;
-        final Class5487 method1936 = class399.method1934();
-        if (b3 && !field2391.method6979(class399, class399.method1886(), (Set<Class399>)((!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of()))) {
-            return new Class7005(method1936, Class179.method799(method1935.field22770, method1935.field22771, method1935.field22772), new Class354(class399), false);
+        final Vec3d method1936 = class399.method1934();
+        if (b3 && !field2391.method6979(class399, class399.method1886(), (Set<Entity>)((!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of()))) {
+            return new Class7005(method1936, Direction.getFacingFromVector(method1935.field22770, method1935.field22771, method1935.field22772), new BlockPos(class399), false);
         }
-        Class5487 class403 = method1936.method16743(method1935);
+        Vec3d class403 = method1936.method16743(method1935);
         Class7005 method1937 = field2391.method6987(new Class8478(method1936, class403, class401, Class2191.field13325, class399));
         if (b) {
             if (method1937.method21449() != Class2165.field12880) {
@@ -62,19 +65,19 @@ public final class Class7476
     }
     
     @Nullable
-    public static Class7007 method23096(final Class399 class399, final Class5487 other, final Class5487 class400, final Class6221 class401, final Predicate<Class399> predicate, final double n) {
+    public static Class7007 method23096(final Entity class399, final Vec3d other, final Vec3d class400, final Class6221 class401, final Predicate<Entity> predicate, final double n) {
         final Class1847 field2391 = class399.field2391;
         double n2 = n;
-        Class399 class402 = null;
-        Class5487 class403 = null;
-        for (final Class399 class404 : field2391.method6737(class399, class401, predicate)) {
+        Entity class402 = null;
+        Vec3d class403 = null;
+        for (final Entity class404 : field2391.method6737(class399, class401, predicate)) {
             final Class6221 method18496 = class404.method1886().method18496(class404.method1790());
-            final Optional<Class5487> method18497 = method18496.method18512(other, class400);
+            final Optional<Vec3d> method18497 = method18496.method18512(other, class400);
             if (!method18496.method18505(other)) {
                 if (!method18497.isPresent()) {
                     continue;
                 }
-                final Class5487 class405 = method18497.get();
+                final Vec3d class405 = method18497.get();
                 final double method18498 = other.method16746(class405);
                 if (method18498 >= n2 && n2 != 0.0) {
                     continue;
@@ -105,11 +108,11 @@ public final class Class7476
     }
     
     @Nullable
-    public static Class7007 method23097(final Class1847 class1847, final Class399 class1848, final Class5487 class1849, final Class5487 class1850, final Class6221 class1851, final Predicate<Class399> predicate, final double n) {
+    public static Class7007 method23097(final Class1847 class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final Class6221 class1851, final Predicate<Entity> predicate, final double n) {
         double n2 = n;
-        Class399 class1852 = null;
-        for (final Class399 class1853 : class1847.method6737(class1848, class1851, predicate)) {
-            final Optional<Class5487> method18512 = class1853.method1886().method18496(0.30000001192092896).method18512(class1849, class1850);
+        Entity class1852 = null;
+        for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
+            final Optional<Vec3d> method18512 = class1853.method1886().method18496(0.30000001192092896).method18512(class1849, class1850);
             if (!method18512.isPresent()) {
                 continue;
             }
@@ -123,16 +126,16 @@ public final class Class7476
         return (class1852 != null) ? new Class7007(class1852) : null;
     }
     
-    private static Set<Class399> method23098(final Class399 class399) {
-        final Class399 method1920 = class399.method1920();
-        return (Set<Class399>)((method1920 == null) ? ImmutableSet.of((Object)class399) : ImmutableSet.of((Object)class399, (Object)method1920));
+    private static Set<Entity> method23098(final Entity class399) {
+        final Entity method1920 = class399.method1920();
+        return (Set<Entity>)((method1920 == null) ? ImmutableSet.of((Object)class399) : ImmutableSet.of((Object)class399, (Object)method1920));
     }
     
-    public static final void method23099(final Class399 class399, final float n) {
-        final Class5487 method1935 = class399.method1935();
-        final float method1936 = Class9546.method35641(Class399.method1680(method1935));
-        class399.field2399 = (float)(Class9546.method35693(method1935.field22772, method1935.field22770) * 57.2957763671875) + 90.0f;
-        class399.field2400 = (float)(Class9546.method35693(method1936, method1935.field22771) * 57.2957763671875) - 90.0f;
+    public static final void method23099(final Entity class399, final float n) {
+        final Vec3d method1935 = class399.method1935();
+        final float method1936 = MathHelper.method35641(Entity.method1680(method1935));
+        class399.field2399 = (float)(MathHelper.method35693(method1935.field22772, method1935.field22770) * 57.2957763671875) + 90.0f;
+        class399.field2400 = (float)(MathHelper.method35693(method1936, method1935.field22771) * 57.2957763671875) - 90.0f;
         while (class399.field2400 - class399.field2402 < -180.0f) {
             class399.field2402 -= 360.0f;
         }
@@ -145,8 +148,8 @@ public final class Class7476
         while (class399.field2399 - class399.field2401 >= 180.0f) {
             class399.field2401 += 360.0f;
         }
-        class399.field2400 = Class9546.method35700(n, class399.field2402, class399.field2400);
-        class399.field2399 = Class9546.method35700(n, class399.field2401, class399.field2399);
+        class399.field2400 = MathHelper.method35700(n, class399.field2402, class399.field2400);
+        class399.field2399 = MathHelper.method35700(n, class399.field2401, class399.field2399);
     }
     
     public static Class316 method23100(final Class511 class511, final Class3820 class512) {

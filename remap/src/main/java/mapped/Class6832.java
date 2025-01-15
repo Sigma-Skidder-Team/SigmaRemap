@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6832 extends Class6831
 {
     private static String[] field26828;
@@ -30,7 +32,7 @@ public class Class6832 extends Class6831
                 this.field26835 = 0.0f;
             }
             else {
-                this.field26835 = Class9546.method35653(n / 4.0f, 0.0f, 1.0f);
+                this.field26835 = MathHelper.method35653(n / 4.0f, 0.0f, 1.0f);
             }
             if (this.field26830 >= 20) {
                 if (this.field26830 < 40) {

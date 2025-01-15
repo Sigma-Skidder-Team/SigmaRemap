@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class4081 extends Class3820
 {
     private static String[] field18185;
@@ -16,9 +18,9 @@ public class Class4081 extends Class3820
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class354 method21639 = class7075.method21639();
-        final Class179 method21640 = class7075.method21648();
-        final Class354 method21641 = method21639.method1149(method21640);
+        final BlockPos method21639 = class7075.method21639();
+        final Direction method21640 = class7075.method21648();
+        final BlockPos method21641 = method21639.method1149(method21640);
         final Class512 method21642 = class7075.method21652();
         final Class8321 method21643 = class7075.method21651();
         if (method21642 != null && !this.method12287(method21642, method21640, method21643, method21641)) {
@@ -50,7 +52,7 @@ public class Class4081 extends Class3820
         return Class2201.field13400;
     }
     
-    public boolean method12287(final Class512 class512, final Class179 class513, final Class8321 class514, final Class354 class515) {
-        return !class513.method790().method600() && class512.method2881(class515, class513, class514);
+    public boolean method12287(final Class512 class512, final Direction class513, final Class8321 class514, final BlockPos class515) {
+        return !class513.getAxis().isVertical() && class512.method2881(class515, class513, class514);
     }
 }

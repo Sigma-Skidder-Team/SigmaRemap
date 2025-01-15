@@ -4,22 +4,24 @@
 
 package mapped;
 
-public final class Class9389
+import net.minecraft.util.math.MathHelper;
+
+public final class Quaternion
 {
-    public static final Class9389 field40291;
+    public static final Quaternion ONE;
     private float field40292;
     private float field40293;
     private float field40294;
     private float field40295;
     
-    public Class9389(final float field40292, final float field40293, final float field40294, final float field40295) {
+    public Quaternion(final float field40292, final float field40293, final float field40294, final float field40295) {
         this.field40292 = field40292;
         this.field40293 = field40293;
         this.field40294 = field40294;
         this.field40295 = field40295;
     }
     
-    public Class9389(final Class9138 class9138, float n, final boolean b) {
+    public Quaternion(final Vector3f class9138, float n, final boolean b) {
         if (b) {
             n *= 0.017453292f;
         }
@@ -30,7 +32,7 @@ public final class Class9389
         this.field40295 = method34907(n / 2.0f);
     }
     
-    public Class9389(float n, float n2, float n3, final boolean b) {
+    public Quaternion(float n, float n2, float n3, final boolean b) {
         if (b) {
             n *= 0.017453292f;
             n2 *= 0.017453292f;
@@ -48,7 +50,7 @@ public final class Class9389
         this.field40295 = method34909 * method34911 * method34913 - method34908 * method34910 * method34912;
     }
     
-    public Class9389(final Class9389 class9389) {
+    public Quaternion(final Quaternion class9389) {
         this.field40292 = class9389.field40292;
         this.field40293 = class9389.field40293;
         this.field40294 = class9389.field40294;
@@ -61,7 +63,7 @@ public final class Class9389
             return true;
         }
         if (o != null && this.getClass() == o.getClass()) {
-            final Class9389 class9389 = (Class9389)o;
+            final Quaternion class9389 = (Quaternion)o;
             return Float.compare(class9389.field40292, this.field40292) == 0 && Float.compare(class9389.field40293, this.field40293) == 0 && Float.compare(class9389.field40294, this.field40294) == 0 && Float.compare(class9389.field40295, this.field40295) == 0;
         }
         return false;
@@ -98,7 +100,7 @@ public final class Class9389
         return this.field40295;
     }
     
-    public void method34903(final Class9389 class9389) {
+    public void multiply(final Quaternion class9389) {
         final float method34899 = this.method34899();
         final float method34900 = this.method34900();
         final float method34901 = this.method34901();
@@ -150,7 +152,7 @@ public final class Class9389
             this.field40295 = 0.0f;
         }
         else {
-            final float method35694 = Class9546.method35694(n);
+            final float method35694 = MathHelper.method35694(n);
             this.field40292 *= method35694;
             this.field40293 *= method35694;
             this.field40294 *= method35694;
@@ -158,11 +160,11 @@ public final class Class9389
         }
     }
     
-    public Class9389 method34910() {
-        return new Class9389(this);
+    public Quaternion copy() {
+        return new Quaternion(this);
     }
     
     static {
-        field40291 = new Class9389(0.0f, 0.0f, 0.0f, 1.0f);
+        ONE = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
     }
 }

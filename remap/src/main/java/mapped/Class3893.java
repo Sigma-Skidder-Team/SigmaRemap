@@ -19,7 +19,7 @@ public class Class3893 extends Class3892
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3893.field17564, class7074.method21644().method782());
+        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3893.field17564, class7074.method21644().getOpposite());
     }
     
     @Override

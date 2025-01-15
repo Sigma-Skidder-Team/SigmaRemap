@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.UUID;
 import java.util.Optional;
@@ -182,7 +184,7 @@ public abstract class Class794 extends Class789
     }
     
     @Override
-    public boolean method1826(final Class399 class399) {
+    public boolean method1826(final Entity class399) {
         if (this.method4480()) {
             final Class511 method4488 = this.method4488();
             if (class399 == method4488) {

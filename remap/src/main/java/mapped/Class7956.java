@@ -5,8 +5,10 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class7956 implements Class7954
@@ -29,7 +31,7 @@ public class Class7956 implements Class7954
     }
     
     @Override
-    public Class9017 method25804(final Class399 class399, final Random random) {
+    public Class9017 method25804(final Entity class399, final Random random) {
         final Class8321 class400 = new Class8321(Class7739.field31514, this.field32688);
         Class8321 method12255 = new Class8321(this.field32687);
         if (this.field32687 instanceof Class4054) {

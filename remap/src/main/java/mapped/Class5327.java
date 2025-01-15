@@ -26,7 +26,7 @@ public final class Class5327 extends Class5328
                 if (method2940.method6954() == Class2113.field12290) {
                     return;
                 }
-                if (method2940.method6922(new Class354(class511))) {
+                if (method2940.method6922(new BlockPos(class511))) {
                     method2940.method6926().method18928(class512);
                 }
             }

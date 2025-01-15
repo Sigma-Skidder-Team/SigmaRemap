@@ -18,11 +18,11 @@ public class Class6977
         this.field27276 = field27276;
     }
     
-    public Set<Class9488> method21398(final Class354 class354, final Class7096 class355, final Class7614 class356) {
+    public Set<Class9488> method21398(final BlockPos class354, final Class7096 class355, final Class7614 class356) {
         return Collections.emptySet();
     }
     
-    public Set<Class9488> method21399(final Class354 class354, final Class7096 class355, final Class7614 class356) {
+    public Set<Class9488> method21399(final BlockPos class354, final Class7096 class355, final Class7614 class356) {
         return Collections.emptySet();
     }
 }

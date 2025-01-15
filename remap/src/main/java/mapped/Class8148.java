@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.EnumSet;
 import com.mojang.brigadier.arguments.ArgumentType;
 
-public class Class8148 implements ArgumentType<EnumSet<Class111>>
+public class Class8148 implements ArgumentType<EnumSet<Axis>>
 {
     private static final Collection<String> field33558;
     private static final SimpleCommandExceptionType field33559;
@@ -23,25 +23,25 @@ public class Class8148 implements ArgumentType<EnumSet<Class111>>
         return new Class8148();
     }
     
-    public static EnumSet<Class111> method26844(final CommandContext<Class7492> commandContext, final String s) {
+    public static EnumSet<Axis> method26844(final CommandContext<Class7492> commandContext, final String s) {
         return (EnumSet)commandContext.getArgument(s, (Class)EnumSet.class);
     }
     
-    public EnumSet<Class111> parse(final StringReader stringReader) throws CommandSyntaxException {
-        final EnumSet<Class111> none = EnumSet.noneOf(Class111.class);
+    public EnumSet<Axis> parse(final StringReader stringReader) throws CommandSyntaxException {
+        final EnumSet<Axis> none = EnumSet.noneOf(Axis.class);
         while (stringReader.canRead() && stringReader.peek() != ' ') {
-            Class111 class111 = null;
+            Axis class111 = null;
             switch (stringReader.read()) {
                 case 'x': {
-                    class111 = Class111.field351;
+                    class111 = Axis.X;
                     break;
                 }
                 case 'y': {
-                    class111 = Class111.field352;
+                    class111 = Axis.Y;
                     break;
                 }
                 case 'z': {
-                    class111 = Class111.field353;
+                    class111 = Axis.Z;
                     break;
                 }
                 default: {

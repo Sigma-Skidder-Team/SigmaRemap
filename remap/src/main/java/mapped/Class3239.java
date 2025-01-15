@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3239 extends Class3167
 {
     private int field15727;
@@ -21,7 +24,7 @@ public class Class3239 extends Class3167
     @Class6753
     public void method10227(final Class5739 class5739) {
         if (this.method9906()) {
-            Class399 class5740 = null;
+            Entity class5740 = null;
             if ((Class9463.method35173().method35189().method21551(Class3256.class).method9906() && !Class3347.field15955) || !this.method9883("Only speed")) {
                 if (Class3376.field16061 == null) {
                     if (Class3376.field16060 != null) {
@@ -42,7 +45,7 @@ public class Class3239 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        Class399 class5718 = null;
+        Entity class5718 = null;
         if ((Class9463.method35173().method35189().method21551(Class3256.class).method9906() || !this.method9883("Only speed")) && !Class3347.field15955) {
             if (Class3376.field16061 != null) {
                 class5718 = Class3376.field16061.method26798();
@@ -62,16 +65,16 @@ public class Class3239 extends Class3167
                 }
                 case "Ninja": {
                     final float n2 = (float)Math.toRadians(class5718.method1844() - 180.0f);
-                    final double n3 = class5718.field2395 - Class9546.method35638(n2) * method9886;
-                    final double n4 = class5718.field2397 + Class9546.method35639(n2) * method9886;
+                    final double n3 = class5718.field2395 - MathHelper.sin(n2) * method9886;
+                    final double n4 = class5718.field2397 + MathHelper.cos(n2) * method9886;
                     class5717.method16973(n3 - Class3239.field15514.field4684.field2395);
                     class5717.method16977(n4 - Class3239.field15514.field4684.field2397);
                     break;
                 }
                 case "Random": {
                     final float n5 = (float)(Math.random() * 2.0 * 3.141592653589793);
-                    final double n6 = class5718.field2395 - Class9546.method35638(n5) * method9886;
-                    final double n7 = class5718.field2397 + Class9546.method35639(n5) * method9886;
+                    final double n6 = class5718.field2395 - MathHelper.sin(n5) * method9886;
+                    final double n7 = class5718.field2397 + MathHelper.cos(n5) * method9886;
                     class5717.method16973(n6 - Class3239.field15514.field4684.field2395);
                     class5717.method16977(n7 - Class3239.field15514.field4684.field2397);
                     break;
@@ -80,7 +83,7 @@ public class Class3239 extends Class3167
         }
     }
     
-    public void method10229(final Class399 class399, final double n, final double n2, final Class5717 class400) {
+    public void method10229(final Entity class399, final double n, final double n2, final Class5717 class400) {
         final float field32884 = Class8845.method30922(class399).field32884;
         if (Class3239.field15514.field4684.field2405) {
             this.field15727 *= -1;
@@ -91,9 +94,9 @@ public class Class3239 extends Class3167
         final int n4 = 0;
         method30920[n4] += n3;
         final float n5 = array[0] * 0.017453292f;
-        final float n6 = Class8845.method30920(Class3239.field15514.field4684.method1934(), new Class5487(class399.field2395 - Class9546.method35638(n5) * n2, class399.field2396, class399.field2397 + Class9546.method35639(n5) * n2))[0] * 0.017453292f;
-        class400.method16973(-Class9546.method35638(n6) * n);
-        class400.method16977(Class9546.method35639(n6) * n);
+        final float n6 = Class8845.method30920(Class3239.field15514.field4684.method1934(), new Class5487(class399.field2395 - MathHelper.sin(n5) * n2, class399.field2396, class399.field2397 + MathHelper.cos(n5) * n2))[0] * 0.017453292f;
+        class400.method16973(-MathHelper.sin(n6) * n);
+        class400.method16977(MathHelper.cos(n6) * n);
         final Class5487 class401 = new Class5487(Class3239.field15514.field4684.field2395 + class400.method16972(), Class3239.field15514.field4684.field2396 + class400.method16974(), Class3239.field15514.field4684.field2397 + class400.method16976());
         if (this.method9883("Avoid void")) {
             if (!this.field15728 && this.method10230(class401)) {

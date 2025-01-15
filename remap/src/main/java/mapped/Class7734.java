@@ -28,8 +28,8 @@ public class Class7734 implements ArgumentType<Class5346>
     }
     
     public static Class7587 method24683(final CommandContext<Class7492> commandContext, final String s) {
-        final Class354 method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
-        return new Class7587(method16506.method1074(), method16506.method1076());
+        final BlockPos method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
+        return new Class7587(method16506.getX(), method16506.getZ());
     }
     
     public Class5346 parse(final StringReader stringReader) throws CommandSyntaxException {

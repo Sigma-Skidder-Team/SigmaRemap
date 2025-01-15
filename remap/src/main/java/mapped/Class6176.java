@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6176 extends Class6175
 {
     private int field24967;
@@ -130,7 +132,7 @@ public class Class6176 extends Class6175
                     final double n3 = j + (this.field24949.nextDouble() - this.field24949.nextDouble()) * 0.5;
                     final double n4 = i + (this.field24949.nextDouble() - this.field24949.nextDouble()) * 0.5;
                     final double n5 = k + (this.field24949.nextDouble() - this.field24949.nextDouble()) * 0.5;
-                    final double n6 = Class9546.method35641(n3 * n3 + n4 * n4 + n5 * n5) / n + this.field24949.nextGaussian() * 0.05;
+                    final double n6 = MathHelper.method35641(n3 * n3 + n4 * n4 + n5 * n5) / n + this.field24949.nextGaussian() * 0.05;
                     this.method18448(field24936, field24937, field24938, n3 / n6, n4 / n6, n5 / n6, array, array2, b, b2);
                     if (i != -n2) {
                         if (i != n2) {
@@ -160,8 +162,8 @@ public class Class6176 extends Class6175
                 final double n9 = array[j][0];
                 final double n10 = array[j][1];
                 for (double n11 = 0.25; n11 <= 1.0; n11 += 0.25) {
-                    final double n12 = Class9546.method35701(n11, n7, n9) * n;
-                    final double n13 = Class9546.method35701(n11, n8, n10) * n;
+                    final double n12 = MathHelper.method35701(n11, n7, n9) * n;
+                    final double n13 = MathHelper.method35701(n11, n8, n10) * n;
                     final double n14 = n12 * Math.sin(n6);
                     final double n15 = n12 * Math.cos(n6);
                     for (double n16 = -1.0; n16 <= 1.0; n16 += 2.0) {

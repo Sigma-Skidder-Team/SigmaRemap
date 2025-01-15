@@ -10,6 +10,8 @@ import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.Set;
 import java.util.Comparator;
@@ -55,8 +57,8 @@ public class Class7498
             }
             throw new Class2361(class9260.field39720, (Collection<Class9336>)arrayList.stream().map(class9261 -> class9261.field39720).collect(ImmutableList.toImmutableList()), this.field28952, this.field28953, this.field28954, this.field28955);
         }
-        this.field28952 = Class9546.method35679(this.field28952);
-        this.field28953 = Class9546.method35679(this.field28953);
+        this.field28952 = MathHelper.method35679(this.field28952);
+        this.field28953 = MathHelper.method35679(this.field28953);
     }
     
     public void method23343(final Class9040 class9040) {
@@ -82,10 +84,10 @@ public class Class7498
     }
     
     private boolean method23346(final Class9260 class9260) {
-        Class9546.method35679(this.field28952);
-        Class9546.method35679(this.field28953);
-        final int method35679 = Class9546.method35679(this.field28952 + class9260.field39721);
-        final int method35680 = Class9546.method35679(this.field28953 + class9260.field39722);
+        MathHelper.method35679(this.field28952);
+        MathHelper.method35679(this.field28953);
+        final int method35679 = MathHelper.method35679(this.field28952 + class9260.field39721);
+        final int method35680 = MathHelper.method35679(this.field28953 + class9260.field39722);
         final boolean b = method35679 <= this.field28954;
         final boolean b2 = method35680 <= this.field28955;
         if (!b && !b2) {

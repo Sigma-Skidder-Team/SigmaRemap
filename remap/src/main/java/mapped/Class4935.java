@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Date;
 
 public class Class4935 extends Class4800
@@ -36,7 +35,7 @@ public class Class4935 extends Class4800
     private void method14838(final Class4862 class4862) {
         class4862.method14580((class4862, s, class4863, n) -> {
             this.field21159.field20753.method14398(s, class4863, n);
-            Class9463.method35173().method35200().method24263(new Class8124(s, class4863.method1074(), class4863.method1076(), n));
+            Class9463.method35173().method35200().method24263(new Class8124(s, class4863.getX(), class4863.getZ(), n));
             this.method14839();
         });
     }

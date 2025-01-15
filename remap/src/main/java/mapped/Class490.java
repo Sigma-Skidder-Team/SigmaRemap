@@ -13,6 +13,8 @@ import com.google.common.collect.ImmutableList;
 import java.util.Iterator;
 import java.util.Arrays;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.Set;
 
@@ -41,22 +43,22 @@ public class Class490 extends Class436 implements Class434, Class439
     
     @Override
     public void method2229() {
-        final int method1074 = this.field2657.method1074();
-        final int method1075 = this.field2657.method1075();
-        final int method1076 = this.field2657.method1076();
-        Class354 class354;
+        final int method1074 = this.field2657.getX();
+        final int method1075 = this.field2657.getY();
+        final int method1076 = this.field2657.getZ();
+        BlockPos class354;
         if (this.field2812 >= method1075) {
-            class354 = new Class354(method1074, this.field2812 + 1, method1076);
+            class354 = new BlockPos(method1074, this.field2812 + 1, method1076);
         }
         else {
             class354 = this.field2657;
             this.field2810 = Lists.newArrayList();
-            this.field2812 = class354.method1075() - 1;
+            this.field2812 = class354.getY() - 1;
         }
         Class8392 class355 = this.field2810.isEmpty() ? null : this.field2810.get(this.field2810.size() - 1);
         final int method1077 = this.field2656.method6699(Class2020.field11522, method1074, method1076);
         for (int i = 0; i < 10; ++i) {
-            if (class354.method1075() > method1077) {
+            if (class354.getY() > method1077) {
                 break;
             }
             final Class7096 method1078 = this.field2656.method6701(class354);
@@ -134,7 +136,7 @@ public class Class490 extends Class436 implements Class434, Class439
             int n5 = 1;
             for (int n6 = n - i; n6 <= n + i && n5 != 0; ++n6) {
                 for (int j = n3 - i; j <= n3 + i; ++j) {
-                    final Class3833 method21696 = this.field2656.method6701(new Class354(n6, n4, j)).method21696();
+                    final Class3833 method21696 = this.field2656.method6701(new BlockPos(n6, n4, j)).method21696();
                     if (method21696 != Class7521.field29412) {
                         if (method21696 != Class7521.field29280) {
                             if (method21696 != Class7521.field29295) {
@@ -170,8 +172,8 @@ public class Class490 extends Class436 implements Class434, Class439
                     }
                 }
                 final int n2 = (9 + this.field2811 * 2) * 20;
-                final List<Class399> method7128 = (List<Class399>)this.field2656.method7128((Class<? extends Class512>)Class512.class, new Class6221(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
-                final Iterator<Class399> iterator = (Iterator<Class399>)method7128.iterator();
+                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends Class512>)Class512.class, new Class6221(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+                final Iterator<Entity> iterator = (Iterator<Entity>)method7128.iterator();
                 while (iterator.hasNext()) {
                     iterator.next().method2655(new Class1948(this.field2813, n2, (int)(b ? 1 : 0), true, true));
                 }

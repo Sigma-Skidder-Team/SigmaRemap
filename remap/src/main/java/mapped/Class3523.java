@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 import java.util.Iterator;
 
@@ -12,7 +15,7 @@ public class Class3523 extends Class3446
     private static String[] field16526;
     private final Class800 field16527;
     private Class512 field16528;
-    private Class354 field16529;
+    private BlockPos field16529;
     private int field16530;
     
     public Class3523(final Class800 field16527) {
@@ -34,11 +37,11 @@ public class Class3523 extends Class3446
                 if (this.field16527.method1734(this.field16528) > 100.0) {
                     return false;
                 }
-                final Class354 class354 = new Class354(this.field16528);
+                final BlockPos class354 = new BlockPos(this.field16528);
                 final Class7096 method4489 = this.field16527.field2391.method6701(class354);
                 if (method4489.method21696().method11785(Class7188.field27910)) {
-                    final Class179 class355 = method4489.method21772((Class7111<Class179>)Class3900.field17564);
-                    this.field16529 = new Class354(class354.method1074() - class355.method785(), class354.method1075(), class354.method1076() - class355.method787());
+                    final Direction class355 = method4489.method21772((Class7111<Direction>)Class3900.field17564);
+                    this.field16529 = new BlockPos(class354.getX() - class355.getXOffset(), class354.getY(), class354.getZ() - class355.getZOffset());
                     return !this.method11075();
                 }
             }
@@ -78,7 +81,7 @@ public class Class3523 extends Class3446
     public void method11015() {
         if (this.field16529 != null) {
             this.field16527.method4490().method11058(false);
-            this.field16527.method4150().method24724(this.field16529.method1074(), this.field16529.method1075(), this.field16529.method1076(), 1.100000023841858);
+            this.field16527.method4150().method24724(this.field16529.getX(), this.field16529.getY(), this.field16529.getZ(), 1.100000023841858);
         }
     }
     
@@ -104,11 +107,11 @@ public class Class3523 extends Class3446
         final Random method2633 = this.field16527.method2633();
         final Class385 class385 = new Class385();
         class385.method1285(this.field16527);
-        this.field16527.method2775(class385.method1074() + method2633.nextInt(11) - 5, class385.method1075() + method2633.nextInt(5) - 2, class385.method1076() + method2633.nextInt(11) - 5, false);
+        this.field16527.method2775(class385.getX() + method2633.nextInt(11) - 5, class385.getY() + method2633.nextInt(5) - 2, class385.getZ() + method2633.nextInt(11) - 5, false);
         class385.method1285(this.field16527);
         final Iterator<Class8321> iterator = this.field16527.field2391.method6679().method1581().method6402(Class9020.field38120).method34485(new Class9098((Class1849)this.field16527.field2391).method32877(Class6683.field26367, class385).method32877(Class6683.field26362, this.field16527).method32873(method2633).method32883(Class7104.field27716)).iterator();
         while (iterator.hasNext()) {
-            this.field16527.field2391.method6886(new Class427(this.field16527.field2391, class385.method1074() - Class9546.method35638(this.field16527.field2951 * 0.017453292f), class385.method1075(), class385.method1076() + Class9546.method35639(this.field16527.field2951 * 0.017453292f), iterator.next()));
+            this.field16527.field2391.method6886(new Class427(this.field16527.field2391, class385.getX() - MathHelper.sin(this.field16527.field2951 * 0.017453292f), class385.getY(), class385.getZ() + MathHelper.cos(this.field16527.field2951 * 0.017453292f), iterator.next()));
         }
     }
     
@@ -117,7 +120,7 @@ public class Class3523 extends Class3446
         if (this.field16528 != null) {
             if (this.field16529 != null) {
                 this.field16527.method4490().method11058(false);
-                this.field16527.method4150().method24724(this.field16529.method1074(), this.field16529.method1075(), this.field16529.method1076(), 1.100000023841858);
+                this.field16527.method4150().method24724(this.field16529.getX(), this.field16529.getY(), this.field16529.getZ(), 1.100000023841858);
                 if (this.field16527.method1734(this.field16528) >= 2.5) {
                     this.field16527.method4609(false);
                 }

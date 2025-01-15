@@ -5,8 +5,6 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,15 +14,15 @@ public class Class7614
 {
     private static String[] field30173;
     private final Class8491 field30174;
-    private HashMap<Class354, Class7096> field30175;
-    private HashMap<Class354, Class7096> field30176;
+    private HashMap<BlockPos, Class7096> field30175;
+    private HashMap<BlockPos, Class7096> field30176;
     private Set<Class6977> field30177;
     private Set<Class9488> field30178;
     private Set<Class9488> field30179;
     
     public Class7614(final Class8491 field30174) {
-        this.field30175 = new HashMap<Class354, Class7096>();
-        this.field30176 = new HashMap<Class354, Class7096>();
+        this.field30175 = new HashMap<BlockPos, Class7096>();
+        this.field30176 = new HashMap<BlockPos, Class7096>();
         this.field30177 = new HashSet<Class6977>();
         this.field30178 = new HashSet<Class9488>();
         this.field30179 = new HashSet<Class9488>();
@@ -51,14 +49,14 @@ public class Class7614
     
     public void method23917() {
         for (final Map.Entry entry : this.field30175.entrySet()) {
-            this.method23921((Class354)entry.getKey(), (Class7096)entry.getValue());
+            this.method23921((BlockPos)entry.getKey(), (Class7096)entry.getValue());
         }
         this.field30175.clear();
     }
     
     public void method23918() {
         for (final Map.Entry entry : this.field30176.entrySet()) {
-            this.method23924((Class354)entry.getKey(), (Class7096)entry.getValue());
+            this.method23924((BlockPos)entry.getKey(), (Class7096)entry.getValue());
         }
         this.field30176.clear();
     }
@@ -75,7 +73,7 @@ public class Class7614
         this.field30179.clear();
     }
     
-    private void method23921(final Class354 class354, final Class7096 class355) {
+    private void method23921(final BlockPos class354, final Class7096 class355) {
         final Class6977 method23922 = this.method23922(class355);
         if (method23922 != null) {
             this.field30178.addAll(method23922.method21398(class354, class355, this));
@@ -114,12 +112,12 @@ public class Class7614
         }
         this.field30178.clear();
         if (hashMap.size() != 0) {
-            final Class354 class4256 = (Class354)hashMap.keySet().toArray()[0];
+            final BlockPos class4256 = (BlockPos)hashMap.keySet().toArray()[0];
             final Class4312 class4257 = new Class4312();
-            class4257.field19330 = new Class7859(class4256.method1074() >> 4, class4256.method1076() >> 4);
+            class4257.field19330 = new Class7859(class4256.getX() >> 4, class4256.getZ() >> 4);
             final ArrayList list = new ArrayList();
-            for (final Map.Entry<Class354, V> entry : hashMap.entrySet()) {
-                final short n = (short)((entry.getKey().method1074() & 0xF) << 12 | (entry.getKey().method1076() & 0xF) << 8 | entry.getKey().method1075());
+            for (final Map.Entry<BlockPos, V> entry : hashMap.entrySet()) {
+                final short n = (short)((entry.getKey().getX() & 0xF) << 12 | (entry.getKey().getZ() & 0xF) << 8 | entry.getKey().getY());
                 final ArrayList list2 = list;
                 final Class4312 class4258 = class4257;
                 class4258.getClass();
@@ -131,7 +129,7 @@ public class Class7614
         return class4252;
     }
     
-    private void method23924(final Class354 class354, final Class7096 class355) {
+    private void method23924(final BlockPos class354, final Class7096 class355) {
         final Class6977 method23922 = this.method23922(class355);
         if (method23922 != null) {
             this.field30179.addAll(method23922.method21399(class354, class355, this));
@@ -142,12 +140,12 @@ public class Class7614
         return this.method23922(class7096) != null;
     }
     
-    public void method23926(final Class354 class354, final Class7096 class355) {
+    public void method23926(final BlockPos class354, final Class7096 class355) {
         this.field30175.put(class354, class355);
         this.field30176.put(class354, class355);
     }
     
-    public Class7096 method23927(final Class354 class354) {
+    public Class7096 method23927(final BlockPos class354) {
         if (this.field30175.containsKey(class354)) {
             return this.field30175.get(class354);
         }

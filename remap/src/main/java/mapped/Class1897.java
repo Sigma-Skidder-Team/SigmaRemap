@@ -14,11 +14,12 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.util.Direction;
 
 public abstract class Class1897<M extends Class7501<M>> extends Class1896
 {
     public static final Class7281 field10298;
-    private static final Class179[] field10299;
+    private static final Direction[] field10299;
     private final Class237 field10300;
     private final Class1908 field10301;
     public final LongSet field10302;
@@ -72,7 +73,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     public abstract int method7351(final long p0);
     
     public int method7352(final long n) {
-        return this.method7348(Class353.method1111(n), true).method22322(Class353.method1096(Class354.method1126(n)), Class353.method1096(Class354.method1127(n)), Class353.method1096(Class354.method1128(n)));
+        return this.method7348(Class353.method1111(n), true).method22322(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)));
     }
     
     public void method7353(final long n, final int n2) {
@@ -80,11 +81,11 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
         if (this.field10307.add(method1111)) {
             this.field10306.method23394(method1111);
         }
-        this.method7348(method1111, true).method22323(Class353.method1096(Class354.method1126(n)), Class353.method1096(Class354.method1127(n)), Class353.method1096(Class354.method1128(n)), n2);
+        this.method7348(method1111, true).method22323(Class353.method1096(BlockPos.method1126(n)), Class353.method1096(BlockPos.method1127(n)), Class353.method1096(BlockPos.method1128(n)), n2);
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
-                    this.field10308.add(Class353.method1111(Class354.method1125(n, j, k, i)));
+                    this.field10308.add(Class353.method1111(BlockPos.method1125(n, j, k, i)));
                 }
             }
         }
@@ -133,7 +134,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             for (int k = -1; k <= 1; ++k) {
-                                this.field10308.add(Class353.method1111(Class354.method1125(n, j, k, i)));
+                                this.field10308.add(Class353.method1111(BlockPos.method1125(n, j, k, i)));
                             }
                         }
                     }
@@ -164,7 +165,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
             for (int i = 0; i < 16; ++i) {
                 for (int j = 0; j < 16; ++j) {
                     for (int k = 0; k < 16; ++k) {
-                        class1890.method7316(Class354.method1130(method1098 + i, method1099 + j, method1100 + k));
+                        class1890.method7316(BlockPos.pack(method1098 + i, method1099 + j, method1100 + k));
                     }
                 }
             }
@@ -222,7 +223,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
                         final int method23398 = Class353.method1098(Class353.method1099(longValue2));
                         final int method23399 = Class353.method1098(Class353.method1100(longValue2));
                         final int method23400 = Class353.method1098(Class353.method1101(longValue2));
-                        for (final Class179 class1893 : Class1897.field10299) {
+                        for (final Direction class1893 : Class1897.field10299) {
                             final long method23401 = Class353.method1093(longValue2, class1893);
                             if (!this.field10309.containsKey(method23401) && this.method7347(method23401)) {
                                 for (int j = 0; j < 16; ++j) {
@@ -231,33 +232,33 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
                                         long n2 = 0L;
                                         switch (Class8647.field36303[class1893.ordinal()]) {
                                             case 1: {
-                                                n = Class354.method1130(method23398 + k, method23399, method23400 + j);
-                                                n2 = Class354.method1130(method23398 + k, method23399 - 1, method23400 + j);
+                                                n = BlockPos.pack(method23398 + k, method23399, method23400 + j);
+                                                n2 = BlockPos.pack(method23398 + k, method23399 - 1, method23400 + j);
                                                 break;
                                             }
                                             case 2: {
-                                                n = Class354.method1130(method23398 + k, method23399 + 16 - 1, method23400 + j);
-                                                n2 = Class354.method1130(method23398 + k, method23399 + 16, method23400 + j);
+                                                n = BlockPos.pack(method23398 + k, method23399 + 16 - 1, method23400 + j);
+                                                n2 = BlockPos.pack(method23398 + k, method23399 + 16, method23400 + j);
                                                 break;
                                             }
                                             case 3: {
-                                                n = Class354.method1130(method23398 + j, method23399 + k, method23400);
-                                                n2 = Class354.method1130(method23398 + j, method23399 + k, method23400 - 1);
+                                                n = BlockPos.pack(method23398 + j, method23399 + k, method23400);
+                                                n2 = BlockPos.pack(method23398 + j, method23399 + k, method23400 - 1);
                                                 break;
                                             }
                                             case 4: {
-                                                n = Class354.method1130(method23398 + j, method23399 + k, method23400 + 16 - 1);
-                                                n2 = Class354.method1130(method23398 + j, method23399 + k, method23400 + 16);
+                                                n = BlockPos.pack(method23398 + j, method23399 + k, method23400 + 16 - 1);
+                                                n2 = BlockPos.pack(method23398 + j, method23399 + k, method23400 + 16);
                                                 break;
                                             }
                                             case 5: {
-                                                n = Class354.method1130(method23398, method23399 + j, method23400 + k);
-                                                n2 = Class354.method1130(method23398 - 1, method23399 + j, method23400 + k);
+                                                n = BlockPos.pack(method23398, method23399 + j, method23400 + k);
+                                                n2 = BlockPos.pack(method23398 - 1, method23399 + j, method23400 + k);
                                                 break;
                                             }
                                             default: {
-                                                n = Class354.method1130(method23398 + 16 - 1, method23399 + j, method23400 + k);
-                                                n2 = Class354.method1130(method23398 + 16, method23399 + j, method23400 + k);
+                                                n = BlockPos.pack(method23398 + 16 - 1, method23399 + j, method23400 + k);
+                                                n2 = BlockPos.pack(method23398 + 16, method23399 + j, method23400 + k);
                                                 break;
                                             }
                                         }
@@ -346,6 +347,6 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     
     static {
         field10298 = new Class7281();
-        field10299 = Class179.values();
+        field10299 = Direction.values();
     }
 }

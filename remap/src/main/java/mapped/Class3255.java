@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,12 +18,12 @@ public class Class3255 extends Class3247
         this.method9881(new Class4999("Invisible", "Aim at invisible entites", true));
     }
     
-    public Class399 method10266(final float n) {
-        final List<Class399> method19138 = Class6430.method19138();
-        Class399 class399 = null;
-        final Iterator<Class399> iterator = method19138.iterator();
+    public Entity method10266(final float n) {
+        final List<Entity> method19138 = Class6430.method19138();
+        Entity class399 = null;
+        final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
-            final Class399 class400 = iterator.next();
+            final Entity class400 = iterator.next();
             if (class400 != Class3255.field15514.field4684) {
                 if (!Class9463.method35173().method35190().method29878(class400)) {
                     if (class400 instanceof Class511) {

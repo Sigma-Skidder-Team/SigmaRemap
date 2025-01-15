@@ -12,7 +12,7 @@ public class Class5444 extends Class5419<Class759>
 {
     private static String[] field22661;
     private Class9468 field22662;
-    private Class354 field22663;
+    private BlockPos field22663;
     private float field22664;
     private int field22665;
     
@@ -83,7 +83,7 @@ public class Class5444 extends Class5419<Class759>
     }
     
     private boolean method16629(final Class759 class759, final Class6949 class760, final long l) {
-        final Class354 method19204 = class760.method21335().method19204();
+        final BlockPos method19204 = class760.method21335().method19204();
         this.field22662 = class759.method4150().method24721(method19204, 0);
         this.field22664 = class760.method21336();
         if (!this.method16630(class759, class760)) {
@@ -99,7 +99,7 @@ public class Class5444 extends Class5419<Class759>
             if (this.field22662 != null) {
                 return true;
             }
-            final Class5487 method19206 = Class7775.method24905((Class787)class759, 10, 7, new Class5487(method19204));
+            final Vec3d method19206 = Class7775.method24905((Class787)class759, 10, 7, new Vec3d(method19204));
             if (method19206 != null) {
                 this.field22662 = class759.method4150().method24719(method19206.field22770, method19206.field22771, method19206.field22772, 0);
                 return this.field22662 != null;
@@ -109,6 +109,6 @@ public class Class5444 extends Class5419<Class759>
     }
     
     private boolean method16630(final Class759 class759, final Class6949 class760) {
-        return class760.method21335().method19204().method1086(new Class354(class759)) <= class760.method21337();
+        return class760.method21335().method19204().method1086(new BlockPos(class759)) <= class760.method21337();
     }
 }

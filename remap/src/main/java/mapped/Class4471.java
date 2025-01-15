@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -18,12 +20,12 @@ public class Class4471 extends Class4469
     private Class8123 field19845;
     private final List<Class4469> field19846;
     
-    public Class4471(final Random random, final int n, final int n2, final Class179 class179) {
+    public Class4471(final Random random, final int n, final int n2, final Direction class179) {
         super(Class9520.field40982, 0);
         this.field19846 = Lists.newArrayList();
         this.method13456(class179);
-        final Class179 method13455 = this.method13455();
-        if (method13455.method790() != Class111.field353) {
+        final Direction method13455 = this.method13455();
+        if (method13455.getAxis() != Axis.Z) {
             this.field19849 = new Class6997(n, 39, n2, n + 58 - 1, 61, n2 + 58 - 1);
         }
         else {
@@ -103,10 +105,10 @@ public class Class4471 extends Class4469
                 for (int n5 = 0; n5 < 3; ++n5) {
                     final int method13417 = Class4469.method13414(n3, n5, n4);
                     if (array[method13417] != null) {
-                        for (final Class179 class179 : Class179.values()) {
-                            final int n7 = n3 + class179.method785();
-                            final int n8 = n5 + class179.method786();
-                            final int n9 = n4 + class179.method787();
+                        for (final Direction class179 : Direction.values()) {
+                            final int n7 = n3 + class179.getXOffset();
+                            final int n8 = n5 + class179.getYOffset();
+                            final int n9 = n4 + class179.getZOffset();
                             if (n7 >= 0) {
                                 if (n7 < 5) {
                                     if (n9 >= 0) {
@@ -116,7 +118,7 @@ public class Class4471 extends Class4469
                                                     final int method13418 = Class4469.method13414(n7, n8, n9);
                                                     if (array[method13418] != null) {
                                                         if (n9 != n4) {
-                                                            array[method13417].method26738(class179.method782(), array[method13418]);
+                                                            array[method13417].method26738(class179.getOpposite(), array[method13418]);
                                                         }
                                                         else {
                                                             array[method13417].method26738(class179, array[method13418]);
@@ -136,21 +138,21 @@ public class Class4471 extends Class4469
         final Class8123 class180 = new Class8123(1003);
         final Class8123 class181 = new Class8123(1001);
         final Class8123 class182 = new Class8123(1002);
-        array[Class4471.field19837].method26738(Class179.field512, class180);
-        array[Class4471.field19838].method26738(Class179.field514, class181);
-        array[Class4471.field19839].method26738(Class179.field514, class182);
+        array[Class4471.field19837].method26738(Direction.UP, class180);
+        array[Class4471.field19838].method26738(Direction.SOUTH, class181);
+        array[Class4471.field19839].method26738(Direction.SOUTH, class182);
         Class8123.method26746(class180, true);
         Class8123.method26746(class181, true);
         Class8123.method26746(class182, true);
         Class8123.method26748(this.field19844, true);
         Class8123.method26746(this.field19845 = array[Class4469.method13414(rnd.nextInt(4), 0, 2)], true);
-        Class8123.method26746(Class8123.method26743(this.field19845)[Class179.field516.method779()], true);
-        Class8123.method26746(Class8123.method26743(this.field19845)[Class179.field513.method779()], true);
-        Class8123.method26746(Class8123.method26743(Class8123.method26743(this.field19845)[Class179.field516.method779()])[Class179.field513.method779()], true);
-        Class8123.method26746(Class8123.method26743(this.field19845)[Class179.field512.method779()], true);
-        Class8123.method26746(Class8123.method26743(Class8123.method26743(this.field19845)[Class179.field516.method779()])[Class179.field512.method779()], true);
-        Class8123.method26746(Class8123.method26743(Class8123.method26743(this.field19845)[Class179.field513.method779()])[Class179.field512.method779()], true);
-        Class8123.method26746(Class8123.method26743(Class8123.method26743(Class8123.method26743(this.field19845)[Class179.field516.method779()])[Class179.field513.method779()])[Class179.field512.method779()], true);
+        Class8123.method26746(Class8123.method26743(this.field19845)[Direction.EAST.getIndex()], true);
+        Class8123.method26746(Class8123.method26743(this.field19845)[Direction.NORTH.getIndex()], true);
+        Class8123.method26746(Class8123.method26743(Class8123.method26743(this.field19845)[Direction.EAST.getIndex()])[Direction.NORTH.getIndex()], true);
+        Class8123.method26746(Class8123.method26743(this.field19845)[Direction.UP.getIndex()], true);
+        Class8123.method26746(Class8123.method26743(Class8123.method26743(this.field19845)[Direction.EAST.getIndex()])[Direction.UP.getIndex()], true);
+        Class8123.method26746(Class8123.method26743(Class8123.method26743(this.field19845)[Direction.NORTH.getIndex()])[Direction.UP.getIndex()], true);
+        Class8123.method26746(Class8123.method26743(Class8123.method26743(Class8123.method26743(this.field19845)[Direction.EAST.getIndex()])[Direction.NORTH.getIndex()])[Direction.UP.getIndex()], true);
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class8123 class183 : array) {
             if (class183 != null) {
@@ -170,7 +172,7 @@ public class Class4471 extends Class4469
                 if (!Class8123.method26745(class184)[nextInt]) {
                     continue;
                 }
-                final int method13419 = Class179.method792(nextInt).method782().method779();
+                final int method13419 = Direction.byIndex(nextInt).getOpposite().getIndex();
                 Class8123.method26745(class184)[nextInt] = false;
                 Class8123.method26745(Class8123.method26743(class184)[nextInt])[method13419] = false;
                 if (class184.method26740(n11++) && Class8123.method26743(class184)[nextInt].method26740(n11++)) {

@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.EnumSet;
 
 public class Class3521 extends Class3514
 {
     private static String[] field16521;
-    private Class179 field16522;
+    private Direction field16522;
     private boolean field16523;
     
     public Class3521(final Class848 class848) {
@@ -27,8 +29,8 @@ public class Class3521 extends Class3514
             final Random method2633 = this.field16510.method2633();
             if (this.field16510.field2391.method6765().method31216(Class8878.field37316)) {
                 if (method2633.nextInt(10) == 0) {
-                    this.field16522 = Class179.method798(method2633);
-                    if (Class3979.method12123(this.field16510.field2391.method6701(new Class354(this.field16510.method1938(), this.field16510.method1941() + 0.5, this.field16510.method1945()).method1149(this.field16522)))) {
+                    this.field16522 = Direction.random(method2633);
+                    if (Class3979.method12123(this.field16510.field2391.method6701(new BlockPos(this.field16510.method1938(), this.field16510.method1941() + 0.5, this.field16510.method1945()).method1149(this.field16522)))) {
                         return this.field16523 = true;
                     }
                 }
@@ -48,7 +50,7 @@ public class Class3521 extends Class3514
     public void method11015() {
         if (this.field16523) {
             final Class1847 field2391 = this.field16510.field2391;
-            final Class354 method1149 = new Class354(this.field16510.method1938(), this.field16510.method1941() + 0.5, this.field16510.method1945()).method1149(this.field16522);
+            final BlockPos method1149 = new BlockPos(this.field16510.method1938(), this.field16510.method1941() + 0.5, this.field16510.method1945()).method1149(this.field16522);
             final Class7096 method1150 = field2391.method6701(method1149);
             if (Class3979.method12123(method1150)) {
                 field2391.method6688(method1149, Class3979.method12124(method1150.method21696()), 3);

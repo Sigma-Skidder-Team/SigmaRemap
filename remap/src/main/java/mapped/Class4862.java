@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.Iterator;
+
+import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,13 +18,13 @@ public class Class4862 extends Class4841
     private final Date field20820;
     private boolean field20821;
     private Date field20822;
-    public Class352 field20823;
+    public Vec3i field20823;
     public Class4831 field20824;
     public Class4831 field20825;
     public Class4905 field20826;
     private final List<Class8197> field20827;
     
-    public Class4862(final Class4803 class4803, final String s, final int n, final int n2, final Class352 field20823) {
+    public Class4862(final Class4803 class4803, final String s, final int n, final int n2, final Vec3i field20823) {
         super(class4803, s, n - 107, n2 + 10, 214, 170, Class6523.field25964, "", false);
         this.field20819 = new ArrayList<Class4868>();
         this.field20821 = false;
@@ -45,19 +47,19 @@ public class Class4862 extends Class4841
         this.field20825.method14471();
         this.field20825.method14478(false);
         this.method14239(this.field20826 = new Class4905(this, "badgeSelect", 0, 86));
-        this.method14239(this.field20824 = new Class4831(this, "Cords", 20, this.field20481 - 44, this.field20480 - 100, 20, Class4831.field20670, field20823.method1074() + " " + field20823.method1076(), field20823.method1074() + " " + field20823.method1076()));
+        this.method14239(this.field20824 = new Class4831(this, "Cords", 20, this.field20481 - 44, this.field20480 - 100, 20, Class4831.field20670, field20823.getX() + " " + field20823.getZ(), field20823.getX() + " " + field20823.getZ()));
         this.field20824.method14478(false);
         this.field20824.method14317(Class9400.field40312);
     }
     
-    public Class352 method14579() {
+    public Vec3i method14579() {
         if (this.field20824.method14314() != null) {
             if (this.field20824.method14314().contains(" ")) {
                 final String[] split = this.field20824.method14314().split(" ");
                 if (split.length == 2) {
                     if (split[0].matches("-?\\d+")) {
                         if (split[1].matches("-?\\d+")) {
-                            return new Class352(Integer.valueOf(split[0]), 0, Integer.valueOf(split[1]));
+                            return new Vec3i(Integer.valueOf(split[0]), 0, Integer.valueOf(split[1]));
                         }
                     }
                 }
@@ -92,7 +94,7 @@ public class Class4862 extends Class4841
         this.field20827.add(class8197);
     }
     
-    public final void method14581(final String s, final Class352 class352, final int n) {
+    public final void method14581(final String s, final Vec3i class352, final int n) {
         final Iterator<Class8197> iterator = this.field20827.iterator();
         while (iterator.hasNext()) {
             iterator.next().method27147(this, s, class352, n);

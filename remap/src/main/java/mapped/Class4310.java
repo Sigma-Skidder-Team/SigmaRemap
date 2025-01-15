@@ -10,13 +10,13 @@ public class Class4310 implements Class4252<Class5800>
 {
     private static String[] field19321;
     private int field19322;
-    private Class354 field19323;
+    private BlockPos field19323;
     private int field19324;
     
     public Class4310() {
     }
     
-    public Class4310(final int field19322, final Class354 field19323, final int field19324) {
+    public Class4310(final int field19322, final BlockPos field19323, final int field19324) {
         this.field19322 = field19322;
         this.field19323 = field19323;
         this.field19324 = field19324;
@@ -44,7 +44,7 @@ public class Class4310 implements Class4252<Class5800>
         return this.field19322;
     }
     
-    public Class354 method12958() {
+    public BlockPos method12958() {
         return this.field19323;
     }
     

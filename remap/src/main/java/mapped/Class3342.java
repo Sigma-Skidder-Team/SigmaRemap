@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3342 extends Class3167
 {
     private double field15946;
@@ -75,7 +77,7 @@ public class Class3342 extends Class3167
                                 Class3342.field15514.method5269().method17292(new Class4321(method10579));
                             }
                             if (method10579 >= 0 || Class3342.field15514.field4684.method2715(Class316.field1877).method27622() instanceof Class4036) {
-                                Class3342.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(Class3342.field15514.field4684.method1934().method16744(0.0, -2.0, 0.0), Class179.field512, Class3342.field15514.field4684.method1894().method1134(0, -2, 0), false)));
+                                Class3342.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(Class3342.field15514.field4684.method1934().method16744(0.0, -2.0, 0.0), Direction.UP, Class3342.field15514.field4684.method1894().method1134(0, -2, 0), false)));
                             }
                             if (method10579 >= 0) {
                                 Class3342.field15514.method5269().method17292(new Class4321(Class3342.field15514.field4684.field3006.field2743));

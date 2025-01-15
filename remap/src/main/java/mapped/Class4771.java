@@ -5,7 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.EnumMap;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public class Class4771 extends Class4712<Class791, Class5840<Class791>>
@@ -33,34 +34,34 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
                         if (field4218 < 32) {
                             final float method14121 = this.method14121(270.0f + 90.0f * ((field4218 - 24.0f) / 7.0f), 270.0f + 90.0f * (n4 - 24.0f) / 7.0f, n4, n3, 32.0f);
                             class792.method22564(0.0, n5 * ((360.0f - method14121) / 90.0f), 0.0);
-                            class792.method22566(Class9138.field38716.method33328(-method14121));
+                            class792.method22566(Vector3f.XP.rotationDegrees(-method14121));
                         }
                     }
                     else {
                         final float method14122 = this.method14121(180.0f + 90.0f * ((field4218 - 16.0f) / 7.0f), 180.0f + 90.0f * (n4 - 16.0f) / 7.0f, n4, n3, 24.0f);
                         class792.method22564(0.0, n5 + n5 * (270.0f - method14122) / 90.0f, 0.0);
-                        class792.method22566(Class9138.field38716.method33328(-method14122));
+                        class792.method22566(Vector3f.XP.rotationDegrees(-method14122));
                     }
                 }
                 else {
                     final float method14123 = this.method14121(90.0f + 90.0f * ((field4218 - 8.0f) / 7.0f), 90.0f + 90.0f * (n4 - 8.0f) / 7.0f, n4, n3, 16.0f);
                     class792.method22564(0.0, n5 + 0.2f + (n5 - 0.2f) * (method14123 - 90.0f) / 90.0f, 0.0);
-                    class792.method22566(Class9138.field38716.method33328(-method14123));
+                    class792.method22566(Vector3f.XP.rotationDegrees(-method14123));
                 }
             }
             else {
                 final float method14124 = this.method14121(90 * field4218 / 7.0f, 90 * n4 / 7.0f, n4, n3, 8.0f);
                 class792.method22564(0.0, (n5 + 0.2f) * (method14124 / 90.0f), 0.0);
-                class792.method22566(Class9138.field38716.method33328(-method14124));
+                class792.method22566(Vector3f.XP.rotationDegrees(-method14124));
             }
         }
         final float method14125 = class791.method4404(n3);
         if (method14125 > 0.0f) {
             class792.method22564(0.0, 0.8f * method14125, 0.0);
-            class792.method22566(Class9138.field38716.method33328(Class9546.method35700(method14125, class791.field2400, class791.field2400 + 90.0f)));
+            class792.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method14125, class791.field2400, class791.field2400 + 90.0f)));
             class792.method22564(0.0, -1.0f * method14125, 0.0);
             if (class791.method4398()) {
-                class792.method22566(Class9138.field38718.method33328((float)(Math.cos(class791.field2424 * 1.25) * 3.141592653589793 * 0.05000000074505806)));
+                class792.method22566(Vector3f.field38718.rotationDegrees((float)(Math.cos(class791.field2424 * 1.25) * 3.141592653589793 * 0.05000000074505806)));
                 if (class791.method2625()) {
                     class792.method22564(0.0, 0.800000011920929, 0.550000011920929);
                 }
@@ -69,12 +70,12 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
         final float method14126 = class791.method4405(n3);
         if (method14126 > 0.0f) {
             class792.method22564(0.0, (class791.method2625() ? 0.5f : 1.3f) * method14126, 0.0);
-            class792.method22566(Class9138.field38716.method33328(Class9546.method35700(method14126, class791.field2400, class791.field2400 + 180.0f)));
+            class792.method22566(Vector3f.XP.rotationDegrees(MathHelper.method35700(method14126, class791.field2400, class791.field2400 + 180.0f)));
         }
     }
     
     private float method14121(final float n, final float n2, final int n3, final float n4, final float n5) {
-        return (n3 >= n5) ? n : Class9546.method35700(n4, n, n2);
+        return (n3 >= n5) ? n : MathHelper.method35700(n4, n, n2);
     }
     
     static {

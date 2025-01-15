@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.ArrayList;
 
 public class Class3378 extends Class3167
@@ -294,7 +295,7 @@ public class Class3378 extends Class3167
         final boolean b = Math.abs(Math.sqrt(method19180.method16753()) - this.field16074) < 1.0E-4;
         if (this.method9883("No Collision") && this.field16074 > n7) {
             final ArrayList list = new ArrayList();
-            final float method19181 = Class9546.method35668(Class7482.method23147());
+            final float method19181 = MathHelper.method35668(Class7482.method23147());
             if (method19181 > 0.0f && method19181 < 90.0f) {
                 list.add(new Class5487(1.0, 0.0, 0.0));
                 list.add(new Class5487(0.0, 0.0, 1.0));

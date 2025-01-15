@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class Class9543
     private static final Map<String, Integer> field41080;
     private static final Map<String, Integer> field41081;
     
-    public static int method35624(final Class399 class399) {
+    public static int method35624(final Entity class399) {
         return (class399 != null) ? method35625(class399.method1642()) : -1;
     }
     

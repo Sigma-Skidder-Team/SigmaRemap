@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class3940 extends Class3841
 {
     private static String[] field17826;
@@ -17,7 +20,7 @@ public class Class3940 extends Class3841
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3940.field17829;
     }
     
@@ -27,23 +30,23 @@ public class Class3940 extends Class3841
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class179 class7099) {
+    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21772((Class7111<Integer>)Class3940.field17827);
     }
     
-    public static void method12055(final Class7096 class7096, final Class1847 class7097, final Class354 class7098) {
+    public static void method12055(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
         if (class7097.field10063.method20503()) {
             int round = class7097.method6992(Class237.field911, class7098) - class7097.method6785();
             final float method6713 = class7097.method6713(1.0f);
             if (!class7096.method21772((Class7111<Boolean>)Class3940.field17828)) {
                 if (round > 0) {
-                    round = Math.round(round * Class9546.method35639(method6713 + (((method6713 >= 3.1415927f) ? 6.2831855f : 0.0f) - method6713) * 0.2f));
+                    round = Math.round(round * MathHelper.cos(method6713 + (((method6713 >= 3.1415927f) ? 6.2831855f : 0.0f) - method6713) * 0.2f));
                 }
             }
             else {
                 round = 15 - round;
             }
-            final int method6714 = Class9546.method35651(round, 0, 15);
+            final int method6714 = MathHelper.method35651(round, 0, 15);
             if (class7096.method21772((Class7111<Integer>)Class3940.field17827) != method6714) {
                 class7097.method6688(class7098, (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3940.field17827, method6714), 3);
             }
@@ -51,7 +54,7 @@ public class Class3940 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7099.method2880()) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }

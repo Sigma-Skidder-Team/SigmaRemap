@@ -7,6 +7,8 @@ package mapped;
 import java.util.Iterator;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
+
 import java.util.function.Function;
 
 public class Class4571 extends Class4535<Class5122>
@@ -23,8 +25,8 @@ public class Class4571 extends Class4535<Class5122>
         this.field20063 = Class7521.field29173.method11878();
     }
     
-    public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, Class354 class1853, final Class5122 class1854) {
-        for (class1853 = class1853.method1137(); class1851.method6961(class1853) && class1853.method1075() > 2; class1853 = class1853.method1139()) {}
+    public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, BlockPos class1853, final Class5122 class1854) {
+        for (class1853 = class1853.method1137(); class1851.method6961(class1853) && class1853.getY() > 2; class1853 = class1853.method1139()) {}
         if (Class4571.field20060.test(class1851.method6701(class1853))) {
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
@@ -41,7 +43,7 @@ public class Class4571 extends Class4535<Class5122>
                 }
             }
             class1851.method6688(class1853, this.field20063, 2);
-            final Iterator<Class179> iterator = Class98.field268.iterator();
+            final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
             while (iterator.hasNext()) {
                 class1851.method6688(class1853.method1149(iterator.next()), this.field20063, 2);
             }

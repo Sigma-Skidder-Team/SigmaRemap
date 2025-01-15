@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 
 public class Class7331 implements Class7326
@@ -15,17 +17,17 @@ public class Class7331 implements Class7326
     
     @Override
     public boolean method22483(final Class8123 class8123) {
-        return Class8123.method26745(class8123)[Class179.field513.method779()] && !Class8123.method26747(Class8123.method26743(class8123)[Class179.field513.method779()]);
+        return Class8123.method26745(class8123)[Direction.NORTH.getIndex()] && !Class8123.method26747(Class8123.method26743(class8123)[Direction.NORTH.getIndex()]);
     }
     
     @Override
-    public Class4469 method22484(final Class179 class179, final Class8123 class180, final Random random) {
+    public Class4469 method22484(final Direction class179, final Class8123 class180, final Random random) {
         Class8123 class181 = class180;
-        if (!Class8123.method26745(class180)[Class179.field513.method779()] || Class8123.method26747(Class8123.method26743(class180)[Class179.field513.method779()])) {
-            class181 = Class8123.method26743(class180)[Class179.field514.method779()];
+        if (!Class8123.method26745(class180)[Direction.NORTH.getIndex()] || Class8123.method26747(Class8123.method26743(class180)[Direction.NORTH.getIndex()])) {
+            class181 = Class8123.method26743(class180)[Direction.SOUTH.getIndex()];
         }
         Class8123.method26746(class181, true);
-        Class8123.method26746(Class8123.method26743(class181)[Class179.field513.method779()], true);
+        Class8123.method26746(Class8123.method26743(class181)[Direction.NORTH.getIndex()], true);
         return new Class4472(class179, class181);
     }
 }

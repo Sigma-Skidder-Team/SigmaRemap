@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Iterator;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class Class3170 extends Class3167
@@ -36,7 +39,7 @@ public class Class3170 extends Class3167
     public void method9924(final Class5739 class5739) {
         if (this.method9906()) {
             Class8726.method30084(33986, 240.0f, 240.0f);
-            for (final Class399 class5740 : Class6430.method19138()) {
+            for (final Entity class5740 : Class6430.method19138()) {
                 if (class5740 instanceof Class427) {
                     final Class427 class5741 = (Class427)class5740;
                     if (!(class5741.method2107().method27622() instanceof Class4036) || !(((Class4036)class5741.method2107().method27622()).method12240() instanceof Class3942)) {
@@ -76,7 +79,7 @@ public class Class3170 extends Class3167
             final double x = class427.field2395 - Class3170.field15514.field4684.field2395;
             final double y = class427.field2396 - Class3170.field15514.field4684.field2396 - Class3170.field15514.field4684.method1931() + 0.4000000059604645;
             final double y2 = class427.field2397 - Class3170.field15514.field4684.field2397;
-            final double x2 = Class9546.method35641(x * x + y2 * y2);
+            final double x2 = MathHelper.method35641(x * x + y2 * y2);
             final float method30910 = Class8845.method30910(Class3170.field15514.field4684.field2399, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
             final float method30911 = Class8845.method30910(Class3170.field15514.field4684.field2400, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
             return this.method9926(Class3170.field15514.field4684.field2399, method30910) <= n && this.method9926(Class3170.field15514.field4684.field2400, method30911) <= n;
@@ -89,7 +92,7 @@ public class Class3170 extends Class3167
         return (n3 <= 180.0f) ? n3 : (360.0f - n3);
     }
     
-    public void method9927(final double n, final double n2, final double n3, final Class399 class399, final float n4) {
+    public void method9927(final double n, final double n2, final double n3, final Entity class399, final float n4) {
         final Class7524 field40314 = Class9400.field40314;
         final String method8459 = class399.method1841().method8459();
         final float n5 = (float)(n - Class3170.field15514.field4644.method5833().method18161().method16760());

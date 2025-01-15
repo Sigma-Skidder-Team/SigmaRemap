@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.UUID;
@@ -12,7 +14,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import org.apache.logging.log4j.Logger;
 
-public class Class7499<T extends Class399>
+public class Class7499<T extends Entity>
 {
     private static final Logger field28956;
     public static final Class7499<Class426> field28957;
@@ -129,7 +131,7 @@ public class Class7499<T extends Class399>
     private Class1932 field29068;
     private final Class8295 field29069;
     
-    private static <T extends Class399> Class7499<T> method23353(final String s, final Class8868<T> class8868) {
+    private static <T extends Entity> Class7499<T> method23353(final String s, final Class8868<T> class8868) {
         return Class90.method511(Class90.field210, s, class8868.method31162(s));
     }
     
@@ -152,19 +154,19 @@ public class Class7499<T extends Class399>
     }
     
     @Nullable
-    public Class399 method23356(final Class1847 class1847, final Class8321 class1848, final Class512 class1849, final Class354 class1850, final Class2101 class1851, final boolean b, final boolean b2) {
+    public Entity method23356(final Class1847 class1847, final Class8321 class1848, final Class512 class1849, final BlockPos class1850, final Class2101 class1851, final boolean b, final boolean b2) {
         return this.method23357(class1847, (class1848 != null) ? class1848.method27657() : null, (class1848 != null && class1848.method27667()) ? class1848.method27664() : null, class1849, class1850, class1851, b, b2);
     }
     
     @Nullable
-    public T method23357(final Class1847 class1847, final Class51 class1848, final Class2250 class1849, final Class512 class1850, final Class354 class1851, final Class2101 class1852, final boolean b, final boolean b2) {
-        final Class399 method23358 = this.method23358(class1847, class1848, class1849, class1850, class1851, class1852, b, b2);
+    public T method23357(final Class1847 class1847, final Class51 class1848, final Class2250 class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+        final Entity method23358 = this.method23358(class1847, class1848, class1849, class1850, class1851, class1852, b, b2);
         class1847.method6886(method23358);
         return (T)method23358;
     }
     
     @Nullable
-    public T method23358(final Class1847 class1847, final Class51 class1848, final Class2250 class1849, final Class512 class1850, final Class354 class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23358(final Class1847 class1847, final Class51 class1848, final Class2250 class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Class759 method23371 = (Class759)this.method23371(class1847);
         if (method23371 != null) {
             double method23372;
@@ -172,15 +174,15 @@ public class Class7499<T extends Class399>
                 method23372 = 0.0;
             }
             else {
-                method23371.method1656(class1851.method1074() + 0.5, class1851.method1075() + 1, class1851.method1076() + 0.5);
+                method23371.method1656(class1851.getX() + 0.5, class1851.getY() + 1, class1851.getZ() + 0.5);
                 method23372 = method23359(class1847, class1851, b2, method23371.method1886());
             }
-            method23371.method1730(class1851.method1074() + 0.5, class1851.method1075() + method23372, class1851.method1076() + 0.5, Class9546.method35668(class1847.field10062.nextFloat() * 360.0f), 0.0f);
+            method23371.method1730(class1851.getX() + 0.5, class1851.getY() + method23372, class1851.getZ() + 0.5, MathHelper.method35668(class1847.field10062.nextFloat() * 360.0f), 0.0f);
             if (method23371 instanceof Class759) {
                 final Class759 class1853 = method23371;
                 class1853.field2953 = class1853.field2399;
                 class1853.field2951 = class1853.field2399;
-                class1853.method4188(class1847, class1847.method6784(new Class354(class1853)), class1852, null, class1848);
+                class1853.method4188(class1847, class1847.method6784(new BlockPos(class1853)), class1852, null, class1848);
                 class1853.method4156();
             }
             if (class1849 != null) {
@@ -194,15 +196,15 @@ public class Class7499<T extends Class399>
         return null;
     }
     
-    public static double method23359(final Class1852 class1852, final Class354 class1853, final boolean b, final Class6221 class1854) {
+    public static double method23359(final Class1852 class1852, final BlockPos class1853, final boolean b, final Class6221 class1854) {
         Class6221 method18494 = new Class6221(class1853);
         if (b) {
             method18494 = method18494.method18494(0.0, -1.0, 0.0);
         }
-        return 1.0 + Class7698.method24498(Class111.field352, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
+        return 1.0 + Class7698.method24498(Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
     }
     
-    public static void method23360(final Class1847 class1847, final Class512 class1848, final Class399 class1849, final Class51 class1850) {
+    public static void method23360(final Class1847 class1847, final Class512 class1848, final Entity class1849, final Class51 class1850) {
         if (class1850 != null) {
             if (class1850.method316("EntityTag", 10)) {
                 final Class394 method6679 = class1847.method6679();
@@ -285,17 +287,17 @@ public class Class7499<T extends Class399>
     }
     
     @Nullable
-    public static Class399 method23372(final int n, final Class1847 class1847) {
+    public static Entity method23372(final int n, final Class1847 class1847) {
         return method23374(class1847, Class90.field210.method499(n));
     }
     
-    public static Optional<Class399> method23373(final Class51 class51, final Class1847 class52) {
+    public static Optional<Entity> method23373(final Class51 class51, final Class1847 class52) {
         return Class8349.method27855(method23377(class51).map(class54 -> class54.method23371(class53)), class56 -> class56.method1757(class55), () -> Class7499.field28956.warn("Skipping Entity with id {}", (Object)class57.method323("id")));
     }
     
     @Nullable
-    private static Class399 method23374(final Class1847 class1847, final Class7499<?> class1848) {
-        return (Class399)((class1848 != null) ? class1848.method23371(class1847) : null);
+    private static Entity method23374(final Class1847 class1847, final Class7499<?> class1848) {
+        return (Entity)((class1848 != null) ? class1848.method23371(class1847) : null);
     }
     
     public Class6221 method23375(final double n, final double n2, final double n3) {
@@ -312,15 +314,15 @@ public class Class7499<T extends Class399>
     }
     
     @Nullable
-    public static Class399 method23378(final Class51 class51, final Class1847 class52, final Function<Class399, Class399> mapper) {
-        return method23379(class51, class52).map((Function<? super Class399, ?>)mapper).map(class55 -> {
+    public static Entity method23378(final Class51 class51, final Class1847 class52, final Function<Entity, Entity> mapper) {
+        return method23379(class51, class52).map((Function<? super Entity, ?>)mapper).map(class55 -> {
             if (!(!class53.method316("Passengers", 9))) {
                 class53.method328("Passengers", 10);
                 int i = 0;
                 final Class52 class56;
                 while (i < class56.size()) {
                     method23378(class56.method346(i), class54, function);
-                    final Class399 class57;
+                    final Entity class57;
                     if (class57 != null) {
                         class57.method1780(class55, true);
                     }
@@ -331,7 +333,7 @@ public class Class7499<T extends Class399>
         }).orElse(null);
     }
     
-    private static Optional<Class399> method23379(final Class51 class51, final Class1847 class52) {
+    private static Optional<Entity> method23379(final Class51 class51, final Class1847 class52) {
         try {
             return method23373(class51, class52);
         }

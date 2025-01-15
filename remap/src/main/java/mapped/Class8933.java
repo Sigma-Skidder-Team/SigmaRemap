@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.stream.IntStream;
+
+import net.minecraft.client.renderer.Vector4f;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.opengl.GL31;
 import org.lwjgl.opengl.ARBCopyBuffer;
@@ -16,7 +18,7 @@ import java.nio.ByteBuffer;
 import org.lwjgl.opengl.GL15;
 import java.nio.IntBuffer;
 import org.lwjgl.opengl.GL20;
-import java.util.List;
+
 import java.util.ArrayList;
 import org.lwjgl.opengl.GLCapabilities;
 import org.lwjgl.opengl.GL14;
@@ -40,8 +42,8 @@ public class Class8933
     private static final Class8766 field37556;
     private static final Class7656 field37557;
     private static final FloatBuffer field37558;
-    private static final Class9138 field37559;
-    private static final Class9138 field37560;
+    private static final Vector3f field37559;
+    private static final Vector3f field37560;
     private static int field37561;
     private static final Class8887[] field37562;
     private static int field37563;
@@ -788,13 +790,13 @@ public class Class8933
         method31634();
         method31507(0);
         method31507(1);
-        final Class8526 class6790 = new Class8526(Class8933.field37559);
+        final Vector4f class6790 = new Vector4f(Class8933.field37559);
         class6790.method28603(class6789);
         method31511(16384, 4611, method31580(class6790.method28595(), class6790.method28596(), class6790.method28597(), 0.0f));
         method31511(16384, 4609, method31580(0.6f, 0.6f, 0.6f, 1.0f));
         method31511(16384, 4608, method31580(0.0f, 0.0f, 0.0f, 1.0f));
         method31511(16384, 4610, method31580(0.0f, 0.0f, 0.0f, 1.0f));
-        final Class8526 class6791 = new Class8526(Class8933.field37560);
+        final Vector4f class6791 = new Vector4f(Class8933.field37560);
         class6791.method28603(class6789);
         method31511(16385, 4611, method31580(class6791.method28595(), class6791.method28596(), class6791.method28597(), 0.0f));
         method31511(16385, 4609, method31580(0.6f, 0.6f, 0.6f, 1.0f));
@@ -810,8 +812,8 @@ public class Class8933
         final Class6789 class6789 = new Class6789();
         class6789.method20748();
         class6789.method20752(Class6789.method20759(1.0f, -1.0f, 1.0f));
-        class6789.method20753(Class9138.field38718.method33328(-22.5f));
-        class6789.method20753(Class9138.field38716.method33328(135.0f));
+        class6789.method20753(Vector3f.field38718.rotationDegrees(-22.5f));
+        class6789.method20753(Vector3f.XP.rotationDegrees(135.0f));
         method31577(class6789);
     }
     
@@ -819,11 +821,11 @@ public class Class8933
         Class8726.method29989(Class8726::method29984);
         final Class6789 class6789 = new Class6789();
         class6789.method20748();
-        class6789.method20753(Class9138.field38718.method33328(62.0f));
-        class6789.method20753(Class9138.field38716.method33328(185.5f));
+        class6789.method20753(Vector3f.field38718.rotationDegrees(62.0f));
+        class6789.method20753(Vector3f.XP.rotationDegrees(185.5f));
         class6789.method20752(Class6789.method20759(1.0f, -1.0f, 1.0f));
-        class6789.method20753(Class9138.field38718.method33328(-22.5f));
-        class6789.method20753(Class9138.field38716.method33328(135.0f));
+        class6789.method20753(Vector3f.field38718.rotationDegrees(-22.5f));
+        class6789.method20753(Vector3f.XP.rotationDegrees(135.0f));
         method31577(class6789);
     }
     
@@ -1621,8 +1623,8 @@ public class Class8933
         field37556 = new Class8766(null);
         field37557 = new Class7656(null);
         field37558 = Class9078.method32716(4);
-        field37559 = Class8349.method27851(new Class9138(0.2f, 1.0f, -0.7f), Class9138::method33322);
-        field37560 = Class8349.method27851(new Class9138(-0.2f, 1.0f, 0.7f), Class9138::method33322);
+        field37559 = Class8349.method27851(new Vector3f(0.2f, 1.0f, -0.7f), Vector3f::method33322);
+        field37560 = Class8349.method27851(new Vector3f(-0.2f, 1.0f, 0.7f), Vector3f::method33322);
         field37562 = IntStream.range(0, 32).mapToObj(p0 -> new Class8887(null)).toArray(Class8887[]::new);
         Class8933.field37563 = 7425;
         field37564 = new Class8824(32826);

@@ -9,13 +9,13 @@ import java.io.IOException;
 public class Class4271 implements Class4252<Class5800>
 {
     private static String[] field19156;
-    private Class354 field19157;
+    private BlockPos field19157;
     private Class7096 field19158;
     
     public Class4271() {
     }
     
-    public Class4271(final Class1855 class1855, final Class354 field19157) {
+    public Class4271(final Class1855 class1855, final BlockPos field19157) {
         this.field19157 = field19157;
         this.field19158 = class1855.method6701(field19157);
     }
@@ -40,7 +40,7 @@ public class Class4271 implements Class4252<Class5800>
         return this.field19158;
     }
     
-    public Class354 method12818() {
+    public BlockPos method12818() {
         return this.field19157;
     }
 }

@@ -8,7 +8,7 @@ public class Class4533
 {
     private static String[] field19954;
     public Class2052 field19955;
-    public Class354 field19956;
+    public BlockPos field19956;
     public String field19957;
     
     private Class4533() {

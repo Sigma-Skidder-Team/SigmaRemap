@@ -7,18 +7,18 @@ package mapped;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.entity.Entity;
 
 public class Class9250
 {
@@ -30,7 +30,7 @@ public class Class9250
     }
     
     public static CompletableFuture<Suggestions> method34096(final Class7492 class7492, final SuggestionsBuilder suggestionsBuilder) {
-        final Class399 method23251 = class7492.method23251();
+        final Entity method23251 = class7492.method23251();
         final ArrayList arrayList = Lists.newArrayList();
         if (method23251 != null) {
             final Class6515 method23252 = class7492.method23255().method1579();

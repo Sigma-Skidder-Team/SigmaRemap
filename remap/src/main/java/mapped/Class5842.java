@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class5842<T extends Class399> extends Class5839<T>
+import net.minecraft.entity.Entity;
+
+public class Class5842<T extends Entity> extends Class5839<T>
 {
     private static String[] field23948;
     

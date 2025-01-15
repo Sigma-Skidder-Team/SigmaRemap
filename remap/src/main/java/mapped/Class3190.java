@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
-import java.util.Iterator;
+
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +61,7 @@ public class Class3190 extends Class3167
             else {
                 final int[] method12989 = ((Class4325)class5723.method16998()).method12989();
                 for (int length = method12989.length, i = 0; i < length; ++i) {
-                    final Class399 method12990 = Class3190.field15514.field4683.method6741(method12989[i]);
+                    final Entity method12990 = Class3190.field15514.field4683.method6741(method12989[i]);
                     if (method12990 != null) {
                         if (method12990 instanceof Class512) {
                             if (this.field15594.containsKey(method12990.method1865())) {
@@ -96,12 +97,12 @@ public class Class3190 extends Class3167
     public void method10008(final Class5739 class5739) {
         if (this.method9906()) {
             for (final Class8124 class5740 : this.method10007(Class9463.method35173().method35200().method24262())) {
-                final Class354 class5741 = new Class354(class5740.field33469 - ((class5740.field33469 <= 0) ? 1 : 0), class5740.field33472, class5740.field33470 - ((class5740.field33470 <= 0) ? 1 : 0));
+                final BlockPos class5741 = new BlockPos(class5740.field33469 - ((class5740.field33469 <= 0) ? 1 : 0), class5740.field33472, class5740.field33470 - ((class5740.field33470 <= 0) ? 1 : 0));
                 if (Math.sqrt(Class8591.method29092(class5741)) <= 300.0) {
                     if (Class3190.field15514.field4683.method6965(class5741) != null) {
                         if (class5740.field33473) {
-                            int n = class5741.method1074() % 16;
-                            int n2 = class5741.method1076() % 16;
+                            int n = class5741.getX() % 16;
+                            int n2 = class5741.getZ() % 16;
                             if (n2 < 0) {
                                 n2 += 16;
                             }

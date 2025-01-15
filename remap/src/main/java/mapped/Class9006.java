@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
+import net.minecraft.util.Direction;
+
 import java.util.BitSet;
 import java.util.List;
 import java.util.Set;
@@ -43,7 +45,7 @@ public class Class9006
         return this.field38026;
     }
     
-    public boolean method32210(final Class179 class179, final Class179 class180) {
+    public boolean method32210(final Direction class179, final Direction class180) {
         return Class3237.field15720.method9906() || this.field38027.method27782(class179, class180);
     }
     

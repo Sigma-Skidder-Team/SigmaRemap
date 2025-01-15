@@ -7,6 +7,8 @@ package mapped;
 import java.util.Arrays;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterators;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import javax.annotation.Nullable;
 
@@ -85,7 +87,7 @@ public class Class95<K> implements Class89<K>
     }
     
     private int method571(final K k) {
-        return (Class9546.method35698(System.identityHashCode(k)) & Integer.MAX_VALUE) % this.field258.length;
+        return (MathHelper.method35698(System.identityHashCode(k)) & Integer.MAX_VALUE) % this.field258.length;
     }
     
     private int method572(final K k, final int n) {

@@ -10,12 +10,14 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonArray;
 import com.google.common.collect.Maps;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
+
 import java.util.Iterator;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap$Entry;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 
 public class Class8139
@@ -44,7 +46,7 @@ public class Class8139
         this.field33535 = field33535;
     }
     
-    public boolean method26819(final Class399 class399) {
+    public boolean method26819(final Entity class399) {
         if (this == Class8139.field33530) {
             return true;
         }

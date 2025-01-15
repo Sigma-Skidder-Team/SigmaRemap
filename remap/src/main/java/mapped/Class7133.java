@@ -68,7 +68,7 @@ public abstract class Class7133<DC extends Class6926>
         return new Class9166<DC>(this, dc);
     }
     
-    public <FC extends Class5113, F extends Class4535<FC>> boolean method21890(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final DC dc, final Class8530<FC, F> class1854) {
+    public <FC extends Class5113, F extends Class4535<FC>> boolean method21890(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final DC dc, final Class8530<FC, F> class1854) {
         final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
         this.method21885(class1851, class1852, random, dc, class1853).forEach(class1858 -> {
             class1855.method28613(class1856, class1857, random2, class1858);
@@ -79,7 +79,7 @@ public abstract class Class7133<DC extends Class6926>
         return atomicBoolean.get();
     }
     
-    public abstract Stream<Class354> method21885(final Class1851 p0, final Class6346<? extends Class7065> p1, final Random p2, final DC p3, final Class354 p4);
+    public abstract Stream<BlockPos> method21885(final Class1851 p0, final Class6346<? extends Class7065> p1, final Random p2, final DC p3, final BlockPos p4);
     
     @Override
     public String toString() {

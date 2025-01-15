@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class1807 extends Class1805<Class767, Class5872<Class767>>
 {
     private static final Class1932 field9977;
@@ -16,7 +18,7 @@ public class Class1807 extends Class1805<Class767, Class5872<Class767>>
     
     @Override
     public float method6565(final float n) {
-        return Class9546.method35639(n * 0.02f) * 3.0f;
+        return MathHelper.cos(n * 0.02f) * 3.0f;
     }
     
     @Override

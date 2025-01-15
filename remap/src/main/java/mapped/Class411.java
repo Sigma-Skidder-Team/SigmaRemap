@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class411 extends Class409
 {
     private static String[] field2508;
@@ -43,7 +45,7 @@ public class Class411 extends Class409
     @Override
     public void method2016(final Class7006 class7006) {
         if (class7006.method21449() == Class2165.field12882) {
-            final Class399 method21452 = ((Class7007)class7006).method21452();
+            final Entity method21452 = ((Class7007)class7006).method21452();
             method21452.method1740(Class7929.method25699(this, this.method2019()), (method21452 instanceof Class849) ? 3 : 0);
         }
         if (!this.field2391.field10067) {

@@ -21,7 +21,7 @@ public class Class4782 extends Class4703<Class420>
         class421.method22567();
         class421.method22565(2.0f, 2.0f, 2.0f);
         class421.method22566(this.field20283.method28717());
-        class421.method22566(Class9138.field38718.method33328(180.0f));
+        class421.method22566(Vector3f.field38718.rotationDegrees(180.0f));
         final Class8996 method22569 = class421.method22569();
         final Class6789 method22570 = method22569.method32111();
         final Class9429 method22571 = method22569.method32112();

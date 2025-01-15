@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -99,7 +102,7 @@ public class Class853 extends Class759 implements Class762
             for (int method5130 = this.method5130(), i = 0; i < method5130 * 8; ++i) {
                 final float n = this.field2423.nextFloat() * 6.2831855f;
                 final float n2 = this.field2423.nextFloat() * 0.5f + 0.5f;
-                this.field2391.method6709(this.method5132(), this.method1938() + Class9546.method35638(n) * method5130 * 0.5f * n2, this.method1941(), this.method1945() + Class9546.method35639(n) * method5130 * 0.5f * n2, 0.0, 0.0, 0.0);
+                this.field2391.method6709(this.method5132(), this.method1938() + MathHelper.sin(n) * method5130 * 0.5f * n2, this.method1941(), this.method1945() + MathHelper.cos(n) * method5130 * 0.5f * n2, 0.0, 0.0, 0.0);
             }
             this.method1695(this.method5138(), this.method2720(), ((this.field2423.nextFloat() - this.field2423.nextFloat()) * 0.2f + 1.0f) / 0.8f);
             this.field4557 = -0.5f;
@@ -178,7 +181,7 @@ public class Class853 extends Class759 implements Class762
     }
     
     @Override
-    public void method1737(final Class399 class399) {
+    public void method1737(final Entity class399) {
         super.method1737(class399);
         if (class399 instanceof Class786) {
             if (this.method5136()) {
@@ -240,14 +243,14 @@ public class Class853 extends Class759 implements Class762
         return (this.method5130() != 1) ? Class9020.field38063 : this.method1642().method23368();
     }
     
-    public static boolean method5139(final Class7499<Class853> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method5139(final Class7499<Class853> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6764().method29570() == Class9505.field40893 && random.nextInt(4) != 1) {
             return false;
         }
         if (class7500.method6954() != Class2113.field12290) {
             if (class7500.method6959(class7502) == Class7102.field27638) {
-                if (class7502.method1075() > 50) {
-                    if (class7502.method1075() < 70) {
+                if (class7502.getY() > 50) {
+                    if (class7502.getY() < 70) {
                         if (random.nextFloat() < 0.5f) {
                             if (random.nextFloat() < class7500.method6951()) {
                                 if (class7500.method6969(class7502) <= random.nextInt(8)) {
@@ -262,7 +265,7 @@ public class Class853 extends Class759 implements Class762
             final boolean b = Class2317.method9442(class7503.field32290, class7503.field32291, class7500.method6753(), 987234911L).nextInt(10) == 0;
             if (random.nextInt(10) == 0) {
                 if (b) {
-                    if (class7502.method1075() < 40) {
+                    if (class7502.getY() < 40) {
                         return Class759.method4178(class7499, class7500, class7501, class7502, random);
                     }
                 }
@@ -287,7 +290,7 @@ public class Class853 extends Class759 implements Class762
     
     @Override
     public void method2725() {
-        final Class5487 method1935 = this.method1935();
+        final Vec3d method1935 = this.method1935();
         this.method1937(method1935.field22770, this.method2724(), method1935.field22772);
         this.field2448 = true;
     }

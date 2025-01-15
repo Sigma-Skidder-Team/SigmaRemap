@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import com.mojang.authlib.GameProfile;
 import com.google.common.collect.Lists;
 import java.util.Iterator;
-import java.net.InetAddress;
 import java.util.Optional;
 import java.util.function.BooleanSupplier;
 import java.io.IOException;
@@ -31,7 +30,7 @@ public class Class1655 extends Class394
     private UUID field9274;
     private long field9275;
     public Class1847 field9276;
-    public Class354 field9277;
+    public BlockPos field9277;
     public Class9592 field9278;
     
     public Class1655(final Class869 field9269, final String s, final String s2, final Class8511 class8511, final YggdrasilAuthenticationService yggdrasilAuthenticationService, final MinecraftSessionService minecraftSessionService, final GameProfileRepository gameProfileRepository, final Class8608 class8512, final Class6906 class8513) {
@@ -311,7 +310,7 @@ public class Class1655 extends Class394
         }
     }
     
-    public Class9592 method5683(final Class1847 field9276, final Class354 field9277) {
+    public Class9592 method5683(final Class1847 field9276, final BlockPos field9277) {
         this.field9276 = field9276;
         this.field9277 = field9277;
         return this.field9278;

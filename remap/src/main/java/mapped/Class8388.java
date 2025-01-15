@@ -6,6 +6,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.IntPriorityQueue;
 import it.unimi.dsi.fastutil.ints.IntArrayFIFOQueue;
+import net.minecraft.util.Direction;
+
 import java.util.EnumSet;
 import java.util.Set;
 import java.util.BitSet;
@@ -16,7 +18,7 @@ public class Class8388
     private static final int field34384;
     private static final int field34385;
     private static final int field34386;
-    private static final Class179[] field34387;
+    private static final Direction[] field34387;
     private final BitSet field34388;
     private static final int[] field34389;
     private int field34390;
@@ -26,13 +28,13 @@ public class Class8388
         this.field34390 = 4096;
     }
     
-    public void method27958(final Class354 class354) {
+    public void method27958(final BlockPos class354) {
         this.field34388.set(method27959(class354), true);
         --this.field34390;
     }
     
-    private static int method27959(final Class354 class354) {
-        return method27960(class354.method1074() & 0xF, class354.method1075() & 0xF, class354.method1076() & 0xF);
+    private static int method27959(final BlockPos class354) {
+        return method27960(class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF);
     }
     
     private static int method27960(final int n, final int n2, final int n3) {
@@ -59,19 +61,19 @@ public class Class8388
         return class8336;
     }
     
-    public Set<Class179> method27962(final Class354 class354) {
+    public Set<Direction> method27962(final BlockPos class354) {
         return this.method27963(method27959(class354));
     }
     
-    private Set<Class179> method27963(final int bitIndex) {
-        final EnumSet<Class179> none = EnumSet.noneOf(Class179.class);
+    private Set<Direction> method27963(final int bitIndex) {
+        final EnumSet<Direction> none = EnumSet.noneOf(Direction.class);
         final IntArrayFIFOQueue intArrayFIFOQueue = new IntArrayFIFOQueue(384);
         ((IntPriorityQueue)intArrayFIFOQueue).enqueue(bitIndex);
         this.field34388.set(bitIndex, true);
         while (!((IntPriorityQueue)intArrayFIFOQueue).isEmpty()) {
             final int dequeueInt = ((IntPriorityQueue)intArrayFIFOQueue).dequeueInt();
             this.method27964(dequeueInt, none);
-            final Class179[] field34387 = Class8388.field34387;
+            final Direction[] field34387 = Class8388.field34387;
             for (int length = field34387.length, i = 0; i < length; ++i) {
                 final int method27965 = this.method27965(dequeueInt, field34387[i]);
                 if (method27965 >= 0) {
@@ -85,37 +87,37 @@ public class Class8388
         return none;
     }
     
-    private void method27964(final int n, final Set<Class179> set) {
+    private void method27964(final int n, final Set<Direction> set) {
         final int n2 = n >> 0 & 0xF;
         if (n2 != 0) {
             if (n2 == 15) {
-                set.add(Class179.field516);
+                set.add(Direction.EAST);
             }
         }
         else {
-            set.add(Class179.field515);
+            set.add(Direction.WEST);
         }
         final int n3 = n >> 8 & 0xF;
         if (n3 != 0) {
             if (n3 == 15) {
-                set.add(Class179.field512);
+                set.add(Direction.UP);
             }
         }
         else {
-            set.add(Class179.field511);
+            set.add(Direction.DOWN);
         }
         final int n4 = n >> 4 & 0xF;
         if (n4 != 0) {
             if (n4 == 15) {
-                set.add(Class179.field514);
+                set.add(Direction.SOUTH);
             }
         }
         else {
-            set.add(Class179.field513);
+            set.add(Direction.NORTH);
         }
     }
     
-    private int method27965(final int n, final Class179 class179) {
+    private int method27965(final int n, final Direction class179) {
         switch (Class8133.field33506[class179.ordinal()]) {
             case 1: {
                 if ((n >> 8 & 0xF) == 0x0) {
@@ -163,7 +165,7 @@ public class Class8388
         field34384 = (int)Math.pow(16.0, 0.0);
         field34385 = (int)Math.pow(16.0, 1.0);
         field34386 = (int)Math.pow(16.0, 2.0);
-        field34387 = Class179.values();
+        field34387 = Direction.values();
         field34389 = Class8349.method27851(new int[1352], array -> {
             int i = 0;
             while (i < 16) {

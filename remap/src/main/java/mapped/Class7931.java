@@ -4,26 +4,28 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class7931 extends Class7930
 {
-    private final Class399 field32596;
+    private final Entity field32596;
     
-    public Class7931(final String s, final Class399 class399, final Class399 field32596) {
+    public Class7931(final String s, final Entity class399, final Entity field32596) {
         super(s, class399);
         this.field32596 = field32596;
     }
     
     @Nullable
     @Override
-    public Class399 method25713() {
+    public Entity method25713() {
         return this.field32594;
     }
     
     @Nullable
     @Override
-    public Class399 method25714() {
+    public Entity method25714() {
         return this.field32596;
     }
     

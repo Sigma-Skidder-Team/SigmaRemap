@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class Class6316 implements Class6313
     }
     
     @Override
-    public List<Class8754> method18691(final Class7096 class7096, final Class179 class7097, final Random random) {
+    public List<Class8754> method18691(final Class7096 class7096, final Direction class7097, final Random random) {
         return Class8223.method27250(this.field25254, Math.abs((int)random.nextLong()) % this.field25253).field26814.method18691(class7096, class7097, random);
     }
     

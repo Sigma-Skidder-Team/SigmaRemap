@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.Arrays;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.function.Function;
 import com.google.common.collect.Streams;
 import java.util.stream.Stream;
 import java.util.Iterator;
@@ -14,6 +13,8 @@ import java.util.regex.Matcher;
 import java.util.IllegalFormatException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.regex.Pattern;
 import java.util.List;
 
@@ -176,7 +177,7 @@ public class Class2259 extends Class2251 implements Class2253
     }
     
     @Override
-    public Class2250 method8473(final Class7492 class7492, final Class399 class7493, final int n) throws CommandSyntaxException {
+    public Class2250 method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
         final Object[] array = new Object[this.field13812.length];
         for (int i = 0; i < array.length; ++i) {
             final Object o = this.field13812[i];

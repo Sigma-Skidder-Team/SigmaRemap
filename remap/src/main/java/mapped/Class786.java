@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class786 extends Class785
 {
     public static final Class8810<Byte> field4195;
@@ -51,7 +54,7 @@ public class Class786 extends Class785
     }
     
     @Override
-    public void method2741(final Class399 class399) {
+    public void method2741(final Entity class399) {
         if (class399 instanceof Class762) {
             if (!(class399 instanceof Class765)) {
                 if (this.method2633().nextInt(20) == 0) {
@@ -71,9 +74,9 @@ public class Class786 extends Class785
         if (this.field4197 > 0) {
             --this.field4197;
         }
-        if (Class399.method1680(this.method1935()) > 2.500000277905201E-7) {
+        if (Entity.method1680(this.method1935()) > 2.500000277905201E-7) {
             if (this.field2423.nextInt(5) == 0) {
-                final Class7096 method6701 = this.field2391.method6701(new Class354(Class9546.method35644(this.method1938()), Class9546.method35644(this.method1941() - 0.20000000298023224), Class9546.method35644(this.method1945())));
+                final Class7096 method6701 = this.field2391.method6701(new BlockPos(MathHelper.floor(this.method1938()), MathHelper.floor(this.method1941() - 0.20000000298023224), MathHelper.floor(this.method1945())));
                 if (!method6701.method21706()) {
                     this.field2391.method6709(new Class6911(Class8432.field34600, method6701), this.method1938() + (this.field2423.nextFloat() - 0.5) * this.method1930(), this.method1941() + 0.1, this.method1945() + (this.field2423.nextFloat() - 0.5) * this.method1930(), 4.0 * (this.field2423.nextFloat() - 0.5), 0.5, (this.field2423.nextFloat() - 0.5) * 4.0);
                 }
@@ -103,7 +106,7 @@ public class Class786 extends Class785
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         this.field4196 = 10;
         this.field2391.method6761(this, (byte)4);
         final float method4336 = this.method4336();
@@ -197,7 +200,7 @@ public class Class786 extends Class785
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35318, 1.0f, 1.0f);
     }
     
@@ -226,11 +229,11 @@ public class Class786 extends Class785
     
     @Override
     public boolean method4180(final Class1852 class1852) {
-        final Class354 class1853 = new Class354(this);
-        final Class354 method1139 = class1853.method1139();
+        final BlockPos class1853 = new BlockPos(this);
+        final BlockPos method1139 = class1853.method1139();
         if (class1852.method6701(method1139).method21731(class1852, method1139, this)) {
             for (int i = 1; i < 3; ++i) {
-                final Class354 method1140 = class1853.method1138(i);
+                final BlockPos method1140 = class1853.method1138(i);
                 final Class7096 method1141 = class1852.method6701(method1140);
                 if (!Class8532.method28620(class1852, method1140, method1141, method1141.method21756())) {
                     return false;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class7256 extends Class7255
 {
     private static String[] field28131;
@@ -14,13 +16,13 @@ public class Class7256 extends Class7255
     }
     
     @Override
-    public boolean method22154(final Class7099 class7099, final Class1855 class7100, final Class354 class7101, final Class7255 class7102, final Class179 class7103) {
+    public boolean method22154(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101, final Class7255 class7102, final Direction class7103) {
         return true;
     }
     
     @Override
-    public Class5487 method22155(final Class1855 class1855, final Class354 class1856, final Class7099 class1857) {
-        return Class5487.field22769;
+    public Vec3d method22155(final Class1855 class1855, final BlockPos class1856, final Class7099 class1857) {
+        return Vec3d.field22769;
     }
     
     @Override
@@ -39,7 +41,7 @@ public class Class7256 extends Class7255
     }
     
     @Override
-    public float method22160(final Class7099 class7099, final Class1855 class7100, final Class354 class7101) {
+    public float method22160(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
         return 0.0f;
     }
     
@@ -64,7 +66,7 @@ public class Class7256 extends Class7255
     }
     
     @Override
-    public Class7702 method22167(final Class7099 class7099, final Class1855 class7100, final Class354 class7101) {
+    public Class7702 method22167(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
         return Class7698.method24486();
     }
 }

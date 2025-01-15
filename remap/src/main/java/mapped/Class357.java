@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Random;
 
-public abstract class Class357 implements Class356
+public abstract class Class357 implements IDynamicSerializable
 {
     public final Class8804<?> field2184;
     
@@ -14,5 +14,5 @@ public abstract class Class357 implements Class356
         this.field2184 = field2184;
     }
     
-    public abstract Class7096 method1164(final Random p0, final Class354 p1);
+    public abstract Class7096 method1164(final Random p0, final BlockPos p1);
 }

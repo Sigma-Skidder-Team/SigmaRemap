@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 
 public interface Class587<T>
@@ -22,7 +24,7 @@ public interface Class587<T>
                 ++n5;
             }
             final boolean b = method11305 < n2 / 2.0f;
-            final int method11306 = Class9546.method35642(n2 / 2.0f - method11305 / 2.0f);
+            final int method11306 = MathHelper.method35642(n2 / 2.0f - method11305 / 2.0f);
             if (b) {
                 if (method11306 > i) {
                     n5 += n;
@@ -34,7 +36,7 @@ public interface Class587<T>
                     return;
                 }
                 final boolean b2 = method11304 < n / 2.0f;
-                final int method11307 = Class9546.method35642(n / 2.0f - method11304 / 2.0f);
+                final int method11307 = MathHelper.method35642(n / 2.0f - method11304 / 2.0f);
                 int n6 = method11304;
                 boolean b3 = j < method11304;
                 if (b2) {

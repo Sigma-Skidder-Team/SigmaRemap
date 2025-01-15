@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
-import java.util.Iterator;
 
 public class Class8671
 {
@@ -60,7 +61,7 @@ public class Class8671
             if (class1850.method1639()) {
                 continue;
             }
-            final Class354 method1894 = class1850.method1894();
+            final BlockPos method1894 = class1850.method1894();
             if (!class1849.method6922(method1894)) {
                 continue;
             }
@@ -69,10 +70,10 @@ public class Class8671
             }
             for (int i = 0; i < 10; ++i) {
                 final float n = class1849.field10062.nextFloat() * 6.2831855f;
-                this.field36457 = method1894.method1074() + Class9546.method35642(Class9546.method35639(n) * 32.0f);
-                this.field36458 = method1894.method1075();
-                this.field36459 = method1894.method1076() + Class9546.method35642(Class9546.method35638(n) * 32.0f);
-                if (this.method29683(class1849, new Class354(this.field36457, this.field36458, this.field36459)) != null) {
+                this.field36457 = method1894.getX() + MathHelper.method35642(MathHelper.cos(n) * 32.0f);
+                this.field36458 = method1894.getY();
+                this.field36459 = method1894.getZ() + MathHelper.method35642(MathHelper.sin(n) * 32.0f);
+                if (this.method29683(class1849, new BlockPos(this.field36457, this.field36458, this.field36459)) != null) {
                     this.field36456 = 0;
                     this.field36455 = 20;
                     break;
@@ -84,12 +85,12 @@ public class Class8671
     }
     
     private void method29682(final Class1849 class1849) {
-        final Class5487 method29683 = this.method29683(class1849, new Class354(this.field36457, this.field36458, this.field36459));
+        final Vec3d method29683 = this.method29683(class1849, new BlockPos(this.field36457, this.field36458, this.field36459));
         if (method29683 != null) {
             Class827 class1850;
             try {
                 class1850 = new Class827(class1849);
-                class1850.method4188(class1849, class1849.method6784(new Class354(class1850)), Class2101.field12181, null, null);
+                class1850.method4188(class1849, class1849.method6784(new BlockPos(class1850)), Class2101.field12181, null, null);
             }
             catch (final Exception ex) {
                 ex.printStackTrace();
@@ -101,13 +102,13 @@ public class Class8671
     }
     
     @Nullable
-    private Class5487 method29683(final Class1849 class1849, final Class354 class1850) {
+    private Vec3d method29683(final Class1849 class1849, final BlockPos class1850) {
         for (int i = 0; i < 10; ++i) {
-            final int n = class1850.method1074() + class1849.field10062.nextInt(16) - 8;
-            final int n2 = class1850.method1076() + class1849.field10062.nextInt(16) - 8;
-            final Class354 class1851 = new Class354(n, class1849.method6699(Class2020.field11522, n, n2), n2);
+            final int n = class1850.getX() + class1849.field10062.nextInt(16) - 8;
+            final int n2 = class1850.getZ() + class1849.field10062.nextInt(16) - 8;
+            final BlockPos class1851 = new BlockPos(n, class1849.method6699(Class2020.field11522, n, n2), n2);
             if (class1849.method6922(class1851) && Class763.method4230(Class7499.field29052, class1849, Class2101.field12181, class1851, class1849.field10062)) {
-                return new Class5487(class1851.method1074() + 0.5, class1851.method1075(), class1851.method1076() + 0.5);
+                return new Vec3d(class1851.getX() + 0.5, class1851.getY(), class1851.getZ() + 0.5);
             }
         }
         return null;

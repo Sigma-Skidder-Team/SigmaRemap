@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class7793
 {
@@ -33,10 +35,10 @@ public class Class7793
     public static final SimpleCommandExceptionType field31894;
     public static final SimpleCommandExceptionType field31895;
     public static final DynamicCommandExceptionType field31896;
-    public static final BiConsumer<Class5487, List<? extends Class399>> field31897;
-    public static final BiConsumer<Class5487, List<? extends Class399>> field31898;
-    public static final BiConsumer<Class5487, List<? extends Class399>> field31899;
-    public static final BiConsumer<Class5487, List<? extends Class399>> field31900;
+    public static final BiConsumer<Vec3d, List<? extends Entity>> field31897;
+    public static final BiConsumer<Vec3d, List<? extends Entity>> field31898;
+    public static final BiConsumer<Vec3d, List<? extends Entity>> field31899;
+    public static final BiConsumer<Vec3d, List<? extends Entity>> field31900;
     public static final BiFunction<SuggestionsBuilder, Consumer<SuggestionsBuilder>, CompletableFuture<Suggestions>> field31901;
     private final StringReader field31902;
     private final boolean field31903;
@@ -53,8 +55,8 @@ public class Class7793
     private Double field31914;
     private Class9588 field31915;
     private Class9588 field31916;
-    private Predicate<Class399> field31917;
-    private BiConsumer<Class5487, List<? extends Class399>> field31918;
+    private Predicate<Entity> field31917;
+    private BiConsumer<Vec3d, List<? extends Entity>> field31918;
     private boolean field31919;
     private String field31920;
     private int field31921;
@@ -112,15 +114,15 @@ public class Class7793
             if (this.field31910 == null) {
                 if (this.field31911 == null) {
                     final Object o = class5487 -> class5487;
-                    return new Class9043(this.field31904, this.field31905, this.field31906, this.field31917, this.field31907, (Function<Class5487, Class5487>)o, method25036, this.field31918, this.field31919, this.field31920, this.field31922, this.field31932, this.field31936);
+                    return new Class9043(this.field31904, this.field31905, this.field31906, this.field31917, this.field31907, (Function<Vec3d, Vec3d>)o, method25036, this.field31918, this.field31919, this.field31920, this.field31922, this.field31932, this.field31936);
                 }
             }
         }
         final Object o = class5488 -> {
-            new Class5487((this.field31909 != null) ? this.field31909 : class5488.field22770, (this.field31910 != null) ? this.field31910 : class5488.field22771, (this.field31911 != null) ? this.field31911 : class5488.field22772);
+            new Vec3d((this.field31909 != null) ? this.field31909 : class5488.field22770, (this.field31910 != null) ? this.field31910 : class5488.field22771, (this.field31911 != null) ? this.field31911 : class5488.field22772);
             return;
         };
-        return new Class9043(this.field31904, this.field31905, this.field31906, this.field31917, this.field31907, (Function<Class5487, Class5487>)o, method25036, this.field31918, this.field31919, this.field31920, this.field31922, this.field31932, this.field31936);
+        return new Class9043(this.field31904, this.field31905, this.field31906, this.field31917, this.field31907, (Function<Vec3d, Vec3d>)o, method25036, this.field31918, this.field31919, this.field31920, this.field31922, this.field31932, this.field31936);
     }
     
     private Class6221 method25036(final double n, final double n2, final double n3) {
@@ -142,11 +144,11 @@ public class Class7793
         }
     }
     
-    private Predicate<Class399> method25038(final Class9588 class9588, final ToDoubleFunction<Class399> toDoubleFunction) {
+    private Predicate<Entity> method25038(final Class9588 class9588, final ToDoubleFunction<Entity> toDoubleFunction) {
         return class9590 -> {
-            final Object o = Class9546.method35668((class9589.method35956() != null) ? ((float)class9589.method35956()) : 0.0f);
-            final Object o2 = Class9546.method35668((class9589.method35957() != null) ? ((float)class9589.method35957()) : 359.0f);
-            Class9546.method35669(toDoubleFunction2.applyAsDouble(class9590));
+            final Object o = MathHelper.method35668((class9589.method35956() != null) ? ((float)class9589.method35956()) : 0.0f);
+            final Object o2 = MathHelper.method35668((class9589.method35957() != null) ? ((float)class9589.method35957()) : 359.0f);
+            MathHelper.method35669(toDoubleFunction2.applyAsDouble(class9590));
             if (n <= n2) {
                 final double n3;
                 return n3 >= n && n3 <= n2;
@@ -175,7 +177,7 @@ public class Class7793
                             this.field31904 = Integer.MAX_VALUE;
                             this.field31905 = true;
                             this.field31918 = Class7793.field31897;
-                            this.field31917 = Class399::method1768;
+                            this.field31917 = Entity::method1768;
                         }
                         else {
                             this.field31904 = 1;
@@ -307,7 +309,7 @@ public class Class7793
         return this.field31902;
     }
     
-    public void method25045(final Predicate<Class399> other) {
+    public void method25045(final Predicate<Entity> other) {
         this.field31917 = this.field31917.and(other);
     }
     
@@ -409,7 +411,7 @@ public class Class7793
         this.field31905 = field31905;
     }
     
-    public void method25069(final BiConsumer<Class5487, List<? extends Class399>> field31918) {
+    public void method25069(final BiConsumer<Vec3d, List<? extends Entity>> field31918) {
         this.field31918 = field31918;
     }
     

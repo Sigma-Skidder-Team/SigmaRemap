@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4702 extends Class4703<Class858>
 {
     private static final Class1932 field20277;
@@ -33,25 +35,25 @@ public class Class4702 extends Class4703<Class858>
         if (class858.method5185()) {
             this.field20282.method18643(class859, method13948, n3, field10335);
         }
-        class859.method22566(Class9138.field38718.method33328(n4));
+        class859.method22566(Vector3f.field38718.rotationDegrees(n4));
         class859.method22564(0.0, 1.5f + method13947 / 2.0f, 0.0);
-        class859.method22566(new Class9389(new Class9138(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
+        class859.method22566(new Quaternion(new Vector3f(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
         this.field20281.method18643(class859, method13948, n3, field10335);
         class859.method22565(0.875f, 0.875f, 0.875f);
-        class859.method22566(new Class9389(new Class9138(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
-        class859.method22566(Class9138.field38718.method33328(n4));
+        class859.method22566(new Quaternion(new Vector3f(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
+        class859.method22566(Vector3f.field38718.rotationDegrees(n4));
         this.field20281.method18643(class859, method13948, n3, field10335);
         class859.method22565(0.875f, 0.875f, 0.875f);
-        class859.method22566(new Class9389(new Class9138(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
-        class859.method22566(Class9138.field38718.method33328(n4));
+        class859.method22566(new Quaternion(new Vector3f(Class4702.field20279, 0.0f, Class4702.field20279), 60.0f, true));
+        class859.method22566(Vector3f.field38718.rotationDegrees(n4));
         this.field20280.method18643(class859, method13948, n3, field10335);
         class859.method22568();
         class859.method22568();
-        final Class354 method13949 = class858.method5183();
+        final BlockPos method13949 = class858.method5183();
         if (method13949 != null) {
-            final float n5 = method13949.method1074() + 0.5f;
-            final float n6 = method13949.method1075() + 0.5f;
-            final float n7 = method13949.method1076() + 0.5f;
+            final float n5 = method13949.getX() + 0.5f;
+            final float n6 = method13949.getY() + 0.5f;
+            final float n7 = method13949.getZ() + 0.5f;
             final float n8 = (float)(n5 - class858.method1938());
             final float n9 = (float)(n6 - class858.method1941());
             final float n10 = (float)(n7 - class858.method1945());
@@ -62,7 +64,7 @@ public class Class4702 extends Class4703<Class858>
     }
     
     public static float method13947(final Class858 class858, final float n) {
-        final float n2 = Class9546.method35638((class858.field4592 + n) * 0.2f) / 2.0f + 0.5f;
+        final float n2 = MathHelper.sin((class858.field4592 + n) * 0.2f) / 2.0f + 0.5f;
         return (n2 * n2 + n2) * 0.4f - 1.4f;
     }
     

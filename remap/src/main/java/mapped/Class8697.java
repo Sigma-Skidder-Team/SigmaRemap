@@ -63,7 +63,7 @@ public class Class8697
         if (this.field36550 != null && this.field36550 != class1849.field10063.method20487()) {
             return false;
         }
-        final Class354 class1850 = new Class354(n, n2, n3);
+        final BlockPos class1850 = new BlockPos(n, n2, n3);
         final boolean method6731 = class1849.method6731(class1850);
         return (this.field36548 == null || (method6731 && this.field36548 == class1849.method6959(class1850))) && (this.field36549 == null || (method6731 && this.field36549.method13590(class1849, class1850))) && this.field36551.method27890(class1849, class1850) && this.field36552.method25398(class1849, class1850) && this.field36553.method30235(class1849, class1850);
     }

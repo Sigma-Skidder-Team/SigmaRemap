@@ -11,12 +11,12 @@ public class Class6949
     private final float field27208;
     private final int field27209;
     
-    public Class6949(final Class354 class354, final float n, final int n2) {
+    public Class6949(final BlockPos class354, final float n, final int n2) {
         this(new Class6439(class354), n, n2);
     }
     
-    public Class6949(final Class5487 class5487, final float n, final int n2) {
-        this(new Class6439(new Class354(class5487)), n, n2);
+    public Class6949(final Vec3d class5487, final float n, final int n2) {
+        this(new Class6439(new BlockPos(class5487)), n, n2);
     }
     
     public Class6949(final Class6438 field27207, final float field27208, final int field27209) {

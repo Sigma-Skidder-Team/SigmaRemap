@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class435 extends Class436 implements Class447, Class434
 {
     private final Class446 field2649;
@@ -46,7 +48,7 @@ public class Class435 extends Class436 implements Class447, Class434
     }
     
     private void method2173(final int n) {
-        final int method35651 = Class9546.method35651(n, 0, this.field2653 - 1);
+        final int method35651 = MathHelper.method35651(n, 0, this.field2653 - 1);
         if (method35651 != this.field2652) {
             this.field2652 = method35651;
             this.method2161();
@@ -59,7 +61,7 @@ public class Class435 extends Class436 implements Class447, Class434
     }
     
     public int method2175() {
-        return Class9546.method35642(((this.field2653 <= 1) ? 1.0f : (this.method2174() / (this.field2653 - 1.0f))) * 14.0f) + (this.method2169() ? 1 : 0);
+        return MathHelper.method35642(((this.field2653 <= 1) ? 1.0f : (this.method2174() / (this.field2653 - 1.0f))) * 14.0f) + (this.method2169() ? 1 : 0);
     }
     
     private Class8321 method2176(final Class8321 class8321, final Class512 class8322) {
@@ -82,7 +84,7 @@ public class Class435 extends Class436 implements Class447, Class434
             string = "Lectern";
             method1871 = new Class2260("Lectern");
         }
-        return new Class7492(Class397.field2376, new Class5487(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5), Class9544.field41083, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
+        return new Class7492(Class397.field2376, new Class5487(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Class9544.field41083, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
     }
     
     @Override
@@ -100,7 +102,7 @@ public class Class435 extends Class436 implements Class447, Class434
             this.field2651 = this.method2176(Class8321.method27619(class51.method327("Book")), null);
         }
         this.field2653 = Class4096.method12341(this.field2651);
-        this.field2652 = Class9546.method35651(class51.method319("Page"), 0, this.field2653 - 1);
+        this.field2652 = MathHelper.method35651(class51.method319("Page"), 0, this.field2653 - 1);
     }
     
     @Override

@@ -4,8 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.io.IOUtils;
-import java.awt.image.RenderedImage;
 import org.lwjgl.BufferUtils;
 import java.io.File;
 import java.util.Iterator;
@@ -17,8 +17,6 @@ import java.io.InputStream;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.ImageObserver;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.nio.IntBuffer;
@@ -268,7 +266,7 @@ public class Class8969
     }
     
     public static boolean method31836(final int n) {
-        return Class9546.method35679(n) == n;
+        return MathHelper.method35679(n) == n;
     }
     
     public static Class1846 method31837(final Class1846 class1846, final int n) {

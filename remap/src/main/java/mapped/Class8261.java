@@ -37,12 +37,12 @@ public final class Class8261 extends Class8260
     }
     
     @Override
-    public int method27417(final Class111 class111) {
-        return Math.max(0, this.field33923.method27417(class111) - class111.method604(this.field33924, this.field33925, this.field33926));
+    public int method27417(final Axis class111) {
+        return Math.max(0, this.field33923.method27417(class111) - class111.getCoordinate(this.field33924, this.field33925, this.field33926));
     }
     
     @Override
-    public int method27418(final Class111 class111) {
-        return Math.min(class111.method604(this.field33927, this.field33928, this.field33929), this.field33923.method27418(class111) - class111.method604(this.field33924, this.field33925, this.field33926));
+    public int method27418(final Axis class111) {
+        return Math.min(class111.getCoordinate(this.field33927, this.field33928, this.field33929), this.field33923.method27418(class111) - class111.getCoordinate(this.field33924, this.field33925, this.field33926));
     }
 }

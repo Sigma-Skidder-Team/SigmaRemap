@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7232
 {
     private static String[] field28037;
@@ -40,15 +42,15 @@ public class Class7232
     }
     
     private void method22132() {
-        this.field28038.field2951 = Class9546.method35672(this.field28038.field2951, this.field28038.field2953, (float)this.field28038.method4174());
+        this.field28038.field2951 = MathHelper.method35672(this.field28038.field2951, this.field28038.field2953, (float)this.field28038.method4174());
     }
     
     private void method22133() {
-        this.field28038.field2953 = Class9546.method35672(this.field28038.field2953, this.field28038.field2951, (float)this.field28038.method4174());
+        this.field28038.field2953 = MathHelper.method35672(this.field28038.field2953, this.field28038.field2951, (float)this.field28038.method4174());
     }
     
     private void method22134() {
-        this.field28038.field2951 = Class9546.method35672(this.field28038.field2951, this.field28038.field2953, this.field28038.method4174() * (1.0f - Class9546.method35653((this.field28039 - 10) / 10.0f, 0.0f, 1.0f)));
+        this.field28038.field2951 = MathHelper.method35672(this.field28038.field2951, this.field28038.field2953, this.field28038.method4174() * (1.0f - MathHelper.method35653((this.field28039 - 10) / 10.0f, 0.0f, 1.0f)));
     }
     
     private boolean method22135() {

@@ -5,8 +5,7 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.OptionalInt;
@@ -21,7 +20,6 @@ import java.util.Iterator;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.tree.LiteralCommandNode;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -32,6 +30,7 @@ import java.util.function.BinaryOperator;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
+import net.minecraft.entity.Entity;
 
 public class Class8865
 {
@@ -45,37 +44,37 @@ public class Class8865
         final LiteralCommandNode register = commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("execute").requires(class7492 -> class7492.method23210(2)));
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("execute").requires(class7493 -> class7493.method23210(2))).then(Class7788.method25001("run").redirect((CommandNode)commandDispatcher.getRoot()))).then((ArgumentBuilder)method31053((CommandNode<Class7492>)register, Class7788.method25001("if"), true))).then((ArgumentBuilder)method31053((CommandNode<Class7492>)register, Class7788.method25001("unless"), false))).then(Class7788.method25001("as").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).fork((CommandNode)register, commandContext -> {
             final ArrayList arrayList = Lists.newArrayList();
-            final Iterator<? extends Class399> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
+            final Iterator<? extends Entity> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
             while (iterator.hasNext()) {
-                arrayList.add(((Class7492)commandContext.getSource()).method23235((Class399)iterator.next()));
+                arrayList.add(((Class7492)commandContext.getSource()).method23235((Entity)iterator.next()));
             }
             return arrayList;
         })))).then(Class7788.method25001("at").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).fork((CommandNode)register, commandContext -> {
             final ArrayList arrayList = Lists.newArrayList();
-            for (final Class399 class399 : Class6886.method21147((CommandContext<Class7492>)commandContext, "targets")) {
+            for (final Entity class399 : Class6886.method21147((CommandContext<Class7492>)commandContext, "targets")) {
                 arrayList.add(((Class7492)commandContext.getSource()).method23244((Class1849)class399.field2391).method23236(class399.method1895()).method23237(class399.method1792()));
             }
             return arrayList;
         })))).then(((LiteralArgumentBuilder)Class7788.method25001("store").then((ArgumentBuilder)method31049((LiteralCommandNode<Class7492>)register, Class7788.method25001("result"), true))).then((ArgumentBuilder)method31049((LiteralCommandNode<Class7492>)register, Class7788.method25001("success"), false)))).then(((LiteralArgumentBuilder)Class7788.method25001("positioned").then(Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23236(Class7555.method23721((CommandContext<Class7492>)commandContext, "pos")).method23243(Class2042.field11636)))).then(Class7788.method25001("as").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).fork((CommandNode)register, commandContext -> {
             final ArrayList arrayList = Lists.newArrayList();
-            final Iterator<? extends Class399> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
+            final Iterator<? extends Entity> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
             while (iterator.hasNext()) {
-                arrayList.add(((Class7492)commandContext.getSource()).method23236(((Class399)iterator.next()).method1895()));
+                arrayList.add(((Class7492)commandContext.getSource()).method23236(((Entity)iterator.next()).method1895()));
             }
             return arrayList;
         }))))).then(((LiteralArgumentBuilder)Class7788.method25001("rotated").then(Class7788.method25002("rot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8919.method31444()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23237(Class8919.method31445((CommandContext<Class7492>)commandContext, "rot").method16505((Class7492)commandContext.getSource()))))).then(Class7788.method25001("as").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).fork((CommandNode)register, commandContext -> {
             final ArrayList arrayList = Lists.newArrayList();
-            final Iterator<? extends Class399> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
+            final Iterator<? extends Entity> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
             while (iterator.hasNext()) {
-                arrayList.add(((Class7492)commandContext.getSource()).method23237(((Class399)iterator.next()).method1792()));
+                arrayList.add(((Class7492)commandContext.getSource()).method23237(((Entity)iterator.next()).method1792()));
             }
             return arrayList;
         }))))).then(((LiteralArgumentBuilder)Class7788.method25001("facing").then(Class7788.method25001("entity").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(Class7788.method25002("anchor", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8316.method27606()).fork((CommandNode)register, commandContext -> {
             final ArrayList arrayList = Lists.newArrayList();
             final Class2042 method27605 = Class8316.method27605((CommandContext<Class7492>)commandContext, "anchor");
-            final Iterator<? extends Class399> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
+            final Iterator<? extends Entity> iterator = Class6886.method21147((CommandContext<Class7492>)commandContext, "targets").iterator();
             while (iterator.hasNext()) {
-                arrayList.add(((Class7492)commandContext.getSource()).method23245((Class399)iterator.next(), method27605));
+                arrayList.add(((Class7492)commandContext.getSource()).method23245((Entity)iterator.next(), method27605));
             }
             return arrayList;
         }))))).then(Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23246(Class7555.method23721((CommandContext<Class7492>)commandContext, "pos")))))).then(Class7788.method25001("align").then(Class7788.method25002("axes", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8148.method26843()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23236(((Class7492)commandContext.getSource()).method23249().method16758(Class8148.method26844((CommandContext<Class7492>)commandContext, "axes"))))))).then(Class7788.method25001("anchored").then(Class7788.method25002("anchor", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8316.method27606()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23243(Class8316.method27605((CommandContext<Class7492>)commandContext, "anchor")))))).then(Class7788.method25001("in").then(Class7788.method25002("dimension", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class9437.method35067()).redirect((CommandNode)register, commandContext -> ((Class7492)commandContext.getSource()).method23244(((Class7492)commandContext.getSource()).method23255().method1481(Class9437.method35068((CommandContext<Class7492>)commandContext, "dimension")))))));
@@ -174,7 +173,7 @@ public class Class8865
     }
     
     private static boolean method31058(final Class7492 class7492, final Class122 class7493) {
-        return class7493.test(new Class9098(class7492.method23250()).method32877(Class6683.field26367, new Class354(class7492.method23249())).method32878(Class6683.field26362, class7492.method23251()).method32883(Class7104.field27712));
+        return class7493.test(new Class9098(class7492.method23250()).method32877(Class6683.field26367, new BlockPos(class7492.method23249())).method32878(Class6683.field26362, class7492.method23251()).method32883(Class7104.field27712));
     }
     
     private static Collection<Class7492> method31059(final CommandContext<Class7492> commandContext, final boolean b, final boolean b2) {
@@ -217,18 +216,18 @@ public class Class8865
         return method31065(((Class7492)commandContext.getSource()).method23250(), Class8330.method27768(commandContext, "start"), Class8330.method27768(commandContext, "end"), Class8330.method27768(commandContext, "destination"), b);
     }
     
-    private static OptionalInt method31065(final Class1849 class1849, final Class354 class1850, final Class354 class1851, final Class354 class1852, final boolean b) throws CommandSyntaxException {
+    private static OptionalInt method31065(final Class1849 class1849, final BlockPos class1850, final BlockPos class1851, final BlockPos class1852, final boolean b) throws CommandSyntaxException {
         final Class6997 class1853 = new Class6997(class1850, class1851);
         final Class6997 class1854 = new Class6997(class1852, class1852.method1135(class1853.method21416()));
-        final Class354 class1855 = new Class354(class1854.field27293 - class1853.field27293, class1854.field27294 - class1853.field27294, class1854.field27295 - class1853.field27295);
+        final BlockPos class1855 = new BlockPos(class1854.field27293 - class1853.field27293, class1854.field27294 - class1853.field27294, class1854.field27295 - class1853.field27295);
         final int i = class1853.method21417() * class1853.method21418() * class1853.method21419();
         if (i <= 32768) {
             int value = 0;
             for (int j = class1853.field27295; j <= class1853.field27298; ++j) {
                 for (int k = class1853.field27294; k <= class1853.field27297; ++k) {
                     for (int l = class1853.field27293; l <= class1853.field27296; ++l) {
-                        final Class354 class1856 = new Class354(l, k, j);
-                        final Class354 method1135 = class1856.method1135(class1855);
+                        final BlockPos class1856 = new BlockPos(l, k, j);
+                        final BlockPos method1135 = class1856.method1135(class1855);
                         final Class7096 method1136 = class1849.method6701(class1856);
                         if (!b || method1136.method21696() != Class7521.field29147) {
                             if (method1136 != class1849.method6701(method1135)) {

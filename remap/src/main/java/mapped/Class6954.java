@@ -16,20 +16,20 @@ public class Class6954<T> implements Class6952<T>
     }
     
     @Override
-    public boolean method21340(final Class354 class354, final T t) {
+    public boolean method21340(final BlockPos class354, final T t) {
         return false;
     }
     
     @Override
-    public void method21345(final Class354 class354, final T t, final int n) {
+    public void method21345(final BlockPos class354, final T t, final int n) {
     }
     
     @Override
-    public void method21341(final Class354 class354, final T t, final int n, final Class1955 class355) {
+    public void method21341(final BlockPos class354, final T t, final int n, final Class1955 class355) {
     }
     
     @Override
-    public boolean method21342(final Class354 class354, final T t) {
+    public boolean method21342(final BlockPos class354, final T t) {
         return false;
     }
     

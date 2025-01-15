@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.commands.CommandException;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Collections;
 
 public class Class6700 extends Class6693
@@ -26,7 +28,7 @@ public class Class6700 extends Class6693
             throw new Class2332("Invalid distance \"" + array[0].method26314() + "\"");
         }
         final float n = (float)Math.toRadians(Class6700.field26420.field4684.field2399 + 90.0f);
-        Class6700.field26420.method5269().method17285(new Class4328(Class6700.field26420.field4684.field2395 + Class9546.method35639(n) * array[0].method26311(), Class6700.field26420.field4684.field2396, Class6700.field26420.field4684.field2397 + Class9546.method35638(n) * array[0].method26311(), Class6700.field26420.field4684.field2399, Class6700.field26420.field4684.field2400, Collections.emptySet(), 0));
+        Class6700.field26420.method5269().method17285(new Class4328(Class6700.field26420.field4684.field2395 + MathHelper.cos(n) * array[0].method26311(), Class6700.field26420.field4684.field2396, Class6700.field26420.field4684.field2397 + MathHelper.sin(n) * array[0].method26311(), Class6700.field26420.field4684.field2399, Class6700.field26420.field4684.field2400, Collections.emptySet(), 0));
         class6428.method19104("Successfully HClip'd");
     }
 }

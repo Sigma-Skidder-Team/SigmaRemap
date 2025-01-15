@@ -31,7 +31,7 @@ public class Class5458 extends Class5419<Class511>
     public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
         final Class365<?> method2618 = class1850.method2618();
         final Class363 class1851 = method2618.method1198(this.field22702).get();
-        final Class354 method2619 = class1851.method1170();
+        final BlockPos method2619 = class1851.method1170();
         final Class1849 method2620 = class1849.method6679().method1481(class1851.method1169());
         if (!this.method16677(method2620, method2619)) {
             if (this.method16676(method2620, method2619, class1850)) {
@@ -45,7 +45,7 @@ public class Class5458 extends Class5419<Class511>
         }
     }
     
-    private boolean method16676(final Class1849 class1849, final Class354 class1850, final Class511 class1851) {
+    private boolean method16676(final Class1849 class1849, final BlockPos class1850, final Class511 class1851) {
         final Class7096 method6701 = class1849.method6701(class1850);
         if (method6701.method21696().method11785(Class7188.field27910)) {
             if (method6701.method21772((Class7111<Boolean>)Class3900.field17600)) {
@@ -57,7 +57,7 @@ public class Class5458 extends Class5419<Class511>
         return false;
     }
     
-    private boolean method16677(final Class1849 class1849, final Class354 class1850) {
+    private boolean method16677(final Class1849 class1849, final BlockPos class1850) {
         return !class1849.method6921().method7209(class1850, this.field22703);
     }
 }

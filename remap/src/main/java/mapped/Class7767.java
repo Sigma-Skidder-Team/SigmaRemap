@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7767<T extends Class6866>
 {
     private static String[] field31762;
@@ -26,7 +28,7 @@ public class Class7767<T extends Class6866>
     }
     
     private float method24872(final long n) {
-        final float method35653 = Class9546.method35653((n - this.field31764) / 600.0f, 0.0f, 1.0f);
+        final float method35653 = MathHelper.method35653((n - this.field31764) / 600.0f, 0.0f, 1.0f);
         final float n2 = method35653 * method35653;
         return (this.field31766 != Class2204.field13418) ? n2 : (1.0f - n2);
     }

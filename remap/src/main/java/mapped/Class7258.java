@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -25,14 +27,14 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public void method22150(final Class1847 class1847, final Class354 class1848, final Class7099 class1849, final Random random) {
+    public void method22150(final Class1847 class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
         if (!class1849.method21780() && !class1849.method21772((Class7111<Boolean>)Class7258.field28132)) {
             if (random.nextInt(64) == 0) {
-                class1847.method6708(class1848.method1074() + 0.5, class1848.method1075() + 0.5, class1848.method1076() + 0.5, Class8520.field35710, Class286.field1582, random.nextFloat() * 0.25f + 0.75f, random.nextFloat() + 0.5f, false);
+                class1847.method6708(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5, Class8520.field35710, Class286.field1582, random.nextFloat() * 0.25f + 0.75f, random.nextFloat() + 0.5f, false);
             }
         }
         else if (random.nextInt(10) == 0) {
-            class1847.method6709(Class8432.field34645, class1848.method1074() + (double)random.nextFloat(), class1848.method1075() + (double)random.nextFloat(), class1848.method1076() + (double)random.nextFloat(), 0.0, 0.0, 0.0);
+            class1847.method6709(Class8432.field34645, class1848.getX() + (double)random.nextFloat(), class1848.getY() + (double)random.nextFloat(), class1848.getZ() + (double)random.nextFloat(), 0.0, 0.0, 0.0);
         }
     }
     
@@ -48,7 +50,7 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public void method22180(final Class1851 class1851, final Class354 class1852, final Class7096 class1853) {
+    public void method22180(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
         Class3833.method11837(class1853, class1851.method6744(), class1852, class1853.method21696().method11802() ? class1851.method6727(class1852) : null);
     }
     
@@ -78,8 +80,8 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public boolean method22154(final Class7099 class7099, final Class1855 class7100, final Class354 class7101, final Class7255 class7102, final Class179 class7103) {
-        return class7103 == Class179.field511 && !class7102.method22166(Class7324.field28319);
+    public boolean method22154(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101, final Class7255 class7102, final Direction class7103) {
+        return class7103 == Direction.DOWN && !class7102.method22166(Class7324.field28319);
     }
     
     @Override

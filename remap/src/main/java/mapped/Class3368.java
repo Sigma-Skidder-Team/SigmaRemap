@@ -5,9 +5,10 @@
 package mapped;
 
 import java.util.HashMap;
+
+import net.minecraft.util.Direction;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
-import java.util.Collection;
 import java.util.Arrays;
 import java.io.File;
 import java.util.ArrayList;
@@ -19,13 +20,13 @@ public class Class3368 extends Class3355
     private Class2308 field16034;
     private List<String> field16035;
     private List<Class9486> field16036;
-    private List<Class354> field16037;
+    private List<BlockPos> field16037;
     
     public Class3368() {
         super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", Class8013.field32988);
         this.field16035 = new ArrayList<String>();
         this.field16036 = new ArrayList<Class9486>();
-        this.field16037 = new ArrayList<Class354>();
+        this.field16037 = new ArrayList<BlockPos>();
         final File file = new File(Class9463.method35173().method35208() + "/nbs");
         if (file.exists()) {
             this.field16035 = new ArrayList<String>(Arrays.asList(file.list()));
@@ -84,12 +85,12 @@ public class Class3368 extends Class3355
                         if (Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class5744.field40773)) >= Class3368.field15514.field4682.method27315()) {
                             continue;
                         }
-                        float[] array = Class4609.method13672(class5744.field40773, Class179.field512);
-                        if (class5744.field40773.method1075() > Class3368.field15514.field4684.field2396 + 1.0) {
-                            array = Class4609.method13672(class5744.field40773, Class179.field511);
+                        float[] array = Class4609.method13672(class5744.field40773, Direction.UP);
+                        if (class5744.field40773.getY() > Class3368.field15514.field4684.field2396 + 1.0) {
+                            array = Class4609.method13672(class5744.field40773, Direction.DOWN);
                         }
                         Class3368.field15514.method5269().method17292(new Class4356(array[0], array[1], Class3368.field15514.field4684.field2404));
-                        Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class5744.field40773, Class179.field512));
+                        Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class5744.field40773, Direction.UP));
                         Class3368.field15514.method5269().method17292(new Class4380(Class316.field1877));
                         this.field16037.add(class5744.field40773);
                     }
@@ -115,9 +116,9 @@ public class Class3368 extends Class3355
     public boolean method10706(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
             if (class9486.field40774 == -1.0f && Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
-                final float[] method13672 = Class4609.method13672(class9486.field40773, Class179.field512);
+                final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                 Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.field4684.field2404));
-                Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class9486.field40773, Class179.field512));
+                Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class9486.field40773, Direction.UP));
                 this.field16037.clear();
                 this.field16037.add(class9486.field40773);
                 return true;
@@ -130,7 +131,7 @@ public class Class3368 extends Class3355
         for (final Class9486 class9486 : list) {
             if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(Class3368.field15514.field4684.method1894().method1083(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
                 if (Class3368.field15514.field4684.field2424 % 1 == 0) {
-                    final float[] method13672 = Class4609.method13672(class9486.field40773, Class179.field512);
+                    final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                     Class3368.field15514.field4684.method2707(Class316.field1877);
                     Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.field4684.field2404));
                     Class3368.field15514.method5269().method17292(new Class4329(Class316.field1877, Class4609.method13697(method13672[0], method13672[1], Class3368.field15514.field4682.method27315() + 1.0f)));
@@ -150,17 +151,17 @@ public class Class3368 extends Class3355
         }
         if (this.field16036 != null) {
             for (Class9486 class5740 : this.field16036) {}
-            final Iterator<Class354> iterator2 = this.field16037.iterator();
+            final Iterator<BlockPos> iterator2 = this.field16037.iterator();
             while (iterator2.hasNext()) {
                 method10709(iterator2.next());
             }
         }
     }
     
-    public static void method10709(final Class354 class354) {
-        final double n = class354.method1074() + 0.5f - Class869.method5277().field4644.method5833().method18161().method16760();
-        final double n2 = class354.method1075() + 1.0f - Class869.method5277().field4644.method5833().method18161().method16761();
-        final double n3 = class354.method1076() + 0.5f - Class869.method5277().field4644.method5833().method18161().method16762();
+    public static void method10709(final BlockPos class354) {
+        final double n = class354.getX() + 0.5f - Class869.method5277().field4644.method5833().method18161().method16760();
+        final double n2 = class354.getY() + 1.0f - Class869.method5277().field4644.method5833().method18161().method16761();
+        final double n3 = class354.getZ() + 0.5f - Class869.method5277().field4644.method5833().method18161().method16762();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -208,7 +209,7 @@ public class Class3368 extends Class3355
                 final Class4282 class5724 = (Class4282)class5723.method16998();
                 for (int i = 0; i < this.field16036.size(); ++i) {
                     final Class9486 class5725 = this.field16036.get(i);
-                    if (class5725.field40773.equals(new Class354(class5724.method12865(), class5724.method12866(), class5724.method12867()))) {
+                    if (class5725.field40773.equals(new BlockPos(class5724.method12865(), class5724.method12866(), class5724.method12867()))) {
                         class5725.field40774 = class5724.method12869();
                         this.field16036.set(i, class5725);
                     }
@@ -218,7 +219,7 @@ public class Class3368 extends Class3355
                 final Class4342 class5726 = (Class4342)class5723.method16998();
                 for (int j = 0; j < this.field16036.size(); ++j) {
                     final Class9486 class5727 = this.field16036.get(j);
-                    if (class5727.field40773.equals(new Class354(class5726.method13040(), class5726.method13041(), class5726.method13042()))) {
+                    if (class5727.field40773.equals(new BlockPos(class5726.method13040(), class5726.method13041(), class5726.method13042()))) {
                         class5727.field40774 = class5726.method13044();
                         this.field16036.set(j, class5727);
                     }
@@ -282,7 +283,7 @@ public class Class3368 extends Class3355
             }
             this.field16033 = 0;
             this.field16036.clear();
-            for (final Class354 class354 : Class4609.method13691(Class3368.field15514.field4682.method27315())) {
+            for (final BlockPos class354 : Class4609.method13691(Class3368.field15514.field4682.method27315())) {
                 if (!(Class3368.field15514.field4683.method6701(class354).method21696() instanceof Class3984)) {
                     continue;
                 }

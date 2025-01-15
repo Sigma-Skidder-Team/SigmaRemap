@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.nio.IntBuffer;
 import java.net.URI;
@@ -14,7 +15,6 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.nio.ByteBuffer;
 import java.io.ByteArrayOutputStream;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
@@ -1198,8 +1198,8 @@ public class Class8571
         return n;
     }
     
-    public static int method28968(final Class354 class354, final int n) {
-        return method28967(method28967(method28967(method28967(n + 37) + class354.method1074()) + class354.method1076()) + class354.method1075());
+    public static int method28968(final BlockPos class354, final int n) {
+        return method28967(method28967(method28967(method28967(n + 37) + class354.getX()) + class354.getZ()) + class354.getY());
     }
     
     public static int method28969() {
@@ -1364,7 +1364,7 @@ public class Class8571
             long n = (long)(1.0 / method5314 * 1.0E9);
             long n2 = 0L;
             long n4;
-            for (int n3 = Class9546.method35664(method5312 - 1, method5311.length); n3 != method5313 && n2 < 1.0E9; n2 += n4, n3 = Class9546.method35664(n3 - 1, method5311.length)) {
+            for (int n3 = MathHelper.method35664(method5312 - 1, method5311.length); n3 != method5313 && n2 < 1.0E9; n2 += n4, n3 = MathHelper.method35664(n3 - 1, method5311.length)) {
                 n4 = method5311[n3];
                 if (n4 > n) {
                     n = n4;

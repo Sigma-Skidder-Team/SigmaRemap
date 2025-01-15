@@ -4,7 +4,9 @@
 
 package mapped;
 
-public abstract class Class4703<T extends Class399>
+import net.minecraft.entity.Entity;
+
+public abstract class Class4703<T extends Entity>
 {
     public final Class8551 field20283;
     public float field20284;
@@ -20,11 +22,11 @@ public abstract class Class4703<T extends Class399>
     }
     
     public final int method13953(final T t, final float n) {
-        return Class392.method1422(this.method13954(t, n), t.field2391.method6992(Class237.field911, new Class354(t.method1747(n))));
+        return Class392.method1422(this.method13954(t, n), t.field2391.method6992(Class237.field911, new BlockPos(t.method1747(n))));
     }
     
     public int method13954(final T t, final float n) {
-        return t.method1804() ? 15 : t.field2391.method6992(Class237.field912, new Class354(t.method1747(n)));
+        return t.method1804() ? 15 : t.field2391.method6992(Class237.field912, new BlockPos(t.method1747(n)));
     }
     
     public boolean method13952(final T t, final Class6664 class6664, final double n, final double n2, final double n3) {
@@ -41,8 +43,8 @@ public abstract class Class4703<T extends Class399>
         return true;
     }
     
-    public Class5487 method13955(final T t, final float n) {
-        return Class5487.field22769;
+    public Vec3d method13955(final T t, final float n) {
+        return Vec3d.field22769;
     }
     
     public void method13951(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int i) {

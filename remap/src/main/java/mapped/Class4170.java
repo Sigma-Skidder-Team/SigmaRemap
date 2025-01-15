@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
-
 public class Class4170 extends Class4158<Class501>
 {
     private static String[] field18583;
@@ -16,29 +14,29 @@ public class Class4170 extends Class4158<Class501>
     
     public void method12486(final Class501 class501, final float n, final Class7351 class502, final Class7807 class503, final int n2, final int n3) {
         if (Class869.method5277().field4684.method2908() || Class869.method5277().field4684.method1639()) {
-            final Class354 method2560 = class501.method2560();
-            final Class354 method2561 = class501.method2562();
-            if (method2561.method1074() >= 1 && method2561.method1075() >= 1 && method2561.method1076() >= 1 && (class501.method2570() == Class102.field305 || class501.method2570() == Class102.field306)) {
-                final double n4 = method2560.method1074();
-                final double n5 = method2560.method1076();
-                final double n6 = method2560.method1075();
-                final double n7 = n6 + method2561.method1075();
+            final BlockPos method2560 = class501.method2560();
+            final BlockPos method2561 = class501.method2562();
+            if (method2561.getX() >= 1 && method2561.getY() >= 1 && method2561.getZ() >= 1 && (class501.method2570() == Class102.field305 || class501.method2570() == Class102.field306)) {
+                final double n4 = method2560.getX();
+                final double n5 = method2560.getZ();
+                final double n6 = method2560.getY();
+                final double n7 = n6 + method2561.getY();
                 double n8 = 0.0;
                 double n9 = 0.0;
                 switch (Class9403.field40344[class501.method2564().ordinal()]) {
                     case 1: {
-                        n8 = method2561.method1074();
-                        n9 = -method2561.method1076();
+                        n8 = method2561.getX();
+                        n9 = -method2561.getZ();
                         break;
                     }
                     case 2: {
-                        n8 = -method2561.method1074();
-                        n9 = method2561.method1076();
+                        n8 = -method2561.getX();
+                        n9 = method2561.getZ();
                         break;
                     }
                     default: {
-                        n8 = method2561.method1074();
-                        n9 = method2561.method1076();
+                        n8 = method2561.getX();
+                        n9 = method2561.getZ();
                         break;
                     }
                 }
@@ -88,11 +86,11 @@ public class Class4170 extends Class4158<Class501>
         }
     }
     
-    private void method12487(final Class501 class501, final Class4150 class502, final Class354 class503, final boolean b, final Class7351 class504) {
+    private void method12487(final Class501 class501, final Class4150 class502, final BlockPos class503, final boolean b, final Class7351 class504) {
         final Class1847 method2186 = class501.method2186();
-        final Class354 method2187 = class501.method2193();
-        final Class354 method2188 = method2187.method1135(class503);
-        for (final Class354 class505 : Class354.method1154(method2188, method2188.method1135(class501.method2562()).method1134(-1, -1, -1))) {
+        final BlockPos method2187 = class501.method2193();
+        final BlockPos method2188 = method2187.method1135(class503);
+        for (final BlockPos class505 : BlockPos.method1154(method2188, method2188.method1135(class501.method2562()).method1134(-1, -1, -1))) {
             final Class7096 method2189 = method2186.method6701(class505);
             final boolean method2190 = method2189.method21706();
             final boolean b2 = method2189.method21696() == Class7521.field29646;
@@ -100,12 +98,12 @@ public class Class4170 extends Class4158<Class501>
                 continue;
             }
             final float n = method2190 ? 0.05f : 0.0f;
-            final double n2 = class505.method1074() - method2187.method1074() + 0.45f - n;
-            final double n3 = class505.method1075() - method2187.method1075() + 0.45f - n;
-            final double n4 = class505.method1076() - method2187.method1076() + 0.45f - n;
-            final double n5 = class505.method1074() - method2187.method1074() + 0.55f + n;
-            final double n6 = class505.method1075() - method2187.method1075() + 0.55f + n;
-            final double n7 = class505.method1076() - method2187.method1076() + 0.55f + n;
+            final double n2 = class505.getX() - method2187.getX() + 0.45f - n;
+            final double n3 = class505.getY() - method2187.getY() + 0.45f - n;
+            final double n4 = class505.getZ() - method2187.getZ() + 0.45f - n;
+            final double n5 = class505.getX() - method2187.getX() + 0.55f + n;
+            final double n6 = class505.getY() - method2187.getY() + 0.55f + n;
+            final double n7 = class505.getZ() - method2187.getZ() + 0.55f + n;
             if (!b) {
                 if (!method2190) {
                     Class1656.method5733(class504, class502, n2, n3, n4, n5, n6, n7, 1.0f, 0.25f, 0.25f, 1.0f, 1.0f, 0.25f, 0.25f);

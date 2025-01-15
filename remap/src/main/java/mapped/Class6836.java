@@ -8,8 +8,8 @@ public class Class6836 extends Class6835
 {
     private static String[] field26845;
     
-    public Class6836(final Class7795 class7795, final Class286 class7796, final float n, final float n2, final Class354 class7797) {
-        this(class7795, class7796, n, n2, class7797.method1074() + 0.5f, class7797.method1075() + 0.5f, class7797.method1076() + 0.5f);
+    public Class6836(final Class7795 class7795, final Class286 class7796, final float n, final float n2, final BlockPos class7797) {
+        this(class7795, class7796, n, n2, class7797.getX() + 0.5f, class7797.getY() + 0.5f, class7797.getZ() + 0.5f);
     }
     
     public static Class6836 method20933(final Class7795 class7795, final float n) {

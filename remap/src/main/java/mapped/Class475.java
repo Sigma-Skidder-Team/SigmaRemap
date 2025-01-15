@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 
 public class Class475 extends Class456 implements Class476, Class439
 {
@@ -53,9 +54,9 @@ public class Class475 extends Class456 implements Class476, Class439
     
     @Override
     public void method2229() {
-        final int method1074 = this.field2657.method1074();
-        final int method1075 = this.field2657.method1075();
-        final int method1076 = this.field2657.method1076();
+        final int method1074 = this.field2657.getX();
+        final int method1075 = this.field2657.getY();
+        final int method1076 = this.field2657.getZ();
         ++this.field2777;
         this.field2776 = method2419(this.field2656, this, this.field2777, method1074, method1075, method1076, this.field2776);
         this.field2775 = this.field2774;
@@ -130,13 +131,13 @@ public class Class475 extends Class456 implements Class476, Class439
     private void method2421(final Class7795 class7795) {
         final Class180 class7796 = this.method2194().method21772(Class3865.field17498);
         if (class7796 != Class180.field531) {
-            double n = this.field2657.method1074() + 0.5;
-            final double n2 = this.field2657.method1075() + 0.5;
-            double n3 = this.field2657.method1076() + 0.5;
+            double n = this.field2657.getX() + 0.5;
+            final double n2 = this.field2657.getY() + 0.5;
+            double n3 = this.field2657.getZ() + 0.5;
             if (class7796 == Class180.field532) {
-                final Class179 method11933 = Class3865.method11933(this.method2194());
-                n += method11933.method785() * 0.5;
-                n3 += method11933.method787() * 0.5;
+                final Direction method11933 = Class3865.method11933(this.method2194());
+                n += method11933.getXOffset() * 0.5;
+                n3 += method11933.getZOffset() * 0.5;
             }
             this.field2656.method6706(null, n, n2, n3, class7795, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
         }
@@ -190,10 +191,10 @@ public class Class475 extends Class456 implements Class476, Class439
     
     @Override
     public float method2423(final float n) {
-        return Class9546.method35700(n, this.field2775, this.field2774);
+        return MathHelper.method35700(n, this.field2775, this.field2774);
     }
     
-    public static int method2424(final Class1855 class1855, final Class354 class1856) {
+    public static int method2424(final Class1855 class1855, final BlockPos class1856) {
         if (class1855.method6701(class1856).method21696().method11802()) {
             final Class436 method6727 = class1855.method6727(class1856);
             if (method6727 instanceof Class475) {

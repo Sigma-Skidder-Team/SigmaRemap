@@ -7,10 +7,11 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntMap$Entry;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Arrays;
-import java.util.function.Predicate;
 import java.util.Objects;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Function;
@@ -63,7 +64,7 @@ public class Class7875<T> implements Class7876<T>
             if (this.field32331 > 4) {
                 if (this.field32331 >= 9) {
                     this.field32330 = this.field32323;
-                    this.field32331 = Class9546.method35681(this.field32325.method564());
+                    this.field32331 = MathHelper.method35681(this.field32325.method564());
                 }
                 else {
                     this.field32330 = new Class6060<T>(this.field32325, this.field32331, this, this.field32326, this.field32327);
@@ -145,7 +146,7 @@ public class Class7875<T> implements Class7876<T>
     
     public void method25511(final Class52 class52, final long[] array) {
         this.method25498();
-        final int max = Math.max(4, Class9546.method35681(class52.size()));
+        final int max = Math.max(4, MathHelper.method35681(class52.size()));
         if (max != this.field32331) {
             this.method25501(max);
         }
@@ -190,7 +191,7 @@ public class Class7875<T> implements Class7876<T>
         final Class52 class53 = new Class52();
         class52.method18035(class53);
         class51.method295(s, class53);
-        final Class9217 class54 = new Class9217(Math.max(4, Class9546.method35681(class53.size())), 4096);
+        final Class9217 class54 = new Class9217(Math.max(4, MathHelper.method35681(class53.size())), 4096);
         for (int j = 0; j < array.length; ++j) {
             class54.method33926(j, array[j]);
         }

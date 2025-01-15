@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.Random;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
@@ -61,7 +63,7 @@ public abstract class Class776 extends Class777
                         }
                     }
                     else if (this.field2391.method6754() % 20L == 0L) {
-                        final Class8792 method4294 = ((Class1849)this.field2391).method6927(new Class354(this));
+                        final Class8792 method4294 = ((Class1849)this.field2391).method6927(new BlockPos(this));
                         if (method4294 != null) {
                             if (Class6357.method18927(this, method4294)) {
                                 method4294.method30644(method4294.method30626(), this, null, true);
@@ -82,7 +84,7 @@ public abstract class Class776 extends Class777
     @Override
     public void method2673(final Class7929 class7929) {
         if (this.field2391 instanceof Class1849) {
-            final Class399 method25714 = class7929.method25714();
+            final Entity method25714 = class7929.method25714();
             final Class8792 method25715 = this.method4292();
             if (method25715 != null) {
                 if (this.method4314()) {
@@ -97,7 +99,7 @@ public abstract class Class776 extends Class777
             }
             if (this.method4314()) {
                 if (method25715 == null) {
-                    if (((Class1849)this.field2391).method6927(new Class354(this)) == null) {
+                    if (((Class1849)this.field2391).method6927(new BlockPos(this)) == null) {
                         final Class8321 method25716 = this.method2718(Class2215.field13605);
                         Class511 class7930 = null;
                         if (!(method25714 instanceof Class512)) {
@@ -126,7 +128,7 @@ public abstract class Class776 extends Class777
                                         n += method25718.method7908();
                                         class7930.method2658(Class9439.field40504);
                                     }
-                                    final Class1948 class7932 = new Class1948(Class9439.field40504, 120000, Class9546.method35651(n, 0, 5), false, false, true);
+                                    final Class1948 class7932 = new Class1948(Class9439.field40504, 120000, MathHelper.method35651(n, 0, 5), false, false, true);
                                     if (!this.field2391.method6765().method31216(Class8878.field37338)) {
                                         class7930.method2655(class7932);
                                     }

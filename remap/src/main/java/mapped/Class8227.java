@@ -46,7 +46,7 @@ public class Class8227 extends Class8228
         this.field33790 = (ImmutableList<Class4107>)ImmutableList.copyOf((Collection)dynamic.get("processors").asList(dynamic2 -> Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)dynamic2, Class90.field233, "processor_type", Class4111.field18215)));
     }
     
-    public List<Class9038> method27252(final Class1795 class1795, final Class354 class1796, final Class2052 class1797, final boolean b) {
+    public List<Class9038> method27252(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final boolean b) {
         final List<Class9038> method19951 = class1795.method6518(this.field33789).method19951(class1796, new Class9092().method32845(class1797), Class7521.field29820, b);
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class9038 class1798 : method19951) {
@@ -62,19 +62,19 @@ public class Class8227 extends Class8228
     }
     
     @Override
-    public List<Class9038> method27253(final Class1795 class1795, final Class354 class1796, final Class2052 class1797, final Random rnd) {
+    public List<Class9038> method27253(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final Random rnd) {
         final List<Class9038> method19951 = class1795.method6518(this.field33789).method19951(class1796, new Class9092().method32845(class1797), Class7521.field29821, true);
         Collections.shuffle(method19951, rnd);
         return method19951;
     }
     
     @Override
-    public Class6997 method27254(final Class1795 class1795, final Class354 class1796, final Class2052 class1797) {
+    public Class6997 method27254(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797) {
         return class1795.method6518(this.field33789).method19966(new Class9092().method32845(class1797), class1796);
     }
     
     @Override
-    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final Class354 class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
+    public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final Class6997 class1800, final Random random) {
         final Class6585 method6518 = class1795.method6518(this.field33789);
         final Class9092 method6519 = this.method27256(class1799, class1800);
         if (method6518.method19956(class1796, class1798, method6519, 18)) {

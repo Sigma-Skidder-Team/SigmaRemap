@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class4001 extends Class4000
 {
     private static String[] field18034;
@@ -17,21 +20,21 @@ public class Class4001 extends Class4000
     }
     
     @Override
-    public int method12165(final Class1847 class1847, final Class354 class1848) {
-        final int min = Math.min(class1847.method7128((Class<? extends Class399>)Class399.class, Class4001.field18033.method18500(class1848)).size(), this.field18036);
+    public int method12165(final Class1847 class1847, final BlockPos class1848) {
+        final int min = Math.min(class1847.method7128((Class<? extends Entity>) Entity.class, Class4001.field18033.method18500(class1848)).size(), this.field18036);
         if (min <= 0) {
             return 0;
         }
-        return Class9546.method35649(Math.min(this.field18036, min) / (float)this.field18036 * 15.0f);
+        return MathHelper.method35649(Math.min(this.field18036, min) / (float)this.field18036 * 15.0f);
     }
     
     @Override
-    public void method12162(final Class1851 class1851, final Class354 class1852) {
+    public void method12162(final Class1851 class1851, final BlockPos class1852) {
         class1851.method6705(null, class1852, Class8520.field35365, Class286.field1582, 0.3f, 0.90000004f);
     }
     
     @Override
-    public void method12163(final Class1851 class1851, final Class354 class1852) {
+    public void method12163(final Class1851 class1851, final BlockPos class1852) {
         class1851.method6705(null, class1852, Class8520.field35364, Class286.field1582, 0.3f, 0.75f);
     }
     

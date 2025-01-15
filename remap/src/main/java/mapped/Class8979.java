@@ -21,11 +21,11 @@ public class Class8979
         return Class7521.field29329.method11878();
     }
     
-    public static boolean method31925(final Class1856 class1856, final Class7096 class1857, final Class354 class1858) {
+    public static boolean method31925(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858) {
         return class1856 instanceof Class1855 && method31927(class1856, class1857, class1858) && method31926(class1856, class1858);
     }
     
-    private static boolean method31926(final Class1855 class1855, final Class354 class1856) {
+    private static boolean method31926(final Class1855 class1855, final BlockPos class1856) {
         final Class3833 field29329 = Class7521.field29329;
         if (class1855.method6701(class1856.method1141()).method21696() != field29329) {
             if (class1855.method6701(class1856.method1143()).method21696() != field29329) {
@@ -50,7 +50,7 @@ public class Class8979
         return false;
     }
     
-    private static boolean method31927(final Class1855 class1855, final Class7096 class1856, final Class354 class1857) {
+    private static boolean method31927(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857) {
         if (Class6770.method20655(class1856, class1855, class1857)) {
             return false;
         }

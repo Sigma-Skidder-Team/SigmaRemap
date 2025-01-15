@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.stream.Stream;
 import java.util.Set;
 import java.util.Random;
@@ -32,7 +34,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     Class8660 method6764();
     
-    Class9592 method6784(final Class354 p0);
+    Class9592 method6784(final BlockPos p0);
     
     default Class2113 method6954() {
         return this.method6764().method29597();
@@ -46,29 +48,29 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     Random method6790();
     
-    void method6694(final Class354 p0, final Class3833 p1);
+    void method6694(final BlockPos p0, final Class3833 p1);
     
-    Class354 method6758();
+    BlockPos method6758();
     
-    void method6705(final Class512 p0, final Class354 p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
+    void method6705(final Class512 p0, final BlockPos p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
     
     void method6709(final Class6909 p0, final double p1, final double p2, final double p3, final double p4, final double p5, final double p6);
     
-    void method6839(final Class512 p0, final int p1, final Class354 p2, final int p3);
+    void method6839(final Class512 p0, final int p1, final BlockPos p2, final int p3);
     
-    default void method6955(final int n, final Class354 class354, final int n2) {
+    default void method6955(final int n, final BlockPos class354, final int n2) {
         this.method6839(null, n, class354, n2);
     }
     
-    default Stream<Class7702> method6956(final Class399 class399, final Class6221 class400, final Set<Class399> set) {
+    default Stream<Class7702> method6956(final Entity class399, final Class6221 class400, final Set<Entity> set) {
         return super.method6956(class399, class400, set);
     }
     
-    default boolean method6957(final Class399 class399, final Class7702 class400) {
+    default boolean method6957(final Entity class399, final Class7702 class400) {
         return super.method6957(class399, class400);
     }
     
-    default Class354 method6958(final Class2020 class2020, final Class354 class2021) {
+    default BlockPos method6958(final Class2020 class2020, final BlockPos class2021) {
         return super.method6958(class2020, class2021);
     }
 }

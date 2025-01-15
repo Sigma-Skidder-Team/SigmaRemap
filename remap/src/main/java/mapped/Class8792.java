@@ -16,6 +16,9 @@ import java.util.HashSet;
 import java.util.function.Predicate;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
@@ -33,7 +36,7 @@ public class Class8792
     private final Map<Integer, Set<Class776>> field36954;
     private final Set<UUID> field36955;
     private long field36956;
-    private Class354 field36957;
+    private BlockPos field36957;
     private final Class1849 field36958;
     private boolean field36959;
     private final int field36960;
@@ -48,9 +51,9 @@ public class Class8792
     private final int field36969;
     private Class302 field36970;
     private int field36971;
-    private Optional<Class354> field36972;
+    private Optional<BlockPos> field36972;
     
-    public Class8792(final int field36960, final Class1849 field36961, final Class354 field36962) {
+    public Class8792(final int field36960, final Class1849 field36961, final BlockPos field36962) {
         this.field36953 = Maps.newHashMap();
         this.field36954 = Maps.newHashMap();
         this.field36955 = Sets.newHashSet();
@@ -84,7 +87,7 @@ public class Class8792
         this.field36967 = class51.method319("PreRaidTicks");
         this.field36966 = class51.method319("PostRaidTicks");
         this.field36961 = class51.method321("TotalHealth");
-        this.field36957 = new Class354(class51.method319("CX"), class51.method319("CY"), class51.method319("CZ"));
+        this.field36957 = new BlockPos(class51.method319("CX"), class51.method319("CY"), class51.method319("CZ"));
         this.field36969 = class51.method319("NumGroups");
         this.field36970 = Class302.method960(class51.method323("Status"));
         this.field36955.clear();
@@ -141,7 +144,7 @@ public class Class8792
     
     private Predicate<Class513> method30627() {
         return class513 -> {
-            final Class354 class514 = new Class354(class513);
+            final BlockPos class514 = new BlockPos(class513);
             return class513.method1768() && this.field36958.method6927(class514) == this;
         };
     }
@@ -174,7 +177,7 @@ public class Class8792
     public void method30631(final Class512 class512) {
         if (class512.method2653(Class9439.field40504)) {
             this.field36962 += class512.method2654(Class9439.field40504).method7908() + 1;
-            this.field36962 = Class9546.method35651(this.field36962, 0, this.method30629());
+            this.field36962 = MathHelper.method35651(this.field36962, 0, this.method30629());
         }
         class512.method2659(Class9439.field40504);
     }
@@ -263,7 +266,7 @@ public class Class8792
                                 this.method30628();
                             }
                             --this.field36967;
-                            this.field36965.method21064(Class9546.method35653((300 - this.field36967) / 300.0f, 0.0f, 1.0f));
+                            this.field36965.method21064(MathHelper.method35653((300 - this.field36967) / 300.0f, 0.0f, 1.0f));
                         }
                         else if (this.field36967 == 0) {
                             if (this.field36964 > 0) {
@@ -290,7 +293,7 @@ public class Class8792
                 int n3 = 0;
                 int n4 = 0;
                 while (this.method30647()) {
-                    final Class354 class354 = this.field36972.isPresent() ? this.field36972.get() : this.method30653(n4, 20);
+                    final BlockPos class354 = this.field36972.isPresent() ? this.field36972.get() : this.method30653(n4, 20);
                     if (class354 == null) {
                         ++n4;
                     }
@@ -315,7 +318,7 @@ public class Class8792
                                 this.field36970 = Class302.field1759;
                                 final Iterator<UUID> iterator = this.field36955.iterator();
                                 while (iterator.hasNext()) {
-                                    final Class399 method30649 = this.field36958.method6914(iterator.next());
+                                    final Entity method30649 = this.field36958.method6914(iterator.next());
                                     if (!(method30649 instanceof Class511)) {
                                         continue;
                                     }
@@ -347,9 +350,9 @@ public class Class8792
         Class353.method1119(Class353.method1089(this.field36957), 2).filter(this.field36958::method6923).map((Function<? super Class353, ?>)Class353::method1114).min(Comparator.comparingDouble(class354 -> class354.method1083(this.field36957))).ifPresent((Consumer<? super Object>)this::method30659);
     }
     
-    private Optional<Class354> method30635(final int n) {
+    private Optional<BlockPos> method30635(final int n) {
         for (int i = 0; i < 3; ++i) {
-            final Class354 method30653 = this.method30653(n, 1);
+            final BlockPos method30653 = this.method30653(n, 1);
             if (method30653 != null) {
                 return Optional.of(method30653);
             }
@@ -392,7 +395,7 @@ public class Class8792
         final HashSet hashSet = Sets.newHashSet();
         while (iterator.hasNext()) {
             for (final Class776 class776 : iterator.next()) {
-                final Class354 class777 = new Class354(class776);
+                final BlockPos class777 = new BlockPos(class776);
                 if (!class776.field2410) {
                     if (class776.field2452 == this.field36958.method6789().method20487()) {
                         if (this.field36957.method1083(class777) < 12544.0) {
@@ -424,12 +427,12 @@ public class Class8792
         }
     }
     
-    private void method30642(final Class354 class354) {
+    private void method30642(final BlockPos class354) {
         final Collection<Class513> method21074 = this.field36965.method21074();
         for (final Class513 class355 : this.field36958.method6840()) {
-            final Class5487 method21075 = class355.method1934();
-            final Class5487 class356 = new Class5487(class354);
-            final float method21076 = Class9546.method35641((class356.field22770 - method21075.field22770) * (class356.field22770 - method21075.field22770) + (class356.field22772 - method21075.field22772) * (class356.field22772 - method21075.field22772));
+            final Vec3d method21075 = class355.method1934();
+            final Vec3d class356 = new Vec3d(class354);
+            final float method21076 = MathHelper.method35641((class356.field22770 - method21075.field22770) * (class356.field22770 - method21075.field22770) + (class356.field22772 - method21075.field22772) * (class356.field22772 - method21075.field22772));
             final double n = method21075.field22770 + 13.0f / method21076 * (class356.field22770 - method21075.field22770);
             final double n2 = method21075.field22772 + 13.0f / method21076 * (class356.field22772 - method21075.field22772);
             if (method21076 > 64.0f && !method21074.contains(class355)) {
@@ -439,7 +442,7 @@ public class Class8792
         }
     }
     
-    private void method30643(final Class354 class354) {
+    private void method30643(final BlockPos class354) {
         int n = 0;
         final int n2 = this.field36964 + 1;
         this.field36961 = 0.0f;
@@ -488,7 +491,7 @@ public class Class8792
         this.method30650();
     }
     
-    public void method30644(final int n, final Class776 class776, final Class354 class777, final boolean b) {
+    public void method30644(final int n, final Class776 class776, final BlockPos class777, final boolean b) {
         if (this.method30654(n, class776)) {
             class776.method4291(this);
             class776.method4294(n);
@@ -496,7 +499,7 @@ public class Class8792
             class776.method4299(0);
             if (!b) {
                 if (class777 != null) {
-                    class776.method1656(class777.method1074() + 0.5, class777.method1075() + 1.0, class777.method1076() + 0.5);
+                    class776.method1656(class777.getX() + 0.5, class777.getY() + 1.0, class777.getZ() + 0.5);
                     class776.method4188(this.field36958, this.field36958.method6784(class777), Class2101.field12181, null, null);
                     class776.method4263(n, false);
                     class776.field2404 = true;
@@ -507,7 +510,7 @@ public class Class8792
     }
     
     public void method30645() {
-        this.field36965.method21064(Class9546.method35653(this.method30646() / this.field36961, 0.0f, 1.0f));
+        this.field36965.method21064(MathHelper.method35653(this.method30646() / this.field36961, 0.0f, 1.0f));
     }
     
     public float method30646() {
@@ -568,16 +571,16 @@ public class Class8792
     }
     
     @Nullable
-    private Class354 method30653(final int n, final int n2) {
+    private BlockPos method30653(final int n, final int n2) {
         final int n3 = (n != 0) ? (2 - n) : 2;
         final Class385 class385 = new Class385();
         for (int i = 0; i < n2; ++i) {
             final float n4 = this.field36958.field10062.nextFloat() * 6.2831855f;
-            final int n5 = this.field36957.method1074() + Class9546.method35642(Class9546.method35639(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
-            final int n6 = this.field36957.method1076() + Class9546.method35642(Class9546.method35638(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
+            final int n5 = this.field36957.getX() + MathHelper.method35642(MathHelper.cos(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
+            final int n6 = this.field36957.getZ() + MathHelper.method35642(MathHelper.sin(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
             class385.method1284(n5, this.field36958.method6699(Class2020.field11522, n5, n6), n6);
             if (!this.field36958.method6922(class385) || n >= 2) {
-                if (this.field36958.method6973(class385.method1074() - 10, class385.method1075() - 10, class385.method1076() - 10, class385.method1074() + 10, class385.method1075() + 10, class385.method1076() + 10)) {
+                if (this.field36958.method6973(class385.getX() - 10, class385.getY() - 10, class385.getZ() - 10, class385.getX() + 10, class385.getY() + 10, class385.getZ() + 10)) {
                     if (this.field36958.method6904().method7409(new Class7859(class385))) {
                         if (!Class8532.method28621(Class2194.field13354, this.field36958, class385, Class7499.field29056)) {
                             if (this.field36958.method6701(class385.method1139()).method21696() != Class7521.field29329) {
@@ -633,11 +636,11 @@ public class Class8792
         this.field36953.remove(i);
     }
     
-    public Class354 method30658() {
+    public BlockPos method30658() {
         return this.field36957;
     }
     
-    private void method30659(final Class354 field36957) {
+    private void method30659(final BlockPos field36957) {
         this.field36957 = field36957;
     }
     
@@ -702,9 +705,9 @@ public class Class8792
         class51.method304("TotalHealth", this.field36961);
         class51.method298("NumGroups", this.field36969);
         class51.method306("Status", this.field36970.method959());
-        class51.method298("CX", this.field36957.method1074());
-        class51.method298("CY", this.field36957.method1075());
-        class51.method298("CZ", this.field36957.method1076());
+        class51.method298("CX", this.field36957.getX());
+        class51.method298("CY", this.field36957.getY());
+        class51.method298("CZ", this.field36957.getZ());
         final Class52 class52 = new Class52();
         for (final UUID uuid : this.field36955) {
             final Class51 e = new Class51();
@@ -746,7 +749,7 @@ public class Class8792
         return 0.5f;
     }
     
-    public void method30667(final Class399 class399) {
+    public void method30667(final Entity class399) {
         this.field36955.add(class399.method1865());
     }
     

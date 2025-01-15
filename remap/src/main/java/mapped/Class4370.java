@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.io.IOException;
 
 public class Class4370 implements Class4252<Class5800>
@@ -19,7 +22,7 @@ public class Class4370 implements Class4252<Class5800>
     public boolean field19577;
     
     public static long method13140(final double n) {
-        return Class9546.method35645(n * 4096.0);
+        return MathHelper.method35645(n * 4096.0);
     }
     
     public static Class5487 method13141(final long n, final long n2, final long n3) {
@@ -52,7 +55,7 @@ public class Class4370 implements Class4252<Class5800>
         return "Entity_" + super.toString();
     }
     
-    public Class399 method13142(final Class1847 class1847) {
+    public Entity method13142(final Class1847 class1847) {
         return class1847.method6741(this.field19569);
     }
     

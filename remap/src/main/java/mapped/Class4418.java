@@ -6,22 +6,22 @@ package mapped;
 
 import java.util.Optional;
 
-public final class Class4418 implements Class4410<Optional<Class354>>
+public final class Class4418 implements Class4410<Optional<BlockPos>>
 {
     private static String[] field19749;
     
-    public void method13342(final Class8654 class8654, final Optional<Class354> optional) {
+    public void method13342(final Class8654 class8654, final Optional<BlockPos> optional) {
         class8654.writeBoolean(optional.isPresent());
         if (optional.isPresent()) {
             class8654.method29495(optional.get());
         }
     }
     
-    public Optional<Class354> method13343(final Class8654 class8654) {
+    public Optional<BlockPos> method13343(final Class8654 class8654) {
         return class8654.readBoolean() ? Optional.of(class8654.method29494()) : Optional.empty();
     }
     
-    public Optional<Class354> method13344(final Optional<Class354> optional) {
+    public Optional<BlockPos> method13344(final Optional<BlockPos> optional) {
         return optional;
     }
 }

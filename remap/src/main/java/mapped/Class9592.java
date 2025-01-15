@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.concurrent.Immutable;
 
 @Immutable
@@ -41,9 +43,9 @@ public class Class9592
         if (class2113 != Class2113.field12290) {
             final boolean b = class2113 == Class2113.field12293;
             final float n4 = 0.75f;
-            final float n5 = Class9546.method35653((n - 72000.0f) / 1440000.0f, 0.0f, 1.0f) * 0.25f;
+            final float n5 = MathHelper.method35653((n - 72000.0f) / 1440000.0f, 0.0f, 1.0f) * 0.25f;
             final float n6 = n4 + n5;
-            float n7 = 0.0f + Class9546.method35653(n2 / 3600000.0f, 0.0f, 1.0f) * (b ? 1.0f : 0.75f) + Class9546.method35653(n3 * 0.25f, 0.0f, n5);
+            float n7 = 0.0f + MathHelper.method35653(n2 / 3600000.0f, 0.0f, 1.0f) * (b ? 1.0f : 0.75f) + MathHelper.method35653(n3 * 0.25f, 0.0f, n5);
             if (class2113 == Class2113.field12291) {
                 n7 *= 0.5f;
             }

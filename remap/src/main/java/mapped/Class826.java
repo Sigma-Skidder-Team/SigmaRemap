@@ -158,7 +158,7 @@ public class Class826 extends Class827 implements Class825
             class1850.method4879(new Class57(this.field4421));
         }
         class1850.method4897(this.field4422);
-        class1850.method4188(class1849, class1849.method6784(new Class354(class1850)), Class2101.field12182, null, null);
+        class1850.method4188(class1849, class1849.method6784(new BlockPos(class1850)), Class2101.field12182, null, null);
         if (this.method2625()) {
             class1850.method4354(-24000);
         }
@@ -181,7 +181,7 @@ public class Class826 extends Class827 implements Class825
             }
         }
         class1850.method2655(new Class1948(Class9439.field40482, 200, 0));
-        class1849.method6839(null, 1027, new Class354(this), 0);
+        class1849.method6839(null, 1027, new BlockPos(this), 0);
     }
     
     private int method4916() {
@@ -250,7 +250,7 @@ public class Class826 extends Class827 implements Class825
     @Nullable
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.method4921(this.method4870().method28783(Class7611.method23913(class1851.method6959(new Class354(this)))));
+        this.method4921(this.method4870().method28783(Class7611.method23913(class1851.method6959(new BlockPos(this)))));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     

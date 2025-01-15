@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.EnumSet;
 
 public class Class3599 extends Class3446
@@ -78,8 +80,8 @@ public class Class3599 extends Class3446
                             Class849.method5073(this.field16763, true);
                         }
                         if (this.field16764 > 1) {
-                            final float n4 = Class9546.method35640(Class9546.method35641(method4154)) * 0.5f;
-                            this.field16763.field2391.method6839(null, 1018, new Class354(this.field16763), 0);
+                            final float n4 = MathHelper.method35640(MathHelper.method35641(method4154)) * 0.5f;
+                            this.field16763.field2391.method6839(null, 1018, new BlockPos(this.field16763), 0);
                             for (int i = 0; i < 1; ++i) {
                                 final Class418 class418 = new Class418(this.field16763.field2391, this.field16763, n + this.field16763.method2633().nextGaussian() * n4, n2, n3 + this.field16763.method2633().nextGaussian() * n4);
                                 class418.method1656(class418.method1938(), this.field16763.method1942(0.5) + 0.5, class418.method1945());

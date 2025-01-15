@@ -5,11 +5,11 @@
 package mapped;
 
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.Optional;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6860 extends Class6851<Class511>
 {
@@ -35,7 +35,7 @@ public class Class6860 extends Class6851<Class511>
     }
     
     private int method20970(final Class511 class511, final Class511 class512, final Class511 class513) {
-        return Class9546.method35644(class512.method1734(class511) - class513.method1734(class511));
+        return MathHelper.floor(class512.method1734(class511) - class513.method1734(class511));
     }
     
     private boolean method20971(final Class511 class511, final Class511 class512) {

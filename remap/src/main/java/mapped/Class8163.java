@@ -4,14 +4,14 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Collection;
+
 import com.mojang.datafixers.util.Either;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.util.Direction;
+
 import java.util.function.Function;
 import java.util.List;
 
@@ -39,10 +39,10 @@ public class Class8163
     
     private List<Class9219> method26986(final int n, final String s, final Class1912 class1912) {
         final HashMap hashMap = Maps.newHashMap();
-        hashMap.put(Class179.field514, new Class8111(null, n, s, new Class8435(new float[] { 0.0f, 0.0f, 16.0f, 16.0f }, 0)));
-        hashMap.put(Class179.field513, new Class8111(null, n, s, new Class8435(new float[] { 16.0f, 0.0f, 0.0f, 16.0f }, 0)));
+        hashMap.put(Direction.SOUTH, new Class8111(null, n, s, new Class8435(new float[] { 0.0f, 0.0f, 16.0f, 16.0f }, 0)));
+        hashMap.put(Direction.NORTH, new Class8111(null, n, s, new Class8435(new float[] { 16.0f, 0.0f, 0.0f, 16.0f }, 0)));
         final ArrayList arrayList = Lists.newArrayList();
-        arrayList.add(new Class9219(new Class9138(0.0f, 0.0f, 7.5f), new Class9138(16.0f, 16.0f, 8.5f), hashMap, null, true));
+        arrayList.add(new Class9219(new Vector3f(0.0f, 0.0f, 7.5f), new Vector3f(16.0f, 16.0f, 8.5f), hashMap, null, true));
         arrayList.addAll(this.method26987(class1912, s, n));
         return arrayList;
     }
@@ -122,19 +122,19 @@ public class Class8163
             hashMap.put(method35073.method862(), new Class8111(null, n, s, new Class8435(new float[] { n23, n25, n24, n26 }, 0)));
             switch (Class5505.field22803[method35073.ordinal()]) {
                 case 1: {
-                    arrayList.add(new Class9219(new Class9138(n17, n21, 7.5f), new Class9138(n18, n21, 8.5f), hashMap, null, true));
+                    arrayList.add(new Class9219(new Vector3f(n17, n21, 7.5f), new Vector3f(n18, n21, 8.5f), hashMap, null, true));
                     continue;
                 }
                 case 2: {
-                    arrayList.add(new Class9219(new Class9138(n17, n22, 7.5f), new Class9138(n18, n22, 8.5f), hashMap, null, true));
+                    arrayList.add(new Class9219(new Vector3f(n17, n22, 7.5f), new Vector3f(n18, n22, 8.5f), hashMap, null, true));
                     continue;
                 }
                 case 3: {
-                    arrayList.add(new Class9219(new Class9138(n17, n21, 7.5f), new Class9138(n17, n22, 8.5f), hashMap, null, true));
+                    arrayList.add(new Class9219(new Vector3f(n17, n21, 7.5f), new Vector3f(n17, n22, 8.5f), hashMap, null, true));
                     continue;
                 }
                 case 4: {
-                    arrayList.add(new Class9219(new Class9138(n18, n21, 7.5f), new Class9138(n18, n22, 8.5f), hashMap, null, true));
+                    arrayList.add(new Class9219(new Vector3f(n18, n21, 7.5f), new Vector3f(n18, n22, 8.5f), hashMap, null, true));
                     continue;
                 }
             }

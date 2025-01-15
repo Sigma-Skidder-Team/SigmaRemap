@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 
@@ -11,7 +13,7 @@ public class Class8565
 {
     private static String[] field35992;
     
-    public static <S extends Class436> Class7191<S> method28798(final Class5412<S> class5412, final Function<Class7096, Class2083> function, final Function<Class7096, Class179> function2, final Class7115 class5413, final Class7096 class5414, final Class1851 class5415, final Class354 class5416, final BiPredicate<Class1851, Class354> biPredicate) {
+    public static <S extends Class436> Class7191<S> method28798(final Class5412<S> class5412, final Function<Class7096, Class2083> function, final Function<Class7096, Direction> function2, final Class7115 class5413, final Class7096 class5414, final Class1851 class5415, final BlockPos class5416, final BiPredicate<Class1851, BlockPos> biPredicate) {
         final Class436 method16524 = class5412.method16524(class5415, class5416);
         if (method16524 == null) {
             return Class6389::method19072;
@@ -23,7 +25,7 @@ public class Class8565
         final boolean b = class5417 == Class2083.field12047;
         final boolean b2 = class5417 == Class2083.field12048;
         if (!b) {
-            final Class354 method16525 = class5416.method1149(function2.apply(class5414));
+            final BlockPos method16525 = class5416.method1149(function2.apply(class5414));
             final Class7096 method16526 = class5415.method6701(method16525);
             if (method16526.method21696() == class5414.method21696()) {
                 final Class2083 class5418 = function.apply(method16526);

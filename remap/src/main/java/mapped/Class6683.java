@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class6683
 {
-    public static final Class7915<Class399> field26362;
+    public static final Class7915<Entity> field26362;
     public static final Class7915<Class512> field26363;
     public static final Class7915<Class7929> field26364;
-    public static final Class7915<Class399> field26365;
-    public static final Class7915<Class399> field26366;
-    public static final Class7915<Class354> field26367;
+    public static final Class7915<Entity> field26365;
+    public static final Class7915<Entity> field26366;
+    public static final Class7915<BlockPos> field26367;
     public static final Class7915<Class7096> field26368;
     public static final Class7915<Class436> field26369;
     public static final Class7915<Class8321> field26370;

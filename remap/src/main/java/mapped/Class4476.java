@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 
 public class Class4476 extends Class4475
@@ -52,10 +54,10 @@ public class Class4476 extends Class4475
             this.method13440(class1851, Class7521.field29400.method11878(), 4, 2, 6, class1853);
             this.method13440(class1851, Class7521.field29336.method11878(), 1, 2, 1, class1853);
             this.method13440(class1851, Class7521.field29336.method11878(), 5, 2, 1, class1853);
-            final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field513);
-            final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field516);
-            final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field515);
-            final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field514);
+            final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
+            final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.EAST);
+            final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.WEST);
+            final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
             this.method13444(class1851, class1853, 0, 4, 1, 6, 4, 1, class1855, class1855, false);
             this.method13444(class1851, class1853, 0, 4, 2, 0, 4, 7, class1856, class1856, false);
             this.method13444(class1851, class1853, 6, 4, 2, 6, 4, 7, class1857, class1857, false);
@@ -73,12 +75,12 @@ public class Class4476 extends Class4475
                 final int method13437 = this.method13437(2, 5);
                 final int method13438 = this.method13438(2);
                 final int method13439 = this.method13439(2, 5);
-                if (class1853.method21415(new Class354(method13437, method13438, method13439))) {
+                if (class1853.method21415(new BlockPos(method13437, method13438, method13439))) {
                     this.field19861 = true;
                     final Class778 class1859 = Class7499.field29047.method23371(class1851.method6744());
                     class1859.method4190();
                     class1859.method1730(method13437 + 0.5, method13438, method13439 + 0.5, 0.0f, 0.0f);
-                    class1859.method4188(class1851, class1851.method6784(new Class354(method13437, method13438, method13439)), Class2101.field12177, null, null);
+                    class1859.method4188(class1851, class1851.method6784(new BlockPos(method13437, method13438, method13439)), Class2101.field12177, null, null);
                     class1851.method6886(class1859);
                 }
             }
@@ -93,12 +95,12 @@ public class Class4476 extends Class4475
             final int method13437 = this.method13437(2, 5);
             final int method13438 = this.method13438(2);
             final int method13439 = this.method13439(2, 5);
-            if (class1852.method21415(new Class354(method13437, method13438, method13439))) {
+            if (class1852.method21415(new BlockPos(method13437, method13438, method13439))) {
                 this.field19862 = true;
                 final Class800 class1853 = Class7499.field28964.method23371(class1851.method6744());
                 class1853.method4190();
                 class1853.method1730(method13437 + 0.5, method13438, method13439 + 0.5, 0.0f, 0.0f);
-                class1853.method4188(class1851, class1851.method6784(new Class354(method13437, method13438, method13439)), Class2101.field12177, null, null);
+                class1853.method4188(class1851, class1851.method6784(new BlockPos(method13437, method13438, method13439)), Class2101.field12177, null, null);
                 class1851.method6886(class1853);
             }
         }

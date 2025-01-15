@@ -7,6 +7,8 @@ package mapped;
 import java.util.BitSet;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Function;
 
 public class Class4608 extends Class4535<Class5133>
@@ -15,20 +17,20 @@ public class Class4608 extends Class4535<Class5133>
         super(function);
     }
     
-    public boolean method13663(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5133 class1854) {
+    public boolean method13663(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5133 class1854) {
         final float n = random.nextFloat() * 3.1415927f;
         final float n2 = class1854.field22108 / 8.0f;
-        final int method35649 = Class9546.method35649((class1854.field22108 / 16.0f * 2.0f + 1.0f) / 2.0f);
-        final double n3 = class1853.method1074() + Class9546.method35638(n) * n2;
-        final double n4 = class1853.method1074() - Class9546.method35638(n) * n2;
-        final double n5 = class1853.method1076() + Class9546.method35639(n) * n2;
-        final double n6 = class1853.method1076() - Class9546.method35639(n) * n2;
-        final double n7 = class1853.method1075() + random.nextInt(3) - 2;
-        final double n8 = class1853.method1075() + random.nextInt(3) - 2;
-        final int n9 = class1853.method1074() - Class9546.method35649(n2) - method35649;
-        final int n10 = class1853.method1075() - 2 - method35649;
-        final int n11 = class1853.method1076() - Class9546.method35649(n2) - method35649;
-        final int n12 = 2 * (Class9546.method35649(n2) + method35649);
+        final int method35649 = MathHelper.method35649((class1854.field22108 / 16.0f * 2.0f + 1.0f) / 2.0f);
+        final double n3 = class1853.getX() + MathHelper.sin(n) * n2;
+        final double n4 = class1853.getX() - MathHelper.sin(n) * n2;
+        final double n5 = class1853.getZ() + MathHelper.cos(n) * n2;
+        final double n6 = class1853.getZ() - MathHelper.cos(n) * n2;
+        final double n7 = class1853.getY() + random.nextInt(3) - 2;
+        final double n8 = class1853.getY() + random.nextInt(3) - 2;
+        final int n9 = class1853.getX() - MathHelper.method35649(n2) - method35649;
+        final int n10 = class1853.getY() - 2 - method35649;
+        final int n11 = class1853.getZ() - MathHelper.method35649(n2) - method35649;
+        final int n12 = 2 * (MathHelper.method35649(n2) + method35649);
         final int n13 = 2 * (2 + method35649);
         for (int i = n9; i <= n9 + n12; ++i) {
             for (int j = n11; j <= n11 + n12; ++j) {
@@ -47,10 +49,10 @@ public class Class4608 extends Class4535<Class5133>
         final double[] array = new double[class1852.field22108 * 4];
         for (int i = 0; i < class1852.field22108; ++i) {
             final float n10 = i / (float)class1852.field22108;
-            final double method35701 = Class9546.method35701(n10, n, n2);
-            final double method35702 = Class9546.method35701(n10, n5, n6);
-            final double method35703 = Class9546.method35701(n10, n3, n4);
-            final double n11 = ((Class9546.method35638(3.1415927f * n10) + 1.0f) * (random.nextDouble() * class1852.field22108 / 16.0) + 1.0) / 2.0;
+            final double method35701 = MathHelper.method35701(n10, n, n2);
+            final double method35702 = MathHelper.method35701(n10, n5, n6);
+            final double method35703 = MathHelper.method35701(n10, n3, n4);
+            final double n11 = ((MathHelper.sin(3.1415927f * n10) + 1.0f) * (random.nextDouble() * class1852.field22108 / 16.0) + 1.0) / 2.0;
             array[i * 4 + 0] = method35701;
             array[i * 4 + 1] = method35702;
             array[i * 4 + 2] = method35703;
@@ -82,12 +84,12 @@ public class Class4608 extends Class4535<Class5133>
                 final double n17 = array[l * 4 + 0];
                 final double n18 = array[l * 4 + 1];
                 final double n19 = array[l * 4 + 2];
-                final int max = Math.max(Class9546.method35644(n17 - n16), b);
-                final int max2 = Math.max(Class9546.method35644(n18 - n16), b2);
-                final int max3 = Math.max(Class9546.method35644(n19 - n16), b3);
-                final int max4 = Math.max(Class9546.method35644(n17 + n16), max);
-                final int max5 = Math.max(Class9546.method35644(n18 + n16), max2);
-                final int max6 = Math.max(Class9546.method35644(n19 + n16), max3);
+                final int max = Math.max(MathHelper.floor(n17 - n16), b);
+                final int max2 = Math.max(MathHelper.floor(n18 - n16), b2);
+                final int max3 = Math.max(MathHelper.floor(n19 - n16), b3);
+                final int max4 = Math.max(MathHelper.floor(n17 + n16), max);
+                final int max5 = Math.max(MathHelper.floor(n18 + n16), max2);
+                final int max6 = Math.max(MathHelper.floor(n19 + n16), max3);
                 for (int n20 = max; n20 <= max4; ++n20) {
                     final double n21 = (n20 + 0.5 - n17) / n16;
                     if (n21 * n21 < 1.0) {

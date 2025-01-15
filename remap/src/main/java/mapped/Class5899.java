@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5899<T extends Class812> extends Class5845<T>
 {
@@ -64,10 +65,10 @@ public class Class5899<T extends Class812> extends Class5845<T>
         this.field24246.field25183 = n5 * 0.017453292f;
         this.field24246.field25184 = n4 * 0.017453292f;
         this.field24247.field25183 = 1.5707964f;
-        this.field24248.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
-        this.field24249.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-        this.field24250.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-        this.field24251.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
+        this.field24248.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
+        this.field24249.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+        this.field24250.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+        this.field24251.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
         final boolean b = !t.method2625() && t.method4780();
         this.field24252.field25187 = b;
         this.field24253.field25187 = b;

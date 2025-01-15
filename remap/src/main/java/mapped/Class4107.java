@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 public abstract class Class4107
 {
     @Nullable
-    public abstract Class9038 method12350(final Class1852 p0, final Class354 p1, final Class9038 p2, final Class9038 p3, final Class9092 p4);
+    public abstract Class9038 method12350(final Class1852 p0, final BlockPos p1, final Class9038 p2, final Class9038 p3, final Class9092 p4);
     
     public abstract Class7756 method12351();
     

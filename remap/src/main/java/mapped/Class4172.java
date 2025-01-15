@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4172 extends Class4171<Class488>
 {
     private static final Class1932 field18588;
@@ -16,8 +18,8 @@ public class Class4172 extends Class4171<Class488>
         if (class488.method2432() || class488.method2433()) {
             final float n4 = class488.method2432() ? class488.method2434(n) : class488.method2435(n);
             final double n5 = class488.method2432() ? 256.0 : 50.0;
-            final float method35638 = Class9546.method35638(n4 * 3.1415927f);
-            final int method35639 = Class9546.method35644(method35638 * n5);
+            final float method35638 = MathHelper.sin(n4 * 3.1415927f);
+            final int method35639 = MathHelper.floor(method35638 * n5);
             final float[] array = class488.method2432() ? Class181.field539.method815() : Class181.field547.method815();
             final long method35640 = class488.method2186().method6754();
             Class4168.method12478(class489, class490, Class4172.field18588, n, method35638, method35640, 0, method35639, array, 0.15f, 0.175f);

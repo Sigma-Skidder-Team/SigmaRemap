@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -108,7 +110,7 @@ public abstract class Class599 extends Class598 implements Class563
     public int method3495(final double n, final double n2) {
         final int n3 = this.field3518 + this.field3513 / 2 - this.method3505() / 2;
         final int n4 = this.field3518 + this.field3513 / 2 + this.method3505() / 2;
-        final int n5 = Class9546.method35644(n2 - this.field3515) - this.field3526 + (int)this.field3522 - 4;
+        final int n5 = MathHelper.floor(n2 - this.field3515) - this.field3526 + (int)this.field3522 - 4;
         final int n6 = n5 / this.field3519;
         if (n < this.method3508()) {
             if (n >= n3) {
@@ -127,7 +129,7 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     public void method3496() {
-        this.field3522 = Class9546.method35654(this.field3522, 0.0, this.method3497());
+        this.field3522 = MathHelper.method35654(this.field3522, 0.0, this.method3497());
     }
     
     public int method3497() {
@@ -211,7 +213,7 @@ public abstract class Class599 extends Class598 implements Class563
             method3509.method22695();
             final int method3511 = this.method3497();
             if (method3511 > 0) {
-                final int method3512 = Class9546.method35651((int)((this.field3516 - this.field3515) * (this.field3516 - this.field3515) / (float)this.method3488()), 32, this.field3516 - this.field3515 - 8);
+                final int method3512 = MathHelper.method35651((int)((this.field3516 - this.field3515) * (this.field3516 - this.field3515) / (float)this.method3488()), 32, this.field3516 - this.field3515 - 8);
                 int field3515 = (int)this.field3522 * (this.field3516 - this.field3515 - method3512) / method3511 + this.field3515;
                 if (field3515 < this.field3515) {
                     field3515 = this.field3515;
@@ -300,7 +302,7 @@ public abstract class Class599 extends Class598 implements Class563
                                 if (n6 < 1.0) {
                                     n6 = 1.0;
                                 }
-                                double n7 = n6 / (this.field3516 - this.field3515 - Class9546.method35651((int)((this.field3516 - this.field3515) * (this.field3516 - this.field3515) / (float)this.method3488()), 32, this.field3516 - this.field3515 - 8));
+                                double n7 = n6 / (this.field3516 - this.field3515 - MathHelper.method35651((int)((this.field3516 - this.field3515) * (this.field3516 - this.field3515) / (float)this.method3488()), 32, this.field3516 - this.field3515 - 8));
                                 if (n7 < 1.0) {
                                     n7 = 1.0;
                                 }

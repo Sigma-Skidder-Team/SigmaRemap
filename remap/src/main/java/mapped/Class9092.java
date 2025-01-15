@@ -6,8 +6,10 @@ package mapped;
 
 import java.util.Collections;
 import javax.annotation.Nullable;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.Random;
 
@@ -16,7 +18,7 @@ public class Class9092
     private static String[] field38500;
     private Class2181 field38501;
     private Class2052 field38502;
-    private Class354 field38503;
+    private BlockPos field38503;
     private boolean field38504;
     private Class7859 field38505;
     private Class6997 field38506;
@@ -29,7 +31,7 @@ public class Class9092
     public Class9092() {
         this.field38501 = Class2181.field12917;
         this.field38502 = Class2052.field11707;
-        this.field38503 = Class354.field2173;
+        this.field38503 = BlockPos.ZERO;
         this.field38507 = true;
         this.field38510 = Lists.newArrayList();
     }
@@ -60,7 +62,7 @@ public class Class9092
         return this;
     }
     
-    public Class9092 method32846(final Class354 field38503) {
+    public Class9092 method32846(final BlockPos field38503) {
         this.field38503 = field38503;
         return this;
     }
@@ -113,13 +115,13 @@ public class Class9092
         return this.field38502;
     }
     
-    public Class354 method32857() {
+    public BlockPos method32857() {
         return this.field38503;
     }
     
-    public Random method32858(final Class354 class354) {
+    public Random method32858(final BlockPos class354) {
         if (this.field38508 == null) {
-            return (class354 != null) ? new Random(Class9546.method35688(class354)) : new Random(Class8349.method27837());
+            return (class354 != null) ? new Random(MathHelper.method35688(class354)) : new Random(Class8349.method27837());
         }
         return this.field38508;
     }
@@ -156,7 +158,7 @@ public class Class9092
         return this.field38507;
     }
     
-    public List<Class9038> method32865(final List<List<Class9038>> list, final Class354 class354) {
+    public List<Class9038> method32865(final List<List<Class9038>> list, final BlockPos class354) {
         final int size = list.size();
         return (List<Class9038>)((size <= 0) ? Collections.emptyList() : list.get(this.method32858(class354).nextInt(size)));
     }

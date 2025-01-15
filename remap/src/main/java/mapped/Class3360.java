@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class3360 extends Class3355
 {
     private boolean field16003;
@@ -29,7 +31,7 @@ public class Class3360 extends Class3355
                 n = 0.0;
                 n2 = 0.0;
             }
-            final Class399 method1937 = Class3360.field15514.field4684.method1920();
+            final Entity method1937 = Class3360.field15514.field4684.method1920();
             method1937.field2399 = Class3360.field15514.field4684.field2399;
             method1937.method1937(n, Class3360.field15514.field4684.field2967 ? 1.0 : (this.field16004 ? -1.0 : 0.03999999910593033), n2);
             if (Class3360.field15514.field4684.field2424 % 100 != 0) {}

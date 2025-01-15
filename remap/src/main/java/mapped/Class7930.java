@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class7930 extends Class7929
 {
-    public final Class399 field32594;
+    public final Entity field32594;
     private boolean field32595;
     
-    public Class7930(final String s, final Class399 field32594) {
+    public Class7930(final String s, final Entity field32594) {
         super(s);
         this.field32594 = field32594;
     }
@@ -27,7 +29,7 @@ public class Class7930 extends Class7929
     
     @Nullable
     @Override
-    public Class399 method25714() {
+    public Entity method25714() {
         return this.field32594;
     }
     
@@ -52,7 +54,7 @@ public class Class7930 extends Class7929
     
     @Nullable
     @Override
-    public Class5487 method25726() {
+    public Vec3d method25726() {
         return (this.field32594 == null) ? null : this.field32594.method1934();
     }
 }

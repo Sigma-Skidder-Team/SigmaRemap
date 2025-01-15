@@ -9,13 +9,12 @@ import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.DataFixer;
-import com.google.common.collect.UnmodifiableIterator;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Optional;
 import com.google.common.annotations.VisibleForTesting;
 import javax.annotation.Nullable;
-import java.util.Iterator;
+
 import com.mojang.authlib.properties.Property;
 import java.util.UUID;
 import com.mojang.authlib.GameProfile;
@@ -156,15 +155,15 @@ public final class Class9346
         return new UUID(class51.method320("M"), class51.method320("L"));
     }
     
-    public static Class354 method34645(final Class51 class51) {
-        return new Class354(class51.method319("X"), class51.method319("Y"), class51.method319("Z"));
+    public static BlockPos method34645(final Class51 class51) {
+        return new BlockPos(class51.method319("X"), class51.method319("Y"), class51.method319("Z"));
     }
     
-    public static Class51 method34646(final Class354 class354) {
+    public static Class51 method34646(final BlockPos class354) {
         final Class51 class355 = new Class51();
-        class355.method298("X", class354.method1074());
-        class355.method298("Y", class354.method1075());
-        class355.method298("Z", class354.method1076());
+        class355.method298("X", class354.getX());
+        class355.method298("Y", class354.getY());
+        class355.method298("Z", class354.getZ());
         return class355;
     }
     

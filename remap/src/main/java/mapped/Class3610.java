@@ -17,13 +17,13 @@ public class Class3610 extends Class3607
         if (this.field16794.method2634() == null && !this.field16794.method1804()) {
             return false;
         }
-        final Class354 method11136 = this.method11136(this.field16794.field2391, this.field16794, 7, 4);
+        final BlockPos method11136 = this.method11136(this.field16794.field2391, this.field16794, 7, 4);
         if (method11136 == null) {
             return this.method11135();
         }
-        this.field16796 = method11136.method1074();
-        this.field16797 = method11136.method1075();
-        this.field16798 = method11136.method1076();
+        this.field16796 = method11136.getX();
+        this.field16797 = method11136.getY();
+        this.field16798 = method11136.getZ();
         return true;
     }
 }

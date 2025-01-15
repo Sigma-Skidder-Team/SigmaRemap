@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 
@@ -12,17 +13,17 @@ public class Class8949
 {
     private static String[] field37637;
     public Class7814 field37638;
-    public List<Class399> field37639;
+    public List<Entity> field37639;
     
     public Class8949() {
-        this.field37639 = new CopyOnWriteArrayList<Class399>();
+        this.field37639 = new CopyOnWriteArrayList<Entity>();
     }
     
     public void method31750() {
         Class9463.method35173().method35188().method21094(this);
     }
     
-    public boolean method31751(final Class399 class399) {
+    public boolean method31751(final Entity class399) {
         return this.field37639.contains(class399);
     }
     

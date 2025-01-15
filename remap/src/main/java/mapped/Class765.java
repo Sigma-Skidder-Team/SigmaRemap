@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.Collection;
 
@@ -131,7 +134,7 @@ public class Class765 extends Class763 implements Class766
     @Override
     public void method2678(final Class7929 class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
-        final Class399 method25714 = class7929.method25714();
+        final Entity method25714 = class7929.method25714();
         if (method25714 != this) {
             if (method25714 instanceof Class765) {
                 final Class765 class7930 = (Class765)method25714;
@@ -144,7 +147,7 @@ public class Class765 extends Class763 implements Class766
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         return true;
     }
     
@@ -154,7 +157,7 @@ public class Class765 extends Class763 implements Class766
     }
     
     public float method4234(final float n) {
-        return Class9546.method35700(n, (float)this.field4138, (float)this.field4139) / (this.field4140 - 2);
+        return MathHelper.method35700(n, (float)this.field4138, (float)this.field4139) / (this.field4140 - 2);
     }
     
     public int method4235() {

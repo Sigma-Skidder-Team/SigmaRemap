@@ -19,10 +19,10 @@ public class Class4796 extends Class4703<Class424>
         final Class7096 method2071 = class424.method2071();
         if (method2071.method21710() == Class2115.field12307) {
             final Class1847 method2072 = class424.method2069();
-            if (method2071 != method2072.method6701(new Class354(class424))) {
+            if (method2071 != method2072.method6701(new BlockPos(class424))) {
                 if (method2071.method21710() != Class2115.field12305) {
                     class425.method22567();
-                    final Class354 class427 = new Class354(class424.method1938(), class424.method1886().field25077, class424.method1945());
+                    final BlockPos class427 = new BlockPos(class424.method1938(), class424.method1886().field25077, class424.method1945());
                     class425.method22564(-0.5, 0.0, -0.5);
                     final Class1658 method2073 = Class869.method5277().method5305();
                     method2073.method5793().method33353(method2072, method2073.method5794(method2071), method2071, class427, class425, class426.method25214(Class7969.method25824(method2071)), false, new Random(), method2071.method21758(class424.method2068()), Class1904.field10335);

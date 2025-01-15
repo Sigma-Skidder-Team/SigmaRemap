@@ -5,8 +5,10 @@
 package mapped;
 
 import java.util.Locale;
-import java.util.Iterator;
+
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public class Class6114 implements Class6113
@@ -58,9 +60,9 @@ public class Class6114 implements Class6113
     
     private static void method18273(final Class9468 class9468, final float n, final boolean b, final boolean b2, final double n2, final double n3, final double n4) {
         method18274(class9468, n2, n3, n4);
-        final Class354 method35232 = class9468.method35232();
+        final BlockPos method35232 = class9468.method35232();
         if (method18275(method35232, n2, n3, n4) <= 80.0f) {
-            Class7282.method22336(new Class6221(method35232.method1074() + 0.25f, method35232.method1075() + 0.25f, method35232.method1076() + 0.25, method35232.method1074() + 0.75f, method35232.method1075() + 0.75f, method35232.method1076() + 0.75f).method18499(-n2, -n3, -n4), 0.0f, 1.0f, 0.0f, 0.5f);
+            Class7282.method22336(new Class6221(method35232.getX() + 0.25f, method35232.getY() + 0.25f, method35232.getZ() + 0.25, method35232.getX() + 0.75f, method35232.getY() + 0.75f, method35232.getZ() + 0.75f).method18499(-n2, -n3, -n4), 0.0f, 1.0f, 0.0f, 0.5f);
             for (int i = 0; i < class9468.method35221(); ++i) {
                 final Class6772 method35233 = class9468.method35217(i);
                 if (method18275(method35233.method20671(), n2, n3, n4) <= 80.0f) {
@@ -99,14 +101,14 @@ public class Class6114 implements Class6113
             final Class6772 method22696 = class9468.method35217(i);
             if (method18275(method22696.method20671(), n, n2, n3) <= 80.0f) {
                 final float n4 = i / (float)class9468.method35221() * 0.33f;
-                final int n5 = (i != 0) ? Class9546.method35697(n4, 0.9f, 0.9f) : 0;
+                final int n5 = (i != 0) ? MathHelper.method35697(n4, 0.9f, 0.9f) : 0;
                 method22695.method12432(method22696.field26589 - n + 0.5, method22696.field26590 - n2 + 0.5, method22696.field26591 - n3 + 0.5).method12399(n5 >> 16 & 0xFF, n5 >> 8 & 0xFF, n5 & 0xFF, 255).method12397();
             }
         }
         method22694.method22695();
     }
     
-    private static float method18275(final Class354 class354, final double n, final double n2, final double n3) {
-        return (float)(Math.abs(class354.method1074() - n) + Math.abs(class354.method1075() - n2) + Math.abs(class354.method1076() - n3));
+    private static float method18275(final BlockPos class354, final double n, final double n2, final double n3) {
+        return (float)(Math.abs(class354.getX() - n) + Math.abs(class354.getY() - n2) + Math.abs(class354.getZ() - n3));
     }
 }

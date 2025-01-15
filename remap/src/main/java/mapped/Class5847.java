@@ -4,7 +4,9 @@
 
 package mapped;
 
-public abstract class Class5847<E extends Class399> extends Class5846<E>
+import net.minecraft.entity.Entity;
+
+public abstract class Class5847<E extends Entity> extends Class5846<E>
 {
     private float field23958;
     private float field23959;

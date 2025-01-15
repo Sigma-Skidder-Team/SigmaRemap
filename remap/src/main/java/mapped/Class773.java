@@ -6,8 +6,11 @@ package mapped;
 
 import java.util.AbstractList;
 import java.util.HashMap;
-import java.util.Map;
+
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public class Class773 extends Class772 implements Class774, Class768
@@ -97,7 +100,7 @@ public class Class773 extends Class772 implements Class774, Class768
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         final Class3833 method21696 = class355.method6701(class354.method1139()).method21696();
         return (method21696 != Class7521.field29155 && method21696 != Class7521.field29175) ? (0.5f - class355.method6963(class354)) : 10.0f;
     }
@@ -127,7 +130,7 @@ public class Class773 extends Class772 implements Class774, Class768
     }
     
     @Override
-    public boolean method1826(final Class399 class399) {
+    public boolean method1826(final Entity class399) {
         return super.method1826(class399) || (class399 instanceof Class511 && ((Class511)class399).method2712() == Class6363.field25463 && this.method1825() == null && class399.method1825() == null);
     }
     
@@ -158,25 +161,25 @@ public class Class773 extends Class772 implements Class774, Class768
     
     @Override
     public void method4281(final Class511 class511, final Class8321 class512, final Class401 class513, final float n) {
-        final Class399 class514 = (Class399)class513;
+        final Entity class514 = (Entity)class513;
         final double n2 = class511.method1938() - this.method1938();
         final double n3 = class511.method1945() - this.method1945();
-        final Class9138 method4282 = this.method4282(new Class5487(n2, class511.method1942(0.3333333333333333) - class514.method1941() + Class9546.method35641(n2 * n2 + n3 * n3) * 0.20000000298023224, n3), n);
+        final Vector3f method4282 = this.method4282(new Vec3d(n2, class511.method1942(0.3333333333333333) - class514.method1941() + MathHelper.method35641(n2 * n2 + n3 * n3) * 0.20000000298023224, n3), n);
         class513.method1958(method4282.method33311(), method4282.method33312(), method4282.method33313(), 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         this.method1695(Class8520.field35112, 1.0f, 1.0f / (this.method2633().nextFloat() * 0.4f + 0.8f));
     }
     
-    private Class9138 method4282(final Class5487 class5487, final float n) {
-        final Class5487 method16738 = class5487.method16738();
-        Class5487 class5488 = method16738.method16740(new Class5487(0.0, 1.0, 0.0));
+    private Vector3f method4282(final Vec3d class5487, final float n) {
+        final Vec3d method16738 = class5487.method16738();
+        Vec3d class5488 = method16738.method16740(new Vec3d(0.0, 1.0, 0.0));
         if (class5488.method16753() <= 1.0E-7) {
             class5488 = method16738.method16740(this.method1745(1.0f));
         }
-        final Class9389 class5489 = new Class9389(new Class9138(class5488), 90.0f, true);
-        final Class9138 class5490 = new Class9138(method16738);
+        final Quaternion class5489 = new Quaternion(new Vector3f(class5488), 90.0f, true);
+        final Vector3f class5490 = new Vector3f(method16738);
         class5490.method33325(class5489);
-        final Class9389 class5491 = new Class9389(class5490, n, true);
-        final Class9138 class5492 = new Class9138(method16738);
+        final Quaternion class5491 = new Quaternion(class5490, n, true);
+        final Vector3f class5492 = new Vector3f(method16738);
         class5492.method33325(class5491);
         return class5492;
     }

@@ -4,14 +4,14 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
-import com.mojang.brigadier.suggestion.Suggestions;
 import org.apache.commons.lang3.StringUtils;
-import java.util.Iterator;
+
 import java.util.Set;
 import java.util.Collections;
 import com.mojang.brigadier.StringReader;
-import java.util.function.Consumer;
 import com.google.common.primitives.Floats;
 import com.google.common.primitives.Doubles;
 import io.netty.util.concurrent.Future;
@@ -39,14 +39,14 @@ public class Class5814 implements Class5813
     private double field23868;
     private double field23869;
     private double field23870;
-    private Class399 field23871;
+    private Entity field23871;
     private double field23872;
     private double field23873;
     private double field23874;
     private double field23875;
     private double field23876;
     private double field23877;
-    private Class5487 field23878;
+    private Vec3d field23878;
     private int field23879;
     private int field23880;
     private boolean field23881;
@@ -207,7 +207,7 @@ public class Class5814 implements Class5813
     public void method17442(final Class4251 class4251) {
         Class8663.method29631((Class4252<Class5814>)class4251, this, this.field23857.method2940());
         if (!method17465(class4251)) {
-            final Class399 method1915 = this.field23857.method1915();
+            final Entity method1915 = this.field23857.method1915();
             if (method1915 != this.field23857) {
                 if (method1915.method1907() == this.field23857) {
                     if (method1915 == this.field23871) {
@@ -229,7 +229,7 @@ public class Class5814 implements Class5813
                             return;
                         }
                         final boolean method1925 = method1916.method6978(method1915, method1915.method1886().method18511(0.0625));
-                        method1915.method1671(Class2160.field12827, new Class5487(method1920 - this.field23875, method1921 - this.field23876 - 1.0E-6, method1922 - this.field23877));
+                        method1915.method1671(Class2160.field12827, new Vec3d(method1920 - this.field23875, method1921 - this.field23876 - 1.0E-6, method1922 - this.field23877));
                         final double n = method1920 - method1915.method1938();
                         double n2 = method1921 - method1915.method1941();
                         if (n2 > -0.5 || n2 < 0.5) {
@@ -346,7 +346,7 @@ public class Class5814 implements Class5813
         else {
             Class865 method2539 = null;
             Class500 class4267 = null;
-            final Class354 method2540 = class4266.method12803();
+            final BlockPos method2540 = class4266.method12803();
             final Class436 method2541 = this.field23857.field2391.method6727(method2540);
             if (method2541 instanceof Class500) {
                 class4267 = (Class500)method2541;
@@ -356,7 +356,7 @@ public class Class5814 implements Class5813
             final boolean method2543 = class4266.method12805();
             if (method2539 != null) {
                 final Class2182 method2544 = class4267.method2550();
-                final Class179 class4268 = this.field23857.field2391.method6701(method2540).method21772((Class7111<Class179>)Class3953.field17853);
+                final Direction class4268 = this.field23857.field2391.method6701(method2540).method21772((Class7111<Direction>)Class3953.field17853);
                 switch (Class8365.field34305[class4266.method12808().ordinal()]) {
                     case 1: {
                         this.field23857.field2391.method6688(method2540, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29640.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
@@ -448,7 +448,7 @@ public class Class5814 implements Class5813
     public void method17452(final Class4360 class4360) {
         Class8663.method29631((Class4252<Class5814>)class4360, this, this.field23857.method2940());
         if (this.field23857.method2908()) {
-            final Class354 method13101 = class4360.method13101();
+            final BlockPos method13101 = class4360.method13101();
             final Class7096 method13102 = this.field23857.field2391.method6701(method13101);
             final Class436 method13103 = this.field23857.field2391.method6727(method13101);
             if (method13103 instanceof Class501) {
@@ -510,7 +510,7 @@ public class Class5814 implements Class5813
     public void method17457(final Class4270 class4270) {
         Class8663.method29631((Class4252<Class5814>)class4270, this, this.field23857.method2940());
         if (this.field23857.method2908()) {
-            final Class354 method12813 = class4270.method12813();
+            final BlockPos method12813 = class4270.method12813();
             final Class7096 method12814 = this.field23857.field2391.method6701(method12813);
             final Class436 method12815 = this.field23857.field2391.method6727(method12813);
             if (method12815 instanceof Class498) {
@@ -573,7 +573,7 @@ public class Class5814 implements Class5813
     public void method17455(final Class4261 class4261) {
         Class8663.method29631((Class4252<Class5814>)class4261, this, this.field23857.method2940());
         if (this.field23857.method1926(2)) {
-            final Class399 method6741 = this.field23857.method2940().method6741(class4261.method12792());
+            final Entity method6741 = this.field23857.method2940().method6741(class4261.method12792());
             if (method6741 != null) {
                 this.field23857.field3039.method17469(new Class4296(class4261.method12791(), method6741.method1756(new Class51())));
             }
@@ -647,7 +647,7 @@ public class Class5814 implements Class5813
                                     }
                                 }
                             }
-                            this.field23857.method1671(Class2160.field12827, new Class5487(n2, n3, n4));
+                            this.field23857.method1671(Class2160.field12827, new Vec3d(n2, n3, n4));
                             this.field23857.field2404 = class4353.method13083();
                             final double n5 = method1486 - this.field23857.method1938();
                             double n6 = method1487 - this.field23857.method1941();
@@ -744,7 +744,7 @@ public class Class5814 implements Class5813
         final double n8 = set.contains(Class2143.field12619) ? this.field23857.method1945() : 0.0;
         final float n9 = set.contains(Class2143.field12620) ? this.field23857.field2399 : 0.0f;
         final float n10 = set.contains(Class2143.field12621) ? this.field23857.field2400 : 0.0f;
-        this.field23878 = new Class5487(n, n2, n3);
+        this.field23878 = new Vec3d(n, n2, n3);
         if (++this.field23879 == Integer.MAX_VALUE) {
             this.field23879 = 0;
         }
@@ -756,7 +756,7 @@ public class Class5814 implements Class5813
     @Override
     public void method17431(final Class4399 class4399) {
         Class8663.method29631((Class4252<Class5814>)class4399, this, this.field23857.method2940());
-        final Class354 method13237 = class4399.method13237();
+        final BlockPos method13237 = class4399.method13237();
         this.field23857.method2946();
         final Class2003 method13238 = class4399.method13239();
         switch (Class8365.field34306[method13238.ordinal()]) {
@@ -803,14 +803,14 @@ public class Class5814 implements Class5813
         final Class316 method1482 = class4329.method12999();
         final Class8321 method1483 = this.field23857.method2715(method1482);
         final Class7005 method1484 = class4329.method13000();
-        final Class354 method1485 = method1484.method21447();
-        final Class179 method1486 = method1484.method21448();
+        final BlockPos method1485 = method1484.method21447();
+        final Direction method1486 = method1484.method21448();
         this.field23857.method2946();
-        if (method1485.method1075() >= this.field23856.method1534() - 1 && (method1486 == Class179.field512 || method1485.method1075() >= this.field23856.method1534())) {
+        if (method1485.getY() >= this.field23856.method1534() - 1 && (method1486 == Direction.UP || method1485.getY() >= this.field23856.method1534())) {
             this.field23857.field3039.method17469(new Class4378(new Class2259("build.tooHigh", new Object[] { this.field23856.method1534() }).method8469(Class2116.field12321), Class285.field1574));
         }
         else if (this.field23878 == null) {
-            if (this.field23857.method1733(method1485.method1074() + 0.5, method1485.method1075() + 0.5, method1485.method1076() + 0.5) < 64.0) {
+            if (this.field23857.method1733(method1485.getX() + 0.5, method1485.getY() + 0.5, method1485.getZ() + 0.5) < 64.0) {
                 if (method1481.method6760(this.field23857, method1485)) {
                     if (this.field23857.field3041.method26480(this.field23857, method1481, method1483, method1482, method1484).method8375()) {
                         this.field23857.method2708(method1482, true);
@@ -839,7 +839,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((Class4252<Class5814>)class4294, this, this.field23857.method2940());
         if (this.field23857.method1639()) {
             for (final Class1849 class4295 : this.field23856.method1482()) {
-                final Class399 method12899 = class4294.method12899(class4295);
+                final Entity method12899 = class4294.method12899(class4295);
                 if (method12899 == null) {
                     continue;
                 }
@@ -855,7 +855,7 @@ public class Class5814 implements Class5813
     @Override
     public void method17441(final Class4302 class4302) {
         Class8663.method29631((Class4252<Class5814>)class4302, this, this.field23857.method2940());
-        final Class399 method1920 = this.field23857.method1920();
+        final Entity method1920 = this.field23857.method1920();
         if (method1920 instanceof Class423) {
             ((Class423)method1920).method2044(class4302.method12940(), class4302.method12941());
         }
@@ -1022,7 +1022,7 @@ public class Class5814 implements Class5813
     @Override
     public void method17427(final Class4381 class4381) {
         Class8663.method29631((Class4252<Class5814>)class4381, this, this.field23857.method2940());
-        final Class399 method13170 = class4381.method13170(this.field23856.method1481(this.field23857.field2452));
+        final Entity method13170 = class4381.method13170(this.field23856.method1481(this.field23857.field2452));
         this.field23857.method2946();
         if (method13170 != null) {
             final boolean method13171 = this.field23857.method2747(method13170);
@@ -1176,7 +1176,7 @@ public class Class5814 implements Class5813
                     if (method12876.method315("x")) {
                         if (method12876.method315("y")) {
                             if (method12876.method315("z")) {
-                                final Class436 method12877 = this.field23857.field2391.method6727(new Class354(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
+                                final Class436 method12877 = this.field23857.field2391.method6727(new BlockPos(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
                                 if (method12877 != null) {
                                     final Class51 method12878 = method12877.method2180(new Class51());
                                     method12878.method330("x");
@@ -1249,7 +1249,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((Class4252<Class5814>)class4344, this, this.field23857.method2940());
         this.field23857.method2946();
         final Class1849 method1481 = this.field23856.method1481(this.field23857.field2452);
-        final Class354 method1482 = class4344.method13046();
+        final BlockPos method1482 = class4344.method13046();
         if (method1481.method6971(method1482)) {
             final Class7096 method1483 = method1481.method6701(method1482);
             final Class436 method1484 = method1481.method6727(method1482);

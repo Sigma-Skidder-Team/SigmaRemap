@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.function.Predicate;
-
 public abstract class Class3542 extends Class3446
 {
     private final Class7843 field16592;
@@ -20,7 +18,7 @@ public abstract class Class3542 extends Class3446
     }
     
     public boolean method11092() {
-        final Class354 class354 = new Class354(this.field16593);
+        final BlockPos class354 = new BlockPos(this.field16593);
         return !this.field16593.field2391.method6994(class354) && this.field16593.method4345(class354) >= 0.0f;
     }
     

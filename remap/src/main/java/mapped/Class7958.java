@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -24,7 +26,7 @@ public class Class7958 implements Class7954
     
     @Nullable
     @Override
-    public Class9017 method25804(final Class399 class399, final Random random) {
+    public Class9017 method25804(final Entity class399, final Random random) {
         final Class8321 class400 = new Class8321(Class7739.field31612, 1);
         Class4035.method12228(class400, this.field32694, this.field32695);
         return new Class9017(new Class8321(Class7739.field31514, 1), class400, 12, this.field32696, this.field32697);

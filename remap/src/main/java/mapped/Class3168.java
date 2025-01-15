@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class3168 extends Class3167
 {
     public Class3168() {
@@ -14,7 +16,7 @@ public class Class3168 extends Class3167
     @Class6753
     private void method9918(final Class5739 class5739) {
         if (this.method9906()) {
-            final Class399 method10266 = ((Class3255)this.method9914()).method10266(this.method9886("Range"));
+            final Entity method10266 = ((Class3255)this.method9914()).method10266(this.method9886("Range"));
             if (method10266 != null) {
                 final float[] method10267 = Class8845.method30912(method10266);
                 Class3168.field15514.field4684.field2399 = method10267[0];

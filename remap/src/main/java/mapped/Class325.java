@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public enum Class325 implements Class326
 {
     field2026("is_alive"), 
@@ -36,7 +38,7 @@ public enum Class325 implements Class326
     
     @Override
     public boolean method1006() {
-        final Class399 method5303 = Class869.method5277().method5303();
+        final Entity method5303 = Class869.method5277().method5303();
         if (method5303 instanceof Class511) {
             final Class511 class511 = (Class511)method5303;
             switch (Class7475.field28873[this.ordinal()]) {

@@ -30,7 +30,7 @@ public class Class6171 extends Class6159
         this.field24935 = this.field24938;
         if (this.field24951-- > 0) {
             this.method18431(this.field24939, this.field24940, this.field24941);
-            if (!this.field24932.method6702(new Class354(this.field24936, this.field24937, this.field24938)).method21793(Class7324.field28319)) {
+            if (!this.field24932.method6702(new BlockPos(this.field24936, this.field24937, this.field24938)).method21793(Class7324.field28319)) {
                 this.method18439();
             }
         }

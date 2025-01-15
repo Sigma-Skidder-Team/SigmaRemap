@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3358 extends Class3355
 {
     private int field15992;
@@ -145,7 +147,7 @@ public class Class3358 extends Class3355
                 if (this.method10637() == -1) {
                     return;
                 }
-                Class3358.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Class5487(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Class179.field512, new Class354(Class3358.field15514.field4684).method1134(0, -1, 0), false)));
+                Class3358.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Class5487(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3358.field15514.field4684).method1134(0, -1, 0), false)));
                 if (this.field15995 >= this.method9886("Boost")) {
                     Class7482.method23149(class5717, 0.0);
                     Class3358.field15514.field4684.method2725();

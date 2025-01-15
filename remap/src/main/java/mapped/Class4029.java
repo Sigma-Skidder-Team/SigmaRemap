@@ -15,7 +15,7 @@ public class Class4029 extends Class4027
     }
     
     @Override
-    public Class8819 method11783(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
-        return (class7096.method21772(Class4029.field18120) != Class111.field352) ? this.field17402 : this.field18122;
+    public Class8819 method11783(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+        return (class7096.method21772(Class4029.field18120) != Axis.Y) ? this.field17402 : this.field18122;
     }
 }

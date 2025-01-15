@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class3884 extends Class3874 implements Class3872
@@ -19,12 +21,12 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
+    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
         return new Class8321(Class7739.field31630);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         if (class7096.method21772((Class7111<Integer>)Class3884.field17541) != 0) {
             return (class7096.method21772((Class7111<Integer>)Class3884.field17541) >= 3) ? super.method11808(class7096, class7097, class7098, class7099) : Class3884.field17543;
         }
@@ -32,7 +34,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         super.method11822(class7096, class7097, class7098, random);
         final int intValue = class7096.method21772((Class7111<Integer>)Class3884.field17541);
         if (intValue < 3) {
@@ -45,7 +47,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class399 class7099) {
+    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
         if (class7099 instanceof Class511) {
             if (class7099.method1642() != Class7499.field28985) {
                 if (class7099.method1642() != Class7499.field28961) {
@@ -67,7 +69,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3884.field17541);
         final int n = (intValue == 3) ? 1 : 0;
         if (n == 0 && class7099.method2715(class7100).method27622() == Class7739.field31400) {
@@ -88,17 +90,17 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return class1857.method21772((Class7111<Integer>)Class3884.field17541) < 3;
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
         class1849.method6688(class1850, ((Class7097<O, Class7096>)class1851).method21773((Class7111<Comparable>)Class3884.field17541, Math.min(3, class1851.method21772((Class7111<Integer>)Class3884.field17541) + 1)), 2);
     }
     

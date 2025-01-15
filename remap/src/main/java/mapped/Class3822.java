@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class3822 extends Class3821
@@ -16,19 +18,19 @@ public class Class3822 extends Class3821
     }
     
     @Override
-    public void method11753(final Class1847 class1847, final Class8321 class1848, final Class354 class1849) {
+    public void method11753(final Class1847 class1847, final Class8321 class1848, final BlockPos class1849) {
         if (!class1847.field10067) {
             this.method11757(class1847, class1848, class1849);
         }
     }
     
     @Override
-    public void method11756(final Class512 class512, final Class1851 class513, final Class354 class514) {
+    public void method11756(final Class512 class512, final Class1851 class513, final BlockPos class514) {
         class513.method6705(class512, class514, Class8520.field35050, Class286.field1584, 1.0f, 1.0f);
     }
     
-    private void method11757(final Class1847 class1847, final Class8321 class1848, final Class354 class1849) {
-        final Class399 method23356 = this.field17374.method23356(class1847, class1848, null, class1849, Class2101.field12185, true, false);
+    private void method11757(final Class1847 class1847, final Class8321 class1848, final BlockPos class1849) {
+        final Entity method23356 = this.field17374.method23356(class1847, class1848, null, class1849, Class2101.field12185, true, false);
         if (method23356 != null) {
             ((Class833)method23356).method4954(true);
         }

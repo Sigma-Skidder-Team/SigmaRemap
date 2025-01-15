@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 
 public class Class4478 extends Class4475
@@ -45,10 +46,10 @@ public class Class4478 extends Class4475
                 this.method13449(class1851, Class7521.field29217.method11878(), j, -5, k, class1853);
             }
         }
-        final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field513);
-        final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field514);
-        final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field516);
-        final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Class179.field515);
+        final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
+        final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
+        final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.EAST);
+        final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.WEST);
         this.method13444(class1851, class1853, 0, 0, 0, 4, 9, 4, Class7521.field29217.method11878(), Class7521.field29147.method11878(), false);
         this.method13444(class1851, class1853, 1, 10, 1, 3, 10, 3, Class7521.field29217.method11878(), Class7521.field29217.method11878(), false);
         this.method13440(class1851, class1855, 2, 10, 0, class1853);
@@ -204,11 +205,11 @@ public class Class4478 extends Class4475
         this.method13440(class1851, Class7521.field29147.method11878(), 10, -10, 12, class1853);
         this.method13440(class1851, Class7521.field29218.method11878(), 10, -10, 13, class1853);
         this.method13440(class1851, Class7521.field29219.method11878(), 10, -11, 13, class1853);
-        for (final Class179 class1859 : Class98.field268) {
-            if (this.field19868[class1859.method780()]) {
+        for (final Direction class1859 : Plane.HORIZONTAL) {
+            if (this.field19868[class1859.getHorizontalIndex()]) {
                 continue;
             }
-            this.field19868[class1859.method780()] = this.method13450(class1851, class1853, random, 10 + class1859.method785() * 2, -11, 10 + class1859.method787() * 2, Class9020.field38088);
+            this.field19868[class1859.getHorizontalIndex()] = this.method13450(class1851, class1853, random, 10 + class1859.getXOffset() * 2, -11, 10 + class1859.getZOffset() * 2, Class9020.field38088);
         }
         return true;
     }

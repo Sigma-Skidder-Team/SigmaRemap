@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Function;
 
 public class Class4542 extends Class4535<Class5122>
@@ -14,8 +16,8 @@ public class Class4542 extends Class4535<Class5122>
         super(function);
     }
     
-    public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, Class354 class1853, final Class5122 class1854) {
-        while (class1851.method6961(class1853) && class1853.method1075() > 2) {
+    public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, BlockPos class1853, final Class5122 class1854) {
+        while (class1851.method6961(class1853) && class1853.getY() > 2) {
             class1853 = class1853.method1139();
         }
         if (class1851.method6701(class1853).method21696() == Class7521.field29331) {
@@ -29,10 +31,10 @@ public class Class4542 extends Class4535<Class5122>
             }
             for (int i = 0; i < n; ++i) {
                 final float n3 = (1.0f - i / (float)n) * n2;
-                for (int method35649 = Class9546.method35649(n3), j = -method35649; j <= method35649; ++j) {
-                    final float n4 = Class9546.method35648(j) - 0.25f;
+                for (int method35649 = MathHelper.method35649(n3), j = -method35649; j <= method35649; ++j) {
+                    final float n4 = MathHelper.abs(j) - 0.25f;
                     for (int k = -method35649; k <= method35649; ++k) {
-                        final float n5 = Class9546.method35648(k) - 0.25f;
+                        final float n5 = MathHelper.abs(k) - 0.25f;
                         if ((j == 0 && k == 0) || n4 * n4 + n5 * n5 <= n3 * n3) {
                             Label_0347: {
                                 if (j != -method35649) {
@@ -93,14 +95,14 @@ public class Class4542 extends Class4535<Class5122>
             }
             for (int l = -n6; l <= n6; ++l) {
                 for (int a = -n6; a <= n6; ++a) {
-                    Class354 class1855 = class1853.method1134(l, -1, a);
+                    BlockPos class1855 = class1853.method1134(l, -1, a);
                     int n7 = 50;
                     if (Math.abs(l) == 1) {
                         if (Math.abs(a) == 1) {
                             n7 = random.nextInt(5);
                         }
                     }
-                    while (class1855.method1075() > 50) {
+                    while (class1855.getY() > 50) {
                         final Class7096 method35654 = class1851.method6701(class1855);
                         final Class3833 method35655 = method35654.method21696();
                         if (!method35654.method21706()) {

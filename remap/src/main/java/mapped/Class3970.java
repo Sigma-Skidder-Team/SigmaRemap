@@ -23,7 +23,7 @@ public class Class3970 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         super.method11828(class7096, class7097, class7098, class7099, b);
     }
     
@@ -34,7 +34,7 @@ public class Class3970 extends Class3833
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class3833 class7099, final Class354 class7100, final boolean b) {
+    public void method11825(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.field10067) {
             final boolean booleanValue = class7096.method21772((Class7111<Boolean>)Class3970.field17941);
             if (booleanValue != class7097.method6749(class7098)) {
@@ -49,7 +49,7 @@ public class Class3970 extends Class3833
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class3970.field17941)) {
             if (!class7097.method6749(class7098)) {
                 class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21768((Class7111<Comparable>)Class3970.field17941), 2);
@@ -63,7 +63,7 @@ public class Class3970 extends Class3833
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7499<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7499<?> class7099) {
         return true;
     }
     

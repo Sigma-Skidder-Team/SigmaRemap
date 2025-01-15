@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,7 +36,7 @@ public class Class6460 implements Class6459
         final int method19322 = this.method19322();
         if (Class8349.method27837() > this.field25671) {
             this.field25671 += 500L;
-            Class6460.field25667.info(new Class2259("menu.preparingSpawn", new Object[] { Class9546.method35651(method19322, 0, 100) }).getString());
+            Class6460.field25667.info(new Class2259("menu.preparingSpawn", new Object[] { MathHelper.method35651(method19322, 0, 100) }).getString());
         }
     }
     
@@ -46,7 +47,7 @@ public class Class6460 implements Class6459
     }
     
     public int method19322() {
-        return Class9546.method35642(this.field25669 * 100.0f / this.field25668);
+        return MathHelper.method35642(this.field25669 * 100.0f / this.field25668);
     }
     
     static {

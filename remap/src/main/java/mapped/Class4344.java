@@ -9,13 +9,13 @@ import java.io.IOException;
 public class Class4344 implements Class4252<Class5813>
 {
     private static String[] field19459;
-    private Class354 field19460;
+    private BlockPos field19460;
     private String[] field19461;
     
     public Class4344() {
     }
     
-    public Class4344(final Class354 field19460, final Class2250 class2250, final Class2250 class2251, final Class2250 class2252, final Class2250 class2253) {
+    public Class4344(final BlockPos field19460, final Class2250 class2250, final Class2250 class2251, final Class2250 class2252, final Class2250 class2253) {
         this.field19460 = field19460;
         this.field19461 = new String[] { class2250.getString(), class2251.getString(), class2252.getString(), class2253.getString() };
     }
@@ -41,7 +41,7 @@ public class Class4344 implements Class4252<Class5813>
         class5813.method17436(this);
     }
     
-    public Class354 method13046() {
+    public BlockPos method13046() {
         return this.field19460;
     }
     

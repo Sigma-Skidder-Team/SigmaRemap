@@ -8,9 +8,9 @@ public class Class5492 implements Class5491
 {
     private static String[] field22773;
     private final Class1847 field22774;
-    private final Class354 field22775;
+    private final BlockPos field22775;
     
-    public Class5492(final Class1847 field22774, final Class354 field22775) {
+    public Class5492(final Class1847 field22774, final BlockPos field22775) {
         this.field22774 = field22774;
         this.field22775 = field22775;
     }
@@ -22,21 +22,21 @@ public class Class5492 implements Class5491
     
     @Override
     public double method16760() {
-        return this.field22775.method1074() + 0.5;
+        return this.field22775.getX() + 0.5;
     }
     
     @Override
     public double method16761() {
-        return this.field22775.method1075() + 0.5;
+        return this.field22775.getY() + 0.5;
     }
     
     @Override
     public double method16762() {
-        return this.field22775.method1076() + 0.5;
+        return this.field22775.getZ() + 0.5;
     }
     
     @Override
-    public Class354 method16764() {
+    public BlockPos method16764() {
         return this.field22775;
     }
     

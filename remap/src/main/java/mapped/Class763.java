@@ -67,15 +67,15 @@ public abstract class Class763 extends Class787 implements Class762
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         return 0.5f - class355.method6963(class354);
     }
     
-    public static boolean method4229(final Class1851 class1851, final Class354 class1852, final Random random) {
+    public static boolean method4229(final Class1851 class1851, final BlockPos class1852, final Random random) {
         return class1851.method6992(Class237.field911, class1852) <= random.nextInt(32) && (class1851.method6744().method6770() ? class1851.method6970(class1852, 10) : class1851.method6969(class1852)) <= random.nextInt(8);
     }
     
-    public static boolean method4230(final Class7499<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4230(final Class7499<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6954() != Class2113.field12290) {
             if (method4229(class7500, class7502, random)) {
                 if (Class759.method4178(class7499, class7500, class7501, class7502, random)) {
@@ -86,7 +86,7 @@ public abstract class Class763 extends Class787 implements Class762
         return false;
     }
     
-    public static boolean method4231(final Class7499<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4231(final Class7499<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6954() != Class2113.field12290 && Class759.method4178(class7499, class7500, class7501, class7502, random);
     }
     

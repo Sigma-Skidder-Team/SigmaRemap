@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7997
 {
     private static String[] field32937;
@@ -29,6 +31,6 @@ public class Class7997
     
     public Class8321 method26164() {
         final Class8321[] method611 = this.field32938.method611();
-        return method611[Class9546.method35642(Class7877.method25527(this.field32941) / 30.0f) % method611.length];
+        return method611[MathHelper.method35642(Class7877.method25527(this.field32941) / 30.0f) % method611.length];
     }
 }

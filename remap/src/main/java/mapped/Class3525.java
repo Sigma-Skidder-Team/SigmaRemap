@@ -36,14 +36,14 @@ public class Class3525 extends Class3446
             final Class1847 field2391 = this.field16535.field2391;
             ++this.field16536;
             if (this.field16536 == 10) {
-                field2391.method6839(null, 1015, new Class354(this.field16535), 0);
+                field2391.method6839(null, 1015, new BlockPos(this.field16535), 0);
             }
             if (this.field16536 == 20) {
                 final Class5487 method4153 = this.field16535.method1741(1.0f);
                 final double n = method4152.method1938() - (this.field16535.method1938() + method4153.field22770 * 4.0);
                 final double n2 = method4152.method1942(0.5) - (0.5 + this.field16535.method1942(0.5));
                 final double n3 = method4152.method1945() - (this.field16535.method1945() + method4153.field22772 * 4.0);
-                field2391.method6839(null, 1016, new Class354(this.field16535), 0);
+                field2391.method6839(null, 1016, new BlockPos(this.field16535), 0);
                 final Class417 class417 = new Class417(field2391, this.field16535, n, n2, n3);
                 class417.field2525 = this.field16535.method4224();
                 class417.method1656(this.field16535.method1938() + method4153.field22770 * 4.0, this.field16535.method1942(0.5) + 0.5, class417.method1945() + method4153.field22772 * 4.0);

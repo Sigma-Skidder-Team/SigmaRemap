@@ -7,6 +7,9 @@ package mapped;
 import java.util.Collections;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 
 public class Class8551
@@ -19,14 +22,14 @@ public class Class8551
     public final Class1663 field35904;
     private Class1847 field35905;
     public Class6092 field35906;
-    private Class9389 field35907;
-    public Class399 field35908;
+    private Quaternion field35907;
+    public Entity field35908;
     public final Class5760 field35909;
     private boolean field35910;
     private boolean field35911;
     public Class4703 field35912;
     
-    public <E extends Class399> int method28695(final E e, final float n) {
+    public <E extends Entity> int method28695(final E e, final float n) {
         int n2 = this.method28699(e).method13953(e, n);
         if (Class8571.method29002()) {
             n2 = Class8850.method30991(e, n2);
@@ -34,7 +37,7 @@ public class Class8551
         return n2;
     }
     
-    private <T extends Class399> void method28696(final Class7499<T> class7499, final Class4703<? super T> class7500) {
+    private <T extends Entity> void method28696(final Class7499<T> class7499, final Class4703<? super T> class7500) {
         this.field35900.put(class7499, class7500);
     }
     
@@ -166,7 +169,7 @@ public class Class8551
         }
     }
     
-    public <T extends Class399> Class4703<? super T> method28699(final T t) {
+    public <T extends Entity> Class4703<? super T> method28699(final T t) {
         if (!(t instanceof Class754)) {
             return (Class4703)this.field35900.get(t.method1642());
         }
@@ -174,14 +177,14 @@ public class Class8551
         return (Class4703<? super T>)((class4711 == null) ? this.field35902 : class4711);
     }
     
-    public void method28700(final Class1847 field35905, final Class6092 field35906, final Class399 field35907) {
+    public void method28700(final Class1847 field35905, final Class6092 field35906, final Entity field35907) {
         this.field35905 = field35905;
         this.field35906 = field35906;
         this.field35907 = field35906.method18165();
         this.field35908 = field35907;
     }
     
-    public void method28701(final Class9389 field35907) {
+    public void method28701(final Quaternion field35907) {
         this.field35907 = field35907;
     }
     
@@ -197,18 +200,18 @@ public class Class8551
         return this.field35911;
     }
     
-    public <E extends Class399> boolean method28705(final E e, final Class6664 class6664, final double n, final double n2, final double n3) {
+    public <E extends Entity> boolean method28705(final E e, final Class6664 class6664, final double n, final double n2, final double n3) {
         return this.method28699(e).method13952(e, class6664, n, n2, n3);
     }
     
-    public <E extends Class399> void method28706(final E e, final double n, final double n2, final double n3, final float f, final float f2, final Class7351 class7351, final Class7807 class7352, final int n4) {
+    public <E extends Entity> void method28706(final E e, final double n, final double n2, final double n3, final float f, final float f2, final Class7351 class7351, final Class7807 class7352, final int n4) {
         if (Class3375.field16048 && (e instanceof Class857 || e instanceof Class764 || e instanceof Class862)) {
             return;
         }
         if (this.field35906 != null) {
             final Class4703<? super E> method28699 = this.method28699(e);
             try {
-                final Class5487 method28700 = method28699.method13955(e, f2);
+                final Vec3d method28700 = method28699.method13955(e, f2);
                 final double n5 = n + method28700.method16760();
                 final double n6 = n2 + method28700.method16761();
                 final double n7 = n3 + method28700.method16762();
@@ -246,16 +249,16 @@ public class Class8551
         }
     }
     
-    private void method28707(final Class7351 class7351, final Class4150 class7352, final Class399 class7353, final float n) {
+    private void method28707(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final float n) {
         final float n2 = class7353.method1930() / 2.0f;
         this.method28708(class7351, class7352, class7353, 1.0f, 1.0f, 1.0f);
         if (class7353 instanceof Class852) {
-            final double n3 = class7353.method1938() - Class9546.method35701(n, class7353.field2417, class7353.method1938());
-            final double n4 = class7353.method1941() - Class9546.method35701(n, class7353.field2418, class7353.method1941());
-            final double n5 = class7353.method1945() - Class9546.method35701(n, class7353.field2419, class7353.method1945());
+            final double n3 = class7353.method1938() - MathHelper.method35701(n, class7353.field2417, class7353.method1938());
+            final double n4 = class7353.method1941() - MathHelper.method35701(n, class7353.field2418, class7353.method1941());
+            final double n5 = class7353.method1945() - MathHelper.method35701(n, class7353.field2419, class7353.method1945());
             for (final Class859 class7354 : ((Class852)class7353).method5123()) {
                 class7351.method22567();
-                class7351.method22564(n3 + Class9546.method35701(n, class7354.field2417, class7354.method1938()), n4 + Class9546.method35701(n, class7354.field2418, class7354.method1941()), n5 + Class9546.method35701(n, class7354.field2419, class7354.method1945()));
+                class7351.method22564(n3 + MathHelper.method35701(n, class7354.field2417, class7354.method1938()), n4 + MathHelper.method35701(n, class7354.field2418, class7354.method1941()), n5 + MathHelper.method35701(n, class7354.field2419, class7354.method1945()));
                 this.method28708(class7351, class7352, class7354, 0.25f, 1.0f, 0.0f);
                 class7351.method22568();
             }
@@ -263,17 +266,17 @@ public class Class8551
         if (class7353 instanceof Class511) {
             Class1656.method5732(class7351, class7352, -n2, class7353.method1892() - 0.01f, -n2, n2, class7353.method1892() + 0.01f, n2, 1.0f, 0.0f, 0.0f, 1.0f);
         }
-        final Class5487 method5124 = class7353.method1741(n);
+        final Vec3d method5124 = class7353.method1741(n);
         final Class6789 method5125 = class7351.method22569().method32111();
         class7352.method12444(method5125, 0.0f, class7353.method1892(), 0.0f).method12399(0, 0, 255, 255).method12397();
         class7352.method12444(method5125, (float)(method5124.field22770 * 2.0), (float)(class7353.method1892() + method5124.field22771 * 2.0), (float)(method5124.field22772 * 2.0)).method12399(0, 0, 255, 255).method12397();
     }
     
-    private void method28708(final Class7351 class7351, final Class4150 class7352, final Class399 class7353, final float n, final float n2, final float n3) {
+    private void method28708(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final float n, final float n2, final float n3) {
         Class1656.method5731(class7351, class7352, class7353.method1886().method18499(-class7353.method1938(), -class7353.method1941(), -class7353.method1945()), n, n2, n3, 1.0f);
     }
     
-    private void method28709(final Class7351 class7351, final Class7807 class7352, final Class399 class7353) {
+    private void method28709(final Class7351 class7351, final Class7807 class7352, final Entity class7353) {
         final Class1912 method11332 = Class7637.field30237.method11332();
         final Class1912 method11333 = Class7637.field30238.method11332();
         class7351.method22567();
@@ -282,7 +285,7 @@ public class Class8551
         float n2 = 0.5f;
         float n3 = class7353.method1931() / n;
         float n4 = 0.0f;
-        class7351.method22566(Class9138.field38718.method33328(-this.field35906.method18164()));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(-this.field35906.method18164()));
         class7351.method22564(0.0, 0.0, -0.3f + (int)n3 * 0.02f);
         float n5 = 0.0f;
         int n6 = 0;
@@ -325,7 +328,7 @@ public class Class8551
         class8997.method12444(class8996.method32111(), n, n2, n3).method12399(255, 255, 255, 255).method12391(n4, n5).method12433(0, 10).method12440(240).method12445(class8996.method32112(), 0.0f, 1.0f, 0.0f).method12397();
     }
     
-    private static void method28711(final Class7351 class7351, final Class7807 class7352, final Class399 class7353, final float n, final float n2, final Class1852 class7354, final float n3) {
+    private static void method28711(final Class7351 class7351, final Class7807 class7352, final Entity class7353, final float n, final float n2, final Class1852 class7354, final float n3) {
         if (!Class8571.method28955() || !Class9216.field39233) {
             float n4 = n3;
             if (class7353 instanceof Class759) {
@@ -333,43 +336,43 @@ public class Class8551
                     n4 = n3 * 0.5f;
                 }
             }
-            final double method35701 = Class9546.method35701(n2, class7353.field2417, class7353.method1938());
-            final double method35702 = Class9546.method35701(n2, class7353.field2418, class7353.method1941());
-            final double method35703 = Class9546.method35701(n2, class7353.field2419, class7353.method1945());
-            final int method35704 = Class9546.method35644(method35701 - n4);
-            final int method35705 = Class9546.method35644(method35701 + n4);
-            final int method35706 = Class9546.method35644(method35702 - n4);
-            final int method35707 = Class9546.method35644(method35702);
-            final int method35708 = Class9546.method35644(method35703 - n4);
-            final int method35709 = Class9546.method35644(method35703 + n4);
+            final double method35701 = MathHelper.method35701(n2, class7353.field2417, class7353.method1938());
+            final double method35702 = MathHelper.method35701(n2, class7353.field2418, class7353.method1941());
+            final double method35703 = MathHelper.method35701(n2, class7353.field2419, class7353.method1945());
+            final int method35704 = MathHelper.floor(method35701 - n4);
+            final int method35705 = MathHelper.floor(method35701 + n4);
+            final int method35706 = MathHelper.floor(method35702 - n4);
+            final int method35707 = MathHelper.floor(method35702);
+            final int method35708 = MathHelper.floor(method35703 - n4);
+            final int method35709 = MathHelper.floor(method35703 + n4);
             final Class8996 method35710 = class7351.method22569();
             final Class4150 method35711 = class7352.method25214(Class8551.field35899);
-            final Iterator<Class354> iterator = Class354.method1154(new Class354(method35704, method35706, method35708), new Class354(method35705, method35707, method35709)).iterator();
+            final Iterator<BlockPos> iterator = BlockPos.method1154(new BlockPos(method35704, method35706, method35708), new BlockPos(method35705, method35707, method35709)).iterator();
             while (iterator.hasNext()) {
                 method28712(method35710, method35711, class7354, iterator.next(), method35701, method35702, method35703, n4, n);
             }
         }
     }
     
-    private static void method28712(final Class8996 class8996, final Class4150 class8997, final Class1852 class8998, final Class354 class8999, final double n, final double n2, final double n3, final float n4, final float n5) {
-        final Class354 method1139 = class8999.method1139();
+    private static void method28712(final Class8996 class8996, final Class4150 class8997, final Class1852 class8998, final BlockPos class8999, final double n, final double n2, final double n3, final float n4, final float n5) {
+        final BlockPos method1139 = class8999.method1139();
         final Class7096 method1140 = class8998.method6701(method1139);
         if (method1140.method21710() != Class2115.field12305) {
             if (class8998.method6969(class8999) > 3) {
                 if (method1140.method21762(class8998, method1139)) {
                     final Class7702 method1141 = method1140.method21725(class8998, class8999.method1139());
                     if (!method1141.method24540()) {
-                        float n6 = (float)((n5 - (n2 - class8999.method1075()) / 2.0) * 0.5 * class8998.method6963(class8999));
+                        float n6 = (float)((n5 - (n2 - class8999.getY()) / 2.0) * 0.5 * class8998.method6963(class8999));
                         if (n6 >= 0.0f) {
                             if (n6 > 1.0f) {
                                 n6 = 1.0f;
                             }
                             final Class6221 method1142 = method1141.method24537();
-                            final double n7 = class8999.method1074() + method1142.field25073;
-                            final double n8 = class8999.method1074() + method1142.field25076;
-                            final double n9 = class8999.method1075() + method1142.field25074;
-                            final double n10 = class8999.method1076() + method1142.field25075;
-                            final double n11 = class8999.method1076() + method1142.field25078;
+                            final double n7 = class8999.getX() + method1142.field25073;
+                            final double n8 = class8999.getX() + method1142.field25076;
+                            final double n9 = class8999.getY() + method1142.field25074;
+                            final double n10 = class8999.getZ() + method1142.field25075;
+                            final double n11 = class8999.getZ() + method1142.field25078;
                             final float n12 = (float)(n7 - n);
                             final float n13 = (float)(n8 - n);
                             final float n14 = (float)(n9 - n2 + 0.015625);
@@ -401,7 +404,7 @@ public class Class8551
         }
     }
     
-    public double method28715(final Class399 class399) {
+    public double method28715(final Entity class399) {
         return this.field35906.method18161().method16746(class399.method1934());
     }
     
@@ -409,7 +412,7 @@ public class Class8551
         return this.field35906.method18161().method16747(n, n2, n3);
     }
     
-    public Class9389 method28717() {
+    public Quaternion method28717() {
         return this.field35907;
     }
     

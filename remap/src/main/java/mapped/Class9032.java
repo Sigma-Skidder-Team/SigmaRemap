@@ -9,7 +9,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class Class9032
 {
@@ -28,7 +27,7 @@ public class Class9032
     
     public void method32433(final Class513 class513) {
         class513.method2871(this.field38194);
-        final Class7529 method32883 = new Class9098(class513.method2940()).method32877(Class6683.field26362, class513).method32877(Class6683.field26367, new Class354(class513)).method32873(class513.method2633()).method32883(Class7104.field27717);
+        final Class7529 method32883 = new Class9098(class513.method2940()).method32877(Class6683.field26362, class513).method32877(Class6683.field26367, new BlockPos(class513)).method32873(class513.method2633()).method32883(Class7104.field27717);
         int n = 0;
         final Class1932[] field38195 = this.field38195;
         for (int length = field38195.length, i = 0; i < length; ++i) {

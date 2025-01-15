@@ -15,11 +15,11 @@ public class Class6379
         this.field25490 = 1.0f;
     }
     
-    public void method19049(final Class5487 class5487) {
+    public void method19049(final Vec3d class5487) {
         AL10.alListener3f(4100, (float)class5487.field22770, (float)class5487.field22771, (float)class5487.field22772);
     }
     
-    public void method19050(final Class9138 class9138, final Class9138 class9139) {
+    public void method19050(final Vector3f class9138, final Vector3f class9139) {
         AL10.alListenerfv(4111, new float[] { class9138.method33311(), class9138.method33312(), class9138.method33313(), class9139.method33311(), class9139.method33312(), class9139.method33313() });
     }
     
@@ -33,7 +33,7 @@ public class Class6379
     }
     
     public void method19053() {
-        this.method19049(Class5487.field22769);
-        this.method19050(Class9138.field38719, Class9138.field38718);
+        this.method19049(Vec3d.field22769);
+        this.method19050(Vector3f.field38719, Vector3f.field38718);
     }
 }

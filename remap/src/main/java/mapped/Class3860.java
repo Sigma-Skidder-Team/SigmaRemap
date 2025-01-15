@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public abstract class Class3860 extends Class3841 implements Class3856
 {
     public static final Class7113 field17483;
@@ -16,7 +18,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.method21772((Class7111<Boolean>)Class3860.field17483)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
@@ -24,7 +26,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3860.field17484;
     }
     
@@ -39,7 +41,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final Class8321 method2715 = class7099.method2715(class7100);
         final boolean b = method2715.method27622() instanceof Class3829 && class7099.field3025.field27305;
         if (class7097.field10067) {

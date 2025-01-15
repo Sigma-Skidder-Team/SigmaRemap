@@ -49,12 +49,12 @@ public final class Class8259 extends Class8260
         else {
             this.field33911 = (BitSet)((Class8259)class8260).field33911.clone();
         }
-        this.field33912 = class8260.method27417(Class111.field351);
-        this.field33913 = class8260.method27417(Class111.field352);
-        this.field33914 = class8260.method27417(Class111.field353);
-        this.field33915 = class8260.method27418(Class111.field351);
-        this.field33916 = class8260.method27418(Class111.field352);
-        this.field33917 = class8260.method27418(Class111.field353);
+        this.field33912 = class8260.method27417(Axis.X);
+        this.field33913 = class8260.method27417(Axis.Y);
+        this.field33914 = class8260.method27417(Axis.Z);
+        this.field33915 = class8260.method27418(Axis.X);
+        this.field33916 = class8260.method27418(Axis.Y);
+        this.field33917 = class8260.method27418(Axis.Z);
     }
     
     public int method27413(final int n, final int n2, final int n3) {
@@ -87,13 +87,13 @@ public final class Class8259 extends Class8260
     }
     
     @Override
-    public int method27417(final Class111 class111) {
-        return class111.method604(this.field33912, this.field33913, this.field33914);
+    public int method27417(final Axis class111) {
+        return class111.getCoordinate(this.field33912, this.field33913, this.field33914);
     }
     
     @Override
-    public int method27418(final Class111 class111) {
-        return class111.method604(this.field33915, this.field33916, this.field33917);
+    public int method27418(final Axis class111) {
+        return class111.getCoordinate(this.field33915, this.field33916, this.field33917);
     }
     
     @Override

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class3174 extends Class3167
 {
     public Class8013 field15535;
@@ -46,7 +48,7 @@ public class Class3174 extends Class3167
                 int1 = Integer.parseInt(replaceAll);
             }
             final float n = (float)Math.toRadians(Class3174.field15514.field4684.field2399 + 90.0f);
-            Class3174.field15514.field4684.method1656(Class3174.field15514.field4684.field2395 + Class9546.method35639(n) * int1, Class3174.field15514.field4684.field2396, Class3174.field15514.field4684.field2397 + Class9546.method35638(n) * int1);
+            Class3174.field15514.field4684.method1656(Class3174.field15514.field4684.field2395 + MathHelper.cos(n) * int1, Class3174.field15514.field4684.field2396, Class3174.field15514.field4684.field2397 + MathHelper.sin(n) * int1);
         }
     }
     
@@ -58,7 +60,7 @@ public class Class3174 extends Class3167
         boolean method21723 = false;
         int n = 0;
         for (int i = 0; i < 10; ++i) {
-            final Class354 class354 = new Class354(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 - i, Class3174.field15514.field4684.field2397);
+            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 - i, Class3174.field15514.field4684.field2397);
             if (Class3174.field15514.field4683.method6701(class354).method21723() && method21723) {
                 n = -i;
                 break;
@@ -72,7 +74,7 @@ public class Class3174 extends Class3167
         boolean method21723 = false;
         int n = 0;
         for (int i = 10; i > 0; --i) {
-            final Class354 class354 = new Class354(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 + i, Class3174.field15514.field4684.field2397);
+            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.field2395, Class3174.field15514.field4684.field2396 + i, Class3174.field15514.field4684.field2397);
             if (Class3174.field15514.field4683.method6701(class354).method21723()) {
                 if (method21723) {
                     if (!Class3174.field15514.field4683.method6701(class354.method1139()).method21723()) {

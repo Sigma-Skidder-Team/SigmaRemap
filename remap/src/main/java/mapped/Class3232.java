@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import java.util.Comparator;
 import java.util.Collections;
@@ -12,11 +14,11 @@ import java.util.List;
 
 public class Class3232 extends Class3167
 {
-    private List<Class399> field15703;
+    private List<Entity> field15703;
     
     public Class3232() {
         super(Class8013.field32986, "BowAimbot", "Automatically aims at players while using a bow");
-        this.field15703 = new ArrayList<Class399>();
+        this.field15703 = new ArrayList<Entity>();
         this.method9881(new Class5001("Sort mode", "Sort mode", 0, new String[] { "Angle", "Range" }));
         this.method9881(new Class4996("Range", "Range value", 70.0f, Float.class, 10.0f, 100.0f, 1.0f));
         this.method9881(new Class4999("Silent", "Server-sided rotations.", false));
@@ -62,11 +64,11 @@ public class Class3232 extends Class3167
         }
     }
     
-    public List<Class399> method10193(final float n) {
-        final List<Class399> method19138 = Class6430.method19138();
-        final Iterator<Class399> iterator = method19138.iterator();
+    public List<Entity> method10193(final float n) {
+        final List<Entity> method19138 = Class6430.method19138();
+        final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
-            final Class399 class399 = iterator.next();
+            final Entity class399 = iterator.next();
             if (class399 == Class3232.field15514.field4684) {
                 iterator.remove();
             }

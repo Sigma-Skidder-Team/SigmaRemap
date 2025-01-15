@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public interface Class441 extends Class446
 {
-    int[] method2248(final Class179 p0);
+    int[] method2248(final Direction p0);
     
-    boolean method2249(final int p0, final Class8321 p1, final Class179 p2);
+    boolean method2249(final int p0, final Class8321 p1, final Direction p2);
     
-    boolean method2250(final int p0, final Class8321 p1, final Class179 p2);
+    boolean method2250(final int p0, final Class8321 p1, final Direction p2);
 }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6258 extends Class6257
 {
@@ -34,16 +34,16 @@ public class Class6258 extends Class6257
         return 2;
     }
     
-    public static void method18605(final Class511 class511, final Class1847 class512, final Class354 class513, final int n) {
+    public static void method18605(final Class511 class511, final Class1847 class512, final BlockPos class513, final int n) {
         if (class511.field2404) {
             final Class7096 method11878 = Class7521.field29641.method11878();
             final float n2 = (float)Math.min(16, 2 + n);
             final Class385 class514 = new Class385();
-            for (final Class354 class515 : Class354.method1154(class513.method1133(-n2, -1.0, -n2), class513.method1133(n2, -1.0, n2))) {
+            for (final BlockPos class515 : BlockPos.method1154(class513.method1133(-n2, -1.0, -n2), class513.method1133(n2, -1.0, n2))) {
                 if (!class515.method1082(class511.method1934(), n2)) {
                     continue;
                 }
-                class514.method1284(class515.method1074(), class515.method1075() + 1, class515.method1076());
+                class514.method1284(class515.getX(), class515.getY() + 1, class515.getZ());
                 if (!class512.method6701(class514).method21706()) {
                     continue;
                 }
@@ -61,7 +61,7 @@ public class Class6258 extends Class6257
                     continue;
                 }
                 class512.method6692(class515, method11878);
-                class512.method6833().method21345(class515, Class7521.field29641, Class9546.method35658(class511.method2633(), 60, 120));
+                class512.method6833().method21345(class515, Class7521.field29641, MathHelper.method35658(class511.method2633(), 60, 120));
             }
         }
     }

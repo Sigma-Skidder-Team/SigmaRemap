@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Predicate;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
 import java.util.Set;
@@ -27,7 +26,7 @@ public class Class9307
     public final List<String> field39943;
     public final List<String> field39944;
     public final List<String> field39945;
-    public final Set<Class354> field39946;
+    public final Set<BlockPos> field39946;
     
     public Class9307(final UUID field39933, final int field39934, final String field39935, final String field39936, final int field39937, final Class5488 field39938, final String field39939, final Class9468 field39940, final boolean field39941) {
         this.field39942 = Lists.newArrayList();
@@ -46,7 +45,7 @@ public class Class9307
         this.field39941 = field39941;
     }
     
-    private boolean method34423(final Class354 class354) {
+    private boolean method34423(final BlockPos class354) {
         return this.field39946.stream().anyMatch(class354::equals);
     }
     

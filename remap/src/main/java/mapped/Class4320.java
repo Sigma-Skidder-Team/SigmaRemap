@@ -12,7 +12,7 @@ public class Class4320 implements Class4252<Class5800>
 {
     private static String[] field19355;
     private static final Logger field19356;
-    private Class354 field19357;
+    private BlockPos field19357;
     private Class7096 field19358;
     public Class2003 field19359;
     private boolean field19360;
@@ -20,7 +20,7 @@ public class Class4320 implements Class4252<Class5800>
     public Class4320() {
     }
     
-    public Class4320(final Class354 class354, final Class7096 field19358, final Class2003 field19359, final boolean field19360, final String s) {
+    public Class4320(final BlockPos class354, final Class7096 field19358, final Class2003 field19359, final boolean field19360, final String s) {
         this.field19357 = class354.method1153();
         this.field19358 = field19358;
         this.field19359 = field19359;
@@ -51,7 +51,7 @@ public class Class4320 implements Class4252<Class5800>
         return this.field19358;
     }
     
-    public Class354 method12982() {
+    public BlockPos method12982() {
         return this.field19357;
     }
     

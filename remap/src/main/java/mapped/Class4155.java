@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.util.Direction;
+
 public class Class4155 extends Class4154
 {
     private static String[] field18518;
@@ -41,14 +44,14 @@ public class Class4155 extends Class4154
     
     @Override
     public void method12397() {
-        final Class9138 class9138 = new Class9138(this.field18528, this.field18529, this.field18530);
+        final Vector3f class9138 = new Vector3f(this.field18528, this.field18529, this.field18530);
         class9138.method33324(this.field18521);
-        final Class179 method800 = Class179.method800(class9138.method33311(), class9138.method33312(), class9138.method33313());
-        final Class8526 class9139 = new Class8526(this.field18522, this.field18523, this.field18524, 1.0f);
+        final Direction method800 = Direction.getFacingFromVector(class9138.method33311(), class9138.method33312(), class9138.method33313());
+        final Vector4f class9139 = new Vector4f(this.field18522, this.field18523, this.field18524, 1.0f);
         class9139.method28603(this.field18520);
-        class9139.method28604(Class9138.field38718.method33328(180.0f));
-        class9139.method28604(Class9138.field38716.method33328(-90.0f));
-        class9139.method28604(method800.method778());
+        class9139.method28604(Vector3f.field38718.rotationDegrees(180.0f));
+        class9139.method28604(Vector3f.XP.rotationDegrees(-90.0f));
+        class9139.method28604(method800.getRotation());
         this.field18519.method12432(this.field18522, this.field18523, this.field18524).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12391(-class9139.method28595(), -class9139.method28596()).method12433(this.field18525, this.field18526).method12440(this.field18527).method12436(this.field18528, this.field18529, this.field18530).method12397();
         this.method12452();
     }

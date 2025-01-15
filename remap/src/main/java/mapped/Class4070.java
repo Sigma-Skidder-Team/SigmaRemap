@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4070 extends Class3820
 {
     private static String[] field18164;
@@ -21,7 +23,7 @@ public class Class4070 extends Class3820
             final double method11710 = class8323.method1945();
             for (int i = 0; i < 16; ++i) {
                 final double n = class8323.method1938() + (class8323.method2633().nextDouble() - 0.5) * 16.0;
-                final double method11711 = Class9546.method35654(class8323.method1941() + (class8323.method2633().nextInt(16) - 8), 0.0, class8322.method6778() - 1);
+                final double method11711 = MathHelper.method35654(class8323.method1941() + (class8323.method2633().nextInt(16) - 8), 0.0, class8322.method6778() - 1);
                 final double n2 = class8323.method1945() + (class8323.method2633().nextDouble() - 0.5) * 16.0;
                 if (class8323.method1805()) {
                     class8323.method1784();

@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public abstract class Class8260
 {
-    private static final Class111[] field33918;
+    private static final Axis[] field33918;
     public final int field33919;
     public final int field33920;
     public final int field33921;
@@ -18,7 +20,7 @@ public abstract class Class8260
     }
     
     public boolean method27425(final Class309 class309, final int n, final int n2, final int n3) {
-        return this.method27426(class309.method982(n, n2, n3, Class111.field351), class309.method982(n, n2, n3, Class111.field352), class309.method982(n, n2, n3, Class111.field353));
+        return this.method27426(class309.method982(n, n2, n3, Axis.X), class309.method982(n, n2, n3, Axis.Y), class309.method982(n, n2, n3, Axis.Z));
     }
     
     public boolean method27426(final int n, final int n2, final int n3) {
@@ -40,7 +42,7 @@ public abstract class Class8260
     }
     
     public boolean method27427(final Class309 class309, final int n, final int n2, final int n3) {
-        return this.method27414(class309.method982(n, n2, n3, Class111.field351), class309.method982(n, n2, n3, Class111.field352), class309.method982(n, n2, n3, Class111.field353));
+        return this.method27414(class309.method982(n, n2, n3, Axis.X), class309.method982(n, n2, n3, Axis.Y), class309.method982(n, n2, n3, Axis.Z));
     }
     
     public abstract boolean method27414(final int p0, final int p1, final int p2);
@@ -48,7 +50,7 @@ public abstract class Class8260
     public abstract void method27415(final int p0, final int p1, final int p2, final boolean p3, final boolean p4);
     
     public boolean method27416() {
-        for (final Class111 class111 : Class8260.field33918) {
+        for (final Axis class111 : Class8260.field33918) {
             if (this.method27417(class111) >= this.method27418(class111)) {
                 return true;
             }
@@ -56,19 +58,19 @@ public abstract class Class8260
         return false;
     }
     
-    public abstract int method27417(final Class111 p0);
+    public abstract int method27417(final Axis p0);
     
-    public abstract int method27418(final Class111 p0);
+    public abstract int method27418(final Axis p0);
     
-    public int method27428(final Class111 class111, final int n, final int n2) {
+    public int method27428(final Axis class111, final int n, final int n2) {
         final int method27430 = this.method27430(class111);
         if (n < 0 || n2 < 0) {
             return method27430;
         }
-        final Class111 method27431 = Class309.field1838.method983(class111);
-        final Class111 method27432 = Class309.field1839.method983(class111);
+        final Axis method27431 = Class309.field1838.method983(class111);
+        final Axis method27432 = Class309.field1839.method983(class111);
         if (n < this.method27430(method27431) && n2 < this.method27430(method27432)) {
-            final Class309 method27433 = Class309.method985(Class111.field351, class111);
+            final Class309 method27433 = Class309.method985(Axis.X, class111);
             for (int i = 0; i < method27430; ++i) {
                 if (this.method27427(method27433, i, n, n2)) {
                     return i;
@@ -79,15 +81,15 @@ public abstract class Class8260
         return method27430;
     }
     
-    public int method27429(final Class111 class111, final int n, final int n2) {
+    public int method27429(final Axis class111, final int n, final int n2) {
         if (n < 0 || n2 < 0) {
             return 0;
         }
-        final Class111 method983 = Class309.field1838.method983(class111);
-        final Class111 method984 = Class309.field1839.method983(class111);
+        final Axis method983 = Class309.field1838.method983(class111);
+        final Axis method984 = Class309.field1839.method983(class111);
         if (n < this.method27430(method983) && n2 < this.method27430(method984)) {
             final int method985 = this.method27430(class111);
-            final Class309 method986 = Class309.method985(Class111.field351, class111);
+            final Class309 method986 = Class309.method985(Axis.X, class111);
             for (int i = method985 - 1; i >= 0; --i) {
                 if (this.method27427(method986, i, n, n2)) {
                     return i + 1;
@@ -98,20 +100,20 @@ public abstract class Class8260
         return 0;
     }
     
-    public int method27430(final Class111 class111) {
-        return class111.method604(this.field33919, this.field33920, this.field33921);
+    public int method27430(final Axis class111) {
+        return class111.getCoordinate(this.field33919, this.field33920, this.field33921);
     }
     
     public int method27431() {
-        return this.method27430(Class111.field351);
+        return this.method27430(Axis.X);
     }
     
     public int method27432() {
-        return this.method27430(Class111.field352);
+        return this.method27430(Axis.Y);
     }
     
     public int method27433() {
-        return this.method27430(Class111.field353);
+        return this.method27430(Axis.Z);
     }
     
     public void method27434(final Class8670 class8670, final boolean b) {
@@ -122,9 +124,9 @@ public abstract class Class8260
     
     private void method27435(final Class8670 class8670, final Class309 class8671, final boolean b) {
         final Class309 method984 = class8671.method984();
-        final int method985 = this.method27430(method984.method983(Class111.field351));
-        final int method986 = this.method27430(method984.method983(Class111.field352));
-        final int method987 = this.method27430(method984.method983(Class111.field353));
+        final int method985 = this.method27430(method984.method983(Axis.X));
+        final int method986 = this.method27430(method984.method983(Axis.Y));
+        final int method987 = this.method27430(method984.method983(Axis.Z));
         for (int i = 0; i <= method985; ++i) {
             for (int j = 0; j <= method986; ++j) {
                 int n = -1;
@@ -145,14 +147,14 @@ public abstract class Class8260
                                 if (n == -1) {
                                     continue;
                                 }
-                                class8670.method29679(method984.method982(i, j, n, Class111.field351), method984.method982(i, j, n, Class111.field352), method984.method982(i, j, n, Class111.field353), method984.method982(i, j, k, Class111.field351), method984.method982(i, j, k, Class111.field352), method984.method982(i, j, k, Class111.field353));
+                                class8670.method29679(method984.method982(i, j, n, Axis.X), method984.method982(i, j, n, Axis.Y), method984.method982(i, j, n, Axis.Z), method984.method982(i, j, k, Axis.X), method984.method982(i, j, k, Axis.Y), method984.method982(i, j, k, Axis.Z));
                                 n = -1;
                                 continue;
                             }
                         }
                     }
                     if (!b) {
-                        class8670.method29679(method984.method982(i, j, k, Class111.field351), method984.method982(i, j, k, Class111.field352), method984.method982(i, j, k, Class111.field353), method984.method982(i, j, k + 1, Class111.field351), method984.method982(i, j, k + 1, Class111.field352), method984.method982(i, j, k + 1, Class111.field353));
+                        class8670.method29679(method984.method982(i, j, k, Axis.X), method984.method982(i, j, k, Axis.Y), method984.method982(i, j, k, Axis.Z), method984.method982(i, j, k + 1, Axis.X), method984.method982(i, j, k + 1, Axis.Y), method984.method982(i, j, k + 1, Axis.Z));
                     }
                     else if (n == -1) {
                         n = k;
@@ -242,12 +244,12 @@ public abstract class Class8260
     
     private void method27439(final Class8466 class8466, final Class309 class8467) {
         final Class309 method984 = class8467.method984();
-        final Class111 method985 = method984.method983(Class111.field353);
-        final int method986 = this.method27430(method984.method983(Class111.field351));
-        final int method987 = this.method27430(method984.method983(Class111.field352));
+        final Axis method985 = method984.method983(Axis.Z);
+        final int method986 = this.method27430(method984.method983(Axis.X));
+        final int method987 = this.method27430(method984.method983(Axis.Y));
         final int method988 = this.method27430(method985);
-        final Class179 method989 = Class179.method796(method985, Class288.field1602);
-        final Class179 method990 = Class179.method796(method985, Class288.field1601);
+        final Direction method989 = Direction.getFacingFromAxisDirection(method985, AxisDirection.NEGATIVE);
+        final Direction method990 = Direction.getFacingFromAxisDirection(method985, AxisDirection.POSITIVE);
         for (int i = 0; i < method986; ++i) {
             for (int j = 0; j < method987; ++j) {
                 boolean b = false;
@@ -255,12 +257,12 @@ public abstract class Class8260
                     final boolean b2 = k != method988 && this.method27427(method984, i, j, k);
                     if (!b) {
                         if (b2) {
-                            class8466.method28259(method989, method984.method982(i, j, k, Class111.field351), method984.method982(i, j, k, Class111.field352), method984.method982(i, j, k, Class111.field353));
+                            class8466.method28259(method989, method984.method982(i, j, k, Axis.X), method984.method982(i, j, k, Axis.Y), method984.method982(i, j, k, Axis.Z));
                         }
                     }
                     if (b) {
                         if (!b2) {
-                            class8466.method28259(method990, method984.method982(i, j, k - 1, Class111.field351), method984.method982(i, j, k - 1, Class111.field352), method984.method982(i, j, k - 1, Class111.field353));
+                            class8466.method28259(method990, method984.method982(i, j, k - 1, Axis.X), method984.method982(i, j, k - 1, Axis.Y), method984.method982(i, j, k - 1, Axis.Z));
                         }
                     }
                     b = b2;
@@ -270,6 +272,6 @@ public abstract class Class8260
     }
     
     static {
-        field33918 = Class111.values();
+        field33918 = Axis.values();
     }
 }

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import io.netty.util.ReferenceCounted;
 import io.netty.util.ByteProcessor;
 import java.nio.channels.ScatteringByteChannel;
 import java.io.InputStream;
@@ -28,6 +27,7 @@ import java.util.UUID;
 import io.netty.handler.codec.DecoderException;
 import java.util.Map;
 import io.netty.buffer.ByteBuf;
+import net.minecraft.util.Direction;
 
 public class Class8654 extends ByteBuf
 {
@@ -122,11 +122,11 @@ public class Class8654 extends ByteBuf
         return array;
     }
     
-    public Class354 method29494() {
-        return Class354.method1129(this.readLong());
+    public BlockPos method29494() {
+        return BlockPos.method1129(this.readLong());
     }
     
-    public Class8654 method29495(final Class354 class354) {
+    public Class8654 method29495(final BlockPos class354) {
         this.writeLong(class354.method1132());
         return this;
     }
@@ -331,18 +331,18 @@ public class Class8654 extends ByteBuf
     }
     
     public Class7005 method29520() {
-        final Class354 method29494 = this.method29494();
-        return new Class7005(new Class5487(method29494.method1074() + this.readFloat(), method29494.method1075() + this.readFloat(), method29494.method1076() + this.readFloat()), this.method29499(Class179.class), method29494, this.readBoolean());
+        final BlockPos method29494 = this.method29494();
+        return new Class7005(new Vec3d(method29494.getX() + this.readFloat(), method29494.getY() + this.readFloat(), method29494.getZ() + this.readFloat()), this.method29499(Direction.class), method29494, this.readBoolean());
     }
     
     public void method29521(final Class7005 class7005) {
-        final Class354 method21447 = class7005.method21447();
+        final BlockPos method21447 = class7005.method21447();
         this.method29495(method21447);
         this.method29500(class7005.method21448());
-        final Class5487 method21448 = class7005.method21451();
-        this.writeFloat((float)(method21448.field22770 - method21447.method1074()));
-        this.writeFloat((float)(method21448.field22771 - method21447.method1075()));
-        this.writeFloat((float)(method21448.field22772 - method21447.method1076()));
+        final Vec3d method21448 = class7005.method21451();
+        this.writeFloat((float)(method21448.field22770 - method21447.getX()));
+        this.writeFloat((float)(method21448.field22771 - method21447.getY()));
+        this.writeFloat((float)(method21448.field22772 - method21447.getZ()));
         this.writeBoolean(class7005.method21450());
     }
     

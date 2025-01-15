@@ -4,7 +4,10 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class863 extends Class860
@@ -15,25 +18,25 @@ public class Class863 extends Class860
         super(class7499, class7500);
     }
     
-    public Class863(final Class1847 class1847, final Class354 class1848) {
+    public Class863(final Class1847 class1847, final BlockPos class1848) {
         super(Class7499.field28995, class1847, class1848);
-        this.method1656(class1848.method1074() + 0.5, class1848.method1075() + 0.5, class1848.method1076() + 0.5);
+        this.method1656(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
         this.method1889(new Class6221(this.method1938() - 0.1875, this.method1941() - 0.25 + 0.125, this.method1945() - 0.1875, this.method1938() + 0.1875, this.method1941() + 0.25 + 0.125, this.method1945() + 0.1875));
         this.field2390 = true;
     }
     
     @Override
     public void method1656(final double n, final double n2, final double n3) {
-        super.method1656(Class9546.method35644(n) + 0.5, Class9546.method35644(n2) + 0.5, Class9546.method35644(n3) + 0.5);
+        super.method1656(MathHelper.floor(n) + 0.5, MathHelper.floor(n2) + 0.5, MathHelper.floor(n3) + 0.5);
     }
     
     @Override
     public void method5187() {
-        this.method1948(this.field4599.method1074() + 0.5, this.field4599.method1075() + 0.5, this.field4599.method1076() + 0.5);
+        this.method1948(this.field4599.getX() + 0.5, this.field4599.getY() + 0.5, this.field4599.getZ() + 0.5);
     }
     
     @Override
-    public void method5186(final Class179 class179) {
+    public void method5186(final Direction class179) {
     }
     
     @Override
@@ -57,7 +60,7 @@ public class Class863 extends Class860
     }
     
     @Override
-    public void method5192(final Class399 class399) {
+    public void method5192(final Entity class399) {
         this.method1695(Class8520.field35341, 1.0f, 1.0f);
     }
     
@@ -105,10 +108,10 @@ public class Class863 extends Class860
         return this.field2391.method6701(this.field4599).method21696().method11785(Class7188.field27911);
     }
     
-    public static Class863 method5205(final Class1847 class1847, final Class354 class1848) {
-        final int method1074 = class1848.method1074();
-        final int method1075 = class1848.method1075();
-        final int method1076 = class1848.method1076();
+    public static Class863 method5205(final Class1847 class1847, final BlockPos class1848) {
+        final int method1074 = class1848.getX();
+        final int method1075 = class1848.getY();
+        final int method1076 = class1848.getZ();
         for (final Class863 class1849 : class1847.method7128((Class<? extends Class863>)Class863.class, new Class6221(method1074 - 1.0, method1075 - 1.0, method1076 - 1.0, method1074 + 1.0, method1075 + 1.0, method1076 + 1.0))) {
             if (!class1849.method5194().equals(class1848)) {
                 continue;

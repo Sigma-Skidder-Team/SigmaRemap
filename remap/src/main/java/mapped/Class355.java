@@ -4,13 +4,13 @@
 
 package mapped;
 
-public class Class355 extends Class354
+public class Class355 extends BlockPos
 {
     private static String[] field2182;
     private final int field2183;
     
-    public Class355(final Class354 class354, final int field2183) {
-        super(class354.method1074(), class354.method1075(), class354.method1076());
+    public Class355(final BlockPos class354, final int field2183) {
+        super(class354.getX(), class354.getY(), class354.getZ());
         this.field2183 = field2183;
     }
     

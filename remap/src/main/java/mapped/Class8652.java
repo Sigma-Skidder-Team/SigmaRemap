@@ -8,6 +8,9 @@ import java.util.TreeSet;
 import java.lang.reflect.Array;
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+import net.minecraft.util.IStringSerializable;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.HashMap;
@@ -217,10 +220,10 @@ public class Class8652
     }
     
     private static Object method29451(final Comparable comparable) {
-        if (!(comparable instanceof Class103)) {
+        if (!(comparable instanceof IStringSerializable)) {
             return comparable.toString();
         }
-        return ((Class103)comparable).method596();
+        return ((IStringSerializable)comparable).getName();
     }
     
     public static Comparable method29452(final String s, final Class clazz) {
@@ -367,59 +370,59 @@ public class Class8652
     
     public boolean[] method29458(final String s, final boolean[] array) {
         if (s != null) {
-            final EnumSet<Class179> all = EnumSet.allOf(Class179.class);
+            final EnumSet<Direction> all = EnumSet.allOf(Direction.class);
             final String[] method28937 = Class8571.method28937(s, " ,");
             for (int i = 0; i < method28937.length; ++i) {
                 final String s2 = method28937[i];
                 if (!s2.equals("sides")) {
                     if (!s2.equals("all")) {
-                        final Class179 method28938 = this.method29459(s2);
+                        final Direction method28938 = this.method29459(s2);
                         if (method28938 != null) {
                             all.add((Object)method28938);
                         }
                     }
                     else {
-                        all.addAll((Collection<?>)Arrays.asList(Class179.field524));
+                        all.addAll((Collection<?>)Arrays.asList(Direction.VALUES));
                     }
                 }
                 else {
-                    all.add((Object)Class179.field513);
-                    all.add((Object)Class179.field514);
-                    all.add((Object)Class179.field515);
-                    all.add((Object)Class179.field516);
+                    all.add((Object) Direction.NORTH);
+                    all.add((Object) Direction.SOUTH);
+                    all.add((Object) Direction.WEST);
+                    all.add((Object) Direction.EAST);
                 }
             }
-            final boolean[] array2 = new boolean[Class179.field524.length];
+            final boolean[] array2 = new boolean[Direction.VALUES.length];
             for (int j = 0; j < array2.length; ++j) {
-                array2[j] = all.contains(Class179.field524[j]);
+                array2[j] = all.contains(Direction.VALUES[j]);
             }
             return array2;
         }
         return array;
     }
     
-    public Class179 method29459(String lowerCase) {
+    public Direction method29459(String lowerCase) {
         lowerCase = lowerCase.toLowerCase();
         if (lowerCase.equals("bottom") || lowerCase.equals("down")) {
-            return Class179.field511;
+            return Direction.DOWN;
         }
         if (lowerCase.equals("top") || lowerCase.equals("up")) {
-            return Class179.field512;
+            return Direction.UP;
         }
         if (lowerCase.equals("north")) {
-            return Class179.field513;
+            return Direction.NORTH;
         }
         if (lowerCase.equals("south")) {
-            return Class179.field514;
+            return Direction.SOUTH;
         }
         if (lowerCase.equals("east")) {
-            return Class179.field516;
+            return Direction.EAST;
         }
         if (!lowerCase.equals("west")) {
             Class8571.method28848("Unknown face: " + lowerCase);
             return null;
         }
-        return Class179.field515;
+        return Direction.WEST;
     }
     
     public void method29460(final String str) {

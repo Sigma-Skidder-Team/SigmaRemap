@@ -4,12 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class1902 extends Class1890<Class7500, Class1898>
 {
-    private static final Class179[] field10274;
-    private static final Class179[] field10327;
+    private static final Direction[] field10274;
+    private static final Direction[] field10327;
     
     public Class1902(final Class1908 class1908) {
         super(class1908, Class237.field911, new Class1898(class1908));
@@ -32,37 +33,37 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         final MutableInt mutableInt = new MutableInt();
         final Class7096 method7297 = this.method7297(n2, mutableInt);
         if (mutableInt.getValue() < 15) {
-            final int method7298 = Class354.method1126(n);
-            final int method7299 = Class354.method1127(n);
-            final int method7300 = Class354.method1128(n);
-            final int method7301 = Class354.method1126(n2);
-            final int method7302 = Class354.method1127(n2);
-            final int method7303 = Class354.method1128(n2);
+            final int method7298 = BlockPos.method1126(n);
+            final int method7299 = BlockPos.method1127(n);
+            final int method7300 = BlockPos.method1128(n);
+            final int method7301 = BlockPos.method1126(n2);
+            final int method7302 = BlockPos.method1127(n2);
+            final int method7303 = BlockPos.method1128(n2);
             final boolean b = method7298 == method7301 && method7300 == method7303;
             final int signum = Integer.signum(method7301 - method7298);
             final int signum2 = Integer.signum(method7302 - method7299);
             final int signum3 = Integer.signum(method7303 - method7300);
-            Class179 class179;
+            Direction class179;
             if (n != Long.MAX_VALUE) {
-                class179 = Class179.method794(signum, signum2, signum3);
+                class179 = Direction.byLong(signum, signum2, signum3);
             }
             else {
-                class179 = Class179.field511;
+                class179 = Direction.DOWN;
             }
             final Class7096 method7304 = this.method7297(n, null);
             if (class179 == null) {
-                if (Class7698.method24505(this.method7298(method7304, n, Class179.field511), Class7698.method24486())) {
+                if (Class7698.method24505(this.method7298(method7304, n, Direction.DOWN), Class7698.method24486())) {
                     return 15;
                 }
-                final Class179 method7305 = Class179.method794(signum, b ? -1 : 0, signum3);
+                final Direction method7305 = Direction.byLong(signum, b ? -1 : 0, signum3);
                 if (method7305 == null) {
                     return 15;
                 }
-                if (Class7698.method24505(Class7698.method24486(), this.method7298(method7297, n2, method7305.method782()))) {
+                if (Class7698.method24505(Class7698.method24486(), this.method7298(method7297, n2, method7305.getOpposite()))) {
                     return 15;
                 }
             }
-            else if (Class7698.method24505(this.method7298(method7304, n, class179), this.method7298(method7297, n2, class179.method782()))) {
+            else if (Class7698.method24505(this.method7298(method7304, n, class179), this.method7298(method7297, n2, class179.getOpposite()))) {
                 return 15;
             }
             if (n == Long.MAX_VALUE || (b && method7299 > method7302)) {
@@ -80,7 +81,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
     @Override
     public void method7326(final long n, final int n2, final boolean b) {
         final long method1111 = Class353.method1111(n);
-        final int method1112 = Class354.method1127(n);
+        final int method1112 = BlockPos.method1127(n);
         final int method1113 = Class353.method1096(method1112);
         final int method1114 = Class353.method1095(method1112);
         int n4;
@@ -92,20 +93,20 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         else {
             n4 = 0;
         }
-        final long method1115 = Class354.method1125(n, 0, -1 - n4 * 16, 0);
+        final long method1115 = BlockPos.method1125(n, 0, -1 - n4 * 16, 0);
         final long method1116 = Class353.method1111(method1115);
         if (method1111 == method1116 || ((Class1898)this.field10277).method7347(method1116)) {
             this.method7322(n, method1115, n2, b);
         }
-        final long method1117 = Class354.method1124(n, Class179.field512);
+        final long method1117 = BlockPos.method1124(n, Direction.UP);
         final long method1118 = Class353.method1111(method1117);
         if (method1111 == method1118 || ((Class1898)this.field10277).method7347(method1118)) {
             this.method7322(n, method1117, n2, b);
         }
-        for (final Class179 class179 : Class1902.field10327) {
+        for (final Direction class179 : Class1902.field10327) {
             int n5 = 0;
             do {
-                final long method1119 = Class354.method1125(n, class179.method785(), -n5, class179.method787());
+                final long method1119 = BlockPos.method1125(n, class179.getXOffset(), -n5, class179.getZOffset());
                 final long method1120 = Class353.method1111(method1119);
                 if (method1111 == method1120) {
                     this.method7322(n, method1119, n2, b);
@@ -132,8 +133,8 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         }
         final long method7306 = Class353.method1111(n);
         final Class7281 method7307 = ((Class1898)this.field10277).method7348(method7306, true);
-        for (final Class179 class179 : Class1902.field10274) {
-            final long method7308 = Class354.method1124(n, class179);
+        for (final Direction class179 : Class1902.field10274) {
+            final long method7308 = BlockPos.method1124(n, class179);
             long n5 = Class353.method1111(method7308);
             Class7281 method7309;
             if (method7306 != n5) {
@@ -143,9 +144,9 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
                 method7309 = method7307;
             }
             if (method7309 == null) {
-                if (class179 != Class179.field511) {
+                if (class179 != Direction.DOWN) {
                     long n6;
-                    for (n6 = Class354.method1131(method7308); !((Class1898)this.field10277).method7347(n5) && !((Class1898)this.field10277).method7372(n5); n5 = Class353.method1093(n5, Class179.field512), n6 = Class354.method1125(n6, 0, 16, 0)) {}
+                    for (n6 = BlockPos.method1131(method7308); !((Class1898)this.field10277).method7347(n5) && !((Class1898)this.field10277).method7372(n5); n5 = Class353.method1093(n5, Direction.UP), n6 = BlockPos.method1125(n6, 0, 16, 0)) {}
                     final Class7281 method7310 = ((Class1898)this.field10277).method7348(n5, true);
                     if (n6 != n2) {
                         int method7311;
@@ -182,7 +183,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
         ((Class1898)this.field10277).method7364();
         long n2 = Class353.method1111(n);
         if (!((Class1898)this.field10277).method7347(n2)) {
-            for (n = Class354.method1131(n); !((Class1898)this.field10277).method7347(n2) && !((Class1898)this.field10277).method7372(n2); n2 = Class353.method1093(n2, Class179.field512), n = Class354.method1125(n, 0, 16, 0)) {}
+            for (n = BlockPos.method1131(n); !((Class1898)this.field10277).method7347(n2) && !((Class1898)this.field10277).method7372(n2); n2 = Class353.method1093(n2, Direction.UP), n = BlockPos.method1125(n, 0, 16, 0)) {}
             if (((Class1898)this.field10277).method7347(n2)) {
                 super.method7294(n);
             }
@@ -198,7 +199,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
     }
     
     static {
-        field10274 = Class179.values();
-        field10327 = new Class179[] { Class179.field513, Class179.field514, Class179.field515, Class179.field516 };
+        field10274 = Direction.values();
+        field10327 = new Direction[] { Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST};
     }
 }

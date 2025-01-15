@@ -4,9 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.ArrayList;
@@ -125,8 +125,8 @@ public class Class9317
             }
         }
         while (n - list.size() - arrayList.size() > 0 && !arrayList.isEmpty()) {
-            final Class8321 class8322 = (Class8321)arrayList.remove(Class9546.method35658(rnd, 0, arrayList.size() - 1));
-            final Class8321 method27621 = class8322.method27621(Class9546.method35658(rnd, 1, class8322.method27690() / 2));
+            final Class8321 class8322 = (Class8321)arrayList.remove(MathHelper.method35658(rnd, 0, arrayList.size() - 1));
+            final Class8321 method27621 = class8322.method27621(MathHelper.method35658(rnd, 1, class8322.method27690() / 2));
             if (class8322.method27690() > 1 && rnd.nextBoolean()) {
                 arrayList.add(class8322);
             }

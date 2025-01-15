@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6772
 {
     public final int field26589;
@@ -51,7 +53,7 @@ public class Class6772
         final float n = (float)(class6772.field26589 - this.field26589);
         final float n2 = (float)(class6772.field26590 - this.field26590);
         final float n3 = (float)(class6772.field26591 - this.field26591);
-        return Class9546.method35640(n * n + n2 * n2 + n3 * n3);
+        return MathHelper.method35640(n * n + n2 * n2 + n3 * n3);
     }
     
     public float method20668(final Class6772 class6772) {
@@ -65,12 +67,12 @@ public class Class6772
         return Math.abs(class6772.field26589 - this.field26589) + (float)Math.abs(class6772.field26590 - this.field26590) + Math.abs(class6772.field26591 - this.field26591);
     }
     
-    public float method20670(final Class354 class354) {
-        return Math.abs(class354.method1074() - this.field26589) + (float)Math.abs(class354.method1075() - this.field26590) + Math.abs(class354.method1076() - this.field26591);
+    public float method20670(final BlockPos class354) {
+        return Math.abs(class354.getX() - this.field26589) + (float)Math.abs(class354.getY() - this.field26590) + Math.abs(class354.getZ() - this.field26591);
     }
     
-    public Class354 method20671() {
-        return new Class354(this.field26589, this.field26590, this.field26591);
+    public BlockPos method20671() {
+        return new BlockPos(this.field26589, this.field26590, this.field26591);
     }
     
     @Override

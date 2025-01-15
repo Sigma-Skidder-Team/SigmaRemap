@@ -15,9 +15,9 @@ public class Class7169 extends Class7133<Class6936>
         super(function);
     }
     
-    public Stream<Class354> method21913(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6936 class1853, final Class354 class1854) {
-        final int n = random.nextInt(16) + class1854.method1074();
-        final int n2 = random.nextInt(16) + class1854.method1076();
-        return Stream.of(new Class354(n, class1851.method6699(Class2020.field11523, n, n2), n2));
+    public Stream<BlockPos> method21913(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6936 class1853, final BlockPos class1854) {
+        final int n = random.nextInt(16) + class1854.getX();
+        final int n2 = random.nextInt(16) + class1854.getZ();
+        return Stream.of(new BlockPos(n, class1851.method6699(Class2020.field11523, n, n2), n2));
     }
 }

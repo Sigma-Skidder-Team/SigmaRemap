@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public class Class5789 extends Class5784
 {
     private static String[] field23781;
-    private Class5487 field23782;
+    private Vec3d field23782;
     private int field23783;
     
     public Class5789(final Class852 class852) {
@@ -27,8 +27,8 @@ public class Class5789 extends Class5784
     public void method17247() {
         ++this.field23783;
         if (this.field23782 == null) {
-            final Class354 method6958 = this.field23764.field2391.method6958(Class2020.field11525, Class4551.field20031);
-            this.field23782 = new Class5487(method6958.method1074(), method6958.method1075(), method6958.method1076());
+            final BlockPos method6958 = this.field23764.field2391.method6958(Class2020.field11525, Class4551.field20031);
+            this.field23782 = new Vec3d(method6958.getX(), method6958.getY(), method6958.getZ());
         }
         final double method6959 = this.field23782.method16747(this.field23764.method1938(), this.field23764.method1941(), this.field23764.method1945());
         if (method6959 >= 100.0) {
@@ -57,7 +57,7 @@ public class Class5789 extends Class5784
     
     @Nullable
     @Override
-    public Class5487 method17254() {
+    public Vec3d method17254() {
         return this.field23782;
     }
     

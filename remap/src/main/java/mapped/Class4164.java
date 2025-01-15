@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4164 extends Class4158<Class492>
 {
     public static final Class3687 field18551;
@@ -29,13 +31,13 @@ public class Class4164 extends Class4158<Class492>
         final float n4 = class492.field2827 + n;
         if (class492.method2494()) {
             final float n5 = class492.method2498(n) * 57.295776f;
-            final float n6 = Class9546.method35638(n4 * 0.1f) / 2.0f + 0.5f;
+            final float n6 = MathHelper.sin(n4 * 0.1f) / 2.0f + 0.5f;
             final float n7 = n6 * n6 + n6;
             class493.method22567();
             class493.method22564(0.5, 0.3f + n7 * 0.2f, 0.5);
-            final Class9138 class495 = new Class9138(0.5f, 1.0f, 0.5f);
+            final Vector3f class495 = new Vector3f(0.5f, 1.0f, 0.5f);
             class495.method33322();
-            class493.method22566(new Class9389(class495, n5, true));
+            class493.method22566(new Quaternion(class495, n5, true));
             this.field18560.method18643(class493, Class4164.field18552.method11334(class494, Class6332::method18770), n2, n3);
             class493.method22568();
             final int n8 = class492.field2827 / 66 % 3;
@@ -43,11 +45,11 @@ public class Class4164 extends Class4158<Class492>
             class493.method22564(0.5, 0.5, 0.5);
             if (n8 != 1) {
                 if (n8 == 2) {
-                    class493.method22566(Class9138.field38720.method33328(90.0f));
+                    class493.method22566(Vector3f.ZP.rotationDegrees(90.0f));
                 }
             }
             else {
-                class493.method22566(Class9138.field38716.method33328(90.0f));
+                class493.method22566(Vector3f.XP.rotationDegrees(90.0f));
             }
             final Class4150 method11334 = ((n8 != 1) ? Class4164.field18553 : Class4164.field18554).method11334(class494, Class6332::method18770);
             this.field18558.method18643(class493, method11334, n2, n3);
@@ -55,17 +57,17 @@ public class Class4164 extends Class4158<Class492>
             class493.method22567();
             class493.method22564(0.5, 0.5, 0.5);
             class493.method22565(0.875f, 0.875f, 0.875f);
-            class493.method22566(Class9138.field38716.method33328(180.0f));
-            class493.method22566(Class9138.field38720.method33328(180.0f));
+            class493.method22566(Vector3f.XP.rotationDegrees(180.0f));
+            class493.method22566(Vector3f.ZP.rotationDegrees(180.0f));
             this.field18558.method18643(class493, method11334, n2, n3);
             class493.method22568();
             final Class6092 field41131 = this.field18539.field41131;
             class493.method22567();
             class493.method22564(0.5, 0.3f + n7 * 0.2f, 0.5);
             class493.method22565(0.5f, 0.5f, 0.5f);
-            class493.method22566(Class9138.field38718.method33328(-field41131.method18164()));
-            class493.method22566(Class9138.field38716.method33328(field41131.method18163()));
-            class493.method22566(Class9138.field38720.method33328(180.0f));
+            class493.method22566(Vector3f.field38718.rotationDegrees(-field41131.method18164()));
+            class493.method22566(Vector3f.XP.rotationDegrees(field41131.method18163()));
+            class493.method22566(Vector3f.ZP.rotationDegrees(180.0f));
             class493.method22565(1.3333334f, 1.3333334f, 1.3333334f);
             this.field18557.method18643(class493, (class492.method2495() ? Class4164.field18555 : Class4164.field18556).method11334(class494, Class6332::method18770), n2, n3);
             class493.method22568();
@@ -75,7 +77,7 @@ public class Class4164 extends Class4158<Class492>
             final Class4150 method11336 = Class4164.field18551.method11334(class494, Class6332::method18767);
             class493.method22567();
             class493.method22564(0.5, 0.5, 0.5);
-            class493.method22566(Class9138.field38718.method33328(method11335));
+            class493.method22566(Vector3f.field38718.rotationDegrees(method11335));
             this.field18559.method18643(class493, method11336, n2, n3);
             class493.method22568();
         }

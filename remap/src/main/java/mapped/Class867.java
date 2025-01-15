@@ -31,12 +31,12 @@ public class Class867 extends Class865
     }
     
     @Override
-    public Class5487 method5222() {
-        return new Class5487(this.field4620.field2657.method1074() + 0.5, this.field4620.field2657.method1075() + 0.5, this.field4620.field2657.method1076() + 0.5);
+    public Vec3d method5222() {
+        return new Vec3d(this.field4620.field2657.getX() + 0.5, this.field4620.field2657.getY() + 0.5, this.field4620.field2657.getZ() + 0.5);
     }
     
     @Override
     public Class7492 method5223() {
-        return new Class7492(this, new Class5487(this.field4620.field2657.method1074() + 0.5, this.field4620.field2657.method1075() + 0.5, this.field4620.field2657.method1076() + 0.5), Class9544.field41083, this.method5216(), 2, this.method5214().getString(), this.method5214(), this.method5216().method6679(), null);
+        return new Class7492(this, new Vec3d(this.field4620.field2657.getX() + 0.5, this.field4620.field2657.getY() + 0.5, this.field4620.field2657.getZ() + 0.5), Class9544.field41083, this.method5216(), 2, this.method5214().getString(), this.method5214(), this.method5216().method6679(), null);
     }
 }

@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Function;
 
 public class Class5853<T extends Class511> extends Class5844<T> implements Class5852, Class5855
@@ -104,12 +107,12 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
         if (n6 < 1.0f) {
             n6 = 1.0f;
         }
-        this.field23996.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 2.0f * n2 * 0.5f / n6;
-        this.field23997.field25183 = Class9546.method35639(n * 0.6662f) * 2.0f * n2 * 0.5f / n6;
+        this.field23996.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 2.0f * n2 * 0.5f / n6;
+        this.field23997.field25183 = MathHelper.cos(n * 0.6662f) * 2.0f * n2 * 0.5f / n6;
         this.field23996.field25185 = 0.0f;
         this.field23997.field25185 = 0.0f;
-        this.field23998.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2 / n6;
-        this.field23999.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2 / n6;
+        this.field23998.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2 / n6;
+        this.field23999.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2 / n6;
         this.field23998.field25184 = 0.0f;
         this.field23999.field25184 = 0.0f;
         this.field23998.field25185 = 0.0f;
@@ -172,15 +175,15 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
         if (this.field23955 > 0.0f) {
             final Class2226 method1819 = this.method17586(t);
             final Class6300 method1820 = this.method17585(method1819);
-            this.field23995.field25184 = Class9546.method35638(Class9546.method35640(this.field23955) * 6.2831855f) * 0.2f;
+            this.field23995.field25184 = MathHelper.sin(MathHelper.method35640(this.field23955) * 6.2831855f) * 0.2f;
             if (method1819 == Class2226.field13697) {
                 final Class6300 field23998 = this.field23995;
                 field23998.field25184 *= -1.0f;
             }
-            this.field23996.field25182 = Class9546.method35638(this.field23995.field25184) * 5.0f;
-            this.field23996.field25180 = -Class9546.method35639(this.field23995.field25184) * 5.0f;
-            this.field23997.field25182 = -Class9546.method35638(this.field23995.field25184) * 5.0f;
-            this.field23997.field25180 = Class9546.method35639(this.field23995.field25184) * 5.0f;
+            this.field23996.field25182 = MathHelper.sin(this.field23995.field25184) * 5.0f;
+            this.field23996.field25180 = -MathHelper.cos(this.field23995.field25184) * 5.0f;
+            this.field23997.field25182 = -MathHelper.sin(this.field23995.field25184) * 5.0f;
+            this.field23997.field25180 = MathHelper.cos(this.field23995.field25184) * 5.0f;
             final Class6300 field23999 = this.field23996;
             field23999.field25184 += this.field23995.field25184;
             final Class6300 field24000 = this.field23997;
@@ -189,11 +192,11 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
             field24001.field25183 += this.field23995.field25184;
             final float n8 = 1.0f - this.field23955;
             final float n9 = n8 * n8;
-            method1820.field25183 -= (float)(Class9546.method35638((1.0f - n9 * n9) * 3.1415927f) * 1.2 + Class9546.method35638(this.field23955 * 3.1415927f) * -(this.field23993.field25183 - 0.7f) * 0.75f);
+            method1820.field25183 -= (float)(MathHelper.sin((1.0f - n9 * n9) * 3.1415927f) * 1.2 + MathHelper.sin(this.field23955 * 3.1415927f) * -(this.field23993.field25183 - 0.7f) * 0.75f);
             final Class6300 class6300 = method1820;
             class6300.field25184 += this.field23995.field25184 * 2.0f;
             final Class6300 class6301 = method1820;
-            class6301.field25185 += Class9546.method35638(this.field23955 * 3.1415927f) * -0.4f;
+            class6301.field25185 += MathHelper.sin(this.field23955 * 3.1415927f) * -0.4f;
         }
         if (this.field24002) {
             this.field23995.field25183 = 0.5f;
@@ -222,13 +225,13 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
             this.field23996.field25181 = 2.0f;
         }
         final Class6300 field24004 = this.field23996;
-        field24004.field25185 += Class9546.method35639(n3 * 0.09f) * 0.05f + 0.05f;
+        field24004.field25185 += MathHelper.cos(n3 * 0.09f) * 0.05f + 0.05f;
         final Class6300 field24005 = this.field23997;
-        field24005.field25185 -= Class9546.method35639(n3 * 0.09f) * 0.05f + 0.05f;
+        field24005.field25185 -= MathHelper.cos(n3 * 0.09f) * 0.05f + 0.05f;
         final Class6300 field24006 = this.field23996;
-        field24006.field25183 += Class9546.method35638(n3 * 0.067f) * 0.05f;
+        field24006.field25183 += MathHelper.sin(n3 * 0.067f) * 0.05f;
         final Class6300 field24007 = this.field23997;
-        field24007.field25183 -= Class9546.method35638(n3 * 0.067f) * 0.05f;
+        field24007.field25183 -= MathHelper.sin(n3 * 0.067f) * 0.05f;
         if (this.field24001 == Class2036.field11610) {
             this.field23996.field25184 = -0.1f + this.field23993.field25184;
             this.field23997.field25184 = 0.1f + this.field23993.field25184 + 0.4f;
@@ -246,17 +249,17 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
             this.field23996.field25184 = -0.8f;
             this.field23996.field25183 = -0.97079635f;
             this.field23997.field25183 = -0.97079635f;
-            final float method1821 = Class9546.method35653(this.field24004, 0.0f, n10);
-            this.field23997.field25184 = Class9546.method35700(method1821 / n10, 0.4f, 0.85f);
-            this.field23997.field25183 = Class9546.method35700(method1821 / n10, this.field23997.field25183, -1.5707964f);
+            final float method1821 = MathHelper.method35653(this.field24004, 0.0f, n10);
+            this.field23997.field25184 = MathHelper.method35700(method1821 / n10, 0.4f, 0.85f);
+            this.field23997.field25183 = MathHelper.method35700(method1821 / n10, this.field23997.field25183, -1.5707964f);
         }
         else if (this.field24000 == Class2036.field11612) {
             this.field23997.field25184 = 0.8f;
             this.field23996.field25183 = -0.97079635f;
             this.field23997.field25183 = -0.97079635f;
-            final float method1822 = Class9546.method35653(this.field24004, 0.0f, n10);
-            this.field23996.field25184 = Class9546.method35700(method1822 / n10, -0.4f, -0.85f);
-            this.field23996.field25183 = Class9546.method35700(method1822 / n10, this.field23996.field25183, -1.5707964f);
+            final float method1822 = MathHelper.method35653(this.field24004, 0.0f, n10);
+            this.field23996.field25184 = MathHelper.method35700(method1822 / n10, -0.4f, -0.85f);
+            this.field23996.field25183 = MathHelper.method35700(method1822 / n10, this.field23996.field25183, -1.5707964f);
         }
         if (this.field24001 == Class2036.field11613 && this.field23955 <= 0.0f) {
             this.field23996.field25184 = -0.3f + this.field23993.field25184;
@@ -275,34 +278,34 @@ public class Class5853<T extends Class511> extends Class5844<T> implements Class
             final float n12 = (this.field23955 > 0.0f) ? 0.0f : this.field24003;
             if (n11 < 14.0f) {
                 this.field23997.field25183 = this.method17581(this.field23997.field25183, 0.0f, this.field24003);
-                this.field23996.field25183 = Class9546.method35700(n12, this.field23996.field25183, 0.0f);
+                this.field23996.field25183 = MathHelper.method35700(n12, this.field23996.field25183, 0.0f);
                 this.field23997.field25184 = this.method17581(this.field23997.field25184, 3.1415927f, this.field24003);
-                this.field23996.field25184 = Class9546.method35700(n12, this.field23996.field25184, 3.1415927f);
+                this.field23996.field25184 = MathHelper.method35700(n12, this.field23996.field25184, 3.1415927f);
                 this.field23997.field25185 = this.method17581(this.field23997.field25185, 3.1415927f + 1.8707964f * this.method17582(n11) / this.method17582(14.0f), this.field24003);
-                this.field23996.field25185 = Class9546.method35700(n12, this.field23996.field25185, 3.1415927f - 1.8707964f * this.method17582(n11) / this.method17582(14.0f));
+                this.field23996.field25185 = MathHelper.method35700(n12, this.field23996.field25185, 3.1415927f - 1.8707964f * this.method17582(n11) / this.method17582(14.0f));
             }
             else if (n11 >= 14.0f && n11 < 22.0f) {
                 final float n13 = (n11 - 14.0f) / 8.0f;
                 this.field23997.field25183 = this.method17581(this.field23997.field25183, 1.5707964f * n13, this.field24003);
-                this.field23996.field25183 = Class9546.method35700(n12, this.field23996.field25183, 1.5707964f * n13);
+                this.field23996.field25183 = MathHelper.method35700(n12, this.field23996.field25183, 1.5707964f * n13);
                 this.field23997.field25184 = this.method17581(this.field23997.field25184, 3.1415927f, this.field24003);
-                this.field23996.field25184 = Class9546.method35700(n12, this.field23996.field25184, 3.1415927f);
+                this.field23996.field25184 = MathHelper.method35700(n12, this.field23996.field25184, 3.1415927f);
                 this.field23997.field25185 = this.method17581(this.field23997.field25185, 5.012389f - 1.8707964f * n13, this.field24003);
-                this.field23996.field25185 = Class9546.method35700(n12, this.field23996.field25185, 1.2707963f + 1.8707964f * n13);
+                this.field23996.field25185 = MathHelper.method35700(n12, this.field23996.field25185, 1.2707963f + 1.8707964f * n13);
             }
             else if (n11 >= 22.0f && n11 < 26.0f) {
                 final float n14 = (n11 - 22.0f) / 4.0f;
                 this.field23997.field25183 = this.method17581(this.field23997.field25183, 1.5707964f - 1.5707964f * n14, this.field24003);
-                this.field23996.field25183 = Class9546.method35700(n12, this.field23996.field25183, 1.5707964f - 1.5707964f * n14);
+                this.field23996.field25183 = MathHelper.method35700(n12, this.field23996.field25183, 1.5707964f - 1.5707964f * n14);
                 this.field23997.field25184 = this.method17581(this.field23997.field25184, 3.1415927f, this.field24003);
-                this.field23996.field25184 = Class9546.method35700(n12, this.field23996.field25184, 3.1415927f);
+                this.field23996.field25184 = MathHelper.method35700(n12, this.field23996.field25184, 3.1415927f);
                 this.field23997.field25185 = this.method17581(this.field23997.field25185, 3.1415927f, this.field24003);
-                this.field23996.field25185 = Class9546.method35700(n12, this.field23996.field25185, 3.1415927f);
+                this.field23996.field25185 = MathHelper.method35700(n12, this.field23996.field25185, 3.1415927f);
             }
-            this.field23999.field25183 = Class9546.method35700(this.field24003, this.field23999.field25183, 0.3f * Class9546.method35639(n * 0.33333334f + 3.1415927f));
-            this.field23998.field25183 = Class9546.method35700(this.field24003, this.field23998.field25183, 0.3f * Class9546.method35639(n * 0.33333334f));
+            this.field23999.field25183 = MathHelper.method35700(this.field24003, this.field23999.field25183, 0.3f * MathHelper.cos(n * 0.33333334f + 3.1415927f));
+            this.field23998.field25183 = MathHelper.method35700(this.field24003, this.field23998.field25183, 0.3f * MathHelper.cos(n * 0.33333334f));
         }
-        if (t instanceof Class399 && Class8491.field34858.contains(t)) {
+        if (t instanceof Entity && Class8491.field34858.contains(t)) {
             this.field23996.field25183 = this.field23996.field25183 * 0.5f - 0.9424778f;
             this.field23996.field25184 = -0.5235988f;
         }

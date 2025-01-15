@@ -25,7 +25,7 @@ import java.util.Optional;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import org.apache.logging.log4j.Logger;
 
-public class Class1882<R extends Class356> implements AutoCloseable
+public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
 {
     private static final Logger field10241;
     private final Class1914 field10242;
@@ -81,7 +81,7 @@ public class Class1882<R extends Class356> implements AutoCloseable
     public R method7182(final long n) {
         final Optional<R> method7180 = this.method7180(n);
         if (!method7180.isPresent()) {
-            final Class356 value = this.field10246.apply(() -> this.method7189(n2));
+            final IDynamicSerializable value = this.field10246.apply(() -> this.method7189(n2));
             this.field10243.put(n, (Object)Optional.of(value));
             return (R)value;
         }
@@ -148,7 +148,7 @@ public class Class1882<R extends Class356> implements AutoCloseable
             final Optional optional = (Optional)this.field10243.get(method1117);
             if (optional != null) {
                 if (optional.isPresent()) {
-                    hashMap.put(dynamicOps.createString(Integer.toString(i)), ((Class356)optional.get()).method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
+                    hashMap.put(dynamicOps.createString(Integer.toString(i)), ((IDynamicSerializable)optional.get()).method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
                 }
             }
         }

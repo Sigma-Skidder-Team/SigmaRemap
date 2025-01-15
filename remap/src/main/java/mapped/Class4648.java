@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Iterator;
@@ -25,7 +27,7 @@ public abstract class Class4648
     private int field20125;
     private int field20126;
     private int field20127;
-    private Class399 field20128;
+    private Entity field20128;
     private int field20129;
     private int field20130;
     private int field20131;
@@ -49,8 +51,8 @@ public abstract class Class4648
             return Class8272.method27500(method323) ? null : new Class1932(method323);
         }
         catch (final Class2357 class2357) {
-            final Class354 method324 = this.method13896();
-            Class4648.field20119.warn("Invalid entity id '{}' at spawner {}:[{},{},{}]", (Object)method323, (Object)this.method13895().field10063.method20487(), (Object)method324.method1074(), (Object)method324.method1075(), (Object)method324.method1076());
+            final BlockPos method324 = this.method13896();
+            Class4648.field20119.warn("Invalid entity id '{}' at spawner {}:[{},{},{}]", (Object)method323, (Object)this.method13895().field10063.method20487(), (Object)method324.getX(), (Object)method324.getY(), (Object)method324.getZ());
             return null;
         }
     }
@@ -60,14 +62,14 @@ public abstract class Class4648
     }
     
     private boolean method13885() {
-        final Class354 method13896 = this.method13896();
-        return this.method13895().method7134(method13896.method1074() + 0.5, method13896.method1075() + 0.5, method13896.method1076() + 0.5, this.field20130);
+        final BlockPos method13896 = this.method13896();
+        return this.method13895().method7134(method13896.getX() + 0.5, method13896.getY() + 0.5, method13896.getZ() + 0.5, this.field20130);
     }
     
     public void method13886() {
         if (this.method13885()) {
             final Class1847 method13895 = this.method13895();
-            final Class354 method13896 = this.method13896();
+            final BlockPos method13896 = this.method13896();
             if (!method13895.field10067) {
                 if (this.field20120 == -1) {
                     this.method13888();
@@ -86,12 +88,12 @@ public abstract class Class4648
                     }
                     final Class52 method13899 = method13897.method328("Pos", 6);
                     final int size = method13899.size();
-                    final double n2 = (size < 1) ? (method13896.method1074() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(0);
-                    final double n3 = (size < 2) ? (method13896.method1075() + method13895.field10062.nextInt(3) - 1) : method13899.method351(1);
-                    final double n4 = (size < 3) ? (method13896.method1076() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(2);
+                    final double n2 = (size < 1) ? (method13896.getX() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(0);
+                    final double n3 = (size < 2) ? (method13896.getY() + method13895.field10062.nextInt(3) - 1) : method13899.method351(1);
+                    final double n4 = (size < 3) ? (method13896.getZ() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(2);
                     if (method13895.method6976(method13898.get().method23375(n2, n3, n4))) {
-                        if (Class8897.method31330(method13898.get(), method13895.method6744(), Class2101.field12176, new Class354(n2, n3, n4), method13895.method6790())) {
-                            final Class399 method13900 = Class7499.method23378(method13897, method13895, class761 -> {
+                        if (Class8897.method31330(method13898.get(), method13895.method6744(), Class2101.field12176, new BlockPos(n2, n3, n4), method13895.method6790())) {
+                            final Entity method13900 = Class7499.method23378(method13897, method13895, class761 -> {
                                 class761.method1730(n8, n9, n10, class761.field2399, class761.field2400);
                                 return class761;
                             });
@@ -99,7 +101,7 @@ public abstract class Class4648
                                 this.method13888();
                                 return;
                             }
-                            if (method13895.method7128((Class<? extends Class399>)((Class759)method13900).getClass(), new Class6221(method13896.method1074(), method13896.method1075(), method13896.method1076(), method13896.method1074() + 1, method13896.method1075() + 1, method13896.method1076() + 1).method18496(this.field20131)).size() >= this.field20129) {
+                            if (method13895.method7128((Class<? extends Entity>)((Class759)method13900).getClass(), new Class6221(method13896.getX(), method13896.getY(), method13896.getZ(), method13896.getX() + 1, method13896.getY() + 1, method13896.getZ() + 1).method18496(this.field20131)).size() >= this.field20129) {
                                 this.method13888();
                                 return;
                             }
@@ -114,7 +116,7 @@ public abstract class Class4648
                                 }
                                 if (this.field20122.method20916().method294() == 1) {
                                     if (this.field20122.method20916().method316("id", 8)) {
-                                        ((Class759)method13900).method4188(method13895, method13895.method6784(new Class354(method13900)), Class2101.field12176, null, null);
+                                        ((Class759)method13900).method4188(method13895, method13895.method6784(new BlockPos(method13900)), Class2101.field12176, null, null);
                                     }
                                 }
                             }
@@ -132,9 +134,9 @@ public abstract class Class4648
                 }
             }
             else {
-                final double n5 = method13896.method1074() + (double)method13895.field10062.nextFloat();
-                final double n6 = method13896.method1075() + (double)method13895.field10062.nextFloat();
-                final double n7 = method13896.method1076() + (double)method13895.field10062.nextFloat();
+                final double n5 = method13896.getX() + (double)method13895.field10062.nextFloat();
+                final double n6 = method13896.getY() + (double)method13895.field10062.nextFloat();
+                final double n7 = method13896.getZ() + (double)method13895.field10062.nextFloat();
                 method13895.method6709(Class8432.field34639, n5, n6, n7, 0.0, 0.0, 0.0);
                 method13895.method6709(Class8432.field34623, n5, n6, n7, 0.0, 0.0, 0.0);
                 if (this.field20120 > 0) {
@@ -149,9 +151,9 @@ public abstract class Class4648
         }
     }
     
-    private void method13887(final Class399 class399) {
+    private void method13887(final Entity class399) {
         if (this.method13895().method6886(class399)) {
-            final Iterator<Class399> iterator = class399.method1908().iterator();
+            final Iterator<Entity> iterator = class399.method1908().iterator();
             while (iterator.hasNext()) {
                 this.method13887(iterator.next());
             }
@@ -232,13 +234,13 @@ public abstract class Class4648
     }
     
     @Nullable
-    public Class399 method13891() {
+    public Entity method13891() {
         if (this.field20128 == null) {
             this.field20128 = Class7499.method23378(this.field20122.method20916(), this.method13895(), Function.identity());
             if (this.field20122.method20916().method294() == 1) {
                 if (this.field20122.method20916().method316("id", 8)) {
                     if (this.field20128 instanceof Class759) {
-                        ((Class759)this.field20128).method4188(this.method13895(), this.method13895().method6784(new Class354(this.field20128)), Class2101.field12176, null, null);
+                        ((Class759)this.field20128).method4188(this.method13895(), this.method13895().method6784(new BlockPos(this.field20128)), Class2101.field12176, null, null);
                     }
                 }
             }
@@ -262,7 +264,7 @@ public abstract class Class4648
     
     public abstract Class1847 method13895();
     
-    public abstract Class354 method13896();
+    public abstract BlockPos method13896();
     
     public double method13897() {
         return this.field20123;

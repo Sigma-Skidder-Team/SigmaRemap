@@ -14,13 +14,13 @@ import java.util.List;
 public abstract class Class4521 extends Class4473
 {
     public final Class8228 field19936;
-    public Class354 field19937;
+    public BlockPos field19937;
     private final int field19938;
     public final Class2052 field19939;
     private final List<Class9330> field19940;
     private final Class1795 field19941;
     
-    public Class4521(final Class9520 class9520, final Class1795 field19941, final Class8228 field19942, final Class354 field19943, final int field19944, final Class2052 field19945, final Class6997 field19946) {
+    public Class4521(final Class9520 class9520, final Class1795 field19941, final Class8228 field19942, final BlockPos field19943, final int field19944, final Class2052 field19945, final Class6997 field19946) {
         super(class9520, 0);
         this.field19940 = Lists.newArrayList();
         this.field19941 = field19941;
@@ -35,7 +35,7 @@ public abstract class Class4521 extends Class4473
         super(class52, class51);
         this.field19940 = Lists.newArrayList();
         this.field19941 = field19941;
-        this.field19937 = new Class354(class51.method319("PosX"), class51.method319("PosY"), class51.method319("PosZ"));
+        this.field19937 = new BlockPos(class51.method319("PosX"), class51.method319("PosY"), class51.method319("PosZ"));
         this.field19938 = class51.method319("ground_level_delta");
         this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method327("pool_element")), Class90.field234, "element_type", Class8230.field33794);
         this.field19939 = Class2052.valueOf(class51.method323("rotation"));
@@ -47,9 +47,9 @@ public abstract class Class4521 extends Class4473
     
     @Override
     public void method13415(final Class51 class51) {
-        class51.method298("PosX", this.field19937.method1074());
-        class51.method298("PosY", this.field19937.method1075());
-        class51.method298("PosZ", this.field19937.method1076());
+        class51.method298("PosX", this.field19937.getX());
+        class51.method298("PosY", this.field19937.getY());
+        class51.method298("PosZ", this.field19937.getZ());
         class51.method298("ground_level_delta", this.field19938);
         class51.method295("pool_element", (Class41)this.field19936.method27264((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
         class51.method306("rotation", this.field19939.name());
@@ -86,7 +86,7 @@ public abstract class Class4521 extends Class4473
         return this.field19936;
     }
     
-    public Class354 method13519() {
+    public BlockPos method13519() {
         return this.field19937;
     }
     

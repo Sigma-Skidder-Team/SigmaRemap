@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -148,14 +151,14 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     public int method4728(final int n) {
-        final int method35651 = Class9546.method35651(this.method4726() + n, 0, this.method4739());
+        final int method35651 = MathHelper.method35651(this.method4726() + n, 0, this.method4739());
         this.method4727(method35651);
         return method35651;
     }
     
     @Override
     public boolean method1740(final Class7929 class7929, final float n) {
-        final Class399 method25714 = class7929.method25714();
+        final Entity method25714 = class7929.method25714();
         if (this.method1806()) {
             if (method25714 != null) {
                 if (this.method1917(method25714)) {
@@ -187,7 +190,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (method2691 > 0) {
             this.method1740(Class7929.field32572, (float)method2691);
             if (this.method1806()) {
-                final Iterator<Class399> iterator = this.method1911().iterator();
+                final Iterator<Entity> iterator = this.method1911().iterator();
                 while (iterator.hasNext()) {
                     iterator.next().method1740(Class7929.field32572, (float)method2691);
                 }
@@ -200,7 +203,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Override
     public int method2691(final float n, final float n2) {
-        return Class9546.method35649((n * 0.5f - 3.0f) * n2);
+        return MathHelper.method35649((n * 0.5f - 3.0f) * n2);
     }
     
     public int method4730() {
@@ -287,7 +290,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         if (!class355.method21697().method26438()) {
             final Class7096 method6701 = this.field2391.method6701(class354.method1137());
             Class7696 class356 = class355.method21759();
@@ -513,7 +516,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                     if (!this.method4721()) {
                         if (!this.method1806()) {
                             if (this.field2423.nextInt(300) == 0) {
-                                if (this.field2391.method6701(new Class354(this).method1139()).method21696() == Class7521.field29155) {
+                                if (this.field2391.method6701(new BlockPos(this).method1139()).method21696() == Class7521.field29155) {
                                     this.method4747(true);
                                 }
                             }
@@ -666,7 +669,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method1768()) {
             if (this.method1806()) {
                 if (this.method4189()) {
@@ -705,12 +708,12 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                                     else {
                                         n3 = n2 + (this.method2654(Class9439.field40481).method7908() + 1) * 0.1f;
                                     }
-                                    final Class5487 method1935 = this.method1935();
+                                    final Vec3d method1935 = this.method1935();
                                     this.method1937(method1935.field22770, n3, method1935.field22772);
                                     this.method4720(true);
                                     this.field2448 = true;
                                     if (field2970 > 0.0f) {
-                                        this.method1936(this.method1935().method16744(-0.4f * Class9546.method35638(this.field2399 * 0.017453292f) * this.field4344, 0.0, 0.4f * Class9546.method35639(this.field2399 * 0.017453292f) * this.field4344));
+                                        this.method1936(this.method1935().method16744(-0.4f * MathHelper.sin(this.field2399 * 0.017453292f) * this.field4344, 0.0, 0.4f * MathHelper.cos(this.field2399 * 0.017453292f) * this.field4344));
                                         this.method4752();
                                     }
                                     this.field4344 = 0.0f;
@@ -720,12 +723,12 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                         this.field2955 = this.method2732() * 0.1f;
                         if (!this.method1919()) {
                             if (class5488 instanceof Class512) {
-                                this.method1936(Class5487.field22769);
+                                this.method1936(Vec3d.field22769);
                             }
                         }
                         else {
                             this.method2733((float)this.method2710(Class8107.field33408).method23950());
-                            super.method2729(new Class5487(n, class5487.field22771, field2970));
+                            super.method2729(new Vec3d(n, class5487.field22771, field2970));
                         }
                         if (this.field2404) {
                             this.field4344 = 0.0f;
@@ -734,7 +737,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                         this.field2945 = this.field2946;
                         final double n4 = this.method1938() - this.field2392;
                         final double n5 = this.method1945() - this.field2394;
-                        float n6 = Class9546.method35641(n4 * n4 + n5 * n5) * 4.0f;
+                        float n6 = MathHelper.method35641(n4 * n4 + n5 * n5) * 4.0f;
                         if (n6 > 1.0f) {
                             n6 = 1.0f;
                         }
@@ -838,15 +841,15 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     public float method4755(final float n) {
-        return Class9546.method35700(n, this.field4347, this.field4346);
+        return MathHelper.method35700(n, this.field4347, this.field4346);
     }
     
     public float method4756(final float n) {
-        return Class9546.method35700(n, this.field4349, this.field4348);
+        return MathHelper.method35700(n, this.field4349, this.field4348);
     }
     
     public float method4757(final float n) {
-        return Class9546.method35700(n, this.field4351, this.field4350);
+        return MathHelper.method35700(n, this.field4351, this.field4350);
     }
     
     @Override
@@ -906,14 +909,14 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public void method1773(final Class399 class399) {
+    public void method1773(final Entity class399) {
         super.method1773(class399);
         if (class399 instanceof Class759) {
             this.field2951 = ((Class759)class399).field2951;
         }
         if (this.field4349 > 0.0f) {
-            final float method35638 = Class9546.method35638(this.field2951 * 0.017453292f);
-            final float method35639 = Class9546.method35639(this.field2951 * 0.017453292f);
+            final float method35638 = MathHelper.sin(this.field2951 * 0.017453292f);
+            final float method35639 = MathHelper.cos(this.field2951 * 0.017453292f);
             final float n = 0.7f * this.field4349;
             class399.method1656(this.method1938() + n * method35638, this.method1941() + this.method1777() + class399.method1776() + 0.15f * this.field4349, this.method1945() - n * method35639);
             if (class399 instanceof Class511) {
@@ -980,7 +983,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Nullable
     @Override
-    public Class399 method1907() {
+    public Entity method1907() {
         return this.method1908().isEmpty() ? null : this.method1908().get(0);
     }
     

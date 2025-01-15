@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.IStringSerializable;
+
 import java.util.List;
 
 public class Class7979
@@ -33,8 +35,8 @@ public class Class7979
         return this.method26009(class7111, Boolean.toString(b));
     }
     
-    public <T extends Comparable<T> & Class103> Class7979 method26012(final Class7111<T> class7111, final T t) {
-        return this.method26009(class7111, t.method596());
+    public <T extends Comparable<T> & IStringSerializable> Class7979 method26012(final Class7111<T> class7111, final T t) {
+        return this.method26009(class7111, t.getName());
     }
     
     public Class9357 method26013() {

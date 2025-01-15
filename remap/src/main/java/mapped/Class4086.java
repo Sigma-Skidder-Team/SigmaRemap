@@ -5,10 +5,11 @@
 package mapped;
 
 import java.util.AbstractList;
-import java.util.Collection;
 import java.util.Random;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -209,8 +210,8 @@ public class Class4086 extends Class4085
                 method12303 = new Class406(class1847, class1851, class1848.method1938(), class1848.method1944() - 0.15000000596046448, class1848.method1945(), true);
             }
             if (!(class1848 instanceof Class774)) {
-                final Class9389 class1852 = new Class9389(new Class9138(class1848.method1745(1.0f)), n4, true);
-                final Class9138 class1853 = new Class9138(class1848.method1741(1.0f));
+                final Quaternion class1852 = new Quaternion(new Vector3f(class1848.method1745(1.0f)), n4, true);
+                final Vector3f class1853 = new Vector3f(class1848.method1741(1.0f));
                 class1853.method33325(class1852);
                 method12303.method1958(class1853.method33311(), class1853.method33312(), class1853.method33313(), n2, n3);
             }
@@ -219,7 +220,7 @@ public class Class4086 extends Class4085
                 class1854.method4281(class1854.method4152(), class1850, method12303, n4);
             }
             class1850.method27636(b2 ? 3 : 1, class1848, class1856 -> class1856.method2795(class1855));
-            class1847.method6886((Class399)method12303);
+            class1847.method6886((Entity)method12303);
             class1847.method6706(null, class1848.method1938(), class1848.method1941(), class1848.method1945(), Class8520.field35112, Class286.field1585, 1.0f, n);
         }
     }

@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Random;
-
 public class Class5943 extends Class5936
 {
     private static String[] field24442;
@@ -19,7 +17,7 @@ public class Class5943 extends Class5936
         final Class2052 class6349 = Class2052.values()[this.field24436.nextInt(Class2052.values().length)];
         final int method13602 = Class4578.method13602(n, n2, class6346);
         if (method13602 >= 60) {
-            Class7699.method24513(class6347, new Class354(n * 16 + 8, method13602, n2 * 16 + 8), class6349, this.field24431, this.field24436);
+            Class7699.method24513(class6347, new BlockPos(n * 16 + 8, method13602, n2 * 16 + 8), class6349, this.field24431, this.field24436);
             this.method17854();
         }
     }

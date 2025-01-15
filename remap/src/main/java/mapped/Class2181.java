@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class2181
 {
     field12917, 
@@ -26,15 +28,15 @@ public enum Class2181
         }
     }
     
-    public Class2052 method8344(final Class179 class179) {
-        final Class111 method790 = class179.method790();
-        return ((this != Class2181.field12918 || method790 != Class111.field353) && (this != Class2181.field12919 || method790 != Class111.field351)) ? Class2052.field11707 : Class2052.field11709;
+    public Class2052 method8344(final Direction class179) {
+        final Axis method790 = class179.getAxis();
+        return ((this != Class2181.field12918 || method790 != Axis.Z) && (this != Class2181.field12919 || method790 != Axis.X)) ? Class2052.field11707 : Class2052.field11709;
     }
     
-    public Class179 method8345(final Class179 class179) {
-        if (this == Class2181.field12919 && class179.method790() == Class111.field351) {
-            return class179.method782();
+    public Direction method8345(final Direction class179) {
+        if (this == Class2181.field12919 && class179.getAxis() == Axis.X) {
+            return class179.getOpposite();
         }
-        return (this == Class2181.field12918 && class179.method790() == Class111.field353) ? class179.method782() : class179;
+        return (this == Class2181.field12918 && class179.getAxis() == Axis.Z) ? class179.getOpposite() : class179;
     }
 }

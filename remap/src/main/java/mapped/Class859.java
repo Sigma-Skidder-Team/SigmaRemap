@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class859 extends Class399
+import net.minecraft.entity.Entity;
+
+public class Class859 extends Entity
 {
     private static String[] field4593;
     public final Class852 field4594;
@@ -42,7 +44,7 @@ public class Class859 extends Class399
     }
     
     @Override
-    public boolean method1843(final Class399 class399) {
+    public boolean method1843(final Entity class399) {
         return this == class399 || this.field4594 == class399;
     }
     

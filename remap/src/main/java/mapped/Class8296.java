@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class8296
@@ -25,7 +27,7 @@ public class Class8296
     }
     
     public float method27567() {
-        return Class9546.method35641(this.field34101 * this.field34101 + this.field34102 * this.field34102);
+        return MathHelper.method35641(this.field34101 * this.field34101 + this.field34102 * this.field34102);
     }
     
     public void method27568(final Class8296 class8296) {
@@ -59,20 +61,20 @@ public class Class8296
     }
     
     public int method27570(final Class1855 class1855) {
-        Class354 method1139 = new Class354(this.field34101, 256.0, this.field34102);
-        while (method1139.method1075() > 0) {
+        BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
+        while (method1139.getY() > 0) {
             method1139 = method1139.method1139();
             if (class1855.method6701(method1139).method21706()) {
                 continue;
             }
-            return method1139.method1075() + 1;
+            return method1139.getY() + 1;
         }
         return 257;
     }
     
     public boolean method27571(final Class1855 class1855) {
-        Class354 method1139 = new Class354(this.field34101, 256.0, this.field34102);
-        while (method1139.method1075() > 0) {
+        BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
+        while (method1139.getY() > 0) {
             method1139 = method1139.method1139();
             final Class7096 method1140 = class1855.method6701(method1139);
             if (method1140.method21706()) {
@@ -85,7 +87,7 @@ public class Class8296
     }
     
     public void method27572(final Random random, final double n, final double n2, final double n3, final double n4) {
-        this.field34101 = Class9546.method35660(random, n, n3);
-        this.field34102 = Class9546.method35660(random, n2, n4);
+        this.field34101 = MathHelper.method35660(random, n, n3);
+        this.field34102 = MathHelper.method35660(random, n2, n4);
     }
 }

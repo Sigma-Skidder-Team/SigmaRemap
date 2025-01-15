@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
@@ -49,7 +51,7 @@ public abstract class Class1906 implements Class1908, AutoCloseable
     public void method7407(final Class7859 class7859, final boolean b) {
     }
     
-    public boolean method7408(final Class399 class399) {
+    public boolean method7408(final Entity class399) {
         return true;
     }
     
@@ -57,7 +59,7 @@ public abstract class Class1906 implements Class1908, AutoCloseable
         return true;
     }
     
-    public boolean method7410(final Class354 class354) {
+    public boolean method7410(final BlockPos class354) {
         return true;
     }
 }

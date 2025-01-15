@@ -39,9 +39,9 @@ public class Class3341 extends Class3167
     @Class6753
     private void method10573(final Class5753 class5753) {
         if (this.method9906()) {
-            if (class5753.method17065() == null || class5753.method17064().method1075() != this.field15944 - 1) {
-                if (class5753.method17064().method1075() != this.field15944) {
-                    if (class5753.method17064().method1075() != this.field15944 + 1 || !(Class3341.field15514.field4683.method6701(class5753.method17064()).method21696() instanceof Class3921)) {
+            if (class5753.method17065() == null || class5753.method17064().getY() != this.field15944 - 1) {
+                if (class5753.method17064().getY() != this.field15944) {
+                    if (class5753.method17064().getY() != this.field15944 + 1 || !(Class3341.field15514.field4683.method6701(class5753.method17064()).method21696() instanceof Class3921)) {
                         if (!(Class3341.field15514.field4683.method6701(class5753.method17064()).method21696() instanceof Class3972)) {
                             if (!(Class3341.field15514.field4683.method6701(class5753.method17064()).method21696() instanceof Class3916)) {
                                 if (!(Class3341.field15514.field4683.method6701(class5753.method17064()).method21696() instanceof Class3855)) {

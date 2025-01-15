@@ -4,7 +4,9 @@
 
 package mapped;
 
-public enum Class180 implements Class103
+import net.minecraft.util.IStringSerializable;
+
+public enum Class180 implements IStringSerializable
 {
     field530("single", 0), 
     field531("left", 2), 
@@ -20,7 +22,7 @@ public enum Class180 implements Class103
     }
     
     @Override
-    public String method596() {
+    public String getName() {
         return this.field534;
     }
     

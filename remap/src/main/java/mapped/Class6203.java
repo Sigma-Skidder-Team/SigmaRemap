@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6203 extends Class6159
 {
     private static String[] field25035;
@@ -15,9 +17,9 @@ public class Class6203 extends Class6159
         this.field24939 = field24939;
         this.field24940 = field24940;
         this.field24941 = field24941;
-        this.field24953 = Class9546.method35659(this.field24949, 0.7176471f, 0.8745098f);
-        this.field24954 = Class9546.method35659(this.field24949, 0.0f, 0.0f);
-        this.field24955 = Class9546.method35659(this.field24949, 0.8235294f, 0.9764706f);
+        this.field24953 = MathHelper.method35659(this.field24949, 0.7176471f, 0.8745098f);
+        this.field24954 = MathHelper.method35659(this.field24949, 0.0f, 0.0f);
+        this.field24955 = MathHelper.method35659(this.field24949, 0.8235294f, 0.9764706f);
         this.field24930 *= 0.75f;
         this.field24951 = (int)(20.0 / (this.field24949.nextFloat() * 0.8 + 0.2));
         this.field25036 = false;
@@ -62,6 +64,6 @@ public class Class6203 extends Class6159
     
     @Override
     public float method18430(final float n) {
-        return this.field24930 * Class9546.method35653((this.field24950 + n) / this.field24951 * 32.0f, 0.0f, 1.0f);
+        return this.field24930 * MathHelper.method35653((this.field24950 + n) / this.field24951 * 32.0f, 0.0f, 1.0f);
     }
 }

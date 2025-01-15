@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Comparator;
 import java.util.Arrays;
 
@@ -31,7 +33,7 @@ public enum Class2007
     }
     
     public static Class2007 method8041(final int n) {
-        return Class2007.field11401[Class9546.method35664(n, Class2007.field11401.length)];
+        return Class2007.field11401[MathHelper.method35664(n, Class2007.field11401.length)];
     }
     
     static {

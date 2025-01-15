@@ -5,10 +5,11 @@
 package mapped;
 
 import java.util.AbstractList;
-import java.util.Random;
-import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -22,9 +23,9 @@ public class Class803 extends Class789
     private static final Class8810<Optional<UUID>> field4312;
     private static final Class8810<Optional<UUID>> field4313;
     private static final Predicate<Class427> field4314;
-    private static final Predicate<Class399> field4315;
-    private static final Predicate<Class399> field4316;
-    private static final Predicate<Class399> field4317;
+    private static final Predicate<Entity> field4315;
+    private static final Predicate<Entity> field4316;
+    private static final Predicate<Entity> field4317;
     private Class3446 field4318;
     private Class3446 field4319;
     private Class3446 field4320;
@@ -201,7 +202,7 @@ public class Class803 extends Class789
             final Class8321 method2718 = this.method2718(Class2215.field13600);
             if (!method2718.method27620()) {
                 for (int i = 0; i < 8; ++i) {
-                    final Class5487 method2719 = new Class5487((this.field2423.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0).method16754(-this.field2400 * 0.017453292f).method16755(-this.field2399 * 0.017453292f);
+                    final Vec3d method2719 = new Vec3d((this.field2423.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0).method16754(-this.field2400 * 0.017453292f).method16755(-this.field2399 * 0.017453292f);
                     this.field2391.method6709(new Class6910(Class8432.field34629, method2718), this.method1938() + this.method1791().field22770 / 2.0, this.method1941(), this.method1945() + this.method1791().field22772 / 2.0, method2719.field22770, method2719.field22771 + 0.05, method2719.field22772);
                 }
             }
@@ -226,7 +227,7 @@ public class Class803 extends Class789
     @Nullable
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
-        Class2074 class1856 = Class2074.method8173(class1851.method6959(new Class354(this)));
+        Class2074 class1856 = Class2074.method8173(class1851.method6959(new BlockPos(this)));
         int n = 0;
         if (!(class1854 instanceof Class5498)) {
             class1854 = new Class5498(class1856);
@@ -450,7 +451,7 @@ public class Class803 extends Class789
             }
             if (this.method4656()) {
                 if (this.field2391.field10062.nextFloat() < 0.2f) {
-                    final Class354 class354 = new Class354(this);
+                    final BlockPos class354 = new BlockPos(this);
                     this.field2391.method6955(2001, class354, Class3833.method11774(this.field2391.method6701(class354)));
                 }
             }
@@ -514,11 +515,11 @@ public class Class803 extends Class789
     }
     
     public float method4671(final float n) {
-        return Class9546.method35700(n, this.field4322, this.field4321) * 0.11f * 3.1415927f;
+        return MathHelper.method35700(n, this.field4322, this.field4321) * 0.11f * 3.1415927f;
     }
     
     public float method4672(final float n) {
-        return Class9546.method35700(n, this.field4324, this.field4323);
+        return MathHelper.method35700(n, this.field4324, this.field4323);
     }
     
     @Override
@@ -533,7 +534,7 @@ public class Class803 extends Class789
     
     @Override
     public int method2691(final float n, final float n2) {
-        return Class9546.method35649((n - 5.0f) * n2);
+        return MathHelper.method35649((n - 5.0f) * n2);
     }
     
     private void method4673() {
@@ -577,7 +578,7 @@ public class Class803 extends Class789
         if (!this.method2783()) {
             if (!this.field2391.method6703()) {
                 if (this.field2423.nextFloat() < 0.1f) {
-                    if (this.field2391.method6739((Class<? extends Class399>)Class512.class, this.method1886().method18495(16.0, 16.0, 16.0), (Predicate<? super Class399>)Class9170.field38850).isEmpty()) {
+                    if (this.field2391.method6739((Class<? extends Entity>)Class512.class, this.method1886().method18495(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
                         return Class8520.field35208;
                     }
                 }
@@ -621,7 +622,7 @@ public class Class803 extends Class789
             final double n4 = (n3 != 0.0) ? (n * (i / 6.0f)) : 0.0;
             final double n5 = (n3 != 0.0) ? (n4 / n3) : (n2 * (i / 6.0f));
             for (int j = 1; j < 4; ++j) {
-                if (!class803.field2391.method6701(new Class354(class803.method1938() + n5, class803.method1941() + j, class803.method1945() + n4)).method21697().method26442()) {
+                if (!class803.field2391.method6701(new BlockPos(class803.method1938() + n5, class803.method1941() + j, class803.method1945() + n4)).method21697().method26442()) {
                     return false;
                 }
             }

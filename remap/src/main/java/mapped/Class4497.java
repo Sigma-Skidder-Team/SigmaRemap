@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Class4497 extends Class4484
 {
     private boolean field19893;
     
-    public Class4497(final int n, final Class6997 field19849, final Class179 class179) {
+    public Class4497(final int n, final Class6997 field19849, final Direction class179) {
         super(Class9520.field40960, n);
         this.method13456(class179);
         this.field19849 = field19849;
@@ -28,7 +30,7 @@ public class Class4497 extends Class4484
         class51.method312("Mob", this.field19893);
     }
     
-    public static Class4497 method13489(final List<Class4473> list, final int n, final int n2, final int n3, final int n4, final Class179 class179) {
+    public static Class4497 method13489(final List<Class4473> list, final int n, final int n2, final int n3, final int n4, final Direction class179) {
         final Class6997 method21408 = Class6997.method21408(n, n2, n3, -2, 0, 0, 7, 8, 9, class179);
         return (Class4484.method13477(method21408) && Class4473.method13435(list, method21408) == null) ? new Class4497(n4, method21408, class179) : null;
     }
@@ -65,7 +67,7 @@ public class Class4497 extends Class4484
         this.method13440(class1851, class1855, 3, 8, 8, class1853);
         this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17468, true), 4, 8, 8, class1853);
         if (!this.field19893) {
-            final Class354 class1857 = new Class354(this.method13437(3, 5), this.method13438(5), this.method13439(3, 5));
+            final BlockPos class1857 = new BlockPos(this.method13437(3, 5), this.method13438(5), this.method13439(3, 5));
             if (class1853.method21415(class1857)) {
                 this.field19893 = true;
                 class1851.method6688(class1857, Class7521.field29290.method11878(), 2);

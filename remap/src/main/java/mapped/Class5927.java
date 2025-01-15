@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5927<T extends Class803> extends Class5844<T>
 {
@@ -51,10 +52,10 @@ public class Class5927<T extends Class803> extends Class5844<T>
     public void method17798(final T t, final float n, final float n2, final float n3) {
         this.field24367.field25183 = 1.5707964f;
         this.field24372.field25183 = -0.05235988f;
-        this.field24368.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
-        this.field24369.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-        this.field24370.field25183 = Class9546.method35639(n * 0.6662f + 3.1415927f) * 1.4f * n2;
-        this.field24371.field25183 = Class9546.method35639(n * 0.6662f) * 1.4f * n2;
+        this.field24368.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
+        this.field24369.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+        this.field24370.field25183 = MathHelper.cos(n * 0.6662f + 3.1415927f) * 1.4f * n2;
+        this.field24371.field25183 = MathHelper.cos(n * 0.6662f) * 1.4f * n2;
         this.field24363.method18642(-1.0f, 16.5f, -3.0f);
         this.field24363.field25184 = 0.0f;
         this.field24363.field25185 = t.method4671(n3);
@@ -136,10 +137,10 @@ public class Class5927<T extends Class803> extends Class5844<T>
         if (t.method2783()) {
             this.field24363.field25183 = 0.0f;
             this.field24363.field25184 = -2.0943952f;
-            this.field24363.field25185 = Class9546.method35639(n3 * 0.027f) / 22.0f;
+            this.field24363.field25185 = MathHelper.cos(n3 * 0.027f) / 22.0f;
         }
         if (t.method1814()) {
-            final float field25185 = Class9546.method35639(n3) * 0.01f;
+            final float field25185 = MathHelper.cos(n3) * 0.01f;
             this.field24367.field25184 = field25185;
             this.field24368.field25185 = field25185;
             this.field24369.field25185 = field25185;
@@ -148,10 +149,10 @@ public class Class5927<T extends Class803> extends Class5844<T>
         }
         if (t.method4656()) {
             this.field24373 += 0.67f;
-            this.field24368.field25183 = Class9546.method35639(this.field24373 * 0.4662f) * 0.1f;
-            this.field24369.field25183 = Class9546.method35639(this.field24373 * 0.4662f + 3.1415927f) * 0.1f;
-            this.field24370.field25183 = Class9546.method35639(this.field24373 * 0.4662f + 3.1415927f) * 0.1f;
-            this.field24371.field25183 = Class9546.method35639(this.field24373 * 0.4662f) * 0.1f;
+            this.field24368.field25183 = MathHelper.cos(this.field24373 * 0.4662f) * 0.1f;
+            this.field24369.field25183 = MathHelper.cos(this.field24373 * 0.4662f + 3.1415927f) * 0.1f;
+            this.field24370.field25183 = MathHelper.cos(this.field24373 * 0.4662f + 3.1415927f) * 0.1f;
+            this.field24371.field25183 = MathHelper.cos(this.field24373 * 0.4662f) * 0.1f;
         }
     }
 }

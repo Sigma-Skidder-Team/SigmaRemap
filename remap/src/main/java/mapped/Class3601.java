@@ -16,8 +16,8 @@ public class Class3601 extends Class3446
     private static String[] field16769;
     private final Class776 field16770;
     private final double field16771;
-    private Class354 field16772;
-    private final List<Class354> field16773;
+    private BlockPos field16772;
+    private final List<BlockPos> field16773;
     private final int field16774;
     private boolean field16775;
     
@@ -47,7 +47,7 @@ public class Class3601 extends Class3446
     }
     
     private boolean method11130() {
-        final Optional<Class354> method7207 = ((Class1849)this.field16770.field2391).method6921().method7207(class8912 -> class8912 == Class8912.field37476, this::method11131, Class2045.field11652, new Class354(this.field16770), 48, Class776.method4306(this.field16770));
+        final Optional<BlockPos> method7207 = ((Class1849)this.field16770.field2391).method6921().method7207(class8912 -> class8912 == Class8912.field37476, this::method11131, Class2045.field11652, new BlockPos(this.field16770), 48, Class776.method4306(this.field16770));
         if (method7207.isPresent()) {
             this.field16772 = method7207.get().method1153();
             return true;
@@ -81,7 +81,7 @@ public class Class3601 extends Class3446
     public void method11015() {
         super.method11015();
         this.field16770.method2641(0);
-        this.field16770.method4150().method24724(this.field16772.method1074(), this.field16772.method1075(), this.field16772.method1076(), this.field16771);
+        this.field16770.method4150().method24724(this.field16772.getX(), this.field16772.getY(), this.field16772.getZ(), this.field16771);
         this.field16775 = false;
     }
     
@@ -101,8 +101,8 @@ public class Class3601 extends Class3446
         }
     }
     
-    private boolean method11131(final Class354 a) {
-        final Iterator<Class354> iterator = this.field16773.iterator();
+    private boolean method11131(final BlockPos a) {
+        final Iterator<BlockPos> iterator = this.field16773.iterator();
         while (iterator.hasNext()) {
             if (!Objects.equals(a, iterator.next())) {
                 continue;

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.Direction;
 
 public class Class3281 extends Class3167
 {
@@ -18,7 +18,7 @@ public class Class3281 extends Class3167
             return;
         }
         if (Class3281.field15514.field4684 != null && Class3281.field15514.field4683 != null) {
-            for (final Class354 class5745 : Class4609.method13675(Class4609.method13691(Class3281.field15514.field4682.method27315()))) {
+            for (final BlockPos class5745 : Class4609.method13675(Class4609.method13691(Class3281.field15514.field4682.method27315()))) {
                 if (Class4609.method13665(Class3281.field15514.field4684, class5745)) {
                     final Class7096 method6701 = Class3281.field15514.field4683.method6701(class5745);
                     if (!(method6701.method21696() instanceof Class3878)) {
@@ -84,7 +84,7 @@ public class Class3281 extends Class3167
                                     continue;
                                 }
                                 if (method6708.method21696() instanceof Class3996) {
-                                    final float[] method6709 = Class4609.method13672(class5745, Class179.field512);
+                                    final float[] method6709 = Class4609.method13672(class5745, Direction.UP);
                                     class5744.method17043(method6709[0]);
                                     class5744.method17041(method6709[1]);
                                     class5744.method17047(new Class1281(this, n, method6709));
@@ -101,14 +101,14 @@ public class Class3281 extends Class3167
                         if (method6701.method21772((Class7111<Integer>)Class8970.field37773) == 7) {
                             continue;
                         }
-                        final float[] method6711 = Class4609.method13672(class5745, Class179.field511);
+                        final float[] method6711 = Class4609.method13672(class5745, Direction.DOWN);
                         class5744.method17043(method6711[0]);
                         class5744.method17041(method6711[1]);
                         class5744.method17047(new Class1242(this, method6711));
                     }
                     else {
                         if (method6701.method21772((Class7111<Integer>)Class8970.field37773) == 7) {
-                            final float[] method6712 = Class4609.method13672(class5745, Class179.field511);
+                            final float[] method6712 = Class4609.method13672(class5745, Direction.DOWN);
                             class5744.method17043(method6712[0]);
                             class5744.method17041(method6712[1]);
                             class5744.method17047(new Class1172(this, class5745));

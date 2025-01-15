@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class4168 extends Class4158<Class490>
@@ -35,12 +37,12 @@ public class Class4168 extends Class4158<Class490>
         class7351.method22564(0.5, 0.0, 0.5);
         final float n8 = Math.floorMod(x, 40L) + n;
         final float n9 = (n4 >= 0) ? (-n8) : n8;
-        final float method35686 = Class9546.method35686(n9 * 0.2f - Class9546.method35642(n9 * 0.1f));
+        final float method35686 = MathHelper.method35686(n9 * 0.2f - MathHelper.method35642(n9 * 0.1f));
         final float n10 = array[0];
         final float n11 = array[1];
         final float n12 = array[2];
         class7351.method22567();
-        class7351.method22566(Class9138.field38718.method33328(n8 * 2.25f - 45.0f));
+        class7351.method22566(Vector3f.field38718.rotationDegrees(n8 * 2.25f - 45.0f));
         final float n13 = -n5;
         final float n14 = -n5;
         final float n15 = -1.0f + method35686;

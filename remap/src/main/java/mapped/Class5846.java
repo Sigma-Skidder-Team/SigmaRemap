@@ -4,7 +4,9 @@
 
 package mapped;
 
-public abstract class Class5846<E extends Class399> extends Class5845<E>
+import net.minecraft.entity.Entity;
+
+public abstract class Class5846<E extends Entity> extends Class5845<E>
 {
     @Override
     public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {

@@ -9,6 +9,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.Collection;
 import java.util.function.Supplier;
 
@@ -23,12 +25,12 @@ public class Class8954 implements Class8953
     
     @Override
     public Collection<String> method31766(final Class7492 class7492, final Supplier<Collection<String>> supplier) throws CommandSyntaxException {
-        final List<? extends Class399> method32511 = this.field37650.method32511(class7492);
+        final List<? extends Entity> method32511 = this.field37650.method32511(class7492);
         if (!method32511.isEmpty()) {
             final ArrayList arrayList = Lists.newArrayList();
             final Iterator iterator = method32511.iterator();
             while (iterator.hasNext()) {
-                arrayList.add(((Class399)iterator.next()).method1867());
+                arrayList.add(((Entity)iterator.next()).method1867());
             }
             return arrayList;
         }

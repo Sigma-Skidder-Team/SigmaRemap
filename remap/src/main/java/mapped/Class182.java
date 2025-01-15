@@ -4,18 +4,20 @@
 
 package mapped;
 
-public enum Class182 implements Class103
+import net.minecraft.util.IStringSerializable;
+
+public enum Class182 implements IStringSerializable
 {
     field564, 
     field565;
     
     @Override
     public String toString() {
-        return this.method596();
+        return this.getName();
     }
     
     @Override
-    public String method596() {
+    public String getName() {
         return (this != Class182.field564) ? "lower" : "upper";
     }
 }

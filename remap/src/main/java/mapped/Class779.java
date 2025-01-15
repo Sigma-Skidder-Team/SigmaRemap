@@ -4,13 +4,15 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public class Class779 extends Class776
 {
-    private static final Predicate<Class399> field4185;
+    private static final Predicate<Entity> field4185;
     private int field4186;
     private int field4187;
     private int field4188;
@@ -99,7 +101,7 @@ public class Class779 extends Class776
     
     @Nullable
     @Override
-    public Class399 method1907() {
+    public Entity method1907() {
         return this.method1908().isEmpty() ? null : this.method1908().get(0);
     }
     
@@ -108,7 +110,7 @@ public class Class779 extends Class776
         super.method2736();
         if (this.method1768()) {
             if (!this.method2722()) {
-                this.method2710(Class8107.field33408).method23941(Class9546.method35701(0.1, this.method2710(Class8107.field33408).method23940(), (this.method4152() == null) ? 0.3 : 0.35));
+                this.method2710(Class8107.field33408).method23941(MathHelper.method35701(0.1, this.method2710(Class8107.field33408).method23940(), (this.method4152() == null) ? 0.3 : 0.35));
             }
             else {
                 this.method2710(Class8107.field33408).method23941(0.0);
@@ -117,7 +119,7 @@ public class Class779 extends Class776
                 if (this.field2391.method6765().method31216(Class8878.field37316)) {
                     boolean b = false;
                     final Class6221 method18496 = this.method1886().method18496(0.2);
-                    for (final Class354 class354 : Class354.method1158(Class9546.method35644(method18496.field25073), Class9546.method35644(method18496.field25074), Class9546.method35644(method18496.field25075), Class9546.method35644(method18496.field25076), Class9546.method35644(method18496.field25077), Class9546.method35644(method18496.field25078))) {
+                    for (final BlockPos class354 : BlockPos.method1158(MathHelper.floor(method18496.field25073), MathHelper.floor(method18496.field25074), MathHelper.floor(method18496.field25075), MathHelper.floor(method18496.field25076), MathHelper.floor(method18496.field25077), MathHelper.floor(method18496.field25078))) {
                         if (!(this.field2391.method6701(class354).method21696() instanceof Class3972)) {
                             continue;
                         }
@@ -171,7 +173,7 @@ public class Class779 extends Class776
     }
     
     @Override
-    public boolean method2747(final Class399 class399) {
+    public boolean method2747(final Entity class399) {
         return this.field4187 <= 0 && this.field4188 <= 0 && super.method2747(class399);
     }
     
@@ -193,20 +195,20 @@ public class Class779 extends Class776
     
     private void method4322() {
         if (this.method1768()) {
-            for (final Class399 class399 : this.field2391.method6739((Class<? extends Class399>)Class511.class, this.method1886().method18496(4.0), (Predicate<? super Class399>)Class779.field4185)) {
+            for (final Entity class399 : this.field2391.method6739((Class<? extends Entity>)Class511.class, this.method1886().method18496(4.0), (Predicate<? super Entity>)Class779.field4185)) {
                 if (!(class399 instanceof Class772)) {
                     class399.method1740(Class7929.method25693(this), 6.0f);
                 }
                 this.method4323(class399);
             }
-            final Class5487 method18517 = this.method1886().method18517();
+            final Vec3d method18517 = this.method1886().method18517();
             for (int i = 0; i < 40; ++i) {
                 this.field2391.method6709(Class8432.field34636, method18517.field22770, method18517.field22771, method18517.field22772, this.field2423.nextGaussian() * 0.2, this.field2423.nextGaussian() * 0.2, this.field2423.nextGaussian() * 0.2);
             }
         }
     }
     
-    private void method4323(final Class399 class399) {
+    private void method4323(final Entity class399) {
         final double n = class399.method1938() - this.method1938();
         final double n2 = class399.method1945() - this.method1945();
         final double max = Math.max(n * n + n2 * n2, 0.001);
@@ -240,7 +242,7 @@ public class Class779 extends Class776
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         this.field4186 = 10;
         this.field2391.method6761(this, (byte)4);
         this.method1695(Class8520.field35297, 1.0f, 1.0f);
@@ -264,7 +266,7 @@ public class Class779 extends Class776
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35301, 0.15f, 1.0f);
     }
     

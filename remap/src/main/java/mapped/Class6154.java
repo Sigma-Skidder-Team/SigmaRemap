@@ -5,8 +5,7 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import it.unimi.dsi.fastutil.objects.ObjectListIterator;
-import java.util.Iterator;
+
 import com.mojang.datafixers.util.Pair;
 import java.util.Collections;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -14,7 +13,9 @@ import java.util.HashSet;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
-import java.util.Collection;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Map;
 import java.util.List;
 import java.util.Random;
@@ -28,22 +29,22 @@ public class Class6154
     private final double field24898;
     private final double field24899;
     private final double field24900;
-    private final Class399 field24901;
+    private final Entity field24901;
     private final float field24902;
     private Class7929 field24903;
-    private final List<Class354> field24904;
-    private final Map<Class512, Class5487> field24905;
+    private final List<BlockPos> field24904;
+    private final Map<Class512, Vec3d> field24905;
     
-    public Class6154(final Class1847 class1847, final Class399 class1848, final double n, final double n2, final double n3, final float n4, final List<Class354> list) {
+    public Class6154(final Class1847 class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final List<BlockPos> list) {
         this(class1847, class1848, n, n2, n3, n4, false, Class2196.field13367, list);
     }
     
-    public Class6154(final Class1847 class1847, final Class399 class1848, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class1849, final List<Class354> list) {
+    public Class6154(final Class1847 class1847, final Entity class1848, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class1849, final List<BlockPos> list) {
         this(class1847, class1848, n, n2, n3, n4, b, class1849);
         this.field24904.addAll(list);
     }
     
-    public Class6154(final Class1847 field24897, final Class399 field24898, final double field24899, final double field24900, final double field24901, final float field24902, final boolean field24903, final Class2196 field24904) {
+    public Class6154(final Class1847 field24897, final Entity field24898, final double field24899, final double field24900, final double field24901, final float field24902, final boolean field24903, final Class2196 field24904) {
         this.field24896 = new Random();
         this.field24904 = Lists.newArrayList();
         this.field24905 = Maps.newHashMap();
@@ -58,7 +59,7 @@ public class Class6154
         this.field24903 = Class7929.method25702(this);
     }
     
-    public static float method18407(final Class5487 class5487, final Class399 class5488) {
+    public static float method18407(final Vec3d class5487, final Entity class5488) {
         final Class6221 method1886 = class5488.method1886();
         final double n = 1.0 / ((method1886.field25076 - method1886.field25073) * 2.0 + 1.0);
         final double n2 = 1.0 / ((method1886.field25077 - method1886.field25074) * 2.0 + 1.0);
@@ -73,7 +74,7 @@ public class Class6154
                     for (float n8 = 0.0f; n8 <= 1.0f; n8 += (float)n) {
                         for (float n9 = 0.0f; n9 <= 1.0f; n9 += (float)n2) {
                             for (float n10 = 0.0f; n10 <= 1.0f; n10 += (float)n3) {
-                                if (class5488.field2391.method6987(new Class8478(new Class5487(Class9546.method35701(n8, method1886.field25073, method1886.field25076) + n4, Class9546.method35701(n9, method1886.field25074, method1886.field25077), Class9546.method35701(n10, method1886.field25075, method1886.field25078) + n5), class5487, Class2040.field11633, Class2191.field13325, class5488)).method21449() == Class2165.field12880) {
+                                if (class5488.field2391.method6987(new Class8478(new Vec3d(MathHelper.method35701(n8, method1886.field25073, method1886.field25076) + n4, MathHelper.method35701(n9, method1886.field25074, method1886.field25077), MathHelper.method35701(n10, method1886.field25075, method1886.field25078) + n5), class5487, Class2040.field11633, Class2191.field13325, class5488)).method21449() == Class2165.field12880) {
                                     ++n6;
                                 }
                                 ++n7;
@@ -117,7 +118,7 @@ public class Class6154
                     double field24899 = this.field24899;
                     double field24900 = this.field24900;
                     while (n7 > 0.0f) {
-                        final Class354 class354 = new Class354(field24898, field24899, field24900);
+                        final BlockPos class354 = new BlockPos(field24898, field24899, field24900);
                         final Class7096 method6701 = this.field24897.method6701(class354);
                         final Class7099 method6702 = this.field24897.method6702(class354);
                         if (!method6701.method21706() || !method6702.method21781()) {
@@ -142,17 +143,17 @@ public class Class6154
         }
         this.field24904.addAll(hashSet);
         final float n9 = this.field24902 * 2.0f;
-        final List<Class399> method6703 = this.field24897.method7127(this.field24901, new Class6221(Class9546.method35644(this.field24898 - n9 - 1.0), Class9546.method35644(this.field24899 - n9 - 1.0), Class9546.method35644(this.field24900 - n9 - 1.0), Class9546.method35644(this.field24898 + n9 + 1.0), Class9546.method35644(this.field24899 + n9 + 1.0), Class9546.method35644(this.field24900 + n9 + 1.0)));
-        final Class5487 class355 = new Class5487(this.field24898, this.field24899, this.field24900);
+        final List<Entity> method6703 = this.field24897.method7127(this.field24901, new Class6221(MathHelper.floor(this.field24898 - n9 - 1.0), MathHelper.floor(this.field24899 - n9 - 1.0), MathHelper.floor(this.field24900 - n9 - 1.0), MathHelper.floor(this.field24898 + n9 + 1.0), MathHelper.floor(this.field24899 + n9 + 1.0), MathHelper.floor(this.field24900 + n9 + 1.0)));
+        final Vec3d class355 = new Vec3d(this.field24898, this.field24899, this.field24900);
         for (int l = 0; l < method6703.size(); ++l) {
-            final Class399 class356 = method6703.get(l);
+            final Entity class356 = method6703.get(l);
             if (!class356.method1899()) {
-                final double n10 = Class9546.method35641(class356.method1735(class355)) / n9;
+                final double n10 = MathHelper.method35641(class356.method1735(class355)) / n9;
                 if (n10 <= 1.0) {
                     final double n11 = class356.method1938() - this.field24898;
                     final double n12 = class356.method1944() - this.field24899;
                     final double n13 = class356.method1945() - this.field24900;
-                    final double n14 = Class9546.method35641(n11 * n11 + n12 * n12 + n13 * n13);
+                    final double n14 = MathHelper.method35641(n11 * n11 + n12 * n12 + n13 * n13);
                     if (n14 != 0.0) {
                         final double n15 = n11 / n14;
                         final double n16 = n12 / n14;
@@ -168,7 +169,7 @@ public class Class6154
                             final Class512 class357 = (Class512)class356;
                             if (!class357.method1639()) {
                                 if (!class357.method2889() || !class357.field3025.field27302) {
-                                    this.field24905.put(class357, new Class5487(n15 * n18, n16 * n18, n17 * n18));
+                                    this.field24905.put(class357, new Vec3d(n15 * n18, n16 * n18, n17 * n18));
                                 }
                             }
                         }
@@ -194,7 +195,7 @@ public class Class6154
         if (b2) {
             final ObjectArrayList list = new ObjectArrayList();
             Collections.shuffle(this.field24904, this.field24897.field10062);
-            for (final Class354 class354 : this.field24904) {
+            for (final BlockPos class354 : this.field24904) {
                 final Class7096 method6701 = this.field24897.method6701(class354);
                 final Class3833 method6702 = method6701.method21696();
                 if (method6701.method21706()) {
@@ -208,7 +209,7 @@ public class Class6154
                         if (this.field24895 == Class2196.field13367) {
                             method6703.method32877(Class6683.field26371, this.field24902);
                         }
-                        method6701.method21743(method6703).forEach(class357 -> method18410((ObjectArrayList<Pair<Class8321, Class354>>)list2, class357, class356));
+                        method6701.method21743(method6703).forEach(class357 -> method18410((ObjectArrayList<Pair<Class8321, BlockPos>>)list2, class357, class356));
                     }
                 }
                 this.field24897.method6688(class354, Class7521.field29147.method11878(), 3);
@@ -216,11 +217,11 @@ public class Class6154
                 this.field24897.method6796().method15299();
             }
             for (final Pair pair : list) {
-                Class3833.method11839(this.field24897, (Class354)pair.getSecond(), (Class8321)pair.getFirst());
+                Class3833.method11839(this.field24897, (BlockPos)pair.getSecond(), (Class8321)pair.getFirst());
             }
         }
         if (this.field24894) {
-            for (final Class354 class355 : this.field24904) {
+            for (final BlockPos class355 : this.field24904) {
                 if (this.field24896.nextInt(3) != 0) {
                     continue;
                 }
@@ -235,7 +236,7 @@ public class Class6154
         }
     }
     
-    private static void method18410(final ObjectArrayList<Pair<Class8321, Class354>> list, final Class8321 class8321, final Class354 class8322) {
+    private static void method18410(final ObjectArrayList<Pair<Class8321, BlockPos>> list, final Class8321 class8321, final BlockPos class8322) {
         for (int size = list.size(), i = 0; i < size; ++i) {
             final Pair pair = (Pair)list.get(i);
             final Class8321 class8323 = (Class8321)pair.getFirst();
@@ -257,7 +258,7 @@ public class Class6154
         this.field24903 = field24903;
     }
     
-    public Map<Class512, Class5487> method18413() {
+    public Map<Class512, Vec3d> method18413() {
         return this.field24905;
     }
     
@@ -279,7 +280,7 @@ public class Class6154
         this.field24904.clear();
     }
     
-    public List<Class354> method18416() {
+    public List<BlockPos> method18416() {
         return this.field24904;
     }
 }

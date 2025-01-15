@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,16 +35,16 @@ public class Class3299 extends Class3167
         if (this.method9906() && (Class3299.field15514.field4684.method1809() || !this.method9914().method9883("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
                 final Class7005 method13697 = Class4609.method13697(Class3299.field15514.field4684.field2399, Class3299.field15514.field4684.field2400, this.method9914().method9886("Maximum range"));
-                Class352 method13698 = null;
+                Vec3i method13698 = null;
                 if (method13697 != null) {
                     method13698 = method13697.method21447();
                 }
                 if (method13698 == null) {
                     return;
                 }
-                final double n = method13698.method1074() + 0.5;
-                final double n2 = method13698.method1075() + 1;
-                final double n3 = method13698.method1076() + 0.5;
+                final double n = method13698.getX() + 0.5;
+                final double n2 = method13698.getY() + 1;
+                final double n3 = method13698.getZ() + 0.5;
                 final double n4 = Class3299.field15514.field4684.field2395 - n;
                 final double n5 = Class3299.field15514.field4684.field2397 - n3;
                 final double a = Class3299.field15514.field4684.field2396 - n2;

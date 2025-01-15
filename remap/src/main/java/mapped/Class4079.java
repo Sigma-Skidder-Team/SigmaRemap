@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
 
 public class Class4079 extends Class3820
 {
@@ -17,7 +17,7 @@ public class Class4079 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
+        final BlockPos method21655 = class7075.method21639();
         if (!method21654.method6701(method21655).method21696().method11785(Class7188.field27911)) {
             return Class2201.field13402;
         }
@@ -30,12 +30,12 @@ public class Class4079 extends Class3820
         return Class2201.field13400;
     }
     
-    public static Class2201 method12284(final Class512 class512, final Class1847 class513, final Class354 class514) {
-        Class399 method5205 = null;
+    public static Class2201 method12284(final Class512 class512, final Class1847 class513, final BlockPos class514) {
+        Entity method5205 = null;
         boolean b = false;
-        final int method5206 = class514.method1074();
-        final int method5207 = class514.method1075();
-        final int method5208 = class514.method1076();
+        final int method5206 = class514.getX();
+        final int method5207 = class514.getY();
+        final int method5208 = class514.getZ();
         for (final Class759 class515 : class513.method7128((Class<? extends Class759>)Class759.class, new Class6221(method5206 - 7.0, method5207 - 7.0, method5208 - 7.0, method5206 + 7.0, method5207 + 7.0, method5208 + 7.0))) {
             if (class515.method4206() != class512) {
                 continue;

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.HashSet;
@@ -65,7 +66,7 @@ public class Class3285 extends Class3167
         this.field15794.clear();
     }
     
-    public List<Class354> method10373(final Class7859 class7859) {
+    public List<BlockPos> method10373(final Class7859 class7859) {
         final ArrayList list = new ArrayList();
         final int n = class7859.field32290 * 16;
         final int n2 = class7859.field32291 * 16;
@@ -76,18 +77,18 @@ public class Class3285 extends Class3167
         for (float n7 = (float)n3; n7 <= n6 && n7 <= 100.0f; ++n7) {
             for (float n8 = (float)n; n8 <= n4; ++n8) {
                 for (float n9 = (float)n2; n9 <= n5; ++n9) {
-                    list.add(new Class354(n8, n7, n9));
+                    list.add(new BlockPos(n8, n7, n9));
                 }
             }
         }
         return list;
     }
     
-    public List<Class354> method10374(final Class7859 class7859) {
+    public List<BlockPos> method10374(final Class7859 class7859) {
         final ArrayList list = new ArrayList();
         if (class7859 != null) {
             final List list2 = (List)this.method9882("Blocks");
-            for (final Class354 class7860 : this.method10373(class7859)) {
+            for (final BlockPos class7860 : this.method10373(class7859)) {
                 if (!list2.contains(Class90.field208.method503(Class3285.field15514.field4683.method6701(class7860).method21696()).toString())) {
                     continue;
                 }
@@ -95,14 +96,14 @@ public class Class3285 extends Class3167
             }
             if (this.method9883("Holes")) {
             Label_0145:
-                for (final Class354 class7861 : this.method10373(class7859)) {
+                for (final BlockPos class7861 : this.method10373(class7859)) {
                     if (Class3285.field15514.field4683.method6701(class7861).method21696() != Class7521.field29147) {
                         continue;
                     }
-                    for (final Class179 class7862 : Class179.values()) {
-                        if (class7862 != Class179.field512) {
-                            if (Class3285.field15514.field4683.method6701(class7861.method1135(class7862.method802())).method21696() != Class7521.field29286) {
-                                if (Class3285.field15514.field4683.method6701(class7861.method1135(class7862.method802())).method21696() != Class7521.field29172) {
+                    for (final Direction class7862 : Direction.values()) {
+                        if (class7862 != Direction.UP) {
+                            if (Class3285.field15514.field4683.method6701(class7861.method1135(class7862.getDirectionVec())).method21696() != Class7521.field29286) {
+                                if (Class3285.field15514.field4683.method6701(class7861.method1135(class7862.getDirectionVec())).method21696() != Class7521.field29172) {
                                     continue Label_0145;
                                 }
                             }
@@ -174,10 +175,10 @@ public class Class3285 extends Class3167
         GL11.glDisable(2929);
         final Iterator<Class6731> iterator = this.field15793.iterator();
         while (iterator.hasNext()) {
-            for (final Class354 class354 : iterator.next().field26467) {
-                final double n = class354.method1074() - Class3285.field15514.field4644.method5833().method18161().method16760();
-                final double n2 = class354.method1075() - Class3285.field15514.field4644.method5833().method18161().method16761();
-                final double n3 = class354.method1076() - Class3285.field15514.field4644.method5833().method18161().method16762();
+            for (final BlockPos class354 : iterator.next().field26467) {
+                final double n = class354.getX() - Class3285.field15514.field4644.method5833().method18161().method16760();
+                final double n2 = class354.getY() - Class3285.field15514.field4644.method5833().method18161().method16761();
+                final double n3 = class354.getZ() - Class3285.field15514.field4644.method5833().method18161().method16762();
                 Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
             }
         }

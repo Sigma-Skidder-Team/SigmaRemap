@@ -26,8 +26,8 @@ public class Class4112 extends Class4107
     
     @Nullable
     @Override
-    public Class9038 method12350(final Class1852 class1852, final Class354 class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
-        return new Class9038(new Class354(class1855.field38248.method1074(), class1852.method6699(this.field18216, class1855.field38248.method1074(), class1855.field38248.method1076()) + this.field18217 + class1854.field38248.method1075(), class1855.field38248.method1076()), class1855.field38249, class1855.field38250);
+    public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
+        return new Class9038(new BlockPos(class1855.field38248.getX(), class1852.method6699(this.field18216, class1855.field38248.getX(), class1855.field38248.getZ()) + this.field18217 + class1854.field38248.getY(), class1855.field38248.getZ()), class1855.field38249, class1855.field38250);
     }
     
     @Override

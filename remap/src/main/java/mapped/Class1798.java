@@ -9,6 +9,7 @@ import java.io.IOException;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.util.math.MathHelper;
 
 public class Class1798<T extends Class511 & Class825, M extends Class5845<T> & Class5858> extends Class1799<T, M> implements Class1657
 {
@@ -42,7 +43,7 @@ public class Class1798<T extends Class511 & Class825, M extends Class5845<T> & C
                 if (!t.method2625()) {
                     Class1799.method6558(method4875, this.method6552("profession", Class90.field240.method503(method4872)), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
                     if (method4872 != Class9334.field40071) {
-                        Class1799.method6558(method4875, this.method6552("profession_level", (Class1932)Class1798.field9961.get(Class9546.method35651(method4870.method28782(), 1, Class1798.field9961.size()))), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
+                        Class1799.method6558(method4875, this.method6552("profession_level", (Class1932)Class1798.field9961.get(MathHelper.method35651(method4870.method28782(), 1, Class1798.field9961.size()))), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
                     }
                 }
             }

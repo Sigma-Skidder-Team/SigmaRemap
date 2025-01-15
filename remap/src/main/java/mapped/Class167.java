@@ -5,8 +5,9 @@
 package mapped;
 
 import com.google.common.base.Predicate;
+import net.minecraft.entity.Entity;
 
-public class Class167 implements Predicate<Class399>
+public class Class167 implements Predicate<Entity>
 {
     private static String[] field486;
     public final /* synthetic */ Class3362 field487;
@@ -15,7 +16,7 @@ public class Class167 implements Predicate<Class399>
         this.field487 = field487;
     }
     
-    public boolean apply(final Class399 class399) {
+    public boolean apply(final Entity class399) {
         if (class399 != null) {
             if (class399 instanceof Class511) {
                 if (class399.method1768()) {

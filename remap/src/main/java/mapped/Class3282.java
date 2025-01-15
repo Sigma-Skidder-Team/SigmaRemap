@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class3282 extends Class3167
 {
     private int field15787;
@@ -98,8 +100,8 @@ public class Class3282 extends Class3167
                     class5717.method16975(this.field15788 + this.field15789 - Class3282.field15514.field4684.field2396);
                     final double n = this.method9883("AAC") ? 0.301 : Class7482.method23136();
                     final float n2 = this.field15790 * 0.017453292f;
-                    class5717.method16973(-Class9546.method35638(n2) * n);
-                    class5717.method16977(Class9546.method35639(n2) * n);
+                    class5717.method16973(-MathHelper.sin(n2) * n);
+                    class5717.method16977(MathHelper.cos(n2) * n);
                     ++this.field15787;
                 }
             }

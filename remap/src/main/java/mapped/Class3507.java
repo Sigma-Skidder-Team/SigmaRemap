@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.EnumSet;
 
 public class Class3507 extends Class3446
@@ -82,16 +84,16 @@ public class Class3507 extends Class3446
         this.field16491 = field16491;
         if (field16491 != 0) {
             if (this.field16491 < 0) {
-                this.field16491 = Class9546.method35642(Class9546.method35641(method1733) / this.field16496 * (this.field16495 - this.field16494) + this.field16494);
+                this.field16491 = MathHelper.method35642(MathHelper.method35641(method1733) / this.field16496 * (this.field16495 - this.field16494) + this.field16494);
             }
         }
         else {
             if (!method1734) {
                 return;
             }
-            final float n = Class9546.method35641(method1733) / this.field16496;
-            this.field16489.method4252(this.field16490, Class9546.method35653(n, 0.1f, 1.0f));
-            this.field16491 = Class9546.method35642(n * (this.field16495 - this.field16494) + this.field16494);
+            final float n = MathHelper.method35641(method1733) / this.field16496;
+            this.field16489.method4252(this.field16490, MathHelper.method35653(n, 0.1f, 1.0f));
+            this.field16491 = MathHelper.method35642(n * (this.field16495 - this.field16494) + this.field16494);
         }
     }
 }

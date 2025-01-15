@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Properties;
 
 public class Class9310
@@ -183,9 +185,9 @@ public class Class9310
             return false;
         }
         if (this.field39958 != null) {
-            final Class354 method28178 = class8444.method28178();
+            final BlockPos method28178 = class8444.method28178();
             if (method28178 != null) {
-                if (!this.field39958.method24697(method28178.method1075())) {
+                if (!this.field39958.method24697(method28178.getY())) {
                     return false;
                 }
             }
@@ -207,7 +209,7 @@ public class Class9310
         }
         if (this.field39964 != null) {
             if (class8444 instanceof Class8443) {
-                final Class399 method28181 = ((Class8443)class8444).method28183();
+                final Entity method28181 = ((Class8443)class8444).method28183();
                 if (method28181 instanceof Class824) {
                     final Class8562 method28182 = ((Class824)method28181).method4870();
                     if (!Class9449.method35104(method28182.method28781(), method28182.method28782(), this.field39964)) {
@@ -218,7 +220,7 @@ public class Class9310
         }
         if (this.field39965 != null) {
             if (class8444 instanceof Class8443) {
-                final Class399 method28183 = ((Class8443)class8444).method28183();
+                final Entity method28183 = ((Class8443)class8444).method28183();
                 if (method28183 instanceof Class799) {
                     final Class799 class8445 = (Class799)method28183;
                     if (!class8445.method4480()) {
@@ -241,7 +243,7 @@ public class Class9310
         }
         if (this.field39966 != null) {
             if (class8444 instanceof Class8443) {
-                final Class399 method28184 = ((Class8443)class8444).method28183();
+                final Entity method28184 = ((Class8443)class8444).method28183();
                 if (method28184 instanceof Class511) {
                     if (((Class511)method28184).method2625() != this.field39966) {
                         return false;

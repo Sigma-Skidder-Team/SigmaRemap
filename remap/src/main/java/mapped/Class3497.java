@@ -26,7 +26,7 @@ public class Class3497 extends Class3496
         }
         if (this.field16451 <= 0) {
             this.field16451 = 100;
-            final Class354 class354 = new Class354(this.field16445);
+            final BlockPos class354 = new BlockPos(this.field16445);
             if (this.field16452.field2391.method6703()) {
                 if (this.field16452.field2391.method6994(class354)) {
                     if (!((Class1849)this.field16452.field2391).method6922(class354)) {

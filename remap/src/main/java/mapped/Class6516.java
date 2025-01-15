@@ -8,13 +8,14 @@ import java.util.AbstractList;
 import java.util.function.Function;
 import java.util.Iterator;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.function.Consumer;
 import com.google.common.collect.Lists;
 import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.Map;
 
@@ -314,7 +315,7 @@ public class Class6516
         return Class6516.field25936;
     }
     
-    public void method19655(final Class399 class399) {
+    public void method19655(final Entity class399) {
         if (class399 != null) {
             if (!(class399 instanceof Class512)) {
                 if (!class399.method1768()) {

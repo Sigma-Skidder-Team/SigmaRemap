@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Locale;
 
 public class Class6912 implements Class6909
@@ -19,7 +21,7 @@ public class Class6912 implements Class6909
         this.field27103 = field27103;
         this.field27104 = field27104;
         this.field27105 = field27105;
-        this.field27106 = Class9546.method35653(n, 0.01f, 4.0f);
+        this.field27106 = MathHelper.method35653(n, 0.01f, 4.0f);
     }
     
     @Override

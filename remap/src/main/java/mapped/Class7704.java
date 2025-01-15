@@ -37,7 +37,7 @@ public final class Class7704 extends Class7702
     }
     
     @Override
-    public DoubleList method24539(final Class111 class111) {
+    public DoubleList method24539(final Axis class111) {
         switch (Class9522.field40999[class111.ordinal()]) {
             case 1: {
                 return this.field30621;

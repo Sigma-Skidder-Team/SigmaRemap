@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class7750 extends Class7746
 {
     private static String[] field31681;
@@ -24,13 +27,13 @@ public class Class7750 extends Class7746
     }
     
     @Override
-    public Class5487 method24734() {
+    public Vec3d method24734() {
         return this.field31657.method1934();
     }
     
     @Override
-    public Class9468 method24722(final Class399 class399, final int n) {
-        return this.method24721(new Class354(class399), n);
+    public Class9468 method24722(final Entity class399, final int n) {
+        return this.method24721(new BlockPos(class399), n);
     }
     
     @Override
@@ -43,10 +46,10 @@ public class Class7750 extends Class7746
             if (!this.method24735()) {
                 if (this.field31659 != null) {
                     if (this.field31659.method35222() < this.field31659.method35221()) {
-                        final Class5487 method35224 = this.field31659.method35224(this.field31657, this.field31659.method35222());
-                        if (Class9546.method35644(this.field31657.method1938()) == Class9546.method35644(method35224.field22770)) {
-                            if (Class9546.method35644(this.field31657.method1941()) == Class9546.method35644(method35224.field22771)) {
-                                if (Class9546.method35644(this.field31657.method1945()) == Class9546.method35644(method35224.field22772)) {
+                        final Vec3d method35224 = this.field31659.method35224(this.field31657, this.field31659.method35222());
+                        if (MathHelper.floor(this.field31657.method1938()) == MathHelper.floor(method35224.field22770)) {
+                            if (MathHelper.floor(this.field31657.method1941()) == MathHelper.floor(method35224.field22771)) {
+                                if (MathHelper.floor(this.field31657.method1945()) == MathHelper.floor(method35224.field22772)) {
                                     this.field31659.method35223(this.field31659.method35222() + 1);
                                 }
                             }
@@ -59,17 +62,17 @@ public class Class7750 extends Class7746
             }
             Class9324.method34535(this.field31658, this.field31657, this.field31659, this.field31669);
             if (!this.method24731()) {
-                final Class5487 method35225 = this.field31659.method35225(this.field31657);
+                final Vec3d method35225 = this.field31659.method35225(this.field31657);
                 this.field31657.method4148().method19907(method35225.field22770, method35225.field22771, method35225.field22772, this.field31660);
             }
         }
     }
     
     @Override
-    public boolean method24738(final Class5487 class5487, final Class5487 class5488, final int n, final int n2, final int n3) {
-        int method35644 = Class9546.method35644(class5487.field22770);
-        int method35645 = Class9546.method35644(class5487.field22771);
-        int method35646 = Class9546.method35644(class5487.field22772);
+    public boolean method24738(final Vec3d class5487, final Vec3d class5488, final int n, final int n2, final int n3) {
+        int method35644 = MathHelper.floor(class5487.field22770);
+        int method35645 = MathHelper.floor(class5487.field22771);
+        int method35646 = MathHelper.floor(class5487.field22772);
         final double n4 = class5488.field22770 - class5487.field22770;
         final double n5 = class5488.field22771 - class5487.field22771;
         final double n6 = class5488.field22772 - class5487.field22772;
@@ -100,9 +103,9 @@ public class Class7750 extends Class7746
             final int n17 = (a2 >= 0.0) ? 1 : -1;
             final int n18 = (a3 >= 0.0) ? 1 : -1;
             final int n19 = (a4 >= 0.0) ? 1 : -1;
-            final int method35647 = Class9546.method35644(class5488.field22770);
-            final int method35648 = Class9546.method35644(class5488.field22771);
-            final int method35649 = Class9546.method35644(class5488.field22772);
+            final int method35647 = MathHelper.floor(class5488.field22770);
+            final int method35648 = MathHelper.floor(class5488.field22771);
+            final int method35649 = MathHelper.floor(class5488.field22772);
             int n20 = method35647 - method35644;
             int n21 = method35648 - method35645;
             int n22 = method35649 - method35646;
@@ -144,7 +147,7 @@ public class Class7750 extends Class7746
     }
     
     @Override
-    public boolean method24739(final Class354 class354) {
+    public boolean method24739(final BlockPos class354) {
         return this.field31658.method6701(class354).method21731(this.field31658, class354, this.field31657);
     }
 }

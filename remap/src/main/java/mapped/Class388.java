@@ -4,19 +4,19 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import java.util.concurrent.CompletionStage;
+
 import java.util.Objects;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletionException;
-import it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator;
 import java.util.stream.Stream;
 import java.util.function.Function;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap$Entry;
 import java.io.Writer;
 import com.google.common.collect.Iterables;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
-import java.util.function.Consumer;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import java.util.function.BooleanSupplier;
 import org.apache.commons.lang3.mutable.MutableBoolean;
@@ -108,7 +108,7 @@ public class Class388 extends Class387 implements Class389
         this.method1338(n);
     }
     
-    private static double method1312(final Class7859 class7859, final Class399 class7860) {
+    private static double method1312(final Class7859 class7859, final Entity class7860) {
         final double n = class7859.field32290 * 16 + 8;
         final double n2 = class7859.field32291 * 16 + 8;
         final double n3 = n - class7860.method1938();
@@ -120,8 +120,8 @@ public class Class388 extends Class387 implements Class389
         int n;
         int n2;
         if (!b) {
-            n = Class9546.method35644(class7860.method1938() / 16.0);
-            n2 = Class9546.method35644(class7860.method1945() / 16.0);
+            n = MathHelper.floor(class7860.method1938() / 16.0);
+            n2 = MathHelper.floor(class7860.method1945() / 16.0);
         }
         else {
             final Class353 method2961 = class7860.method2961();
@@ -523,7 +523,7 @@ public class Class388 extends Class387 implements Class389
                     array[i].iterator();
                     final Iterator iterator;
                     while (iterator.hasNext()) {
-                        final Class399 class9303 = iterator.next();
+                        final Entity class9303 = iterator.next();
                         if (class9303 instanceof Class512) {
                             continue;
                         }
@@ -534,7 +534,7 @@ public class Class388 extends Class387 implements Class389
                             arrayList.add(class9303);
                         }
                         else {
-                            arrayList = Lists.newArrayList((Object[])new Class399[] { class9303 });
+                            arrayList = Lists.newArrayList((Object[])new Entity[] { class9303 });
                         }
                     }
                 }
@@ -620,7 +620,7 @@ public class Class388 extends Class387 implements Class389
     }
     
     public void method1338(final int n) {
-        final int method35651 = Class9546.method35651(n + 1, 3, 64);
+        final int method35651 = MathHelper.method35651(n + 1, 3, 64);
         if (method35651 != this.field2273) {
             final int field2273 = this.field2273;
             this.field2273 = method35651;
@@ -716,8 +716,8 @@ public class Class388 extends Class387 implements Class389
     public void method1348(final Class513 class513, final boolean b) {
         final boolean method1347 = this.method1347(class513);
         final boolean method1348 = this.field2270.method27356(class513);
-        final int n = Class9546.method35644(class513.method1938()) >> 4;
-        final int n2 = Class9546.method35644(class513.method1945()) >> 4;
+        final int n = MathHelper.floor(class513.method1938()) >> 4;
+        final int n2 = MathHelper.floor(class513.method1945()) >> 4;
         if (!b) {
             final Class353 method1349 = class513.method2961();
             this.field2270.method27353(method1349.method1115().method25422(), class513);
@@ -755,8 +755,8 @@ public class Class388 extends Class387 implements Class389
                 class514.method34988(this.field2254.method6840());
             }
         }
-        final int n = Class9546.method35644(class513.method1938()) >> 4;
-        final int n2 = Class9546.method35644(class513.method1945()) >> 4;
+        final int n = MathHelper.floor(class513.method1938()) >> 4;
+        final int n2 = MathHelper.floor(class513.method1945()) >> 4;
         final Class353 method2961 = class513.method2961();
         final Class353 method2962 = Class353.method1091(class513);
         final long method2963 = method2961.method1115().method25422();
@@ -827,7 +827,7 @@ public class Class388 extends Class387 implements Class389
         });
     }
     
-    public void method1352(final Class399 class399) {
+    public void method1352(final Entity class399) {
         if (!(class399 instanceof Class859)) {
             if (!(class399 instanceof Class422)) {
                 final Class7499<?> method1642 = class399.method1642();
@@ -853,7 +853,7 @@ public class Class388 extends Class387 implements Class389
         }
     }
     
-    public void method1353(final Class399 class399) {
+    public void method1353(final Entity class399) {
         if (class399 instanceof Class513) {
             final Class513 class400 = (Class513)class399;
             this.method1348(class400, false);
@@ -876,7 +876,7 @@ public class Class388 extends Class387 implements Class389
             final Class353 method6842 = Class353.method1091(Class9406.method34989(class9406));
             if (!Objects.equals(method6841, method6842)) {
                 class9406.method34988(method6840);
-                final Class399 method6843 = Class9406.method34989(class9406);
+                final Entity method6843 = Class9406.method34989(class9406);
                 if (method6843 instanceof Class513) {
                     arrayList.add(method6843);
                 }
@@ -892,14 +892,14 @@ public class Class388 extends Class387 implements Class389
         }
     }
     
-    public void method1355(final Class399 class399, final Class4252<?> class400) {
+    public void method1355(final Entity class399, final Class4252<?> class400) {
         final Class9406 class401 = (Class9406)this.field2271.get(class399.method1643());
         if (class401 != null) {
             class401.method34982(class400);
         }
     }
     
-    public void method1356(final Class399 class399, final Class4252<?> class400) {
+    public void method1356(final Entity class399, final Class4252<?> class400) {
         final Class9406 class401 = (Class9406)this.field2271.get(class399.method1643());
         if (class401 != null) {
             class401.method34983(class400);
@@ -916,7 +916,7 @@ public class Class388 extends Class387 implements Class389
         final ArrayList arrayList = Lists.newArrayList();
         final ArrayList arrayList2 = Lists.newArrayList();
         for (final Class9406 class515 : this.field2271.values()) {
-            final Class399 method34989 = Class9406.method34989(class515);
+            final Entity method34989 = Class9406.method34989(class515);
             if (method34989 == class513) {
                 continue;
             }
@@ -938,14 +938,14 @@ public class Class388 extends Class387 implements Class389
             arrayList2.add(method34989);
         }
         if (!arrayList.isEmpty()) {
-            for (final Class399 class516 : arrayList) {
+            for (final Entity class516 : arrayList) {
                 class513.field3039.method17469(new Class4305(class516, ((Class759)class516).method4206()));
             }
         }
         if (!arrayList2.isEmpty()) {
             final Iterator iterator3 = arrayList2.iterator();
             while (iterator3.hasNext()) {
-                class513.field3039.method17469(new Class4286((Class399)iterator3.next()));
+                class513.field3039.method17469(new Class4286((Entity)iterator3.next()));
             }
         }
     }

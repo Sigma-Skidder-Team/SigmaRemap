@@ -4,7 +4,10 @@
 
 package mapped;
 
-public abstract class Class419 extends Class399
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
+public abstract class Class419 extends Entity
 {
     public Class511 field2527;
     private int field2528;
@@ -21,7 +24,7 @@ public abstract class Class419 extends Class399
         this(class7499, class7500);
         this.method1730(n, n2, n3, this.field2399, this.field2400);
         this.method1656(n, n2, n3);
-        final double n7 = Class9546.method35641(n4 * n4 + n5 * n5 + n6 * n6);
+        final double n7 = MathHelper.method35641(n4 * n4 + n5 * n5 + n6 * n6);
         this.field2530 = n4 / n7 * 0.1;
         this.field2531 = n5 / n7 * 0.1;
         this.field2532 = n6 / n7 * 0.1;
@@ -36,7 +39,7 @@ public abstract class Class419 extends Class399
         n += this.field2423.nextGaussian() * 0.4;
         n2 += this.field2423.nextGaussian() * 0.4;
         n3 += this.field2423.nextGaussian() * 0.4;
-        final double n4 = Class9546.method35641(n * n + n2 * n2 + n3 * n3);
+        final double n4 = MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
         this.field2530 = n / n4 * 0.1;
         this.field2531 = n2 / n4 * 0.1;
         this.field2532 = n3 / n4 * 0.1;
@@ -61,7 +64,7 @@ public abstract class Class419 extends Class399
         Label_0010: {
             if (!this.field2391.field10067) {
                 if (this.field2527 == null || !this.field2527.field2410) {
-                    if (this.field2391.method6971(new Class354(this))) {
+                    if (this.field2391.method6971(new BlockPos(this))) {
                         break Label_0010;
                     }
                 }

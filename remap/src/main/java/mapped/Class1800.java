@@ -16,7 +16,7 @@ public class Class1800 extends Class1799<Class841, Class5876<Class841>>
         class7351.method22567();
         class7351.method22564(0.0, 1.0, 0.0);
         class7351.method22565(-1.0f, -1.0f, 1.0f);
-        final Class9389 method778 = class7353.method5018().method782().method778();
+        final Quaternion method778 = class7353.method5018().getOpposite().getRotation();
         method778.method34905();
         class7351.method22566(method778);
         class7351.method22565(-1.0f, -1.0f, 1.0f);

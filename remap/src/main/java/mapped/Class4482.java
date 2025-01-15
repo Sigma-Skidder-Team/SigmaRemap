@@ -7,6 +7,8 @@ package mapped;
 import java.util.AbstractList;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 import java.util.List;
 
@@ -43,7 +45,7 @@ public class Class4482 extends Class4479
             if (n2 + 3 > this.field19849.method21417()) {
                 break;
             }
-            final Class4479 method13434 = Class9191.method33629(class4473, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 - 1, Class179.field513, method13433);
+            final Class4479 method13434 = Class9191.method33629(class4473, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 - 1, Direction.NORTH, method13433);
             if (method13434 != null) {
                 final Class6997 method13435 = method13434.method13432();
                 this.field19875.add(new Class6997(method13435.field27293, method13435.field27294, this.field19849.field27295, method13435.field27296, method13435.field27297, this.field19849.field27295 + 1));
@@ -55,7 +57,7 @@ public class Class4482 extends Class4479
             if (n3 + 3 > this.field19849.method21417()) {
                 break;
             }
-            final Class4479 method13436 = Class9191.method33629(class4473, list, random, this.field19849.field27293 + n3, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27298 + 1, Class179.field514, method13433);
+            final Class4479 method13436 = Class9191.method33629(class4473, list, random, this.field19849.field27293 + n3, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27298 + 1, Direction.SOUTH, method13433);
             if (method13436 != null) {
                 final Class6997 method13437 = method13436.method13432();
                 this.field19875.add(new Class6997(method13437.field27293, method13437.field27294, this.field19849.field27298 - 1, method13437.field27296, method13437.field27297, this.field19849.field27298));
@@ -67,7 +69,7 @@ public class Class4482 extends Class4479
             if (n4 + 3 > this.field19849.method21419()) {
                 break;
             }
-            final Class4479 method13438 = Class9191.method33629(class4473, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 + n4, Class179.field515, method13433);
+            final Class4479 method13438 = Class9191.method33629(class4473, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 + n4, Direction.WEST, method13433);
             if (method13438 != null) {
                 final Class6997 method13439 = method13438.method13432();
                 this.field19875.add(new Class6997(this.field19849.field27293, method13439.field27294, method13439.field27295, this.field19849.field27293 + 1, method13439.field27297, method13439.field27298));
@@ -79,7 +81,7 @@ public class Class4482 extends Class4479
             if (n5 + 3 > this.field19849.method21419()) {
                 break;
             }
-            final Class4479 method13440 = Class9191.method33629(class4473, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 + n5, Class179.field516, method13433);
+            final Class4479 method13440 = Class9191.method33629(class4473, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + random.nextInt(n) + 1, this.field19849.field27295 + n5, Direction.EAST, method13433);
             if (method13440 != null) {
                 final Class6997 method13441 = method13440.method13432();
                 this.field19875.add(new Class6997(this.field19849.field27296 - 1, method13441.field27294, method13441.field27295, this.field19849.field27296, method13441.field27297, method13441.field27298));

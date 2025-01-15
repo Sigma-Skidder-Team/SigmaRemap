@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class5772 implements Class5770
@@ -36,11 +38,11 @@ public class Class5772 implements Class5770
     
     @Override
     public int method17159(final Random random) {
-        return Class9546.method35658(random, Class9546.method35642(this.field23609), Class9546.method35642(this.field23610));
+        return MathHelper.method35658(random, MathHelper.method35642(this.field23609), MathHelper.method35642(this.field23610));
     }
     
     public float method17169(final Random random) {
-        return Class9546.method35659(random, this.field23609, this.field23610);
+        return MathHelper.method35659(random, this.field23609, this.field23610);
     }
     
     public boolean method17170(final int n) {

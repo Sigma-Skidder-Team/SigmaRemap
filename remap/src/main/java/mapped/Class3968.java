@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -21,7 +23,7 @@ public class Class3968 extends Class3967
         return this.method12106(class7074.method21654(), class7074.method21639());
     }
     
-    public Class7096 method12106(final Class1855 class1855, final Class354 class1856) {
+    public Class7096 method12106(final Class1855 class1855, final BlockPos class1856) {
         final Class3833 method21696 = class1855.method6701(class1856.method1139()).method21696();
         final Class3833 method21697 = class1855.method6701(class1856.method1137()).method21696();
         final Class3833 method21698 = class1855.method6701(class1856.method1141()).method21696();
@@ -43,12 +45,12 @@ public class Class3968 extends Class3967
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Class179 class7097, final Class7096 class7098, final Class1851 class7099, final Class354 class7100, final Class354 class7101) {
+    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.method21752(class7099, class7100)) {
             final Class3833 method21696 = class7098.method21696();
             if (method21696 != this) {
                 if (method21696 != Class7521.field29631) {
-                    if (class7097 != Class179.field511 || method21696 != Class7521.field29403) {
+                    if (class7097 != Direction.DOWN || method21696 != Class7521.field29403) {
                         final boolean b = false;
                         return (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3968.field17927.get(class7097), b);
                     }
@@ -62,19 +64,19 @@ public class Class3968 extends Class3967
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (!class7096.method21752(class7097, class7098)) {
             class7097.method7149(class7098, true);
         }
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         final Class7096 method6701 = class7097.method6701(class7098.method1139());
         final boolean b = !class7097.method6701(class7098.method1137()).method21706() && !method6701.method21706();
-        final Iterator<Class179> iterator = Class98.field268.iterator();
+        final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
         while (iterator.hasNext()) {
-            final Class354 method6702 = class7098.method1149(iterator.next());
+            final BlockPos method6702 = class7098.method1149(iterator.next());
             if (class7097.method6701(method6702).method21696() != this) {
                 continue;
             }
@@ -97,7 +99,7 @@ public class Class3968 extends Class3967
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
 }

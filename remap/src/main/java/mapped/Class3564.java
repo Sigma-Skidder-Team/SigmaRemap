@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.UUID;
 import java.util.function.Predicate;
 
@@ -33,7 +34,7 @@ public class Class3564 extends Class3555<Class511>
             if (!(this.field16655.field2391 instanceof Class1849)) {
                 continue;
             }
-            final Class399 method6914 = ((Class1849)this.field16655.field2391).method6914(uuid);
+            final Entity method6914 = ((Class1849)this.field16655.field2391).method6914(uuid);
             if (!(method6914 instanceof Class511)) {
                 continue;
             }

@@ -16,13 +16,13 @@ public class Class7163 extends Class7133<Class6936>
         super(function);
     }
     
-    public Stream<Class354> method21913(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6936 class1853, final Class354 class1854) {
+    public Stream<BlockPos> method21913(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6936 class1853, final BlockPos class1854) {
         return IntStream.range(0, 16).mapToObj(p3 -> {
             final int n3;
             final int n2 = n3 * 4 + 1 + random2.nextInt(3) + class1855.method1074();
             final int n5;
             final int n4 = n5 * 4 + 1 + random2.nextInt(3) + class1855.method1076();
-            return new Class354(n2, class1856.method6699(Class2020.field11525, n2, n4), n4);
+            return new BlockPos(n2, class1856.method6699(Class2020.field11525, n2, n4), n4);
         });
     }
 }

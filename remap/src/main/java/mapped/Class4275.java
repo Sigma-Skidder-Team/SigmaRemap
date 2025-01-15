@@ -10,12 +10,12 @@ public class Class4275 implements Class4252<Class5813>
 {
     private static String[] field19170;
     private int field19171;
-    private Class354 field19172;
+    private BlockPos field19172;
     
     public Class4275() {
     }
     
-    public Class4275(final int field19171, final Class354 field19172) {
+    public Class4275(final int field19171, final BlockPos field19172) {
         this.field19171 = field19171;
         this.field19172 = field19172;
     }
@@ -40,7 +40,7 @@ public class Class4275 implements Class4252<Class5813>
         return this.field19171;
     }
     
-    public Class354 method12828() {
+    public BlockPos method12828() {
         return this.field19172;
     }
 }

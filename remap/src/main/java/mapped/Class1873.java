@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -89,7 +90,7 @@ public class Class1873 implements Class1867
     
     @Override
     public Class3090 method6960(final int n, final int n2, final int n3) {
-        return this.field10213[Class9546.method35651(n2, 0, Class1873.field10212) << Class1873.field10208 + Class1873.field10208 | (n3 & Class1873.field10211) << Class1873.field10208 | (n & Class1873.field10211)];
+        return this.field10213[MathHelper.method35651(n2, 0, Class1873.field10212) << Class1873.field10208 + Class1873.field10208 | (n3 & Class1873.field10211) << Class1873.field10208 | (n & Class1873.field10211)];
     }
     
     static {

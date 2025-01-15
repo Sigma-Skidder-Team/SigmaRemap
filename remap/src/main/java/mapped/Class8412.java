@@ -9,12 +9,12 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Locale;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8412
 {
@@ -74,7 +74,7 @@ public class Class8412
     private static int method28090(final Class7492 class7492) {
         final double method34791 = class7492.method23250().method6787().method34791();
         class7492.method23257(new Class2259("commands.worldborder.get", new Object[] { String.format(Locale.ROOT, "%.0f", method34791) }), false);
-        return Class9546.method35644(method34791 + 0.5);
+        return MathHelper.floor(method34791 + 0.5);
     }
     
     private static int method28091(final Class7492 class7492, final Class9544 class7493) throws CommandSyntaxException {

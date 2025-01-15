@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class5859<T extends Class827> extends Class5853<T> implements Class5858
 {
     private static String[] field24018;
@@ -49,8 +51,8 @@ public class Class5859<T extends Class827> extends Class5853<T> implements Class
     
     public void method17592(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         super.method17580(t, n, n2, n3, n4, n5);
-        final float method35638 = Class9546.method35638(this.field23955 * 3.1415927f);
-        final float method35639 = Class9546.method35638((1.0f - (1.0f - this.field23955) * (1.0f - this.field23955)) * 3.1415927f);
+        final float method35638 = MathHelper.sin(this.field23955 * 3.1415927f);
+        final float method35639 = MathHelper.sin((1.0f - (1.0f - this.field23955) * (1.0f - this.field23955)) * 3.1415927f);
         this.field23996.field25185 = 0.0f;
         this.field23997.field25185 = 0.0f;
         this.field23996.field25184 = -(0.1f - method35638 * 0.6f);
@@ -63,13 +65,13 @@ public class Class5859<T extends Class827> extends Class5853<T> implements Class
         final Class6300 field23997 = this.field23997;
         field23997.field25183 += method35638 * 1.2f - method35639 * 0.4f;
         final Class6300 field23998 = this.field23996;
-        field23998.field25185 += Class9546.method35639(n3 * 0.09f) * 0.05f + 0.05f;
+        field23998.field25185 += MathHelper.cos(n3 * 0.09f) * 0.05f + 0.05f;
         final Class6300 field23999 = this.field23997;
-        field23999.field25185 -= Class9546.method35639(n3 * 0.09f) * 0.05f + 0.05f;
+        field23999.field25185 -= MathHelper.cos(n3 * 0.09f) * 0.05f + 0.05f;
         final Class6300 field24000 = this.field23996;
-        field24000.field25183 += Class9546.method35638(n3 * 0.067f) * 0.05f;
+        field24000.field25183 += MathHelper.sin(n3 * 0.067f) * 0.05f;
         final Class6300 field24001 = this.field23997;
-        field24001.field25183 -= Class9546.method35638(n3 * 0.067f) * 0.05f;
+        field24001.field25183 -= MathHelper.sin(n3 * 0.067f) * 0.05f;
     }
     
     @Override

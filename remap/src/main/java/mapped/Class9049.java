@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import java.util.Set;
 import java.util.Collection;
@@ -17,7 +19,7 @@ public class Class9049
 {
     private static final Logger field38299;
     private final Class1849 field38300;
-    private final Class399 field38301;
+    private final Entity field38301;
     private final int field38302;
     private final boolean field38303;
     private final Consumer<Class4252<?>> field38304;
@@ -27,15 +29,15 @@ public class Class9049
     private int field38308;
     private int field38309;
     private int field38310;
-    private Class5487 field38311;
+    private Vec3d field38311;
     private int field38312;
     private int field38313;
-    private List<Class399> field38314;
+    private List<Entity> field38314;
     private boolean field38315;
     private boolean field38316;
     
-    public Class9049(final Class1849 field38300, final Class399 field38301, final int field38302, final boolean field38303, final Consumer<Class4252<?>> field38304) {
-        this.field38311 = Class5487.field22769;
+    public Class9049(final Class1849 field38300, final Entity field38301, final int field38302, final boolean field38303, final Consumer<Class4252<?>> field38304) {
+        this.field38311 = Vec3d.field22769;
         this.field38314 = Collections.emptyList();
         this.field38300 = field38300;
         this.field38304 = field38304;
@@ -43,14 +45,14 @@ public class Class9049
         this.field38302 = field38302;
         this.field38303 = field38303;
         this.method32543();
-        this.field38308 = Class9546.method35642(field38301.field2399 * 256.0f / 360.0f);
-        this.field38309 = Class9546.method35642(field38301.field2400 * 256.0f / 360.0f);
-        this.field38310 = Class9546.method35642(field38301.method1844() * 256.0f / 360.0f);
+        this.field38308 = MathHelper.method35642(field38301.field2399 * 256.0f / 360.0f);
+        this.field38309 = MathHelper.method35642(field38301.field2400 * 256.0f / 360.0f);
+        this.field38310 = MathHelper.method35642(field38301.method1844() * 256.0f / 360.0f);
         this.field38316 = field38301.field2404;
     }
     
     public void method32538() {
-        final List<Class399> method1908 = this.field38301.method1908();
+        final List<Entity> method1908 = this.field38301.method1908();
         if (!method1908.equals(this.field38314)) {
             this.field38314 = method1908;
             this.field38304.accept(new Class4286(this.field38301));
@@ -82,9 +84,9 @@ public class Class9049
             }
             if (!this.field38301.method1805()) {
                 ++this.field38313;
-                final int method1912 = Class9546.method35642(this.field38301.field2399 * 256.0f / 360.0f);
-                final int method1913 = Class9546.method35642(this.field38301.field2400 * 256.0f / 360.0f);
-                final Class5487 method1914 = this.field38301.method1934().method16741(Class4370.method13141(this.field38305, this.field38306, this.field38307));
+                final int method1912 = MathHelper.method35642(this.field38301.field2399 * 256.0f / 360.0f);
+                final int method1913 = MathHelper.method35642(this.field38301.field2400 * 256.0f / 360.0f);
+                final Vec3d method1914 = this.field38301.method1934().method16741(Class4370.method13141(this.field38305, this.field38306, this.field38307));
                 final boolean b = method1914.method16753() >= 7.62939453125E-6;
                 Class4252<?> class514 = null;
                 final boolean b2 = b || this.field38312 % 60 == 0;
@@ -152,7 +154,7 @@ public class Class9049
                         }
                     }
                     if (this.field38312 > 0) {
-                        final Class5487 method1918 = this.field38301.method1935();
+                        final Vec3d method1918 = this.field38301.method1935();
                         final double method1919 = method1918.method16746(this.field38311);
                         if (method1919 <= 1.0E-7) {
                             if (method1919 <= 0.0) {
@@ -180,8 +182,8 @@ public class Class9049
                 this.field38315 = false;
             }
             else {
-                final int method1920 = Class9546.method35642(this.field38301.field2399 * 256.0f / 360.0f);
-                final int method1921 = Class9546.method35642(this.field38301.field2400 * 256.0f / 360.0f);
+                final int method1920 = MathHelper.method35642(this.field38301.field2399 * 256.0f / 360.0f);
+                final int method1921 = MathHelper.method35642(this.field38301.field2400 * 256.0f / 360.0f);
                 if (Math.abs(method1920 - this.field38308) >= 1 || Math.abs(method1921 - this.field38309) >= 1) {
                     this.field38304.accept(new Class4373(this.field38301.method1643(), (byte)method1920, (byte)method1921, this.field38301.field2404));
                     this.field38308 = method1920;
@@ -191,7 +193,7 @@ public class Class9049
                 this.method32542();
                 this.field38315 = true;
             }
-            final int method1922 = Class9546.method35642(this.field38301.method1844() * 256.0f / 360.0f);
+            final int method1922 = MathHelper.method35642(this.field38301.method1844() * 256.0f / 360.0f);
             if (Math.abs(method1922 - this.field38310) >= 1) {
                 this.field38304.accept(new Class4364(this.field38301, (byte)method1922));
                 this.field38310 = method1922;
@@ -221,7 +223,7 @@ public class Class9049
             Class9049.field38299.warn("Fetching packet for removed entity " + this.field38301);
         }
         final Class4252<?> method1932 = this.field38301.method1932();
-        this.field38310 = Class9546.method35642(this.field38301.method1844() * 256.0f / 360.0f);
+        this.field38310 = MathHelper.method35642(this.field38301.method1844() * 256.0f / 360.0f);
         consumer.accept(method1932);
         if (!this.field38301.method1650().method33579()) {
             consumer.accept(new Class4268(this.field38301.method1643(), this.field38301.method1650(), true));
@@ -290,7 +292,7 @@ public class Class9049
         this.field38307 = Class4370.method13140(this.field38301.method1945());
     }
     
-    public Class5487 method32544() {
+    public Vec3d method32544() {
         return Class4370.method13141(this.field38305, this.field38306, this.field38307);
     }
     

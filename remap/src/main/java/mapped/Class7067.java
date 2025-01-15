@@ -4,11 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import java.util.HashMap;
 import com.google.common.base.Splitter;
-import java.util.Collection;
-import java.util.stream.Collector;
+
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import com.mojang.datafixers.util.Pair;
@@ -284,47 +283,47 @@ public class Class7067 extends Class7065
         this.field27518.get(s).put(anObject, s2);
         if ("village".equals(s)) {
             if ("distance".equals(anObject)) {
-                this.field27477 = Class9546.method35676(s2, this.field27477, 9);
+                this.field27477 = MathHelper.method35676(s2, this.field27477, 9);
             }
         }
         if ("biome_1".equals(s)) {
             if ("distance".equals(anObject)) {
-                this.field27484 = Class9546.method35676(s2, this.field27484, 9);
+                this.field27484 = MathHelper.method35676(s2, this.field27484, 9);
             }
         }
         if ("stronghold".equals(s)) {
             if (!"distance".equals(anObject)) {
                 if (!"count".equals(anObject)) {
                     if ("spread".equals(anObject)) {
-                        this.field27483 = Class9546.method35676(s2, this.field27483, 1);
+                        this.field27483 = MathHelper.method35676(s2, this.field27483, 1);
                     }
                 }
                 else {
-                    this.field27482 = Class9546.method35676(s2, this.field27482, 1);
+                    this.field27482 = MathHelper.method35676(s2, this.field27482, 1);
                 }
             }
             else {
-                this.field27481 = Class9546.method35676(s2, this.field27481, 1);
+                this.field27481 = MathHelper.method35676(s2, this.field27481, 1);
             }
         }
         if ("oceanmonument".equals(s)) {
             if (!"separation".equals(anObject)) {
                 if ("spacing".equals(anObject)) {
-                    this.field27479 = Class9546.method35676(s2, this.field27479, 1);
+                    this.field27479 = MathHelper.method35676(s2, this.field27479, 1);
                 }
             }
             else {
-                this.field27480 = Class9546.method35676(s2, this.field27480, 1);
+                this.field27480 = MathHelper.method35676(s2, this.field27480, 1);
             }
         }
         if ("endcity".equals(s)) {
             if ("distance".equals(anObject)) {
-                this.field27488 = Class9546.method35676(s2, this.field27488, 1);
+                this.field27488 = MathHelper.method35676(s2, this.field27488, 1);
             }
         }
         if ("mansion".equals(s)) {
             if ("distance".equals(anObject)) {
-                this.field27492 = Class9546.method35676(s2, this.field27492, 1);
+                this.field27492 = MathHelper.method35676(s2, this.field27492, 1);
             }
         }
     }

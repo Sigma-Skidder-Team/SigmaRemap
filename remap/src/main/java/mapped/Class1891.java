@@ -9,6 +9,7 @@ import it.unimi.dsi.fastutil.longs.LongArrayList;
 import java.util.function.LongPredicate;
 import it.unimi.dsi.fastutil.longs.Long2ByteMap;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class1891
 {
@@ -104,8 +105,8 @@ public abstract class Class1891
     
     private void method7321(final long n, final long n2, int method35651, int method35652, int a, final boolean b) {
         if (!this.method7300(n2)) {
-            method35651 = Class9546.method35651(method35651, 0, this.field10282 - 1);
-            method35652 = Class9546.method35651(method35652, 0, this.field10282 - 1);
+            method35651 = MathHelper.method35651(method35651, 0, this.field10282 - 1);
+            method35652 = MathHelper.method35651(method35652, 0, this.field10282 - 1);
             boolean b2;
             if (a != 255) {
                 b2 = false;
@@ -116,7 +117,7 @@ public abstract class Class1891
             }
             int n3;
             if (!b) {
-                n3 = Class9546.method35651(this.method7301(n2, n, method35651), 0, this.field10282 - 1);
+                n3 = MathHelper.method35651(this.method7301(n2, n, method35651), 0, this.field10282 - 1);
             }
             else {
                 n3 = Math.min(a, method35651);
@@ -141,7 +142,7 @@ public abstract class Class1891
     
     public final void method7322(final long n, final long n2, final int n3, final boolean b) {
         final int n4 = this.field10284.get(n2) & 0xFF;
-        final int method35651 = Class9546.method35651(this.method7305(n, n2, n3), 0, this.field10282 - 1);
+        final int method35651 = MathHelper.method35651(this.method7305(n, n2, n3), 0, this.field10282 - 1);
         if (!b) {
             int method35652;
             boolean b2;
@@ -151,7 +152,7 @@ public abstract class Class1891
             }
             else {
                 b2 = true;
-                method35652 = Class9546.method35651(this.method7302(n2), 0, this.field10282 - 1);
+                method35652 = MathHelper.method35651(this.method7302(n2), 0, this.field10282 - 1);
             }
             if (method35651 == method35652) {
                 this.method7321(n, n2, this.field10282 - 1, b2 ? method35652 : this.method7302(n2), n4, false);
@@ -175,7 +176,7 @@ public abstract class Class1891
                     return 0;
                 }
                 final long removeFirstLong = set.removeFirstLong();
-                final int method35651 = Class9546.method35651(this.method7302(removeFirstLong), 0, this.field10282 - 1);
+                final int method35651 = MathHelper.method35651(this.method7302(removeFirstLong), 0, this.field10282 - 1);
                 if (set.isEmpty()) {
                     this.method7315(this.field10282);
                 }

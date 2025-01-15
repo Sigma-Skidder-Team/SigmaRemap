@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,17 +28,17 @@ public class Class3603 extends Class3446
         int n = 0;
         final Iterator<Class423> iterator = method7128.iterator();
         while (iterator.hasNext()) {
-            final Class399 method7129 = iterator.next().method1907();
-            if (method7129 instanceof Class511 && (Class9546.method35647(((Class511)method7129).field2968) > 0.0f || Class9546.method35647(((Class511)method7129).field2970) > 0.0f)) {
+            final Entity method7129 = iterator.next().method1907();
+            if (method7129 instanceof Class511 && (MathHelper.method35647(((Class511)method7129).field2968) > 0.0f || MathHelper.method35647(((Class511)method7129).field2970) > 0.0f)) {
                 n = 1;
                 break;
             }
         }
         if (this.field16782 != null) {
-            if (Class9546.method35647(this.field16782.field2968) > 0.0f) {
+            if (MathHelper.method35647(this.field16782.field2968) > 0.0f) {
                 return true;
             }
-            if (Class9546.method35647(this.field16782.field2970) > 0.0f) {
+            if (MathHelper.method35647(this.field16782.field2970) > 0.0f) {
                 return true;
             }
         }
@@ -54,7 +57,7 @@ public class Class3603 extends Class3446
     public boolean method11017() {
         if (this.field16782 != null) {
             if (this.field16782.method1805()) {
-                if (Class9546.method35647(this.field16782.field2968) > 0.0f || Class9546.method35647(this.field16782.field2970) > 0.0f) {
+                if (MathHelper.method35647(this.field16782.field2968) > 0.0f || MathHelper.method35647(this.field16782.field2970) > 0.0f) {
                     return true;
                 }
             }
@@ -81,7 +84,7 @@ public class Class3603 extends Class3446
     
     @Override
     public void method11016() {
-        final boolean b = Class9546.method35647(this.field16782.field2968) > 0.0f || Class9546.method35647(this.field16782.field2970) > 0.0f;
+        final boolean b = MathHelper.method35647(this.field16782.field2968) > 0.0f || MathHelper.method35647(this.field16782.field2970) > 0.0f;
         this.field16781.method1724((this.field16783 != Class2155.field12801) ? 0.135f : (b ? 0.17999999f : 0.0f), new Class5487(this.field16781.field2968, this.field16781.field2969, this.field16781.field2970));
         this.field16781.method1671(Class2160.field12826, this.field16781.method1935());
         final int field16780 = this.field16780 - 1;
@@ -90,8 +93,8 @@ public class Class3603 extends Class3446
             this.field16780 = 10;
             if (this.field16783 != Class2155.field12800) {
                 if (this.field16783 == Class2155.field12801) {
-                    final Class354 method1150 = new Class354(this.field16782).method1150(this.field16782.method1883(), 10);
-                    this.field16781.method4150().method24724(method1150.method1074(), method1150.method1075() - 1, method1150.method1076(), 1.0);
+                    final BlockPos method1150 = new BlockPos(this.field16782).method1150(this.field16782.method1883(), 10);
+                    this.field16781.method4150().method24724(method1150.getX(), method1150.getY() - 1, method1150.getZ(), 1.0);
                     if (this.field16781.method1732(this.field16782) > 12.0f) {
                         this.field16780 = 0;
                         this.field16783 = Class2155.field12800;
@@ -99,8 +102,8 @@ public class Class3603 extends Class3446
                 }
             }
             else {
-                final Class354 method1151 = new Class354(this.field16782).method1149(this.field16782.method1882().method782()).method1134(0, -1, 0);
-                this.field16781.method4150().method24724(method1151.method1074(), method1151.method1075(), method1151.method1076(), 1.0);
+                final BlockPos method1151 = new BlockPos(this.field16782).method1149(this.field16782.method1882().getOpposite()).method1134(0, -1, 0);
+                this.field16781.method4150().method24724(method1151.getX(), method1151.getY(), method1151.getZ(), 1.0);
                 if (this.field16781.method1732(this.field16782) < 4.0f) {
                     this.field16780 = 0;
                     this.field16783 = Class2155.field12801;

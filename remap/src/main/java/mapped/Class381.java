@@ -19,7 +19,7 @@ public class Class381 extends Class378
     }
     
     @Override
-    public void method1261(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final int n2, final int n3, final Class354 class1877, final Set<Class354> set) {
+    public void method1261(final Class1875 class1875, final Random random, final Class5129 class1876, final int n, final int n2, final int n3, final BlockPos class1877, final Set<BlockPos> set) {
         int n4 = 0;
         for (int i = n; i >= n2; --i) {
             this.method1265(class1875, random, class1876, n, class1877, i, n4, set);

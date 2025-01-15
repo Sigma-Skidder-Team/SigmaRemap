@@ -20,7 +20,7 @@ public class Class3369 extends Class3167
     @Class6753
     public void method10716(final Class5753 class5753) {
         if (this.method9906() && Class3369.field15514.field4683 != null) {
-            if (class5753.method17064().method1075() >= Class3369.field15514.field4684.field2396) {
+            if (class5753.method17064().getY() >= Class3369.field15514.field4684.field2396) {
                 class5753.method17067(Class7698.method24486());
             }
         }

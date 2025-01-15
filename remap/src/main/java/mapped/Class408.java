@@ -4,7 +4,10 @@
 
 package mapped;
 
-public class Class408 extends Class399 implements Class407
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
+public class Class408 extends Entity implements Class407
 {
     private static final Class8810<Class8321> field2500;
     private double field2501;
@@ -54,13 +57,13 @@ public class Class408 extends Class399 implements Class407
         return n < n2 * n2;
     }
     
-    public void method2010(final Class354 class354) {
-        final double field2501 = class354.method1074();
-        final int method1075 = class354.method1075();
-        final double field2502 = class354.method1076();
+    public void method2010(final BlockPos class354) {
+        final double field2501 = class354.getX();
+        final int method1075 = class354.getY();
+        final double field2502 = class354.getZ();
         final double n = field2501 - this.method1938();
         final double n2 = field2502 - this.method1945();
-        final float method1076 = Class9546.method35641(n * n + n2 * n2);
+        final float method1076 = MathHelper.method35641(n * n + n2 * n2);
         if (method1076 <= 12.0f) {
             this.field2501 = field2501;
             this.field2502 = method1075;
@@ -80,9 +83,9 @@ public class Class408 extends Class399 implements Class407
         this.method1937(n, n2, n3);
         if (this.field2402 == 0.0f) {
             if (this.field2401 == 0.0f) {
-                final float method35641 = Class9546.method35641(n * n + n3 * n3);
-                this.field2399 = (float)(Class9546.method35693(n, n3) * 57.2957763671875);
-                this.field2400 = (float)(Class9546.method35693(n2, method35641) * 57.2957763671875);
+                final float method35641 = MathHelper.method35641(n * n + n3 * n3);
+                this.field2399 = (float)(MathHelper.method35693(n, n3) * 57.2957763671875);
+                this.field2400 = (float)(MathHelper.method35693(n2, method35641) * 57.2957763671875);
                 this.field2401 = this.field2399;
                 this.field2402 = this.field2400;
             }
@@ -96,9 +99,9 @@ public class Class408 extends Class399 implements Class407
         final double n = this.method1938() + method1935.field22770;
         final double n2 = this.method1941() + method1935.field22771;
         final double n3 = this.method1945() + method1935.field22772;
-        final float method1936 = Class9546.method35641(Class399.method1680(method1935));
-        this.field2399 = (float)(Class9546.method35693(method1935.field22770, method1935.field22772) * 57.2957763671875);
-        this.field2400 = (float)(Class9546.method35693(method1935.field22771, method1936) * 57.2957763671875);
+        final float method1936 = MathHelper.method35641(Entity.method1680(method1935));
+        this.field2399 = (float)(MathHelper.method35693(method1935.field22770, method1935.field22772) * 57.2957763671875);
+        this.field2400 = (float)(MathHelper.method35693(method1935.field22771, method1936) * 57.2957763671875);
         while (this.field2400 - this.field2402 < -180.0f) {
             this.field2402 -= 360.0f;
         }
@@ -111,14 +114,14 @@ public class Class408 extends Class399 implements Class407
         while (this.field2399 - this.field2401 >= 180.0f) {
             this.field2401 += 360.0f;
         }
-        this.field2400 = Class9546.method35700(0.2f, this.field2402, this.field2400);
-        this.field2399 = Class9546.method35700(0.2f, this.field2401, this.field2399);
+        this.field2400 = MathHelper.method35700(0.2f, this.field2402, this.field2400);
+        this.field2399 = MathHelper.method35700(0.2f, this.field2401, this.field2399);
         if (!this.field2391.field10067) {
             final double n4 = this.field2501 - n;
             final double n5 = this.field2503 - n3;
             final float n6 = (float)Math.sqrt(n4 * n4 + n5 * n5);
-            final float n7 = (float)Class9546.method35693(n5, n4);
-            double method1937 = Class9546.method35701(0.0025, method1936, n6);
+            final float n7 = (float) MathHelper.method35693(n5, n4);
+            double method1937 = MathHelper.method35701(0.0025, method1936, n6);
             double field22771 = method1935.field22771;
             if (n6 < 1.0f) {
                 method1937 *= 0.8;
@@ -146,7 +149,7 @@ public class Class408 extends Class399 implements Class407
                     this.method1695(Class8520.field35160, 1.0f, 1.0f);
                     this.method1652();
                     if (!this.field2505) {
-                        this.field2391.method6955(2003, new Class354(this), 0);
+                        this.field2391.method6955(2003, new BlockPos(this), 0);
                     }
                     else {
                         this.field2391.method6886(new Class427(this.field2391, this.method1938(), this.method1941(), this.method1945(), this.method2005()));

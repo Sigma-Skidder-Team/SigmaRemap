@@ -11,5 +11,5 @@ public interface Class5817
 {
     void method17510();
     
-    boolean method17511(final Class1795 p0, final int p1, final Class4517 p2, final Class354 p3, final List<Class4473> p4, final Random p5);
+    boolean method17511(final Class1795 p0, final int p1, final Class4517 p2, final BlockPos p3, final List<Class4473> p4, final Random p5);
 }

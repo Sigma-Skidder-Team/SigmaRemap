@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Comparator;
 
-public class Class4463 implements Comparator<Class399>
+public class Class4463 implements Comparator<Entity>
 {
     private static String[] field19818;
     public final /* synthetic */ Class3232 field19819;
@@ -16,7 +18,7 @@ public class Class4463 implements Comparator<Class399>
     }
     
     @Override
-    public int compare(final Class399 class399, final Class399 class400) {
+    public int compare(final Entity class399, final Entity class400) {
         final float method30918 = Class8845.method30918(Class8845.method30922(class399).field32884, Class3232.method10196().field4684.field2399);
         final float method30919 = Class8845.method30918(Class8845.method30922(class400).field32884, Class3232.method10197().field4684.field2399);
         if (method30918 - method30919 < 0.0f) {

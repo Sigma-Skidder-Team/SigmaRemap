@@ -5,8 +5,10 @@
 package mapped;
 
 import java.util.Random;
-import java.util.Iterator;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.List;
 
 public class Class6924
@@ -41,7 +43,7 @@ public class Class6924
         return b;
     }
     
-    private static Class4500 method21293(final Class<? extends Class4500> clazz, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class179, final int n4) {
+    private static Class4500 method21293(final Class<? extends Class4500> clazz, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
         Class4500 class180 = null;
         if (clazz != Class4513.class) {
             if (clazz != Class4502.class) {
@@ -99,7 +101,7 @@ public class Class6924
         return class180;
     }
     
-    private static Class4500 method21294(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class4508, final int n4) {
+    private static Class4500 method21294(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class4508, final int n4) {
         if (method21292()) {
             if (Class6924.field27138 != null) {
                 final Class4500 method21293 = method21293(Class6924.field27138, list, random, n, n2, n3, class4508, n4);
@@ -142,7 +144,7 @@ public class Class6924
         return null;
     }
     
-    private static Class4473 method21295(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Class179 class4508, final int n4) {
+    private static Class4473 method21295(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class4508, final int n4) {
         if (n4 > 50) {
             return null;
         }

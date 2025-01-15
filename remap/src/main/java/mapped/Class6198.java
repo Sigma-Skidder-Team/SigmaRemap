@@ -33,7 +33,7 @@ public class Class6198 extends Class6197
                 this.method18436(1.0f - (this.field24950 - (float)(this.field24951 / 2)) / this.field24951);
             }
             this.method18431(this.field24939, this.field24940, this.field24941);
-            if (this.field24932.method6701(new Class354(this.field24936, this.field24937, this.field24938)).method21706()) {
+            if (this.field24932.method6701(new BlockPos(this.field24936, this.field24937, this.field24938)).method21706()) {
                 this.field24940 -= 0.00800000037997961;
             }
             this.field24939 *= 0.9200000166893005;

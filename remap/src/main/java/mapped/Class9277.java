@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -80,7 +82,7 @@ public class Class9277 extends Class9278<Class9277>
         this.field39781 = this.method34234("level-type", Class9505::method35410, Class9505::method35398, Class9505.field40892);
         this.field39782 = this.method34239("generator-settings", "");
         this.field39783 = this.method34241("server-port", 25565);
-        this.field39784 = this.method34243("max-build-height", n -> Class9546.method35651((n + 8) / 16 * 16, 64, 256), 256);
+        this.field39784 = this.method34243("max-build-height", n -> MathHelper.method35651((n + 8) / 16 * 16, 64, 256), 256);
         this.field39785 = this.method34247("announce-player-achievements");
         this.field39786 = this.method34245("enable-query", false);
         this.field39787 = this.method34241("query.port", 25565);
@@ -105,7 +107,7 @@ public class Class9277 extends Class9278<Class9277>
         this.field39805 = this.method34241("network-compression-threshold", 256);
         this.field39806 = this.method34245("broadcast-rcon-to-ops", true);
         this.field39807 = this.method34245("broadcast-console-to-ops", true);
-        this.field39808 = this.method34243("max-world-size", n3 -> Class9546.method35651(n3, 1, 29999984), 29999984);
+        this.field39808 = this.method34243("max-world-size", n3 -> MathHelper.method35651(n3, 1, 29999984), 29999984);
         this.field39809 = this.method34242("player-idle-timeout", 0);
         this.field39810 = this.method34246("white-list", false);
     }

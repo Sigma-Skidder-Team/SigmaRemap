@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.UUID;
 
 public class Class8876
@@ -36,7 +38,7 @@ public class Class8876
         }
     }
     
-    public static Class399 method31207(final UUID uuid) {
+    public static Entity method31207(final UUID uuid) {
         final Class1849 method31206 = method31206();
         if (method31206 != null) {
             return method31206.method6914(uuid);
@@ -44,12 +46,12 @@ public class Class8876
         return null;
     }
     
-    public static Class436 method31208(final Class354 class354) {
+    public static Class436 method31208(final BlockPos class354) {
         final Class1849 method31206 = method31206();
         if (method31206 == null) {
             return null;
         }
-        final Class1860 method31207 = method31206.method6904().method7402(class354.method1074() >> 4, class354.method1076() >> 4, Class9312.field39989, false);
+        final Class1860 method31207 = method31206.method6904().method7402(class354.getX() >> 4, class354.getZ() >> 4, Class9312.field39989, false);
         if (method31207 != null) {
             return method31207.method6727(class354);
         }

@@ -5,6 +5,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
+import net.minecraft.util.Direction;
 
 public class Class4169 extends Class4158<Class437>
 {
@@ -40,16 +41,16 @@ public class Class4169 extends Class4158<Class437>
         final Class3687 class440 = Class8752.field36753[class437.method2213().method813()];
         final Class1847 method2186 = class437.method2186();
         if (method2186 == null) {
-            this.method12484(class438, class439, true, Class179.field514, class440, n2, n3, false);
-            this.method12484(class438, class439, false, Class179.field514, class440, n2, n3, true);
+            this.method12484(class438, class439, true, Direction.SOUTH, class440, n2, n3, false);
+            this.method12484(class438, class439, false, Direction.SOUTH, class440, n2, n3, true);
         }
         else {
             final Class7096 method2187 = class437.method2194();
-            this.method12484(class438, class439, method2187.method21772(Class3900.field17599) == Class105.field323, method2187.method21772((Class7111<Class179>)Class3900.field17564), class440, Class8565.method28798(Class5412.field22564, Class3900::method11990, Class3900::method11989, Class3865.field17497, method2187, method2186, class437.method2193(), (p0, p1) -> false).method22074((Class6389<? super Class437, Int2IntFunction>)new Class6388<Object>()).get(n2), n3, false);
+            this.method12484(class438, class439, method2187.method21772(Class3900.field17599) == Class105.field323, method2187.method21772((Class7111<Direction>)Class3900.field17564), class440, Class8565.method28798(Class5412.field22564, Class3900::method11990, Class3900::method11989, Class3865.field17497, method2187, method2186, class437.method2193(), (p0, p1) -> false).method22074((Class6389<? super Class437, Int2IntFunction>)new Class6388<Object>()).get(n2), n3, false);
         }
     }
     
-    private void method12484(final Class7351 class7351, final Class7807 class7352, final boolean field25187, final Class179 class7353, final Class3687 class7354, final int n, final int n2, final boolean b) {
+    private void method12484(final Class7351 class7351, final Class7807 class7352, final boolean field25187, final Direction class7353, final Class3687 class7354, final int n, final int n2, final boolean b) {
         this.field18580.field25187 = field25187;
         this.field18581.field25187 = !field25187;
         this.field18582[0].field25187 = !field25187;
@@ -58,9 +59,9 @@ public class Class4169 extends Class4158<Class437>
         this.field18582[3].field25187 = field25187;
         class7351.method22567();
         class7351.method22564(0.0, 0.5625, b ? -1.0 : 0.0);
-        class7351.method22566(Class9138.field38716.method33328(90.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
         class7351.method22564(0.5, 0.5, 0.5);
-        class7351.method22566(Class9138.field38720.method33328(180.0f + class7353.method797()));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f + class7353.getHorizontalAngle()));
         class7351.method22564(-0.5, -0.5, -0.5);
         final Class4150 method11334 = class7354.method11334(class7352, Class6332::method18767);
         this.field18580.method18643(class7351, method11334, n, n2);

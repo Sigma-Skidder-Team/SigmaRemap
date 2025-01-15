@@ -35,7 +35,7 @@ public class Class9106
         }
     }
     
-    public void method32920(final Class1848 class1848, final Class354 class1849, final Class7096 class1850, final float n) {
+    public void method32920(final Class1848 class1848, final BlockPos class1849, final Class7096 class1850, final float n) {
         if (this.field38574 != null) {
             this.field38574.method21660(class1848, class1849, class1850, n);
         }

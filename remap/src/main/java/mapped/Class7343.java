@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -38,7 +40,7 @@ public class Class7343
             this.method22555();
         }
         final String str2 = this.field28357.get();
-        this.field28360 = Class9546.method35651(this.field28360, 0, str2.length());
+        this.field28360 = MathHelper.method35651(this.field28360, 0, str2.length());
         final String string = new StringBuilder(str2).insert(this.field28360, str).toString();
         if (this.field28356.method6617(string) <= this.field28359) {
             this.field28358.accept(string);

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Set;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Optional;
@@ -50,9 +49,9 @@ public class Class5461 extends Class5419<Class511>
     public boolean method16549(final Class1849 class1849, final Class511 class1850, final long n) {
         final Optional<Class363> method1198 = class1850.method2618().method1198(Class8233.field33800);
         if (method1198.isPresent()) {
-            final Class354 method1199 = method1198.get().method1170();
+            final BlockPos method1199 = method1198.get().method1170();
             if (class1850.method2618().method1209(Class7635.field30230)) {
-                if (class1850.method1941() > method1199.method1075() + 0.4) {
+                if (class1850.method1941() > method1199.getY() + 0.4) {
                     if (method1199.method1082(class1850.method1934(), 1.14)) {
                         return true;
                     }
@@ -66,7 +65,7 @@ public class Class5461 extends Class5419<Class511>
     @Override
     public void method16539(final Class1849 class1849, final Class511 class1850, final long n) {
         if (n > this.field22719) {
-            class1850.method2618().method1198(Class8233.field33815).ifPresent(p2 -> Class5425.method16574(class1851, (List<Class354>)ImmutableList.of(), 0, class1852, class1852.method2618()));
+            class1850.method2618().method1198(Class8233.field33815).ifPresent(p2 -> Class5425.method16574(class1851, (List<BlockPos>)ImmutableList.of(), 0, class1852, class1852.method2618()));
             class1850.method2784(class1850.method2618().method1198(Class8233.field33800).get().method1170());
         }
     }

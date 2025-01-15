@@ -19,22 +19,22 @@ public class Class7247 extends AbstractIterator
     
     public Class384 method22144() {
         if (this.field28095 == null) {
-            return this.field28095 = new Class384(this.field28096.field266.method1074(), this.field28096.field266.method1075(), this.field28096.field266.method1076(), 3);
+            return this.field28095 = new Class384(this.field28096.field266.getX(), this.field28096.field266.getY(), this.field28096.field266.getZ(), 3);
         }
         if (!this.field28095.equals(this.field28096.field267)) {
-            int n = this.field28095.method1074();
-            int n2 = this.field28095.method1075();
-            int method1076 = this.field28095.method1076();
-            if (n >= this.field28096.field267.method1074()) {
-                if (n2 >= this.field28096.field267.method1075()) {
-                    if (method1076 < this.field28096.field267.method1076()) {
-                        n = this.field28096.field266.method1074();
-                        n2 = this.field28096.field266.method1075();
+            int n = this.field28095.getX();
+            int n2 = this.field28095.getY();
+            int method1076 = this.field28095.getZ();
+            if (n >= this.field28096.field267.getX()) {
+                if (n2 >= this.field28096.field267.getY()) {
+                    if (method1076 < this.field28096.field267.getZ()) {
+                        n = this.field28096.field266.getX();
+                        n2 = this.field28096.field266.getY();
                         ++method1076;
                     }
                 }
                 else {
-                    n = this.field28096.field266.method1074();
+                    n = this.field28096.field266.getX();
                     ++n2;
                 }
             }

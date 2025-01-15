@@ -23,8 +23,8 @@ public class Class7870
         this.field32314 = class1862.method6701(this.method25489());
     }
     
-    public Class354 method25489() {
-        return new Class354(this.field32315.field19330.method25434(this.field32313 >> 12 & 0xF, this.field32313 & 0xFF, this.field32313 >> 8 & 0xF));
+    public BlockPos method25489() {
+        return new BlockPos(this.field32315.field19330.method25434(this.field32313 >> 12 & 0xF, this.field32313 & 0xFF, this.field32313 >> 8 & 0xF));
     }
     
     public short method25490() {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6568 extends Class6564
 {
     private static String[] field26083;
@@ -28,10 +30,10 @@ public class Class6568 extends Class6564
             final double n = this.field26067 - this.field26084.method1938();
             final double n2 = this.field26068 - this.field26084.method1941();
             final double n3 = this.field26069 - this.field26084.method1945();
-            final double n4 = n2 / Class9546.method35641(n * n + n2 * n2 + n3 * n3);
-            this.field26084.field2399 = this.method19909(this.field26084.field2399, (float)(Class9546.method35693(n3, n) * 57.2957763671875) - 90.0f, 90.0f);
+            final double n4 = n2 / MathHelper.method35641(n * n + n2 * n2 + n3 * n3);
+            this.field26084.field2399 = this.method19909(this.field26084.field2399, (float)(MathHelper.method35693(n3, n) * 57.2957763671875) - 90.0f, 90.0f);
             this.field26084.field2951 = this.field26084.field2399;
-            final float method4153 = Class9546.method35700(0.125f, this.field26084.method2732(), (float)(this.field26070 * this.field26084.method2710(Class8107.field33408).method23950()));
+            final float method4153 = MathHelper.method35700(0.125f, this.field26084.method2732(), (float)(this.field26070 * this.field26084.method2710(Class8107.field33408).method23950()));
             this.field26084.method2733(method4153);
             this.field26084.method1936(this.field26084.method1935().method16744(method4153 * n * 0.005, method4153 * n4 * 0.1, method4153 * n3 * 0.005));
         }

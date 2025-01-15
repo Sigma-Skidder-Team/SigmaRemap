@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+
 import java.util.Set;
 
 public class Class128 extends Class126
@@ -24,7 +26,7 @@ public class Class128 extends Class126
     @Override
     public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
         if (class8321.method27622() == Class7739.field31525) {
-            final Class399 class8323 = class8322.method23579(this.field387.method8153());
+            final Entity class8323 = class8322.method23579(this.field387.method8153());
             if (class8323 instanceof Class512) {
                 class8321.method27658().method295("SkullOwner", Class9346.method34641(new Class51(), ((Class512)class8323).method2844()));
             }

@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.List;
+import net.minecraft.util.Direction;
+
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -137,12 +138,12 @@ public class Class461 extends Class460 implements Class441, Class439
             this.field2721.set(i, Class7652.method24247(class8321, this.field2721.get(i)));
         }
         class8321.method27693(1);
-        final Class354 method2193 = this.method2193();
+        final BlockPos method2193 = this.method2193();
         if (class8321.method27622().method11721()) {
             final Class8321 class8322 = new Class8321(class8321.method27622().method11720());
             if (!class8321.method27620()) {
                 if (!this.field2656.field10067) {
-                    Class9193.method33642(this.field2656, method2193.method1074(), method2193.method1075(), method2193.method1076(), class8322);
+                    Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8322);
                 }
             }
             else {
@@ -196,7 +197,7 @@ public class Class461 extends Class460 implements Class441, Class439
     
     @Override
     public boolean method2162(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.method1074() + 0.5, this.field2657.method1075() + 0.5, this.field2657.method1076() + 0.5) <= 64.0;
+        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override
@@ -224,20 +225,20 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public int[] method2248(final Class179 class179) {
-        if (class179 != Class179.field512) {
-            return (class179 != Class179.field511) ? Class461.field2720 : Class461.field2719;
+    public int[] method2248(final Direction class179) {
+        if (class179 != Direction.UP) {
+            return (class179 != Direction.DOWN) ? Class461.field2720 : Class461.field2719;
         }
         return Class461.field2718;
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Class179 class8322) {
+    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
         return this.method2264(n, class8321);
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Class179 class8322) {
+    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
         return n != 3 || class8321.method27622() == Class7739.field31442;
     }
     

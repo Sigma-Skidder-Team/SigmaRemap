@@ -4,31 +4,33 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8874
 {
     private static String[] field37302;
     private final Class1851 field37303;
-    private final Class111 field37304;
-    private final Class179 field37305;
-    private final Class179 field37306;
+    private final Axis field37304;
+    private final Direction field37305;
+    private final Direction field37306;
     private int field37307;
-    private Class354 field37308;
+    private BlockPos field37308;
     private int field37309;
     private int field37310;
     
-    public Class8874(final Class1851 field37303, Class354 method1139, final Class111 field37304) {
+    public Class8874(final Class1851 field37303, BlockPos method1139, final Axis field37304) {
         this.field37303 = field37303;
         this.field37304 = field37304;
-        if (field37304 != Class111.field351) {
-            this.field37306 = Class179.field513;
-            this.field37305 = Class179.field514;
+        if (field37304 != Axis.X) {
+            this.field37306 = Direction.NORTH;
+            this.field37305 = Direction.SOUTH;
         }
         else {
-            this.field37306 = Class179.field516;
-            this.field37305 = Class179.field515;
+            this.field37306 = Direction.EAST;
+            this.field37305 = Direction.WEST;
         }
-        while (method1139.method1075() > method1139.method1075() - 21) {
-            if (method1139.method1075() <= 0) {
+        while (method1139.getY() > method1139.getY() - 21) {
+            if (method1139.getY() <= 0) {
                 break;
             }
             if (!this.method31194(field37303.method6701(method1139.method1139()))) {
@@ -50,10 +52,10 @@ public class Class8874
         }
     }
     
-    public int method31190(final Class354 class354, final Class179 class355) {
+    public int method31190(final BlockPos class354, final Direction class355) {
         int i;
         for (i = 0; i < 22; ++i) {
-            final Class354 method1150 = class354.method1150(class355, i);
+            final BlockPos method1150 = class354.method1150(class355, i);
             if (!this.method31194(this.field37303.method6701(method1150))) {
                 break;
             }
@@ -77,7 +79,7 @@ public class Class8874
     Label_0014:
         while (this.field37309 < 21) {
             for (int i = 0; i < this.field37310; ++i) {
-                final Class354 method1138 = this.field37308.method1150(this.field37305, i).method1138(this.field37309);
+                final BlockPos method1138 = this.field37308.method1150(this.field37305, i).method1138(this.field37309);
                 final Class7096 method1139 = this.field37303.method6701(method1138);
                 if (!this.method31194(method1139)) {
                     break Label_0014;
@@ -141,7 +143,7 @@ public class Class8874
     
     public void method31196() {
         for (int i = 0; i < this.field37310; ++i) {
-            final Class354 method1150 = this.field37308.method1150(this.field37305, i);
+            final BlockPos method1150 = this.field37308.method1150(this.field37305, i);
             for (int j = 0; j < this.field37309; ++j) {
                 this.field37303.method6688(method1150.method1138(j), ((Class7097<O, Class7096>)Class7521.field29341.method11878()).method21773(Class3998.field18018, this.field37304), 18);
             }

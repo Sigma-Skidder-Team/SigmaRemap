@@ -7,7 +7,6 @@ package mapped;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
 import java.util.function.BooleanSupplier;
@@ -18,9 +17,9 @@ public class Class3573 extends Class3446
     public final Class787 field16676;
     private final double field16677;
     private Class9468 field16678;
-    private Class354 field16679;
+    private BlockPos field16679;
     private final boolean field16680;
-    private final List<Class354> field16681;
+    private final List<BlockPos> field16681;
     private final int field16682;
     private final BooleanSupplier field16683;
     
@@ -45,7 +44,7 @@ public class Class3573 extends Class3446
             return false;
         }
         final Class1849 class1849 = (Class1849)this.field16676.field2391;
-        if (!class1849.method6924(new Class354(this.field16676), 6)) {
+        if (!class1849.method6924(new BlockPos(this.field16676), 6)) {
             return false;
         }
         final Class5487 method24903 = Class7775.method24903(this.field16676, 15, 7, class1853 -> {
@@ -61,7 +60,7 @@ public class Class3573 extends Class3446
         if (method24903 == null) {
             return false;
         }
-        final Optional<Class354> method24904 = class1849.method6921().method7204(Class8912.field37458, this::method11113, new Class354(method24903), 10, Class2045.field11651);
+        final Optional<BlockPos> method24904 = class1849.method6921().method7204(Class8912.field37458, this::method11113, new BlockPos(method24903), 10, Class2045.field11651);
         if (method24904.isPresent()) {
             this.field16679 = method24904.get().method1153();
             final Class7747 class1850 = (Class7747)this.field16676.method4150();
@@ -83,7 +82,7 @@ public class Class3573 extends Class3446
             }
             for (int i = 0; i < this.field16678.method35221(); ++i) {
                 final Class6772 method24907 = this.field16678.method35217(i);
-                if (Class3467.method11035(this.field16676.field2391, new Class354(method24907.field26589, method24907.field26590 + 1, method24907.field26591))) {
+                if (Class3467.method11035(this.field16676.field2391, new BlockPos(method24907.field26589, method24907.field26590 + 1, method24907.field26591))) {
                     this.field16678 = this.field16676.method4150().method24719(method24907.field26589, method24907.field26590, method24907.field26591, 0);
                     break;
                 }
@@ -110,8 +109,8 @@ public class Class3573 extends Class3446
         }
     }
     
-    private boolean method11113(final Class354 a) {
-        final Iterator<Class354> iterator = this.field16681.iterator();
+    private boolean method11113(final BlockPos a) {
+        final Iterator<BlockPos> iterator = this.field16681.iterator();
         while (iterator.hasNext()) {
             if (!Objects.equals(a, iterator.next())) {
                 continue;

@@ -7,12 +7,13 @@ package mapped;
 import com.google.common.cache.CacheLoader;
 import java.util.concurrent.TimeUnit;
 import com.google.common.cache.CacheBuilder;
-import java.util.Iterator;
+
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
 import java.util.function.Function;
 import java.util.List;
 import com.google.common.cache.LoadingCache;
+import net.minecraft.util.math.MathHelper;
 
 public class Class4550 extends Class4535<Class5143>
 {
@@ -26,7 +27,7 @@ public class Class4550 extends Class4535<Class5143>
         return (List)Class4550.field20029.getUnchecked((Object)(new Random(class1851.method6753()).nextLong() & 0xFFFFL));
     }
     
-    public boolean method13561(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final Class5143 class1854) {
+    public boolean method13561(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5143 class1854) {
         List<Class9341> list = class1854.method16059();
         if (list.isEmpty()) {
             list = method13560(class1851);
@@ -42,12 +43,12 @@ public class Class4550 extends Class4535<Class5143>
     
     private void method13562(final Class1851 class1851, final Random random, final Class5143 class1852, final Class9341 class1853) {
         final int method34621 = class1853.method34621();
-        for (final Class354 class1854 : Class354.method1154(new Class354(class1853.method34619() - method34621, 0, class1853.method34620() - method34621), new Class354(class1853.method34619() + method34621, class1853.method34622() + 10, class1853.method34620() + method34621))) {
-            if (class1854.method1085(class1853.method34619(), class1854.method1075(), class1853.method34620(), false) <= method34621 * method34621 + 1 && class1854.method1075() < class1853.method34622()) {
+        for (final BlockPos class1854 : BlockPos.method1154(new BlockPos(class1853.method34619() - method34621, 0, class1853.method34620() - method34621), new BlockPos(class1853.method34619() + method34621, class1853.method34622() + 10, class1853.method34620() + method34621))) {
+            if (class1854.method1085(class1853.method34619(), class1854.getY(), class1853.method34620(), false) <= method34621 * method34621 + 1 && class1854.getY() < class1853.method34622()) {
                 this.method13529(class1851, class1854, Class7521.field29286.method11878());
             }
             else {
-                if (class1854.method1075() <= 65) {
+                if (class1854.getY() <= 65) {
                     continue;
                 }
                 this.method13529(class1851, class1854, Class7521.field29147.method11878());
@@ -58,8 +59,8 @@ public class Class4550 extends Class4535<Class5143>
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
                     for (int k = 0; k <= 3; ++k) {
-                        final boolean b = Class9546.method35648(i) == 2;
-                        final boolean b2 = Class9546.method35648(j) == 2;
+                        final boolean b = MathHelper.abs(i) == 2;
+                        final boolean b2 = MathHelper.abs(j) == 2;
                         final boolean b3 = k == 3;
                         if (!b) {
                             if (!b2) {
@@ -104,7 +105,7 @@ public class Class4550 extends Class4535<Class5143>
         class1856.method1851(class1852.method16058());
         class1856.method1730(class1853.method34619() + 0.5f, class1853.method34622() + 1, class1853.method34620() + 0.5f, random.nextFloat() * 360.0f, 0.0f);
         class1851.method6886(class1856);
-        this.method13529(class1851, new Class354(class1853.method34619(), class1853.method34622(), class1853.method34620()), Class7521.field29172.method11878());
+        this.method13529(class1851, new BlockPos(class1853.method34619(), class1853.method34622(), class1853.method34620()), Class7521.field29172.method11878());
     }
     
     static {

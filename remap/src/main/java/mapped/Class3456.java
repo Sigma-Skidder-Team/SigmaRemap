@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class3456 extends Class3446
@@ -25,7 +26,7 @@ public class Class3456 extends Class3446
         if (this.field16299.method4351() >= 0) {
             return false;
         }
-        final List<Class399> method7128 = (List<Class399>)this.field16299.field2391.method7128(this.field16299.getClass(), this.field16299.method1886().method18495(8.0, 4.0, 8.0));
+        final List<Entity> method7128 = (List<Entity>)this.field16299.field2391.method7128(this.field16299.getClass(), this.field16299.method1886().method18495(8.0, 4.0, 8.0));
         Class789 field16300 = null;
         double n = Double.MAX_VALUE;
         for (final Class789 class789 : method7128) {

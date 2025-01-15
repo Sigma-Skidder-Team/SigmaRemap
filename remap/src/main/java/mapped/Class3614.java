@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class3614 extends Class3446
 {
     private static String[] field16805;
@@ -31,7 +33,7 @@ public class Class3614 extends Class3446
                 }
             }
             final float n = this.field16806.method2633().nextFloat() * 6.2831855f;
-            this.field16806.method4999(Class9546.method35639(n) * 0.2f, -0.1f + this.field16806.method2633().nextFloat() * 0.2f, Class9546.method35638(n) * 0.2f);
+            this.field16806.method4999(MathHelper.cos(n) * 0.2f, -0.1f + this.field16806.method2633().nextFloat() * 0.2f, MathHelper.sin(n) * 0.2f);
         }
         else {
             this.field16806.method4999(0.0f, 0.0f, 0.0f);

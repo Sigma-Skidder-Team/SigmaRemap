@@ -12,6 +12,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.SimpleChannelInboundHandler;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8224 extends SimpleChannelInboundHandler<ByteBuf>
 {
@@ -54,11 +55,11 @@ public class Class8224 extends SimpleChannelInboundHandler<ByteBuf>
         if (byteBuf.readUnsignedByte() == 255) {
             final String[] array = (String[])Iterables.toArray(Class8115.method26700().split((CharSequence)new String(byteBuf.readBytes(byteBuf.readShort() * 2).array(), StandardCharsets.UTF_16BE)), (Class)String.class);
             if ("§1".equals(array[0])) {
-                Class9546.method35675(array[1], 0);
+                MathHelper.method35675(array[1], 0);
                 final String field41618 = array[2];
                 final String field41619 = array[3];
-                final int method35675 = Class9546.method35675(array[4], -1);
-                final int method35676 = Class9546.method35675(array[5], -1);
+                final int method35675 = MathHelper.method35675(array[4], -1);
+                final int method35676 = MathHelper.method35675(array[5], -1);
                 this.field33781.field26769.field41617 = -1;
                 this.field33781.field26769.field41618 = field41618;
                 this.field33781.field26769.field41615 = field41619;

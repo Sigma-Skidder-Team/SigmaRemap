@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Set;
@@ -20,8 +23,8 @@ public abstract class Class7746
     private final Class7619 field31661;
     public int field31662;
     public int field31663;
-    public Class5487 field31664;
-    public Class5487 field31665;
+    public Vec3d field31664;
+    public Vec3d field31665;
     public long field31666;
     public long field31667;
     public double field31668;
@@ -29,20 +32,20 @@ public abstract class Class7746
     public boolean field31670;
     public long field31671;
     public Class4654 field31672;
-    private Class354 field31673;
+    private BlockPos field31673;
     private int field31674;
     private float field31675;
     private final Class7914 field31676;
     
     public Class7746(final Class759 field31657, final Class1847 field31658) {
-        this.field31664 = Class5487.field22769;
-        this.field31665 = Class5487.field22769;
+        this.field31664 = Vec3d.field22769;
+        this.field31665 = Vec3d.field22769;
         this.field31669 = 0.5f;
         this.field31675 = 1.0f;
         this.field31657 = field31657;
         this.field31658 = field31658;
         this.field31661 = field31657.method2710(Class8107.field33406);
-        this.field31676 = this.method24715(Class9546.method35644(this.field31661.method23950() * 16.0));
+        this.field31676 = this.method24715(MathHelper.floor(this.field31661.method23950() * 16.0));
     }
     
     public void method24712() {
@@ -53,7 +56,7 @@ public abstract class Class7746
         this.field31675 = field31675;
     }
     
-    public Class354 method24714() {
+    public BlockPos method24714() {
         return this.field31673;
     }
     
@@ -81,26 +84,26 @@ public abstract class Class7746
     
     @Nullable
     public final Class9468 method24719(final double n, final double n2, final double n3, final int n4) {
-        return this.method24721(new Class354(n, n2, n3), n4);
+        return this.method24721(new BlockPos(n, n2, n3), n4);
     }
     
     @Nullable
-    public Class9468 method24720(final Stream<Class354> stream, final int n) {
-        return this.method24723((Set<Class354>)stream.collect((Collector<? super Class354, ?, Set<? super Class354>>)Collectors.toSet()), 8, false, n);
+    public Class9468 method24720(final Stream<BlockPos> stream, final int n) {
+        return this.method24723((Set<BlockPos>)stream.collect((Collector<? super BlockPos, ?, Set<? super BlockPos>>)Collectors.toSet()), 8, false, n);
     }
     
     @Nullable
-    public Class9468 method24721(final Class354 class354, final int n) {
-        return this.method24723((Set<Class354>)ImmutableSet.of((Object)class354), 8, false, n);
+    public Class9468 method24721(final BlockPos class354, final int n) {
+        return this.method24723((Set<BlockPos>)ImmutableSet.of((Object)class354), 8, false, n);
     }
     
     @Nullable
-    public Class9468 method24722(final Class399 class399, final int n) {
-        return this.method24723((Set<Class354>)ImmutableSet.of((Object)new Class354(class399)), 16, true, n);
+    public Class9468 method24722(final Entity class399, final int n) {
+        return this.method24723((Set<BlockPos>)ImmutableSet.of((Object)new BlockPos(class399)), 16, true, n);
     }
     
     @Nullable
-    public Class9468 method24723(final Set<Class354> set, final int n, final boolean b, final int field31674) {
+    public Class9468 method24723(final Set<BlockPos> set, final int n, final boolean b, final int field31674) {
         if (set.isEmpty()) {
             return null;
         }
@@ -117,7 +120,7 @@ public abstract class Class7746
             }
             this.field31658.method6796().method15297("pathfind");
             final float n2 = (float)this.field31661.method23950();
-            final Class354 class354 = b ? new Class354(this.field31657).method1137() : new Class354(this.field31657);
+            final BlockPos class354 = b ? new BlockPos(this.field31657).method1137() : new BlockPos(this.field31657);
             final int n3 = (int)(n2 + n);
             final Class9468 method25625 = this.field31676.method25625(new Class1854(this.field31658, class354.method1134(-n3, -n3, -n3), class354.method1134(n3, n3, n3)), this.field31657, set, n2, field31674, this.field31675);
             this.field31658.method6796().method15299();
@@ -136,7 +139,7 @@ public abstract class Class7746
         return this.method24726(this.method24719(n, n2, n3, 1), n4);
     }
     
-    public boolean method24725(final Class399 class399, final double n) {
+    public boolean method24725(final Entity class399, final double n) {
         final Class9468 method24722 = this.method24722(class399, 1);
         return method24722 != null && this.method24726(method24722, n);
     }
@@ -155,7 +158,7 @@ public abstract class Class7746
         this.method24737();
         if (this.field31659.method35221() > 0) {
             this.field31660 = field31660;
-            final Class5487 method24734 = this.method24734();
+            final Vec3d method24734 = this.method24734();
             this.field31663 = this.field31662;
             this.field31664 = method24734;
             return true;
@@ -177,12 +180,12 @@ public abstract class Class7746
             if (!this.method24735()) {
                 if (this.field31659 != null) {
                     if (this.field31659.method35222() < this.field31659.method35221()) {
-                        final Class5487 method24734 = this.method24734();
-                        final Class5487 method24735 = this.field31659.method35224(this.field31657, this.field31659.method35222());
+                        final Vec3d method24734 = this.method24734();
+                        final Vec3d method24735 = this.field31659.method35224(this.field31657, this.field31659.method35222());
                         if (method24734.field22771 > method24735.field22771) {
                             if (!this.field31657.field2404) {
-                                if (Class9546.method35644(method24734.field22770) == Class9546.method35644(method24735.field22770)) {
-                                    if (Class9546.method35644(method24734.field22772) == Class9546.method35644(method24735.field22772)) {
+                                if (MathHelper.floor(method24734.field22770) == MathHelper.floor(method24735.field22770)) {
+                                    if (MathHelper.floor(method24734.field22772) == MathHelper.floor(method24735.field22772)) {
                                         this.field31659.method35223(this.field31659.method35222() + 1);
                                     }
                                 }
@@ -196,17 +199,17 @@ public abstract class Class7746
             }
             Class9324.method34535(this.field31658, this.field31657, this.field31659, this.field31669);
             if (!this.method24731()) {
-                final Class5487 method24736 = this.field31659.method35225(this.field31657);
-                final Class354 class354 = new Class354(method24736);
+                final Vec3d method24736 = this.field31659.method35225(this.field31657);
+                final BlockPos class354 = new BlockPos(method24736);
                 this.field31657.method4148().method19907(method24736.field22770, this.field31658.method6701(class354.method1139()).method21706() ? method24736.field22771 : Class4651.method13906(this.field31658, class354), method24736.field22772, this.field31660);
             }
         }
     }
     
     public void method24729() {
-        final Class5487 method24734 = this.method24734();
+        final Vec3d method24734 = this.method24734();
         this.field31669 = ((this.field31657.method1930() <= 0.75f) ? (0.75f - this.field31657.method1930() / 2.0f) : (this.field31657.method1930() / 2.0f));
-        final Class5487 method24735 = this.field31659.method35226();
+        final Vec3d method24735 = this.field31659.method35226();
         if (Math.abs(this.field31657.method1938() - (method24735.field22770 + 0.5)) < this.field31669) {
             if (Math.abs(this.field31657.method1945() - (method24735.field22772 + 0.5)) < this.field31669) {
                 if (Math.abs(this.field31657.method1941() - method24735.field22771) < 1.0) {
@@ -217,7 +220,7 @@ public abstract class Class7746
         this.method24730(method24734);
     }
     
-    public void method24730(final Class5487 field31664) {
+    public void method24730(final Vec3d field31664) {
         if (this.field31662 - this.field31663 > 100) {
             if (field31664.method16746(this.field31664) < 2.25) {
                 this.method24733();
@@ -227,7 +230,7 @@ public abstract class Class7746
         }
         if (this.field31659 != null) {
             if (!this.field31659.method35215()) {
-                final Class5487 method35226 = this.field31659.method35226();
+                final Vec3d method35226 = this.field31659.method35226();
                 if (!method35226.equals(this.field31665)) {
                     this.field31665 = method35226;
                     final double method35227 = field31664.method16745(this.field31665);
@@ -238,7 +241,7 @@ public abstract class Class7746
                 }
                 if (this.field31668 > 0.0) {
                     if (this.field31666 > this.field31668 * 3.0) {
-                        this.field31665 = Class5487.field22769;
+                        this.field31665 = Vec3d.field22769;
                         this.field31666 = 0L;
                         this.field31668 = 0.0;
                         this.method24733();
@@ -261,7 +264,7 @@ public abstract class Class7746
         this.field31659 = null;
     }
     
-    public abstract Class5487 method24734();
+    public abstract Vec3d method24734();
     
     public abstract boolean method24735();
     
@@ -274,7 +277,7 @@ public abstract class Class7746
             for (int i = 0; i < this.field31659.method35221(); ++i) {
                 final Class6772 method35217 = this.field31659.method35217(i);
                 final Class6772 class6772 = (i + 1 >= this.field31659.method35221()) ? null : this.field31659.method35217(i + 1);
-                if (this.field31658.method6701(new Class354(method35217.field26589, method35217.field26590, method35217.field26591)).method21696() == Class7521.field29400) {
+                if (this.field31658.method6701(new BlockPos(method35217.field26589, method35217.field26590, method35217.field26591)).method21696() == Class7521.field29400) {
                     this.field31659.method35220(i, method35217.method20665(method35217.field26589, method35217.field26590 + 1, method35217.field26591));
                     if (class6772 != null) {
                         if (method35217.field26590 >= class6772.field26590) {
@@ -286,10 +289,10 @@ public abstract class Class7746
         }
     }
     
-    public abstract boolean method24738(final Class5487 p0, final Class5487 p1, final int p2, final int p3, final int p4);
+    public abstract boolean method24738(final Vec3d p0, final Vec3d p1, final int p2, final int p3, final int p4);
     
-    public boolean method24739(final Class354 class354) {
-        final Class354 method1139 = class354.method1139();
+    public boolean method24739(final BlockPos class354) {
+        final BlockPos method1139 = class354.method1139();
         return this.field31658.method6701(method1139).method21722(this.field31658, method1139);
     }
     
@@ -305,12 +308,12 @@ public abstract class Class7746
         return this.field31672.method13927();
     }
     
-    public void method24743(final Class354 class354) {
+    public void method24743(final BlockPos class354) {
         if (this.field31659 != null) {
             if (!this.field31659.method35215()) {
                 if (this.field31659.method35221() != 0) {
                     final Class6772 method35216 = this.field31659.method35216();
-                    if (class354.method1082(new Class5487((method35216.field26589 + this.field31657.method1938()) / 2.0, (method35216.field26590 + this.field31657.method1941()) / 2.0, (method35216.field26591 + this.field31657.method1945()) / 2.0), this.field31659.method35221() - this.field31659.method35222())) {
+                    if (class354.method1082(new Vec3d((method35216.field26589 + this.field31657.method1938()) / 2.0, (method35216.field26590 + this.field31657.method1941()) / 2.0, (method35216.field26591 + this.field31657.method1945()) / 2.0), this.field31659.method35221() - this.field31659.method35222())) {
                         this.method24718();
                     }
                 }

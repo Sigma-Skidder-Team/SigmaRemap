@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Random;
 
 public class Class4519 extends Class4515
@@ -13,7 +12,7 @@ public class Class4519 extends Class4515
     private final Class1932 field19931;
     private final boolean field19932;
     
-    public Class4519(final Class1795 class1795, final Class1932 field19931, final Class354 field19932, final Class2052 field19933, final boolean field19934) {
+    public Class4519(final Class1795 class1795, final Class1932 field19931, final BlockPos field19932, final Class2052 field19933, final boolean field19934) {
         super(Class9520.field40997, 0);
         this.field19920 = field19932;
         this.field19930 = field19933;
@@ -43,7 +42,7 @@ public class Class4519 extends Class4515
     }
     
     @Override
-    public void method13511(final String anObject, final Class354 class354, final Class1851 class355, final Random random, final Class6997 class356) {
+    public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final Class6997 class356) {
         if (!"map_chest".equals(anObject)) {
             if (!"treasure_chest".equals(anObject)) {
                 if ("supply_chest".equals(anObject)) {
@@ -63,22 +62,22 @@ public class Class4519 extends Class4515
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final Class6997 class1853, final Class7859 class1854) {
         int min = 256;
         int n = 0;
-        final Class354 method19945 = this.field19918.method19945();
+        final BlockPos method19945 = this.field19918.method19945();
         final Class2020 class1855 = this.field19932 ? Class2020.field11521 : Class2020.field11523;
-        final int n2 = method19945.method1074() * method19945.method1076();
+        final int n2 = method19945.getX() * method19945.getZ();
         if (n2 != 0) {
-            for (final Class354 class1856 : Class354.method1154(this.field19920, this.field19920.method1134(method19945.method1074() - 1, 0, method19945.method1076() - 1))) {
-                final int method19946 = class1851.method6699(class1855, class1856.method1074(), class1856.method1076());
+            for (final BlockPos class1856 : BlockPos.method1154(this.field19920, this.field19920.method1134(method19945.getX() - 1, 0, method19945.getZ() - 1))) {
+                final int method19946 = class1851.method6699(class1855, class1856.getX(), class1856.getZ());
                 n += method19946;
                 min = Math.min(min, method19946);
             }
             final int method19947 = n / n2;
         }
         else {
-            final int method19947 = class1851.method6699(class1855, this.field19920.method1074(), this.field19920.method1076());
+            final int method19947 = class1851.method6699(class1855, this.field19920.getX(), this.field19920.getZ());
         }
         int method19947;
-        this.field19920 = new Class354(this.field19920.method1074(), this.field19932 ? (min - method19945.method1075() / 2 - random.nextInt(3)) : method19947, this.field19920.method1076());
+        this.field19920 = new BlockPos(this.field19920.getX(), this.field19932 ? (min - method19945.getY() / 2 - random.nextInt(3)) : method19947, this.field19920.getZ());
         return super.method13421(class1851, class1852, random, class1853, class1854);
     }
 }

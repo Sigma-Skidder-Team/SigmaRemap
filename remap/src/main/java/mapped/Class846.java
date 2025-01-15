@@ -75,7 +75,7 @@ public class Class846 extends Class763
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35608, 0.15f, 1.0f);
     }
     
@@ -85,7 +85,7 @@ public class Class846 extends Class763
     }
     
     @Override
-    public void method1839(final Class7096 class7096, final Class5487 class7097) {
+    public void method1839(final Class7096 class7096, final Vec3d class7097) {
         if (class7096.method21696() != Class7521.field29240) {
             super.method1839(class7096, class7097);
         }

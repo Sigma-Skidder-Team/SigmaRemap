@@ -18,17 +18,17 @@ public class Class3885 extends Class3874
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3885.field17546[class7096.method21772((Class7111<Integer>)Class3885.field17545)];
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return class7096.method21696() == Class7521.field29339;
     }
     
     @Override
-    public void method11822(Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3885.field17545);
         if (intValue < 3) {
             if (random.nextInt(10) == 0) {
@@ -40,7 +40,7 @@ public class Class3885 extends Class3874
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
+    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
         return new Class8321(Class7739.field31440);
     }
     

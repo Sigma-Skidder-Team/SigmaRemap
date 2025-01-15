@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class6665 extends Class6664
 {
     private static String[] field26323;
@@ -61,7 +63,7 @@ public class Class6665 extends Class6664
     }
     
     private void method20272(final float[] array) {
-        final float method35640 = Class9546.method35640(array[0] * array[0] + array[1] * array[1] + array[2] * array[2]);
+        final float method35640 = MathHelper.method35640(array[0] * array[0] + array[1] * array[1] + array[2] * array[2]);
         final int n = 0;
         array[n] /= method35640;
         final int n2 = 1;
@@ -73,7 +75,7 @@ public class Class6665 extends Class6664
     }
     
     private void method20273(final float[] array) {
-        float method35640 = Class9546.method35640(array[0] * array[0] + array[1] * array[1] + array[2] * array[2]);
+        float method35640 = MathHelper.method35640(array[0] * array[0] + array[1] * array[1] + array[2] * array[2]);
         if (method35640 == 0.0f) {
             method35640 = 1.0f;
         }

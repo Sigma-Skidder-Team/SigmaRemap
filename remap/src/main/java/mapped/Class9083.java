@@ -16,7 +16,7 @@ import java.util.Collection;
 public class Class9083
 {
     private final Class6812 field38456;
-    private Class354 field38457;
+    private BlockPos field38457;
     private final Class1849 field38458;
     private final Collection<Class7373> field38459;
     private final int field38460;
@@ -41,12 +41,12 @@ public class Class9083
         this.field38460 = field38456.method20851();
     }
     
-    public Class9083(final Class6812 class6812, final Class354 class6813, final Class1849 class6814) {
+    public Class9083(final Class6812 class6812, final BlockPos class6813, final Class1849 class6814) {
         this(class6812, class6814);
         this.method32750(class6813);
     }
     
-    public void method32750(final Class354 field38457) {
+    public void method32750(final BlockPos field38457) {
         this.field38457 = field38457;
     }
     
@@ -110,12 +110,12 @@ public class Class9083
         return this.field38456.method20849();
     }
     
-    public Class354 method32755() {
+    public BlockPos method32755() {
         return this.field38457;
     }
     
     @Nullable
-    public Class354 method32756() {
+    public BlockPos method32756() {
         final Class501 method32757 = this.method32757();
         return (method32757 != null) ? method32757.method2562() : null;
     }

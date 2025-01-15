@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.io.InputStream;
@@ -51,7 +52,7 @@ public class Class7667
         return Class9570.field41332.method22605() ? Class9570.method35820(class8321.method27622(), Class9570.field41332, class8321) : class8321.method27631();
     }
     
-    public static int method24306(final Class7096 class7096, final Class1856 class7097, final Class354 class7098) {
+    public static int method24306(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
         return Class9570.field41243.method22605() ? Class9570.method35821(class7096, Class9570.field41243, class7097, class7098) : class7096.method21704();
     }
     
@@ -85,7 +86,7 @@ public class Class7667
         return new String[0];
     }
     
-    public static boolean method24309(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public static boolean method24309(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return Class9570.field41247.method22605() ? Class9570.method35820(class7096, Class9570.field41247, class7097, class7098) : class7096.method21706();
     }
     
@@ -145,7 +146,7 @@ public class Class7667
         }
     }
     
-    public static boolean method24316(final Class399 class399) {
+    public static boolean method24316(final Entity class399) {
         return !Class7667.field30456 || Class9570.method35820(class399, Class9570.field41252, new Object[0]);
     }
     

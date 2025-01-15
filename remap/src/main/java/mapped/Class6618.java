@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Map;
 
 public class Class6618 extends Class6601
@@ -32,7 +31,7 @@ public class Class6618 extends Class6601
             while (i > 0) {
                 Class508.method2609(i);
                 final int n;
-                class514.method6886(new Class508(class514, class515.method1074(), class515.method1075() + 0.5, class515.method1076() + 0.5, n));
+                class514.method6886(new Class508(class514, class515.getX(), class515.getY() + 0.5, class515.getZ() + 0.5, n));
             }
             class514.method6955(1042, class515, 0);
             return;

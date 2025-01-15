@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.stream.Stream;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.function.Predicate;
@@ -123,7 +125,7 @@ public class Class455 extends Class456 implements Class453, Class439
         if (method2307 == null) {
             return false;
         }
-        final Class179 method2308 = this.method2194().method21772((Class7111<Class179>)Class3959.field17881).method782();
+        final Direction method2308 = this.method2194().method21772((Class7111<Direction>)Class3959.field17881).getOpposite();
         if (!this.method2298(method2307, method2308)) {
             for (int i = 0; i < this.method2239(); ++i) {
                 if (!this.method2157(i).method27620()) {
@@ -140,11 +142,11 @@ public class Class455 extends Class456 implements Class453, Class439
         return false;
     }
     
-    private static IntStream method2297(final Class446 class446, final Class179 class447) {
+    private static IntStream method2297(final Class446 class446, final Direction class447) {
         return (class446 instanceof Class441) ? IntStream.of(((Class441)class446).method2248(class447)) : IntStream.range(0, class446.method2239());
     }
     
-    private boolean method2298(final Class446 class446, final Class179 class447) {
+    private boolean method2298(final Class446 class446, final Direction class447) {
         return method2297(class446, class447).allMatch(n2 -> {
             class448.method2157(n2);
             final Class8321 class449;
@@ -152,7 +154,7 @@ public class Class455 extends Class456 implements Class453, Class439
         });
     }
     
-    private static boolean method2299(final Class446 class446, final Class179 class447) {
+    private static boolean method2299(final Class446 class446, final Direction class447) {
         return method2297(class446, class447).allMatch(n2 -> class448.method2157(n2).method27620());
     }
     
@@ -168,11 +170,11 @@ public class Class455 extends Class456 implements Class453, Class439
             }
             return false;
         }
-        final Class179 field511 = Class179.field511;
+        final Direction field511 = Direction.DOWN;
         return !method2299(method2308, field511) && method2297(method2308, field511).anyMatch(n2 -> method2301(class454, class455, n2, class456));
     }
     
-    private static boolean method2301(final Class453 class453, final Class446 class454, final int n, final Class179 class455) {
+    private static boolean method2301(final Class453 class453, final Class446 class454, final int n, final Direction class455) {
         final Class8321 method2157 = class454.method2157(n);
         if (!method2157.method27620()) {
             if (method2305(class454, method2157, n, class455)) {
@@ -200,7 +202,7 @@ public class Class455 extends Class456 implements Class453, Class439
         return b;
     }
     
-    public static Class8321 method2303(final Class446 class446, final Class446 class447, Class8321 class448, final Class179 class449) {
+    public static Class8321 method2303(final Class446 class446, final Class446 class447, Class8321 class448, final Direction class449) {
         if (class447 instanceof Class441 && class449 != null) {
             final int[] method2248 = ((Class441)class447).method2248(class449);
             for (int n = 0; n < method2248.length && !class448.method27620(); class448 = method2306(class446, class447, class448, method2248[n], class449), ++n) {}
@@ -216,15 +218,15 @@ public class Class455 extends Class456 implements Class453, Class439
         return class448;
     }
     
-    private static boolean method2304(final Class446 class446, final Class8321 class447, final int n, final Class179 class448) {
+    private static boolean method2304(final Class446 class446, final Class8321 class447, final int n, final Direction class448) {
         return class446.method2264(n, class447) && (!(class446 instanceof Class441) || ((Class441)class446).method2249(n, class447, class448));
     }
     
-    private static boolean method2305(final Class446 class446, final Class8321 class447, final int n, final Class179 class448) {
+    private static boolean method2305(final Class446 class446, final Class8321 class447, final int n, final Direction class448) {
         return !(class446 instanceof Class441) || ((Class441)class446).method2250(n, class447, class448);
     }
     
-    private static Class8321 method2306(final Class446 class446, final Class446 class447, Class8321 field34174, final int n, final Class179 class448) {
+    private static Class8321 method2306(final Class446 class446, final Class446 class447, Class8321 field34174, final int n, final Direction class448) {
         final Class8321 method2157 = class447.method2157(n);
         if (method2304(class447, field34174, n, class448)) {
             int n2 = 0;
@@ -265,7 +267,7 @@ public class Class455 extends Class456 implements Class453, Class439
     
     @Nullable
     private Class446 method2307() {
-        return method2310(this.method2186(), this.field2657.method1149(this.method2194().method21772((Class7111<Class179>)Class3959.field17881)));
+        return method2310(this.method2186(), this.field2657.method1149(this.method2194().method21772((Class7111<Direction>)Class3959.field17881)));
     }
     
     @Nullable
@@ -274,18 +276,18 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     public static List<Class427> method2309(final Class453 class453) {
-        return class453.method2285().method24545().stream().flatMap(class455 -> class454.method2186().method6739((Class<? extends Class399>)Class427.class, class455.method18499(class454.method2286() - 0.5, class454.method2287() - 0.5, class454.method2288() - 0.5), (Predicate<? super Class399>)Class9170.field38845).stream()).collect((Collector<? super Object, ?, List<Class427>>)Collectors.toList());
+        return class453.method2285().method24545().stream().flatMap(class455 -> class454.method2186().method6739((Class<? extends Entity>)Class427.class, class455.method18499(class454.method2286() - 0.5, class454.method2287() - 0.5, class454.method2288() - 0.5), (Predicate<? super Entity>)Class9170.field38845).stream()).collect((Collector<? super Object, ?, List<Class427>>)Collectors.toList());
     }
     
     @Nullable
-    public static Class446 method2310(final Class1847 class1847, final Class354 class1848) {
-        return method2311(class1847, class1848.method1074() + 0.5, class1848.method1075() + 0.5, class1848.method1076() + 0.5);
+    public static Class446 method2310(final Class1847 class1847, final BlockPos class1848) {
+        return method2311(class1847, class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
     }
     
     @Nullable
     public static Class446 method2311(final Class1847 class1847, final double n, final double n2, final double n3) {
         Class446 class1848 = null;
-        final Class354 class1849 = new Class354(n, n2, n3);
+        final BlockPos class1849 = new BlockPos(n, n2, n3);
         final Class7096 method6701 = class1847.method6701(class1849);
         final Class3833 method6702 = method6701.method21696();
         if (!(method6702 instanceof Class3966)) {
@@ -305,7 +307,7 @@ public class Class455 extends Class456 implements Class453, Class439
             class1848 = ((Class3966)method6702).method12099(method6701, class1847, class1849);
         }
         if (class1848 == null) {
-            final List<Class399> method6704 = class1847.method6737(null, new Class6221(n - 0.5, n2 - 0.5, n3 - 0.5, n + 0.5, n2 + 0.5, n3 + 0.5), Class9170.field38848);
+            final List<Entity> method6704 = class1847.method6737(null, new Class6221(n - 0.5, n2 - 0.5, n3 - 0.5, n + 0.5, n2 + 0.5, n3 + 0.5), Class9170.field38848);
             if (!method6704.isEmpty()) {
                 class1848 = (Class446)method6704.get(class1847.field10062.nextInt(method6704.size()));
             }
@@ -319,17 +321,17 @@ public class Class455 extends Class456 implements Class453, Class439
     
     @Override
     public double method2286() {
-        return this.field2657.method1074() + 0.5;
+        return this.field2657.getX() + 0.5;
     }
     
     @Override
     public double method2287() {
-        return this.field2657.method1075() + 0.5;
+        return this.field2657.getY() + 0.5;
     }
     
     @Override
     public double method2288() {
-        return this.field2657.method1076() + 0.5;
+        return this.field2657.getZ() + 0.5;
     }
     
     private void method2313(final int field2708) {
@@ -354,10 +356,10 @@ public class Class455 extends Class456 implements Class453, Class439
         this.field2707 = field2707;
     }
     
-    public void method2316(final Class399 class399) {
+    public void method2316(final Entity class399) {
         if (class399 instanceof Class427) {
-            final Class354 method2193 = this.method2193();
-            if (Class7698.method24496(Class7698.method24489(class399.method1886().method18499(-method2193.method1074(), -method2193.method1075(), -method2193.method1076())), this.method2285(), Class9306.field39924)) {
+            final BlockPos method2193 = this.method2193();
+            if (Class7698.method24496(Class7698.method24489(class399.method1886().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), Class9306.field39924)) {
                 this.method2294(() -> method2302(this, (Class427)class400));
             }
         }

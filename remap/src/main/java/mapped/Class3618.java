@@ -28,7 +28,7 @@ public class Class3618 extends Class3617
     public void method11016() {
         if (Class798.method4571(this.field16814).nextInt(30) == 0) {
             for (int i = 1; i <= 2; ++i) {
-                final Class354 method1140 = new Class354(this.field16814).method1140(i);
+                final BlockPos method1140 = new BlockPos(this.field16814).method1140(i);
                 final Class7096 method1141 = this.field16814.field2391.method6701(method1140);
                 final Class3833 method1142 = method1141.method21696();
                 int n = 0;

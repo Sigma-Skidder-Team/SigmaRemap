@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class Class7846
@@ -79,8 +80,8 @@ public class Class7846
         }
         final float n10 = n3 - n;
         final float n11 = n4 - n2;
-        final double n12 = Class9546.method35647(n10) * (n8 / 16.0f);
-        final double n13 = Class9546.method35647(n11) * (n9 / 16.0f);
+        final double n12 = MathHelper.method35647(n10) * (n8 / 16.0f);
+        final double n13 = MathHelper.method35647(n11) * (n9 / 16.0f);
         final Class4148 method22696 = class7392.method22696();
         GL11.glNormal3f(0.0f, 0.0f, -1.0f);
         method22696.method12390(7, Class9237.field39617);

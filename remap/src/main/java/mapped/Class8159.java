@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8159
 {
     private static String[] field33603;
     
-    public static Class6221 method26948(final Class6221 class6221, final Class179 class6222, final double n) {
-        final double n2 = n * class6222.method781().method936();
+    public static Class6221 method26948(final Class6221 class6221, final Direction class6222, final double n) {
+        final double n2 = n * class6222.getAxisDirection().getOffset();
         final double min = Math.min(n2, 0.0);
         final double max = Math.max(n2, 0.0);
         switch (Class8635.field36230[class6222.ordinal()]) {

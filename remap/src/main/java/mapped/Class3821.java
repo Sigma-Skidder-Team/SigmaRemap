@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3821 extends Class3820
 {
     private static String[] field17372;
@@ -25,9 +27,9 @@ public class Class3821 extends Class3820
             return Class9355.method34676(method2715);
         }
         final Class7005 class1850 = (Class7005)method2716;
-        final Class354 method2717 = class1850.method21447();
-        final Class179 method2718 = class1850.method21448();
-        final Class354 method2719 = method2717.method1149(method2718);
+        final BlockPos method2717 = class1850.method21447();
+        final Direction method2718 = class1850.method21448();
+        final BlockPos method2719 = method2717.method1149(method2718);
         if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2719, method2718, method2715)) {
             return Class9355.method34677(method2715);
         }
@@ -47,7 +49,7 @@ public class Class3821 extends Class3820
             }
             return Class9355.method34677(method2715);
         }
-        final Class354 class1851 = (class1847.method6701(method2717).method21696() instanceof Class3867 && this.field17373 == Class7558.field29976) ? method2717 : method2719;
+        final BlockPos class1851 = (class1847.method6701(method2717).method21696() instanceof Class3867 && this.field17373 == Class7558.field29976) ? method2717 : method2719;
         if (!this.method11755(class1848, class1847, class1851, class1850)) {
             return Class9355.method34677(method2715);
         }
@@ -63,7 +65,7 @@ public class Class3821 extends Class3820
         return class8322.field3025.field27304 ? class8321 : new Class8321(Class7739.field31349);
     }
     
-    public void method11753(final Class1847 class1847, final Class8321 class1848, final Class354 class1849) {
+    public void method11753(final Class1847 class1847, final Class8321 class1848, final BlockPos class1849) {
     }
     
     private Class8321 method11754(final Class8321 class8321, final Class512 class8322, final Class3820 class8323) {
@@ -80,7 +82,7 @@ public class Class3821 extends Class3820
         return new Class8321(class8323);
     }
     
-    public boolean method11755(final Class512 class512, final Class1847 class513, final Class354 class514, final Class7005 class515) {
+    public boolean method11755(final Class512 class512, final Class1847 class513, final BlockPos class514, final Class7005 class515) {
         if (this.field17373 instanceof Class7257) {
             final Class7096 method6701 = class513.method6701(class514);
             final Class8059 method6702 = method6701.method21697();
@@ -93,9 +95,9 @@ public class Class3821 extends Class3820
                 }
             }
             if (class513.field10063.method20502() && this.field17373.method22166(Class7324.field28319)) {
-                final int method6704 = class514.method1074();
-                final int method6705 = class514.method1075();
-                final int method6706 = class514.method1076();
+                final int method6704 = class514.getX();
+                final int method6705 = class514.getY();
+                final int method6706 = class514.getZ();
                 class513.method6705(class512, class514, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class513.field10062.nextFloat() - class513.field10062.nextFloat()) * 0.8f);
                 for (int i = 0; i < 8; ++i) {
                     class513.method6709(Class8432.field34632, method6704 + Math.random(), method6705 + Math.random(), method6706 + Math.random(), 0.0, 0.0, 0.0);
@@ -122,7 +124,7 @@ public class Class3821 extends Class3820
         return false;
     }
     
-    public void method11756(final Class512 class512, final Class1851 class513, final Class354 class514) {
+    public void method11756(final Class512 class512, final Class1851 class513, final BlockPos class514) {
         class513.method6705(class512, class514, this.field17373.method22166(Class7324.field28320) ? Class8520.field35051 : Class8520.field35049, Class286.field1582, 1.0f, 1.0f);
     }
 }

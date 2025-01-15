@@ -8,6 +8,8 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public abstract class Class819 extends Class788 implements Class820, Class822
@@ -161,7 +163,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     
     @Nullable
     @Override
-    public Class399 method1854(final Class383 class383) {
+    public Entity method1854(final Class383 class383) {
         this.method4835();
         return super.method1854(class383);
     }

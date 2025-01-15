@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Class4843 extends Class4841
         this.field20754 = 260;
         this.method14239(this.field20753 = new Class4818(this, "waypointList", 0, 65, this.field20754, this.field20481 - 65));
         for (final Class8124 class4804 : Class9463.method35173().method35200().method24262()) {
-            this.field20753.method14398(class4804.field33468, new Class352(class4804.field33469, 64, class4804.field33470), class4804.field33471);
+            this.field20753.method14398(class4804.field33468, new Vec3i(class4804.field33469, 64, class4804.field33470), class4804.field33471);
         }
         this.method14239(this.field20752 = new Class4901(this, "mapFrame", this.field20754, 0, this.field20480 - this.field20754, this.field20481));
         this.method14311(false);

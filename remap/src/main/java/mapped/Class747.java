@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 
 public class Class747 extends Class516<Class3422>
@@ -123,7 +125,7 @@ public class Class747 extends Class516<Class3422>
         if (this.field4039 && this.method4074()) {
             final int n6 = this.field3080 + 14;
             this.field4038 = ((float)n2 - n6 - 7.5f) / (n6 + 54 - n6 - 15.0f);
-            this.field4038 = Class9546.method35653(this.field4038, 0.0f, 1.0f);
+            this.field4038 = MathHelper.method35653(this.field4038, 0.0f, 1.0f);
             this.field4040 = (int)(this.field4038 * this.method4075() + 0.5) * 4;
             return true;
         }
@@ -135,7 +137,7 @@ public class Class747 extends Class516<Class3422>
         if (this.method4074()) {
             final int method4075 = this.method4075();
             this.field4038 -= (float)(n3 / method4075);
-            this.field4038 = Class9546.method35653(this.field4038, 0.0f, 1.0f);
+            this.field4038 = MathHelper.method35653(this.field4038, 0.0f, 1.0f);
             this.field4040 = (int)(this.field4038 * method4075 + 0.5) * 4;
         }
         return true;

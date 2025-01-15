@@ -26,14 +26,14 @@ public class Class1857 implements Class1856
     private static final Class8888 field10125;
     private static final Class8888 field10126;
     
-    public Class1857(final Class1858 field10111, final Class354 class354, final Class354 class355, final int n) {
+    public Class1857(final Class1858 field10111, final BlockPos class354, final BlockPos class355, final int n) {
         this.field10111 = field10111;
-        final int n2 = class354.method1074() - n >> 4;
-        final int n3 = class354.method1075() - n >> 4;
-        final int n4 = class354.method1076() - n >> 4;
-        final int n5 = class355.method1074() + n >> 4;
-        final int n6 = class355.method1075() + n >> 4;
-        final int n7 = class355.method1076() + n >> 4;
+        final int n2 = class354.getX() - n >> 4;
+        final int n3 = class354.getY() - n >> 4;
+        final int n4 = class354.getZ() - n >> 4;
+        final int n5 = class355.getX() + n >> 4;
+        final int n6 = class355.getY() + n >> 4;
+        final int n7 = class355.getZ() + n >> 4;
         this.field10115 = n5 - n2 + 1 << 4;
         this.field10116 = n6 - n3 + 1 << 4;
         this.field10117 = n7 - n4 + 1 << 4;
@@ -44,21 +44,21 @@ public class Class1857 implements Class1856
         this.field10114 = n4 << 4;
     }
     
-    private int method6995(final Class354 class354) {
-        final int n = class354.method1074() - this.field10112;
+    private int method6995(final BlockPos class354) {
+        final int n = class354.getX() - this.field10112;
         if (n < 0 || n >= this.field10115) {
             return -1;
         }
-        final int n2 = class354.method1075() - this.field10113;
+        final int n2 = class354.getY() - this.field10113;
         if (n2 >= 0 && n2 < this.field10116) {
-            final int n3 = class354.method1076() - this.field10114;
+            final int n3 = class354.getZ() - this.field10114;
             return (n3 >= 0 && n3 < this.field10117) ? (n3 * this.field10118 + n2 * this.field10115 + n) : -1;
         }
         return -1;
     }
     
     @Override
-    public int method6992(final Class237 class237, final Class354 class238) {
+    public int method6992(final Class237 class237, final BlockPos class238) {
         int[] array;
         if (class237 != Class237.field911) {
             if (class237 != Class237.field912) {
@@ -85,12 +85,12 @@ public class Class1857 implements Class1856
         return this.method6996(class237, class238);
     }
     
-    private int method6996(final Class237 class237, final Class354 class238) {
+    private int method6996(final Class237 class237, final BlockPos class238) {
         return this.field10111.method6992(class237, class238);
     }
     
     @Override
-    public Class7096 method6701(final Class354 class354) {
+    public Class7096 method6701(final BlockPos class354) {
         final int method6995 = this.method6995(class354);
         if (method6995 >= 0) {
             if (method6995 < this.field10122) {
@@ -131,31 +131,31 @@ public class Class1857 implements Class1856
         this.field10121 = null;
     }
     
-    public Class3090 method6999(final Class354 class354) {
+    public Class3090 method6999(final BlockPos class354) {
         return this.field10111.method7007(class354);
     }
     
     @Override
-    public Class436 method6727(final Class354 class354) {
+    public Class436 method6727(final BlockPos class354) {
         return this.field10111.method7000(class354, Class2079.field12022);
     }
     
-    public Class436 method7000(final Class354 class354, final Class2079 class355) {
+    public Class436 method7000(final BlockPos class354, final Class2079 class355) {
         return this.field10111.method7000(class354, class355);
     }
     
     @Override
-    public boolean method6994(final Class354 class354) {
+    public boolean method6994(final BlockPos class354) {
         return this.field10111.method6994(class354);
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
+    public Class7099 method6702(final BlockPos class354) {
         return this.method6701(class354).method21756();
     }
     
     @Override
-    public int method6849(final Class354 class354, final Class8895 class355) {
+    public int method6849(final BlockPos class354, final Class8895 class355) {
         return this.field10111.method6849(class354, class355);
     }
     

@@ -52,7 +52,7 @@ public class Class5465 extends Class5419<Class824>
     }
     
     private void method16693(final Class1849 class1849, final Class824 class1850, final Class824 class1851) {
-        final Optional<Class354> method16696 = this.method16696(class1849, class1850);
+        final Optional<BlockPos> method16696 = this.method16696(class1849, class1850);
         if (method16696.isPresent()) {
             final Optional<Class824> method16697 = this.method16698(class1850, class1851);
             if (!method16697.isPresent()) {
@@ -93,11 +93,11 @@ public class Class5465 extends Class5419<Class824>
         return false;
     }
     
-    private Optional<Class354> method16696(final Class1849 class1849, final Class824 class1850) {
-        return class1849.method6921().method7206(Class8912.field37476.method31396(), class1852 -> this.method16697(class1851, class1852), new Class354(class1850), 48);
+    private Optional<BlockPos> method16696(final Class1849 class1849, final Class824 class1850) {
+        return class1849.method6921().method7206(Class8912.field37476.method31396(), class1852 -> this.method16697(class1851, class1852), new BlockPos(class1850), 48);
     }
     
-    private boolean method16697(final Class824 class824, final Class354 class825) {
+    private boolean method16697(final Class824 class824, final BlockPos class825) {
         final Class9468 method24721 = class824.method4150().method24721(class825, Class8912.field37476.method31397());
         return method24721 != null && method24721.method35228();
     }
@@ -116,7 +116,7 @@ public class Class5465 extends Class5419<Class824>
         return Optional.empty();
     }
     
-    private void method16699(final Class1849 class1849, final Class824 class1850, final Class354 class1851) {
+    private void method16699(final Class1849 class1849, final Class824 class1850, final BlockPos class1851) {
         class1850.method2618().method1196(Class8233.field33800, Class363.method1167(class1849.method6789().method20487(), class1851));
     }
 }

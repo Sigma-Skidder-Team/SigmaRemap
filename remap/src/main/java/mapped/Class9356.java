@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 public class Class9356
 {
     private static String[] field40137;
@@ -24,17 +27,17 @@ public class Class9356
         this.field40140 = Class7637.field30241.method11332();
     }
     
-    private static boolean method34679(final Class1855 class1855, final Class354 class1856, final Class179 class1857, final Class7099 class1858) {
+    private static boolean method34679(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final Class7099 class1858) {
         return class1855.method6702(class1856.method1149(class1857)).method21779().method22165(class1858.method21779());
     }
     
-    private static boolean method34680(final Class1855 class1855, final Class354 class1856, final Class179 class1857, final float n) {
-        final Class354 method1149 = class1856.method1149(class1857);
+    private static boolean method34680(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final float n) {
+        final BlockPos method1149 = class1856.method1149(class1857);
         final Class7096 method1150 = class1855.method6701(method1149);
         return method1150.method21723() && Class7698.method24502(Class7698.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0), method1150.method21729(class1855, method1149), class1857);
     }
     
-    public boolean method34681(final Class1856 class1856, final Class354 class1857, final Class4150 class1858, final Class7099 class1859) {
+    public boolean method34681(final Class1856 class1856, final BlockPos class1857, final Class4150 class1858, final Class7099 class1859) {
         final Class7096 method21791 = class1859.method21791();
         boolean b7;
         try {
@@ -65,30 +68,30 @@ public class Class9356
             final float n3 = (n >> 16 & 0xFF) / 255.0f;
             final float n4 = (n >> 8 & 0xFF) / 255.0f;
             final float n5 = (n & 0xFF) / 255.0f;
-            final boolean b = !method34679(class1856, class1857, Class179.field512, class1859);
-            final boolean b2 = !method34679(class1856, class1857, Class179.field511, class1859) && !method34680(class1856, class1857, Class179.field511, 0.8888889f);
-            final boolean b3 = !method34679(class1856, class1857, Class179.field513, class1859);
-            final boolean b4 = !method34679(class1856, class1857, Class179.field514, class1859);
-            final boolean b5 = !method34679(class1856, class1857, Class179.field515, class1859);
-            final boolean b6 = !method34679(class1856, class1857, Class179.field516, class1859);
+            final boolean b = !method34679(class1856, class1857, Direction.UP, class1859);
+            final boolean b2 = !method34679(class1856, class1857, Direction.DOWN, class1859) && !method34680(class1856, class1857, Direction.DOWN, 0.8888889f);
+            final boolean b3 = !method34679(class1856, class1857, Direction.NORTH, class1859);
+            final boolean b4 = !method34679(class1856, class1857, Direction.SOUTH, class1859);
+            final boolean b5 = !method34679(class1856, class1857, Direction.WEST, class1859);
+            final boolean b6 = !method34679(class1856, class1857, Direction.EAST, class1859);
             if (b || b2 || b6 || b5 || b3 || b4) {
                 b7 = false;
                 float method21795 = this.method34685(class1856, class1857, class1859.method21779());
                 float method21796 = this.method34685(class1856, class1857.method1143(), class1859.method21779());
                 float method21797 = this.method34685(class1856, class1857.method1147().method1143(), class1859.method21779());
                 float method21798 = this.method34685(class1856, class1857.method1147(), class1859.method21779());
-                final double n6 = class1857.method1074() & 0xF;
-                final double n7 = class1857.method1075() & 0xF;
-                final double n8 = class1857.method1076() & 0xF;
+                final double n6 = class1857.getX() & 0xF;
+                final double n7 = class1857.getY() & 0xF;
+                final double n8 = class1857.getZ() & 0xF;
                 final float n9 = 0.001f;
                 final float n10 = b2 ? 0.001f : 0.0f;
-                if (b && !method34680(class1856, class1857, Class179.field512, Math.min(Math.min(method21795, method21796), Math.min(method21797, method21798)))) {
+                if (b && !method34680(class1856, class1857, Direction.UP, Math.min(Math.min(method21795, method21796), Math.min(method21797, method21798)))) {
                     b7 = true;
                     method21795 -= 0.001f;
                     method21796 -= 0.001f;
                     method21797 -= 0.001f;
                     method21798 -= 0.001f;
-                    final Class5487 method21799 = class1859.method21790(class1856, class1857);
+                    final Vec3d method21799 = class1859.method21790(class1856, class1857);
                     float n11;
                     float n12;
                     float method21800;
@@ -112,9 +115,9 @@ public class Class9356
                     else {
                         final Class1912 class1861 = array[1];
                         class1858.method12407(class1861);
-                        final float n15 = (float)Class9546.method35693(method21799.field22772, method21799.field22770) - 1.5707964f;
-                        final float n16 = Class9546.method35638(n15) * 0.25f;
-                        final float n17 = Class9546.method35639(n15) * 0.25f;
+                        final float n15 = (float) MathHelper.method35693(method21799.field22772, method21799.field22770) - 1.5707964f;
+                        final float n16 = MathHelper.sin(n15) * 0.25f;
+                        final float n17 = MathHelper.cos(n15) * 0.25f;
                         n11 = class1861.method7499(8.0f + (-n17 - n16) * 16.0f);
                         n12 = class1861.method7502(8.0f + (-n17 + n16) * 16.0f);
                         method21800 = class1861.method7499(8.0f + (-n17 + n16) * 16.0f);
@@ -127,14 +130,14 @@ public class Class9356
                     final float n18 = (n11 + method21800 + n14 + method21802) / 4.0f;
                     final float n19 = (n12 + n13 + method21801 + method21803) / 4.0f;
                     final float n20 = 4.0f / Math.max(array[0].method7496() / (array[0].method7501() - array[0].method7500()), array[0].method7495() / (array[0].method7498() - array[0].method7497()));
-                    final float method21804 = Class9546.method35700(n20, n11, n18);
-                    final float method21805 = Class9546.method35700(n20, method21800, n18);
-                    final float method21806 = Class9546.method35700(n20, n14, n18);
-                    final float method21807 = Class9546.method35700(n20, method21802, n18);
-                    final float method21808 = Class9546.method35700(n20, n12, n19);
-                    final float method21809 = Class9546.method35700(n20, n13, n19);
-                    final float method21810 = Class9546.method35700(n20, method21801, n19);
-                    final float method21811 = Class9546.method35700(n20, method21803, n19);
+                    final float method21804 = MathHelper.method35700(n20, n11, n18);
+                    final float method21805 = MathHelper.method35700(n20, method21800, n18);
+                    final float method21806 = MathHelper.method35700(n20, n14, n18);
+                    final float method21807 = MathHelper.method35700(n20, method21802, n18);
+                    final float method21808 = MathHelper.method35700(n20, n12, n19);
+                    final float method21809 = MathHelper.method35700(n20, n13, n19);
+                    final float method21810 = MathHelper.method35700(n20, method21801, n19);
+                    final float method21811 = MathHelper.method35700(n20, method21803, n19);
                     final int method21812 = this.method34684(class1856, class1857);
                     final float n21 = 1.0f * n3;
                     final float n22 = 1.0f * n4;
@@ -157,7 +160,7 @@ public class Class9356
                     final float method21815 = array[0].method7500();
                     final float method21816 = array[0].method7501();
                     final int method21817 = this.method34684(class1856, class1857.method1139());
-                    final float method21818 = Class6225.method18523(Class179.field511);
+                    final float method21818 = Class6225.method18523(Direction.DOWN);
                     final float n24 = method21818 * n3;
                     final float n25 = method21818 * n4;
                     final float n26 = method21818 * n5;
@@ -174,7 +177,7 @@ public class Class9356
                     double n30;
                     double n31;
                     double n32;
-                    Class179 class1862;
+                    Direction class1862;
                     boolean b8;
                     if (i == 0) {
                         n27 = method21795;
@@ -183,7 +186,7 @@ public class Class9356
                         n30 = n6 + 1.0;
                         n31 = n8 + 0.0010000000474974513;
                         n32 = n8 + 0.0010000000474974513;
-                        class1862 = Class179.field513;
+                        class1862 = Direction.NORTH;
                         b8 = b3;
                     }
                     else if (i == 1) {
@@ -193,7 +196,7 @@ public class Class9356
                         n30 = n6;
                         n31 = n8 + 1.0 - 0.0010000000474974513;
                         n32 = n8 + 1.0 - 0.0010000000474974513;
-                        class1862 = Class179.field514;
+                        class1862 = Direction.SOUTH;
                         b8 = b4;
                     }
                     else if (i == 2) {
@@ -203,7 +206,7 @@ public class Class9356
                         n30 = n6 + 0.0010000000474974513;
                         n31 = n8 + 1.0;
                         n32 = n8;
-                        class1862 = Class179.field515;
+                        class1862 = Direction.WEST;
                         b8 = b5;
                     }
                     else {
@@ -213,12 +216,12 @@ public class Class9356
                         n30 = n6 + 1.0 - 0.0010000000474974513;
                         n31 = n8;
                         n32 = n8 + 1.0;
-                        class1862 = Class179.field516;
+                        class1862 = Direction.EAST;
                         b8 = b6;
                     }
                     if (b8 && !method34680(class1856, class1857, class1862, Math.max(n27, n28))) {
                         b7 = true;
-                        final Class354 method21819 = class1857.method1149(class1862);
+                        final BlockPos method21819 = class1857.method1149(class1862);
                         Class1912 field40140 = array[1];
                         float a = 0.0f;
                         float a2 = 0.0f;
@@ -266,7 +269,7 @@ public class Class9356
                             final float method21828 = field40140.method7502((1.0f - n28) * 16.0f * 0.5f);
                             field40140.method7502(8.0);
                             final int method21829 = this.method34684(class1856, method21819);
-                            final float n33 = (i < 2) ? Class6225.method18523(Class179.field513) : Class6225.method18523(Class179.field515);
+                            final float n33 = (i < 2) ? Class6225.method18523(Direction.NORTH) : Class6225.method18523(Direction.WEST);
                             final float n34 = 1.0f * n33 * n3;
                             final float n35 = 1.0f * n33 * n4;
                             final float n36 = 1.0f * n33 * n5;
@@ -304,7 +307,7 @@ public class Class9356
         class4150.method12432(n, n2, n3).method12439(n4, n5, n6, n7).method12391(n8, n9).method12440(n10).method12436(0.0f, 1.0f, 0.0f).method12397();
     }
     
-    private int method34684(final Class1856 class1856, final Class354 class1857) {
+    private int method34684(final Class1856 class1856, final BlockPos class1857) {
         final int method5776 = Class1656.method5776(class1856, class1857);
         final int method5777 = Class1656.method5776(class1856, class1857.method1137());
         final int n = method5776 & 0xFF;
@@ -314,11 +317,11 @@ public class Class9356
         return ((n <= n2) ? n2 : n) | ((n3 <= n4) ? n4 : n3) << 16;
     }
     
-    private float method34685(final Class1855 class1855, final Class354 class1856, final Class7255 class1857) {
+    private float method34685(final Class1855 class1855, final BlockPos class1856, final Class7255 class1857) {
         int n = 0;
         float n2 = 0.0f;
         for (int i = 0; i < 4; ++i) {
-            final Class354 method1134 = class1856.method1134(-(i & 0x1), 0, -(i >> 1 & 0x1));
+            final BlockPos method1134 = class1856.method1134(-(i & 0x1), 0, -(i >> 1 & 0x1));
             if (class1855.method6702(method1134.method1137()).method21779().method22165(class1857)) {
                 return 1.0f;
             }

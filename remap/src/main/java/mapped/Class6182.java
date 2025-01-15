@@ -8,7 +8,7 @@ public class Class6182 extends Class6159
 {
     private static String[] field24987;
     private final Class7096 field24988;
-    private Class354 field24989;
+    private BlockPos field24989;
     private final float field24990;
     private final float field24991;
     
@@ -30,7 +30,7 @@ public class Class6182 extends Class6159
         return Class6451.field25658;
     }
     
-    public Class6182 method18452(final Class354 field24989) {
+    public Class6182 method18452(final BlockPos field24989) {
         this.field24989 = field24989;
         if (this.field24988.method21696() != Class7521.field29155) {
             this.method18454(field24989);
@@ -40,7 +40,7 @@ public class Class6182 extends Class6159
     }
     
     public Class6182 method18453() {
-        this.field24989 = new Class354(this.field24936, this.field24937, this.field24938);
+        this.field24989 = new BlockPos(this.field24936, this.field24937, this.field24938);
         if (this.field24988.method21696() != Class7521.field29155) {
             this.method18454(this.field24989);
             return this;
@@ -48,7 +48,7 @@ public class Class6182 extends Class6159
         return this;
     }
     
-    public void method18454(final Class354 class354) {
+    public void method18454(final BlockPos class354) {
         final int method25441 = Class869.method5277().method5316().method25441(this.field24988, this.field24932, class354, 0);
         this.field24953 *= (method25441 >> 16 & 0xFF) / 255.0f;
         this.field24954 *= (method25441 >> 8 & 0xFF) / 255.0f;

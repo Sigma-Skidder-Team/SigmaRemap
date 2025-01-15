@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -29,9 +31,9 @@ public class Class4074 extends Class4072
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
+        final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
-        if (class7075.method21648() == Class179.field511) {
+        if (class7075.method21648() == Direction.DOWN) {
             return Class2201.field13402;
         }
         final Class512 method21657 = class7075.method21652();

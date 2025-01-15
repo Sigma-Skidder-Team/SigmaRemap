@@ -15,5 +15,5 @@ public abstract class Class3864<E extends Class436> extends Class3841
         this.field17495 = field17495;
     }
     
-    public abstract Class7191<? extends Class475> method11929(final Class7096 p0, final Class1847 p1, final Class354 p2, final boolean p3);
+    public abstract Class7191<? extends Class475> method11929(final Class7096 p0, final Class1847 p1, final BlockPos p2, final boolean p3);
 }

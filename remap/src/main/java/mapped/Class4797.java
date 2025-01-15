@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4797 extends Class4703<Class508>
 {
     private static final Class1932 field20449;
@@ -16,7 +18,7 @@ public class Class4797 extends Class4703<Class508>
     }
     
     public int method14190(final Class508 class508, final float n) {
-        return Class9546.method35651(super.method13954(class508, n) + 7, 0, 15);
+        return MathHelper.method35651(super.method13954(class508, n) + 7, 0, 15);
     }
     
     public void method14191(final Class508 class508, final float n, final float n2, final Class7351 class509, final Class7807 class510, final int n3) {
@@ -30,11 +32,11 @@ public class Class4797 extends Class4703<Class508>
         if (Class8571.method28945()) {
             method2609 = Class8763.method30347(method2609);
         }
-        final int n8 = (int)((Class9546.method35638(method2609 + 0.0f) + 1.0f) * 0.5f * 255.0f);
-        final int n9 = (int)((Class9546.method35638(method2609 + 4.1887903f) + 1.0f) * 0.1f * 255.0f);
+        final int n8 = (int)((MathHelper.sin(method2609 + 0.0f) + 1.0f) * 0.5f * 255.0f);
+        final int n9 = (int)((MathHelper.sin(method2609 + 4.1887903f) + 1.0f) * 0.1f * 255.0f);
         class509.method22564(0.0, 0.10000000149011612, 0.0);
         class509.method22566(this.field20283.method28717());
-        class509.method22566(Class9138.field38718.method33328(180.0f));
+        class509.method22566(Vector3f.field38718.rotationDegrees(180.0f));
         class509.method22565(0.3f, 0.3f, 0.3f);
         final Class4150 method2610 = class510.method25214(Class4797.field20450);
         final Class8996 method2611 = class509.method22569();

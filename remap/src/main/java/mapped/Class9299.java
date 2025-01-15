@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.IntUnaryOperator;
 
 public class Class9299 implements IntUnaryOperator
@@ -21,7 +23,7 @@ public class Class9299 implements IntUnaryOperator
             if (n8 != null) {
                 this.field39899 = (n5 -> {
                     n8.intValue();
-                    return Class9546.method35651(n5, n, n3);
+                    return MathHelper.method35651(n5, n, n3);
                 });
             }
             else {

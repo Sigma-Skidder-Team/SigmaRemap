@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 
 public class Class4653 extends Class4651
@@ -31,18 +34,18 @@ public class Class4653 extends Class4651
     
     @Override
     public Class6772 method13902() {
-        return this.method13919(Class9546.method35644(this.field20141.method1886().field25073), Class9546.method35644(this.field20141.method1886().field25074 + 0.5), Class9546.method35644(this.field20141.method1886().field25075));
+        return this.method13919(MathHelper.floor(this.field20141.method1886().field25073), MathHelper.floor(this.field20141.method1886().field25074 + 0.5), MathHelper.floor(this.field20141.method1886().field25075));
     }
     
     @Override
     public Class6773 method13903(final double n, final double n2, final double n3) {
-        return new Class6773(this.method13919(Class9546.method35644(n), Class9546.method35644(n2 + 0.5), Class9546.method35644(n3)));
+        return new Class6773(this.method13919(MathHelper.floor(n), MathHelper.floor(n2 + 0.5), MathHelper.floor(n3)));
     }
     
     @Override
     public int method13904(final Class6772[] array, final Class6772 class6772) {
         int n = 0;
-        final double method13920 = this.method13920(new Class354(class6772.field26589, class6772.field26590, class6772.field26591));
+        final double method13920 = this.method13920(new BlockPos(class6772.field26589, class6772.field26590, class6772.field26591));
         final Class6772 method13921 = this.method13921(class6772.field26589, class6772.field26590, class6772.field26591 + 1, 1, method13920);
         final Class6772 method13922 = this.method13921(class6772.field26589 - 1, class6772.field26590, class6772.field26591, 1, method13920);
         final Class6772 method13923 = this.method13921(class6772.field26589 + 1, class6772.field26590, class6772.field26591, 1, method13920);
@@ -174,19 +177,19 @@ public class Class4653 extends Class4651
         return n;
     }
     
-    private double method13920(final Class354 class354) {
+    private double method13920(final BlockPos class354) {
         if (this.field20141.method1706()) {
-            return class354.method1075() + 0.5;
+            return class354.getY() + 0.5;
         }
-        final Class354 method1139 = class354.method1139();
+        final BlockPos method1139 = class354.method1139();
         final Class7702 method1140 = this.field20140.method6701(method1139).method21727(this.field20140, method1139);
-        return method1139.method1075() + (method1140.method24540() ? 0.0 : method1140.method24536(Class111.field352));
+        return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
     }
     
     @Nullable
     private Class6772 method13921(final int n, int i, final int n2, final int n3, final double n4) {
         Class6772 class6772 = null;
-        if (this.method13920(new Class354(n, i, n2)) - n4 > 1.125) {
+        if (this.method13920(new BlockPos(n, i, n2)) - n4 > 1.125) {
             return null;
         }
         Class257 class6773 = this.method13908(this.field20140, n, i, n2, this.field20141, this.field20143, this.field20144, this.field20145, false, false);
@@ -259,7 +262,7 @@ public class Class4653 extends Class4651
     }
     
     @Override
-    public Class257 method13910(final Class1855 class1855, final boolean b, final boolean b2, final Class354 class1856, Class257 class1857) {
+    public Class257 method13910(final Class1855 class1855, final boolean b, final boolean b2, final BlockPos class1856, Class257 class1857) {
         if (class1857 == Class257.field1213) {
             if (!(class1855.method6701(class1856).method21696() instanceof Class4017)) {
                 if (!(class1855.method6701(class1856.method1139()).method21696() instanceof Class4017)) {
@@ -289,7 +292,7 @@ public class Class4653 extends Class4651
         if (class1856 != Class257.field1211) {
             if (class1856 == Class257.field1206) {
                 if (n2 >= 1) {
-                    final Class3833 method21696 = class1855.method6701(new Class354(n, n2 - 1, n3)).method21696();
+                    final Class3833 method21696 = class1855.method6701(new BlockPos(n, n2 - 1, n3)).method21696();
                     final Class257 method21697 = Class4651.method13916(class1855, n, n2 - 1, n3);
                     Label_0209: {
                         if (method21697 != Class257.field1207) {
@@ -325,8 +328,8 @@ public class Class4653 extends Class4651
             }
             return class1856;
         }
-        for (final Class179 class1857 : Class179.values()) {
-            if (Class4651.method13916(class1855, n + class1857.method785(), n2 + class1857.method786(), n3 + class1857.method787()) == Class257.field1205) {
+        for (final Direction class1857 : Direction.values()) {
+            if (Class4651.method13916(class1855, n + class1857.getXOffset(), n2 + class1857.getYOffset(), n3 + class1857.getZOffset()) == Class257.field1205) {
                 return Class257.field1212;
             }
         }

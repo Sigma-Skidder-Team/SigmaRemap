@@ -13,7 +13,7 @@ public class Class4045 extends Class4043
     }
     
     @Override
-    public boolean method12232(final Class354 class354, final Class1847 class355, final Class512 class356, final Class8321 class357, final Class7096 class358) {
+    public boolean method12232(final BlockPos class354, final Class1847 class355, final Class512 class356, final Class8321 class357, final Class7096 class358) {
         final boolean method12232 = super.method12232(class354, class355, class356, class357, class358);
         if (!class355.field10067) {
             if (!method12232) {

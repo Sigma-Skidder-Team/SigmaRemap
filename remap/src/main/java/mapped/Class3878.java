@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class3878 extends Class3874 implements Class3872
@@ -18,12 +21,12 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class3878.field17530[class7096.method21772((Class7111<Integer>)this.method11952())];
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return class7096.method21696() == Class7521.field29298;
     }
     
@@ -48,7 +51,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final Class354 class7098, final Random random) {
+    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         super.method11822(class7096, class7097, class7098, random);
         if (class7097.method6993(class7098, 0) >= 9) {
             final int method11954 = this.method11954(class7096);
@@ -60,7 +63,7 @@ public class Class3878 extends Class3874 implements Class3872
         }
     }
     
-    public void method11957(final Class1847 class1847, final Class354 class1848, final Class7096 class1849) {
+    public void method11957(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849) {
         int n = this.method11954(class1849) + this.method11958(class1847);
         final int method11953 = this.method11953();
         if (n > method11953) {
@@ -70,12 +73,12 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     public int method11958(final Class1847 class1847) {
-        return Class9546.method35658(class1847.field10062, 2, 5);
+        return MathHelper.method35658(class1847.field10062, 2, 5);
     }
     
-    public static float method11959(final Class3833 class3833, final Class1855 class3834, final Class354 class3835) {
+    public static float method11959(final Class3833 class3833, final Class1855 class3834, final BlockPos class3835) {
         float n = 1.0f;
-        final Class354 method1139 = class3835.method1139();
+        final BlockPos method1139 = class3835.method1139();
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 float n2 = 0.0f;
@@ -92,10 +95,10 @@ public class Class3878 extends Class3874 implements Class3872
                 n += n2;
             }
         }
-        final Class354 method1141 = class3835.method1141();
-        final Class354 method1142 = class3835.method1143();
-        final Class354 method1143 = class3835.method1145();
-        final Class354 method1144 = class3835.method1147();
+        final BlockPos method1141 = class3835.method1141();
+        final BlockPos method1142 = class3835.method1143();
+        final BlockPos method1143 = class3835.method1145();
+        final BlockPos method1144 = class3835.method1147();
         final boolean b = class3833 == class3834.method6701(method1143).method21696() || class3833 == class3834.method6701(method1144).method21696();
         final boolean b2 = class3833 == class3834.method6701(method1141).method21696() || class3833 == class3834.method6701(method1142).method21696();
         if (b && b2) {
@@ -124,7 +127,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final Class354 class7098) {
+    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         if (class7097.method6993(class7098, 0) >= 8 || class7097.method6994(class7098)) {
             if (super.method11843(class7096, class7097, class7098)) {
                 return true;
@@ -134,7 +137,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class399 class7099) {
+    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
         if (class7099 instanceof Class779) {
             if (class7097.method6765().method31216(Class8878.field37316)) {
                 class7097.method6691(class7098, true, class7099);
@@ -148,22 +151,22 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final Class354 class1856, final Class7096 class1857) {
+    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
         return new Class8321(this.method11960());
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final Class354 class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return !this.method11956(class1857);
     }
     
     @Override
-    public boolean method11946(final Class1847 class1847, final Random random, final Class354 class1848, final Class7096 class1849) {
+    public boolean method11946(final Class1847 class1847, final Random random, final BlockPos class1848, final Class7096 class1849) {
         return true;
     }
     
     @Override
-    public void method11947(final Class1849 class1849, final Random random, final Class354 class1850, final Class7096 class1851) {
+    public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
         this.method11957(class1849, class1850, class1851);
     }
     

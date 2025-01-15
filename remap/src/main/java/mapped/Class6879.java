@@ -10,6 +10,8 @@ import java.util.Iterator;
 import com.google.common.base.Objects;
 import java.util.Collections;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Set;
 
 public class Class6879 extends Class6880
@@ -20,7 +22,7 @@ public class Class6879 extends Class6880
     private boolean field26954;
     
     public Class6879(final Class2250 class2250, final Class2200 class2251, final Class342 class2252) {
-        super(Class9546.method35691(), class2250, class2251, class2252);
+        super(MathHelper.method35691(), class2250, class2251, class2252);
         this.field26952 = Sets.newHashSet();
         this.field26953 = Collections.unmodifiableSet((Set<? extends Class513>)this.field26952);
         this.field26954 = true;

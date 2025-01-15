@@ -5,9 +5,10 @@
 package mapped;
 
 import java.util.HashSet;
-import java.util.Collection;
 import java.util.stream.Collectors;
 import com.google.common.collect.Sets;
+import net.minecraft.util.Direction;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
@@ -61,14 +62,14 @@ public class Class8974
         this.field37822 = false;
         this.field37825 = new Class8974[6];
         this.field37826 = false;
-        this.field37828 = new Class8974[Class179.field524.length];
-        this.field37829 = new Class8974[Class179.field524.length];
+        this.field37828 = new Class8974[Direction.VALUES.length];
+        this.field37829 = new Class8974[Direction.VALUES.length];
         this.field37830 = false;
         this.field37831 = new Class9071(this, null, 0);
     }
     
-    private boolean method31863(final Class354 class354) {
-        return Class7520.method23478(this.field37833).method6687(class354.method1074() >> 4, class354.method1076() >> 4, Class9312.field39989, false) != null;
+    private boolean method31863(final BlockPos class354) {
+        return Class7520.method23478(this.field37833).method6687(class354.getX() >> 4, class354.getZ() >> 4, Class9312.field39989, false) != null;
     }
     
     public boolean method31864() {
@@ -76,10 +77,10 @@ public class Class8974
             return true;
         }
         if (this.method31868() > 576.0) {
-            if (this.method31863(this.field37818[Class179.field515.ordinal()])) {
-                if (this.method31863(this.field37818[Class179.field513.ordinal()])) {
-                    if (this.method31863(this.field37818[Class179.field516.ordinal()])) {
-                        if (this.method31863(this.field37818[Class179.field514.ordinal()])) {
+            if (this.method31863(this.field37818[Direction.WEST.ordinal()])) {
+                if (this.method31863(this.field37818[Direction.NORTH.ordinal()])) {
+                    if (this.method31863(this.field37818[Direction.EAST.ordinal()])) {
+                        if (this.method31863(this.field37818[Direction.SOUTH.ordinal()])) {
                             return true;
                         }
                     }
@@ -103,9 +104,9 @@ public class Class8974
     }
     
     public void method31867(final int n, final int n2, final int n3) {
-        if (n == this.field37817.method1074()) {
-            if (n2 == this.field37817.method1075()) {
-                if (n3 == this.field37817.method1076()) {
+        if (n == this.field37817.getX()) {
+            if (n2 == this.field37817.getY()) {
+                if (n3 == this.field37817.getZ()) {
                     return;
                 }
             }
@@ -116,7 +117,7 @@ public class Class8974
         this.field37823 = n >> n4 << n4;
         this.field37824 = n3 >> n4 << n4;
         this.field37814 = new Class6221(n, n2, n3, n + 16, n2 + 16, n3 + 16);
-        for (final Class179 class179 : Class179.field524) {
+        for (final Direction class179 : Direction.VALUES) {
             this.field37818[class179.ordinal()].method1287(this.field37817).method1291(class179, 16);
         }
         this.field37826 = false;
@@ -158,7 +159,7 @@ public class Class8974
         this.field37813.values().forEach(Class1918::close);
     }
     
-    public Class354 method31873() {
+    public BlockPos method31873() {
         return this.field37817;
     }
     
@@ -185,7 +186,7 @@ public class Class8974
         return this.field37816 && this.field37819;
     }
     
-    public Class354 method31878(final Class179 class179) {
+    public BlockPos method31878(final Direction class179) {
         return this.field37818[class179.ordinal()];
     }
     
@@ -273,7 +274,7 @@ public class Class8974
         return Class7520.field29141;
     }
     
-    private Class6332 method31889(final Class1855 class1855, final Class7096 class1856, final Class354 class1857, final Class6332 class1858) {
+    private Class6332 method31889(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Class6332 class1858) {
         if (Class8929.method31490()) {
             final Class6332 method31486 = Class8929.method31486(class1855, class1856, class1857);
             if (method31486 != null) {
@@ -317,20 +318,20 @@ public class Class8974
         }
     }
     
-    private Class1857 method31892(final Class354 class354) {
-        final Class354 method1134 = class354.method1134(-1, -1, -1);
-        final Class354 method1135 = class354.method1134(16, 16, 16);
+    private Class1857 method31892(final BlockPos class354) {
+        final BlockPos method1134 = class354.method1134(-1, -1, -1);
+        final BlockPos method1135 = class354.method1134(16, 16, 16);
         return new Class1857(this.method31893(Class7520.method23478(this.field37833), method1134, method1135, 1), method1134, method1135, 1);
     }
     
-    public Class1858 method31893(final Class1847 class1847, final Class354 class1848, final Class354 class1849, final int n) {
+    public Class1858 method31893(final Class1847 class1847, final BlockPos class1848, final BlockPos class1849, final int n) {
         return Class1858.method7004(class1847, class1848, class1849, n, false);
     }
     
-    public Class8974 method31894(final Class9112 class9112, final Class179 class9113) {
+    public Class8974 method31894(final Class9112 class9112, final Direction class9113) {
         if (!this.field37826) {
-            for (int i = 0; i < Class179.field524.length; ++i) {
-                this.field37825[i] = class9112.method32963(this.method31878(Class179.field524[i]));
+            for (int i = 0; i < Direction.VALUES.length; ++i) {
+                this.field37825[i] = class9112.method32963(this.method31878(Direction.VALUES[i]));
             }
             this.field37826 = true;
         }
@@ -341,7 +342,7 @@ public class Class8974
         return this.method31896(this.field37817);
     }
     
-    private Class1862 method31896(final Class354 class354) {
+    private Class1862 method31896(final BlockPos class354) {
         final Class1862 field37827 = this.field37827;
         if (field37827 != null && Class6502.method19585(field37827)) {
             return field37827;
@@ -353,17 +354,17 @@ public class Class8974
         return this.method31898(this.field37817);
     }
     
-    private boolean method31898(final Class354 class354) {
-        final int method1075 = class354.method1075();
+    private boolean method31898(final BlockPos class354) {
+        final int method1075 = class354.getY();
         return this.method31896(class354).method7023(method1075, method1075 + 15);
     }
     
-    public void method31899(final Class179 class179, final Class8974 class180) {
+    public void method31899(final Direction class179, final Class8974 class180) {
         this.field37828[class179.ordinal()] = class180;
         this.field37829[class179.ordinal()] = class180;
     }
     
-    public Class8974 method31900(final Class179 class179) {
+    public Class8974 method31900(final Direction class179) {
         if (!this.field37830) {
             this.method31902();
         }
@@ -375,16 +376,16 @@ public class Class8974
     }
     
     private void method31902() {
-        final int method1074 = this.method31873().method1074();
-        final int method1075 = this.method31873().method1076();
-        final int ordinal = Class179.field513.ordinal();
-        final int ordinal2 = Class179.field514.ordinal();
-        final int ordinal3 = Class179.field515.ordinal();
-        final int ordinal4 = Class179.field516.ordinal();
-        this.field37829[ordinal] = ((this.field37828[ordinal].method31873().method1076() != method1075 - 16) ? null : this.field37828[ordinal]);
-        this.field37829[ordinal2] = ((this.field37828[ordinal2].method31873().method1076() != method1075 + 16) ? null : this.field37828[ordinal2]);
-        this.field37829[ordinal3] = ((this.field37828[ordinal3].method31873().method1074() != method1074 - 16) ? null : this.field37828[ordinal3]);
-        this.field37829[ordinal4] = ((this.field37828[ordinal4].method31873().method1074() != method1074 + 16) ? null : this.field37828[ordinal4]);
+        final int method1074 = this.method31873().getX();
+        final int method1075 = this.method31873().getZ();
+        final int ordinal = Direction.NORTH.ordinal();
+        final int ordinal2 = Direction.SOUTH.ordinal();
+        final int ordinal3 = Direction.WEST.ordinal();
+        final int ordinal4 = Direction.EAST.ordinal();
+        this.field37829[ordinal] = ((this.field37828[ordinal].method31873().getZ() != method1075 - 16) ? null : this.field37828[ordinal]);
+        this.field37829[ordinal2] = ((this.field37828[ordinal2].method31873().getZ() != method1075 + 16) ? null : this.field37828[ordinal2]);
+        this.field37829[ordinal3] = ((this.field37828[ordinal3].method31873().getX() != method1074 - 16) ? null : this.field37828[ordinal3]);
+        this.field37829[ordinal4] = ((this.field37828[ordinal4].method31873().getX() != method1074 + 16) ? null : this.field37828[ordinal4]);
         this.field37830 = true;
     }
     
@@ -394,10 +395,10 @@ public class Class8974
     
     public Class6222 method31904() {
         if (this.field37832 == null) {
-            final Class354 method31873 = this.method31873();
-            final int method31874 = method31873.method1074();
-            final int method31875 = method31873.method1075();
-            final int method31876 = method31873.method1076();
+            final BlockPos method31873 = this.method31873();
+            final int method31874 = method31873.getX();
+            final int method31875 = method31873.getY();
+            final int method31876 = method31873.getZ();
             final int n = 5;
             final int n2 = method31874 >> n << n;
             final int n3 = method31875 >> n << n;
@@ -410,7 +411,7 @@ public class Class8974
                         }
                     }
                 }
-                final Class6222 method31877 = Class7520.method23480(this.field37833).method5762(new Class354(n2, n3, n4)).method31904();
+                final Class6222 method31877 = Class7520.method23480(this.field37833).method5762(new BlockPos(n2, n3, n4)).method31904();
                 if (method31877 != null) {
                     if (method31877.field25073 == n2) {
                         if (method31877.field25074 == n3) {

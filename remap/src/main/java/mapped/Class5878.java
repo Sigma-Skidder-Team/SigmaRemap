@@ -4,9 +4,12 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Arrays;
 
-public class Class5878<T extends Class399> extends Class5846<T>
+public class Class5878<T extends Entity> extends Class5846<T>
 {
     private static String[] field24095;
     private static final int[][] field24096;
@@ -34,8 +37,8 @@ public class Class5878<T extends Class399> extends Class5846<T>
     @Override
     public void method17557(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         for (int i = 0; i < this.field24099.length; ++i) {
-            this.field24099[i].field25184 = Class9546.method35639(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.01f * (1 + Math.abs(i - 2));
-            this.field24099[i].field25180 = Class9546.method35638(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.1f * Math.abs(i - 2);
+            this.field24099[i].field25184 = MathHelper.cos(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.01f * (1 + Math.abs(i - 2));
+            this.field24099[i].field25180 = MathHelper.sin(n3 * 0.9f + i * 0.15f * 3.1415927f) * 3.1415927f * 0.1f * Math.abs(i - 2);
         }
     }
     

@@ -6,8 +6,10 @@ package mapped;
 
 import java.util.HashMap;
 import com.ibm.icu.text.NumberFormat;
-import java.util.Iterator;
+
 import java.awt.Color;
+
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 
@@ -38,7 +40,7 @@ public class Class3335 extends Class3167
         final boolean method9883 = this.method9914().method9883("Show Invisibles");
         final boolean method9884 = this.method9883("Show Health");
         Class8726.method30059();
-        for (final Class399 class5735 : Class3335.field15934.keySet()) {
+        for (final Entity class5735 : Class3335.field15934.keySet()) {
             final double[] array = Class3335.field15934.get(class5735);
             final double[] array2 = Class3335.field15935.get(class5735);
             if (array[3] > 0.0 || array[3] <= 1.0) {
@@ -201,7 +203,7 @@ public class Class3335 extends Class3167
         }
     }
     
-    private void method10557(final Class399 class399) {
+    private void method10557(final Entity class399) {
         final float n = 1.0f;
         final float n2 = (float)(n * (Class3335.field15514.field4648.field23471 / Class3335.field15514.field4648.field23471));
         if (this.field15933 == 0.0 || Double.isNaN(this.field15933)) {

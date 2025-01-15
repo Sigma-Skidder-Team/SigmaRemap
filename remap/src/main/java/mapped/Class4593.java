@@ -23,9 +23,9 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
         return n;
     }
     
-    private boolean method13635(final Class1877 class1877, final Class354 class1878, final int n) {
+    private boolean method13635(final Class1877 class1877, final BlockPos class1878, final int n) {
         boolean b = true;
-        if (class1878.method1075() >= 1 && class1878.method1075() + n + 1 <= 256) {
+        if (class1878.getY() >= 1 && class1878.getY() + n + 1 <= 256) {
             for (int i = 0; i <= 1 + n; ++i) {
                 int n2 = 2;
                 if (i != 0) {
@@ -38,8 +38,8 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
                 }
                 for (int n3 = -n2; n3 <= n2 && b; ++n3) {
                     for (int n4 = -n2; n4 <= n2 && b; ++n4) {
-                        if (class1878.method1075() + i >= 0) {
-                            if (class1878.method1075() + i < 256) {
+                        if (class1878.getY() + i >= 0) {
+                            if (class1878.getY() + i < 256) {
                                 if (Class4592.method13608(class1877, class1878.method1134(n3, i, n4))) {
                                     continue;
                                 }
@@ -54,9 +54,9 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
         return false;
     }
     
-    private boolean method13636(final Class1875 class1875, final Class354 class1876) {
-        final Class354 method1139 = class1876.method1139();
-        if (Class4592.method13614(class1875, method1139) && class1876.method1075() >= 2) {
+    private boolean method13636(final Class1875 class1875, final BlockPos class1876) {
+        final BlockPos method1139 = class1876.method1139();
+        if (Class4592.method13614(class1875, method1139) && class1876.getY() >= 2) {
             this.method13617(class1875, method1139);
             this.method13617(class1875, method1139.method1147());
             this.method13617(class1875, method1139.method1143());
@@ -66,11 +66,11 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
         return false;
     }
     
-    public boolean method13637(final Class1875 class1875, final Class354 class1876, final int n) {
+    public boolean method13637(final Class1875 class1875, final BlockPos class1876, final int n) {
         return this.method13635(class1875, class1876, n) && this.method13636(class1875, class1876);
     }
     
-    public void method13638(final Class1875 class1875, final Random random, final Class354 class1876, final int n, final Set<Class354> set, final Class6997 class1877, final Class5127 class1878) {
+    public void method13638(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
         final int n2 = n * n;
         for (int i = -n; i <= n + 1; ++i) {
             for (int j = -n; j <= n + 1; ++j) {
@@ -85,7 +85,7 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
         }
     }
     
-    public void method13639(final Class1875 class1875, final Random random, final Class354 class1876, final int n, final Set<Class354> set, final Class6997 class1877, final Class5127 class1878) {
+    public void method13639(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5127 class1878) {
         final int n2 = n * n;
         for (int i = -n; i <= n; ++i) {
             for (int j = -n; j <= n; ++j) {
@@ -96,7 +96,7 @@ public abstract class Class4593<T extends Class5127> extends Class4592<T>
         }
     }
     
-    public void method13640(final Class1875 class1875, final Random random, final Class354 class1876, final int n, final Set<Class354> set, final Class6997 class1877, final Class5128 class1878) {
+    public void method13640(final Class1875 class1875, final Random random, final BlockPos class1876, final int n, final Set<BlockPos> set, final Class6997 class1877, final Class5128 class1878) {
         final Class385 class1879 = new Class385();
         for (int i = 0; i < n; ++i) {
             class1879.method1287(class1876).method1292(0, i, 0);

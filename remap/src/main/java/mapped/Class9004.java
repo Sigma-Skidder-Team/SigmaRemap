@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.client.renderer.Vector4f;
+
 public class Class9004
 {
     private int field38009;
@@ -163,7 +165,7 @@ public class Class9004
         }
     }
     
-    public Class8526 method32208() {
+    public Vector4f method32208() {
         if (this.field38011 == null) {
             return null;
         }
@@ -177,7 +179,7 @@ public class Class9004
                 }
                 array[i] = method28938;
             }
-            return new Class8526(array[0], array[1], array[2], array[3]);
+            return new Vector4f(array[0], array[1], array[2], array[3]);
         }
         return null;
     }

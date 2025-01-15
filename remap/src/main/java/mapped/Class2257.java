@@ -51,7 +51,7 @@ public class Class2257 extends Class2255
     public Stream<Class51> method8481(final Class7492 class7492) {
         if (this.field13807 != null) {
             final Class1849 method23250 = class7492.method23250();
-            final Class354 method23251 = this.field13807.method16506(class7492);
+            final BlockPos method23251 = this.field13807.method16506(class7492);
             if (method23250.method6731(method23251)) {
                 final Class436 method23252 = method23250.method6727(method23251);
                 if (method23252 != null) {

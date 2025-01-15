@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class3847 extends Class3846
 {
     private static String[] field17455;
@@ -13,7 +15,7 @@ public class Class3847 extends Class3846
     }
     
     @Override
-    public void method11860(final Class1847 class1847, final Class354 class1848, final Class399 class1849, final float n) {
+    public void method11860(final Class1847 class1847, final BlockPos class1848, final Entity class1849, final float n) {
         if (!class1849.method1811()) {
             class1849.method1705(n, 0.0f);
         }
@@ -23,7 +25,7 @@ public class Class3847 extends Class3846
     }
     
     @Override
-    public void method11861(final Class1855 class1855, final Class399 class1856) {
+    public void method11861(final Class1855 class1855, final Entity class1856) {
         if (!class1856.method1811()) {
             this.method11901(class1856);
         }
@@ -32,7 +34,7 @@ public class Class3847 extends Class3846
         }
     }
     
-    private void method11901(final Class399 class399) {
+    private void method11901(final Entity class399) {
         final Class5487 method1935 = class399.method1935();
         if (method1935.field22771 < 0.0) {
             class399.method1937(method1935.field22770, -method1935.field22771 * ((class399 instanceof Class511) ? 1.0 : 0.8), method1935.field22772);
@@ -40,7 +42,7 @@ public class Class3847 extends Class3846
     }
     
     @Override
-    public void method11845(final Class1847 class1847, final Class354 class1848, final Class399 class1849) {
+    public void method11845(final Class1847 class1847, final BlockPos class1848, final Entity class1849) {
         final double abs = Math.abs(class1849.method1935().field22771);
         if (abs < 0.1) {
             if (!class1849.method1810()) {

@@ -37,10 +37,10 @@ public class Class3483 extends Class3479
     @Override
     public void method11016() {
         super.method11016();
-        this.field16407.method4147().method24669(this.field16395.method1074() + 0.5, this.field16395.method1075() + 1, this.field16395.method1076() + 0.5, 10.0f, (float)this.field16407.method4173());
+        this.field16407.method4147().method24669(this.field16395.getX() + 0.5, this.field16395.getY() + 1, this.field16395.getZ() + 0.5, 10.0f, (float)this.field16407.method4173());
         if (this.method11048()) {
             final Class1847 field2391 = this.field16407.field2391;
-            final Class354 method1137 = this.field16395.method1137();
+            final BlockPos method1137 = this.field16395.method1137();
             final Class7096 method1138 = field2391.method6701(method1137);
             final Class3833 method1139 = method1138.method21696();
             if (this.field16409) {
@@ -63,7 +63,7 @@ public class Class3483 extends Class3479
     }
     
     @Override
-    public boolean method11050(final Class1852 class1852, Class354 method1137) {
+    public boolean method11050(final Class1852 class1852, BlockPos method1137) {
         if (class1852.method6701(method1137).method21696() == Class7521.field29298) {
             if (this.field16408) {
                 if (!this.field16409) {

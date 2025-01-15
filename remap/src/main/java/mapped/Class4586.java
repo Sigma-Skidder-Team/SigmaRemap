@@ -46,7 +46,7 @@ public class Class4586 extends Class4582<Class5122>
                 if (class5508.method18877(class5509, this)) {
                     for (int i = n - 10; i <= n + 10; ++i) {
                         for (int j = n2 - 10; j <= n2 + 10; ++j) {
-                            if (Class4535.field19972.method13594(class5507, class5508, random, i, j, class5507.method16810(new Class354((i << 4) + 9, 0, (j << 4) + 9)))) {
+                            if (Class4535.field19972.method13594(class5507, class5508, random, i, j, class5507.method16810(new BlockPos((i << 4) + 9, 0, (j << 4) + 9)))) {
                                 return false;
                             }
                         }

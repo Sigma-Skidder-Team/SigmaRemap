@@ -31,7 +31,7 @@ public class Class3513 extends Class3446
     public void method11015() {
         final Class5487 method11070 = this.method11070();
         if (method11070 != null) {
-            Class798.method4591(this.field16508).method24726(Class798.method4590(this.field16508).method24721(new Class354(method11070), 1), 1.0);
+            Class798.method4591(this.field16508).method24726(Class798.method4590(this.field16508).method24721(new BlockPos(method11070), 1), 1.0);
         }
     }
     

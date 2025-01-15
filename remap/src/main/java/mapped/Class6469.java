@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.concurrent.Executor;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class6469
 {
@@ -143,7 +143,7 @@ public abstract class Class6469
     
     static {
         field25705 = new Class6470("options.biomeBlendRadius", 0.0, 7.0, 1.0f, class5760 -> Double.valueOf(class5760.field23410), (class5762, n) -> {
-            class5762.field23410 = Class9546.method35651(n.intValue(), 0, 7);
+            class5762.field23410 = MathHelper.method35651(n.intValue(), 0, 7);
             Class869.method5277().field4636.method5701();
             return;
         }, (class5763, class5765) -> class5765.method19365() + Class8822.method30773("options.biomeBlendRadius." + ((int)class5765.method19476(class5763) * 2 + 1), new Object[0]));
@@ -356,7 +356,7 @@ public abstract class Class6469
             }
             return s8;
         });
-        field25724 = new Class6474("options.guiScale", (class5871, n25) -> class5871.field23473 = Class9546.method35664(class5871.field23473 + n25, Class869.method5277().method5332().method7687(0, Class869.method5277().method5240()) + 1), (class5872, class5874) -> class5874.method19365() + ((class5872.field23473 != 0) ? Integer.valueOf(class5872.field23473) : Class8822.method30773("options.guiScale.auto", new Object[0])));
+        field25724 = new Class6474("options.guiScale", (class5871, n25) -> class5871.field23473 = MathHelper.method35664(class5871.field23473 + n25, Class869.method5277().method5332().method7687(0, Class869.method5277().method5240()) + 1), (class5872, class5874) -> class5874.method19365() + ((class5872.field23473 != 0) ? Integer.valueOf(class5872.field23473) : Class8822.method30773("options.guiScale.auto", new Object[0])));
         field25725 = new Class6474("options.mainHand", (class5876, p1) -> class5876.field23397 = class5876.field23397.method8419(), (class5877, class5879) -> class5879.method19365() + class5877.field23397);
         field25726 = new Class6474("options.narrator", (class5881, n26) -> {
             if (!Class7895.field32404.method25560()) {

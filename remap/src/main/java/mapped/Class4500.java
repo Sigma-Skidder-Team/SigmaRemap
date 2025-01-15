@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
@@ -68,8 +70,8 @@ public abstract class Class4500 extends Class4473
                 this.method13440(class1851, Class7521.field29368.method11878(), n + 2, n2, n3, class1852);
                 this.method13440(class1851, Class7521.field29318.method11878(), n + 1, n2, n3, class1852);
                 this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29318.method11878()).method21773(Class3969.field17935, Class182.field564), n + 1, n2 + 1, n3, class1852);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29328.method11878()).method21773((Class7111<Comparable>)Class3905.field17564, Class179.field513), n + 2, n2 + 1, n3 + 1, class1852);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29328.method11878()).method21773((Class7111<Comparable>)Class3905.field17564, Class179.field514), n + 2, n2 + 1, n3 - 1, class1852);
+                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29328.method11878()).method21773((Class7111<Comparable>)Class3905.field17564, Direction.NORTH), n + 2, n2 + 1, n3 + 1, class1852);
+                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29328.method11878()).method21773((Class7111<Comparable>)Class3905.field17564, Direction.SOUTH), n + 2, n2 + 1, n3 - 1, class1852);
                 break;
             }
         }
@@ -94,7 +96,7 @@ public abstract class Class4500 extends Class4473
     
     @Nullable
     public Class4473 method13494(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2) {
-        final Class179 method13455 = this.method13455();
+        final Direction method13455 = this.method13455();
         if (method13455 != null) {
             switch (Class6870.field26919[method13455.ordinal()]) {
                 case 1: {
@@ -116,20 +118,20 @@ public abstract class Class4500 extends Class4473
     
     @Nullable
     public Class4473 method13495(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2) {
-        final Class179 method13455 = this.method13455();
+        final Direction method13455 = this.method13455();
         if (method13455 != null) {
             switch (Class6870.field26919[method13455.ordinal()]) {
                 case 1: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Class179.field515, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.WEST, this.method13433());
                 }
                 case 2: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Class179.field515, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 - 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.WEST, this.method13433());
                 }
                 case 3: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27295 - 1, Class179.field513, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27295 - 1, Direction.NORTH, this.method13433());
                 }
                 case 4: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27295 - 1, Class179.field513, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27295 - 1, Direction.NORTH, this.method13433());
                 }
             }
         }
@@ -138,20 +140,20 @@ public abstract class Class4500 extends Class4473
     
     @Nullable
     public Class4473 method13496(final Class4507 class4507, final List<Class4473> list, final Random random, final int n, final int n2) {
-        final Class179 method13455 = this.method13455();
+        final Direction method13455 = this.method13455();
         if (method13455 != null) {
             switch (Class6870.field26919[method13455.ordinal()]) {
                 case 1: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Class179.field516, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.EAST, this.method13433());
                 }
                 case 2: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Class179.field516, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27296 + 1, this.field19849.field27294 + n, this.field19849.field27295 + n2, Direction.EAST, this.method13433());
                 }
                 case 3: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27298 + 1, Class179.field514, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27298 + 1, Direction.SOUTH, this.method13433());
                 }
                 case 4: {
-                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27298 + 1, Class179.field514, this.method13433());
+                    return Class6924.method21298(class4507, list, random, this.field19849.field27293 + n2, this.field19849.field27294 + n, this.field19849.field27298 + 1, Direction.SOUTH, this.method13433());
                 }
             }
         }

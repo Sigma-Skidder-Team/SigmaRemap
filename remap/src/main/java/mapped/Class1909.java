@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.concurrent.CompletionStage;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.function.BooleanSupplier;
 import java.io.IOException;
@@ -19,6 +17,9 @@ import javax.annotation.Nullable;
 import java.util.function.Supplier;
 import java.util.concurrent.Executor;
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.io.File;
 import java.util.List;
 
@@ -339,8 +340,8 @@ public class Class1909 extends Class1906
     }
     
     @Override
-    public boolean method7408(final Class399 class399) {
-        return this.method7434(Class7859.method25423(Class9546.method35644(class399.method1938()) >> 4, Class9546.method35644(class399.method1945()) >> 4), Class9298::method34343);
+    public boolean method7408(final Entity class399) {
+        return this.method7434(Class7859.method25423(MathHelper.floor(class399.method1938()) >> 4, MathHelper.floor(class399.method1945()) >> 4), Class9298::method34343);
     }
     
     @Override
@@ -349,12 +350,12 @@ public class Class1909 extends Class1906
     }
     
     @Override
-    public boolean method7410(final Class354 class354) {
-        return this.method7434(Class7859.method25423(class354.method1074() >> 4, class354.method1076() >> 4), Class9298::method34342);
+    public boolean method7410(final BlockPos class354) {
+        return this.method7434(Class7859.method25423(class354.getX() >> 4, class354.getZ() >> 4), Class9298::method34342);
     }
     
-    public boolean method7433(final Class399 class399) {
-        return this.method7434(Class7859.method25423(Class9546.method35644(class399.method1938()) >> 4, Class9546.method35644(class399.method1945()) >> 4), Class9298::method34344);
+    public boolean method7433(final Entity class399) {
+        return this.method7434(Class7859.method25423(MathHelper.floor(class399.method1938()) >> 4, MathHelper.floor(class399.method1945()) >> 4), Class9298::method34344);
     }
     
     private boolean method7434(final long n, final Function<Class9298, CompletableFuture<Either<Class1862, Class6797>>> function) {
@@ -470,10 +471,10 @@ public class Class1909 extends Class1906
         return this.field10354.method1340();
     }
     
-    public void method7440(final Class354 class354) {
-        final Class9298 method7423 = this.method7423(Class7859.method25423(class354.method1074() >> 4, class354.method1076() >> 4));
+    public void method7440(final BlockPos class354) {
+        final Class9298 method7423 = this.method7423(Class7859.method25423(class354.getX() >> 4, class354.getZ() >> 4));
         if (method7423 != null) {
-            method7423.method34349(class354.method1074() & 0xF, class354.method1075(), class354.method1076() & 0xF);
+            method7423.method34349(class354.getX() & 0xF, class354.getY(), class354.getZ() & 0xF);
         }
     }
     
@@ -505,19 +506,19 @@ public class Class1909 extends Class1906
         this.field10354.method1350(class513);
     }
     
-    public void method7444(final Class399 class399) {
+    public void method7444(final Entity class399) {
         this.field10354.method1353(class399);
     }
     
-    public void method7445(final Class399 class399) {
+    public void method7445(final Entity class399) {
         this.field10354.method1352(class399);
     }
     
-    public void method7446(final Class399 class399, final Class4252<?> class400) {
+    public void method7446(final Entity class399, final Class4252<?> class400) {
         this.field10354.method1356(class399, class400);
     }
     
-    public void method7447(final Class399 class399, final Class4252<?> class400) {
+    public void method7447(final Entity class399, final Class4252<?> class400) {
         this.field10354.method1355(class399, class400);
     }
     

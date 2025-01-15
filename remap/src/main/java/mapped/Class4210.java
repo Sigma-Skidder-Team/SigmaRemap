@@ -11,6 +11,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.Collection;
 
 public class Class4210 extends Class4211
@@ -36,14 +38,14 @@ public class Class4210 extends Class4211
         return new Class4210(new Class8172[0], class8685);
     }
     
-    public boolean method12681(final Class513 class513, final Collection<Class399> collection, final int n) {
+    public boolean method12681(final Class513 class513, final Collection<Entity> collection, final int n) {
         if (this.field19001.length > 0) {
             final ArrayList arrayList = Lists.newArrayList((Iterable)collection);
             for (final Class8172 class514 : this.field19001) {
                 int n2 = 0;
                 final Iterator iterator = arrayList.iterator();
                 while (iterator.hasNext()) {
-                    if (!class514.method27015(class513, (Class399)iterator.next())) {
+                    if (!class514.method27015(class513, (Entity)iterator.next())) {
                         continue;
                     }
                     iterator.remove();
@@ -57,7 +59,7 @@ public class Class4210 extends Class4211
         }
         if (this.field19002 != Class8685.field36500) {
             final HashSet hashSet = Sets.newHashSet();
-            final Iterator<Class399> iterator2 = collection.iterator();
+            final Iterator<Entity> iterator2 = collection.iterator();
             while (iterator2.hasNext()) {
                 hashSet.add(iterator2.next().method1642());
             }

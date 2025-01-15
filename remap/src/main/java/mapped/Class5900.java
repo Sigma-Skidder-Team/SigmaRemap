@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5900<T extends Class792> extends Class5845<T>
 {
@@ -113,7 +114,7 @@ public class Class5900<T extends Class792> extends Class5845<T>
         this.field24262.field25184 = n4 * 0.017453292f;
         this.field24263.field25184 = this.field24266.field25184 - 0.2617994f;
         this.field24264.field25184 = this.field24266.field25184 + 0.2617994f;
-        this.field24267 = Class9546.method35638(t.method4433(n6) * 3.1415927f);
+        this.field24267 = MathHelper.sin(t.method4433(n6) * 3.1415927f);
         this.field24257.field25183 = (this.field24267 * 50.0f - 21.0f) * 0.017453292f;
         this.field24258.field25183 = (this.field24267 * 50.0f - 21.0f) * 0.017453292f;
         this.field24255.field25183 = this.field24267 * 50.0f * 0.017453292f;
@@ -124,6 +125,6 @@ public class Class5900<T extends Class792> extends Class5845<T>
     
     public void method17643(final T t, final float n, final float n2, final float n3) {
         super.method17558(t, n, n2, n3);
-        this.field24267 = Class9546.method35638(t.method4433(n3) * 3.1415927f);
+        this.field24267 = MathHelper.sin(t.method4433(n3) * 3.1415927f);
     }
 }

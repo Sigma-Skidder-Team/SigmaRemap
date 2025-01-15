@@ -8,6 +8,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonElement;
 import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 public class Class9007
 {
@@ -26,7 +27,7 @@ public class Class9007
         this.field38035 = field38035;
     }
     
-    public boolean method32226(final Class399 class399) {
+    public boolean method32226(final Entity class399) {
         if (this.field38031 != null && class399.method1804() != this.field38031) {
             return false;
         }

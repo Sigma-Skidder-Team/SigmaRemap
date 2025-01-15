@@ -5,8 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.util.Random;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -109,8 +110,8 @@ public abstract class Class3090
     }
     
     private int method9837() {
-        final float method35653 = Class9546.method35653(this.field15446 / 3.0f, -1.0f, 1.0f);
-        return Class9546.method35697(0.62222224f - method35653 * 0.05f, 0.5f + method35653 * 0.1f, 1.0f);
+        final float method35653 = MathHelper.method35653(this.field15446 / 3.0f, -1.0f, 1.0f);
+        return MathHelper.method35697(0.62222224f - method35653 * 0.05f, 0.5f + method35653 * 0.1f, 1.0f);
     }
     
     public int method9838() {
@@ -137,14 +138,14 @@ public abstract class Class3090
         return 0.1f;
     }
     
-    public float method9844(final Class354 class354) {
-        if (class354.method1075() <= 64) {
+    public float method9844(final BlockPos class354) {
+        if (class354.getY() <= 64) {
             return this.method9867();
         }
-        return this.method9867() - ((float)(Class3090.field15441.method29027(class354.method1074() / 8.0f, class354.method1076() / 8.0f, false) * 4.0) + class354.method1075() - 64.0f) * 0.05f / 30.0f;
+        return this.method9867() - ((float)(Class3090.field15441.method29027(class354.getX() / 8.0f, class354.getZ() / 8.0f, false) * 4.0) + class354.getY() - 64.0f) * 0.05f / 30.0f;
     }
     
-    public final float method9845(final Class354 class354) {
+    public final float method9845(final BlockPos class354) {
         final long method1132 = class354.method1132();
         final Long2FloatLinkedOpenHashMap long2FloatLinkedOpenHashMap = this.field15460.get();
         final float value = long2FloatLinkedOpenHashMap.get(method1132);
@@ -159,14 +160,14 @@ public abstract class Class3090
         return value;
     }
     
-    public boolean method9846(final Class1852 class1852, final Class354 class1853) {
+    public boolean method9846(final Class1852 class1852, final BlockPos class1853) {
         return this.method9847(class1852, class1853, true);
     }
     
-    public boolean method9847(final Class1852 class1852, final Class354 class1853, final boolean b) {
+    public boolean method9847(final Class1852 class1852, final BlockPos class1853, final boolean b) {
         if (this.method9845(class1853) < 0.15f) {
-            if (class1853.method1075() >= 0) {
-                if (class1853.method1075() < 256) {
+            if (class1853.getY() >= 0) {
+                if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
                         final Class7096 method6701 = class1852.method6701(class1853);
                         if (class1852.method6702(class1853).method21779() == Class7558.field29976) {
@@ -201,10 +202,10 @@ public abstract class Class3090
         return false;
     }
     
-    public boolean method9848(final Class1852 class1852, final Class354 class1853) {
+    public boolean method9848(final Class1852 class1852, final BlockPos class1853) {
         if (this.method9845(class1853) < 0.15f) {
-            if (class1853.method1075() >= 0) {
-                if (class1853.method1075() < 256) {
+            if (class1853.getY() >= 0) {
+                if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
                         if (class1852.method6701(class1853).method21706()) {
                             if (Class7521.field29329.method11878().method21752(class1852, class1853)) {
@@ -255,7 +256,7 @@ public abstract class Class3090
         return this.field15456.get(class2108);
     }
     
-    public void method9857(final Class2108 class2108, final Class6346<? extends Class7065> class2109, final Class1851 class2110, final long n, final Class2317 class2111, final Class354 class2112) {
+    public void method9857(final Class2108 class2108, final Class6346<? extends Class7065> class2109, final Class1851 class2110, final long n, final Class2317 class2111, final BlockPos class2112) {
         int n2 = 0;
         for (final Class8530 class2113 : this.field15456.get(class2108)) {
             class2111.method9439(n, n2, class2108.ordinal());
@@ -272,11 +273,11 @@ public abstract class Class3090
     }
     
     public int method9858(final double n, final double n2) {
-        return Class9010.method32261(Class9546.method35653(this.method9867(), 0.0f, 1.0f), Class9546.method35653(this.method9863(), 0.0f, 1.0f));
+        return Class9010.method32261(MathHelper.method35653(this.method9867(), 0.0f, 1.0f), MathHelper.method35653(this.method9863(), 0.0f, 1.0f));
     }
     
     public int method9859() {
-        return Class8861.method31025(Class9546.method35653(this.method9867(), 0.0f, 1.0f), Class9546.method35653(this.method9863(), 0.0f, 1.0f));
+        return Class8861.method31025(MathHelper.method35653(this.method9867(), 0.0f, 1.0f), MathHelper.method35653(this.method9863(), 0.0f, 1.0f));
     }
     
     public void method9860(final Random random, final Class1860 class1860, final int n, final int n2, final int n3, final double n4, final Class7096 class1861, final Class7096 class1862, final int n5, final long n6) {

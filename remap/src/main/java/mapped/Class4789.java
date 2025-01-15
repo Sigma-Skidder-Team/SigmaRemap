@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4789 extends Class4703<Class425>
 {
     private static final Class1932 field20422;
@@ -20,7 +22,7 @@ public class Class4789 extends Class4703<Class425>
             class426.method22567();
             class426.method22565(0.5f, 0.5f, 0.5f);
             class426.method22566(this.field20283.method28717());
-            class426.method22566(Class9138.field38718.method33328(180.0f));
+            class426.method22566(Vector3f.field38718.rotationDegrees(180.0f));
             final Class8996 method2080 = class426.method22569();
             final Class6789 method2081 = method2080.method32111();
             final Class9429 method2082 = method2080.method32112();
@@ -34,10 +36,10 @@ public class Class4789 extends Class4703<Class425>
             if (method2079.method2713().method27622() != Class7739.field31376) {
                 n4 = -n4;
             }
-            final float method2084 = Class9546.method35638(Class9546.method35640(method2079.method2748(n2)) * 3.1415927f);
-            final float n5 = Class9546.method35700(n2, method2079.field2952, method2079.field2951) * 0.017453292f;
-            final double n6 = Class9546.method35638(n5);
-            final double n7 = Class9546.method35639(n5);
+            final float method2084 = MathHelper.sin(MathHelper.method35640(method2079.method2748(n2)) * 3.1415927f);
+            final float n5 = MathHelper.method35700(n2, method2079.field2952, method2079.field2951) * 0.017453292f;
+            final double n6 = MathHelper.sin(n5);
+            final double n7 = MathHelper.cos(n5);
             final double n8 = n4 * 0.35;
             double n10 = 0.0;
             double n11 = 0.0;
@@ -47,22 +49,22 @@ public class Class4789 extends Class4703<Class425>
                 if (this.field20283.field35909 == null || this.field20283.field35909.field23465 <= 0) {
                     if (method2079 == Class869.method5277().field4684) {
                         final double n9 = this.field20283.field35909.field23471 / 100.0;
-                        final Class5487 method2085 = new Class5487(n4 * -0.36 * n9, -0.045 * n9, 0.4).method16754(-Class9546.method35700(n2, method2079.field2402, method2079.field2400) * 0.017453292f).method16755(-Class9546.method35700(n2, method2079.field2401, method2079.field2399) * 0.017453292f).method16755(method2084 * 0.5f).method16754(-method2084 * 0.7f);
-                        n10 = Class9546.method35701(n2, method2079.field2392, method2079.method1938()) + method2085.field22770;
-                        n11 = Class9546.method35701(n2, method2079.field2393, method2079.method1941()) + method2085.field22771;
-                        n12 = Class9546.method35701(n2, method2079.field2394, method2079.method1945()) + method2085.field22772;
+                        final Class5487 method2085 = new Class5487(n4 * -0.36 * n9, -0.045 * n9, 0.4).method16754(-MathHelper.method35700(n2, method2079.field2402, method2079.field2400) * 0.017453292f).method16755(-MathHelper.method35700(n2, method2079.field2401, method2079.field2399) * 0.017453292f).method16755(method2084 * 0.5f).method16754(-method2084 * 0.7f);
+                        n10 = MathHelper.method35701(n2, method2079.field2392, method2079.method1938()) + method2085.field22770;
+                        n11 = MathHelper.method35701(n2, method2079.field2393, method2079.method1941()) + method2085.field22771;
+                        n12 = MathHelper.method35701(n2, method2079.field2394, method2079.method1945()) + method2085.field22772;
                         method2086 = method2079.method1892();
                         break Label_0628;
                     }
                 }
-                n10 = Class9546.method35701(n2, method2079.field2392, method2079.method1938()) - n7 * n8 - n6 * 0.8;
+                n10 = MathHelper.method35701(n2, method2079.field2392, method2079.method1938()) - n7 * n8 - n6 * 0.8;
                 n11 = method2079.field2393 + method2079.method1892() + (method2079.method1941() - method2079.field2393) * n2 - 0.45;
-                n12 = Class9546.method35701(n2, method2079.field2394, method2079.method1945()) - n6 * n8 + n7 * 0.8;
+                n12 = MathHelper.method35701(n2, method2079.field2394, method2079.method1945()) - n6 * n8 + n7 * 0.8;
                 method2086 = (method2079.method1814() ? -0.1875f : 0.0f);
             }
-            final double method2087 = Class9546.method35701(n2, class425.field2392, class425.method1938());
-            final double n13 = Class9546.method35701(n2, class425.field2393, class425.method1941()) + 0.25;
-            final double method2088 = Class9546.method35701(n2, class425.field2394, class425.method1945());
+            final double method2087 = MathHelper.method35701(n2, class425.field2392, class425.method1938());
+            final double n13 = MathHelper.method35701(n2, class425.field2393, class425.method1941()) + 0.25;
+            final double method2088 = MathHelper.method35701(n2, class425.field2394, class425.method1945());
             final float n14 = (float)(n10 - method2087);
             final float n15 = (float)(n11 - n13) + method2086;
             final float n16 = (float)(n12 - method2088);

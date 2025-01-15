@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Predicate;
 import java.util.Objects;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -18,15 +17,15 @@ public class Class7165 extends Class7133<Class6930>
         super(function);
     }
     
-    public Stream<Class354> method21920(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6930 class1853, final Class354 class1854) {
-        return IntStream.range(0, (Class3090.field15442.method29027(class1854.method1074() / 200.0, class1854.method1076() / 200.0, false) >= class1853.field27151) ? class1853.field27153 : class1853.field27152).mapToObj(p3 -> {
+    public Stream<BlockPos> method21920(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class6930 class1853, final BlockPos class1854) {
+        return IntStream.range(0, (Class3090.field15442.method29027(class1854.getX() / 200.0, class1854.getZ() / 200.0, false) >= class1853.field27151) ? class1853.field27153 : class1853.field27152).mapToObj(p3 -> {
             final int n2 = random2.nextInt(16) + class1855.method1074();
             final int n3 = random2.nextInt(16) + class1855.method1076();
             final int bound = class1856.method6699(Class2020.field11525, n2, n3) * 2;
             Object o2 = null;
             if (bound > 0) {
-                new(mapped.Class354.class)();
-                new Class354(n2, random2.nextInt(bound), n3);
+                new(BlockPos.class)();
+                new BlockPos(n2, random2.nextInt(bound), n3);
             }
             else {
                 o2 = null;

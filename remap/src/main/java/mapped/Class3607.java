@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
@@ -28,11 +30,11 @@ public class Class3607 extends Class3446
             return false;
         }
         if (this.field16794.method1804()) {
-            final Class354 method11136 = this.method11136(this.field16794.field2391, this.field16794, 5, 4);
+            final BlockPos method11136 = this.method11136(this.field16794.field2391, this.field16794, 5, 4);
             if (method11136 != null) {
-                this.field16796 = method11136.method1074();
-                this.field16797 = method11136.method1075();
-                this.field16798 = method11136.method1076();
+                this.field16796 = method11136.getX();
+                this.field16797 = method11136.getY();
+                this.field16798 = method11136.getZ();
                 return true;
             }
         }
@@ -61,13 +63,13 @@ public class Class3607 extends Class3446
     }
     
     @Nullable
-    public Class354 method11136(final Class1855 class1855, final Class399 class1856, final int n, final int n2) {
-        final Class354 class1857 = new Class354(class1856);
-        final int method1074 = class1857.method1074();
-        final int method1075 = class1857.method1075();
-        final int method1076 = class1857.method1076();
+    public BlockPos method11136(final Class1855 class1855, final Entity class1856, final int n, final int n2) {
+        final BlockPos class1857 = new BlockPos(class1856);
+        final int method1074 = class1857.getX();
+        final int method1075 = class1857.getY();
+        final int method1076 = class1857.getZ();
         float n3 = (float)(n * n * n2 * 2);
-        Class354 class1858 = null;
+        BlockPos class1858 = null;
         final Class385 class1859 = new Class385();
         for (int i = method1074 - n; i <= method1074 + n; ++i) {
             for (int j = method1075 - n2; j <= method1075 + n2; ++j) {
@@ -77,7 +79,7 @@ public class Class3607 extends Class3446
                         final float n4 = (float)((i - method1074) * (i - method1074) + (j - method1075) * (j - method1075) + (k - method1076) * (k - method1076));
                         if (n4 < n3) {
                             n3 = n4;
-                            class1858 = new Class354(class1859);
+                            class1858 = new BlockPos(class1859);
                         }
                     }
                 }

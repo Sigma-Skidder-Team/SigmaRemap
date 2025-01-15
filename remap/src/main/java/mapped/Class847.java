@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class847 extends Class846
@@ -21,7 +23,7 @@ public class Class847 extends Class846
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         if (!super.method2734(class399)) {
             return false;
         }

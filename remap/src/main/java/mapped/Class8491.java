@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.ConcurrentModificationException;
-import io.netty.channel.Channel;
 import java.util.ArrayList;
 import java.util.UUID;
 import java.util.List;
@@ -15,8 +17,8 @@ public class Class8491
 {
     private static String[] field34855;
     public Class869 field34856;
-    public List<Class354> field34857;
-    public static List<Class399> field34858;
+    public List<BlockPos> field34857;
+    public static List<Entity> field34858;
     public static int field34859;
     public final Class7614 field34860;
     public Class4265 field34861;
@@ -26,7 +28,7 @@ public class Class8491
     
     public Class8491() {
         this.field34856 = Class869.method5277();
-        this.field34857 = new ArrayList<Class354>();
+        this.field34857 = new ArrayList<BlockPos>();
         this.field34863 = false;
         this.field34860 = new Class7614(this);
     }
@@ -111,7 +113,7 @@ public class Class8491
             return;
         }
         for (int size = Class8491.field34858.size(), i = 0; i < size; ++i) {
-            final Class399 class5744 = Class8491.field34858.get(i);
+            final Entity class5744 = Class8491.field34858.get(i);
             if (!Class6430.method19138().contains(class5744)) {
                 Class8491.field34858.remove(class5744);
                 --size;
@@ -178,13 +180,13 @@ public class Class8491
                 if (class5724.method13247() != null) {
                     if (Class9463.method35173().method35189().method21551(Class3296.class).method9906() || Class9367.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().method27622() instanceof Class4100)) {
-                            final Class399 method6741 = this.field34856.field4683.method6741(class5724.method13248());
+                            final Entity method6741 = this.field34856.field4683.method6741(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {
                                 Class8491.field34858.remove(method6741);
                             }
                         }
                         else {
-                            final Class399 method6742 = this.field34856.field4683.method6741(class5724.method13248());
+                            final Entity method6742 = this.field34856.field4683.method6741(class5724.method13248());
                             if (!Class8491.field34858.contains(method6742)) {
                                 if (!Class6430.method19149()) {
                                     Class8491.field34858.add(method6742);
@@ -351,9 +353,9 @@ public class Class8491
         if (class5729.method17011() != 1.0f) {
             if (Class5744.field23324 - this.field34856.field4684.field2953 == 0.0f) {
                 if (this.field34864) {
-                    class5729.method17012(Class9546.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2951));
-                    class5729.method17013(Class9546.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2953));
-                    class5729.method17015(Class9546.method35700(class5729.method17011(), Class5744.field23327, class5729.method17016().field2400));
+                    class5729.method17012(MathHelper.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2951));
+                    class5729.method17013(MathHelper.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2953));
+                    class5729.method17015(MathHelper.method35700(class5729.method17011(), Class5744.field23327, class5729.method17016().field2400));
                     class5729.method17014(class5729.method17008() - class5729.method17007());
                     class5729.method17016().field2402 = Class5744.field23327;
                     class5729.method17016().field2401 = Class5744.field23326;
@@ -363,9 +365,9 @@ public class Class8491
                 }
             }
             else {
-                class5729.method17012(Class9546.method35706(class5729.method17011(), Class5744.field23326, Class5744.field23324));
-                class5729.method17013(Class9546.method35706(class5729.method17011(), Class5744.field23326, Class5744.field23324));
-                class5729.method17015(Class9546.method35700(class5729.method17011(), Class5744.field23327, Class5744.field23325));
+                class5729.method17012(MathHelper.method35706(class5729.method17011(), Class5744.field23326, Class5744.field23324));
+                class5729.method17013(MathHelper.method35706(class5729.method17011(), Class5744.field23326, Class5744.field23324));
+                class5729.method17015(MathHelper.method35700(class5729.method17011(), Class5744.field23327, Class5744.field23325));
                 class5729.method17014(class5729.method17008() - class5729.method17007());
                 this.field34864 = true;
             }
@@ -373,7 +375,7 @@ public class Class8491
     }
     
     static {
-        Class8491.field34858 = new ArrayList<Class399>();
+        Class8491.field34858 = new ArrayList<Entity>();
         Class8491.field34859 = 0;
     }
 }

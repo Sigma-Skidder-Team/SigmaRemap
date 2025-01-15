@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
+
 import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.stream.Collector;
@@ -22,11 +26,11 @@ public class Class8955
         this.field37653 = new Random(field37652.method6753());
     }
     
-    public boolean method31767(final Class399 class399, final float n) {
-        final Class5487 method1859 = class399.method1859();
-        final Class9402 method1860 = this.method31768(new Class354(class399), class399.method1935(), class399.method1860(), method1859.field22770, method1859.field22771, class399 instanceof Class512);
+    public boolean method31767(final Entity class399, final float n) {
+        final Vec3d method1859 = class399.method1859();
+        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.method1935(), class399.method1860(), method1859.field22770, method1859.field22771, class399 instanceof Class512);
         if (method1860 != null) {
-            final Class5487 field40340 = method1860.field40340;
+            final Vec3d field40340 = method1860.field40340;
             class399.method1936(method1860.field40341);
             class399.field2399 = n + method1860.field40342;
             class399.method1950(field40340.field22770, field40340.field22771, field40340.field22772);
@@ -36,22 +40,22 @@ public class Class8955
     }
     
     @Nullable
-    public Class9402 method31768(final Class354 class354, final Class5487 class355, final Class179 class356, final double n, final double n2, final boolean b) {
+    public Class9402 method31768(final BlockPos class354, final Vec3d class355, final Direction class356, final double n, final double n2, final boolean b) {
         final Class1883 method6921 = this.field37652.method6921();
         method6921.method7216(this.field37652, class354, 128);
         return method6921.method7199(class357 -> class357 == Class8912.field37480, class354, 128, Class2045.field11652).collect((Collector<? super Class377, ?, List<? super Class377>>)Collectors.toList()).stream().min(Comparator.comparingDouble(class359 -> class359.method1259().method1083(class358)).thenComparingInt(class360 -> class360.method1259().method1075())).map(class363 -> {
             class363.method1259();
-            final Class354 class364;
+            final BlockPos class364;
             this.field37652.method6904().method7441(Class9105.field38570, new Class7859(class364), 3, class364);
             return Class3998.method12149(this.field37652, class364).method25271(class361, class364, n3, class362, n4);
         }).orElse(null);
     }
     
-    public boolean method31769(final Class399 class399) {
+    public boolean method31769(final Entity class399) {
         double n = -1.0;
-        final int method35644 = Class9546.method35644(class399.method1938());
-        final int method35645 = Class9546.method35644(class399.method1941());
-        final int method35646 = Class9546.method35644(class399.method1945());
+        final int method35644 = MathHelper.floor(class399.method1938());
+        final int method35645 = MathHelper.floor(class399.method1941());
+        final int method35646 = MathHelper.floor(class399.method1945());
         int n2 = method35644;
         int n3 = method35645;
         int n4 = method35646;
@@ -152,7 +156,7 @@ public class Class8955
             n30 = -n30;
         }
         if (n < 0.0) {
-            method35647 = Class9546.method35651(n3, 70, this.field37652.method6778() - 10);
+            method35647 = MathHelper.method35651(n3, 70, this.field37652.method6778() - 10);
             for (int n31 = -1; n31 <= 1; ++n31) {
                 for (int n32 = 1; n32 < 3; ++n32) {
                     for (int n33 = -1; n33 < 3; ++n33) {
@@ -181,7 +185,7 @@ public class Class8955
                 this.field37652.method6688(class400, Class7521.field29286.method11878(), 3);
             }
         }
-        final Class7096 class401 = ((Class7097<O, Class7096>)Class7521.field29341.method11878()).method21773(Class3998.field18018, (n29 != 0) ? Class111.field351 : Class111.field353);
+        final Class7096 class401 = ((Class7097<O, Class7096>)Class7521.field29341.method11878()).method21773(Class3998.field18018, (n29 != 0) ? Axis.X : Axis.Z);
         for (int n39 = 0; n39 < 2; ++n39) {
             for (int n40 = 0; n40 < 3; ++n40) {
                 class400.method1284(n27 + n39 * n29, method35647 + n40, n28 + n39 * n30);

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Objects;
 import java.util.Collection;
 import javax.annotation.Nullable;
@@ -112,7 +114,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
         final int n4 = this.field3548 + this.field3543 / 2;
         final int n5 = n4 - n3;
         final int n6 = n4 + n3;
-        final int n7 = Class9546.method35644(n2 - this.field3545) - this.field3554 + (int)this.method3550() - 4;
+        final int n7 = MathHelper.floor(n2 - this.field3545) - this.field3554 + (int)this.method3550() - 4;
         final int n8 = n7 / this.field3541;
         if (n < this.method3555()) {
             if (n >= n5) {
@@ -205,7 +207,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
         method3556.method22695();
         final int method3559 = this.method3552();
         if (method3559 > 0) {
-            final int method3560 = Class9546.method35651((int)((this.field3546 - this.field3545) * (this.field3546 - this.field3545) / (float)this.method3542()), 32, this.field3546 - this.field3545 - 8);
+            final int method3560 = MathHelper.method35651((int)((this.field3546 - this.field3545) * (this.field3546 - this.field3545) / (float)this.method3542()), 32, this.field3546 - this.field3545 - 8);
             int field3545 = (int)this.method3550() * (this.field3546 - this.field3545 - method3560) / method3559 + this.field3545;
             if (field3545 < this.field3545) {
                 field3545 = this.field3545;
@@ -262,7 +264,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     public void method3551(final double n) {
-        this.field3551 = Class9546.method35654(n, 0.0, this.method3552());
+        this.field3551 = MathHelper.method35654(n, 0.0, this.method3552());
     }
     
     private int method3552() {
@@ -332,7 +334,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
                 if (n2 <= this.field3546) {
                     final double n6 = Math.max(1, this.method3552());
                     final int n7 = this.field3546 - this.field3545;
-                    this.method3551(this.method3550() + n5 * Math.max(1.0, n6 / (n7 - Class9546.method35651((int)(n7 * n7 / (float)this.method3542()), 32, n7 - 8))));
+                    this.method3551(this.method3550() + n5 * Math.max(1.0, n6 / (n7 - MathHelper.method35651((int)(n7 * n7 / (float)this.method3542()), 32, n7 - 8))));
                 }
                 else {
                     this.method3551(this.method3552());
@@ -370,7 +372,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     
     public void method3556(final int n) {
         if (!this.method3040().isEmpty()) {
-            final Class592<E> class592 = this.method3040().get(Class9546.method35651(this.method3040().indexOf(this.method3530()) + n, 0, this.method3537() - 1));
+            final Class592<E> class592 = this.method3040().get(MathHelper.method35651(this.method3040().indexOf(this.method3530()) + n, 0, this.method3537() - 1));
             this.method3531((E)class592);
             this.method3548((E)class592);
         }

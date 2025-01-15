@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+
 import java.util.Set;
 
 public class Class6852 extends Class6851<Class511>
@@ -19,7 +21,7 @@ public class Class6852 extends Class6851<Class511>
         }
         else {
             method2618.method1196(Class8233.field33817, class1850.method2669());
-            final Class399 method2619 = method2618.method1198(Class8233.field33817).get().method25714();
+            final Entity method2619 = method2618.method1198(Class8233.field33817).get().method25714();
             if (method2619 instanceof Class511) {
                 method2618.method1196(Class8233.field33818, (Class511)method2619);
             }

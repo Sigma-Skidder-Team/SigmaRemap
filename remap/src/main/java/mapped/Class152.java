@@ -4,10 +4,11 @@
 
 package mapped;
 
-import java.util.Iterator;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 
 public class Class152 implements Class122
@@ -28,7 +29,7 @@ public class Class152 implements Class122
     
     @Override
     public boolean test(final Class7529 class7529) {
-        final Class399 class7530 = class7529.method23579(this.field448.method8153());
+        final Entity class7530 = class7529.method23579(this.field448.method8153());
         if (class7530 != null) {
             final Class6516 method6782 = class7530.field2391.method6782();
             for (final Map.Entry entry : this.field447.entrySet()) {
@@ -42,7 +43,7 @@ public class Class152 implements Class122
         return false;
     }
     
-    public boolean method733(final Class399 class399, final Class6516 class400, final String s, final Class5772 class401) {
+    public boolean method733(final Entity class399, final Class6516 class400, final String s, final Class5772 class401) {
         final Class9290 method19632 = class400.method19632(s);
         if (method19632 != null) {
             final String method19633 = class399.method1867();

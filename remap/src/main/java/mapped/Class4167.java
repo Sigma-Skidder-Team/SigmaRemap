@@ -6,6 +6,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.util.Direction;
+
 import java.util.Calendar;
 
 public class Class4167<T extends Class436 & Class476> extends Class4158<T>
@@ -56,16 +58,16 @@ public class Class4167<T extends Class436 & Class476> extends Class4158<T>
     public void method12454(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
         final Class1847 method2186 = t.method2186();
         final boolean b = method2186 != null;
-        final Class7096 class7353 = b ? t.method2194() : ((Class7097<O, Class7096>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, Class179.field514);
+        final Class7096 class7353 = b ? t.method2194() : ((Class7097<O, Class7096>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, Direction.SOUTH);
         final Class180 class7354 = class7353.method21771(Class3865.field17498) ? class7353.method21772(Class3865.field17498) : Class180.field530;
         final Class3833 method2187 = class7353.method21696();
         if (method2187 instanceof Class3864) {
             final Class3864 class7355 = (Class3864)method2187;
             final boolean b2 = class7354 != Class180.field530;
             class7351.method22567();
-            final float method2188 = class7353.method21772((Class7111<Class179>)Class3865.field17497).method797();
+            final float method2188 = class7353.method21772((Class7111<Direction>)Class3865.field17497).getHorizontalAngle();
             class7351.method22564(0.5, 0.5, 0.5);
-            class7351.method22566(Class9138.field38718.method33328(-method2188));
+            class7351.method22566(Vector3f.field38718.rotationDegrees(-method2188));
             class7351.method22564(-0.5, -0.5, -0.5);
             Class7191 method2189;
             if (!b) {

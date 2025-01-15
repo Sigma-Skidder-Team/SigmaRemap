@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class9379
 {
     private static String[] field40211;
@@ -21,14 +23,14 @@ public class Class9379
     public static double field40223;
     public static float field40224;
     
-    public static long method34821(final Class354 class354) {
-        return ((long)class354.method1074() & Class9379.field40218) << Class9379.field40217 | ((long)class354.method1075() & Class9379.field40219) << Class9379.field40216 | ((long)class354.method1076() & Class9379.field40220) << 0;
+    public static long method34821(final BlockPos class354) {
+        return ((long)class354.getX() & Class9379.field40218) << Class9379.field40217 | ((long)class354.getY() & Class9379.field40219) << Class9379.field40216 | ((long)class354.getZ() & Class9379.field40220) << 0;
     }
     
     public static void method34822(float n, float n2, float n3, final float n4) {
         final float n5 = n * n + n2 * n2 + n3 * n3;
         if (n5 >= 1.0E-4f) {
-            float method35640 = Class9546.method35640(n5);
+            float method35640 = MathHelper.method35640(n5);
             if (method35640 < 1.0f) {
                 method35640 = 1.0f;
             }
@@ -36,8 +38,8 @@ public class Class9379
             n *= n6;
             n2 *= n6;
             n3 *= n6;
-            final float method35641 = Class9546.method35638(Class9379.field40212.field4684.field2399 * 0.017453292f);
-            final float method35642 = Class9546.method35639(Class9379.field40212.field4684.field2399 * 0.017453292f);
+            final float method35641 = MathHelper.sin(Class9379.field40212.field4684.field2399 * 0.017453292f);
+            final float method35642 = MathHelper.cos(Class9379.field40212.field4684.field2399 * 0.017453292f);
             Class9379.field40221 += n * method35642 - n3 * method35641;
             Class9379.field40222 += n2;
             Class9379.field40223 += n3 * method35642 + n * method35641;
@@ -79,12 +81,12 @@ public class Class9379
     }
     
     public static boolean method34824(final Class6221 class6221, final Class8059 class6222) {
-        final int method35644 = Class9546.method35644(class6221.field25073);
-        final int method35645 = Class9546.method35650(class6221.field25076);
-        final int method35646 = Class9546.method35644(class6221.field25074);
-        final int method35647 = Class9546.method35650(class6221.field25077);
-        final int method35648 = Class9546.method35644(class6221.field25075);
-        final int method35649 = Class9546.method35650(class6221.field25078);
+        final int method35644 = MathHelper.floor(class6221.field25073);
+        final int method35645 = MathHelper.method35650(class6221.field25076);
+        final int method35646 = MathHelper.floor(class6221.field25074);
+        final int method35647 = MathHelper.method35650(class6221.field25077);
+        final int method35648 = MathHelper.floor(class6221.field25075);
+        final int method35649 = MathHelper.method35650(class6221.field25078);
         if (Class9379.field40212.field4683.method6973(method35644, method35646, method35648, method35645, method35647, method35649)) {
             final Class386 method35650 = Class386.method1296();
             for (int i = method35644; i < method35645; ++i) {
@@ -121,7 +123,7 @@ public class Class9379
     
     static {
         Class9379.field40212 = Class869.method5277();
-        field40213 = 1 + Class9546.method35682(Class9546.method35679(30000000));
+        field40213 = 1 + MathHelper.method35682(MathHelper.method35679(30000000));
         field40214 = Class9379.field40213;
         field40215 = 64 - Class9379.field40213 - Class9379.field40214;
         field40216 = 0 + Class9379.field40214;

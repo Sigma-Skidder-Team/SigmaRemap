@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class7955 implements Class7954
@@ -24,7 +26,7 @@ public class Class7955 implements Class7954
     }
     
     @Override
-    public Class9017 method25804(final Class399 class399, final Random random) {
+    public Class9017 method25804(final Entity class399, final Random random) {
         return new Class9017(new Class8321(this.field32681, this.field32682), new Class8321(Class7739.field31514), this.field32683, this.field32684, this.field32685);
     }
 }

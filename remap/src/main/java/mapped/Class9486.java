@@ -7,11 +7,11 @@ package mapped;
 public class Class9486
 {
     private static String[] field40772;
-    public Class354 field40773;
+    public BlockPos field40773;
     public float field40774;
     public Class185 field40775;
     
-    public Class9486(final Class354 field40773) {
+    public Class9486(final BlockPos field40773) {
         this.field40774 = -1.0f;
         this.field40775 = Class185.field579;
         this.field40773 = field40773;

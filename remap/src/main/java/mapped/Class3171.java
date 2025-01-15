@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class Class3171 extends Class3167
@@ -73,7 +73,7 @@ public class Class3171 extends Class3167
     }
     
     private void method9934(final boolean b) {
-        for (final Class399 class399 : Class3171.field15514.field4683.method6806()) {
+        for (final Entity class399 : Class3171.field15514.field4683.method6806()) {
             if (!Class9463.method35173().method35191().method31751(class399)) {
                 final boolean b2 = Class6430.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b3 = Class6430.method19174(class399) == Class2068.field11838 && this.method9914().method9883("Show Mobs");

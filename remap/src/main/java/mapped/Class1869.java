@@ -28,8 +28,8 @@ public class Class1869 extends Class1868
     
     @Nullable
     @Override
-    public Class354 method7119(final int n, final int n2, final int n3, final int n4, final List<Class3090> list, final Random random) {
-        return list.contains(this.field10196) ? new Class354(n - n4 + random.nextInt(n4 * 2 + 1), n2, n3 - n4 + random.nextInt(n4 * 2 + 1)) : null;
+    public BlockPos method7119(final int n, final int n2, final int n3, final int n4, final List<Class3090> list, final Random random) {
+        return list.contains(this.field10196) ? new BlockPos(n - n4 + random.nextInt(n4 * 2 + 1), n2, n3 - n4 + random.nextInt(n4 * 2 + 1)) : null;
     }
     
     @Override

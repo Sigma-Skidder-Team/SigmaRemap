@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 import javax.annotation.Nullable;
-import java.util.function.Predicate;
 import java.util.EnumSet;
 
 public class Class844 extends Class763
@@ -110,7 +112,7 @@ public class Class844 extends Class763
         if (this.field4504 != null) {
             return this.field4504;
         }
-        final Class399 method6741 = this.field2391.method6741(this.field2432.method33568(Class844.field4498));
+        final Entity method6741 = this.field2391.method6741(this.field2432.method33568(Class844.field4498));
         if (!(method6741 instanceof Class511)) {
             return null;
         }
@@ -157,7 +159,7 @@ public class Class844 extends Class763
     }
     
     @Override
-    public float method4228(final Class354 class354, final Class1852 class355) {
+    public float method4228(final BlockPos class354, final Class1852 class355) {
         return class355.method6702(class354).method21793(Class7324.field28319) ? (10.0f + class355.method6963(class354) - 0.5f) : super.method4228(class354, class355);
     }
     
@@ -179,7 +181,7 @@ public class Class844 extends Class763
                 }
                 else {
                     this.field4501 = 2.0f;
-                    final Class5487 method1935 = this.method1935();
+                    final Vec3d method1935 = this.method1935();
                     if (method1935.field22771 > 0.0) {
                         if (this.field4506) {
                             if (!this.method1696()) {
@@ -187,7 +189,7 @@ public class Class844 extends Class763
                             }
                         }
                     }
-                    this.field4506 = (method1935.field22771 < 0.0 && this.field2391.method6732(new Class354(this).method1139(), this));
+                    this.field4506 = (method1935.field22771 < 0.0 && this.field2391.method6732(new BlockPos(this).method1139(), this));
                 }
                 this.field4499 += this.field4501;
                 this.field4503 = this.field4502;
@@ -204,7 +206,7 @@ public class Class844 extends Class763
                 }
                 if (this.method5054()) {
                     if (this.method1706()) {
-                        final Class5487 method1936 = this.method1741(0.0f);
+                        final Vec3d method1936 = this.method1741(0.0f);
                         for (int i = 0; i < 2; ++i) {
                             this.field2391.method6709(Class8432.field34601, this.method1940(0.5) - method1936.field22770 * 1.5, this.method1943() - method1936.field22771 * 1.5, this.method1947(0.5) - method1936.field22772 * 1.5, 0.0, 0.0, 0.0);
                         }
@@ -257,11 +259,11 @@ public class Class844 extends Class763
     }
     
     public float method5061(final float n) {
-        return Class9546.method35700(n, this.field4500, this.field4499);
+        return MathHelper.method35700(n, this.field4500, this.field4499);
     }
     
     public float method5062(final float n) {
-        return Class9546.method35700(n, this.field4503, this.field4502);
+        return MathHelper.method35700(n, this.field4503, this.field4502);
     }
     
     public float method5063(final float n) {
@@ -273,7 +275,7 @@ public class Class844 extends Class763
         return class1852.method6975(this);
     }
     
-    public static boolean method5064(final Class7499<? extends Class844> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method5064(final Class7499<? extends Class844> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (random.nextInt(20) == 0 || !class7500.method6962(class7502)) {
             if (class7500.method6954() != Class2113.field12290) {
                 if (class7501 == Class2101.field12176 || class7500.method6702(class7502).method21793(Class7324.field28319)) {
@@ -308,7 +310,7 @@ public class Class844 extends Class763
     }
     
     @Override
-    public void method2729(final Class5487 class5487) {
+    public void method2729(final Vec3d class5487) {
         if (this.method2749() && this.method1706()) {
             this.method1724(0.1f, class5487);
             this.method1671(Class2160.field12826, this.method1935());

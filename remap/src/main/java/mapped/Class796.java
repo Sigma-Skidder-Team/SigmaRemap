@@ -6,9 +6,12 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import java.util.HashMap;
+
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -29,7 +32,7 @@ public class Class796 extends Class795 implements Class797
     public float field4255;
     private float field4256;
     private boolean field4257;
-    private Class354 field4258;
+    private BlockPos field4258;
     
     public Class796(final Class7499<? extends Class796> class7499, final Class1847 class7500) {
         super(class7499, class7500);
@@ -106,7 +109,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public void method2778(final Class354 field4258, final boolean field4259) {
+    public void method2778(final BlockPos field4258, final boolean field4259) {
         this.field4258 = field4258;
         this.field4257 = field4259;
     }
@@ -119,14 +122,14 @@ public class Class796 extends Class795 implements Class797
         this.field4255 = this.field4252;
         this.field4254 = this.field4253;
         this.field4253 += (float)(((!this.field2404 && !this.method1805()) ? 4 : -1) * 0.3);
-        this.field4253 = Class9546.method35653(this.field4253, 0.0f, 1.0f);
+        this.field4253 = MathHelper.method35653(this.field4253, 0.0f, 1.0f);
         if (!this.field2404) {
             if (this.field4256 < 1.0f) {
                 this.field4256 = 1.0f;
             }
         }
         this.field4256 *= (float)0.9;
-        final Class5487 method1935 = this.method1935();
+        final Vec3d method1935 = this.method1935();
         if (!this.field2404) {
             if (method1935.field22771 < 0.0) {
                 this.method1936(method1935.method16751(1.0, 0.6, 1.0));
@@ -135,11 +138,11 @@ public class Class796 extends Class795 implements Class797
         this.field4252 += this.field4256 * 2.0f;
     }
     
-    private static boolean method4496(final Class1847 class1847, final Class399 class1848) {
+    private static boolean method4496(final Class1847 class1847, final Entity class1848) {
         if (class1848.method1768()) {
             if (!class1848.method1696()) {
                 if (class1847.field10062.nextInt(50) == 0) {
-                    final List<Class399> method6739 = class1847.method6739((Class<? extends Class399>)Class759.class, class1848.method1886().method18496(20.0), (Predicate<? super Class399>)Class796.field4248);
+                    final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.method1886().method18496(20.0), (Predicate<? super Entity>)Class796.field4248);
                     if (!method6739.isEmpty()) {
                         final Class759 class1849 = method6739.get(class1847.field10062.nextInt(method6739.size()));
                         if (!class1849.method1696()) {
@@ -206,7 +209,7 @@ public class Class796 extends Class795 implements Class797
         return false;
     }
     
-    public static boolean method4497(final Class7499<Class796> class7499, final Class1851 class7500, final Class2101 class7501, final Class354 class7502, final Random random) {
+    public static boolean method4497(final Class7499<Class796> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3833 method21696 = class7500.method6701(class7502.method1139()).method21696();
         if (!method21696.method11785(Class7188.field27907)) {
             if (method21696 != Class7521.field29155) {
@@ -229,7 +232,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final Class354 class7097) {
+    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
     }
     
     @Override
@@ -243,7 +246,7 @@ public class Class796 extends Class795 implements Class797
         return null;
     }
     
-    public static void method4498(final Class1847 class1847, final Class399 class1848) {
+    public static void method4498(final Class1847 class1847, final Entity class1848) {
         if (!class1848.method1696()) {
             if (!method4496(class1847, class1848)) {
                 if (class1847.field10062.nextInt(200) == 0) {
@@ -254,7 +257,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public boolean method2734(final Class399 class399) {
+    public boolean method2734(final Entity class399) {
         return class399.method1740(Class7929.method25693(this), 3.0f);
     }
     
@@ -287,7 +290,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public void method1691(final Class354 class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final Class7096 class355) {
         this.method1695(Class8520.field35453, 0.15f, 1.0f);
     }
     
@@ -322,7 +325,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public void method2741(final Class399 class399) {
+    public void method2741(final Entity class399) {
         if (!(class399 instanceof Class512)) {
             super.method2741(class399);
         }
@@ -340,7 +343,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     public int method4502() {
-        return Class9546.method35651(this.field2432.method33568(Class796.field4247), 0, 4);
+        return MathHelper.method35651(this.field2432.method33568(Class796.field4247), 0, 4);
     }
     
     public void method4503(final int i) {

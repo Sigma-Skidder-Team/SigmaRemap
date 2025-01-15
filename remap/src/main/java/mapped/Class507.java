@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class Class507 extends Class399
+public class Class507 extends Entity
 {
     private int field2891;
     private boolean field2892;
@@ -44,7 +46,7 @@ public class Class507 extends Class399
         if (this.field2895 == null) {
             if (this.field2896 != null) {
                 if (this.field2391 instanceof Class1849) {
-                    final Class399 method6914 = ((Class1849)this.field2391).method6914(this.field2896);
+                    final Entity method6914 = ((Class1849)this.field2391).method6914(this.field2896);
                     if (method6914 instanceof Class511) {
                         this.field2895 = (Class511)method6914;
                     }

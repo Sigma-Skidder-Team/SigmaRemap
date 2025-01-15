@@ -18,7 +18,7 @@ public class Class4060 extends Class3820
     }
     
     @Override
-    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099) {
+    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
         if (!class7097.field10067) {
             this.method12265(class7099, class7096, class7097, class7098, false, class7099.method2715(Class316.field1877));
         }
@@ -31,14 +31,14 @@ public class Class4060 extends Class3820
         final Class1847 method21653 = class7075.method21654();
         if (!method21653.field10067) {
             if (method21652 != null) {
-                final Class354 method21654 = class7075.method21639();
+                final BlockPos method21654 = class7075.method21639();
                 this.method12265(method21652, method21653.method6701(method21654), method21653, method21654, true, class7075.method21651());
             }
         }
         return Class2201.field13400;
     }
     
-    private void method12265(final Class512 class512, final Class7096 class513, final Class1851 class514, final Class354 class515, final boolean b, final Class8321 class516) {
+    private void method12265(final Class512 class512, final Class7096 class513, final Class1851 class514, final BlockPos class515, final boolean b, final Class8321 class516) {
         if (class512.method2908()) {
             final Class3833 method21696 = class513.method21696();
             final Class9104<Class3833, Class7096> method21697 = method21696.method11876();

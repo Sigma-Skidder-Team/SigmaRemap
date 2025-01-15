@@ -7,16 +7,16 @@ package mapped;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Iterator;
+
 import java.util.Collection;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
+import net.minecraft.entity.Entity;
 
 public class Class6848
 {
@@ -30,12 +30,12 @@ public class Class6848
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("enchant").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(((RequiredArgumentBuilder)Class7788.method25002("enchantment", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class9162.method33443()).executes(commandContext -> method20945((Class7492)commandContext.getSource(), Class6886.method21146((CommandContext<Class7492>)commandContext, "targets"), Class9162.method33444((CommandContext<Class7492>)commandContext, "enchantment"), 1))).then(Class7788.method25002("level", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method20945((Class7492)commandContext.getSource(), Class6886.method21146((CommandContext<Class7492>)commandContext, "targets"), Class9162.method33444((CommandContext<Class7492>)commandContext, "enchantment"), IntegerArgumentType.getInteger(commandContext, "level")))))));
     }
     
-    private static int method20945(final Class7492 class7492, final Collection<? extends Class399> collection, final Class6257 class7493, final int i) throws CommandSyntaxException {
+    private static int method20945(final Class7492 class7492, final Collection<? extends Entity> collection, final Class6257 class7493, final int i) throws CommandSyntaxException {
         if (i > class7493.method18588()) {
             throw Class6848.field26869.create((Object)i, (Object)class7493.method18588());
         }
         int n = 0;
-        for (final Class399 class7494 : collection) {
+        for (final Entity class7494 : collection) {
             if (!(class7494 instanceof Class511)) {
                 if (collection.size() != 1) {
                     continue;
@@ -68,7 +68,7 @@ public class Class6848
                 class7492.method23257(new Class2259("commands.enchant.success.multiple", new Object[] { class7493.method18599(i), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.enchant.success.single", new Object[] { class7493.method18599(i), ((Class399)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.enchant.success.single", new Object[] { class7493.method18599(i), ((Entity)collection.iterator().next()).method1871() }), true);
             }
             return n;
         }

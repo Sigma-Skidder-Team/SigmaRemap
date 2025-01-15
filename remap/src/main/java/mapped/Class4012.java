@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 public class Class4012 extends Class3833
 {
     private static String[] field18080;
@@ -17,19 +20,19 @@ public class Class4012 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class7543 class7099) {
+    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7543 class7099) {
         return Class4012.field18083;
     }
     
     @Override
-    public Class7702 method11811(final Class7096 class7096, final Class1855 class7097, final Class354 class7098) {
+    public Class7702 method11811(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return Class4012.field18082;
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class399 class7099) {
+    public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class4012.field18081);
-        final float n = class7098.method1075() + (6.0f + 3 * intValue) / 16.0f;
+        final float n = class7098.getY() + (6.0f + 3 * intValue) / 16.0f;
         if (!class7097.field10067) {
             if (class7099.method1804()) {
                 if (intValue > 0) {
@@ -43,7 +46,7 @@ public class Class4012 extends Class3833
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final Class8321 method2715 = class7099.method2715(class7100);
         if (method2715.method27620()) {
             return Class2201.field13402;
@@ -185,13 +188,13 @@ public class Class4012 extends Class3833
         return Class2201.field13401;
     }
     
-    public void method12195(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final int n) {
-        class1847.method6688(class1848, ((Class7097<O, Class7096>)class1849).method21773((Class7111<Comparable>)Class4012.field18081, Class9546.method35651(n, 0, 3)), 2);
+    public void method12195(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final int n) {
+        class1847.method6688(class1848, ((Class7097<O, Class7096>)class1849).method21773((Class7111<Comparable>)Class4012.field18081, MathHelper.method35651(n, 0, 3)), 2);
         class1847.method6783(class1848, this);
     }
     
     @Override
-    public void method11871(final Class1847 class1847, final Class354 class1848) {
+    public void method11871(final Class1847 class1847, final BlockPos class1848) {
         if (class1847.field10062.nextInt(20) == 1) {
             if (class1847.method6959(class1848).method9845(class1848) >= 0.15f) {
                 final Class7096 method6701 = class1847.method6701(class1848);
@@ -208,7 +211,7 @@ public class Class4012 extends Class3833
     }
     
     @Override
-    public int method11874(final Class7096 class7096, final Class1847 class7097, final Class354 class7098) {
+    public int method11874(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098) {
         return class7096.method21772((Class7111<Integer>)Class4012.field18081);
     }
     
@@ -218,7 +221,7 @@ public class Class4012 extends Class3833
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final Class354 class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

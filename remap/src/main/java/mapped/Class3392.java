@@ -5,9 +5,10 @@
 package mapped;
 
 import java.util.Collections;
+
+import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.awt.Color;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.HashSet;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Class3392 extends Class3167
     public Set<Class7859> field16104;
     public Class9416 field16105;
     public Thread field16106;
-    private Class354 field16107;
+    private BlockPos field16107;
     public int field16108;
     public List<Class8797> field16109;
     public List<Class8797> field16110;
@@ -66,7 +67,7 @@ public class Class3392 extends Class3167
         this.field16104.clear();
     }
     
-    public List<Class354> method10818(final Class7859 class7859) {
+    public List<BlockPos> method10818(final Class7859 class7859) {
         final ArrayList list = new ArrayList();
         final int n = class7859.field32290 * 16;
         final int n2 = class7859.field32291 * 16;
@@ -77,7 +78,7 @@ public class Class3392 extends Class3167
         for (float n7 = (float)n3; n7 <= n6 && n7 <= 100.0f; ++n7) {
             for (float n8 = (float)n; n8 <= n4; ++n8) {
                 for (float n9 = (float)n2; n9 <= n5; ++n9) {
-                    final Class354 class7860 = new Class354(n8, n7, n9);
+                    final BlockPos class7860 = new BlockPos(n8, n7, n9);
                     if (Class3392.field15514.field4683.method6701(class7860).method21696() == Class7521.field29294) {
                         list.add(class7860);
                     }
@@ -133,7 +134,7 @@ public class Class3392 extends Class3167
                                 list2.iterator();
                                 final Iterator iterator4;
                                 while (iterator4.hasNext()) {
-                                    final Class354 class5746 = iterator4.next();
+                                    final BlockPos class5746 = iterator4.next();
                                     try {
                                         this.field16105 = new Class9416();
                                         new Class8733(new Class8797(Class3392.field15514.field4684.method1894()));
@@ -200,7 +201,7 @@ public class Class3392 extends Class3167
         this.field16103.clear();
     }
     
-    public Class354 method10820(final float n) {
+    public BlockPos method10820(final float n) {
         final ArrayList list = new ArrayList();
         final Iterator<Class8938> iterator = this.field16103.iterator();
         while (iterator.hasNext()) {
@@ -210,10 +211,10 @@ public class Class3392 extends Class3167
         if (list.size() <= 0) {
             return null;
         }
-        return (Class354)list.get(0);
+        return (BlockPos)list.get(0);
     }
     
-    public List<Class354> method10821() {
+    public List<BlockPos> method10821() {
         final ArrayList list = new ArrayList();
         final Iterator<Class8938> iterator = this.field16103.iterator();
         while (iterator.hasNext()) {
@@ -223,8 +224,8 @@ public class Class3392 extends Class3167
         if (list.size() > 1) {
             final ArrayList list2 = new ArrayList();
             list2.add(list.get(0));
-            for (final Class354 class354 : list) {
-                if (Math.sqrt(class354.method1083((Class352)list2.get(list2.size() - 1))) <= 4.0) {
+            for (final BlockPos class354 : list) {
+                if (Math.sqrt(class354.method1083((Vec3i)list2.get(list2.size() - 1))) <= 4.0) {
                     continue;
                 }
                 if (Class8797.method30695(class354)) {

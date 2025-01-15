@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class3222 extends Class3167
 {
     private Class7617 field15680;
@@ -20,7 +22,7 @@ public class Class3222 extends Class3167
         if (this.method9906()) {
             if (class5750.method17057() != null) {
                 if (class5750.method17059()) {
-                    final Class399 method17057 = class5750.method17057();
+                    final Entity method17057 = class5750.method17057();
                     if (method17057 instanceof Class511) {
                         if (method17057.field2430 <= (int)this.method9886("HurtTime")) {
                             if (Class3265.field15758 > 1) {

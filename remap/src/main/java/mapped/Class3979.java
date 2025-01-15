@@ -28,13 +28,13 @@ public class Class3979 extends Class3833
     }
     
     @Override
-    public void method11831(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class8321 class7099) {
+    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class8321 class7099) {
         super.method11831(class7096, class7097, class7098, class7099);
         if (!class7097.field10067) {
             if (class7097.method6765().method31216(Class8878.field37320)) {
                 if (Class8742.method30195(Class7882.field32366, class7099) == 0) {
                     final Class848 class7100 = Class7499.field29022.method23371(class7097);
-                    class7100.method1730(class7098.method1074() + 0.5, class7098.method1075(), class7098.method1076() + 0.5, 0.0f, 0.0f);
+                    class7100.method1730(class7098.getX() + 0.5, class7098.getY(), class7098.getZ() + 0.5, 0.0f, 0.0f);
                     class7097.method6886(class7100);
                     class7100.method4158();
                 }

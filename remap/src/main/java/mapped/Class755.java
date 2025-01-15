@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class755 extends Class754
 {
@@ -35,7 +37,7 @@ public class Class755 extends Class754
         this.field2945 = this.field2946;
         final double n = this.method1938() - this.field2392;
         final double n2 = this.method1945() - this.field2394;
-        float n3 = Class9546.method35641(n * n + n2 * n2) * 4.0f;
+        float n3 = MathHelper.method35641(n * n + n2 * n2) * 4.0f;
         if (n3 > 1.0f) {
             n3 = 1.0f;
         }
@@ -49,21 +51,21 @@ public class Class755 extends Class754
             final double n = this.method1938() + (this.field2972 - this.method1938()) / this.field2971;
             final double n2 = this.method1941() + (this.field2973 - this.method1941()) / this.field2971;
             final double n3 = this.method1945() + (this.field2974 - this.method1945()) / this.field2971;
-            this.field2399 += (float)(Class9546.method35669(this.field2975 - this.field2399) / this.field2971);
+            this.field2399 += (float)(MathHelper.method35669(this.field2975 - this.field2399) / this.field2971);
             this.field2400 += (float)((this.field2976 - this.field2400) / this.field2971);
             --this.field2971;
             this.method1656(n, n2, n3);
             this.method1655(this.field2399, this.field2400);
         }
         if (this.field2978 > 0) {
-            this.field2953 += (float)(Class9546.method35669(this.field2977 - this.field2953) / this.field2978);
+            this.field2953 += (float)(MathHelper.method35669(this.field2977 - this.field2953) / this.field2978);
             --this.field2978;
         }
         this.field3012 = this.field3013;
         this.method2709();
         float min;
         if (this.field2404 && this.method2664() > 0.0f) {
-            min = Math.min(0.1f, Class9546.method35641(Class399.method1680(this.method1935())));
+            min = Math.min(0.1f, MathHelper.method35641(Entity.method1680(this.method1935())));
         }
         else {
             min = 0.0f;

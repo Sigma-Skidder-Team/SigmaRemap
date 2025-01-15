@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import com.google.common.collect.Lists;
 import java.util.Iterator;
+
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 import java.util.List;
 
@@ -32,10 +34,10 @@ public class Class3306 extends Class3167
         while (iterator.hasNext()) {
             final Iterator<Long> iterator2 = iterator.next().field36693.iterator();
             while (iterator2.hasNext()) {
-                final Class354 method19119 = Class354.method1129(iterator2.next());
-                final double n = method19119.method1074() - Class3306.field15514.field4644.method5833().method18161().method16760();
-                final double n2 = method19119.method1075() - Class3306.field15514.field4644.method5833().method18161().method16761();
-                final double n3 = method19119.method1076() - Class3306.field15514.field4644.method5833().method18161().method16762();
+                final BlockPos method19119 = BlockPos.method1129(iterator2.next());
+                final double n = method19119.getX() - Class3306.field15514.field4644.method5833().method18161().method16760();
+                final double n2 = method19119.getY() - Class3306.field15514.field4644.method5833().method18161().method16761();
+                final double n3 = method19119.getZ() - Class3306.field15514.field4644.method5833().method18161().method16762();
                 Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
             }
         }
@@ -60,12 +62,12 @@ public class Class3306 extends Class3167
             arrayList.remove(Class3306.field15514.field4684);
             final Iterator iterator = arrayList.iterator();
             while (iterator.hasNext()) {
-                final Class399 class5751 = (Class399)iterator.next();
+                final Entity class5751 = (Entity)iterator.next();
                 if (!(class5751 instanceof Class512) || Class9463.method35173().method35191().method31751(class5751)) {
                     iterator.remove();
                 }
             }
-            List<Class399> list = Class4609.method13678(arrayList);
+            List<Entity> list = Class4609.method13678(arrayList);
             Collections.reverse(list);
             System.out.println(list);
             if (list.size() > 1) {

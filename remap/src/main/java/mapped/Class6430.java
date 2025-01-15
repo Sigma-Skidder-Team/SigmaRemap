@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import org.apache.http.HttpEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import java.net.UnknownHostException;
@@ -18,7 +21,7 @@ import com.mojang.authlib.Agent;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.net.Proxy;
 import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
-import java.util.Set;
+
 import java.util.Collections;
 import java.util.UUID;
 import java.util.Optional;
@@ -28,9 +31,8 @@ import org.apache.http.util.EntityUtils;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
-import java.util.Iterator;
 import org.apache.commons.codec.binary.Base64;
-import java.io.Reader;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -97,12 +99,12 @@ public class Class6430
         return Color.WHITE;
     }
     
-    public static Class399 method19111(final Class399 class399, final List<Class399> list) {
+    public static Entity method19111(final Entity class399, final List<Entity> list) {
         if (list.size() > 0) {
-            Class399 class400 = null;
+            Entity class400 = null;
             for (int i = 0; i < list.size(); ++i) {
-                if (class400 == null || class399.method1732((Class399)list.get(i)) < class399.method1732(class400)) {
-                    class400 = (Class399)list.get(i);
+                if (class400 == null || class399.method1732((Entity)list.get(i)) < class399.method1732(class400)) {
+                    class400 = (Entity)list.get(i);
                 }
             }
             return class400;
@@ -110,11 +112,11 @@ public class Class6430
         return null;
     }
     
-    public static final boolean method19112(final Class399 class399) {
+    public static final boolean method19112(final Entity class399) {
         return Class6430.field25541.field4683.method6968(class399.field2403);
     }
     
-    public static final boolean method19113(final Class399 class399) {
+    public static final boolean method19113(final Entity class399) {
         final double n = class399.field2395 - class399.field2417;
         final double n2 = class399.field2396 - class399.field2418;
         final double n3 = class399.field2397 - class399.field2419;
@@ -132,18 +134,18 @@ public class Class6430
         return Class6430.field25541.field4684.field2968 != 0.0f || Class6430.field25541.field4684.field2970 != 0.0f;
     }
     
-    public static float[] method19115(final Class354 class354, final Class179 class355) {
-        return method19116(class354.method1074(), class354.method1075(), class354.method1076(), class355);
+    public static float[] method19115(final BlockPos class354, final Direction class355) {
+        return method19116(class354.getX(), class354.getY(), class354.getZ(), class355);
     }
     
-    public static float[] method19116(final double n, final double n2, final double n3, final Class179 class179) {
+    public static float[] method19116(final double n, final double n2, final double n3, final Direction class179) {
         final Class411 class181;
         final Class411 class180 = class181 = new Class411(Class6430.field25541.field4683, n + 0.5, n2 + 0.5, n3 + 0.5);
-        class181.field2395 += class179.method802().method1074() * 0.25;
+        class181.field2395 += class179.getDirectionVec().getX() * 0.25;
         final Class411 class182 = class180;
-        class182.field2396 += class179.method802().method1075() * 0.25;
+        class182.field2396 += class179.getDirectionVec().getY() * 0.25;
         final Class411 class183 = class180;
-        class183.field2397 += class179.method802().method1076() * 0.25;
+        class183.field2397 += class179.getDirectionVec().getZ() * 0.25;
         return method19117(class180.field2395, class180.field2396, class180.field2397);
     }
     
@@ -151,7 +153,7 @@ public class Class6430
         final double x = n - Class6430.field25541.field4684.field2395;
         final double y = n2 - (Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892());
         final double y2 = n3 - Class6430.field25541.field4684.field2397;
-        return new float[] { Class6430.field25541.field4684.field2399 + Class9546.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class6430.field25541.field4684.field2399), Class6430.field25541.field4684.field2400 + Class9546.method35668((float)(-(Math.atan2(y, Class9546.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class6430.field25541.field4684.field2400) };
+        return new float[] { Class6430.field25541.field4684.field2399 + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class6430.field25541.field4684.field2399), Class6430.field25541.field4684.field2400 + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.method35641(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class6430.field25541.field4684.field2400) };
     }
     
     public static int method19118(final int n, final float n2) {
@@ -341,7 +343,7 @@ public class Class6430
     }
     
     public static float method19132(final float n, final float n2, final float n3) {
-        float method35668 = Class9546.method35668(n2 - n);
+        float method35668 = MathHelper.method35668(n2 - n);
         if (method35668 > n3) {
             method35668 = n3;
         }
@@ -383,7 +385,7 @@ public class Class6430
         return new Color(color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f, color.getAlpha() / 255.0f);
     }
     
-    public static List<Class399> method19138() {
+    public static List<Entity> method19138() {
         final ArrayList list = new ArrayList();
         Class6430.field25541.field4683.field10072.forEach((p1, class399) -> list2.add(class399));
         return list;
@@ -397,7 +399,7 @@ public class Class6430
         return (n >> 24 & 0xFF) / 255.0f;
     }
     
-    public static Class399 method19141(final float n, final float n2, final float n3, final double n4) {
+    public static Entity method19141(final float n, final float n2, final float n3, final double n4) {
         final Class7007 method19142 = method19142(n, n2, n3, n4);
         if (method19142 == null) {
             return null;
@@ -406,25 +408,25 @@ public class Class6430
     }
     
     public static Class7007 method19142(final float n, final float n2, final float n3, final double n4) {
-        final Class5487 class5487 = new Class5487(Class6430.field25541.field4684.field2395, Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.field2397);
-        final Class399 method5303 = Class6430.field25541.method5303();
+        final Vec3d class5487 = new Vec3d(Class6430.field25541.field4684.field2395, Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.field2397);
+        final Entity method5303 = Class6430.field25541.method5303();
         if (method5303 != null && Class6430.field25541.field4683 != null) {
             double n5 = Class6430.field25541.field4682.method27315();
             if (n3 != 0.0f) {
                 n5 = n3;
             }
-            final Class5487 method5304 = method19151(n2, n);
+            final Vec3d method5304 = method19151(n2, n);
             return method19143(Class6430.field25541.field4683, method5303, class5487, class5487.method16744(method5304.field22770 * n5, method5304.field22771 * n5, method5304.field22772 * n5), method5303.method1886().method18493(method5304.method16748(n5)).method18495(1.0, 1.0, 1.0), class5488 -> class5488 instanceof Class511, n3 * n3, n4);
         }
         return null;
     }
     
-    public static Class7007 method19143(final Class1847 class1847, final Class399 class1848, final Class5487 class1849, final Class5487 class1850, final Class6221 class1851, final Predicate<Class399> predicate, final double n, final double n2) {
+    public static Class7007 method19143(final Class1847 class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final Class6221 class1851, final Predicate<Entity> predicate, final double n, final double n2) {
         double n3 = n;
-        Class399 class1852 = null;
-        for (final Class399 class1853 : class1847.method6737(class1848, class1851, predicate)) {
+        Entity class1852 = null;
+        for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
             final Class6221 method18496 = class1853.method1886().method18496(n2);
-            final Optional<Class5487> method18497 = method18496.method18512(class1849, class1850);
+            final Optional<Vec3d> method18497 = method18496.method18512(class1849, class1850);
             if (!method18497.isPresent()) {
                 if (!method19145(class1848.method1934(), method18496)) {
                     continue;
@@ -447,15 +449,15 @@ public class Class6430
         return (class1852 != null) ? new Class7007(class1852) : null;
     }
     
-    public static Class7007 method19144(final Class399 class399, final float n, final float n2, final Predicate<Class399> predicate, final double n3) {
+    public static Class7007 method19144(final Entity class399, final float n, final float n2, final Predicate<Entity> predicate, final double n3) {
         double n4 = n3 * n3;
-        Class399 class400 = null;
-        Class5487 method16742 = null;
-        final Class5487 class401 = new Class5487(Class6430.field25541.field4684.field2395, Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.field2397);
-        final Class5487 method16743 = method19151(n2, n);
-        final Class5487 method16744 = class401.method16744(method16743.field22770 * n4, method16743.field22771 * n4, method16743.field22772 * n4);
-        for (final Class399 class402 : Class6430.field25541.field4683.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.method1886().method18493(method16743.method16748(n4)).method18495(1.0, 1.0, 1.0), predicate)) {
-            final Optional<Class5487> method16745 = class402.method1886().method18512(class401, method16744);
+        Entity class400 = null;
+        Vec3d method16742 = null;
+        final Vec3d class401 = new Vec3d(Class6430.field25541.field4684.field2395, Class6430.field25541.field4684.field2396 + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.field2397);
+        final Vec3d method16743 = method19151(n2, n);
+        final Vec3d method16744 = class401.method16744(method16743.field22770 * n4, method16743.field22771 * n4, method16743.field22772 * n4);
+        for (final Entity class402 : Class6430.field25541.field4683.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.method1886().method18493(method16743.method16748(n4)).method18495(1.0, 1.0, 1.0), predicate)) {
+            final Optional<Vec3d> method16745 = class402.method1886().method18512(class401, method16744);
             if (!method16745.isPresent()) {
                 continue;
             }
@@ -473,7 +475,7 @@ public class Class6430
         return (class400 != null && method16742 != null) ? new Class7007(class400, method16742) : null;
     }
     
-    public static boolean method19145(final Class5487 class5487, final Class6221 class5488) {
+    public static boolean method19145(final Vec3d class5487, final Class6221 class5488) {
         if (class5487.field22770 >= class5488.field25073) {
             if (class5487.field22770 <= class5488.field25076) {
                 if (class5487.field22771 >= class5488.field25074) {
@@ -540,13 +542,13 @@ public class Class6430
         return Class6430.field25541.method5282() == null || Class6430.field25541.method5282().field41613.toLowerCase().contains("localhost");
     }
     
-    public static Class5487 method19151(final float n, final float n2) {
+    public static Vec3d method19151(final float n, final float n2) {
         final float n3 = n * 0.017453292f;
         final float n4 = -n2 * 0.017453292f;
-        final float method35639 = Class9546.method35639(n4);
-        final float method35640 = Class9546.method35638(n4);
-        final float method35641 = Class9546.method35639(n3);
-        return new Class5487(method35640 * method35641, -Class9546.method35638(n3), method35639 * method35641);
+        final float method35639 = MathHelper.cos(n4);
+        final float method35640 = MathHelper.sin(n4);
+        final float method35641 = MathHelper.cos(n3);
+        return new Vec3d(method35640 * method35641, -MathHelper.sin(n3), method35639 * method35641);
     }
     
     public static UUID method19152(final String s) {
@@ -593,16 +595,16 @@ public class Class6430
         return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, class6221, Collections.EMPTY_SET).count() != 0L;
     }
     
-    public static boolean method19160(final Class399 class399, final float n) {
+    public static boolean method19160(final Entity class399, final float n) {
         return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new Class6221(class399.field2403.field25073, class399.field2403.field25074 - n, class399.field2403.field25075, class399.field2403.field25076, class399.field2403.field25077, class399.field2403.field25078), Collections.EMPTY_SET).count() != 0L;
     }
     
-    public static List<Class354> method19161(final Class399 class399) {
+    public static List<BlockPos> method19161(final Entity class399) {
         final ArrayList list = new ArrayList();
         final int n = 1;
         for (float n2 = (float)(-n); n2 <= n; ++n2) {
             for (float n3 = (float)(-n); n3 <= n; ++n3) {
-                list.add(new Class354(class399.field2395 + n2, class399.field2396 - 1.0, class399.field2397 + n3));
+                list.add(new BlockPos(class399.field2395 + n2, class399.field2396 - 1.0, class399.field2397 + n3));
             }
         }
         return list;
@@ -628,10 +630,10 @@ public class Class6430
     }
     
     public static void method19164() {
-        Class6430.field25541.method5269().method17292(new Class4399(Class2003.field11245, new Class354(0, 0, 0), Class179.field511));
+        Class6430.field25541.method5269().method17292(new Class4399(Class2003.field11245, new BlockPos(0, 0, 0), Direction.DOWN));
     }
     
-    public static void method19165(final Class399 class399, final boolean b) {
+    public static void method19165(final Entity class399, final boolean b) {
         final boolean equals = Class9367.field40167.equals(Class7906.field32452);
         final Class5750 class400 = new Class5750(class399, true);
         Class9463.method35173().method35188().method21097(class400);
@@ -773,7 +775,7 @@ public class Class6430
         return s.equals("yorik100".toLowerCase()) || s.equals("TheDeadlySam".toLowerCase()) || s.equals("Andro24".toLowerCase()) || s.equals("Sigma".toLowerCase()) || s.equals("SigmaTTT".toLowerCase()) || s.equals("Tomygames".toLowerCase()) || s.equals("LeakedPvP".toLowerCase()) || s.equals("Omikron".toLowerCase()) || s.equals("Haydal".toLowerCase()) || s.equals("TayZak".toLowerCase()) || s.equals("ParfumAuJasmin".toLowerCase()) || s.equals("Loyisa".toLowerCase()) || s.equals("gamerboy35787".toLowerCase()) || s.equals("MysticArceus".toLowerCase()) || s.equals("Casperhq".toLowerCase()) || s.equals("Flyinqq".toLowerCase()) || s.equals("cxbot".toLowerCase()) || s.equals("ImJoi".toLowerCase()) || s.equals("_CloudPlayer".toLowerCase()) || s.equals("Daawn".toLowerCase()) || s.equals("SubwayZ".toLowerCase());
     }
     
-    public static Class2068 method19174(final Class399 class399) {
+    public static Class2068 method19174(final Entity class399) {
         if (!(class399 instanceof Class511)) {
             return Class2068.field11841;
         }
@@ -899,7 +901,7 @@ public class Class6430
         return new double[] { 0.0, 0.0625, 0.125, 0.25, 0.3125, 0.375, 0.5, 0.625, 0.75, 0.8125, 0.875, 0.9375, 1.0, 1.0625, 1.125, 1.25, 1.3125, 1.375 };
     }
     
-    public static boolean method19178(final Class399 class399, final boolean b, final boolean b2, final boolean b3) {
+    public static boolean method19178(final Entity class399, final boolean b, final boolean b2, final boolean b3) {
         if (class399 == Class6430.field25541.field4684 || class399 == Class3276.field15771) {
             return false;
         }

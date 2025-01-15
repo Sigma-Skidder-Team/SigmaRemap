@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
 
 public class Class369 extends Class367
 {
@@ -27,24 +28,24 @@ public class Class369 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random, final List<Class354> list3, final List<Class354> list2, final Set<Class354> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random, final List<BlockPos> list3, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
         if (random.nextFloat() < this.field2211) {
             list3.stream().filter(class1853 -> {
-                list3.get(0).method1075();
-                return class1853.method1075() - n <= 2;
+                list3.get(0).getY();
+                return class1853.getY() - n <= 2;
             }).forEach(class1856 -> {
-                Class98.field268.iterator();
+                Plane.HORIZONTAL.iterator();
                 final Iterator iterator;
                 while (iterator.hasNext()) {
-                    final Class179 class1857 = iterator.next();
+                    final Direction class1857 = iterator.next();
                     if (random2.nextFloat() > 0.25f) {
                         continue;
                     }
                     else {
-                        class1857.method782();
-                        final Class179 class1858;
-                        class1856.method1134(class1858.method785(), 0, class1858.method787());
-                        final Class354 class1859;
+                        class1857.getOpposite();
+                        final Direction class1858;
+                        class1856.method1134(class1858.getXOffset(), 0, class1858.getZOffset());
+                        final BlockPos class1859;
                         if (!Class4592.method13609(class1854, class1859)) {
                             continue;
                         }

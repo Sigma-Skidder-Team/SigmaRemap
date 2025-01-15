@@ -9,6 +9,9 @@ import com.google.common.collect.Multimap;
 import java.util.List;
 import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 import java.util.UUID;
 import java.util.Map;
@@ -79,7 +82,7 @@ public class Class3820 implements Class3832
         return false;
     }
     
-    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final Class354 class7098, final Class512 class7099) {
+    public boolean method11703(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099) {
         return true;
     }
     
@@ -132,7 +135,7 @@ public class Class3820 implements Class3832
         return false;
     }
     
-    public boolean method11712(final Class8321 class8321, final Class1847 class8322, final Class7096 class8323, final Class354 class8324, final Class511 class8325) {
+    public boolean method11712(final Class8321 class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
         return false;
     }
     
@@ -181,7 +184,7 @@ public class Class3820 implements Class3832
         return this.field17369 != null;
     }
     
-    public void method11722(final Class8321 class8321, final Class1847 class8322, final Class399 class8323, final int n, final boolean b) {
+    public void method11722(final Class8321 class8321, final Class1847 class8322, final Entity class8323, final int n, final boolean b) {
     }
     
     public void method11723(final Class8321 class8321, final Class1847 class8322, final Class512 class8323) {
@@ -242,10 +245,10 @@ public class Class3820 implements Class3832
         final float field2400 = class1848.field2400;
         final float field2401 = class1848.field2399;
         final Class5487 method1747 = class1848.method1747(1.0f);
-        final float method1748 = Class9546.method35639(-field2401 * 0.017453292f - 3.1415927f);
-        final float method1749 = Class9546.method35638(-field2401 * 0.017453292f - 3.1415927f);
-        final float n = -Class9546.method35639(-field2400 * 0.017453292f);
-        return class1847.method6987(new Class8478(method1747, method1747.method16744(method1749 * n * 5.0, Class9546.method35638(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
+        final float method1748 = MathHelper.cos(-field2401 * 0.017453292f - 3.1415927f);
+        final float method1749 = MathHelper.sin(-field2401 * 0.017453292f - 3.1415927f);
+        final float n = -MathHelper.cos(-field2400 * 0.017453292f);
+        return class1847.method6987(new Class8478(method1747, method1747.method16744(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
     }
     
     public int method11734() {
@@ -308,7 +311,7 @@ public class Class3820 implements Class3832
     static {
         field17355 = Maps.newHashMap();
         field17356 = ((class8321, class8322, class8323) -> class8321.method27631() ? 1.0f : 0.0f);
-        field17357 = ((class8321, class8322, class8323) -> Class9546.method35653(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
+        field17357 = ((class8321, class8322, class8323) -> MathHelper.method35653(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
         field17358 = ((class8321, class8322, class8323) -> (class8323 != null && class8323.method2755() != Class2226.field13698) ? 1.0f : 0.0f);
         field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof Class512) ? ((Class512)class8323).method2906().method25770(class8321.method27622(), 0.0f) : 0.0f);
         field17360 = ((class8321, class8322, class8323) -> class8321.method27656() ? ((float)class8321.method27657().method319("CustomModelData")) : 0.0f);

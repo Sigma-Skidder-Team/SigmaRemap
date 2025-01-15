@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.AbstractCollection;
+
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import java.util.Collections;
@@ -34,11 +36,11 @@ public class Class1865 implements Class1860
     private volatile Class1886 field10172;
     private final Map<Class2020, Class9548> field10173;
     private volatile Class9312 field10174;
-    private final Map<Class354, Class436> field10175;
-    private final Map<Class354, Class51> field10176;
+    private final Map<BlockPos, Class436> field10175;
+    private final Map<BlockPos, Class51> field10176;
     private final Class8199[] field10177;
     private final List<Class51> field10178;
-    private final List<Class354> field10179;
+    private final List<BlockPos> field10179;
     private final ShortList[] field10180;
     private final Map<String, Class5936> field10181;
     private final Map<String, LongSet> field10182;
@@ -80,34 +82,34 @@ public class Class1865 implements Class1860
     }
     
     @Override
-    public Class7096 method6701(final Class354 class354) {
-        final int method1075 = class354.method1075();
+    public Class7096 method6701(final BlockPos class354) {
+        final int method1075 = class354.getY();
         if (!Class1847.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
-            return Class8199.method27155(class355) ? Class7521.field29147.method11878() : class355.method27148(class354.method1074() & 0xF, method1075 & 0xF, class354.method1076() & 0xF);
+            return Class8199.method27155(class355) ? Class7521.field29147.method11878() : class355.method27148(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
         }
         return Class7521.field29763.method11878();
     }
     
     @Override
-    public Class7099 method6702(final Class354 class354) {
-        final int method1075 = class354.method1075();
+    public Class7099 method6702(final BlockPos class354) {
+        final int method1075 = class354.getY();
         if (!Class1847.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
-            return Class8199.method27155(class355) ? Class7558.field29974.method22148() : class355.method27149(class354.method1074() & 0xF, method1075 & 0xF, class354.method1076() & 0xF);
+            return Class8199.method27155(class355) ? Class7558.field29974.method22148() : class355.method27149(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
         }
         return Class7558.field29974.method22148();
     }
     
     @Override
-    public Stream<Class354> method7035() {
+    public Stream<BlockPos> method7035() {
         return this.field10179.stream();
     }
     
     public ShortList[] method7090() {
         final ShortList[] array = new ShortList[16];
-        for (final Class354 class354 : this.field10179) {
-            Class1860.method7042(array, class354.method1075() >> 4).add(method7100(class354));
+        for (final BlockPos class354 : this.field10179) {
+            Class1860.method7042(array, class354.getY() >> 4).add(method7100(class354));
         }
         return array;
     }
@@ -116,16 +118,16 @@ public class Class1865 implements Class1860
         this.method7092(method7101(n, n2, this.field10169));
     }
     
-    public void method7092(final Class354 class354) {
+    public void method7092(final BlockPos class354) {
         this.field10179.add(class354.method1153());
     }
     
     @Nullable
     @Override
-    public Class7096 method7008(final Class354 class354, final Class7096 class355, final boolean b) {
-        final int method1074 = class354.method1074();
-        final int method1075 = class354.method1075();
-        final int method1076 = class354.method1076();
+    public Class7096 method7008(final BlockPos class354, final Class7096 class355, final boolean b) {
+        final int method1074 = class354.getX();
+        final int method1075 = class354.getY();
+        final int method1076 = class354.getZ();
         if (method1075 < 0 || method1075 >= 256) {
             return Class7521.field29763.method11878();
         }
@@ -133,7 +135,7 @@ public class Class1865 implements Class1860
             return class355;
         }
         if (class355.method21704() > 0) {
-            this.field10179.add(new Class354((method1074 & 0xF) + this.method7019().method25426(), method1075, (method1076 & 0xF) + this.method7019().method25427()));
+            this.field10179.add(new BlockPos((method1074 & 0xF) + this.method7019().method25426(), method1075, (method1076 & 0xF) + this.method7019().method25427()));
         }
         final Class7096 method1077 = this.method7093(method1075 >> 4).method27152(method1074 & 0xF, method1075 & 0xF, method1076 & 0xF, class355);
         Label_0111: {
@@ -181,13 +183,13 @@ public class Class1865 implements Class1860
     }
     
     @Override
-    public void method7009(final Class354 class354, final Class436 class355) {
+    public void method7009(final BlockPos class354, final Class436 class355) {
         class355.method2203(class354);
         this.field10175.put(class354, class355);
     }
     
     @Override
-    public Set<Class354> method7013() {
+    public Set<BlockPos> method7013() {
         final HashSet hashSet = Sets.newHashSet((Iterable)this.field10176.keySet());
         hashSet.addAll(this.field10175.keySet());
         return hashSet;
@@ -195,11 +197,11 @@ public class Class1865 implements Class1860
     
     @Nullable
     @Override
-    public Class436 method6727(final Class354 class354) {
+    public Class436 method6727(final BlockPos class354) {
         return this.field10175.get(class354);
     }
     
-    public Map<Class354, Class436> method7094() {
+    public Map<BlockPos, Class436> method7094() {
         return this.field10175;
     }
     
@@ -208,7 +210,7 @@ public class Class1865 implements Class1860
     }
     
     @Override
-    public void method7010(final Class399 class399) {
+    public void method7010(final Entity class399) {
         final Class51 class400 = new Class51();
         class399.method1755(class400);
         this.method7095(class400);
@@ -339,18 +341,18 @@ public class Class1865 implements Class1860
         this.field10170 = true;
     }
     
-    public static short method7100(final Class354 class354) {
-        return (short)((class354.method1074() & 0xF) | (class354.method1075() & 0xF) << 4 | (class354.method1076() & 0xF) << 8);
+    public static short method7100(final BlockPos class354) {
+        return (short)((class354.getX() & 0xF) | (class354.getY() & 0xF) << 4 | (class354.getZ() & 0xF) << 8);
     }
     
-    public static Class354 method7101(final short n, final int n2, final Class7859 class7859) {
-        return new Class354((n & 0xF) + (class7859.field32290 << 4), (n >>> 4 & 0xF) + (n2 << 4), (n >>> 8 & 0xF) + (class7859.field32291 << 4));
+    public static BlockPos method7101(final short n, final int n2, final Class7859 class7859) {
+        return new BlockPos((n & 0xF) + (class7859.field32290 << 4), (n >>> 4 & 0xF) + (n2 << 4), (n >>> 8 & 0xF) + (class7859.field32291 << 4));
     }
     
     @Override
-    public void method7029(final Class354 class354) {
+    public void method7029(final BlockPos class354) {
         if (!Class1847.method6683(class354)) {
-            Class1860.method7042(this.field10180, class354.method1075() >> 4).add(method7100(class354));
+            Class1860.method7042(this.field10180, class354.getY() >> 4).add(method7100(class354));
         }
     }
     
@@ -389,27 +391,27 @@ public class Class1865 implements Class1860
     
     @Override
     public void method7032(final Class51 class51) {
-        this.field10176.put(new Class354(class51.method319("x"), class51.method319("y"), class51.method319("z")), class51);
+        this.field10176.put(new BlockPos(class51.method319("x"), class51.method319("y"), class51.method319("z")), class51);
     }
     
-    public Map<Class354, Class51> method7104() {
-        return Collections.unmodifiableMap((Map<? extends Class354, ? extends Class51>)this.field10176);
+    public Map<BlockPos, Class51> method7104() {
+        return Collections.unmodifiableMap((Map<? extends BlockPos, ? extends Class51>)this.field10176);
     }
     
     @Override
-    public Class51 method7033(final Class354 class354) {
+    public Class51 method7033(final BlockPos class354) {
         return this.field10176.get(class354);
     }
     
     @Nullable
     @Override
-    public Class51 method7034(final Class354 class354) {
+    public Class51 method7034(final BlockPos class354) {
         final Class436 method6727 = this.method6727(class354);
         return (method6727 == null) ? this.field10176.get(class354) : method6727.method2180(new Class51());
     }
     
     @Override
-    public void method7028(final Class354 class354) {
+    public void method7028(final BlockPos class354) {
         this.field10175.remove(class354);
         this.field10176.remove(class354);
     }

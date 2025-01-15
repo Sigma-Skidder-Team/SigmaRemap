@@ -4,21 +4,22 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.function.Consumer;
-import java.util.Spliterators;
 
 public class Class7583 extends AbstractSpliterator<Class7702>
 {
     private static String[] field30080;
     public boolean field30081;
-    public final /* synthetic */ Class399 field30082;
+    public final /* synthetic */ Entity field30082;
     public final /* synthetic */ Class8243 field30083;
     public final /* synthetic */ Class385 field30084;
     public final /* synthetic */ Class7543 field30085;
     public final /* synthetic */ Class7702 field30086;
     public final /* synthetic */ Class1853 field30087;
     
-    public Class7583(final Class1853 field30087, final long est, final int additionalCharacteristics, final Class399 field30088, final Class8243 field30089, final Class385 field30090, final Class7543 field30091, final Class7702 field30092) {
+    public Class7583(final Class1853 field30087, final long est, final int additionalCharacteristics, final Entity field30088, final Class8243 field30089, final Class385 field30090, final Class7543 field30091, final Class7702 field30092) {
         this.field30087 = field30087;
         this.field30082 = field30088;
         this.field30083 = field30089;

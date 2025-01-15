@@ -5,8 +5,9 @@
 package mapped;
 
 import com.mojang.datafixers.DataFixUtils;
+import net.minecraft.entity.Entity;
 
-public class Class8868<T extends Class399>
+public class Class8868<T extends Entity>
 {
     private final Class8962<T> field37278;
     private final Class1976 field37279;
@@ -25,11 +26,11 @@ public class Class8868<T extends Class399>
         this.field37283 = (field37279 == Class1976.field10949 || field37279 == Class1976.field10952);
     }
     
-    public static <T extends Class399> Class8868<T> method31155(final Class8962<T> class8962, final Class1976 class8963) {
+    public static <T extends Entity> Class8868<T> method31155(final Class8962<T> class8962, final Class1976 class8963) {
         return new Class8868<T>(class8962, class8963);
     }
     
-    public static <T extends Class399> Class8868<T> method31156(final Class1976 class1976) {
+    public static <T extends Entity> Class8868<T> method31156(final Class1976 class1976) {
         return new Class8868<T>((class7499, class7500) -> null, class1976);
     }
     

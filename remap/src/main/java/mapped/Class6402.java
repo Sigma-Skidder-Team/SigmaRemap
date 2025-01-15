@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public final class Class6402 extends Class6397
 {
     private static String[] field25520;
@@ -28,7 +30,7 @@ public final class Class6402 extends Class6397
     public Class8321 method19087(final Class5491 class5491, final Class8321 class5492) {
         this.field25515 = false;
         final Class1847 method16763 = class5491.method16763();
-        final Class354 method16764 = class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Class179>)Class3955.field17859));
+        final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859));
         final Class7096 method16765 = method16763.method6701(method16764);
         if (method16765.method21696().method11785(Class7188.field27931) && method16765.method21772((Class7111<Integer>)Class3961.field17902) >= 5) {
             ((Class3961)method16765.method21696()).method12085(method16763.method6744(), method16765, method16764, null, Class2144.field12625);

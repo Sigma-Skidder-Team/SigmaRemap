@@ -41,11 +41,11 @@ public class Class3172 extends Class3167
             return;
         }
         int n = 16;
-        final Class354 method1137 = new Class354(Class3172.field15514.field4684.field2395, Class3172.field15514.field4684.field2396, Class3172.field15514.field4684.field2397).method1137();
+        final BlockPos method1137 = new BlockPos(Class3172.field15514.field4684.field2395, Class3172.field15514.field4684.field2396, Class3172.field15514.field4684.field2397).method1137();
         final Class1860 method1138 = Class3172.field15514.field4683.method6965(method1137);
         if (method1138 != null) {
-            if (method1137.method1075() >= 0) {
-                if (method1137.method1075() < 256) {
+            if (method1137.getY() >= 0) {
+                if (method1137.getY() < 256) {
                     if (!method1138.method7043()) {
                         n -= method1138.method6984(method1137);
                     }

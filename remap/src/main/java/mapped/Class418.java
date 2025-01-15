@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class418 extends Class416
 {
     private static String[] field2526;
@@ -34,13 +36,13 @@ public class Class418 extends Class416
                         }
                     }
                     final Class7005 class7007 = (Class7005)class7006;
-                    final Class354 method1149 = class7007.method21447().method1149(class7007.method21448());
+                    final BlockPos method1149 = class7007.method21447().method1149(class7007.method21448());
                     if (this.field2391.method6961(method1149)) {
                         this.field2391.method6692(method1149, Class7521.field29289.method11878());
                     }
                 }
                 else {
-                    final Class399 method1150 = ((Class7007)class7006).method21452();
+                    final Entity method1150 = ((Class7007)class7006).method21452();
                     if (!method1150.method1704()) {
                         final int method1151 = method1150.method1666();
                         method1150.method1664(5);

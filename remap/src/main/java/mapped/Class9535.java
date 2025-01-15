@@ -5,8 +5,10 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import java.util.Iterator;
+
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class9535
@@ -33,7 +35,7 @@ public class Class9535
             }
         }
         else {
-            final Class3833 method21696 = this.field41037.field2391.method6701(new Class354(this.field41037)).method21696();
+            final Class3833 method21696 = this.field41037.field2391.method6701(new BlockPos(this.field41037)).method21696();
             if (method21696 != Class7521.field29307) {
                 if (method21696 == Class7521.field29388) {
                     this.field41043 = "vines";
@@ -69,13 +71,13 @@ public class Class9535
             final Class8779 method35597 = this.method35597();
             final Class8779 class8779 = this.field41036.get(this.field41036.size() - 1);
             final Class2250 method35598 = class8779.method30541();
-            final Class399 method35599 = class8779.method30537().method25714();
+            final Entity method35599 = class8779.method30537().method25714();
             Class2250 method35602;
             if (method35597 != null && class8779.method30537() == Class7929.field32572) {
                 final Class2250 method35600 = method35597.method30541();
                 if (method35597.method30537() != Class7929.field32572 && method35597.method30537() != Class7929.field32574) {
                     if (method35600 != null && (method35598 == null || !method35600.equals(method35598))) {
-                        final Class399 method35601 = method35597.method30537().method25714();
+                        final Entity method35601 = method35597.method30537().method25714();
                         final Class8321 class8780 = (method35601 instanceof Class511) ? ((Class511)method35601).method2713() : Class8321.field34174;
                         if (!class8780.method27620() && class8780.method27667()) {
                             method35602 = new Class2259("death.fell.assist.item", new Object[] { this.field41037.method1871(), method35600, class8780.method27684() });

@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Iterator;
 
 public abstract class Class433 extends Class428 implements Class446, Class434
@@ -101,7 +102,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     @Nullable
     @Override
-    public Class399 method1854(final Class383 class383) {
+    public Entity method1854(final Class383 class383) {
         this.field2646 = false;
         return super.method1854(class383);
     }
@@ -163,7 +164,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
             if (this.field2391.method6679() != null) {
                 final Class9317 method6402 = this.field2391.method6679().method1581().method6402(this.field2647);
                 this.field2647 = null;
-                final Class9098 method6403 = new Class9098((Class1849)this.field2391).method32877(Class6683.field26367, new Class354(this)).method32874(this.field2648);
+                final Class9098 method6403 = new Class9098((Class1849)this.field2391).method32877(Class6683.field26367, new BlockPos(this)).method32874(this.field2648);
                 if (class512 != null) {
                     method6403.method32876(class512.method2907()).method32877(Class6683.field26362, class512);
                 }

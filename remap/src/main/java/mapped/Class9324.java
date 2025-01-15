@@ -15,7 +15,7 @@ public class Class9324
     private static String[] field40033;
     private static final Logger field40034;
     
-    public static void method34529(final Class1849 class1849, final Class354 class1850, final String s, final int n, final int n2) {
+    public static void method34529(final Class1849 class1849, final BlockPos class1850, final String s, final int n, final int n2) {
         final Class8654 class1851 = new Class8654(Unpooled.buffer());
         class1851.method29495(class1850);
         class1851.writeInt(n);
@@ -31,19 +31,19 @@ public class Class9324
     public static void method34531(final Class1849 class1849, final Class7859 class1850) {
     }
     
-    public static void method34532(final Class1849 class1849, final Class354 class1850) {
+    public static void method34532(final Class1849 class1849, final BlockPos class1850) {
     }
     
-    public static void method34533(final Class1849 class1849, final Class354 class1850) {
+    public static void method34533(final Class1849 class1849, final BlockPos class1850) {
     }
     
-    public static void method34534(final Class1849 class1849, final Class354 class1850) {
+    public static void method34534(final Class1849 class1849, final BlockPos class1850) {
     }
     
     public static void method34535(final Class1847 class1847, final Class759 class1848, final Class9468 class1849, final float n) {
     }
     
-    public static void method34536(final Class1847 class1847, final Class354 class1848) {
+    public static void method34536(final Class1847 class1847, final BlockPos class1848) {
     }
     
     public static void method34537(final Class1851 class1851, final Class5936 class1852) {

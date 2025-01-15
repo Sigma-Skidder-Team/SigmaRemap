@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.function.Consumer;
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.BufferUtils;
 import com.google.common.collect.Lists;
 import java.nio.ByteBuffer;
@@ -34,7 +34,7 @@ public class Class8493
             this.field34874.add(this.field34877);
             this.method28379();
         }
-        this.field34877.putShort((short)Class9546.method35651((int)(n * 32767.5f - 0.5f), -32768, 32767));
+        this.field34877.putShort((short) MathHelper.method35651((int)(n * 32767.5f - 0.5f), -32768, 32767));
         this.field34876 += 2;
     }
     

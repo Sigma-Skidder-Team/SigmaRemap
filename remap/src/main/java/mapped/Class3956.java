@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3956 extends Class3955
 {
     private static String[] field17858;
@@ -24,18 +26,18 @@ public class Class3956 extends Class3955
     }
     
     @Override
-    public void method12070(final Class1847 class1847, final Class354 class1848) {
+    public void method12070(final Class1847 class1847, final BlockPos class1848) {
         final Class5492 class1849 = new Class5492(class1847, class1848);
         final Class458 class1850 = class1849.method16766();
         final int method2333 = class1850.method2333();
         if (method2333 >= 0) {
             final Class8321 method2334 = class1850.method2157(method2333);
             if (!method2334.method27620()) {
-                final Class179 class1851 = class1847.method6701(class1848).method21772((Class7111<Class179>)Class3956.field17859);
+                final Direction class1851 = class1847.method6701(class1848).method21772((Class7111<Direction>)Class3956.field17859);
                 final Class446 method2335 = Class455.method2310(class1847, class1848.method1149(class1851));
                 Class8321 class1852;
                 if (method2335 != null) {
-                    if (!Class455.method2303(class1850, method2335, method2334.method27641().method27621(1), class1851.method782()).method27620()) {
+                    if (!Class455.method2303(class1850, method2335, method2334.method27641().method27621(1), class1851.getOpposite()).method27620()) {
                         class1852 = method2334.method27641();
                     }
                     else {

@@ -7,12 +7,13 @@ package mapped;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
-import java.util.stream.Collector;
+
 import java.util.stream.Collectors;
 import java.util.Set;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.Direction;
 
 public class Class372 extends Class367
 {
@@ -28,18 +29,18 @@ public class Class372 extends Class367
     }
     
     @Override
-    public void method1241(final Class1851 class1851, final Random random2, final List<Class354> list4, final List<Class354> list2, final Set<Class354> set, final Class6997 class1852) {
+    public void method1241(final Class1851 class1851, final Random random2, final List<BlockPos> list4, final List<BlockPos> list2, final Set<BlockPos> set, final Class6997 class1852) {
         if (random2.nextFloat() < this.field2212) {
-            final Class179 class1853 = Class3961.field17900[random2.nextInt(Class3961.field17900.length)];
+            final Direction class1853 = Class3961.field17900[random2.nextInt(Class3961.field17900.length)];
             final List<? super Object> list3 = (List<? super Object>)list4.stream().filter(class1855 -> {
-                final Object o = list5.isEmpty() ? Math.min(list4.get(0).method1075() + 1 + random2.nextInt(3), list4.get(list4.size() - 1).method1075()) : Math.max(list5.get(0).method1075() - 1, list4.get(0).method1075());
-                return class1855.method1075() == n2;
+                final Object o = list5.isEmpty() ? Math.min(list4.get(0).getY() + 1 + random2.nextInt(3), list4.get(list4.size() - 1).getY()) : Math.max(list5.get(0).method1075() - 1, list4.get(0).getY());
+                return class1855.getY() == n2;
             }).collect(Collectors.toList());
             if (!list3.isEmpty()) {
-                final Class354 method1149 = list3.get(random2.nextInt(list3.size())).method1149(class1853);
+                final BlockPos method1149 = list3.get(random2.nextInt(list3.size())).method1149(class1853);
                 if (Class4592.method13609(class1851, method1149)) {
-                    if (Class4592.method13609(class1851, method1149.method1149(Class179.field514))) {
-                        this.method1243(class1851, method1149, ((Class7097<O, Class7096>)Class7521.field29823.method11878()).method21773((Class7111<Comparable>)Class3961.field17901, Class179.field514), set, class1852);
+                    if (Class4592.method13609(class1851, method1149.method1149(Direction.SOUTH))) {
+                        this.method1243(class1851, method1149, ((Class7097<O, Class7096>)Class7521.field29823.method11878()).method21773((Class7111<Comparable>)Class3961.field17901, Direction.SOUTH), set, class1852);
                         final Class436 method1150 = class1851.method6727(method1149);
                         if (method1150 instanceof Class438) {
                             final Class438 class1854 = (Class438)method1150;

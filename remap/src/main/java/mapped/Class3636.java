@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class3636 extends Class3634
 {
     private static String[] field16873;
@@ -51,13 +53,13 @@ public class Class3636 extends Class3634
             this.method11168();
         }
         if (Class851.method5090(this.field16871).field22771 < this.field16871.method1941()) {
-            if (!this.field16871.field2391.method6961(new Class354(this.field16871).method1140(1))) {
+            if (!this.field16871.field2391.method6961(new BlockPos(this.field16871).method1140(1))) {
                 this.field16876 = Math.max(1.0f, this.field16876);
                 this.method11168();
             }
         }
         if (Class851.method5090(this.field16871).field22771 > this.field16871.method1941()) {
-            if (!this.field16871.field2391.method6961(new Class354(this.field16871).method1138(1))) {
+            if (!this.field16871.field2391.method6961(new BlockPos(this.field16871).method1138(1))) {
                 this.field16876 = Math.min(-1.0f, this.field16876);
                 this.method11168();
             }
@@ -65,10 +67,10 @@ public class Class3636 extends Class3634
     }
     
     private void method11168() {
-        if (Class354.field2173.equals(Class851.method5100(this.field16871))) {
-            Class851.method5101(this.field16871, new Class354(this.field16871));
+        if (BlockPos.ZERO.equals(Class851.method5100(this.field16871))) {
+            Class851.method5101(this.field16871, new BlockPos(this.field16871));
         }
         this.field16874 += this.field16877 * 15.0f * 0.017453292f;
-        Class851.method5102(this.field16871, new Class5487(Class851.method5100(this.field16871)).method16744(this.field16875 * Class9546.method35639(this.field16874), -4.0f + this.field16876, this.field16875 * Class9546.method35638(this.field16874)));
+        Class851.method5102(this.field16871, new Class5487(Class851.method5100(this.field16871)).method16744(this.field16875 * MathHelper.cos(this.field16874), -4.0f + this.field16876, this.field16875 * MathHelper.sin(this.field16874)));
     }
 }

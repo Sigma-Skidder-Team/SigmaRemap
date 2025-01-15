@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -20,8 +22,8 @@ public class Class6859 extends Class6851<Class511>
     
     @Override
     public void method20955(final Class1849 class1849, final Class511 class1850) {
-        final List<Class399> method6739 = class1849.method6739((Class<? extends Class399>)Class511.class, class1850.method1886().method18495(16.0, 16.0, 16.0), class1852 -> class1852 != class1851 && class1852.method1768());
-        method6739.sort(Comparator.comparingDouble((ToDoubleFunction<? super Class399>)class1850::method1734));
+        final List<Entity> method6739 = class1849.method6739((Class<? extends Entity>)Class511.class, class1850.method1886().method18495(16.0, 16.0, 16.0), class1852 -> class1852 != class1851 && class1852.method1768());
+        method6739.sort(Comparator.comparingDouble((ToDoubleFunction<? super Entity>)class1850::method1734));
         final Class365<?> method6740 = class1850.method2618();
         method6740.method1196(Class8233.field33804, (List<Class511>)method6739);
         method6740.method1196(Class8233.field33805, (List<Class511>)method6739.stream().filter(class1854 -> Class6859.field26889.method25344(class1853, class1854)).filter((Predicate<? super Object>)class1850::method2747).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()));

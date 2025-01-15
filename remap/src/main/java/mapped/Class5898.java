@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class5898 extends Class5845<Class852>
 {
     private final Class6300 field24223;
@@ -113,25 +115,25 @@ public class Class5898 extends Class5845<Class852>
     @Override
     public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         class7351.method22567();
-        final float method35700 = Class9546.method35700(this.field24244, this.field24243.field4543, this.field24243.field4544);
+        final float method35700 = MathHelper.method35700(this.field24244, this.field24243.field4543, this.field24243.field4544);
         this.field24225.field25183 = (float)(Math.sin(method35700 * 6.2831855f) + 1.0) * 0.2f;
         final float n7 = (float)(Math.sin(method35700 * 6.2831855f - 1.0f) + 1.0);
         final float n8 = (n7 * n7 + n7 * 2.0f) * 0.05f;
         class7351.method22564(0.0, n8 - 2.0f, -3.0);
-        class7351.method22566(Class9138.field38716.method33328(n8 * 2.0f));
+        class7351.method22566(Vector3f.XP.rotationDegrees(n8 * 2.0f));
         float n9 = 0.0f;
         float n10 = 20.0f;
         float n11 = -12.0f;
         final double[] method35701 = this.field24243.method5108(6, this.field24244);
-        final float method35702 = Class9546.method35708(this.field24243.method5108(5, this.field24244)[0] - this.field24243.method5108(10, this.field24244)[0]);
-        final float method35703 = Class9546.method35708(this.field24243.method5108(5, this.field24244)[0] + method35702 / 2.0f);
+        final float method35702 = MathHelper.method35708(this.field24243.method5108(5, this.field24244)[0] - this.field24243.method5108(10, this.field24244)[0]);
+        final float method35703 = MathHelper.method35708(this.field24243.method5108(5, this.field24244)[0] + method35702 / 2.0f);
         final float n12 = method35700 * 6.2831855f;
         for (int i = 0; i < 5; ++i) {
             final double[] method35704 = this.field24243.method5108(5 - i, this.field24244);
             final float n13 = (float)Math.cos(i * 0.45f + n12) * 0.15f;
-            this.field24224.field25184 = Class9546.method35708(method35704[0] - method35701[0]) * 0.017453292f * 1.5f;
+            this.field24224.field25184 = MathHelper.method35708(method35704[0] - method35701[0]) * 0.017453292f * 1.5f;
             this.field24224.field25183 = n13 + this.field24243.method5124(i, method35701, method35704) * 0.017453292f * 1.5f * 5.0f;
-            this.field24224.field25185 = -Class9546.method35708(method35704[0] - method35703) * 0.017453292f * 1.5f;
+            this.field24224.field25185 = -MathHelper.method35708(method35704[0] - method35703) * 0.017453292f * 1.5f;
             this.field24224.field25181 = n10;
             this.field24224.field25182 = n11;
             this.field24224.field25180 = n9;
@@ -144,13 +146,13 @@ public class Class5898 extends Class5845<Class852>
         this.field24223.field25182 = n11;
         this.field24223.field25180 = n9;
         final double[] method35705 = this.field24243.method5108(0, this.field24244);
-        this.field24223.field25184 = Class9546.method35708(method35705[0] - method35701[0]) * 0.017453292f;
-        this.field24223.field25183 = Class9546.method35708(this.field24243.method5124(6, method35701, method35705)) * 0.017453292f * 1.5f * 5.0f;
-        this.field24223.field25185 = -Class9546.method35708(method35705[0] - method35703) * 0.017453292f;
+        this.field24223.field25184 = MathHelper.method35708(method35705[0] - method35701[0]) * 0.017453292f;
+        this.field24223.field25183 = MathHelper.method35708(this.field24243.method5124(6, method35701, method35705)) * 0.017453292f * 1.5f * 5.0f;
+        this.field24223.field25185 = -MathHelper.method35708(method35705[0] - method35703) * 0.017453292f;
         this.field24223.method18643(class7351, class7352, n, n2);
         class7351.method22567();
         class7351.method22564(0.0, 1.0, 0.0);
-        class7351.method22566(Class9138.field38720.method33328(-method35702 * 1.5f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(-method35702 * 1.5f));
         class7351.method22564(0.0, -1.0, 0.0);
         this.field24226.field25185 = 0.0f;
         this.field24226.method18643(class7351, class7352, n, n2);
@@ -175,9 +177,9 @@ public class Class5898 extends Class5845<Class852>
         for (int j = 0; j < 12; ++j) {
             final double[] method35707 = this.field24243.method5108(12 + j, this.field24244);
             n15 += (float)(Math.sin(j * 0.45f + n16) * 0.05000000074505806);
-            this.field24224.field25184 = (Class9546.method35708(method35707[0] - method35706[0]) * 1.5f + 180.0f) * 0.017453292f;
+            this.field24224.field25184 = (MathHelper.method35708(method35707[0] - method35706[0]) * 1.5f + 180.0f) * 0.017453292f;
             this.field24224.field25183 = n15 + (float)(method35707[1] - method35706[1]) * 0.017453292f * 1.5f * 5.0f;
-            this.field24224.field25185 = Class9546.method35708(method35707[0] - method35703) * 0.017453292f * 1.5f;
+            this.field24224.field25185 = MathHelper.method35708(method35707[0] - method35703) * 0.017453292f * 1.5f;
             this.field24224.field25181 = field25181;
             this.field24224.field25182 = field25182;
             this.field24224.field25180 = field25183;

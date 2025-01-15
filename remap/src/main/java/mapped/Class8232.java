@@ -8,12 +8,11 @@ import java.util.Collections;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.function.Predicate;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
@@ -37,7 +36,7 @@ public class Class8232
         final ArrayList arrayList = Lists.newArrayList();
         final Class1849 method23250 = class7492.method23250();
         int j = 0;
-        for (final Class354 class7496 : Class354.method1158(class7493.field27293, class7493.field27294, class7493.field27295, class7493.field27296, class7493.field27297, class7493.field27298)) {
+        for (final BlockPos class7496 : BlockPos.method1158(class7493.field27293, class7493.field27294, class7493.field27295, class7493.field27296, class7493.field27297, class7493.field27298)) {
             if (predicate != null && !predicate.test(new Class7990(method23250, class7496, true))) {
                 continue;
             }
@@ -52,7 +51,7 @@ public class Class8232
             arrayList.add(class7496.method1153());
             ++j;
         }
-        for (final Class354 class7497 : arrayList) {
+        for (final BlockPos class7497 : arrayList) {
             method23250.method6694(class7497, method23250.method6701(class7497).method21696());
         }
         if (j != 0) {

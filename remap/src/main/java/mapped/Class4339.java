@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -26,31 +29,31 @@ public class Class4339 implements Class4252<Class5800>
     public Class4339() {
     }
     
-    public Class4339(final int field19424, final UUID field19425, final double field19426, final double field19427, final double field19428, final float n, final float n2, final Class7499<?> field19429, final int field19430, final Class5487 class5487) {
+    public Class4339(final int field19424, final UUID field19425, final double field19426, final double field19427, final double field19428, final float n, final float n2, final Class7499<?> field19429, final int field19430, final Vec3d class5487) {
         this.field19424 = field19424;
         this.field19425 = field19425;
         this.field19426 = field19426;
         this.field19427 = field19427;
         this.field19428 = field19428;
-        this.field19432 = Class9546.method35642(n * 256.0f / 360.0f);
-        this.field19433 = Class9546.method35642(n2 * 256.0f / 360.0f);
+        this.field19432 = MathHelper.method35642(n * 256.0f / 360.0f);
+        this.field19433 = MathHelper.method35642(n2 * 256.0f / 360.0f);
         this.field19434 = field19429;
         this.field19435 = field19430;
-        this.field19429 = (int)(Class9546.method35654(class5487.field22770, -3.9, 3.9) * 8000.0);
-        this.field19430 = (int)(Class9546.method35654(class5487.field22771, -3.9, 3.9) * 8000.0);
-        this.field19431 = (int)(Class9546.method35654(class5487.field22772, -3.9, 3.9) * 8000.0);
+        this.field19429 = (int)(MathHelper.method35654(class5487.field22770, -3.9, 3.9) * 8000.0);
+        this.field19430 = (int)(MathHelper.method35654(class5487.field22771, -3.9, 3.9) * 8000.0);
+        this.field19431 = (int)(MathHelper.method35654(class5487.field22772, -3.9, 3.9) * 8000.0);
     }
     
-    public Class4339(final Class399 class399) {
+    public Class4339(final Entity class399) {
         this(class399, 0);
     }
     
-    public Class4339(final Class399 class399, final int n) {
+    public Class4339(final Entity class399, final int n) {
         this(class399.method1643(), class399.method1865(), class399.method1938(), class399.method1941(), class399.method1945(), class399.field2400, class399.field2399, class399.method1642(), n, class399.method1935());
     }
     
-    public Class4339(final Class399 class399, final Class7499<?> class400, final int n, final Class354 class401) {
-        this(class399.method1643(), class399.method1865(), class401.method1074(), class401.method1075(), class401.method1076(), class399.field2400, class399.field2399, class400, n, class399.method1935());
+    public Class4339(final Entity class399, final Class7499<?> class400, final int n, final BlockPos class401) {
+        this(class399.method1643(), class399.method1865(), class401.getX(), class401.getY(), class401.getZ(), class399.field2400, class399.field2399, class400, n, class399.method1935());
     }
     
     @Override

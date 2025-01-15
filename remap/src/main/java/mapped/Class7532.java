@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.AbstractCollection;
 import java.util.AbstractList;
+
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.shorts.ShortListIterator;
 import it.unimi.dsi.fastutil.shorts.ShortList;
@@ -14,11 +16,9 @@ import java.util.HashMap;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import java.util.Map;
-import java.util.Collection;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.BitSet;
-import java.util.Set;
 import java.util.EnumSet;
 import java.util.Objects;
 import org.apache.logging.log4j.Logger;
@@ -86,7 +86,7 @@ public class Class7532
             }
             if (!method7441) {
                 if (class1858.method7027().method34451(Class9312.field39986)) {
-                    for (final Class354 class1860 : Class354.method1158(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
+                    for (final BlockPos class1860 : BlockPos.method1158(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
                         if (class1859.method6701(class1860).method21704() == 0) {
                             continue;
                         }
@@ -221,7 +221,7 @@ public class Class7532
             class1852.method308("Biomes", method7026.method7125());
         }
         final Class52 class1855 = new Class52();
-        final Iterator<Class354> iterator = class1850.method7013().iterator();
+        final Iterator<BlockPos> iterator = class1850.method7013().iterator();
         while (iterator.hasNext()) {
             final Class51 method7027 = class1850.method7034(iterator.next());
             if (method7027 == null) {
@@ -245,7 +245,7 @@ public class Class7532
             final Class1862 class1860 = (Class1862)class1850;
             class1860.method7068(false);
             for (int k = 0; k < class1860.method7067().length; ++k) {
-                for (final Class399 class1861 : class1860.method7067()[k]) {
+                for (final Entity class1861 : class1860.method7067()[k]) {
                     final Class51 e2 = new Class51();
                     if (!class1861.method1755(e2)) {
                         continue;

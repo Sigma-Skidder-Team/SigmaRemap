@@ -4,9 +4,6 @@
 
 package mapped;
 
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
-import com.mojang.brigadier.Message;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
@@ -17,12 +14,12 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
+import net.minecraft.entity.Entity;
 
 public class Class7798
 {
@@ -38,7 +35,7 @@ public class Class7798
         return (T)t.then(((LiteralArgumentBuilder)Class7788.method25001("replace").then(Class7788.method25001("entity").then(Class7788.method25002("entities", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25165(Class6886.method21146((CommandContext<Class7492>)commandContext, "entities"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), list.size(), list, class7945)).then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25165(Class6886.method21146((CommandContext<Class7492>)commandContext, "entities"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("block").then(Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).then(class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25161((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), list.size(), list, class7945)).then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25161((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), IntegerArgumentType.getInteger(commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("insert").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()), (commandContext, list, class7945) -> method25159((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), list, class7945)))).then(Class7788.method25001("give").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("players", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()), (commandContext, list, class7945) -> method25163(Class6886.method21152((CommandContext<Class7492>)commandContext, "players"), list, class7945)))).then(Class7788.method25001("spawn").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()), (commandContext, list, class7945) -> method25166((Class7492)commandContext.getSource(), Class7555.method23721((CommandContext<Class7492>)commandContext, "targetPos"), list, class7945))));
     }
     
-    private static Class446 method25158(final Class7492 class7492, final Class354 class7493) throws CommandSyntaxException {
+    private static Class446 method25158(final Class7492 class7492, final BlockPos class7493) throws CommandSyntaxException {
         final Class436 method6727 = class7492.method23250().method6727(class7493);
         if (method6727 instanceof Class446) {
             return (Class446)method6727;
@@ -46,7 +43,7 @@ public class Class7798
         throw Class9302.field39908.create();
     }
     
-    private static int method25159(final Class7492 class7492, final Class354 class7493, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
+    private static int method25159(final Class7492 class7492, final BlockPos class7493, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
         final Class446 method25158 = method25158(class7492, class7493);
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
         for (final Class8321 class7495 : list) {
@@ -84,7 +81,7 @@ public class Class7798
         return b;
     }
     
-    private static int method25161(final Class7492 class7492, final Class354 class7493, final int i, final int n, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
+    private static int method25161(final Class7492 class7492, final BlockPos class7493, final int i, final int n, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
         final Class446 method25158 = method25158(class7492, class7493);
         final int method25159 = method25158.method2239();
         if (i >= 0 && i < method25159) {
@@ -131,7 +128,7 @@ public class Class7798
         return arrayListWithCapacity.size();
     }
     
-    private static void method25164(final Class399 class399, final List<Class8321> list, final int n, final int n2, final List<Class8321> list2) {
+    private static void method25164(final Entity class399, final List<Class8321> list, final int n, final int n2, final List<Class8321> list2) {
         for (int i = 0; i < n2; ++i) {
             final Class8321 class400 = (i >= list.size()) ? Class8321.field34174 : list.get(i);
             if (class399.method1893(n + i, class400.method27641())) {
@@ -140,9 +137,9 @@ public class Class7798
         }
     }
     
-    private static int method25165(final Collection<? extends Class399> collection, final int n, final int n2, final List<Class8321> list, final Class7945 class7945) throws CommandSyntaxException {
+    private static int method25165(final Collection<? extends Entity> collection, final int n, final int n2, final List<Class8321> list, final Class7945 class7945) throws CommandSyntaxException {
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
-        for (final Class399 class7946 : collection) {
+        for (final Entity class7946 : collection) {
             if (!(class7946 instanceof Class513)) {
                 method25164(class7946, list, n, n2, arrayListWithCapacity);
             }
@@ -157,7 +154,7 @@ public class Class7798
         return arrayListWithCapacity.size();
     }
     
-    private static int method25166(final Class7492 class7492, final Class5487 class7493, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
+    private static int method25166(final Class7492 class7492, final Vec3d class7493, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
         list.forEach(class7498 -> {
             class7495.method23250();
             final Class427 class7499 = new Class427(class7496, class7497.field22770, class7497.field22771, class7497.field22772, class7498.method27641());
@@ -190,26 +187,26 @@ public class Class7798
     }
     
     private static Class8321 method25169(final Class7492 class7492, final Class2215 class7493) throws CommandSyntaxException {
-        final Class399 method23252 = class7492.method23252();
+        final Entity method23252 = class7492.method23252();
         if (!(method23252 instanceof Class511)) {
             throw Class7798.field31960.create((Object)method23252.method1871());
         }
         return ((Class511)method23252).method2718(class7493);
     }
     
-    private static int method25170(final CommandContext<Class7492> commandContext, final Class354 class354, final Class8321 class355, final Class8917 class356) throws CommandSyntaxException {
+    private static int method25170(final CommandContext<Class7492> commandContext, final BlockPos class354, final Class8321 class355, final Class8917 class356) throws CommandSyntaxException {
         final Class7492 class357 = (Class7492)commandContext.getSource();
         final Class1849 method23250 = class357.method23250();
         final Class7096 method23251 = method23250.method6701(class354);
         return class356.method31443(commandContext, method23251.method21743(new Class9098(method23250).method32877(Class6683.field26367, class354).method32877(Class6683.field26368, method23251).method32878(Class6683.field26369, method23250.method6727(class354)).method32878(Class6683.field26362, class357.method23251()).method32877(Class6683.field26370, class355)), list -> method25168(class357, list, method23251.method21696().method11832()));
     }
     
-    private static int method25171(final CommandContext<Class7492> commandContext, final Class399 class399, final Class8917 class400) throws CommandSyntaxException {
+    private static int method25171(final CommandContext<Class7492> commandContext, final Entity class399, final Class8917 class400) throws CommandSyntaxException {
         if (class399 instanceof Class511) {
             final Class1932 method2679 = ((Class511)class399).method2679();
             final Class7492 class401 = (Class7492)commandContext.getSource();
             final Class9098 class402 = new Class9098(class401.method23250());
-            final Class399 method2680 = class401.method23251();
+            final Entity method2680 = class401.method23251();
             if (method2680 instanceof Class512) {
                 class402.method32877(Class6683.field26363, (Class512)method2680);
             }
@@ -217,7 +214,7 @@ public class Class7798
             class402.method32878(Class6683.field26366, method2680);
             class402.method32878(Class6683.field26365, method2680);
             class402.method32877(Class6683.field26362, class399);
-            class402.method32877(Class6683.field26367, new Class354(class401.method23249()));
+            class402.method32877(Class6683.field26367, new BlockPos(class401.method23249()));
             return class400.method31443(commandContext, class401.method23255().method1581().method6402(method2679).method34485(class402.method32883(Class7104.field27715)), list -> method25168(class401, list, method2679));
         }
         throw Class7798.field31961.create((Object)class399.method1871());
@@ -225,10 +222,10 @@ public class Class7798
     
     private static int method25172(final CommandContext<Class7492> commandContext, final Class1932 class1932, final Class8917 class1933) throws CommandSyntaxException {
         final Class7492 class1934 = (Class7492)commandContext.getSource();
-        return method25174(commandContext, class1932, new Class9098(class1934.method23250()).method32878(Class6683.field26362, class1934.method23251()).method32877(Class6683.field26367, new Class354(class1934.method23249())).method32883(Class7104.field27711), class1933);
+        return method25174(commandContext, class1932, new Class9098(class1934.method23250()).method32878(Class6683.field26362, class1934.method23251()).method32877(Class6683.field26367, new BlockPos(class1934.method23249())).method32883(Class7104.field27711), class1933);
     }
     
-    private static int method25173(final CommandContext<Class7492> commandContext, final Class1932 class1932, final Class354 class1933, final Class8321 class1934, final Class8917 class1935) throws CommandSyntaxException {
+    private static int method25173(final CommandContext<Class7492> commandContext, final Class1932 class1932, final BlockPos class1933, final Class8321 class1934, final Class8917 class1935) throws CommandSyntaxException {
         return method25174(commandContext, class1932, new Class9098(((Class7492)commandContext.getSource()).method23250()).method32877(Class6683.field26367, class1933).method32877(Class6683.field26370, class1934).method32883(Class7104.field27714), class1935);
     }
     

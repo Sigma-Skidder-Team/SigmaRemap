@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public final class Class8488
@@ -34,21 +36,21 @@ public final class Class8488
         final double n5 = n + this.field34833;
         final double n6 = n2 + this.field34834;
         final double n7 = n3 + this.field34835;
-        final int method35644 = Class9546.method35644(n5);
-        final int method35645 = Class9546.method35644(n6);
-        final int method35646 = Class9546.method35644(n7);
+        final int method35644 = MathHelper.floor(n5);
+        final int method35645 = MathHelper.floor(n6);
+        final int method35646 = MathHelper.floor(n7);
         final double n8 = n5 - method35644;
         final double b = n6 - method35645;
         final double n9 = n7 - method35646;
-        final double method35647 = Class9546.method35704(n8);
-        final double method35648 = Class9546.method35704(b);
-        final double method35649 = Class9546.method35704(n9);
+        final double method35647 = MathHelper.method35704(n8);
+        final double method35648 = MathHelper.method35704(b);
+        final double method35649 = MathHelper.method35704(n9);
         double n10;
         if (n4 == 0.0) {
             n10 = 0.0;
         }
         else {
-            n10 = Class9546.method35644(Math.min(a, b) / n4) * n4;
+            n10 = MathHelper.floor(Math.min(a, b) / n4) * n4;
         }
         return this.method28346(method35644, method35645, method35646, n8, b - n10, n9, method35647, method35648, method35649);
     }
@@ -68,6 +70,6 @@ public final class Class8488
         final int n13 = this.method28345(n + 1) + n2;
         final int n14 = this.method28345(n13) + n3;
         final int n15 = this.method28345(n13 + 1) + n3;
-        return Class9546.method35703(n7, n8, n9, method28344(this.method28345(n11), n4, n5, n6), method28344(this.method28345(n14), n4 - 1.0, n5, n6), method28344(this.method28345(n12), n4, n5 - 1.0, n6), method28344(this.method28345(n15), n4 - 1.0, n5 - 1.0, n6), method28344(this.method28345(n11 + 1), n4, n5, n6 - 1.0), method28344(this.method28345(n14 + 1), n4 - 1.0, n5, n6 - 1.0), method28344(this.method28345(n12 + 1), n4, n5 - 1.0, n6 - 1.0), method28344(this.method28345(n15 + 1), n4 - 1.0, n5 - 1.0, n6 - 1.0));
+        return MathHelper.method35703(n7, n8, n9, method28344(this.method28345(n11), n4, n5, n6), method28344(this.method28345(n14), n4 - 1.0, n5, n6), method28344(this.method28345(n12), n4, n5 - 1.0, n6), method28344(this.method28345(n15), n4 - 1.0, n5 - 1.0, n6), method28344(this.method28345(n11 + 1), n4, n5, n6 - 1.0), method28344(this.method28345(n14 + 1), n4 - 1.0, n5, n6 - 1.0), method28344(this.method28345(n12 + 1), n4, n5 - 1.0, n6 - 1.0), method28344(this.method28345(n15 + 1), n4 - 1.0, n5 - 1.0, n6 - 1.0));
     }
 }

@@ -19,8 +19,8 @@ public abstract class Class4475 extends Class4473
         this.field19857 = field19857;
         this.field19858 = field19858;
         this.field19859 = field19859;
-        this.method13456(Class98.field268.method576(random));
-        if (this.method13455().method790() != Class111.field353) {
+        this.method13456(Plane.HORIZONTAL.method576(random));
+        if (this.method13455().getAxis() != Axis.Z) {
             this.field19849 = new Class6997(n, n2, n3, n + field19859 - 1, n2 + field19858 - 1, n3 + field19857 - 1);
         }
         else {
@@ -56,7 +56,7 @@ public abstract class Class4475 extends Class4473
             for (int j = this.field19849.field27293; j <= this.field19849.field27296; ++j) {
                 class1853.method1284(j, 64, i);
                 if (class1852.method21415(class1853)) {
-                    n2 += class1851.method6958(Class2020.field11526, class1853).method1075();
+                    n2 += class1851.method6958(Class2020.field11526, class1853).getY();
                     ++n3;
                 }
             }

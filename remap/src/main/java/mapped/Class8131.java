@@ -4,26 +4,28 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class8131
 {
     private static String[] field33499;
-    private Class399 field33500;
+    private Entity field33500;
     private Class7988 field33501;
     private Class6938 field33502;
     
-    public Class8131(final Class399 field33500, final Class7988 field33501) {
+    public Class8131(final Entity field33500, final Class7988 field33501) {
         this.field33500 = field33500;
         this.field33501 = field33501;
         this.field33502 = null;
     }
     
-    public Class8131(final Class399 field33500, final Class7988 field33501, final Class6938 field33502) {
+    public Class8131(final Entity field33500, final Class7988 field33501, final Class6938 field33502) {
         this.field33500 = field33500;
         this.field33501 = field33501;
         this.field33502 = field33502;
     }
     
-    public Class399 method26798() {
+    public Entity method26798() {
         return this.field33500;
     }
     

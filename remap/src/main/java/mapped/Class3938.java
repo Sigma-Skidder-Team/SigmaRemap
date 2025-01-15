@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.function.Predicate;
+import net.minecraft.entity.Entity;
+
 import java.util.Iterator;
 
 public class Class3938 extends Class3936
@@ -17,7 +18,7 @@ public class Class3938 extends Class3936
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final Class354 class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class493) {
@@ -25,11 +26,11 @@ public class Class3938 extends Class3936
         }
     }
     
-    public static void method12051(final Class1847 class1847, final Class354 class1848, final Class493 class1849) {
+    public static void method12051(final Class1847 class1847, final BlockPos class1848, final Class493 class1849) {
         if (!class1847.field10067) {
             final Class3833 method21696 = class1849.method2194().method21696();
             if (method21696 == Class7521.field29455 || method21696 == Class7521.field29456) {
-                if (class1848.method1075() >= 2) {
+                if (class1848.getY() >= 2) {
                     if (class1847.method6954() != Class2113.field12290) {
                         final Class8691 method21697 = method12053();
                         final Class7820 method21698 = method21697.method29796(class1847, class1848);
@@ -42,11 +43,11 @@ public class Class3938 extends Class3936
                                 }
                             }
                             final Class767 class1850 = Class7499.field29048.method23371(class1847);
-                            final Class354 method21700 = method21698.method25270(1, 2, 0).method26068();
-                            class1850.method1730(method21700.method1074() + 0.5, method21700.method1075() + 0.55, method21700.method1076() + 0.5, (method21698.method25266().method790() != Class111.field351) ? 90.0f : 0.0f, 0.0f);
-                            class1850.field2951 = ((method21698.method25266().method790() != Class111.field351) ? 90.0f : 0.0f);
+                            final BlockPos method21700 = method21698.method25270(1, 2, 0).method26068();
+                            class1850.method1730(method21700.getX() + 0.5, method21700.getY() + 0.55, method21700.getZ() + 0.5, (method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f, 0.0f);
+                            class1850.field2951 = ((method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f);
                             class1850.method4245();
-                            final Iterator<Class399> iterator = (Iterator<Class399>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.method1886().method18496(50.0)).iterator();
+                            final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.method1886().method18496(50.0)).iterator();
                             while (iterator.hasNext()) {
                                 Class7770.field31788.method13788(iterator.next(), class1850);
                             }
@@ -63,9 +64,9 @@ public class Class3938 extends Class3936
         }
     }
     
-    public static boolean method12052(final Class1847 class1847, final Class354 class1848, final Class8321 class1849) {
+    public static boolean method12052(final Class1847 class1847, final BlockPos class1848, final Class8321 class1849) {
         if (class1849.method27622() == Class7739.field31524) {
-            if (class1848.method1075() >= 2) {
+            if (class1848.getY() >= 2) {
                 if (class1847.method6954() != Class2113.field12290) {
                     if (!class1847.field10067) {
                         return method12054().method29796(class1847, class1848) != null;

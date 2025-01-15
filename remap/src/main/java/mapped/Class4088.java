@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class4088 extends Class3820
 {
     private static String[] field18193;
@@ -15,8 +17,8 @@ public class Class4088 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
-        final Class354 method21655 = class7075.method21639();
-        final Class354 method21656 = method21655.method1149(class7075.method21648());
+        final BlockPos method21655 = class7075.method21639();
+        final BlockPos method21656 = method21655.method1149(class7075.method21648());
         if (method12322(class7075.method21651(), method21654, method21655)) {
             if (!method21654.field10067) {
                 method21654.method6955(2005, method21655, 0);
@@ -32,7 +34,7 @@ public class Class4088 extends Class3820
         return Class2201.field13402;
     }
     
-    public static boolean method12322(final Class8321 class8321, final Class1847 class8322, final Class354 class8323) {
+    public static boolean method12322(final Class8321 class8321, final Class1847 class8322, final BlockPos class8323) {
         final Class7096 method6701 = class8322.method6701(class8323);
         if (method6701.method21696() instanceof Class3872) {
             final Class3872 class8324 = (Class3872)method6701.method21696();
@@ -49,7 +51,7 @@ public class Class4088 extends Class3820
         return false;
     }
     
-    public static boolean method12323(final Class8321 class8321, final Class1847 class8322, final Class354 class8323, final Class179 class8324) {
+    public static boolean method12323(final Class8321 class8321, final Class1847 class8322, final BlockPos class8323, final Direction class8324) {
         if (class8322.method6701(class8323).method21696() != Class7521.field29173 || class8322.method6702(class8323).method21784() != 8) {
             return false;
         }
@@ -57,7 +59,7 @@ public class Class4088 extends Class3820
             int i = 0;
         Label_0053:
             while (i < 128) {
-                Class354 method1134 = class8323;
+                BlockPos method1134 = class8323;
                 Class3090 class8325 = class8322.method6959(class8323);
                 Class7096 class8326 = Class7521.field29244.method11878();
                 while (true) {
@@ -73,7 +75,7 @@ public class Class4088 extends Class3820
                         if (class8325 == Class7102.field27676 || class8325 == Class7102.field27679) {
                             if (i == 0) {
                                 if (class8324 != null) {
-                                    if (class8324.method790().method601()) {
+                                    if (class8324.getAxis().isHorizontal()) {
                                         class8326 = ((Class7097<O, Class7096>)Class7188.field27922.method25620(class8322.field10062).method11878()).method21773((Class7111<Comparable>)Class3926.field17791, class8324);
                                         break Label_0123;
                                     }
@@ -85,7 +87,7 @@ public class Class4088 extends Class3820
                         }
                     }
                     if (class8326.method21696().method11785(Class7188.field27922)) {
-                        for (int n = 0; !class8326.method21752(class8322, method1134); class8326 = ((Class7097<Object, Class7096>)class8326).method21773((Class7111<Comparable>)Class3926.field17791, Class98.field268.method576(Class4088.field17363)), ++n) {
+                        for (int n = 0; !class8326.method21752(class8322, method1134); class8326 = ((Class7097<Object, Class7096>)class8326).method21773((Class7111<Comparable>)Class3926.field17791, Plane.HORIZONTAL.method576(Class4088.field17363)), ++n) {
                             if (n >= 4) {
                                 break;
                             }
@@ -115,14 +117,14 @@ public class Class4088 extends Class3820
         return true;
     }
     
-    public static void method12324(final Class1851 class1851, final Class354 class1852, int n) {
+    public static void method12324(final Class1851 class1851, final BlockPos class1852, int n) {
         if (n == 0) {
             n = 15;
         }
         final Class7096 method6701 = class1851.method6701(class1852);
         if (!method6701.method21706()) {
             for (int i = 0; i < n; ++i) {
-                class1851.method6709(Class8432.field34625, class1852.method1074() + Class4088.field17363.nextFloat(), class1852.method1075() + Class4088.field17363.nextFloat() * method6701.method21725(class1851, class1852).method24536(Class111.field352), class1852.method1076() + Class4088.field17363.nextFloat(), Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02);
+                class1851.method6709(Class8432.field34625, class1852.getX() + Class4088.field17363.nextFloat(), class1852.getY() + Class4088.field17363.nextFloat() * method6701.method21725(class1851, class1852).method24536(Axis.Y), class1852.getZ() + Class4088.field17363.nextFloat(), Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02);
             }
         }
     }

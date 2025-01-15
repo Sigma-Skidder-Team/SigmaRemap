@@ -9,11 +9,11 @@ import javax.annotation.Nullable;
 
 public class Class8843
 {
-    private final Class354 field37167;
+    private final BlockPos field37167;
     private final Class181 field37168;
     private final Class2250 field37169;
     
-    public Class8843(final Class354 field37167, final Class181 field37168, final Class2250 field37169) {
+    public Class8843(final BlockPos field37167, final Class181 field37168, final Class2250 field37169) {
         this.field37167 = field37167;
         this.field37168 = field37168;
         this.field37169 = field37169;
@@ -24,7 +24,7 @@ public class Class8843
     }
     
     @Nullable
-    public static Class8843 method30896(final Class1855 class1855, final Class354 class1856) {
+    public static Class8843 method30896(final Class1855 class1855, final BlockPos class1856) {
         final Class436 method6727 = class1855.method6727(class1856);
         if (!(method6727 instanceof Class465)) {
             return null;
@@ -33,7 +33,7 @@ public class Class8843
         return new Class8843(class1856, class1857.method2390(() -> class1858.method6701(class1859)), class1857.method1874() ? class1857.method1873() : null);
     }
     
-    public Class354 method30897() {
+    public BlockPos method30897() {
         return this.field37167;
     }
     
@@ -130,6 +130,6 @@ public class Class8843
     }
     
     public String method30901() {
-        return "banner-" + this.field37167.method1074() + "," + this.field37167.method1075() + "," + this.field37167.method1076();
+        return "banner-" + this.field37167.getX() + "," + this.field37167.getY() + "," + this.field37167.getZ();
     }
 }

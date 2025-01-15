@@ -14,7 +14,7 @@ public class Class5939 extends Class5938
     
     @Override
     public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Class3090 class6348) {
-        Class7389.method22692(class6346, class6347, new Class354(n * 16, 90, n2 * 16), this.field24431, this.field24436);
+        Class7389.method22692(class6346, class6347, new BlockPos(n * 16, 90, n2 * 16), this.field24431, this.field24436);
         this.method17854();
     }
 }

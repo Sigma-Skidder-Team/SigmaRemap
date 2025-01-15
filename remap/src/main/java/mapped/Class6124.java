@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.List;
-import java.util.Iterator;
+
 import com.google.common.collect.Maps;
 import java.util.Map;
 
@@ -28,7 +28,7 @@ public class Class6124 implements Class6113
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
         final Class6092 method5833 = this.field24861.field4644.method5833();
         final Class383 method5834 = this.field24861.field4683.method6789().method20487();
-        final Class354 class7353 = new Class354(method5833.method18161().field22770, 0.0, method5833.method18161().field22772);
+        final BlockPos class7353 = new BlockPos(method5833.method18161().field22770, 0.0, method5833.method18161().field22772);
         final Class4150 method5835 = class7352.method25214(Class6332.method18791());
         if (this.field24862.containsKey(method5834)) {
             for (final Class6997 class7354 : this.field24862.get(method5834).values()) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class7963 implements Class7954
@@ -28,7 +30,7 @@ public class Class7963 implements Class7954
     }
     
     @Override
-    public Class9017 method25804(final Class399 class399, final Random random) {
+    public Class9017 method25804(final Entity class399, final Random random) {
         final int n = 5 + random.nextInt(15);
         return new Class9017(new Class8321(Class7739.field31514, Math.min(this.field32725 + n, 64)), Class8742.method30224(random, new Class8321(this.field32724.method27622()), n, false), this.field32726, this.field32727, this.field32728);
     }

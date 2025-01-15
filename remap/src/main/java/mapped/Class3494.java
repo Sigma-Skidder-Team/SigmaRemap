@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class3494 extends Class3446
@@ -24,9 +26,9 @@ public class Class3494 extends Class3446
     public void method11016() {
         final Random method2633 = this.field16440.method2633();
         final Class1847 field2391 = this.field16440.field2391;
-        final Class354 class354 = new Class354(Class9546.method35644(this.field16440.method1938() - 1.0 + method2633.nextDouble() * 2.0), Class9546.method35644(this.field16440.method1941() + method2633.nextDouble() * 2.0), Class9546.method35644(this.field16440.method1945() - 1.0 + method2633.nextDouble() * 2.0));
+        final BlockPos class354 = new BlockPos(MathHelper.floor(this.field16440.method1938() - 1.0 + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.method1941() + method2633.nextDouble() * 2.0), MathHelper.floor(this.field16440.method1945() - 1.0 + method2633.nextDouble() * 2.0));
         final Class7096 method2634 = field2391.method6701(class354);
-        final Class354 method2635 = class354.method1139();
+        final BlockPos method2635 = class354.method1139();
         final Class7096 method2636 = field2391.method6701(method2635);
         final Class7096 method2637 = this.field16440.method5080();
         if (method2637 != null) {
@@ -37,7 +39,7 @@ public class Class3494 extends Class3446
         }
     }
     
-    private boolean method11057(final Class1852 class1852, final Class354 class1853, final Class7096 class1854, final Class7096 class1855, final Class7096 class1856, final Class354 class1857) {
+    private boolean method11057(final Class1852 class1852, final BlockPos class1853, final Class7096 class1854, final Class7096 class1855, final Class7096 class1856, final BlockPos class1857) {
         if (class1855.method21706()) {
             if (!class1856.method21706()) {
                 if (class1856.method21762(class1852, class1857)) {

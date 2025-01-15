@@ -15,7 +15,7 @@ public class Class8088
     private List<Class8733> field33314;
     public float field33315;
     public float field33316;
-    private Class354 field33317;
+    private BlockPos field33317;
     private boolean field33318;
     public Class2049 field33319;
     
@@ -110,12 +110,12 @@ public class Class8088
         }
         this.field33313.field4684.method1816(true);
         final double method16745 = class5743.field36684.method30686().method16745(this.field33313.field4684.method1934());
-        final Class5487 method16746 = class5743.field36684.method30686().method16741(this.field33313.field4684.method1934());
+        final Vec3d method16746 = class5743.field36684.method30686().method16741(this.field33313.field4684.method1934());
         final double n5 = Math.abs(method16746.field22770) + Math.abs(method16746.field22772);
         final float field33315 = Class8845.method30920(this.field33313.field4684.method1934(), class5743.field36684.method30686())[0];
         final double n6 = Math.min(method16745 * 0.75, Class7482.method23137()) * 0.8999999761581421;
         this.field33315 = field33315;
-        if (class5743.field36684.method30692().method1134(0, -class5743.field36684.method30692().method1075(), 0).equals(this.field33313.field4684.method1894().method1134(0, -this.field33313.field4684.method1894().method1075(), 0)) && this.field33313.field4684.field2414 > 0.0f) {}
+        if (class5743.field36684.method30692().method1134(0, -class5743.field36684.method30692().getY(), 0).equals(this.field33313.field4684.method1894().method1134(0, -this.field33313.field4684.method1894().getY(), 0)) && this.field33313.field4684.field2414 > 0.0f) {}
         final double cos = Math.cos(Math.toRadians(this.field33313.field4684.field2399 - field33315));
         final double sin = Math.sin(Math.toRadians(this.field33313.field4684.field2399 - field33315));
         final double min = Math.min(1.0 / Math.abs(cos), 1.0 / Math.abs(sin));
@@ -182,9 +182,9 @@ public class Class8088
         }
     }
     
-    public boolean method26563(final Class354 class354) {
-        final float n = class354.method1074() + 0.5f;
-        final float n2 = class354.method1076() + 0.5f;
+    public boolean method26563(final BlockPos class354) {
+        final float n = class354.getX() + 0.5f;
+        final float n2 = class354.getZ() + 0.5f;
         double field22770 = this.field33313.field4684.method1935().field22770;
         double field22771 = this.field33313.field4684.method1935().field22772;
         double field22772 = this.field33313.field4684.field2395;
@@ -217,8 +217,8 @@ public class Class8088
             }
             final Iterator<Long> iterator = class5745.field36693.iterator();
             while (iterator.hasNext()) {
-                final Class354 method1129 = Class354.method1129(iterator.next());
-                if (this.field33313.field4684.method1934().method16747(method1129.method1074(), method1129.method1075(), method1129.method1076()) >= 9.0) {
+                final BlockPos method1129 = BlockPos.method1129(iterator.next());
+                if (this.field33313.field4684.method1934().method16747(method1129.getX(), method1129.getY(), method1129.getZ()) >= 9.0) {
                     continue;
                 }
                 if (Class8797.method30696(method1129)) {
@@ -234,8 +234,8 @@ public class Class8088
                 this.field33317 = null;
             }
             else if (this.field33317 != null) {
-                if (this.field33313.field4683.method6701(this.field33317).method21706() || Math.sqrt(this.field33313.field4684.method1733(this.field33317.method1074() + 0.5, this.field33317.method1075() + 0.5, this.field33317.method1076() + 0.5)) > 6.0) {
-                    this.field33317 = (Class354)list.get(0);
+                if (this.field33313.field4683.method6701(this.field33317).method21706() || Math.sqrt(this.field33313.field4684.method1733(this.field33317.getX() + 0.5, this.field33317.getY() + 0.5, this.field33317.getZ() + 0.5)) > 6.0) {
+                    this.field33317 = (BlockPos)list.get(0);
                 }
                 final float[] method1130 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 class5744.method17043(method1130[0]);
@@ -244,7 +244,7 @@ public class Class8088
                 this.field33313.field4682.method27314(this.field33317, Class4609.method13710(this.field33317));
             }
             else {
-                this.field33317 = (Class354)list.get(0);
+                this.field33317 = (BlockPos)list.get(0);
                 final float[] method1131 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 class5744.method17043(method1131[0]);
                 class5744.method17041(method1131[1]);
@@ -292,21 +292,21 @@ public class Class8088
                     GL11.glDisable(2929);
                     final Iterator<Long> iterator2 = this.field33314.get(0).field36694.iterator();
                     while (iterator2.hasNext()) {
-                        final Class354 method19120 = Class354.method1129(iterator2.next());
+                        final BlockPos method19120 = BlockPos.method1129(iterator2.next());
                         if (!this.field33313.field4683.method6701(method19120).method21706()) {
-                            final double n = method19120.method1074() - this.field33313.field4644.method5833().method18161().method16760();
-                            final double n2 = method19120.method1075() - this.field33313.field4644.method5833().method18161().method16761();
-                            final double n3 = method19120.method1076() - this.field33313.field4644.method5833().method18161().method16762();
+                            final double n = method19120.getX() - this.field33313.field4644.method5833().method18161().method16760();
+                            final double n2 = method19120.getY() - this.field33313.field4644.method5833().method18161().method16761();
+                            final double n3 = method19120.getZ() - this.field33313.field4644.method5833().method18161().method16762();
                             Class8154.method26909(new Class7644(n, n2, n3, n + 1.0, n2 + 1.0, n3 + 1.0), method19118);
                         }
                     }
                     final Iterator<Long> iterator3 = this.field33314.get(0).field36695.iterator();
                     while (iterator3.hasNext()) {
-                        final Class354 method19121 = Class354.method1129(iterator3.next());
+                        final BlockPos method19121 = BlockPos.method1129(iterator3.next());
                         if (this.field33313.field4683.method6701(method19121).method21706()) {
-                            final double n4 = method19121.method1074() - this.field33313.field4644.method5833().method18161().method16760();
-                            final double n5 = method19121.method1075() - this.field33313.field4644.method5833().method18161().method16761();
-                            final double n6 = method19121.method1076() - this.field33313.field4644.method5833().method18161().method16762();
+                            final double n4 = method19121.getX() - this.field33313.field4644.method5833().method18161().method16760();
+                            final double n5 = method19121.getY() - this.field33313.field4644.method5833().method18161().method16761();
+                            final double n6 = method19121.getZ() - this.field33313.field4644.method5833().method18161().method16762();
                             Class8154.method26909(new Class7644(n4, n5, n6, n4 + 1.0, n5 + 1.0, n6 + 1.0), method19119);
                         }
                     }

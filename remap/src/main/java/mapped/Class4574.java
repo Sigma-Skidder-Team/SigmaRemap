@@ -30,10 +30,10 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
     }
     
     @Override
-    public boolean method13525(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final Class354 class1853, final C c) {
+    public boolean method13525(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final C c) {
         if (class1851.method6764().method29565()) {
-            final int n = class1853.method1074() >> 4;
-            final int n2 = class1853.method1076() >> 4;
+            final int n = class1853.getX() >> 4;
+            final int n2 = class1853.getZ() >> 4;
             final int n3 = n << 4;
             final int n4 = n2 << 4;
             boolean b = false;
@@ -55,8 +55,8 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
         return false;
     }
     
-    public Class5936 method13588(final Class1851 class1851, final Class354 class1852, final boolean b) {
-        for (final Class5936 class1853 : this.method13592(class1851, class1852.method1074() >> 4, class1852.method1076() >> 4)) {
+    public Class5936 method13588(final Class1851 class1851, final BlockPos class1852, final boolean b) {
+        for (final Class5936 class1853 : this.method13592(class1851, class1852.getX() >> 4, class1852.getZ() >> 4)) {
             if (class1853.method17858() && class1853.method17851().method21415(class1852)) {
                 if (!b) {
                     return class1853;
@@ -73,19 +73,19 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
         return Class5936.field24429;
     }
     
-    public boolean method13589(final Class1851 class1851, final Class354 class1852) {
+    public boolean method13589(final Class1851 class1851, final BlockPos class1852) {
         return this.method13588(class1851, class1852, false).method17858();
     }
     
-    public boolean method13590(final Class1851 class1851, final Class354 class1852) {
+    public boolean method13590(final Class1851 class1851, final BlockPos class1852) {
         return this.method13588(class1851, class1852, true).method17858();
     }
     
     @Nullable
-    public Class354 method13591(final Class1847 class1847, final Class6346<? extends Class7065> class1848, final Class354 class1849, final int n, final boolean b) {
+    public BlockPos method13591(final Class1847 class1847, final Class6346<? extends Class7065> class1848, final BlockPos class1849, final int n, final boolean b) {
         if (class1848.method18879().method7121(this)) {
-            final int n2 = class1849.method1074() >> 4;
-            final int n3 = class1849.method1076() >> 4;
+            final int n2 = class1849.getX() >> 4;
+            final int n3 = class1849.getZ() >> 4;
             int i = 0;
             final Class2317 class1850 = new Class2317();
             while (i <= n) {

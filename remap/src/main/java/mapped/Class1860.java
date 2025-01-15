@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.shorts.ShortArrayList;
 import java.util.BitSet;
 import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import java.util.Map;
 import java.util.Collection;
@@ -17,11 +18,11 @@ import javax.annotation.Nullable;
 public interface Class1860 extends Class1855, Class1861
 {
     @Nullable
-    Class7096 method7008(final Class354 p0, final Class7096 p1, final boolean p2);
+    Class7096 method7008(final BlockPos p0, final Class7096 p1, final boolean p2);
     
-    void method7009(final Class354 p0, final Class436 p1);
+    void method7009(final BlockPos p0, final Class436 p1);
     
-    void method7010(final Class399 p0);
+    void method7010(final Entity p0);
     
     @Nullable
     default Class8199 method7011() {
@@ -40,7 +41,7 @@ public interface Class1860 extends Class1855, Class1861
         return (method7011 != null) ? method7011.method27159() : 0;
     }
     
-    Set<Class354> method7013();
+    Set<BlockPos> method7013();
     
     Class8199[] method7014();
     
@@ -84,9 +85,9 @@ public interface Class1860 extends Class1855, Class1861
     
     Class9312 method7027();
     
-    void method7028(final Class354 p0);
+    void method7028(final BlockPos p0);
     
-    default void method7029(final Class354 class354) {
+    default void method7029(final BlockPos class354) {
         LogManager.getLogger().warn("Trying to mark a block for PostProcessing @ {}, but this operation is not supported.", (Object)class354);
     }
     
@@ -101,12 +102,12 @@ public interface Class1860 extends Class1855, Class1861
     }
     
     @Nullable
-    Class51 method7033(final Class354 p0);
+    Class51 method7033(final BlockPos p0);
     
     @Nullable
-    Class51 method7034(final Class354 p0);
+    Class51 method7034(final BlockPos p0);
     
-    Stream<Class354> method7035();
+    Stream<BlockPos> method7035();
     
     Class6952<Class3833> method7036();
     

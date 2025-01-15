@@ -20,17 +20,17 @@ public class Class5463 extends Class5419<Class824>
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
-        return !class1849.method6922(new Class354(class1850));
+        return !class1849.method6922(new BlockPos(class1850));
     }
     
     public void method16561(final Class1849 class1849, final Class824 class1850, final long n) {
         final Class1883 method6921 = class1849.method6921();
-        final int method6922 = method6921.method7211(Class353.method1089(new Class354(class1850)));
-        Class5487 class1851 = null;
+        final int method6922 = method6921.method7211(Class353.method1089(new BlockPos(class1850)));
+        Vec3d class1851 = null;
         for (int i = 0; i < 5; ++i) {
-            final Class5487 method6923 = Class7775.method24903(class1850, 15, 7, class1853 -> -class1852.method6925(Class353.method1089(class1853)));
+            final Vec3d method6923 = Class7775.method24903(class1850, 15, 7, class1853 -> -class1852.method6925(Class353.method1089(class1853)));
             if (method6923 != null) {
-                final int method6924 = method6921.method7211(Class353.method1089(new Class354(method6923)));
+                final int method6924 = method6921.method7211(Class353.method1089(new BlockPos(method6923)));
                 if (method6924 < method6922) {
                     class1851 = method6923;
                     break;

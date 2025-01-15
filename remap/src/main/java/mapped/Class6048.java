@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.List;
 import com.google.common.cache.CacheLoader;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6048 extends CacheLoader<Long, List<Class9341>>
 {
@@ -26,8 +27,8 @@ public class Class6048 extends CacheLoader<Long, List<Class9341>>
         Collections.shuffle(list, new Random(n));
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < 10; ++i) {
-            final int method35644 = Class9546.method35644(42.0 * Math.cos(2.0 * (-3.141592653589793 + 0.3141592653589793 * i)));
-            final int method35645 = Class9546.method35644(42.0 * Math.sin(2.0 * (-3.141592653589793 + 0.3141592653589793 * i)));
+            final int method35644 = MathHelper.floor(42.0 * Math.cos(2.0 * (-3.141592653589793 + 0.3141592653589793 * i)));
+            final int method35645 = MathHelper.floor(42.0 * Math.sin(2.0 * (-3.141592653589793 + 0.3141592653589793 * i)));
             final int intValue = list.get(i);
             arrayList.add(new Class9341(method35644, method35645, 2 + intValue / 3, 76 + intValue * 3, intValue == 1 || intValue == 2));
         }

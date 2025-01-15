@@ -26,7 +26,7 @@ public class Class3484 extends Class3479
     }
     
     @Override
-    public boolean method11050(final Class1852 class1852, final Class354 class1853) {
+    public boolean method11050(final Class1852 class1852, final BlockPos class1853) {
         final Class7096 method6701 = class1852.method6701(class1853);
         return method6701.method21696() == Class7521.field29819 && method6701.method21772((Class7111<Integer>)Class3884.field17541) >= 2;
     }
