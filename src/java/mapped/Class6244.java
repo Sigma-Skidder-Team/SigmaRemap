@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.dispenser.IBlockSource;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.properties.RailShape;
 import net.minecraft.tags.BlockTags;

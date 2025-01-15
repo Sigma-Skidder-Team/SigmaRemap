@@ -17,6 +17,7 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.MutableAttribute;
 import net.minecraft.entity.boss.dragon.EnderDragonPartEntity;
 import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.inventory.EquipmentSlotType;

@@ -3,6 +3,7 @@ package net.minecraft.block;
 import com.google.common.collect.UnmodifiableIterator;
 import mapped.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.trees.AcaciaTree;
 import net.minecraft.block.trees.OakTree;
 import net.minecraft.entity.EntityType;
 import net.minecraft.fluid.Fluids;

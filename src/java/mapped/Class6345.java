@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 

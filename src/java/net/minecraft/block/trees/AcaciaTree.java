@@ -1,6 +1,6 @@
-package mapped;
+package net.minecraft.block.trees;
 
-import net.minecraft.block.trees.Tree;
+import mapped.Class4733;
 import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
@@ -8,7 +8,6 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class AcaciaTree extends Tree {
-   private static String[] field32861;
 
    @Nullable
    @Override

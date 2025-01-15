@@ -46,6 +46,7 @@ import net.minecraft.client.resources.DownloadingPackFinder;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.crash.ReportedException;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.nbt.NBTDynamicOps;
