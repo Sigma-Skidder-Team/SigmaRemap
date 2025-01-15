@@ -79,13 +79,13 @@ public enum NoteBlockInstrument implements IStringSerializable {
                         return field361;
                      } else if (!var0.isIn(Blocks.field36587)) {
                         Material var3 = var0.getMaterial();
-                        if (var3 == Material.field38966) {
+                        if (var3 == Material.STONE) {
                            return field348;
                         } else if (var3 != Material.field38953) {
                            if (var3 == Material.field38963) {
                               return field350;
                            } else {
-                              return var3 != Material.field38956 && var3 != Material.field38957 ? field347 : field351;
+                              return var3 != Material.PLANKS && var3 != Material.field38957 ? field347 : field351;
                            }
                         } else {
                            return field349;

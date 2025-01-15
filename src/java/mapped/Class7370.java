@@ -38,7 +38,7 @@ public class Class7370 extends Class7361 {
    public void method23360() {
       this.field31545++;
       if (this.field31544 == null) {
-         BlockPos var5 = this.field31519.world.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994);
+         BlockPos var5 = this.field31519.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994);
          this.field31544 = Vector3d.method11330(var5);
       }
 

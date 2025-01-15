@@ -35,7 +35,7 @@ public class Class3223 extends Block {
             if (!var9) {
                var2.setBlockState(var3, var1.method23459(field18661), 2);
             } else {
-               var2.method6860().scheduleTick(var3, this, 4);
+               var2.getBlockTickScheduler().scheduleTick(var3, this, 4);
             }
          }
       }

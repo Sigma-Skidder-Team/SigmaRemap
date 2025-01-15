@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.block.trees;
 
+import mapped.Class4733;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
@@ -12,7 +13,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class Class7665 {
+public abstract class Tree {
    @Nullable
    public abstract ConfiguredFeature<Class4733, ?> method25186(Random var1, boolean var2);
 

@@ -135,7 +135,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
          this.field18851 = Class9659.method37706()
             .method37705("~ ~", "###", "~#~")
             .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.field36522)))
-            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
 
@@ -148,7 +148,7 @@ public class Class3342 extends HorizontalBlock implements Class3255 {
             .method37705("~^~", "###", "~#~")
             .method37707('^', CachedBlockInfo.method37552(field18853))
             .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.field36522)))
-            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
 

@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -89,7 +90,7 @@ public abstract class Class3468 extends Block {
       }
 
       if (var9) {
-         var1.method6860().scheduleTick(new BlockPos(var2), this, this.method12152());
+         var1.getBlockTickScheduler().scheduleTick(new BlockPos(var2), this, this.method12152());
       }
    }
 

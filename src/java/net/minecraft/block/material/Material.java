@@ -4,7 +4,7 @@ import mapped.MaterialColor;
 
 public final class Material {
    private static String[] field38931;
-   public static final Material field38932 = Builder.method30894(new Builder(MaterialColor.AIR).method30887())
+   public static final Material AIR = Builder.method30894(new Builder(MaterialColor.AIR).method30887())
       .method30886()
       .method30890()
       .build();
@@ -79,23 +79,23 @@ public final class Material {
    public static final Material field38947 = Builder.method30894(new Builder(MaterialColor.field30950).method30887()).pushDestroys().build();
    public static final Material field38948 = new Builder(MaterialColor.AIR).build();
    public static final Material field38949 = new Builder(MaterialColor.field30956).build();
-   public static final Material field38950 = new Builder(MaterialColor.field30957).build();
-   public static final Material field38951 = new Builder(MaterialColor.field30948).build();
+   public static final Material DIRT = new Builder(MaterialColor.GRANITE).build();
+   public static final Material GRASS = new Builder(MaterialColor.field30948).build();
    public static final Material field38952 = new Builder(MaterialColor.field30952).build();
    public static final Material field38953 = new Builder(MaterialColor.field30949).build();
    public static final Material field38954 = new Builder(MaterialColor.field30965).build();
    public static final Material field38955 = new Builder(MaterialColor.field30971).build();
-   public static final Material field38956 = new Builder(MaterialColor.field30960).notOpaque().build();
-   public static final Material field38957 = new Builder(MaterialColor.field30960).build();
-   public static final Material field38958 = new Builder(MaterialColor.field30960).notOpaque().pushDestroys().method30887().build();
-   public static final Material field38959 = new Builder(MaterialColor.field30960).notOpaque().pushDestroys().build();
+   public static final Material PLANKS = new Builder(MaterialColor.OAK_PLANK).notOpaque().build();
+   public static final Material field38957 = new Builder(MaterialColor.OAK_PLANK).build();
+   public static final Material field38958 = new Builder(MaterialColor.OAK_PLANK).notOpaque().pushDestroys().method30887().build();
+   public static final Material field38959 = new Builder(MaterialColor.OAK_PLANK).notOpaque().pushDestroys().build();
    public static final Material field38960 = new Builder(MaterialColor.field30950).notOpaque().build();
    public static final Material field38961 = Builder.method30894(new Builder(MaterialColor.field30951).notOpaque()).build();
    public static final Material field38962 = Builder.method30894(new Builder(MaterialColor.FOLIAGE).notOpaque()).pushDestroys().build();
    public static final Material field38963 = Builder.method30894(new Builder(MaterialColor.AIR)).build();
    public static final Material ICE = Builder.method30894(new Builder(MaterialColor.field30952)).build();
    public static final Material field38965 = Builder.method30894(new Builder(MaterialColor.FOLIAGE)).pushDestroys().build();
-   public static final Material field38966 = new Builder(MaterialColor.STONE).build();
+   public static final Material STONE = new Builder(MaterialColor.STONE).build();
    public static final Material field38967 = new Builder(MaterialColor.IRON).build();
    public static final Material SNOW_BLOCK = new Builder(MaterialColor.SNOW).build();
    public static final Material ANVIL = new Builder(MaterialColor.IRON).pushBlocks().build();

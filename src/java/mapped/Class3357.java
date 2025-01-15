@@ -32,7 +32,7 @@ import java.util.Random;
 public class Class3357 extends Class3241 {
    private static String[] field18898;
    public static final DirectionProperty field18899 = Class3433.field19198;
-   public static final BooleanProperty field18900 = BlockStateProperties.field39708;
+   public static final BooleanProperty field18900 = BlockStateProperties.TRIGGERED;
    private static final Map<Item, IDispenseItemBehavior> field18901 = Util.make(
       new Object2ObjectOpenHashMap(), var0 -> var0.defaultReturnValue(new Class6218())
    );
@@ -89,7 +89,7 @@ public class Class3357 extends Class3241 {
       boolean var9 = var2.method6780(var3) || var2.method6780(var3.up());
       boolean var10 = var1.<Boolean>get(field18900);
       if (var9 && !var10) {
-         var2.method6860().scheduleTick(var3, this, 4);
+         var2.getBlockTickScheduler().scheduleTick(var3, this, 4);
          var2.setBlockState(var3, var1.with(field18900, Boolean.valueOf(true)), 4);
       } else if (!var9 && var10) {
          var2.setBlockState(var3, var1.with(field18900, Boolean.valueOf(false)), 4);

@@ -7,6 +7,7 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -45,7 +46,7 @@ public class Class3409 extends Block {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 == Direction.UP && var3.isIn(Blocks.WATER)) {
-         var4.method6860().scheduleTick(var5, this, 20);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 20);
       }
 
       return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
@@ -53,7 +54,7 @@ public class Class3409 extends Block {
 
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      var2.method6860().scheduleTick(var3, this, 20);
+      var2.getBlockTickScheduler().scheduleTick(var3, this, 20);
    }
 
    @Override

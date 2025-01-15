@@ -26,7 +26,7 @@ public class Class6901 extends Class6896 {
    }
 
    @Override
-   public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
+   public List<Class9359> method21065(IWorldGenerationReader var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
       ArrayList var10 = Lists.newArrayList();
       BlockPos var11 = var4.down();
       method21069(var1, var11);

@@ -270,7 +270,7 @@ public class DragonFightManager {
          }
       }
 
-      int var10 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994).getY();
+      int var10 = this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994).getY();
 
       for (int var11 = var10; var11 >= 0; var11--) {
          Class9086 var12 = this.field33540
@@ -339,7 +339,7 @@ public class DragonFightManager {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.field36652.getDefaultState());
+            this.field33538.setBlockState(this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.field36652.getDefaultState());
          }
 
          this.field33546 = true;
@@ -364,7 +364,7 @@ public class DragonFightManager {
    private void method26122(boolean var1) {
       Class2909 var4 = new Class2909(var1);
       if (this.field33549 == null) {
-         this.field33549 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994).down();
+         this.field33549 = this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994).down();
 
          while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.getSeaLevel()) {
             this.field33549 = this.field33549.down();

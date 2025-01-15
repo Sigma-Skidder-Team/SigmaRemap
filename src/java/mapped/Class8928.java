@@ -34,7 +34,7 @@ public class Class8928 {
       var0.put(Blocks.field36448, var4);
       var0.put(Blocks.field36451, var4);
       RenderType var5 = RenderType.method14302();
-      var0.put(Blocks.field36406, var5);
+      var0.put(Blocks.OAK_SAPLING, var5);
       var0.put(Blocks.SPRUCE_SAPLING, var5);
       var0.put(Blocks.BIRCH_SAPLING, var5);
       var0.put(Blocks.JUNGLE_SAPLING, var5);

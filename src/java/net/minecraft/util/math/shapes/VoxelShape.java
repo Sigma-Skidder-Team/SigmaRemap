@@ -1,8 +1,9 @@
-package mapped;
+package net.minecraft.util.math.shapes;
 
 import com.google.common.collect.Lists;
 import com.google.common.math.DoubleMath;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import mapped.*;
 import net.minecraft.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;

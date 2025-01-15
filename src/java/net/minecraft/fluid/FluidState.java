@@ -6,7 +6,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.state.StateHolder;
 import net.minecraft.state.Property;
 import net.minecraft.tags.ITag;
-import mapped.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.Direction;

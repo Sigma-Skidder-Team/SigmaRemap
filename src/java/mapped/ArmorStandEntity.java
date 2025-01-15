@@ -472,7 +472,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (this.world instanceof ServerWorld) {
          ((ServerWorld)this.world)
             .spawnParticle(
-               new BlockParticleData(ParticleTypes.field34051, Blocks.field36400.getDefaultState()),
+               new BlockParticleData(ParticleTypes.field34051, Blocks.OAK_PLANKS.getDefaultState()),
                this.getPosX(),
                this.getPosYHeight(0.6666666666666666),
                this.getPosZ(),

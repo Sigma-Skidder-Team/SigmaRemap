@@ -11,6 +11,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -18,9 +19,9 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class3486 extends BushBlock implements Class3196 {
+public class Class3486 extends BushBlock implements IGrowable {
    private static String[] field18470;
-   public static final IntegerProperty field19347 = BlockStateProperties.field39742;
+   public static final IntegerProperty field19347 = BlockStateProperties.AGE5;
    public static final VoxelShape[] field19348 = new VoxelShape[]{
       Block.makeCuboidShape(7.0, 0.0, 7.0, 9.0, 2.0, 9.0),
       Block.makeCuboidShape(7.0, 0.0, 7.0, 9.0, 4.0, 9.0),

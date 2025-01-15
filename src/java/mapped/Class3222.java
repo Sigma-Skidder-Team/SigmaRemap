@@ -20,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -32,11 +33,11 @@ import java.util.Set;
 
 public class Class3222 extends Block {
    private static String[] field18646;
-   public static final EnumProperty<RedstoneSide> field18647 = BlockStateProperties.field39731;
-   public static final EnumProperty<RedstoneSide> field18648 = BlockStateProperties.field39730;
-   public static final EnumProperty<RedstoneSide> field18649 = BlockStateProperties.field39732;
-   public static final EnumProperty<RedstoneSide> field18650 = BlockStateProperties.field39733;
-   public static final IntegerProperty field18651 = BlockStateProperties.field39759;
+   public static final EnumProperty<RedstoneSide> field18647 = BlockStateProperties.REDSTONE_SIDE_NORTH;
+   public static final EnumProperty<RedstoneSide> field18648 = BlockStateProperties.REDSTONE_SIDE_EAST;
+   public static final EnumProperty<RedstoneSide> field18649 = BlockStateProperties.REDSTONE_SIDE_SOUTH;
+   public static final EnumProperty<RedstoneSide> field18650 = BlockStateProperties.REDSTONE_SIDE_WEST;
+   public static final IntegerProperty field18651 = BlockStateProperties.POWER;
    public static final Map<Direction, EnumProperty<RedstoneSide>> field18652 = Maps.newEnumMap(
       ImmutableMap.of(Direction.NORTH, field18647, Direction.EAST, field18648, Direction.SOUTH, field18649, Direction.WEST, field18650)
    );

@@ -20,7 +20,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 public class Class3364 extends Class3241 {
-   public static final BooleanProperty field18931 = BlockStateProperties.field39695;
+   public static final BooleanProperty field18931 = BlockStateProperties.HAS_RECORD;
 
    public Class3364(Properties var1) {
       super(var1);

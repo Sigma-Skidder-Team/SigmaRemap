@@ -10,7 +10,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public abstract class Class3472 extends Class3471 {
+public abstract class Class3472 extends PodzolBlock {
    public Class3472(Properties var1) {
       super(var1);
    }

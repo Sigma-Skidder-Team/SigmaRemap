@@ -26,7 +26,7 @@ import java.util.function.Predicate;
 
 public class Class3431 extends Class3429 {
    private static String[] field19192;
-   public static final EnumProperty<RailShape> field19193 = BlockStateProperties.field39737;
+   public static final EnumProperty<RailShape> field19193 = BlockStateProperties.RAIL_SHAPE_2;
    public static final BooleanProperty field19194 = BlockStateProperties.POWERED;
 
    public Class3431(Properties var1) {
@@ -95,7 +95,7 @@ public class Class3431 extends Class3429 {
          }
 
          if (var7) {
-            var1.method6860().scheduleTick(var2, this, 20);
+            var1.getBlockTickScheduler().scheduleTick(var2, this, 20);
          }
 
          var1.updateComparatorOutputLevel(var2, this);

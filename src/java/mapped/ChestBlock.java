@@ -28,6 +28,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -41,7 +42,7 @@ import javax.annotation.Nullable;
 public class ChestBlock extends Class3346<ChestTileEntity> implements IWaterLoggable {
    private static String[] field18864;
    public static final DirectionProperty field18865 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final EnumProperty<ChestType> TYPE = BlockStateProperties.field39765;
+   public static final EnumProperty<ChestType> TYPE = BlockStateProperties.TYPE;
    public static final BooleanProperty field18867 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18868 = Block.makeCuboidShape(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
    public static final VoxelShape field18869 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);

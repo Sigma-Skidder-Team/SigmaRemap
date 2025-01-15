@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.IGrowable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -11,10 +12,10 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.List;
 import java.util.Random;
 
-public class Class3473 extends Class3472 implements Class3196 {
+public class GrassBlock extends Class3472 implements IGrowable {
    private static String[] field19322;
 
-   public Class3473(Properties var1) {
+   public GrassBlock(Properties var1) {
       super(var1);
    }
 
@@ -46,7 +47,7 @@ public class Class3473 extends Class3472 implements Class3196 {
 
          BlockState var16 = var1.getBlockState(var10);
          if (var16.isIn(var8.getBlock()) && var2.nextInt(10) == 0) {
-            ((Class3196)var8.getBlock()).method11488(var1, var2, var10, var16);
+            ((IGrowable)var8.getBlock()).method11488(var1, var2, var10, var16);
          }
 
          if (var16.isAir()) {

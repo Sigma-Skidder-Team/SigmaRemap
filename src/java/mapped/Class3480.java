@@ -1,9 +1,6 @@
 package mapped;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BushBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -14,6 +11,7 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
@@ -22,9 +20,9 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3480 extends BushBlock implements Class3196 {
+public class Class3480 extends BushBlock implements IGrowable {
    private static String[] field19333;
-   public static final IntegerProperty field19334 = BlockStateProperties.field39742;
+   public static final IntegerProperty field19334 = BlockStateProperties.AGE5;
    private static final VoxelShape[] field19335 = new VoxelShape[]{
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),

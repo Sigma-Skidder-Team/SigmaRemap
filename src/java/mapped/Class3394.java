@@ -16,6 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -23,7 +24,7 @@ import net.minecraft.world.World;
 
 public class Class3394 extends Block {
    private static String[] field19028;
-   public static final IntegerProperty field19029 = BlockStateProperties.field39745;
+   public static final IntegerProperty field19029 = BlockStateProperties.BITES;
    public static final VoxelShape[] field19030 = new VoxelShape[]{
       Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 8.0, 15.0),
       Block.makeCuboidShape(3.0, 0.0, 1.0, 15.0, 8.0, 15.0),

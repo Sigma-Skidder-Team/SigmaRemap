@@ -140,12 +140,12 @@ public class Class907 extends Entity {
                if (!var19.isIn(Blocks.MOVING_PISTON)) {
                   this.remove();
                   if (this.field5179) {
-                     if (var3 instanceof Class3213) {
-                        ((Class3213)var3).method11600(this.world, var18, this);
+                     if (var3 instanceof FallingBlock) {
+                        ((FallingBlock)var3).method11600(this.world, var18, this);
                      }
                   } else {
                      boolean var10 = var19.method23441(new Class5910(this.world, var18, Direction.DOWN, ItemStack.EMPTY, Direction.UP));
-                     boolean var11 = Class3213.method11598(this.world.getBlockState(var18.down())) && (!var5 || !var6);
+                     boolean var11 = FallingBlock.method11598(this.world.getBlockState(var18.down())) && (!var5 || !var6);
                      boolean var12 = this.field5176.isValidPosition(this.world, var18) && !var11;
                      if (var10 && var12) {
                         if (this.field5176.method23462(BlockStateProperties.WATERLOGGED) && this.world.getFluidState(var18).getFluid() == Fluids.WATER) {
@@ -157,8 +157,8 @@ public class Class907 extends Entity {
                               this.entityDropItem(var3);
                            }
                         } else {
-                           if (var3 instanceof Class3213) {
-                              ((Class3213)var3).method11599(this.world, var18, this.field5176, var19, this);
+                           if (var3 instanceof FallingBlock) {
+                              ((FallingBlock)var3).method11599(this.world, var18, this.field5176, var19, this);
                            }
 
                            if (this.field5183 != null && var3 instanceof Class3245) {

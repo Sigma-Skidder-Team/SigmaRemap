@@ -12,6 +12,8 @@ import java.util.Map;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.entity.passive.fish.AbstractFishEntity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;

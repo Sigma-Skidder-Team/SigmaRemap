@@ -26,7 +26,7 @@ import java.util.Random;
 
 public class Class3246 extends Class3247 implements Class3245 {
    private static String[] field18705;
-   public static final EnumProperty<ComparatorMode> field18706 = BlockStateProperties.field39766;
+   public static final EnumProperty<ComparatorMode> field18706 = BlockStateProperties.COMPARATOR_MODE;
 
    public Class3246(Properties var1) {
       super(var1);
@@ -123,13 +123,13 @@ public class Class3246 extends Class3247 implements Class3245 {
 
    @Override
    public void method11664(World var1, BlockPos var2, BlockState var3) {
-      if (!var1.method6860().method20720(var2, this)) {
+      if (!var1.getBlockTickScheduler().method20720(var2, this)) {
          int var6 = this.method11660(var1, var2, var3);
          TileEntity var7 = var1.getTileEntity(var2);
          int var8 = !(var7 instanceof Class963) ? 0 : ((Class963)var7).method3930();
          if (var6 != var8 || var3.<Boolean>get(field18708) != this.method11661(var1, var2, var3)) {
             Class2199 var9 = !this.method11673(var1, var2, var3) ? Class2199.field14370 : Class2199.field14369;
-            var1.method6860().method20719(var2, this, 2, var9);
+            var1.getBlockTickScheduler().method20719(var2, this, 2, var9);
          }
       }
    }

@@ -20,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -257,6 +258,6 @@ public class DoorBlock extends Block {
    }
 
    public static boolean method12145(BlockState var0) {
-      return var0.getBlock() instanceof DoorBlock && (var0.getMaterial() == Material.field38956 || var0.getMaterial() == Material.field38957);
+      return var0.getBlock() instanceof DoorBlock && (var0.getMaterial() == Material.PLANKS || var0.getMaterial() == Material.field38957);
    }
 }

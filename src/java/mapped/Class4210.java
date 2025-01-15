@@ -43,13 +43,13 @@ public class Class4210 extends Class4209 {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {
-         this.method12927(var1, var5, 1, 1, 1, 5, 1, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 4, 2, 5, 4, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 2, 1, 0, 4, 1, 0, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 2, 2, 2, 3, 3, 2, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
-         this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.field36401.getDefaultState(), Blocks.field36401.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 1, 1, 5, 1, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 4, 2, 5, 4, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 2, 1, 0, 4, 1, 0, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 2, 2, 2, 3, 3, 2, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 1, 2, 3, 1, 3, 6, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 5, 2, 3, 5, 3, 6, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 2, 2, 7, 4, 3, 7, Blocks.SPRUCE_PLANKS.getDefaultState(), Blocks.SPRUCE_PLANKS.getDefaultState(), false);
          this.method12927(var1, var5, 1, 0, 2, 1, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
          this.method12927(var1, var5, 5, 0, 2, 5, 3, 2, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);
          this.method12927(var1, var5, 1, 0, 7, 1, 3, 7, Blocks.field36422.getDefaultState(), Blocks.field36422.getDefaultState(), false);

@@ -18,7 +18,7 @@ public class Class7368 extends Class7361 {
    @Override
    public void method23360() {
       if (!this.field31535 && this.field31536 != null) {
-         BlockPos var3 = this.field31519.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
+         BlockPos var3 = this.field31519.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994);
          if (!var3.method8317(this.field31519.getPositionVec(), 10.0)) {
             this.field31519.method4336().method32671(Class9598.field44896);
          }

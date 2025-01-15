@@ -19,7 +19,7 @@ import net.minecraft.world.IWorldReader;
 
 public class Class3374 extends Class3373 {
    private static String[] field18969;
-   public static final IntegerProperty field18970 = BlockStateProperties.field39763;
+   public static final IntegerProperty field18970 = BlockStateProperties.ROTATION;
 
    public Class3374(Properties var1, Class9673 var2) {
       super(var1, var2);

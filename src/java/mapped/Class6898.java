@@ -28,7 +28,7 @@ public class Class6898 extends Class6896 {
    }
 
    @Override
-   public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
+   public List<Class9359> method21065(IWorldGenerationReader var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
       int var11 = var3 + 2;
       int var12 = MathHelper.floor((double)var11 * 0.618);
       if (!var7.field22414) {
@@ -80,7 +80,7 @@ public class Class6898 extends Class6896 {
       return var40;
    }
 
-   private boolean method21077(Class1679 var1, Random var2, BlockPos var3, BlockPos var4, boolean var5, Set<BlockPos> var6, MutableBoundingBox var7, Class4733 var8) {
+   private boolean method21077(IWorldGenerationReader var1, Random var2, BlockPos var3, BlockPos var4, boolean var5, Set<BlockPos> var6, MutableBoundingBox var7, Class4733 var8) {
       if (!var5 && Objects.equals(var3, var4)) {
          return true;
       } else {
@@ -135,7 +135,7 @@ public class Class6898 extends Class6896 {
       return (double)var2 >= (double)var1 * 0.2;
    }
 
-   private void method21081(Class1679 var1, Random var2, int var3, BlockPos var4, List<Class8765> var5, Set<BlockPos> var6, MutableBoundingBox var7, Class4733 var8) {
+   private void method21081(IWorldGenerationReader var1, Random var2, int var3, BlockPos var4, List<Class8765> var5, Set<BlockPos> var6, MutableBoundingBox var7, Class4733 var8) {
       for (Class8765 var12 : var5) {
          int var13 = var12.method31621();
          BlockPos var14 = new BlockPos(var4.getX(), var13, var4.getZ());

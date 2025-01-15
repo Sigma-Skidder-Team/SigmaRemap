@@ -11,7 +11,7 @@ import net.minecraft.util.Rotation;
 
 public class Class3386 extends Block {
    private static String[] field18993;
-   public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.field39713;
+   public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.AXIS;
 
    public Class3386(Properties var1) {
       super(var1);

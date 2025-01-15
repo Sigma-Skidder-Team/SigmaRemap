@@ -71,13 +71,13 @@ public class Class4202 extends Class4194 {
                this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36525.getDefaultState(), Blocks.field36525.getDefaultState(), false);
             }
          } else {
-            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
-            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+            this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
+            this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.EAST), 2, 3, var13, var5);
             this.method12923(var1, Blocks.WALL_TORCH.getDefaultState().with(Class3382.field18985, Direction.WEST), 11, 3, var13, var5);
             if (this.field20509) {
-               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
-               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
+               this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
+               this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
             }
          }
       }
@@ -89,13 +89,13 @@ public class Class4202 extends Class4194 {
       }
 
       if (this.field20509) {
-         this.method12927(var1, var5, 1, 5, 1, 3, 5, 13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
-         this.method12927(var1, var5, 10, 5, 1, 12, 5, 13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
-         this.method12927(var1, var5, 4, 5, 1, 9, 5, 2, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
-         this.method12927(var1, var5, 4, 5, 12, 9, 5, 13, Blocks.field36400.getDefaultState(), Blocks.field36400.getDefaultState(), false);
-         this.method12923(var1, Blocks.field36400.getDefaultState(), 9, 5, 11, var5);
-         this.method12923(var1, Blocks.field36400.getDefaultState(), 8, 5, 11, var5);
-         this.method12923(var1, Blocks.field36400.getDefaultState(), 9, 5, 10, var5);
+         this.method12927(var1, var5, 1, 5, 1, 3, 5, 13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 10, 5, 1, 12, 5, 13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 4, 5, 1, 9, 5, 2, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
+         this.method12927(var1, var5, 4, 5, 12, 9, 5, 13, Blocks.OAK_PLANKS.getDefaultState(), Blocks.OAK_PLANKS.getDefaultState(), false);
+         this.method12923(var1, Blocks.OAK_PLANKS.getDefaultState(), 9, 5, 11, var5);
+         this.method12923(var1, Blocks.OAK_PLANKS.getDefaultState(), 8, 5, 11, var5);
+         this.method12923(var1, Blocks.OAK_PLANKS.getDefaultState(), 9, 5, 10, var5);
          BlockState var23 = Blocks.OAK_FENCE
             .getDefaultState()
             .with(Class3239.field18683, Boolean.valueOf(true))

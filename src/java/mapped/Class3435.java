@@ -22,6 +22,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -33,7 +34,7 @@ import java.util.Map.Entry;
 
 public class Class3435 extends Class3433 {
    private static String[] field19201;
-   public static final BooleanProperty field19202 = BlockStateProperties.field39688;
+   public static final BooleanProperty field19202 = BlockStateProperties.EXTENDED;
    public static final VoxelShape field19203 = Block.makeCuboidShape(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
    public static final VoxelShape field19204 = Block.makeCuboidShape(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
    public static final VoxelShape field19205 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);

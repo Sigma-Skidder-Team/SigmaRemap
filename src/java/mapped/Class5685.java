@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 
 public abstract class Class5685<T extends AbstractHorseEntity, M extends Class2856<T>> extends Class5651<T, M> {
    private final float field25052;

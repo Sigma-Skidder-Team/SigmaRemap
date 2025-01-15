@@ -1,12 +1,13 @@
 package mapped;
 
+import net.minecraft.block.trees.Tree;
 import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class7668 extends Class7665 {
+public class AcaciaTree extends Tree {
    private static String[] field32861;
 
    @Nullable

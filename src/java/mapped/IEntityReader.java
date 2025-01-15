@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public interface Class1682 {
+public interface IEntityReader {
    List<Entity> getEntitiesInAABBexcluding(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3);
 
    <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3);
@@ -53,7 +54,8 @@ public interface Class1682 {
       return this.<T>method6773(var1, var2, EntityPredicates.field34763);
    }
 
-   default Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+   // Searge: func_230318_c_
+   default Stream<VoxelShape> getEntityCollisions(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       if (!(var2.getAverageEdgeLength() < 1.0E-7)) {
          AxisAlignedBB var6 = var2.grow(1.0E-7);
          return this.getEntitiesInAABBexcluding(var1, var6, var3.and(var2x -> {

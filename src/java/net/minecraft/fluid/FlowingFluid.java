@@ -20,6 +20,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -31,8 +32,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public abstract class FlowingFluid extends Fluid {
-   public static final BooleanProperty field32712 = BlockStateProperties.field39690;
-   public static final IntegerProperty field32713 = BlockStateProperties.field39753;
+   public static final BooleanProperty field32712 = BlockStateProperties.FALLING;
+   public static final IntegerProperty field32713 = BlockStateProperties.LEVEL_4;
    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class8570>> field32714 = ThreadLocal.<Object2ByteLinkedOpenHashMap<Class8570>>withInitial(
       () -> {
          Class2361 var2 = new Class2361(200);

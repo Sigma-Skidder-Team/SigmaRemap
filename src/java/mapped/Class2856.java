@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.util.math.MathHelper;
 
 public class Class2856<T extends AbstractHorseEntity> extends AgeableModel<T> {

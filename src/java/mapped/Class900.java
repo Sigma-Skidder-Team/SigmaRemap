@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

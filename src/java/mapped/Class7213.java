@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.math.shapes.VoxelShape;
 import org.apache.commons.lang3.mutable.MutableObject;
 
 public final class Class7213 {

@@ -11,6 +11,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -22,7 +23,7 @@ import javax.annotation.Nullable;
 
 public class Class3410 extends Block {
    private static String[] field19091;
-   public static final IntegerProperty field19092 = BlockStateProperties.field39750;
+   public static final IntegerProperty field19092 = BlockStateProperties.LAYERS;
    public static final VoxelShape[] field19093 = new VoxelShape[]{
       VoxelShapes.empty(),
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),

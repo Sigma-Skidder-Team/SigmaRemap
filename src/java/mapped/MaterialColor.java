@@ -12,11 +12,11 @@ public class MaterialColor {
    public static final MaterialColor FOLIAGE = new MaterialColor(7, 31744);
    public static final MaterialColor SNOW = new MaterialColor(8, 16777215);
    public static final MaterialColor field30956 = new MaterialColor(9, 10791096);
-   public static final MaterialColor field30957 = new MaterialColor(10, 9923917);
+   public static final MaterialColor GRANITE = new MaterialColor(10, 9923917);
    public static final MaterialColor STONE = new MaterialColor(11, 7368816);
    public static final MaterialColor field30959 = new MaterialColor(12, 4210943);
-   public static final MaterialColor field30960 = new MaterialColor(13, 9402184);
-   public static final MaterialColor field30961 = new MaterialColor(14, 16776437);
+   public static final MaterialColor OAK_PLANK = new MaterialColor(13, 9402184);
+   public static final MaterialColor DIORITE = new MaterialColor(14, 16776437);
    public static final MaterialColor field30962 = new MaterialColor(15, 14188339);
    public static final MaterialColor field30963 = new MaterialColor(16, 11685080);
    public static final MaterialColor field30964 = new MaterialColor(17, 6724056);
@@ -36,7 +36,7 @@ public class MaterialColor {
    public static final MaterialColor field30978 = new MaterialColor(31, 6085589);
    public static final MaterialColor field30979 = new MaterialColor(32, 4882687);
    public static final MaterialColor field30980 = new MaterialColor(33, 55610);
-   public static final MaterialColor field30981 = new MaterialColor(34, 8476209);
+   public static final MaterialColor PODZOL = new MaterialColor(34, 8476209);
    public static final MaterialColor field30982 = new MaterialColor(35, 7340544);
    public static final MaterialColor field30983 = new MaterialColor(36, 13742497);
    public static final MaterialColor field30984 = new MaterialColor(37, 10441252);

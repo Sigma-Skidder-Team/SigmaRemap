@@ -92,7 +92,7 @@ public class Class973 extends Class939 {
    }
 
    private void method4024() {
-      this.world.method6860().scheduleTick(this.getPos(), this.getBlockState().getBlock(), 5);
+      this.world.getBlockTickScheduler().scheduleTick(this.getPos(), this.getBlockState().getBlock(), 5);
    }
 
    public void method4025() {

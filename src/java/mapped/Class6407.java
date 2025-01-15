@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class6407 extends VoxelShape {
    private static String[] field28029;

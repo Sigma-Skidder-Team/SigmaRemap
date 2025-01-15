@@ -22,7 +22,7 @@ import java.util.Set;
 public class Class3265 extends ToolItem {
    private static String[] field18755;
    private static final Set<Material> field18756 = Sets.newHashSet(
-      new Material[]{Material.field38956, Material.field38957, Material.PLANTS, Material.TALL_PLANTS, Material.field38959, Material.GOURD}
+      new Material[]{Material.PLANKS, Material.field38957, Material.PLANTS, Material.TALL_PLANTS, Material.field38959, Material.GOURD}
    );
    private static final Set<Block> field18757 = Sets.newHashSet(
       new Block[]{

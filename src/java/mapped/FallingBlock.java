@@ -13,21 +13,20 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3213 extends Block {
-   private static String[] field18622;
+public class FallingBlock extends Block {
 
-   public Class3213(Properties var1) {
-      super(var1);
+   public FallingBlock(Properties properties) {
+      super(properties);
    }
 
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      var2.method6860().scheduleTick(var3, this, this.method11597());
+      var2.getBlockTickScheduler().scheduleTick(var3, this, this.method11597());
    }
 
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
-      var4.method6860().scheduleTick(var5, this, this.method11597());
+      var4.getBlockTickScheduler().scheduleTick(var5, this, this.method11597());
       return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);
    }
 
@@ -71,7 +70,8 @@ public class Class3213 extends Block {
       }
    }
 
-   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
+   // Searge: func_189876_x
+   public int getColor(BlockState var1, IBlockReader var2, BlockPos var3) {
       return -16777216;
    }
 }

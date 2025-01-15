@@ -9,7 +9,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3217 extends Class3213 {
+public class Class3217 extends FallingBlock {
    private static String[] field18622;
    private final BlockState field18626;
 
@@ -66,7 +66,7 @@ public class Class3217 extends Class3213 {
    }
 
    @Override
-   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public int getColor(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23394(var2, var3).field31006;
    }
 }

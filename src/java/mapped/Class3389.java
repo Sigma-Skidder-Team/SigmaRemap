@@ -30,7 +30,7 @@ import java.util.Random;
 
 public class Class3389 extends Block {
    private static String[] field18999;
-   public static final IntegerProperty field19000 = BlockStateProperties.field39762;
+   public static final IntegerProperty field19000 = BlockStateProperties.CHARGES;
    private static final ImmutableList<Vector3i> field19001 = ImmutableList.of(
       new Vector3i(0, 0, -1),
       new Vector3i(-1, 0, 0),

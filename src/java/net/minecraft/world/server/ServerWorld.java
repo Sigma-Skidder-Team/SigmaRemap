@@ -37,6 +37,7 @@ import net.minecraft.scoreboard.ServerScoreboard;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -409,7 +410,7 @@ public class ServerWorld extends World implements ISeedReader {
 
       var9.endStartSection("iceandsnow");
       if (this.rand.nextInt(16) == 0) {
-         BlockPos var19 = this.method7006(Heightmap.Type.MOTION_BLOCKING, this.method6818(var7, 0, var8, 15));
+         BlockPos var19 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, this.method6818(var7, 0, var8, 15));
          BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
          if (var23.doesWaterFreeze(this, var21)) {
@@ -454,7 +455,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public BlockPos method6900(BlockPos var1) {
-      BlockPos var4 = this.method7006(Heightmap.Type.MOTION_BLOCKING, var1);
+      BlockPos var4 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).grow(3.0);
       List var6 = this.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
@@ -1023,7 +1024,7 @@ public class ServerWorld extends World implements ISeedReader {
       return !var4.isIn(var1.method20741()) ? false : var4.method23422(this, var1.method20740(), var1.method20742(), var1.method20743());
    }
 
-   public Class6805<Block> method6860() {
+   public Class6805<Block> getBlockTickScheduler() {
       return this.field9051;
    }
 
@@ -1155,7 +1156,7 @@ public class ServerWorld extends World implements ISeedReader {
    public BlockPos getSpawnPoint() {
       BlockPos var3 = new BlockPos(this.worldInfo.getSpawnX(), this.worldInfo.getSpawnY(), this.worldInfo.getSpawnZ());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.method7006(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;
@@ -1268,7 +1269,7 @@ public class ServerWorld extends World implements ISeedReader {
 
          var5.write(String.format("entities: %d\n", this.field9039.size()));
          var5.write(String.format("block_entities: %d\n", this.loadedTileEntityList.size()));
-         var5.write(String.format("block_ticks: %d\n", this.method6860().method20736()));
+         var5.write(String.format("block_ticks: %d\n", this.getBlockTickScheduler().method20736()));
          var5.write(String.format("fluid_ticks: %d\n", this.getPendingFluidTicks().method20736()));
          var5.write("distance_manager: " + var4.getTicketManager().method35140() + "\n");
          var5.write(String.format("pending_tasks: %d\n", this.getChunkProvider().method7369()));
@@ -1396,7 +1397,7 @@ public class ServerWorld extends World implements ISeedReader {
          method6972(this.field9039.values(), var0 -> Registry.ENTITY_TYPE.getKey(var0.getType())),
          this.tickableTileEntities.size(),
          method6972(this.tickableTileEntities, var0 -> Registry.field16078.getKey(var0.method3786())),
-         this.method6860().method20736(),
+         this.getBlockTickScheduler().method20736(),
          this.getPendingFluidTicks().method20736(),
          this.getProviderName()
       );

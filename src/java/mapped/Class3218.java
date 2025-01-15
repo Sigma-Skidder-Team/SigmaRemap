@@ -17,6 +17,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
@@ -24,7 +25,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class3218 extends Class3213 {
+public class Class3218 extends FallingBlock {
    public static final DirectionProperty field18627 = HorizontalBlock.HORIZONTAL_FACING;
    private static final VoxelShape field18628 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
    private static final VoxelShape field18629 = Block.makeCuboidShape(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
@@ -116,7 +117,7 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public int getColor(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23394(var2, var3).field31006;
    }
 }

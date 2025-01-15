@@ -21,9 +21,9 @@ import net.minecraft.world.World;
 
 public class Class3426 extends Block {
    private static String[] field19174;
-   public static final EnumProperty<NoteBlockInstrument> field19175 = BlockStateProperties.field39768;
+   public static final EnumProperty<NoteBlockInstrument> field19175 = BlockStateProperties.NOTE_BLOCK_INSTRUMENT;
    public static final BooleanProperty field19176 = BlockStateProperties.POWERED;
-   public static final IntegerProperty field19177 = BlockStateProperties.field39757;
+   public static final IntegerProperty field19177 = BlockStateProperties.NOTE;
 
    public Class3426(Properties var1) {
       super(var1);

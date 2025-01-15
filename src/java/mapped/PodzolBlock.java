@@ -11,11 +11,11 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 
-public class Class3471 extends Block {
+public class PodzolBlock extends Block {
    private static String[] field19322;
-   public static final BooleanProperty field19323 = BlockStateProperties.field39707;
+   public static final BooleanProperty field19323 = BlockStateProperties.SNOWY;
 
-   public Class3471(Properties var1) {
+   public PodzolBlock(Properties var1) {
       super(var1);
       this.setDefaultState(this.stateContainer.getBaseState().with(field19323, Boolean.valueOf(false)));
    }

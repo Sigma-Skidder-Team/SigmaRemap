@@ -42,7 +42,7 @@ public class Class7142 extends Class7139 {
       });
    }
 
-   private void method22280(Class1679 var1, Random var2, BlockPos var3) {
+   private void method22280(IWorldGenerationReader var1, Random var2, BlockPos var3) {
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
             if (Math.abs(var6) != 2 || Math.abs(var7) != 2) {
@@ -52,7 +52,7 @@ public class Class7142 extends Class7139 {
       }
    }
 
-   private void method22281(Class1679 var1, Random var2, BlockPos var3) {
+   private void method22281(IWorldGenerationReader var1, Random var2, BlockPos var3) {
       for (int var6 = 2; var6 >= -3; var6--) {
          BlockPos var7 = var3.up(var6);
          if (Class2898.method11220(var1, var7)) {

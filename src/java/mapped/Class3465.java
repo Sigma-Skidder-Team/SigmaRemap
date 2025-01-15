@@ -10,6 +10,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -19,8 +20,8 @@ import java.util.Random;
 
 public class Class3465 extends Block {
    private static String[] field19304;
-   public static final IntegerProperty field19305 = BlockStateProperties.field39747;
-   public static final BooleanProperty field19306 = BlockStateProperties.field39703;
+   public static final IntegerProperty field19305 = BlockStateProperties.DISTANCE;
+   public static final BooleanProperty field19306 = BlockStateProperties.PERSISTENT;
 
    public Class3465(Properties var1) {
       super(var1);
@@ -59,7 +60,7 @@ public class Class3465 extends Block {
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       int var9 = method12150(var3) + 1;
       if (var9 != 1 || var1.<Integer>get(field19305) != var9) {
-         var4.method6860().scheduleTick(var5, this, 1);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
       return var1;

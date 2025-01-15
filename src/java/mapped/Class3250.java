@@ -27,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
@@ -40,8 +41,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class Class3250 extends HorizontalBlock implements Class3245 {
-   public static final EnumProperty<BedPart> field18713 = BlockStateProperties.field39764;
-   public static final BooleanProperty field18714 = BlockStateProperties.field39701;
+   public static final EnumProperty<BedPart> field18713 = BlockStateProperties.PART;
+   public static final BooleanProperty field18714 = BlockStateProperties.OCCUPIED;
    public static final VoxelShape field18715 = Block.makeCuboidShape(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
    public static final VoxelShape field18716 = Block.makeCuboidShape(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
    public static final VoxelShape field18717 = Block.makeCuboidShape(0.0, 0.0, 13.0, 3.0, 3.0, 16.0);

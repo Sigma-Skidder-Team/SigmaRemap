@@ -14,6 +14,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -28,9 +29,9 @@ public class Class3428 extends Block implements IWaterLoggable {
    private static final VoxelShape field19181;
    private static final VoxelShape field19182 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
    private static final VoxelShape field19183 = VoxelShapes.method27426().withOffset(0.0, -1.0, 0.0);
-   public static final IntegerProperty field19184 = BlockStateProperties.field39761;
+   public static final IntegerProperty field19184 = BlockStateProperties.DISTANCE1;
    public static final BooleanProperty field19185 = BlockStateProperties.WATERLOGGED;
-   public static final BooleanProperty field19186 = BlockStateProperties.field39683;
+   public static final BooleanProperty field19186 = BlockStateProperties.BOTTOM;
 
    public Class3428(Properties var1) {
       super(var1);
@@ -81,7 +82,7 @@ public class Class3428 extends Block implements IWaterLoggable {
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var2.isRemote) {
-         var2.method6860().scheduleTick(var3, this, 1);
+         var2.getBlockTickScheduler().scheduleTick(var3, this, 1);
       }
    }
 
@@ -92,7 +93,7 @@ public class Class3428 extends Block implements IWaterLoggable {
       }
 
       if (!var4.isRemote()) {
-         var4.method6860().scheduleTick(var5, this, 1);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
       return var1;

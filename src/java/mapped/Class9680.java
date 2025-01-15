@@ -1340,7 +1340,7 @@ public class Class9680 {
                                                                      return MaterialColor.field30982.field31007;
                                                                   }
                                                                } else {
-                                                                  return MaterialColor.field30981.field31007;
+                                                                  return MaterialColor.PODZOL.field31007;
                                                                }
                                                             } else {
                                                                return MaterialColor.field30980.field31007;
@@ -1355,10 +1355,10 @@ public class Class9680 {
                                                       return MaterialColor.field30977.field31007;
                                                    }
                                                 } else {
-                                                   return MaterialColor.field30961.field31007;
+                                                   return MaterialColor.DIORITE.field31007;
                                                 }
                                              } else {
-                                                return MaterialColor.field30960.field31007;
+                                                return MaterialColor.OAK_PLANK.field31007;
                                              }
                                           } else {
                                              return MaterialColor.field30959.field31007;
@@ -1367,7 +1367,7 @@ public class Class9680 {
                                           return MaterialColor.STONE.field31007;
                                        }
                                     } else {
-                                       return MaterialColor.field30957.field31007;
+                                       return MaterialColor.GRANITE.field31007;
                                     }
                                  } else {
                                     return MaterialColor.field30956.field31007;

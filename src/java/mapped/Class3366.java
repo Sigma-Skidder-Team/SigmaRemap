@@ -29,6 +29,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -41,7 +42,7 @@ import javax.annotation.Nullable;
 public class Class3366 extends Class3241 {
    private static final Direction[] field18934 = new Direction[]{Direction.WEST, Direction.EAST, Direction.SOUTH};
    public static final DirectionProperty field18935 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final IntegerProperty field18936 = BlockStateProperties.field39754;
+   public static final IntegerProperty field18936 = BlockStateProperties.HONEY_LEVEL;
 
    public Class3366(Properties var1) {
       super(var1);

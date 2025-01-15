@@ -26,7 +26,7 @@ public class Class6900 extends Class6899 {
    }
 
    @Override
-   public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
+   public List<Class9359> method21065(IWorldGenerationReader var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
       ArrayList var10 = Lists.newArrayList();
       var10.addAll(super.method21065(var1, var2, var3, var4, var5, var6, var7));
 

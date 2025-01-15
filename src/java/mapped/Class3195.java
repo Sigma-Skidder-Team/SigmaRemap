@@ -13,6 +13,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -22,9 +23,9 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class3195 extends BushBlock implements Class3196, IWaterLoggable {
+public class Class3195 extends BushBlock implements IGrowable, IWaterLoggable {
    private static String[] field18471;
-   public static final IntegerProperty field18472 = BlockStateProperties.field39758;
+   public static final IntegerProperty field18472 = BlockStateProperties.PICKLES;
    public static final BooleanProperty field18473 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18474 = Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
    public static final VoxelShape field18475 = Block.makeCuboidShape(3.0, 0.0, 3.0, 13.0, 6.0, 13.0);

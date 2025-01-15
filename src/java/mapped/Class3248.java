@@ -22,8 +22,8 @@ import java.util.Random;
 
 public class Class3248 extends Class3247 {
    private static String[] field18709;
-   public static final BooleanProperty field18710 = BlockStateProperties.field39700;
-   public static final IntegerProperty field18711 = BlockStateProperties.field39746;
+   public static final BooleanProperty field18710 = BlockStateProperties.LOCKED;
+   public static final IntegerProperty field18711 = BlockStateProperties.DELAY;
 
    public Class3248(Properties var1) {
       super(var1);

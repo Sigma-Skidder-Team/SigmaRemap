@@ -16,6 +16,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -25,8 +26,8 @@ import java.util.Arrays;
 
 public class Class3436 extends Class3433 {
    private static String[] field19210;
-   public static final EnumProperty<PistonType> field19211 = BlockStateProperties.field39769;
-   public static final BooleanProperty field19212 = BlockStateProperties.field39705;
+   public static final EnumProperty<PistonType> field19211 = BlockStateProperties.PISTON_TYPE;
+   public static final BooleanProperty field19212 = BlockStateProperties.SHORT;
    public static final VoxelShape field19213 = Block.makeCuboidShape(12.0, 0.0, 0.0, 16.0, 16.0, 16.0);
    public static final VoxelShape field19214 = Block.makeCuboidShape(0.0, 0.0, 0.0, 4.0, 16.0, 16.0);
    public static final VoxelShape field19215 = Block.makeCuboidShape(0.0, 0.0, 12.0, 16.0, 16.0, 16.0);

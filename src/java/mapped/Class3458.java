@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 public class Class3458 extends Block {
    private static String[] field19278;
-   public static final BooleanProperty field19279 = BlockStateProperties.field39709;
+   public static final BooleanProperty field19279 = BlockStateProperties.UNSTABLE;
 
    public Class3458(Properties var1) {
       super(var1);

@@ -35,7 +35,7 @@ public class Class2912 extends Class2898<Class4712> {
                   if (!var9.equals(field17996)) {
                      var1.setBlockState(var9, Blocks.STONE.getDefaultState(), 2);
                   } else {
-                     var1.setBlockState(var9, Blocks.field36399.getDefaultState(), 2);
+                     var1.setBlockState(var9, Blocks.COBBLESTONE.getDefaultState(), 2);
                   }
                }
             }
