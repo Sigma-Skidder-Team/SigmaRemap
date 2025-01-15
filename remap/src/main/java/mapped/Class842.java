@@ -11,7 +11,7 @@ public class Class842 extends Class763
     private int field4489;
     private boolean field4490;
     
-    public Class842(final Class7499<? extends Class842> class7499, final Class1847 class7500) {
+    public Class842(final EntityType<? extends Class842> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4108 = 3;
     }
@@ -121,7 +121,7 @@ public class Class842 extends Class763
         }
     }
     
-    public static boolean method5035(final Class7499<Class842> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method5035(final EntityType<Class842> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return Class763.method4231(class7499, class7500, class7501, class7502, random) && class7500.method7132(class7502.getX() + 0.5, class7502.getY() + 0.5, class7502.getZ() + 0.5, 5.0, true) == null;
     }
     

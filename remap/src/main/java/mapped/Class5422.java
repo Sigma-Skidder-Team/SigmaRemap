@@ -22,7 +22,7 @@ public class Class5422 extends Class5419<Class824>
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
-        return Class6793.method20786(class1850.method2618(), Class8233.field33811, Class7499.field29042);
+        return Class6793.method20786(class1850.method2618(), Class8233.field33811, EntityType.field29042);
     }
     
     public boolean method16560(final Class1849 class1849, final Class824 class1850, final long n) {
@@ -66,9 +66,9 @@ public class Class5422 extends Class5419<Class824>
     
     private static void method16565(final Class824 class824, final Set<Class3820> set, final Class511 class825) {
         final Class443 method4837 = class824.method4837();
-        Class8321 field34174 = Class8321.field34174;
+        ItemStack field34174 = ItemStack.field34174;
         for (int i = 0; i < method4837.method2239(); ++i) {
-            final Class8321 method4838 = method4837.method2157(i);
+            final ItemStack method4838 = method4837.method2157(i);
             if (!method4838.method27620()) {
                 final Class3820 method4839 = method4838.method27622();
                 if (set.contains(method4839)) {
@@ -83,7 +83,7 @@ public class Class5422 extends Class5419<Class824>
                         n = method4838.method27690() / 2;
                     }
                     method4838.method27693(n);
-                    field34174 = new Class8321(method4839, n);
+                    field34174 = new ItemStack(method4839, n);
                     break;
                 }
             }

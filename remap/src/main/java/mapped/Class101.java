@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public enum Class101
 {
     field297(-1, ""), 
@@ -28,7 +30,7 @@ public enum Class101
         return this.field303;
     }
     
-    public Class2250 method587() {
+    public ITextComponent method587() {
         return new Class2259("gameMode." + this.field303, new Object[0]);
     }
     

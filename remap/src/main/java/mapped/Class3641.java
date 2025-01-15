@@ -4,11 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.MarkerManager;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import javax.annotation.Nullable;
-import java.security.Key;
 import javax.crypto.SecretKey;
 import java.io.Serializable;
 import io.netty.channel.ChannelHandler;
@@ -53,7 +53,7 @@ public class Class3641 extends SimpleChannelInboundHandler<Class4252<?>>
     private Channel field16899;
     private SocketAddress field16900;
     private Class5801 field16901;
-    private Class2250 field16902;
+    private ITextComponent field16902;
     private boolean field16903;
     private boolean field16904;
     private int field16905;
@@ -243,7 +243,7 @@ public class Class3641 extends SimpleChannelInboundHandler<Class4252<?>>
         return this.field16900;
     }
     
-    public void method11181(final Class2250 field16902) {
+    public void method11181(final ITextComponent field16902) {
         if (this.field16899.isOpen()) {
             this.field16899.close().awaitUninterruptibly();
             this.field16902 = field16902;
@@ -302,7 +302,7 @@ public class Class3641 extends SimpleChannelInboundHandler<Class4252<?>>
     }
     
     @Nullable
-    public Class2250 method11190() {
+    public ITextComponent method11190() {
         return this.field16902;
     }
     

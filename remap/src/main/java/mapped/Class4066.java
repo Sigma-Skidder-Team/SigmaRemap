@@ -13,8 +13,8 @@ public class Class4066 extends Class3820
     }
     
     @Override
-    public Class8321 method11707(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
-        final Class8321 method11707 = super.method11707(class8321, class8322, class8323);
-        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new Class8321(Class7739.field31300);
+    public ItemStack method11707(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+        final ItemStack method11707 = super.method11707(class8321, class8322, class8323);
+        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new ItemStack(Class7739.field31300);
     }
 }

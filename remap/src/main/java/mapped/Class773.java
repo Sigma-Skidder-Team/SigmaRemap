@@ -21,7 +21,7 @@ public class Class773 extends Class772 implements Class774, Class768
     private static final Class8810<Boolean> field4166;
     private final Class443 field4167;
     
-    public Class773(final Class7499<? extends Class773> class7499, final Class1847 class7500) {
+    public Class773(final EntityType<? extends Class773> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4167 = new Class443(5);
     }
@@ -70,7 +70,7 @@ public class Class773 extends Class772 implements Class774, Class768
         super.method1761(class51);
         final Class52 class52 = new Class52();
         for (int i = 0; i < this.field4167.method2239(); ++i) {
-            final Class8321 method2157 = this.field4167.method2157(i);
+            final ItemStack method2157 = this.field4167.method2157(i);
             if (!method2157.method27620()) {
                 ((AbstractList<Class51>)class52).add(method2157.method27627(new Class51()));
             }
@@ -94,7 +94,7 @@ public class Class773 extends Class772 implements Class774, Class768
         super.method1760(class51);
         final Class52 method328 = class51.method328("Inventory", 10);
         for (int i = 0; i < method328.size(); ++i) {
-            final Class8321 method329 = Class8321.method27619(method328.method346(i));
+            final ItemStack method329 = ItemStack.method27619(method328.method346(i));
             if (!method329.method27620()) {
                 this.field4167.method2258(method329);
             }
@@ -123,7 +123,7 @@ public class Class773 extends Class772 implements Class774, Class768
     
     @Override
     public void method4184(final Class9592 class9592) {
-        final Class8321 class9593 = new Class8321(Class7739.field31611);
+        final ItemStack class9593 = new ItemStack(Class7739.field31611);
         if (this.field2423.nextInt(300) == 0) {
             final HashMap hashMap = Maps.newHashMap();
             hashMap.put(Class7882.field32381, 1);
@@ -155,7 +155,7 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public void method4252(final Class511 class511, final float n) {
         final Class316 method23100 = Class7476.method23100(this, Class7739.field31611);
-        final Class8321 method23101 = this.method2715(method23100);
+        final ItemStack method23101 = this.method2715(method23100);
         if (this.method4218(Class7739.field31611)) {
             Class4086.method12304(this.field2391, this, method23100, method23101, 1.6f, (float)(14 - this.field2391.method6954().method8235() * 4));
         }
@@ -163,7 +163,7 @@ public class Class773 extends Class772 implements Class774, Class768
     }
     
     @Override
-    public void method4281(final Class511 class511, final Class8321 class512, final Class401 class513, final float n) {
+    public void method4281(final Class511 class511, final ItemStack class512, final Class401 class513, final float n) {
         final Entity class514 = (Entity)class513;
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.getPosZ() - this.getPosZ();
@@ -189,10 +189,10 @@ public class Class773 extends Class772 implements Class774, Class768
     
     @Override
     public void method4165(final Class427 class427) {
-        final Class8321 method2107 = class427.method2107();
+        final ItemStack method2107 = class427.method2107();
         if (!(method2107.method27622() instanceof Class4044)) {
             if (this.method4283(method2107.method27622())) {
-                final Class8321 method2108 = this.field4167.method2258(method2107);
+                final ItemStack method2108 = this.field4167.method2258(method2107);
                 if (!method2108.method27620()) {
                     method2107.method27691(method2108.method27690());
                 }
@@ -211,7 +211,7 @@ public class Class773 extends Class772 implements Class774, Class768
     }
     
     @Override
-    public boolean method1893(final int n, final Class8321 class8321) {
+    public boolean method1893(final int n, final ItemStack class8321) {
         if (super.method1893(n, class8321)) {
             return true;
         }
@@ -227,7 +227,7 @@ public class Class773 extends Class772 implements Class774, Class768
     public void method4263(final int n, final boolean b) {
         final Class8792 method4292 = this.method4292();
         if (this.field2423.nextFloat() <= method4292.method30666()) {
-            final Class8321 class8321 = new Class8321(Class7739.field31611);
+            final ItemStack class8321 = new ItemStack(Class7739.field31611);
             final HashMap hashMap = Maps.newHashMap();
             if (n <= method4292.method30665(Class2113.field12292)) {
                 if (n > method4292.method30665(Class2113.field12291)) {

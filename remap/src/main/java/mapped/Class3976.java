@@ -69,7 +69,7 @@ public class Class3976 extends Class3833
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        final Class8321 method2715 = class7099.method2715(class7100);
+        final ItemStack method2715 = class7099.method2715(class7100);
         final Class3820 method2716 = method2715.method27622();
         if (method2716 != Class7739.field31277 && method2716 != Class7739.field31511) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);

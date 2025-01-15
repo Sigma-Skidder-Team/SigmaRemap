@@ -5,25 +5,27 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class546 extends Class527
 {
-    private final Class2250 field3290;
+    private final ITextComponent field3290;
     private final List<String> field3291;
     public String field3292;
     public String field3293;
     private int field3294;
     public final BooleanConsumer field3295;
     
-    public Class546(final BooleanConsumer booleanConsumer, final Class2250 class2250, final Class2250 class2251) {
+    public Class546(final BooleanConsumer booleanConsumer, final ITextComponent class2250, final ITextComponent class2251) {
         this(booleanConsumer, class2250, class2251, Class8822.method30773("gui.yes", new Object[0]), Class8822.method30773("gui.no", new Object[0]));
     }
     
-    public Class546(final BooleanConsumer field3295, final Class2250 class2250, final Class2250 field3296, final String field3297, final String field3298) {
+    public Class546(final BooleanConsumer field3295, final ITextComponent class2250, final ITextComponent field3296, final String field3297, final String field3298) {
         super(class2250);
         this.field3291 = Lists.newArrayList();
         this.field3295 = field3295;

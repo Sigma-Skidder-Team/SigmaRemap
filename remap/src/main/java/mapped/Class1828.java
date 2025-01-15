@@ -16,7 +16,7 @@ public class Class1828<T extends Class511> extends Class1827<T, Class5857<T>>
     
     @Override
     public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
-        final Class8321 method2713 = t.method2713();
+        final ItemStack method2713 = t.method2713();
         class7351.method22567();
         if (method2713.method27622() == Class7739.field31441) {
             this.method6559().method17577().method18645(class7351);

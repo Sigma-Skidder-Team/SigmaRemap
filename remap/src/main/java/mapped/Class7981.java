@@ -59,7 +59,7 @@ public class Class7981
                 class7492.method23257(new Class2259("commands.effect.give.success.multiple", new Object[] { class7493.method16456(), collection.size(), intValue / 20 }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.effect.give.success.single", new Object[] { class7493.method16456(), ((Entity)collection.iterator().next()).method1871(), intValue / 20 }), true);
+                class7492.method23257(new Class2259("commands.effect.give.success.single", new Object[] { class7493.method16456(), ((Entity)collection.iterator().next()).getDisplayName(), intValue / 20 }), true);
             }
             return n3;
         }
@@ -82,7 +82,7 @@ public class Class7981
                 class7492.method23257(new Class2259("commands.effect.clear.everything.success.multiple", new Object[] { collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.effect.clear.everything.success.single", new Object[] { ((Entity)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.effect.clear.everything.success.single", new Object[] { ((Entity)collection.iterator().next()).getDisplayName() }), true);
             }
             return n;
         }
@@ -105,7 +105,7 @@ public class Class7981
                 class7492.method23257(new Class2259("commands.effect.clear.specific.success.multiple", new Object[] { class7493.method16456(), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.effect.clear.specific.success.single", new Object[] { class7493.method16456(), ((Entity)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.effect.clear.specific.success.single", new Object[] { class7493.method16456(), ((Entity)collection.iterator().next()).getDisplayName() }), true);
             }
             return n;
         }

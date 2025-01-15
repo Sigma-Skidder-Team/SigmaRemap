@@ -26,7 +26,7 @@ public class Class4231 extends Class4211
         return new Class4231(class9342, class9343, class9344);
     }
     
-    public boolean method12725(final Class513 class513, final Class8321 class514, final Class425 class515, final Collection<Class8321> collection) {
+    public boolean method12725(final Class513 class513, final ItemStack class514, final Class425 class515, final Collection<ItemStack> collection) {
         if (!this.field19037.method34627(class514)) {
             return false;
         }
@@ -38,7 +38,7 @@ public class Class4231 extends Class4211
                         n = 1;
                     }
                 }
-                final Iterator<Class8321> iterator = collection.iterator();
+                final Iterator<ItemStack> iterator = collection.iterator();
                 while (iterator.hasNext()) {
                     if (!this.field19039.method34627(iterator.next())) {
                         continue;

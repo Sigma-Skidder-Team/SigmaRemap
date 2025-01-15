@@ -31,7 +31,7 @@ public class Class425 extends Entity
     private final int field2595;
     
     private Class425(final Class1847 class1847, final Class512 field2586, final int b, final int b2) {
-        super(Class7499.field29059, class1847);
+        super(EntityType.field29059, class1847);
         this.field2593 = Class2064.field11816;
         this.field2447 = true;
         this.field2586 = field2586;
@@ -177,8 +177,8 @@ public class Class425 extends Entity
     }
     
     private boolean method2072() {
-        final Class8321 method2713 = this.field2586.method2713();
-        final Class8321 method2714 = this.field2586.method2714();
+        final ItemStack method2713 = this.field2586.method2713();
+        final ItemStack method2714 = this.field2586.method2714();
         final boolean b = method2713.method27622() == Class7739.field31376;
         final boolean b2 = method2714.method27622() == Class7739.field31376;
         if (!this.field2586.field2410) {
@@ -345,14 +345,14 @@ public class Class425 extends Entity
     public void method1760(final Class51 class51) {
     }
     
-    public int method2077(final Class8321 class8321) {
+    public int method2077(final ItemStack class8321) {
         if (!this.field2391.field10067 && this.field2586 != null) {
             int n = 0;
             if (this.field2592 == null) {
                 if (this.field2588 > 0) {
-                    final List<Class8321> method34485 = this.field2391.method6679().method1581().method6402(Class9020.field38116).method34485(new Class9098((Class1849)this.field2391).method32877(Class6683.field26367, new BlockPos(this)).method32877(Class6683.field26370, class8321).method32873(this.field2423).method32876(this.field2594 + this.field2586.method2907()).method32883(Class7104.field27714));
+                    final List<ItemStack> method34485 = this.field2391.method6679().method1581().method6402(Class9020.field38116).method34485(new Class9098((Class1849)this.field2391).method32877(Class6683.field26367, new BlockPos(this)).method32877(Class6683.field26370, class8321).method32873(this.field2423).method32876(this.field2594 + this.field2586.method2907()).method32883(Class7104.field27714));
                     Class7770.field31804.method13808((Class513)this.field2586, class8321, this, method34485);
-                    for (final Class8321 class8322 : method34485) {
+                    for (final ItemStack class8322 : method34485) {
                         final Class427 class8323 = new Class427(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ(), class8322);
                         final double n2 = this.field2586.getPosX() - this.getPosX();
                         final double n3 = this.field2586.getPosY() - this.getPosY();
@@ -370,7 +370,7 @@ public class Class425 extends Entity
             }
             else {
                 this.method2078();
-                Class7770.field31804.method13808((Class513)this.field2586, class8321, this, (Collection<Class8321>)Collections.emptyList());
+                Class7770.field31804.method13808((Class513)this.field2586, class8321, this, (Collection<ItemStack>)Collections.emptyList());
                 this.field2391.method6761(this, (byte)31);
                 n = ((this.field2592 instanceof Class427) ? 3 : 5);
             }

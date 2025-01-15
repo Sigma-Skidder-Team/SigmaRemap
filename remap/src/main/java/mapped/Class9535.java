@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
@@ -66,41 +67,41 @@ public class Class9535
         }
     }
     
-    public Class2250 method35595() {
+    public ITextComponent method35595() {
         if (!this.field41036.isEmpty()) {
             final Class8779 method35597 = this.method35597();
             final Class8779 class8779 = this.field41036.get(this.field41036.size() - 1);
-            final Class2250 method35598 = class8779.method30541();
+            final ITextComponent method35598 = class8779.method30541();
             final Entity method35599 = class8779.method30537().method25714();
-            Class2250 method35602;
+            ITextComponent method35602;
             if (method35597 != null && class8779.method30537() == Class7929.field32572) {
-                final Class2250 method35600 = method35597.method30541();
+                final ITextComponent method35600 = method35597.method30541();
                 if (method35597.method30537() != Class7929.field32572 && method35597.method30537() != Class7929.field32574) {
                     if (method35600 != null && (method35598 == null || !method35600.equals(method35598))) {
                         final Entity method35601 = method35597.method30537().method25714();
-                        final Class8321 class8780 = (method35601 instanceof Class511) ? ((Class511)method35601).method2713() : Class8321.field34174;
+                        final ItemStack class8780 = (method35601 instanceof Class511) ? ((Class511)method35601).method2713() : ItemStack.field34174;
                         if (!class8780.method27620() && class8780.method27667()) {
-                            method35602 = new Class2259("death.fell.assist.item", new Object[] { this.field41037.method1871(), method35600, class8780.method27684() });
+                            method35602 = new Class2259("death.fell.assist.item", new Object[] { this.field41037.getDisplayName(), method35600, class8780.method27684() });
                         }
                         else {
-                            method35602 = new Class2259("death.fell.assist", new Object[] { this.field41037.method1871(), method35600 });
+                            method35602 = new Class2259("death.fell.assist", new Object[] { this.field41037.getDisplayName(), method35600 });
                         }
                     }
                     else if (method35598 == null) {
-                        method35602 = new Class2259("death.fell.killer", new Object[] { this.field41037.method1871() });
+                        method35602 = new Class2259("death.fell.killer", new Object[] { this.field41037.getDisplayName() });
                     }
                     else {
-                        final Class8321 class8781 = (method35599 instanceof Class511) ? ((Class511)method35599).method2713() : Class8321.field34174;
+                        final ItemStack class8781 = (method35599 instanceof Class511) ? ((Class511)method35599).method2713() : ItemStack.field34174;
                         if (!class8781.method27620() && class8781.method27667()) {
-                            method35602 = new Class2259("death.fell.finish.item", new Object[] { this.field41037.method1871(), method35598, class8781.method27684() });
+                            method35602 = new Class2259("death.fell.finish.item", new Object[] { this.field41037.getDisplayName(), method35598, class8781.method27684() });
                         }
                         else {
-                            method35602 = new Class2259("death.fell.finish", new Object[] { this.field41037.method1871(), method35598 });
+                            method35602 = new Class2259("death.fell.finish", new Object[] { this.field41037.getDisplayName(), method35598 });
                         }
                     }
                 }
                 else {
-                    method35602 = new Class2259("death.fell.accident." + this.method35598(method35597), new Object[] { this.field41037.method1871() });
+                    method35602 = new Class2259("death.fell.accident." + this.method35598(method35597), new Object[] { this.field41037.getDisplayName() });
                 }
             }
             else {
@@ -108,7 +109,7 @@ public class Class9535
             }
             return method35602;
         }
-        return new Class2259("death.attack.generic", new Object[] { this.field41037.method1871() });
+        return new Class2259("death.attack.generic", new Object[] { this.field41037.getDisplayName() });
     }
     
     @Nullable

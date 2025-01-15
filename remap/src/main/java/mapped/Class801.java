@@ -19,7 +19,7 @@ public class Class801 extends Class789
     private int field4303;
     private int field4304;
     
-    public Class801(final Class7499<? extends Class801> class7499, final Class1847 class7500) {
+    public Class801(final EntityType<? extends Class801> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -115,7 +115,7 @@ public class Class801 extends Class789
         if (super.method4195(class512, class513)) {
             return true;
         }
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31552) {
             method2715.method27640(class512, this, class513);
             return true;
@@ -152,12 +152,12 @@ public class Class801 extends Class789
     
     @Override
     public void method1834(final Class422 class422) {
-        final Class828 class423 = Class7499.field29014.method23371(this.field2391);
-        class423.method1803(Class2215.field13600, new Class8321(Class7739.field31302));
+        final Class828 class423 = EntityType.field29014.method23371(this.field2391);
+        class423.method1803(Class2215.field13600, new ItemStack(Class7739.field31302));
         class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
         class423.method4211(this.method4214());
-        if (this.method1874()) {
-            class423.method1872(this.method1873());
+        if (this.hasCustomName()) {
+            class423.method1872(this.getCustomName());
             class423.method1875(this.method1876());
         }
         this.field2391.method6886(class423);
@@ -224,11 +224,11 @@ public class Class801 extends Class789
     }
     
     public Class801 method4628(final Class788 class788) {
-        return Class7499.field29012.method23371(this.field2391);
+        return EntityType.field29012.method23371(this.field2391);
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return Class801.field4301.test(class8321);
     }
     

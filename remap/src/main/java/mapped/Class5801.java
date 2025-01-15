@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public interface Class5801
 {
-    void method17291(final Class2250 p0);
+    void method17291(final ITextComponent p0);
     
     Class3641 method17369();
 }

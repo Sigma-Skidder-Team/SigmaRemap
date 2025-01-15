@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.function.Supplier;
@@ -23,7 +25,7 @@ public class Class1922 extends Class1921
         this.field10452 = method6637;
     }
     
-    public Class1922(final String s, final boolean b, final Supplier<Class1727> supplier, final Class2250 class2250, final Class2250 class2251, final Class2009 class2252, final Class2043 class2253, final boolean b2, final Class1846 field10452) {
+    public Class1922(final String s, final boolean b, final Supplier<Class1727> supplier, final ITextComponent class2250, final ITextComponent class2251, final Class2009 class2252, final Class2043 class2253, final boolean b2, final Class1846 field10452) {
         super(s, b, supplier, class2250, class2251, class2252, class2253, b2);
         this.field10452 = field10452;
     }

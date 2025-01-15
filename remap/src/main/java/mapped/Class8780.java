@@ -4,9 +4,6 @@
 
 package mapped;
 
-import java.util.stream.Stream;
-import com.mojang.datafixers.Typed;
-import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.TypeRewriteRule;
@@ -14,6 +11,7 @@ import java.util.Optional;
 import com.mojang.datafixers.DataFixUtils;
 import java.util.function.Function;
 import com.google.gson.JsonParseException;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.StringUtils;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.schemas.Schema;
@@ -33,7 +31,7 @@ public class Class8780 extends DataFix
             else {
                 dynamic4.asString("");
                 final String anObject;
-                Class2250 class2250 = null;
+                ITextComponent class2250 = null;
                 if (!"null".equals(anObject) && !StringUtils.isEmpty((CharSequence)anObject)) {
                     if (anObject.charAt(0) != '\"' || anObject.charAt(anObject.length() - 1) != '\"') {
                         if (anObject.charAt(0) != '{' || anObject.charAt(anObject.length() - 1) != '}') {
@@ -42,7 +40,7 @@ public class Class8780 extends DataFix
                         }
                     }
                     try {
-                        class2250 = Class9583.method35925(Class6151.field24883, anObject, Class2250.class, true);
+                        class2250 = Class9583.method35925(Class6151.field24883, anObject, ITextComponent.class, true);
                         if (class2250 == null) {
                             class2250 = new Class2260("");
                         }

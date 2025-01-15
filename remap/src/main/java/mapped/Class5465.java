@@ -81,7 +81,7 @@ public class Class5465 extends Class5419<Class824>
         final Class365<Class824> method2618 = class824.method2618();
         if (method2618.method1198(Class8233.field33812).isPresent()) {
             final Class824 method2619 = this.method16694(class824);
-            if (Class6793.method20786(method2618, Class8233.field33812, Class7499.field29042)) {
+            if (Class6793.method20786(method2618, Class8233.field33812, EntityType.field29042)) {
                 if (class824.method4873()) {
                     if (method2619.method4873()) {
                         return true;

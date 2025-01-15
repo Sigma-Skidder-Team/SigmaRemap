@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.Comparator;
@@ -68,7 +70,7 @@ import java.util.concurrent.CompletableFuture;
 import java.io.File;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class394 extends Class871<Class1634> implements Class868, Class397, AutoCloseable, Runnable
+public abstract class Class394 extends Class871<Class1634> implements Class868, ICommandSource, AutoCloseable, Runnable
 {
     private static final Logger field2292;
     public static final File field2293;
@@ -112,7 +114,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     private String field2331;
     private volatile boolean field2332;
     private long field2333;
-    private Class2250 field2334;
+    private ITextComponent field2334;
     private boolean field2335;
     private boolean field2336;
     private final YggdrasilAuthenticationService field2337;
@@ -212,9 +214,9 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             final Class8660 method25791 = this.method1512().method25791(this.method1501());
             if (method25791 != null) {
                 final Class9495 class9495 = new Class9495(this.method1501(), this.method1512(), method25791, this.field2363);
-                Class2250 class9496 = null;
+                ITextComponent class9496 = null;
                 while (!class9495.method35338()) {
-                    final Class2250 method25792 = class9495.method35344();
+                    final ITextComponent method25792 = class9495.method35344();
                     if (class9496 != method25792) {
                         class9496 = method25792;
                         Class394.field2292.info(class9495.method35344().getString());
@@ -238,7 +240,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         }
     }
     
-    public synchronized void method1437(final Class2250 field2334) {
+    public synchronized void method1437(final ITextComponent field2334) {
         this.field2334 = field2334;
     }
     
@@ -930,7 +932,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
         Class394.field2292.info(class2250.getString());
     }
     
@@ -1350,12 +1352,12 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     @Override
-    public boolean method1575() {
+    public boolean shouldReceiveFeedback() {
         return true;
     }
     
     @Override
-    public boolean method1576() {
+    public boolean shouldReceiveErrors() {
         return true;
     }
     

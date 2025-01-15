@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.stream.Collector;
 import com.google.common.collect.ImmutableList;
-import java.util.function.Function;
 import com.google.common.collect.Streams;
 import java.util.List;
 import com.google.gson.JsonDeserializationContext;
@@ -15,6 +14,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6232 extends Class6227<Class140>
 {
@@ -28,7 +28,7 @@ public class Class6232 extends Class6227<Class140>
         final JsonArray jsonArray = new JsonArray();
         final Iterator iterator = Class140.method688(class140).iterator();
         while (iterator.hasNext()) {
-            jsonArray.add(Class5953.method17870((Class2250)iterator.next()));
+            jsonArray.add(Class5953.method17870((ITextComponent)iterator.next()));
         }
         jsonObject.add("lore", (JsonElement)jsonArray);
         if (Class140.method689(class140) != null) {
@@ -37,6 +37,6 @@ public class Class6232 extends Class6227<Class140>
     }
     
     public Class140 method18551(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {
-        return new Class140(array, Class9583.method35901(jsonObject, "replace", false), Streams.stream((Iterable)Class9583.method35917(jsonObject, "lore")).map(Class5953::method17872).collect((Collector<? super Object, Object, List<Class2250>>)ImmutableList.toImmutableList()), Class9583.method35921(jsonObject, "entity", (Class2065)null, jsonDeserializationContext, Class2065.class));
+        return new Class140(array, Class9583.method35901(jsonObject, "replace", false), Streams.stream((Iterable)Class9583.method35917(jsonObject, "lore")).map(Class5953::method17872).collect((Collector<? super Object, Object, List<ITextComponent>>)ImmutableList.toImmutableList()), Class9583.method35921(jsonObject, "entity", (Class2065)null, jsonDeserializationContext, Class2065.class));
     }
 }

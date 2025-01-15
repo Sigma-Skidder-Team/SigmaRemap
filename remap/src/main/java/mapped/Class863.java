@@ -14,12 +14,12 @@ public class Class863 extends Class860
 {
     private static String[] field4606;
     
-    public Class863(final Class7499<? extends Class863> class7499, final Class1847 class7500) {
+    public Class863(final EntityType<? extends Class863> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class863(final Class1847 class1847, final BlockPos class1848) {
-        super(Class7499.field28995, class1847, class1848);
+        super(EntityType.field28995, class1847, class1848);
         this.method1656(class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
         this.method1889(new AxisAlignedBB(this.getPosX() - 0.1875, this.getPosY() - 0.25 + 0.125, this.getPosZ() - 0.1875, this.getPosX() + 0.1875, this.getPosY() + 0.25 + 0.125, this.getPosZ() + 0.1875));
         this.field2390 = true;

@@ -7,14 +7,16 @@ package mapped;
 import java.util.Iterator;
 import java.io.IOException;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Collection;
 
 public class Class4290 implements Class4252<Class5800>
 {
     private String field19235;
-    private Class2250 field19236;
-    private Class2250 field19237;
-    private Class2250 field19238;
+    private ITextComponent field19236;
+    private ITextComponent field19237;
+    private ITextComponent field19238;
     private String field19239;
     private String field19240;
     private Class2116 field19241;
@@ -139,7 +141,7 @@ public class Class4290 implements Class4252<Class5800>
         return this.field19235;
     }
     
-    public Class2250 method12881() {
+    public ITextComponent method12881() {
         return this.field19236;
     }
     
@@ -167,11 +169,11 @@ public class Class4290 implements Class4252<Class5800>
         return this.field19240;
     }
     
-    public Class2250 method12888() {
+    public ITextComponent method12888() {
         return this.field19237;
     }
     
-    public Class2250 method12889() {
+    public ITextComponent method12889() {
         return this.field19238;
     }
 }

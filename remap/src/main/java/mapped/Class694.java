@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -15,7 +16,7 @@ public class Class694 extends Class527
     private Class3641 field3818;
     private boolean field3819;
     private final Class527 field3820;
-    private Class2250 field3821;
+    private ITextComponent field3821;
     private long field3822;
     
     public Class694(final Class527 field3820, final Class869 field3821, final Class9575 class9575) {
@@ -47,7 +48,7 @@ public class Class694 extends Class527
         class913.start();
     }
     
-    private void method3873(final Class2250 field3821) {
+    private void method3873(final ITextComponent field3821) {
         this.field3821 = field3821;
     }
     

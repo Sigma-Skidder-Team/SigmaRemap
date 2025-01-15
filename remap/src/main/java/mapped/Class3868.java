@@ -29,8 +29,8 @@ public class Class3868 extends Class3869 implements Class3867
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return new Class8321(Class7521.field29244);
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return new ItemStack(Class7521.field29244);
     }
     
     @Nullable

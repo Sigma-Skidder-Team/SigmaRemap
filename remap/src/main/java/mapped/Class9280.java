@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.io.OutputStream;
+
 import java.util.TreeSet;
 import java.util.Set;
 import java.util.function.Function;
@@ -26,7 +26,7 @@ public class Class9280
             }
             Class4011.method12193();
             Class3965.method12094();
-            if (Class7499.method23354(Class7499.field29058) == null) {
+            if (EntityType.method23354(EntityType.field29058) == null) {
                 throw new IllegalStateException("Failed loading EntityTypes");
             }
             Class7652.method24248();
@@ -49,7 +49,7 @@ public class Class9280
     
     public static Set<String> method34256() {
         final TreeSet set = new TreeSet();
-        method34255(Class90.field210, Class7499::method23366, set);
+        method34255(Class90.field210, EntityType::method23366, set);
         method34255(Class90.field207, Class5328::method16455, set);
         method34255(Class90.field211, Class3820::method11717, set);
         method34255(Class90.field209, Class6257::method18598, set);

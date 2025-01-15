@@ -47,7 +47,7 @@ public class Class4012 extends Class3833
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        final Class8321 method2715 = class7099.method2715(class7100);
+        final ItemStack method2715 = class7099.method2715(class7100);
         if (method2715.method27620()) {
             return Class2201.field13402;
         }
@@ -57,7 +57,7 @@ public class Class4012 extends Class3833
             if (intValue < 3) {
                 if (!class7097.field10067) {
                     if (!class7099.field3025.field27304) {
-                        class7099.method2716(class7100, new Class8321(Class7739.field31349));
+                        class7099.method2716(class7100, new ItemStack(Class7739.field31349));
                     }
                     class7099.method2857(Class8276.field34024);
                     this.method12195(class7097, class7098, class7096, 3);
@@ -72,12 +72,12 @@ public class Class4012 extends Class3833
                     if (!class7099.field3025.field27304) {
                         method2715.method27693(1);
                         if (!method2715.method27620()) {
-                            if (!class7099.field3006.method2362(new Class8321(Class7739.field31350))) {
-                                class7099.method2822(new Class8321(Class7739.field31350), false);
+                            if (!class7099.field3006.method2362(new ItemStack(Class7739.field31350))) {
+                                class7099.method2822(new ItemStack(Class7739.field31350), false);
                             }
                         }
                         else {
-                            class7099.method2716(class7100, new Class8321(Class7739.field31350));
+                            class7099.method2716(class7100, new ItemStack(Class7739.field31350));
                         }
                     }
                     class7099.method2857(Class8276.field34025);
@@ -91,7 +91,7 @@ public class Class4012 extends Class3833
             if (intValue > 0) {
                 if (!class7097.field10067) {
                     if (!class7099.field3025.field27304) {
-                        final Class8321 method2717 = Class5333.method16476(new Class8321(Class7739.field31441), Class8644.field36251);
+                        final ItemStack method2717 = Class5333.method16476(new ItemStack(Class7739.field31441), Class8644.field36251);
                         class7099.method2857(Class8276.field34025);
                         method2715.method27693(1);
                         if (!method2715.method27620()) {
@@ -118,7 +118,7 @@ public class Class4012 extends Class3833
             if (intValue < 3) {
                 if (!class7097.field10067) {
                     if (!class7099.field3025.field27304) {
-                        final Class8321 class7102 = new Class8321(Class7739.field31442);
+                        final ItemStack class7102 = new ItemStack(Class7739.field31442);
                         class7099.method2857(Class8276.field34025);
                         class7099.method2716(class7100, class7102);
                         if (class7099 instanceof Class513) {
@@ -147,7 +147,7 @@ public class Class4012 extends Class3833
         if (intValue > 0 && method2716 instanceof Class4044) {
             if (Class465.method2385(method2715) > 0) {
                 if (!class7097.field10067) {
-                    final Class8321 method2718 = method2715.method27641();
+                    final ItemStack method2718 = method2715.method27641();
                     method2718.method27691(1);
                     Class465.method2388(method2718);
                     class7099.method2857(Class8276.field34027);
@@ -176,7 +176,7 @@ public class Class4012 extends Class3833
             return Class2201.field13402;
         }
         if (((Class4036)method2716).method12240() instanceof Class3942 && !class7097.method6678()) {
-            final Class8321 class7104 = new Class8321(Class7521.field29648, 1);
+            final ItemStack class7104 = new ItemStack(Class7521.field29648, 1);
             if (method2715.method27656()) {
                 class7104.method27663(method2715.method27657().method333());
             }

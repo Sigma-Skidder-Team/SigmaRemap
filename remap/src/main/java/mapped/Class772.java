@@ -6,7 +6,7 @@ package mapped;
 
 public abstract class Class772 extends Class776
 {
-    public Class772(final Class7499<? extends Class772> class7499, final Class1847 class7500) {
+    public Class772(final EntityType<? extends Class772> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     

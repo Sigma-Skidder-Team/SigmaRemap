@@ -17,7 +17,7 @@ public class Class6620 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return this.field26198.method4767(class8321);
     }
     

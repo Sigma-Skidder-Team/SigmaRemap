@@ -151,8 +151,8 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return new Class8321(this.method11960());
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return new ItemStack(this.method11960());
     }
     
     @Override

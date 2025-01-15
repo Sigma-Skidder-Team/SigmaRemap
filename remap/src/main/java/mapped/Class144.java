@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.INameable;
+
 import java.util.Set;
 
 public class Class144 extends Class126
@@ -23,12 +25,12 @@ public class Class144 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
-        final Class462 method23579 = class8322.method23579(this.field427.field1570);
-        if (method23579 instanceof Class462) {
-            final Class462 class8323 = method23579;
-            if (class8323.method1874()) {
-                class8321.method27665(class8323.method1871());
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
+        final INameable method23579 = class8322.method23579(this.field427.field1570);
+        if (method23579 instanceof INameable) {
+            final INameable class8323 = method23579;
+            if (class8323.hasCustomName()) {
+                class8321.method27665(class8323.getDisplayName());
             }
         }
         return class8321;

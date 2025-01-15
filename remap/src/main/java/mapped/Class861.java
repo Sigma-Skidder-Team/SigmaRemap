@@ -14,12 +14,12 @@ public class Class861 extends Class860
 {
     public Class8539 field4601;
     
-    public Class861(final Class7499<? extends Class861> class7499, final Class1847 class7500) {
+    public Class861(final EntityType<? extends Class861> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class861(final Class1847 class1847, final BlockPos class1848, final Direction class1849) {
-        super(Class7499.field29009, class1847, class1848);
+        super(EntityType.field29009, class1847, class1848);
         final ArrayList arrayList = Lists.newArrayList();
         int n = 0;
         for (final Class8539 field4601 : Class90.field227) {

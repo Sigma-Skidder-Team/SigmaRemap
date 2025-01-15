@@ -4,16 +4,18 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 import java.util.Iterator;
 
 public class Class533 extends Class527
 {
     private int field3181;
-    private final Class2250 field3182;
+    private final ITextComponent field3182;
     private final boolean field3183;
     
-    public Class533(final Class2250 field3182, final boolean field3183) {
+    public Class533(final ITextComponent field3182, final boolean field3183) {
         super(new Class2259(field3183 ? "deathScreen.title.hardcore" : "deathScreen.title", new Object[0]));
         this.field3182 = field3182;
         this.field3183 = field3183;
@@ -84,7 +86,7 @@ public class Class533 extends Class527
         if (this.field3182 != null) {
             if (n2 > 85) {
                 if (n2 < 94) {
-                    final Class2250 method3078 = this.method3078(n);
+                    final ITextComponent method3078 = this.method3078(n);
                     if (method3078 != null) {
                         if (method3078.method8456().method30411() != null) {
                             this.method3033(method3078, n, n2);
@@ -97,7 +99,7 @@ public class Class533 extends Class527
     }
     
     @Nullable
-    public Class2250 method3078(final int n) {
+    public ITextComponent method3078(final int n) {
         if (this.field3182 == null) {
             return null;
         }
@@ -106,7 +108,7 @@ public class Class533 extends Class527
         final int n3 = this.field3152 / 2 + method6617 / 2;
         int n4 = n2;
         if (n >= n2 && n <= n3) {
-            for (final Class2250 class2250 : this.field3182) {
+            for (final ITextComponent class2250 : this.field3182) {
                 n4 += this.field3150.field4643.method6617(Class8936.method31696(class2250.method8459(), false));
                 if (n4 <= n) {
                     continue;
@@ -123,7 +125,7 @@ public class Class533 extends Class527
         if (this.field3182 != null) {
             if (n2 > 85.0) {
                 if (n2 < 94.0) {
-                    final Class2250 method3078 = this.method3078((int)n);
+                    final ITextComponent method3078 = this.method3078((int)n);
                     if (method3078 != null) {
                         if (method3078.method8456().method30410() != null) {
                             if (method3078.method8456().method30410().method35309() == Class2075.field11971) {

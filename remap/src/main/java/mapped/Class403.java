@@ -13,26 +13,26 @@ public class Class403 extends Class402
 {
     private static final Class8810<Byte> field2484;
     private static final Class8810<Boolean> field2485;
-    private Class8321 field2486;
+    private ItemStack field2486;
     private boolean field2487;
     public int field2488;
     
-    public Class403(final Class7499<? extends Class403> class7499, final Class1847 class7500) {
+    public Class403(final EntityType<? extends Class403> class7499, final Class1847 class7500) {
         super(class7499, class7500);
-        this.field2486 = new Class8321(Class7739.field31607);
+        this.field2486 = new ItemStack(Class7739.field31607);
     }
     
-    public Class403(final Class1847 class1847, final Class511 class1848, final Class8321 class1849) {
-        super(Class7499.field29040, class1848, class1847);
-        this.field2486 = new Class8321(Class7739.field31607);
+    public Class403(final Class1847 class1847, final Class511 class1848, final ItemStack class1849) {
+        super(EntityType.field29040, class1848, class1847);
+        this.field2486 = new ItemStack(Class7739.field31607);
         this.field2486 = class1849.method27641();
         this.field2432.method33569(Class403.field2484, (byte)Class8742.method30219(class1849));
         this.field2432.method33569(Class403.field2485, class1849.method27671());
     }
     
     public Class403(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29040, n, n2, n3, class1847);
-        this.field2486 = new Class8321(Class7739.field31607);
+        super(EntityType.field29040, n, n2, n3, class1847);
+        this.field2486 = new ItemStack(Class7739.field31607);
     }
     
     @Override
@@ -83,7 +83,7 @@ public class Class403 extends Class402
     }
     
     @Override
-    public Class8321 method1974() {
+    public ItemStack method1974() {
         return this.field2486.method27641();
     }
     
@@ -109,7 +109,7 @@ public class Class403 extends Class402
         this.field2487 = true;
         Class7795 class7008 = Class8520.field35634;
         if (method21452.method1740(method21454, n)) {
-            if (method21452.method1642() == Class7499.field28977) {
+            if (method21452.method1642() == EntityType.field28977) {
                 return;
             }
             if (method21452 instanceof Class511) {
@@ -157,7 +157,7 @@ public class Class403 extends Class402
     public void method1760(final Class51 class51) {
         super.method1760(class51);
         if (class51.method316("Trident", 10)) {
-            this.field2486 = Class8321.method27619(class51.method327("Trident"));
+            this.field2486 = ItemStack.method27619(class51.method327("Trident"));
         }
         this.field2487 = class51.method329("DealtDamage");
         this.field2432.method33569(Class403.field2484, (byte)Class8742.method30219(this.field2486));

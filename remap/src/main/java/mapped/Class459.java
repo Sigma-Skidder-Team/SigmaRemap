@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class459 extends Class458
 {
     public Class459() {
@@ -11,7 +13,7 @@ public class Class459 extends Class458
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.dropper", new Object[0]);
     }
 }

@@ -27,6 +27,6 @@ public interface Class7079
     default void method21661() {
     }
     
-    default void method21662(final Class8321 class8321) {
+    default void method21662(final ItemStack class8321) {
     }
 }

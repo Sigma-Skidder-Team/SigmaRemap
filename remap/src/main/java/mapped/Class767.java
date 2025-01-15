@@ -8,6 +8,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.function.Predicate;
 import java.util.List;
@@ -30,7 +31,7 @@ public class Class767 extends Class763 implements Class766, Class768
     private static final Predicate<Class511> field4156;
     private static final Class7843 field4157;
     
-    public Class767(final Class7499<? extends Class767> class7499, final Class1847 class7500) {
+    public Class767(final EntityType<? extends Class767> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4148 = new float[2];
         this.field4149 = new float[2];
@@ -38,7 +39,7 @@ public class Class767 extends Class763 implements Class766, Class768
         this.field4151 = new float[2];
         this.field4152 = new int[2];
         this.field4153 = new int[2];
-        this.field4155 = (Class6879)new Class6879(this.method1871(), Class2200.field13395, Class342.field2105).method21067(true);
+        this.field4155 = (Class6879)new Class6879(this.getDisplayName(), Class2200.field13395, Class342.field2105).method21067(true);
         this.method2665(this.method2701());
         this.method4150().method24741(true);
         this.field4108 = 50;
@@ -74,15 +75,15 @@ public class Class767 extends Class763 implements Class766, Class768
     public void method1760(final Class51 class51) {
         super.method1760(class51);
         this.method4256(class51.method319("Invul"));
-        if (this.method1874()) {
-            this.field4155.method21070(this.method1871());
+        if (this.hasCustomName()) {
+            this.field4155.method21070(this.getDisplayName());
         }
     }
     
     @Override
-    public void method1872(final Class2250 class2250) {
+    public void method1872(final ITextComponent class2250) {
         super.method1872(class2250);
-        this.field4155.method21070(this.method1871());
+        this.field4155.method21070(this.getDisplayName());
     }
     
     @Override

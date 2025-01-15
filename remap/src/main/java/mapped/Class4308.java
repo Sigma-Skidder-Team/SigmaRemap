@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 import java.io.IOException;
 
@@ -12,12 +14,12 @@ public class Class4308 implements Class4252<Class5800>
     private static String[] field19313;
     private int field19314;
     private int field19315;
-    private Class2250 field19316;
+    private ITextComponent field19316;
     
     public Class4308() {
     }
     
-    public Class4308(final int field19314, final Class8471<?> class8471, final Class2250 field19315) {
+    public Class4308(final int field19314, final Class8471<?> class8471, final ITextComponent field19315) {
         this.field19314 = field19314;
         this.field19315 = Class90.field235.method504(class8471);
         this.field19316 = field19315;
@@ -50,7 +52,7 @@ public class Class4308 implements Class4252<Class5800>
         return Class90.field235.method499(this.field19315);
     }
     
-    public Class2250 method12953() {
+    public ITextComponent method12953() {
         return this.field19316;
     }
 }

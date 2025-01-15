@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Collection;
-
 public class Class3677 extends Class3666
 {
     private static String[] field16963;
@@ -18,7 +16,7 @@ public class Class3677 extends Class3666
         if (class473.method2418() == 3 && class473.method2417() == 3) {
             for (int i = 0; i < class473.method2418(); ++i) {
                 for (int j = 0; j < class473.method2417(); ++j) {
-                    final Class8321 method2157 = class473.method2157(i + j * class473.method2418());
+                    final ItemStack method2157 = class473.method2157(i + j * class473.method2418());
                     if (method2157.method27620()) {
                         return false;
                     }
@@ -38,15 +36,15 @@ public class Class3677 extends Class3666
         return false;
     }
     
-    public Class8321 method11303(final Class473 class473) {
-        final Class8321 method2157 = class473.method2157(1 + class473.method2418());
+    public ItemStack method11303(final Class473 class473) {
+        final ItemStack method2157 = class473.method2157(1 + class473.method2418());
         if (method2157.method27622() == Class7739.field31582) {
-            final Class8321 class474 = new Class8321(Class7739.field31581, 8);
+            final ItemStack class474 = new ItemStack(Class7739.field31581, 8);
             Class5333.method16476(class474, Class5333.method16474(method2157));
             Class5333.method16477(class474, Class5333.method16468(method2157));
             return class474;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override

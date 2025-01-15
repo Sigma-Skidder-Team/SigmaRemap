@@ -17,7 +17,7 @@ public class Class828 extends Class827
     private int field4437;
     private UUID field4438;
     
-    public Class828(final Class7499<? extends Class828> class7499, final Class1847 class7500) {
+    public Class828(final EntityType<? extends Class828> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1210, 8.0f);
     }
@@ -98,7 +98,7 @@ public class Class828 extends Class827
         super.method4172();
     }
     
-    public static boolean method4935(final Class7499<Class828> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4935(final EntityType<Class828> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6954() != Class2113.field12290;
     }
     
@@ -183,12 +183,12 @@ public class Class828 extends Class827
     
     @Override
     public void method4184(final Class9592 class9592) {
-        this.method1803(Class2215.field13600, new Class8321(Class7739.field31302));
+        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31302));
     }
     
     @Override
-    public Class8321 method4918() {
-        return Class8321.field34174;
+    public ItemStack method4918() {
+        return ItemStack.field34174;
     }
     
     @Override

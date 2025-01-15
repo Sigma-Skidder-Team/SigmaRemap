@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class6989 implements Class6988
@@ -22,7 +24,7 @@ public class Class6989 implements Class6988
     }
     
     @Override
-    public Class2250 method21401() {
+    public ITextComponent method21401() {
         return new Class2259("spectatorMenu.root.prompt", new Object[0]);
     }
 }

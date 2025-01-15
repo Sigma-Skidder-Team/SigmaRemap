@@ -20,7 +20,7 @@ public class Class9320
     private final Class122[] field40021;
     private final Predicate<Class7529> field40022;
     private final Class125[] field40023;
-    private final BiFunction<Class8321, Class7529, Class8321> field40024;
+    private final BiFunction<ItemStack, Class7529, ItemStack> field40024;
     private final Class5770 field40025;
     private final Class5772 field40026;
     
@@ -34,7 +34,7 @@ public class Class9320
         this.field40026 = field40024;
     }
     
-    private void method34511(final Consumer<Class8321> consumer, final Class7529 class7529) {
+    private void method34511(final Consumer<ItemStack> consumer, final Class7529 class7529) {
         final Random method23586 = class7529.method23586();
         final ArrayList arrayList = Lists.newArrayList();
         final MutableInt mutableInt = new MutableInt();
@@ -70,9 +70,9 @@ public class Class9320
         }
     }
     
-    public void method34512(final Consumer<Class8321> consumer, final Class7529 class7529) {
+    public void method34512(final Consumer<ItemStack> consumer, final Class7529 class7529) {
         if (this.field40022.test(class7529)) {
-            final Consumer<Class8321> method637 = Class125.method637(this.field40024, consumer, class7529);
+            final Consumer<ItemStack> method637 = Class125.method637(this.field40024, consumer, class7529);
             final Random method638 = class7529.method23586();
             for (int n = this.field40025.method17159(method638) + MathHelper.method35642(this.field40026.method17169(method638) * class7529.method23587()), i = 0; i < n; ++i) {
                 this.method34511(method637, class7529);

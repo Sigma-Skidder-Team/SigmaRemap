@@ -20,7 +20,7 @@ public class Class4612 extends Class4611<Class4240>
         return new Class4240(Class9342.method34628(jsonObject.get("item")), Class8685.method29756(jsonObject.get("levels")));
     }
     
-    public void method13730(final Class513 class513, final Class8321 class514, final int n) {
+    public void method13730(final Class513 class513, final ItemStack class514, final int n) {
         this.method13726(class513.method2957(), class516 -> class516.method12746(class515, n2));
     }
     

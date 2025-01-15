@@ -22,7 +22,7 @@ public class Class4240 extends Class4211
         return new Class4240(Class9342.field40107, Class8685.field36500);
     }
     
-    public boolean method12746(final Class8321 class8321, final int n) {
+    public boolean method12746(final ItemStack class8321, final int n) {
         return this.field19055.method34627(class8321) && this.field19056.method29755(n);
     }
     

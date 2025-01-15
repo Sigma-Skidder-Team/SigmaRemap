@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6319
 {
@@ -20,12 +21,12 @@ public class Class6319
         this.field25272 = field25272;
     }
     
-    public Class2250 method18705(final Class7492 class7492, final boolean b) throws CommandSyntaxException {
+    public ITextComponent method18705(final Class7492 class7492, final boolean b) throws CommandSyntaxException {
         if (this.field25272.length != 0 && b) {
             final Class2260 class7493 = new Class2260(this.field25271.substring(0, this.field25272[0].method27398()));
             int n = this.field25272[0].method27398();
             for (final Class8256 class7494 : this.field25272) {
-                final Class2250 method27400 = class7494.method27400(class7492);
+                final ITextComponent method27400 = class7494.method27400(class7492);
                 if (n < class7494.method27398()) {
                     class7493.method8457(this.field25271.substring(n, class7494.method27398()));
                 }

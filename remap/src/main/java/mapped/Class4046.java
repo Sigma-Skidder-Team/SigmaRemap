@@ -6,6 +6,8 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
+
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class4046 extends Class4043
@@ -15,7 +17,7 @@ public class Class4046 extends Class4043
     }
     
     @Override
-    public Class2250 method11729(final Class8321 class8321) {
+    public ITextComponent method11729(final ItemStack class8321) {
         if (class8321.method27622() == Class7739.field31525) {
             if (class8321.method27656()) {
                 Object o = null;

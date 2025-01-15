@@ -12,7 +12,7 @@ public class Class5590 extends Class5509
     private static Map<String, Integer> field22820;
     
     public Class5590() {
-        super(Class7499.field29017, "rabbit", 0.3f);
+        super(EntityType.field29017, "rabbit", 0.3f);
     }
     
     @Override

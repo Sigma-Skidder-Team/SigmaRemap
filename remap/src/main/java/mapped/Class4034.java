@@ -4,8 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.AbstractList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Class4034 extends Class3820
@@ -15,27 +16,27 @@ public class Class4034 extends Class3820
     }
     
     @Override
-    public boolean method11730(final Class8321 class8321) {
+    public boolean method11730(final ItemStack class8321) {
         return true;
     }
     
     @Override
-    public boolean method11732(final Class8321 class8321) {
+    public boolean method11732(final ItemStack class8321) {
         return false;
     }
     
-    public static Class52 method12225(final Class8321 class8321) {
+    public static Class52 method12225(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         return (method27657 == null) ? new Class52() : method27657.method328("StoredEnchantments", 10);
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11728(class8321, class8322, list, class8323);
-        Class8321.method27669(list, method12225(class8321));
+        ItemStack.method27669(list, method12225(class8321));
     }
     
-    public static void method12226(final Class8321 class8321, final Class6827 class8322) {
+    public static void method12226(final ItemStack class8321, final Class6827 class8322) {
         final Class52 method12225 = method12225(class8321);
         int n = 1;
         final Class1932 method12226 = Class90.field209.method503(class8322.field26818);
@@ -59,14 +60,14 @@ public class Class4034 extends Class3820
         class8321.method27658().method295("StoredEnchantments", method12225);
     }
     
-    public static Class8321 method12227(final Class6827 class6827) {
-        final Class8321 class6828 = new Class8321(Class7739.field31534);
+    public static ItemStack method12227(final Class6827 class6827) {
+        final ItemStack class6828 = new ItemStack(Class7739.field31534);
         method12226(class6828, class6827);
         return class6828;
     }
     
     @Override
-    public void method11735(final Class7207 class7207, final Class2265<Class8321> class7208) {
+    public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
         if (class7207 != Class7207.field27998) {
             if (class7207.method22123().length != 0) {
                 for (final Class6257 class7209 : Class90.field209) {

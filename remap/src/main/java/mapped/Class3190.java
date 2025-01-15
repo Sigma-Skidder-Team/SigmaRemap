@@ -67,7 +67,7 @@ public class Class3190 extends Class3167
                             if (this.field15594.containsKey(method12990.method1865())) {
                                 this.field15594.remove(method12990.method1865());
                             }
-                            this.field15594.put(method12990.method1865(), new Class8124(method12990.method1841().method8459() + " Unspawn", (int)method12990.field2395, (int)method12990.field2396, (int)method12990.field2397, Class265.field1284.field1292));
+                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().method8459() + " Unspawn", (int)method12990.field2395, (int)method12990.field2396, (int)method12990.field2397, Class265.field1284.field1292));
                         }
                     }
                 }

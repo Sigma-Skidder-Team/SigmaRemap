@@ -7,7 +7,7 @@ package mapped;
 public class Class5530 extends Class5528
 {
     public Class5530() {
-        super(Class7499.field29004, "spawner_minecart", 0.5f);
+        super(EntityType.field29004, "spawner_minecart", 0.5f);
     }
     
     @Override

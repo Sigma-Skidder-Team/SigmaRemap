@@ -84,40 +84,40 @@ public class Class3423 extends Class3418
     }
     
     @Override
-    public boolean method10857(final Class8321 class8321, final Class6601 class8322) {
+    public boolean method10857(final ItemStack class8321, final Class6601 class8322) {
         return false;
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
-        Class8321 class513 = Class8321.field34174;
+    public ItemStack method10858(final Class512 class512, final int n) {
+        ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
-                final Class8321 method20053 = class514.method20053();
+                final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
                 if (n != 2) {
                     if (n != 0 && n != 1) {
                         if (n >= 3 && n < 30) {
                             if (!this.method10888(method20053, 30, 39, false)) {
-                                return Class8321.field34174;
+                                return ItemStack.field34174;
                             }
                         }
                         else if (n >= 30) {
                             if (n < 39) {
                                 if (!this.method10888(method20053, 3, 30, false)) {
-                                    return Class8321.field34174;
+                                    return ItemStack.field34174;
                                 }
                             }
                         }
                     }
                     else if (!this.method10888(method20053, 3, 39, false)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                 }
                 else {
                     if (!this.method10888(method20053, 3, 39, true)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     class514.method20049(method20053, class513);
                     this.method10926();
@@ -126,10 +126,10 @@ public class Class3423 extends Class3418
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(Class8321.field34174);
+                    class514.method20055(ItemStack.field34174);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
                 class514.method20047(class512, method20053);
             }
@@ -154,11 +154,11 @@ public class Class3423 extends Class3418
                 class512.field3006.method2364(class512.field2391, this.field16183.method2159(1));
             }
             else {
-                final Class8321 method2159 = this.field16183.method2159(0);
+                final ItemStack method2159 = this.field16183.method2159(0);
                 if (!method2159.method27620()) {
                     class512.method2822(method2159, false);
                 }
-                final Class8321 method2160 = this.field16183.method2159(1);
+                final ItemStack method2160 = this.field16183.method2159(1);
                 if (!method2160.method27620()) {
                     class512.method2822(method2160, false);
                 }
@@ -168,14 +168,14 @@ public class Class3423 extends Class3418
     
     public void method10927(final int n) {
         if (this.method10931().size() > n) {
-            final Class8321 method2157 = this.field16183.method2157(0);
+            final ItemStack method2157 = this.field16183.method2157(0);
             if (!method2157.method27620()) {
                 if (!this.method10888(method2157, 3, 39, true)) {
                     return;
                 }
                 this.field16183.method2160(0, method2157);
             }
-            final Class8321 method2158 = this.field16183.method2157(1);
+            final ItemStack method2158 = this.field16183.method2157(1);
             if (!method2158.method27620()) {
                 if (!this.method10888(method2158, 3, 39, true)) {
                     return;
@@ -191,16 +191,16 @@ public class Class3423 extends Class3418
         }
     }
     
-    private void method10928(final int n, final Class8321 class8321) {
+    private void method10928(final int n, final ItemStack class8321) {
         if (!class8321.method27620()) {
             for (int i = 3; i < 39; ++i) {
-                final Class8321 method20053 = this.field16151.get(i).method20053();
+                final ItemStack method20053 = this.field16151.get(i).method20053();
                 if (!method20053.method27620()) {
                     if (this.method10929(class8321, method20053)) {
-                        final Class8321 method20054 = this.field16183.method2157(n);
+                        final ItemStack method20054 = this.field16183.method2157(n);
                         final int n2 = method20054.method27620() ? 0 : method20054.method27690();
                         final int min = Math.min(class8321.method27628() - n2, method20053.method27690());
-                        final Class8321 method20055 = method20053.method27641();
+                        final ItemStack method20055 = method20053.method27641();
                         final int n3 = n2 + min;
                         method20053.method27693(min);
                         method20055.method27691(n3);
@@ -214,8 +214,8 @@ public class Class3423 extends Class3418
         }
     }
     
-    private boolean method10929(final Class8321 class8321, final Class8321 class8322) {
-        return class8321.method27622() == class8322.method27622() && Class8321.method27642(class8321, class8322);
+    private boolean method10929(final ItemStack class8321, final ItemStack class8322) {
+        return class8321.method27622() == class8322.method27622() && ItemStack.method27642(class8321, class8322);
     }
     
     public void method10930(final Class57 class57) {

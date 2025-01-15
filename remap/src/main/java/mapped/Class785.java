@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public abstract class Class785 extends Class787
 {
-    public Class785(final Class7499<? extends Class785> class7499, final Class1847 class7500) {
+    public Class785(final EntityType<? extends Class785> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     

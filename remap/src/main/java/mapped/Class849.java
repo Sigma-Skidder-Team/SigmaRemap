@@ -11,7 +11,7 @@ public class Class849 extends Class763
     private int field4516;
     private static final Class8810<Byte> field4517;
     
-    public Class849(final Class7499<? extends Class849> class7499, final Class1847 class7500) {
+    public Class849(final EntityType<? extends Class849> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4515 = 0.5f;
         this.method4145(Class257.field1211, -1.0f);

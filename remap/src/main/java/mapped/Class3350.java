@@ -111,7 +111,7 @@ public class Class3350 extends Class3167
                 }
                 for (int j = 9; j < 45; ++j) {
                     if (Class3350.field15514.field4684.field3008.method10878(j).method20054()) {
-                        final Class8321 method20053 = Class3350.field15514.field4684.field3008.method10878(j).method20053();
+                        final ItemStack method20053 = Class3350.field15514.field4684.field3008.method10878(j).method20053();
                         if (method20053.method27622() instanceof Class4080) {
                             if (this.field15967) {
                                 if (!(Class3350.field15514.field4684.field3006.method2157(36 + Class2215.field13604.method8402()).method27622() instanceof Class4080)) {

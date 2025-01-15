@@ -11,20 +11,20 @@ import java.util.Iterator;
 
 public abstract class Class433 extends Class428 implements Class446, Class434
 {
-    private Class2265<Class8321> field2645;
+    private Class2265<ItemStack> field2645;
     private boolean field2646;
     private Class1932 field2647;
     private long field2648;
     
-    public Class433(final Class7499<?> class7499, final Class1847 class7500) {
+    public Class433(final EntityType<?> class7499, final Class1847 class7500) {
         super(class7499, class7500);
-        this.field2645 = Class2265.method8507(36, Class8321.field34174);
+        this.field2645 = Class2265.method8507(36, ItemStack.field34174);
         this.field2646 = true;
     }
     
-    public Class433(final Class7499<?> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
+    public Class433(final EntityType<?> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
         super(class7499, class7500, n, n2, n3);
-        this.field2645 = Class2265.method8507(36, Class8321.field34174);
+        this.field2645 = Class2265.method8507(36, ItemStack.field34174);
         this.field2646 = true;
     }
     
@@ -49,30 +49,30 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     }
     
     @Override
-    public Class8321 method2157(final int n) {
+    public ItemStack method2157(final int n) {
         this.method2163(null);
         return this.field2645.get(n);
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         this.method2163(null);
         return Class8508.method28422(this.field2645, n, n2);
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         this.method2163(null);
-        final Class8321 class8321 = this.field2645.get(n);
+        final ItemStack class8321 = this.field2645.get(n);
         if (!class8321.method27620()) {
-            this.field2645.set(n, Class8321.field34174);
+            this.field2645.set(n, ItemStack.field34174);
             return class8321;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
         this.method2163(null);
         this.field2645.set(n, class8321);
         if (!class8321.method27620()) {
@@ -83,7 +83,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     }
     
     @Override
-    public boolean method1893(final int n, final Class8321 class8321) {
+    public boolean method1893(final int n, final ItemStack class8321) {
         if (n >= 0 && n < this.method2239()) {
             this.method2160(n, class8321);
             return true;
@@ -134,7 +134,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     @Override
     public void method1760(final Class51 class51) {
         super.method1760(class51);
-        this.field2645 = Class2265.method8507(this.method2239(), Class8321.field34174);
+        this.field2645 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!class51.method316("LootTable", 8)) {
             Class8508.method28426(class51, this.field2645);
         }

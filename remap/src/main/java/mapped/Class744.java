@@ -6,6 +6,7 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class Class744 extends Class516<Class3439>
     private static final int field4019;
     private final Class6300 field4020;
     private List<Pair<Class230, Class181>> field4021;
-    private Class8321 field4022;
-    private Class8321 field4023;
-    private Class8321 field4024;
+    private ItemStack field4022;
+    private ItemStack field4023;
+    private ItemStack field4024;
     private boolean field4025;
     private boolean field4026;
     private boolean field4027;
@@ -25,11 +26,11 @@ public class Class744 extends Class516<Class3439>
     private boolean field4029;
     private int field4030;
     
-    public Class744(final Class3439 class3439, final Class464 class3440, final Class2250 class3441) {
+    public Class744(final Class3439 class3439, final Class464 class3440, final ITextComponent class3441) {
         super(class3439, class3440, class3441);
-        this.field4022 = Class8321.field34174;
-        this.field4023 = Class8321.field34174;
-        this.field4024 = Class8321.field34174;
+        this.field4022 = ItemStack.field34174;
+        this.field4023 = ItemStack.field34174;
+        this.field4024 = ItemStack.field34174;
         this.field4030 = 1;
         this.field4020 = Class4165.method12471();
         class3439.method10975(this::method4060);
@@ -44,7 +45,7 @@ public class Class744 extends Class516<Class3439>
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), 8.0f, 4.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
@@ -124,7 +125,7 @@ public class Class744 extends Class516<Class3439>
     }
     
     private void method4059(final int n, final int n2, final int n3) {
-        final Class8321 class8321 = new Class8321(Class7739.field31563);
+        final ItemStack class8321 = new ItemStack(Class7739.field31563);
         class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field812, Class181.field544).method33336(Class230.values()[n], Class181.field537).method33337());
         final Class7351 class8322 = new Class7351();
         class8322.method22567();
@@ -222,16 +223,16 @@ public class Class744 extends Class516<Class3439>
     }
     
     private void method4060() {
-        final Class8321 method20053 = ((Class3439)this.field3077).method10980().method20053();
+        final ItemStack method20053 = ((Class3439)this.field3077).method10980().method20053();
         if (!method20053.method27620()) {
             this.field4021 = Class465.method2387(((Class4044)method20053.method27622()).method12244(), Class465.method2382(method20053));
         }
         else {
             this.field4021 = null;
         }
-        final Class8321 method20054 = ((Class3439)this.field3077).method10977().method20053();
-        final Class8321 method20055 = ((Class3439)this.field3077).method10978().method20053();
-        final Class8321 method20056 = ((Class3439)this.field3077).method10979().method20053();
+        final ItemStack method20054 = ((Class3439)this.field3077).method10977().method20053();
+        final ItemStack method20055 = ((Class3439)this.field3077).method10978().method20053();
+        final ItemStack method20056 = ((Class3439)this.field3077).method10979().method20053();
         final Class51 method20057 = method20054.method27659("BlockEntityTag");
         boolean field4027 = false;
         Label_0160: {
@@ -249,9 +250,9 @@ public class Class744 extends Class516<Class3439>
             this.field4021 = null;
         }
         Label_0233: {
-            if (Class8321.method27643(method20054, this.field4022)) {
-                if (Class8321.method27643(method20055, this.field4023)) {
-                    if (Class8321.method27643(method20056, this.field4024)) {
+            if (ItemStack.method27643(method20054, this.field4022)) {
+                if (ItemStack.method27643(method20055, this.field4023)) {
+                    if (ItemStack.method27643(method20056, this.field4024)) {
                         break Label_0233;
                     }
                 }

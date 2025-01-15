@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class6865 implements Class6866
 {
     private static String[] field26895;
@@ -13,7 +15,7 @@ public class Class6865 implements Class6866
     private long field26899;
     private boolean field26900;
     
-    public Class6865(final Class2174 field26896, final Class2250 class2250, final Class2250 class2251) {
+    public Class6865(final Class2174 field26896, final ITextComponent class2250, final ITextComponent class2251) {
         this.field26896 = field26896;
         this.field26897 = class2250.getString();
         this.field26898 = ((class2251 != null) ? class2251.getString() : null);
@@ -38,7 +40,7 @@ public class Class6865 implements Class6866
         return (field26899 - this.field26899 >= 5000L) ? Class2204.field13418 : Class2204.field13417;
     }
     
-    public void method20979(final Class2250 class2250, final Class2250 class2251) {
+    public void method20979(final ITextComponent class2250, final ITextComponent class2251) {
         this.field26897 = class2250.getString();
         this.field26898 = ((class2251 != null) ? class2251.getString() : null);
         this.field26900 = true;
@@ -48,7 +50,7 @@ public class Class6865 implements Class6866
         return this.field26896;
     }
     
-    public static void method20981(final Class690 class690, final Class2174 class691, final Class2250 class692, final Class2250 class693) {
+    public static void method20981(final Class690 class690, final Class2174 class691, final ITextComponent class692, final ITextComponent class693) {
         final Class6865 class694 = class690.method3850((Class<? extends Class6865>)Class6865.class, (Object)class691);
         if (class694 != null) {
             class694.method20979(class692, class693);

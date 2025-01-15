@@ -7,6 +7,7 @@ package mapped;
 import java.util.AbstractList;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
 import com.google.common.collect.HashMultimap;
@@ -30,10 +31,10 @@ import java.util.Locale;
 import java.text.DecimalFormat;
 import org.apache.logging.log4j.Logger;
 
-public final class Class8321
+public final class ItemStack
 {
     private static final Logger field34173;
-    public static final Class8321 field34174;
+    public static final ItemStack field34174;
     public static final DecimalFormat field34175;
     public int field34176;
     private int field34177;
@@ -53,11 +54,11 @@ public final class Class8321
         return decimalFormat;
     }
     
-    public Class8321(final Class3832 class3832) {
+    public ItemStack(final Class3832 class3832) {
         this(class3832, 1);
     }
     
-    public Class8321(final Class3832 class3832, final int field34176) {
+    public ItemStack(final Class3832 class3832, final int field34176) {
         this.field34178 = ((class3832 != null) ? class3832.method11704() : null);
         this.field34176 = field34176;
         if (this.field34178 != null) {
@@ -73,7 +74,7 @@ public final class Class8321
         this.field34180 = this.method27620();
     }
     
-    private Class8321(final Class51 class51) {
+    private ItemStack(final Class51 class51) {
         this.field34178 = Class90.field211.method505(new Class1932(class51.method323("id")));
         this.field34176 = class51.method317("Count");
         if (class51.method316("tag", 10)) {
@@ -86,23 +87,23 @@ public final class Class8321
         this.method27618();
     }
     
-    public static Class8321 method27619(final Class51 class51) {
+    public static ItemStack method27619(final Class51 class51) {
         try {
-            return new Class8321(class51);
+            return new ItemStack(class51);
         }
         catch (final RuntimeException ex) {
-            Class8321.field34173.debug("Tried to load invalid item: {}", (Object)class51, (Object)ex);
-            return Class8321.field34174;
+            ItemStack.field34173.debug("Tried to load invalid item: {}", (Object)class51, (Object)ex);
+            return ItemStack.field34174;
         }
     }
     
     public boolean method27620() {
-        return this == Class8321.field34174 || this.method27622() == null || this.method27622() == Class7739.field30754 || this.field34176 <= 0;
+        return this == ItemStack.field34174 || this.method27622() == null || this.method27622() == Class7739.field30754 || this.field34176 <= 0;
     }
     
-    public Class8321 method27621(final int a) {
+    public ItemStack method27621(final int a) {
         final int min = Math.min(a, this.field34176);
-        final Class8321 method27641 = this.method27641();
+        final ItemStack method27641 = this.method27641();
         method27641.method27691(min);
         this.method27693(min);
         return method27641;
@@ -136,11 +137,11 @@ public final class Class8321
         return this.method27622().method11706(this, class7096);
     }
     
-    public Class9355<Class8321> method27625(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method27625(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
         return this.method27622().method11695(class1847, class1848, class1849);
     }
     
-    public Class8321 method27626(final Class1847 class1847, final Class511 class1848) {
+    public ItemStack method27626(final Class1847 class1847, final Class511 class1848) {
         return this.method27622().method11707(this, class1847, class1848);
     }
     
@@ -253,43 +254,43 @@ public final class Class8321
         return this.method27622().method11714(this, class512, class513, class514);
     }
     
-    public Class8321 method27641() {
+    public ItemStack method27641() {
         if (!this.method27620()) {
-            final Class8321 class8321 = new Class8321(this.method27622(), this.field34176);
+            final ItemStack class8321 = new ItemStack(this.method27622(), this.field34176);
             class8321.method27689(this.method27688());
             if (this.field34179 != null) {
                 class8321.field34179 = this.field34179.method333();
             }
             return class8321;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
-    public static boolean method27642(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method27642(final ItemStack class8321, final ItemStack class8322) {
         return (class8321.method27620() && class8322.method27620()) || (!class8321.method27620() && !class8322.method27620() && (class8321.field34179 != null || class8322.field34179 == null) && (class8321.field34179 == null || class8321.field34179.equals(class8322.field34179)));
     }
     
-    public static boolean method27643(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method27643(final ItemStack class8321, final ItemStack class8322) {
         return (class8321.method27620() && class8322.method27620()) || (!class8321.method27620() && !class8322.method27620() && class8321.method27644(class8322));
     }
     
-    private boolean method27644(final Class8321 class8321) {
+    private boolean method27644(final ItemStack class8321) {
         return this.field34176 == class8321.field34176 && this.method27622() == class8321.method27622() && (this.field34179 != null || class8321.field34179 == null) && (this.field34179 == null || this.field34179.equals(class8321.field34179));
     }
     
-    public static boolean method27645(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method27645(final ItemStack class8321, final ItemStack class8322) {
         return class8321 == class8322 || (!class8321.method27620() && !class8322.method27620() && class8321.method27647(class8322));
     }
     
-    public static boolean method27646(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method27646(final ItemStack class8321, final ItemStack class8322) {
         return class8321 == class8322 || (!class8321.method27620() && !class8322.method27620() && class8321.method27648(class8322));
     }
     
-    public boolean method27647(final Class8321 class8321) {
+    public boolean method27647(final ItemStack class8321) {
         return !class8321.method27620() && this.method27622() == class8321.method27622();
     }
     
-    public boolean method27648(final Class8321 class8321) {
+    public boolean method27648(final ItemStack class8321) {
         if (this.method27630()) {
             return !class8321.method27620() && this.method27622() == class8321.method27622();
         }
@@ -394,11 +395,11 @@ public final class Class8321
         }
     }
     
-    public Class2250 method27664() {
+    public ITextComponent method27664() {
         final Class51 method27660 = this.method27660("display");
         if (method27660 != null && method27660.method316("Name", 8)) {
             try {
-                final Class2250 method27661 = Class5953.method17871(method27660.method323("Name"));
+                final ITextComponent method27661 = Class5953.method17871(method27660.method323("Name"));
                 if (method27661 != null) {
                     return method27661;
                 }
@@ -411,7 +412,7 @@ public final class Class8321
         return this.method27622().method11729(this);
     }
     
-    public Class8321 method27665(final Class2250 class2250) {
+    public ItemStack method27665(final ITextComponent class2250) {
         final Class51 method27659 = this.method27659("display");
         if (class2250 == null) {
             method27659.method330("Name");
@@ -442,9 +443,9 @@ public final class Class8321
         return method27660 != null && method27660.method316("Name", 8);
     }
     
-    public List<Class2250> method27668(final Class512 class512, final Class1981 class513) {
+    public List<ITextComponent> method27668(final Class512 class512, final Class1981 class513) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class2250 method8469 = new Class2260("").method8458(this.method27664()).method8469(this.method27672().field11190);
+        final ITextComponent method8469 = new Class2260("").method8458(this.method27664()).method8469(this.method27672().field11190);
         if (this.method27667()) {
             method8469.method8469(Class2116.field12329);
         }
@@ -478,7 +479,7 @@ public final class Class8321
                     for (int i = 0; i < method8472.size(); ++i) {
                         final String method8473 = method8472.method353(i);
                         try {
-                            final Class2250 method8474 = Class5953.method17871(method8473);
+                            final ITextComponent method8474 = Class5953.method17871(method8473);
                             if (method8474 != null) {
                                 arrayList.add(Class9479.method35293(method8474, new Class8768().method30413(Class2116.field12314).method30415(true)));
                             }
@@ -517,16 +518,16 @@ public final class Class8321
                         n = method8476 * 100.0;
                     }
                     if (b) {
-                        arrayList.add(new Class2260(" ").method8458(new Class2259("attribute.modifier.equals." + class515.method25637().method8322(), new Object[] { Class8321.field34175.format(n), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) })).method8469(Class2116.field12311));
+                        arrayList.add(new Class2260(" ").method8458(new Class2259("attribute.modifier.equals." + class515.method25637().method8322(), new Object[] { ItemStack.field34175.format(n), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) })).method8469(Class2116.field12311));
                     }
                     else if (method8476 > 0.0) {
-                        arrayList.add(new Class2259("attribute.modifier.plus." + class515.method25637().method8322(), new Object[] { Class8321.field34175.format(n), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) }).method8469(Class2116.field12318));
+                        arrayList.add(new Class2259("attribute.modifier.plus." + class515.method25637().method8322(), new Object[] { ItemStack.field34175.format(n), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) }).method8469(Class2116.field12318));
                     }
                     else {
                         if (method8476 >= 0.0) {
                             continue;
                         }
-                        arrayList.add(new Class2259("attribute.modifier.take." + class515.method25637().method8322(), new Object[] { Class8321.field34175.format(n * -1.0), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) }).method8469(Class2116.field12321));
+                        arrayList.add(new Class2259("attribute.modifier.take." + class515.method25637().method8322(), new Object[] { ItemStack.field34175.format(n * -1.0), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) }).method8469(Class2116.field12321));
                     }
                 }
             }
@@ -566,13 +567,13 @@ public final class Class8321
         return arrayList;
     }
     
-    public static void method27669(final List<Class2250> list, final Class52 class52) {
+    public static void method27669(final List<ITextComponent> list, final Class52 class52) {
         for (int i = 0; i < class52.size(); ++i) {
             Class90.field209.method506(Class1932.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> list2.add(class54.method18599(class53.method319("lvl"))));
         }
     }
     
-    private static Collection<Class2250> method27670(final String s) {
+    private static Collection<ITextComponent> method27670(final String s) {
         try {
             final Class7572 method23802 = new Class7572(new StringReader(s), true).method23802(true);
             final Class7096 method23803 = method23802.method23799();
@@ -587,7 +588,7 @@ public final class Class8321
                 if (method23805 != null) {
                     final Collection<Class3833> method23806 = method23805.method25616();
                     if (!method23806.isEmpty()) {
-                        return method23806.stream().map((Function<? super Object, ?>)Class3833::method11855).map(class2250 -> class2250.method8469(Class2116.field12317)).collect((Collector<? super Object, ?, Collection<Class2250>>)Collectors.toList());
+                        return method23806.stream().map((Function<? super Object, ?>)Class3833::method11855).map(class2250 -> class2250.method8469(Class2116.field12317)).collect((Collector<? super Object, ?, Collection<ITextComponent>>)Collectors.toList());
                     }
                 }
             }
@@ -689,7 +690,7 @@ public final class Class8321
         ((AbstractList<Class51>)method328).add(method329);
     }
     
-    public Class2250 method27684() {
+    public ITextComponent method27684() {
         // 
         // This method could not be decompiled.
         // 
@@ -849,7 +850,7 @@ public final class Class8321
     
     static {
         field34173 = LogManager.getLogger();
-        field34174 = new Class8321((Class3832)null);
+        field34174 = new ItemStack((Class3832)null);
         field34175 = method27617();
     }
 }

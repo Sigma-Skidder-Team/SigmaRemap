@@ -28,7 +28,7 @@ public class Class839 extends Class832
     private float field4472;
     private float field4473;
     
-    public Class839(final Class7499<? extends Class839> class7499, final Class1847 class7500) {
+    public Class839(final EntityType<? extends Class839> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2423.setSeed(this.method1643());
         this.field4469 = 1.0f / (this.field2423.nextFloat() + 1.0f) * 0.2f;
@@ -168,7 +168,7 @@ public class Class839 extends Class832
         this.method1671(Class2160.field12826, this.method1935());
     }
     
-    public static boolean method4998(final Class7499<Class839> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4998(final EntityType<Class839> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7502.getY() > 45 && class7502.getY() < class7500.method6743();
     }
     

@@ -7,16 +7,17 @@ package mapped;
 import com.google.common.base.MoreObjects;
 import javax.annotation.Nullable;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class4646
 {
     private final int field20112;
     private final Class101 field20113;
     private final GameProfile field20114;
-    public Class2250 field20115;
+    public ITextComponent field20115;
     public final /* synthetic */ Class4330 field20116;
     
-    public Class4646(final Class4330 field20116, final GameProfile field20117, final int field20118, final Class101 field20119, final Class2250 field20120) {
+    public Class4646(final Class4330 field20116, final GameProfile field20117, final int field20118, final Class101 field20119, final ITextComponent field20120) {
         this.field20116 = field20116;
         this.field20114 = field20117;
         this.field20112 = field20118;
@@ -37,7 +38,7 @@ public class Class4646
     }
     
     @Nullable
-    public Class2250 method13872() {
+    public ITextComponent method13872() {
         return this.field20115;
     }
     

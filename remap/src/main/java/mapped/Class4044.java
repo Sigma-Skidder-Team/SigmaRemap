@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.List;
+
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.Validate;
 
 public class Class4044 extends Class4043
@@ -15,7 +17,7 @@ public class Class4044 extends Class4043
         Validate.isInstanceOf((Class)Class3944.class, (Object)class3834);
     }
     
-    public static void method12243(final Class8321 class8321, final List<Class2250> list) {
+    public static void method12243(final ItemStack class8321, final List<ITextComponent> list) {
         final Class51 method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
             if (method27660.method315("Patterns")) {
@@ -40,7 +42,7 @@ public class Class4044 extends Class4043
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         method12243(class8321, list);
     }
 }

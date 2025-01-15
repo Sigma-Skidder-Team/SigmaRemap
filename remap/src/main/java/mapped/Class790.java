@@ -17,17 +17,17 @@ public class Class790 extends Class789
     private float field4207;
     private int field4208;
     
-    public Class790(final Class7499<? extends Class790> class7499, final Class1847 class7500) {
+    public Class790(final EntityType<? extends Class790> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     @Override
     public Class788 method4349(final Class788 class788) {
-        return Class7499.field29015.method23371(this.field2391);
+        return EntityType.field29015.method23371(this.field2391);
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return false;
     }
     
@@ -56,7 +56,7 @@ public class Class790 extends Class789
         this.method2710(Class8107.field33410).method23941(6.0);
     }
     
-    public static boolean method4366(final Class7499<Class790> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4366(final EntityType<Class790> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3090 method6959 = class7500.method6959(class7502);
         if (method6959 != Class7102.field27642 && method6959 != Class7102.field27682) {
             return Class789.method4356(class7499, class7500, class7501, class7502, random);

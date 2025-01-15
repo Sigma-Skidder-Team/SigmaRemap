@@ -5,6 +5,8 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.text.ITextComponent;
+
 import java.net.SocketAddress;
 
 public class Class6764 extends Class6765
@@ -18,14 +20,14 @@ public class Class6764 extends Class6765
     
     @Override
     public void method20572(final Class513 class513) {
-        if (class513.method1841().getString().equals(this.method20574().method1498())) {
+        if (class513.getName().getString().equals(this.method20574().method1498())) {
             this.field26555 = class513.method1756(new Class51());
         }
         super.method20572(class513);
     }
     
     @Override
-    public Class2250 method20573(final SocketAddress socketAddress, final GameProfile gameProfile) {
+    public ITextComponent method20573(final SocketAddress socketAddress, final GameProfile gameProfile) {
         return (gameProfile.getName().equalsIgnoreCase(this.method20574().method1498()) && this.method20598(gameProfile.getName()) != null) ? new Class2259("multiplayer.disconnect.name_taken", new Object[0]) : super.method20573(socketAddress, gameProfile);
     }
     

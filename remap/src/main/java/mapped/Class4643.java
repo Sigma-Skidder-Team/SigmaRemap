@@ -33,7 +33,7 @@ public class Class4643 extends Class4611<Class4241>
         });
     }
     
-    public void method13857(final Class513 class513, final Class3833 class514, final Class8321 class515, final int n) {
+    public void method13857(final Class513 class513, final Class3833 class514, final ItemStack class515, final int n) {
         this.method13726(class513.method2957(), class518 -> class518.method12748(class516, class517, n2));
     }
     

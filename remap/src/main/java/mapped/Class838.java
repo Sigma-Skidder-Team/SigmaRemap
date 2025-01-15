@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.function.Predicate;
 
 public class Class838 extends Class833
@@ -14,7 +13,7 @@ public class Class838 extends Class833
     private int field4457;
     private static final Predicate<Class511> field4458;
     
-    public Class838(final Class7499<? extends Class838> class7499, final Class1847 class7500) {
+    public Class838(final EntityType<? extends Class838> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -53,8 +52,8 @@ public class Class838 extends Class833
     }
     
     @Override
-    public Class8321 method4956() {
-        return new Class8321(Class7739.field31359);
+    public ItemStack method4956() {
+        return new ItemStack(Class7739.field31359);
     }
     
     @Override

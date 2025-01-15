@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.Arrays;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 import java.util.Set;
@@ -28,7 +29,7 @@ public class Class490 extends Class436 implements Class434, Class439
     private int field2812;
     private Class5328 field2813;
     private Class5328 field2814;
-    private Class2250 field2815;
+    private ITextComponent field2815;
     private Class9115 field2816;
     private final Class7604 field2817;
     
@@ -249,7 +250,7 @@ public class Class490 extends Class436 implements Class434, Class439
         return class51;
     }
     
-    public void method2453(final Class2250 field2815) {
+    public void method2453(final ITextComponent field2815) {
         this.field2815 = field2815;
     }
     
@@ -260,7 +261,7 @@ public class Class490 extends Class436 implements Class434, Class439
     }
     
     @Override
-    public Class2250 method1871() {
+    public ITextComponent method1871() {
         return (this.field2815 == null) ? new Class2259("container.beacon", new Object[0]) : this.field2815;
     }
     

@@ -19,7 +19,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     public Class57 field4390;
     private final Class443 field4391;
     
-    public Class819(final Class7499<? extends Class819> class7499, final Class1847 class7500) {
+    public Class819(final EntityType<? extends Class819> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4391 = new Class443(8);
     }
@@ -107,7 +107,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public void method4831(final Class8321 class8321) {
+    public void method4831(final ItemStack class8321) {
         if (!this.field2391.field10067) {
             if (this.field4107 > -this.method4155() + 20) {
                 this.field4107 = -this.method4155();
@@ -138,7 +138,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
         }
         final Class52 class52 = new Class52();
         for (int i = 0; i < this.field4391.method2239(); ++i) {
-            final Class8321 method4826 = this.field4391.method2157(i);
+            final ItemStack method4826 = this.field4391.method2157(i);
             if (!method4826.method27620()) {
                 ((AbstractList<Class51>)class52).add(method4826.method27627(new Class51()));
             }
@@ -154,7 +154,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
         }
         final Class52 method328 = class51.method328("Inventory", 10);
         for (int i = 0; i < method328.size(); ++i) {
-            final Class8321 method329 = Class8321.method27619(method328.method346(i));
+            final ItemStack method329 = ItemStack.method27619(method328.method346(i));
             if (!method329.method27620()) {
                 this.field4391.method2258(method329);
             }
@@ -194,7 +194,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public boolean method1893(final int n, final Class8321 class8321) {
+    public boolean method1893(final int n, final ItemStack class8321) {
         if (super.method1893(n, class8321)) {
             return true;
         }

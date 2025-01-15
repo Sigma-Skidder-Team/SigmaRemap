@@ -8,7 +8,7 @@ public class Class813 extends Class812
 {
     private static String[] field4367;
     
-    public Class813(final Class7499<? extends Class813> class7499, final Class1847 class7500) {
+    public Class813(final EntityType<? extends Class813> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -37,6 +37,6 @@ public class Class813 extends Class812
     
     @Override
     public Class788 method4349(final Class788 class788) {
-        return Class7499.field29006.method23371(this.field2391);
+        return EntityType.field29006.method23371(this.field2391);
     }
 }

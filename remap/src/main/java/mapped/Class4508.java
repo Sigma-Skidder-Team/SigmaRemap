@@ -116,7 +116,7 @@ public class Class4508 extends Class4500
                 class1851.method6688(class1862, Class7521.field29290.method11878(), 2);
                 final Class436 method11879 = class1851.method6727(class1862);
                 if (method11879 instanceof Class494) {
-                    ((Class494)method11879).method2509().method13884(Class7499.field29022);
+                    ((Class494)method11879).method2509().method13884(EntityType.field29022);
                 }
             }
         }

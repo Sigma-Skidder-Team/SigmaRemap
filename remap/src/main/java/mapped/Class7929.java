@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
@@ -167,11 +168,11 @@ public class Class7929
         return this;
     }
     
-    public Class2250 method25690(final Class511 class511) {
+    public ITextComponent method25690(final Class511 class511) {
         final Class511 method2700 = class511.method2700();
         final String string = "death.attack." + this.field32593;
         final String string2 = string + ".player";
-        return (method2700 == null) ? new Class2259(string, new Object[] { class511.method1871() }) : new Class2259(string2, new Object[] { class511.method1871(), method2700.method1871() });
+        return (method2700 == null) ? new Class2259(string, new Object[] { class511.getDisplayName() }) : new Class2259(string2, new Object[] { class511.getDisplayName(), method2700.getDisplayName() });
     }
     
     public boolean method25719() {

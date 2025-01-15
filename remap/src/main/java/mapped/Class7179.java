@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
 public class Class7179 extends Class7180
@@ -18,7 +17,7 @@ public class Class7179 extends Class7180
     }
     
     @Override
-    public void method21974(final Consumer<Class8321> consumer, final Class7529 class7529) {
+    public void method21974(final Consumer<ItemStack> consumer, final Class7529 class7529) {
         this.field27853.method19013(Class125.method637(Class6367.method19018(this.field27853), consumer, class7529), class7529);
     }
 }

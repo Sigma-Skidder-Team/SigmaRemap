@@ -4,19 +4,21 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public final class Class504 implements Class434
 {
     private static String[] field2882;
-    private final Class2250 field2883;
+    private final ITextComponent field2883;
     private final Class502 field2884;
     
-    public Class504(final Class502 field2884, final Class2250 field2885) {
+    public Class504(final Class502 field2884, final ITextComponent field2885) {
         this.field2884 = field2884;
         this.field2883 = field2885;
     }
     
     @Override
-    public Class2250 method1871() {
+    public ITextComponent method1871() {
         return this.field2883;
     }
     

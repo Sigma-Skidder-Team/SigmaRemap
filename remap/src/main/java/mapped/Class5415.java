@@ -4,13 +4,11 @@
 
 package mapped;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Locale;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.function.Function;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class5415 implements Class5414
 {
@@ -39,17 +37,17 @@ public class Class5415 implements Class5414
     }
     
     @Override
-    public Class2250 method16527() {
+    public ITextComponent method16527() {
         return new Class2259("commands.data.storage.modified", new Object[] { this.field22584 });
     }
     
     @Override
-    public Class2250 method16528(final Class41 class41) {
+    public ITextComponent method16528(final Class41 class41) {
         return new Class2259("commands.data.storage.query", new Object[] { this.field22584, class41.method268() });
     }
     
     @Override
-    public Class2250 method16529(final Class8570 class8570, final double d, final int i) {
+    public ITextComponent method16529(final Class8570 class8570, final double d, final int i) {
         return new Class2259("commands.data.storage.get", new Object[] { class8570, this.field22584, String.format(Locale.ROOT, "%.2f", d), i });
     }
     

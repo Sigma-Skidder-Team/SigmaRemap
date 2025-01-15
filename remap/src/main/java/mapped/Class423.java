@@ -46,14 +46,14 @@ public class Class423 extends Entity
     private float field2571;
     private float field2572;
     
-    public Class423(final Class7499<? extends Class423> class7499, final Class1847 class7500) {
+    public Class423(final EntityType<? extends Class423> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2549 = new float[2];
-        this.field2386 = true;
+        this.preventEntitySpawning = true;
     }
     
     public Class423(final Class1847 class1847, final double field2392, final double field2393, final double field2394) {
-        this(Class7499.field28963, class1847);
+        this(EntityType.field28963, class1847);
         this.method1656(field2392, field2393, field2394);
         this.method1936(Vec3d.ZERO);
         this.field2392 = field2392;

@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class7078 implements Class7079
 {
-    private static final Class2250 field27560;
-    private static final Class2250 field27561;
-    private static final Class2250 field27562;
-    private static final Class2250 field27563;
+    private static final ITextComponent field27560;
+    private static final ITextComponent field27561;
+    private static final ITextComponent field27562;
+    private static final ITextComponent field27563;
     private final Class9106 field27564;
     private Class6869 field27565;
     private Class6869 field27566;

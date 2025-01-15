@@ -10,7 +10,7 @@ public class Class816 extends Class815
 {
     private int field4375;
     
-    public Class816(final Class7499<? extends Class816> class7499, final Class1847 class7500) {
+    public Class816(final EntityType<? extends Class816> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4375 = 47999;
     }
@@ -22,7 +22,7 @@ public class Class816 extends Class815
     
     @Override
     public Class815 method4794() {
-        return Class7499.field29033.method23371(this.field2391);
+        return EntityType.field29033.method23371(this.field2391);
     }
     
     @Override

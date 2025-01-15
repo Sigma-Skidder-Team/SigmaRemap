@@ -5,14 +5,15 @@
 package mapped;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.regex.Matcher;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.UnmodifiableIterator;
+
 import java.util.List;
-import java.util.Iterator;
+
 import com.google.common.collect.ImmutableMap$Builder;
 import java.io.IOException;
 import java.util.ListIterator;
@@ -42,7 +43,7 @@ public class Class9495
     private volatile int field40837;
     private volatile int field40838;
     private final Object2FloatMap<Class383> field40839;
-    private volatile Class2250 field40840;
+    private volatile ITextComponent field40840;
     private static final Pattern field40841;
     private final Class8213 field40842;
     
@@ -219,7 +220,7 @@ public class Class9495
         return this.field40838;
     }
     
-    public Class2250 method35344() {
+    public ITextComponent method35344() {
         return this.field40840;
     }
     

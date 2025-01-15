@@ -15,7 +15,7 @@ public class Class805 extends Class804
     private int field4329;
     private UUID field4330;
     
-    public Class805(final Class7499<? extends Class805> class7499, final Class1847 class7500) {
+    public Class805(final EntityType<? extends Class805> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -24,7 +24,7 @@ public class Class805 extends Class804
         return (class355.method6701(class354.method1139()).method21696() != Class7521.field29392) ? (class355.method6963(class354) - 0.5f) : 10.0f;
     }
     
-    public static boolean method4705(final Class7499<Class805> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4705(final EntityType<Class805> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6701(class7502.method1139()).method21696() == Class7521.field29392 && class7500.method6993(class7502, 0) > 8;
     }
     
@@ -46,19 +46,19 @@ public class Class805 extends Class804
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31300) {
             if (!this.method2625()) {
                 if (!class512.field3025.field27304) {
                     method2715.method27693(1);
                     boolean b = false;
-                    Class8321 class514;
+                    ItemStack class514;
                     if (this.field4328 == null) {
-                        class514 = new Class8321(Class7739.field31301);
+                        class514 = new ItemStack(Class7739.field31301);
                     }
                     else {
                         b = true;
-                        class514 = new Class8321(Class7739.field31612);
+                        class514 = new ItemStack(Class7739.field31612);
                         Class4035.method12228(class514, this.field4328, this.field4329);
                         this.field4328 = null;
                         this.field4329 = 0;
@@ -87,12 +87,12 @@ public class Class805 extends Class804
             this.field2391.method6709(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
             if (!this.field2391.field10067) {
                 this.method1652();
-                final Class804 class516 = Class7499.field28968.method23371(this.field2391);
+                final Class804 class516 = EntityType.field28968.method23371(this.field2391);
                 class516.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
                 class516.method2665(this.method2664());
                 class516.field2951 = this.field2951;
-                if (this.method1874()) {
-                    class516.method1872(this.method1873());
+                if (this.hasCustomName()) {
+                    class516.method1872(this.getCustomName());
                     class516.method1875(this.method1876());
                 }
                 if (this.method4194()) {
@@ -101,7 +101,7 @@ public class Class805 extends Class804
                 class516.method1851(this.method1850());
                 this.field2391.method6886(class516);
                 for (int i = 0; i < 5; ++i) {
-                    this.field2391.method6886(new Class427(this.field2391, this.getPosX(), this.method1942(1.0), this.getPosZ(), new Class8321(Class1983.method7995(this.method4708()).method21696())));
+                    this.field2391.method6886(new Class427(this.field2391, this.getPosX(), this.method1942(1.0), this.getPosZ(), new ItemStack(Class1983.method7995(this.method4708()).method21696())));
                 }
                 method2715.method27636(1, class512, class518 -> class518.method2795(class517));
                 this.method1695(Class8520.field35373, 1.0f, 1.0f);
@@ -154,7 +154,7 @@ public class Class805 extends Class804
         }
     }
     
-    private Pair<Class5328, Integer> method4706(final Class8321 class8321) {
+    private Pair<Class5328, Integer> method4706(final ItemStack class8321) {
         final Class3882 class8322 = (Class3882)((Class4036)class8321.method27622()).method12240();
         return (Pair<Class5328, Integer>)Pair.of((Object)class8322.method11961(), (Object)class8322.method11962());
     }
@@ -168,7 +168,7 @@ public class Class805 extends Class804
     }
     
     public Class805 method4709(final Class788 class788) {
-        final Class805 class789 = Class7499.field29007.method23371(this.field2391);
+        final Class805 class789 = EntityType.field29007.method23371(this.field2391);
         class789.method4707(this.method4710((Class805)class788));
         return class789;
     }

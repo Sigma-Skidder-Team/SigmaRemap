@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class7893 implements Class7894
 {
     private static String[] field32400;
@@ -14,7 +16,7 @@ public class Class7893 implements Class7894
     }
     
     @Override
-    public void method25555(final Class285 class285, final Class2250 class286) {
+    public void method25555(final Class285 class285, final ITextComponent class286) {
         this.field32401.field4647.method3807().method3761(class286);
     }
 }

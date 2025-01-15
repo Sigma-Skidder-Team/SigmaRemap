@@ -7,7 +7,7 @@ package mapped;
 public class Class5539 extends Class5538
 {
     public Class5539() {
-        super(Class7499.field28991, "illusioner", 0.5f, new String[] { "illusion_illager" });
+        super(EntityType.field28991, "illusioner", 0.5f, new String[] { "illusion_illager" });
     }
     
     @Override

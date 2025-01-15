@@ -12,7 +12,7 @@ public class Class847 extends Class846
 {
     private static String[] field4511;
     
-    public Class847(final Class7499<? extends Class847> class7499, final Class1847 class7500) {
+    public Class847(final EntityType<? extends Class847> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     

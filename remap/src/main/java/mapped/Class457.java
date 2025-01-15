@@ -6,15 +6,16 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class457 extends Class456
 {
-    private Class2265<Class8321> field2712;
+    private Class2265<ItemStack> field2712;
     private int field2713;
     
     private Class457(final Class5412<?> class5412) {
         super(class5412);
-        this.field2712 = Class2265.method8507(27, Class8321.field34174);
+        this.field2712 = Class2265.method8507(27, ItemStack.field34174);
     }
     
     public Class457() {
@@ -33,7 +34,7 @@ public class Class457 extends Class456
     @Override
     public void method2179(final Class51 class51) {
         super.method2179(class51);
-        this.field2712 = Class2265.method8507(this.method2239(), Class8321.field34174);
+        this.field2712 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2712);
         }
@@ -45,17 +46,17 @@ public class Class457 extends Class456
     }
     
     @Override
-    public Class2265<Class8321> method2246() {
+    public Class2265<ItemStack> method2246() {
         return this.field2712;
     }
     
     @Override
-    public void method2247(final Class2265<Class8321> field2712) {
+    public void method2247(final Class2265<ItemStack> field2712) {
         this.field2712 = field2712;
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.barrel", new Object[0]);
     }
     

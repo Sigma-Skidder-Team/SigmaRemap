@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class4096 extends Class3820
@@ -16,17 +18,17 @@ public class Class4096 extends Class3820
         return Class4049.method12247(class51) && class51.method316("title", 8) && class51.method323("title").length() <= 32 && class51.method316("author", 8);
     }
     
-    public static int method12340(final Class8321 class8321) {
+    public static int method12340(final ItemStack class8321) {
         return class8321.method27657().method319("generation");
     }
     
-    public static int method12341(final Class8321 class8321) {
+    public static int method12341(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         return (method27657 == null) ? 0 : method27657.method328("pages", 8).size();
     }
     
     @Override
-    public Class2250 method11729(final Class8321 class8321) {
+    public ITextComponent method11729(final ItemStack class8321) {
         if (class8321.method27656()) {
             final String method323 = class8321.method27657().method323("title");
             if (!Class8272.method27500(method323)) {
@@ -37,7 +39,7 @@ public class Class4096 extends Class3820
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         if (class8321.method27656()) {
             final Class51 method27657 = class8321.method27657();
             final String method27658 = method27657.method323("author");
@@ -60,14 +62,14 @@ public class Class4096 extends Class3820
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2835(method2715, class1849);
         class1848.method2859(Class8276.field33981.method8449(this));
         return Class9355.method34674(method2715);
     }
     
-    public static boolean method12342(final Class8321 class8321, final Class7492 class8322, final Class512 class8323) {
+    public static boolean method12342(final ItemStack class8321, final Class7492 class8322, final Class512 class8323) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 == null || method27657.method329("resolved")) {
             return false;
@@ -79,7 +81,7 @@ public class Class4096 extends Class3820
         final Class52 method27658 = method27657.method328("pages", 8);
         for (int i = 0; i < method27658.size(); ++i) {
             final String method27659 = method27658.method353(i);
-            Class2250 method27660;
+            ITextComponent method27660;
             try {
                 method27660 = Class9479.method35294(class8322, Class5953.method17873(method27659), class8323, 0);
             }
@@ -93,7 +95,7 @@ public class Class4096 extends Class3820
     }
     
     @Override
-    public boolean method11730(final Class8321 class8321) {
+    public boolean method11730(final ItemStack class8321) {
         return true;
     }
 }

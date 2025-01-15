@@ -13,13 +13,13 @@ import java.util.Random;
 
 public class Class448 extends Class436 implements Class447, Class439
 {
-    private final Class2265<Class8321> field2686;
+    private final Class2265<ItemStack> field2686;
     private final int[] field2687;
     private final int[] field2688;
     
     public Class448() {
         super(Class5412.field22572);
-        this.field2686 = Class2265.method8507(4, Class8321.field34174);
+        this.field2686 = Class2265.method8507(4, ItemStack.field34174);
         this.field2687 = new int[4];
         this.field2688 = new int[4];
     }
@@ -46,16 +46,16 @@ public class Class448 extends Class436 implements Class447, Class439
     
     private void method2268() {
         for (int i = 0; i < this.field2686.size(); ++i) {
-            final Class8321 other = this.field2686.get(i);
+            final ItemStack other = this.field2686.get(i);
             if (!other.method27620()) {
                 final int[] field2687 = this.field2687;
                 final int n = i;
                 ++field2687[n];
                 if (this.field2687[i] >= this.field2688[i]) {
-                    final Class8321 class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new Class8321[] { other }), this.field2656).map(class8323 -> class8323.method11290(class8322)).orElse(other);
+                    final ItemStack class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.method11290(class8322)).orElse(other);
                     final BlockPos method2193 = this.method2193();
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8321);
-                    this.field2686.set(i, Class8321.field34174);
+                    this.field2686.set(i, ItemStack.field34174);
                     this.method2274();
                 }
             }
@@ -89,7 +89,7 @@ public class Class448 extends Class436 implements Class447, Class439
         }
     }
     
-    public Class2265<Class8321> method2270() {
+    public Class2265<ItemStack> method2270() {
         return this.field2686;
     }
     
@@ -133,11 +133,11 @@ public class Class448 extends Class436 implements Class447, Class439
         return this.method2271(new Class51());
     }
     
-    public Optional<Class3682> method2272(final Class8321 class8321) {
-        return this.field2686.stream().noneMatch(Class8321::method27620) ? Optional.empty() : this.field2656.method6792().method6378(Class8976.field37847, new Class443(new Class8321[] { class8321 }), this.field2656);
+    public Optional<Class3682> method2272(final ItemStack class8321) {
+        return this.field2686.stream().noneMatch(ItemStack::method27620) ? Optional.empty() : this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { class8321 }), this.field2656);
     }
     
-    public boolean method2273(final Class8321 class8321, final int n) {
+    public boolean method2273(final ItemStack class8321, final int n) {
         for (int i = 0; i < this.field2686.size(); ++i) {
             if (this.field2686.get(i).method27620()) {
                 this.field2688[i] = n;

@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 
 public class Class5914 implements Consumer<Consumer<Class8863>>
 {
-    private static final Class7499<?>[] field24294;
+    private static final EntityType<?>[] field24294;
     private static final Class3820[] field24295;
     private static final Class3820[] field24296;
     private static final Class3820[] field24297;
@@ -36,8 +36,8 @@ public class Class5914 implements Consumer<Consumer<Class8863>>
     }
     
     private Class6056 method17781(final Class6056 class6056) {
-        for (final Class7499<?> class6057 : Class5914.field24294) {
-            class6056.method18009(Class7499.method23354(class6057).toString(), Class4218.method12700(Class5754.method17068().method17069(class6057)));
+        for (final EntityType<?> class6057 : Class5914.field24294) {
+            class6056.method18009(EntityType.method23354(class6057).toString(), Class4218.method12700(Class5754.method17068().method17069(class6057)));
         }
         return class6056;
     }
@@ -62,7 +62,7 @@ public class Class5914 implements Consumer<Consumer<Class8863>>
     }
     
     static {
-        field24294 = new Class7499[] { Class7499.field28989, Class7499.field29019, Class7499.field28968, Class7499.field29007, Class7499.field29012, Class7499.field28966, Class7499.field29051, Class7499.field29008, Class7499.field29017, Class7499.field28996, Class7499.field29035, Class7499.field28964, Class7499.field29010, Class7499.field28985, Class7499.field28961 };
+        field24294 = new EntityType[] { EntityType.field28989, EntityType.field29019, EntityType.field28968, EntityType.field29007, EntityType.field29012, EntityType.field28966, EntityType.field29051, EntityType.field29008, EntityType.field29017, EntityType.field28996, EntityType.field29035, EntityType.field28964, EntityType.field29010, EntityType.field28985, EntityType.field28961 };
         field24295 = new Class3820[] { Class7739.field31379, Class7739.field31381, Class7739.field31382, Class7739.field31380 };
         field24296 = new Class3820[] { Class7739.field31361, Class7739.field31362, Class7739.field31359, Class7739.field31360 };
         field24297 = new Class3820[] { Class7739.field31278, Class7739.field31301, Class7739.field31316, Class7739.field31338, Class7739.field31339, Class7739.field31341, Class7739.field31342, Class7739.field31379, Class7739.field31380, Class7739.field31381, Class7739.field31382, Class7739.field31383, Class7739.field31384, Class7739.field31424, Class7739.field31427, Class7739.field31431, Class7739.field31432, Class7739.field31433, Class7739.field31434, Class7739.field31435, Class7739.field31443, Class7739.field31517, Class7739.field31518, Class7739.field31519, Class7739.field31520, Class7739.field31522, Class7739.field31531, Class7739.field31541, Class7739.field31542, Class7739.field31543, Class7739.field31554, Class7739.field31555, Class7739.field31573, Class7739.field31575, Class7739.field31577, Class7739.field31428, Class7739.field31612, Class7739.field31630, Class7739.field31635 };

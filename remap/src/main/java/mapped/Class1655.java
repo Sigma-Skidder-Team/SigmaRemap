@@ -141,7 +141,7 @@ public class Class1655 extends Class394
     }
     
     @Override
-    public boolean method1623() {
+    public boolean allowLogging() {
         return true;
     }
     

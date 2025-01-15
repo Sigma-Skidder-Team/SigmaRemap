@@ -32,7 +32,7 @@ public class Class6856 extends Class6851<Class511>
     }
     
     private boolean method20961(final Class511 class511) {
-        return class511.method1642() == Class7499.field29042 && class511.method2625();
+        return class511.method1642() == EntityType.field29042 && class511.method2625();
     }
     
     private List<Class511> method20962(final Class511 class511) {

@@ -10,7 +10,7 @@ public interface Class6423
 {
     public static final Class6423 field25532 = (class5491, class5492) -> class5492;
     
-    Class8321 method19090(final Class5491 p0, final Class8321 p1);
+    ItemStack method19090(final Class5491 p0, final ItemStack p1);
     
     default void method19101() {
         Class3955.method12069(Class7739.field31280, new Class6410());

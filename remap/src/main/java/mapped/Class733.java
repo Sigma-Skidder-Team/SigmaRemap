@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class733 implements Class732
 {
     private long field3990;
@@ -15,11 +17,11 @@ public class Class733 implements Class732
     }
     
     @Override
-    public void method4036(final Class2250 class2250) {
+    public void method4036(final ITextComponent class2250) {
     }
     
     @Override
-    public void method4037(final Class2250 class2250) {
+    public void method4037(final ITextComponent class2250) {
     }
     
     @Override
@@ -35,6 +37,6 @@ public class Class733 implements Class732
     }
     
     @Override
-    public void method4038(final Class2250 class2250) {
+    public void method4038(final ITextComponent class2250) {
     }
 }

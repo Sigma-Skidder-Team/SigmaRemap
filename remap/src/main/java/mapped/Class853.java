@@ -19,7 +19,7 @@ public class Class853 extends Class759 implements Class762
     public float field4559;
     private boolean field4560;
     
-    public Class853(final Class7499<? extends Class853> class7499, final Class1847 class7500) {
+    public Class853(final EntityType<? extends Class853> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6567(this);
     }
@@ -150,8 +150,8 @@ public class Class853 extends Class759 implements Class762
     }
     
     @Override
-    public Class7499<? extends Class853> method1642() {
-        return (Class7499<? extends Class853>)super.method1642();
+    public EntityType<? extends Class853> method1642() {
+        return (EntityType<? extends Class853>)super.method1642();
     }
     
     @Override
@@ -164,8 +164,8 @@ public class Class853 extends Class759 implements Class762
                         final float n2 = (i % 2 - 0.5f) * method5130 / 4.0f;
                         final float n3 = (i / 2 - 0.5f) * method5130 / 4.0f;
                         final Class853 class853 = (Class853)this.method1642().method23371(this.field2391);
-                        if (this.method1874()) {
-                            class853.method1872(this.method1873());
+                        if (this.hasCustomName()) {
+                            class853.method1872(this.getCustomName());
                         }
                         if (this.method4194()) {
                             class853.method4190();
@@ -244,7 +244,7 @@ public class Class853 extends Class759 implements Class762
         return (this.method5130() != 1) ? Class9020.field38063 : this.method1642().method23368();
     }
     
-    public static boolean method5139(final Class7499<Class853> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method5139(final EntityType<Class853> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6764().method29570() == Class9505.field40893 && random.nextInt(4) != 1) {
             return false;
         }

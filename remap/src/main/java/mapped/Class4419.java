@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Optional;
 
-public final class Class4419 implements Class4410<Optional<Class2250>>
+public final class Class4419 implements Class4410<Optional<ITextComponent>>
 {
     private static String[] field19750;
     
-    public void method13342(final Class8654 class8654, final Optional<Class2250> optional) {
+    public void method13342(final Class8654 class8654, final Optional<ITextComponent> optional) {
         if (!optional.isPresent()) {
             class8654.writeBoolean(false);
         }
@@ -20,11 +22,11 @@ public final class Class4419 implements Class4410<Optional<Class2250>>
         }
     }
     
-    public Optional<Class2250> method13343(final Class8654 class8654) {
+    public Optional<ITextComponent> method13343(final Class8654 class8654) {
         return class8654.readBoolean() ? Optional.of(class8654.method29497()) : Optional.empty();
     }
     
-    public Optional<Class2250> method13344(final Optional<Class2250> optional) {
+    public Optional<ITextComponent> method13344(final Optional<ITextComponent> optional) {
         return optional.isPresent() ? Optional.of(optional.get().method8466()) : Optional.empty();
     }
 }

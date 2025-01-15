@@ -69,6 +69,6 @@ public class Class4586 extends Class4582<Class5122>
     }
     
     static {
-        field20073 = Lists.newArrayList((Object[])new Class6828[] { new Class6828(Class7499.field29045, 1, 1, 1) });
+        field20073 = Lists.newArrayList((Object[])new Class6828[] { new Class6828(EntityType.field29045, 1, 1, 1) });
     }
 }

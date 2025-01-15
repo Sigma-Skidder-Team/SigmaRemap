@@ -7,7 +7,7 @@ package mapped;
 public class Class5557 extends Class5556
 {
     public Class5557() {
-        super(Class7499.field29006, "mule", 0.75f);
+        super(EntityType.field29006, "mule", 0.75f);
     }
     
     @Override

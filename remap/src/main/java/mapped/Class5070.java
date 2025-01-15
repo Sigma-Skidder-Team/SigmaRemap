@@ -4,18 +4,20 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 import java.util.List;
 
 public class Class5070 extends Class5046
 {
     private final String field21745;
-    private final Class2250 field21746;
+    private final ITextComponent field21746;
     private List<String> field21747;
     private final Class5046 field21748;
     private int field21749;
     
-    public Class5070(final Class5046 field21748, final String s, final Class2250 field21749) {
+    public Class5070(final Class5046 field21748, final String s, final ITextComponent field21749) {
         this.field21748 = field21748;
         this.field21745 = Class5046.method15438(s);
         this.field21746 = field21749;

@@ -114,7 +114,7 @@ public class Class3236 extends Class3167
                         if (!this.method9914().method9887("ItemSpoof").equals("None")) {
                             this.field15715.method10280();
                         }
-                        final Class8321 method13699 = Class3236.field15514.field4684.method2715(Class316.field1877);
+                        final ItemStack method13699 = Class3236.field15514.field4684.method2715(Class316.field1877);
                         final Class7075 class5745 = new Class7075(Class3236.field15514.field4684, Class316.field1877, method13698);
                         method13699.method27690();
                         Class3236.field15514.field4682.method27319(Class3236.field15514.field4684, Class3236.field15514.field4683, this.field15714, method13698);

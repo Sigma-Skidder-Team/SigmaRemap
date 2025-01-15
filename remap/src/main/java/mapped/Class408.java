@@ -10,42 +10,42 @@ import net.minecraft.util.math.Vec3d;
 
 public class Class408 extends Entity implements Class407
 {
-    private static final Class8810<Class8321> field2500;
+    private static final Class8810<ItemStack> field2500;
     private double field2501;
     private double field2502;
     private double field2503;
     private int field2504;
     private boolean field2505;
     
-    public Class408(final Class7499<? extends Class408> class7499, final Class1847 class7500) {
+    public Class408(final EntityType<? extends Class408> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class408(final Class1847 class1847, final double n, final double n2, final double n3) {
-        this(Class7499.field28982, class1847);
+        this(EntityType.field28982, class1847);
         this.field2504 = 0;
         this.method1656(n, n2, n3);
     }
     
-    public void method2008(final Class8321 class8321) {
+    public void method2008(final ItemStack class8321) {
         if (class8321.method27622() != Class7739.field31449 || class8321.method27656()) {
-            this.method1650().method33569(Class408.field2500, (Class8321)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
+            this.method1650().method33569(Class408.field2500, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
     
-    private Class8321 method2009() {
+    private ItemStack method2009() {
         return this.method1650().method33568(Class408.field2500);
     }
     
     @Override
-    public Class8321 method2005() {
-        final Class8321 method2009 = this.method2009();
-        return method2009.method27620() ? new Class8321(Class7739.field31449) : method2009;
+    public ItemStack method2005() {
+        final ItemStack method2009 = this.method2009();
+        return method2009.method27620() ? new ItemStack(Class7739.field31449) : method2009;
     }
     
     @Override
     public void method1649() {
-        this.method1650().method33565(Class408.field2500, Class8321.field34174);
+        this.method1650().method33565(Class408.field2500, ItemStack.field34174);
     }
     
     @Override
@@ -162,7 +162,7 @@ public class Class408 extends Entity implements Class407
     
     @Override
     public void method1761(final Class51 class51) {
-        final Class8321 method2009 = this.method2009();
+        final ItemStack method2009 = this.method2009();
         if (!method2009.method27620()) {
             class51.method295("Item", method2009.method27627(new Class51()));
         }
@@ -170,7 +170,7 @@ public class Class408 extends Entity implements Class407
     
     @Override
     public void method1760(final Class51 class51) {
-        this.method2008(Class8321.method27619(class51.method327("Item")));
+        this.method2008(ItemStack.method27619(class51.method327("Item")));
     }
     
     @Override

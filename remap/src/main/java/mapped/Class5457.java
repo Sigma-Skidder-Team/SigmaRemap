@@ -69,19 +69,19 @@ public class Class5457 extends Class5419<Class824>
     }
     
     private void method16668(final Class824 class824, final Class511 class825) {
-        final Iterator<Class8321> iterator = this.method16669(class824).iterator();
+        final Iterator<ItemStack> iterator = this.method16669(class824).iterator();
         while (iterator.hasNext()) {
             Class6793.method20791(class824, iterator.next(), class825);
         }
     }
     
-    private List<Class8321> method16669(final Class824 class824) {
+    private List<ItemStack> method16669(final Class824 class824) {
         if (class824.method2625()) {
-            return (List<Class8321>)ImmutableList.of((Object)new Class8321(Class7739.field30853));
+            return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Class7739.field30853));
         }
         final Class9334 method28781 = class824.method4870().method28781();
         if (!Class5457.field22697.containsKey(method28781)) {
-            return (List<Class8321>)ImmutableList.of((Object)new Class8321(Class7739.field31314));
+            return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Class7739.field31314));
         }
         return class824.field2391.method6679().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.field2391).method32877(Class6683.field26367, new BlockPos(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
     }

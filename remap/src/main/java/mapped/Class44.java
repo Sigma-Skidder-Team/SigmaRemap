@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.io.IOException;
 import java.io.DataOutput;
@@ -59,7 +60,7 @@ public class Class44 extends Class43
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
+    public ITextComponent method263(final String s, final int n) {
         return new Class2260(String.valueOf(this.field106)).method8458(new Class2260("d").method8469(Class44.field101)).method8469(Class44.field100);
     }
     

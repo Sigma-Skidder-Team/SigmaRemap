@@ -79,8 +79,8 @@ public class Class6445
         Class3930.method12040(method32758, method32759, method32758.method6701(method32759), method19229(class9083.method32754(), class9083.method32768(), s));
     }
     
-    private static Class8321 method19229(final String s, final boolean b, final String str) {
-        final Class8321 class8321 = new Class8321(Class7739.field31512);
+    private static ItemStack method19229(final String s, final boolean b, final String str) {
+        final ItemStack class8321 = new ItemStack(Class7739.field31512);
         final Class52 class8322 = new Class52();
         final StringBuffer sb = new StringBuffer();
         Arrays.stream(s.split("\\.")).forEach(str2 -> sb2.append(str2).append('\n'));
@@ -94,7 +94,7 @@ public class Class6445
     }
     
     private static void method19230(final Class1849 class1849, final Class2116 class1850, final String s) {
-        class1849.method6883(p0 -> true).forEach(class1852 -> class1852.method1494(new Class2260(s2).method8469(class1851)));
+        class1849.method6883(p0 -> true).forEach(class1852 -> class1852.sendMessage(new Class2260(s2).method8469(class1851)));
     }
     
     public static void method19231(final Class1849 class1849) {

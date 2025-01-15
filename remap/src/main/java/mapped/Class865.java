@@ -6,21 +6,23 @@ package mapped;
 
 import java.util.Date;
 import com.mojang.brigadier.ResultConsumer;
+import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import java.text.SimpleDateFormat;
 
-public abstract class Class865 implements Class397
+public abstract class Class865 implements ICommandSource
 {
     private static final SimpleDateFormat field4608;
-    private static final Class2250 field4609;
+    private static final ITextComponent field4609;
     private long field4610;
     private boolean field4611;
     private int field4612;
     private boolean field4613;
-    private Class2250 field4614;
+    private ITextComponent field4614;
     private String field4615;
-    private Class2250 field4616;
+    private ITextComponent field4616;
     
     public Class865() {
         this.field4610 = -1L;
@@ -38,7 +40,7 @@ public abstract class Class865 implements Class397
         this.field4612 = field4612;
     }
     
-    public Class2250 method5208() {
+    public ITextComponent method5208() {
         return (this.field4614 != null) ? this.field4614 : new Class2260("");
     }
     
@@ -138,11 +140,11 @@ public abstract class Class865 implements Class397
         return true;
     }
     
-    public Class2250 method5214() {
+    public ITextComponent method5214() {
         return this.field4616;
     }
     
-    public void method5215(final Class2250 field4616) {
+    public void method5215(final ITextComponent field4616) {
         if (field4616 == null) {
             this.field4616 = Class865.field4609;
         }
@@ -152,7 +154,7 @@ public abstract class Class865 implements Class397
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
         if (this.field4613) {
             this.field4614 = new Class2260("[" + Class865.field4608.format(new Date()) + "] ").method8458(class2250);
             this.method5217();
@@ -163,7 +165,7 @@ public abstract class Class865 implements Class397
     
     public abstract void method5217();
     
-    public void method5218(final Class2250 field4614) {
+    public void method5218(final ITextComponent field4614) {
         this.field4614 = field4614;
     }
     
@@ -190,17 +192,17 @@ public abstract class Class865 implements Class397
     public abstract Class7492 method5223();
     
     @Override
-    public boolean method1575() {
+    public boolean shouldReceiveFeedback() {
         return this.method5216().method6765().method31216(Class8878.field37328) && this.field4613;
     }
     
     @Override
-    public boolean method1576() {
+    public boolean shouldReceiveErrors() {
         return this.field4613;
     }
     
     @Override
-    public boolean method1623() {
+    public boolean allowLogging() {
         return this.method5216().method6765().method31216(Class8878.field37322);
     }
     

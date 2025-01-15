@@ -20,7 +20,7 @@ public class Class778 extends Class776 implements Class768
     private Class3567<Class776> field4183;
     private Class3562<Class512> field4184;
     
-    public Class778(final Class7499<? extends Class778> class7499, final Class1847 class7500) {
+    public Class778(final EntityType<? extends Class778> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -31,7 +31,7 @@ public class Class778 extends Class776 implements Class768
             final boolean b;
             if (class511 != null) {
                 if (!(!this.method4293())) {
-                    if (class511.method1642() != Class7499.field29047) {
+                    if (class511.method1642() != EntityType.field29047) {
                         return b;
                     }
                 }
@@ -137,7 +137,7 @@ public class Class778 extends Class776 implements Class768
                         }
                     }
                     if (class8061 != null) {
-                        this.method1803(Class2215.field13600, Class5333.method16476(new Class8321(Class7739.field31441), class8061));
+                        this.method1803(Class2215.field13600, Class5333.method16476(new ItemStack(Class7739.field31441), class8061));
                         this.field4182 = this.method2713().method27652();
                         this.method4318(true);
                         this.field2391.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35716, this.method1922(), 1.0f, 0.8f + this.field2423.nextFloat() * 0.4f);
@@ -148,8 +148,8 @@ public class Class778 extends Class776 implements Class768
                 }
                 else if (this.field4182-- <= 0) {
                     this.method4318(false);
-                    final Class8321 method2711 = this.method2713();
-                    this.method1803(Class2215.field13600, Class8321.field34174);
+                    final ItemStack method2711 = this.method2713();
+                    this.method1803(Class2215.field13600, ItemStack.field34174);
                     if (method2711.method27622() == Class7739.field31441) {
                         final List<Class1948> method2712 = Class5333.method16465(method2711);
                         if (method2712 != null) {
@@ -232,7 +232,7 @@ public class Class778 extends Class776 implements Class768
                 this.method4153(null);
             }
             final Class415 class513 = new Class415(this.field2391, this);
-            class513.method2022(Class5333.method16476(new Class8321(Class7739.field31579), class512));
+            class513.method2022(Class5333.method16476(new ItemStack(Class7739.field31579), class512));
             final Class415 class514 = class513;
             class514.field2400 += 20.0f;
             class513.method1958(n2, n3 + method1936 * 0.2f, n4, 0.75f, 8.0f);

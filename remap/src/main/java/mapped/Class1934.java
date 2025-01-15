@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class1934 implements Comparable<Class1934>
 {
     private final String field10545;
@@ -74,7 +76,7 @@ public class Class1934 implements Comparable<Class1934>
         return this.field10552;
     }
     
-    public Class2250 method7816() {
+    public ITextComponent method7816() {
         return Class8272.method27500(this.field10553) ? new Class2259("selectWorld.versionUnknown", new Object[0]) : new Class2260(this.field10553);
     }
     

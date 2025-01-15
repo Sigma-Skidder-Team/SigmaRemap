@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Collection;
 
 public abstract class Class6750
@@ -14,7 +16,7 @@ public abstract class Class6750
     
     public abstract String method20539();
     
-    public abstract Class2250 method20548(final Class2250 p0);
+    public abstract ITextComponent method20548(final ITextComponent p0);
     
     public abstract boolean method20552();
     

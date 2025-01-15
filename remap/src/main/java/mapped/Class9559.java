@@ -6,9 +6,9 @@ package mapped;
 
 public interface Class9559
 {
-    Class8651<Class7499, Class5412> method35767();
+    Class8651<EntityType, Class5412> method35767();
     
-    void method35768(final Class8651<Class7499, Class5412> p0);
+    void method35768(final Class8651<EntityType, Class5412> p0);
     
     Class1932 method35769();
     

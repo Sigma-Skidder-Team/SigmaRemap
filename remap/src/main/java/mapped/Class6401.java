@@ -11,7 +11,7 @@ public class Class6401 extends Class6397
     private static String[] field25519;
     
     @Override
-    public Class8321 method19087(final Class5491 class5491, final Class8321 class5492) {
+    public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         this.field25515 = false;
         final Class3820 method27622 = class5492.method27622();
         if (method27622 instanceof Class4036) {

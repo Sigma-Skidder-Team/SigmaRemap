@@ -19,7 +19,7 @@ public class Class856 extends Class855
     private static final Class7843 field4563;
     private BlockPos field4564;
     
-    public Class856(final Class7499<? extends Class856> class7499, final Class1847 class7500) {
+    public Class856(final EntityType<? extends Class856> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method5145(true);
     }
@@ -196,7 +196,7 @@ public class Class856 extends Class855
         class51.method296("BatFlags", this.field2432.method33568(Class856.field4562));
     }
     
-    public static boolean method5146(final Class7499<Class856> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method5146(final EntityType<Class856> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7502.getY() < class7500.method6743()) {
             final int method6969 = class7500.method6969(class7502);
             int bound = 4;

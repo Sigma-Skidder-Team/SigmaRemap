@@ -56,7 +56,7 @@ public final class Class8532
                                     }
                                     if (method7443.field26820.method23365() != Class1976.field10952) {
                                         if (method7443.field26820.method23364() || method7447 <= 16384.0) {
-                                            final Class7499<?> field26820 = method7443.field26820;
+                                            final EntityType<?> field26820 = method7443.field26820;
                                             if (field26820.method23362()) {
                                                 if (method28618(method7438, class1976, method7443, class1980)) {
                                                     if (method28621(Class8897.method31328(field26820), class1977, class1980, field26820) && Class8897.method31330(field26820, class1977, Class2101.field12174, class1980, class1977.field10062)) {
@@ -125,7 +125,7 @@ public final class Class8532
         return !class1857.method21762(class1855, class1856) && !class1857.method21714() && class1858.method21781() && !class1857.method21755(Class7188.field27906);
     }
     
-    public static boolean method28621(final Class2194 class2194, final Class1852 class2195, final BlockPos class2196, final Class7499<?> class2197) {
+    public static boolean method28621(final Class2194 class2194, final Class1852 class2195, final BlockPos class2196, final EntityType<?> class2197) {
         if (class2194 == Class2194.field13356) {
             return true;
         }
@@ -197,7 +197,7 @@ public final class Class8532
         }
     }
     
-    private static BlockPos method28623(final Class1852 class1852, final Class7499<?> class1853, final int n, final int n2) {
+    private static BlockPos method28623(final Class1852 class1852, final EntityType<?> class1853, final int n, final int n2) {
         final BlockPos class1854 = new BlockPos(n, class1852.method6699(Class8897.method31329(class1853), n, n2), n2);
         final BlockPos method1139 = class1854.method1139();
         return class1852.method6701(method1139).method21749(class1852, method1139, Class2084.field12051) ? method1139 : class1854;

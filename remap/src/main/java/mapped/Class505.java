@@ -10,12 +10,12 @@ public class Class505 extends Class433
 {
     private static String[] field2885;
     
-    public Class505(final Class7499<? extends Class505> class7499, final Class1847 class7500) {
+    public Class505(final EntityType<? extends Class505> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class505(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29000, n, n2, n3, class1847);
+        super(EntityType.field29000, n, n2, n3, class1847);
     }
     
     @Override

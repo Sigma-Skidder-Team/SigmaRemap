@@ -19,12 +19,12 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6884
 {
@@ -254,7 +254,7 @@ public class Class6884
         throw Class6884.field26973.create();
     }
     
-    private static int method21113(final Class7492 class7492, final Class9290 class7493, final Class2250 obj) {
+    private static int method21113(final Class7492 class7492, final Class9290 class7493, final ITextComponent obj) {
         if (!class7493.method34314().equals(obj)) {
             class7493.method34316(obj);
             class7492.method23257(new Class2259("commands.scoreboard.objectives.modify.displayname", new Object[] { class7493.method34312(), class7493.method34315() }), true);
@@ -277,7 +277,7 @@ public class Class6884
         return method1579.method19638().size();
     }
     
-    private static int method21116(final Class7492 class7492, final String s, final Class9456 class7493, final Class2250 class7494) throws CommandSyntaxException {
+    private static int method21116(final Class7492 class7492, final String s, final Class9456 class7493, final ITextComponent class7494) throws CommandSyntaxException {
         final Class6515 method1579 = class7492.method23255().method1579();
         if (method1579.method19632(s) != null) {
             throw Class6884.field26971.create();

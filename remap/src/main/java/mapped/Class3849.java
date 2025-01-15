@@ -15,7 +15,7 @@ public class Class3849 extends Class3846
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final Class8321 class1852) {
+    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         if (Class8742.method30195(Class7882.field32366, class1852) == 0) {
             if (class1847.field10063.method20502()) {
@@ -52,7 +52,7 @@ public class Class3849 extends Class3846
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7499<?> class7099) {
-        return class7099 == Class7499.field29015;
+    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+        return class7099 == EntityType.field29015;
     }
 }

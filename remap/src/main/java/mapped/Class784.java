@@ -12,7 +12,7 @@ public class Class784 extends Class785 implements Class768
 {
     private static final Class8810<Byte> field4194;
     
-    public Class784(final Class7499<? extends Class784> class7499, final Class1847 class7500) {
+    public Class784(final EntityType<? extends Class784> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -101,7 +101,7 @@ public class Class784 extends Class785 implements Class768
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31426 && this.method4332()) {
             if (!this.field2391.field10067) {
                 this.method4333(false);

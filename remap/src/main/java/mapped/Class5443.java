@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import java.util.function.Predicate;
@@ -19,7 +18,7 @@ public class Class5443 extends Class5419<Class511>
         this(class1978 -> class1977.equals(class1978.method1642().method23365()), n);
     }
     
-    public Class5443(final Class7499<?> class7499, final float n) {
+    public Class5443(final EntityType<?> class7499, final float n) {
         this(class7501 -> class7500.equals(class7501.method1642()), n);
     }
     

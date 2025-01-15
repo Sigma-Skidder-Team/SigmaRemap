@@ -33,11 +33,11 @@ public class Class8348
                 class7492.method23257(new Class2259("commands.spectate.success.stopped", new Object[0]), false);
             }
             else {
-                class7492.method23257(new Class2259("commands.spectate.success.started", new Object[] { class7493.method1871() }), false);
+                class7492.method23257(new Class2259("commands.spectate.success.started", new Object[] { class7493.getDisplayName() }), false);
             }
             return 1;
         }
-        throw Class8348.field34265.create((Object)class7494.method1871());
+        throw Class8348.field34265.create((Object)class7494.getDisplayName());
     }
     
     static {

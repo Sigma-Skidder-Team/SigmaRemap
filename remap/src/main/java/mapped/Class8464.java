@@ -50,7 +50,7 @@ public class Class8464
                 class7492.method23257(new Class2259("commands.tag.add.success.multiple", new Object[] { s, collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.tag.add.success.single", new Object[] { s, ((Entity)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.tag.add.success.single", new Object[] { s, ((Entity)collection.iterator().next()).getDisplayName() }), true);
             }
             return n;
         }
@@ -71,7 +71,7 @@ public class Class8464
                 class7492.method23257(new Class2259("commands.tag.remove.success.multiple", new Object[] { s, collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.tag.remove.success.single", new Object[] { s, ((Entity)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.tag.remove.success.single", new Object[] { s, ((Entity)collection.iterator().next()).getDisplayName() }), true);
             }
             return n;
         }
@@ -95,10 +95,10 @@ public class Class8464
         else {
             final Entity class7493 = (Entity)collection.iterator().next();
             if (!hashSet.isEmpty()) {
-                class7492.method23257(new Class2259("commands.tag.list.single.success", new Object[] { class7493.method1871(), hashSet.size(), Class9479.method35296(hashSet) }), false);
+                class7492.method23257(new Class2259("commands.tag.list.single.success", new Object[] { class7493.getDisplayName(), hashSet.size(), Class9479.method35296(hashSet) }), false);
             }
             else {
-                class7492.method23257(new Class2259("commands.tag.list.single.empty", new Object[] { class7493.method1871() }), false);
+                class7492.method23257(new Class2259("commands.tag.list.single.empty", new Object[] { class7493.getDisplayName() }), false);
             }
         }
         return hashSet.size();

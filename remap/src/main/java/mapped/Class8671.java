@@ -108,7 +108,7 @@ public class Class8671
             final int n = class1850.getX() + class1849.field10062.nextInt(16) - 8;
             final int n2 = class1850.getZ() + class1849.field10062.nextInt(16) - 8;
             final BlockPos class1851 = new BlockPos(n, class1849.method6699(Class2020.field11522, n, n2), n2);
-            if (class1849.method6922(class1851) && Class763.method4230(Class7499.field29052, class1849, Class2101.field12181, class1851, class1849.field10062)) {
+            if (class1849.method6922(class1851) && Class763.method4230(EntityType.field29052, class1849, Class2101.field12181, class1851, class1849.field10062)) {
                 return new Vec3d(class1851.getX() + 0.5, class1851.getY(), class1851.getZ() + 0.5);
             }
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Objects;
 
 public class Class731 extends Class527 implements Class732
@@ -27,18 +29,18 @@ public class Class731 extends Class527 implements Class732
     }
     
     @Override
-    public void method4036(final Class2250 class2250) {
+    public void method4036(final ITextComponent class2250) {
         this.method4037(class2250);
     }
     
     @Override
-    public void method4037(final Class2250 class2250) {
+    public void method4037(final ITextComponent class2250) {
         this.field3985 = class2250.method8461();
         this.method4038(new Class2259("progress.working", new Object[0]));
     }
     
     @Override
-    public void method4038(final Class2250 class2250) {
+    public void method4038(final ITextComponent class2250) {
         this.field3986 = class2250.method8461();
         this.method4039(0);
     }

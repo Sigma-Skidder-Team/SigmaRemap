@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 
 public class Class3217 extends Class3167
@@ -27,7 +29,7 @@ public class Class3217 extends Class3167
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();
                 final String method16999 = class5724.method13164().method8461();
-                final String lowerCase = Class3217.field15514.field4684.method1841().method8461().toLowerCase();
+                final String lowerCase = Class3217.field15514.field4684.getName().method8461().toLowerCase();
                 Label_0100: {
                     if (this.field15666.method9883("AutoL")) {
                         if (!string.toLowerCase().contains("was slain by " + lowerCase)) {
@@ -52,7 +54,7 @@ public class Class3217 extends Class3167
                 }
                 if (method16999.contains("§a§lPlay Again §r§8\u2022 §r§6§lAuto Mode §r§8\u2022 §r§c§lLeave")) {
                     if (this.field15666.method9883("Auto Join")) {
-                        final Iterator<Class2250> iterator = class5724.method13164().iterator();
+                        final Iterator<ITextComponent> iterator = class5724.method13164().iterator();
                         while (iterator.hasNext()) {
                             final Class9485 method17000 = iterator.next().method8456().method30410();
                             if (method17000 == null) {
@@ -71,7 +73,7 @@ public class Class3217 extends Class3167
                     }
                 }
                 if (this.field15666.method9883("AutoGG")) {
-                    if (method16999.equalsIgnoreCase("§e" + Class3217.field15514.field4684.method1841().method8461() + "§r§a won the game!§r")) {
+                    if (method16999.equalsIgnoreCase("§e" + Class3217.field15514.field4684.getName().method8461() + "§r§a won the game!§r")) {
                         this.field15666.method10295();
                     }
                 }

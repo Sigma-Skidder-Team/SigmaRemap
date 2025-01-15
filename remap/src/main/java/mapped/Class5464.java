@@ -12,12 +12,12 @@ import java.util.function.Predicate;
 public class Class5464 extends Class5419<Class511>
 {
     private static String[] field22724;
-    private final Class7499<?> field22725;
+    private final EntityType<?> field22725;
     private final int field22726;
     private final Predicate<Class511> field22727;
     private final Predicate<Class511> field22728;
     
-    public Class5464(final Class7499<?> field22725, final int n, final Predicate<Class511> field22726, final Predicate<Class511> field22727) {
+    public Class5464(final EntityType<?> field22725, final int n, final Predicate<Class511> field22726, final Predicate<Class511> field22727) {
         super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10630, (Object)Class8233.field33811, (Object)Class1952.field10629, (Object)Class8233.field33805, (Object)Class1952.field10628));
         this.field22725 = field22725;
         this.field22726 = n * n;
@@ -25,7 +25,7 @@ public class Class5464 extends Class5419<Class511>
         this.field22728 = field22726;
     }
     
-    public Class5464(final Class7499<?> class7499, final int n) {
+    public Class5464(final EntityType<?> class7499, final int n) {
         this(class7499, n, p0 -> true, p0 -> true);
     }
     

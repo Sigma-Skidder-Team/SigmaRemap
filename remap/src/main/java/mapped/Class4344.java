@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 
 public class Class4344 implements Class4252<Class5813>
@@ -15,7 +17,7 @@ public class Class4344 implements Class4252<Class5813>
     public Class4344() {
     }
     
-    public Class4344(final BlockPos field19460, final Class2250 class2250, final Class2250 class2251, final Class2250 class2252, final Class2250 class2253) {
+    public Class4344(final BlockPos field19460, final ITextComponent class2250, final ITextComponent class2251, final ITextComponent class2252, final ITextComponent class2253) {
         this.field19460 = field19460;
         this.field19461 = new String[] { class2250.getString(), class2251.getString(), class2252.getString(), class2253.getString() };
     }

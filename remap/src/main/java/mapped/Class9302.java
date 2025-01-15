@@ -30,7 +30,7 @@ public class Class9302
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("replaceitem").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25001("block").then(Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).then(Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()).then(((RequiredArgumentBuilder)Class7788.method25002("item", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method34396((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "item").method772(1, false)))).then(Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(1, 64)).executes(commandContext -> method34396((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "item").method772(IntegerArgumentType.getInteger(commandContext, "count"), true))))))))).then(Class7788.method25001("entity").then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()).then(((RequiredArgumentBuilder)Class7788.method25002("item", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method34397((Class7492)commandContext.getSource(), Class6886.method21146((CommandContext<Class7492>)commandContext, "targets"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "item").method772(1, false)))).then(Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(1, 64)).executes(commandContext -> method34397((Class7492)commandContext.getSource(), Class6886.method21146((CommandContext<Class7492>)commandContext, "targets"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "item").method772(IntegerArgumentType.getInteger(commandContext, "count"), true)))))))));
     }
     
-    private static int method34396(final Class7492 class7492, final BlockPos class7493, final int i, final Class8321 class7494) throws CommandSyntaxException {
+    private static int method34396(final Class7492 class7492, final BlockPos class7493, final int i, final ItemStack class7494) throws CommandSyntaxException {
         final Class436 method6727 = class7492.method23250().method6727(class7493);
         if (!(method6727 instanceof Class446)) {
             throw Class9302.field39908.create();
@@ -44,7 +44,7 @@ public class Class9302
         throw Class9302.field39909.create((Object)i);
     }
     
-    private static int method34397(final Class7492 class7492, final Collection<? extends Entity> collection, final int i, final Class8321 class7493) throws CommandSyntaxException {
+    private static int method34397(final Class7492 class7492, final Collection<? extends Entity> collection, final int i, final ItemStack class7493) throws CommandSyntaxException {
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(collection.size());
         for (final Entity class7494 : collection) {
             if (class7494 instanceof Class513) {
@@ -64,7 +64,7 @@ public class Class9302
                 class7492.method23257(new Class2259("commands.replaceitem.entity.success.multiple", new Object[] { arrayListWithCapacity.size(), class7493.method27684() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.replaceitem.entity.success.single", new Object[] { ((Entity)arrayListWithCapacity.iterator().next()).method1871(), class7493.method27684() }), true);
+                class7492.method23257(new Class2259("commands.replaceitem.entity.success.single", new Object[] { ((Entity)arrayListWithCapacity.iterator().next()).getDisplayName(), class7493.method27684() }), true);
             }
             return arrayListWithCapacity.size();
         }

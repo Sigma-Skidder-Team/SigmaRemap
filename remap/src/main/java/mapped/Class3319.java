@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.UUID;
 import java.util.List;
@@ -40,7 +41,7 @@ public class Class3319 extends Class3167
                 try {
                     for (final UUID uuid : this.field15919) {
                         final Class9081 method17371 = Class3319.field15514.method5269().method17371(uuid);
-                        final Class2250 class5745 = (method17371 == null) ? null : method17371.method32732();
+                        final ITextComponent class5745 = (method17371 == null) ? null : method17371.method32732();
                         if (method17371 != null && this.field15919.contains(uuid)) {
                             if (class5745 == null) {
                                 Class9463.method35173().method35197().method25776(new Class6224("Vanished Warning", "A player is vanished !!" + method17371.method32732().method8459(), 5500));

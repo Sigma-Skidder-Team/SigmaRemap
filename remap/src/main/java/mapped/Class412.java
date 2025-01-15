@@ -13,17 +13,17 @@ public class Class412 extends Class409
     private static String[] field2509;
     private Class511 field2510;
     
-    public Class412(final Class7499<? extends Class412> class7499, final Class1847 class7500) {
+    public Class412(final EntityType<? extends Class412> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class412(final Class1847 class1847, final Class511 field2510) {
-        super(Class7499.field29037, field2510, class1847);
+        super(EntityType.field29037, field2510, class1847);
         this.field2510 = field2510;
     }
     
     public Class412(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29037, n, n2, n3, class1847);
+        super(EntityType.field29037, n, n2, n3, class1847);
     }
     
     @Override
@@ -75,7 +75,7 @@ public class Class412 extends Class409
                         if (!class7008.method2783()) {
                             if (this.field2423.nextFloat() < 0.05f) {
                                 if (this.field2391.method6765().method31216(Class8878.field37318)) {
-                                    final Class842 class7009 = Class7499.field28978.method23371(this.field2391);
+                                    final Class842 class7009 = EntityType.field28978.method23371(this.field2391);
                                     class7009.method5034(true);
                                     class7009.method1730(method2019.getPosX(), method2019.getPosY(), method2019.getPosZ(), method2019.field2399, method2019.field2400);
                                     this.field2391.method6886(class7009);

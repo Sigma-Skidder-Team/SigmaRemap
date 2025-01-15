@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public final class Class6992 implements Class6991
 {
     @Override
@@ -11,7 +13,7 @@ public final class Class6992 implements Class6991
     }
     
     @Override
-    public Class2250 method21403() {
+    public ITextComponent method21403() {
         return new Class2260("");
     }
     

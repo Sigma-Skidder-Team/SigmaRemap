@@ -12,6 +12,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Random;
 import java.util.UUID;
@@ -67,7 +68,7 @@ public class Class3820 implements Class3832
         }
     }
     
-    public void method11699(final Class1847 class1847, final Class511 class1848, final Class8321 class1849, final int n) {
+    public void method11699(final Class1847 class1847, final Class511 class1848, final ItemStack class1849, final int n) {
     }
     
     @Nullable
@@ -100,15 +101,15 @@ public class Class3820 implements Class3832
         return Class2201.field13402;
     }
     
-    public float method11706(final Class8321 class8321, final Class7096 class8322) {
+    public float method11706(final ItemStack class8321, final Class7096 class8322) {
         return 1.0f;
     }
     
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
         if (!this.method11743()) {
             return Class9355.method34676(class1848.method2715(class1849));
         }
-        final Class8321 method2715 = class1848.method2715(class1849);
+        final ItemStack method2715 = class1848.method2715(class1849);
         if (!class1848.method2878(this.method11744().method32747())) {
             return Class9355.method34677(method2715);
         }
@@ -116,7 +117,7 @@ public class Class3820 implements Class3832
         return Class9355.method34675(method2715);
     }
     
-    public Class8321 method11707(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
+    public ItemStack method11707(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
         return this.method11743() ? class8323.method2791(class8322, class8321) : class8321;
     }
     
@@ -132,11 +133,11 @@ public class Class3820 implements Class3832
         return this.field17368 > 0;
     }
     
-    public boolean method11711(final Class8321 class8321, final Class511 class8322, final Class511 class8323) {
+    public boolean method11711(final ItemStack class8321, final Class511 class8322, final Class511 class8323) {
         return false;
     }
     
-    public boolean method11712(final Class8321 class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
+    public boolean method11712(final ItemStack class8321, final Class1847 class8322, final Class7096 class8323, final BlockPos class8324, final Class511 class8325) {
         return false;
     }
     
@@ -144,11 +145,11 @@ public class Class3820 implements Class3832
         return false;
     }
     
-    public boolean method11714(final Class8321 class8321, final Class512 class8322, final Class511 class8323, final Class316 class8324) {
+    public boolean method11714(final ItemStack class8321, final Class512 class8322, final Class511 class8323, final Class316 class8324) {
         return false;
     }
     
-    public Class2250 method11715() {
+    public ITextComponent method11715() {
         return new Class2259(this.method11717(), new Object[0]);
     }
     
@@ -168,7 +169,7 @@ public class Class3820 implements Class3832
         return this.method11716();
     }
     
-    public String method11718(final Class8321 class8321) {
+    public String method11718(final ItemStack class8321) {
         return this.method11717();
     }
     
@@ -185,42 +186,42 @@ public class Class3820 implements Class3832
         return this.field17369 != null;
     }
     
-    public void method11722(final Class8321 class8321, final Class1847 class8322, final Entity class8323, final int n, final boolean b) {
+    public void method11722(final ItemStack class8321, final Class1847 class8322, final Entity class8323, final int n, final boolean b) {
     }
     
-    public void method11723(final Class8321 class8321, final Class1847 class8322, final Class512 class8323) {
+    public void method11723(final ItemStack class8321, final Class1847 class8322, final Class512 class8323) {
     }
     
     public boolean method11724() {
         return false;
     }
     
-    public Class1992 method11725(final Class8321 class8321) {
+    public Class1992 method11725(final ItemStack class8321) {
         return class8321.method27622().method11743() ? Class1992.field11155 : Class1992.field11154;
     }
     
-    public int method11726(final Class8321 class8321) {
+    public int method11726(final ItemStack class8321) {
         if (!class8321.method27622().method11743()) {
             return 0;
         }
         return this.method11744().method32748() ? 16 : 32;
     }
     
-    public void method11727(final Class8321 class8321, final Class1847 class8322, final Class511 class8323, final int n) {
+    public void method11727(final ItemStack class8321, final Class1847 class8322, final Class511 class8323, final int n) {
     }
     
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
     }
     
-    public Class2250 method11729(final Class8321 class8321) {
+    public ITextComponent method11729(final ItemStack class8321) {
         return new Class2259(this.method11718(class8321), new Object[0]);
     }
     
-    public boolean method11730(final Class8321 class8321) {
+    public boolean method11730(final ItemStack class8321) {
         return class8321.method27675();
     }
     
-    public Class1998 method11731(final Class8321 class8321) {
+    public Class1998 method11731(final ItemStack class8321) {
         if (!class8321.method27675()) {
             return this.field17366;
         }
@@ -238,7 +239,7 @@ public class Class3820 implements Class3832
         }
     }
     
-    public boolean method11732(final Class8321 class8321) {
+    public boolean method11732(final ItemStack class8321) {
         return this.method11708() == 1 && this.method11710();
     }
     
@@ -256,9 +257,9 @@ public class Class3820 implements Class3832
         return 0;
     }
     
-    public void method11735(final Class7207 class7207, final Class2265<Class8321> class7208) {
+    public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
         if (this.method11736(class7207)) {
-            class7208.add(new Class8321(this));
+            class7208.add(new ItemStack(this));
         }
     }
     
@@ -272,7 +273,7 @@ public class Class3820 implements Class3832
         return this.field17365;
     }
     
-    public boolean method11738(final Class8321 class8321, final Class8321 class8322) {
+    public boolean method11738(final ItemStack class8321, final ItemStack class8322) {
         return false;
     }
     
@@ -280,12 +281,12 @@ public class Class3820 implements Class3832
         return (Multimap<String, Class7919>)HashMultimap.create();
     }
     
-    public boolean method11740(final Class8321 class8321) {
+    public boolean method11740(final ItemStack class8321) {
         return class8321.method27622() == Class7739.field31611;
     }
     
-    public Class8321 method11741() {
-        return new Class8321(this);
+    public ItemStack method11741() {
+        return new ItemStack(this);
     }
     
     public boolean method11742(final Class7909<Class3820> class7909) {

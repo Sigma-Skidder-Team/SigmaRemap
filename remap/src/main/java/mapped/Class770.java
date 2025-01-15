@@ -12,7 +12,7 @@ public abstract class Class770 extends Class772
     public int field4162;
     private Class2107 field4163;
     
-    public Class770(final Class7499<? extends Class770> class7499, final Class1847 class7500) {
+    public Class770(final EntityType<? extends Class770> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4163 = Class2107.field12213;
     }

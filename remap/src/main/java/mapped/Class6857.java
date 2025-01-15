@@ -35,7 +35,7 @@ public class Class6857 extends Class6851<Class511>
         final Class365<?> method2618 = class511.method2618();
         final Optional<List<Class511>> method2619 = method2618.method1198(Class8233.field33804);
         if (method2619.isPresent()) {
-            if (method2619.get().stream().anyMatch(class512 -> class512.method1642().equals(Class7499.field29043))) {
+            if (method2619.get().stream().anyMatch(class512 -> class512.method1642().equals(EntityType.field29043))) {
                 method2618.method1196(Class8233.field33823, l);
             }
         }

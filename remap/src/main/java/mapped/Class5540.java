@@ -7,7 +7,7 @@ package mapped;
 public class Class5540 extends Class5538
 {
     public Class5540() {
-        super(Class7499.field29044, "vindicator", 0.5f, new String[] { "vindication_illager" });
+        super(EntityType.field29044, "vindicator", 0.5f, new String[] { "vindication_illager" });
     }
     
     @Override

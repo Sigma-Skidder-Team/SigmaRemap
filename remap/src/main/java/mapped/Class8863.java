@@ -8,6 +8,8 @@ import java.util.Arrays;
 import javax.annotation.Nullable;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Set;
 import java.util.Map;
 
@@ -20,7 +22,7 @@ public class Class8863
     private final Map<String, Class8832> field37257;
     private final String[][] field37258;
     private final Set<Class8863> field37259;
-    private final Class2250 field37260;
+    private final ITextComponent field37260;
     
     public Class8863(final Class1932 field37256, final Class8863 field37257, final Class7339 class2252, final Class9032 field37259, final Map<String, Class8832> map, final String[][] field37260) {
         this.field37259 = Sets.newLinkedHashSet();
@@ -35,7 +37,7 @@ public class Class8863
         }
         if (class2252 != null) {
             this.field37260 = new Class2260("[").method8458(class2252.method22527().method8466().method8467(class2251 -> {
-                final Class2250 class2253;
+                final ITextComponent class2253;
                 final Class2116 class2254;
                 class2253.method8466().method8469(class2254).method8457("\n").method8458(class2252.method22528());
                 class2251.method30420(new Class9390(Class1961.field10697, class2250));
@@ -103,7 +105,7 @@ public class Class8863
         return this.field37258;
     }
     
-    public Class2250 method31044() {
+    public ITextComponent method31044() {
         return this.field37260;
     }
 }

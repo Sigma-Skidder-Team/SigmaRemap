@@ -48,6 +48,6 @@ public class Class4581 extends Class4574<Class5122>
     }
     
     static {
-        field20070 = Lists.newArrayList((Object[])new Class6828[] { new Class6828(Class7499.field28962, 10, 2, 3), new Class6828(Class7499.field29014, 5, 4, 4), new Class6828(Class7499.field29049, 8, 5, 5), new Class6828(Class7499.field29023, 2, 5, 5), new Class6828(Class7499.field28998, 3, 4, 4) });
+        field20070 = Lists.newArrayList((Object[])new Class6828[] { new Class6828(EntityType.field28962, 10, 2, 3), new Class6828(EntityType.field29014, 5, 4, 4), new Class6828(EntityType.field29049, 8, 5, 5), new Class6828(EntityType.field29023, 2, 5, 5), new Class6828(EntityType.field28998, 3, 4, 4) });
     }
 }

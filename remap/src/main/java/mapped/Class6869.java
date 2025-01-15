@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6869 implements Class6866
 {
@@ -18,7 +19,7 @@ public class Class6869 implements Class6866
     private float field26915;
     private final boolean field26916;
     
-    public Class6869(final Class2240 field26909, final Class2250 class2250, final Class2250 class2251, final boolean field26910) {
+    public Class6869(final Class2240 field26909, final ITextComponent class2250, final ITextComponent class2251, final boolean field26910) {
         this.field26912 = Class2204.field13417;
         this.field26909 = field26909;
         this.field26910 = class2250.method8461();

@@ -125,7 +125,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final Class8321 class1852) {
+    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, Class7521.field29147.method11878(), class1851, class1852);
     }
     
@@ -140,7 +140,7 @@ public class Class3900 extends Class3892 implements Class3840
                 class1847.method6839(class1850, 2001, method1149, Class3833.method11774(method1150));
                 if (!class1847.field10067) {
                     if (!class1850.method2889()) {
-                        final Class8321 method1151 = class1850.method2713();
+                        final ItemStack method1151 = class1850.method2713();
                         Class3833.method11838(class1849, class1847, class1848, null, class1850, method1151);
                         Class3833.method11838(method1150, class1847, method1149, null, class1850, method1151);
                     }
@@ -185,7 +185,7 @@ public class Class3900 extends Class3892 implements Class3840
         return (class7096.method21772(Class3900.field17599) != Class105.field323) ? Class2083.field12049 : Class2083.field12048;
     }
     
-    public static Optional<Vec3d> method11991(final Class7499<?> class7499, final Class1852 class7500, final BlockPos class7501, int n) {
+    public static Optional<Vec3d> method11991(final EntityType<?> class7499, final Class1852 class7500, final BlockPos class7501, int n) {
         final Direction class7502 = class7500.method6701(class7501).method21772((Class7111<Direction>)Class3900.field17564);
         final int method1074 = class7501.getX();
         final int method1075 = class7501.getY();
@@ -210,7 +210,7 @@ public class Class3900 extends Class3892 implements Class3840
         return Optional.empty();
     }
     
-    public static Optional<Vec3d> method11992(final Class7499<?> class7499, final Class1852 class7500, final BlockPos class7501) {
+    public static Optional<Vec3d> method11992(final EntityType<?> class7499, final Class1852 class7500, final BlockPos class7501) {
         if (class7500.method6701(class7501).method21727(class7500, class7501).method24536(Axis.Y) > 0.4375) {
             return Optional.empty();
         }
@@ -258,7 +258,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
         if (!class1847.field10067) {
             class1847.method6688(class1848.method1149(class1849.method21772((Class7111<Direction>)Class3900.field17564)), ((Class7097<O, Class7096>)class1849).method21773(Class3900.field17599, Class105.field323), 3);

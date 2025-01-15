@@ -307,7 +307,7 @@ public class Class7532
         final Class52 method328 = class51.method328("Entities", 10);
         final Class1847 method329 = class52.method7065();
         for (int i = 0; i < method328.size(); ++i) {
-            Class7499.method23378(method328.method346(i), method329, class55 -> {
+            EntityType.method23378(method328.method346(i), method329, class55 -> {
                 class53.method7010(class55);
                 return class55;
             });

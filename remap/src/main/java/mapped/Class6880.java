@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.UUID;
 
 public abstract class Class6880
 {
     private final UUID field26955;
-    public Class2250 field26956;
+    public ITextComponent field26956;
     public float field26957;
     public Class2200 field26958;
     public Class342 field26959;
@@ -17,7 +19,7 @@ public abstract class Class6880
     public boolean field26961;
     public boolean field26962;
     
-    public Class6880(final UUID field26955, final Class2250 field26956, final Class2200 field26957, final Class342 field26958) {
+    public Class6880(final UUID field26955, final ITextComponent field26956, final Class2200 field26957, final Class342 field26958) {
         this.field26955 = field26955;
         this.field26956 = field26956;
         this.field26958 = field26957;
@@ -29,11 +31,11 @@ public abstract class Class6880
         return this.field26955;
     }
     
-    public Class2250 method21076() {
+    public ITextComponent method21076() {
         return this.field26956;
     }
     
-    public void method21070(final Class2250 field26956) {
+    public void method21070(final ITextComponent field26956) {
         this.field26956 = field26956;
     }
     

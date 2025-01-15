@@ -19,9 +19,9 @@ public class Class7815 extends Class7814
     
     @Override
     public boolean method25239(final Entity class399) {
-        final String method8461 = class399.method1871().method8461();
-        final String s = (class399.method1873() != null) ? class399.method1873().method8461() : null;
-        final String method8462 = class399.method1841().method8461();
+        final String method8461 = class399.getDisplayName().method8461();
+        final String s = (class399.getCustomName() != null) ? class399.getCustomName().method8461() : null;
+        final String method8462 = class399.getName().method8461();
         if (class399.method1823()) {
             if (!method8461.startsWith("§c")) {
                 if (method8461.endsWith("§r")) {

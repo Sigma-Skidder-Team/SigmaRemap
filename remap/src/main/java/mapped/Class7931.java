@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
@@ -30,11 +31,11 @@ public class Class7931 extends Class7930
     }
     
     @Override
-    public Class2250 method25690(final Class511 class511) {
-        final Class2250 class512 = (this.field32596 != null) ? this.field32596.method1871() : this.field32594.method1871();
-        final Class8321 class513 = (this.field32596 instanceof Class511) ? ((Class511)this.field32596).method2713() : Class8321.field34174;
+    public ITextComponent method25690(final Class511 class511) {
+        final ITextComponent class512 = (this.field32596 != null) ? this.field32596.getDisplayName() : this.field32594.getDisplayName();
+        final ItemStack class513 = (this.field32596 instanceof Class511) ? ((Class511)this.field32596).method2713() : ItemStack.field34174;
         final String string = "death.attack." + this.field32593;
         final String string2 = string + ".item";
-        return (!class513.method27620() && class513.method27667()) ? new Class2259(string2, new Object[] { class511.method1871(), class512, class513.method27684() }) : new Class2259(string, new Object[] { class511.method1871(), class512 });
+        return (!class513.method27620() && class513.method27667()) ? new Class2259(string2, new Object[] { class511.getDisplayName(), class512, class513.method27684() }) : new Class2259(string, new Object[] { class511.getDisplayName(), class512 });
     }
 }

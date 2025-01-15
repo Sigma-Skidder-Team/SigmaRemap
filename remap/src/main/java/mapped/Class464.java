@@ -8,37 +8,40 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.function.Predicate;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.INameable;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
-public class Class464 implements Class446, Class462
+public class Class464 implements Class446, INameable
 {
-    public final Class2265<Class8321> field2739;
-    public final Class2265<Class8321> field2740;
-    public final Class2265<Class8321> field2741;
-    private final List<Class2265<Class8321>> field2742;
+    public final Class2265<ItemStack> field2739;
+    public final Class2265<ItemStack> field2740;
+    public final Class2265<ItemStack> field2741;
+    private final List<Class2265<ItemStack>> field2742;
     public int field2743;
     public final Class512 field2744;
-    private Class8321 field2745;
+    private ItemStack field2745;
     private int field2746;
     
     public Class464(final Class512 field2744) {
-        this.field2739 = Class2265.method8507(36, Class8321.field34174);
-        this.field2740 = Class2265.method8507(4, Class8321.field34174);
-        this.field2741 = Class2265.method8507(1, Class8321.field34174);
-        this.field2742 = (List<Class2265<Class8321>>)ImmutableList.of((Object)this.field2739, (Object)this.field2740, (Object)this.field2741);
-        this.field2745 = Class8321.field34174;
+        this.field2739 = Class2265.method8507(36, ItemStack.field34174);
+        this.field2740 = Class2265.method8507(4, ItemStack.field34174);
+        this.field2741 = Class2265.method8507(1, ItemStack.field34174);
+        this.field2742 = (List<Class2265<ItemStack>>)ImmutableList.of((Object)this.field2739, (Object)this.field2740, (Object)this.field2741);
+        this.field2745 = ItemStack.field34174;
         this.field2744 = field2744;
     }
     
-    public Class8321 method2345() {
-        return method2352(this.field2743) ? this.field2739.get(this.field2743) : Class8321.field34174;
+    public ItemStack method2345() {
+        return method2352(this.field2743) ? this.field2739.get(this.field2743) : ItemStack.field34174;
     }
     
     public static int method2346() {
         return 9;
     }
     
-    private boolean method2347(final Class8321 class8321, final Class8321 class8322) {
+    private boolean method2347(final ItemStack class8321, final ItemStack class8322) {
         if (!class8321.method27620()) {
             if (this.method2348(class8321, class8322)) {
                 if (class8321.method27629()) {
@@ -53,8 +56,8 @@ public class Class464 implements Class446, Class462
         return false;
     }
     
-    private boolean method2348(final Class8321 class8321, final Class8321 class8322) {
-        return class8321.method27622() == class8322.method27622() && Class8321.method27642(class8321, class8322);
+    private boolean method2348(final ItemStack class8321, final ItemStack class8322) {
+        return class8321.method27622() == class8322.method27622() && ItemStack.method27642(class8321, class8322);
     }
     
     public int method2349() {
@@ -66,7 +69,7 @@ public class Class464 implements Class446, Class462
         return -1;
     }
     
-    public void method2350(final Class8321 class8321) {
+    public void method2350(final ItemStack class8321) {
         final int method2353 = this.method2353(class8321);
         if (!method2352(method2353)) {
             if (method2353 != -1) {
@@ -90,7 +93,7 @@ public class Class464 implements Class446, Class462
     
     public void method2351(final int n) {
         this.field2743 = this.method2355();
-        final Class8321 class8321 = this.field2739.get(this.field2743);
+        final ItemStack class8321 = this.field2739.get(this.field2743);
         this.field2739.set(this.field2743, this.field2739.get(n));
         this.field2739.set(n, class8321);
     }
@@ -99,7 +102,7 @@ public class Class464 implements Class446, Class462
         return n >= 0 && n < 9;
     }
     
-    public int method2353(final Class8321 class8321) {
+    public int method2353(final ItemStack class8321) {
         for (int i = 0; i < this.field2739.size(); ++i) {
             if (!this.field2739.get(i).method27620() && this.method2348(class8321, this.field2739.get(i))) {
                 return i;
@@ -108,9 +111,9 @@ public class Class464 implements Class446, Class462
         return -1;
     }
     
-    public int method2354(final Class8321 class8321) {
+    public int method2354(final ItemStack class8321) {
         for (int i = 0; i < this.field2739.size(); ++i) {
-            final Class8321 class8322 = this.field2739.get(i);
+            final ItemStack class8322 = this.field2739.get(i);
             if (!this.field2739.get(i).method27620()) {
                 if (this.method2348(class8321, this.field2739.get(i))) {
                     if (!this.field2739.get(i).method27631()) {
@@ -158,10 +161,10 @@ public class Class464 implements Class446, Class462
         }
     }
     
-    public int method2357(final Predicate<Class8321> predicate, final int n) {
+    public int method2357(final Predicate<ItemStack> predicate, final int n) {
         int n2 = 0;
         for (int i = 0; i < this.method2239(); ++i) {
-            final Class8321 method2157 = this.method2157(i);
+            final ItemStack method2157 = this.method2157(i);
             if (!method2157.method27620()) {
                 if (predicate.test(method2157)) {
                     final int n3 = (n > 0) ? Math.min(n - n2, method2157.method27690()) : method2157.method27690();
@@ -169,7 +172,7 @@ public class Class464 implements Class446, Class462
                     if (n != 0) {
                         method2157.method27693(n3);
                         if (method2157.method27620()) {
-                            this.method2160(i, Class8321.field34174);
+                            this.method2160(i, ItemStack.field34174);
                         }
                         if (n > 0) {
                             if (n2 >= n) {
@@ -187,7 +190,7 @@ public class Class464 implements Class446, Class462
                 if (n != 0) {
                     this.field2745.method27693(n4);
                     if (this.field2745.method27620()) {
-                        this.field2745 = Class8321.field34174;
+                        this.field2745 = ItemStack.field34174;
                     }
                     if (n > 0) {
                         if (n2 >= n) {
@@ -200,7 +203,7 @@ public class Class464 implements Class446, Class462
         return n2;
     }
     
-    private int method2358(final Class8321 class8321) {
+    private int method2358(final ItemStack class8321) {
         int n = this.method2360(class8321);
         if (n == -1) {
             n = this.method2349();
@@ -208,12 +211,12 @@ public class Class464 implements Class446, Class462
         return (n != -1) ? this.method2359(n, class8321) : class8321.method27690();
     }
     
-    private int method2359(final int n, final Class8321 class8321) {
+    private int method2359(final int n, final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         final int method27623 = class8321.method27690();
-        Class8321 method27624 = this.method2157(n);
+        ItemStack method27624 = this.method2157(n);
         if (method27624.method27620()) {
-            method27624 = new Class8321(method27622, 0);
+            method27624 = new ItemStack(method27622, 0);
             if (class8321.method27656()) {
                 method27624.method27663(class8321.method27657().method333());
             }
@@ -235,7 +238,7 @@ public class Class464 implements Class446, Class462
         return method27623;
     }
     
-    public int method2360(final Class8321 class8321) {
+    public int method2360(final ItemStack class8321) {
         if (this.method2347(this.method2157(this.field2743), class8321)) {
             return this.field2743;
         }
@@ -253,18 +256,18 @@ public class Class464 implements Class446, Class462
     public void method2361() {
         for (final Class2265 class2265 : this.field2742) {
             for (int i = 0; i < class2265.size(); ++i) {
-                if (!((Class8321)class2265.get(i)).method27620()) {
-                    ((Class8321)class2265.get(i)).method27650(this.field2744.field2391, this.field2744, i, this.field2743 == i);
+                if (!((ItemStack)class2265.get(i)).method27620()) {
+                    ((ItemStack)class2265.get(i)).method27650(this.field2744.field2391, this.field2744, i, this.field2743 == i);
                 }
             }
         }
     }
     
-    public boolean method2362(final Class8321 class8321) {
+    public boolean method2362(final ItemStack class8321) {
         return this.method2363(-1, class8321);
     }
     
-    public boolean method2363(int method2349, final Class8321 class8321) {
+    public boolean method2363(int method2349, final ItemStack class8321) {
         if (class8321.method27620()) {
             return false;
         }
@@ -313,7 +316,7 @@ public class Class464 implements Class446, Class462
         }
     }
     
-    public void method2364(final Class1847 class1847, final Class8321 class1848) {
+    public void method2364(final Class1847 class1847, final ItemStack class1848) {
         if (!class1847.field10067) {
             while (!class1848.method27620()) {
                 int n = this.method2360(class1848);
@@ -333,7 +336,7 @@ public class Class464 implements Class446, Class462
     }
     
     @Override
-    public Class8321 method2158(int n, final int n2) {
+    public ItemStack method2158(int n, final int n2) {
         List list = null;
         for (final Class2265 class2265 : this.field2742) {
             if (n < class2265.size()) {
@@ -342,14 +345,14 @@ public class Class464 implements Class446, Class462
             }
             n -= class2265.size();
         }
-        return (list != null && !((Class8321)list.get(n)).method27620()) ? Class8508.method28422(list, n, n2) : Class8321.field34174;
+        return (list != null && !((ItemStack)list.get(n)).method27620()) ? Class8508.method28422(list, n, n2) : ItemStack.field34174;
     }
     
-    public void method2365(final Class8321 class8321) {
+    public void method2365(final ItemStack class8321) {
         for (final Class2265 class8322 : this.field2742) {
             for (int i = 0; i < class8322.size(); ++i) {
                 if (class8322.get(i) == class8321) {
-                    class8322.set(i, Class8321.field34174);
+                    class8322.set(i, ItemStack.field34174);
                     break;
                 }
             }
@@ -357,7 +360,7 @@ public class Class464 implements Class446, Class462
     }
     
     @Override
-    public Class8321 method2159(int n) {
+    public ItemStack method2159(int n) {
         Class2265 class2265 = null;
         for (final Class2265 class2266 : this.field2742) {
             if (n < class2266.size()) {
@@ -366,17 +369,17 @@ public class Class464 implements Class446, Class462
             }
             n -= class2266.size();
         }
-        if (class2265 != null && !((Class8321)class2265.get(n)).method27620()) {
-            final Class8321 class2267 = (Class8321)class2265.get(n);
-            class2265.set(n, Class8321.field34174);
+        if (class2265 != null && !((ItemStack)class2265.get(n)).method27620()) {
+            final ItemStack class2267 = (ItemStack)class2265.get(n);
+            class2265.set(n, ItemStack.field34174);
             return class2267;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override
-    public void method2160(int n, final Class8321 class8321) {
-        Class2265<Class8321> class8322 = null;
+    public void method2160(int n, final ItemStack class8321) {
+        Class2265<ItemStack> class8322 = null;
         for (final Class2265 class8323 : this.field2742) {
             if (n < class8323.size()) {
                 class8322 = class8323;
@@ -428,7 +431,7 @@ public class Class464 implements Class446, Class462
         for (int i = 0; i < class52.size(); ++i) {
             final Class51 method346 = class52.method346(i);
             final int n = method346.method317("Slot") & 0xFF;
-            final Class8321 method347 = Class8321.method27619(method346);
+            final ItemStack method347 = ItemStack.method27619(method346);
             if (!method347.method27620()) {
                 if (n >= 0 && n < this.field2739.size()) {
                     this.field2739.set(n, method347);
@@ -477,7 +480,7 @@ public class Class464 implements Class446, Class462
     }
     
     @Override
-    public Class8321 method2157(int n) {
+    public ItemStack method2157(int n) {
         List list = null;
         for (final Class2265 class2265 : this.field2742) {
             if (n < class2265.size()) {
@@ -486,11 +489,11 @@ public class Class464 implements Class446, Class462
             }
             n -= class2265.size();
         }
-        return (Class8321)((list != null) ? list.get(n) : Class8321.field34174);
+        return (ItemStack)((list != null) ? list.get(n) : ItemStack.field34174);
     }
     
     @Override
-    public Class2250 method1841() {
+    public ITextComponent getName() {
         return new Class2259("container.inventory", new Object[0]);
     }
     
@@ -498,7 +501,7 @@ public class Class464 implements Class446, Class462
         return this.method2157(this.field2743).method27639(class7096);
     }
     
-    public Class8321 method2370(final int n) {
+    public ItemStack method2370(final int n) {
         return this.field2740.get(n);
     }
     
@@ -509,7 +512,7 @@ public class Class464 implements Class446, Class462
                 n = 1.0f;
             }
             for (int i = 0; i < this.field2740.size(); ++i) {
-                final Class8321 class8321 = this.field2740.get(i);
+                final ItemStack class8321 = this.field2740.get(i);
                 if (class8321.method27622() instanceof Class4055) {
                     class8321.method27636((int)n, this.field2744, class8322 -> class8322.method2794(Class2215.method8406(Class295.field1682, n2)));
                 }
@@ -520,10 +523,10 @@ public class Class464 implements Class446, Class462
     public void method2372() {
         for (final List list : this.field2742) {
             for (int i = 0; i < list.size(); ++i) {
-                final Class8321 class8321 = (Class8321)list.get(i);
+                final ItemStack class8321 = (ItemStack)list.get(i);
                 if (!class8321.method27620()) {
                     this.field2744.method2823(class8321, true, false);
-                    list.set(i, Class8321.field34174);
+                    list.set(i, ItemStack.field34174);
                 }
             }
         }
@@ -538,11 +541,11 @@ public class Class464 implements Class446, Class462
         return this.field2746;
     }
     
-    public void method2374(final Class8321 field2745) {
+    public void method2374(final ItemStack field2745) {
         this.field2745 = field2745;
     }
     
-    public Class8321 method2375() {
+    public ItemStack method2375() {
         return this.field2745;
     }
     
@@ -551,10 +554,10 @@ public class Class464 implements Class446, Class462
         return !this.field2744.field2410 && class512.method1734(this.field2744) <= 64.0;
     }
     
-    public boolean method2376(final Class8321 class8321) {
-        final Iterator<Class2265<Class8321>> iterator = this.field2742.iterator();
+    public boolean method2376(final ItemStack class8321) {
+        final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
-            for (final Class8321 class8322 : iterator.next()) {
+            for (final ItemStack class8322 : iterator.next()) {
                 if (!class8322.method27620() && class8322.method27647(class8321)) {
                     return true;
                 }
@@ -564,9 +567,9 @@ public class Class464 implements Class446, Class462
     }
     
     public boolean method2377(final Class7909<Class3820> class7909) {
-        final Iterator<Class2265<Class8321>> iterator = this.field2742.iterator();
+        final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
-            for (final Class8321 class7910 : iterator.next()) {
+            for (final ItemStack class7910 : iterator.next()) {
                 if (!class7910.method27620() && class7909.method25618(class7910.method27622())) {
                     return true;
                 }
@@ -584,7 +587,7 @@ public class Class464 implements Class446, Class462
     
     @Override
     public void method2164() {
-        final Iterator<Class2265<Class8321>> iterator = this.field2742.iterator();
+        final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
             iterator.next().clear();
         }

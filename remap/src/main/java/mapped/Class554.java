@@ -5,15 +5,17 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class554 extends Class527
 {
     private final Class527 field3325;
     public final Class3416 field3326;
-    private final Class2250 field3327;
+    private final ITextComponent field3327;
     private final boolean field3328;
     private final List<String> field3329;
     private final String field3330;
@@ -22,7 +24,7 @@ public class Class554 extends Class527
     private final String field3333;
     private Class682 field3334;
     
-    public Class554(final Class527 field3325, final Class3416 field3326, final Class2250 class2250, final Class2250 field3327, final boolean field3328) {
+    public Class554(final Class527 field3325, final Class3416 field3326, final ITextComponent class2250, final ITextComponent field3327, final boolean field3328) {
         super(class2250);
         this.field3329 = Lists.newArrayList();
         this.field3325 = field3325;

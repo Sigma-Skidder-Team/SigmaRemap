@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.security.PrivateKey;
 import java.util.Arrays;
@@ -62,7 +63,7 @@ public class Class5803 implements Class5802
         return this.field23826;
     }
     
-    public void method17392(final Class2250 class2250) {
+    public void method17392(final ITextComponent class2250) {
         try {
             Class5803.field23822.info("Disconnecting {}: {}", (Object)this.method17394(), (Object)class2250.getString());
             this.field23826.method11174(new Class4277(class2250));
@@ -77,7 +78,7 @@ public class Class5803 implements Class5802
         if (!this.field23829.isComplete()) {
             this.field23829 = this.method17395(this.field23829);
         }
-        final Class2250 method20573 = this.field23825.method1537().method20573(this.field23826.method11180(), this.field23829);
+        final ITextComponent method20573 = this.field23825.method1537().method20573(this.field23826.method11180(), this.field23829);
         if (method20573 == null) {
             this.field23827 = Class2055.field11732;
             if (this.field23825.method1562() >= 0) {
@@ -100,7 +101,7 @@ public class Class5803 implements Class5802
     }
     
     @Override
-    public void method17291(final Class2250 class2250) {
+    public void method17291(final ITextComponent class2250) {
         Class5803.field23822.info("{} lost connection: {}", (Object)this.method17394(), (Object)class2250.getString());
     }
     

@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public enum Class2226
 {
-    field13697((Class2250)new Class2259("options.mainHand.left", new Object[0])), 
-    field13698((Class2250)new Class2259("options.mainHand.right", new Object[0]));
+    field13697((ITextComponent)new Class2259("options.mainHand.left", new Object[0])),
+    field13698((ITextComponent)new Class2259("options.mainHand.right", new Object[0]));
     
-    private final Class2250 field13699;
+    private final ITextComponent field13699;
     
-    private Class2226(final Class2250 field13699) {
+    private Class2226(final ITextComponent field13699) {
         this.field13699 = field13699;
     }
     

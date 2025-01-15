@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Class5522 extends Class5515
 {
     public Class5522() {
-        super(Class7499.field29019, "sheep_wool", 0.7f);
+        super(EntityType.field29019, "sheep_wool", 0.7f);
     }
     
     @Override

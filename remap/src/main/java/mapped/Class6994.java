@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Random;
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class Class6994 implements Class6991
     }
     
     @Override
-    public Class2250 method21403() {
+    public ITextComponent method21403() {
         return this.field27287.method20540();
     }
     

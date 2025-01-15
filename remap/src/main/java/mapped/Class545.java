@@ -5,7 +5,6 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.function.Predicate;
 import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -94,7 +93,7 @@ public class Class545 extends Class527
     }
     
     @Override
-    public void method3014(final Class8321 class8321, final int n, final int n2) {
+    public void method3014(final ItemStack class8321, final int n, final int n2) {
         super.method3014(class8321, n, n2);
     }
     

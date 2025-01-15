@@ -4,17 +4,15 @@
 
 package mapped;
 
-import it.unimi.dsi.fastutil.ints.IntList;
-
 public class Class3679 implements Class3663
 {
     private static String[] field16969;
     private final Class1932 field16970;
     private final String field16971;
-    private final Class8321 field16972;
+    private final ItemStack field16972;
     private final Class2265<Class120> field16973;
     
-    public Class3679(final Class1932 field16970, final String field16971, final Class8321 field16972, final Class2265<Class120> field16973) {
+    public Class3679(final Class1932 field16970, final String field16971, final ItemStack field16972, final Class2265<Class120> field16973) {
         this.field16970 = field16970;
         this.field16971 = field16971;
         this.field16972 = field16972;
@@ -37,7 +35,7 @@ public class Class3679 implements Class3663
     }
     
     @Override
-    public Class8321 method11292() {
+    public ItemStack method11292() {
         return this.field16972;
     }
     
@@ -50,7 +48,7 @@ public class Class3679 implements Class3663
         final Class5024 class475 = new Class5024();
         int n = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 ++n;
                 class475.method15244(method2157, 1);
@@ -59,7 +57,7 @@ public class Class3679 implements Class3663
         return n == this.field16973.size() && class475.method15249(this, null);
     }
     
-    public Class8321 method11303(final Class473 class473) {
+    public ItemStack method11303(final Class473 class473) {
         return this.field16972.method27641();
     }
     

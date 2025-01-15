@@ -61,7 +61,7 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public List<Class8321> method11833(final Class7096 class7096, final Class9098 class7097) {
+    public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
         return Collections.emptyList();
     }
     

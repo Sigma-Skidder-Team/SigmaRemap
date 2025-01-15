@@ -88,7 +88,7 @@ public class Class3317 extends Class3167
         this.field15904 = Class3317.field15514.field4684.field2397;
         this.field15908 = Class3317.field15514.field4684.field2399;
         this.field15909 = Class3317.field15514.field4684.field2400;
-        Class3317.field15901 = new Class755(Class3317.field15514.field4683, new GameProfile(Class3317.field15514.field4684.method2844().getId(), Class3317.field15514.field4684.method1841().method8461()));
+        Class3317.field15901 = new Class755(Class3317.field15514.field4683, new GameProfile(Class3317.field15514.field4684.method2844().getId(), Class3317.field15514.field4684.getName().method8461()));
         Class3317.field15901.field3006 = Class3317.field15514.field4684.field3006;
         Class3317.field15901.method1728(this.field15902, this.field15903, this.field15904, this.field15908, this.field15909);
         Class3317.field15901.field2421 = true;

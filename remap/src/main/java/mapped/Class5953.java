@@ -14,7 +14,6 @@ import javax.annotation.Nullable;
 import com.google.gson.JsonPrimitive;
 import java.util.Map;
 import com.google.gson.JsonSerializationContext;
-import java.util.Iterator;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
@@ -25,14 +24,15 @@ import java.lang.reflect.Field;
 import com.google.gson.Gson;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
+import net.minecraft.util.text.ITextComponent;
 
-public class Class5953 implements JsonDeserializer<Class2250>, JsonSerializer<Class2250>
+public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializer<ITextComponent>
 {
     private static final Gson field24452;
     private static final Field field24453;
     private static final Field field24454;
     
-    public Class2250 deserialize(final JsonElement obj, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+    public ITextComponent deserialize(final JsonElement obj, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if (obj.isJsonPrimitive()) {
             return new Class2260(obj.getAsString());
         }
@@ -125,9 +125,9 @@ public class Class5953 implements JsonDeserializer<Class2250>, JsonSerializer<Cl
             throw new JsonParseException("Don't know how to turn " + obj + " into a Component");
         }
         final JsonArray asJsonArray = obj.getAsJsonArray();
-        Class2250 class2253 = null;
+        ITextComponent class2253 = null;
         for (final JsonElement jsonElement : asJsonArray) {
-            final Class2250 deserialize = this.deserialize(jsonElement, jsonElement.getClass(), jsonDeserializationContext);
+            final ITextComponent deserialize = this.deserialize(jsonElement, jsonElement.getClass(), jsonDeserializationContext);
             if (class2253 != null) {
                 class2253.method8458(deserialize);
             }
@@ -147,14 +147,14 @@ public class Class5953 implements JsonDeserializer<Class2250>, JsonSerializer<Cl
         }
     }
     
-    public JsonElement serialize(final Class2250 class2250, final Type type, final JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(final ITextComponent class2250, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
         if (!class2250.method8456().method30409()) {
             this.method17868(class2250.method8456(), jsonObject, jsonSerializationContext);
         }
         if (!class2250.method8462().isEmpty()) {
             final JsonArray jsonArray = new JsonArray();
-            for (final Class2250 class2251 : class2250.method8462()) {
+            for (final ITextComponent class2251 : class2250.method8462()) {
                 jsonArray.add(this.serialize(class2251, class2251.getClass(), jsonSerializationContext));
             }
             jsonObject.add("extra", (JsonElement)jsonArray);
@@ -209,11 +209,11 @@ public class Class5953 implements JsonDeserializer<Class2250>, JsonSerializer<Cl
                     if (class2254.method8497().length > 0) {
                         final JsonArray jsonArray2 = new JsonArray();
                         for (final Object obj : class2254.method8497()) {
-                            if (!(obj instanceof Class2250)) {
+                            if (!(obj instanceof ITextComponent)) {
                                 jsonArray2.add((JsonElement)new JsonPrimitive(String.valueOf(obj)));
                             }
                             else {
-                                jsonArray2.add(this.serialize((Class2250)obj, ((Class2250)obj).getClass(), jsonSerializationContext));
+                                jsonArray2.add(this.serialize((ITextComponent)obj, ((ITextComponent)obj).getClass(), jsonSerializationContext));
                             }
                         }
                         jsonObject.add("with", (JsonElement)jsonArray2);
@@ -227,34 +227,34 @@ public class Class5953 implements JsonDeserializer<Class2250>, JsonSerializer<Cl
         return (JsonElement)jsonObject;
     }
     
-    public static String method17869(final Class2250 class2250) {
+    public static String method17869(final ITextComponent class2250) {
         return Class5953.field24452.toJson((Object)class2250);
     }
     
-    public static JsonElement method17870(final Class2250 class2250) {
+    public static JsonElement method17870(final ITextComponent class2250) {
         return Class5953.field24452.toJsonTree((Object)class2250);
     }
     
     @Nullable
-    public static Class2250 method17871(final String s) {
-        return Class9583.method35925(Class5953.field24452, s, Class2250.class, false);
+    public static ITextComponent method17871(final String s) {
+        return Class9583.method35925(Class5953.field24452, s, ITextComponent.class, false);
     }
     
     @Nullable
-    public static Class2250 method17872(final JsonElement jsonElement) {
-        return (Class2250)Class5953.field24452.fromJson(jsonElement, (Class)Class2250.class);
+    public static ITextComponent method17872(final JsonElement jsonElement) {
+        return (ITextComponent)Class5953.field24452.fromJson(jsonElement, (Class) ITextComponent.class);
     }
     
     @Nullable
-    public static Class2250 method17873(final String s) {
-        return Class9583.method35925(Class5953.field24452, s, Class2250.class, true);
+    public static ITextComponent method17873(final String s) {
+        return Class9583.method35925(Class5953.field24452, s, ITextComponent.class, true);
     }
     
-    public static Class2250 method17874(final StringReader stringReader) {
+    public static ITextComponent method17874(final StringReader stringReader) {
         try {
             final JsonReader jsonReader = new JsonReader((Reader)new java.io.StringReader(stringReader.getRemaining()));
             jsonReader.setLenient(false);
-            final Class2250 class2250 = (Class2250)Class5953.field24452.getAdapter((Class)Class2250.class).read(jsonReader);
+            final ITextComponent class2250 = (ITextComponent)Class5953.field24452.getAdapter((Class) ITextComponent.class).read(jsonReader);
             stringReader.setCursor(stringReader.getCursor() + method17875(jsonReader));
             return class2250;
         }
@@ -276,7 +276,7 @@ public class Class5953 implements JsonDeserializer<Class2250>, JsonSerializer<Cl
         field24452 = Class8349.method27850(() -> {
             final GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.disableHtmlEscaping();
-            gsonBuilder.registerTypeHierarchyAdapter((Class)Class2250.class, (Object)new Class5953());
+            gsonBuilder.registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953());
             gsonBuilder.registerTypeHierarchyAdapter((Class)Class8768.class, (Object)new Class5982());
             gsonBuilder.registerTypeAdapterFactory((TypeAdapterFactory)new Class8818());
             return gsonBuilder.create();

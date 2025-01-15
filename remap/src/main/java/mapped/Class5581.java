@@ -7,7 +7,7 @@ package mapped;
 public class Class5581 extends Class5509
 {
     public Class5581() {
-        super(Class7499.field29013, "puffer_fish_small", 0.2f);
+        super(EntityType.field29013, "puffer_fish_small", 0.2f);
     }
     
     @Override

@@ -18,7 +18,7 @@ public class Class3668 extends Class3666
         int n3 = 0;
         int n4 = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (method2157.method27622() == Class7521.field29278.method11704() && n3 == 0) {
                     n3 = 1;
@@ -49,16 +49,16 @@ public class Class3668 extends Class3666
         return false;
     }
     
-    public Class8321 method11303(final Class473 class473) {
-        Class8321 field34174 = Class8321.field34174;
+    public ItemStack method11303(final Class473 class473) {
+        ItemStack field34174 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620() && method2157.method27622().method11742(Class7855.field32266)) {
                 field34174 = method2157;
                 break;
             }
         }
-        final Class8321 class474 = new Class8321(Class7739.field31612, 1);
+        final ItemStack class474 = new ItemStack(Class7739.field31612, 1);
         if (field34174.method27622() instanceof Class4036) {
             if (((Class4036)field34174.method27622()).method12240() instanceof Class3882) {
                 final Class3882 class475 = (Class3882)((Class4036)field34174.method27622()).method12240();

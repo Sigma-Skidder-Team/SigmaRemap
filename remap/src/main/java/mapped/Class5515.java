@@ -6,7 +6,7 @@ package mapped;
 
 public abstract class Class5515 extends Class5509
 {
-    public Class5515(final Class7499 class7499, final String s, final float n) {
+    public Class5515(final EntityType class7499, final String s, final float n) {
         super(class7499, s, n);
     }
     

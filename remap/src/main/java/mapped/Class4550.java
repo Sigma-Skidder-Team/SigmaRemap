@@ -100,7 +100,7 @@ public class Class4550 extends Class4535<Class5143>
                 }
             }
         }
-        final Class858 class1856 = Class7499.field28975.method23371(class1851.method6744());
+        final Class858 class1856 = EntityType.field28975.method23371(class1851.method6744());
         class1856.method5182(class1852.method16060());
         class1856.method1851(class1852.method16058());
         class1856.method1730(class1853.method34619() + 0.5f, class1853.method34622() + 1, class1853.method34620() + 0.5f, random.nextFloat() * 360.0f, 0.0f);

@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class5810 implements Class5809
 {
-    private static final Class2250 field23844;
+    private static final ITextComponent field23844;
     private final Class394 field23845;
     private final Class3641 field23846;
     private boolean field23847;
@@ -17,7 +19,7 @@ public class Class5810 implements Class5809
     }
     
     @Override
-    public void method17291(final Class2250 class2250) {
+    public void method17291(final ITextComponent class2250) {
     }
     
     @Override

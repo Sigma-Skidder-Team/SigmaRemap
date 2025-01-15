@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 
 public class Class4352 implements Class4252<Class5800>
 {
     private static String[] field19492;
     private Class2019 field19493;
-    private Class2250 field19494;
+    private ITextComponent field19494;
     private int field19495;
     private int field19496;
     private int field19497;
@@ -18,7 +20,7 @@ public class Class4352 implements Class4252<Class5800>
     public Class4352() {
     }
     
-    public Class4352(final Class2019 class2019, final Class2250 class2020) {
+    public Class4352(final Class2019 class2019, final ITextComponent class2020) {
         this(class2019, class2020, -1, -1, -1);
     }
     
@@ -26,7 +28,7 @@ public class Class4352 implements Class4252<Class5800>
         this(Class2019.field11517, null, n, n2, n3);
     }
     
-    public Class4352(final Class2019 field19493, final Class2250 field19494, final int field19495, final int field19496, final int field19497) {
+    public Class4352(final Class2019 field19493, final ITextComponent field19494, final int field19495, final int field19496, final int field19497) {
         this.field19493 = field19493;
         this.field19494 = field19494;
         this.field19495 = field19495;
@@ -82,7 +84,7 @@ public class Class4352 implements Class4252<Class5800>
         return this.field19493;
     }
     
-    public Class2250 method13074() {
+    public ITextComponent method13074() {
         return this.field19494;
     }
     

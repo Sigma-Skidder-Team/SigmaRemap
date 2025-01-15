@@ -5,8 +5,7 @@
 package mapped;
 
 import java.util.ArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
-import java.util.Iterator;
+
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
 import java.util.Set;
@@ -106,9 +105,9 @@ public class Class9586
     public void method35948(final Class3662<?> class3662) {
         this.field41792.add(class3662);
         if (this.field41796) {
-            final Class8321 method11292 = this.field41792.get(0).method11292();
-            final Class8321 method11293 = class3662.method11292();
-            this.field41796 = (Class8321.method27645(method11292, method11293) && Class8321.method27642(method11292, method11293));
+            final ItemStack method11292 = this.field41792.get(0).method11292();
+            final ItemStack method11293 = class3662.method11292();
+            this.field41796 = (ItemStack.method27645(method11292, method11293) && ItemStack.method27642(method11292, method11293));
         }
     }
     

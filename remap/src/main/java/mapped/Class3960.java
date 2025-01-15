@@ -72,7 +72,7 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public List<Class8321> method11833(final Class7096 class7096, final Class9098 class7097) {
+    public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
         final Class491 method12081 = this.method12081(class7097.method32880(), class7097.method32881(Class6683.field26367));
         return (method12081 != null) ? method12081.method2481().method21743(class7097) : Collections.emptyList();
     }
@@ -95,8 +95,8 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return Class8321.field34174;
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return ItemStack.field34174;
     }
     
     @Override

@@ -8,12 +8,12 @@ public class Class430 extends Class428
 {
     private static String[] field2641;
     
-    public Class430(final Class7499<?> class7499, final Class1847 class7500) {
+    public Class430(final EntityType<?> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class430(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field28999, class1847, n, n2, n3);
+        super(EntityType.field28999, class1847, n, n2, n3);
     }
     
     @Override

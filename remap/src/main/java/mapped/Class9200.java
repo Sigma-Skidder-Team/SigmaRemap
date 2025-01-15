@@ -25,7 +25,7 @@ public class Class9200
             while (i > 0) {
                 final int min = Math.min(class7493.method771().method11708(), i);
                 i -= min;
-                final Class8321 method772 = class7493.method772(min, false);
+                final ItemStack method772 = class7493.method772(min, false);
                 if (class7494.field3006.method2362(method772) && method772.method27620()) {
                     method772.method27691(1);
                     final Class427 method773 = class7494.method2822(method772, false);
@@ -49,7 +49,7 @@ public class Class9200
             class7492.method23257(new Class2259("commands.give.success.single", new Object[] { n, class7493.method772(n, false).method27684(), collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.give.success.single", new Object[] { n, class7493.method772(n, false).method27684(), collection.iterator().next().method1871() }), true);
+            class7492.method23257(new Class2259("commands.give.success.single", new Object[] { n, class7493.method772(n, false).method27684(), collection.iterator().next().getDisplayName() }), true);
         }
         return collection.size();
     }

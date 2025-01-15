@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Random;
@@ -303,7 +304,7 @@ public abstract class Class3090
         return this.field15447;
     }
     
-    public Class2250 method9864() {
+    public ITextComponent method9864() {
         return new Class2259(this.method9865(), new Object[0]);
     }
     

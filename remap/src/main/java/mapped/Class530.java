@@ -5,18 +5,20 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class530 extends Class527
 {
     private final Class527 field3168;
-    private final Class2250 field3169;
-    private final Class2250 field3170;
-    private final Class2250 field3171;
-    private final Class2250 field3172;
-    private final Class2250 field3173;
+    private final ITextComponent field3169;
+    private final ITextComponent field3170;
+    private final ITextComponent field3171;
+    private final ITextComponent field3172;
+    private final ITextComponent field3173;
     private Class682 field3174;
     private final List<String> field3175;
     

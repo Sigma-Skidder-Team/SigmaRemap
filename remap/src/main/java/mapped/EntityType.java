@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.UUID;
@@ -14,112 +15,112 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import org.apache.logging.log4j.Logger;
 
-public class Class7499<T extends Entity>
+public class EntityType<T extends Entity>
 {
     private static final Logger field28956;
-    public static final Class7499<Class426> field28957;
-    public static final Class7499<Class857> field28958;
-    public static final Class7499<Class405> field28959;
-    public static final Class7499<Class856> field28960;
-    public static final Class7499<Class798> field28961;
-    public static final Class7499<Class849> field28962;
-    public static final Class7499<Class423> field28963;
-    public static final Class7499<Class800> field28964;
-    public static final Class7499<Class847> field28965;
-    public static final Class7499<Class818> field28966;
-    public static final Class7499<Class836> field28967;
-    public static final Class7499<Class804> field28968;
-    public static final Class7499<Class765> field28969;
-    public static final Class7499<Class814> field28970;
-    public static final Class7499<Class840> field28971;
-    public static final Class7499<Class420> field28972;
-    public static final Class7499<Class830> field28973;
-    public static final Class7499<Class845> field28974;
-    public static final Class7499<Class858> field28975;
-    public static final Class7499<Class852> field28976;
-    public static final Class7499<Class850> field28977;
-    public static final Class7499<Class842> field28978;
-    public static final Class7499<Class507> field28979;
-    public static final Class7499<Class771> field28980;
-    public static final Class7499<Class508> field28981;
-    public static final Class7499<Class408> field28982;
-    public static final Class7499<Class424> field28983;
-    public static final Class7499<Class406> field28984;
-    public static final Class7499<Class803> field28985;
-    public static final Class7499<Class761> field28986;
-    public static final Class7499<Class764> field28987;
-    public static final Class7499<Class844> field28988;
-    public static final Class7499<Class808> field28989;
-    public static final Class7499<Class829> field28990;
-    public static final Class7499<Class769> field28991;
-    public static final Class7499<Class427> field28992;
-    public static final Class7499<Class862> field28993;
-    public static final Class7499<Class417> field28994;
-    public static final Class7499<Class863> field28995;
-    public static final Class7499<Class815> field28996;
-    public static final Class7499<Class400> field28997;
-    public static final Class7499<Class854> field28998;
-    public static final Class7499<Class430> field28999;
-    public static final Class7499<Class505> field29000;
-    public static final Class7499<Class429> field29001;
-    public static final Class7499<Class506> field29002;
-    public static final Class7499<Class454> field29003;
-    public static final Class7499<Class431> field29004;
-    public static final Class7499<Class432> field29005;
-    public static final Class7499<Class813> field29006;
-    public static final Class7499<Class805> field29007;
-    public static final Class7499<Class817> field29008;
-    public static final Class7499<Class861> field29009;
-    public static final Class7499<Class791> field29010;
-    public static final Class7499<Class796> field29011;
-    public static final Class7499<Class801> field29012;
-    public static final Class7499<Class838> field29013;
-    public static final Class7499<Class828> field29014;
-    public static final Class7499<Class790> field29015;
-    public static final Class7499<Class510> field29016;
-    public static final Class7499<Class792> field29017;
-    public static final Class7499<Class837> field29018;
-    public static final Class7499<Class802> field29019;
-    public static final Class7499<Class841> field29020;
-    public static final Class7499<Class509> field29021;
-    public static final Class7499<Class848> field29022;
-    public static final Class7499<Class782> field29023;
-    public static final Class7499<Class809> field29024;
-    public static final Class7499<Class853> field29025;
-    public static final Class7499<Class418> field29026;
-    public static final Class7499<Class784> field29027;
-    public static final Class7499<Class411> field29028;
-    public static final Class7499<Class404> field29029;
-    public static final Class7499<Class846> field29030;
-    public static final Class7499<Class839> field29031;
-    public static final Class7499<Class783> field29032;
-    public static final Class7499<Class816> field29033;
-    public static final Class7499<Class835> field29034;
-    public static final Class7499<Class793> field29035;
-    public static final Class7499<Class410> field29036;
-    public static final Class7499<Class412> field29037;
-    public static final Class7499<Class413> field29038;
-    public static final Class7499<Class415> field29039;
-    public static final Class7499<Class403> field29040;
-    public static final Class7499<Class843> field29041;
-    public static final Class7499<Class824> field29042;
-    public static final Class7499<Class786> field29043;
-    public static final Class7499<Class775> field29044;
-    public static final Class7499<Class773> field29045;
-    public static final Class7499<Class821> field29046;
-    public static final Class7499<Class778> field29047;
-    public static final Class7499<Class767> field29048;
-    public static final Class7499<Class781> field29049;
-    public static final Class7499<Class421> field29050;
-    public static final Class7499<Class799> field29051;
-    public static final Class7499<Class827> field29052;
-    public static final Class7499<Class811> field29053;
-    public static final Class7499<Class826> field29054;
-    public static final Class7499<Class851> field29055;
-    public static final Class7499<Class779> field29056;
-    public static final Class7499<Class422> field29057;
-    public static final Class7499<Class512> field29058;
-    public static final Class7499<Class425> field29059;
+    public static final EntityType<Class426> field28957;
+    public static final EntityType<Class857> field28958;
+    public static final EntityType<Class405> field28959;
+    public static final EntityType<Class856> field28960;
+    public static final EntityType<Class798> field28961;
+    public static final EntityType<Class849> field28962;
+    public static final EntityType<Class423> field28963;
+    public static final EntityType<Class800> field28964;
+    public static final EntityType<Class847> field28965;
+    public static final EntityType<Class818> field28966;
+    public static final EntityType<Class836> field28967;
+    public static final EntityType<Class804> field28968;
+    public static final EntityType<Class765> field28969;
+    public static final EntityType<Class814> field28970;
+    public static final EntityType<Class840> field28971;
+    public static final EntityType<Class420> field28972;
+    public static final EntityType<Class830> field28973;
+    public static final EntityType<Class845> field28974;
+    public static final EntityType<Class858> field28975;
+    public static final EntityType<Class852> field28976;
+    public static final EntityType<Class850> field28977;
+    public static final EntityType<Class842> field28978;
+    public static final EntityType<Class507> field28979;
+    public static final EntityType<Class771> field28980;
+    public static final EntityType<Class508> field28981;
+    public static final EntityType<Class408> field28982;
+    public static final EntityType<Class424> field28983;
+    public static final EntityType<Class406> field28984;
+    public static final EntityType<Class803> field28985;
+    public static final EntityType<Class761> field28986;
+    public static final EntityType<Class764> field28987;
+    public static final EntityType<Class844> field28988;
+    public static final EntityType<Class808> field28989;
+    public static final EntityType<Class829> field28990;
+    public static final EntityType<Class769> field28991;
+    public static final EntityType<Class427> field28992;
+    public static final EntityType<Class862> field28993;
+    public static final EntityType<Class417> field28994;
+    public static final EntityType<Class863> field28995;
+    public static final EntityType<Class815> field28996;
+    public static final EntityType<Class400> field28997;
+    public static final EntityType<Class854> field28998;
+    public static final EntityType<Class430> field28999;
+    public static final EntityType<Class505> field29000;
+    public static final EntityType<Class429> field29001;
+    public static final EntityType<Class506> field29002;
+    public static final EntityType<Class454> field29003;
+    public static final EntityType<Class431> field29004;
+    public static final EntityType<Class432> field29005;
+    public static final EntityType<Class813> field29006;
+    public static final EntityType<Class805> field29007;
+    public static final EntityType<Class817> field29008;
+    public static final EntityType<Class861> field29009;
+    public static final EntityType<Class791> field29010;
+    public static final EntityType<Class796> field29011;
+    public static final EntityType<Class801> field29012;
+    public static final EntityType<Class838> field29013;
+    public static final EntityType<Class828> field29014;
+    public static final EntityType<Class790> field29015;
+    public static final EntityType<Class510> field29016;
+    public static final EntityType<Class792> field29017;
+    public static final EntityType<Class837> field29018;
+    public static final EntityType<Class802> field29019;
+    public static final EntityType<Class841> field29020;
+    public static final EntityType<Class509> field29021;
+    public static final EntityType<Class848> field29022;
+    public static final EntityType<Class782> field29023;
+    public static final EntityType<Class809> field29024;
+    public static final EntityType<Class853> field29025;
+    public static final EntityType<Class418> field29026;
+    public static final EntityType<Class784> field29027;
+    public static final EntityType<Class411> field29028;
+    public static final EntityType<Class404> field29029;
+    public static final EntityType<Class846> field29030;
+    public static final EntityType<Class839> field29031;
+    public static final EntityType<Class783> field29032;
+    public static final EntityType<Class816> field29033;
+    public static final EntityType<Class835> field29034;
+    public static final EntityType<Class793> field29035;
+    public static final EntityType<Class410> field29036;
+    public static final EntityType<Class412> field29037;
+    public static final EntityType<Class413> field29038;
+    public static final EntityType<Class415> field29039;
+    public static final EntityType<Class403> field29040;
+    public static final EntityType<Class843> field29041;
+    public static final EntityType<Class824> field29042;
+    public static final EntityType<Class786> field29043;
+    public static final EntityType<Class775> field29044;
+    public static final EntityType<Class773> field29045;
+    public static final EntityType<Class821> field29046;
+    public static final EntityType<Class778> field29047;
+    public static final EntityType<Class767> field29048;
+    public static final EntityType<Class781> field29049;
+    public static final EntityType<Class421> field29050;
+    public static final EntityType<Class799> field29051;
+    public static final EntityType<Class827> field29052;
+    public static final EntityType<Class811> field29053;
+    public static final EntityType<Class826> field29054;
+    public static final EntityType<Class851> field29055;
+    public static final EntityType<Class779> field29056;
+    public static final EntityType<Class422> field29057;
+    public static final EntityType<Class512> field29058;
+    public static final EntityType<Class425> field29059;
     private final Class8962<T> field29060;
     private final Class1976 field29061;
     private final boolean field29062;
@@ -127,23 +128,23 @@ public class Class7499<T extends Entity>
     private final boolean field29064;
     private final boolean field29065;
     private String field29066;
-    private Class2250 field29067;
+    private ITextComponent field29067;
     private Class1932 field29068;
     private final Class8295 field29069;
     
-    private static <T extends Entity> Class7499<T> method23353(final String s, final Class8868<T> class8868) {
+    private static <T extends Entity> EntityType<T> method23353(final String s, final Class8868<T> class8868) {
         return Class90.method511(Class90.field210, s, class8868.method31162(s));
     }
     
-    public static Class1932 method23354(final Class7499<?> class7499) {
+    public static Class1932 method23354(final EntityType<?> class7499) {
         return Class90.field210.method503(class7499);
     }
     
-    public static Optional<Class7499<?>> method23355(final String s) {
+    public static Optional<EntityType<?>> method23355(final String s) {
         return Class90.field210.method506(Class1932.method7795(s));
     }
     
-    public Class7499(final Class8962<T> field29060, final Class1976 field29061, final boolean field29062, final boolean field29063, final boolean field29064, final boolean field29065, final Class8295 field29066) {
+    public EntityType(final Class8962<T> field29060, final Class1976 field29061, final boolean field29062, final boolean field29063, final boolean field29064, final boolean field29065, final Class8295 field29066) {
         this.field29060 = field29060;
         this.field29061 = field29061;
         this.field29065 = field29065;
@@ -154,19 +155,19 @@ public class Class7499<T extends Entity>
     }
     
     @Nullable
-    public Entity method23356(final Class1847 class1847, final Class8321 class1848, final Class512 class1849, final BlockPos class1850, final Class2101 class1851, final boolean b, final boolean b2) {
+    public Entity method23356(final Class1847 class1847, final ItemStack class1848, final Class512 class1849, final BlockPos class1850, final Class2101 class1851, final boolean b, final boolean b2) {
         return this.method23357(class1847, (class1848 != null) ? class1848.method27657() : null, (class1848 != null && class1848.method27667()) ? class1848.method27664() : null, class1849, class1850, class1851, b, b2);
     }
     
     @Nullable
-    public T method23357(final Class1847 class1847, final Class51 class1848, final Class2250 class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23357(final Class1847 class1847, final Class51 class1848, final ITextComponent class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Entity method23358 = this.method23358(class1847, class1848, class1849, class1850, class1851, class1852, b, b2);
         class1847.method6886(method23358);
         return (T)method23358;
     }
     
     @Nullable
-    public T method23358(final Class1847 class1847, final Class51 class1848, final Class2250 class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23358(final Class1847 class1847, final Class51 class1848, final ITextComponent class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Class759 method23371 = (Class759)this.method23371(class1847);
         if (method23371 != null) {
             double method23372;
@@ -258,7 +259,7 @@ public class Class7499<T extends Entity>
         return this.field29066;
     }
     
-    public Class2250 method23367() {
+    public ITextComponent method23367() {
         if (this.field29067 == null) {
             this.field29067 = new Class2259(this.method23366(), new Object[0]);
         }
@@ -292,11 +293,11 @@ public class Class7499<T extends Entity>
     }
     
     public static Optional<Entity> method23373(final Class51 class51, final Class1847 class52) {
-        return Class8349.method27855(method23377(class51).map(class54 -> class54.method23371(class53)), class56 -> class56.method1757(class55), () -> Class7499.field28956.warn("Skipping Entity with id {}", (Object)class57.method323("id")));
+        return Class8349.method27855(method23377(class51).map(class54 -> class54.method23371(class53)), class56 -> class56.method1757(class55), () -> EntityType.field28956.warn("Skipping Entity with id {}", (Object)class57.method323("id")));
     }
     
     @Nullable
-    private static Entity method23374(final Class1847 class1847, final Class7499<?> class1848) {
+    private static Entity method23374(final Class1847 class1847, final EntityType<?> class1848) {
         return (Entity)((class1848 != null) ? class1848.method23371(class1847) : null);
     }
     
@@ -309,7 +310,7 @@ public class Class7499<T extends Entity>
         return this.field29069;
     }
     
-    public static Optional<Class7499<?>> method23377(final Class51 class51) {
+    public static Optional<EntityType<?>> method23377(final Class51 class51) {
         return Class90.field210.method506(new Class1932(class51.method323("id")));
     }
     
@@ -338,43 +339,43 @@ public class Class7499<T extends Entity>
             return method23373(class51, class52);
         }
         catch (final RuntimeException ex) {
-            Class7499.field28956.warn("Exception loading entity: ", (Throwable)ex);
+            EntityType.field28956.warn("Exception loading entity: ", (Throwable)ex);
             return Optional.empty();
         }
     }
     
     public int method23380() {
-        if (this == Class7499.field29058) {
+        if (this == EntityType.field29058) {
             return 32;
         }
-        if (this != Class7499.field28975) {
-            if (this != Class7499.field28976) {
-                if (this != Class7499.field29016) {
-                    if (this != Class7499.field28983) {
-                        if (this != Class7499.field28993) {
-                            if (this != Class7499.field28995) {
-                                if (this != Class7499.field29009) {
-                                    if (this != Class7499.field28958) {
-                                        if (this != Class7499.field28981) {
-                                            if (this != Class7499.field28957) {
-                                                if (this != Class7499.field28979) {
-                                                    if (this != Class7499.field29059) {
-                                                        if (this != Class7499.field28959) {
-                                                            if (this != Class7499.field29029) {
-                                                                if (this != Class7499.field29040) {
-                                                                    if (this != Class7499.field29026) {
-                                                                        if (this != Class7499.field28972) {
-                                                                            if (this != Class7499.field28994) {
-                                                                                if (this != Class7499.field29050) {
-                                                                                    if (this != Class7499.field29028) {
-                                                                                        if (this != Class7499.field28997) {
-                                                                                            if (this != Class7499.field29037) {
-                                                                                                if (this != Class7499.field28982) {
-                                                                                                    if (this != Class7499.field29036) {
-                                                                                                        if (this != Class7499.field29039) {
-                                                                                                            if (this != Class7499.field29038) {
-                                                                                                                if (this != Class7499.field28984) {
-                                                                                                                    if (this != Class7499.field28992) {
+        if (this != EntityType.field28975) {
+            if (this != EntityType.field28976) {
+                if (this != EntityType.field29016) {
+                    if (this != EntityType.field28983) {
+                        if (this != EntityType.field28993) {
+                            if (this != EntityType.field28995) {
+                                if (this != EntityType.field29009) {
+                                    if (this != EntityType.field28958) {
+                                        if (this != EntityType.field28981) {
+                                            if (this != EntityType.field28957) {
+                                                if (this != EntityType.field28979) {
+                                                    if (this != EntityType.field29059) {
+                                                        if (this != EntityType.field28959) {
+                                                            if (this != EntityType.field29029) {
+                                                                if (this != EntityType.field29040) {
+                                                                    if (this != EntityType.field29026) {
+                                                                        if (this != EntityType.field28972) {
+                                                                            if (this != EntityType.field28994) {
+                                                                                if (this != EntityType.field29050) {
+                                                                                    if (this != EntityType.field29028) {
+                                                                                        if (this != EntityType.field28997) {
+                                                                                            if (this != EntityType.field29037) {
+                                                                                                if (this != EntityType.field28982) {
+                                                                                                    if (this != EntityType.field29036) {
+                                                                                                        if (this != EntityType.field29039) {
+                                                                                                            if (this != EntityType.field29038) {
+                                                                                                                if (this != EntityType.field28984) {
+                                                                                                                    if (this != EntityType.field28992) {
                                                                                                                         return 5;
                                                                                                                     }
                                                                                                                 }
@@ -410,36 +411,36 @@ public class Class7499<T extends Entity>
     }
     
     public int method23381() {
-        if (this == Class7499.field29058 || this == Class7499.field28979) {
+        if (this == EntityType.field29058 || this == EntityType.field28979) {
             return 2;
         }
-        if (this == Class7499.field28982) {
+        if (this == EntityType.field28982) {
             return 4;
         }
-        if (this != Class7499.field29059) {
-            if (this != Class7499.field29026) {
-                if (this != Class7499.field28972) {
-                    if (this != Class7499.field28994) {
-                        if (this != Class7499.field29050) {
-                            if (this != Class7499.field29028) {
-                                if (this != Class7499.field28997) {
-                                    if (this != Class7499.field29037) {
-                                        if (this != Class7499.field29036) {
-                                            if (this != Class7499.field29039) {
-                                                if (this != Class7499.field29038) {
-                                                    if (this != Class7499.field28984) {
-                                                        if (this != Class7499.field29016) {
-                                                            if (this != Class7499.field28959) {
-                                                                if (this != Class7499.field29029) {
-                                                                    if (this != Class7499.field29040) {
-                                                                        if (this != Class7499.field28992) {
-                                                                            if (this != Class7499.field28983) {
-                                                                                if (this != Class7499.field28981) {
-                                                                                    if (this != Class7499.field28993) {
-                                                                                        if (this != Class7499.field28995) {
-                                                                                            if (this != Class7499.field29009) {
-                                                                                                if (this != Class7499.field28957) {
-                                                                                                    if (this != Class7499.field28975) {
+        if (this != EntityType.field29059) {
+            if (this != EntityType.field29026) {
+                if (this != EntityType.field28972) {
+                    if (this != EntityType.field28994) {
+                        if (this != EntityType.field29050) {
+                            if (this != EntityType.field29028) {
+                                if (this != EntityType.field28997) {
+                                    if (this != EntityType.field29037) {
+                                        if (this != EntityType.field29036) {
+                                            if (this != EntityType.field29039) {
+                                                if (this != EntityType.field29038) {
+                                                    if (this != EntityType.field28984) {
+                                                        if (this != EntityType.field29016) {
+                                                            if (this != EntityType.field28959) {
+                                                                if (this != EntityType.field29029) {
+                                                                    if (this != EntityType.field29040) {
+                                                                        if (this != EntityType.field28992) {
+                                                                            if (this != EntityType.field28983) {
+                                                                                if (this != EntityType.field28981) {
+                                                                                    if (this != EntityType.field28993) {
+                                                                                        if (this != EntityType.field28995) {
+                                                                                            if (this != EntityType.field29009) {
+                                                                                                if (this != EntityType.field28957) {
+                                                                                                    if (this != EntityType.field28975) {
                                                                                                         return 3;
                                                                                                     }
                                                                                                 }
@@ -472,15 +473,15 @@ public class Class7499<T extends Entity>
     }
     
     public boolean method23382() {
-        if (this != Class7499.field29058) {
-            if (this != Class7499.field28997) {
-                if (this != Class7499.field29048) {
-                    if (this != Class7499.field28960) {
-                        if (this != Class7499.field28993) {
-                            if (this != Class7499.field28995) {
-                                if (this != Class7499.field29009) {
-                                    if (this != Class7499.field28975) {
-                                        if (this != Class7499.field28979) {
+        if (this != EntityType.field29058) {
+            if (this != EntityType.field28997) {
+                if (this != EntityType.field29048) {
+                    if (this != EntityType.field28960) {
+                        if (this != EntityType.field28993) {
+                            if (this != EntityType.field28995) {
+                                if (this != EntityType.field29009) {
+                                    if (this != EntityType.field28975) {
+                                        if (this != EntityType.field28979) {
                                             return true;
                                         }
                                     }
@@ -494,7 +495,7 @@ public class Class7499<T extends Entity>
         return false;
     }
     
-    public boolean method23383(final Class7909<Class7499<?>> class7909) {
+    public boolean method23383(final Class7909<EntityType<?>> class7909) {
         return class7909.method25618(this);
     }
     

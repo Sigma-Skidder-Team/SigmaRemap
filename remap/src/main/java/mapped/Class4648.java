@@ -57,7 +57,7 @@ public abstract class Class4648
         }
     }
     
-    public void method13884(final Class7499<?> class7499) {
+    public void method13884(final EntityType<?> class7499) {
         this.field20122.method20916().method306("id", Class90.field210.method503(class7499).toString());
     }
     
@@ -81,7 +81,7 @@ public abstract class Class4648
                 int n = 0;
                 for (int i = 0; i < this.field20127; ++i) {
                     final Class51 method13897 = this.field20122.method20916();
-                    final Optional<Class7499<?>> method13898 = Class7499.method23377(method13897);
+                    final Optional<EntityType<?>> method13898 = EntityType.method23377(method13897);
                     if (!method13898.isPresent()) {
                         this.method13888();
                         return;
@@ -93,7 +93,7 @@ public abstract class Class4648
                     final double n4 = (size < 3) ? (method13896.getZ() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(2);
                     if (method13895.method6976(method13898.get().method23375(n2, n3, n4))) {
                         if (Class8897.method31330(method13898.get(), method13895.method6744(), Class2101.field12176, new BlockPos(n2, n3, n4), method13895.method6790())) {
-                            final Entity method13900 = Class7499.method23378(method13897, method13895, class761 -> {
+                            final Entity method13900 = EntityType.method23378(method13897, method13895, class761 -> {
                                 class761.method1730(n8, n9, n10, class761.field2399, class761.field2400);
                                 return class761;
                             });
@@ -236,7 +236,7 @@ public abstract class Class4648
     @Nullable
     public Entity method13891() {
         if (this.field20128 == null) {
-            this.field20128 = Class7499.method23378(this.field20122.method20916(), this.method13895(), Function.identity());
+            this.field20128 = EntityType.method23378(this.field20122.method20916(), this.method13895(), Function.identity());
             if (this.field20122.method20916().method294() == 1) {
                 if (this.field20122.method20916().method316("id", 8)) {
                     if (this.field20128 instanceof Class759) {

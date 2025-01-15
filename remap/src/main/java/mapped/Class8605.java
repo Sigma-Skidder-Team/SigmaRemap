@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
+
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -27,7 +27,7 @@ public class Class8605 implements ArgumentType<Class1932>
     }
     
     private static Class1932 method29182(final Class1932 class1932) throws CommandSyntaxException {
-        Class90.field210.method506(class1932).filter(Class7499::method23362).orElseThrow(() -> Class8605.field36123.create((Object)class1933));
+        Class90.field210.method506(class1932).filter(EntityType::method23362).orElseThrow(() -> Class8605.field36123.create((Object)class1933));
         return class1932;
     }
     

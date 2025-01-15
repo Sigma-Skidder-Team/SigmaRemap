@@ -140,7 +140,7 @@ public class Class438 extends Class436 implements Class439
         if (b && class7098 != Class2144.field12626) {
             return false;
         }
-        final Entity method2195 = Class7499.method23378(class7097, this.field2656, class7101 -> class7101);
+        final Entity method2195 = EntityType.method23378(class7097, this.field2656, class7101 -> class7101);
         if (method2195 == null) {
             return false;
         }

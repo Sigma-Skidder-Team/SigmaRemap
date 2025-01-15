@@ -206,11 +206,11 @@ public class Class6154
                 this.field24897.method6796().method15297("explosion_blocks");
                 if (method6702.method11872(this)) {
                     if (this.field24897 instanceof Class1849) {
-                        final Class9098 method6703 = new Class9098((Class1849)this.field24897).method32873(this.field24897.field10062).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, Class8321.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.field24897.method6727(class354) : null).method32878(Class6683.field26362, this.field24901);
+                        final Class9098 method6703 = new Class9098((Class1849)this.field24897).method32873(this.field24897.field10062).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.field24897.method6727(class354) : null).method32878(Class6683.field26362, this.field24901);
                         if (this.field24895 == Class2196.field13367) {
                             method6703.method32877(Class6683.field26371, this.field24902);
                         }
-                        method6701.method21743(method6703).forEach(class357 -> method18410((ObjectArrayList<Pair<Class8321, BlockPos>>)list2, class357, class356));
+                        method6701.method21743(method6703).forEach(class357 -> method18410((ObjectArrayList<Pair<ItemStack, BlockPos>>)list2, class357, class356));
                     }
                 }
                 this.field24897.method6688(class354, Class7521.field29147.method11878(), 3);
@@ -218,7 +218,7 @@ public class Class6154
                 this.field24897.method6796().method15299();
             }
             for (final Pair pair : list) {
-                Class3833.method11839(this.field24897, (BlockPos)pair.getSecond(), (Class8321)pair.getFirst());
+                Class3833.method11839(this.field24897, (BlockPos)pair.getSecond(), (ItemStack)pair.getFirst());
             }
         }
         if (this.field24894) {
@@ -237,10 +237,10 @@ public class Class6154
         }
     }
     
-    private static void method18410(final ObjectArrayList<Pair<Class8321, BlockPos>> list, final Class8321 class8321, final BlockPos class8322) {
+    private static void method18410(final ObjectArrayList<Pair<ItemStack, BlockPos>> list, final ItemStack class8321, final BlockPos class8322) {
         for (int size = list.size(), i = 0; i < size; ++i) {
             final Pair pair = (Pair)list.get(i);
-            final Class8321 class8323 = (Class8321)pair.getFirst();
+            final ItemStack class8323 = (ItemStack)pair.getFirst();
             if (Class427.method2103(class8323, class8321)) {
                 list.set(i, (Object)Pair.of((Object)Class427.method2104(class8323, class8321, 16), pair.getSecond()));
                 if (class8321.method27620()) {

@@ -69,7 +69,7 @@ public class Class8335
                     if (this.field34223.method6959(method6886) == Class7102.field27683) {
                         return false;
                     }
-                    final Class821 class355 = Class7499.field29046.method23357(this.field34223, null, null, null, method6886, Class2101.field12181, false, false);
+                    final Class821 class355 = EntityType.field29046.method23357(this.field34223, null, null, null, method6886, Class2101.field12181, false, false);
                     if (class355 != null) {
                         for (int i = 0; i < 2; ++i) {
                             this.method27775(class355, 4);
@@ -90,7 +90,7 @@ public class Class8335
     private void method27775(final Class821 class821, final int n) {
         final BlockPos method27776 = this.method27776(new BlockPos(class821), n);
         if (method27776 != null) {
-            final Class816 class822 = Class7499.field29033.method23357(this.field34223, null, null, null, method27776, Class2101.field12181, false, false);
+            final Class816 class822 = EntityType.field29033.method23357(this.field34223, null, null, null, method27776, Class2101.field12181, false, false);
             if (class822 != null) {
                 class822.method4207(class821, true);
             }
@@ -104,7 +104,7 @@ public class Class8335
             final int n2 = class354.getX() + this.field34222.nextInt(n * 2) - n;
             final int n3 = class354.getZ() + this.field34222.nextInt(n * 2) - n;
             final BlockPos class356 = new BlockPos(n2, this.field34223.method6699(Class2020.field11522, n2, n3), n3);
-            if (Class8532.method28621(Class2194.field13354, this.field34223, class356, Class7499.field29046)) {
+            if (Class8532.method28621(Class2194.field13354, this.field34223, class356, EntityType.field29046)) {
                 class355 = class356;
                 break;
             }

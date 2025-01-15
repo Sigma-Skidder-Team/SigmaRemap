@@ -14,6 +14,7 @@ import java.util.IllegalFormatException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.regex.Pattern;
 import java.util.List;
@@ -26,7 +27,7 @@ public class Class2259 extends Class2251 implements Class2253
     private final Object[] field13812;
     private final Object field13813;
     private long field13814;
-    public final List<Class2250> field13815;
+    public final List<ITextComponent> field13815;
     public static final Pattern field13816;
     
     public Class2259(final String field13811, final Object... field13812) {
@@ -37,13 +38,13 @@ public class Class2259 extends Class2251 implements Class2253
         this.field13812 = field13812;
         for (int i = 0; i < field13812.length; ++i) {
             final Object o = field13812[i];
-            if (!(o instanceof Class2250)) {
+            if (!(o instanceof ITextComponent)) {
                 if (o == null) {
                     this.field13812[i] = "null";
                 }
             }
             else {
-                final Class2250 method8466 = ((Class2250)o).method8466();
+                final ITextComponent method8466 = ((ITextComponent)o).method8466();
                 this.field13812[i] = method8466;
                 method8466.method8456().method30422(this.method8456());
             }
@@ -113,16 +114,16 @@ public class Class2259 extends Class2251 implements Class2253
         }
     }
     
-    private Class2250 method8494(final int n) {
+    private ITextComponent method8494(final int n) {
         if (n < this.field13812.length) {
             final Object o = this.field13812[n];
-            Class2250 class2250;
-            if (!(o instanceof Class2250)) {
+            ITextComponent class2250;
+            if (!(o instanceof ITextComponent)) {
                 class2250 = new Class2260((o != null) ? o.toString() : "null");
                 class2250.method8456().method30422(this.method8456());
             }
             else {
-                class2250 = (Class2250)o;
+                class2250 = (ITextComponent)o;
             }
             return class2250;
         }
@@ -130,15 +131,15 @@ public class Class2259 extends Class2251 implements Class2253
     }
     
     @Override
-    public Class2250 method8455(final Class8768 class8768) {
+    public ITextComponent method8455(final Class8768 class8768) {
         super.method8455(class8768);
         for (final Object o : this.field13812) {
-            if (o instanceof Class2250) {
-                ((Class2250)o).method8456().method30422(this.method8456());
+            if (o instanceof ITextComponent) {
+                ((ITextComponent)o).method8456().method30422(this.method8456());
             }
         }
         if (this.field13814 > -1L) {
-            final Iterator<Class2250> iterator = this.field13815.iterator();
+            final Iterator<ITextComponent> iterator = this.field13815.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method8456().method30422(class8768);
             }
@@ -147,16 +148,16 @@ public class Class2259 extends Class2251 implements Class2253
     }
     
     @Override
-    public Stream<Class2250> method8463() {
+    public Stream<ITextComponent> method8463() {
         this.method8492();
-        return Streams.concat(new Stream[] { this.field13815.stream(), this.field13791.stream() }).flatMap(Class2250::method8463);
+        return Streams.concat(new Stream[] { this.field13815.stream(), this.field13791.stream() }).flatMap(ITextComponent::method8463);
     }
     
     @Override
     public String method8459() {
         this.method8492();
         final StringBuilder sb = new StringBuilder();
-        final Iterator<Class2250> iterator = this.field13815.iterator();
+        final Iterator<ITextComponent> iterator = this.field13815.iterator();
         while (iterator.hasNext()) {
             sb.append(iterator.next().method8459());
         }
@@ -166,26 +167,26 @@ public class Class2259 extends Class2251 implements Class2253
     public Class2259 method8495() {
         final Object[] array = new Object[this.field13812.length];
         for (int i = 0; i < this.field13812.length; ++i) {
-            if (!(this.field13812[i] instanceof Class2250)) {
+            if (!(this.field13812[i] instanceof ITextComponent)) {
                 array[i] = this.field13812[i];
             }
             else {
-                array[i] = ((Class2250)this.field13812[i]).method8466();
+                array[i] = ((ITextComponent)this.field13812[i]).method8466();
             }
         }
         return new Class2259(this.field13811, array);
     }
     
     @Override
-    public Class2250 method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
+    public ITextComponent method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
         final Object[] array = new Object[this.field13812.length];
         for (int i = 0; i < array.length; ++i) {
             final Object o = this.field13812[i];
-            if (!(o instanceof Class2250)) {
+            if (!(o instanceof ITextComponent)) {
                 array[i] = o;
             }
             else {
-                array[i] = Class9479.method35294(class7492, (Class2250)o, class7493, n);
+                array[i] = Class9479.method35294(class7492, (ITextComponent)o, class7493, n);
             }
         }
         return new Class2259(this.field13811, array);

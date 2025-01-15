@@ -33,14 +33,14 @@ public class Class6275 extends Class6257
     }
     
     @Override
-    public boolean method18600(final Class8321 class8321) {
+    public boolean method18600(final ItemStack class8321) {
         return class8321.method27622() instanceof Class4055 || super.method18600(class8321);
     }
     
     @Override
     public void method18602(final Class511 class511, final Entity class512, final int n) {
         final Random method2633 = class511.method2633();
-        final Map.Entry<Class2215, Class8321> method2634 = Class8742.method30222(Class7882.field32354, class511);
+        final Map.Entry<Class2215, ItemStack> method2634 = Class8742.method30222(Class7882.field32354, class511);
         if (!method18610(n, method2633)) {
             if (method2634 != null) {
                 method2634.getValue().method27636(1, class511, class513 -> class513.method2794(entry.getKey()));

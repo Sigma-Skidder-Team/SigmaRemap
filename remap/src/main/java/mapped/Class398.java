@@ -4,9 +4,11 @@
 
 package mapped;
 
+import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
-public class Class398 implements Class397
+public class Class398 implements ICommandSource
 {
     private final StringBuffer field2377;
     private final Class394 field2378;
@@ -30,22 +32,22 @@ public class Class398 implements Class397
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
         this.field2377.append(class2250.getString());
     }
     
     @Override
-    public boolean method1575() {
+    public boolean shouldReceiveFeedback() {
         return true;
     }
     
     @Override
-    public boolean method1576() {
+    public boolean shouldReceiveErrors() {
         return true;
     }
     
     @Override
-    public boolean method1623() {
+    public boolean allowLogging() {
         return this.field2378.method1450();
     }
 }

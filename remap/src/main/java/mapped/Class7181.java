@@ -19,7 +19,7 @@ public class Class7181 extends Class7180
     }
     
     @Override
-    public void method21974(final Consumer<Class8321> consumer, final Class7529 class7529) {
-        consumer.accept(new Class8321(this.field27855));
+    public void method21974(final Consumer<ItemStack> consumer, final Class7529 class7529) {
+        consumer.accept(new ItemStack(this.field27855));
     }
 }

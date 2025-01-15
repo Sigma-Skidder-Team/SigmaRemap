@@ -33,14 +33,14 @@ public class Class4050 extends Class3820
         final double n2 = method21655.getY();
         final double n3 = method21655.getZ();
         if (method21654.method7127(null, new AxisAlignedBB(n, n2, n3, n + 1.0, n2 + 2.0, n3 + 1.0)).isEmpty()) {
-            final Class8321 method21657 = class7075.method21651();
+            final ItemStack method21657 = class7075.method21651();
             if (!method21654.field10067) {
                 method21654.method6690(method21655, false);
                 method21654.method6690(method21656, false);
                 final Class857 class7077 = new Class857(method21654, n + 0.5, n2, n3 + 0.5);
                 class7077.method1730(n + 0.5, n2, n3 + 0.5, MathHelper.method35642((MathHelper.method35668(class7075.method21646() - 180.0f) + 22.5f) / 45.0f) * 45.0f, 0.0f);
                 this.method12248(class7077, method21654.field10062);
-                Class7499.method23360(method21654, class7075.method21652(), class7077, method21657.method27657());
+                EntityType.method23360(method21654, class7075.method21652(), class7077, method21657.method27657());
                 method21654.method6886(class7077);
                 method21654.method6706(null, class7077.getPosX(), class7077.getPosY(), class7077.getPosZ(), Class8520.field34990, Class286.field1582, 0.75f, 0.8f);
             }

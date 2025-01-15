@@ -7,7 +7,7 @@ package mapped;
 public class Class3434 extends Class3418
 {
     private static String[] field16224;
-    public final Class2265<Class8321> field16225;
+    public final Class2265<ItemStack> field16225;
     
     public Class3434(final Class512 class512) {
         super(null, 0);
@@ -41,7 +41,7 @@ public class Class3434 extends Class3418
                     Class525.method3024().method2160(j + i * 9, this.field16225.get(n3));
                 }
                 else {
-                    Class525.method3024().method2160(j + i * 9, Class8321.field34174);
+                    Class525.method3024().method2160(j + i * 9, ItemStack.field34174);
                 }
             }
         }
@@ -52,22 +52,22 @@ public class Class3434 extends Class3418
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final Class512 class512, final int n) {
         if (n >= this.field16151.size() - 9) {
             if (n < this.field16151.size()) {
                 final Class6601 class513 = this.field16151.get(n);
                 if (class513 != null) {
                     if (class513.method20054()) {
-                        class513.method20055(Class8321.field34174);
+                        class513.method20055(ItemStack.field34174);
                     }
                 }
             }
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override
-    public boolean method10857(final Class8321 class8321, final Class6601 class8322) {
+    public boolean method10857(final ItemStack class8321, final Class6601 class8322) {
         return class8322.field26173 != Class525.method3024();
     }
     

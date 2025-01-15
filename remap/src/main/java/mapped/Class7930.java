@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
@@ -35,10 +36,10 @@ public class Class7930 extends Class7929
     }
     
     @Override
-    public Class2250 method25690(final Class511 class511) {
-        final Class8321 class512 = (this.field32594 instanceof Class511) ? ((Class511)this.field32594).method2713() : Class8321.field34174;
+    public ITextComponent method25690(final Class511 class511) {
+        final ItemStack class512 = (this.field32594 instanceof Class511) ? ((Class511)this.field32594).method2713() : ItemStack.field34174;
         final String string = "death.attack." + this.field32593;
-        return (!class512.method27620() && class512.method27667()) ? new Class2259(string + ".item", new Object[] { class511.method1871(), this.field32594.method1871(), class512.method27684() }) : new Class2259(string, new Object[] { class511.method1871(), this.field32594.method1871() });
+        return (!class512.method27620() && class512.method27667()) ? new Class2259(string + ".item", new Object[] { class511.getDisplayName(), this.field32594.getDisplayName(), class512.method27684() }) : new Class2259(string, new Object[] { class511.getDisplayName(), this.field32594.getDisplayName() });
     }
     
     @Override

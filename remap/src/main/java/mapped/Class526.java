@@ -10,6 +10,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Random;
 
@@ -26,18 +27,18 @@ public class Class526 extends Class516<Class3433>
     public float field3142;
     public float field3143;
     public float field3144;
-    private Class8321 field3145;
+    private ItemStack field3145;
     
-    public Class526(final Class3433 class3433, final Class464 class3434, final Class2250 class3435) {
+    public Class526(final Class3433 class3433, final Class464 class3434, final ITextComponent class3435) {
         super(class3433, class3434, class3435);
         this.field3137 = new Random();
-        this.field3145 = Class8321.field34174;
+        this.field3145 = ItemStack.field34174;
     }
     
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), 12.0f, 5.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
@@ -234,8 +235,8 @@ public class Class526 extends Class516<Class3433>
     }
     
     public void method3025() {
-        final Class8321 method20053 = this.field3077.method10878(0).method20053();
-        if (!Class8321.method27643(method20053, this.field3145)) {
+        final ItemStack method20053 = this.field3077.method10878(0).method20053();
+        if (!ItemStack.method27643(method20053, this.field3145)) {
             this.field3145 = method20053;
             do {
                 this.field3141 += this.field3137.nextInt(4) - this.field3137.nextInt(4);

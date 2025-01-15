@@ -18,11 +18,11 @@ public class Class3675 extends Class3666
     public boolean method11301(final Class473 class473, final Class1847 class474) {
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 arrayList.add(method2157);
                 if (arrayList.size() > 1) {
-                    final Class8321 class475 = (Class8321)arrayList.get(0);
+                    final ItemStack class475 = (ItemStack)arrayList.get(0);
                     if (method2157.method27622() == class475.method27622()) {
                         if (class475.method27690() == 1) {
                             if (method2157.method27690() == 1) {
@@ -39,14 +39,14 @@ public class Class3675 extends Class3666
         return arrayList.size() == 2;
     }
     
-    public Class8321 method11303(final Class473 class473) {
+    public ItemStack method11303(final Class473 class473) {
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 arrayList.add(method2157);
                 if (arrayList.size() > 1) {
-                    final Class8321 class474 = (Class8321)arrayList.get(0);
+                    final ItemStack class474 = (ItemStack)arrayList.get(0);
                     if (method2157.method27622() == class474.method27622()) {
                         if (class474.method27690() == 1) {
                             if (method2157.method27690() == 1) {
@@ -56,13 +56,13 @@ public class Class3675 extends Class3666
                             }
                         }
                     }
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
             }
         }
         if (arrayList.size() == 2) {
-            final Class8321 class475 = (Class8321)arrayList.get(0);
-            final Class8321 class476 = (Class8321)arrayList.get(1);
+            final ItemStack class475 = (ItemStack)arrayList.get(0);
+            final ItemStack class476 = (ItemStack)arrayList.get(1);
             if (class475.method27622() == class476.method27622()) {
                 if (class475.method27690() == 1) {
                     if (class476.method27690() == 1) {
@@ -72,7 +72,7 @@ public class Class3675 extends Class3666
                             if (n < 0) {
                                 n = 0;
                             }
-                            final Class8321 class477 = new Class8321(class475.method27622());
+                            final ItemStack class477 = new ItemStack(class475.method27622());
                             class477.method27633(n);
                             return class477;
                         }
@@ -80,7 +80,7 @@ public class Class3675 extends Class3666
                 }
             }
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     @Override

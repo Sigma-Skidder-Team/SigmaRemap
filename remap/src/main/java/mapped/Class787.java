@@ -9,7 +9,7 @@ import net.minecraft.util.math.Vec3d;
 
 public abstract class Class787 extends Class759
 {
-    public Class787(final Class7499<? extends Class787> class7499, final Class1847 class7500) {
+    public Class787(final EntityType<? extends Class787> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     

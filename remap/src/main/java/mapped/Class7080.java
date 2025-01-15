@@ -5,14 +5,16 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 import java.util.Set;
 
 public class Class7080 implements Class7079
 {
     private static final Set<Class3833> field27574;
-    private static final Class2250 field27575;
-    private static final Class2250 field27576;
+    private static final ITextComponent field27575;
+    private static final ITextComponent field27576;
     private final Class9106 field27577;
     private Class6869 field27578;
     private int field27579;
@@ -30,7 +32,7 @@ public class Class7080 implements Class7079
                 if (field4684 != null) {
                     final Iterator<Class3833> iterator = Class7080.field27574.iterator();
                     while (iterator.hasNext()) {
-                        if (!field4684.field3006.method2376(new Class8321(iterator.next()))) {
+                        if (!field4684.field3006.method2376(new ItemStack(iterator.next()))) {
                             continue;
                         }
                         this.field27577.method32926(Class2012.field11443);
@@ -72,7 +74,7 @@ public class Class7080 implements Class7079
     }
     
     @Override
-    public void method21662(final Class8321 class8321) {
+    public void method21662(final ItemStack class8321) {
         final Iterator<Class3833> iterator = Class7080.field27574.iterator();
         while (iterator.hasNext()) {
             if (class8321.method27622() != iterator.next().method11704()) {

@@ -4,9 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
-import java.util.concurrent.CompletionStage;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import com.google.common.collect.Lists;
@@ -210,7 +210,7 @@ public class Class7937 implements Class7938
             return (CompletableFuture<Void>)Class8349.method27843(new RuntimeException(String.format("Invalid resourcepack at %s: %s", file, message)));
         }
         Class7937.field32606.info("Applying server pack {}", (Object)file);
-        this.field32613 = new Class1922("server", true, () -> new Class1733(file2), (Class2250)new Class2259("resourcePack.server.name", new Object[0]), class8545.method28688(), Class2009.method8044(class8545.method28689()), Class2043.field11642, true, method6637);
+        this.field32613 = new Class1922("server", true, () -> new Class1733(file2), (ITextComponent)new Class2259("resourcePack.server.name", new Object[0]), class8545.method28688(), Class2009.method8044(class8545.method28689()), Class2043.field11642, true, method6637);
         return Class869.method5277().method5278();
     }
     

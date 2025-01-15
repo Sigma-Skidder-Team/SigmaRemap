@@ -11,6 +11,7 @@ import com.google.common.base.Objects;
 import java.util.Collections;
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Set;
 
@@ -21,7 +22,7 @@ public class Class6879 extends Class6880
     private final Set<Class513> field26953;
     private boolean field26954;
     
-    public Class6879(final Class2250 class2250, final Class2200 class2251, final Class342 class2252) {
+    public Class6879(final ITextComponent class2250, final Class2200 class2251, final Class342 class2252) {
         super(MathHelper.method35691(), class2250, class2251, class2252);
         this.field26952 = Sets.newHashSet();
         this.field26953 = Collections.unmodifiableSet((Set<? extends Class513>)this.field26952);
@@ -80,7 +81,7 @@ public class Class6879 extends Class6880
     }
     
     @Override
-    public void method21070(final Class2250 class2250) {
+    public void method21070(final ITextComponent class2250) {
         if (!Objects.equal((Object)class2250, (Object)this.field26956)) {
             super.method21070(class2250);
             this.method21071(Class1994.field11172);

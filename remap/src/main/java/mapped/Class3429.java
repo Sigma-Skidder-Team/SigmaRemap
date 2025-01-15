@@ -85,12 +85,12 @@ public abstract class Class3429 extends Class3426<Class446>
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
-        Class8321 class513 = Class8321.field34174;
+    public ItemStack method10858(final Class512 class512, final int n) {
+        ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
-                final Class8321 method20053 = class514.method20053();
+                final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
                 if (n != 2) {
                     if (n != 1 && n != 0) {
@@ -98,32 +98,32 @@ public abstract class Class3429 extends Class3426<Class446>
                             if (!this.method10947(method20053)) {
                                 if (n >= 3 && n < 30) {
                                     if (!this.method10888(method20053, 30, 39, false)) {
-                                        return Class8321.field34174;
+                                        return ItemStack.field34174;
                                     }
                                 }
                                 else if (n >= 30) {
                                     if (n < 39) {
                                         if (!this.method10888(method20053, 3, 30, false)) {
-                                            return Class8321.field34174;
+                                            return ItemStack.field34174;
                                         }
                                     }
                                 }
                             }
                             else if (!this.method10888(method20053, 1, 2, false)) {
-                                return Class8321.field34174;
+                                return ItemStack.field34174;
                             }
                         }
                         else if (!this.method10888(method20053, 0, 1, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (!this.method10888(method20053, 3, 39, false)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                 }
                 else {
                     if (!this.method10888(method20053, 3, 39, true)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     class514.method20049(method20053, class513);
                 }
@@ -131,10 +131,10 @@ public abstract class Class3429 extends Class3426<Class446>
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(Class8321.field34174);
+                    class514.method20055(ItemStack.field34174);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
                 class514.method20047(class512, method20053);
             }
@@ -142,11 +142,11 @@ public abstract class Class3429 extends Class3426<Class446>
         return class513;
     }
     
-    public boolean method10946(final Class8321 class8321) {
-        return this.field16211.method6792().method6378((Class8976<Class3662>)this.field16212, new Class443(new Class8321[] { class8321 }), this.field16211).isPresent();
+    public boolean method10946(final ItemStack class8321) {
+        return this.field16211.method6792().method6378((Class8976<Class3662>)this.field16212, new Class443(new ItemStack[] { class8321 }), this.field16211).isPresent();
     }
     
-    public boolean method10947(final Class8321 class8321) {
+    public boolean method10947(final ItemStack class8321) {
         return Class466.method2400(class8321);
     }
     

@@ -16,11 +16,11 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6544
 {
@@ -122,7 +122,7 @@ public class Class6544
         throw Class6544.field26006.create();
     }
     
-    private static int method19793(final Class7492 class7492, final Class6749 class7493, final Class2250 obj) throws CommandSyntaxException {
+    private static int method19793(final Class7492 class7492, final Class6749 class7493, final ITextComponent obj) throws CommandSyntaxException {
         if (!class7493.method20540().equals(obj)) {
             class7493.method20542(obj);
             class7492.method23257(new Class2259("commands.team.option.name.success", new Object[] { class7493.method20541() }), true);
@@ -165,7 +165,7 @@ public class Class6544
         return method19798(class7492, s, new Class2260(s));
     }
     
-    private static int method19798(final Class7492 class7492, final String s, final Class2250 class7493) throws CommandSyntaxException {
+    private static int method19798(final Class7492 class7492, final String s, final ITextComponent class7493) throws CommandSyntaxException {
         final Class6515 method1579 = class7492.method23255().method1579();
         if (method1579.method19645(s) != null) {
             throw Class6544.field26001.create();
@@ -201,13 +201,13 @@ public class Class6544
         return method19650.size();
     }
     
-    private static int method19801(final Class7492 class7492, final Class6749 class7493, final Class2250 class7494) {
+    private static int method19801(final Class7492 class7492, final Class6749 class7493, final ITextComponent class7494) {
         class7493.method20543(class7494);
         class7492.method23257(new Class2259("commands.team.option.prefix.success", new Object[] { class7494 }), false);
         return 1;
     }
     
-    private static int method19802(final Class7492 class7492, final Class6749 class7493, final Class2250 class7494) {
+    private static int method19802(final Class7492 class7492, final Class6749 class7493, final ITextComponent class7494) {
         class7493.method20545(class7494);
         class7492.method23257(new Class2259("commands.team.option.suffix.success", new Object[] { class7494 }), false);
         return 1;

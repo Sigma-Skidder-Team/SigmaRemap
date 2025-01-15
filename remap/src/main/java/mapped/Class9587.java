@@ -4,13 +4,12 @@
 
 package mapped;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.context.CommandContext;
 import java.util.List;
 import java.util.Collection;
 import java.util.function.Function;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class9587
 {
@@ -19,17 +18,17 @@ public class Class9587
     }
     
     private static int method35951(final Class7492 class7492) {
-        return method35953(class7492, Class512::method1871);
+        return method35953(class7492, Class512::getDisplayName);
     }
     
     private static int method35952(final Class7492 class7492) {
         return method35953(class7492, Class512::method2891);
     }
     
-    private static int method35953(final Class7492 class7492, final Function<Class513, Class2250> function) {
+    private static int method35953(final Class7492 class7492, final Function<Class513, ITextComponent> function) {
         final Class6765 method1537 = class7492.method23255().method1537();
         final List<Class513> method1538 = method1537.method20623();
-        class7492.method23257(new Class2259("commands.list.players", new Object[] { method1538.size(), method1537.method20609(), Class9479.method35298((Collection<Object>)method1538, (Function<Object, Class2250>)function) }), false);
+        class7492.method23257(new Class2259("commands.list.players", new Object[] { method1538.size(), method1537.method20609(), Class9479.method35298((Collection<Object>)method1538, (Function<Object, ITextComponent>)function) }), false);
         return method1538.size();
     }
 }

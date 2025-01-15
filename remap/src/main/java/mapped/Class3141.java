@@ -24,7 +24,7 @@ public final class Class3141 extends Class3090
         Class9218.method33984(this);
         Class9218.method33996(this);
         Class9218.method33999(this);
-        this.method9839(Class1976.field10949, new Class6828(Class7499.field29007, 8, 4, 8));
-        this.method9839(Class1976.field10950, new Class6828(Class7499.field28960, 10, 8, 8));
+        this.method9839(Class1976.field10949, new Class6828(EntityType.field29007, 8, 4, 8));
+        this.method9839(Class1976.field10950, new Class6828(EntityType.field28960, 10, 8, 8));
     }
 }

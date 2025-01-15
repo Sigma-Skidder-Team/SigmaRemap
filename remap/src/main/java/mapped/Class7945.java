@@ -10,5 +10,5 @@ import java.util.List;
 @FunctionalInterface
 public interface Class7945
 {
-    void method25768(final List<Class8321> p0) throws CommandSyntaxException;
+    void method25768(final List<ItemStack> p0) throws CommandSyntaxException;
 }

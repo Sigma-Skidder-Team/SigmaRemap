@@ -6,6 +6,8 @@ package mapped;
 
 import java.text.ParseException;
 import com.google.gson.JsonObject;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -59,7 +61,7 @@ public abstract class Class6024<T> extends Class6022<T>
         return this.field24518;
     }
     
-    public abstract Class2250 method17951();
+    public abstract ITextComponent method17951();
     
     @Override
     public boolean method17943() {

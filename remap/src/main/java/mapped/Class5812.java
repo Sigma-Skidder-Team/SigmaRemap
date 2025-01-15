@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
 public class Class5812 implements Class5811
@@ -91,7 +92,7 @@ public class Class5812 implements Class5811
     }
     
     @Override
-    public void method17291(final Class2250 class2250) {
+    public void method17291(final ITextComponent class2250) {
         if (!this.field23848) {
             Class8115.method26698().error("Can't ping {}: {}", (Object)this.field23852.field41613, (Object)class2250.getString());
             this.field23852.field41615 = Class2116.field12313 + Class8822.method30773("multiplayer.status.cannot_connect", new Object[0]);

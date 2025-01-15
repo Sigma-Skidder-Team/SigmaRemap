@@ -42,7 +42,7 @@ public class Class7529
         return this.field29902.containsKey(class7915);
     }
     
-    public void method23578(final Class1932 class1932, final Consumer<Class8321> consumer) {
+    public void method23578(final Class1932 class1932, final Consumer<ItemStack> consumer) {
         final Class8798 class1933 = this.field29903.get(class1932);
         if (class1933 != null) {
             class1933.method30701(this, consumer);

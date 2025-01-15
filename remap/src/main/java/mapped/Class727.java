@@ -14,7 +14,7 @@ import java.util.List;
 public class Class727 extends Class527
 {
     private final Class512 field3959;
-    private final Class8321 field3960;
+    private final ItemStack field3960;
     private boolean field3961;
     private boolean field3962;
     private int field3963;
@@ -33,7 +33,7 @@ public class Class727 extends Class527
     private Class654 field3976;
     private final Class316 field3977;
     
-    public Class727(final Class512 field3959, final Class8321 field3960, final Class316 field3961) {
+    public Class727(final Class512 field3959, final ItemStack field3960, final Class316 field3961) {
         super(Class7895.field32402);
         this.field3965 = Lists.newArrayList();
         this.field3966 = "";
@@ -494,7 +494,7 @@ public class Class727 extends Class527
             final String method30776 = Class8822.method30773("book.editTitle", new Object[0]);
             this.field3156.method6610(method30776, (float)(n4 + 36 + (114 - this.method4013(method30776)) / 2), 34.0f, 0);
             this.field3156.method6610(s, (float)(n4 + 36 + (114 - this.method4013(s)) / 2), 50.0f, 0);
-            final String method30777 = Class8822.method30773("book.byAuthor", this.field3959.method1841().getString());
+            final String method30777 = Class8822.method30773("book.byAuthor", this.field3959.getName().getString());
             this.field3156.method6610(Class2116.field12317 + method30777, (float)(n4 + 36 + (114 - this.method4013(method30777)) / 2), 60.0f, 0);
             this.field3156.method6622(Class8822.method30773("book.finalizeWarning", new Object[0]), n4 + 36, 82, 114, 0);
         }

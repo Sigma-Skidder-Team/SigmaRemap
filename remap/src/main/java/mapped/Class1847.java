@@ -209,7 +209,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
             final Class7099 method6702 = this.method6702(class354);
             this.method6955(2001, class354, Class3833.method11774(method6701));
             if (b) {
-                Class3833.method11838(method6701, this, class354, method6701.method21696().method11802() ? this.method6727(class354) : null, class355, Class8321.field34174);
+                Class3833.method11838(method6701, this, class354, method6701.method21696().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
             }
             return this.method6688(class354, method6702.method21791(), 3);
         }
@@ -709,7 +709,7 @@ public abstract class Class1847 implements Class1851, AutoCloseable
         return arrayList;
     }
     
-    public <T extends Entity> List<T> method6738(final Class7499<T> class7499, final AxisAlignedBB class7500, final Predicate<? super T> predicate) {
+    public <T extends Entity> List<T> method6738(final EntityType<T> class7499, final AxisAlignedBB class7500, final Predicate<? super T> predicate) {
         this.method6796().method15302("getEntities");
         final int method35644 = MathHelper.floor((class7500.field25073 - 2.0) / 16.0);
         final int method35645 = MathHelper.method35650((class7500.field25076 + 2.0) / 16.0);

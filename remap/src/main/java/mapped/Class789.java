@@ -13,7 +13,7 @@ public abstract class Class789 extends Class788
     private int field4202;
     private UUID field4203;
     
-    public Class789(final Class7499<? extends Class789> class7499, final Class1847 class7500) {
+    public Class789(final EntityType<? extends Class789> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -74,7 +74,7 @@ public abstract class Class789 extends Class788
         this.field4203 = (class51.method302("LoveCause") ? class51.method301("LoveCause") : null);
     }
     
-    public static boolean method4356(final Class7499<? extends Class789> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4356(final EntityType<? extends Class789> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6701(class7502.method1139()).method21696() == Class7521.field29155 && class7500.method6993(class7502, 0) > 8;
     }
     
@@ -93,13 +93,13 @@ public abstract class Class789 extends Class788
         return 1 + this.field2391.field10062.nextInt(3);
     }
     
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return class8321.method27622() == Class7739.field31315;
     }
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (this.method4357(method2715)) {
             if (!this.field2391.field10067) {
                 if (this.method4351() == 0) {
@@ -120,7 +120,7 @@ public abstract class Class789 extends Class788
         return super.method4195(class512, class513);
     }
     
-    public void method4358(final Class512 class512, final Class8321 class513) {
+    public void method4358(final Class512 class512, final ItemStack class513) {
         if (!class512.field3025.field27304) {
             class513.method27693(1);
         }

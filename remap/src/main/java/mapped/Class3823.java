@@ -7,7 +7,7 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import org.apache.logging.log4j.Logger;
 
@@ -20,11 +20,11 @@ public class Class3823 extends Class3820
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         final Class51 method2716 = method2715.method27657();
         if (!class1848.field3025.field27304) {
-            class1848.method2716(class1849, Class8321.field34174);
+            class1848.method2716(class1849, ItemStack.field34174);
         }
         if (method2716 != null && method2716.method316("Recipes", 9)) {
             if (!class1847.field10067) {

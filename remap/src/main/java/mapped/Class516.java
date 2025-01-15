@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.datafixers.util.Pair;
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Set;
 
@@ -22,12 +23,12 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     public Class6601 field3081;
     private Class6601 field3082;
     private boolean field3083;
-    private Class8321 field3084;
+    private ItemStack field3084;
     private int field3085;
     private int field3086;
     private Class6601 field3087;
     private long field3088;
-    private Class8321 field3089;
+    private ItemStack field3089;
     private Class6601 field3090;
     private long field3091;
     public final Set<Class6601> field3092;
@@ -40,16 +41,16 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     private Class6601 field3099;
     private int field3100;
     private boolean field3101;
-    private Class8321 field3102;
+    private ItemStack field3102;
     
-    public Class516(final T field3077, final Class464 field3078, final Class2250 class2250) {
+    public Class516(final T field3077, final Class464 field3078, final ITextComponent class2250) {
         super(class2250);
         this.field3075 = 176;
         this.field3076 = 166;
-        this.field3084 = Class8321.field34174;
-        this.field3089 = Class8321.field34174;
+        this.field3084 = ItemStack.field34174;
+        this.field3089 = ItemStack.field34174;
         this.field3092 = Sets.newHashSet();
-        this.field3102 = Class8321.field34174;
+        this.field3102 = ItemStack.field34174;
         this.field3077 = field3077;
         this.field3078 = field3078;
         this.field3096 = true;
@@ -97,7 +98,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
         }
         this.method2973(n, n2);
         final Class464 field3084 = this.field3150.field4684.field3006;
-        Class8321 class8321 = this.field3084.method27620() ? field3084.method2375() : this.field3084;
+        ItemStack class8321 = this.field3084.method27620() ? field3084.method2375() : this.field3084;
         if (!class8321.method27620()) {
             final int n4 = this.field3084.method27620() ? 8 : 16;
             String string = null;
@@ -120,7 +121,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             float n5 = (Class8349.method27837() - this.field3088) / 100.0f;
             if (n5 >= 1.0f) {
                 n5 = 1.0f;
-                this.field3089 = Class8321.field34174;
+                this.field3089 = ItemStack.field34174;
             }
             this.method2978(this.field3089, this.field3085 + (int)((this.field3087.field26175 - this.field3085) * n5), this.field3086 + (int)((this.field3087.field26176 - this.field3086) * n5), null);
         }
@@ -138,7 +139,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
         }
     }
     
-    private void method2978(final Class8321 class8321, final int n, final int n2, final String s) {
+    private void method2978(final ItemStack class8321, final int n, final int n2, final String s) {
         Class8726.method30065(0.0f, 0.0f, 32.0f);
         this.method3304(200);
         this.field3151.field9952 = 200.0f;
@@ -156,7 +157,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     private void method2979(final Class6601 class6601) {
         final int field26175 = class6601.field26175;
         final int field26176 = class6601.field26176;
-        Class8321 class6602 = class6601.method20053();
+        ItemStack class6602 = class6601.method20053();
         boolean b = false;
         int n = 0;
         Label_0060: {
@@ -171,7 +172,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             n = 0;
         }
         int n2 = n;
-        final Class8321 method2375 = this.field3150.field4684.field3006.method2375();
+        final ItemStack method2375 = this.field3150.field4684.field3006.method2375();
         String string = null;
         Label_0095: {
             if (class6601 == this.field3082) {
@@ -235,14 +236,14 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     private void method2980() {
-        final Class8321 method2375 = this.field3150.field4684.field3006.method2375();
+        final ItemStack method2375 = this.field3150.field4684.field3006.method2375();
         if (!method2375.method27620()) {
             if (this.field3093) {
                 if (this.field3094 != 2) {
                     this.field3097 = method2375.method27690();
                     for (final Class6601 class6601 : this.field3092) {
-                        final Class8321 method2376 = method2375.method27641();
-                        final Class8321 method2377 = class6601.method20053();
+                        final ItemStack method2376 = method2375.method27641();
+                        final ItemStack method2377 = class6601.method20053();
                         final int n = method2377.method27620() ? 0 : method2377.method27690();
                         Class3418.method10895(this.field3092, this.field3094, method2376, n);
                         final int min = Math.min(method2376.method27628(), class6601.method20058(method2376));
@@ -344,7 +345,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                         }
                                     }
                                     else {
-                                        this.field3102 = ((method1068 != null && method1068.method20054()) ? method1068.method20053().method27641() : Class8321.field34174);
+                                        this.field3102 = ((method1068 != null && method1068.method20054()) ? method1068.method20053().method27641() : ItemStack.field34174);
                                         class2133 = Class2133.field12438;
                                     }
                                     this.method2988(method1068, field3102, n3, class2133);
@@ -358,7 +359,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                     }
                     else if (method1068 != null && method1068.method20054()) {
                         this.field3082 = method1068;
-                        this.field3084 = Class8321.field34174;
+                        this.field3084 = ItemStack.field34174;
                         this.field3083 = (n3 == 1);
                     }
                     else {
@@ -390,7 +391,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     @Override
     public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
         final Class6601 method2981 = this.method2981(n, n2);
-        final Class8321 method2982 = this.field3150.field4684.field3006.method2375();
+        final ItemStack method2982 = this.field3150.field4684.field3006.method2375();
         if (this.field3082 != null && this.field3150.field4648.field23429) {
             if (n3 == 0 || n3 == 1) {
                 if (!this.field3084.method27620()) {
@@ -456,7 +457,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             if (this.field3101) {
                 if (method2981 != null) {
                     if (n3 == 0) {
-                        if (this.field3077.method10857(Class8321.field34174, method2981)) {
+                        if (this.field3077.method10857(ItemStack.field34174, method2981)) {
                             if (!Class527.method3047()) {
                                 this.method2988(method2981, field3081, n3, Class2133.field12443);
                             }
@@ -519,7 +520,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                         this.field3088 = Class8349.method27837();
                                         break Label_0469;
                                     }
-                                    this.field3089 = Class8321.field34174;
+                                    this.field3089 = ItemStack.field34174;
                                     break Label_0469;
                                 }
                             }
@@ -532,7 +533,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                             this.field3088 = Class8349.method27837();
                         }
                     }
-                    this.field3084 = Class8321.field34174;
+                    this.field3084 = ItemStack.field34174;
                     this.field3082 = null;
                 }
             }
@@ -547,7 +548,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 if (!this.field3150.field4648.field23447.method1067(n3)) {
                     final boolean b = field3081 != -999 && (Class8341.method27798(Class869.method5277().method5332().method7690(), 340) || Class8341.method27798(Class869.method5277().method5332().method7690(), 344));
                     if (b) {
-                        this.field3102 = ((method2981 != null && method2981.method20054()) ? method2981.method20053().method27641() : Class8321.field34174);
+                        this.field3102 = ((method2981 != null && method2981.method20054()) ? method2981.method20053().method27641() : ItemStack.field34174);
                     }
                     this.method2988(method2981, field3081, n3, b ? Class2133.field12438 : Class2133.field12437);
                 }

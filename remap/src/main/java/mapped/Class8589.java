@@ -69,10 +69,10 @@ public class Class8589
         if (!Class8532.method28620(class1847, class1848, method6701, method6701.method21756())) {
             return false;
         }
-        if (!Class777.method4309(Class7499.field29045, class1847, Class2101.field12189, class1848, random)) {
+        if (!Class777.method4309(EntityType.field29045, class1847, Class2101.field12189, class1848, random)) {
             return false;
         }
-        final Class777 class1849 = Class7499.field29045.method23371(class1847);
+        final Class777 class1849 = EntityType.field29045.method23371(class1847);
         if (class1849 == null) {
             return false;
         }

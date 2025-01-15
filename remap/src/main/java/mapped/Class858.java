@@ -15,14 +15,14 @@ public class Class858 extends Entity
     private static final Class8810<Boolean> field4591;
     public int field4592;
     
-    public Class858(final Class7499<? extends Class858> class7499, final Class1847 class7500) {
+    public Class858(final EntityType<? extends Class858> class7499, final Class1847 class7500) {
         super(class7499, class7500);
-        this.field2386 = true;
+        this.preventEntitySpawning = true;
         this.field4592 = this.field2423.nextInt(100000);
     }
     
     public Class858(final Class1847 class1847, final double n, final double n2, final double n3) {
-        this(Class7499.field28975, class1847);
+        this(EntityType.field28975, class1847);
         this.method1656(n, n2, n3);
     }
     

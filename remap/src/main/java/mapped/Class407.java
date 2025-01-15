@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class407
 {
-    Class8321 method2005();
+    ItemStack method2005();
 }

@@ -10,7 +10,7 @@ public class Class811 extends Class806
 {
     private static String[] field4365;
     
-    public Class811(final Class7499<? extends Class811> class7499, final Class1847 class7500) {
+    public Class811(final EntityType<? extends Class811> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -48,12 +48,12 @@ public class Class811 extends Class806
     @Nullable
     @Override
     public Class788 method4349(final Class788 class788) {
-        return Class7499.field29053.method23371(this.field2391);
+        return EntityType.field29053.method23371(this.field2391);
     }
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
         }

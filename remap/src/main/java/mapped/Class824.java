@@ -21,6 +21,7 @@ import java.util.function.BiPredicate;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Set;
 import java.util.Map;
@@ -45,11 +46,11 @@ public class Class824 extends Class819 implements Class831, Class825
     private static final ImmutableList<Class8033<? extends Class6851<? super Class824>>> field4414;
     public static final Map<Class8233<Class363>, BiPredicate<Class824, Class8912>> field4415;
     
-    public Class824(final Class7499<? extends Class824> class7499, final Class1847 class7500) {
+    public Class824(final EntityType<? extends Class824> class7499, final Class1847 class7500) {
         this(class7499, class7500, Class7611.field30165);
     }
     
-    public Class824(final Class7499<? extends Class824> class7499, final Class1847 class7500, final Class7611 class7501) {
+    public Class824(final EntityType<? extends Class824> class7499, final Class1847 class7500, final Class7611 class7501) {
         super(class7499, class7500);
         this.field4406 = new Class9470();
         ((Class7747)this.method4150()).method24747(true);
@@ -173,7 +174,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() != Class7739.field31552) {
             if (method2715.method27622() != Class7739.field31500) {
                 if (this.method1768()) {
@@ -221,7 +222,7 @@ public class Class824 extends Class819 implements Class831, Class825
     private void method4859(final Class512 class512) {
         this.method4867(class512);
         this.method4822(class512);
-        this.method4854(class512, this.method1871(), this.method4870().method28782());
+        this.method4854(class512, this.getDisplayName(), this.method4870().method28782());
     }
     
     @Override
@@ -504,7 +505,7 @@ public class Class824 extends Class819 implements Class831, Class825
         if (this.method4874()) {
             if (this.method4886() != 0) {
                 for (int i = 0; i < this.method4837().method2239(); ++i) {
-                    final Class8321 method2157 = this.method4837().method2157(i);
+                    final ItemStack method2157 = this.method4837().method2157(i);
                     if (!method2157.method27620()) {
                         final Integer n = Class824.field4400.get(method2157.method27622());
                         if (n != null) {
@@ -550,7 +551,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     @Override
-    public Class2250 method1842() {
+    public ITextComponent method1842() {
         return new Class2259(this.method1642().method23366() + '.' + Class90.field240.method503(this.method4870().method28781()).method7797(), new Object[0]);
     }
     
@@ -612,19 +613,19 @@ public class Class824 extends Class819 implements Class831, Class825
         else {
             class789 = Class7611.method23913(this.field2391.method6959(new BlockPos(this)));
         }
-        final Class824 class790 = new Class824(Class7499.field29042, this.field2391, class789);
+        final Class824 class790 = new Class824(EntityType.field29042, this.field2391, class789);
         class790.method4188(this.field2391, this.field2391.method6784(new BlockPos(class790)), Class2101.field12178, null, null);
         return class790;
     }
     
     @Override
     public void method1834(final Class422 class422) {
-        final Class778 class423 = Class7499.field29047.method23371(this.field2391);
+        final Class778 class423 = EntityType.field29047.method23371(this.field2391);
         class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, this.field2400);
         class423.method4188(this.field2391, this.field2391.method6784(new BlockPos(class423)), Class2101.field12182, null, null);
         class423.method4211(this.method4214());
-        if (this.method1874()) {
-            class423.method1872(this.method1873());
+        if (this.hasCustomName()) {
+            class423.method1872(this.getCustomName());
             class423.method1875(this.method1876());
         }
         this.field2391.method6886(class423);
@@ -633,13 +634,13 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public void method4165(final Class427 class427) {
-        final Class8321 method2107 = class427.method2107();
+        final ItemStack method2107 = class427.method2107();
         final Class3820 method2108 = method2107.method27622();
         if (this.method4883(method2108)) {
             final Class443 method2109 = this.method4837();
             int n = 0;
             for (int i = 0; i < method2109.method2239(); ++i) {
-                final Class8321 method2110 = method2109.method2157(i);
+                final ItemStack method2110 = method2109.method2157(i);
                 if (method2110.method27620() || (method2110.method27622() == method2108 && method2110.method27690() < method2110.method27628())) {
                     n = 1;
                     break;
@@ -657,7 +658,7 @@ public class Class824 extends Class819 implements Class831, Class825
                 return;
             }
             this.method2746(class427, method2107.method27690());
-            final Class8321 method2112 = method2109.method2258(method2107);
+            final ItemStack method2112 = method2109.method2258(method2107);
             if (!method2112.method27620()) {
                 method2107.method27691(method2112.method27690());
             }
@@ -691,7 +692,7 @@ public class Class824 extends Class819 implements Class831, Class825
         final int n = method4837.method2265(Class7739.field31315) / 3;
         if (n != 0) {
             method4837.method2257(Class7739.field31315, n * 3);
-            final Class8321 method4838 = method4837.method2258(new Class8321(Class7739.field31316, n));
+            final ItemStack method4838 = method4837.method2258(new ItemStack(Class7739.field31316, n));
             if (!method4838.method27620()) {
                 this.method1767(method4838, 0.5f);
             }
@@ -780,7 +781,7 @@ public class Class824 extends Class819 implements Class831, Class825
                     }
                 }
             }
-            final Class786 class355 = Class7499.field29043.method23358(this.field2391, null, null, null, class354.method1133(n, n3, n2), Class2101.field12179, false, false);
+            final Class786 class355 = EntityType.field29043.method23358(this.field2391, null, null, null, class354.method1133(n, n3, n2), Class2101.field12179, false, false);
             if (class355 != null) {
                 if (class355.method4179(this.field2391, Class2101.field12179) && class355.method4180(this.field2391)) {
                     this.field2391.method6886(class355);

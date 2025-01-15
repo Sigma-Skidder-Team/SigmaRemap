@@ -5,11 +5,11 @@
 package mapped;
 
 import com.google.common.collect.ComparisonChain;
-import java.util.Iterator;
 import com.google.common.collect.Lists;
 import java.util.Collection;
 import java.util.List;
 import com.google.common.collect.Ordering;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6987 implements Class6988, Class6991
 {
@@ -36,7 +36,7 @@ public class Class6987 implements Class6988, Class6991
     }
     
     @Override
-    public Class2250 method21401() {
+    public ITextComponent method21401() {
         return new Class2259("spectatorMenu.teleport.prompt", new Object[0]);
     }
     
@@ -46,7 +46,7 @@ public class Class6987 implements Class6988, Class6991
     }
     
     @Override
-    public Class2250 method21403() {
+    public ITextComponent method21403() {
         return new Class2259("spectatorMenu.teleport", new Object[0]);
     }
     

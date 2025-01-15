@@ -21,7 +21,7 @@ public class Class4055 extends Class3820
     public final float field18150;
     public final Class2035 field18151;
     
-    public static boolean method12256(final Class5491 class5491, final Class8321 class5492) {
+    public static boolean method12256(final Class5491 class5491, final ItemStack class5492) {
         final List<Entity> method6739 = class5491.method16763().method6739((Class<? extends Entity>)Class511.class, new AxisAlignedBB(class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859))), (Predicate<? super Entity>)Class9170.field38850.and(new Class168(class5492)));
         if (!method6739.isEmpty()) {
             final Class511 class5493 = method6739.get(0);
@@ -59,13 +59,13 @@ public class Class4055 extends Class3820
     }
     
     @Override
-    public boolean method11738(final Class8321 class8321, final Class8321 class8322) {
+    public boolean method11738(final ItemStack class8321, final ItemStack class8322) {
         return this.field18151.method8100().test(class8322) || super.method11738(class8321, class8322);
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         final Class2215 method2716 = Class759.method4185(method2715);
         if (!class1848.method2718(method2716).method27620()) {
             return Class9355.method34677(method2715);

@@ -14,14 +14,14 @@ public class Class510 extends Entity
     private Class511 field2916;
     private int field2917;
     
-    public Class510(final Class7499<? extends Class510> class7499, final Class1847 class7500) {
+    public Class510(final EntityType<? extends Class510> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2917 = 80;
-        this.field2386 = true;
+        this.preventEntitySpawning = true;
     }
     
     public Class510(final Class1847 class1847, final double field2392, final double field2393, final double field2394, final Class511 field2395) {
-        this(Class7499.field29016, class1847);
+        this(EntityType.field29016, class1847);
         this.method1656(field2392, field2393, field2394);
         final double n = class1847.field10062.nextDouble() * 6.2831854820251465;
         this.method1937(-Math.sin(n) * 0.02, 0.20000000298023224, -Math.cos(n) * 0.02);

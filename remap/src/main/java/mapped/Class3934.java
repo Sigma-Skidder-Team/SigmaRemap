@@ -15,12 +15,12 @@ public class Class3934 extends Class3933
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         Class7521.field29459.method11853(class1847, class1848, class1849, class1850, class1851);
     }
     
     @Override
-    public List<Class8321> method11833(final Class7096 class7096, final Class9098 class7097) {
+    public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
         return Class7521.field29459.method11833(class7096, class7097);
     }
 }

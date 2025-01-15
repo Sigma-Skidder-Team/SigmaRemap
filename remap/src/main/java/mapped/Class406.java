@@ -12,20 +12,20 @@ import java.util.OptionalInt;
 
 public class Class406 extends Entity implements Class407, Class401
 {
-    private static final Class8810<Class8321> field2494;
+    private static final Class8810<ItemStack> field2494;
     private static final Class8810<OptionalInt> field2495;
     private static final Class8810<Boolean> field2496;
     private int field2497;
     private int field2498;
     public Class511 field2499;
     
-    public Class406(final Class7499<? extends Class406> class7499, final Class1847 class7500) {
+    public Class406(final EntityType<? extends Class406> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     @Override
     public void method1649() {
-        this.field2432.method33565(Class406.field2494, Class8321.field34174);
+        this.field2432.method33565(Class406.field2494, ItemStack.field34174);
         this.field2432.method33565(Class406.field2495, OptionalInt.empty());
         this.field2432.method33565(Class406.field2496, false);
     }
@@ -40,8 +40,8 @@ public class Class406 extends Entity implements Class407, Class401
         return super.method1752(n, n2, n3) && !this.method2003();
     }
     
-    public Class406(final Class1847 class1847, final double n, final double n2, final double n3, final Class8321 class1848) {
-        super(Class7499.field28984, class1847);
+    public Class406(final Class1847 class1847, final double n, final double n2, final double n3, final ItemStack class1848) {
+        super(EntityType.field28984, class1847);
         this.field2497 = 0;
         this.method1656(n, n2, n3);
         int n4 = 1;
@@ -55,13 +55,13 @@ public class Class406 extends Entity implements Class407, Class401
         this.field2498 = 10 * n4 + this.field2423.nextInt(6) + this.field2423.nextInt(7);
     }
     
-    public Class406(final Class1847 class1847, final Class8321 class1848, final Class511 field2499) {
+    public Class406(final Class1847 class1847, final ItemStack class1848, final Class511 field2499) {
         this(class1847, field2499.getPosX(), field2499.getPosY(), field2499.getPosZ(), class1848);
         this.field2432.method33569(Class406.field2495, OptionalInt.of(field2499.method1643()));
         this.field2499 = field2499;
     }
     
-    public Class406(final Class1847 class1847, final Class8321 class1848, final double n, final double n2, final double n3, final boolean b) {
+    public Class406(final Class1847 class1847, final ItemStack class1848, final double n, final double n2, final double n3, final boolean b) {
         this(class1847, n, n2, n3, class1848);
         this.field2432.method33569(Class406.field2496, b);
     }
@@ -187,7 +187,7 @@ public class Class406 extends Entity implements Class407, Class401
     }
     
     private boolean method2001() {
-        final Class8321 class8321 = this.field2432.method33568(Class406.field2494);
+        final ItemStack class8321 = this.field2432.method33568(Class406.field2494);
         final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
         final Class52 class8323 = (class8322 == null) ? null : class8322.method328("Explosions", 10);
         return class8323 != null && !class8323.isEmpty();
@@ -195,7 +195,7 @@ public class Class406 extends Entity implements Class407, Class401
     
     private void method2002() {
         float n = 0.0f;
-        final Class8321 class8321 = this.field2432.method33568(Class406.field2494);
+        final ItemStack class8321 = this.field2432.method33568(Class406.field2494);
         final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
         final Class52 class8323 = (class8322 == null) ? null : class8322.method328("Explosions", 10);
         if (class8323 != null) {
@@ -243,7 +243,7 @@ public class Class406 extends Entity implements Class407, Class401
         if (b == 17) {
             if (this.field2391.field10067) {
                 if (this.method2001()) {
-                    final Class8321 class8321 = this.field2432.method33568(Class406.field2494);
+                    final ItemStack class8321 = this.field2432.method33568(Class406.field2494);
                     final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
                     final Vec3d method1935 = this.method1935();
                     this.field2391.method6781(this.getPosX(), this.getPosY(), this.getPosZ(), method1935.x, method1935.y, method1935.z, class8322);
@@ -262,7 +262,7 @@ public class Class406 extends Entity implements Class407, Class401
     public void method1761(final Class51 class51) {
         class51.method298("Life", this.field2497);
         class51.method298("LifeTime", this.field2498);
-        final Class8321 class52 = this.field2432.method33568(Class406.field2494);
+        final ItemStack class52 = this.field2432.method33568(Class406.field2494);
         if (!class52.method27620()) {
             class51.method295("FireworksItem", class52.method27627(new Class51()));
         }
@@ -273,7 +273,7 @@ public class Class406 extends Entity implements Class407, Class401
     public void method1760(final Class51 class51) {
         this.field2497 = class51.method319("Life");
         this.field2498 = class51.method319("LifeTime");
-        final Class8321 method27619 = Class8321.method27619(class51.method327("FireworksItem"));
+        final ItemStack method27619 = ItemStack.method27619(class51.method327("FireworksItem"));
         if (!method27619.method27620()) {
             this.field2432.method33569(Class406.field2494, method27619);
         }
@@ -283,9 +283,9 @@ public class Class406 extends Entity implements Class407, Class401
     }
     
     @Override
-    public Class8321 method2005() {
-        final Class8321 class8321 = this.field2432.method33568(Class406.field2494);
-        return class8321.method27620() ? new Class8321(Class7739.field31532) : class8321;
+    public ItemStack method2005() {
+        final ItemStack class8321 = this.field2432.method33568(Class406.field2494);
+        return class8321.method27620() ? new ItemStack(Class7739.field31532) : class8321;
     }
     
     @Override

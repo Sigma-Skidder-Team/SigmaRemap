@@ -19,12 +19,12 @@ public class Class6618 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return false;
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         this.field26195.method22437((class514, class515) -> {
             this.method20067(class514);
             final int i;
@@ -36,8 +36,8 @@ public class Class6618 extends Class6601
             class514.method6955(1042, class515, 0);
             return;
         });
-        Class3440.method10994(this.field26196).method2160(0, Class8321.field34174);
-        Class3440.method10994(this.field26196).method2160(1, Class8321.field34174);
+        Class3440.method10994(this.field26196).method2160(0, ItemStack.field34174);
+        Class3440.method10994(this.field26196).method2160(1, ItemStack.field34174);
         return class513;
     }
     
@@ -50,7 +50,7 @@ public class Class6618 extends Class6601
         return bound + class1847.field10062.nextInt(bound);
     }
     
-    private int method20068(final Class8321 class8321) {
+    private int method20068(final ItemStack class8321) {
         int n = 0;
         for (final Map.Entry<Class6257, V> entry : Class8742.method30196(class8321).entrySet()) {
             final Class6257 class8322 = entry.getKey();

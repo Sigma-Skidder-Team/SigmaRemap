@@ -15,16 +15,16 @@ public class Class6625 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return this.field26208.method10947(class8321) || method20071(class8321);
     }
     
     @Override
-    public int method20058(final Class8321 class8321) {
+    public int method20058(final ItemStack class8321) {
         return method20071(class8321) ? 1 : super.method20058(class8321);
     }
     
-    public static boolean method20071(final Class8321 class8321) {
+    public static boolean method20071(final ItemStack class8321) {
         return class8321.method27622() == Class7739.field31349;
     }
 }

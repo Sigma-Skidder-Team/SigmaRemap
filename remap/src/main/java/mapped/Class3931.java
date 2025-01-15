@@ -25,7 +25,7 @@ public class Class3931 extends Class3841
         return Class2201.field13400;
     }
     
-    public void method12048(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Class8321 class1854) {
+    public void method12048(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final ItemStack class1854) {
         final Class436 method6727 = class1851.method6727(class1852);
         if (method6727 instanceof Class449) {
             ((Class449)method6727).method2278(class1854.method27641());
@@ -38,7 +38,7 @@ public class Class3931 extends Class3841
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class449) {
                 final Class449 class1849 = (Class449)method6727;
-                final Class8321 method6728 = class1849.method2277();
+                final ItemStack method6728 = class1849.method2277();
                 if (!method6728.method27620()) {
                     class1847.method6955(1010, class1848, 0);
                     class1849.method2164();

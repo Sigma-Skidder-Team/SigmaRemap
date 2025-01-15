@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
 import java.util.List;
@@ -78,7 +79,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7499<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7096.method21761(class7097, class7098, Direction.UP) && this.field17396 < 14;
     }
     
@@ -425,7 +426,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class8321 class7099) {
+    public void method11831(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final ItemStack class7099) {
     }
     
     public Class1932 method11832() {
@@ -437,7 +438,7 @@ public class Class3833 implements Class3832
     }
     
     @Deprecated
-    public List<Class8321> method11833(final Class7096 class7096, final Class9098 class7097) {
+    public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
         final Class1932 method11832 = this.method11832();
         if (method11832 != Class9020.field38063) {
             final Class7529 method11833 = class7097.method32877(Class6683.field26368, class7096).method32883(Class7104.field27719);
@@ -446,11 +447,11 @@ public class Class3833 implements Class3832
         return Collections.emptyList();
     }
     
-    public static List<Class8321> method11834(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Class436 class7099) {
-        return class7096.method21743(new Class9098(class7097).method32873(class7097.field10062).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, Class8321.field34174).method32878(Class6683.field26369, class7099));
+    public static List<ItemStack> method11834(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Class436 class7099) {
+        return class7096.method21743(new Class9098(class7097).method32873(class7097.field10062).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, class7099));
     }
     
-    public static List<Class8321> method11835(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Class436 class7099, final Entity class7100, final Class8321 class7101) {
+    public static List<ItemStack> method11835(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Class436 class7099, final Entity class7100, final ItemStack class7101) {
         return class7096.method21743(new Class9098(class7097).method32873(class7097.field10062).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, class7101).method32878(Class6683.field26362, class7100).method32878(Class6683.field26369, class7099));
     }
     
@@ -458,24 +459,24 @@ public class Class3833 implements Class3832
         if (class7097 instanceof Class1849) {
             method11834(class7096, (Class1849)class7097, class7098, null).forEach(class7101 -> method11839(class7099, class7100, class7101));
         }
-        class7096.method21742(class7097, class7098, Class8321.field34174);
+        class7096.method21742(class7097, class7098, ItemStack.field34174);
     }
     
     public static void method11837(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class436 class7099) {
         if (class7097 instanceof Class1849) {
             method11834(class7096, (Class1849)class7097, class7098, class7099).forEach(class7102 -> method11839(class7100, class7101, class7102));
         }
-        class7096.method21742(class7097, class7098, Class8321.field34174);
+        class7096.method21742(class7097, class7098, ItemStack.field34174);
     }
     
-    public static void method11838(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class436 class7099, final Entity class7100, final Class8321 class7101) {
+    public static void method11838(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class436 class7099, final Entity class7100, final ItemStack class7101) {
         if (class7097 instanceof Class1849) {
             method11835(class7096, (Class1849)class7097, class7098, class7099, class7100, class7101).forEach(class7104 -> method11839(class7102, class7103, class7104));
         }
         class7096.method21742(class7097, class7098, class7101);
     }
     
-    public static void method11839(final Class1847 class1847, final BlockPos class1848, final Class8321 class1849) {
+    public static void method11839(final Class1847 class1847, final BlockPos class1848, final ItemStack class1849) {
         if (!class1847.field10067) {
             if (!class1849.method27620()) {
                 if (class1847.method6765().method31216(Class8878.field37320)) {
@@ -547,20 +548,20 @@ public class Class3833 implements Class3832
         return 0;
     }
     
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final Class8321 class1852) {
+    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         class1848.method2859(Class8276.field33979.method8449(this));
         class1848.method2876(0.005f);
         method11838(class1850, class1847, class1849, class1851, class1848, class1852);
     }
     
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
     }
     
     public boolean method11854() {
         return !this.field17401.method26439() && !this.field17401.method26438();
     }
     
-    public Class2250 method11855() {
+    public ITextComponent method11855() {
         return new Class2259(this.method11856(), new Object[0]);
     }
     
@@ -594,12 +595,12 @@ public class Class3833 implements Class3832
         class1856.method1936(class1856.method1935().mul(1.0, 0.0, 1.0));
     }
     
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return new Class8321(this);
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return new ItemStack(this);
     }
     
-    public void method11863(final Class7207 class7207, final Class2265<Class8321> class7208) {
-        class7208.add(new Class8321(this));
+    public void method11863(final Class7207 class7207, final Class2265<ItemStack> class7208) {
+        class7208.add(new ItemStack(this));
     }
     
     @Deprecated
@@ -698,7 +699,7 @@ public class Class3833 implements Class3832
         return "Block{" + Class90.field208.method503(this) + "}";
     }
     
-    public void method11883(final Class8321 class8321, final Class1855 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11883(final ItemStack class8321, final Class1855 class8322, final List<ITextComponent> list, final Class1981 class8323) {
     }
     
     static {

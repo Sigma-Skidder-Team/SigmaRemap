@@ -13,7 +13,7 @@ public abstract class Class8150
     public static final Class8150 field33561;
     private static final Joiner field33562;
     
-    public abstract boolean method26845(final Class7499<?> p0);
+    public abstract boolean method26845(final EntityType<?> p0);
     
     public abstract JsonElement method26846();
     
@@ -31,11 +31,11 @@ public abstract class Class8150
         return new Class8149(Class8039.method26371().method18461(new Class1932(method35894.substring(1))));
     }
     
-    public static Class8150 method26848(final Class7499<?> class7499) {
+    public static Class8150 method26848(final EntityType<?> class7499) {
         return new Class8152(class7499);
     }
     
-    public static Class8150 method26849(final Class7909<Class7499<?>> class7909) {
+    public static Class8150 method26849(final Class7909<EntityType<?>> class7909) {
         return new Class8149(class7909);
     }
     

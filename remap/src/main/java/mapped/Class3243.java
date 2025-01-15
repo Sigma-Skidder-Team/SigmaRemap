@@ -31,15 +31,15 @@ public class Class3243 extends Class3167
                 if (class5724.method13247().method27622() instanceof Class4077) {
                     if (Class3243.field15514.field4683.method6741(class5724.method13248()) instanceof Class512) {
                         final Entity method6741 = Class3243.field15514.field4683.method6741(class5724.method13248());
-                        if (!this.field15732.toString().equalsIgnoreCase(method6741.method1841().method8459())) {
+                        if (!this.field15732.toString().equalsIgnoreCase(method6741.getName().method8459())) {
                             if (this.method9883("Chat Message")) {
-                                Class3243.field15514.field4684.method4114("Murderer is " + method6741.method1841() + ", detected by Jello client");
+                                Class3243.field15514.field4684.method4114("Murderer is " + method6741.getName() + ", detected by Jello client");
                             }
-                            this.field15732 = method6741.method1841().method8459();
+                            this.field15732 = method6741.getName().method8459();
                             this.field15734 = true;
                             this.field15735 = true;
                         }
-                        this.field15732 = method6741.method1841().method8459();
+                        this.field15732 = method6741.getName().method8459();
                     }
                 }
             }

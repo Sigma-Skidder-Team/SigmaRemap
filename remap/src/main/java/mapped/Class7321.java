@@ -220,7 +220,7 @@ public class Class7321
         class1849.method6883(p0 -> true).forEach(class1851 -> {
             new Class2260(obj + str);
             final Class2260 class1852;
-            class1851.method1494(class1852);
+            class1851.sendMessage(class1852);
         });
     }
 }

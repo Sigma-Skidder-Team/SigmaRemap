@@ -10,6 +10,7 @@ import java.util.List;
 
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Constructor;
@@ -1015,7 +1016,7 @@ public class Class9570
         Class9570.field41255 = new Class7361(Class9570.field41251, "shouldRiderSit");
         Class9570.field41256 = new Class7363("net.minecraftforge.fluids.FluidAttributes");
         Class9570.field41257 = new Class7361(Class9570.field41256, "getColor", new Class[] { Class1856.class, BlockPos.class });
-        Class9570.field41258 = new Class7363(Class7499.class);
+        Class9570.field41258 = new Class7363(EntityType.class);
         Class9570.field41259 = new Class7361(Class9570.field41258, "getTags");
         Class9570.field41260 = new Class7363(Class511.class);
         Class9570.field41261 = new Class7364(Class9570.field41260, "NAMETAG_DISTANCE");
@@ -1348,7 +1349,7 @@ public class Class9570
         Class9570.field41588 = new Class7364(Class9570.field41586, Class6300.class, 1);
         Class9570.field41589 = new Class7364(Class9570.field41586, Class6300[].class);
         Class9570.field41590 = new Class7363(Class490.class);
-        Class9570.field41591 = new Class7364(Class9570.field41590, Class2250.class);
+        Class9570.field41591 = new Class7364(Class9570.field41590, ITextComponent.class);
         Class9570.field41592 = new Class7363(Class4167.class);
         Class9570.field41593 = new Class7070(Class9570.field41592, Class6300.class, 9);
         Class9570.field41594 = new Class7363(Class4173.class);

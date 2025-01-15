@@ -13,7 +13,7 @@ public class Class846 extends Class763
     private static String[] field4509;
     private static final Class8810<Byte> field4510;
     
-    public Class846(final Class7499<? extends Class846> class7499, final Class1847 class7500) {
+    public Class846(final EntityType<? extends Class846> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -124,7 +124,7 @@ public class Class846 extends Class763
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final Class51 class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1851.method6790().nextInt(100) == 0) {
-            final Class782 class1855 = Class7499.field29023.method23371(this.field2391);
+            final Class782 class1855 = EntityType.field29023.method23371(this.field2391);
             class1855.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, 0.0f);
             class1855.method4188(class1851, class1852, class1853, null, null);
             class1851.method6886(class1855);

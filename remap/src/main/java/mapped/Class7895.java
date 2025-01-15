@@ -4,13 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.text2speech.Narrator;
 import org.apache.logging.log4j.Logger;
 
 public class Class7895 implements Class7894
 {
-    public static final Class2250 field32402;
+    public static final ITextComponent field32402;
     private static final Logger field32403;
     public static final Class7895 field32404;
     private final Narrator field32405;
@@ -20,7 +21,7 @@ public class Class7895 implements Class7894
     }
     
     @Override
-    public void method25555(final Class285 class285, final Class2250 class286) {
+    public void method25555(final Class285 class285, final ITextComponent class286) {
         final Class2051 method25557 = method25557();
         if (method25557 != Class2051.field11699) {
             if (this.field32405.active()) {
@@ -34,7 +35,7 @@ public class Class7895 implements Class7894
                         }
                     }
                 }
-                Class2250 class287;
+                ITextComponent class287;
                 if (class286 instanceof Class2259 && "chat.type.text".equals(((Class2259)class286).method8496())) {
                     class287 = new Class2259("chat.type.text.narrate", ((Class2259)class286).method8497());
                 }

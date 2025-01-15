@@ -27,7 +27,7 @@ public class Class638 extends Class623<Class638>
                 class9128 = Class7739.field31350;
             }
         }
-        final Class8321 class9129 = new Class8321(class9128);
+        final ItemStack class9129 = new ItemStack(class9128);
         final String method21697 = class9128.method11729(class9129).method8461();
         this.method3666(n3, n2, class9129);
         this.field3637.field3591.field3156.method6610(method21697, (float)(n3 + 18 + 5), (float)(n2 + 3), 16777215);
@@ -56,7 +56,7 @@ public class Class638 extends Class623<Class638>
         return true;
     }
     
-    private void method3666(final int n, final int n2, final Class8321 class8321) {
+    private void method3666(final int n, final int n2, final ItemStack class8321) {
         this.method3667(n + 1, n2 + 1);
         Class8726.method30046();
         if (!class8321.method27620()) {

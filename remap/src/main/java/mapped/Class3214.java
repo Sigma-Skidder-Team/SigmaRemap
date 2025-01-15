@@ -23,7 +23,7 @@ public class Class3214 extends Class3167
             final Class4252 method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final String string = ((Class4378)method16998).method13164().getString();
-                final String lowerCase = Class3214.field15514.field4684.method1841().method8461().toLowerCase();
+                final String lowerCase = Class3214.field15514.field4684.getName().method8461().toLowerCase();
                 if (this.field15661.method9883("AutoL")) {
                     if (string.toLowerCase().contains("a \u00e9t\u00e9 tu\u00e9 par " + lowerCase) || string.toLowerCase().contains("a \u00e9t\u00e9 tu\u00e9 par le vide et " + lowerCase)) {
                         this.field15661.method10296(string);

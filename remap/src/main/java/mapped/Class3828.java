@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +30,7 @@ public class Class3828 extends Class3820
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.method6701(method21655);
         if (method21656.method21696() == Class7521.field29335 && !method21656.method21772((Class7111<Boolean>)Class3931.field17811)) {
-            final Class8321 method21657 = class7075.method21651();
+            final ItemStack method21657 = class7075.method21651();
             if (!method21654.field10067) {
                 ((Class3931)Class7521.field29335).method12048(method21654, method21655, method21656, method21657);
                 method21654.method6839(null, 1010, method21655, Class3820.method11696(this));
@@ -48,11 +50,11 @@ public class Class3828 extends Class3820
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         list.add(this.method11764().method8469(Class2116.field12316));
     }
     
-    public Class2250 method11764() {
+    public ITextComponent method11764() {
         return new Class2259(this.method11717() + ".desc", new Object[0]);
     }
     

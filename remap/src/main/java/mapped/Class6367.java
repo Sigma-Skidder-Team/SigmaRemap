@@ -12,7 +12,7 @@ public abstract class Class6367 extends Class6368
     public final int field25468;
     public final int field25469;
     public final Class125[] field25470;
-    private final BiFunction<Class8321, Class7529, Class8321> field25471;
+    private final BiFunction<ItemStack, Class7529, ItemStack> field25471;
     private final Class7182 field25472;
     
     public Class6367(final int field25468, final int field25469, final Class122[] array, final Class125[] field25470) {
@@ -32,7 +32,7 @@ public abstract class Class6367 extends Class6368
         }
     }
     
-    public abstract void method19013(final Consumer<Class8321> p0, final Class7529 p1);
+    public abstract void method19013(final Consumer<ItemStack> p0, final Class7529 p1);
     
     @Override
     public boolean method19016(final Class7529 class7529, final Consumer<Class7182> consumer) {

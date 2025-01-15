@@ -7,15 +7,14 @@ package mapped;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Iterator;
-import java.util.Date;
 import com.mojang.authlib.GameProfile;
 import java.util.Collection;
-import com.mojang.brigadier.arguments.ArgumentType;
+
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class9537
 {
@@ -25,7 +24,7 @@ public class Class9537
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("ban").requires(class7492 -> class7492.method23255().method1537().method20591().method26203() && class7492.method23210(3))).then(((RequiredArgumentBuilder)Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8740.method30191()).executes(commandContext -> method35606((Class7492)commandContext.getSource(), Class8740.method30190((CommandContext<Class7492>)commandContext, "targets"), null))).then(Class7788.method25002("reason", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8695.method29806()).executes(commandContext -> method35606((Class7492)commandContext.getSource(), Class8740.method30190((CommandContext<Class7492>)commandContext, "targets"), Class8695.method29807((CommandContext<Class7492>)commandContext, "reason"))))));
     }
     
-    private static int method35606(final Class7492 class7492, final Collection<GameProfile> collection, final Class2250 class7493) throws CommandSyntaxException {
+    private static int method35606(final Class7492 class7492, final Collection<GameProfile> collection, final ITextComponent class7493) throws CommandSyntaxException {
         final Class8007 method20591 = class7492.method23255().method1537().method20591();
         int n = 0;
         for (final GameProfile gameProfile : collection) {

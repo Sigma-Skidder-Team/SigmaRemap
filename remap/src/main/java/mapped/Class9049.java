@@ -60,7 +60,7 @@ public class Class9049
         }
         if (this.field38301 instanceof Class862) {
             if (this.field38312 % 10 == 0) {
-                final Class8321 method1909 = ((Class862)this.field38301).method5198();
+                final ItemStack method1909 = ((Class862)this.field38301).method5198();
                 if (method1909.method27622() instanceof Class4094) {
                     final Class6356 method1910 = Class4094.method12328(method1909, this.field38300);
                     for (final Class513 class513 : this.field38300.method6840()) {
@@ -247,7 +247,7 @@ public class Class9049
         }
         if (this.field38301 instanceof Class511) {
             for (final Class2215 class2215 : Class2215.values()) {
-                final Class8321 method1934 = ((Class511)this.field38301).method2718(class2215);
+                final ItemStack method1934 = ((Class511)this.field38301).method2718(class2215);
                 if (!method1934.method27620()) {
                     consumer.accept(new Class4402(this.field38301.method1643(), class2215, method1934));
                 }

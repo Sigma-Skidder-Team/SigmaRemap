@@ -7,6 +7,8 @@ package mapped;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Random;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class Class7833 implements Class7831<Class7832>
     private final List<Class7831<Class7832>> field32076;
     private final Random field32077;
     private final Class1932 field32078;
-    private final Class2250 field32079;
+    private final ITextComponent field32079;
     
     public Class7833(final Class1932 field32078, final String s) {
         this.field32076 = Lists.newArrayList();
@@ -56,7 +58,7 @@ public class Class7833 implements Class7831<Class7832>
     }
     
     @Nullable
-    public Class2250 method25313() {
+    public ITextComponent method25313() {
         return this.field32079;
     }
     

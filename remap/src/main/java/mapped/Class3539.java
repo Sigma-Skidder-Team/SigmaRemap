@@ -34,7 +34,7 @@ public class Class3539 extends Class3446
     }
     
     private Class806 method11090(final Class9592 class9592) {
-        final Class809 class9593 = Class7499.field29024.method23371(this.field16583.field2391);
+        final Class809 class9593 = EntityType.field29024.method23371(this.field16583.field2391);
         class9593.method4188(this.field16583.field2391, class9592, Class2101.field12184, null, null);
         class9593.method1656(this.field16583.getPosX(), this.field16583.getPosY(), this.field16583.getPosZ());
         class9593.field2430 = 60;
@@ -46,13 +46,13 @@ public class Class3539 extends Class3446
     }
     
     private Class782 method11091(final Class9592 class9592, final Class806 class9593) {
-        final Class782 class9594 = Class7499.field29023.method23371(class9593.field2391);
+        final Class782 class9594 = EntityType.field29023.method23371(class9593.field2391);
         class9594.method4188(class9593.field2391, class9592, Class2101.field12184, null, null);
         class9594.method1656(class9593.getPosX(), class9593.getPosY(), class9593.getPosZ());
         class9594.field2430 = 60;
         class9594.method4190();
         if (class9594.method2718(Class2215.field13605).method27620()) {
-            class9594.method1803(Class2215.field13605, new Class8321(Class7739.field31325));
+            class9594.method1803(Class2215.field13605, new ItemStack(Class7739.field31325));
         }
         class9594.method1803(Class2215.field13600, Class8742.method30224(class9594.method2633(), class9594.method2713(), (int)(5.0f + class9592.method35975() * class9594.method2633().nextInt(18)), false));
         class9594.method1803(Class2215.field13605, Class8742.method30224(class9594.method2633(), class9594.method2718(Class2215.field13605), (int)(5.0f + class9592.method35975() * class9594.method2633().nextInt(18)), false));

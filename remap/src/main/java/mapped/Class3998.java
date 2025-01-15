@@ -43,8 +43,8 @@ public class Class3998 extends Class3833
                     while (class7097.method6701(method1139).method21696() == this) {
                         method1139 = method1139.method1139();
                     }
-                    if (class7097.method6701(method1139).method21698(class7097, method1139, Class7499.field29014)) {
-                        final Class828 method1140 = Class7499.field29014.method23357(class7097, null, null, null, method1139.method1137(), Class2101.field12177, false, false);
+                    if (class7097.method6701(method1139).method21698(class7097, method1139, EntityType.field29014)) {
+                        final Class828 method1140 = EntityType.field29014.method23357(class7097, null, null, null, method1139.method1137(), Class2101.field12177, false, false);
                         if (method1140 != null) {
                             method1140.field2449 = method1140.method1796();
                         }
@@ -124,8 +124,8 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return Class8321.field34174;
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return ItemStack.field34174;
     }
     
     @Override

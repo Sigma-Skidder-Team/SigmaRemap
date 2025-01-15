@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ public class Class461 extends Class460 implements Class441, Class439
     private static final int[] field2718;
     private static final int[] field2719;
     private static final int[] field2720;
-    private Class2265<Class8321> field2721;
+    private Class2265<ItemStack> field2721;
     private int field2722;
     private boolean[] field2723;
     private Class3820 field2724;
@@ -23,12 +24,12 @@ public class Class461 extends Class460 implements Class441, Class439
     
     public Class461() {
         super(Class5412.field22551);
-        this.field2721 = Class2265.method8507(5, Class8321.field34174);
+        this.field2721 = Class2265.method8507(5, ItemStack.field34174);
         this.field2726 = new Class7608(this);
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.brewing", new Object[0]);
     }
     
@@ -51,7 +52,7 @@ public class Class461 extends Class460 implements Class441, Class439
     
     @Override
     public void method2229() {
-        final Class8321 class8321 = this.field2721.get(4);
+        final ItemStack class8321 = this.field2721.get(4);
         if (this.field2725 <= 0) {
             if (class8321.method27622() == Class7739.field31445) {
                 this.field2725 = 20;
@@ -61,7 +62,7 @@ public class Class461 extends Class460 implements Class441, Class439
         }
         final boolean method2338 = this.method2338();
         final boolean b = this.field2722 > 0;
-        final Class8321 class8322 = this.field2721.get(3);
+        final ItemStack class8322 = this.field2721.get(3);
         if (!b) {
             if (method2338) {
                 if (this.field2725 > 0) {
@@ -116,13 +117,13 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     private boolean method2338() {
-        final Class8321 class8321 = this.field2721.get(3);
+        final ItemStack class8321 = this.field2721.get(3);
         if (class8321.method27620()) {
             return false;
         }
         if (Class7652.method24240(class8321)) {
             for (int i = 0; i < 3; ++i) {
-                final Class8321 class8322 = this.field2721.get(i);
+                final ItemStack class8322 = this.field2721.get(i);
                 if (!class8322.method27620() && Class7652.method24244(class8322, class8321)) {
                     return true;
                 }
@@ -133,14 +134,14 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     private void method2339() {
-        Class8321 class8321 = this.field2721.get(3);
+        ItemStack class8321 = this.field2721.get(3);
         for (int i = 0; i < 3; ++i) {
             this.field2721.set(i, Class7652.method24247(class8321, this.field2721.get(i)));
         }
         class8321.method27693(1);
         final BlockPos method2193 = this.method2193();
         if (class8321.method27622().method11721()) {
-            final Class8321 class8322 = new Class8321(class8321.method27622().method11720());
+            final ItemStack class8322 = new ItemStack(class8321.method27622().method11720());
             if (!class8321.method27620()) {
                 if (!this.field2656.field10067) {
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8322);
@@ -157,7 +158,7 @@ public class Class461 extends Class460 implements Class441, Class439
     @Override
     public void method2179(final Class51 class51) {
         super.method2179(class51);
-        Class8508.method28426(class51, this.field2721 = Class2265.method8507(this.method2239(), Class8321.field34174));
+        Class8508.method28426(class51, this.field2721 = Class2265.method8507(this.method2239(), ItemStack.field34174));
         this.field2722 = class51.method318("BrewTime");
         this.field2725 = class51.method317("Fuel");
     }
@@ -172,22 +173,22 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public Class8321 method2157(final int n) {
-        return (n >= 0 && n < this.field2721.size()) ? this.field2721.get(n) : Class8321.field34174;
+    public ItemStack method2157(final int n) {
+        return (n >= 0 && n < this.field2721.size()) ? this.field2721.get(n) : ItemStack.field34174;
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         return Class8508.method28422(this.field2721, n, n2);
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         return Class8508.method28423(this.field2721, n);
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
         if (n >= 0) {
             if (n < this.field2721.size()) {
                 this.field2721.set(n, class8321);
@@ -201,7 +202,7 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public boolean method2264(final int n, final Class8321 class8321) {
+    public boolean method2264(final int n, final ItemStack class8321) {
         if (n == 3) {
             return Class7652.method24240(class8321);
         }
@@ -233,12 +234,12 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
         return this.method2264(n, class8321);
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
         return n != 3 || class8321.method27622() == Class7739.field31442;
     }
     

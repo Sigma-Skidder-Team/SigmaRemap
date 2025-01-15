@@ -16,7 +16,7 @@ public class Class843 extends Class763
     private boolean field4494;
     private int field4495;
     
-    public Class843(final Class7499<? extends Class843> class7499, final Class1847 class7500) {
+    public Class843(final EntityType<? extends Class843> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6565(this, this);
         this.field4108 = 3;
@@ -168,7 +168,7 @@ public class Class843 extends Class763
     
     @Override
     public void method4184(final Class9592 class9592) {
-        this.method1803(Class2215.field13600, new Class8321(Class7739.field31286));
+        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31286));
         this.method4191(Class2215.field13600, 0.0f);
     }
     

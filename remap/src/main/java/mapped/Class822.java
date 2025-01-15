@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.OptionalInt;
 import javax.annotation.Nullable;
 
@@ -20,7 +22,7 @@ public interface Class822
     
     void method4828(final Class9017 p0);
     
-    void method4831(final Class8321 p0);
+    void method4831(final ItemStack p0);
     
     Class1847 method4838();
     
@@ -36,7 +38,7 @@ public interface Class822
         return false;
     }
     
-    default void method4854(final Class512 class512, final Class2250 class513, final int n) {
+    default void method4854(final Class512 class512, final ITextComponent class513, final int n) {
         final OptionalInt method2833 = class512.method2833(new Class504((n, class464, class465) -> new Class3423(n, class464, this), class513));
         if (method2833.isPresent()) {
             final Class57 method2834 = this.method4825();

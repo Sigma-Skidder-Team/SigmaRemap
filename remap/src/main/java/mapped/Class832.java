@@ -6,7 +6,7 @@ package mapped;
 
 public abstract class Class832 extends Class787
 {
-    public Class832(final Class7499<? extends Class832> class7499, final Class1847 class7500) {
+    public Class832(final EntityType<? extends Class832> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1211, 0.0f);
     }

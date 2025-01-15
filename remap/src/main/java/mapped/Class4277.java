@@ -4,17 +4,19 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 
 public class Class4277 implements Class4252<Class5807>
 {
     private static String[] field19186;
-    private Class2250 field19187;
+    private ITextComponent field19187;
     
     public Class4277() {
     }
     
-    public Class4277(final Class2250 field19187) {
+    public Class4277(final ITextComponent field19187) {
         this.field19187 = field19187;
     }
     
@@ -32,7 +34,7 @@ public class Class4277 implements Class4252<Class5807>
         class5807.method17406(this);
     }
     
-    public Class2250 method12842() {
+    public ITextComponent method12842() {
         return this.field19187;
     }
 }

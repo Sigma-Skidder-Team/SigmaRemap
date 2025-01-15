@@ -16,7 +16,7 @@ public class Class817 extends Class789
     private Class3452<Class512> field4378;
     private Class3474 field4379;
     
-    public Class817(final Class7499<? extends Class817> class7499, final Class1847 class7500) {
+    public Class817(final EntityType<? extends Class817> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4812();
     }
@@ -142,7 +142,7 @@ public class Class817 extends Class789
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (this.field4379 == null || this.field4379.method11040()) {
             if (!this.method4808()) {
                 if (this.method4357(method2715)) {
@@ -203,15 +203,15 @@ public class Class817 extends Class789
     }
     
     public Class817 method4813(final Class788 class788) {
-        return Class7499.field29008.method23371(this.field2391);
+        return EntityType.field29008.method23371(this.field2391);
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return Class817.field4376.test(class8321);
     }
     
-    public static boolean method4814(final Class7499<Class817> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4814(final EntityType<Class817> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return random.nextInt(3) != 0;
     }
     

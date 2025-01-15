@@ -14,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 public class Class6860 extends Class6851<Class511>
 {
     private static String[] field26890;
-    private static final ImmutableMap<Class7499<?>, Float> field26891;
+    private static final ImmutableMap<EntityType<?>, Float> field26891;
     
     @Override
     public Set<Class8233<?>> method20953() {
@@ -48,6 +48,6 @@ public class Class6860 extends Class6851<Class511>
     }
     
     static {
-        field26891 = ImmutableMap.builder().put((Object)Class7499.field28973, (Object)8.0f).put((Object)Class7499.field28980, (Object)12.0f).put((Object)Class7499.field28990, (Object)8.0f).put((Object)Class7499.field28991, (Object)12.0f).put((Object)Class7499.field29045, (Object)15.0f).put((Object)Class7499.field29056, (Object)12.0f).put((Object)Class7499.field29041, (Object)8.0f).put((Object)Class7499.field29044, (Object)10.0f).put((Object)Class7499.field29052, (Object)8.0f).put((Object)Class7499.field29054, (Object)8.0f).build();
+        field26891 = ImmutableMap.builder().put((Object) EntityType.field28973, (Object)8.0f).put((Object) EntityType.field28980, (Object)12.0f).put((Object) EntityType.field28990, (Object)8.0f).put((Object) EntityType.field28991, (Object)12.0f).put((Object) EntityType.field29045, (Object)15.0f).put((Object) EntityType.field29056, (Object)12.0f).put((Object) EntityType.field29041, (Object)8.0f).put((Object) EntityType.field29044, (Object)10.0f).put((Object) EntityType.field29052, (Object)8.0f).put((Object) EntityType.field29054, (Object)8.0f).build();
     }
 }

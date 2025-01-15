@@ -40,16 +40,16 @@ public class Class6848
                 if (collection.size() != 1) {
                     continue;
                 }
-                throw Class6848.field26866.create((Object)class7494.method1841().getString());
+                throw Class6848.field26866.create((Object)class7494.getName().getString());
             }
             else {
                 final Class511 class7495 = (Class511)class7494;
-                final Class8321 method2713 = class7495.method2713();
+                final ItemStack method2713 = class7495.method2713();
                 if (method2713.method27620()) {
                     if (collection.size() != 1) {
                         continue;
                     }
-                    throw Class6848.field26867.create((Object)class7495.method1841().getString());
+                    throw Class6848.field26867.create((Object)class7495.getName().getString());
                 }
                 else if (class7493.method18600(method2713) && Class8742.method30227(Class8742.method30196(method2713).keySet(), class7493)) {
                     method2713.method27674(class7493, i);
@@ -68,7 +68,7 @@ public class Class6848
                 class7492.method23257(new Class2259("commands.enchant.success.multiple", new Object[] { class7493.method18599(i), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.enchant.success.single", new Object[] { class7493.method18599(i), ((Entity)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.enchant.success.single", new Object[] { class7493.method18599(i), ((Entity)collection.iterator().next()).getDisplayName() }), true);
             }
             return n;
         }

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class746 extends Class516<Class3423>
 {
@@ -14,7 +15,7 @@ public class Class746 extends Class516<Class3423>
     private int field4035;
     private boolean field4036;
     
-    public Class746(final Class3423 class3423, final Class464 class3424, final Class2250 class3425) {
+    public Class746(final Class3423 class3423, final Class464 class3424, final ITextComponent class3425) {
         super(class3423, class3424, class3425);
         this.field4034 = new Class669[7];
         this.field3075 = 276;
@@ -55,7 +56,7 @@ public class Class746 extends Class516<Class3423>
                         final int method10924 = this.field3156.method6617(method10923);
                         final int n4 = 49 + this.field3075 / 2 - (method10924 + this.field3156.method6617(string) + 3) / 2;
                         this.field3156.method6610(method10923, (float)n4, 6.0f, 4210752);
-                        this.field3156.method6610(this.field3078.method1871().method8461(), 107.0f, (float)n3, 4210752);
+                        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 107.0f, (float)n3, 4210752);
                         this.field3156.method6610(string, (float)(n4 + method10924 + 3), 6.0f, 4210752);
                         break Label_0302;
                     }
@@ -63,7 +64,7 @@ public class Class746 extends Class516<Class3423>
             }
             final String method10925 = this.field3148.method8461();
             this.field3156.method6610(method10925, (float)(49 + this.field3075 / 2 - this.field3156.method6617(method10925) / 2), 6.0f, 4210752);
-            this.field3156.method6610(this.field3078.method1871().method8461(), 107.0f, (float)n3, 4210752);
+            this.field3156.method6610(this.field3078.getDisplayName().method8461(), 107.0f, (float)n3, 4210752);
         }
         final String method10926 = Class8822.method30773("merchant.trades", new Object[0]);
         this.field3156.method6610(method10926, (float)(5 - this.field3156.method6617(method10926) / 2 + 48), 6.0f, 4210752);
@@ -143,10 +144,10 @@ public class Class746 extends Class516<Class3423>
                     ++n8;
                 }
                 else {
-                    final Class8321 method10932 = class9017.method32280();
-                    final Class8321 method10933 = class9017.method32281();
-                    final Class8321 method10934 = class9017.method32282();
-                    final Class8321 method10935 = class9017.method32283();
+                    final ItemStack method10932 = class9017.method32280();
+                    final ItemStack method10933 = class9017.method32281();
+                    final ItemStack method10934 = class9017.method32282();
+                    final ItemStack method10935 = class9017.method32283();
                     this.field3151.field9952 = 100.0f;
                     final int n9 = n6 + 2;
                     this.method4065(method10933, method10932, n7, n9);
@@ -196,7 +197,7 @@ public class Class746 extends Class516<Class3423>
         }
     }
     
-    private void method4065(final Class8321 class8321, final Class8321 class8322, final int n, final int n2) {
+    private void method4065(final ItemStack class8321, final ItemStack class8322, final int n, final int n2) {
         this.field3151.method6540(class8321, n, n2);
         if (class8322.method27690() != class8321.method27690()) {
             this.field3151.method6543(this.field3156, class8322, n, n2, (class8322.method27690() != 1) ? null : "1");

@@ -19,7 +19,7 @@ public abstract class Class776 extends Class777
     private boolean field4174;
     private int field4175;
     
-    public Class776(final Class7499<? extends Class776> class7499, final Class1847 class7500) {
+    public Class776(final EntityType<? extends Class776> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -57,7 +57,7 @@ public abstract class Class776 extends Class777
                     if (method4292 != null) {
                         final Class511 method4293 = this.method4152();
                         if (method4293 != null) {
-                            if (method4293.method1642() == Class7499.field29058 || method4293.method1642() == Class7499.field29043) {
+                            if (method4293.method1642() == EntityType.field29058 || method4293.method1642() == EntityType.field29043) {
                                 this.field2959 = 0;
                             }
                         }
@@ -91,7 +91,7 @@ public abstract class Class776 extends Class777
                     method25715.method30657(this.method4295());
                 }
                 if (method25714 != null) {
-                    if (method25714.method1642() == Class7499.field29058) {
+                    if (method25714.method1642() == EntityType.field29058) {
                         method25715.method30667(method25714);
                     }
                 }
@@ -100,7 +100,7 @@ public abstract class Class776 extends Class777
             if (this.method4314()) {
                 if (method25715 == null) {
                     if (((Class1849)this.field2391).method6927(new BlockPos(this)) == null) {
-                        final Class8321 method25716 = this.method2718(Class2215.field13605);
+                        final ItemStack method25716 = this.method2718(Class2215.field13605);
                         Class511 class7930 = null;
                         if (!(method25714 instanceof Class512)) {
                             if (method25714 instanceof Class799) {
@@ -117,7 +117,7 @@ public abstract class Class776 extends Class777
                             class7930 = (Class512)method25714;
                         }
                         if (!method25716.method27620()) {
-                            if (Class8321.method27643(method25716, Class8792.method30651())) {
+                            if (ItemStack.method27643(method25716, Class8792.method30651())) {
                                 if (class7930 != null) {
                                     final Class1948 method25718 = class7930.method2654(Class9439.field40504);
                                     int n = 1;
@@ -206,13 +206,13 @@ public abstract class Class776 extends Class777
     
     @Override
     public void method4165(final Class427 class427) {
-        final Class8321 method2107 = class427.method2107();
+        final ItemStack method2107 = class427.method2107();
         final boolean b = this.method4293() && this.method4292().method30652(this.method4295()) != null;
         if (this.method4293()) {
             if (!b) {
-                if (Class8321.method27643(method2107, Class8792.method30651())) {
+                if (ItemStack.method27643(method2107, Class8792.method30651())) {
                     final Class2215 field13605 = Class2215.field13605;
-                    final Class8321 method2108 = this.method2718(field13605);
+                    final ItemStack method2108 = this.method2718(field13605);
                     final double n = this.method4183(field13605);
                     if (!method2108.method27620()) {
                         if (Math.max(this.field2423.nextFloat() - 0.1f, 0.0f) < n) {
@@ -260,7 +260,7 @@ public abstract class Class776 extends Class777
     @Nullable
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.method4289(this.method1642() != Class7499.field29047 || class1853 != Class2101.field12174);
+        this.method4289(this.method1642() != EntityType.field29047 || class1853 != Class2101.field12174);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
@@ -272,7 +272,7 @@ public abstract class Class776 extends Class777
             final boolean b;
             if (!class427.method2118()) {
                 if (!(!class427.method1768())) {
-                    if (!(!Class8321.method27643(class427.method2107(), Class8792.method30651()))) {
+                    if (!(!ItemStack.method27643(class427.method2107(), Class8792.method30651()))) {
                         return b;
                     }
                 }

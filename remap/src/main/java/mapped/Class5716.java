@@ -12,10 +12,10 @@ public class Class5716 extends Class5714
     private float field23252;
     private float field23253;
     private Class2226 field23254;
-    private Class8321 field23255;
+    private ItemStack field23255;
     private Class7351 field23256;
     
-    public Class5716(final boolean field23250, final float field23251, final float field23252, final Class2226 field23253, final Class8321 field23254, final Class7351 field23255) {
+    public Class5716(final boolean field23250, final float field23251, final float field23252, final Class2226 field23253, final ItemStack field23254, final Class7351 field23255) {
         this.field23250 = field23250;
         this.field23252 = field23251;
         this.field23253 = field23252;
@@ -41,7 +41,7 @@ public class Class5716 extends Class5714
         return this.field23254;
     }
     
-    public Class8321 method16968() {
+    public ItemStack method16968() {
         return this.field23255;
     }
     

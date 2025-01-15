@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import javax.annotation.Nullable;
@@ -24,11 +25,11 @@ public class Class5808 implements Class5807
     private static final Logger field23838;
     private final Class869 field23839;
     private final Class527 field23840;
-    private final Consumer<Class2250> field23841;
+    private final Consumer<ITextComponent> field23841;
     private final Class3641 field23842;
     private GameProfile field23843;
     
-    public Class5808(final Class3641 field23842, final Class869 field23843, final Class527 field23844, final Consumer<Class2250> field23845) {
+    public Class5808(final Class3641 field23842, final Class869 field23843, final Class527 field23844, final Consumer<ITextComponent> field23845) {
         this.field23842 = field23842;
         this.field23839 = field23843;
         this.field23840 = field23844;
@@ -44,7 +45,7 @@ public class Class5808 implements Class5807
         this.field23841.accept(new Class2259("connect.authorizing", new Object[0]));
         Class7676.field30475.submit(() -> {
             this.method17409(s);
-            final Class2250 class4312;
+            final ITextComponent class4312;
             if (class4312 != null) {
                 if (this.field23839.method5282() != null && this.field23839.method5282().method35871()) {
                     Class5808.field23838.warn(class4312.getString());
@@ -60,7 +61,7 @@ public class Class5808 implements Class5807
     }
     
     @Nullable
-    private Class2250 method17409(final String s) {
+    private ITextComponent method17409(final String s) {
         try {
             this.method17410().joinServer(this.field23839.method5287().method33694(), this.field23839.method5287().method33693(), s);
             return null;
@@ -89,7 +90,7 @@ public class Class5808 implements Class5807
     }
     
     @Override
-    public void method17291(final Class2250 class2250) {
+    public void method17291(final ITextComponent class2250) {
         if (this.field23840 != null && this.field23840 instanceof Class545) {
             this.field23839.method5244(new Class5070(((Class545)this.field23840).method3183(), "connect.failed", class2250).method15403());
         }

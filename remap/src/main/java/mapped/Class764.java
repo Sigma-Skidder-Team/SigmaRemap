@@ -8,7 +8,7 @@ public class Class764 extends Class763
 {
     private static String[] field4134;
     
-    public Class764(final Class7499<? extends Class764> class7499, final Class1847 class7500) {
+    public Class764(final EntityType<? extends Class764> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     

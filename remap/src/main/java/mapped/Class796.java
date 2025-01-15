@@ -26,7 +26,7 @@ public class Class796 extends Class795 implements Class797
     private static final Predicate<Class759> field4248;
     private static final Class3820 field4249;
     private static final Set<Class3820> field4250;
-    private static final Map<Class7499<?>, Class7795> field4251;
+    private static final Map<EntityType<?>, Class7795> field4251;
     public float field4252;
     public float field4253;
     public float field4254;
@@ -35,7 +35,7 @@ public class Class796 extends Class795 implements Class797
     private boolean field4257;
     private BlockPos field4258;
     
-    public Class796(final Class7499<? extends Class796> class7499, final Class1847 class7500) {
+    public Class796(final EntityType<? extends Class796> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4256 = 1.0f;
         this.field4110 = new Class6574(this, 10, false);
@@ -160,7 +160,7 @@ public class Class796 extends Class795 implements Class797
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
@@ -206,11 +206,11 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return false;
     }
     
-    public static boolean method4497(final Class7499<Class796> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4497(final EntityType<Class796> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3833 method21696 = class7500.method6701(class7502.method1139()).method21696();
         if (!method21696.method11785(Class7188.field27907)) {
             if (method21696 != Class7521.field29155) {
@@ -273,10 +273,10 @@ public class Class796 extends Class795 implements Class797
             return Class8520.field35420;
         }
         final ArrayList arrayList = Lists.newArrayList((Iterable)Class796.field4251.keySet());
-        return method4500((Class7499<?>)arrayList.get(random.nextInt(arrayList.size())));
+        return method4500((EntityType<?>)arrayList.get(random.nextInt(arrayList.size())));
     }
     
-    private static Class7795 method4500(final Class7499<?> key) {
+    private static Class7795 method4500(final EntityType<?> key) {
         return Class796.field4251.getOrDefault(key, Class8520.field35420);
     }
     
@@ -379,35 +379,35 @@ public class Class796 extends Class795 implements Class797
         field4249 = Class7739.field31424;
         field4250 = Sets.newHashSet((Object[])new Class3820[] { Class7739.field31314, Class7739.field31430, Class7739.field31429, Class7739.field31576 });
         field4251 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
-            hashMap.put(Class7499.field28962, Class8520.field35425);
-            hashMap.put(Class7499.field28965, Class8520.field35444);
-            hashMap.put(Class7499.field28969, Class8520.field35426);
-            hashMap.put(Class7499.field28973, Class8520.field35427);
-            hashMap.put(Class7499.field28974, Class8520.field35428);
-            hashMap.put(Class7499.field28976, Class8520.field35429);
-            hashMap.put(Class7499.field28978, Class8520.field35430);
-            hashMap.put(Class7499.field28980, Class8520.field35431);
-            hashMap.put(Class7499.field28986, Class8520.field35432);
-            hashMap.put(Class7499.field28988, Class8520.field35433);
-            hashMap.put(Class7499.field28990, Class8520.field35434);
-            hashMap.put(Class7499.field28991, Class8520.field35435);
-            hashMap.put(Class7499.field28998, Class8520.field35436);
-            hashMap.put(Class7499.field29055, Class8520.field35437);
-            hashMap.put(Class7499.field29045, Class8520.field35438);
-            hashMap.put(Class7499.field29056, Class8520.field35439);
-            hashMap.put(Class7499.field29020, Class8520.field35440);
-            hashMap.put(Class7499.field29022, Class8520.field35441);
-            hashMap.put(Class7499.field29023, Class8520.field35442);
-            hashMap.put(Class7499.field29025, Class8520.field35443);
-            hashMap.put(Class7499.field29030, Class8520.field35444);
-            hashMap.put(Class7499.field29032, Class8520.field35445);
-            hashMap.put(Class7499.field29041, Class8520.field35446);
-            hashMap.put(Class7499.field29044, Class8520.field35447);
-            hashMap.put(Class7499.field29047, Class8520.field35448);
-            hashMap.put(Class7499.field29048, Class8520.field35449);
-            hashMap.put(Class7499.field29049, Class8520.field35450);
-            hashMap.put(Class7499.field29052, Class8520.field35451);
-            hashMap.put(Class7499.field29054, Class8520.field35452);
+            hashMap.put(EntityType.field28962, Class8520.field35425);
+            hashMap.put(EntityType.field28965, Class8520.field35444);
+            hashMap.put(EntityType.field28969, Class8520.field35426);
+            hashMap.put(EntityType.field28973, Class8520.field35427);
+            hashMap.put(EntityType.field28974, Class8520.field35428);
+            hashMap.put(EntityType.field28976, Class8520.field35429);
+            hashMap.put(EntityType.field28978, Class8520.field35430);
+            hashMap.put(EntityType.field28980, Class8520.field35431);
+            hashMap.put(EntityType.field28986, Class8520.field35432);
+            hashMap.put(EntityType.field28988, Class8520.field35433);
+            hashMap.put(EntityType.field28990, Class8520.field35434);
+            hashMap.put(EntityType.field28991, Class8520.field35435);
+            hashMap.put(EntityType.field28998, Class8520.field35436);
+            hashMap.put(EntityType.field29055, Class8520.field35437);
+            hashMap.put(EntityType.field29045, Class8520.field35438);
+            hashMap.put(EntityType.field29056, Class8520.field35439);
+            hashMap.put(EntityType.field29020, Class8520.field35440);
+            hashMap.put(EntityType.field29022, Class8520.field35441);
+            hashMap.put(EntityType.field29023, Class8520.field35442);
+            hashMap.put(EntityType.field29025, Class8520.field35443);
+            hashMap.put(EntityType.field29030, Class8520.field35444);
+            hashMap.put(EntityType.field29032, Class8520.field35445);
+            hashMap.put(EntityType.field29041, Class8520.field35446);
+            hashMap.put(EntityType.field29044, Class8520.field35447);
+            hashMap.put(EntityType.field29047, Class8520.field35448);
+            hashMap.put(EntityType.field29048, Class8520.field35449);
+            hashMap.put(EntityType.field29049, Class8520.field35450);
+            hashMap.put(EntityType.field29052, Class8520.field35451);
+            hashMap.put(EntityType.field29054, Class8520.field35452);
         });
     }
 }

@@ -9,12 +9,14 @@ import java.util.Map;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Collection;
 import java.util.List;
 
 public class Class5333
 {
-    public static List<Class1948> method16465(final Class8321 class8321) {
+    public static List<Class1948> method16465(final ItemStack class8321) {
         return method16467(class8321.method27657());
     }
     
@@ -32,7 +34,7 @@ public class Class5333
         return arrayList;
     }
     
-    public static List<Class1948> method16468(final Class8321 class8321) {
+    public static List<Class1948> method16468(final ItemStack class8321) {
         return method16469(class8321.method27657());
     }
     
@@ -56,7 +58,7 @@ public class Class5333
         }
     }
     
-    public static int method16471(final Class8321 class8321) {
+    public static int method16471(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 != null && method27657.method316("CustomPotionColor", 99)) {
             return method27657.method319("CustomPotionColor");
@@ -97,7 +99,7 @@ public class Class5333
         return 0;
     }
     
-    public static Class8061 method16474(final Class8321 class8321) {
+    public static Class8061 method16474(final ItemStack class8321) {
         return method16475(class8321.method27657());
     }
     
@@ -105,7 +107,7 @@ public class Class5333
         return (class51 != null) ? Class8061.method26447(class51.method323("Potion")) : Class8644.field36250;
     }
     
-    public static Class8321 method16476(final Class8321 class8321, final Class8061 class8322) {
+    public static ItemStack method16476(final ItemStack class8321, final Class8061 class8322) {
         final Class1932 method503 = Class90.field212.method503(class8322);
         if (class8322 != Class8644.field36250) {
             class8321.method27658().method306("Potion", method503.toString());
@@ -116,7 +118,7 @@ public class Class5333
         return class8321;
     }
     
-    public static Class8321 method16477(final Class8321 class8321, final Collection<Class1948> collection) {
+    public static ItemStack method16477(final ItemStack class8321, final Collection<Class1948> collection) {
         if (!collection.isEmpty()) {
             final Class51 method27658 = class8321.method27658();
             final Class52 method27659 = method27658.method328("CustomPotionEffects", 9);
@@ -130,7 +132,7 @@ public class Class5333
         return class8321;
     }
     
-    public static void method16478(final Class8321 class8321, final List<Class2250> list, final float n) {
+    public static void method16478(final ItemStack class8321, final List<ITextComponent> list, final float n) {
         final List<Class1948> method16465 = method16465(class8321);
         final ArrayList arrayList = Lists.newArrayList();
         if (!method16465.isEmpty()) {
@@ -173,10 +175,10 @@ public class Class5333
                     if (method16468 >= 0.0) {
                         continue;
                     }
-                    list.add(new Class2259("attribute.modifier.take." + class8326.method25637().method8322(), new Object[] { Class8321.field34175.format(method16469 * -1.0), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).method8469(Class2116.field12321));
+                    list.add(new Class2259("attribute.modifier.take." + class8326.method25637().method8322(), new Object[] { ItemStack.field34175.format(method16469 * -1.0), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).method8469(Class2116.field12321));
                 }
                 else {
-                    list.add(new Class2259("attribute.modifier.plus." + class8326.method25637().method8322(), new Object[] { Class8321.field34175.format(method16469), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).method8469(Class2116.field12318));
+                    list.add(new Class2259("attribute.modifier.plus." + class8326.method25637().method8322(), new Object[] { ItemStack.field34175.format(method16469), new Class2259("attribute.name." + (String)class8325.method28745(), new Object[0]) }).method8469(Class2116.field12318));
                 }
             }
         }

@@ -12,6 +12,7 @@ import java.lang.reflect.Type;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class5978 implements JsonDeserializer<Class7787>, JsonSerializer<Class7787>
 {
@@ -19,7 +20,7 @@ public class Class5978 implements JsonDeserializer<Class7787>, JsonSerializer<Cl
         final JsonObject method35913 = Class9583.method35913(jsonElement, "status");
         final Class7787 class7787 = new Class7787();
         if (method35913.has("description")) {
-            class7787.method24991((Class2250)jsonDeserializationContext.deserialize(method35913.get("description"), (Type)Class2250.class));
+            class7787.method24991((ITextComponent)jsonDeserializationContext.deserialize(method35913.get("description"), (Type) ITextComponent.class));
         }
         if (method35913.has("players")) {
             class7787.method24993((Class8499)jsonDeserializationContext.deserialize(method35913.get("players"), (Type)Class8499.class));

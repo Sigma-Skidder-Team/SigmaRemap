@@ -5,8 +5,7 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+
 import java.util.Collections;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
@@ -14,12 +13,12 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class8522
 {
@@ -60,7 +59,7 @@ public class Class8522
     
     private static int method28540(final Class7492 class7492, final Class6878 class7493) {
         if (!class7493.method21074().isEmpty()) {
-            class7492.method23257(new Class2259("commands.bossbar.get.players.some", new Object[] { class7493.method21057(), class7493.method21074().size(), Class9479.method35298(class7493.method21074(), Class512::method1871) }), true);
+            class7492.method23257(new Class2259("commands.bossbar.get.players.some", new Object[] { class7493.method21057(), class7493.method21074().size(), Class9479.method35298(class7493.method21074(), Class512::getDisplayName) }), true);
         }
         else {
             class7492.method23257(new Class2259("commands.bossbar.get.players.none", new Object[] { class7493.method21057() }), true);
@@ -121,8 +120,8 @@ public class Class8522
         throw Class8522.field35781.create();
     }
     
-    private static int method28546(final Class7492 class7492, final Class6878 class7493, final Class2250 class7494) throws CommandSyntaxException {
-        final Class2250 method35294 = Class9479.method35294(class7492, class7494, null, 0);
+    private static int method28546(final Class7492 class7492, final Class6878 class7493, final ITextComponent class7494) throws CommandSyntaxException {
+        final ITextComponent method35294 = Class9479.method35294(class7492, class7494, null, 0);
         if (!class7493.method21076().equals(method35294)) {
             class7493.method21070(method35294);
             class7492.method23257(new Class2259("commands.bossbar.set.name.success", new Object[] { class7493.method21057() }), true);
@@ -134,7 +133,7 @@ public class Class8522
     private static int method28547(final Class7492 class7492, final Class6878 class7493, final Collection<Class513> collection) throws CommandSyntaxException {
         if (class7493.method21058(collection)) {
             if (!class7493.method21074().isEmpty()) {
-                class7492.method23257(new Class2259("commands.bossbar.set.players.success.some", new Object[] { class7493.method21057(), collection.size(), Class9479.method35298((Collection<Object>)collection, Class512::method1871) }), true);
+                class7492.method23257(new Class2259("commands.bossbar.set.players.success.some", new Object[] { class7493.method21057(), collection.size(), Class9479.method35298((Collection<Object>)collection, Class512::getDisplayName) }), true);
             }
             else {
                 class7492.method23257(new Class2259("commands.bossbar.set.players.success.none", new Object[] { class7493.method21057() }), true);
@@ -155,7 +154,7 @@ public class Class8522
         return method28264.size();
     }
     
-    private static int method28549(final Class7492 class7492, final Class1932 class7493, final Class2250 class7494) throws CommandSyntaxException {
+    private static int method28549(final Class7492 class7492, final Class1932 class7493, final ITextComponent class7494) throws CommandSyntaxException {
         final Class8467 method1584 = class7492.method23255().method1584();
         if (method1584.method28260(class7493) == null) {
             class7492.method23257(new Class2259("commands.bossbar.create.success", new Object[] { method1584.method28261(class7493, Class9479.method35294(class7492, class7494, null, 0)).method21057() }), true);

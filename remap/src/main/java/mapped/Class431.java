@@ -9,13 +9,13 @@ public class Class431 extends Class428
     private static String[] field2642;
     private final Class4648 field2643;
     
-    public Class431(final Class7499<? extends Class431> class7499, final Class1847 class7500) {
+    public Class431(final EntityType<? extends Class431> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2643 = new Class4649(this);
     }
     
     public Class431(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29004, class1847, n, n2, n3);
+        super(EntityType.field29004, class1847, n, n2, n3);
         this.field2643 = new Class4649(this);
     }
     

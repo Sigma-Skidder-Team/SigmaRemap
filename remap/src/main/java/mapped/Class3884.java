@@ -22,8 +22,8 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return new Class8321(Class7739.field31630);
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return new ItemStack(Class7739.field31630);
     }
     
     @Override
@@ -50,8 +50,8 @@ public class Class3884 extends Class3874 implements Class3872
     @Override
     public void method11850(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Entity class7099) {
         if (class7099 instanceof Class511) {
-            if (class7099.method1642() != Class7499.field28985) {
-                if (class7099.method1642() != Class7499.field28961) {
+            if (class7099.method1642() != EntityType.field28985) {
+                if (class7099.method1642() != EntityType.field28961) {
                     class7099.method1839(class7096, new Vec3d(0.800000011920929, 0.75, 0.800000011920929));
                     if (!class7097.field10067) {
                         if (class7096.method21772((Class7111<Integer>)Class3884.field17541) > 0) {
@@ -79,7 +79,7 @@ public class Class3884 extends Class3874 implements Class3872
         if (intValue <= 1) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }
-        Class3833.method11839(class7097, class7098, new Class8321(Class7739.field31630, 1 + class7097.field10062.nextInt(2) + n));
+        Class3833.method11839(class7097, class7098, new ItemStack(Class7739.field31630, 1 + class7097.field10062.nextInt(2) + n));
         class7097.method6705(null, class7098, Class8520.field35630, Class286.field1582, 1.0f, 0.8f + class7097.field10062.nextFloat() * 0.4f);
         class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3884.field17541, 1), 2);
         return Class2201.field13400;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 
 public class Class4260 implements Class4252<Class5800>
@@ -12,7 +14,7 @@ public class Class4260 implements Class4252<Class5800>
     public int field19116;
     public int field19117;
     public int field19118;
-    public Class2250 field19119;
+    public ITextComponent field19119;
     
     public Class4260() {
     }
@@ -21,7 +23,7 @@ public class Class4260 implements Class4252<Class5800>
         this(class9535, class9536, new Class2260(""));
     }
     
-    public Class4260(final Class9535 class9535, final Class344 field19115, final Class2250 field19116) {
+    public Class4260(final Class9535 class9535, final Class344 field19115, final ITextComponent field19116) {
         this.field19115 = field19115;
         final Class511 method35596 = class9535.method35596();
         switch (Class8429.field34593[field19115.ordinal()]) {

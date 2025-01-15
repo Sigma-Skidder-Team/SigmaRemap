@@ -8,14 +8,15 @@ import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Date;
+
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.regex.Pattern;
 
 public class Class6519
@@ -28,7 +29,7 @@ public class Class6519
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("ban-ip").requires(class7492 -> class7492.method23255().method1537().method20592().method26203() && class7492.method23210(3))).then(((RequiredArgumentBuilder)Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method19678((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "target"), null))).then(Class7788.method25002("reason", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8695.method29806()).executes(commandContext -> method19678((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "target"), Class8695.method29807((CommandContext<Class7492>)commandContext, "reason"))))));
     }
     
-    private static int method19678(final Class7492 class7492, final String input, final Class2250 class7493) throws CommandSyntaxException {
+    private static int method19678(final Class7492 class7492, final String input, final ITextComponent class7493) throws CommandSyntaxException {
         if (Class6519.field25943.matcher(input).matches()) {
             return method19679(class7492, input, class7493);
         }
@@ -39,7 +40,7 @@ public class Class6519
         return method19679(class7492, method20598.method2942(), class7493);
     }
     
-    private static int method19679(final Class7492 class7492, final String s, final Class2250 class7493) throws CommandSyntaxException {
+    private static int method19679(final Class7492 class7492, final String s, final ITextComponent class7493) throws CommandSyntaxException {
         final Class8009 method20592 = class7492.method23255().method1537().method20592();
         if (!method20592.method26223(s)) {
             final List<Class513> method20593 = class7492.method23255().method1537().method20612(s);

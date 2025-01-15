@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.commons.lang3.StringUtils;
 
@@ -79,7 +80,7 @@ public class Class5814 implements Class5813
             this.field23882 = 0;
         }
         else if (++this.field23882 > 80) {
-            Class5814.field23854.warn("{} was kicked for floating too long!", (Object)this.field23857.method1841().getString());
+            Class5814.field23854.warn("{} was kicked for floating too long!", (Object)this.field23857.getName().getString());
             this.method17463(new Class2259("multiplayer.disconnect.flying", new Object[0]));
             return;
         }
@@ -93,7 +94,7 @@ public class Class5814 implements Class5813
             this.field23877 = this.field23871.getPosZ();
             if (this.field23883 && this.field23857.method1915().method1907() == this.field23857) {
                 if (++this.field23884 > 80) {
-                    Class5814.field23854.warn("{} was kicked for floating a vehicle too long!", (Object)this.field23857.method1841().getString());
+                    Class5814.field23854.warn("{} was kicked for floating a vehicle too long!", (Object)this.field23857.getName().getString());
                     this.method17463(new Class2259("multiplayer.disconnect.flying", new Object[0]));
                     return;
                 }
@@ -155,7 +156,7 @@ public class Class5814 implements Class5813
         return this.field23856.method1592(this.field23857.method2844());
     }
     
-    public void method17463(final Class2250 class2250) {
+    public void method17463(final ITextComponent class2250) {
         this.field23855.method11175(new Class4262(class2250), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.field23855.method11181(class2250)));
         this.field23855.method11191();
         this.field23856.method5380(this.field23855::method11193);
@@ -225,7 +226,7 @@ public class Class5814 implements Class5813
                         final double d2 = method1921 - this.field23873;
                         final double d3 = method1922 - this.field23874;
                         if (d * d + d2 * d2 + d3 * d3 - method1915.method1935().lengthSquared() > 100.0 && !this.method17462()) {
-                            Class5814.field23854.warn("{} (vehicle of {}) moved too quickly! {},{},{}", (Object)method1915.method1841().getString(), (Object)this.field23857.method1841().getString(), (Object)d, (Object)d2, (Object)d3);
+                            Class5814.field23854.warn("{} (vehicle of {}) moved too quickly! {},{},{}", (Object)method1915.getName().getString(), (Object)this.field23857.getName().getString(), (Object)d, (Object)d2, (Object)d3);
                             this.field23855.method11174(new Class4263(method1915));
                             return;
                         }
@@ -241,7 +242,7 @@ public class Class5814 implements Class5813
                         boolean b = false;
                         if (n4 > 0.0625) {
                             b = true;
-                            Class5814.field23854.warn("{} moved wrongly!", (Object)method1915.method1841().getString());
+                            Class5814.field23854.warn("{} moved wrongly!", (Object)method1915.getName().getString());
                         }
                         method1915.method1728(method1920, method1921, method1922, method1923, method1924);
                         final boolean method1926 = method1916.method6978(method1915, method1915.method1886().method18511(0.0625));
@@ -339,10 +340,10 @@ public class Class5814 implements Class5813
     public void method17447(final Class4266 class4266) {
         Class8663.method29631((Class4252<Class5814>)class4266, this, this.field23857.method2940());
         if (!this.field23856.method1531()) {
-            this.field23857.method1494(new Class2259("advMode.notEnabled", new Object[0]));
+            this.field23857.sendMessage(new Class2259("advMode.notEnabled", new Object[0]));
         }
         else if (!this.field23857.method2908()) {
-            this.field23857.method1494(new Class2259("advMode.notAllowed", new Object[0]));
+            this.field23857.sendMessage(new Class2259("advMode.notAllowed", new Object[0]));
         }
         else {
             Class865 method2539 = null;
@@ -385,7 +386,7 @@ public class Class5814 implements Class5813
                 }
                 method2539.method5217();
                 if (!Class8272.method27500(method2542)) {
-                    this.field23857.method1494(new Class2259("advMode.setCommand.success", new Object[] { method2542 }));
+                    this.field23857.sendMessage(new Class2259("advMode.setCommand.success", new Object[] { method2542 }));
                 }
             }
         }
@@ -404,15 +405,15 @@ public class Class5814 implements Class5813
                         method13244.method5218(null);
                     }
                     method13244.method5217();
-                    this.field23857.method1494(new Class2259("advMode.setCommand.success", new Object[] { class4401.method13245() }));
+                    this.field23857.sendMessage(new Class2259("advMode.setCommand.success", new Object[] { class4401.method13245() }));
                 }
             }
             else {
-                this.field23857.method1494(new Class2259("advMode.notAllowed", new Object[0]));
+                this.field23857.sendMessage(new Class2259("advMode.notAllowed", new Object[0]));
             }
         }
         else {
-            this.field23857.method1494(new Class2259("advMode.notEnabled", new Object[0]));
+            this.field23857.sendMessage(new Class2259("advMode.notEnabled", new Object[0]));
         }
     }
     
@@ -540,22 +541,22 @@ public class Class5814 implements Class5813
     @Override
     public void method17454(final Class4314 class4314) {
         Class8663.method29631((Class4252<Class5814>)class4314, this, this.field23857.method2940());
-        final Class8321 method12967 = class4314.method12967();
+        final ItemStack method12967 = class4314.method12967();
         if (!method12967.method27620()) {
             if (Class4049.method12247(method12967.method27657())) {
-                final Class8321 method12968 = this.field23857.method2715(class4314.method12969());
+                final ItemStack method12968 = this.field23857.method2715(class4314.method12969());
                 if (method12967.method27622() == Class7739.field31512) {
                     if (method12968.method27622() == Class7739.field31512) {
                         if (!class4314.method12968()) {
                             method12968.method27676("pages", method12967.method27657().method328("pages", 8));
                         }
                         else {
-                            final Class8321 class4315 = new Class8321(Class7739.field31513);
+                            final ItemStack class4315 = new ItemStack(Class7739.field31513);
                             final Class51 method12969 = method12968.method27657();
                             if (method12969 != null) {
                                 class4315.method27663(method12969.method333());
                             }
-                            class4315.method27676("author", Class50.method290(this.field23857.method1841().getString()));
+                            class4315.method27676("author", Class50.method290(this.field23857.getName().getString()));
                             class4315.method27676("title", Class50.method290(method12967.method27657().method323("title")));
                             final Class52 method12970 = method12967.method27657().method328("pages", 8);
                             for (int i = 0; i < method12970.size(); ++i) {
@@ -620,14 +621,14 @@ public class Class5814 implements Class5813
                             ++this.field23885;
                             int i = this.field23885 - this.field23886;
                             if (i > 5) {
-                                Class5814.field23854.debug("{} is sending move packets too frequently ({} packets since last tick)", (Object)this.field23857.method1841().getString(), (Object)i);
+                                Class5814.field23854.debug("{} is sending move packets too frequently ({} packets since last tick)", (Object)this.field23857.getName().getString(), (Object)i);
                                 i = 1;
                             }
                             if (!this.field23857.method2955()) {
                                 if (!this.field23857.method2940().method6765().method31216(Class8878.field37332) || !this.field23857.method2773()) {
                                     if (n - method1491 > (this.field23857.method2773() ? 300.0f : 100.0f) * i) {
                                         if (!this.method17462()) {
-                                            Class5814.field23854.warn("{} moved too quickly! {},{},{}", (Object)this.field23857.method1841().getString(), (Object)d, (Object)d2, (Object)d3);
+                                            Class5814.field23854.warn("{} moved too quickly! {},{},{}", (Object)this.field23857.getName().getString(), (Object)d, (Object)d2, (Object)d3);
                                             this.method17467(this.field23857.getPosX(), this.field23857.getPosY(), this.field23857.getPosZ(), this.field23857.field2399, this.field23857.field2400);
                                             return;
                                         }
@@ -664,7 +665,7 @@ public class Class5814 implements Class5813
                                         if (!this.field23857.field3041.method26484()) {
                                             if (this.field23857.field3041.method26482() != Class101.field301) {
                                                 b = true;
-                                                Class5814.field23854.warn("{} moved wrongly!", (Object)this.field23857.method1841().getString());
+                                                Class5814.field23854.warn("{} moved wrongly!", (Object)this.field23857.getName().getString());
                                             }
                                         }
                                     }
@@ -763,7 +764,7 @@ public class Class5814 implements Class5813
         switch (Class8365.field34306[method13238.ordinal()]) {
             case 1: {
                 if (!this.field23857.method1639()) {
-                    final Class8321 method13239 = this.field23857.method2715(Class316.field1878);
+                    final ItemStack method13239 = this.field23857.method2715(Class316.field1878);
                     this.field23857.method2716(Class316.field1878, this.field23857.method2715(Class316.field1877));
                     this.field23857.method2716(Class316.field1877, method13239);
                 }
@@ -802,7 +803,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((Class4252<Class5814>)class4329, this, this.field23857.method2940());
         final Class1849 method1481 = this.field23856.method1481(this.field23857.field2452);
         final Class316 method1482 = class4329.method12999();
-        final Class8321 method1483 = this.field23857.method2715(method1482);
+        final ItemStack method1483 = this.field23857.method2715(method1482);
         final Class7005 method1484 = class4329.method13000();
         final BlockPos method1485 = method1484.method21447();
         final Direction method1486 = method1484.method21448();
@@ -828,7 +829,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((Class4252<Class5814>)class4307, this, this.field23857.method2940());
         final Class1849 method1481 = this.field23856.method1481(this.field23857.field2452);
         final Class316 method1482 = class4307.method12950();
-        final Class8321 method1483 = this.field23857.method2715(method1482);
+        final ItemStack method1483 = this.field23857.method2715(method1482);
         this.field23857.method2946();
         if (!method1483.method27620()) {
             this.field23857.field3041.method26479(this.field23857, method1481, method1483, method1482);
@@ -863,10 +864,10 @@ public class Class5814 implements Class5813
     }
     
     @Override
-    public void method17291(final Class2250 class2250) {
-        Class5814.field23854.info("{} lost connection: {}", (Object)this.field23857.method1841().getString(), (Object)class2250.getString());
+    public void method17291(final ITextComponent class2250) {
+        Class5814.field23854.info("{} lost connection: {}", (Object)this.field23857.getName().getString(), (Object)class2250.getString());
         this.field23856.method1558();
-        this.field23856.method1537().method20619(new Class2259("multiplayer.player.left", new Object[] { this.field23857.method1871() }).method8469(Class2116.field12323));
+        this.field23856.method1537().method20619(new Class2259("multiplayer.player.left", new Object[] { this.field23857.getDisplayName() }).method8469(Class2116.field12323));
         this.field23857.method2935();
         this.field23856.method1537().method20581(this.field23857);
         if (this.method17462()) {
@@ -908,7 +909,7 @@ public class Class5814 implements Class5813
             this.field23857.method2946();
         }
         else {
-            Class5814.field23854.warn("{} tried to set an invalid carried item", (Object)this.field23857.method1841().getString());
+            Class5814.field23854.warn("{} tried to set an invalid carried item", (Object)this.field23857.getName().getString());
         }
     }
     
@@ -925,7 +926,7 @@ public class Class5814 implements Class5813
                 }
             }
             if (!normalizeSpace.startsWith("/")) {
-                this.field23856.method1537().method20618(new Class2259("chat.type.text", new Object[] { this.field23857.method1871(), normalizeSpace }), false);
+                this.field23856.method1537().method20618(new Class2259("chat.type.text", new Object[] { this.field23857.getDisplayName(), normalizeSpace }), false);
             }
             else {
                 this.method17471(normalizeSpace);
@@ -1046,7 +1047,7 @@ public class Class5814 implements Class5813
                                 }
                             }
                             this.method17463(new Class2259("multiplayer.disconnect.invalid_entity_attacked", new Object[0]));
-                            this.field23856.method1480("Player " + this.field23857.method1841().getString() + " tried to attack an invalid entity");
+                            this.field23856.method1480("Player " + this.field23857.getName().getString() + " tried to attack an invalid entity");
                         }
                     }
                     else {
@@ -1106,16 +1107,16 @@ public class Class5814 implements Class5813
         if (this.field23857.field3009.field16154 == class4256.method12773()) {
             if (this.field23857.field3009.method10886(this.field23857)) {
                 if (!this.field23857.method1639()) {
-                    if (!Class8321.method27643(class4256.method12777(), this.field23857.field3009.method10879(class4256.method12774(), class4256.method12775(), class4256.method12778(), this.field23857))) {
+                    if (!ItemStack.method27643(class4256.method12777(), this.field23857.field3009.method10879(class4256.method12774(), class4256.method12775(), class4256.method12778(), this.field23857))) {
                         this.field23864.put(this.field23857.field3009.field16154, class4256.method12776());
                         this.field23857.field3039.method17469(new Class4393(class4256.method12773(), class4256.method12776(), false));
                         this.field23857.field3009.method10887(this.field23857, false);
                         final Class2265<Object> method8506 = (Class2265<Object>)Class2265.method8506();
                         for (int i = 0; i < this.field23857.field3009.field16151.size(); ++i) {
-                            final Class8321 method8507 = this.field23857.field3009.field16151.get(i).method20053();
-                            method8506.add(method8507.method27620() ? Class8321.field34174 : method8507);
+                            final ItemStack method8507 = this.field23857.field3009.field16151.get(i).method20053();
+                            method8506.add(method8507.method27620() ? ItemStack.field34174 : method8507);
                         }
-                        this.field23857.method2930(this.field23857.field3009, (Class2265<Class8321>)method8506);
+                        this.field23857.method2930(this.field23857.field3009, (Class2265<ItemStack>)method8506);
                     }
                     else {
                         this.field23857.field3039.method17469(new Class4393(class4256.method12773(), class4256.method12776(), true));
@@ -1130,7 +1131,7 @@ public class Class5814 implements Class5813
                     for (int j = 0; j < this.field23857.field3009.field16151.size(); ++j) {
                         method8508.add(this.field23857.field3009.field16151.get(j).method20053());
                     }
-                    this.field23857.method2930(this.field23857.field3009, (Class2265<Class8321>)method8508);
+                    this.field23857.method2930(this.field23857.field3009, (Class2265<ItemStack>)method8508);
                 }
             }
         }
@@ -1170,7 +1171,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((Class4252<Class5814>)class4287, this, this.field23857.method2940());
         if (this.field23857.field3041.method26484()) {
             final boolean b = class4287.method12874() < 0;
-            final Class8321 method12875 = class4287.method12875();
+            final ItemStack method12875 = class4287.method12875();
             final Class51 method12876 = method12875.method27660("BlockEntityTag");
             if (!method12875.method27620()) {
                 if (method12876 != null) {
@@ -1214,7 +1215,7 @@ public class Class5814 implements Class5813
                     this.field23857.field3008.method10882(class4287.method12874(), method12875);
                 }
                 else {
-                    this.field23857.field3008.method10882(class4287.method12874(), Class8321.field34174);
+                    this.field23857.field3008.method10882(class4287.method12874(), ItemStack.field34174);
                 }
                 this.field23857.field3008.method10887(this.field23857, true);
                 this.field23857.field3008.method10876();
@@ -1259,7 +1260,7 @@ public class Class5814 implements Class5813
             }
             final Class497 class4345 = (Class497)method1484;
             if (!class4345.method2523() || class4345.method2526() != this.field23857) {
-                this.field23856.method1480("Player " + this.field23857.method1841().getString() + " just tried to change non-editable sign");
+                this.field23856.method1480("Player " + this.field23857.getName().getString() + " just tried to change non-editable sign");
                 return;
             }
             final String[] method1485 = class4344.method13047();

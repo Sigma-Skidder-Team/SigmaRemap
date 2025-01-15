@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 import java.io.DataOutput;
 
@@ -55,7 +57,7 @@ public class Class49 extends Class43
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
+    public ITextComponent method263(final String s, final int n) {
         return new Class2260(String.valueOf(this.field120)).method8458(new Class2260("L").method8469(Class49.field101)).method8469(Class49.field100);
     }
     

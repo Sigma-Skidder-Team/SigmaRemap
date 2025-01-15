@@ -18,17 +18,17 @@ public class Class6604 extends Class6601
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         return this.field26182.method20047(class512, class513);
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return this.field26182.method20046(class8321);
     }
     
     @Override
-    public Class8321 method20053() {
+    public ItemStack method20053() {
         return this.field26182.method20053();
     }
     
@@ -38,7 +38,7 @@ public class Class6604 extends Class6601
     }
     
     @Override
-    public void method20055(final Class8321 class8321) {
+    public void method20055(final ItemStack class8321) {
         this.field26182.method20055(class8321);
     }
     
@@ -53,7 +53,7 @@ public class Class6604 extends Class6601
     }
     
     @Override
-    public int method20058(final Class8321 class8321) {
+    public int method20058(final ItemStack class8321) {
         return this.field26182.method20058(class8321);
     }
     
@@ -64,7 +64,7 @@ public class Class6604 extends Class6601
     }
     
     @Override
-    public Class8321 method20060(final int n) {
+    public ItemStack method20060(final int n) {
         return this.field26182.method20060(n);
     }
     

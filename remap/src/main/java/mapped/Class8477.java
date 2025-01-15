@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.INameable;
+import net.minecraft.util.text.ITextComponent;
+
 public class Class8477
 {
     public static String method28301(final Class1855 class1855, final BlockPos class1856) {
@@ -11,10 +14,10 @@ public class Class8477
     }
     
     public static String method28302(final Class436 class436) {
-        if (class436 instanceof Class462) {
-            final Class462 class437 = (Class462)class436;
+        if (class436 instanceof INameable) {
+            final INameable class437 = (INameable)class436;
             method28303(class436);
-            return class437.method1874() ? class437.method1873().method8459() : null;
+            return class437.hasCustomName() ? class437.getCustomName().method8459() : null;
         }
         return null;
     }
@@ -22,7 +25,7 @@ public class Class8477
     public static void method28303(final Class436 class436) {
         final BlockPos method2193 = class436.method2193();
         if (method28305(class436) == null) {
-            Class2250 method2194 = method28304(method2193);
+            ITextComponent method2194 = method28304(method2193);
             if (method2194 == null) {
                 method2194 = new Class2260("");
             }
@@ -30,7 +33,7 @@ public class Class8477
         }
     }
     
-    public static Class2250 method28304(final BlockPos class354) {
+    public static ITextComponent method28304(final BlockPos class354) {
         final Class436 method31208 = Class8876.method31208(class354);
         if (method31208 != null) {
             return method28305(method31208);
@@ -38,14 +41,14 @@ public class Class8477
         return null;
     }
     
-    public static Class2250 method28305(final Class436 class436) {
-        if (!(class436 instanceof Class462)) {
-            return (class436 instanceof Class490) ? ((Class2250)Class9570.method35828(class436, Class9570.field41591)) : null;
+    public static ITextComponent method28305(final Class436 class436) {
+        if (!(class436 instanceof INameable)) {
+            return (class436 instanceof Class490) ? ((ITextComponent)Class9570.method35828(class436, Class9570.field41591)) : null;
         }
-        return ((Class462)class436).method1873();
+        return ((INameable)class436).getCustomName();
     }
     
-    public static boolean method28306(final Class436 class436, final Class2250 class437) {
+    public static boolean method28306(final Class436 class436, final ITextComponent class437) {
         if (class436 instanceof Class460) {
             ((Class460)class436).method2335(class437);
             return true;

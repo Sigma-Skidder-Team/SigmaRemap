@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class Class747 extends Class516<Class3422>
     private int field4040;
     private boolean field4041;
     
-    public Class747(final Class3422 class3422, final Class464 class3423, final Class2250 class3424) {
+    public Class747(final Class3422 class3422, final Class464 class3423, final ITextComponent class3424) {
         super(class3422, class3423, class3424);
         class3422.method10910(this::method4076);
     }
@@ -30,7 +31,7 @@ public class Class747 extends Class516<Class3422>
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), 8.0f, 4.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 94), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 94), 4210752);
     }
     
     @Override

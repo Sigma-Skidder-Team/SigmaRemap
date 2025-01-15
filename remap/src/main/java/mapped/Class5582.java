@@ -7,7 +7,7 @@ package mapped;
 public class Class5582 extends Class5509
 {
     public Class5582() {
-        super(Class7499.field28995, "lead_knot", 0.0f);
+        super(EntityType.field28995, "lead_knot", 0.0f);
     }
     
     @Override

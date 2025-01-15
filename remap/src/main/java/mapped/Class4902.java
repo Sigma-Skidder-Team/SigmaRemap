@@ -7,10 +7,10 @@ package mapped;
 public class Class4902 extends Class4841
 {
     private static String[] field20591;
-    public Class8321 field20973;
+    public ItemStack field20973;
     public boolean field20974;
     
-    public Class4902(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class8321 field20973) {
+    public Class4902(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final ItemStack field20973) {
         super(class4803, s, n, n2, n3, n4, false);
         this.field20973 = field20973;
     }

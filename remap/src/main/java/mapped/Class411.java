@@ -10,16 +10,16 @@ public class Class411 extends Class409
 {
     private static String[] field2508;
     
-    public Class411(final Class7499<? extends Class411> class7499, final Class1847 class7500) {
+    public Class411(final EntityType<? extends Class411> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class411(final Class1847 class1847, final Class511 class1848) {
-        super(Class7499.field29028, class1848, class1847);
+        super(EntityType.field29028, class1848, class1847);
     }
     
     public Class411(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29028, n, n2, n3, class1847);
+        super(EntityType.field29028, n, n2, n3, class1847);
     }
     
     @Override
@@ -28,7 +28,7 @@ public class Class411 extends Class409
     }
     
     private Class6909 method2017() {
-        final Class8321 method2014 = this.method2014();
+        final ItemStack method2014 = this.method2014();
         return method2014.method27620() ? Class8432.field34631 : new Class6910(Class8432.field34629, method2014);
     }
     

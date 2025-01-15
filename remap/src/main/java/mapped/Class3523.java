@@ -109,7 +109,7 @@ public class Class3523 extends Class3446
         class385.method1285(this.field16527);
         this.field16527.method2775(class385.getX() + method2633.nextInt(11) - 5, class385.getY() + method2633.nextInt(5) - 2, class385.getZ() + method2633.nextInt(11) - 5, false);
         class385.method1285(this.field16527);
-        final Iterator<Class8321> iterator = this.field16527.field2391.method6679().method1581().method6402(Class9020.field38120).method34485(new Class9098((Class1849)this.field16527.field2391).method32877(Class6683.field26367, class385).method32877(Class6683.field26362, this.field16527).method32873(method2633).method32883(Class7104.field27716)).iterator();
+        final Iterator<ItemStack> iterator = this.field16527.field2391.method6679().method1581().method6402(Class9020.field38120).method34485(new Class9098((Class1849)this.field16527.field2391).method32877(Class6683.field26367, class385).method32877(Class6683.field26362, this.field16527).method32873(method2633).method32883(Class7104.field27716)).iterator();
         while (iterator.hasNext()) {
             this.field16527.field2391.method6886(new Class427(this.field16527.field2391, class385.getX() - MathHelper.sin(this.field16527.field2951 * 0.017453292f), class385.getY(), class385.getZ() + MathHelper.cos(this.field16527.field2951 * 0.017453292f), iterator.next()));
         }

@@ -31,10 +31,10 @@ public class Class9051
             method32549(class7492, (Entity)iterator.next(), (Class1849)class7493.field2391, class7493.getPosX(), class7493.getPosY(), class7493.getPosZ(), EnumSet.noneOf(Class2143.class), class7493.field2399, class7493.field2400, null);
         }
         if (collection.size() != 1) {
-            class7492.method23257(new Class2259("commands.teleport.success.entity.multiple", new Object[] { collection.size(), class7493.method1871() }), true);
+            class7492.method23257(new Class2259("commands.teleport.success.entity.multiple", new Object[] { collection.size(), class7493.getDisplayName() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.teleport.success.entity.single", new Object[] { ((Entity)collection.iterator().next()).method1871(), class7493.method1871() }), true);
+            class7492.method23257(new Class2259("commands.teleport.success.entity.single", new Object[] { ((Entity)collection.iterator().next()).getDisplayName(), class7493.getDisplayName() }), true);
         }
         return collection.size();
     }
@@ -76,7 +76,7 @@ public class Class9051
             class7492.method23257(new Class2259("commands.teleport.success.location.multiple", new Object[] { collection.size(), method16504.x, method16504.y, method16504.z}), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.teleport.success.location.single", new Object[] { ((Entity)collection.iterator().next()).method1871(), method16504.x, method16504.y, method16504.z}), true);
+            class7492.method23257(new Class2259("commands.teleport.success.location.single", new Object[] { ((Entity)collection.iterator().next()).getDisplayName(), method16504.x, method16504.y, method16504.z}), true);
         }
         return collection.size();
     }

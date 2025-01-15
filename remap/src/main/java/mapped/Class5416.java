@@ -11,6 +11,7 @@ import java.util.UUID;
 import java.util.function.Function;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class5416 implements Class5414
 {
@@ -39,18 +40,18 @@ public class Class5416 implements Class5414
     }
     
     @Override
-    public Class2250 method16527() {
-        return new Class2259("commands.data.entity.modified", new Object[] { this.field22587.method1871() });
+    public ITextComponent method16527() {
+        return new Class2259("commands.data.entity.modified", new Object[] { this.field22587.getDisplayName() });
     }
     
     @Override
-    public Class2250 method16528(final Class41 class41) {
-        return new Class2259("commands.data.entity.query", new Object[] { this.field22587.method1871(), class41.method268() });
+    public ITextComponent method16528(final Class41 class41) {
+        return new Class2259("commands.data.entity.query", new Object[] { this.field22587.getDisplayName(), class41.method268() });
     }
     
     @Override
-    public Class2250 method16529(final Class8570 class8570, final double d, final int i) {
-        return new Class2259("commands.data.entity.get", new Object[] { class8570, this.field22587.method1871(), String.format(Locale.ROOT, "%.2f", d), i });
+    public ITextComponent method16529(final Class8570 class8570, final double d, final int i) {
+        return new Class2259("commands.data.entity.get", new Object[] { class8570, this.field22587.getDisplayName(), String.format(Locale.ROOT, "%.2f", d), i });
     }
     
     static {

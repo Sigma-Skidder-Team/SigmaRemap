@@ -37,19 +37,19 @@ public abstract class Class402 extends Entity implements Class401
     private IntOpenHashSet field2482;
     private List<Entity> field2483;
     
-    public Class402(final Class7499<? extends Class402> class7499, final Class1847 class7500) {
+    public Class402(final EntityType<? extends Class402> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2474 = Class2151.field12782;
         this.field2479 = 2.0;
         this.field2481 = this.method1968();
     }
     
-    public Class402(final Class7499<? extends Class402> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
+    public Class402(final EntityType<? extends Class402> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
         this(class7499, class7500);
         this.method1656(n, n2, n3);
     }
     
-    public Class402(final Class7499<? extends Class402> class7499, final Class511 class7500, final Class1847 class7501) {
+    public Class402(final EntityType<? extends Class402> class7499, final Class511 class7500, final Class1847 class7501) {
         this(class7499, class7500.getPosX(), class7500.method1944() - 0.10000000149011612, class7500.getPosZ(), class7501);
         this.method1972(class7500);
         if (class7500 instanceof Class512) {
@@ -334,7 +334,7 @@ public abstract class Class402 extends Entity implements Class401
         else {
             class7008 = Class7929.method25696(this, this);
         }
-        final boolean b = method21452.method1642() == Class7499.field28977;
+        final boolean b = method21452.method1642() == EntityType.field28977;
         final int method21455 = method21452.method1666();
         if (this.method1804()) {
             if (!b) {
@@ -538,7 +538,7 @@ public abstract class Class402 extends Entity implements Class401
         }
     }
     
-    public abstract Class8321 method1974();
+    public abstract ItemStack method1974();
     
     @Override
     public boolean method1700() {

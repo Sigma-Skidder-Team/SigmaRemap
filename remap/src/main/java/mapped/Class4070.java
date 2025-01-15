@@ -15,8 +15,8 @@ public class Class4070 extends Class3820
     }
     
     @Override
-    public Class8321 method11707(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
-        final Class8321 method11707 = super.method11707(class8321, class8322, class8323);
+    public ItemStack method11707(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+        final ItemStack method11707 = super.method11707(class8321, class8322, class8323);
         if (!class8322.field10067) {
             final double method11708 = class8323.getPosX();
             final double method11709 = class8323.getPosY();

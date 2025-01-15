@@ -20,7 +20,7 @@ public class Class1836 extends Class1799<Class802, Class5838<Class802>>
                 float n12;
                 float n13;
                 float n14;
-                if (class7353.method1874() && "jeb_".equals(class7353.method1841().method8459())) {
+                if (class7353.hasCustomName() && "jeb_".equals(class7353.getName().method8459())) {
                     final int n8 = class7353.field2424 / 25 + class7353.method1643();
                     final int length = Class181.values().length;
                     final int n9 = n8 % length;

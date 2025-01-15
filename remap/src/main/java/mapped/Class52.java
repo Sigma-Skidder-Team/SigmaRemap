@@ -16,6 +16,7 @@ import java.io.DataOutput;
 import com.google.common.collect.Lists;
 import java.util.List;
 import it.unimi.dsi.fastutil.bytes.ByteSet;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class52 extends Class38<Class41>
 {
@@ -252,7 +253,7 @@ public class Class52 extends Class38<Class41>
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
+    public ITextComponent method263(final String s, final int n) {
         if (this.isEmpty()) {
             return new Class2260("[]");
         }

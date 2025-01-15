@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 import java.util.Collection;
 import java.util.ArrayList;
@@ -35,7 +37,7 @@ public class Class3225 extends Class3167
             if (class5724.method13166() != Class285.field1573 && class5724.method13166() != Class285.field1572) {
                 return;
             }
-            String s = Class3225.field15514.field4684.method1841().method8461().toLowerCase();
+            String s = Class3225.field15514.field4684.getName().method8461().toLowerCase();
             if (Class9463.method35173().method35189().method21551(Class3230.class).method9906()) {
                 s = Class9463.method35173().method35189().method21551(Class3230.class).method9887("Username").toLowerCase();
             }
@@ -90,7 +92,7 @@ public class Class3225 extends Class3167
             }
             if (method16999.contains("§r§eWant to play again?§r§b§l Click here! §r") || replaceAll.contains("coins! (Win)")) {
                 if (this.field15682.method9883("Auto Join")) {
-                    final Iterator<Class2250> iterator3 = class5724.method13164().iterator();
+                    final Iterator<ITextComponent> iterator3 = class5724.method13164().iterator();
                     while (iterator3.hasNext()) {
                         final Class9485 method17005 = iterator3.next().method8456().method30410();
                         if (method17005 != null && method17005.method35309() == Class2075.field11973) {

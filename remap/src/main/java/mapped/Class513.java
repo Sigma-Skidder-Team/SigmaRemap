@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -201,7 +202,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2873(final Class8321 class8321, final int n) {
+    public void method2873(final ItemStack class8321, final int n) {
         super.method2873(class8321, n);
         this.field3054 = -1;
     }
@@ -283,7 +284,7 @@ public class Class513 extends Class512 implements Class514
                 super.method1659();
             }
             for (int i = 0; i < this.field3006.method2239(); ++i) {
-                final Class8321 method2157 = this.field3006.method2157(i);
+                final ItemStack method2157 = this.field3006.method2157(i);
                 if (method2157.method27622().method11724()) {
                     final Class4252<?> method2158 = ((Class4093)method2157.method27622()).method12325(method2157, this.field2391, this);
                     if (method2158 != null) {
@@ -346,11 +347,11 @@ public class Class513 extends Class512 implements Class514
             this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122));
         }
         else {
-            final Class2250 method35595 = this.method2699().method35595();
+            final ITextComponent method35595 = this.method2699().method35595();
             this.field3039.method17470(new Class4260(this.method2699(), Class344.field2122, method35595), (GenericFutureListener<? extends Future<? super Void>>)(future -> {
                 if (!future.isSuccess()) {
                     final Class2259 class2251 = new Class2259("death.attack.message_too_long", new Object[] { new Class2260(method35595.method8460(256)).method8469(Class2116.field12323) });
-                    this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122, new Class2259("death.attack.even_more_magic", new Object[] { this.method1871() }).method8467(class2253 -> class2253.method30420(new Class9390(Class1961.field10697, class2252)))));
+                    this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122, new Class2259("death.attack.even_more_magic", new Object[] { this.getDisplayName() }).method8467(class2253 -> class2253.method30420(new Class9390(Class1961.field10697, class2252)))));
                 }
             }));
             final Class6750 method35596 = this.method1825();
@@ -727,7 +728,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2835(final Class8321 class8321, final Class316 class8322) {
+    public void method2835(final ItemStack class8321, final Class316 class8322) {
         if (class8321.method27622() == Class7739.field31513) {
             if (Class4096.method12342(class8321, this.method1924(), this)) {
                 this.field3009.method10876();
@@ -743,7 +744,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2928(final Class3418 class3418, final int n, final Class8321 class3419) {
+    public void method2928(final Class3418 class3418, final int n, final ItemStack class3419) {
         if (!(class3418.method10878(n) instanceof Class6623)) {
             if (class3418 == this.field3008) {
                 Class7770.field31779.method13866(this, this.field3006);
@@ -759,7 +760,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2930(final Class3418 class3418, final Class2265<Class8321> class3419) {
+    public void method2930(final Class3418 class3418, final Class2265<ItemStack> class3419) {
         this.field3039.method17469(new Class4365(class3418.field16154, class3419));
         this.field3039.method17469(new Class4272(-1, -1, this.field3006.method2375()));
     }
@@ -857,7 +858,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method2853(final Class2250 class2250, final boolean b) {
+    public void method2853(final ITextComponent class2250, final boolean b) {
         this.field3039.method17469(new Class4378(class2250, b ? Class285.field1574 : Class285.field1572));
     }
     
@@ -1005,11 +1006,11 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
         this.method2941(class2250, Class285.field1573);
     }
     
-    public void method2941(final Class2250 class2250, final Class285 class2251) {
+    public void method2941(final ITextComponent class2250, final Class285 class2251) {
         this.field3039.method17470(new Class4378(class2250, class2251), (GenericFutureListener<? extends Future<? super Void>>)(future -> {
             if (!future.isSuccess()) {
                 if (class2251 == Class285.field1574 || class2251 == Class285.field1573) {
@@ -1119,7 +1120,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Nullable
-    public Class2250 method2954() {
+    public ITextComponent method2954() {
         return null;
     }
     
@@ -1197,11 +1198,11 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public Class427 method2823(final Class8321 class8321, final boolean b, final boolean b2) {
+    public Class427 method2823(final ItemStack class8321, final boolean b, final boolean b2) {
         final Class427 method2823 = super.method2823(class8321, b, b2);
         if (method2823 != null) {
             this.field2391.method6886(method2823);
-            final Class8321 method2824 = method2823.method2107();
+            final ItemStack method2824 = method2823.method2107();
             if (b2) {
                 if (!method2824.method27620()) {
                     this.method2860(Class8276.field33984.method8449(method2824.method27622()), class8321.method27690());

@@ -63,7 +63,7 @@ public class Class3329 extends Class3167
     public int method10540(final int n, final int n2) {
         int n3 = 0;
         for (int i = 0; i < Class3329.field15514.field4684.field3006.field2740.size(); ++i) {
-            final Class8321 class8321 = Class3329.field15514.field4684.field3006.field2740.get(i);
+            final ItemStack class8321 = Class3329.field15514.field4684.field3006.field2740.get(i);
             if (!(class8321.method27622() instanceof Class4099)) {
                 ++n3;
                 final int n4 = n2 - 32 * n3;

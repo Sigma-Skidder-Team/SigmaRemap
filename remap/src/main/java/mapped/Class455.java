@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -18,20 +19,20 @@ import java.util.List;
 
 public class Class455 extends Class456 implements Class453, Class439
 {
-    private Class2265<Class8321> field2707;
+    private Class2265<ItemStack> field2707;
     private int field2708;
     private long field2709;
     
     public Class455() {
         super(Class5412.field22557);
-        this.field2707 = Class2265.method8507(5, Class8321.field34174);
+        this.field2707 = Class2265.method8507(5, ItemStack.field34174);
         this.field2708 = -1;
     }
     
     @Override
     public void method2179(final Class51 class51) {
         super.method2179(class51);
-        this.field2707 = Class2265.method8507(this.method2239(), Class8321.field34174);
+        this.field2707 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2707);
         }
@@ -54,13 +55,13 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         this.method2326(null);
         return Class8508.method28422(this.method2246(), n, n2);
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
         this.method2326(null);
         this.method2246().set(n, class8321);
         if (class8321.method27690() > this.method2254()) {
@@ -69,7 +70,7 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.hopper", new Object[0]);
     }
     
@@ -111,7 +112,7 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     private boolean method2295() {
-        for (final Class8321 class8321 : this.field2707) {
+        for (final ItemStack class8321 : this.field2707) {
             if (!class8321.method27620() && class8321.method27690() == class8321.method27628()) {
                 continue;
             }
@@ -129,7 +130,7 @@ public class Class455 extends Class456 implements Class453, Class439
         if (!this.method2298(method2307, method2308)) {
             for (int i = 0; i < this.method2239(); ++i) {
                 if (!this.method2157(i).method27620()) {
-                    final Class8321 method2309 = this.method2157(i).method27641();
+                    final ItemStack method2309 = this.method2157(i).method27641();
                     if (method2303(this, method2307, this.method2158(i, 1), method2308).method27620()) {
                         method2307.method2161();
                         return true;
@@ -149,7 +150,7 @@ public class Class455 extends Class456 implements Class453, Class439
     private boolean method2298(final Class446 class446, final Direction class447) {
         return method2297(class446, class447).allMatch(n2 -> {
             class448.method2157(n2);
-            final Class8321 class449;
+            final ItemStack class449;
             return class449.method27690() >= class449.method27628();
         });
     }
@@ -175,10 +176,10 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     private static boolean method2301(final Class453 class453, final Class446 class454, final int n, final Direction class455) {
-        final Class8321 method2157 = class454.method2157(n);
+        final ItemStack method2157 = class454.method2157(n);
         if (!method2157.method27620()) {
             if (method2305(class454, method2157, n, class455)) {
-                final Class8321 method2158 = method2157.method27641();
+                final ItemStack method2158 = method2157.method27641();
                 if (method2303(class454, class453, class454.method2158(n, 1), null).method27620()) {
                     class454.method2161();
                     return true;
@@ -191,7 +192,7 @@ public class Class455 extends Class456 implements Class453, Class439
     
     public static boolean method2302(final Class446 class446, final Class427 class447) {
         boolean b = false;
-        final Class8321 method2303 = method2303(null, class446, class447.method2107().method27641(), null);
+        final ItemStack method2303 = method2303(null, class446, class447.method2107().method27641(), null);
         if (!method2303.method27620()) {
             class447.method2108(method2303);
         }
@@ -202,7 +203,7 @@ public class Class455 extends Class456 implements Class453, Class439
         return b;
     }
     
-    public static Class8321 method2303(final Class446 class446, final Class446 class447, Class8321 class448, final Direction class449) {
+    public static ItemStack method2303(final Class446 class446, final Class446 class447, ItemStack class448, final Direction class449) {
         if (class447 instanceof Class441 && class449 != null) {
             final int[] method2248 = ((Class441)class447).method2248(class449);
             for (int n = 0; n < method2248.length && !class448.method27620(); class448 = method2306(class446, class447, class448, method2248[n], class449), ++n) {}
@@ -218,16 +219,16 @@ public class Class455 extends Class456 implements Class453, Class439
         return class448;
     }
     
-    private static boolean method2304(final Class446 class446, final Class8321 class447, final int n, final Direction class448) {
+    private static boolean method2304(final Class446 class446, final ItemStack class447, final int n, final Direction class448) {
         return class446.method2264(n, class447) && (!(class446 instanceof Class441) || ((Class441)class446).method2249(n, class447, class448));
     }
     
-    private static boolean method2305(final Class446 class446, final Class8321 class447, final int n, final Direction class448) {
+    private static boolean method2305(final Class446 class446, final ItemStack class447, final int n, final Direction class448) {
         return !(class446 instanceof Class441) || ((Class441)class446).method2250(n, class447, class448);
     }
     
-    private static Class8321 method2306(final Class446 class446, final Class446 class447, Class8321 field34174, final int n, final Direction class448) {
-        final Class8321 method2157 = class447.method2157(n);
+    private static ItemStack method2306(final Class446 class446, final Class446 class447, ItemStack field34174, final int n, final Direction class448) {
+        final ItemStack method2157 = class447.method2157(n);
         if (method2304(class447, field34174, n, class448)) {
             int n2 = 0;
             final boolean method2158 = class447.method2156();
@@ -241,7 +242,7 @@ public class Class455 extends Class456 implements Class453, Class439
             }
             else {
                 class447.method2160(n, field34174);
-                field34174 = Class8321.field34174;
+                field34174 = ItemStack.field34174;
                 n2 = 1;
             }
             if (n2 != 0) {
@@ -315,8 +316,8 @@ public class Class455 extends Class456 implements Class453, Class439
         return class1848;
     }
     
-    private static boolean method2312(final Class8321 class8321, final Class8321 class8322) {
-        return class8321.method27622() == class8322.method27622() && class8321.method27632() == class8322.method27632() && class8321.method27690() <= class8321.method27628() && Class8321.method27642(class8321, class8322);
+    private static boolean method2312(final ItemStack class8321, final ItemStack class8322) {
+        return class8321.method27622() == class8322.method27622() && class8321.method27632() == class8322.method27632() && class8321.method27690() <= class8321.method27628() && ItemStack.method27642(class8321, class8322);
     }
     
     @Override
@@ -347,12 +348,12 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Override
-    public Class2265<Class8321> method2246() {
+    public Class2265<ItemStack> method2246() {
         return this.field2707;
     }
     
     @Override
-    public void method2247(final Class2265<Class8321> field2707) {
+    public void method2247(final Class2265<ItemStack> field2707) {
         this.field2707 = field2707;
     }
     

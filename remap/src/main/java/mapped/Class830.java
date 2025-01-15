@@ -16,7 +16,7 @@ public class Class830 extends Class827 implements Class768
     public final Class7752 field4442;
     public final Class7747 field4443;
     
-    public Class830(final Class7499<? extends Class830> class7499, final Class1847 class7500) {
+    public Class830(final EntityType<? extends Class830> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2420 = 1.0f;
         this.field4110 = new Class6568(this);
@@ -45,14 +45,14 @@ public class Class830 extends Class827 implements Class768
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (this.method2718(Class2215.field13601).method27620()) {
             if (this.field2423.nextFloat() < 0.03f) {
-                this.method1803(Class2215.field13601, new Class8321(Class7739.field31609));
+                this.method1803(Class2215.field13601, new ItemStack(Class7739.field31609));
                 this.field4119[Class2215.field13601.method8402()] = 2.0f;
             }
         }
         return method4188;
     }
     
-    public static boolean method4942(final Class7499<Class830> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4942(final EntityType<Class830> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3090 method6959 = class7500.method6959(class7502);
         boolean b = false;
         Label_0078: {
@@ -115,24 +115,24 @@ public class Class830 extends Class827 implements Class768
     }
     
     @Override
-    public Class8321 method4918() {
-        return Class8321.field34174;
+    public ItemStack method4918() {
+        return ItemStack.field34174;
     }
     
     @Override
     public void method4184(final Class9592 class9592) {
         if (this.field2423.nextFloat() > 0.9) {
             if (this.field2423.nextInt(16) >= 10) {
-                this.method1803(Class2215.field13600, new Class8321(Class7739.field31376));
+                this.method1803(Class2215.field13600, new ItemStack(Class7739.field31376));
             }
             else {
-                this.method1803(Class2215.field13600, new Class8321(Class7739.field31607));
+                this.method1803(Class2215.field13600, new ItemStack(Class7739.field31607));
             }
         }
     }
     
     @Override
-    public boolean method4166(final Class8321 class8321, final Class8321 class8322, final Class2215 class8323) {
+    public boolean method4166(final ItemStack class8321, final ItemStack class8322, final Class2215 class8323) {
         if (class8322.method27622() == Class7739.field31609) {
             return false;
         }
@@ -216,7 +216,7 @@ public class Class830 extends Class827 implements Class768
     
     @Override
     public void method4252(final Class511 class511, final float n) {
-        final Class403 class512 = new Class403(this.field2391, this, new Class8321(Class7739.field31607));
+        final Class403 class512 = new Class403(this.field2391, this, new ItemStack(Class7739.field31607));
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.method1942(0.3333333333333333) - class512.getPosY();
         final double n4 = class511.getPosZ() - this.getPosZ();

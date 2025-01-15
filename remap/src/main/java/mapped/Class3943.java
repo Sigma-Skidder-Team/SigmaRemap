@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.INameable;
+
 import javax.annotation.Nullable;
 import java.util.Random;
 
@@ -78,11 +80,11 @@ public class Class3943 extends Class3841
         if (!(method6727 instanceof Class463)) {
             return null;
         }
-        return new Class504((n, class1849, class1850) -> new Class3433(n, class1849, Class7318.method22434(class7097, class7098)), ((Class462)method6727).method1871());
+        return new Class504((n, class1849, class1850) -> new Class3433(n, class1849, Class7318.method22434(class7097, class7098)), ((INameable)method6727).getDisplayName());
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class463) {

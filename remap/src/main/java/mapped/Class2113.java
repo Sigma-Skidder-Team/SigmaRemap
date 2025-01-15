@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Comparator;
 import java.util.Arrays;
 import javax.annotation.Nullable;
@@ -28,7 +30,7 @@ public enum Class2113
         return this.field12295;
     }
     
-    public Class2250 method8236() {
+    public ITextComponent method8236() {
         return new Class2259("options.difficulty." + this.field12296, new Object[0]);
     }
     

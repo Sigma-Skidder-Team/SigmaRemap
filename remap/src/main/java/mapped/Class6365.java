@@ -4,15 +4,14 @@
 
 package mapped;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
-import java.util.Iterator;
+
 import java.util.Collection;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import com.mojang.brigadier.tree.CommandNode;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6365
 {
@@ -22,10 +21,10 @@ public class Class6365
         commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("w").redirect((CommandNode)register));
     }
     
-    private static int method19011(final Class7492 class7492, final Collection<Class513> collection, final Class2250 class7493) {
+    private static int method19011(final Class7492 class7492, final Collection<Class513> collection, final ITextComponent class7493) {
         for (final Class513 class7494 : collection) {
-            class7494.method1494(new Class2259("commands.message.display.incoming", new Object[] { class7492.method23247(), class7493.method8466() }).method8468(Class2116.field12316, Class2116.field12329));
-            class7492.method23257(new Class2259("commands.message.display.outgoing", new Object[] { class7494.method1871(), class7493.method8466() }).method8468(Class2116.field12316, Class2116.field12329), false);
+            class7494.sendMessage(new Class2259("commands.message.display.incoming", new Object[] { class7492.method23247(), class7493.method8466() }).method8468(Class2116.field12316, Class2116.field12329));
+            class7492.method23257(new Class2259("commands.message.display.outgoing", new Object[] { class7494.getDisplayName(), class7493.method8466() }).method8468(Class2116.field12316, Class2116.field12329), false);
         }
         return collection.size();
     }

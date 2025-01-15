@@ -10,16 +10,16 @@ public class Class418 extends Class416
 {
     private static String[] field2526;
     
-    public Class418(final Class7499<? extends Class418> class7499, final Class1847 class7500) {
+    public Class418(final EntityType<? extends Class418> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class418(final Class1847 class1847, final Class511 class1848, final double n, final double n2, final double n3) {
-        super(Class7499.field29026, class1848, n, n2, n3, class1847);
+        super(EntityType.field29026, class1848, n, n2, n3, class1847);
     }
     
     public Class418(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        super(Class7499.field29026, n, n2, n3, n4, n5, n6, class1847);
+        super(EntityType.field29026, n, n2, n3, n4, n5, n6, class1847);
     }
     
     @Override

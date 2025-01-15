@@ -12,8 +12,8 @@ public class Class8276
     public static final Class2248<Class3820> field33982;
     public static final Class2248<Class3820> field33983;
     public static final Class2248<Class3820> field33984;
-    public static final Class2248<Class7499<?>> field33985;
-    public static final Class2248<Class7499<?>> field33986;
+    public static final Class2248<EntityType<?>> field33985;
+    public static final Class2248<EntityType<?>> field33986;
     public static final Class2248<Class1932> field33987;
     public static final Class1932 field33988;
     public static final Class1932 field33989;

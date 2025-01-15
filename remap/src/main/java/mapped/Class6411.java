@@ -11,7 +11,7 @@ public final class Class6411 extends Class6409
     private static String[] field25523;
     
     @Override
-    public Class401 method19093(final Class1847 class1847, final IPosition class1848, final Class8321 class1849) {
+    public Class401 method19093(final Class1847 class1847, final IPosition class1848, final ItemStack class1849) {
         return Class8349.method27851(new Class413(class1847, class1848.getX(), class1848.getY(), class1848.getZ()), class1851 -> class1851.method2012(class1850));
     }
     

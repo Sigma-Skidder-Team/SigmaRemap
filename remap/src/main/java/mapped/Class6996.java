@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class6996 implements Class6991
 {
     private Class6996() {
@@ -15,7 +17,7 @@ public class Class6996 implements Class6991
     }
     
     @Override
-    public Class2250 method21403() {
+    public ITextComponent method21403() {
         return new Class2259("spectatorMenu.close", new Object[0]);
     }
     

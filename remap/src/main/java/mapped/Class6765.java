@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;
@@ -79,7 +80,7 @@ public abstract class Class6765
         if (class3641.method11180() != null) {
             string = class3641.method11180().toString();
         }
-        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.method1841().getString(), (Object)string, (Object)class3642.method1643(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
+        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.getName().getString(), (Object)string, (Object)class3642.method1643(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
         final Class8660 method2849 = method2848.method6764();
         this.method20615(class3642, null, method2848);
         final Class5814 class3643 = new Class5814(this.field26562, class3641, class3642);
@@ -98,10 +99,10 @@ public abstract class Class6765
         this.field26562.method1558();
         Class2259 class3644;
         if (!class3642.method2844().getName().equalsIgnoreCase(anotherString)) {
-            class3644 = new Class2259("multiplayer.player.joined.renamed", new Object[] { class3642.method1871(), anotherString });
+            class3644 = new Class2259("multiplayer.player.joined.renamed", new Object[] { class3642.getDisplayName(), anotherString });
         }
         else {
-            class3644 = new Class2259("multiplayer.player.joined", new Object[] { class3642.method1871() });
+            class3644 = new Class2259("multiplayer.player.joined", new Object[] { class3642.getDisplayName() });
         }
         this.method20619(class3644.method8469(Class2116.field12323));
         class3643.method17467(class3642.getPosX(), class3642.getPosY(), class3642.getPosZ(), class3642.field2399, class3642.field2400);
@@ -124,7 +125,7 @@ public abstract class Class6765
         if (method2847 != null) {
             if (method2847.method316("RootVehicle", 10)) {
                 final Class51 method2851 = method2847.method327("RootVehicle");
-                final Entity method2852 = Class7499.method23378(method2851.method327("Entity"), (Class1847)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
+                final Entity method2852 = EntityType.method23378(method2851.method327("Entity"), (Class1847)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
                 if (method2852 != null) {
                     final UUID method2853 = method2851.method301("Attach");
                     if (!method2852.method1865().equals(method2853)) {
@@ -182,7 +183,7 @@ public abstract class Class6765
     public Class51 method20580(final Class513 class513) {
         final Class51 method29542 = this.field26562.method1481(Class383.field2223).method6764().method29542();
         Class51 method29543;
-        if (class513.method1841().getString().equals(this.field26562.method1498()) && method29542 != null) {
+        if (class513.getName().getString().equals(this.field26562.method1498()) && method29542 != null) {
             method29543 = method29542;
             class513.method1757(method29542);
             Class6765.field26560.debug("loading single player");
@@ -237,7 +238,7 @@ public abstract class Class6765
     }
     
     @Nullable
-    public Class2250 method20573(final SocketAddress socketAddress, final GameProfile gameProfile) {
+    public ITextComponent method20573(final SocketAddress socketAddress, final GameProfile gameProfile) {
         if (this.field26565.method26219(gameProfile)) {
             final Class6025 class6025 = this.field26565.method26207(gameProfile);
             final Class2259 class6026 = new Class2259("multiplayer.disconnect.banned.reason", new Object[] { class6025.method17950() });
@@ -370,7 +371,7 @@ public abstract class Class6765
         }
     }
     
-    public void method20588(final Class512 class512, final Class2250 class513) {
+    public void method20588(final Class512 class512, final ITextComponent class513) {
         final Class6750 method1825 = class512.method1825();
         if (method1825 != null) {
             final Iterator<String> iterator = method1825.method20547().iterator();
@@ -382,18 +383,18 @@ public abstract class Class6765
                 if (method1826 == class512) {
                     continue;
                 }
-                method1826.method1494(class513);
+                method1826.sendMessage(class513);
             }
         }
     }
     
-    public void method20589(final Class512 class512, final Class2250 class513) {
+    public void method20589(final Class512 class512, final ITextComponent class513) {
         final Class6750 method1825 = class512.method1825();
         if (method1825 != null) {
             for (int i = 0; i < this.field26563.size(); ++i) {
                 final Class513 class514 = this.field26563.get(i);
                 if (class514.method1825() != method1825) {
-                    class514.method1494(class513);
+                    class514.sendMessage(class513);
                 }
             }
         }
@@ -609,12 +610,12 @@ public abstract class Class6765
         }
     }
     
-    public void method20618(final Class2250 class2250, final boolean b) {
-        this.field26562.method1494(class2250);
+    public void method20618(final ITextComponent class2250, final boolean b) {
+        this.field26562.sendMessage(class2250);
         this.method20586(new Class4378(class2250, b ? Class285.field1573 : Class285.field1572));
     }
     
-    public void method20619(final Class2250 class2250) {
+    public void method20619(final ITextComponent class2250) {
         this.method20618(class2250, true);
     }
     
@@ -625,7 +626,7 @@ public abstract class Class6765
             final File file = new File(this.field26562.method1481(Class383.field2223).method6917().method29392(), "stats");
             final File dest = new File(file, method1865 + ".json");
             if (!dest.exists()) {
-                final File file2 = new File(file, class512.method1841().getString() + ".json");
+                final File file2 = new File(file, class512.getName().getString() + ".json");
                 if (file2.exists()) {
                     if (file2.isFile()) {
                         file2.renameTo(dest);

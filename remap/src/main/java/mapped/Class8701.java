@@ -29,7 +29,7 @@ public class Class8701
             class7492.method23257(new Class2259("commands.spawnpoint.success.multiple", new Object[] { class7493.getX(), class7493.getY(), class7493.getZ(), collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.spawnpoint.success.single", new Object[] { class7493.getX(), class7493.getY(), class7493.getZ(), collection.iterator().next().method1871() }), true);
+            class7492.method23257(new Class2259("commands.spawnpoint.success.single", new Object[] { class7493.getX(), class7493.getY(), class7493.getZ(), collection.iterator().next().getDisplayName() }), true);
         }
         return collection.size();
     }

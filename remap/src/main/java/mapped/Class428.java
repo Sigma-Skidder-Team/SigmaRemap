@@ -37,12 +37,12 @@ public abstract class Class428 extends Entity
     private double field2635;
     private double field2636;
     
-    public Class428(final Class7499<?> class7499, final Class1847 class7500) {
+    public Class428(final EntityType<?> class7499, final Class1847 class7500) {
         super(class7499, class7500);
-        this.field2386 = true;
+        this.preventEntitySpawning = true;
     }
     
-    public Class428(final Class7499<?> class7499, final Class1847 class7500, final double field2392, final double field2393, final double field2394) {
+    public Class428(final EntityType<?> class7499, final Class1847 class7500, final double field2392, final double field2393, final double field2394) {
         this(class7499, class7500);
         this.method1656(field2392, field2393, field2394);
         this.method1936(Vec3d.ZERO);
@@ -114,7 +114,7 @@ public abstract class Class428 extends Entity
             final boolean b = class7929.method25714() instanceof Class512 && ((Class512)class7929.method25714()).field3025.field27304;
             if (b || this.method2134() > 40.0f) {
                 this.method1783();
-                if (b && !this.method1874()) {
+                if (b && !this.hasCustomName()) {
                     this.method1652();
                 }
                 else {
@@ -129,9 +129,9 @@ public abstract class Class428 extends Entity
     public void method2123(final Class7929 class7929) {
         this.method1652();
         if (this.field2391.method6765().method31216(Class8878.field37321)) {
-            final Class8321 class7930 = new Class8321(Class7739.field31352);
-            if (this.method1874()) {
-                class7930.method27665(this.method1873());
+            final ItemStack class7930 = new ItemStack(Class7739.field31352);
+            if (this.hasCustomName()) {
+                class7930.method27665(this.getCustomName());
             }
             this.method1766(class7930);
         }

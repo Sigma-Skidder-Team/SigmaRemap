@@ -10,7 +10,7 @@ import com.google.gson.JsonElement;
 public final class Class8151 extends Class8150
 {
     @Override
-    public boolean method26845(final Class7499<?> class7499) {
+    public boolean method26845(final EntityType<?> class7499) {
         return true;
     }
     

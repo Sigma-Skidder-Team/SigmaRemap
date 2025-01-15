@@ -11,6 +11,7 @@ import java.util.Iterator;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
 
 public class Class3170 extends Class3167
@@ -94,7 +95,7 @@ public class Class3170 extends Class3167
     
     public void method9927(final double n, final double n2, final double n3, final Entity class399, final float n4) {
         final Class7524 field40314 = Class9400.field40314;
-        final String method8459 = class399.method1841().method8459();
+        final String method8459 = class399.getName().method8459();
         final float n5 = (float)(n - Class3170.field15514.field4644.method5833().method18161().getX());
         final float n6 = (float)(n2 - Class3170.field15514.field4644.method5833().method18161().getY());
         final float n7 = (float)(n3 - Class3170.field15514.field4644.method5833().method18161().getZ());
@@ -132,8 +133,8 @@ public class Class3170 extends Class3167
                 if (field3081.method20054()) {
                     if (field3081.method20053().method27622() instanceof Class4036) {
                         if (((Class4036)field3081.method20053().method27622()).method12240() instanceof Class3942) {
-                            final Class8321 method20053 = field3081.method20053();
-                            final List<Class8321> method20054 = this.method9931(method20053);
+                            final ItemStack method20053 = field3081.method20053();
+                            final List<ItemStack> method20054 = this.method9931(method20053);
                             final int max = Math.max(-1, Math.min(1, this.method9923()));
                             if (max != 0 || this.field15530 != -1) {
                                 this.field15530 = Math.max(0, Math.min(method20054.size() - 1, this.field15530 - max));
@@ -162,7 +163,7 @@ public class Class3170 extends Class3167
         }
     }
     
-    private void method9929(final int n, final int n2, final List<Class8321> list, final String s, final boolean b) {
+    private void method9929(final int n, final int n2, final List<ItemStack> list, final String s, final boolean b) {
         final int n3 = 12;
         final int method23539 = Class9400.field40314.method23539();
         int round = Math.round(16.0f * Class8154.method26867());
@@ -181,7 +182,7 @@ public class Class3170 extends Class3167
         Class8154.method26889(Class9400.field40314, (float)(n + n3), (float)(n2 + n3 - 3), s, Class6430.method19118(Class265.field1278.field1292, 0.8f));
         Class8726.method30001();
         for (int i = 0; i < list.size(); ++i) {
-            final Class8321 class8321 = list.get(i);
+            final ItemStack class8321 = list.get(i);
             final int n7 = n2 + method23539 + n3 + i / 9 * (round + n4);
             final int n8 = n + n3 + i % 9 * (round + n4);
             Class8726.method30002();
@@ -203,7 +204,7 @@ public class Class3170 extends Class3167
             Class8726.method30001();
         }
         for (int j = 0; j < list.size(); ++j) {
-            final Class8321 class8322 = list.get(j);
+            final ItemStack class8322 = list.get(j);
             final int n10 = n2 + method23539 + n3 + j / 9 * (round + n4);
             final int n11 = n + n3 + j % 9 * (round + n4);
             if (j == this.field15530) {
@@ -232,17 +233,17 @@ public class Class3170 extends Class3167
         }
     }
     
-    public List<String> method9930(final Class8321 class8321) {
-        final List<Class2250> method27668 = class8321.method27668(Class3170.field15514.field4684, Class3170.field15514.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
+    public List<String> method9930(final ItemStack class8321) {
+        final List<ITextComponent> method27668 = class8321.method27668(Class3170.field15514.field4684, Class3170.field15514.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
         final ArrayList arrayList = Lists.newArrayList();
-        final Iterator<Class2250> iterator = method27668.iterator();
+        final Iterator<ITextComponent> iterator = method27668.iterator();
         while (iterator.hasNext()) {
             arrayList.add(iterator.next().method8461());
         }
         return arrayList;
     }
     
-    private List<Class8321> method9931(final Class8321 class8321) {
+    private List<ItemStack> method9931(final ItemStack class8321) {
         final ArrayList list = new ArrayList();
         final Class51 method27657 = class8321.method27657();
         if (method27657 != null) {
@@ -250,18 +251,18 @@ public class Class3170 extends Class3167
                 final Class51 method27658 = method27657.method327("BlockEntityTag");
                 Class6697.method20354(method27658);
                 if (method27658.method316("Items", 9)) {
-                    final Class2265<Class8321> method27659 = Class2265.method8507(27, Class8321.field34174);
+                    final Class2265<ItemStack> method27659 = Class2265.method8507(27, ItemStack.field34174);
                     Class8508.method28426(method27658, method27659);
-                    for (final Class8321 class8322 : method27659) {
+                    for (final ItemStack class8322 : method27659) {
                         if (class8322.method27620()) {
                             continue;
                         }
                         int n = 1;
-                        for (final Class8321 class8323 : list) {
+                        for (final ItemStack class8323 : list) {
                             if (!class8322.method27647(class8323)) {
                                 continue;
                             }
-                            if (!Class8321.method27642(class8323, class8322)) {
+                            if (!ItemStack.method27642(class8323, class8322)) {
                                 continue;
                             }
                             class8323.method27691(class8322.method27690() + class8323.method27690());

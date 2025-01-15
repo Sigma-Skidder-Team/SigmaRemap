@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
@@ -33,7 +34,7 @@ public class Class2252 extends Class2251 implements Class2253
     }
     
     @Override
-    public Class2250 method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
+    public ITextComponent method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
         return (class7492 != null && this.field13795 != null) ? Class9043.method32517(this.field13795.method32511(class7492)) : new Class2260("");
     }
     

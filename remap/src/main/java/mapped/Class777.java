@@ -13,7 +13,7 @@ public abstract class Class777 extends Class763
     private boolean field4177;
     private boolean field4178;
     
-    public Class777(final Class7499<? extends Class777> class7499, final Class1847 class7500) {
+    public Class777(final EntityType<? extends Class777> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -76,7 +76,7 @@ public abstract class Class777 extends Class763
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
-    public static boolean method4309(final Class7499<? extends Class777> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4309(final EntityType<? extends Class777> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6992(Class237.field912, class7502) <= 8 && Class763.method4231(class7499, class7500, class7501, class7502, random);
     }
     

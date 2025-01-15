@@ -5,13 +5,14 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class743 extends Class516<Class3421>
 {
     private static final Class1932 field4016;
     private static final int[] field4017;
     
-    public Class743(final Class3421 class3421, final Class464 class3422, final Class2250 class3423) {
+    public Class743(final Class3421 class3421, final Class464 class3422, final ITextComponent class3423) {
         super(class3421, class3422, class3423);
     }
     
@@ -25,7 +26,7 @@ public class Class743 extends Class516<Class3421>
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), (float)(this.field3075 / 2 - this.field3156.method6617(this.field3148.method8461()) / 2), 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override

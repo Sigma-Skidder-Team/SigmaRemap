@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 
 public class Class7081 implements Class7079
 {
-    private static final Class2250 field27580;
-    private static final Class2250 field27581;
+    private static final ITextComponent field27580;
+    private static final ITextComponent field27581;
     private final Class9106 field27582;
     private Class6869 field27583;
     private int field27584;
@@ -56,7 +58,7 @@ public class Class7081 implements Class7079
     }
     
     @Override
-    public void method21662(final Class8321 class8321) {
+    public void method21662(final ItemStack class8321) {
         if (Class7855.field32237.method25618(class8321.method27622())) {
             this.field27582.method32926(Class2012.field11444);
         }

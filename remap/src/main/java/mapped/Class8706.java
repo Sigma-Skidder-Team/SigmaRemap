@@ -32,16 +32,16 @@ public class Class8706
     private void method29877(final Class5752 class5752) {
         if (class5752.method17061() == this.field36585.field4648.field23447.field2161.field32860) {
             if (this.field36585.field4690 != null) {
-                if (this.field36585.field4690.method1841() != null) {
+                if (this.field36585.field4690.getName() != null) {
                     final Class9070 method35204 = Class9463.method35173().method35204();
                     method35204.method32672();
                     if (this.method29878(this.field36585.field4690)) {
-                        this.method29886(this.field36585.field4690.method1841().method8459());
-                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.method1841().method8459() + " is no longer your friend.");
+                        this.method29886(this.field36585.field4690.getName().method8459());
+                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().method8459() + " is no longer your friend.");
                     }
                     else {
-                        this.method29882(this.field36585.field4690.method1841().method8459());
-                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.method1841().method8459() + " is now your friend.");
+                        this.method29882(this.field36585.field4690.getName().method8459());
+                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().method8459() + " is now your friend.");
                     }
                     this.method29890();
                 }
@@ -50,7 +50,7 @@ public class Class8706
     }
     
     public boolean method29878(final Entity class399) {
-        return this.field36582.contains(class399.method1841().method8459().toLowerCase());
+        return this.field36582.contains(class399.getName().method8459().toLowerCase());
     }
     
     public boolean method29879(final String s) {
@@ -58,7 +58,7 @@ public class Class8706
     }
     
     public boolean method29880(final Entity class399) {
-        return this.field36583.contains(class399.method1841().method8459().toLowerCase());
+        return this.field36583.contains(class399.getName().method8459().toLowerCase());
     }
     
     public boolean method29881(final String s) {

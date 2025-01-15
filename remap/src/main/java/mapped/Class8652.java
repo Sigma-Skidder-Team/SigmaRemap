@@ -680,7 +680,7 @@ public class Class8652
         final String[] method28937 = Class8571.method28937(trim, " ");
         for (int i = 0; i < method28937.length; ++i) {
             final String s = method28937[i];
-            final Class7499 method28938 = Class9423.method35021(new Class1932(s));
+            final EntityType method28938 = Class9423.method35021(new Class1932(s));
             if (method28938 != null) {
                 final int method28939 = Class90.field210.method504(method28938);
                 if (method28939 >= 0) {

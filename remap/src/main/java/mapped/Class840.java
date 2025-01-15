@@ -20,7 +20,7 @@ public class Class840 extends Class832
     private static final Class7843 field4477;
     public static final Predicate<Class427> field4478;
     
-    public Class840(final Class7499<? extends Class840> class7499, final Class1847 class7500) {
+    public Class840(final EntityType<? extends Class840> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6563(this);
         this.field4109 = new Class7730(this, 10);
@@ -166,7 +166,7 @@ public class Class840 extends Class832
     }
     
     @Override
-    public boolean method2779(final Class8321 class8321) {
+    public boolean method2779(final ItemStack class8321) {
         final Class2215 method4185 = Class759.method4185(class8321);
         return this.method2718(method4185).method27620() && method4185 == Class2215.field13600 && super.method2779(class8321);
     }
@@ -174,7 +174,7 @@ public class Class840 extends Class832
     @Override
     public void method4165(final Class427 class427) {
         if (this.method2718(Class2215.field13600).method27620()) {
-            final Class8321 method2107 = class427.method2107();
+            final ItemStack method2107 = class427.method2107();
             if (this.method4167(method2107)) {
                 this.method1803(Class2215.field13600, method2107);
                 this.field4119[Class2215.field13600.method8402()] = 2.0f;
@@ -238,7 +238,7 @@ public class Class840 extends Class832
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (!method2715.method27620() && method2715.method27622().method11742(Class7855.field32272)) {
             if (!this.field2391.field10067) {
                 this.method1695(Class8520.field35120, 1.0f, 1.0f);
@@ -252,7 +252,7 @@ public class Class840 extends Class832
         return super.method4195(class512, class513);
     }
     
-    public static boolean method5009(final Class7499<Class840> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method5009(final EntityType<Class840> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7502.getY() > 45) {
             if (class7502.getY() < class7500.method6743()) {
                 if (class7500.method6959(class7502) != Class7102.field27631 || class7500.method6959(class7502) != Class7102.field27656) {

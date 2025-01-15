@@ -45,7 +45,7 @@ public class Class372 extends Class367
                         if (method1150 instanceof Class438) {
                             final Class438 class1854 = (Class438)method1150;
                             for (int n = 2 + random2.nextInt(2), i = 0; i < n; ++i) {
-                                class1854.method2225(new Class798(Class7499.field28961, class1851.method6744()), false, random2.nextInt(599));
+                                class1854.method2225(new Class798(EntityType.field28961, class1851.method6744()), false, random2.nextInt(599));
                             }
                         }
                     }

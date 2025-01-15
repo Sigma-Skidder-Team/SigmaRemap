@@ -28,7 +28,7 @@ public class Class9338
             class7492.method23257(new Class2259("commands.kill.success.multiple", new Object[] { collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.kill.success.single", new Object[] { ((Entity)collection.iterator().next()).method1871() }), true);
+            class7492.method23257(new Class2259("commands.kill.success.single", new Object[] { ((Entity)collection.iterator().next()).getDisplayName() }), true);
         }
         return collection.size();
     }

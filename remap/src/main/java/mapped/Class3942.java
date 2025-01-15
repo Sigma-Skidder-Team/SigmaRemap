@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -76,13 +77,13 @@ public class Class3942 extends Class3841
                 if (!class1847.field10067) {
                     if (class1850.method2889()) {
                         if (!class1851.method2156()) {
-                            final Class8321 method6728 = method12061(this.method12060());
+                            final ItemStack method6728 = method12061(this.method12060());
                             final Class51 method6729 = class1851.method2245(new Class51());
                             if (!method6729.method331()) {
                                 method6728.method27676("BlockEntityTag", method6729);
                             }
-                            if (class1851.method1874()) {
-                                method6728.method27665(class1851.method1873());
+                            if (class1851.hasCustomName()) {
+                                method6728.method27665(class1851.getCustomName());
                             }
                             final Class427 class1852 = new Class427(class1847, class1848.getX(), class1848.getY(), class1848.getZ(), method6728);
                             class1852.method2114();
@@ -98,7 +99,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public List<Class8321> method11833(final Class7096 class7096, Class9098 method32879) {
+    public List<ItemStack> method11833(final Class7096 class7096, Class9098 method32879) {
         final Class436 class7097 = method32879.method32882(Class6683.field26369);
         if (class7097 instanceof Class440) {
             method32879 = method32879.method32879(Class3942.field17833, (class441, consumer) -> {
@@ -111,7 +112,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
             final Class436 method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class440) {
@@ -131,7 +132,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11883(final Class8321 class8321, final Class1855 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11883(final ItemStack class8321, final Class1855 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11883(class8321, class8322, list, class8323);
         final Class51 method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
@@ -139,11 +140,11 @@ public class Class3942 extends Class3841
                 list.add(new Class2260("???????"));
             }
             if (method27660.method316("Items", 9)) {
-                final Class2265<Class8321> method27661 = Class2265.method8507(27, Class8321.field34174);
+                final Class2265<ItemStack> method27661 = Class2265.method8507(27, ItemStack.field34174);
                 Class8508.method28426(method27660, method27661);
                 int n = 0;
                 int n2 = 0;
-                for (final Class8321 class8324 : method27661) {
+                for (final ItemStack class8324 : method27661) {
                     if (class8324.method27620()) {
                         continue;
                     }
@@ -152,7 +153,7 @@ public class Class3942 extends Class3841
                         continue;
                     }
                     ++n;
-                    final Class2250 method27662 = class8324.method27664().method8466();
+                    final ITextComponent method27662 = class8324.method27664().method8466();
                     method27662.method8457(" x").method8457(String.valueOf(class8324.method27690()));
                     list.add(method27662);
                 }
@@ -185,8 +186,8 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        final Class8321 method11862 = super.method11862(class1855, class1856, class1857);
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        final ItemStack method11862 = super.method11862(class1855, class1856, class1857);
         final Class51 method11863 = ((Class440)class1855.method6727(class1856)).method2245(new Class51());
         if (!method11863.method331()) {
             method11862.method27676("BlockEntityTag", method11863);
@@ -265,8 +266,8 @@ public class Class3942 extends Class3841
         return this.field17834;
     }
     
-    public static Class8321 method12061(final Class181 class181) {
-        return new Class8321(method12059(class181));
+    public static ItemStack method12061(final Class181 class181) {
+        return new ItemStack(method12059(class181));
     }
     
     @Override

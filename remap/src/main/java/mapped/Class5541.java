@@ -7,7 +7,7 @@ package mapped;
 public class Class5541 extends Class5538
 {
     public Class5541() {
-        super(Class7499.field28980, "evoker", 0.5f, new String[] { "evocation_illager" });
+        super(EntityType.field28980, "evoker", 0.5f, new String[] { "evocation_illager" });
     }
     
     @Override

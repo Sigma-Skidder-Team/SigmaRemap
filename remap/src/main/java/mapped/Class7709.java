@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.OptionalInt;
@@ -19,9 +20,9 @@ public class Class7709
     public static final Class4410<Integer> field30654;
     public static final Class4410<Float> field30655;
     public static final Class4410<String> field30656;
-    public static final Class4410<Class2250> field30657;
-    public static final Class4410<Optional<Class2250>> field30658;
-    public static final Class4410<Class8321> field30659;
+    public static final Class4410<ITextComponent> field30657;
+    public static final Class4410<Optional<ITextComponent>> field30658;
+    public static final Class4410<ItemStack> field30659;
     public static final Class4410<Optional<Class7096>> field30660;
     public static final Class4410<Boolean> field30661;
     public static final Class4410<Class6909> field30662;

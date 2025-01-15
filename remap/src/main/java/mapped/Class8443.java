@@ -28,7 +28,7 @@ public class Class8443 implements Class8444
     
     @Override
     public String method28180() {
-        return this.field34700.method1874() ? this.field34700.method1873().getString() : null;
+        return this.field34700.hasCustomName() ? this.field34700.getCustomName().getString() : null;
     }
     
     @Override

@@ -36,7 +36,7 @@ public class Class8070 extends Class8071
             if (lng != 1L) {
                 if (lng == 5L) {
                     if (method6754 % 24000L == 22000L) {
-                        this.field33248.method1494(new Class2259("demo.day.warning", new Object[0]));
+                        this.field33248.sendMessage(new Class2259("demo.day.warning", new Object[0]));
                     }
                 }
             }
@@ -56,7 +56,7 @@ public class Class8070 extends Class8071
         }
         else if (lng <= 6L) {
             if (lng != 6L) {
-                this.field33248.method1494(new Class2259("demo.day." + lng, new Object[0]));
+                this.field33248.sendMessage(new Class2259("demo.day." + lng, new Object[0]));
             }
             else {
                 this.field33248.field3039.method17469(new Class4306(5, 104.0f));
@@ -66,7 +66,7 @@ public class Class8070 extends Class8071
     
     private void method26477() {
         if (this.field33244 > 100) {
-            this.field33248.method1494(new Class2259("demo.reminder", new Object[0]));
+            this.field33248.sendMessage(new Class2259("demo.reminder", new Object[0]));
             this.field33244 = 0;
         }
     }
@@ -82,7 +82,7 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public Class2201 method26479(final Class512 class512, final Class1847 class513, final Class8321 class514, final Class316 class515) {
+    public Class2201 method26479(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515) {
         if (!this.field33243) {
             return super.method26479(class512, class513, class514, class515);
         }
@@ -91,7 +91,7 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public Class2201 method26480(final Class512 class512, final Class1847 class513, final Class8321 class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         if (!this.field33243) {
             return super.method26480(class512, class513, class514, class515, class516);
         }

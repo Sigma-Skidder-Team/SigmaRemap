@@ -17,7 +17,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
     public boolean method14004(final T t) {
         if (super.method13991(t)) {
             if (!t.method1879()) {
-                if (!t.method1874()) {
+                if (!t.hasCustomName()) {
                     return false;
                 }
                 if (t != this.field20283.field35908) {

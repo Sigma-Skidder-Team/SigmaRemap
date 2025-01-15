@@ -12,7 +12,7 @@ public class Class781 extends Class780
 {
     private static String[] field4191;
     
-    public Class781(final Class7499<? extends Class781> class7499, final Class1847 class7500) {
+    public Class781(final EntityType<? extends Class781> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1210, 8.0f);
     }
@@ -52,7 +52,7 @@ public class Class781 extends Class780
     
     @Override
     public void method4184(final Class9592 class9592) {
-        this.method1803(Class2215.field13600, new Class8321(Class7739.field31291));
+        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31291));
     }
     
     @Override
@@ -85,7 +85,7 @@ public class Class781 extends Class780
     }
     
     @Override
-    public Class402 method4330(final Class8321 class8321, final float n) {
+    public Class402 method4330(final ItemStack class8321, final float n) {
         final Class402 method4330 = super.method4330(class8321, n);
         method4330.method1664(100);
         return method4330;

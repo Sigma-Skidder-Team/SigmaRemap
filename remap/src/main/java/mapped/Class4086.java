@@ -11,6 +11,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -56,18 +57,18 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public Predicate<Class8321> method12289() {
+    public Predicate<ItemStack> method12289() {
         return Class4086.field18190;
     }
     
     @Override
-    public Predicate<Class8321> method12290() {
+    public Predicate<ItemStack> method12290() {
         return Class4086.field18189;
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         if (method12296(method2715)) {
             method12304(class1847, class1848, class1849, method2715, method12311(method2715), 1.0f);
             method12297(method2715, false);
@@ -85,7 +86,7 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public void method11727(final Class8321 class8321, final Class1847 class8322, final Class511 class8323, final int n) {
+    public void method11727(final ItemStack class8321, final Class1847 class8322, final Class511 class8323, final int n) {
         if (method12310(this.method11726(class8321) - n, class8321) >= 1.0f) {
             if (!method12296(class8321)) {
                 if (method12294(class8323, class8321)) {
@@ -96,18 +97,18 @@ public class Class4086 extends Class4085
         }
     }
     
-    private static boolean method12294(final Class511 class511, final Class8321 class512) {
+    private static boolean method12294(final Class511 class511, final ItemStack class512) {
         final int n = (Class8742.method30195(Class7882.field32379, class512) != 0) ? 3 : 1;
         final boolean b = class511 instanceof Class512 && ((Class512)class511).field3025.field27304;
-        Class8321 class513 = class511.method2790(class512);
-        Class8321 class514 = class513.method27641();
+        ItemStack class513 = class511.method2790(class512);
+        ItemStack class514 = class513.method27641();
         for (int i = 0; i < n; ++i) {
             if (i > 0) {
                 class513 = class514.method27641();
             }
             if (class513.method27620()) {
                 if (b) {
-                    class513 = new Class8321(Class7739.field31280);
+                    class513 = new ItemStack(Class7739.field31280);
                     class514 = class513.method27641();
                 }
             }
@@ -118,9 +119,9 @@ public class Class4086 extends Class4085
         return true;
     }
     
-    private static boolean method12295(final Class511 class511, final Class8321 class512, final Class8321 class513, final boolean b, final boolean b2) {
+    private static boolean method12295(final Class511 class511, final ItemStack class512, final ItemStack class513, final boolean b, final boolean b2) {
         if (!class513.method27620()) {
-            Class8321 class514 = null;
+            ItemStack class514 = null;
             Label_0083: {
                 if (!b2 || !(class513.method27622() instanceof Class3824)) {
                     if (!b2) {
@@ -145,16 +146,16 @@ public class Class4086 extends Class4085
         return false;
     }
     
-    public static boolean method12296(final Class8321 class8321) {
+    public static boolean method12296(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         return method27657 != null && method27657.method329("Charged");
     }
     
-    public static void method12297(final Class8321 class8321, final boolean b) {
+    public static void method12297(final ItemStack class8321, final boolean b) {
         class8321.method27658().method312("Charged", b);
     }
     
-    private static void method12298(final Class8321 class8321, final Class8321 class8322) {
+    private static void method12298(final ItemStack class8321, final ItemStack class8322) {
         final Class51 method27658 = class8321.method27658();
         Class52 method27659;
         if (!method27658.method316("ChargedProjectiles", 9)) {
@@ -169,7 +170,7 @@ public class Class4086 extends Class4085
         method27658.method295("ChargedProjectiles", method27659);
     }
     
-    private static List<Class8321> method12299(final Class8321 class8321) {
+    private static List<ItemStack> method12299(final ItemStack class8321) {
         final ArrayList arrayList = Lists.newArrayList();
         final Class51 method27657 = class8321.method27657();
         if (method27657 != null) {
@@ -177,7 +178,7 @@ public class Class4086 extends Class4085
                 final Class52 method27658 = method27657.method328("ChargedProjectiles", 10);
                 if (method27658 != null) {
                     for (int i = 0; i < method27658.size(); ++i) {
-                        arrayList.add(Class8321.method27619(method27658.method346(i)));
+                        arrayList.add(ItemStack.method27619(method27658.method346(i)));
                     }
                 }
             }
@@ -185,7 +186,7 @@ public class Class4086 extends Class4085
         return arrayList;
     }
     
-    private static void method12300(final Class8321 class8321) {
+    private static void method12300(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 != null) {
             final Class52 method27658 = method27657.method328("ChargedProjectiles", 9);
@@ -194,11 +195,11 @@ public class Class4086 extends Class4085
         }
     }
     
-    private static boolean method12301(final Class8321 class8321, final Class3820 class8322) {
+    private static boolean method12301(final ItemStack class8321, final Class3820 class8322) {
         return method12299(class8321).stream().anyMatch(class8324 -> class8324.method27622() == class8323);
     }
     
-    private static void method12302(final Class1847 class1847, final Class511 class1848, final Class316 class1849, final Class8321 class1850, final Class8321 class1851, final float n, final boolean b, final float n2, final float n3, final float n4) {
+    private static void method12302(final Class1847 class1847, final Class511 class1848, final Class316 class1849, final ItemStack class1850, final ItemStack class1851, final float n, final boolean b, final float n2, final float n3, final float n4) {
         if (!class1847.field10067) {
             final boolean b2 = class1851.method27622() == Class7739.field31532;
             Class401 method12303;
@@ -227,7 +228,7 @@ public class Class4086 extends Class4085
         }
     }
     
-    private static Class402 method12303(final Class1847 class1847, final Class511 class1848, final Class8321 class1849, final Class8321 class1850) {
+    private static Class402 method12303(final Class1847 class1847, final Class511 class1848, final ItemStack class1849, final ItemStack class1850) {
         final Class402 method11758 = ((Class3824)((class1850.method27622() instanceof Class3824) ? class1850.method27622() : Class7739.field31280)).method11758(class1847, class1850, class1848);
         if (class1848 instanceof Class512) {
             method11758.method1978(true);
@@ -241,11 +242,11 @@ public class Class4086 extends Class4085
         return method11758;
     }
     
-    public static void method12304(final Class1847 class1847, final Class511 class1848, final Class316 class1849, final Class8321 class1850, final float n, final float n2) {
-        final List<Class8321> method12299 = method12299(class1850);
+    public static void method12304(final Class1847 class1847, final Class511 class1848, final Class316 class1849, final ItemStack class1850, final float n, final float n2) {
+        final List<ItemStack> method12299 = method12299(class1850);
         final float[] method12300 = method12305(class1848.method2633());
         for (int i = 0; i < method12299.size(); ++i) {
-            final Class8321 class1851 = method12299.get(i);
+            final ItemStack class1851 = method12299.get(i);
             final boolean b = class1848 instanceof Class512 && ((Class512)class1848).field3025.field27304;
             if (!class1851.method27620()) {
                 if (i != 0) {
@@ -275,7 +276,7 @@ public class Class4086 extends Class4085
         return 1.0f / (Class4086.field17363.nextFloat() * 0.5f + 1.8f) + (b ? 0.63f : 0.43f);
     }
     
-    private static void method12307(final Class1847 class1847, final Class511 class1848, final Class8321 class1849) {
+    private static void method12307(final Class1847 class1847, final Class511 class1848, final ItemStack class1849) {
         if (class1848 instanceof Class513) {
             final Class513 class1850 = (Class513)class1848;
             if (!class1847.field10067) {
@@ -287,7 +288,7 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public void method11699(final Class1847 class1847, final Class511 class1848, final Class8321 class1849, final int n) {
+    public void method11699(final Class1847 class1847, final Class511 class1848, final ItemStack class1849, final int n) {
         if (!class1847.field10067) {
             final int method30195 = Class8742.method30195(Class7882.field32380, class1849);
             final Class7795 method30196 = this.method12309(method30195);
@@ -315,17 +316,17 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public int method11726(final Class8321 class8321) {
+    public int method11726(final ItemStack class8321) {
         return method12308(class8321) + 3;
     }
     
-    public static int method12308(final Class8321 class8321) {
+    public static int method12308(final ItemStack class8321) {
         final int method30195 = Class8742.method30195(Class7882.field32380, class8321);
         return (method30195 != 0) ? (25 - 5 * method30195) : 25;
     }
     
     @Override
-    public Class1992 method11725(final Class8321 class8321) {
+    public Class1992 method11725(final ItemStack class8321) {
         return Class1992.field11160;
     }
     
@@ -346,7 +347,7 @@ public class Class4086 extends Class4085
         }
     }
     
-    private static float method12310(final int n, final Class8321 class8321) {
+    private static float method12310(final int n, final ItemStack class8321) {
         float n2 = n / (float)method12308(class8321);
         if (n2 > 1.0f) {
             n2 = 1.0f;
@@ -355,11 +356,11 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
-        final List<Class8321> method12299 = method12299(class8321);
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+        final List<ItemStack> method12299 = method12299(class8321);
         if (method12296(class8321)) {
             if (!method12299.isEmpty()) {
-                final Class8321 class8324 = method12299.get(0);
+                final ItemStack class8324 = method12299.get(0);
                 list.add(new Class2259("item.minecraft.crossbow.projectile", new Object[0]).method8457(" ").method8458(class8324.method27684()));
                 if (class8323.method7991()) {
                     if (class8324.method27622() == Class7739.field31532) {
@@ -367,7 +368,7 @@ public class Class4086 extends Class4085
                         Class7739.field31532.method11728(class8324, class8322, arrayList, class8323);
                         if (!arrayList.isEmpty()) {
                             for (int i = 0; i < arrayList.size(); ++i) {
-                                arrayList.set(i, new Class2260("  ").method8458((Class2250)arrayList.get(i)).method8469(Class2116.field12316));
+                                arrayList.set(i, new Class2260("  ").method8458((ITextComponent)arrayList.get(i)).method8469(Class2116.field12316));
                             }
                             list.addAll(arrayList);
                         }
@@ -377,7 +378,7 @@ public class Class4086 extends Class4085
         }
     }
     
-    private static float method12311(final Class8321 class8321) {
+    private static float method12311(final ItemStack class8321) {
         return (class8321.method27622() == Class7739.field31611 && method12301(class8321, Class7739.field31532)) ? 1.6f : 3.15f;
     }
 }

@@ -15,7 +15,7 @@ public abstract class Class780 extends Class763 implements Class768
     private final Class3626<Class780> field4189;
     private final Class3574 field4190;
     
-    public Class780(final Class7499<? extends Class780> class7499, final Class1847 class7500) {
+    public Class780(final EntityType<? extends Class780> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4189 = new Class3626<Class780>(this, 1.0, 20, 15.0f);
         this.field4190 = new Class3579(this, this, 1.2, false);
@@ -58,13 +58,13 @@ public abstract class Class780 extends Class763 implements Class768
     public void method2736() {
         int method4217 = this.method4217() ? 1 : 0;
         if (method4217 != 0) {
-            final Class8321 method4218 = this.method2718(Class2215.field13605);
+            final ItemStack method4218 = this.method2718(Class2215.field13605);
             if (!method4218.method27620()) {
                 if (method4218.method27630()) {
                     method4218.method27633(method4218.method27632() + this.field2423.nextInt(2));
                     if (method4218.method27632() >= method4218.method27634()) {
                         this.method2794(Class2215.field13605);
-                        this.method1803(Class2215.field13605, Class8321.field34174);
+                        this.method1803(Class2215.field13605, ItemStack.field34174);
                     }
                 }
                 method4217 = 0;
@@ -87,7 +87,7 @@ public abstract class Class780 extends Class763 implements Class768
     @Override
     public void method4184(final Class9592 class9592) {
         super.method4184(class9592);
-        this.method1803(Class2215.field13600, new Class8321(Class7739.field31279));
+        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31279));
     }
     
     @Nullable
@@ -104,7 +104,7 @@ public abstract class Class780 extends Class763 implements Class768
             if (now.get(ChronoField.MONTH_OF_YEAR) == 10) {
                 if (value == 31) {
                     if (this.field2423.nextFloat() < 0.25f) {
-                        this.method1803(Class2215.field13605, new Class8321((this.field2423.nextFloat() >= 0.1f) ? Class7521.field29342 : Class7521.field29343));
+                        this.method1803(Class2215.field13605, new ItemStack((this.field2423.nextFloat() >= 0.1f) ? Class7521.field29342 : Class7521.field29343));
                         this.field4121[Class2215.field13605.method8402()] = 0.0f;
                     }
                 }
@@ -144,7 +144,7 @@ public abstract class Class780 extends Class763 implements Class768
         this.field2391.method6886(method4330);
     }
     
-    public Class402 method4330(final Class8321 class8321, final float n) {
+    public Class402 method4330(final ItemStack class8321, final float n) {
         return Class7476.method23101(this, class8321, n);
     }
     
@@ -155,7 +155,7 @@ public abstract class Class780 extends Class763 implements Class768
     }
     
     @Override
-    public void method1803(final Class2215 class2215, final Class8321 class2216) {
+    public void method1803(final Class2215 class2215, final ItemStack class2216) {
         super.method1803(class2215, class2216);
         if (!this.field2391.field10067) {
             this.method4329();

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 import java.util.Arrays;
 import java.io.IOException;
@@ -78,9 +79,9 @@ public class Class40 extends Class38<Class47>
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
-        final Class2250 method8469 = new Class2260("B").method8469(Class40.field101);
-        final Class2250 method8470 = new Class2260("[").method8458(method8469).method8457(";");
+    public ITextComponent method263(final String s, final int n) {
+        final ITextComponent method8469 = new Class2260("B").method8469(Class40.field101);
+        final ITextComponent method8470 = new Class2260("[").method8458(method8469).method8457(";");
         for (int i = 0; i < this.field97.length; ++i) {
             method8470.method8457(" ").method8458(new Class2260(String.valueOf(this.field97[i])).method8469(Class40.field100)).method8458(method8469);
             if (i != this.field97.length - 1) {

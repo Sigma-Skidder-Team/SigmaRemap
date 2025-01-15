@@ -96,7 +96,7 @@ public class Class3279 extends Class3167
                 if (Class3279.field15514.field4700 instanceof Class522) {
                     final Class522 class5723 = (Class522)Class3279.field15514.field4700;
                     method10332.field25240 = class5723.method2993().method10878(0).method20053();
-                    method10332.field25241 = new Class8321(class5723.method2993().method10878(1).method20053().method27622());
+                    method10332.field25241 = new ItemStack(class5723.method2993().method10878(1).method20053().method27622());
                     method10332.field25241.field34176 = class5723.method2993().method10878(1).method20053().field34176;
                     method10332.field25242 = class5723.method2993().method10878(2).method20053();
                 }
@@ -123,15 +123,15 @@ public class Class3279 extends Class3167
                 return;
             }
             if (class5725.method12820() == 0) {
-                method10332.field25240 = new Class8321(class5725.method12821().method27622());
+                method10332.field25240 = new ItemStack(class5725.method12821().method27622());
                 method10332.field25240.field34176 = class5725.method12821().field34176;
             }
             else if (class5725.method12820() == 1) {
-                method10332.field25241 = new Class8321(class5725.method12821().method27622());
+                method10332.field25241 = new ItemStack(class5725.method12821().method27622());
                 method10332.field25241.field34176 = class5725.method12821().field34176;
             }
             else if (class5725.method12820() == 2) {
-                method10332.field25242 = new Class8321(class5725.method12821().method27622());
+                method10332.field25242 = new ItemStack(class5725.method12821().method27622());
                 method10332.field25242.field34176 = class5725.method12821().field34176;
             }
         }
@@ -279,7 +279,7 @@ public class Class3279 extends Class3167
         GL11.glPushMatrix();
         final float n6 = 0.008f;
         GL11.glScalef(-n6 * n, -n6 * n, -n6 * n);
-        final Class8321 method18690 = class355.method18690();
+        final ItemStack method18690 = class355.method18690();
         int max;
         if (method18690 != null) {
             max = Math.max(Class9400.field40313.method23505(method18690.method27664().method8459()), 50);
@@ -296,7 +296,7 @@ public class Class3279 extends Class3167
         if (method18690 == null) {
             Class8154.method26889(Class9400.field40313, (float)(n5 + 15), (float)(n5 + 40), "Empty", Class6430.method19118(Class265.field1278.field1292, 0.6f));
         }
-        final Class8321 method18691 = class355.method18690();
+        final ItemStack method18691 = class355.method18690();
         if (method18691 != null) {
             Class8154.method26929(method18691, n5, n5 + 27, 45, 45);
             Class8154.method26889(Class9400.field40313, (float)(n5 + 51), 40.0f, method18691.method27664().method8459(), Class265.field1278.field1292);
@@ -316,7 +316,7 @@ public class Class3279 extends Class3167
     
     public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
         final Class7524 field40314 = Class9400.field40314;
-        String method9887 = (s == null) ? class399.method1841().method8459().replaceAll("§.", "") : s;
+        String method9887 = (s == null) ? class399.getName().method8459().replaceAll("§.", "") : s;
         if (Class9463.method35173().method35189().method21551(Class3230.class).method9906()) {
             if (method9887.equals(Class3279.field15514.method5287().method33692())) {
                 method9887 = Class9463.method35173().method35189().method21551(Class3230.class).method9887("Username");

@@ -37,10 +37,10 @@ public class Class3477 extends Class3446
     
     @Override
     public void method11018() {
-        final Class8321 method2718 = this.field16385.method2718(Class2215.field13600);
+        final ItemStack method2718 = this.field16385.method2718(Class2215.field13600);
         if (!method2718.method27620()) {
             this.method11042(method2718);
-            this.field16385.method1803(Class2215.field13600, Class8321.field34174);
+            this.field16385.method1803(Class2215.field13600, ItemStack.field34174);
             this.field16384 = this.field16385.field2424 + Class840.method5012(this.field16385).nextInt(100);
         }
     }
@@ -48,7 +48,7 @@ public class Class3477 extends Class3446
     @Override
     public void method11016() {
         final List<Entity> method6739 = this.field16385.field2391.method6739((Class<? extends Entity>)Class427.class, this.field16385.method1886().method18495(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class840.field4478);
-        final Class8321 method6740 = this.field16385.method2718(Class2215.field13600);
+        final ItemStack method6740 = this.field16385.method2718(Class2215.field13600);
         if (method6740.method27620()) {
             if (!method6739.isEmpty()) {
                 this.field16385.method4150().method24725((Entity)method6739.get(0), 1.2000000476837158);
@@ -56,11 +56,11 @@ public class Class3477 extends Class3446
         }
         else {
             this.method11042(method6740);
-            this.field16385.method1803(Class2215.field13600, Class8321.field34174);
+            this.field16385.method1803(Class2215.field13600, ItemStack.field34174);
         }
     }
     
-    private void method11042(final Class8321 class8321) {
+    private void method11042(final ItemStack class8321) {
         if (!class8321.method27620()) {
             final Class427 class8322 = new Class427(this.field16385.field2391, this.field16385.getPosX(), this.field16385.method1944() - 0.30000001192092896, this.field16385.getPosZ(), class8321);
             class8322.method2117(40);

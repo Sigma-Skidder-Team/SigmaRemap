@@ -5,16 +5,15 @@
 package mapped;
 
 import com.google.gson.GsonBuilder;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collection;
 import javax.annotation.Nullable;
 import org.apache.commons.io.IOUtils;
 import java.lang.reflect.Type;
-import java.io.Reader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.io.InputStream;
-import java.util.Iterator;
 import java.io.IOException;
 import com.google.common.collect.Maps;
 import java.util.Map;
@@ -192,7 +191,7 @@ public class Class1784 extends Class1776<Class8875>
     static {
         field9895 = new Class7832("meta:missing_sound", 1.0f, 1.0f, 1, Class2158.field12815, false, false, 16);
         field9896 = LogManager.getLogger();
-        field9897 = new GsonBuilder().registerTypeHierarchyAdapter((Class)Class2250.class, (Object)new Class5953()).registerTypeAdapter((Type)Class8722.class, (Object)new Class5981()).create();
+        field9897 = new GsonBuilder().registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeAdapter((Type)Class8722.class, (Object)new Class5981()).create();
         field9898 = new Class8359();
     }
 }

@@ -14,7 +14,7 @@ public class Class769 extends Class770 implements Class768
     private int field4159;
     private final Vec3d[][] field4160;
     
-    public Class769(final Class7499<? extends Class769> class7499, final Class1847 class7500) {
+    public Class769(final EntityType<? extends Class769> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4108 = 5;
         this.field4160 = new Vec3d[2][4];
@@ -51,7 +51,7 @@ public class Class769 extends Class770 implements Class768
     
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.method1803(Class2215.field13600, new Class8321(Class7739.field31279));
+        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31279));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     

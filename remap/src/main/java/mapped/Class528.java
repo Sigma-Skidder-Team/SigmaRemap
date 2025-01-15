@@ -5,23 +5,25 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class528 extends Class527
 {
     private final Runnable field3158;
-    public final Class2250 field3159;
+    public final ITextComponent field3159;
     private final List<String> field3160;
     public final String field3161;
     private int field3162;
     
-    public Class528(final Runnable runnable, final Class2250 class2250, final Class2250 class2251) {
+    public Class528(final Runnable runnable, final ITextComponent class2250, final ITextComponent class2251) {
         this(runnable, class2250, class2251, "gui.back");
     }
     
-    public Class528(final Runnable field3158, final Class2250 class2250, final Class2250 field3159, final String s) {
+    public Class528(final Runnable field3158, final ITextComponent class2250, final ITextComponent field3159, final String s) {
         super(class2250);
         this.field3160 = Lists.newArrayList();
         this.field3158 = field3158;

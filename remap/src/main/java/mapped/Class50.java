@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 import java.io.DataOutput;
 import java.util.Objects;
@@ -63,7 +65,7 @@ public class Class50 implements Class41
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
+    public ITextComponent method263(final String s, final int n) {
         final String method292 = method292(this.field123);
         final String substring = method292.substring(0, 1);
         return new Class2260(substring).method8458(new Class2260(method292.substring(1, method292.length() - 1)).method8469(Class50.field99)).method8457(substring);

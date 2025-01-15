@@ -4,17 +4,19 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 import java.util.List;
 
 public class Class735 extends Class527
 {
-    private final Class2250 field3992;
+    private final ITextComponent field3992;
     private List<String> field3993;
     private final Class527 field3994;
     private int field3995;
     
-    public Class735(final Class527 field3994, final String s, final Class2250 field3995) {
+    public Class735(final Class527 field3994, final String s, final ITextComponent field3995) {
         super(new Class2259(s, new Object[0]));
         this.field3994 = field3994;
         this.field3992 = field3995;

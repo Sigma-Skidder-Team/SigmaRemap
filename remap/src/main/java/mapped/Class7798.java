@@ -29,7 +29,7 @@ public class Class7798
     private static final DynamicCommandExceptionType field31961;
     
     public static void method25156(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)method25157((LiteralArgumentBuilder)Class7788.method25001("loot").requires(class7492 -> class7492.method23210(2)), (argumentBuilder, class8917) -> argumentBuilder.then(Class7788.method25001("fish").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class7798.field31959).then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class8321.field34174, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "tool").method772(1, false), class8917)))).then(Class7788.method25001("mainhand").executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13600), class8917)))).then(Class7788.method25001("offhand").executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13601), class8917)))))).then(Class7788.method25001("loot").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class7798.field31959).executes(commandContext -> method25172((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), class8917)))).then(Class7788.method25001("kill").then(Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method25171((CommandContext<Class7492>)commandContext, Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), class8917)))).then(Class7788.method25001("mine").then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class8321.field34174, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "tool").method772(1, false), class8917)))).then(Class7788.method25001("mainhand").executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13600), class8917)))).then(Class7788.method25001("offhand").executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13601), class8917)))))));
+        commandDispatcher.register((LiteralArgumentBuilder)method25157((LiteralArgumentBuilder)Class7788.method25001("loot").requires(class7492 -> class7492.method23210(2)), (argumentBuilder, class8917) -> argumentBuilder.then(Class7788.method25001("fish").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class7798.field31959).then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), ItemStack.field34174, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "tool").method772(1, false), class8917)))).then(Class7788.method25001("mainhand").executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13600), class8917)))).then(Class7788.method25001("offhand").executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13601), class8917)))))).then(Class7788.method25001("loot").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class7798.field31959).executes(commandContext -> method25172((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), class8917)))).then(Class7788.method25001("kill").then(Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method25171((CommandContext<Class7492>)commandContext, Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), class8917)))).then(Class7788.method25001("mine").then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), ItemStack.field34174, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "tool").method772(1, false), class8917)))).then(Class7788.method25001("mainhand").executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13600), class8917)))).then(Class7788.method25001("offhand").executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13601), class8917)))))));
     }
     
     private static <T extends ArgumentBuilder<Class7492, T>> T method25157(final T t, final Class8618 class8618) {
@@ -44,10 +44,10 @@ public class Class7798
         throw Class9302.field39908.create();
     }
     
-    private static int method25159(final Class7492 class7492, final BlockPos class7493, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
+    private static int method25159(final Class7492 class7492, final BlockPos class7493, final List<ItemStack> list, final Class7945 class7494) throws CommandSyntaxException {
         final Class446 method25158 = method25158(class7492, class7493);
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
-        for (final Class8321 class7495 : list) {
+        for (final ItemStack class7495 : list) {
             if (!method25160(method25158, class7495.method27641())) {
                 continue;
             }
@@ -58,13 +58,13 @@ public class Class7798
         return arrayListWithCapacity.size();
     }
     
-    private static boolean method25160(final Class446 class446, final Class8321 class447) {
+    private static boolean method25160(final Class446 class446, final ItemStack class447) {
         boolean b = false;
         for (int i = 0; i < class446.method2239(); ++i) {
             if (class447.method27620()) {
                 break;
             }
-            final Class8321 method2157 = class446.method2157(i);
+            final ItemStack method2157 = class446.method2157(i);
             if (class446.method2264(i, class447)) {
                 if (method2157.method27620()) {
                     class446.method2160(i, class447);
@@ -82,14 +82,14 @@ public class Class7798
         return b;
     }
     
-    private static int method25161(final Class7492 class7492, final BlockPos class7493, final int i, final int n, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
+    private static int method25161(final Class7492 class7492, final BlockPos class7493, final int i, final int n, final List<ItemStack> list, final Class7945 class7494) throws CommandSyntaxException {
         final Class446 method25158 = method25158(class7492, class7493);
         final int method25159 = method25158.method2239();
         if (i >= 0 && i < method25159) {
             final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
             for (int j = 0; j < n; ++j) {
                 final int n2 = i + j;
-                final Class8321 class7495 = (j >= list.size()) ? Class8321.field34174 : list.get(j);
+                final ItemStack class7495 = (j >= list.size()) ? ItemStack.field34174 : list.get(j);
                 if (method25158.method2264(n2, class7495)) {
                     method25158.method2160(n2, class7495);
                     arrayListWithCapacity.add(class7495);
@@ -101,7 +101,7 @@ public class Class7798
         throw Class9302.field39909.create((Object)i);
     }
     
-    private static boolean method25162(final Class8321 class8321, final Class8321 class8322) {
+    private static boolean method25162(final ItemStack class8321, final ItemStack class8322) {
         if (class8321.method27622() == class8322.method27622()) {
             if (class8321.method27632() == class8322.method27632()) {
                 if (class8321.method27690() <= class8321.method27628()) {
@@ -114,9 +114,9 @@ public class Class7798
         return false;
     }
     
-    private static int method25163(final Collection<Class513> collection, final List<Class8321> list, final Class7945 class7945) throws CommandSyntaxException {
+    private static int method25163(final Collection<Class513> collection, final List<ItemStack> list, final Class7945 class7945) throws CommandSyntaxException {
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
-        for (final Class8321 class7946 : list) {
+        for (final ItemStack class7946 : list) {
             final Iterator<Class513> iterator2 = collection.iterator();
             while (iterator2.hasNext()) {
                 if (!iterator2.next().field3006.method2362(class7946.method27641())) {
@@ -129,16 +129,16 @@ public class Class7798
         return arrayListWithCapacity.size();
     }
     
-    private static void method25164(final Entity class399, final List<Class8321> list, final int n, final int n2, final List<Class8321> list2) {
+    private static void method25164(final Entity class399, final List<ItemStack> list, final int n, final int n2, final List<ItemStack> list2) {
         for (int i = 0; i < n2; ++i) {
-            final Class8321 class400 = (i >= list.size()) ? Class8321.field34174 : list.get(i);
+            final ItemStack class400 = (i >= list.size()) ? ItemStack.field34174 : list.get(i);
             if (class399.method1893(n + i, class400.method27641())) {
                 list2.add(class400);
             }
         }
     }
     
-    private static int method25165(final Collection<? extends Entity> collection, final int n, final int n2, final List<Class8321> list, final Class7945 class7945) throws CommandSyntaxException {
+    private static int method25165(final Collection<? extends Entity> collection, final int n, final int n2, final List<ItemStack> list, final Class7945 class7945) throws CommandSyntaxException {
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
         for (final Entity class7946 : collection) {
             if (!(class7946 instanceof Class513)) {
@@ -155,7 +155,7 @@ public class Class7798
         return arrayListWithCapacity.size();
     }
     
-    private static int method25166(final Class7492 class7492, final Vec3d class7493, final List<Class8321> list, final Class7945 class7494) throws CommandSyntaxException {
+    private static int method25166(final Class7492 class7492, final Vec3d class7493, final List<ItemStack> list, final Class7945 class7494) throws CommandSyntaxException {
         list.forEach(class7498 -> {
             class7495.method23250();
             final Class427 class7499 = new Class427(class7496, class7497.field22770, class7497.field22771, class7497.field22772, class7498.method27641());
@@ -167,35 +167,35 @@ public class Class7798
         return list.size();
     }
     
-    private static void method25167(final Class7492 class7492, final List<Class8321> list) {
+    private static void method25167(final Class7492 class7492, final List<ItemStack> list) {
         if (list.size() != 1) {
             class7492.method23257(new Class2259("commands.drop.success.multiple", new Object[] { list.size() }), false);
         }
         else {
-            final Class8321 class7493 = list.get(0);
+            final ItemStack class7493 = list.get(0);
             class7492.method23257(new Class2259("commands.drop.success.single", new Object[] { class7493.method27690(), class7493.method27684() }), false);
         }
     }
     
-    private static void method25168(final Class7492 class7492, final List<Class8321> list, final Class1932 class7493) {
+    private static void method25168(final Class7492 class7492, final List<ItemStack> list, final Class1932 class7493) {
         if (list.size() != 1) {
             class7492.method23257(new Class2259("commands.drop.success.multiple_with_table", new Object[] { list.size(), class7493 }), false);
         }
         else {
-            final Class8321 class7494 = list.get(0);
+            final ItemStack class7494 = list.get(0);
             class7492.method23257(new Class2259("commands.drop.success.single_with_table", new Object[] { class7494.method27690(), class7494.method27684(), class7493 }), false);
         }
     }
     
-    private static Class8321 method25169(final Class7492 class7492, final Class2215 class7493) throws CommandSyntaxException {
+    private static ItemStack method25169(final Class7492 class7492, final Class2215 class7493) throws CommandSyntaxException {
         final Entity method23252 = class7492.method23252();
         if (!(method23252 instanceof Class511)) {
-            throw Class7798.field31960.create((Object)method23252.method1871());
+            throw Class7798.field31960.create((Object)method23252.getDisplayName());
         }
         return ((Class511)method23252).method2718(class7493);
     }
     
-    private static int method25170(final CommandContext<Class7492> commandContext, final BlockPos class354, final Class8321 class355, final Class8917 class356) throws CommandSyntaxException {
+    private static int method25170(final CommandContext<Class7492> commandContext, final BlockPos class354, final ItemStack class355, final Class8917 class356) throws CommandSyntaxException {
         final Class7492 class357 = (Class7492)commandContext.getSource();
         final Class1849 method23250 = class357.method23250();
         final Class7096 method23251 = method23250.method6701(class354);
@@ -218,7 +218,7 @@ public class Class7798
             class402.method32877(Class6683.field26367, new BlockPos(class401.method23249()));
             return class400.method31443(commandContext, class401.method23255().method1581().method6402(method2679).method34485(class402.method32883(Class7104.field27715)), list -> method25168(class401, list, method2679));
         }
-        throw Class7798.field31961.create((Object)class399.method1871());
+        throw Class7798.field31961.create((Object)class399.getDisplayName());
     }
     
     private static int method25172(final CommandContext<Class7492> commandContext, final Class1932 class1932, final Class8917 class1933) throws CommandSyntaxException {
@@ -226,7 +226,7 @@ public class Class7798
         return method25174(commandContext, class1932, new Class9098(class1934.method23250()).method32878(Class6683.field26362, class1934.method23251()).method32877(Class6683.field26367, new BlockPos(class1934.method23249())).method32883(Class7104.field27711), class1933);
     }
     
-    private static int method25173(final CommandContext<Class7492> commandContext, final Class1932 class1932, final BlockPos class1933, final Class8321 class1934, final Class8917 class1935) throws CommandSyntaxException {
+    private static int method25173(final CommandContext<Class7492> commandContext, final Class1932 class1932, final BlockPos class1933, final ItemStack class1934, final Class8917 class1935) throws CommandSyntaxException {
         return method25174(commandContext, class1932, new Class9098(((Class7492)commandContext.getSource()).method23250()).method32877(Class6683.field26367, class1933).method32877(Class6683.field26370, class1934).method32883(Class7104.field27714), class1935);
     }
     

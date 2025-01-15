@@ -23,19 +23,19 @@ public abstract class Class414 extends Entity implements Class401
     private Entity field2519;
     private int field2520;
     
-    public Class414(final Class7499<? extends Class414> class7499, final Class1847 class7500) {
+    public Class414(final EntityType<? extends Class414> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2512 = -1;
         this.field2513 = -1;
         this.field2514 = -1;
     }
     
-    public Class414(final Class7499<? extends Class414> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
+    public Class414(final EntityType<? extends Class414> class7499, final double n, final double n2, final double n3, final Class1847 class7500) {
         this(class7499, class7500);
         this.method1656(n, n2, n3);
     }
     
-    public Class414(final Class7499<? extends Class414> class7499, final Class511 field2517, final Class1847 class7500) {
+    public Class414(final EntityType<? extends Class414> class7499, final Class511 field2517, final Class1847 class7500) {
         this(class7499, field2517.getPosX(), field2517.method1944() - 0.10000000149011612, field2517.getPosZ(), class7500);
         this.field2517 = field2517;
         this.field2518 = field2517.method1865();

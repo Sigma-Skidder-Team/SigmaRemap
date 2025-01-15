@@ -6,6 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class8256
 {
@@ -29,7 +30,7 @@ public class Class8256
     }
     
     @Nullable
-    public Class2250 method27400(final Class7492 class7492) throws CommandSyntaxException {
+    public ITextComponent method27400(final Class7492 class7492) throws CommandSyntaxException {
         return Class9043.method32517(this.field33905.method32511(class7492));
     }
 }

@@ -23,7 +23,7 @@ public abstract class Class3666 implements Class3663
     }
     
     @Override
-    public Class8321 method11292() {
-        return Class8321.field34174;
+    public ItemStack method11292() {
+        return ItemStack.field34174;
     }
 }

@@ -9,6 +9,7 @@ import java.lang.reflect.Type;
 import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import com.google.gson.Gson;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class4403 implements Class4252<Class5811>
 {
@@ -42,6 +43,6 @@ public class Class4403 implements Class4252<Class5811>
     }
     
     static {
-        field19726 = new GsonBuilder().registerTypeAdapter((Type)Class9315.class, (Object)new Class5954()).registerTypeAdapter((Type)Class8499.class, (Object)new Class5956()).registerTypeAdapter((Type)Class7787.class, (Object)new Class5978()).registerTypeHierarchyAdapter((Class)Class2250.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class)Class8768.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
+        field19726 = new GsonBuilder().registerTypeAdapter((Type)Class9315.class, (Object)new Class5954()).registerTypeAdapter((Type)Class8499.class, (Object)new Class5956()).registerTypeAdapter((Type)Class7787.class, (Object)new Class5978()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class)Class8768.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
     }
 }

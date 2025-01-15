@@ -28,7 +28,7 @@ public class Class800 extends Class794
     private float field4297;
     private float field4298;
     
-    public Class800(final Class7499<? extends Class800> class7499, final Class1847 class7500) {
+    public Class800(final EntityType<? extends Class800> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -186,7 +186,7 @@ public class Class800 extends Class794
     }
     
     @Override
-    public void method4358(final Class512 class512, final Class8321 class513) {
+    public void method4358(final Class512 class512, final ItemStack class513) {
         if (this.method4357(class513)) {
             this.method1695(Class8520.field35059, 1.0f, 1.0f);
         }
@@ -263,7 +263,7 @@ public class Class800 extends Class794
     }
     
     public Class800 method4623(final Class788 class788) {
-        final Class800 class789 = Class7499.field28964.method23371(this.field2391);
+        final Class800 class789 = EntityType.field28964.method23371(this.field2391);
         if (class788 instanceof Class800) {
             if (!this.field2423.nextBoolean()) {
                 class789.method4608(((Class800)class788).method4607());
@@ -309,7 +309,7 @@ public class Class800 extends Class794
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         final Class3820 method2716 = method2715.method27622();
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
@@ -367,7 +367,7 @@ public class Class800 extends Class794
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return Class800.field4285.test(class8321);
     }
     

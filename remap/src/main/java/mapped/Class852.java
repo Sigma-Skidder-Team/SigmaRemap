@@ -45,8 +45,8 @@ public class Class852 extends Class759 implements Class762
     private final int[] field4554;
     private final Class8380 field4555;
     
-    public Class852(final Class7499<? extends Class852> class7499, final Class1847 class7500) {
-        super(Class7499.field28976, class7500);
+    public Class852(final EntityType<? extends Class852> class7499, final Class1847 class7500) {
+        super(EntityType.field28976, class7500);
         this.field4532 = new double[64][3];
         this.field4533 = -1;
         this.field4551 = 100;

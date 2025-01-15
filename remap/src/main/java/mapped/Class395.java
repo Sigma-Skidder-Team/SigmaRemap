@@ -386,7 +386,7 @@ public class Class395 extends Class394 implements Class396
     }
     
     @Override
-    public boolean method1623() {
+    public boolean allowLogging() {
         return this.method1615().field39807;
     }
     

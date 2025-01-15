@@ -19,7 +19,7 @@ public class Class826 extends Class827 implements Class825
     private Class51 field4421;
     private int field4422;
     
-    public Class826(final Class7499<? extends Class826> class7499, final Class1847 class7500) {
+    public Class826(final EntityType<? extends Class826> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4921(this.method4870().method28784(Class90.field240.method508(this.field2423)));
     }
@@ -87,7 +87,7 @@ public class Class826 extends Class827 implements Class825
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31341 && this.method2653(Class9439.field40491)) {
             if (!class512.field3025.field27304) {
                 method2715.method27693(1);
@@ -135,9 +135,9 @@ public class Class826 extends Class827 implements Class825
     }
     
     private void method4915(final Class1849 class1849) {
-        final Class824 class1850 = Class7499.field29042.method23371(class1849);
+        final Class824 class1850 = EntityType.field29042.method23371(class1849);
         for (final Class2215 class1851 : Class2215.values()) {
-            final Class8321 method2718 = this.method2718(class1851);
+            final ItemStack method2718 = this.method2718(class1851);
             if (!method2718.method27620()) {
                 if (!Class8742.method30217(method2718)) {
                     if (this.method4183(class1851) > 1.0) {
@@ -164,8 +164,8 @@ public class Class826 extends Class827 implements Class825
         }
         this.method1652();
         class1850.method4211(this.method4214());
-        if (this.method1874()) {
-            class1850.method1872(this.method1873());
+        if (this.hasCustomName()) {
+            class1850.method1872(this.getCustomName());
             class1850.method1875(this.method1876());
         }
         if (this.method4194()) {
@@ -235,8 +235,8 @@ public class Class826 extends Class827 implements Class825
     }
     
     @Override
-    public Class8321 method4918() {
-        return Class8321.field34174;
+    public ItemStack method4918() {
+        return ItemStack.field34174;
     }
     
     public void method4919(final Class51 field4421) {

@@ -16,7 +16,7 @@ public abstract class Class794 extends Class789
     public static final Class8810<Optional<UUID>> field4244;
     public Class3495 field4245;
     
-    public Class794(final Class7499<? extends Class794> class7499, final Class1847 class7500) {
+    public Class794(final EntityType<? extends Class794> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4482();
     }
@@ -202,7 +202,7 @@ public abstract class Class794 extends Class789
         if (!this.field2391.field10067) {
             if (this.field2391.method6765().method31216(Class8878.field37326)) {
                 if (this.method4488() instanceof Class513) {
-                    this.method4488().method1494(this.method2699().method35595());
+                    this.method4488().sendMessage(this.method2699().method35595());
                 }
             }
         }

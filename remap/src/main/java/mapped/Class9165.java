@@ -62,7 +62,7 @@ public class Class9165
                 class7492.method23257(new Class2259("commands.playsound.success.multiple", new Object[] { class7493, collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.playsound.success.single", new Object[] { class7493, collection.iterator().next().method1871() }), true);
+                class7492.method23257(new Class2259("commands.playsound.success.single", new Object[] { class7493, collection.iterator().next().getDisplayName() }), true);
             }
             return n4;
         }

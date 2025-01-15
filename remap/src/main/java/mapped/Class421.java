@@ -11,16 +11,16 @@ public class Class421 extends Class419
     private static String[] field2534;
     private static final Class8810<Boolean> field2535;
     
-    public Class421(final Class7499<? extends Class421> class7499, final Class1847 class7500) {
+    public Class421(final EntityType<? extends Class421> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class421(final Class1847 class1847, final Class511 class1848, final double n, final double n2, final double n3) {
-        super(Class7499.field29050, class1848, n, n2, n3, class1847);
+        super(EntityType.field29050, class1848, n, n2, n3, class1847);
     }
     
     public Class421(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        super(Class7499.field29050, n, n2, n3, n4, n5, n6, class1847);
+        super(EntityType.field29050, n, n2, n3, n4, n5, n6, class1847);
     }
     
     @Override

@@ -10,6 +10,7 @@ import java.util.Iterator;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Map;
 import java.util.List;
@@ -125,18 +126,18 @@ public class Class6356 extends Class6354
         this.method18903();
     }
     
-    public void method18916(final Class512 class512, final Class8321 class513) {
+    public void method18916(final Class512 class512, final ItemStack class513) {
         if (!this.field25429.containsKey(class512)) {
             final Class9244 class514 = new Class9244(this, class512);
             this.field25429.put(class512, class514);
             this.field25428.add(class514);
         }
         if (!class512.field3006.method2376(class513)) {
-            this.field25431.remove(class512.method1841().getString());
+            this.field25431.remove(class512.getName().getString());
         }
         for (int i = 0; i < this.field25428.size(); ++i) {
             final Class9244 class515 = this.field25428.get(i);
-            final String string = class515.field39643.method1841().getString();
+            final String string = class515.field39643.getName().getString();
             if (!class515.field39643.field2410 && (class515.field39643.field3006.method2376(class513) || class513.method27677())) {
                 if (!class513.method27677()) {
                     if (class515.field39643.field2452 == this.field25422) {
@@ -183,7 +184,7 @@ public class Class6356 extends Class6354
         }
     }
     
-    public static void method18917(final Class8321 class8321, final BlockPos class8322, final String s, final Class2095 class8323) {
+    public static void method18917(final ItemStack class8321, final BlockPos class8322, final String s, final Class2095 class8323) {
         Class52 method328;
         if (class8321.method27656() && class8321.method27657().method316("Decorations", 9)) {
             method328 = class8321.method27657().method328("Decorations", 10);
@@ -204,7 +205,7 @@ public class Class6356 extends Class6354
         }
     }
     
-    private void method18918(Class2095 class2095, final Class1851 class2096, final String s, final double n, final double n2, double n3, final Class2250 class2097) {
+    private void method18918(Class2095 class2095, final Class1851 class2096, final String s, final double n, final double n2, double n3, final ITextComponent class2097) {
         final int n4 = 1 << this.field25425;
         final float a = (float)(n - this.field25420) / n4;
         final float a2 = (float)(n2 - this.field25421) / n4;
@@ -263,7 +264,7 @@ public class Class6356 extends Class6354
     }
     
     @Nullable
-    public Class4252<?> method18919(final Class8321 class8321, final Class1855 class8322, final Class512 class8323) {
+    public Class4252<?> method18919(final ItemStack class8321, final Class1855 class8322, final Class512 class8323) {
         final Class9244 class8324 = this.field25429.get(class8323);
         return (class8324 != null) ? class8324.method34084(class8321) : null;
     }

@@ -24,13 +24,13 @@ public class Class4339 implements Class4252<Class5800>
     private int field19431;
     private int field19432;
     private int field19433;
-    private Class7499<?> field19434;
+    private EntityType<?> field19434;
     private int field19435;
     
     public Class4339() {
     }
     
-    public Class4339(final int field19424, final UUID field19425, final double field19426, final double field19427, final double field19428, final float n, final float n2, final Class7499<?> field19429, final int field19430, final Vec3d class5487) {
+    public Class4339(final int field19424, final UUID field19425, final double field19426, final double field19427, final double field19428, final float n, final float n2, final EntityType<?> field19429, final int field19430, final Vec3d class5487) {
         this.field19424 = field19424;
         this.field19425 = field19425;
         this.field19426 = field19426;
@@ -53,7 +53,7 @@ public class Class4339 implements Class4252<Class5800>
         this(class399.method1643(), class399.method1865(), class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.field2400, class399.field2399, class399.method1642(), n, class399.method1935());
     }
     
-    public Class4339(final Entity class399, final Class7499<?> class400, final int n, final BlockPos class401) {
+    public Class4339(final Entity class399, final EntityType<?> class400, final int n, final BlockPos class401) {
         this(class399.method1643(), class399.method1865(), class401.getX(), class401.getY(), class401.getZ(), class399.field2400, class399.field2399, class400, n, class399.method1935());
     }
     
@@ -133,7 +133,7 @@ public class Class4339 implements Class4252<Class5800>
         return this.field19433;
     }
     
-    public Class7499<?> method13033() {
+    public EntityType<?> method13033() {
         return this.field19434;
     }
     

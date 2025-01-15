@@ -10,11 +10,11 @@ public class Class783 extends Class780
 {
     private static String[] field4193;
     
-    public Class783(final Class7499<? extends Class783> class7499, final Class1847 class7500) {
+    public Class783(final EntityType<? extends Class783> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
-    public static boolean method4331(final Class7499<Class783> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4331(final EntityType<Class783> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return Class763.method4230(class7499, class7500, class7501, class7502, random) && (class7501 == Class2101.field12176 || class7500.method6994(class7502));
     }
     
@@ -39,7 +39,7 @@ public class Class783 extends Class780
     }
     
     @Override
-    public Class402 method4330(final Class8321 class8321, final float n) {
+    public Class402 method4330(final ItemStack class8321, final float n) {
         final Class402 method4330 = super.method4330(class8321, n);
         if (method4330 instanceof Class405) {
             ((Class405)method4330).method1995(new Class1948(Class9439.field40475, 600));

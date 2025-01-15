@@ -34,7 +34,7 @@ public class Class802 extends Class789
         return Class802.field4307.get(class181);
     }
     
-    public Class802(final Class7499<? extends Class802> class7499, final Class1847 class7500) {
+    public Class802(final EntityType<? extends Class802> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -165,7 +165,7 @@ public class Class802 extends Class789
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31426) {
             if (!this.method4636()) {
                 if (!this.method2625()) {
@@ -268,7 +268,7 @@ public class Class802 extends Class789
     
     public Class802 method4639(final Class788 class788) {
         final Class802 class789 = (Class802)class788;
-        final Class802 class790 = Class7499.field29019.method23371(this.field2391);
+        final Class802 class790 = EntityType.field29019.method23371(this.field2391);
         class790.method4635(this.method4640(this, class789));
         return class790;
     }
@@ -289,13 +289,13 @@ public class Class802 extends Class789
     }
     
     private Class181 method4640(final Class789 class789, final Class789 class790) {
-        return this.field2391.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.field2391).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>)Class8321::method27622).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.field2391.field10062.nextBoolean() ? class793 : class794);
+        return this.field2391.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.field2391).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>) ItemStack::method27622).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.field2391.field10062.nextBoolean() ? class793 : class794);
     }
     
     private static Class473 method4641(final Class181 class181, final Class181 class182) {
         final Class473 class183 = new Class473(new Class3419(null, -1), 2, 1);
-        class183.method2160(0, new Class8321(Class3829.method11768(class181)));
-        class183.method2160(1, new Class8321(Class3829.method11768(class182)));
+        class183.method2160(0, new ItemStack(Class3829.method11768(class181)));
+        class183.method2160(1, new ItemStack(Class3829.method11768(class182)));
         return class183;
     }
     

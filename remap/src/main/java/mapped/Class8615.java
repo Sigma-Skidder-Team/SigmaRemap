@@ -29,7 +29,7 @@ public class Class8615
         final Random field10062 = class1849.field10062;
         final BlockPos method6885 = new BlockPos(method6884).method1134((8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1), 0, (8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1));
         if (class1849.method6973(method6885.getX() - 10, method6885.getY() - 10, method6885.getZ() - 10, method6885.getX() + 10, method6885.getY() + 10, method6885.getZ() + 10)) {
-            if (Class8532.method28621(Class2194.field13354, class1849, method6885, Class7499.field28964)) {
+            if (Class8532.method28621(Class2194.field13354, class1849, method6885, EntityType.field28964)) {
                 if (class1849.method6924(method6885, 2)) {
                     return this.method29218(class1849, method6885);
                 }
@@ -54,7 +54,7 @@ public class Class8615
     }
     
     private int method29220(final BlockPos class354, final Class1847 class355) {
-        final Class800 class356 = Class7499.field28964.method23371(class355);
+        final Class800 class356 = EntityType.field28964.method23371(class355);
         if (class356 != null) {
             class356.method4188(class355, class355.method6784(class354), Class2101.field12174, null, null);
             class356.method1729(class354, 0.0f, 0.0f);

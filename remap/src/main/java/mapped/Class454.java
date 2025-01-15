@@ -15,7 +15,7 @@ public class Class454 extends Class433 implements Class453
     private int field2705;
     private final BlockPos field2706;
     
-    public Class454(final Class7499<? extends Class454> class7499, final Class1847 class7500) {
+    public Class454(final EntityType<? extends Class454> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2704 = true;
         this.field2705 = -1;
@@ -23,7 +23,7 @@ public class Class454 extends Class433 implements Class453
     }
     
     public Class454(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29003, n, n2, n3, class1847);
+        super(EntityType.field29003, n, n2, n3, class1847);
         this.field2704 = true;
         this.field2705 = -1;
         this.field2706 = BlockPos.ZERO;

@@ -12,7 +12,7 @@ public class Class742 extends Class516<Class3425>
     private float field4015;
     
     public Class742(final Class3425 class3425, final Class464 class3426, final Class806 field4013) {
-        super(class3425, class3426, field4013.method1871());
+        super(class3425, class3426, field4013.getDisplayName());
         this.field4013 = field4013;
         this.field3155 = false;
     }
@@ -20,7 +20,7 @@ public class Class742 extends Class516<Class3425>
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), 8.0f, 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override

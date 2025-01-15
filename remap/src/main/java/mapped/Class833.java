@@ -12,7 +12,7 @@ public abstract class Class833 extends Class832
 {
     private static final Class8810<Boolean> field4444;
     
-    public Class833(final Class7499<? extends Class833> class7499, final Class1847 class7500) {
+    public Class833(final EntityType<? extends Class833> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6575(this);
     }
@@ -33,13 +33,13 @@ public abstract class Class833 extends Class832
         return this.method4953();
     }
     
-    public static boolean method4952(final Class7499<? extends Class833> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4952(final EntityType<? extends Class833> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6701(class7502).method21696() == Class7521.field29173 && class7500.method6701(class7502.method1137()).method21696() == Class7521.field29173;
     }
     
     @Override
     public boolean method4168(final double n) {
-        return !this.method4953() && !this.method1874();
+        return !this.method4953() && !this.hasCustomName();
     }
     
     @Override
@@ -118,11 +118,11 @@ public abstract class Class833 extends Class832
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31350 && this.method1768()) {
             this.method1695(Class8520.field35053, 1.0f, 1.0f);
             method2715.method27693(1);
-            final Class8321 method2716 = this.method4956();
+            final ItemStack method2716 = this.method4956();
             this.method4955(method2716);
             if (!this.field2391.field10067) {
                 Class7770.field31784.method13862((Class513)class512, method2716);
@@ -141,13 +141,13 @@ public abstract class Class833 extends Class832
         return super.method4195(class512, class513);
     }
     
-    public void method4955(final Class8321 class8321) {
-        if (this.method1874()) {
-            class8321.method27665(this.method1873());
+    public void method4955(final ItemStack class8321) {
+        if (this.hasCustomName()) {
+            class8321.method27665(this.getCustomName());
         }
     }
     
-    public abstract Class8321 method4956();
+    public abstract ItemStack method4956();
     
     public boolean method4957() {
         return true;

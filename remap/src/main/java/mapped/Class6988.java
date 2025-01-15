@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public interface Class6988
 {
     List<Class6991> method21400();
     
-    Class2250 method21401();
+    ITextComponent method21401();
 }

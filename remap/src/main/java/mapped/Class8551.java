@@ -19,7 +19,7 @@ import java.util.Map;
 public class Class8551
 {
     private static final Class6332 field35899;
-    private final Map<Class7499<?>, Class4703<?>> field35900;
+    private final Map<EntityType<?>, Class4703<?>> field35900;
     private final Map<String, Class4711> field35901;
     private final Class4711 field35902;
     private final Class1844 field35903;
@@ -41,113 +41,113 @@ public class Class8551
         return n2;
     }
     
-    private <T extends Entity> void method28696(final Class7499<T> class7499, final Class4703<? super T> class7500) {
+    private <T extends Entity> void method28696(final EntityType<T> class7499, final Class4703<? super T> class7500) {
         this.field35900.put(class7499, class7500);
     }
     
     private void method28697(final Class1796 class1796, final Class6580 class1797) {
-        this.method28696(Class7499.field28957, new Class4783(this));
-        this.method28696(Class7499.field28958, (Class4703<? super Class857>)new Class4779(this));
-        this.method28696(Class7499.field28959, new Class4786(this));
-        this.method28696(Class7499.field28960, (Class4703<? super Class856>)new Class4742(this));
-        this.method28696(Class7499.field28961, (Class4703<? super Class798>)new Class4736(this));
-        this.method28696(Class7499.field28962, (Class4703<? super Class849>)new Class4777(this));
-        this.method28696(Class7499.field28963, new Class4704(this));
-        this.method28696(Class7499.field28964, (Class4703<? super Class800>)new Class4732(this));
-        this.method28696(Class7499.field28965, (Class4703<? super Class847>)new Class4769(this));
-        this.method28696(Class7499.field29000, new Class4708<Object>(this));
-        this.method28696(Class7499.field28966, (Class4703<? super Class818>)new Class4743(this));
-        this.method28696(Class7499.field28967, (Class4703<? super Class836>)new Class4735(this));
-        this.method28696(Class7499.field29001, new Class4708<Object>(this));
-        this.method28696(Class7499.field28968, (Class4703<? super Class804>)new Class4728(this));
-        this.method28696(Class7499.field28969, (Class4703<? super Class765>)new Class4774(this));
-        this.method28696(Class7499.field28971, (Class4703<? super Class840>)new Class4717(this));
-        this.method28696(Class7499.field28970, (Class4703<? super Class814>)new Class4761(this, 0.87f));
-        this.method28696(Class7499.field28972, new Class4782(this));
-        this.method28696(Class7499.field28973, (Class4703<? super Class830>)new Class4751(this));
-        this.method28696(Class7499.field29036, new Class4781<Object>(this, class1796));
-        this.method28696(Class7499.field28974, (Class4703<? super Class845>)new Class4765(this));
-        this.method28696(Class7499.field28975, new Class4702(this));
-        this.method28696(Class7499.field28976, new Class4794(this));
-        this.method28696(Class7499.field28977, (Class4703<? super Class850>)new Class4730(this));
-        this.method28696(Class7499.field28978, (Class4703<? super Class842>)new Class4763(this));
-        this.method28696(Class7499.field29037, new Class4781<Object>(this, class1796));
-        this.method28696(Class7499.field28979, new Class4795(this));
-        this.method28696(Class7499.field28980, (Class4703<? super Class771>)new Class4726(this));
-        this.method28696(Class7499.field29038, new Class4781<Object>(this, class1796));
-        this.method28696(Class7499.field28981, new Class4797(this));
-        this.method28696(Class7499.field28982, new Class4781<Object>(this, class1796, 1.0f, true));
-        this.method28696(Class7499.field28983, new Class4796(this));
-        this.method28696(Class7499.field28994, new Class4781<Object>(this, class1796, 3.0f, true));
-        this.method28696(Class7499.field28984, new Class4706(this, class1796));
-        this.method28696(Class7499.field29059, new Class4789(this));
-        this.method28696(Class7499.field28985, (Class4703<? super Class803>)new Class4731(this));
-        this.method28696(Class7499.field29002, new Class4708<Object>(this));
-        this.method28696(Class7499.field28986, (Class4703<? super Class761>)new Class4758(this));
-        this.method28696(Class7499.field28987, (Class4703<? super Class764>)new Class4719(this, 6.0f));
-        this.method28696(Class7499.field28988, (Class4703<? super Class844>)new Class4764(this));
-        this.method28696(Class7499.field29003, new Class4708<Object>(this));
-        this.method28696(Class7499.field28989, (Class4703<? super Class808>)new Class4762(this));
-        this.method28696(Class7499.field28990, (Class4703<? super Class829>)new Class4750(this));
-        this.method28696(Class7499.field28991, (Class4703<? super Class769>)new Class4727(this));
-        this.method28696(Class7499.field29043, (Class4703<? super Class786>)new Class4740(this));
-        this.method28696(Class7499.field28993, new Class4791(this, class1796));
-        this.method28696(Class7499.field28992, new Class4790(this, class1796));
-        this.method28696(Class7499.field28995, new Class4707(this));
-        this.method28696(Class7499.field29057, new Class4784(this));
-        this.method28696(Class7499.field28996, (Class4703<? super Class815>)new Class4718(this));
-        this.method28696(Class7499.field28997, new Class4792(this));
-        this.method28696(Class7499.field28998, (Class4703<? super Class854>)new Class4738(this));
-        this.method28696(Class7499.field28999, new Class4708<Object>(this));
-        this.method28696(Class7499.field29007, (Class4703<? super Class805>)new Class4713(this));
-        this.method28696(Class7499.field29006, (Class4703<? super Class813>)new Class4761(this, 0.92f));
-        this.method28696(Class7499.field29008, (Class4703<? super Class817>)new Class4776(this));
-        this.method28696(Class7499.field29009, new Class4780(this));
-        this.method28696(Class7499.field29010, (Class4703<? super Class791>)new Class4771(this));
-        this.method28696(Class7499.field29011, (Class4703<? super Class796>)new Class4715(this));
-        this.method28696(Class7499.field29055, (Class4703<? super Class851>)new Class4722(this));
-        this.method28696(Class7499.field29012, (Class4703<? super Class801>)new Class4775(this));
-        this.method28696(Class7499.field29045, (Class4703<? super Class773>)new Class4725(this));
-        this.method28696(Class7499.field29015, (Class4703<? super Class790>)new Class4734(this));
-        this.method28696(Class7499.field29039, new Class4781<Object>(this, class1796));
-        this.method28696(Class7499.field29013, (Class4703<? super Class838>)new Class4741(this));
-        this.method28696(Class7499.field29017, (Class4703<? super Class792>)new Class4737(this));
-        this.method28696(Class7499.field29056, (Class4703<? super Class779>)new Class4766(this));
-        this.method28696(Class7499.field29018, (Class4703<? super Class837>)new Class4720(this));
-        this.method28696(Class7499.field29019, (Class4703<? super Class802>)new Class4729(this));
-        this.method28696(Class7499.field29021, new Class4798(this));
-        this.method28696(Class7499.field29020, (Class4703<? super Class841>)new Class4714(this));
-        this.method28696(Class7499.field29022, (Class4703<? super Class848>)new Class4733(this));
-        this.method28696(Class7499.field29024, (Class4703<? super Class809>)new Class4760(this));
-        this.method28696(Class7499.field29023, (Class4703<? super Class782>)new Class4754(this));
-        this.method28696(Class7499.field29025, (Class4703<? super Class853>)new Class4772(this));
-        this.method28696(Class7499.field29026, new Class4781<Object>(this, class1796, 0.75f, true));
-        this.method28696(Class7499.field29028, new Class4781<Object>(this, class1796));
-        this.method28696(Class7499.field29027, (Class4703<? super Class784>)new Class4721(this));
-        this.method28696(Class7499.field29004, new Class4708<Object>(this));
-        this.method28696(Class7499.field29029, new Class4787(this));
-        this.method28696(Class7499.field29030, (Class4703<? super Class846>)new Class4768(this));
-        this.method28696(Class7499.field29031, (Class4703<? super Class839>)new Class4745(this));
-        this.method28696(Class7499.field29032, (Class4703<? super Class783>)new Class4756(this));
-        this.method28696(Class7499.field29005, new Class4709(this));
-        this.method28696(Class7499.field29016, new Class4788(this));
-        this.method28696(Class7499.field29033, (Class4703<? super Class816>)new Class4718(this));
-        this.method28696(Class7499.field29040, new Class4793(this));
-        this.method28696(Class7499.field29034, (Class4703<? super Class835>)new Class4773(this));
-        this.method28696(Class7499.field29035, (Class4703<? super Class793>)new Class4739(this));
-        this.method28696(Class7499.field29041, (Class4703<? super Class843>)new Class4753(this));
-        this.method28696(Class7499.field29042, (Class4703<? super Class824>)new Class4757(this, class1797));
-        this.method28696(Class7499.field29044, (Class4703<? super Class775>)new Class4724(this));
-        this.method28696(Class7499.field29046, (Class4703<? super Class821>)new Class4767(this));
-        this.method28696(Class7499.field29047, (Class4703<? super Class778>)new Class4716(this));
-        this.method28696(Class7499.field29048, (Class4703<? super Class767>)new Class4770(this));
-        this.method28696(Class7499.field29049, (Class4703<? super Class781>)new Class4755(this));
-        this.method28696(Class7499.field29050, new Class4705(this));
-        this.method28696(Class7499.field29051, (Class4703<? super Class799>)new Class4744(this));
-        this.method28696(Class7499.field29053, (Class4703<? super Class811>)new Class4760(this));
-        this.method28696(Class7499.field29052, (Class4703<? super Class827>)new Class4749(this));
-        this.method28696(Class7499.field29014, (Class4703<? super Class828>)new Class4752(this));
-        this.method28696(Class7499.field29054, (Class4703<? super Class826>)new Class4747(this, class1797));
+        this.method28696(EntityType.field28957, new Class4783(this));
+        this.method28696(EntityType.field28958, (Class4703<? super Class857>)new Class4779(this));
+        this.method28696(EntityType.field28959, new Class4786(this));
+        this.method28696(EntityType.field28960, (Class4703<? super Class856>)new Class4742(this));
+        this.method28696(EntityType.field28961, (Class4703<? super Class798>)new Class4736(this));
+        this.method28696(EntityType.field28962, (Class4703<? super Class849>)new Class4777(this));
+        this.method28696(EntityType.field28963, new Class4704(this));
+        this.method28696(EntityType.field28964, (Class4703<? super Class800>)new Class4732(this));
+        this.method28696(EntityType.field28965, (Class4703<? super Class847>)new Class4769(this));
+        this.method28696(EntityType.field29000, new Class4708<Object>(this));
+        this.method28696(EntityType.field28966, (Class4703<? super Class818>)new Class4743(this));
+        this.method28696(EntityType.field28967, (Class4703<? super Class836>)new Class4735(this));
+        this.method28696(EntityType.field29001, new Class4708<Object>(this));
+        this.method28696(EntityType.field28968, (Class4703<? super Class804>)new Class4728(this));
+        this.method28696(EntityType.field28969, (Class4703<? super Class765>)new Class4774(this));
+        this.method28696(EntityType.field28971, (Class4703<? super Class840>)new Class4717(this));
+        this.method28696(EntityType.field28970, (Class4703<? super Class814>)new Class4761(this, 0.87f));
+        this.method28696(EntityType.field28972, new Class4782(this));
+        this.method28696(EntityType.field28973, (Class4703<? super Class830>)new Class4751(this));
+        this.method28696(EntityType.field29036, new Class4781<Object>(this, class1796));
+        this.method28696(EntityType.field28974, (Class4703<? super Class845>)new Class4765(this));
+        this.method28696(EntityType.field28975, new Class4702(this));
+        this.method28696(EntityType.field28976, new Class4794(this));
+        this.method28696(EntityType.field28977, (Class4703<? super Class850>)new Class4730(this));
+        this.method28696(EntityType.field28978, (Class4703<? super Class842>)new Class4763(this));
+        this.method28696(EntityType.field29037, new Class4781<Object>(this, class1796));
+        this.method28696(EntityType.field28979, new Class4795(this));
+        this.method28696(EntityType.field28980, (Class4703<? super Class771>)new Class4726(this));
+        this.method28696(EntityType.field29038, new Class4781<Object>(this, class1796));
+        this.method28696(EntityType.field28981, new Class4797(this));
+        this.method28696(EntityType.field28982, new Class4781<Object>(this, class1796, 1.0f, true));
+        this.method28696(EntityType.field28983, new Class4796(this));
+        this.method28696(EntityType.field28994, new Class4781<Object>(this, class1796, 3.0f, true));
+        this.method28696(EntityType.field28984, new Class4706(this, class1796));
+        this.method28696(EntityType.field29059, new Class4789(this));
+        this.method28696(EntityType.field28985, (Class4703<? super Class803>)new Class4731(this));
+        this.method28696(EntityType.field29002, new Class4708<Object>(this));
+        this.method28696(EntityType.field28986, (Class4703<? super Class761>)new Class4758(this));
+        this.method28696(EntityType.field28987, (Class4703<? super Class764>)new Class4719(this, 6.0f));
+        this.method28696(EntityType.field28988, (Class4703<? super Class844>)new Class4764(this));
+        this.method28696(EntityType.field29003, new Class4708<Object>(this));
+        this.method28696(EntityType.field28989, (Class4703<? super Class808>)new Class4762(this));
+        this.method28696(EntityType.field28990, (Class4703<? super Class829>)new Class4750(this));
+        this.method28696(EntityType.field28991, (Class4703<? super Class769>)new Class4727(this));
+        this.method28696(EntityType.field29043, (Class4703<? super Class786>)new Class4740(this));
+        this.method28696(EntityType.field28993, new Class4791(this, class1796));
+        this.method28696(EntityType.field28992, new Class4790(this, class1796));
+        this.method28696(EntityType.field28995, new Class4707(this));
+        this.method28696(EntityType.field29057, new Class4784(this));
+        this.method28696(EntityType.field28996, (Class4703<? super Class815>)new Class4718(this));
+        this.method28696(EntityType.field28997, new Class4792(this));
+        this.method28696(EntityType.field28998, (Class4703<? super Class854>)new Class4738(this));
+        this.method28696(EntityType.field28999, new Class4708<Object>(this));
+        this.method28696(EntityType.field29007, (Class4703<? super Class805>)new Class4713(this));
+        this.method28696(EntityType.field29006, (Class4703<? super Class813>)new Class4761(this, 0.92f));
+        this.method28696(EntityType.field29008, (Class4703<? super Class817>)new Class4776(this));
+        this.method28696(EntityType.field29009, new Class4780(this));
+        this.method28696(EntityType.field29010, (Class4703<? super Class791>)new Class4771(this));
+        this.method28696(EntityType.field29011, (Class4703<? super Class796>)new Class4715(this));
+        this.method28696(EntityType.field29055, (Class4703<? super Class851>)new Class4722(this));
+        this.method28696(EntityType.field29012, (Class4703<? super Class801>)new Class4775(this));
+        this.method28696(EntityType.field29045, (Class4703<? super Class773>)new Class4725(this));
+        this.method28696(EntityType.field29015, (Class4703<? super Class790>)new Class4734(this));
+        this.method28696(EntityType.field29039, new Class4781<Object>(this, class1796));
+        this.method28696(EntityType.field29013, (Class4703<? super Class838>)new Class4741(this));
+        this.method28696(EntityType.field29017, (Class4703<? super Class792>)new Class4737(this));
+        this.method28696(EntityType.field29056, (Class4703<? super Class779>)new Class4766(this));
+        this.method28696(EntityType.field29018, (Class4703<? super Class837>)new Class4720(this));
+        this.method28696(EntityType.field29019, (Class4703<? super Class802>)new Class4729(this));
+        this.method28696(EntityType.field29021, new Class4798(this));
+        this.method28696(EntityType.field29020, (Class4703<? super Class841>)new Class4714(this));
+        this.method28696(EntityType.field29022, (Class4703<? super Class848>)new Class4733(this));
+        this.method28696(EntityType.field29024, (Class4703<? super Class809>)new Class4760(this));
+        this.method28696(EntityType.field29023, (Class4703<? super Class782>)new Class4754(this));
+        this.method28696(EntityType.field29025, (Class4703<? super Class853>)new Class4772(this));
+        this.method28696(EntityType.field29026, new Class4781<Object>(this, class1796, 0.75f, true));
+        this.method28696(EntityType.field29028, new Class4781<Object>(this, class1796));
+        this.method28696(EntityType.field29027, (Class4703<? super Class784>)new Class4721(this));
+        this.method28696(EntityType.field29004, new Class4708<Object>(this));
+        this.method28696(EntityType.field29029, new Class4787(this));
+        this.method28696(EntityType.field29030, (Class4703<? super Class846>)new Class4768(this));
+        this.method28696(EntityType.field29031, (Class4703<? super Class839>)new Class4745(this));
+        this.method28696(EntityType.field29032, (Class4703<? super Class783>)new Class4756(this));
+        this.method28696(EntityType.field29005, new Class4709(this));
+        this.method28696(EntityType.field29016, new Class4788(this));
+        this.method28696(EntityType.field29033, (Class4703<? super Class816>)new Class4718(this));
+        this.method28696(EntityType.field29040, new Class4793(this));
+        this.method28696(EntityType.field29034, (Class4703<? super Class835>)new Class4773(this));
+        this.method28696(EntityType.field29035, (Class4703<? super Class793>)new Class4739(this));
+        this.method28696(EntityType.field29041, (Class4703<? super Class843>)new Class4753(this));
+        this.method28696(EntityType.field29042, (Class4703<? super Class824>)new Class4757(this, class1797));
+        this.method28696(EntityType.field29044, (Class4703<? super Class775>)new Class4724(this));
+        this.method28696(EntityType.field29046, (Class4703<? super Class821>)new Class4767(this));
+        this.method28696(EntityType.field29047, (Class4703<? super Class778>)new Class4716(this));
+        this.method28696(EntityType.field29048, (Class4703<? super Class767>)new Class4770(this));
+        this.method28696(EntityType.field29049, (Class4703<? super Class781>)new Class4755(this));
+        this.method28696(EntityType.field29050, new Class4705(this));
+        this.method28696(EntityType.field29051, (Class4703<? super Class799>)new Class4744(this));
+        this.method28696(EntityType.field29053, (Class4703<? super Class811>)new Class4760(this));
+        this.method28696(EntityType.field29052, (Class4703<? super Class827>)new Class4749(this));
+        this.method28696(EntityType.field29014, (Class4703<? super Class828>)new Class4752(this));
+        this.method28696(EntityType.field29054, (Class4703<? super Class826>)new Class4747(this, class1797));
         Class1811.method6572(this.field35901);
     }
     
@@ -166,8 +166,8 @@ public class Class8551
     }
     
     public void method28698() {
-        for (final Class7499 class7499 : Class90.field210) {
-            if (class7499 != Class7499.field29058 && !this.field35900.containsKey(class7499)) {
+        for (final EntityType class7499 : Class90.field210) {
+            if (class7499 != EntityType.field29058 && !this.field35900.containsKey(class7499)) {
                 throw new IllegalStateException("No renderer registered for " + Class90.field210.method503(class7499));
             }
         }
@@ -424,7 +424,7 @@ public class Class8551
         return this.field35903;
     }
     
-    public Map<Class7499, Class4703> method28719() {
+    public Map<EntityType, Class4703> method28719() {
         return (Map)this.field35900;
     }
     

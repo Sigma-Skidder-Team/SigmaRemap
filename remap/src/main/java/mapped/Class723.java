@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableList$Builder;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.Collections;
@@ -18,7 +19,7 @@ public class Class723 extends Class527
     public static final Class1932 field3947;
     private Class7735 field3948;
     private int field3949;
-    private List<Class2250> field3950;
+    private List<ITextComponent> field3950;
     private int field3951;
     private Class680 field3952;
     private Class680 field3953;
@@ -138,7 +139,7 @@ public class Class723 extends Class527
         for (int min = Math.min(14, this.field3950.size()), i = 0; i < min; ++i) {
             this.field3156.method6610(this.field3950.get(i).method8461(), (float)(n4 + 36), (float)(32 + i * 9), 0);
         }
-        final Class2250 method30774 = this.method3978(n, n2);
+        final ITextComponent method30774 = this.method3978(n, n2);
         if (method30774 != null) {
             this.method3033(method30774, n, n2);
         }
@@ -152,7 +153,7 @@ public class Class723 extends Class527
     @Override
     public boolean method2982(final double n, final double n2, final int n3) {
         if (n3 == 0) {
-            final Class2250 method3978 = this.method3978(n, n2);
+            final ITextComponent method3978 = this.method3978(n, n2);
             if (method3978 != null) {
                 if (this.method3035(method3978)) {
                     return true;
@@ -163,7 +164,7 @@ public class Class723 extends Class527
     }
     
     @Override
-    public boolean method3035(final Class2250 class2250) {
+    public boolean method3035(final ITextComponent class2250) {
         final Class9485 method30410 = class2250.method8456().method30410();
         if (method30410 == null) {
             return false;
@@ -185,7 +186,7 @@ public class Class723 extends Class527
     }
     
     @Nullable
-    public Class2250 method3978(final double n, final double n2) {
+    public ITextComponent method3978(final double n, final double n2) {
         if (this.field3950 == null) {
             return null;
         }
@@ -199,9 +200,9 @@ public class Class723 extends Class527
             final int n3 = method35645 / 9;
             if (n3 >= 0) {
                 if (n3 < this.field3950.size()) {
-                    final Class2250 class2250 = this.field3950.get(n3);
+                    final ITextComponent class2250 = this.field3950.get(n3);
                     int n4 = 0;
-                    for (final Class2250 class2251 : class2250) {
+                    for (final ITextComponent class2251 : class2250) {
                         if (!(class2251 instanceof Class2260)) {
                             continue;
                         }

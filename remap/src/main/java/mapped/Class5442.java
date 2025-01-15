@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import java.util.function.Predicate;
@@ -14,13 +13,13 @@ public class Class5442<E extends Class511, T extends Class511> extends Class5419
     private static String[] field22650;
     private final int field22651;
     private final float field22652;
-    private final Class7499<? extends T> field22653;
+    private final EntityType<? extends T> field22653;
     private final int field22654;
     private final Predicate<T> field22655;
     private final Predicate<E> field22656;
     private final Class8233<T> field22657;
     
-    public Class5442(final Class7499<? extends T> field22653, final int n, final Predicate<E> field22654, final Predicate<T> field22655, final Class8233<T> field22656, final float field22657, final int field22658) {
+    public Class5442(final EntityType<? extends T> field22653, final int n, final Predicate<E> field22654, final Predicate<T> field22655, final Class8233<T> field22656, final float field22657, final int field22658) {
         super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10630, (Object)Class8233.field33809, (Object)Class1952.field10629, (Object)field22656, (Object)Class1952.field10629, (Object)Class8233.field33805, (Object)Class1952.field10628));
         this.field22653 = field22653;
         this.field22652 = field22657;
@@ -31,7 +30,7 @@ public class Class5442<E extends Class511, T extends Class511> extends Class5419
         this.field22657 = field22656;
     }
     
-    public static <T extends Class511> Class5442<Class511, T> method16615(final Class7499<? extends T> class7499, final int n, final Class8233<T> class7500, final float n2, final int n3) {
+    public static <T extends Class511> Class5442<Class511, T> method16615(final EntityType<? extends T> class7499, final int n, final Class8233<T> class7500, final float n2, final int n3) {
         return new Class5442<Class511, T>(class7499, n, p0 -> true, p0 -> true, class7500, n2, n3);
     }
     

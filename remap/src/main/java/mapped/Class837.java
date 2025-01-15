@@ -8,7 +8,7 @@ public class Class837 extends Class834
 {
     private static String[] field4454;
     
-    public Class837(final Class7499<? extends Class837> class7499, final Class1847 class7500) {
+    public Class837(final EntityType<? extends Class837> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -18,8 +18,8 @@ public class Class837 extends Class834
     }
     
     @Override
-    public Class8321 method4956() {
-        return new Class8321(Class7739.field31360);
+    public ItemStack method4956() {
+        return new ItemStack(Class7739.field31360);
     }
     
     @Override

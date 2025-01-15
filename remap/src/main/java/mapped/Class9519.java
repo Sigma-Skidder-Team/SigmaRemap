@@ -5,11 +5,8 @@
 package mapped;
 
 import java.util.Collections;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Iterator;
 import java.util.Collection;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 
@@ -29,9 +26,9 @@ public class Class9519
         final Class2259 class7495 = new Class2259("gameMode." + class7494.method586(), new Object[0]);
         if (class7492.method23251() != class7493) {
             if (class7492.method23250().method6765().method31216(Class8878.field37328)) {
-                class7493.method1494(new Class2259("gameMode.changed", new Object[] { class7495 }));
+                class7493.sendMessage(new Class2259("gameMode.changed", new Object[] { class7495 }));
             }
-            class7492.method23257(new Class2259("commands.gamemode.success.other", new Object[] { class7493.method1871(), class7495 }), true);
+            class7492.method23257(new Class2259("commands.gamemode.success.other", new Object[] { class7493.getDisplayName(), class7495 }), true);
         }
         else {
             class7492.method23257(new Class2259("commands.gamemode.success.self", new Object[] { class7495 }), true);

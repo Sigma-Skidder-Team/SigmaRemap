@@ -17,7 +17,7 @@ public class Class5024
         this.field21533 = (Int2IntMap)new Int2IntOpenHashMap();
     }
     
-    public void method15242(final Class8321 class8321) {
+    public void method15242(final ItemStack class8321) {
         if (!class8321.method27631()) {
             if (!class8321.method27675()) {
                 if (!class8321.method27667()) {
@@ -27,17 +27,17 @@ public class Class5024
         }
     }
     
-    public void method15243(final Class8321 class8321) {
+    public void method15243(final ItemStack class8321) {
         this.method15244(class8321, 64);
     }
     
-    public void method15244(final Class8321 class8321, final int a) {
+    public void method15244(final ItemStack class8321, final int a) {
         if (!class8321.method27620()) {
             this.method15248(method15245(class8321), Math.min(a, class8321.method27690()));
         }
     }
     
-    public static int method15245(final Class8321 class8321) {
+    public static int method15245(final ItemStack class8321) {
         return Class90.field211.method504(class8321.method27622());
     }
     
@@ -74,8 +74,8 @@ public class Class5024
         return new Class8830(class3662).method30836(n, list);
     }
     
-    public static Class8321 method15253(final int n) {
-        return (n != 0) ? new Class8321(Class3820.method11697(n)) : Class8321.field34174;
+    public static ItemStack method15253(final int n) {
+        return (n != 0) ? new ItemStack(Class3820.method11697(n)) : ItemStack.field34174;
     }
     
     public void method15254() {

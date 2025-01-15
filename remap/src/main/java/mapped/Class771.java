@@ -13,7 +13,7 @@ public class Class771 extends Class770
     private static String[] field4164;
     private Class802 field4165;
     
-    public Class771(final Class7499<? extends Class771> class7499, final Class1847 class7500) {
+    public Class771(final EntityType<? extends Class771> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4108 = 10;
     }

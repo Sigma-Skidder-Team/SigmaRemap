@@ -8,10 +8,10 @@ import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.tree.CommandNode;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6517
 {
@@ -21,7 +21,7 @@ public class Class6517
         commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("tm").redirect((CommandNode)commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("teammsg").then(Class7788.method25002("message", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8695.method29806()).executes(commandContext -> method19666((Class7492)commandContext.getSource(), Class8695.method29807((CommandContext<Class7492>)commandContext, "message")))))));
     }
     
-    private static int method19666(final Class7492 p0, final Class2250 p1) throws CommandSyntaxException {
+    private static int method19666(final Class7492 p0, final ITextComponent p1) throws CommandSyntaxException {
         // 
         // This method could not be decompiled.
         // 

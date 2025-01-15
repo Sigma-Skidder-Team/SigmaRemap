@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Collection;
 import com.google.common.collect.Sets;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.UUID;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class Class6878 extends Class6879
     private int field26949;
     private int field26950;
     
-    public Class6878(final Class1932 field26947, final Class2250 class2250) {
+    public Class6878(final Class1932 field26947, final ITextComponent class2250) {
         super(class2250, Class2200.field13396, Class342.field2105);
         this.field26948 = Sets.newHashSet();
         this.field26950 = 100;
@@ -73,7 +74,7 @@ public class Class6878 extends Class6879
         this.method21064(MathHelper.clamp(this.field26949 / (float)field26950, 0.0f, 1.0f));
     }
     
-    public final Class2250 method21057() {
+    public final ITextComponent method21057() {
         return Class9479.method35299(this.method21076()).method8467(class8768 -> {
             class8768.method30413(this.method21078().method8371());
             new Class9390(Class1961.field10697, new Class2260(this.method21048().toString()));

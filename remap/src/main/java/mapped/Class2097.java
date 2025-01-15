@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import javax.annotation.Nullable;
@@ -30,7 +32,7 @@ public enum Class2097
         this.field12153 = field12153;
     }
     
-    public Class2250 method8219() {
+    public ITextComponent method8219() {
         return new Class2259("team.visibility." + this.field12152, new Object[0]);
     }
     

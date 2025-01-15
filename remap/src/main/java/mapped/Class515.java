@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class515 extends Class516<Class3441> implements Class514
 {
     private static final Class1932 field3072;
     private Class576 field3073;
     
-    public Class515(final Class3441 class3441, final Class464 class3442, final Class2250 class3443) {
+    public Class515(final Class3441 class3441, final Class464 class3442, final ITextComponent class3443) {
         super(class3441, class3442, class3443);
     }
     
@@ -123,12 +125,12 @@ public class Class515 extends Class516<Class3441> implements Class514
     }
     
     @Override
-    public void method2930(final Class3418 class3418, final Class2265<Class8321> class3419) {
+    public void method2930(final Class3418 class3418, final Class2265<ItemStack> class3419) {
         this.method2928(class3418, 0, class3418.method10878(0).method20053());
     }
     
     @Override
-    public void method2928(final Class3418 class3418, final int n, final Class8321 class3419) {
+    public void method2928(final Class3418 class3418, final int n, final ItemStack class3419) {
         if (n == 0) {
             this.field3073.method3377(class3419.method27620() ? "" : class3419.method27664().getString());
             this.field3073.method3405(!class3419.method27620());

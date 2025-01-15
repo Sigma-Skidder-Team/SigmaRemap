@@ -13,6 +13,7 @@ import java.lang.reflect.Type;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class5982 implements JsonDeserializer<Class8768>, JsonSerializer<Class8768>
 {
@@ -62,7 +63,7 @@ public class Class5982 implements JsonDeserializer<Class8768>, JsonSerializer<Cl
                 final JsonObject method35917 = Class9583.method35914(asJsonObject, "hoverEvent");
                 final String method35918 = Class9583.method35896(method35917, "action", null);
                 final Class1961 class8770 = (method35918 != null) ? Class1961.method7949(method35918) : null;
-                final Class2250 class8771 = (Class2250)jsonDeserializationContext.deserialize(method35917.get("value"), (Type)Class2250.class);
+                final ITextComponent class8771 = (ITextComponent)jsonDeserializationContext.deserialize(method35917.get("value"), (Type) ITextComponent.class);
                 if (class8770 != null) {
                     if (class8771 != null) {
                         if (class8770.method7947()) {

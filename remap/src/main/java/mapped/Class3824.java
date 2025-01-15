@@ -12,7 +12,7 @@ public class Class3824 extends Class3820
         super(class8959);
     }
     
-    public Class402 method11758(final Class1847 class1847, final Class8321 class1848, final Class511 class1849) {
+    public Class402 method11758(final Class1847 class1847, final ItemStack class1848, final Class511 class1849) {
         final Class405 class1850 = new Class405(class1847, class1849);
         class1850.method1992(class1848);
         return class1850;

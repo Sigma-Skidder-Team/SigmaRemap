@@ -12,7 +12,7 @@ public class Class809 extends Class806
     private boolean field4363;
     private int field4364;
     
-    public Class809(final Class7499<? extends Class809> class7499, final Class1847 class7500) {
+    public Class809(final EntityType<? extends Class809> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4362 = new Class3539(this);
     }
@@ -146,12 +146,12 @@ public class Class809 extends Class806
     @Nullable
     @Override
     public Class788 method4349(final Class788 class788) {
-        return Class7499.field29024.method23371(this.field2391);
+        return EntityType.field29024.method23371(this.field2391);
     }
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
         }

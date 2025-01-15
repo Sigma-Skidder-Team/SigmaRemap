@@ -17,12 +17,12 @@ public class Class506 extends Class428
     public double field2889;
     private static final Class120 field2890;
     
-    public Class506(final Class7499<? extends Class506> class7499, final Class1847 class7500) {
+    public Class506(final EntityType<? extends Class506> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class506(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29002, class1847, n, n2, n3);
+        super(EntityType.field29002, class1847, n, n2, n3);
     }
     
     @Override
@@ -104,7 +104,7 @@ public class Class506 extends Class428
     
     @Override
     public boolean method1770(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (Class506.field2890.test(method2715)) {
             if (this.field2887 + 3600 <= 32000) {
                 if (!class512.field3025.field27304) {

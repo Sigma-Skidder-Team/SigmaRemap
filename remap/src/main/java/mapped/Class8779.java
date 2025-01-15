@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 
 public class Class8779
@@ -43,8 +45,8 @@ public class Class8779
     }
     
     @Nullable
-    public Class2250 method30541() {
-        return (this.method30537().method25714() != null) ? this.method30537().method25714().method1871() : null;
+    public ITextComponent method30541() {
+        return (this.method30537().method25714() != null) ? this.method30537().method25714().getDisplayName() : null;
     }
     
     public float method30542() {

@@ -30,7 +30,7 @@ public class Class3459 extends Class3446
             if (this.field16309.method4316()) {
                 if (this.field16309.method4152() != null) {
                     if (!this.field16309.method4216()) {
-                        if (method2634 == null || method2634.method1642() != Class7499.field29058) {
+                        if (method2634 == null || method2634.method1642() != EntityType.field29058) {
                             return true;
                         }
                     }

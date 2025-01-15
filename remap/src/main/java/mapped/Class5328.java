@@ -7,6 +7,7 @@ package mapped;
 import java.util.UUID;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -124,7 +125,7 @@ public class Class5328
         return this.method16454();
     }
     
-    public Class2250 method16456() {
+    public ITextComponent method16456() {
         return new Class2259(this.method16455(), new Object[0]);
     }
     

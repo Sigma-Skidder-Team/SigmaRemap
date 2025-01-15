@@ -12,7 +12,7 @@ public class Class5577 extends Class5509
     private static Map<String, Integer> field22819;
     
     public Class5577() {
-        super(Class7499.field29056, "ravager", 1.1f);
+        super(EntityType.field29056, "ravager", 1.1f);
     }
     
     @Override

@@ -21,7 +21,7 @@ public class Class1817<T extends Class512> extends Class1799<T, Class5860<T>>
     }
     
     private void method6580(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final boolean b) {
-        Class7499.method23355((b ? t.method2899() : t.method2901()).method323("id")).filter(class7353 -> class7353 == Class7499.field29011).ifPresent(p10 -> {
+        EntityType.method23355((b ? t.method2899() : t.method2901()).method323("id")).filter(class7353 -> class7353 == EntityType.field29011).ifPresent(p10 -> {
             final Entity field9343 = Class8571.method28908().field9343;
             if (!(!(class7354 instanceof Class754))) {
                 final Class754 class7358 = (Class754)class7354;

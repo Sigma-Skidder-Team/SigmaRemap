@@ -15,6 +15,7 @@ import com.google.common.collect.Lists;
 import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class Class6516
         return this.field25930.get(s);
     }
     
-    public Class9290 method19633(final String s, final Class9456 key, final Class2250 class2250, final Class263 class2251) {
+    public Class9290 method19633(final String s, final Class9456 key, final ITextComponent class2250, final Class263 class2251) {
         if (s.length() > 16) {
             throw new IllegalArgumentException("The objective name '" + s + "' is too long!");
         }

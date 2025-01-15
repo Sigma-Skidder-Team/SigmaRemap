@@ -96,7 +96,7 @@ public class Class3281 extends Class3167
                             }
                         }
                     }
-                    final Class8321 method6710 = Class3281.field15514.field4684.method2715(Class316.field1877);
+                    final ItemStack method6710 = Class3281.field15514.field4684.method2715(Class316.field1877);
                     if (method6710 != null && method6710.method27622() instanceof Class3829) {
                         if (method6701.method21772((Class7111<Integer>)Class8970.field37773) == 7) {
                             continue;

@@ -17,7 +17,7 @@ public class Class6606 extends Class6601
     }
     
     @Override
-    public boolean method20046(final Class8321 class8321) {
+    public boolean method20046(final ItemStack class8321) {
         return false;
     }
     
@@ -34,22 +34,22 @@ public class Class6606 extends Class6601
     }
     
     @Override
-    public Class8321 method20047(final Class512 class512, final Class8321 class513) {
+    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
         if (!class512.field3025.field27304) {
             class512.method2874(-Class3441.method11001(this.field26184).method19832());
         }
-        Class3441.method11002(this.field26184).method2160(0, Class8321.field34174);
+        Class3441.method11002(this.field26184).method2160(0, ItemStack.field34174);
         if (Class3441.method11003(this.field26184) <= 0) {
-            Class3441.method11002(this.field26184).method2160(1, Class8321.field34174);
+            Class3441.method11002(this.field26184).method2160(1, ItemStack.field34174);
         }
         else {
-            final Class8321 method2157 = Class3441.method11002(this.field26184).method2157(1);
+            final ItemStack method2157 = Class3441.method11002(this.field26184).method2157(1);
             if (!method2157.method27620() && method2157.method27690() > Class3441.method11003(this.field26184)) {
                 method2157.method27693(Class3441.method11003(this.field26184));
                 Class3441.method11002(this.field26184).method2160(1, method2157);
             }
             else {
-                Class3441.method11002(this.field26184).method2160(1, Class8321.field34174);
+                Class3441.method11002(this.field26184).method2160(1, ItemStack.field34174);
             }
         }
         Class3441.method11001(this.field26184).method19833(0);

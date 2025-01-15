@@ -4,13 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 
 public class Class4400 implements Class4252<Class5800>
 {
     private static String[] field19712;
     private String field19713;
-    private Class2250 field19714;
+    private ITextComponent field19714;
     private Class263 field19715;
     private int field19716;
     
@@ -52,7 +54,7 @@ public class Class4400 implements Class4252<Class5800>
         return this.field19713;
     }
     
-    public Class2250 method13241() {
+    public ITextComponent method13241() {
         return this.field19714;
     }
     

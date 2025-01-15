@@ -14,12 +14,12 @@ import java.util.Map;
 
 public class Class3831 extends Class3820
 {
-    private static final Map<Class7499<?>, Class3831> field17386;
+    private static final Map<EntityType<?>, Class3831> field17386;
     private final int field17387;
     private final int field17388;
-    private final Class7499<?> field17389;
+    private final EntityType<?> field17389;
     
-    public Class3831(final Class7499<?> field17389, final int field17390, final int field17391, final Class8959 class8959) {
+    public Class3831(final EntityType<?> field17389, final int field17390, final int field17391, final Class8959 class8959) {
         super(class8959);
         this.field17389 = field17389;
         this.field17387 = field17390;
@@ -31,7 +31,7 @@ public class Class3831 extends Class3820
     public Class2201 method11694(final Class7075 class7075) {
         final Class1847 method21654 = class7075.method21654();
         if (!method21654.field10067) {
-            final Class8321 method21655 = class7075.method21651();
+            final ItemStack method21655 = class7075.method21651();
             final BlockPos method21656 = class7075.method21639();
             final Direction method21657 = class7075.method21648();
             final Class7096 method21658 = method21654.method6701(method21656);
@@ -61,8 +61,8 @@ public class Class3831 extends Class3820
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13326);
         if (method2716.method21449() != Class2165.field12881) {
             return Class9355.method34676(method2715);
@@ -88,7 +88,7 @@ public class Class3831 extends Class3820
         return Class9355.method34676(method2715);
     }
     
-    public boolean method11769(final Class51 class51, final Class7499<?> b) {
+    public boolean method11769(final Class51 class51, final EntityType<?> b) {
         return Objects.equals(this.method11773(class51), b);
     }
     
@@ -97,7 +97,7 @@ public class Class3831 extends Class3820
     }
     
     @Nullable
-    public static Class3831 method11771(final Class7499<?> class7499) {
+    public static Class3831 method11771(final EntityType<?> class7499) {
         return Class3831.field17386.get(class7499);
     }
     
@@ -105,12 +105,12 @@ public class Class3831 extends Class3820
         return Iterables.unmodifiableIterable((Iterable)Class3831.field17386.values());
     }
     
-    public Class7499<?> method11773(final Class51 class51) {
+    public EntityType<?> method11773(final Class51 class51) {
         if (class51 != null) {
             if (class51.method316("EntityTag", 10)) {
                 final Class51 method327 = class51.method327("EntityTag");
                 if (method327.method316("id", 8)) {
-                    return Class7499.method23355(method327.method323("id")).orElse(this.field17389);
+                    return EntityType.method23355(method327.method323("id")).orElse(this.field17389);
                 }
             }
         }

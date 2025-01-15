@@ -39,31 +39,31 @@ public enum Class230
     field840("half_vertical_right", "vhr", " ##", " ##", " ##"), 
     field841("half_horizontal_bottom", "hhb", "   ", "###", "###"), 
     field842("border", "bo", "###", "# #", "###"), 
-    field843("curly_border", "cbo", new Class8321(Class7521.field29388)), 
+    field843("curly_border", "cbo", new ItemStack(Class7521.field29388)),
     field844("gradient", "gra", "# #", " # ", " # "), 
     field845("gradient_up", "gru", " # ", " # ", "# #"), 
-    field846("bricks", "bri", new Class8321(Class7521.field29282)), 
+    field846("bricks", "bri", new ItemStack(Class7521.field29282)),
     field847("globe", "glb"), 
-    field848("creeper", "cre", new Class8321(Class7739.field31527)), 
-    field849("skull", "sku", new Class8321(Class7739.field31524)), 
-    field850("flower", "flo", new Class8321(Class7521.field29274)), 
-    field851("mojang", "moj", new Class8321(Class7739.field31342));
+    field848("creeper", "cre", new ItemStack(Class7739.field31527)),
+    field849("skull", "sku", new ItemStack(Class7739.field31524)),
+    field850("flower", "flo", new ItemStack(Class7521.field29274)),
+    field851("mojang", "moj", new ItemStack(Class7739.field31342));
     
     public static final int field852;
     public static final int field853;
     private final String field854;
     private final String field855;
     private final String[] field856;
-    private Class8321 field857;
+    private ItemStack field857;
     
     private Class230(final String field854, final String field855) {
         this.field856 = new String[3];
-        this.field857 = Class8321.field34174;
+        this.field857 = ItemStack.field34174;
         this.field854 = field854;
         this.field855 = field855;
     }
     
-    private Class230(final String s2, final String s3, final Class8321 field857) {
+    private Class230(final String s2, final String s3, final ItemStack field857) {
         this(s2, s3);
         this.field857 = field857;
     }

@@ -24,7 +24,7 @@ public class Class850 extends Class763
     private int field4524;
     private int field4525;
     
-    public Class850(final Class7499<? extends Class850> class7499, final Class1847 class7500) {
+    public Class850(final EntityType<? extends Class850> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4524 = Integer.MIN_VALUE;
         this.field2420 = 1.0f;

@@ -830,7 +830,7 @@ public class Class388 extends Class387 implements Class389
     public void method1352(final Entity class399) {
         if (!(class399 instanceof Class859)) {
             if (!(class399 instanceof Class422)) {
-                final Class7499<?> method1642 = class399.method1642();
+                final EntityType<?> method1642 = class399.method1642();
                 final int n = method1642.method23380() * 16;
                 final int method1643 = method1642.method23381();
                 if (this.field2271.containsKey(class399.method1643())) {

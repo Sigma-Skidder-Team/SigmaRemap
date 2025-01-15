@@ -25,7 +25,7 @@ public class Class424 extends Entity
     public Class51 field2580;
     public static final Class8810<BlockPos> field2581;
     
-    public Class424(final Class7499<? extends Class424> class7499, final Class1847 class7500) {
+    public Class424(final EntityType<? extends Class424> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2573 = Class7521.field29175.method11878();
         this.field2575 = true;
@@ -34,9 +34,9 @@ public class Class424 extends Entity
     }
     
     public Class424(final Class1847 class1847, final double field2392, final double field2393, final double field2394, final Class7096 field2395) {
-        this(Class7499.field28983, class1847);
+        this(EntityType.field28983, class1847);
         this.field2573 = field2395;
-        this.field2386 = true;
+        this.preventEntitySpawning = true;
         this.method1656(field2392, field2393 + (1.0f - this.method1931()) / 2.0f, field2394);
         this.method1936(Vec3d.ZERO);
         this.field2392 = field2392;
@@ -144,7 +144,7 @@ public class Class424 extends Entity
                                 }
                             }
                             else {
-                                final boolean method21701 = method21700.method21750(new Class7073(this.field2391, method21697, Direction.DOWN, Class8321.field34174, Direction.UP));
+                                final boolean method21701 = method21700.method21750(new Class7073(this.field2391, method21697, Direction.DOWN, ItemStack.field34174, Direction.UP));
                                 final boolean b3 = Class3986.method12131(this.field2391.method6701(method21697.method1139())) && (!b || !b2);
                                 final boolean b4 = this.field2573.method21752(this.field2391, method21697) && !b3;
                                 if (method21701 && b4) {

@@ -8,6 +8,7 @@ import java.util.Map;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture$Type;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class6993 implements Class6991
 {
@@ -33,7 +34,7 @@ public class Class6993 implements Class6991
     }
     
     @Override
-    public Class2250 method21403() {
+    public ITextComponent method21403() {
         return new Class2260(this.field27284.getName());
     }
     

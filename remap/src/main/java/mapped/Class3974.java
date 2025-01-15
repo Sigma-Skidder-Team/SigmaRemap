@@ -34,7 +34,7 @@ public class Class3974 extends Class3833
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final Class1847 class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        final Class8321 method2715 = class7099.method2715(class7100);
+        final ItemStack method2715 = class7099.method2715(class7100);
         final Class3820 method2716 = method2715.method27622();
         final Class3833 class7102 = (method2716 instanceof Class4036) ? Class3974.field17949.getOrDefault(((Class4036)method2716).method12240(), Class7521.field29147) : Class7521.field29147;
         final boolean b = class7102 == Class7521.field29147;
@@ -43,7 +43,7 @@ public class Class3974 extends Class3833
             return Class2201.field13401;
         }
         if (!b2) {
-            final Class8321 class7103 = new Class8321(this.field17951);
+            final ItemStack class7103 = new ItemStack(this.field17951);
             if (!method2715.method27620()) {
                 if (!class7099.method2885(class7103)) {
                     class7099.method2822(class7103, false);
@@ -65,8 +65,8 @@ public class Class3974 extends Class3833
     }
     
     @Override
-    public Class8321 method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return (this.field17951 != Class7521.field29147) ? new Class8321(this.field17951) : super.method11862(class1855, class1856, class1857);
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+        return (this.field17951 != Class7521.field29147) ? new ItemStack(this.field17951) : super.method11862(class1855, class1856, class1857);
     }
     
     @Override

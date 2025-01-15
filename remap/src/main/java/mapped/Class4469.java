@@ -141,7 +141,7 @@ public abstract class Class4469 extends Class4473
         if (!class1852.method21415(new BlockPos(method13437, method13438, method13439))) {
             return false;
         }
-        final Class845 class1853 = Class7499.field28974.method23371(class1851.method6744());
+        final Class845 class1853 = EntityType.field28974.method23371(class1851.method6744());
         class1853.method2663(class1853.method2701());
         class1853.method1730(method13437 + 0.5, method13438, method13439 + 0.5, 0.0f, 0.0f);
         class1853.method4188(class1851, class1851.method6784(new BlockPos(class1853)), Class2101.field12177, null, null);

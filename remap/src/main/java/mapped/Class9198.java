@@ -75,7 +75,7 @@ public class Class9198
             final Class754 class5744 = iterator.next();
             if (!this.field38985.contains(class5744.method1865())) {
                 if (!Class9463.method35173().method35191().method31751(class5744)) {
-                    if (!class5744.method1841().method8459().equals("")) {
+                    if (!class5744.getName().method8459().equals("")) {
                         continue;
                     }
                 }
@@ -88,7 +88,7 @@ public class Class9198
             final JsonArray jsonArray = new JsonArray();
             while (iterator2.hasNext() && n++ < 70) {
                 final Entity class5745 = iterator2.next();
-                jsonArray.add(class5745.method1841().method8459());
+                jsonArray.add(class5745.getName().method8459());
                 this.field38985.add(class5745.method1865());
             }
             if (this.field38989 != null) {

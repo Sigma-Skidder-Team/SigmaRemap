@@ -7,7 +7,6 @@ package mapped;
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
 import javax.annotation.Nullable;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Objects;
 import java.util.function.Function;
@@ -45,7 +44,7 @@ public class Class9168
     }
     
     @Nullable
-    public Class6313 method33469(final Class6313 class6313, final Class8321 class6314, final Class1847 class6315, final Class511 class6316) {
+    public Class6313 method33469(final Class6313 class6313, final ItemStack class6314, final Class1847 class6315, final Class511 class6316) {
         final boolean method28987 = Class8571.method28987();
         if (method28987) {
             Class9168.field38843 = null;

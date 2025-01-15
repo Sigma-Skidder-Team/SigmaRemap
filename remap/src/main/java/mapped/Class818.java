@@ -19,7 +19,7 @@ public class Class818 extends Class789
     public int field4386;
     public boolean field4387;
     
-    public Class818(final Class7499<? extends Class818> class7499, final Class1847 class7500) {
+    public Class818(final EntityType<? extends Class818> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4385 = 1.0f;
         this.field4386 = this.field2423.nextInt(6000) + 6000;
@@ -111,11 +111,11 @@ public class Class818 extends Class789
     }
     
     public Class818 method4816(final Class788 class788) {
-        return Class7499.field28966.method23371(this.field2391);
+        return EntityType.field28966.method23371(this.field2391);
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return Class818.field4380.test(class8321);
     }
     

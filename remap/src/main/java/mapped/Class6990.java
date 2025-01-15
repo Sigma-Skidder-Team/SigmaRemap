@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class6990 implements Class6988, Class6991
@@ -26,7 +28,7 @@ public class Class6990 implements Class6988, Class6991
     }
     
     @Override
-    public Class2250 method21401() {
+    public ITextComponent method21401() {
         return new Class2259("spectatorMenu.team_teleport.prompt", new Object[0]);
     }
     
@@ -36,7 +38,7 @@ public class Class6990 implements Class6988, Class6991
     }
     
     @Override
-    public Class2250 method21403() {
+    public ITextComponent method21403() {
         return new Class2259("spectatorMenu.team_teleport", new Object[0]);
     }
     

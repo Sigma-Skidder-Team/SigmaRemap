@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.util.text;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -10,18 +10,21 @@ import java.util.stream.Stream;
 import java.util.List;
 import java.util.Iterator;
 import com.mojang.brigadier.Message;
+import mapped.Class2116;
+import mapped.Class2260;
+import mapped.Class8768;
 
-public interface Class2250 extends Message, Iterable<Class2250>
+public interface ITextComponent extends Message, Iterable<ITextComponent>
 {
-    Class2250 method8455(final Class8768 p0);
+    ITextComponent method8455(final Class8768 p0);
     
     Class8768 method8456();
     
-    default Class2250 method8457(final String s) {
+    default ITextComponent method8457(final String s) {
         return this.method8458(new Class2260(s));
     }
     
-    Class2250 method8458(final Class2250 p0);
+    ITextComponent method8458(final ITextComponent p0);
     
     String method8459();
     
@@ -48,7 +51,7 @@ public interface Class2250 extends Message, Iterable<Class2250>
     default String method8461() {
         final StringBuilder sb = new StringBuilder();
         String anObject = "";
-        for (final Class2250 class2250 : this.method8463()) {
+        for (final ITextComponent class2250 : this.method8463()) {
             final String method8459 = class2250.method8459();
             if (method8459.isEmpty()) {
                 continue;
@@ -69,43 +72,43 @@ public interface Class2250 extends Message, Iterable<Class2250>
         return sb.toString();
     }
     
-    List<Class2250> method8462();
+    List<ITextComponent> method8462();
     
-    Stream<Class2250> method8463();
+    Stream<ITextComponent> method8463();
     
-    default Stream<Class2250> method8464() {
-        return this.method8463().map((Function<? super Class2250, ? extends Class2250>)Class2250::method8470);
+    default Stream<ITextComponent> method8464() {
+        return this.method8463().map((Function<? super ITextComponent, ? extends ITextComponent>) ITextComponent::method8470);
     }
     
-    default Iterator<Class2250> iterator() {
+    default Iterator<ITextComponent> iterator() {
         return this.method8464().iterator();
     }
     
-    Class2250 method8465();
+    ITextComponent method8465();
     
-    default Class2250 method8466() {
-        final Class2250 method8465 = this.method8465();
+    default ITextComponent method8466() {
+        final ITextComponent method8465 = this.method8465();
         method8465.method8455(this.method8456().method30425());
-        final Iterator<Class2250> iterator = this.method8462().iterator();
+        final Iterator<ITextComponent> iterator = this.method8462().iterator();
         while (iterator.hasNext()) {
             method8465.method8458(iterator.next().method8466());
         }
         return method8465;
     }
     
-    default Class2250 method8467(final Consumer<Class8768> consumer) {
+    default ITextComponent method8467(final Consumer<Class8768> consumer) {
         consumer.accept(this.method8456());
         return this;
     }
     
-    default Class2250 method8468(final Class2116... array) {
+    default ITextComponent method8468(final Class2116... array) {
         for (int length = array.length, i = 0; i < length; ++i) {
             this.method8469(array[i]);
         }
         return this;
     }
     
-    default Class2250 method8469(final Class2116 class2116) {
+    default ITextComponent method8469(final Class2116 class2116) {
         final Class8768 method8456 = this.method8456();
         if (class2116.method8255()) {
             method8456.method30413(class2116);
@@ -137,8 +140,8 @@ public interface Class2250 extends Message, Iterable<Class2250>
         return this;
     }
     
-    default Class2250 method8470(final Class2250 class2250) {
-        final Class2250 method8465 = class2250.method8465();
+    default ITextComponent method8470(final ITextComponent class2250) {
+        final ITextComponent method8465 = class2250.method8465();
         method8465.method8455(class2250.method8456().method30426());
         return method8465;
     }

@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class749 extends Class516<Class3417>
 {
     private static final Class1932 field4047;
     
-    public Class749(final Class3417 class3417, final Class464 class3418, final Class2250 class3419) {
+    public Class749(final Class3417 class3417, final Class464 class3418, final ITextComponent class3419) {
         super(class3417, class3418, class3419);
     }
     
@@ -21,7 +23,7 @@ public class Class749 extends Class516<Class3417>
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), 8.0f, 4.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
@@ -36,7 +38,7 @@ public class Class749 extends Class516<Class3417>
         final boolean b = method27622 == Class7739.field31521;
         final boolean b2 = method27622 == Class7739.field31369;
         final boolean b3 = method27622 == Class7739.field30967;
-        final Class8321 method27623 = this.field3077.method10878(0).method20053();
+        final ItemStack method27623 = this.field3077.method10878(0).method20053();
         boolean b4 = false;
         Class6356 method27624;
         if (method27623.method27622() != Class7739.field31425) {

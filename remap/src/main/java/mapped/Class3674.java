@@ -20,7 +20,7 @@ public class Class3674 extends Class3666
         int n = 0;
         int n2 = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (!Class3674.field16959.test(method2157)) {
                     if (!Class3674.field16960.test(method2157)) {
@@ -43,13 +43,13 @@ public class Class3674 extends Class3666
         return n != 0 && n2 >= 1;
     }
     
-    public Class8321 method11303(final Class473 class473) {
-        final Class8321 class474 = new Class8321(Class7739.field31532, 3);
+    public ItemStack method11303(final Class473 class473) {
+        final ItemStack class474 = new ItemStack(Class7739.field31532, 3);
         final Class51 method27659 = class474.method27659("Fireworks");
         final Class52 class475 = new Class52();
         int n = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method27660 = class473.method2157(i);
+            final ItemStack method27660 = class473.method2157(i);
             if (!method27660.method27620()) {
                 if (!Class3674.field16960.test(method27660)) {
                     if (Class3674.field16961.test(method27660)) {
@@ -77,8 +77,8 @@ public class Class3674 extends Class3666
     }
     
     @Override
-    public Class8321 method11292() {
-        return new Class8321(Class7739.field31532);
+    public ItemStack method11292() {
+        return new ItemStack(Class7739.field31532);
     }
     
     @Override

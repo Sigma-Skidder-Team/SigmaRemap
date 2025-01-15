@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class2257 extends Class2255
 {
@@ -43,7 +44,7 @@ public class Class2257 extends Class2255
     }
     
     @Override
-    public Class2250 method8465() {
+    public ITextComponent method8465() {
         return new Class2257(this.field13802, this.field13803, this.field13801, this.field13806, this.field13807);
     }
     

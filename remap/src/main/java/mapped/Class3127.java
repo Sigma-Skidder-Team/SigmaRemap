@@ -14,7 +14,7 @@ public class Class3127 extends Class3090
         this.method9849(Class2108.field12225, Class4535.field20006.method13527(Class5116.method16014(Class6738.field26498, true)).method28610(Class7133.field27819.method21889(Class6926.field27145)));
         Class9218.method34000(this);
         this.method9849(Class2108.field12228, Class4535.field19985.method13527(Class5113.field22059).method28610(Class7133.field27818.method21889(Class6926.field27145)));
-        this.method9839(Class1976.field10948, new Class6828(Class7499.field28977, 10, 4, 4));
+        this.method9839(Class1976.field10948, new Class6828(EntityType.field28977, 10, 4, 4));
     }
     
     @Override

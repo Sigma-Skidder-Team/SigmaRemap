@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.Collection;
 import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Map;
 
 public class Class8467
@@ -26,7 +28,7 @@ public class Class8467
         return this.field34750.get(class1932);
     }
     
-    public Class6878 method28261(final Class1932 class1932, final Class2250 class1933) {
+    public Class6878 method28261(final Class1932 class1932, final ITextComponent class1933) {
         final Class6878 class1934 = new Class6878(class1932, class1933);
         this.field34750.put(class1932, class1934);
         return class1934;

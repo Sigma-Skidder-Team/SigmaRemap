@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 import java.io.DataOutput;
 
@@ -39,7 +41,7 @@ public class Class42 implements Class41
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
+    public ITextComponent method263(final String s, final int n) {
         return new Class2260("");
     }
     

@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class8695 implements ArgumentType<Class6319>
 {
@@ -19,7 +20,7 @@ public class Class8695 implements ArgumentType<Class6319>
         return new Class8695();
     }
     
-    public static Class2250 method29807(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+    public static ITextComponent method29807(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         return ((Class6319)commandContext.getArgument(s, (Class)Class6319.class)).method18705((Class7492)commandContext.getSource(), ((Class7492)commandContext.getSource()).method23210(2));
     }
     

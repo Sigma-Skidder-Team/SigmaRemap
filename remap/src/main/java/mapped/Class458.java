@@ -4,16 +4,18 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Random;
 
 public class Class458 extends Class456
 {
     private static final Random field2714;
-    private Class2265<Class8321> field2715;
+    private Class2265<ItemStack> field2715;
     
     public Class458(final Class5412<?> class5412) {
         super(class5412);
-        this.field2715 = Class2265.method8507(9, Class8321.field34174);
+        this.field2715 = Class2265.method8507(9, ItemStack.field34174);
     }
     
     public Class458() {
@@ -39,7 +41,7 @@ public class Class458 extends Class456
         return n;
     }
     
-    public int method2334(final Class8321 class8321) {
+    public int method2334(final ItemStack class8321) {
         for (int i = 0; i < this.field2715.size(); ++i) {
             if (this.field2715.get(i).method27620()) {
                 this.method2160(i, class8321);
@@ -50,14 +52,14 @@ public class Class458 extends Class456
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.dispenser", new Object[0]);
     }
     
     @Override
     public void method2179(final Class51 class51) {
         super.method2179(class51);
-        this.field2715 = Class2265.method8507(this.method2239(), Class8321.field34174);
+        this.field2715 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2715);
         }
@@ -73,12 +75,12 @@ public class Class458 extends Class456
     }
     
     @Override
-    public Class2265<Class8321> method2246() {
+    public Class2265<ItemStack> method2246() {
         return this.field2715;
     }
     
     @Override
-    public void method2247(final Class2265<Class8321> field2715) {
+    public void method2247(final Class2265<ItemStack> field2715) {
         this.field2715 = field2715;
     }
     

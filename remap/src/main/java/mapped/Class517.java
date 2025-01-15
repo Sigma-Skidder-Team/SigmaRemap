@@ -8,12 +8,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Collection;
 import com.google.common.collect.Ordering;
+import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class517<T extends Class3418> extends Class516<T>
 {
     public boolean field3103;
     
-    public Class517(final T t, final Class464 class464, final Class2250 class465) {
+    public Class517(final T t, final Class464 class464, final ITextComponent class465) {
         super(t, class464, class465);
     }
     

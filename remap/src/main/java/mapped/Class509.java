@@ -27,19 +27,19 @@ public class Class509 extends Entity
     private UUID field2913;
     private BlockPos field2914;
     
-    public Class509(final Class7499<? extends Class509> class7499, final Class1847 class7500) {
+    public Class509(final EntityType<? extends Class509> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2421 = true;
     }
     
     public Class509(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this(Class7499.field29021, class1847);
+        this(EntityType.field29021, class1847);
         this.method1730(n, n2, n3, this.field2399, this.field2400);
         this.method1937(n4, n5, n6);
     }
     
     public Class509(final Class1847 class1847, final Class511 field2904, final Entity field2905, final Axis class1848) {
-        this(Class7499.field29021, class1847);
+        this(EntityType.field29021, class1847);
         this.field2904 = field2904;
         final BlockPos class1849 = new BlockPos(field2904);
         this.method1730(class1849.getX() + 0.5, class1849.getY() + 0.5, class1849.getZ() + 0.5, this.field2399, this.field2400);

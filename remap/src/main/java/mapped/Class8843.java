@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Objects;
 import javax.annotation.Nullable;
 
@@ -11,9 +13,9 @@ public class Class8843
 {
     private final BlockPos field37167;
     private final Class181 field37168;
-    private final Class2250 field37169;
+    private final ITextComponent field37169;
     
-    public Class8843(final BlockPos field37167, final Class181 field37168, final Class2250 field37169) {
+    public Class8843(final BlockPos field37167, final Class181 field37168, final ITextComponent field37169) {
         this.field37167 = field37167;
         this.field37168 = field37168;
         this.field37169 = field37169;
@@ -30,7 +32,7 @@ public class Class8843
             return null;
         }
         final Class465 class1857 = (Class465)method6727;
-        return new Class8843(class1856, class1857.method2390(() -> class1858.method6701(class1859)), class1857.method1874() ? class1857.method1873() : null);
+        return new Class8843(class1856, class1857.method2390(() -> class1858.method6701(class1859)), class1857.hasCustomName() ? class1857.getCustomName() : null);
     }
     
     public BlockPos method30897() {
@@ -91,7 +93,7 @@ public class Class8843
     }
     
     @Nullable
-    public Class2250 method30899() {
+    public ITextComponent method30899() {
         return this.field37169;
     }
     

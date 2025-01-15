@@ -194,7 +194,7 @@ public class Class3379 extends Class3167
             }
             else {
                 final Entity method16991 = ((Class4381)method16990).method13170(Class3379.field15514.field4683);
-                final String str = (method16991 != null) ? method16991.method1841().method8461() : "null";
+                final String str = (method16991 != null) ? method16991.getName().method8461() : "null";
                 if (this.field16090) {
                     class5721.method16961(true);
                 }

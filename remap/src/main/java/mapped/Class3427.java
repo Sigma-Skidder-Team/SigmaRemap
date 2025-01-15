@@ -81,53 +81,53 @@ public class Class3427 extends Class3426<Class473>
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
-        Class8321 class513 = Class8321.field34174;
+    public ItemStack method10858(final Class512 class512, final int n) {
+        ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
-                final Class8321 method20053 = class514.method20053();
+                final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
                 final Class2215 method20054 = Class759.method4185(class513);
                 if (n != 0) {
                     if (n >= 1 && n < 5) {
                         if (!this.method10888(method20053, 9, 45, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (n >= 5 && n < 9) {
                         if (!this.method10888(method20053, 9, 45, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (method20054.method8401() == Class295.field1682 && !this.field16151.get(8 - method20054.method8402()).method20054()) {
                         final int n2 = 8 - method20054.method8402();
                         if (!this.method10888(method20053, n2, n2 + 1, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (method20054 == Class2215.field13601 && !this.field16151.get(45).method20054()) {
                         if (!this.method10888(method20053, 45, 46, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (n >= 9 && n < 36) {
                         if (!this.method10888(method20053, 36, 45, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (n >= 36 && n < 45) {
                         if (!this.method10888(method20053, 9, 36, false)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (!this.method10888(method20053, 9, 45, false)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                 }
                 else {
                     if (!this.method10888(method20053, 9, 45, true)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                     class514.method20049(method20053, class513);
                 }
@@ -135,12 +135,12 @@ public class Class3427 extends Class3426<Class473>
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(Class8321.field34174);
+                    class514.method20055(ItemStack.field34174);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
-                final Class8321 method20055 = class514.method20047(class512, method20053);
+                final ItemStack method20055 = class514.method20047(class512, method20053);
                 if (n == 0) {
                     class512.method2822(method20055, false);
                 }
@@ -150,7 +150,7 @@ public class Class3427 extends Class3426<Class473>
     }
     
     @Override
-    public boolean method10857(final Class8321 class8321, final Class6601 class8322) {
+    public boolean method10857(final ItemStack class8321, final Class6601 class8322) {
         return class8322.field26173 != this.field16201 && super.method10857(class8321, class8322);
     }
     

@@ -40,7 +40,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     public boolean field4352;
     public int field4353;
     
-    public Class806(final Class7499<? extends Class806> class7499, final Class1847 class7500) {
+    public Class806(final EntityType<? extends Class806> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4352 = true;
         this.field2420 = 1.0f;
@@ -217,7 +217,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (field4342 != null) {
             field4342.method2256(this);
             for (int min = Math.min(field4342.method2239(), this.field4342.method2239()), i = 0; i < min; ++i) {
-                final Class8321 method2157 = field4342.method2157(i);
+                final ItemStack method2157 = field4342.method2157(i);
                 if (!method2157.method27620()) {
                     this.field4342.method2160(i, method2157.method27641());
                 }
@@ -357,7 +357,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         }
     }
     
-    public boolean method4741(final Class512 class512, final Class8321 class513) {
+    public boolean method4741(final Class512 class512, final ItemStack class513) {
         boolean b = false;
         float n = 0.0f;
         int n2 = 0;
@@ -477,7 +477,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return false;
     }
     
@@ -490,7 +490,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         super.method2676();
         if (this.field4342 != null) {
             for (int i = 0; i < this.field4342.method2239(); ++i) {
-                final Class8321 method2157 = this.field4342.method2157(i);
+                final ItemStack method2157 = this.field4342.method2157(i);
                 if (!method2157.method27620()) {
                     if (!Class8742.method30218(method2157)) {
                         this.method1766(method2157);
@@ -794,7 +794,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
             this.method2710(Class8107.field33408).method23941(method20878.method23940() * 0.25);
         }
         if (class51.method316("SaddleItem", 10)) {
-            final Class8321 method20879 = Class8321.method27619(class51.method327("SaddleItem"));
+            final ItemStack method20879 = ItemStack.method27619(class51.method327("SaddleItem"));
             if (method20879.method27622() == Class7739.field31353) {
                 this.field4342.method2160(0, method20879);
             }
@@ -952,12 +952,12 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         return false;
     }
     
-    public boolean method4767(final Class8321 class8321) {
+    public boolean method4767(final ItemStack class8321) {
         return false;
     }
     
     @Override
-    public boolean method1893(final int n, final Class8321 class8321) {
+    public boolean method1893(final int n, final ItemStack class8321) {
         final int n2 = n - 400;
         if (n2 >= 0) {
             if (n2 < 2) {

@@ -35,7 +35,7 @@ public class Class3598 extends Class3446
         return false;
     }
     
-    private boolean method11127(final Class8321 class8321) {
+    private boolean method11127(final ItemStack class8321) {
         return this.field16761.contains(class8321.method27622());
     }
     

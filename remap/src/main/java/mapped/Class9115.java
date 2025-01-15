@@ -16,7 +16,7 @@ public class Class9115
         this.field38617 = field38617;
     }
     
-    public boolean method32976(final Class8321 class8321) {
+    public boolean method32976(final ItemStack class8321) {
         if (!this.field38617.isEmpty()) {
             if (!class8321.method27620()) {
                 if (class8321.method27667()) {

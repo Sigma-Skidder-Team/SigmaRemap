@@ -13,7 +13,7 @@ public abstract class Class788 extends Class787
     public int field4200;
     public int field4201;
     
-    public Class788(final Class7499<? extends Class788> class7499, final Class1847 class7500) {
+    public Class788(final EntityType<? extends Class788> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -42,7 +42,7 @@ public abstract class Class788 extends Class787
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         final Class3820 method2716 = method2715.method27622();
         if (method2716 instanceof Class3831 && ((Class3831)method2716).method11769(method2715.method27657(), this.method1642())) {
             if (!this.field2391.field10067) {

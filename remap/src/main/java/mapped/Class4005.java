@@ -71,7 +71,7 @@ public class Class4005 extends Class3833
                     class7097.method6690(class7098, false);
                     for (int i = 0; i < class7096.method21772((Class7111<Integer>)Class4005.field18053); ++i) {
                         class7097.method6955(2001, class7098, Class3833.method11774(class7096));
-                        final Class793 class7099 = Class7499.field29035.method23371(class7097);
+                        final Class793 class7099 = EntityType.field29035.method23371(class7097);
                         class7099.method4354(-24000);
                         class7099.method4452(class7098);
                         class7099.method1730(class7098.getX() + 0.3 + i * 0.2, class7098.getY(), class7098.getZ() + 0.3, 0.0f, 0.0f);
@@ -105,7 +105,7 @@ public class Class4005 extends Class3833
     }
     
     @Override
-    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final Class8321 class1852) {
+    public void method11852(final Class1847 class1847, final Class512 class1848, final BlockPos class1849, final Class7096 class1850, final Class436 class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         this.method12169(class1847, class1849, class1850);
     }

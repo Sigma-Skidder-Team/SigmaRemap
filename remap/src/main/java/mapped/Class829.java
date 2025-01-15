@@ -12,11 +12,11 @@ public class Class829 extends Class827
 {
     private static String[] field4439;
     
-    public Class829(final Class7499<? extends Class829> class7499, final Class1847 class7500) {
+    public Class829(final EntityType<? extends Class829> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
-    public static boolean method4941(final Class7499<Class829> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4941(final EntityType<Class829> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return Class763.method4230(class7499, class7500, class7501, class7502, random) && (class7501 == Class2101.field12176 || class7500.method6994(class7502));
     }
     
@@ -65,12 +65,12 @@ public class Class829 extends Class827
     
     @Override
     public void method4929() {
-        this.method4930(Class7499.field29052);
+        this.method4930(EntityType.field29052);
         this.field2391.method6839(null, 1041, new BlockPos(this), 0);
     }
     
     @Override
-    public Class8321 method4918() {
-        return Class8321.field34174;
+    public ItemStack method4918() {
+        return ItemStack.field34174;
     }
 }

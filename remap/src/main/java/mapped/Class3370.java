@@ -44,10 +44,10 @@ public class Class3370 extends Class3167
             }
             else {
                 final Class4339 class5725 = (Class4339)class5723.method16998();
-                if (class5725.method13033() == Class7499.field28958) {
+                if (class5725.method13033() == EntityType.field28958) {
                     class5723.method16961(true);
                 }
-                if (class5725.method13033() == Class7499.field28987) {
+                if (class5725.method13033() == EntityType.field28987) {
                     class5723.method16961(true);
                 }
             }

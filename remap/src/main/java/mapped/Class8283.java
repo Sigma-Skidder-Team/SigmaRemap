@@ -5,6 +5,8 @@
 package mapped;
 
 import java.text.SimpleDateFormat;
+
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Date;
 import java.util.function.Consumer;
@@ -17,11 +19,11 @@ public class Class8283
     private static final Logger field34072;
     private static final DateFormat field34073;
     
-    public static void method27524(final File file, final int n, final int n2, final Class6153 class6153, final Consumer<Class2250> consumer) {
+    public static void method27524(final File file, final int n, final int n2, final Class6153 class6153, final Consumer<ITextComponent> consumer) {
         method27525(file, null, n, n2, class6153, consumer);
     }
     
-    public static void method27525(final File file, final String s, final int n, final int n2, final Class6153 class6153, final Consumer<Class2250> consumer) {
+    public static void method27525(final File file, final String s, final int n, final int n2, final Class6153 class6153, final Consumer<ITextComponent> consumer) {
         if (Class8726.method29984()) {
             method27526(file, s, n, n2, class6153, consumer);
         }
@@ -30,7 +32,7 @@ public class Class8283
         }
     }
     
-    private static void method27526(final File parent, final String child, final int n, final int n2, final Class6153 class6153, final Consumer<Class2250> consumer) {
+    private static void method27526(final File parent, final String child, final int n, final int n2, final Class6153 class6153, final Consumer<ITextComponent> consumer) {
         final Class869 method28894 = Class8571.method28894();
         final Class1925 method28895 = method28894.method5332();
         final Class5760 method28896 = Class8571.method28962();
@@ -69,7 +71,7 @@ public class Class8283
         if (Class9570.field41306.method22605()) {
             method28903 = Class9570.method35818(Class9570.field41306, method28901, method28902);
             if (Class9570.method35820(method28903, Class9570.field41225, new Object[0])) {
-                consumer.accept((Class2250)Class9570.method35826(method28903, Class9570.field41420, new Object[0]));
+                consumer.accept((ITextComponent)Class9570.method35826(method28903, Class9570.field41420, new Object[0]));
                 return;
             }
             method28902 = (File)Class9570.method35826(method28903, Class9570.field41421, new Object[0]);
@@ -82,7 +84,7 @@ public class Class8283
                     consumer2.accept(Class9570.method35826(o, Class9570.field41422, new Object[0]));
                 }
                 else {
-                    final Class2250 class6156;
+                    final ITextComponent class6156;
                     new Class2259("screenshot.success", new Object[] { class6156 });
                     final Class2259 class6155;
                     consumer2.accept(class6155);

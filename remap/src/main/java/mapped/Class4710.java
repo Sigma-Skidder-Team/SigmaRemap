@@ -268,8 +268,8 @@ public abstract class Class4710<T extends Class511, M extends Class5845<T>> exte
         if (t.field2941 <= 0) {
             if (!t.method2744()) {
                 if (method1654 != Class290.field1665) {
-                    if (t.method1874() || t instanceof Class512) {
-                        final String method1655 = Class2116.method8259(t.method1841().getString());
+                    if (t.hasCustomName() || t instanceof Class512) {
+                        final String method1655 = Class2116.method8259(t.getName().getString());
                         if ("Dinnerbone".equals(method1655) || "Grumm".equals(method1655)) {
                             if (!(t instanceof Class512) || ((Class512)t).method2895(Class189.field610)) {
                                 class7351.method22564(0.0, t.method1931() + 0.1f, 0.0);

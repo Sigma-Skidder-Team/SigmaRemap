@@ -42,7 +42,7 @@ public class Class426 extends Entity
     private Class511 field2611;
     private UUID field2612;
     
-    public Class426(final Class7499<? extends Class426> class7499, final Class1847 class7500) {
+    public Class426(final EntityType<? extends Class426> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2601 = Class8644.field36250;
         this.field2602 = Lists.newArrayList();
@@ -55,7 +55,7 @@ public class Class426 extends Entity
     }
     
     public Class426(final Class1847 class1847, final double n, final double n2, final double n3) {
-        this(Class7499.field28957, class1847);
+        this(EntityType.field28957, class1847);
         this.method1656(n, n2, n3);
     }
     

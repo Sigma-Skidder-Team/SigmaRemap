@@ -4,7 +4,6 @@
 
 package mapped;
 
-import it.unimi.dsi.fastutil.objects.ObjectSet;
 import java.util.ArrayList;
 import java.util.Collection;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
@@ -235,7 +234,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     private void method3430(final int n, final int n2, final int n3, final int n4) {
-        Class8321 method26164 = null;
+        ItemStack method26164 = null;
         for (int i = 0; i < this.field3466.method25523(); ++i) {
             final Class7997 method26165 = this.field3466.method25522(i);
             final int n5 = method26165.method26162() + n;
@@ -455,7 +454,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     public void method3439(final Class3662<?> class3662, final List<Class6601> list) {
-        final Class8321 method11292 = class3662.method11292();
+        final ItemStack method11292 = class3662.method11292();
         this.field3466.method25525(class3662);
         this.field3466.method25521(Class120.method619(method11292), list.get(0).field26175, list.get(0).field26176);
         this.method3455(this.field3470.method10938(), this.field3470.method10939(), this.field3470.method10937(), class3662, class3662.method11294().iterator(), 0);

@@ -59,19 +59,19 @@ public class Class8868<T extends Entity>
         return this;
     }
     
-    public Class7499<T> method31162(final String s) {
+    public EntityType<T> method31162(final String s) {
         if (this.field37280) {
             try {
                 Class5494.method16768().getSchema(DataFixUtils.makeKey(Class9528.method35579().getWorldVersion())).getChoiceType(Class9451.field40625, s);
-                return new Class7499<T>(this.field37278, this.field37279, this.field37280, this.field37281, this.field37282, this.field37283, this.field37284);
+                return new EntityType<T>(this.field37278, this.field37279, this.field37280, this.field37281, this.field37282, this.field37283, this.field37284);
             }
             catch (final IllegalStateException ex) {
                 if (Class9528.field41021) {
                     throw ex;
                 }
             }
-            Class7499.method23388().warn("No data fixer registered for entity {}", (Object)s);
+            EntityType.method23388().warn("No data fixer registered for entity {}", (Object)s);
         }
-        return new Class7499<T>(this.field37278, this.field37279, this.field37280, this.field37281, this.field37282, this.field37283, this.field37284);
+        return new EntityType<T>(this.field37278, this.field37279, this.field37280, this.field37281, this.field37282, this.field37283, this.field37284);
     }
 }

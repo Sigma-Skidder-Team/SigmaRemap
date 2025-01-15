@@ -346,7 +346,7 @@ public class Class8619
     
     private Class852 method29248() {
         this.field36166.method6685(new BlockPos(0, 128, 0));
-        final Class852 class852 = Class7499.field28976.method23371(this.field36166);
+        final Class852 class852 = EntityType.field28976.method23371(this.field36166);
         class852.method5127().method33696(Class7193.field27948);
         class852.method1730(0.0, 128.0, 0.0, this.field36166.field10062.nextFloat() * 360.0f, 0.0f);
         this.field36166.method6886(class852);
@@ -358,8 +358,8 @@ public class Class8619
         if (class852.method1865().equals(this.field36175)) {
             this.field36165.method21064(class852.method2664() / class852.method2701());
             this.field36169 = 0;
-            if (class852.method1874()) {
-                this.field36165.method21070(class852.method1871());
+            if (class852.hasCustomName()) {
+                this.field36165.method21070(class852.getDisplayName());
             }
         }
     }

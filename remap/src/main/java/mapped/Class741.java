@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class741 extends Class516<Class3437>
 {
     private static final Class1932 field4011;
     
-    public Class741(final Class3437 class3437, final Class464 class3438, final Class2250 class3439) {
+    public Class741(final Class3437 class3437, final Class464 class3438, final ITextComponent class3439) {
         super(class3437, class3438, class3439);
         this.field3155 = false;
         this.field3076 = 133;
@@ -24,7 +26,7 @@ public class Class741 extends Class516<Class3437>
     @Override
     public void method2973(final int n, final int n2) {
         this.field3156.method6610(this.field3148.method8461(), 8.0f, 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override

@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.io.File;
 import java.util.Locale;
@@ -25,7 +26,7 @@ public abstract class Class527 extends Class598 implements Class563
 {
     private static final Logger field3146;
     private static final Set<String> field3147;
-    public final Class2250 field3148;
+    public final ITextComponent field3148;
     public final List<Class574> field3149;
     public Class869 field3150;
     public Class1796 field3151;
@@ -36,13 +37,13 @@ public abstract class Class527 extends Class598 implements Class563
     public Class1844 field3156;
     private URI field3157;
     
-    public Class527(final Class2250 field3148) {
+    public Class527(final ITextComponent field3148) {
         this.field3149 = Lists.newArrayList();
         this.field3154 = Lists.newArrayList();
         this.field3148 = field3148;
     }
     
-    public Class2250 method3026() {
+    public ITextComponent method3026() {
         return this.field3148;
     }
     
@@ -87,14 +88,14 @@ public abstract class Class527 extends Class598 implements Class563
         return t;
     }
     
-    public void method3014(final Class8321 class8321, final int n, final int n2) {
+    public void method3014(final ItemStack class8321, final int n, final int n2) {
         this.method3032(this.method3030(class8321), n, n2);
     }
     
-    public List<String> method3030(final Class8321 class8321) {
-        final List<Class2250> method27668 = class8321.method27668(this.field3150.field4684, this.field3150.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
+    public List<String> method3030(final ItemStack class8321) {
+        final List<ITextComponent> method27668 = class8321.method27668(this.field3150.field4684, this.field3150.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
         final ArrayList arrayList = Lists.newArrayList();
-        final Iterator<Class2250> iterator = method27668.iterator();
+        final Iterator<ITextComponent> iterator = method27668.iterator();
         while (iterator.hasNext()) {
             arrayList.add(iterator.next().method8461());
         }
@@ -163,15 +164,15 @@ public abstract class Class527 extends Class598 implements Class563
         }
     }
     
-    public void method3033(final Class2250 class2250, final int n, final int n2) {
+    public void method3033(final ITextComponent class2250, final int n, final int n2) {
         if (class2250 != null && class2250.method8456().method30411() != null) {
             final Class9390 method30411 = class2250.method8456().method30411();
             if (method30411.method34911() == Class1961.field10698) {
-                Class8321 class2251 = Class8321.field34174;
+                ItemStack class2251 = ItemStack.field34174;
                 try {
                     final Class51 method30412 = Class5704.method16938(method30411.method34912().getString());
                     if (method30412 instanceof Class51) {
-                        class2251 = Class8321.method27619(method30412);
+                        class2251 = ItemStack.method27619(method30412);
                     }
                 }
                 catch (final CommandSyntaxException ex) {}
@@ -187,7 +188,7 @@ public abstract class Class527 extends Class598 implements Class563
                     try {
                         final Class51 method30413 = Class5704.method16938(method30411.method34912().getString());
                         final ArrayList arrayList = Lists.newArrayList();
-                        final Class2250 method30414 = Class5953.method17871(method30413.method323("name"));
+                        final ITextComponent method30414 = Class5953.method17871(method30413.method323("name"));
                         if (method30414 != null) {
                             arrayList.add(method30414.method8461());
                         }
@@ -211,7 +212,7 @@ public abstract class Class527 extends Class598 implements Class563
     public void method3034(final String s, final boolean b) {
     }
     
-    public boolean method3035(final Class2250 class2250) {
+    public boolean method3035(final ITextComponent class2250) {
         if (class2250 == null) {
             return false;
         }

@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -14,7 +15,7 @@ import java.util.UUID;
 
 public class Class427 extends Entity
 {
-    private static final Class8810<Class8321> field2613;
+    private static final Class8810<ItemStack> field2613;
     private int field2614;
     private int field2615;
     private int field2616;
@@ -22,20 +23,20 @@ public class Class427 extends Entity
     private UUID field2618;
     public final float field2619;
     
-    public Class427(final Class7499<? extends Class427> class7499, final Class1847 class7500) {
+    public Class427(final EntityType<? extends Class427> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2616 = 5;
         this.field2619 = (float)(Math.random() * 3.141592653589793 * 2.0);
     }
     
     public Class427(final Class1847 class1847, final double n, final double n2, final double n3) {
-        this(Class7499.field28992, class1847);
+        this(EntityType.field28992, class1847);
         this.method1656(n, n2, n3);
         this.field2399 = this.field2423.nextFloat() * 360.0f;
         this.method1937(this.field2423.nextDouble() * 0.2 - 0.1, 0.2, this.field2423.nextDouble() * 0.2 - 0.1);
     }
     
-    public Class427(final Class1847 class1847, final double n, final double n2, final double n3, final Class8321 class1848) {
+    public Class427(final Class1847 class1847, final double n, final double n2, final double n3, final ItemStack class1848) {
         this(class1847, n, n2, n3);
         this.method2108(class1848);
     }
@@ -47,7 +48,7 @@ public class Class427 extends Entity
     
     @Override
     public void method1649() {
-        this.method1650().method33565(Class427.field2613, Class8321.field34174);
+        this.method1650().method33565(Class427.field2613, ItemStack.field34174);
     }
     
     @Override
@@ -161,7 +162,7 @@ public class Class427 extends Entity
     }
     
     private boolean method2101() {
-        final Class8321 method2107 = this.method2107();
+        final ItemStack method2107 = this.method2107();
         if (this.method1768()) {
             if (this.field2615 != 32767) {
                 if (this.field2614 != -32768) {
@@ -177,8 +178,8 @@ public class Class427 extends Entity
     }
     
     private void method2102(final Class427 class427) {
-        final Class8321 method2107 = this.method2107();
-        final Class8321 method2108 = class427.method2107();
+        final ItemStack method2107 = this.method2107();
+        final ItemStack method2108 = class427.method2107();
         if (Objects.equals(this.method2109(), class427.method2109())) {
             if (method2103(method2107, method2108)) {
                 if (method2108.method27690() >= method2107.method27690()) {
@@ -191,23 +192,23 @@ public class Class427 extends Entity
         }
     }
     
-    public static boolean method2103(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method2103(final ItemStack class8321, final ItemStack class8322) {
         return class8322.method27622() == class8321.method27622() && class8322.method27690() + class8321.method27690() <= class8322.method27628() && !(class8322.method27656() ^ class8321.method27656()) && (!class8322.method27656() || class8322.method27657().equals(class8321.method27657()));
     }
     
-    public static Class8321 method2104(final Class8321 class8321, final Class8321 class8322, final int b) {
+    public static ItemStack method2104(final ItemStack class8321, final ItemStack class8322, final int b) {
         final int min = Math.min(Math.min(class8321.method27628(), b) - class8321.method27690(), class8322.method27690());
-        final Class8321 method27641 = class8321.method27641();
+        final ItemStack method27641 = class8321.method27641();
         method27641.method27692(min);
         class8322.method27693(min);
         return method27641;
     }
     
-    private static void method2105(final Class427 class427, final Class8321 class428, final Class8321 class429) {
+    private static void method2105(final Class427 class427, final ItemStack class428, final ItemStack class429) {
         class427.method2108(method2104(class428, class429, 64));
     }
     
-    private static void method2106(final Class427 class427, final Class8321 class428, final Class427 class429, final Class8321 class430) {
+    private static void method2106(final Class427 class427, final ItemStack class428, final Class427 class429, final ItemStack class430) {
         method2105(class427, class428, class430);
         class427.field2615 = Math.max(class427.field2615, class429.field2615);
         class427.field2614 = Math.min(class427.field2614, class429.field2614);
@@ -270,7 +271,7 @@ public class Class427 extends Entity
         if (class51.method316("Thrower", 10)) {
             this.field2617 = Class9346.method34644(class51.method327("Thrower"));
         }
-        this.method2108(Class8321.method27619(class51.method327("Item")));
+        this.method2108(ItemStack.method27619(class51.method327("Item")));
         if (this.method2107().method27620()) {
             this.method1652();
         }
@@ -279,7 +280,7 @@ public class Class427 extends Entity
     @Override
     public void method1736(final Class512 class512) {
         if (!this.field2391.field10067) {
-            final Class8321 method2107 = this.method2107();
+            final ItemStack method2107 = this.method2107();
             final Class3820 method2108 = method2107.method27622();
             final int method2109 = method2107.method27690();
             if (this.field2615 == 0) {
@@ -298,8 +299,8 @@ public class Class427 extends Entity
     }
     
     @Override
-    public Class2250 method1841() {
-        final Class2250 method1873 = this.method1873();
+    public ITextComponent getName() {
+        final ITextComponent method1873 = this.getCustomName();
         return (method1873 == null) ? new Class2259(this.method2107().method27649(), new Object[0]) : method1873;
     }
     
@@ -320,11 +321,11 @@ public class Class427 extends Entity
         return method1854;
     }
     
-    public Class8321 method2107() {
+    public ItemStack method2107() {
         return this.method1650().method33568(Class427.field2613);
     }
     
-    public void method2108(final Class8321 class8321) {
+    public void method2108(final ItemStack class8321) {
         this.method1650().method33569(Class427.field2613, class8321);
     }
     

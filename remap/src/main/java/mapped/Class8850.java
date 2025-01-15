@@ -27,7 +27,7 @@ public class Class8850
     private static final int field37217 = 13;
     private static final int field37218 = 8;
     private static final int field37219 = 8;
-    private static final Class8810<Class8321> field37220;
+    private static final Class8810<ItemStack> field37220;
     private static boolean field37221;
     
     public static void method30983(final Entity class399, final Class1656 class400) {
@@ -204,7 +204,7 @@ public class Class8850
         return Class8571.method28867(n, 0.0, 15.0);
     }
     
-    public static int method30994(final Class8321 class8321) {
+    public static int method30994(final ItemStack class8321) {
         if (class8321 == null) {
             return 0;
         }
@@ -305,7 +305,7 @@ public class Class8850
         }
     }
     
-    public static Class8321 method30999(final Class427 class427) {
+    public static ItemStack method30999(final Class427 class427) {
         return class427.method1650().method33568(Class8850.field37220);
     }
     

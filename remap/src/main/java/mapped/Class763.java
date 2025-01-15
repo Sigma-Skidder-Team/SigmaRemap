@@ -8,7 +8,7 @@ import java.util.Random;
 
 public abstract class Class763 extends Class787 implements Class762
 {
-    public Class763(final Class7499<? extends Class763> class7499, final Class1847 class7500) {
+    public Class763(final EntityType<? extends Class763> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4108 = 5;
     }
@@ -75,7 +75,7 @@ public abstract class Class763 extends Class787 implements Class762
         return class1851.method6992(Class237.field911, class1852) <= random.nextInt(32) && (class1851.method6744().method6770() ? class1851.method6970(class1852, 10) : class1851.method6969(class1852)) <= random.nextInt(8);
     }
     
-    public static boolean method4230(final Class7499<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4230(final EntityType<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6954() != Class2113.field12290) {
             if (method4229(class7500, class7502, random)) {
                 if (Class759.method4178(class7499, class7500, class7501, class7502, random)) {
@@ -86,7 +86,7 @@ public abstract class Class763 extends Class787 implements Class762
         return false;
     }
     
-    public static boolean method4231(final Class7499<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4231(final EntityType<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6954() != Class2113.field12290 && Class759.method4178(class7499, class7500, class7501, class7502, random);
     }
     
@@ -106,11 +106,11 @@ public abstract class Class763 extends Class787 implements Class762
     }
     
     @Override
-    public Class8321 method2790(final Class8321 class8321) {
+    public ItemStack method2790(final ItemStack class8321) {
         if (!(class8321.method27622() instanceof Class4085)) {
-            return Class8321.field34174;
+            return ItemStack.field34174;
         }
-        final Class8321 method12291 = Class4085.method12291(this, ((Class4085)class8321.method27622()).method12289());
-        return method12291.method27620() ? new Class8321(Class7739.field31280) : method12291;
+        final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.method27622()).method12289());
+        return method12291.method27620() ? new ItemStack(Class7739.field31280) : method12291;
     }
 }

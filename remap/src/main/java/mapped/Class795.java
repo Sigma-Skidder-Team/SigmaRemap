@@ -8,7 +8,7 @@ public abstract class Class795 extends Class794
 {
     private int field4246;
     
-    public Class795(final Class7499<? extends Class795> class7499, final Class1847 class7500) {
+    public Class795(final EntityType<? extends Class795> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     

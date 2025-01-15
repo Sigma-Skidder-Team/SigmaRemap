@@ -19,13 +19,13 @@ public class Class507 extends Entity
     private Class511 field2895;
     private UUID field2896;
     
-    public Class507(final Class7499<? extends Class507> class7499, final Class1847 class7500) {
+    public Class507(final EntityType<? extends Class507> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2893 = 22;
     }
     
     public Class507(final Class1847 class1847, final double n, final double n2, final double n3, final float n4, final int field2891, final Class511 class1848) {
-        this(Class7499.field28979, class1847);
+        this(EntityType.field28979, class1847);
         this.field2891 = field2891;
         this.method2600(class1848);
         this.field2399 = n4 * 57.295776f;

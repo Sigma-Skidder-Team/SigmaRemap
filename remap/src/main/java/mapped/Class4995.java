@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.HashMap;
 import java.util.Properties;
@@ -276,7 +277,7 @@ public class Class4995
     }
     
     public static String method15170(final Class527 class527) {
-        final Class2250 method3026 = class527.method3026();
+        final ITextComponent method3026 = class527.method3026();
         return (method3026 != null) ? method3026.method8459() : null;
     }
     

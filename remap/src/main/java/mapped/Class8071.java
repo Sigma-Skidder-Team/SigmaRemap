@@ -227,8 +227,8 @@ public class Class8071
             method6703.method11824(this.field33247, class354, method6701);
         }
         if (!this.method26484()) {
-            final Class8321 method6705 = this.field33248.method2713();
-            final Class8321 method6706 = method6705.method27641();
+            final ItemStack method6705 = this.field33248.method2713();
+            final ItemStack method6706 = method6705.method27641();
             final boolean method6707 = this.field33248.method2825(method6701);
             method6705.method27638(this.field33247, method6701, class354, this.field33248);
             if (method6704) {
@@ -241,15 +241,15 @@ public class Class8071
         return true;
     }
     
-    public Class2201 method26479(final Class512 class512, final Class1847 class513, final Class8321 class514, final Class316 class515) {
+    public Class2201 method26479(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515) {
         if (this.field33249 == Class101.field301) {
             return Class2201.field13402;
         }
         if (!class512.method2906().method25769(class514.method27622())) {
             final int method27690 = class514.method27690();
             final int method27691 = class514.method27632();
-            final Class9355<Class8321> method27692 = class514.method27625(class513, class512, class515);
-            final Class8321 class516 = method27692.method34673();
+            final Class9355<ItemStack> method27692 = class514.method27625(class513, class512, class515);
+            final ItemStack class516 = method27692.method34673();
             if (class516 == class514) {
                 if (class516.method27690() == method27690) {
                     if (class516.method27652() <= 0) {
@@ -276,7 +276,7 @@ public class Class8071
                 }
             }
             if (class516.method27620()) {
-                class512.method2716(class515, Class8321.field34174);
+                class512.method2716(class515, ItemStack.field34174);
             }
             if (!class512.method2756()) {
                 ((Class513)class512).method2929(class512.field3008);
@@ -286,7 +286,7 @@ public class Class8071
         return Class2201.field13402;
     }
     
-    public Class2201 method26480(final Class512 class512, final Class1847 class513, final Class8321 class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final Class512 class512, final Class1847 class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         final BlockPos method21447 = class516.method21447();
         final Class7096 method21448 = class513.method6701(method21447);
         if (this.field33249 != Class101.field301) {

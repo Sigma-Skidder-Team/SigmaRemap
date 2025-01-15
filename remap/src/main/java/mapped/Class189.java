@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public enum Class189
 {
     field610(0, "cape"), 
@@ -17,7 +19,7 @@ public enum Class189
     private final int field617;
     private final int field618;
     private final String field619;
-    private final Class2250 field620;
+    private final ITextComponent field620;
     
     private Class189(final int field617, final String s) {
         this.field617 = field617;
@@ -34,7 +36,7 @@ public enum Class189
         return this.field619;
     }
     
-    public Class2250 method830() {
+    public ITextComponent method830() {
         return this.field620;
     }
 }

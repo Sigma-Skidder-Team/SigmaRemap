@@ -12,10 +12,10 @@ public class Class5533 extends Class5509
     private static Map<String, Integer> field22814;
     
     public Class5533() {
-        super(Class7499.field29008, "ocelot", 0.4f);
+        super(EntityType.field29008, "ocelot", 0.4f);
     }
     
-    public Class5533(final Class7499 class7499, final String s, final float n) {
+    public Class5533(final EntityType class7499, final String s, final float n) {
         super(class7499, s, n);
     }
     

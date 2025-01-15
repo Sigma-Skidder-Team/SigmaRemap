@@ -8,22 +8,22 @@ import java.util.function.Predicate;
 
 public abstract class Class4085 extends Class3820
 {
-    public static final Predicate<Class8321> field18189;
-    public static final Predicate<Class8321> field18190;
+    public static final Predicate<ItemStack> field18189;
+    public static final Predicate<ItemStack> field18190;
     
     public Class4085(final Class8959 class8959) {
         super(class8959);
     }
     
-    public Predicate<Class8321> method12289() {
+    public Predicate<ItemStack> method12289() {
         return this.method12290();
     }
     
-    public abstract Predicate<Class8321> method12290();
+    public abstract Predicate<ItemStack> method12290();
     
-    public static Class8321 method12291(final Class511 class511, final Predicate<Class8321> predicate) {
+    public static ItemStack method12291(final Class511 class511, final Predicate<ItemStack> predicate) {
         if (!predicate.test(class511.method2715(Class316.field1878))) {
-            return predicate.test(class511.method2715(Class316.field1877)) ? class511.method2715(Class316.field1877) : Class8321.field34174;
+            return predicate.test(class511.method2715(Class316.field1877)) ? class511.method2715(Class316.field1877) : ItemStack.field34174;
         }
         return class511.method2715(Class316.field1878);
     }

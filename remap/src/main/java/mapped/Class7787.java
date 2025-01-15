@@ -4,19 +4,21 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class7787
 {
     private static String[] field31869;
-    private Class2250 field31870;
+    private ITextComponent field31870;
     private Class8499 field31871;
     private Class9315 field31872;
     private String field31873;
     
-    public Class2250 method24990() {
+    public ITextComponent method24990() {
         return this.field31870;
     }
     
-    public void method24991(final Class2250 field31870) {
+    public void method24991(final ITextComponent field31870) {
         this.field31870 = field31870;
     }
     

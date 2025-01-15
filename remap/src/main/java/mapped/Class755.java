@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class755 extends Class754
 {
@@ -84,7 +85,7 @@ public class Class755 extends Class754
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
         Class869.method5277().field4647.method3807().method3761(class2250);
     }
 }

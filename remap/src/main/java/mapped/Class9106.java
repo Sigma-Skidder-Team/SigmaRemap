@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class9106
 {
     private final Class869 field38573;
@@ -47,7 +49,7 @@ public class Class9106
         }
     }
     
-    public void method32922(final Class8321 class8321) {
+    public void method32922(final ItemStack class8321) {
         if (this.field38574 != null) {
             this.field38574.method21662(class8321);
         }
@@ -98,7 +100,7 @@ public class Class9106
         return (this.field38573.field4682 != null) ? this.field38573.field4682.method27336() : Class101.field297;
     }
     
-    public static Class2250 method32929(final String str) {
+    public static ITextComponent method32929(final String str) {
         return new Class2261("key." + str).method8469(Class2116.field12326);
     }
 }

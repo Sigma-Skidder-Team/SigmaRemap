@@ -98,7 +98,7 @@ public class Class1862 implements Class1860
         this(class1847, class1848.method7019(), class1848.method7024(), class1848.method7039(), class1848.method7102(), class1848.method7103(), class1848.method7041(), class1848.method7014(), null);
         final Iterator<Class51> iterator = class1848.method7096().iterator();
         while (iterator.hasNext()) {
-            Class7499.method23378((Class51)iterator.next(), class1847, class1850 -> {
+            EntityType.method23378((Class51)iterator.next(), class1847, class1850 -> {
                 this.method7010(class1850);
                 return class1850;
             });
@@ -443,7 +443,7 @@ public class Class1862 implements Class1860
         }
     }
     
-    public <T extends Entity> void method7060(final Class7499<?> class7499, final AxisAlignedBB class7500, final List<? super T> list, final Predicate<? super T> predicate) {
+    public <T extends Entity> void method7060(final EntityType<?> class7499, final AxisAlignedBB class7500, final List<? super T> list, final Predicate<? super T> predicate) {
         final int method35644 = MathHelper.floor((class7500.field25074 - 2.0) / 16.0);
         final int method35645 = MathHelper.floor((class7500.field25077 + 2.0) / 16.0);
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);

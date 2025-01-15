@@ -10,10 +10,10 @@ import java.util.Locale;
 import java.util.Iterator;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class9232
 {
@@ -31,7 +31,7 @@ public class Class9232
             class7492.method23257(new Class2259("commands.title.cleared.multiple", new Object[] { collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.title.cleared.single", new Object[] { collection.iterator().next().method1871() }), true);
+            class7492.method23257(new Class2259("commands.title.cleared.single", new Object[] { collection.iterator().next().getDisplayName() }), true);
         }
         return collection.size();
     }
@@ -46,12 +46,12 @@ public class Class9232
             class7492.method23257(new Class2259("commands.title.reset.multiple", new Object[] { collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.title.reset.single", new Object[] { collection.iterator().next().method1871() }), true);
+            class7492.method23257(new Class2259("commands.title.reset.single", new Object[] { collection.iterator().next().getDisplayName() }), true);
         }
         return collection.size();
     }
     
-    private static int method34036(final Class7492 class7492, final Collection<Class513> collection, final Class2250 class7493, final Class2019 class7494) throws CommandSyntaxException {
+    private static int method34036(final Class7492 class7492, final Collection<Class513> collection, final ITextComponent class7493, final Class2019 class7494) throws CommandSyntaxException {
         for (final Class513 class7495 : collection) {
             class7495.field3039.method17469(new Class4352(class7494, Class9479.method35294(class7492, class7493, class7495, 0)));
         }
@@ -59,7 +59,7 @@ public class Class9232
             class7492.method23257(new Class2259("commands.title.show." + class7494.name().toLowerCase(Locale.ROOT) + ".multiple", new Object[] { collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.title.show." + class7494.name().toLowerCase(Locale.ROOT) + ".single", new Object[] { collection.iterator().next().method1871() }), true);
+            class7492.method23257(new Class2259("commands.title.show." + class7494.name().toLowerCase(Locale.ROOT) + ".single", new Object[] { collection.iterator().next().getDisplayName() }), true);
         }
         return collection.size();
     }
@@ -74,7 +74,7 @@ public class Class9232
             class7492.method23257(new Class2259("commands.title.times.multiple", new Object[] { collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.title.times.single", new Object[] { collection.iterator().next().method1871() }), true);
+            class7492.method23257(new Class2259("commands.title.times.single", new Object[] { collection.iterator().next().getDisplayName() }), true);
         }
         return collection.size();
     }

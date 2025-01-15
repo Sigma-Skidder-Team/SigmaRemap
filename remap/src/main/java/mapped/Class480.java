@@ -20,12 +20,12 @@ public class Class480 extends Class443 implements Class441
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
         return false;
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
         return false;
     }
 }

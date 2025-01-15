@@ -117,7 +117,7 @@ public class Class8447
     private static void method28189(final Map<String, Class5509> map, final Class5509 class5509, final String str) {
         if (map.containsKey(str)) {
             String str2 = "?";
-            final Class8651<Class7499, Class5412> method16815 = class5509.method16815();
+            final Class8651<EntityType, Class5412> method16815 = class5509.method16815();
             if (method16815.method29436().isPresent()) {
                 str2 = method16815.method29436().get().method23366();
             }

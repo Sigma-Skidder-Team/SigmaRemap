@@ -140,12 +140,12 @@ public class Class3363 extends Class3355
         }
     }
     
-    public static boolean method10667(final Class8321 class8321) {
+    public static boolean method10667(final ItemStack class8321) {
         final float method10669 = method10669(class8321);
         final Class3167 method10670 = Class9463.method35173().method35189().method21551(Class3363.class);
         for (int i = 9; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method10671 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method10671 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 if (method10669(method10671) > method10669) {
                     if (method10671.method27622() instanceof Class4077 || !method10670.method9883("Sword")) {
                         return false;
@@ -159,7 +159,7 @@ public class Class3363 extends Class3355
     public void method10668(final int n, final boolean b) {
         for (int i = 9; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 if (method10667(method20053)) {
                     if (method10669(method20053) > 0.0f) {
                         if (method20053.method27622() instanceof Class4077 || !this.method9883("Sword")) {
@@ -174,7 +174,7 @@ public class Class3363 extends Class3355
         }
     }
     
-    public static float method10669(final Class8321 class8321) {
+    public static float method10669(final ItemStack class8321) {
         float n = 0.0f;
         final Class3820 method27622 = class8321.method27622();
         if (method27622 instanceof Class4072) {
@@ -186,7 +186,7 @@ public class Class3363 extends Class3355
         return n + (Class8742.method30195(Class7882.field32358, class8321) * 1.25f + Class8742.method30195(Class7882.field32362, class8321) * 0.01f);
     }
     
-    public boolean method10670(final Class8321 class8321, final int n) {
+    public boolean method10670(final ItemStack class8321, final int n) {
         final Class3820 method27622 = class8321.method27622();
         if (!class8321.method27664().method8461().toLowerCase().contains("(right click)")) {
             if (!class8321.method27664().method8461().toLowerCase().contains("(clique direito)")) {
@@ -347,7 +347,7 @@ public class Class3363 extends Class3355
         int n = 0;
         for (int i = 0; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 final Class3820 method20054 = method20053.method27622();
                 if (method20053.method27622() instanceof Class4036) {
                     if (!Class3260.field15749.contains(((Class4036)method20054).method12240())) {
@@ -363,7 +363,7 @@ public class Class3363 extends Class3355
         int n = 0;
         for (int i = 0; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 if (method20053.method27622() == class3820) {
                     n += method20053.field34176;
                 }
@@ -375,7 +375,7 @@ public class Class3363 extends Class3355
     private void method10674(final int n, final boolean b) {
         for (int i = 9; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 if (method10678(method20053)) {
                     if (Class3363.field16014 != i) {
                         if (!method10667(method20053)) {
@@ -407,7 +407,7 @@ public class Class3363 extends Class3355
     private void method10675(final int n, final boolean b) {
         for (int i = 9; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 if (method10679(method20053)) {
                     if (Class3363.field16016 != i) {
                         if (!method10667(method20053)) {
@@ -439,7 +439,7 @@ public class Class3363 extends Class3355
     private void method10676(final int n, final boolean b) {
         for (int i = 9; i < 45; ++i) {
             if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                 if (method10680(method20053)) {
                     if (Class3363.field16015 != i) {
                         if (!method10667(method20053)) {
@@ -482,12 +482,12 @@ public class Class3363 extends Class3355
         }
     }
     
-    public static boolean method10678(final Class8321 class8321) {
+    public static boolean method10678(final ItemStack class8321) {
         if (class8321.method27622() instanceof Class4073) {
             final float method10681 = method10681(class8321);
             for (int i = 9; i < 45; ++i) {
                 if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                    final Class8321 method10682 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                    final ItemStack method10682 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                     if (method10681(method10682) > method10681) {
                         if (method10682.method27622() instanceof Class4073) {
                             return false;
@@ -500,12 +500,12 @@ public class Class3363 extends Class3355
         return false;
     }
     
-    public static boolean method10679(final Class8321 class8321) {
+    public static boolean method10679(final ItemStack class8321) {
         if (class8321.method27622() instanceof Class4074) {
             final float method10681 = method10681(class8321);
             for (int i = 9; i < 45; ++i) {
                 if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                    final Class8321 method10682 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                    final ItemStack method10682 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                     if (method10681(method10682) > method10681) {
                         if (method10682.method27622() instanceof Class4074) {
                             return false;
@@ -518,12 +518,12 @@ public class Class3363 extends Class3355
         return false;
     }
     
-    public static boolean method10680(final Class8321 class8321) {
+    public static boolean method10680(final ItemStack class8321) {
         if (class8321.method27622() instanceof Class4075) {
             final float method10681 = method10681(class8321);
             for (int i = 9; i < 45; ++i) {
                 if (Class3363.field15514.field4684.field3008.method10878(i).method20054()) {
-                    final Class8321 method10682 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
+                    final ItemStack method10682 = Class3363.field15514.field4684.field3008.method10878(i).method20053();
                     if (method10681(method10682) > method10681) {
                         if (method10682.method27622() instanceof Class4075) {
                             if (!method10667(class8321)) {
@@ -538,7 +538,7 @@ public class Class3363 extends Class3355
         return false;
     }
     
-    public static float method10681(final Class8321 class8321) {
+    public static float method10681(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         if (method27622 instanceof Class4072) {
             final String lowerCase = method27622.method11715().method8461().toLowerCase();

@@ -33,7 +33,7 @@ public class Class791 extends Class789
     private Class3630 field4226;
     private static final Predicate<Class427> field4227;
     
-    public Class791(final Class7499<? extends Class791> class7499, final Class1847 class7500) {
+    public Class791(final EntityType<? extends Class791> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4110 = new Class6572(this);
         if (!this.method2625()) {
@@ -42,7 +42,7 @@ public class Class791 extends Class789
     }
     
     @Override
-    public boolean method2779(final Class8321 class8321) {
+    public boolean method2779(final ItemStack class8321) {
         final Class2215 method4185 = Class759.method4185(class8321);
         return this.method2718(method4185).method27620() && method4185 == Class2215.field13600 && super.method2779(class8321);
     }
@@ -178,7 +178,7 @@ public class Class791 extends Class789
     @Nullable
     @Override
     public Class788 method4349(final Class788 class788) {
-        final Class791 class789 = Class7499.field29010.method23371(this.field2391);
+        final Class791 class789 = EntityType.field29010.method23371(this.field2391);
         if (class788 instanceof Class791) {
             class789.method4409(this, (Class791)class788);
         }
@@ -335,7 +335,7 @@ public class Class791 extends Class789
                         if (this.method4380() > 100) {
                             if (this.method4413(this.method2718(Class2215.field13600))) {
                                 if (!this.field2391.field10067) {
-                                    this.method1803(Class2215.field13600, Class8321.field34174);
+                                    this.method1803(Class2215.field13600, ItemStack.field34174);
                                 }
                                 this.method4375(false);
                             }
@@ -463,7 +463,7 @@ public class Class791 extends Class789
     public void method4165(final Class427 class427) {
         if (this.method2718(Class2215.field13600).method27620()) {
             if (Class791.field4227.test(class427)) {
-                final Class8321 method2107 = class427.method2107();
+                final ItemStack method2107 = class427.method2107();
                 this.method1803(Class2215.field13600, method2107);
                 this.field4119[Class2215.field13600.method8402()] = 2.0f;
                 this.method2746(class427, method2107.method27690());
@@ -541,7 +541,7 @@ public class Class791 extends Class789
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
@@ -574,13 +574,13 @@ public class Class791 extends Class789
                         if (!this.method1706()) {
                             this.method4412();
                             this.method4379(true);
-                            final Class8321 method2716 = this.method2718(Class2215.field13600);
+                            final ItemStack method2716 = this.method2718(Class2215.field13600);
                             if (!method2716.method27620()) {
                                 if (!class512.field3025.field27304) {
                                     this.method1766(method2716);
                                 }
                             }
-                            this.method1803(Class2215.field13600, new Class8321(method2715.method27622(), 1));
+                            this.method1803(Class2215.field13600, new ItemStack(method2715.method27622(), 1));
                             this.method4358(class512, method2715);
                             break Label_0281;
                         }
@@ -610,11 +610,11 @@ public class Class791 extends Class789
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return class8321.method27622() == Class7521.field29761.method11704();
     }
     
-    private boolean method4413(final Class8321 class8321) {
+    private boolean method4413(final ItemStack class8321) {
         return this.method4357(class8321) || class8321.method27622() == Class7521.field29344.method11704();
     }
     

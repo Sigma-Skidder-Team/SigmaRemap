@@ -77,7 +77,7 @@ public class Class4476 extends Class4475
                 final int method13439 = this.method13439(2, 5);
                 if (class1853.method21415(new BlockPos(method13437, method13438, method13439))) {
                     this.field19861 = true;
-                    final Class778 class1859 = Class7499.field29047.method23371(class1851.method6744());
+                    final Class778 class1859 = EntityType.field29047.method23371(class1851.method6744());
                     class1859.method4190();
                     class1859.method1730(method13437 + 0.5, method13438, method13439 + 0.5, 0.0f, 0.0f);
                     class1859.method4188(class1851, class1851.method6784(new BlockPos(method13437, method13438, method13439)), Class2101.field12177, null, null);
@@ -97,7 +97,7 @@ public class Class4476 extends Class4475
             final int method13439 = this.method13439(2, 5);
             if (class1852.method21415(new BlockPos(method13437, method13438, method13439))) {
                 this.field19862 = true;
-                final Class800 class1853 = Class7499.field28964.method23371(class1851.method6744());
+                final Class800 class1853 = EntityType.field28964.method23371(class1851.method6744());
                 class1853.method4190();
                 class1853.method1730(method13437 + 0.5, method13438, method13439 + 0.5, 0.0f, 0.0f);
                 class1853.method4188(class1851, class1851.method6784(new BlockPos(method13437, method13438, method13439)), Class2101.field12177, null, null);

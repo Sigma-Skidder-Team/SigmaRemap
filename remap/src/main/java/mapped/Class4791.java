@@ -39,7 +39,7 @@ public class Class4791 extends Class4703<Class862>
         class863.method22564(-0.5, -0.5, -0.5);
         method1884.method5793().method33363(class863.method22569(), class864.method25214(Class8752.method30263()), null, method1885.method6451(class865), 1.0f, 1.0f, 1.0f, i, Class1904.field10335);
         class863.method22568();
-        final Class8321 method1886 = class862.method5198();
+        final ItemStack method1886 = class862.method5198();
         if (!method1886.method27620()) {
             final boolean b = method1886.method27622() instanceof Class4094;
             class863.method22564(0.0, 0.0, 0.4375);

@@ -19,7 +19,7 @@ public class Class835 extends Class834
         return (class296.method947() & 0xFF) | (class296.method948() & 0xFF) << 8 | (class297.method813() & 0xFF) << 16 | (class298.method813() & 0xFF) << 24;
     }
     
-    public Class835(final Class7499<? extends Class835> class7499, final Class1847 class7500) {
+    public Class835(final EntityType<? extends Class835> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4452 = true;
     }
@@ -72,14 +72,14 @@ public class Class835 extends Class834
     }
     
     @Override
-    public void method4955(final Class8321 class8321) {
+    public void method4955(final ItemStack class8321) {
         super.method4955(class8321);
         class8321.method27658().method298("BucketVariantTag", this.method4978());
     }
     
     @Override
-    public Class8321 method4956() {
-        return new Class8321(Class7739.field31362);
+    public ItemStack method4956() {
+        return new ItemStack(Class7739.field31362);
     }
     
     @Override

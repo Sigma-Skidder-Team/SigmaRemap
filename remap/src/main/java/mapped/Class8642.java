@@ -7,12 +7,11 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import net.minecraft.world.storage.SessionLockException;
-import java.io.InputStream;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.DataOutputStream;
-import java.io.OutputStream;
 import java.io.FileOutputStream;
 import com.mojang.datafixers.DataFixer;
 import java.io.File;
@@ -138,7 +137,7 @@ public class Class8642 implements Class8643
             file.renameTo(dest);
         }
         catch (final Exception ex) {
-            Class8642.field36243.warn("Failed to save player data for {}", (Object)class512.method1841().getString());
+            Class8642.field36243.warn("Failed to save player data for {}", (Object)class512.getName().getString());
         }
     }
     
@@ -153,7 +152,7 @@ public class Class8642 implements Class8643
             }
         }
         catch (final Exception ex) {
-            Class8642.field36243.warn("Failed to load player data for {}", (Object)class512.method1841().getString());
+            Class8642.field36243.warn("Failed to load player data for {}", (Object)class512.getName().getString());
         }
         if (method26590 != null) {
             class512.method1757(Class9346.method34651(this.field36249, Class1959.field10676, method26590, method26590.method316("DataVersion", 3) ? method26590.method319("DataVersion") : -1));

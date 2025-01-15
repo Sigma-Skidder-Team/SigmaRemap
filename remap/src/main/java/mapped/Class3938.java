@@ -18,7 +18,7 @@ public class Class3938 extends Class3936
     }
     
     @Override
-    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final Class8321 class1851) {
+    public void method11853(final Class1847 class1847, final BlockPos class1848, final Class7096 class1849, final Class511 class1850, final ItemStack class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
         final Class436 method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class493) {
@@ -42,7 +42,7 @@ public class Class3938 extends Class3936
                                     class1847.method6955(2001, method21699.method26068(), Class3833.method11774(method21699.method26065()));
                                 }
                             }
-                            final Class767 class1850 = Class7499.field29048.method23371(class1847);
+                            final Class767 class1850 = EntityType.field29048.method23371(class1847);
                             final BlockPos method21700 = method21698.method25270(1, 2, 0).method26068();
                             class1850.method1730(method21700.getX() + 0.5, method21700.getY() + 0.55, method21700.getZ() + 0.5, (method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f, 0.0f);
                             class1850.field2951 = ((method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f);
@@ -64,7 +64,7 @@ public class Class3938 extends Class3936
         }
     }
     
-    public static boolean method12052(final Class1847 class1847, final BlockPos class1848, final Class8321 class1849) {
+    public static boolean method12052(final Class1847 class1847, final BlockPos class1848, final ItemStack class1849) {
         if (class1849.method27622() == Class7739.field31524) {
             if (class1848.getY() >= 2) {
                 if (class1847.method6954() != Class2113.field12290) {

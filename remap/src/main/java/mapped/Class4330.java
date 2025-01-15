@@ -8,8 +8,9 @@ import com.google.common.base.MoreObjects;
 import java.io.IOException;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.GameProfile;
-import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class4330 implements Class4252<Class5800>
@@ -44,7 +45,7 @@ public class Class4330 implements Class4252<Class5800>
             GameProfile gameProfile = null;
             int n = 0;
             Class101 class8655 = null;
-            Class2250 class8656 = null;
+            ITextComponent class8656 = null;
             switch (Class6018.field24495[this.field19387.ordinal()]) {
                 case 1: {
                     gameProfile = new GameProfile(class8654.method29504(), class8654.method29513(16));

@@ -163,7 +163,7 @@ public class Class501 extends Class436
     }
     
     public void method2559(final Class511 class511) {
-        this.field2865 = class511.method1841().getString();
+        this.field2865 = class511.getName().getString();
     }
     
     public BlockPos method2560() {

@@ -9,7 +9,7 @@ public class Class845 extends Class844
     private static String[] field4496;
     public static final float field4508;
     
-    public Class845(final Class7499<? extends Class845> class7499, final Class1847 class7500) {
+    public Class845(final EntityType<? extends Class845> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4190();
         if (this.field4507 != null) {
@@ -73,6 +73,6 @@ public class Class845 extends Class844
     }
     
     static {
-        field4508 = Class7499.field28974.method23369() / Class7499.field28988.method23369();
+        field4508 = EntityType.field28974.method23369() / EntityType.field28988.method23369();
     }
 }

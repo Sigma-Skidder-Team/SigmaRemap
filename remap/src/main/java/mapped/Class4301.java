@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -12,7 +14,7 @@ public class Class4301 implements Class4252<Class5800>
     private static String[] field19286;
     private UUID field19287;
     private Class1994 field19288;
-    public Class2250 field19289;
+    public ITextComponent field19289;
     private float field19290;
     private Class2200 field19291;
     private Class342 field19292;
@@ -184,7 +186,7 @@ public class Class4301 implements Class4252<Class5800>
         return this.field19288;
     }
     
-    public Class2250 method12933() {
+    public ITextComponent method12933() {
         return this.field19289;
     }
     

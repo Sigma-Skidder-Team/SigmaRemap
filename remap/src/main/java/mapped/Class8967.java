@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class8967
 {
-    float method31812(final Class8321 p0, final Class1847 p1, final Class511 p2);
+    float method31812(final ItemStack p0, final Class1847 p1, final Class511 p2);
 }

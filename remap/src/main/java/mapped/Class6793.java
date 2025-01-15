@@ -22,7 +22,7 @@ public class Class6793
         return class365.method1198(Class8233.field33805).filter(list -> list.contains(class367)).isPresent();
     }
     
-    public static boolean method20786(final Class365<?> class365, final Class8233<? extends Class511> class366, final Class7499<?> class367) {
+    public static boolean method20786(final Class365<?> class365, final Class8233<? extends Class511> class366, final EntityType<?> class367) {
         return class365.method1198((Class8233<Object>)class366).filter(class369 -> class369.method1642() == class368).filter(Class511::method1768).filter(class371 -> method20785(class370, class371)).isPresent();
     }
     
@@ -48,7 +48,7 @@ public class Class6793
         class511.method2618().method1196(Class8233.field33809, class514);
     }
     
-    public static void method20791(final Class511 class511, final Class8321 class512, final Class511 class513) {
+    public static void method20791(final Class511 class511, final ItemStack class512, final Class511 class513) {
         final Class427 class514 = new Class427(class511.field2391, class511.getPosX(), class511.method1944() - 0.30000001192092896, class511.getPosZ(), class512);
         class514.method1936(new Vec3d(new BlockPos(class513).method1136(new BlockPos(class511))).normalize().scale(0.30000001192092896));
         class514.method2114();

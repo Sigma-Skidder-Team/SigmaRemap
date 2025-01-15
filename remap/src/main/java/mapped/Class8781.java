@@ -12,7 +12,6 @@ import java.util.Collection;
 import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
@@ -27,7 +26,7 @@ public class Class8781
     
     private static int method30549(final Class7492 class7492, final Class513 class7493, final Class2120 class7494) {
         final int applyAsInt = Class2120.method8272(class7494).applyAsInt(class7493);
-        class7492.method23257(new Class2259("commands.experience.query." + class7494.field12363, new Object[] { class7493.method1871(), applyAsInt }), false);
+        class7492.method23257(new Class2259("commands.experience.query." + class7494.field12363, new Object[] { class7493.getDisplayName(), applyAsInt }), false);
         return applyAsInt;
     }
     
@@ -40,7 +39,7 @@ public class Class8781
             class7492.method23257(new Class2259("commands.experience.add." + class7493.field12363 + ".success.multiple", new Object[] { i, collection.size() }), true);
         }
         else {
-            class7492.method23257(new Class2259("commands.experience.add." + class7493.field12363 + ".success.single", new Object[] { i, ((Class513)collection.iterator().next()).method1871() }), true);
+            class7492.method23257(new Class2259("commands.experience.add." + class7493.field12363 + ".success.single", new Object[] { i, ((Class513)collection.iterator().next()).getDisplayName() }), true);
         }
         return collection.size();
     }
@@ -59,7 +58,7 @@ public class Class8781
                 class7492.method23257(new Class2259("commands.experience.set." + class7493.field12363 + ".success.multiple", new Object[] { i, collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.experience.set." + class7493.field12363 + ".success.single", new Object[] { i, ((Class513)collection.iterator().next()).method1871() }), true);
+                class7492.method23257(new Class2259("commands.experience.set." + class7493.field12363 + ".success.single", new Object[] { i, ((Class513)collection.iterator().next()).getDisplayName() }), true);
             }
             return collection.size();
         }

@@ -23,7 +23,7 @@ public class Class618 extends Class608<Class638>
         if (class638 != null) {
             final Class3820 method11704 = Class696.method3893(this.field3591).method21590().get(Class696.method3893(this.field3591).method21590().size() - this.method3040().indexOf(class638) - 1).method33115().method21696().method11704();
             if (method11704 != Class7739.field30754) {
-                Class7895.field32404.method25556(new Class2259("narrator.select", new Object[] { method11704.method11729(new Class8321(method11704)) }).getString());
+                Class7895.field32404.method25556(new Class2259("narrator.select", new Object[] { method11704.method11729(new ItemStack(method11704)) }).getString());
             }
         }
     }

@@ -8,16 +8,16 @@ public class Class410 extends Class409
 {
     private static String[] field2507;
     
-    public Class410(final Class7499<? extends Class410> class7499, final Class1847 class7500) {
+    public Class410(final EntityType<? extends Class410> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class410(final Class1847 class1847, final Class511 class1848) {
-        super(Class7499.field29036, class1848, class1847);
+        super(EntityType.field29036, class1848, class1847);
     }
     
     public Class410(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29036, n, n2, n3, class1847);
+        super(EntityType.field29036, n, n2, n3, class1847);
     }
     
     @Override
@@ -41,7 +41,7 @@ public class Class410 extends Class409
                     n = 4;
                 }
                 for (int i = 0; i < n; ++i) {
-                    final Class818 class7007 = Class7499.field28966.method23371(this.field2391);
+                    final Class818 class7007 = EntityType.field28966.method23371(this.field2391);
                     class7007.method4354(-24000);
                     class7007.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.field2399, 0.0f);
                     this.field2391.method6886(class7007);

@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 public class Class4541 extends Class4535<Class5122>
 {
     private static final Logger field20026;
-    private static final Class7499<?>[] field20027;
+    private static final EntityType<?>[] field20027;
     private static final Class7096 field20028;
     
     public Class4541(final Function<Dynamic<?>, ? extends Class5122> function) {
@@ -131,13 +131,13 @@ public class Class4541 extends Class4535<Class5122>
         return false;
     }
     
-    private Class7499<?> method13540(final Random random) {
+    private EntityType<?> method13540(final Random random) {
         return Class4541.field20027[random.nextInt(Class4541.field20027.length)];
     }
     
     static {
         field20026 = LogManager.getLogger();
-        field20027 = new Class7499[] { Class7499.field29023, Class7499.field29052, Class7499.field29052, Class7499.field29030 };
+        field20027 = new EntityType[] { EntityType.field29023, EntityType.field29052, EntityType.field29052, EntityType.field29030 };
         field20028 = Class7521.field29764.method11878();
     }
 }

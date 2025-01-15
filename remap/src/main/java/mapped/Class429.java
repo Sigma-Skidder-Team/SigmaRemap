@@ -4,20 +4,22 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class429 extends Class428
 {
     private static final Class8810<String> field2637;
-    private static final Class8810<Class2250> field2638;
+    private static final Class8810<ITextComponent> field2638;
     private final Class865 field2639;
     private int field2640;
     
-    public Class429(final Class7499<? extends Class429> class7499, final Class1847 class7500) {
+    public Class429(final EntityType<? extends Class429> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2639 = new Class866(this);
     }
     
     public Class429(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29001, class1847, n, n2, n3);
+        super(EntityType.field29001, class1847, n, n2, n3);
         this.field2639 = new Class866(this);
     }
     

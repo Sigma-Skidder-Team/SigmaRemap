@@ -19,7 +19,7 @@ public class Class422 extends Entity
     private Class513 field2541;
     
     public Class422(final Class1847 class1847, final double n, final double n2, final double n3, final boolean field2540) {
-        super(Class7499.field29057, class1847);
+        super(EntityType.field29057, class1847);
         this.field2447 = true;
         this.method1730(n, n2, n3, 0.0f, 0.0f);
         this.field2537 = 2;

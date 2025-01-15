@@ -27,12 +27,12 @@ public class Class9193
         }
     }
     
-    public static void method33641(final Class1847 class1847, final BlockPos class1848, final Class2265<Class8321> class1849) {
+    public static void method33641(final Class1847 class1847, final BlockPos class1848, final Class2265<ItemStack> class1849) {
         class1849.forEach(class1852 -> method33642(class1850, class1851.method1074(), class1851.method1075(), class1851.method1076(), class1852));
     }
     
-    public static void method33642(final Class1847 class1847, final double a, final double a2, final double a3, final Class8321 class1848) {
-        final double n = Class7499.field28992.method23369();
+    public static void method33642(final Class1847 class1847, final double a, final double a2, final double a3, final ItemStack class1848) {
+        final double n = EntityType.field28992.method23369();
         final double n2 = 1.0 - n;
         final double n3 = n / 2.0;
         final double n4 = Math.floor(a) + Class9193.field38966.nextDouble() * n2 + n3;

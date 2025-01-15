@@ -20,14 +20,14 @@ public class Class508 extends Entity
     private int field2903;
     
     public Class508(final Class1847 class1847, final double n, final double n2, final double n3, final int field2901) {
-        this(Class7499.field28981, class1847);
+        this(EntityType.field28981, class1847);
         this.method1656(n, n2, n3);
         this.field2399 = (float)(this.field2423.nextDouble() * 360.0);
         this.method1937((this.field2423.nextDouble() * 0.20000000298023224 - 0.10000000149011612) * 2.0, this.field2423.nextDouble() * 0.2 * 2.0, (this.field2423.nextDouble() * 0.20000000298023224 - 0.10000000149011612) * 2.0);
         this.field2901 = field2901;
     }
     
-    public Class508(final Class7499<? extends Class508> class7499, final Class1847 class7500) {
+    public Class508(final EntityType<? extends Class508> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2900 = 5;
     }
@@ -148,9 +148,9 @@ public class Class508 extends Entity
                 if (class512.field3014 == 0) {
                     class512.field3014 = 2;
                     class512.method2746(this, 1);
-                    final Map.Entry<Class2215, Class8321> method30222 = Class8742.method30222(Class7882.field32382, class512);
+                    final Map.Entry<Class2215, ItemStack> method30222 = Class8742.method30222(Class7882.field32382, class512);
                     if (method30222 != null) {
-                        final Class8321 class513 = method30222.getValue();
+                        final ItemStack class513 = method30222.getValue();
                         if (!class513.method27620()) {
                             if (class513.method27631()) {
                                 final int min = Math.min(this.method2606(this.field2901), class513.method27632());

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class698 extends Class527
@@ -13,7 +15,7 @@ public class Class698 extends Class527
     public Class1844 field3843;
     public boolean field3844;
     
-    public Class698(final Class2250 class2250) {
+    public Class698(final ITextComponent class2250) {
         super(class2250);
         this.field3842 = this.field3154;
         this.field3843 = Class869.method5277().field4643;

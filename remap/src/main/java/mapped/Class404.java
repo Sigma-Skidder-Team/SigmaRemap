@@ -8,18 +8,18 @@ public class Class404 extends Class402
 {
     private int field2489;
     
-    public Class404(final Class7499<? extends Class404> class7499, final Class1847 class7500) {
+    public Class404(final EntityType<? extends Class404> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2489 = 200;
     }
     
     public Class404(final Class1847 class1847, final Class511 class1848) {
-        super(Class7499.field29029, class1848, class1847);
+        super(EntityType.field29029, class1848, class1847);
         this.field2489 = 200;
     }
     
     public Class404(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29029, n, n2, n3, class1847);
+        super(EntityType.field29029, n, n2, n3, class1847);
         this.field2489 = 200;
     }
     
@@ -34,8 +34,8 @@ public class Class404 extends Class402
     }
     
     @Override
-    public Class8321 method1974() {
-        return new Class8321(Class7739.field31580);
+    public ItemStack method1974() {
+        return new ItemStack(Class7739.field31580);
     }
     
     @Override

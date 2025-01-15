@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class4099 extends Class3820
@@ -22,7 +24,7 @@ public class Class4099 extends Class3820
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11728(class8321, class8322, list, class8323);
         this.field18202.method11883(class8321, class8322, list, class8323);
     }

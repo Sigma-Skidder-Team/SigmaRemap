@@ -12,7 +12,7 @@ public class Class4035 extends Class3820
         super(class8959);
     }
     
-    public static void method12228(final Class8321 class8321, final Class5328 class8322, final int n) {
+    public static void method12228(final ItemStack class8321, final Class5328 class8322, final int n) {
         final Class51 method27658 = class8321.method27658();
         final Class52 method27659 = method27658.method328("Effects", 9);
         final Class51 e = new Class51();
@@ -23,8 +23,8 @@ public class Class4035 extends Class3820
     }
     
     @Override
-    public Class8321 method11707(final Class8321 class8321, final Class1847 class8322, final Class511 class8323) {
-        final Class8321 method11707 = super.method11707(class8321, class8322, class8323);
+    public ItemStack method11707(final ItemStack class8321, final Class1847 class8322, final Class511 class8323) {
+        final ItemStack method11707 = super.method11707(class8321, class8322, class8323);
         final Class51 method11708 = class8321.method27657();
         if (method11708 != null) {
             if (method11708.method316("Effects", 9)) {
@@ -42,6 +42,6 @@ public class Class4035 extends Class3820
                 }
             }
         }
-        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new Class8321(Class7739.field31300);
+        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new ItemStack(Class7739.field31300);
     }
 }

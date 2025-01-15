@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -26,7 +28,7 @@ public class Class2258 extends Class2255
     }
     
     @Override
-    public Class2250 method8465() {
+    public ITextComponent method8465() {
         return new Class2258(this.field13802, this.field13803, this.field13801, this.field13808);
     }
     

@@ -21,7 +21,7 @@ public class Class793 extends Class789
     private int field4241;
     public static final Predicate<Class511> field4242;
     
-    public Class793(final Class7499<? extends Class793> class7499, final Class1847 class7500) {
+    public Class793(final EntityType<? extends Class793> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4145(Class257.field1211, 0.0f);
         this.field4110 = new Class6576(this);
@@ -116,7 +116,7 @@ public class Class793 extends Class789
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
-    public static boolean method4464(final Class7499<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4464(final EntityType<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7502.getY() < class7500.method6743() + 4) {
             if (class7500.method6701(class7502.method1139()).method21696() == Class7521.field29175) {
                 if (class7500.method6993(class7502, 0) > 8) {
@@ -230,11 +230,11 @@ public class Class793 extends Class789
     @Nullable
     @Override
     public Class788 method4349(final Class788 class788) {
-        return Class7499.field29035.method23371(this.field2391);
+        return EntityType.field29035.method23371(this.field2391);
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return class8321.method27622() == Class7521.field29244.method11704();
     }
     

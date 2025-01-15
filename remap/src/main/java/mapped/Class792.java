@@ -21,7 +21,7 @@ public class Class792 extends Class789
     private int field4233;
     private int field4234;
     
-    public Class792(final Class7499<? extends Class792> class7499, final Class1847 class7500) {
+    public Class792(final EntityType<? extends Class792> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4111 = new Class7295(this, this);
         this.field4110 = new Class6566(this);
@@ -268,7 +268,7 @@ public class Class792 extends Class789
     }
     
     public Class792 method4443(final Class788 class788) {
-        final Class792 class789 = Class7499.field29017.method23371(this.field2391);
+        final Class792 class789 = EntityType.field29017.method23371(this.field2391);
         int n = this.method4446(this.field2391);
         if (this.field2423.nextInt(20) != 0) {
             if (class788 instanceof Class792 && this.field2423.nextBoolean()) {
@@ -283,7 +283,7 @@ public class Class792 extends Class789
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return this.method4442(class8321.method27622());
     }
     
@@ -298,7 +298,7 @@ public class Class792 extends Class789
             this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
             this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, true));
             this.field4115.method22062(2, new Class3555<Object>(this, Class799.class, true));
-            if (!this.method1874()) {
+            if (!this.hasCustomName()) {
                 this.method1872(new Class2259(Class8349.method27836("entity", Class792.field4229), new Object[0]));
             }
         }
@@ -331,7 +331,7 @@ public class Class792 extends Class789
         return 4;
     }
     
-    public static boolean method4447(final Class7499<Class792> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method4447(final EntityType<Class792> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Class3833 method21696 = class7500.method6701(class7502.method1139()).method21696();
         if (method21696 != Class7521.field29155) {
             if (method21696 != Class7521.field29329) {

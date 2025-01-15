@@ -22,11 +22,11 @@ public abstract class Class4158<T extends Class436>
         return false;
     }
     
-    public Class8651<Class7499, Class5412> method12456() {
-        return (Class8651<Class7499, Class5412>)((this.field18540 != null) ? Class8651.method29439(this.field18540) : null);
+    public Class8651<EntityType, Class5412> method12456() {
+        return (Class8651<EntityType, Class5412>)((this.field18540 != null) ? Class8651.method29439(this.field18540) : null);
     }
     
-    public void method12457(final Class8651<Class7499, Class5412> class8651) {
+    public void method12457(final Class8651<EntityType, Class5412> class8651) {
         this.field18540 = class8651.method29437().get();
     }
     

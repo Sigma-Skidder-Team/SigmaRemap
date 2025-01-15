@@ -13,7 +13,7 @@ public abstract class Class4703<T extends Entity>
     public final Class8551 field20283;
     public float field20284;
     public float field20285;
-    private Class7499 field20286;
+    private EntityType field20286;
     private Class1932 field20287;
     
     public Class4703(final Class8551 field20283) {
@@ -51,7 +51,7 @@ public abstract class Class4703<T extends Entity>
     
     public void method13951(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int i) {
         if (Class9570.field41417.method22619()) {
-            final Object method35842 = Class9570.method35842(Class9570.field41417, t, t.method1871().method8461(), this, class7351, class7352, i);
+            final Object method35842 = Class9570.method35842(Class9570.field41417, t, t.getDisplayName().method8461(), this, class7351, class7352, i);
             Class9570.method35841(method35842);
             final Object method35843 = Class9570.method35826(method35842, Class9570.field41226, new Object[0]);
             if (method35843 != Class7667.field30453) {
@@ -61,12 +61,12 @@ public abstract class Class4703<T extends Entity>
             }
         }
         else if (this.method13956(t)) {
-            this.method13958(t, t.method1871().method8461(), class7351, class7352, i);
+            this.method13958(t, t.getDisplayName().method8461(), class7351, class7352, i);
         }
     }
     
     public boolean method13956(final T t) {
-        return t.method1879() && t.method1874();
+        return t.method1879() && t.hasCustomName();
     }
     
     public abstract Class1932 method13950(final T p0);
@@ -100,11 +100,11 @@ public abstract class Class4703<T extends Entity>
         return this.field20283;
     }
     
-    public Class8651<Class7499, Class5412> method13960() {
-        return (Class8651<Class7499, Class5412>)((this.field20286 != null) ? Class8651.method29438(this.field20286) : null);
+    public Class8651<EntityType, Class5412> method13960() {
+        return (Class8651<EntityType, Class5412>)((this.field20286 != null) ? Class8651.method29438(this.field20286) : null);
     }
     
-    public void method13961(final Class8651<Class7499, Class5412> class8651) {
+    public void method13961(final Class8651<EntityType, Class5412> class8651) {
         this.field20286 = class8651.method29436().get();
     }
     

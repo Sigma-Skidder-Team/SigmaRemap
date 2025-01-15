@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Class9543
 {
-    private static final Map<Class7499, Integer> field41079;
+    private static final Map<EntityType, Integer> field41079;
     private static final Map<String, Integer> field41080;
     private static final Map<String, Integer> field41081;
     
@@ -20,7 +20,7 @@ public class Class9543
         return (class399 != null) ? method35625(class399.method1642()) : -1;
     }
     
-    public static int method35625(final Class7499 class7499) {
+    public static int method35625(final EntityType class7499) {
         final Integer n = Class9543.field41079.get(class7499);
         return (n != null) ? n : -1;
     }
@@ -37,10 +37,10 @@ public class Class9543
     }
     
     static {
-        field41079 = new HashMap<Class7499, Integer>();
+        field41079 = new HashMap<EntityType, Integer>();
         field41080 = new HashMap<String, Integer>();
         field41081 = new HashMap<String, Integer>();
-        for (final Class7499 obj : Class90.field210) {
+        for (final EntityType obj : Class90.field210) {
             final int method504 = Class90.field210.method504(obj);
             final Class1932 method505 = Class90.field210.method503(obj);
             final String string = method505.toString();

@@ -22,7 +22,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     private static final int[] field2752;
     private static final int[] field2753;
     private static final int[] field2754;
-    public Class2265<Class8321> field2755;
+    public Class2265<ItemStack> field2755;
     private int field2756;
     private int field2757;
     private int field2758;
@@ -33,7 +33,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     public Class466(final Class5412<?> class5412, final Class8976<? extends Class3680> field2762) {
         super(class5412);
-        this.field2755 = Class2265.method8507(3, Class8321.field34174);
+        this.field2755 = Class2265.method8507(3, ItemStack.field34174);
         this.field2760 = new Class7605(this);
         this.field2761 = Maps.newHashMap();
         this.field2762 = field2762;
@@ -122,7 +122,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     @Override
     public void method2179(final Class51 class51) {
         super.method2179(class51);
-        Class8508.method28426(class51, this.field2755 = Class2265.method8507(this.method2239(), Class8321.field34174));
+        Class8508.method28426(class51, this.field2755 = Class2265.method8507(this.method2239(), ItemStack.field34174));
         this.field2756 = class51.method318("BurnTime");
         this.field2758 = class51.method318("CookTime");
         this.field2759 = class51.method318("CookTimeTotal");
@@ -157,7 +157,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
             --this.field2756;
         }
         if (!this.field2656.field10067) {
-            final Class8321 class8321 = this.field2755.get(1);
+            final ItemStack class8321 = this.field2755.get(1);
             if (!this.method2395() && (class8321.method27620() || this.field2755.get(0).method27620())) {
                 if (!this.method2395()) {
                     if (this.field2758 > 0) {
@@ -178,7 +178,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                                 class8321.method27693(1);
                                 if (class8321.method27620()) {
                                     final Class3820 method2397 = method2396.method11720();
-                                    this.field2755.set(1, (method2397 != null) ? new Class8321(method2397) : Class8321.field34174);
+                                    this.field2755.set(1, (method2397 != null) ? new ItemStack(method2397) : ItemStack.field34174);
                                 }
                             }
                         }
@@ -211,9 +211,9 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         if (this.field2755.get(0).method27620() || class3662 == null) {
             return false;
         }
-        final Class8321 method11292 = class3662.method11292();
+        final ItemStack method11292 = class3662.method11292();
         if (!method11292.method27620()) {
-            final Class8321 class3663 = this.field2755.get(2);
+            final ItemStack class3663 = this.field2755.get(2);
             return class3663.method27620() || (class3663.method27647(method11292) && ((class3663.method27690() < this.method2254() && class3663.method27690() < class3663.method27628()) || class3663.method27690() < method11292.method27628()));
         }
         return false;
@@ -222,9 +222,9 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     private void method2397(final Class3662<?> class3662) {
         if (class3662 != null) {
             if (this.method2396(class3662)) {
-                final Class8321 class3663 = this.field2755.get(0);
-                final Class8321 method11292 = class3662.method11292();
-                final Class8321 class3664 = this.field2755.get(2);
+                final ItemStack class3663 = this.field2755.get(0);
+                final ItemStack method11292 = class3662.method11292();
+                final ItemStack class3664 = this.field2755.get(2);
                 if (!class3664.method27620()) {
                     if (class3664.method27622() == method11292.method27622()) {
                         class3664.method27692(1);
@@ -239,7 +239,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                 if (class3663.method27622() == Class7521.field29212.method11704()) {
                     if (!this.field2755.get(1).method27620()) {
                         if (this.field2755.get(1).method27622() == Class7739.field31349) {
-                            this.field2755.set(1, new Class8321(Class7739.field31350));
+                            this.field2755.set(1, new ItemStack(Class7739.field31350));
                         }
                     }
                 }
@@ -248,7 +248,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         }
     }
     
-    public int method2398(final Class8321 class8321) {
+    public int method2398(final ItemStack class8321) {
         if (!class8321.method27620()) {
             return method2392().getOrDefault(class8321.method27622(), 0);
         }
@@ -259,7 +259,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         return this.field2656.method6792().method6378(this.field2762, this, this.field2656).map((Function<? super Class3680, ? extends Integer>)Class3680::method11329).orElse(200);
     }
     
-    public static boolean method2400(final Class8321 class8321) {
+    public static boolean method2400(final ItemStack class8321) {
         return method2392().containsKey(class8321.method27622());
     }
     
@@ -272,12 +272,12 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
         return this.method2264(n, class8321);
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
         if (class8322 == Direction.DOWN) {
             if (n == 1) {
                 final Class3820 method27622 = class8321.method27622();
@@ -309,28 +309,28 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public Class8321 method2157(final int n) {
+    public ItemStack method2157(final int n) {
         return this.field2755.get(n);
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         return Class8508.method28422(this.field2755, n, n2);
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         return Class8508.method28423(this.field2755, n);
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
-        final Class8321 class8322 = this.field2755.get(n);
+    public void method2160(final int n, final ItemStack class8321) {
+        final ItemStack class8322 = this.field2755.get(n);
         boolean b = false;
         Label_0052: {
             if (!class8321.method27620()) {
                 if (class8321.method27647(class8322)) {
-                    if (Class8321.method27642(class8321, class8322)) {
+                    if (ItemStack.method27642(class8321, class8322)) {
                         b = true;
                         break Label_0052;
                     }
@@ -358,12 +358,12 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public boolean method2264(final int n, final Class8321 class8321) {
+    public boolean method2264(final int n, final ItemStack class8321) {
         if (n == 2) {
             return false;
         }
         if (n == 1) {
-            final Class8321 class8322 = this.field2755.get(1);
+            final ItemStack class8322 = this.field2755.get(1);
             return method2400(class8321) || (class8321.method27622() == Class7739.field31349 && class8322.method27622() != Class7739.field31349);
         }
         return true;

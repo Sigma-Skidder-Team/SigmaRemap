@@ -26,13 +26,13 @@ public class Class8524
     private static int method28582(final Class7492 class7492, final Class1932 class7493, final Vec3d class7494, final Class51 class7495, final boolean b) throws CommandSyntaxException {
         final Class51 method333 = class7495.method333();
         method333.method306("id", class7493.toString());
-        if (Class7499.method23354(Class7499.field29057).equals(class7493)) {
+        if (EntityType.method23354(EntityType.field29057).equals(class7493)) {
             final Class422 class7496 = new Class422(class7492.method23250(), class7494.x, class7494.y, class7494.z, false);
             class7492.method23250().method6903(class7496);
-            class7492.method23257(new Class2259("commands.summon.success", new Object[] { class7496.method1871() }), true);
+            class7492.method23257(new Class2259("commands.summon.success", new Object[] { class7496.getDisplayName() }), true);
             return 1;
         }
-        final Entity method334 = Class7499.method23378(method333, (Class1847)class7492.method23250(), class7500 -> {
+        final Entity method334 = EntityType.method23378(method333, (Class1847)class7492.method23250(), class7500 -> {
             class7500.method1730(class7497.field22770, class7497.field22771, class7497.field22772, class7500.field2399, class7500.field2400);
             return class7499.method6887(class7500) ? class7500 : null;
         });
@@ -42,7 +42,7 @@ public class Class8524
                     ((Class759)method334).method4188(class7492.method23250(), class7492.method23250().method6784(new BlockPos(method334)), Class2101.field12187, null, null);
                 }
             }
-            class7492.method23257(new Class2259("commands.summon.success", new Object[] { method334.method1871() }), true);
+            class7492.method23257(new Class2259("commands.summon.success", new Object[] { method334.getDisplayName() }), true);
             return 1;
         }
         throw Class8524.field35791.create();

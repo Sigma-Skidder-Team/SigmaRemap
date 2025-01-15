@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.AbstractList;
+
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import org.apache.logging.log4j.Logger;
@@ -51,7 +53,7 @@ public class Class6359 extends Class6354
                 s = s.substring(0, 16);
             }
             final Class6749 method347 = this.field25439.method19646(s);
-            final Class2250 method348 = Class5953.method17871(method346.method323("DisplayName"));
+            final ITextComponent method348 = Class5953.method17871(method346.method323("DisplayName"));
             if (method348 != null) {
                 method347.method20542(method348);
             }
@@ -65,13 +67,13 @@ public class Class6359 extends Class6354
                 method347.method20553(method346.method329("SeeFriendlyInvisibles"));
             }
             if (method346.method316("MemberNamePrefix", 8)) {
-                final Class2250 method349 = Class5953.method17871(method346.method323("MemberNamePrefix"));
+                final ITextComponent method349 = Class5953.method17871(method346.method323("MemberNamePrefix"));
                 if (method349 != null) {
                     method347.method20543(method349);
                 }
             }
             if (method346.method316("MemberNameSuffix", 8)) {
-                final Class2250 method350 = Class5953.method17871(method346.method323("MemberNameSuffix"));
+                final ITextComponent method350 = Class5953.method17871(method346.method323("MemberNameSuffix"));
                 if (method350 != null) {
                     method347.method20545(method350);
                 }

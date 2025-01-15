@@ -17,11 +17,11 @@ public abstract class Class419 extends Entity
     public double field2531;
     public double field2532;
     
-    public Class419(final Class7499<? extends Class419> class7499, final Class1847 class7500) {
+    public Class419(final EntityType<? extends Class419> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
-    public Class419(final Class7499<? extends Class419> class7499, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class1847 class7500) {
+    public Class419(final EntityType<? extends Class419> class7499, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class1847 class7500) {
         this(class7499, class7500);
         this.method1730(n, n2, n3, this.field2399, this.field2400);
         this.method1656(n, n2, n3);
@@ -31,7 +31,7 @@ public abstract class Class419 extends Entity
         this.field2532 = n6 / n7 * 0.1;
     }
     
-    public Class419(final Class7499<? extends Class419> class7499, final Class511 field2527, double n, double n2, double n3, final Class1847 class7500) {
+    public Class419(final EntityType<? extends Class419> class7499, final Class511 field2527, double n, double n2, double n3, final Class1847 class7500) {
         this(class7499, class7500);
         this.field2527 = field2527;
         this.method1730(field2527.getPosX(), field2527.getPosY(), field2527.getPosZ(), field2527.field2399, field2527.field2400);

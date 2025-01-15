@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public interface Class434 extends Class502
 {
-    Class2250 method1871();
+    ITextComponent method1871();
 }

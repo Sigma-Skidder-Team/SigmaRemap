@@ -4,8 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
-import java.util.Collection;
 import com.mojang.brigadier.context.CommandContext;
 import javax.annotation.Nullable;
 import com.mojang.brigadier.ParseResults;
@@ -13,7 +13,6 @@ import java.util.function.Predicate;
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.ArgumentBuilder;
-import java.util.Iterator;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import java.util.HashMap;
@@ -125,7 +124,7 @@ public class Class7788
             class7492.method23259(Class9479.method35300(ex.getRawMessage()));
             if (ex.getInput() != null && ex.getCursor() >= 0) {
                 final int min = Math.min(ex.getInput().length(), ex.getCursor());
-                final Class2250 method8467 = new Class2260("").method8469(Class2116.field12316).method8467(class7496 -> class7496.method30419(new Class9485(Class2075.field11974, s2)));
+                final ITextComponent method8467 = new Class2260("").method8469(Class2116.field12316).method8467(class7496 -> class7496.method30419(new Class9485(Class2075.field11974, s2)));
                 if (min > 10) {
                     method8467.method8457("...");
                 }
@@ -153,7 +152,7 @@ public class Class7788
                     Class7788.field31874.error("'" + str + "' threw an exception", (Throwable)ex2);
                     return 0;
                 }
-                final Class2250 class7494;
+                final ITextComponent class7494;
                 class7494.method8457("\n\n").method8457(stackTrace[n].getMethodName()).method8457("\n ").method8457(stackTrace[n].getFileName()).method8457(":").method8457(String.valueOf(stackTrace[n].getLineNumber()));
                 ++n;
                 continue;
@@ -167,8 +166,8 @@ public class Class7788
                 s = ex2.getClass().getName();
             }
             new Class2260(s);
-            final Class2250 class7495;
-            final Class2250 class7494 = class7495;
+            final ITextComponent class7495;
+            final ITextComponent class7494 = class7495;
             iftrue(Label_0499:)(!Class7788.field31874.isDebugEnabled());
         }
         catch (final Exception ex3) {}

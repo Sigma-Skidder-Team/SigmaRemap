@@ -14,13 +14,13 @@ public class Class7652
     private static final List<Class7388<Class8061>> field30383;
     private static final List<Class7388<Class3820>> field30384;
     private static final List<Class120> field30385;
-    private static final Predicate<Class8321> field30386;
+    private static final Predicate<ItemStack> field30386;
     
-    public static boolean method24240(final Class8321 class8321) {
+    public static boolean method24240(final ItemStack class8321) {
         return method24241(class8321) || method24242(class8321);
     }
     
-    public static boolean method24241(final Class8321 class8321) {
+    public static boolean method24241(final ItemStack class8321) {
         for (int i = 0; i < Class7652.field30384.size(); ++i) {
             if (Class7388.method22689((Class7388<Object>)Class7652.field30384.get(i)).test(class8321)) {
                 return true;
@@ -29,7 +29,7 @@ public class Class7652
         return false;
     }
     
-    public static boolean method24242(final Class8321 class8321) {
+    public static boolean method24242(final ItemStack class8321) {
         for (int i = 0; i < Class7652.field30383.size(); ++i) {
             if (Class7388.method22689((Class7388<Object>)Class7652.field30383.get(i)).test(class8321)) {
                 return true;
@@ -47,11 +47,11 @@ public class Class7652
         return false;
     }
     
-    public static boolean method24244(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method24244(final ItemStack class8321, final ItemStack class8322) {
         return Class7652.field30386.test(class8321) && (method24245(class8321, class8322) || method24246(class8321, class8322));
     }
     
-    public static boolean method24245(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method24245(final ItemStack class8321, final ItemStack class8322) {
         final Class3820 method27622 = class8321.method27622();
         for (int i = 0; i < Class7652.field30384.size(); ++i) {
             final Class7388 class8323 = Class7652.field30384.get(i);
@@ -62,7 +62,7 @@ public class Class7652
         return false;
     }
     
-    public static boolean method24246(final Class8321 class8321, final Class8321 class8322) {
+    public static boolean method24246(final ItemStack class8321, final ItemStack class8322) {
         final Class8061 method16474 = Class5333.method16474(class8321);
         for (int i = 0; i < Class7652.field30383.size(); ++i) {
             final Class7388 class8323 = Class7652.field30383.get(i);
@@ -73,20 +73,20 @@ public class Class7652
         return false;
     }
     
-    public static Class8321 method24247(final Class8321 class8321, final Class8321 class8322) {
+    public static ItemStack method24247(final ItemStack class8321, final ItemStack class8322) {
         if (!class8322.method27620()) {
             final Class8061 method16474 = Class5333.method16474(class8322);
             final Class3820 method16475 = class8322.method27622();
             for (int i = 0; i < Class7652.field30384.size(); ++i) {
                 final Class7388 class8323 = Class7652.field30384.get(i);
                 if (Class7388.method22691(class8323) == method16475 && Class7388.method22689(class8323).test(class8321)) {
-                    return Class5333.method16476(new Class8321((Class3832)Class7388.method22690(class8323)), method16474);
+                    return Class5333.method16476(new ItemStack((Class3832)Class7388.method22690(class8323)), method16474);
                 }
             }
             for (int j = 0; j < Class7652.field30383.size(); ++j) {
                 final Class7388 class8324 = Class7652.field30383.get(j);
                 if (Class7388.method22691(class8324) == method16474 && Class7388.method22689(class8324).test(class8321)) {
-                    return Class5333.method16476(new Class8321(method16475), (Class8061)Class7388.method22690(class8324));
+                    return Class5333.method16476(new ItemStack(method16475), (Class8061)Class7388.method22690(class8324));
                 }
             }
         }

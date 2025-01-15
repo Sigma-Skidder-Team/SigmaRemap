@@ -20,7 +20,7 @@ public class Class572 extends Class565
     private final int field3406;
     private final Class8863 field3407;
     private final Class7339 field3408;
-    private final Class8321 field3409;
+    private final ItemStack field3409;
     private final String field3410;
     private final Class683 field3411;
     private final Map<Class8863, Class683> field3412;

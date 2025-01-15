@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.function.Predicate;
 
-public class Class176 implements Predicate<Class8321>
+public class Class176 implements Predicate<ItemStack>
 {
     private static String[] field504;
     private final Class7909<Class3820> field505;
@@ -18,7 +18,7 @@ public class Class176 implements Predicate<Class8321>
     }
     
     @Override
-    public boolean test(final Class8321 class8321) {
+    public boolean test(final ItemStack class8321) {
         return this.field505.method25618(class8321.method27622()) && Class9346.method34642(this.field506, class8321.method27657(), true);
     }
 }

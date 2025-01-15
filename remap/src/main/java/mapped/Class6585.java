@@ -353,7 +353,7 @@ public class Class6585
     
     private static Optional<Entity> method19960(final Class1851 class1851, final Class51 class1852) {
         try {
-            return Class7499.method23373(class1852, class1851.method6744());
+            return EntityType.method23373(class1852, class1851.method6744());
         }
         catch (final Exception ex) {
             return Optional.empty();

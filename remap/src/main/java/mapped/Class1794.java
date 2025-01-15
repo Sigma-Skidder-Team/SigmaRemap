@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
 import org.apache.logging.log4j.LogManager;
 import java.io.IOException;
@@ -180,7 +181,7 @@ public class Class1794 implements Class1657
     }
     
     public Class7492 method6512() {
-        return new Class7492(Class397.field2376, Vec3d.ZERO, Vec2f.ZERO, null, this.field9937.method1449(), "", new Class2260(""), this.field9937, null);
+        return new Class7492(ICommandSource.DUMMY, Vec3d.ZERO, Vec2f.ZERO, null, this.field9937.method1449(), "", new Class2260(""), this.field9937, null);
     }
     
     public Class6208<Class8263> method6513() {

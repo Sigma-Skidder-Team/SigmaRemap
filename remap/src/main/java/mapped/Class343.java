@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import javax.annotation.Nullable;
@@ -30,7 +32,7 @@ public enum Class343
         this.field2118 = field2118;
     }
     
-    public Class2250 method1022() {
+    public ITextComponent method1022() {
         return new Class2259("team.collision." + this.field2117, new Object[0]);
     }
     

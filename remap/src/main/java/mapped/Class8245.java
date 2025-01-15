@@ -19,7 +19,7 @@ public class Class8245
     public final Class869 field33863;
     public final Class5799 field33864;
     private BlockPos field33865;
-    private Class8321 field33866;
+    private ItemStack field33866;
     public float field33867;
     private float field33868;
     public int field33869;
@@ -30,7 +30,7 @@ public class Class8245
     
     public Class8245(final Class869 field33863, final Class5799 field33864) {
         this.field33865 = new BlockPos(-1, -1, -1);
-        this.field33866 = Class8321.field34174;
+        this.field33866 = ItemStack.field34174;
         this.field33871 = Class101.field298;
         this.field33872 = (Object2ObjectLinkedOpenHashMap<Pair<BlockPos, Class2003>, Class8104>)new Object2ObjectLinkedOpenHashMap();
         this.field33863 = field33863;
@@ -196,14 +196,14 @@ public class Class8245
     }
     
     private boolean method27317(final BlockPos class354) {
-        final Class8321 method2713 = this.field33863.field4684.method2713();
+        final ItemStack method2713 = this.field33863.field4684.method2713();
         int n = (this.field33866.method27620() && method2713.method27620()) ? 1 : 0;
         if (!this.field33866.method27620()) {
             if (!method2713.method27620()) {
                 int n2 = 0;
                 Label_0152: {
                     if (method2713.method27622() == this.field33866.method27622()) {
-                        if (Class8321.method27642(method2713, this.field33866)) {
+                        if (ItemStack.method27642(method2713, this.field33866)) {
                             if (method2713.method27630() || method2713.method27632() == this.field33866.method27632()) {
                                 n2 = 1;
                                 break Label_0152;
@@ -232,7 +232,7 @@ public class Class8245
         if (!this.field33863.field4683.method6787().method34779(method21447)) {
             return Class2201.field13403;
         }
-        final Class8321 method21448 = class756.method2715(class758);
+        final ItemStack method21448 = class756.method2715(class758);
         if (this.field33871 == Class101.field301) {
             this.field33864.method17292(new Class4329(class758, class759));
             return Class2201.field13400;
@@ -268,11 +268,11 @@ public class Class8245
         }
         this.method27318();
         this.field33864.method17292(new Class4307(class514));
-        final Class8321 method2715 = class512.method2715(class514);
+        final ItemStack method2715 = class512.method2715(class514);
         if (!class512.method2906().method25769(method2715.method27622())) {
             final int method2716 = method2715.method27690();
-            final Class9355<Class8321> method2717 = method2715.method27625(class513, class512, class514);
-            final Class8321 class515 = method2717.method34673();
+            final Class9355<ItemStack> method2717 = method2715.method27625(class513, class512, class514);
+            final ItemStack class515 = method2717.method34673();
             if (class515 != method2715 || class515.method27690() != method2716) {
                 class512.method2716(class514, class515);
             }
@@ -307,7 +307,7 @@ public class Class8245
         return (this.field33871 != Class101.field301) ? class513.method1898(class512, method16742, class515) : Class2201.field13402;
     }
     
-    public Class8321 method27324(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134) {
+    public ItemStack method27324(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134) {
         return Class8639.method29366(n, n2, n3, class2133, class2134);
     }
     
@@ -319,13 +319,13 @@ public class Class8245
         this.field33864.method17292(new Class4366(n, n2));
     }
     
-    public void method27327(final Class8321 class8321, final int n) {
+    public void method27327(final ItemStack class8321, final int n) {
         if (this.field33871.method590()) {
             this.field33864.method17292(new Class4287(n, class8321));
         }
     }
     
-    public void method27328(final Class8321 class8321) {
+    public void method27328(final ItemStack class8321) {
         if (this.field33871.method590()) {
             if (!class8321.method27620()) {
                 this.field33864.method17292(new Class4287(-1, class8321));

@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import net.minecraft.util.text.ITextComponent;
+
 import java.lang.reflect.InvocationTargetException;
 
 public class Class8004
@@ -28,7 +29,7 @@ public class Class8004
                     }
                     case 2: {
                         try {
-                            final Class527 class8880 = (Class527)class8879.method31233().getDeclaredConstructor(Class2250.class).newInstance(new Class2260(Class9000.field37983.get(class8879.method31233())));
+                            final Class527 class8880 = (Class527)class8879.method31233().getDeclaredConstructor(ITextComponent.class).newInstance(new Class2260(Class9000.field37983.get(class8879.method31233())));
                             if (!Class9463.method35173().method35193().method32158(class8880)) {
                                 continue;
                             }

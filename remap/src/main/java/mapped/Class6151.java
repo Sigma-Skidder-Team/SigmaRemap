@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.Typed;
 import com.google.gson.JsonParseException;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.StringUtils;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.schemas.Schema;
@@ -24,7 +25,7 @@ public class Class6151 extends Class6132
     
     private Dynamic<?> method18384(final Dynamic<?> dynamic, final String s) {
         final String string = dynamic.get(s).asString("");
-        Class2250 class2250 = null;
+        ITextComponent class2250 = null;
         if (!"null".equals(string) && !StringUtils.isEmpty((CharSequence)string)) {
             if (string.charAt(0) != '\"' || string.charAt(string.length() - 1) != '\"') {
                 if (string.charAt(0) != '{' || string.charAt(string.length() - 1) != '}') {
@@ -33,7 +34,7 @@ public class Class6151 extends Class6132
                 }
             }
             try {
-                class2250 = Class9583.method35925(Class6151.field24883, string, Class2250.class, true);
+                class2250 = Class9583.method35925(Class6151.field24883, string, ITextComponent.class, true);
                 if (class2250 == null) {
                     class2250 = new Class2260("");
                 }
@@ -73,6 +74,6 @@ public class Class6151 extends Class6132
     }
     
     static {
-        field24883 = new GsonBuilder().registerTypeAdapter((Type)Class2250.class, (Object)new Class5965()).create();
+        field24883 = new GsonBuilder().registerTypeAdapter((Type) ITextComponent.class, (Object)new Class5965()).create();
     }
 }

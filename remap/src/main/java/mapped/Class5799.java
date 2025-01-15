@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -120,42 +121,42 @@ public class Class5799 implements Class5800
         final double method13025 = class4339.method13025();
         final double method13026 = class4339.method13026();
         final double method13027 = class4339.method13027();
-        final Class7499<?> method13028 = class4339.method13033();
+        final EntityType<?> method13028 = class4339.method13033();
         Entity class4340;
-        if (method13028 != Class7499.field29000) {
-            if (method13028 != Class7499.field29002) {
-                if (method13028 != Class7499.field29005) {
-                    if (method13028 != Class7499.field29004) {
-                        if (method13028 != Class7499.field29003) {
-                            if (method13028 != Class7499.field29001) {
-                                if (method13028 != Class7499.field28999) {
-                                    if (method13028 != Class7499.field29059) {
-                                        if (method13028 != Class7499.field28959) {
-                                            if (method13028 != Class7499.field29029) {
-                                                if (method13028 != Class7499.field29040) {
-                                                    if (method13028 != Class7499.field29028) {
-                                                        if (method13028 != Class7499.field28997) {
-                                                            if (method13028 != Class7499.field28993) {
-                                                                if (method13028 != Class7499.field28995) {
-                                                                    if (method13028 != Class7499.field29037) {
-                                                                        if (method13028 != Class7499.field28982) {
-                                                                            if (method13028 != Class7499.field28984) {
-                                                                                if (method13028 != Class7499.field28994) {
-                                                                                    if (method13028 != Class7499.field28972) {
-                                                                                        if (method13028 != Class7499.field29026) {
-                                                                                            if (method13028 != Class7499.field29050) {
-                                                                                                if (method13028 != Class7499.field29021) {
-                                                                                                    if (method13028 != Class7499.field29036) {
-                                                                                                        if (method13028 != Class7499.field28979) {
-                                                                                                            if (method13028 != Class7499.field29039) {
-                                                                                                                if (method13028 != Class7499.field29038) {
-                                                                                                                    if (method13028 != Class7499.field28963) {
-                                                                                                                        if (method13028 != Class7499.field29016) {
-                                                                                                                            if (method13028 != Class7499.field28958) {
-                                                                                                                                if (method13028 != Class7499.field28975) {
-                                                                                                                                    if (method13028 != Class7499.field28992) {
-                                                                                                                                        if (method13028 != Class7499.field28983) {
-                                                                                                                                            if (method13028 != Class7499.field28957) {
+        if (method13028 != EntityType.field29000) {
+            if (method13028 != EntityType.field29002) {
+                if (method13028 != EntityType.field29005) {
+                    if (method13028 != EntityType.field29004) {
+                        if (method13028 != EntityType.field29003) {
+                            if (method13028 != EntityType.field29001) {
+                                if (method13028 != EntityType.field28999) {
+                                    if (method13028 != EntityType.field29059) {
+                                        if (method13028 != EntityType.field28959) {
+                                            if (method13028 != EntityType.field29029) {
+                                                if (method13028 != EntityType.field29040) {
+                                                    if (method13028 != EntityType.field29028) {
+                                                        if (method13028 != EntityType.field28997) {
+                                                            if (method13028 != EntityType.field28993) {
+                                                                if (method13028 != EntityType.field28995) {
+                                                                    if (method13028 != EntityType.field29037) {
+                                                                        if (method13028 != EntityType.field28982) {
+                                                                            if (method13028 != EntityType.field28984) {
+                                                                                if (method13028 != EntityType.field28994) {
+                                                                                    if (method13028 != EntityType.field28972) {
+                                                                                        if (method13028 != EntityType.field29026) {
+                                                                                            if (method13028 != EntityType.field29050) {
+                                                                                                if (method13028 != EntityType.field29021) {
+                                                                                                    if (method13028 != EntityType.field29036) {
+                                                                                                        if (method13028 != EntityType.field28979) {
+                                                                                                            if (method13028 != EntityType.field29039) {
+                                                                                                                if (method13028 != EntityType.field29038) {
+                                                                                                                    if (method13028 != EntityType.field28963) {
+                                                                                                                        if (method13028 != EntityType.field29016) {
+                                                                                                                            if (method13028 != EntityType.field28958) {
+                                                                                                                                if (method13028 != EntityType.field28975) {
+                                                                                                                                    if (method13028 != EntityType.field28992) {
+                                                                                                                                        if (method13028 != EntityType.field28983) {
+                                                                                                                                            if (method13028 != EntityType.field28957) {
                                                                                                                                                 class4340 = null;
                                                                                                                                             }
                                                                                                                                             else {
@@ -223,7 +224,7 @@ public class Class5799 implements Class5800
                                                                                 }
                                                                             }
                                                                             else {
-                                                                                class4340 = new Class406(this.field23809, method13025, method13026, method13027, Class8321.field34174);
+                                                                                class4340 = new Class406(this.field23809, method13025, method13026, method13027, ItemStack.field34174);
                                                                             }
                                                                         }
                                                                         else {
@@ -609,7 +610,7 @@ public class Class5799 implements Class5800
     }
     
     @Override
-    public void method17291(final Class2250 class2250) {
+    public void method17291(final ITextComponent class2250) {
         this.field23808.method5264();
         if (this.field23807 == null) {
             this.field23808.method5244(new Class735(new Class720(new Class548()), "disconnect.lost", class2250));
@@ -699,7 +700,7 @@ public class Class5799 implements Class5800
         final double method12834 = class4276.method12834();
         final float n = class4276.method12838() * 360 / 256.0f;
         final float n2 = class4276.method12839() * 360 / 256.0f;
-        final Class511 class4277 = (Class511)Class7499.method23372(class4276.method12831(), this.field23808.field4683);
+        final Class511 class4277 = (Class511) EntityType.method23372(class4276.method12831(), this.field23808.field4683);
         if (class4277 == null) {
             Class5799.field23804.warn("Skipping Entity with id {}", (Object)class4276.method12831());
         }
@@ -779,15 +780,15 @@ public class Class5799 implements Class5800
         }
     }
     
-    private static Class8321 method17301(final Class512 class512) {
+    private static ItemStack method17301(final Class512 class512) {
         final Class316[] values = Class316.values();
         for (int length = values.length, i = 0; i < length; ++i) {
-            final Class8321 method2715 = class512.method2715(values[i]);
+            final ItemStack method2715 = class512.method2715(values[i]);
             if (method2715.method27622() == Class7739.field31590) {
                 return method2715;
             }
         }
-        return new Class8321(Class7739.field31590);
+        return new ItemStack(Class7739.field31590);
     }
     
     @Override
@@ -894,7 +895,7 @@ public class Class5799 implements Class5800
     public void method17309(final Class4272 class4272) {
         Class8663.method29632((Class4252<Class5799>)class4272, this, this.field23808);
         final Class756 field4684 = this.field23808.field4684;
-        final Class8321 method12821 = class4272.method12821();
+        final ItemStack method12821 = class4272.method12821();
         final int method12822 = class4272.method12820();
         this.field23808.method5319().method32922(method12821);
         if (class4272.method12819() != -1) {
@@ -907,7 +908,7 @@ public class Class5799 implements Class5800
                     if (class4272.method12820() >= 36) {
                         if (method12822 < 45) {
                             if (!method12821.method27620()) {
-                                final Class8321 method12823 = field4684.field3008.method10878(method12822).method20053();
+                                final ItemStack method12823 = field4684.field3008.method10878(method12822).method20053();
                                 if (method12823.method27620() || method12823.method27690() < method12821.method27690()) {
                                     method12821.method27689(5);
                                 }
@@ -1620,7 +1621,7 @@ public class Class5799 implements Class5800
     @Override
     public void method17354(final Class4316 class4316) {
         Class8663.method29632((Class4252<Class5799>)class4316, this, this.field23808);
-        final Class8321 method2715 = this.field23808.field4684.method2715(class4316.method12972());
+        final ItemStack method2715 = this.field23808.field4684.method2715(class4316.method12972());
         if (method2715.method27622() == Class7739.field31513) {
             this.field23808.method5244(new Class723(new Class7738(method2715)));
         }

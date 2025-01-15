@@ -26,7 +26,7 @@ public class Class669 extends Class654
             if (((Class3423)this.field3703.field3077).method10931().size() > this.field3702 + Class746.method4068(this.field3703)) {
                 if (n >= this.field3426 + 20) {
                     if (n < this.field3426 + 50 && n > this.field3426 + 30) {
-                        final Class8321 method32282 = ((Class3423)this.field3703.field3077).method10931().get(this.field3702 + Class746.method4068(this.field3703)).method32282();
+                        final ItemStack method32282 = ((Class3423)this.field3703.field3077).method10931().get(this.field3702 + Class746.method4068(this.field3703)).method32282();
                         if (!method32282.method27620()) {
                             Class746.method4070(this.field3703, method32282, n, n2);
                         }

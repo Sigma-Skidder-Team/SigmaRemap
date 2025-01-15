@@ -5,9 +5,7 @@
 package mapped;
 
 import java.util.function.Function;
-import java.util.concurrent.CompletableFuture;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
+
 import com.mojang.brigadier.context.CommandContext;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
@@ -15,7 +13,6 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
@@ -41,14 +38,14 @@ public class Class8721
                     class7492.method23257(new Class2259(class7493.method8287() + ".many.to.many.success", new Object[] { collection2.size(), collection.size() }), true);
                 }
                 else {
-                    class7492.method23257(new Class2259(class7493.method8287() + ".many.to.one.success", new Object[] { collection2.size(), collection.iterator().next().method1871() }), true);
+                    class7492.method23257(new Class2259(class7493.method8287() + ".many.to.one.success", new Object[] { collection2.size(), collection.iterator().next().getDisplayName() }), true);
                 }
             }
             else if (collection.size() != 1) {
                 class7492.method23257(new Class2259(class7493.method8287() + ".one.to.many.success", new Object[] { collection2.iterator().next().method31044(), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259(class7493.method8287() + ".one.to.one.success", new Object[] { collection2.iterator().next().method31044(), collection.iterator().next().method1871() }), true);
+                class7492.method23257(new Class2259(class7493.method8287() + ".one.to.one.success", new Object[] { collection2.iterator().next().method31044(), collection.iterator().next().getDisplayName() }), true);
             }
             return n;
         }
@@ -56,13 +53,13 @@ public class Class8721
             if (collection.size() != 1) {
                 throw new Class2379(new Class2259(class7493.method8287() + ".many.to.many.failure", new Object[] { collection2.size(), collection.size() }));
             }
-            throw new Class2379(new Class2259(class7493.method8287() + ".many.to.one.failure", new Object[] { collection2.size(), collection.iterator().next().method1871() }));
+            throw new Class2379(new Class2259(class7493.method8287() + ".many.to.one.failure", new Object[] { collection2.size(), collection.iterator().next().getDisplayName() }));
         }
         else {
             if (collection.size() != 1) {
                 throw new Class2379(new Class2259(class7493.method8287() + ".one.to.many.failure", new Object[] { collection2.iterator().next().method31044(), collection.size() }));
             }
-            throw new Class2379(new Class2259(class7493.method8287() + ".one.to.one.failure", new Object[] { collection2.iterator().next().method31044(), collection.iterator().next().method1871() }));
+            throw new Class2379(new Class2259(class7493.method8287() + ".one.to.one.failure", new Object[] { collection2.iterator().next().method31044(), collection.iterator().next().getDisplayName() }));
         }
     }
     
@@ -83,14 +80,14 @@ public class Class8721
                 class7492.method23257(new Class2259(class7493.method8287() + ".criterion.to.many.success", new Object[] { s, class7494.method31044(), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259(class7493.method8287() + ".criterion.to.one.success", new Object[] { s, class7494.method31044(), collection.iterator().next().method1871() }), true);
+                class7492.method23257(new Class2259(class7493.method8287() + ".criterion.to.one.success", new Object[] { s, class7494.method31044(), collection.iterator().next().getDisplayName() }), true);
             }
             return n;
         }
         if (collection.size() != 1) {
             throw new Class2379(new Class2259(class7493.method8287() + ".criterion.to.many.failure", new Object[] { s, class7494.method31044(), collection.size() }));
         }
-        throw new Class2379(new Class2259(class7493.method8287() + ".criterion.to.one.failure", new Object[] { s, class7494.method31044(), collection.iterator().next().method1871() }));
+        throw new Class2379(new Class2259(class7493.method8287() + ".criterion.to.one.failure", new Object[] { s, class7494.method31044(), collection.iterator().next().getDisplayName() }));
     }
     
     private static List<Class8863> method29954(final Class8863 class8863, final Class270 class8864) {

@@ -6,11 +6,11 @@ package mapped;
 
 public abstract class Class5538 extends Class5509
 {
-    public Class5538(final Class7499 class7499, final String s, final float n) {
+    public Class5538(final EntityType class7499, final String s, final float n) {
         super(class7499, s, n);
     }
     
-    public Class5538(final Class7499 class7499, final String s, final float n, final String[] array) {
+    public Class5538(final EntityType class7499, final String s, final float n, final String[] array) {
         super(class7499, s, n, array);
     }
     

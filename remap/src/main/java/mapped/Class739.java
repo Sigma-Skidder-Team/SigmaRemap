@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class739 extends Class527
 {
     private static String[] field4009;
     
-    public Class739(final Class2250 class2250) {
+    public Class739(final ITextComponent class2250) {
         super(class2250);
     }
     

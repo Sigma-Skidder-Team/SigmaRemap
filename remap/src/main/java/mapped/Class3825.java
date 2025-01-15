@@ -13,7 +13,7 @@ public class Class3825 extends Class3824
     }
     
     @Override
-    public Class402 method11758(final Class1847 class1847, final Class8321 class1848, final Class511 class1849) {
+    public Class402 method11758(final Class1847 class1847, final ItemStack class1848, final Class511 class1849) {
         return new Class404(class1847, class1849);
     }
 }

@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
@@ -229,7 +230,7 @@ public class Class756 extends Class754
     @Override
     public boolean method2821(final boolean b) {
         this.field4069.method17292(new Class4399(b ? Class2003.field11243 : Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
-        return this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1) != Class8321.field34174;
+        return this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1) != ItemStack.field34174;
     }
     
     public void method4114(final String s) {
@@ -261,7 +262,7 @@ public class Class756 extends Class754
     }
     
     public void method4115() {
-        this.field3006.method2374(Class8321.field34174);
+        this.field3006.method2374(ItemStack.field34174);
         super.method2814();
         this.field4086.method5244(null);
     }
@@ -341,7 +342,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method2853(final Class2250 class2250, final boolean b) {
+    public void method2853(final ITextComponent class2250, final boolean b) {
         if (!b) {
             this.field4086.field4647.method3807().method3761(class2250);
         }
@@ -422,7 +423,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
         this.field4086.field4647.method3807().method3761(class2250);
     }
     
@@ -552,7 +553,7 @@ public class Class756 extends Class754
     }
     
     @Override
-    public void method2835(final Class8321 class8321, final Class316 class8322) {
+    public void method2835(final ItemStack class8321, final Class316 class8322) {
         if (class8321.method27622() == Class7739.field31512) {
             this.field4086.method5244(new Class727(this, class8321, class8322));
         }
@@ -753,7 +754,7 @@ public class Class756 extends Class754
                     if (!this.field3025.field27302) {
                         if (!this.method1805()) {
                             if (!this.method2688()) {
-                                final Class8321 method4140 = this.method2718(Class2215.field13604);
+                                final ItemStack method4140 = this.method2718(Class2215.field13604);
                                 if (method4140.method27622() == Class7739.field31584) {
                                     if (Class4080.method12285(method4140)) {
                                         if (this.method2868()) {

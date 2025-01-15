@@ -18,12 +18,12 @@ public abstract class Class860 extends Entity
     public BlockPos field4599;
     public Direction field4600;
     
-    public Class860(final Class7499<? extends Class860> class7499, final Class1847 class7500) {
+    public Class860(final EntityType<? extends Class860> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4600 = Direction.SOUTH;
     }
     
-    public Class860(final Class7499<? extends Class860> class7499, final Class1847 class7500, final BlockPos field4599) {
+    public Class860(final EntityType<? extends Class860> class7499, final Class1847 class7500, final BlockPos field4599) {
         this(class7499, class7500);
         this.field4599 = field4599;
     }
@@ -193,7 +193,7 @@ public abstract class Class860 extends Entity
     public abstract void method5193();
     
     @Override
-    public Class427 method1767(final Class8321 class8321, final float n) {
+    public Class427 method1767(final ItemStack class8321, final float n) {
         final Class427 class8322 = new Class427(this.field2391, this.getPosX() + this.field4600.getXOffset() * 0.15f, this.getPosY() + n, this.getPosZ() + this.field4600.getZOffset() * 0.15f, class8321);
         class8322.method2114();
         this.field2391.method6886(class8322);

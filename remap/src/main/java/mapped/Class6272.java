@@ -30,11 +30,11 @@ public class Class6272 extends Class6257
     }
     
     @Override
-    public boolean method18600(final Class8321 class8321) {
+    public boolean method18600(final ItemStack class8321) {
         return class8321.method27630() || super.method18600(class8321);
     }
     
-    public static boolean method18609(final Class8321 class8321, final int n, final Random random) {
+    public static boolean method18609(final ItemStack class8321, final int n, final Random random) {
         return (!(class8321.method27622() instanceof Class4055) || random.nextFloat() >= 0.6f) && random.nextInt(n + 1) > 0;
     }
 }

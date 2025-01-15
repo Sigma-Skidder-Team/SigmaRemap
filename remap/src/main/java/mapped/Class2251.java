@@ -10,11 +10,13 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
-public abstract class Class2251 implements Class2250
+public abstract class Class2251 implements ITextComponent
 {
-    public final List<Class2250> field13791;
+    public final List<ITextComponent> field13791;
     private Class8768 field13792;
     
     public Class2251() {
@@ -22,21 +24,21 @@ public abstract class Class2251 implements Class2250
     }
     
     @Override
-    public Class2250 method8458(final Class2250 class2250) {
+    public ITextComponent method8458(final ITextComponent class2250) {
         class2250.method8456().method30422(this.method8456());
         this.field13791.add(class2250);
         return this;
     }
     
     @Override
-    public List<Class2250> method8462() {
+    public List<ITextComponent> method8462() {
         return this.field13791;
     }
     
     @Override
-    public Class2250 method8455(final Class8768 field13792) {
+    public ITextComponent method8455(final Class8768 field13792) {
         this.field13792 = field13792;
-        final Iterator<Class2250> iterator = this.field13791.iterator();
+        final Iterator<ITextComponent> iterator = this.field13791.iterator();
         while (iterator.hasNext()) {
             iterator.next().method8456().method30422(this.method8456());
         }
@@ -47,7 +49,7 @@ public abstract class Class2251 implements Class2250
     public Class8768 method8456() {
         if (this.field13792 == null) {
             this.field13792 = new Class8768();
-            final Iterator<Class2250> iterator = this.field13791.iterator();
+            final Iterator<ITextComponent> iterator = this.field13791.iterator();
             while (iterator.hasNext()) {
                 iterator.next().method8456().method30422(this.field13792);
             }
@@ -56,8 +58,8 @@ public abstract class Class2251 implements Class2250
     }
     
     @Override
-    public Stream<Class2250> method8463() {
-        return Streams.concat(new Stream[] { Stream.of(this), this.field13791.stream().flatMap((Function<? super Object, ? extends Stream<?>>)Class2250::method8463) });
+    public Stream<ITextComponent> method8463() {
+        return Streams.concat(new Stream[] { Stream.of(this), this.field13791.stream().flatMap((Function<? super Object, ? extends Stream<?>>) ITextComponent::method8463) });
     }
     
     @Override

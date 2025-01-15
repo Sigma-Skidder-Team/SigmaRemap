@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
+
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
@@ -40,7 +40,7 @@ public class Class9508 implements ArgumentType<Class6311>
         return commandContext -> class174;
     }
     
-    public static Predicate<Class8321> method35423(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+    public static Predicate<ItemStack> method35423(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         return ((Class6311)commandContext.getArgument(s, (Class)Class6311.class)).method18686(commandContext);
     }
     

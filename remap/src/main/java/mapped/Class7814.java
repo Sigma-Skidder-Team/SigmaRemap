@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.UUID;
-import java.util.Iterator;
 import java.util.List;
 
 public abstract class Class7814 implements Class7813
@@ -61,7 +60,7 @@ public abstract class Class7814 implements Class7813
     
     public Class512 method25249(final String obj) {
         for (final Class512 class512 : this.method25248()) {
-            if (!class512.method1841().equals(obj)) {
+            if (!class512.getName().equals(obj)) {
                 continue;
             }
             return class512;

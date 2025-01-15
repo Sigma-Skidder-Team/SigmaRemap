@@ -9,11 +9,14 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import javax.annotation.Nullable;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.INameable;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
-public class Class465 extends Class436 implements Class462
+public class Class465 extends Class436 implements INameable
 {
-    private Class2250 field2747;
+    private ITextComponent field2747;
     private Class181 field2748;
     private Class52 field2749;
     private boolean field2750;
@@ -30,7 +33,7 @@ public class Class465 extends Class436 implements Class462
     }
     
     @Nullable
-    public static Class52 method2382(final Class8321 class8321) {
+    public static Class52 method2382(final ItemStack class8321) {
         Class52 method355 = null;
         final Class51 method356 = class8321.method27660("BlockEntityTag");
         if (method356 != null) {
@@ -41,7 +44,7 @@ public class Class465 extends Class436 implements Class462
         return method355;
     }
     
-    public void method2383(final Class8321 class8321, final Class181 field2748) {
+    public void method2383(final ItemStack class8321, final Class181 field2748) {
         this.field2749 = method2382(class8321);
         this.field2748 = field2748;
         this.field2751 = null;
@@ -50,17 +53,17 @@ public class Class465 extends Class436 implements Class462
     }
     
     @Override
-    public Class2250 method1841() {
+    public ITextComponent getName() {
         return (this.field2747 == null) ? new Class2259("block.minecraft.banner", new Object[0]) : this.field2747;
     }
     
     @Nullable
     @Override
-    public Class2250 method1873() {
+    public ITextComponent getCustomName() {
         return this.field2747;
     }
     
-    public void method2384(final Class2250 field2747) {
+    public void method2384(final ITextComponent field2747) {
         this.field2747 = field2747;
     }
     
@@ -104,7 +107,7 @@ public class Class465 extends Class436 implements Class462
         return this.method2180(new Class51());
     }
     
-    public static int method2385(final Class8321 class8321) {
+    public static int method2385(final ItemStack class8321) {
         final Class51 method27660 = class8321.method27660("BlockEntityTag");
         return (method27660 != null && method27660.method315("Patterns")) ? method27660.method328("Patterns", 10).size() : 0;
     }
@@ -133,7 +136,7 @@ public class Class465 extends Class436 implements Class462
         return arrayList;
     }
     
-    public static void method2388(final Class8321 class8321) {
+    public static void method2388(final ItemStack class8321) {
         final Class51 method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
             if (method27660.method316("Patterns", 9)) {
@@ -148,8 +151,8 @@ public class Class465 extends Class436 implements Class462
         }
     }
     
-    public Class8321 method2389(final Class7096 class7096) {
-        final Class8321 class7097 = new Class8321(Class3946.method12065(this.method2390(() -> class7098)));
+    public ItemStack method2389(final Class7096 class7096) {
+        final ItemStack class7097 = new ItemStack(Class3946.method12065(this.method2390(() -> class7098)));
         if (this.field2749 != null) {
             if (!this.field2749.isEmpty()) {
                 class7097.method27659("BlockEntityTag").method295("Patterns", this.field2749.method355());

@@ -18,7 +18,7 @@ public class Class779 extends Class776
     private int field4187;
     private int field4188;
     
-    public Class779(final Class7499<? extends Class779> class7499, final Class1847 class7500) {
+    public Class779(final EntityType<? extends Class779> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2420 = 1.0f;
         this.field4108 = 20;

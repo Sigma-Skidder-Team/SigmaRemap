@@ -36,7 +36,7 @@ public class Class3827 extends Class3820
         }
         method21653.method6705(method21652, method21656, Class8520.field35201, Class286.field1582, 1.0f, Class3827.field17363.nextFloat() * 0.4f + 0.8f);
         method21653.method6688(method21656, ((Class4011)Class7521.field29289).method12184(method21653, method21656), 11);
-        final Class8321 method21657 = class7075.method21651();
+        final ItemStack method21657 = class7075.method21651();
         if (method21652 instanceof Class513) {
             Class7770.field31799.method13836((Class513)method21652, method21656, method21657);
             method21657.method27636(1, (Class513)method21652, class7079 -> class7079.method2795(class7078.method21653()));

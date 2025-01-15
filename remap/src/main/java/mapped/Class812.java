@@ -10,7 +10,7 @@ public abstract class Class812 extends Class806
 {
     private static final Class8810<Boolean> field4366;
     
-    public Class812(final Class7499<? extends Class812> class7499, final Class1847 class7500) {
+    public Class812(final EntityType<? extends Class812> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4352 = false;
     }
@@ -71,7 +71,7 @@ public abstract class Class812 extends Class806
         if (this.method4780()) {
             final Class52 class52 = new Class52();
             for (int i = 2; i < this.field4342.method2239(); ++i) {
-                final Class8321 method2157 = this.field4342.method2157(i);
+                final ItemStack method2157 = this.field4342.method2157(i);
                 if (!method2157.method27620()) {
                     final Class51 e = new Class51();
                     e.method296("Slot", (byte)i);
@@ -95,7 +95,7 @@ public abstract class Class812 extends Class806
                 final int n = method329.method317("Slot") & 0xFF;
                 if (n >= 2) {
                     if (n < this.field4342.method2239()) {
-                        this.field4342.method2160(n, Class8321.method27619(method329));
+                        this.field4342.method2160(n, ItemStack.method27619(method329));
                     }
                 }
             }
@@ -104,7 +104,7 @@ public abstract class Class812 extends Class806
     }
     
     @Override
-    public boolean method1893(final int n, final Class8321 class8321) {
+    public boolean method1893(final int n, final ItemStack class8321) {
         if (n == 499) {
             if (this.method4780() && class8321.method27620()) {
                 this.method4781(false);
@@ -124,7 +124,7 @@ public abstract class Class812 extends Class806
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
         }

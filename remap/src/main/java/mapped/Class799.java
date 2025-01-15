@@ -23,7 +23,7 @@ public class Class799 extends Class794
     private float field4283;
     private float field4284;
     
-    public Class799(final Class7499<? extends Class799> class7499, final Class1847 class7500) {
+    public Class799(final EntityType<? extends Class799> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.method4481(false);
     }
@@ -288,7 +288,7 @@ public class Class799 extends Class794
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         final Class3820 method2716 = method2715.method27622();
         if (method2715.method27622() instanceof Class3831) {
             return super.method4195(class512, class513);
@@ -375,7 +375,7 @@ public class Class799 extends Class794
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         return method27622.method11743() && method27622.method11744().method32746();
     }
@@ -408,7 +408,7 @@ public class Class799 extends Class794
     }
     
     public Class799 method4601(final Class788 class788) {
-        final Class799 class789 = Class7499.field29051.method23371(this.field2391);
+        final Class799 class789 = EntityType.field29051.method23371(this.field2391);
         final UUID method4485 = this.method4485();
         if (method4485 != null) {
             class789.method4486(method4485);
@@ -469,11 +469,11 @@ public class Class799 extends Class794
         field4277 = Class9184.method33564(Class799.class, Class7709.field30654);
         field4278 = (class511 -> {
             class511.method1642();
-            final Class7499 class512;
+            final EntityType class512;
             final boolean b;
-            if (class512 != Class7499.field29019) {
-                if (class512 != Class7499.field29017) {
-                    if (class512 != Class7499.field28985) {
+            if (class512 != EntityType.field29019) {
+                if (class512 != EntityType.field29017) {
+                    if (class512 != EntityType.field28985) {
                         return b;
                     }
                 }

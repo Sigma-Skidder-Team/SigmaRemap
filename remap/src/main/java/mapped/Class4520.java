@@ -70,11 +70,11 @@ public class Class4520 extends Class4515
             Class772 class357 = null;
             switch (s) {
                 case "Mage": {
-                    class357 = Class7499.field28980.method23371(class355.method6744());
+                    class357 = EntityType.field28980.method23371(class355.method6744());
                     break;
                 }
                 case "Warrior": {
-                    class357 = Class7499.field29044.method23371(class355.method6744());
+                    class357 = EntityType.field29044.method23371(class355.method6744());
                     break;
                 }
                 default: {

@@ -35,7 +35,7 @@ public class Class3533 extends Class3531
     public void method11082() {
         for (int i = 0; i < 3; ++i) {
             final BlockPos method1134 = new BlockPos(this.field16567).method1134(-2 + Class771.method4274(this.field16567).nextInt(5), 1, -2 + Class771.method4275(this.field16567).nextInt(5));
-            final Class843 class843 = Class7499.field29041.method23371(this.field16567.field2391);
+            final Class843 class843 = EntityType.field29041.method23371(this.field16567.field2391);
             class843.method1729(method1134, 0.0f, 0.0f);
             class843.method4188(this.field16567.field2391, this.field16567.field2391.method6784(method1134), Class2101.field12179, null, null);
             class843.method5043(this.field16567);

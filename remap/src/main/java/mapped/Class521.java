@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public abstract class Class521<T extends Class3429> extends Class516<T> implements Class519
 {
     private static final Class1932 field3115;
@@ -11,7 +13,7 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     private boolean field3117;
     private final Class1932 field3118;
     
-    public Class521(final T t, final Class582 field3116, final Class464 class464, final Class2250 class465, final Class1932 field3117) {
+    public Class521(final T t, final Class582 field3116, final Class464 class464, final ITextComponent class465, final Class1932 field3117) {
         super(t, class464, class465);
         this.field3116 = field3116;
         this.field3118 = field3117;
@@ -57,7 +59,7 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     public void method2973(final int n, final int n2) {
         final String method8461 = this.field3148.method8461();
         this.field3156.method6610(method8461, (float)(this.field3075 / 2 - this.field3156.method6617(method8461) / 2), 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.method1871().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.field3156.method6610(this.field3078.getDisplayName().method8461(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override

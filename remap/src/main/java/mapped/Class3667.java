@@ -11,10 +11,10 @@ public class Class3667 extends Class3666
     }
     
     public boolean method11301(final Class473 class473, final Class1847 class474) {
-        Class8321 field34174 = Class8321.field34174;
-        Class8321 field34175 = Class8321.field34174;
+        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34175 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (!(method2157.method27622() instanceof Class4044)) {
                     if (method2157.method27622() != Class7739.field31583) {
@@ -39,11 +39,11 @@ public class Class3667 extends Class3666
         return !field34174.method27620() && !field34175.method27620();
     }
     
-    public Class8321 method11303(final Class473 class473) {
-        Class8321 field34174 = Class8321.field34174;
-        Class8321 class474 = Class8321.field34174;
+    public ItemStack method11303(final Class473 class473) {
+        ItemStack field34174 = ItemStack.field34174;
+        ItemStack class474 = ItemStack.field34174;
         for (int i = 0; i < class473.method2239(); ++i) {
-            final Class8321 method2157 = class473.method2157(i);
+            final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (!(method2157.method27622() instanceof Class4044)) {
                     if (method2157.method27622() == Class7739.field31583) {

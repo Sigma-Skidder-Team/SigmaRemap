@@ -14,7 +14,7 @@ public abstract class Class834 extends Class833
     private Class834 field4445;
     private int field4446;
     
-    public Class834(final Class7499<? extends Class834> class7499, final Class1847 class7500) {
+    public Class834(final EntityType<? extends Class834> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4446 = 1;
     }

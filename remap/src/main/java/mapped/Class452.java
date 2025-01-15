@@ -24,16 +24,16 @@ public class Class452 implements Class446
     }
     
     @Override
-    public Class8321 method2157(final int n) {
-        return (n != 0) ? Class8321.field34174 : Class435.method2181(this.field2700);
+    public ItemStack method2157(final int n) {
+        return (n != 0) ? ItemStack.field34174 : Class435.method2181(this.field2700);
     }
     
     @Override
-    public Class8321 method2158(final int n, final int n2) {
+    public ItemStack method2158(final int n, final int n2) {
         if (n != 0) {
-            return Class8321.field34174;
+            return ItemStack.field34174;
         }
-        final Class8321 method27621 = Class435.method2181(this.field2700).method27621(n2);
+        final ItemStack method27621 = Class435.method2181(this.field2700).method27621(n2);
         if (Class435.method2181(this.field2700).method27620()) {
             Class435.method2182(this.field2700);
         }
@@ -41,18 +41,18 @@ public class Class452 implements Class446
     }
     
     @Override
-    public Class8321 method2159(final int n) {
+    public ItemStack method2159(final int n) {
         if (n != 0) {
-            return Class8321.field34174;
+            return ItemStack.field34174;
         }
-        final Class8321 method2181 = Class435.method2181(this.field2700);
-        Class435.method2183(this.field2700, Class8321.field34174);
+        final ItemStack method2181 = Class435.method2181(this.field2700);
+        Class435.method2183(this.field2700, ItemStack.field34174);
         Class435.method2182(this.field2700);
         return method2181;
     }
     
     @Override
-    public void method2160(final int n, final Class8321 class8321) {
+    public void method2160(final int n, final ItemStack class8321) {
     }
     
     @Override
@@ -71,7 +71,7 @@ public class Class452 implements Class446
     }
     
     @Override
-    public boolean method2264(final int n, final Class8321 class8321) {
+    public boolean method2264(final int n, final ItemStack class8321) {
         return false;
     }
     

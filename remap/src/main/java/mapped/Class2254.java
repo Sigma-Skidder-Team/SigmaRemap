@@ -8,6 +8,7 @@ import java.util.List;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class2254 extends Class2251 implements Class2253
 {
@@ -70,7 +71,7 @@ public class Class2254 extends Class2251 implements Class2253
     }
     
     @Override
-    public Class2250 method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
+    public ITextComponent method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
         if (class7492 != null) {
             String s;
             if (this.field13797 == null) {

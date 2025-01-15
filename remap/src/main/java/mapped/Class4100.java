@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.List;
 
 public class Class4100 extends Class3820
@@ -24,38 +26,38 @@ public class Class4100 extends Class3820
     }
     
     @Override
-    public String method11718(final Class8321 class8321) {
+    public String method11718(final ItemStack class8321) {
         return (class8321.method27660("BlockEntityTag") == null) ? super.method11718(class8321) : (this.method11717() + '.' + method12343(class8321).method814());
     }
     
     @Override
-    public void method11728(final Class8321 class8321, final Class1847 class8322, final List<Class2250> list, final Class1981 class8323) {
+    public void method11728(final ItemStack class8321, final Class1847 class8322, final List<ITextComponent> list, final Class1981 class8323) {
         Class4044.method12243(class8321, list);
     }
     
     @Override
-    public Class1992 method11725(final Class8321 class8321) {
+    public Class1992 method11725(final ItemStack class8321) {
         return Class1992.field11157;
     }
     
     @Override
-    public int method11726(final Class8321 class8321) {
+    public int method11726(final ItemStack class8321) {
         return 72000;
     }
     
     @Override
-    public Class9355<Class8321> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
-        final Class8321 method2715 = class1848.method2715(class1849);
+    public Class9355<ItemStack> method11695(final Class1847 class1847, final Class512 class1848, final Class316 class1849) {
+        final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2762(class1849);
         return Class9355.method34675(method2715);
     }
     
     @Override
-    public boolean method11738(final Class8321 class8321, final Class8321 class8322) {
+    public boolean method11738(final ItemStack class8321, final ItemStack class8322) {
         return Class7855.field32237.method25618(class8322.method27622()) || super.method11738(class8321, class8322);
     }
     
-    public static Class181 method12343(final Class8321 class8321) {
+    public static Class181 method12343(final ItemStack class8321) {
         return Class181.method819(class8321.method27659("BlockEntityTag").method319("Base"));
     }
 }

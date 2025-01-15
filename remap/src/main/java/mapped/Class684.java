@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.Iterator;
@@ -121,22 +122,22 @@ public class Class684 extends Class565
         }
     }
     
-    public void method3761(final Class2250 class2250) {
+    public void method3761(final ITextComponent class2250) {
         this.method3762(class2250, 0);
     }
     
-    public void method3762(final Class2250 class2250, final int n) {
+    public void method3762(final ITextComponent class2250, final int n) {
         this.method3763(class2250, n, this.field3742.field4647.method3808(), false);
         Class684.field3741.info("[CHAT] {}", (Object)class2250.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n"));
     }
     
-    private void method3763(final Class2250 class2250, final int n, final int n2, final boolean b) {
+    private void method3763(final ITextComponent class2250, final int n, final int n2, final boolean b) {
         if (n != 0) {
             this.method3771(n);
         }
-        final List<Class2250> method31697 = Class8936.method31697(class2250, MathHelper.floor(this.method3772() / this.method3774()), this.field3742.field4643, false, false);
+        final List<ITextComponent> method31697 = Class8936.method31697(class2250, MathHelper.floor(this.method3772() / this.method3774()), this.field3742.field4643, false, false);
         final boolean method31698 = this.method3770();
-        for (final Class2250 class2251 : method31697) {
+        for (final ITextComponent class2251 : method31697) {
             if (method31698) {
                 if (this.field3746 > 0) {
                     this.field3747 = true;
@@ -193,7 +194,7 @@ public class Class684 extends Class565
     }
     
     @Nullable
-    public Class2250 method3769(final double n, final double n2) {
+    public ITextComponent method3769(final double n, final double n2) {
         if (this.method3770()) {
             if (!this.field3742.field4648.field23464) {
                 if (this.method3758()) {
@@ -212,7 +213,7 @@ public class Class684 extends Class565
                             if (n7 < this.field3745.size()) {
                                 final Class8693 class8693 = this.field3745.get(n7);
                                 int n8 = 0;
-                                for (final Class2250 class8694 : class8693.method29803()) {
+                                for (final ITextComponent class8694 : class8693.method29803()) {
                                     if (!(class8694 instanceof Class2260)) {
                                         continue;
                                     }

@@ -48,7 +48,7 @@ public class Class3901 extends Class3892
                     }
                 }
                 final BlockPos method29799 = method29797.method25270(1, 2, 0).method26068();
-                final Class786 class1849 = Class7499.field29043.method23371(class1847);
+                final Class786 class1849 = EntityType.field29043.method23371(class1847);
                 class1849.method4342(true);
                 class1849.method1730(method29799.getX() + 0.5, method29799.getY() + 0.05, method29799.getZ() + 0.5, 0.0f, 0.0f);
                 class1847.method6886(class1849);
@@ -69,7 +69,7 @@ public class Class3901 extends Class3892
                 class1847.method6688(method29800.method26068(), Class7521.field29147.method11878(), 2);
                 class1847.method6955(2001, method29800.method26068(), Class3833.method11774(method29800.method26065()));
             }
-            final Class784 class1850 = Class7499.field29027.method23371(class1847);
+            final Class784 class1850 = EntityType.field29027.method23371(class1847);
             final BlockPos method29801 = method29796.method25270(0, 2, 0).method26068();
             class1850.method1730(method29801.getX() + 0.5, method29801.getY() + 0.05, method29801.getZ() + 0.5, 0.0f, 0.0f);
             class1847.method6886(class1850);
@@ -122,7 +122,7 @@ public class Class3901 extends Class3892
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class7499<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return true;
     }
     

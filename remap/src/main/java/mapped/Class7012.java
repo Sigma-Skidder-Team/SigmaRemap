@@ -8,14 +8,11 @@ import java.lang.reflect.Type;
 import com.google.gson.GsonBuilder;
 import org.apache.logging.log4j.LogManager;
 import java.util.LinkedHashSet;
-import java.util.Collection;
 import java.util.HashMap;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import com.google.common.base.Charsets;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.function.Function;
 import java.util.Comparator;
@@ -194,7 +191,7 @@ public class Class7012
                     if (class8863.method31036() != null) {
                         if (class8863.method31036().method22535()) {
                             if (this.field27341.field2391.method6765().method31216(Class8878.field37337)) {
-                                this.field27335.method1537().method20619(new Class2259("chat.type.advancement." + class8863.method31036().method22531().method8015(), new Object[] { this.field27341.method1871(), class8863.method31044() }));
+                                this.field27335.method1537().method20619(new Class2259("chat.type.advancement." + class8863.method31036().method22531().method8015(), new Object[] { this.field27341.getDisplayName(), class8863.method31044() }));
                             }
                         }
                     }

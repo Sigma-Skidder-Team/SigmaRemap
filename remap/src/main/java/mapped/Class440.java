@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.stream.IntStream;
 import javax.annotation.Nullable;
@@ -16,7 +17,7 @@ import java.util.List;
 public class Class440 extends Class456 implements Class441, Class439
 {
     private static final int[] field2665;
-    private Class2265<Class8321> field2666;
+    private Class2265<ItemStack> field2666;
     private int field2667;
     private Class2100 field2668;
     private float field2669;
@@ -26,7 +27,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     public Class440(final Class181 field2671) {
         super(Class5412.field22563);
-        this.field2666 = Class2265.method8507(27, Class8321.field34174);
+        this.field2666 = Class2265.method8507(27, ItemStack.field34174);
         this.field2668 = Class2100.field12169;
         this.field2671 = field2671;
     }
@@ -204,7 +205,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.shulkerBox", new Object[0]);
     }
     
@@ -221,7 +222,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     public void method2244(final Class51 class51) {
-        this.field2666 = Class2265.method8507(this.method2239(), Class8321.field34174);
+        this.field2666 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!this.method2324(class51)) {
             if (class51.method316("Items", 9)) {
                 Class8508.method28426(class51, this.field2666);
@@ -237,12 +238,12 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public Class2265<Class8321> method2246() {
+    public Class2265<ItemStack> method2246() {
         return this.field2666;
     }
     
     @Override
-    public void method2247(final Class2265<Class8321> field2666) {
+    public void method2247(final Class2265<ItemStack> field2666) {
         this.field2666 = field2666;
     }
     
@@ -252,12 +253,12 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public boolean method2249(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
         return !(Class3833.method11776(class8321.method27622()) instanceof Class3942);
     }
     
     @Override
-    public boolean method2250(final int n, final Class8321 class8321, final Direction class8322) {
+    public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
         return true;
     }
     

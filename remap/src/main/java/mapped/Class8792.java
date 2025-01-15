@@ -19,6 +19,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.Optional;
 import java.util.Random;
@@ -31,8 +32,8 @@ public class Class8792
     private static final Class2259 field36948;
     private static final Class2259 field36949;
     private static final Class2259 field36950;
-    private static final Class2250 field36951;
-    private static final Class2250 field36952;
+    private static final ITextComponent field36951;
+    private static final ITextComponent field36952;
     private final Map<Integer, Class776> field36953;
     private final Map<Integer, Set<Class776>> field36954;
     private final Set<UUID> field36955;
@@ -462,20 +463,20 @@ public class Class8792
                     }
                 }
                 this.method30644(n2, class356, class354, false);
-                if (Class1990.method8011(class355) == Class7499.field29056) {
+                if (Class1990.method8011(class355) == EntityType.field29056) {
                     Class776 class357 = null;
                     if (n2 != this.method30665(Class2113.field12292)) {
                         if (n2 >= this.method30665(Class2113.field12293)) {
                             if (n4 != 0) {
-                                class357 = Class7499.field29044.method23371(this.field36958);
+                                class357 = EntityType.field29044.method23371(this.field36958);
                             }
                             else {
-                                class357 = Class7499.field28980.method23371(this.field36958);
+                                class357 = EntityType.field28980.method23371(this.field36958);
                             }
                         }
                     }
                     else {
-                        class357 = Class7499.field29045.method23371(this.field36958);
+                        class357 = EntityType.field29045.method23371(this.field36958);
                     }
                     ++n4;
                     if (class357 != null) {
@@ -559,8 +560,8 @@ public class Class8792
         this.field36958.method6926().method18903();
     }
     
-    public static Class8321 method30651() {
-        final Class8321 class8321 = new Class8321(Class7739.field31556);
+    public static ItemStack method30651() {
+        final ItemStack class8321 = new ItemStack(Class7739.field31556);
         class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field837, Class181.field546).method33336(Class230.field817, Class181.field545).method33336(Class230.field821, Class181.field544).method33336(Class230.field842, Class181.field545).method33336(Class230.field822, Class181.field552).method33336(Class230.field839, Class181.field545).method33336(Class230.field836, Class181.field545).method33336(Class230.field842, Class181.field552).method33337());
         class8321.method27665(new Class2259("block.minecraft.ominous_banner", new Object[0]).method8469(Class2116.field12315));
         return class8321;
@@ -583,7 +584,7 @@ public class Class8792
             if (!this.field36958.method6922(class385) || n >= 2) {
                 if (this.field36958.method6973(class385.getX() - 10, class385.getY() - 10, class385.getZ() - 10, class385.getX() + 10, class385.getY() + 10, class385.getZ() + 10)) {
                     if (this.field36958.method6904().method7409(new Class7859(class385))) {
-                        if (!Class8532.method28621(Class2194.field13354, this.field36958, class385, Class7499.field29056)) {
+                        if (!Class8532.method28621(Class2194.field13354, this.field36958, class385, EntityType.field29056)) {
                             if (this.field36958.method6701(class385.method1139()).method21696() != Class7521.field29329) {
                                 continue;
                             }

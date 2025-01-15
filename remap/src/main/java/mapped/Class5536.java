@@ -7,10 +7,10 @@ package mapped;
 public class Class5536 extends Class5509
 {
     public Class5536() {
-        super(Class7499.field29030, "spider", 1.0f);
+        super(EntityType.field29030, "spider", 1.0f);
     }
     
-    public Class5536(final Class7499 class7499, final String s, final float n) {
+    public Class5536(final EntityType class7499, final String s, final float n) {
         super(class7499, s, n);
     }
     

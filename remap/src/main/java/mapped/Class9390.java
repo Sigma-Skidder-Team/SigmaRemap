@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class9390
 {
     private final Class1961 field40296;
-    private final Class2250 field40297;
+    private final ITextComponent field40297;
     
-    public Class9390(final Class1961 field40296, final Class2250 field40297) {
+    public Class9390(final Class1961 field40296, final ITextComponent field40297) {
         this.field40296 = field40296;
         this.field40297 = field40297;
     }
@@ -18,7 +20,7 @@ public class Class9390
         return this.field40296;
     }
     
-    public Class2250 method34912() {
+    public ITextComponent method34912() {
         return this.field40297;
     }
     

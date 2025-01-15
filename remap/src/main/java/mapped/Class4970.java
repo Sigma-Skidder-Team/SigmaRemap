@@ -5,8 +5,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import javax.annotation.Nullable;
 import java.util.Map;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +17,7 @@ public class Class4970
     private static final Logger field21431;
     private static final Map<Class8471<?>, Class8255<?, ?>> field21432;
     
-    public static <T extends Class3418> void method15154(final Class8471<T> class8471, final Class869 class8472, final int n, final Class2250 class8473) {
+    public static <T extends Class3418> void method15154(final Class8471<T> class8471, final Class869 class8472, final int n, final ITextComponent class8473) {
         if (class8471 != null) {
             final Class8255<T, ?> method15155 = method15155(class8471);
             if (method15155 != null) {

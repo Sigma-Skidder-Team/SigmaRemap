@@ -12,7 +12,7 @@ public class Class854 extends Class853
 {
     private static String[] field4561;
     
-    public Class854(final Class7499<? extends Class854> class7499, final Class1847 class7500) {
+    public Class854(final EntityType<? extends Class854> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -22,7 +22,7 @@ public class Class854 extends Class853
         this.method2710(Class8107.field33408).method23941(0.20000000298023224);
     }
     
-    public static boolean method5143(final Class7499<Class854> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
+    public static boolean method5143(final EntityType<Class854> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         return class7500.method6954() != Class2113.field12290;
     }
     

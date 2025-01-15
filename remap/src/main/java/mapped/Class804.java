@@ -8,7 +8,7 @@ public class Class804 extends Class789
 {
     private static String[] field4326;
     
-    public Class804(final Class7499<? extends Class804> class7499, final Class1847 class7500) {
+    public Class804(final EntityType<? extends Class804> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -58,19 +58,19 @@ public class Class804 extends Class789
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() == Class7739.field31349) {
             if (!class512.field3025.field27304) {
                 if (!this.method2625()) {
                     class512.method1695(Class8520.field35098, 1.0f, 1.0f);
                     method2715.method27693(1);
                     if (!method2715.method27620()) {
-                        if (!class512.field3006.method2362(new Class8321(Class7739.field31358))) {
-                            class512.method2822(new Class8321(Class7739.field31358), false);
+                        if (!class512.field3006.method2362(new ItemStack(Class7739.field31358))) {
+                            class512.method2822(new ItemStack(Class7739.field31358), false);
                         }
                     }
                     else {
-                        class512.method2716(class513, new Class8321(Class7739.field31358));
+                        class512.method2716(class513, new ItemStack(Class7739.field31358));
                     }
                     return true;
                 }
@@ -80,7 +80,7 @@ public class Class804 extends Class789
     }
     
     public Class804 method4704(final Class788 class788) {
-        return Class7499.field28968.method23371(this.field2391);
+        return EntityType.field28968.method23371(this.field2391);
     }
     
     @Override

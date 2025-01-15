@@ -71,7 +71,7 @@ public class Class7793
     private boolean field31929;
     private boolean field31930;
     private boolean field31931;
-    private Class7499<?> field31932;
+    private EntityType<?> field31932;
     private boolean field31933;
     private boolean field31934;
     private boolean field31935;
@@ -190,21 +190,21 @@ public class Class7793
                         this.field31904 = 1;
                         this.field31905 = false;
                         this.field31918 = Class7793.field31900;
-                        this.method25097(Class7499.field29058);
+                        this.method25097(EntityType.field29058);
                     }
                 }
                 else {
                     this.field31904 = Integer.MAX_VALUE;
                     this.field31905 = false;
                     this.field31918 = Class7793.field31897;
-                    this.method25097(Class7499.field29058);
+                    this.method25097(EntityType.field29058);
                 }
             }
             else {
                 this.field31904 = 1;
                 this.field31905 = false;
                 this.field31918 = Class7793.field31898;
-                this.method25097(Class7499.field29058);
+                this.method25097(EntityType.field29058);
             }
             this.field31923 = this::method25075;
             if (this.field31902.canRead()) {
@@ -556,7 +556,7 @@ public class Class7793
         this.field31931 = field31931;
     }
     
-    public void method25097(final Class7499<?> field31932) {
+    public void method25097(final EntityType<?> field31932) {
         this.field31932 = field31932;
     }
     

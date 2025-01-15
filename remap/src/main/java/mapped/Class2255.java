@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import com.google.common.base.Joiner;
@@ -58,7 +59,7 @@ public abstract class Class2255 extends Class2251 implements Class2253
     }
     
     @Override
-    public Class2250 method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
+    public ITextComponent method8473(final Class7492 class7492, final Entity class7493, final int n) throws CommandSyntaxException {
         if (class7492 != null && this.field13803 != null) {
             final Stream<Object> map = this.method8481(class7492).flatMap(class7494 -> {
                 try {
@@ -68,13 +69,13 @@ public abstract class Class2255 extends Class2251 implements Class2253
                     return Stream.empty();
                 }
             }).map((Function<? super Object, ?>)Class41::method267);
-            return this.field13801 ? ((Class2250)map.flatMap(str -> {
+            return this.field13801 ? ((ITextComponent)map.flatMap(str -> {
                 try {
                     return Stream.of(Class9479.method35294(class7495, Class5953.method17871(str), class7496, n2));
                 }
                 catch (final Exception ex2) {
                     Class2255.field13800.warn("Failed to parse component: " + str, (Throwable)ex2);
-                    return Stream.of(new Class2250[0]);
+                    return Stream.of(new ITextComponent[0]);
                 }
             }).reduce((class7497, class7499) -> class7497.method8457(", ").method8458(class7499)).orElse(new Class2260(""))) : new Class2260(Joiner.on(", ").join((Iterator)map.iterator()));
         }

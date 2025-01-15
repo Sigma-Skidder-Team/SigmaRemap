@@ -13,7 +13,7 @@ public class Class786 extends Class785
     private int field4196;
     private int field4197;
     
-    public Class786(final Class7499<? extends Class786> class7499, final Class1847 class7500) {
+    public Class786(final EntityType<? extends Class786> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2420 = 1.0f;
     }
@@ -85,8 +85,8 @@ public class Class786 extends Class785
     }
     
     @Override
-    public boolean method2620(final Class7499<?> class7499) {
-        return (!this.method4341() || class7499 != Class7499.field29058) && class7499 != Class7499.field28969 && super.method2620(class7499);
+    public boolean method2620(final EntityType<?> class7499) {
+        return (!this.method4341() || class7499 != EntityType.field29058) && class7499 != EntityType.field28969 && super.method2620(class7499);
     }
     
     @Override
@@ -183,7 +183,7 @@ public class Class786 extends Class785
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() != Class7739.field31284) {
             return false;
         }

@@ -54,9 +54,9 @@ public class Class5446 extends Class5419<Class824>
         }
     }
     
-    private Class8321 method16633(final Class181 class181, final int n) {
-        final Class8321 class182 = new Class8321(Class7739.field31532, 1);
-        final Class8321 class183 = new Class8321(Class7739.field31533);
+    private ItemStack method16633(final Class181 class181, final int n) {
+        final ItemStack class182 = new ItemStack(Class7739.field31532, 1);
+        final ItemStack class183 = new ItemStack(Class7739.field31533);
         final Class51 method27659 = class183.method27659("Explosion");
         final ArrayList arrayList = Lists.newArrayList();
         arrayList.add(class181.method817());

@@ -37,7 +37,7 @@ public interface Class1874
         return class400.method24540() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
             final boolean b;
             if (!class402.field2410) {
-                if (!(!class402.field2386)) {
+                if (!(!class402.preventEntitySpawning)) {
                     if (class401 == null || !class402.method1916(class401)) {
                         return b;
                     }

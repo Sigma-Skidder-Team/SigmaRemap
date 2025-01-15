@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Collection;
 
 public class Class4060 extends Class3820
@@ -13,7 +15,7 @@ public class Class4060 extends Class3820
     }
     
     @Override
-    public boolean method11730(final Class8321 class8321) {
+    public boolean method11730(final ItemStack class8321) {
         return true;
     }
     
@@ -38,7 +40,7 @@ public class Class4060 extends Class3820
         return Class2201.field13400;
     }
     
-    private void method12265(final Class512 class512, final Class7096 class513, final Class1851 class514, final BlockPos class515, final boolean b, final Class8321 class516) {
+    private void method12265(final Class512 class512, final Class7096 class513, final Class1851 class514, final BlockPos class515, final boolean b, final ItemStack class516) {
         if (class512.method2908()) {
             final Class3833 method21696 = class513.method21696();
             final Class9104<Class3833, Class7096> method21697 = method21696.method11876();
@@ -76,7 +78,7 @@ public class Class4060 extends Class3820
         return b ? Class8349.method27849(iterable, t) : Class8349.method27848(iterable, t);
     }
     
-    private static void method12268(final Class512 class512, final Class2250 class513) {
+    private static void method12268(final Class512 class512, final ITextComponent class513) {
         ((Class513)class512).method2941(class513, Class285.field1574);
     }
     

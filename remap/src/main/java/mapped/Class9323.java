@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Objects;
 import javax.annotation.Nullable;
 
@@ -14,9 +16,9 @@ public class Class9323
     private byte field40029;
     private byte field40030;
     private byte field40031;
-    private final Class2250 field40032;
+    private final ITextComponent field40032;
     
-    public Class9323(final Class2095 field40028, final byte field40029, final byte field40030, final byte field40031, final Class2250 field40032) {
+    public Class9323(final Class2095 field40028, final byte field40029, final byte field40030, final byte field40031, final ITextComponent field40032) {
         this.field40028 = field40028;
         this.field40029 = field40029;
         this.field40030 = field40030;
@@ -49,7 +51,7 @@ public class Class9323
     }
     
     @Nullable
-    public Class2250 method34528() {
+    public ITextComponent method34528() {
         return this.field40032;
     }
     

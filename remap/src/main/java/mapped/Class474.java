@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 public class Class474 extends Class466
 {
     public Class474() {
@@ -11,12 +13,12 @@ public class Class474 extends Class466
     }
     
     @Override
-    public Class2250 method2243() {
+    public ITextComponent method2243() {
         return new Class2259("container.blast_furnace", new Object[0]);
     }
     
     @Override
-    public int method2398(final Class8321 class8321) {
+    public int method2398(final ItemStack class8321) {
         return super.method2398(class8321) / 2;
     }
     

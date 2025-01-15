@@ -29,7 +29,7 @@ public abstract class Class7207
     private boolean field28010;
     private boolean field28011;
     private Class242[] field28012;
-    private Class8321 field28013;
+    private ItemStack field28013;
     
     public Class7207(final int field28006, final String field28007) {
         this.field28009 = "items.png";
@@ -38,7 +38,7 @@ public abstract class Class7207
         this.field28012 = new Class242[0];
         this.field28006 = field28006;
         this.field28007 = field28007;
-        this.field28013 = Class8321.field34174;
+        this.field28013 = ItemStack.field34174;
         Class7207.field27992[field28006] = this;
     }
     
@@ -58,14 +58,14 @@ public abstract class Class7207
         return "itemGroup." + this.method22109();
     }
     
-    public Class8321 method22112() {
+    public ItemStack method22112() {
         if (this.field28013.method27620()) {
             this.field28013 = this.method22107();
         }
         return this.field28013;
     }
     
-    public abstract Class8321 method22107();
+    public abstract ItemStack method22107();
     
     public String method22113() {
         return this.field28009;
@@ -132,7 +132,7 @@ public abstract class Class7207
         return false;
     }
     
-    public void method22126(final Class2265<Class8321> class2265) {
+    public void method22126(final Class2265<ItemStack> class2265) {
         final Iterator<Object> iterator = Class90.field211.iterator();
         while (iterator.hasNext()) {
             iterator.next().method11735(this, class2265);

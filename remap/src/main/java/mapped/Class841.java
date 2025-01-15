@@ -27,7 +27,7 @@ public class Class841 extends Class785 implements Class762
     private BlockPos field4487;
     private int field4488;
     
-    public Class841(final Class7499<? extends Class841> class7499, final Class1847 class7500) {
+    public Class841(final EntityType<? extends Class841> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2952 = 180.0f;
         this.field2951 = 180.0f;

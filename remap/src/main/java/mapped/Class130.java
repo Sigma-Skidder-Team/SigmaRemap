@@ -28,8 +28,8 @@ public class Class130 extends Class126
     }
     
     @Override
-    public Class8321 method639(final Class8321 class8321, final Class7529 class8322) {
-        final Class8321 class8323 = class8322.method23579(Class6683.field26370);
+    public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
+        final ItemStack class8323 = class8322.method23579(Class6683.field26370);
         if (class8323 != null) {
             class8321.method27691(this.field398.method15235(class8322.method23586(), class8321.method27690(), Class8742.method30195(this.field397, class8323)));
         }

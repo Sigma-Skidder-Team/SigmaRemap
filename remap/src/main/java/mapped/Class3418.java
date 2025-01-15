@@ -14,7 +14,7 @@ import java.util.List;
 
 public abstract class Class3418
 {
-    private final Class2265<Class8321> field16150;
+    private final Class2265<ItemStack> field16150;
     public final List<Class6601> field16151;
     private final List<Class6546> field16152;
     private final Class8471<?> field16153;
@@ -68,7 +68,7 @@ public abstract class Class3418
     public Class6601 method10870(final Class6601 class6601) {
         class6601.field26174 = this.field16151.size();
         this.field16151.add(class6601);
-        this.field16150.add(Class8321.field34174);
+        this.field16150.add(ItemStack.field34174);
         return class6601;
     }
     
@@ -95,19 +95,19 @@ public abstract class Class3418
         this.field16159.remove(class514);
     }
     
-    public Class2265<Class8321> method10875() {
+    public Class2265<ItemStack> method10875() {
         final Class2265<Object> method8506 = Class2265.method8506();
         for (int i = 0; i < this.field16151.size(); ++i) {
             method8506.add(this.field16151.get(i).method20053());
         }
-        return (Class2265<Class8321>)method8506;
+        return (Class2265<ItemStack>)method8506;
     }
     
     public void method10876() {
         for (int i = 0; i < this.field16151.size(); ++i) {
-            final Class8321 method20053 = this.field16151.get(i).method20053();
-            if (!Class8321.method27643(this.field16150.get(i), method20053)) {
-                final Class8321 method20054 = method20053.method27641();
+            final ItemStack method20053 = this.field16151.get(i).method20053();
+            if (!ItemStack.method27643(this.field16150.get(i), method20053)) {
+                final ItemStack method20054 = method20053.method27641();
                 this.field16150.set(i, method20054);
                 final Iterator<Class514> iterator = this.field16159.iterator();
                 while (iterator.hasNext()) {
@@ -134,13 +134,13 @@ public abstract class Class3418
         return this.field16151.get(n);
     }
     
-    public Class8321 method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final Class512 class512, final int n) {
         final Class6601 class513 = this.field16151.get(n);
-        return (class513 == null) ? Class8321.field34174 : class513.method20053();
+        return (class513 == null) ? ItemStack.field34174 : class513.method20053();
     }
     
-    public Class8321 method10879(final int n, final int n2, final Class2133 class2133, final Class512 class2134) {
-        Class8321 class2135 = Class8321.field34174;
+    public ItemStack method10879(final int n, final int n2, final Class2133 class2133, final Class512 class2134) {
+        ItemStack class2135 = ItemStack.field34174;
         final Class464 field3006 = class2134.field3006;
         if (class2133 != Class2133.field12442) {
             if (this.field16157 == 0) {
@@ -148,12 +148,12 @@ public abstract class Class3418
                     if (n != -999) {
                         if (class2133 != Class2133.field12438) {
                             if (n < 0) {
-                                return Class8321.field34174;
+                                return ItemStack.field34174;
                             }
                             final Class6601 class2136 = this.field16151.get(n);
                             if (class2136 != null) {
-                                final Class8321 method20053 = class2136.method20053();
-                                final Class8321 method20054 = field3006.method2375();
+                                final ItemStack method20053 = class2136.method20053();
+                                final ItemStack method20054 = field3006.method2375();
                                 if (!method20053.method27620()) {
                                     class2135 = method20053.method27641();
                                 }
@@ -168,7 +168,7 @@ public abstract class Class3418
                                                             if (method20055 + method20054.method27690() <= method20054.method27628()) {
                                                                 method20054.method27692(method20055);
                                                                 if (class2136.method20060(method20055).method27620()) {
-                                                                    class2136.method20055(Class8321.field34174);
+                                                                    class2136.method20055(ItemStack.field34174);
                                                                 }
                                                                 class2136.method20047(class2134, field3006.method2375());
                                                             }
@@ -197,13 +197,13 @@ public abstract class Class3418
                                         else if (!method20053.method27620()) {
                                             field3006.method2374(class2136.method20060((n2 != 0) ? ((method20053.method27690() + 1) / 2) : method20053.method27690()));
                                             if (method20053.method27620()) {
-                                                class2136.method20055(Class8321.field34174);
+                                                class2136.method20055(ItemStack.field34174);
                                             }
                                             class2136.method20047(class2134, field3006.method2375());
                                         }
                                         else {
-                                            class2136.method20055(Class8321.field34174);
-                                            field3006.method2374(Class8321.field34174);
+                                            class2136.method20055(ItemStack.field34174);
+                                            field3006.method2374(ItemStack.field34174);
                                         }
                                     }
                                 }
@@ -221,13 +221,13 @@ public abstract class Class3418
                         }
                         else {
                             if (n < 0) {
-                                return Class8321.field34174;
+                                return ItemStack.field34174;
                             }
                             final Class6601 class2137 = this.field16151.get(n);
                             if (class2137 == null || !class2137.method20061(class2134)) {
-                                return Class8321.field34174;
+                                return ItemStack.field34174;
                             }
-                            for (Class8321 class2138 = this.method10858(class2134, n); !class2138.method27620() && Class8321.method27645(class2137.method20053(), class2138); class2138 = this.method10858(class2134, n)) {
+                            for (ItemStack class2138 = this.method10858(class2134, n); !class2138.method27620() && ItemStack.method27645(class2137.method20053(), class2138); class2138 = this.method10858(class2134, n)) {
                                 class2135 = class2138.method27641();
                             }
                         }
@@ -235,7 +235,7 @@ public abstract class Class3418
                     else if (!field3006.method2375().method27620()) {
                         if (n2 == 0) {
                             class2134.method2822(field3006.method2375(), true);
-                            field3006.method2374(Class8321.field34174);
+                            field3006.method2374(ItemStack.field34174);
                         }
                         if (n2 == 1) {
                             class2134.method2822(field3006.method2375().method27621(1), true);
@@ -247,8 +247,8 @@ public abstract class Class3418
                         if (n2 >= 0) {
                             if (n2 < 9) {
                                 final Class6601 class2139 = this.field16151.get(n);
-                                final Class8321 method20057 = field3006.method2157(n2);
-                                final Class8321 method20058 = class2139.method20053();
+                                final ItemStack method20057 = field3006.method2157(n2);
+                                final ItemStack method20058 = class2139.method20053();
                                 if (!method20057.method27620() || !method20058.method27620()) {
                                     if (!method20057.method27620()) {
                                         if (!method20058.method27620()) {
@@ -274,7 +274,7 @@ public abstract class Class3418
                                             final int method20060 = class2139.method20058(method20057);
                                             if (method20057.method27690() <= method20060) {
                                                 class2139.method20055(method20057);
-                                                field3006.method2160(n2, Class8321.field34174);
+                                                field3006.method2160(n2, ItemStack.field34174);
                                             }
                                             else {
                                                 class2139.method20055(method20057.method27621(method20060));
@@ -284,7 +284,7 @@ public abstract class Class3418
                                     else if (class2139.method20061(class2134)) {
                                         field3006.method2160(n2, method20058);
                                         class2139.method20051(method20058.method27690());
-                                        class2139.method20055(Class8321.field34174);
+                                        class2139.method20055(ItemStack.field34174);
                                         class2139.method20047(class2134, method20058);
                                     }
                                 }
@@ -299,7 +299,7 @@ public abstract class Class3418
                                     final Class6601 class2140 = this.field16151.get(n);
                                     if (class2140 != null) {
                                         if (class2140.method20054()) {
-                                            final Class8321 method20061 = class2140.method20053().method27641();
+                                            final ItemStack method20061 = class2140.method20053().method27641();
                                             method20061.method27691(method20061.method27628());
                                             field3006.method2374(method20061);
                                         }
@@ -316,7 +316,7 @@ public abstract class Class3418
                                 if (class2141 != null) {
                                     if (class2141.method20054()) {
                                         if (class2141.method20061(class2134)) {
-                                            final Class8321 method20062 = class2141.method20060((n2 != 0) ? class2141.method20053().method27690() : 1);
+                                            final ItemStack method20062 = class2141.method20060((n2 != 0) ? class2141.method20053().method27690() : 1);
                                             class2141.method20047(class2134, method20062);
                                             class2134.method2822(method20062, true);
                                         }
@@ -329,7 +329,7 @@ public abstract class Class3418
                     if (class2133 == Class2133.field12443) {
                         if (n >= 0) {
                             final Class6601 class2142 = this.field16151.get(n);
-                            final Class8321 method20063 = field3006.method2375();
+                            final ItemStack method20063 = field3006.method2375();
                             Label_2025: {
                                 if (!method20063.method27620()) {
                                     if (class2142 != null) {
@@ -354,13 +354,13 @@ public abstract class Class3418
                                                 if (method10894(class2143, method20063, true)) {
                                                     if (class2143.method20061(class2134)) {
                                                         if (this.method10857(method20063, class2143)) {
-                                                            final Class8321 method20064 = class2143.method20053();
+                                                            final ItemStack method20064 = class2143.method20053();
                                                             if (i != 0 || method20064.method27690() != method20064.method27628()) {
                                                                 final int min = Math.min(method20063.method27628() - method20063.method27690(), method20064.method27690());
-                                                                final Class8321 method20065 = class2143.method20060(min);
+                                                                final ItemStack method20065 = class2143.method20060(min);
                                                                 method20063.method27692(min);
                                                                 if (method20065.method27620()) {
-                                                                    class2143.method20055(Class8321.field34174);
+                                                                    class2143.method20055(ItemStack.field34174);
                                                                 }
                                                                 class2143.method20047(class2134, method20065);
                                                             }
@@ -398,10 +398,10 @@ public abstract class Class3418
                         }
                         else {
                             if (!this.field16158.isEmpty()) {
-                                final Class8321 method20066 = field3006.method2375().method27641();
+                                final ItemStack method20066 = field3006.method2375().method27641();
                                 int method20067 = field3006.method2375().method27690();
                                 for (final Class6601 class2144 : this.field16158) {
-                                    final Class8321 method20068 = field3006.method2375();
+                                    final ItemStack method20068 = field3006.method2375();
                                     if (class2144 == null) {
                                         continue;
                                     }
@@ -417,7 +417,7 @@ public abstract class Class3418
                                     if (!this.method10896(class2144)) {
                                         continue;
                                     }
-                                    final Class8321 method20069 = method20066.method27641();
+                                    final ItemStack method20069 = method20066.method27641();
                                     final int n6 = class2144.method20054() ? class2144.method20053().method27690() : 0;
                                     method10895(this.field16158, this.field16156, method20069, n6);
                                     final int min2 = Math.min(method20069.method27628(), class2144.method20058(method20069));
@@ -435,7 +435,7 @@ public abstract class Class3418
                     }
                     else {
                         final Class6601 class2145 = this.field16151.get(n);
-                        final Class8321 method20070 = field3006.method2375();
+                        final ItemStack method20070 = field3006.method2375();
                         if (class2145 != null) {
                             if (method10894(class2145, method20070, true)) {
                                 if (class2145.method20046(method20070)) {
@@ -467,11 +467,11 @@ public abstract class Class3418
         return class2135;
     }
     
-    public static boolean method10880(final Class8321 class8321, final Class8321 class8322) {
-        return class8321.method27622() == class8322.method27622() && Class8321.method27642(class8321, class8322);
+    public static boolean method10880(final ItemStack class8321, final ItemStack class8322) {
+        return class8321.method27622() == class8322.method27622() && ItemStack.method27642(class8321, class8322);
     }
     
-    public boolean method10857(final Class8321 class8321, final Class6601 class8322) {
+    public boolean method10857(final ItemStack class8321, final Class6601 class8322) {
         return true;
     }
     
@@ -479,7 +479,7 @@ public abstract class Class3418
         final Class464 field3006 = class512.field3006;
         if (!field3006.method2375().method27620()) {
             class512.method2822(field3006.method2375(), false);
-            field3006.method2374(Class8321.field34174);
+            field3006.method2374(ItemStack.field34174);
         }
     }
     
@@ -500,13 +500,13 @@ public abstract class Class3418
         this.method10876();
     }
     
-    public void method10882(final int n, final Class8321 class8321) {
+    public void method10882(final int n, final ItemStack class8321) {
         this.method10878(n).method20055(class8321);
     }
     
-    public void method10883(final List<Class8321> list) {
+    public void method10883(final List<ItemStack> list) {
         for (int i = 0; i < list.size(); ++i) {
-            this.method10878(i).method20055((Class8321)list.get(i));
+            this.method10878(i).method20055((ItemStack)list.get(i));
         }
     }
     
@@ -533,7 +533,7 @@ public abstract class Class3418
     
     public abstract boolean method10854(final Class512 p0);
     
-    public boolean method10888(final Class8321 class8321, final int n, final int n2, final boolean b) {
+    public boolean method10888(final ItemStack class8321, final int n, final int n2, final boolean b) {
         boolean b2 = false;
         int n3 = n;
         if (b) {
@@ -550,7 +550,7 @@ public abstract class Class3418
                     break;
                 }
                 final Class6601 class8322 = this.field16151.get(n3);
-                final Class8321 method20053 = class8322.method20053();
+                final ItemStack method20053 = class8322.method20053();
                 if (!method20053.method27620()) {
                     if (method10880(class8321, method20053)) {
                         final int n4 = method20053.method27690() + class8321.method27690();
@@ -639,11 +639,11 @@ public abstract class Class3418
         this.field16158.clear();
     }
     
-    public static boolean method10894(final Class6601 class6601, final Class8321 class6602, final boolean b) {
+    public static boolean method10894(final Class6601 class6601, final ItemStack class6602, final boolean b) {
         final boolean b2 = class6601 == null || !class6601.method20054();
         if (!b2) {
             if (class6602.method27647(class6601.method20053())) {
-                if (Class8321.method27642(class6601.method20053(), class6602)) {
+                if (ItemStack.method27642(class6601.method20053(), class6602)) {
                     return class6601.method20053().method27690() + (b ? 0 : class6602.method27690()) <= class6602.method27628();
                 }
             }
@@ -651,7 +651,7 @@ public abstract class Class3418
         return b2;
     }
     
-    public static void method10895(final Set<Class6601> set, final int n, final Class8321 class8321, final int n2) {
+    public static void method10895(final Set<Class6601> set, final int n, final ItemStack class8321, final int n2) {
         switch (n) {
             case 0: {
                 class8321.method27691(MathHelper.method35642(class8321.method27690() / (float)set.size()));
@@ -682,7 +682,7 @@ public abstract class Class3418
             int n = 0;
             float n2 = 0.0f;
             for (int i = 0; i < class446.method2239(); ++i) {
-                final Class8321 method2157 = class446.method2157(i);
+                final ItemStack method2157 = class446.method2157(i);
                 if (!method2157.method27620()) {
                     n2 += method2157.method27690() / (float)Math.min(class446.method2254(), method2157.method27628());
                     ++n;

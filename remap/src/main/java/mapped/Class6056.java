@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonDeserializationContext;
@@ -13,7 +14,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.util.function.Consumer;
-import java.util.Collection;
 import java.util.function.Function;
 import com.google.common.collect.Maps;
 import java.util.Map;
@@ -59,12 +59,12 @@ public class Class6056
         return this;
     }
     
-    public Class6056 method18004(final Class8321 class8321, final Class2250 class8322, final Class2250 class8323, final Class1932 class8324, final Class1993 class8325, final boolean b, final boolean b2, final boolean b3) {
+    public Class6056 method18004(final ItemStack class8321, final ITextComponent class8322, final ITextComponent class8323, final Class1932 class8324, final Class1993 class8325, final boolean b, final boolean b2, final boolean b3) {
         return this.method18006(new Class7339(class8321, class8322, class8323, class8324, class8325, b, b2, b3));
     }
     
-    public Class6056 method18005(final Class3832 class3832, final Class2250 class3833, final Class2250 class3834, final Class1932 class3835, final Class1993 class3836, final boolean b, final boolean b2, final boolean b3) {
-        return this.method18006(new Class7339(new Class8321(class3832.method11704()), class3833, class3834, class3835, class3836, b, b2, b3));
+    public Class6056 method18005(final Class3832 class3832, final ITextComponent class3833, final ITextComponent class3834, final Class1932 class3835, final Class1993 class3836, final boolean b, final boolean b2, final boolean b3) {
+        return this.method18006(new Class7339(new ItemStack(class3832.method11704()), class3833, class3834, class3835, class3836, b, b2, b3));
     }
     
     public Class6056 method18006(final Class7339 field24614) {

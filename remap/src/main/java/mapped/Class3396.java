@@ -22,10 +22,10 @@ public class Class3396 extends Class3167
                 if (class5744.field2424 <= 30) {
                     continue;
                 }
-                if (!class5744.method1874()) {
+                if (!class5744.hasCustomName()) {
                     continue;
                 }
-                Class6430.method19106(class5744.method1841().method8459() + " might have a custom nametag");
+                Class6430.method19106(class5744.getName().method8459() + " might have a custom nametag");
             }
         }
     }

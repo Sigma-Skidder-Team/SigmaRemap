@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.AbstractList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.Sets;
@@ -18,25 +17,25 @@ public class Class405 extends Class402
     private final Set<Class1948> field2492;
     private boolean field2493;
     
-    public Class405(final Class7499<? extends Class405> class7499, final Class1847 class7500) {
+    public Class405(final EntityType<? extends Class405> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field2491 = Class8644.field36250;
         this.field2492 = Sets.newHashSet();
     }
     
     public Class405(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field28959, n, n2, n3, class1847);
+        super(EntityType.field28959, n, n2, n3, class1847);
         this.field2491 = Class8644.field36250;
         this.field2492 = Sets.newHashSet();
     }
     
     public Class405(final Class1847 class1847, final Class511 class1848) {
-        super(Class7499.field28959, class1848, class1847);
+        super(EntityType.field28959, class1848, class1847);
         this.field2491 = Class8644.field36250;
         this.field2492 = Sets.newHashSet();
     }
     
-    public void method1992(final Class8321 class8321) {
+    public void method1992(final ItemStack class8321) {
         if (class8321.method27622() != Class7739.field31581) {
             if (class8321.method27622() == Class7739.field31280) {
                 this.field2491 = Class8644.field36250;
@@ -63,7 +62,7 @@ public class Class405 extends Class402
         }
     }
     
-    public static int method1993(final Class8321 class8321) {
+    public static int method1993(final ItemStack class8321) {
         final Class51 method27657 = class8321.method27657();
         return (method27657 != null && method27657.method316("CustomPotionColor", 99)) ? method27657.method319("CustomPotionColor") : -1;
     }
@@ -191,11 +190,11 @@ public class Class405 extends Class402
     }
     
     @Override
-    public Class8321 method1974() {
+    public ItemStack method1974() {
         if (this.field2492.isEmpty() && this.field2491 == Class8644.field36250) {
-            return new Class8321(Class7739.field31280);
+            return new ItemStack(Class7739.field31280);
         }
-        final Class8321 class8321 = new Class8321(Class7739.field31581);
+        final ItemStack class8321 = new ItemStack(Class7739.field31581);
         Class5333.method16476(class8321, this.field2491);
         Class5333.method16477(class8321, this.field2492);
         if (this.field2493) {

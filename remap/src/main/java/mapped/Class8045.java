@@ -11,7 +11,7 @@ public class Class8045 implements Class8046<String>
     private static String[] field33114;
     
     public String method26389(final Class1932 class1932) {
-        final Class7499 method35021 = Class9423.method35021(class1932);
+        final EntityType method35021 = Class9423.method35021(class1932);
         return (method35021 != null) ? method35021.method23366() : null;
     }
     

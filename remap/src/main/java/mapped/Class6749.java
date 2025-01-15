@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Collection;
 import com.google.common.collect.Sets;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Set;
 
 public class Class6749 extends Class6750
@@ -13,9 +15,9 @@ public class Class6749 extends Class6750
     private final Class6516 field26543;
     private final String field26544;
     private final Set<String> field26545;
-    private Class2250 field26546;
-    private Class2250 field26547;
-    private Class2250 field26548;
+    private ITextComponent field26546;
+    private ITextComponent field26547;
+    private ITextComponent field26548;
     private boolean field26549;
     private boolean field26550;
     private Class2097 field26551;
@@ -43,12 +45,12 @@ public class Class6749 extends Class6750
         return this.field26544;
     }
     
-    public Class2250 method20540() {
+    public ITextComponent method20540() {
         return this.field26546;
     }
     
-    public Class2250 method20541() {
-        final Class2250 method35299 = Class9479.method35299(this.field26546.method8466().method8467(class8768 -> {
+    public ITextComponent method20541() {
+        final ITextComponent method35299 = Class9479.method35299(this.field26546.method8466().method8467(class8768 -> {
             class8768.method30421(this.field26544);
             new Class9390(Class1961.field10697, new Class2260(this.field26544));
             final Class9390 class8769;
@@ -63,7 +65,7 @@ public class Class6749 extends Class6750
         return method35299;
     }
     
-    public void method20542(final Class2250 field26546) {
+    public void method20542(final ITextComponent field26546) {
         if (field26546 != null) {
             this.field26546 = field26546;
             this.field26543.method19621(this);
@@ -72,21 +74,21 @@ public class Class6749 extends Class6750
         throw new IllegalArgumentException("Name cannot be null");
     }
     
-    public void method20543(final Class2250 class2250) {
+    public void method20543(final ITextComponent class2250) {
         this.field26547 = ((class2250 != null) ? class2250.method8466() : new Class2260(""));
         this.field26543.method19621(this);
     }
     
-    public Class2250 method20544() {
+    public ITextComponent method20544() {
         return this.field26547;
     }
     
-    public void method20545(final Class2250 class2250) {
+    public void method20545(final ITextComponent class2250) {
         this.field26548 = ((class2250 != null) ? class2250.method8466() : new Class2260(""));
         this.field26543.method19621(this);
     }
     
-    public Class2250 method20546() {
+    public ITextComponent method20546() {
         return this.field26548;
     }
     
@@ -96,8 +98,8 @@ public class Class6749 extends Class6750
     }
     
     @Override
-    public Class2250 method20548(final Class2250 class2250) {
-        final Class2250 method8458 = new Class2260("").method8458(this.field26547).method8458(class2250).method8458(this.field26548);
+    public ITextComponent method20548(final ITextComponent class2250) {
+        final ITextComponent method8458 = new Class2260("").method8458(this.field26547).method8458(class2250).method8458(this.field26548);
         final Class2116 method8459 = this.method20563();
         if (method8459 != Class2116.field12330) {
             method8458.method8469(method8459);
@@ -105,7 +107,7 @@ public class Class6749 extends Class6750
         return method8458;
     }
     
-    public static Class2250 method20549(final Class6750 class6750, final Class2250 class6751) {
+    public static ITextComponent method20549(final Class6750 class6750, final ITextComponent class6751) {
         return (class6750 != null) ? class6750.method20548(class6751) : class6751.method8466();
     }
     

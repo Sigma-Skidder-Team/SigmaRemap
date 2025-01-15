@@ -19,7 +19,7 @@ public class Class815 extends Class812 implements Class768
     private Class815 field4373;
     private Class815 field4374;
     
-    public Class815(final Class7499<? extends Class815> class7499, final Class1847 class7500) {
+    public Class815(final EntityType<? extends Class815> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -55,7 +55,7 @@ public class Class815 extends Class812 implements Class768
         super.method1760(class51);
         this.method4789(class51.method319("Variant"));
         if (class51.method316("DecorItem", 10)) {
-            this.field4342.method2160(1, Class8321.method27619(class51.method327("DecorItem")));
+            this.field4342.method2160(1, ItemStack.method27619(class51.method327("DecorItem")));
         }
         this.method4732();
     }
@@ -121,7 +121,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public boolean method4741(final Class512 class512, final Class8321 class513) {
+    public boolean method4741(final Class512 class512, final ItemStack class513) {
         int n = 0;
         int n2 = 0;
         float n3 = 0.0f;
@@ -250,7 +250,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public boolean method4767(final Class8321 class8321) {
+    public boolean method4767(final ItemStack class8321) {
         return Class7855.field32241.method25618(class8321.method27622());
     }
     
@@ -286,7 +286,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Nullable
-    private static Class181 method4791(final Class8321 class8321) {
+    private static Class181 method4791(final ItemStack class8321) {
         final Class3833 method11776 = Class3833.method11776(class8321.method27622());
         return (method11776 instanceof Class4016) ? ((Class4016)method11776).method12199() : null;
     }
@@ -330,7 +330,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     public Class815 method4794() {
-        return Class7499.field28996.method23371(this.field2391);
+        return EntityType.field28996.method23371(this.field2391);
     }
     
     private void method4795(final Class511 class511) {

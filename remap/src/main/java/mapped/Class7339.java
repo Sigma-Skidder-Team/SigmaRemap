@@ -10,13 +10,15 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 
 public class Class7339
 {
-    private final Class2250 field28342;
-    private final Class2250 field28343;
-    private final Class8321 field28344;
+    private final ITextComponent field28342;
+    private final ITextComponent field28343;
+    private final ItemStack field28344;
     private final Class1932 field28345;
     private final Class1993 field28346;
     private final boolean field28347;
@@ -25,7 +27,7 @@ public class Class7339
     private float field28350;
     private float field28351;
     
-    public Class7339(final Class8321 field28344, final Class2250 field28345, final Class2250 field28346, final Class1932 field28347, final Class1993 field28348, final boolean field28349, final boolean field28350, final boolean field28351) {
+    public Class7339(final ItemStack field28344, final ITextComponent field28345, final ITextComponent field28346, final Class1932 field28347, final Class1993 field28348, final boolean field28349, final boolean field28350, final boolean field28351) {
         this.field28342 = field28345;
         this.field28343 = field28346;
         this.field28344 = field28344;
@@ -41,15 +43,15 @@ public class Class7339
         this.field28351 = field28351;
     }
     
-    public Class2250 method22527() {
+    public ITextComponent method22527() {
         return this.field28342;
     }
     
-    public Class2250 method22528() {
+    public ITextComponent method22528() {
         return this.field28343;
     }
     
-    public Class8321 method22529() {
+    public ItemStack method22529() {
         return this.field28344;
     }
     
@@ -83,15 +85,15 @@ public class Class7339
     }
     
     public static Class7339 method22537(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        final Class2250 class2250 = Class9583.method35920(jsonObject, "title", jsonDeserializationContext, (Class<? extends Class2250>)Class2250.class);
-        final Class2250 class2251 = Class9583.method35920(jsonObject, "description", jsonDeserializationContext, (Class<? extends Class2250>)Class2250.class);
+        final ITextComponent class2250 = Class9583.method35920(jsonObject, "title", jsonDeserializationContext, (Class<? extends ITextComponent>) ITextComponent.class);
+        final ITextComponent class2251 = Class9583.method35920(jsonObject, "description", jsonDeserializationContext, (Class<? extends ITextComponent>) ITextComponent.class);
         if (class2250 != null && class2251 != null) {
             return new Class7339(method22538(Class9583.method35914(jsonObject, "icon")), class2250, class2251, jsonObject.has("background") ? new Class1932(Class9583.method35895(jsonObject, "background")) : null, jsonObject.has("frame") ? Class1993.method8017(Class9583.method35895(jsonObject, "frame")) : Class1993.field11162, Class9583.method35901(jsonObject, "show_toast", true), Class9583.method35901(jsonObject, "announce_to_chat", true), Class9583.method35901(jsonObject, "hidden", false));
         }
         throw new JsonSyntaxException("Both title and description must be set");
     }
     
-    private static Class8321 method22538(final JsonObject jsonObject) {
+    private static ItemStack method22538(final JsonObject jsonObject) {
         if (!jsonObject.has("item")) {
             throw new JsonSyntaxException("Unsupported icon type, currently only items are supported (add 'item' key)");
         }
@@ -99,7 +101,7 @@ public class Class7339
         if (jsonObject.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
         }
-        final Class8321 class8321 = new Class8321(method35898);
+        final ItemStack class8321 = new ItemStack(method35898);
         if (jsonObject.has("nbt")) {
             try {
                 class8321.method27663(Class5704.method16938(Class9583.method35894(jsonObject.get("nbt"), "nbt")));
@@ -135,9 +137,9 @@ public class Class7339
     }
     
     public static Class7339 method22540(final Class8654 class8654) {
-        final Class2250 method29497 = class8654.method29497();
-        final Class2250 method29498 = class8654.method29497();
-        final Class8321 method29499 = class8654.method29511();
+        final ITextComponent method29497 = class8654.method29497();
+        final ITextComponent method29498 = class8654.method29497();
+        final ItemStack method29499 = class8654.method29511();
         final Class1993 class8655 = class8654.method29499(Class1993.class);
         class8654.readInt();
         final Class7339 class8656 = new Class7339(method29499, method29497, method29498, null, class8655, false, false, false);

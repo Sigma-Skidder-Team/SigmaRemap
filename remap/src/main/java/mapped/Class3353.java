@@ -113,7 +113,7 @@ public class Class3353 extends Class3167
         int n5 = 0;
         for (int i = 9; i < 45; ++i) {
             if (Class3353.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Class8321 method20053 = Class3353.field15514.field4684.field3008.method10878(i).method20053();
+                final ItemStack method20053 = Class3353.field15514.field4684.field3008.method10878(i).method20053();
                 if (method20053.method27622() instanceof Class4089) {
                     final List<Class1948> method20054 = Class8639.method29355(method20053);
                     final int method20055 = this.method10617(method20054);

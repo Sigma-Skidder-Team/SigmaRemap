@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 
 public class Class503 implements Class434
@@ -32,10 +34,10 @@ public class Class503 implements Class434
     }
     
     @Override
-    public Class2250 method1871() {
-        if (!this.field2878.method1874()) {
-            return this.field2879.method1874() ? this.field2879.method1871() : new Class2259("container.chestDouble", new Object[0]);
+    public ITextComponent method1871() {
+        if (!this.field2878.hasCustomName()) {
+            return this.field2879.hasCustomName() ? this.field2879.getDisplayName() : new Class2259("container.chestDouble", new Object[0]);
         }
-        return this.field2878.method1871();
+        return this.field2878.getDisplayName();
     }
 }

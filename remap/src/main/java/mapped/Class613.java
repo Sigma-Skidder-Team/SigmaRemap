@@ -4,10 +4,11 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Set;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Comparator;
 import java.util.List;
 
@@ -141,7 +142,7 @@ public class Class613 extends Class608<Class639>
                 final Class639 class639 = this.method3539(n, n2);
                 final int n3 = (this.field3543 - this.method3529()) / 2;
                 if (class639 == null) {
-                    Class2250 class640 = null;
+                    ITextComponent class640 = null;
                     final int n4 = n - n3;
                     for (int i = 0; i < this.field3577.length; ++i) {
                         final int method3868 = Class691.method3868(this.field3583, i);
@@ -162,7 +163,7 @@ public class Class613 extends Class608<Class639>
         }
     }
     
-    public void method3587(final Class2250 class2250, final int n, final int n2) {
+    public void method3587(final ITextComponent class2250, final int n, final int n2) {
         if (class2250 != null) {
             final String method8461 = class2250.method8461();
             final int n3 = n + 12;
@@ -175,7 +176,7 @@ public class Class613 extends Class608<Class639>
         }
     }
     
-    public Class2250 method3588(final Class3820 class3820) {
+    public ITextComponent method3588(final Class3820 class3820) {
         return class3820.method11715();
     }
     

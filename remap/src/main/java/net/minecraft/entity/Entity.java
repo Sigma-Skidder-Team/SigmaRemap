@@ -7,9 +7,12 @@ package net.minecraft.entity;
 import java.util.AbstractList;
 
 import mapped.*;
+import net.minecraft.command.ICommandSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.INameable;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
 import java.util.HashSet;
@@ -33,18 +36,18 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Entity implements Class462, Class397
+public abstract class Entity implements INameable, ICommandSource
 {
     public static final Logger LOGGER;
     private static final AtomicInteger NEXT_ENTITY_ID;
-    private static final List<Class8321> EMPTY_EQUIPMENT;
+    private static final List<ItemStack> EMPTY_EQUIPMENT;
     private static final AxisAlignedBB ZERO_AABB;
-    private static double field2383;
-    private final Class7499<?> field2384;
-    private int field2385;
-    public boolean field2386;
-    private final List<Entity> field2387;
-    public int field2388;
+    private static double renderDistanceWeight;
+    private final EntityType<?> type;
+    private int entityId;
+    public boolean preventEntitySpawning;
+    private final List<Entity> passengers;
+    public int rideCooldown;
     private Entity field2389;
     public boolean field2390;
     public Class1847 field2391;
@@ -91,7 +94,7 @@ public abstract class Entity implements Class462, Class397
     public final Class9184 field2432;
     public static final Class8810<Byte> field2433;
     private static final Class8810<Integer> field2434;
-    private static final Class8810<Optional<Class2250>> field2435;
+    private static final Class8810<Optional<ITextComponent>> field2435;
     public static final Class8810<Boolean> field2436;
     private static final Class8810<Boolean> field2437;
     private static final Class8810<Boolean> field2438;
@@ -123,9 +126,9 @@ public abstract class Entity implements Class462, Class397
     private Class8295 field2464;
     public float field2465;
     
-    public Entity(final Class7499<?> field2384, final Class1847 field2385) {
-        this.field2385 = Entity.NEXT_ENTITY_ID.incrementAndGet();
-        this.field2387 = Lists.newArrayList();
+    public Entity(final EntityType<?> field2384, final Class1847 field2385) {
+        this.entityId = Entity.NEXT_ENTITY_ID.incrementAndGet();
+        this.passengers = Lists.newArrayList();
         this.field2398 = Vec3d.ZERO;
         this.field2403 = Entity.ZERO_AABB;
         this.field2409 = Vec3d.ZERO;
@@ -138,7 +141,7 @@ public abstract class Entity implements Class462, Class397
         this.field2458 = this.field2457.toString();
         this.field2460 = Sets.newHashSet();
         this.field2462 = new double[] { 0.0, 0.0, 0.0 };
-        this.field2384 = field2384;
+        this.type = field2384;
         this.field2391 = field2385;
         this.field2464 = field2384.method23376();
         this.method1656(0.0, 0.0, 0.0);
@@ -180,16 +183,16 @@ public abstract class Entity implements Class462, Class397
         this.field2446 = Class4370.method13140(n3);
     }
     
-    public Class7499<?> method1642() {
-        return this.field2384;
+    public EntityType<?> method1642() {
+        return this.type;
     }
     
     public int method1643() {
-        return this.field2385;
+        return this.entityId;
     }
     
     public void method1644(final int field2385) {
-        this.field2385 = field2385;
+        this.entityId = field2385;
     }
     
     public Set<String> method1645() {
@@ -216,12 +219,12 @@ public abstract class Entity implements Class462, Class397
     
     @Override
     public boolean equals(final Object o) {
-        return o instanceof Entity && ((Entity)o).field2385 == this.field2385;
+        return o instanceof Entity && ((Entity)o).entityId == this.entityId;
     }
     
     @Override
     public int hashCode() {
-        return this.field2385;
+        return this.entityId;
     }
     
     public void method1651() {
@@ -295,8 +298,8 @@ public abstract class Entity implements Class462, Class397
                 this.method1784();
             }
         }
-        if (this.field2388 > 0) {
-            --this.field2388;
+        if (this.rideCooldown > 0) {
+            --this.rideCooldown;
         }
         this.field2411 = this.field2412;
         this.field2402 = this.field2400;
@@ -1217,7 +1220,7 @@ public abstract class Entity implements Class462, Class397
         if (Double.isNaN(method18507)) {
             method18507 = 1.0;
         }
-        final double n2 = method18507 * 64.0 * Entity.field2383;
+        final double n2 = method18507 * 64.0 * Entity.renderDistanceWeight;
         return n < n2 * n2;
     }
     
@@ -1249,7 +1252,7 @@ public abstract class Entity implements Class462, Class397
             class51.method312("Invulnerable", this.field2456);
             class51.method298("PortalCooldown", this.field2449);
             class51.method300("UUID", this.method1865());
-            final Class2250 method1936 = this.method1873();
+            final ITextComponent method1936 = this.getCustomName();
             if (method1936 != null) {
                 class51.method306("CustomName", Class5953.method17869(method1936));
             }
@@ -1364,8 +1367,8 @@ public abstract class Entity implements Class462, Class397
     
     @Nullable
     public final String method1759() {
-        final Class7499<?> method1642 = this.method1642();
-        final Class1932 method1643 = Class7499.method23354(method1642);
+        final EntityType<?> method1642 = this.method1642();
+        final Class1932 method1643 = EntityType.method23354(method1642);
         return (method1642.method23361() && method1643 != null) ? method1643.toString() : null;
     }
     
@@ -1396,16 +1399,16 @@ public abstract class Entity implements Class462, Class397
     
     @Nullable
     public Class427 method1765(final Class3832 class3832, final int n) {
-        return this.method1767(new Class8321(class3832), (float)n);
+        return this.method1767(new ItemStack(class3832), (float)n);
     }
     
     @Nullable
-    public Class427 method1766(final Class8321 class8321) {
+    public Class427 method1766(final ItemStack class8321) {
         return this.method1767(class8321, 0.0f);
     }
     
     @Nullable
-    public Class427 method1767(final Class8321 class8321, final float n) {
+    public Class427 method1767(final ItemStack class8321, final float n) {
         if (class8321.method27620()) {
             return null;
         }
@@ -1505,7 +1508,7 @@ public abstract class Entity implements Class462, Class397
     }
     
     public boolean method1781(final Entity class399) {
-        return this.field2388 <= 0;
+        return this.rideCooldown <= 0;
     }
     
     public boolean method1782(final Class290 class290) {
@@ -1513,8 +1516,8 @@ public abstract class Entity implements Class462, Class397
     }
     
     public void method1783() {
-        for (int i = this.field2387.size() - 1; i >= 0; --i) {
-            this.field2387.get(i).method1784();
+        for (int i = this.passengers.size() - 1; i >= 0; --i) {
+            this.passengers.get(i).method1784();
         }
     }
     
@@ -1531,12 +1534,12 @@ public abstract class Entity implements Class462, Class397
             if (!this.field2391.field10067) {
                 if (class399 instanceof Class512) {
                     if (!(this.method1907() instanceof Class512)) {
-                        this.field2387.add(0, class399);
+                        this.passengers.add(0, class399);
                         return;
                     }
                 }
             }
-            this.field2387.add(class399);
+            this.passengers.add(class399);
             return;
         }
         throw new IllegalStateException("Use x.startRiding(y), not y.addPassenger(x)");
@@ -1544,8 +1547,8 @@ public abstract class Entity implements Class462, Class397
     
     public void method1786(final Entity class399) {
         if (class399.method1920() != this) {
-            this.field2387.remove(class399);
-            class399.field2388 = 60;
+            this.passengers.remove(class399);
+            class399.rideCooldown = 60;
             return;
         }
         throw new IllegalStateException("Use x.stopRiding(y), not y.removePassenger(x)");
@@ -1648,19 +1651,19 @@ public abstract class Entity implements Class462, Class397
     public void method1799() {
     }
     
-    public Iterable<Class8321> method1800() {
+    public Iterable<ItemStack> method1800() {
         return Entity.EMPTY_EQUIPMENT;
     }
     
-    public Iterable<Class8321> method1801() {
+    public Iterable<ItemStack> method1801() {
         return Entity.EMPTY_EQUIPMENT;
     }
     
-    public Iterable<Class8321> method1802() {
+    public Iterable<ItemStack> method1802() {
         return Iterables.concat((Iterable)this.method1800(), (Iterable)this.method1801());
     }
     
-    public void method1803(final Class2215 class2215, final Class8321 class2216) {
+    public void method1803(final Class2215 class2215, final ItemStack class2216) {
     }
     
     public boolean method1804() {
@@ -1894,23 +1897,23 @@ public abstract class Entity implements Class462, Class397
         this.field2409 = field2409;
     }
     
-    private static void method1840(final Class2250 class2250) {
+    private static void method1840(final ITextComponent class2250) {
         class2250.method8467(class2251 -> class2251.method30419(null)).method8462().forEach(Entity::method1840);
     }
     
     @Override
-    public Class2250 method1841() {
-        final Class2250 method1873 = this.method1873();
+    public ITextComponent getName() {
+        final ITextComponent method1873 = this.getCustomName();
         if (method1873 == null) {
             return this.method1842();
         }
-        final Class2250 method1874 = method1873.method8466();
+        final ITextComponent method1874 = method1873.method8466();
         method1840(method1874);
         return method1874;
     }
     
-    public Class2250 method1842() {
-        return this.field2384.method23367();
+    public ITextComponent method1842() {
+        return this.type.method23367();
     }
     
     public boolean method1843(final Entity class399) {
@@ -1937,7 +1940,7 @@ public abstract class Entity implements Class462, Class397
     
     @Override
     public String toString() {
-        return String.format(Locale.ROOT, "%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]", this.getClass().getSimpleName(), this.method1841().method8459(), this.field2385, (this.field2391 != null) ? this.field2391.method6764().method29549() : "~NULL~", this.getPosX(), this.getPosY(), this.getPosZ());
+        return String.format(Locale.ROOT, "%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]", this.getClass().getSimpleName(), this.getName().method8459(), this.entityId, (this.field2391 != null) ? this.field2391.method6764().method29549() : "~NULL~", this.getPosX(), this.getPosY(), this.getPosZ());
     }
     
     public boolean method1849(final Class7929 class7929) {
@@ -2068,9 +2071,9 @@ public abstract class Entity implements Class462, Class397
     }
     
     public void method1862(final Class5204 class5204) {
-        class5204.method16296("Entity Type", () -> Class7499.method23354(this.method1642()) + " (" + this.getClass().getCanonicalName() + ")");
-        class5204.method16297("Entity ID", this.field2385);
-        class5204.method16296("Entity Name", () -> this.method1841().getString());
+        class5204.method16296("Entity Type", () -> EntityType.method23354(this.method1642()) + " (" + this.getClass().getCanonicalName() + ")");
+        class5204.method16297("Entity ID", this.entityId);
+        class5204.method16296("Entity Name", () -> this.getName().getString());
         class5204.method16297("Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
         class5204.method16297("Entity's Block location", Class5204.method16295(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ())));
         final Vec3d method1935 = this.method1935();
@@ -2105,30 +2108,30 @@ public abstract class Entity implements Class462, Class397
     }
     
     public static double method1869() {
-        return Entity.field2383;
+        return Entity.renderDistanceWeight;
     }
     
     public static void method1870(final double field2383) {
-        Entity.field2383 = field2383;
+        Entity.renderDistanceWeight = field2383;
     }
     
     @Override
-    public Class2250 method1871() {
-        return Class6749.method20549(this.method1825(), this.method1841()).method8467(class8768 -> class8768.method30420(this.method1884()).method30421(this.method1866()));
+    public ITextComponent getDisplayName() {
+        return Class6749.method20549(this.method1825(), this.getName()).method8467(class8768 -> class8768.method30420(this.method1884()).method30421(this.method1866()));
     }
     
-    public void method1872(final Class2250 value) {
+    public void method1872(final ITextComponent value) {
         this.field2432.method33569(Entity.field2435, Optional.ofNullable(value));
     }
     
     @Nullable
     @Override
-    public Class2250 method1873() {
+    public ITextComponent getCustomName() {
         return this.field2432.method33568(Entity.field2435).orElse(null);
     }
     
     @Override
-    public boolean method1874() {
+    public boolean hasCustomName() {
         return this.field2432.method33568(Entity.field2435).isPresent();
     }
     
@@ -2205,12 +2208,12 @@ public abstract class Entity implements Class462, Class397
     
     public Class9390 method1884() {
         final Class51 class51 = new Class51();
-        final Class1932 method23354 = Class7499.method23354(this.method1642());
+        final Class1932 method23354 = EntityType.method23354(this.method1642());
         class51.method306("id", this.method1866());
         if (method23354 != null) {
             class51.method306("type", method23354.toString());
         }
-        class51.method306("name", Class5953.method17869(this.method1841()));
+        class51.method306("name", Class5953.method17869(this.getName()));
         return new Class9390(Class1961.field10699, new Class2260(class51.toString()));
     }
     
@@ -2248,12 +2251,12 @@ public abstract class Entity implements Class462, Class397
         return this.field2465;
     }
     
-    public boolean method1893(final int n, final Class8321 class8321) {
+    public boolean method1893(final int n, final ItemStack class8321) {
         return false;
     }
     
     @Override
-    public void method1494(final Class2250 class2250) {
+    public void sendMessage(final ITextComponent class2250) {
     }
     
     public BlockPos method1894() {
@@ -2343,7 +2346,7 @@ public abstract class Entity implements Class462, Class397
     }
     
     public List<Entity> method1908() {
-        return this.field2387.isEmpty() ? Collections.emptyList() : Lists.newArrayList((Iterable)this.field2387);
+        return this.passengers.isEmpty() ? Collections.emptyList() : Lists.newArrayList((Iterable)this.passengers);
     }
     
     public boolean method1909(final Entity class399) {
@@ -2378,7 +2381,7 @@ public abstract class Entity implements Class462, Class397
     }
     
     public Stream<Entity> method1912() {
-        return Stream.concat((Stream<? extends Entity>)Stream.of(this), this.field2387.stream().flatMap((Function<? super Object, ? extends Stream<? extends Entity>>) Entity::method1912));
+        return Stream.concat((Stream<? extends Entity>)Stream.of(this), this.passengers.stream().flatMap((Function<? super Object, ? extends Stream<? extends Entity>>) Entity::method1912));
     }
     
     public boolean method1913() {
@@ -2420,7 +2423,7 @@ public abstract class Entity implements Class462, Class397
     }
     
     public void method1918(final Class9228 class9228) {
-        final Iterator<Entity> iterator = this.field2387.iterator();
+        final Iterator<Entity> iterator = this.passengers.iterator();
         while (iterator.hasNext()) {
             this.method1774(iterator.next(), class9228);
         }
@@ -2452,7 +2455,7 @@ public abstract class Entity implements Class462, Class397
     }
     
     public Class7492 method1924() {
-        return new Class7492(this, this.method1934(), this.method1792(), (this.field2391 instanceof Class1849) ? ((Class1849)this.field2391) : null, this.method1925(), this.method1841().getString(), this.method1871(), this.field2391.method6679(), this);
+        return new Class7492(this, this.method1934(), this.method1792(), (this.field2391 instanceof Class1849) ? ((Class1849)this.field2391) : null, this.method1925(), this.getName().getString(), this.getDisplayName(), this.field2391.method6679(), this);
     }
     
     public int method1925() {
@@ -2464,17 +2467,17 @@ public abstract class Entity implements Class462, Class397
     }
     
     @Override
-    public boolean method1575() {
+    public boolean shouldReceiveFeedback() {
         return this.field2391.method6765().method31216(Class8878.field37328);
     }
     
     @Override
-    public boolean method1576() {
+    public boolean shouldReceiveErrors() {
         return true;
     }
     
     @Override
-    public boolean method1623() {
+    public boolean allowLogging() {
         return true;
     }
     
@@ -2558,7 +2561,7 @@ public abstract class Entity implements Class462, Class397
     public abstract Class4252<?> method1932();
     
     public Class8295 method1933(final Class290 class290) {
-        return this.field2384.method23376();
+        return this.type.method23376();
     }
     
     public Vec3d method1934() {
@@ -2635,7 +2638,7 @@ public abstract class Entity implements Class462, Class397
         NEXT_ENTITY_ID = new AtomicInteger();
         EMPTY_EQUIPMENT = Collections.emptyList();
         ZERO_AABB = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
-        Entity.field2383 = 1.0;
+        Entity.renderDistanceWeight = 1.0;
         field2433 = Class9184.method33564(Entity.class, Class7709.field30653);
         field2434 = Class9184.method33564(Entity.class, Class7709.field30654);
         field2435 = Class9184.method33564(Entity.class, Class7709.field30658);

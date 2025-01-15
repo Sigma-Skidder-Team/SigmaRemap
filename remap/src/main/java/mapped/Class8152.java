@@ -10,14 +10,14 @@ import com.google.gson.JsonElement;
 public class Class8152 extends Class8150
 {
     private static String[] field33563;
-    private final Class7499<?> field33564;
+    private final EntityType<?> field33564;
     
-    public Class8152(final Class7499<?> field33564) {
+    public Class8152(final EntityType<?> field33564) {
         this.field33564 = field33564;
     }
     
     @Override
-    public boolean method26845(final Class7499<?> class7499) {
+    public boolean method26845(final EntityType<?> class7499) {
         return this.field33564 == class7499;
     }
     

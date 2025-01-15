@@ -53,7 +53,7 @@ public class Class4518 extends Class4515
     public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final Class6997 class356) {
         if (!"chest".equals(s)) {
             if ("drowned".equals(s)) {
-                final Class830 class357 = Class7499.field28973.method23371(class355.method6744());
+                final Class830 class357 = EntityType.field28973.method23371(class355.method6744());
                 class357.method4190();
                 class357.method1729(class354, 0.0f, 0.0f);
                 class357.method4188(class355, class355.method6784(class354), Class2101.field12177, null, null);

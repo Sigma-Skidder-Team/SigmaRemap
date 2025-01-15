@@ -75,7 +75,7 @@ public class Class647 extends Class573
         this.method3186(this.field3426, this.field3427, n4, n5, this.field3424, this.field3425);
         final List<Class3662<?>> method5278 = this.method3701();
         this.field3672 = MathHelper.method35642(this.field3670 / 30.0f) % method5278.size();
-        final Class8321 method5279 = method5278.get(this.field3672).method11292();
+        final ItemStack method5279 = method5278.get(this.field3672).method11292();
         int n7 = 4;
         if (this.field3669.method35949()) {
             if (this.method3701().size() > 1) {

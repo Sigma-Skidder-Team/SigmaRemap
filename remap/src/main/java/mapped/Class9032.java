@@ -31,7 +31,7 @@ public class Class9032
         int n = 0;
         final Class1932[] field38195 = this.field38195;
         for (int length = field38195.length, i = 0; i < length; ++i) {
-            for (final Class8321 class514 : class513.field3040.method1581().method6402(field38195[i]).method34485(method32883)) {
+            for (final ItemStack class514 : class513.field3040.method1581().method6402(field38195[i]).method34485(method32883)) {
                 if (!class513.method2885(class514)) {
                     final Class427 method32884 = class513.method2822(class514, false);
                     if (method32884 == null) {

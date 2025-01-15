@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -17,7 +18,7 @@ public class Class775 extends Class772
     private static final Predicate<Class2113> field4168;
     private boolean field4169;
     
-    public Class775(final Class7499<? extends Class775> class7499, final Class1847 class7500) {
+    public Class775(final EntityType<? extends Class775> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -101,7 +102,7 @@ public class Class775 extends Class772
     @Override
     public void method4184(final Class9592 class9592) {
         if (this.method4292() == null) {
-            this.method1803(Class2215.field13600, new Class8321(Class7739.field31276));
+            this.method1803(Class2215.field13600, new ItemStack(Class7739.field31276));
         }
     }
     
@@ -111,7 +112,7 @@ public class Class775 extends Class772
     }
     
     @Override
-    public void method1872(final Class2250 class2250) {
+    public void method1872(final ITextComponent class2250) {
         super.method1872(class2250);
         if (!this.field4169) {
             if (class2250 != null) {
@@ -139,7 +140,7 @@ public class Class775 extends Class772
     
     @Override
     public void method4263(final int n, final boolean b) {
-        final Class8321 class8321 = new Class8321(Class7739.field31276);
+        final ItemStack class8321 = new ItemStack(Class7739.field31276);
         final Class8792 method4292 = this.method4292();
         int i = 1;
         if (n > method4292.method30665(Class2113.field12292)) {

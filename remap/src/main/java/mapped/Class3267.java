@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Iterator;
 
 public class Class3267 extends Class3167
@@ -26,7 +28,7 @@ public class Class3267 extends Class3167
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();
-                final String lowerCase = Class3267.field15514.field4684.method1841().method8461().toLowerCase();
+                final String lowerCase = Class3267.field15514.field4684.getName().method8461().toLowerCase();
                 final String method16999 = class5724.method13164().method8461();
                 Label_0100: {
                     if (this.field15759.method9883("AutoL")) {
@@ -45,7 +47,7 @@ public class Class3267 extends Class3167
                         this.field15759.method10295();
                     }
                     if (this.field15759.method9883("Auto Join")) {
-                        final Iterator<Class2250> iterator = class5724.method13164().iterator();
+                        final Iterator<ITextComponent> iterator = class5724.method13164().iterator();
                         while (iterator.hasNext()) {
                             final Class9485 method17000 = iterator.next().method8456().method30410();
                             if (method17000 != null && method17000.method35309() == Class2075.field11973) {

@@ -14,38 +14,38 @@ import org.apache.logging.log4j.Logger;
 
 public class Class415 extends Class414 implements Class407
 {
-    private static final Class8810<Class8321> field2521;
+    private static final Class8810<ItemStack> field2521;
     private static final Logger field2522;
     public static final Predicate<Class511> field2523;
     
-    public Class415(final Class7499<? extends Class415> class7499, final Class1847 class7500) {
+    public Class415(final EntityType<? extends Class415> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class415(final Class1847 class1847, final Class511 class1848) {
-        super(Class7499.field29039, class1848, class1847);
+        super(EntityType.field29039, class1848, class1847);
     }
     
     public Class415(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29039, n, n2, n3, class1847);
+        super(EntityType.field29039, n, n2, n3, class1847);
     }
     
     @Override
     public void method1649() {
-        this.method1650().method33565(Class415.field2521, Class8321.field34174);
+        this.method1650().method33565(Class415.field2521, ItemStack.field34174);
     }
     
     @Override
-    public Class8321 method2005() {
-        final Class8321 class8321 = this.method1650().method33568(Class415.field2521);
+    public ItemStack method2005() {
+        final ItemStack class8321 = this.method1650().method33568(Class415.field2521);
         if (class8321.method27622() != Class7739.field31579 && class8321.method27622() != Class7739.field31582) {
             if (this.field2391 == null) {}
-            return new Class8321(Class7739.field31579);
+            return new ItemStack(Class7739.field31579);
         }
         return class8321;
     }
     
-    public void method2022(final Class8321 class8321) {
+    public void method2022(final ItemStack class8321) {
         this.method1650().method33569(Class415.field2521, class8321.method27641());
     }
     
@@ -57,7 +57,7 @@ public class Class415 extends Class414 implements Class407
     @Override
     public void method2016(final Class7006 class7006) {
         if (!this.field2391.field10067) {
-            final Class8321 method2005 = this.method2005();
+            final ItemStack method2005 = this.method2005();
             final Class8061 method2006 = Class5333.method16474(method2005);
             final List<Class1948> method2007 = Class5333.method16465(method2005);
             final boolean b = method2006 == Class8644.field36251 && method2007.isEmpty();
@@ -138,7 +138,7 @@ public class Class415 extends Class414 implements Class407
         }
     }
     
-    private void method2025(final Class8321 class8321, final Class8061 class8322) {
+    private void method2025(final ItemStack class8321, final Class8061 class8322) {
         final Class426 class8323 = new Class426(this.field2391, this.getPosX(), this.getPosY(), this.getPosZ());
         class8323.method2097(this.method2019());
         class8323.method2081(3.0f);
@@ -182,7 +182,7 @@ public class Class415 extends Class414 implements Class407
     @Override
     public void method1760(final Class51 class51) {
         super.method1760(class51);
-        final Class8321 method27619 = Class8321.method27619(class51.method327("Potion"));
+        final ItemStack method27619 = ItemStack.method27619(class51.method327("Potion"));
         if (!method27619.method27620()) {
             this.method2022(method27619);
         }
@@ -194,7 +194,7 @@ public class Class415 extends Class414 implements Class407
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        final Class8321 method2005 = this.method2005();
+        final ItemStack method2005 = this.method2005();
         if (!method2005.method27620()) {
             class51.method295("Potion", method2005.method27627(new Class51()));
         }

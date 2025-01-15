@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.Optional;
 import java.util.Iterator;
-import java.util.concurrent.Executor;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.function.Function;
@@ -20,9 +19,9 @@ public class Class6312
     public float field25237;
     public int field25238;
     public int field25239;
-    public Class8321 field25240;
-    public Class8321 field25241;
-    public Class8321 field25242;
+    public ItemStack field25240;
+    public ItemStack field25241;
+    public ItemStack field25242;
     
     public Class6312(final int field25235) {
         this.field25235 = field25235;
@@ -61,7 +60,7 @@ public class Class6312
         }
         if (this.field25239 == 0) {
             if (b && b2) {
-                final Class8321 field25241 = this.field25241;
+                final ItemStack field25241 = this.field25241;
                 --field25241.field34176;
                 this.field25239 = this.field25238;
             }
@@ -72,13 +71,13 @@ public class Class6312
         if (this.field25237 >= this.field25236) {
             if (this.field25236 != 0.0f) {
                 if (b2) {
-                    final Class8321 field25242 = this.field25240;
+                    final ItemStack field25242 = this.field25240;
                     --field25242.field34176;
                 }
                 this.field25237 = 0.0f;
                 if (this.field25242 != null) {
-                    final Class8321 method18688 = this.method18688();
-                    final Class8321 field25243 = this.field25242;
+                    final ItemStack method18688 = this.method18688();
+                    final ItemStack field25243 = this.field25242;
                     field25243.field34176 += method18688.field34176;
                 }
             }
@@ -90,9 +89,9 @@ public class Class6312
         }
     }
     
-    public Class8321 method18688() {
+    public ItemStack method18688() {
         if (this.field25240 != null) {
-            if (!Class3279.method10340().method6378(Class8976.field37844, new Class443(new Class8321[] { new Class8321(Class7739.field30766) }), Class3279.method10339().field4683).isPresent()) {
+            if (!Class3279.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { new ItemStack(Class7739.field30766) }), Class3279.method10339().field4683).isPresent()) {
                 final Class6581 class6581 = new Class6581(Class346.field2138, new Thread());
                 final Iterator<? super Object> iterator = Class3279.method10341().field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).iterator();
                 while (iterator.hasNext()) {
@@ -100,9 +99,9 @@ public class Class6312
                 }
                 Class3279.method10340().method5785(new Class7884(this), class6581, Class5026.field21549, Class5026.field21549, Class8349.method27841(), Class3279.method10342());
             }
-            final Optional<Class3684> method6378 = Class3279.method10340().method6378(Class8976.field37844, new Class443(new Class8321[] { this.field25240 }), Class3279.method10343().field4683);
+            final Optional<Class3684> method6378 = Class3279.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { this.field25240 }), Class3279.method10343().field4683);
             if (method6378.isPresent()) {
-                final Class8321 method6379 = method6378.get().method11292();
+                final ItemStack method6379 = method6378.get().method11292();
                 if (!method6379.method27620()) {
                     return method6379.method27641();
                 }
@@ -113,14 +112,14 @@ public class Class6312
     }
     
     public Class3820 method18689() {
-        final Class8321 method18688 = this.method18688();
+        final ItemStack method18688 = this.method18688();
         if (method18688 == null) {
             return null;
         }
         return method18688.method27622();
     }
     
-    public Class8321 method18690() {
+    public ItemStack method18690() {
         if (this.field25242 != null) {
             if (this.field25242.method27622() instanceof Class4099) {
                 this.field25242 = null;
@@ -140,7 +139,7 @@ public class Class6312
             return this.field25242;
         }
         if (this.field25240 != null) {
-            final Class8321 method18688 = this.method18688();
+            final ItemStack method18688 = this.method18688();
             if (method18688 != null) {
                 method18688.field34176 = 0;
             }

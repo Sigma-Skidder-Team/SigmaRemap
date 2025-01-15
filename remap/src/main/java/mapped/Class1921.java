@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import javax.annotation.Nullable;
@@ -17,8 +18,8 @@ public class Class1921 implements AutoCloseable
     private static final Class8545 field10443;
     private final String field10444;
     private final Supplier<Class1727> field10445;
-    private final Class2250 field10446;
-    private final Class2250 field10447;
+    private final ITextComponent field10446;
+    private final ITextComponent field10447;
     private final Class2009 field10448;
     private final Class2043 field10449;
     private final boolean field10450;
@@ -44,7 +45,7 @@ public class Class1921 implements AutoCloseable
         return null;
     }
     
-    public Class1921(final String field10444, final boolean field10445, final Supplier<Class1727> field10446, final Class2250 field10447, final Class2250 field10448, final Class2009 field10449, final Class2043 field10450, final boolean field10451) {
+    public Class1921(final String field10444, final boolean field10445, final Supplier<Class1727> field10446, final ITextComponent field10447, final ITextComponent field10448, final Class2009 field10449, final Class2043 field10450, final boolean field10451) {
         this.field10444 = field10444;
         this.field10445 = field10446;
         this.field10446 = field10447;
@@ -59,15 +60,15 @@ public class Class1921 implements AutoCloseable
         this(s, b, supplier, new Class2260(class1727.method6102()), class1728.method28688(), Class2009.method8044(class1728.method28689()), class1729, false);
     }
     
-    public Class2250 method7616() {
+    public ITextComponent method7616() {
         return this.field10446;
     }
     
-    public Class2250 method7617() {
+    public ITextComponent method7617() {
         return this.field10447;
     }
     
-    public Class2250 method7618(final boolean b) {
+    public ITextComponent method7618(final boolean b) {
         return Class9479.method35299(new Class2260(this.field10444)).method8467(class8768 -> {
             class8768.method30413(b2 ? Class2116.field12319 : Class2116.field12321).method30421(StringArgumentType.escapeIfRequired(this.field10444));
             new Class9390(Class1961.field10697, new Class2260("").method8458(this.field10446).method8457("\n").method8458(this.field10447));

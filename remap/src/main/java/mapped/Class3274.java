@@ -18,7 +18,7 @@ public class Class3274 extends Class3167
             return;
         }
         if (Class3274.field15514.field4684.method2756()) {
-            final Class8321 method2766 = Class3274.field15514.field4684.method2766();
+            final ItemStack method2766 = Class3274.field15514.field4684.method2766();
             if (method2766 != null && (method2766.method27653() == Class1992.field11156 || method2766.method27653() == Class1992.field11155) && Class3274.field15514.field4684.method2767() < this.method9886("Speed") * 32.0f) {
                 final String method2767 = this.method9887("Mode");
                 switch (method2767) {

@@ -31,7 +31,7 @@ public class Class3277 extends Class3167
                 final Class512 class5735 = entry.getKey();
                 if (!class5735.method1823()) {
                     final Vec2f class5736 = (Vec2f)entry.getValue();
-                    final String method8459 = class5735.method1841().method8459();
+                    final String method8459 = class5735.getName().method8459();
                     final int n3 = Class9493.field40813.method23505(method8459) + 8;
                     final int round = Math.round(class5736.x);
                     final int round2 = Math.round(class5736.y);
@@ -41,7 +41,7 @@ public class Class3277 extends Class3167
                     Class8154.method26889(Class9493.field40813, (float)(round + 3), (float)round2, method8459, Class6430.method19118(Class265.field1273.field1292, 0.5f));
                     Class8154.method26889(Class9493.field40813, (float)(round + 3), (float)(round2 - 1), method8459, Class265.field1278.field1292);
                     GL11.glPopMatrix();
-                    final List<Class8321> method8460 = Class8639.method29374(class5735);
+                    final List<ItemStack> method8460 = Class8639.method29374(class5735);
                     if (method8460.size() == 0) {
                         continue;
                     }
@@ -49,7 +49,7 @@ public class Class3277 extends Class3167
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float)(-n4 / 2), (float)(-n - n2 - 2), 0.0f);
                     for (int i = 0; i < method8460.size(); ++i) {
-                        final Class8321 class5737 = method8460.get(i);
+                        final ItemStack class5737 = method8460.get(i);
                         final Class52 method8461 = class5737.method27662();
                         final int n5 = round2 - Math.max(0, method8461.size() - 4) * 8 - 2;
                         for (int j = 0; j < method8461.size(); ++j) {

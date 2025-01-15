@@ -21,7 +21,7 @@ public class Class765 extends Class763 implements Class766
     private int field4141;
     private int field4142;
     
-    public Class765(final Class7499<? extends Class765> class7499, final Class1847 class7500) {
+    public Class765(final EntityType<? extends Class765> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4140 = 30;
         this.field4141 = 3;
@@ -176,7 +176,7 @@ public class Class765 extends Class763 implements Class766
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
-        final Class8321 method2715 = class512.method2715(class513);
+        final ItemStack method2715 = class512.method2715(class513);
         if (method2715.method27622() != Class7739.field31277) {
             return super.method4195(class512, class513);
         }

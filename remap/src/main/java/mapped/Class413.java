@@ -8,16 +8,16 @@ public class Class413 extends Class409
 {
     private static String[] field2511;
     
-    public Class413(final Class7499<? extends Class413> class7499, final Class1847 class7500) {
+    public Class413(final EntityType<? extends Class413> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class413(final Class1847 class1847, final Class511 class1848) {
-        super(Class7499.field29038, class1848, class1847);
+        super(EntityType.field29038, class1848, class1847);
     }
     
     public Class413(final Class1847 class1847, final double n, final double n2, final double n3) {
-        super(Class7499.field29038, n, n2, n3, class1847);
+        super(EntityType.field29038, n, n2, n3, class1847);
     }
     
     @Override

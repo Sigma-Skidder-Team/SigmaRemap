@@ -33,12 +33,12 @@ public class Class5754
         return new Class5754();
     }
     
-    public Class5754 method17069(final Class7499<?> class7499) {
+    public Class5754 method17069(final EntityType<?> class7499) {
         this.field23354 = Class8150.method26848(class7499);
         return this;
     }
     
-    public Class5754 method17070(final Class7909<Class7499<?>> class7909) {
+    public Class5754 method17070(final Class7909<EntityType<?>> class7909) {
         this.field23354 = Class8150.method26849(class7909);
         return this;
     }

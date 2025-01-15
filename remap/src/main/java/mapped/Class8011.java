@@ -57,7 +57,7 @@ public class Class8011
             Class5496 method6786 = null;
             final int n2 = 1 + field10062.nextInt(method6784.method35972().method8235() + 1);
             for (int i = 0; i < n2; ++i) {
-                final Class851 class1852 = Class7499.field29055.method23371(class1849);
+                final Class851 class1852 = EntityType.field29055.method23371(class1849);
                 class1852.method1729(method6785, 0.0f, 0.0f);
                 method6786 = class1852.method4188(class1849, method6784, Class2101.field12174, method6786, null);
                 class1849.method6886(class1852);

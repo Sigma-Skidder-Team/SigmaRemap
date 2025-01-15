@@ -29,6 +29,7 @@ import java.util.Map;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class8654 extends ByteBuf
 {
@@ -136,11 +137,11 @@ public class Class8654 extends ByteBuf
         return Class353.method1092(this.readLong());
     }
     
-    public Class2250 method29497() {
+    public ITextComponent method29497() {
         return Class5953.method17871(this.method29513(262144));
     }
     
-    public Class8654 method29498(final Class2250 class2250) {
+    public Class8654 method29498(final ITextComponent class2250) {
         return this.method29515(Class5953.method17869(class2250), 262144);
     }
     
@@ -238,11 +239,11 @@ public class Class8654 extends ByteBuf
         }
     }
     
-    public Class8654 method29509(final Class8321 class8321) {
+    public Class8654 method29509(final ItemStack class8321) {
         return this.method29510(class8321, true);
     }
     
-    public Class8654 method29510(final Class8321 class8321, final boolean b) {
+    public Class8654 method29510(final ItemStack class8321, final boolean b) {
         if (!class8321.method27620()) {
             this.writeBoolean(true);
             final Class3820 method27622 = class8321.method27622();
@@ -265,9 +266,9 @@ public class Class8654 extends ByteBuf
         return this;
     }
     
-    public Class8321 method29511() {
+    public ItemStack method29511() {
         if (this.readBoolean()) {
-            final Class8321 class8321 = new Class8321(Class3820.method11697(this.method29501()), this.readByte());
+            final ItemStack class8321 = new ItemStack(Class3820.method11697(this.method29501()), this.readByte());
             if (!Class9570.field41338.method22605()) {
                 class8321.method27663(this.method29508());
             }
@@ -276,7 +277,7 @@ public class Class8654 extends ByteBuf
             }
             return class8321;
         }
-        return Class8321.field34174;
+        return ItemStack.field34174;
     }
     
     public String method29512() {

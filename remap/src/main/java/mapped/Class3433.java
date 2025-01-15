@@ -56,7 +56,7 @@ public class Class3433 extends Class3418
     @Override
     public void method10855(final Class446 class446) {
         if (class446 == this.field16217) {
-            final Class8321 method2157 = class446.method2157(0);
+            final ItemStack method2157 = class446.method2157(0);
             if (!method2157.method27620() && method2157.method27673()) {
                 this.field16218.method22437((class448, class449) -> {
                     int j = 0;
@@ -137,8 +137,8 @@ public class Class3433 extends Class3418
     
     @Override
     public boolean method10877(final Class512 class512, final int n) {
-        final Class8321 method2157 = this.field16217.method2157(0);
-        final Class8321 method2158 = this.field16217.method2157(1);
+        final ItemStack method2157 = this.field16217.method2157(0);
+        final ItemStack method2158 = this.field16217.method2157(1);
         final int n2 = n + 1;
         if (method2158.method27620() || method2158.method27690() < n2) {
             if (!class512.field3025.field27304) {
@@ -158,9 +158,9 @@ public class Class3433 extends Class3418
                     if (!list.isEmpty()) {
                         class514.method2873(class513, n4);
                         final boolean b = class513.method27622() == Class7739.field31370;
-                        Class8321 class518 = null;
+                        ItemStack class518 = null;
                         if (!(!b)) {
-                            class518 = new Class8321(Class7739.field31534);
+                            class518 = new ItemStack(Class7739.field31534);
                             this.field16217.method2160(0, class518);
                         }
                         int i = 0;
@@ -177,7 +177,7 @@ public class Class3433 extends Class3418
                         if (!class514.field3025.field27304) {
                             class515.method27693(n4);
                             if (!(!class515.method27620())) {
-                                this.field16217.method2160(1, Class8321.field34174);
+                                this.field16217.method2160(1, ItemStack.field34174);
                             }
                         }
                         class514.method2857(Class8276.field34039);
@@ -197,7 +197,7 @@ public class Class3433 extends Class3418
         return false;
     }
     
-    private List<Class6827> method10951(final Class8321 class8321, final int n, final int n2) {
+    private List<Class6827> method10951(final ItemStack class8321, final int n, final int n2) {
         this.field16219.setSeed(this.field16220.method19832() + n);
         final List<Class6827> method30225 = Class8742.method30225(this.field16219, class8321, n2, false);
         if (class8321.method27622() == Class7739.field31370) {
@@ -209,7 +209,7 @@ public class Class3433 extends Class3418
     }
     
     public int method10952() {
-        final Class8321 method2157 = this.field16217.method2157(1);
+        final ItemStack method2157 = this.field16217.method2157(1);
         return method2157.method27620() ? 0 : method2157.method27690();
     }
     
@@ -229,47 +229,47 @@ public class Class3433 extends Class3418
     }
     
     @Override
-    public Class8321 method10858(final Class512 class512, final int n) {
-        Class8321 class513 = Class8321.field34174;
+    public ItemStack method10858(final Class512 class512, final int n) {
+        ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
-                final Class8321 method20053 = class514.method20053();
+                final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
                 if (n != 0) {
                     if (n != 1) {
                         if (method20053.method27622() != Class7739.field31389) {
                             if (this.field16151.get(0).method20054() || !this.field16151.get(0).method20046(method20053)) {
-                                return Class8321.field34174;
+                                return ItemStack.field34174;
                             }
                             if (method20053.method27656() && method20053.method27690() == 1) {
                                 this.field16151.get(0).method20055(method20053.method27641());
                                 method20053.method27691(0);
                             }
                             else if (!method20053.method27620()) {
-                                this.field16151.get(0).method20055(new Class8321(method20053.method27622()));
+                                this.field16151.get(0).method20055(new ItemStack(method20053.method27622()));
                                 method20053.method27693(1);
                             }
                         }
                         else if (!this.method10888(method20053, 1, 2, true)) {
-                            return Class8321.field34174;
+                            return ItemStack.field34174;
                         }
                     }
                     else if (!this.method10888(method20053, 2, 38, true)) {
-                        return Class8321.field34174;
+                        return ItemStack.field34174;
                     }
                 }
                 else if (!this.method10888(method20053, 2, 38, true)) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
                 if (!method20053.method27620()) {
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(Class8321.field34174);
+                    class514.method20055(ItemStack.field34174);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return Class8321.field34174;
+                    return ItemStack.field34174;
                 }
                 class514.method20047(class512, method20053);
             }

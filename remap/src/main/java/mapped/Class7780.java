@@ -11,7 +11,6 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Iterator;
 import java.util.Collection;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
-import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
@@ -37,7 +36,7 @@ public class Class7780
                 class7492.method23257(new Class2259("commands.recipe.give.success.multiple", new Object[] { collection2.size(), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.recipe.give.success.single", new Object[] { collection2.size(), collection.iterator().next().method1871() }), true);
+                class7492.method23257(new Class2259("commands.recipe.give.success.single", new Object[] { collection2.size(), collection.iterator().next().getDisplayName() }), true);
             }
             return n;
         }
@@ -55,7 +54,7 @@ public class Class7780
                 class7492.method23257(new Class2259("commands.recipe.take.success.multiple", new Object[] { collection2.size(), collection.size() }), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.recipe.take.success.single", new Object[] { collection2.size(), collection.iterator().next().method1871() }), true);
+                class7492.method23257(new Class2259("commands.recipe.take.success.single", new Object[] { collection2.size(), collection.iterator().next().getDisplayName() }), true);
             }
             return n;
         }

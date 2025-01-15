@@ -4,12 +4,14 @@
 
 package mapped;
 
+import net.minecraft.util.INameable;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class463 extends Class436 implements Class462, Class439
+public class Class463 extends Class436 implements INameable, Class439
 {
     public int field2727;
     public float field2728;
@@ -22,7 +24,7 @@ public class Class463 extends Class436 implements Class462, Class439
     public float field2735;
     public float field2736;
     private static final Random field2737;
-    private Class2250 field2738;
+    private ITextComponent field2738;
     
     public Class463() {
         super(Class5412.field22552);
@@ -31,7 +33,7 @@ public class Class463 extends Class436 implements Class462, Class439
     @Override
     public Class51 method2180(final Class51 class51) {
         super.method2180(class51);
-        if (this.method1874()) {
+        if (this.hasCustomName()) {
             class51.method306("CustomName", Class5953.method17869(this.field2738));
         }
         return class51;
@@ -90,17 +92,17 @@ public class Class463 extends Class436 implements Class462, Class439
     }
     
     @Override
-    public Class2250 method1841() {
+    public ITextComponent getName() {
         return (this.field2738 == null) ? new Class2259("container.enchant", new Object[0]) : this.field2738;
     }
     
-    public void method2344(final Class2250 field2738) {
+    public void method2344(final ITextComponent field2738) {
         this.field2738 = field2738;
     }
     
     @Nullable
     @Override
-    public Class2250 method1873() {
+    public ITextComponent getCustomName() {
         return this.field2738;
     }
     

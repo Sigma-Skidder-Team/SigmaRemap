@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
@@ -312,7 +313,7 @@ public class Class1849 extends Class1847
                         final Class9592 method7025 = this.method6784(method7024);
                         final boolean b = this.method6765().method31216(Class8878.field37318) && this.field10062.nextDouble() < method7025.method35973() * 0.01;
                         if (b) {
-                            final Class809 class1863 = Class7499.field29024.method23371(this);
+                            final Class809 class1863 = EntityType.field29024.method23371(this);
                             class1863.method4779(true);
                             class1863.method4354(0);
                             class1863.method1656(method7024.getX(), method7024.getY(), method7024.getZ());
@@ -646,7 +647,7 @@ public class Class1849 extends Class1847
         this.method6904().method7450().method27214();
     }
     
-    public List<Entity> method6881(final Class7499<?> class7499, final Predicate<? super Entity> predicate) {
+    public List<Entity> method6881(final EntityType<?> class7499, final Predicate<? super Entity> predicate) {
         final ArrayList arrayList = Lists.newArrayList();
         final Class1909 method6904 = this.method6904();
         for (final Entity class7500 : this.field10085.values()) {
@@ -769,7 +770,7 @@ public class Class1849 extends Class1847
     
     private boolean method6894(final Entity class399) {
         if (class399.field2410) {
-            Class1849.field10083.warn("Tried to add entity {} but it was marked as removed already", (Object)Class7499.method23354(class399.method1642()));
+            Class1849.field10083.warn("Tried to add entity {} but it was marked as removed already", (Object) EntityType.method23354(class399.method1642()));
             return false;
         }
         if (this.method6896(class399)) {
@@ -795,7 +796,7 @@ public class Class1849 extends Class1847
     private boolean method6896(final Entity class399) {
         final Entity class400 = this.field10086.get(class399.method1865());
         if (class400 != null) {
-            Class1849.field10083.warn("Keeping entity {} that already exists with UUID {}", (Object)Class7499.method23354(class400.method1642()), (Object)class399.method1865().toString());
+            Class1849.field10083.warn("Keeping entity {} that already exists with UUID {}", (Object) EntityType.method23354(class400.method1642()), (Object)class399.method1865().toString());
             return true;
         }
         return false;
@@ -1229,8 +1230,8 @@ public class Class1849 extends Class1847
     private static void method6931(final Writer writer, final Iterable<Entity> iterable) throws IOException {
         final Class8308 method22418 = Class8308.method27594().method22417("x").method22417("y").method22417("z").method22417("uuid").method22417("type").method22417("alive").method22417("display_name").method22417("custom_name").method22418(writer);
         for (final Entity class399 : iterable) {
-            final Class2250 method22419 = class399.method1873();
-            method22418.method27595(class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.method1865(), Class90.field210.method503(class399.method1642()), class399.method1768(), class399.method1871().getString(), (method22419 == null) ? null : method22419.getString());
+            final ITextComponent method22419 = class399.getCustomName();
+            method22418.method27595(class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.method1865(), Class90.field210.method503(class399.method1642()), class399.method1768(), class399.getDisplayName().getString(), (method22419 == null) ? null : method22419.getString());
         }
     }
     

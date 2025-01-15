@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.text.ITextComponent;
+
 import java.util.Date;
 
 public class Class6026 extends Class6024<String>
@@ -18,7 +20,7 @@ public class Class6026 extends Class6024<String>
     }
     
     @Override
-    public Class2250 method17951() {
+    public ITextComponent method17951() {
         return new Class2260(this.method17942());
     }
     

@@ -235,7 +235,7 @@ public class Class3246 extends Class3167
         return false;
     }
     
-    private boolean method10255(final Class8321 class8321) {
+    private boolean method10255(final ItemStack class8321) {
         final Class3820 method27622 = class8321.method27622();
         if (!this.method9883("Ignore Junk")) {
             return false;

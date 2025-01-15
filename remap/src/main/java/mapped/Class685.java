@@ -16,6 +16,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 import java.util.Map;
@@ -36,7 +37,7 @@ public class Class685 extends Class565
     private boolean field3759;
     public float field3760;
     private int field3761;
-    private Class8321 field3762;
+    private ItemStack field3762;
     public final Class689 field3763;
     private final Class686 field3764;
     private final Class569 field3765;
@@ -60,7 +61,7 @@ public class Class685 extends Class565
         this.field3752 = new Random();
         this.field3757 = "";
         this.field3760 = 1.0f;
-        this.field3762 = Class8321.field34174;
+        this.field3762 = ItemStack.field34174;
         this.field3769 = "";
         this.field3770 = "";
         this.field3780 = Maps.newHashMap();
@@ -103,7 +104,7 @@ public class Class685 extends Class565
         else {
             this.method3798(this.field3753.method5303());
         }
-        final Class8321 method3810 = this.field3753.field4684.field3006.method2370(3);
+        final ItemStack method3810 = this.field3753.field4684.field3006.method2370(3);
         if (this.field3753.field4648.field23465 == 0) {
             if (method3810.method27622() == Class7521.field29342.method11704()) {
                 this.method3796();
@@ -435,7 +436,7 @@ public class Class685 extends Class565
         if (method3790 != null) {
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3753.method5290().method5849(Class685.field3750);
-            final Class8321 method3791 = method3790.method2714();
+            final ItemStack method3791 = method3790.method2714();
             final Class2226 method3792 = method3790.method2755().method8419();
             final int n2 = this.field3778 / 2;
             final int method3793 = this.method3303();
@@ -535,7 +536,7 @@ public class Class685 extends Class565
         this.field3753.method5327().method15297("selectedItemName");
         if (this.field3761 > 0) {
             if (!this.field3762.method27620()) {
-                final Class2250 method8469 = new Class2260("").method8458(this.field3762.method27664()).method8469(this.field3762.method27672().field11190);
+                final ITextComponent method8469 = new Class2260("").method8458(this.field3762.method27664()).method8469(this.field3762.method27672().field11190);
                 if (this.field3762.method27667()) {
                     method8469.method8469(Class2116.field12329);
                 }
@@ -949,7 +950,7 @@ public class Class685 extends Class565
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
     }
     
-    private void method3800(final int n, final int n2, final float n3, final Class512 class512, final Class8321 class513) {
+    private void method3800(final int n, final int n2, final float n3, final Class512 class512, final ItemStack class513) {
         if (!class513.method27620()) {
             final float n4 = class513.method27688() - n3;
             if (n4 > 0.0f) {
@@ -987,7 +988,7 @@ public class Class685 extends Class565
             this.method3797(method5303);
         }
         if (this.field3753.field4684 != null) {
-            final Class8321 method5304 = this.field3753.field4684.field3006.method2345();
+            final ItemStack method5304 = this.field3753.field4684.field3006.method2345();
             boolean equals = true;
             if (Class9570.field41336.method22605()) {
                 equals = Class8571.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().method8459()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().method8459()));
@@ -1067,11 +1068,11 @@ public class Class685 extends Class565
         }
     }
     
-    public void method3805(final Class2250 class2250, final boolean b) {
+    public void method3805(final ITextComponent class2250, final boolean b) {
         this.method3803(class2250.getString(), b);
     }
     
-    public void method3806(final Class285 class285, final Class2250 class286) {
+    public void method3806(final Class285 class285, final ITextComponent class286) {
         final Iterator iterator = this.field3780.get(class285).iterator();
         while (iterator.hasNext()) {
             ((Class7894)iterator.next()).method25555(class285, class286);

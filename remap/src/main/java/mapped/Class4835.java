@@ -10,13 +10,13 @@ public class Class4835 extends Class4825
 {
     private static String[] field20591;
     public boolean field20720;
-    private Class8321 field20721;
+    private ItemStack field20721;
     private Class869 field20722;
     
     public Class4835(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(class4803, s, n, n2, n3, n4, false);
         this.field20722 = Class869.method5277();
-        this.field20721 = new Class8321(Class3820.method11697(n5));
+        this.field20721 = new ItemStack(Class3820.method11697(n5));
     }
     
     @Override

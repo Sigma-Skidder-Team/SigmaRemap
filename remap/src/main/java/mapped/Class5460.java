@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import com.google.common.collect.Lists;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
@@ -13,8 +12,8 @@ import java.util.List;
 public class Class5460 extends Class5419<Class824>
 {
     private static String[] field22712;
-    private Class8321 field22713;
-    private final List<Class8321> field22714;
+    private ItemStack field22713;
+    private final List<ItemStack> field22714;
     private int field22715;
     private int field22716;
     private int field22717;
@@ -28,7 +27,7 @@ public class Class5460 extends Class5419<Class824>
         final Class365<Class824> method2618 = class1850.method2618();
         if (method2618.method1198(Class8233.field33811).isPresent()) {
             final Class511 class1851 = method2618.method1198(Class8233.field33811).get();
-            if (class1851.method1642() == Class7499.field29058) {
+            if (class1851.method1642() == EntityType.field29058) {
                 if (class1850.method1768()) {
                     if (class1851.method1768()) {
                         if (!class1850.method2625()) {
@@ -66,7 +65,7 @@ public class Class5460 extends Class5419<Class824>
     public void method16562(final Class1849 class1849, final Class824 class1850, final long n) {
         this.method16678(this.method16682(class1850), class1850);
         if (this.field22714.isEmpty()) {
-            class1850.method1803(Class2215.field13600, Class8321.field34174);
+            class1850.method1803(Class2215.field13600, ItemStack.field34174);
             this.field22717 = Math.min(this.field22717, 40);
         }
         else {
@@ -78,14 +77,14 @@ public class Class5460 extends Class5419<Class824>
     public void method16563(final Class1849 class1849, final Class824 class1850, final long n) {
         super.method16548(class1849, class1850, n);
         class1850.method2618().method1195(Class8233.field33811);
-        class1850.method1803(Class2215.field13600, Class8321.field34174);
+        class1850.method1803(Class2215.field13600, ItemStack.field34174);
         this.field22713 = null;
     }
     
     private void method16678(final Class511 class511, final Class824 class512) {
         boolean b = false;
-        final Class8321 method2713 = class511.method2713();
-        if (this.field22713 == null || !Class8321.method27645(this.field22713, method2713)) {
+        final ItemStack method2713 = class511.method2713();
+        if (this.field22713 == null || !ItemStack.method27645(this.field22713, method2713)) {
             this.field22713 = method2713;
             b = true;
             this.field22714.clear();
@@ -118,7 +117,7 @@ public class Class5460 extends Class5419<Class824>
     }
     
     private boolean method16681(final Class9017 class9017) {
-        return Class8321.method27645(this.field22713, class9017.method32281()) || Class8321.method27645(this.field22713, class9017.method32282());
+        return ItemStack.method27645(this.field22713, class9017.method32281()) || ItemStack.method27645(this.field22713, class9017.method32282());
     }
     
     private Class511 method16682(final Class824 class824) {

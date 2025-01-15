@@ -15,18 +15,18 @@ public class Class400 extends Entity implements Class401
     public Class815 field2466;
     private Class51 field2467;
     
-    public Class400(final Class7499<? extends Class400> class7499, final Class1847 class7500) {
+    public Class400(final EntityType<? extends Class400> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
     public Class400(final Class1847 class1847, final Class815 field2466) {
-        this(Class7499.field28997, class1847);
+        this(EntityType.field28997, class1847);
         this.field2466 = field2466;
         this.method1656(field2466.getPosX() - (field2466.method1930() + 1.0f) * 0.5 * MathHelper.sin(field2466.field2951 * 0.017453292f), field2466.method1944() - 0.10000000149011612, field2466.getPosZ() + (field2466.method1930() + 1.0f) * 0.5 * MathHelper.cos(field2466.field2951 * 0.017453292f));
     }
     
     public Class400(final Class1847 class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this(Class7499.field28997, class1847);
+        this(EntityType.field28997, class1847);
         this.method1656(n, n2, n3);
         for (int i = 0; i < 7; ++i) {
             final double n7 = 0.4 + 0.1 * i;

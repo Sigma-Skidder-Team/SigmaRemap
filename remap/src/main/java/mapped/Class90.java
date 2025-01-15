@@ -27,7 +27,7 @@ public abstract class Class90<T> implements Class89<T>
     public static final Class90<Class5328> field207;
     public static final Class93<Class3833> field208;
     public static final Class90<Class6257> field209;
-    public static final Class93<Class7499<?>> field210;
+    public static final Class93<EntityType<?>> field210;
     public static final Class93<Class3820> field211;
     public static final Class93<Class8061> field212;
     public static final Class90<Class7304<?>> field213;
@@ -120,7 +120,7 @@ public abstract class Class90<T> implements Class89<T>
         field207 = method500("mob_effect", () -> Class9439.field40499);
         field208 = method501("block", "air", () -> Class7521.field29147);
         field209 = method500("enchantment", () -> Class7882.field32368);
-        field210 = method501("entity_type", "pig", () -> Class7499.field29012);
+        field210 = method501("entity_type", "pig", () -> EntityType.field29012);
         field211 = method501("item", "air", () -> Class7739.field30754);
         field212 = method501("potion", "empty", () -> Class8644.field36250);
         field213 = method500("carver", () -> Class7304.field28276);

@@ -4,13 +4,13 @@
 
 package mapped;
 
-import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.google.common.base.MoreObjects;
 import javax.annotation.Nullable;
 import com.google.common.collect.Maps;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture$Type;
 import java.util.Map;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class9081
 {
@@ -20,7 +20,7 @@ public class Class9081
     private int field38440;
     private boolean field38441;
     private String field38442;
-    private Class2250 field38443;
+    private ITextComponent field38443;
     private int field38444;
     private int field38445;
     private long field38446;
@@ -103,12 +103,12 @@ public class Class9081
         }
     }
     
-    public void method32731(final Class2250 field38443) {
+    public void method32731(final ITextComponent field38443) {
         this.field38443 = field38443;
     }
     
     @Nullable
-    public Class2250 method32732() {
+    public ITextComponent method32732() {
         return this.field38443;
     }
     

@@ -47,7 +47,7 @@ public class Class3472 extends Class3446
         return false;
     }
     
-    public boolean method11038(final Class8321 class8321) {
+    public boolean method11038(final ItemStack class8321) {
         return this.field16368.test(class8321);
     }
     

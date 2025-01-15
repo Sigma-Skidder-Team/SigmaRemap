@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.base.Strings;
 import java.io.DataInput;
@@ -413,7 +414,7 @@ public class Class51 implements Class41
         return Class51.field125.matcher(input).matches() ? input : Class50.method292(input);
     }
     
-    public static Class2250 method340(final String input) {
+    public static ITextComponent method340(final String input) {
         if (!Class51.field125.matcher(input).matches()) {
             final String method292 = Class50.method292(input);
             final String substring = method292.substring(0, 1);
@@ -423,7 +424,7 @@ public class Class51 implements Class41
     }
     
     @Override
-    public Class2250 method263(final String s, final int n) {
+    public ITextComponent method263(final String s, final int n) {
         if (!this.field127.isEmpty()) {
             final Class2260 class2260 = new Class2260("{");
             Set<String> keySet = this.field127.keySet();
@@ -438,7 +439,7 @@ public class Class51 implements Class41
             final Iterator<Object> iterator = keySet.iterator();
             while (iterator.hasNext()) {
                 final String s2 = iterator.next();
-                final Class2250 method8458 = new Class2260(Strings.repeat(s, n + 1)).method8458(method340(s2)).method8457(String.valueOf(':')).method8457(" ").method8458(this.field127.get(s2).method263(s, n + 1));
+                final ITextComponent method8458 = new Class2260(Strings.repeat(s, n + 1)).method8458(method340(s2)).method8457(String.valueOf(':')).method8457(" ").method8458(this.field127.get(s2).method263(s, n + 1));
                 if (iterator.hasNext()) {
                     method8458.method8457(String.valueOf(',')).method8457(s.isEmpty() ? " " : "\n");
                 }

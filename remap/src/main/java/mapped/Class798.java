@@ -31,7 +31,7 @@ public class Class798 extends Class789 implements Class797
     private Class3623 field4274;
     private int field4275;
     
-    public Class798(final Class7499<? extends Class798> class7499, final Class1847 class7500) {
+    public Class798(final EntityType<? extends Class798> class7499, final Class1847 class7500) {
         super(class7499, class7500);
         this.field4268 = 0;
         this.field4269 = 0;
@@ -467,7 +467,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Override
-    public boolean method4357(final Class8321 class8321) {
+    public boolean method4357(final ItemStack class8321) {
         return class8321.method27622().method11742(Class7855.field32270);
     }
     
@@ -500,7 +500,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     public Class798 method4539(final Class788 class788) {
-        return Class7499.field28961.method23371(this.field2391);
+        return EntityType.field28961.method23371(this.field2391);
     }
     
     @Override

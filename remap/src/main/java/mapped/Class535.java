@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class535 extends Class527
 {
@@ -120,7 +121,7 @@ public class Class535 extends Class527
     public boolean method2982(final double n, final double n2, final int n3) {
         if (!this.field3194.method20888((int)n, (int)n2, n3)) {
             if (n3 == 0) {
-                final Class2250 method3769 = this.field3150.field4647.method3807().method3769(n, n2);
+                final ITextComponent method3769 = this.field3150.field4647.method3807().method3769(n, n2);
                 if (method3769 != null) {
                     if (this.method3035(method3769)) {
                         return true;
@@ -169,7 +170,7 @@ public class Class535 extends Class527
         Class565.method3293(2, this.field3153 - 14, this.field3152 - 2, this.field3153 - 2, this.field3150.field4648.method17116(Integer.MIN_VALUE));
         this.field3192.method2975(n, n2, n3);
         this.field3194.method20897(n, n2);
-        final Class2250 method3769 = this.field3150.field4647.method3807().method3769(n, n2);
+        final ITextComponent method3769 = this.field3150.field4647.method3807().method3769(n, n2);
         if (method3769 != null) {
             if (method3769.method8456().method30411() != null) {
                 this.method3033(method3769, n, n2);

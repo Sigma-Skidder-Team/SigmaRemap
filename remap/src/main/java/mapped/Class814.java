@@ -8,7 +8,7 @@ public class Class814 extends Class812
 {
     private static String[] field4368;
     
-    public Class814(final Class7499<? extends Class814> class7499, final Class1847 class7500) {
+    public Class814(final EntityType<? extends Class814> class7499, final Class1847 class7500) {
         super(class7499, class7500);
     }
     
@@ -37,7 +37,7 @@ public class Class814 extends Class812
     
     @Override
     public Class788 method4349(final Class788 class788) {
-        final Class806 class789 = ((class788 instanceof Class808) ? Class7499.field29006 : Class7499.field28970).method23371(this.field2391);
+        final Class806 class789 = ((class788 instanceof Class808) ? EntityType.field29006 : EntityType.field28970).method23371(this.field2391);
         this.method4754(class788, class789);
         return class789;
     }

@@ -905,11 +905,11 @@ public class Class8763
         return array;
     }
     
-    private static int method30365(final Class3831 class3831, final Class8321 class3832, final int n, final int n2) {
+    private static int method30365(final Class3831 class3831, final ItemStack class3832, final int n, final int n2) {
         if (Class8763.field36828 == null && Class8763.field36829 == null) {
             return n2;
         }
-        final Class7499<?> method11773 = class3831.method11773(class3832.method27657());
+        final EntityType<?> method11773 = class3831.method11773(class3832.method27657());
         if (method11773 == null) {
             return n2;
         }
@@ -928,7 +928,7 @@ public class Class8763
         return n2;
     }
     
-    public static int method30366(final Class8321 class8321, final int n, final int n2) {
+    public static int method30366(final ItemStack class8321, final int n, final int n2) {
         if (class8321 == null) {
             return n2;
         }

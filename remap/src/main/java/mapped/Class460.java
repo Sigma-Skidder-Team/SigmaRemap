@@ -4,12 +4,15 @@
 
 package mapped;
 
+import net.minecraft.util.INameable;
+import net.minecraft.util.text.ITextComponent;
+
 import javax.annotation.Nullable;
 
-public abstract class Class460 extends Class436 implements Class446, Class434, Class462
+public abstract class Class460 extends Class436 implements Class446, Class434, INameable
 {
     private Class9115 field2716;
-    private Class2250 field2717;
+    private ITextComponent field2717;
     
     public Class460(final Class5412<?> class5412) {
         super(class5412);
@@ -35,33 +38,33 @@ public abstract class Class460 extends Class436 implements Class446, Class434, C
         return class51;
     }
     
-    public void method2335(final Class2250 field2717) {
+    public void method2335(final ITextComponent field2717) {
         this.field2717 = field2717;
     }
     
     @Override
-    public Class2250 method1841() {
+    public ITextComponent getName() {
         return (this.field2717 == null) ? this.method2243() : this.field2717;
     }
     
     @Override
-    public Class2250 method1871() {
-        return this.method1841();
+    public ITextComponent getDisplayName() {
+        return this.getName();
     }
     
     @Nullable
     @Override
-    public Class2250 method1873() {
+    public ITextComponent getCustomName() {
         return this.field2717;
     }
     
-    public abstract Class2250 method2243();
+    public abstract ITextComponent method2243();
     
     public boolean method2328(final Class512 class512) {
-        return method2336(class512, this.field2716, this.method1871());
+        return method2336(class512, this.field2716, this.getDisplayName());
     }
     
-    public static boolean method2336(final Class512 class512, final Class9115 class513, final Class2250 class514) {
+    public static boolean method2336(final Class512 class512, final Class9115 class513, final ITextComponent class514) {
         if (!class512.method1639() && !class513.method32976(class512.method2713())) {
             class512.method2853(new Class2259("container.isLocked", new Object[] { class514 }), true);
             class512.method2812(Class8520.field35066, Class286.field1582, 1.0f, 1.0f);

@@ -86,7 +86,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11782(this);
     }
     
-    public boolean method21698(final Class1855 class1855, final BlockPos class1856, final Class7499<?> class1857) {
+    public boolean method21698(final Class1855 class1855, final BlockPos class1856, final EntityType<?> class1857) {
         return this.method21696().method11779(this, class1855, class1856, class1857);
     }
     
@@ -267,11 +267,11 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         this.method21696().method11850(this, class1847, class1848, class1849);
     }
     
-    public void method21742(final Class1847 class1847, final BlockPos class1848, final Class8321 class1849) {
+    public void method21742(final Class1847 class1847, final BlockPos class1848, final ItemStack class1849) {
         this.method21696().method11831(this, class1847, class1848, class1849);
     }
     
-    public List<Class8321> method21743(final Class9098 class9098) {
+    public List<ItemStack> method21743(final Class9098 class9098) {
         return this.method21696().method11833(this, class9098);
     }
     

@@ -49,12 +49,12 @@ public class Class4517 extends Class4515
             if (!s.startsWith("Sentry")) {
                 if (s.startsWith("Elytra")) {
                     final Class862 class357 = new Class862(class355.method6744(), class354, this.field19852.method8142(Direction.SOUTH));
-                    class357.method5200(new Class8321(Class7739.field31584), false);
+                    class357.method5200(new ItemStack(Class7739.field31584), false);
                     class355.method6886(class357);
                 }
             }
             else {
-                final Class841 class358 = Class7499.field29020.method23371(class355.method6744());
+                final Class841 class358 = EntityType.field29020.method23371(class355.method6744());
                 class358.method1656(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5);
                 class358.method5020(class354);
                 class355.method6886(class358);

@@ -10,14 +10,15 @@ import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.Ordering;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class688 extends Class565
 {
     private static final Ordering<Class9081> field3784;
     private final Class869 field3785;
     private final Class685 field3786;
-    private Class2250 field3787;
-    private Class2250 field3788;
+    private ITextComponent field3787;
+    private ITextComponent field3788;
     private long field3789;
     private boolean field3790;
     
@@ -26,7 +27,7 @@ public class Class688 extends Class565
         this.field3786 = field3786;
     }
     
-    public Class2250 method3819(final Class9081 class9081) {
+    public ITextComponent method3819(final Class9081 class9081) {
         return (class9081.method32732() == null) ? Class6749.method20549(class9081.method32729(), new Class2260(class9081.method32719().getName())) : class9081.method32732();
     }
     
@@ -270,11 +271,11 @@ public class Class688 extends Class565
         }
     }
     
-    public void method3824(final Class2250 field3787) {
+    public void method3824(final ITextComponent field3787) {
         this.field3787 = field3787;
     }
     
-    public void method3825(final Class2250 field3788) {
+    public void method3825(final ITextComponent field3788) {
         this.field3788 = field3788;
     }
     

@@ -7,11 +7,13 @@ package mapped;
 import javax.annotation.Nullable;
 import java.util.function.Function;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.command.ICommandSource;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
 
 public class Class497 extends Class436
 {
-    public final Class2250[] field2850;
+    public final ITextComponent[] field2850;
     private boolean field2851;
     private Class512 field2852;
     private final String[] field2853;
@@ -19,7 +21,7 @@ public class Class497 extends Class436
     
     public Class497() {
         super(Class5412.field22548);
-        this.field2850 = new Class2250[] { new Class2260(""), new Class2260(""), new Class2260(""), new Class2260("") };
+        this.field2850 = new ITextComponent[] { new Class2260(""), new Class2260(""), new Class2260(""), new Class2260("") };
         this.field2851 = true;
         this.field2853 = new String[4];
         this.field2854 = Class181.field552;
@@ -42,7 +44,7 @@ public class Class497 extends Class436
         this.field2854 = Class181.method820(class51.method323("Color"), Class181.field552);
         for (int i = 0; i < 4; ++i) {
             final String method323 = class51.method323("Text" + (i + 1));
-            final Class2250 method324 = Class5953.method17871(method323.isEmpty() ? "\"\"" : method323);
+            final ITextComponent method324 = Class5953.method17871(method323.isEmpty() ? "\"\"" : method323);
             if (this.field2656 instanceof Class1849) {
                 try {
                     this.field2850[i] = Class9479.method35294(this.method2528(null), method324, null, 0);
@@ -58,17 +60,17 @@ public class Class497 extends Class436
         }
     }
     
-    public Class2250 method2520(final int n) {
+    public ITextComponent method2520(final int n) {
         return this.field2850[n];
     }
     
-    public void method2521(final int n, final Class2250 class2250) {
+    public void method2521(final int n, final ITextComponent class2250) {
         this.field2850[n] = class2250;
         this.field2853[n] = null;
     }
     
     @Nullable
-    public String method2522(final int n, final Function<Class2250, String> function) {
+    public String method2522(final int n, final Function<ITextComponent, String> function) {
         if (this.field2853[n] == null) {
             if (this.field2850[n] != null) {
                 this.field2853[n] = function.apply(this.field2850[n]);
@@ -113,7 +115,7 @@ public class Class497 extends Class436
     }
     
     public boolean method2527(final Class512 class512) {
-        for (final Class2250 class513 : this.field2850) {
+        for (final ITextComponent class513 : this.field2850) {
             final Class8768 class514 = (class513 != null) ? class513.method8456() : null;
             if (class514 != null) {
                 if (class514.method30410() != null) {
@@ -128,7 +130,7 @@ public class Class497 extends Class436
     }
     
     public Class7492 method2528(final Class513 class513) {
-        return new Class7492(Class397.field2376, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, (class513 != null) ? class513.method1841().getString() : "Sign", (class513 != null) ? class513.method1871() : new Class2260("Sign"), this.field2656.method6679(), class513);
+        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, (class513 != null) ? class513.getName().getString() : "Sign", (class513 != null) ? class513.getDisplayName() : new Class2260("Sign"), this.field2656.method6679(), class513);
     }
     
     public Class181 method2529() {

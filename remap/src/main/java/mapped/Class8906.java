@@ -7,7 +7,6 @@ package mapped;
 import java.util.List;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -21,11 +20,11 @@ import java.util.Map;
 public class Class8906
 {
     private static boolean field37444;
-    private static Map<Class7499, Class4703> field37445;
+    private static Map<EntityType, Class4703> field37445;
     private static Map<Class5412, Class4158> field37446;
     
     public static void method31381() {
-        final Map<Class7499, Class4703> method31382 = method31382();
+        final Map<EntityType, Class4703> method31382 = method31382();
         final Map<Class5412, Class4158> method31383 = method31383();
         if (method31382 != null) {
             if (method31383 != null) {
@@ -41,7 +40,7 @@ public class Class8906
                         Class8571.method28847("CustomEntityModel: " + class1932.method7797());
                         final Class9559 method31385 = method31385(class1932);
                         if (method31385 != null) {
-                            final Class8651<Class7499, Class5412> method31386 = method31385.method35767();
+                            final Class8651<EntityType, Class5412> method31386 = method31385.method35767();
                             if (!(method31385 instanceof Class4703)) {
                                 if (!(method31385 instanceof Class4158)) {
                                     Class8571.method28848("Unknown renderer type: " + ((Class4703<?>)method31385).getClass().getName());
@@ -67,11 +66,11 @@ public class Class8906
         }
     }
     
-    private static Map<Class7499, Class4703> method31382() {
-        final Map<Class7499, Class4703> method28719 = Class869.method5277().method5306().method28719();
+    private static Map<EntityType, Class4703> method31382() {
+        final Map<EntityType, Class4703> method28719 = Class869.method5277().method5306().method28719();
         if (method28719 != null) {
             if (Class8906.field37445 == null) {
-                Class8906.field37445 = new HashMap<Class7499, Class4703>(method28719);
+                Class8906.field37445 = new HashMap<EntityType, Class4703>(method28719);
             }
             return method28719;
         }
@@ -123,7 +122,7 @@ public class Class8906
         final String method21252 = method21251.method33680();
         final Class5509 method21253 = Class8447.method28190(method21252);
         method31390(method21253, "Entity not found: " + method21252);
-        final Class8651<Class7499, Class5412> method21254 = method21253.method16815();
+        final Class8651<EntityType, Class5412> method21254 = method21253.method16815();
         method31390(method21254, "Entity type not found: " + method21252);
         final Class9559 method21255 = method31387(method21253, method21251);
         if (method21255 != null) {

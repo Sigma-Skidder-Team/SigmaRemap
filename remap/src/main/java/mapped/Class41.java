@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.text.ITextComponent;
+
 import java.io.IOException;
 import java.io.DataOutput;
 
@@ -28,9 +30,9 @@ public interface Class41
         return this.toString();
     }
     
-    default Class2250 method268() {
+    default ITextComponent method268() {
         return this.method263("", 0);
     }
     
-    Class2250 method263(final String p0, final int p1);
+    ITextComponent method263(final String p0, final int p1);
 }
